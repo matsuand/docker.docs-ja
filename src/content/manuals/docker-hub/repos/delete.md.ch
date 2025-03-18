@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to delete a repository on Docker Hub
 keywords: Docker Hub, Hub, repositories, delete
 title: Delete a repository
 linkTitle: Delete
-toc_max: 3
-weight: 40
----
 @y
----
 description: Learn how to delete a repository on Docker Hub
 keywords: Docker Hub, Hub, repositories, delete
 title: Delete a repository
 linkTitle: Delete
-toc_max: 3
-weight: 40
----
 @z
 
 @x
@@ -35,10 +27,10 @@ weight: 40
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x

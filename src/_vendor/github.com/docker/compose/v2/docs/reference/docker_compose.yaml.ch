@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker compose
 short: Docker Compose
@@ -119,10 +121,10 @@ usage: docker compose
 
 @x
     ### Use `-f` to specify the name and path of one or more Compose files
-    Use the `-f` flag to specify the location of a Compose configuration file.
+    Use the `-f` flag to specify the location of a Compose [configuration file](/reference/compose-file/).
 @y
     ### Use `-f` to specify the name and path of one or more Compose files
-    Use the `-f` flag to specify the location of a Compose configuration file.
+    Use the `-f` flag to specify the location of a Compose [configuration file](__SUBDIR__/reference/compose-file/).
 @z
 
 @x

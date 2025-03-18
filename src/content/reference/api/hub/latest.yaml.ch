@@ -292,7 +292,7 @@ tags:
 @z
 
 @x
-      For more information, see [Audit Log](https://docs.docker.com/admin/organization/activity-logs/).
+      For more information, see [Audit Logs](https://docs.docker.com/admin/organization/activity-logs/).
   - name: org-settings
     x-displayName: Org Settings
     description: |
@@ -307,7 +307,7 @@ tags:
     description: |
       The organization endpoints allow you to interact with and manage your organizations.
 @y
-      For more information, see [Audit Log](https://docs.docker.com/admin/organization/activity-logs/).
+      For more information, see [Audit Logs](https://docs.docker.com/admin/organization/activity-logs/).
   - name: org-settings
     x-displayName: Org Settings
     description: |
@@ -599,7 +599,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
   /v2/access-tokens:
     post:
-      summary: Create a personal access token
+      summary: Create personal access token
       description: Creates and returns a personal access token.
       tags:
         - access-tokens
@@ -623,7 +623,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
     get:
-      summary: Get a list of personal access tokens
+      summary: List personal access tokens
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
@@ -659,7 +659,7 @@ paths:
         schema:
           type: string
     patch:
-      summary: Update a personal access token
+      summary: Update personal access token
       description: |
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
@@ -684,7 +684,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
     get:
-      summary: Get a personal access token
+      summary: Get personal access token
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
@@ -708,7 +708,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      summary: Delete a personal access token
+      summary: Delete personal access token
       description: |
         Deletes a personal access token permanently. This cannot be undone.
       tags:
@@ -722,11 +722,102 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+  /v2/auditlogs/{account}/actions:
+    get:
+      summary: List audit log actions
+      description: |
+        List audit log actions for a namespace to be used as a filter for querying audit log events.
+      operationId: AuditLogs_ListAuditActions
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAuditActionsResponse'
+              examples:
+                response:
+                  value:
+                    actions:
+                      org:
+                        actions:
+                          - name: team.create
+                            description: contains team create events
+                            label: Team Created
+                          - name: team.delete
+                            description: contains team delete events
+                            label: Team Deleted
+                          - name: team.member.add
+                            description: contains team member add events
+                            label: Team Member Added
+                          - name: team.member.remove
+                            description: contains team member remove events
+                            label: Team Member Removed
+                          - name: team.member.invite
+                            description: contains team member invite events
+                            label: Team Member Invited
+                          - name: member.removed
+                            description: contains org member remove events
+                            label: Organization Member Removed
+                          - name: create
+                            description: contains organization create events
+                            label: Organization Created
+                        label: Organization
+                      repo:
+                        actions:
+                          - name: create
+                            description: contains repository create events
+                            label: Repository Created
+                          - name: delete
+                            description: contains repository delete events
+                            label: Repository Deleted
+                          - name: change_privacy
+                            description: contains repository privacy change events
+                            label: Privacy Changed
+                          - name: tag.push
+                            description: contains image tag push events
+                            label: Tag Pushed
+                          - name: tag.delete
+                            description: contains image tag delete events
+                            label: Tag Deleted
+                        label: Repository
+        '429':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+              examples:
+                response:
+                  value:
+                    detail: Rate limit exceeded
+                    error: false
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      parameters:
+        - name: account
+          description: Namespace to query audit log actions for.
+          in: path
+          required: true
+          schema:
+            type: string
+      tags:
+        - audit-logs
   /v2/auditlogs/{account}:
     get:
-      summary: Returns list of audit log events
-      description: Get audit log events for a given namespace.
-      operationId: AuditLogs_GetAuditLogs
+      summary: List audit log events
+      description: List audit log events for a given namespace.
+      operationId: AuditLogs_ListAuditLogs
       security:
         - bearerAuth: []
       responses:
@@ -829,97 +920,6 @@ paths:
             type: integer
             format: int32
             default: 25
-      tags:
-        - audit-logs
-  /v2/auditlogs/{account}/actions:
-    get:
-      summary: Returns list of audit log actions
-      description: |
-        Get audit log actions for a namespace to be used as a filter for querying audit events.
-      operationId: AuditLogs_GetAuditActions
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: A successful response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetAuditActionsResponse'
-              examples:
-                response:
-                  value:
-                    actions:
-                      org:
-                        actions:
-                          - name: team.create
-                            description: contains team create events
-                            label: Team Created
-                          - name: team.delete
-                            description: contains team delete events
-                            label: Team Deleted
-                          - name: team.member.add
-                            description: contains team member add events
-                            label: Team Member Added
-                          - name: team.member.remove
-                            description: contains team member remove events
-                            label: Team Member Removed
-                          - name: team.member.invite
-                            description: contains team member invite events
-                            label: Team Member Invited
-                          - name: member.removed
-                            description: contains org member remove events
-                            label: Organization Member Removed
-                          - name: create
-                            description: contains organization create events
-                            label: Organization Created
-                        label: Organization
-                      repo:
-                        actions:
-                          - name: create
-                            description: contains repository create events
-                            label: Repository Created
-                          - name: delete
-                            description: contains repository delete events
-                            label: Repository Deleted
-                          - name: change_privacy
-                            description: contains repository privacy change events
-                            label: Privacy Changed
-                          - name: tag.push
-                            description: contains image tag push events
-                            label: Tag Pushed
-                          - name: tag.delete
-                            description: contains image tag delete events
-                            label: Tag Deleted
-                        label: Repository
-        '429':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-              examples:
-                response:
-                  value:
-                    detail: Rate limit exceeded
-                    error: false
-        '500':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-        default:
-          description: An unexpected error response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-      parameters:
-        - name: account
-          description: Namespace to query audit log actions for.
-          in: path
-          required: true
-          schema:
-            type: string
       tags:
         - audit-logs
   /v2/orgs/{name}/settings:
@@ -991,7 +991,7 @@ paths:
           $ref: '#/components/responses/unauthorized'
   /v2/access-tokens:
     post:
-      summary: Create a personal access token
+      summary: Create personal access token
       description: Creates and returns a personal access token.
       tags:
         - access-tokens
@@ -1015,7 +1015,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
     get:
-      summary: Get a list of personal access tokens
+      summary: List personal access tokens
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
@@ -1051,7 +1051,7 @@ paths:
         schema:
           type: string
     patch:
-      summary: Update a personal access token
+      summary: Update personal access token
       description: |
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
@@ -1076,7 +1076,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
     get:
-      summary: Get a personal access token
+      summary: Get personal access token
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
@@ -1100,7 +1100,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
     delete:
-      summary: Delete a personal access token
+      summary: Delete personal access token
       description: |
         Deletes a personal access token permanently. This cannot be undone.
       tags:
@@ -1114,11 +1114,102 @@ paths:
           $ref: '#/components/responses/Unauthorized'
         '404':
           $ref: '#/components/responses/NotFound'
+  /v2/auditlogs/{account}/actions:
+    get:
+      summary: List audit log actions
+      description: |
+        List audit log actions for a namespace to be used as a filter for querying audit log events.
+      operationId: AuditLogs_ListAuditActions
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAuditActionsResponse'
+              examples:
+                response:
+                  value:
+                    actions:
+                      org:
+                        actions:
+                          - name: team.create
+                            description: contains team create events
+                            label: Team Created
+                          - name: team.delete
+                            description: contains team delete events
+                            label: Team Deleted
+                          - name: team.member.add
+                            description: contains team member add events
+                            label: Team Member Added
+                          - name: team.member.remove
+                            description: contains team member remove events
+                            label: Team Member Removed
+                          - name: team.member.invite
+                            description: contains team member invite events
+                            label: Team Member Invited
+                          - name: member.removed
+                            description: contains org member remove events
+                            label: Organization Member Removed
+                          - name: create
+                            description: contains organization create events
+                            label: Organization Created
+                        label: Organization
+                      repo:
+                        actions:
+                          - name: create
+                            description: contains repository create events
+                            label: Repository Created
+                          - name: delete
+                            description: contains repository delete events
+                            label: Repository Deleted
+                          - name: change_privacy
+                            description: contains repository privacy change events
+                            label: Privacy Changed
+                          - name: tag.push
+                            description: contains image tag push events
+                            label: Tag Pushed
+                          - name: tag.delete
+                            description: contains image tag delete events
+                            label: Tag Deleted
+                        label: Repository
+        '429':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+              examples:
+                response:
+                  value:
+                    detail: Rate limit exceeded
+                    error: false
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      parameters:
+        - name: account
+          description: Namespace to query audit log actions for.
+          in: path
+          required: true
+          schema:
+            type: string
+      tags:
+        - audit-logs
   /v2/auditlogs/{account}:
     get:
-      summary: Returns list of audit log events
-      description: Get audit log events for a given namespace.
-      operationId: AuditLogs_GetAuditLogs
+      summary: List audit log events
+      description: List audit log events for a given namespace.
+      operationId: AuditLogs_ListAuditLogs
       security:
         - bearerAuth: []
       responses:
@@ -1221,97 +1312,6 @@ paths:
             type: integer
             format: int32
             default: 25
-      tags:
-        - audit-logs
-  /v2/auditlogs/{account}/actions:
-    get:
-      summary: Returns list of audit log actions
-      description: |
-        Get audit log actions for a namespace to be used as a filter for querying audit events.
-      operationId: AuditLogs_GetAuditActions
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: A successful response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetAuditActionsResponse'
-              examples:
-                response:
-                  value:
-                    actions:
-                      org:
-                        actions:
-                          - name: team.create
-                            description: contains team create events
-                            label: Team Created
-                          - name: team.delete
-                            description: contains team delete events
-                            label: Team Deleted
-                          - name: team.member.add
-                            description: contains team member add events
-                            label: Team Member Added
-                          - name: team.member.remove
-                            description: contains team member remove events
-                            label: Team Member Removed
-                          - name: team.member.invite
-                            description: contains team member invite events
-                            label: Team Member Invited
-                          - name: member.removed
-                            description: contains org member remove events
-                            label: Organization Member Removed
-                          - name: create
-                            description: contains organization create events
-                            label: Organization Created
-                        label: Organization
-                      repo:
-                        actions:
-                          - name: create
-                            description: contains repository create events
-                            label: Repository Created
-                          - name: delete
-                            description: contains repository delete events
-                            label: Repository Deleted
-                          - name: change_privacy
-                            description: contains repository privacy change events
-                            label: Privacy Changed
-                          - name: tag.push
-                            description: contains image tag push events
-                            label: Tag Pushed
-                          - name: tag.delete
-                            description: contains image tag delete events
-                            label: Tag Deleted
-                        label: Repository
-        '429':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-              examples:
-                response:
-                  value:
-                    detail: Rate limit exceeded
-                    error: false
-        '500':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-        default:
-          description: An unexpected error response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-      parameters:
-        - name: account
-          description: Namespace to query audit log actions for.
-          in: path
-          required: true
-          schema:
-            type: string
       tags:
         - audit-logs
   /v2/orgs/{name}/settings:
@@ -1466,7 +1466,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
   /v2/orgs/{org_name}/members:
-    x-audience: public
     parameters:
       - $ref: '#/components/parameters/org_name'
       - $ref: '#/components/parameters/search'
@@ -1478,7 +1477,7 @@ paths:
     get:
       summary: List org members
       description: |
-        Returns a list of members for an organization
+        Returns a list of members for an organization.
 @y
         The following settings are only used on a business plan:
         - `restricted_images`
@@ -1590,7 +1589,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
   /v2/orgs/{org_name}/members:
-    x-audience: public
     parameters:
       - $ref: '#/components/parameters/org_name'
       - $ref: '#/components/parameters/search'
@@ -1602,7 +1600,29 @@ paths:
     get:
       summary: List org members
       description: |
-        Returns a list of members for an organization
+        Returns a list of members for an organization.
+@z
+
+@x
+        _The following fields are only visible to orgs with insights enabled._
+@y
+        _The following fields are only visible to orgs with insights enabled._
+@z
+
+@x
+        - `last_logged_in_at`
+        - `last_seen_at`
+        - `last_desktop_version`
+@y
+        - `last_logged_in_at`
+        - `last_seen_at`
+        - `last_desktop_version`
+@z
+
+@x
+        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+@y
+        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
 @z
 
 @x
@@ -1629,7 +1649,6 @@ paths:
         '404':
           $ref: '#/components/responses/not_found'
   /v2/orgs/{org_name}/members/export:
-    x-audience: public
     parameters:
       - $ref: '#/components/parameters/org_name'
     get:
@@ -1660,7 +1679,6 @@ paths:
         '404':
           $ref: '#/components/responses/not_found'
   /v2/orgs/{org_name}/members/export:
-    x-audience: public
     parameters:
       - $ref: '#/components/parameters/org_name'
     get:
@@ -4008,13 +4026,1062 @@ components:
             - owners
         is_guest:
           type: boolean
-          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as Guest member
+          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as guests.
           example: false
         primary_email:
           type: string
-          description: User's email primary address
+          description: The user's email primary address.
           example: example@docker.com
           deprecated: true
+        last_logged_in_at:
+          type: string
+          format: date-time
+          description: |
+            Last time the user logged in. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: '2021-01-05T21:06:53.506400Z'
+        last_seen_at:
+          type: string
+          format: date-time
+          description: |
+            Last time the user was seen. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: '2021-01-05T21:06:53.506400Z'
+        last_desktop_version:
+          type: string
+          description: |
+            Last desktop version the user used. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: 4.29.0
+@y
+        - `eq` equal
+        - `ne` not equal
+        - `co` contains
+        - `sw` starts with
+        - `and` Logical "and"
+        - `or` Logical "or"
+        - `not` "Not" function
+        - `()` Precedence grouping
+      tags:
+        - scim
+      security:
+        - bearerSCIMAuth: []
+      parameters:
+        - name: startIndex
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+          description: ''
+          example: 1
+        - name: count
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 200
+          description: ''
+          example: 10
+        - name: filter
+          in: query
+          schema:
+            type: string
+          description: ''
+          example: userName eq "jon.snow@docker.com"
+        - $ref: '#/components/parameters/scim_attributes'
+        - name: sortOrder
+          in: query
+          schema:
+            type: string
+            enum:
+              - ascending
+              - descending
+        - name: sortBy
+          in: query
+          schema:
+            type: string
+          description: User attribute to sort by.
+          example: userName
+      responses:
+        '200':
+          $ref: '#/components/responses/scim_get_users_resp'
+        '400':
+          $ref: '#/components/responses/scim_bad_request'
+        '401':
+          $ref: '#/components/responses/scim_unauthorized'
+        '403':
+          $ref: '#/components/responses/scim_forbidden'
+        '404':
+          $ref: '#/components/responses/scim_not_found'
+        '500':
+          $ref: '#/components/responses/scim_error'
+    post:
+      summary: Create user
+      description: |
+        Creates a user. If the user already exists by email, they are assigned to the organization on the "company" team.
+      tags:
+        - scim
+      security:
+        - bearerSCIMAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/scim_create_user_request'
+      responses:
+        '201':
+          $ref: '#/components/responses/scim_create_user_resp'
+        '400':
+          $ref: '#/components/responses/scim_bad_request'
+        '401':
+          $ref: '#/components/responses/scim_unauthorized'
+        '403':
+          $ref: '#/components/responses/scim_forbidden'
+        '404':
+          $ref: '#/components/responses/scim_not_found'
+        '409':
+          $ref: '#/components/responses/scim_conflict'
+        '500':
+          $ref: '#/components/responses/scim_error'
+  /v2/scim/2.0/Users/{id}:
+    x-audience: public
+    parameters:
+      - $ref: '#/components/parameters/scim_user_id'
+    get:
+      summary: Get a user
+      description: |
+        Returns a user by ID.
+      tags:
+        - scim
+      security:
+        - bearerSCIMAuth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/scim_get_user_resp'
+        '400':
+          $ref: '#/components/responses/scim_bad_request'
+        '401':
+          $ref: '#/components/responses/scim_unauthorized'
+        '403':
+          $ref: '#/components/responses/scim_forbidden'
+        '404':
+          $ref: '#/components/responses/scim_not_found'
+        '500':
+          $ref: '#/components/responses/scim_error'
+    put:
+      summary: Update a user
+      description: |
+        Updates a user. This route is used to change the user's name, activate, and deactivate the user.
+      tags:
+        - scim
+      security:
+        - bearerSCIMAuth: []
+      requestBody:
+        $ref: '#/components/requestBodies/scim_update_user_request'
+      responses:
+        '200':
+          $ref: '#/components/responses/scim_update_user_resp'
+        '400':
+          $ref: '#/components/responses/scim_bad_request'
+        '401':
+          $ref: '#/components/responses/scim_unauthorized'
+        '403':
+          $ref: '#/components/responses/scim_forbidden'
+        '404':
+          $ref: '#/components/responses/scim_not_found'
+        '409':
+          $ref: '#/components/responses/scim_conflict'
+        '500':
+          $ref: '#/components/responses/scim_error'
+components:
+  responses:
+    BadRequest:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ValueError'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    list_tags:
+      description: list repository tags
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/paginated_tags'
+    get_tag:
+      description: repository tag
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/tag'
+    bad_request:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    forbidden:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    not_found:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    internal_error:
+      description: Internal
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+    scim_bad_request:
+      description: Bad Request
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '400'
+                  scimType:
+                    type: string
+                    description: Some types of errors will return this per the specification.
+    scim_unauthorized:
+      description: Unauthorized
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '401'
+    scim_forbidden:
+      description: Forbidden
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '403'
+    scim_not_found:
+      description: Not Found
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '404'
+    scim_conflict:
+      description: Conflict
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '409'
+    scim_error:
+      description: Internal Error
+      content:
+        application/scim+json:
+          schema:
+            allOf:
+              - $ref: '#/components/schemas/scim_error'
+              - properties:
+                  status:
+                    example: '500'
+    scim_get_service_provider_config_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_service_provider_config'
+    scim_get_resource_types_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            type: object
+            properties:
+              schemas:
+                type: array
+                items:
+                  type: string
+                  example: urn:ietf:params:scim:api:messages:2.0:ListResponse
+              totalResults:
+                type: integer
+                example: 1
+              resources:
+                type: array
+                items:
+                  $ref: '#/components/schemas/scim_resource_type'
+    scim_get_resource_type_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_resource_type'
+    scim_get_schemas_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            type: object
+            properties:
+              schemas:
+                type: array
+                items:
+                  type: string
+                  example: urn:ietf:params:scim:api:messages:2.0:ListResponse
+              totalResults:
+                type: integer
+                example: 1
+              resources:
+                type: array
+                items:
+                  $ref: '#/components/schemas/scim_schema'
+    scim_get_schema_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_schema'
+    scim_get_users_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            type: object
+            properties:
+              schemas:
+                type: array
+                items:
+                  type: string
+                example:
+                  - urn:ietf:params:scim:api:messages:2.0:ListResponse
+              totalResults:
+                type: integer
+                example: 1
+              startIndex:
+                type: integer
+                example: 1
+              itemsPerPage:
+                type: integer
+                example: 10
+              resources:
+                type: array
+                items:
+                  $ref: '#/components/schemas/scim_user'
+    scim_create_user_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_user'
+    scim_get_user_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_user'
+    scim_update_user_resp:
+      description: ''
+      content:
+        application/scim+json:
+          schema:
+            $ref: '#/components/schemas/scim_user'
+  schemas:
+    UsersLoginRequest:
+      description: User login details
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          description: The username of the Docker Hub account to authenticate with.
+          type: string
+          example: myusername
+        password:
+          description: |
+            The password or personal access token (PAT) of the Docker Hub account to authenticate with.
+          type: string
+          example: p@ssw0rd
+    AuthCreateTokenResponse:
+      description: successful access token response
+      type: object
+      properties:
+        access_token:
+          description: The created access token. This expires in 10 minutes.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+    PostUsersLoginSuccessResponse:
+      description: successful user login response
+      type: object
+      properties:
+        token:
+          description: |
+            Created authentication token.
+            This token can be used in the HTTP Authorization header as a JWT to authenticate with the Docker Hub APIs.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+          nullable: false
+    PostUsersLoginErrorResponse:
+      description: failed user login response or second factor required
+      type: object
+      required:
+        - detail
+      properties:
+        detail:
+          description: Description of the error.
+          type: string
+          example: Incorrect authentication credentials
+          nullable: false
+        login_2fa_token:
+          description: |
+            Short time lived token to be used on `/v2/users/2fa-login` to complete the authentication. This field is present only if 2FA is enabled.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+          nullable: true
+    Users2FALoginRequest:
+      description: Second factor user login details
+      type: object
+      required:
+        - login_2fa_token
+        - code
+      properties:
+        login_2fa_token:
+          description: The intermediate 2FA token returned from `/v2/users/login` API.
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+        code:
+          description: |
+            The Time-based One-Time Password of the Docker Hub account to authenticate with.
+          type: string
+          example: 123456
+    PostUsers2FALoginErrorResponse:
+      description: failed second factor login response.
+      type: object
+      properties:
+        detail:
+          description: Description of the error.
+          type: string
+          example: Incorrect authentication credentials
+          nullable: false
+    protobufAny:
+      type: object
+      properties:
+        type_url:
+          type: string
+        value:
+          type: string
+          format: byte
+    rpcStatus:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/protobufAny'
+    AuditLogAction:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of audit log action.
+        description:
+          type: string
+          description: Description of audit log action.
+        label:
+          type: string
+          description: Label for audit log action.
+      description: Audit Log action
+    AuditLogActions:
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuditLogAction'
+          description: List of audit log actions.
+        label:
+          type: string
+          description: Grouping label for a particular set of audit log actions.
+    GetAuditActionsResponse:
+      type: object
+      properties:
+        actions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/AuditLogActions'
+          description: Map of audit log actions.
+      description: GetAuditActions response.
+    GetAuditLogsResponse:
+      type: object
+      properties:
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuditLog'
+          description: List of audit log events.
+      description: GetAuditLogs response.
+    AuditLog:
+      type: object
+      properties:
+        account:
+          type: string
+        action:
+          type: string
+        name:
+          type: string
+        actor:
+          type: string
+        data:
+          type: object
+          additionalProperties:
+            type: string
+        timestamp:
+          type: string
+          format: date-time
+        action_description:
+          type: string
+      description: Audit log event.
+    ValueError:
+      type: object
+      description: Used to error if input validation fails.
+      properties:
+        fields:
+          type: object
+          items:
+            type: string
+        text:
+          type: string
+    Error:
+      type: object
+      properties:
+        detail:
+          type: string
+        message:
+          type: string
+    accessToken:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: b30bbf97-506c-4ecd-aabc-842f3cb484fb
+        client_id:
+          type: string
+          example: HUB
+        creator_ip:
+          type: string
+          example: 127.0.0.1
+        creator_ua:
+          type: string
+          example: some user agent
+        created_at:
+          type: string
+          example: '2021-07-20T12:00:00.000000Z'
+        last_used:
+          type: string
+          example: null
+          nullable: true
+        generated_by:
+          type: string
+          example: manual
+        is_active:
+          type: boolean
+          example: true
+        token:
+          type: string
+          example: a7a5ef25-8889-43a0-8cc7-f2a94268e861
+        token_label:
+          type: string
+          example: My read only token
+        scopes:
+          type: array
+          example:
+            - repo:read
+          items:
+            type: string
+    createAccessTokenRequest:
+      type: object
+      required:
+        - token_label
+        - scopes
+      properties:
+        token_label:
+          type: string
+          description: Friendly name for you to identify the token.
+          example: My read only token
+          minLength: 1
+          maxLength: 100
+        scopes:
+          type: array
+          description: |
+            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read"
+          example:
+            - repo:read
+          items:
+            type: string
+        expires_at:
+          type: string
+          description: |
+            Optional expiration date for the token.
+            If omitted, the token will remain valid indefinitely.
+          format: date-time
+          example: '2021-10-28T18:30:19.520861Z'
+    createAccessTokensResponse:
+      $ref: '#/components/schemas/accessToken'
+    getAccessTokensResponse:
+      type: object
+      properties:
+        count:
+          type: number
+          example: 1
+        next:
+          type: string
+          example: null
+        previous:
+          type: string
+          example: null
+        active_count:
+          type: number
+          example: 1
+        results:
+          type: array
+          items:
+            allOf:
+              - $ref: '#/components/schemas/accessToken'
+              - type: object
+                properties:
+                  token:
+                    type: string
+                    example: ''
+    patchAccessTokenRequest:
+      type: object
+      properties:
+        token_label:
+          type: string
+          example: My read only token
+          minLength: 1
+          maxLength: 100
+        is_active:
+          type: boolean
+          example: false
+    patchAccessTokenResponse:
+      $ref: '#/components/schemas/accessToken'
+    orgSettings:
+      type: object
+      properties:
+        restricted_images:
+          $ref: '#/components/schemas/restricted_images'
+    restricted_images:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: Whether or not to restrict image usage for users in the organization.
+          example: true
+        allow_official_images:
+          type: boolean
+          description: Allow usage of official images if "enabled" is `true`.
+          example: true
+        allow_verified_publishers:
+          type: boolean
+          description: Allow usage of verified publisher images if "enabled" is `true`.
+          example: true
+    layer:
+      type: object
+      properties:
+        digest:
+          type: string
+          description: image layer digest
+          nullable: true
+        size:
+          type: integer
+          description: size of the layer
+        instruction:
+          type: string
+          description: Dockerfile instruction
+    image:
+      type: object
+      properties:
+        architecture:
+          type: string
+          description: CPU architecture
+        features:
+          type: string
+          description: CPU features
+        variant:
+          type: string
+          description: CPU variant
+        digest:
+          type: string
+          description: image digest
+          nullable: true
+        layers:
+          type: array
+          items:
+            $ref: '#/components/schemas/layer'
+        os:
+          type: string
+          description: operating system
+        os_features:
+          type: string
+          description: OS features
+        os_version:
+          type: string
+          description: OS version
+        size:
+          type: integer
+          description: size of the image
+        status:
+          type: string
+          enum:
+            - active
+            - inactive
+          description: Status of the image
+        last_pulled:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+          description: datetime of last pull
+          nullable: true
+        last_pushed:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+          description: datetime of last push
+          nullable: true
+    tag:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: tag ID
+        images:
+          type: object
+          $ref: '#/components/schemas/image'
+        creator:
+          type: integer
+          description: ID of the user that pushed the tag
+        last_updated:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+          description: datetime of last update
+          nullable: true
+        last_updater:
+          type: integer
+          description: ID of the last user that updated the tag
+        last_updater_username:
+          type: string
+          description: Hub username of the user that updated the tag
+        name:
+          type: string
+          description: name of the tag
+        repository:
+          type: integer
+          description: repository ID
+        full_size:
+          type: integer
+          description: compressed size (sum of all layers) of the tagged image
+        v2:
+          type: string
+          description: repository API version
+        status:
+          type: string
+          enum:
+            - active
+            - inactive
+          description: whether a tag has been pushed to or pulled in the past month
+        tag_last_pulled:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+          description: datetime of last pull
+          nullable: true
+        tag_last_pushed:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+          description: datetime of last push
+          nullable: true
+    paginated_tags:
+      allOf:
+        - $ref: '#/components/schemas/page'
+        - type: object
+          properties:
+            results:
+              type: array
+              items:
+                $ref: '#/components/schemas/tag'
+    page:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: total number of results available across all pages
+        next:
+          type: string
+          description: link to next page of results if any
+          nullable: true
+        previous:
+          type: string
+          description: link to previous page of results  if any
+          nullable: true
+    scim_schema_attribute:
+      type: object
+      properties:
+        name:
+          type: string
+          example: userName
+        type:
+          enum:
+            - string
+            - boolean
+            - complex
+          type: string
+          example: string
+        multiValued:
+          type: boolean
+          example: false
+        description:
+          type: string
+          example: Unique identifier for the User, typically used by the user to directly authenticate to the service provider. Each User MUST include a non-empty userName value. This identifier MUST be unique across the service provider's entire set of Users.
+        required:
+          type: boolean
+          example: true
+        caseExact:
+          type: boolean
+          example: false
+        mutability:
+          type: string
+          example: readWrite
+        returned:
+          type: string
+          example: default
+        uniqueness:
+          type: string
+          example: server
+    scim_schema_parent_attribute:
+      allOf:
+        - $ref: '#/components/schemas/scim_schema_attribute'
+        - type: object
+          properties:
+            subAttributes:
+              type: array
+              items:
+                $ref: '#/components/schemas/scim_schema_attribute'
+    invite:
+      type: object
+      properties:
+        id:
+          type: string
+          description: uuid representing the invite id
+          example: e36eca69-4cc8-4f17-9845-ae8c2b832691
+        inviter_username:
+          type: string
+          example: moby
+        invitee:
+          type: string
+          description: can either be a dockerID for registred users or an email for non-registred users
+          example: invitee@docker.com
+        org:
+          type: string
+          description: name of the org to join
+          example: docker
+        team:
+          type: string
+          description: name of the team (user group) to join
+          example: owners
+        created_at:
+          type: string
+          example: '2021-10-28T18:30:19.520861Z'
+    bulk_invite:
+      type: object
+      properties:
+        invitees:
+          type: array
+          description: A list of invitees
+          items:
+            type: object
+            properties:
+              invitee:
+                type: string
+                description: invitee email or Docker ID
+              status:
+                type: string
+                description: status of the invite or validation error
+              invite:
+                description: Invite data if successfully invited
+                $ref: '#/components/schemas/invite'
+      example:
+        invitees:
+          - invitee: invitee@docker.com
+            status: invited
+            invite:
+              id: e36eca69-4cc8-4f17-9845-ae8c2b832691
+              inviter_username: moby
+              invitee: invitee@docker.com
+              org: docker
+              team: owners
+              created_at: '2021-10-28T18:30:19.520861Z'
+          - invitee: invitee2@docker.com
+            status: existing_org_member
+          - invitee: invitee3@docker.com
+            status: invalid_email_or_docker_id
+    error:
+      type: object
+      properties:
+        errinfo:
+          type: object
+          items:
+            type: string
+        detail:
+          type: string
+        message:
+          type: string
+    scim_error:
+      type: object
+      properties:
+        status:
+          type: string
+          description: The status code for the response in string format.
+        schemas:
+          type: array
+          items:
+            type: string
+            default: urn:ietf:params:scim:api:messages:2.0:Error
+        detail:
+          type: string
+          description: Details about why the request failed.
+    user:
+      type: object
+      properties:
+        id:
+          type: string
+          example: 0ab70deb065a43fcacd55d48caa945d8
+          description: The UUID trimmed
+        company:
+          type: string
+          example: Docker Inc
+        date_joined:
+          type: string
+          example: '2021-01-05T21:06:53.506400Z'
+        full_name:
+          type: string
+          example: Jon Snow
+        gravatar_email:
+          type: string
+        gravatar_url:
+          type: string
+        location:
+          type: string
+        profile_url:
+          type: string
+        type:
+          type: string
+          enum:
+            - User
+            - Org
+          example: User
+        username:
+          type: string
+          example: dockeruser
+    org_member:
+      allOf:
+        - $ref: '#/components/schemas/user'
+      properties:
+        email:
+          type: string
+          description: User's email address
+          example: example@docker.com
+        role:
+          type: string
+          description: User's role in the Organization
+          enum:
+            - Owner
+            - Member
+            - Invitee
+          example: Owner
+        groups:
+          type: array
+          description: Groups (Teams) that the user is member of
+          items:
+            type: string
+          example:
+            - developers
+            - owners
+        is_guest:
+          type: boolean
+          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as guests.
+          example: false
+        primary_email:
+          type: string
+          description: The user's email primary address.
+          example: example@docker.com
+          deprecated: true
+        last_logged_in_at:
+          type: string
+          format: date-time
+          description: |
+            Last time the user logged in. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: '2021-01-05T21:06:53.506400Z'
+        last_seen_at:
+          type: string
+          format: date-time
+          description: |
+            Last time the user was seen. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: '2021-01-05T21:06:53.506400Z'
+        last_desktop_version:
+          type: string
+          description: |
+            Last desktop version the user used. To access this field, you must have insights visible for your organization. See 
+            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+          example: 4.29.0
+@z
+
+@x
     org_member_paginated:
       type: object
       properties:
@@ -4069,6 +5136,7 @@ components:
           example: Docker Inc
         date_joined:
           type: string
+          format: date-time
           example: '2021-01-05T21:06:53.506400Z'
         full_name:
           type: string
@@ -4322,10 +5390,12 @@ components:
               example: https://hub.docker.com/v2/scim/2.0/Users/d80f7c79-7730-49d8-9a41-7c42fb622d9c
             created:
               type: string
+              format: date-time
               description: The creation date for the user as a RFC3339 formatted string.
               example: '2022-05-20T00:54:18Z'
             lastModified:
               type: string
+              format: date-time
               description: The date the user was last modified as a RFC3339 formatted string.
               example: '2022-05-20T00:54:18Z'
   parameters:
@@ -4547,1011 +5617,6 @@ x-tagGroups:
       - groups
       - invites
 @y
-        - `eq` equal
-        - `ne` not equal
-        - `co` contains
-        - `sw` starts with
-        - `and` Logical "and"
-        - `or` Logical "or"
-        - `not` "Not" function
-        - `()` Precedence grouping
-      tags:
-        - scim
-      security:
-        - bearerSCIMAuth: []
-      parameters:
-        - name: startIndex
-          in: query
-          schema:
-            type: integer
-            minimum: 1
-          description: ''
-          example: 1
-        - name: count
-          in: query
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 200
-          description: ''
-          example: 10
-        - name: filter
-          in: query
-          schema:
-            type: string
-          description: ''
-          example: userName eq "jon.snow@docker.com"
-        - $ref: '#/components/parameters/scim_attributes'
-        - name: sortOrder
-          in: query
-          schema:
-            type: string
-            enum:
-              - ascending
-              - descending
-        - name: sortBy
-          in: query
-          schema:
-            type: string
-          description: User attribute to sort by.
-          example: userName
-      responses:
-        '200':
-          $ref: '#/components/responses/scim_get_users_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
-    post:
-      summary: Create user
-      description: |
-        Creates a user. If the user already exists by email, they are assigned to the organization on the "company" team.
-      tags:
-        - scim
-      security:
-        - bearerSCIMAuth: []
-      requestBody:
-        $ref: '#/components/requestBodies/scim_create_user_request'
-      responses:
-        '201':
-          $ref: '#/components/responses/scim_create_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
-  /v2/scim/2.0/Users/{id}:
-    x-audience: public
-    parameters:
-      - $ref: '#/components/parameters/scim_user_id'
-    get:
-      summary: Get a user
-      description: |
-        Returns a user by ID.
-      tags:
-        - scim
-      security:
-        - bearerSCIMAuth: []
-      responses:
-        '200':
-          $ref: '#/components/responses/scim_get_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
-    put:
-      summary: Update a user
-      description: |
-        Updates a user. This route is used to change the user's name, activate, and deactivate the user.
-      tags:
-        - scim
-      security:
-        - bearerSCIMAuth: []
-      requestBody:
-        $ref: '#/components/requestBodies/scim_update_user_request'
-      responses:
-        '200':
-          $ref: '#/components/responses/scim_update_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
-components:
-  responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ValueError'
-    Unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Forbidden:
-      description: Forbidden
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    list_tags:
-      description: list repository tags
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/paginated_tags'
-    get_tag:
-      description: repository tag
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/tag'
-    bad_request:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    unauthorized:
-      description: Unauthorized
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    forbidden:
-      description: Forbidden
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    not_found:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    conflict:
-      description: Conflict
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    internal_error:
-      description: Internal
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/error'
-    scim_bad_request:
-      description: Bad Request
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '400'
-                  scimType:
-                    type: string
-                    description: Some types of errors will return this per the specification.
-    scim_unauthorized:
-      description: Unauthorized
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '401'
-    scim_forbidden:
-      description: Forbidden
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '403'
-    scim_not_found:
-      description: Not Found
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '404'
-    scim_conflict:
-      description: Conflict
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '409'
-    scim_error:
-      description: Internal Error
-      content:
-        application/scim+json:
-          schema:
-            allOf:
-              - $ref: '#/components/schemas/scim_error'
-              - properties:
-                  status:
-                    example: '500'
-    scim_get_service_provider_config_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_service_provider_config'
-    scim_get_resource_types_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            type: object
-            properties:
-              schemas:
-                type: array
-                items:
-                  type: string
-                  example: urn:ietf:params:scim:api:messages:2.0:ListResponse
-              totalResults:
-                type: integer
-                example: 1
-              resources:
-                type: array
-                items:
-                  $ref: '#/components/schemas/scim_resource_type'
-    scim_get_resource_type_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_resource_type'
-    scim_get_schemas_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            type: object
-            properties:
-              schemas:
-                type: array
-                items:
-                  type: string
-                  example: urn:ietf:params:scim:api:messages:2.0:ListResponse
-              totalResults:
-                type: integer
-                example: 1
-              resources:
-                type: array
-                items:
-                  $ref: '#/components/schemas/scim_schema'
-    scim_get_schema_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_schema'
-    scim_get_users_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            type: object
-            properties:
-              schemas:
-                type: array
-                items:
-                  type: string
-                example:
-                  - urn:ietf:params:scim:api:messages:2.0:ListResponse
-              totalResults:
-                type: integer
-                example: 1
-              startIndex:
-                type: integer
-                example: 1
-              itemsPerPage:
-                type: integer
-                example: 10
-              resources:
-                type: array
-                items:
-                  $ref: '#/components/schemas/scim_user'
-    scim_create_user_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_user'
-    scim_get_user_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_user'
-    scim_update_user_resp:
-      description: ''
-      content:
-        application/scim+json:
-          schema:
-            $ref: '#/components/schemas/scim_user'
-  schemas:
-    UsersLoginRequest:
-      description: User login details
-      type: object
-      required:
-        - username
-        - password
-      properties:
-        username:
-          description: The username of the Docker Hub account to authenticate with.
-          type: string
-          example: myusername
-        password:
-          description: |
-            The password or personal access token (PAT) of the Docker Hub account to authenticate with.
-          type: string
-          example: p@ssw0rd
-    AuthCreateTokenResponse:
-      description: successful access token response
-      type: object
-      properties:
-        access_token:
-          description: The created access token. This expires in 10 minutes.
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-    PostUsersLoginSuccessResponse:
-      description: successful user login response
-      type: object
-      properties:
-        token:
-          description: |
-            Created authentication token.
-            This token can be used in the HTTP Authorization header as a JWT to authenticate with the Docker Hub APIs.
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: false
-    PostUsersLoginErrorResponse:
-      description: failed user login response or second factor required
-      type: object
-      required:
-        - detail
-      properties:
-        detail:
-          description: Description of the error.
-          type: string
-          example: Incorrect authentication credentials
-          nullable: false
-        login_2fa_token:
-          description: |
-            Short time lived token to be used on `/v2/users/2fa-login` to complete the authentication. This field is present only if 2FA is enabled.
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: true
-    Users2FALoginRequest:
-      description: Second factor user login details
-      type: object
-      required:
-        - login_2fa_token
-        - code
-      properties:
-        login_2fa_token:
-          description: The intermediate 2FA token returned from `/v2/users/login` API.
-          type: string
-          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-        code:
-          description: |
-            The Time-based One-Time Password of the Docker Hub account to authenticate with.
-          type: string
-          example: 123456
-    PostUsers2FALoginErrorResponse:
-      description: failed second factor login response.
-      type: object
-      properties:
-        detail:
-          description: Description of the error.
-          type: string
-          example: Incorrect authentication credentials
-          nullable: false
-    protobufAny:
-      type: object
-      properties:
-        type_url:
-          type: string
-        value:
-          type: string
-          format: byte
-    rpcStatus:
-      type: object
-      properties:
-        code:
-          type: integer
-          format: int32
-        message:
-          type: string
-        details:
-          type: array
-          items:
-            $ref: '#/components/schemas/protobufAny'
-    AuditLogAction:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Name of audit log action.
-        description:
-          type: string
-          description: Description of audit log action.
-        label:
-          type: string
-          description: Label for audit log action.
-      description: Audit Log action
-    AuditLogActions:
-      type: object
-      properties:
-        actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/AuditLogAction'
-          description: List of audit log actions.
-        label:
-          type: string
-          description: Grouping label for a particular set of audit log actions.
-    GetAuditActionsResponse:
-      type: object
-      properties:
-        actions:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/AuditLogActions'
-          description: Map of audit log actions.
-      description: GetAuditActions response.
-    GetAuditLogsResponse:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/AuditLog'
-          description: List of audit log events.
-      description: GetAuditLogs response.
-    AuditLog:
-      type: object
-      properties:
-        account:
-          type: string
-        action:
-          type: string
-        name:
-          type: string
-        actor:
-          type: string
-        data:
-          type: object
-          additionalProperties:
-            type: string
-        timestamp:
-          type: string
-          format: date-time
-        action_description:
-          type: string
-      description: Audit log event.
-    ValueError:
-      type: object
-      description: Used to error if input validation fails.
-      properties:
-        fields:
-          type: object
-          items:
-            type: string
-        text:
-          type: string
-    Error:
-      type: object
-      properties:
-        detail:
-          type: string
-        message:
-          type: string
-    accessToken:
-      type: object
-      properties:
-        uuid:
-          type: string
-          example: b30bbf97-506c-4ecd-aabc-842f3cb484fb
-        client_id:
-          type: string
-          example: HUB
-        creator_ip:
-          type: string
-          example: 127.0.0.1
-        creator_ua:
-          type: string
-          example: some user agent
-        created_at:
-          type: string
-          example: '2021-07-20T12:00:00.000000Z'
-        last_used:
-          type: string
-          example: null
-          nullable: true
-        generated_by:
-          type: string
-          example: manual
-        is_active:
-          type: boolean
-          example: true
-        token:
-          type: string
-          example: a7a5ef25-8889-43a0-8cc7-f2a94268e861
-        token_label:
-          type: string
-          example: My read only token
-        scopes:
-          type: array
-          example:
-            - repo:read
-          items:
-            type: string
-    createAccessTokenRequest:
-      type: object
-      required:
-        - token_label
-        - scopes
-      properties:
-        token_label:
-          type: string
-          description: Friendly name for you to identify the token.
-          example: My read only token
-          minLength: 1
-          maxLength: 100
-        scopes:
-          type: array
-          description: |
-            Valid scopes: "repo:admin", "repo:write", "repo:read", "repo:public_read"
-          example:
-            - repo:read
-          items:
-            type: string
-        expires_at:
-          type: string
-          description: |
-            Optional expiration date for the token.
-            If omitted, the token will remain valid indefinitely.
-          format: date-time
-          example: '2021-10-28T18:30:19.520861Z'
-    createAccessTokensResponse:
-      $ref: '#/components/schemas/accessToken'
-    getAccessTokensResponse:
-      type: object
-      properties:
-        count:
-          type: number
-          example: 1
-        next:
-          type: string
-          example: null
-        previous:
-          type: string
-          example: null
-        active_count:
-          type: number
-          example: 1
-        results:
-          type: array
-          items:
-            allOf:
-              - $ref: '#/components/schemas/accessToken'
-              - type: object
-                properties:
-                  token:
-                    type: string
-                    example: ''
-    patchAccessTokenRequest:
-      type: object
-      properties:
-        token_label:
-          type: string
-          example: My read only token
-          minLength: 1
-          maxLength: 100
-        is_active:
-          type: boolean
-          example: false
-    patchAccessTokenResponse:
-      $ref: '#/components/schemas/accessToken'
-    orgSettings:
-      type: object
-      properties:
-        restricted_images:
-          $ref: '#/components/schemas/restricted_images'
-    restricted_images:
-      type: object
-      properties:
-        enabled:
-          type: boolean
-          description: Whether or not to restrict image usage for users in the organization.
-          example: true
-        allow_official_images:
-          type: boolean
-          description: Allow usage of official images if "enabled" is `true`.
-          example: true
-        allow_verified_publishers:
-          type: boolean
-          description: Allow usage of verified publisher images if "enabled" is `true`.
-          example: true
-    layer:
-      type: object
-      properties:
-        digest:
-          type: string
-          description: image layer digest
-          nullable: true
-        size:
-          type: integer
-          description: size of the layer
-        instruction:
-          type: string
-          description: Dockerfile instruction
-    image:
-      type: object
-      properties:
-        architecture:
-          type: string
-          description: CPU architecture
-        features:
-          type: string
-          description: CPU features
-        variant:
-          type: string
-          description: CPU variant
-        digest:
-          type: string
-          description: image digest
-          nullable: true
-        layers:
-          type: array
-          items:
-            $ref: '#/components/schemas/layer'
-        os:
-          type: string
-          description: operating system
-        os_features:
-          type: string
-          description: OS features
-        os_version:
-          type: string
-          description: OS version
-        size:
-          type: integer
-          description: size of the image
-        status:
-          type: string
-          enum:
-            - active
-            - inactive
-          description: Status of the image
-        last_pulled:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-          description: datetime of last pull
-          nullable: true
-        last_pushed:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-          description: datetime of last push
-          nullable: true
-    tag:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: tag ID
-        images:
-          type: object
-          $ref: '#/components/schemas/image'
-        creator:
-          type: integer
-          description: ID of the user that pushed the tag
-        last_updated:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-          description: datetime of last update
-          nullable: true
-        last_updater:
-          type: integer
-          description: ID of the last user that updated the tag
-        last_updater_username:
-          type: string
-          description: Hub username of the user that updated the tag
-        name:
-          type: string
-          description: name of the tag
-        repository:
-          type: integer
-          description: repository ID
-        full_size:
-          type: integer
-          description: compressed size (sum of all layers) of the tagged image
-        v2:
-          type: string
-          description: repository API version
-        status:
-          type: string
-          enum:
-            - active
-            - inactive
-          description: whether a tag has been pushed to or pulled in the past month
-        tag_last_pulled:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-          description: datetime of last pull
-          nullable: true
-        tag_last_pushed:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-          description: datetime of last push
-          nullable: true
-    paginated_tags:
-      allOf:
-        - $ref: '#/components/schemas/page'
-        - type: object
-          properties:
-            results:
-              type: array
-              items:
-                $ref: '#/components/schemas/tag'
-    page:
-      type: object
-      properties:
-        count:
-          type: integer
-          description: total number of results available across all pages
-        next:
-          type: string
-          description: link to next page of results if any
-          nullable: true
-        previous:
-          type: string
-          description: link to previous page of results  if any
-          nullable: true
-    scim_schema_attribute:
-      type: object
-      properties:
-        name:
-          type: string
-          example: userName
-        type:
-          enum:
-            - string
-            - boolean
-            - complex
-          type: string
-          example: string
-        multiValued:
-          type: boolean
-          example: false
-        description:
-          type: string
-          example: Unique identifier for the User, typically used by the user to directly authenticate to the service provider. Each User MUST include a non-empty userName value. This identifier MUST be unique across the service provider's entire set of Users.
-        required:
-          type: boolean
-          example: true
-        caseExact:
-          type: boolean
-          example: false
-        mutability:
-          type: string
-          example: readWrite
-        returned:
-          type: string
-          example: default
-        uniqueness:
-          type: string
-          example: server
-    scim_schema_parent_attribute:
-      allOf:
-        - $ref: '#/components/schemas/scim_schema_attribute'
-        - type: object
-          properties:
-            subAttributes:
-              type: array
-              items:
-                $ref: '#/components/schemas/scim_schema_attribute'
-    invite:
-      type: object
-      properties:
-        id:
-          type: string
-          description: uuid representing the invite id
-          example: e36eca69-4cc8-4f17-9845-ae8c2b832691
-        inviter_username:
-          type: string
-          example: moby
-        invitee:
-          type: string
-          description: can either be a dockerID for registred users or an email for non-registred users
-          example: invitee@docker.com
-        org:
-          type: string
-          description: name of the org to join
-          example: docker
-        team:
-          type: string
-          description: name of the team (user group) to join
-          example: owners
-        created_at:
-          type: string
-          example: '2021-10-28T18:30:19.520861Z'
-    bulk_invite:
-      type: object
-      properties:
-        invitees:
-          type: array
-          description: A list of invitees
-          items:
-            type: object
-            properties:
-              invitee:
-                type: string
-                description: invitee email or Docker ID
-              status:
-                type: string
-                description: status of the invite or validation error
-              invite:
-                description: Invite data if successfully invited
-                $ref: '#/components/schemas/invite'
-      example:
-        invitees:
-          - invitee: invitee@docker.com
-            status: invited
-            invite:
-              id: e36eca69-4cc8-4f17-9845-ae8c2b832691
-              inviter_username: moby
-              invitee: invitee@docker.com
-              org: docker
-              team: owners
-              created_at: '2021-10-28T18:30:19.520861Z'
-          - invitee: invitee2@docker.com
-            status: existing_org_member
-          - invitee: invitee3@docker.com
-            status: invalid_email_or_docker_id
-    error:
-      type: object
-      properties:
-        errinfo:
-          type: object
-          items:
-            type: string
-        detail:
-          type: string
-        message:
-          type: string
-    scim_error:
-      type: object
-      properties:
-        status:
-          type: string
-          description: The status code for the response in string format.
-        schemas:
-          type: array
-          items:
-            type: string
-            default: urn:ietf:params:scim:api:messages:2.0:Error
-        detail:
-          type: string
-          description: Details about why the request failed.
-    user:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 0ab70deb065a43fcacd55d48caa945d8
-          description: The UUID trimmed
-        company:
-          type: string
-          example: Docker Inc
-        date_joined:
-          type: string
-          example: '2021-01-05T21:06:53.506400Z'
-        full_name:
-          type: string
-          example: Jon Snow
-        gravatar_email:
-          type: string
-        gravatar_url:
-          type: string
-        location:
-          type: string
-        profile_url:
-          type: string
-        type:
-          type: string
-          enum:
-            - User
-            - Org
-          example: User
-        username:
-          type: string
-          example: dockeruser
-    org_member:
-      allOf:
-        - $ref: '#/components/schemas/user'
-      properties:
-        email:
-          type: string
-          description: User's email address
-          example: example@docker.com
-        role:
-          type: string
-          description: User's role in the Organization
-          enum:
-            - Owner
-            - Member
-            - Invitee
-          example: Owner
-        groups:
-          type: array
-          description: Groups (Teams) that the user is member of
-          items:
-            type: string
-          example:
-            - developers
-            - owners
-        is_guest:
-          type: boolean
-          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as Guest member
-          example: false
-        primary_email:
-          type: string
-          description: User's email primary address
-          example: example@docker.com
-          deprecated: true
     org_member_paginated:
       type: object
       properties:
@@ -5606,6 +5671,7 @@ components:
           example: Docker Inc
         date_joined:
           type: string
+          format: date-time
           example: '2021-01-05T21:06:53.506400Z'
         full_name:
           type: string
@@ -5859,10 +5925,12 @@ components:
               example: https://hub.docker.com/v2/scim/2.0/Users/d80f7c79-7730-49d8-9a41-7c42fb622d9c
             created:
               type: string
+              format: date-time
               description: The creation date for the user as a RFC3339 formatted string.
               example: '2022-05-20T00:54:18Z'
             lastModified:
               type: string
+              format: date-time
               description: The date the user was last modified as a RFC3339 formatted string.
               example: '2022-05-20T00:54:18Z'
   parameters:

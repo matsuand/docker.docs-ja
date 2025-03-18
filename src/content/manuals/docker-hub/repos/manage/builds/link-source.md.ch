@@ -6,11 +6,13 @@ description: Link to GitHub and BitBucket
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, trusted,
   builds, trusted builds, automated builds, GitHub
 title: Configure automated builds from GitHub and BitBucket
+linkTitle: Link accounts
 @y
 description: Link to GitHub and BitBucket
 keywords: Docker, docker, registry, accounts, plans, Dockerfile, Docker Hub, trusted,
   builds, trusted builds, automated builds, GitHub
 title: Configure automated builds from GitHub and BitBucket
+linkTitle: Link accounts
 @z
 
 @x
@@ -54,21 +56,15 @@ If you are linking a source code provider to create autobuilds for a team, follo
 @z
 
 @x
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @y
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @z
 
 @x
-    ![Repository settings menu](./images/docker-hub-repo-settings-menu.png)
+3. Select **Link provider** for the source provider you want to link.
 @y
-    ![Repository settings menu](./images/docker-hub-repo-settings-menu.png)
-@z
-
-@x
-3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
-@y
-3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
+3. Select **Link provider** for the source provider you want to link.
 @z
 
 @x
@@ -256,15 +252,15 @@ from Docker Hub, and from your GitHub account.
 @z
 
 @x
-1. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+1. Select **My Hub** > **Settings** > **Linked accounts**.
 @y
-1. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+1. Select **My Hub** > **Settings** > **Linked accounts**.
 @z
 
 @x
-2. From the **Linked accounts** tab, select the plug icon next to the source provider you want to remove.
+2. Select **Unlink provider** next to the source provider you want to remove.
 @y
-2. From the **Linked accounts** tab, select the plug icon next to the source provider you want to remove.
+2. Select **Unlink provider** next to the source provider you want to remove.
 @z
 
 @x
@@ -314,15 +310,15 @@ code provider.
 @z
 
 @x
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @y
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @z
 
 @x
-3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
+3. Select **Link provider** for the source provider you want to link.
 @y
-3. From the **Linked accounts** tab, select **Link provider** for the source provider you want to link.
+3. Select **Link provider** for the source provider you want to link.
 @z
 
 @x
@@ -358,15 +354,15 @@ unlink it both from Docker Hub, and revoke authorization in your Bitbucket accou
 @z
 
 @x
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @y
-2. Select the **Settings** icon in the top-right navigation, then select **Repository Settings**.
+2. Select **My Hub** > **Settings** > **Linked accounts**.
 @z
 
 @x
-3. From the **Linked accounts** tab, select the **Plug** icon next to the source provider you want to remove.
+3. Select **Unlink provider** next to the source provider you want to remove.
 @y
-3. From the **Linked accounts** tab, select the **Plug** icon next to the source provider you want to remove.
+3. Select **Unlink provider** next to the source provider you want to remove.
 @z
 
 @x

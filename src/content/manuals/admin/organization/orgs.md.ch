@@ -69,7 +69,7 @@ detailed instructions on converting an existing user account to an organization,
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
-2. Select **Organizations** and then **Create Organization** to create a new organization.
+2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
 3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
 4. Select **Continue to profile**.
 5. Enter an **Organization namespace**. This is the official, unique name for
@@ -77,7 +77,7 @@ your organization in Docker Hub. It's not possible to change the name of the
 organization after you've created it.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
-2. Select **Organizations** and then **Create Organization** to create a new organization.
+2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
 3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
 4. Select **Continue to profile**.
 5. Enter an **Organization namespace**. This is the official, unique name for
@@ -250,10 +250,10 @@ To view an organization:
 @z
 
 @x
-2. Select **Organizations** in the top navigation bar, then choose your
+2. Select **My Hub** in the top navigation bar, then choose your
    organization from the list.
 @y
-2. Select **Organizations** in the top navigation bar, then choose your
+2. Select **My Hub** in the top navigation bar, then choose your
    organization from the list.
 @z
 
@@ -307,13 +307,13 @@ configure your organization.
 - **Settings**: Displays information about your
   organization, and you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](/manuals/security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](/manuals/security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](/manuals/admin/organization/deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @y
 - **Settings**: Displays information about your
   organization, and you to view and change your repository privacy
   settings, configure org permissions such as
-  [Image Access Management](manuals/security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](../deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
+  [Image Access Management](manuals/security/for-admins/hardened-desktop/image-access-management.md), configure notification settings, and [deactivate](manuals/admin/organization/deactivate-account.md#deactivate-an-organization) You can also update your organization name and company name that appear on your organization landing page. You must be an owner to access the
    organization's **Settings** page.
 @z
 
@@ -392,9 +392,9 @@ configure your organization.
 @z
 
 @x
-- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](/manuals/admin/deactivate-account.md).
+- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](/manuals/admin/organization/deactivate-account.md).
 @y
-- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](manuals/admin/deactivate-account.md).
+- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](manuals/admin/organization/deactivate-account.md).
 @z
 
 @x

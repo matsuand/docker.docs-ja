@@ -15,12 +15,12 @@ linkTitle: Create
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. Near the top-right corner, select **Create repository**.
 4. Select a **Namespace**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. Near the top-right corner, select **Create repository**.
 4. Select a **Namespace**.
 @z

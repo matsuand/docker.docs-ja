@@ -83,10 +83,10 @@ unarchived, the following occurs:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x
@@ -127,10 +127,10 @@ unarchived, the following occurs:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x

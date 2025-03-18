@@ -12,10 +12,10 @@ keywords: Docker Hub, delete, deactivate organization, account, organization man
 @z
 
 @x
-You can deactivate an account at any time. This section describes the prerequisites and steps to deactivate an organization account. For information on deactivating a user account, see [Deactivate a user account](../accounts/deactivate-user-account.md).
+You can deactivate an account at any time. This section describes the prerequisites and steps to deactivate an organization account. For information on deactivating a user account, see [Deactivate a user account](../../accounts/deactivate-user-account.md).
 @y
 アカウントはいつでも無効化することができます。
-This section describes the prerequisites and steps to deactivate an organization account. For information on deactivating a user account, see [Deactivate a user account](../accounts/deactivate-user-account.md).
+This section describes the prerequisites and steps to deactivate an organization account. For information on deactivating a user account, see [Deactivate a user account](../../accounts/deactivate-user-account.md).
 @z
 
 @x
@@ -49,9 +49,9 @@ Before deactivating an organization, complete the following:
 @z
 
 @x
-- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/change.md).
+- If you have an active Docker subscription, [downgrade it to a free subscription](../../subscription/change.md).
 @y
-- If you have an active Docker subscription, [downgrade it to a free subscription](../subscription/change.md).
+- If you have an active Docker subscription, [downgrade it to a free subscription](../../subscription/change.md).
 @z
 
 @x
@@ -61,9 +61,9 @@ Before deactivating an organization, complete the following:
 @z
 
 @x
-- Unlink your [Github and Bitbucket accounts](../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
+- Unlink your [Github and Bitbucket accounts](../../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
 @y
-- Unlink your [Github and Bitbucket accounts](../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
+- Unlink your [Github and Bitbucket accounts](../../docker-hub/repos/manage/builds/link-source.md#unlink-a-github-user-account).
 @z
 
 @x
@@ -117,13 +117,13 @@ Once you have completed all the previous steps, you can deactivate your organiza
 @z
 
 @x
-1. On Docker Hub, select **Organizations**.
+1. On Docker Hub, select **My Hub**.
 2. Choose the organization you want to deactivate.
-3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
+3. In **Settings**, select the **Deactivate org** and then **Deactivate organization**.
 @y
-1. On Docker Hub, select **Organizations**.
+1. On Docker Hub, select **My Hub**.
 2. Choose the organization you want to deactivate.
-3. In **Settings**, select the **Deactivate Org** tab and then **Deactivate organization**.
+3. In **Settings**, select the **Deactivate org** and then **Deactivate organization**.
 @z
 
 @x

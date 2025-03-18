@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn about personal repository settings in Docker Hub
 keywords: Docker Hub, Hub, repositories, settings
 title: Personal settings for repositories
 linkTitle: Personal settings
-toc_max: 3
-weight: 50
----
 @y
----
 description: Learn about personal repository settings in Docker Hub
 keywords: Docker Hub, Hub, repositories, settings
 title: Personal settings for repositories
 linkTitle: Personal settings
-toc_max: 3
-weight: 50
----
 @z
 
 @x
@@ -61,14 +53,12 @@ creates the repository with your default repository privacy.
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
-3. Near the top-right corner, select the settings icon and then **Repository Settings**.
-4. Select the **Default privacy** for any new repository created.
+2. Select **My Hub** > **Settings** > **Default privacy**.
+3. Select the **Default privacy** for any new repository created.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
-3. Near the top-right corner, select the settings icon and then **Repository Settings**.
-4. Select the **Default privacy** for any new repository created.
+2. Select **My Hub** > **Settings** > **Default privacy**.
+3. Select the **Default privacy** for any new repository created.
 @z
 
 @x
@@ -88,9 +78,9 @@ creates the repository with your default repository privacy.
 @z
 
 @x
-5. Select **Save**.
+4. Select **Save**.
 @y
-5. Select **Save**.
+4. Select **Save**.
 @z
 
 @x
@@ -115,16 +105,12 @@ autobuilds.
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
-3. Near the top-right corner, select the settings icon and then **Repository Settings**.
-4. Select the **Notifications**
-5. Select the notifications to receive by email.
+2. Select **My Hub** > **Repositories** > **Settings** > **Notifications**.
+3. Select the notifications to receive by email.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
-3. Near the top-right corner, select the settings icon and then **Repository Settings**.
-4. Select the **Notifications**
-5. Select the notifications to receive by email.
+2. Select **My Hub** > **Repositories** > **Settings** > **Notifications**.
+3. Select the notifications to receive by email.
 @z
 
 @x
@@ -138,7 +124,7 @@ autobuilds.
 @z
 
 @x
-6. Select **Save**.
+4. Select **Save**.
 @y
-6. Select **Save**.
+4. Select **Save**.
 @z

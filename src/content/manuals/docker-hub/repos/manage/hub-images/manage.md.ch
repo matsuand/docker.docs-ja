@@ -67,7 +67,7 @@ The following objects are shown in the diagram.
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. In the list, select a repository.
 4. Select **Image Management**.
 5. Search, filter, or sort the items.
@@ -78,7 +78,7 @@ The following objects are shown in the diagram.
      pulled**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. In the list, select a repository.
 4. Select **Image Management**.
 5. Search, filter, or sort the items.

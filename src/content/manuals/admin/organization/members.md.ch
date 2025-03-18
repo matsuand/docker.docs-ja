@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Manage organization members
@@ -114,8 +114,8 @@ address you received the invitation through.
 4. Optional. If you do not have an account and created one, you must navigate
 back to your email inbox and verify your email address using the Docker verification
 email.
-5. Once you are signed in to Docker Hub, select **Organizations** from the top-level navigation menu.
-6. The organizations page will display your invitation. Select **Accept**.
+5. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
+6. Select **Accept** on your invitation.
 @y
 3. The Docker create an account page will open. If you already have an account, select **Already have an account? Sign in**.
 If you do not have an account yet, create an account using the same email
@@ -123,8 +123,8 @@ address you received the invitation through.
 4. Optional. If you do not have an account and created one, you must navigate
 back to your email inbox and verify your email address using the Docker verification
 email.
-5. Once you are signed in to Docker Hub, select **Organizations** from the top-level navigation menu.
-6. The organizations page will display your invitation. Select **Accept**.
+5. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
+6. Select **Accept** on your invitation.
 @z
 
 @x
@@ -167,16 +167,24 @@ To resend an invitation from Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. In the table, locate the invitee, select the **Actions** icon, and then select
 **Resend invitation**.
 4. Select **Invite** to confirm.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. In the table, locate the invitee, select the **Actions** icon, and then select
 **Resend invitation**.
 4. Select **Invite** to confirm.
+@z
+
+@x
+You can also resend an invitation using the Docker Hub API. For more information,
+see the [Resend an invite](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1%7Bid%7D~1resend/patch) API endpoint.
+@y
+You can also resend an invitation using the Docker Hub API. For more information,
+see the [Resend an invite](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1%7Bid%7D~1resend/patch) API endpoint.
 @z
 
 @x
@@ -235,14 +243,22 @@ To remove a member's invitation from Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
 4. Follow the on-screen instructions to remove the member or invitee.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
 4. Follow the on-screen instructions to remove the member or invitee.
+@z
+
+@x
+You can also remove an invitation using the Docker Hub API. For more information,
+see the [Cancel an invite](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1%7Bid%7D/delete) API endpoint.
+@y
+You can also remove an invitation using the Docker Hub API. For more information,
+see the [Cancel an invite](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1%7Bid%7D/delete) API endpoint.
 @z
 
 @x
@@ -313,23 +329,23 @@ To add a member to a team with Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Select the **Action** icon, and then select **Add to team**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Select the **Action** icon, and then select **Add to team**.
 @z
 
 @x
    > [!NOTE]
    >
-   > You can also navigate to **Organizations** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
+   > You can also navigate to **My Hub** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
 4. Select the team and then select **Add**.
 @y
    > [!NOTE]
    >
-   > You can also navigate to **Organizations** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
+   > You can also navigate to **My Hub** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
 4. Select the team and then select **Add**.
 @z
 
@@ -423,12 +439,12 @@ To remove a member from a specific team with Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, **Teams**, and then the team.
+2. Select **My Hub**, your organization, **Teams**, and then the team.
 3. Select the **X** next to the user’s name to remove them from the team.
 4. When prompted, select **Remove** to confirm.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, **Teams**, and then the team.
+2. Select **My Hub**, your organization, **Teams**, and then the team.
 3. Select the **X** next to the user’s name to remove them from the team.
 4. When prompted, select **Remove** to confirm.
 @z
@@ -503,13 +519,13 @@ To update a member role:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
 4. Select **Edit role**.
 5. Select their organization, select the role you want to assign, and then select **Save**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
 4. Select **Edit role**.
 5. Select their organization, select the role you want to assign, and then select **Save**.
@@ -519,6 +535,12 @@ To update a member role:
 ## Export members CSV file
 @y
 ## Export members CSV file
+@z
+
+@x
+{{< summary-bar feature_name="Admin orgs" >}}
+@y
+{{< summary-bar feature_name="Admin orgs" >}}
 @z
 
 @x
@@ -540,6 +562,14 @@ Owners can export a CSV file containing all members. The CSV file for a company 
 @z
 
 @x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
 To export a CSV file of your members:
 @y
 To export a CSV file of your members:
@@ -547,10 +577,42 @@ To export a CSV file of your members:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Select the **Action** icon and then select **Export users as CSV**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Organizations**, your organization, and then **Members**.
+2. Select **My Hub**, your organization, and then **Members**.
 3. Select the **Action** icon and then select **Export users as CSV**.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@y
+{{< /tab >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+To export a CSV file of your members:
+@y
+To export a CSV file of your members:
+@z
+
+@x
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
+2. Select **Members**.
+3. Select the **download** icon to export a CSV file of all members.
+@y
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
+2. Select **Members**.
+3. Select the **download** icon to export a CSV file of all members.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z

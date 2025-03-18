@@ -2,21 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Discover how to manage repository tags on Docker Hub.
 keywords: Docker Hub, Hub, repository content, tags
 title: Tags on Docker Hub
 linkTitle: Tags
-weight: 10
----
 @y
----
 description: Discover how to manage repository tags on Docker Hub.
 keywords: Docker Hub, Hub, repository content, tags
 title: Tags on Docker Hub
 linkTitle: Tags
-weight: 10
----
 @z
 
 @x
@@ -91,10 +85,10 @@ You can view the available tags and the size of the associated image.
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x
@@ -143,10 +137,10 @@ delete tags.
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x

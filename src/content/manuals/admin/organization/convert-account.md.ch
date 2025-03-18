@@ -55,12 +55,12 @@ Before you convert a user account to an organization, ensure that you meet the f
 
 @x
     To do this:
-    1. Navigate to **Organizations** and then select the organization(s) you need to leave.
+    1. Navigate to **My Hub** and then select the organization you need to leave.
     2. Find your username in the **Members** tab.
     3. Select the **More options** menu and then select **Leave organization**.
 @y
     To do this:
-    1. Navigate to **Organizations** and then select the organization(s) you need to leave.
+    1. Navigate to **My Hub** and then select the organization you need to leave.
     2. Find your username in the **Members** tab.
     3. Select the **More options** menu and then select **Leave organization**.
 @z

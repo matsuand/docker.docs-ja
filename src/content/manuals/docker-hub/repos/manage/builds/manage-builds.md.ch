@@ -1,16 +1,12 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: Manage autobuilds
 description: How to manage autobuilds in Docker Hub
-keywords: autobuilds, automated, docker hub, registry
 @y
 title: Manage autobuilds
 description: How to manage autobuilds in Docker Hub
-keywords: autobuilds, automated, docker hub, registry
 @z
 
 @x
@@ -122,9 +118,9 @@ To disable an automated build:
 @z
 
 @x
-1. From the **Repositories** page, select a repository, and select the **Builds** tab.
+1. In [Docker Hub](https://hub.docker.com), go to **My Hub** >  **Repositories**, select a repository, and select the **Builds** tab.
 @y
-1. From the **Repositories** page, select a repository, and select the **Builds** tab.
+1. In [Docker Hub](https://hub.docker.com), go to **My Hub** >  **Repositories**, select a repository, and select the **Builds** tab.
 @z
 
 @x

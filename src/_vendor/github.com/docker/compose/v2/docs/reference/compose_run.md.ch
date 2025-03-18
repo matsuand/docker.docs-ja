@@ -167,6 +167,7 @@ specified in the service configuration.
 | `--dry-run`             | `bool`        |          | Execute command in dry run mode                                                  |
 | `--entrypoint`          | `string`      |          | Override the entrypoint of the image                                             |
 | `-e`, `--env`           | `stringArray` |          | Set environment variables                                                        |
+| `--env-from-file`       | `stringArray` |          | Set environment variables from file                                              |
 | `-i`, `--interactive`   | `bool`        | `true`   | Keep STDIN open even if not attached                                             |
 | `-l`, `--label`         | `stringArray` |          | Add or override a label                                                          |
 | `--name`                | `string`      |          | Assign a name to the container                                                   |
@@ -192,6 +193,7 @@ specified in the service configuration.
 | `--dry-run`             | `bool`        |          | Execute command in dry run mode                                                  |
 | `--entrypoint`          | `string`      |          | Override the entrypoint of the image                                             |
 | `-e`, `--env`           | `stringArray` |          | Set environment variables                                                        |
+| `--env-from-file`       | `stringArray` |          | Set environment variables from file                                              |
 | `-i`, `--interactive`   | `bool`        | `true`   | Keep STDIN open even if not attached                                             |
 | `-l`, `--label`         | `stringArray` |          | Add or override a label                                                          |
 | `--name`                | `string`      |          | Assign a name to the container                                                   |

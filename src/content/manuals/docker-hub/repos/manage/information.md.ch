@@ -106,9 +106,9 @@ effective in search results, driving more relevant traffic to your repository.
 @z
 
 @x
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x
@@ -214,9 +214,9 @@ Consider the following repository overview best practices.
 @z
 
 @x
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x
@@ -369,10 +369,10 @@ To edit the categories of a repository:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x

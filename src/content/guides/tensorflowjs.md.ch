@@ -1295,12 +1295,12 @@ developer ecosystem. To share your image:
 @x
 4. Verify that you pushed the image to Docker Hub.
    1. Go to [Docker Hub](https://hub.docker.com).
-   2. Select **Repositories**.
+   2. Select **My Hub** > **Repositories**.
    3. View the **Last pushed** time for your repository.
 @y
 4. Verify that you pushed the image to Docker Hub.
    1. Go to [Docker Hub](https://hub.docker.com).
-   2. Select **Repositories**.
+   2. Select **My Hub** > **Repositories**.
    3. View the **Last pushed** time for your repository.
 @z
 

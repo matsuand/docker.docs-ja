@@ -180,15 +180,15 @@ Export usage data for your organization's images using the Docker Hub website by
 @z
 
 @x
-1.  Sign in to [Docker Hub](https://hub.docker.com/) and select **Organizations**.
+1.  Sign in to [Docker Hub](https://hub.docker.com/) and select **My Hub**.
 @y
-1.  Sign in to [Docker Hub](https://hub.docker.com/) and select **Organizations**.
+1.  Sign in to [Docker Hub](https://hub.docker.com/) and select **My Hub**.
 @z
 
 @x
-2.  Choose your organization and select **Insights and analytics**.
+2.  Choose your organization and select **Analytics**.
 @y
-2.  Choose your organization and select **Insights and analytics**.
+2.  Choose your organization and select **Analytics**.
 @z
 
 @x

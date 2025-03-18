@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 command: docker compose run
 short: Run a one-off command on a service
@@ -19,15 +21,7 @@ long: |-
     The following command starts the `web` service and runs `bash` as its command:
 @z
 
-@x
-    ```console
-    $ docker compose run web bash
-    ```
-@y
-    ```console
-    $ docker compose run web bash
-    ```
-@z
+% snip command...
 
 @x
     Commands you use with run start in new containers with configuration defined by that of the service,
@@ -57,15 +51,7 @@ long: |-
     to be created and mapped to the host, specify the `--service-ports`
 @z
 
-@x
-    ```console
-    $ docker compose run --service-ports web python manage.py shell
-    ```
-@y
-    ```console
-    $ docker compose run --service-ports web python manage.py shell
-    ```
-@z
+% snip command...
 
 @x
     Alternatively, manual port mapping can be specified with the `--publish` or `-p` options, just as when using docker run:
@@ -73,15 +59,7 @@ long: |-
     Alternatively, manual port mapping can be specified with the `--publish` or `-p` options, just as when using docker run:
 @z
 
-@x
-    ```console
-    $ docker compose run --publish 8080:80 -p 2022:22 -p 127.0.0.1:2021:21 web python manage.py shell
-    ```
-@y
-    ```console
-    $ docker compose run --publish 8080:80 -p 2022:22 -p 127.0.0.1:2021:21 web python manage.py shell
-    ```
-@z
+% snip command...
 
 @x
     If you start a service configured with links, the run command first checks to see if the linked service is running
@@ -93,15 +71,7 @@ long: |-
     passed it. For example, you could run:
 @z
 
-@x
-    ```console
-    $ docker compose run db psql -h db -U docker
-    ```
-@y
-    ```console
-    $ docker compose run db psql -h db -U docker
-    ```
-@z
+% snip command...
 
 @x
     This opens an interactive PostgreSQL shell for the linked `db` container.
@@ -115,15 +85,7 @@ long: |-
     If you do not want the run command to start linked containers, use the `--no-deps` flag:
 @z
 
-@x
-    ```console
-    $ docker compose run --no-deps web python manage.py shell
-    ```
-@y
-    ```console
-    $ docker compose run --no-deps web python manage.py shell
-    ```
-@z
+% snip command...
 
 @x
     If you want to remove the container after running while overriding the container’s restart policy, use the `--rm` flag:
@@ -131,516 +93,166 @@ long: |-
     If you want to remove the container after running while overriding the container’s restart policy, use the `--rm` flag:
 @z
 
-@x
-    ```console
-    $ docker compose run --rm web python manage.py db upgrade
-    ```
-@y
-    ```console
-    $ docker compose run --rm web python manage.py db upgrade
-    ```
-@z
+% snip command...
 
 @x
     This runs a database upgrade script, and removes the container when finished running, even if a restart policy is
     specified in the service configuration.
-usage: docker compose run [OPTIONS] SERVICE [COMMAND] [ARGS...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: build
-      value_type: bool
-      default_value: "false"
-      description: Build image before starting container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-add
-      value_type: list
-      description: Add Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-drop
-      value_type: list
-      description: Drop Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: Run container in background and print container ID
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: entrypoint
-      value_type: string
-      description: Override the entrypoint of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
-      description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "true"
-      description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      shorthand: l
-      value_type: stringArray
-      default_value: '[]'
-      description: Add or override a label
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
-      description: Assign a name to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-TTY
-      shorthand: T
-      value_type: bool
-      default_value: "true"
-      description: 'Disable pseudo-TTY allocation (default: auto-detected)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
-      description: Don't start linked services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish
-      shorthand: p
-      value_type: stringArray
-      default_value: '[]'
-      description: Publish a container's port(s) to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: policy
-      description: Pull image before running ("always"|"missing"|"never")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet-pull
-      value_type: bool
-      default_value: "false"
-      description: Pull without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
-      description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "false"
-      description: Automatically remove the container when it exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: service-ports
-      shorthand: P
-      value_type: bool
-      default_value: "false"
-      description: |
-        Run command with all service's ports enabled and mapped to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "true"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: use-aliases
-      value_type: bool
-      default_value: "false"
-      description: |
-        Use the service's network useAliases in the network(s) the container connects to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: Run as specified username or uid
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume
-      shorthand: v
-      value_type: stringArray
-      default_value: '[]'
-      description: Bind mount a volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     This runs a database upgrade script, and removes the container when finished running, even if a restart policy is
     specified in the service configuration.
+@z
+
+@x
 usage: docker compose run [OPTIONS] SERVICE [COMMAND] [ARGS...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: build
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker compose run [OPTIONS] SERVICE [COMMAND] [ARGS...]
+@z
+
+% options:
+
+@x build
       description: Build image before starting container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-add
-      value_type: list
+@y
+      description: Build image before starting container
+@z
+
+@x cap-add
       description: Add Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-drop
-      value_type: list
+@y
+      description: Add Linux capabilities
+@z
+
+@x cap-drop
       description: Drop Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+      description: Drop Linux capabilities
+@z
+
+@x detach
       description: Run container in background and print container ID
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: entrypoint
-      value_type: string
+@y
+      description: Run container in background and print container ID
+@z
+
+@x entrypoint
       description: Override the entrypoint of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Override the entrypoint of the image
+@z
+
+@x env
       description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "true"
+@y
+      description: Set environment variables
+@z
+
+@x interactive
       description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      shorthand: l
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Keep STDIN open even if not attached
+@z
+
+@x label
       description: Add or override a label
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
+@y
+      description: Add or override a label
+@z
+
+@x name
       description: Assign a name to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-TTY
-      shorthand: T
-      value_type: bool
-      default_value: "true"
+@y
+      description: Assign a name to the container
+@z
+
+@x no-TTY
       description: 'Disable pseudo-TTY allocation (default: auto-detected)'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
+@y
+      description: 'Disable pseudo-TTY allocation (default: auto-detected)'
+@z
+
+@x no-deps
       description: Don't start linked services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish
-      shorthand: p
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Don't start linked services
+@z
+
+@x publish
       description: Publish a container's port(s) to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: policy
+@y
+      description: Publish a container's port(s) to the host
+@z
+
+@x pull
       description: Pull image before running ("always"|"missing"|"never")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet-pull
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pull image before running ("always"|"missing"|"never")
+@z
+
+@x quiet-pull
       description: Pull without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pull without printing progress information
+@z
+
+@x remove-orphans
       description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "false"
+@y
+      description: Remove containers for services not defined in the Compose file
+@z
+
+@x rm
       description: Automatically remove the container when it exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: service-ports
-      shorthand: P
-      value_type: bool
-      default_value: "false"
+@y
+      description: Automatically remove the container when it exits
+@z
+
+@x service-ports
       description: |
         Run command with all service's ports enabled and mapped to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "true"
+@y
+      description: |
+        Run command with all service's ports enabled and mapped to the host
+@z
+
+@x tty
       description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: use-aliases
-      value_type: bool
-      default_value: "false"
+@y
+      description: Allocate a pseudo-TTY
+@z
+
+@x use-aliases
       description: |
         Use the service's network useAliases in the network(s) the container connects to
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: Run as specified username or uid
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume
-      shorthand: v
-      value_type: stringArray
-      default_value: '[]'
-      description: Bind mount a volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Use the service's network useAliases in the network(s) the container connects to
 @z
+
+@x user
+      description: Run as specified username or uid
+@y
+      description: Run as specified username or uid
+@z
+
+@x volume
+      description: Bind mount a volume
+@y
+      description: Bind mount a volume
+@z
+
+@x workdir
+      description: Working directory inside the container
+@y
+      description: Working directory inside the container
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

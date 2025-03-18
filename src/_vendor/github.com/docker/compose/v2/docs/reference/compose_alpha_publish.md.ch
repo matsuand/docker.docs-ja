@@ -28,7 +28,7 @@ Publish compose application
 | `--oci-version`           | `string` |         | OCI image/artifact specification version (automatically determined by default) |
 | `--resolve-image-digests` | `bool`   |         | Pin image tags to digests                                                      |
 | `--with-env`              | `bool`   |         | Include environment variables in the published OCI artifact                    |
-| `-y`, `--y`               | `bool`   |         | Assume "yes" as answer to all prompts                                          |
+| `-y`, `--yes`             | `bool`   |         | Assume "yes" as answer to all prompts                                          |
 @y
 | Name                      | Type     | Default | Description                                                                    |
 |:--------------------------|:---------|:--------|:-------------------------------------------------------------------------------|
@@ -36,7 +36,7 @@ Publish compose application
 | `--oci-version`           | `string` |         | OCI image/artifact specification version (automatically determined by default) |
 | `--resolve-image-digests` | `bool`   |         | Pin image tags to digests                                                      |
 | `--with-env`              | `bool`   |         | Include environment variables in the published OCI artifact                    |
-| `-y`, `--y`               | `bool`   |         | Assume "yes" as answer to all prompts                                          |
+| `-y`, `--yes`             | `bool`   |         | Assume "yes" as answer to all prompts                                          |
 @z
 
 @x

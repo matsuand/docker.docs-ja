@@ -93,11 +93,11 @@ To change repository visibility:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. Select a repository.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 3. Select a repository.
 @z
 
@@ -188,9 +188,9 @@ teams, or organization access tokens to manage access.
 @z
 
 @x
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x
@@ -290,9 +290,9 @@ To configure team repository permissions:
 @z
 
 @x
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @y
-2. Select **Repositories**.
+2. Select **My Hub** > **Repositories**.
 @z
 
 @x

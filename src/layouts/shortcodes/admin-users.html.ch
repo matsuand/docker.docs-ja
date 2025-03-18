@@ -6,7 +6,7 @@
 @x
 {{ $invite_button := "**Invite members**" }}
 {{ $export_button := "**Export members**" }}
-{{ $member_navigation := "Select **Organizations**, your organization, and then **Members**." }}
+{{ $member_navigation := "Select **My Hub**, your organization, and then **Members**." }}
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $role_mapping_link := "[SCIM for role mapping](/security/for-admins/provisioning/scim/)" }}
@@ -22,7 +22,7 @@
 @y
 {{ $invite_button := "**Invite members**" }}
 {{ $export_button := "**Export members**" }}
-{{ $member_navigation := "Select **Organizations**, your organization, and then **Members**." }}
+{{ $member_navigation := "Select **My Hub**, your organization, and then **Members**." }}
 {{ $remove_button := "**Remove member**" }}
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
 {{ $role_mapping_link := "[SCIM for role mapping](__SUBDIR__/security/for-admins/provisioning/scim/)" }}

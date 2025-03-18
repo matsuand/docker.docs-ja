@@ -2,21 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Discover how to move images between repositories.
 keywords: Docker Hub, Hub, repository content, move
 title: Move images between repositories
 linkTitle: Move images
-weight: 40
----
 @y
----
 description: Discover how to move images between repositories.
 keywords: Docker Hub, Hub, repository content, move
 title: Move images between repositories
 linkTitle: Move images
-weight: 40
----
 @z
 
 @x
@@ -114,11 +108,11 @@ personal account and push them to an organization that's owned by you.
 @z
 
 @x
-1. Navigate to [Docker Hub](https://hub.docker.com) and select **Organizations**.
+1. Navigate to [Docker Hub](https://hub.docker.com) and select **My Hub**.
 2. Select the applicable organization and verify that your user account is a member of the organization.
 3. Sign in to [Docker Hub](https://hub.docker.com) using your original Docker account, and pull your images:
 @y
-1. Navigate to [Docker Hub](https://hub.docker.com) and select **Organizations**.
+1. Navigate to [Docker Hub](https://hub.docker.com) and select **My Hub**.
 2. Select the applicable organization and verify that your user account is a member of the organization.
 3. Sign in to [Docker Hub](https://hub.docker.com) using your original Docker account, and pull your images:
 @z

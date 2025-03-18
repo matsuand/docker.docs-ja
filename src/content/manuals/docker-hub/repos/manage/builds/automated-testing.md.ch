@@ -176,9 +176,9 @@ Docker repository, regardless of the Autotest settings.
 @z
 
 @x
-1. Sign in to Docker Hub and select **Repositories**.
+1. Sign in to Docker Hub and select **My Hub** > **Repositories**.
 @y
-1. Sign in to Docker Hub and select **Repositories**.
+1. Sign in to Docker Hub and select **My Hub** > **Repositories**.
 @z
 
 @x

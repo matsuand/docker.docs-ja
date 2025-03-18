@@ -59,14 +59,14 @@ Get started creating a single sign-on (SSO) connection for your organization or 
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations** and then your organization from the list.
+2. Select **My Hub** and then your organization from the list.
 3. On your organization page, select **Settings** and then **Security**.
 4. Select **Add a domain**.
 5. Enter your domain in the text box and select **Add domain**.
 6. The pop-up modal will prompt you with steps to verify your domain. Copy the **TXT Record Value**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **Organizations** and then your organization from the list.
+2. Select **My Hub** and then your organization from the list.
 3. On your organization page, select **Settings** and then **Security**.
 4. Select **Add a domain**.
 5. Enter your domain in the text box and select **Add domain**.

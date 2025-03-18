@@ -6,237 +6,81 @@ command: docker compose create
 short: Creates containers for a service
 long: Creates containers for a service
 usage: docker compose create [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: build
-      value_type: bool
-      default_value: "false"
-      description: Build images before starting containers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-recreate
-      value_type: bool
-      default_value: "false"
-      description: |
-        Recreate containers even if their configuration and image haven't changed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-build
-      value_type: bool
-      default_value: "false"
-      description: Don't build an image, even if it's policy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-recreate
-      value_type: bool
-      default_value: "false"
-      description: |
-        If containers already exist, don't recreate them. Incompatible with --force-recreate.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: policy
-      description: Pull image before running ("always"|"missing"|"never"|"build")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet-pull
-      value_type: bool
-      default_value: "false"
-      description: Pull without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
-      description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: scale
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        Scale SERVICE to NUM instances. Overrides the `scale` setting in the Compose file if present.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: "y"
-      shorthand: "y"
-      value_type: bool
-      default_value: "false"
-      description: Assume "yes" as answer to all prompts and run non-interactively
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker compose create
 short: Creates containers for a service
 long: Creates containers for a service
 usage: docker compose create [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: build
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x build
       description: Build images before starting containers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force-recreate
-      value_type: bool
-      default_value: "false"
+@y
+      description: Build images before starting containers
+@z
+
+@x force-recreate
       description: |
         Recreate containers even if their configuration and image haven't changed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-build
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Recreate containers even if their configuration and image haven't changed
+@z
+
+@x no-build
       description: Don't build an image, even if it's policy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-recreate
-      value_type: bool
-      default_value: "false"
+@y
+      description: Don't build an image, even if it's policy
+@z
+
+@x no-recreate
       description: |
         If containers already exist, don't recreate them. Incompatible with --force-recreate.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: policy
+@y
+      description: |
+        If containers already exist, don't recreate them. Incompatible with --force-recreate.
+@z
+
+@x pull
       description: Pull image before running ("always"|"missing"|"never"|"build")
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet-pull
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pull image before running ("always"|"missing"|"never"|"build")
+@z
+
+@x quiet-pull
       description: Pull without printing progress information
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: remove-orphans
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pull without printing progress information
+@z
+
+@x remove-orphans
       description: Remove containers for services not defined in the Compose file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: scale
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Remove containers for services not defined in the Compose file
+@z
+
+@x scale
       description: |
         Scale SERVICE to NUM instances. Overrides the `scale` setting in the Compose file if present.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: "y"
-      shorthand: "y"
-      value_type: bool
-      default_value: "false"
-      description: Assume "yes" as answer to all prompts and run non-interactively
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Scale SERVICE to NUM instances. Overrides the `scale` setting in the Compose file if present.
 @z
+
+@x "y"
+      description: Assume "yes" as answer to all prompts and run non-interactively
+@y
+      description: Assume "yes" as answer to all prompts and run non-interactively
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

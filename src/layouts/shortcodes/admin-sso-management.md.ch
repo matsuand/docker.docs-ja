@@ -3,10 +3,10 @@
 
 @x
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ $sso_navigation := `Navigate to the SSO settings page for your organization. Select **Organizations**, your organization, **Settings**, and then **Security**.` }}
+{{ $sso_navigation := `Navigate to the SSO settings page for your organization. Select **My Hub**, your organization, **Settings**, and then **Security**.` }}
 @y
 {{ $product_link := "[Docker Hub](https://hub.docker.com)" }}
-{{ $sso_navigation := `Navigate to the SSO settings page for your organization. Select **Organizations**, your organization, **Settings**, and then **Security**.` }}
+{{ $sso_navigation := `Navigate to the SSO settings page for your organization. Select **My Hub**, your organization, **Settings**, and then **Security**.` }}
 @z
 
 @x

@@ -200,9 +200,9 @@ A [service account](../../docker-hub/service-accounts.md) is a Docker ID used fo
 @z
 
 @x
-Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/deactivate-account.md).
+Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/organization/deactivate-account.md).
 @y
-Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/deactivate-account.md).
+Only someone with access to the Docker account can deactivate the account. For more details, see [Deactivating an account](../../admin/organization/deactivate-account.md).
 @z
 
 @x

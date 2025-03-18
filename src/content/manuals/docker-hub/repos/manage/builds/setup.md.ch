@@ -43,9 +43,9 @@ Docker Hub のリポジトリにおいては、ソースプロバイダーへの
 @z
 
 @x
-1. From the **Repositories** section, select a repository to view its details.
+1. In [Docker Hub](https://hub.docker.com), go to **My Hub** > **Repositories**, and select a repository to view its details.
 @y
-1. **Repositories** (リポジトリ) セクションから、詳細を確認するリポジトリを選択します。
+1. [Docker Hub](https://hub.docker.com) において **My Hub** > **Repositories** (リポジトリ) セクションから、詳細を確認するリポジトリを選択します。
 @z
 
 @x
@@ -368,10 +368,10 @@ create dynamic tags
 
 @x
 All of these options are available from the **Build configuration** screen for
-each repository. Select **Repositories** from the left navigation, and select the name of the repository you want to edit. Select the **Builds** tab, and then select **Configure Automated builds**.
+each repository. In [Docker Hub](https://hub.docker.com), select **My Hub** > **Repositories**, and select the name of the repository you want to edit. Select the **Builds** tab, and then select **Configure Automated builds**.
 @y
 All of these options are available from the **Build configuration** screen for
-each repository. Select **Repositories** from the left navigation, and select the name of the repository you want to edit. Select the **Builds** tab, and then select **Configure Automated builds**.
+each repository. In [Docker Hub](https://hub.docker.com), select **My Hub** > **Repositories**, and select the name of the repository you want to edit. Select the **Builds** tab, and then select **Configure Automated builds**.
 @z
 
 @x

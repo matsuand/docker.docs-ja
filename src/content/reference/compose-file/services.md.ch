@@ -2697,21 +2697,27 @@ If present, `profiles` follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
 @x
-* `always`: Compose always pulls the image from the registry.
-* `never`: Compose doesn't pull the image from a registry and relies on the platform cached image.
+- `always`: Compose always pulls the image from the registry.
+- `never`: Compose doesn't pull the image from a registry and relies on the platform cached image.
    If there is no cached image, a failure is reported.
-* `missing`: Compose pulls the image only if it's not available in the platform cache.
+- `missing`: Compose pulls the image only if it's not available in the platform cache.
    This is the default option if you are not also using the [Compose Build Specification](build.md).
   `if_not_present` is considered an alias for this value for backward compatibility.
-* `build`: Compose builds the image. Compose rebuilds the image if it's already present.
+- `build`: Compose builds the image. Compose rebuilds the image if it's already present.
+- `daily`: Compose checks the registry for image updates if the last pull took place more than 24 hours ago.
+- `weekly`: Compose checks the registry for image updates if the last pull took place more than 7 days ago.
+- `every_<duration>`: Compose checks the registry for image updates if the last pull took place before `<duration>`. Duration can be expressed in weeks (`w`), days (`d`), hours (`h`), minutes (`m`), seconds (`s`) or a combination of these.
 @y
-* `always`: Compose always pulls the image from the registry.
-* `never`: Compose doesn't pull the image from a registry and relies on the platform cached image.
+- `always`: Compose always pulls the image from the registry.
+- `never`: Compose doesn't pull the image from a registry and relies on the platform cached image.
    If there is no cached image, a failure is reported.
-* `missing`: Compose pulls the image only if it's not available in the platform cache.
+- `missing`: Compose pulls the image only if it's not available in the platform cache.
    This is the default option if you are not also using the [Compose Build Specification](build.md).
   `if_not_present` is considered an alias for this value for backward compatibility.
-* `build`: Compose builds the image. Compose rebuilds the image if it's already present.
+- `build`: Compose builds the image. Compose rebuilds the image if it's already present.
+- `daily`: Compose checks the registry for image updates if the last pull took place more than 24 hours ago.
+- `weekly`: Compose checks the registry for image updates if the last pull took place more than 7 days ago.
+- `every_<duration>`: Compose checks the registry for image updates if the last pull took place before `<duration>`. Duration can be expressed in weeks (`w`), days (`d`), hours (`h`), minutes (`m`), seconds (`s`) or a combination of these.
 @z
 
 @x
