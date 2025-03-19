@@ -6,6 +6,7 @@ SUBDIRS = inspect
 
 copyfiles = \
 	_index.md \
+	import.md \
 	logs.md   \
 	ls.md     \
 	open.md   \

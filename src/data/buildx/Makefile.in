@@ -247,6 +247,7 @@ bases = \
 	docker_buildx_dial-stdio.yaml                 \
 	docker_buildx_du.yaml                         \
 	docker_buildx_history.yaml                    \
+	docker_buildx_history_import.yaml             \
 	docker_buildx_history_inspect.yaml            \
 	docker_buildx_history_inspect_attachment.yaml \
 	docker_buildx_history_logs.yaml               \

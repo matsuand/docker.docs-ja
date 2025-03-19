@@ -80,21 +80,25 @@ You can configure this through SSO using your IdP. Check with your IdP if they s
 @z
 
 @x
-Docker Desktop uses tokens to manage sessions after a user signs in. Docker Desktop signs you out after 90 days, or 30 days of inactivity.
+Docker uses tokens to manage sessions after a user signs in:
 @y
-Docker Desktop uses tokens to manage sessions after a user signs in. Docker Desktop signs you out after 90 days, or 30 days of inactivity.
+Docker uses tokens to manage sessions after a user signs in:
 @z
 
 @x
-In Docker Hub, you need to re-authenticate after 24 hours. If users are authenticating using SSO, the default session timeout for the IdP is respected.
+- Docker Desktop signs you out after 90 days, or 30 days of inactivity.
+- Docker Hub and Docker Home sign you out after 24 hours.
 @y
-In Docker Hub, you need to re-authenticate after 24 hours. If users are authenticating using SSO, the default session timeout for the IdP is respected.
+- Docker Desktop signs you out after 90 days, or 30 days of inactivity.
+- Docker Hub and Docker Home sign you out after 24 hours.
 @z
 
 @x
-Custom settings per organization for sessions aren't supported.
+Custom settings per organization for sessions aren't supported. Currently,
+Docker does not support your IdP's default session timeout for SSO users.
 @y
-Custom settings per organization for sessions aren't supported.
+Custom settings per organization for sessions aren't supported. Currently,
+Docker does not support your IdP's default session timeout for SSO users.
 @z
 
 @x
