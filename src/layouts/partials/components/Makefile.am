@@ -3,7 +3,8 @@
 ##
 
 bases = \
-	guide-summary.html
+	guide-summary.html  \
+	support-button.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

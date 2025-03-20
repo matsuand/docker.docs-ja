@@ -10196,8 +10196,11 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
-          data to store as secret.
+          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          It must be empty if the Driver field is set, in which case the data is
+          loaded from an external secret store. The maximum allowed size is 500KB,
+          as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/api/validation#MaxSecretSize).
 @y
   SecretSpec:
     type: "object"
@@ -10215,8 +10218,11 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
-          data to store as secret.
+          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          It must be empty if the Driver field is set, in which case the data is
+          loaded from an external secret store. The maximum allowed size is 500KB,
+          as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/api/validation#MaxSecretSize).
 @z
 
 @x
@@ -10311,8 +10317,9 @@ definitions:
           type: "string"
       Data:
         description: |
-          Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
-          config data.
+          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
         description: |
@@ -10331,8 +10338,9 @@ definitions:
           type: "string"
       Data:
         description: |
-          Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5))
-          config data.
+          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
         description: |

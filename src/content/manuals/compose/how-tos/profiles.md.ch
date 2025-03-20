@@ -264,9 +264,9 @@ $ COMPOSE_PROFILES=dev docker compose up phpmyadmin
 @z
 
 @x
-## Stop specific profiles
+## Stop application and services with specific profiles
 @y
-## Stop specific profiles
+## Stop application and services with specific profiles
 @z
 
 @x
@@ -280,9 +280,9 @@ use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.
 % snip command...
 
 @x
-Both commands stop and remove services with the `debug` profile. In the following `compose.yaml` file, this stops the services `db` and `phpmyadmin`.
+Both commands stop and remove services with the `debug` profile and services without a profile. In the following `compose.yaml` file, this stops the services `db`, `backend` and `phpmyadmin`.
 @y
-Both commands stop and remove services with the `debug` profile. In the following `compose.yaml` file, this stops the services `db` and `phpmyadmin`.
+Both commands stop and remove services with the `debug` profile and services without a profile. In the following `compose.yaml` file, this stops the services `db`, `backend` and `phpmyadmin`.
 @z
 
 % snip code...
