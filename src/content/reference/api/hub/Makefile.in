@@ -243,7 +243,8 @@ bases = \
 	dvp.md        \
 	dvp.yaml      \
 	latest.md     \
-	latest.yaml
+	latest.yaml   \
+	latest-changelog.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

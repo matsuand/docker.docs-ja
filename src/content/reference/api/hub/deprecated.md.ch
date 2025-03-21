@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Docker Hub API v1 (deprecated)
 keywords: kitematic, deprecated
 title: Docker Hub API v1 (deprecated)
-aliases:
-  - /docker-hub/api/deprecated/
----
 @y
----
 description: Docker Hub API v1 (deprecated)
 keywords: kitematic, deprecated
 title: Docker Hub API v1 (deprecated)
-aliases:
-  - /docker-hub/api/deprecated/
----
 @z
 
 @x

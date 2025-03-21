@@ -7,7 +7,8 @@ bases = \
 	dvp.md        \
 	dvp.yaml      \
 	latest.md     \
-	latest.yaml
+	latest.yaml   \
+	latest-changelog.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

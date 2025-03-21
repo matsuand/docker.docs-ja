@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 # yaml-language-server: $schema=https://raw.githubusercontent.com/OAI/OpenAPI-Specification/refs/heads/main/schemas/v3.0/schema.yaml
 @y
@@ -11,7 +13,7 @@
 openapi: 3.0.3
 info:
   title: Docker HUB API
-  version: beta
+  version: 2-beta
   x-logo:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
@@ -21,7 +23,7 @@ info:
 openapi: 3.0.3
 info:
   title: Docker HUB API
-  version: beta
+  version: 2-beta
   x-logo:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
@@ -48,6 +50,10 @@ servers:
     x-audience: public
     url: https://hub.docker.com
 tags:
+  - name: changelog
+    x-displayName: Changelog
+    description: |
+      See the [Changelog](/reference/api/hub/latest-changelog) for a summary of changes across Docker Hub API versions.
   - name: resources
     x-displayName: Resources
     description: |
@@ -64,6 +70,10 @@ servers:
     x-audience: public
     url: https://hub.docker.com
 tags:
+  - name: changelog
+    x-displayName: Changelog
+    description: |
+      See the [Changelog](__SUBDIR__/reference/api/hub/latest-changelog) for a summary of changes across Docker Hub API versions.
   - name: resources
     x-displayName: Resources
     description: |
@@ -727,6 +737,174 @@ paths:
       summary: List audit log actions
       description: |
         List audit log actions for a namespace to be used as a filter for querying audit log events.
+@y
+        _**If your organization has SSO enforced, you must use a personal access token (PAT) instead of a password.**_
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: Request to create access token
+              type: object
+              required:
+                - identifier
+                - secret
+              properties:
+                identifier:
+                  description: |
+                    The identifier of the account to create an access token for. If using a password or personal access token,
+                    this must be a username. If using an organization access token, this must be an organization name.
+                  type: string
+                  example: myusername
+                secret:
+                  description: |
+                    The secret of the account to create an access token for. This can be a password, personal access token, or
+                    organization access token.
+                  type: string
+                  example: dckr_pat_124509ugsdjga93
+      responses:
+        '200':
+          description: Token created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthCreateTokenResponse'
+        '401':
+          description: Authentication failed
+          $ref: '#/components/responses/unauthorized'
+  /v2/access-tokens:
+    post:
+      summary: Create personal access token
+      description: Creates and returns a personal access token.
+      tags:
+        - access-tokens
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/createAccessTokenRequest'
+        required: true
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/createAccessTokensResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    get:
+      summary: List personal access tokens
+      description: Returns a paginated list of personal access tokens.
+      tags:
+        - access-tokens
+      security: 
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: number
+            default: 1
+        - in: query
+          name: page_size
+          schema:
+            type: number
+            default: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getAccessTokensResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /v2/access-tokens/{uuid}:
+    parameters:
+      - in: path
+        name: uuid
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update personal access token
+      description: |
+        Updates a personal access token partially. You can either update the token's label or enable/disable it.
+      tags:
+        - access-tokens
+      security: 
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/patchAccessTokenRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/patchAccessTokenResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    get:
+      summary: Get personal access token
+      description: Returns a personal access token by UUID.
+      tags:
+        - access-tokens
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/accessToken'
+                  - type: object
+                    properties:
+                      token:
+                        type: string
+                        example: ''
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      summary: Delete personal access token
+      description: |
+        Deletes a personal access token permanently. This cannot be undone.
+      tags:
+        - access-tokens
+      security: 
+        - bearerAuth: []
+      responses:
+        '204':
+          description: A successful response.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /v2/auditlogs/{account}/actions:
+    get:
+      summary: List audit log actions
+      description: |
+        List audit log actions for a namespace to be used as a filter for querying audit log events.
+@z
+
+@x
+        <span class="oat"></span>
       operationId: AuditLogs_ListAuditActions
       security: 
         - bearerAuth: []
@@ -816,7 +994,105 @@ paths:
   /v2/auditlogs/{account}:
     get:
       summary: List audit log events
-      description: List audit log events for a given namespace.
+      description: |
+        List audit log events for a given namespace.
+@y
+        <span class="oat"></span>
+      operationId: AuditLogs_ListAuditActions
+      security: 
+        - bearerAuth: []
+      responses:
+        '200':
+          description: A successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAuditActionsResponse'
+              examples:
+                response:
+                  value:
+                    actions:
+                      org:
+                        actions:
+                          - name: team.create
+                            description: contains team create events
+                            label: Team Created
+                          - name: team.delete
+                            description: contains team delete events
+                            label: Team Deleted
+                          - name: team.member.add
+                            description: contains team member add events
+                            label: Team Member Added
+                          - name: team.member.remove
+                            description: contains team member remove events
+                            label: Team Member Removed
+                          - name: team.member.invite
+                            description: contains team member invite events
+                            label: Team Member Invited
+                          - name: member.removed
+                            description: contains org member remove events
+                            label: Organization Member Removed
+                          - name: create
+                            description: contains organization create events
+                            label: Organization Created
+                        label: Organization
+                      repo:
+                        actions:
+                          - name: create
+                            description: contains repository create events
+                            label: Repository Created
+                          - name: delete
+                            description: contains repository delete events
+                            label: Repository Deleted
+                          - name: change_privacy
+                            description: contains repository privacy change events
+                            label: Privacy Changed
+                          - name: tag.push
+                            description: contains image tag push events
+                            label: Tag Pushed
+                          - name: tag.delete
+                            description: contains image tag delete events
+                            label: Tag Deleted
+                        label: Repository
+        '429':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+              examples:
+                response:
+                  value:
+                    detail: Rate limit exceeded
+                    error: false
+        '500':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+        default:
+          description: An unexpected error response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+      parameters:
+        - name: account
+          description: Namespace to query audit log actions for.
+          in: path
+          required: true
+          schema:
+            type: string
+      tags:
+        - audit-logs
+  /v2/auditlogs/{account}:
+    get:
+      summary: List audit log events
+      description: |
+        List audit log events for a given namespace.
+@z
+
+@x
+        <span class="oat"></span>
       operationId: AuditLogs_ListAuditLogs
       security:
         - bearerAuth: []
@@ -956,259 +1232,7 @@ paths:
       description: |
         Updates an organization's settings. Some settings are only used when the organization is on a business plan.
 @y
-        _**If your organization has SSO enforced, you must use a personal access token (PAT) instead of a password.**_
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: Request to create access token
-              type: object
-              required:
-                - identifier
-                - secret
-              properties:
-                identifier:
-                  description: |
-                    The identifier of the account to create an access token for. If using a password or personal access token,
-                    this must be a username. If using an organization access token, this must be an organization name.
-                  type: string
-                  example: myusername
-                secret:
-                  description: |
-                    The secret of the account to create an access token for. This can be a password, personal access token, or
-                    organization access token.
-                  type: string
-                  example: dckr_pat_124509ugsdjga93
-      responses:
-        '200':
-          description: Token created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthCreateTokenResponse'
-        '401':
-          description: Authentication failed
-          $ref: '#/components/responses/unauthorized'
-  /v2/access-tokens:
-    post:
-      summary: Create personal access token
-      description: Creates and returns a personal access token.
-      tags:
-        - access-tokens
-      security:
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/createAccessTokenRequest'
-        required: true
-      responses:
-        '201':
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/createAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-    get:
-      summary: List personal access tokens
-      description: Returns a paginated list of personal access tokens.
-      tags:
-        - access-tokens
-      security: 
-        - bearerAuth: []
-      parameters:
-        - in: query
-          name: page
-          schema:
-            type: number
-            default: 1
-        - in: query
-          name: page_size
-          schema:
-            type: number
-            default: 10
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/getAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-  /v2/access-tokens/{uuid}:
-    parameters:
-      - in: path
-        name: uuid
-        required: true
-        schema:
-          type: string
-    patch:
-      summary: Update personal access token
-      description: |
-        Updates a personal access token partially. You can either update the token's label or enable/disable it.
-      tags:
-        - access-tokens
-      security: 
-        - bearerAuth: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/patchAccessTokenRequest'
-        required: true
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/patchAccessTokenResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-    get:
-      summary: Get personal access token
-      description: Returns a personal access token by UUID.
-      tags:
-        - access-tokens
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: '#/components/schemas/accessToken'
-                  - type: object
-                    properties:
-                      token:
-                        type: string
-                        example: ''
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    delete:
-      summary: Delete personal access token
-      description: |
-        Deletes a personal access token permanently. This cannot be undone.
-      tags:
-        - access-tokens
-      security: 
-        - bearerAuth: []
-      responses:
-        '204':
-          description: A successful response.
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/auditlogs/{account}/actions:
-    get:
-      summary: List audit log actions
-      description: |
-        List audit log actions for a namespace to be used as a filter for querying audit log events.
-      operationId: AuditLogs_ListAuditActions
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: A successful response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetAuditActionsResponse'
-              examples:
-                response:
-                  value:
-                    actions:
-                      org:
-                        actions:
-                          - name: team.create
-                            description: contains team create events
-                            label: Team Created
-                          - name: team.delete
-                            description: contains team delete events
-                            label: Team Deleted
-                          - name: team.member.add
-                            description: contains team member add events
-                            label: Team Member Added
-                          - name: team.member.remove
-                            description: contains team member remove events
-                            label: Team Member Removed
-                          - name: team.member.invite
-                            description: contains team member invite events
-                            label: Team Member Invited
-                          - name: member.removed
-                            description: contains org member remove events
-                            label: Organization Member Removed
-                          - name: create
-                            description: contains organization create events
-                            label: Organization Created
-                        label: Organization
-                      repo:
-                        actions:
-                          - name: create
-                            description: contains repository create events
-                            label: Repository Created
-                          - name: delete
-                            description: contains repository delete events
-                            label: Repository Deleted
-                          - name: change_privacy
-                            description: contains repository privacy change events
-                            label: Privacy Changed
-                          - name: tag.push
-                            description: contains image tag push events
-                            label: Tag Pushed
-                          - name: tag.delete
-                            description: contains image tag delete events
-                            label: Tag Deleted
-                        label: Repository
-        '429':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-              examples:
-                response:
-                  value:
-                    detail: Rate limit exceeded
-                    error: false
-        '500':
-          description: ''
-          content:
-            application/json:
-              schema: {}
-        default:
-          description: An unexpected error response.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-      parameters:
-        - name: account
-          description: Namespace to query audit log actions for.
-          in: path
-          required: true
-          schema:
-            type: string
-      tags:
-        - audit-logs
-  /v2/auditlogs/{account}:
-    get:
-      summary: List audit log events
-      description: List audit log events for a given namespace.
+        <span class="oat"></span>
       operationId: AuditLogs_ListAuditLogs
       security:
         - bearerAuth: []
@@ -5601,6 +5625,7 @@ components:
 x-tagGroups:
   - name: General
     tags:
+      - changelog
       - resources
       - rate-limiting
       - authentication
@@ -6136,6 +6161,7 @@ x-tagGroups:
 x-tagGroups:
   - name: General
     tags:
+      - changelog
       - resources
       - rate-limiting
       - authentication
