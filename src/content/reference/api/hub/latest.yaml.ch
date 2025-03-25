@@ -383,6 +383,11 @@ tags:
 
 @x
       For more information, see [System for Cross-domain Identity management](https://docs.docker.com/security/for-admins/provisioning/scim/).
+  - name: org-access-tokens
+    x-displayName: Organization Access Tokens
+    x-audience: public
+    description: |
+      The organization access token endpoints allow you to manage organization access tokens (OATs). See [Organization access tokens](https://docs.docker.com/security/for-admins/access-tokens/) for more information.
 paths:
   /v2/users/login:
     post:
@@ -396,6 +401,11 @@ paths:
         Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.
 @y
       For more information, see [System for Cross-domain Identity management](https://docs.docker.com/security/for-admins/provisioning/scim/).
+  - name: org-access-tokens
+    x-displayName: Organization Access Tokens
+    x-audience: public
+    description: |
+      The organization access token endpoints allow you to manage organization access tokens (OATs). See [Organization access tokens](https://docs.docker.com/security/for-admins/access-tokens/) for more information.
 paths:
   /v2/users/login:
     post:
@@ -429,22 +439,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UsersLoginRequest'
+              $ref: "#/components/schemas/UsersLoginRequest"
         description: Login details.
         required: true
       responses:
-        '200':
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
-        '401':
+                $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginErrorResponse'
+                $ref: "#/components/schemas/PostUsersLoginErrorResponse"
   /v2/users/2fa-login:
     post:
       tags:
@@ -462,22 +472,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UsersLoginRequest'
+              $ref: "#/components/schemas/UsersLoginRequest"
         description: Login details.
         required: true
       responses:
-        '200':
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
-        '401':
+                $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginErrorResponse'
+                $ref: "#/components/schemas/PostUsersLoginErrorResponse"
   /v2/users/2fa-login:
     post:
       tags:
@@ -507,22 +517,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Users2FALoginRequest'
+              $ref: "#/components/schemas/Users2FALoginRequest"
         description: Login details.
         required: true
       responses:
-        '200':
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
-        '401':
+                $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
+        "401":
           description: Authentication failed
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsers2FALoginErrorResponse'
+                $ref: "#/components/schemas/PostUsers2FALoginErrorResponse"
   /v2/auth/token:
     post:
       tags:
@@ -538,22 +548,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Users2FALoginRequest'
+              $ref: "#/components/schemas/Users2FALoginRequest"
         description: Login details.
         required: true
       responses:
-        '200':
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsersLoginSuccessResponse'
-        '401':
+                $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
+        "401":
           description: Authentication failed
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostUsers2FALoginErrorResponse'
+                $ref: "#/components/schemas/PostUsers2FALoginErrorResponse"
   /v2/auth/token:
     post:
       tags:
@@ -598,15 +608,15 @@ paths:
                   type: string
                   example: dckr_pat_124509ugsdjga93
       responses:
-        '200':
+        "200":
           description: Token created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthCreateTokenResponse'
-        '401':
+                $ref: "#/components/schemas/AuthCreateTokenResponse"
+        "401":
           description: Authentication failed
-          $ref: '#/components/responses/unauthorized'
+          $ref: "#/components/responses/unauthorized"
   /v2/access-tokens:
     post:
       summary: Create personal access token
@@ -619,25 +629,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/createAccessTokenRequest'
+              $ref: "#/components/schemas/createAccessTokenRequest"
         required: true
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/createAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/createAccessTokensResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
     get:
       summary: List personal access tokens
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       parameters:
         - in: query
@@ -651,16 +661,16 @@ paths:
             type: number
             default: 10
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/getAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/getAccessTokensResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /v2/access-tokens/{uuid}:
     parameters:
       - in: path
@@ -674,64 +684,64 @@ paths:
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/patchAccessTokenRequest'
+              $ref: "#/components/schemas/patchAccessTokenRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/patchAccessTokenResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/patchAccessTokenResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
     get:
       summary: Get personal access token
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/accessToken'
+                  - $ref: "#/components/schemas/accessToken"
                   - type: object
                     properties:
                       token:
                         type: string
-                        example: ''
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                        example: ""
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
     delete:
       summary: Delete personal access token
       description: |
         Deletes a personal access token permanently. This cannot be undone.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: A successful response.
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v2/auditlogs/{account}/actions:
     get:
       summary: List audit log actions
@@ -762,15 +772,15 @@ paths:
                   type: string
                   example: dckr_pat_124509ugsdjga93
       responses:
-        '200':
+        "200":
           description: Token created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthCreateTokenResponse'
-        '401':
+                $ref: "#/components/schemas/AuthCreateTokenResponse"
+        "401":
           description: Authentication failed
-          $ref: '#/components/responses/unauthorized'
+          $ref: "#/components/responses/unauthorized"
   /v2/access-tokens:
     post:
       summary: Create personal access token
@@ -783,25 +793,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/createAccessTokenRequest'
+              $ref: "#/components/schemas/createAccessTokenRequest"
         required: true
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/createAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/createAccessTokensResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
     get:
       summary: List personal access tokens
       description: Returns a paginated list of personal access tokens.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       parameters:
         - in: query
@@ -815,16 +825,16 @@ paths:
             type: number
             default: 10
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/getAccessTokensResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/getAccessTokensResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
   /v2/access-tokens/{uuid}:
     parameters:
       - in: path
@@ -838,64 +848,64 @@ paths:
         Updates a personal access token partially. You can either update the token's label or enable/disable it.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/patchAccessTokenRequest'
+              $ref: "#/components/schemas/patchAccessTokenRequest"
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/patchAccessTokenResponse'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
+                $ref: "#/components/schemas/patchAccessTokenResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
     get:
       summary: Get personal access token
       description: Returns a personal access token by UUID.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
                 allOf:
-                  - $ref: '#/components/schemas/accessToken'
+                  - $ref: "#/components/schemas/accessToken"
                   - type: object
                     properties:
                       token:
                         type: string
-                        example: ''
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                        example: ""
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
     delete:
       summary: Delete personal access token
       description: |
         Deletes a personal access token permanently. This cannot be undone.
       tags:
         - access-tokens
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: A successful response.
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v2/auditlogs/{account}/actions:
     get:
       summary: List audit log actions
@@ -906,15 +916,15 @@ paths:
 @x
         <span class="oat"></span>
       operationId: AuditLogs_ListAuditActions
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: A successful response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAuditActionsResponse'
+                $ref: "#/components/schemas/GetAuditActionsResponse"
               examples:
                 response:
                   value:
@@ -961,8 +971,8 @@ paths:
                             description: contains image tag delete events
                             label: Tag Deleted
                         label: Repository
-        '429':
-          description: ''
+        "429":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -971,8 +981,8 @@ paths:
                   value:
                     detail: Rate limit exceeded
                     error: false
-        '500':
-          description: ''
+        "500":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -981,7 +991,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/rpcStatus'
+                $ref: "#/components/schemas/rpcStatus"
       parameters:
         - name: account
           description: Namespace to query audit log actions for.
@@ -999,15 +1009,15 @@ paths:
 @y
         <span class="oat"></span>
       operationId: AuditLogs_ListAuditActions
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: A successful response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAuditActionsResponse'
+                $ref: "#/components/schemas/GetAuditActionsResponse"
               examples:
                 response:
                   value:
@@ -1054,8 +1064,8 @@ paths:
                             description: contains image tag delete events
                             label: Tag Deleted
                         label: Repository
-        '429':
-          description: ''
+        "429":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1064,8 +1074,8 @@ paths:
                   value:
                     detail: Rate limit exceeded
                     error: false
-        '500':
-          description: ''
+        "500":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1074,7 +1084,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/rpcStatus'
+                $ref: "#/components/schemas/rpcStatus"
       parameters:
         - name: account
           description: Namespace to query audit log actions for.
@@ -1097,12 +1107,12 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: A successful response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAuditLogsResponse'
+                $ref: "#/components/schemas/GetAuditLogsResponse"
               examples:
                 response:
                   value:
@@ -1114,11 +1124,11 @@ paths:
                         data:
                           digest: sha256:c1ae9c435032a276f80220c7d9b40f76266bbe79243d34f9cda30b76fe114dfa
                           tag: latest
-                        timestamp: '2021-02-19T01:34:35Z'
+                        timestamp: "2021-02-19T01:34:35Z"
                         action_description: |
                           pushed the tag latest with the digest sha256:c1ae9c435032a to the repository docker/example
-        '429':
-          description: ''
+        "429":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1127,8 +1137,8 @@ paths:
                   value:
                     detail: Rate limit exceeded
                     error: false
-        '500':
-          description: ''
+        "500":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1137,7 +1147,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/rpcStatus'
+                $ref: "#/components/schemas/rpcStatus"
       parameters:
         - name: account
           description: Namespace to query audit logs for.
@@ -1212,21 +1222,21 @@ paths:
         Returns organization settings by name.
       tags:
         - org-settings
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/orgSettings'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/orgSettings"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     put:
       summary: Update organization settings
       description: |
@@ -1237,12 +1247,12 @@ paths:
       security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: A successful response.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAuditLogsResponse'
+                $ref: "#/components/schemas/GetAuditLogsResponse"
               examples:
                 response:
                   value:
@@ -1254,11 +1264,11 @@ paths:
                         data:
                           digest: sha256:c1ae9c435032a276f80220c7d9b40f76266bbe79243d34f9cda30b76fe114dfa
                           tag: latest
-                        timestamp: '2021-02-19T01:34:35Z'
+                        timestamp: "2021-02-19T01:34:35Z"
                         action_description: |
                           pushed the tag latest with the digest sha256:c1ae9c435032a to the repository docker/example
-        '429':
-          description: ''
+        "429":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1267,8 +1277,8 @@ paths:
                   value:
                     detail: Rate limit exceeded
                     error: false
-        '500':
-          description: ''
+        "500":
+          description: ""
           content:
             application/json:
               schema: {}
@@ -1277,7 +1287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/rpcStatus'
+                $ref: "#/components/schemas/rpcStatus"
       parameters:
         - name: account
           description: Namespace to query audit logs for.
@@ -1352,21 +1362,21 @@ paths:
         Returns organization settings by name.
       tags:
         - org-settings
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/orgSettings'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/orgSettings"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     put:
       summary: Update organization settings
       description: |
@@ -1384,7 +1394,7 @@ paths:
         - `restricted_images`
       tags:
         - org-settings
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -1395,7 +1405,7 @@ paths:
               properties:
                 restricted_images:
                   allOf:
-                    - $ref: '#/components/schemas/restricted_images'
+                    - $ref: "#/components/schemas/restricted_images"
                     - type: object
                       required:
                         - enabled
@@ -1403,111 +1413,86 @@ paths:
                         - allow_verified_publishers
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/orgSettings'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/namespaces/{namespace}/repositories/{repository}/tags:
-    parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
-    get:
-      summary: List repository tags
+                $ref: "#/components/schemas/orgSettings"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/orgs/{name}/access-tokens:
+    post:
+      summary: Create access token
+      description: |
+        Create an access token for an organization.
       tags:
-        - repositories
-      security: 
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createOrgAccessTokenRequest"
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createOrgAccessTokenResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    get:
+      summary: List access tokens
+      description: |
+        List access tokens for an organization.
+      tags:
+        - org-access-tokens
+      security:
         - bearerAuth: []
       parameters:
         - in: query
           name: page
-          required: false
           schema:
-            type: integer
-          description: Page number to get. Defaults to 1.
+            type: number
+            default: 1
         - in: query
           name: page_size
-          required: false
           schema:
-            type: integer
-          description: Number of items to get per page. Defaults to 10. Max of 100.
+            type: number
+            default: 10
       responses:
-        '200':
-          $ref: '#/components/responses/list_tags'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    head:
-      summary: Check repository tags
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Repository contains tags
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
-    parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
-      - $ref: '#/components/parameters/tag'
-    get:
-      summary: Read repository tag
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          $ref: '#/components/responses/get_tag'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    head:
-      summary: Check repository tag
-      tags:
-        - repositories
-      security: 
-        - bearerAuth: []
-      responses:
-        '200':
-          description: Repository tag exists
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
-  /v2/orgs/{org_name}/members:
-    parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/search'
-      - $ref: '#/components/parameters/page'
-      - $ref: '#/components/parameters/page_size'
-      - $ref: '#/components/parameters/invites'
-      - $ref: '#/components/parameters/type'
-      - $ref: '#/components/parameters/role'
-    get:
-      summary: List org members
-      description: |
-        Returns a list of members for an organization.
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getOrgAccessTokensResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
 @y
         The following settings are only used on a business plan:
         - `restricted_images`
       tags:
         - org-settings
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -1518,7 +1503,7 @@ paths:
               properties:
                 restricted_images:
                   allOf:
-                    - $ref: '#/components/schemas/restricted_images'
+                    - $ref: "#/components/schemas/restricted_images"
                     - type: object
                       required:
                         - enabled
@@ -1526,27 +1511,167 @@ paths:
                         - allow_verified_publishers
         required: true
       responses:
-        '200':
+        "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/orgSettings'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+                $ref: "#/components/schemas/orgSettings"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/orgs/{name}/access-tokens:
+    post:
+      summary: Create access token
+      description: |
+        Create an access token for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createOrgAccessTokenRequest"
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createOrgAccessTokenResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    get:
+      summary: List access tokens
+      description: |
+        List access tokens for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: number
+            default: 1
+        - in: query
+          name: page_size
+          schema:
+            type: number
+            default: 10
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getOrgAccessTokensResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+@z
+
+@x
+  /v2/orgs/{org_name}/access-tokens/{access_token_id}:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
+      - in: path
+        name: access_token_id
+        required: true
+        schema:
+          type: string
+        description: The ID of the access token to retrieve
+        example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+    get:
+      summary: Get access token
+      description: |
+        Get details of a specific access token for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getOrgAccessTokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    patch:
+      summary: Update access token
+      description: |
+        Update a specific access token for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/updateOrgAccessTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/updateOrgAccessTokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete access token
+      description: |
+        Delete a specific access token for an organization. This action cannot be undone.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: Access token deleted successfully
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v2/namespaces/{namespace}/repositories/{repository}/tags:
     parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
     get:
       summary: List repository tags
       tags:
         - repositories
-      security: 
+      security:
         - bearerAuth: []
       parameters:
         - in: query
@@ -1562,65 +1687,228 @@ paths:
             type: integer
           description: Number of items to get per page. Defaults to 10. Max of 100.
       responses:
-        '200':
-          $ref: '#/components/responses/list_tags'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "200":
+          $ref: "#/components/responses/list_tags"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     head:
       summary: Check repository tags
       tags:
         - repositories
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Repository contains tags
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
     parameters:
-      - $ref: '#/components/parameters/namespace'
-      - $ref: '#/components/parameters/repository'
-      - $ref: '#/components/parameters/tag'
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+      - $ref: "#/components/parameters/tag"
     get:
       summary: Read repository tag
       tags:
         - repositories
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/get_tag'
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "200":
+          $ref: "#/components/responses/get_tag"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
     head:
       summary: Check repository tag
       tags:
         - repositories
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Repository tag exists
-        '403':
-          $ref: '#/components/responses/Forbidden'
-        '404':
-          $ref: '#/components/responses/NotFound'
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
   /v2/orgs/{org_name}/members:
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/search'
-      - $ref: '#/components/parameters/page'
-      - $ref: '#/components/parameters/page_size'
-      - $ref: '#/components/parameters/invites'
-      - $ref: '#/components/parameters/type'
-      - $ref: '#/components/parameters/role'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/search"
+      - $ref: "#/components/parameters/page"
+      - $ref: "#/components/parameters/page_size"
+      - $ref: "#/components/parameters/invites"
+      - $ref: "#/components/parameters/type"
+      - $ref: "#/components/parameters/role"
+    get:
+      summary: List org members
+      description: |
+        Returns a list of members for an organization.
+@y
+  /v2/orgs/{org_name}/access-tokens/{access_token_id}:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
+      - in: path
+        name: access_token_id
+        required: true
+        schema:
+          type: string
+        description: The ID of the access token to retrieve
+        example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+    get:
+      summary: Get access token
+      description: |
+        Get details of a specific access token for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/getOrgAccessTokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    patch:
+      summary: Update access token
+      description: |
+        Update a specific access token for an organization.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/updateOrgAccessTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/updateOrgAccessTokenResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    delete:
+      summary: Delete access token
+      description: |
+        Delete a specific access token for an organization. This action cannot be undone.
+      tags:
+        - org-access-tokens
+      security:
+        - bearerAuth: []
+      responses:
+        "204":
+          description: Access token deleted successfully
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/namespaces/{namespace}/repositories/{repository}/tags:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    get:
+      summary: List repository tags
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          required: false
+          schema:
+            type: integer
+          description: Page number to get. Defaults to 1.
+        - in: query
+          name: page_size
+          required: false
+          schema:
+            type: integer
+          description: Number of items to get per page. Defaults to 10. Max of 100.
+      responses:
+        "200":
+          $ref: "#/components/responses/list_tags"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    head:
+      summary: Check repository tags
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Repository contains tags
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+      - $ref: "#/components/parameters/tag"
+    get:
+      summary: Read repository tag
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          $ref: "#/components/responses/get_tag"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    head:
+      summary: Check repository tag
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Repository tag exists
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/orgs/{org_name}/members:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/search"
+      - $ref: "#/components/parameters/page"
+      - $ref: "#/components/parameters/page_size"
+      - $ref: "#/components/parameters/invites"
+      - $ref: "#/components/parameters/type"
+      - $ref: "#/components/parameters/role"
     get:
       summary: List org members
       description: |
@@ -1653,28 +1941,28 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: List of members
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/org_member_paginated'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                  $ref: "#/components/schemas/org_member_paginated"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/members/export:
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Export org members CSV
       description: |
@@ -1683,28 +1971,28 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: List of members
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/org_member_paginated'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                  $ref: "#/components/schemas/org_member_paginated"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/members/export:
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Export org members CSV
       description: |
@@ -1715,10 +2003,10 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Exported members
           content:
             text/csv:
@@ -1768,19 +2056,19 @@ paths:
               schema:
                 type: string
               example: attachment;filename="{org_name}-members-{timestamp}.csv"
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/members/{username}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/username'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/username"
     put:
       summary: Update org member (role)
       description: |
@@ -1790,10 +2078,10 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
+        "200":
           description: Exported members
           content:
             text/csv:
@@ -1843,19 +2131,19 @@ paths:
               schema:
                 type: string
               example: attachment;filename="{org_name}-members-{timestamp}.csv"
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/members/{username}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/username'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/username"
     put:
       summary: Update org member (role)
       description: |
@@ -1867,7 +2155,7 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         required: true
@@ -1885,20 +2173,20 @@ paths:
                     - editor
                     - member
       responses:
-        '200':
+        "200":
           description: Member role updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_member'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_member"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     delete:
       summary: Remove member from org
       description: |
@@ -1907,7 +2195,7 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         required: true
@@ -1925,20 +2213,20 @@ paths:
                     - editor
                     - member
       responses:
-        '200':
+        "200":
           description: Member role updated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_member'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_member"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     delete:
       summary: Remove member from org
       description: |
@@ -1949,23 +2237,23 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: Member removed successfully
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/invites:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: List org invites
       description: |
@@ -1974,23 +2262,23 @@ paths:
         <span class="oat"></span>
       tags:
         - orgs
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: Member removed successfully
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/invites:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: List org invites
       description: |
@@ -2001,11 +2289,11 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2014,28 +2302,28 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/invite'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/invite"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/groups:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Get groups of an organization
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: username
           schema:
@@ -2047,8 +2335,8 @@ paths:
             type: string
           description: Get groups for the specified group in the organization.
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2065,13 +2353,13 @@ paths:
                   results:
                     type: array
                     items:
-                      $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     post:
       summary: Create a new group
       description: |
@@ -2080,11 +2368,11 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2093,28 +2381,28 @@ paths:
                   data:
                     type: array
                     items:
-                      $ref: '#/components/schemas/invite'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/invite"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/groups:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
+      - $ref: "#/components/parameters/org_name"
     get:
       summary: Get groups of an organization
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: username
           schema:
@@ -2126,8 +2414,8 @@ paths:
             type: string
           description: Get groups for the specified group in the organization.
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2144,13 +2432,13 @@ paths:
                   results:
                     type: array
                     items:
-                      $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     post:
       summary: Create a new group
       description: |
@@ -2161,7 +2449,7 @@ paths:
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2175,51 +2463,51 @@ paths:
                 description:
                   type: string
       responses:
-        '201':
+        "201":
           description: Group created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
+                $ref: "#/components/schemas/org_group"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
   /v2/orgs/{org_name}/groups/{group_name}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/group_name"
     get:
       summary: Get a group of an organization
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     put:
       summary: Update the details for an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2233,25 +2521,25 @@ paths:
                 description:
                   type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     patch:
       summary: Update some details for an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2263,45 +2551,45 @@ paths:
                 description:
                   type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     delete:
       summary: Delete an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: Group deleted successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/groups/{group_name}/members:
     x-audience: public
     get:
-      security: 
+      security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
+        - $ref: "#/components/parameters/org_name"
+        - $ref: "#/components/parameters/group_name"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: search
           schema:
@@ -2315,7 +2603,7 @@ paths:
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2329,51 +2617,51 @@ paths:
                 description:
                   type: string
       responses:
-        '201':
+        "201":
           description: Group created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
+                $ref: "#/components/schemas/org_group"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
   /v2/orgs/{org_name}/groups/{group_name}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/group_name"
     get:
       summary: Get a group of an organization
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     put:
       summary: Update the details for an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2387,25 +2675,25 @@ paths:
                 description:
                   type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     patch:
       summary: Update some details for an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
         content:
@@ -2417,45 +2705,45 @@ paths:
                 description:
                   type: string
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/org_group'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                $ref: "#/components/schemas/org_group"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     delete:
       summary: Delete an organization group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: Group deleted successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/orgs/{org_name}/groups/{group_name}/members:
     x-audience: public
     get:
-      security: 
+      security:
         - bearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/page_size'
+        - $ref: "#/components/parameters/org_name"
+        - $ref: "#/components/parameters/group_name"
+        - $ref: "#/components/parameters/page"
+        - $ref: "#/components/parameters/page_size"
         - in: query
           name: search
           schema:
@@ -2472,8 +2760,8 @@ paths:
       tags:
         - groups
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2490,60 +2778,60 @@ paths:
                   results:
                     type: array
                     items:
-                      $ref: '#/components/schemas/group_member'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/group_member"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     post:
       parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
+        - $ref: "#/components/parameters/org_name"
+        - $ref: "#/components/parameters/group_name"
       summary: Add a member to a group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/add_member_to_org_group'
+        $ref: "#/components/requestBodies/add_member_to_org_group"
       responses:
-        '200':
+        "200":
           description: OK
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-        '500':
-          $ref: '#/components/responses/internal_error'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
+        "500":
+          $ref: "#/components/responses/internal_error"
   /v2/orgs/{org_name}/groups/{group_name}/members/{username}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
-      - $ref: '#/components/parameters/username'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/group_name"
+      - $ref: "#/components/parameters/username"
     delete:
       summary: Remove a user from a group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: User removed successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/{id}:
     x-audience: public
     parameters:
@@ -2561,8 +2849,8 @@ paths:
       tags:
         - groups
       responses:
-        '200':
-          description: ''
+        "200":
+          description: ""
           content:
             application/json:
               schema:
@@ -2579,60 +2867,60 @@ paths:
                   results:
                     type: array
                     items:
-                      $ref: '#/components/schemas/group_member'
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+                      $ref: "#/components/schemas/group_member"
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
     post:
       parameters:
-        - $ref: '#/components/parameters/org_name'
-        - $ref: '#/components/parameters/group_name'
+        - $ref: "#/components/parameters/org_name"
+        - $ref: "#/components/parameters/group_name"
       summary: Add a member to a group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/add_member_to_org_group'
+        $ref: "#/components/requestBodies/add_member_to_org_group"
       responses:
-        '200':
+        "200":
           description: OK
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
-        '500':
-          $ref: '#/components/responses/internal_error'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
+        "500":
+          $ref: "#/components/responses/internal_error"
   /v2/orgs/{org_name}/groups/{group_name}/members/{username}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/org_name'
-      - $ref: '#/components/parameters/group_name'
-      - $ref: '#/components/parameters/username'
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/group_name"
+      - $ref: "#/components/parameters/username"
     delete:
       summary: Remove a user from a group
       description: |
         <span class="oat"></span>
       tags:
         - groups
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
+        "204":
           description: User removed successfully
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/{id}:
     x-audience: public
     parameters:
@@ -2651,17 +2939,17 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "204":
+          description: ""
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/{id}/resend:
     x-audience: public
     parameters:
@@ -2678,17 +2966,17 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "204":
+          description: ""
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/{id}/resend:
     x-audience: public
     parameters:
@@ -2707,21 +2995,21 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "204":
+          description: ""
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/bulk:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/bulk_invite'
+      - $ref: "#/components/parameters/bulk_invite"
     post:
       summary: Bulk create invites
       description: |
@@ -2730,21 +3018,21 @@ paths:
         <span class="oat"></span>
       tags:
         - invites
-      security: 
+      security:
         - bearerAuth: []
       responses:
-        '204':
-          description: ''
-        '401':
-          $ref: '#/components/responses/unauthorized'
-        '403':
-          $ref: '#/components/responses/forbidden'
-        '404':
-          $ref: '#/components/responses/not_found'
+        "204":
+          description: ""
+        "401":
+          $ref: "#/components/responses/unauthorized"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/not_found"
   /v2/invites/bulk:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/bulk_invite'
+      - $ref: "#/components/parameters/bulk_invite"
     post:
       summary: Bulk create invites
       description: |
@@ -2756,11 +3044,11 @@ paths:
       tags:
         - invites
       requestBody:
-        $ref: '#/components/requestBodies/bulk_invite_request'
-      security: 
+        $ref: "#/components/requestBodies/bulk_invite_request"
+      security:
         - bearerAuth: []
       responses:
-        '202':
+        "202":
           description: Accepted
           content:
             application/json:
@@ -2768,11 +3056,11 @@ paths:
                 type: object
                 properties:
                   invitees:
-                    $ref: '#/components/schemas/bulk_invite'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '409':
-          $ref: '#/components/responses/conflict'
+                    $ref: "#/components/schemas/bulk_invite"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "409":
+          $ref: "#/components/responses/conflict"
   /v2/scim/2.0/ServiceProviderConfig:
     x-audience: public
     get:
@@ -2784,12 +3072,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_service_provider_config_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_service_provider_config_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/ResourceTypes:
     x-audience: public
     get:
@@ -2801,12 +3089,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_resource_types_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_resource_types_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/ResourceTypes/{name}:
     x-audience: public
     get:
@@ -2825,14 +3113,14 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_resource_type_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_resource_type_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Schemas:
     x-audience: public
     get:
@@ -2844,12 +3132,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_schemas_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_schemas_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Schemas/{id}:
     x-audience: public
     get:
@@ -2868,14 +3156,14 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_schema_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_schema_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Users:
     x-audience: public
     get:
@@ -2887,11 +3175,11 @@ paths:
       tags:
         - invites
       requestBody:
-        $ref: '#/components/requestBodies/bulk_invite_request'
-      security: 
+        $ref: "#/components/requestBodies/bulk_invite_request"
+      security:
         - bearerAuth: []
       responses:
-        '202':
+        "202":
           description: Accepted
           content:
             application/json:
@@ -2899,11 +3187,11 @@ paths:
                 type: object
                 properties:
                   invitees:
-                    $ref: '#/components/schemas/bulk_invite'
-        '400':
-          $ref: '#/components/responses/bad_request'
-        '409':
-          $ref: '#/components/responses/conflict'
+                    $ref: "#/components/schemas/bulk_invite"
+        "400":
+          $ref: "#/components/responses/bad_request"
+        "409":
+          $ref: "#/components/responses/conflict"
   /v2/scim/2.0/ServiceProviderConfig:
     x-audience: public
     get:
@@ -2915,12 +3203,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_service_provider_config_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_service_provider_config_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/ResourceTypes:
     x-audience: public
     get:
@@ -2932,12 +3220,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_resource_types_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_resource_types_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/ResourceTypes/{name}:
     x-audience: public
     get:
@@ -2956,14 +3244,14 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_resource_type_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_resource_type_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Schemas:
     x-audience: public
     get:
@@ -2975,12 +3263,12 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_schemas_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_schemas_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Schemas/{id}:
     x-audience: public
     get:
@@ -2999,14 +3287,14 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_schema_resp'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_schema_resp"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Users:
     x-audience: public
     get:
@@ -3070,7 +3358,7 @@ paths:
           schema:
             type: integer
             minimum: 1
-          description: ''
+          description: ""
           example: 1
         - name: count
           in: query
@@ -3078,15 +3366,15 @@ paths:
             type: integer
             minimum: 1
             maximum: 200
-          description: ''
+          description: ""
           example: 10
         - name: filter
           in: query
           schema:
             type: string
-          description: ''
+          description: ""
           example: userName eq "jon.snow@docker.com"
-        - $ref: '#/components/parameters/scim_attributes'
+        - $ref: "#/components/parameters/scim_attributes"
         - name: sortOrder
           in: query
           schema:
@@ -3101,18 +3389,18 @@ paths:
           description: User attribute to sort by.
           example: userName
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_users_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_users_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
     post:
       summary: Create user
       description: |
@@ -3122,26 +3410,26 @@ paths:
       security:
         - bearerSCIMAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/scim_create_user_request'
+        $ref: "#/components/requestBodies/scim_create_user_request"
       responses:
-        '201':
-          $ref: '#/components/responses/scim_create_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "201":
+          $ref: "#/components/responses/scim_create_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "409":
+          $ref: "#/components/responses/scim_conflict"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Users/{id}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/scim_user_id'
+      - $ref: "#/components/parameters/scim_user_id"
     get:
       summary: Get a user
       description: |
@@ -3151,18 +3439,18 @@ paths:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
     put:
       summary: Update a user
       description: |
@@ -3172,22 +3460,22 @@ paths:
       security:
         - bearerSCIMAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/scim_update_user_request'
+        $ref: "#/components/requestBodies/scim_update_user_request"
       responses:
-        '200':
-          $ref: '#/components/responses/scim_update_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_update_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "409":
+          $ref: "#/components/responses/scim_conflict"
+        "500":
+          $ref: "#/components/responses/scim_error"
 components:
   responses:
     BadRequest:
@@ -3195,83 +3483,83 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ValueError'
+            $ref: "#/components/schemas/ValueError"
     Unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     NotFound:
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     list_tags:
       description: list repository tags
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/paginated_tags'
+            $ref: "#/components/schemas/paginated_tags"
     get_tag:
       description: repository tag
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/tag'
+            $ref: "#/components/schemas/tag"
     bad_request:
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     not_found:
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     conflict:
       description: Conflict
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     internal_error:
       description: Internal
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     scim_bad_request:
       description: Bad Request
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '400'
+                    example: "400"
                   scimType:
                     type: string
                     description: Some types of errors will return this per the specification.
@@ -3281,58 +3569,58 @@ components:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '401'
+                    example: "401"
     scim_forbidden:
       description: Forbidden
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '403'
+                    example: "403"
     scim_not_found:
       description: Not Found
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '404'
+                    example: "404"
     scim_conflict:
       description: Conflict
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '409'
+                    example: "409"
     scim_error:
       description: Internal Error
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '500'
+                    example: "500"
     scim_get_service_provider_config_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_service_provider_config'
+            $ref: "#/components/schemas/scim_service_provider_config"
     scim_get_resource_types_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -3349,15 +3637,15 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_resource_type'
+                  $ref: "#/components/schemas/scim_resource_type"
     scim_get_resource_type_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_resource_type'
+            $ref: "#/components/schemas/scim_resource_type"
     scim_get_schemas_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -3374,15 +3662,15 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_schema'
+                  $ref: "#/components/schemas/scim_schema"
     scim_get_schema_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_schema'
+            $ref: "#/components/schemas/scim_schema"
     scim_get_users_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -3406,25 +3694,25 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_user'
+                  $ref: "#/components/schemas/scim_user"
     scim_create_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
     scim_get_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
     scim_update_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
   schemas:
     UsersLoginRequest:
       description: User login details
@@ -3522,7 +3810,7 @@ components:
         details:
           type: array
           items:
-            $ref: '#/components/schemas/protobufAny'
+            $ref: "#/components/schemas/protobufAny"
     AuditLogAction:
       type: object
       properties:
@@ -3542,7 +3830,7 @@ components:
         actions:
           type: array
           items:
-            $ref: '#/components/schemas/AuditLogAction'
+            $ref: "#/components/schemas/AuditLogAction"
           description: List of audit log actions.
         label:
           type: string
@@ -3553,7 +3841,7 @@ components:
         actions:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/AuditLogActions'
+            $ref: "#/components/schemas/AuditLogActions"
           description: Map of audit log actions.
       description: GetAuditActions response.
     GetAuditLogsResponse:
@@ -3562,7 +3850,7 @@ components:
         logs:
           type: array
           items:
-            $ref: '#/components/schemas/AuditLog'
+            $ref: "#/components/schemas/AuditLog"
           description: List of audit log events.
       description: GetAuditLogs response.
     AuditLog:
@@ -3620,7 +3908,7 @@ components:
           example: some user agent
         created_at:
           type: string
-          example: '2021-07-20T12:00:00.000000Z'
+          example: "2021-07-20T12:00:00.000000Z"
         last_used:
           type: string
           example: null
@@ -3669,9 +3957,9 @@ components:
             Optional expiration date for the token.
             If omitted, the token will remain valid indefinitely.
           format: date-time
-          example: '2021-10-28T18:30:19.520861Z'
+          example: "2021-10-28T18:30:19.520861Z"
     createAccessTokensResponse:
-      $ref: '#/components/schemas/accessToken'
+      $ref: "#/components/schemas/accessToken"
     getAccessTokensResponse:
       type: object
       properties:
@@ -3691,12 +3979,12 @@ components:
           type: array
           items:
             allOf:
-              - $ref: '#/components/schemas/accessToken'
+              - $ref: "#/components/schemas/accessToken"
               - type: object
                 properties:
                   token:
                     type: string
-                    example: ''
+                    example: ""
     patchAccessTokenRequest:
       type: object
       properties:
@@ -3709,12 +3997,12 @@ components:
           type: boolean
           example: false
     patchAccessTokenResponse:
-      $ref: '#/components/schemas/accessToken'
+      $ref: "#/components/schemas/accessToken"
     orgSettings:
       type: object
       properties:
         restricted_images:
-          $ref: '#/components/schemas/restricted_images'
+          $ref: "#/components/schemas/restricted_images"
     restricted_images:
       type: object
       properties:
@@ -3762,7 +4050,7 @@ components:
         layers:
           type: array
           items:
-            $ref: '#/components/schemas/layer'
+            $ref: "#/components/schemas/layer"
         os:
           type: string
           description: operating system
@@ -3783,12 +4071,12 @@ components:
           description: Status of the image
         last_pulled:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last pull
           nullable: true
         last_pushed:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last push
           nullable: true
     tag:
@@ -3799,13 +4087,13 @@ components:
           description: tag ID
         images:
           type: object
-          $ref: '#/components/schemas/image'
+          $ref: "#/components/schemas/image"
         creator:
           type: integer
           description: ID of the user that pushed the tag
         last_updated:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last update
           nullable: true
         last_updater:
@@ -3834,23 +4122,23 @@ components:
           description: whether a tag has been pushed to or pulled in the past month
         tag_last_pulled:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last pull
           nullable: true
         tag_last_pushed:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last push
           nullable: true
     paginated_tags:
       allOf:
-        - $ref: '#/components/schemas/page'
+        - $ref: "#/components/schemas/page"
         - type: object
           properties:
             results:
               type: array
               items:
-                $ref: '#/components/schemas/tag'
+                $ref: "#/components/schemas/tag"
     page:
       type: object
       properties:
@@ -3901,13 +4189,13 @@ components:
           example: server
     scim_schema_parent_attribute:
       allOf:
-        - $ref: '#/components/schemas/scim_schema_attribute'
+        - $ref: "#/components/schemas/scim_schema_attribute"
         - type: object
           properties:
             subAttributes:
               type: array
               items:
-                $ref: '#/components/schemas/scim_schema_attribute'
+                $ref: "#/components/schemas/scim_schema_attribute"
     invite:
       type: object
       properties:
@@ -3932,7 +4220,7 @@ components:
           example: owners
         created_at:
           type: string
-          example: '2021-10-28T18:30:19.520861Z'
+          example: "2021-10-28T18:30:19.520861Z"
     bulk_invite:
       type: object
       properties:
@@ -3950,7 +4238,7 @@ components:
                 description: status of the invite or validation error
               invite:
                 description: Invite data if successfully invited
-                $ref: '#/components/schemas/invite'
+                $ref: "#/components/schemas/invite"
       example:
         invitees:
           - invitee: invitee@docker.com
@@ -3961,7 +4249,7 @@ components:
               invitee: invitee@docker.com
               org: docker
               team: owners
-              created_at: '2021-10-28T18:30:19.520861Z'
+              created_at: "2021-10-28T18:30:19.520861Z"
           - invitee: invitee2@docker.com
             status: existing_org_member
           - invitee: invitee3@docker.com
@@ -4003,7 +4291,7 @@ components:
           example: Docker Inc
         date_joined:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         full_name:
           type: string
           example: Jon Snow
@@ -4026,7 +4314,7 @@ components:
           example: dockeruser
     org_member:
       allOf:
-        - $ref: '#/components/schemas/user'
+        - $ref: "#/components/schemas/user"
       properties:
         email:
           type: string
@@ -4063,14 +4351,14 @@ components:
           description: |
             Last time the user logged in. To access this field, you must have insights visible for your organization. See 
             [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         last_seen_at:
           type: string
           format: date-time
           description: |
             Last time the user was seen. To access this field, you must have insights visible for your organization. See 
             [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         last_desktop_version:
           type: string
           description: |
@@ -4096,7 +4384,7 @@ components:
           schema:
             type: integer
             minimum: 1
-          description: ''
+          description: ""
           example: 1
         - name: count
           in: query
@@ -4104,15 +4392,15 @@ components:
             type: integer
             minimum: 1
             maximum: 200
-          description: ''
+          description: ""
           example: 10
         - name: filter
           in: query
           schema:
             type: string
-          description: ''
+          description: ""
           example: userName eq "jon.snow@docker.com"
-        - $ref: '#/components/parameters/scim_attributes'
+        - $ref: "#/components/parameters/scim_attributes"
         - name: sortOrder
           in: query
           schema:
@@ -4127,18 +4415,18 @@ components:
           description: User attribute to sort by.
           example: userName
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_users_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_users_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
     post:
       summary: Create user
       description: |
@@ -4148,26 +4436,26 @@ components:
       security:
         - bearerSCIMAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/scim_create_user_request'
+        $ref: "#/components/requestBodies/scim_create_user_request"
       responses:
-        '201':
-          $ref: '#/components/responses/scim_create_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "201":
+          $ref: "#/components/responses/scim_create_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "409":
+          $ref: "#/components/responses/scim_conflict"
+        "500":
+          $ref: "#/components/responses/scim_error"
   /v2/scim/2.0/Users/{id}:
     x-audience: public
     parameters:
-      - $ref: '#/components/parameters/scim_user_id'
+      - $ref: "#/components/parameters/scim_user_id"
     get:
       summary: Get a user
       description: |
@@ -4177,18 +4465,18 @@ components:
       security:
         - bearerSCIMAuth: []
       responses:
-        '200':
-          $ref: '#/components/responses/scim_get_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_get_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "500":
+          $ref: "#/components/responses/scim_error"
     put:
       summary: Update a user
       description: |
@@ -4198,22 +4486,22 @@ components:
       security:
         - bearerSCIMAuth: []
       requestBody:
-        $ref: '#/components/requestBodies/scim_update_user_request'
+        $ref: "#/components/requestBodies/scim_update_user_request"
       responses:
-        '200':
-          $ref: '#/components/responses/scim_update_user_resp'
-        '400':
-          $ref: '#/components/responses/scim_bad_request'
-        '401':
-          $ref: '#/components/responses/scim_unauthorized'
-        '403':
-          $ref: '#/components/responses/scim_forbidden'
-        '404':
-          $ref: '#/components/responses/scim_not_found'
-        '409':
-          $ref: '#/components/responses/scim_conflict'
-        '500':
-          $ref: '#/components/responses/scim_error'
+        "200":
+          $ref: "#/components/responses/scim_update_user_resp"
+        "400":
+          $ref: "#/components/responses/scim_bad_request"
+        "401":
+          $ref: "#/components/responses/scim_unauthorized"
+        "403":
+          $ref: "#/components/responses/scim_forbidden"
+        "404":
+          $ref: "#/components/responses/scim_not_found"
+        "409":
+          $ref: "#/components/responses/scim_conflict"
+        "500":
+          $ref: "#/components/responses/scim_error"
 components:
   responses:
     BadRequest:
@@ -4221,83 +4509,83 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ValueError'
+            $ref: "#/components/schemas/ValueError"
     Unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     Forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     NotFound:
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Error'
+            $ref: "#/components/schemas/Error"
     list_tags:
       description: list repository tags
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/paginated_tags'
+            $ref: "#/components/schemas/paginated_tags"
     get_tag:
       description: repository tag
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/tag'
+            $ref: "#/components/schemas/tag"
     bad_request:
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     forbidden:
       description: Forbidden
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     not_found:
       description: Not Found
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     conflict:
       description: Conflict
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     internal_error:
       description: Internal
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/error'
+            $ref: "#/components/schemas/error"
     scim_bad_request:
       description: Bad Request
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '400'
+                    example: "400"
                   scimType:
                     type: string
                     description: Some types of errors will return this per the specification.
@@ -4307,58 +4595,58 @@ components:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '401'
+                    example: "401"
     scim_forbidden:
       description: Forbidden
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '403'
+                    example: "403"
     scim_not_found:
       description: Not Found
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '404'
+                    example: "404"
     scim_conflict:
       description: Conflict
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '409'
+                    example: "409"
     scim_error:
       description: Internal Error
       content:
         application/scim+json:
           schema:
             allOf:
-              - $ref: '#/components/schemas/scim_error'
+              - $ref: "#/components/schemas/scim_error"
               - properties:
                   status:
-                    example: '500'
+                    example: "500"
     scim_get_service_provider_config_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_service_provider_config'
+            $ref: "#/components/schemas/scim_service_provider_config"
     scim_get_resource_types_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -4375,15 +4663,15 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_resource_type'
+                  $ref: "#/components/schemas/scim_resource_type"
     scim_get_resource_type_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_resource_type'
+            $ref: "#/components/schemas/scim_resource_type"
     scim_get_schemas_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -4400,15 +4688,15 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_schema'
+                  $ref: "#/components/schemas/scim_schema"
     scim_get_schema_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_schema'
+            $ref: "#/components/schemas/scim_schema"
     scim_get_users_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
@@ -4432,25 +4720,25 @@ components:
               resources:
                 type: array
                 items:
-                  $ref: '#/components/schemas/scim_user'
+                  $ref: "#/components/schemas/scim_user"
     scim_create_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
     scim_get_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
     scim_update_user_resp:
-      description: ''
+      description: ""
       content:
         application/scim+json:
           schema:
-            $ref: '#/components/schemas/scim_user'
+            $ref: "#/components/schemas/scim_user"
   schemas:
     UsersLoginRequest:
       description: User login details
@@ -4548,7 +4836,7 @@ components:
         details:
           type: array
           items:
-            $ref: '#/components/schemas/protobufAny'
+            $ref: "#/components/schemas/protobufAny"
     AuditLogAction:
       type: object
       properties:
@@ -4568,7 +4856,7 @@ components:
         actions:
           type: array
           items:
-            $ref: '#/components/schemas/AuditLogAction'
+            $ref: "#/components/schemas/AuditLogAction"
           description: List of audit log actions.
         label:
           type: string
@@ -4579,7 +4867,7 @@ components:
         actions:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/AuditLogActions'
+            $ref: "#/components/schemas/AuditLogActions"
           description: Map of audit log actions.
       description: GetAuditActions response.
     GetAuditLogsResponse:
@@ -4588,7 +4876,7 @@ components:
         logs:
           type: array
           items:
-            $ref: '#/components/schemas/AuditLog'
+            $ref: "#/components/schemas/AuditLog"
           description: List of audit log events.
       description: GetAuditLogs response.
     AuditLog:
@@ -4646,7 +4934,7 @@ components:
           example: some user agent
         created_at:
           type: string
-          example: '2021-07-20T12:00:00.000000Z'
+          example: "2021-07-20T12:00:00.000000Z"
         last_used:
           type: string
           example: null
@@ -4695,9 +4983,9 @@ components:
             Optional expiration date for the token.
             If omitted, the token will remain valid indefinitely.
           format: date-time
-          example: '2021-10-28T18:30:19.520861Z'
+          example: "2021-10-28T18:30:19.520861Z"
     createAccessTokensResponse:
-      $ref: '#/components/schemas/accessToken'
+      $ref: "#/components/schemas/accessToken"
     getAccessTokensResponse:
       type: object
       properties:
@@ -4717,12 +5005,12 @@ components:
           type: array
           items:
             allOf:
-              - $ref: '#/components/schemas/accessToken'
+              - $ref: "#/components/schemas/accessToken"
               - type: object
                 properties:
                   token:
                     type: string
-                    example: ''
+                    example: ""
     patchAccessTokenRequest:
       type: object
       properties:
@@ -4735,12 +5023,12 @@ components:
           type: boolean
           example: false
     patchAccessTokenResponse:
-      $ref: '#/components/schemas/accessToken'
+      $ref: "#/components/schemas/accessToken"
     orgSettings:
       type: object
       properties:
         restricted_images:
-          $ref: '#/components/schemas/restricted_images'
+          $ref: "#/components/schemas/restricted_images"
     restricted_images:
       type: object
       properties:
@@ -4788,7 +5076,7 @@ components:
         layers:
           type: array
           items:
-            $ref: '#/components/schemas/layer'
+            $ref: "#/components/schemas/layer"
         os:
           type: string
           description: operating system
@@ -4809,12 +5097,12 @@ components:
           description: Status of the image
         last_pulled:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last pull
           nullable: true
         last_pushed:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last push
           nullable: true
     tag:
@@ -4825,13 +5113,13 @@ components:
           description: tag ID
         images:
           type: object
-          $ref: '#/components/schemas/image'
+          $ref: "#/components/schemas/image"
         creator:
           type: integer
           description: ID of the user that pushed the tag
         last_updated:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last update
           nullable: true
         last_updater:
@@ -4860,23 +5148,23 @@ components:
           description: whether a tag has been pushed to or pulled in the past month
         tag_last_pulled:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last pull
           nullable: true
         tag_last_pushed:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
           description: datetime of last push
           nullable: true
     paginated_tags:
       allOf:
-        - $ref: '#/components/schemas/page'
+        - $ref: "#/components/schemas/page"
         - type: object
           properties:
             results:
               type: array
               items:
-                $ref: '#/components/schemas/tag'
+                $ref: "#/components/schemas/tag"
     page:
       type: object
       properties:
@@ -4927,13 +5215,13 @@ components:
           example: server
     scim_schema_parent_attribute:
       allOf:
-        - $ref: '#/components/schemas/scim_schema_attribute'
+        - $ref: "#/components/schemas/scim_schema_attribute"
         - type: object
           properties:
             subAttributes:
               type: array
               items:
-                $ref: '#/components/schemas/scim_schema_attribute'
+                $ref: "#/components/schemas/scim_schema_attribute"
     invite:
       type: object
       properties:
@@ -4958,7 +5246,7 @@ components:
           example: owners
         created_at:
           type: string
-          example: '2021-10-28T18:30:19.520861Z'
+          example: "2021-10-28T18:30:19.520861Z"
     bulk_invite:
       type: object
       properties:
@@ -4976,7 +5264,7 @@ components:
                 description: status of the invite or validation error
               invite:
                 description: Invite data if successfully invited
-                $ref: '#/components/schemas/invite'
+                $ref: "#/components/schemas/invite"
       example:
         invitees:
           - invitee: invitee@docker.com
@@ -4987,7 +5275,7 @@ components:
               invitee: invitee@docker.com
               org: docker
               team: owners
-              created_at: '2021-10-28T18:30:19.520861Z'
+              created_at: "2021-10-28T18:30:19.520861Z"
           - invitee: invitee2@docker.com
             status: existing_org_member
           - invitee: invitee3@docker.com
@@ -5029,7 +5317,7 @@ components:
           example: Docker Inc
         date_joined:
           type: string
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         full_name:
           type: string
           example: Jon Snow
@@ -5052,7 +5340,7 @@ components:
           example: dockeruser
     org_member:
       allOf:
-        - $ref: '#/components/schemas/user'
+        - $ref: "#/components/schemas/user"
       properties:
         email:
           type: string
@@ -5089,14 +5377,14 @@ components:
           description: |
             Last time the user logged in. To access this field, you must have insights visible for your organization. See 
             [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         last_seen_at:
           type: string
           format: date-time
           description: |
             Last time the user was seen. To access this field, you must have insights visible for your organization. See 
             [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         last_desktop_version:
           type: string
           description: |
@@ -5125,7 +5413,7 @@ components:
           type: array
           description: List of accounts.
           items:
-            $ref: '#/components/schemas/org_member'
+            $ref: "#/components/schemas/org_member"
     org_group:
       type: object
       properties:
@@ -5161,7 +5449,7 @@ components:
         date_joined:
           type: string
           format: date-time
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         full_name:
           type: string
           example: John Snow
@@ -5201,7 +5489,7 @@ components:
           type: boolean
     legacy_email_address:
       allOf:
-        - $ref: '#/components/schemas/email_address'
+        - $ref: "#/components/schemas/email_address"
         - type: object
           properties:
             user:
@@ -5209,7 +5497,7 @@ components:
               example: dockeruser
     email_with_username:
       allOf:
-        - $ref: '#/components/schemas/email_address'
+        - $ref: "#/components/schemas/email_address"
         - type: object
           properties:
             username:
@@ -5226,7 +5514,7 @@ components:
             - urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig
         documentationUri:
           type: string
-          example: ''
+          example: ""
         patch:
           properties:
             supported:
@@ -5330,7 +5618,7 @@ components:
           type: array
           example: []
           items:
-            $ref: '#/components/schemas/scim_schema_parent_attribute'
+            $ref: "#/components/schemas/scim_schema_parent_attribute"
     scim_email:
       type: object
       properties:
@@ -5383,26 +5671,26 @@ components:
       type: object
       properties:
         schemas:
-          $ref: '#/components/schemas/scim_user_schemas'
+          $ref: "#/components/schemas/scim_user_schemas"
         id:
-          $ref: '#/components/schemas/scim_user_id'
+          $ref: "#/components/schemas/scim_user_id"
         userName:
-          $ref: '#/components/schemas/scim_user_username'
+          $ref: "#/components/schemas/scim_user_username"
         name:
-          $ref: '#/components/schemas/scim_user_name'
+          $ref: "#/components/schemas/scim_user_name"
         displayName:
-          $ref: '#/components/schemas/scim_user_display_name'
+          $ref: "#/components/schemas/scim_user_display_name"
         active:
           type: boolean
           example: true
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/scim_email'
+            $ref: "#/components/schemas/scim_email"
         groups:
           type: array
           items:
-            $ref: '#/components/schemas/scim_group'
+            $ref: "#/components/schemas/scim_group"
         meta:
           type: object
           properties:
@@ -5416,12 +5704,158 @@ components:
               type: string
               format: date-time
               description: The creation date for the user as a RFC3339 formatted string.
-              example: '2022-05-20T00:54:18Z'
+              example: "2022-05-20T00:54:18Z"
             lastModified:
               type: string
               format: date-time
               description: The date the user was last modified as a RFC3339 formatted string.
-              example: '2022-05-20T00:54:18Z'
+              example: "2022-05-20T00:54:18Z"
+    orgAccessToken:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+        label:
+          type: string
+          example: "My organization token"
+        created_by:
+          type: string
+          example: "johndoe"
+        is_active:
+          type: boolean
+          example: true
+        created_at:
+          type: string
+          format: date-time
+          example: "2022-05-20T00:54:18Z"
+        expires_at:
+          type: string
+          format: date-time
+          example: "2023-05-20T00:54:18Z"
+          nullable: true
+        last_used_at:
+          type: string
+          format: date-time
+          example: "2022-06-15T12:30:45Z"
+          nullable: true
+    orgAccessTokenResource:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - TYPE_REPO
+            - TYPE_ORG
+          example: "TYPE_REPO"
+          description: The type of resource
+          required: true
+        path:
+          type: string
+          example: "myorg/myrepo"
+          description: The path of the resource. The format of this will change depending on the type of resource.
+          required: true
+        scopes:
+          type: array
+          description: The scopes this token has access to
+          items:
+            type: string
+            example: "repo-pull"
+          required: true
+    getOrgAccessTokensResponse:
+      type: object
+      properties:
+        total:
+          type: number
+          example: 10
+        next:
+          type: string
+          example: https://hub.docker.com/v2/orgs/docker/access-tokens?page=2&page_size=10
+        previous:
+          type: string
+          example: https://hub.docker.com/v2/orgs/docker/access-tokens?page=1&page_size=10
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/orgAccessToken"
+    getOrgAccessTokenResponse:
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            resources:
+              type: array
+              description: Resources this token has access to
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
+    createOrgAccessTokenRequest:
+      type: object
+      properties:
+        label:
+          type: string
+          description: Label for the access token
+          example: "My organization token"
+          required: true
+        description:
+          type: string
+          description: Description of the access token
+          example: "Token for CI/CD pipeline"
+        resources:
+          type: array
+          description: Resources this token has access to
+          items:
+            $ref: "#/components/schemas/orgAccessTokenResource"
+        expires_at:
+          type: string
+          format: date-time
+          description: Expiration date for the token
+          example: "2023-05-20T00:54:18Z"
+          nullable: true
+    createOrgAccessTokenResponse:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            token:
+              type: string
+              description: The actual token value that can be used for authentication
+              example: "dckr_oat_7awgM4jG5SQvxcvmNzhKj8PQjxo"
+            resources:
+              type: array
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
+    updateOrgAccessTokenRequest:
+      type: object
+      properties:
+        label:
+          type: string
+          description: Label for the access token
+          example: "My organization token"
+        description:
+          type: string
+          description: Description of the access token
+          example: "Token for CI/CD pipeline"
+        resources:
+          type: array
+          description: Resources this token has access to
+          items:
+            $ref: "#/components/schemas/orgAccessTokenResource"
+        is_active:
+          type: boolean
+          description: Whether the token is active
+          example: true
+    updateOrgAccessTokenResponse:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            resources:
+              type: array
+              description: Resources this token has access to
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
   parameters:
     namespace:
       in: path
@@ -5578,11 +6012,11 @@ components:
               - userName
             properties:
               schemas:
-                $ref: '#/components/schemas/scim_user_schemas'
+                $ref: "#/components/schemas/scim_user_schemas"
               userName:
-                $ref: '#/components/schemas/scim_user_username'
+                $ref: "#/components/schemas/scim_user_username"
               name:
-                $ref: '#/components/schemas/scim_user_name'
+                $ref: "#/components/schemas/scim_user_name"
     scim_update_user_request:
       required: true
       content:
@@ -5593,10 +6027,10 @@ components:
               - schemas
             properties:
               schemas:
-                $ref: '#/components/schemas/scim_user_schemas'
+                $ref: "#/components/schemas/scim_user_schemas"
               name:
                 allOf:
-                  - $ref: '#/components/schemas/scim_user_name'
+                  - $ref: "#/components/schemas/scim_user_name"
                   - description: If this is omitted from the request, the update will skip the update on it. We will only ever change the name, but not clear it.
               enabled:
                 type: boolean
@@ -5638,7 +6072,8 @@ x-tagGroups:
       - org-settings
       - repositories
       - scim
-      - orgs 
+      - orgs
+      - org-access-tokens
       - groups
       - invites
 @y
@@ -5661,7 +6096,7 @@ x-tagGroups:
           type: array
           description: List of accounts.
           items:
-            $ref: '#/components/schemas/org_member'
+            $ref: "#/components/schemas/org_member"
     org_group:
       type: object
       properties:
@@ -5697,7 +6132,7 @@ x-tagGroups:
         date_joined:
           type: string
           format: date-time
-          example: '2021-01-05T21:06:53.506400Z'
+          example: "2021-01-05T21:06:53.506400Z"
         full_name:
           type: string
           example: John Snow
@@ -5737,7 +6172,7 @@ x-tagGroups:
           type: boolean
     legacy_email_address:
       allOf:
-        - $ref: '#/components/schemas/email_address'
+        - $ref: "#/components/schemas/email_address"
         - type: object
           properties:
             user:
@@ -5745,7 +6180,7 @@ x-tagGroups:
               example: dockeruser
     email_with_username:
       allOf:
-        - $ref: '#/components/schemas/email_address'
+        - $ref: "#/components/schemas/email_address"
         - type: object
           properties:
             username:
@@ -5762,7 +6197,7 @@ x-tagGroups:
             - urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig
         documentationUri:
           type: string
-          example: ''
+          example: ""
         patch:
           properties:
             supported:
@@ -5866,7 +6301,7 @@ x-tagGroups:
           type: array
           example: []
           items:
-            $ref: '#/components/schemas/scim_schema_parent_attribute'
+            $ref: "#/components/schemas/scim_schema_parent_attribute"
     scim_email:
       type: object
       properties:
@@ -5919,26 +6354,26 @@ x-tagGroups:
       type: object
       properties:
         schemas:
-          $ref: '#/components/schemas/scim_user_schemas'
+          $ref: "#/components/schemas/scim_user_schemas"
         id:
-          $ref: '#/components/schemas/scim_user_id'
+          $ref: "#/components/schemas/scim_user_id"
         userName:
-          $ref: '#/components/schemas/scim_user_username'
+          $ref: "#/components/schemas/scim_user_username"
         name:
-          $ref: '#/components/schemas/scim_user_name'
+          $ref: "#/components/schemas/scim_user_name"
         displayName:
-          $ref: '#/components/schemas/scim_user_display_name'
+          $ref: "#/components/schemas/scim_user_display_name"
         active:
           type: boolean
           example: true
         emails:
           type: array
           items:
-            $ref: '#/components/schemas/scim_email'
+            $ref: "#/components/schemas/scim_email"
         groups:
           type: array
           items:
-            $ref: '#/components/schemas/scim_group'
+            $ref: "#/components/schemas/scim_group"
         meta:
           type: object
           properties:
@@ -5952,12 +6387,158 @@ x-tagGroups:
               type: string
               format: date-time
               description: The creation date for the user as a RFC3339 formatted string.
-              example: '2022-05-20T00:54:18Z'
+              example: "2022-05-20T00:54:18Z"
             lastModified:
               type: string
               format: date-time
               description: The date the user was last modified as a RFC3339 formatted string.
-              example: '2022-05-20T00:54:18Z'
+              example: "2022-05-20T00:54:18Z"
+    orgAccessToken:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+        label:
+          type: string
+          example: "My organization token"
+        created_by:
+          type: string
+          example: "johndoe"
+        is_active:
+          type: boolean
+          example: true
+        created_at:
+          type: string
+          format: date-time
+          example: "2022-05-20T00:54:18Z"
+        expires_at:
+          type: string
+          format: date-time
+          example: "2023-05-20T00:54:18Z"
+          nullable: true
+        last_used_at:
+          type: string
+          format: date-time
+          example: "2022-06-15T12:30:45Z"
+          nullable: true
+    orgAccessTokenResource:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - TYPE_REPO
+            - TYPE_ORG
+          example: "TYPE_REPO"
+          description: The type of resource
+          required: true
+        path:
+          type: string
+          example: "myorg/myrepo"
+          description: The path of the resource. The format of this will change depending on the type of resource.
+          required: true
+        scopes:
+          type: array
+          description: The scopes this token has access to
+          items:
+            type: string
+            example: "repo-pull"
+          required: true
+    getOrgAccessTokensResponse:
+      type: object
+      properties:
+        total:
+          type: number
+          example: 10
+        next:
+          type: string
+          example: https://hub.docker.com/v2/orgs/docker/access-tokens?page=2&page_size=10
+        previous:
+          type: string
+          example: https://hub.docker.com/v2/orgs/docker/access-tokens?page=1&page_size=10
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/orgAccessToken"
+    getOrgAccessTokenResponse:
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            resources:
+              type: array
+              description: Resources this token has access to
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
+    createOrgAccessTokenRequest:
+      type: object
+      properties:
+        label:
+          type: string
+          description: Label for the access token
+          example: "My organization token"
+          required: true
+        description:
+          type: string
+          description: Description of the access token
+          example: "Token for CI/CD pipeline"
+        resources:
+          type: array
+          description: Resources this token has access to
+          items:
+            $ref: "#/components/schemas/orgAccessTokenResource"
+        expires_at:
+          type: string
+          format: date-time
+          description: Expiration date for the token
+          example: "2023-05-20T00:54:18Z"
+          nullable: true
+    createOrgAccessTokenResponse:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            token:
+              type: string
+              description: The actual token value that can be used for authentication
+              example: "dckr_oat_7awgM4jG5SQvxcvmNzhKj8PQjxo"
+            resources:
+              type: array
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
+    updateOrgAccessTokenRequest:
+      type: object
+      properties:
+        label:
+          type: string
+          description: Label for the access token
+          example: "My organization token"
+        description:
+          type: string
+          description: Description of the access token
+          example: "Token for CI/CD pipeline"
+        resources:
+          type: array
+          description: Resources this token has access to
+          items:
+            $ref: "#/components/schemas/orgAccessTokenResource"
+        is_active:
+          type: boolean
+          description: Whether the token is active
+          example: true
+    updateOrgAccessTokenResponse:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            resources:
+              type: array
+              description: Resources this token has access to
+              items:
+                $ref: "#/components/schemas/orgAccessTokenResource"
   parameters:
     namespace:
       in: path
@@ -6114,11 +6695,11 @@ x-tagGroups:
               - userName
             properties:
               schemas:
-                $ref: '#/components/schemas/scim_user_schemas'
+                $ref: "#/components/schemas/scim_user_schemas"
               userName:
-                $ref: '#/components/schemas/scim_user_username'
+                $ref: "#/components/schemas/scim_user_username"
               name:
-                $ref: '#/components/schemas/scim_user_name'
+                $ref: "#/components/schemas/scim_user_name"
     scim_update_user_request:
       required: true
       content:
@@ -6129,10 +6710,10 @@ x-tagGroups:
               - schemas
             properties:
               schemas:
-                $ref: '#/components/schemas/scim_user_schemas'
+                $ref: "#/components/schemas/scim_user_schemas"
               name:
                 allOf:
-                  - $ref: '#/components/schemas/scim_user_name'
+                  - $ref: "#/components/schemas/scim_user_name"
                   - description: If this is omitted from the request, the update will skip the update on it. We will only ever change the name, but not clear it.
               enabled:
                 type: boolean
@@ -6174,7 +6755,8 @@ x-tagGroups:
       - org-settings
       - repositories
       - scim
-      - orgs 
+      - orgs
+      - org-access-tokens
       - groups
       - invites
 @z

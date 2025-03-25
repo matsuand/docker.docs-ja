@@ -4,12 +4,12 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Wasm workloads (Beta)
+title: Wasm workloads 
 weight: 20
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
 @y
-title: Wasm workloads (Beta)
+title: Wasm workloads 
 weight: 20
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
