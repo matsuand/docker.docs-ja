@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
+% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
 
 @x
 description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
@@ -25,6 +25,16 @@ linkTitle: Troubleshoot and diagnose
 This page contains information on how to diagnose and troubleshoot Docker Desktop, and how to check the logs.
 @y
 This page contains information on how to diagnose and troubleshoot Docker Desktop, and how to check the logs.
+@z
+
+@x
+> [!WARNING]
+>
+> If you're experiencing malware detection issues on Mac, follow the steps documented in [docker/for-mac#7527](https://github.com/docker/for-mac/issues/7527).
+@y
+> [!WARNING]
+>
+> If you're experiencing malware detection issues on Mac, follow the steps documented in [docker/for-mac#7527](https://github.com/docker/for-mac/issues/7527).
 @z
 
 @x
@@ -85,16 +95,6 @@ Docker Desktop to their initial state, the same as when Docker Desktop was first
 If you are a Mac or Linux user, you also have the option to **Uninstall** Docker Desktop from your system.
 @y
 If you are a Mac or Linux user, you also have the option to **Uninstall** Docker Desktop from your system.
-@z
-
-@x
-> [!TIP]
->
-> If you need to contact support, select the **Question mark** icon near the top-right corner of Docker Dashboard, and then select **Contact support**. Users with a paid Docker subscription can use this option to send a support request.
-@y
-> [!TIP]
->
-> If you need to contact support, select the **Question mark** icon near the top-right corner of Docker Dashboard, and then select **Contact support**. Users with a paid Docker subscription can use this option to send a support request.
 @z
 
 @x
