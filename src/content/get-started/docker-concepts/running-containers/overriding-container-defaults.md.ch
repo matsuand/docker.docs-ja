@@ -194,9 +194,9 @@ In this hands-on guide, you'll see how to use the `docker run` command to overri
 @z
 
 @x
-### Run multiple instance of the Postgres database
+### Run multiple instances of the Postgres database
 @y
-### Run multiple instance of the Postgres database
+### Run multiple instances of the Postgres database
 @z
 
 @x

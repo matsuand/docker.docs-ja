@@ -505,11 +505,11 @@ Docker Desktop contains a self-diagnose tool which can help you identify some co
 
 @x
    ```console
-   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather
    ```
 @y
    ```console
-   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" check
+   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather
    ```
 @z
 
@@ -545,11 +545,11 @@ Docker Desktop contains a self-diagnose tool which can help you identify some co
 
 @x
    ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose check
+   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose gather
    ```
 @y
    ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose check
+   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose gather
    ```
 @z
 
@@ -575,11 +575,11 @@ Docker Desktop contains a self-diagnose tool which can help you identify some co
 
 @x
    ```console
-   $ /opt/docker-desktop/bin/com.docker.diagnose check
+   $ /opt/docker-desktop/bin/com.docker.diagnose gather
    ```
 @y
    ```console
-   $ /opt/docker-desktop/bin/com.docker.diagnose check
+   $ /opt/docker-desktop/bin/com.docker.diagnose gather
    ```
 @z
 
