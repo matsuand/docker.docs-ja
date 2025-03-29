@@ -98,13 +98,13 @@ Docker Personal includes:
 @x
 - 1 included repository with continuous vulnerability analysis in Docker Scout
 - Unlimited public Docker Hub repositories
-- 100 pulls per hour Docker Hub image pull rate limit for authenticated users
+- 100 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
 - 7-day Docker Build Cloud trial
 - 7-day Testcontainers Cloud trial
 @y
 - 1 included repository with continuous vulnerability analysis in Docker Scout
 - Unlimited public Docker Hub repositories
-- 100 pulls per hour Docker Hub image pull rate limit for authenticated users
+- 100 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
 - 7-day Docker Build Cloud trial
 - 7-day Testcontainers Cloud trial
 @z
@@ -121,10 +121,10 @@ time.
 
 @x
 All unauthenticated users, including unauthenticated Docker Personal users, get
-10 pulls per hour per IP address.
+100 pulls per 6 hours per IPv4 address or IPv6 /64 subnet.
 @y
 All unauthenticated users, including unauthenticated Docker Personal users, get
-10 pulls per hour per IP address.
+100 pulls per 6 hours per IPv4 address or IPv6 /64 subnet.
 @z
 
 @x

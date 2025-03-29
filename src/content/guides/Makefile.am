@@ -11,6 +11,7 @@ bases = \
 	_index.md                          \
 	container-supported-development.md \
 	databases.md                       \
+	dex.md                             \
 	gha.md                             \
 	jupyter.md                         \
 	kafka.md                           \

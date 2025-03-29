@@ -207,10 +207,10 @@ by `docker build` during the build process.
 
 @x
 Since Docker Desktop 4.19, ECI protects containers used by `docker build`
-when using the [Docker container build driver](/manuals/build/builders/drivers/_index.md).
+when using the [Docker container driver](/manuals/build/builders/drivers/_index.md).
 @y
 Since Docker Desktop 4.19, ECI protects containers used by `docker build`
-when using the [Docker container build driver](manuals/build/builders/drivers/_index.md).
+when using the [Docker container driver](manuals/build/builders/drivers/_index.md).
 @z
 
 @x

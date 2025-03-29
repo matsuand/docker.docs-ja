@@ -4,11 +4,11 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Docker container build driver
+title: Docker container driver
 description: The Docker container driver runs BuildKit in a container image.
 keywords: build, buildx, driver, builder, docker-container
 @y
-title: Docker container build driver
+title: Docker container driver
 description: The Docker container driver runs BuildKit in a container image.
 keywords: build, buildx, driver, builder, docker-container
 @z

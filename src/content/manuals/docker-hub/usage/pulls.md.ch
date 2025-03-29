@@ -17,19 +17,13 @@ linkTitle: Pulls
 @z
 
 @x
-{{% include "hub-limits.md" %}}
-@y
-{{% include "hub-limits.md" %}}
-@z
-
-@x
-Unauthenticated and Docker Personal users are subject to hourly pull rate limits
+Unauthenticated and Docker Personal users are subject to a 6-hour pull rate limit
 on Docker Hub. In contrast, Docker Pro, Team, and Business users benefit from
-unlimited pulls per hour.
+an unlimited pull rate.
 @y
-Unauthenticated and Docker Personal users are subject to hourly pull rate limits
+Unauthenticated and Docker Personal users are subject to a 6-hour pull rate limit
 on Docker Hub. In contrast, Docker Pro, Team, and Business users benefit from
-unlimited pulls per hour.
+an unlimited pull rate.
 @z
 
 @x
@@ -41,21 +35,21 @@ fair use:
 @z
 
 @x
-| User type                | Pull rate limit per hour               |
-|--------------------------|----------------------------------------|
-| Business (authenticated) | Unlimited                              |
-| Team (authenticated)     | Unlimited                              |
-| Pro (authenticated)      | Unlimited                              |
-| Personal (authenticated) | 100                                     |
-| Unauthenticated Users    | 10 per IPv4 address or IPv6 /64 subnet |
+| User type                | Pull rate limit per 6 hours             |
+|--------------------------|-----------------------------------------|
+| Business (authenticated) | Unlimited                               |
+| Team (authenticated)     | Unlimited                               |
+| Pro (authenticated)      | Unlimited                               |
+| Personal (authenticated) | 200                                     |
+| Unauthenticated Users    | 100 per IPv4 address or IPv6 /64 subnet |
 @y
-| User type                | Pull rate limit per hour               |
-|--------------------------|----------------------------------------|
-| Business (authenticated) | Unlimited                              |
-| Team (authenticated)     | Unlimited                              |
-| Pro (authenticated)      | Unlimited                              |
-| Personal (authenticated) | 100                                     |
-| Unauthenticated Users    | 10 per IPv4 address or IPv6 /64 subnet |
+| User type                | Pull rate limit per 6 hours             |
+|--------------------------|-----------------------------------------|
+| Business (authenticated) | Unlimited                               |
+| Team (authenticated)     | Unlimited                               |
+| Pro (authenticated)      | Unlimited                               |
+| Personal (authenticated) | 200                                     |
+| Unauthenticated Users    | 100 per IPv4 address or IPv6 /64 subnet |
 @z
 
 @x
@@ -347,18 +341,18 @@ separated file with the following detailed information.
 @z
 
 @x
-## View hourly pull rate and limit
+## View pull rate and limit
 @y
-## View hourly pull rate and limit
+## View pull rate and limit
 @z
 
 @x
-The pull rate limit is calculated on a per hour basis. There is no pull rate
+The pull rate limit is calculated on a 6-hour basis. There is no pull rate
 limit for users or automated systems with a paid subscription. Unauthenticated
 and Docker Personal users using Docker Hub will experience rate limits on image
 pulls.
 @y
-The pull rate limit is calculated on a per hour basis. There is no pull rate
+The pull rate limit is calculated on a 6-hour basis. There is no pull rate
 limit for users or automated systems with a paid subscription. Unauthenticated
 and Docker Personal users using Docker Hub will experience rate limits on image
 pulls.
@@ -449,11 +443,11 @@ To view your current pull rate and limit:
 % snip code...
 
 @x
-   In the previous example, the pull limit is 100 pulls per 3600 seconds (1
-   hour), and there are 20 pulls remaining.
+   In the previous example, the pull limit is 100 pulls per 21600 seconds (6
+   hours), and there are 20 pulls remaining.
 @y
-   In the previous example, the pull limit is 100 pulls per 3600 seconds (1
-   hour), and there are 20 pulls remaining.
+   In the previous example, the pull limit is 100 pulls per 21600 seconds (6
+   hours), and there are 20 pulls remaining.
 @z
 
 @x

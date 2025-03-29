@@ -379,13 +379,7 @@ So as not to disrupt your developers' workflow, Docker doesn't automatically man
 @z
 
 @x
-In Docker Desktop, developers see the relevant settings grayed out and the message **Locked by your administrator**.
+In Docker Desktop, developers see the relevant settings grayed out.
 @y
-In Docker Desktop, developers see the relevant settings grayed out and the message **Locked by your administrator**.
-@z
-
-@x
-![Proxy settings grayed out with Settings Management](/assets/images/grayed-setting.png)
-@y
-![Proxy settings grayed out with Settings Management](__SUBDIR__/assets/images/grayed-setting.png)
+In Docker Desktop, developers see the relevant settings grayed out.
 @z

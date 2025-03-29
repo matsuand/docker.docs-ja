@@ -211,14 +211,14 @@ Create a file named `compose.yaml` with the following contents.
 # start the database before your application. The `db-data` volume persists the
 # database data between container restarts. The `db-password` secret is used
 # to set the database password. You must create `db/password.txt` and add
-# a password of your choosing to it before running `docker-compose up`.
+# a password of your choosing to it before running `docker compose up`.
 @y
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
 # start the database before your application. The `db-data` volume persists the
 # database data between container restarts. The `db-password` secret is used
 # to set the database password. You must create `db/password.txt` and add
-# a password of your choosing to it before running `docker-compose up`.
+# a password of your choosing to it before running `docker compose up`.
 @z
 
 @x

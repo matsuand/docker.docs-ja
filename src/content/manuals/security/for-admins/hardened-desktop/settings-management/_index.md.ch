@@ -188,12 +188,6 @@ In addition, if Enhanced Container Isolation is enforced, developers can't use p
 @z
 
 @x
-![Proxy settings grayed out](/assets/images/grayed-setting.png)
-@y
-![Proxy settings grayed out](__SUBDIR__/assets/images/grayed-setting.png)
-@z
-
-@x
 ## What's next?
 @y
 ## What's next?

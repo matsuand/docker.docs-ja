@@ -8,25 +8,25 @@
 @z
 
 @x
-      <span class="font-bold">Subscription:</span>
+        <span class="font-bold">Subscription:</span>
 @y
-      <span class="font-bold">Subscription:</span>
+        <span class="font-bold">Subscription:</span>
 @z
 
 @x
-      <span class="font-bold">Availability:</span>
+        <span class="font-bold">Availability:</span>
 @y
-      <span class="font-bold">Availability:</span>
+        <span class="font-bold">Availability:</span>
 @z
 
 @x
-      <span class="font-bold">Requires:</span>
+        <span class="font-bold">Requires:</span>
 @y
-      <span class="font-bold">Requires:</span>
+        <span class="font-bold">Requires:</span>
 @z
 
 @x
-      <span class="font-bold">For:</span>
+        <span class="font-bold">For:</span>
 @y
-      <span class="font-bold">For:</span>
+        <span class="font-bold">For:</span>
 @z
