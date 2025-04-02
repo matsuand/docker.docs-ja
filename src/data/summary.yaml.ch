@@ -66,6 +66,11 @@ Cache backend API:
 Company:
   subscription: [Business]
   for: Administrators
+Compliance reporting:
+  subscription: [Business]
+  for: Administrators
+  requires: Docker Desktop 4.40 and later
+  availability: Early Access
 Compose attach:
   requires: Docker Compose [2.20.0](/manuals/compose/releases/release-notes.md#2200) and later
 Compose bridge:
@@ -141,6 +146,10 @@ Docker Desktop CLI logs:
   requires: Docker Desktop 4.39 and later
 Docker GitHub Copilot:
   availability: Early Access
+Docker Model Runner:
+  availability: Beta
+  requires: Docker Desktop 4.40 and later
+  for: Docker Desktop for Mac with Apple Silicon
 Docker Projects:
   availability: Beta
 Docker Init:
@@ -188,7 +197,6 @@ MSI installer:
   for: Administrators
 OATs:
   subscription: [Team, Business]
-  availability: Beta
 PKG installer:
   subscription: [Business]
   requires: Docker Desktop [4.36](/manuals/desktop/release-notes.md#4360) and later
@@ -283,6 +291,11 @@ Cache backend API:
 Company:
   subscription: [Business]
   for: Administrators
+Compliance reporting:
+  subscription: [Business]
+  for: Administrators
+  requires: Docker Desktop 4.40 and later
+  availability: Early Access
 Compose attach:
   requires: Docker Compose [2.20.0](manuals/compose/releases/release-notes.md#2200) and later
 Compose bridge:
@@ -358,6 +371,10 @@ Docker Desktop CLI logs:
   requires: Docker Desktop 4.39 and later
 Docker GitHub Copilot:
   availability: Early Access
+Docker Model Runner:
+  availability: Beta
+  requires: Docker Desktop 4.40 and later
+  for: Docker Desktop for Mac with Apple Silicon
 Docker Projects:
   availability: Beta
 Docker Init:
@@ -405,7 +422,6 @@ MSI installer:
   for: Administrators
 OATs:
   subscription: [Team, Business]
-  availability: Beta
 PKG installer:
   subscription: [Business]
   requires: Docker Desktop [4.36](manuals/desktop/release-notes.md#4360) and later

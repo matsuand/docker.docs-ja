@@ -80,9 +80,9 @@ You can configure this through SSO using your IdP. Check with your IdP if they s
 @z
 
 @x
-Docker uses tokens to manage sessions after a user signs in:
+By default, Docker uses tokens to manage sessions after a user signs in:
 @y
-Docker uses tokens to manage sessions after a user signs in:
+By default, Docker uses tokens to manage sessions after a user signs in:
 @z
 
 @x
@@ -94,11 +94,9 @@ Docker uses tokens to manage sessions after a user signs in:
 @z
 
 @x
-Custom settings per organization for sessions aren't supported. Currently,
-Docker does not support your IdP's default session timeout for SSO users.
+Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes).
 @y
-Custom settings per organization for sessions aren't supported. Currently,
-Docker does not support your IdP's default session timeout for SSO users.
+Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes).
 @z
 
 @x

@@ -4,7 +4,8 @@
 bases = \
 	_index.md                  \
 	configure-admin-console.md \
-	configure-json-file.md
+	configure-json-file.md     \
+	compliance-reporting.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

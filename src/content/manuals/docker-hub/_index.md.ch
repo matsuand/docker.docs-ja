@@ -69,13 +69,11 @@ title: Docker Hub
   description: Find out about new features, improvements, and bug fixes.
   icon: note_add
   link: /docker-hub/release-notes
----
 @y
 - title: リリースノート
   description: 新機能、改善、バグフィックスを確認します。
   icon: note_add
   link: __SUBDIR__/docker-hub/release-notes
----
 @z
 
 @x

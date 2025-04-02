@@ -169,6 +169,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/features/Makefile
 	src/content/manuals/desktop/features/dev-environments/Makefile
 	src/content/manuals/desktop/features/gordon/Makefile
+	src/content/manuals/desktop/features/gordon/images/Makefile
+	src/content/manuals/desktop/features/gordon/mcp/Makefile
 	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile

@@ -1,11 +1,10 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-SUBDIRS = images mcp
-
-bases = \
-	_index.md
+copyfiles = \
+	delete.webp  \
+	gordon.webp  \
+	toolbox.webp
 
 include $(top_srcdir)/build-aux/common.mk
-include $(top_srcdir)/build-aux/main.mk
+include $(top_srcdir)/build-aux/copy.mk

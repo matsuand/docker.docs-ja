@@ -240,7 +240,8 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md                  \
 	configure-admin-console.md \
-	configure-json-file.md
+	configure-json-file.md     \
+	compliance-reporting.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

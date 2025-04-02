@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+% snip ‘Î‰ž
 
 @x
 title: Ask Gordon
@@ -19,12 +20,12 @@ description: Learn how to streamline your workflow with Docker's AI-powered assi
 
 @x
 Ask Gordon is your personal AI assistant embedded in Docker Desktop and the
-Docker CLI. It's designed to streamline your workflow and help you make the
-most of the Docker ecosystem.
+Docker CLI. It's designed to streamline your workflow and help you make the most
+of the Docker ecosystem.
 @y
 Ask Gordon is your personal AI assistant embedded in Docker Desktop and the
-Docker CLI. It's designed to streamline your workflow and help you make the
-most of the Docker ecosystem.
+Docker CLI. It's designed to streamline your workflow and help you make the most
+of the Docker ecosystem.
 @z
 
 @x
@@ -34,14 +35,14 @@ most of the Docker ecosystem.
 @z
 
 @x
-Ask Gordon is a suite of AI-powered capabilities integrated into Docker's
-tools. These features, currently in Beta, are not enabled by default, and are
-not production-ready. You may also encounter the term "Docker AI" as a broader
+Ask Gordon is a suite of AI-powered capabilities integrated into Docker's tools.
+These features, currently in Beta, are not enabled by default, and are not
+production-ready. You may also encounter the term "Docker AI" as a broader
 reference to this technology.
 @y
-Ask Gordon is a suite of AI-powered capabilities integrated into Docker's
-tools. These features, currently in Beta, are not enabled by default, and are
-not production-ready. You may also encounter the term "Docker AI" as a broader
+Ask Gordon is a suite of AI-powered capabilities integrated into Docker's tools.
+These features, currently in Beta, are not enabled by default, and are not
+production-ready. You may also encounter the term "Docker AI" as a broader
 reference to this technology.
 @z
 
@@ -72,14 +73,12 @@ tight integration ensures responses are practical and actionable.
 @z
 
 @x
-> [!NOTE]
-> Ask Gordon is powered by Large Language Models (LLMs). Like all LLM-based
-> tools, its responses may sometimes be inaccurate. Always verify the
+> [!NOTE] Ask Gordon is powered by Large Language Models (LLMs). Like all
+> LLM-based tools, its responses may sometimes be inaccurate. Always verify the
 > information provided.
 @y
-> [!NOTE]
-> Ask Gordon is powered by Large Language Models (LLMs). Like all LLM-based
-> tools, its responses may sometimes be inaccurate. Always verify the
+> [!NOTE] Ask Gordon is powered by Large Language Models (LLMs). Like all
+> LLM-based tools, its responses may sometimes be inaccurate. Always verify the
 > information provided.
 @z
 
@@ -98,37 +97,39 @@ query:
 @z
 
 @x
-- Local files: If you use the `docker ai` command, Ask Gordon can access
-  files and directories in the current working directory where the command is
+- Local files: If you use the `docker ai` command, Ask Gordon can access files
+  and directories in the current working directory where the command is
   executed. In Docker Desktop, if you ask about a specific file or directory in
   the **Ask Gordon** view, you'll be prompted to select the relevant context.
-- Local images: Gordon integrates with Docker Desktop and can view all images
-  in your local image store. This includes images you've built or pulled from a
+- Local images: Gordon integrates with Docker Desktop and can view all images in
+  your local image store. This includes images you've built or pulled from a
   registry.
 @y
-- Local files: If you use the `docker ai` command, Ask Gordon can access
-  files and directories in the current working directory where the command is
+- Local files: If you use the `docker ai` command, Ask Gordon can access files
+  and directories in the current working directory where the command is
   executed. In Docker Desktop, if you ask about a specific file or directory in
   the **Ask Gordon** view, you'll be prompted to select the relevant context.
-- Local images: Gordon integrates with Docker Desktop and can view all images
-  in your local image store. This includes images you've built or pulled from a
+- Local images: Gordon integrates with Docker Desktop and can view all images in
+  your local image store. This includes images you've built or pulled from a
   registry.
 @z
 
 @x
 To provide accurate responses, Ask Gordon may send relevant files, directories,
 or image metadata to the Gordon backend along with your query. This data
-transfer occurs over the network but is never stored persistently or shared
-with third parties. It is used exclusively to process your request and
-formulate a response. For more information about privacy terms and conditions
-for Docker AI, review [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
+transfer occurs over the network but is never stored persistently or shared with
+third parties. It is used exclusively to process your request and formulate a
+response. For more information about privacy terms and conditions for Docker AI,
+review [Gordon's Supplemental
+Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @y
 To provide accurate responses, Ask Gordon may send relevant files, directories,
 or image metadata to the Gordon backend along with your query. This data
-transfer occurs over the network but is never stored persistently or shared
-with third parties. It is used exclusively to process your request and
-formulate a response. For more information about privacy terms and conditions
-for Docker AI, review [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
+transfer occurs over the network but is never stored persistently or shared with
+third parties. It is used exclusively to process your request and formulate a
+response. For more information about privacy terms and conditions for Docker AI,
+review [Gordon's Supplemental
+Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @z
 
 @x
@@ -280,11 +281,11 @@ ai` CLI command.
 @z
 
 @x
-If you've used an AI chatbot before, these interfaces will be pretty familiar
-to you. You can chat with the Docker AI to get help with your Docker tasks.
+If you've used an AI chatbot before, these interfaces will be pretty familiar to
+you. You can chat with the Docker AI to get help with your Docker tasks.
 @y
-If you've used an AI chatbot before, these interfaces will be pretty familiar
-to you. You can chat with the Docker AI to get help with your Docker tasks.
+If you've used an AI chatbot before, these interfaces will be pretty familiar to
+you. You can chat with the Docker AI to get help with your Docker tasks.
 @z
 
 @x
@@ -294,17 +295,15 @@ to you. You can chat with the Docker AI to get help with your Docker tasks.
 @z
 
 @x
-Once you've enabled the Docker AI features, you'll also find references to
-**Ask Gordon** in various other places throughout the Docker Desktop user
-interface. Whenever you encounter a button with the "sparkles" (âœ¨) icon in the
-user interface, you can use the button to get contextual support from Ask
-Gordon.
+Once you've enabled the Docker AI features, you'll also find references to **Ask
+Gordon** in various other places throughout the Docker Desktop user interface.
+Whenever you encounter a button with the "sparkles" (âœ¨) icon in the user
+interface, you can use the button to get contextual support from Ask Gordon.
 @y
-Once you've enabled the Docker AI features, you'll also find references to
-**Ask Gordon** in various other places throughout the Docker Desktop user
-interface. Whenever you encounter a button with the "sparkles" (âœ¨) icon in the
-user interface, you can use the button to get contextual support from Ask
-Gordon.
+Once you've enabled the Docker AI features, you'll also find references to **Ask
+Gordon** in various other places throughout the Docker Desktop user interface.
+Whenever you encounter a button with the "sparkles" (âœ¨) icon in the user
+interface, you can use the button to get contextual support from Ask Gordon.
 @z
 
 @x
@@ -315,12 +314,12 @@ Gordon.
 
 @x
 Ask Gordon is a general-purpose AI assistant created to help you with all your
-Docker-related tasks and workflows. If you need some inspiration, here are a
-few ways things you can try:
+Docker-related tasks and workflows. If you need some inspiration, here are a few
+ways things you can try:
 @y
 Ask Gordon is a general-purpose AI assistant created to help you with all your
-Docker-related tasks and workflows. If you need some inspiration, here are a
-few ways things you can try:
+Docker-related tasks and workflows. If you need some inspiration, here are a few
+ways things you can try:
 @z
 
 @x
@@ -339,15 +338,7 @@ For more examples, try asking Gordon directly. For example:
 For more examples, try asking Gordon directly. For example:
 @z
 
-@x
-```console
-$ docker ai "What can you do?"
-```
-@y
-```console
-$ docker ai "What can you do?"
-```
-@z
+% snip command...
 
 @x
 ### Troubleshoot a crashed container
@@ -365,37 +356,7 @@ can use Ask Gordon to troubleshoot the error. For example, try starting a
 Postgres container without specifying a database password:
 @z
 
-@x
-```console
-$ docker run postgres
-Error: Database is uninitialized and superuser password is not specified.
-       You must specify POSTGRES_PASSWORD to a non-empty value for the
-       superuser. For example, "-e POSTGRES_PASSWORD=password" on "docker run".
-@y
-```console
-$ docker run postgres
-Error: Database is uninitialized and superuser password is not specified.
-       You must specify POSTGRES_PASSWORD to a non-empty value for the
-       superuser. For example, "-e POSTGRES_PASSWORD=password" on "docker run".
-@z
-
-@x
-       You may also use "POSTGRES_HOST_AUTH_METHOD=trust" to allow all
-       connections without a password. This is *not* recommended.
-@y
-       You may also use "POSTGRES_HOST_AUTH_METHOD=trust" to allow all
-       connections without a password. This is *not* recommended.
-@z
-
-@x
-       See PostgreSQL documentation about "trust":
-       https://www.postgresql.org/docs/current/auth-trust.html
-```
-@y
-       See PostgreSQL documentation about "trust":
-       https://www.postgresql.org/docs/current/auth-trust.html
-```
-@z
+% snip command...
 
 @x
 In the **Containers** view in Docker Desktop, select the âœ¨ icon next to the
@@ -471,15 +432,7 @@ evaluate your Dockerfile using the `docker ai` command:
 1. Navigate to your project directory:
 @z
 
-@x
-   ```console
-   $ cd path/to/my/project
-   ```
-@y
-   ```console
-   $ cd path/to/my/project
-   ```
-@z
+% snip command...
 
 @x
 2. Use the `docker ai` command to rate your Dockerfile:
@@ -487,15 +440,7 @@ evaluate your Dockerfile using the `docker ai` command:
 2. Use the `docker ai` command to rate your Dockerfile:
 @z
 
-@x
-   ```console
-   $ docker ai rate my Dockerfile
-   ```
-@y
-   ```console
-   $ docker ai rate my Dockerfile
-   ```
-@z
+% snip command...
 
 @x
 Gordon will analyze your Dockerfile and identify opportunities for improvement
@@ -551,59 +496,27 @@ If you've enabled Ask Gordon and you want to disable it again:
 
 @x
 If you want to disable Ask Gordon for your entire Docker organization, using
-[Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
+[Settings
+Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
 add the following property to your `admin-settings.json` file:
 @y
 If you want to disable Ask Gordon for your entire Docker organization, using
-[Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
+[Settings
+Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
 add the following property to your `admin-settings.json` file:
 @z
 
-@x
-```json
-{
-  "enableDockerAI": {
-    "value": false,
-    "locked": true
-  }
-}
-```
-@y
-```json
-{
-  "enableDockerAI": {
-    "value": false,
-    "locked": true
-  }
-}
-```
-@z
+% snip code...
 
 @x
-Alternatively, you can disable all Beta features by setting `allowBetaFeatures` to false:
+Alternatively, you can disable all Beta features by setting `allowBetaFeatures`
+to false:
 @y
-Alternatively, you can disable all Beta features by setting `allowBetaFeatures` to false:
+Alternatively, you can disable all Beta features by setting `allowBetaFeatures`
+to false:
 @z
 
-@x
-```json
-{
-  "allowBetaFeatures": {
-    "value": false,
-    "locked": true
-  }
-}
-```
-@y
-```json
-{
-  "allowBetaFeatures": {
-    "value": false,
-    "locked": true
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ## Feedback

@@ -186,15 +186,15 @@ The following table summarizes this comparison.
 @z
 
 @x
-#### Kubernetes dashboard
+#### Kubernetes Dashboard
 @y
-#### Kubernetes dashboard
+#### Kubernetes Dashboard
 @z
 
 @x
-Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting so you can manage and monitor your Kubernetes clusters and applications more easily. 
+Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting.
 @y
-Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting so you can manage and monitor your Kubernetes clusters and applications more easily. 
+Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting.
 @z
 
 @x

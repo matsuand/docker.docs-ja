@@ -39,32 +39,45 @@ The following GitHub Actions are available:
 @x
 - [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
   build and push Docker images with BuildKit.
+- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
+  enables using high-level builds with [Bake](../../bake/_index.md).
 - [Docker Login](https://github.com/marketplace/actions/docker-login):
   sign in to a Docker registry.
 - [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
-  initiates a BuildKit builder.
+  creates and boots a BuildKit builder.
 - [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
-  extracts metadata from Git reference and GitHub events.
-- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
-  installs [QEMU](https://github.com/qemu/qemu) static binaries for multi-arch
-  builds.
-- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  enables using high-level builds with [Bake](../../bake/_index.md).
-- [Docker Scout](https://github.com/docker/scout-action):
-  analyze Docker images for security vulnerabilities.
+  extracts metadata from Git reference and GitHub events to generate tags,
+  labels, and annotations.
 @y
 - [Build and push Docker images](https://github.com/marketplace/actions/build-and-push-docker-images):
   BuildKit を利用して Docker イメージのビルドとプッシュを行います。
+- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
+  [Bake](../../bake/_index.md) を使った高度なビルドを可能にします。
 - [Docker Login](https://github.com/marketplace/actions/docker-login):
   Docker レジストリへのサインインを行います。
 - [Docker Setup Buildx](https://github.com/marketplace/actions/docker-setup-buildx):
-  BuildKit ビルダーの初期化を行います。
+  BuildKit ビルダーの生成と起動を行います。
 - [Docker Metadata action](https://github.com/marketplace/actions/docker-metadata-action):
-  Git リファレンスや GitHub イベントからメタデータを抽出します。
+  Git リファレンスや GitHub イベントからメタデータを抽出し、タグ、ラベル、アノテーションを生成します。
+@z
+
+@x
+- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
+  installs and sets up [Compose](../../../compose).
+- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
+  installs Docker CE.
 - [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
-  マルチアーキテクチャービルド向けに [QEMU](https://github.com/qemu/qemu) のスタティックバイナリをインストールします。
-- [Docker Buildx Bake](https://github.com/marketplace/actions/docker-buildx-bake):
-  [Bake](../../bake/_index.md) を使った高度なビルドを可能にします。
+  installs [QEMU](https://github.com/qemu/qemu) static binaries for
+  multi-platform builds.
+- [Docker Scout](https://github.com/docker/scout-action):
+  analyze Docker images for security vulnerabilities.
+@y
+- [Docker Setup Compose](https://github.com/marketplace/actions/docker-setup-compose):
+  installs and sets up [Compose](../../../compose).
+- [Docker Setup Docker](https://github.com/marketplace/actions/docker-setup-docker):
+  installs Docker CE.
+- [Docker Setup QEMU](https://github.com/marketplace/actions/docker-setup-qemu):
+  マルチプラットフォームビルド向けに [QEMU](https://github.com/qemu/qemu) のスタティックバイナリをインストールします。
 - [Docker Scout](https://github.com/docker/scout-action):
   Docker イメージのセキュリティぜい弱性を分析します。
 @z

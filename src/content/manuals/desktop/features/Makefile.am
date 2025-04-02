@@ -9,6 +9,7 @@ bases = \
 	desktop-cli.md               \
 	gpu.md                       \
 	kubernetes.md                \
+	model-runner.md              \
 	networking.md                \
 	synchronized-file-sharing.md \
 	usbip.md                     \

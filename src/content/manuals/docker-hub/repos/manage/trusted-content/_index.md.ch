@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to manage and contribute to trusted content.
 keywords: Docker Hub, Hub, trusted content
 title: Trusted content
-weight: 100
----
 @y
----
 description: Learn how to manage and contribute to trusted content.
 keywords: Docker Hub, Hub, trusted content
 title: Trusted content
-weight: 100
----
 @z
 
 @x

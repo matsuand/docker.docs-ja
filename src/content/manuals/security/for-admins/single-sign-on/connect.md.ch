@@ -179,9 +179,10 @@ The user interface for your IdP may differ slightly from the following steps. Re
     - Name ID format: `EmailAddress`
     - Application username: `Email`
     - Update application on: `Create and update`
-11. Select **Next**.
-12. Select the **This is an internal app that we have created** checkbox.
-13. Select **Finish**.
+11. Optional. Add SAML attributes. See [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes) for a table of SSO attributes.
+12. Select **Next**.
+13. Select the **This is an internal app that we have created** checkbox.
+14. Select **Finish**.
 @y
 1. Sign in to your Okta account.
 2. Select **Admin** to open the Okta Admin portal.
@@ -198,9 +199,10 @@ The user interface for your IdP may differ slightly from the following steps. Re
     - Name ID format: `EmailAddress`
     - Application username: `Email`
     - Update application on: `Create and update`
-11. Select **Next**.
-12. Select the **This is an internal app that we have created** checkbox.
-13. Select **Finish**.
+11. Optional. Add SAML attributes. See [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes) for a table of SSO attributes.
+12. Select **Next**.
+13. Select the **This is an internal app that we have created** checkbox.
+14. Select **Finish**.
 @z
 
 @x
@@ -221,8 +223,9 @@ The user interface for your IdP may differ slightly from the following steps. Re
 7. Enter the following values from Docker into their corresponding Azure fields:
     - Docker Entity ID: **Identifier**
     - Docker ACS URL: **Reply URL**
-8. Save configuration.
-9. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
+8. Optional. Add SAML attributes. See [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes) for a table of SSO attributes.
+9. Save configuration.
+10. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
 @y
 1. Sign in to your Azure AD admin portal.
 2. Select **Default Directory** and then **Add**.
@@ -233,8 +236,9 @@ The user interface for your IdP may differ slightly from the following steps. Re
 7. Enter the following values from Docker into their corresponding Azure fields:
     - Docker Entity ID: **Identifier**
     - Docker ACS URL: **Reply URL**
-8. Save configuration.
-9. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
+8. Optional. Add SAML attributes. See [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes) for a table of SSO attributes.
+9. Save configuration.
+10. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
 @z
 
 @x
