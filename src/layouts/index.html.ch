@@ -147,30 +147,27 @@
 @z
 
 @x
-                  Ask Gordon
+                  Docker Model Runner
 @y
-                  Ask Gordon
+                  Docker Model Runner
 @z
 @x
-                  Your personal Docker expert, built right into Docker Desktop.
+                  Run, test, and serve AI models locally in seconds — no setup, no hassle.
 @y
-                  自分用の Docker エクスパート、Docker Desktop 内に組み入れます。
+                  Run, test, and serve AI models locally in seconds — no setup, no hassle.
 @z
 @x
-                  Boost your productivity with Ask Gordon, an AI-powered
-                  assistant designed to optimize your Docker workflows. From
-                  improving Dockerfiles to troubleshooting containers, Gordon
-                  is here to help.
+                  Whether you’re experimenting with the latest LLMs or deploying to production, 
+                  Docker Model Runner brings the performance and control you need, without the friction.
 @y
-                  Ask Gordon を使って生産性を高めます。
-                  これは Docker ワークフロー最適化を意図した AI パワーによるアシスタント機能です。
-                  Dockerfile 改善からコンテナーのトラブルシューティングまで、Gordon がアシストします。
+                  Whether you’re experimenting with the latest LLMs or deploying to production, 
+                  Docker Model Runner brings the performance and control you need, without the friction.
 @z
 @x
-                <a href="/desktop/features/gordon/"
+                <a href="/desktop/features/model-runner/"
                   class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">Read the docs</a>
 @y
-                <a href="desktop/features/gordon/"
+                <a href="desktop/features/model-runner/"
                   class="max-w-fit cursor-pointer rounded bg-blue-light px-4 py-2 text-white transition duration-300 hover:bg-blue-light-400 dark:bg-blue-dark-400 dark:hover:bg-blue-dark">ドキュメント</a>
 @z
 

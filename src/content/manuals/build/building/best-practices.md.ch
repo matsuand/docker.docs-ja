@@ -99,14 +99,14 @@ it small.
 
 @x
 - [Docker Official Images](https://hub.docker.com/search?image_filter=official)
-  are some of the most secure and dependable images on Docker Hub. Typically,
-  Docker Official images have few or no packages containing CVEs, and are
-  thoroughly reviewed by Docker and project maintainers.
+  are a curated collection that have clear documentation, promote best
+  practices, and are regularly updated. They provide a trusted starting point
+  for many applications.
 @y
 - [Docker Official Images](https://hub.docker.com/search?image_filter=official)
-  are some of the most secure and dependable images on Docker Hub. Typically,
-  Docker Official images have few or no packages containing CVEs, and are
-  thoroughly reviewed by Docker and project maintainers.
+  are a curated collection that have clear documentation, promote best
+  practices, and are regularly updated. They provide a trusted starting point
+  for many applications.
 @z
 
 @x
@@ -197,7 +197,15 @@ To ensure that you're getting the latest versions of dependencies in your build,
 you can use the `--no-cache` option to avoid cache hits.
 @z
 
-% snip command...
+@x
+```console
+$ docker build --no-cache -t my-image:my-tag .
+```
+@y
+```console
+$ docker build --no-cache -t my-image:my-tag .
+```
+@z
 
 @x
 The following Dockerfile uses the `24.04` tag of the `ubuntu` image. Over time,
@@ -213,7 +221,19 @@ libraries. Using the `--no-cache`, you can avoid cache hits and ensure a fresh
 download of base images and dependencies.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM ubuntu:24.04
+RUN apt-get -y update && apt-get install -y --no-install-recommends python3
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM ubuntu:24.04
+RUN apt-get -y update && apt-get install -y --no-install-recommends python3
+```
+@z
 
 @x
 Also consider [pinning base image versions](#pin-base-image-versions).
@@ -243,7 +263,15 @@ For example, to exclude all files with the `.md` extension:
 For example, to exclude all files with the `.md` extension:
 @z
 
-% snip code...
+@x
+```plaintext
+*.md
+```
+@y
+```plaintext
+*.md
+```
+@z
 
 @x
 For information on creating one, see
@@ -324,7 +352,7 @@ Limiting each container to one process is a good rule of thumb, but it's not a
 hard and fast rule. For example, not only can containers be
 [spawned with an init process](/manuals/engine/containers/multi-service_container.md),
 some programs might spawn additional processes of their own accord. For
-instance, [Celery](https://docs.celeryproject.org/) can spawn multiple worker
+instance, [Celery](https://docs.celeryq.dev/) can spawn multiple worker
 processes, and [Apache](https://httpd.apache.org/) can create one process per
 request.
 @y
@@ -332,7 +360,7 @@ Limiting each container to one process is a good rule of thumb, but it's not a
 hard and fast rule. For example, not only can containers be
 [spawned with an init process](manuals/engine/containers/multi-service_container.md),
 some programs might spawn additional processes of their own accord. For
-instance, [Celery](https://docs.celeryproject.org/) can spawn multiple worker
+instance, [Celery](https://docs.celeryq.dev/) can spawn multiple worker
 processes, and [Apache](https://httpd.apache.org/) can create one process per
 request.
 @z
@@ -371,7 +399,27 @@ Here’s an example from the [buildpack-deps image](https://github.com/docker-li
 Here’s an example from the [buildpack-deps image](https://github.com/docker-library/buildpack-deps):
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  bzr \
+  cvs \
+  git \
+  mercurial \
+  subversion \
+  && rm -rf /var/lib/apt/lists/*
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  bzr \
+  cvs \
+  git \
+  mercurial \
+  subversion \
+  && rm -rf /var/lib/apt/lists/*
+```
+@z
 
 @x
 ## Leverage build cache
@@ -427,7 +475,17 @@ For example, if you specify `FROM alpine:3.19` in your Dockerfile, `3.19`
 resolves to the latest patch version for `3.19`.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine:3.19
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine:3.19
+```
+@z
 
 @x
 At one point in time, the `3.19` tag might point to version 3.19.1 of the
@@ -465,7 +523,17 @@ new image. For example, the following Dockerfile pins the Alpine image to the
 same tag as earlier, `3.19`, but this time with a digest reference as well.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine:3.19@sha256:13b7e62e8df80264dbb747995705a986aa530415763a6c58f84a3ca8af9a5bcd
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine:3.19@sha256:13b7e62e8df80264dbb747995705a986aa530415763a6c58f84a3ca8af9a5bcd
+```
+@z
 
 @x
 With this Dockerfile, even if the publisher updates the `3.19` tag, your builds
@@ -560,6 +628,18 @@ to create an efficient and maintainable Dockerfile.
 @z
 
 @x
+> [!TIP]
+>
+> Want a better editing experience for Dockerfiles in VS Code?
+> Check out the [Docker VS Code Extension (Beta)](https://marketplace.visualstudio.com/items?itemName=docker.docker) for linting, code navigation, and vulnerability scanning.
+@y
+> [!TIP]
+>
+> Want a better editing experience for Dockerfiles in VS Code?
+> Check out the [Docker VS Code Extension (Beta)](https://marketplace.visualstudio.com/items?itemName=docker.docker) for linting, code navigation, and vulnerability scanning.
+@z
+
+@x
 ### FROM
 @y
 ### FROM
@@ -609,7 +689,25 @@ Strings with spaces must be quoted or the spaces must be escaped. Inner
 quote characters (`"`), must also be escaped. For example:
 @z
 
-% snip code...
+@x
+```dockerfile
+# Set one or more individual labels
+LABEL com.example.version="0.0.1-beta"
+LABEL vendor1="ACME Incorporated"
+LABEL vendor2=ZENITH\ Incorporated
+LABEL com.example.release-date="2015-02-12"
+LABEL com.example.version.is-production=""
+```
+@y
+```dockerfile
+# Set one or more individual labels
+LABEL com.example.version="0.0.1-beta"
+LABEL vendor1="ACME Incorporated"
+LABEL vendor2=ZENITH\ Incorporated
+LABEL com.example.release-date="2015-02-12"
+LABEL com.example.version.is-production=""
+```
+@z
 
 @x
 An image can have more than one label. Prior to Docker 1.10, it was recommended
@@ -699,7 +797,21 @@ For example, you can chain commands with the `&&` operator, and use
 escape characters to break long commands into multiple lines.
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+```
+@z
 
 @x
 By default, backslash escapes a newline character, but you can change it with
@@ -717,7 +829,27 @@ You can also use here documents to run multiple commands without chaining them
 with a pipeline operator:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN <<EOF
+apt-get update
+apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+EOF
+```
+@y
+```dockerfile
+RUN <<EOF
+apt-get update
+apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+EOF
+```
+@z
 
 @x
 For more information about `RUN`, see [Dockerfile reference for the RUN instruction](/reference/dockerfile.md#run).
@@ -749,7 +881,21 @@ Always combine `RUN apt-get update` with `apt-get install` in the same `RUN`
 statement. For example:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo
+```
+@z
 
 @x
 Using `apt-get update` alone in a `RUN` statement causes caching issues and
@@ -759,7 +905,25 @@ Using `apt-get update` alone in a `RUN` statement causes caching issues and
 subsequent `apt-get install` instructions to fail. For example, this issue will occur in the following Dockerfile:
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+@z
+
+@x
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends curl
+```
+@y
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends curl
+```
+@z
 
 @x
 After building the image, all layers are in the Docker cache. Suppose you later
@@ -769,7 +933,25 @@ After building the image, all layers are in the Docker cache. Suppose you later
 modify `apt-get install` by adding an extra package as shown in the following Dockerfile:
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+@z
+
+@x
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends curl nginx
+```
+@y
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends curl nginx
+```
+@z
 
 @x
 Docker sees the initial and modified instructions as identical and reuses the
@@ -799,7 +981,21 @@ cache busting by specifying a package version. This is known as version pinning.
 For example:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo=1.3.*
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    package-bar \
+    package-baz \
+    package-foo=1.3.*
+```
+@z
 
 @x
 Version pinning forces the build to retrieve a particular version regardless of
@@ -819,7 +1015,41 @@ Below is a well-formed `RUN` instruction that demonstrates all the `apt-get`
 recommendations.
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1.9.1 \
+    ruby1.9.1-dev \
+    s3cmd=1.1.* \
+    && rm -rf /var/lib/apt/lists/*
+```
+@y
+```dockerfile
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1.9.1 \
+    ruby1.9.1-dev \
+    s3cmd=1.1.* \
+    && rm -rf /var/lib/apt/lists/*
+```
+@z
 
 @x
 The `s3cmd` argument specifies a version `1.1.*`. If the image previously
@@ -863,7 +1093,15 @@ Some `RUN` commands depend on the ability to pipe the output of one command into
 Some `RUN` commands depend on the ability to pipe the output of one command into another, using the pipe character (`|`), as in the following example:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN wget -O - https://some.site | wc -l > /number
+```
+@y
+```dockerfile
+RUN wget -O - https://some.site | wc -l > /number
+```
+@z
 
 @x
 Docker executes these commands using the `/bin/sh -c` interpreter, which only
@@ -887,7 +1125,15 @@ prepend `set -o pipefail &&` to ensure that an unexpected error prevents the
 build from inadvertently succeeding. For example:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
+```
+@y
+```dockerfile
+RUN set -o pipefail && wget -O - https://some.site | wc -l > /number
+```
+@z
 
 @x
 > [!NOTE]
@@ -1037,7 +1283,21 @@ Lastly, `ENV` can also be used to set commonly used version numbers so that
 version bumps are easier to maintain, as seen in the following example:
 @z
 
-% snip code...
+@x
+```dockerfile
+ENV PG_MAJOR=9.3
+ENV PG_VERSION=9.3.4
+RUN curl -SL https://example.com/postgres-$PG_VERSION.tar.xz | tar -xJC /usr/src/postgres && …
+ENV PATH=/usr/local/postgres-$PG_MAJOR/bin:$PATH
+```
+@y
+```dockerfile
+ENV PG_MAJOR=9.3
+ENV PG_VERSION=9.3.4
+RUN curl -SL https://example.com/postgres-$PG_VERSION.tar.xz | tar -xJC /usr/src/postgres && …
+ENV PATH=/usr/local/postgres-$PG_MAJOR/bin:$PATH
+```
+@z
 
 @x
 Similar to having constant variables in a program, as opposed to hard-coding
@@ -1061,8 +1321,39 @@ still persists in this layer and its value can be dumped. You can test this by
 creating a Dockerfile like the following, and then building it.
 @z
 
-% snip code...
-% snip command...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ENV ADMIN_USER="mark"
+RUN echo $ADMIN_USER > ./mark
+RUN unset ADMIN_USER
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+ENV ADMIN_USER="mark"
+RUN echo $ADMIN_USER > ./mark
+RUN unset ADMIN_USER
+```
+@z
+
+@x
+```console
+$ docker run --rm test sh -c 'echo $ADMIN_USER'
+@y
+```console
+$ docker run --rm test sh -c 'echo $ADMIN_USER'
+@z
+
+@x
+mark
+```
+@y
+mark
+```
+@z
 
 @x
 To prevent this, and really unset the environment variable, use a `RUN` command
@@ -1082,8 +1373,39 @@ improves readability. You could also put all of the commands into a shell script
 and have the `RUN` command just run that shell script.
 @z
 
-% snip code...
-% snip command...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+RUN export ADMIN_USER="mark" \
+    && echo $ADMIN_USER > ./mark \
+    && unset ADMIN_USER
+CMD sh
+```
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM alpine
+RUN export ADMIN_USER="mark" \
+    && echo $ADMIN_USER > ./mark \
+    && unset ADMIN_USER
+CMD sh
+```
+@z
+
+@x
+```console
+$ docker run --rm test sh -c 'echo $ADMIN_USER'
+@y
+```console
+$ docker run --rm test sh -c 'echo $ADMIN_USER'
+@z
+
+@x
+```
+@y
+```
+@z
 
 @x
 For more information about `ENV`, see [Dockerfile reference for the ENV instruction](/reference/dockerfile.md#env).
@@ -1125,7 +1447,17 @@ the `COPY` instruction with a bind mount instead. For example, to temporarily
 add a `requirements.txt` file for a `RUN pip install` instruction:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN --mount=type=bind,source=requirements.txt,target=/tmp/requirements.txt \
+    pip install --requirement /tmp/requirements.txt
+```
+@y
+```dockerfile
+RUN --mount=type=bind,source=requirements.txt,target=/tmp/requirements.txt \
+    pip install --requirement /tmp/requirements.txt
+```
+@z
 
 @x
 Bind mounts are more efficient than `COPY` for including files from the build
@@ -1255,7 +1587,17 @@ The following is an example of an image for the command line tool `s3cmd`:
 The following is an example of an image for the command line tool `s3cmd`:
 @z
 
-% snip code...
+@x
+```dockerfile
+ENTRYPOINT ["s3cmd"]
+CMD ["--help"]
+```
+@y
+```dockerfile
+ENTRYPOINT ["s3cmd"]
+CMD ["--help"]
+```
+@z
 
 @x
 You can use the following command to run the image and show the command's help:
@@ -1263,7 +1605,15 @@ You can use the following command to run the image and show the command's help:
 You can use the following command to run the image and show the command's help:
 @z
 
-% snip command...
+@x
+```console
+$ docker run s3cmd
+```
+@y
+```console
+$ docker run s3cmd
+```
+@z
 
 @x
 Or, you can use the right parameters to execute a command, like in the following example:
@@ -1271,7 +1621,15 @@ Or, you can use the right parameters to execute a command, like in the following
 Or, you can use the right parameters to execute a command, like in the following example:
 @z
 
-% snip command...
+@x
+```console
+$ docker run s3cmd ls s3://mybucket
+```
+@y
+```console
+$ docker run s3cmd ls s3://mybucket
+```
+@z
 
 @x
 This is useful because the image name can double as a reference to the binary as
@@ -1299,7 +1657,49 @@ For example, the [Postgres Official Image](https://hub.docker.com/_/postgres/)
 uses the following script as its `ENTRYPOINT`:
 @z
 
-% snip code...
+@x
+```bash
+#!/bin/bash
+set -e
+@y
+```bash
+#!/bin/bash
+set -e
+@z
+
+@x
+if [ "$1" = 'postgres' ]; then
+    chown -R postgres "$PGDATA"
+@y
+if [ "$1" = 'postgres' ]; then
+    chown -R postgres "$PGDATA"
+@z
+
+@x
+    if [ -z "$(ls -A "$PGDATA")" ]; then
+        gosu postgres initdb
+    fi
+@y
+    if [ -z "$(ls -A "$PGDATA")" ]; then
+        gosu postgres initdb
+    fi
+@z
+
+@x
+    exec gosu postgres "$@"
+fi
+@y
+    exec gosu postgres "$@"
+fi
+@z
+
+@x
+exec "$@"
+```
+@y
+exec "$@"
+```
+@z
 
 @x
 This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](/reference/dockerfile.md#entrypoint).
@@ -1315,7 +1715,19 @@ In the following example, a helper script is copied into the container and run v
 container start:
 @z
 
-% snip code...
+@x
+```dockerfile
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["postgres"]
+```
+@y
+```dockerfile
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["postgres"]
+```
+@z
 
 @x
 This script lets you interact with Postgres in several ways.
@@ -1329,7 +1741,15 @@ It can simply start Postgres:
 It can simply start Postgres:
 @z
 
-% snip command...
+@x
+```console
+$ docker run postgres
+```
+@y
+```console
+$ docker run postgres
+```
+@z
 
 @x
 Or, you can use it to run Postgres and pass parameters to the server:
@@ -1337,7 +1757,15 @@ Or, you can use it to run Postgres and pass parameters to the server:
 Or, you can use it to run Postgres and pass parameters to the server:
 @z
 
-% snip command...
+@x
+```console
+$ docker run postgres postgres --help
+```
+@y
+```console
+$ docker run postgres postgres --help
+```
+@z
 
 @x
 Lastly, you can use it to start a totally different tool, such as Bash:
@@ -1345,7 +1773,15 @@ Lastly, you can use it to start a totally different tool, such as Bash:
 Lastly, you can use it to start a totally different tool, such as Bash:
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -it postgres bash
+```
+@y
+```console
+$ docker run --rm -it postgres bash
+```
+@z
 
 @x
 For more information about `ENTRYPOINT`, see [Dockerfile reference for the ENTRYPOINT instruction](/reference/dockerfile.md#entrypoint).
@@ -1393,7 +1829,15 @@ user. Start by creating the user and group in the Dockerfile with something
 like the following example:
 @z
 
-% snip code...
+@x
+```dockerfile
+RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
+```
+@y
+```dockerfile
+RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
+```
+@z
 
 @x
 > [!NOTE]

@@ -215,16 +215,16 @@ jobs:
 
 @x
 The [GitHub Actions cache exporter](../../cache/backends/gha.md)
-backend uses the [GitHub Cache API](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md)
+backend uses the [GitHub Cache service API](https://github.com/tonistiigi/go-actions-cache)
 to fetch and upload cache blobs. That's why you should only use this cache
-backend in a GitHub Action workflow, as the `url` (`$ACTIONS_CACHE_URL`) and
+backend in a GitHub Action workflow, as the `url` (`$ACTIONS_RESULTS_URL`) and
 `token` (`$ACTIONS_RUNTIME_TOKEN`) attributes only get populated in a workflow
 context.
 @y
 The [GitHub Actions cache exporter](../../cache/backends/gha.md)
-backend uses the [GitHub Cache API](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md)
+backend uses the [GitHub Cache service API](https://github.com/tonistiigi/go-actions-cache)
 to fetch and upload cache blobs. That's why you should only use this cache
-backend in a GitHub Action workflow, as the `url` (`$ACTIONS_CACHE_URL`) and
+backend in a GitHub Action workflow, as the `url` (`$ACTIONS_RESULTS_URL`) and
 `token` (`$ACTIONS_RUNTIME_TOKEN`) attributes only get populated in a workflow
 context.
 @z

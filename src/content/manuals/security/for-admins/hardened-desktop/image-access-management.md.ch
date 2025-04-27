@@ -51,30 +51,36 @@ You first need to [enforce sign-in](manuals/security/for-admins/enforce-sign-in/
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{% admin-image-access product="admin" %}}
+@y
+{{% admin-image-access product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
 @x
-{{% admin-image-access product="hub" %}}
+{{% include "hub-org-management.md" %}}
 @y
-{{% admin-image-access product="hub" %}}
+{{% include "hub-org-management.md" %}}
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
+{{% admin-image-access product="hub" %}}
 @y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% admin-image-access product="admin" %}}
-@y
-{{% admin-image-access product="admin" %}}
+{{% admin-image-access product="hub" %}}
 @z
 
 @x

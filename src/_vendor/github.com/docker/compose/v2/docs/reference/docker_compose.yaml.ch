@@ -148,18 +148,18 @@ usage: docker compose
 % snip command...
 
 @x
-    The `docker-compose.yml` file might specify a `webapp` service.
+    The `compose.yaml` file might specify a `webapp` service.
 @y
-    The `docker-compose.yml` file might specify a `webapp` service.
+    The `compose.yaml` file might specify a `webapp` service.
 @z
 
 % snip code...
 
 @x
-    If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
+    If the `compose.admin.yaml` also specifies this same service, any matching fields override the previous file.
     New values, add to the `webapp` service configuration.
 @y
-    If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
+    If the `compose.admin.yaml` also specifies this same service, any matching fields override the previous file.
     New values, add to the `webapp` service configuration.
 @z
 

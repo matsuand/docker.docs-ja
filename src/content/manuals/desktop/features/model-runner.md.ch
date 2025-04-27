@@ -48,9 +48,27 @@ Models are pulled from Docker Hub the first time they're used and stored locally
 @z
 
 @x
-Docker Model Runner is enabled by default in Docker Desktop.
+## Enable Docker Model Runner
 @y
-Docker Model Runner is enabled by default in Docker Desktop.
+## Enable Docker Model Runner
+@z
+
+@x
+1. Navigate to the **Features in development** tab in settings.
+2. Under the **Experimental features** tab, select **Access experimental features**.
+3. Select **Apply and restart**. 
+4. Quit and reopen Docker Desktop to ensure the changes take effect. 
+5. Open the **Settings** view in Docker Desktop.
+6. Navigate to **Features in development**.
+7. From the **Beta** tab, check the **Enable Docker Model Runner** setting.
+@y
+1. Navigate to the **Features in development** tab in settings.
+2. Under the **Experimental features** tab, select **Access experimental features**.
+3. Select **Apply and restart**. 
+4. Quit and reopen Docker Desktop to ensure the changes take effect. 
+5. Open the **Settings** view in Docker Desktop.
+6. Navigate to **Features in development**.
+7. From the **Beta** tab, check the **Enable Docker Model Runner** setting.
 @z
 
 @x
@@ -71,7 +89,15 @@ Check whether the Docker Model Runner is active:
 Check whether the Docker Model Runner is active:
 @z
 
-% snip command...
+@x
+```console
+$ docker model status
+```
+@y
+```console
+$ docker model status
+```
+@z
 
 @x
 ### View all commands
@@ -85,7 +111,15 @@ Displays help information and a list of available subcommands.
 Displays help information and a list of available subcommands.
 @z
 
-% snip command...
+@x
+```console
+$ docker model help
+```
+@y
+```console
+$ docker model help
+```
+@z
 
 @x
 Output:
@@ -93,7 +127,33 @@ Output:
 Output:
 @z
 
-% snip output...
+@x
+```text
+Usage:  docker model COMMAND
+@y
+```text
+Usage:  docker model COMMAND
+@z
+
+@x
+Commands:
+  list        List models available locally
+  pull        Download a model from Docker Hub
+  rm          Remove a downloaded model
+  run         Run a model interactively or with a prompt
+  status      Check if the model runner is running
+  version     Show the current version
+```
+@y
+Commands:
+  list        List models available locally
+  pull        Download a model from Docker Hub
+  rm          Remove a downloaded model
+  run         Run a model interactively or with a prompt
+  status      Check if the model runner is running
+  version     Show the current version
+```
+@z
 
 @x
 ### Pull a model 
@@ -107,7 +167,15 @@ Pulls a model from Docker Hub to your local environment.
 Pulls a model from Docker Hub to your local environment.
 @z
 
-% snip command...
+@x
+```console
+$ docker model pull <model>
+```
+@y
+```console
+$ docker model pull <model>
+```
+@z
 
 @x
 Example: 
@@ -115,7 +183,15 @@ Example:
 Example: 
 @z
 
-% snip command...
+@x
+```console
+$ docker model pull ai/smollm2
+```
+@y
+```console
+$ docker model pull ai/smollm2
+```
+@z
 
 @x
 Output:
@@ -123,7 +199,17 @@ Output:
 Output:
 @z
 
-% snip output...
+@x
+```text
+Downloaded: 257.71 MB
+Model ai/smollm2 pulled successfully
+```
+@y
+```text
+Downloaded: 257.71 MB
+Model ai/smollm2 pulled successfully
+```
+@z
 
 @x
 ### List available models
@@ -137,7 +223,15 @@ Lists all models currently pulled to your local environment.
 Lists all models currently pulled to your local environment.
 @z
 
-% snip command...
+@x
+```console
+$ docker model list
+```
+@y
+```console
+$ docker model list
+```
+@z
 
 @x
 You will see something similar to:
@@ -145,7 +239,17 @@ You will see something similar to:
 You will see something similar to:
 @z
 
-% snip output...
+@x
+```text
++MODEL       PARAMETERS  QUANTIZATION    ARCHITECTURE  MODEL ID      CREATED     SIZE
++ai/smollm2  361.82 M    IQ2_XXS/Q4_K_M  llama         354bf30d0aa3  3 days ago  256.35 MiB
+```
+@y
+```text
++MODEL       PARAMETERS  QUANTIZATION    ARCHITECTURE  MODEL ID      CREATED     SIZE
++ai/smollm2  361.82 M    IQ2_XXS/Q4_K_M  llama         354bf30d0aa3  3 days ago  256.35 MiB
+```
+@z
 
 @x
 ### Run a model
@@ -165,7 +269,15 @@ Run a model and interact with it using a submitted prompt or in chat mode.
 #### One-time prompt
 @z
 
-% snip command...
+@x
+```console
+$ docker model run ai/smollm2 "Hi"
+```
+@y
+```console
+$ docker model run ai/smollm2 "Hi"
+```
+@z
 
 @x
 Output:
@@ -173,7 +285,15 @@ Output:
 Output:
 @z
 
-% snip output...
+@x
+```text
+Hello! How can I assist you today?
+```
+@y
+```text
+Hello! How can I assist you today?
+```
+@z
 
 @x
 #### Interactive chat
@@ -181,7 +301,15 @@ Output:
 #### Interactive chat
 @z
 
-% snip command...
+@x
+```console
+docker model run ai/smollm2
+```
+@y
+```console
+docker model run ai/smollm2
+```
+@z
 
 @x
 Output:
@@ -189,7 +317,23 @@ Output:
 Output:
 @z
 
-% snip output...
+@x
+```text
+Interactive chat mode started. Type '/bye' to exit.
+> Hi
+Hi there! It's SmolLM, AI assistant. How can I help you today?
+> /bye
+Chat session ended.
+```
+@y
+```text
+Interactive chat mode started. Type '/bye' to exit.
+> Hi
+Hi there! It's SmolLM, AI assistant. How can I help you today?
+> /bye
+Chat session ended.
+```
+@z
 
 @x
 ### Remove a model
@@ -203,7 +347,15 @@ Removes a downloaded model from your system.
 Removes a downloaded model from your system.
 @z
 
-% snip command...
+@x
+```console
+$ docker model rm <model>
+```
+@y
+```console
+$ docker model rm <model>
+```
+@z
 
 @x
 Output:
@@ -211,7 +363,15 @@ Output:
 Output:
 @z
 
-% snip output...
+@x
+```text
+Model <model> removed successfully
+```
+@y
+```text
+Model <model> removed successfully
+```
+@z
 
 @x
 ## Integrate the Docker Model Runner into your software development lifecycle
@@ -237,7 +397,15 @@ If you want to try an existing GenAI application, follow these instructions.
 1. Set up the sample app. Clone and run the following repository:
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone https://github.com/docker/hello-genai.git
+   ```
+@y
+   ```console
+   $ git clone https://github.com/docker/hello-genai.git
+   ```
+@z
 
 @x
 2. In your terminal, navigate to the `hello-genai` directory.
@@ -387,7 +555,53 @@ Examples of calling an OpenAI endpoint (`chat/completions`) from within another 
 Examples of calling an OpenAI endpoint (`chat/completions`) from within another container using `curl`:
 @z
 
-% snip code...
+@x
+```bash
+#!/bin/sh
+@y
+```bash
+#!/bin/sh
+@z
+
+@x
+curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+@y
+curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+@z
+
+@x
+```
+@y
+```
+@z
 
 @x
 #### From the host using a Unix socket
@@ -401,7 +615,55 @@ Examples of calling an OpenAI endpoint (`chat/completions`) through the Docker s
 Examples of calling an OpenAI endpoint (`chat/completions`) through the Docker socket from the host using `curl`:
 @z
 
-% snip code...
+@x
+```bash
+#!/bin/sh
+@y
+```bash
+#!/bin/sh
+@z
+
+@x
+curl --unix-socket $HOME/.docker/run/docker.sock \
+    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+@y
+curl --unix-socket $HOME/.docker/run/docker.sock \
+    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+@z
+
+@x
+```
+@y
+```
+@z
 
 @x
 #### From the host using TCP
@@ -421,7 +683,49 @@ Afterwards, interact with it as previously documented using `localhost` and the 
 Afterwards, interact with it as previously documented using `localhost` and the chosen, or the default port.
 @z
 
-% snip code...
+@x
+```bash
+#!/bin/sh
+@y
+```bash
+#!/bin/sh
+@z
+
+@x
+	curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+```
+@y
+	curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -d '{
+        "model": "ai/smollm2",
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a helpful assistant."
+            },
+            {
+                "role": "user",
+                "content": "Please write 500 words about the fall of Rome."
+            }
+        ]
+    }'
+```
+@z
 
 @x
 ## Known issues
@@ -441,7 +745,15 @@ If you run a Docker Model Runner command and see:
 If you run a Docker Model Runner command and see:
 @z
 
-% snip output...
+@x
+```text
+docker: 'model' is not a docker command
+```
+@y
+```text
+docker: 'model' is not a docker command
+```
+@z
 
 @x
 It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
@@ -455,7 +767,15 @@ To fix this, create a symlink so Docker can detect it:
 To fix this, create a symlink so Docker can detect it:
 @z
 
-% snip command...
+@x
+```console
+$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
+```
+@y
+```console
+$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
+```
+@z
 
 @x
 Once linked, re-run the command.

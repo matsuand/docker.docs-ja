@@ -7,10 +7,18 @@
 description: Understand what you can do with the Images view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
 title: Explore the Images view in Docker Desktop
+linkTitle: Images
 @y
 description: Understand what you can do with the Images view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
 title: Explore the Images view in Docker Desktop
+linkTitle: Images
+@z
+
+@x
+The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are logged in, you can also see the images you and your organization have shared on Docker Hub. For more information, see [Explore your images](images.md).
+@y
+The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are logged in, you can also see the images you and your organization have shared on Docker Hub. For more information, see [Explore your images](images.md).
 @z
 
 @x
@@ -232,20 +240,20 @@ To remove individual images, select the bin icon.
 @x
 The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
-The **Local** and **Hub repositories** tabs near the top toggles between viewing images in your local image store,
+The **Local** and **Docker Hub repositories** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
 @y
 The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
-The **Local** and **Hub repositories** tabs near the top toggles between viewing images in your local image store,
+The **Local** and **Docker Hub repositories** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
 @z
 
 @x
-Switching to the **Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
+Switching to the **Docker Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
 When signed in, it shows you a list of images in Docker Hub organizations and repositories that you have access to.
 @y
-Switching to the **Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
+Switching to the **Docker Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
 When signed in, it shows you a list of images in Docker Hub organizations and repositories that you have access to.
 @z
 

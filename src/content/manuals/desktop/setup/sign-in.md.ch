@@ -20,9 +20,9 @@ linkTitle: Sign in
 @z
 
 @x
-Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard. 
+Docker recommends signing in with the **Sign in** option in the top-right corner of the Docker Dashboard. 
 @y
-Docker recommends that you authenticate using the **Sign in** option in the top-right corner of the Docker Dashboard. 
+Docker recommends signing in with the **Sign in** option in the top-right corner of the Docker Dashboard. 
 @z
 
 @x
@@ -48,21 +48,21 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-- You can access your Docker Hub repositories directly from Docker Desktop.
+- Access your Docker Hub repositories directly from Docker Desktop.
 @y
-- You can access your Docker Hub repositories directly from Docker Desktop.
+- Access your Docker Hub repositories directly from Docker Desktop.
 @z
 
 @x
-- Authenticated users also get a higher pull rate limit compared to anonymous users. For more information, see [Usage and limits](/manuals/docker-hub/usage/_index.md).
+- Increase your pull rate limit compared to anonymous users. See [Usage and limits](/manuals/docker-hub/usage/_index.md).
 @y
-- Authenticated users also get a higher pull rate limit compared to anonymous users. For more information, see [Usage and limits](manuals/docker-hub/usage/_index.md).
+- Increase your pull rate limit compared to anonymous users. See [Usage and limits](manuals/docker-hub/usage/_index.md).
 @z
 
 @x
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](/manuals/security/for-admins/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](/manuals/security/for-admins/hardened-desktop/_index.md).
 @y
-- Improve your organization’s security posture for containerized development by taking advantage of [Hardened Desktop](manuals/security/for-admins/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](manuals/security/for-admins/hardened-desktop/_index.md).
 @z
 
 @x
@@ -82,136 +82,62 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in gpg2-encrypted files.
+Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
 Before signing in to Docker Desktop with your [Docker ID](/accounts/create-account/), you must initialize `pass`.
-Docker Desktop displays a warning if you've not initialized `pass`.
+Docker Desktop displays a warning if `pass` is not configured.
 @y
-Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in gpg2-encrypted files.
+Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
 Before signing in to Docker Desktop with your [Docker ID](__SUBDIR__/accounts/create-account/), you must initialize `pass`.
-Docker Desktop displays a warning if you've not initialized `pass`.
+Docker Desktop displays a warning if `pass` is not configured.
 @z
 
 @x
-You can initialize pass by using a gpg key. To generate a gpg key, run:
+1. Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
 @y
-You can initialize pass by using a gpg key. To generate a gpg key, run:
+1. Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
+@z
+
+% snip command...
+
+@x
+2. Enter your name and email once prompted. 
+@y
+2. Enter your name and email once prompted. 
 @z
 
 @x
-``` console
-$ gpg --generate-key
-``` 
+   Once confirmed, GPG creates a key pair. Look for the `pub` line that contains your GPG ID, for example:
 @y
-``` console
-$ gpg --generate-key
-``` 
+   Once confirmed, GPG creates a key pair. Look for the `pub` line that contains your GPG ID, for example:
 @z
 
-@x
-The following is an example similar to what you see once you run the previous command:
-@y
-The following is an example similar to what you see once you run the previous command:
-@z
+% snip output...
 
 @x
-```console {hl_lines=12}
-...
-GnuPG needs to construct a user ID to identify your key.
+3. Copy the GPG ID and use it to initialize `pass`
 @y
-```console {hl_lines=12}
-...
-GnuPG needs to construct a user ID to identify your key.
+3. Copy the GPG ID and use it to initialize `pass`
 @z
 
-@x
-Real name: Molly
-Email address: molly@example.com
-You selected this USER-ID:
-   "Molly <molly@example.com>"
-@y
-Real name: Molly
-Email address: molly@example.com
-You selected this USER-ID:
-   "Molly <molly@example.com>"
-@z
+% snip command...
 
 @x
-Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
-...
-pubrsa3072 2022-03-31 [SC] [expires: 2024-03-30]
- <generated gpg-id public key>
-uid          Molly <molly@example.com>
-subrsa3072  2022-03-31 [E] [expires: 2024-03-30]
-```
+   You should see output similar to: 
 @y
-Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
-...
-pubrsa3072 2022-03-31 [SC] [expires: 2024-03-30]
- <generated gpg-id public key>
-uid          Molly <molly@example.com>
-subrsa3072  2022-03-31 [E] [expires: 2024-03-30]
-```
+   You should see output similar to: 
 @z
 
-@x
-To initialize `pass`, run the following command using the public key generated from the previous command:
-@y
-To initialize `pass`, run the following command using the public key generated from the previous command:
-@z
-
-@x
-```console
-$ pass init <your_generated_gpg-id_public_key>
-``` 
-The following is an example similar to what you see once you run the previous command:
-@y
-```console
-$ pass init <your_generated_gpg-id_public_key>
-``` 
-The following is an example similar to what you see once you run the previous command:
-@z
-
-@x
-```console
-mkdir: created directory '/home/molly/.password-store/'
-Password store initialized for <generated_gpg-id_public_key>
-```
-@y
-```console
-mkdir: created directory '/home/molly/.password-store/'
-Password store initialized for <generated_gpg-id_public_key>
-```
-@z
+% snip output...
 
 @x
 Once you initialize `pass`, you can sign in and pull your private images.
-When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the gpg key generation.
+When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the GPG key generation.
 @y
 Once you initialize `pass`, you can sign in and pull your private images.
-When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the gpg key generation.
+When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the GPG key generation.
 @z
 
-@x
-```console
-$ docker pull molly/privateimage
-Using default tag: latest
-latest: Pulling from molly/privateimage
-3b9cc81c3203: Pull complete 
-Digest: sha256:3c6b73ce467f04d4897d7a7439782721fd28ec9bf62ea2ad9e81a5fb7fb3ff96
-Status: Downloaded newer image for molly/privateimage:latest
-docker.io/molly/privateimage:latest
-```
-@y
-```console
-$ docker pull molly/privateimage
-Using default tag: latest
-latest: Pulling from molly/privateimage
-3b9cc81c3203: Pull complete 
-Digest: sha256:3c6b73ce467f04d4897d7a7439782721fd28ec9bf62ea2ad9e81a5fb7fb3ff96
-Status: Downloaded newer image for molly/privateimage:latest
-docker.io/molly/privateimage:latest
-```
-@z
+% snip output...
 
 @x
 ## What's next?
@@ -221,10 +147,10 @@ docker.io/molly/privateimage:latest
 
 @x
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and its features. 
-- Change your Docker Desktop settings
-- [Browse common FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md)
+- Change your [Docker Desktop settings](/manuals/desktop/settings-and-maintenance/settings.md).
+- [Browse common FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md).
 @y
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and its features. 
-- Change your Docker Desktop settings
-- [Browse common FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md)
+- Change your [Docker Desktop settings](manuals/desktop/settings-and-maintenance/settings.md).
+- [Browse common FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md).
 @z

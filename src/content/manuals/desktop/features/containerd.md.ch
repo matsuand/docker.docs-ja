@@ -16,72 +16,62 @@ keywords: Docker, containerd, engine, image store, lazy-pull
 @z
 
 @x
-This page provides information about the ongoing integration of `containerd` for
-image and file system management in the Docker Engine.
+Docker Desktop is transitioning to use containerd for image and filesystem management. This page outlines the benefits, setup process, and new capabilities enabled by the containerd image store.
 @y
-This page provides information about the ongoing integration of `containerd` for
-image and file system management in the Docker Engine.
+Docker Desktop is transitioning to use containerd for image and filesystem management. This page outlines the benefits, setup process, and new capabilities enabled by the containerd image store.
 @z
 
 @x
 > [!NOTE]
 > 
-> Images and containers are not shared between the classic image store and the
-> new containerd image store. When you switch image stores, containers and
-> images from the inactive store remain but are hidden until you switch back.
+> Docker Desktop maintains separate image stores for the classic and containerd image stores.
+> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
 @y
 > [!NOTE]
 > 
-> Images and containers are not shared between the classic image store and the
-> new containerd image store. When you switch image stores, containers and
-> images from the inactive store remain but are hidden until you switch back.
+> Docker Desktop maintains separate image stores for the classic and containerd image stores.
+> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
 @z
 
 @x
-## What is containerd?
+## What is `containerd`?
 @y
-## What is containerd?
+## What is `containerd`?
 @z
 
 @x
-`containerd` is an abstraction of the low-level kernel features
-used to run and manage containers on a system.
-It's a platform used in container software like Docker and Kubernetes.
+`containerd` is a container runtime that provides a lightweight, consistent interface for container lifecycle management. It is already used under the hood by Docker Engine for creating, starting, and stopping containers.
 @y
-`containerd` is an abstraction of the low-level kernel features
-used to run and manage containers on a system.
-It's a platform used in container software like Docker and Kubernetes.
+`containerd` is a container runtime that provides a lightweight, consistent interface for container lifecycle management. It is already used under the hood by Docker Engine for creating, starting, and stopping containers.
 @z
 
 @x
-Docker Engine already uses `containerd` for container lifecycle management,
-which includes creating, starting, and stopping containers.
-This page describes the next step of the containerd integration for Docker:
-the containerd image store.
+Docker Desktop’s ongoing integration of containerd now extends to the image store, offering more flexibility and modern image support.
 @y
-Docker Engine already uses `containerd` for container lifecycle management,
-which includes creating, starting, and stopping containers.
-This page describes the next step of the containerd integration for Docker:
-the containerd image store.
+Docker Desktop’s ongoing integration of containerd now extends to the image store, offering more flexibility and modern image support.
 @z
 
 @x
-## Image store
+## What is the `containerd` image store?
 @y
-## Image store
+## What is the `containerd` image store?
 @z
 
 @x
 The image store is the component responsible for pushing, pulling,
 and storing images on the filesystem.
+@y
+The image store is the component responsible for pushing, pulling,
+and storing images on the filesystem.
+@z
+
+@x
 The classic Docker image store is limited in the types of images that it supports.
 For example, it doesn't support image indices, containing manifest lists.
 When you create multi-platform images, for example,
 the image index resolves all the platform-specific variants of the image.
 An image index is also required when building images with attestations.
 @y
-The image store is the component responsible for pushing, pulling,
-and storing images on the filesystem.
 The classic Docker image store is limited in the types of images that it supports.
 For example, it doesn't support image indices, containing manifest lists.
 When you create multi-platform images, for example,
@@ -90,12 +80,12 @@ An image index is also required when building images with attestations.
 @z
 
 @x
-The containerd image store extends range of image types
+The containerd image store extends the range of image types
 that the Docker Engine can natively interact with.
 While this is a low-level architectural change,
 it's a prerequisite for unlocking a range of new use cases, including:
 @y
-The containerd image store extends range of image types
+The containerd image store extends the range of image types
 that the Docker Engine can natively interact with.
 While this is a low-level architectural change,
 it's a prerequisite for unlocking a range of new use cases, including:
@@ -213,20 +203,4 @@ and load them to your local image store:
 <script async id="asciicast-ZSUI4Mi2foChLjbevl2dxt5GD" src="https://asciinema.org/a/ZSUI4Mi2foChLjbevl2dxt5GD.js"></script>
 @y
 <script async id="asciicast-ZSUI4Mi2foChLjbevl2dxt5GD" src="https://asciinema.org/a/ZSUI4Mi2foChLjbevl2dxt5GD.js"></script>
-@z
-
-@x
-## Feedback
-@y
-## Feedback
-@z
-
-@x
-Thanks for trying the new features available with `containerd`. Give feedback or
-report any bugs you may find through the issues tracker on the
-[feedback form](https://dockr.ly/3PODIhD).
-@y
-Thanks for trying the new features available with `containerd`. Give feedback or
-report any bugs you may find through the issues tracker on the
-[feedback form](https://dockr.ly/3PODIhD).
 @z

@@ -126,9 +126,23 @@ Consider the following effects of converting your account:
 @z
 
 @x
-- Converting a user account to an organization will delete all of the user's personal access tokens. See [Create an access token](/manuals/security/for-developers/access-tokens.md#create-an-access-token) for steps on creating personal access tokens after converting the user account.
+- To transfer a user's personal access tokens (PATs) to your converted organization,
+you must designate the user as an organization owner. This will ensure any PATs associated with the user's account are transferred to the organization owner.
 @y
-- Converting a user account to an organization will delete all of the user's personal access tokens. See [Create an access token](manuals/security/for-developers/access-tokens.md#create-an-access-token) for steps on creating personal access tokens after converting the user account.
+- To transfer a user's personal access tokens (PATs) to your converted organization,
+you must designate the user as an organization owner. This will ensure any PATs associated with the user's account are transferred to the organization owner.
+@z
+
+@x
+> [!TIP]
+>
+> To avoid potentially disrupting service of personal access tokens when converting an account or changing ownership, it is recommended to use [organization access tokens](/manuals/security/for-admins/access-tokens.md). Organization access tokens are
+associated with an organization, not a single user account.
+@y
+> [!TIP]
+>
+> To avoid potentially disrupting service of personal access tokens when converting an account or changing ow Organization access tokens are
+associated with an organization, not a single user account.
 @z
 
 @x
@@ -144,9 +158,9 @@ Consider the following effects of converting your account:
 @z
 
 @x
-2. Sign in to your [Docker account](https://app.docker.com/login).
+2. Sign in to [Docker Home](https://app.docker.com/login).
 @y
-2. Sign in to your [Docker account](https://app.docker.com/login).
+2. Sign in to [Docker Home](https://app.docker.com/login).
 @z
 
 @x

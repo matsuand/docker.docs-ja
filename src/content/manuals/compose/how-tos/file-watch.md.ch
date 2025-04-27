@@ -105,10 +105,10 @@ The `watch` attribute defines a list of rules that control automatic service upd
 @z
 
 @x
-Each rule requires, a `path` pattern and `action` to take when a modification is detected. There are two possible actions for `watch` and depending on
+Each rule requires a `path` pattern and `action` to take when a modification is detected. There are two possible actions for `watch` and depending on
 the `action`, additional fields might be accepted or required. 
 @y
-Each rule requires, a `path` pattern and `action` to take when a modification is detected. There are two possible actions for `watch` and depending on
+Each rule requires a `path` pattern and `action` to take when a modification is detected. There are two possible actions for `watch` and depending on
 the `action`, additional fields might be accepted or required. 
 @z
 
@@ -233,11 +233,11 @@ If `action` is set to `sync+restart`, Compose synchronizes your changes with the
 @z
 
 @x
-`sync+restart` is ideal when config file changes, and you don't need to rebuild the image but just restart the main process of the service containers. 
-It will work well when you update a database configuration or your `nginx.conf` file for example
+`sync+restart` is ideal when the config file changes, and you don't need to rebuild the image but just restart the main process of the service containers. 
+It will work well when you update a database configuration or your `nginx.conf` file, for example.
 @y
-`sync+restart` is ideal when config file changes, and you don't need to rebuild the image but just restart the main process of the service containers. 
-It will work well when you update a database configuration or your `nginx.conf` file for example
+`sync+restart` is ideal when the config file changes, and you don't need to rebuild the image but just restart the main process of the service containers. 
+It will work well when you update a database configuration or your `nginx.conf` file, for example.
 @z
 
 @x

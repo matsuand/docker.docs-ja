@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Customize Compose Bridge 
@@ -79,15 +80,7 @@ Each YAML output file begins with custom header notation, for example:
 Each YAML output file begins with custom header notation, for example:
 @z
 
-@x
-```yaml
-#! manifest.yaml
-```
-@y
-```yaml
-#! manifest.yaml
-```
-@z
+% snip code...
 
 @x
 In the following example, a template iterates over services defined in a `compose.yaml` file. For each service, a dedicated Kubernetes manifest file is generated, named according to the service and containing specified configurations.
@@ -199,19 +192,7 @@ In the following example, the template checks if a healthcheck interval is speci
 In the following example, the template checks if a healthcheck interval is specified for a service, applies the `seconds` function to convert this interval into seconds and assigns the value to the `periodSeconds` attribute.
 @z
 
-@x
-```yaml
-{{ if $service.healthcheck.interval }}
-            periodSeconds: {{ $service.healthcheck.interval | seconds }}{{ end }}
-{{ end }}
-```
-@y
-```yaml
-{{ if $service.healthcheck.interval }}
-            periodSeconds: {{ $service.healthcheck.interval | seconds }}{{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ## Customization
@@ -259,15 +240,7 @@ You are free to edit the existing files, delete them, or [add new ones](#add-you
 You can then use the generated Dockerfile to package your changes into a new transformation image, which you can then use with Compose Bridge:
 @z
 
-@x
-```console
-$ docker build --tag mycompany/transform --push .
-```
-@y
-```console
-$ docker build --tag mycompany/transform --push .
-```
-@z
+% snip command...
 
 @x
 You can then use your transformation as a replacement:
@@ -275,15 +248,7 @@ You can then use your transformation as a replacement:
 You can then use your transformation as a replacement:
 @z
 
-@x
-```console
-$ compose-bridge convert --transformations mycompany/transform 
-```
-@y
-```console
-$ compose-bridge convert --transformations mycompany/transform 
-```
-@z
+% snip command...
 
 @x
 ### Add your own templates
@@ -315,59 +280,7 @@ to service definitions in the `compose.yaml` file, you can use the following cus
 to produce Ingress rules:
 @z
 
-@x
-```yaml
-{{ $project := .name }}
-#! {{ $name }}-ingress.yaml
-# Generated code, do not edit
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: virtual-host-ingress
-  namespace: {{ $project }}
-spec:
-  rules:  
-{{ range $name, $service := .services }}
-{{ if $service.x-virtual-host }}
-  - host: ${{ $service.x-virtual-host }}
-    http:
-      paths:
-      - path: "/"
-        backend:
-          service:
-            name: ${{ name }}
-            port:
-              number: 80  
-{{ end }}
-{{ end }}
-```
-@y
-```yaml
-{{ $project := .name }}
-#! {{ $name }}-ingress.yaml
-# Generated code, do not edit
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: virtual-host-ingress
-  namespace: {{ $project }}
-spec:
-  rules:  
-{{ range $name, $service := .services }}
-{{ if $service.x-virtual-host }}
-  - host: ${{ $service.x-virtual-host }}
-    http:
-      paths:
-      - path: "/"
-        backend:
-          service:
-            name: ${{ name }}
-            port:
-              number: 80  
-{{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 Once packaged into a Docker image, you can use this custom template
@@ -379,19 +292,7 @@ when transforming Compose models into Kubernetes in addition to other
 transformations:
 @z
 
-@x
-```console
-$ compose-bridge convert \
-    --transformation docker/compose-bridge-kubernetes \
-    --transformation mycompany/transform 
-```
-@y
-```console
-$ compose-bridge convert \
-    --transformation docker/compose-bridge-kubernetes \
-    --transformation mycompany/transform 
-```
-@z
+% snip command...
 
 @x
 ### Build your own transformation

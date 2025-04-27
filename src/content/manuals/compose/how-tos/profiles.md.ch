@@ -157,26 +157,18 @@ As an example consider the following configuration:
 
 % snip code...
 
-@x
-```sh
+@x within code
 # Only start backend and db
-$ docker compose up -d
 @y
-```sh
 # Only start backend and db
-$ docker compose up -d
 @z
 
 @x
-# This runs db-migrations (and,if necessary, start db)
-# by implicitly enabling the profiles `tools`
-$ docker compose run db-migrations
-```
+# This runs db-migrations (and, if necessary, start db)
+# by implicitly enabling the profiles "tools"
 @y
-# This runs db-migrations (and,if necessary, start db)
-# by implicitly enabling the profiles `tools`
-$ docker compose run db-migrations
-```
+# This runs db-migrations (and, if necessary, start db)
+# by implicitly enabling the profiles "tools"
 @z
 
 @x
@@ -199,24 +191,18 @@ This means that any other services the targeted service `depends_on` should eith
 
 % snip code...
 
-@x
-```sh
+@x within code
 # Only start "web"
-$ docker compose up -d
 @y
-```sh
 # Only start "web"
-$ docker compose up -d
 @z
 
 @x
 # Start mock-backend (and, if necessary, db)
-# by implicitly enabling profiles `dev`
-$ docker compose up -d mock-backend
+# by implicitly enabling profiles "dev"
 @y
 # Start mock-backend (and, if necessary, db)
-# by implicitly enabling profiles `dev`
-$ docker compose up -d mock-backend
+# by implicitly enabling profiles "dev"
 @z
 
 @x

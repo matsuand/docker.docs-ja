@@ -4,13 +4,13 @@
 @x
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
-title: FAQs on SSO and enforcement
-tags: [FAQ]
+title: FAQs for SSO and enforcement
+linkTitle: Enforcement
 @y
 description: Single sign-on enforcement FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, enforce SSO, SSO enforcement
-title: FAQs on SSO and enforcement
-tags: [FAQ]
+title: FAQs for SSO and enforcement
+linkTitle: Enforcement
 @z
 
 @x

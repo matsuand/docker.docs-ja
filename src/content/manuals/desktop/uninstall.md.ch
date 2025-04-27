@@ -38,9 +38,9 @@ linkTitle: Uninstall
 @z
 
 @x
-To uninstall Docker Desktop from your Windows machine:
+#### From the GUI
 @y
-Windows マシンからの Docker Desktop のアンインストール方法は以下のとおりです。
+#### From the GUI
 @z
 
 @x
@@ -54,48 +54,44 @@ Windows マシンからの Docker Desktop のアンインストール方法は�
 @z
 
 @x
-You can also uninstall Docker Desktop from the CLI:
+#### From the CLI
 @y
-You can also uninstall Docker Desktop from the CLI:
+#### From the CLI
 @z
 
 @x
 1. Locate the installer:
-   ```console
-   $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
-   ```
-2. Uninstall Docker Desktop. 
- - In PowerShell, run:
-    ```console
-    $ Start-Process 'Docker Desktop Installer.exe' -Wait uninstall
-    ```
- - In the Command Prompt, run:
-    ```console
-    $ start /w "" "Docker Desktop Installer.exe" uninstall
-    ```
 @y
 1. Locate the installer:
-   ```console
-   $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
-   ```
-2. Uninstall Docker Desktop. 
- - In PowerShell, run:
-    ```console
-    $ Start-Process 'Docker Desktop Installer.exe' -Wait uninstall
-    ```
- - In the Command Prompt, run:
-    ```console
-    $ start /w "" "Docker Desktop Installer.exe" uninstall
-    ```
 @z
+
+% snip command...
 
 @x
-After uninstalling Docker Desktop, there may be some residual files left behind which you can remove manually. These are:
+2. Uninstall Docker Desktop. 
+ - In PowerShell, run:
 @y
-After uninstalling Docker Desktop, there may be some residual files left behind which you can remove manually. These are:
+2. Uninstall Docker Desktop. 
+ - In PowerShell, run:
 @z
 
-% snip code...
+% snip command...
+
+@x
+ - In the Command Prompt, run:
+@y
+ - In the Command Prompt, run:
+@z
+
+% snip command...
+
+@x
+After uninstalling Docker Desktop, some residual files may remain which you can remove manually. These are:
+@y
+After uninstalling Docker Desktop, some residual files may remain which you can remove manually. These are:
+@z
+
+% snip command...
 
 @x
 {{< /tab >}}
@@ -106,54 +102,92 @@ After uninstalling Docker Desktop, there may be some residual files left behind 
 @z
 
 @x
-To uninstall Docker Desktop from your Mac:
+#### From the GUI
 @y
-To uninstall Docker Desktop from your Mac:
+#### From the GUI
 @z
 
 @x
-1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of the Docker Desktop Dashboard and then select **Uninstall**.
-2. Select **Uninstall** to confirm your selection.
+1. Open Docker Desktop. 
+2. In the top-right corner of the Docker Desktop Dashboard, select the **Troubleshoot** icon.
+3. Select **Uninstall**.
+4. When prompted, confirm by selecting **Uninstall** again.
 @y
-1. From the Docker menu, select the **Troubleshoot** icon in the top-right corner of the Docker Desktop Dashboard and then select **Uninstall**.
-2. Select **Uninstall** to confirm your selection.
+1. Open Docker Desktop. 
+2. In the top-right corner of the Docker Desktop Dashboard, select the **Troubleshoot** icon.
+3. Select **Uninstall**.
+4. When prompted, confirm by selecting **Uninstall** again.
 @z
 
 @x
-You can also uninstall Docker Desktop from the CLI. Run:
+You can then move the Docker application to the trash. 
 @y
-You can also uninstall Docker Desktop from the CLI. Run:
+You can then move the Docker application to the trash. 
+@z
+
+@x
+#### From the CLI
+@y
+#### From the CLI
+@z
+
+@x
+Run:
+@y
+Run:
 @z
 
 % snip command...
 
 @x
-After uninstalling Docker Desktop, there may be some residual files left behind which you can remove:
+You can then move the Docker application to the trash. 
 @y
-After uninstalling Docker Desktop, there may be some residual files left behind which you can remove:
+You can then move the Docker application to the trash. 
+@z
+
+@x
+> [!NOTE]
+> You may encounter the following error when uninstalling Docker Desktop using the uninstall command.
+>
+> ```console
+> $ /Applications/Docker.app/Contents/MacOS/uninstall
+> Password:
+> Uninstalling Docker Desktop...
+> Error: unlinkat /Users/<USER_HOME>/Library/Containers/com.docker.docker/.com.apple.containermanagerd.metadata.plist: > operation not permitted
+> ```
+>
+> The operation not permitted error is reported either on the file `.com.apple.containermanagerd.metadata.plist` or on the parent directory `/Users/<USER_HOME>/Library/Containers/com.docker.docker/`. This error can be ignored as you have successfully uninstalled Docker Desktop.
+> You can remove the directory `/Users/<USER_HOME>/Library/Containers/com.docker.docker/` later by allowing **Full Disk Access** to the terminal application you are using (**System Settings** > **Privacy & Security** > **Full Disk Access**).
+@y
+> [!NOTE]
+> You may encounter the following error when uninstalling Docker Desktop using the uninstall command.
+>
+> ```console
+> $ /Applications/Docker.app/Contents/MacOS/uninstall
+> Password:
+> Uninstalling Docker Desktop...
+> Error: unlinkat /Users/<USER_HOME>/Library/Containers/com.docker.docker/.com.apple.containermanagerd.metadata.plist: > operation not permitted
+> ```
+>
+> The operation not permitted error is reported either on the file `.com.apple.containermanagerd.metadata.plist` or on the parent directory `/Users/<USER_HOME>/Library/Containers/com.docker.docker/`. This error can be ignored as you have successfully uninstalled Docker Desktop.
+> You can remove the directory `/Users/<USER_HOME>/Library/Containers/com.docker.docker/` later by allowing **Full Disk Access** to the terminal application you are using (**System Settings** > **Privacy & Security** > **Full Disk Access**).
+@z
+
+@x
+After uninstalling Docker Desktop, some residual files may remain which you can remove:
+@y
+After uninstalling Docker Desktop, some residual files may remain which you can remove:
 @z
 
 % snip command...
 
 @x
-{{< /tab >}}
-{{< tab name="Linux" >}}
+With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
 @y
-{{< /tab >}}
-{{< tab name="Linux" >}}
+With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
 @z
 
-@x
-Docker Desktop is removed from a Linux host using the package manager.
-@y
-Docker Desktop is removed from a Linux host using the package manager.
-@z
-
-@x
-Once Docker Desktop is removed, users must delete the `credsStore` and `currentContext` properties from the `~/.docker/config.json`.
-@y
-Once Docker Desktop is removed, users must delete the `credsStore` and `currentContext` properties from the `~/.docker/config.json`.
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -164,27 +198,49 @@ Once Docker Desktop is removed, users must delete the `credsStore` and `currentC
 @z
 
 @x
-To remove Docker Desktop for Ubuntu, run:
+To uninstall Docker Desktop for Ubuntu:
 @y
-To remove Docker Desktop for Ubuntu, run:
+To uninstall Docker Desktop for Ubuntu:
+@z
+
+@x
+1. Remove the Docker Desktop application. Run:
+@y
+1. Remove the Docker Desktop application. Run:
 @z
 
 % snip command...
 
 @x
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
 @y
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+@z
+
+@x
+2. Manually remove leftover file.
+@y
+2. Manually remove leftover file.
 @z
 
 % snip command...
 
 @x
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
 @y
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+@z
+
+@x
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@y
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@z
+
+@x
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
+@y
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
 @z
 
 @x
@@ -196,27 +252,49 @@ Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/conf
 @z
 
 @x
-To remove Docker Desktop for Debian, run:
+To uninstall Docker Desktop for Debian, run:
 @y
-To remove Docker Desktop for Debian, run:
+To uninstall Docker Desktop for Debian, run:
+@z
+
+@x
+1. Remove the Docker Desktop application:
+@y
+1. Remove the Docker Desktop application:
 @z
 
 % snip command...
 
 @x
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
 @y
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+@z
+
+@x
+2. Manually remove leftover file.
+@y
+2. Manually remove leftover file.
 @z
 
 % snip command...
 
 @x
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
 @y
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually.
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+@z
+
+@x
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@y
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@z
+
+@x
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
+@y
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
 @z
 
 @x
@@ -228,27 +306,49 @@ Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/conf
 @z
 
 @x
-To remove Docker Desktop for Fedora, run:
+To uninstall Docker Desktop for Fedora:
 @y
-To remove Docker Desktop for Fedora, run:
+To uninstall Docker Desktop for Fedora:
+@z
+
+@x
+1. Remove the Docker Desktop application. Run:
+@y
+1. Remove the Docker Desktop application. Run:
 @z
 
 % snip command...
 
 @x
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
 @y
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+@z
+
+@x
+2. Manually remove leftover file.
+@y
+2. Manually remove leftover file.
 @z
 
 % snip command...
 
 @x
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
 @y
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+@z
+
+@x
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@y
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@z
+
+@x
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
+@y
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
 @z
 
 @x
@@ -260,27 +360,49 @@ Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/conf
 @z
 
 @x
-To remove Docker Desktop for Arch, run:
+To uninstall Docker Desktop for Arch:
 @y
-To remove Docker Desktop for Arch, run:
+To uninstall Docker Desktop for Arch:
+@z
+
+@x
+1. Remove the Docker Desktop application. Run:
+@y
+1. Remove the Docker Desktop application. Run:
 @z
 
 % snip command...
 
 @x
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
 @y
-For a complete cleanup, remove configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purge
-the remaining systemd service files.
+   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+@z
+
+@x
+2. Manually remove leftover file.
+@y
+2. Manually remove leftover file.
 @z
 
 % snip command...
 
 @x
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
 @y
-Remove the `credsStore` and `currentContext` properties from `$HOME/.docker/config.json`. Additionally, you must delete any edited configuration files manually. 
+   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+@z
+
+@x
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@y
+3. Clean up Docker config settings. In `$HOME/.docker/config.json`, remove the `credsStore` and `currentContext` properties.
+@z
+
+@x
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
+@y
+   These entries tell Docker where to store credentials and which context is active. If they remain after uninstalling Docker Desktop, they may conflict with a future Docker setup.
 @z
 
 @x

@@ -33,11 +33,11 @@ keywords: cli, compose, lifecycle, hooks reference
 
 @x
 When Docker Compose runs a container, it uses two elements, 
-[ENTRYPOINT and COMMAND](https://github.com/manuals//engine/containers/run.md#default-command-and-options), 
+[ENTRYPOINT and COMMAND](/manuals/engine/containers/run.md#default-command-and-options), 
 to manage what happens when the container starts and stops.
 @y
 When Docker Compose runs a container, it uses two elements, 
-[ENTRYPOINT and COMMAND](https://github.com/manuals//engine/containers/run.md#default-command-and-options), 
+[ENTRYPOINT and COMMAND](manuals/engine/containers/run.md#default-command-and-options), 
 to manage what happens when the container starts and stops.
 @z
 

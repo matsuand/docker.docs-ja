@@ -135,18 +135,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: https://testcontainers.com/cloud/docs/
 @z
 
-@x
-  - title: Docker Projects
-    description: Use a unified, project-based workflow to run your containerized projects. 
-    icon: folder
-    link: /projects/
-@y
-  - title: Docker Projects
-    description: Use a unified, project-based workflow to run your containerized projects. 
-    icon: folder
-    link: __SUBDIR__/projects/
-@z
-
 % platform:
 
 @x

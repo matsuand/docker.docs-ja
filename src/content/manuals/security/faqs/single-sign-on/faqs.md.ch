@@ -146,3 +146,29 @@ doesn't support this configuration. Instead, Docker recommends [configuring SCIM
 to enable group sync
 securely](__SUBDIR__/security/for-admins/provisioning/group-mapping/#use-group-mapping-with-scim).
 @z
+
+@x
+### Are there any firewall rules required for SSO configuration?
+@y
+### Are there any firewall rules required for SSO configuration?
+@z
+
+@x
+No. There are no specific firewall rules required for configuring SSO, as long as the domain `login.docker.com` is accessible. This domain is commonly accessible by default. However, in rare cases, some organizations may have firewall restrictions in place that block this domain. If you encounter issues during SSO setup, ensure that `login.docker.com` is allowed in your network's firewall settings.
+@y
+No. There are no specific firewall rules required for configuring SSO, as long as the domain `login.docker.com` is accessible. This domain is commonly accessible by default. However, in rare cases, some organizations may have firewall restrictions in place that block this domain. If you encounter issues during SSO setup, ensure that `login.docker.com` is allowed in your network's firewall settings.
+@z
+
+@x
+### Does Docker use my IdP's default session timeout?
+@y
+### Does Docker use my IdP's default session timeout?
+@z
+
+@x
+Yes, Docker supports your IdP's default session timeout using a custom SAML attribute.
+Instead of relying on the standard `SessionNotOnOrAfter` element from the SAML spec, Docker uses a custom `dockerSessionMinutes` attribute to control session duration. See [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes) for more information.
+@y
+Yes, Docker supports your IdP's default session timeout using a custom SAML attribute.
+Instead of relying on the standard `SessionNotOnOrAfter` element from the SAML spec, Docker uses a custom `dockerSessionMinutes` attribute to control session duration. See [SSO attributes](manuals/security/for-admins/provisioning/_index.md#sso-attributes) for more information.
+@z

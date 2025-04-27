@@ -7,18 +7,18 @@
 description: Understand how networking works on Docker Desktop and see the known limitations
 keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
 title: Explore networking features on Docker Desktop
+linkTitle: Networking
 @y
 description: Understand how networking works on Docker Desktop and see the known limitations
 keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
 title: Explore networking features on Docker Desktop
+linkTitle: Networking
 @z
 
 @x
-Docker Desktop provides several networking features to make it easier to
-use.
+Docker Desktop includes built-in networking capabilities to help you connect containers with services on your host, across containers, or through proxies and VPNs.
 @y
-Docker Desktop provides several networking features to make it easier to
-use.
+Docker Desktop includes built-in networking capabilities to help you connect containers with services on your host, across containers, or through proxies and VPNs.
 @z
 
 @x
@@ -66,15 +66,19 @@ $ docker run -p 80:80 -d nginx
 @z
 
 @x
-Docker Desktop makes whatever is running on port 80 in the container, in
-this case, `nginx`, available on port 80 of `localhost`. In this example, the
-host and container ports are the same. If, for example, you already have something running on port 80 of
-your host machine, you can connect the container to a different port:
+Docker Desktop makes whatever is running on port `80` in the container, in
+this case, `nginx`, available on port `80` of `localhost`. In this example, the
+host and container ports are the same. 
 @y
-Docker Desktop makes whatever is running on port 80 in the container, in
-this case, `nginx`, available on port 80 of `localhost`. In this example, the
-host and container ports are the same. If, for example, you already have something running on port 80 of
-your host machine, you can connect the container to a different port:
+Docker Desktop makes whatever is running on port `80` in the container, in
+this case, `nginx`, available on port `80` of `localhost`. In this example, the
+host and container ports are the same. 
+@z
+
+@x
+To avoid conflicts with services already using port `80` on the host:
+@y
+To avoid conflicts with services already using port `80` on the host:
 @z
 
 @x
@@ -88,11 +92,19 @@ $ docker run -p 8000:80 -d nginx
 @z
 
 @x
-Now, connections to `localhost:8000` are sent to port 80 in the container. The
-syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
+Now connections to `localhost:8000` are sent to port `80` in the container. 
 @y
-Now, connections to `localhost:8000` are sent to port 80 in the container. The
-syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
+Now connections to `localhost:8000` are sent to port `80` in the container. 
+@z
+
+@x
+> [!TIP]
+>
+> The syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
+@y
+> [!TIP]
+>
+> The syntax for `-p` is `HOST_PORT:CLIENT_PORT`.
 @z
 
 @x
@@ -120,16 +132,6 @@ See [Proxies](manuals/desktop/settings-and-maintenance/settings.md#proxies)
 @z
 
 @x
-> [!NOTE]
->
-> Requires a Business subscription.
-@y
-> [!NOTE]
->
-> Requires a Business subscription.
-@z
-
-@x
 SOCKS (Socket Secure) is a protocol that facilitates the routing of network packets between a client and a server through a proxy server. It provides a way to enhance privacy, security, and network performance for users and applications. 
 @y
 SOCKS (Socket Secure) is a protocol that facilitates the routing of network packets between a client and a server through a proxy server. It provides a way to enhance privacy, security, and network performance for users and applications. 
@@ -172,9 +174,9 @@ To enable and set up SOCKS proxy support:
 @z
 
 @x
-Docker Desktop on Mac and Linux allows you to use the host’s SSH agent inside a container. To do this:
+Docker Desktop for Mac and Linux lets you use the host’s SSH agent inside a container. To do this:
 @y
-Docker Desktop on Mac and Linux allows you to use the host’s SSH agent inside a container. To do this:
+Docker Desktop for Mac and Linux lets you use the host’s SSH agent inside a container. To do this:
 @z
 
 @x
@@ -254,15 +256,15 @@ services:
 @z
 
 @x
-The internal IP addresses used by Docker can be changed from **Settings**. After changing IPs, it is necessary to reset the Kubernetes cluster and to leave any active Swarm.
+The internal IP addresses used by Docker can be changed from **Settings**. After changing IPs, you need to reset the Kubernetes cluster and to leave any active Swarm.
 @y
-The internal IP addresses used by Docker can be changed from **Settings**. After changing IPs, it is necessary to reset the Kubernetes cluster and to leave any active Swarm.
+The internal IP addresses used by Docker can be changed from **Settings**. After changing IPs, you need to reset the Kubernetes cluster and to leave any active Swarm.
 @z
 
 @x
-### There is no docker0 bridge on the host
+### There is no `docker0` bridge on the host
 @y
-### There is no docker0 bridge on the host
+### There is no `docker0` bridge on the host
 @z
 
 @x
@@ -317,11 +319,11 @@ However if you are a Windows user, per-container IP addressing is possible with 
 
 @x
 The host has a changing IP address, or none if you have no network access.
-We recommend that you connect to the special DNS name `host.docker.internal`,
+Docker recommends you connect to the special DNS name `host.docker.internal`,
 which resolves to the internal IP address used by the host.
 @y
 The host has a changing IP address, or none if you have no network access.
-We recommend that you connect to the special DNS name `host.docker.internal`,
+Docker recommends you connect to the special DNS name `host.docker.internal`,
 which resolves to the internal IP address used by the host.
 @z
 
@@ -392,11 +394,11 @@ Ports exposed from Linux are forwarded to the host.
 @z
 
 @x
-We recommend you publish a port, or to connect from another
+Docker recommends you publish a port, or to connect from another
 container. This is what you need to do even on Linux if the container is on an
 overlay network, not a bridge network, as these are not routed.
 @y
-We recommend you publish a port, or to connect from another
+Docker recommends you publish a port, or to connect from another
 container. This is what you need to do even on Linux if the container is on an
 overlay network, not a bridge network, as these are not routed.
 @z

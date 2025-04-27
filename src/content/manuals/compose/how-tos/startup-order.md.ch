@@ -89,9 +89,9 @@ Compose waits for healthchecks to pass on dependencies marked with `service_heal
 @z
 
 @x
-The healthcheck for the `db` service uses the `pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'` command to check if the PostgreSQL database is ready. The service is retried every 10 seconds, up to 5 times.
+The healthcheck for the `db` service uses the `pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}` command to check if the PostgreSQL database is ready. The service is retried every 10 seconds, up to 5 times.
 @y
-`db` サービスに対するヘルスチェックでは `pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'` というコマンドを実行することで、PostgreSQL データベースが準備されたかどうかを確認します。
+`db` サービスに対するヘルスチェックでは `pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}` というコマンドを実行することで、PostgreSQL データベースが準備されたかどうかを確認します。
 これは 10 秒ごとに 5 回まで再確認が行われます。
 @z
 

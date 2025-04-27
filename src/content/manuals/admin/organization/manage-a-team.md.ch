@@ -91,9 +91,31 @@ The organization owner can also add additional organization owners to help them 
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select **Create team**.
+4. Fill out your team's information and select **Create**.
+5. [Add members to your team](members.md#add-a-member-to-a-team).
+@y
+1. In Admin Console, select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select **Create team**.
+4. Fill out your team's information and select **Create**.
+5. [Add members to your team](members.md#add-a-member-to-a-team).
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
@@ -107,28 +129,6 @@ The organization owner can also add additional organization owners to help them 
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select **My Hub** and choose your organization.
 3. Select the **Teams** and then select **Create Team**.
-4. Fill out your team's information and select **Create**.
-5. [Add members to your team](members.md#add-a-member-to-a-team).
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-1. In Admin Console, select your organization.
-2. In the **User management** section, select **Teams**.
-3. Select **Create team**.
-4. Fill out your team's information and select **Create**.
-5. [Add members to your team](members.md#add-a-member-to-a-team).
-@y
-1. In Admin Console, select your organization.
-2. In the **User management** section, select **Teams**.
-3. Select **Create team**.
 4. Fill out your team's information and select **Create**.
 5. [Add members to your team](members.md#add-a-member-to-a-team).
 @z
@@ -297,9 +297,31 @@ Organization owners can delete a team in Docker Hub or Admin Console. When you r
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select the **Actions** icon next to the name of the team you want to delete.
+4. Select **Delete team**.
+5. Review the confirmation message, then select **Delete**.
+@y
+1. In the [Admin Console](https://app.docker.com/admin), select your organization.
+2. In the **User management** section, select **Teams**.
+3. Select the **Actions** icon next to the name of the team you want to delete.
+4. Select **Delete team**.
+5. Review the confirmation message, then select **Delete**.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
@@ -319,28 +341,6 @@ Organization owners can delete a team in Docker Hub or Admin Console. When you r
 5. Select **Settings**.
 6. Select **Delete Team**.
 7. Review the confirmation message, then select **Delete**.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. In the **User management** section, select **Teams**.
-3. Select the **Actions** icon next to the name of the team you want to delete.
-4. Select **Delete team**.
-5. Review the confirmation message, then select **Delete**.
-@y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. In the **User management** section, select **Teams**.
-3. Select the **Actions** icon next to the name of the team you want to delete.
-4. Select **Delete team**.
-5. Review the confirmation message, then select **Delete**.
 @z
 
 @x

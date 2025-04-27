@@ -40,9 +40,9 @@ Kubernetes on Docker Desktop runs alongside other workloads, including Swarm ser
 @z
 
 @x
-When you enable Kubernetes in Docker Desktop, the following actions are triggered in the Docker Desktop backend and VM:
+The following actions are triggered in the Docker Desktop backend and VM:
 @y
-When you enable Kubernetes in Docker Desktop, the following actions are triggered in the Docker Desktop backend and VM:
+The following actions are triggered in the Docker Desktop backend and VM:
 @z
 
 @x
@@ -183,18 +183,6 @@ The following table summarizes this comparison.
 ### Additional settings
 @y
 ### Additional settings
-@z
-
-@x
-#### Kubernetes Dashboard
-@y
-#### Kubernetes Dashboard
-@z
-
-@x
-Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting.
-@y
-Once Kubernetes is installed and set up, you can select the **Deploy the Kubernetes Dashboard into cluster** setting.
 @z
 
 @x

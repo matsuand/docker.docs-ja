@@ -96,7 +96,7 @@ By default, Docker uses tokens to manage sessions after a user signs in:
 @x
 Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes).
 @y
-Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes).
+Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](manuals/security/for-admins/provisioning/_index.md#sso-attributes).
 @z
 
 @x
@@ -142,15 +142,15 @@ Organizations set up in Docker use verified domains and any team member with an 
 @z
 
 @x
-### How long are Docker Hub logs available?
+### How long are activity logs available?
 @y
-### How long are Docker Hub logs available?
+### How long are activity logs available?
 @z
 
 @x
-Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
+Docker provides various types of audit logs and log retention varies. For example, Docker activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
 @y
-Docker provides various types of audit logs and log retention varies. For example, Docker Hub Activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
+Docker provides various types of audit logs and log retention varies. For example, Docker activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
 @z
 
 @x
@@ -238,7 +238,7 @@ Extensions are not covered as part of Docker’s Third-Party Risk Management Pro
 @z
 
 @x
-No. With [Registry Access Management](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
+No. With [Registry Access Management](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard in the Admin Console.
 @y
-No. With [Registry Access Management](manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard on Docker Hub.
+No. With [Registry Access Management](manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard in the Admin Console.
 @z

@@ -6,109 +6,39 @@ command: docker buildx history ls
 short: List build records
 long: List build records
 usage: docker buildx history ls
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: table
-      description: Format the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Don't truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker buildx history ls
 short: List build records
 long: List build records
 usage: docker buildx history ls
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: table
-      description: Format the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-trunc
-      value_type: bool
-      default_value: "false"
-      description: Don't truncate output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x format
+      description: Format the output
+@y
+      description: Format the output
+@z
+
+@x no-trunc
+      description: Don't truncate output
+@y
+      description: Don't truncate output
+@z
+
+% inherited_options:
+
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
+@z
+
+% snip directives...

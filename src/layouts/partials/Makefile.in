@@ -303,6 +303,7 @@ bases = \
 	heading.html        \
 	github-links.html   \
 	guides-stepper.html \
+	md-dropdown.html    \
 	search-bar.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

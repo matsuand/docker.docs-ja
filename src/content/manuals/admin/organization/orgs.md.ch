@@ -20,6 +20,12 @@ keywords: Docker, docker, registry, teams, organizations, plans, Dockerfile, Doc
 @z
 
 @x
+{{< summary-bar feature_name="Admin orgs" >}}
+@y
+{{< summary-bar feature_name="Admin orgs" >}}
+@z
+
+@x
 This section describes how to create an organization. Before you begin:
 @y
 This section describes how to create an organization. Before you begin:
@@ -61,69 +67,9 @@ detailed instructions on converting an existing user account to an organization,
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
-2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
-3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
-4. Select **Continue to profile**.
-5. Enter an **Organization namespace**. This is the official, unique name for
-your organization in Docker Hub. It's not possible to change the name of the
-organization after you've created it.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
-2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
-3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
-4. Select **Continue to profile**.
-5. Enter an **Organization namespace**. This is the official, unique name for
-your organization in Docker Hub. It's not possible to change the name of the
-organization after you've created it.
-@z
-
-@x
-   > [!NOTE]
-   >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/convert-account.md).
-@y
-   > [!NOTE]
-   >
-   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/convert-account.md).
-@z
-
-@x
-6. Enter your **Company name**. This is the full name of your company. Docker
-displays the company name on your organization page and in the details of any
-public images you publish. You can update the company name anytime by navigating
-to your organization's **Settings** page.
-7. Select **Continue to billing** to continue.
-8. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
-9. Provide your card details and select **Purchase**.
-@y
-6. Enter your **Company name**. This is the full name of your company. Docker
-displays the company name on your organization page and in the details of any
-public images you publish. You can update the company name anytime by navigating
-to your organization's **Settings** page.
-7. Select **Continue to billing** to continue.
-8. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
-9. Provide your card details and select **Purchase**.
-@z
-
-@x
-You've now created an organization.
-@y
-You've now created an organization.
-@z
-
-@x
-{{< /tab >}}
 {{< tab name="Admin Console" >}}
 @y
-{{< /tab >}}
+{{< tabs >}}
 {{< tab name="Admin Console" >}}
 @z
 
@@ -189,6 +135,72 @@ You've now created an organization.
 
 @x
 {{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+{{% include "hub-org-management.md" %}}
+@y
+{{% include "hub-org-management.md" %}}
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
+2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
+3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
+4. Select **Continue to profile**.
+5. Enter an **Organization namespace**. This is the official, unique name for
+your organization in Docker Hub. It's not possible to change the name of the
+organization after you've created it.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com/) using your Docker ID, your email address, or your social provider.
+2. Select **My Hub**, select the account drop-down, and then **Create Organization** to create a new organization.
+3. Choose a plan for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business plan.
+4. Select **Continue to profile**.
+5. Enter an **Organization namespace**. This is the official, unique name for
+your organization in Docker Hub. It's not possible to change the name of the
+organization after you've created it.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/convert-account.md).
+@y
+   > [!NOTE]
+   >
+   > You can't use the same name for the organization and your Docker ID. If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/convert-account.md).
+@z
+
+@x
+6. Enter your **Company name**. This is the full name of your company. Docker
+displays the company name on your organization page and in the details of any
+public images you publish. You can update the company name anytime by navigating
+to your organization's **Settings** page.
+7. Select **Continue to billing** to continue.
+8. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
+9. Provide your card details and select **Purchase**.
+@y
+6. Enter your **Company name**. This is the full name of your company. Docker
+displays the company name on your organization page and in the details of any
+public images you publish. You can update the company name anytime by navigating
+to your organization's **Settings** page.
+7. Select **Continue to billing** to continue.
+8. Enter your organization's billing information and select **Continue to payment** to continue to the billing portal.
+9. Provide your card details and select **Purchase**.
+@z
+
+@x
+You've now created an organization.
+@y
+You've now created an organization.
+@z
+
+@x
+{{< /tab >}}
 {{< /tabs >}}
 @y
 {{< /tab >}}
@@ -203,24 +215,100 @@ You've now created an organization.
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+To view an organization in the Admin Console:
+@y
+To view an organization in the Admin Console:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com).
+2. Under Settings and administration, select **Go to Admin Console**.
+3. Select your organization from the **Organization** drop-down in the left-hand navigation.
+@y
+1. Sign in to [Docker Home](https://app.docker.com).
+2. Under Settings and administration, select **Go to Admin Console**.
+3. Select your organization from the **Organization** drop-down in the left-hand navigation.
+@z
+
+@x
+The Admin Console displays various options that let you to
+configure your organization.
+@y
+The Admin Console displays various options that let you to
+configure your organization.
+@z
+
+@x
+- **Members**: Displays a list of team members. You
+  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
+@y
+- **Members**: Displays a list of team members. You
+  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
+@z
+
+@x
+- **Teams**: Displays a list of existing teams and the number of
+  members in each team. See [Create a team](./manage-a-team.md) for details.
+@y
+- **Teams**: Displays a list of existing teams and the number of
+  members in each team. See [Create a team](./manage-a-team.md) for details.
+@z
+
+@x
+- **Activity** Displays the audit logs, a chronological list of activities that
+  occur at organization and repository levels. It provides the org owners a
+  report of all their team member activities. See [Audit logs](./activity-logs.md) for
+  details.
+@y
+- **Activity** Displays the audit logs, a chronological list of activities that
+  occur at organization and repository levels. It provides the org owners a
+  report of all their team member activities. See [Audit logs](./activity-logs.md) for
+  details.
+@z
+
+@x
+- **Security and access**: Manage security settings. For more information, see [Security](/manuals/security/_index.md).
+@y
+- **Security and access**: Manage security settings. For more information, see [Security](manuals/security/_index.md).
+@z
+
+@x
+- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](/manuals/admin/organization/deactivate-account.md).
+@y
+- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](manuals/admin/organization/deactivate-account.md).
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
 @x
+{{% include "hub-org-management.md" %}}
+@y
+{{% include "hub-org-management.md" %}}
+@z
+
+@x
 To view an organization:
 @y
 To view an organization:
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com) with a user account that is a member of any team in the
-   organization.
+1. Sign in to [Docker Hub](https://hub.docker.com) with a user account that is a member of any team in the organization.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com) with a user account that is a member of any team in the
-   organization.
+1. Sign in to [Docker Hub](https://hub.docker.com) with a user account that is a member of any team in the organization.
 @z
 
 @x
@@ -323,78 +411,6 @@ configure your organization.
 @y
 - **Billing**: Displays information about your existing
 [Docker subscription (plan)](../../subscription/_index.md), including the number of seats and next payment due date. For how to access the billing history and payment methods for your organization, see [View billing history](../../billing/history.md).
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-To view an organization in the Admin Console:
-@y
-To view an organization in the Admin Console:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com).
-2. Under Settings and administration, select **Go to Admin Console**.
-3. Select your organization from the **Organization** drop-down in the left-hand navigation.
-@y
-1. Sign in to [Docker Home](https://app.docker.com).
-2. Under Settings and administration, select **Go to Admin Console**.
-3. Select your organization from the **Organization** drop-down in the left-hand navigation.
-@z
-
-@x
-The Admin Console displays various options that let you to
-configure your organization.
-@y
-The Admin Console displays various options that let you to
-configure your organization.
-@z
-
-@x
-- **Members**: Displays a list of team members. You
-  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
-@y
-- **Members**: Displays a list of team members. You
-  can invite new members using the **Invite members** button. See [Manage members](./members.md) for details.
-@z
-
-@x
-- **Teams**: Displays a list of existing teams and the number of
-  members in each team. See [Create a team](./manage-a-team.md) for details.
-@y
-- **Teams**: Displays a list of existing teams and the number of
-  members in each team. See [Create a team](./manage-a-team.md) for details.
-@z
-
-@x
-- **Activity** Displays the audit logs, a chronological list of activities that
-  occur at organization and repository levels. It provides the org owners a
-  report of all their team member activities. See [Audit logs](./activity-logs.md) for
-  details.
-@y
-- **Activity** Displays the audit logs, a chronological list of activities that
-  occur at organization and repository levels. It provides the org owners a
-  report of all their team member activities. See [Audit logs](./activity-logs.md) for
-  details.
-@z
-
-@x
-- **Security and access**: Manage security settings. For more information, see [Security](/manuals/security/_index.md).
-@y
-- **Security and access**: Manage security settings. For more information, see [Security](manuals/security/_index.md).
-@z
-
-@x
-- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](/manuals/admin/organization/deactivate-account.md).
-@y
-- **Organization settings**: Update general settings, manage your company settings, or [deactivate your organization](manuals/admin/organization/deactivate-account.md).
 @z
 
 @x

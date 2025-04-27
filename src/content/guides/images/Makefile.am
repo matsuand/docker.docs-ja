@@ -5,6 +5,8 @@ copyfiles = \
 	databases-1.webp                  \
 	databases-2.webp                  \
 	databases-3.webp                  \
+	grafana-dash.png                  \
+	grafana-panel.png                 \
 	kafka-1.webp                      \
 	launch-localstack.webp            \
 	localstack-arch.webp              \

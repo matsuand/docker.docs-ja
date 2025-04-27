@@ -35,49 +35,49 @@ of the Docker ecosystem.
 @z
 
 @x
-Ask Gordon is a suite of AI-powered capabilities integrated into Docker's tools.
-These features, currently in Beta, are not enabled by default, and are not
+Ask Gordon provides AI-powered assistance in Docker tools. It offers contextual help for tasks like:
+@y
+Ask Gordon provides AI-powered assistance in Docker tools. It offers contextual help for tasks like:
+@z
+
+@x
+- Improving Dockerfiles
+- Running and troubleshooting containers
+- Interacting with your images and code
+- Finding vulnerabilities or configuration issues
+@y
+- Improving Dockerfiles
+- Running and troubleshooting containers
+- Interacting with your images and code
+- Finding vulnerabilities or configuration issues
+@z
+
+@x
+It understands your local environment, including source code, Dockerfiles, and images, to provide personalized and actionable guidance.
+@y
+It understands your local environment, including source code, Dockerfiles, and images, to provide personalized and actionable guidance.
+@z
+
+@x
+These features are not enabled by default, and are not
 production-ready. You may also encounter the term "Docker AI" as a broader
 reference to this technology.
 @y
-Ask Gordon is a suite of AI-powered capabilities integrated into Docker's tools.
-These features, currently in Beta, are not enabled by default, and are not
+These features are not enabled by default, and are not
 production-ready. You may also encounter the term "Docker AI" as a broader
 reference to this technology.
 @z
 
 @x
-The goal of Ask Gordon is to make Docker's tools for managing images and
-containers more intuitive and accessible. It provides contextual assistance
-tailored to your local environment, including Dockerfiles, containers, and
-applications.
-@y
-The goal of Ask Gordon is to make Docker's tools for managing images and
-containers more intuitive and accessible. It provides contextual assistance
-tailored to your local environment, including Dockerfiles, containers, and
-applications.
-@z
-
-@x
-Ask Gordon integrates directly with Docker's tools to help you perform specific
-tasks. It understands your local setup, such as your local source code and
-images. For example, you can ask Gordon to help you identify vulnerabilities in
-your project or how to optimize a Dockerfile in your local repository. This
-tight integration ensures responses are practical and actionable.
-@y
-Ask Gordon integrates directly with Docker's tools to help you perform specific
-tasks. It understands your local setup, such as your local source code and
-images. For example, you can ask Gordon to help you identify vulnerabilities in
-your project or how to optimize a Dockerfile in your local repository. This
-tight integration ensures responses are practical and actionable.
-@z
-
-@x
-> [!NOTE] Ask Gordon is powered by Large Language Models (LLMs). Like all
+> [!NOTE] 
+>
+> Ask Gordon is powered by Large Language Models (LLMs). Like all
 > LLM-based tools, its responses may sometimes be inaccurate. Always verify the
 > information provided.
 @y
-> [!NOTE] Ask Gordon is powered by Large Language Models (LLMs). Like all
+> [!NOTE] 
+>
+> Ask Gordon is powered by Large Language Models (LLMs). Like all
 > LLM-based tools, its responses may sometimes be inaccurate. Always verify the
 > information provided.
 @z
@@ -195,73 +195,45 @@ If you have concerns about data collection or usage, you can
 @z
 
 @x
-## Setup
+## Enable Ask Gordon
 @y
-## Setup
+## Enable Ask Gordon
 @z
 
 @x
-To use this feature, you must have:
+1. Sign in to your Docker account.
+2. Navigate to the **Features in development** tab in settings.
+3. Under the **Experimental features** tab, select **Access experimental features**.
+4. Select **Apply and restart**. 
+5. Quit and reopen Docker Desktop to ensure the changes take effect. 
+6. Open the **Settings** view in Docker Desktop.
+7. Navigate to **Features in development**.
+8. From the **Beta** tab, check the **Enable Docker AI** checkbox.
 @y
-To use this feature, you must have:
+1. Sign in to your Docker account.
+2. Navigate to the **Features in development** tab in settings.
+3. Under the **Experimental features** tab, select **Access experimental features**.
+4. Select **Apply and restart**. 
+5. Quit and reopen Docker Desktop to ensure the changes take effect. 
+6. Open the **Settings** view in Docker Desktop.
+7. Navigate to **Features in development**.
+8. From the **Beta** tab, check the **Enable Docker AI** checkbox.
 @z
 
 @x
-- Docker Desktop version 4.38 or later.
+   The Docker AI terms of service agreement is displayed. You must agree to the
+   terms before you can enable the feature. Review the terms and select **Accept
+   and enable** to continue.
 @y
-- Docker Desktop version 4.38 or later.
+   The Docker AI terms of service agreement is displayed. You must agree to the
+   terms before you can enable the feature. Review the terms and select **Accept
+   and enable** to continue.
 @z
 
 @x
-Ask Gordon is not enabled by default. To enable the feature:
+9. Select **Apply & restart**.
 @y
-Ask Gordon is not enabled by default. To enable the feature:
-@z
-
-@x
-1. [Sign in](#sign-in) to your Docker account.
-2. [Enable the feature](#enable-the-feature) in the Docker Desktop settings.
-@y
-1. [Sign in](#sign-in) to your Docker account.
-2. [Enable the feature](#enable-the-feature) in the Docker Desktop settings.
-@z
-
-@x
-### Sign in
-@y
-### Sign in
-@z
-
-@x
-1. Open Docker Desktop.
-2. Select the **Sign in** button.
-3. Complete the sign-in process in your web browser.
-@y
-1. Open Docker Desktop.
-2. Select the **Sign in** button.
-3. Complete the sign-in process in your web browser.
-@z
-
-@x
-### Enable the feature
-@y
-### Enable the feature
-@z
-
-@x
-After signing in to your Docker Account, enable the Docker AI feature:
-@y
-After signing in to your Docker Account, enable the Docker AI feature:
-@z
-
-@x
-1. Open the **Settings** view in Docker Desktop.
-2. Navigate to **Features in development**.
-3. Check the **Enable Docker AI** checkbox.
-@y
-1. Open the **Settings** view in Docker Desktop.
-2. Navigate to **Features in development**.
-3. Check the **Enable Docker AI** checkbox.
+9. Select **Apply & restart**.
 @z
 
 @x
@@ -278,31 +250,17 @@ ai` CLI command.
 The primary interfaces to Docker's AI capabilities are through the **Ask
 Gordon** view in Docker Desktop, or if you prefer to use the CLI: the `docker
 ai` CLI command.
-@z
-
-@x
-If you've used an AI chatbot before, these interfaces will be pretty familiar to
-you. You can chat with the Docker AI to get help with your Docker tasks.
-@y
-If you've used an AI chatbot before, these interfaces will be pretty familiar to
-you. You can chat with the Docker AI to get help with your Docker tasks.
-@z
-
-@x
-### Contextual help
-@y
-### Contextual help
 @z
 
 @x
 Once you've enabled the Docker AI features, you'll also find references to **Ask
 Gordon** in various other places throughout the Docker Desktop user interface.
-Whenever you encounter a button with the "sparkles" (✨) icon in the user
+Whenever you encounter a button with the **Sparkles** (✨) icon in the user
 interface, you can use the button to get contextual support from Ask Gordon.
 @y
 Once you've enabled the Docker AI features, you'll also find references to **Ask
 Gordon** in various other places throughout the Docker Desktop user interface.
-Whenever you encounter a button with the "sparkles" (✨) icon in the user
+Whenever you encounter a button with the **Sparkles** (✨) icon in the user
 interface, you can use the button to get contextual support from Ask Gordon.
 @z
 
@@ -391,10 +349,10 @@ able to help you get set up:
 @z
 
 @x
-In the _Run a new container_ dialog that opens, you should see a message about
+In the **Run a new container** dialog, you should see a message about
 **Ask Gordon**.
 @y
-In the _Run a new container_ dialog that opens, you should see a message about
+In the **Run a new container** dialog, you should see a message about
 **Ask Gordon**.
 @z
 
@@ -477,6 +435,12 @@ across several dimensions:
 @z
 
 @x
+### For individual users
+@y
+### For individual users
+@z
+
+@x
 If you've enabled Ask Gordon and you want to disable it again:
 @y
 If you've enabled Ask Gordon and you want to disable it again:
@@ -492,6 +456,12 @@ If you've enabled Ask Gordon and you want to disable it again:
 2. Navigate to **Features in development**.
 3. Clear the **Enable Docker AI** checkbox.
 4. Select **Apply & restart**.
+@z
+
+@x
+### For organizations
+@y
+### For organizations
 @z
 
 @x
@@ -570,10 +540,4 @@ here's how you can get in touch:
   You can access the Ask Gordon survey by following the _Give feedback_ link in
   the **Ask Gordon** view in Docker Desktop, or from the CLI by running the
   `docker ai feedback` command.
-@z
-
-@x
-Thank you for helping us improve Ask Gordon.
-@y
-Thank you for helping us improve Ask Gordon.
 @z

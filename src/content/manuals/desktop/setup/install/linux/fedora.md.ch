@@ -49,21 +49,13 @@ To install Docker Desktop successfully, you must:
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have a 64-bit version of Fedora 40 or Fedora 41.
+- For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have a 64-bit version of Fedora 40 or Fedora 41.
-@z
-
-@x
-Additionally, for a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
-@y
-Additionally, for a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
-@z
-
-@x
-For non-GNOME desktop environments, `gnome-terminal` must be installed:
-@y
-For non-GNOME desktop environments, `gnome-terminal` must be installed:
+- For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
 
 % snip command...
@@ -101,9 +93,15 @@ To install Docker Desktop on Fedora:
 % snip command...
 
 @x
-There are a few post-install configuration steps done through the post-install script contained in the RPM package.
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
 @y
-There are a few post-install configuration steps done through the post-install script contained in the RPM package.
+   By default, Docker Desktop is installed at `/opt/docker-desktop`.
+@z
+
+@x
+The RPM package includes a post-install script that completes additional setup steps automatically.
+@y
+The RPM package includes a post-install script that completes additional setup steps automatically.
 @z
 
 @x

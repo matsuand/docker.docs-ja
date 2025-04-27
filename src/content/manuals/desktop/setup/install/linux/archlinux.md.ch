@@ -37,12 +37,6 @@ This page contains information on how to install, launch and upgrade Docker Desk
 @z
 
 @x
-{{< summary-bar feature_name="Docker Desktop Archlinux" >}}
-@y
-{{< summary-bar feature_name="Docker Desktop Archlinux" >}}
-@z
-
-@x
 ## Prerequisites
 @y
 ## 前提要件 {#prerequisites}

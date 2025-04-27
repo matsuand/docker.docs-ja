@@ -5,10 +5,20 @@
 description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
 keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics
 title: Allowlist for Docker Desktop
+tags: [admin]
+linkTitle: Allowlist
 @y
 description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
 keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics
 title: Allowlist for Docker Desktop
+tags: [admin]
+linkTitle: Allowlist
+@z
+
+@x
+{{< summary-bar feature_name="Allow list" >}}
+@y
+{{< summary-bar feature_name="Allow list" >}}
 @z
 
 @x
@@ -28,7 +38,6 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | ------------------------------------------------------------------------------------ | -------------------------------------------- |
 | https://api.segment.io                                                               | Analytics                                    |
 | https://cdn.segment.com                                                              | Analytics                                    |
-| https://experiments.docker.com                                                       | A/B testing                                  |
 | https://notify.bugsnag.com                                                           | Error reports                                |
 | https://sessions.bugsnag.com                                                         | Error reports                                |
 | https://auth.docker.io                                                               | Authentication                               |
@@ -47,7 +56,6 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | ------------------------------------------------------------------------------------ | -------------------------------------------- |
 | https://api.segment.io                                                               | Analytics                                    |
 | https://cdn.segment.com                                                              | Analytics                                    |
-| https://experiments.docker.com                                                       | A/B testing                                  |
 | https://notify.bugsnag.com                                                           | Error reports                                |
 | https://sessions.bugsnag.com                                                         | Error reports                                |
 | https://auth.docker.io                                                               | Authentication                               |

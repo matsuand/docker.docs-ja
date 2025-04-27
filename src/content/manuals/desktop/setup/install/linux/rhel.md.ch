@@ -22,13 +22,13 @@ title: Install Docker Desktop on RHEL
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
+> employees or more than $10 million USD in annual revenue) requires a [paid
 > subscription](https://www.docker.com/pricing/).
 @y
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
+> employees or more than $10 million USD in annual revenue) requires a [paid
 > subscription](https://www.docker.com/pricing/).
 @z
 
@@ -61,41 +61,35 @@ To install Docker Desktop successfully, you must:
 @z
 
 @x
-If you don't have `pass` installed, or it can't be installed, you must enable
-[CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511)
-and
-[Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
+- If `pass` is not installed, or it can't be installed, you must enable [CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511) and [Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
 @y
-If you don't have `pass` installed, or it can't be installed, you must enable
-[CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511)
-and
-[Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
+- If `pass` is not installed, or it can't be installed, you must enable [CodeReady Linux Builder (CRB) repository](https://access.redhat.com/articles/4348511) and [Extra Packages for Enterprise Linux (EPEL)](https://docs.fedoraproject.org/en-US/epel/).
 @z
 
 % snip {{< tabs group="os_version" >}}
 
 @x
-Additionally, for a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/). You must also enable EPEL.
+- For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/). You must also enable EPEL.
 @y
-Additionally, for a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/). You must also enable EPEL.
+- For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/). You must also enable EPEL.
 @z
 
 % snip {{< tabs group="os_version" >}} except comment...
 @x
-$ # enable EPEL as described above
+   $ # enable EPEL as described above
 @y
-$ # 上述どおり EPEL を有効に
+   $ # 上述どおり EPEL を有効に
 @z
 @x
-$ # enable EPEL as described above
+   $ # enable EPEL as described above
 @y
-$ # 上述どおり EPEL を有効に
+   $ # 上述どおり EPEL を有効に
 @z
 
 @x
-For non-GNOME desktop environments, `gnome-terminal` must be installed:
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
-For non-GNOME desktop environments, `gnome-terminal` must be installed:
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
 
 % snip command...
@@ -135,9 +129,9 @@ To install Docker Desktop on RHEL:
 % snip command...
 
 @x
-There are a few post-install configuration steps done through the post-install script contained in the RPM package.
+The RPM package includes a post-install script that completes additional setup steps automatically.
 @y
-There are a few post-install configuration steps done through the post-install script contained in the RPM package.
+The RPM package includes a post-install script that completes additional setup steps automatically.
 @z
 
 @x
@@ -150,13 +144,13 @@ The post-install script:
 - Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
 - Adds a DNS name for Kubernetes to `/etc/hosts`.
 - Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at`/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
+  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at `/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
 - Creates a symlink from `/usr/libexec/qemu-kvm` to `/usr/local/bin/qemu-system-x86_64`.
 @y
 - Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
 - Adds a DNS name for Kubernetes to `/etc/hosts`.
 - Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at`/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
+  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at `/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
 - Creates a symlink from `/usr/libexec/qemu-kvm` to `/usr/local/bin/qemu-system-x86_64`.
 @z
 
@@ -221,7 +215,7 @@ You need to first remove the previous version and then download the new package 
 @z
 
 @x
-- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
@@ -230,7 +224,7 @@ You need to first remove the previous version and then download the new package 
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
 - Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.

@@ -100,6 +100,7 @@ AC_CONFIG_FILES([
 	src/content/guides/genai-video-bot/Makefile
 	src/content/guides/genai-video-bot/images/Makefile
 	src/content/guides/golang/Makefile
+	src/content/guides/go-prometheus-monitoring/Makefile
 	src/content/guides/images/Makefile
 	src/content/guides/java/Makefile
 	src/content/guides/java/images/Makefile
@@ -238,7 +239,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
 	src/content/manuals/harmonia/Makefile
-	src/content/manuals/projects/Makefile
 	src/content/manuals/scout/Makefile
 	src/content/manuals/scout/deep-dive/Makefile
 	src/content/manuals/scout/explore/Makefile
@@ -293,7 +293,10 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/container/Makefile
 	src/content/reference/cli/docker/context/Makefile
 	src/content/reference/cli/docker/desktop/Makefile
+	src/content/reference/cli/docker/desktop/disable/Makefile
+	src/content/reference/cli/docker/desktop/enable/Makefile
 	src/content/reference/cli/docker/desktop/engine/Makefile
+	src/content/reference/cli/docker/desktop/module/Makefile
 	src/content/reference/cli/docker/image/Makefile
 	src/content/reference/cli/docker/manifest/Makefile
 	src/content/reference/cli/docker/network/Makefile

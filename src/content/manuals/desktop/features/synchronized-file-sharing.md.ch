@@ -103,13 +103,13 @@ After creating a file share instance, any container using a bind mount that poin
 To create a file share instance:
 1. Sign in to Docker Desktop.
 2. In **Settings**, navigate to the **File sharing** tab within the **Resources** section. 
-3. In the **Synchronized File Shares** section, select the **Create share** icon.
+3. In the **Synchronized file shares** section, select **Create share**.
 4. Select a host folder to share. The synchronized file share should initialize and be usable.
 @y
 To create a file share instance:
 1. Sign in to Docker Desktop.
 2. In **Settings**, navigate to the **File sharing** tab within the **Resources** section. 
-3. In the **Synchronized File Shares** section, select the **Create share** icon.
+3. In the **Synchronized file shares** section, select **Create share**.
 4. Select a host folder to share. The synchronized file share should initialize and be usable.
 @z
 
@@ -138,12 +138,12 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 @x
 > [!TIP]
 >
-> Compose can now automatically create file shares for bind mounts. 
+> Docker Compose can automatically create file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 @y
 > [!TIP]
 >
-> Compose can now automatically create file shares for bind mounts. 
+> Docker Compose can automatically create file shares for bind mounts. 
 > Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 @z
 
@@ -248,23 +248,7 @@ In general, use your `.syncignore` file to exclude items that aren't critical to
 @z
 
 @x
-## Feedback and support
+- If you don't have the correct permissions to create symbolic links and your container attempts to create symbolic links in your file share instance, an **unable to create symbolic link** error message displays. For Windows users, see Microsoft's [Create symbolic links documentation](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/create-symbolic-links) for best practices and location of the **Create symbolic links** security policy setting. For Mac and Linux users, check that you have write permissions on the folder.
 @y
-## Feedback and support
-@z
-
-@x
-To give feedback or report bugs, visit:
-@y
-To give feedback or report bugs, visit:
-@z
-
-@x
-- [Docker Desktop for Mac issues on GitHub](https://github.com/docker/for-mac/issues)
-- [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
-- [Docker Desktop for Linux issues on GitHub](https://github.com/docker/desktop-linux/issues)
-@y
-- [Docker Desktop for Mac issues on GitHub](https://github.com/docker/for-mac/issues)
-- [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
-- [Docker Desktop for Linux issues on GitHub](https://github.com/docker/desktop-linux/issues)
+- If you don't have the correct permissions to create symbolic links and your container attempts to create symbolic links in your file share instance, an **unable to create symbolic link** error message displays. For Windows users, see Microsoft's [Create symbolic links documentation](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/security-policy-settings/create-symbolic-links) for best practices and location of the **Create symbolic links** security policy setting. For Mac and Linux users, check that you have write permissions on the folder.
 @z

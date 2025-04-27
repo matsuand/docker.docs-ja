@@ -7,22 +7,30 @@
 description: Understand permission requirements for Docker Desktop for Windows
 keywords: Docker Desktop, Windows, security, install
 title: Understand permission requirements for Windows
+linkTitle: Windows permission requirements
 @y
 description: Understand permission requirements for Docker Desktop for Windows
 keywords: Docker Desktop, Windows, security, install
 title: Understand permission requirements for Windows
+linkTitle: Windows permission requirements
 @z
 
 @x
-This page contains information about the permission requirements for running and installing Docker Desktop on Windows, the functionality of the privileged helper process `com.docker.service` and the reasoning behind this approach.
+This page contains information about the permission requirements for running and installing Docker Desktop on Windows, the functionality of the privileged helper process `com.docker.service`, and the reasoning behind this approach.
 @y
-This page contains information about the permission requirements for running and installing Docker Desktop on Windows, the functionality of the privileged helper process `com.docker.service` and the reasoning behind this approach.
+This page contains information about the permission requirements for running and installing Docker Desktop on Windows, the functionality of the privileged helper process `com.docker.service`, and the reasoning behind this approach.
 @z
 
 @x
 It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of the Windows Docker engine and Windows containers.
 @y
 It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of the Windows Docker engine and Windows containers.
+@z
+
+@x
+Docker Desktop on Windows is designed with security in mind. Administrative rights are only required when absolutely necessary.
+@y
+Docker Desktop on Windows is designed with security in mind. Administrative rights are only required when absolutely necessary.
 @z
 
 @x
@@ -60,7 +68,7 @@ The service performs the following functionalities:
 - Ensuring that `kubernetes.docker.internal` is defined in the Win32 hosts file. Defining the DNS name `kubernetes.docker.internal` allows Docker to share Kubernetes contexts with containers.
 - Ensuring that `host.docker.internal` and `gateway.docker.internal` are defined in the Win32 hosts file. They point to the host local IP address and allow an application to resolve the host IP using the same name from either the host itself or a container.
 - Securely caching the Registry Access Management policy which is read-only for the developer.
-- Creating the Hyper-V VM `"DockerDesktopVM"` and managing its lifecycle - starting, stopping and destroying it. The VM name is hard coded in the service code so the service cannot be used for creating or manipulating any other VMs.
+- Creating the Hyper-V VM `"DockerDesktopVM"` and managing its lifecycle - starting, stopping, and destroying it. The VM name is hard coded in the service code so the service cannot be used for creating or manipulating any other VMs.
 - Moving the VHDX file or folder.
 - Starting and stopping the Windows Docker engine and querying whether it's running.
 - Deleting all Windows containers data files.
@@ -73,7 +81,7 @@ The service performs the following functionalities:
 - Ensuring that `kubernetes.docker.internal` is defined in the Win32 hosts file. Defining the DNS name `kubernetes.docker.internal` allows Docker to share Kubernetes contexts with containers.
 - Ensuring that `host.docker.internal` and `gateway.docker.internal` are defined in the Win32 hosts file. They point to the host local IP address and allow an application to resolve the host IP using the same name from either the host itself or a container.
 - Securely caching the Registry Access Management policy which is read-only for the developer.
-- Creating the Hyper-V VM `"DockerDesktopVM"` and managing its lifecycle - starting, stopping and destroying it. The VM name is hard coded in the service code so the service cannot be used for creating or manipulating any other VMs.
+- Creating the Hyper-V VM `"DockerDesktopVM"` and managing its lifecycle - starting, stopping, and destroying it. The VM name is hard coded in the service code so the service cannot be used for creating or manipulating any other VMs.
 - Moving the VHDX file or folder.
 - Starting and stopping the Windows Docker engine and querying whether it's running.
 - Deleting all Windows containers data files.
@@ -86,11 +94,11 @@ The service performs the following functionalities:
 @x
 The service start mode depends on which container engine is selected, and, for WSL, on whether it is needed to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file. This is controlled by a setting under `Use the WSL 2 based engine` in the settings page. When this is set, WSL engine behaves the same as Hyper-V. So:
 - With Windows containers, or Hyper-v Linux containers, the service is started when the system boots and runs all the time, even when Docker Desktop isn't running. This is required so you can launch Docker Desktop without admin privileges.
-- With WSL2 Linux containers, the service isn't necessary and therefore doesn't run automatically when the system boots. When you switch to Windows containers or Hyper-V Linux containers, or choose to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file, a UAC prompt is displayed which asks you to accept the privileged operation to start the service. If accepted, the service is started and set to start automatically upon the next Windows boot.
+- With WSL2 Linux containers, the service isn't necessary and therefore doesn't run automatically when the system boots. When you switch to Windows containers or Hyper-V Linux containers, or choose to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file, a UAC prompt appears asking you to accept the privileged operation to start the service. If accepted, the service is started and set to start automatically upon the next Windows boot.
 @y
 The service start mode depends on which container engine is selected, and, for WSL, on whether it is needed to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file. This is controlled by a setting under `Use the WSL 2 based engine` in the settings page. When this is set, WSL engine behaves the same as Hyper-V. So:
 - With Windows containers, or Hyper-v Linux containers, the service is started when the system boots and runs all the time, even when Docker Desktop isn't running. This is required so you can launch Docker Desktop without admin privileges.
-- With WSL2 Linux containers, the service isn't necessary and therefore doesn't run automatically when the system boots. When you switch to Windows containers or Hyper-V Linux containers, or choose to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file, a UAC prompt is displayed which asks you to accept the privileged operation to start the service. If accepted, the service is started and set to start automatically upon the next Windows boot.
+- With WSL2 Linux containers, the service isn't necessary and therefore doesn't run automatically when the system boots. When you switch to Windows containers or Hyper-V Linux containers, or choose to maintain `host.docker.internal` and `gateway.docker.internal` in the Win32 hosts file, a UAC prompt appears asking you to accept the privileged operation to start the service. If accepted, the service is started and set to start automatically upon the next Windows boot.
 @z
 
 @x
@@ -107,8 +115,7 @@ installed software.  This means that although containers run by default as
 access to the Windows host machine. The Linux VM serves as a security boundary
 and limits what resources from the host can be accessed. File sharing uses a
 user-space crafted file server and any directories from the host bind mounted
-into Docker containers still retain their original permissions. It doesn't give
-you access to any files that it doesn’t already have access to.
+into Docker containers still retain their original permissions.  Containers don't have access to any host files beyond those explicitly shared.
 @y
 The Linux Docker daemon and containers run in a minimal, special-purpose Linux
 VM managed by Docker. It is immutable so you can’t extend it or change the
@@ -117,8 +124,7 @@ installed software.  This means that although containers run by default as
 access to the Windows host machine. The Linux VM serves as a security boundary
 and limits what resources from the host can be accessed. File sharing uses a
 user-space crafted file server and any directories from the host bind mounted
-into Docker containers still retain their original permissions. It doesn't give
-you access to any files that it doesn’t already have access to.
+into Docker containers still retain their original permissions.  Containers don't have access to any host files beyond those explicitly shared.
 @z
 
 @x
@@ -154,9 +160,9 @@ isolated from the Docker daemon and other services running inside the VM.
 @z
 
 @x
-## Windows Containers
+## Windows containers
 @y
-## Windows Containers
+## Windows containers
 @z
 
 @x

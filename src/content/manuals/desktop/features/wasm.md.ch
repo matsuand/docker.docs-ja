@@ -1,16 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 title: Wasm workloads 
-weight: 20
+@y
+title: Wasm workloads 
+@z
+
+@x
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
 @y
-title: Wasm workloads 
-weight: 20
 description: How to run Wasm workloads with Docker Desktop
 keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
@@ -22,21 +22,29 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
-Wasm (short for WebAssembly) is a fast, light alternative to the Linux and
-Windows containers you’re using in Docker today (with
-[some tradeoffs](https://www.docker.com/blog/docker-wasm-technical-preview/)).
+WebAssembly (Wasm) is a fast, light alternative to Linux and
+Windows containers.  With Docker Desktop, you can now run Wasm workloads side by side with traditional containers.
 @y
-Wasm (short for WebAssembly) is a fast, light alternative to the Linux and
-Windows containers you’re using in Docker today (with
-[some tradeoffs](https://www.docker.com/blog/docker-wasm-technical-preview/)).
+WebAssembly (Wasm) is a fast, light alternative to Linux and
+Windows containers.  With Docker Desktop, you can now run Wasm workloads side by side with traditional containers.
 @z
 
 @x
-This page provides information about the new ability to run Wasm applications
+This page provides information about the ability to run Wasm applications
 alongside your Linux containers in Docker.
 @y
-This page provides information about the new ability to run Wasm applications
+This page provides information about the ability to run Wasm applications
 alongside your Linux containers in Docker.
+@z
+
+@x
+> [!TIP]
+>
+> Learn more about Wasm use cases and tradeoffs in the [Docker Wasm technical preview blog post](https://www.docker.com/blog/docker-wasm-technical-preview/).
+@y
+> [!TIP]
+>
+> Learn more about Wasm use cases and tradeoffs in the [Docker Wasm technical preview blog post](https://www.docker.com/blog/docker-wasm-technical-preview/).
 @z
 
 @x
@@ -70,14 +78,7 @@ then pre-existing images and containers will be inaccessible.
 @z
 
 @x
-Docker Desktop downloads and installs the following runtimes that you can use
-to run Wasm workloads:
-@y
-Docker Desktop downloads and installs the following runtimes that you can use
-to run Wasm workloads:
-@z
-
-@x
+Docker Desktop downloads and installs the following runtimes: 
 - `io.containerd.slight.v1`
 - `io.containerd.spin.v2`
 - `io.containerd.wasmedge.v1`
@@ -86,6 +87,7 @@ to run Wasm workloads:
 - `io.containerd.wws.v1`
 - `io.containerd.wasmer.v1`
 @y
+Docker Desktop downloads and installs the following runtimes: 
 - `io.containerd.slight.v1`
 - `io.containerd.spin.v2`
 - `io.containerd.wasmedge.v1`
@@ -218,11 +220,11 @@ Start the application using the normal Docker Compose commands:
 @z
 
 @x
-Networking works the same as you expect with Linux containers, giving you the
+Networking works the same as you'd expect with Linux containers, giving you the
 flexibility to combine Wasm applications with other containerized workloads,
 such as a database, in a single application stack.
 @y
-Networking works the same as you expect with Linux containers, giving you the
+Networking works the same as you'd expect with Linux containers, giving you the
 flexibility to combine Wasm applications with other containerized workloads,
 such as a database, in a single application stack.
 @z
@@ -516,35 +518,9 @@ Update your Docker Desktop to the latest version and try again.
 @z
 
 @x
-- Docker Compose may not exit cleanly when interrupted
-  - Workaround: Clean up `docker-compose` processes by sending them a SIGKILL
-    (`killall -9 docker-compose`).
-- Pushes to Hub might give an error stating
-  `server message: insufficient_scope: authorization failed`, even after logging
-  in using Docker Desktop
-  - Workaround: Run `docker login` in the CLI
+- Docker Compose may not exit cleanly when interrupted. As a workaround, clean up `docker-compose` processes by sending them a SIGKILL (`killall -9 docker-compose`).
+- Pushes to Docker Hub might give an error stating `server message: insufficient_scope: authorization failed`, even after signing in through Docker Desktop. As a workaround, run `docker login` in the CLI
 @y
-- Docker Compose may not exit cleanly when interrupted
-  - Workaround: Clean up `docker-compose` processes by sending them a SIGKILL
-    (`killall -9 docker-compose`).
-- Pushes to Hub might give an error stating
-  `server message: insufficient_scope: authorization failed`, even after logging
-  in using Docker Desktop
-  - Workaround: Run `docker login` in the CLI
-@z
-
-@x
-## Feedback
-@y
-## Feedback
-@z
-
-@x
-Thanks for trying out Wasm workloads with Docker. Give feedback or report any
-bugs you may find through the issues tracker on the
-[public roadmap item](https://github.com/docker/roadmap/issues/426).
-@y
-Thanks for trying out Wasm workloads with Docker. Give feedback or report any
-bugs you may find through the issues tracker on the
-[public roadmap item](https://github.com/docker/roadmap/issues/426).
+- Docker Compose may not exit cleanly when interrupted. As a workaround, clean up `docker-compose` processes by sending them a SIGKILL (`killall -9 docker-compose`).
+- Pushes to Docker Hub might give an error stating `server message: insufficient_scope: authorization failed`, even after signing in through Docker Desktop. As a workaround, run `docker login` in the CLI
 @z

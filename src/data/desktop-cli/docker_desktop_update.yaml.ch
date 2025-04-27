@@ -20,9 +20,9 @@ usage: docker desktop update [OPTIONS]
 @z
 
 @x quiet
-      description: Queitly check and apply updates
+      description: Quietly check and apply updates
 @y
-      description: Queitly check and apply updates
+      description: Quietly check and apply updates
 @z
 
 % snip directives...

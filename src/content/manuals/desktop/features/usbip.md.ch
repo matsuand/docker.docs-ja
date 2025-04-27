@@ -24,16 +24,6 @@ keywords: usb, usbip, docker desktop, macos, windows, linux
 @z
 
 @x
-> [!NOTE]
->
-> Available on Docker Desktop for Mac, Linux, and Windows with the Hyper-V backend.
-@y
-> [!NOTE]
->
-> Available on Docker Desktop for Mac, Linux, and Windows with the Hyper-V backend.
-@z
-
-@x
 USB/IP enables you to share USB devices over the network, which can then be accessed from within Docker containers. This page focuses on sharing USB devices connected to the machine you run Docker Desktop on. You can repeat the following process to attach and use additional USB devices as needed.
 @y
 USB/IP enables you to share USB devices over the network, which can then be accessed from within Docker containers. This page focuses on sharing USB devices connected to the machine you run Docker Desktop on. You can repeat the following process to attach and use additional USB devices as needed.
@@ -42,11 +32,11 @@ USB/IP enables you to share USB devices over the network, which can then be acce
 @x
 > [!NOTE]
 >
-> The Docker Desktop VM kernel image comes pre-configured with drivers for many common USB devices, but Docker can't guarantee every possible USB device will work with this setup.
+> Docker Desktop includes built-in drivers for many common USB devices but Docker can't guarantee every possible USB device works with this setup.
 @y
 > [!NOTE]
 >
-> The Docker Desktop VM kernel image comes pre-configured with drivers for many common USB devices, but Docker can't guarantee every possible USB device will work with this setup.
+> Docker Desktop includes built-in drivers for many common USB devices but Docker can't guarantee every possible USB device works with this setup.
 @z
 
 @x
@@ -124,6 +114,12 @@ $ docker run --rm -it --privileged --pid=host alpine
 @z
 
 @x
+`--privileged` gives the container full access to the host, and `--pid=host` allows it to share the host’s process namespace.
+@y
+`--privileged` gives the container full access to the host, and `--pid=host` allows it to share the host’s process namespace.
+@z
+
+@x
 ### Step three: Enter the mount namespace of PID 1
 @y
 ### Step three: Enter the mount namespace of PID 1
@@ -146,9 +142,9 @@ $ nsenter -t 1 -m
 @z
 
 @x
-### Step four: Use USB/IP tools
+### Step four: Use the USB/IP tools
 @y
-### Step four: Use USB/IP tools
+### Step four: Use the USB/IP tools
 @z
 
 @x
@@ -268,9 +264,9 @@ event0  mice
 @z
 
 @x
-### Step five: Use the attached device in another container
+### Step five: Access the device from another container
 @y
-### Step five: Use the attached device in another container
+### Step five: Access the device from another container
 @z
 
 @x

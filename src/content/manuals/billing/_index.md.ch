@@ -34,12 +34,12 @@ keywords: billing, invoice, payment, subscription
 @z
 
 @x
-- title: Update the billing information
+- title: Update billing information
   description: Discover how to update the billing information for your personal account or organization.
   link: /billing/details/
   icon: contract_edit
 @y
-- title: Update the billing information
+- title: Update billing information
   description: Discover how to update the billing information for your personal account or organization.
   link: __SUBDIR__/billing/details/
   icon: contract_edit

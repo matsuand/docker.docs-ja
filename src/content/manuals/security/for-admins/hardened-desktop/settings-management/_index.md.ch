@@ -61,12 +61,16 @@ For an extra layer of security, you can also use Settings Management to enable a
 
 @x
 You can configure several Docker Desktop settings using either:
- - An `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
- - Creating a settings policy in the Docker Admin Console 
 @y
 You can configure several Docker Desktop settings using either:
+@z
+
+@x
  - An `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
- - Creating a settings policy in the Docker Admin Console 
+ - Creating a settings policy in the Docker Admin Console.
+@y
+ - An `admin-settings.json` file. This file is located on the Docker Desktop host and can only be accessed by developers with root or administrator privileges.
+ - Creating a settings policy in the Docker Admin Console.
 @z
 
 @x

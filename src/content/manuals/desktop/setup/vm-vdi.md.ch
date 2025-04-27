@@ -12,9 +12,9 @@ title: VM、VDI 環境内での Docker Desktop for Windows の実行
 @z
 
 @x
-In general, we recommend running Docker Desktop natively on either Mac, Linux, or Windows. However, Docker Desktop for Windows can run inside a virtual desktop provided the virtual desktop is properly configured. 
+Docker recommends running Docker Desktop natively on Mac, Linux, or Windows.  However, Docker Desktop for Windows can run inside a virtual desktop provided the virtual desktop is properly configured. 
 @y
-一般的に Docker Desktop は、Mac、Linux、Windows のいずれかにおいてネイティブに実行することをお勧めします。
+Docker Desktop では、Mac、Linux、Windows のいずれかにおいてネイティブに実行することをお勧めします。
 ただし仮想デスクトップが適切に設定できていれば、Docker Desktop for Windows を仮想デスクトップ内で実行することも可能です。
 @z
 
@@ -42,21 +42,41 @@ To run Docker Desktop in a virtual desktop environment, it is essential nested v
 @z
 
 @x
-The support available from Docker extends to installing and running Docker Desktop inside the VM, once the nested virtualization is set up correctly. The only hypervisors we have successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](/manuals/desktop/troubleshoot-and-support/support.md).
+Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](/manuals/desktop/troubleshoot-and-support/support.md).
 @y
-The support available from Docker extends to installing and running Docker Desktop inside the VM, once the nested virtualization is set up correctly. The only hypervisors we have successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](manuals/desktop/troubleshoot-and-support/support.md).
+Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](manuals/desktop/troubleshoot-and-support/support.md).
 @z
 
 @x
-For troubleshooting problems and intermittent failures that are outside of Docker's control, you should contact your hypervisor vendor. Each hypervisor vendor offers different levels of support. For example, Microsoft supports running nested Hyper-V both on-prem and on Azure, with some version constraints. This may not be the case for VMWare ESXi.
+For troubleshooting problems and intermittent failures that are outside of Docker's control, you should contact your hypervisor vendor. Each hypervisor vendor offers different levels of support. For example, Microsoft supports running nested Hyper-V both on-prem and on Azure, with some version constraints. This may not be the case for VMware ESXi.
 @y
-For troubleshooting problems and intermittent failures that are outside of Docker's control, you should contact your hypervisor vendor. Each hypervisor vendor offers different levels of support. For example, Microsoft supports running nested Hyper-V both on-prem and on Azure, with some version constraints. This may not be the case for VMWare ESXi.
+For troubleshooting problems and intermittent failures that are outside of Docker's control, you should contact your hypervisor vendor. Each hypervisor vendor offers different levels of support. For example, Microsoft supports running nested Hyper-V both on-prem and on Azure, with some version constraints. This may not be the case for VMware ESXi.
+@z
+
+@x
+Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment. 
+@y
+Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment. 
+@z
+
+@x
+> [!TIP]
+>
+> If you're running Docker Desktop inside a Citrix VDI, note that Citrix can be used with a variety of underlying hypervisors, for example VMware, Hyper-V, Citrix Hypervisor/XenServer. Docker Desktop requires nested virtualization, which is not supported by Citrix Hypervisor/XenServer.
+>
+> Check with your Citrix administrator or VDI infrastructure team to confirm which hypervisor is being used, and whether nested virtualization is enabled.
+@y
+> [!TIP]
+>
+> If you're running Docker Desktop inside a Citrix VDI, note that Citrix can be used with a variety of underlying hypervisors, for example VMware, Hyper-V, Citrix Hypervisor/XenServer. Docker Desktop requires nested virtualization, which is not supported by Citrix Hypervisor/XenServer.
+>
+> Check with your Citrix administrator or VDI infrastructure team to confirm which hypervisor is being used, and whether nested virtualization is enabled.
 @z
 
 @x
 ## Turn on nested virtualization
 @y
-## Turn on nested virtualization {#turn-on-nested-virtualization}
+## Turn on nested virtualization
 @z
 
 @x
@@ -68,13 +88,13 @@ You must turn on nested virtualization before you install Docker Desktop on a vi
 @x
 ### Turn on nested virtualization on VMware ESXi
 @y
-### Turn on nested virtualization on VMware ESXi {#turn-on-nested-virtualization-on-vmware-esxi}
+### Turn on nested virtualization on VMware ESXi
 @z
 
 @x
-Nested virtualization of other hypervisors like Hyper-V inside a vSphere VM [is not a supported scenario](https://kb.vmware.com/s/article/2009916). However, running Hyper-V VM in a VMware ESXi VM is technically possible and, depending on the version, ESXi includes hardware-assisted virtualization as a supported feature. For internal testing, we used a VM that had 1 CPU with 4 cores and 12GB of memory.
+Nested virtualization of other hypervisors like Hyper-V inside a vSphere VM [is not a supported scenario](https://kb.vmware.com/s/article/2009916). However, running Hyper-V VM in a VMware ESXi VM is technically possible and, depending on the version, ESXi includes hardware-assisted virtualization as a supported feature. A VM that had 1 CPU with 4 cores and 12GB of memory was used for internal testing.
 @y
-Nested virtualization of other hypervisors like Hyper-V inside a vSphere VM [is not a supported scenario](https://kb.vmware.com/s/article/2009916). However, running Hyper-V VM in a VMware ESXi VM is technically possible and, depending on the version, ESXi includes hardware-assisted virtualization as a supported feature. For internal testing, we used a VM that had 1 CPU with 4 cores and 12GB of memory.
+Nested virtualization of other hypervisors like Hyper-V inside a vSphere VM [is not a supported scenario](https://kb.vmware.com/s/article/2009916). However, running Hyper-V VM in a VMware ESXi VM is technically possible and, depending on the version, ESXi includes hardware-assisted virtualization as a supported feature. A VM that had 1 CPU with 4 cores and 12GB of memory was used for internal testing.
 @z
 
 @x
@@ -96,7 +116,61 @@ Nested virtualization is supported by Microsoft for running Hyper-V inside an Az
 @z
 
 @x
-For Azure virtual machines, [check that the VM size chosen supports nested virtualization](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes). Microsoft provides [a helpful list on Azure VM sizes](https://docs.microsoft.com/en-us/azure/virtual-machines/acu) and highlights the sizes that currently support nested virtualization. For internal testing, we used D4s_v5 machines. We recommend this specification or above for optimal performance of Docker Desktop.
+For Azure virtual machines, [check that the VM size chosen supports nested virtualization](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes). Microsoft provides [a helpful list on Azure VM sizes](https://docs.microsoft.com/en-us/azure/virtual-machines/acu) and highlights the sizes that currently support nested virtualization. D4s_v5 machines were used for internal testing. Use this specification or above for optimal performance of Docker Desktop.
 @y
-For Azure virtual machines, [check that the VM size chosen supports nested virtualization](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes). Microsoft provides [a helpful list on Azure VM sizes](https://docs.microsoft.com/en-us/azure/virtual-machines/acu) and highlights the sizes that currently support nested virtualization. For internal testing, we used D4s_v5 machines. We recommend this specification or above for optimal performance of Docker Desktop.
+For Azure virtual machines, [check that the VM size chosen supports nested virtualization](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes). Microsoft provides [a helpful list on Azure VM sizes](https://docs.microsoft.com/en-us/azure/virtual-machines/acu) and highlights the sizes that currently support nested virtualization. D4s_v5 machines were used for internal testing. Use this specification or above for optimal performance of Docker Desktop.
+@z
+
+@x
+## Docker Desktop support on Nutanix-powered VDI
+@y
+## Docker Desktop support on Nutanix-powered VDI
+@z
+
+@x
+Docker Desktop can be used within Nutanix-powered VDI environments provided that the underlying Windows environment supports WSL 2 or Windows container mode. Since Nutanix officially supports WSL 2, Docker Desktop should function as expected, as long as WSL 2 operates correctly within the VDI environment.
+@y
+Docker Desktop can be used within Nutanix-powered VDI environments provided that the underlying Windows environment supports WSL 2 or Windows container mode. Since Nutanix officially supports WSL 2, Docker Desktop should function as expected, as long as WSL 2 operates correctly within the VDI environment.
+@z
+
+@x
+If using Windows container mode, confirm that the Nutanix environment supports Hyper-V or alternative Windows container backends.
+@y
+If using Windows container mode, confirm that the Nutanix environment supports Hyper-V or alternative Windows container backends.
+@z
+
+@x
+### Supported configurations
+@y
+### Supported configurations
+@z
+
+@x
+Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support):
+@y
+Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support):
+@z
+
+@x
+ - Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
+@y
+ - Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
+@z
+
+@x
+ - Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
+@y
+ - Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
+@z
+
+@x
+### Support scope and responsibilities
+@y
+### Support scope and responsibilities
+@z
+
+@x
+For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
+@y
+For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
 @z

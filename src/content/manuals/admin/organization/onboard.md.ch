@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Onboard your organization
-weight: 20
+@y
+title: Onboard your organization
+@z
+
+@x
 description: Get started onboarding your Docker Team or Business organization.
 keywords: business, team, organizations, get started, onboarding
 @y
-title: Onboard your organization
-weight: 20
 description: Get started onboarding your Docker Team or Business organization.
 keywords: business, team, organizations, get started, onboarding
 @z
@@ -58,9 +60,9 @@ In this guide, you'll learn how to do the following:
 @z
 
 @x
-Before you start to onboard your organization, ensure that you:
+Before you start onboarding your organization, ensure that you:
 @y
-Before you start to onboard your organization, ensure that you:
+Before you start onboarding your organization, ensure that you:
 @z
 
 @x
@@ -86,45 +88,101 @@ Before you start to onboard your organization, ensure that you:
 @z
 
 @x
-## Step 1: Identify your Docker users
+## Onboard with guided setup
 @y
-## Step 1: Identify your Docker users
+## Onboard with guided setup
 @z
 
 @x
-Identifying your users will ensure that you allocate your subscription seats efficiently and that all your Docker users receive the benefits of your subscription.
+The Admin Console has a guided setup to help you easily
+onboard your organization. The guided setup steps consist of basic onboarding
+tasks. If you want to onboard outside of the guided setup,
+see [Recommended onboarding steps](/manuals/admin/organization/onboard.md#recommended-onboarding-steps).
 @y
-Identifying your users will ensure that you allocate your subscription seats efficiently and that all your Docker users receive the benefits of your subscription.
+The Admin Console has a guided setup to help you easily
+onboard your organization. The guided setup steps consist of basic onboarding
+tasks. If you want to onboard outside of the guided setup,
+see [Recommended onboarding steps](manuals/admin/organization/onboard.md#recommended-onboarding-steps).
+@z
+
+@x
+To onboard using the guided setup,
+navigate to the [Admin Console](https://app.docker.com) and
+select **Guided setup** in the left-hand navigation.
+@y
+To onboard using the guided setup,
+navigate to the [Admin Console](https://app.docker.com) and
+select **Guided setup** in the left-hand navigation.
+@z
+
+@x
+The guided setup walks you through the following onboarding steps:
+@y
+The guided setup walks you through the following onboarding steps:
+@z
+
+@x
+- **Invite your team**: Invite owners and members.
+- **Manage user access**: Add and verify a domain, manage users with SSO, and
+enforce Docker Desktop sign-in.
+- **Docker Desktop security**: Configure image access management, registry access
+management, and settings management.
+@y
+- **Invite your team**: Invite owners and members.
+- **Manage user access**: Add and verify a domain, manage users with SSO, and
+enforce Docker Desktop sign-in.
+- **Docker Desktop security**: Configure image access management, registry access
+management, and settings management.
+@z
+
+@x
+## Recommended onboarding steps
+@y
+## Recommended onboarding steps
+@z
+
+@x
+### Step one: Identify your Docker users
+@y
+### Step one: Identify your Docker users
+@z
+
+@x
+Identifying your users helps you allocate seats efficiently and ensures they
+receive your Docker subscription benefits.
+@y
+Identifying your users helps you allocate seats efficiently and ensures they
+receive your Docker subscription benefits.
 @z
 
 @x
 1. Identify the Docker users in your organization.
-   - If your organization uses device management software, like MDM or Jamf, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
+   - If your organization uses device management software, like MDM or Jamf, you can use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
       - Mac: `/Applications/Docker.app`
       - Windows: `C:\Program Files\Docker\Docker`
       - Linux: `/opt/docker-desktop`
-   - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you may survey your users.
-2. Instruct all your organization's Docker users to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
+   - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you can survey your users.
+2. Ask users to update their Docker account email to one in your organization’s domain, or create a new account with that email.
    - To update an account's email address, instruct your users to sign in to [Docker Hub](https://hub.docker.com), and update the email address to their email address in your organization's domain.
    - To create a new account, instruct your users to go [sign up](https://hub.docker.com/signup) using their email address in your organization's domain.
 3. Ask your Docker sales representative or [contact sales](https://www.docker.com/pricing/contact-sales/) to get a list of Docker accounts that use an email address in your organization's domain.
 @y
 1. Identify the Docker users in your organization.
-   - If your organization uses device management software, like MDM or Jamf, you may use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
+   - If your organization uses device management software, like MDM or Jamf, you can use the device management software to help identify Docker users. See your device management software's documentation for details. You can identify Docker users by checking if Docker Desktop is installed at the following location on each user's machine:
       - Mac: `/Applications/Docker.app`
       - Windows: `C:\Program Files\Docker\Docker`
       - Linux: `/opt/docker-desktop`
-   - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you may survey your users.
-2. Instruct all your organization's Docker users to update their existing Docker account's email address to an address that's in your organization's domain, or to create a new account using an email address in your organization's domain.
+   - If your organization doesn't use device management software or your users haven't installed Docker Desktop yet, you can survey your users.
+2. Ask users to update their Docker account email to one in your organization’s domain, or create a new account with that email.
    - To update an account's email address, instruct your users to sign in to [Docker Hub](https://hub.docker.com), and update the email address to their email address in your organization's domain.
    - To create a new account, instruct your users to go [sign up](https://hub.docker.com/signup) using their email address in your organization's domain.
 3. Ask your Docker sales representative or [contact sales](https://www.docker.com/pricing/contact-sales/) to get a list of Docker accounts that use an email address in your organization's domain.
 @z
 
 @x
-## Step 2: Invite owners
+### Step two: Invite owners
 @y
-## Step 2: Invite owners
+### Step two: Invite owners
 @z
 
 @x
@@ -140,9 +198,9 @@ To add an owner, invite a user and assign them the owner role. For more details,
 @z
 
 @x
-## Step 3: Invite members
+### Step three: Invite members
 @y
-## Step 3: Invite members
+### Step three: Invite members
 @z
 
 @x
@@ -158,9 +216,9 @@ To add a member, invite a user and assign them the member role. For more details
 @z
 
 @x
-## Step 4: Manage members with SSO and SCIM
+### Step four: Manage user access with SSO and SCIM
 @y
-## Step 4: Manage members with SSO and SCIM
+### Step four: Manage user access with SSO and SCIM
 @z
 
 @x
@@ -170,11 +228,17 @@ Configuring SSO and SCIM is optional and only available to Docker Business subsc
 @z
 
 @x
-You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
+Use your identity provider (IdP) to manage members and provision them to Docker
+automatically via SSO and SCIM. See the following for more details:
+@y
+Use your identity provider (IdP) to manage members and provision them to Docker
+automatically via SSO and SCIM. See the following for more details:
+@z
+
+@x
    - [Configure SSO](/manuals/security/for-admins/single-sign-on/configure.md) to authenticate and add members when they sign in to Docker through your identity provider.
    - Optional. [Enforce SSO](/manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
 @y
-You can manage your members in your identity provider and automatically provision them to your Docker organization with SSO and SCIM. See the following for more details.
    - [Configure SSO](manuals/security/for-admins/single-sign-on/configure.md) to authenticate and add members when they sign in to Docker through your identity provider.
    - Optional. [Enforce SSO](manuals/security/for-admins/single-sign-on/connect.md) to ensure that when users sign in to Docker, they must use SSO.
 @z
@@ -182,16 +246,14 @@ You can manage your members in your identity provider and automatically provisio
 @x
      > [!NOTE]
      >
-     > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
-     > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
-     > features. For more details, see
+     > Enforcing single sign-on (SSO) and enforcing Docker Desktop sign in
+     are different features. For more details, see
      > [Enforcing sign-in versus enforcing single sign-on (SSO)](/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @y
      > [!NOTE]
      >
-     > Enforcing single sign-on (SSO) and [Step 5: Enforce sign-in for Docker
-     > Desktop](#step-5-enforce-sign-in-for-docker-desktop) are different
-     > features. For more details, see
+     > Enforcing single sign-on (SSO) and enforcing Docker Desktop sign in
+     are different features. For more details, see
      > [Enforcing sign-in versus enforcing single sign-on (SSO)](__SUBDIR__/security/for-admins/enforce-sign-in/#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @z
 
@@ -202,9 +264,9 @@ You can manage your members in your identity provider and automatically provisio
 @z
 
 @x
-## Step 5: Enforce sign-in for Docker Desktop
+### Step five: Enforce sign-in for Docker Desktop
 @y
-## Step 5: Enforce sign-in for Docker Desktop
+### Step five: Enforce sign-in for Docker Desktop
 @z
 
 @x
@@ -227,6 +289,30 @@ There are multiple ways you can enforce sign-in, depending on your company's set
 - [Registry key method (Windows only)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#registry-key-method-windows-only)
 - [`.plist` method (Mac only)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#plist-method-mac-only)
 - [`registry.json` method (All)](__SUBDIR__/security/for-admins/enforce-sign-in/methods/#registryjson-method-all)
+@z
+
+@x
+### Step six: Manage Docker Desktop security
+@y
+### Step six: Manage Docker Desktop security
+@z
+
+@x
+Docker offers the following security features to manage your organization's
+security posture:
+@y
+Docker offers the following security features to manage your organization's
+security posture:
+@z
+
+@x
+- [Image Access Management](/manuals/security/for-admins/hardened-desktop/image-access-management.md): Control which types of images your developers can pull from Docker Hub.
+- [Registry Access Management](/manuals/security/for-admins/hardened-desktop/registry-access-management.md): Define which registries your developers can access.
+- [Settings management](/manuals/security/for-admins/hardened-desktop/settings-management.md): Set and control Docker Desktop settings for your users.
+@y
+- [Image Access Management](manuals/security/for-admins/hardened-desktop/image-access-management.md): Control which types of images your developers can pull from Docker Hub.
+- [Registry Access Management](manuals/security/for-admins/hardened-desktop/registry-access-management.md): Define which registries your developers can access.
+- [Settings management](manuals/security/for-admins/hardened-desktop/settings-management.md): Set and control Docker Desktop settings for your users.
 @z
 
 @x

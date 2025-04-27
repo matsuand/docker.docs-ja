@@ -5,11 +5,11 @@
 % snip 対応
 
 @x
-title: Use the MSI installer
+title: MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure, admin, mdm
 @y
-title: Use the MSI installer
+title: MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure, admin, mdm
 @z
@@ -37,14 +37,14 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 2. Under **Docker Desktop**, select the **Deploy** page.
 3. From the **Windows OS** tab, select the **Download MSI installer** button.
 4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
-5. Once you've accepted the license agreement, you can choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 6. Configure the Docker Desktop installation. You can:
 @y
 1. In the [Docker Admin Console](http://admin.docker.com/), navigate to your organization.
 2. Under **Docker Desktop**, select the **Deploy** page.
 3. From the **Windows OS** tab, select the **Download MSI installer** button.
 4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
-5. Once you've accepted the license agreement, you can choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 6. Configure the Docker Desktop installation. You can:
 @z
 
@@ -67,25 +67,25 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 @z
 
 @x
-    - Select the engine for Docker Desktop. Either WSL or Hyper-V. If your system only supports one of the two options, you won't be able to select which backend to use.
+    - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 8. When the installation is successful, select **Finish** to complete the installation process.
 @y
-    - Select the engine for Docker Desktop. Either WSL or Hyper-V. If your system only supports one of the two options, you won't be able to select which backend to use.
+    - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 8. When the installation is successful, select **Finish** to complete the installation process.
 @z
 
 @x
-If your administrator account is different to your user account, you must add the user to the **docker-users** group:
+If your administrator account is different from your user account, you must add the user to the **docker-users** group:
 1. Run **Computer Management** as an **administrator**.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
+2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
 @y
-If your administrator account is different to your user account, you must add the user to the **docker-users** group:
+If your administrator account is different from your user account, you must add the user to the **docker-users** group:
 1. Run **Computer Management** as an **administrator**.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
+2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
 @z
@@ -93,7 +93,7 @@ If your administrator account is different to your user account, you must add th
 @x
 > [!NOTE]
 >
-> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This ensures organizations can maintain version consistency and prevent unapproved updates. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy** page > under **Docker Desktop**.
 >
@@ -101,7 +101,7 @@ If your administrator account is different to your user account, you must add th
 @y
 > [!NOTE]
 >
-> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This feature ensures your organization maintains the required Docker Desktop version. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled. This ensures organizations can maintain version consistency and prevent unapproved updates. For Docker Desktop installed with the .exe installer, in-app updates remain supported.
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from the Docker Admin Console. Navigate to the  **Deploy** page > under **Docker Desktop**.
 >
@@ -243,8 +243,8 @@ For example:
 @x
 > [!TIP]
 >
-> Some useful tips to remember when creating a value that expects a JSON string as it’s value:
-> 
+> When creating a value that expects a JSON string:
+>
 > - The property expects a JSON formatted string
 > - The string should be wrapped in double quotes
 > - The string shouldn't contain any whitespace
@@ -252,8 +252,8 @@ For example:
 @y
 > [!TIP]
 >
-> Some useful tips to remember when creating a value that expects a JSON string as it’s value:
-> 
+> When creating a value that expects a JSON string:
+>
 > - The property expects a JSON formatted string
 > - The string should be wrapped in double quotes
 > - The string shouldn't contain any whitespace
@@ -291,11 +291,11 @@ It should return output similar to the following:
 @x
 > [!NOTE]
 >
-> This command can take some time to return, depending on the number of installed applications.
+> This command may take some time, depending on the number of installed applications.
 @y
 > [!NOTE]
 >
-> This command can take some time to return, depending on the number of installed applications.
+> This command may take some time, depending on the number of installed applications.
 @z
 
 @x
@@ -401,9 +401,9 @@ Additionally, you can also use `/norestart` or `/forcerestart` to control reboot
 @z
 
 @x
-By default, the installer reboots the machine after a successful installation. When ran silently, the reboot is automatic and the user is not prompted.
+By default, the installer reboots the machine after a successful installation. When run silently, the reboot is automatic and the user is not prompted.
 @y
-By default, the installer reboots the machine after a successful installation. When ran silently, the reboot is automatic and the user is not prompted.
+By default, the installer reboots the machine after a successful installation. When run silently, the reboot is automatic and the user is not prompted.
 @z
 
 @x
@@ -413,9 +413,9 @@ By default, the installer reboots the machine after a successful installation. W
 @z
 
 @x
-The MSI installer collects anonymous usage statistics relating to install only. This is to better understand user behaviour and to improve the user experience by identifying and addressing issues or optimizing popular features.
+The MSI installer collects anonymous usage statistics relating to installation only. This is to better understand user behaviour and to improve the user experience by identifying and addressing issues or optimizing popular features.
 @y
-The MSI installer collects anonymous usage statistics relating to install only. This is to better understand user behaviour and to improve the user experience by identifying and addressing issues or optimizing popular features.
+The MSI installer collects anonymous usage statistics relating to installation only. This is to better understand user behaviour and to improve the user experience by identifying and addressing issues or optimizing popular features.
 @z
 
 @x
@@ -489,10 +489,9 @@ The registry key is as follows:
 % snip code...
 
 @x
-When analytics is disabled, this key has a value of `1`. 
+When analytics is disabled, this key is set to `1`.
 @y
-When analytics is disabled, this key has a value of `1`. 
-@z
+When analytics is disabled, this key is set to `1`.
 
 @x
 ## Additional resources

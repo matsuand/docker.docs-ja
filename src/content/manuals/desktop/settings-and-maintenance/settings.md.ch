@@ -78,6 +78,12 @@ On the **General** tab, you can configure when to start Docker and specify other
 @z
 
 @x
+- **Configure shell completions**. Automatically edits your shell configuration and gives you word completion for commands, flags, and Docker objects (such as container and volume names) when you hit `<Tab>` as you type into your terminal. For more information, see [Completion](/manuals/engine/cli/completion.md).
+@y
+- **Configure shell completions**. Automatically edits your shell configuration and gives you word completion for commands, flags, and Docker objects (such as container and volume names) when you hit `<Tab>` as you type into your terminal. For more information, see [Completion](manuals/engine/cli/completion.md).
+@z
+
+@x
 - **Choose container terminal**. Determines which terminal is launched when opening the terminal from a container.
 If you choose the integrated terminal, you can run commands in a running container straight from the Docker Desktop Dashboard. For more information, see [Explore containers](/manuals/desktop/use-desktop/container.md).
 @y
@@ -106,6 +112,20 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](/manuals/desktop/features/containerd.md).
+@y
+- **Use containerd for pulling and storing images**.
+  Turns on the containerd image store.
+  This brings new features like faster container startup performance by lazy-pulling images,
+  and the ability to run Wasm applications with Docker.
+  For more information, see [containerd image store](manuals/desktop/features/containerd.md).
+@z
+
+@x
 - {{< badge color=blue text="Windows only" >}}**Expose daemon on tcp://localhost:2375 without TLS**. Check this option to
   enable legacy clients to connect to the Docker daemon. You must use this option
   with caution as exposing the daemon without TLS can result in remote code
@@ -129,20 +149,6 @@ If you choose the integrated terminal, you can run commands in a running contain
 - {{< badge color=blue text="Windows only" >}}**Add the `*.docker.internal` names to the host's `/etc/hosts` file (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
 @y
 - {{< badge color=blue text="Windows only" >}}**Add the `*.docker.internal` names to the host's `/etc/hosts` file (Password required)**. Lets you resolve `*.docker.internal` DNS names from both the host and your containers.
-@z
-
-@x
-- **Use containerd for pulling and storing images**.
-  Turns on the containerd image store.
-  This brings new features like faster container startup performance by lazy-pulling images,
-  and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](/manuals/desktop/features/containerd.md).
-@y
-- **Use containerd for pulling and storing images**.
-  Turns on the containerd image store.
-  This brings new features like faster container startup performance by lazy-pulling images,
-  and the ability to run Wasm applications with Docker.
-  For more information, see [containerd image store](manuals/desktop/features/containerd.md).
 @z
 
 @x
@@ -216,9 +222,9 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **SBOM Indexing**. When this option is enabled, inspecting an image in Docker Desktop shows a **Start analysis** button that, when selected, analyzes the image with Docker Scout.
+- **Enable Scout image analysis**. When this option is enabled, inspecting an image in Docker Desktop shows a **Start analysis** button that, when selected, analyzes the image with Docker Scout.
 @y
-- **SBOM Indexing**. When this option is enabled, inspecting an image in Docker Desktop shows a **Start analysis** button that, when selected, analyzes the image with Docker Scout.
+- **Enable Scout image analysis**. When this option is enabled, inspecting an image in Docker Desktop shows a **Start analysis** button that, when selected, analyzes the image with Docker Scout.
 @z
 
 @x
@@ -324,9 +330,9 @@ Advanced settings are:
 @z
 
 @x
-- **Virtual disk limit**. Specify the maximum size of the disk image.
+- **Disk usage limit**. Specify the maximum amount of disk space the engine can use.
 @y
-- **Virtual disk limit**. Specify the maximum size of the disk image.
+- **Disk usage limit**. Specify the maximum amount of disk space the engine can use.
 @z
 
 @x
@@ -1094,6 +1100,16 @@ select **Enable Kubernetes**.
 @z
 
 @x
+With Docker Desktop version 4.38 and later, you can choose your cluster provisioning method:
+ - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
+ - **kind** creates a multi-node cluster and you can set the version and number of nodes. 
+@y
+With Docker Desktop version 4.38 and later, you can choose your cluster provisioning method:
+ - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
+ - **kind** creates a multi-node cluster and you can set the version and number of nodes. 
+@z
+
+@x
 Select **Show system containers (advanced)** to view internal containers when
 using Docker commands.
 @y
@@ -1155,6 +1171,16 @@ select **Always download updates**. This downloads newer versions of Docker Desk
 when an update becomes available. After downloading the update, select
 **Apply and Restart** to install the update. You can do this either through the
 Docker menu or in the **Updates** section in the Docker Desktop Dashboard.
+@z
+
+@x
+> [!TIP]
+> 
+> With Docker Desktop version 4.38 and later, components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This feature is still in Beta. 
+@y
+> [!TIP]
+> 
+> With Docker Desktop version 4.38 and later, components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This feature is still in Beta. 
 @z
 
 @x
@@ -1263,24 +1289,32 @@ Use the **Notifications** tab to turn on or turn off notifications for the follo
 
 @x
 - **Status updates on tasks and processes**
+- **Recommendations from Docker**
 - **Docker announcements**
 - **Docker surveys**
 @y
 - **Status updates on tasks and processes**
+- **Recommendations from Docker**
 - **Docker announcements**
 - **Docker surveys**
 @z
 
 @x
-By default, all notifications are turned on. You'll always receive error notifications and notifications about new Docker Desktop releases and updates.
+By default, all general notifications are turned on. You'll always receive error notifications and notifications about new Docker Desktop releases and updates.
 @y
-By default, all notifications are turned on. You'll always receive error notifications and notifications about new Docker Desktop releases and updates.
+By default, all general notifications are turned on. You'll always receive error notifications and notifications about new Docker Desktop releases and updates.
 @z
 
 @x
-Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="../images/notifications.svg" alt="notifications" >}}.
+You can also [configure notification settings for Docker Scout-related issues](/manuals/scout/explore/dashboard.md#notification-settings). 
 @y
-Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer. To open the **Notifications** drawer, select {{< inline-image src="../images/notifications.svg" alt="notifications" >}}.
+You can also [configure notification settings for Docker Scout-related issues](manuals/scout/explore/dashboard.md#notification-settings). 
+@z
+
+@x
+Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer which can be accessed from the top-right of the Docker Desktop Dashboard.
+@y
+Notifications momentarily appear in the lower-right of the Docker Desktop Dashboard and then move to the **Notifications** drawer which can be accessed from the top-right of the Docker Desktop Dashboard.
 @z
 
 @x
@@ -1318,19 +1352,19 @@ On Mac, you can reconfigure your initial installation settings  on the **Advance
 @z
 
 @x
-- **Enable default Docker socket (Requires password)**. Creates `/var/run/docker.sock` which some third party clients may use to communicate with Docker Desktop. For more information, see [permission requirements for macOS](/manuals/desktop/setup/install/mac-permission-requirements.md#installing-symlinks).
+- **Allow the default Docker socket to be used (Requires password)**. Creates `/var/run/docker.sock` which some third party clients may use to communicate with Docker Desktop. For more information, see [permission requirements for macOS](/manuals/desktop/setup/install/mac-permission-requirements.md#installing-symlinks).
 @y
-- **Enable default Docker socket (Requires password)**. Creates `/var/run/docker.sock` which some third party clients may use to communicate with Docker Desktop. For more information, see [permission requirements for macOS](manuals/desktop/setup/install/mac-permission-requirements.md#installing-symlinks).
+- **Allow the default Docker socket to be used (Requires password)**. Creates `/var/run/docker.sock` which some third party clients may use to communicate with Docker Desktop. For more information, see [permission requirements for macOS](manuals/desktop/setup/install/mac-permission-requirements.md#installing-symlinks).
 @z
 
 @x
-- **Enable privileged port mapping (Requires password)**. Starts the privileged helper process which binds the ports that are between 1 and 1024. For more information, see [permission requirements for macOS](/manuals/desktop/setup/install/mac-permission-requirements.md#binding-privileged-ports).
+- **Allow privileged port mapping (Requires password)**. Starts the privileged helper process which binds the ports that are between 1 and 1024. For more information, see [permission requirements for macOS](/manuals/desktop/setup/install/mac-permission-requirements.md#binding-privileged-ports).
 @y
-- **Enable privileged port mapping (Requires password)**. Starts the privileged helper process which binds the ports that are between 1 and 1024. For more information, see [permission requirements for macOS](manuals/desktop/setup/install/mac-permission-requirements.md#binding-privileged-ports).
+- **Allow privileged port mapping (Requires password)**. Starts the privileged helper process which binds the ports that are between 1 and 1024. For more information, see [permission requirements for macOS](manuals/desktop/setup/install/mac-permission-requirements.md#binding-privileged-ports).
 @z
 
 @x
-  For more information on each configuration and use case, see [Permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md).
+For more information on each configuration and use case, see [Permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md).
 @y
-  For more information on each configuration and use case, see [Permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md).
+For more information on each configuration and use case, see [Permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md).
 @z

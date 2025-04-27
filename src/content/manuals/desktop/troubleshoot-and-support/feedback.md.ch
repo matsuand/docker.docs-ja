@@ -26,9 +26,9 @@ There are many ways you can provide feedback on Docker Desktop or Docker Desktop
 @z
 
 @x
-On each Docker Desktop Dashboard view, there is a **Give feedback** link. This sends you to a Google feedback form where you can share your feedback and ideas.
+On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker team.
 @y
-On each Docker Desktop Dashboard view, there is a **Give feedback** link. This sends you to a Google feedback form where you can share your feedback and ideas.
+On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker team.
 @z
 
 @x
@@ -58,13 +58,11 @@ discussion, sign in to the appropriate Docker forums:
 @z
 
 @x
-- [Docker Desktop for Mac
-forum](https://forums.docker.com/c/docker-for-mac)
+- [Docker Desktop for Mac forum](https://forums.docker.com/c/docker-for-mac)
 - [Docker Desktop for Windows forum](https://forums.docker.com/c/docker-for-windows)
 - [Docker Desktop for Linux forum](https://forums.docker.com/c/docker-desktop-for-linux/60)
 @y
-- [Docker Desktop for Mac
-forum](https://forums.docker.com/c/docker-for-mac)
+- [Docker Desktop for Mac forum](https://forums.docker.com/c/docker-for-mac)
 - [Docker Desktop for Windows forum](https://forums.docker.com/c/docker-for-windows)
 - [Docker Desktop for Linux forum](https://forums.docker.com/c/docker-desktop-for-linux/60)
 @z
@@ -82,7 +80,7 @@ GitHub](https://github.com/docker/for-mac/issues)
 - [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
 - [Docker Desktop for Linux issues on
 GitHub](https://github.com/docker/desktop-linux/issues)
-- [Dev Environments issues on Github](https://github.com/docker/dev-environments/issues)
+- [Dev Environments issues on GitHub](https://github.com/docker/dev-environments/issues)
 - [Docker Extensions issues on GitHub](https://github.com/docker/extensions-sdk/issues)
 @y
 To report bugs or problems, visit:
@@ -91,7 +89,7 @@ GitHub](https://github.com/docker/for-mac/issues)
 - [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
 - [Docker Desktop for Linux issues on
 GitHub](https://github.com/docker/desktop-linux/issues)
-- [Dev Environments issues on Github](https://github.com/docker/dev-environments/issues)
+- [Dev Environments issues on GitHub](https://github.com/docker/dev-environments/issues)
 - [Docker Extensions issues on GitHub](https://github.com/docker/extensions-sdk/issues)
 @z
 

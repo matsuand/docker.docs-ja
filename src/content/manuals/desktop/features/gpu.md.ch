@@ -2,10 +2,10 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: GPU support in Docker Desktop
+title: GPU support in Docker Desktop for Windows
 linkTitle: GPU support
 @y
-title: Docker Desktop における GPU サポート
+title: Docker Desktop for Windows における GPU サポート
 linkTitle: GPU support
 @z
 
@@ -28,25 +28,31 @@ keywords: gpu, gpu support, nvidia, wsl2, docker desktop, windows
 @z
 
 @x
-## Using NVIDIA GPUs with WSL2
+Docker Desktop for Windows supports NVIDIA GPU Paravirtualization (GPU-PV) on NVIDIA GPUs, allowing containers to access GPU resources for compute-intensive workloads like AI, machine learning, or video processing.
 @y
-## WSL2 のもとでの NVIDIA GPU の利用 {#using-nvidia-gpus-with-wsl2}
+Docker Desktop for Windows supports NVIDIA GPU Paravirtualization (GPU-PV) on NVIDIA GPUs, allowing containers to access GPU resources for compute-intensive workloads like AI, machine learning, or video processing.
 @z
 
 @x
-Docker Desktop for Windows supports WSL 2 GPU Paravirtualization (GPU-PV) on NVIDIA GPUs. To enable WSL 2 GPU Paravirtualization, you need:
+## Prerequisites
 @y
-Docker Desktop for Windows supports WSL 2 GPU Paravirtualization (GPU-PV) on NVIDIA GPUs. To enable WSL 2 GPU Paravirtualization, you need:
+## Prerequisites
 @z
 
 @x
-- A machine with an NVIDIA GPU
+To enable WSL 2 GPU Paravirtualization, you need:
+@y
+To enable WSL 2 GPU Paravirtualization, you need:
+@z
+
+@x
+- A Windows machine with an NVIDIA GPU
 - Up to date Windows 10 or Windows 11 installation
 - [Up to date drivers](https://developer.nvidia.com/cuda/wsl) from NVIDIA supporting WSL 2 GPU Paravirtualization
 - The latest version of the WSL 2 Linux kernel. Use `wsl --update` on the command line
 - To make sure the [WSL 2 backend is turned on](wsl/_index.md#turn-on-docker-desktop-wsl-2) in Docker Desktop
 @y
-- A machine with an NVIDIA GPU
+- A Windows machine with an NVIDIA GPU
 - Up to date Windows 10 or Windows 11 installation
 - [Up to date drivers](https://developer.nvidia.com/cuda/wsl) from NVIDIA supporting WSL 2 GPU Paravirtualization
 - The latest version of the WSL 2 Linux kernel. Use `wsl --update` on the command line
@@ -54,25 +60,45 @@ Docker Desktop for Windows supports WSL 2 GPU Paravirtualization (GPU-PV) on NVI
 @z
 
 @x
-To validate that everything works as expected, execute a `docker run` command with the `--gpus=all` flag. For example, the following will run a short benchmark on your GPU:
+## Validate GPU support
 @y
-To validate that everything works as expected, execute a `docker run` command with the `--gpus=all` flag. For example, the following will run a short benchmark on your GPU:
+## Validate GPU support
+@z
+
+@x
+To confirm GPU access is working inside Docker, run the following:
+@y
+To confirm GPU access is working inside Docker, run the following:
 @z
 
 % snip command...
 
 @x
-The output will be similar to:
+This runs an n-body simulation benchmark on the GPU. The output will be similar to:
 @y
-The output will be similar to:
+This runs an n-body simulation benchmark on the GPU. The output will be similar to:
 @z
 
 % snip output...
 
 @x
-Or if you wanted to try something more useful you could use the official [Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 large language model.
+## Run a real-world model: Llama2 with Ollama
 @y
-Or if you wanted to try something more useful you could use the official [Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 large language model.
+## Run a real-world model: Llama2 with Ollama
+@z
+
+@x
+Use the [official Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 LLM with GPU acceleration:
+@y
+Use the [official Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 LLM with GPU acceleration:
+@z
+
+% snip command...
+
+@x
+Then start the model:
+@y
+Then start the model:
 @z
 
 % snip command...

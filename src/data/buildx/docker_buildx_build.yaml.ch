@@ -2513,10 +2513,10 @@ examples: |-
 
 @x
     In the following example, `type=file` is automatically detected because no
-    environment variable mathing `aws` (the ID) is set.
+    environment variable matching `aws` (the ID) is set.
 @y
     In the following example, `type=file` is automatically detected because no
-    environment variable mathing `aws` (the ID) is set.
+    environment variable matching `aws` (the ID) is set.
 @z
 
 @x

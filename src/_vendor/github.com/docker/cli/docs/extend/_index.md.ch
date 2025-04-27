@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Engine managed plugin system
 linkTitle: Docker Engine plugins
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
-aliases:
-  - "/engine/extend/plugins_graphdriver/"
----
 @y
----
 title: Docker Engine managed plugin system
 linkTitle: Docker Engine plugins
 description: Develop and use a plugin with the managed plugin system
 keywords: "API, Usage, plugins, documentation, developer"
-aliases:
-  - "/engine/extend/plugins_graphdriver/"
----
 @z
 
 @x
@@ -96,73 +88,89 @@ operation, such as creating a volume.
 @z
 
 @x
-In the following example, you install the `sshfs` plugin, verify that it is
+In the following example, you install the [`rclone` plugin](https://rclone.org/docker/), verify that it is
 enabled, and use it to create a volume.
 @y
-In the following example, you install the `sshfs` plugin, verify that it is
+In the following example, you install the [`rclone` plugin](https://rclone.org/docker/), verify that it is
 enabled, and use it to create a volume.
 @z
 
 @x
 > [!NOTE]
-> This example is intended for instructional purposes only. Once the volume is
-> created, your SSH password to the remote host is exposed as plaintext when
-> inspecting the volume. Delete the volume as soon as you are done with the
-> example.
+> This example is intended for instructional purposes only.
 @y
 > [!NOTE]
-> This example is intended for instructional purposes only. Once the volume is
-> created, your SSH password to the remote host is exposed as plaintext when
-> inspecting the volume. Delete the volume as soon as you are done with the
-> example.
+> This example is intended for instructional purposes only.
 @z
 
 @x
-1. Install the `sshfs` plugin.
+1. Set up the pre-requisite directories. By default they must exist on the host at the following locations:
 @y
-1. Install the `sshfs` plugin.
+1. Set up the pre-requisite directories. By default they must exist on the host at the following locations:
+@z
+
+@x
+   - `/var/lib/docker-plugins/rclone/config`. Reserved for the `rclone.conf` config file and must exist even if it's empty and the config file is not present.
+   - `/var/lib/docker-plugins/rclone/cache`. Holds the plugin state file as well as optional VFS caches.
+@y
+   - `/var/lib/docker-plugins/rclone/config`. Reserved for the `rclone.conf` config file and must exist even if it's empty and the config file is not present.
+   - `/var/lib/docker-plugins/rclone/cache`. Holds the plugin state file as well as optional VFS caches.
+@z
+
+@x
+2. Install the `rclone` plugin.
+@y
+2. Install the `rclone` plugin.
 @z
 
 @x
    ```console
-   $ docker plugin install vieux/sshfs
+   $ docker plugin install rclone/docker-volume-rclone --alias rclone
 @y
    ```console
-   $ docker plugin install vieux/sshfs
+   $ docker plugin install rclone/docker-volume-rclone --alias rclone
 @z
 
 @x
-   Plugin "vieux/sshfs" is requesting the following privileges:
-   - network: [host]
-   - capabilities: [CAP_SYS_ADMIN]
-   Do you grant the above permissions? [y/N] y
-@y
-   Plugin "vieux/sshfs" is requesting the following privileges:
-   - network: [host]
-   - capabilities: [CAP_SYS_ADMIN]
-   Do you grant the above permissions? [y/N] y
-@z
-
-@x
-   vieux/sshfs
+   Plugin "rclone/docker-volume-rclone" is requesting the following privileges:
+    - network: [host]
+    - mount: [/var/lib/docker-plugins/rclone/config]
+    - mount: [/var/lib/docker-plugins/rclone/cache]
+    - device: [/dev/fuse]
+    - capabilities: [CAP_SYS_ADMIN]
+   Do you grant the above permissions? [y/N] 
    ```
 @y
-   vieux/sshfs
+   Plugin "rclone/docker-volume-rclone" is requesting the following privileges:
+    - network: [host]
+    - mount: [/var/lib/docker-plugins/rclone/config]
+    - mount: [/var/lib/docker-plugins/rclone/cache]
+    - device: [/dev/fuse]
+    - capabilities: [CAP_SYS_ADMIN]
+   Do you grant the above permissions? [y/N] 
    ```
 @z
 
 @x
-   The plugin requests 2 privileges:
+   The plugin requests 5 privileges:
 @y
-   The plugin requests 2 privileges:
+   The plugin requests 5 privileges:
 @z
 
 @x
    - It needs access to the `host` network.
+   - Access to pre-requisite directories to mount to store:
+      - Your Rclone config files
+      - Temporary cache data
+   - Gives access to the FUSE (Filesystem in Userspace) device. This is required because Rclone uses FUSE to mount remote storage as if it were a local filesystem.
    - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
      the `mount` command.
 @y
    - It needs access to the `host` network.
+   - Access to pre-requisite directories to mount to store:
+      - Your Rclone config files
+      - Temporary cache data
+   - Gives access to the FUSE (Filesystem in Userspace) device. This is required because Rclone uses FUSE to mount remote storage as if it were a local filesystem.
    - It needs the `CAP_SYS_ADMIN` capability, which allows the plugin to run
      the `mount` command.
 @z
@@ -182,23 +190,23 @@ enabled, and use it to create a volume.
 @z
 
 @x
-   ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
-   69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
+   ID                    NAME                      DESCRIPTION                                ENABLED
+   aede66158353          rclone:latest             Rclone volume plugin for Docker            true
    ```
 @y
-   ID                    NAME                  TAG                 DESCRIPTION                   ENABLED
-   69553ca1d789          vieux/sshfs           latest              the `sshfs` plugin            true
+   ID                    NAME                      DESCRIPTION                                ENABLED
+   aede66158353          rclone:latest             Rclone volume plugin for Docker            true
    ```
 @z
 
 @x
 3. Create a volume using the plugin.
    This example mounts the `/remote` directory on host `1.2.3.4` into a
-   volume named `sshvolume`.
+   volume named `rclonevolume`.
 @y
 3. Create a volume using the plugin.
    This example mounts the `/remote` directory on host `1.2.3.4` into a
-   volume named `sshvolume`.
+   volume named `rclonevolume`.
 @z
 
 @x
@@ -210,24 +218,24 @@ enabled, and use it to create a volume.
 @x
    ```console
    $ docker volume create \
-     -d vieux/sshfs \
-     --name sshvolume \
-     -o sshcmd=user@1.2.3.4:/remote \
-     -o password=$(cat file_containing_password_for_remote_host)
+     -d rclone \
+     --name rclonevolume \
+     -o type=sftp \
+     -o path=remote \
+     -o sftp-host=1.2.3.4 \
+     -o sftp-user=user \
+     -o "sftp-password=$(cat file_containing_password_for_remote_host)"
+   ```
 @y
    ```console
    $ docker volume create \
-     -d vieux/sshfs \
-     --name sshvolume \
-     -o sshcmd=user@1.2.3.4:/remote \
-     -o password=$(cat file_containing_password_for_remote_host)
-@z
-
-@x
-   sshvolume
-   ```
-@y
-   sshvolume
+     -d rclone \
+     --name rclonevolume \
+     -o type=sftp \
+     -o path=remote \
+     -o sftp-host=1.2.3.4 \
+     -o sftp-user=user \
+     -o "sftp-password=$(cat file_containing_password_for_remote_host)"
    ```
 @z
 
@@ -247,26 +255,26 @@ enabled, and use it to create a volume.
 
 @x
    DRIVER              NAME
-   vieux/sshfs         sshvolume
+   rclone         rclonevolume
    ```
 @y
    DRIVER              NAME
-   vieux/sshfs         sshvolume
+   rclone         rclonevolume
    ```
 @z
 
 @x
-5. Start a container that uses the volume `sshvolume`.
+5. Start a container that uses the volume `rclonevolume`.
 @y
-5. Start a container that uses the volume `sshvolume`.
+5. Start a container that uses the volume `rclonevolume`.
 @z
 
 @x
    ```console
-   $ docker run --rm -v sshvolume:/data busybox ls /data
+   $ docker run --rm -v rclonevolume:/data busybox ls /data
 @y
    ```console
-   $ docker run --rm -v sshvolume:/data busybox ls /data
+   $ docker run --rm -v rclonevolume:/data busybox ls /data
 @z
 
 @x
@@ -278,17 +286,17 @@ enabled, and use it to create a volume.
 @z
 
 @x
-6. Remove the volume `sshvolume`
+6. Remove the volume `rclonevolume`
 @y
-6. Remove the volume `sshvolume`
+6. Remove the volume `rclonevolume`
 @z
 
 @x
    ```console
-   $ docker volume rm sshvolume
+   $ docker volume rm rclonevolume
 @y
    ```console
-   $ docker volume rm sshvolume
+   $ docker volume rm rclonevolume
 @z
 
 @x

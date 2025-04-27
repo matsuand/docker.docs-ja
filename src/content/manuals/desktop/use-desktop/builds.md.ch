@@ -16,33 +16,15 @@ keywords: Docker Dashboard, manage, gui, dashboard, builders, builds
 @z
 
 @x
-![Builds view in Docker Desktop](../images/builds-view.webp)
+The **Builds** view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.
 @y
-![Builds view in Docker Desktop](../images/builds-view.webp)
+The **Builds** view provides an interactive interface for inspecting build history, monitoring active builds, and managing builders directly in Docker Desktop.
 @z
 
 @x
-The **Builds** view is a simple interface that lets you inspect your build
-history and manage builders using Docker Desktop.
+By default, the **Build history** tab displays a list of completed builds, sorted by date (newest first). Switch to the **Active builds** tab to view ongoing builds.
 @y
-The **Builds** view is a simple interface that lets you inspect your build
-history and manage builders using Docker Desktop.
-@z
-
-@x
-Opening the **Builds** view in Docker Desktop displays a list of completed builds.
-By default, the list is sorted by date, showing the most recent builds at the top.
-You can switch to **Active builds** to view any ongoing builds.
-@y
-Opening the **Builds** view in Docker Desktop displays a list of completed builds.
-By default, the list is sorted by date, showing the most recent builds at the top.
-You can switch to **Active builds** to view any ongoing builds.
-@z
-
-@x
-![Build UI screenshot active builds](../images/build-ui-active-builds.webp)
-@y
-![Build UI screenshot active builds](../images/build-ui-active-builds.webp)
+By default, the **Build history** tab displays a list of completed builds, sorted by date (newest first). Switch to the **Active builds** tab to view ongoing builds.
 @z
 
 @x
@@ -62,31 +44,23 @@ connected to the same cloud builder.
 @z
 
 @x
-Select the **Builds** view in the Docker Desktop Dashboard to open the build list.
+Open the **Builds** view from the Docker Dashboard to access:
 @y
-Select the **Builds** view in the Docker Desktop Dashboard to open the build list.
+Open the **Builds** view from the Docker Dashboard to access:
 @z
 
 @x
-The build list shows your completed and ongoing builds. The **Build history**
-tab shows completed historical builds, and from here you can inspect the build
-logs, dependencies, traces, and more. The **Active builds** tab shows builds
-that are currently running.
+- **Build history**: Completed builds with access to logs, dependencies, traces, and more
+- **Active builds**: Builds currently in progress
 @y
-The build list shows your completed and ongoing builds. The **Build history**
-tab shows completed historical builds, and from here you can inspect the build
-logs, dependencies, traces, and more. The **Active builds** tab shows builds
-that are currently running.
+- **Build history**: Completed builds with access to logs, dependencies, traces, and more
+- **Active builds**: Builds currently in progress
 @z
 
 @x
-The list shows builds for your active, running builders. It doesn't list builds
-for inactive builders: builders that you've removed from your system, or
-builders that have been stopped.
+Only builds from active, running builders are listed. Builds from removed or stopped builders are not shown.
 @y
-The list shows builds for your active, running builders. It doesn't list builds
-for inactive builders: builders that you've removed from your system, or
-builders that have been stopped.
+Only builds from active, running builders are listed. Builds from removed or stopped builders are not shown.
 @z
 
 @x
@@ -121,15 +95,21 @@ Docker Desktop settings.
 The **Import builds** button lets you import build records for builds by other
 people, or builds in a CI environment. When you've imported a build record, it
 gives you full access to the logs, traces, and other data for that build,
-directly in Docker Desktop. The [build summary](/manuals/build/ci/github-actions/build-summary.md)
-for the `docker/build-push-action` and `docker/bake-action` GitHub Actions
-includes a link to download the build records, for inspecting CI jobs with
-Docker Desktop.
+directly in Docker Desktop. 
 @y
 The **Import builds** button lets you import build records for builds by other
 people, or builds in a CI environment. When you've imported a build record, it
 gives you full access to the logs, traces, and other data for that build,
-directly in Docker Desktop. The [build summary](manuals/build/ci/github-actions/build-summary.md)
+directly in Docker Desktop. 
+@z
+
+@x
+The [build summary](/manuals/build/ci/github-actions/build-summary.md)
+for the `docker/build-push-action` and `docker/bake-action` GitHub Actions
+includes a link to download the build records, for inspecting CI jobs with
+Docker Desktop.
+@y
+The [build summary](manuals/build/ci/github-actions/build-summary.md)
 for the `docker/build-push-action` and `docker/bake-action` GitHub Actions
 includes a link to download the build records, for inspecting CI jobs with
 Docker Desktop.
@@ -163,12 +143,6 @@ platform:
 If you're inspecting a multi-platform build, the drop-down menu in the
 top-right of this tab lets you filter the information down to a specific
 platform:
-@z
-
-@x
-![Platform filter](../images/build-ui-platform-menu.webp?w=400)
-@y
-![Platform filter](../images/build-ui-platform-menu.webp?w=400)
 @z
 
 @x
@@ -205,12 +179,6 @@ showing a breakdown of the build execution from various angles.
 - **Accumulated time** shows the total CPU time for all steps.
 - **Cache usage** shows the extent to which build operations were cached.
 - **Parallel execution** shows how much of the build execution time was spent running steps in parallel.
-@z
-
-@x
-![Build timing charts](../images/build-ui-timing-chart.webp)
-@y
-![Build timing charts](../images/build-ui-timing-chart.webp)
 @z
 
 @x
@@ -440,12 +408,6 @@ indicating where the failure happened and why.
 @z
 
 @x
-![Build error displayed inline in the Dockerfile](../images/build-ui-error.webp)
-@y
-![Build error displayed inline in the Dockerfile](../images/build-ui-error.webp)
-@z
-
-@x
 ### Build logs
 @y
 ### Build logs
@@ -510,12 +472,6 @@ could signal opportunities for optimizing the Dockerfile.
 @z
 
 @x
-![Build history chart](../images/build-ui-history.webp)
-@y
-![Build history chart](../images/build-ui-history.webp)
-@z
-
-@x
 You can navigate to and inspect a related build by selecting it in the chart,
 or using the **Past builds** list below the chart.
 @y
@@ -530,9 +486,9 @@ or using the **Past builds** list below the chart.
 @z
 
 @x
-The **Builder settings** view in the Docker Desktop settings lets you:
+The **Builder** tab in **Settings** lets you:
 @y
-The **Builder settings** view in the Docker Desktop settings lets you:
+The **Builder** tab in **Settings** lets you:
 @z
 
 @x
@@ -545,12 +501,6 @@ The **Builder settings** view in the Docker Desktop settings lets you:
 - Start and stop a builder
 - Delete build history
 - Add or remove builders (or connect and disconnect, in the case of cloud builders)
-@z
-
-@x
-![Builder settings drop-down](../images/build-ui-manage-builders.webp)
-@y
-![Builder settings drop-down](../images/build-ui-manage-builders.webp)
 @z
 
 @x

@@ -14,6 +14,12 @@ title: Domain audit
 @z
 
 @x
+{{< summary-bar feature_name="Domain audit" >}}
+@y
+{{< summary-bar feature_name="Domain audit" >}}
+@z
+
+@x
 Domain audit identifies uncaptured users in an organization. Uncaptured users are Docker users who have authenticated to Docker using an email address associated with one of your verified domains, but they're not a member of your organization in Docker. You can audit domains on organizations that are part of the Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](/subscription/upgrade/).
 @y
 Domain audit identifies uncaptured users in an organization. Uncaptured users are Docker users who have authenticated to Docker using an email address associated with one of your verified domains, but they're not a member of your organization in Docker. You can audit domains on organizations that are part of the Docker Business subscription. To upgrade your existing account to a Docker Business subscription, see [Upgrade your subscription](__SUBDIR__/subscription/upgrade/).
@@ -103,30 +109,36 @@ Before you audit your domains, review the following required prerequisites:
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{% admin-domain-audit product="admin" %}}
+@y
+{{% admin-domain-audit product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
 @x
-{{% admin-domain-audit product="hub" %}}
+{{% include "hub-org-management.md" %}}
 @y
-{{% admin-domain-audit product="hub" %}}
+{{% include "hub-org-management.md" %}}
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
+{{% admin-domain-audit product="hub" %}}
 @y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% admin-domain-audit product="admin" %}}
-@y
-{{% admin-domain-audit product="admin" %}}
+{{% admin-domain-audit product="hub" %}}
 @z
 
 @x

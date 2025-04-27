@@ -4,10 +4,10 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Using the Docker Desktop CLI
+title: Use the Docker Desktop CLI
 linkTitle: Docker Desktop CLI
 @y
-title: Using the Docker Desktop CLI
+title: Use the Docker Desktop CLI
 linkTitle: Docker Desktop CLI
 @z
 

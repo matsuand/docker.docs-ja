@@ -6,13 +6,13 @@
 @x
 description: Single sign-on IdP FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, IdP
-title: FAQs on SSO and identity providers
-tags: [FAQ]
+title: FAQs for SSO and identity providers
+linkTitle: Identity providers
 @y
 description: Single sign-on IdP FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, IdP
-title: FAQs on SSO and identity providers
-tags: [FAQ]
+title: FAQs for SSO and identity providers
+linkTitle: Identity providers
 @z
 
 @x

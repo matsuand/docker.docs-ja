@@ -20160,25 +20160,15 @@ paths:
 @z
 
 @x
-        An image tarball contains one directory per image layer (named using its long ID), each containing these files:
+        An image tarball contains [Content as defined in the OCI Image Layout Specification](https://github.com/opencontainers/image-spec/blob/v1.1.1/image-layout.md#content).
 @y
-        An image tarball contains one directory per image layer (named using its long ID), each containing these files:
+        An image tarball contains [Content as defined in the OCI Image Layout Specification](https://github.com/opencontainers/image-spec/blob/v1.1.1/image-layout.md#content).
 @z
 
 @x
-        - `VERSION`: currently `1.0` - the file format version
-        - `json`: detailed layer information, similar to `docker inspect layer_id`
-        - `layer.tar`: A tarfile containing the filesystem changes in this layer
+        Additionally, includes the manifest.json file associated with a backwards compatible docker save format.
 @y
-        - `VERSION`: currently `1.0` - the file format version
-        - `json`: detailed layer information, similar to `docker inspect layer_id`
-        - `layer.tar`: A tarfile containing the filesystem changes in this layer
-@z
-
-@x
-        The `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.
-@y
-        The `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.
+        Additionally, includes the manifest.json file associated with a backwards compatible docker save format.
 @z
 
 @x

@@ -3296,8 +3296,8 @@ expressed in the short form.
 @z
 
 @x
-- `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `npipe`, or `cluster`
-- `source`: The source of the mount, a path on the host for a bind mount, or the
+- `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `image`, `npipe`, or `cluster`
+- `source`: The source of the mount, a path on the host for a bind mount, a Docker image reference for an image mount, or the
   name of a volume defined in the
   [top-level `volumes` key](volumes.md). Not applicable for a tmpfs mount.
 - `target`: The path in the container where the volume is mounted.
@@ -3314,10 +3314,12 @@ expressed in the short form.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
   - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](/manuals/compose/releases/release-notes.md#2260).
+- `image`: Configures additional image options:
+  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](/manuals/compose/releases/release-notes.md#2350)
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @y
-- `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `npipe`, or `cluster`
-- `source`: The source of the mount, a path on the host for a bind mount, or the
+- `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `image`, `npipe`, or `cluster`
+- `source`: The source of the mount, a path on the host for a bind mount, a Docker image reference for an image mount, or the
   name of a volume defined in the
   [top-level `volumes` key](volumes.md). Not applicable for a tmpfs mount.
 - `target`: The path in the container where the volume is mounted.
@@ -3334,6 +3336,8 @@ expressed in the short form.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
   - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](manuals/compose/releases/release-notes.md#2260).
+- `image`: Configures additional image options:
+  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](manuals/compose/releases/release-notes.md#2350)
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @z
 

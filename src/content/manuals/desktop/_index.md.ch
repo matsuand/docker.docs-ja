@@ -39,15 +39,27 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @z
 
 @x
-- title: Explore Docker Desktop
-  description: Navigate Docker Desktop and learn about its key features.
+- title: Learn about Docker Desktop
+  description: Navigate Docker Desktop.
   icon: feature_search
   link: /desktop/use-desktop/
 @y
-- title: Docker Desktop の確認
-  description: Docker Desktop を始めて、その主要機能について学びます。
+- title: Docker Desktop について学ぶ
+  description: Docker Desktop を学びます。
   icon: feature_search
   link: __SUBDIR__/desktop/use-desktop/
+@z
+
+@x
+- title: Explore its key features
+  description: |
+    Find information about [Docker VMM](/desktop/features/vmm/), [WSL](/desktop/features/wsl/), [deploying on Kubernetes](/desktop/features/kubernetes/), and more.
+  icon: category
+@y
+- title: 主要機能を確認
+  description: |
+    [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), [Kubernetes へのデプロイ](__SUBDIR__/desktop/features/kubernetes/) などについての情報を確認します。
+  icon: category
 @z
 
 @x
@@ -72,19 +84,6 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
   description: 一般的な FAQ や特定プラットフォームの FAQ を確認します。
   icon: help
   link: __SUBDIR__/desktop/troubleshoot-and-support/faqs/general/
-@z
-
-@x
-- title: Find additional resources
-  description: |
-    Find information on networking features, deploying on Kubernetes, and more.
-  icon: category
-  link: /desktop/features/kubernetes/
-@y
-- title: その他のリソースを探す
-  description: ネットワーク機能、Kubernetes へのデプロイなどについての情報を調べます。
-  icon: category
-  link: __SUBDIR__/desktop/features/kubernetes/
 @z
 
 @x
@@ -133,8 +132,9 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 - Docker CLI client
 - [Docker Scout](../scout/_index.md) (additional subscription may apply)
 - [Docker Build](/manuals/build/_index.md)
-- [Docker Extensions](../extensions/_index.md)
 - [Docker Compose](/manuals/compose/_index.md)
+- [Ask Gordon](/manuals/desktop/features/gordon/_index.md)
+- [Docker Extensions](../extensions/_index.md)
 - [Docker Content Trust](/manuals/engine/security/trust/_index.md)
 - [Kubernetes](https://github.com/kubernetes/kubernetes/)
 - [Credential Helper](https://github.com/docker/docker-credential-helpers/)
@@ -143,8 +143,9 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 - Docker CLI クライアント
 - [Docker Scout](../scout/_index.md) (追加のサブスクリプションを必要とする場合があります)
 - [Docker Build](../build/_index.md)
-- [Docker Extensions](../extensions/_index.md)
 - [Docker Compose](manuals/compose/_index.md)
+- [Ask Gordon](manuals/desktop/features/gordon/_index.md)
+- [Docker Extensions](../extensions/_index.md)
 - [Docker Content Trust](manuals/engine/security/trust/_index.md)
 - [Kubernetes](https://github.com/kubernetes/kubernetes/)
 - [Credential Helper](https://github.com/docker/docker-credential-helpers/)
@@ -183,18 +184,6 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @y
 {{< /tab >}}
 {{< /tabs >}}
-@z
-
-@x
-Docker Desktop works with your choice of development tools and languages and
-gives you access to a vast library of certified images and templates in
-[Docker Hub](https://hub.docker.com/). This allows development teams to extend
-their environment to rapidly auto-build, continuously integrate, and collaborate
-using a secure repository.
-@y
-Docker Desktop は、選択した開発ツールやプログラミング言語を使って動作します。
-そして [Docker Hub](https://hub.docker.com/) にある認定イメージやテンプレートに対しての、数多くのライブラリにアクセスできるようになります。
-これにより開発チームの環境を充足させ、セキュアなリポジトリを使ってすばやく自動ビルドを行って、継続的な開発や共同開発を行えるようになります。
 @z
 
 @x

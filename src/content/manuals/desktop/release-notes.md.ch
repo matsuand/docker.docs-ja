@@ -52,6 +52,138 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+## 4.40.0
+@y
+## 4.40.0
+@z
+
+@x
+{{< release-date date="2025-03-31" >}}
+@y
+{{< release-date date="2025-03-31" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.40.0" build_path="/187762/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.40.0" build_path="/187762/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](/manuals/desktop/features/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
+@y
+- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](manuals/desktop/features/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Buildx v0.22.0](https://github.com/docker/buildx/releases/tag/v0.22.0)
+- [Docker Compose v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0)
+- [Docker Engine v28.0.4](https://docs.docker.com/engine/release-notes/28/#2804)
+- [Docker Scout CLI v1.17.0](https://github.com/docker/scout-cli/releases/tag/v1.17.0)
+- [compose-bridge v0.0.18](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.18)
+- [NVIDIA Container Toolkit v1.17.5](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.5)
+@y
+- [Docker Buildx v0.22.0](https://github.com/docker/buildx/releases/tag/v0.22.0)
+- [Docker Compose v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0)
+- [Docker Engine v28.0.4](https://docs.docker.com/engine/release-notes/28/#2804)
+- [Docker Scout CLI v1.17.0](https://github.com/docker/scout-cli/releases/tag/v1.17.0)
+- [compose-bridge v0.0.18](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.18)
+- [NVIDIA Container Toolkit v1.17.5](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.5)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a bug that caused `docker-proxy` to stop forwarding UDP datagrams to containers.
+- Fixed a bug that caused docker-proxy to close UDP connections to containers eagerly and resulting in the source address to change needlessly
+- Fixed a race condition that prevented Docker Desktop Kubernetes from starting in some scenarios.
+- Improved the way ECI collects image digest info from a repository in environments where proxies are configured.
+- Users can now to specify a timeout when generating  a private Extension Marketplace using the new `--timeout` flag.
+- Removed unused internal helper tool `com.docker.admin` for Mac and Linux.
+@y
+- Fixed a bug that caused `docker-proxy` to stop forwarding UDP datagrams to containers.
+- Fixed a bug that caused docker-proxy to close UDP connections to containers eagerly and resulting in the source address to change needlessly
+- Fixed a race condition that prevented Docker Desktop Kubernetes from starting in some scenarios.
+- Improved the way ECI collects image digest info from a repository in environments where proxies are configured.
+- Users can now to specify a timeout when generating  a private Extension Marketplace using the new `--timeout` flag.
+- Removed unused internal helper tool `com.docker.admin` for Mac and Linux.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed an issue where stale directory cache in Docker VMM that prevented detecting moved or new files.
+- Removed Continue/Restart pop up when Time Machine utility is restricted.
+- Docker Desktop now allows Unix domain sockets to be shared with containers via `docker run -v /path/to/unix.sock:/unix.sock`. The full socket path must be specified in the bind-mount. See [for-mac/#483](https://github.com/docker/for-mac/issues/483).
+- Fixed a bug that caused the `docker-credential-osxkeychain` and `docker-credential-desktop` to return malformed URIs when a token was stored for a server with a port specified.
+@y
+- Fixed an issue where stale directory cache in Docker VMM that prevented detecting moved or new files.
+- Removed Continue/Restart pop up when Time Machine utility is restricted.
+- Docker Desktop now allows Unix domain sockets to be shared with containers via `docker run -v /path/to/unix.sock:/unix.sock`. The full socket path must be specified in the bind-mount. See [for-mac/#483](https://github.com/docker/for-mac/issues/483).
+- Fixed a bug that caused the `docker-credential-osxkeychain` and `docker-credential-desktop` to return malformed URIs when a token was stored for a server with a port specified.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- The Windows MSI and `.exe` installers now disable Windows Containers by default when installing with the GUI.
+- Improved port-mapping throughput on WSL2.
+@y
+- The Windows MSI and `.exe` installers now disable Windows Containers by default when installing with the GUI.
+- Improved port-mapping throughput on WSL2.
+@z
+
+@x
+### Known issues
+@y
+### Known issues
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Switching to Windows Containers while the privileged helper error message is displayed could cause inconsistent state. As a workaround, quit Docker Desktop, change `UseWindowsContainers` to `false` in `settings-store.json` and restart Docker Desktop.
+- After installation, `Docker Desktop.exe` does not contain the latest version information.
+@y
+- Switching to Windows Containers while the privileged helper error message is displayed could cause inconsistent state. As a workaround, quit Docker Desktop, change `UseWindowsContainers` to `false` in `settings-store.json` and restart Docker Desktop.
+- After installation, `Docker Desktop.exe` does not contain the latest version information.
+@z
+
+@x
 ## 4.39.0
 @y
 ## 4.39.0

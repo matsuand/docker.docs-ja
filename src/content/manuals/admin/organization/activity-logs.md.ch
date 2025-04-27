@@ -55,9 +55,23 @@ Owners can also see the activity logs for their repository if the repository is 
 
 @x
 {{< tabs >}}
-{{< tab name="Docker Hub" >}}
+{{< tab name="Admin Console" >}}
 @y
 {{< tabs >}}
+{{< tab name="Admin Console" >}}
+@z
+
+@x
+{{% admin-org-audit-log product="admin" %}}
+@y
+{{% admin-org-audit-log product="admin" %}}
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< /tab >}}
 {{< tab name="Docker Hub" >}}
 @z
 
@@ -65,20 +79,6 @@ Owners can also see the activity logs for their repository if the repository is 
 {{% admin-org-audit-log product="hub" %}}
 @y
 {{% admin-org-audit-log product="hub" %}}
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< /tab >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
-{{% admin-org-audit-log product="admin" %}}
-@y
-{{% admin-org-audit-log product="admin" %}}
 @z
 
 @x

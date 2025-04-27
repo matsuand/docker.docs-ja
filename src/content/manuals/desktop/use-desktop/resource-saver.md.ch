@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Understand what Docker Desktop Resource Saver mode is and how to configure it
 keywords: Docker Dashboard, resource saver, manage, containers, gui, dashboard, user manual
@@ -14,12 +16,12 @@ linkTitle: Resource Saver mode
 @z
 
 @x
-Resource Saver is a new feature available in Docker Desktop version 4.24 and later. It significantly reduces Docker
+Resource Saver mode significantly reduces Docker
 Desktop's CPU and memory utilization on the host by 2 GBs or more, by
 automatically stopping the Docker Desktop Linux VM when no containers are
 running for a period of time. The default time is set to 5 minutes, but this can be adjusted to suit your needs.
 @y
-Resource Saver is a new feature available in Docker Desktop version 4.24 and later. It significantly reduces Docker
+Resource Saver mode significantly reduces Docker
 Desktop's CPU and memory utilization on the host by 2 GBs or more, by
 automatically stopping the Docker Desktop Linux VM when no containers are
 running for a period of time. The default time is set to 5 minutes, but this can be adjusted to suit your needs.
@@ -36,9 +38,9 @@ experience.
 @z
 
 @x
-## How to configure Resource Saver 
+## Configure Resource Saver 
 @y
-## How to configure Resource Saver 
+## Configure Resource Saver 
 @z
 
 @x
@@ -183,24 +185,4 @@ users enable WSL's `autoMemoryReclaim` feature as described in the
 [Docker  Desktop WSL docs](manuals/desktop/features/wsl/_index.md). Finally, since Docker Desktop does not
 stop the Linux VM on WSL, exit from Resource Saver mode is immediate (there's
 no exit delay).
-@z
-
-@x
-## Feedback
-@y
-## Feedback
-@z
-
-@x
-To give feedback or report any bugs you may find, create an issue on the appropriate Docker Desktop GitHub repository:
-@y
-To give feedback or report any bugs you may find, create an issue on the appropriate Docker Desktop GitHub repository:
-@z
-
-@x
-- [for-mac](https://github.com/docker/for-mac)
-- [for-win](https://github.com/docker/for-win)
-@y
-- [for-mac](https://github.com/docker/for-mac)
-- [for-win](https://github.com/docker/for-win)
 @z

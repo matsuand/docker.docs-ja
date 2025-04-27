@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Understand what you can do with the Containers view on Docker Dashboard
@@ -14,10 +14,9 @@ title: Docker Desktop におけるコンテナー画面の確認
 @z
 
 @x
-The **Containers** view lists all your running containers and applications. You must have running or stopped containers and applications to see them listed.
+The **Containers** view lists all running and stopped containers and applications. It provides a clean interface to manage the lifecycle of your containers, interact with running applications, and inspect Docker objects—including Docker Compose apps.
 @y
-**Containers** (コンテナー) 画面 は、実行中のコンテナーやアプリケーションをすべて一覧表示します。
-逆にコンテナーやアプリケーションを一覧から確認するには、それらが実行中であるか停止状態となっていなければなりません。
+The **Containers** view lists all running and stopped containers and applications. It provides a clean interface to manage the lifecycle of your containers, interact with running applications, and inspect Docker objects—including Docker Compose apps.
 @z
 
 @x
@@ -27,29 +26,29 @@ The **Containers** view lists all your running containers and applications. You 
 @z
 
 @x
-Use the **Search** field to search for any specific container.
+Use the **Search** field to find a specific container by name.
 @y
-Use the **Search** field to search for any specific container.
+Use the **Search** field to find a specific container by name.
 @z
 
 @x
-From the **Containers** view you can perform the following actions:
-- Pause/Resume
-- Stop/Start/Restart
+From the **Containers** view you can:
+- Start, stop, pause, resume, or restart containers
 - View image packages and CVEs
-- Delete
+- Delete containers
 - Open the application in VS code
 - Open the port exposed by the container in a browser
-- Copy docker run. This lets you share container run details or modify certain parameters.
+- Copy the `docker run` command for reuse or modification
+- Use [Docker Debug](#execdebug)
 @y
-From the **Containers** view you can perform the following actions:
-- Pause/Resume
-- Stop/Start/Restart
+From the **Containers** view you can:
+- Start, stop, pause, resume, or restart containers
 - View image packages and CVEs
-- Delete
+- Delete containers
 - Open the application in VS code
 - Open the port exposed by the container in a browser
-- Copy docker run. This lets you share container run details or modify certain parameters.
+- Copy the `docker run` command for reuse or modification
+- Use [Docker Debug](#execdebug)
 @z
 
 @x
@@ -83,9 +82,9 @@ You can obtain detailed information about the container when you select it.
 @z
 
 @x
-From here, you can use the quick action buttons to perform various actions such as pause, resume, start or stop, or explore the **Logs**, **Inspect**, **Bind mounts**, **Exec**, **Files**, and **Stats** tabs. 
+From here, you can use the quick action buttons to perform various actions such as pause, resume, start or stop, or explore the **Logs**, **Inspect**, **Bind mounts**, **Debug**, **Files**, and **Stats** tabs. 
 @y
-From here, you can use the quick action buttons to perform various actions such as pause, resume, start or stop, or explore the **Logs**, **Inspect**, **Bind mounts**, **Exec**, **Files**, and **Stats** tabs. 
+From here, you can use the quick action buttons to perform various actions such as pause, resume, start or stop, or explore the **Logs**, **Inspect**, **Bind mounts**, **Debug**, **Files**, and **Stats** tabs. 
 @z
 
 @x
@@ -139,95 +138,41 @@ Select **Inspect** to view low-level information about the container. It display
 @z
 
 @x
-### Integrated terminal
+### Exec/Debug
 @y
-### Integrated terminal
+### Exec/Debug
 @z
 
 @x
-From the **Exec** tab, you can use the integrated terminal, on a running
-container, directly within Docker Desktop. You are able to quickly run commands
-within your container so you can understand its current state or debug when
-something goes wrong.
+If you have not enabled Docker Debug in settings, the **Exec** tab displays. It lets you quickly run commands within your running container.
 @y
-From the **Exec** tab, you can use the integrated terminal, on a running
-container, directly within Docker Desktop. You are able to quickly run commands
-within your container so you can understand its current state or debug when
-something goes wrong.
+If you have not enabled Docker Debug in settings, the **Exec** tab displays. It lets you quickly run commands within your running container.
 @z
 
 @x
-Using the integrated terminal is the same as running one of the following commands:
+Using the **Exec** tab is the same as running one of the following commands:
 @y
-Using the integrated terminal is the same as running one of the following commands:
+Using the **Exec** tab is the same as running one of the following commands:
 @z
 
 @x
 - `docker exec -it <container-id> /bin/sh`
 - `docker exec -it <container-id> cmd.exe` when accessing Windows containers
-- `docker debug <container-id>` when using debug mode
 @y
 - `docker exec -it <container-id> /bin/sh`
 - `docker exec -it <container-id> cmd.exe` when accessing Windows containers
-- `docker debug <container-id>` when using debug mode
 @z
 
 @x
-The integrated terminal:
+For more details, see the [`docker exec` CLI reference](/reference/cli/docker/exec/).
 @y
-The integrated terminal:
+For more details, see the [`docker exec` CLI reference](__SUBDIR__/reference/cli/docker/exec/).
 @z
 
 @x
-- Persists your session and **Debug mode** setting if you navigate to another
-  part of the Docker Desktop Dashboard and then return.
-- Supports copy, paste, search, and clearing your session.
-- When not using debug mode, it automatically detects the default user for a
-  running container from the image's Dockerfile. If no user is specified, or
-  you're using debug mode, it defaults to `root`.
+If you have enabled Docker Debug in settings, or toggled on **Debug mode** to the right of the tab options, the **Debug** tab displays. 
 @y
-- Persists your session and **Debug mode** setting if you navigate to another
-  part of the Docker Desktop Dashboard and then return.
-- Supports copy, paste, search, and clearing your session.
-- When not using debug mode, it automatically detects the default user for a
-  running container from the image's Dockerfile. If no user is specified, or
-  you're using debug mode, it defaults to `root`.
-@z
-
-@x
-#### Open the integrated terminal
-@y
-#### Open the integrated terminal
-@z
-
-@x
-To open the integrated terminal, either:
-@y
-To open the integrated terminal, either:
-@z
-
-@x
-- Hover over your running container and under the **Actions** column, select the **Show container actions**
-  menu. From the drop-down menu, select **Open in terminal**.
-- Or, select the container and then select the **Exec** tab.
-@y
-- Hover over your running container and under the **Actions** column, select the **Show container actions**
-  menu. From the drop-down menu, select **Open in terminal**.
-- Or, select the container and then select the **Exec** tab.
-@z
-
-@x
-To use your external terminal, navigate to the **General** tab in **Settings**
-and select the **System default** option under **Choose your terminal**.
-@y
-To use your external terminal, navigate to the **General** tab in **Settings**
-and select the **System default** option under **Choose your terminal**.
-@z
-
-@x
-#### Open the integrated terminal in debug mode
-@y
-#### Open the integrated terminal in debug mode
+If you have enabled Docker Debug in settings, or toggled on **Debug mode** to the right of the tab options, the **Debug** tab displays. 
 @z
 
 @x
@@ -249,9 +194,9 @@ Debug mode requires a [Pro, Team, or Business subscription](__SUBDIR__/subscript
 @z
 
 @x
-To open the integrated terminal in debug mode:
+To use debug mode:
 @y
-To open the integrated terminal in debug mode:
+To use debug mode:
 @z
 
 @x
@@ -267,23 +212,19 @@ To open the integrated terminal in debug mode:
 @x
    - Hover over your running container and under the **Actions** column, select the **Show container actions**
      menu. From the drop-down menu, select **Use Docker Debug**.
-   - Or, select the container and then select the **Debug** tab. If the
-     **Debug** tab isn't visible, select the **Exec** tab and then enable the
-     **Debug mode** setting.
+   - Or, select the container and then select the **Debug** tab. 
 @y
    - Hover over your running container and under the **Actions** column, select the **Show container actions**
      menu. From the drop-down menu, select **Use Docker Debug**.
-   - Or, select the container and then select the **Debug** tab. If the
-     **Debug** tab isn't visible, select the **Exec** tab and then enable the
-     **Debug mode** setting.
+   - Or, select the container and then select the **Debug** tab. 
 @z
 
 @x
-To use debug mode by default when accessing the integrated terminal, navigate to
+To use debug mode by default, navigate to
 the **General** tab in **Settings** and select the **Enable Docker Debug by
 default** option.
 @y
-To use debug mode by default when accessing the integrated terminal, navigate to
+To use debug mode by default, navigate to
 the **General** tab in **Settings** and select the **Enable Docker Debug by
 default** option.
 @z
@@ -291,7 +232,7 @@ default** option.
 @x
 ### Files
 @y
-### ファイル {#files}
+### Files
 @z
 
 @x
@@ -319,13 +260,13 @@ can also:
 @x
 ## Additional resources
 @y
-## さらなる情報 {#additional-resources}
+## Additional resources
 @z
 
 @x
 - [What is a container](/get-started/docker-concepts/the-basics/what-is-a-container.md)
 - [Run multi-container applications](/get-started/docker-concepts/running-containers/multi-container-applications.md)
 @y
-- [コンテナーとは何か](get-started/docker-concepts/the-basics/what-is-a-container.md)
-- [マルチコンテナーアプリの実行](get-started/docker-concepts/running-containers/multi-container-applications.md)
+- [What is a container](get-started/docker-concepts/the-basics/what-is-a-container.md)
+- [Run multi-container applications](get-started/docker-concepts/running-containers/multi-container-applications.md)
 @z

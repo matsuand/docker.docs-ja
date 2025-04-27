@@ -3,9 +3,9 @@
 ##
 SUBDIRS = admin-set-up admin-user-management bake bun compose-bake cpp deno \
 	docker-build-cloud docker-compose docker-scout dotnet frameworks    \
-	genai-leveraging-rag genai-pdf-bot genai-video-bot golang images    \
-	java nodejs php python r rag-ollama ruby rust testcontainers-cloud  \
-	zscaler
+	genai-leveraging-rag genai-pdf-bot genai-video-bot golang           \
+	go-prometheus-monitoring images java nodejs php python r rag-ollama \
+	ruby rust testcontainers-cloud zscaler
 
 bases = \
 	_index.md                          \

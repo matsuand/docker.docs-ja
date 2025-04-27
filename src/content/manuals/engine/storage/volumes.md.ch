@@ -873,13 +873,13 @@ store data in the cloud, without changing the application logic.
 @x
 When you create a volume using `docker volume create`, or when you start a
 container which uses a not-yet-created volume, you can specify a volume driver.
-The following examples use the `vieux/sshfs` volume driver, first when creating
+The following examples use the `rclone/docker-volume-rclone` volume driver, first when creating
 a standalone volume, and then when starting a container which creates a new
 volume.
 @y
 When you create a volume using `docker volume create`, or when you start a
 container which uses a not-yet-created volume, you can specify a volume driver.
-The following examples use the `vieux/sshfs` volume driver, first when creating
+The following examples use the `rclone/docker-volume-rclone` volume driver, first when creating
 a standalone volume, and then when starting a container which creates a new
 volume.
 @z
@@ -935,9 +935,9 @@ host and can connect to the second node using SSH.
 @z
 
 @x
-On the Docker host, install the `vieux/sshfs` plugin:
+On the Docker host, install the `rclone/docker-volume-rclone` plugin:
 @y
-On the Docker host, install the `vieux/sshfs` plugin:
+On the Docker host, install the `rclone/docker-volume-rclone` plugin:
 @z
 
 % snip command...
@@ -949,12 +949,12 @@ On the Docker host, install the `vieux/sshfs` plugin:
 @z
 
 @x
-This example specifies an SSH password, but if the two hosts have shared keys
-configured, you can exclude the password. Each volume driver may have zero or more
+This example mounts the `/remote` directory on host `1.2.3.4` into a
+volume named `rclonevolume`. Each volume driver may have zero or more
 configurable options, you specify each of them using an `-o` flag.
 @y
-This example specifies an SSH password, but if the two hosts have shared keys
-configured, you can exclude the password. Each volume driver may have zero or more
+This example mounts the `/remote` directory on host `1.2.3.4` into a
+volume named `rclonevolume`. Each volume driver may have zero or more
 configurable options, you specify each of them using an `-o` flag.
 @z
 
@@ -964,16 +964,6 @@ configurable options, you specify each of them using an `-o` flag.
 ### Start a container which creates a volume using a volume driver
 @y
 ### Start a container which creates a volume using a volume driver
-@z
-
-@x
-The following example specifies an SSH password. However, if the two hosts have
-shared keys configured, you can exclude the password.
-Each volume driver may have zero or more configurable options.
-@y
-The following example specifies an SSH password. However, if the two hosts have
-shared keys configured, you can exclude the password.
-Each volume driver may have zero or more configurable options.
 @z
 
 @x

@@ -177,40 +177,35 @@ Learn more about the `docker scout cves` command in the
 @z
 
 @x
-The fix suggested by Docker Scout is to update
-the underlying vulnerable express version to 4.17.3 or later.
+After the Docker Scout analysis, a high vulnerability CVE-2022-24999 was found, caused by an outdated version of the **express** package.
 @y
-The fix suggested by Docker Scout is to update
-the underlying vulnerable express version to 4.17.3 or later.
+After the Docker Scout analysis, a high vulnerability CVE-2022-24999 was found, caused by an outdated version of the **express** package.
 @z
 
 @x
-1. Update the `package.json` file with the new package version.
+The version 4.17.3 of the express package fixes the vulnerability. Therefore, update the `package.json` file to the new version:
 @y
-1. パッケージバージョンを新たなものとなるように `package.json` ファイルを修正します。
+The version 4.17.3 of the express package fixes the vulnerability. Therefore, update the `package.json` file to the new version:
 @z
 
 % snip code...
 
 @x
-2. Rebuild the image with a new tag and push it to your Docker Hub repository:
+Rebuild the image with a new tag and push it to your Docker Hub repository:
 @y
-2. 新しいタグをつけてイメージを再ビルドします。
-   そして Docker Hub リポジトリにプッシュします。
+新しいタグをつけてイメージを再ビルドします。
+そして Docker Hub リポジトリにプッシュします。
 @z
 
 % snip command...
 
 @x
-Now, viewing the latest tag of the image in Docker Desktop, the Docker Scout
-Dashboard, or CLI, you can see that you have fixed the vulnerability.
+Run the `docker scout` command again and verify that HIGH CVE-2022-24999 is no longer present:
 @y
-Now, viewing the latest tag of the image in Docker Desktop, the Docker Scout
-Dashboard, or CLI, you can see that you have fixed the vulnerability.
+Run the `docker scout` command again and verify that HIGH CVE-2022-24999 is no longer present:
 @z
 
 % snip command...
-% snip output...
 
 @x
 ## Step 5: Evaluate policy compliance
@@ -253,11 +248,11 @@ Use the `docker scout config` command to configure your Docker organization.
 @x
 Now you can run the `quickview` command to get an overview
 of the compliance status for the image you just built.
-The image is evaluated against the default policy configurations.
+The image is evaluated against the default policy configurations. You'll see output similar to the following:
 @y
 Now you can run the `quickview` command to get an overview
 of the compliance status for the image you just built.
-The image is evaluated against the default policy configurations.
+The image is evaluated against the default policy configurations. You'll see output similar to the following:
 @z
 
 % snip command...
@@ -342,12 +337,12 @@ which is how the provenance attestations are attached to an image.
 
 @x
 Open **Settings** in Docker Desktop. Under the **General** section, make sure
-that the **Use containerd for pulling and storing images** option is checked.
+that the **Use containerd for pulling and storing images** option is checked, then select **Apply & Restart**.
 Note that changing image stores temporarily hides images and containers of the
 inactive image store until you switch back.
 @y
 Open **Settings** in Docker Desktop. Under the **General** section, make sure
-that the **Use containerd for pulling and storing images** option is checked.
+that the **Use containerd for pulling and storing images** option is checked, then select **Apply & Restart**.
 Note that changing image stores temporarily hides images and containers of the
 inactive image store until you switch back.
 @z
@@ -388,11 +383,19 @@ results through a different lens: the Docker Scout Dashboard.
 
 @x
 The images page lists your Scout-enabled repositories.
-Select the image in the list to open the **Image details** sidebar.
-The sidebar shows a compliance overview for the last pushed tag of a repository.
 @y
 The images page lists your Scout-enabled repositories.
-Select the image in the list to open the **Image details** sidebar.
+@z
+
+@x
+Select the row for the image you want to view, anywhere in the row except on a link, to open the **Image details** sidebar.
+@y
+Select the row for the image you want to view, anywhere in the row except on a link, to open the **Image details** sidebar.
+@z
+
+@x
+The sidebar shows a compliance overview for the last pushed tag of a repository.
+@y
 The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
 
@@ -411,26 +414,34 @@ The sidebar shows a compliance overview for the last pushed tag of a repository.
 @z
 
 @x
-Inspect the **Up-to-Date Base Images** policy.
+Go back to the image list and select the image version, available in the **Most recent image** column.
+Then, at the top right of the page, select the **Update base image** button to inspect the policy.
+@y
+Go back to the image list and select the image version, available in the **Most recent image** column.
+Then, at the top right of the page, select the **Update base image** button to inspect the policy.
+@z
+
+@x
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.
 @y
-Inspect the **Up-to-Date Base Images** policy.
 This policy checks whether base images you use are up-to-date.
 It currently has a non-compliant status,
 because the example image uses an old version `alpine` as a base image.
 @z
 
 @x
-Select the **View fix** button next to the policy name for details about the violation,
-and recommendations on how to address it.
+Close the **Recommended fixes for base image** modal. In the policy listing, select **View fixes** button, next to the policy name for details about the violation, and recommendations on how to address it.
+@y
+Close the **Recommended fixes for base image** modal. In the policy listing, select **View fixes** button, next to the policy name for details about the violation, and recommendations on how to address it.
+@z
+
+@x
 In this case, the recommended action is to enable
 [Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
 which helps keep your base images up-to-date automatically.
 @y
-Select the **View fix** button next to the policy name for details about the violation,
-and recommendations on how to address it.
 In this case, the recommended action is to enable
 [Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
 which helps keep your base images up-to-date automatically.
@@ -453,7 +464,7 @@ which helps keep your base images up-to-date automatically.
 @x
 ## Summary
 @y
-## まとめ {#summary}
+## Summary
 @z
 
 @x
@@ -479,7 +490,7 @@ Docker Scout can support software supply chain management:
 @x
 ## What's next?
 @y
-## What's next? {#whats-next}
+## What's next?
 @z
 
 @x

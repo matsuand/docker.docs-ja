@@ -2,20 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 copyfiles = \
-	build-ui-active-builds.webp    \
-	build-ui-error.webp            \
-	build-ui-history.webp          \
 	build-ui-jaeger-screenshot.png \
-	build-ui-manage-builders.webp  \
-	build-ui-platform-menu.webp    \
-	build-ui-timing-chart.webp     \
-	builds-view.webp               \
 	console.png                    \
-	dashboard.webp                 \
+	dashboard.png                  \
 	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
 	k8s-settings.png               \
-	notifications.svg              \
 	resource-saver-settings.png    \
 	resource-saver-status-bar.png  \
 	shared-folder-on-demand.png    \

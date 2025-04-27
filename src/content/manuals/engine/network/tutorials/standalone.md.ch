@@ -17,11 +17,11 @@ keywords: networking, bridge, routing, ports, overlay
 This series of tutorials deals with networking for standalone Docker containers.
 For networking with swarm services, see
 [Networking with swarm services](/manuals/engine/network/tutorials/overlay.md). If you need to
-learn more about Docker networking in general, see the [overview](_index.md).
+learn more about Docker networking in general, see the [overview](/manuals/engine/network/_index.md).
 @y
 ここに示すチュートリアルは、スタンドアロンの Docker コンテナーに対するネットワークを扱います。
 Swarm サービスにおけるネットワークについては [Swarm サービスにおけるネットワーク](manuals/engine/network/tutorials/overlay.md) を参照してください。
-Docker ネットワークの全般的なことを確認したい場合は、[ネットワーク概要](_index.md) を参照してください。
+Docker ネットワークの全般的なことを確認したい場合は、[ネットワーク概要](manuals/engine/network/_index.md) を参照してください。
 @z
 
 @x

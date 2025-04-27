@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 # docker compose
@@ -205,65 +206,25 @@ For example, consider this command line:
 For example, consider this command line:
 @z
 
-@x
-```console
-$ docker compose -f docker-compose.yml -f docker-compose.admin.yml run backup_db
-```
-@y
-```console
-$ docker compose -f docker-compose.yml -f docker-compose.admin.yml run backup_db
-```
-@z
+% snip command...
 
 @x
-The `docker-compose.yml` file might specify a `webapp` service.
+The `compose.yaml` file might specify a `webapp` service.
 @y
-The `docker-compose.yml` file might specify a `webapp` service.
+The `compose.yaml` file might specify a `webapp` service.
 @z
 
+% snip code...
+
 @x
-```yaml
-services:
-  webapp:
-    image: examples/web
-    ports:
-      - "8000:8000"
-    volumes:
-      - "/data"
-```
-If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
+If the `compose.admin.yaml` also specifies this same service, any matching fields override the previous file.
 New values, add to the `webapp` service configuration.
 @y
-```yaml
-services:
-  webapp:
-    image: examples/web
-    ports:
-      - "8000:8000"
-    volumes:
-      - "/data"
-```
-If the `docker-compose.admin.yml` also specifies this same service, any matching fields override the previous file.
+If the `compose.admin.yaml` also specifies this same service, any matching fields override the previous file.
 New values, add to the `webapp` service configuration.
 @z
 
-@x
-```yaml
-services:
-  webapp:
-    build: .
-    environment:
-      - DEBUG=1
-```
-@y
-```yaml
-services:
-  webapp:
-    build: .
-    environment:
-      - DEBUG=1
-```
-@z
+% snip code...
 
 @x
 When you use multiple Compose files, all paths in the files are relative to the first configuration file specified
@@ -309,15 +270,7 @@ have a `compose.yaml` file in a directory called `sandbox/rails`. You can use a 
 get the postgres image for the db service from anywhere by using the `-f` flag as follows:
 @z
 
-@x
-```console
-$ docker compose -f ~/sandbox/rails/compose.yaml pull db
-```
-@y
-```console
-$ docker compose -f ~/sandbox/rails/compose.yaml pull db
-```
-@z
+% snip command...
 
 @x
 ### Use `-p` to specify a project name
@@ -355,29 +308,7 @@ the `basename` of the project directory or current directory violates this
 constraint, you must use one of the other mechanisms.
 @z
 
-@x
-```console
-$ docker compose -p my_project ps -a
-NAME                 SERVICE    STATUS     PORTS
-my_project_demo_1    demo       running
-@y
-```console
-$ docker compose -p my_project ps -a
-NAME                 SERVICE    STATUS     PORTS
-my_project_demo_1    demo       running
-@z
-
-@x
-$ docker compose -p my_project logs
-demo_1  | PING localhost (127.0.0.1): 56 data bytes
-demo_1  | 64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.095 ms
-```
-@y
-$ docker compose -p my_project logs
-demo_1  | PING localhost (127.0.0.1): 56 data bytes
-demo_1  | 64 bytes from 127.0.0.1: seq=0 ttl=64 time=0.095 ms
-```
-@z
+% snip command...
 
 @x
 ### Use profiles to enable optional services
@@ -480,43 +411,17 @@ in attached mode. Alternatively, you can also run `docker compose up --menu=fals
 @x
 Use `--dry-run` flag to test a command without changing your application stack state.
 Dry Run mode shows you all the steps Compose applies when executing a command, for example:
-```console
-$ docker compose --dry-run up --build -d
-[+] Pulling 1/1
- ✔ DRY-RUN MODE -  db Pulled                                                                                                                                                                                                               0.9s
-[+] Running 10/8
- ✔ DRY-RUN MODE -    build service backend                                                                                                                                                                                                 0.0s
- ✔ DRY-RUN MODE -  ==> ==> writing image dryRun-754a08ddf8bcb1cf22f310f09206dd783d42f7dd                                                                                                                                                   0.0s
- ✔ DRY-RUN MODE -  ==> ==> naming to nginx-golang-mysql-backend                                                                                                                                                                            0.0s
- ✔ DRY-RUN MODE -  Network nginx-golang-mysql_default                                    Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Healthy                                                                                                                                           0.5s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Started                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Started                                     Started
-```
+@y
+Use `--dry-run` flag to test a command without changing your application stack state.
+Dry Run mode shows you all the steps Compose applies when executing a command, for example:
+@z
+
+% snip command...
+
+@x
 From the example above, you can see that the first step is to pull the image defined by `db` service, then build the `backend` service.  
 Next, the containers are created. The `db` service is started, and the `backend` and `proxy` wait until the `db` service is healthy before starting.
 @y
-Use `--dry-run` flag to test a command without changing your application stack state.
-Dry Run mode shows you all the steps Compose applies when executing a command, for example:
-```console
-$ docker compose --dry-run up --build -d
-[+] Pulling 1/1
- ✔ DRY-RUN MODE -  db Pulled                                                                                                                                                                                                               0.9s
-[+] Running 10/8
- ✔ DRY-RUN MODE -    build service backend                                                                                                                                                                                                 0.0s
- ✔ DRY-RUN MODE -  ==> ==> writing image dryRun-754a08ddf8bcb1cf22f310f09206dd783d42f7dd                                                                                                                                                   0.0s
- ✔ DRY-RUN MODE -  ==> ==> naming to nginx-golang-mysql-backend                                                                                                                                                                            0.0s
- ✔ DRY-RUN MODE -  Network nginx-golang-mysql_default                                    Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Created                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-db-1                                     Healthy                                                                                                                                           0.5s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-backend-1                                Started                                                                                                                                           0.0s
- ✔ DRY-RUN MODE -  Container nginx-golang-mysql-proxy-1                                  Started                                     Started
-```
 From the example above, you can see that the first step is to pull the image defined by `db` service, then build the `backend` service.  
 Next, the containers are created. The `db` service is started, and the `backend` and `proxy` wait until the `db` service is healthy before starting.
 @z

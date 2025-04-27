@@ -6,11 +6,13 @@
 @x
 description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
-title: FAQs on SSO and managing users
+title: FAQs for SSO and user management
+linkTitle: User management
 @y
 description: Single sign-on user management FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on
-title: FAQs on SSO and managing users
+title: FAQs for SSO and user management
+linkTitle: User management
 @z
 
 @x

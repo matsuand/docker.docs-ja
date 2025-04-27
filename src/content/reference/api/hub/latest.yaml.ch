@@ -1737,19 +1737,40 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "404":
           $ref: "#/components/responses/NotFound"
-  /v2/orgs/{org_name}/members:
+  /v2/repositories/{namespace}/{repository}/groups:
     parameters:
-      - $ref: "#/components/parameters/org_name"
-      - $ref: "#/components/parameters/search"
-      - $ref: "#/components/parameters/page"
-      - $ref: "#/components/parameters/page_size"
-      - $ref: "#/components/parameters/invites"
-      - $ref: "#/components/parameters/type"
-      - $ref: "#/components/parameters/role"
-    get:
-      summary: List org members
-      description: |
-        Returns a list of members for an organization.
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    post:
+      summary: Assign a group (Team) to a repository for access
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: group_name
+          required: true
+          schema:
+            type: string
+          description: Name of the group (team) in the organization.
+        - in: query
+          name: permission
+          required: true
+          schema:
+            type: string
+            description: |
+              Access level for the group. Possible values:
+              - `read`
+              - `write`
+              - `admin`
+      responses:
+        "200":
+          $ref: "#/components/responses/team_repo"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
 @y
   /v2/orgs/{org_name}/access-tokens/{access_token_id}:
     parameters:
@@ -1900,6 +1921,57 @@ paths:
           $ref: "#/components/responses/Forbidden"
         "404":
           $ref: "#/components/responses/NotFound"
+  /v2/repositories/{namespace}/{repository}/groups:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    post:
+      summary: Assign a group (Team) to a repository for access
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: group_name
+          required: true
+          schema:
+            type: string
+          description: Name of the group (team) in the organization.
+        - in: query
+          name: permission
+          required: true
+          schema:
+            type: string
+            description: |
+              Access level for the group. Possible values:
+              - `read`
+              - `write`
+              - `admin`
+      responses:
+        "200":
+          $ref: "#/components/responses/team_repo"
+        "403":
+          $ref: "#/components/responses/forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+@z
+
+@x
+  /v2/orgs/{org_name}/members:
+    parameters:
+      - $ref: "#/components/parameters/org_name"
+      - $ref: "#/components/parameters/search"
+      - $ref: "#/components/parameters/page"
+      - $ref: "#/components/parameters/page_size"
+      - $ref: "#/components/parameters/invites"
+      - $ref: "#/components/parameters/type"
+      - $ref: "#/components/parameters/role"
+    get:
+      summary: List org members
+      description: |
+        Returns a list of members for an organization.
+@y
   /v2/orgs/{org_name}/members:
     parameters:
       - $ref: "#/components/parameters/org_name"
@@ -5856,6 +5928,20 @@ components:
               description: Resources this token has access to
               items:
                 $ref: "#/components/schemas/orgAccessTokenResource"
+    team_repo:
+      allOf:
+        - $ref: "#/components/responses/team_repo"
+      properties:
+        group_name:
+          type: string
+          description: Name of the group
+        permission:
+          type: string
+          description: Repo access permission
+          enum:
+            - read
+            - write
+            - admin
   parameters:
     namespace:
       in: path
@@ -6539,6 +6625,20 @@ x-tagGroups:
               description: Resources this token has access to
               items:
                 $ref: "#/components/schemas/orgAccessTokenResource"
+    team_repo:
+      allOf:
+        - $ref: "#/components/responses/team_repo"
+      properties:
+        group_name:
+          type: string
+          description: Name of the group
+        permission:
+          type: string
+          description: Repo access permission
+          enum:
+            - read
+            - write
+            - admin
   parameters:
     namespace:
       in: path

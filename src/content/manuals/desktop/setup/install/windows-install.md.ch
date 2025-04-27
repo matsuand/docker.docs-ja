@@ -32,9 +32,9 @@ title: Windows への Docker Desktop のインストール
 @z
 
 @x
-This page contains the download URL, information about system requirements, and instructions on how to install Docker Desktop for Windows.
+This page provides download links, system requirements, and step-by-step installation instructions for Docker Desktop on Windows.
 @y
-このページでは Docker Desktop for Windows をインストールするための、ダウンロード情報、システム要件、インストール手順について説明します。
+このページでは Docker Desktop for Windows をインストールするための、ダウンロードリンク、システム要件、インストール手順について説明します。
 @z
 
 @x
@@ -62,7 +62,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 >
 > **Should I use Hyper-V or WSL?**
 >
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific set up and your planned use case. 
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific setup and your planned use case. 
 @y
 > [!TIP]
 >
@@ -393,13 +393,13 @@ Linux コンテナーへ切り替えた場合、プロキシーやデーモン�
 @z
 
 @x
-   If your system only supports one of the two options, you won't be able to select which backend to use.
+    On systems that support only one backend, Docker Desktop automatically selects the available option.
 @y
-   利用するシステムが 2 つのオプションの 1 つのみをサポートしている場合は、バックエンドにおいて選択することはできません。
+    On systems that support only one backend, Docker Desktop automatically selects the available option.
 @z
 
 @x
-4. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+4. Follow the instructions on the installation wizard to authorize the installer and proceed with the installation.
 @y
 4. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
 @z
@@ -467,31 +467,102 @@ By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 @z
 
 @x
+#### Installer flags
+@y
+#### Installer flags
+@z
+
+@x
+> [!NOTE]
+>
+> If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
+> For example:
+> ```powershell
+> Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
+> ```
+@y
+> [!NOTE]
+>
+> If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
+> For example:
+> ```powershell
+> Start-Process 'Docker Desktop Installer.exe' -Wait -ArgumentList 'install', '--accept-license'
+> ```
+@z
+
+@x
+If your admin account is different to your user account, you must add the user to the **docker-users** group:
+@y
+If your admin account is different to your user account, you must add the user to the **docker-users** group:
+@z
+
+@x
+```console
+$ net localgroup docker-users <user> /add
+```
+@y
+```console
+$ net localgroup docker-users <user> /add
+```
+@z
+
+@x
 The `install` command accepts the following flags:
+@y
+`install` コマンドでは以下のフラグ指定が可能です。
+@z
+
+@x
+##### Installation behavior
+@y
+##### Installation behavior
+@z
+
+@x
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
-- `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
-- `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
+- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
+- `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
+@y
+- `--quiet`: インストーラーの起動時に情報出力を省略します。
+- `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
+- `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
+- `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。`hyper-v`、`windows`、`wsl-2` (デフォルト) のいずれか。
+- `--always-run-service`: インストール完了後に `com.docker.service` を起動し、このサービスの起動タイプを Automatic (自動) に設定します。
+  これによって管理者権限がなくても稼働できるようになります。
+  これがなかった場合 `com.docker.service` の起動には管理者権限が必要です。
+  `com.docker.service` は Windows コンテナーと Hyper-V バックエンドのために必要となります。
+@z
+
+@x
+##### Security and access control
+@y
+##### Security and access control
+@z
+
+@x
+- `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
+- `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
 @y
-`install` コマンドでは以下のフラグ指定が可能です。
-- `--quiet`: インストーラーの起動時に情報出力を省略します。
-- `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
-- `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
-  これによってセキュリティを向上させます。
-  詳しくは [Windows コンテナー](manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers) を参照してください。
 - `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
-- `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。`hyper-v`、`windows`、`wsl-2` (デフォルト) のいずれか。
-- `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
 - `--admin-settings`: admin が利用する `admin-settings.json` ファイルを自動生成します。
   これは組織内にあるクライアントマシン上の Docker Desktop における特定設定項目を制御するものです。
   詳しくは [設定管理](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) を参照してください。
   - これは `--allowed-org=<組織名>` フラグとともに用いなければなりません。
   - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
+- `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
+  これによってセキュリティを向上させます。
+  詳しくは [Windows コンテナー](manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers) を参照してください。
+@z
+
+@x
+##### Proxy configuration
+@y
+##### Proxy configuration
 @z
 
 @x
@@ -500,10 +571,6 @@ The `install` command accepts the following flags:
 - `--override-proxy-https=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-exclude=<hosts/domains>`: Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.
 - `--proxy-enable-kerberosntlm`: Enables Kerberos and NTLM proxy authentication. If you are enabling this, ensure your proxy server is properly configured for Kerberos/NTLM authentication. Available with Docker Desktop 4.32 and later.
-- `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
-- `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
-- `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
-- `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
 - `--proxy-http-mode=<mode>`: HTTP プロキシーモードを設定します。`system` (デフォルト) または `manual` です。
 - `--override-proxy-http=<URL>`: HTTP リクエストに対して用いられる HTTP プロキシーの URL を設定します。
@@ -515,36 +582,23 @@ The `install` command accepts the following flags:
 - `--proxy-enable-kerberosntlm`: Kerberos と NTLM プロキシー認証を有効にします。
   これを有効にすると Kerberos/NTLM 認証への設定がプロキシーサーバーに対して適切に設定されます。
   Docker Desktop 4.32 またはそれ以降において利用可能です。
+@z
+
+@x
+##### Data root and disk location
+@y
+##### Data root and disk location
+@z
+
+@x
+- `--hyper-v-default-data-root=<path>`: Specifies the default location for the Hyper-V VM disk. 
+- `--windows-containers-default-data-root=<path>`: Specifies the default location for the Windows containers.
+- `--wsl-default-data-root=<path>`: Specifies the default location for the WSL distribution disk.
+@y
 - `--hyper-v-default-data-root=<パス>`: Hyper-V VM ディスクのデフォルトパスを指定します。
 - `--windows-containers-default-data-root=<パス>`: Windows コンテナーのデフォルトパスを指定します。
 - `--wsl-default-data-root=<path>`: WSL 配布ディスクのデフォルトパスを指定します。
-- `--always-run-service`: インストール完了後に `com.docker.service` を起動し、このサービスの起動タイプを Automatic (自動) に設定します。
-  これによって管理者権限がなくても稼働できるようになります。
-  これがなかった場合 `com.docker.service` の起動には管理者権限が必要です。
-  `com.docker.service` は Windows コンテナーと Hyper-V バックエンドのために必要となります。
 @z
-
-@x
-> [!NOTE]
->
-> If you're using PowerShell, you need to use the `ArgumentList` parameter before any flags. 
-> For example:
-@y
-> [!NOTE]
->
-> PoserShell を利用する場合は、フラグの指定に先駆けて `ArgumentList` パラメーターを指定する必要があります。
-> たとえば以下のとおりです。
-@z
-
-% snip command...
-
-@x
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
-@y
-ユーザーアカウントが管理者アカウントと異なる場合は、ユーザーを **docker-users** グループに追加することが必要です。
-@z
-
-% snip command...
 
 @x
 ## Start Docker Desktop

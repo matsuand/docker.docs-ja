@@ -4,28 +4,30 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Learn how to install, launch and upgrade Docker Desktop on Ubuntu. This
+description: Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
   quick guide will cover prerequisites, installation methods, and more.
 keywords: install docker ubuntu, ubuntu install docker, install docker on ubuntu,
   docker install ubuntu, how to install docker on ubuntu, ubuntu docker install, docker
   installation on ubuntu, docker ubuntu install, docker installing ubuntu, installing
   docker on ubuntu, docker desktop for ubuntu
 title: Install Docker Desktop on Ubuntu
+linkTitle: Ubuntu
 @y
-description: Learn how to install, launch and upgrade Docker Desktop on Ubuntu. This
+description: Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
   quick guide will cover prerequisites, installation methods, and more.
 keywords: install docker ubuntu, ubuntu install docker, install docker on ubuntu,
   docker install ubuntu, how to install docker on ubuntu, ubuntu docker install, docker
   installation on ubuntu, docker ubuntu install, docker installing ubuntu, installing
   docker on ubuntu, docker desktop for ubuntu
 title: Install Docker Desktop on Ubuntu
+linkTitle: Ubuntu
 @z
 
 @x
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
-> employees OR more than $10 million USD in annual revenue) requires a [paid
+> employees or more than $10 million USD in annual revenue) requires a [paid
 > subscription](https://www.docker.com/pricing/).
 @y
 > **Docker Desktop 契約条項**
@@ -54,11 +56,11 @@ Docker Desktop のインストールを正常に行うためには以下が必�
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have an x86-64 system with Ubuntu 22.04, 24.04, or the latest non-LTS version.
-- For non-Gnome Desktop environments, `gnome-terminal` must be installed:
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
 - [一般的なシステム要件](_index.md#general-system-requirements) を満たしていること。
 - Have an x86-64 system with Ubuntu 22.04, 24.04, or the latest non-LTS version.
-- For non-Gnome Desktop environments, `gnome-terminal` must be installed:
+- If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
 
 % snip command...
@@ -90,9 +92,9 @@ Recommended approach to install Docker Desktop on Ubuntu:
 @z
 
 @x
-3. Install the package with apt as follows:
+3. Install the package using `apt`:
 @y
-3. Install the package with apt as follows:
+3. Install the package using `apt`:
 @z
 
 % snip command...
@@ -124,9 +126,9 @@ Recommended approach to install Docker Desktop on Ubuntu:
 @z
 
 @x
-There are a few post-install configuration steps done through the post-install script contained in the deb package.
+The DEB package includes a post-install script that completes additional setup steps automatically.
 @y
-There are a few post-install configuration steps done through the post-install script contained in the deb package.
+The DEB package includes a post-install script that completes additional setup steps automatically.
 @z
 
 @x
@@ -139,12 +141,12 @@ The post-install script:
 - Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
 - Adds a DNS name for Kubernetes to `/etc/hosts`.
 - Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at`/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
+  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at `/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
 @y
 - Sets the capability on the Docker Desktop binary to map privileged ports and set resource limits.
 - Adds a DNS name for Kubernetes to `/etc/hosts`.
 - Creates a symlink from `/usr/local/bin/com.docker.cli` to `/usr/bin/docker`.
-  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at`/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
+  This is because the classic Docker CLI is installed at `/usr/bin/docker`. The Docker Desktop installer also installs a Docker CLI binary that includes cloud-integration capabilities and is essentially a wrapper for the Compose CLI, at `/usr/local/bin/com.docker.cli`. The symlink ensures that the wrapper can access the classic Docker CLI. 
 @z
 
 @x
@@ -166,10 +168,10 @@ The post-install script:
 @z
 
 @x
-Once a new version for Docker Desktop is released, the Docker UI shows a notification.
+When a new version for Docker Desktop is released, the Docker UI shows a notification.
 You need to download the new package each time you want to upgrade Docker Desktop and run:
 @y
-Once a new version for Docker Desktop is released, the Docker UI shows a notification.
+When a new version for Docker Desktop is released, the Docker UI shows a notification.
 You need to download the new package each time you want to upgrade Docker Desktop and run:
 @z
 
@@ -182,8 +184,8 @@ You need to download the new package each time you want to upgrade Docker Deskto
 @z
 
 @x
-- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Follow the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.
@@ -191,8 +193,8 @@ You need to download the new package each time you want to upgrade Docker Deskto
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Follow the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.

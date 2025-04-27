@@ -3,8 +3,8 @@
 ##
 
 SUBDIRS =  accounts admin billing build build-cloud compose copilot  \
-	desktop docker-hub engine extensions harmonia projects scout \
-	security subscription
+	desktop docker-hub engine extensions harmonia scout security \
+	subscription
 
 bases = \
 	_index.md                 \

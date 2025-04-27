@@ -22006,25 +22006,15 @@ paths:
 @z
 
 @x
-        An image tarball contains one directory per image layer (named using its long ID), each containing these files:
+        An image tarball contains [Content as defined in the OCI Image Layout Specification](https://github.com/opencontainers/image-spec/blob/v1.1.1/image-layout.md#content).
 @y
-        An image tarball contains one directory per image layer (named using its long ID), each containing these files:
+        An image tarball contains [Content as defined in the OCI Image Layout Specification](https://github.com/opencontainers/image-spec/blob/v1.1.1/image-layout.md#content).
 @z
 
 @x
-        - `VERSION`: currently `1.0` - the file format version
-        - `json`: detailed layer information, similar to `docker inspect layer_id`
-        - `layer.tar`: A tarfile containing the filesystem changes in this layer
+        Additionally, includes the manifest.json file associated with a backwards compatible docker save format.
 @y
-        - `VERSION`: currently `1.0` - the file format version
-        - `json`: detailed layer information, similar to `docker inspect layer_id`
-        - `layer.tar`: A tarfile containing the filesystem changes in this layer
-@z
-
-@x
-        The `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.
-@y
-        The `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.
+        Additionally, includes the manifest.json file associated with a backwards compatible docker save format.
 @z
 
 @x
@@ -22107,6 +22097,7 @@ paths:
 
 @x
             Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
+      tags: ["Image"]
   /images/get:
     get:
       summary: "Export several images"
@@ -22115,6 +22106,7 @@ paths:
         repositories.
 @y
             Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
+      tags: ["Image"]
   /images/get:
     get:
       summary: "Export several images"
@@ -22159,6 +22151,48 @@ paths:
           type: "array"
           items:
             type: "string"
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be saved if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be saved.
+@y
+        For details on the format, see the [export image endpoint](#operation/ImageGet).
+      operationId: "ImageGetAll"
+      produces:
+        - "application/x-tar"
+      responses:
+        200:
+          description: "no error"
+          schema:
+            type: "string"
+            format: "binary"
+        500:
+          description: "server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "names"
+          in: "query"
+          description: "Image names to filter by"
+          type: "array"
+          items:
+            type: "string"
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |
+            JSON encoded OCI platform describing a platform which will be used
+            to select a platform-specific image to be saved if the image is
+            multi-platform.
+            If not provided, the full multi-platform image will be saved.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /images/load:
     post:
@@ -22166,27 +22200,7 @@ paths:
       description: |
         Load a set of images and tags into a repository.
 @y
-        For details on the format, see the [export image endpoint](#operation/ImageGet).
-      operationId: "ImageGetAll"
-      produces:
-        - "application/x-tar"
-      responses:
-        200:
-          description: "no error"
-          schema:
-            type: "string"
-            format: "binary"
-        500:
-          description: "server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "names"
-          in: "query"
-          description: "Image names to filter by"
-          type: "array"
-          items:
-            type: "string"
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /images/load:
     post:

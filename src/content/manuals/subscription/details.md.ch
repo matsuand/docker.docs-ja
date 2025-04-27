@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker subscriptions and features
@@ -98,13 +98,13 @@ Docker Personal includes:
 @x
 - 1 included repository with continuous vulnerability analysis in Docker Scout
 - Unlimited public Docker Hub repositories
-- 100 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
+- 200 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
 - 7-day Docker Build Cloud trial
 - 7-day Testcontainers Cloud trial
 @y
 - 1 included repository with continuous vulnerability analysis in Docker Scout
 - Unlimited public Docker Hub repositories
-- 100 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
+- 200 pulls per 6 hours Docker Hub image pull rate limit for authenticated users
 - 7-day Docker Build Cloud trial
 - 7-day Testcontainers Cloud trial
 @z
@@ -515,6 +515,7 @@ Legacy Docker Team includes:
 - Unlimited [Vulnerability Scanning](/docker-hub/vulnerability-scanning/)
 - 5000 image [pulls per day](/manuals/docker-hub/usage/pulls.md) for each team member
 @y
+Legacy Docker Team includes:
 - Everything included in legacy Docker Pro
 - Unlimited teams
 - [Auto Builds](__SUBDIR__/docker-hub/builds/) with 15 concurrent builds

@@ -51,6 +51,7 @@ The following payment methods are supported:
 - JCB
 - Diners
 - UnionPay
+- Link
 @y
 - Visa
 - MasterCard
@@ -59,6 +60,7 @@ The following payment methods are supported:
 - JCB
 - Diners
 - UnionPay
+- Link
 @z
 
 @x
@@ -104,8 +106,13 @@ To add a payment method:
 2. Under Settings and administration, select **Billing**.
 3. Select **Payment methods** from the left-hand menu.
 4. Select **Add payment method**.
-5. Enter your new payment information.
-6. Select **Add**.
+5. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+6. Select **Add payment method**.
 7. Optional. You can set a new default payment method by selecting the **Set as default** action.
 8. Optional. You can remove non-default payment methods by selecting the **Delete** action.
 @y
@@ -113,8 +120,13 @@ To add a payment method:
 2. Under Settings and administration, select **Billing**.
 3. Select **Payment methods** from the left-hand menu.
 4. Select **Add payment method**.
-5. Enter your new payment information.
-6. Select **Add**.
+5. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+6. Select **Add payment method**.
 7. Optional. You can set a new default payment method by selecting the **Set as default** action.
 8. Optional. You can remove non-default payment methods by selecting the **Delete** action.
 @z
@@ -139,18 +151,30 @@ To add a payment method:
 3. From the drop-down menu select **Billing**.
 4. Select the **Payment methods and billing history** link.
 5. In the **Payment method** section, select **Add payment method**.
-6. Enter your new payment information, then select **Add**.
-7. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
-8. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
+6. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - IIf you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+7. Select **Add**.
+8. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
+9. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select your avatar in the top-right corner.
 3. From the drop-down menu select **Billing**.
 4. Select the **Payment methods and billing history** link.
 5. In the **Payment method** section, select **Add payment method**.
-6. Enter your new payment information, then select **Add**.
-7. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
-8. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
+6. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - IIf you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+7. Select **Add**.
+8. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
+9. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
@@ -197,8 +221,13 @@ To add a payment method:
 3. Choose your organization from the top-left drop-down.
 4. Select **Payment methods** from the left-hand menu.
 5. Select **Add payment method**.
-6. Enter your new payment information.
-7. Select **Add**.
+6. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+7. Select **Add payment method**.
 8. Optional. You can set a new default payment method by selecting the **Set as default** action.
 9. Optional. You can remove non-default payment methods by selecting the **Delete** action.
 @y
@@ -207,8 +236,13 @@ To add a payment method:
 3. Choose your organization from the top-left drop-down.
 4. Select **Payment methods** from the left-hand menu.
 5. Select **Add payment method**.
-6. Enter your new payment information.
-7. Select **Add**.
+6. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+7. Select **Add payment method**.
 8. Optional. You can set a new default payment method by selecting the **Set as default** action.
 9. Optional. You can remove non-default payment methods by selecting the **Delete** action.
 @z
@@ -234,9 +268,15 @@ To add a payment method:
 4. Select the organization account you want to update.
 5. Select the **Payment methods and billing history** link.
 6. In the **Payment Method** section, select **Add payment method**.
-7. Enter your new payment information, then select **Add**.
-8. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
-9. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
+7. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+8. Select **Add payment method**.
+9. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
+10. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 2. Select your avatar in the top-right corner.
@@ -244,9 +284,15 @@ To add a payment method:
 4. Select the organization account you want to update.
 5. Select the **Payment methods and billing history** link.
 6. In the **Payment Method** section, select **Add payment method**.
-7. Enter your new payment information, then select **Add**.
-8. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
-9. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
+7. Enter your new payment information:
+    - If you are adding a card, fill out the card information form.
+    - If you are adding a Link payment, select **Secure, 1-click checkout with Link**
+    and enter your Link **email address** and **phone number**. If you are not
+    an existing Link customer, you must fill out the card information form to
+    store a card for Link payments.
+8. Select **Add payment method**.
+9. Select the **Actions** icon, then select **Make default** to ensure that your new payment method applies to all purchases and subscriptions.
+10. Optional. You can remove non-default payment methods by selecting the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
@@ -261,6 +307,18 @@ To add a payment method:
 ## Failed payments
 @y
 ## Failed payments
+@z
+
+@x
+> [!NOTE]
+>
+> You can't manually retry a failed payment. Docker will retry failed payments
+based on the retry schedule.
+@y
+> [!NOTE]
+>
+> You can't manually retry a failed payment. Docker will retry failed payments
+based on the retry schedule.
 @z
 
 @x

@@ -14,15 +14,21 @@ usage: docker desktop stop [OPTIONS]
 % options:
 
 @x detach
-      description: Stop Docker Desktop in the background
+      description: Do not synchronously wait for the requested operation to complete
 @y
-      description: Stop Docker Desktop in the background
+      description: Do not synchronously wait for the requested operation to complete
+@z
+
+@x force
+      description: Force Docker Desktop to stop
+@y
+      description: Force Docker Desktop to stop
 @z
 
 @x timeout
-      description: Specify in seconds how long to wait for Docker Desktop to stop before timing out
+      description: Terminate the running command after the specified timeout with a non-zero exit code. A value of zero (the default) or -1 means no timeout
 @y
-      description: Specify in seconds how long to wait for Docker Desktop to stop before timing out
+      description: Terminate the running command after the specified timeout with a non-zero exit code. A value of zero (the default) or -1 means no timeout
 @z
 
 % snip directives...
