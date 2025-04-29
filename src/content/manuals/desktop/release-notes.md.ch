@@ -52,6 +52,172 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+## 4.41.0
+@y
+## 4.41.0
+@z
+
+@x
+{{< release-date date="2025-04-28" >}}
+@y
+{{< release-date date="2025-04-28" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.41.0" build_path="/190950/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.41.0" build_path="/190950/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Docker Model Runner is now available on x86 Windows machines with NVIDIA GPUs.
+- You can now [push models](/manuals/desktop/features/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
+- Added support for Docker Model Runner's model management and chat interface in Docker Desktop for Mac and Windows (on hardware supporting Docker Model Runner). Users can now view, interact with, and manage local AI models through a new dedicated interface.
+- [Docker Compose](/manuals/compose/how-tos/model-runner.md) and Testcontainers [Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/) now support Docker Model Runner.
+- Introducing Docker Desktop in the [Microsoft App Store](https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB).
+@y
+- Docker Model Runner is now available on x86 Windows machines with NVIDIA GPUs.
+- You can now [push models](manuals/desktop/features/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
+- Added support for Docker Model Runner's model management and chat interface in Docker Desktop for Mac and Windows (on hardware supporting Docker Model Runner). Users can now view, interact with, and manage local AI models through a new dedicated interface.
+- [Docker Compose](manuals/compose/how-tos/model-runner.md) and Testcontainers [Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/) now support Docker Model Runner.
+- Introducing Docker Desktop in the [Microsoft App Store](https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB).
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Engine v28.1.1](https://docs.docker.com/engine/release-notes/28.1/#2811)
+- [Docker Compose v2.35.1](https://github.com/docker/compose/releases/tag/v2.35.1)
+- [Docker Buildx v0.23.0](https://github.com/docker/buildx/releases/tag/v0.23.0)
+- [Docker Scout CLI v1.17.1](https://github.com/docker/scout-cli/releases/tag/v1.17.1)
+- [Compose Bridge v0.0.19](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.19)
+@y
+- [Docker Engine v28.1.1](https://docs.docker.com/engine/release-notes/28.1/#2811)
+- [Docker Compose v2.35.1](https://github.com/docker/compose/releases/tag/v2.35.1)
+- [Docker Buildx v0.23.0](https://github.com/docker/buildx/releases/tag/v0.23.0)
+- [Docker Scout CLI v1.17.1](https://github.com/docker/scout-cli/releases/tag/v1.17.1)
+- [Compose Bridge v0.0.19](https://github.com/docker/compose-bridge-binaries/releases/tag/v0.0.19)
+@z
+
+@x
+### Security 
+@y
+### Security 
+@z
+
+@x
+- Fixed [CVE-2025-3224](https://www.cve.org/CVERecord?id=CVE-2025-3224) allowing an attacker with access to a user machine to perform an elevation of privilege when Docker Desktop updates.
+@y
+- Fixed [CVE-2025-3224](https://www.cve.org/CVERecord?id=CVE-2025-3224) allowing an attacker with access to a user machine to perform an elevation of privilege when Docker Desktop updates.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a bug in DockerVMM that caused an excessive number of open file handles on the host.
+- Fixed an issue where Docker Desktop failed to start if the `admin-settings.json` file didn't contain the optional `configurationFileVersion` configuration.
+- Fixed a bug that was causing outgoing UDP connections to be eagerly closed.
+- Enhanced log reading experience with advanced search capabilities and container-level filtering, enabling quicker debugging and troubleshooting.
+- Improved error messages when downloading Registry Access Management configuration.
+- If Docker can't bind an ICMPv4 socket, it now logs an error and continues rather than quits.
+- Enabled the memory protection keys mechanism in the Docker Desktop Linux VM, allowing containers like Oracle database images to run correctly.
+- Fixed a problem with containers accessing `/proc/sys/kernel/shm*` sysctls when [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) is enabled on Mac, Windows Hyper-V, or Linux.
+- Added kernel module `nft_fib_inet`, required for running firewalld in a Linux container.
+- MacOS QEMU Virtualization option is being deprecated on July 14, 2025.
+@y
+- Fixed a bug in DockerVMM that caused an excessive number of open file handles on the host.
+- Fixed an issue where Docker Desktop failed to start if the `admin-settings.json` file didn't contain the optional `configurationFileVersion` configuration.
+- Fixed a bug that was causing outgoing UDP connections to be eagerly closed.
+- Enhanced log reading experience with advanced search capabilities and container-level filtering, enabling quicker debugging and troubleshooting.
+- Improved error messages when downloading Registry Access Management configuration.
+- If Docker can't bind an ICMPv4 socket, it now logs an error and continues rather than quits.
+- Enabled the memory protection keys mechanism in the Docker Desktop Linux VM, allowing containers like Oracle database images to run correctly.
+- Fixed a problem with containers accessing `/proc/sys/kernel/shm*` sysctls when [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) is enabled on Mac, Windows Hyper-V, or Linux.
+- Added kernel module `nft_fib_inet`, required for running firewalld in a Linux container.
+- MacOS QEMU Virtualization option is being deprecated on July 14, 2025.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed a bug that caused high CPU usage. Fixes [docker/for-mac#7643](https://github.com/docker/for-mac/issues/7643).
+- Fixed multi-arch build issue with Rosetta on M3 Macs.
+- Fixed an issue where absence of `/Library/Application Support/com.docker.docker/` directory can cause failure to apply RAM policy restrictions.
+@y
+- Fixed a bug that caused high CPU usage. Fixes [docker/for-mac#7643](https://github.com/docker/for-mac/issues/7643).
+- Fixed multi-arch build issue with Rosetta on M3 Macs.
+- Fixed an issue where absence of `/Library/Application Support/com.docker.docker/` directory can cause failure to apply RAM policy restrictions.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- The Windows `.exe` installer now includes improved handling of locked files. Fixes [docker/for-win#14299](https://github.com/docker/for-win/issues/14299) and [docker/for-win#14316](https://github.com/docker/for-win/issues/14316).
+- Fixed `Docker Desktop.exe` not showing version information after installation. Fixes [docker/for-win#14703](https://github.com/docker/for-win/issues/14703).
+@y
+- The Windows `.exe` installer now includes improved handling of locked files. Fixes [docker/for-win#14299](https://github.com/docker/for-win/issues/14299) and [docker/for-win#14316](https://github.com/docker/for-win/issues/14316).
+- Fixed `Docker Desktop.exe` not showing version information after installation. Fixes [docker/for-win#14703](https://github.com/docker/for-win/issues/14703).
+@z
+
+@x
+### Known issues
+@y
+### Known issues
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- If you have enforced sign-in using `desktop.plist` and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist` but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
+@y
+- If you have enforced sign-in using `desktop.plist` and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist` but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- If multiple organizations are specified in the `allowedOrgs` Windows registry key using space-separated format, sign-in will fail and user will be logged out. As a workaround, specify each organization on a separate line in the registry key value.
+@y
+- If multiple organizations are specified in the `allowedOrgs` Windows registry key using space-separated format, sign-in will fail and user will be logged out. As a workaround, specify each organization on a separate line in the registry key value.
+@z
+
+@x
 ## 4.40.0
 @y
 ## 4.40.0

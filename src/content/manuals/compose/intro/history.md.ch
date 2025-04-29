@@ -6,25 +6,25 @@
 @x
 title: History and development of Docker Compose
 linkTitle: History and development
-description: History of Compose V1 and Compose YAML schema versioning
+description: History of Compose v1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
 @y
 title: History and development of Docker Compose
 linkTitle: History and development
-description: History of Compose V1 and Compose YAML schema versioning
+description: History of Compose v1 and Compose YAML schema versioning
 keywords: compose, compose yaml, swarm, migration, compatibility, docker compose vs docker-compose
 @z
 
 @x
 This page provides:
  - A brief history of the development of the Docker Compose CLI
- - A clear explanation of the major versions and file formats that make up Compose V1 and Compose V2
- - The main differences between Compose V1 and Compose V2 
+ - A clear explanation of the major versions and file formats that make up Compose v1 and Compose v2
+ - The main differences between Compose V1 and Compose v2 
 @y
 This page provides:
  - A brief history of the development of the Docker Compose CLI
- - A clear explanation of the major versions and file formats that make up Compose V1 and Compose V2
- - The main differences between Compose V1 and Compose V2 
+ - A clear explanation of the major versions and file formats that make up Compose v1 and Compose v2
+ - The main differences between Compose V1 and Compose v2 
 @z
 
 @x
@@ -34,15 +34,15 @@ This page provides:
 @z
 
 @x
-![Image showing the main differences between Compose V1 and Compose V2](../images/v1-versus-v2.png)
+![Image showing the main differences between Compose v1 and Compose v2](../images/v1-versus-v2.png)
 @y
-![Image showing the main differences between Compose V1 and Compose V2](../images/v1-versus-v2.png)
+![Image showing the main differences between Compose v1 and Compose v2](../images/v1-versus-v2.png)
 @z
 
 @x
-The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](/reference/compose-file/_index.md).
+The previous image shows that the currently supported version of the Docker Compose CLI is Compose v2 which is defined by the [Compose Specification](/reference/compose-file/_index.md).
 @y
-The image above shows that the currently supported version of the Docker Compose CLI is Compose V2 which is defined by the [Compose Specification](reference/compose-file/_index.md).
+The previous image shows that the currently supported version of the Docker Compose CLI is Compose v2 which is defined by the [Compose Specification](reference/compose-file/_index.md).
 @z
 
 @x
@@ -67,10 +67,10 @@ Typically, Compose V1 projects include a top-level `version` element in the `com
 
 @x
 Version two of the Docker Compose command-line binary was announced in 2020, is written in Go, and is invoked with `docker compose`.
-Compose V2 ignores the `version` top-level element in the `compose.yaml` file.
+Compose v2 ignores the `version` top-level element in the `compose.yaml` file.
 @y
 Version two of the Docker Compose command-line binary was announced in 2020, is written in Go, and is invoked with `docker compose`.
-Compose V2 ignores the `version` top-level element in the `compose.yaml` file.
+Compose v2 ignores the `version` top-level element in the `compose.yaml` file.
 @z
 
 @x
@@ -99,10 +99,10 @@ Three major versions of the Compose file format for Compose V1 were released:
 
 @x
 Compose file format 1 is substantially different to all the following formats as it lacks a top-level `services` key.
-Its usage is historical and files written in this format don't run with Compose V2.
+Its usage is historical and files written in this format don't run with Compose v2.
 @y
 Compose file format 1 is substantially different to all the following formats as it lacks a top-level `services` key.
-Its usage is historical and files written in this format don't run with Compose V2.
+Its usage is historical and files written in this format don't run with Compose v2.
 @z
 
 @x
@@ -118,13 +118,13 @@ To address confusion around Compose CLI versioning, Compose file format versioni
 @z
 
 @x
-Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](/reference/compose-file/deploy.md), [Develop](/reference/compose-file/develop.md) and [Build](/reference/compose-file/build.md).
+Compose v2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose v2 also makes use of optional specifications - [Deploy](/reference/compose-file/deploy.md), [Develop](/reference/compose-file/develop.md), and [Build](/reference/compose-file/build.md).
 @y
-Compose V2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose V2 also makes use of optional specifications - [Deploy](reference/compose-file/deploy.md), [Develop](reference/compose-file/develop.md) and [Build](reference/compose-file/build.md).
+Compose v2 uses the Compose Specification for project definition. Unlike the prior file formats, the Compose Specification is rolling and makes the `version` top-level element optional. Compose v2 also makes use of optional specifications - [Deploy](reference/compose-file/deploy.md), [Develop](reference/compose-file/develop.md), and [Build](reference/compose-file/build.md).
 @z
 
 @x
-To make [migration](/manuals/compose/releases/migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make [migration](/manuals/compose/releases/migrate.md) easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @y
-To make [migration](manuals/compose/releases/migrate.md) easier, Compose V2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make [migration](manuals/compose/releases/migrate.md) easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @z

@@ -94,9 +94,9 @@ From here, you can use the quick action buttons to perform various actions such 
 @z
 
 @x
-Select **Logs** to see logs from the container. You can also:
+Select **Logs** to view output from the container in real time. While viewing logs, you can:
 @y
-Select **Logs** to see logs from the container. You can also:
+Select **Logs** to view output from the container in real time. While viewing logs, you can:
 @z
 
 @x
@@ -106,8 +106,7 @@ Select **Logs** to see logs from the container. You can also:
   respectively. 
 - Use the **Copy** icon in the top right-hand corner to copy all the logs to
   your clipboard.
-- Automatically copy any logs content by highlighting a few lines or a section
-  of the logs.
+- Show timestamps
 - Use the **Clear terminal** icon in the top right-hand corner to clear the
   logs terminal. 
 - Select and view external links that may be in your logs. 
@@ -118,8 +117,7 @@ Select **Logs** to see logs from the container. You can also:
   respectively. 
 - Use the **Copy** icon in the top right-hand corner to copy all the logs to
   your clipboard.
-- Automatically copy any logs content by highlighting a few lines or a section
-  of the logs.
+- Show timestamps
 - Use the **Clear terminal** icon in the top right-hand corner to clear the
   logs terminal. 
 - Select and view external links that may be in your logs. 

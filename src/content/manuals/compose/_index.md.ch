@@ -114,13 +114,13 @@ keywords: docker compose, docker-compose, docker compose command, docker compose
 @z
 
 @x
-- title: Migrate to Compose V2
-  description: Learn how to migrate from Compose V1 to V2
+- title: Migrate to Compose v2
+  description: Learn how to migrate from Compose v1 to v2
   icon: folder_delete
   link: /compose/releases/migrate/
 @y
-- title: Migrate to Compose V2
-  description: Learn how to migrate from Compose V1 to V2
+- title: Migrate to Compose v2
+  description: Learn how to migrate from Compose v1 to v2
   icon: folder_delete
   link: __SUBDIR__/compose/releases/migrate/
 @z
@@ -136,11 +136,11 @@ Docker Compose は、マルチコンテナーアプリケーションを定義�
 @z
 
 @x
-Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file. Then, with a single command, you create and start all the services
+Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single YAML configuration file. Then, with a single command, you create and start all the services
 from your configuration file.
 @y
 Compose を使えば、アプリケーション全体に関する管理作業を単純化できます。
-サービス、ネットワーク、ボリュームそれぞれの管理は、たった一つのわかりやすい YAML 設定ファイルにまとめられます。
+サービス、ネットワーク、ボリュームそれぞれの管理は、たった一つの YAML 設定ファイルにまとめられます。
 そしてその設定ファイルからはたった一つのコマンドだけで、全サービスの生成と起動を行います。
 @z
 

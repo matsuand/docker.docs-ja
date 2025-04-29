@@ -45,9 +45,9 @@ The concepts demonstrated here should be understandable even if you're not famil
 @z
 
 @x
-This is a non-normative example that just highlights the key things you can do with Compose.
+This is a non-normative example that demonstrates core Compose functionality. 
 @y
-This is a non-normative example that just highlights the key things you can do with Compose.
+This is a non-normative example that demonstrates core Compose functionality. 
 @z
 
 @x
@@ -63,11 +63,11 @@ Make sure you have:
 @z
 
 @x
-- Installed the latest version of Docker Compose
+- [Installed the latest version of Docker Compose](/manuals/compose/install/_index.md)
 - A basic understanding of Docker concepts and how Docker works
 @y
-- Docker Compose の最新版をインストールしていること。
-- Docker の考え方や Docker がどのようにして動作しているのかの基本を理解していること。
+- [Docker Compose の最新版をインストールしていること](manuals/compose/install/_index.md)
+- Docker の考え方や Docker がどのようにして動作しているのかの基本を理解していること
 @z
 
 @x

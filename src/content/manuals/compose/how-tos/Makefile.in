@@ -302,6 +302,7 @@ bases = \
 	file-watch.md       \
 	gpu-support.md      \
 	lifecycle.md        \
+	model-runner.md     \
 	networking.md       \
 	production.md       \
 	profiles.md         \

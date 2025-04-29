@@ -14,15 +14,23 @@ title: Docker Compose のアンインストール
 @z
 
 @x
-Uninstalling Docker Compose depends on the method you have used to install Docker Compose. On this page you can find specific instructions to uninstall Docker Compose.
+How you uninstall Docker Compose depends on how it was installed. This guide covers uninstallation instructions for:
 @y
-Uninstalling Docker Compose depends on the method you have used to install Docker Compose. On this page you can find specific instructions to uninstall Docker Compose.
+How you uninstall Docker Compose depends on how it was installed. This guide covers uninstallation instructions for:
 @z
 
 @x
-## Uninstalling Docker Desktop
+- Docker Compose installed via Docker Desktop
+- Docker Compose installed as a CLI plugin
 @y
-## Docker Desktop のアンインストール {#uninstalling-docker-desktop}
+- Docker Compose installed via Docker Desktop
+- Docker Compose installed as a CLI plugin
+@z
+
+@x
+## Uninstalling Docker Compose with Docker Desktop
+@y
+## Uninstalling Docker Compose with Docker Desktop
 @z
 
 @x
@@ -34,11 +42,11 @@ If you want to uninstall Docker Compose and you have installed Docker Desktop, s
 @x
 > [!NOTE]
 >
-> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling Docker Desktop.
+> Unless you have other Docker instances installed on that specific environment, uninstalling Docker Desktop removes all Docker components, including Docker Engine, Docker CLI, and Docker Compose.
 @y
 > [!NOTE]
 >
-> Unless you have other Docker instances installed on that specific environment, you would be removing Docker altogether by uninstalling Docker Desktop.
+> Unless you have other Docker instances installed on that specific environment, uninstalling Docker Desktop removes all Docker components, including Docker Engine, Docker CLI, and Docker Compose.
 @z
 
 @x
@@ -48,13 +56,13 @@ If you want to uninstall Docker Compose and you have installed Docker Desktop, s
 @z
 
 @x
-To remove the Docker Compose CLI plugin, run:
+If you installed Docker Compose via a package manager, run:
 @y
-To remove the Docker Compose CLI plugin, run:
+If you installed Docker Compose via a package manager, run:
 @z
 
 @x
-Ubuntu, Debian:
+On Ubuntu or Debian:
 @y
 Ubuntu, Debian の場合
 @z
@@ -62,7 +70,7 @@ Ubuntu, Debian の場合
 % snip command...
 
 @x
-RPM-based distributions:
+On RPM-based distributions:
 @y
 RPM ベースのディストロの場合
 @z
@@ -76,9 +84,9 @@ RPM ベースのディストロの場合
 @z
 
 @x
-If you used `curl` to install Docker Compose CLI plugin, to uninstall it, run:
+If you installed Docker Compose manually (using curl), remove it by deleting the binary:
 @y
-If you used `curl` to install Docker Compose CLI plugin, to uninstall it, run:
+If you installed Docker Compose manually (using curl), remove it by deleting the binary:
 @z
 
 % snip command...
@@ -90,9 +98,9 @@ If you used `curl` to install Docker Compose CLI plugin, to uninstall it, run:
 @z
 
 @x
-Or, if you have installed Docker Compose for all users, run:
+If installed for all users, remove it from the system directory:
 @y
-Or, if you have installed Docker Compose for all users, run:
+If installed for all users, remove it from the system directory:
 @z
 
 % snip command...

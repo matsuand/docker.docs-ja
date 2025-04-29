@@ -180,24 +180,24 @@ selected when you invoke builds.
 @x
 Even though `docker build` is an alias for `docker buildx build`, there are
 subtle differences between the two commands. With Buildx, the build client and
-the and daemon (BuildKit) are decoupled. This means you can use multiple
+the daemon (BuildKit) are decoupled. This means you can use multiple
 builders from a single client, even remote ones.
 @y
 Even though `docker build` is an alias for `docker buildx build`, there are
 subtle differences between the two commands. With Buildx, the build client and
-the and daemon (BuildKit) are decoupled. This means you can use multiple
+the daemon (BuildKit) are decoupled. This means you can use multiple
 builders from a single client, even remote ones.
 @z
 
 @x
 The `docker build` command always defaults to using the default builder that
-comes bundled with the Docker Engine, for ensuring backwards compatibility with
+comes bundled with the Docker Engine, to ensure backwards compatibility with
 older versions of the Docker CLI. The `docker buildx build` command, on the
 other hand, checks whether you've set a different builder as the default
 builder before it sends your build to BuildKit.
 @y
 The `docker build` command always defaults to using the default builder that
-comes bundled with the Docker Engine, for ensuring backwards compatibility with
+comes bundled with the Docker Engine, to ensure backwards compatibility with
 older versions of the Docker CLI. The `docker buildx build` command, on the
 other hand, checks whether you've set a different builder as the default
 builder before it sends your build to BuildKit.

@@ -112,11 +112,11 @@ The Apple Virtualization framework is a stable and well-established option for m
 @x
 > [!NOTE]
 >
-> QEMU will be deprecated in a future release. 
+> QEMU will be deprecated on July 14, 2025. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/) 
 @y
 > [!NOTE]
 >
-> QEMU will be deprecated in a future release. 
+> QEMU will be deprecated on July 14, 2025. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/) 
 @z
 
 @x

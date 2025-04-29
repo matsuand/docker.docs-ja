@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Summary of samples related to Compose
@@ -39,66 +39,18 @@ The samples should help you to:
 
 @x
 - Define services based on Docker images using
-  [Compose files](/reference/compose-file/_index.md): `compose.yaml` and
-  `docker-stack.yml`
+  [Compose files](/reference/compose-file/_index.md)
 - Understand the relationship between `compose.yaml` and
   [Dockerfiles](/reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](/manuals/engine/swarm/_index.md)
 @y
 - Define services based on Docker images using
-  [Compose files](reference/compose-file/_index.md): `compose.yaml` and
-  `docker-stack.yml`
+  [Compose files](reference/compose-file/_index.md)
 - Understand the relationship between `compose.yaml` and
-  [Dockerfiles](reference/dockerfile/)
+  [Dockerfiles](__SUBDIR__/reference/dockerfile/)
 - Learn how to make calls to your application services from Compose files
 - Learn how to deploy applications and services to a [swarm](manuals/engine/swarm/_index.md)
-@z
-
-@x
-## Samples tailored to demo Compose
-@y
-## Samples tailored to demo Compose
-@z
-
-@x
-These samples focus specifically on Docker Compose:
-@y
-These samples focus specifically on Docker Compose:
-@z
-
-@x
-- [Quickstart: Compose and ELK](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana/README.md) - Shows
-  how to use Docker Compose to set up and run ELK - Elasticsearch-Logstash-Kibana.
-@y
-- [Quickstart: Compose and ELK](https://github.com/docker/awesome-compose/tree/master/elasticsearch-logstash-kibana/README.md) - Shows
-  how to use Docker Compose to set up and run ELK - Elasticsearch-Logstash-Kibana.
-@z
-
-@x
-- [Quickstart: Compose and Django](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/django/README.md) - Shows
-  how to use Docker Compose to set up and run a simple Django/PostgreSQL app.
-@y
-- [Quickstart: Compose and Django](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/django/README.md) - Shows
-  how to use Docker Compose to set up and run a simple Django/PostgreSQL app.
-@z
-
-@x
-- [Quickstart: Compose and Rails](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md) - Shows
-  how to use Docker Compose to set up and run a Rails/PostgreSQL app.
-@y
-- [Quickstart: Compose and Rails](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/README.md) - Shows
-  how to use Docker Compose to set up and run a Rails/PostgreSQL app.
-@z
-
-@x
-- [Quickstart: Compose and WordPress](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/wordpress/README.md) - Shows
-  how to use Docker Compose to set up and run WordPress in an isolated
-  environment with Docker containers.
-@y
-- [Quickstart: Compose and WordPress](https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/wordpress/README.md) - Shows
-  how to use Docker Compose to set up and run WordPress in an isolated
-  environment with Docker containers.
 @z
 
 @x

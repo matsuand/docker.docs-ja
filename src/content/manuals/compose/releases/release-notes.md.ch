@@ -26,6 +26,150 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.35.1
+@y
+## 2.35.1
+@z
+
+@x
+{{< release-date date="2025-04-17" >}}
+@y
+{{< release-date date="2025-04-17" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue with bind mounts
+@y
+- Fixed an issue with bind mounts
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.6.0
+- Dependencies upgrade: bump docker engine and cli to v28.0.4
+- Dependencies upgrade: bump buildx to v0.22.0
+@y
+- Dependencies upgrade: bump compose-go to v2.6.0
+- Dependencies upgrade: bump docker engine and cli to v28.0.4
+- Dependencies upgrade: bump buildx to v0.22.0
+@z
+
+@x
+## 2.35.0
+@y
+## 2.35.0
+@z
+
+@x
+{{< release-date date="2025-04-10" >}}
+@y
+{{< release-date date="2025-04-10" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added support for [Docker Model Runner](/manuals/desktop/features/model-runner.md) to easily integrate AI models into your Compose applications
+- Added `build --print` command to help debug complex build configurations by showing the equivalent bake file
+- Added `volume.type=image` to provide more flexible volume management for container images
+- Added `--quiet` options to the `run` command for cleaner output when running containers
+- Added `config --no-env-resolution` option to view raw configuration without environment variable substitution
+- Fixed behavior of `depends_on` to prevent unnecessary container recreation when dependencies change
+- Fixed support for secrets defined by environment variables when using `include`
+- Fixed volume mount handling to ensure bind mounts work correctly in all scenarios
+@y
+- Added support for [Docker Model Runner](manuals/desktop/features/model-runner.md) to easily integrate AI models into your Compose applications
+- Added `build --print` command to help debug complex build configurations by showing the equivalent bake file
+- Added `volume.type=image` to provide more flexible volume management for container images
+- Added `--quiet` options to the `run` command for cleaner output when running containers
+- Added `config --no-env-resolution` option to view raw configuration without environment variable substitution
+- Fixed behavior of `depends_on` to prevent unnecessary container recreation when dependencies change
+- Fixed support for secrets defined by environment variables when using `include`
+- Fixed volume mount handling to ensure bind mounts work correctly in all scenarios
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.1.0
+- Dependencies upgrade: bump buildx to v0.23.0
+- Dependencies upgrade: bump buildkit to v0.21.0
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.1.0
+- Dependencies upgrade: bump buildx to v0.23.0
+- Dependencies upgrade: bump buildkit to v0.21.0
+@z
+
+@x
+## 2.34.0
+@y
+## 2.34.0
+@z
+
+@x
+{{< release-date date="2025-03-14" >}}
+@y
+{{< release-date date="2025-03-14" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added support of refresh `pull_policy` values `daily`, `weekly` and `every_<duration>`
+- Introduced `include` attribut to `watch` definition to match file patterns
+- Introduced `--env-from-file` in flag for the `docker compose run` command
+- Promoted `publish` as a regular command of Compose
+- Fixed a bug by loading `env_file` after services have been selected
+@y
+- Added support of refresh `pull_policy` values `daily`, `weekly` and `every_<duration>`
+- Introduced `include` attribut to `watch` definition to match file patterns
+- Introduced `--env-from-file` in flag for the `docker compose run` command
+- Promoted `publish` as a regular command of Compose
+- Fixed a bug by loading `env_file` after services have been selected
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.0.1
+- Dependencies upgrade: bump buildkit to v0.17.1
+- Dependencies upgrade: Bump compose-go v2.4.9
+- Dependencies upgrade: Bump buildx v0.21.2
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.0.1
+- Dependencies upgrade: bump buildkit to v0.17.1
+- Dependencies upgrade: Bump compose-go v2.4.9
+- Dependencies upgrade: Bump buildx v0.21.2
+@z
+
+@x
 ## 2.33.1 
 @y
 ## 2.33.1 

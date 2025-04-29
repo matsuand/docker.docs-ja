@@ -22,9 +22,9 @@ linkTitle: Install
 @z
 
 @x
-This page contains summary information about the available options for installing Docker Compose.
+This page summarizes the different ways you can install Docker Compose, depending on your platform and needs.
 @y
-This page contains summary information about the available options for installing Docker Compose.
+This page summarizes the different ways you can install Docker Compose, depending on your platform and needs.
 @z
 
 @x
@@ -34,79 +34,59 @@ This page contains summary information about the available options for installin
 @z
 
 @x
-### Scenario one: Install Docker Desktop
+### Scenario one: Install Docker Desktop (Recommended)
 @y
-### Scenario one: Install Docker Desktop
+### Scenario one: Install Docker Desktop (Recommended)
 @z
 
 @x
-The easiest and recommended way to get Docker Compose is to install Docker Desktop. Docker Desktop
-includes Docker Compose along with Docker Engine and Docker CLI which are Compose prerequisites. 
+The easiest and recommended way to get Docker Compose is to install Docker Desktop. 
 @y
-The easiest and recommended way to get Docker Compose is to install Docker Desktop. Docker Desktop
-includes Docker Compose along with Docker Engine and Docker CLI which are Compose prerequisites. 
+The easiest and recommended way to get Docker Compose is to install Docker Desktop. 
 @z
 
 @x
-Docker Desktop is available on:
+Docker Desktop includes Docker Compose along with Docker Engine and Docker CLI which are Compose prerequisites. 
+@y
+Docker Desktop includes Docker Compose along with Docker Engine and Docker CLI which are Compose prerequisites. 
+@z
+
+@x
+Docker Desktop is available for:
 - [Linux](/manuals/desktop/setup/install/linux/_index.md)
 - [Mac](/manuals/desktop/setup/install/mac-install.md)
 - [Windows](/manuals/desktop/setup/install/windows-install.md)
 @y
-Docker Desktop is available on:
+Docker Desktop is available for:
 - [Linux](manuals/desktop/setup/install/linux/_index.md)
 - [Mac](manuals/desktop/setup/install/mac-install.md)
 - [Windows](manuals/desktop/setup/install/windows-install.md)
 @z
 
 @x
-If you have already installed Docker Desktop, you can check which version of Compose you have by selecting **About Docker Desktop** from the Docker menu {{< inline-image src="../../desktop/images/whale-x.svg" alt="whale menu" >}}.
+> [!TIP]
+> 
+> If you have already installed Docker Desktop, you can check which version of Compose you have by selecting **About Docker Desktop** from the Docker menu {{< inline-image src="../../desktop/images/whale-x.svg" alt="whale menu" >}}.
 @y
-If you have already installed Docker Desktop, you can check which version of Compose you have by selecting **About Docker Desktop** from the Docker menu {{< inline-image src="../../desktop/images/whale-x.svg" alt="whale menu" >}}.
+> [!TIP]
+> 
+> If you have already installed Docker Desktop, you can check which version of Compose you have by selecting **About Docker Desktop** from the Docker menu {{< inline-image src="../../desktop/images/whale-x.svg" alt="whale menu" >}}.
 @z
 
 @x
-> [!NOTE] 
->
-> After Docker Compose V1 was removed in Docker Desktop version [4.23.0](/desktop/release-notes/#4230) as it had reached end-of-life,
-> the `docker-compose` command now points directly to the Docker Compose V2 binary, running in standalone mode. 
-> If you rely on Docker Desktop auto-update, the symlink might be broken and command unavailable, as the update doesn't ask for administrator password. 
-> 
-> This only affects Mac users. To fix this, either recreate the symlink:
-> ```console
-> $ sudo rm /usr/local/bin/docker-compose
-> $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
-> ```
-> Or enable [Automatically check configuration](/manuals/desktop/settings-and-maintenance/settings.md) which will detect and fix it for you.
+### Scenario two: Install the Docker Compose plugin (Linux only)
 @y
-> [!NOTE] 
->
-> After Docker Compose V1 was removed in Docker Desktop version [4.23.0](__SUBDIR__/desktop/release-notes/#4230) as it had reached end-of-life,
-> the `docker-compose` command now points directly to the Docker Compose V2 binary, running in standalone mode. 
-> If you rely on Docker Desktop auto-update, the symlink might be broken and command unavailable, as the update doesn't ask for administrator password. 
-> 
-> This only affects Mac users. To fix this, either recreate the symlink:
-> ```console
-> $ sudo rm /usr/local/bin/docker-compose
-> $ sudo ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-compose /usr/local/bin/docker-compose
-> ```
-> Or enable [Automatically check configuration](manuals/desktop/settings-and-maintenance/settings.md) which will detect and fix it for you.
-@z
-
-@x
-### Scenario two: Install the Docker Compose plugin
-@y
-### Scenario two: Install the Docker Compose plugin
+### Scenario two: Install the Docker Compose plugin (Linux only)
 @z
 
 @x
 > [!IMPORTANT]
 >
-> This install scenario is only available on Linux.
+> This method is only available on Linux.
 @y
 > [!IMPORTANT]
 >
-> This install scenario is only available on Linux.
+> This method is only available on Linux.
 @z
 
 @x
@@ -120,9 +100,9 @@ If you already have Docker Engine and Docker CLI installed, you can install the 
 @z
 
 @x
-### Scenario three: Install the Docker Compose standalone 
+### Scenario three: Install the Docker Compose standalone (Legacy)
 @y
-### Scenario three: Install the Docker Compose standalone 
+### Scenario three: Install the Docker Compose standalone (Legacy)
 @z
 
 @x

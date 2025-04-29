@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Docker Model Runner
@@ -33,18 +34,30 @@ The Docker Model Runner plugin lets you:
 - [Pull models from Docker Hub](https://hub.docker.com/u/ai)
 - Run AI models directly from the command line
 - Manage local models (add, list, remove)
-- Interact with models using a submitted prompt or in chat mode
+- Interact with models using a submitted prompt or in chat mode in the CLI or Docker Desktop Dashboard
+- Push models to Docker Hub
 @y
 - [Pull models from Docker Hub](https://hub.docker.com/u/ai)
 - Run AI models directly from the command line
 - Manage local models (add, list, remove)
-- Interact with models using a submitted prompt or in chat mode
+- Interact with models using a submitted prompt or in chat mode in the CLI or Docker Desktop Dashboard
+- Push models to Docker Hub
 @z
 
 @x
 Models are pulled from Docker Hub the first time they're used and stored locally. They're loaded into memory only at runtime when a request is made, and unloaded when not in use to optimize resources. Since models can be large, the initial pull may take some time — but after that, they're cached locally for faster access. You can interact with the model using [OpenAI-compatible APIs](#what-api-endpoints-are-available).
 @y
 Models are pulled from Docker Hub the first time they're used and stored locally. They're loaded into memory only at runtime when a request is made, and unloaded when not in use to optimize resources. Since models can be large, the initial pull may take some time — but after that, they're cached locally for faster access. You can interact with the model using [OpenAI-compatible APIs](#what-api-endpoints-are-available).
+@z
+
+@x
+> [!TIP]
+>
+> Using Testcontainers or Docker Compose? [Testcontainers for Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/), and [Docker Compose](/manuals/compose/how-tos/model-runner.md) now support Docker Model Runner.
+@y
+> [!TIP]
+>
+> Using Testcontainers or Docker Compose? [Testcontainers for Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/), and [Docker Compose](manuals/compose/how-tos/model-runner.md) now support Docker Model Runner.
 @z
 
 @x
@@ -89,15 +102,7 @@ Check whether the Docker Model Runner is active:
 Check whether the Docker Model Runner is active:
 @z
 
-@x
-```console
-$ docker model status
-```
-@y
-```console
-$ docker model status
-```
-@z
+% snip command...
 
 @x
 ### View all commands
@@ -111,15 +116,7 @@ Displays help information and a list of available subcommands.
 Displays help information and a list of available subcommands.
 @z
 
-@x
-```console
-$ docker model help
-```
-@y
-```console
-$ docker model help
-```
-@z
+% snip command...
 
 @x
 Output:
@@ -127,33 +124,7 @@ Output:
 Output:
 @z
 
-@x
-```text
-Usage:  docker model COMMAND
-@y
-```text
-Usage:  docker model COMMAND
-@z
-
-@x
-Commands:
-  list        List models available locally
-  pull        Download a model from Docker Hub
-  rm          Remove a downloaded model
-  run         Run a model interactively or with a prompt
-  status      Check if the model runner is running
-  version     Show the current version
-```
-@y
-Commands:
-  list        List models available locally
-  pull        Download a model from Docker Hub
-  rm          Remove a downloaded model
-  run         Run a model interactively or with a prompt
-  status      Check if the model runner is running
-  version     Show the current version
-```
-@z
+% snip output...
 
 @x
 ### Pull a model 
@@ -167,15 +138,7 @@ Pulls a model from Docker Hub to your local environment.
 Pulls a model from Docker Hub to your local environment.
 @z
 
-@x
-```console
-$ docker model pull <model>
-```
-@y
-```console
-$ docker model pull <model>
-```
-@z
+% snip command...
 
 @x
 Example: 
@@ -183,15 +146,7 @@ Example:
 Example: 
 @z
 
-@x
-```console
-$ docker model pull ai/smollm2
-```
-@y
-```console
-$ docker model pull ai/smollm2
-```
-@z
+% snip command...
 
 @x
 Output:
@@ -199,17 +154,7 @@ Output:
 Output:
 @z
 
-@x
-```text
-Downloaded: 257.71 MB
-Model ai/smollm2 pulled successfully
-```
-@y
-```text
-Downloaded: 257.71 MB
-Model ai/smollm2 pulled successfully
-```
-@z
+% snip output...
 
 @x
 ### List available models
@@ -223,15 +168,7 @@ Lists all models currently pulled to your local environment.
 Lists all models currently pulled to your local environment.
 @z
 
-@x
-```console
-$ docker model list
-```
-@y
-```console
-$ docker model list
-```
-@z
+% snip command...
 
 @x
 You will see something similar to:
@@ -239,17 +176,7 @@ You will see something similar to:
 You will see something similar to:
 @z
 
-@x
-```text
-+MODEL       PARAMETERS  QUANTIZATION    ARCHITECTURE  MODEL ID      CREATED     SIZE
-+ai/smollm2  361.82 M    IQ2_XXS/Q4_K_M  llama         354bf30d0aa3  3 days ago  256.35 MiB
-```
-@y
-```text
-+MODEL       PARAMETERS  QUANTIZATION    ARCHITECTURE  MODEL ID      CREATED     SIZE
-+ai/smollm2  361.82 M    IQ2_XXS/Q4_K_M  llama         354bf30d0aa3  3 days ago  256.35 MiB
-```
-@z
+% snip output...
 
 @x
 ### Run a model
@@ -269,15 +196,7 @@ Run a model and interact with it using a submitted prompt or in chat mode.
 #### One-time prompt
 @z
 
-@x
-```console
-$ docker model run ai/smollm2 "Hi"
-```
-@y
-```console
-$ docker model run ai/smollm2 "Hi"
-```
-@z
+% snip command...
 
 @x
 Output:
@@ -285,15 +204,7 @@ Output:
 Output:
 @z
 
-@x
-```text
-Hello! How can I assist you today?
-```
-@y
-```text
-Hello! How can I assist you today?
-```
-@z
+% snip output...
 
 @x
 #### Interactive chat
@@ -301,15 +212,7 @@ Hello! How can I assist you today?
 #### Interactive chat
 @z
 
-@x
-```console
-docker model run ai/smollm2
-```
-@y
-```console
-docker model run ai/smollm2
-```
-@z
+% snip command...
 
 @x
 Output:
@@ -317,23 +220,7 @@ Output:
 Output:
 @z
 
-@x
-```text
-Interactive chat mode started. Type '/bye' to exit.
-> Hi
-Hi there! It's SmolLM, AI assistant. How can I help you today?
-> /bye
-Chat session ended.
-```
-@y
-```text
-Interactive chat mode started. Type '/bye' to exit.
-> Hi
-Hi there! It's SmolLM, AI assistant. How can I help you today?
-> /bye
-Chat session ended.
-```
-@z
+% snip output...
 
 @x
 ### Remove a model
@@ -347,15 +234,7 @@ Removes a downloaded model from your system.
 Removes a downloaded model from your system.
 @z
 
-@x
-```console
-$ docker model rm <model>
-```
-@y
-```console
-$ docker model rm <model>
-```
-@z
+% snip command...
 
 @x
 Output:
@@ -363,15 +242,7 @@ Output:
 Output:
 @z
 
-@x
-```text
-Model <model> removed successfully
-```
-@y
-```text
-Model <model> removed successfully
-```
-@z
+% snip output...
 
 @x
 ## Integrate the Docker Model Runner into your software development lifecycle
@@ -397,15 +268,7 @@ If you want to try an existing GenAI application, follow these instructions.
 1. Set up the sample app. Clone and run the following repository:
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/docker/hello-genai.git
-   ```
-@y
-   ```console
-   $ git clone https://github.com/docker/hello-genai.git
-   ```
-@z
+% snip command...
 
 @x
 2. In your terminal, navigate to the `hello-genai` directory.
@@ -467,75 +330,7 @@ Once the feature is enabled, the following new APIs are available:
 Once the feature is enabled, the following new APIs are available:
 @z
 
-@x
-```text
-#### Inside containers ####
-@y
-```text
-#### Inside containers ####
-@z
-
-@x
-http://model-runner.docker.internal/
-@y
-http://model-runner.docker.internal/
-@z
-
-@x
-    # Docker Model management
-    POST /models/create
-    GET /models
-    GET /models/{namespace}/{name}
-    DELETE /models/{namespace}/{name}
-@y
-    # Docker Model management
-    POST /models/create
-    GET /models
-    GET /models/{namespace}/{name}
-    DELETE /models/{namespace}/{name}
-@z
-
-@x
-    # OpenAI endpoints
-    GET /engines/llama.cpp/v1/models
-    GET /engines/llama.cpp/v1/models/{namespace}/{name}
-    POST /engines/llama.cpp/v1/chat/completions
-    POST /engines/llama.cpp/v1/completions
-    POST /engines/llama.cpp/v1/embeddings
-    Note: You can also omit llama.cpp.
-    E.g., POST /engines/v1/chat/completions.
-@y
-    # OpenAI endpoints
-    GET /engines/llama.cpp/v1/models
-    GET /engines/llama.cpp/v1/models/{namespace}/{name}
-    POST /engines/llama.cpp/v1/chat/completions
-    POST /engines/llama.cpp/v1/completions
-    POST /engines/llama.cpp/v1/embeddings
-    Note: You can also omit llama.cpp.
-    E.g., POST /engines/v1/chat/completions.
-@z
-
-@x
-#### Inside or outside containers (host) ####
-@y
-#### Inside or outside containers (host) ####
-@z
-
-@x
-Same endpoints on /var/run/docker.sock
-@y
-Same endpoints on /var/run/docker.sock
-@z
-
-@x
-    # While still in Beta
-    Prefixed with /exp/vDD4.40
-```
-@y
-    # While still in Beta
-    Prefixed with /exp/vDD4.40
-```
-@z
+% snip output...
 
 @x
 ### How do I interact through the OpenAI API?
@@ -555,53 +350,7 @@ Examples of calling an OpenAI endpoint (`chat/completions`) from within another 
 Examples of calling an OpenAI endpoint (`chat/completions`) from within another container using `curl`:
 @z
 
-@x
-```bash
-#!/bin/sh
-@y
-```bash
-#!/bin/sh
-@z
-
-@x
-curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-@y
-curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-@z
-
-@x
-```
-@y
-```
-@z
+% snip code...
 
 @x
 #### From the host using a Unix socket
@@ -615,55 +364,7 @@ Examples of calling an OpenAI endpoint (`chat/completions`) through the Docker s
 Examples of calling an OpenAI endpoint (`chat/completions`) through the Docker socket from the host using `curl`:
 @z
 
-@x
-```bash
-#!/bin/sh
-@y
-```bash
-#!/bin/sh
-@z
-
-@x
-curl --unix-socket $HOME/.docker/run/docker.sock \
-    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-@y
-curl --unix-socket $HOME/.docker/run/docker.sock \
-    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-@z
-
-@x
-```
-@y
-```
-@z
+% snip code...
 
 @x
 #### From the host using TCP
@@ -683,49 +384,7 @@ Afterwards, interact with it as previously documented using `localhost` and the 
 Afterwards, interact with it as previously documented using `localhost` and the chosen, or the default port.
 @z
 
-@x
-```bash
-#!/bin/sh
-@y
-```bash
-#!/bin/sh
-@z
-
-@x
-	curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-```
-@y
-	curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
-```
-@z
+% snip code...
 
 @x
 ## Known issues
@@ -745,15 +404,7 @@ If you run a Docker Model Runner command and see:
 If you run a Docker Model Runner command and see:
 @z
 
-@x
-```text
-docker: 'model' is not a docker command
-```
-@y
-```text
-docker: 'model' is not a docker command
-```
-@z
+% snip output...
 
 @x
 It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
@@ -767,15 +418,7 @@ To fix this, create a symlink so Docker can detect it:
 To fix this, create a symlink so Docker can detect it:
 @z
 
-@x
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-@y
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-@z
+% snip command...
 
 @x
 Once linked, re-run the command.
@@ -796,24 +439,6 @@ Currently, Docker Model Runner doesn't include safeguards to prevent you from la
 @z
 
 @x
-### `model run` drops into chat even if pull fails
-@y
-### `model run` drops into chat even if pull fails
-@z
-
-@x
-If a model image fails to pull successfully, for example due to network issues or lack of disk space, the `docker model run` command will still drop you into the chat interface, even though the model isn’t actually available. This can lead to confusion, as the chat will not function correctly without a running model. 
-@y
-If a model image fails to pull successfully, for example due to network issues or lack of disk space, the `docker model run` command will still drop you into the chat interface, even though the model isn’t actually available. This can lead to confusion, as the chat will not function correctly without a running model. 
-@z
-
-@x
-You can manually retry the `docker model pull` command to ensure the image is available before running it again.
-@y
-You can manually retry the `docker model pull` command to ensure the image is available before running it again.
-@z
-
-@x
 ### No consistent digest support in Model CLI
 @y
 ### No consistent digest support in Model CLI
@@ -823,18 +448,6 @@ You can manually retry the `docker model pull` command to ensure the image is av
 The Docker Model CLI currently lacks consistent support for specifying models by image digest. As a temporary workaround, you should refer to models by name instead of digest.
 @y
 The Docker Model CLI currently lacks consistent support for specifying models by image digest. As a temporary workaround, you should refer to models by name instead of digest.
-@z
-
-@x
-### Misleading pull progress after failed initial attempt
-@y
-### Misleading pull progress after failed initial attempt
-@z
-
-@x
-In some cases, if an initial `docker model pull` fails partway through, a subsequent successful pull may misleadingly report “0 bytes” downloaded even though data is being fetched in the background. This can give the impression that nothing is happening, when in fact the model is being retrieved. Despite the incorrect progress output, the pull typically completes as expected.
-@y
-In some cases, if an initial `docker model pull` fails partway through, a subsequent successful pull may misleadingly report “0 bytes” downloaded even though data is being fetched in the background. This can give the impression that nothing is happening, when in fact the model is being retrieved. Despite the incorrect progress output, the pull typically completes as expected.
 @z
 
 @x
