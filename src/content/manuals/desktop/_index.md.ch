@@ -130,7 +130,7 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @x
 - [Docker Engine](/manuals/engine/_index.md)
 - Docker CLI client
-- [Docker Scout](../scout/_index.md) (additional subscription may apply)
+- [Docker Scout](../scout/_index.md)
 - [Docker Build](/manuals/build/_index.md)
 - [Docker Compose](/manuals/compose/_index.md)
 - [Ask Gordon](/manuals/desktop/features/gordon/_index.md)
@@ -141,7 +141,7 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @y
 - [Docker Engine](manuals/engine/_index.md)
 - Docker CLI クライアント
-- [Docker Scout](../scout/_index.md) (追加のサブスクリプションを必要とする場合があります)
+- [Docker Scout](../scout/_index.md)
 - [Docker Build](../build/_index.md)
 - [Docker Compose](manuals/compose/_index.md)
 - [Ask Gordon](manuals/desktop/features/gordon/_index.md)
