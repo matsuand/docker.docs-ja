@@ -19,29 +19,36 @@ keywords: ai, mcp, gordon, docker desktop, docker, llm,
 - title: Built-in tools
   description: Use the built-in tools.
   icon: construction
-  link: /desktop/features/gordon/mcp/built-in-tools
-- title: MCP configuration
-  description: Configure MCP tools on a per-project basis.
-  icon: manufacturing
-  link: /desktop/features/gordon/mcp/yaml
-- title: MCP Server
-  description: Use Gordon as an MCP server
-  icon: dns
-  link: /desktop/features/gordon/mcp/gordon-mcp-server/
+  link: /ai/gordon/mcp/built-in-tools
 @y
 - title: Built-in tools
   description: Use the built-in tools.
   icon: construction
-  link: __SUBDIR__/desktop/features/gordon/mcp/built-in-tools
+  link: __SUBDIR__/ai/gordon/mcp/built-in-tools
+@z
+
+@x
 - title: MCP configuration
   description: Configure MCP tools on a per-project basis.
   icon: manufacturing
-  link: __SUBDIR__/desktop/features/gordon/mcp/yaml
+  link: /ai/gordon/mcp/yaml
+@y
+- title: MCP configuration
+  description: Configure MCP tools on a per-project basis.
+  icon: manufacturing
+  link: __SUBDIR__/ai/gordon/mcp/yaml
+@z
+
+@x
 - title: MCP Server
   description: Use Gordon as an MCP server
   icon: dns
-  link: __SUBDIR__/desktop/features/gordon/mcp/gordon-mcp-server/
----
+  link: /ai/gordon/mcp/gordon-mcp-server/
+@y
+- title: MCP Server
+  description: Use Gordon as an MCP server
+  icon: dns
+  link: __SUBDIR__/ai/gordon/mcp/gordon-mcp-server/
 @z
 
 @x

@@ -133,6 +133,10 @@ AC_CONFIG_FILES([
 	src/content/manuals/admin/faqs/Makefile
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
+	src/content/manuals/ai/Makefile
+	src/content/manuals/ai/gordon/Makefile
+	src/content/manuals/ai/gordon/images/Makefile
+	src/content/manuals/ai/gordon/mcp/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
@@ -169,9 +173,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/enterprise/Makefile
 	src/content/manuals/desktop/features/Makefile
 	src/content/manuals/desktop/features/dev-environments/Makefile
-	src/content/manuals/desktop/features/gordon/Makefile
-	src/content/manuals/desktop/features/gordon/images/Makefile
-	src/content/manuals/desktop/features/gordon/mcp/Makefile
 	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile

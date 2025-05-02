@@ -52,6 +52,54 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+## 4.41.1
+@y
+## 4.41.1
+@z
+
+@x
+{{< release-date date="2025-04-30" >}}
+@y
+{{< release-date date="2025-04-30" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.41.1" build_path="/191279/" >}}
+@y
+{{< desktop-install-v2 all=true beta_win_arm=true version="4.41.1" build_path="/191279/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed an issue where Docker Desktop failed to start when a proxy configuration was specified in the `admin-settings.json` file.
+@y
+- Fixed an issue where Docker Desktop failed to start when a proxy configuration was specified in the `admin-settings.json` file.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed possible conflict with 3rd party tools (for example, Ollama) by avoiding placing `llama.cpp` DLLs in a directory included in the system `PATH`.
+@y
+- Fixed possible conflict with 3rd party tools (for example, Ollama) by avoiding placing `llama.cpp` DLLs in a directory included in the system `PATH`.
+@z
+
+@x
 ## 4.41.0
 @y
 ## 4.41.0
@@ -77,13 +125,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 
 @x
 - Docker Model Runner is now available on x86 Windows machines with NVIDIA GPUs.
-- You can now [push models](/manuals/desktop/features/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
+- You can now [push models](/manuals/ai/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
 - Added support for Docker Model Runner's model management and chat interface in Docker Desktop for Mac and Windows (on hardware supporting Docker Model Runner). Users can now view, interact with, and manage local AI models through a new dedicated interface.
 - [Docker Compose](/manuals/compose/how-tos/model-runner.md) and Testcontainers [Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/) now support Docker Model Runner.
 - Introducing Docker Desktop in the [Microsoft App Store](https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB).
 @y
 - Docker Model Runner is now available on x86 Windows machines with NVIDIA GPUs.
-- You can now [push models](manuals/desktop/features/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
+- You can now [push models](manuals/ai/model-runner.md#push-a-model-to-docker-hub) to Docker Hub with Docker Model Runner.
 - Added support for Docker Model Runner's model management and chat interface in Docker Desktop for Mac and Windows (on hardware supporting Docker Model Runner). Users can now view, interact with, and manage local AI models through a new dedicated interface.
 - [Docker Compose](manuals/compose/how-tos/model-runner.md) and Testcontainers [Java](https://java.testcontainers.org/modules/docker_model_runner/) and [Go](https://golang.testcontainers.org/modules/dockermodelrunner/) now support Docker Model Runner.
 - Introducing Docker Desktop in the [Microsoft App Store](https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB).
@@ -200,9 +248,9 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
-- If you have enforced sign-in using `desktop.plist` and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist` but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
+- If you have enforced sign-in using `desktop.plist` (on macOS) or Registry key (on Windows) and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist`/ registry key but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
 @y
-- If you have enforced sign-in using `desktop.plist` and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist` but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
+- If you have enforced sign-in using `desktop.plist` (on macOS) or Registry key (on Windows) and also have a `registry.json`, sign-in will fail if the user belongs to an organization listed in `desktop.plist`/ registry key but not to any organizations specified in `registry.json`. To resolve this, remove the `registry.json` file.
 @z
 
 @x
@@ -242,9 +290,9 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
-- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](/manuals/desktop/features/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
+- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](/manuals/ai/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
 @y
-- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](manuals/desktop/features/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
+- You can now pull, run, and manage AI models from Docker Hub directly in Docker Desktop with [Docker Model Runner (Beta)](manuals/ai/model-runner.md). Currently available for Docker Desktop for Mac with Apple Silicon.
 @z
 
 @x
@@ -524,7 +572,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 - The new [`update` command](/reference/cli/docker/desktop/update.md) has been added to the Docker Desktop CLI (Mac only).
 - [Bake](/manuals//build/bake/_index.md) is now generally available, with support for entitlements and composable attributes.
 - You can now create [multi-node Kubernetes clusters](/manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
-- [Ask Gordon](/manuals/desktop/features/gordon.md) is more widely available. It is still in Beta.
+- [Ask Gordon](/manuals/ai/gordon/_index.md) is more widely available. It is still in Beta.
 @y
 - Installing Docker Desktop via the PKG installer is now generally available.
 - Enforcing sign-in via configuration profiles is now generally available.
@@ -532,7 +580,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 - The new [`update` command](reference/cli/docker/desktop/update.md) has been added to the Docker Desktop CLI (Mac only).
 - [Bake](manuals//build/bake/_index.md) is now generally available, with support for entitlements and composable attributes.
 - You can now create [multi-node Kubernetes clusters](manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
-- [Ask Gordon](manuals/desktop/features/gordon.md) is more widely available. It is still in Beta.
+- [Ask Gordon](manuals/ai/gordon/_index.md) is more widely available. It is still in Beta.
 @z
 
 @x

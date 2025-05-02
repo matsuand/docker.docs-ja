@@ -118,7 +118,7 @@ Compose can set the project name in different ways. The level of precedence (fro
 @x
 1. The `-p` command line flag 
 2. `COMPOSE_PROJECT_NAME`
-3. The top level `name:` variable from the config file (or the last `name:` from
+3. The top-level `name:` variable from the config file (or the last `name:` from
   a series of config files specified using `-f`)
 4. The `basename` of the project directory containing the config file (or
   containing the first config file specified using `-f`)
@@ -126,7 +126,7 @@ Compose can set the project name in different ways. The level of precedence (fro
 @y
 1. The `-p` command line flag 
 2. `COMPOSE_PROJECT_NAME`
-3. The top level `name:` variable from the config file (or the last `name:` from
+3. The top-level `name:` variable from the config file (or the last `name:` from
   a series of config files specified using `-f`)
 4. The `basename` of the project directory containing the config file (or
   containing the first config file specified using `-f`)
@@ -186,9 +186,9 @@ Specifies the path to a Compose file. Specifying multiple Compose files is suppo
 @z
 
 @x
-See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
+See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @y
-See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](reference/cli/docker/compose/_index.md#use--f-to-specify-name-and-path-of-one-or-more-compose-files).
+See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @z
 
 @x
@@ -210,10 +210,10 @@ Services with matching profiles are started as well as any services for which no
 @z
 
 @x
-For example, calling `docker compose up`with `COMPOSE_PROFILES=frontend` selects services with the 
+For example, calling `docker compose up` with `COMPOSE_PROFILES=frontend` selects services with the 
 `frontend` profile as well as any services without a profile specified.
 @y
-For example, calling `docker compose up`with `COMPOSE_PROFILES=frontend` selects services with the 
+For example, calling `docker compose up` with `COMPOSE_PROFILES=frontend` selects services with the 
 `frontend` profile as well as any services without a profile specified.
 @z
 
@@ -224,17 +224,17 @@ If specifying multiple profiles, use a comma as a separator.
 @z
 
 @x
-This following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
+The following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
 @y
-This following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
+The following example enables all services matching both the `frontend` and `debug` profiles and services without a profile. 
 @z
 
 % snip code...
 
 @x
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use---profile-to-specify-one-or-more-active-profiles).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
 @y
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](reference/cli/docker/compose/_index.md#use---profile-to-specify-one-or-more-active-profiles).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
 @z
 
 @x
@@ -419,12 +419,12 @@ When enabled, Compose displays a navigation menu where you can choose to open th
 - Supported values:
    - `true` or `1`, to enable
    - `false` or `0`, to disable
-- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`
+- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise the default is `0`
 @y
 - Supported values:
    - `true` or `1`, to enable
    - `false` or `0`, to disable
-- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise default is `0`
+- Defaults to: `1` if you obtained Docker Compose through Docker Desktop, otherwise the default is `0`
 @z
 
 @x

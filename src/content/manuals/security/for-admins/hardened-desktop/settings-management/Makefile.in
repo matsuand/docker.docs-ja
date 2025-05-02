@@ -239,9 +239,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md                  \
+	compliance-reporting.md    \
 	configure-admin-console.md \
-	configure-json-file.md     \
-	compliance-reporting.md
+	configure-json-file.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
