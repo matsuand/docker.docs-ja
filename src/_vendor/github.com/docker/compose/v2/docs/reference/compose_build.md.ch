@@ -46,6 +46,7 @@ run `docker compose build` to rebuild it.
 |:----------------------|:--------------|:--------|:------------------------------------------------------------------------------------------------------------|
 | `--build-arg`         | `stringArray` |         | Set build-time variables for services                                                                       |
 | `--builder`           | `string`      |         | Set builder to use                                                                                          |
+| `--check`             | `bool`        |         | Check build configuration                                                                                   |
 | `--dry-run`           | `bool`        |         | Execute command in dry run mode                                                                             |
 | `-m`, `--memory`      | `bytes`       | `0`     | Set memory limit for the build container. Not supported by BuildKit.                                        |
 | `--no-cache`          | `bool`        |         | Do not use cache when building the image                                                                    |
@@ -56,10 +57,11 @@ run `docker compose build` to rebuild it.
 | `--ssh`               | `string`      |         | Set SSH authentications used when building service images. (use 'default' for using your default SSH Agent) |
 | `--with-dependencies` | `bool`        |         | Also build dependencies (transitively)                                                                      |
 @y
-| 名前                  | 型            | デフォルト | 内容説明                                                                                                 |
+| Name                  | Type          | Default | Description                                                                                                 |
 |:----------------------|:--------------|:--------|:------------------------------------------------------------------------------------------------------------|
 | `--build-arg`         | `stringArray` |         | Set build-time variables for services                                                                       |
 | `--builder`           | `string`      |         | Set builder to use                                                                                          |
+| `--check`             | `bool`        |         | Check build configuration                                                                                   |
 | `--dry-run`           | `bool`        |         | Execute command in dry run mode                                                                             |
 | `-m`, `--memory`      | `bytes`       | `0`     | Set memory limit for the build container. Not supported by BuildKit.                                        |
 | `--no-cache`          | `bool`        |         | Do not use cache when building the image                                                                    |

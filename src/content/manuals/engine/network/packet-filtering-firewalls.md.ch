@@ -497,26 +497,26 @@ Create a container with a published port:
 
 @x
 Then:
-- Only container port 80 will be open, for IPv4 and IPv6. It is accessible
-  from anywhere, if there is routing to the container's address, and access
-  is not blocked by the host's firewall.
+- Only container port 80 will be open, for IPv4 and IPv6.
 - For IPv6, using `routed` mode, port 80 will be open on the container's IP
   address. Port 8080 will not be opened on the host's IP addresses, and
   outgoing packets will use the container's IP address.
 - For IPv4, using the default `nat` mode, the container's port 80 will be
-  accessible via port 8080 on the host's IP addresses, as well as directly.
+  accessible via port 8080 on the host's IP addresses, as well as directly
+  from within the Docker host. But, container port 80 cannot be accessed
+  directly from outside the host.
   Connections originating from the container will masquerade, using the 
   host's IP address.
 @y
 Then:
-- Only container port 80 will be open, for IPv4 and IPv6. It is accessible
-  from anywhere, if there is routing to the container's address, and access
-  is not blocked by the host's firewall.
+- Only container port 80 will be open, for IPv4 and IPv6.
 - For IPv6, using `routed` mode, port 80 will be open on the container's IP
   address. Port 8080 will not be opened on the host's IP addresses, and
   outgoing packets will use the container's IP address.
 - For IPv4, using the default `nat` mode, the container's port 80 will be
-  accessible via port 8080 on the host's IP addresses, as well as directly.
+  accessible via port 8080 on the host's IP addresses, as well as directly
+  from within the Docker host. But, container port 80 cannot be accessed
+  directly from outside the host.
   Connections originating from the container will masquerade, using the 
   host's IP address.
 @z

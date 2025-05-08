@@ -137,6 +137,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/images/Makefile
 	src/content/manuals/ai/gordon/mcp/Makefile
+	src/content/manuals/ai/mcp-catalog-and-toolkit/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile

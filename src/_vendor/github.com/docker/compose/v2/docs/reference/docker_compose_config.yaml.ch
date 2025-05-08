@@ -57,6 +57,12 @@ usage: docker compose config [OPTIONS] [SERVICE...]
         Don't check model consistency - warning: may produce invalid Compose output
 @z
 
+@x no-env-resolution
+      description: Don't resolve service env files
+@y
+      description: Don't resolve service env files
+@z
+
 @x no-interpolate
       description: Don't interpolate environment variables
 @y

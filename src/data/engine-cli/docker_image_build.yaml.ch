@@ -123,9 +123,9 @@ long: |-
 @z
 
 @x
-    #### Accessing paths outside the build context
+    #### Access paths outside the build context
 @y
-    #### Accessing paths outside the build context
+    #### Access paths outside the build context
 @z
 
 @x

@@ -113,6 +113,8 @@ Compose model runner:
   requires: Docker Compose [2.35.0](/manuals/compose/releases/release-notes.md#2300) and later, and Docker Desktop 4.41 and later
 Compose OCI artifact:
   requires: Docker Compose [2.34.0](/manuals/compose/releases/release-notes.md#2340) and later
+Compose provider services:
+  requires: Docker Compose [2.36.0](/manuals/compose/releases/release-notes.md) and later
 Compose replace file:
   requires: Docker Compose [2.24.4](/manuals/compose/releases/release-notes.md#2244) and later
 Compose required:
@@ -167,6 +169,9 @@ Docker Scout health scores:
 Docker Scout Mount Permissions:
   requires: Docker Desktop [4.34.0](/manuals/desktop/release-notes.md#4340) and later
 Domain audit:
+  subscription: [Business]
+  for: Administrators
+Domain management:
   subscription: [Business]
   for: Administrators
 Enforce sign-in:
@@ -340,6 +345,8 @@ Compose model runner:
   requires: Docker Compose [2.35.0](manuals/compose/releases/release-notes.md#2300) and later, and Docker Desktop 4.41 and later
 Compose OCI artifact:
   requires: Docker Compose [2.34.0](manuals/compose/releases/release-notes.md#2340) and later
+Compose provider services:
+  requires: Docker Compose [2.36.0](manuals/compose/releases/release-notes.md) and later
 Compose replace file:
   requires: Docker Compose [2.24.4](manuals/compose/releases/release-notes.md#2244) and later
 Compose required:
@@ -394,6 +401,9 @@ Docker Scout health scores:
 Docker Scout Mount Permissions:
   requires: Docker Desktop [4.34.0](manuals/desktop/release-notes.md#4340) and later
 Domain audit:
+  subscription: [Business]
+  for: Administrators
+Domain management:
   subscription: [Business]
   for: Administrators
 Enforce sign-in:

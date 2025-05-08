@@ -7,6 +7,7 @@ bases = \
 	_index.md                \
 	access-tokens.md         \
 	domain-audit.md          \
+	domain-management.md     \
 	roles-and-permissions.md
 
 include $(top_srcdir)/build-aux/common.mk
