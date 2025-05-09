@@ -180,30 +180,6 @@ The following table summarizes this comparison.
 @z
 
 @x
-### Additional settings
-@y
-### Additional settings
-@z
-
-@x
-#### Viewing system containers
-@y
-#### Viewing system containers
-@z
-
-@x
-By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
-@y
-By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
-@z
-
-@x
-You can now view the running Kubernetes containers with `docker ps` or in the Docker Desktop Dashboard.
-@y
-You can now view the running Kubernetes containers with `docker ps` or in the Docker Desktop Dashboard.
-@z
-
-@x
 ## Using the kubectl command
 @y
 ## Using the kubectl command
@@ -309,6 +285,30 @@ For more information about `kubectl`, see the
 Kubernetes clusters are not automatically upgraded with Docker Desktop updates. To upgrade the cluster, you must manually select **Reset Kubernetes Cluster** in settings.
 @y
 Kubernetes clusters are not automatically upgraded with Docker Desktop updates. To upgrade the cluster, you must manually select **Reset Kubernetes Cluster** in settings.
+@z
+
+@x
+## Additional settings
+@y
+## Additional settings
+@z
+
+@x
+### Viewing system containers
+@y
+### Viewing system containers
+@z
+
+@x
+By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
+@y
+By default, Kubernetes system containers are hidden. To inspect these containers, enable **Show system containers (advanced)**.
+@z
+
+@x
+You can now view the running Kubernetes containers with `docker ps` or in the Docker Desktop Dashboard.
+@y
+You can now view the running Kubernetes containers with `docker ps` or in the Docker Desktop Dashboard.
 @z
 
 @x

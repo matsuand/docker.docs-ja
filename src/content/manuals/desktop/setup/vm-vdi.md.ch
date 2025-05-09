@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Instructions on how to enable nested virtualization
 keywords: nested virtualization, Docker Desktop, windows, VM, VDI environment
@@ -173,4 +175,16 @@ Docker Desktop follows the VDI support definitions outlined [previously](#virtua
 For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
 @y
 For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
+@z
+
+@x
+## Aditional resources
+@y
+## Aditional resources
+@z
+
+@x
+- [Docker Desktop on Microsoft Dev Box](/manuals/desktop/features/dev-box.md)
+@y
+- [Docker Desktop on Microsoft Dev Box](manuals/desktop/features/dev-box.md)
 @z

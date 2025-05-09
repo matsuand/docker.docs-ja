@@ -7,6 +7,7 @@ bases = \
 	_index.md                    \
 	containerd.md                \
 	desktop-cli.md               \
+	dev-box.md                   \
 	gpu.md                       \
 	kubernetes.md                \
 	networking.md                \
