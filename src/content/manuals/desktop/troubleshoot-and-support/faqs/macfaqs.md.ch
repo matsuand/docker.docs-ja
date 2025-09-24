@@ -8,13 +8,11 @@ description: Frequently asked questions for Docker Desktop for Mac
 keywords: desktop, mac, faqs
 title: FAQs for Docker Desktop for Mac
 linkTitle: Mac
-tags: [FAQ]
 @y
 description: Frequently asked questions for Docker Desktop for Mac
 keywords: desktop, mac, faqs
 title: FAQs for Docker Desktop for Mac
 linkTitle: Mac
-tags: [FAQ]
 @z
 
 @x
@@ -126,9 +124,9 @@ To move the disk image file to a different location:
 @z
 
 @x
-3. Select **Apply & Restart** for the changes to take effect.
+3. Select **Apply** for the changes to take effect.
 @y
-3. Select **Apply & Restart** for the changes to take effect.
+3. Select **Apply** for the changes to take effect.
 @z
 
 @x
@@ -300,9 +298,9 @@ To reduce the maximum size of the disk image file:
 @z
 
 @x
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @y
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @z
 
 @x

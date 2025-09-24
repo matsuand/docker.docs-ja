@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Docker Service accounts
@@ -26,10 +26,10 @@ title: Service accounts
 > available. Existing Service Account agreements will be honored until their
 > current term expires, but new purchases or renewals of Enhanced Service
 > Account add-ons are no longer available and customers must renew under a new
-> subscription plan.
+> subscription.
 >
 > Docker recommends transitioning to [Organization Access Tokens
-> (OATs)](../security/for-admins/access-tokens.md), which can provide similar
+> (OATs)](/manuals/enterprise/security/access-tokens.md), which can provide similar
 > functionality.
 @y
 > [!IMPORTANT]
@@ -38,10 +38,10 @@ title: Service accounts
 > available. Existing Service Account agreements will be honored until their
 > current term expires, but new purchases or renewals of Enhanced Service
 > Account add-ons are no longer available and customers must renew under a new
-> subscription plan.
+> subscription.
 >
 > Docker recommends transitioning to [Organization Access Tokens
-> (OATs)](../security/for-admins/access-tokens.md), which can provide similar
+> (OATs)](manuals/enterprise/security/access-tokens.md), which can provide similar
 > functionality.
 @z
 

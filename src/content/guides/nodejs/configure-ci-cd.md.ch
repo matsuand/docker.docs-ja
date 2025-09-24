@@ -86,9 +86,9 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 @z
 
 @x
-4. Create a new [Personal Access Token (PAT)](/manuals/security/for-developers/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
+4. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Docker Hub に対する新たな [パーソナルアクセストークン (Personal Access Token; PAT)](manuals/security/for-developers/access-tokens.md#create-an-access-token) を生成します。
+4. Docker Hub に対する新たな [パーソナルアクセストークン (Personal Access Token; PAT)](manuals/security/access-tokens.md#create-an-access-token) を生成します。
    このトークンの名前を `docker-tutorial` とします。
    アクセス権限は読み書き可能としてください。
 @z

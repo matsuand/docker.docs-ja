@@ -13,11 +13,11 @@ linkTitle: Customize
 @z
 
 @x
-description: Learn about the Compose Bridge templates syntax
-keywords: compose, bridge, templates
+description: Learn how to customize Compose Bridge transformations using Go templates and Compose extensions
+keywords: docker compose bridge, customize compose bridge, compose bridge templates, compose to kubernetes, compose bridge transformation, go templates docker
 @y
-description: Learn about the Compose Bridge templates syntax
-keywords: compose, bridge, templates
+description: Learn how to customize Compose Bridge transformations using Go templates and Compose extensions
+keywords: docker compose bridge, customize compose bridge, compose bridge templates, compose to kubernetes, compose bridge transformation, go templates docker
 @z
 
 @x
@@ -27,9 +27,9 @@ keywords: compose, bridge, templates
 @z
 
 @x
-This page explains how Compose Bridge utilizes templating to efficiently translate Docker Compose files into Kubernetes manifests. It also explain how you can customize these templates for your specific requirements and needs, or how you can build your own transformation. 
+This page explains how Compose Bridge utilizes templating to efficiently translate Docker Compose files into Kubernetes manifests. It also explains how you can customize these templates for your specific requirements and needs, or how you can build your own transformation. 
 @y
-This page explains how Compose Bridge utilizes templating to efficiently translate Docker Compose files into Kubernetes manifests. It also explain how you can customize these templates for your specific requirements and needs, or how you can build your own transformation. 
+This page explains how Compose Bridge utilizes templating to efficiently translate Docker Compose files into Kubernetes manifests. It also explains how you can customize these templates for your specific requirements and needs, or how you can build your own transformation. 
 @z
 
 @x
@@ -51,9 +51,9 @@ A transformation is packaged as a Docker image that receives the fully-resolved 
 @z
 
 @x
-Compose Bridge provides its transformation for Kubernetes using Go templates, so that it is easy to extend for customization by just replacing or appending your own templates.
+Compose Bridge includes a default Kubernetes transformation using Go templates, which you can customize by replacing or extending templates.
 @y
-Compose Bridge provides its transformation for Kubernetes using Go templates, so that it is easy to extend for customization by just replacing or appending your own templates.
+Compose Bridge includes a default Kubernetes transformation using Go templates, which you can customize by replacing or extending templates.
 @z
 
 @x
@@ -63,9 +63,9 @@ Compose Bridge provides its transformation for Kubernetes using Go templates, so
 @z
 
 @x
-Compose Bridge make use of templates to transform a Compose configuration file into Kubernetes manifests. Templates are plain text files that use the [Go templating syntax](https://pkg.go.dev/text/template). This enables the insertion of logic and data, making the templates dynamic and adaptable according to the Compose model.
+Compose Bridge makes use of templates to transform a Compose configuration file into Kubernetes manifests. Templates are plain text files that use the [Go templating syntax](https://pkg.go.dev/text/template). This enables the insertion of logic and data, making the templates dynamic and adaptable according to the Compose model.
 @y
-Compose Bridge make use of templates to transform a Compose configuration file into Kubernetes manifests. Templates are plain text files that use the [Go templating syntax](https://pkg.go.dev/text/template). This enables the insertion of logic and data, making the templates dynamic and adaptable according to the Compose model.
+Compose Bridge makes use of templates to transform a Compose configuration file into Kubernetes manifests. Templates are plain text files that use the [Go templating syntax](https://pkg.go.dev/text/template). This enables the insertion of logic and data, making the templates dynamic and adaptable according to the Compose model.
 @z
 
 @x
@@ -88,27 +88,7 @@ In the following example, a template iterates over services defined in a `compos
 In the following example, a template iterates over services defined in a `compose.yaml` file. For each service, a dedicated Kubernetes manifest file is generated, named according to the service and containing specified configurations.
 @z
 
-@x
-```yaml
-{{ range $name, $service := .services }}
----
-#! {{ $name }}-manifest.yaml
-# Generated code, do not edit
-key: value
-## ...
-{{ end }}
-```
-@y
-```yaml
-{{ range $name, $service := .services }}
----
-#! {{ $name }}-manifest.yaml
-# Generated code, do not edit
-key: value
-## ...
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 ### Input
@@ -117,32 +97,12 @@ key: value
 @z
 
 @x
-The input Compose model is the canonical YAML model you can get by running  `docker compose config`. Within the templates, data from the `compose.yaml` is accessed using dot notation, allowing you to navigate through nested data structures. For example, to access the deployment mode of a service, you would use `service.deploy.mode`:
+You can generate the input model by running `docker compose config`. This canonical YAML output serves as the input for Compose Bridge transformations. Within the templates, data from the `compose.yaml` is accessed using dot notation, allowing you to navigate through nested data structures. For example, to access the deployment mode of a service, you would use `service.deploy.mode`:
 @y
-The input Compose model is the canonical YAML model you can get by running  `docker compose config`. Within the templates, data from the `compose.yaml` is accessed using dot notation, allowing you to navigate through nested data structures. For example, to access the deployment mode of a service, you would use `service.deploy.mode`:
+You can generate the input model by running `docker compose config`. This canonical YAML output serves as the input for Compose Bridge transformations. Within the templates, data from the `compose.yaml` is accessed using dot notation, allowing you to navigate through nested data structures. For example, to access the deployment mode of a service, you would use `service.deploy.mode`:
 @z
 
-@x
- ```yaml
-# iterate over a yaml sequence
-{{ range $name, $service := .services }}
-  # access a nested attribute using dot notation
-  {{ if eq $service.deploy.mode "global" }}
-kind: DaemonSet
-  {{ end }}
-{{ end }}
-```
-@y
- ```yaml
-# iterate over a yaml sequence
-{{ range $name, $service := .services }}
-  # access a nested attribute using dot notation
-  {{ if eq $service.deploy.mode "global" }}
-kind: DaemonSet
-  {{ end }}
-{{ end }}
-```
-@z
+% snip code...
 
 @x
 You can check the [Compose Specification JSON schema](https://github.com/compose-spec/compose-go/blob/main/schema/compose-spec.json) to have a full overview of the Compose model. This schema outlines all possible configurations and their data types in the Compose model. 
@@ -204,12 +164,12 @@ In the following example, the template checks if a healthcheck interval is speci
 As Kubernetes is a versatile platform, there are many ways
 to map Compose concepts into Kubernetes resource definitions. Compose
 Bridge lets you customize the transformation to match your own infrastructure
-decisions and preferences, with various level of flexibility and effort.
+decisions and preferences, with varying level of flexibility and effort.
 @y
 As Kubernetes is a versatile platform, there are many ways
 to map Compose concepts into Kubernetes resource definitions. Compose
 Bridge lets you customize the transformation to match your own infrastructure
-decisions and preferences, with various level of flexibility and effort.
+decisions and preferences, with varying level of flexibility and effort.
 @z
 
 @x
@@ -220,11 +180,11 @@ decisions and preferences, with various level of flexibility and effort.
 
 @x
 You can extract templates used by the default transformation `docker/compose-bridge-kubernetes`,
-by running `compose-bridge transformations create --from docker/compose-bridge-kubernetes my-template` 
+by running `docker compose bridge transformations create --from docker/compose-bridge-kubernetes my-template` 
 and adjusting the templates to match your needs.
 @y
 You can extract templates used by the default transformation `docker/compose-bridge-kubernetes`,
-by running `compose-bridge transformations create --from docker/compose-bridge-kubernetes my-template` 
+by running `docker compose bridge transformations create --from docker/compose-bridge-kubernetes my-template` 
 and adjusting the templates to match your needs.
 @z
 
@@ -362,16 +322,4 @@ to the Compose Bridge transformation contract.
 @y
 This Dockerfile bundles Kompose and defines the command to run this tool according
 to the Compose Bridge transformation contract.
-@z
-
-@x
-## What's next?
-@y
-## What's next?
-@z
-
-@x
-- [Explore the advanced integration](advanced-integration.md)
-@y
-- [Explore the advanced integration](advanced-integration.md)
 @z

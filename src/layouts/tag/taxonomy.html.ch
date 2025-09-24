@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-        ({{ (len .Pages) }} {{ cond (gt (len .Pages) 1) "pages" "page" }})
+          ({{ (len .Pages) }} {{ cond (gt (len .Pages) 1) "pages" "page" }})
 @y
-        ({{ (len .Pages) }} {{ cond (gt (len .Pages) 1) "ページ" "ページ" }})
+          ({{ (len .Pages) }} {{ cond (gt (len .Pages) 1) "ページ" "ページ" }})
 @z

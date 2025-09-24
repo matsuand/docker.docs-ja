@@ -546,10 +546,10 @@ real-world example, continue to
 @z
 
 @x
-    ```none
+    ```console
     $ docker container exec -it $(docker ps --filter name=redis -q) cat /my-config
 @y
-    ```none
+    ```console
     $ docker container exec -it $(docker ps --filter name=redis -q) cat /my-config
 @z
 
@@ -940,14 +940,14 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```ini
     [root_ca]
     basicConstraints = critical,CA:TRUE,pathlen:1
     keyUsage = critical, nonRepudiation, cRLSign, keyCertSign
     subjectKeyIdentifier=hash
     ```
 @y
-    ```none
+    ```ini
     [root_ca]
     basicConstraints = critical,CA:TRUE,pathlen:1
     keyUsage = critical, nonRepudiation, cRLSign, keyCertSign
@@ -1024,7 +1024,7 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```ini
     [server]
     authorityKeyIdentifier=keyid,issuer
     basicConstraints = critical,CA:FALSE
@@ -1034,7 +1034,7 @@ generate the site key and certificate, name the files `site.key` and
     subjectKeyIdentifier=hash
     ```
 @y
-    ```none
+    ```ini
     [server]
     authorityKeyIdentifier=keyid,issuer
     basicConstraints = critical,CA:FALSE
@@ -1100,14 +1100,14 @@ generate the site key and certificate, name the files `site.key` and
 @z
 
 @x
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;
         ssl_certificate       /run/secrets/site.crt;
         ssl_certificate_key   /run/secrets/site.key;
 @y
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;
@@ -1522,14 +1522,14 @@ configuration file.
 @z
 
 @x
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;
         ssl_certificate       /run/secrets/site.crt;
         ssl_certificate_key   /run/secrets/site.key;
 @y
-    ```none
+    ```nginx
     server {
         listen                443 ssl;
         server_name           localhost;

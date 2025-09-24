@@ -1,0 +1,60 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker model compose
+pname: docker model
+plink: docker_model.yaml
+cname:
+    - docker model compose down
+    - docker model compose metadata
+    - docker model compose up
+clink:
+    - docker_model_compose_down.yaml
+    - docker_model_compose_metadata.yaml
+    - docker_model_compose_up.yaml
+options:
+    - option: project-name
+      value_type: string
+      description: compose project name
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: true
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker model compose
+pname: docker model
+plink: docker_model.yaml
+cname:
+    - docker model compose down
+    - docker model compose metadata
+    - docker model compose up
+clink:
+    - docker_model_compose_down.yaml
+    - docker_model_compose_metadata.yaml
+    - docker_model_compose_up.yaml
+options:
+    - option: project-name
+      value_type: string
+      description: compose project name
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: true
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

@@ -1077,13 +1077,15 @@ The available `[OPTIONS]` for the `RUN` instruction are:
 
 @x
 | Option                          | Minimum Dockerfile version |
-| ------------------------------- | -------------------------- |
+|---------------------------------|----------------------------|
+| [`--device`](#run---device)     | 1.14-labs                  |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
 | [`--security`](#run---security) | 1.1.2-labs                 |
 @y
 | Option                          | Minimum Dockerfile version |
-| ------------------------------- | -------------------------- |
+|---------------------------------|----------------------------|
+| [`--device`](#run---device)     | 1.14-labs                  |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
 | [`--security`](#run---security) | 1.1.2-labs                 |
@@ -3583,10 +3585,10 @@ conditions for cache reuse.
 
 @x
 > [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @y
 > [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @z
 
 @x
@@ -3725,10 +3727,10 @@ with the `--parents` flag, the Buildkit is capable of packing multiple
 
 @x
 > [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @y
 > [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1.7-labs`](#syntax) version.
+> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @z
 
 @x
@@ -5386,25 +5388,29 @@ RUN echo "I'm building for $TARGETPLATFORM"
 @z
 
 @x
-| Arg                             | Type   | Description                                                                                                                                                                                       |
-| ------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                  |
-| `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                 |
-| `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                     |
-| `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                         |
-| `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                      |
-| `BUILDKIT_SYNTAX`               | String | Set frontend image                                                                                                                                                                                |
-| `SOURCE_DATE_EPOCH`             | Int    | Set the Unix timestamp for created image and layers. More info from [reproducible builds](https://reproducible-builds.org/docs/source-date-epoch/). Supported since Dockerfile 1.5, BuildKit 0.11 |
+| Arg                              | Type   | Description                                                                                                                                                                                                      |
+|----------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `BUILDKIT_BUILD_NAME`            | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
+| `BUILDKIT_CACHE_MOUNT_NS`        | String | Set optional cache ID namespace.                                                                                                                                                                                 |
+| `BUILDKIT_CONTEXT_KEEP_GIT_DIR`  | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_HISTORY_PROVENANCE_V1` | Bool   | Enable [SLSA Provenance v1](https://slsa.dev/spec/v1.1/provenance) for build history record.                                                                                                                     |
+| `BUILDKIT_INLINE_CACHE`[^2]      | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
+| `BUILDKIT_MULTI_PLATFORM`        | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
+| `BUILDKIT_SANDBOX_HOSTNAME`      | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |
+| `BUILDKIT_SYNTAX`                | String | Set frontend image                                                                                                                                                                                               |
+| `SOURCE_DATE_EPOCH`              | Int    | Set the Unix timestamp for created image and layers. More info from [reproducible builds](https://reproducible-builds.org/docs/source-date-epoch/). Supported since Dockerfile 1.5, BuildKit 0.11                |
 @y
-| Arg                             | Type   | Description                                                                                                                                                                                       |
-| ------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                  |
-| `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                 |
-| `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                     |
-| `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                         |
-| `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                      |
-| `BUILDKIT_SYNTAX`               | String | Set frontend image                                                                                                                                                                                |
-| `SOURCE_DATE_EPOCH`             | Int    | Set the Unix timestamp for created image and layers. More info from [reproducible builds](https://reproducible-builds.org/docs/source-date-epoch/). Supported since Dockerfile 1.5, BuildKit 0.11 |
+| Arg                              | Type   | Description                                                                                                                                                                                                      |
+|----------------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `BUILDKIT_BUILD_NAME`            | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
+| `BUILDKIT_CACHE_MOUNT_NS`        | String | Set optional cache ID namespace.                                                                                                                                                                                 |
+| `BUILDKIT_CONTEXT_KEEP_GIT_DIR`  | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_HISTORY_PROVENANCE_V1` | Bool   | Enable [SLSA Provenance v1](https://slsa.dev/spec/v1.1/provenance) for build history record.                                                                                                                     |
+| `BUILDKIT_INLINE_CACHE`[^2]      | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
+| `BUILDKIT_MULTI_PLATFORM`        | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
+| `BUILDKIT_SANDBOX_HOSTNAME`      | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |
+| `BUILDKIT_SYNTAX`                | String | Set frontend image                                                                                                                                                                                               |
+| `SOURCE_DATE_EPOCH`              | Int    | Set the Unix timestamp for created image and layers. More info from [reproducible builds](https://reproducible-builds.org/docs/source-date-epoch/). Supported since Dockerfile 1.5, BuildKit 0.11                |
 @z
 
 @x

@@ -3,7 +3,8 @@
 ##
 
 bases = \
-	bake-reference.md
+	bake-reference.md \
+	bake-stdlib.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

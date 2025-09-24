@@ -1,0 +1,13 @@
+##
+## This is part of Japanese translation version for Docker's Documantation.
+##
+SUBDIRS = enforce-sign-in hardened-desktop images provisioning single-sign-on
+
+bases = \
+	_index.md            \
+	access-tokens.md     \
+	domain-management.md \
+	roles-and-permissions.md
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk

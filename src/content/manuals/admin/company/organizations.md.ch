@@ -1,14 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
-description: Learn how to manage organizations in a company.
-keywords: company, multiple organizations, manage organizations
 title: Manage company organizations
+description: Learn how to manage organizations in a company.
+keywords: company, multiple organizations, manage organizations, Docker Admin Console, organization settings, add organization, company management
 @y
-description: Learn how to manage organizations in a company.
-keywords: company, multiple organizations, manage organizations
 title: Manage company organizations
+description: Learn how to manage organizations in a company.
+keywords: company, multiple organizations, manage organizations, Docker Admin Console, organization settings, add organization, company management
 @z
 
 @x
@@ -18,9 +20,9 @@ title: Manage company organizations
 @z
 
 @x
-You can manage the organizations in a company in the Docker Admin Console.
+Learn to manage the organizations in a company using the Docker Admin Console.
 @y
-You can manage the organizations in a company in the Docker Admin Console.
+Learn to manage the organizations in a company using the Docker Admin Console.
 @z
 
 @x
@@ -30,13 +32,19 @@ You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Under **Organizations**, select **Overview**.
+1. Sign in to the [Docker Home](https://app.docker.com) and choose
+your company.
+1. Select **Admin Console**, then **Organizations**.
 @y
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Under **Organizations**, select **Overview**.
+1. Sign in to the [Docker Home](https://app.docker.com) and choose
+your company.
+1. Select **Admin Console**, then **Organizations**.
+@z
+
+@x
+The **Organizations** view displays all organizations under your company.
+@y
+The **Organizations** view displays all organizations under your company.
 @z
 
 @x
@@ -46,15 +54,23 @@ You can manage the organizations in a company in the Docker Admin Console.
 @z
 
 @x
-When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps. If you have a sales-assisted subscription, you can contact Docker support or sales to add seats.
+If you have a [self-serve](../../subscription/details.md#self-serve)
+subscription that has no pending subscription changes, you can add seats using
+Docker Home. For more information about adding seats,
+see [Manage seats](/manuals/subscription/manage-seats.md#add-seats).
 @y
-When you have a [self-serve](../../subscription/details.md#self-serve) subscription that has no pending subscription changes, you can add seats using the following steps. If you have a sales-assisted subscription, you can contact Docker support or sales to add seats.
+If you have a [self-serve](../../subscription/details.md#self-serve)
+subscription that has no pending subscription changes, you can add seats using
+Docker Home. For more information about adding seats,
+see [Manage seats](manuals/subscription/manage-seats.md#add-seats).
 @z
 
 @x
-For more information about adding seats, see [Manage seats](/manuals/subscription/manage-seats.md#add-seats).
+If you have a sales-assisted subscription, you must contact Docker support or
+sales to add seats.
 @y
-For more information about adding seats, see [Manage seats](manuals/subscription/manage-seats.md#add-seats).
+If you have a sales-assisted subscription, you must contact Docker support or
+sales to add seats.
 @z
 
 @x
@@ -64,35 +80,47 @@ For more information about adding seats, see [Manage seats](manuals/subscription
 @z
 
 @x
-You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add. There is no limit to the number of organizations you can have under a company layer. All organizations must have a Business subscription.
+To add an organization to a company, ensure the following:
 @y
-You must be a company owner to add an organization to a company. You must also be an organization owner of the organization you want to add. There is no limit to the number of organizations you can have under a company layer. All organizations must have a Business subscription.
+To add an organization to a company, ensure the following:
+@z
+
+@x
+- You are a company owner.
+- You are an organization owner of the organization you want to add.
+- The organization has a Docker Business subscription.
+- There’s no limit to how many organizations can exist under a company.
+@y
+- You are a company owner.
+- You are an organization owner of the organization you want to add.
+- The organization has a Docker Business subscription.
+- There’s no limit to how many organizations can exist under a company.
 @z
 
 @x
 > [!IMPORTANT]
 >
-> Once you add an organization to a company, you can't remove it from the company.
+> Once you add an organization to a company, you can't remove it from the
+company.
 @y
 > [!IMPORTANT]
 >
-> Once you add an organization to a company, you can't remove it from the company.
+> Once you add an organization to a company, you can't remove it from the
+company.
 @z
 
 @x
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Select **Organizations**, then **Overview**.
-4. Select **Add organization**.
-5. Choose the organization you want to add from the drop-down menu.
-6. Select **Add organization** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Select **Admin Console**, then **Organizations**.
+1. Select **Add organization**.
+1. Choose the organization you want to add from the drop-down menu.
+1. Select **Add organization** to confirm.
 @y
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Select **Organizations**, then **Overview**.
-4. Select **Add organization**.
-5. Choose the organization you want to add from the drop-down menu.
-6. Select **Add organization** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Select **Admin Console**, then **Organizations**.
+1. Select **Add organization**.
+1. Choose the organization you want to add from the drop-down menu.
+1. Select **Add organization** to confirm.
 @z
 
 @x
@@ -102,19 +130,21 @@ You must be a company owner to add an organization to a company. You must also b
 @z
 
 @x
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Select the organization that you want to manage.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Select **Admin Console**, then **Organizations**.
+1. Select the organization you want to manage.
 @y
-1. Sign in to the [Admin Console](https://admin.docker.com).
-2. Select your company on the **Choose profile** page.
-3. Select the organization that you want to manage.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Select **Admin Console**, then **Organizations**.
+1. Select the organization you want to manage.
 @z
 
 @x
-For more details about managing an organization, see [Organization administration](../organization/_index.md).
+For more details about managing an organization, see
+[Organization administration](../organization/_index.md).
 @y
-For more details about managing an organization, see [Organization administration](../organization/_index.md).
+For more details about managing an organization, see
+[Organization administration](../organization/_index.md).
 @z
 
 @x

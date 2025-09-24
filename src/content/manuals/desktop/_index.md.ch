@@ -19,7 +19,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
   desktop do, using docker desktop
 @z
 
-% grid:
+% grid
 
 @x
 - title: Install Docker Desktop
@@ -32,9 +32,10 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @y
 - title: Docker Desktop のインストール
   description: |
+    Install Docker Desktop on
     [Mac](__SUBDIR__/desktop/setup/install/mac-install/),
-    [Windows](__SUBDIR__/desktop/setup/install/windows-install/),
-    [Linux](__SUBDIR__/desktop/setup/install/linux/) への Docker Desktop のインストール。
+    [Windows](__SUBDIR__/desktop/setup/install/windows-install/), or
+    [Linux](__SUBDIR__/desktop/setup/install/linux/).
   icon: download
 @z
 
@@ -58,7 +59,7 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @y
 - title: 主要機能を確認
   description: |
-    [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), [Kubernetes へのデプロイ](__SUBDIR__/desktop/features/kubernetes/) などについての情報を確認します。
+    Find information about [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), [deploying on Kubernetes](__SUBDIR__/desktop/features/kubernetes/), and more.
   icon: category
 @z
 
@@ -120,43 +121,15 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="What's included in Docker Desktop?" >}}
+Docker Desktop integrates with your preferred development tools and languages, and gives you access to a vast ecosystem of trusted images and templates via Docker Hub. This empowers teams to accelerate development, automate builds, enable CI/CD workflows, and collaborate securely through shared repositories.
 @y
-{{< tabs >}}
-{{< tab name="Docker Desktop に含まれているものは？" >}}
+Docker Desktop integrates with your preferred development tools and languages, and gives you access to a vast ecosystem of trusted images and templates via Docker Hub. This empowers teams to accelerate development, automate builds, enable CI/CD workflows, and collaborate securely through shared repositories.
 @z
 
 @x
-- [Docker Engine](/manuals/engine/_index.md)
-- Docker CLI client
-- [Docker Scout](../scout/_index.md)
-- [Docker Build](/manuals/build/_index.md)
-- [Docker Compose](/manuals/compose/_index.md)
-- [Ask Gordon](/manuals/desktop/features/gordon/_index.md)
-- [Docker Extensions](../extensions/_index.md)
-- [Docker Content Trust](/manuals/engine/security/trust/_index.md)
-- [Kubernetes](https://github.com/kubernetes/kubernetes/)
-- [Credential Helper](https://github.com/docker/docker-credential-helpers/)
+## Key features
 @y
-- [Docker Engine](manuals/engine/_index.md)
-- Docker CLI クライアント
-- [Docker Scout](../scout/_index.md)
-- [Docker Build](../build/_index.md)
-- [Docker Compose](manuals/compose/_index.md)
-- [Ask Gordon](manuals/desktop/features/gordon/_index.md)
-- [Docker Extensions](../extensions/_index.md)
-- [Docker Content Trust](manuals/engine/security/trust/_index.md)
-- [Kubernetes](https://github.com/kubernetes/kubernetes/)
-- [Credential Helper](https://github.com/docker/docker-credential-helpers/)
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="What are the key features of Docker Desktop?">}}
-@y
-{{< /tab >}}
-{{< tab name="Docker Desktop の主要機能は何か？">}}
+## Docker Desktop の主要機能 {#key-features}
 @z
 
 @x
@@ -179,11 +152,41 @@ Docker Desktop はポートマッピング、ファイルシステム関連、�
 @z
 
 @x
-{{< /tab >}}
-{{< /tabs >}}
+## Products inside Docker Desktop
 @y
-{{< /tab >}}
-{{< /tabs >}}
+## Products inside Docker Desktop
+@z
+
+@x
+- [Docker Engine](/manuals/engine/_index.md)
+- Docker CLI client
+- [Docker Scout](../scout/_index.md)
+- [Docker Build](/manuals/build/_index.md)
+- [Docker Compose](/manuals/compose/_index.md)
+- [Ask Gordon](/manuals/ai/gordon/_index.md)
+- [Docker Extensions](../extensions/_index.md)
+- [Docker Content Trust](/manuals/engine/security/trust/_index.md)
+- [Kubernetes](https://github.com/kubernetes/kubernetes/)
+- [Credential Helper](https://github.com/docker/docker-credential-helpers/)
+- [Docker Offload](/manuals/offload/_index.md)
+@y
+- [Docker Engine](manuals/engine/_index.md)
+- Docker CLI client
+- [Docker Scout](../scout/_index.md)
+- [Docker Build](manuals/build/_index.md)
+- [Docker Compose](manuals/compose/_index.md)
+- [Ask Gordon](manuals/ai/gordon/_index.md)
+- [Docker Extensions](../extensions/_index.md)
+- [Docker Content Trust](manuals/engine/security/trust/_index.md)
+- [Kubernetes](https://github.com/kubernetes/kubernetes/)
+- [Credential Helper](https://github.com/docker/docker-credential-helpers/)
+- [Docker Offload](manuals/offload/_index.md)
+@z
+
+@x
+## Next steps
+@y
+## Next steps
 @z
 
 @x

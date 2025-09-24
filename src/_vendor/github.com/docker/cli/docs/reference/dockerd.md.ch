@@ -62,6 +62,7 @@ A self-sufficient runtime for containers.
 @x
 Options:
       --add-runtime runtime                   Register an additional OCI compatible runtime (default [])
+      --allow-direct-routing                  Allow remote access to published ports on container IP addresses
       --authorization-plugin list             Authorization plugins to load
       --bip string                            IPv4 address for the default bridge
       --bip6 string                           IPv6 address for the default bridge
@@ -154,6 +155,7 @@ Options:
 @y
 Options:
       --add-runtime runtime                   Register an additional OCI compatible runtime (default [])
+      --allow-direct-routing                  Allow remote access to published ports on container IP addresses
       --authorization-plugin list             Authorization plugins to load
       --bip string                            IPv4 address for the default bridge
       --bip6 string                           IPv6 address for the default bridge
@@ -2054,23 +2056,9 @@ PING host.docker.internal (2001:db8::1111): 56 data bytes
 @z
 
 @x
-### Enable CDI devices
+### Configure CDI devices
 @y
-### Enable CDI devices
-@z
-
-@x
-> [!NOTE]
-> This is experimental feature and as such doesn't represent a stable API.
->
-> This feature isn't enabled by default. To this feature, set `features.cdi` to
-> `true` in the `daemon.json` configuration file.
-@y
-> [!NOTE]
-> This is experimental feature and as such doesn't represent a stable API.
->
-> This feature isn't enabled by default. To this feature, set `features.cdi` to
-> `true` in the `daemon.json` configuration file.
+### Configure CDI devices
 @z
 
 @x
@@ -2086,6 +2074,14 @@ interact with third party devices.
 @z
 
 @x
+CDI is currently only supported for Linux containers and is enabled by default
+since Docker Engine 28.3.0.
+@y
+CDI is currently only supported for Linux containers and is enabled by default
+since Docker Engine 28.3.0.
+@z
+
+@x
 The Docker daemon supports running containers with CDI devices if the requested
 device specifications are available on the filesystem of the daemon.
 @y
@@ -2094,9 +2090,9 @@ device specifications are available on the filesystem of the daemon.
 @z
 
 @x
-The default specification directors are:
+The default specification directories are:
 @y
-The default specification directors are:
+The default specification directories are:
 @z
 
 @x
@@ -2108,41 +2104,71 @@ The default specification directors are:
 @z
 
 @x
-Alternatively, you can set custom locations for CDI specifications using the
-`cdi-spec-dirs` option in the `daemon.json` configuration file, or the
-`--cdi-spec-dir` flag for the `dockerd` CLI.
+#### Set custom locations
 @y
-Alternatively, you can set custom locations for CDI specifications using the
+#### Set custom locations
+@z
+
+@x
+To set custom locations for CDI specifications, use the
 `cdi-spec-dirs` option in the `daemon.json` configuration file, or the
-`--cdi-spec-dir` flag for the `dockerd` CLI.
+`--cdi-spec-dir` flag for the `dockerd` CLI:
+@y
+To set custom locations for CDI specifications, use the
+`cdi-spec-dirs` option in the `daemon.json` configuration file, or the
+`--cdi-spec-dir` flag for the `dockerd` CLI:
 @z
 
 @x
 ```json
 {
-  "features": {
-     "cdi": true
-  },
   "cdi-spec-dirs": ["/etc/cdi/", "/var/run/cdi"]
 }
 ```
 @y
 ```json
 {
-  "features": {
-     "cdi": true
-  },
   "cdi-spec-dirs": ["/etc/cdi/", "/var/run/cdi"]
 }
 ```
 @z
 
 @x
-When CDI is enabled for a daemon, you can view the configured CDI specification
-directories using the `docker info` command.
+You can view the configured CDI specification directories using the `docker info` command.
 @y
-When CDI is enabled for a daemon, you can view the configured CDI specification
-directories using the `docker info` command.
+You can view the configured CDI specification directories using the `docker info` command.
+@z
+
+@x
+#### Disable CDI devices
+@y
+#### Disable CDI devices
+@z
+
+@x
+The feature in enabled by default. To disable it, use the `cdi` options in the `deamon.json` file:
+@y
+The feature in enabled by default. To disable it, use the `cdi` options in the `deamon.json` file:
+@z
+
+@x
+```json
+"features": {
+  "cdi": false
+},
+```
+@y
+```json
+"features": {
+  "cdi": false
+},
+```
+@z
+
+@x
+To check the status of the CDI devices, run `docker info`.
+@y
+To check the status of the CDI devices, run `docker info`.
 @z
 
 @x
@@ -2592,6 +2618,7 @@ The following is a full example of the allowed configuration options on Linux:
 @x
 ```json
 {
+  "allow-direct-routing": false,
   "authorization-plugins": [],
   "bip": "",
   "bip6": "",
@@ -2723,6 +2750,7 @@ The following is a full example of the allowed configuration options on Linux:
 @y
 ```json
 {
+  "allow-direct-routing": false,
   "authorization-plugins": [],
   "bip": "",
   "bip6": "",
@@ -3112,7 +3140,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/daemon/live-restore/).                                |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
@@ -3128,7 +3156,7 @@ The list of currently supported options that can be reconfigured is this:
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `debug`                            | Toggles debug mode of the daemon.                                                                           |
 | `labels`                           | Replaces the daemon labels with a new set of labels.                                                        |
-| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/containers/live-restore/).                            |
+| `live-restore`                     | Toggles [live restore](https://docs.docker.com/engine/daemon/live-restore/).                                |
 | `max-concurrent-downloads`         | Configures the max concurrent downloads for each pull.                                                      |
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |

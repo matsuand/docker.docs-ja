@@ -4,13 +4,13 @@
 @x
 title: Install the Docker Compose standalone
 linkTitle: Standalone
-description: How to install Docker Compose - Other Scenarios
-keywords: compose, orchestration, install, installation, docker, documentation
+description: Instructions for installing the legacy Docker Compose standalone tool on Linux and Windows Server
+keywords: install docker-compose, standalone docker compose, docker-compose windows server, install docker compose linux, legacy compose install
 @y
-title: Docker Compose のスタンドアローンインストール
+title: Install the Docker Compose standalone
 linkTitle: Standalone
-description: Docker Compose のインストール - 別の手法
-keywords: compose, orchestration, install, installation, docker, documentation
+description: Instructions for installing the legacy Docker Compose standalone tool on Linux and Windows Server
+keywords: install docker-compose, standalone docker compose, docker-compose windows server, install docker compose linux, legacy compose install
 @z
 
 @x

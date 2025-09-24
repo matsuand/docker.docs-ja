@@ -101,9 +101,9 @@ Docker 購入者でない場合には、無償の個人アカウントにサイ�
 
 @x
 For teams to receive the shared cache benefit, they must either be on a Docker
-Team or Docker Business plan.
+Team or Docker Business subscription.
 @y
-チームを通じてキャッシュ共有機能を利用するためには、Docker Team、Docker Business の有償チームプランを購入する必要があります。
+チームを通じてキャッシュ共有機能を利用するためには、Docker Team、Docker Business の有償チームサブスクリプションを購入する必要があります。
 @z
 
 @x

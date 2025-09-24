@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 command: docker inspect
 short: Return low-level information on Docker objects
@@ -20,8 +22,51 @@ long: |-
 @z
 
 @x
+usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+@y
+usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]
+@z
+
+% options:
+
+@x format
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@y
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x size
+      description: Display total file sizes if the type is container
+@y
+      description: Display total file sizes if the type is container
+@z
+
+@x type
+      description: Only inspect objects of the given type
+@y
+      description: Only inspect objects of the given type
+@z
+inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
     ### Format the output (--format) {#format}
 @y
+examples: |-
     ### Format the output (--format) {#format}
 @z
 
@@ -75,15 +120,7 @@ long: |-
     The following example inspects a volume named `myvolume`.
 @z
 
-@x
-    ```console
-    $ docker inspect --type=volume myvolume
-    ```
-@y
-    ```console
-    $ docker inspect --type=volume myvolume
-    ```
-@z
+% snip command...
 
 @x
     ### Inspect the size of a container (-s, --size) {#size}
@@ -101,15 +138,7 @@ long: |-
     doesn't have to be running, it also works for stopped containers.
 @z
 
-@x
-    ```console
-    $ docker inspect --size mycontainer
-    ```
-@y
-    ```console
-    $ docker inspect --size mycontainer
-    ```
-@z
+% snip command...
 
 @x
     The output includes the full output of a regular `docker inspect` command, with
@@ -129,131 +158,11 @@ long: |-
       container, compared to it's image, in bytes.
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker run --name database -d redis
-    3b2cbf074c99db4a0cad35966a9e24d7bc277f5565c17233386589029b7db273
-    $ docker inspect --size database -f '{{ .SizeRootFs }}'
-    123125760
-    $ docker inspect --size database -f '{{ .SizeRw }}'
-    8192
-    $ docker exec database fallocate -l 1000 /newfile
-    $ docker inspect --size database -f '{{ .SizeRw }}'
-    12288
-    ```
-usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: size
-      shorthand: s
-      value_type: bool
-      default_value: "false"
-      description: Display total file sizes if the type is container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: type
-      value_type: string
-      description: Return JSON for specified type
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
     ### Get an instance's IP address
 @y
-    ```console
-    $ docker run --name database -d redis
-    3b2cbf074c99db4a0cad35966a9e24d7bc277f5565c17233386589029b7db273
-    $ docker inspect --size database -f '{{ .SizeRootFs }}'
-    123125760
-    $ docker inspect --size database -f '{{ .SizeRw }}'
-    8192
-    $ docker exec database fallocate -l 1000 /newfile
-    $ docker inspect --size database -f '{{ .SizeRw }}'
-    12288
-    ```
-usage: docker inspect [OPTIONS] NAME|ID [NAME|ID...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: size
-      shorthand: s
-      value_type: bool
-      default_value: "false"
-      description: Display total file sizes if the type is container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: type
-      value_type: string
-      description: Return JSON for specified type
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
     ### Get an instance's IP address
 @z
 
@@ -265,15 +174,7 @@ examples: |-
     straightforward manner.
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### Get an instance's MAC address
@@ -281,15 +182,7 @@ examples: |-
     ### Get an instance's MAC address
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{range .NetworkSettings.Networks}}{{.MacAddress}}{{end}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### Get an instance's log path
@@ -297,15 +190,7 @@ examples: |-
     ### Get an instance's log path
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{.LogPath}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{.LogPath}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### Get an instance's image name
@@ -313,15 +198,7 @@ examples: |-
     ### Get an instance's image name
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{.Config.Image}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{.Config.Image}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### List all port bindings
@@ -335,15 +212,7 @@ examples: |-
     You can loop over arrays and maps in the results to produce simple text output:
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### Find a specific port mapping
@@ -367,15 +236,7 @@ examples: |-
     of that. Then, specify the `HostPort` field to get the public address.
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{(index (index .NetworkSettings.Ports "8787/tcp") 0).HostPort}}' $INSTANCE_ID
-    ```
-@y
-    ```console
-    $ docker inspect --format='{{(index (index .NetworkSettings.Ports "8787/tcp") 0).HostPort}}' $INSTANCE_ID
-    ```
-@z
+% snip command...
 
 @x
     ### Get a subsection in JSON format
@@ -393,24 +254,5 @@ examples: |-
     function, `json`, which can be applied to get results in JSON format.
 @z
 
-@x
-    ```console
-    $ docker inspect --format='{{json .Config}}' $INSTANCE_ID
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker inspect --format='{{json .Config}}' $INSTANCE_ID
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

@@ -44,6 +44,20 @@ driver with the best overall performance and stability in the most usual scenari
 @z
 
 @x
+> [!NOTE]
+> This page discusses storage drivers for Docker Engine on Linux. If you're
+> running the Docker daemon with Windows as the host OS, the only supported
+> storage driver is windowsfilter. For more information, see
+> [windowsfilter](windowsfilter-driver.md).
+@y
+> [!NOTE]
+> This page discusses storage drivers for Docker Engine on Linux. If you're
+> running the Docker daemon with Windows as the host OS, the only supported
+> storage driver is windowsfilter. For more information, see
+> [windowsfilter](windowsfilter-driver.md).
+@z
+
+@x
 The Docker Engine provides the following storage drivers on Linux:
 @y
 The Docker Engine provides the following storage drivers on Linux:
@@ -244,21 +258,35 @@ backing filesystems.
 @z
 
 @x
-| Storage driver   | Supported backing filesystems |
-| :--------------- | :---------------------------- |
-| `overlay2`       | `xfs` with ftype=1, `ext4`    |
-| `fuse-overlayfs` | any filesystem                |
-| `btrfs`          | `btrfs`                       |
-| `zfs`            | `zfs`                         |
-| `vfs`            | any filesystem                |
+| Storage driver   | Supported backing filesystems                         |
+| :--------------- | :-----------------------------------------------------|
+| `overlay2`       | `xfs` with ftype=1, `ext4`, `btrfs`, (and more)     |
+| `fuse-overlayfs` | any filesystem                                        |
+| `btrfs`          | `btrfs`                                               |
+| `zfs`            | `zfs`                                                 |
+| `vfs`            | any filesystem                                        |
 @y
-| Storage driver   | Supported backing filesystems |
-| :--------------- | :---------------------------- |
-| `overlay2`       | `xfs` with ftype=1, `ext4`    |
-| `fuse-overlayfs` | any filesystem                |
-| `btrfs`          | `btrfs`                       |
-| `zfs`            | `zfs`                         |
-| `vfs`            | any filesystem                |
+| Storage driver   | Supported backing filesystems                         |
+| :--------------- | :-----------------------------------------------------|
+| `overlay2`       | `xfs` with ftype=1, `ext4`, `btrfs`, (and more)     |
+| `fuse-overlayfs` | any filesystem                                        |
+| `btrfs`          | `btrfs`                                               |
+| `zfs`            | `zfs`                                                 |
+| `vfs`            | any filesystem                                        |
+@z
+
+@x
+> [!NOTE]
+>
+> Most filesystems should work if they have the required features.
+> Consult [OverlayFS](https://www.kernel.org/doc/html/latest/filesystems/overlayfs.html)
+> for more information.
+@y
+> [!NOTE]
+>
+> Most filesystems should work if they have the required features.
+> Consult [OverlayFS](https://www.kernel.org/doc/html/latest/filesystems/overlayfs.html)
+> for more information.
 @z
 
 @x

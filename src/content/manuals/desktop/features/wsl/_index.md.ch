@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -50,11 +51,11 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
-- At a minimum WSL version 1.1.3.0., but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
+- At a minimum WSL version 2.1.5, but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
 - Met the Docker Desktop for Windows' [system requirements](/manuals/desktop/setup/install/windows-install.md#system-requirements).
 - Installed the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 @y
-- At a minimum WSL version 1.1.3.0., but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
+- At a minimum WSL version 2.1.5, but ideally the latest version of WSL to [avoid Docker Desktop not working as expected](best-practices.md).
 - Met the Docker Desktop for Windows' [system requirements](manuals/desktop/setup/install/windows-install.md#system-requirements).
 - Installed the WSL 2 feature on Windows. For detailed instructions, refer to the [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 @z
@@ -94,13 +95,13 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
-1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe).
+1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows).
 2. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
 3. Start Docker Desktop from the **Windows Start** menu.
 4. Navigate to **Settings**.
 5. From the **General** tab, select **Use WSL 2 based engine**..
 @y
-1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe).
+1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows).
 2. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
 3. Start Docker Desktop from the **Windows Start** menu.
 4. Navigate to **Settings**.
@@ -109,10 +110,10 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 
 @x
     If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default.
-6. Select **Apply & Restart**.
+6. Select **Apply**.
 @y
     If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default.
-6. Select **Apply & Restart**.
+6. Select **Apply**.
 @z
 
 @x
@@ -204,9 +205,9 @@ Docker Desktop does not require any particular Linux distributions to be install
 @z
 
 @x
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @y
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @z
 
 @x
@@ -242,9 +243,9 @@ Docker Desktop’s WSL 2 integration operates within the existing security model
 @z
 
 @x
-Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions.
+Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions. 
 @y
-Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions.
+Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions. 
 @z
 
 @x
@@ -254,9 +255,9 @@ WSL is designed to facilitate interoperability between Windows and Linux environ
 @z
 
 @x
-For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
 @y
-For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
 @z
 
 @x
@@ -269,8 +270,10 @@ For organizations concerned about security risks related to WSL and want stricte
 - [Explore best practices](best-practices.md)
 - [Understand how to develop with Docker and WSL 2](use-wsl.md)
 - [Learn about GPU support with WSL 2](/manuals/desktop/features/gpu.md)
+- [Custom kernels on WSL](custom-kernels.md)
 @y
 - [Explore best practices](best-practices.md)
 - [Understand how to develop with Docker and WSL 2](use-wsl.md)
 - [Learn about GPU support with WSL 2](manuals/desktop/features/gpu.md)
+- [Custom kernels on WSL](custom-kernels.md)
 @z

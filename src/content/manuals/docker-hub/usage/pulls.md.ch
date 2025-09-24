@@ -94,10 +94,10 @@ A pull is defined as the following:
 
 @x
 Pulls from authenticated users can be attributed to either a personal or an
-[organization namespace](/manuals/admin/faqs/general-faqs.md#whats-an-organization-name-or-namespace).
+[organization namespace](/manuals/accounts/general-faqs.md#whats-an-organization-name-or-namespace).
 @y
 Pulls from authenticated users can be attributed to either a personal or an
-[organization namespace](manuals/admin/faqs/general-faqs.md#whats-an-organization-name-or-namespace).
+[organization namespace](manuals/accounts/general-faqs.md#whats-an-organization-name-or-namespace).
 @z
 
 @x
@@ -454,12 +454,12 @@ To view your current pull rate and limit:
    If you don't see any `ratelimit` header, it could be because the image or your IP
    is unlimited in partnership with a publisher, provider, or an open source
    organization. It could also mean that the user you are pulling as is part of a
-   paid Docker plan. Pulling that image won't count toward pull rate limits if you
+   paid Docker subscription. Pulling that image won't count toward pull rate limits if you
    don't see these headers.
 @y
    If you don't see any `ratelimit` header, it could be because the image or your IP
    is unlimited in partnership with a publisher, provider, or an open source
    organization. It could also mean that the user you are pulling as is part of a
-   paid Docker plan. Pulling that image won't count toward pull rate limits if you
+   paid Docker subscription. Pulling that image won't count toward pull rate limits if you
    don't see these headers.
 @z

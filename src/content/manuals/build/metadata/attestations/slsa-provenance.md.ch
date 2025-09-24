@@ -103,12 +103,12 @@ For an example on how to add provenance attestations with GitHub Actions, see
 
 @x
 You can use the `mode` parameter to define the level of detail to be included in
-the provenance attestation. Supported values are `mode=min`, and `mode=max`
-(default).
+the provenance attestation. Supported values are `mode=min` (default) and
+`mode=max`.
 @y
 You can use the `mode` parameter to define the level of detail to be included in
-the provenance attestation. Supported values are `mode=min`, and `mode=max`
-(default).
+the provenance attestation. Supported values are `mode=min` (default) and
+`mode=max`.
 @z
 
 @x
@@ -403,7 +403,7 @@ extract the full source code of the Dockerfile used to build the image:
 ```console
 $ docker buildx imagetools inspect <namespace>/<image>:<version> \
     --format '{{ range (index .Provenance.SLSA.metadata "https://mobyproject.org/buildkit@v1#metadata").source.infos }}{{ if eq .filename "Dockerfile" }}{{ .data }}{{ end }}{{ end }}' | base64 -d
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 RUN apt-get update
 ...
 ```
@@ -411,7 +411,7 @@ RUN apt-get update
 ```console
 $ docker buildx imagetools inspect <namespace>/<image>:<version> \
     --format '{{ range (index .Provenance.SLSA.metadata "https://mobyproject.org/buildkit@v1#metadata").source.infos }}{{ if eq .filename "Dockerfile" }}{{ .data }}{{ end }}{{ end }}' | base64 -d
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 RUN apt-get update
 ...
 ```

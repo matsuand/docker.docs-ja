@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
-
 @x
 title: Packet filtering and firewalls
 @y
@@ -140,6 +138,12 @@ additional rules to filter these packets, use the `DOCKER-USER` chain.
 @z
 
 @x
+Rules appended to the `FORWARD` chain will be processed after Docker's rules.
+@y
+Rules appended to the `FORWARD` chain will be processed after Docker's rules.
+@z
+
+@x
 ### Match the original IP and ports for requests
 @y
 ### Match the original IP and ports for requests
@@ -272,6 +276,24 @@ the source and destination. For instance, if the Docker host has addresses
 @z
 
 @x
+You may need to allow responses from servers outside the permitted external address
+ranges. For example, containers may send DNS or HTTP requests to hosts that are
+not allowed to access the container's services. The following rule accepts any
+incoming or outgoing packet belonging to a flow that has already been accepted
+by other rules. It must be placed before `DROP` rules that restrict access from
+external address ranges.
+@y
+You may need to allow responses from servers outside the permitted external address
+ranges. For example, containers may send DNS or HTTP requests to hosts that are
+not allowed to access the container's services. The following rule accepts any
+incoming or outgoing packet belonging to a flow that has already been accepted
+by other rules. It must be placed before `DROP` rules that restrict access from
+external address ranges.
+@z
+
+% snip command...
+
+@x
 `iptables` is complicated. There is a lot more information at [Netfilter.org HOWTO](https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO.html).
 @y
 `iptables` is complicated. There is a lot more information at [Netfilter.org HOWTO](https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO.html).
@@ -305,28 +327,104 @@ arrange for external routing to container addresses ("direct routing").
 
 @x
 To access containers on a bridge network from outside the Docker host,
-you must set up routing to the bridge network via an address on the Docker
-host. This can be achieved using static routes, Border Gateway Protocol
-(BGP), or any other means appropriate for your network.
+you must first set up routing to the bridge network via an address on the
+Docker host. This can be achieved using static routes, Border Gateway Protocol (BGP),
+or any other means appropriate for your network. For example, within
+a local layer 2 network, remote hosts can set up static routes to a container
+network via the Docker daemon host's address on the local network.
 @y
 To access containers on a bridge network from outside the Docker host,
-you must set up routing to the bridge network via an address on the Docker
-host. This can be achieved using static routes, Border Gateway Protocol
-(BGP), or any other means appropriate for your network.
+you must first set up routing to the bridge network via an address on the
+Docker host. This can be achieved using static routes, Border Gateway Protocol (BGP),
+or any other means appropriate for your network. For example, within
+a local layer 2 network, remote hosts can set up static routes to a container
+network via the Docker daemon host's address on the local network.
 @z
 
 @x
-Within a local layer 2 network, remote hosts can set up static routes
-to a container network using the Docker daemon host's address on the local
-network. Those hosts can access containers directly. For remote hosts
-outside the local network, direct access to containers requires router
-configuration to enable the necessary routing.
+#### Direct routing to containers in bridge networks
 @y
-Within a local layer 2 network, remote hosts can set up static routes
-to a container network using the Docker daemon host's address on the local
-network. Those hosts can access containers directly. For remote hosts
-outside the local network, direct access to containers requires router
-configuration to enable the necessary routing.
+#### Direct routing to containers in bridge networks
+@z
+
+@x
+By default, remote hosts are not allowed direct access to container IP
+addresses in Docker's Linux bridge networks. They can only access ports
+published to host IP addresses.
+@y
+By default, remote hosts are not allowed direct access to container IP
+addresses in Docker's Linux bridge networks. They can only access ports
+published to host IP addresses.
+@z
+
+@x
+To allow direct access to any published port, on any container, in any
+Linux bridge network, use daemon option `"allow-direct-routing": true`
+in `/etc/docker/daemon.json` or the equivalent `--allow-direct-routing`.
+@y
+To allow direct access to any published port, on any container, in any
+Linux bridge network, use daemon option `"allow-direct-routing": true`
+in `/etc/docker/daemon.json` or the equivalent `--allow-direct-routing`.
+@z
+
+@x
+To allow direct routing from anywhere to containers in a specific bridge
+network, see [Gateway modes](#gateway-modes).
+@y
+To allow direct routing from anywhere to containers in a specific bridge
+network, see [Gateway modes](#gateway-modes).
+@z
+
+@x
+Or, to allow direct routing via specific host interfaces, to a specific
+bridge network, use the following option when creating the network:
+- `com.docker.network.bridge.trusted_host_interfaces`
+@y
+Or, to allow direct routing via specific host interfaces, to a specific
+bridge network, use the following option when creating the network:
+- `com.docker.network.bridge.trusted_host_interfaces`
+@z
+
+@x
+#### Example
+@y
+#### Example
+@z
+
+@x
+Create a network where published ports on container IP addresses can be
+accessed directly from interfaces `vxlan.1` and `eth3`:
+@y
+Create a network where published ports on container IP addresses can be
+accessed directly from interfaces `vxlan.1` and `eth3`:
+@z
+
+% snip command...
+
+@x
+Run a container in that network, publishing its port 80 to port 8080 on
+the host's loopback interface:
+@y
+Run a container in that network, publishing its port 80 to port 8080 on
+the host's loopback interface:
+@z
+
+% snip command...
+
+@x
+The web server running on the container's port 80 can now be accessed
+from the Docker host at `http://127.0.0.1:8080`, or directly at
+`http://192.0.2.100:80`. If remote hosts on networks connected to
+interfaces `vxlan.1` and `eth3` have a route to the `192.0.2.0/24`
+network inside the Docker host, they can also access the web server
+via `http://192.0.2.100:80`.
+@y
+The web server running on the container's port 80 can now be accessed
+from the Docker host at `http://127.0.0.1:8080`, or directly at
+`http://192.0.2.100:80`. If remote hosts on networks connected to
+interfaces `vxlan.1` and `eth3` have a route to the `192.0.2.0/24`
+network inside the Docker host, they can also access the web server
+via `http://192.0.2.100:80`.
 @z
 
 @x
@@ -497,26 +595,26 @@ Create a container with a published port:
 
 @x
 Then:
-- Only container port 80 will be open, for IPv4 and IPv6. It is accessible
-  from anywhere, if there is routing to the container's address, and access
-  is not blocked by the host's firewall.
+- Only container port 80 will be open, for IPv4 and IPv6.
 - For IPv6, using `routed` mode, port 80 will be open on the container's IP
   address. Port 8080 will not be opened on the host's IP addresses, and
   outgoing packets will use the container's IP address.
 - For IPv4, using the default `nat` mode, the container's port 80 will be
-  accessible via port 8080 on the host's IP addresses, as well as directly.
+  accessible via port 8080 on the host's IP addresses, as well as directly
+  from within the Docker host. But, container port 80 cannot be accessed
+  directly from outside the host.
   Connections originating from the container will masquerade, using the 
   host's IP address.
 @y
 Then:
-- Only container port 80 will be open, for IPv4 and IPv6. It is accessible
-  from anywhere, if there is routing to the container's address, and access
-  is not blocked by the host's firewall.
+- Only container port 80 will be open, for IPv4 and IPv6.
 - For IPv6, using `routed` mode, port 80 will be open on the container's IP
   address. Port 8080 will not be opened on the host's IP addresses, and
   outgoing packets will use the container's IP address.
 - For IPv4, using the default `nat` mode, the container's port 80 will be
-  accessible via port 8080 on the host's IP addresses, as well as directly.
+  accessible via port 8080 on the host's IP addresses, as well as directly
+  from within the Docker host. But, container port 80 cannot be accessed
+  directly from outside the host.
   Connections originating from the container will masquerade, using the 
   host's IP address.
 @z
@@ -702,6 +800,28 @@ packets you want to forward. For example:
 @z
 
 % snip command...
+
+@x
+> [!WARNING]
+>
+> In releases older than 28.0.0, Docker always set the default policy of the
+> IPv6 `FORWARD` chain to `DROP`. In release 28.0.0 and newer, it will only
+> set that policy if it enables IPv6 forwarding itself. This has always been
+> the behaviour for IPv4 forwarding.
+>
+> If IPv6 forwarding is enabled on your host before Docker starts, check your
+> host's configuration to make sure it is still secure.
+@y
+> [!WARNING]
+>
+> In releases older than 28.0.0, Docker always set the default policy of the
+> IPv6 `FORWARD` chain to `DROP`. In release 28.0.0 and newer, it will only
+> set that policy if it enables IPv6 forwarding itself. This has always been
+> the behaviour for IPv4 forwarding.
+>
+> If IPv6 forwarding is enabled on your host before Docker starts, check your
+> host's configuration to make sure it is still secure.
+@z
 
 @x
 ## Prevent Docker from manipulating iptables

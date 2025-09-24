@@ -5,15 +5,15 @@
 % snip 対応
 
 @x
-description: How to use Docker Compose's extends keyword to share configuration between
-  files and projects
-keywords: fig, composition, compose, docker, orchestration, documentation, docs
+description: Learn how to reuse service configurations across files and projects using Docker Compose’s extends attribute.
+keywords: fig, composition, compose, docker, orchestration, documentation, docs, compose file modularization
 title: Extend your Compose file
+linkTitle: Extend
 @y
-description: How to use Docker Compose's extends keyword to share configuration between
-  files and projects
-keywords: fig, composition, compose, docker, orchestration, documentation, docs
+description: Learn how to reuse service configurations across files and projects using Docker Compose’s extends attribute.
+keywords: fig, composition, compose, docker, orchestration, documentation, docs, compose file modularization
 title: Extend your Compose file
+linkTitle: Extend
 @z
 
 @x
@@ -61,9 +61,9 @@ be defined relative to the base file.
 @z
 
 @x
-## How it works
+## How the `extends` attribute works
 @y
-## How it works
+## How the `extends` attribute works
 @z
 
 @x
@@ -109,9 +109,9 @@ values defined directly under `web`.
 @z
 
 @x
-To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (note this is a non-normative example):
+To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (this is for illustrative purposes only):
 @y
-To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (note this is a non-normative example):
+To include the service `webapp` in the final project when extending services from another file, you need to explicitly include both services in your current Compose file. For example (this is for illustrative purposes only):
 @z
 
 % snip code...
@@ -187,40 +187,6 @@ configuration:
 @z
 
 % snip code...
-
-@x
-## Exceptions and limitations
-@y
-## Exceptions and limitations
-@z
-
-@x
-`volumes_from` and `depends_on` are never shared between services using
-`extends`. These exceptions exist to avoid implicit dependencies; you always
-define `volumes_from` locally. This ensures dependencies between services are
-clearly visible when reading the current file. Defining these locally also
-ensures that changes to the referenced file don't break anything.
-@y
-`volumes_from` and `depends_on` are never shared between services using
-`extends`. These exceptions exist to avoid implicit dependencies; you always
-define `volumes_from` locally. This ensures dependencies between services are
-clearly visible when reading the current file. Defining these locally also
-ensures that changes to the referenced file don't break anything.
-@z
-
-@x
-`extends` is useful if you only need a single service to be shared and you are
-familiar with the file you're extending to, so you can tweak the
-configuration. But this isn’t an acceptable solution when you want to re-use
-someone else's unfamiliar configurations and you don’t know about its own
-dependencies.
-@y
-`extends` is useful if you only need a single service to be shared and you are
-familiar with the file you're extending to, so you can tweak the
-configuration. But this isn’t an acceptable solution when you want to re-use
-someone else's unfamiliar configurations and you don’t know about its own
-dependencies.
-@z
 
 @x
 ## Relative paths

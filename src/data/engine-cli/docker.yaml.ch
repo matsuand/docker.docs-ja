@@ -826,6 +826,7 @@ long: |-
     list of root Certificate Authorities.
 cname:
     - docker attach
+    - docker bake
     - docker build
     - docker builder
     - docker checkpoint
@@ -884,6 +885,7 @@ cname:
     - docker wait
 clink:
     - docker_attach.yaml
+    - docker_bake.yaml
     - docker_build.yaml
     - docker_builder.yaml
     - docker_checkpoint.yaml
@@ -1062,6 +1064,7 @@ examples: |-
     list of root Certificate Authorities.
 cname:
     - docker attach
+    - docker bake
     - docker build
     - docker builder
     - docker checkpoint
@@ -1120,6 +1123,7 @@ cname:
     - docker wait
 clink:
     - docker_attach.yaml
+    - docker_bake.yaml
     - docker_build.yaml
     - docker_builder.yaml
     - docker_checkpoint.yaml

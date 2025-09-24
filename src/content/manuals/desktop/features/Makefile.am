@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dev-environments gordon wsl
+SUBDIRS = wsl
 
 bases = \
 	_index.md                    \
@@ -9,7 +9,6 @@ bases = \
 	desktop-cli.md               \
 	gpu.md                       \
 	kubernetes.md                \
-	model-runner.md              \
 	networking.md                \
 	synchronized-file-sharing.md \
 	usbip.md                     \

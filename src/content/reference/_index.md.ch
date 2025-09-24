@@ -113,12 +113,12 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
   - title: DVP Data API
     description: API for Docker Verified Publishers to fetch analytics data.
     icon: area_chart
-    link: /reference/api/hub/dvp/
+    link: /reference/api/dvp/latest/
 @y
   - title: DVP Data API
     description: API for Docker Verified Publishers to fetch analytics data.
     icon: area_chart
-    link: __SUBDIR__/reference/api/hub/dvp/
+    link: __SUBDIR__/reference/api/dvp/latest/
 @z
 
 % snip aliases...

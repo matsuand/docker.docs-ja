@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md        \
+	agentic-ai.md    \
 	ai-ml.md         \
 	angular.md       \
 	cloudflared.md   \

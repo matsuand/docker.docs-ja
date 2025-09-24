@@ -3,7 +3,6 @@
 ##
 bases = \
 	_index.md               \
-	advanced-integration.md \
 	customize.md            \
 	usage.md
 

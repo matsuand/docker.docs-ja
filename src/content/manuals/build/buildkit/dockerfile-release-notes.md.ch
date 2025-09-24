@@ -31,6 +31,196 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @z
 
 @x
+## 1.18.0
+@y
+## 1.18.0
+@z
+
+@x
+{{< release-date date="2025-09-03" >}}
+@y
+{{< release-date date="2025-09-03" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.18.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.18.0).
+@z
+
+% snip code...
+
+@x
+* Add support for Git URLs for remote build contexts and `ADD` command now allows new syntax with added query parameters in `?key=value` format for better control over the Git clone procedure. Supported options in this release are `ref`, `tag`, `branch`, `checksum` (alias `commit`), `subdir`, `keep-git-dir` and `submodules`. [moby/buildkit#6172](https://github.com/moby/buildkit/pull/6172) [moby/buildkit#6173](https://github.com/moby/buildkit/pull/6173) 
+* Add new check rules `ExposeProtoCasing` and `ExposeInvalidFormat` to improve usage of `EXPOSE` commands. [moby/buildkit#6135](https://github.com/moby/buildkit/pull/6135)
+* Fix created time not being set correctly from the base image if named context is used. [moby/buildkit#6096](https://github.com/moby/buildkit/pull/6096)
+@y
+* Add support for Git URLs for remote build contexts and `ADD` command now allows new syntax with added query parameters in `?key=value` format for better control over the Git clone procedure. Supported options in this release are `ref`, `tag`, `branch`, `checksum` (alias `commit`), `subdir`, `keep-git-dir` and `submodules`. [moby/buildkit#6172](https://github.com/moby/buildkit/pull/6172) [moby/buildkit#6173](https://github.com/moby/buildkit/pull/6173) 
+* Add new check rules `ExposeProtoCasing` and `ExposeInvalidFormat` to improve usage of `EXPOSE` commands. [moby/buildkit#6135](https://github.com/moby/buildkit/pull/6135)
+* Fix created time not being set correctly from the base image if named context is used. [moby/buildkit#6096](https://github.com/moby/buildkit/pull/6096)
+@z
+
+@x
+## 1.17.0
+@y
+## 1.17.0
+@z
+
+@x
+{{< release-date date="2025-06-17" >}}
+@y
+{{< release-date date="2025-06-17" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.17.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.17.0).
+@z
+
+% snip code...
+
+@x
+* Add `ADD --unpack=bool` to control whether archives from a URL path are unpacked. The default is to detect unpack behavior based on the source path, as it happened in previous versions. [moby/buildkit#5991](https://github.com/moby/buildkit/pull/5991)
+* Add support for `ADD --chown` when unpacking archive, similar to when copying regular files. [moby/buildkit#5987](https://github.com/moby/buildkit/pull/5987)
+@y
+* Add `ADD --unpack=bool` to control whether archives from a URL path are unpacked. The default is to detect unpack behavior based on the source path, as it happened in previous versions. [moby/buildkit#5991](https://github.com/moby/buildkit/pull/5991)
+* Add support for `ADD --chown` when unpacking archive, similar to when copying regular files. [moby/buildkit#5987](https://github.com/moby/buildkit/pull/5987)
+@z
+
+@x
+## 1.16.0
+@y
+## 1.16.0
+@z
+
+@x
+{{< release-date date="2025-05-22" >}}
+@y
+{{< release-date date="2025-05-22" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.16.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.16.0).
+@z
+
+% snip code...
+
+@x
+* `ADD --checksum` support for Git URL. [moby/buildkit#5975](https://github.com/moby/buildkit/pull/5975)
+* Allow whitespace in heredocs. [moby/buildkit#5817](https://github.com/moby/buildkit/pull/5817)
+* `WORKDIR` now supports `SOURCE_DATE_EPOCH`. [moby/buildkit#5960](https://github.com/moby/buildkit/pull/5960)
+* Leave default PATH environment variable set by the base image for WCOW. [moby/buildkit#5895](https://github.com/moby/buildkit/pull/5895)
+@y
+* `ADD --checksum` support for Git URL. [moby/buildkit#5975](https://github.com/moby/buildkit/pull/5975)
+* Allow whitespace in heredocs. [moby/buildkit#5817](https://github.com/moby/buildkit/pull/5817)
+* `WORKDIR` now supports `SOURCE_DATE_EPOCH`. [moby/buildkit#5960](https://github.com/moby/buildkit/pull/5960)
+* Leave default PATH environment variable set by the base image for WCOW. [moby/buildkit#5895](https://github.com/moby/buildkit/pull/5895)
+@z
+
+@x
+## 1.15.1
+@y
+## 1.15.1
+@z
+
+@x
+{{< release-date date="2025-03-30" >}}
+@y
+{{< release-date date="2025-03-30" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.15.1).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.15.1).
+@z
+
+% snip code...
+
+@x
+* Fix `no scan targets for linux/arm64/v8` when `--attest type=sbom` is used. [moby/buildkit#5941](https://github.com/moby/buildkit/pull/5941)
+@y
+* Fix `no scan targets for linux/arm64/v8` when `--attest type=sbom` is used. [moby/buildkit#5941](https://github.com/moby/buildkit/pull/5941)
+@z
+
+@x
+## 1.15.0
+@y
+## 1.15.0
+@z
+
+@x
+{{< release-date date="2025-04-15" >}}
+@y
+{{< release-date date="2025-04-15" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.15.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.15.0).
+@z
+
+% snip code...
+
+@x
+- Build error for invalid target now shows suggestions for correct possible names. [moby/buildkit#5851](https://github.com/moby/buildkit/pull/5851)
+- Fix SBOM attestation producing error for Windows targets. [moby/buildkit#5837](https://github.com/moby/buildkit/pull/5837)
+- Fix recursive `ARG` producing an infinite loop when processing an outline request. [moby/buildkit#5823](https://github.com/moby/buildkit/pull/5823)
+- Fix parsing syntax directive from JSON that would fail if the JSON had other datatypes than strings. [moby/buildkit#5815](https://github.com/moby/buildkit/pull/5815)
+- Fix platform in image config being in unnormalized form (regression from 1.12). [moby/buildkit#5776](https://github.com/moby/buildkit/pull/5776)
+- Fix copying into destination directory when directory is not present with WCOW. [moby/buildkit#5249](https://github.com/moby/buildkit/pull/5249)
+@y
+- Build error for invalid target now shows suggestions for correct possible names. [moby/buildkit#5851](https://github.com/moby/buildkit/pull/5851)
+- Fix SBOM attestation producing error for Windows targets. [moby/buildkit#5837](https://github.com/moby/buildkit/pull/5837)
+- Fix recursive `ARG` producing an infinite loop when processing an outline request. [moby/buildkit#5823](https://github.com/moby/buildkit/pull/5823)
+- Fix parsing syntax directive from JSON that would fail if the JSON had other datatypes than strings. [moby/buildkit#5815](https://github.com/moby/buildkit/pull/5815)
+- Fix platform in image config being in unnormalized form (regression from 1.12). [moby/buildkit#5776](https://github.com/moby/buildkit/pull/5776)
+- Fix copying into destination directory when directory is not present with WCOW. [moby/buildkit#5249](https://github.com/moby/buildkit/pull/5249)
+@z
+
+@x
+## 1.14.1
+@y
+## 1.14.1
+@z
+
+@x
+{{< release-date date="2025-03-05" >}}
+@y
+{{< release-date date="2025-03-05" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.1).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.1).
+@z
+
+% snip code...
+
+@x
+- Normalize platform in image config. [moby/buildkit#5776](https://github.com/moby/buildkit/pull/5776)
+@y
+- Normalize platform in image config. [moby/buildkit#5776](https://github.com/moby/buildkit/pull/5776)
+@z
+
+@x
 ## 1.14.0
 @y
 ## 1.14.0
@@ -43,10 +233,10 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0).
 @z
 
@@ -81,10 +271,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.14.0-labs).
 @z
 
@@ -109,10 +299,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0).
 @z
 
@@ -153,10 +343,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0-labs).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.13.0-labs).
 @z
 
@@ -181,10 +371,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.12.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.12.0).
 @z
 
@@ -215,10 +405,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.1).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.1).
 @z
 
@@ -249,10 +439,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.11.0).
 @z
 
@@ -327,10 +517,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.10.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.10.0).
 @z
 
@@ -385,10 +575,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.9.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.9.0).
 @z
 
@@ -433,10 +623,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.1).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.1).
 @z
 
@@ -471,10 +661,10 @@ The full release note for this release is available
 @z
 
 @x
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.0).
 @y
-The full release note for this release is available
+The full release notes for this release are available
 [on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.8.0).
 @z
 

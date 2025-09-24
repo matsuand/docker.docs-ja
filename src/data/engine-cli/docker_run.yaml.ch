@@ -7,2116 +7,680 @@ aliases: docker container run, docker run
 short: Create and run a new container from an image
 long: Create and run a new container from an image
 usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: add-host
-      value_type: list
-      description: Add a custom host-to-IP mapping (host:ip)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: annotation
-      value_type: map
-      default_value: map[]
-      description: |
-        Add an annotation to the container (passed through to the OCI runtime)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.43"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: attach
-      shorthand: a
-      value_type: list
-      description: Attach to STDIN, STDOUT or STDERR
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: blkio-weight
-      value_type: uint16
-      default_value: "0"
-      description: |
-        Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: blkio-weight-device
-      value_type: list
-      default_value: '[]'
-      description: Block IO weight (relative device weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-add
-      value_type: list
-      description: Add Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-drop
-      value_type: list
-      description: Drop Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
-      description: Optional parent cgroup for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroupns
-      value_type: string
-      description: |-
-        Cgroup namespace to use (host|private)
-        'host':    Run the container in the Docker host's cgroup namespace
-        'private': Run the container in its own private cgroup namespace
-        '':        Use the cgroup namespace as configured by the
-                   default-cgroupns-mode option on the daemon (default)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cidfile
-      value_type: string
-      description: Write the container ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-count
-      value_type: int64
-      default_value: "0"
-      description: CPU count (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: cpu-percent
-      value_type: int64
-      default_value: "0"
-      description: CPU percent (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-period
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU real-time period in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-runtime
-      value_type: int64
-      default_value: "0"
-      description: Limit CPU real-time runtime in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
-      description: CPU shares (relative weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: decimal
-      description: Number of CPUs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
-      description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
-      description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: Run container in background and print container ID
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device
-      value_type: list
-      description: Add a host device to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-cgroup-rule
-      value_type: list
-      description: Add a rule to the cgroup allowed devices list
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-read-bps
-      value_type: list
-      default_value: '[]'
-      description: Limit read rate (bytes per second) from a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-read-iops
-      value_type: list
-      default_value: '[]'
-      description: Limit read rate (IO per second) from a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-write-bps
-      value_type: list
-      default_value: '[]'
-      description: Limit write rate (bytes per second) to a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-write-iops
-      value_type: list
-      default_value: '[]'
-      description: Limit write rate (IO per second) to a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns
-      value_type: list
-      description: Set custom DNS servers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-opt
-      value_type: list
-      description: Set DNS options
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-option
-      value_type: list
-      description: Set DNS options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-search
-      value_type: list
-      description: Set custom DNS search domains
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: domainname
-      value_type: string
-      description: Container NIS domain name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: entrypoint
-      value_type: string
-      description: Overwrite the default ENTRYPOINT of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: list
-      description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: list
-      description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: expose
-      value_type: list
-      description: Expose a port or a range of ports
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gpus
-      value_type: gpu-request
-      description: GPU devices to add to the container ('all' to pass all GPUs)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: group-add
-      value_type: list
-      description: Add additional groups to join
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-cmd
-      value_type: string
-      description: Command to run to check health
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-interval
-      value_type: duration
-      default_value: 0s
-      description: Time between running the check (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-retries
-      value_type: int
-      default_value: "0"
-      description: Consecutive failures needed to report unhealthy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-start-interval
-      value_type: duration
-      default_value: 0s
-      description: |
-        Time between running the check during the start period (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.44"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-start-period
-      value_type: duration
-      default_value: 0s
-      description: |
-        Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-timeout
-      value_type: duration
-      default_value: 0s
-      description: Maximum time to allow one check to run (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: hostname
-      shorthand: h
-      value_type: string
-      description: Container host name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: init
-      value_type: bool
-      default_value: "false"
-      description: |
-        Run an init inside the container that forwards signals and reaps processes
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
-      description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: io-maxbandwidth
-      value_type: bytes
-      default_value: "0"
-      description: Maximum IO bandwidth limit for the system drive (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: io-maxiops
-      value_type: uint64
-      default_value: "0"
-      description: Maximum IOps limit for the system drive (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: ip
-      value_type: string
-      description: IPv4 address (e.g., 172.30.100.104)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ip6
-      value_type: string
-      description: IPv6 address (e.g., 2001:db8::33)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ipc
-      value_type: string
-      description: IPC mode to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
-      description: Container isolation technology
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: kernel-memory
-      value_type: bytes
-      default_value: "0"
-      description: Kernel memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      shorthand: l
-      value_type: list
-      description: Set meta data on a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-file
-      value_type: list
-      description: Read in a line delimited file of labels
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link
-      value_type: list
-      description: Add link to another container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link-local-ip
-      value_type: list
-      description: Container IPv4/IPv6 link-local addresses
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-driver
-      value_type: string
-      description: Logging driver for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-opt
-      value_type: list
-      description: Log driver options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: mac-address
-      value_type: string
-      description: Container MAC address (e.g., 92:d0:c6:0a:29:33)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
-      description: Memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-reservation
-      value_type: bytes
-      default_value: "0"
-      description: Memory soft limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
-      description: |
-        Swap limit equal to memory plus swap: '-1' to enable unlimited swap
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swappiness
-      value_type: int64
-      default_value: "-1"
-      description: Tune container memory swappiness (0 to 100)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: mount
-      value_type: mount
-      description: Attach a filesystem mount to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
-      description: Assign a name to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: net
-      value_type: network
-      description: Connect a container to a network
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: net-alias
-      value_type: list
-      description: Add network-scoped alias for the container
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: network
-      description: Connect a container to a network
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network-alias
-      value_type: list
-      description: Add network-scoped alias for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-healthcheck
-      value_type: bool
-      default_value: "false"
-      description: Disable any container-specified HEALTHCHECK
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: oom-kill-disable
-      value_type: bool
-      default_value: "false"
-      description: Disable OOM Killer
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: oom-score-adj
-      value_type: int
-      default_value: "0"
-      description: Tune host's OOM preferences (-1000 to 1000)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pid
-      value_type: string
-      description: PID namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pids-limit
-      value_type: int64
-      default_value: "0"
-      description: Tune container pids limit (set -1 for unlimited)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
-      description: Give extended privileges to this container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish
-      shorthand: p
-      value_type: list
-      description: Publish a container's port(s) to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish-all
-      shorthand: P
-      value_type: bool
-      default_value: "false"
-      description: Publish all exposed ports to random ports
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: missing
-      description: Pull image before running (`always`, `missing`, `never`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress the pull output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: read-only
-      value_type: bool
-      default_value: "false"
-      description: Mount the container's root filesystem as read only
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: restart
-      value_type: string
-      default_value: "no"
-      description: Restart policy to apply when a container exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "false"
-      description: |
-        Automatically remove the container and its associated anonymous volumes when it exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: runtime
-      value_type: string
-      description: Runtime to use for this container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: list
-      description: Security Options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
-      description: Size of /dev/shm
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
-      description: Proxy received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-signal
-      value_type: string
-      description: Signal to stop the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-timeout
-      value_type: int
-      default_value: "0"
-      description: Timeout (in seconds) to stop a container
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: storage-opt
-      value_type: list
-      description: Storage driver options for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sysctl
-      value_type: map
-      default_value: map[]
-      description: Sysctl options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tmpfs
-      value_type: list
-      description: Mount a tmpfs directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: userns
-      value_type: string
-      description: User namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: uts
-      value_type: string
-      description: UTS namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume
-      shorthand: v
-      value_type: list
-      description: Bind mount a volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume-driver
-      value_type: string
-      description: Optional volume driver for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volumes-from
-      value_type: list
-      description: Mount volumes from the specified container(s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker run
 aliases: docker container run, docker run
 short: Create and run a new container from an image
 long: Create and run a new container from an image
 usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: add-host
-      value_type: list
+@z
+
+% options:
+
+@x add-host
       description: Add a custom host-to-IP mapping (host:ip)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: annotation
-      value_type: map
-      default_value: map[]
+@y
+      description: Add a custom host-to-IP mapping (host:ip)
+@z
+
+@x annotation
       description: |
         Add an annotation to the container (passed through to the OCI runtime)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.43"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: attach
-      shorthand: a
-      value_type: list
+@y
+      description: |
+        Add an annotation to the container (passed through to the OCI runtime)
+@z
+
+@x attach
       description: Attach to STDIN, STDOUT or STDERR
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: blkio-weight
-      value_type: uint16
-      default_value: "0"
+@y
+      description: Attach to STDIN, STDOUT or STDERR
+@z
+
+@x blkio-weight
       description: |
         Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: blkio-weight-device
-      value_type: list
-      default_value: '[]'
+@y
+      description: |
+        Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+@z
+
+@x blkio-weight-device
       description: Block IO weight (relative device weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-add
-      value_type: list
+@y
+      description: Block IO weight (relative device weight)
+@z
+
+@x cap-add
       description: Add Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cap-drop
-      value_type: list
+@y
+      description: Add Linux capabilities
+@z
+
+@x cap-drop
       description: Drop Linux capabilities
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroup-parent
-      value_type: string
+@y
+      description: Drop Linux capabilities
+@z
+
+@x cgroup-parent
       description: Optional parent cgroup for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cgroupns
-      value_type: string
+@y
+      description: Optional parent cgroup for the container
+@z
+
+@x cgroupns
       description: |-
         Cgroup namespace to use (host|private)
         'host':    Run the container in the Docker host's cgroup namespace
         'private': Run the container in its own private cgroup namespace
         '':        Use the cgroup namespace as configured by the
                    default-cgroupns-mode option on the daemon (default)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.41"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cidfile
-      value_type: string
+@y
+      description: |-
+        Cgroup namespace to use (host|private)
+        'host':    Run the container in the Docker host's cgroup namespace
+        'private': Run the container in its own private cgroup namespace
+        '':        Use the cgroup namespace as configured by the
+                   default-cgroupns-mode option on the daemon (default)
+@z
+
+@x cidfile
       description: Write the container ID to the file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-count
-      value_type: int64
-      default_value: "0"
+@y
+      description: Write the container ID to the file
+@z
+
+@x cpu-count
       description: CPU count (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: cpu-percent
-      value_type: int64
-      default_value: "0"
+@y
+      description: CPU count (Windows only)
+@z
+
+@x cpu-percent
       description: CPU percent (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: cpu-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: CPU percent (Windows only)
+@z
+
+@x cpu-period
       description: Limit CPU CFS (Completely Fair Scheduler) period
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-quota
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU CFS (Completely Fair Scheduler) period
+@z
+
+@x cpu-quota
       description: Limit CPU CFS (Completely Fair Scheduler) quota
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-period
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU CFS (Completely Fair Scheduler) quota
+@z
+
+@x cpu-rt-period
       description: Limit CPU real-time period in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-rt-runtime
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU real-time period in microseconds
+@z
+
+@x cpu-rt-runtime
       description: Limit CPU real-time runtime in microseconds
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpu-shares
-      shorthand: c
-      value_type: int64
-      default_value: "0"
+@y
+      description: Limit CPU real-time runtime in microseconds
+@z
+
+@x cpu-shares
       description: CPU shares (relative weight)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: decimal
+@y
+      description: CPU shares (relative weight)
+@z
+
+@x cpus
       description: Number of CPUs
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-cpus
-      value_type: string
+@y
+      description: Number of CPUs
+@z
+
+@x cpuset-cpus
       description: CPUs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpuset-mems
-      value_type: string
+@y
+      description: CPUs in which to allow execution (0-3, 0,1)
+@z
+
+@x cpuset-mems
       description: MEMs in which to allow execution (0-3, 0,1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+      description: MEMs in which to allow execution (0-3, 0,1)
+@z
+
+@x detach
       description: Run container in background and print container ID
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
+@y
+      description: Run container in background and print container ID
+@z
+
+@x detach-keys
       description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device
-      value_type: list
+@y
+      description: Override the key sequence for detaching a container
+@z
+
+@x device
       description: Add a host device to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-cgroup-rule
-      value_type: list
+@y
+      description: Add a host device to the container
+@z
+
+@x device-cgroup-rule
       description: Add a rule to the cgroup allowed devices list
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-read-bps
-      value_type: list
-      default_value: '[]'
+@y
+      description: Add a rule to the cgroup allowed devices list
+@z
+
+@x device-read-bps
       description: Limit read rate (bytes per second) from a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-read-iops
-      value_type: list
-      default_value: '[]'
+@y
+      description: Limit read rate (bytes per second) from a device
+@z
+
+@x device-read-iops
       description: Limit read rate (IO per second) from a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-write-bps
-      value_type: list
-      default_value: '[]'
+@y
+      description: Limit read rate (IO per second) from a device
+@z
+
+@x device-write-bps
       description: Limit write rate (bytes per second) to a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: device-write-iops
-      value_type: list
-      default_value: '[]'
+@y
+      description: Limit write rate (bytes per second) to a device
+@z
+
+@x device-write-iops
       description: Limit write rate (IO per second) to a device
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
+@y
+      description: Limit write rate (IO per second) to a device
+@z
+
+@x disable-content-trust
       description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns
-      value_type: list
+@y
+      description: Skip image verification
+@z
+
+@x dns
       description: Set custom DNS servers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-opt
-      value_type: list
+@y
+      description: Set custom DNS servers
+@z
+
+@x dns-opt
       description: Set DNS options
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-option
-      value_type: list
+@y
       description: Set DNS options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dns-search
-      value_type: list
+@z
+
+@x dns-option
+      description: Set DNS options
+@y
+      description: Set DNS options
+@z
+
+@x dns-search
       description: Set custom DNS search domains
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: domainname
-      value_type: string
+@y
+      description: Set custom DNS search domains
+@z
+
+@x domainname
       description: Container NIS domain name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: entrypoint
-      value_type: string
+@y
+      description: Container NIS domain name
+@z
+
+@x entrypoint
       description: Overwrite the default ENTRYPOINT of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: list
+@y
+      description: Overwrite the default ENTRYPOINT of the image
+@z
+
+@x env
       description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: list
+@y
+      description: Set environment variables
+@z
+
+@x env-file
       description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: expose
-      value_type: list
+@y
+      description: Read in a file of environment variables
+@z
+
+@x expose
       description: Expose a port or a range of ports
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gpus
-      value_type: gpu-request
+@y
+      description: Expose a port or a range of ports
+@z
+
+@x gpus
       description: GPU devices to add to the container ('all' to pass all GPUs)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.40"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: group-add
-      value_type: list
+@y
+      description: GPU devices to add to the container ('all' to pass all GPUs)
+@z
+
+@x group-add
       description: Add additional groups to join
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-cmd
-      value_type: string
+@y
+      description: Add additional groups to join
+@z
+
+@x health-cmd
       description: Command to run to check health
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-interval
-      value_type: duration
-      default_value: 0s
+@y
+      description: Command to run to check health
+@z
+
+@x health-interval
       description: Time between running the check (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-retries
-      value_type: int
-      default_value: "0"
+@y
+      description: Time between running the check (ms|s|m|h) (default 0s)
+@z
+
+@x health-retries
       description: Consecutive failures needed to report unhealthy
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-start-interval
-      value_type: duration
-      default_value: 0s
+@y
+      description: Consecutive failures needed to report unhealthy
+@z
+
+@x health-start-interval
       description: |
         Time between running the check during the start period (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.44"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-start-period
-      value_type: duration
-      default_value: 0s
+@y
+      description: |
+        Time between running the check during the start period (ms|s|m|h) (default 0s)
+@z
+
+@x health-start-period
       description: |
         Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      min_api_version: "1.29"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: health-timeout
-      value_type: duration
-      default_value: 0s
+@y
+      description: |
+        Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
+@z
+
+@x health-timeout
       description: Maximum time to allow one check to run (ms|s|m|h) (default 0s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Maximum time to allow one check to run (ms|s|m|h) (default 0s)
+@z
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: hostname
-      shorthand: h
-      value_type: string
+@y
+      description: Print usage
+@z
+
+@x hostname
       description: Container host name
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: init
-      value_type: bool
-      default_value: "false"
+@y
+      description: Container host name
+@z
+
+@x init
       description: |
         Run an init inside the container that forwards signals and reaps processes
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Run an init inside the container that forwards signals and reaps processes
+@z
+
+@x interactive
       description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: io-maxbandwidth
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Keep STDIN open even if not attached
+@z
+
+@x io-maxbandwidth
       description: Maximum IO bandwidth limit for the system drive (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: io-maxiops
-      value_type: uint64
-      default_value: "0"
+@y
+      description: Maximum IO bandwidth limit for the system drive (Windows only)
+@z
+
+@x io-maxiops
       description: Maximum IOps limit for the system drive (Windows only)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-      os_type: windows
-    - option: ip
-      value_type: string
+@y
+      description: Maximum IOps limit for the system drive (Windows only)
+@z
+
+@x ip
       description: IPv4 address (e.g., 172.30.100.104)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ip6
-      value_type: string
+@y
+      description: IPv4 address (e.g., 172.30.100.104)
+@z
+
+@x ip6
       description: IPv6 address (e.g., 2001:db8::33)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ipc
-      value_type: string
+@y
+      description: IPv6 address (e.g., 2001:db8::33)
+@z
+
+@x ipc
       description: IPC mode to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: isolation
-      value_type: string
+@y
+      description: IPC mode to use
+@z
+
+@x isolation
       description: Container isolation technology
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: kernel-memory
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Container isolation technology
+@z
+
+@x kernel-memory
       description: Kernel memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label
-      shorthand: l
-      value_type: list
+@y
+      description: Kernel memory limit
+@z
+
+@x label
       description: Set meta data on a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: label-file
-      value_type: list
+@y
+      description: Set meta data on a container
+@z
+
+@x label-file
       description: Read in a line delimited file of labels
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link
-      value_type: list
+@y
+      description: Read in a line delimited file of labels
+@z
+
+@x link
       description: Add link to another container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: link-local-ip
-      value_type: list
+@y
+      description: Add link to another container
+@z
+
+@x link-local-ip
       description: Container IPv4/IPv6 link-local addresses
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-driver
-      value_type: string
+@y
+      description: Container IPv4/IPv6 link-local addresses
+@z
+
+@x log-driver
       description: Logging driver for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-opt
-      value_type: list
+@y
+      description: Logging driver for the container
+@z
+
+@x log-opt
       description: Log driver options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: mac-address
-      value_type: string
+@y
+      description: Log driver options
+@z
+
+@x mac-address
       description: Container MAC address (e.g., 92:d0:c6:0a:29:33)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      shorthand: m
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Container MAC address (e.g., 92:d0:c6:0a:29:33)
+@z
+
+@x memory
       description: Memory limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-reservation
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Memory limit
+@z
+
+@x memory-reservation
       description: Memory soft limit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swap
-      value_type: bytes
-      default_value: "0"
+@y
+      description: Memory soft limit
+@z
+
+@x memory-swap
       description: |
         Swap limit equal to memory plus swap: '-1' to enable unlimited swap
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory-swappiness
-      value_type: int64
-      default_value: "-1"
+@y
+      description: |
+        Swap limit equal to memory plus swap: '-1' to enable unlimited swap
+@z
+
+@x memory-swappiness
       description: Tune container memory swappiness (0 to 100)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: mount
-      value_type: mount
+@y
+      description: Tune container memory swappiness (0 to 100)
+@z
+
+@x mount
       description: Attach a filesystem mount to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
+@y
+      description: Attach a filesystem mount to the container
+@z
+
+@x name
       description: Assign a name to the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: net
-      value_type: network
+@y
+      description: Assign a name to the container
+@z
+
+@x net
       description: Connect a container to a network
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: net-alias
-      value_type: list
-      description: Add network-scoped alias for the container
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network
-      value_type: network
+@y
       description: Connect a container to a network
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: network-alias
-      value_type: list
+@z
+
+@x net-alias
       description: Add network-scoped alias for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-healthcheck
-      value_type: bool
-      default_value: "false"
+@y
+      description: Add network-scoped alias for the container
+@z
+
+@x network
+      description: Connect a container to a network
+@y
+      description: Connect a container to a network
+@z
+
+@x network-alias
+      description: Add network-scoped alias for the container
+@y
+      description: Add network-scoped alias for the container
+@z
+
+@x no-healthcheck
       description: Disable any container-specified HEALTHCHECK
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: oom-kill-disable
-      value_type: bool
-      default_value: "false"
+@y
+      description: Disable any container-specified HEALTHCHECK
+@z
+
+@x oom-kill-disable
       description: Disable OOM Killer
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: oom-score-adj
-      value_type: int
-      default_value: "0"
+@y
+      description: Disable OOM Killer
+@z
+
+@x oom-score-adj
       description: Tune host's OOM preferences (-1000 to 1000)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pid
-      value_type: string
+@y
+      description: Tune host's OOM preferences (-1000 to 1000)
+@z
+
+@x pid
       description: PID namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pids-limit
-      value_type: int64
-      default_value: "0"
+@y
+      description: PID namespace to use
+@z
+
+@x pids-limit
       description: Tune container pids limit (set -1 for unlimited)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Tune container pids limit (set -1 for unlimited)
+@z
+
+@x platform
       description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set platform if server is multi-platform capable
+@z
+
+@x privileged
       description: Give extended privileges to this container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish
-      shorthand: p
-      value_type: list
+@y
+      description: Give extended privileges to this container
+@z
+
+@x publish
       description: Publish a container's port(s) to the host
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: publish-all
-      shorthand: P
-      value_type: bool
-      default_value: "false"
+@y
+      description: Publish a container's port(s) to the host
+@z
+
+@x publish-all
       description: Publish all exposed ports to random ports
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pull
-      value_type: string
-      default_value: missing
+@y
+      description: Publish all exposed ports to random ports
+@z
+
+@x pull
       description: Pull image before running (`always`, `missing`, `never`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Pull image before running (`always`, `missing`, `never`)
+@z
+
+@x quiet
       description: Suppress the pull output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: read-only
-      value_type: bool
-      default_value: "false"
+@y
+      description: Suppress the pull output
+@z
+
+@x read-only
       description: Mount the container's root filesystem as read only
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: restart
-      value_type: string
-      default_value: "no"
+@y
+      description: Mount the container's root filesystem as read only
+@z
+
+@x restart
       description: Restart policy to apply when a container exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: rm
-      value_type: bool
-      default_value: "false"
+@y
+      description: Restart policy to apply when a container exits
+@z
+
+@x rm
       description: |
         Automatically remove the container and its associated anonymous volumes when it exits
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: runtime
-      value_type: string
-      description: Runtime to use for this container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: security-opt
-      value_type: list
-      description: Security Options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: shm-size
-      value_type: bytes
-      default_value: "0"
-      description: Size of /dev/shm
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sig-proxy
-      value_type: bool
-      default_value: "true"
-      description: Proxy received signals to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-signal
-      value_type: string
-      description: Signal to stop the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: stop-timeout
-      value_type: int
-      default_value: "0"
-      description: Timeout (in seconds) to stop a container
-      deprecated: false
-      hidden: false
-      min_api_version: "1.25"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: storage-opt
-      value_type: list
-      description: Storage driver options for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sysctl
-      value_type: map
-      default_value: map[]
-      description: Sysctl options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tmpfs
-      value_type: list
-      description: Mount a tmpfs directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ulimit
-      value_type: ulimit
-      default_value: '[]'
-      description: Ulimit options
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: userns
-      value_type: string
-      description: User namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: uts
-      value_type: string
-      description: UTS namespace to use
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume
-      shorthand: v
-      value_type: list
-      description: Bind mount a volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volume-driver
-      value_type: string
-      description: Optional volume driver for the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: volumes-from
-      value_type: list
-      description: Mount volumes from the specified container(s)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Automatically remove the container and its associated anonymous volumes when it exits
 @z
+
+@x runtime
+      description: Runtime to use for this container
+@y
+      description: Runtime to use for this container
+@z
+
+@x security-opt
+      description: Security Options
+@y
+      description: Security Options
+@z
+
+@x shm-size
+      description: Size of /dev/shm
+@y
+      description: Size of /dev/shm
+@z
+
+@x sig-proxy
+      description: Proxy received signals to the process
+@y
+      description: Proxy received signals to the process
+@z
+
+@x stop-signal
+      description: Signal to stop the container
+@y
+      description: Signal to stop the container
+@z
+
+@x stop-timeout
+      description: Timeout (in seconds) to stop a container
+@y
+      description: Timeout (in seconds) to stop a container
+@z
+
+@x storage-opt
+      description: Storage driver options for the container
+@y
+      description: Storage driver options for the container
+@z
+
+@x sysctl
+      description: Sysctl options
+@y
+      description: Sysctl options
+@z
+
+@x tmpfs
+      description: Mount a tmpfs directory
+@y
+      description: Mount a tmpfs directory
+@z
+
+@x tty
+      description: Allocate a pseudo-TTY
+@y
+      description: Allocate a pseudo-TTY
+@z
+
+@x ulimit
+      description: Ulimit options
+@y
+      description: Ulimit options
+@z
+
+@x use-api-socket
+      description: Bind mount Docker API socket and required auth
+@y
+      description: Bind mount Docker API socket and required auth
+@z
+
+@x user
+      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
+@y
+      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
+@z
+
+@x userns
+      description: User namespace to use
+@y
+      description: User namespace to use
+@z
+
+@x uts
+      description: UTS namespace to use
+@y
+      description: UTS namespace to use
+@z
+
+@x volume
+      description: Bind mount a volume
+@y
+      description: Bind mount a volume
+@z
+
+@x volume-driver
+      description: Optional volume driver for the container
+@y
+      description: Optional volume driver for the container
+@z
+
+@x volumes-from
+      description: Mount volumes from the specified container(s)
+@y
+      description: Mount volumes from the specified container(s)
+@z
+
+@x workdir
+      description: Working directory inside the container
+@y
+      description: Working directory inside the container
+@z
+
+% snip directives...

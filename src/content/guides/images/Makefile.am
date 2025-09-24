@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 copyfiles = \
+	agentic-ai-app.png                \
+	agentic-ai-diagram.webp           \
 	databases-1.webp                  \
 	databases-2.webp                  \
 	databases-3.webp                  \

@@ -7,10 +7,12 @@
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, feedback
 title: Settings and feedback for Docker Extensions
+linkTitle: Settings and feedback
 @y
 description: Extensions
 keywords: Docker Extensions, Docker Desktop, Linux, Mac, Windows, feedback
 title: Settings and feedback for Docker Extensions
+linkTitle: Settings and feedback
 @z
 
 @x
@@ -35,12 +37,12 @@ Docker Extensions is switched on by default. To change your settings:
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Enable Docker Extensions**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @y
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Enable Docker Extensions**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @z
 
 @x
@@ -51,7 +53,7 @@ Docker Extensions is switched on by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings-store.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](/manuals/security/for-admins/hardened-desktop/_index.md)
+> This can also be done with [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
 @y
 > [!NOTE]
 >
@@ -60,7 +62,7 @@ Docker Extensions is switched on by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings-store.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](manuals/security/for-admins/hardened-desktop/_index.md)
+> This can also be done with [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md)
 @z
 
 @x
@@ -79,12 +81,12 @@ You can install extensions through the Marketplace or through the Extensions SDK
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Allow only extensions distributed through the Docker Marketplace**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @y
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Allow only extensions distributed through the Docker Marketplace**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @z
 
 @x
@@ -105,12 +107,12 @@ update your settings:
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Show Docker Extensions system containers**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @y
 1. Navigate to **Settings**.
 2. Select the **Extensions** tab.
 3. Next to **Show Docker Extensions system containers**, select or clear the checkbox to set your desired state.
-4. In the bottom-right corner, select **Apply & Restart**.
+4. In the bottom-right corner, select **Apply**.
 @z
 
 @x

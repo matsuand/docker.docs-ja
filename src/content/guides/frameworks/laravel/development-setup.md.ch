@@ -287,12 +287,12 @@ A workspace container provides a dedicated shell for asset compilation, Artisan/
 ```dockerfile
 # docker/development/workspace/Dockerfile
 # Use the official PHP CLI image as the base
-FROM php:8.3-cli
+FROM php:8.4-cli
 @y
 ```dockerfile
 # docker/development/workspace/Dockerfile
 # Use the official PHP CLI image as the base
-FROM php:8.3-cli
+FROM php:8.4-cli
 @z
 
 @x

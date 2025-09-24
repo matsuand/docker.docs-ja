@@ -1,26 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Functions
-weight: 60
-description: Learn about built-in and user-defined HCL functions with Bake
-keywords: build, buildx, bake, buildkit, hcl, functions, user-defined, built-in, custom, gocty
-aliases:
-  - /build/customize/bake/hcl-funcs/
-  - /build/bake/hcl-funcs/
----
 @y
----
 title: Functions
-weight: 60
+@z
+
+@x
 description: Learn about built-in and user-defined HCL functions with Bake
 keywords: build, buildx, bake, buildkit, hcl, functions, user-defined, built-in, custom, gocty
-aliases:
-  - /build/customize/bake/hcl-funcs/
-  - /build/bake/hcl-funcs/
----
+@y
+description: Learn about built-in and user-defined HCL functions with Bake
+keywords: build, buildx, bake, buildkit, hcl, functions, user-defined, built-in, custom, gocty
 @z
 
 @x
@@ -38,11 +32,15 @@ configuration in more complex ways than just concatenation or interpolation.
 @z
 
 @x
-Bake ships with built-in support for the [`go-cty` standard library functions](https://github.com/zclconf/go-cty/tree/main/cty/function/stdlib).
-The following example shows the `add` function.
+Bake ships with built-in support for the [standard library functions](/manuals/build/bake/stdlib.md).
 @y
-Bake ships with built-in support for the [`go-cty` standard library functions](https://github.com/zclconf/go-cty/tree/main/cty/function/stdlib).
-The following example shows the `add` function.
+Bake ships with built-in support for the [standard library functions](manuals/build/bake/stdlib.md).
+@z
+
+@x
+The following example shows the `add` function:
+@y
+The following example shows the `add` function:
 @z
 
 @x

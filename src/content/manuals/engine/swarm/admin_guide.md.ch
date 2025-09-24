@@ -372,12 +372,12 @@ worker nodes that do not meet these requirements cannot run these tasks.
 @x
 You can monitor the health of manager nodes by querying the docker `nodes` API
 in JSON format through the `/nodes` HTTP endpoint. Refer to the
-[nodes API documentation](/reference/api/engine/v1.25/#tag/Node)
+[nodes API documentation](/reference/api/engine/version/v1.25/#tag/Node)
 for more information.
 @y
 You can monitor the health of manager nodes by querying the docker `nodes` API
 in JSON format through the `/nodes` HTTP endpoint. Refer to the
-[nodes API documentation](__SUBDIR__/reference/api/engine/v1.25/#tag/Node)
+[nodes API documentation](__SUBDIR__/reference/api/engine/version/v1.25/#tag/Node)
 for more information.
 @z
 
@@ -534,10 +534,10 @@ passing the `--force` flag. For instance, if `node9` becomes compromised:
 @z
 
 @x
-```none
+```console
 $ docker node rm node9
 @y
-```none
+```console
 $ docker node rm node9
 @z
 
@@ -830,11 +830,11 @@ an error occurs:
 @z
 
 @x
-```none
+```text
 Error response from daemon: rpc error: code = 4 desc = context deadline exceeded
 ```
 @y
-```none
+```text
 Error response from daemon: rpc error: code = 4 desc = context deadline exceeded
 ```
 @z

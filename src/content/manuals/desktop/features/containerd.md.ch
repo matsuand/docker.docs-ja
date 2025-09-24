@@ -144,11 +144,11 @@ To manually enable this feature in Docker Desktop:
 @x
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @y
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
-3. Select **Apply & Restart**.
+3. Select **Apply**.
 @z
 
 @x

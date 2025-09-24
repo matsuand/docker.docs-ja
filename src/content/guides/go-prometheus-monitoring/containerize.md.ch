@@ -113,10 +113,8 @@ RUN go build -o /app .
 
 @x
 # Final lightweight stage
-FROM alpine:3.17 AS final
 @y
 # Final lightweight stage
-FROM alpine:3.17 AS final
 @z
 
 @x
@@ -176,9 +174,9 @@ The Dockerfile consists of two stages:
 @z
 
 @x
-    You use the `alpine:3.17` image as the base image for the final stage. You copy the compiled binary from the build stage to the final image. You expose the application's port using the `EXPOSE` instruction and run the application using the `CMD` instruction.
+    You use the `alpine:3.21` image as the base image for the final stage. You copy the compiled binary from the build stage to the final image. You expose the application's port using the `EXPOSE` instruction and run the application using the `CMD` instruction.
 @y
-    You use the `alpine:3.17` image as the base image for the final stage. You copy the compiled binary from the build stage to the final image. You expose the application's port using the `EXPOSE` instruction and run the application using the `CMD` instruction.
+    You use the `alpine:3.21` image as the base image for the final stage. You copy the compiled binary from the build stage to the final image. You expose the application's port using the `EXPOSE` instruction and run the application using the `CMD` instruction.
 @z
 
 @x

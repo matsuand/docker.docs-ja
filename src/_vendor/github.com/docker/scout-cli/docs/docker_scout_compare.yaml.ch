@@ -115,10 +115,10 @@ plink: docker_scout.yaml
 
 @x exit-on
       description: |
-        Comma separated list of conditions to fail the action step if worse, options are: vulnerability, policy
+        Comma separated list of conditions to fail the action step if worse or changed, options are: vulnerability, policy, package
 @y
       description: |
-        Comma separated list of conditions to fail the action step if worse, options are: vulnerability, policy
+        Comma separated list of conditions to fail the action step if worse or changed, options are: vulnerability, policy, package
 @z
 
 @x format

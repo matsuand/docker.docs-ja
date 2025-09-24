@@ -4,12 +4,12 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Key benefits and use cases of Docker Compose
-keywords: documentation, docs, docker, compose, orchestration, containers, uses,  benefits
+description: Discover the benefits and typical use cases of Docker Compose for containerized application development and deployment
+keywords: docker compose, compose use cases, compose benefits, container orchestration, development environments, testing containers, yaml file
 title: Why use Compose?
 @y
-description: Key benefits and use cases of Docker Compose
-keywords: documentation, docs, docker, compose, orchestration, containers, uses,  benefits
+description: Discover the benefits and typical use cases of Docker Compose for containerized application development and deployment
+keywords: docker compose, compose use cases, compose benefits, container orchestration, development environments, testing containers, yaml file
 title: Why use Compose?
 @z
 
@@ -26,15 +26,15 @@ Using Docker Compose offers several benefits that streamline the development, de
 @z
 
 @x
-- Simplified control: Docker Compose allows you to define and manage multi-container applications in a single YAML file. This simplifies the complex task of orchestrating and coordinating various services, making it easier to manage and replicate your application environment.
+- Simplified control: Define and manage multi-container apps in one YAML file, streamlining orchestration and replication.
 @y
-- Simplified control: Docker Compose allows you to define and manage multi-container applications in a single YAML file. This simplifies the complex task of orchestrating and coordinating various services, making it easier to manage and replicate your application environment.
+- Simplified control: Define and manage multi-container apps in one YAML file, streamlining orchestration and replication.
 @z
 
 @x
-- Efficient collaboration: Docker Compose configuration files are easy to share, facilitating collaboration among developers, operations teams, and other stakeholders. This collaborative approach leads to smoother workflows, faster issue resolution, and increased overall efficiency.
+- Efficient collaboration: Shareable YAML files support smooth collaboration between developers and operations, improving workflows and issue resolution, leading to increased overall efficiency.
 @y
-- Efficient collaboration: Docker Compose configuration files are easy to share, facilitating collaboration among developers, operations teams, and other stakeholders. This collaborative approach leads to smoother workflows, faster issue resolution, and increased overall efficiency.
+- Efficient collaboration: Shareable YAML files support smooth collaboration between developers and operations, improving workflows and issue resolution, leading to increased overall efficiency.
 @z
 
 @x
@@ -47,12 +47,6 @@ Using Docker Compose offers several benefits that streamline the development, de
 - Portability across environments: Compose supports variables in the Compose file. You can use these variables to customize your composition for different environments, or different users.
 @y
 - Portability across environments: Compose supports variables in the Compose file. You can use these variables to customize your composition for different environments, or different users.
-@z
-
-@x
-- Extensive community and support: Docker Compose benefits from a vibrant and active community, which means abundant resources, tutorials, and support. This community-driven ecosystem contributes to the continuous improvement of Docker Compose and helps users troubleshoot issues effectively.
-@y
-- Extensive community and support: Docker Compose benefits from a vibrant and active community, which means abundant resources, tutorials, and support. This community-driven ecosystem contributes to the continuous improvement of Docker Compose and helps users troubleshoot issues effectively.
 @z
 
 @x
@@ -172,9 +166,9 @@ For details on using production-oriented features, see
 @x
 - [Learn about the history of Compose](history.md)
 - [Understand how Compose works](compose-application-model.md)
-- [Quickstart](../gettingstarted.md)
+- [Try the Quickstart guide](../gettingstarted.md)
 @y
 - [Learn about the history of Compose](history.md)
-- [Understand how Compose works](manuals/compose/intro/compose-application-model.md)
-- [Quickstart](../gettingstarted.md)
+- [Understand how Compose works](compose-application-model.md)
+- [Try the Quickstart guide](../gettingstarted.md)
 @z

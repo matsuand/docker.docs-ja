@@ -14,25 +14,33 @@ keywords: docker hub, hub, organization, convert account, migrate account
 @z
 
 @x
-You can convert an existing user account to an organization. This is useful if you need multiple users to access your account and the repositories that it’s connected to. Converting it to an organization gives you better control over permissions for these users through [teams](manage-a-team.md) and [roles](roles-and-permissions.md).
+{{< summary-bar feature_name="Admin orgs" >}}
 @y
-You can convert an existing user account to an organization. This is useful if you need multiple users to access your account and the repositories that it’s connected to. Converting it to an organization gives you better control over permissions for these users through [teams](manage-a-team.md) and [roles](roles-and-permissions.md).
+{{< summary-bar feature_name="Admin orgs" >}}
 @z
 
 @x
-When you convert a user account to an organization, the account is migrated to a Docker Team plan.
+Learn how to convert an existing user account into an organization. This is
+useful if you need multiple users to access your account and the repositories
+it’s connected to. Converting it to an organization gives you better control
+over permissions for these users through
+[teams](/manuals/admin/organization/manage-a-team.md) and
+[roles](/manuals/enterprise/security/roles-and-permissions.md).
 @y
-When you convert a user account to an organization, the account is migrated to a Docker Team plan.
+Learn how to convert an existing user account into an organization. This is
+useful if you need multiple users to access your account and the repositories
+it’s connected to. Converting it to an organization gives you better control
+over permissions for these users through
+[teams](manuals/admin/organization/manage-a-team.md) and
+[roles](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
 @x
-> [!IMPORTANT]
->
-> Once you convert your account to an organization, you can’t revert it to a user account. 
+When you convert a user account to an organization, the account is migrated to
+a Docker Team subscription by default.
 @y
-> [!IMPORTANT]
->
-> Once you convert your account to an organization, you can’t revert it to a user account. 
+When you convert a user account to an organization, the account is migrated to
+a Docker Team subscription by default.
 @z
 
 @x
@@ -56,13 +64,13 @@ Before you convert a user account to an organization, ensure that you meet the f
 @x
     To do this:
     1. Navigate to **My Hub** and then select the organization you need to leave.
-    2. Find your username in the **Members** tab.
-    3. Select the **More options** menu and then select **Leave organization**.
+    1. Find your username in the **Members** tab.
+    1. Select the **More options** menu and then select **Leave organization**.
 @y
     To do this:
     1. Navigate to **My Hub** and then select the organization you need to leave.
-    2. Find your username in the **Members** tab.
-    3. Select the **More options** menu and then select **Leave organization**.
+    1. Find your username in the **Members** tab.
+    1. Select the **More options** menu and then select **Leave organization**.
 @z
 
 @x
@@ -84,65 +92,53 @@ Before you convert a user account to an organization, ensure that you meet the f
 @z
 
 @x
-## Effects of converting an account into an organization
+## What happens when you convert your account
 @y
-## Effects of converting an account into an organization
+## What happens when you convert your account
 @z
 
 @x
-Consider the following effects of converting your account:
+The following happens when you convert your account into
+an organization:
 @y
-Consider the following effects of converting your account:
+The following happens when you convert your account into
+an organization:
 @z
 
 @x
-- This process removes the email address for the account, and organization owners will receive notification emails instead. You'll be able to reuse the removed email address for another account after converting.
+- This process removes the email address for the account. Notifications are
+instead sent to organization owners. You'll be able to reuse the
+removed email address for another account after converting.
+- The current subscription will automatically cancel and your new subscription
+will start.
+- Repository namespaces and names won't change, but converting your account
+removes any repository collaborators. Once you convert the account, you'll need
+to add repository collaborators as team members.
+- Existing automated builds appear as if they were set up by the first owner
+added to the organization.
+- The user account that you add as the first owner will have full
+administrative access to configure and manage the organization.
+- To transfer a user's personal access tokens (PATs) to your converted
+organization, you must designate the user as an organization owner. This will
+ensure any PATs associated with the user's account are transferred to the
+organization owner.
 @y
-- This process removes the email address for the account, and organization owners will receive notification emails instead. You'll be able to reuse the removed email address for another account after converting.
-@z
-
-@x
-- The current plan will cancel and your new subscription will start.
-@y
-- The current plan will cancel and your new subscription will start.
-@z
-
-@x
-- Repository namespaces and names won't change, but converting your account removes any repository collaborators. Once you convert the account, you'll need to add those users as team members.
-@y
-- Repository namespaces and names won't change, but converting your account removes any repository collaborators. Once you convert the account, you'll need to add those users as team members.
-@z
-
-@x
-- Existing automated builds will appear as if they were set up by the first owner added to the organization. See [Convert an account into an organization](#convert-an-account-into-an-organization) for steps on adding the first owner.
-@y
-- Existing automated builds will appear as if they were set up by the first owner added to the organization. See [Convert an account into an organization](#convert-an-account-into-an-organization) for steps on adding the first owner.
-@z
-
-@x
-- The user account that you add as the first owner will have full administrative access to configure and manage the organization.
-@y
-- The user account that you add as the first owner will have full administrative access to configure and manage the organization.
-@z
-
-@x
-- To transfer a user's personal access tokens (PATs) to your converted organization,
-you must designate the user as an organization owner. This will ensure any PATs associated with the user's account are transferred to the organization owner.
-@y
-- To transfer a user's personal access tokens (PATs) to your converted organization,
-you must designate the user as an organization owner. This will ensure any PATs associated with the user's account are transferred to the organization owner.
-@z
-
-@x
-> [!TIP]
->
-> To avoid potentially disrupting service of personal access tokens when converting an account or changing ownership, it is recommended to use [organization access tokens](/manuals/security/for-admins/access-tokens.md). Organization access tokens are
-associated with an organization, not a single user account.
-@y
-> [!TIP]
->
-> To avoid potentially disrupting service of personal access tokens when converting an account or changing ow Organization access tokens are
-associated with an organization, not a single user account.
+- This process removes the email address for the account. Notifications are
+instead sent to organization owners. You'll be able to reuse the
+removed email address for another account after converting.
+- The current subscription will automatically cancel and your new subscription
+will start.
+- Repository namespaces and names won't change, but converting your account
+removes any repository collaborators. Once you convert the account, you'll need
+to add repository collaborators as team members.
+- Existing automated builds appear as if they were set up by the first owner
+added to the organization.
+- The user account that you add as the first owner will have full
+administrative access to configure and manage the organization.
+- To transfer a user's personal access tokens (PATs) to your converted
+organization, you must designate the user as an organization owner. This will
+ensure any PATs associated with the user's account are transferred to the
+organization owner.
 @z
 
 @x
@@ -152,49 +148,39 @@ associated with an organization, not a single user account.
 @z
 
 @x
-1. Ensure you have removed your user account from any company or teams or organizations. Also make sure that you have a new Docker ID before you convert an account. See the [Prerequisites](#prerequisites) section for details.
+> [!IMPORTANT]
+>
+> Converting an account into an organization is permanent. Back up any data
+ or settings you want to retain.
 @y
-1. Ensure you have removed your user account from any company or teams or organizations. Also make sure that you have a new Docker ID before you convert an account. See the [Prerequisites](#prerequisites) section for details.
+> [!IMPORTANT]
+>
+> Converting an account into an organization is permanent. Back up any data
+ or settings you want to retain.
 @z
 
 @x
-2. Sign in to [Docker Home](https://app.docker.com/login).
+1. Sign in to [Docker Home](https://app.docker.com/).
+1. Select your avatar in the top-right corner to open the drop-down.
+1. From **Account settings**, select **Convert**.
+1. Review the warning displayed about converting a user account. This action
+cannot be undone and has considerable implications for your assets and the
+account.
+1. Enter a **Username of new owner** to set an organization owner. The new
+Docker ID you specify becomes the organization’s owner. You cannot use the
+same Docker ID as the account you are trying to convert.
+1. Select **Confirm**. The new owner receives a notification email. Use that
+owner account to sign in and manage the new organization.
 @y
-2. Sign in to [Docker Home](https://app.docker.com/login).
-@z
-
-@x
-3. In Docker Home, select your avatar in the top-right corner to open the drop-down.
-@y
-3. In Docker Home, select your avatar in the top-right corner to open the drop-down.
-@z
-
-@x
-4. Select **Account settings**.
-@y
-4. Select **Account settings**.
-@z
-
-@x
-5. Select **Convert**.
-@y
-5. Select **Convert**.
-@z
-
-@x
-6. Review the warning displayed about converting a user account. This action cannot be undone and has considerable implications for your assets and the account.
-@y
-6. Review the warning displayed about converting a user account. This action cannot be undone and has considerable implications for your assets and the account.
-@z
-
-@x
-7. Enter a **Username of new owner** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
-@y
-7. Enter a **Username of new owner** to set an organization owner. This is the user account that will manage the organization, and the only way to access the organization settings after conversion. You cannot use the same Docker ID as the account you are trying to convert.
-@z
-
-@x
-8. Select **Confirm**. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
-@y
-8. Select **Confirm**. The new owner receives a notification email. Use that owner account to sign in and manage the new organization.
+1. Sign in to [Docker Home](https://app.docker.com/).
+1. Select your avatar in the top-right corner to open the drop-down.
+1. From **Account settings**, select **Convert**.
+1. Review the warning displayed about converting a user account. This action
+cannot be undone and has considerable implications for your assets and the
+account.
+1. Enter a **Username of new owner** to set an organization owner. The new
+Docker ID you specify becomes the organization’s owner. You cannot use the
+same Docker ID as the account you are trying to convert.
+1. Select **Confirm**. The new owner receives a notification email. Use that
+owner account to sign in and manage the new organization.
 @z

@@ -193,14 +193,12 @@ guidance on modern equivalents.
 
 @x
 Dev Environments was a feature introduced in Docker Desktop that allowed
-developers to spin up development environments quickly. This feature is no
-longer under active development. Similar workflows can be achieved through
+developers to spin up development environments quickly. It was deprecated and removed from Docker Desktop version 4.42 and later. Similar workflows can be achieved through
 Docker Compose or by creating custom configurations tailored to specific
 project requirements.
 @y
 Dev Environments was a feature introduced in Docker Desktop that allowed
-developers to spin up development environments quickly. This feature is no
-longer under active development. Similar workflows can be achieved through
+developers to spin up development environments quickly. It was deprecated and removed from Docker Desktop version 4.42 and later. Similar workflows can be achieved through
 Docker Compose or by creating custom configurations tailored to specific
 project requirements.
 @z

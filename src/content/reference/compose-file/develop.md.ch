@@ -100,12 +100,6 @@ services:
 @z
 
 @x
-<!-- vale Docker.HeadingSentenceCase = NO ) -->
-@y
-<!-- vale Docker.HeadingSentenceCase = NO ) -->
-@z
-
-@x
 The `develop` subsection defines configuration options that are applied by Compose to assist you during development of a service with optimized workflows.
 @y
 The `develop` subsection defines configuration options that are applied by Compose to assist you during development of a service with optimized workflows.
@@ -220,11 +214,11 @@ services:
 @z
 
 @x
-The `ignore` attribute can be used to define a list of patterns for paths to be ignored. Any updated file
+The `ignore` attribute is used to define a list of patterns for paths to be ignored. Any updated file
 that matches a pattern, or belongs to a folder that matches a pattern, won't trigger services to be re-created. 
 The syntax is the same as `.dockerignore` file: 
 @y
-The `ignore` attribute can be used to define a list of patterns for paths to be ignored. Any updated file
+The `ignore` attribute is used to define a list of patterns for paths to be ignored. Any updated file
 that matches a pattern, or belongs to a folder that matches a pattern, won't trigger services to be re-created. 
 The syntax is the same as `.dockerignore` file: 
 @z

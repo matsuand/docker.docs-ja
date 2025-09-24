@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -37,10 +38,10 @@ Docker Build supports two forms of secrets:
 
 @x
 This page shows how to use secrets with GitHub Actions.
-For an introduction to secrets in general, see [Build secrets](../../building/secrets.md).
+For an introduction to secrets in general, see [Build secrets](/manuals/build/building/secrets.md).
 @y
 This page shows how to use secrets with GitHub Actions.
-For an introduction to secrets in general, see [Build secrets](../../building/secrets.md).
+For an introduction to secrets in general, see [Build secrets](manuals/build/building/secrets.md).
 @z
 
 @x

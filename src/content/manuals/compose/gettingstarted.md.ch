@@ -5,14 +5,14 @@
 % snip 対応
 
 @x
-description: Check out this tutorial on how to use Docker Compose from defining application
+description: Follow this hands-on tutorial to learn how to use Docker Compose from defining application
   dependencies to experimenting with commands.
 keywords: docker compose example, docker compose tutorial, how to use docker compose,
   running docker compose, how to run docker compose, docker compose build image, docker
   compose command example, run docker compose file, how to create a docker compose
   file, run a docker compose file
 @y
-description: Check out this tutorial on how to use Docker Compose from defining application
+description: Follow this hands-on tutorial to learn how to use Docker Compose from defining application
   dependencies to experimenting with commands.
 keywords: docker compose example, docker compose tutorial, how to use docker compose,
   running docker compose, how to run docker compose, docker compose build image, docker
@@ -22,8 +22,10 @@ keywords: docker compose example, docker compose tutorial, how to use docker com
 
 @x
 title: Docker Compose Quickstart
+linkTitle: Quickstart
 @y
 title: Docker Compose クィックスタート
+linkTitle: Quickstart
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 /  .md リンクへの (no slash) 対応
 
 @x
 title: Organization administration overview
@@ -12,11 +12,11 @@ linkTitle: Organization administration
 @z
 
 @x
-description: Learn about managing organizations in Docker including how they relate to teams, how to onboard, and more
-keywords: organizations, admin, overview
+description: Learn how to manage your Docker organization, including teams, members, permissions, and settings.
+keywords: organizations, admin, overview, manage teams, roles
 @y
-description: Learn about managing organizations in Docker including how they relate to teams, how to onboard, and more
-keywords: organizations, admin, overview
+description: Learn how to manage your Docker organization, including teams, members, permissions, and settings.
+keywords: organizations, admin, overview, manage teams, roles
 @z
 
 % grid:
@@ -97,54 +97,98 @@ keywords: organizations, admin, overview
 - title: SSO and SCIM
   description: 'Set up [Single Sign-On](/security/for-admins/single-sign-on/)
     and [SCIM](/security/for-admins/provisioning/scim/) for your organization.
+
+    '
+  icon: key
 @y
 - title: SSO and SCIM
   description: 'Set up [Single Sign-On](__SUBDIR__/security/for-admins/single-sign-on/)
     and [SCIM](__SUBDIR__/security/for-admins/provisioning/scim/) for your organization.
+
+    '
+  icon: key
 @z
 
 @x
-    '
-  icon: key
 - title: Domain management
   description: Add, verify, and audit your domains.
-  link: /admin/organization/security-settings/domains/
+  link: /security/for-admins/domain-management/
   icon: domain_verification
 - title: FAQs
   description: Explore common organization FAQs.
   link: /faq/admin/organization-faqs/
   icon: help
----
 @y
-    '
-  icon: key
 - title: Domain management
   description: Add, verify, and audit your domains.
-  link: __SUBDIR__/admin/organization/security-settings/domains/
+  link: __SUBDIR__/security/for-admins/domain-management/
   icon: domain_verification
 - title: FAQs
   description: Explore common organization FAQs.
   link: __SUBDIR__/faq/admin/organization-faqs/
   icon: help
----
 @z
 
 @x
-{{% include "admin-org-overview.md" %}}
+A Docker organization is a collection of teams and repositories with centralized
+management. It helps administrators group members and assign access in a
+streamlined, scalable way.
 @y
-{{% include "admin-org-overview.md" %}}
+A Docker organization is a collection of teams and repositories with centralized
+management. It helps administrators group members and assign access in a
+streamlined, scalable way.
 @z
 
 @x
-To create an organization, see [Create your organization](../organization/orgs.md).
+## Organization structure
 @y
-To create an organization, see [Create your organization](../organization/orgs.md).
+## Organization structure
 @z
 
 @x
-Learn how to administer an organization in the following sections.
+The following diagram shows how organizations relate to teams and members.
 @y
-Learn how to administer an organization in the following sections.
+The following diagram shows how organizations relate to teams and members.
+@z
+
+@x
+![Diagram showing how teams and members relate within a Docker organization](/admin/images/org-structure.webp)
+@y
+![Diagram showing how teams and members relate within a Docker organization](admin/images/org-structure.webp)
+@z
+
+@x
+## Organization members
+@y
+## Organization members
+@z
+
+@x
+Organization owners have full administrator access to manage members, roles,
+and teams across the organization.
+@y
+Organization owners have full administrator access to manage members, roles,
+and teams across the organization.
+@z
+
+@x
+An organization includes members and optional teams. Teams help group members
+and simplify permission management.
+@y
+An organization includes members and optional teams. Teams help group members
+and simplify permission management.
+@z
+
+@x
+## Create and manage your organization
+@y
+## Create and manage your organization
+@z
+
+@x
+Learn how to create and manage your organization in the following sections.
+@y
+Learn how to create and manage your organization in the following sections.
 @z
 
 @x

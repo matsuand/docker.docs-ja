@@ -3,14 +3,22 @@
 
 @x
 command: docker buildx history inspect
-short: Inspect a build
-long: Inspect a build
+short: Inspect a build record
+long: |-
+    Inspect a build record to view metadata such as duration, status, build inputs,
+    platforms, outputs, and attached artifacts. You can also use flags to extract
+    provenance, SBOMs, or other detailed information.
 usage: docker buildx history inspect [OPTIONS] [REF]
 @y
+command: docker buildx history inspect
+short: Inspect a build record
+long: |-
+    Inspect a build record to view metadata such as duration, status, build inputs,
+    platforms, outputs, and attached artifacts. You can also use flags to extract
+    provenance, SBOMs, or other detailed information.
+usage: docker buildx history inspect [OPTIONS] [REF]
 @z
 
-% cname:
-% clink:
 % options:
 
 @x format
@@ -20,6 +28,7 @@ usage: docker buildx history inspect [OPTIONS] [REF]
 @z
 
 % inherited_options:
+
 @x builder
       description: Override the configured builder instance
 @y
@@ -34,10 +43,29 @@ usage: docker buildx history inspect [OPTIONS] [REF]
 
 @x
 examples: |-
-    ### Format the output (--format) {#format}
+    ### Inspect the most recent build
 @y
 examples: |-
-    ### Format the output (--format) {#format}
+    ### Inspect the most recent build
+@z
+
+% snip command...
+
+@x
+    ### Inspect a specific build
+@y
+    ### Inspect a specific build
+@z
+
+@x within code
+    # Using a build ID
+@y
+    # Using a build ID
+@z
+@x
+    # Or using a relative offset
+@y
+    # Or using a relative offset
 @z
 
 @x

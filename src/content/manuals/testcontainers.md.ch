@@ -1,26 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
+
 @x
 title: Testcontainers
-description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
-keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
-  docker compose, docker-compose, java, golang, go
 @y
 title: Testcontainers
-description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
-keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
-  docker compose, docker-compose, java, golang, go
 @z
 
 @x
-params:
-  sidebar:
-    group: Open source
+description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
+keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
+  docker compose, docker-compose, java, golang, go
 @y
-params:
-  sidebar:
-    group: Open source
+description: Learn how to use Testcontainers to run containers programmatically in your preferred programming language.
+keywords: docker APIs, docker, testcontainers documentation, testcontainers, testcontainers oss, testcontainers oss documentation,
+  docker compose, docker-compose, java, golang, go
 @z
 
 % intro:
@@ -39,12 +35,12 @@ params:
 
 @x
 - title: The Testcontainers workflow
-  description: Understand the Testcontainers workflow 
+  description: Understand the Testcontainers workflow
   icon: explore
   link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @y
 - title: The Testcontainers workflow
-  description: Understand the Testcontainers workflow 
+  description: Understand the Testcontainers workflow
   icon: explore
   link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @z
@@ -54,24 +50,24 @@ params:
 @x
 - title: Testcontainers for Go
   description: A Go package that makes it simple to create and clean up container-based dependencies for automated integration/smoke tests.
-  icon: /assets/icons/go.svg
+  icon: /icons/go.svg
   link: https://golang.testcontainers.org/quickstart/
 @y
 - title: Testcontainers for Go
   description: A Go package that makes it simple to create and clean up container-based dependencies for automated integration/smoke tests.
-  icon: /assets/icons/go.svg
+  icon: icons/go.svg
   link: https://golang.testcontainers.org/quickstart/
 @z
 
 @x
 - title: Testcontainers for Java
   description: A Java library that supports JUnit tests, providing lightweight, throwaway instances of anything that can run in a Docker container.
-  icon: /assets/icons/java.svg
+  icon: /icons/java.svg
   link: https://java.testcontainers.org/
 @y
 - title: Testcontainers for Java
   description: A Java library that supports JUnit tests, providing lightweight, throwaway instances of anything that can run in a Docker container.
-  icon: /assets/icons/java.svg
+  icon: icons/java.svg
   link: https://java.testcontainers.org/
 @z
 
@@ -128,12 +124,12 @@ The rest are community-driven and maintained by independent contributors.
 @z
 
 @x
-Testcontainers requires a Docker-API compatible container runtime. 
-During development, Testcontainers is actively tested against recent versions of Docker on Linux, as well as against Docker Desktop on Mac and Windows. 
+Testcontainers requires a Docker-API compatible container runtime.
+During development, Testcontainers is actively tested against recent versions of Docker on Linux, as well as against Docker Desktop on Mac and Windows.
 These Docker environments are automatically detected and used by Testcontainers without any additional configuration being necessary.
 @y
-Testcontainers requires a Docker-API compatible container runtime. 
-During development, Testcontainers is actively tested against recent versions of Docker on Linux, as well as against Docker Desktop on Mac and Windows. 
+Testcontainers requires a Docker-API compatible container runtime.
+During development, Testcontainers is actively tested against recent versions of Docker on Linux, as well as against Docker Desktop on Mac and Windows.
 These Docker environments are automatically detected and used by Testcontainers without any additional configuration being necessary.
 @z
 

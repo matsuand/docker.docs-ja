@@ -245,12 +245,12 @@ For example, to create an Ubuntu base image:
 
 @x
 ```dockerfile
-$ sudo debootstrap focal focal > /dev/null
-$ sudo tar -C focal -c . | docker import - focal
+$ sudo debootstrap noble noble > /dev/null
+$ sudo tar -C noble -c . | docker import - noble
 @y
 ```dockerfile
-$ sudo debootstrap focal focal > /dev/null
-$ sudo tar -C focal -c . | docker import - focal
+$ sudo debootstrap noble noble > /dev/null
+$ sudo tar -C noble -c . | docker import - noble
 @z
 
 @x
@@ -260,22 +260,22 @@ sha256:81ec9a55a92a5618161f68ae691d092bf14d700129093158297b3d01593f4ee3
 @z
 
 @x
-$ docker run focal cat /etc/lsb-release
+$ docker run noble cat /etc/lsb-release
 @y
-$ docker run focal cat /etc/lsb-release
+$ docker run noble cat /etc/lsb-release
 @z
 
 @x
 DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=20.04
-DISTRIB_CODENAME=focal
-DISTRIB_DESCRIPTION="Ubuntu 20.04 LTS"
+DISTRIB_RELEASE=24.04
+DISTRIB_CODENAME=noble
+DISTRIB_DESCRIPTION="Ubuntu 24.04.2 LTS"
 ```
 @y
 DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=20.04
-DISTRIB_CODENAME=focal
-DISTRIB_DESCRIPTION="Ubuntu 20.04 LTS"
+DISTRIB_RELEASE=24.04
+DISTRIB_CODENAME=noble
+DISTRIB_DESCRIPTION="Ubuntu 24.04.2 LTS"
 ```
 @z
 

@@ -11,7 +11,7 @@ linkTitle: Common topics
 @y
 description: Explore common troubleshooting topics for Docker Desktop
 keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop
-title: Docker Desktop のトラブルシューティング
+title: Troubleshoot topics for Docker Desktop
 linkTitle: Common topics
 @z
 
@@ -411,6 +411,54 @@ Ensure your username is short enough to keep paths within the allowed limit:
 ## Topics for Mac
 @y
 ## Topics for Mac
+@z
+
+@x
+### Upgrade requires administrator privileges
+@y
+### Upgrade requires administrator privileges
+@z
+
+@x
+#### Cause 
+@y
+#### Cause 
+@z
+
+@x
+On macOS, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
+@y
+On macOS, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
+@z
+
+@x
+#### Solution
+@y
+#### Solution
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Do not uninstall the current version before upgrading. Doing so deletes all local Docker containers, images, and volumes.
+@y
+> [!IMPORTANT]
+>
+> Do not uninstall the current version before upgrading. Doing so deletes all local Docker containers, images, and volumes.
+@z
+
+@x
+To upgrade Docker Desktop:
+@y
+To upgrade Docker Desktop:
+@z
+
+@x
+- Ask an administrator to install the newer version over the existing one.
+- Use the []`--user` install flag](/manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
+@y
+- Ask an administrator to install the newer version over the existing one.
+- Use the []`--user` install flag](manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
 @z
 
 @x
@@ -922,9 +970,25 @@ Portability of the scripts is not affected as Linux treats multiple `/` as a sin
 @z
 
 @x
-### Docker Desktop fails due to Virtualization settings
+### Docker Desktop fails due to Virtualization not working
 @y
-### Docker Desktop fails due to Virtualization settings
+### Docker Desktop fails due to Virtualization not working
+@z
+
+@x
+#### Error message
+@y
+#### Error message
+@z
+
+@x
+A typical error message is "Docker Desktop - Unexpected WSL error" mentioning the error code
+`Wsl/Service/RegisterDistro/CreateVm/HCS/HCS_E_HYPERV_NOT_INSTALLED`. Manually executing `wsl` commands
+also fails with the same error code.
+@y
+A typical error message is "Docker Desktop - Unexpected WSL error" mentioning the error code
+`Wsl/Service/RegisterDistro/CreateVm/HCS/HCS_E_HYPERV_NOT_INSTALLED`. Manually executing `wsl` commands
+also fails with the same error code.
 @z
 
 @x
@@ -939,6 +1003,12 @@ Portability of the scripts is not affected as Linux treats multiple `/` as a sin
 @y
 - Virtualization settings are disabled in the BIOS.
 - Windows Hyper-V or WSL 2 components are missing.
+@z
+
+@x
+Note some third-party software such as Android emulators will disable Hyper-V on install.
+@y
+Note some third-party software such as Android emulators will disable Hyper-V on install.
 @z
 
 @x
@@ -977,6 +1047,42 @@ Your machine must have the following features for Docker Desktop to function cor
 ![WSL 2 enabled](../../images/wsl2-enabled.png)
 @y
 ![WSL 2 enabled](../../images/wsl2-enabled.png)
+@z
+
+@x
+It must be possible to run WSL 2 commands without error, for example:
+@y
+It must be possible to run WSL 2 commands without error, for example:
+@z
+
+@x
+```console
+PS C:\users\> wsl -l -v
+  NAME              STATE           VERSION
+* Ubuntu            Running         2
+  docker-desktop    Stopped         2
+PS C:\users\> wsl -d docker-desktop echo WSL 2 is working
+WSL 2 is working
+```
+@y
+```console
+PS C:\users\> wsl -l -v
+  NAME              STATE           VERSION
+* Ubuntu            Running         2
+  docker-desktop    Stopped         2
+PS C:\users\> wsl -d docker-desktop echo WSL 2 is working
+WSL 2 is working
+```
+@z
+
+@x
+If the features are enabled but the commands are not working, first check [Virtualization is turned on](#virtualization-must-be-turned-on)
+then [enable the Hypervisor at Windows startup](#hypervisor-enabled-at-windows-startup) if required. If running Docker
+Desktop in a Virtual Machine, ensure [the hypervisor has nested virtualization enabled](#turn-on-nested-virtualization).
+@y
+If the features are enabled but the commands are not working, first check [Virtualization is turned on](#virtualization-must-be-turned-on)
+then [enable the Hypervisor at Windows startup](#hypervisor-enabled-at-windows-startup) if required. If running Docker
+Desktop in a Virtual Machine, ensure [the hypervisor has nested virtualization enabled](#turn-on-nested-virtualization).
 @z
 
 @x
@@ -1135,6 +1241,94 @@ The Virtual Machine Management Service failed to start the virtual machine 'Dock
 Try [enabling nested virtualization](/manuals/desktop/setup/vm-vdi.md#turn-on-nested-virtualization).
 @y
 Try [enabling nested virtualization](manuals/desktop/setup/vm-vdi.md#turn-on-nested-virtualization).
+@z
+
+@x
+### Docker Desktop with Windows Containers fails with "The media is write protected""
+@y
+### Docker Desktop with Windows Containers fails with "The media is write protected""
+@z
+
+@x
+#### Error message
+@y
+#### Error message
+@z
+
+@x
+`FSCTL_EXTEND_VOLUME \\?\Volume{GUID}: The media is write protected`
+@y
+`FSCTL_EXTEND_VOLUME \\?\Volume{GUID}: The media is write protected`
+@z
+
+@x
+#### Cause
+@y
+#### Cause
+@z
+
+@x
+If you're encountering failures when running Docker Desktop with Windows Containers, it might be due to
+a specific Windows configuration policy: FDVDenyWriteAccess.
+@y
+If you're encountering failures when running Docker Desktop with Windows Containers, it might be due to
+a specific Windows configuration policy: FDVDenyWriteAccess.
+@z
+
+@x
+This policy, when enabled, causes Windows to mount all fixed drives not encrypted by BitLocker-encrypted as read-only.
+This also affects virtual machine volumes and as a result, Docker Desktop may not be able to start or run containers
+correctly because it requires read-write access to these volumes.
+@y
+This policy, when enabled, causes Windows to mount all fixed drives not encrypted by BitLocker-encrypted as read-only.
+This also affects virtual machine volumes and as a result, Docker Desktop may not be able to start or run containers
+correctly because it requires read-write access to these volumes.
+@z
+
+@x
+FDVDenyWriteAccess is a Windows Group Policy setting that, when enabled, prevents write access to fixed data drives that are not protected
+by BitLocker. This is often used in security-conscious environments but can interfere with development tools like Docker.
+In the Windows registry it can be found at `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FVE\FDVDenyWriteAccess`.
+@y
+FDVDenyWriteAccess is a Windows Group Policy setting that, when enabled, prevents write access to fixed data drives that are not protected
+by BitLocker. This is often used in security-conscious environments but can interfere with development tools like Docker.
+In the Windows registry it can be found at `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Policies\Microsoft\FVE\FDVDenyWriteAccess`.
+@z
+
+@x
+#### Solutions
+@y
+#### Solutions
+@z
+
+@x
+Docker Desktop does not support running Windows Containers on systems where FDVDenyWriteAccess is enabled. This setting interferes with the
+ability of Docker to mount volumes correctly, which is critical for container functionality.
+@y
+Docker Desktop does not support running Windows Containers on systems where FDVDenyWriteAccess is enabled. This setting interferes with the
+ability of Docker to mount volumes correctly, which is critical for container functionality.
+@z
+
+@x
+To use Docker Desktop with Windows Containers, ensure that FDVDenyWriteAccess is disabled. You can check and change this setting in the registry or through Group Policy Editor (`gpedit.msc`) under:
+@y
+To use Docker Desktop with Windows Containers, ensure that FDVDenyWriteAccess is disabled. You can check and change this setting in the registry or through Group Policy Editor (`gpedit.msc`) under:
+@z
+
+@x
+**Computer Configuration** > **Administrative Templates** > **Windows Components** > **BitLocker Drive Encryption** > **Fixed Data Drives** > **Deny write access to fixed drives not protected by BitLocker**
+@y
+**Computer Configuration** > **Administrative Templates** > **Windows Components** > **BitLocker Drive Encryption** > **Fixed Data Drives** > **Deny write access to fixed drives not protected by BitLocker**
+@z
+
+@x
+> [!NOTE]
+>
+> Modifying Group Policy settings may require administrator privileges and should comply with your organization's IT policies. If the setting gets reset after some time this usually means that it was overridden by the centralized configuration of your IT department. Talk to them before making any changes.
+@y
+> [!NOTE]
+>
+> Modifying Group Policy settings may require administrator privileges and should comply with your organization's IT policies. If the setting gets reset after some time this usually means that it was overridden by the centralized configuration of your IT department. Talk to them before making any changes.
 @z
 
 @x

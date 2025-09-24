@@ -4,13 +4,23 @@
 @x
 command: docker buildx history ls
 short: List build records
-long: List build records
-usage: docker buildx history ls
+long: |-
+    List completed builds recorded by the active builder. Each entry includes the
+    build ID, name, status, timestamp, and duration.
+
+    By default, only records for the current builder are shown. You can filter
+    results using flags.
+usage: docker buildx history ls [OPTIONS]
 @y
 command: docker buildx history ls
 short: List build records
-long: List build records
-usage: docker buildx history ls
+long: |-
+    List completed builds recorded by the active builder. Each entry includes the
+    build ID, name, status, timestamp, and duration.
+
+    By default, only records for the current builder are shown. You can filter
+    results using flags.
+usage: docker buildx history ls [OPTIONS]
 @z
 
 % options:

@@ -4,12 +4,14 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Configs top-level elements
-description: Explore all the attributes the configs top-level element can have.
+linkTitle: Configs 
+title: Configs top-level element
+description: Manage and share configuration data using the configs element in Docker Compose.
 keywords: compose, compose specification, configs, compose file reference
 @y
-title: Configs top-level elements
-description: Explore all the attributes the configs top-level element can have.
+linkTitle: Configs 
+title: Configs top-level element
+description: Manage and share configuration data using the configs element in Docker Compose.
 keywords: compose, compose specification, configs, compose file reference
 @z
 

@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = enterprise-deployment images linux
+SUBDIRS = images linux
 
 bases = \
 	_index.md                          \

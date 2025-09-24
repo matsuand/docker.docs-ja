@@ -157,14 +157,14 @@ If you choose the integrated terminal, you can run commands in a running contain
     > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
-  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
+  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon  in Docker Desktop version 4.43 and earlier), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
 @y
 - {{< badge color=blue text="Mac only" >}} **Choose Virtual Machine Manager (VMM)**. Choose the Virtual Machine Manager for creating and managing the Docker Desktop Linux VM.
   - Select **Docker VMM** for the latest and most performant Hypervisor/Virtual Machine Manager. This option is available only on Apple Silicon Macs running macOS 12.5 or later and is currently in Beta.
     > [!TIP]
     >
     > Turn this setting on to make Docker Desktop run faster.
-  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
+  - Alternatively, you can choose **Apple Virtualization framework**, **QEMU** (for Apple Silicon  in Docker Desktop version 4.43 and earlier), or **HyperKit** (for Intel Macs). For macOS 12.5 and later, Apple Virtualization framework is the default setting.
 @z
 
 @x
@@ -204,12 +204,12 @@ If you choose the integrated terminal, you can run commands in a running contain
 @z
 
 @x
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md).
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md).
     > [!NOTE]
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
 @y
-- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md).
+- **Use Enhanced Container Isolation**. Select to enhance security by preventing containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md).
     > [!NOTE]
     >
     > This setting is only available if you are signed in to Docker Desktop and have a Docker Business subscription.
@@ -478,10 +478,10 @@ File share settings are:
 @z
 
 @x
-- **Apply & Restart** makes the directory available to containers using Docker's
+- **Apply** makes the directory available to containers using Docker's
   bind mount (`-v`) feature.
 @y
-- **Apply & Restart** makes the directory available to containers using Docker's
+- **Apply** makes the directory available to containers using Docker's
   bind mount (`-v`) feature.
 @z
 
@@ -618,7 +618,7 @@ and automatically uses these settings for signing in to Docker, for pulling and 
 container Internet access. If the proxy requires authorization then Docker Desktop dynamically asks
 the developer for a username and password. All passwords are stored securely in the OS credential store.
 Note that only the `Basic` proxy authentication method is supported so we recommend using an `https://`
-URL for your HTTP/HTTPS proxies to protect passwords while in transit on the network. Docker Desktop
+URL of your HTTP/HTTPS proxies to protect passwords while in transit on the network. Docker Desktop
 supports TLS 1.3 when communicating with proxies.
 @y
 If the host uses a HTTP/HTTPS proxy configuration (static or via Proxy Auto-Configuration (PAC)), Docker Desktop reads
@@ -627,7 +627,7 @@ and automatically uses these settings for signing in to Docker, for pulling and 
 container Internet access. If the proxy requires authorization then Docker Desktop dynamically asks
 the developer for a username and password. All passwords are stored securely in the OS credential store.
 Note that only the `Basic` proxy authentication method is supported so we recommend using an `https://`
-URL for your HTTP/HTTPS proxies to protect passwords while in transit on the network. Docker Desktop
+URL of your HTTP/HTTPS proxies to protect passwords while in transit on the network. Docker Desktop
 supports TLS 1.3 when communicating with proxies.
 @z
 
@@ -641,10 +641,10 @@ upstream proxy URL of the form `http://proxy:port` or `https://proxy:port`.
 
 @x
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x
@@ -656,11 +656,11 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 @x
 > [!NOTE]
 >
-> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
+> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly. For more details on PAC files and Docker Desktop, see [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files)
 @y
 > [!NOTE]
 >
-> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly.
+> If you are using a PAC file hosted on a web server, make sure to add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` file extension on the server or website. Without this configuration, the PAC file may not be parsed correctly. For more details on PAC files and Docker Desktop, see [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files)
 @z
 
 @x
@@ -670,7 +670,7 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 > settings via the Docker CLI configuration file (`config.json`).
 >
 > To manage proxy configurations for Docker Desktop, configure the settings in
-> the Docker Desktop app or use [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+> the Docker Desktop app or use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
 @y
 > [!IMPORTANT]
 > You cannot configure the proxy settings using the Docker daemon configuration
@@ -678,7 +678,7 @@ The HTTPS proxy settings used for scanning images are set using the `HTTPS_PROXY
 > settings via the Docker CLI configuration file (`config.json`).
 >
 > To manage proxy configurations for Docker Desktop, configure the settings in
-> the Docker Desktop app or use [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+> the Docker Desktop app or use [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
 @z
 
 @x
@@ -700,9 +700,9 @@ If your proxy uses Basic authentication, Docker Desktop prompts developers for a
 @z
 
 @x
-It's recommended that you use an `https://` URL for HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
+It's recommended that you use an `https://` URL of HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
 @y
-It's recommended that you use an `https://` URL for HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
+It's recommended that you use an `https://` URL of HTTP/HTTPS proxies to protect passwords during network transit. Docker Desktop also supports TLS 1.3 for communication with proxies.
 @z
 
 @x
@@ -779,6 +779,12 @@ To enable Kerberos or NTLM proxy authentication you must pass the `--proxy-enabl
 Docker Desktop uses a private IPv4 network for internal services such as a DNS server and an HTTP proxy. In case Docker Desktop's choice of subnet clashes with IPs in your environment, you can specify a custom subnet using the **Network** setting.
 @y
 Docker Desktop uses a private IPv4 network for internal services such as a DNS server and an HTTP proxy. In case Docker Desktop's choice of subnet clashes with IPs in your environment, you can specify a custom subnet using the **Network** setting.
+@z
+
+@x
+On Windows and Mac, you can also set the default networking mode and DNS resolution behavior. For more information, see [Networking](/manuals/desktop/features/networking.md#networking-mode-and-dns-behaviour-for-mac-and-windows).
+@y
+On Windows and Mac, you can also set the default networking mode and DNS resolution behavior. For more information, see [Networking](manuals/desktop/features/networking.md#networking-mode-and-dns-behaviour-for-mac-and-windows).
 @z
 
 @x
@@ -888,9 +894,9 @@ To see the full list of possible configuration options, see the
 @z
 
 @x
-Select **Apply & Restart** to save your settings and restart Docker Desktop.
+Select **Apply** to save your settings.
 @y
-Select **Apply & Restart** to save your settings and restart Docker Desktop.
+Select **Apply** to save your settings.
 @z
 
 @x
@@ -1132,55 +1138,45 @@ see [Deploy on Kubernetes](manuals/desktop/features/kubernetes.md).
 @z
 
 @x
-## Software Updates
+## Software updates
 @y
-## Software Updates
+## Software updates
 @z
 
 @x
-The **Software Updates** tab notifies you of any updates available to Docker Desktop.
+The **Software updates** tab lets you manage your Docker Desktop updates. 
 When there's a new update, you can choose to download the update right away, or
 select the **Release Notes** option to learn what's included in the updated version.
 @y
-The **Software Updates** tab notifies you of any updates available to Docker Desktop.
+The **Software updates** tab lets you manage your Docker Desktop updates. 
 When there's a new update, you can choose to download the update right away, or
 select the **Release Notes** option to learn what's included in the updated version.
 @z
 
 @x
-Turn off the check for updates by clearing the **Automatically check for updates**
-check box. This disables notifications in the Docker menu and the notification
-badge that appears on the Docker Desktop Dashboard. To check for updates manually, select
-the **Check for updates** option in the Docker menu.
+The **Automatically check for updates** setting notifies you of any updates available to Docker Desktop in the Docker menu and the footer of the Docker Desktop Dashboard. This is turned on by default. 
 @y
-Turn off the check for updates by clearing the **Automatically check for updates**
-check box. This disables notifications in the Docker menu and the notification
-badge that appears on the Docker Desktop Dashboard. To check for updates manually, select
-the **Check for updates** option in the Docker menu.
+The **Automatically check for updates** setting notifies you of any updates available to Docker Desktop in the Docker menu and the footer of the Docker Desktop Dashboard. This is turned on by default. 
 @z
 
 @x
 To allow Docker Desktop to automatically download new updates in the background,
 select **Always download updates**. This downloads newer versions of Docker Desktop
 when an update becomes available. After downloading the update, select
-**Apply and Restart** to install the update. You can do this either through the
+**Apply and restart** to install the update. You can do this either through the
 Docker menu or in the **Updates** section in the Docker Desktop Dashboard.
 @y
 To allow Docker Desktop to automatically download new updates in the background,
 select **Always download updates**. This downloads newer versions of Docker Desktop
 when an update becomes available. After downloading the update, select
-**Apply and Restart** to install the update. You can do this either through the
+**Apply and restart** to install the update. You can do this either through the
 Docker menu or in the **Updates** section in the Docker Desktop Dashboard.
 @z
 
 @x
-> [!TIP]
-> 
-> With Docker Desktop version 4.38 and later, components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This feature is still in Beta. 
+The **Automatically update components** setting checks whether components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This is turned on by default. 
 @y
-> [!TIP]
-> 
-> With Docker Desktop version 4.38 and later, components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This feature is still in Beta. 
+The **Automatically update components** setting checks whether components of Docker Desktop, such as Docker Compose, Docker Scout, and the Docker CLI, can be updated independently without the need for a full restart. This is turned on by default. 
 @z
 
 @x
@@ -1212,27 +1208,9 @@ For more information about Docker extensions, see [Extensions](manuals/extension
 @z
 
 @x
-## Features in development
+## Beta features
 @y
-## Features in development
-@z
-
-@x
-On the **Feature control** tab you can control your settings for **Beta features** and **Experimental features**.
-@y
-On the **Feature control** tab you can control your settings for **Beta features** and **Experimental features**.
-@z
-
-@x
-You can also sign up to the [Developer Preview program](https://www.docker.com/community/get-involved/developer-preview/) from the **Features in development** tab.
-@y
-You can also sign up to the [Developer Preview program](https://www.docker.com/community/get-involved/developer-preview/) from the **Features in development** tab.
-@z
-
-@x
-### Beta features
-@y
-### Beta features
+## Beta features
 @z
 
 @x
@@ -1250,29 +1228,29 @@ Docker doesn't offer support for beta features.
 @z
 
 @x
-### Experimental features
+You can also sign up to the [Developer Preview program](https://www.docker.com/community/get-involved/developer-preview/) from the **Beta features** tab.
 @y
-### Experimental features
-@z
-
-@x
-Experimental features provide early access to future product functionality.
-These features are intended for testing and feedback only as they may change
-between releases without warning or can be removed entirely from a future
-release. Experimental features must not be used in production environments.
-Docker does not offer support for experimental features.
-@y
-Experimental features provide early access to future product functionality.
-These features are intended for testing and feedback only as they may change
-between releases without warning or can be removed entirely from a future
-release. Experimental features must not be used in production environments.
-Docker does not offer support for experimental features.
+You can also sign up to the [Developer Preview program](https://www.docker.com/community/get-involved/developer-preview/) from the **Beta features** tab.
 @z
 
 @x
 For a list of current experimental features in the Docker CLI, see [Docker CLI Experimental features](https://github.com/docker/cli/blob/master/experimental/README.md).
 @y
 For a list of current experimental features in the Docker CLI, see [Docker CLI Experimental features](https://github.com/docker/cli/blob/master/experimental/README.md).
+@z
+
+@x
+> [!IMPORTANT]
+>
+> For Docker Desktop versions 4.41 and earlier, there is also an **Experimental features** tab under the **Features in development** page.
+>
+> As with beta features, experimental features must not be used in production environments. Docker does not offer support for experimental features.
+@y
+> [!IMPORTANT]
+>
+> For Docker Desktop versions 4.41 and earlier, there is also an **Experimental features** tab under the **Features in development** page.
+>
+> As with beta features, experimental features must not be used in production environments. Docker does not offer support for experimental features.
 @z
 
 @x

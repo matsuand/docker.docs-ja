@@ -34,15 +34,21 @@ Add attestation to image
 @z
 
 @x
-| Name               | Type          | Default | Description                             |
-|:-------------------|:--------------|:--------|:----------------------------------------|
-| `--file`           | `stringSlice` |         | File location of attestations to attach |
-| `--predicate-type` | `string`      |         | Predicate-type for attestations         |
+| Name                    | Type          | Default                     | Description                                  |
+|:------------------------|:--------------|:----------------------------|:---------------------------------------------|
+| `--file`                | `stringSlice` |                             | File location of attestations to attach      |
+| `--org`                 | `string`      |                             | Namespace of the Docker organization         |
+| `--predicate-type`      | `string`      |                             | Predicate-type for attestations              |
+| `--referrer`            |               |                             | Use OCI referrer API for pushing attestation |
+| `--referrer-repository` | `string`      | `registry.scout.docker.com` | Repository to push referrer to               |
 @y
-| Name               | Type          | Default | Description                             |
-|:-------------------|:--------------|:--------|:----------------------------------------|
-| `--file`           | `stringSlice` |         | File location of attestations to attach |
-| `--predicate-type` | `string`      |         | Predicate-type for attestations         |
+| Name                    | Type          | Default                     | Description                                  |
+|:------------------------|:--------------|:----------------------------|:---------------------------------------------|
+| `--file`                | `stringSlice` |                             | File location of attestations to attach      |
+| `--org`                 | `string`      |                             | Namespace of the Docker organization         |
+| `--predicate-type`      | `string`      |                             | Predicate-type for attestations              |
+| `--referrer`            |               |                             | Use OCI referrer API for pushing attestation |
+| `--referrer-repository` | `string`      | `registry.scout.docker.com` | Repository to push referrer to               |
 @z
 
 @x

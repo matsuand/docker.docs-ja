@@ -43,6 +43,13 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v2/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/Makefile
 	src/_vendor/github.com/docker/compose/v2/docs/reference/Makefile
+	src/_vendor/github.com/docker/mcp-gateway/Makefile
+	src/_vendor/github.com/docker/mcp-gateway/docs/Makefile
+	src/_vendor/github.com/docker/mcp-gateway/docs/generator/Makefile
+	src/_vendor/github.com/docker/mcp-gateway/docs/generator/reference/Makefile
+	src/_vendor/github.com/docker/model-cli/Makefile
+	src/_vendor/github.com/docker/model-cli/docs/Makefile
+	src/_vendor/github.com/docker/model-cli/docs/reference/Makefile
 	src/_vendor/github.com/docker/scout-cli/Makefile
 	src/_vendor/github.com/docker/scout-cli/docs/Makefile
 	src/_vendor/github.com/moby/Makefile
@@ -58,12 +65,14 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/moby/docs/api/Makefile
 	src/assets/Makefile
 	src/assets/css/Makefile
-	src/assets/favicons/Makefile
+	src/assets/icons/Makefile
 	src/assets/images/Makefile
 	src/assets/images/guides/Makefile
 	src/assets/images/learning-paths/Makefile
 	src/assets/js/Makefile
 	src/assets/js/src/Makefile
+	src/assets/theme/Makefile
+	src/assets/theme/icons/Makefile
 	src/content/Makefile
 	src/content/contribute/Makefile
 	src/content/contribute/components/Makefile
@@ -133,6 +142,17 @@ AC_CONFIG_FILES([
 	src/content/manuals/admin/faqs/Makefile
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
+	src/content/manuals/ai/Makefile
+	src/content/manuals/ai/cagent/Makefile
+	src/content/manuals/ai/compose/Makefile
+	src/content/manuals/ai/gordon/Makefile
+	src/content/manuals/ai/gordon/images/Makefile
+	src/content/manuals/ai/gordon/mcp/Makefile
+	src/content/manuals/ai/mcp-catalog-and-toolkit/Makefile
+	src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile
+	src/content/manuals/ai/mcp-gateway/Makefile
+	src/content/manuals/ai/model-runner/Makefile
+	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
@@ -168,23 +188,24 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
 	src/content/manuals/desktop/features/Makefile
-	src/content/manuals/desktop/features/dev-environments/Makefile
-	src/content/manuals/desktop/features/gordon/Makefile
-	src/content/manuals/desktop/features/gordon/images/Makefile
-	src/content/manuals/desktop/features/gordon/mcp/Makefile
 	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile
 	src/content/manuals/desktop/settings-and-maintenance/Makefile
 	src/content/manuals/desktop/setup/Makefile
 	src/content/manuals/desktop/setup/install/Makefile
-	src/content/manuals/desktop/setup/install/enterprise-deployment/Makefile
 	src/content/manuals/desktop/setup/install/images/Makefile
 	src/content/manuals/desktop/setup/install/linux/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/faqs/Makefile
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
+	src/content/manuals/dhi/Makefile
+	src/content/manuals/dhi/about/Makefile
+	src/content/manuals/dhi/core-concepts/Makefile
+	src/content/manuals/dhi/features/Makefile
+	src/content/manuals/dhi/how-to/Makefile
+	src/content/manuals/dhi/images/Makefile
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/images/Makefile
 	src/content/manuals/docker-hub/image-library/Makefile
@@ -198,6 +219,18 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/repos/manage/trusted-content/Makefile
 	src/content/manuals/docker-hub/repos/manage/images/Makefile
 	src/content/manuals/docker-hub/usage/Makefile
+	src/content/manuals/enterprise/Makefile
+	src/content/manuals/enterprise/enterprise-deployment/Makefile
+	src/content/manuals/enterprise/security/Makefile
+	src/content/manuals/enterprise/security/enforce-sign-in/Makefile
+	src/content/manuals/enterprise/security/hardened-desktop/Makefile
+	src/content/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/Makefile
+	src/content/manuals/enterprise/security/hardened-desktop/settings-management/Makefile
+	src/content/manuals/enterprise/security/images/Makefile
+	src/content/manuals/enterprise/security/provisioning/Makefile
+	src/content/manuals/enterprise/security/single-sign-on/Makefile
+	src/content/manuals/enterprise/security/single-sign-on/images/Makefile
+	src/content/manuals/enterprise/troubleshoot/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile
@@ -238,7 +271,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/extensions/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
-	src/content/manuals/harmonia/Makefile
+	src/content/manuals/offload/Makefile
+	src/content/manuals/offload/images/Makefile
 	src/content/manuals/scout/Makefile
 	src/content/manuals/scout/deep-dive/Makefile
 	src/content/manuals/scout/explore/Makefile
@@ -255,24 +289,13 @@ AC_CONFIG_FILES([
 	src/content/manuals/scout/policy/Makefile
 	src/content/manuals/scout/release-notes/Makefile
 	src/content/manuals/security/Makefile
+	src/content/manuals/security/2fa/Makefile
 	src/content/manuals/security/faqs/Makefile
 	src/content/manuals/security/faqs/single-sign-on/Makefile
-	src/content/manuals/security/for-admins/Makefile
-	src/content/manuals/security/for-admins/enforce-sign-in/Makefile
-	src/content/manuals/security/for-admins/hardened-desktop/Makefile
-	src/content/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/Makefile
-	src/content/manuals/security/for-admins/hardened-desktop/settings-management/Makefile
-	src/content/manuals/security/for-admins/provisioning/Makefile
-	src/content/manuals/security/for-admins/single-sign-on/Makefile
-	src/content/manuals/security/for-admins/single-sign-on/images/Makefile
-	src/content/manuals/security/for-developers/Makefile
-	src/content/manuals/security/for-developers/2fa/Makefile
-	src/content/manuals/security/images/Makefile
-	src/content/manuals/security/troubleshoot/Makefile
 	src/content/manuals/subscription/Makefile
-	src/content/manuals/subscription/images/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
+	src/content/reference/api/dvp/Makefile
 	src/content/reference/api/engine/Makefile
 	src/content/reference/api/engine/sdk/Makefile
 	src/content/reference/api/engine/version/Makefile
@@ -296,9 +319,18 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/desktop/disable/Makefile
 	src/content/reference/cli/docker/desktop/enable/Makefile
 	src/content/reference/cli/docker/desktop/engine/Makefile
-	src/content/reference/cli/docker/desktop/module/Makefile
 	src/content/reference/cli/docker/image/Makefile
 	src/content/reference/cli/docker/manifest/Makefile
+	src/content/reference/cli/docker/mcp/Makefile
+ 	src/content/reference/cli/docker/mcp/catalog/Makefile
+ 	src/content/reference/cli/docker/mcp/client/Makefile
+ 	src/content/reference/cli/docker/mcp/config/Makefile
+ 	src/content/reference/cli/docker/mcp/gateway/Makefile
+ 	src/content/reference/cli/docker/mcp/oauth/Makefile
+ 	src/content/reference/cli/docker/mcp/policy/Makefile
+ 	src/content/reference/cli/docker/mcp/secrets/Makefile
+ 	src/content/reference/cli/docker/mcp/server/Makefile
+ 	src/content/reference/cli/docker/mcp/tools/Makefile
 	src/content/reference/cli/docker/network/Makefile
 	src/content/reference/cli/docker/node/Makefile
 	src/content/reference/cli/docker/plugin/Makefile
@@ -349,6 +381,8 @@ AC_CONFIG_FILES([
 	src/layouts/_default/_markup/Makefile
 	src/layouts/guides/Makefile
 	src/layouts/partials/Makefile
+	src/layouts/partials/admonitions/Makefile
+	src/layouts/partials/admonitions/icons/Makefile
 	src/layouts/partials/components/Makefile
 	src/layouts/partials/sidebar/Makefile
 	src/layouts/partials/utils/Makefile

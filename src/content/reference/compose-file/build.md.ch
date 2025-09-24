@@ -124,12 +124,12 @@ When used to build service images from source, the Compose file creates three Do
 @z
 
 @x
-* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's parent folder, as the Docker build context. Lack of a `Dockerfile` within this folder throws an error.
-* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file parent folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's parent folder, so `backend.Dockerfile` is a sibling file.
+* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
+* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
 * A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @y
-* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's parent folder, as the Docker build context. Lack of a `Dockerfile` within this folder throws an error.
-* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file parent folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's parent folder, so `backend.Dockerfile` is a sibling file.
+* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
+* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
 * A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @z
 
@@ -155,10 +155,10 @@ The `build` subsection defines configuration options that are applied by Compose
 
 @x
 Using the string syntax, only the build context can be configured as either:
-- A relative path to the Compose file's parent folder. This path must be a directory and must contain a `Dockerfile`
+- A relative path to the Compose file's folder. This path must be a directory and must contain a `Dockerfile`
 @y
 Using the string syntax, only the build context can be configured as either:
-- A relative path to the Compose file's parent folder. This path must be a directory and must contain a `Dockerfile`
+- A relative path to the Compose file's folder. This path must be a directory and must contain a `Dockerfile`
 @z
 
 @x
@@ -298,6 +298,54 @@ Illustrative examples of how this is used in Buildx can be found
 @z
 
 @x
+`additional_contexts` can also refer to an image built by another service.
+This allows a service image to be built using another service image as a base image, and to share
+layers between service images.
+@y
+`additional_contexts` can also refer to an image built by another service.
+This allows a service image to be built using another service image as a base image, and to share
+layers between service images.
+@z
+
+@x
+```yaml
+services:
+ base:
+  build:
+    context: .
+    dockerfile_inline: |
+      FROM alpine
+      RUN ...
+ my-service:
+  build:
+    context: .
+    dockerfile_inline: |
+      FROM base # image built for service base
+      RUN ...
+    additional_contexts:
+      base: service:base
+```
+@y
+```yaml
+services:
+ base:
+  build:
+    context: .
+    dockerfile_inline: |
+      FROM alpine
+      RUN ...
+ my-service:
+  build:
+    context: .
+    dockerfile_inline: |
+      FROM base # image built for service base
+      RUN ...
+    additional_contexts:
+      base: service:base
+```
+@z
+
+@x
 ### `args`
 @y
 ### `args`
@@ -383,60 +431,6 @@ args:
 args:
   - GIT_COMMIT
 ```
-@z
-
-@x
-### `context`
-@y
-### `context`
-@z
-
-@x
-`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
-@y
-`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
-@z
-
-@x
-When the value supplied is a relative path, it is interpreted as relative to the project directory.
-Compose warns you about the absolute path used to define the build context as those prevent the Compose file
-from being portable.
-@y
-When the value supplied is a relative path, it is interpreted as relative to the project directory.
-Compose warns you about the absolute path used to define the build context as those prevent the Compose file
-from being portable.
-@z
-
-@x
-```yml
-build:
-  context: ./dir
-```
-@y
-```yml
-build:
-  context: ./dir
-```
-@z
-
-@x
-```yml
-services:
-  webapp:
-    build: https://github.com/mycompany/webapp.git
-```
-@y
-```yml
-services:
-  webapp:
-    build: https://github.com/mycompany/webapp.git
-```
-@z
-
-@x
-If not set explicitly, `context` defaults to project directory (`.`). 
-@y
-If not set explicitly, `context` defaults to project directory (`.`). 
 @z
 
 @x
@@ -535,6 +529,60 @@ Cache target is defined using the same `type=TYPE[,KEY=VALUE]` syntax defined by
 Unsupported caches are ignored and don't prevent you from building images.
 @y
 Unsupported caches are ignored and don't prevent you from building images.
+@z
+
+@x
+### `context`
+@y
+### `context`
+@z
+
+@x
+`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
+@y
+`context` defines either a path to a directory containing a Dockerfile, or a URL to a Git repository.
+@z
+
+@x
+When the value supplied is a relative path, it is interpreted as relative to the project directory.
+Compose warns you about the absolute path used to define the build context as those prevent the Compose file
+from being portable.
+@y
+When the value supplied is a relative path, it is interpreted as relative to the project directory.
+Compose warns you about the absolute path used to define the build context as those prevent the Compose file
+from being portable.
+@z
+
+@x
+```yml
+build:
+  context: ./dir
+```
+@y
+```yml
+build:
+  context: ./dir
+```
+@z
+
+@x
+```yml
+services:
+  webapp:
+    build: https://github.com/mycompany/webapp.git
+```
+@y
+```yml
+services:
+  webapp:
+    build: https://github.com/mycompany/webapp.git
+```
+@z
+
+@x
+If not set explicitly, `context` defaults to project directory (`.`). 
+@y
+If not set explicitly, `context` defaults to project directory (`.`). 
 @z
 
 @x
@@ -1014,6 +1062,60 @@ build:
 @z
 
 @x
+### `provenance`
+@y
+### `provenance`
+@z
+
+@x
+{{< summary-bar feature_name="Compose provenance" >}} 
+@y
+{{< summary-bar feature_name="Compose provenance" >}} 
+@z
+
+@x
+`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+@y
+`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+@z
+
+@x
+The value can be either a boolean to enable/disable provenance attestation, or a key=value string to set provenance configuration. You can
+use this to select the level of detail to be included in the provenance attestation by setting the `mode` parameter.
+@y
+The value can be either a boolean to enable/disable provenance attestation, or a key=value string to set provenance configuration. You can
+use this to select the level of detail to be included in the provenance attestation by setting the `mode` parameter.
+@z
+
+@x
+```yaml
+build:
+  context: .
+  provenance: true
+```
+@y
+```yaml
+build:
+  context: .
+  provenance: true
+```
+@z
+
+@x
+```yaml
+build:
+  context: .
+  provenance: mode=max
+```
+@y
+```yaml
+build:
+  context: .
+  provenance: mode=max
+```
+@z
+
+@x
 ### `pull`
 @y
 ### `pull`
@@ -1025,6 +1127,56 @@ available in the local image store.
 @y
 `pull` requires the image builder to pull referenced images (`FROM` Dockerfile directive), even if those are already
 available in the local image store.
+@z
+
+@x
+### `sbom`
+@y
+### `sbom`
+@z
+
+@x
+{{< summary-bar feature_name="Compose sbom" >}}
+@y
+{{< summary-bar feature_name="Compose sbom" >}}
+@z
+
+@x
+`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+The value can be either a boolean to enable/disable sbom attestation, or a key=value string to set SBOM generator configuration. This let you
+select an alternative SBOM generator image (see https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md)
+@y
+`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+The value can be either a boolean to enable/disable sbom attestation, or a key=value string to set SBOM generator configuration. This let you
+select an alternative SBOM generator image (see https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md)
+@z
+
+@x
+```yaml
+build:
+  context: .
+  sbom: true
+```
+@y
+```yaml
+build:
+  context: .
+  sbom: true
+```
+@z
+
+@x
+```yaml
+build:
+  context: .
+  sbom: generator=docker/scout-sbom-indexer:latest # Use an alternative SBOM generator
+```
+@y
+```yaml
+build:
+  context: .
+  sbom: generator=docker/scout-sbom-indexer:latest # Use an alternative SBOM generator
+```
 @z
 
 @x
@@ -1119,8 +1271,7 @@ the service's containers.
 
 @x
 - `source`: The name of the secret as it exists on the platform.
-- `target`: The name of the file to be mounted in `/run/secrets/` in the
-  service's task containers. Defaults to `source` if not specified.
+- `target`: The ID of the secret as declared in the Dockerfile. Defaults to `source` if not specified.
 - `uid` and `gid`: The numeric uid or gid that owns the file within
   `/run/secrets/` in the service's task containers. Default value is `USER`.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
@@ -1129,8 +1280,7 @@ the service's containers.
   The writable bit must be ignored if set. The executable bit may be set.
 @y
 - `source`: The name of the secret as it exists on the platform.
-- `target`: The name of the file to be mounted in `/run/secrets/` in the
-  service's task containers. Defaults to `source` if not specified.
+- `target`: The ID of the secret as declared in the Dockerfile. Defaults to `source` if not specified.
 - `uid` and `gid`: The numeric uid or gid that owns the file within
   `/run/secrets/` in the service's task containers. Default value is `USER`.
 - `mode`: The [permissions](https://wintelguy.com/permissions-calc.pl) for the file to be mounted in `/run/secrets/`
@@ -1159,7 +1309,7 @@ services:
       context: .
       secrets:
         - source: server-certificate
-          target: server.cert
+          target: cert # secret ID in Dockerfile
           uid: "103"
           gid: "103"
           mode: 0440
@@ -1175,13 +1325,27 @@ services:
       context: .
       secrets:
         - source: server-certificate
-          target: server.cert
+          target: cert # secret ID in Dockerfile
           uid: "103"
           gid: "103"
           mode: 0440
 secrets:
   server-certificate:
     external: true
+```
+@z
+
+@x
+```dockerfile
+# Dockerfile
+FROM nginx
+RUN --mount=type=secret,id=cert,required=true,target=/root/cert ...
+```
+@y
+```dockerfile
+# Dockerfile
+FROM nginx
+RUN --mount=type=secret,id=cert,required=true,target=/root/cert ...
 ```
 @z
 

@@ -14,6 +14,7 @@ bases = \
 	interpolation.md    \
 	legacy-versions.md  \
 	merge.md            \
+	models.md           \
 	networks.md         \
 	profiles.md         \
 	secrets.md          \

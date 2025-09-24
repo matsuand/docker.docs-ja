@@ -5,7 +5,6 @@
 copyfiles = \
 	_index.md  \
 	dry-run.md \
-	publish.md \
 	scale.md   \
 	viz.md
 

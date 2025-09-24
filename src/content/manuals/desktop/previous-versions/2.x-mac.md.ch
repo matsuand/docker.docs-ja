@@ -70,10 +70,10 @@ Docker Desktop 2.5.0.0 contains a Kubernetes upgrade. Your local Kubernetes clus
 @z
 
 @x
-- Users with a paid Docker subscription plan can now see the vulnerability scan report on the Remote repositories tab in Docker Desktop.
+- Users with a paid Docker subscription can now see the vulnerability scan report on the Remote repositories tab in Docker Desktop.
 - Docker Desktop introduces a support option for users with a paid Docker subscription.
 @y
-- Users with a paid Docker subscription plan can now see the vulnerability scan report on the Remote repositories tab in Docker Desktop.
+- Users with a paid Docker subscription can now see the vulnerability scan report on the Remote repositories tab in Docker Desktop.
 - Docker Desktop introduces a support option for users with a paid Docker subscription.
 @z
 

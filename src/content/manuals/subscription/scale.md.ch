@@ -2,83 +2,63 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: Learn how to scale your Docker subscription
-keywords: subscription, Pro, Team, business, pricing plan, build minutes, test container minutes, pull limit
 title: Scale your subscription
+description: Scale Docker Build Cloud and Testcontainers Cloud consumption for your subscription
+keywords: scale subscription, docker build cloud minutes, testcontainers cloud minutes, usage scaling
 @y
-description: Learn how to scale your Docker subscription
-keywords: subscription, Pro, Team, business, pricing plan, build minutes, test container minutes, pull limit
 title: Scale your subscription
+description: Scale Docker Build Cloud and Testcontainers Cloud consumption for your subscription
+keywords: scale subscription, docker build cloud minutes, testcontainers cloud minutes, usage scaling
+@z
+
+@x
+Docker subscriptions let you scale consumption as your needs grow. All paid Docker subscriptions include base amounts of Docker Build Cloud build minutes and Testcontainers Cloud runtime minutes that you can supplement with additional capacity.
+You can scale consumption for:
+@y
+Docker subscriptions let you scale consumption as your needs grow. All paid Docker subscriptions include base amounts of Docker Build Cloud build minutes and Testcontainers Cloud runtime minutes that you can supplement with additional capacity.
+You can scale consumption for:
+@z
+
+@x
+- Docker Build Cloud build minutes
+- Testcontainers Cloud runtime minutes
+@y
+- Docker Build Cloud build minutes
+- Testcontainers Cloud runtime minutes
+@z
+
+@x
+To understand your usage patterns, [view your consumption](../admin/organization/manage-products.md#view-docker-product-usage) at any time.
+@y
+To understand your usage patterns, [view your consumption](../admin/organization/manage-products.md#view-docker-product-usage) at any time.
 @z
 
 @x
 > [!NOTE]
 >
-> Owners of legacy Docker subscription plans must upgrade their subscription to a new
-> Docker subscription plan in order to scale their subscription.
->
-> Legacy Docker plans apply to Docker subscribers who last purchased or renewed
-> their subscription before December 10, 2024. These subscribers will keep
-> their current plan and pricing until their next renewal date that falls on or
-> after December 10, 2024. To see purchase or renewal history, view your
-> [billing history](../billing/history.md). For more details about legacy
-> after December 10, 2024. For more details about legacy
-> subscriptions, see [Announcing Upgraded Docker
-> Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+> Legacy Docker subscribers must upgrade to new Docker subscriptions to access scaling options. Legacy subscriptions apply to subscribers who last purchased or renewed before December 10, 2024. For details, see [Announcing Upgraded Docker Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
 @y
 > [!NOTE]
 >
-> Owners of legacy Docker subscription plans must upgrade their subscription to a new
-> Docker subscription plan in order to scale their subscription.
->
-> Legacy Docker plans apply to Docker subscribers who last purchased or renewed
-> their subscription before December 10, 2024. These subscribers will keep
-> their current plan and pricing until their next renewal date that falls on or
-> after December 10, 2024. To see purchase or renewal history, view your
-> [billing history](../billing/history.md). For more details about legacy
-> after December 10, 2024. For more details about legacy
-> subscriptions, see [Announcing Upgraded Docker
-> Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+> Legacy Docker subscribers must upgrade to new Docker subscriptions to access scaling options. Legacy subscriptions apply to subscribers who last purchased or renewed before December 10, 2024. For details, see [Announcing Upgraded Docker Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
 @z
 
 @x
-Docker subscriptions let you scale your consumption as your needs evolve. Except
-for legacy Docker subscription plans, all paid Docker subscriptions come with
-access to Docker Hub, Docker Build Cloud, and Testcontainers Cloud with a base
-amount of consumption. See [Docker subscriptions and features](./details.md) to
-learn how much base consumption comes with each subscription. You can scale your
-consumption at any time during your subscription period.
+## Usage considerations
 @y
-Docker subscriptions let you scale your consumption as your needs evolve. Except
-for legacy Docker subscription plans, all paid Docker subscriptions come with
-access to Docker Hub, Docker Build Cloud, and Testcontainers Cloud with a base
-amount of consumption. See [Docker subscriptions and features](./details.md) to
-learn how much base consumption comes with each subscription. You can scale your
-consumption at any time during your subscription period.
+## Usage considerations
 @z
 
 @x
-You can scale consumption for the following:
+Minutes don't roll over. Base subscription minutes reset each billing period and don't accumulate. Additional purchased minutes expire at the end of your subscription period.
 @y
-You can scale consumption for the following:
+Minutes don't roll over. Base subscription minutes reset each billing period and don't accumulate. Additional purchased minutes expire at the end of your subscription period.
 @z
 
 @x
-- Docker Build Cloud build minutes
-- Docker Testcontainers Cloud runtime minutes
+For example, with an annual Docker Team subscription (500 included minutes), if you purchase 500 additional minutes, only the additional 500 minutes roll over until your annual renewal.
 @y
-- Docker Build Cloud build minutes
-- Docker Testcontainers Cloud runtime minutes
-@z
-
-@x
-To better understand your needs, you can view your consumption at any time. For
-more details, see [View Docker product
-usage](../admin/organization/manage-products.md#view-docker-product-usage).
-@y
-To better understand your needs, you can view your consumption at any time. For
-more details, see [View Docker product
-usage](../admin/organization/manage-products.md#view-docker-product-usage).
+For example, with an annual Docker Team subscription (500 included minutes), if you purchase 500 additional minutes, only the additional 500 minutes roll over until your annual renewal.
 @z
 
 @x
@@ -88,35 +68,33 @@ usage](../admin/organization/manage-products.md#view-docker-product-usage).
 @z
 
 @x
-You can pre-purchase Docker Build Cloud build minutes in the Docker Build Cloud Dashboard:
+Purchase additional build minutes through the Docker Build Cloud Dashboard:
 @y
-You can pre-purchase Docker Build Cloud build minutes in the Docker Build Cloud Dashboard:
+Purchase additional build minutes through the Docker Build Cloud Dashboard:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/).
-2. Under Settings and administration, select **Billing**.
-3. On the plans and usage page, select **View build minutes**.
-    This will launch the Docker Build Cloud settings page.
-4. Select **Add minutes**.
-5. Select your additional minute amount, then **Continue to payment**.
-6. Enter your payment details and billing address.
-7. Review your order and select **Pay**.
+1. Sign in to [Docker Home](https://app.docker.com/) and choose
+your organization.
+1. Select **Build Cloud**, then **Build minutes**.
+1. Select **Add prepaid minutes**.
+1. Select your additional minute amount, then **Continue to payment**.
+1. Enter your payment details and billing address.
+1. Review your order and select **Pay**.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/).
-2. Under Settings and administration, select **Billing**.
-3. On the plans and usage page, select **View build minutes**.
-    This will launch the Docker Build Cloud settings page.
-4. Select **Add minutes**.
-5. Select your additional minute amount, then **Continue to payment**.
-6. Enter your payment details and billing address.
-7. Review your order and select **Pay**.
+1. Sign in to [Docker Home](https://app.docker.com/) and choose
+your organization.
+1. Select **Build Cloud**, then **Build minutes**.
+1. Select **Add prepaid minutes**.
+1. Select your additional minute amount, then **Continue to payment**.
+1. Enter your payment details and billing address.
+1. Review your order and select **Pay**.
 @z
 
 @x
-Your additional minutes will now display on the Build minutes page.
+Your additional minutes appear on the Build minutes page immediately.
 @y
-Your additional minutes will now display on the Build minutes page.
+Your additional minutes appear on the Build minutes page immediately.
 @z
 
 @x
@@ -126,17 +104,21 @@ Your additional minutes will now display on the Build minutes page.
 @z
 
 @x
-You can pre-purchase Testcontainers Cloud runtime minutes by [contacting
- sales](https://www.docker.com/pricing/contact-sales/). In addition to
-pre-purchase, you are able to use as many minutes as you need on-demand. The
-usage will be billed at the end of each monthly billing cycle. On-demand usage
-is billed at a higher rate than pre-purchased capacity. To avoid on-demand
-charges, pre-purchase additional minutes.
+You can add Testcontainers Cloud runtime minutes in two ways:
 @y
-You can pre-purchase Testcontainers Cloud runtime minutes by [contacting
- sales](https://www.docker.com/pricing/contact-sales/). In addition to
-pre-purchase, you are able to use as many minutes as you need on-demand. The
-usage will be billed at the end of each monthly billing cycle. On-demand usage
-is billed at a higher rate than pre-purchased capacity. To avoid on-demand
-charges, pre-purchase additional minutes.
+You can add Testcontainers Cloud runtime minutes in two ways:
+@z
+
+@x
+- [Contact sales](https://www.docker.com/pricing/contact-sales/) to pre-purchase runtime minutes at discounted rates
+- Use unlimited runtime minutes on-demand with billing at the end of each monthly cycle
+@y
+- [Contact sales](https://www.docker.com/pricing/contact-sales/) to pre-purchase runtime minutes at discounted rates
+- Use unlimited runtime minutes on-demand with billing at the end of each monthly cycle
+@z
+
+@x
+On-demand usage is billed at higher rates than pre-purchased capacity. To avoid higher on-demand charges, pre-purchase additional minutes if you expect consistent usage over your subscription's included minutes.
+@y
+On-demand usage is billed at higher rates than pre-purchased capacity. To avoid higher on-demand charges, pre-purchase additional minutes if you expect consistent usage over your subscription's included minutes.
 @z

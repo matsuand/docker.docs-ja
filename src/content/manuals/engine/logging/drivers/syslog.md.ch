@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Learn how to use the syslog logging driver with Docker Engine
@@ -47,27 +48,7 @@ The format is defined in [RFC 5424](https://tools.ietf.org/html/rfc5424) and Doc
 [ABNF reference](https://tools.ietf.org/html/rfc5424#section-6) in the following way:
 @z
 
-@x
-```none
-                TIMESTAMP SP HOSTNAME SP APP-NAME SP PROCID SP MSGID
-                    +          +             +           |        +
-                    |          |             |           |        |
-                    |          |             |           |        |
-       +------------+          +----+        |           +----+   +---------+
-       v                            v        v                v             v
-2017-04-01T17:41:05.616647+08:00 a.vm {taskid:aa,version:} 1787791 {taskid:aa,version:}
-```
-@y
-```none
-                TIMESTAMP SP HOSTNAME SP APP-NAME SP PROCID SP MSGID
-                    +          +             +           |        +
-                    |          |             |           |        |
-                    |          |             |           |        |
-       +------------+          +----+        |           +----+   +---------+
-       v                            v        v                v             v
-2017-04-01T17:41:05.616647+08:00 a.vm {taskid:aa,version:} 1787791 {taskid:aa,version:}
-```
-@z
+% snip text...
 
 @x
 ## Usage

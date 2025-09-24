@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Extension UI API
 description: Docker extension development overview
 keywords: Docker, extensions, sdk, development
-aliases:
- - /desktop/extensions-sdk/dev/api/overview/
----
 @y
----
 title: Extension UI API
 description: Docker extension development overview
 keywords: Docker, extensions, sdk, development
-aliases:
- - /desktop/extensions-sdk/dev/api/overview/
----
 @z
 
 @x
@@ -42,10 +34,10 @@ JavaScript API libraries, with Typescript support, are available in order to get
 @z
 
 @x
-- [@docker/extension-api-client](https://www.npmjs.com/package/@docker/extension-api-client) gives access to the extension API entrypoint `DockerDesktopCLient`.
+- [@docker/extension-api-client](https://www.npmjs.com/package/@docker/extension-api-client) gives access to the extension API entrypoint `DockerDesktopClient`.
 - [@docker/extension-api-client-types](https://www.npmjs.com/package/@docker/extension-api-client-types) can be added as a dev dependency in order to get types auto-completion in your IDE.
 @y
-- [@docker/extension-api-client](https://www.npmjs.com/package/@docker/extension-api-client) gives access to the extension API entrypoint `DockerDesktopCLient`.
+- [@docker/extension-api-client](https://www.npmjs.com/package/@docker/extension-api-client) gives access to the extension API entrypoint `DockerDesktopClient`.
 - [@docker/extension-api-client-types](https://www.npmjs.com/package/@docker/extension-api-client-types) can be added as a dev dependency in order to get types auto-completion in your IDE.
 @z
 

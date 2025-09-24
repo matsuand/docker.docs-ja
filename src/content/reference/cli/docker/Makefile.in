@@ -296,12 +296,20 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = builder buildx checkpoint compose config container context    \
-	desktop image manifest network node plugin scout secret service \
-	stack swarm system trust volume
+SUBDIRS = builder buildx checkpoint compose config container context \
+	desktop image manifest mcp network node plugin scout secret  \
+	service stack swarm system trust volume
 
 bases = \
-	README.md
+	README.md \
+	build.md  \
+	exec.md   \
+	images.md \
+	info.md   \
+	pull.md   \
+	push.md   \
+	ps.md     \
+	run.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -310,20 +318,12 @@ transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
 	_index.md       \
-	build.md        \
 	build-legacy.md \
 	debug.md        \
-	exec.md         \
-	images.md       \
-	info.md         \
 	init.md         \
 	inspect.md      \
 	login.md        \
 	logout.md       \
-	ps.md           \
-	pull.md         \
-	push.md         \
-	run.md          \
 	search.md       \
 	version.md
 

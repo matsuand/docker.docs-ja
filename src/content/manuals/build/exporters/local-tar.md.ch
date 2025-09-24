@@ -2,23 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Local and tar exporters
 keywords: build, buildx, buildkit, exporter, local, tar
 description: >
   The local and tar exporters save the build result to the local filesystem
-aliases:
-  - /build/building/exporters/local-tar/
----
 @y
----
 title: Local and tar exporters
 keywords: build, buildx, buildkit, exporter, local, tar
 description: >
   The local and tar exporters save the build result to the local filesystem
-aliases:
-  - /build/building/exporters/local-tar/
----
 @z
 
 @x
@@ -70,13 +62,15 @@ The following table describes the available parameters:
 @z
 
 @x
-| Parameter | Type   | Default | Description           |
-| --------- | ------ | ------- | --------------------- |
-| `dest`    | String |         | Path to copy files to |
+| Parameter        | Type    | Default | Description                                                                                                                                                                                                                            |
+|------------------|---------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dest`           | String  |         | Path to copy files to                                                                                                                                                                                                                  |
+| `platform-split` | Boolean | `true`  | When using the local exporter with a multi-platform build, by default, a subfolder matching each target platform is created in the destination directory. Set it to `false` to merge files from all platforms into the same directory. |
 @y
-| Parameter | Type   | Default | Description           |
-| --------- | ------ | ------- | --------------------- |
-| `dest`    | String |         | Path to copy files to |
+| Parameter        | Type    | Default | Description                                                                                                                                                                                                                            |
+|------------------|---------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dest`           | String  |         | Path to copy files to                                                                                                                                                                                                                  |
+| `platform-split` | Boolean | `true`  | When using the local exporter with a multi-platform build, by default, a subfolder matching each target platform is created in the destination directory. Set it to `false` to merge files from all platforms into the same directory. |
 @z
 
 @x

@@ -51,68 +51,41 @@ long: |-
 
 @x
     The events that can be received using this can be seen [here](/reference/cli/docker/system/events/#object-types).
-usage: docker compose events [OPTIONS] [SERVICE...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Output events as a stream of json objects
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    The events that can be received using this can be seen [here](__SUBDIR__/reference/cli/docker/system/events/#object-types).
+    The events that can be received using this can be seen [here](/reference/cli/docker/system/events/#object-types).
+@z
+
+@x
 usage: docker compose events [OPTIONS] [SERVICE...]
 pname: docker compose
 plink: docker_compose.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Output events as a stream of json objects
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
 @z
+
+% options:
+@x json
+      description: Output events as a stream of json objects
+@y
+      description: Output events as a stream of json objects
+@z
+
+@x since
+      description: Show all events created since timestamp
+@y
+      description: Show all events created since timestamp
+@z
+
+@x until
+      description: Stream events until this timestamp
+@y
+      description: Stream events until this timestamp
+@z
+
+% inherited_options:
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% skip directives...

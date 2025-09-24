@@ -724,14 +724,14 @@ assumes that the Docker daemon is in the `stopped` state.
 @z
 
 @x
-    ```none
+    ```text
     activation {
       thin_pool_autoextend_threshold=80
       thin_pool_autoextend_percent=20
     }
     ```
 @y
-    ```none
+    ```text
     activation {
       thin_pool_autoextend_threshold=80
       thin_pool_autoextend_percent=20

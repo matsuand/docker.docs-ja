@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Insights and analytics
@@ -149,10 +149,10 @@ You can download extension CSV reports from the **Insights and analytics** dashb
 
 @x
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](/reference/api/hub/dvp.md). All members of an organization have access to the analytics data.
+[DVP Data API](/reference/api/dvp/latest.md). All members of an organization have access to the analytics data.
 @y
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](reference/api/hub/dvp.md). All members of an organization have access to the analytics data.
+[DVP Data API](reference/api/dvp/latest.md). All members of an organization have access to the analytics data.
 @z
 
 @x
@@ -226,11 +226,11 @@ Export usage data for your organization's images using the Docker Hub website by
 @x
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](/reference/api/hub/dvp.md).
+using the API in the [DVP Data API documentation](/reference/api/dvp/latest.md).
 @y
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](reference/api/hub/dvp.md).
+using the API in the [DVP Data API documentation](reference/api/dvp/latest.md).
 @z
 
 @x

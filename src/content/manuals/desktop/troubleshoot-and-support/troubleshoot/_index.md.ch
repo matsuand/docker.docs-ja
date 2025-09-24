@@ -7,16 +7,14 @@
 description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
   check the logs.
 keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
+toc_max: 2
+title: Troubleshoot Docker Desktop
+linkTitle: Troubleshoot and diagnose
 @y
 description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
   check the logs.
 keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
-@z
-
-@x
-title: Troubleshoot Docker Desktop
-linkTitle: Troubleshoot and diagnose
-@y
+toc_max: 2
 title: Troubleshoot Docker Desktop
 linkTitle: Troubleshoot and diagnose
 @z
@@ -472,145 +470,13 @@ If you don't have a paid Docker subscription, create an issue on GitHub:
 @z
 
 @x
-Docker Desktop contains a self-diagnose tool which can help you identify some common problems. 
+> [!IMPORTANT]
+>
+> This tool has been deprecated.
 @y
-Docker Desktop contains a self-diagnose tool which can help you identify some common problems. 
-@z
-
-@x
-{{< tabs group="os" >}}
-{{< tab name="Windows" >}}
-1. Locate the `com.docker.diagnose` tool. 
-@y
-{{< tabs group="os" >}}
-{{< tab name="Windows" >}}
-1. Locate the `com.docker.diagnose` tool. 
-@z
-
-@x
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe
-   ```
-@y
-   ```console
-   $ C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe
-   ```
-@z
-
-@x
-2. In PowerShell, run the self-diagnose tool:
-@y
-2. In PowerShell, run the self-diagnose tool:
-@z
-
-@x
-   ```console
-   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather
-   ```
-@y
-   ```console
-   $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather
-   ```
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Mac" >}}
-@y
-{{< /tab >}}
-{{< tab name="Mac" >}}
-@z
-
-@x
-1. Locate the `com.docker.diagnose` tool. 
-@y
-1. Locate the `com.docker.diagnose` tool. 
-@z
-
-@x
-   ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose
-   ```
-@y
-   ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose
-   ```
-@z
-
-@x
-2. Run the self-diagnose tool:
-@y
-2. Run the self-diagnose tool:
-@z
-
-@x
-   ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose gather
-   ```
-@y
-   ```console
-   $ /Applications/Docker.app/Contents/MacOS/com.docker.diagnose gather
-   ```
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Linux" >}}
-@y
-{{< /tab >}}
-{{< tab name="Linux" >}}
-@z
-
-@x
-1. Locate the `com.docker.diagnose` tool. 
-@y
-1. Locate the `com.docker.diagnose` tool. 
-@z
-
-@x
-2. Run the self-diagnose tool:
-@y
-2. Run the self-diagnose tool:
-@z
-
-@x
-   ```console
-   $ /opt/docker-desktop/bin/com.docker.diagnose gather
-   ```
-@y
-   ```console
-   $ /opt/docker-desktop/bin/com.docker.diagnose gather
-   ```
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
-The tool runs a suite of checks and displays **PASS** or **FAIL** next to each check. If there are any failures, it highlights the most relevant at the end of the report.
-@y
-The tool runs a suite of checks and displays **PASS** or **FAIL** next to each check. If there are any failures, it highlights the most relevant at the end of the report.
-@z
-
-@x
-You can then create an issue on GitHub:
-@y
-You can then create an issue on GitHub:
-@z
-
-@x
-- [For Linux](https://github.com/docker/desktop-linux/issues)
-- [For Mac](https://github.com/docker/for-mac/issues)
-- [For Windows](https://github.com/docker/for-win/issues)
-@y
-- [For Linux](https://github.com/docker/desktop-linux/issues)
-- [For Mac](https://github.com/docker/for-mac/issues)
-- [For Windows](https://github.com/docker/for-win/issues)
+> [!IMPORTANT]
+>
+> This tool has been deprecated.
 @z
 
 @x

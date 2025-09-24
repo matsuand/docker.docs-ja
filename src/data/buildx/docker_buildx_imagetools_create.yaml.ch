@@ -34,9 +34,9 @@ long: |-
 @z
 
 @x
-usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
+usage: docker buildx imagetools create [OPTIONS] [SOURCE...]
 @y
-usage: docker buildx imagetools create [OPTIONS] [SOURCE] [SOURCE...]
+usage: docker buildx imagetools create [OPTIONS] [SOURCE...]
 @z
 
 % options:

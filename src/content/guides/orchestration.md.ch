@@ -108,9 +108,9 @@ Docker Desktop では Kubernetes をすばやく簡単に設定することが�
 @z
 
 @x
-2.  Select the checkbox labeled **Enable Kubernetes**, and select **Apply & Restart**. Docker Desktop automatically sets up Kubernetes for you. You'll know that Kubernetes has been successfully enabled when you see a green light beside 'Kubernetes _running_' in **Settings**.
+2.  Select the checkbox labeled **Enable Kubernetes**, and select **Apply**. Docker Desktop automatically sets up Kubernetes for you. You'll know that Kubernetes has been successfully enabled when you see a green light beside 'Kubernetes _running_' in **Settings**.
 @y
-2.  **Enable Kubernetes** (Kubernetes の有効化) と書かれたチェックボックスにチェックを入れ、**Apply & Restart** (適用＆再起動) をクリックします。
+2.  **Enable Kubernetes** (Kubernetes の有効化) と書かれたチェックボックスにチェックを入れ、**Apply** (適用) をクリックします。
     Docker Desktop は Kubernetes 設定を自動的に行います。
     Kubernetes が有効になったかどうかは、**Settings** (設定) メニューの 'Kubernetes _running_' と書かれたラベルの横に緑色のライトがつくことで分かります。
 @z
@@ -199,9 +199,9 @@ Docker Desktop では Kubernetes をすばやく簡単に設定することが�
 @z
 
 @x
-2. Select the checkbox labeled **Enable Kubernetes**, and select **Apply & Restart**. Docker Desktop automatically sets up Kubernetes for you. You'll know that Kubernetes has been successfully enabled when you see a green light beside 'Kubernetes _running_' in the **Settings** menu.
+2. Select the checkbox labeled **Enable Kubernetes**, and select **Apply**. Docker Desktop automatically sets up Kubernetes for you. You'll know that Kubernetes has been successfully enabled when you see a green light beside 'Kubernetes _running_' in the **Settings** menu.
 @y
-2.  **Enable Kubernetes** (Kubernetes の有効化) と書かれたチェックボックスにチェックを入れ、**Apply & Restart** (適用＆再起動) をクリックします。
+2.  **Enable Kubernetes** (Kubernetes の有効化) と書かれたチェックボックスにチェックを入れ、**Apply** (適用) をクリックします。
     Docker Desktop は Kubernetes 設定を自動的に行います。
     Kubernetes が有効になったかどうかは、**Settings** (設定) メニューの 'Kubernetes _running_' と書かれたラベルの横に緑色のライトがつくことで分かります。
 @z

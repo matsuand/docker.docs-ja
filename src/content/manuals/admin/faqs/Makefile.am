@@ -4,7 +4,6 @@
 bases = \
 	_index.md       \
 	company-faqs.md \
-	general-faqs.md \
 	organization-faqs.md
 
 include $(top_srcdir)/build-aux/common.mk

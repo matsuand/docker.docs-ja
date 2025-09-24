@@ -56,9 +56,9 @@ A fundamental understanding of Docker and how containers work will be helpful. I
 @z
 
 @x
-This guide assumes you have a basic understanding of Laravel and PHP. Familiarity with Laravel’s command-line tools, such as [Artisan](https://laravel.com/docs/11.x/artisan), and its project structure is important for following the instructions.
+This guide assumes you have a basic understanding of Laravel and PHP. Familiarity with Laravel’s command-line tools, such as [Artisan](https://laravel.com/docs/12.x/artisan), and its project structure is important for following the instructions.
 @y
-This guide assumes you have a basic understanding of Laravel and PHP. Familiarity with Laravel’s command-line tools, such as [Artisan](https://laravel.com/docs/11.x/artisan), and its project structure is important for following the instructions.
+This guide assumes you have a basic understanding of Laravel and PHP. Familiarity with Laravel’s command-line tools, such as [Artisan](https://laravel.com/docs/12.x/artisan), and its project structure is important for following the instructions.
 @z
 
 @x

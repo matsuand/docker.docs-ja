@@ -6,69 +6,38 @@ command: docker desktop enable model-runner
 short: Manage Docker Model Runner settings
 long: Enable and manage Docker Model Runner settings used by 'docker model'
 usage: docker desktop enable model-runner [OPTIONS]
-pname: docker desktop enable
-plink: docker_desktop_enable.yaml
-options:
-    - option: no-tcp
-      value_type: bool
-      default_value: "false"
-      description: Disable TCP connection. Cannot be used with --tcp.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tcp
-      value_type: port
-      default_value: "12434"
-      description: |
-        Enable or change TCP port for connection (1-65535). Cannot be used with --no-tcp.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker desktop enable model-runner
 short: Manage Docker Model Runner settings
 long: Enable and manage Docker Model Runner settings used by 'docker model'
 usage: docker desktop enable model-runner [OPTIONS]
-pname: docker desktop enable
-plink: docker_desktop_enable.yaml
-options:
-    - option: no-tcp
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x no-tcp
       description: Disable TCP connection. Cannot be used with --tcp.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tcp
-      value_type: port
-      default_value: "12434"
+@y
+      description: Disable TCP connection. Cannot be used with --tcp.
+@z
+
+@x tcp
       description: |
         Enable or change TCP port for connection (1-65535). Cannot be used with --no-tcp.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
 @z
+
+@x cors
+      description: CORS configuration. Can be `all`, `none`, or comma-separated list of allowed origins.
+@y
+      description: CORS configuration. Can be `all`, `none`, or comma-separated list of allowed origins.
+@z
+
+@x gpu
+      description: Enable GPU support for Model Runner (Windows only).
+@y
+      description: Enable GPU support for Model Runner (Windows only).
+@z
+
+% snip directives...

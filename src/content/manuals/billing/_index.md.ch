@@ -4,19 +4,15 @@
 % __SUBDIR__ 対応
 
 @x
-title: Billing and payments
+title: Manage billing and payments
 linkTitle: Billing
+description: Find information about managing billing and payments for Docker subscriptions.
+keywords: billing, invoice, payment, subscription, Docker billing, update payment method, billing history, invoices, payment verification, tax exemption
 @y
-title: Billing and payments
+title: Manage billing and payments
 linkTitle: Billing
-@z
-
-@x
-description: Discover information on billing and payment processes for Docker subscriptions.
-keywords: billing, invoice, payment, subscription
-@y
-description: Discover information on billing and payment processes for Docker subscriptions.
-keywords: billing, invoice, payment, subscription
+description: Find information about managing billing and payments for Docker subscriptions.
+keywords: billing, invoice, payment, subscription, Docker billing, update payment method, billing history, invoices, payment verification, tax exemption
 @z
 
 % grid:
@@ -94,9 +90,11 @@ keywords: billing, invoice, payment, subscription
 @z
 
 @x
-Use the resources in this section to manage your billing and payment settings for your Docker subscription plans.
+Use the resources in this section to manage billing and payments for your Docker
+subscriptions.
 @y
-Use the resources in this section to manage your billing and payment settings for your Docker subscription plans.
+Use the resources in this section to manage billing and payments for your Docker
+subscriptions.
 @z
 
 @x

@@ -6,17 +6,13 @@
 @x
 description: Learn how to install Docker Compose. Compose is available natively on
   Docker Desktop, as a Docker Engine plugin, and as a standalone tool.
-keywords: install docker compose, docker compose install, install docker compose ubuntu,
-  installing docker compose, docker compose download, docker compose not found, docker
-  compose windows, how to install docker compose
+keywords: install docker compose, docker compose plugin, install compose linux, install docker desktop, docker compose windows, standalone docker compose, docker compose not found
 title: Overview of installing Docker Compose
 linkTitle: Install
 @y
 description: Learn how to install Docker Compose. Compose is available natively on
   Docker Desktop, as a Docker Engine plugin, and as a standalone tool.
-keywords: install docker compose, docker compose install, install docker compose ubuntu,
-  installing docker compose, docker compose download, docker compose not found, docker
-  compose windows, how to install docker compose
+keywords: install docker compose, docker compose plugin, install compose linux, install docker desktop, docker compose windows, standalone docker compose, docker compose not found
 title: Overview of installing Docker Compose
 linkTitle: Install
 @z
@@ -34,9 +30,9 @@ This page summarizes the different ways you can install Docker Compose, dependin
 @z
 
 @x
-### Scenario one: Install Docker Desktop (Recommended)
+### Docker Desktop (Recommended)
 @y
-### Scenario one: Install Docker Desktop (Recommended)
+### Docker Desktop (Recommended)
 @z
 
 @x
@@ -74,9 +70,9 @@ Docker Desktop is available for:
 @z
 
 @x
-### Scenario two: Install the Docker Compose plugin (Linux only)
+### Plugin (Linux only)
 @y
-### Scenario two: Install the Docker Compose plugin (Linux only)
+### Plugin (Linux only)
 @z
 
 @x
@@ -100,9 +96,9 @@ If you already have Docker Engine and Docker CLI installed, you can install the 
 @z
 
 @x
-### Scenario three: Install the Docker Compose standalone (Legacy)
+### Standalone (Legacy)
 @y
-### Scenario three: Install the Docker Compose standalone (Legacy)
+### Standalone (Legacy)
 @z
 
 @x

@@ -241,6 +241,7 @@ bases = \
 	_index.md                  \
 	create-account.md          \
 	deactivate-user-account.md \
+	general-faqs.md            \
 	manage-account.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

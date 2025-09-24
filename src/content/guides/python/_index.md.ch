@@ -48,11 +48,13 @@ The Python language-specific guide teaches you how to containerize a Python appl
 @x
 - Containerize and run a Python application
 - Set up a local environment to develop a Python application using containers
+- Lint, format, typing and best practices
 - Configure a CI/CD pipeline for a containerized Python application using GitHub Actions
 - Deploy your containerized Python application locally to Kubernetes to test and debug your deployment
 @y
 - Python アプリケーションをコンテナー化して実行します。
 - コンテナーを利用して Python アプリケーションを開発するローカル環境を構築します。
+- lint 処理、書式整形、型チェック、ベストプラクティス。
 - GitHub アクションを使って、コンテナー化した Python アプリケーションの CI/CD パイプラインを設定します。
 - コンテナー化した Python アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
 @z

@@ -1,8 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-% snip 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Learn how to get started using Docker Hub
@@ -12,8 +11,8 @@ linkTitle: Quickstart
 @y
 description: Learn how to get started using Docker Hub
 keywords: Docker Hub, push image, pull image, repositories
-title: Docker Hub quickstart
-linkTitle: Quickstart
+title: Docker Hub クィックスタート
+linkTitle: クィックスタート
 @z
 
 @x
@@ -212,7 +211,15 @@ To search or browse for content on Docker Hub:
 2. In the terminal, run the following command.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker search --filter is-official=true nginx
+   ```
+@y
+   ```console
+   $ docker search --filter is-official=true nginx
+   ```
+@z
 
 @x
    Unlike the Docker Hub and Docker Desktop interfaces, you can't browse by
@@ -302,10 +309,10 @@ You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
 
 @x
 5. Select the **8080:80** link to open the server, or visit
-   [https://localhost:8080](https://localhost:8080) in your web browser.
+   [http://localhost:8080](http://localhost:8080) in your web browser.
 @y
 5. Select the **8080:80** link to open the server, or visit
-   [https://localhost:8080](https://localhost:8080) in your web browser.
+   [http://localhost:8080](http://localhost:8080) in your web browser.
 @z
 
 @x
@@ -348,7 +355,15 @@ You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
 2. In your terminal, run the following command to pull and run the Nginx image.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -p 8080:80 --rm nginx
+   ```
+@y
+   ```console
+   $ docker run -p 8080:80 --rm nginx
+   ```
+@z
 
 @x
    The `docker run` command automatically pulls and runs the image without the
@@ -364,13 +379,75 @@ You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
    command, you should see output similar to the following.
 @z
 
-% snip output...
+@x
+   ```console {collapse=true}
+   Unable to find image 'nginx:latest' locally
+   latest: Pulling from library/nginx
+   a480a496ba95: Pull complete
+   f3ace1b8ce45: Pull complete
+   11d6fdd0e8a7: Pull complete
+   f1091da6fd5c: Pull complete
+   40eea07b53d8: Pull complete
+   6476794e50f4: Pull complete
+   70850b3ec6b2: Pull complete
+   Digest: sha256:28402db69fec7c17e179ea87882667f1e054391138f77ffaf0c3eb388efc3ffb
+   Status: Downloaded newer image for nginx:latest
+   /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+   /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+   10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+   10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+   /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+   /docker-entrypoint.sh: Configuration complete; ready for start up
+   2024/11/07 21:43:41 [notice] 1#1: using the "epoll" event method
+   2024/11/07 21:43:41 [notice] 1#1: nginx/1.27.2
+   2024/11/07 21:43:41 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+   2024/11/07 21:43:41 [notice] 1#1: OS: Linux 6.10.11-linuxkit
+   2024/11/07 21:43:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+   2024/11/07 21:43:41 [notice] 1#1: start worker processes
+   2024/11/07 21:43:41 [notice] 1#1: start worker process 29
+   ...
+   ```
+@y
+   ```console {collapse=true}
+   Unable to find image 'nginx:latest' locally
+   latest: Pulling from library/nginx
+   a480a496ba95: Pull complete
+   f3ace1b8ce45: Pull complete
+   11d6fdd0e8a7: Pull complete
+   f1091da6fd5c: Pull complete
+   40eea07b53d8: Pull complete
+   6476794e50f4: Pull complete
+   70850b3ec6b2: Pull complete
+   Digest: sha256:28402db69fec7c17e179ea87882667f1e054391138f77ffaf0c3eb388efc3ffb
+   Status: Downloaded newer image for nginx:latest
+   /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+   /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+   10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+   10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+   /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+   /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+   /docker-entrypoint.sh: Configuration complete; ready for start up
+   2024/11/07 21:43:41 [notice] 1#1: using the "epoll" event method
+   2024/11/07 21:43:41 [notice] 1#1: nginx/1.27.2
+   2024/11/07 21:43:41 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14)
+   2024/11/07 21:43:41 [notice] 1#1: OS: Linux 6.10.11-linuxkit
+   2024/11/07 21:43:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+   2024/11/07 21:43:41 [notice] 1#1: start worker processes
+   2024/11/07 21:43:41 [notice] 1#1: start worker process 29
+   ...
+   ```
+@z
 
 @x
-3. Visit [https://localhost:8080](https://localhost:8080) to view the default
+3. Visit [http://localhost:8080](http://localhost:8080) to view the default
    Nginx page and verify that the container is running.
 @y
-3. Visit [https://localhost:8080](https://localhost:8080) to view the default
+3. Visit [http://localhost:8080](http://localhost:8080) to view the default
    Nginx page and verify that the container is running.
 @z
 
@@ -426,7 +503,17 @@ customize your own images to suit specific needs.
 1. Create a [Dockerfile](reference/dockerfile.md) to specify your application:
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   FROM nginx
+   RUN echo "<h1>Hello world from Docker!</h1>" > /usr/share/nginx/html/index.html
+   ```
+@y
+   ```dockerfile
+   FROM nginx
+   RUN echo "<h1>Hello world from Docker!</h1>" > /usr/share/nginx/html/index.html
+   ```
+@z
 
 @x
    This Dockerfile extends the Nginx image from Docker Hub to create a
@@ -444,7 +531,15 @@ customize your own images to suit specific needs.
 2. Run the following command to build your image. Replace `<YOUR-USERNAME>` with your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker build -t <YOUR-USERNAME>/nginx-custom .
+   ```
+@y
+   ```console
+   $ docker build -t <YOUR-USERNAME>/nginx-custom .
+   ```
+@z
 
 @x
    This command builds your image and tags it so that Docker understands which
@@ -460,7 +555,37 @@ customize your own images to suit specific needs.
    command, you should see output similar to the following.
 @z
 
-% snip output...
+@x
+   ```console {collapse=true}
+   [+] Building 0.6s (6/6) FINISHED                      docker:desktop-linux
+    => [internal] load build definition from Dockerfile                  0.0s
+    => => transferring dockerfile: 128B                                  0.0s
+    => [internal] load metadata for docker.io/library/nginx:latest       0.0s
+    => [internal] load .dockerignore                                     0.0s
+    => => transferring context: 2B                                       0.0s
+    => [1/2] FROM docker.io/library/nginx:latest                         0.1s
+    => [2/2] RUN echo "<h1>Hello world from Docker!</h1>" > /usr/share/  0.2s
+    => exporting to image                                                0.1s
+    => => exporting layers                                               0.0s
+    => => writing image sha256:f85ab68f4987847713e87a95c39009a5c9f4ad78  0.0s
+    => => naming to docker.io/mobyismyname/nginx-custom                  0.0s
+   ```
+@y
+   ```console {collapse=true}
+   [+] Building 0.6s (6/6) FINISHED                      docker:desktop-linux
+    => [internal] load build definition from Dockerfile                  0.0s
+    => => transferring dockerfile: 128B                                  0.0s
+    => [internal] load metadata for docker.io/library/nginx:latest       0.0s
+    => [internal] load .dockerignore                                     0.0s
+    => => transferring context: 2B                                       0.0s
+    => [1/2] FROM docker.io/library/nginx:latest                         0.1s
+    => [2/2] RUN echo "<h1>Hello world from Docker!</h1>" > /usr/share/  0.2s
+    => exporting to image                                                0.1s
+    => => exporting layers                                               0.0s
+    => => writing image sha256:f85ab68f4987847713e87a95c39009a5c9f4ad78  0.0s
+    => => naming to docker.io/mobyismyname/nginx-custom                  0.0s
+   ```
+@z
 
 @x
 3. Run the following command to test your image. Replace `<YOUR-USERNAME>` with
@@ -470,13 +595,21 @@ customize your own images to suit specific needs.
    your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -p 8080:80 --rm <YOUR-USERNAME>/nginx-custom
+   ```
+@y
+   ```console
+   $ docker run -p 8080:80 --rm <YOUR-USERNAME>/nginx-custom
+   ```
+@z
 
 @x
-4. Visit [https://localhost:8080](https://localhost:8080) to view the page. You
+4. Visit [http://localhost:8080](http://localhost:8080) to view the page. You
    should see `Hello world from Docker!`.
 @y
-4. Visit [https://localhost:8080](https://localhost:8080) to view the page. You
+4. Visit [http://localhost:8080](http://localhost:8080) to view the page. You
    should see `Hello world from Docker!`.
 @z
 
@@ -500,7 +633,15 @@ customize your own images to suit specific needs.
 7. Run the following command to push your image to Docker Hub. Replace `<YOUR-USERNAME>` with your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker push <YOUR-USERNAME>/nginx-custom
+   ```
+@y
+   ```console
+   $ docker push <YOUR-USERNAME>/nginx-custom
+   ```
+@z
 
 @x
     > [!NOTE]
@@ -526,7 +667,35 @@ customize your own images to suit specific needs.
    command, you should see output similar to the following.
 @z
 
-% snip output...
+@x
+   ```console {collapse=true}
+   Using default tag: latest
+   The push refers to repository [docker.io/mobyismyname/nginx-custom]
+   d0e011850342: Pushed
+   e4e9e9ad93c2: Mounted from library/nginx
+   6ac729401225: Mounted from library/nginx
+   8ce189049cb5: Mounted from library/nginx
+   296af1bd2844: Mounted from library/nginx
+   63d7ce983cd5: Mounted from library/nginx
+   b33db0c3c3a8: Mounted from library/nginx
+   98b5f35ea9d3: Mounted from library/nginx
+   latest: digest: sha256:7f5223ae866e725a7f86b856c30edd3b86f60d76694df81d90b08918d8de1e3f size: 1985
+   ```
+@y
+   ```console {collapse=true}
+   Using default tag: latest
+   The push refers to repository [docker.io/mobyismyname/nginx-custom]
+   d0e011850342: Pushed
+   e4e9e9ad93c2: Mounted from library/nginx
+   6ac729401225: Mounted from library/nginx
+   8ce189049cb5: Mounted from library/nginx
+   296af1bd2844: Mounted from library/nginx
+   63d7ce983cd5: Mounted from library/nginx
+   b33db0c3c3a8: Mounted from library/nginx
+   98b5f35ea9d3: Mounted from library/nginx
+   latest: digest: sha256:7f5223ae866e725a7f86b856c30edd3b86f60d76694df81d90b08918d8de1e3f size: 1985
+   ```
+@z
 
 @x
   Now that you've created a repository and pushed your image, it's time to view

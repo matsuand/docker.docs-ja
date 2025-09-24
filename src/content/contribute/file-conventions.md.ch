@@ -86,7 +86,7 @@ the metadata elements in the front matter isn't important.
 @z
 
 @x
-```liquid
+```text
 ---
 description: Instructions for installing Docker Engine on Ubuntu
 keywords: requirements, apt, installation, ubuntu, install, uninstall, upgrade, update
@@ -106,7 +106,7 @@ toc_max: 4
 ---
 ```
 @y
-```liquid
+```text
 ---
 description: Instructions for installing Docker Engine on Ubuntu
 keywords: requirements, apt, installation, ubuntu, install, uninstall, upgrade, update

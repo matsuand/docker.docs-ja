@@ -20,17 +20,19 @@ keywords: compose, compose specification, services, compose file reference
 @z
 
 @x
-The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
+> [!IMPORTANT]
+>
+> The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
 @y
-The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
+> [!IMPORTANT]
+>
+> The top-level `version` property is defined by the Compose Specification for backward compatibility. It is only informative and you'll receive a warning message that it is obsolete if used. 
 @z
 
 @x
-Compose doesn't use `version` to select an exact schema to validate the Compose file, but
-prefers the most recent schema when it's implemented.
+Compose always uses the most recent schema to validate the Compose file, regardless of the `version` field.
 @y
-Compose doesn't use `version` to select an exact schema to validate the Compose file, but
-prefers the most recent schema when it's implemented.
+Compose always uses the most recent schema to validate the Compose file, regardless of the `version` field.
 @z
 
 @x
@@ -49,10 +51,14 @@ because the Compose file was written with fields defined by a newer version of t
 
 @x
 The top-level `name` property is defined by the Compose Specification as the project name to be used if you don't set one explicitly.
+@y
+The top-level `name` property is defined by the Compose Specification as the project name to be used if you don't set one explicitly.
+@z
+
+@x
 Compose offers a way for you to override this name, and sets a
 default project name to be used if the top-level `name` element is not set.
 @y
-The top-level `name` property is defined by the Compose Specification as the project name to be used if you don't set one explicitly.
 Compose offers a way for you to override this name, and sets a
 default project name to be used if the top-level `name` element is not set.
 @z

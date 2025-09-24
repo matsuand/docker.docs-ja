@@ -238,11 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md          \
-	configure-ci-cd.md \
-	containerize.md    \
-	deploy.md          \
-	develop.md
+	_index.md                   \
+	configure-github-actions.md \
+	containerize.md             \
+	deploy.md                   \
+	develop.md                  \
+	lint-format-typing.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

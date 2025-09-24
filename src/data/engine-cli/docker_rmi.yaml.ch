@@ -7,92 +7,42 @@ aliases: docker image rm, docker image remove, docker rmi
 short: Remove one or more images
 long: Remove one or more images
 usage: docker rmi [OPTIONS] IMAGE [IMAGE...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force removal of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-prune
-      value_type: bool
-      default_value: "false"
-      description: Do not delete untagged parents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker rmi
 aliases: docker image rm, docker image remove, docker rmi
 short: Remove one or more images
 long: Remove one or more images
 usage: docker rmi [OPTIONS] IMAGE [IMAGE...]
-pname: docker
-plink: docker.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force removal of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-prune
-      value_type: bool
-      default_value: "false"
-      description: Do not delete untagged parents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x force
+      description: Force removal of the image
+@y
+      description: Force removal of the image
+@z
+
+@x no-prune
+      description: Do not delete untagged parents
+@y
+      description: Do not delete untagged parents
+@z
+
+@x platform
+      description: |
+        Remove only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+        Remove only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% snip directives...

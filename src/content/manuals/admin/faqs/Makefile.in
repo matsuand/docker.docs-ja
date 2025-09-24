@@ -240,7 +240,6 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md       \
 	company-faqs.md \
-	general-faqs.md \
 	organization-faqs.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

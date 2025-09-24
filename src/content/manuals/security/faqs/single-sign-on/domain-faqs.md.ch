@@ -1,76 +1,50 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
-description: Single sign-on domain FAQs
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
-title: FAQs for SSO and domains
+title: SSO domain FAQs
 linkTitle: Domains
+description: Frequently asked questions about domain verification and management for Docker single sign-on
+keywords: SSO domains, domain verification, DNS, TXT records, single sign-on
 @y
-description: Single sign-on domain FAQs
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, domains, domain verification, domain management
-title: FAQs for SSO and domains
+title: SSO domain FAQs
 linkTitle: Domains
+description: Frequently asked questions about domain verification and management for Docker single sign-on
+keywords: SSO domains, domain verification, DNS, TXT records, single sign-on
 @z
 
 @x
-### Can I add sub-domains?
+## Can I add sub-domains?
 @y
-### Can I add sub-domains?
+## Can I add sub-domains?
 @z
 
 @x
-Yes, you can add sub-domains to your SSO connection, however all email addresses should also be on that domain. Verify that your DNS provider supports multiple TXT records for the same domain.
+Yes, you can add sub-domains to your SSO connection. All email addresses must use domains you've added to the connection. Verify that your DNS provider supports multiple TXT records for the same domain.
 @y
-Yes, you can add sub-domains to your SSO connection, however all email addresses should also be on that domain. Verify that your DNS provider supports multiple TXT records for the same domain.
+Yes, you can add sub-domains to your SSO connection. All email addresses must use domains you've added to the connection. Verify that your DNS provider supports multiple TXT records for the same domain.
 @z
 
 @x
-### Can the DNS provider configure it once for one-time verification and remove it later or will it be needed permanently?
+## Do I need to keep the DNS TXT record permanently?
 @y
-### Can the DNS provider configure it once for one-time verification and remove it later or will it be needed permanently?
+## Do I need to keep the DNS TXT record permanently?
 @z
 
 @x
-You can do it one time to add the domain to a connection. If your organization ever changes IdPs and has to set up SSO again, your DNS provider will need to verify again.
+You can remove the TXT record after one-time verification to add the domain. However, if your organization changes identity providers and needs to set up SSO again, you'll need to verify the domain again.
 @y
-You can do it one time to add the domain to a connection. If your organization ever changes IdPs and has to set up SSO again, your DNS provider will need to verify again.
+You can remove the TXT record after one-time verification to add the domain. However, if your organization changes identity providers and needs to set up SSO again, you'll need to verify the domain again.
 @z
 
 @x
-### Is adding domain required to configure SSO? What domains should I be adding? And how do I add it?
+## Can I verify the same domain for multiple organizations?
 @y
-### Is adding domain required to configure SSO? What domains should I be adding? And how do I add it?
+## Can I verify the same domain for multiple organizations?
 @z
 
 @x
-Adding and verifying a domain is required to enable and enforce SSO. See [Configure single sign-on](/manuals/security/for-admins/single-sign-on/configure.md) for more information. This should include all email domains users will use to access Docker. Public domains, for example `gmail.com` or `outlook.com`, are not permitted. Also, the email domain should be set as the primary email.
+You can't verify the same domain for multiple organizations at the organization level. To verify one domain for multiple organizations, you must have a Docker Business subscription and create a company. Companies allow centralized management of organizations and domain verification at the company level.
 @y
-Adding and verifying a domain is required to enable and enforce SSO. See [Configure single sign-on](manuals/security/for-admins/single-sign-on/configure.md) for more information. This should include all email domains users will use to access Docker. Public domains, for example `gmail.com` or `outlook.com`, are not permitted. Also, the email domain should be set as the primary email.
-@z
-
-@x
-### Is IdP-initiated authentication supported?
-@y
-### Is IdP-initiated authentication supported?
-@z
-
-@x
-IdP-initiated authentication isn't supported by Docker SSO. Users must initiate sign-in through Docker Desktop or Hub.
-@y
-IdP-initiated authentication isn't supported by Docker SSO. Users must initiate sign-in through Docker Desktop or Hub.
-@z
-
-@x
-### Can I verify the same domain on multiple organizations?
-@y
-### Can I verify the same domain on multiple organizations?
-@z
-
-@x
-You can't verify the same domain for multiple orgnaizations at the organization level. If you want to verify one domain for multiple organizations, you must have a Docker Business subscription, and [create a company](/manuals/admin/company/new-company.md). A company enables centralized management of organizations and allows domain verification at the company level.
-@y
-You can't verify the same domain for multiple orgnaizations at the organization level. If you want to verify one domain for multiple organizations, you must have a Docker Business subscription, and [create a company](manuals/admin/company/new-company.md). A company enables centralized management of organizations and allows domain verification at the company level.
+You can't verify the same domain for multiple organizations at the organization level. To verify one domain for multiple organizations, you must have a Docker Business subscription and create a company. Companies allow centralized management of organizations and domain verification at the company level.
 @z

@@ -2917,7 +2917,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         example: ""
       Domainname:
@@ -2925,7 +2925,7 @@ definitions:
           The domain name to use for the container.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         example: ""
       Domainname:
@@ -2941,7 +2941,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         example: ""
       User:
@@ -2953,7 +2953,7 @@ definitions:
           Whether to attach to `stdin`.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         example: ""
       User:
@@ -2973,7 +2973,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -2982,7 +2982,7 @@ definitions:
           Whether to attach to `stdout`.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -2999,7 +2999,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3008,7 +3008,7 @@ definitions:
           Whether to attach to `stderr`.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3025,7 +3025,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3034,7 +3034,7 @@ definitions:
           An object mapping ports to an empty object in the form:
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3085,7 +3085,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3094,7 +3094,7 @@ definitions:
           Open `stdin`
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3111,7 +3111,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3120,7 +3120,7 @@ definitions:
           Close `stdin` after one attached client disconnects.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3137,7 +3137,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3172,7 +3172,7 @@ definitions:
           or which was used when the container was created.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always false. It must not be used, and will be removed in API v1.48.
+          > always false. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3215,7 +3215,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         default: ""
         example: ""
@@ -3241,7 +3241,7 @@ definitions:
           The entry point for the container as a string or an array of strings.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always empty. It must not be used, and will be removed in API v1.48.
+          > always empty. It must not be used, and will be removed in API v1.50.
         type: "string"
         default: ""
         example: ""
@@ -3299,7 +3299,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3309,7 +3309,7 @@ definitions:
           MAC address of the container.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "boolean"
         default: false
         example: false
@@ -3327,7 +3327,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "string"
         default: ""
         example: ""
@@ -3359,7 +3359,7 @@ definitions:
           Timeout to stop a container in seconds.
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "string"
         default: ""
         example: ""
@@ -3399,7 +3399,7 @@ definitions:
 
 @x
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "integer"
         default: 10
         x-nullable: true
@@ -3453,7 +3453,7 @@ definitions:
       "Shell": ["/bin/sh", "-c"]
 @y
           > **Deprecated**: this field is not part of the image specification and is
-          > always omitted. It must not be used, and will be removed in API v1.48.
+          > always omitted. It must not be used, and will be removed in API v1.50.
         type: "integer"
         default: 10
         x-nullable: true

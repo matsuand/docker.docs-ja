@@ -16,6 +16,12 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
+      text: Beta
+@y
+      text: ベータ
+@z
+
+@x
 {{< summary-bar feature_name="Wasm workloads" >}}
 @y
 {{< summary-bar feature_name="Wasm workloads" >}}
@@ -67,13 +73,13 @@ then pre-existing images and containers will be inaccessible.
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
 3. Go to **Features in development** and check the **Enable Wasm** option.
-4. Select **Apply & restart** to save the settings.
+4. Select **Apply** to save the settings.
 5. In the confirmation dialog, select **Install** to install the Wasm runtimes.
 @y
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
 3. Go to **Features in development** and check the **Enable Wasm** option.
-4. Select **Apply & restart** to save the settings.
+4. Select **Apply** to save the settings.
 5. In the confirmation dialog, select **Install** to install the Wasm runtimes.
 @z
 

@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md „É™„É≥„ÇØ„Å∏„ÅÆ (no slash) ÂØæÂøú
+% .md ÉäÉìÉNÇ÷ÇÃ (no slash) ëŒâû
 
 @x
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
+linkTitle: General
 @y
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
+linkTitle: General
 @z
 
 @x
@@ -34,29 +36,29 @@ This includes:
 @x
 - The resources in the [Learning Center](/manuals/desktop/use-desktop/_index.md)
 - Pulling or pushing an image to Docker Hub
-- [Image Access Management](/manuals/security/for-developers/access-tokens.md)
+- [Image Access Management](/manuals/security/access-tokens.md)
 - [Static vulnerability scanning](/manuals/docker-hub/repos/manage/vulnerability-scanning.md)
 - Viewing remote images in the Docker Dashboard
-- Setting up [Dev Environments](/manuals/desktop/features/dev-environments/_index.md)
 - Docker Build when using [BuildKit](/manuals/build/buildkit/_index.md#getting-started).
   You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
 - [Kubernetes](/manuals/desktop/features/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
 - Checking for updates
 - [In-app diagnostics](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
 - Sending usage statistics
+- When `networkMode` is set to `mirrored`
 @y
 - The resources in the [Learning Center](manuals/desktop/use-desktop/_index.md)
 - Pulling or pushing an image to Docker Hub
-- [Image Access Management](manuals/security/for-developers/access-tokens.md)
+- [Image Access Management](manuals/security/access-tokens.md)
 - [Static vulnerability scanning](manuals/docker-hub/repos/manage/vulnerability-scanning.md)
 - Viewing remote images in the Docker Dashboard
-- Setting up [Dev Environments](manuals/desktop/features/dev-environments/_index.md)
 - Docker Build when using [BuildKit](manuals/build/buildkit/_index.md#getting-started).
   You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
 - [Kubernetes](manuals/desktop/features/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
 - Checking for updates
 - [In-app diagnostics](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
 - Sending usage statistics
+- When `networkMode` is set to `mirrored`
 @z
 
 @x

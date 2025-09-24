@@ -1,122 +1,80 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
-description: Find the answers to container security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
 title: Container security FAQs
 linkTitle: Container
+description: Frequently asked questions about Docker container security and isolation
+keywords: container security, docker desktop isolation, enhanced container isolation, file sharing
 @y
-description: Find the answers to container security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
 title: Container security FAQs
 linkTitle: Container
+description: Frequently asked questions about Docker container security and isolation
+keywords: container security, docker desktop isolation, enhanced container isolation, file sharing
 @z
 
 @x
-### How are containers isolated from the host in Docker Desktop?
+## How are containers isolated from the host in Docker Desktop?
 @y
-### How are containers isolated from the host in Docker Desktop?
+## How are containers isolated from the host in Docker Desktop?
 @z
 
 @x
-Docker Desktop runs all containers inside a customized / minimal Linux virtual
-machine (except for native Windows containers). This adds a strong layer of
-isolation between containers and the host the machine, even if containers are
-running rootful.
+Docker Desktop runs all containers inside a customized Linux virtual machine (except for native Windows containers). This adds strong isolation between containers and the host machine, even when containers run as root.
 @y
-Docker Desktop runs all containers inside a customized / minimal Linux virtual
-machine (except for native Windows containers). This adds a strong layer of
-isolation between containers and the host the machine, even if containers are
-running rootful.
+Docker Desktop runs all containers inside a customized Linux virtual machine (except for native Windows containers). This adds strong isolation between containers and the host machine, even when containers run as root.
 @z
 
 @x
-However note the following:
+Important considerations include:
 @y
-However note the following:
+Important considerations include:
 @z
 
 @x
-* Containers have access to host files configured for file sharing via Settings
-  -> Resources -> File Sharing (see the next FAQ question below for more info).
+- Containers have access to host files configured for file sharing via Docker Desktop settings
+- Containers run as root with limited capabilities inside the Docker Desktop VM by default
+- Privileged containers (`--privileged`, `--pid=host`, `--cap-add`) run with elevated privileges inside the VM, giving them access to VM internals and Docker Engine
 @y
-* Containers have access to host files configured for file sharing via Settings
-  -> Resources -> File Sharing (see the next FAQ question below for more info).
+- Containers have access to host files configured for file sharing via Docker Desktop settings
+- Containers run as root with limited capabilities inside the Docker Desktop VM by default
+- Privileged containers (`--privileged`, `--pid=host`, `--cap-add`) run with elevated privileges inside the VM, giving them access to VM internals and Docker Engine
 @z
 
 @x
-* By default, containers run as root but with limited capabilities inside the
-  Docker Desktop VM. Containers running with elevated privileges (e.g.,
-  `--privileged`, `--pid=host`, `--cap-add`, etc.) run as root with elevated
-  privileges inside the Docker Desktop VM which gives them access to Docker
-  Desktop VM internals, including the Docker Engine. Thus, users must be careful
-  which containers they run with such privileges to avoid security breaches by
-  malicious container images.
+With Enhanced Container Isolation turned on, each container runs in a dedicated Linux user namespace inside the Docker Desktop VM. Even privileged containers only have privileges within their container boundary, not the VM. ECI uses advanced techniques to prevent containers from breaching the Docker Desktop VM and Docker Engine.
 @y
-* By default, containers run as root but with limited capabilities inside the
-  Docker Desktop VM. Containers running with elevated privileges (e.g.,
-  `--privileged`, `--pid=host`, `--cap-add`, etc.) run as root with elevated
-  privileges inside the Docker Desktop VM which gives them access to Docker
-  Desktop VM internals, including the Docker Engine. Thus, users must be careful
-  which containers they run with such privileges to avoid security breaches by
-  malicious container images.
+With Enhanced Container Isolation turned on, each container runs in a dedicated Linux user namespace inside the Docker Desktop VM. Even privileged containers only have privileges within their container boundary, not the VM. ECI uses advanced techniques to prevent containers from breaching the Docker Desktop VM and Docker Engine.
 @z
 
 @x
-* If [Enhanced Container Isolation (ECI)](/manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
-  mode is enabled, then each container runs within a dedicated Linux User
-  Namespace inside the Docker Desktop VM, which means the container has no
-  privileges within the Docker Desktop VM. Even when using the `--privileged`
-  flag or similar, the container processes will only be privileged within the
-  container's logical boundary, but unprivileged otherwise. In addition, ECI protects
-  uses other advanced techniques to ensure they can't easily breach
-  the Docker Desktop VM and Docker Engine within (see the ECI section for more
-  info). No changes to the containers or user workflows are required as the
-  extra protection is added under the covers.
+## Which portions of the host filesystem can containers access?
 @y
-* If [Enhanced Container Isolation (ECI)](manuals/security/for-admins/hardened-desktop/enhanced-container-isolation/_index.md)
-  mode is enabled, then each container runs within a dedicated Linux User
-  Namespace inside the Docker Desktop VM, which means the container has no
-  privileges within the Docker Desktop VM. Even when using the `--privileged`
-  flag or similar, the container processes will only be privileged within the
-  container's logical boundary, but unprivileged otherwise. In addition, ECI protects
-  uses other advanced techniques to ensure they can't easily breach
-  the Docker Desktop VM and Docker Engine within (see the ECI section for more
-  info). No changes to the containers or user workflows are required as the
-  extra protection is added under the covers.
+## Which portions of the host filesystem can containers access?
 @z
 
 @x
-### To which portions of the host filesystem do containers have read and write access?
+Containers can only access host files that are:
 @y
-### To which portions of the host filesystem do containers have read and write access?
+Containers can only access host files that are:
 @z
 
 @x
-Containers can only access host files if these are shared via Settings -> Resources -> File Sharing,
-and only when such files are bind-mounted into the container (e.g., `docker run -v /path/to/host/file:/mnt ...`).
+1. Shared using Docker Desktop settings
+1. Explicitly bind-mounted into the container (e.g., `docker run -v /path/to/host/file:/mnt`)
 @y
-Containers can only access host files if these are shared via Settings -> Resources -> File Sharing,
-and only when such files are bind-mounted into the container (e.g., `docker run -v /path/to/host/file:/mnt ...`).
+1. Shared using Docker Desktop settings
+1. Explicitly bind-mounted into the container (e.g., `docker run -v /path/to/host/file:/mnt`)
 @z
 
 @x
-### Can containers running as root gain access to admin-owned files or directories on the host?
+## Can containers running as root access admin-owned files on the host?
 @y
-### Can containers running as root gain access to admin-owned files or directories on the host?
+## Can containers running as root access admin-owned files on the host?
 @z
 
 @x
-No; host file sharing (bind mount from the host filesystem) uses a user-space crafted
-file server (running in `com.docker.backend` as the user running Docker
-Desktop), so containers can’t gain any access that the user on the host doesn’t
-already have.
+No. Host file sharing uses a user-space file server (running in `com.docker.backend` as the Docker Desktop user), so containers can only access files that the Docker Desktop user already has permission to access.
 @y
-No; host file sharing (bind mount from the host filesystem) uses a user-space crafted
-file server (running in `com.docker.backend` as the user running Docker
-Desktop), so containers can’t gain any access that the user on the host doesn’t
-already have.
+No. Host file sharing uses a user-space file server (running in `com.docker.backend` as the Docker Desktop user), so containers can only access files that the Docker Desktop user already has permission to access.
 @z

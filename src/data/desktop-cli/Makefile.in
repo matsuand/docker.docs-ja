@@ -247,10 +247,6 @@ bases = \
 	docker_desktop_engine_ls.yaml            \
 	docker_desktop_engine_use.yaml           \
 	docker_desktop_logs.yaml                 \
-	docker_desktop_module.yaml               \
-	docker_desktop_module_ls.yaml            \
-	docker_desktop_module_reset.yaml         \
-	docker_desktop_module_update.yaml        \
 	docker_desktop_restart.yaml              \
 	docker_desktop_start.yaml                \
 	docker_desktop_status.yaml               \

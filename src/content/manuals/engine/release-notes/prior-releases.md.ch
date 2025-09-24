@@ -4,13 +4,15 @@
 @x
 title: Docker Engine prior releases
 linkTitle: Prior releases
-weight: 100
-description: Release notes for Docker CE
-keywords: release notes, community
 @y
 title: Docker Engine prior releases
 linkTitle: Prior releases
-weight: 100
+@z
+
+@x
+description: Release notes for Docker CE
+keywords: release notes, community
+@y
 description: Release notes for Docker CE
 keywords: release notes, community
 @z
@@ -762,7 +764,7 @@ following message:
 @z
 
 @x
-```none
+```text
 Error starting daemon: Error initializing network controller: Error creating
                        default "bridge" network: failed to parse pool request
                        for address space "LocalDefault" pool " subpool ":
@@ -770,7 +772,7 @@ Error starting daemon: Error initializing network controller: Error creating
                        pool among the defaults to assign to the network
 ```
 @y
-```none
+```text
 Error starting daemon: Error initializing network controller: Error creating
                        default "bridge" network: failed to parse pool request
                        for address space "LocalDefault" pool " subpool ":
@@ -800,14 +802,14 @@ creation will fail with the following message:
 @z
 
 @x
-```none
+```text
 Error response from daemon: failed to parse pool request for address space
                             "LocalDefault" pool "" subpool "": could not find an
                             available, non-overlapping IPv6 address pool among
                             the defaults to assign to the network
 ```
 @y
-```none
+```text
 Error response from daemon: failed to parse pool request for address space
                             "LocalDefault" pool "" subpool "": could not find an
                             available, non-overlapping IPv6 address pool among
@@ -938,7 +940,7 @@ following message:
 @z
 
 @x
-```none
+```text
 Error starting daemon: Error initializing network controller: Error creating
                        default "bridge" network: failed to parse pool request
                        for address space "LocalDefault" pool " subpool ":
@@ -946,7 +948,7 @@ Error starting daemon: Error initializing network controller: Error creating
                        pool among the defaults to assign to the network
 ```
 @y
-```none
+```text
 Error starting daemon: Error initializing network controller: Error creating
                        default "bridge" network: failed to parse pool request
                        for address space "LocalDefault" pool " subpool ":
@@ -976,14 +978,14 @@ creation will fail with the following message:
 @z
 
 @x
-```none
+```text
 Error response from daemon: failed to parse pool request for address space
                             "LocalDefault" pool "" subpool "": could not find an
                             available, non-overlapping IPv6 address pool among
                             the defaults to assign to the network
 ```
 @y
-```none
+```text
 Error response from daemon: failed to parse pool request for address space
                             "LocalDefault" pool "" subpool "": could not find an
                             available, non-overlapping IPv6 address pool among
@@ -2955,6 +2957,16 @@ additional binaries; `dockerd`, and `docker-proxy`. If you have scripts for inst
 > [!IMPORTANT]
 >
 > Docker 1.10 uses a new content-addressable storage for images and layers.
+@z
+
+@x
+A migration is performed the first time `docker` is run, and can take a significant amount of time depending on the number of images present. Refer to this page on the wiki for more information: https://github.com/docker/docker/wiki/Engine-v1.10.0-content-addressability-migration
+We also released a cool migration utility that enables you to perform the migration before updating to reduce downtime.
+Engine 1.10 migrator can be found on Docker Hub: https://hub.docker.com/r/docker/v1.10-migrator/
+@y
+A migration is performed the first time `docker` is run, and can take a significant amount of time depending on the number of images present. Refer to this page on the wiki for more information: https://github.com/docker/docker/wiki/Engine-v1.10.0-content-addressability-migration
+We also released a cool migration utility that enables you to perform the migration before updating to reduce downtime.
+Engine 1.10 migrator can be found on Docker Hub: https://hub.docker.com/r/docker/v1.10-migrator/
 @z
 
 @x

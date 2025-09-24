@@ -51,10 +51,10 @@ An image registry is a centralized location for storing and sharing your contain
 @z
 
 @x
-While Docker Hub is a popular option, there are many other available container registries available today, including [Amazon Elastic Container Registry(ECR)](https://aws.amazon.com/ecr/), [Azure Container Registry (ACR)](https://azure.microsoft.com/en-in/products/container-registry), and [Google Container Registry (GCR)](https://cloud.google.com/artifact-registry). You can even run your private registry on your local system or inside your organization. For example, Harbor, JFrog Artifactory, GitLab Container registry etc.
+While Docker Hub is a popular option, there are many other available container registries available today, including [Amazon Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/), [Azure Container Registry (ACR)](https://azure.microsoft.com/en-in/products/container-registry), and [Google Container Registry (GCR)](https://cloud.google.com/artifact-registry). You can even run your private registry on your local system or inside your organization. For example, Harbor, JFrog Artifactory, GitLab Container registry etc.
 @y
 Docker Hub がもっとも人気のあるレジストリですが、利用可能なコンテナーレジストリは他にもいろいろとあります。
-[Amazon Elastic Container Registry(ECR)](https://aws.amazon.com/ecr/)、[Azure Container Registry (ACR)](https://azure.microsoft.com/en-in/products/container-registry)、[Google Container Registry (GCR)](https://cloud.google.com/artifact-registry) といったものです。
+[Amazon Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/)、[Azure Container Registry (ACR)](https://azure.microsoft.com/en-in/products/container-registry)、[Google Container Registry (GCR)](https://cloud.google.com/artifact-registry) といったものです。
 またローカルマシンや組織内部にプライベートなレジストリを立ち上げることもできます。
 たとえば Harbor、JFrog Artifactory、GitLab Container registry などがあります。
 @z

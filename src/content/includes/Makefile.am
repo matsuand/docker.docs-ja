@@ -5,26 +5,25 @@
 SUBDIRS = compose
 
 bases = \
-	_index.md                         \
-	aci-ecs-eol.md                    \
-	admin-company-overview.md         \
-	admin-org-overview.md             \
-	buildx-v0.10-disclaimer.md        \
-	compose-eol.md                    \
-	deploy.md                         \
-	desktop-license-update.md         \
-	desktop-linux-launch.md           \
-	dev-envs-changing.md              \
-	dockerfile-labs-channel.md        \
-	experimental.md                   \
-	extensions-form.md                \
-	guides-get-docker.md              \
-	hub-categories.md                 \
-	install-script.md                 \
-	open-terminal.md                  \
-	root-errors.md                    \
-	swarm-compose-compat.md           \
-	swarm-mode.md                     \
+	_index.md                  \
+	aci-ecs-eol.md             \
+	buildx-v0.10-disclaimer.md \
+	compose-eol.md             \
+	deploy.md                  \
+	desktop-license-update.md  \
+	desktop-linux-launch.md    \
+	dev-envs-changing.md       \
+	dockerfile-labs-channel.md \
+	engine-license.md          \
+	experimental.md            \
+	extensions-form.md         \
+	guides-get-docker.md       \
+	hub-categories.md          \
+	install-script.md          \
+	open-terminal.md           \
+	root-errors.md             \
+	swarm-compose-compat.md    \
+	swarm-mode.md              \
 	tax-compliance.md
 
 include $(top_srcdir)/build-aux/common.mk

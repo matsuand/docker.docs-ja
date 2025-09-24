@@ -238,24 +238,22 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-bases = \
-	global.css     \
-	typography.css
-
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
 changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
+bases = \
+	utilities.css
+
 copyfiles = \
-	code.css         \
+	components.css   \
+	global.css       \
 	hack.css         \
-	icons.css        \
-	lists.css        \
-	styles.css       \
+	style.css        \
 	syntax-dark.css  \
 	syntax-light.css \
-	toc.css
+	theme.css
 
 all: all-am
 

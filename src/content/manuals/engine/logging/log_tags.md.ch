@@ -2,25 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn about how to format log output with Go templates
 keywords: docker, logging, driver, syslog, Fluentd, gelf, journald
 title: Customize log driver output
-aliases:
-  - /engine/reference/logging/log_tags/
-  - /engine/admin/logging/log_tags/
-  - /config/containers/logging/log_tags/
----
 @y
----
 description: Learn about how to format log output with Go templates
 keywords: docker, logging, driver, syslog, Fluentd, gelf, journald
 title: Customize log driver output
-aliases:
-  - /engine/reference/logging/log_tags/
-  - /engine/admin/logging/log_tags/
-  - /config/containers/logging/log_tags/
----
 @z
 
 @x
@@ -78,11 +66,11 @@ For example, specifying a `--log-opt tag="{{.ImageName}}/{{.Name}}/{{.ID}}"` val
 @z
 
 @x
-```none
+```text
 Aug  7 18:33:19 HOSTNAME hello-world/foobar/5790672ab6a0[9103]: Hello from Docker.
 ```
 @y
-```none
+```text
 Aug  7 18:33:19 HOSTNAME hello-world/foobar/5790672ab6a0[9103]: Hello from Docker.
 ```
 @z

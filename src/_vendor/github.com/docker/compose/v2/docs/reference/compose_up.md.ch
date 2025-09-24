@@ -91,6 +91,7 @@ If the process is interrupted using `SIGINT` (ctrl + C) or `SIGTERM`, the contai
 | `--no-recreate`                | `bool`        |          | If containers already exist, don't recreate them. Incompatible with --force-recreate.                                                               |
 | `--no-start`                   | `bool`        |          | Don't start the services after creating them                                                                                                        |
 | `--pull`                       | `string`      | `policy` | Pull image before running ("always"\|"missing"\|"never")                                                                                            |
+| `--quiet-build`                | `bool`        |          | Suppress the build output                                                                                                                           |
 | `--quiet-pull`                 | `bool`        |          | Pull without printing progress information                                                                                                          |
 | `--remove-orphans`             | `bool`        |          | Remove containers for services not defined in the Compose file                                                                                      |
 | `-V`, `--renew-anon-volumes`   | `bool`        |          | Recreate anonymous volumes instead of retrieving data from the previous containers                                                                  |
@@ -100,6 +101,7 @@ If the process is interrupted using `SIGINT` (ctrl + C) or `SIGTERM`, the contai
 | `--wait`                       | `bool`        |          | Wait for services to be running\|healthy. Implies detached mode.                                                                                    |
 | `--wait-timeout`               | `int`         | `0`      | Maximum duration in seconds to wait for the project to be running\|healthy                                                                          |
 | `-w`, `--watch`                | `bool`        |          | Watch source code and rebuild/refresh containers when files are updated.                                                                            |
+| `-y`, `--yes`                  | `bool`        |          | Assume "yes" as answer to all prompts and run non-interactively                                                                                     |
 @y
 | Name                           | Type          | Default  | Description                                                                                                                                         |
 |:-------------------------------|:--------------|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -122,6 +124,7 @@ If the process is interrupted using `SIGINT` (ctrl + C) or `SIGTERM`, the contai
 | `--no-recreate`                | `bool`        |          | If containers already exist, don't recreate them. Incompatible with --force-recreate.                                                               |
 | `--no-start`                   | `bool`        |          | Don't start the services after creating them                                                                                                        |
 | `--pull`                       | `string`      | `policy` | Pull image before running ("always"\|"missing"\|"never")                                                                                            |
+| `--quiet-build`                | `bool`        |          | Suppress the build output                                                                                                                           |
 | `--quiet-pull`                 | `bool`        |          | Pull without printing progress information                                                                                                          |
 | `--remove-orphans`             | `bool`        |          | Remove containers for services not defined in the Compose file                                                                                      |
 | `-V`, `--renew-anon-volumes`   | `bool`        |          | Recreate anonymous volumes instead of retrieving data from the previous containers                                                                  |
@@ -131,6 +134,7 @@ If the process is interrupted using `SIGINT` (ctrl + C) or `SIGTERM`, the contai
 | `--wait`                       | `bool`        |          | Wait for services to be running\|healthy. Implies detached mode.                                                                                    |
 | `--wait-timeout`               | `int`         | `0`      | Maximum duration in seconds to wait for the project to be running\|healthy                                                                          |
 | `-w`, `--watch`                | `bool`        |          | Watch source code and rebuild/refresh containers when files are updated.                                                                            |
+| `-y`, `--yes`                  | `bool`        |          | Assume "yes" as answer to all prompts and run non-interactively                                                                                     |
 @z
 
 @x

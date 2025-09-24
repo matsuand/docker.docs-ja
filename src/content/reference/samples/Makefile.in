@@ -239,6 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md        \
+	agentic-ai.md    \
 	ai-ml.md         \
 	angular.md       \
 	cloudflared.md   \

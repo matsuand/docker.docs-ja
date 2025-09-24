@@ -245,9 +245,9 @@ Instead of, or as well as, specifying your own networks, you can also change the
 % snip code...
 
 @x
-## Use a pre-existing network
+## Use an existing network
 @y
-## Use a pre-existing network
+## Use an existing network
 @z
 
 @x

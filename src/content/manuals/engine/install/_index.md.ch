@@ -37,9 +37,15 @@ Docker Desktop のインストール手順については [Docker Desktop 概要
 @z
 
 @x
-## Supported platforms
+## Installation procedures for supported platforms
 @y
-## サポートするプラットフォーム {#supported-platforms}
+## サポートするプラットフォームのインストール手順 {#installation-procedures-for-supported-platforms}
+@z
+
+@x
+Click on a platform's link to view the relevant installation procedure.
+@y
+各プラットフォームのリンクをクリックして、対応するインストール手順を確認してください。
 @z
 
 @x
@@ -203,12 +209,15 @@ Patch releases are always backward compatible with its major and minor version.
 @z
 
 @x
-Docker Engine is licensed under the Apache License, Version 2.0. See
-[LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full
-license text.
+Commercial use of Docker Engine obtained via Docker Desktop
+within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
+$10 million USD), requires a [paid subscription](https://www.docker.com/pricing/).
+Apache License, Version 2.0. See [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full license.
 @y
-Docker Engine は ライセンスとして Apache License, Version 2.0 を採用しています。
-ライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
+Commercial use of Docker Engine obtained via Docker Desktop
+within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
+$10 million USD), requires a [paid subscription](https://www.docker.com/pricing/).
+Apache License, Version 2.0 のライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
 @z
 
 @x

@@ -26,6 +26,330 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @z
 
 @x
+## 1.18.3
+@y
+## 1.18.3
+@z
+
+@x
+{{< release-date date="2025-08-13" >}}
+@y
+{{< release-date date="2025-08-13" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `docker scout vex get` command to retrieve a merged VEX document from all VEX attestations.
+@y
+- Add `docker scout vex get` command to retrieve a merged VEX document from all VEX attestations.
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Minor fixes for Docker Hardened Images (DHI).
+@y
+- Minor fixes for Docker Hardened Images (DHI).
+@z
+
+@x
+## 1.18.2
+@y
+## 1.18.2
+@z
+
+@x
+{{< release-date date="2025-07-21" >}}
+@y
+{{< release-date date="2025-07-21" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `--skip-tlog` flag to `docker scout attest get` to skip signature verification against the transparency log.
+@y
+- Add `--skip-tlog` flag to `docker scout attest get` to skip signature verification against the transparency log.
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Add predicate type human-readable names for DHI FIPS and STIG attestations.
+@y
+- Add predicate type human-readable names for DHI FIPS and STIG attestations.
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Do not filter CVEs that are marked with a VEX `under_investigation` statement.
+- Minor fixes for Docker Hardened Images (DHI).
+@y
+- Do not filter CVEs that are marked with a VEX `under_investigation` statement.
+- Minor fixes for Docker Hardened Images (DHI).
+@z
+
+@x
+## 1.18.1
+@y
+## 1.18.1
+@z
+
+@x
+{{< release-date date="2025-05-26" >}}
+@y
+{{< release-date date="2025-05-26" >}}
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix issues with `docker scout attest list` and `docker scout attest get` for local images.
+@y
+- Fix issues with `docker scout attest list` and `docker scout attest get` for local images.
+@z
+
+@x
+## 1.18.0
+@y
+## 1.18.0
+@z
+
+@x
+{{< release-date date="2025-05-13" >}}
+@y
+{{< release-date date="2025-05-13" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `docker scout attest list` and `docker scout attest get` commands to list attestations.
+- Add support for Docker Hardened Images (DHI) VEX documents.
+@y
+- Add `docker scout attest list` and `docker scout attest get` commands to list attestations.
+- Add support for Docker Hardened Images (DHI) VEX documents.
+@z
+
+@x
+## 1.16.1
+@y
+## 1.16.1
+@z
+
+@x
+{{< release-date date="2024-12-13" >}}
+@y
+{{< release-date date="2024-12-13" >}}
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix in-toto subject digest for the `docker scout attestation add` command.
+@y
+- Fix in-toto subject digest for the `docker scout attestation add` command.
+@z
+
+@x
+## 1.16.0
+@y
+## 1.16.0
+@z
+
+@x
+{{< release-date date="2024-12-12" >}}
+@y
+{{< release-date date="2024-12-12" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add secret scanning to the `docker scout sbom` command.
+- Add support for attestations for images from Tanzu Application Catalog.
+@y
+- Add secret scanning to the `docker scout sbom` command.
+- Add support for attestations for images from Tanzu Application Catalog.
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Normalize licenses using the SPDX license list.
+- Make licenses unique.
+- Print platform in markdown output.
+- Keep original pattern to find nested matches.
+- Updates to make SPDX output spec-compliant.
+- Update Go, crypto module, and Alpine dependencies.
+@y
+- Normalize licenses using the SPDX license list.
+- Make licenses unique.
+- Print platform in markdown output.
+- Keep original pattern to find nested matches.
+- Updates to make SPDX output spec-compliant.
+- Update Go, crypto module, and Alpine dependencies.
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix behavior with multiple images in the `docker scout attest` command.
+- Check directory existence before creating temporary file.
+@y
+- Fix behavior with multiple images in the `docker scout attest` command.
+- Check directory existence before creating temporary file.
+@z
+
+@x
+## 1.15.0
+@y
+## 1.15.0
+@z
+
+@x
+{{< release-date date="2024-10-31" >}}
+@y
+{{< release-date date="2024-10-31" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- New `--format=cyclonedx` flag for the `docker scout sbom` to output the SBOM in CycloneDX format.
+@y
+- New `--format=cyclonedx` flag for the `docker scout sbom` to output the SBOM in CycloneDX format.
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- Use high-to-low sort order for CVE summary.
+- Support for enabling and disabling repositories that enabled by `docker scout push` or `docker scout watch`.
+@y
+- Use high-to-low sort order for CVE summary.
+- Support for enabling and disabling repositories that enabled by `docker scout push` or `docker scout watch`.
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Improve messaging when analyzing `oci` directories without attestations.
+  Only single-platform images and multi-platform image _with attestations_ are supported.
+  Multi-platform images without attestations are not supported.
+- Improve classifiers and SBOM indexer:
+  - Add classifier for Liquibase `lpm`.
+  - Add Rakudo Star/MoarVM binary classifier.
+  - Add binary classifiers for silverpeas utilities.
+- Improve reading and caching of attestations with the containerd image store.
+@y
+- Improve messaging when analyzing `oci` directories without attestations.
+  Only single-platform images and multi-platform image _with attestations_ are supported.
+  Multi-platform images without attestations are not supported.
+- Improve classifiers and SBOM indexer:
+  - Add classifier for Liquibase `lpm`.
+  - Add Rakudo Star/MoarVM binary classifier.
+  - Add binary classifiers for silverpeas utilities.
+- Improve reading and caching of attestations with the containerd image store.
+@z
+
+@x
+## 1.14.0
+@y
+## 1.14.0
+@z
+
+@x
+{{< release-date date="2024-09-24" >}}
+@y
+{{< release-date date="2024-09-24" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add suppression information at the CVE level in the `docker scout cves` command.
+@y
+- Add suppression information at the CVE level in the `docker scout cves` command.
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix listing CVEs for dangling images, for example: `local://sha256:...`
+- Fix panic when analysing a file system input, for instance with `docker scout cves fs://.`
+@y
+- Fix listing CVEs for dangling images, for example: `local://sha256:...`
+- Fix panic when analysing a file system input, for instance with `docker scout cves fs://.`
+@z
+
+@x
 ## 1.13.0
 @y
 ## 1.13.0
@@ -965,14 +1289,14 @@ Discarded in favor of [1.9.1](#191).
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
 - Indexing is now blocked in the CLI if it has been disabled using
-  [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md) feature.
+  [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) feature.
 @y
   When inside WSL2 with Docker Desktop running, the Docker Scout CLI plugin now
   uses the cache from Windows. That way, if an image has been indexed for
   instance by Docker Desktop there's no need anymore to re-index it on WSL2
   side.
 - Indexing is now blocked in the CLI if it has been disabled using
-  [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) feature.
+  [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) feature.
 @z
 
 @x

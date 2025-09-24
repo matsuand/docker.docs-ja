@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: "Interface: DockerDesktopClient"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-aliases:
- - /desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
- - /extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
----
 @y
----
 title: "Interface: DockerDesktopClient"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-aliases:
- - /desktop/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
- - /extensions/extensions-sdk/dev/api/reference/interfaces/DockerDesktopClient/
----
 @z
 
 @x
@@ -34,7 +24,7 @@ a legacy extension, use the v1 type instead.
 @x
 ## Properties
 @y
-## Properties
+## プロパティ {#properties}
 @z
 
 @x
@@ -1119,74 +1109,6 @@ window.ddClient.navigateToVolume(volume);
 DockerDesktopClientV0.navigateToVolume
 @y
 DockerDesktopClientV0.navigateToVolume
-@z
-
-@x
-___
-@y
-___
-@z
-
-@x
-### navigateToDevEnvironments
-@y
-### navigateToDevEnvironments
-@z
-
-@x
-▸ **navigateToDevEnvironments**(): `void`
-@y
-▸ **navigateToDevEnvironments**(): `void`
-@z
-
-@x
-Navigate to the Dev Environments window in Docker Desktop.
-@y
-Navigate to the Dev Environments window in Docker Desktop.
-@z
-
-@x
-```typescript
-window.ddClient.navigateToDevEnvironments();
-```
-@y
-```typescript
-window.ddClient.navigateToDevEnvironments();
-```
-@z
-
-@x
-> [!WARNING]
->
-> It will be removed in a future version. Use [viewDevEnvironments](NavigationIntents.md#viewdevenvironments) instead.
-@y
-> [!WARNING]
->
-> It will be removed in a future version. Use [viewDevEnvironments](NavigationIntents.md#viewdevenvironments) instead.
-@z
-
-@x
-#### Returns
-@y
-#### Returns
-@z
-
-@x
-`void`
-@y
-`void`
-@z
-
-@x
-#### Inherited from
-@y
-#### Inherited from
-@z
-
-@x
-DockerDesktopClientV0.navigateToDevEnvironments
-@y
-DockerDesktopClientV0.navigateToDevEnvironments
 @z
 
 @x

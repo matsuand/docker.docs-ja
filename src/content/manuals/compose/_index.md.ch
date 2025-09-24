@@ -12,15 +12,11 @@ title: Docker Compose
 @x
 description: Learn how to use Docker Compose to define and run multi-container applications
   with this detailed introduction to the tool.
-keywords: docker compose, docker-compose, docker compose command, docker compose files,
-  docker compose documentation, using docker compose, compose container, docker compose
-  service
+keywords: docker compose, docker-compose, compose.yaml, docker compose command, multi-container applications, container orchestration, docker cli
 @y
 description: Learn how to use Docker Compose to define and run multi-container applications
   with this detailed introduction to the tool.
-keywords: docker compose, docker-compose, docker compose command, docker compose files,
-  docker compose documentation, using docker compose, compose container, docker compose
-  service
+keywords: docker compose, docker-compose, compose.yaml, docker compose command, multi-container applications, container orchestration, docker cli
 @z
 
 % grid:
@@ -145,7 +141,7 @@ Compose を使えば、アプリケーション全体に関する管理作業を
 @z
 
 @x
-Compose works in all environments; production, staging, development, testing, as
+Compose works in all environments - production, staging, development, testing, as
 well as CI workflows. It also has commands for managing the whole lifecycle of your application:
 @y
 Compose は本番環境、ステージング環境、開発環境において動作し、CI ワークフローとしても利用することができます。
@@ -153,15 +149,15 @@ Compose は本番環境、ステージング環境、開発環境において動
 @z
 
 @x
- * Start, stop, and rebuild services
- * View the status of running services
- * Stream the log output of running services
- * Run a one-off command on a service
+ - Start, stop, and rebuild services
+ - View the status of running services
+ - Stream the log output of running services
+ - Run a one-off command on a service
 @y
- * サービスの起動、停止、再起動。
- * 実行中サービスの状態確認。
- * 実行中サービスのログ出力。
- * サービスに対する一括 (one-off) コマンドの実行。
+ - サービスの起動、停止、再起動。
+ - 実行中サービスの状態確認。
+ - 実行中サービスのログ出力。
+ - サービスに対する一括 (one-off) コマンドの実行。
 @z
 
 % snip grid...

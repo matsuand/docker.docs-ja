@@ -73,7 +73,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
-hidden: false
+hidden: true
 experimental: false
 experimentalcli: true
 kubernetes: false
@@ -150,7 +150,7 @@ inherited_options:
       kubernetes: false
       swarm: false
 deprecated: false
-hidden: false
+hidden: true
 experimental: false
 experimentalcli: true
 kubernetes: false

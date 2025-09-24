@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
+
 @x
 title: Manuals
 description: Learn how to install, set up, configure, and use Docker products with this collection of user guides
@@ -40,25 +42,63 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @x
   - title: Docker Compose
     description: Define and run multi-container applications.
-    icon: /assets/icons/Compose.svg
+    icon: /icons/Compose.svg
     link: /compose/
 @y
   - title: Docker Compose
     description: マルチコンテナーアプリケーションを定義して実行します。
-    icon: __SUBDIR__/assets/icons/Compose.svg
+    icon: icons/Compose.svg
     link: __SUBDIR__/compose/
 @z
 
 @x
   - title: Testcontainers
     description: Run containers programmatically in your preferred programming language.
-    icon: /assets/icons/Testcontainers.svg
+    icon: /icons/Testcontainers.svg
     link: /testcontainers/
 @y
   - title: Testcontainers
     description: Run containers programmatically in your preferred programming language.
-    icon: __SUBDIR__/assets/icons/Testcontainers.svg
+    icon: icons/Testcontainers.svg
     link: __SUBDIR__/testcontainers/
+@z
+
+% ai:
+
+@x
+  - title: Ask Gordon
+    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
+    icon: note_add
+    link: /ai/gordon/
+@y
+  - title: Ask Gordon
+    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
+    icon: note_add
+    link: __SUBDIR__/ai/gordon/
+@z
+
+@x
+  - title: Docker Model Runner
+    description: View and manage your local models.
+    icon: /icons/models.svg
+    link: /ai/model-runner/
+@y
+  - title: Docker Model Runner
+    description: View and manage your local models.
+    icon: icons/models.svg
+    link: __SUBDIR__/ai/model-runner/
+@z
+
+@x
+  - title: MCP Catalog and Toolkit
+    description: Augment your AI workflow with MCP servers.
+    icon: /icons/toolkit.svg
+    link: /ai/mcp-catalog-and-toolkit/
+@y
+  - title: MCP Catalog and Toolkit
+    description: Augment your AI workflow with MCP servers.
+    icon: icons/toolkit.svg
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/
 @z
 
 % products:
@@ -66,24 +106,48 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @x
   - title: Docker Desktop
     description: Your command center for container development.
-    icon: /assets/icons/Whale.svg
+    icon: /icons/Whale.svg
     link: /desktop/
 @y
   - title: Docker Desktop
     description: コンテナー開発を行うための中心的な存在です。
-    icon: __SUBDIR__/assets/icons/Whale.svg
+    icon: icons/Whale.svg
     link: __SUBDIR__/desktop/
+@z
+
+@x
+  - title: Docker Hardened Images
+    description: Secure, minimal images for trusted software delivery.
+    icon: /icons/dhi.svg
+    link: /dhi/
+@y
+  - title: Docker Hardened Images
+    description: Secure, minimal images for trusted software delivery.
+    icon: icons/dhi.svg
+    link: __SUBDIR__/dhi/
+@z
+
+@x
+  - title: Docker Offload
+    description: Build and run containers in the cloud.
+    icon: cloud
+    link: /offload/
+@y
+  - title: Docker Offload
+    description: Build and run containers in the cloud.
+    icon: cloud
+    link: __SUBDIR__/offload/
 @z
 
 @x
   - title: Build Cloud
     description: Build your images faster in the cloud.
-    icon: /assets/images/logo-build-cloud.svg
+    icon: /icons/logo-build-cloud.svg
     link: /build-cloud/
 @y
   - title: Build Cloud
     description: Build your images faster in the cloud.
-    icon: __SUBDIR__/assets/images/logo-build-cloud.svg
+    icon: icons/logo-build-cloud.svg
     link: __SUBDIR__/build-cloud/
 @z
 
@@ -102,13 +166,25 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @x
   - title: Docker Scout
     description: Image analysis and policy evaluation.
-    icon: /assets/icons/Scout.svg
+    icon: /icons/Scout.svg
     link: /scout/
 @y
   - title: Docker Scout
     description: Image analysis and policy evaluation.
-    icon: __SUBDIR__/assets/icons/Scout.svg
+    icon: icons/Scout.svg
     link: __SUBDIR__/scout/
+@z
+
+@x
+  - title: Docker for GitHub Copilot
+    description: Integrate Docker's capabilities with GitHub Copilot.
+    icon: chat
+    link: /copilot/
+@y
+  - title: Docker for GitHub Copilot
+    description: Integrate Docker's capabilities with GitHub Copilot.
+    icon: chat
+    link: /copilot/
 @z
 
 @x
@@ -248,10 +324,10 @@ End-to-end developer solutions for innovative teams.
 
 @x
 Documentation related to the Docker platform, such as administration and
-subscription management for organizations.
+subscription management.
 @y
 Docker プラットフォームに関連するドキュメントです。
-管理、組織向けのサブスク管理などがあります。
+機能管理、サブスク管理などがあります。
 @z
 
 @x

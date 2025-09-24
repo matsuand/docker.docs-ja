@@ -2,27 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Manage an account
+title: Manage a Docker account
+linkTitle: Manage an account
 @y
-title: Manage an account
+title: Manage a Docker account
+linkTitle: Manage an account
 @z
 
 @x
-description: Learn how to manage settings for your Docker account.
+description: Learn how to manage your Docker account.
 keywords: accounts, docker ID, account settings, account management, docker home
 @y
-description: Learn how to manage settings for your Docker account.
+description: Learn how to manage your Docker account.
 keywords: accounts, docker ID, account settings, account management, docker home
 @z
 
 @x
-You can centrally manage your Docker account settings using Docker Home. Here
-you can also take administrative actions for your account and manage your
-account security.
+You can centrally manage your Docker account using Docker Home, including
+adminstrative and security settings.
 @y
-You can centrally manage your Docker account settings using Docker Home. Here
-you can also take administrative actions for your account and manage your
-account security.
+You can centrally manage your Docker account using Docker Home, including
+adminstrative and security settings.
 @z
 
 @x
@@ -40,40 +40,16 @@ account security.
 @z
 
 @x
-## Update general settings
+## Update account information
 @y
-## Update general settings
+## Update account information
 @z
 
 @x
-1. Sign in to your [Docker account](https://app.docker.com/login).
-2. In Docker Home, select your avatar in the top-right corner to open the
-drop-down.
-3. Select **Account settings**.
-@y
-1. Sign in to your [Docker account](https://app.docker.com/login).
-2. In Docker Home, select your avatar in the top-right corner to open the
-drop-down.
-3. Select **Account settings**.
-@z
-
-@x
-From the Account settings page, you can take any of the following actions.
-@y
-From the Account settings page, you can take any of the following actions.
-@z
-
-@x
-### Update account information
-@y
-### Update account information
-@z
-
-@x
-Account information is visible on your account profile in Docker Hub. You can
+Account information is visible on your **Account settings** page. You can
 update the following account information:
 @y
-Account information is visible on your account profile in Docker Hub. You can
+Account information is visible on your **Account settings** page. You can
 update the following account information:
 @z
 
@@ -82,103 +58,187 @@ update the following account information:
 - Company
 - Location
 - Website
-- Gravatar email: To add an avatar to your Docker account, create a
-[Gravatar account](https://gravatar.com/) and create your avatar. Next, add your
-Gravatar email to your Docker account settings. It may take some time for your
-avatar to update in Docker.
+- Gravatar email
 @y
 - Full name
 - Company
 - Location
 - Website
-- Gravatar email: To add an avatar to your Docker account, create a
-[Gravatar account](https://gravatar.com/) and create your avatar. Next, add your
-Gravatar email to your Docker account settings. It may take some time for your
-avatar to update in Docker.
+- Gravatar email
 @z
 
 @x
-Make your changes here, then select **Save** to save your settings.
+To add or update your avatar using Gravatar:
 @y
-Make your changes here, then select **Save** to save your settings.
+To add or update your avatar using Gravatar:
 @z
 
 @x
-### Update email address
+1. Create a [Gravatar account](https://gravatar.com/).
+1. Create your avatar.
+1. Add your Gravatar email to your Docker account settings.
 @y
-### Update email address
+1. Create a [Gravatar account](https://gravatar.com/).
+1. Create your avatar.
+1. Add your Gravatar email to your Docker account settings.
 @z
 
 @x
-To update your email address, select **Email**:
+It may take some time for your avatar to update in Docker.
 @y
-To update your email address, select **Email**:
+It may take some time for your avatar to update in Docker.
 @z
 
 @x
-1. Enter your new email address.
-2. Enter your password to confirm the change.
-3. Select **Send verification email** to send a verification email to your new
-email address.
+## Update email address
 @y
-1. Enter your new email address.
-2. Enter your password to confirm the change.
-3. Select **Send verification email** to send a verification email to your new
-email address.
+## Update email address
 @z
 
 @x
-Once you verify your email address, your account information will update.
+To update your email address:
 @y
-Once you verify your email address, your account information will update.
+To update your email address:
 @z
 
 @x
-### Change your password
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Email**.
+1. Enter your new email address and your password to confirm the change.
+1. Select **Send verification email**. Docker sends a verification
+link to your new email.
 @y
-### Change your password
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Email**.
+1. Enter your new email address and your password to confirm the change.
+1. Select **Send verification email**. Docker sends a verification
+link to your new email.
 @z
 
 @x
-You can change your password by initiating a password reset via email.
+Your new email address will appear as unverified until you complete the
+verification process. You can:
 @y
-You can change your password by initiating a password reset via email.
+Your new email address will appear as unverified until you complete the
+verification process. You can:
 @z
 
 @x
-To change your password, select **Password** and then **Reset password**.
-Follow the instructions in the password reset email.
+- Resend the verification email if needed.
+- Remove the unverified email address at any time before verification.
 @y
-To change your password, select **Password** and then **Reset password**.
-Follow the instructions in the password reset email.
+- Resend the verification email if needed.
+- Remove the unverified email address at any time before verification.
 @z
 
 @x
-## Manage security settings
+To verify your email, open your email client and follow the instructions
+in the Docker verification email.
 @y
-## Manage security settings
+To verify your email, open your email client and follow the instructions
+in the Docker verification email.
 @z
 
 @x
-To update your two-factor authentication (2FA) settings, select **2FA**.
-For information on two-factor authentication (2FA) for your account, see
-[Enable two-factor authentication](../security/for-developers/2fa/_index.md)
-to get started.
+> [!NOTE]
+>
+> Docker accounts only support one verified email address at a time, which
+is used for account notifications and security-related communications. You
+can't add multiple verified email addresses to your account.
 @y
-To update your two-factor authentication (2FA) settings, select **2FA**.
-For information on two-factor authentication (2FA) for your account, see
-[Enable two-factor authentication](../security/for-developers/2fa/_index.md)
-to get started.
+> [!NOTE]
+>
+> Docker accounts only support one verified email address at a time, which
+is used for account notifications and security-related communications. You
+can't add multiple verified email addresses to your account.
 @z
 
 @x
-To manage personal access tokens, select **Personal access tokens**.
-For information on personal access tokens, see
-[Create and manage access tokens](../security/for-developers/access-tokens.md).
+## Change your password
 @y
-To manage personal access tokens, select **Personal access tokens**.
-For information on personal access tokens, see
-[Create and manage access tokens](../security/for-developers/access-tokens.md).
+## Change your password
+@z
+
+@x
+You can change your password by initiating a password reset via email. To change your password:
+@y
+You can change your password by initiating a password reset via email. To change your password:
+@z
+
+@x
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Password**, then **Reset password**.
+1. Docker will send you a password reset email with instructions to reset
+your password.
+@y
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Password**, then **Reset password**.
+1. Docker will send you a password reset email with instructions to reset
+your password.
+@z
+
+@x
+## Manage two-factor authentication
+@y
+## Manage two-factor authentication
+@z
+
+@x
+To update your two-factor authentication (2FA) settings:
+@y
+To update your two-factor authentication (2FA) settings:
+@z
+
+@x
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **2FA**.
+@y
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **2FA**.
+@z
+
+@x
+For more information, see
+[Enable two-factor authentication](../security/2fa/_index.md).
+@y
+For more information, see
+[Enable two-factor authentication](../security/2fa/_index.md).
+@z
+
+@x
+## Manage personal access tokens
+@y
+## Manage personal access tokens
+@z
+
+@x
+To manage personal access tokens:
+@y
+To manage personal access tokens:
+@z
+
+@x
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Personal access tokens**.
+@y
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
+1. Select **Personal access tokens**.
+@z
+
+@x
+For more information, see
+[Create and manage access tokens](../security/access-tokens.md).
+@y
+For more information, see
+[Create and manage access tokens](../security/access-tokens.md).
 @z
 
 @x
@@ -188,51 +248,63 @@ For information on personal access tokens, see
 @z
 
 @x
-You can unlink Google or GitHub accounts that are linked to your Docker account
-using the Account settings page:
+You can unlink connected Google or GitHub accounts:
 @y
-You can unlink Google or GitHub accounts that are linked to your Docker account
-using the Account settings page:
+You can unlink connected Google or GitHub accounts:
 @z
 
 @x
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
 1. Select **Connected accounts**.
-2. Select **Disconnect** on your connected account.
-3. To fully unlink your Docker account, you must also unlink Docker from Google
-or GitHub. See Google or GitHub's documentation for more information:
-    - [Manage connections between your Google Account and third-parties](https://support.google.com/accounts/answer/13533235?hl=en)
-    - [Reviewing and revoking authorization of GitHub Apps](https://docs.github.com/en/apps/using-github-apps/reviewing-and-revoking-authorization-of-github-apps)
+1. Select **Disconnect** on your connected account.
 @y
+1. Sign in to your [Docker account](https://app.docker.com/login).
+1. Select your avatar in the top-right corner and select **Account settings**.
 1. Select **Connected accounts**.
-2. Select **Disconnect** on your connected account.
-3. To fully unlink your Docker account, you must also unlink Docker from Google
+1. Select **Disconnect** on your connected account.
+@z
+
+@x
+To fully unlink your Docker account, you must also unlink Docker from Google
 or GitHub. See Google or GitHub's documentation for more information:
-    - [Manage connections between your Google Account and third-parties](https://support.google.com/accounts/answer/13533235?hl=en)
-    - [Reviewing and revoking authorization of GitHub Apps](https://docs.github.com/en/apps/using-github-apps/reviewing-and-revoking-authorization-of-github-apps)
-@z
-
-@x
-## Account management
 @y
-## Account management
+To fully unlink your Docker account, you must also unlink Docker from Google
+or GitHub. See Google or GitHub's documentation for more information:
 @z
 
 @x
-To convert your account into an organization, select **Convert**.
-For more information on converting your account, see
+- [Manage connections between your Google Account and third-parties](https://support.google.com/accounts/answer/13533235?hl=en)
+- [Reviewing and revoking authorization of GitHub Apps](https://docs.github.com/en/apps/using-github-apps/reviewing-and-revoking-authorization-of-github-apps)
+@y
+- [Manage connections between your Google Account and third-parties](https://support.google.com/accounts/answer/13533235?hl=en)
+- [Reviewing and revoking authorization of GitHub Apps](https://docs.github.com/en/apps/using-github-apps/reviewing-and-revoking-authorization-of-github-apps)
+@z
+
+@x
+## Convert your account
+@y
+## Convert your account
+@z
+
+@x
+For information on converting your account into an organization, see
 [Convert an account into an organization](../admin/organization/convert-account.md).
 @y
-To convert your account into an organization, select **Convert**.
-For more information on converting your account, see
+For information on converting your account into an organization, see
 [Convert an account into an organization](../admin/organization/convert-account.md).
 @z
 
 @x
-To deactivate your account, select **Deactivate**.
+## Deactivate your account
+@y
+## Deactivate your account
+@z
+
+@x
 For information on deactivating your account, see
 [Deactivating a user account](./deactivate-user-account.md).
 @y
-To deactivate your account, select **Deactivate**.
 For information on deactivating your account, see
 [Deactivating a user account](./deactivate-user-account.md).
 @z

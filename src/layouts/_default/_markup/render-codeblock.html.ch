@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-            <span>Show more</span>
+              <span>Show more</span>
 @y
-            <span>さらに表示</span>
+              <span>さらに表示</span>
 @z
 
 @x
-            <span>Hide</span>
+              <span>Hide</span>
 @y
-            <span>隠す</span>
+              <span>隠す</span>
 @z

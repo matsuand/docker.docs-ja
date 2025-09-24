@@ -2,33 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Troubleshooting the Docker daemon
 description: Learn how to troubleshoot errors and misconfigurations in the Docker daemon
 keywords: |
   docker, daemon, configuration, troubleshooting, error, fail to start,
   networking, dns resolver, ip forwarding, dnsmasq, firewall,
   Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?
-aliases:
-  - /engine/install/troubleshoot/
-  - /storage/troubleshooting_volume_errors/
-  - /config/daemon/troubleshooting/
-tags: [Troubleshooting]
----
 @y
----
 title: Troubleshooting the Docker daemon
 description: Learn how to troubleshoot errors and misconfigurations in the Docker daemon
 keywords: |
   docker, daemon, configuration, troubleshooting, error, fail to start,
   networking, dns resolver, ip forwarding, dnsmasq, firewall,
   Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?
-aliases:
-  - /engine/install/troubleshoot/
-  - /storage/troubleshooting_volume_errors/
-  - /config/daemon/troubleshooting/
-tags: [Troubleshooting]
----
 @z
 
 @x
@@ -1396,14 +1382,14 @@ removal attempt may fail with an error like the following:
 @z
 
 @x
-```none
+```text
 Error: Unable to remove filesystem for
 74bef250361c7817bee19349c93139621b272bc8f654ae112dd4eb9652af9515:
 remove /var/lib/docker/containers/74bef250361c7817bee19349c93139621b272bc8f654ae112dd4eb9652af9515/shm:
 Device or resource busy
 ```
 @y
-```none
+```text
 Error: Unable to remove filesystem for
 74bef250361c7817bee19349c93139621b272bc8f654ae112dd4eb9652af9515:
 remove /var/lib/docker/containers/74bef250361c7817bee19349c93139621b272bc8f654ae112dd4eb9652af9515/shm:

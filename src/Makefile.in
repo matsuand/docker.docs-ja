@@ -326,9 +326,7 @@ copyfiles = \
 	hugo_stats.json    \
 	netlify.toml       \
 	package-lock.json  \
-	pagefind.yml       \
-	postcss.config.js  \
-	tailwind.config.js
+	pagefind.yml
 
 all: all-recursive
 

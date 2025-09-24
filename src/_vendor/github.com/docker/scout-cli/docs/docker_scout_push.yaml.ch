@@ -9,96 +9,6 @@ long: |
 usage: docker scout push IMAGE
 pname: docker scout
 plink: docker_scout.yaml
-options:
-    - option: author
-      value_type: string
-      description: Name of the author of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Do not push the image but process it
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: org
-      value_type: string
-      description: Namespace of the Docker organization to which image will be pushed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
-      description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Platform of image to be pushed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: bool
-      default_value: "false"
-      description: Create and upload SBOMs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamp
-      value_type: string
-      description: Timestamp of image or tag creation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
-      description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Push an image to Docker Scout
 @y
 command: docker scout push
 short: Push an image or image index to Docker Scout
@@ -107,114 +17,73 @@ long: |
 usage: docker scout push IMAGE
 pname: docker scout
 plink: docker_scout.yaml
-options:
-    - option: author
-      value_type: string
+@z
+
+% options:
+
+@x author
       description: Name of the author of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: Name of the author of the image
+@z
+
+@x dry-run
       description: Do not push the image but process it
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: org
-      value_type: string
+@y
+      description: Do not push the image but process it
+@z
+
+@x org
       description: Namespace of the Docker organization to which image will be pushed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: output
-      shorthand: o
-      value_type: string
+@y
+      description: Namespace of the Docker organization to which image will be pushed
+@z
+
+@x output
       description: Write the report to a file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
+@y
+      description: Write the report to a file
+@z
+
+@x platform
       description: Platform of image to be pushed
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: sbom
-      value_type: bool
-      default_value: "false"
+@y
+      description: Platform of image to be pushed
+@z
+
+@x sbom
       description: Create and upload SBOMs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: timestamp
-      value_type: string
+@y
+      description: Create and upload SBOMs
+@z
+
+@x timestamp
       description: Timestamp of image or tag creation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Timestamp of image or tag creation
+@z
+
+% inherited_options:
+
+@x debug
       description: Debug messages
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose-debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Debug messages
+@z
+
+@x verbose-debug
       description: Verbose debug
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Verbose debug
+@z
+
+@x
+examples: |-
+    ### Push an image to Docker Scout
+@y
 examples: |-
     ### Push an image to Docker Scout
 @z
 
-@x
-    ```console
-    $ docker scout push --org my-org registry.example.com/repo:tag
-    ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker scout push --org my-org registry.example.com/repo:tag
-    ```
-deprecated: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

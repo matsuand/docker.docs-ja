@@ -12,23 +12,88 @@ title: VM、VDI 環境内での Docker Desktop for Windows の実行
 @z
 
 @x
-Docker recommends running Docker Desktop natively on Mac, Linux, or Windows.  However, Docker Desktop for Windows can run inside a virtual desktop provided the virtual desktop is properly configured. 
+Docker recommends running Docker Desktop natively on Mac, Linux, or Windows. However, Docker Desktop for Windows can run inside a virtual desktop provided the virtual desktop is properly configured.
 @y
 Docker Desktop では、Mac、Linux、Windows のいずれかにおいてネイティブに実行することをお勧めします。
 ただし仮想デスクトップが適切に設定できていれば、Docker Desktop for Windows を仮想デスクトップ内で実行することも可能です。
 @z
 
 @x
-To run Docker Desktop in a virtual desktop environment, it is essential nested virtualization is enabled on the virtual machine that provides the virtual desktop. This is because, under the hood, Docker Desktop is using a Linux VM in which it runs Docker Engine and the containers.
+To run Docker Desktop in a virtual desktop environment, you have two options,
+depending on whether nested virtualization is supported:
 @y
-仮想デスクトップ環境内において Docker Desktop を実行するには、仮想マシン上へのネストした仮想環境が実現できるように、仮想デスクトップが機能していることが重要です。
-というのも Docker Desktop は背後に Linux VM を利用しており、その環境内にて Docker Engine やコンテナーを動作させているためです。
+仮想デスクトップ環境内において Docker Desktop を実行するには、2 つの方法があります。
+それはネスト化された仮想化環境がサポートされているかどうかで決まります。
 @z
 
 @x
-## Virtual desktop support
+- If your environment supports nested virtualization, you can run Docker Desktop
+  with its default local Linux VM.
+- If nested virtualization is not supported, Docker recommends using [Docker
+  Offload](/offload/).
 @y
-## 仮想デスクトップサポート {#virtual-desktop-support}
+- If your environment supports nested virtualization, you can run Docker Desktop
+  with its default local Linux VM.
+- If nested virtualization is not supported, Docker recommends using [Docker
+  Offload](/offload/).
+@z
+
+@x
+## Use Docker Offload
+@y
+## Use Docker Offload
+@z
+
+@x
+Docker Offload lets you offload container workloads to a high-performance, fully
+hosted cloud environment, enabling a seamless hybrid experience.
+@y
+Docker Offload lets you offload container workloads to a high-performance, fully
+hosted cloud environment, enabling a seamless hybrid experience.
+@z
+
+@x
+Docker Offload is useful in virtual desktop environments where nested
+virtualization isn't supported. In these environments, Docker Desktop defaults
+to using Docker Offload to ensure you can still build and run containers without
+relying on local virtualization.
+@y
+Docker Offload is useful in virtual desktop environments where nested
+virtualization isn't supported. In these environments, Docker Desktop defaults
+to using Docker Offload to ensure you can still build and run containers without
+relying on local virtualization.
+@z
+
+@x
+Docker Offload decouples the Docker Desktop client from the Docker Engine,
+allowing the Docker CLI and Docker Desktop Dashboard to interact with
+cloud-based resources as if they were local. When you run a container, Docker
+provisions a secure, isolated, and ephemeral cloud environment connected to
+Docker Desktop via an SSH tunnel. Despite running remotely, features like bind
+mounts and port forwarding continue to work seamlessly, providing a local-like
+experience. To use Docker Offload:
+@y
+Docker Offload decouples the Docker Desktop client from the Docker Engine,
+allowing the Docker CLI and Docker Desktop Dashboard to interact with
+cloud-based resources as if they were local. When you run a container, Docker
+provisions a secure, isolated, and ephemeral cloud environment connected to
+Docker Desktop via an SSH tunnel. Despite running remotely, features like bind
+mounts and port forwarding continue to work seamlessly, providing a local-like
+experience. To use Docker Offload:
+@z
+
+@x
+To get started using Docker Offload, see the [Docker Offload
+quickstart](/offload/quickstart/).
+@y
+To get started using Docker Offload, see the [Docker Offload
+quickstart](/offload/quickstart/).
+@z
+
+@x
+## Virtual desktop support when using nested virtualization
+@y
+## Virtual desktop support when using nested virtualization
 @z
 
 @x
@@ -80,9 +145,11 @@ Docker does not support running multiple instances of Docker Desktop on the same
 @z
 
 @x
-You must turn on nested virtualization before you install Docker Desktop on a virtual machine.
+You must turn on nested virtualization before you install Docker Desktop on a
+virtual machine that will not use Docker Cloud.
 @y
-You must turn on nested virtualization before you install Docker Desktop on a virtual machine.
+You must turn on nested virtualization before you install Docker Desktop on a
+virtual machine that will not use Docker Cloud.
 @z
 
 @x
@@ -146,9 +213,9 @@ If using Windows container mode, confirm that the Nutanix environment supports H
 @z
 
 @x
-Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support):
+Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support-when-using-nested-virtualization):
 @y
-Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support):
+Docker Desktop follows the VDI support definitions outlined [previously](#virtual-desktop-support-when-using-nested-virtualization):
 @z
 
 @x

@@ -4,17 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
-title: Company administration
+title: Company administration overview
 @y
-title: Company administration
+title: Company administration overview
 @z
 
 @x
 description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
-keywords: company, multiple organizations, manage companies
+keywords: company, multiple organizations, manage companies, admin console, Docker Business settings
 @y
 description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
-keywords: company, multiple organizations, manage companies
+keywords: company, multiple organizations, manage companies, admin console, Docker Business settings
 @z
 
 % grid:
@@ -58,24 +58,12 @@ keywords: company, multiple organizations, manage companies
 @z
 
 @x
-- title: Manage company owners
-  description: Find out more about company owners and how to manage them.
-  icon: supervised_user_circle
-  link: /admin/company/owners/
-@y
-- title: Manage company owners
-  description: Find out more about company owners and how to manage them.
-  icon: supervised_user_circle
-  link: __SUBDIR__/admin/company/owners/
-@z
-
-@x
-- title: Configure Single Sign-On
+- title: Configure single sign-on
   description: Discover how to configure SSO for your entire company.
   icon: key
   link: /security/for-admins/single-sign-on/
 @y
-- title: Configure Single Sign-On
+- title: Configure single sign-on
   description: Discover how to configure SSO for your entire company.
   icon: key
   link: __SUBDIR__/security/for-admins/single-sign-on/
@@ -97,40 +85,102 @@ keywords: company, multiple organizations, manage companies
 
 @x
 - title: Domain management
-  description: Add and verify your domains.
+  description: Add and verify your company's domains.
   icon: domain_verification
-  link: /admin/company/settings/domains/
+  link: /security/for-admins/domain-management/
 @y
 - title: Domain management
-  description: Add and verify your domains.
+  description: Add and verify your company's domains.
   icon: domain_verification
-  link: __SUBDIR__/admin/company/settings/domains/
+  link: __SUBDIR__/security/for-admins/domain-management/
 @z
 
 @x
 - title: FAQs
-  description: Explore common company FAQs.
+  description: Explore frequently asked questions about companies.
   link: /faq/admin/company-faqs/
   icon: help
 @y
 - title: FAQs
-  description: Explore common company FAQs.
+  description: Explore frequently asked questions about companies.
   link: __SUBDIR__/faq/admin/company-faqs/
   icon: help
 @z
 
-% snip alias...
-
 @x
-{{% include "admin-company-overview.md" %}}
+{{< summary-bar feature_name="Company" >}}
 @y
-{{% include "admin-company-overview.md" %}}
+{{< summary-bar feature_name="Company" >}}
 @z
 
 @x
-Learn how to administer a company in the following sections.
+A company provides a single point of visibility across multiple organizations,
+simplifying organization and settings management.
 @y
-Learn how to administer a company in the following sections.
+A company provides a single point of visibility across multiple organizations,
+simplifying organization and settings management.
+@z
+
+@x
+Organization owners with a Docker Business subscription can create a company
+and manage it through the [Docker Admin Console](https://app.docker.com/admin).
+@y
+Organization owners with a Docker Business subscription can create a company
+and manage it through the [Docker Admin Console](https://app.docker.com/admin).
+@z
+
+@x
+The following diagram shows how a company relates to its associated
+organizations.
+@y
+The following diagram shows how a company relates to its associated
+organizations.
+@z
+
+@x
+![Diagram showing how companies relate to Docker organizations](/admin/images/docker-admin-structure.webp)
+@y
+![Diagram showing how companies relate to Docker organizations](__SUBDIR__/admin/images/docker-admin-structure.webp)
+@z
+
+@x
+## Key features
+@y
+## Key features
+@z
+
+@x
+With a company, administrators can:
+@y
+With a company, administrators can:
+@z
+
+@x
+- View and manage all nested organizations
+- Configure company and organization settings centrally
+- Control access to the company
+- Have up to ten unique users assigned to the company owner role
+- Configure SSO and SCIM for all nested organizations
+- Enforce SSO for all users in the company
+@y
+- View and manage all nested organizations
+- Configure company and organization settings centrally
+- Control access to the company
+- Have up to ten unique users assigned to the company owner role
+- Configure SSO and SCIM for all nested organizations
+- Enforce SSO for all users in the company
+@z
+
+@x
+## Create and manage your company
+@y
+## Create and manage your company
+@z
+
+@x
+Learn how to create and manage a company in the following sections.
+@y
+Learn how to create and manage a company in the following sections.
 @z
 
 @x

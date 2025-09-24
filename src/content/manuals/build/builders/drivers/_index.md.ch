@@ -15,11 +15,11 @@ keywords: build, buildx, driver, builder, docker-container, kubernetes, remote
 
 @x
 Build drivers are configurations for how and where the BuildKit backend runs.
-Driver settings are customizable and allows fine-grained control of the builder.
+Driver settings are customizable and allow fine-grained control of the builder.
 Buildx supports the following drivers:
 @y
 Build drivers are configurations for how and where the BuildKit backend runs.
-Driver settings are customizable and allows fine-grained control of the builder.
+Driver settings are customizable and allow fine-grained control of the builder.
 Buildx supports the following drivers:
 @z
 

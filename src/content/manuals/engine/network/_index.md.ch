@@ -1,14 +1,13 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-% snip 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Networking overview
 linkTitle: Networking
 @y
-title: ネットワーク処理概要
+title: Networking overview
 linkTitle: Networking
 @z
 
@@ -82,7 +81,17 @@ The following example creates a network using the `bridge` network driver and
 running a container in the created network:
 @z
 
-% snip command...
+@x
+```console
+$ docker network create -d bridge my-net
+$ docker run --network=my-net -itd --name=container3 busybox
+```
+@y
+```console
+$ docker network create -d bridge my-net
+$ docker run --network=my-net -itd --name=container3 busybox
+```
+@z
 
 @x
 ### Drivers
@@ -200,7 +209,17 @@ highest priority is the default gateway. So, when a network should always
 be the default gateway, it is enough to set its `gw-priority` to `1`.
 @z
 
-% snip command...
+@x
+```console
+$ docker run --network name=gwnet,gw-priority=1 --network anet1 --name myctr myimage
+$ docker network connect anet2 myctr
+```
+@y
+```console
+$ docker run --network name=gwnet,gw-priority=1 --network anet1 --name myctr myimage
+$ docker network connect anet2 myctr
+```
+@z
 
 @x
 ## Container networks
@@ -258,7 +277,17 @@ The following example runs a Redis container, with Redis binding to
 server over the `localhost` interface.
 @z
 
-% snip command...
+@x
+```console
+$ docker run -d --name redis example/redis --bind 127.0.0.1
+$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
+```
+@y
+```console
+$ docker run -d --name redis example/redis --bind 127.0.0.1
+$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
+```
+@z
 
 @x
 ## Published ports
@@ -317,8 +346,8 @@ Here are some examples:
 >
 > > [!WARNING]
 > >
-> > Hosts within the same L2 segment (for example, hosts connected to the same
-> > network switch) can reach ports published to localhost.
+> > In releases older than 28.0.0, hosts within the same L2 segment (for example,
+> > hosts connected to the same network switch) can reach ports published to localhost.
 > > For more information, see
 > > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
 @y
@@ -338,8 +367,8 @@ Here are some examples:
 >
 > > [!WARNING]
 > >
-> > Hosts within the same L2 segment (for example, hosts connected to the same
-> > network switch) can reach ports published to localhost.
+> > In releases older than 28.0.0, hosts within the same L2 segment (for example,
+> > hosts connected to the same network switch) can reach ports published to localhost.
 > > For more information, see
 > > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
 @z
@@ -380,6 +409,26 @@ direct routing to containers, see
 ## IP address and hostname
 @y
 ## IP address and hostname
+@z
+
+@x
+When creating a network, IPv4 address allocation is enabled by default, it
+can be disabled using `--ipv4=false`. IPv6 address allocation can be enabled
+using `--ipv6`.
+@y
+When creating a network, IPv4 address allocation is enabled by default, it
+can be disabled using `--ipv4=false`. IPv6 address allocation can be enabled
+using `--ipv6`.
+@z
+
+@x
+```console
+$ docker network create --ipv6 --ipv4=false v6net
+```
+@y
+```console
+$ docker network create --ipv6 --ipv4=false v6net
+```
 @z
 
 @x

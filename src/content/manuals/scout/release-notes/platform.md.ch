@@ -16,6 +16,12 @@ keywords: docker scout, release notes, changelog, features, changes, delta, new,
 @z
 
 @x
+<!-- vale Docker.We = NO -->
+@y
+<!-- vale Docker.We = NO -->
+@z
+
+@x
 This page contains information about the new features, improvements, known
 issues, and bug fixes in Docker Scout releases. These release notes cover the
 Docker Scout platform, including the Dashboard. For CLI release notes, refer to
@@ -764,21 +770,13 @@ Artifactory registries.
 @z
 
 @x
-![Animation of how to integrate Artifactory](../images/release-notes/artifactory-agent.gif)
-@y
-![Animation of how to integrate Artifactory](../images/release-notes/artifactory-agent.gif)
-@z
-
-@x
 The integration involves deploying a Docker Scout Artifactory agent that polls
 for new images, performs analysis, and uploads results to Docker Scout, all
-while preserving the integrity of image data. Learn more in the [Artifactory
-integration documentation](../integrations/registry/artifactory.md)
+while preserving the integrity of image data.
 @y
 The integration involves deploying a Docker Scout Artifactory agent that polls
 for new images, performs analysis, and uploads results to Docker Scout, all
-while preserving the integrity of image data. Learn more in the [Artifactory
-integration documentation](../integrations/registry/artifactory.md)
+while preserving the integrity of image data.
 @z
 
 @x

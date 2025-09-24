@@ -2028,16 +2028,6 @@ examples: |-
 @z
 
 @x
-    > [!NOTE]
-    > The CDI feature is experimental, and potentially subject to change.
-    > CDI is currently only supported for Linux containers.
-@y
-    > [!NOTE]
-    > The CDI feature is experimental, and potentially subject to change.
-    > CDI is currently only supported for Linux containers.
-@z
-
-@x
     [Container Device Interface
     (CDI)](https://github.com/cncf-tags/container-device-interface/blob/main/SPEC.md)
     is a standardized mechanism for container runtimes to create containers which
@@ -2086,13 +2076,13 @@ examples: |-
       available on the system running the daemon, in one of the configured CDI
       specification directories.
     - The CDI feature has been enabled in the daemon; see [Enable CDI
-      devices](/reference/cli/dockerd/#enable-cdi-devices).
+      devices](/reference/cli/dockerd/#configure-cdi-devices).
 @y
     - A valid CDI specification (JSON or YAML file) for the requested device is
       available on the system running the daemon, in one of the configured CDI
       specification directories.
     - The CDI feature has been enabled in the daemon; see [Enable CDI
-      devices](__SUBDIR__/reference/cli/dockerd/#enable-cdi-devices).
+      devices](__SUBDIR__/reference/cli/dockerd/#configure-cdi-devices).
 @z
 
 @x

@@ -4,241 +4,187 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Find the answers to common security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
+description: Frequently asked questions about Docker security, authentication, and organization management
+keywords: Docker security, FAQs, authentication, SSO, vulnerability reporting, session management
 title: General security FAQs
+linkTitle: General
 @y
-description: Find the answers to common security related FAQs
-keywords: Docker, Docker Hub, Docker Desktop security FAQs, platform, Docker Scout, admin, security
+description: Frequently asked questions about Docker security, authentication, and organization management
+keywords: Docker security, FAQs, authentication, SSO, vulnerability reporting, session management
 title: General security FAQs
+linkTitle: General
 @z
 
 @x
-### How do I report a vulnerability?
+## How do I report a vulnerability?
 @y
-### How do I report a vulnerability?
+## How do I report a vulnerability?
 @z
 
 @x
-If you’ve discovered a security vulnerability in Docker, we encourage you to report it responsibly. Report security issues to security@docker.com so that they can be quickly addressed by our team.
+If you've discovered a security vulnerability in Docker, report it responsibly to security@docker.com so Docker can quickly address it.
 @y
-If you’ve discovered a security vulnerability in Docker, we encourage you to report it responsibly. Report security issues to security@docker.com so that they can be quickly addressed by our team.
+If you've discovered a security vulnerability in Docker, report it responsibly to security@docker.com so Docker can quickly address it.
 @z
 
 @x
-### How are passwords managed when SSO isn't used?
+## Does Docker lockout users after failed sign-ins?
 @y
-### How are passwords managed when SSO isn't used?
+## Does Docker lockout users after failed sign-ins?
 @z
 
 @x
-Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems.
+Docker Hub locks out users after 10 failed sign-in attempts within 5 minutes. The lockout duration is 5 minutes. This policy applies to Docker Hub, Docker Desktop, and Docker Scout authentication.
 @y
-Passwords are encrypted and salt-hashed. If you use application-level passwords instead of SSO, you are responsible for ensuring that your employees know how to pick strong passwords, don't share passwords, and don't reuse passwords across multiple systems.
+Docker Hub locks out users after 10 failed sign-in attempts within 5 minutes. The lockout duration is 5 minutes. This policy applies to Docker Hub, Docker Desktop, and Docker Scout authentication.
 @z
 
 @x
-### Does Docker require password resets when SSO isn't used?
+## Do you support physical multi-factor authentication (MFA) with YubiKeys?
 @y
-### Does Docker require password resets when SSO isn't used?
+## Do you support physical multi-factor authentication (MFA) with YubiKeys?
 @z
 
 @x
-Passwords aren't required to be periodically reset. NIST no longer recommends password resets as part of best practice.
+You can configure physical multi-factor authentication (MFA) through SSO using your identity provider (IdP). Check with your IdP if they support physical MFA devices like YubiKeys.
 @y
-Passwords aren't required to be periodically reset. NIST no longer recommends password resets as part of best practice.
+You can configure physical multi-factor authentication (MFA) through SSO using your identity provider (IdP). Check with your IdP if they support physical MFA devices like YubiKeys.
 @z
 
 @x
-### Does Docker lockout users after failed sign-ins?
+## How are sessions managed and do they expire?
 @y
-### Does Docker lockout users after failed sign-ins?
+## How are sessions managed and do they expire?
 @z
 
 @x
-Docker Hub’s global setting for system lockout is after 10 failed sign in attempts in a period of 5 minutes, and the lockout duration is 5 minutes. The same global policy applies to authenticated Docker Desktop users and Docker Scout, both of which use Docker Hub for authentication.
+Docker uses tokens to manage user sessions with different expiration periods:
 @y
-Docker Hub’s global setting for system lockout is after 10 failed sign in attempts in a period of 5 minutes, and the lockout duration is 5 minutes. The same global policy applies to authenticated Docker Desktop users and Docker Scout, both of which use Docker Hub for authentication.
+Docker uses tokens to manage user sessions with different expiration periods:
 @z
 
 @x
-### Do you support physical MFA with YubiKeys?
+- Docker Desktop: Signs you out after 90 days, or 30 days of inactivity
+- Docker Hub and Docker Home: Sign you out after 24 hours
 @y
-### Do you support physical MFA with YubiKeys?
+- Docker Desktop: Signs you out after 90 days, or 30 days of inactivity
+- Docker Hub and Docker Home: Sign you out after 24 hours
 @z
 
 @x
-You can configure this through SSO using your IdP. Check with your IdP if they support physical MFA.
+Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes).
 @y
-You can configure this through SSO using your IdP. Check with your IdP if they support physical MFA.
+Docker also supports your IdP's default session timeout through SAML attributes. For more information, see [SSO attributes](manuals/enterprise/security/provisioning/_index.md#sso-attributes).
 @z
 
 @x
-### How are sessions managed and do they expire?
+## How does Docker distinguish between employee users and contractor users?
 @y
-### How are sessions managed and do they expire?
+## How does Docker distinguish between employee users and contractor users?
 @z
 
 @x
-By default, Docker uses tokens to manage sessions after a user signs in:
+Organizations use verified domains to distinguish user types. Team members with email domains other than verified domains appear as "Guest" users in the organization.
 @y
-By default, Docker uses tokens to manage sessions after a user signs in:
+Organizations use verified domains to distinguish user types. Team members with email domains other than verified domains appear as "Guest" users in the organization.
 @z
 
 @x
-- Docker Desktop signs you out after 90 days, or 30 days of inactivity.
-- Docker Hub and Docker Home sign you out after 24 hours.
+## How long are activity logs available?
 @y
-- Docker Desktop signs you out after 90 days, or 30 days of inactivity.
-- Docker Hub and Docker Home sign you out after 24 hours.
+## How long are activity logs available?
 @z
 
 @x
-Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](/manuals/security/for-admins/provisioning/_index.md#sso-attributes).
+Docker activity logs are available for 90 days. You're responsible for exporting logs or setting up drivers to send logs to your internal systems for longer retention.
 @y
-Docker also supports your IdP's default session timeout. You can configure this by setting a Docker session minutes SAML attribute. For more information, see [SSO attributes](manuals/security/for-admins/provisioning/_index.md#sso-attributes).
+Docker activity logs are available for 90 days. You're responsible for exporting logs or setting up drivers to send logs to your internal systems for longer retention.
 @z
 
 @x
-### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization?
+## Can I export a list of users with their roles and privileges?
 @y
-### How does Docker attribute downloads to us and what data is used to classify or verify the user is part of our organization?
+## Can I export a list of users with their roles and privileges?
 @z
 
 @x
-Docker Desktop downloads are linked to a specific organization by the user's email containing the customer's domain. Additionally, we use IP addresses to correlate users with organizations.
+Yes, use the [Export Members](../../admin/organization/members.md#export-members) feature to export a CSV file containing your organization's users with role and team information.
 @y
-Docker Desktop downloads are linked to a specific organization by the user's email containing the customer's domain. Additionally, we use IP addresses to correlate users with organizations.
+Yes, use the [Export Members](../../admin/organization/members.md#export-members) feature to export a CSV file containing your organization's users with role and team information.
 @z
 
 @x
-### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs?
+## How does Docker Desktop handle authentication information?
 @y
-### How do you attribute that number of downloads to us from IP data if most of our engineers work from home and aren’t allowed to use VPNs?
+## How does Docker Desktop handle authentication information?
 @z
 
 @x
-We attribute users and their IP addresses to domains using 3rd party data enrichment software, where our provider analyzes activity from public and private data sources related to that specific IP address, then uses that activity to identify the domain and map it to the IP address.
+Docker Desktop uses the host operating system's secure key management to store authentication tokens:
 @y
-We attribute users and their IP addresses to domains using 3rd party data enrichment software, where our provider analyzes activity from public and private data sources related to that specific IP address, then uses that activity to identify the domain and map it to the IP address.
+Docker Desktop uses the host operating system's secure key management to store authentication tokens:
 @z
 
 @x
-Some users authenticate by signing in to Docker Desktop and joining their domain's Docker organization, which allows us to map them with a much higher degree of accuracy and report on direct feature usage for you. We highly encourage you to get your users authenticated so we can provide you with the most accurate data.
+- macOS: [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web)
+- Windows: [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/)
+- Linux: [Pass](https://www.passwordstore.org/).
 @y
-Some users authenticate by signing in to Docker Desktop and joining their domain's Docker organization, which allows us to map them with a much higher degree of accuracy and report on direct feature usage for you. We highly encourage you to get your users authenticated so we can provide you with the most accurate data.
+- macOS: [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web)
+- Windows: [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/)
+- Linux: [Pass](https://www.passwordstore.org/).
 @z
 
 @x
-### How does Docker distinguish between employee users and contractor users?
+## How do I remove users who aren't part of my IdP when using SSO without SCIM?
 @y
-### How does Docker distinguish between employee users and contractor users?
+## How do I remove users who aren't part of my IdP when using SSO without SCIM?
 @z
 
 @x
-Organizations set up in Docker use verified domains and any team member with an email domain other than what's verified is noted as a "Guest" in that organization.
+If SCIM isn't turned on, you must manually remove users from the organization. SCIM can automate user removal, but only for users added after SCIM is turned on. Users added before SCIM was turned on must be removed manually.
 @y
-Organizations set up in Docker use verified domains and any team member with an email domain other than what's verified is noted as a "Guest" in that organization.
+If SCIM isn't turned on, you must manually remove users from the organization. SCIM can automate user removal, but only for users added after SCIM is turned on. Users added before SCIM was turned on must be removed manually.
 @z
 
 @x
-### How long are activity logs available?
+For more information, see [Manage organization members](/manuals/admin/organization/members.md).
 @y
-### How long are activity logs available?
+For more information, see [Manage organization members](manuals/admin/organization/members.md).
 @z
 
 @x
-Docker provides various types of audit logs and log retention varies. For example, Docker activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
+## What metadata does Scout collect from container images?
 @y
-Docker provides various types of audit logs and log retention varies. For example, Docker activity logs are available for 90 days. You are responsible for exporting logs or setting up drivers to their own internal systems.
+## What metadata does Scout collect from container images?
 @z
 
 @x
-### Can I export a list of all users with their assigned roles and privileges and if so, in what format?
+For information about metadata stored by Docker Scout, see [Data handling](/manuals/scout/deep-dive/data-handling.md).
 @y
-### Can I export a list of all users with their assigned roles and privileges and if so, in what format?
+For information about metadata stored by Docker Scout, see [Data handling](manuals/scout/deep-dive/data-handling.md).
 @z
 
 @x
-Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information.
+## How are Marketplace extensions vetted for security?
 @y
-Using the [Export Members](../../admin/organization/members.md#export-members) feature, you can export to CSV a list of your organization's users with role and team information.
+## How are Marketplace extensions vetted for security?
 @z
 
 @x
-### How does Docker Desktop handle and store authentication information?
+Security vetting for extensions is on the roadmap but isn't currently implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
 @y
-### How does Docker Desktop handle and store authentication information?
+Security vetting for extensions is on the roadmap but isn't currently implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
 @z
 
 @x
-Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/).
+## Can I prevent users from pushing images to Docker Hub private repositories?
 @y
-Docker Desktop utilizes the host operating system's secure key management for handling and storing authentication tokens necessary for authenticating with image registries. On macOS, this is [Keychain](https://support.apple.com/guide/security/keychain-data-protection-secb0694df1a/web); on Windows, this is [Security and Identity API via Wincred](https://learn.microsoft.com/en-us/windows/win32/api/wincred/); and on Linux, this is [Pass](https://www.passwordstore.org/).
+## Can I prevent users from pushing images to Docker Hub private repositories?
 @z
 
 @x
-### How does Docker Hub secure passwords in storage and in transit?
+No direct setting exists to disable private repositories. However, [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via the Admin Console.
 @y
-### How does Docker Hub secure passwords in storage and in transit?
-@z
-
-@x
-This is applicable only when using Docker Hub's application-level password versus SSO/SAML. For users created through SSO Just-in-Time or SCIM provisioning, Docker Hub doesn't store passwords. For all other users, application-level passwords are salt-hashed in storage (SHA-256) and encrypted in transit (TLS).
-@y
-This is applicable only when using Docker Hub's application-level password versus SSO/SAML. For users created through SSO Just-in-Time or SCIM provisioning, Docker Hub doesn't store passwords. For all other users, application-level passwords are salt-hashed in storage (SHA-256) and encrypted in transit (TLS).
-@z
-
-@x
-### How do we de-provision users who are not part of our IdP? We use SSO but not SCIM
-@y
-### How do we de-provision users who are not part of our IdP? We use SSO but not SCIM
-@z
-
-@x
-If SCIM isn't enabled, you have to manually remove users from the organization in our system. Using SCIM automates this.
-@y
-If SCIM isn't enabled, you have to manually remove users from the organization in our system. Using SCIM automates this.
-@z
-
-@x
-### What metadata is collected from container images that Scout analyzes?
-@y
-### What metadata is collected from container images that Scout analyzes?
-@z
-
-@x
-For information about the metadata stored by Docker Scout, see [Data handling](/manuals/scout/deep-dive/data-handling.md).
-@y
-For information about the metadata stored by Docker Scout, see [Data handling](manuals/scout/deep-dive/data-handling.md).
-@z
-
-@x
-### How are extensions within the Marketplace vetted for security prior to placement?
-@y
-### How are extensions within the Marketplace vetted for security prior to placement?
-@z
-
-@x
-Security vetting for extensions is on our roadmap however this vetting isn't currently done.
-@y
-Security vetting for extensions is on our roadmap however this vetting isn't currently done.
-@z
-
-@x
-Extensions are not covered as part of Docker’s Third-Party Risk Management Program.
-@y
-Extensions are not covered as part of Docker’s Third-Party Risk Management Program.
-@z
-
-@x
-### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub?
-@y
-### Can I disable private repos in my organization via a setting to make sure nobody is pushing images into Docker Hub?
-@z
-
-@x
-No. With [Registry Access Management](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard in the Admin Console.
-@y
-No. With [Registry Access Management](manuals/security/for-admins/hardened-desktop/registry-access-management.md) (RAM), administrators can ensure that their developers using Docker Desktop only access allowed registries. This is done through the Registry Access Management dashboard in the Admin Console.
+No direct setting exists to disable private repositories. However, [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via the Admin Console.
 @z

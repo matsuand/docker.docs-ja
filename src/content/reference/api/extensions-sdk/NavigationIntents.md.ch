@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: "Interface: NavigationIntents"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-aliases:
- - /desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
- - /extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
----
 @y
----
 title: "Interface: NavigationIntents"
 description: Docker extension API reference
 keywords: Docker, extensions, sdk, API, reference
-aliases:
- - /desktop/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
- - /extensions/extensions-sdk/dev/api/reference/interfaces/NavigationIntents/
----
 @z
 
 @x
@@ -553,58 +543,6 @@ await ddClient.desktopUI.navigate.viewImage(id, tag)
 A promise that fails if the image doesn't exist.
 @y
 A promise that fails if the image doesn't exist.
-@z
-
-@x
-___
-@y
-___
-@z
-
-@x
-## Other Methods
-@y
-## Other Methods
-@z
-
-@x
-### viewDevEnvironments
-@y
-### viewDevEnvironments
-@z
-
-@x
-▸ **viewDevEnvironments**(): `Promise`<`void`\>
-@y
-▸ **viewDevEnvironments**(): `Promise`<`void`\>
-@z
-
-@x
-Navigate to the Dev Environments window in Docker Desktop.
-@y
-Navigate to the Dev Environments window in Docker Desktop.
-@z
-
-@x
-```typescript
-ddClient.desktopUI.navigate.viewDevEnvironments()
-```
-@y
-```typescript
-ddClient.desktopUI.navigate.viewDevEnvironments()
-```
-@z
-
-@x
-#### Returns
-@y
-#### Returns
-@z
-
-@x
-`Promise`<`void`\>
-@y
-`Promise`<`void`\>
 @z
 
 @x

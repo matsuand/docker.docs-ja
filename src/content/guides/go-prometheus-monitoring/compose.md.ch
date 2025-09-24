@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Connecting services with Docker Compose
@@ -43,123 +44,7 @@ Here is a Docker Compose file for a project that uses Golang, Prometheus, and Gr
 Here is a Docker Compose file for a project that uses Golang, Prometheus, and Grafana. You will also find this file in the `go-prometheus-monitoring` directory.
 @z
 
-@x
-```yaml
-services:
-  api:
-    container_name: go-api
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: go-api:latest
-    ports:
-      - 8000:8000
-    networks:
-      - go-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    develop:
-      watch:
-        - path: .
-          action: rebuild
-@y
-```yaml
-services:
-  api:
-    container_name: go-api
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: go-api:latest
-    ports:
-      - 8000:8000
-    networks:
-      - go-network
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-    develop:
-      watch:
-        - path: .
-          action: rebuild
-@z
-
-@x
-  prometheus:
-    container_name: prometheus
-    image: prom/prometheus:v2.55.0
-    volumes:
-      - ./Docker/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - 9090:9090
-    networks:
-      - go-network
-@y
-  prometheus:
-    container_name: prometheus
-    image: prom/prometheus:v2.55.0
-    volumes:
-      - ./Docker/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - 9090:9090
-    networks:
-      - go-network
-@z
-
-@x
-  grafana:
-    container_name: grafana
-    image: grafana/grafana:11.3.0
-    volumes:
-      - ./Docker/grafana.yml:/etc/grafana/provisioning/datasources/datasource.yaml
-      - grafana-data:/var/lib/grafana
-    ports:
-      - 3000:3000
-    networks:
-      - go-network
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=password
-@y
-  grafana:
-    container_name: grafana
-    image: grafana/grafana:11.3.0
-    volumes:
-      - ./Docker/grafana.yml:/etc/grafana/provisioning/datasources/datasource.yaml
-      - grafana-data:/var/lib/grafana
-    ports:
-      - 3000:3000
-    networks:
-      - go-network
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=password
-@z
-
-@x
-volumes:
-  grafana-data:
-@y
-volumes:
-  grafana-data:
-@z
-
-@x
-networks:
-  go-network:
-    driver: bridge
-```
-@y
-networks:
-  go-network:
-    driver: bridge
-```
-@z
+% snip code...
 
 @x
 ## Understanding the Docker Compose file
@@ -185,31 +70,7 @@ The Docker Compose file consists of three services:
 - **Prometheus service**: This service runs the Prometheus server in a container. It uses the official Prometheus image `prom/prometheus:v2.55.0`. It exposes the Prometheus server on port `9090` and connects to the `go-network` network. You have also mounted the `prometheus.yml` file from the `Docker` directory which is present in the root directory of your project. The `prometheus.yml` file contains the Prometheus configuration to scrape the metrics from the Golang application. This is how you connect the Prometheus server to the Golang application.
 @z
 
-@x
-    ```yaml
-    global:
-      scrape_interval: 10s
-      evaluation_interval: 10s
-@y
-    ```yaml
-    global:
-      scrape_interval: 10s
-      evaluation_interval: 10s
-@z
-
-@x
-    scrape_configs:
-      - job_name: myapp
-        static_configs:
-          - targets: ["api:8000"]
-    ```
-@y
-    scrape_configs:
-      - job_name: myapp
-        static_configs:
-          - targets: ["api:8000"]
-    ```
-@z
+% snip code...
 
 @x
     In the `prometheus.yml` file, you have defined a job named `myapp` to scrape the metrics from the Golang application. The `targets` field specifies the target to scrape the metrics from. In this case, the target is the Golang application running on port `8000`. The `api` is the service name of the Golang application in the Docker Compose file. The Prometheus server will scrape the metrics from the Golang application every 10 seconds.
@@ -223,25 +84,7 @@ The Docker Compose file consists of three services:
 - **Grafana service**: This service runs the Grafana server in a container. It uses the official Grafana image `grafana/grafana:11.3.0`. It exposes the Grafana server on port `3000` and connects to the `go-network` network. You have also mounted the `grafana.yml` file from the `Docker` directory which is present in the root directory of your project. The `grafana.yml` file contains the Grafana configuration to add the Prometheus data source. This is how you connect the Grafana server to the Prometheus server. In the environment variables, you have set the Grafana admin user and password, which will be used to log in to the Grafana dashboard.
 @z
 
-@x
-    ```yaml
-    apiVersion: 1
-    datasources:
-    - name: Prometheus (Main)
-      type: prometheus
-      url: http://prometheus:9090
-      isDefault: true
-    ```
-@y
-    ```yaml
-    apiVersion: 1
-    datasources:
-    - name: Prometheus (Main)
-      type: prometheus
-      url: http://prometheus:9090
-      isDefault: true
-    ```
-@z
+% snip code...
 
 @x
     In the `grafana.yml` file, you have defined a Prometheus data source named `Prometheus (Main)`. The `type` field specifies the type of the data source, which is `prometheus`. The `url` field specifies the URL of the Prometheus server to fetch the metrics from. In this case, the URL is `http://prometheus:9090`. `prometheus` is the service name of the Prometheus server in the Docker Compose file. The `isDefault` field specifies whether the data source is the default data source in Grafana.
@@ -273,15 +116,7 @@ To build and run the services, run the following command in the terminal:
 To build and run the services, run the following command in the terminal:
 @z
 
-@x
-```console
-$ docker compose up
-```
-@y
-```console
-$ docker compose up
-```
-@z
+% snip command...
 
 @x
 The `docker compose up` command builds the services defined in the Docker Compose file and runs them together. You will see the similar output in the terminal:
@@ -289,63 +124,7 @@ The `docker compose up` command builds the services defined in the Docker Compos
 The `docker compose up` command builds the services defined in the Docker Compose file and runs them together. You will see the similar output in the terminal:
 @z
 
-@x
-```console
- ✔ Network go-prometheus-monitoring_go-network  Created                                                           0.0s 
- ✔ Container grafana                            Created                                                           0.3s 
- ✔ Container go-api                             Created                                                           0.2s 
- ✔ Container prometheus                         Created                                                           0.3s 
-Attaching to go-api, grafana, prometheus
-go-api      | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-go-api      | 
-go-api      | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
-go-api      |  - using env:     export GIN_MODE=release
-go-api      |  - using code:    gin.SetMode(gin.ReleaseMode)
-go-api      | 
-go-api      | [GIN-debug] GET    /metrics                  --> main.PrometheusHandler.func1 (3 handlers)
-go-api      | [GIN-debug] GET    /health                   --> main.main.func1 (4 handlers)
-go-api      | [GIN-debug] GET    /v1/users                 --> main.main.func2 (4 handlers)
-go-api      | [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-go-api      | Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-go-api      | [GIN-debug] Listening and serving HTTP on :8000
-prometheus  | ts=2025-03-15T05:57:06.676Z caller=main.go:627 level=info msg="No time or size retention was set so using the default time retention" duration=15d
-prometheus  | ts=2025-03-15T05:57:06.678Z caller=main.go:671 level=info msg="Starting Prometheus Server" mode=server version="(version=2.55.0, branch=HEAD, revision=91d80252c3e528728b0f88d254dd720f6be07cb8)"
-grafana     | logger=settings t=2025-03-15T05:57:06.865335506Z level=info msg="Config overridden from command line" arg="default.log.mode=console"
-grafana     | logger=settings t=2025-03-15T05:57:06.865337131Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana"
-grafana     | logger=ngalert.state.manager t=2025-03-15T05:57:07.088956839Z level=info msg="State
-.
-.
-grafana     | logger=plugin.angulardetectorsprovider.dynamic t=2025-03-15T05:57:07.530317298Z level=info msg="Patterns update finished" duration=440.489125ms
-```
-@y
-```console
- ✔ Network go-prometheus-monitoring_go-network  Created                                                           0.0s 
- ✔ Container grafana                            Created                                                           0.3s 
- ✔ Container go-api                             Created                                                           0.2s 
- ✔ Container prometheus                         Created                                                           0.3s 
-Attaching to go-api, grafana, prometheus
-go-api      | [GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
-go-api      | 
-go-api      | [GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
-go-api      |  - using env:     export GIN_MODE=release
-go-api      |  - using code:    gin.SetMode(gin.ReleaseMode)
-go-api      | 
-go-api      | [GIN-debug] GET    /metrics                  --> main.PrometheusHandler.func1 (3 handlers)
-go-api      | [GIN-debug] GET    /health                   --> main.main.func1 (4 handlers)
-go-api      | [GIN-debug] GET    /v1/users                 --> main.main.func2 (4 handlers)
-go-api      | [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
-go-api      | Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
-go-api      | [GIN-debug] Listening and serving HTTP on :8000
-prometheus  | ts=2025-03-15T05:57:06.676Z caller=main.go:627 level=info msg="No time or size retention was set so using the default time retention" duration=15d
-prometheus  | ts=2025-03-15T05:57:06.678Z caller=main.go:671 level=info msg="Starting Prometheus Server" mode=server version="(version=2.55.0, branch=HEAD, revision=91d80252c3e528728b0f88d254dd720f6be07cb8)"
-grafana     | logger=settings t=2025-03-15T05:57:06.865335506Z level=info msg="Config overridden from command line" arg="default.log.mode=console"
-grafana     | logger=settings t=2025-03-15T05:57:06.865337131Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana"
-grafana     | logger=ngalert.state.manager t=2025-03-15T05:57:07.088956839Z level=info msg="State
-.
-.
-grafana     | logger=plugin.angulardetectorsprovider.dynamic t=2025-03-15T05:57:07.530317298Z level=info msg="Patterns update finished" duration=440.489125ms
-```
-@z
+% snip output...
 
 @x
 The services will start running, and you can access the Golang application at `http://localhost:8000`, Prometheus at `http://localhost:9090/health`, and Grafana at `http://localhost:3000`. You can also check the running containers using the `docker ps` command.
@@ -353,15 +132,7 @@ The services will start running, and you can access the Golang application at `h
 The services will start running, and you can access the Golang application at `http://localhost:8000`, Prometheus at `http://localhost:9090/health`, and Grafana at `http://localhost:3000`. You can also check the running containers using the `docker ps` command.
 @z
 
-@x
-```console
-$ docker ps
-```
-@y
-```console
-$ docker ps
-```
-@z
+% snip command...
 
 @x
 ## Summary

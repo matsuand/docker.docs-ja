@@ -11,10 +11,10 @@ title: Manage organization members
 
 @x
 description: Learn how to manage organization members in Docker Hub and Docker Admin Console.
-keywords: members, teams, organizations, invite members, manage team members
+keywords: members, teams, organizations, invite members, manage team members, export member list, edit roles, organization teams, user management
 @y
 description: Learn how to manage organization members in Docker Hub and Docker Admin Console.
-keywords: members, teams, organizations, invite members, manage team members
+keywords: members, teams, organizations, invite members, manage team members, export member list, edit roles, organization teams, user management
 @z
 
 @x
@@ -38,9 +38,193 @@ Learn how to manage members for your organization in Docker Hub and the Docker A
 @z
 
 @x
-{{% admin-users product="admin" %}}
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses. If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat.
 @y
-{{% admin-users product="admin" %}}
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses. If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat.
+@z
+
+@x
+### Invite members via Docker ID or email address
+@y
+### Invite members via Docker ID or email address
+@z
+
+@x
+Use the following steps to invite members to your organization via Docker ID or email address.
+@y
+Use the following steps to invite members to your organization via Docker ID or email address.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Members**, then **Invite**.
+1. Select **Emails or usernames**.
+1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Members**, then **Invite**.
+1. Select **Emails or usernames**.
+1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
+@z
+
+@x
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@y
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@z
+
+@x
+Pending invitations appear in the table. Invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@y
+Pending invitations appear in the table. Invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@z
+
+@x
+### Invite members via CSV file
+@y
+### Invite members via CSV file
+@z
+
+@x
+To invite multiple members to an organization via a CSV file containing email addresses:
+@y
+To invite multiple members to an organization via a CSV file containing email addresses:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Members**, then **Invite**.
+1. Select **CSV upload**.
+1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Members**, then **Invite**.
+1. Select **CSV upload**.
+1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
+@z
+
+@x
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+@y
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+@z
+
+@x
+CSV file requirements:
+@y
+CSV file requirements:
+@z
+
+@x
+- The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
+@y
+- The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
+@z
+
+@x
+1. Create a new CSV file or export a CSV file from another application.
+@y
+1. Create a new CSV file or export a CSV file from another application.
+@z
+
+@x
+- To export a CSV file from another application, see the application’s documentation.
+- To create a new CSV file, open a new file in a text editor, type email on the first line, type the user email addresses one per line on the following lines, and then save the file with a .csv extension.
+@y
+- To export a CSV file from another application, see the application’s documentation.
+- To create a new CSV file, open a new file in a text editor, type email on the first line, type the user email addresses one per line on the following lines, and then save the file with a .csv extension.
+@z
+
+@x
+1. Select **Browse files** and then select your CSV file, or drag and drop the CSV file into the **Select a CSV file to upload** box. You can only select one CSV file at a time.
+@y
+1. Select **Browse files** and then select your CSV file, or drag and drop the CSV file into the **Select a CSV file to upload** box. You can only select one CSV file at a time.
+@z
+
+@x
+> [!NOTE]
+>
+> If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from the CSV file and re-select the new file. To purchase more seats, see [Add seats](/manuals/subscription/manage-seats.md) to your subscription or [Contact sales](https://www.docker.com/pricing/contact-sales/).
+@y
+> [!NOTE]
+>
+> If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from the CSV file and re-select the new file. To purchase more seats, see [Add seats](manuals/subscription/manage-seats.md) to your subscription or [Contact sales](https://www.docker.com/pricing/contact-sales/).
+@z
+
+@x
+1. After the CSV file has been uploaded, select **Review**.
+@y
+1. After the CSV file has been uploaded, select **Review**.
+@z
+
+@x
+Valid email addresses and any email addresses that have issues appear. Email addresses may have the following issues:
+@y
+Valid email addresses and any email addresses that have issues appear. Email addresses may have the following issues:
+@z
+
+@x
+- Invalid email: The email address is not a valid address. The email address will be ignored if you send invites. You can correct the email address in the CSV file and re-import the file.
+- Already invited: The user has already been sent an invite email and another invite email will not be sent.
+- Member: The user is already a member of your organization and an invite email will not be sent.
+- Duplicate: The CSV file has multiple occurrences of the same email address. The user will be sent only one invite email.
+@y
+- Invalid email: The email address is not a valid address. The email address will be ignored if you send invites. You can correct the email address in the CSV file and re-import the file.
+- Already invited: The user has already been sent an invite email and another invite email will not be sent.
+- Member: The user is already a member of your organization and an invite email will not be sent.
+- Duplicate: The CSV file has multiple occurrences of the same email address. The user will be sent only one invite email.
+@z
+
+@x
+1. Follow the on-screen instructions to invite members.
+@y
+1. Follow the on-screen instructions to invite members.
+@z
+
+@x
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@y
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@z
+
+@x
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@y
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@z
+
+@x
+### Invite members via API
+@y
+### Invite members via API
+@z
+
+@x
+You can bulk invite members using the Docker Hub API. For more information, see the [Bulk create invites](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) API endpoint.
+@y
+You can bulk invite members using the Docker Hub API. For more information, see the [Bulk create invites](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) API endpoint.
 @z
 
 @x
@@ -58,9 +242,197 @@ Learn how to manage members for your organization in Docker Hub and the Docker A
 @z
 
 @x
-{{% admin-users product="hub" %}}
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses. If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat.
 @y
-{{% admin-users product="hub" %}}
+Owners can invite new members to an organization via Docker ID, email address, or with a CSV file containing email addresses. If an invitee does not have a Docker account, they must create an account and verify their email address before they can accept an invitation to join the organization. When inviting members, their pending invitation occupies a seat.
+@z
+
+@x
+### Invite members via Docker ID or email address
+@y
+### Invite members via Docker ID or email address
+@z
+
+@x
+Use the following steps to invite members to your organization via Docker ID or email address.
+@y
+Use the following steps to invite members to your organization via Docker ID or email address.
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Select **My Hub**, your organization, then **Members**.
+1. Select **Invite members**.
+1. Select **Emails or usernames**.
+1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Select **My Hub**, your organization, then **Members**.
+1. Select **Invite members**.
+1. Select **Emails or usernames**.
+1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
+@z
+
+@x
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@y
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@z
+
+@x
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@y
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@z
+
+@x
+### Invite members via CSV file
+@y
+### Invite members via CSV file
+@z
+
+@x
+To invite multiple members to an organization via a CSV file containing email addresses:
+@y
+To invite multiple members to an organization via a CSV file containing email addresses:
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Select **My Hub**, your organization, then **Members**.
+1. Select **Invite members**.
+1. Select **CSV upload**.
+1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com).
+1. Select **My Hub**, your organization, then **Members**.
+1. Select **Invite members**.
+1. Select **CSV upload**.
+1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
+@z
+
+@x
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+@y
+```text
+email
+docker.user-0@example.com
+docker.user-1@example.com
+```
+@z
+
+@x
+CSV file requirements:
+@y
+CSV file requirements:
+@z
+
+@x
+- The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
+@y
+- The file must contain a header row with at least one heading named email. Additional columns are allowed and are ignored in the import.
+- The file must contain a maximum of 1000 email addresses (rows). To invite more than 1000 users, create multiple CSV files and perform all steps in this task for each file.
+@z
+
+@x
+1. Create a new CSV file or export a CSV file from another application.
+@y
+1. Create a new CSV file or export a CSV file from another application.
+@z
+
+@x
+- To export a CSV file from another application, see the application’s documentation.
+- To create a new CSV file, open a new file in a text editor, type email on the first line, type the user email addresses one per line on the following lines, and then save the file with a .csv extension.
+@y
+- To export a CSV file from another application, see the application’s documentation.
+- To create a new CSV file, open a new file in a text editor, type email on the first line, type the user email addresses one per line on the following lines, and then save the file with a .csv extension.
+@z
+
+@x
+1. Select **Browse files** and then select your CSV file, or drag and drop the CSV file into the **Select a CSV file to upload** box. You can only select one CSV file at a time.
+@y
+1. Select **Browse files** and then select your CSV file, or drag and drop the CSV file into the **Select a CSV file to upload** box. You can only select one CSV file at a time.
+@z
+
+@x
+> [!NOTE]
+>
+> If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from the CSV file and re-select the new file. To purchase more seats, see [Add seats](/manuals/subscription/manage-seats.md) to your subscription or [Contact sales](https://www.docker.com/pricing/contact-sales/).
+@y
+> [!NOTE]
+>
+> If the amount of email addresses in your CSV file exceeds the number of available seats in your organization, you cannot continue to invite members. To invite members, you can purchase more seats, or remove some email addresses from the CSV file and re-select the new file. To purchase more seats, see [Add seats](manuals/subscription/manage-seats.md) to your subscription or [Contact sales](https://www.docker.com/pricing/contact-sales/).
+@z
+
+@x
+1. After the CSV file has been uploaded, select **Review**.
+@y
+1. After the CSV file has been uploaded, select **Review**.
+@z
+
+@x
+Valid email addresses and any email addresses that have issues appear. Email addresses may have the following issues:
+@y
+Valid email addresses and any email addresses that have issues appear. Email addresses may have the following issues:
+@z
+
+@x
+- Invalid email: The email address is not a valid address. The email address will be ignored if you send invites. You can correct the email address in the CSV file and re-import the file.
+- Already invited: The user has already been sent an invite email and another invite email will not be sent.
+- Member: The user is already a member of your organization and an invite email will not be sent.
+- Duplicate: The CSV file has multiple occurrences of the same email address. The user will be sent only one invite email.
+@y
+- Invalid email: The email address is not a valid address. The email address will be ignored if you send invites. You can correct the email address in the CSV file and re-import the file.
+- Already invited: The user has already been sent an invite email and another invite email will not be sent.
+- Member: The user is already a member of your organization and an invite email will not be sent.
+- Duplicate: The CSV file has multiple occurrences of the same email address. The user will be sent only one invite email.
+@z
+
+@x
+1. Follow the on-screen instructions to invite members.
+@y
+1. Follow the on-screen instructions to invite members.
+@z
+
+@x
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@y
+> [!NOTE]
+>
+> When you invite members, you assign them a role. See [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md) for
+details about the access permissions for each role.
+@z
+
+@x
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@y
+Pending invitations appear in the table. The invitees receive an email with a link to Docker Hub where they can accept or decline the invitation.
+@z
+
+@x
+### Invite members via API
+@y
+### Invite members via API
+@z
+
+@x
+You can bulk invite members using the Docker Hub API. For more information, see the [Bulk create invites](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) API endpoint.
+@y
+You can bulk invite members using the Docker Hub API. For more information, see the [Bulk create invites](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) API endpoint.
 @z
 
 @x
@@ -88,13 +460,13 @@ To accept an invitation:
 @z
 
 @x
-1. Navigate to your email inbox and open the Docker email with an invitation to
+1. Check your email inbox and open the Docker email with an invitation to
 join the Docker organization.
-2. To open the link to Docker Hub, select the **click here** link.
+1. To open the link to Docker Hub, select the **click here** link.
 @y
-1. Navigate to your email inbox and open the Docker email with an invitation to
+1. Check your email inbox and open the Docker email with an invitation to
 join the Docker organization.
-2. To open the link to Docker Hub, select the **click here** link.
+1. To open the link to Docker Hub, select the **click here** link.
 @z
 
 @x
@@ -114,23 +486,23 @@ join the Docker organization.
 @z
 
 @x
-3. The Docker create an account page will open. If you already have an account, select **Already have an account? Sign in**.
+1. The Docker create an account page will open. If you already have an account, select **Already have an account? Sign in**.
 If you do not have an account yet, create an account using the same email
 address you received the invitation through.
-4. Optional. If you do not have an account and created one, you must navigate
+1. Optional. If you do not have an account and created one, you must navigate
 back to your email inbox and verify your email address using the Docker verification
 email.
-5. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
-6. Select **Accept** on your invitation.
+1. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
+1. Select **Accept** on your invitation.
 @y
-3. The Docker create an account page will open. If you already have an account, select **Already have an account? Sign in**.
+1. The Docker create an account page will open. If you already have an account, select **Already have an account? Sign in**.
 If you do not have an account yet, create an account using the same email
 address you received the invitation through.
-4. Optional. If you do not have an account and created one, you must navigate
+1. Optional. If you do not have an account and created one, you must navigate
 back to your email inbox and verify your email address using the Docker verification
 email.
-5. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
-6. Select **Accept** on your invitation.
+1. Once you are signed in to Docker Hub, select **My Hub** from the top-level navigation menu.
+1. Select **Accept** on your invitation.
 @z
 
 @x
@@ -166,21 +538,51 @@ After inviting members, you can resend or remove invitations as needed.
 @z
 
 @x
-To resend an invitation from the Admin Console:
+You can send individual invitations, or bulk invitations from the Admin Console.
 @y
-To resend an invitation from the Admin Console:
+You can send individual invitations, or bulk invitations from the Admin Console.
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **action menu** next to the invitee and select **Resend invitation**.
-4. Select **Invite** to confirm.
+To resend an individual invitation:
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **action menu** next to the invitee and select **Resend invitation**.
-4. Select **Invite** to confirm.
+To resend an individual invitation:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **action menu** next to the invitee and select **Resend**.
+1. Select **Invite** to confirm.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **action menu** next to the invitee and select **Resend**.
+1. Select **Invite** to confirm.
+@z
+
+@x
+To bulk resend invitations:
+@y
+To bulk resend invitations:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Use the **checkboxes** next to **Usernames** to bulk select users.
+1. Select **Resend invites**.
+1. Select **Resend** to confirm.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Use the **checkboxes** next to **Usernames** to bulk select users.
+1. Select **Resend invites**.
+1. Select **Resend** to confirm.
 @z
 
 @x
@@ -205,16 +607,16 @@ To resend an invitation from Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub**, your organization, and then **Members**.
-3. In the table, locate the invitee, select the **Actions** icon, and then select
+1. Select **My Hub**, your organization, and then **Members**.
+1. In the table, locate the invitee, select the **Actions** icon, and then select
 **Resend invitation**.
-4. Select **Invite** to confirm.
+1. Select **Invite** to confirm.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub**, your organization, and then **Members**.
-3. In the table, locate the invitee, select the **Actions** icon, and then select
+1. Select **My Hub**, your organization, and then **Members**.
+1. In the table, locate the invitee, select the **Actions** icon, and then select
 **Resend invitation**.
-4. Select **Invite** to confirm.
+1. Select **Invite** to confirm.
 @z
 
 @x
@@ -254,15 +656,17 @@ To remove an invitation from the Admin Console:
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **action menu** next to the invitee and select **Remove invitee**.
-4. Select **Remove** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **action menu** next to the invitee and select **Remove invitee**.
+1. Select **Remove** to confirm.
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **action menu** next to the invitee and select **Remove invitee**.
-4. Select **Remove** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **action menu** next to the invitee and select **Remove invitee**.
+1. Select **Remove** to confirm.
 @z
 
 @x
@@ -287,14 +691,14 @@ To remove a member's invitation from Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub**, your organization, and then **Members**.
-3. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
-4. Follow the on-screen instructions to remove the member or invitee.
+1. Select **My Hub**, your organization, and then **Members**.
+1. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
+1. Follow the on-screen instructions to remove the member or invitee.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub**, your organization, and then **Members**.
-3. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
-4. Follow the on-screen instructions to remove the member or invitee.
+1. Select **My Hub**, your organization, and then **Members**.
+1. In the table, select the **Action** icon, and then select **Remove member** or **Remove invitee**.
+1. Follow the on-screen instructions to remove the member or invitee.
 @z
 
 @x
@@ -346,13 +750,17 @@ To add a member to a team with the Admin Console:
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the team name.
-3. Select **Add member**. You can add the member by searching for their email address or username.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Teams**.
+1. Select the team name.
+1. Select **Add member**. You can add the member by searching for their email address or username.
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the team name.
-3. Select **Add member**. You can add the member by searching for their email address or username.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Teams**.
+1. Select the team name.
+1. Select **Add member**. You can add the member by searching for their email address or username.
 @z
 
 @x
@@ -387,24 +795,24 @@ To add a member to a team with Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Select the **Action** icon, and then select **Add to team**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Select the **Action** icon, and then select **Add to team**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Select the **Action** icon, and then select **Add to team**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Select the **Action** icon, and then select **Add to team**.
 @z
 
 @x
    > [!NOTE]
    >
    > You can also navigate to **My Hub** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
-4. Select the team and then select **Add**.
+1. Select the team and then select **Add**.
 @y
    > [!NOTE]
    >
    > You can also navigate to **My Hub** > **Your Organization** > **Teams** > **Your Team Name** and select **Add Member**. Select a member from the drop-down list to add them to the team or search by Docker ID or email.
-4. Select the team and then select **Add**.
+1. Select the team and then select **Add**.
 @z
 
 @x
@@ -426,19 +834,19 @@ To add a member to a team with Docker Hub:
 @z
 
 @x
-### Remove a member from a team
+### Remove members from teams
 @y
-### Remove a member from a team
+### Remove members from teams
 @z
 
 @x
 > [!NOTE]
 >
-> If your organization uses single sign-on (SSO) with [SCIM](/manuals/security/for-admins/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
+> If your organization uses single sign-on (SSO) with [SCIM](/manuals/enterprise/security/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
 @y
 > [!NOTE]
 >
-> If your organization uses single sign-on (SSO) with [SCIM](manuals/security/for-admins/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
+> If your organization uses single sign-on (SSO) with [SCIM](manuals/enterprise/security/provisioning/scim.md) enabled, you should remove members from your identity provider (IdP). This will automatically remove members from Docker. If SCIM is disabled, you must manually manage members in Docker.
 @z
 
 @x
@@ -462,15 +870,19 @@ To remove a member from a specific team with the Admin Console:
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the team name.
-3. Select the **X** next to the user's name to remove them from the team.
-4. When prompted, select **Remove** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Teams**.
+1. Select the team name.
+1. Select the **X** next to the user's name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the team name.
-3. Select the **X** next to the user's name to remove them from the team.
-4. When prompted, select **Remove** to confirm.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Teams**.
+1. Select the team name.
+1. Select the **X** next to the user's name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
 @z
 
 @x
@@ -495,14 +907,14 @@ To remove a member from a specific team with Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, **Teams**, and then the team.
-3. Select the **X** next to the user’s name to remove them from the team.
-4. When prompted, select **Remove** to confirm.
+1. Select **My Hub**, your organization, **Teams**, and then the team.
+1. Select the **X** next to the user’s name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, **Teams**, and then the team.
-3. Select the **X** next to the user’s name to remove them from the team.
-4. When prompted, select **Remove** to confirm.
+1. Select **My Hub**, your organization, **Teams**, and then the team.
+1. Select the **X** next to the user’s name to remove them from the team.
+1. When prompted, select **Remove** to confirm.
 @z
 
 @x
@@ -530,6 +942,18 @@ the company owner can also manage that organization's roles. If you have SSO ena
 @z
 
 @x
+> [!NOTE]
+>
+> If you're the only owner of an organization, you need to assign a new owner
+before you can edit your role.
+@y
+> [!NOTE]
+>
+> If you're the only owner of an organization, you need to assign a new owner
+before you can edit your role.
+@z
+
+@x
 {{< tabs >}}
 {{< tab name="Admin Console" >}}
 @y
@@ -544,27 +968,17 @@ To update a member role in the Admin Console:
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the **Members** tab.
-3. Find the username of the member whose role you want to edit. Select the
-**Actions menu**, then **Edit role**.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Find the username of the member whose role you want to edit. Select the
+**Actions** menu, then **Edit role**.
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select the **Members** tab.
-3. Find the username of the member whose role you want to edit. Select the
-**Actions menu**, then **Edit role**.
-@z
-
-@x
-> [!NOTE]
->
-> If you're the only owner of an organization,
-> you need to assign a new owner before you can edit your role.
-@y
-> [!NOTE]
->
-> If you're the only owner of an organization,
-> you need to assign a new owner before you can edit your role.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Find the username of the member whose role you want to edit. Select the
+**Actions** menu, then **Edit role**.
 @z
 
 @x
@@ -589,16 +1003,16 @@ To update a member role in Docker Hub:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
-4. Select **Edit role**.
-5. Select their organization, select the role you want to assign, and then select **Save**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
+1. Select **Edit role**.
+1. Select their organization, select the role you want to assign, and then select **Save**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
-4. Select **Edit role**.
-5. Select their organization, select the role you want to assign, and then select **Save**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Find the username of the member whose role you want to edit. In the table, select the **Actions** icon.
+1. Select **Edit role**.
+1. Select their organization, select the role you want to assign, and then select **Save**.
 @z
 
 @x
@@ -635,14 +1049,18 @@ To update a member role in Docker Hub:
 
 @x
 Owners can export a CSV file containing all members. The CSV file for a company contains the following fields:
-- Name: The user's name
-- Username: The user's Docker ID
-- Email: The user's email address
-- Member of Organizations: All organizations the user is a member of within a company
-- Invited to Organizations: All organizations the user is an invitee of within a company
-- Account Created: The time and date when the user account was created
 @y
 Owners can export a CSV file containing all members. The CSV file for a company contains the following fields:
+@z
+
+@x
+- Name: The user's name
+- Username: The user's Docker ID
+- Email: The user's email address
+- Member of Organizations: All organizations the user is a member of within a company
+- Invited to Organizations: All organizations the user is an invitee of within a company
+- Account Created: The time and date when the user account was created
+@y
 - Name: The user's name
 - Username: The user's Docker ID
 - Email: The user's email address
@@ -666,13 +1084,15 @@ To export a CSV file of your members:
 @z
 
 @x
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **download** icon to export a CSV file of all members.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **download** icon to export a CSV file of all members.
 @y
-1. In the [Admin Console](https://app.docker.com/admin), select your organization.
-2. Select **Members**.
-3. Select the **download** icon to export a CSV file of all members.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+organization.
+1. Select **Members**.
+1. Select the **download** icon to export a CSV file of all members.
 @z
 
 @x
@@ -697,12 +1117,12 @@ To export a CSV file of your members:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Select the **Action** icon and then select **Export users as CSV**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Select the **Action** icon and then select **Export users as CSV**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**, your organization, and then **Members**.
-3. Select the **Action** icon and then select **Export users as CSV**.
+1. Select **My Hub**, your organization, and then **Members**.
+1. Select the **Action** icon and then select **Export users as CSV**.
 @z
 
 @x

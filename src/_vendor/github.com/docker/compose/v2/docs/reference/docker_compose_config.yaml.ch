@@ -3,11 +3,9 @@
 
 @x
 command: docker compose config
-aliases: docker compose config, docker compose convert
 short: Parse, resolve and render compose file in canonical format
 @y
 command: docker compose config
-aliases: docker compose config, docker compose convert
 short: Parse, resolve and render compose file in canonical format
 @z
 

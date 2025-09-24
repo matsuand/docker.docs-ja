@@ -9,14 +9,14 @@ short: Remove one or more builder instances
 long: |-
     Removes the specified or current builder. It is a no-op attempting to remove the
     default builder.
-usage: docker buildx rm [OPTIONS] [NAME] [NAME...]
+usage: docker buildx rm [OPTIONS] [NAME...]
 @y
 command: docker buildx rm
 short: Remove one or more builder instances
 long: |-
     Removes the specified or current builder. It is a no-op attempting to remove the
     default builder.
-usage: docker buildx rm [OPTIONS] [NAME] [NAME...]
+usage: docker buildx rm [OPTIONS] [NAME...]
 @z
 
 % options:

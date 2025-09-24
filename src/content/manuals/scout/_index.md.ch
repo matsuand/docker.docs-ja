@@ -106,13 +106,13 @@ description:
   - title: Upgrade
     link: /subscription/change/
     description: |
-      The free plan includes up to 1 repository. Upgrade for more.
+      A Personal subscription includes up to 1 repository. Upgrade for more.
     icon: upgrade
 @y
   - title: アップグレード
     link: __SUBDIR__/subscription/change/
     description: |
-      無償プランは 1 リポジトリまで。アップグレードによりさらに増やせます。
+      パーソナルサブスクリプションは 1 リポジトリまで。アップグレードによりさらに増やせます。
     icon: upgrade
 @z
 

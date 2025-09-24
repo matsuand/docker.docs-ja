@@ -1,16 +1,17 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-% snip 対応
+% .md リンクへの (no slash) 対応
 
 @x
-title: Networks top-level elements
-description: Explore all the attributes the networks top-level element can have.
+linkTitle: Networks
+title: Define and manage networks in Docker Compose
+description: Learn how to configure and control networks using the top-level networks element in Docker Compose.
 keywords: compose, compose specification, networks, compose file reference
 @y
-title: Networks top-level elements
-description: Explore all the attributes the networks top-level element can have.
+linkTitle: Networks
+title: Define and manage networks in Docker Compose
+description: Learn how to configure and control networks using the top-level networks element in Docker Compose.
 keywords: compose, compose specification, networks, compose file reference
 @z
 
@@ -46,7 +47,35 @@ In the following example, at runtime, networks `front-tier` and `back-tier` are 
 is connected to `front-tier` and `back-tier` networks.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  frontend:
+    image: example/webapp
+    networks:
+      - front-tier
+      - back-tier
+@y
+```yml
+services:
+  frontend:
+    image: example/webapp
+    networks:
+      - front-tier
+      - back-tier
+@z
+
+@x
+networks:
+  front-tier:
+  back-tier:
+```
+@y
+networks:
+  front-tier:
+  back-tier:
+```
+@z
 
 @x
 ### Advanced example
@@ -54,18 +83,186 @@ is connected to `front-tier` and `back-tier` networks.
 ### Advanced example
 @z
 
-% snip code...
+@x
+```yml
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - frontend
+  app:
+    build: ./app
+    networks:
+      - frontend
+      - backend
+  db:
+    image: postgres
+    networks:
+      - backend
+@y
+```yml
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - frontend
+  app:
+    build: ./app
+    networks:
+      - frontend
+      - backend
+  db:
+    image: postgres
+    networks:
+      - backend
+@z
 
 @x
-The advanced example shows a Compose file which defines two custom networks. The `proxy` service is isolated from the `db` service, because they do not share a network in common. Only `app` can talk to both.
+networks:
+  frontend:
+    # Specify driver options
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  backend:
+    # Use a custom driver
+    driver: custom-driver
+```
 @y
-The advanced example shows a Compose file which defines two custom networks. The `proxy` service is isolated from the `db` service, because they do not share a network in common. Only `app` can talk to both.
+networks:
+  frontend:
+    # Specify driver options
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  backend:
+    # Use a custom driver
+    driver: custom-driver
+```
+@z
+
+@x
+This example shows a Compose file which defines two custom networks. The `proxy` service is isolated from the `db` service, because they do not share a network in common. Only `app` can talk to both.
+@y
+This example shows a Compose file which defines two custom networks. The `proxy` service is isolated from the `db` service, because they do not share a network in common. Only `app` can talk to both.
+@z
+
+@x
+## The default network
+@y
+## The default network
+@z
+
+@x
+When a Compose file doesn't declare explicit networks, Compose uses an implicit `default` network. Services without an explicit [`networks`](services.md#networks) declaration are connected by Compose to this `default` network:
+@y
+When a Compose file doesn't declare explicit networks, Compose uses an implicit `default` network. Services without an explicit [`networks`](services.md#networks) declaration are connected by Compose to this `default` network:
+@z
+
+@x
+```yml
+services:
+  some-service:
+    image: foo
+```
+This example is actually equivalent to:
+@y
+```yml
+services:
+  some-service:
+    image: foo
+```
+This example is actually equivalent to:
+@z
+
+@x
+```yml
+services:
+  some-service:
+    image: foo
+    networks:
+      default: {}  
+networks:
+  default: {}      
+```
+@y
+```yml
+services:
+  some-service:
+    image: foo
+    networks:
+      default: {}  
+networks:
+  default: {}      
+```
+@z
+
+@x
+You can customize the `default` network with an explicit declaration:
+@y
+You can customize the `default` network with an explicit declaration:
+@z
+
+@x
+```yml
+networks:
+  default: 
+    name: a_network # Use a custom name
+    driver_opts:    # pass options to driver for network creation
+      com.docker.network.bridge.host_binding_ipv4: 127.0.0.1
+```
+@y
+```yml
+networks:
+  default: 
+    name: a_network # Use a custom name
+    driver_opts:    # pass options to driver for network creation
+      com.docker.network.bridge.host_binding_ipv4: 127.0.0.1
+```
+@z
+
+@x
+For options, see the [Docker Engine docs](https://docs.docker.com/engine/network/drivers/bridge/#options).
+@y
+For options, see the [Docker Engine docs](https://docs.docker.com/engine/network/drivers/bridge/#options).
 @z
 
 @x
 ## Attributes
 @y
 ## Attributes
+@z
+
+@x
+### `attachable`
+@y
+### `attachable`
+@z
+
+@x
+If `attachable` is set to `true`, then standalone containers should be able to attach to this network, in addition to services.
+If a standalone container attaches to the network, it can communicate with services and other standalone containers
+that are also attached to the network.
+@y
+If `attachable` is set to `true`, then standalone containers should be able to attach to this network, in addition to services.
+If a standalone container attaches to the network, it can communicate with services and other standalone containers
+that are also attached to the network.
+@z
+
+@x
+```yml
+networks:
+  mynet1:
+    driver: overlay
+    attachable: true
+```
+@y
+```yml
+networks:
+  mynet1:
+    driver: overlay
+    attachable: true
+```
 @z
 
 @x
@@ -82,7 +279,19 @@ driver is not available on the platform.
 driver is not available on the platform.
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  db-data:
+    driver: bridge
+```
+@y
+```yml
+networks:
+  db-data:
+    driver: bridge
+```
+@z
 
 @x
 For more information on drivers and available options, see [Network drivers](/manuals/engine/network/drivers/_index.md).
@@ -104,7 +313,23 @@ driver-dependent.
 driver-dependent.
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  frontend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+```
+@y
+```yml
+networks:
+  frontend:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+```
+@z
 
 @x
 Consult the [network drivers documentation](/manuals/engine/network/_index.md) for more information.
@@ -113,22 +338,38 @@ Consult the [network drivers documentation](manuals/engine/network/_index.md) fo
 @z
 
 @x
-### `attachable`
+### `enable_ipv4`
 @y
-### `attachable`
+### `enable_ipv4`
 @z
 
 @x
-If `attachable` is set to `true`, then standalone containers should be able to attach to this network, in addition to services.
-If a standalone container attaches to the network, it can communicate with services and other standalone containers
-that are also attached to the network.
+{{< summary-bar feature_name="Compose enable ipv4" >}}
 @y
-If `attachable` is set to `true`, then standalone containers should be able to attach to this network, in addition to services.
-If a standalone container attaches to the network, it can communicate with services and other standalone containers
-that are also attached to the network.
+{{< summary-bar feature_name="Compose enable ipv4" >}}
 @z
 
-% snip code...
+@x
+`enable_ipv4` can be used to disable IPv4 address assignment.
+@y
+`enable_ipv4` can be used to disable IPv4 address assignment.
+@z
+
+@x
+```yml
+  networks:
+    ip6net:
+      enable_ipv4: false
+      enable_ipv6: true
+```
+@y
+```yml
+  networks:
+    ip6net:
+      enable_ipv4: false
+      enable_ipv6: true
+```
+@z
 
 @x
 ### `enable_ipv6`
@@ -142,7 +383,19 @@ that are also attached to the network.
 `enable_ipv6` enables IPv6 address assignment.
 @z
 
-% snip code...
+@x
+```yml
+  networks:
+    ip6net:
+      enable_ipv6: true
+```
+@y
+```yml
+  networks:
+    ip6net:
+      enable_ipv6: true
+```
+@z
 
 @x
 ### `external`
@@ -164,15 +417,51 @@ Compose doesn't attempt to create these networks, and returns an error if one do
 
 @x
 In the following example, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
-queries the platform for an existing network simply called `outside` and connects the
+queries the platform for an existing network called `outside` and connects the
 `proxy` service's containers to it.
 @y
 In the following example, `proxy` is the gateway to the outside world. Instead of attempting to create a network, Compose
-queries the platform for an existing network simply called `outside` and connects the
+queries the platform for an existing network called `outside` and connects the
 `proxy` service's containers to it.
 @z
 
-% snip code...
+@x
+```yml
+services:
+  proxy:
+    image: example/proxy
+    networks:
+      - outside
+      - default
+  app:
+    image: example/app
+    networks:
+      - default
+@y
+```yml
+services:
+  proxy:
+    image: example/proxy
+    networks:
+      - outside
+      - default
+  app:
+    image: example/app
+    networks:
+      - default
+@z
+
+@x
+networks:
+  outside:
+    external: true
+```
+@y
+networks:
+  outside:
+    external: true
+```
+@z
 
 @x
 ### `ipam`
@@ -204,7 +493,43 @@ queries the platform for an existing network simply called `outside` and connect
 - `options`: Driver-specific options as a key-value mapping.
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  mynet1:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+          ip_range: 172.28.5.0/24
+          gateway: 172.28.5.254
+          aux_addresses:
+            host1: 172.28.1.5
+            host2: 172.28.1.6
+            host3: 172.28.1.7
+      options:
+        foo: bar
+        baz: "0"
+```
+@y
+```yml
+networks:
+  mynet1:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+          ip_range: 172.28.5.0/24
+          gateway: 172.28.5.254
+          aux_addresses:
+            host1: 172.28.1.5
+            host2: 172.28.1.6
+            host3: 172.28.1.7
+      options:
+        foo: bar
+        baz: "0"
+```
+@z
 
 @x
 ### `internal`
@@ -238,7 +563,45 @@ It is recommended that you use reverse-DNS notation to prevent labels from confl
 It is recommended that you use reverse-DNS notation to prevent labels from conflicting with those used by other software.
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  mynet1:
+    labels:
+      com.example.description: "Financial transaction network"
+      com.example.department: "Finance"
+      com.example.label-with-empty-value: ""
+```
+@y
+```yml
+networks:
+  mynet1:
+    labels:
+      com.example.description: "Financial transaction network"
+      com.example.department: "Finance"
+      com.example.label-with-empty-value: ""
+```
+@z
+
+@x
+```yml
+networks:
+  mynet1:
+    labels:
+      - "com.example.description=Financial transaction network"
+      - "com.example.department=Finance"
+      - "com.example.label-with-empty-value"
+```
+@y
+```yml
+networks:
+  mynet1:
+    labels:
+      - "com.example.description=Financial transaction network"
+      - "com.example.department=Finance"
+      - "com.example.label-with-empty-value"
+```
+@z
 
 @x
 Compose sets `com.docker.compose.project` and `com.docker.compose.network` labels.
@@ -260,7 +623,19 @@ The name is used as is and is not scoped with the project name.
 The name is used as is and is not scoped with the project name.
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  network1:
+    name: my-app-net
+```
+@y
+```yml
+networks:
+  network1:
+    name: my-app-net
+```
+@z
 
 @x
 It can also be used in conjunction with the `external` property to define the platform network that Compose
@@ -270,7 +645,21 @@ It can also be used in conjunction with the `external` property to define the pl
 should retrieve, typically by using a parameter so the Compose file doesn't need to hard-code runtime specific values:
 @z
 
-% snip code...
+@x
+```yml
+networks:
+  network1:
+    external: true
+    name: "${NETWORK_ID}"
+```
+@y
+```yml
+networks:
+  network1:
+    external: true
+    name: "${NETWORK_ID}"
+```
+@z
 
 @x
 ## Additional resources

@@ -12,11 +12,11 @@ linkTitle: Usage
 @z
 
 @x
-description: Learn about and use the Compose Bridge default transformation
-keywords: compose, bridge, kubernetes
+description: Learn how to use the default Compose Bridge transformation to convert Compose files into Kubernetes manifests
+keywords: docker compose bridge, compose kubernetes transform, kubernetes from compose, compose bridge convert, compose.yaml to kubernetes
 @y
-description: Learn about and use the Compose Bridge default transformation
-keywords: compose, bridge, kubernetes
+description: Learn how to use the default Compose Bridge transformation to convert Compose files into Kubernetes manifests
+keywords: docker compose bridge, compose kubernetes transform, kubernetes from compose, compose bridge convert, compose.yaml to kubernetes
 @z
 
 @x
@@ -26,9 +26,9 @@ keywords: compose, bridge, kubernetes
 @z
 
 @x
-Compose Bridge supplies an out-of-the box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
+Compose Bridge supplies an out-of-the-box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
 @y
-Compose Bridge supplies an out-of-the box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
+Compose Bridge supplies an out-of-the-box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
 @z
 
 @x
@@ -77,11 +77,11 @@ To use the default transformation run the following command:
 
 @x
 ```console
-$ compose-bridge convert
+$ docker compose bridge convert
 ```
 @y
 ```console
-$ compose-bridge convert
+$ docker compose bridge convert
 ```
 @z
 
@@ -92,9 +92,14 @@ Compose looks for a `compose.yaml` file inside the current directory and then co
 @z
 
 @x
-The following output is displayed 
+When successful, Compose Bridge generates Kubernetes manifests and logs output similar to the following:
+@y
+When successful, Compose Bridge generates Kubernetes manifests and logs output similar to the following:
+@z
+
+@x
 ```console
-$ compose-bridge convert -f compose.yaml 
+$ docker compose bridge convert -f compose.yaml 
 Kubernetes resource api-deployment.yaml created
 Kubernetes resource db-deployment.yaml created
 Kubernetes resource web-deployment.yaml created
@@ -115,9 +120,8 @@ Kubernetes resource web-service.yaml created
 Kubernetes resource kustomization.yaml created
 ```
 @y
-The following output is displayed 
 ```console
-$ compose-bridge convert -f compose.yaml 
+$ docker compose bridge convert -f compose.yaml 
 Kubernetes resource api-deployment.yaml created
 Kubernetes resource db-deployment.yaml created
 Kubernetes resource web-deployment.yaml created
@@ -154,11 +158,11 @@ the standard deployment command `kubectl apply -k out/overlays/desktop/`.
 @z
 
 @x
-> [!NOTE]
+> [!IMPORTANT]
 >
 > Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
 @y
-> [!NOTE]
+> [!IMPORTANT]
 >
 > Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
 @z
@@ -171,11 +175,11 @@ If you want to convert a `compose.yaml` file that is located in another director
 
 @x
 ```console
-$ compose-bridge convert -f <path-to-file>/compose.yaml 
+$ docker compose bridge convert -f <path-to-file>/compose.yaml 
 ```
 @y
 ```console
-$ compose-bridge convert -f <path-to-file>/compose.yaml 
+$ docker compose bridge convert -f <path-to-file>/compose.yaml 
 ```
 @z
 
@@ -187,24 +191,24 @@ To see all available flags, run:
 
 @x
 ```console
-$ compose-bridge convert --help
+$ docker compose bridge convert --help
 ```
 @y
 ```console
-$ compose-bridge convert --help
+$ docker compose bridge convert --help
 ```
 @z
 
 @x
 > [!TIP]
 >
-> You can now convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
+> You can convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
 > 
 > Make sure you are signed in to your Docker account, navigate to your container in the **Containers** view, and in the top-right corner select **View configurations** and then **Convert and Deploy to Kubernetes**. 
 @y
 > [!TIP]
 >
-> You can now convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
+> You can convert and deploy your Compose project to a Kubernetes cluster from the Compose file viewer.
 > 
 > Make sure you are signed in to your Docker account, navigate to your container in the **Containers** view, and in the top-right corner select **View configurations** and then **Convert and Deploy to Kubernetes**. 
 @z
@@ -217,8 +221,6 @@ $ compose-bridge convert --help
 
 @x
 - [Explore how you can customize Compose Bridge](customize.md)
-- [Explore the advanced integration](advanced-integration.md)
 @y
 - [Explore how you can customize Compose Bridge](customize.md)
-- [Explore the advanced integration](advanced-integration.md)
 @z

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Using the build cache
@@ -31,23 +32,7 @@ Consider the following Dockerfile that you created for the [getting-started](./w
 Consider the following Dockerfile that you created for the [getting-started](./writing-a-dockerfile/) app.
 @z
 
-@x
-```dockerfile
-FROM node:20-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "./src/index.js"]
-```
-@y
-```dockerfile
-FROM node:20-alpine
-WORKDIR /app
-COPY . .
-RUN yarn install --production
-CMD ["node", "./src/index.js"]
-```
-@z
+% snip code...
 
 @x
 When you run the `docker build` command to create a new image, Docker executes each instruction in your Dockerfile, creating a layer for each command and in the order specified. For each instruction, Docker checks whether it can reuse the instruction from a previous build. If it finds that you've already executed a similar instruction before, Docker doesn't need to redo it. Instead, it’ll use the cached result. This way, your build process becomes faster and more efficient, saving you valuable time and resources.
@@ -135,15 +120,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 3. Navigate into the `todo-list-app` directory:
 @z
 
-@x
-    ```console
-    $ cd todo-list-app
-    ```
-@y
-    ```console
-    $ cd todo-list-app
-    ```
-@z
+% snip command...
 
 @x
     Inside this directory, you'll find a file named `Dockerfile` with the following content:
@@ -151,25 +128,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
     Inside this directory, you'll find a file named `Dockerfile` with the following content:
 @z
 
-@x
-    ```dockerfile
-    FROM node:20-alpine
-    WORKDIR /app
-    COPY . .
-    RUN yarn install --production
-    EXPOSE 3000
-    CMD ["node", "./src/index.js"]
-    ```
-@y
-    ```dockerfile
-    FROM node:20-alpine
-    WORKDIR /app
-    COPY . .
-    RUN yarn install --production
-    EXPOSE 3000
-    CMD ["node", "./src/index.js"]
-    ```
-@z
+% snip code...
 
 @x
 4. Execute the following command to build the Docker image:
@@ -177,15 +136,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 4. Execute the following command to build the Docker image:
 @z
 
-@x
-    ```console
-    $ docker build .
-    ```
-@y
-    ```console
-    $ docker build .
-    ```
-@z
+% snip command...
 
 @x
     Here’s the result of the build process:
@@ -193,15 +144,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
     Here’s the result of the build process:
 @z
 
-@x
-    ```console
-    [+] Building 20.0s (10/10) FINISHED
-    ```
-@y
-    ```console
-    [+] Building 20.0s (10/10) FINISHED
-    ```
-@z
+% snip output...
 
 @x
     The first line indicates that the entire build process took *20.0 seconds*. The first build may take some time as it installs dependencies.
@@ -221,15 +164,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
    Now, re-run the `docker build` command without making any change in the source code or Dockerfile as shown:
 @z
 
-@x
-    ```console
-    $ docker build .
-    ```
-@y
-    ```console
-    $ docker build .
-    ```
-@z
+% snip command...
 
 @x
    Subsequent builds after the initial are faster due to the caching mechanism, as long as the commands and context remain unchanged. Docker caches the intermediate layers generated during the build process. When you rebuild the image without making any changes to the Dockerfile or the source code, Docker can reuse the cached layers, significantly speeding up the build process.
@@ -237,37 +172,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
    Subsequent builds after the initial are faster due to the caching mechanism, as long as the commands and context remain unchanged. Docker caches the intermediate layers generated during the build process. When you rebuild the image without making any changes to the Dockerfile or the source code, Docker can reuse the cached layers, significantly speeding up the build process.
 @z
 
-@x
-    ```console
-    [+] Building 1.0s (9/9) FINISHED                                                                            docker:desktop-linux
-     => [internal] load build definition from Dockerfile                                                                        0.0s
-     => => transferring dockerfile: 187B                                                                                        0.0s
-     ...
-     => [internal] load build context                                                                                           0.0s
-     => => transferring context: 8.16kB                                                                                         0.0s
-     => CACHED [2/4] WORKDIR /app                                                                                               0.0s
-     => CACHED [3/4] COPY . .                                                                                                   0.0s
-     => CACHED [4/4] RUN yarn install --production                                                                              0.0s
-     => exporting to image                                                                                                      0.0s
-     => => exporting layers                                                                                                     0.0s
-     => => exporting manifest
-   ```
-@y
-    ```console
-    [+] Building 1.0s (9/9) FINISHED                                                                            docker:desktop-linux
-     => [internal] load build definition from Dockerfile                                                                        0.0s
-     => => transferring dockerfile: 187B                                                                                        0.0s
-     ...
-     => [internal] load build context                                                                                           0.0s
-     => => transferring context: 8.16kB                                                                                         0.0s
-     => CACHED [2/4] WORKDIR /app                                                                                               0.0s
-     => CACHED [3/4] COPY . .                                                                                                   0.0s
-     => CACHED [4/4] RUN yarn install --production                                                                              0.0s
-     => exporting to image                                                                                                      0.0s
-     => => exporting layers                                                                                                     0.0s
-     => => exporting manifest
-   ```
-@z
+% snip output...
 
 @x
    The subsequent build was completed in just 1.0 second by leveraging the cached layers. No need to repeat time-consuming steps like installing dependencies.
@@ -277,20 +182,23 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 
 @x
     <table>
-      <tr>
-       <td>Steps
-       </td>
-       <td>Description
-       </td>
-       <td>Time Taken(1st Run)
-       </td>
-       <td>Time Taken (2nd Run)
-       </td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Steps
+          </th>
+          <th>Description
+          </th>
+          <th>Time Taken (1st Run)
+          </th>
+          <th>Time Taken (2nd Run)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
        <td>1
        </td>
-       <td>Load build definition from Dockerfile
+       <td><code>Load build definition from Dockerfile</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -300,7 +208,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>2
        </td>
-       <td>Load metadata for docker.io/library/node:20-alpine
+       <td><code>Load metadata for docker.io/library/node:22-alpine</code>
        </td>
        <td>2.7 seconds
        </td>
@@ -310,7 +218,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>3
        </td>
-       <td>Load .dockerignore
+       <td><code>Load .dockerignore</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -320,7 +228,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>4
        </td>
-       <td>Load build context
+       <td><code>Load build context</code>
     <p>
     (Context size: 4.60MB)
        </td>
@@ -332,7 +240,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>5
        </td>
-       <td>Set the working directory (WORKDIR)
+       <td><code>Set the working directory (WORKDIR)</code>
        </td>
        <td>0.1 seconds
        </td>
@@ -342,7 +250,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>6
        </td>
-       <td>Copy the local code into the container
+       <td><code>Copy the local code into the container</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -352,7 +260,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>7
        </td>
-       <td>Run yarn install --production
+       <td><code>Run yarn install --production</code>
        </td>
        <td>10.0 seconds
        </td>
@@ -362,7 +270,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>8
        </td>
-       <td>Exporting layers
+       <td><code>Exporting layers</code>
        </td>
        <td>2.2 seconds
        </td>
@@ -372,30 +280,34 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>9
        </td>
-       <td>Exporting the final image
+       <td><code>Exporting the final image</code>
        </td>
        <td>3.0 seconds
        </td>
        <td>0.0 seconds
        </td>
      </tr>
+     </tbody>
     </table>
 @y
     <table>
-      <tr>
-       <td>Steps
-       </td>
-       <td>Description
-       </td>
-       <td>Time Taken(1st Run)
-       </td>
-       <td>Time Taken (2nd Run)
-       </td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Steps
+          </th>
+          <th>Description
+          </th>
+          <th>Time Taken (1st Run)
+          </th>
+          <th>Time Taken (2nd Run)
+          </th>
+        </tr>
+      </thead>
+      <tbody>
       <tr>
        <td>1
        </td>
-       <td>Load build definition from Dockerfile
+       <td><code>Load build definition from Dockerfile</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -405,7 +317,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>2
        </td>
-       <td>Load metadata for docker.io/library/node:20-alpine
+       <td><code>Load metadata for docker.io/library/node:22-alpine</code>
        </td>
        <td>2.7 seconds
        </td>
@@ -415,7 +327,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>3
        </td>
-       <td>Load .dockerignore
+       <td><code>Load .dockerignore</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -425,7 +337,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>4
        </td>
-       <td>Load build context
+       <td><code>Load build context</code>
     <p>
     (Context size: 4.60MB)
        </td>
@@ -437,7 +349,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>5
        </td>
-       <td>Set the working directory (WORKDIR)
+       <td><code>Set the working directory (WORKDIR)</code>
        </td>
        <td>0.1 seconds
        </td>
@@ -447,7 +359,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>6
        </td>
-       <td>Copy the local code into the container
+       <td><code>Copy the local code into the container</code>
        </td>
        <td>0.0 seconds
        </td>
@@ -457,7 +369,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>7
        </td>
-       <td>Run yarn install --production
+       <td><code>Run yarn install --production</code>
        </td>
        <td>10.0 seconds
        </td>
@@ -467,7 +379,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>8
        </td>
-       <td>Exporting layers
+       <td><code>Exporting layers</code>
        </td>
        <td>2.2 seconds
        </td>
@@ -477,13 +389,14 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
       <tr>
        <td>9
        </td>
-       <td>Exporting the final image
+       <td><code>Exporting the final image</code>
        </td>
        <td>3.0 seconds
        </td>
        <td>0.0 seconds
        </td>
      </tr>
+     </tbody>
     </table>
 @z
 
@@ -505,27 +418,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 6. Update the Dockerfile to copy in the `package.json` file first, install dependencies, and then copy everything else in.
 @z
 
-@x
-     ```dockerfile
-     FROM node:20-alpine
-     WORKDIR /app
-     COPY package.json yarn.lock ./
-     RUN yarn install --production 
-     COPY . . 
-     EXPOSE 3000
-     CMD ["node", "src/index.js"]
-     ```
-@y
-     ```dockerfile
-     FROM node:20-alpine
-     WORKDIR /app
-     COPY package.json yarn.lock ./
-     RUN yarn install --production 
-     COPY . . 
-     EXPOSE 3000
-     CMD ["node", "src/index.js"]
-     ```
-@z
+% snip code...
 
 @x
 7. Create a file named `.dockerignore` in the same folder as the Dockerfile with the following contents.
@@ -533,15 +426,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 7. Create a file named `.dockerignore` in the same folder as the Dockerfile with the following contents.
 @z
 
-@x
-     ```plaintext
-     node_modules
-     ```
-@y
-     ```plaintext
-     node_modules
-     ```
-@z
+% snip code...
 
 @x
 8. Build the new image:
@@ -549,15 +434,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 8. Build the new image:
 @z
 
-@x
-    ```console
-    $ docker build .
-    ```
-@y
-    ```console
-    $ docker build .
-    ```
-@z
+% snip command...
 
 @x
     You'll then see output similar to the following:
@@ -565,49 +442,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
     You'll then see output similar to the following:
 @z
 
-@x
-    ```console
-    [+] Building 16.1s (10/10) FINISHED
-    => [internal] load build definition from Dockerfile                                               0.0s
-    => => transferring dockerfile: 175B                                                               0.0s
-    => [internal] load .dockerignore                                                                  0.0s
-    => => transferring context: 2B                                                                    0.0s
-    => [internal] load metadata for docker.io/library/node:21-alpine                                  0.0s
-    => [internal] load build context                                                                  0.8s
-    => => transferring context: 53.37MB                                                               0.8s
-    => [1/5] FROM docker.io/library/node:21-alpine                                                    0.0s
-    => CACHED [2/5] WORKDIR /app                                                                      0.0s
-    => [3/5] COPY package.json yarn.lock ./                                                           0.2s
-    => [4/5] RUN yarn install --production                                                           14.0s
-    => [5/5] COPY . .                                                                                 0.5s
-    => exporting to image                                                                             0.6s
-    => => exporting layers                                                                            0.6s
-    => => writing image     
-    sha256:d6f819013566c54c50124ed94d5e66c452325327217f4f04399b45f94e37d25        0.0s
-    => => naming to docker.io/library/node-app:2.0                                                 0.0s
-    ```
-@y
-    ```console
-    [+] Building 16.1s (10/10) FINISHED
-    => [internal] load build definition from Dockerfile                                               0.0s
-    => => transferring dockerfile: 175B                                                               0.0s
-    => [internal] load .dockerignore                                                                  0.0s
-    => => transferring context: 2B                                                                    0.0s
-    => [internal] load metadata for docker.io/library/node:21-alpine                                  0.0s
-    => [internal] load build context                                                                  0.8s
-    => => transferring context: 53.37MB                                                               0.8s
-    => [1/5] FROM docker.io/library/node:21-alpine                                                    0.0s
-    => CACHED [2/5] WORKDIR /app                                                                      0.0s
-    => [3/5] COPY package.json yarn.lock ./                                                           0.2s
-    => [4/5] RUN yarn install --production                                                           14.0s
-    => [5/5] COPY . .                                                                                 0.5s
-    => exporting to image                                                                             0.6s
-    => => exporting layers                                                                            0.6s
-    => => writing image     
-    sha256:d6f819013566c54c50124ed94d5e66c452325327217f4f04399b45f94e37d25        0.0s
-    => => naming to docker.io/library/node-app:2.0                                                 0.0s
-    ```
-@z
+% snip output...
 
 @x
     You'll see that all layers were rebuilt. Perfectly fine since you changed the Dockerfile quite a bit.
@@ -627,15 +462,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
 10. Build the Docker image. This time, your output should look a little different.
 @z
 
-@x
-    ```console
-    $ docker build -t node-app:3.0 .
-    ```
-@y
-    ```console
-    $ docker build -t node-app:3.0 .
-    ```
-@z
+% snip command...
 
 @x
     You'll then see output similar to the following:
@@ -643,49 +470,7 @@ In this hands-on guide, you will learn how to use the Docker build cache effecti
     You'll then see output similar to the following:
 @z
 
-@x
-    ```console
-    [+] Building 1.2s (10/10) FINISHED 
-    => [internal] load build definition from Dockerfile                                               0.0s
-    => => transferring dockerfile: 37B                                                                0.0s
-    => [internal] load .dockerignore                                                                  0.0s
-    => => transferring context: 2B                                                                    0.0s
-    => [internal] load metadata for docker.io/library/node:21-alpine                                  0.0s 
-    => [internal] load build context                                                                  0.2s
-    => => transferring context: 450.43kB                                                              0.2s
-    => [1/5] FROM docker.io/library/node:21-alpine                                                    0.0s
-    => CACHED [2/5] WORKDIR /app                                                                      0.0s
-    => CACHED [3/5] COPY package.json yarn.lock ./                                                    0.0s
-    => CACHED [4/5] RUN yarn install --production                                                     0.0s
-    => [5/5] COPY . .                                                                                 0.5s 
-    => exporting to image                                                                             0.3s
-    => => exporting layers                                                                            0.3s
-    => => writing image     
-    sha256:91790c87bcb096a83c2bd4eb512bc8b134c757cda0bdee4038187f98148e2eda       0.0s
-    => => naming to docker.io/library/node-app:3.0                                                 0.0s
-    ```
-@y
-    ```console
-    [+] Building 1.2s (10/10) FINISHED 
-    => [internal] load build definition from Dockerfile                                               0.0s
-    => => transferring dockerfile: 37B                                                                0.0s
-    => [internal] load .dockerignore                                                                  0.0s
-    => => transferring context: 2B                                                                    0.0s
-    => [internal] load metadata for docker.io/library/node:21-alpine                                  0.0s 
-    => [internal] load build context                                                                  0.2s
-    => => transferring context: 450.43kB                                                              0.2s
-    => [1/5] FROM docker.io/library/node:21-alpine                                                    0.0s
-    => CACHED [2/5] WORKDIR /app                                                                      0.0s
-    => CACHED [3/5] COPY package.json yarn.lock ./                                                    0.0s
-    => CACHED [4/5] RUN yarn install --production                                                     0.0s
-    => [5/5] COPY . .                                                                                 0.5s 
-    => exporting to image                                                                             0.3s
-    => => exporting layers                                                                            0.3s
-    => => writing image     
-    sha256:91790c87bcb096a83c2bd4eb512bc8b134c757cda0bdee4038187f98148e2eda       0.0s
-    => => naming to docker.io/library/node-app:3.0                                                 0.0s
-    ```
-@z
+% snip output...
 
 @x
     First off, you should notice that the build was much faster. You'll see that several steps are using previously cached layers. That's good news; you're using the build cache. Pushing and pulling this image and updates to it will be much faster as well.

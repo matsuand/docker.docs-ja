@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = engine extensions-sdk hub
+SUBDIRS = dvp engine extensions-sdk hub
 
 bases = \
 	_index.md

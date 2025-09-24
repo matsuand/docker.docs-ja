@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
 
 @x
 title: Get Docker Desktop 
@@ -58,36 +58,36 @@ Docker Desktop は、イメージビルド、コンテナー実行など数々�
 {{< card
   title="Docker Desktop for Mac"
   description="[Download (Apple Silicon)](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64) | [Download (Intel)](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64) | [Install instructions](/desktop/setup/install/mac-install)"
-  icon="/assets/images/apple_48.svg" >}}
+  icon="/icons/AppleMac.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Mac"
-  description="[ダウンロード (Apple Silicon)](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64) | [Download (Intel)](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64) | [Install instructions](__SUBDIR__/desktop/setup/install/mac-install)"
-  icon="__SUBDIR__/assets/images/apple_48.svg" >}}
+  description="[ダウンロード (Apple Silicon)](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-arm64) | [Download (Intel)](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64) | [インストール手順](__SUBDIR__/desktop/setup/install/mac-install)"
+  icon="icons/AppleMac.svg" >}}
 @z
 
 @x
 {{< card
   title="Docker Desktop for Windows"
   description="[Download](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows) | [Install instructions](/desktop/setup/install/windows-install)"
-  icon="/assets/images/windows_48.svg" >}}
+  icon="/icons/Windows.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Windows"
-  description="[ダウンロード](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows) | [Install instructions](__SUBDIR__/desktop/setup/install/windows-install)"
-  icon="__SUBDIR__/assets/images/windows_48.svg" >}}
+  description="[ダウンロード](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows) | [インストール手順](__SUBDIR__/desktop/setup/install/windows-install)"
+  icon="icons/Windows.svg" >}}
 @z
 
 @x
 {{< card
   title="Docker Desktop for Linux"
   description="[Install instructions](/desktop/setup/install/linux/)"
-  icon="/assets/images/linux_48.svg" >}}
+  icon="/icons/Linux.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Linux"
   description="[インストール手順](__SUBDIR__/desktop/setup/install/linux/)"
-  icon="__SUBDIR__/assets/images/linux_48.svg" >}}
+  icon="icons/Linux.svg" >}}
 @z
 
 @x

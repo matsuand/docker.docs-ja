@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS =  accounts admin billing build build-cloud compose copilot  \
-	desktop docker-hub engine extensions harmonia scout security \
-	subscription
+SUBDIRS = ai accounts admin billing build build-cloud compose copilot \
+	desktop dhi docker-hub engine enterprise extensions offload   \
+	scout security subscription
 
 bases = \
 	_index.md                 \

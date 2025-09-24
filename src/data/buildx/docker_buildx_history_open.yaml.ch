@@ -3,70 +3,66 @@
 
 @x
 command: docker buildx history open
-short: Open a build in Docker Desktop
-long: Open a build in Docker Desktop
+short: Open a build record in Docker Desktop
+long: |-
+    Open a build record in Docker Desktop for visual inspection. This requires
+    Docker Desktop to be installed and running on the host machine.
 usage: docker buildx history open [OPTIONS] [REF]
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker buildx history open
-short: Open a build in Docker Desktop
-long: Open a build in Docker Desktop
+short: Open a build record in Docker Desktop
+long: |-
+    Open a build record in Docker Desktop for visual inspection. This requires
+    Docker Desktop to be installed and running on the host machine.
 usage: docker buildx history open [OPTIONS] [REF]
-pname: docker buildx history
-plink: docker_buildx_history.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+
+% inherited_options:
+
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
+@z
+
+@x
+examples: |-
+    ### Open the most recent build in Docker Desktop
+@y
+examples: |-
+    ### Open the most recent build in Docker Desktop
+@z
+
+% snip command...
+
+@x
+    By default, this opens the most recent build on the current builder.
+@y
+    By default, this opens the most recent build on the current builder.
+@z
+
+@x
+    ### Open a specific build
+@y
+    ### Open a specific build
+@z
+
+@x within command
+    # Using a build ID
+@y
+    # Using a build ID
+@z
+@x
+    # Or using a relative offset
+@y
+    # Or using a relative offset
+@z
+
+% snip directives...

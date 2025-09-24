@@ -8,18 +8,17 @@ title: プロジェクト名の指定
 @z
 
 @x
-description: Understand the different ways you can set a project name in Compose and what the precedence is.
+description: Learn how to set a custom project name in Compose and understand the precedence of each method.
 keywords: name, compose, project, -p flag, name top-level element
 @y
-description: Understand the different ways you can set a project name in Compose and what the precedence is.
+description: Learn how to set a custom project name in Compose and understand the precedence of each method.
 keywords: name, compose, project, -p flag, name top-level element
 @z
 
 @x
-In Compose, the default project name is derived from the base name of the project directory. However, you have the flexibility to set a custom project name. 
+By default, Compose assigns the project name based on the name of the directory that contains the Compose file. You can override this with several methods.
 @y
-Compose の場合、プロジェクト名はデフォルトで、プロジェクトディレクトリのベース名から定まります。
-ただしこのプロジェクト名は任意に設定することができます。
+By default, Compose assigns the project name based on the name of the directory that contains the Compose file. You can override this with several methods.
 @z
 
 @x
@@ -32,12 +31,12 @@ This page offers examples of scenarios where custom project names can be helpful
 > [!NOTE]
 >
 > The default project directory is the base directory of the Compose file. A custom value can also be set
-> for it using the [`--project-directory` command line option](/reference/cli/docker/compose.md#use--p-to-specify-a-project-name).
+> for it using the [`--project-directory` command line option](/reference/cli/docker/compose.md#options).
 @y
 > [!NOTE]
 >
 > デフォルトのプロジェクトディレクトリは、Compose ファイルがあるベースディレクトリです。
-> これについても [コマンドラインオプション `--project-directory`](reference/cli/docker/compose.md#use--p-to-specify-a-project-name) を使って、独自のものに設定することができます。
+> これについても [コマンドラインオプション `--project-directory`](reference/cli/docker/compose.md#options) を使って、独自のものに設定することができます。
 @z
 
 @x

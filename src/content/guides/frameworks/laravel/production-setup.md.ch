@@ -110,11 +110,11 @@ For production, the `php-fpm` Dockerfile creates an optimized image with only th
 @x
 ```dockerfile
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.3-fpm AS builder
+FROM php:8.4-fpm AS builder
 @y
 ```dockerfile
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.3-fpm AS builder
+FROM php:8.4-fpm AS builder
 @z
 
 @x
@@ -227,10 +227,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 @x
 # Stage 2: Production environment
-FROM php:8.3-fpm
+FROM php:8.4-fpm
 @y
 # Stage 2: Production environment
-FROM php:8.3-fpm
+FROM php:8.4-fpm
 @z
 
 @x
@@ -412,11 +412,11 @@ If you need a separate CLI container with different extensions or strict separat
 @x
 ```dockerfile
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.3-cli AS builder
+FROM php:8.4-cli AS builder
 @y
 ```dockerfile
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.3-cli AS builder
+FROM php:8.4-cli AS builder
 @z
 
 @x
@@ -499,10 +499,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 @x
 # Stage 2: Production environment
-FROM php:8.3-cli
+FROM php:8.4-cli
 @y
 # Stage 2: Production environment
-FROM php:8.3-cli
+FROM php:8.4-cli
 @z
 
 @x
@@ -584,9 +584,9 @@ CMD ["bash"]
 @z
 
 @x
-This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.3-cli` image as the base image and sets up the container for running CLI commands.
+This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.4-cli` image as the base image and sets up the container for running CLI commands.
 @y
-This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.3-cli` image as the base image and sets up the container for running CLI commands.
+This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.4-cli` image as the base image and sets up the container for running CLI commands.
 @z
 
 @x

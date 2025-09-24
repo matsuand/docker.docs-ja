@@ -5,12 +5,14 @@
 
 @x
 title: Resource constraints
-weight: 30
+@y
+title: Resource constraints
+@z
+
+@x
 description: Specify the runtime options for a container
 keywords: docker, daemon, configuration, runtime
 @y
-title: Resource constraints
-weight: 30
 description: Specify the runtime options for a container
 keywords: docker, daemon, configuration, runtime
 @z
@@ -164,13 +166,13 @@ Docker can enforce hard or soft memory limits.
 @z
 
 @x
-- Hard limits lets the container use no more than a fixed amount of memory.
-- Soft limits lets the container use as much memory as it needs unless certain
+- Hard limits let the container use no more than a fixed amount of memory.
+- Soft limits let the container use as much memory as it needs unless certain
   conditions are met, such as when the kernel detects low memory or contention on
   the host machine.
 @y
-- Hard limits lets the container use no more than a fixed amount of memory.
-- Soft limits lets the container use as much memory as it needs unless certain
+- Hard limits let the container use no more than a fixed amount of memory.
+- Soft limits let the container use as much memory as it needs unless certain
   conditions are met, such as when the kernel detects low memory or contention on
   the host machine.
 @z
@@ -392,12 +394,12 @@ a container. Consider the following scenarios:
 @z
 
 @x
-When you enable kernel memory limits, the host machine tracks "high water mark"
+When you enable kernel memory limits, the host machine tracks the "high water mark"
 statistics on a per-process basis, so you can track which processes (in this
 case, containers) are using excess memory. This can be seen per process by
 viewing `/proc/<PID>/status` on the host machine.
 @y
-When you enable kernel memory limits, the host machine tracks "high water mark"
+When you enable kernel memory limits, the host machine tracks the "high water mark"
 statistics on a per-process basis, so you can track which processes (in this
 case, containers) are using excess memory. This can be seen per process by
 viewing `/proc/<PID>/status` on the host machine.
@@ -446,7 +448,7 @@ the container's cgroup on the host machine.
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--cpus=<value>`       | Specify how much of the available CPU resources a container can use. For instance, if the host machine has two CPUs and you set `--cpus="1.5"`, the container is guaranteed at most one and a half of the CPUs. This is the equivalent of setting `--cpu-period="100000"` and `--cpu-quota="150000"`.                                                                                                                                                                                                                                                                                              |
 | `--cpu-period=<value>` | Specify the CPU CFS scheduler period, which is used alongside `--cpu-quota`. Defaults to 100000 microseconds (100 milliseconds). Most users don't change this from the default. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                     |
-| `--cpu-quota=<value>`  | Impose a CPU CFS quota on the container. The number of microseconds per `--cpu-period` that the container is limited to before throttled. As such acting as the effective ceiling. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                  |
+| `--cpu-quota=<value>`  | Impose a CPU CFS quota on the container. The number of microseconds per `--cpu-period` that the container is limited to before being throttled. As such acting as the effective ceiling. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                  |
 | `--cpuset-cpus`        | Limit the specific CPUs or cores a container can use. A comma-separated list or hyphen-separated range of CPUs a container can use, if you have more than one CPU. The first CPU is numbered 0. A valid value might be `0-3` (to use the first, second, third, and fourth CPU) or `1,3` (to use the second and fourth CPU).                                                                                                                                                                                                                                                                        |
 | `--cpu-shares`         | Set this flag to a value greater or less than the default of 1024 to increase or reduce the container's weight, and give it access to a greater or lesser proportion of the host machine's CPU cycles. This is only enforced when CPU cycles are constrained. When plenty of CPU cycles are available, all containers use as much CPU as they need. In that way, this is a soft limit. `--cpu-shares` doesn't prevent containers from being scheduled in Swarm mode. It prioritizes container CPU resources for the available CPU cycles. It doesn't guarantee or reserve any specific CPU access. |
 @y
@@ -454,7 +456,7 @@ the container's cgroup on the host machine.
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--cpus=<value>`       | Specify how much of the available CPU resources a container can use. For instance, if the host machine has two CPUs and you set `--cpus="1.5"`, the container is guaranteed at most one and a half of the CPUs. This is the equivalent of setting `--cpu-period="100000"` and `--cpu-quota="150000"`.                                                                                                                                                                                                                                                                                              |
 | `--cpu-period=<value>` | Specify the CPU CFS scheduler period, which is used alongside `--cpu-quota`. Defaults to 100000 microseconds (100 milliseconds). Most users don't change this from the default. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                     |
-| `--cpu-quota=<value>`  | Impose a CPU CFS quota on the container. The number of microseconds per `--cpu-period` that the container is limited to before throttled. As such acting as the effective ceiling. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                  |
+| `--cpu-quota=<value>`  | Impose a CPU CFS quota on the container. The number of microseconds per `--cpu-period` that the container is limited to before being throttled. As such acting as the effective ceiling. For most use-cases, `--cpus` is a more convenient alternative.                                                                                                                                                                                                                                                                                                                                                  |
 | `--cpuset-cpus`        | Limit the specific CPUs or cores a container can use. A comma-separated list or hyphen-separated range of CPUs a container can use, if you have more than one CPU. The first CPU is numbered 0. A valid value might be `0-3` (to use the first, second, third, and fourth CPU) or `1,3` (to use the second and fourth CPU).                                                                                                                                                                                                                                                                        |
 | `--cpu-shares`         | Set this flag to a value greater or less than the default of 1024 to increase or reduce the container's weight, and give it access to a greater or lesser proportion of the host machine's CPU cycles. This is only enforced when CPU cycles are constrained. When plenty of CPU cycles are available, all containers use as much CPU as they need. In that way, this is a soft limit. `--cpu-shares` doesn't prevent containers from being scheduled in Swarm mode. It prioritizes container CPU resources for the available CPU cycles. It doesn't guarantee or reserve any specific CPU access. |
 @z
@@ -561,7 +563,7 @@ for real-time tasks per runtime period. For instance, with the default period of
 containers using the real-time scheduler can run for 950000 microseconds for every
 1000000-microsecond period, leaving at least 50000 microseconds available for
 non-real-time tasks. To make this configuration permanent on systems which use
-`systemd`, create a systemd unit file for the `docker` service. For an example,
+`systemd`, create a systemd unit file for the `docker` service. For example,
 see the instruction on how to configure the daemon to use a proxy with a
 [systemd unit file](../daemon/proxy.md#systemd-unit-file).
 @y
@@ -572,7 +574,7 @@ for real-time tasks per runtime period. For instance, with the default period of
 containers using the real-time scheduler can run for 950000 microseconds for every
 1000000-microsecond period, leaving at least 50000 microseconds available for
 non-real-time tasks. To make this configuration permanent on systems which use
-`systemd`, create a systemd unit file for the `docker` service. For an example,
+`systemd`, create a systemd unit file for the `docker` service. For example,
 see the instruction on how to configure the daemon to use a proxy with a
 [systemd unit file](../daemon/proxy.md#systemd-unit-file).
 @z
@@ -846,11 +848,11 @@ documentation. These variables can be set in a Dockerfile.
 @z
 
 @x
-You can also use CUDA images which sets these variables automatically. See the
+You can also use CUDA images, which set these variables automatically. See the
 official [CUDA images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda)
 NGC catalog page.
 @y
-You can also use CUDA images which sets these variables automatically. See the
+You can also use CUDA images, which set these variables automatically. See the
 official [CUDA images](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/cuda)
 NGC catalog page.
 @z

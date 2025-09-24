@@ -54,10 +54,10 @@ This guide is intended for educational purposes, helping developers adapt and op
 @z
 
 @x
-- [Laravel Sail](https://laravel.com/docs/11.x/sail): An official package for easily starting Laravel in Docker.
+- [Laravel Sail](https://laravel.com/docs/12.x/sail): An official package for easily starting Laravel in Docker.
 - [Laradock](https://github.com/laradock/laradock): A community project that helps run Laravel applications in Docker.
 @y
-- [Laravel Sail](https://laravel.com/docs/11.x/sail): An official package for easily starting Laravel in Docker.
+- [Laravel Sail](https://laravel.com/docs/12.x/sail): An official package for easily starting Laravel in Docker.
 - [Laradock](https://github.com/laradock/laradock): A community project that helps run Laravel applications in Docker.
 @z
 

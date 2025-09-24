@@ -4,11 +4,13 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Profiles
+linkTitle: Profiles
+title: Learn how to use profiles in Docker Compose
 description: Learn about profiles
 keywords: compose, compose specification, profiles, compose file reference
 @y
-title: Profiles
+linkTitle: Profiles
+title: Learn how to use profiles in Docker Compose
 description: Learn about profiles
 keywords: compose, compose specification, profiles, compose file reference
 @z
@@ -126,7 +128,7 @@ In the above example:
 @z
 
 @x
-- If the Compose application model is parsed with no profile enabled, it only contains the `web` service.
+- If the Compose application model is parsed when no profile is enabled, it only contains the `web` service.
 - If the profile `test` is enabled, the model contains the services `test_lib` and `coverage_lib`, and service `web`, which is always enabled.
 - If the profile `debug` is enabled, the model contains both `web` and `debug_lib` services, but not `test_lib` and `coverage_lib`,
   and as such the model is invalid regarding the `depends_on` constraint of `debug_lib`.
@@ -142,7 +144,7 @@ In the above example:
   profile `debug` is automatically enabled and service `test_lib` is pulled in as a dependency starting both
   services `debug_lib` and `test_lib`.
 @y
-- If the Compose application model is parsed with no profile enabled, it only contains the `web` service.
+- If the Compose application model is parsed when no profile is enabled, it only contains the `web` service.
 - If the profile `test` is enabled, the model contains the services `test_lib` and `coverage_lib`, and service `web`, which is always enabled.
 - If the profile `debug` is enabled, the model contains both `web` and `debug_lib` services, but not `test_lib` and `coverage_lib`,
   and as such the model is invalid regarding the `depends_on` constraint of `debug_lib`.
@@ -160,7 +162,7 @@ In the above example:
 @z
 
 @x
-See how you can use `profiles` in [Docker Compose](/manuals/compose/how-tos/profiles.md).
+Learn how to use `profiles` in [Docker Compose](/manuals/compose/how-tos/profiles.md).
 @y
-See how you can use `profiles` in [Docker Compose](manuals/compose/how-tos/profiles.md).
+Learn how to use `profiles` in [Docker Compose](manuals/compose/how-tos/profiles.md).
 @z

@@ -2,25 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to keep containers running when the daemon isn't available
 keywords: docker, upgrade, daemon, dockerd, live-restore, daemonless container
 title: Live restore
-weight: 40
-aliases:
-  - /engine/admin/live-restore/
-  - /config/containers/live-restore/
----
 @y
----
 description: Learn how to keep containers running when the daemon isn't available
 keywords: docker, upgrade, daemon, dockerd, live-restore, daemonless container
 title: Live restore
-weight: 40
-aliases:
-  - /engine/admin/live-restore/
-  - /config/containers/live-restore/
----
 @z
 
 @x

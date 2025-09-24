@@ -18,24 +18,6 @@ There are many ways you can provide feedback on Docker Compose.
 @z
 
 @x
-### In-product feedback
-@y
-### In-product feedback
-@z
-
-@x
-If you have obtained Docker Compose through Docker Desktop, you can use the `docker feedback` command to submit feedback directly from the command line.
-@y
-If you have obtained Docker Compose through Docker Desktop, you can use the `docker feedback` command to submit feedback directly from the command line.
-@z
-
-@x
-<script async id="asciicast-KkC0fFrhV8nAzvXUGqay06UXx" src="https://asciinema.org/a/KkC0fFrhV8nAzvXUGqay06UXx.js"></script>
-@y
-<script async id="asciicast-KkC0fFrhV8nAzvXUGqay06UXx" src="https://asciinema.org/a/KkC0fFrhV8nAzvXUGqay06UXx.js"></script>
-@z
-
-@x
 ### Report bugs or problems on GitHub
 @y
 ### Report bugs or problems on GitHub

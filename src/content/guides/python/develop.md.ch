@@ -309,7 +309,7 @@ Related information:
 @z
 
 @x
-In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+In the next section, you'll learn how you can set up linting, formatting and type checking to follow the best practices in python apps.
 @y
-In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+In the next section, you'll learn how you can set up linting, formatting and type checking to follow the best practices in python apps.
 @z

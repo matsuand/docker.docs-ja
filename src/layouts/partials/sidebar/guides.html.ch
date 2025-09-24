@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-    <p>Resources:</p>
+      <p>Resources:</p>
 @y
-    <p>関連情報</p>
+      <p>関連情報</p>
 @z
 
 @x
-  <a href="/guides/" class="mt-2 link">« Back to all guides</a>
+  <a href="/guides/" class="link mt-2">« Back to all guides</a>
 @y
-  <a href="__SUBDIR__/guides/" class="mt-2 link">« 全ガイドに戻る</a>
+  <a href="__SUBDIR__/guides/" class="link mt-2">« 全ガイドに戻る</a>
 @z

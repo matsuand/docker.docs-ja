@@ -4,11 +4,11 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Secrets top-level elements
+title: Secrets
 description: Explore all the attributes the secrets top-level element can have.
 keywords: compose, compose specification, secrets, compose file reference
 @y
-title: Secrets top-level elements
+title: Secrets
 description: Explore all the attributes the secrets top-level element can have.
 keywords: compose, compose specification, secrets, compose file reference
 @z
@@ -70,16 +70,16 @@ secrets:
 @z
 
 @x
-## Example 2 
+## Example 2
 @y
-## Example 2 
+## Example 2
 @z
 
 @x
-`token` secret  is created as `<project_name>_token` when the application is deployed,
+`token` secret is created as `<project_name>_token` when the application is deployed,
 by registering the content of the `OAUTH_TOKEN` environment variable as a platform secret.
 @y
-`token` secret  is created as `<project_name>_token` when the application is deployed,
+`token` secret is created as `<project_name>_token` when the application is deployed,
 by registering the content of the `OAUTH_TOKEN` environment variable as a platform secret.
 @z
 

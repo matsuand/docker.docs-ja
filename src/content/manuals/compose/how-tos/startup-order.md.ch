@@ -4,13 +4,15 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: How to control service startup and shutdown order in Docker Compose
-keywords: documentation, docs, docker, compose, startup, shutdown, order
+description: Learn how to manage service startup and shutdown order in Docker Compose using depends_on and healthchecks.
+keywords: docker compose startup order, compose shutdown order, depends_on, service healthcheck, control service dependencies
 title: Control startup and shutdown order in Compose
+linkTitle: Control startup order
 @y
-description: Docker Compose においてサービスの起動順、停止順を制御する方法を説明します。
-keywords: documentation, docs, docker, compose, startup, shutdown, order
-title: Compose における起動、停止順の制御
+description: Learn how to manage service startup and shutdown order in Docker Compose using depends_on and healthchecks.
+keywords: docker compose startup order, compose shutdown order, depends_on, service healthcheck, control service dependencies
+title: Control startup and shutdown order in Compose
+linkTitle: Control startup order
 @z
 
 @x
@@ -24,11 +26,11 @@ Compose では必ず依存順に応じて、コンテナーの起動または停
 @z
 
 @x
-A good example of when you might use this is an application which needs to access a database. If both services are started with `docker compose up`, there is a chance this will fail since the application service might start before the database service and won't find a database able to handle its SQL statements. 
+For example, if your application needs to access a database and both services are started with `docker compose up`, there is a chance this will fail since the application service might start before the database service and won't find a database able to handle its SQL statements. 
 @y
-この仕組みを使いたくなる良い例として、データベースアクセスを必要とするアプリケーションがあります。
-`docker compose up` によって 2 つのサービスを起動させても、その起動に失敗することがあります。
-それはデータベースサービスの起動よりも前にウェブサービスが起動してしまったとしたら、データベースを見つけることができずに SQL ステートメントを取り扱えなくなるからです。
+たとえばデータベースアクセスを必要とするアプリケーションがあって、どのサービスも `docker compose up` によって起動するものであるとします。
+ただしこの起動には失敗することがあります。
+それはデータベースサービスの起動よりも前にウェブサービスが起動してしまったとしたら、SQL ステートメントを取り扱うデータベースを見つけることができないからです。
 @z
 
 @x

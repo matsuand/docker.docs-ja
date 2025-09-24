@@ -34,11 +34,11 @@ use the format `<[A-Z_]+>` for the placeholder value: `<MY_VARIABLE>`
 @z
 
 @x
-```none
+```text
 export name=<MY_NAME>
 ```
 @y
-```none
+```text
 export name=<MY_NAME>
 ```
 @z

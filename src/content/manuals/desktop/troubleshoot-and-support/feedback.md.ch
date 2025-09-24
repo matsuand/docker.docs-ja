@@ -26,21 +26,9 @@ There are many ways you can provide feedback on Docker Desktop or Docker Desktop
 @z
 
 @x
-On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker team.
+On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker Team.
 @y
-On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker team.
-@z
-
-@x
-You can also use the `docker feedback` command to submit feedback directly from the command line.
-@y
-You can also use the `docker feedback` command to submit feedback directly from the command line.
-@z
-
-@x
-<script async id="asciicast-KkC0fFrhV8nAzvXUGqay06UXx" src="https://asciinema.org/a/KkC0fFrhV8nAzvXUGqay06UXx.js"></script>
-@y
-<script async id="asciicast-KkC0fFrhV8nAzvXUGqay06UXx" src="https://asciinema.org/a/KkC0fFrhV8nAzvXUGqay06UXx.js"></script>
+On each Docker Desktop Dashboard view, there is a **Give feedback** link. This opens a feedback form where you can share ideas directly with the Docker Team.
 @z
 
 @x
@@ -80,7 +68,6 @@ GitHub](https://github.com/docker/for-mac/issues)
 - [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
 - [Docker Desktop for Linux issues on
 GitHub](https://github.com/docker/desktop-linux/issues)
-- [Dev Environments issues on GitHub](https://github.com/docker/dev-environments/issues)
 - [Docker Extensions issues on GitHub](https://github.com/docker/extensions-sdk/issues)
 @y
 To report bugs or problems, visit:
@@ -89,7 +76,6 @@ GitHub](https://github.com/docker/for-mac/issues)
 - [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
 - [Docker Desktop for Linux issues on
 GitHub](https://github.com/docker/desktop-linux/issues)
-- [Dev Environments issues on GitHub](https://github.com/docker/dev-environments/issues)
 - [Docker Extensions issues on GitHub](https://github.com/docker/extensions-sdk/issues)
 @z
 
@@ -109,12 +95,10 @@ You can also provide feedback through the following [Docker Community Slack](htt
 - #docker-desktop-mac
 - #docker-desktop-windows
 - #docker-desktop-linux
-- #docker-dev-environments
 - #extensions
 @y
 - #docker-desktop-mac
 - #docker-desktop-windows
 - #docker-desktop-linux
-- #docker-dev-environments
 - #extensions
 @z

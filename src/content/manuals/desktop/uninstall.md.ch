@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: How to uninstall Docker Desktop
@@ -9,9 +9,9 @@ keywords: Windows, uninstall, Mac, Linux, Docker Desktop
 title: Uninstall Docker Desktop
 linkTitle: Uninstall
 @y
-description: Docker Desktop のアンインストール方法。
+description: How to uninstall Docker Desktop
 keywords: Windows, uninstall, Mac, Linux, Docker Desktop
-title: Docker Desktop のアンインストール
+title: Uninstall Docker Desktop
 linkTitle: Uninstall
 @z
 
@@ -48,9 +48,9 @@ linkTitle: Uninstall
 2. Select **Docker Desktop** from the **Apps & features** list and then select **Uninstall**.
 3. Select **Uninstall** to confirm your selection.
 @y
-1. Windows の **スタート** メニューから **設定** > **アプリ** > **インストールされているアプリ** をクリックします。
-2. **インストールされているアプリ** の一覧から **Docker Desktop** を選んで **Uninstall** をクリックします。
-3. 確認画面にて **アンインストール** をクリックします。
+1. From the Windows **Start** menu, select **Settings** > **Apps** > **Apps & features**.
+2. Select **Docker Desktop** from the **Apps & features** list and then select **Uninstall**.
+3. Select **Uninstall** to confirm your selection.
 @z
 
 @x
@@ -61,29 +61,33 @@ linkTitle: Uninstall
 
 @x
 1. Locate the installer:
+   ```console
+   $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
+   ```
+2. Uninstall Docker Desktop. 
+ - In PowerShell, run:
+    ```console
+    $ Start-Process 'Docker Desktop Installer.exe' -Wait uninstall
+    ```
+ - In the Command Prompt, run:
+    ```console
+    $ start /w "" "Docker Desktop Installer.exe" uninstall
+    ```
 @y
 1. Locate the installer:
-@z
-
-% snip command...
-
-@x
+   ```console
+   $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
+   ```
 2. Uninstall Docker Desktop. 
  - In PowerShell, run:
-@y
-2. Uninstall Docker Desktop. 
- - In PowerShell, run:
-@z
-
-% snip command...
-
-@x
+    ```console
+    $ Start-Process 'Docker Desktop Installer.exe' -Wait uninstall
+    ```
  - In the Command Prompt, run:
-@y
- - In the Command Prompt, run:
+    ```console
+    $ start /w "" "Docker Desktop Installer.exe" uninstall
+    ```
 @z
-
-% snip command...
 
 @x
 After uninstalling Docker Desktop, some residual files may remain which you can remove manually. These are:
@@ -91,7 +95,27 @@ After uninstalling Docker Desktop, some residual files may remain which you can 
 After uninstalling Docker Desktop, some residual files may remain which you can remove manually. These are:
 @z
 
-% snip command...
+@x
+```console
+C:\ProgramData\Docker
+C:\ProgramData\DockerDesktop
+C:\Program Files\Docker
+C:\Users\<your user name>\AppData\Local\Docker
+C:\Users\<your user name>\AppData\Roaming\Docker
+C:\Users\<your user name>\AppData\Roaming\Docker Desktop
+C:\Users\<your user name>\.docker
+```
+@y
+```console
+C:\ProgramData\Docker
+C:\ProgramData\DockerDesktop
+C:\Program Files\Docker
+C:\Users\<your user name>\AppData\Local\Docker
+C:\Users\<your user name>\AppData\Roaming\Docker
+C:\Users\<your user name>\AppData\Roaming\Docker Desktop
+C:\Users\<your user name>\.docker
+```
+@z
 
 @x
 {{< /tab >}}
@@ -137,7 +161,15 @@ Run:
 Run:
 @z
 
-% snip command...
+@x
+```console
+$ /Applications/Docker.app/Contents/MacOS/uninstall
+```
+@y
+```console
+$ /Applications/Docker.app/Contents/MacOS/uninstall
+```
+@z
 
 @x
 You can then move the Docker application to the trash. 
@@ -179,7 +211,17 @@ After uninstalling Docker Desktop, some residual files may remain which you can 
 After uninstalling Docker Desktop, some residual files may remain which you can remove:
 @z
 
-% snip command...
+@x
+```console
+$ rm -rf ~/Library/Group\ Containers/group.com.docker
+$ rm -rf ~/.docker
+```
+@y
+```console
+$ rm -rf ~/Library/Group\ Containers/group.com.docker
+$ rm -rf ~/.docker
+```
+@z
 
 @x
 With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
@@ -187,7 +229,17 @@ With Docker Desktop version 4.36 and earlier, the following files may also be le
 With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
 @z
 
-% snip command...
+@x
+```console
+/Library/PrivilegedHelperTools/com.docker.vmnetd
+/Library/PrivilegedHelperTools/com.docker.socket
+```
+@y
+```console
+/Library/PrivilegedHelperTools/com.docker.vmnetd
+/Library/PrivilegedHelperTools/com.docker.socket
+```
+@z
 
 @x
 {{< /tab >}}
@@ -209,7 +261,15 @@ To uninstall Docker Desktop for Ubuntu:
 1. Remove the Docker Desktop application. Run:
 @z
 
-% snip command...
+@x
+   ```console
+   $ sudo apt remove docker-desktop
+   ```
+@y
+   ```console
+   $ sudo apt remove docker-desktop
+   ```
+@z
 
 @x
    This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
@@ -223,7 +283,19 @@ To uninstall Docker Desktop for Ubuntu:
 2. Manually remove leftover file.
 @z
 
-% snip command...
+@x
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo apt purge docker-desktop
+   ```
+@y
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo apt purge docker-desktop
+   ```
+@z
 
 @x
    This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
@@ -263,7 +335,15 @@ To uninstall Docker Desktop for Debian, run:
 1. Remove the Docker Desktop application:
 @z
 
-% snip command...
+@x
+   ```console
+   $ sudo apt remove docker-desktop
+   ```
+@y
+   ```console
+   $ sudo apt remove docker-desktop
+   ```
+@z
 
 @x
    This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
@@ -277,7 +357,19 @@ To uninstall Docker Desktop for Debian, run:
 2. Manually remove leftover file.
 @z
 
-% snip command...
+@x
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo apt purge docker-desktop
+   ```
+@y
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo apt purge docker-desktop
+   ```
+@z
 
 @x
    This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
@@ -317,7 +409,15 @@ To uninstall Docker Desktop for Fedora:
 1. Remove the Docker Desktop application. Run:
 @z
 
-% snip command...
+@x
+   ```console
+   $ sudo dnf remove docker-desktop
+   ```
+@y
+   ```console
+   $ sudo dnf remove docker-desktop
+   ```
+@z
 
 @x
    This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
@@ -331,7 +431,19 @@ To uninstall Docker Desktop for Fedora:
 2. Manually remove leftover file.
 @z
 
-% snip command...
+@x
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo dnf remove docker-desktop
+   ```
+@y
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   $ sudo rm /usr/local/bin/com.docker.cli
+   $ sudo dnf remove docker-desktop
+   ```
+@z
 
 @x
    This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
@@ -371,26 +483,42 @@ To uninstall Docker Desktop for Arch:
 1. Remove the Docker Desktop application. Run:
 @z
 
-% snip command...
-
 @x
-   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+   ```console
+   $ sudo pacman -Rns docker-desktop
+   ```
 @y
-   This removes the Docker Desktop package itself but doesn’t delete all of its files or settings.
+   ```console
+   $ sudo pacman -Rns docker-desktop
+   ```
 @z
 
 @x
-2. Manually remove leftover file.
+   This removes the Docker Desktop package along with its configuration files and dependencies not required by other packages.
 @y
-2. Manually remove leftover file.
+   This removes the Docker Desktop package along with its configuration files and dependencies not required by other packages.
 @z
 
-% snip command...
+@x
+2. Manually remove leftover files.
+@y
+2. Manually remove leftover files.
+@z
 
 @x
-   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   ```
 @y
-   This removes configuration and data files at `$HOME/.docker/desktop`, the symlink at `/usr/local/bin/com.docker.cli`, and purges the remaining systemd service files.
+   ```console
+   $ rm -r $HOME/.docker/desktop
+   ```
+@z
+
+@x
+   This removes configuration and data files at `$HOME/.docker/desktop`.
+@y
+   This removes configuration and data files at `$HOME/.docker/desktop`.
 @z
 
 @x

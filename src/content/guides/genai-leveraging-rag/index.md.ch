@@ -80,17 +80,15 @@ In a RAG system, vector embeddings are used to represent the semantic meaning of
 @z
 
 @x
-The system operates as follows:  
-1. Questions get turned into mathematical patterns that capture their meaning  
+The system operates as follows:
+1. Questions get turned into mathematical patterns that capture their meaning
 2. These patterns help find matching information in a database
-3. The found information gets added to the original question before passed to LLM 
-4. The LLM generates responses that blend the model's inherent knowledge with the this extra information.  
+3. The LLM generates responses that blend the model's inherent knowledge with the this extra information.
 @y
-The system operates as follows:  
-1. Questions get turned into mathematical patterns that capture their meaning  
+The system operates as follows:
+1. Questions get turned into mathematical patterns that capture their meaning
 2. These patterns help find matching information in a database
-3. The found information gets added to the original question before passed to LLM 
-4. The LLM generates responses that blend the model's inherent knowledge with the this extra information.  
+3. The LLM generates responses that blend the model's inherent knowledge with the this extra information.
 @z
 
 @x
@@ -320,9 +318,9 @@ Wait for specific lines in the logs indicating that the download is complete and
 @z
 
 @x
-    You can now access the interface at [http://localhost:8501/](http://localhost:8501/) to ask questions. For example, you can try the sample question:
+You can now access the interface at [http://localhost:8501/](http://localhost:8501/) to ask questions. For example, you can try the sample question:
 @y
-    You can now access the interface at [http://localhost:8501/](http://localhost:8501/) to ask questions. For example, you can try the sample question:
+You can now access the interface at [http://localhost:8501/](http://localhost:8501/) to ask questions. For example, you can try the sample question:
 @z
 
 @x
@@ -392,13 +390,13 @@ To count the data, run the following query:
 @z
 
 @x
-```cypher
+```text
 MATCH (n)
 RETURN DISTINCT labels(n) AS NodeTypes, count(*) AS Count
 ORDER BY Count DESC;
 ```
 @y
-```cypher
+```text
 MATCH (n)
 RETURN DISTINCT labels(n) AS NodeTypes, count(*) AS Count
 ORDER BY Count DESC;
@@ -430,11 +428,11 @@ You can also run the following query to visualize the data:
 @z
 
 @x
-```cypher
+```text
 CALL db.schema.visualization()
 ```
 @y
-```cypher
+```text
 CALL db.schema.visualization()
 ```
 @z
@@ -446,11 +444,11 @@ To check the relationships in the database, run the following query:
 @z
 
 @x
-```cypher
+```text
 CALL db.relationshipTypes()
 ```
 @y
-```cypher
+```text
 CALL db.relationshipTypes()
 ```
 @z
@@ -518,12 +516,12 @@ Feel free to start over with another [Stack Overflow tag](https://stackoverflow.
 @z
 
 @x
-```cypher
+```txt
 MATCH (n)
 DETACH DELETE n;
 ```
 @y
-```cypher
+```txt
 MATCH (n)
 DETACH DELETE n;
 ```

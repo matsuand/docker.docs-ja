@@ -26,9 +26,9 @@ Docker recommends signing in with the **Sign in** option in the top-right corner
 @z
 
 @x
-In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). 
 @y
-In large enterprises where admin access is restricted, administrators can [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md). 
 @z
 
 @x
@@ -60,9 +60,9 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-- Enhance your organization’s security posture for containerized development with [Hardened Desktop](/manuals/security/for-admins/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](/manuals/enterprise/security/hardened-desktop/_index.md).
 @y
-- Enhance your organization’s security posture for containerized development with [Hardened Desktop](manuals/security/for-admins/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](manuals/enterprise/security/hardened-desktop/_index.md).
 @z
 
 @x
@@ -97,11 +97,15 @@ Docker Desktop displays a warning if `pass` is not configured.
 1. Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
 @z
 
-% snip command...
-
 @x
+   ``` console
+   $ gpg --generate-key
+   ``` 
 2. Enter your name and email once prompted. 
 @y
+   ``` console
+   $ gpg --generate-key
+   ``` 
 2. Enter your name and email once prompted. 
 @z
 
@@ -111,15 +115,33 @@ Docker Desktop displays a warning if `pass` is not configured.
    Once confirmed, GPG creates a key pair. Look for the `pub` line that contains your GPG ID, for example:
 @z
 
-% snip output...
-
 @x
+   ```text
+   ...
+   pubrsa3072 2022-03-31 [SC] [expires: 2024-03-30]
+    3ABCD1234EF56G78
+   uid          Molly <molly@example.com>
+   ```
 3. Copy the GPG ID and use it to initialize `pass`
 @y
+   ```text
+   ...
+   pubrsa3072 2022-03-31 [SC] [expires: 2024-03-30]
+    3ABCD1234EF56G78
+   uid          Molly <molly@example.com>
+   ```
 3. Copy the GPG ID and use it to initialize `pass`
 @z
 
-% snip command...
+@x
+   ```console
+   $ pass init <your_generated_gpg-id_public_key>
+   ``` 
+@y
+   ```console
+   $ pass init <your_generated_gpg-id_public_key>
+   ``` 
+@z
 
 @x
    You should see output similar to: 
@@ -127,7 +149,17 @@ Docker Desktop displays a warning if `pass` is not configured.
    You should see output similar to: 
 @z
 
-% snip output...
+@x
+   ```text
+   mkdir: created directory '/home/molly/.password-store/'
+   Password store initialized for <generated_gpg-id_public_key>
+   ```
+@y
+   ```text
+   mkdir: created directory '/home/molly/.password-store/'
+   Password store initialized for <generated_gpg-id_public_key>
+   ```
+@z
 
 @x
 Once you initialize `pass`, you can sign in and pull your private images.
@@ -137,7 +169,27 @@ Once you initialize `pass`, you can sign in and pull your private images.
 When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the GPG key generation.
 @z
 
-% snip output...
+@x
+```console
+$ docker pull molly/privateimage
+Using default tag: latest
+latest: Pulling from molly/privateimage
+3b9cc81c3203: Pull complete 
+Digest: sha256:3c6b73ce467f04d4897d7a7439782721fd28ec9bf62ea2ad9e81a5fb7fb3ff96
+Status: Downloaded newer image for molly/privateimage:latest
+docker.io/molly/privateimage:latest
+```
+@y
+```console
+$ docker pull molly/privateimage
+Using default tag: latest
+latest: Pulling from molly/privateimage
+3b9cc81c3203: Pull complete 
+Digest: sha256:3c6b73ce467f04d4897d7a7439782721fd28ec9bf62ea2ad9e81a5fb7fb3ff96
+Status: Downloaded newer image for molly/privateimage:latest
+docker.io/molly/privateimage:latest
+```
+@z
 
 @x
 ## What's next?

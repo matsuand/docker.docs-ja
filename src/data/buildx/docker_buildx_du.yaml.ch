@@ -21,10 +21,16 @@ usage: docker buildx du
       description: Provide filter values
 @z
 
-@x verbose
-      description: Provide a more verbose output
+@x format
+      description: Format the output
 @y
-      description: Provide a more verbose output
+      description: Format the output
+@z
+
+@x verbose
+      description: Shorthand for `--format=pretty`
+@y
+      description: Shorthand for `--format=pretty`
 @z
 
 % inherited_options:
@@ -33,6 +39,12 @@ usage: docker buildx du
       description: Override the configured builder instance
 @y
       description: Override the configured builder instance
+@z
+
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
 @z
 
 @x
@@ -64,9 +76,9 @@ examples: |-
 @z
 
 @x
-    The asterisks (\*) in the default output indicate the following:
+    The asterisks (\*) in the default output format indicate the following:
 @y
-    The asterisks (\*) in the default output indicate the following:
+    The asterisks (\*) in the default output format indicate the following:
 @z
 
 @x
@@ -96,15 +108,9 @@ examples: |-
 @z
 
 @x
-    The verbose output of the `docker buildx du` command is useful for inspecting
-    the disk usage records in more detail. The verbose output shows the mutable and
-    shared states more clearly, as well as additional information about the
-    corresponding layer.
+    Shorthand for [`--format=pretty`](#format):
 @y
-    The verbose output of the `docker buildx du` command is useful for inspecting
-    the disk usage records in more detail. The verbose output shows the mutable and
-    shared states more clearly, as well as additional information about the
-    corresponding layer.
+    Shorthand for [`--format=pretty`](#format):
 @z
 
 % snip command...

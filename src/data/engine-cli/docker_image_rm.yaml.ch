@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 command: docker image rm
 aliases: docker image rm, docker image remove, docker rmi
@@ -27,87 +25,54 @@ long: |-
     This does not remove images from a registry. You cannot remove an image of a
     running container unless you use the `-f` option. To see all images on a host
     use the [`docker image ls`](/reference/cli/docker/image/ls/) command.
-usage: docker image rm [OPTIONS] IMAGE [IMAGE...]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Force removal of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-prune
-      value_type: bool
-      default_value: "false"
-      description: Do not delete untagged parents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    You can remove an image using its short or long ID, its tag, or its digest. If
-    an image has one or more tags referencing it, you must remove all of them before
-    the image is removed. Digest references are removed automatically when an image
-    is removed by tag.
 @y
     This does not remove images from a registry. You cannot remove an image of a
     running container unless you use the `-f` option. To see all images on a host
-    use the [`docker image ls`](__SUBDIR__/reference/cli/docker/image/ls/) command.
+    use the [`docker image ls`](/reference/cli/docker/image/ls/) command.
+@z
+
+@x
 usage: docker image rm [OPTIONS] IMAGE [IMAGE...]
-pname: docker image
-plink: docker_image.yaml
-options:
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker image rm [OPTIONS] IMAGE [IMAGE...]
+@z
+
+% options:
+
+@x force
       description: Force removal of the image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-prune
-      value_type: bool
-      default_value: "false"
+@y
+      description: Force removal of the image
+@z
+
+@x no-prune
       description: Do not delete untagged parents
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not delete untagged parents
+@z
+
+@x platform
+      description: |
+        Remove only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+@y
+      description: |
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
+examples: |-
+    You can remove an image using its short or long ID, its tag, or its digest. If
+    an image has one or more tags referencing it, you must remove all of them before
+    the image is removed. Digest references are removed automatically when an image
+    is removed by tag.
+@y
 examples: |-
     You can remove an image using its short or long ID, its tag, or its digest. If
     an image has one or more tags referencing it, you must remove all of them before
@@ -115,93 +80,7 @@ examples: |-
     is removed by tag.
 @z
 
-@x
-    ```console
-    $ docker images
-@y
-    ```console
-    $ docker images
-@z
-
-@x
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test1                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test2                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@y
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test1                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test2                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@z
-
-@x
-    $ docker rmi fd484f19954f
-@y
-    $ docker rmi fd484f19954f
-@z
-
-@x
-    Error: Conflict, cannot delete image fd484f19954f because it is tagged in multiple repositories, use -f to force
-    2013/12/11 05:47:16 Error: failed to remove one or more images
-@y
-    Error: Conflict, cannot delete image fd484f19954f because it is tagged in multiple repositories, use -f to force
-    2013/12/11 05:47:16 Error: failed to remove one or more images
-@z
-
-@x
-    $ docker rmi test1:latest
-@y
-    $ docker rmi test1:latest
-@z
-
-@x
-    Untagged: test1:latest
-@y
-    Untagged: test1:latest
-@z
-
-@x
-    $ docker rmi test2:latest
-@y
-    $ docker rmi test2:latest
-@z
-
-@x
-    Untagged: test2:latest
-@y
-    Untagged: test2:latest
-@z
-
-@x
-    $ docker images
-@y
-    $ docker images
-@z
-
-@x
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@y
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@z
-
-@x
-    $ docker rmi test:latest
-@y
-    $ docker rmi test:latest
-@z
-
-@x
-    Untagged: test:latest
-    Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
-    ```
-@y
-    Untagged: test:latest
-    Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
-    ```
-@z
+% snip command...
 
 @x
     If you use the `-f` flag and specify the image's short or long ID, then this
@@ -211,45 +90,7 @@ examples: |-
     command untags and removes all images that match the specified ID.
 @z
 
-@x
-    ```console
-    $ docker images
-@y
-    ```console
-    $ docker images
-@z
-
-@x
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test1                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test2                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@y
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    test1                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test                      latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-    test2                     latest              fd484f19954f        23 seconds ago      7 B (virtual 4.964 MB)
-@z
-
-@x
-    $ docker rmi -f fd484f19954f
-@y
-    $ docker rmi -f fd484f19954f
-@z
-
-@x
-    Untagged: test1:latest
-    Untagged: test:latest
-    Untagged: test2:latest
-    Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
-    ```
-@y
-    Untagged: test1:latest
-    Untagged: test:latest
-    Untagged: test2:latest
-    Deleted: fd484f19954f4920da7ff372b5067f5b7ddb2fd3830cecd17b96ea9e286ba5b8
-    ```
-@z
+% snip command...
 
 @x
     An image pulled by digest has no tag associated with it:
@@ -257,23 +98,7 @@ examples: |-
     An image pulled by digest has no tag associated with it:
 @z
 
-@x
-    ```console
-    $ docker images --digests
-@y
-    ```console
-    $ docker images --digests
-@z
-
-@x
-    REPOSITORY                     TAG       DIGEST                                                                    IMAGE ID        CREATED         SIZE
-    localhost:5000/test/busybox    <none>    sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf   4986bf8c1536    9 weeks ago     2.43 MB
-    ```
-@y
-    REPOSITORY                     TAG       DIGEST                                                                    IMAGE ID        CREATED         SIZE
-    localhost:5000/test/busybox    <none>    sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf   4986bf8c1536    9 weeks ago     2.43 MB
-    ```
-@z
+% snip command...
 
 @x
     To remove an image using its digest:
@@ -281,32 +106,79 @@ examples: |-
     To remove an image using its digest:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker rmi localhost:5000/test/busybox@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
-    Untagged: localhost:5000/test/busybox@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
-    Deleted: 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
-    Deleted: ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
-    Deleted: df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    ### Remove specific platforms (`--platform`) {#platform}
 @y
-    ```console
-    $ docker rmi localhost:5000/test/busybox@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
-    Untagged: localhost:5000/test/busybox@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf
-    Deleted: 4986bf8c15363d1c5d15512d5266f8777bfba4974ac56e3270e7760f6f0a8125
-    Deleted: ea13149945cb6b1e746bf28032f02e9b5a793523481a0a18645fc77ad53c4ea2
-    Deleted: df7546f9f060a2268024c8a230d8639878585defcc1bc6f79d2728a13957871b
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    ### Remove specific platforms (`--platform`) {#platform}
 @z
+
+@x
+    The `--platform` option allows you to specify which platform variants of the
+    image to remove. By default, `docker image remove` removes all platform variants
+    that are present. Use the `--platform` option to specify which platform variant
+    of the image to remove.
+@y
+    The `--platform` option allows you to specify which platform variants of the
+    image to remove. By default, `docker image remove` removes all platform variants
+    that are present. Use the `--platform` option to specify which platform variant
+    of the image to remove.
+@z
+
+@x
+    Removing a specific platform removes the image from all images that reference
+    the same content, and requires the `--force` option to be used. Omitting the
+    `--force` option produces a warning, and the remove is canceled:
+@y
+    Removing a specific platform removes the image from all images that reference
+    the same content, and requires the `--force` option to be used. Omitting the
+    `--force` option produces a warning, and the remove is canceled:
+@z
+
+% snip command...
+
+@x
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
+@y
+    The platform option takes the `os[/arch[/variant]]` format; for example,
+    `linux/amd64` or `linux/arm64/v8`. Architecture and variant are optional,
+    and default to the daemon's native architecture if omitted.
+@z
+
+@x
+    You can pass multiple platforms either by passing the `--platform` flag
+    multiple times, or by passing a comma-separated list of platforms to remove.
+    The following uses of this option are equivalent;
+@y
+    You can pass multiple platforms either by passing the `--platform` flag
+    multiple times, or by passing a comma-separated list of platforms to remove.
+    The following uses of this option are equivalent;
+@z
+
+% snip command...
+
+@x
+    The following example removes the `linux/amd64` and `linux/ppc64le` variants
+    of an `alpine` image that contains multiple platform variants in the image
+    cache:
+@y
+    The following example removes the `linux/amd64` and `linux/ppc64le` variants
+    of an `alpine` image that contains multiple platform variants in the image
+    cache:
+@z
+
+% snip command...
+
+@x
+    After the command completes, the given variants of the `alpine` image are removed
+    from the image cache:
+@y
+    After the command completes, the given variants of the `alpine` image are removed
+    from the image cache:
+@z
+
+% snip command...
+% snip directives...

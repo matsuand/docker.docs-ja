@@ -4,17 +4,19 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Migrate to Compose v2
+linkTitle: Migrate to Compose v2
+Title: Migrate from Docker Compose v1 to v2
 @y
-title: Migrate to Compose v2
+linkTitle: Migrate to Compose v2
+Title: Migrate from Docker Compose v1 to v2
 @z
 
 @x
-description: How to migrate from Compose v1 to v2
-keywords: compose, upgrade, migration, v1, v2, docker compose vs docker-compose
+description: Step-by-step guidance to migrate from Compose v1 to v2, including syntax differences, environment handling, and CLI changes
+keywords: migrate docker compose, upgrade docker compose v2, docker compose migration, docker compose v1 vs v2, docker compose CLI changes, docker-compose to docker compose
 @y
-description: How to migrate from Compose v1 to v2
-keywords: compose, upgrade, migration, v1, v2, docker compose vs docker-compose
+description: Step-by-step guidance to migrate from Compose v1 to v2, including syntax differences, environment handling, and CLI changes
+keywords: migrate docker compose, upgrade docker compose v2, docker compose migration, docker compose v1 vs v2, docker compose CLI changes, docker-compose to docker compose
 @z
 
 @x

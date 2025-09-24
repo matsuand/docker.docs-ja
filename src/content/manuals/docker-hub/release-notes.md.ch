@@ -7,8 +7,6 @@
 title: Docker Hub release notes
 linkTitle: Release notes
 @y
-title: Docker Hub release notes
-linkTitle: Release notes
 @z
 
 @x
@@ -234,9 +232,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- In Docker Hub, you can now download a [registry.json](../security/for-admins/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](/manuals/enterprise/security/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @y
-- In Docker Hub, you can now download a [registry.json](../security/for-admins/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](manuals/enterprise/security/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @z
 
 @x
@@ -324,9 +322,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- [Registry Access Management](/manuals/security/for-admins/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @y
-- [Registry Access Management](manuals/security/for-admins/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @z
 
 @x
@@ -750,9 +748,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* You can now [create personal access tokens](/security/for-developers/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+* You can now [create personal access tokens](/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @y
-* You can now [create personal access tokens](__SUBDIR__/security/for-developers/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+* You can now [create personal access tokens](__SUBDIR__/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @z
 
 @x

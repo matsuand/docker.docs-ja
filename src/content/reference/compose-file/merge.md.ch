@@ -5,12 +5,14 @@
 % snip 対応
 
 @x
-title: Merge
-description: Learn about merging rules
+linkTitle: Merge
+title: Merge Compose files
+description: Understand how Docker Compose merges multiple files and resolves conflicts
 keywords: compose, compose specification, merge, compose file reference
 @y
-title: Merge
-description: マージのルールについて学びます。
+linkTitle: Merge
+title: Merge Compose files
+description: Understand how Docker Compose merges multiple files and resolves conflicts
 keywords: compose, compose specification, merge, compose file reference
 @z
 

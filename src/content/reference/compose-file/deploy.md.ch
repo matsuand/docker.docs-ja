@@ -326,10 +326,10 @@ as:
 @z
 
 @x
-- `limits`: The platform must prevent the container to allocate more.
+- `limits`: The platform must prevent the container from allocating more resources.
 - `reservations`: The platform must guarantee the container can allocate at least the configured amount.
 @y
-- `limits`: The platform must prevent the container to allocate more.
+- `limits`: The platform must prevent the container from allocating more resources.
 - `reservations`: The platform must guarantee the container can allocate at least the configured amount.
 @z
 
@@ -672,9 +672,9 @@ deploy:
 @z
 
 @x
-`rollback_config` configures how the service should be rollbacked in case of a failing update.
+`rollback_config` configures how the service should be rolled back in case of a failing update.
 @y
-`rollback_config` configures how the service should be rollbacked in case of a failing update.
+`rollback_config` configures how the service should be rolled back in case of a failing update.
 @z
 
 @x

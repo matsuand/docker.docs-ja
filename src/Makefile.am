@@ -33,9 +33,7 @@ copyfiles = \
 	hugo_stats.json    \
 	netlify.toml       \
 	package-lock.json  \
-	pagefind.yml       \
-	postcss.config.js  \
-	tailwind.config.js
+	pagefind.yml
 
 .PHONY: all _copydirs _copyfiles _npminstall
 all: _copydirs _copyfiles _npminstall

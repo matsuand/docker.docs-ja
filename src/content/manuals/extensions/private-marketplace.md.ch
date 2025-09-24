@@ -27,9 +27,9 @@ Learn how to configure and set up a private marketplace with a curated list of e
 @z
 
 @x
-Docker Extensions' private marketplace is designed specifically for organizations who don’t give developers root access to their machines. It makes use of [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md) so administrators have complete control over the private marketplace.
+Docker Extensions' private marketplace is designed specifically for organizations who don’t give developers root access to their machines. It makes use of [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) so administrators have complete control over the private marketplace.
 @y
-Docker Extensions' private marketplace is designed specifically for organizations who don’t give developers root access to their machines. It makes use of [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) so administrators have complete control over the private marketplace.
+Docker Extensions' private marketplace is designed specifically for organizations who don’t give developers root access to their machines. It makes use of [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) so administrators have complete control over the private marketplace.
 @z
 
 @x
@@ -153,9 +153,9 @@ Each setting has a `value` that you can set, including a `locked` field that let
 % snip code...
 
 @x
-To find out more information about the `admin-settings.json` file, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+To find out more information about the `admin-settings.json` file, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
 @y
-To find out more information about the `admin-settings.json` file, see [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+To find out more information about the `admin-settings.json` file, see [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
 @z
 
 @x
@@ -403,9 +403,9 @@ These files must be placed on developer's machines. Depending on your operating 
 @z
 
 @x
-Make sure your developers are signed in to Docker Desktop in order for the private marketplace configuration to take effect. As an administrator, you should [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md).
+Make sure your developers are signed in to Docker Desktop in order for the private marketplace configuration to take effect. As an administrator, you should [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
 @y
-Make sure your developers are signed in to Docker Desktop in order for the private marketplace configuration to take effect. As an administrator, you should [enforce sign-in](manuals/security/for-admins/enforce-sign-in/_index.md).
+Make sure your developers are signed in to Docker Desktop in order for the private marketplace configuration to take effect. As an administrator, you should [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
 @z
 
 @x

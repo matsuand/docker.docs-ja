@@ -40,11 +40,11 @@ This page provides download links, system requirements, and step-by-step install
 @x
 {{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" >}}
 {{< button text="Docker Desktop for Windows - x86_64 on the Microsoft Store" url="https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB" >}}
-{{< button text="Docker Desktop for Windows - Arm (Beta)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
+{{< button text="Docker Desktop for Windows - Arm (Early Access)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
 @y
 {{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" >}}
 {{< button text="Docker Desktop for Windows - x86_64 on the Microsoft Store" url="https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB" >}}
-{{< button text="Docker Desktop for Windows - Arm (ベータ)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
+{{< button text="Docker Desktop for Windows - Arm (Early Access)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
 @z
 
 @x
@@ -83,7 +83,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 @z
 
 @x
-- WSL version 1.1.3.0 or later.
+- WSL version 2.1.5 or later.
 - Windows 11 64-bit: Home or Pro version 22H2 or higher, or Enterprise or Education version 22H2 or higher.
 - Windows 10 64-bit: Minimum required is Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher. 
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
@@ -93,9 +93,9 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
   - 64-bit processor with [Second Level Address Translation (SLAT)](https://en.wikipedia.org/wiki/Second_Level_Address_Translation)
   - 4GB system RAM
   - Enable hardware virtualization in BIOS/UEFI. For more information, see
-    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
+    [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working).
 @y
-- WSL バージョン 1.1.3.0 またはそれ以降。
+- WSL バージョン 2.1.5 またはそれ以降。
 - Windows 11 64 ビット: Home または Pro バージョン 22H2 またはそれ以降。
   あるいは Enterprise または Education バージョン 22H2 またはそれ以降。
 - Windows 10 64-bit: 最低でも Home または Pro 22H2 (ビルド 19045) またはそれ以降。
@@ -106,7 +106,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
   - [第 2 レベルのアドレス変換](https://en.wikipedia.org/wiki/Second_Level_Address_Translation) (Second Level Address Translation; SLAT) に対応した 64 ビットプロセッサー。
   - 4GB システム RAM
   - BIOS/UEFI におけるハードウェア仮想機能の有効化。
-    詳しくは [仮想化](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization) を参照してください。
+    詳しくは [仮想化](manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working) を参照してください。
 @z
 
 @x
@@ -199,14 +199,14 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 
 @x
 {{< /tab >}}
-{{< tab name="WSL 2 backend, Arm (Beta)" >}}
+{{< tab name="WSL 2 backend, Arm (Early Access)" >}}
 @y
 {{< /tab >}}
-{{< tab name="WSL 2 バックエンド, Arm (ベータ)" >}}
+{{< tab name="WSL 2 backend, Arm (Early Access)" >}}
 @z
 
 @x
-- WSL version 1.1.3.0 or later.
+- WSL version 2.1.5 or later.
 - Windows 11 64-bit: Home or Pro version 22H2 or higher, or Enterprise or Education version 22H2 or higher.
 - Windows 10 64-bit: Minimum required is Home or Pro 22H2 (build 19045) or higher, or Enterprise or Education 22H2 (build 19045) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
@@ -218,7 +218,7 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
   - Enable hardware virtualization in BIOS/UEFI. For more information, see
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 @y
-- WSL バージョン 1.1.3.0 またはそれ以降。
+- WSL バージョン 2.1.5 またはそれ以降。
 - Windows 11 64 ビット: Home または Pro バージョン 22H2 またはそれ以降。
   あるいは Enterprise または Education バージョン 22H2 またはそれ以降。
 - Windows 10 64 ビット: 最低でも Home または Pro 22H2 (ビルド 19045) またはそれ以降。
@@ -419,13 +419,19 @@ Linux コンテナーへ切り替えた場合、プロキシーやデーモン�
 @z
 
 @x
-If your administrator account is different to your user account, you must add the user to the **docker-users** group:
+If your administrator account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers:
+@y
+利用しているユーザーアカウントが管理アカウントではない場合、**docker-users** グループにユーザーを追加する必要があります。
+これによって Hyper-V VM の生成管理といった、より高権限を必要とする機能にアクセスできます。
+これを行わない場合には Windows コンテナーを利用することになります。
+@z
+
+@x
 1. Run **Computer Management** as an **administrator**.
 2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
 3. Right-click to add the user to the group.
 4. Sign out and sign back in for the changes to take effect.
 @y
-利用しているユーザーアカウントが管理アカウントではない場合、**docker-users** グループにユーザーを追加する必要があります。
 1. **administrator** (管理者) 権限により **Computer Management** (コンピューター管理) を開きます。
 2. **Local Users and Groups** > **Groups** > **docker-users** を順に開きます。
 3. 右クリックによってユーザーをそのグループに追加します。
@@ -493,9 +499,9 @@ By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 @z
 
 @x
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
+If your admin account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
 @y
-If your admin account is different to your user account, you must add the user to the **docker-users** group:
+If your admin account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
 @z
 
 @x
@@ -545,7 +551,7 @@ The `install` command accepts the following flags:
 
 @x
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
@@ -553,7 +559,7 @@ The `install` command accepts the following flags:
 - `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
 - `--admin-settings`: admin が利用する `admin-settings.json` ファイルを自動生成します。
   これは組織内にあるクライアントマシン上の Docker Desktop における特定設定項目を制御するものです。
-  詳しくは [設定管理](manuals/security/for-admins/hardened-desktop/settings-management/_index.md) を参照してください。
+  詳しくは [設定管理](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) を参照してください。
   - これは `--allowed-org=<組織名>` フラグとともに用いなければなりません。
   - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
@@ -657,7 +663,7 @@ Docker Desktop を起動するには、以下を実行します。
 @x
 > [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/security/for-admins/enforce-sign-in/_index.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -668,7 +674,7 @@ Docker Desktop を起動するには、以下を実行します。
 >
 > IT 管理者としては、エンドポイント管理 (MDM) ソフトウェアを使えば、環境内の Docker Desktop インスタンスとそのバージョンを識別できるようになります。
 > この機能によって正確なライセンス情報を得ることができ、Docker Desktop の最新バージョンを常に利用できるようになります。
-> また [強制的なサインイン](manuals/security/for-admins/enforce-sign-in/_index.md) の機能もあります。
+> また [強制的なサインイン](manuals/enterprise/security/enforce-sign-in/_index.md) の機能もあります。
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)

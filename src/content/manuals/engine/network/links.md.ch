@@ -2,27 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to connect Docker containers together.
 keywords: Examples, Usage, user guide, links, linking, docker, documentation, examples,
   names, name, container naming, port, map, network port, network
 title: Legacy container links
-aliases:
-- /userguide/dockerlinks/
-- /engine/userguide/networking/default_network/dockerlinks/
-- /network/links/
----
 @y
----
 description: Learn how to connect Docker containers together.
 keywords: Examples, Usage, user guide, links, linking, docker, documentation, examples,
   names, name, container naming, port, map, network port, network
 title: Legacy container links
-aliases:
-- /userguide/dockerlinks/
-- /engine/userguide/networking/default_network/dockerlinks/
-- /network/links/
----
 @z
 
 @x
@@ -736,16 +724,16 @@ Docker uses this prefix format to define three distinct environment variables:
 @x
 * The `prefix_ADDR` variable contains the IP Address from the URL, for
 example `WEBDB_PORT_5432_TCP_ADDR=172.17.0.82`.
-* The `prefix_PORT` variable contains just the port number from the URL for
+* The `prefix_PORT` variable contains just the port number from the URL of
 example `WEBDB_PORT_5432_TCP_PORT=5432`.
-* The `prefix_PROTO` variable contains just the protocol from the URL for
+* The `prefix_PROTO` variable contains just the protocol from the URL of
 example `WEBDB_PORT_5432_TCP_PROTO=tcp`.
 @y
 * The `prefix_ADDR` variable contains the IP Address from the URL, for
 example `WEBDB_PORT_5432_TCP_ADDR=172.17.0.82`.
-* The `prefix_PORT` variable contains just the port number from the URL for
+* The `prefix_PORT` variable contains just the port number from the URL of
 example `WEBDB_PORT_5432_TCP_PORT=5432`.
-* The `prefix_PROTO` variable contains just the protocol from the URL for
+* The `prefix_PROTO` variable contains just the protocol from the URL of
 example `WEBDB_PORT_5432_TCP_PROTO=tcp`.
 @z
 

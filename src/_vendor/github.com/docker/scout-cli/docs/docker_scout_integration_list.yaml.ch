@@ -3,7 +3,7 @@
 
 @x
 command: docker scout integration list
-short: Integration Docker Scout
+short: List integrations which can be installed
 long: |
     The docker scout integration list configured integrations for an organization.
 usage: docker scout integration list [INTEGRATION]
@@ -56,7 +56,7 @@ kubernetes: false
 swarm: false
 @y
 command: docker scout integration list
-short: Integration Docker Scout
+short: List integrations which can be installed
 long: |
     The docker scout integration list configured integrations for an organization.
 usage: docker scout integration list [INTEGRATION]

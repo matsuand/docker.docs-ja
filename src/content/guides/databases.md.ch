@@ -386,12 +386,12 @@ guide. To stop and remove a container, either:
 @z
 
 @x
-- In a terminal, run `docker remove --force my-mysql` to remove the container
+- In a terminal, run `docker rm --force my-mysql` to remove the container
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
-- 端末から `docker remove --force my-mysql` を実行して `my-mysql` という名前のコンテナーを削除します。
+- 端末から `docker rm --force my-mysql` を実行して `my-mysql` という名前のコンテナーを削除します。
 - または Docker Desktop Dashboard の **Containers** (コンテナー) 画面にて、対象コンテナーの横にある  **Delete** (削除) アイコンをクリックします。
 @z
 
@@ -746,12 +746,12 @@ guide. To stop and remove a container, either:
 @z
 
 @x
-- In a terminal, run `docker remove --force my-mysql` to remove the container
+- In a terminal, run `docker rm --force my-mysql` to remove the container
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.
 @y
-- In a terminal, run `docker remove --force my-mysql` to remove the container
+- In a terminal, run `docker rm --force my-mysql` to remove the container
   named `my-mysql`.
 - Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
   container in the **Containers** view.

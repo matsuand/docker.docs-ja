@@ -109,12 +109,12 @@ necessary.
 @x
 If you are not using Zscaler as a system-level proxy, manually configure proxy
 settings in Docker Desktop. Set up proxy settings for all clients in the
-organization using [Settings Management](/manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
+organization using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md),
 or edit proxy configuration in the Docker Desktop GUI under [**Settings > Resources > Proxies**](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @y
 If you are not using Zscaler as a system-level proxy, manually configure proxy
 settings in Docker Desktop. Set up proxy settings for all clients in the
-organization using [Settings Management](manuals/security/for-admins/hardened-desktop/settings-management/_index.md),
+organization using [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md),
 or edit proxy configuration in the Docker Desktop GUI under [**Settings > Resources > Proxies**](manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @z
 

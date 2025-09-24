@@ -34,7 +34,7 @@ include examples of customizing the output format.
 @x
 > [!NOTE]
 >
-> When using the `--format` flag, you need observe your shell environment.
+> When using the `--format` flag, you need to observe your shell environment.
 > In a POSIX shell, you can run the following with a single quote:
 >
 > ```console
@@ -47,10 +47,11 @@ include examples of customizing the output format.
 > ```console
 > $ docker inspect --format '{{join .Args \" , \"}}'
 > ```
+>
 @y
 > [!NOTE]
 >
-> When using the `--format` flag, you need observe your shell environment.
+> When using the `--format` flag, you need to observe your shell environment.
 > In a POSIX shell, you can run the following with a single quote:
 >
 > ```console
@@ -63,6 +64,7 @@ include examples of customizing the output format.
 > ```console
 > $ docker inspect --format '{{join .Args \" , \"}}'
 > ```
+>
 @z
 
 @x
@@ -219,6 +221,62 @@ $ docker inspect --format "{{upper .Name}}" container
 ```console
 $ docker inspect --format "{{upper .Name}}" container
 ```
+@z
+
+@x
+## pad
+@y
+## pad
+@z
+
+@x
+`pad` adds whitespace padding to a string. You can specify the number of spaces to add before and after the string.
+@y
+`pad` adds whitespace padding to a string. You can specify the number of spaces to add before and after the string.
+@z
+
+@x
+```console
+$ docker image list --format '{{pad .Repository 5 10}}'
+```
+@y
+```console
+$ docker image list --format '{{pad .Repository 5 10}}'
+```
+@z
+
+@x
+This example adds 5 spaces before the image repository name and 10 spaces after.
+@y
+This example adds 5 spaces before the image repository name and 10 spaces after.
+@z
+
+@x
+## truncate
+@y
+## truncate
+@z
+
+@x
+`truncate` shortens a string to a specified length. If the string is shorter than the specified length, it remains unchanged.
+@y
+`truncate` shortens a string to a specified length. If the string is shorter than the specified length, it remains unchanged.
+@z
+
+@x
+```console
+$ docker image list --format '{{truncate .Repository 15}}'
+```
+@y
+```console
+$ docker image list --format '{{truncate .Repository 15}}'
+```
+@z
+
+@x
+This example displays the image repository name, truncating it to the first 15 characters if it's longer.
+@y
+This example displays the image repository name, truncating it to the first 15 characters if it's longer.
 @z
 
 @x

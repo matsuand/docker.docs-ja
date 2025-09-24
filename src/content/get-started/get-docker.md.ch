@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
 
 @x
 description: Download and install Docker on the platform of your choice, including
@@ -65,13 +65,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
   title="Docker Desktop for Mac"
   description="A native application using the macOS sandbox security model that delivers all Docker tools to your Mac."
   link="/desktop/setup/install/mac-install/"
-  icon="/assets/images/apple_48.svg" >}}
+  icon="/icons/AppleMac.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Mac"
   description="Mac 上ですべての Docker ツールを実行するために macOS サンドボックスセキュリティモデルを使うネイティブなアプリケーションです。"
   link="__SUBDIR__/desktop/setup/install/mac-install/"
-  icon="__SUBDIR__/assets/images/apple_48.svg" >}}
+  icon="icons/AppleMac.svg" >}}
 @z
 
 @x
@@ -79,13 +79,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
   title="Docker Desktop for Windows"
   description="A native Windows application that delivers all Docker tools to your Windows computer."
   link="/desktop/setup/install/windows-install/"
-  icon="/assets/images/windows_48.svg" >}}
+  icon="/icons/Windows.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Windows"
   description="Windows コンピューター上ですべての Docker ツールを実行するためのネイティブな Windows アプリケーションです。"
   link="__SUBDIR__/desktop/setup/install/windows-install/"
-  icon="__SUBDIR__/assets/images/windows_48.svg" >}}
+  icon="icons/Windows.svg" >}}
 @z
 
 @x
@@ -93,13 +93,13 @@ Docker はさまざまなプラットフォームにダウンロードしイン�
   title="Docker Desktop for Linux"
   description="A native Linux application that delivers all Docker tools to your Linux computer."
   link="/desktop/setup/install/linux/"
-  icon="/assets/images/linux_48.svg" >}}
+  icon="/icons/Linux.svg" >}}
 @y
 {{< card
   title="Docker Desktop for Linux"
   description="お手元の Linux コンピューターに Docker ツールをすべて提供するネイティブな Linux アプリケーションです。"
   link="__SUBDIR__/desktop/setup/install/linux/"
-  icon="__SUBDIR__/assets/images/linux_48.svg" >}}
+  icon="icons/Linux.svg" >}}
 @z
 
 @x

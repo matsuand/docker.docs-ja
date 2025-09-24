@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Integration Docker Scout
+List integrations which can be installed
 @y
 <!---MARKER_GEN_START-->
-Integration Docker Scout
+List integrations which can be installed
 @z
 
 @x

@@ -297,16 +297,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = guides learning-paths
 copyfiles = \
-	FacebookCircle.svg      \
-	home-abstract-faint.svg \
-	InstagramCircle.svg     \
-	LinkedinCircle.svg      \
-	TwitterCircle.svg       \
-	YoutubeCircle.svg       \
-	ai-stars.svg            \
-	docker-docs-white.svg   \
 	docker-docs-white-condensed.svg \
-	search-ai.svg           \
+	docker-docs-white.svg           \
+	home-abstract-faint.svg         \
 	thumbnail.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

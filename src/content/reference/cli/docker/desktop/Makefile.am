@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = disable enable engine module
+SUBDIRS = disable enable engine
 
 bases = \
 	_index.md  \

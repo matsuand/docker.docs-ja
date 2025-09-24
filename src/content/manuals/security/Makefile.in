@@ -295,9 +295,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = faqs for-admins for-developers images troubleshoot
+SUBDIRS = 2fa faqs
 bases = \
 	_index.md                 \
+	access-tokens.md          \
 	security-announcements.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

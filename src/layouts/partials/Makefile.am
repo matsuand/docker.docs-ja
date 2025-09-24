@@ -1,15 +1,16 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = components sidebar utils
+SUBDIRS = admonitions components sidebar utils
 
 bases = \
-	footer.html         \
-	head.html           \
-	heading.html        \
-	github-links.html   \
-	guides-stepper.html \
-	md-dropdown.html    \
+	contact-support-button.html \
+	footer.html                 \
+	github-links.html           \
+	guides-stepper.html         \
+	head.html                   \
+	heading.html                \
+	md-dropdown.html            \
 	search-bar.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -19,7 +20,6 @@ copyfiles = \
 	aside.html           \
 	breadcrumbs.html     \
 	content-default.html \
-	favicon.html         \
 	header.html          \
 	icon.html            \
 	languages.html       \

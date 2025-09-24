@@ -6,11 +6,11 @@
 @x
 title: Setting up roles and permissions in Docker
 description: A guide to securely managing access and collaboration in Docker through roles and teams.
-keywords: Docker roles, permissions management, access control, IT administration, team collaboration, least privilege, security, Docker teams, role-based access
+keywords: Docker roles, permissions management, access control, IT administration, team collaboration, least privilege, security, Docker Teams, role-based access
 @y
 title: Setting up roles and permissions in Docker
 description: A guide to securely managing access and collaboration in Docker through roles and teams.
-keywords: Docker roles, permissions management, access control, IT administration, team collaboration, least privilege, security, Docker teams, role-based access
+keywords: Docker roles, permissions management, access control, IT administration, team collaboration, least privilege, security, Docker Teams, role-based access
 @z
 
 @x
@@ -68,9 +68,9 @@ Docker’s predefined roles offer flexibility for various organizational needs. 
 @z
 
 @x
-For more information, see [Roles and permissions](/manuals/security/for-admins/roles-and-permissions.md).
+For more information, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
-For more information, see [Roles and permissions](manuals/security/for-admins/roles-and-permissions.md).
+For more information, see [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
 @x

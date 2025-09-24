@@ -5,19 +5,11 @@
 % snip 対応
 
 @x
-description: Download and install Docker Compose on Linux with this step-by-step handbook.
-  This plugin can be installed manually or by using a repository.
-keywords: install docker compose linux, docker compose linux, docker compose plugin,
-  docker-compose-plugin, linux install docker compose, install docker-compose linux,
-  linux install docker-compose, linux docker compose, docker compose v2 linux, install
-  docker compose on linux
+description: Step-by-step instructions for installing the Docker Compose plugin on Linux using a package repository or manual method.
+keywords: install docker compose linux, docker compose plugin, docker-compose-plugin linux, docker compose v2, docker compose manual install, linux docker compose
 @y
-description: Download and install Docker Compose on Linux with this step-by-step handbook.
-  This plugin can be installed manually or by using a repository.
-keywords: install docker compose linux, docker compose linux, docker compose plugin,
-  docker-compose-plugin, linux install docker compose, install docker-compose linux,
-  linux install docker-compose, linux docker compose, docker compose v2 linux, install
-  docker compose on linux
+description: Step-by-step instructions for installing the Docker Compose plugin on Linux using a package repository or manual method.
+keywords: install docker compose linux, docker compose plugin, docker-compose-plugin linux, docker compose v2, docker compose manual install, linux docker compose
 @z
 
 @x
@@ -147,13 +139,13 @@ To update the Docker Compose plugin, run the following commands:
 @z
 
 @x
-> [!IMPORTANT]
+> [!WARNING]
 >
-> This option requires you to manage upgrades manually. It is recommended that you set up Docker's repository for easier maintenance.
+> Manual installations don’t auto-update. For ease of maintenance, use the Docker repository method.
 @y
-> [!IMPORTANT]
+> [!WARNING]
 >
-> This option requires you to manage upgrades manually. It is recommended that you set up Docker's repository for easier maintenance.
+> Manual installations don’t auto-update. For ease of maintenance, use the Docker repository method.
 @z
 
 @x

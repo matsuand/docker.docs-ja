@@ -39,10 +39,12 @@ To get started with Docker Build Cloud, you need to:
 
 @x
 - Download and install Docker Desktop version 4.26.0 or later.
-- Sign up for a Docker Build Cloud subscription in the [Docker Build Cloud Dashboard](https://app.docker.com/build/).
+- Create a cloud builder on the [Docker Build Cloud Dashboard](https://app.docker.com/build/).
+  - When you create the builder, choose a name for it (for example, `default`). You will use this name as `BUILDER_NAME` in the CLI steps below.
 @y
 - Download and install Docker Desktop version 4.26.0 or later.
-- Sign up for a Docker Build Cloud subscription in the [Docker Build Cloud Dashboard](https://app.docker.com/build/).
+- Create a cloud builder on the [Docker Build Cloud Dashboard](https://app.docker.com/build/).
+  - When you create the builder, choose a name for it (for example, `default`). You will use this name as `BUILDER_NAME` in the CLI steps below.
 @z
 
 @x
@@ -130,15 +132,31 @@ command, or using the Docker Desktop settings GUI.
 @z
 
 @x
-   Replace `ORG` with the Docker Hub namespace of your Docker organization.
+   Replace `<ORG>` with the Docker Hub namespace of your Docker organization (or your username if you are using a personal account), and `<BUILDER_NAME>` with the name you chose when creating the builder in the dashboard.
 @y
-   Replace `ORG` with the Docker Hub namespace of your Docker organization.
+   Replace `<ORG>` with the Docker Hub namespace of your Docker organization (or your username if you are using a personal account), and `<BUILDER_NAME>` with the name you chose when creating the builder in the dashboard.
 @z
 
 @x
-This creates a builder named `cloud-ORG-BUILDER_NAME`.
+   This creates a local instance of the cloud builder named `cloud-ORG-BUILDER_NAME`.
 @y
-This creates a builder named `cloud-ORG-BUILDER_NAME`.
+   This creates a local instance of the cloud builder named `cloud-ORG-BUILDER_NAME`.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > If your organization is `acme` and you named your builder `default`, use:
+   > ```console
+   > $ docker buildx create --driver cloud acme/default
+   > ```
+@y
+   > [!NOTE]
+   >
+   > If your organization is `acme` and you named your builder `default`, use:
+   > ```console
+   > $ docker buildx create --driver cloud acme/default
+   > ```
 @z
 
 @x
@@ -183,6 +201,32 @@ multi-platform images natively.
 The builder has native support for the `linux/amd64` and `linux/arm64`
 architectures. This gives you a high-performance build cluster for building
 multi-platform images natively.
+@z
+
+@x
+## Firewall configuration
+@y
+## Firewall configuration
+@z
+
+@x
+To use Docker Build Cloud behind a firewall, ensure that your firewall allows
+traffic to the following addresses:
+@y
+To use Docker Build Cloud behind a firewall, ensure that your firewall allows
+traffic to the following addresses:
+@z
+
+@x
+- 3.211.38.21
+- https://auth.docker.io
+- https://build-cloud.docker.com
+- https://hub.docker.com
+@y
+- 3.211.38.21
+- https://auth.docker.io
+- https://build-cloud.docker.com
+- https://hub.docker.com
 @z
 
 @x

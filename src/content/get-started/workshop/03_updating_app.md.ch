@@ -211,9 +211,9 @@ To remove a container, you first need to stop it. Once it has stopped, you can r
 @z
 
 @x
-In this section, you learned how to update and rebuild a container, as well as how to stop and remove a container.
+In this section, you learned how to update and rebuild an image, as well as how to stop and remove a container.
 @y
-本節では、コンテナーの更新と再ビルドの方法を学びました。
+本節では、イメージの更新と再ビルドの方法を学びました。
 またコンテナーの停止と削除の方法も学びました。
 @z
 

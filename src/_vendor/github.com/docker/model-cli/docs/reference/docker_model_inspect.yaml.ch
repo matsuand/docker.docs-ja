@@ -1,0 +1,74 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker model inspect
+short: Display detailed information on one model
+long: Display detailed information on one model
+usage: docker model inspect MODEL
+pname: docker model
+plink: docker_model.yaml
+options:
+    - option: openai
+      value_type: bool
+      default_value: "false"
+      description: List model in an OpenAI format
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: remote
+      shorthand: r
+      value_type: bool
+      default_value: "false"
+      description: Show info for remote models
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker model inspect
+short: Display detailed information on one model
+long: Display detailed information on one model
+usage: docker model inspect MODEL
+pname: docker model
+plink: docker_model.yaml
+options:
+    - option: openai
+      value_type: bool
+      default_value: "false"
+      description: List model in an OpenAI format
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: remote
+      shorthand: r
+      value_type: bool
+      default_value: "false"
+      description: Show info for remote models
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

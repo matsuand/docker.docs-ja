@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Delegations for content trust
 keywords: trust, security, delegations, keys, repository
 title: Delegations for content trust
-aliases:
-- /ee/dtr/user/access-dtr/configure-your-notary-client/
----
 @y
----
 description: Delegations for content trust
 keywords: trust, security, delegations, keys, repository
 title: Delegations for content trust
-aliases:
-- /ee/dtr/user/access-dtr/configure-your-notary-client/
----
 @z
 
 @x
@@ -63,14 +55,14 @@ same as the registry URL specified in the image tag (following a similar logic t
 `$ docker push`). When using Docker Hub or DTR, the notary
 server URL is the same as the registry URL. However, for self-hosted
 environments or 3rd party registries, you will need to specify an alternative
-URL for the notary server. This is done with:
+URL of the notary server. This is done with:
 @y
 By default, the `$ docker trust` commands expect the notary server URL to be the
 same as the registry URL specified in the image tag (following a similar logic to
 `$ docker push`). When using Docker Hub or DTR, the notary
 server URL is the same as the registry URL. However, for self-hosted
 environments or 3rd party registries, you will need to specify an alternative
-URL for the notary server. This is done with:
+URL of the notary server. This is done with:
 @z
 
 @x

@@ -2,34 +2,24 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Best practices
 description: Best practices for using Docker Desktop with WSL 2
 keywords: wsl, docker desktop, best practices
-tags: [Best practices]
-aliases:
-- /desktop/wsl/best-practices/
----
 @y
----
 title: Best practices
 description: Best practices for using Docker Desktop with WSL 2
 keywords: wsl, docker desktop, best practices
-tags: [Best practices]
-aliases:
-- /desktop/wsl/best-practices/
----
 @z
 
 @x
-- Always use the latest version of WSL. At a minimum you must use WSL version 1.1.3.0., otherwise Docker Desktop may not work as expected. Testing, development, and documentation is based on the newest kernel versions. Older versions of WSL can cause:
+- Always use the latest version of WSL. At a minimum you must use WSL version 2.1.5, otherwise Docker Desktop may not work as expected. Testing, development, and documentation is based on the newest kernel versions. Older versions of WSL can cause:
     - Docker Desktop to hang periodically or when upgrading
     - Deployment via SCCM to fail
     - The `vmmem.exe` to consume all memory 
     - Network filter policies to be applied globally, not to specific objects
     - GPU failures with containers
 @y
-- Always use the latest version of WSL. At a minimum you must use WSL version 1.1.3.0., otherwise Docker Desktop may not work as expected. Testing, development, and documentation is based on the newest kernel versions. Older versions of WSL can cause:
+- Always use the latest version of WSL. At a minimum you must use WSL version 2.1.5, otherwise Docker Desktop may not work as expected. Testing, development, and documentation is based on the newest kernel versions. Older versions of WSL can cause:
     - Docker Desktop to hang periodically or when upgrading
     - Deployment via SCCM to fail
     - The `vmmem.exe` to consume all memory 

@@ -115,12 +115,6 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
       description: MEMs in which to allow execution (`0-3`, `0,1`)
 @z
 
-@x detach
-      description: Detach buildx server (supported only on linux)
-@y
-      description: Detach buildx server (supported only on linux)
-@z
-
 @x file
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
 @y
@@ -251,12 +245,6 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
       description: Remove intermediate containers after a successful build
 @z
 
-@x root
-      description: Specify root directory of server to connect
-@y
-      description: Specify root directory of server to connect
-@z
-
 @x sbom
       description: Shorthand for `--attest=type=sbom`
 @y
@@ -275,14 +263,6 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
       description: Security options
 @y
       description: Security options
-@z
-
-@x server-config
-      description: |
-        Specify buildx server config file (used only when launching new server)
-@y
-      description: |
-        Specify buildx server config file (used only when launching new server)
 @z
 
 @x shm-size

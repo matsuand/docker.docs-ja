@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: How PKI works in swarm mode
@@ -82,7 +82,7 @@ communications using a minimum of TLS 1.2.
 @x
 ![TLS diagram](/engine/swarm/images/tls.webp?w=600)
 @y
-![TLS diagram](__SUBDIR__/engine/swarm/images/tls.webp?w=600)
+![TLS diagram](engine/swarm/images/tls.webp?w=600)
 @z
 
 @x
@@ -92,7 +92,7 @@ The example below shows the information from a certificate from a worker node:
 @z
 
 @x
-```none
+```text
 Certificate:
     Data:
         Version: 3 (0x2)
@@ -107,7 +107,7 @@ Certificate:
 ...snip...
 ```
 @y
-```none
+```text
 Certificate:
     Data:
         Version: 3 (0x2)

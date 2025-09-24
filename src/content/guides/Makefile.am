@@ -9,6 +9,7 @@ SUBDIRS = admin-set-up admin-user-management bake bun compose-bake cpp deno \
 
 bases = \
 	_index.md                          \
+	agentic-ai.md                      \
 	container-supported-development.md \
 	databases.md                       \
 	dex.md                             \

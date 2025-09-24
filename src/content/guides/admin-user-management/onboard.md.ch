@@ -32,9 +32,9 @@ When you create a Docker organization, you automatically become its sole owner. 
 @z
 
 @x
-For detailed information on owners, see [Roles and permissions](/manuals/security/for-admins/roles-and-permissions.md).
+For detailed information on owners, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
-For detailed information on owners, see [Roles and permissions](manuals/security/for-admins/roles-and-permissions.md).
+For detailed information on owners, see [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
 @x
@@ -140,9 +140,9 @@ SSO:
 @z
 
 @x
-[SSO documentation](/manuals/security/for-admins/single-sign-on/_index.md).
+[SSO documentation](/manuals/enterprise/security/single-sign-on/_index.md).
 @y
-[SSO documentation](manuals/security/for-admins/single-sign-on/_index.md).
+[SSO documentation](manuals/enterprise/security/single-sign-on/_index.md).
 @z
 
 @x
@@ -152,9 +152,9 @@ SSO:
 @z
 
 @x
-Streamline user provisioning and role management with [SCIM](/manuals/security/for-admins/provisioning/scim.md) and [Just-in-Time (JIT) provisioning](/manuals/security/for-admins/provisioning/just-in-time.md).
+Streamline user provisioning and role management with [SCIM](/manuals/enterprise/security/provisioning/scim.md) and [Just-in-Time (JIT) provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
 @y
-Streamline user provisioning and role management with [SCIM](manuals/security/for-admins/provisioning/scim.md) and [Just-in-Time (JIT) provisioning](manuals/security/for-admins/provisioning/just-in-time.md).
+Streamline user provisioning and role management with [SCIM](manuals/enterprise/security/provisioning/scim.md) and [Just-in-Time (JIT) provisioning](manuals/enterprise/security/provisioning/just-in-time.md).
 @z
 
 @x
@@ -230,7 +230,7 @@ It also:
 @z
 
 @x
-For more information on how it works, see [Group mapping](/manuals/security/for-admins/provisioning/group-mapping.md).
+For more information on how it works, see [Group mapping](/manuals/enterprise/security/provisioning/group-mapping.md).
 @y
-For more information on how it works, see [Group mapping](manuals/security/for-admins/provisioning/group-mapping.md).
+For more information on how it works, see [Group mapping](manuals/enterprise/security/provisioning/group-mapping.md).
 @z

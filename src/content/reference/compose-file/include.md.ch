@@ -4,12 +4,14 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Include
-description: Learn about include
+linkTitle: Include
+title: Use include to modularize Compose files
+description: Reference external Compose files using the include top-level element
 keywords: compose, compose specification, include, compose file reference
 @y
-title: Include
-description: Learn about include
+linkTitle: Include
+title: Use include to modularize Compose files
+description: Reference external Compose files using the include top-level element
 keywords: compose, compose specification, include, compose file reference
 @z
 
@@ -20,15 +22,15 @@ keywords: compose, compose specification, include, compose file reference
 @z
 
 @x
-A Compose application can declare dependency on another Compose application. This is useful if:
+You can reuse and modularize Docker Compose configurations by including other Compose files. This is useful if:
 - You want to reuse other Compose files.
 - You need to factor out parts of your application model into separate Compose files so they can be managed separately or shared with others.
-- Teams need to keep a Compose file reasonably complicated for the limited amount of resources it has to declare for its own sub-domain within a larger deployment.
+- Teams need to maintain a Compose file with only necessary complexity for the limited amount of resources it has to declare for its own sub-domain within a larger deployment.
 @y
-A Compose application can declare dependency on another Compose application. This is useful if:
+You can reuse and modularize Docker Compose configurations by including other Compose files. This is useful if:
 - You want to reuse other Compose files.
 - You need to factor out parts of your application model into separate Compose files so they can be managed separately or shared with others.
-- Teams need to keep a Compose file reasonably complicated for the limited amount of resources it has to declare for its own sub-domain within a larger deployment.
+- Teams need to maintain a Compose file with only necessary complexity for the limited amount of resources it has to declare for its own sub-domain within a larger deployment.
 @z
 
 @x

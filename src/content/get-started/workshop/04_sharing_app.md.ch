@@ -102,48 +102,50 @@ In the following image, you can see an example Docker command from Docker Hub. T
 @z
 
 @x
-1. In the command line, run the `docker push` command that you see on Docker
-   Hub. Note that your command will have your Docker ID, not "docker". For example, `docker push YOUR-USER-NAME/getting-started`.
+Let's try to push the image to Docker Hub.
 @y
-1. コマンドライン上から Docker Hub で確認した `docker push` コマンドを実行します。
-   ちなみに実行コマンド内ではご自身の Docker ID を用いてください。
-   "docker" ではありません。
-   たとえば `docker push YOUR-USER-NAME/getting-started` とします。
+Docker Hub にイメージをプッシュしていきます。
 @z
 
 @x
-   ```console
-   $ docker push docker/getting-started
-   The push refers to repository [docker.io/docker/getting-started]
-   An image does not exist locally with the tag: docker/getting-started
-   ```
+1. In the command line, run the following commmand:
 @y
-   ```console
-   $ docker push docker/getting-started
-   The push refers to repository [docker.io/docker/getting-started]
-   An image does not exist locally with the tag: docker/getting-started
-   ```
+1. コマンドラインから以下を実行します。
+@z
+
+% snip command...
+
+@x
+   You'll see an error like this:
+@y
+   そうすると以下のようなエラーが出力されます。
+@z
+
+% snip output...
+
+@x
+   This failure is expected because the image isn't tagged correctly yet.
+   Docker is looking for an image name `docker/getting started`, but your
+   local image is still named `getting-started`.
+@y
+   このエラーは起こるべくして起きます。
+   それはまだイメージへのタグづけがまだ正しく行われていないためです。
+   Docker は `docker/getting started` という名前のイメージを探します。
+   しかし今あるローカルイメージの名前は、まだ `getting-started` です。
 @z
 
 @x
-    Why did it fail? The push command was looking for an image named `docker/getting-started`, but
-    didn't find one. If you run `docker image ls`, you won't see one either.
+   You can confirm this by running:
 @y
-    エラーが出て失敗したのはなぜでしょう？
-    プッシュを行うコマンドが `docker/getting-started` というイメージを探しましたが、それが見つからなかったためです。
-    `docker image ls` を実行しても見当たらないはずです。
+   これを確認するために以下を実行します。
 @z
 
-@x
-    To fix this, you need to tag your existing image you've built to give it another name.
-@y
-    これを解決するには、ビルド済みの既存イメージに対してタグづけを行って、別の名前を設定することが必要です。
-@z
+% snip command...
 
 @x
-2. Sign in to Docker Hub using the command `docker login -u YOUR-USER-NAME`.
+2. To fix this, first sign in to Docker Hub using your Docker ID: `docker login YOUR-USER-NAME`.
 @y
-2. コマンド `docker login -u YOUR-USER-NAME` を実行して Docker Hub にサインインします。
+2. これを解決するには、まず `docker login YOUR-USER-NAME` を実行して、ご自身の Docker ID を使った Docker Hub へのサインインを行います。
 @z
 
 @x
@@ -152,6 +154,7 @@ In the following image, you can see an example Docker command from Docker Hub. T
 3. `docker tag` コマンドを実行して `getting-started` イメージに対して新たな名前を設定します。
    `YOUR-USER-NAME` の部分は利用している Docker ID に置き換えてください。
 @z
+
 
 @x
    ```console

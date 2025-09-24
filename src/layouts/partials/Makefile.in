@@ -296,14 +296,15 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = components sidebar utils
+SUBDIRS = admonitions components sidebar utils
 bases = \
-	footer.html         \
-	head.html           \
-	heading.html        \
-	github-links.html   \
-	guides-stepper.html \
-	md-dropdown.html    \
+	contact-support-button.html \
+	footer.html                 \
+	github-links.html           \
+	guides-stepper.html         \
+	head.html                   \
+	heading.html                \
+	md-dropdown.html            \
 	search-bar.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -315,7 +316,6 @@ copyfiles = \
 	aside.html           \
 	breadcrumbs.html     \
 	content-default.html \
-	favicon.html         \
 	header.html          \
 	icon.html            \
 	languages.html       \

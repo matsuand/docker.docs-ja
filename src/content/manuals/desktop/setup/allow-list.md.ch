@@ -5,13 +5,15 @@
 description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
 keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics
 title: Allowlist for Docker Desktop
-tags: [admin]
-linkTitle: Allowlist
 @y
 description: A list of domain URLs required for Docker Desktop to function correctly within an organization.
 keywords: Docker Desktop, allowlist, allow list, firewall, authentication URLs, analytics
 title: Allowlist for Docker Desktop
-tags: [admin]
+@z
+
+@x
+linkTitle: Allowlist
+@y
 linkTitle: Allowlist
 @z
 
@@ -43,6 +45,7 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | https://auth.docker.io                                                               | Authentication                               |
 | https://cdn.auth0.com                                                                | Authentication                               |
 | https://login.docker.com                                                             | Authentication                               |
+| https://auth.docker.com                                                              | Authentication                               |
 | https://desktop.docker.com                                                           | Update                                       |
 | https://hub.docker.com                                                               | Docker Hub                                   |
 | https://registry-1.docker.io                                                         | Docker Pull/Push                             |
@@ -61,6 +64,7 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | https://auth.docker.io                                                               | Authentication                               |
 | https://cdn.auth0.com                                                                | Authentication                               |
 | https://login.docker.com                                                             | Authentication                               |
+| https://auth.docker.com                                                              | Authentication                               |
 | https://desktop.docker.com                                                           | Update                                       |
 | https://hub.docker.com                                                               | Docker Hub                                   |
 | https://registry-1.docker.io                                                         | Docker Pull/Push                             |

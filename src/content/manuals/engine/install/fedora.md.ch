@@ -47,10 +47,10 @@ Docker Engine をインストールするには、以下に示す Fedora バー�
 @z
 
 @x
-- Fedora 40
+- Fedora 42
 - Fedora 41
 @y
-- Fedora 40
+- Fedora 42
 - Fedora 41
 @z
 

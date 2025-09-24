@@ -240,11 +240,9 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md     \
 	deprecated.md \
-	dvp.md        \
 	dvp.yaml      \
 	latest.md     \
-	latest.yaml   \
-	latest-changelog.md
+	latest.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

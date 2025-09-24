@@ -78,12 +78,12 @@ More importantly, `watch` allows for greater granularity than is practical with 
 
 @x
 For example, in a JavaScript project, ignoring the `node_modules/` directory has two benefits:
-* Performance. File trees with many small files can cause high I/O load in some configurations
-* Multi-platform. Compiled artifacts cannot be shared if the host OS or architecture is different to the container
+* Performance. File trees with many small files can cause a high I/O load in some configurations
+* Multi-platform. Compiled artifacts cannot be shared if the host OS or architecture is different from the container
 @y
 For example, in a JavaScript project, ignoring the `node_modules/` directory has two benefits:
-* Performance. File trees with many small files can cause high I/O load in some configurations
-* Multi-platform. Compiled artifacts cannot be shared if the host OS or architecture is different to the container
+* Performance. File trees with many small files can cause a high I/O load in some configurations
+* Multi-platform. Compiled artifacts cannot be shared if the host OS or architecture is different from the container
 @z
 
 @x
@@ -213,10 +213,10 @@ The behavior is the same as running `docker compose up --build <svc>`.
 @z
 
 @x
-Rebuild is ideal for compiled languages or as fallbacks for modifications to particular files that require a full
+Rebuild is ideal for compiled languages or as a fallback for modifications to particular files that require a full
 image rebuild (e.g. `package.json`).
 @y
-Rebuild is ideal for compiled languages or as fallbacks for modifications to particular files that require a full
+Rebuild is ideal for compiled languages or as a fallback for modifications to particular files that require a full
 image rebuild (e.g. `package.json`).
 @z
 
@@ -227,9 +227,9 @@ image rebuild (e.g. `package.json`).
 @z
 
 @x
-If `action` is set to `sync+restart`, Compose synchronizes your changes with the service containers and restarts it. 
+If `action` is set to `sync+restart`, Compose synchronizes your changes with the service containers and restarts them. 
 @y
-If `action` is set to `sync+restart`, Compose synchronizes your changes with the service containers and restarts it. 
+If `action` is set to `sync+restart`, Compose synchronizes your changes with the service containers and restarts them. 
 @z
 
 @x
@@ -391,18 +391,6 @@ This setup demonstrates how to use the `sync+restart` action in Docker Compose t
 > Check out [`dockersamples/avatars`](https://github.com/dockersamples/avatars),
 > or [local setup for Docker docs](https://github.com/docker/docs/blob/main/CONTRIBUTING.md)
 > for a demonstration of Compose `watch`.
-@z
-
-@x
-## Feedback
-@y
-## Feedback
-@z
-
-@x
-We are actively looking for feedback on this feature. Give feedback or report any bugs you may find in the [Compose Specification repository](https://github.com/compose-spec/compose-spec/pull/253).
-@y
-We are actively looking for feedback on this feature. Give feedback or report any bugs you may find in the [Compose Specification repository](https://github.com/compose-spec/compose-spec/pull/253).
 @z
 
 @x

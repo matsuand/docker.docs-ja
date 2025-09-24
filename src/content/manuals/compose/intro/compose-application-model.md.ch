@@ -10,11 +10,11 @@ title: Compose はどのように動作するか
 @z
 
 @x
-description: Understand how Compose works and the Compose application model with an illustrative example 
-keywords: compose, docker compose, compose specification, compose model 
+description: Learn how Docker Compose works, from the application model to Compose files and CLI, whilst following a detailed example.
+keywords: docker compose, compose.yaml, docker compose model, compose cli, multi-container application, compose example 
 @y
-description: Understand how Compose works and the Compose application model with an illustrative example 
-keywords: compose, docker compose, compose specification, compose model 
+description: Learn how Docker Compose works, from the application model to Compose files and CLI, whilst following a detailed example.
+keywords: docker compose, compose.yaml, docker compose model, compose cli, multi-container application, compose example 
 @z
 
 @x
@@ -54,9 +54,9 @@ Services store and share persistent data into [volumes](reference/compose-file/v
 @z
 
 @x
-Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
+Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From inside the container, configs behave like volumes—they’re mounted as files. However, configs are defined differently at the platform level.
 @y
-Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](reference/compose-file/configs.md) concept. From a service container point of view, configs are comparable to volumes, in that they are files mounted into the container. But the actual definition involves distinct platform resources and services, which are abstracted by this type.
+Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From inside the container, configs behave like volumes—they’re mounted as files. However, configs are defined differently at the platform level.
 @z
 
 @x
@@ -146,9 +146,9 @@ If you want to reuse other Compose files, or factor out parts of your applicatio
 @z
 
 @x
-The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command and its subcommands. If you're using Docker Desktop, the Docker Compose CLI is included by default.
 @y
-The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command, and its subcommands. Using the CLI, you can manage the lifecycle of your multi-container applications defined in the `compose.yaml` file. The CLI commands enable you to start, stop, and configure your applications effortlessly.
+The Docker CLI lets you interact with your Docker Compose applications through the `docker compose` command and its subcommands. If you're using Docker Desktop, the Docker Compose CLI is included by default.
 @z
 
 @x
@@ -276,17 +276,17 @@ The example application is composed of the following parts:
 @z
 
 @x
-- 2 services, backed by Docker images: `webapp` and `database`
-- 1 secret (HTTPS certificate), injected into the frontend
-- 1 configuration (HTTP), injected into the frontend
-- 1 persistent volume, attached to the backend
-- 2 networks
+- Two services, backed by Docker images: `webapp` and `database`
+- One secret (HTTPS certificate), injected into the frontend
+- One configuration (HTTP), injected into the frontend
+- One persistent volume, attached to the backend
+- Two networks
 @y
-- 2 services, backed by Docker images: `webapp` and `database`
-- 1 secret (HTTPS certificate), injected into the frontend
-- 1 configuration (HTTP), injected into the frontend
-- 1 persistent volume, attached to the backend
-- 2 networks
+- Two services, backed by Docker images: `webapp` and `database`
+- One secret (HTTPS certificate), injected into the frontend
+- One configuration (HTTP), injected into the frontend
+- One persistent volume, attached to the backend
+- Two networks
 @z
 
 @x
@@ -422,11 +422,11 @@ example-backend-1   example/database     "docker-entrypoint.s…"   backend     
 @z
 
 @x
-- [Quickstart](/manuals/compose/gettingstarted.md)
+- [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
 - [Explore some sample applications](/manuals/compose/support-and-feedback/samples-for-compose.md)
 - [Familiarize yourself with the Compose Specification](/reference/compose-file/_index.md)
 @y
-- [Quickstart](manuals/compose/gettingstarted.md)
+- [Try the Quickstart guide](manuals/compose/gettingstarted.md)
 - [Explore some sample applications](manuals/compose/support-and-feedback/samples-for-compose.md)
 - [Familiarize yourself with the Compose Specification](reference/compose-file/_index.md)
 @z

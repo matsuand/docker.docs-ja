@@ -2,18 +2,18 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: How to use secrets in Docker Compose
+title: Manage secrets securely in Docker Compose
 linkTitle: Secrets in Compose
 @y
-title: Docker Compose における Secrets の利用
+title: Docker Compose における Secrets のセキュアな管理
 linkTitle: Compose における Secrets
 @z
 
 @x
-description: How to use secrets in Compose and their benefits
-keywords: secrets, compose, security, environment variables
+description: Learn how to securely manage runtime and build-time secrets in Docker Compose.
+keywords: secrets, compose, security, environment variables, docker secrets, secure Docker builds, sensitive data in containers
 @y
-description: Compose における Secrets の利用方法と里程について説明します。
+description: Docker Compose において起動時/ビルド時での Secrets のセキュアな管理方法について学びます。
 keywords: secrets, compose, security, environment variables
 @z
 
@@ -67,9 +67,9 @@ Unlike the other methods, this permits granular access control within a service 
 @z
 
 @x
-### Simple
+### Single-service secret injection
 @y
-### 単純な例 {#simple}
+### Single-service secret injection {#single-service-secret-injection}
 @z
 
 @x
@@ -82,9 +82,9 @@ In the following example, the frontend service is given access to the `my_secret
 % snip code...
 
 @x
-### Advanced
+### Multi-service secret sharing and password management
 @y
-### 応用的な例 {#advanced}
+### Multi-service secret sharing and password management
 @z
 
 % snip code...
@@ -98,11 +98,11 @@ In the advanced example above:
 @x
 - The `secrets` attribute under each service defines the secrets you want to inject into the specific container.
 - The top-level `secrets` section defines the variables `db_password` and `db_root_password` and provides the `file` that populates their values.
-- The deployment of each container means Docker creates a temporary filesystem mount under `/run/secrets/<secret_name>` with their specific values.
+- The deployment of each container means Docker creates a bind mount under `/run/secrets/<secret_name>` with their specific values.
 @y
 - 各サービスにおける `secrets` 属性として、所定コンテナー内に含めたい secret を定義しています。
 - トップレベルの `secrets` セクションでは、変数 `db_password` および `db_root_password` を定義して、`file` によってそれらの値を提供するファイルを指定しています。
-- 各コンテナーのデプロイを行うと、Docker が `/run/secrets/<secret_name>` の配下に一時的なファイルシステムを生成し、そこに指定の値を設定します。
+- 各コンテナーのデプロイを行うと、Docker が `/run/secrets/<secret_name>` の配下にバインドマウントを生成し、そこに指定の値を設定します。
 @z
 
 @x

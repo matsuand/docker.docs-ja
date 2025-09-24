@@ -48,16 +48,16 @@ Here are the most common types of instructions:
 @z
 
 @x
-| Instruction                                                        | Description                                                                                                                                                                                              |
-| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Instruction                                               | Description                                                                                                                                                                                              |
+|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`FROM <image>`](/reference/dockerfile.md#from)           | Defines a base for your image.                                                                                                                                                                           |
 | [`RUN <command>`](/reference/dockerfile.md#run)           | Executes any commands in a new layer on top of the current image and commits the result. `RUN` also has a shell form for running commands.                                                               |
 | [`WORKDIR <directory>`](/reference/dockerfile.md#workdir) | Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions that follow it in the Dockerfile.                                                                          |
 | [`COPY <src> <dest>`](/reference/dockerfile.md#copy)      | Copies new files or directories from `<src>` and adds them to the filesystem of the container at the path `<dest>`.                                                                                      |
 | [`CMD <command>`](/reference/dockerfile.md#cmd)           | Lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one `CMD`, and only the last `CMD` instance is respected when multiple exist. |
 @y
-| Instruction                                                        | Description                                                                                                                                                                                              |
-| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Instruction                                              | Description                                                                                                                                                                                              |
+|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`FROM <image>`](reference/dockerfile.md#from)           | Defines a base for your image.                                                                                                                                                                           |
 | [`RUN <command>`](reference/dockerfile.md#run)           | Executes any commands in a new layer on top of the current image and commits the result. `RUN` also has a shell form for running commands.                                                               |
 | [`WORKDIR <directory>`](reference/dockerfile.md#workdir) | Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions that follow it in the Dockerfile.                                                                          |
@@ -413,12 +413,12 @@ the container.
 Note the `# install app dependencies` line. This is a comment. Comments in
 Dockerfiles begin with the `#` symbol. As your Dockerfile evolves, comments can
 be instrumental to document how your Dockerfile works for any future readers
-and editors of the file, including your future self!
+and editors of the file, including your future self.
 @y
 Note the `# install app dependencies` line. This is a comment. Comments in
 Dockerfiles begin with the `#` symbol. As your Dockerfile evolves, comments can
 be instrumental to document how your Dockerfile works for any future readers
-and editors of the file, including your future self!
+and editors of the file, including your future self.
 @z
 
 @x

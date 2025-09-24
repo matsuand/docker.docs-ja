@@ -468,8 +468,7 @@ Related information:
 @z
 
 @x
-In the next section, you'll learn how you can develop your application using
-containers.
+In the next section, you'll take a look at how to set up a local development environment using Docker containers.
 @y
-次の節では、コンテナーを使ってアプリケーションの開発を行う方法を学びます。
+次の節では、Docker コンテナーを使ったローカル開発環境の構築方法について見ていきます。
 @z

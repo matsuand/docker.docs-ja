@@ -14,6 +14,12 @@ keywords: build, buildkit, annotations, metadata
 @z
 
 @x
+<!-- vale Docker.Spacing = NO -->
+@y
+<!-- vale Docker.Spacing = NO -->
+@z
+
+@x
 Annotations provide descriptive metadata for images. Use annotations to record
 arbitrary information and attach it to your image, which helps consumers and
 tools understand the origin, contents, and how to use the image.
@@ -25,11 +31,11 @@ tools understand the origin, contents, and how to use the image.
 
 @x
 Annotations are similar to, and in some sense overlap with, [labels]. Both
-serve the same purpose: attach metadata to a resource. As a general principle,
+serve the same purpose: to attach metadata to a resource. As a general principle,
 you can think of the difference between annotations and labels as follows:
 @y
 Annotations are similar to, and in some sense overlap with, [labels]. Both
-serve the same purpose: attach metadata to a resource. As a general principle,
+serve the same purpose: to attach metadata to a resource. As a general principle,
 you can think of the difference between annotations and labels as follows:
 @z
 
@@ -95,14 +101,14 @@ manifest or index.
 
 @x
 > [!NOTE]
-> 
+>
 > The Docker Engine image store doesn't support loading images with
 > annotations. To build with annotations, make sure to push the image directly
 > to a registry, using the `--push` CLI flag or the
 > [registry exporter](/manuals/build/exporters/image-registry.md).
 @y
 > [!NOTE]
-> 
+>
 > The Docker Engine image store doesn't support loading images with
 > annotations. To build with annotations, make sure to push the image directly
 > to a registry, using the `--push` CLI flag or the
@@ -163,12 +169,12 @@ For examples on how to add annotations to images built with GitHub Actions, see
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](/reference/cli/docker/buildx/imagetools/create.md#annotations).
+[CLI reference](/reference/cli/docker/buildx/imagetools/create.md#annotation).
 @y
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](reference/cli/docker/buildx/imagetools/create.md#annotations).
+[CLI reference](reference/cli/docker/buildx/imagetools/create.md#annotation).
 @z
 
 @x

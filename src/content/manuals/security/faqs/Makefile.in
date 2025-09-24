@@ -298,9 +298,9 @@ top_srcdir = @top_srcdir@
 SUBDIRS = single-sign-on
 bases = \
 	_index.md             \
+	containers.md         \
 	general.md            \
-	networking-and-vms.md \
-	containers.md
+	networking-and-vms.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

@@ -134,16 +134,17 @@ The following table provides an overview of the current status of deprecated fea
 @x
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Empty/nil fields in image Config from inspect API](#emptynil-fields-in-image-config-from-inspect-api)                             | v28.3      | v29.0  |
 | Deprecated | [Configuration for pushing  non-distributable artifacts](#configuration-for-pushing-non-distributable-artifacts)                   | v28.0      | v29.0  |
 | Deprecated | [`--time` option on `docker stop` and `docker restart`](#--time-option-on-docker-stop-and-docker-restart)                          | v28.0      | -      |
-| Deprecated | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.0  |
+| Removed    | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.2  |
 | Removed    | [API CORS headers](#api-cors-headers)                                                                                              | v27.0      | v28.0  |
-| Deprecated | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
+| Removed    | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
 | Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v28.0  |
-| Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
-| Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
+| Removed    | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
+| Removed    | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
-| Deprecated | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v26.0  |
+| Removed    | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v28.2  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
 | Removed    | [BuildKit build information](#buildkit-build-information)                                                                          | v23.0      | v24.0  |
@@ -152,7 +153,7 @@ The following table provides an overview of the current status of deprecated fea
 | Removed    | [Btrfs storage driver on CentOS 7 and RHEL 7](#btrfs-storage-driver-on-centos-7-and-rhel-7)                                        | v20.10     | v23.0  |
 | Removed    | [Support for encrypted TLS private keys](#support-for-encrypted-tls-private-keys)                                                  | v20.10     | v23.0  |
 | Removed    | [Kubernetes stack and context support](#kubernetes-stack-and-context-support)                                                      | v20.10     | v23.0  |
-| Deprecated | [Pulling images from non-compliant image registries](#pulling-images-from-non-compliant-image-registries)                          | v20.10     | -      |
+| Removed    | [Pulling images from non-compliant image registries](#pulling-images-from-non-compliant-image-registries)                          | v20.10     | v28.2  |
 | Removed    | [Linux containers on Windows (LCOW)](#linux-containers-on-windows-lcow-experimental)                                               | v20.10     | v23.0  |
 | Deprecated | [BLKIO weight options with cgroups v1](#blkio-weight-options-with-cgroups-v1)                                                      | v20.10     | -      |
 | Removed    | [Kernel memory limit](#kernel-memory-limit)                                                                                        | v20.10     | v23.0  |
@@ -161,9 +162,9 @@ The following table provides an overview of the current status of deprecated fea
 | Deprecated | [CLI plugins support](#cli-plugins-support)                                                                                        | v20.10     | -      |
 | Deprecated | [Dockerfile legacy `ENV name value` syntax](#dockerfile-legacy-env-name-value-syntax)                                              | v20.10     | -      |
 | Removed    | [`docker build --stream` flag (experimental)](#docker-build---stream-flag-experimental)                                            | v20.10     | v20.10 |
-| Deprecated | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | v28.0  |
+| Removed    | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | v28.0  |
 | Removed    | [Configuration options for experimental CLI features](#configuration-options-for-experimental-cli-features)                        | v19.03     | v23.0  |
-| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v27.0  |
+| Removed    | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v28.2  |
 | Removed    | [`docker engine` subcommands](#docker-engine-subcommands)                                                                          | v19.03     | v20.10 |
 | Removed    | [Top-level `docker deploy` subcommand (experimental)](#top-level-docker-deploy-subcommand-experimental)                            | v19.03     | v20.10 |
 | Removed    | [`docker stack deploy` using "dab" files (experimental)](#docker-stack-deploy-using-dab-files-experimental)                        | v19.03     | v20.10 |
@@ -203,16 +204,17 @@ The following table provides an overview of the current status of deprecated fea
 @y
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Empty/nil fields in image Config from inspect API](#emptynil-fields-in-image-config-from-inspect-api)                             | v28.3      | v29.0  |
 | Deprecated | [Configuration for pushing  non-distributable artifacts](#configuration-for-pushing-non-distributable-artifacts)                   | v28.0      | v29.0  |
 | Deprecated | [`--time` option on `docker stop` and `docker restart`](#--time-option-on-docker-stop-and-docker-restart)                          | v28.0      | -      |
-| Deprecated | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.0  |
+| Removed    | [Non-standard fields in image inspect](#non-standard-fields-in-image-inspect)                                                      | v27.0      | v28.2  |
 | Removed    | [API CORS headers](#api-cors-headers)                                                                                              | v27.0      | v28.0  |
-| Deprecated | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
+| Removed    | [Graphdriver plugins (experimental)](#graphdriver-plugins-experimental)                                                            | v27.0      | v28.0  |
 | Deprecated | [Unauthenticated TCP connections](#unauthenticated-tcp-connections)                                                                | v26.0      | v28.0  |
-| Deprecated | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
-| Deprecated | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
+| Removed    | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
+| Removed    | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
-| Deprecated | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v26.0  |
+| Removed    | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v28.2  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
 | Removed    | [BuildKit build information](#buildkit-build-information)                                                                          | v23.0      | v24.0  |
@@ -221,7 +223,7 @@ The following table provides an overview of the current status of deprecated fea
 | Removed    | [Btrfs storage driver on CentOS 7 and RHEL 7](#btrfs-storage-driver-on-centos-7-and-rhel-7)                                        | v20.10     | v23.0  |
 | Removed    | [Support for encrypted TLS private keys](#support-for-encrypted-tls-private-keys)                                                  | v20.10     | v23.0  |
 | Removed    | [Kubernetes stack and context support](#kubernetes-stack-and-context-support)                                                      | v20.10     | v23.0  |
-| Deprecated | [Pulling images from non-compliant image registries](#pulling-images-from-non-compliant-image-registries)                          | v20.10     | -      |
+| Removed    | [Pulling images from non-compliant image registries](#pulling-images-from-non-compliant-image-registries)                          | v20.10     | v28.2  |
 | Removed    | [Linux containers on Windows (LCOW)](#linux-containers-on-windows-lcow-experimental)                                               | v20.10     | v23.0  |
 | Deprecated | [BLKIO weight options with cgroups v1](#blkio-weight-options-with-cgroups-v1)                                                      | v20.10     | -      |
 | Removed    | [Kernel memory limit](#kernel-memory-limit)                                                                                        | v20.10     | v23.0  |
@@ -230,9 +232,9 @@ The following table provides an overview of the current status of deprecated fea
 | Deprecated | [CLI plugins support](#cli-plugins-support)                                                                                        | v20.10     | -      |
 | Deprecated | [Dockerfile legacy `ENV name value` syntax](#dockerfile-legacy-env-name-value-syntax)                                              | v20.10     | -      |
 | Removed    | [`docker build --stream` flag (experimental)](#docker-build---stream-flag-experimental)                                            | v20.10     | v20.10 |
-| Deprecated | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | v28.0  |
+| Removed    | [`fluentd-async-connect` log opt](#fluentd-async-connect-log-opt)                                                                  | v20.10     | v28.0  |
 | Removed    | [Configuration options for experimental CLI features](#configuration-options-for-experimental-cli-features)                        | v19.03     | v23.0  |
-| Deprecated | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v27.0  |
+| Removed    | [Pushing and pulling with image manifest v2 schema 1](#pushing-and-pulling-with-image-manifest-v2-schema-1)                        | v19.03     | v28.2  |
 | Removed    | [`docker engine` subcommands](#docker-engine-subcommands)                                                                          | v19.03     | v20.10 |
 | Removed    | [Top-level `docker deploy` subcommand (experimental)](#top-level-docker-deploy-subcommand-experimental)                            | v19.03     | v20.10 |
 | Removed    | [`docker stack deploy` using "dab" files (experimental)](#docker-stack-deploy-using-dab-files-experimental)                        | v19.03     | v20.10 |
@@ -272,9 +274,75 @@ The following table provides an overview of the current status of deprecated fea
 @z
 
 @x
-## Configuration for pushing non-distributable artifacts
+### Empty/nil fields in image Config from inspect API
 @y
-## Configuration for pushing non-distributable artifacts
+### Empty/nil fields in image Config from inspect API
+@z
+
+@x
+**Deprecated in Release: v28.3**
+**Target For Removal In Release: v29.0**
+@y
+**Deprecated in Release: v28.3**
+**Target For Removal In Release: v29.0**
+@z
+
+@x
+The `Config` field returned by `docker image inspect` (and the `GET /images/{name}/json`
+API endpoint) currently includes certain fields even when they are empty or nil.
+Starting in Docker v29.0, the following fields will be omitted from the API response
+when they contain empty or default values:
+@y
+The `Config` field returned by `docker image inspect` (and the `GET /images/{name}/json`
+API endpoint) currently includes certain fields even when they are empty or nil.
+Starting in Docker v29.0, the following fields will be omitted from the API response
+when they contain empty or default values:
+@z
+
+@x
+- `Cmd`
+- `Entrypoint`
+- `Env`
+- `Labels`
+- `OnBuild`
+- `User`
+- `Volumes`
+- `WorkingDir`
+@y
+- `Cmd`
+- `Entrypoint`
+- `Env`
+- `Labels`
+- `OnBuild`
+- `User`
+- `Volumes`
+- `WorkingDir`
+@z
+
+@x
+Applications consuming the image inspect API should be updated to handle the
+absence of these fields gracefully, treating missing fields as having their
+default/empty values.
+@y
+Applications consuming the image inspect API should be updated to handle the
+absence of these fields gracefully, treating missing fields as having their
+default/empty values.
+@z
+
+@x
+For API version corresponding to Docker v29.0, these fields will be omitted when
+empty. They will continue to be included when using clients that request an older
+API version for backward compatibility.
+@y
+For API version corresponding to Docker v29.0, these fields will be omitted when
+empty. They will continue to be included when using clients that request an older
+API version for backward compatibility.
+@z
+
+@x
+### Configuration for pushing non-distributable artifacts
+@y
+### Configuration for pushing non-distributable artifacts
 @z
 
 @x
@@ -399,10 +467,10 @@ Users are encouraged to migrate to using the `--timeout` option instead.
 
 @x
 **Deprecated in Release: v27.0**
-**Target For Removal In Release: v28.0**
+**Removed In Release: v28.2**
 @y
 **Deprecated in Release: v27.0**
-**Target For Removal In Release: v28.0**
+**Removed In Release: v28.2**
 @z
 
 @x
@@ -430,11 +498,13 @@ and will be removed from the API in thee next release.
 @z
 
 @x
-The following fields are currently included in the API response, but are not
-part of the underlying image's `Config` field, and deprecated:
+The following fields are not part of the underlying image's `Config` field, and
+removed in the API response for API v1.50 and newer, corresponding with v28.2.
+They continue to be included when using clients that use an older API version:
 @y
-The following fields are currently included in the API response, but are not
-part of the underlying image's `Config` field, and deprecated:
+The following fields are not part of the underlying image's `Config` field, and
+removed in the API response for API v1.50 and newer, corresponding with v28.2.
+They continue to be included when using clients that use an older API version:
 @z
 
 @x
@@ -447,9 +517,9 @@ part of the underlying image's `Config` field, and deprecated:
 - `OpenStdin`
 - `StdinOnce`
 - `Image`
-- `NetworkDisabled` (already omitted unless set)
-- `MacAddress` (already omitted unless set)
-- `StopTimeout` (already omitted unless set)
+- `NetworkDisabled` (omitted unless set on older API versions)
+- `MacAddress` (omitted unless set on older API versions)
+- `StopTimeout` (omitted unless set on older API versions)
 @y
 - `Hostname`
 - `Domainname`
@@ -460,9 +530,9 @@ part of the underlying image's `Config` field, and deprecated:
 - `OpenStdin`
 - `StdinOnce`
 - `Image`
-- `NetworkDisabled` (already omitted unless set)
-- `MacAddress` (already omitted unless set)
-- `StopTimeout` (already omitted unless set)
+- `NetworkDisabled` (omitted unless set on older API versions)
+- `MacAddress` (omitted unless set on older API versions)
+- `StopTimeout` (omitted unless set on older API versions)
 @z
 
 @x
@@ -491,39 +561,25 @@ part of the underlying image's `Config` field, and deprecated:
 
 @x
 [Graphdriver plugins](https://github.com/docker/cli/blob/v26.1.4/docs/extend/plugins_graphdriver.md)
-are an experimental feature that allow extending the Docker Engine with custom
+were an experimental feature that allowed extending the Docker Engine with custom
 storage drivers for storing images and containers. This feature was not
-maintained since its inception, and will no longer be supported in upcoming
-releases.
+maintained since its inception.
 @y
 [Graphdriver plugins](https://github.com/docker/cli/blob/v26.1.4/docs/extend/plugins_graphdriver.md)
-are an experimental feature that allow extending the Docker Engine with custom
+were an experimental feature that allowed extending the Docker Engine with custom
 storage drivers for storing images and containers. This feature was not
-maintained since its inception, and will no longer be supported in upcoming
-releases.
+maintained since its inception.
 @z
 
 @x
-Support for graphdriver plugins is disabled by default in v27.0, and will be
-removed v28.0. An `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable
-is provided in v27.0 to re-enable the feature. This environment variable must
-be set to a non-empty value in the daemon's environment.
-@y
-Support for graphdriver plugins is disabled by default in v27.0, and will be
-removed v28.0. An `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable
-is provided in v27.0 to re-enable the feature. This environment variable must
-be set to a non-empty value in the daemon's environment.
-@z
-
-@x
-The `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable, along with
-support for graphdriver plugins, will be removed in v28.0. Users of this feature
-are recommended to instead configure the Docker Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
+Support for graphdriver plugins was disabled by default in v27.0, and removed
+in v28.0. Users of this feature are recommended to instead configure the Docker
+Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
 and a custom [snapshotter](https://github.com/containerd/containerd/tree/v1.7.18/docs/snapshotters)
 @y
-The `DOCKERD_DEPRECATED_GRAPHDRIVER_PLUGINS` environment variable, along with
-support for graphdriver plugins, will be removed in v28.0. Users of this feature
-are recommended to instead configure the Docker Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
+Support for graphdriver plugins was disabled by default in v27.0, and removed
+in v28.0. Users of this feature are recommended to instead configure the Docker
+Engine to use the [containerd image store](https://docs.docker.com/storage/containerd/)
 and a custom [snapshotter](https://github.com/containerd/containerd/tree/v1.7.18/docs/snapshotters)
 @z
 
@@ -657,10 +713,10 @@ configuring TLS (or SSH) for the Docker daemon, refer to
 
 @x
 **Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Removed In Release: v26.0**
 @y
 **Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Removed In Release: v26.0**
 @z
 
 @x
@@ -668,17 +724,17 @@ The `Container` and `ContainerConfig` fields returned by `docker inspect` are
 mostly an implementation detail of the classic (non-BuildKit) image builder.
 These fields are not portable and are empty when using the
 BuildKit-based builder (enabled by default since v23.0).
-These fields are deprecated in v25.0 and will be omitted starting from v26.0.
-If image configuration of an image is needed, you can obtain it from the
-`Config` field.
+These fields are deprecated in v25.0 and are omitted starting from v26.0 (
+API version v1.45 and up). If image configuration of an image is needed,
+you can obtain it from the `Config` field.
 @y
 The `Container` and `ContainerConfig` fields returned by `docker inspect` are
 mostly an implementation detail of the classic (non-BuildKit) image builder.
 These fields are not portable and are empty when using the
 BuildKit-based builder (enabled by default since v23.0).
-These fields are deprecated in v25.0 and will be omitted starting from v26.0.
-If image configuration of an image is needed, you can obtain it from the
-`Config` field.
+These fields are deprecated in v25.0 and are omitted starting from v26.0 (
+API version v1.45 and up). If image configuration of an image is needed,
+you can obtain it from the `Config` field.
 @z
 
 @x
@@ -778,39 +834,43 @@ upgrade your client to a newer version
 @z
 
 @x
-An environment variable (`DOCKER_MIN_API_VERSION`) is introduced that allows
-re-enabling older API versions in the daemon. This environment variable must
-be set in the daemon's environment (for example, through a [systemd override
-file](https://docs.docker.com/config/daemon/systemd/)), and the specified
-API version must be supported by the daemon (`1.12` or higher on Linux, or
-`1.24` or higher on Windows).
+Support for API versions lower than `1.24` has been permanently removed in Docker
+Engine v26, and the minimum supported API version will be incrementally raised
+in releases following that.
 @y
-An environment variable (`DOCKER_MIN_API_VERSION`) is introduced that allows
-re-enabling older API versions in the daemon. This environment variable must
-be set in the daemon's environment (for example, through a [systemd override
-file](https://docs.docker.com/config/daemon/systemd/)), and the specified
-API version must be supported by the daemon (`1.12` or higher on Linux, or
-`1.24` or higher on Windows).
+Support for API versions lower than `1.24` has been permanently removed in Docker
+Engine v26, and the minimum supported API version will be incrementally raised
+in releases following that.
 @z
 
 @x
-Support for API versions lower than `1.24` will be permanently removed in Docker
-Engine v26, and the minimum supported API version will be incrementally raised
-in releases following that.
+<!-- keeping the paragraphs below for when we incrementally raise the minimum API version -->
+<!--
+An environment variable (`DOCKER_MIN_API_VERSION`) is introduced that allows
+re-enabling older API versions in the daemon. This environment variable must
+be set in the daemon's environment (for example, through a [systemd override
+file](https://docs.docker.com/config/daemon/systemd/)), and the specified
+API version must be supported by the daemon (`1.24` or higher).
 @y
-Support for API versions lower than `1.24` will be permanently removed in Docker
-Engine v26, and the minimum supported API version will be incrementally raised
-in releases following that.
+<!-- keeping the paragraphs below for when we incrementally raise the minimum API version -->
+<!--
+An environment variable (`DOCKER_MIN_API_VERSION`) is introduced that allows
+re-enabling older API versions in the daemon. This environment variable must
+be set in the daemon's environment (for example, through a [systemd override
+file](https://docs.docker.com/config/daemon/systemd/)), and the specified
+API version must be supported by the daemon (`1.24` or higher).
 @z
 
 @x
 We do not recommend depending on the `DOCKER_MIN_API_VERSION` environment
 variable other than for exceptional cases where it's not possible to update
 old clients, and those clients must be supported.
+-->
 @y
 We do not recommend depending on the `DOCKER_MIN_API_VERSION` environment
 variable other than for exceptional cases where it's not possible to update
 old clients, and those clients must be supported.
+-->
 @z
 
 @x
@@ -859,10 +919,10 @@ introduced in v25.0 and should be used instead of the `Aliases` field.
 
 @x
 **Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Removed In Release: v28.2**
 @y
 **Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Removed In Release: v28.2**
 @z
 
 @x
@@ -880,11 +940,11 @@ results.
 @x
 The `AUTOMATED` column has been removed from the default `docker search`
 and `docker image search` output in v25.0, and the corresponding `IsAutomated`
-templating option will be removed in v26.0.
+templating has been removed in v28.2.
 @y
 The `AUTOMATED` column has been removed from the default `docker search`
 and `docker image search` output in v25.0, and the corresponding `IsAutomated`
-templating option will be removed in v26.0.
+templating has been removed in v28.2.
 @z
 
 @x
@@ -1341,8 +1401,10 @@ CLI configuration file are no longer used, and ignored.
 
 @x
 **Deprecated in Release: v20.10**
+**Removed in Release: v28.2**
 @y
 **Deprecated in Release: v20.10**
+**Removed in Release: v28.2**
 @z
 
 @x
@@ -1366,11 +1428,11 @@ to be non-compliant, resulting in `docker pull` to fail.
 @z
 
 @x
-As a temporary solution, Docker Engine v20.10 includes a fallback mechanism to
+As a temporary solution, Docker Engine v20.10 added a fallback mechanism to
 allow `docker pull` to be functional when using a non-compliant registry. A
 warning message is printed in this situation:
 @y
-As a temporary solution, Docker Engine v20.10 includes a fallback mechanism to
+As a temporary solution, Docker Engine v20.10 added a fallback mechanism to
 allow `docker pull` to be functional when using a non-compliant registry. A
 warning message is printed in this situation:
 @z
@@ -1388,31 +1450,23 @@ warning message is printed in this situation:
 @z
 
 @x
-The fallback is added to allow users to either migrate their images to a compliant
-registry, or for these registries to become compliant.
+The fallback was added to allow users to either migrate their images to a
+compliant registry, or for these registries to become compliant.
 @y
-The fallback is added to allow users to either migrate their images to a compliant
-registry, or for these registries to become compliant.
+The fallback was added to allow users to either migrate their images to a
+compliant registry, or for these registries to become compliant.
 @z
 
 @x
-Note that this fallback only addresses failures on `docker pull`. Other commands,
-such as `docker stack deploy`, or pulling images with `containerd` will continue
-to fail.
+GitHub deprecated the legacy `docker.pkg.github.com` registry, and it was
+[sunset on Feb 24th, 2025](https://github.blog/changelog/2025-01-23-legacy-docker-registry-closing-down/)
+in favor of GitHub Container Registry (GHCR, ghcr.io), making this fallback
+no longer needed.
 @y
-Note that this fallback only addresses failures on `docker pull`. Other commands,
-such as `docker stack deploy`, or pulling images with `containerd` will continue
-to fail.
-@z
-
-@x
-Given that other functionality is still broken with these registries, we consider
-this fallback a _temporary_ solution, and will remove the fallback in an upcoming
-major release.
-@y
-Given that other functionality is still broken with these registries, we consider
-this fallback a _temporary_ solution, and will remove the fallback in an upcoming
-major release.
+GitHub deprecated the legacy `docker.pkg.github.com` registry, and it was
+[sunset on Feb 24th, 2025](https://github.blog/changelog/2025-01-23-legacy-docker-registry-closing-down/)
+in favor of GitHub Container Registry (GHCR, ghcr.io), making this fallback
+no longer needed.
 @z
 
 @x
@@ -1801,10 +1855,10 @@ fluent#New: AsyncConnect is now deprecated, use Async instead
 
 @x
 Users are encouraged to use the `fluentd-async` option going forward, as support
-for the old option will be removed in a future release.
+for the old option has been removed.
 @y
 Users are encouraged to use the `fluentd-async` option going forward, as support
-for the old option will be removed in a future release.
+for the old option has been removed.
 @z
 
 @x
@@ -1826,9 +1880,9 @@ for the old option will be removed in a future release.
 @z
 
 @x
-**Target For Removal In Release: v27.0**
+**Removed in Release: v28.2**
 @y
-**Target For Removal In Release: v27.0**
+**Removed in Release: v28.2**
 @z
 
 @x
@@ -1849,19 +1903,21 @@ formats.
 These legacy formats should no longer be used, and users are recommended to
 update images to use current formats, or to upgrade to more current images.
 Starting with Docker v26.0, pulling these images is disabled by default, and
-produces an error when attempting to pull the image:
+support has been removed in v28.2. Attempting to pull a legacy image now
+produces an error:
 @y
 These legacy formats should no longer be used, and users are recommended to
 update images to use current formats, or to upgrade to more current images.
 Starting with Docker v26.0, pulling these images is disabled by default, and
-produces an error when attempting to pull the image:
+support has been removed in v28.2. Attempting to pull a legacy image now
+produces an error:
 @z
 
 @x
 ```console
 $ docker pull ubuntu:10.04
 Error response from daemon:
-[DEPRECATION NOTICE] Docker Image Format v1 and Docker Image manifest version 2, schema 1 support is disabled by default and will be removed in an upcoming release.
+Docker Image Format v1 and Docker Image manifest version 2, schema 1 support has been removed.
 Suggest the author of docker.io/library/ubuntu:10.04 to upgrade the image to the OCI Format or Docker Image manifest v2, schema 2.
 More information at https://docs.docker.com/go/deprecated-image-specs/
 ```
@@ -1869,26 +1925,10 @@ More information at https://docs.docker.com/go/deprecated-image-specs/
 ```console
 $ docker pull ubuntu:10.04
 Error response from daemon:
-[DEPRECATION NOTICE] Docker Image Format v1 and Docker Image manifest version 2, schema 1 support is disabled by default and will be removed in an upcoming release.
+Docker Image Format v1 and Docker Image manifest version 2, schema 1 support has been removed.
 Suggest the author of docker.io/library/ubuntu:10.04 to upgrade the image to the OCI Format or Docker Image manifest v2, schema 2.
 More information at https://docs.docker.com/go/deprecated-image-specs/
 ```
-@z
-
-@x
-An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
-added in Docker v26.0 that allows re-enabling support for these image formats
-in the daemon. This environment variable must be set to a non-empty value in
-the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
-Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment variable
-will be removed in Docker v27.0 after which this functionality is removed permanently.
-@y
-An environment variable (`DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE`) is
-added in Docker v26.0 that allows re-enabling support for these image formats
-in the daemon. This environment variable must be set to a non-empty value in
-the daemon's environment (for example, through a [systemd override file](https://docs.docker.com/config/daemon/systemd/)).
-Support for the `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment variable
-will be removed in Docker v27.0 after which this functionality is removed permanently.
 @z
 
 @x

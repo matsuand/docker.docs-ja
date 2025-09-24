@@ -22,24 +22,24 @@ title: Build dependent images
 
 @x
 To reduce push/pull time and image weight, a common practice for Compose applications is to have services
-share base layers as much as possible. You will typically select the same operating system base image for
-all services. But you also can get one step further sharing image layers when your images share the same
+share base layers as much as possible. You typically select the same operating system base image for
+all services. But you can also get one step further by sharing image layers when your images share the same
 system packages. The challenge to address is then to avoid repeating the exact same Dockerfile instruction 
 in all services.
 @y
 To reduce push/pull time and image weight, a common practice for Compose applications is to have services
-share base layers as much as possible. You will typically select the same operating system base image for
-all services. But you also can get one step further sharing image layers when your images share the same
+share base layers as much as possible. You typically select the same operating system base image for
+all services. But you can also get one step further by sharing image layers when your images share the same
 system packages. The challenge to address is then to avoid repeating the exact same Dockerfile instruction 
 in all services.
 @z
 
 @x
 For illustration, this page assumes you want all your services to be built with an `alpine` base
-image and install system package `openssl`.
+image and install the system package `openssl`.
 @y
 For illustration, this page assumes you want all your services to be built with an `alpine` base
-image and install system package `openssl`.
+image and install the system package `openssl`.
 @z
 
 @x

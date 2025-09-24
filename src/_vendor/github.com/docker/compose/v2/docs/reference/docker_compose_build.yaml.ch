@@ -112,9 +112,15 @@ usage: docker compose build [OPTIONS] [SERVICE...]
 @z
 
 @x quiet
-      description: Don't print anything to STDOUT
+      description: Suppress the build output
 @y
-      description: Don't print anything to STDOUT
+      description: Suppress the build output
+@z
+
+@x sbom
+      description: Add a SBOM attestation
+@y
+      description: Add a SBOM attestation
 @z
 
 @x ssh

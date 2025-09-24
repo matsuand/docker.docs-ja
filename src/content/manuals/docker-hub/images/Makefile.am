@@ -2,16 +2,13 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 copyfiles = \
-	azure-create-connection.png      \
 	chart-share-icon.png             \
 	chart.png                        \
 	clear_logo_sm.png                \
-	create-connection.png            \
 	default_logo_sm.png              \
 	download-analytics-data.png      \
 	official-image-badge-iso.png     \
 	organization-tabs.png            \
-	saml-create-connection.png       \
 	sponsored-badge-iso.png          \
 	sponsored-badge.png              \
 	supported_tags.webp              \

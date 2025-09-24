@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Learn how to create a repository on Docker Hub
 keywords: Docker Hub, Hub, repositories, create
@@ -88,7 +90,7 @@ linkTitle: Create
      is only accessible to you and collaborators. In addition, if you selected
      an organization's namespace, then the repository is accessible to those
      with applicable roles or permissions. For more details, see [Roles and
-     permissions](../../security/for-admins/roles-and-permissions.md).
+     permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
    - **Public**: The repository appears in Docker Hub search results and can be
      pulled by everyone.
@@ -96,7 +98,6 @@ linkTitle: Create
      is only accessible to you and collaborators. In addition, if you selected
      an organization's namespace, then the repository is accessible to those
      with applicable roles or permissions. For more details, see [Roles and
-     permissions](../../security/for-admins/roles-and-permissions.md).
 @z
 
 @x

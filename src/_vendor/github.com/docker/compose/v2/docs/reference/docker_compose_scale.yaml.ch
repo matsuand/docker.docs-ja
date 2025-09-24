@@ -8,34 +8,6 @@ long: Scale services
 usage: docker compose scale [SERVICE=REPLICAS...]
 pname: docker compose
 plink: docker_compose.yaml
-options:
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
-      description: Don't start linked services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker compose scale
 short: Scale services
@@ -43,32 +15,22 @@ long: Scale services
 usage: docker compose scale [SERVICE=REPLICAS...]
 pname: docker compose
 plink: docker_compose.yaml
-options:
-    - option: no-deps
-      value_type: bool
-      default_value: "false"
-      description: Don't start linked services
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x no-deps
+      description: Don't start linked services
+@y
+      description: Don't start linked services
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

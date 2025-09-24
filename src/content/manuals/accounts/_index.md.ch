@@ -10,10 +10,10 @@ title: Docker accounts
 @z
 
 @x
-description: Learn how to create and manage your Docker account.
+description: Learn how to create and manage your Docker account
 keywords: accounts, docker ID, account management, account settings, docker account, docker home
 @y
-description: Learn how to create and manage your Docker account.
+description: Learn how to create and manage your Docker account
 keywords: accounts, docker ID, account management, account settings, docker account, docker home
 @z
 
@@ -44,51 +44,73 @@ keywords: accounts, docker ID, account management, account settings, docker acco
 @z
 
 @x
-- title: Account FAQ
-  description: Explore popular FAQ topics about organizations.
-  icon: help
-  link: /faq/admin/general-faqs/
-@y
-- title: アカウント FAQ
-  description: Explore popular FAQ topics about organizations.
-  icon: help
-  link: __SUBDIR__/faq/admin/general-faqs/
-@z
-
-@x
 - title: Personal access tokens
   description: Learn how to create and manage access tokens for your account.
   icon: password
-  link: /security/for-developers/access-tokens/
+  link: /security/access-tokens/
 @y
 - title: パーソナルアクセストークン
   description: Learn how to create and manage access tokens for your account.
   icon: password
-  link: __SUBDIR__/security/for-developers/access-tokens/
+  link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
-  link: /security/for-developers/2fa/
+  link: /security/2fa/
   icon: phonelink_lock
 @y
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
-  link: __SUBDIR__/security/for-developers/2fa/
+  link: __SUBDIR__/security/2fa/
   icon: phonelink_lock
 @z
 
 @x
-You can create a Docker account to secure a Docker ID, which is a username for your account that lets you access Docker products. You can use your Docker account to sign in to Docker products like Docker Hub, Docker Desktop, or Docker Scout. You can centrally manage your [Docker account settings](https://app.docker.com/settings), as well as account security features, in [Docker Home](https://app.docker.com).
+- title: Deactivate an account
+  description: Learn how to deactivate a Docker user account.
+  link: /accounts/deactivate-user-account/
+  icon: disabled_by_default
 @y
-You can create a Docker account to secure a Docker ID, which is a username for your account that lets you access Docker products. You can use your Docker account to sign in to Docker products like Docker Hub, Docker Desktop, or Docker Scout. You can centrally manage your [Docker account settings](https://app.docker.com/settings), as well as account security features, in [Docker Home](https://app.docker.com).
+- title: Deactivate an account
+  description: Learn how to deactivate a Docker user account.
+  link: __SUBDIR__/accounts/deactivate-user-account/
+  icon: disabled_by_default
 @z
 
 @x
-In this section, explore how you can create, manage, or update your account.
+- title: Account FAQ
+  description: Explore frequently asked questions about Docker accounts.
+  icon: help
+  link: /accounts/general-faqs/
 @y
-In this section, explore how you can create, manage, or update your account.
+- title: アカウント FAQ
+  description: Explore frequently asked questions about Docker accounts.
+  icon: help
+  link: __SUBDIR__/accounts/general-faqs/
+@z
+
+@x
+This section covers individual Docker accounts and Docker IDs. It does
+not cover organizations, companies, or administrator roles.
+@y
+This section covers individual Docker accounts and Docker IDs. It does
+not cover organizations, companies, or administrator roles.
+@z
+
+@x
+A Docker account is required to:
+- Create a Docker ID
+- Access Docker products and services like Docker Hub and Docker Desktop
+- Receive organization invitations
+- Manage your personal settings and security features
+@y
+A Docker account is required to:
+- Create a Docker ID
+- Access Docker products and services like Docker Hub and Docker Desktop
+- Receive organization invitations
+- Manage your personal settings and security features
 @z
 
 @x

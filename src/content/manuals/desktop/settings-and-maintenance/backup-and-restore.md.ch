@@ -16,9 +16,9 @@ keywords: Docker Desktop, backup, restore, migration, reinstall, containers, ima
 @z
 
 @x
-Use this procedure to back up and restore your images and container data. This is useful if you want to reset your VM disk or to move your Docker environment to a new computer.
+Use this procedure to back up and restore your images and container data. This is useful if you want to reset your VM disk or to move your Docker environment to a new computer, or recover from a failed Docker Desktop update or installation.
 @y
-Use this procedure to back up and restore your images and container data. This is useful if you want to reset your VM disk or to move your Docker environment to a new computer.
+Use this procedure to back up and restore your images and container data. This is useful if you want to reset your VM disk or to move your Docker environment to a new computer, or recover from a failed Docker Desktop update or installation.
 @z
 
 @x
@@ -32,9 +32,15 @@ Use this procedure to back up and restore your images and container data. This i
 @z
 
 @x
-## Save your data
+## If Docker Desktop is functioning normally
 @y
-## Save your data
+## If Docker Desktop is functioning normally
+@z
+
+@x
+### Save your data
+@y
+### Save your data
 @z
 
 @x
@@ -100,9 +106,9 @@ and [install a different version](manuals/desktop/release-notes.md) or reset Doc
 @z
 
 @x
-## Restore your data
+### Restore your data
 @y
-## Restore your data
+### Restore your data
 @z
 
 @x
@@ -155,4 +161,180 @@ and [install a different version](manuals/desktop/release-notes.md) or reset Doc
 To restore volume data, refer to [backup, restore, or migrate data volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes). 
 @y
 To restore volume data, refer to [backup, restore, or migrate data volumes](manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes). 
+@z
+
+@x
+## If Docker Desktop fails to start 
+@y
+## If Docker Desktop fails to start 
+@z
+
+@x
+If Docker Desktop cannot launch and must be reinstalled, you can back up its VM disk and image data directly from disk. Docker Desktop must be fully stopped before backing up these files.
+@y
+If Docker Desktop cannot launch and must be reinstalled, you can back up its VM disk and image data directly from disk. Docker Desktop must be fully stopped before backing up these files.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Windows" >}}
+@y
+{{< tabs >}}
+{{< tab name="Windows" >}}
+@z
+
+@x
+1. Back up Docker containers/images.
+@y
+1. Back up Docker containers/images.
+@z
+
+@x
+   Backup the following file:
+@y
+   Backup the following file:
+@z
+
+@x
+   ```console
+   %LOCALAPPDATA%\Docker\wsl\data\docker_data.vhdx
+   ```
+@y
+   ```console
+   %LOCALAPPDATA%\Docker\wsl\data\docker_data.vhdx
+   ```
+@z
+
+@x
+   Copy it to a safe location. 
+@y
+   Copy it to a safe location. 
+@z
+
+@x
+1. Back up WSL distributions.
+@y
+1. Back up WSL distributions.
+@z
+
+@x
+   If you're running any WSL Linux distributions (Ubuntu, Alpine, etc.), back them up using [Microsoft's guide](https://learn.microsoft.com/en-us/windows/wsl/faq#how-can-i-back-up-my-wsl-distributions-).
+@y
+   If you're running any WSL Linux distributions (Ubuntu, Alpine, etc.), back them up using [Microsoft's guide](https://learn.microsoft.com/en-us/windows/wsl/faq#how-can-i-back-up-my-wsl-distributions-).
+@z
+
+@x
+1. Restore. 
+@y
+1. Restore. 
+@z
+
+@x
+   After reinstalling Docker Desktop, restore the `docker_data.vhdx` to the same location and re-import your WSL distributions if needed.
+@y
+   After reinstalling Docker Desktop, restore the `docker_data.vhdx` to the same location and re-import your WSL distributions if needed.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Mac" >}}
+@y
+{{< /tab >}}
+{{< tab name="Mac" >}}
+@z
+
+@x
+1. Back up Docker containers/images.
+@y
+1. Back up Docker containers/images.
+@z
+
+@x
+   Backup the following file:
+@y
+   Backup the following file:
+@z
+
+@x
+   ```console
+   ~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw
+   ```
+@y
+   ```console
+   ~/Library/Containers/com.docker.docker/Data/vms/0/data/Docker.raw
+   ```
+@z
+
+@x
+   Copy it to a safe location. 
+@y
+   Copy it to a safe location. 
+@z
+
+@x
+1. Restore. 
+@y
+1. Restore. 
+@z
+
+@x
+   After reinstalling Docker Desktop, restore the `Docker.raw` to the same location.
+@y
+   After reinstalling Docker Desktop, restore the `Docker.raw` to the same location.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@y
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@z
+
+@x
+1. Back up Docker containers/images:
+@y
+1. Back up Docker containers/images:
+@z
+
+@x
+   Backup the following file:
+@y
+   Backup the following file:
+@z
+
+@x
+   ```console
+   ~/.docker/desktop/vms/0/data/Docker.raw
+   ```
+@y
+   ```console
+   ~/.docker/desktop/vms/0/data/Docker.raw
+   ```
+@z
+
+@x
+   Copy it to a safe location.
+@y
+   Copy it to a safe location.
+@z
+
+@x
+1. Restore. 
+@y
+1. Restore. 
+@z
+
+@x
+   After reinstalling Docker Desktop, restore the `Docker.raw` to the same location.
+@y
+   After reinstalling Docker Desktop, restore the `Docker.raw` to the same location.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z

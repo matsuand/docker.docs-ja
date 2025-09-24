@@ -322,7 +322,7 @@ todo アプリは環境変数をいくつか設定することによって MySQL
 >
 > While using env vars to set connection settings is generally accepted for development, it's highly discouraged
 > when running applications in production. Diogo Monica, a former lead of security at Docker,
-> [wrote a fantastic blog post](https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
+> [wrote a fantastic blog post](https://blog.diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
 > explaining why.
 >
 > A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
@@ -337,7 +337,7 @@ todo アプリは環境変数をいくつか設定することによって MySQL
 >
 > While using env vars to set connection settings is generally accepted for development, it's highly discouraged
 > when running applications in production. Diogo Monica, a former lead of security at Docker,
-> [wrote a fantastic blog post](https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
+> [wrote a fantastic blog post](https://blog.diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
 > explaining why.
 >
 > A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,

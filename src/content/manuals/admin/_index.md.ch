@@ -10,10 +10,10 @@ title: Administration
 @z
 
 @x
-description: Discover manuals on administration for accounts, organizations, and companies.
+description: Overview of administration features and roles in the Docker Admin Console
 keywords: admin, administration, company, organization, Admin Console, user accounts, account management
 @y
-description: Discover manuals on administration for accounts, organizations, and companies.
+description: Overview of administration features and roles in the Docker Admin Console
 keywords: admin, administration, company, organization, Admin Console, user accounts, account management
 @z
 
@@ -91,40 +91,172 @@ keywords: admin, administration, company, organization, Admin Console, user acco
   link: __SUBDIR__/security/
 @z
 
-% skip aliases...
-
 @x
-Administrators can manage companies and organizations using the Docker Admin Console.
+Administrators can manage companies and organizations using the
+[Docker Admin Console](https://app.docker.com/admin). The Admin Console
+provides centralized observability, access management, and security controls
+across Docker environments.
 @y
-Administrators can manage companies and organizations using the Docker Admin Console.
+Administrators can manage companies and organizations using the
+[Docker Admin Console](https://app.docker.com/admin). The Admin Console
+provides centralized observability, access management, and security controls
+across Docker environments.
 @z
 
 @x
-The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+## Company and organization hierarchy
 @y
-The [Docker Admin Console](https://admin.docker.com) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+## Company and organization hierarchy
 @z
 
 @x
-![Docker hierarchy](./images/docker-admin-structure.webp)
+The [Docker Admin Console](https://app.docker.com/admin) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
 @y
-![Docker hierarchy](./images/docker-admin-structure.webp)
+The [Docker Admin Console](https://app.docker.com/admin) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
 @z
 
 @x
-- Company: A company simplifies the management of Docker organizations and settings. Creating a company is optional and only available to Docker Business subscribers.
-  - Company owner: A company can have multiple owners. Company owners have company-wide observability and can manage company-wide settings that apply to all associated organizations. In addition, company owners have the same access as organization owners for all associated organizations.
-- Organization: An organization is a collection of teams and repositories. Docker Team and Business subscribers must have at least one organization.
-  - Organization owner: An organization can have multiple owners. Organization owners have observability into their organization and can manage its users and settings.
-- Team: A team is a group of Docker members that belong to an organization. Organization and company owners can group members into additional teams to configure repository permissions on a per-team basis. Using teams to group members is optional.
-- Member: A member is a Docker user that's a member of an organization. Organization and company owners can assign roles to members to define their permissions.
+![Diagram showing Docker’s administration hierarchy with Company at the top, followed by Organizations, Teams, and Members](./images/docker-admin-structure.webp)
 @y
-- Company: A company simplifies the management of Docker organizations and settings. Creating a company is optional and only available to Docker Business subscribers.
-  - Company owner: A company can have multiple owners. Company owners have company-wide observability and can manage company-wide settings that apply to all associated organizations. In addition, company owners have the same access as organization owners for all associated organizations.
-- Organization: An organization is a collection of teams and repositories. Docker Team and Business subscribers must have at least one organization.
-  - Organization owner: An organization can have multiple owners. Organization owners have observability into their organization and can manage its users and settings.
-- Team: A team is a group of Docker members that belong to an organization. Organization and company owners can group members into additional teams to configure repository permissions on a per-team basis. Using teams to group members is optional.
-- Member: A member is a Docker user that's a member of an organization. Organization and company owners can assign roles to members to define their permissions.
+![Diagram showing Docker’s administration hierarchy with Company at the top, followed by Organizations, Teams, and Members](./images/docker-admin-structure.webp)
+@z
+
+@x
+### Company
+@y
+### Company
+@z
+
+@x
+A company groups multiple Docker organizations for centralized configuration.
+Companies are only available for Docker Business subscribers.
+@y
+A company groups multiple Docker organizations for centralized configuration.
+Companies are only available for Docker Business subscribers.
+@z
+
+@x
+Companies have the following administrator role available:
+@y
+Companies have the following administrator role available:
+@z
+
+@x
+- Company owner: Can view and manage all organizations within the company.
+Has full access to company-wide settings and inherits the same permissions as
+organization owners.
+@y
+- Company owner: Can view and manage all organizations within the company.
+Has full access to company-wide settings and inherits the same permissions as
+organization owners.
+@z
+
+@x
+### Organization
+@y
+### Organization
+@z
+
+@x
+An organization contains teams and repositories. All Docker Team and Business
+subscribers must have at least one organization.
+@y
+An organization contains teams and repositories. All Docker Team and Business
+subscribers must have at least one organization.
+@z
+
+@x
+Organizations have the following administrator role available:
+@y
+Organizations have the following administrator role available:
+@z
+
+@x
+- Organization owner: Can manage organization settings, users, and access
+controls.
+@y
+- Organization owner: Can manage organization settings, users, and access
+controls.
+@z
+
+@x
+### Team
+@y
+### Team
+@z
+
+@x
+Teams are optional and let you group members to assign repository permissions
+collectively. Teams simplify permission management across projects
+or functions.
+@y
+Teams are optional and let you group members to assign repository permissions
+collectively. Teams simplify permission management across projects
+or functions.
+@z
+
+@x
+### Member
+@y
+### Member
+@z
+
+@x
+A member is any Docker user added to an organization. Organization and company
+owners can assign roles to members to define their level of access.
+@y
+A member is any Docker user added to an organization. Organization and company
+owners can assign roles to members to define their level of access.
+@z
+
+@x
+> [!NOTE]
+>
+> Creating a company is optional, but organizations are required for Team and
+Business subscriptions.
+@y
+> [!NOTE]
+>
+> Creating a company is optional, but organizations are required for Team and
+Business subscriptions.
+@z
+
+@x
+## Admin Console features
+@y
+## Admin Console features
+@z
+
+@x
+Docker's [Admin Console](https://app.docker.com/admin) allows you to:
+@y
+Docker's [Admin Console](https://app.docker.com/admin) allows you to:
+@z
+
+@x
+- Create and manage companies and organizations
+- Assign roles and permissions to members
+- Group members into teams to manage access by project or role
+- Set company-wide policies, including SCIM provisioning and security
+enforcement
+@y
+- Create and manage companies and organizations
+- Assign roles and permissions to members
+- Group members into teams to manage access by project or role
+- Set company-wide policies, including SCIM provisioning and security
+enforcement
+@z
+
+@x
+## Manage companies and organizations
+@y
+## Manage companies and organizations
+@z
+
+@x
+Learn how to manage companies and organizations in the following sections.
+@y
+Learn how to manage companies and organizations in the following sections.
 @z
 
 @x

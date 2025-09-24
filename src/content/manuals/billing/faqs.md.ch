@@ -6,53 +6,13 @@
 @x
 title: Billing FAQs
 linkTitle: FAQs
+description: Frequently asked questions related to billing
+keywords: billing, renewal, payments, faq
 @y
-title: 支払いに関する FAQ
+title: Billing FAQs
 linkTitle: FAQs
-@z
-
-@x
 description: Frequently asked questions related to billing
 keywords: billing, renewal, payments, faq
-@y
-description: Frequently asked questions related to billing
-keywords: billing, renewal, payments, faq
-@z
-
-@x
-### What credit and debit cards are supported?
-@y
-### What credit and debit cards are supported?
-@z
-
-@x
-- Visa
-- MasterCard
-- American Express
-- Discover
-- JCB
-- Diners
-- UnionPay
-@y
-- Visa
-- MasterCard
-- American Express
-- Discover
-- JCB
-- Diners
-- UnionPay
-@z
-
-@x
-### What currency is supported?
-@y
-### What currency is supported?
-@z
-
-@x
-United States dollar (USD).
-@y
-US ドル (USD) です。
 @z
 
 @x
@@ -62,9 +22,13 @@ US ドル (USD) です。
 @z
 
 @x
-If your subscription payment fails, there is a grace period of 15 days, including the due date. Docker retries to collect the payment 3 times using the following schedule:
+If your subscription payment fails, there is a grace period of 15 days,
+including the due date. Docker retries to collect the payment 3 times using the
+following schedule:
 @y
-If your subscription payment fails, there is a grace period of 15 days, including the due date. Docker retries to collect the payment 3 times using the following schedule:
+If your subscription payment fails, there is a grace period of 15 days,
+including the due date. Docker retries to collect the payment 3 times using the
+following schedule:
 @z
 
 @x
@@ -78,15 +42,23 @@ If your subscription payment fails, there is a grace period of 15 days, includin
 @z
 
 @x
-Docker also sends an email notification `Action Required - Credit Card Payment Failed` with an attached unpaid invoice after each failed payment attempt. 
+Docker also sends an email notification
+`Action Required - Credit Card Payment Failed` with an attached unpaid invoice
+after each failed payment attempt.
 @y
-Docker also sends an email notification `Action Required - Credit Card Payment Failed` with an attached unpaid invoice after each failed payment attempt. 
+Docker also sends an email notification
+`Action Required - Credit Card Payment Failed` with an attached unpaid invoice
+after each failed payment attempt.
 @z
 
 @x
-Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+Once the grace period is over and the invoice is still not paid, the
+subscription downgrades to a free subscription and all paid features are
+disabled.
 @y
-Once the grace period is over and the invoice is still not paid, the subscription downgrades to a free plan and all paid features are disabled.
+Once the grace period is over and the invoice is still not paid, the
+subscription downgrades to a free subscription and all paid features are
+disabled.
 @z
 
 @x
@@ -118,27 +90,37 @@ updated. If you need to update your default payment method, see
 @z
 
 @x
-Docker began collecting sales tax on subscription fees for United States customers on July 1, 2024. For European customers, Docker will begin collecting VAT on March 1, 2025.
+Docker collects sales tax and/or VAT from the following:
 @y
-Docker began collecting sales tax on subscription fees for United States customers on July 1, 2024. For European customers, Docker will begin collecting VAT on March 1, 2025.
+Docker collects sales tax and/or VAT from the following:
 @z
 
 @x
-To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](/billing/details/).
+- For United States customers, Docker began collecting sales tax on July 1, 2024.
+- For European customers, Docker began collecting VAT on March 1, 2025.
+- For United Kingdom customers, Docker began collecting VAT on May 1, 2025.
 @y
-To ensure that tax assessments are correct, make sure that your billing information and VAT/Tax ID, if applicable, are updated. See [Update the billing information](__SUBDIR__/billing/details/).
+- For United States customers, Docker began collecting sales tax on July 1, 2024.
+- For European customers, Docker began collecting VAT on March 1, 2025.
+- For United Kingdom customers, Docker began collecting VAT on May 1, 2025.
 @z
 
 @x
-### How do I certify my tax exempt status?
+To ensure that tax assessments are correct, make sure that your billing
+information and VAT/Tax ID, if applicable, are updated. See
+[Update the billing information](/billing/details/).
 @y
-### How do I certify my tax exempt status?
+To ensure that tax assessments are correct, make sure that your billing
+information and VAT/Tax ID, if applicable, are updated. See
+[Update the billing information](__SUBDIR__/billing/details/).
 @z
 
 @x
-If you're exempt from sales tax, you can [register a valid tax exemption certificate](./tax-certificate.md) with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
+If you're exempt from sales tax, see
+[Register a tax certificate](/billing/tax-certificate/).
 @y
-If you're exempt from sales tax, you can [register a valid tax exemption certificate](./tax-certificate.md) with Docker's Support team. [Contact Support](https://hub.docker.com/support/contact) to get started.
+If you're exempt from sales tax, see
+[Register a tax certificate](__SUBDIR__/billing/tax-certificate/).
 @z
 
 @x
@@ -148,19 +130,9 @@ If you're exempt from sales tax, you can [register a valid tax exemption certifi
 @z
 
 @x
-Contact the [Docker Sales Team](https://www.docker.com/company/contact).
+For academic pricing, contact the
+[Docker Sales Team](https://www.docker.com/company/contact).
 @y
-Contact the [Docker Sales Team](https://www.docker.com/company/contact).
-@z
-
-@x
-### Do I need to do anything at the end of my subscription term?
-@y
-### Do I need to do anything at the end of my subscription term?
-@z
-
-@x
-No. All monthly and annual subscriptions are automatically renewed at the end of the term using the original form of payment.
-@y
-No. All monthly and annual subscriptions are automatically renewed at the end of the term using the original form of payment.
+For academic pricing, contact the
+[Docker Sales Team](https://www.docker.com/company/contact).
 @z

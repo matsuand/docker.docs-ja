@@ -28,9 +28,9 @@ Docker and the broader community of Docker experts have put together many differ
 @z
 
 @x
-Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/resources/trainings/). 
+Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/trainings/). 
 @y
-Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/resources/trainings/). 
+Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/trainings/). 
 @z
 
 @x

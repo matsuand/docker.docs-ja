@@ -40,11 +40,11 @@ If you want to uninstall Docker Compose and you have installed Docker Desktop, s
 @z
 
 @x
-> [!NOTE]
+> [!WARNING]
 >
 > Unless you have other Docker instances installed on that specific environment, uninstalling Docker Desktop removes all Docker components, including Docker Engine, Docker CLI, and Docker Compose.
 @y
-> [!NOTE]
+> [!WARNING]
 >
 > Unless you have other Docker instances installed on that specific environment, uninstalling Docker Desktop removes all Docker components, including Docker Engine, Docker CLI, and Docker Compose.
 @z

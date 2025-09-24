@@ -249,10 +249,10 @@ When you launched the container, you exposed one of the container's ports onto y
 @z
 
 @x
-For this container, the frontend is accessible on port `8080`. To open the website, select the link in the **Port(s)** column of your container or visit [http://localhost:8080](https://localhost:8080) in your browser.
+For this container, the frontend is accessible on port `8080`. To open the website, select the link in the **Port(s)** column of your container or visit [http://localhost:8080](http://localhost:8080) in your browser.
 @y
 このコンテナーはフロントエンドとしてポート `8080` によりアクセスできます。
-ウェブサイトを開くには、このコンテナーの **Port(s)** (ポート) カラムに表示されているリンクをクリックするか、あるいはウェブブラウザーから [http://localhost:8080](https://localhost:8080) にアクセスします。
+ウェブサイトを開くには、このコンテナーの **Port(s)** (ポート) カラムに表示されているリンクをクリックするか、あるいはウェブブラウザーから [http://localhost:8080](http://localhost:8080) にアクセスします。
 @z
 
 @x

@@ -136,10 +136,10 @@ token) as part of the GitHub Actions workflow.
 
 @x
 For instructions on how to create a Docker access token, see
-[Create and manage access tokens](/manuals/security/for-developers/access-tokens.md).
+[Create and manage access tokens](/manuals/security/access-tokens.md).
 @y
 For instructions on how to create a Docker access token, see
-[Create and manage access tokens](manuals/security/for-developers/access-tokens.md).
+[Create and manage access tokens](manuals/security/access-tokens.md).
 @z
 
 @x

@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Isolate containers within a user namespace
 keywords: security, namespaces
 title: Isolate containers with a user namespace
----
 @y
----
 description: Isolate containers within a user namespace
 keywords: security, namespaces
 title: Isolate containers with a user namespace
----
 @z
 
 @x
@@ -60,11 +56,11 @@ other with the group ID range. Consider the following entry in `/etc/subuid`:
 @z
 
 @x
-```none
+```text
 testuser:231072:65536
 ```
 @y
-```none
+```text
 testuser:231072:65536
 ```
 @z
@@ -121,14 +117,14 @@ purpose.
 > [!WARNING]
 >
 > Some distributions do not automatically add the new group to the
-> `/etc/subuid` and `/etc/subgid` files. If that's the case, you are may have
+> `/etc/subuid` and `/etc/subgid` files. If that's the case, you may have
 > to manually edit these files and assign non-overlapping ranges. This step is
 > covered in [Prerequisites](#prerequisites).
 @y
 > [!WARNING]
 >
 > Some distributions do not automatically add the new group to the
-> `/etc/subuid` and `/etc/subgid` files. If that's the case, you are may have
+> `/etc/subuid` and `/etc/subgid` files. If that's the case, you may have
 > to manually edit these files and assign non-overlapping ranges. This step is
 > covered in [Prerequisites](#prerequisites).
 @z
@@ -230,11 +226,11 @@ avoid these situations.
 @z
 
 @x
-    ```none
+    ```text
     testuser:231072:65536
     ```
 @y
-    ```none
+    ```text
     testuser:231072:65536
     ```
 @z

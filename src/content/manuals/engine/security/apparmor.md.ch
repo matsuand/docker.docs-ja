@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Enabling AppArmor in Docker
 keywords: AppArmor, security, docker, documentation
 title: AppArmor security profiles for Docker
----
 @y
----
 description: Enabling AppArmor in Docker
 keywords: AppArmor, security, docker, documentation
 title: AppArmor security profiles for Docker
----
 @z
 
 @x
@@ -71,12 +67,12 @@ in the Docker Engine source repository.
 The `docker-default` profile is the default for running containers. It is
 moderately protective while providing wide application compatibility. The
 profile is generated from the following
-[template](https://github.com/moby/moby/blob/master/profiles/apparmor/template.go).
+[template](https://github.com/moby/profiles/blob/main/apparmor/template.go).
 @y
 The `docker-default` profile is the default for running containers. It is
 moderately protective while providing wide application compatibility. The
 profile is generated from the following
-[template](https://github.com/moby/moby/blob/master/profiles/apparmor/template.go).
+[template](https://github.com/moby/profiles/blob/main/apparmor/template.go).
 @z
 
 @x
@@ -695,8 +691,8 @@ in the Docker Engine source repository.
 
 @x
 The `docker-default` profile for containers lives in
-[profiles/apparmor](https://github.com/moby/moby/tree/master/profiles/apparmor).
+[profiles/apparmor](https://github.com/moby/profiles/blob/main/apparmor).
 @y
 The `docker-default` profile for containers lives in
-[profiles/apparmor](https://github.com/moby/moby/tree/master/profiles/apparmor).
+[profiles/apparmor](https://github.com/moby/profiles/blob/main/apparmor).
 @z

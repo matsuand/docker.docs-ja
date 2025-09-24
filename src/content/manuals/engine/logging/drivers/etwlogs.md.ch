@@ -2,23 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Learn how to use the Event Tracing for Windows (ETW) logging driver with Docker Engine
 keywords: ETW, docker, logging, driver
 title: ETW logging driver
-aliases:
-  - /engine/admin/logging/etwlogs/
-  - /config/containers/logging/etwlogs/
----
 @y
----
 description: Learn how to use the Event Tracing for Windows (ETW) logging driver with Docker Engine
 keywords: ETW, docker, logging, driver
 title: ETW logging driver
-aliases:
-  - /engine/admin/logging/etwlogs/
-  - /config/containers/logging/etwlogs/
----
 @z
 
 @x
@@ -66,14 +56,14 @@ included in most installations of Windows:
 @z
 
 @x
-1. `logman start -ets DockerContainerLogs -p {a3693192-9ed6-46d2-a981-f8226c8363bd} 0 0 -o trace.etl`
+1. `logman start -ets DockerContainerLogs -p "{a3693192-9ed6-46d2-a981-f8226c8363bd}" 0x0 -o trace.etl`
 2. Run your container(s) with the etwlogs driver, by adding
    `--log-driver=etwlogs` to the Docker run command, and generate log messages.
 3. `logman stop -ets DockerContainerLogs`
 4. This generates an etl file that contains the events. One way to convert this
    file into human-readable form is to run: `tracerpt -y trace.etl`.
 @y
-1. `logman start -ets DockerContainerLogs -p {a3693192-9ed6-46d2-a981-f8226c8363bd} 0 0 -o trace.etl`
+1. `logman start -ets DockerContainerLogs -p "{a3693192-9ed6-46d2-a981-f8226c8363bd}" 0x0 -o trace.etl`
 2. Run your container(s) with the etwlogs driver, by adding
    `--log-driver=etwlogs` to the Docker run command, and generate log messages.
 3. `logman stop -ets DockerContainerLogs`

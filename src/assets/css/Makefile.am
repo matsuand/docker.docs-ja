@@ -2,21 +2,19 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-bases = \
-	global.css     \
-	typography.css
-
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
+bases = \
+	utilities.css
+
 copyfiles = \
-	code.css         \
+	components.css   \
+	global.css       \
 	hack.css         \
-	icons.css        \
-	lists.css        \
-	styles.css       \
+	style.css        \
 	syntax-dark.css  \
 	syntax-light.css \
-	toc.css
+	theme.css
 
 include $(top_srcdir)/build-aux/copy.mk

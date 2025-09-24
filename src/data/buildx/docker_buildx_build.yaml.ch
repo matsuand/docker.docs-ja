@@ -125,12 +125,6 @@ long: The `docker buildx build` command starts a build using BuildKit.
       description: MEMs in which to allow execution (`0-3`, `0,1`)
 @z
 
-@x detach
-      description: Detach buildx server (supported only on linux)
-@y
-      description: Detach buildx server (supported only on linux)
-@z
-
 @x file
       description: 'Name of the Dockerfile (default: `PATH/Dockerfile`)'
 @y
@@ -261,12 +255,6 @@ long: The `docker buildx build` command starts a build using BuildKit.
       description: Remove intermediate containers after a successful build
 @z
 
-@x root
-      description: Specify root directory of server to connect
-@y
-      description: Specify root directory of server to connect
-@z
-
 @x sbom
       description: Shorthand for `--attest=type=sbom`
 @y
@@ -285,14 +273,6 @@ long: The `docker buildx build` command starts a build using BuildKit.
       description: Security options
 @y
       description: Security options
-@z
-
-@x server-config
-      description: |
-        Specify buildx server config file (used only when launching new server)
-@y
-      description: |
-        Specify buildx server config file (used only when launching new server)
 @z
 
 @x shm-size
@@ -802,25 +782,29 @@ examples: |-
 @z
 
 @x
-    The value can be a local source directory, [local OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md), container image (with docker-image:// prefix), Git or HTTP URL.
+    The value can be a:
 @y
-    The value can be a local source directory, [local OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md), container image (with docker-image:// prefix), Git or HTTP URL.
+    The value can be a:
 @z
 
 @x
-    Replace `alpine:latest` with a pinned one:
+    - local source directory
+    - [local OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md)
+    - container image
+    - Git URL
+    - HTTP URL
 @y
-    Replace `alpine:latest` with a pinned one:
+    - local source directory
+    - [local OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md)
+    - container image
+    - Git URL
+    - HTTP URL
 @z
 
 @x
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
+    #### Use a local path {#local-path}
 @y
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
+    #### Use a local path {#local-path}
 @z
 
 @x
@@ -838,6 +822,34 @@ examples: |-
     ```console
     $ docker buildx build --build-context project=path/to/project/source .
     # docker buildx build --build-context project=https://github.com/myuser/project.git .
+    ```
+@z
+
+@x
+    #### Use a container image {#docker-image}
+@y
+    #### Use a container image {#docker-image}
+@z
+
+@x
+    Use the `docker-image://` scheme.
+@y
+    Use the `docker-image://` scheme.
+@z
+
+@x
+    Replace `alpine:latest` with a pinned one:
+@y
+    Replace `alpine:latest` with a pinned one:
+@z
+
+@x
+    ```console
+    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
+    ```
+@y
+    ```console
+    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
     ```
 @z
 
@@ -862,10 +874,18 @@ examples: |-
 @z
 
 @x
-    Source an image from a local [OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md),
+    Use the `oci-layout:///` scheme.
+@y
+    Use the `oci-layout:///` scheme.
+@z
+
+@x
+    Source an image from a local
+    [OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md),
     either by tag, or by digest:
 @y
-    Source an image from a local [OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md),
+    Source an image from a local
+    [OCI layout compliant directory](https://github.com/opencontainers/image-spec/blob/main/image-layout.md),
     either by tag, or by digest:
 @z
 
@@ -905,10 +925,8 @@ examples: |-
 
 @x
     The OCI layout directory must be compliant with the [OCI layout specification](https://github.com/opencontainers/image-spec/blob/main/image-layout.md).
-    You can reference an image in the layout using either tags, or the exact digest.
 @y
     The OCI layout directory must be compliant with the [OCI layout specification](https://github.com/opencontainers/image-spec/blob/main/image-layout.md).
-    You can reference an image in the layout using either tags, or the exact digest.
 @z
 
 @x
@@ -920,7 +938,7 @@ examples: |-
 @x
     Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @y
-    Same as [`buildx --builder`](__SUBDIR__/reference/cli/docker/buildx/#builder).
+    Same as [`buildx --builder`](/reference/cli/docker/buildx/#builder).
 @z
 
 @x
@@ -940,49 +958,47 @@ examples: |-
 @z
 
 @x
-    Use an external cache source for a build. Supported types are `registry`,
-    `local`, `gha` and `s3`.
+    Use an external cache source for a build. Supported types are:
 @y
-    Use an external cache source for a build. Supported types are `registry`,
-    `local`, `gha` and `s3`.
+    Use an external cache source for a build. Supported types are:
 @z
 
 @x
-    - [`registry` source](https://github.com/moby/buildkit#registry-push-image-and-cache-separately)
+    - [`registry`](/build/cache/backends/registry/)
       can import cache from a cache manifest or (special) image configuration on the
       registry.
-    - [`local` source](https://github.com/moby/buildkit#local-directory-1) can
+    - [`local`](/build/cache/backends/local/) can
       import cache from local files previously exported with `--cache-to`.
-    - [`gha` source](https://github.com/moby/buildkit#github-actions-cache-experimental)
+    - [`gha`](/build/cache/backends/gha/)
       can import cache from a previously exported cache with `--cache-to` in your
-      GitHub repository
-    - [`s3` source](https://github.com/moby/buildkit#s3-cache-experimental)
+      GitHub repository.
+    - [`s3`](/build/cache/backends/s3/)
       can import cache from a previously exported cache with `--cache-to` in your
-      S3 bucket
+      S3 bucket.
+    - [`azblob`](/build/cache/backends/azblob/)
+      can import cache from a previously exported cache with `--cache-to` in your
+      Azure bucket.
 @y
-    - [`registry` source](https://github.com/moby/buildkit#registry-push-image-and-cache-separately)
+    - [`registry`](/build/cache/backends/registry/)
       can import cache from a cache manifest or (special) image configuration on the
       registry.
-    - [`local` source](https://github.com/moby/buildkit#local-directory-1) can
+    - [`local`](/build/cache/backends/local/) can
       import cache from local files previously exported with `--cache-to`.
-    - [`gha` source](https://github.com/moby/buildkit#github-actions-cache-experimental)
+    - [`gha`](/build/cache/backends/gha/)
       can import cache from a previously exported cache with `--cache-to` in your
-      GitHub repository
-    - [`s3` source](https://github.com/moby/buildkit#s3-cache-experimental)
+      GitHub repository.
+    - [`s3`](/build/cache/backends/s3/)
       can import cache from a previously exported cache with `--cache-to` in your
-      S3 bucket
+      S3 bucket.
+    - [`azblob`](/build/cache/backends/azblob/)
+      can import cache from a previously exported cache with `--cache-to` in your
+      Azure bucket.
 @z
 
 @x
     If no type is specified, `registry` exporter is used with a specified reference.
 @y
     If no type is specified, `registry` exporter is used with a specified reference.
-@z
-
-@x
-    `docker` driver currently only supports importing build cache from the registry.
-@y
-    `docker` driver currently only supports importing build cache from the registry.
 @z
 
 @x
@@ -1006,9 +1022,93 @@ examples: |-
 @z
 
 @x
-    More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
+    > [!NOTE]
+    > More info about cache exporters and available attributes can be found in the
+    > [Cache storage backends documentation](/build/cache/backends/)
 @y
-    More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
+    > [!NOTE]
+    > More info about cache exporters and available attributes can be found in the
+    > [Cache storage backends documentation](/build/cache/backends/)
+@z
+
+@x
+    ### Export build cache to an external cache destination (--cache-to) {#cache-to}
+@y
+    ### Export build cache to an external cache destination (--cache-to) {#cache-to}
+@z
+
+@x
+    ```text
+    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@y
+    ```text
+    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
+    ```
+@z
+
+@x
+    Export build cache to an external cache destination. Supported types are:
+@y
+    Export build cache to an external cache destination. Supported types are:
+@z
+
+@x
+    - [`registry`](/build/cache/backends/registry/) exports
+      build cache to a cache manifest in the registry.
+    - [`local`](/build/cache/backends/local/) exports
+      cache to a local directory on the client.
+    - [`inline`](/build/cache/backends/inline/) writes the
+      cache metadata into the image configuration.
+    - [`gha`](/build/cache/backends/gha/) exports cache
+      through the GitHub Actions Cache service API.
+    - [`s3`](/build/cache/backends/s3/) exports cache to a
+      S3 bucket.
+    - [`azblob`](/build/cache/backends/azblob/) exports
+      cache to an Azure bucket.
+@y
+    - [`registry`](/build/cache/backends/registry/) exports
+      build cache to a cache manifest in the registry.
+    - [`local`](/build/cache/backends/local/) exports
+      cache to a local directory on the client.
+    - [`inline`](/build/cache/backends/inline/) writes the
+      cache metadata into the image configuration.
+    - [`gha`](/build/cache/backends/gha/) exports cache
+      through the GitHub Actions Cache service API.
+    - [`s3`](/build/cache/backends/s3/) exports cache to a
+      S3 bucket.
+    - [`azblob`](/build/cache/backends/azblob/) exports
+      cache to an Azure bucket.
+@z
+
+@x
+    ```console
+    $ docker buildx build --cache-to=user/app:cache .
+    $ docker buildx build --cache-to=type=inline .
+    $ docker buildx build --cache-to=type=registry,ref=user/app .
+    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
+    $ docker buildx build --cache-to=type=gha .
+    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@y
+    ```console
+    $ docker buildx build --cache-to=user/app:cache .
+    $ docker buildx build --cache-to=type=inline .
+    $ docker buildx build --cache-to=type=registry,ref=user/app .
+    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
+    $ docker buildx build --cache-to=type=gha .
+    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
+    ```
+@z
+
+@x
+    > [!NOTE]
+    > More info about cache exporters and available attributes can be found in the
+    > [Cache storage backends documentation](/build/cache/backends/)
+@y
+    > [!NOTE]
+    > More info about cache exporters and available attributes can be found in the
+    > [Cache storage backends documentation](/build/cache/backends/)
 @z
 
 @x
@@ -1046,7 +1146,7 @@ examples: |-
 @y
     The `--call` flag for `docker buildx build` lets you specify the frontend
     method that you want to execute. If this flag is unspecified, it defaults to
-    executing the build and evaluating [build checks](__SUBDIR__/reference/build-checks/).
+    executing the build and evaluating [build checks](/reference/build-checks/).
 @z
 
 @x
@@ -1403,102 +1503,6 @@ examples: |-
     test-go-redirects checks that the /go/ redirects are valid
     release (default) is an empty scratch image with only compiled assets
     ```
-@z
-
-@x
-    ### Export build cache to an external cache destination (--cache-to) {#cache-to}
-@y
-    ### Export build cache to an external cache destination (--cache-to) {#cache-to}
-@z
-
-@x
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@y
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@z
-
-@x
-    Export build cache to an external cache destination. Supported types are
-    `registry`, `local`, `inline`, `gha` and `s3`.
-@y
-    Export build cache to an external cache destination. Supported types are
-    `registry`, `local`, `inline`, `gha` and `s3`.
-@z
-
-@x
-    - [`registry` type](https://github.com/moby/buildkit#registry-push-image-and-cache-separately) exports build cache to a cache manifest in the registry.
-    - [`local` type](https://github.com/moby/buildkit#local-directory-1) exports
-      cache to a local directory on the client.
-    - [`inline` type](https://github.com/moby/buildkit#inline-push-image-and-cache-together)
-      writes the cache metadata into the image configuration.
-    - [`gha` type](https://github.com/moby/buildkit#github-actions-cache-experimental)
-      exports cache through the [GitHub Actions Cache service API](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md#authentication).
-    - [`s3` type](https://github.com/moby/buildkit#s3-cache-experimental) exports
-      cache to a S3 bucket.
-@y
-    - [`registry` type](https://github.com/moby/buildkit#registry-push-image-and-cache-separately) exports build cache to a cache manifest in the registry.
-    - [`local` type](https://github.com/moby/buildkit#local-directory-1) exports
-      cache to a local directory on the client.
-    - [`inline` type](https://github.com/moby/buildkit#inline-push-image-and-cache-together)
-      writes the cache metadata into the image configuration.
-    - [`gha` type](https://github.com/moby/buildkit#github-actions-cache-experimental)
-      exports cache through the [GitHub Actions Cache service API](https://github.com/tonistiigi/go-actions-cache/blob/master/api.md#authentication).
-    - [`s3` type](https://github.com/moby/buildkit#s3-cache-experimental) exports
-      cache to a S3 bucket.
-@z
-
-@x
-    The `docker` driver only supports cache exports using the `inline` and `local`
-    cache backends.
-@y
-    The `docker` driver only supports cache exports using the `inline` and `local`
-    cache backends.
-@z
-
-@x
-    Attribute key:
-@y
-    Attribute key:
-@z
-
-@x
-    - `mode` - Specifies how many layers are exported with the cache. `min` on only
-      exports layers already in the final build stage, `max` exports layers for
-      all stages. Metadata is always exported for the whole build.
-@y
-    - `mode` - Specifies how many layers are exported with the cache. `min` on only
-      exports layers already in the final build stage, `max` exports layers for
-      all stages. Metadata is always exported for the whole build.
-@z
-
-@x
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@y
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@z
-
-@x
-    More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
-@y
-    More info about cache exporters and available attributes: https://github.com/moby/buildkit#export-cache
 @z
 
 @x
@@ -1514,7 +1518,7 @@ examples: |-
 @y
     When you run `docker buildx build` with the `--cgroup-parent` option,
     the daemon runs the containers used in the build with the
-    [corresponding `docker run` flag](__SUBDIR__/reference/cli/docker/container/run/#cgroup-parent).
+    [corresponding `docker run` flag](/reference/cli/docker/container/run/#cgroup-parent).
 @z
 
 @x
@@ -1650,7 +1654,7 @@ examples: |-
     > - `disabled`, `false` or `0` doesn't set any provenance.
 @y
     > [!NOTE]
-    > Build record [provenance](__SUBDIR__/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
+    > Build record [provenance](/build/metadata/attestations/slsa-provenance/#provenance-attestation-example)
     > (`buildx.build.provenance`) includes minimal provenance by default. Set the
     > `BUILDX_METADATA_PROVENANCE` environment variable to customize this behavior:
     >
@@ -1696,7 +1700,7 @@ examples: |-
 @x
     Find more details in the [Dockerfile reference](/reference/dockerfile/#run---network).
 @y
-    Find more details in the [Dockerfile reference](__SUBDIR__/reference/dockerfile/#run---network).
+    Find more details in the [Dockerfile reference](/reference/dockerfile/#run---network).
 @z
 
 @x
@@ -1743,7 +1747,63 @@ examples: |-
     - `release`
 @z
 
-% snip code...
+@x
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@y
+    ```dockerfile
+    # syntax=docker/dockerfile:1
+@z
+
+@x
+    FROM oven/bun:1 AS base
+    WORKDIR /app
+@y
+    FROM oven/bun:1 AS base
+    WORKDIR /app
+@z
+
+@x
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@y
+    FROM base AS install
+    WORKDIR /temp/dev
+    RUN --mount=type=bind,source=package.json,target=package.json \
+        --mount=type=bind,source=bun.lockb,target=bun.lockb \
+        bun install --frozen-lockfile
+@z
+
+@x
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@y
+    FROM base AS test
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    RUN bun test
+@z
+
+@x
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@y
+    FROM base AS release
+    ENV NODE_ENV=production
+    COPY --from=install /temp/dev/node_modules node_modules
+    COPY . .
+    ENTRYPOINT ["bun", "run", "index.js"]
+    ```
+@z
 
 @x
     To ignore the cache for the `install` stage:
@@ -1807,7 +1867,7 @@ examples: |-
     OCI image tarball, a registry, and more.
 @y
     Sets the export action for the build result. The default output, when using the
-    `docker` [build driver](__SUBDIR__/build/builders/drivers/), is a container
+    `docker` [build driver](/build/builders/drivers/), is a container
     image exported to the local image store. The `--output` flag makes this step
     configurable allows export of results directly to the client's filesystem, an
     OCI image tarball, a registry, and more.
@@ -1819,7 +1879,7 @@ examples: |-
     driver supports all exporters.
 @y
     Buildx with `docker` driver only supports the local, tarball, and image
-    [exporters](__SUBDIR__/build/exporters/). The `docker-container`
+    [exporters](/build/exporters/). The `docker-container`
     driver supports all exporters.
 @z
 
@@ -1914,7 +1974,7 @@ examples: |-
     [Local and tar exporters](/build/exporters/local-tar/).
 @y
     For more information, see
-    [Local and tar exporters](__SUBDIR__/build/exporters/local-tar/).
+    [Local and tar exporters](/build/exporters/local-tar/).
 @z
 
 @x
@@ -1948,7 +2008,7 @@ examples: |-
     [Local and tar exporters](/build/exporters/local-tar/).
 @y
     For more information, see
-    [Local and tar exporters](__SUBDIR__/build/exporters/local-tar/).
+    [Local and tar exporters](/build/exporters/local-tar/).
 @z
 
 @x
@@ -1984,7 +2044,7 @@ examples: |-
     [OCI and Docker exporters](/build/exporters/oci-docker/).
 @y
     For more information, see
-    [OCI and Docker exporters](__SUBDIR__/build/exporters/oci-docker/).
+    [OCI and Docker exporters](/build/exporters/oci-docker/).
 @z
 
 @x
@@ -2034,7 +2094,7 @@ examples: |-
     [OCI and Docker exporters](/build/exporters/oci-docker/).
 @y
     For more information, see
-    [OCI and Docker exporters](__SUBDIR__/build/exporters/oci-docker/).
+    [OCI and Docker exporters](/build/exporters/oci-docker/).
 @z
 
 @x
@@ -2072,7 +2132,7 @@ examples: |-
     [Image and registry exporters](/build/exporters/image-registry/).
 @y
     For more information, see
-    [Image and registry exporters](__SUBDIR__/build/exporters/image-registry/).
+    [Image and registry exporters](/build/exporters/image-registry/).
 @z
 
 @x
@@ -2092,7 +2152,7 @@ examples: |-
     [Image and registry exporters](/build/exporters/image-registry/).
 @y
     For more information, see
-    [Image and registry exporters](__SUBDIR__/build/exporters/image-registry/).
+    [Image and registry exporters](/build/exporters/image-registry/).
 @z
 
 @x
@@ -2173,7 +2233,7 @@ examples: |-
     for the full description of automatic platform argument variants .
 @y
     Inside a `Dockerfile`, you can access the current platform value through
-    `TARGETPLATFORM` build argument. Refer to the [Dockerfile reference](__SUBDIR__/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
+    `TARGETPLATFORM` build argument. Refer to the [Dockerfile reference](/reference/dockerfile/#automatic-platform-args-in-the-global-scope)
     for the full description of automatic platform argument variants .
 @z
 
@@ -2283,7 +2343,7 @@ examples: |-
     > environment variable for modifying the colors of the terminal output.
 @y
     > [!NOTE]
-    > Check also the [`BUILDKIT_COLORS`](__SUBDIR__/build/building/variables/#buildkit_colors)
+    > Check also the [`BUILDKIT_COLORS`](/build/building/variables/#buildkit_colors)
     > environment variable for modifying the colors of the terminal output.
 @z
 
@@ -2342,7 +2402,7 @@ examples: |-
     [here](/build/metadata/attestations/slsa-provenance/).
 @y
     For more information about provenance attestations, see
-    [here](__SUBDIR__/build/metadata/attestations/slsa-provenance/).
+    [here](/build/metadata/attestations/slsa-provenance/).
 @z
 
 @x
@@ -2400,7 +2460,7 @@ examples: |-
 @x
     For more information, see [here](/build/metadata/attestations/sbom/).
 @y
-    For more information, see [here](__SUBDIR__/build/metadata/attestations/sbom/).
+    For more information, see [here](/build/metadata/attestations/sbom/).
 @z
 
 @x
@@ -2428,9 +2488,9 @@ examples: |-
 @y
     Exposes secrets (authentication credentials, tokens) to the build.
     A secret can be mounted into the build using a `RUN --mount=type=secret` mount in the
-    [Dockerfile](__SUBDIR__/reference/dockerfile/#run---mounttypesecret).
+    [Dockerfile](/reference/dockerfile/#run---mounttypesecret).
     For more information about how to use build secrets, see
-    [Build secrets](__SUBDIR__/build/building/secrets/).
+    [Build secrets](/build/building/secrets/).
 @z
 
 @x
@@ -2750,7 +2810,7 @@ examples: |-
     [`RUN --mount=type=ssh` mount](/reference/dockerfile/#run---mounttypessh).
 @y
     `--ssh` exposes SSH agent socket or keys to the build and can be used with the
-    [`RUN --mount=type=ssh` mount](__SUBDIR__/reference/dockerfile/#run---mounttypessh).
+    [`RUN --mount=type=ssh` mount](/reference/dockerfile/#run---mounttypessh).
 @z
 
 @x
@@ -2824,7 +2884,7 @@ examples: |-
 @x
     [Read more about valid tags](/reference/cli/docker/image/tag/).
 @y
-    [Read more about valid tags](__SUBDIR__/reference/cli/docker/image/tag/).
+    [Read more about valid tags](/reference/cli/docker/image/tag/).
 @z
 
 @x
@@ -2937,6 +2997,18 @@ examples: |-
     > If you don't provide a `hard limit`, the `soft limit` is used
     > for both values. If no `ulimits` are set, they're inherited from
     > the default `ulimits` set on the daemon.
+@z
+
+@x
+    > [!NOTE]
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
+@y
+    > [!NOTE]
+    > In most cases, it is recommended to let the builder automatically determine
+    > the appropriate configurations. Manual adjustments should only be considered
+    > when specific performance tuning is required for complex build scenarios.
 @z
 
 % snip directives...

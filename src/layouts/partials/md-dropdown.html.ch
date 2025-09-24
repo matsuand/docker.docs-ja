@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<details id="markdownDropdown" class="group relative z-10 inline-block" data-heap-id="markdown-dropdown">
+<details id="markdownDropdown" class="ml-3 group relative z-10 inline-block" data-heap-id="markdown-dropdown">
     <summary
-      class="inline-flex cursor-pointer items-center gap-2 rounded border border-gray-light-200 bg-gray-light-200 px-4 py-2 text-base font-semibold text-black transition-colors hover:bg-gray-light-300 dark:border-gray-dark-200 dark:bg-gray-dark-300 dark:text-white dark:hover:bg-gray-dark-400"
+      class="dropdown-base hover:bg-gray-50 dark:hover:bg-gray-900 inline-flex cursor-pointer items-center gap-0 py-1 pl-2 text-sm font-semibold transition-colors"
       data-heap-id="markdown-dropdown-toggle"
     >
-      <span>Page options</span>
+      <span class="font-normal">Page options</span>
       <span class="icon-svg transition-transform group-open:rotate-180">
         {{ partialCached "icon" "arrow_drop_down" "arrow_drop_down" }}
       </span>
@@ -15,12 +15,12 @@
       </svg>
     </summary>
 @y
-<details id="markdownDropdown" class="group relative z-10 inline-block" data-heap-id="markdown-dropdown">
+<details id="markdownDropdown" class="ml-3 group relative z-10 inline-block" data-heap-id="markdown-dropdown">
     <summary
-      class="inline-flex cursor-pointer items-center gap-2 rounded border border-gray-light-200 bg-gray-light-200 px-4 py-2 text-base font-semibold text-black transition-colors hover:bg-gray-light-300 dark:border-gray-dark-200 dark:bg-gray-dark-300 dark:text-white dark:hover:bg-gray-dark-400"
+      class="dropdown-base hover:bg-gray-50 dark:hover:bg-gray-900 inline-flex cursor-pointer items-center gap-0 py-1 pl-2 text-sm font-semibold transition-colors"
       data-heap-id="markdown-dropdown-toggle"
     >
-      <span>Page options</span>
+      <span class="font-normal">Page options</span>
       <span class="icon-svg transition-transform group-open:rotate-180">
         {{ partialCached "icon" "arrow_drop_down" "arrow_drop_down" }}
       </span>
@@ -32,13 +32,13 @@
 @x
     <!-- Dropdown menu -->
     <div
-      class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded border border-gray-light-200 bg-gray-light-200 p-2 text-sm text-black shadow-md [display:none] group-open:[display:block] dark:border-gray-dark-200 dark:bg-gray-dark-300 dark:text-white"
+      class="dropdown-base absolute right-0 z-50 mt-1 w-65 origin-top-right p-2 text-sm shadow-md [display:none] group-open:[display:block]"
       data-heap-id="markdown-dropdown-menu"
     >
       <button
         onclick="copyMarkdown()"
         data-heap-id="copy-markdown-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "content_copy" }}
@@ -53,13 +53,13 @@
 @y
     <!-- Dropdown menu -->
     <div
-      class="absolute right-0 z-50 mt-2 w-56 origin-top-right rounded border border-gray-light-200 bg-gray-light-200 p-2 text-sm text-black shadow-md [display:none] group-open:[display:block] dark:border-gray-dark-200 dark:bg-gray-dark-300 dark:text-white"
+      class="dropdown-base absolute right-0 z-50 mt-1 w-65 origin-top-right p-2 text-sm shadow-md [display:none] group-open:[display:block]"
       data-heap-id="markdown-dropdown-menu"
     >
       <button
         onclick="copyMarkdown()"
         data-heap-id="copy-markdown-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "content_copy" }}
@@ -77,7 +77,7 @@
       <button
         onclick="viewPlainText()"
         data-heap-id="view-markdown-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "description" }}
@@ -90,7 +90,7 @@
       <button
         onclick="viewPlainText()"
         data-heap-id="view-markdown-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "description" }}
@@ -105,7 +105,7 @@
       <button
         onclick="openInDocsAI()"
         data-heap-id="search-docs-ai-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "search" }}
@@ -114,13 +114,25 @@
           <div class="text-base">Ask questions with Docs AI</div>
         </div>
       </button>
-    </div>
-  </details>
+      {{ if eq hugo.Environment "production" }}
+       <button
+        onclick="openInClaude()"
+        data-heap-id="search-docs-ai-button"
+        class="sub-button"
+      >
+        <span class="icon-svg mt-[2px] text-base leading-none">
+          {{ partial "icon" "/icons/claude.svg" }}
+        </span>
+        <div class="leading-tight">
+          <div class="text-base">Open in Claude</div>
+        </div>
+      </button>
+      {{ end }}
 @y
       <button
         onclick="openInDocsAI()"
         data-heap-id="search-docs-ai-button"
-        class="flex w-full items-start gap-2 rounded px-2 py-2 text-left transition-colors hover:bg-gray-light-300 dark:hover:bg-gray-dark-400"
+        class="sub-button"
       >
         <span class="icon-svg mt-[2px] text-base leading-none">
           {{ partial "icon" "search" }}
@@ -129,18 +141,38 @@
           <div class="text-base">Ask questions with Docs AI</div>
         </div>
       </button>
+      {{ if eq hugo.Environment "production" }}
+       <button
+        onclick="openInClaude()"
+        data-heap-id="search-docs-ai-button"
+        class="sub-button"
+      >
+        <span class="icon-svg mt-[2px] text-base leading-none">
+          {{ partial "icon" "/icons/claude.svg" }}
+        </span>
+        <div class="leading-tight">
+          <div class="text-base">Open in Claude</div>
+        </div>
+      </button>
+      {{ end }}
+@z
+
+@x
+    </div>
+  </details>
+@y
     </div>
   </details>
 @z
 
 @x
-  <script>
+<script>
     function getCurrentPlaintextUrl() {
       const url = window.location.href.split("#")[0].replace(/\/$/, "");
       return `${url}/index.md`;
     }
 @y
-  <script>
+<script>
     function getCurrentPlaintextUrl() {
       const url = window.location.href.split("#")[0].replace(/\/$/, "");
       return `${url}/index.md`;
@@ -238,35 +270,21 @@
 @z
 
 @x
-    document.addEventListener("click", function (event) {
-      const dropdown = document.getElementById("markdownDropdown");
-@y
-    document.addEventListener("click", function (event) {
-      const dropdown = document.getElementById("markdownDropdown");
-@z
-
-@x
-      if (!dropdown) return;
-@y
-      if (!dropdown) return;
-@z
-
-@x
-      const isClickInside = dropdown.contains(event.target);
-@y
-      const isClickInside = dropdown.contains(event.target);
-@z
-
-@x
-      if (!isClickInside && dropdown.hasAttribute("open")) {
-        dropdown.removeAttribute("open");
-      }
-    });
+    function openInClaude() {
+      const markdownUrl = getCurrentPlaintextUrl();
+      const prompt = `Read ${markdownUrl} so I can ask questions about it.`;
+      const encodedText = encodeURIComponent(prompt);
+      const claudeUrl = `https://claude.ai/new?q=${encodedText}`;
+      window.open(claudeUrl, '_blank');
+    }
   </script>
 @y
-      if (!isClickInside && dropdown.hasAttribute("open")) {
-        dropdown.removeAttribute("open");
-      }
-    });
+    function openInClaude() {
+      const markdownUrl = getCurrentPlaintextUrl();
+      const prompt = `Read ${markdownUrl} so I can ask questions about it.`;
+      const encodedText = encodeURIComponent(prompt);
+      const claudeUrl = `https://claude.ai/new?q=${encodedText}`;
+      window.open(claudeUrl, '_blank');
+    }
   </script>
 @z

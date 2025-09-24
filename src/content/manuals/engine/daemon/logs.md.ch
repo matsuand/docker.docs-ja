@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Read the daemon logs
 description: How to read the event logs for the Docker daemon
 keywords: docker, daemon, configuration, troubleshooting, logging
-aliases:
-  - /config/daemon/logs/
----
 @y
----
 title: Read the daemon logs
 description: How to read the event logs for the Docker daemon
 keywords: docker, daemon, configuration, troubleshooting, logging
-aliases:
-  - /config/daemon/logs/
----
 @z
 
 @x
@@ -300,11 +292,11 @@ Look in the Docker logs for a message like the following:
 @z
 
 @x
-```none
+```text
 ...goroutine stacks written to /var/run/docker/goroutine-stacks-2017-06-02T193336z.log
 ```
 @y
-```none
+```text
 ...goroutine stacks written to /var/run/docker/goroutine-stacks-2017-06-02T193336z.log
 ```
 @z

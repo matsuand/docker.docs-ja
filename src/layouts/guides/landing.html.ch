@@ -2,37 +2,41 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-  <p>Filter guides by tag or programming language.<p>
+    <p>Filter guides by tag or programming language.</p>
 @y
-  <p>検索フィルターによりタグまたはプログラミング言語を絞り込みます<p>
+    <p>検索フィルターによりタグまたはプログラミング言語を絞り込みます<p>
 @z
 
 @x
-    <div class="pl-2"><strong>Tags</strong></div>
+      <div class="pl-2"><strong>Tags</strong></div>
 @y
-    <div class="pl-2"><strong>タグ</strong></div>
+      <div class="pl-2"><strong>タグ</strong></div>
 @z
 
 @x
-    <div class="pl-2"><strong>Languages</strong></div>
+      <div class="pl-2"><strong>Languages</strong></div>
 @y
-    <div class="pl-2"><strong>プログラミング言語</strong></div>
+      <div class="pl-2"><strong>プログラミング言語</strong></div>
 @z
 
 @x
-        <h2>Featured guides</h2>
+          <h2>Featured guides</h2>
 @y
-        <h2>注目の話題</h2>
+          <h2>注目の話題</h2>
 @z
 
 @x
-      <h2 x-show="noFilters()" id="all-guides" class="scroll-mt-36">All guides</h2>
+          All guides
 @y
-      <h2 x-show="noFilters()" id="all-guides" class="scroll-mt-36">全ガイド</h2>
+          全ガイド
 @z
 
 @x
-          <p>Filtered results: showing <span x-text="total - hidden.length"></span> out of <span x-text="total"></span> guides.</p>
+              Filtered results: showing
+              <span x-text="total - hidden.length"></span> out of
+              <span x-text="total"></span> guides.
 @y
-          <p>フィルター結果: <span x-text="total"></span> 件中 <span x-text="total - hidden.length"></span> 件のガイドを表示</p>
+              フィルター結果:
+              <span x-text="total"></span> 件中
+              <span x-text="total - hidden.length"></span> 件のガイドを表示
 @z

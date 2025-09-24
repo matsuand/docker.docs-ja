@@ -3,11 +3,11 @@
 
 @x
 title: Extensions
-description: Understand how to use extensions
+description: Define and reuse custom fragments with extensions in Docker Compose
 keywords: compose, compose specification, extensions, compose file reference
 @y
 title: Extensions
-description: Understand how to use extensions
+description: Define and reuse custom fragments with extensions in Docker Compose
 keywords: compose, compose specification, extensions, compose file reference
 @z
 
@@ -268,9 +268,9 @@ services:
 @z
 
 @x
-## Informative Historical Notes
+## Informative historical notes
 @y
-## Informative Historical Notes
+## Informative historical notes
 @z
 
 @x

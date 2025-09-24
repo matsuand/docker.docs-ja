@@ -18,9 +18,9 @@ Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active d
 @z
 
 @x
-If you are an existing DDE customer, use our [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of our new [subscription plans](https://www.docker.com/pricing).
+If you are an existing DDE customer, use our [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of our new [subscriptions](https://www.docker.com/pricing).
 @y
-If you are an existing DDE customer, use our [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of our new [subscription plans](https://www.docker.com/pricing).
+If you are an existing DDE customer, use our [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of our new [subscriptions](https://www.docker.com/pricing).
 @z
 
 @x

@@ -4,16 +4,25 @@
 @x
 command: docker buildx history trace
 short: Show the OpenTelemetry trace of a build record
-long: Show the OpenTelemetry trace of a build record
+long: |-
+    View the OpenTelemetry trace for a completed build. This command loads the
+    trace into a Jaeger UI viewer and opens it in your browser.
+
+    This helps analyze build performance, step timing, and internal execution flows.
 usage: docker buildx history trace [OPTIONS] [REF]
 @y
 command: docker buildx history trace
 short: Show the OpenTelemetry trace of a build record
-long: Show the OpenTelemetry trace of a build record
+long: |-
+    View the OpenTelemetry trace for a completed build. This command loads the
+    trace into a Jaeger UI viewer and opens it in your browser.
+
+    This helps analyze build performance, step timing, and internal execution flows.
 usage: docker buildx history trace [OPTIONS] [REF]
 @z
 
 % options:
+
 @x addr
       description: Address to bind the UI server
 @y
@@ -21,12 +30,13 @@ usage: docker buildx history trace [OPTIONS] [REF]
 @z
 
 @x compare
-      description: Compare with another build reference
+      description: Compare with another build record
 @y
-      description: Compare with another build reference
+      description: Compare with another build record
 @z
 
 % inherited_options:
+
 @x builder
       description: Override the configured builder instance
 @y

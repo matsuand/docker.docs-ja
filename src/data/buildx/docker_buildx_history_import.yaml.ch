@@ -3,14 +3,20 @@
 
 @x
 command: docker buildx history import
-short: Import a build into Docker Desktop
-long: Import a build into Docker Desktop
-usage: docker buildx history import [OPTIONS] < bundle.dockerbuild
+short: Import build records into Docker Desktop
+long: |-
+    Import a build record from a `.dockerbuild` archive into Docker Desktop. This
+    lets you view, inspect, and analyze builds created in other environments or CI
+    pipelines.
+usage: docker buildx history import [OPTIONS] -
 @y
 command: docker buildx history import
-short: Import a build into Docker Desktop
-long: Import a build into Docker Desktop
-usage: docker buildx history import [OPTIONS] < bundle.dockerbuild
+short: Import build records into Docker Desktop
+long: |-
+    Import a build record from a `.dockerbuild` archive into Docker Desktop. This
+    lets you view, inspect, and analyze builds created in other environments or CI
+    pipelines.
+usage: docker buildx history import [OPTIONS] -
 @z
 
 % options:

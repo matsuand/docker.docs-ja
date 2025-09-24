@@ -26,6 +26,562 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.39.2
+@y
+## 2.39.2
+@z
+
+@x
+{{< release-date date="2025-08-04" >}}
+@y
+{{< release-date date="2025-08-04" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed multiple rendering issues with the build output
+- Fixed issue when `pull` and `no_cache` attributes were not applied with `bake`
+- Removed log display of explicitly un-attached services on `up` command
+@y
+- Fixed multiple rendering issues with the build output
+- Fixed issue when `pull` and `no_cache` attributes were not applied with `bake`
+- Removed log display of explicitly un-attached services on `up` command
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.3.3
+- Dependencies upgrade: bump golang to v1.23.12
+- Dependencies upgrade: bump containerd to 2.1.4
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.3.3
+- Dependencies upgrade: bump golang to v1.23.12
+- Dependencies upgrade: bump containerd to 2.1.4
+@z
+
+@x
+## 2.39.1
+@y
+## 2.39.1
+@z
+
+@x
+{{< release-date date="2025-07-24" >}}
+@y
+{{< release-date date="2025-07-24" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added metrics to monitor `models` usage
+@y
+- Added metrics to monitor `models` usage
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.8.1
+@y
+- Dependencies upgrade: bump compose-go to v2.8.1
+@z
+
+@x
+## 2.39.0
+@y
+## 2.39.0
+@z
+
+@x
+{{< release-date date="2025-07-24" >}}
+@y
+{{< release-date date="2025-07-24" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added `--models` flag to `config` command to list models
+- Added `--since` and `--until` flags to `events`
+- Introduced `provenance` and `sbom` attributes to `build` section
+- Fixed `bridge convert` issue on Windows 
+- Fixed multiple issues with `bake` builds
+@y
+- Added `--models` flag to `config` command to list models
+- Added `--since` and `--until` flags to `events`
+- Introduced `provenance` and `sbom` attributes to `build` section
+- Fixed `bridge convert` issue on Windows 
+- Fixed multiple issues with `bake` builds
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.3.2
+- Dependencies upgrade: bump buildx to v0.26.1
+- Dependencies upgrade: bump compose-go to v2.8.0
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.3.2
+- Dependencies upgrade: bump buildx to v0.26.1
+- Dependencies upgrade: bump compose-go to v2.8.0
+@z
+
+@x
+## 2.38.2
+@y
+## 2.38.2
+@z
+
+@x
+{{< release-date date="2025-07-08" >}}
+@y
+{{< release-date date="2025-07-08" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added `--networks` flag to `config` command to list networks
+- Fixed an issue on `down` command with Docker Model Runner used as a provider service
+- Fixed a display issue on Docker Model Runner progress
+- Fixed an issue with services with profile missing secrets
+@y
+- Added `--networks` flag to `config` command to list networks
+- Fixed an issue on `down` command with Docker Model Runner used as a provider service
+- Fixed a display issue on Docker Model Runner progress
+- Fixed an issue with services with profile missing secrets
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.3.1
+- Dependencies upgrade: bump buildkit to v0.23.2
+- Dependencies upgrade: bump golang to v1.23.10
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.3.1
+- Dependencies upgrade: bump buildkit to v0.23.2
+- Dependencies upgrade: bump golang to v1.23.10
+@z
+
+@x
+## 2.38.1
+@y
+## 2.38.1
+@z
+
+@x
+{{< release-date date="2025-06-30" >}}
+@y
+{{< release-date date="2025-06-30" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added support of `model_variable` for service `models` configuration
+@y
+- Added support of `model_variable` for service `models` configuration
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.7.1
+@y
+- Dependencies upgrade: bump compose-go to v2.7.1
+@z
+
+@x
+## 2.38.0
+@y
+## 2.38.0
+@z
+
+@x
+{{< release-date date="2025-06-30" >}}
+@y
+{{< release-date date="2025-06-30" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduced support of `models` for LLM configuration
+- Added `volumes` command
+- Removed `publish` limitation on bind mounts
+- Fixed an issue mounting the docker socket to container which doesn't need it
+- Fixed an issue with bake hanging on output
+@y
+- Introduced support of `models` for LLM configuration
+- Added `volumes` command
+- Removed `publish` limitation on bind mounts
+- Fixed an issue mounting the docker socket to container which doesn't need it
+- Fixed an issue with bake hanging on output
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.7.0
+- Dependencies upgrade: bump docker engine and cli to v28.3.0
+@y
+- Dependencies upgrade: bump compose-go to v2.7.0
+- Dependencies upgrade: bump docker engine and cli to v28.3.0
+@z
+
+@x
+## 2.37.3
+@y
+## 2.37.3
+@z
+
+@x
+{{< release-date date="2025-06-24" >}}
+@y
+{{< release-date date="2025-06-24" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added support of `cache_to` for Bake
+- Fixed issue with Bake integration
+- Fixed multiple issues affecting `run` command
+@y
+- Added support of `cache_to` for Bake
+- Fixed issue with Bake integration
+- Fixed multiple issues affecting `run` command
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump buildkit to v0.23.1
+@y
+- Dependencies upgrade: bump buildkit to v0.23.1
+@z
+
+@x
+## 2.37.2
+@y
+## 2.37.2
+@z
+
+@x
+{{< release-date date="2025-06-20" >}}
+@y
+{{< release-date date="2025-06-20" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduce `use_api_socket`
+- Fixed `compose images` JSON output format
+- Fixed panic using `w` shortcut on project without watch support
+- Fixed a permission issue with bake metadata files on Windows
+- Fixed a panic error on provider service startup
+@y
+- Introduce `use_api_socket`
+- Fixed `compose images` JSON output format
+- Fixed panic using `w` shortcut on project without watch support
+- Fixed a permission issue with bake metadata files on Windows
+- Fixed a panic error on provider service startup
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.6.5
+- Dependencies upgrade: bump buildx to v0.25.0
+- Dependencies upgrade: bump buildkit to v0.23.0
+@y
+- Dependencies upgrade: bump compose-go to v2.6.5
+- Dependencies upgrade: bump buildx to v0.25.0
+- Dependencies upgrade: bump buildkit to v0.23.0
+@z
+
+@x
+## 2.37.1
+@y
+## 2.37.1
+@z
+
+@x
+{{< release-date date="2025-06-12" >}}
+@y
+{{< release-date date="2025-06-12" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed a permission issue with bake metadata files on Windows
+- Fixed a panic error on provider service startup
+- Reverted `compose images` JSON output to array format
+@y
+- Fixed a permission issue with bake metadata files on Windows
+- Fixed a panic error on provider service startup
+- Reverted `compose images` JSON output to array format
+@z
+
+@x
+## 2.37.0
+@y
+## 2.37.0
+@z
+
+@x
+{{< release-date date="2025-06-05" >}}
+@y
+{{< release-date date="2025-06-05" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fixed an issue with random port allocation
+- Fixed an issue recreating containers when not needed during inner loop
+- Fixed a problem during `up --build` with `additional_context`
+@y
+- Fixed an issue with random port allocation
+- Fixed an issue recreating containers when not needed during inner loop
+- Fixed a problem during `up --build` with `additional_context`
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.6.4
+- Dependencies upgrade: bump buildx to v0.24.0
+- Dependencies upgrade: bump buildkit to v0.22.0
+@y
+- Dependencies upgrade: bump compose-go to v2.6.4
+- Dependencies upgrade: bump buildx to v0.24.0
+- Dependencies upgrade: bump buildkit to v0.22.0
+@z
+
+@x
+## 2.36.2
+@y
+## 2.36.2
+@z
+
+@x
+{{< release-date date="2025-05-23" >}}
+@y
+{{< release-date date="2025-05-23" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Compose Bridge features are now part of Compose
+- Improved display of the `docker compose images` command
+- Promoted `bake` as the default build tool for Compose
+- Fixed issues around build flow
+- Fixed the restart of dependent services after `watch` rebuild images
+@y
+- Compose Bridge features are now part of Compose
+- Improved display of the `docker compose images` command
+- Promoted `bake` as the default build tool for Compose
+- Fixed issues around build flow
+- Fixed the restart of dependent services after `watch` rebuild images
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.2.2
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.2.2
+@z
+
+@x
+## 2.36.1
+@y
+## 2.36.1
+@z
+
+@x
+{{< release-date date="2025-05-19" >}}
+@y
+{{< release-date date="2025-05-19" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduced support of arrays for `provider` service `options` attribute
+- Added `debug` messages in the extension protocol
+- Fixed an issue when trying to publish a Compose application with a `provider` service
+- Fixed build issues on Compose applications with `service.provider`
+- Introduced `--lock-image-digests` to `config` command
+@y
+- Introduced support of arrays for `provider` service `options` attribute
+- Added `debug` messages in the extension protocol
+- Fixed an issue when trying to publish a Compose application with a `provider` service
+- Fixed build issues on Compose applications with `service.provider`
+- Introduced `--lock-image-digests` to `config` command
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.6.3
+- Dependencies upgrade: bump containerd to 2.1.0
+@y
+- Dependencies upgrade: bump compose-go to v2.6.3
+- Dependencies upgrade: bump containerd to 2.1.0
+@z
+
+@x
+## 2.36.0
+@y
+## 2.36.0
+@z
+
+@x
+{{< release-date date="2025-05-07" >}}
+@y
+{{< release-date date="2025-05-07" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Introduced `networks.interface_name`
+- Added support for `COMPOSE_PROGRESS` env variable
+- Added `service.provider` to external binaries
+- Introduced build `--check` flag
+- Fixed multiple panic issues when parsing Compose files
+@y
+- Introduced `networks.interface_name`
+- Added support for `COMPOSE_PROGRESS` env variable
+- Added `service.provider` to external binaries
+- Introduced build `--check` flag
+- Fixed multiple panic issues when parsing Compose files
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.6.2
+- Dependencies upgrade: bump docker engine and cli to v28.1.0
+- Dependencies upgrade: bump containerd to 2.0.5
+- Dependencies upgrade: bump buildkit to v0.21.1
+@y
+- Dependencies upgrade: bump compose-go to v2.6.2
+- Dependencies upgrade: bump docker engine and cli to v28.1.0
+- Dependencies upgrade: bump containerd to 2.0.5
+- Dependencies upgrade: bump buildkit to v0.21.1
+@z
+
+@x
 ## 2.35.1
 @y
 ## 2.35.1
@@ -84,7 +640,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
-- Added support for [Docker Model Runner](/manuals/desktop/features/model-runner.md) to easily integrate AI models into your Compose applications
+- Added support for [Docker Model Runner](/manuals/ai/model-runner.md) to easily integrate AI models into your Compose applications
 - Added `build --print` command to help debug complex build configurations by showing the equivalent bake file
 - Added `volume.type=image` to provide more flexible volume management for container images
 - Added `--quiet` options to the `run` command for cleaner output when running containers
@@ -93,7 +649,7 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Fixed support for secrets defined by environment variables when using `include`
 - Fixed volume mount handling to ensure bind mounts work correctly in all scenarios
 @y
-- Added support for [Docker Model Runner](manuals/desktop/features/model-runner.md) to easily integrate AI models into your Compose applications
+- Added support for [Docker Model Runner](manuals/ai/model-runner.md) to easily integrate AI models into your Compose applications
 - Added `build --print` command to help debug complex build configurations by showing the equivalent bake file
 - Added `volume.type=image` to provide more flexible volume management for container images
 - Added `--quiet` options to the `run` command for cleaner output when running containers

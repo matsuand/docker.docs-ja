@@ -5,9 +5,9 @@ SUBDIRS = single-sign-on
 
 bases = \
 	_index.md             \
+	containers.md         \
 	general.md            \
-	networking-and-vms.md \
-	containers.md
+	networking-and-vms.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -158,95 +158,33 @@ As an example consider the following configuration:
 % snip code...
 
 @x within code
-# Only start backend and db
+# Only start backend and db (no profiles involved)
 @y
-# Only start backend and db
+# Only start backend and db (no profiles involved)
 @z
 
 @x
-# This runs db-migrations (and, if necessary, start db)
-# by implicitly enabling the profiles "tools"
+# Run the db-migrations service without manually enabling the 'tools' profile
 @y
-# This runs db-migrations (and, if necessary, start db)
-# by implicitly enabling the profiles "tools"
+# Run the db-migrations service without manually enabling the 'tools' profile
 @z
 
 @x
-But keep in mind that `docker compose` only automatically starts the
-profiles of the services on the command line and not of any dependencies. 
+In this example, `db-migrations` runs even though it is assigned to the tools profile, because it was explicitly targeted. The `db` service is also started automatically because it is listed in `depends_on`.
 @y
-But keep in mind that `docker compose` only automatically starts the
-profiles of the services on the command line and not of any dependencies. 
+In this example, `db-migrations` runs even though it is assigned to the tools profile, because it was explicitly targeted. The `db` service is also started automatically because it is listed in `depends_on`.
 @z
 
 @x
-This means that any other services the targeted service `depends_on` should either:
-- Share a common profile 
-- Always be started, by omitting `profiles` or having a matching profile started explicitly
+If the targeted service has dependencies that are also gated behind a profile, you must ensure those dependencies are either: 
+ - In the same profile
+ - Started separately
+ - Not assigned to any profile so are always enabled
 @y
-This means that any other services the targeted service `depends_on` should either:
-- Share a common profile 
-- Always be started, by omitting `profiles` or having a matching profile started explicitly
-@z
-
-% snip code...
-
-@x within code
-# Only start "web"
-@y
-# Only start "web"
-@z
-
-@x
-# Start mock-backend (and, if necessary, db)
-# by implicitly enabling profiles "dev"
-@y
-# Start mock-backend (and, if necessary, db)
-# by implicitly enabling profiles "dev"
-@z
-
-@x
-# This fails because profiles "dev" is not enabled
-$ docker compose up phpmyadmin
-```
-@y
-# This fails because profiles "dev" is not enabled
-$ docker compose up phpmyadmin
-```
-@z
-
-@x
-Although targeting `phpmyadmin` automatically starts the profiles `debug`, it doesn't automatically start the profiles required by `db` which is `dev`. 
-@y
-Although targeting `phpmyadmin` automatically starts the profiles `debug`, it doesn't automatically start the profiles required by `db` which is `dev`. 
-@z
-
-@x
-To fix this you either have to add the `debug` profile to the `db` service:
-@y
-To fix this you either have to add the `debug` profile to the `db` service:
-@z
-
-% snip code...
-
-@x
-or start the `dev` profile explicitly:
-@y
-or start the `dev` profile explicitly:
-@z
-
-@x
-```console
-# Profiles "debug" is started automatically by targeting phpmyadmin
-$ docker compose --profile dev up phpmyadmin
-$ COMPOSE_PROFILES=dev docker compose up phpmyadmin
-```
-@y
-```console
-# Profiles "debug" is started automatically by targeting phpmyadmin
-$ docker compose --profile dev up phpmyadmin
-$ COMPOSE_PROFILES=dev docker compose up phpmyadmin
-```
+If the targeted service has dependencies that are also gated behind a profile, you must ensure those dependencies are either: 
+ - In the same profile
+ - Started separately
+ - Not assigned to any profile so are always enabled
 @z
 
 @x
