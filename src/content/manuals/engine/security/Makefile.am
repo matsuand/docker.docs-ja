@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = https trust
+SUBDIRS = https rootless trust
 
 bases = \
 	_index.md         \
@@ -10,7 +10,6 @@ bases = \
 	certificates.md   \
 	non-events.md     \
 	protect-access.md \
-	rootless.md       \
 	seccomp.md        \
 	userns-remap.md
 

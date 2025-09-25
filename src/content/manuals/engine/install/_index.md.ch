@@ -56,18 +56,18 @@ Click on a platform's link to view the relevant installation procedure.
 | [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
 | [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
 | [RHEL](rhel.md)                                |       ✅       |       ✅        |              |         |  ✅   |
-| [SLES](sles.md)                                |                |                 |              |         |  ✅   |
+| [SLES](sles.md)                                |                |                 |              |         |  ❌   |
 | [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
 | [Binaries](binaries.md)                        |       ✅       |       ✅        |      ✅      |         |       |
 @y
-| プラットフォーム                               | x86_64 / amd64 | arm64 / aarch64 | arm (32ビット)| ppc64le| s390x |
+| プラットフォーム                               | x86_64 / amd64 | arm64 / aarch64 | arm (32ビット)| ppc64le | s390x |
 | :--------------------------------------------- | :------------: | :-------------: | :----------: | :-----: | :---: |
 | [CentOS](centos.md)                            |       ✅       |       ✅        |              |   ✅    |       |
 | [Debian](debian.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |       |
 | [Fedora](fedora.md)                            |       ✅       |       ✅        |              |   ✅    |       |
-| [Raspberry Pi OS (32-bit)](raspberry-pi-os.md) |                |                 |      ✅      |         |       |
+| [Raspberry Pi OS (32ビット)](raspberry-pi-os.md)|               |                 |      ✅      |         |       |
 | [RHEL](rhel.md)                                |       ✅       |       ✅        |              |         |  ✅   |
-| [SLES](sles.md)                                |                |                 |              |         |  ✅   |
+| [SLES](sles.md)                                |                |                 |              |         |  ❌   |
 | [Ubuntu](ubuntu.md)                            |       ✅       |       ✅        |      ✅      |   ✅    |  ✅   |
 | [バイナリー](binaries.md)                      |       ✅       |       ✅        |      ✅      |         |       |
 @z

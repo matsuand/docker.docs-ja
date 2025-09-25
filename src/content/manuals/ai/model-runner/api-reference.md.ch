@@ -176,15 +176,15 @@ on how you run Docker:
 @z
 
 @x
-### Available OpenAPI endpoints
+### Available OpenAI endpoints
 @y
-### Available OpenAPI endpoints
+### Available OpenAI endpoints
 @z
 
 @x
-DMR supports the following OpenAPI endpoints:
+DMR supports the following OpenAI endpoints:
 @y
-DMR supports the following OpenAPI endpoints:
+DMR supports the following OpenAI endpoints:
 @z
 
 @x

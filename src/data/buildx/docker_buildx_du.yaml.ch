@@ -102,6 +102,122 @@ examples: |-
 @z
 
 @x
+    ### Provide filter values (--filter) {#filter}
+@y
+    ### Provide filter values (--filter) {#filter}
+@z
+
+@x
+    Same as [`buildx prune --filter`](/reference/cli/docker/buildx/prune/#filter).
+@y
+    Same as [`buildx prune --filter`](__SUBDIR__/reference/cli/docker/buildx/prune/#filter).
+@z
+
+@x
+    ### Format the output (--format) {#format}
+@y
+    ### Format the output (--format) {#format}
+@z
+
+@x
+    The formatting options (`--format`) pretty-prints usage information output
+    using a Go template.
+@y
+    The formatting options (`--format`) pretty-prints usage information output
+    using a Go template.
+@z
+
+@x
+    Valid placeholders for the Go template are:
+@y
+    Valid placeholders for the Go template are:
+@z
+
+@x
+    * `.ID`
+    * `.Parents`
+    * `.CreatedAt`
+    * `.Mutable`
+    * `.Reclaimable`
+    * `.Shared`
+    * `.Size`
+    * `.Description`
+    * `.UsageCount`
+    * `.LastUsedAt`
+    * `.Type`
+@y
+    * `.ID`
+    * `.Parents`
+    * `.CreatedAt`
+    * `.Mutable`
+    * `.Reclaimable`
+    * `.Shared`
+    * `.Size`
+    * `.Description`
+    * `.UsageCount`
+    * `.LastUsedAt`
+    * `.Type`
+@z
+
+@x
+    When using the `--format` option, the `du` command will either output the data
+    exactly as the template declares or, when using the `table` directive, includes
+    column headers as well.
+@y
+    When using the `--format` option, the `du` command will either output the data
+    exactly as the template declares or, when using the `table` directive, includes
+    column headers as well.
+@z
+
+@x
+    The `pretty` format is useful for inspecting the disk usage records in more
+    detail. It shows the mutable and shared states more clearly, as well as
+    additional information about the corresponding layer:
+@y
+    The `pretty` format is useful for inspecting the disk usage records in more
+    detail. It shows the mutable and shared states more clearly, as well as
+    additional information about the corresponding layer:
+@z
+
+% snip command...
+
+@x
+    The following example uses a template without headers and outputs the
+    `ID` and `Size` entries separated by a colon (`:`):
+@y
+    The following example uses a template without headers and outputs the
+    `ID` and `Size` entries separated by a colon (`:`):
+@z
+
+% snip command...
+
+@x
+    The following example uses a `table` template and outputs the `ID` and
+    `Description`:
+@y
+    The following example uses a `table` template and outputs the `ID` and
+    `Description`:
+@z
+
+% snip command...
+
+@x
+    JSON output is also supported and will print as newline delimited JSON:
+@y
+    JSON output is also supported and will print as newline delimited JSON:
+@z
+
+% snip command...
+
+@x
+    You can use `jq` to pretty-print the JSON output:
+@y
+    You can use `jq` to pretty-print the JSON output:
+@z
+
+% snip command...
+
+@x
     ### Use verbose output (--verbose) {#verbose}
 @y
     ### Use verbose output (--verbose) {#verbose}

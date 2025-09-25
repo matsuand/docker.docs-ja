@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image import
 aliases: docker image import, docker import
@@ -178,17 +180,17 @@ examples: |-
     - [`VOLUME`](/reference/dockerfile/#volume)
     - [`WORKDIR`](/reference/dockerfile/#workdir)
 @y
-    - [`CMD`](/reference/dockerfile/#cmd)
-    - [`ENTRYPOINT`](/reference/dockerfile/#entrypoint)
-    - [`ENV`](/reference/dockerfile/#env)
-    - [`EXPOSE`](/reference/dockerfile/#expose)
-    - [`HEALTHCHECK`](/reference/dockerfile/#healthcheck)
-    - [`LABEL`](/reference/dockerfile/#label)
-    - [`ONBUILD`](/reference/dockerfile/#onbuild)
-    - [`STOPSIGNAL`](/reference/dockerfile/#stopsignal)
-    - [`USER`](/reference/dockerfile/#user)
-    - [`VOLUME`](/reference/dockerfile/#volume)
-    - [`WORKDIR`](/reference/dockerfile/#workdir)
+    - [`CMD`](__SUBDIR__/reference/dockerfile/#cmd)
+    - [`ENTRYPOINT`](__SUBDIR__/reference/dockerfile/#entrypoint)
+    - [`ENV`](__SUBDIR__/reference/dockerfile/#env)
+    - [`EXPOSE`](__SUBDIR__/reference/dockerfile/#expose)
+    - [`HEALTHCHECK`](__SUBDIR__/reference/dockerfile/#healthcheck)
+    - [`LABEL`](__SUBDIR__/reference/dockerfile/#label)
+    - [`ONBUILD`](__SUBDIR__/reference/dockerfile/#onbuild)
+    - [`STOPSIGNAL`](__SUBDIR__/reference/dockerfile/#stopsignal)
+    - [`USER`](__SUBDIR__/reference/dockerfile/#user)
+    - [`VOLUME`](__SUBDIR__/reference/dockerfile/#volume)
+    - [`WORKDIR`](__SUBDIR__/reference/dockerfile/#workdir)
 @z
 
 @x

@@ -1,30 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 description: Understand how Settings Management works, who it's for, and the benefits it provides
 keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-tags: [admin]
-title: Settings Management
-linkTitle: Settings Management
-aliases:
- - /desktop/hardened-desktop/settings-management/
- - /security/for-admins/hardened-desktop/settings-management/
-weight: 10
----
 @y
----
 description: Understand how Settings Management works, who it's for, and the benefits it provides
 keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-tags: [admin]
+@z
+
+@x
 title: Settings Management
 linkTitle: Settings Management
-aliases:
- - /desktop/hardened-desktop/settings-management/
- - /security/for-admins/hardened-desktop/settings-management/
-weight: 10
----
+@y
+title: Settings Management
+linkTitle: Settings Management
 @z
 
 @x
@@ -81,10 +73,10 @@ across your organization.
 user's machine to enforce settings. This method works well for automated
 deployments and scripted installations.
 @y
-- [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
+- [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
 Docker Admin Console. This provides a web-based interface for managing settings
 across your organization.
-- [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
+- [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
 user's machine to enforce settings. This method works well for automated
 deployments and scripted installations.
 @z
@@ -126,7 +118,7 @@ Settings Management supports a wide range of Docker Desktop features, including:
 @x
 For a complete list of settings you can enforce, see the [Settings reference](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
 @y
-For a complete list of settings you can enforce, see the [Settings reference](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
+For a complete list of settings you can enforce, see the [Settings reference](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
 @z
 
 @x
@@ -165,11 +157,11 @@ ensure all developers authenticate with your organization.
     - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
     - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
 @y
-1. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to
+1. [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to
 ensure all developers authenticate with your organization.
 2. Choose a configuration method:
-    - Use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
-    - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
+    - Use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
+    - Manually create and configure the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
     - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
 @z
 

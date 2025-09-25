@@ -2230,6 +2230,80 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/error"
+    post:
+      summary: Create a new repository
+      description: |
+        Creates a new repository within the specified namespace. The repository will be created
+        with the provided metadata including name, description, and privacy settings.
+      operationId: CreateRepository
+      tags:
+        - repositories
+      security:
+        - BearerAuth: [ ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/repo_creation_request'
+            example:
+              name: "my-app"
+              namespace: "myorganization"
+              description: "A sample application repository"
+              full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+              registry: "docker.io"
+              is_private: false
+      responses:
+        201:
+          description: Repository created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        400:
+          $ref: "#/components/responses/bad_request"
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
+  /v2/namespaces/{namespace}/repositories/{repository}:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    get:
+      operationId: GetRepository
+      summary: Get repository in a namespace
+      description: |
+        Returns a repository within the specified namespace (organization or user).
 @y
         Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
       tags:
@@ -2367,9 +2441,232 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/error"
+    post:
+      summary: Create a new repository
+      description: |
+        Creates a new repository within the specified namespace. The repository will be created
+        with the provided metadata including name, description, and privacy settings.
+      operationId: CreateRepository
+      tags:
+        - repositories
+      security:
+        - BearerAuth: [ ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/repo_creation_request'
+            example:
+              name: "my-app"
+              namespace: "myorganization"
+              description: "A sample application repository"
+              full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+              registry: "docker.io"
+              is_private: false
+      responses:
+        201:
+          description: Repository created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        400:
+          $ref: "#/components/responses/bad_request"
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
+  /v2/namespaces/{namespace}/repositories/{repository}:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    get:
+      operationId: GetRepository
+      summary: Get repository in a namespace
+      description: |
+        Returns a repository within the specified namespace (organization or user).
 @z
 
 @x
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+      tags:
+        - repositories
+      security:
+        - bearerAuth: [ ]
+        - { }  # Allow anonymous access for public repositories
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
+    head:
+      operationId: CheckRepository
+      summary: Check repository in a namespace
+      description: |
+        Check a repository within the specified namespace (organization or user).
+@y
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+      tags:
+        - repositories
+      security:
+        - bearerAuth: [ ]
+        - { }  # Allow anonymous access for public repositories
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
+    head:
+      operationId: CheckRepository
+      summary: Check repository in a namespace
+      description: |
+        Check a repository within the specified namespace (organization or user).
+@z
+
+@x
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+      tags:
+        - repositories
+      security:
+        - bearerAuth: [ ]
+        - { }  # Allow anonymous access for public repositories
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
   /v2/orgs/{org_name}/members:
     parameters:
       - $ref: "#/components/parameters/org_name"
@@ -2384,6 +2681,51 @@ paths:
       description: |
         Returns a list of members for an organization.
 @y
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+      tags:
+        - repositories
+      security:
+        - bearerAuth: [ ]
+        - { }  # Allow anonymous access for public repositories
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/repository_info'
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: [ ]
+                content_types: [ ]
+                categories: [ ]
+                immutable_tags_settings:
+                  enabled: false
+                  rules: [ ]
+                storage_size: null
+                source: null
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
   /v2/orgs/{org_name}/members:
     parameters:
       - $ref: "#/components/parameters/org_name"
@@ -4227,6 +4569,45 @@ components:
       required:
         - immutable_tags
         - immutable_tags_rules
+    repo_creation_request:
+      type: object
+      required:
+        - name
+        - namespace
+      properties:
+        name:
+          type: string
+          description: |
+            The name of the repository. Must be 2-255 characters long and may only include 
+            alphanumeric characters, periods (.), underscores (_), or hyphens (-). 
+            Letters must be lowercase.
+          minLength: 2
+          maxLength: 255
+          pattern: '^[a-z0-9]+(?:[._-][a-z0-9]+)*$'
+          example: "my-app"
+        namespace:
+          type: string
+          description: The namespace where the repository will be created
+          example: "myorganization"
+        description:
+          type: string
+          description: Short description of the repository
+          maxLength: 100
+          example: "A sample application repository"
+        full_description:
+          type: string
+          description: Detailed description of the repository
+          maxLength: 25000
+          example: "This is a comprehensive description of my application repository that contains additional details about the project, its purpose, usage instructions, and other relevant information."
+        registry:
+          type: string
+          description: The registry where the repository will be hosted
+          example: "docker.io"
+        is_private:
+          type: boolean
+          description: Whether the repository should be private
+          default: false
+          example: false
     repository_info:
       type: object
       properties:
@@ -4326,6 +4707,10 @@ components:
           format: int64
           nullable: true
           description: Storage size in bytes
+        source:
+          type: string
+          nullable: true
+          description: Source of the repository, where it was created from
       required:
         - user
         - name
@@ -5017,7 +5402,7 @@ components:
           example: moby
         invitee:
           type: string
-          description: can either be a dockerID for registred users or an email for non-registred users
+          description: can either be a dockerID for registered users or an email for non-registered users
           example: invitee@docker.com
         org:
           type: string
@@ -5147,7 +5532,7 @@ components:
             - owners
         is_guest:
           type: boolean
-          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as guests.
+          description: If the organization has verified domains, members that have email addresses outside of those domains will be flagged as guests.
           example: false
         primary_email:
           type: string
@@ -5578,6 +5963,45 @@ components:
       required:
         - immutable_tags
         - immutable_tags_rules
+    repo_creation_request:
+      type: object
+      required:
+        - name
+        - namespace
+      properties:
+        name:
+          type: string
+          description: |
+            The name of the repository. Must be 2-255 characters long and may only include 
+            alphanumeric characters, periods (.), underscores (_), or hyphens (-). 
+            Letters must be lowercase.
+          minLength: 2
+          maxLength: 255
+          pattern: '^[a-z0-9]+(?:[._-][a-z0-9]+)*$'
+          example: "my-app"
+        namespace:
+          type: string
+          description: The namespace where the repository will be created
+          example: "myorganization"
+        description:
+          type: string
+          description: Short description of the repository
+          maxLength: 100
+          example: "A sample application repository"
+        full_description:
+          type: string
+          description: Detailed description of the repository
+          maxLength: 25000
+          example: "This is a comprehensive description of my application repository that contains additional details about the project, its purpose, usage instructions, and other relevant information."
+        registry:
+          type: string
+          description: The registry where the repository will be hosted
+          example: "docker.io"
+        is_private:
+          type: boolean
+          description: Whether the repository should be private
+          default: false
+          example: false
     repository_info:
       type: object
       properties:
@@ -5677,6 +6101,10 @@ components:
           format: int64
           nullable: true
           description: Storage size in bytes
+        source:
+          type: string
+          nullable: true
+          description: Source of the repository, where it was created from
       required:
         - user
         - name
@@ -6368,7 +6796,7 @@ components:
           example: moby
         invitee:
           type: string
-          description: can either be a dockerID for registred users or an email for non-registred users
+          description: can either be a dockerID for registered users or an email for non-registered users
           example: invitee@docker.com
         org:
           type: string
@@ -6498,7 +6926,7 @@ components:
             - owners
         is_guest:
           type: boolean
-          description: If the organization has verfied domains, members that have email addresses outside of those domains will be flagged as guests.
+          description: If the organization has verified domains, members that have email addresses outside of those domains will be flagged as guests.
           example: false
         primary_email:
           type: string

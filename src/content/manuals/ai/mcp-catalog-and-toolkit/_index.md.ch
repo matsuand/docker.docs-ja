@@ -52,17 +52,23 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @z
 
 @x
-Docker MCP Catalog and Toolkit is a solution for securely building, sharing, and
-running MCP tools.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is
+an open protocol that standardizes how applications provide context and
+additional functionality to large language models. MCP functions as a
+client-server protocol, where the client, for example an application such as [Gordon](/manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
 @y
-Docker MCP Catalog and Toolkit is a solution for securely building, sharing, and
-running MCP tools.
+[Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is
+an open protocol that standardizes how applications provide context and
+additional functionality to large language models. MCP functions as a
+client-server protocol, where the client, for example an application such as [Gordon](manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
 @z
 
 @x
-It simplifies the developer experience across these areas:
+Docker MCP Catalog and Toolkit is a solution for securely building, sharing, and
+running MCP tools. It simplifies the developer experience across the following areas:
 @y
-It simplifies the developer experience across these areas:
+Docker MCP Catalog and Toolkit is a solution for securely building, sharing, and
+running MCP tools. It simplifies the developer experience across the following areas:
 @z
 
 @x
@@ -108,13 +114,13 @@ With Docker Hub and the MCP Toolkit, you can:
 @z
 
 @x
-MCP servers are systems that use the [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) (MCP) to help manage
+MCP servers are systems that use the [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) to help manage
 and run AI or machine learning models more efficiently. MCP allows different
 parts of a system, like the model, data, and runtime environment, to
 communicate in a standardized way. You can see them as
 add-ons that provide specific tools to an LLM.
 @y
-MCP servers are systems that use the [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) (MCP) to help manage
+MCP servers are systems that use the [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) to help manage
 and run AI or machine learning models more efficiently. MCP allows different
 parts of a system, like the model, data, and runtime environment, to
 communicate in a standardized way. You can see them as

@@ -153,34 +153,19 @@
 @z
 
 @x
-                    Docker Model Runner
+                    Docker MCP Catalog and Toolkit
 @y
-                    Docker Model Runner
+                    Docker MCP Catalog and Toolkit
 @z
 @x
-                    Run, test, and serve AI models locally in seconds — no
-                    setup, no hassle.
+                  Supercharge your AI applications or agents with secure, containerized tools
 @y
-                    Run, test, and serve AI models locally in seconds — no
-                    setup, no hassle.
+                  Supercharge your AI applications or agents with secure, containerized tools
 @z
 @x
-                    Whether you’re experimenting with the latest LLMs or
-                    deploying to production, Docker Model Runner brings the
-                    performance and control you need, without the friction.
+                    >Let's get started</a>
 @y
-                    Whether you’re experimenting with the latest LLMs or
-                    deploying to production, Docker Model Runner brings the
-                    performance and control you need, without the friction.
-@z
-@x
-                    href="/desktop/features/model-runner/"
-                    class="bg-blue dark:bg-blue rounded-sm p-2 px-4 text-white transition duration-300 hover:bg-blue-500 dark:hover:bg-blue-500"
-                    >Read the docs</a>
-@y
-                    href="desktop/features/model-runner/"
-                    class="bg-blue dark:bg-blue rounded-sm p-2 px-4 text-white transition duration-300 hover:bg-blue-500 dark:hover:bg-blue-500"
-                    >ドキュメント</a>
+                    >Let's get started</a>
 @z
 
 @x

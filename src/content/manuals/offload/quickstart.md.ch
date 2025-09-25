@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Docker Offload quickstart
 linktitle: Quickstart
-weight: 10
-description: Learn how to use Docker Offload to build and run your container images faster, both locally and in CI.
-keywords: cloud, quickstart, cloud mode, Docker Desktop, GPU support, cloud builder, usage
----
 @y
----
 title: Docker Offload quickstart
 linktitle: Quickstart
-weight: 10
+@z
+
+@x
 description: Learn how to use Docker Offload to build and run your container images faster, both locally and in CI.
 keywords: cloud, quickstart, cloud mode, Docker Desktop, GPU support, cloud builder, usage
----
+@y
+description: Learn how to use Docker Offload to build and run your container images faster, both locally and in CI.
+keywords: cloud, quickstart, cloud mode, Docker Desktop, GPU support, cloud builder, usage
 @z
 
 @x
@@ -93,10 +93,10 @@ up](https://www.docker.com/products/docker-offload/) and subscribe.
 
 @x
 3. When prompted, select your account to use for Docker Offload. This account
-   will consume credits for your Docker Offload usage.
+   will consume Docker Offload usage.
 @y
 3. When prompted, select your account to use for Docker Offload. This account
-   will consume credits for your Docker Offload usage.
+   will consume Docker Offload usage.
 @z
 
 @x
@@ -118,7 +118,7 @@ up](https://www.docker.com/products/docker-offload/) and subscribe.
    > [!NOTE]
    >
    > Enabling GPU support consumes more budget. For more details, see [Docker
-   > Offload usage](/offload/usage/).
+   > Offload usage](__SUBDIR__/offload/usage/).
 @z
 
 @x

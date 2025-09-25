@@ -4,6 +4,7 @@
 bases = \
 	_index.md      \
 	acr.md         \
+	artifactory.md \
 	ecr.md
 
 include $(top_srcdir)/build-aux/common.mk

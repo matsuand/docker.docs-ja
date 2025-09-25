@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 linkTitle: Configs 
@@ -38,9 +39,9 @@ By default, the config:
 @z
 
 @x
-The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file` or `external`.
+The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file`, `environment`, `content`, or `external`.
 @y
-The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file` or `external`.
+The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file`, `environment`, `content`, or `external`.
 @z
 
 @x
@@ -77,19 +78,7 @@ by registering the content of the `httpd.conf` as the configuration data.
 by registering the content of the `httpd.conf` as the configuration data.
 @z
 
-@x
-```yml
-configs:
-  http_config:
-    file: ./httpd.conf
-```
-@y
-```yml
-configs:
-  http_config:
-    file: ./httpd.conf
-```
-@z
+% snip code...
 
 @x
 Alternatively, `http_config` can be declared as external. Compose looks up `http_config` to expose the configuration data to relevant services.
@@ -97,60 +86,12 @@ Alternatively, `http_config` can be declared as external. Compose looks up `http
 Alternatively, `http_config` can be declared as external. Compose looks up `http_config` to expose the configuration data to relevant services.
 @z
 
-@x
-```yml
-configs:
-  http_config:
-    external: true
-```
-@y
-```yml
-configs:
-  http_config:
-    external: true
-```
-@z
+% snip code...
 
 @x
 ## Example 2
 @y
 ## Example 2
-@z
-
-@x
-`<project_name>_app_config` is created when the application is deployed,
-by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
-adjust content according to service configuration:
-@y
-`<project_name>_app_config` is created when the application is deployed,
-by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
-adjust content according to service configuration:
-@z
-
-@x
-```yml
-configs:
-  app_config:
-    content: |
-      debug=${DEBUG}
-      spring.application.admin.enabled=${DEBUG}
-      spring.application.name=${COMPOSE_PROJECT_NAME}
-```
-@y
-```yml
-configs:
-  app_config:
-    content: |
-      debug=${DEBUG}
-      spring.application.admin.enabled=${DEBUG}
-      spring.application.name=${COMPOSE_PROJECT_NAME}
-```
-@z
-
-@x
-## Example 3
-@y
-## Example 3
 @z
 
 @x
@@ -169,21 +110,39 @@ example modifies the previous one to look up a config using the parameter `HTTP_
 variables, but exposed to containers as hard-coded ID `http_config`.
 @z
 
+% snip code...
+
 @x
-```yml
-configs:
-  http_config:
-    external: true
-    name: "${HTTP_CONFIG_KEY}"
-```
+## Example 3
 @y
-```yml
-configs:
-  http_config:
-    external: true
-    name: "${HTTP_CONFIG_KEY}"
-```
+## Example 3
 @z
+
+@x
+`<project_name>_app_config` is created when the application is deployed,
+by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
+adjust content according to service configuration:
+@y
+`<project_name>_app_config` is created when the application is deployed,
+by registering the inlined content as the configuration data. This means Compose infers variables when creating the config, which allows you to
+adjust content according to service configuration:
+@z
+
+@x
+## Example 4
+@y
+## Example 4
+@z
+
+@x
+`<project_name>_simple_config` is created when the application is deployed,
+using the value of an environment variable as the configuration data. This is useful for simple configuration values that don’t require interpolation:
+@y
+`<project_name>_simple_config` is created when the application is deployed,
+using the value of an environment variable as the configuration data. This is useful for simple configuration values that don’t require interpolation:
+@z
+
+% snip code...
 
 @x
 If `external` is set to `true`, all other attributes apart from `name` are irrelevant. If Compose detects any other attribute, it rejects the Compose file as invalid.

@@ -36,7 +36,7 @@ you can use a command such as `docker compose exec web sh` to get an interactive
 | `--dry-run`       | `bool`        |         | Execute command in dry run mode                                                  |
 | `-e`, `--env`     | `stringArray` |         | Set environment variables                                                        |
 | `--index`         | `int`         | `0`     | Index of the container if service has multiple replicas                          |
-| `-T`, `--no-TTY`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
+| `-T`, `--no-tty`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
 | `--privileged`    | `bool`        |         | Give extended privileges to the process                                          |
 | `-u`, `--user`    | `string`      |         | Run the command as this user                                                     |
 | `-w`, `--workdir` | `string`      |         | Path to workdir directory for this command                                       |
@@ -47,7 +47,7 @@ you can use a command such as `docker compose exec web sh` to get an interactive
 | `--dry-run`       | `bool`        |         | Execute command in dry run mode                                                  |
 | `-e`, `--env`     | `stringArray` |         | Set environment variables                                                        |
 | `--index`         | `int`         | `0`     | Index of the container if service has multiple replicas                          |
-| `-T`, `--no-TTY`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
+| `-T`, `--no-tty`  | `bool`        | `true`  | Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY. |
 | `--privileged`    | `bool`        |         | Give extended privileges to the process                                          |
 | `-u`, `--user`    | `string`      |         | Run the command as this user                                                     |
 | `-w`, `--workdir` | `string`      |         | Path to workdir directory for this command                                       |

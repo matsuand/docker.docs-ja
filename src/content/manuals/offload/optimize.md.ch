@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Optimize Docker Offload usage
 linktitle: Optimize usage
-weight: 40
-description: Learn how to optimize your Docker Offload usage.
-keywords: cloud, optimize, performance, caching, cost efficiency
----
 @y
----
 title: Optimize Docker Offload usage
 linktitle: Optimize usage
-weight: 40
+@z
+
+@x
 description: Learn how to optimize your Docker Offload usage.
 keywords: cloud, optimize, performance, caching, cost efficiency
----
+@y
+description: Learn how to optimize your Docker Offload usage.
+keywords: cloud, optimize, performance, caching, cost efficiency
 @z
 
 @x
@@ -74,13 +74,13 @@ setup for Docker Offload:
 @x
 For general Dockerfile tips, see [Building best practices](/manuals/build/building/best-practices.md).
 @y
-For general Dockerfile tips, see [Building best practices](/manuals/build/building/best-practices.md).
+For general Dockerfile tips, see [Building best practices](manuals/build/building/best-practices.md).
 @z
 
 @x
-### dockerignore files
+## dockerignore files
 @y
-### dockerignore files
+## dockerignore files
 @z
 
 @x
@@ -89,7 +89,7 @@ lets you specify which local files should *not* be included in the build
 context. Files excluded by these patterns won’t be uploaded to Docker Offload
 during a build.
 @y
-A [`.dockerignore` file](/manuals/build/concepts/context.md#dockerignore-files)
+A [`.dockerignore` file](manuals/build/concepts/context.md#dockerignore-files)
 lets you specify which local files should *not* be included in the build
 context. Files excluded by these patterns won’t be uploaded to Docker Offload
 during a build.
@@ -120,9 +120,9 @@ As a rule of thumb, your `.dockerignore` should be similar to your `.gitignore`.
 @z
 
 @x
-### Slim base images
+## Slim base images
 @y
-### Slim base images
+## Slim base images
 @z
 
 @x
@@ -142,9 +142,9 @@ For fully static binaries, you can use [`scratch`](https://hub.docker.com/_/scra
 @z
 
 @x
-### Multi-stage builds
+## Multi-stage builds
 @y
-### Multi-stage builds
+## Multi-stage builds
 @z
 
 @x
@@ -152,7 +152,7 @@ For fully static binaries, you can use [`scratch`](https://hub.docker.com/_/scra
 and runtime environments in your Dockerfile. This not only reduces the size of
 the final image but also allows for parallel stage execution during the build.
 @y
-[Multi-stage builds](/build/building/multi-stage/) let you separate build-time
+[Multi-stage builds](__SUBDIR__/build/building/multi-stage/) let you separate build-time
 and runtime environments in your Dockerfile. This not only reduces the size of
 the final image but also allows for parallel stage execution during the build.
 @z
@@ -166,9 +166,9 @@ approach helps minimize unnecessary layers and reduce final image size.
 @z
 
 @x
-### Fetch remote files in build
+## Fetch remote files in build
 @y
-### Fetch remote files in build
+## Fetch remote files in build
 @z
 
 @x
@@ -191,7 +191,7 @@ You can do this using:
 - The Dockerfile [`ADD` instruction](/reference/dockerfile/#add)
 - `RUN` commands like `wget`, `curl`, or `rsync`
 @y
-- The Dockerfile [`ADD` instruction](/reference/dockerfile/#add)
+- The Dockerfile [`ADD` instruction](__SUBDIR__/reference/dockerfile/#add)
 - `RUN` commands like `wget`, `curl`, or `rsync`
 @z
 

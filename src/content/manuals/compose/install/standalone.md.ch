@@ -136,3 +136,17 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
 @z
 
 % snip command...
+
+@x
+## What's next?
+@y
+## What's next?
+@z
+
+@x
+- [Understand how Compose works](/manuals/compose/intro/compose-application-model.md)
+- [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
+@y
+- [Understand how Compose works](manuals/compose/intro/compose-application-model.md)
+- [Try the Quickstart guide](manuals/compose/gettingstarted.md)
+@z

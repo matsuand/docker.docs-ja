@@ -62,6 +62,112 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+## 4.46.0
+@y
+## 4.46.0
+@z
+
+@x
+{{< release-date date="2025-09-11" >}}
+@y
+{{< release-date date="2025-09-11" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.46.0" build_path="/204649/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.46.0" build_path="/204649/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Added a new Learning center walkthrough for Docker MCP Toolkit and other onboarding improvements.
+- Administrators can now control [PAC configurations with Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#proxy-settings).
+- The update experience has been redesigned to make it easier to understand and manage updates for Docker Desktop and its components.
+@y
+- Added a new Learning center walkthrough for Docker MCP Toolkit and other onboarding improvements.
+- Administrators can now control [PAC configurations with Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#proxy-settings).
+- The update experience has been redesigned to make it easier to understand and manage updates for Docker Desktop and its components.
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Buildx v0.28.0](https://github.com/docker/buildx/releases/tag/v0.28.0)
+- [Docker Engine v28.4.0](https://docs.docker.com/engine/release-notes/28/#2840)
+@y
+- [Docker Buildx v0.28.0](https://github.com/docker/buildx/releases/tag/v0.28.0)
+- [Docker Engine v28.4.0](https://docs.docker.com/engine/release-notes/28/#2840)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- With the Docker CLI, you can now set the `GODEBUG` environment variable when the key-value pair (`"GODEBUG":"..."`) exists inside the Docker context metadata. This means certificates that have negative serial numbers in the CLI binaries are supported by default.
+- Updated the Docker Subscription Service Agreement link to point to the latest version.
+@y
+- With the Docker CLI, you can now set the `GODEBUG` environment variable when the key-value pair (`"GODEBUG":"..."`) exists inside the Docker context metadata. This means certificates that have negative serial numbers in the CLI binaries are supported by default.
+- Updated the Docker Subscription Service Agreement link to point to the latest version.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+- Fixed a bug which caused Docker Desktop to start slowly and appear frozen. Fixes [docker/for-mac#7671](https://github.com/docker/for-mac/issues/7671).
+@y
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+- Fixed a bug which caused Docker Desktop to start slowly and appear frozen. Fixes [docker/for-mac#7671](https://github.com/docker/for-mac/issues/7671).
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+@y
+- Improved the security of Docker Model Runner by enabling sandboxing of the `llama.cpp` inference processes.
+@z
+
+@x
+#### For Linux
+@y
+#### For Linux
+@z
+
+@x
+- Fixed a path issue in the RHEL post-uninstall sequence.
+@y
+- Fixed a path issue in the RHEL post-uninstall sequence.
+@z
+
+@x
 ## 4.45.0
 @y
 ## 4.45.0
@@ -87,10 +193,8 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 
 @x
 - [Docker Model Runner](/manuals/ai/model-runner/_index.md) is now generally available.
-- In-product release highlights has a new look and feel. 
 @y
 - [Docker Model Runner](manuals/ai/model-runner/_index.md) is now generally available.
-- In-product release highlights has a new look and feel. 
 @z
 
 @x
@@ -2779,10 +2883,10 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
 - New and improved experience for [troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @y
-- [Docker Debug](/reference/cli/docker/debug.md) is now generally available.
+- [Docker Debug](reference/cli/docker/debug.md) is now generally available.
 - BuildKit now evaluates Dockerfile rules to inform you of potential issues.
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
-- New and improved experience for [troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
+- New and improved experience for [troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @z
 
 @x

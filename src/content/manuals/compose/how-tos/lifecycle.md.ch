@@ -37,7 +37,7 @@ When Docker Compose runs a container, it uses two elements,
 to manage what happens when the container starts and stops.
 @y
 When Docker Compose runs a container, it uses two elements, 
-[ENTRYPOINT and COMMAND](/manuals/engine/containers/run.md#default-command-and-options), 
+[ENTRYPOINT and COMMAND](manuals/engine/containers/run.md#default-command-and-options), 
 to manage what happens when the container starts and stops.
 @z
 
@@ -179,6 +179,6 @@ services:
 - [`post_start`](/reference/compose-file/services.md#post_start)
 - [`pre_stop`](/reference/compose-file/services.md#pre_stop)
 @y
-- [`post_start`](/reference/compose-file/services.md#post_start)
-- [`pre_stop`](/reference/compose-file/services.md#pre_stop)
+- [`post_start`](reference/compose-file/services.md#post_start)
+- [`pre_stop`](reference/compose-file/services.md#pre_stop)
 @z

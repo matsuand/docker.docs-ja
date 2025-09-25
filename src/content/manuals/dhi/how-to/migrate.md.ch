@@ -77,7 +77,7 @@ Dockerfile:
 | Non-root user      | By default, images intended for runtime, run as the nonroot user. Ensure that necessary files and directories are accessible to the nonroot user.                                                                                                                                                                              |
 | Multi-stage build  | Utilize images with a `dev` or `sdk` tags for build stages and non-dev images for runtime.                                                                                                                                                                                                                                     |
 | TLS certificates   | DHIs contain standard TLS certificates by default. There is no need to install TLS certificates.                                                                                                                                                                                                                               |
-| Ports              | DHIs intented for runtime run as a nonroot user by default. As a result, applications in these images can't bind to privileged ports (below 1024) when running in Kubernetes or in Docker Engine versions older than 20.10. To avoid issues, configure your application to listen on port 1025 or higher inside the container. |
+| Ports              | DHIs intended for runtime run as a nonroot user by default. As a result, applications in these images can't bind to privileged ports (below 1024) when running in Kubernetes or in Docker Engine versions older than 20.10. To avoid issues, configure your application to listen on port 1025 or higher inside the container. |
 | Entry point        | DHIs may have different entry points than images such as Docker Official Images. Inspect entry points for DHIs and update your Dockerfile if necessary.                                                                                                                                                                        |
 | No shell           | DHIs intended for runtime don't contain a shell. Use dev images in build stages to run shell commands and then copy artifacts to the runtime stage.                                                                                                                                                                            |
 @y
@@ -88,7 +88,7 @@ Dockerfile:
 | Non-root user      | By default, images intended for runtime, run as the nonroot user. Ensure that necessary files and directories are accessible to the nonroot user.                                                                                                                                                                              |
 | Multi-stage build  | Utilize images with a `dev` or `sdk` tags for build stages and non-dev images for runtime.                                                                                                                                                                                                                                     |
 | TLS certificates   | DHIs contain standard TLS certificates by default. There is no need to install TLS certificates.                                                                                                                                                                                                                               |
-| Ports              | DHIs intented for runtime run as a nonroot user by default. As a result, applications in these images can't bind to privileged ports (below 1024) when running in Kubernetes or in Docker Engine versions older than 20.10. To avoid issues, configure your application to listen on port 1025 or higher inside the container. |
+| Ports              | DHIs intended for runtime run as a nonroot user by default. As a result, applications in these images can't bind to privileged ports (below 1024) when running in Kubernetes or in Docker Engine versions older than 20.10. To avoid issues, configure your application to listen on port 1025 or higher inside the container. |
 | Entry point        | DHIs may have different entry points than images such as Docker Official Images. Inspect entry points for DHIs and update your Dockerfile if necessary.                                                                                                                                                                        |
 | No shell           | DHIs intended for runtime don't contain a shell. Use dev images in build stages to run shell commands and then copy artifacts to the runtime stage.                                                                                                                                                                            |
 @z
@@ -198,11 +198,27 @@ examples of how to update your Dockerfile.
 @z
 
 @x
-The following migration examples show a Dockerfile before the migration and
-after the migration.
+The following examples show a Dockerfile before and after migration. Each
+example includes both a multi-stage build (recommended for minimal, secure
+images) and a single-stage build (supported, but results in a larger image with
+a broader attack surface).
 @y
-The following migration examples show a Dockerfile before the migration and
-after the migration.
+The following examples show a Dockerfile before and after migration. Each
+example includes both a multi-stage build (recommended for minimal, secure
+images) and a single-stage build (supported, but results in a larger image with
+a broader attack surface).
+@z
+
+@x
+> [!NOTE]
+>
+> Multi-stage builds are recommended for most use cases. Single-stage builds are
+> supported for simplicity, but come with tradeoffs in size and security.
+@y
+> [!NOTE]
+>
+> Multi-stage builds are recommended for most use cases. Single-stage builds are
+> supported for simplicity, but come with tradeoffs in size and security.
 @z
 
 @x
@@ -253,10 +269,10 @@ ENTRYPOINT ["/app/main"]
 
 @x
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @y
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @z
 
 @x
@@ -304,11 +320,55 @@ COPY --from=builder /app/main  /app/main
 @x
 ENTRYPOINT ["/app/main"]
 ```
+@y
+ENTRYPOINT ["/app/main"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@y
+{{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@z
+
+@x
+```dockerfile
+#syntax=docker/dockerfile:1
+@y
+```dockerfile
+#syntax=docker/dockerfile:1
+@z
+
+@x
+FROM <your-namespace>/dhi-golang:1-alpine3.21-dev
+@y
+FROM <your-namespace>/dhi-golang:1-alpine3.21-dev
+@z
+
+@x
+WORKDIR /app
+ADD . ./
+RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
+@y
+WORKDIR /app
+ADD . ./
+RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
+@z
+
+@x
+ENTRYPOINT ["/app/main"]
+```
+@y
+ENTRYPOINT ["/app/main"]
+```
+@z
+
+@x
 {{< /tab >}}
 {{< /tabs >}}
 @y
-ENTRYPOINT ["/app/main"]
-```
 {{< /tab >}}
 {{< /tabs >}}
 @z
@@ -369,10 +429,10 @@ CMD ["node", "index.js"]
 
 @x
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @y
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @z
 
 @x
@@ -434,11 +494,63 @@ WORKDIR /app
 @x
 CMD ["index.js"]
 ```
-{{< /tab >}}
-{{< /tabs >}}
 @y
 CMD ["index.js"]
 ```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@y
+{{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@z
+
+@x
+```dockerfile
+#syntax=docker/dockerfile:1
+@y
+```dockerfile
+#syntax=docker/dockerfile:1
+@z
+
+@x
+FROM <your-namespace>/dhi-node:23-alpine3.21-dev
+WORKDIR /usr/src/app
+@y
+FROM <your-namespace>/dhi-node:23-alpine3.21-dev
+WORKDIR /usr/src/app
+@z
+
+@x
+COPY package*.json ./
+RUN npm install
+@y
+COPY package*.json ./
+RUN npm install
+@z
+
+@x
+COPY image.jpg ./image.jpg
+COPY . .
+@y
+COPY image.jpg ./image.jpg
+COPY . .
+@z
+
+@x
+CMD ["index.js"]
+```
+@y
+CMD ["index.js"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
 {{< /tab >}}
 {{< /tabs >}}
 @z
@@ -541,10 +653,10 @@ ENTRYPOINT [ "python", "/app/image.py" ]
 
 @x
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @y
 {{< /tab >}}
-{{< tab name="After" >}}
+{{< tab name="After (multi-stage)" >}}
 @z
 
 @x
@@ -635,6 +747,70 @@ ENTRYPOINT [ "python", "/app/image.py" ]
 
 @x
 {{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@y
+{{< /tab >}}
+{{< tab name="After (single-stage)" >}}
+@z
+
+@x
+```dockerfile
+#syntax=docker/dockerfile:1
+@y
+```dockerfile
+#syntax=docker/dockerfile:1
+@z
+
+@x
+FROM <your-namespace>/dhi-python:3.13-alpine3.21-dev
+@y
+FROM <your-namespace>/dhi-python:3.13-alpine3.21-dev
+@z
+
+@x
+ENV LANG=C.UTF-8
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/app/venv/bin:$PATH"
+@y
+ENV LANG=C.UTF-8
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/app/venv/bin:$PATH"
+@z
+
+@x
+WORKDIR /app
+@y
+WORKDIR /app
+@z
+
+@x
+RUN python -m venv /app/venv
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+@y
+RUN python -m venv /app/venv
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+@z
+
+@x
+COPY image.py image.png ./
+@y
+COPY image.py image.png ./
+@z
+
+@x
+ENTRYPOINT [ "python", "/app/image.py" ]
+```
+@y
+ENTRYPOINT [ "python", "/app/image.py" ]
+```
+@z
+
+@x
+{{< /tab >}}
 {{< /tabs >}}
 @y
 {{< /tab >}}
@@ -648,11 +824,13 @@ ENTRYPOINT [ "python", "/app/image.py" ]
 @z
 
 @x
-Alternatively, you can request assistance to 
-[Gordon](/manuals/ai/gordon/_index.md), Docker's AI-powered assistant, to migrate your Dockerfile:
+Alternatively, you can request assistance to
+[Gordon](/manuals/ai/gordon/_index.md), Docker's AI-powered assistant, to
+migrate your Dockerfile:
 @y
-Alternatively, you can request assistance to 
-[Gordon](manuals/ai/gordon/_index.md), Docker's AI-powered assistant, to migrate your Dockerfile:
+Alternatively, you can request assistance to
+[Gordon](manuals/ai/gordon/_index.md), Docker's AI-powered assistant, to
+migrate your Dockerfile:
 @z
 
 @x

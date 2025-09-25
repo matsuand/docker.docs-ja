@@ -33,10 +33,10 @@ This page helps troubleshoot common user provisioning issues including user role
 
 @x
 Typically, this scenario does not produce an error message in Docker or your
-IdP. This issue ususally surfaces as incorrect role or team assignment.
+IdP. This issue usually surfaces as incorrect role or team assignment.
 @y
 Typically, this scenario does not produce an error message in Docker or your
-IdP. This issue ususally surfaces as incorrect role or team assignment.
+IdP. This issue usually surfaces as incorrect role or team assignment.
 @z
 
 @x

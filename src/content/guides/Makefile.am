@@ -20,7 +20,9 @@ bases = \
 	language-translation.md            \
 	localstack.md                      \
 	named-entity-recognition.md        \
+	opentelemetry.md                   \
 	orchestration.md                   \
+	pgadmin.md                         \
 	sentiment-analysis.md              \
 	swarm-deploy.md                    \
 	tensorflowjs.md                    \

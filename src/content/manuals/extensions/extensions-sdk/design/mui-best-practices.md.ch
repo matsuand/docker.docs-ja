@@ -92,19 +92,19 @@ Sometimes you’ll need a piece of UI that doesn’t exist in our design system.
 @z
 
 @x
-If you still decide to build it yourself after contacting us, try and define the new UI in a reuseable fashion. If you define your custom UI in just one place, it’ll make it easier to change in the future if our core theme changes. You could use:
+If you still decide to build it yourself after contacting us, try and define the new UI in a reusable fashion. If you define your custom UI in just one place, it’ll make it easier to change in the future if our core theme changes. You could use:
 @y
-If you still decide to build it yourself after contacting us, try and define the new UI in a reuseable fashion. If you define your custom UI in just one place, it’ll make it easier to change in the future if our core theme changes. You could use:
+If you still decide to build it yourself after contacting us, try and define the new UI in a reusable fashion. If you define your custom UI in just one place, it’ll make it easier to change in the future if our core theme changes. You could use:
 @z
 
 @x
 -  A new `variant` of an existing component - see [MUI docs](https://mui.com/material-ui/customization/theme-components/#creating-new-component-variants)
--  A MUI mixin (a freeform bundle of reuseable styling rules defined inside a theme)
--  A new [reuseable component](https://mui.com/material-ui/customization/how-to-customize/#2-reusable-component)
+-  A MUI mixin (a freeform bundle of reusable styling rules defined inside a theme)
+-  A new [reusable component](https://mui.com/material-ui/customization/how-to-customize/#2-reusable-component)
 @y
 -  A new `variant` of an existing component - see [MUI docs](https://mui.com/material-ui/customization/theme-components/#creating-new-component-variants)
--  A MUI mixin (a freeform bundle of reuseable styling rules defined inside a theme)
--  A new [reuseable component](https://mui.com/material-ui/customization/how-to-customize/#2-reusable-component)
+-  A MUI mixin (a freeform bundle of reusable styling rules defined inside a theme)
+-  A new [reusable component](https://mui.com/material-ui/customization/how-to-customize/#2-reusable-component)
 @z
 
 @x

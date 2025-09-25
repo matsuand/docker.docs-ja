@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 title: Create a Docker account
@@ -271,7 +271,7 @@ Use the `docker login` command to authenticate from the command line. For
 details, see [`docker login`](/reference/cli/docker/login/).
 @y
 Use the `docker login` command to authenticate from the command line. For
-details, see [`docker login`](/reference/cli/docker/login/).
+details, see [`docker login`](__SUBDIR__/reference/cli/docker/login/).
 @z
 
 @x

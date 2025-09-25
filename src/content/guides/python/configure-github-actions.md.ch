@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Automate your builds with GitHub Actions
 linkTitle: Automate your builds with GitHub Actions
@@ -50,7 +52,7 @@ If you didn't create a [GitHub repository](https://github.com/new) for your proj
 @x
 3. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-3. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
+3. Create a new [Personal Access Token (PAT)](manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @z
 
 @x
@@ -336,8 +338,8 @@ Related information:
 - [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-- [Introduction to GitHub Actions](/guides/gha.md)
-- [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
+- [Introduction to GitHub Actions](guides/gha.md)
+- [Docker Build GitHub Actions](manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 

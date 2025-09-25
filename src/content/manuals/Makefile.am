@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = ai accounts admin billing build build-cloud compose copilot \
+SUBDIRS = accounts admin ai billing build build-cloud compose copilot \
 	desktop dhi docker-hub engine enterprise extensions offload   \
 	scout security subscription
 

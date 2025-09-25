@@ -175,15 +175,7 @@ To scan a Docker Hardened Image using Docker Scout, run the following
 command:
 @z
 
-@x
-```console
-$ docker scout cves <your-namespace>/dhi-<image>:<tag>
-```
-@y
-```console
-$ docker scout cves <your-namespace>/dhi-<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 Example output:
@@ -191,23 +183,7 @@ Example output:
 Example output:
 @z
 
-@x
-```plaintext
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v VEX statements obtained from attestation
-    v No vulnerable package detected
-    ...
-```
-@y
-```plaintext
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v VEX statements obtained from attestation
-    v No vulnerable package detected
-    ...
-```
-@z
+% snip output...
 
 @x
 For more detailed filtering and JSON output, see [Docker Scout CLI reference](../../../reference/cli/docker/scout/_index.md).
@@ -245,17 +221,7 @@ After installing Grype, you can scan a Docker Hardened Image by pulling
 the image and running the scan command:
 @z
 
-@x
-```console
-$ docker pull <your-namespace>/dhi-<image>:<tag>
-$ grype <your-namespace>/dhi-<image>:<tag>
-```
-@y
-```console
-$ docker pull <your-namespace>/dhi-<image>:<tag>
-$ grype <your-namespace>/dhi-<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 Example output:
@@ -263,23 +229,7 @@ Example output:
 Example output:
 @z
 
-@x
-```plaintext
-NAME               INSTALLED              FIXED-IN     TYPE  VULNERABILITY     SEVERITY    EPSS%  RISK
-libperl5.36        5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-perl               5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-perl-base          5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-...
-```
-@y
-```plaintext
-NAME               INSTALLED              FIXED-IN     TYPE  VULNERABILITY     SEVERITY    EPSS%  RISK
-libperl5.36        5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-perl               5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-perl-base          5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
-...
-```
-@z
+% snip output...
 
 @x
 ### Trivy
@@ -311,17 +261,7 @@ After installing Trivy, you can scan a Docker Hardened Image by pulling
 the image and running the scan command:
 @z
 
-@x
-```console
-$ docker pull <your-namespace>/dhi-<image>:<tag>
-$ trivy image <your-namespace>/dhi-<image>:<tag>
-```
-@y
-```console
-$ docker pull <your-namespace>/dhi-<image>:<tag>
-$ trivy image <your-namespace>/dhi-<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 Example output:
@@ -329,33 +269,7 @@ Example output:
 Example output:
 @z
 
-@x
-```plaintext
-Report Summary
-@y
-```plaintext
-Report Summary
-@z
-
-@x
-┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
-│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ <namespace>/dhi-<image>:<tag> (debian 12.11)                                 │   debian   │       66        │    -    │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
-└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
-```
-@y
-┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
-│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ <namespace>/dhi-<image>:<tag> (debian 12.11)                                 │   debian   │       66        │    -    │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
-└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
-```
-@z
+% snip output...
 
 @x
 ## Use VEX to filter known non-exploitable CVEs
@@ -387,21 +301,7 @@ To manually retrieve the VEX attestation for tools that support it:
 To manually retrieve the VEX attestation for tools that support it:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  <your-namespace>/dhi-<image>:<tag> --platform <platform> > vex.json
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  <your-namespace>/dhi-<image>:<tag> --platform <platform> > vex.json
-```
-@z
+% snip command...
 
 @x
 For example:
@@ -409,21 +309,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64 > vex.json
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64 > vex.json
-```
-@z
+% snip command...
 
 @x
 This creates a `vex.json` file containing the VEX statements for the specified
@@ -441,12 +327,4 @@ For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
 statements during the scan:
 @z
 
-@x
-```console
-$ grype <your-namespace>/dhi-<image>:<tag> --vex vex.json
-```
-@y
-```console
-$ grype <your-namespace>/dhi-<image>:<tag> --vex vex.json
-```
-@z
+% snip command...

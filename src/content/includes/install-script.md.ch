@@ -94,13 +94,13 @@ latest stable release of Docker on Linux:
 @x
 You have now successfully installed and started Docker Engine. The `docker`
 service starts automatically on Debian based distributions. On `RPM` based
-distributions, such as CentOS, Fedora, RHEL or SLES, you need to start it
+distributions, such as CentOS, Fedora or RHEL, you need to start it
 manually using the appropriate `systemctl` or `service` command. As the message
 indicates, non-root users can't run Docker commands by default.
 @y
 Docker が正常にインストールされます。
 Debian ベースのディストリビューションでは `docker` サービスが自動的に開始されます。
-CentOS、Fedora、RHEL、SLES といった `RPM` ベースの場合は手動での実行が必要となるため、`systemctl` か `service` のいずれか適当なものを実行します。
+CentOS、Fedora、RHEL といった `RPM` ベースの場合は手動での実行が必要となるため、`systemctl` か `service` のいずれか適当なものを実行します。
 上の出力メッセージに示されているように、デフォルトでは非 root ユーザーによる Docker コマンド実行はできません。
 @z
 

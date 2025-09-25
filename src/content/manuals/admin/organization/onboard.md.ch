@@ -49,11 +49,11 @@ Onboarding your organization includes:
 
 @x
 These actions help administrators gain visibility into user activity and
-enforce security settings. Organization memebers also receive increased pull
+enforce security settings. Organization members also receive increased pull
 limits and other benefits when they are signed in.
 @y
 These actions help administrators gain visibility into user activity and
-enforce security settings. Organization memebers also receive increased pull
+enforce security settings. Organization members also receive increased pull
 limits and other benefits when they are signed in.
 @z
 

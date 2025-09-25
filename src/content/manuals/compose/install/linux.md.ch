@@ -62,16 +62,14 @@ To install the Docker Compose plugin on Linux, you can either:
     [Debian](/manuals/engine/install/debian.md#install-using-the-repository) |
     [Raspberry Pi OS](/manuals/engine/install/raspberry-pi-os.md#install-using-the-repository) |
     [Fedora](/manuals/engine/install/fedora.md#set-up-the-repository) |
-    [RHEL](/manuals/engine/install/rhel.md#set-up-the-repository) |
-    [SLES](/manuals/engine/install/sles.md#set-up-the-repository).
+    [RHEL](/manuals/engine/install/rhel.md#set-up-the-repository).
 @y
     [Ubuntu](manuals/engine/install/ubuntu.md#install-using-the-repository) |
     [CentOS](manuals/engine/install/centos.md#set-up-the-repository) |
     [Debian](manuals/engine/install/debian.md#install-using-the-repository) |
     [Raspberry Pi OS](manuals/engine/install/raspberry-pi-os.md#install-using-the-repository) |
     [Fedora](manuals/engine/install/fedora.md#set-up-the-repository) |
-    [RHEL](manuals/engine/install/rhel.md#set-up-the-repository) |
-    [SLES](manuals/engine/install/sles.md#set-up-the-repository).
+    [RHEL](manuals/engine/install/rhel.md#set-up-the-repository).
 @z
 
 @x
@@ -197,3 +195,17 @@ To update the Docker Compose plugin, run the following commands:
 @z
 
 % snip command...
+
+@x
+## What's next?
+@y
+## What's next?
+@z
+
+@x
+- [Understand how Compose works](/manuals/compose/intro/compose-application-model.md)
+- [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
+@y
+- [Understand how Compose works](manuals/compose/intro/compose-application-model.md)
+- [Try the Quickstart guide](manuals/compose/gettingstarted.md)
+@z

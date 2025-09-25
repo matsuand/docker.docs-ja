@@ -52,7 +52,7 @@ The full release notes for this release are available
 @x
 - When building with Dockerfile version 1.18.0 or later, you can now use new Git URLs with query options for build context and named contexts in the `build` and `bake` command. [dockerfile/1.18.0](/manuals/build/buildkit/dockerfile-release-notes.md#1180)
 @y
-- When building with Dockerfile version 1.18.0 or later, you can now use new Git URLs with query options for build context and named contexts in the `build` and `bake` command. [dockerfile/1.18.0](/manuals/build/buildkit/dockerfile-release-notes.md#1180)
+- When building with Dockerfile version 1.18.0 or later, you can now use new Git URLs with query options for build context and named contexts in the `build` and `bake` command. [dockerfile/1.18.0](manuals/build/buildkit/dockerfile-release-notes.md#1180)
 @z
 
 @x

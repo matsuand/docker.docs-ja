@@ -297,9 +297,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = images
 bases = \
-	_index.md  \
-	catalog.md \
-	hub-mcp.md \
+	_index.md      \
+	catalog.md     \
+	get-started.md \
+	faqs.md        \
+	hub-mcp.md     \
 	toolkit.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

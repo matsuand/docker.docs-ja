@@ -62,6 +62,28 @@ chains signing content as part of their release process.
 @z
 
 @x
+> [!NOTE]
+>
+> Docker is retiring DCT for Docker Official Images
+> (DOI). You should start planning to transition to a different image signing
+> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
+> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
+> complete deprecation of DCT are being finalized and will be published soon.
+>
+> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+@y
+> [!NOTE]
+>
+> Docker is retiring DCT for Docker Official Images
+> (DOI). You should start planning to transition to a different image signing
+> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
+> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
+> complete deprecation of DCT are being finalized and will be published soon.
+>
+> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+@z
+
+@x
 ### Image tags and DCT
 @y
 ### Image tags and DCT
@@ -254,13 +276,33 @@ set. For more information, see the [Notary GitHub repository](https://github.com
 @z
 
 @x
-A prerequisite for signing an image is a Docker Registry with a Notary server
-attached (Such as the Docker Hub ). Instructions for
+A prerequisite for signing an image is a Docker Registry with a Notary server (such as Docker Hub) attached. Instructions for
 standing up a self-hosted environment can be found [here](/engine/security/trust/deploying_notary/).
 @y
-A prerequisite for signing an image is a Docker Registry with a Notary server
-attached (Such as the Docker Hub ). Instructions for
+A prerequisite for signing an image is a Docker Registry with a Notary server (such as Docker Hub) attached. Instructions for
 standing up a self-hosted environment can be found [here](__SUBDIR__/engine/security/trust/deploying_notary/).
+@z
+
+@x
+> [!NOTE]
+>
+> Docker is retiring DCT for Docker Official Images
+> (DOI). You should start planning to transition to a different image signing
+> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
+> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
+> complete deprecation of DCT are being finalized and will be published soon.
+>
+> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+@y
+> [!NOTE]
+>
+> Docker is retiring DCT for Docker Official Images
+> (DOI). You should start planning to transition to a different image signing
+> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
+> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
+> complete deprecation of DCT are being finalized and will be published soon.
+>
+> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
 @z
 
 @x

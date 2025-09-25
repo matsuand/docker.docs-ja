@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
 description: Instructions on how to enable nested virtualization
 keywords: nested virtualization, Docker Desktop, windows, VM, VDI environment
@@ -35,7 +37,7 @@ depending on whether nested virtualization is supported:
 - If your environment supports nested virtualization, you can run Docker Desktop
   with its default local Linux VM.
 - If nested virtualization is not supported, Docker recommends using [Docker
-  Offload](/offload/).
+  Offload](__SUBDIR__/offload/).
 @z
 
 @x
@@ -87,7 +89,7 @@ To get started using Docker Offload, see the [Docker Offload
 quickstart](/offload/quickstart/).
 @y
 To get started using Docker Offload, see the [Docker Offload
-quickstart](/offload/quickstart/).
+quickstart](__SUBDIR__/offload/quickstart/).
 @z
 
 @x
@@ -240,4 +242,16 @@ Docker Desktop follows the VDI support definitions outlined [previously](#virtua
 For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
 @y
 For WSL 2-related issues, contact Nutanix support. For Docker Desktop-specific issues, contact Docker support.
+@z
+
+@x
+## Additional resources
+@y
+## Additional resources
+@z
+
+@x
+- [Docker Desktop on Microsoft Dev Box](/manuals/enterprise/enterprise-deployment/dev-box.md)
+@y
+- [Docker Desktop on Microsoft Dev Box](manuals/enterprise/enterprise-deployment/dev-box.md)
 @z

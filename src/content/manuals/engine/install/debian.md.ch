@@ -437,11 +437,27 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 % snip command...
 
 @x
-   The Docker daemon starts automatically.
+    > [!NOTE]
+    >
+    > The Docker service starts automatically after installation. To verify that
+    > Docker is running, use:
 @y
-   Docker デーモンは自動的に起動します。
+    > [!NOTE]
+    >
+    > インストール後は Docker サービスが自動起動します。
+    > Docker が動作しているかどうかは、以下により確認します。
 @z
 
+% snip command...
+
+@x
+    > Some systems may have this behavior disabled and will require a manual start:
+@y
+    > システムの中にはこの自動起動という動作を無効にするものがあります。
+    > その場合は手動により以下を実行します。
+@z
+
+% snip command...
 @x
 6. Verify that the installation is successful by running the `hello-world` image:
 @y

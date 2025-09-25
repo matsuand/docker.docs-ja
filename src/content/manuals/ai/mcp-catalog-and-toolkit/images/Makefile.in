@@ -238,11 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	copilot-mode.png         \
-	mcp-overview.svg         \
-	mcp-servers-2.svg        \
-	mcp-servers-overview.svg \
-	mcp-servers.svg          \
+	claude-desktop-example.png \
+	copilot-mode.png           \
+	mcp-overview.svg           \
+	mcp-servers-2.svg          \
+	mcp-servers-overview.svg   \
+	mcp-servers.svg            \
 	tools.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

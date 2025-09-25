@@ -26,7 +26,7 @@ description: イメージとは何か。
 @z
 
 @x
-Seeing a [container](./what-is-a-container.md) is an isolated process, where does it get its files and configuration? How do you share those environments?
+Seeing as a [container](./what-is-a-container.md) is an isolated process, where does it get its files and configuration? How do you share those environments?
 @y
 [コンテナー](./what-is-a-container.md) を見てきましたが、これは独立したプロセスのことでした。
 ではどこからファイルなり設定なりを取得しているのでしょう？

@@ -295,7 +295,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = https trust
+SUBDIRS = https rootless trust
 bases = \
 	_index.md         \
 	antivirus.md      \
@@ -303,7 +303,6 @@ bases = \
 	certificates.md   \
 	non-events.md     \
 	protect-access.md \
-	rootless.md       \
 	seccomp.md        \
 	userns-remap.md
 

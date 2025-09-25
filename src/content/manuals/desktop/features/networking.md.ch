@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Understand how networking works on Docker Desktop and see the known limitations
@@ -55,15 +56,7 @@ When you run a container with the `-p` argument, for example:
 When you run a container with the `-p` argument, for example:
 @z
 
-@x
-```console
-$ docker run -p 80:80 -d nginx
-```
-@y
-```console
-$ docker run -p 80:80 -d nginx
-```
-@z
+% snip command...
 
 @x
 Docker Desktop makes whatever is running on port `80` in the container, in
@@ -81,15 +74,7 @@ To avoid conflicts with services already using port `80` on the host:
 To avoid conflicts with services already using port `80` on the host:
 @z
 
-@x
-```console
-$ docker run -p 8000:80 -d nginx
-```
-@y
-```console
-$ docker run -p 8000:80 -d nginx
-```
-@z
+% snip command...
 
 @x
 Now connections to `localhost:8000` are sent to port `80` in the container. 
@@ -162,6 +147,200 @@ To enable and set up SOCKS proxy support:
 @z
 
 @x
+## Networking mode and DNS behaviour for Mac and Windows
+@y
+## Networking mode and DNS behaviour for Mac and Windows
+@z
+
+@x
+With Docker Desktop version 4.42 and later, you can customize how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
+@y
+With Docker Desktop version 4.42 and later, you can customize how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
+@z
+
+@x
+> [!NOTE]
+>
+> These settings can be overridden on a per-network basis using CLI flags or Compose file options.
+@y
+> [!NOTE]
+>
+> These settings can be overridden on a per-network basis using CLI flags or Compose file options.
+@z
+
+@x
+### Default networking mode
+@y
+### Default networking mode
+@z
+
+@x
+Choose the default IP protocol used when Docker creates new networks. This allows you to align Docker with your host’s network capabilities or organizational requirements, such as enforcing IPv6-only access.
+@y
+Choose the default IP protocol used when Docker creates new networks. This allows you to align Docker with your host’s network capabilities or organizational requirements, such as enforcing IPv6-only access.
+@z
+
+@x
+The options available are:
+@y
+The options available are:
+@z
+
+@x
+- **Dual IPv4/IPv6** (Default): Supports both IPv4 and IPv6. Most flexible and ideal for environments with dual-stack networking.
+- **IPv4 only**: Only IPv4 addresses are used. Use this if your host or network does not support IPv6.
+- **IPv6 only**: Only IPv6 addresses are used. Best for environments transitioning to or enforcing IPv6-only connectivity.
+@y
+- **Dual IPv4/IPv6** (Default): Supports both IPv4 and IPv6. Most flexible and ideal for environments with dual-stack networking.
+- **IPv4 only**: Only IPv4 addresses are used. Use this if your host or network does not support IPv6.
+- **IPv6 only**: Only IPv6 addresses are used. Best for environments transitioning to or enforcing IPv6-only connectivity.
+@z
+
+@x
+> [!NOTE]
+>
+> This setting can be overridden on a per-network basis using CLI flags or Compose file options.
+@y
+> [!NOTE]
+>
+> This setting can be overridden on a per-network basis using CLI flags or Compose file options.
+@z
+
+@x
+### DNS resolution behavior
+@y
+### DNS resolution behavior
+@z
+
+@x
+Control how Docker filters DNS records returned to containers, improving reliability in environments where only IPv4 or IPv6 is supported. This setting is especially useful for preventing apps from trying to connect using IP families that aren't actually available, which can cause avoidable delays or failures.
+@y
+Control how Docker filters DNS records returned to containers, improving reliability in environments where only IPv4 or IPv6 is supported. This setting is especially useful for preventing apps from trying to connect using IP families that aren't actually available, which can cause avoidable delays or failures.
+@z
+
+@x
+Depending on your selected network mode, the options available are:
+@y
+Depending on your selected network mode, the options available are:
+@z
+
+@x
+- **Auto (recommended)**: Docker detects your host's network stack and automatically filters out unsupported DNS record types (A for IPv4, AAAA for IPv6).
+- **Filter IPv4 (A records)**: Prevents containers from resolving IPv4 addresses. Only available in dual-stack mode.
+- **Filter IPv6 (AAAA records)**: Prevents containers from resolving IPv6 addresses. Only available in dual-stack mode.
+- **No filtering**: Docker returns all DNS records (A and AAAA), regardless of host support.
+@y
+- **Auto (recommended)**: Docker detects your host's network stack and automatically filters out unsupported DNS record types (A for IPv4, AAAA for IPv6).
+- **Filter IPv4 (A records)**: Prevents containers from resolving IPv4 addresses. Only available in dual-stack mode.
+- **Filter IPv6 (AAAA records)**: Prevents containers from resolving IPv6 addresses. Only available in dual-stack mode.
+- **No filtering**: Docker returns all DNS records (A and AAAA), regardless of host support.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Switching the default networking mode resets the DNS filter to Auto.
+@y
+> [!IMPORTANT]
+>
+> Switching the default networking mode resets the DNS filter to Auto.
+@z
+
+@x
+### Using Settings Management
+@y
+### Using Settings Management
+@z
+
+@x
+If you're an administrator, you can use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking) to enforce this Docker Desktop setting across your developer's machines. Choose from the following code snippets and at it to your `admin-settings.json` file,
+or configure this setting using the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+@y
+If you're an administrator, you can use [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking) to enforce this Docker Desktop setting across your developer's machines. Choose from the following code snippets and at it to your `admin-settings.json` file,
+or configure this setting using the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Networking mode" >}}
+@y
+{{< tabs >}}
+{{< tab name="Networking mode" >}}
+@z
+
+@x
+Dual IPv4/IPv6:
+@y
+Dual IPv4/IPv6:
+@z
+
+% snip code...
+
+@x
+IPv4 only:
+@y
+IPv4 only:
+@z
+
+% snip code...
+
+@x
+IPv6 only:
+@y
+IPv6 only:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< tab name="DNS resolution" >}}
+@y
+{{< /tab >}}
+{{< tab name="DNS resolution" >}}
+@z
+
+@x
+Auto filter:
+@y
+Auto filter:
+@z
+
+% snip code...
+
+@x
+Filter IPv4:
+@y
+Filter IPv4:
+@z
+
+% snip code...
+
+@x
+Filter IPv6:
+@y
+Filter IPv6:
+@z
+
+% snip code...
+
+@x
+No filter:
+@y
+No filter:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ## Networking features for Mac and Linux
 @y
 ## Networking features for Mac and Linux
@@ -185,15 +364,7 @@ Docker Desktop for Mac and Linux lets you use the host’s SSH agent inside a co
 1. Bind mount the SSH agent socket by adding the following parameter to your `docker run` command:
 @z
 
-@x
-   ```console
-   $--mount type=bind,src=/run/host-services/ssh-auth.sock,target=/run/host-services/ssh-auth.sock
-   ```
-@y
-   ```console
-   $--mount type=bind,src=/run/host-services/ssh-auth.sock,target=/run/host-services/ssh-auth.sock
-   ```
-@z
+% snip command...
 
 @x
 2. Add the `SSH_AUTH_SOCK` environment variable in your container:
@@ -201,15 +372,7 @@ Docker Desktop for Mac and Linux lets you use the host’s SSH agent inside a co
 2. Add the `SSH_AUTH_SOCK` environment variable in your container:
 @z
 
-@x
-    ```console
-    $ -e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock"
-    ```
-@y
-    ```console
-    $ -e SSH_AUTH_SOCK="/run/host-services/ssh-auth.sock"
-    ```
-@z
+% snip command...
 
 @x
 To enable the SSH agent in Docker Compose, add the following flags to your service:
@@ -217,31 +380,7 @@ To enable the SSH agent in Docker Compose, add the following flags to your servi
 To enable the SSH agent in Docker Compose, add the following flags to your service:
 @z
 
-@x
- ```yaml
-services:
-  web:
-    image: nginx:alpine
-    volumes:
-      - type: bind
-        source: /run/host-services/ssh-auth.sock
-        target: /run/host-services/ssh-auth.sock
-    environment:
-      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
- ```
-@y
- ```yaml
-services:
-  web:
-    image: nginx:alpine
-    volumes:
-      - type: bind
-        source: /run/host-services/ssh-auth.sock
-        target: /run/host-services/ssh-auth.sock
-    environment:
-      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
- ```
-@z
+% snip code...
 
 @x
 ## Known limitations
@@ -363,21 +502,7 @@ If you have installed Python on your machine, use the following instructions as 
 2. Now, run a container, install `curl`, and try to connect to the host using the following commands:
 @z
 
-@x
-    ```console
-    $ docker run --rm -it alpine sh
-    # apk add curl
-    # curl http://host.docker.internal:8000
-    # exit
-    ```
-@y
-    ```console
-    $ docker run --rm -it alpine sh
-    # apk add curl
-    # curl http://host.docker.internal:8000
-    # exit
-    ```
-@z
+% snip command...
 
 @x
 ### I want to connect to a container from the host
@@ -409,15 +534,7 @@ For example, to run an `nginx` webserver:
 For example, to run an `nginx` webserver:
 @z
 
-@x
-```console
-$ docker run -d -p 80:80 --name webserver nginx
-```
-@y
-```console
-$ docker run -d -p 80:80 --name webserver nginx
-```
-@z
+% snip command...
 
 @x
 To clarify the syntax, the following two commands both publish container's port `80` to host's port `8000`:
@@ -425,21 +542,7 @@ To clarify the syntax, the following two commands both publish container's port 
 To clarify the syntax, the following two commands both publish container's port `80` to host's port `8000`:
 @z
 
-@x
-```console
-$ docker run --publish 8000:80 --name webserver nginx
-@y
-```console
-$ docker run --publish 8000:80 --name webserver nginx
-@z
-
-@x
-$ docker run -p 8000:80 --name webserver nginx
-```
-@y
-$ docker run -p 8000:80 --name webserver nginx
-```
-@z
+% snip command...
 
 @x
 To publish all ports, use the `-P` flag. For example, the following command
@@ -449,16 +552,6 @@ container to random ports on the host.
 To publish all ports, use the `-P` flag. For example, the following command
 starts a container (in detached mode) and the `-P` flag publishes all exposed ports of the
 container to random ports on the host.
-@z
-
-@x
-```console
-$ docker run -d -P --name webserver nginx
-```
-@y
-```console
-$ docker run -d -P --name webserver nginx
-```
 @z
 
 @x

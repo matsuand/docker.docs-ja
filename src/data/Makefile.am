@@ -4,8 +4,10 @@
 SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli
 
 bases = \
-	frontmatter.yaml \
-	samples.yaml     \
+	desktop_release.yaml        \
+	frontmatter.yaml            \
+	samples.yaml                \
+	security_announcements.yaml \
 	summary.yaml
 
 include $(top_srcdir)/build-aux/common.mk

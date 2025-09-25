@@ -247,6 +247,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/engine/release-notes/Makefile
 	src/content/manuals/engine/security/Makefile
 	src/content/manuals/engine/security/https/Makefile
+	src/content/manuals/engine/security/rootless/Makefile
 	src/content/manuals/engine/security/trust/Makefile
 	src/content/manuals/engine/security/trust/images/Makefile
 	src/content/manuals/engine/storage/Makefile
@@ -301,6 +302,8 @@ AC_CONFIG_FILES([
 	src/content/reference/api/engine/version/Makefile
 	src/content/reference/api/extensions-sdk/Makefile
 	src/content/reference/api/hub/Makefile
+	src/content/reference/api/registry/Makefile
+	src/content/reference/api/registry/images/Makefile
 	src/content/reference/cli/Makefile
 	src/content/reference/cli/docker/Makefile
 	src/content/reference/cli/docker/builder/Makefile
@@ -364,6 +367,7 @@ AC_CONFIG_FILES([
 	src/content/tags/faq/Makefile
 	src/content/tags/frameworks/Makefile
 	src/content/tags/networking/Makefile
+	src/content/tags/observability/Makefile
 	src/content/tags/product-demo/Makefile
 	src/content/tags/release-notes/Makefile
 	src/content/tags/secrets/Makefile
@@ -379,6 +383,7 @@ AC_CONFIG_FILES([
 	src/layouts/Makefile
 	src/layouts/_default/Makefile
 	src/layouts/_default/_markup/Makefile
+	src/layouts/desktop-release/Makefile
 	src/layouts/guides/Makefile
 	src/layouts/partials/Makefile
 	src/layouts/partials/admonitions/Makefile
@@ -387,6 +392,7 @@ AC_CONFIG_FILES([
 	src/layouts/partials/sidebar/Makefile
 	src/layouts/partials/utils/Makefile
 	src/layouts/samples/Makefile
+	src/layouts/security-announcements/Makefile
 	src/layouts/shortcodes/Makefile
 	src/layouts/tag/Makefile
 	src/static/Makefile

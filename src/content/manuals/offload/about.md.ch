@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: About Docker Offload
 linktitle: About
-weight: 15
-description: Learn about Docker Offload, its features, and how it works.
-keywords: cloud, build, remote builder
----
 @y
----
 title: About Docker Offload
 linktitle: About
-weight: 15
+@z
+
+@x
 description: Learn about Docker Offload, its features, and how it works.
 keywords: cloud, build, remote builder
----
+@y
+description: Learn about Docker Offload, its features, and how it works.
+keywords: cloud, build, remote builder
 @z
 
 @x
@@ -308,5 +308,5 @@ volumes in that environment, which are deleted when the session ends.
 @x
 Get hands-on with Docker Offload by following the [Docker Offload quickstart](/offload/quickstart/).
 @y
-Get hands-on with Docker Offload by following the [Docker Offload quickstart](/offload/quickstart/).
+Get hands-on with Docker Offload by following the [Docker Offload quickstart](__SUBDIR__/offload/quickstart/).
 @z

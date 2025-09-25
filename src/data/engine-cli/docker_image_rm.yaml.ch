@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker image rm
 aliases: docker image rm, docker image remove, docker rmi
@@ -28,7 +30,7 @@ long: |-
 @y
     This does not remove images from a registry. You cannot remove an image of a
     running container unless you use the `-f` option. To see all images on a host
-    use the [`docker image ls`](/reference/cli/docker/image/ls/) command.
+    use the [`docker image ls`](__SUBDIR__/reference/cli/docker/image/ls/) command.
 @z
 
 @x

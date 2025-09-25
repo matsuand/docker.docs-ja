@@ -2,21 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Offload usage and billing
 linktitle: Usage & billing
-weight: 30
-description: Learn about Docker Offload usage and how to monitor your cloud resources.
-keywords: cloud, usage, cloud minutes, shared cache, top repositories, cloud builder, Docker Offload
----
 @y
----
 title: Docker Offload usage and billing
 linktitle: Usage & billing
-weight: 30
+@z
+
+@x
 description: Learn about Docker Offload usage and how to monitor your cloud resources.
 keywords: cloud, usage, cloud minutes, shared cache, top repositories, cloud builder, Docker Offload
----
+@y
+description: Learn about Docker Offload usage and how to monitor your cloud resources.
+keywords: cloud, usage, cloud minutes, shared cache, top repositories, cloud builder, Docker Offload
 @z
 
 @x
@@ -28,16 +26,16 @@ keywords: cloud, usage, cloud minutes, shared cache, top repositories, cloud bui
 @x
 > [!NOTE]
 >
-> All free trial credits granted for the Docker Offload Beta expire after 90
+> All free trial usage granted for the Docker Offload Beta expire after 90
 > days from the time they are granted. To continue using Docker Offload after
-> your credits expire, you can enable on-demand usage at [Docker Home
+> your usage expires, you can enable on-demand usage at [Docker Home
 > Billing](https://app.docker.com/billing).
 @y
 > [!NOTE]
 >
-> All free trial credits granted for the Docker Offload Beta expire after 90
+> All free trial usage granted for the Docker Offload Beta expire after 90
 > days from the time they are granted. To continue using Docker Offload after
-> your credits expire, you can enable on-demand usage at [Docker Home
+> your usage expires, you can enable on-demand usage at [Docker Home
 > Billing](https://app.docker.com/billing).
 @z
 
@@ -58,12 +56,12 @@ can:
 @z
 
 @x
-- View your included budget
+- View your included usage
 - View rates for cloud resources
 - Enable or disable on-demand usage
 - Add or change payment methods
 @y
-- View your included budget
+- View your included usage
 - View rates for cloud resources
 - Enable or disable on-demand usage
 - Add or change payment methods

@@ -1,24 +1,24 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Troubleshoot Docker Offload
 linktitle: Troubleshoot
-weight: 800
-description: Learn how to troubleshoot issues with Docker Offload.
-keywords: cloud, troubleshooting, cloud mode, Docker Desktop, cloud builder, usage
-tags: [Troubleshooting]
----
 @y
----
 title: Troubleshoot Docker Offload
 linktitle: Troubleshoot
-weight: 800
+@z
+
+@x
 description: Learn how to troubleshoot issues with Docker Offload.
 keywords: cloud, troubleshooting, cloud mode, Docker Desktop, cloud builder, usage
 tags: [Troubleshooting]
----
+@y
+description: Learn how to troubleshoot issues with Docker Offload.
+keywords: cloud, troubleshooting, cloud mode, Docker Desktop, cloud builder, usage
+tags: [Troubleshooting]
 @z
 
 @x
@@ -142,5 +142,5 @@ session errors, use the following steps to help resolve the issue.
 @x
 7. Verify your usage and billing. For more information, see [Docker Offload usage](/offload/usage/).
 @y
-7. Verify your usage and billing. For more information, see [Docker Offload usage](/offload/usage/).
+7. Verify your usage and billing. For more information, see [Docker Offload usage](__SUBDIR__/offload/usage/).
 @z

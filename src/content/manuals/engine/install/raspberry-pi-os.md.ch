@@ -170,15 +170,7 @@ Run the following command to uninstall all conflicting packages:
 Run the following command to uninstall all conflicting packages:
 @z
 
-@x
-```console
-$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@y
-```console
-$ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
-```
-@z
+% snip command...
 
 @x
 `apt-get` might report that you have none of these packages installed.
@@ -264,40 +256,15 @@ Docker from the repository.
 1. Set up Docker's `apt` repository.
 @z
 
-@x
-   ```bash
+@x within command
    # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
 @y
-   ```bash
    # Add Docker's official GPG key:
-   sudo apt-get update
-   sudo apt-get install ca-certificates curl
-   sudo install -m 0755 -d /etc/apt/keyrings
-   sudo curl -fsSL {{% param "download-url-base" %}}/gpg -o /etc/apt/keyrings/docker.asc
-   sudo chmod a+r /etc/apt/keyrings/docker.asc
 @z
-
 @x
    # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
 @y
    # Add the repository to Apt sources:
-   echo \
-     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] {{% param "download-url-base" %}} \
-     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   sudo apt-get update
-   ```
 @z
 
 @x
@@ -320,15 +287,7 @@ Docker from the repository.
    To install the latest version, run:
 @z
 
-@x
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@y
-   ```console
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   ```
-@z
+% snip command...
 
 @x
    {{< /tab >}}
@@ -374,15 +333,7 @@ Docker from the repository.
 3. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-   ```console
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -488,29 +439,30 @@ download a new file each time you want to upgrade Docker Engine.
    where you downloaded the Docker packages.
 @z
 
-@x
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@y
-   ```console
-   $ sudo dpkg -i ./containerd.io_<version>_<arch>.deb \
-     ./docker-ce_<version>_<arch>.deb \
-     ./docker-ce-cli_<version>_<arch>.deb \
-     ./docker-buildx-plugin_<version>_<arch>.deb \
-     ./docker-compose-plugin_<version>_<arch>.deb
-   ```
-@z
+% snip command...
 
 @x
-   The Docker daemon starts automatically.
+    > [!NOTE]
+    >
+    > The Docker service starts automatically after installation. To verify that
+    > Docker is running, use:
 @y
-   The Docker daemon starts automatically.
+    > [!NOTE]
+    >
+    > インストール後は Docker サービスが自動起動します。
+    > Docker が動作しているかどうかは、以下により確認します。
 @z
+
+% snip command...
+
+@x
+    > Some systems may have this behavior disabled and will require a manual start:
+@y
+    > システムの中にはこの自動起動という動作を無効にするものがあります。
+    > その場合は手動により以下を実行します。
+@z
+
+% snip command...
 
 @x
 6. Verify that the installation is successful by running the `hello-world` image:
@@ -518,17 +470,7 @@ download a new file each time you want to upgrade Docker Engine.
 6. Verify that the installation is successful by running the `hello-world` image:
 @z
 
-@x
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@y
-   ```console
-   $ sudo service docker start
-   $ sudo docker run hello-world
-   ```
-@z
+% snip command...
 
 @x
    This command downloads a test image and runs it in a container. When the
@@ -582,15 +524,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @z
 
-@x
-   ```console
-   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@y
-   ```console
-   $ sudo apt-get purge docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin docker-ce-rootless-extras
-   ```
-@z
+% snip command...
 
 @x
 2. Images, containers, volumes, or custom configuration files on your host
@@ -600,17 +534,7 @@ To upgrade Docker Engine, download the newer package files and repeat the
    aren't automatically removed. To delete all images, containers, and volumes:
 @z
 
-@x
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@y
-   ```console
-   $ sudo rm -rf /var/lib/docker
-   $ sudo rm -rf /var/lib/containerd
-   ```
-@z
+% snip command...
 
 @x
 You have to delete any edited configuration files manually.

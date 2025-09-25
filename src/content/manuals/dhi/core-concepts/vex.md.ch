@@ -163,21 +163,7 @@ To manually retrieve the VEX attestation for tools that support it:
 To manually retrieve the VEX attestation for tools that support it:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  <your-namespace>/dhi-<image>:<tag> --platform <platform> > vex.json
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  <your-namespace>/dhi-<image>:<tag> --platform <platform> > vex.json
-```
-@z
+% snip command...
 
 @x
 For example:
@@ -185,21 +171,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64 > vex.json
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://openvex.dev/ns/v0.2.0 \
-  --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64 > vex.json
-```
-@z
+% snip command...
 
 @x
 This creates a `vex.json` file containing the VEX statements for the specified
@@ -219,12 +191,4 @@ For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
 statements during the scan:
 @z
 
-@x
-```console
-$ grype <your-namespace>/dhi-<image>:<tag> --vex vex.json
-```
-@y
-```console
-$ grype <your-namespace>/dhi-<image>:<tag> --vex vex.json
-```
-@z
+% snip command...

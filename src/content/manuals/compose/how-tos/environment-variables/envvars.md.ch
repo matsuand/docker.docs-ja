@@ -18,7 +18,7 @@ linkTitle: Pre-defined environment variables
 @x
 Docker Compose includes several pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) for details.
 @y
-Docker Compose includes several pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) for details.
+Docker Compose includes several pre-defined environment variables. It also inherits common Docker CLI environment variables, such as `DOCKER_HOST` and `DOCKER_CONTEXT`. See [Docker CLI environment variable reference](__SUBDIR__/reference/cli/docker/#environment-variables) for details.
 @z
 
 @x
@@ -160,7 +160,7 @@ constraint, you must use one of the other mechanisms.
 @x
 See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](/reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
 @y
-See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](/reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
+See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
 @z
 
 @x
@@ -204,7 +204,7 @@ Specifies the path to a Compose file. Specifying multiple Compose files is suppo
 @x
 See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @y
-See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
+See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @z
 
 @x
@@ -258,7 +258,7 @@ COMPOSE_PROFILES=frontend,debug
 @x
 See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
 @y
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
 @z
 
 @x
@@ -536,7 +536,7 @@ Default is `auto`.
 @x
 When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug.md).
 @y
-When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug.md).
+When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](reference/cli/docker/debug.md).
 @z
 
 @x
@@ -592,7 +592,7 @@ The following environment variables have no effect in Compose V2.
 For more information, see [Migrate to Compose V2](/manuals/compose/releases/migrate.md).
 @y
 The following environment variables have no effect in Compose V2.
-For more information, see [Migrate to Compose V2](/manuals/compose/releases/migrate.md).
+For more information, see [Migrate to Compose V2](manuals/compose/releases/migrate.md).
 @z
 
 @x
@@ -608,7 +608,7 @@ For more information, see [Migrate to Compose V2](/manuals/compose/releases/migr
 @y
 - `COMPOSE_API_VERSION`
     By default the API version is negotiated with the server. Use `DOCKER_API_VERSION`.  
-    See the [Docker CLI environment variable reference](/reference/cli/docker/#environment-variables) page.
+    See the [Docker CLI environment variable reference](__SUBDIR__/reference/cli/docker/#environment-variables) page.
 - `COMPOSE_HTTP_TIMEOUT`
 - `COMPOSE_TLS_VERSION`
 - `COMPOSE_FORCE_WINDOWS_HOST`

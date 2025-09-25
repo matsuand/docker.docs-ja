@@ -222,86 +222,6 @@ Security at runtime is enforced through resource and access limitations:
 @z
 
 @x
-## Enable Docker MCP Toolkit
-@y
-## Enable Docker MCP Toolkit
-@z
-
-@x
-1. Open the Docker Desktop settings and select **Beta features**.
-2. Select **Enable Docker MCP Toolkit**.
-3. Select **Apply**.
-@y
-1. Open the Docker Desktop settings and select **Beta features**.
-2. Select **Enable Docker MCP Toolkit**.
-3. Select **Apply**.
-@z
-
-@x
->[!NOTE]
->
-> This feature started as the MCP Toolkit _extension_. This extension is now deprecated
->and should be uninstalled.
-@y
->[!NOTE]
->
-> This feature started as the MCP Toolkit _extension_. This extension is now deprecated
->and should be uninstalled.
-@z
-
-@x
-## Install an MCP server
-@y
-## Install an MCP server
-@z
-
-@x
-To install an MCP server:
-@y
-To install an MCP server:
-@z
-
-@x
-1. In Docker Desktop, select **MCP Toolkit** and select the **Catalog** tab.
-   When you select a server you can see the following
-   information:
-@y
-1. In Docker Desktop, select **MCP Toolkit** and select the **Catalog** tab.
-   When you select a server you can see the following
-   information:
-@z
-
-@x
-   - Tool name and description
-   - Partner/publisher
-   - The list of callable tools the server provides.
-@y
-   - Tool name and description
-   - Partner/publisher
-   - The list of callable tools the server provides.
-@z
-
-@x
-2. Find the MCP server of your choice and select the **Plus** icon.
-3. Optional: Some servers require extra configuration. To configure them, select
-   the **Config** tab and follow the instructions available on the repository of the provider of the MCP server.
-@y
-2. Find the MCP server of your choice and select the **Plus** icon.
-3. Optional: Some servers require extra configuration. To configure them, select
-   the **Config** tab and follow the instructions available on the repository of the provider of the MCP server.
-@z
-
-@x
-> [!TIP]
-> By default, the Gordon [client](#install-an-mcp-client) is enabled,
-> which means Gordon can automatically interact with your MCP servers.
-@y
-> [!TIP]
-> By default, the Gordon [client](#install-an-mcp-client) is enabled,
-> which means Gordon can automatically interact with your MCP servers.
-@z
-
-@x
 To learn more about the MCP server catalog, see [Catalog](catalog.md).
 @y
 To learn more about the MCP server catalog, see [Catalog](catalog.md).
@@ -314,9 +234,9 @@ To learn more about the MCP server catalog, see [Catalog](catalog.md).
 @z
 
 @x
-Imagine you want to enable Ask Gordon to interact with your GitHub account:
+Imagine you want to enable [Ask Gordon](/manuals/ai/gordon/_index.md) to interact with your GitHub account:
 @y
-Imagine you want to enable Ask Gordon to interact with your GitHub account:
+Imagine you want to enable [Ask Gordon](manuals/ai/gordon/_index.md) to interact with your GitHub account:
 @z
 
 @x
@@ -352,37 +272,13 @@ Imagine you want to enable Ask Gordon to interact with your GitHub account:
 @z
 
 @x
-## Install an MCP client
+> [!TIP]
+> By default, the Gordon client is enabled,
+> which means Gordon can automatically interact with your MCP servers.
 @y
-## Install an MCP client
-@z
-
-@x
-When you have installed MCP servers, you can add clients to the MCP Toolkit. These clients
-can interact with the installed MCP servers, turning the MCP Toolkit into a gateway.
-@y
-When you have installed MCP servers, you can add clients to the MCP Toolkit. These clients
-can interact with the installed MCP servers, turning the MCP Toolkit into a gateway.
-@z
-
-@x
-To install a client:
-@y
-To install a client:
-@z
-
-@x
-1. In Docker Desktop, select **MCP Toolkit** and select the **Clients** tab.
-1. Find the client of your choice and select **Connect**.
-@y
-1. In Docker Desktop, select **MCP Toolkit** and select the **Clients** tab.
-1. Find the client of your choice and select **Connect**.
-@z
-
-@x
-Your client can now interact with the MCP Toolkit.
-@y
-Your client can now interact with the MCP Toolkit.
+> [!TIP]
+> By default, the Gordon client is enabled,
+> which means Gordon can automatically interact with your MCP servers.
 @z
 
 @x
@@ -601,14 +497,14 @@ OAuth integration. For now, the MCP Toolkit only supports GitHub OAuth.
 1. In the GitHub entry, select **Authorize**. Your browser opens the GitHub authorization page.
 1. In the GitHub authorization page, select **Authorize Docker**. Once the authorization
    is successful, you are automatically redirected to Docker Desktop.
-1. Install the **GitHub Official** MCP server, see [Install an MCP server](#install-an-mcp-server).
+1. Install the **GitHub Official** MCP server, see [Install an MCP server](/manuals/ai/mcp-catalog-and-toolkit/get-started.md#install-an-mcp-server).
 @y
 1. On https://github.com/, ensure you are signed in.
 1. In Docker Desktop, select **MCP Toolkit** and select the **OAuth** tab.
 1. In the GitHub entry, select **Authorize**. Your browser opens the GitHub authorization page.
 1. In the GitHub authorization page, select **Authorize Docker**. Once the authorization
    is successful, you are automatically redirected to Docker Desktop.
-1. Install the **GitHub Official** MCP server, see [Install an MCP server](#install-an-mcp-server).
+1. Install the **GitHub Official** MCP server, see [Install an MCP server](manuals/ai/mcp-catalog-and-toolkit/get-started.md#install-an-mcp-server).
 @z
 
 @x

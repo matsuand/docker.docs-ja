@@ -16,241 +16,95 @@ long: |-
 @x
     With this subcommand, you can run arbitrary commands in your services. Commands allocate a TTY by default, so
     you can use a command such as `docker compose exec web sh` to get an interactive prompt.
-usage: docker compose exec [OPTIONS] SERVICE COMMAND [ARGS...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: 'Detached mode: Run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
-      description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: index
-      value_type: int
-      default_value: "0"
-      description: Index of the container if service has multiple replicas
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "true"
-      description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-TTY
-      shorthand: T
-      value_type: bool
-      default_value: "true"
-      description: |
-        Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
-      description: Give extended privileges to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "true"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: Run the command as this user
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Path to workdir directory for this command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     With this subcommand, you can run arbitrary commands in your services. Commands allocate a TTY by default, so
     you can use a command such as `docker compose exec web sh` to get an interactive prompt.
+@z
+
+@x
+    By default, Compose will enter container in interactive mode and allocate a TTY, while the equivalent `docker exec`
+    command requires passing `--interactive --tty` flags to get the same behavior. Compose also support those two flags
+    to offer a smooth migration between commands, whenever they are no-op by default. Still, `interactive` can be used to
+    force disabling interactive mode (`--interactive=false`), typically when `docker compose exec` command is used inside
+    a script.
+@y
+    By default, Compose will enter container in interactive mode and allocate a TTY, while the equivalent `docker exec`
+    command requires passing `--interactive --tty` flags to get the same behavior. Compose also support those two flags
+    to offer a smooth migration between commands, whenever they are no-op by default. Still, `interactive` can be used to
+    force disabling interactive mode (`--interactive=false`), typically when `docker compose exec` command is used inside
+    a script.
+@z
+
+@x
 usage: docker compose exec [OPTIONS] SERVICE COMMAND [ARGS...]
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@y
+usage: docker compose exec [OPTIONS] SERVICE COMMAND [ARGS...]
+@z
+
+% options:
+
+@x detach
       description: 'Detached mode: Run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: 'Detached mode: Run command in the background'
+@z
+
+@x env
       description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: index
-      value_type: int
-      default_value: "0"
+@y
+      description: Set environment variables
+@z
+
+@x index
       description: Index of the container if service has multiple replicas
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "true"
+@y
+      description: Index of the container if service has multiple replicas
+@z
+
+@x interactive
       description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-TTY
-      shorthand: T
-      value_type: bool
-      default_value: "true"
+@y
+      description: Keep STDIN open even if not attached
+@z
+
+@x no-tty
       description: |
         Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
-      description: Give extended privileges to the process
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "true"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: Run the command as this user
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Path to workdir directory for this command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY.
 @z
+
+@x privileged
+      description: Give extended privileges to the process
+@y
+      description: Give extended privileges to the process
+@z
+
+@x tty
+      description: Allocate a pseudo-TTY
+@y
+      description: Allocate a pseudo-TTY
+@z
+
+@x user
+      description: Run the command as this user
+@y
+      description: Run the command as this user
+@z
+
+@x workdir
+      description: Path to workdir directory for this command
+@y
+      description: Path to workdir directory for this command
+@z
+
+% inherited_options:
+
+@x dry-run
+      description: Execute command in dry run mode
+@y
+      description: Execute command in dry run mode
+@z
+
+% snip directives...

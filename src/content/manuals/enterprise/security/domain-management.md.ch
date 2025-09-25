@@ -1,24 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
----
 title: Manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
 keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
-weight: 55
-aliases:
- - /security/for-admins/domain-management/
----
 @y
----
 title: Manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
 keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
-weight: 55
-aliases:
- - /security/for-admins/domain-management/
----
 @z
 
 @x
@@ -248,7 +240,7 @@ When auto-provisioning is enabled for a verified domain:
 - Auto-provisioning only adds existing Docker users to your organization, it doesn't create new accounts.
 - Users experience no changes to their sign-in process.
 - Company and organization owners receive email notifications when new users are added.
-- You may need to [manage seats](/manuals/subscription/manage-seats.md) to accommodate new users.
+- You may need to [manage seats](manuals/subscription/manage-seats.md) to accommodate new users.
 @z
 
 @x
@@ -364,7 +356,7 @@ email address associated with one of your verified domains
 @x
 To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
 @y
-To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
+To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
 @z
 
 @x
@@ -412,7 +404,7 @@ CSV file. For more information on bulk inviting users, see
 @y
 You can bulk invite uncaptured users to your organization using the exported
 CSV file. For more information on bulk inviting users, see
-[Manage organization members](/manuals/admin/organization/members.md).
+[Manage organization members](manuals/admin/organization/members.md).
 @z
 
 @x

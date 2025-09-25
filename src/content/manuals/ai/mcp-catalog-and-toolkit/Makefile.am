@@ -5,9 +5,11 @@
 SUBDIRS = images
 
 bases = \
-	_index.md  \
-	catalog.md \
-	hub-mcp.md \
+	_index.md      \
+	catalog.md     \
+	get-started.md \
+	faqs.md        \
+	hub-mcp.md     \
 	toolkit.md
 
 include $(top_srcdir)/build-aux/common.mk

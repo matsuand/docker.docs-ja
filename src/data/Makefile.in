@@ -298,8 +298,10 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli
 bases = \
-	frontmatter.yaml \
-	samples.yaml     \
+	desktop_release.yaml        \
+	frontmatter.yaml            \
+	samples.yaml                \
+	security_announcements.yaml \
 	summary.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

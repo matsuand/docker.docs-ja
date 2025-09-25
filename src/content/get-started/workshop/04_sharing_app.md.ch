@@ -108,7 +108,7 @@ Docker Hub にイメージをプッシュしていきます。
 @z
 
 @x
-1. In the command line, run the following commmand:
+1. In the command line, run the following command:
 @y
 1. コマンドラインから以下を実行します。
 @z

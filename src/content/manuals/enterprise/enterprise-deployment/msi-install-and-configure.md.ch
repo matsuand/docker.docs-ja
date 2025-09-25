@@ -183,15 +183,7 @@ Non-interactive installations are silent and any additional configuration must b
 #### Install interactively with verbose logging
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log"
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log"
-```
-@z
+% snip command...
 
 @x
 #### Install interactively without verbose logging
@@ -199,15 +191,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log"
 #### Install interactively without verbose logging
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi"
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi"
-```
-@z
+% snip command...
 
 @x
 #### Install non-interactively with verbose logging
@@ -215,15 +199,7 @@ msiexec /i "DockerDesktop.msi"
 #### Install non-interactively with verbose logging
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet
-```
-@z
+% snip command...
 
 @x
 #### Install non-interactively and suppressing reboots
@@ -231,15 +207,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet
 #### Install non-interactively and suppressing reboots
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart
-```
-@z
+% snip command...
 
 @x
 #### Install non-interactively with admin settings
@@ -247,15 +215,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart
 #### Install non-interactively with admin settings
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS="{"configurationFileVersion":2,"enhancedContainerIsolation":{"value":true,"locked":false}}" ALLOWEDORG="your-organization"
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS="{"configurationFileVersion":2,"enhancedContainerIsolation":{"value":true,"locked":false}}" ALLOWEDORG="your-organization"
-```
-@z
+% snip command...
 
 @x
 #### Install interactively and allow users to switch to Windows containers without admin rights
@@ -263,15 +223,7 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS=
 #### Install interactively and allow users to switch to Windows containers without admin rights
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ALLOWEDORG="your-organization" ALWAYSRUNSERVICE=1
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ALLOWEDORG="your-organization" ALWAYSRUNSERVICE=1
-```
-@z
+% snip command...
 
 @x
 #### Install with the passive display option
@@ -297,15 +249,7 @@ For example:
 For example:
 @z
 
-@x
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
-```
-@y
-```powershell
-msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
-```
-@z
+% snip command...
 
 @x
 > [!TIP]
@@ -345,15 +289,7 @@ If you no longer have the original `.msi` file, you need to use the product code
 If you no longer have the original `.msi` file, you need to use the product code associated with the installation. To find the product code, run:
 @z
 
-@x
-```powershell
-Get-WmiObject Win32_Product | Select-Object IdentifyingNumber, Name | Where-Object {$_.Name -eq "Docker Desktop"}
-```
-@y
-```powershell
-Get-WmiObject Win32_Product | Select-Object IdentifyingNumber, Name | Where-Object {$_.Name -eq "Docker Desktop"}
-```
-@z
+% snip command...
 
 @x
 It should return output similar to the following:
@@ -361,21 +297,13 @@ It should return output similar to the following:
 It should return output similar to the following:
 @z
 
+% snip output...
+
 @x
-```text
-IdentifyingNumber                      Name
------------------                      ----
-{10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
-```
 > [!NOTE]
 >
 > This command may take some time, depending on the number of installed applications.
 @y
-```text
-IdentifyingNumber                      Name
------------------                      ----
-{10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
-```
 > [!NOTE]
 >
 > This command may take some time, depending on the number of installed applications.
@@ -387,15 +315,7 @@ IdentifyingNumber                      Name
 `IdentifyingNumber` is the applications product code and can be used to uninstall Docker Desktop. For example:
 @z
 
-@x
-```powershell
-msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
-```
-@y
-```powershell
-msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
-```
-@z
+% snip command...
 
 @x
 #### Uninstall interactively with verbose logging
@@ -403,15 +323,7 @@ msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
 #### Uninstall interactively with verbose logging
 @z
 
-@x
-```powershell
-msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
-```
-@y
-```powershell
-msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
-```
-@z
+% snip command...
 
 @x
 #### Uninstall interactively without verbose logging
@@ -419,15 +331,7 @@ msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
 #### Uninstall interactively without verbose logging
 @z
 
-@x
-```powershell
-msiexec /x "DockerDesktop.msi"
-```
-@y
-```powershell
-msiexec /x "DockerDesktop.msi"
-```
-@z
+% snip command...
 
 @x
 #### Uninstall non-interactively with verbose logging
@@ -435,15 +339,7 @@ msiexec /x "DockerDesktop.msi"
 #### Uninstall non-interactively with verbose logging
 @z
 
-@x
-```powershell
-msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
-```
-@y
-```powershell
-msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
-```
-@z
+% snip command...
 
 @x
 #### Uninstall non-interactively without verbose logging
@@ -451,15 +347,7 @@ msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
 #### Uninstall non-interactively without verbose logging
 @z
 
-@x
-```powershell
-msiexec /x "DockerDesktop.msi" /quiet
-```
-@y
-```powershell
-msiexec /x "DockerDesktop.msi" /quiet
-```
-@z
+% snip command...
 
 @x
 ### Configuration options
@@ -575,15 +463,7 @@ When you install Docker Desktop from the command line, use the `DISABLEANALYTICS
 When you install Docker Desktop from the command line, use the `DISABLEANALYTICS` property.
 @z
 
-@x
-```powershell
-msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
-```
-@y
-```powershell
-msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -617,15 +497,7 @@ The registry key is as follows:
 The registry key is as follows:
 @z
 
-@x
-```powershell
-SOFTWARE\Docker Inc.\Docker Desktop\DisableMsiAnalytics
-```
-@y
-```powershell
-SOFTWARE\Docker Inc.\Docker Desktop\DisableMsiAnalytics
-```
-@z
+% snip command...
 
 @x
 When analytics is disabled, this key is set to `1`.

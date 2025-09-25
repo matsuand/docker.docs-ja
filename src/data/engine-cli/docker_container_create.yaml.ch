@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker container create
 aliases: docker container create, docker create
@@ -49,7 +51,7 @@ long: |-
 @y
     The `docker create` command shares most of its options with the `docker run`
     command (which performs a `docker create` before starting it).
-    Refer to the [`docker run` CLI reference](/reference/cli/docker/container/run/)
+    Refer to the [`docker run` CLI reference](__SUBDIR__/reference/cli/docker/container/run/)
     for details on the available flags and options.
 @z
 

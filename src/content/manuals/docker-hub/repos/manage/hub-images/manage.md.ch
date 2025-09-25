@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 description: Discover how to delete image tags.
 keywords: Docker Hub, Hub, tags, delete
@@ -119,4 +121,14 @@ The following objects are shown in the diagram.
    3. In the window that appears, verify the items that will be deleted and the
       amount of storage you will reclaim.
    4. Select **Delete forever**.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > If you would like to delete in bulk, you can use the [deletion API endpoint](/reference/api/registry/latest/#tag/delete).
+@y
+   > [!NOTE]
+   >
+   > If you would like to delete in bulk, you can use the [deletion API endpoint](__SUBDIR__/reference/api/registry/latest/#tag/delete).
 @z

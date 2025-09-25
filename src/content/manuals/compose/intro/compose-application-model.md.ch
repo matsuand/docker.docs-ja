@@ -56,7 +56,7 @@ Services store and share persistent data into [volumes](reference/compose-file/v
 @x
 Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From inside the container, configs behave like volumes—they’re mounted as files. However, configs are defined differently at the platform level.
 @y
-Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](/reference/compose-file/configs.md) concept. From inside the container, configs behave like volumes—they’re mounted as files. However, configs are defined differently at the platform level.
+Some services require configuration data that is dependent on the runtime or platform. For this, the Specification defines a dedicated [configs](reference/compose-file/configs.md) concept. From inside the container, configs behave like volumes—they’re mounted as files. However, configs are defined differently at the platform level.
 @z
 
 @x

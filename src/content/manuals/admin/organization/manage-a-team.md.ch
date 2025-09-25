@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Create and manage a team
 @y
@@ -81,7 +83,7 @@ organization
 organization settings
 - Specify [permissions](#permissions-reference) for each team in the
 organization
-- Enable [SSO](/manuals/enterprise/security/single-sign-on/_index.md) for the
+- Enable [SSO](manuals/enterprise/security/single-sign-on/_index.md) for the
 organization
 @z
 
@@ -110,7 +112,7 @@ For more information on roles, see
 [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
 For more information on roles, see
-[Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+[Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
 @x
@@ -186,7 +188,7 @@ team](/manuals/admin/organization/manage-a-team.md).
 @y
 You must create a team before you are able to configure repository permissions.
 For more details, see [Create and manage a
-team](/manuals/admin/organization/manage-a-team.md).
+team](manuals/admin/organization/manage-a-team.md).
 @z
 
 @x

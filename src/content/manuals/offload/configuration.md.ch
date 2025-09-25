@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
----
 title: Configure Docker Offload
 linktitle: Configure
-weight: 20
-description: Learn how to configure build settings for Docker Offload.
-keywords: cloud, configuration, settings, cloud builder, GPU, disk allocation, private resources, firewall
----
 @y
----
 title: Configure Docker Offload
 linktitle: Configure
-weight: 20
+@z
+
+@x
 description: Learn how to configure build settings for Docker Offload.
 keywords: cloud, configuration, settings, cloud builder, GPU, disk allocation, private resources, firewall
----
+@y
+description: Learn how to configure build settings for Docker Offload.
+keywords: cloud, configuration, settings, cloud builder, GPU, disk allocation, private resources, firewall
 @z
 
 @x
@@ -24,7 +24,7 @@ To use Docker Offload, you must start it in Docker Desktop. For more details,
 see the [Docker Offload quickstart](/offload/quickstart/).
 @y
 To use Docker Offload, you must start it in Docker Desktop. For more details,
-see the [Docker Offload quickstart](/offload/quickstart/).
+see the [Docker Offload quickstart](__SUBDIR__/offload/quickstart/).
 @z
 
 @x
@@ -46,7 +46,7 @@ the Docker Offload dashboard.
 > [!NOTE]
 >
 > To view usage and configure billing for Docker Offload, see [Docker Offload
-> usage and billing](/offload/usage/).
+> usage and billing](__SUBDIR__/offload/usage/).
 @z
 
 @x
@@ -158,7 +158,7 @@ Your subscription includes the following Build cache space:
 @x
 To get more Build cache space, [upgrade your subscription](/manuals/subscription/change.md).
 @y
-To get more Build cache space, [upgrade your subscription](/manuals/subscription/change.md).
+To get more Build cache space, [upgrade your subscription](manuals/subscription/change.md).
 @z
 
 @x
@@ -211,7 +211,7 @@ For internal OCI registries, use `docker login` to authenticate before building.
 If your internal artifacts require authentication, make sure that you
 authenticate with the repository either before or during the build. For internal
 package repositories for npm or PyPI, use [build
-secrets](/manuals/build/building/secrets.md) to authenticate during the build.
+secrets](manuals/build/building/secrets.md) to authenticate during the build.
 For internal OCI registries, use `docker login` to authenticate before building.
 @z
 

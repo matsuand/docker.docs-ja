@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 command: docker mcp
 short: Manage MCP servers and clients
@@ -18,87 +20,20 @@ long: |-
 @x
     For more information see [Docker MCP](/ai/mcp-gateway/) and
     the public [GitHub repository](https://github.com/docker/mcp-gateway).
-pname: docker
-plink: docker.yaml
-cname:
-    - docker mcp catalog
-    - docker mcp client
-    - docker mcp config
-    - docker mcp gateway
-    - docker mcp policy
-    - docker mcp secret
-    - docker mcp server
-    - docker mcp tools
-    - docker mcp version
-clink:
-    - docker_mcp_catalog.yaml
-    - docker_mcp_client.yaml
-    - docker_mcp_config.yaml
-    - docker_mcp_gateway.yaml
-    - docker_mcp_policy.yaml
-    - docker_mcp_secret.yaml
-    - docker_mcp_server.yaml
-    - docker_mcp_tools.yaml
-    - docker_mcp_version.yaml
-options:
-    - option: version
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Print version information and quit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    For more information see [Docker MCP](/ai/mcp-gateway/) and
+    For more information see [Docker MCP](__SUBDIR__/ai/mcp-gateway/) and
     the public [GitHub repository](https://github.com/docker/mcp-gateway).
-pname: docker
-plink: docker.yaml
-cname:
-    - docker mcp catalog
-    - docker mcp client
-    - docker mcp config
-    - docker mcp gateway
-    - docker mcp policy
-    - docker mcp secret
-    - docker mcp server
-    - docker mcp tools
-    - docker mcp version
-clink:
-    - docker_mcp_catalog.yaml
-    - docker_mcp_client.yaml
-    - docker_mcp_config.yaml
-    - docker_mcp_gateway.yaml
-    - docker_mcp_policy.yaml
-    - docker_mcp_secret.yaml
-    - docker_mcp_server.yaml
-    - docker_mcp_tools.yaml
-    - docker_mcp_version.yaml
-options:
-    - option: version
-      shorthand: v
-      value_type: bool
-      default_value: "false"
-      description: Print version information and quit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+%cname:
+%clink:
+
+% options:
+
+@x version
+      description: Print version information and quit
+@y
+      description: Print version information and quit
+@z
+
+% snip directives...
