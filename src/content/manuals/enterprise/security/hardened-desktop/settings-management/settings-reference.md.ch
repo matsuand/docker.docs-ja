@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Settings reference
@@ -2617,14 +2618,14 @@ The following settings aren’t shown in the Docker Desktop GUI. You can only co
 - **Use case:** Enforce image provenance by requiring all images to come from registries.
 - **Configure this setting with:**
     - Settings Management: `blockDockerLoad` setting in the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Block Docker Load** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Block Docker Load** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @y
 - **Description:** Prevent users from loading local Docker images using the `docker load` command.
 - **OS:** {{< badge color=blue text="All" >}}
 - **Use case:** Enforce image provenance by requiring all images to come from registries.
 - **Configure this setting with:**
     - Settings Management: `blockDockerLoad` setting in the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Block Docker Load** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Block Docker Load** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x
@@ -2660,13 +2661,13 @@ to come from your secure, scanned registry.
 - **OS:** {{< badge color=blue text="All" >}}
 - **Configure this setting with:**
     - Settings Management: `displayedOnboarding` setting in the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Block Docker Load** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Block Docker Load** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @y
 - **Description:** Prevent the onboarding survey from being shown to new users.
 - **OS:** {{< badge color=blue text="All" >}}
 - **Configure this setting with:**
     - Settings Management: `displayedOnboarding` setting in the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Block Docker Load** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Block Docker Load** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x
@@ -2691,14 +2692,14 @@ to come from your secure, scanned registry.
 - **Use case:** Support legacy integrations that require TCP API access.
 - **Configure this setting with:**
     - Settings Management: `exposeDockerAPIOnTCP2375` in the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Expose Docker API** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Expose Docker API** setting in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @y
 - **Description:** Exposes the Docker API over an unauthenticated TCP socket on port 2375. Only recommended for isolated and protected environments.
 - **OS:** {{< badge color=blue text="Windows only" >}}
 - **Use case:** Support legacy integrations that require TCP API access.
 - **Configure this setting with:**
     - Settings Management: `exposeDockerAPIOnTCP2375` in the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Expose Docker API** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Expose Docker API** setting in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x
@@ -2735,14 +2736,14 @@ Docker API is only reachable via the secure internal socket.
 - **Use case:** Provide controlled network access for containers in offline or restricted network environments.
 - **Configure this setting with:**
     - Settings Management: `containersProxy` setting in the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Containers proxy** section in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Containers proxy** section in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @y
 - **Description:** HTTP/HTTPS proxy configuration for containers in air-gapped environments.
 - **OS:** {{< badge color=blue text="All" >}}
 - **Use case:** Provide controlled network access for containers in offline or restricted network environments.
 - **Configure this setting with:**
     - Settings Management: `containersProxy` setting in the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
-    - Settings Management: **Containers proxy** section in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md
+    - Settings Management: **Containers proxy** section in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x
@@ -2751,31 +2752,7 @@ Docker API is only reachable via the secure internal socket.
 #### Example
 @z
 
-@x
-```json
-"containersProxy": {
-  "locked": true,
-  "mode": "manual",
-  "http": "",
-  "https": "",
-  "exclude": [],
-  "pac": "",
-  "transparentPorts": ""
-}
-```
-@y
-```json
-"containersProxy": {
-  "locked": true,
-  "mode": "manual",
-  "http": "",
-  "https": "",
-  "exclude": [],
-  "pac": "",
-  "transparentPorts": ""
-}
-```
-@z
+% snip code...
 
 @x
 ### Docker socket access control (ECI exceptions)
@@ -2799,12 +2776,14 @@ Docker API is only reachable via the secure internal socket.
 - **Use case:** Support tools like Testcontainers, LocalStack, or CI systems that need Docker socket access while maintaining security.
 - Configure this setting with:
     - Settings Management: `enhancedContainerIsolation` > `dockerSocketMount` in the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
+    - Settings Management: **Command list** in the [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @y
 - **Description:** Specific images and commands allowed to use the Docker socket when Enhanced Container Isolation is active.
 - **OS:** {{< badge color=blue text="All" >}}
 - **Use case:** Support tools like Testcontainers, LocalStack, or CI systems that need Docker socket access while maintaining security.
 - Configure this setting with:
     - Settings Management: `enhancedContainerIsolation` > `dockerSocketMount` in the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md)
+    - Settings Management: **Command list** in the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x
@@ -2813,45 +2792,7 @@ Docker API is only reachable via the secure internal socket.
 #### Example
 @z
 
-@x
-```json
-"enhancedContainerIsolation": {
-  "locked": true,
-  "value": true,
-  "dockerSocketMount": {
-    "imageList": {
-      "images": [
-        "docker.io/localstack/localstack:*",
-        "docker.io/testcontainers/ryuk:*"
-      ]
-    },
-    "commandList": {
-      "type": "deny",
-      "commands": ["push"]
-    }
-  }
-}
-```
-@y
-```json
-"enhancedContainerIsolation": {
-  "locked": true,
-  "value": true,
-  "dockerSocketMount": {
-    "imageList": {
-      "images": [
-        "docker.io/localstack/localstack:*",
-        "docker.io/testcontainers/ryuk:*"
-      ]
-    },
-    "commandList": {
-      "type": "deny",
-      "commands": ["push"]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Allow beta features

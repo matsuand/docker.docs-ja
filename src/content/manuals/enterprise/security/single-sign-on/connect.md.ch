@@ -44,6 +44,42 @@ in one session with separate browser windows open for Docker and your IdP.
 @z
 
 @x
+## Supported identity providers
+@y
+## Supported identity providers
+@z
+
+@x
+Docker supports any SAML 2.0 or OIDC-compatible identity provider. This guide
+provides detailed setup instructions for the most commonly
+used providers: Okta and Microsoft Entra ID.
+@y
+Docker supports any SAML 2.0 or OIDC-compatible identity provider. This guide
+provides detailed setup instructions for the most commonly
+used providers: Okta and Microsoft Entra ID.
+@z
+
+@x
+If you're using a
+different IdP, the general process remains the same:
+@y
+If you're using a
+different IdP, the general process remains the same:
+@z
+
+@x
+1. Configure the connection in Docker.
+1. Set up the application in your IdP using the values from Docker.
+1. Complete the connection by entering your IdP's values back into Docker.
+1. Test the connection.
+@y
+1. Configure the connection in Docker.
+1. Set up the application in your IdP using the values from Docker.
+1. Complete the connection by entering your IdP's values back into Docker.
+1. Test the connection.
+@z
+
+@x
 ## Prerequisites
 @y
 ## Prerequisites

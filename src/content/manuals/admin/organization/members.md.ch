@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Manage organization members
@@ -56,12 +57,12 @@ Use the following steps to invite members to your organization via Docker ID or 
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Members**, then **Invite**.
 1. Select **Emails or usernames**.
 1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Members**, then **Invite**.
 1. Select **Emails or usernames**.
 1. Follow the on-screen instructions to invite members. Invite a maximum of 1000 members and separate multiple entries by comma, semicolon, or space.
@@ -98,30 +99,18 @@ To invite multiple members to an organization via a CSV file containing email ad
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Members**, then **Invite**.
 1. Select **CSV upload**.
 1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Members**, then **Invite**.
 1. Select **CSV upload**.
 1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
 @z
 
-@x
-```text
-email
-docker.user-0@example.com
-docker.user-1@example.com
-```
-@y
-```text
-email
-docker.user-0@example.com
-docker.user-1@example.com
-```
-@z
+% snip text...
 
 @x
 CSV file requirements:
@@ -317,19 +306,7 @@ To invite multiple members to an organization via a CSV file containing email ad
 1. Optional. Select **Download the template CSV file** to download an example CSV file. The following is an example of the contents of a valid CSV file.
 @z
 
-@x
-```text
-email
-docker.user-0@example.com
-docker.user-1@example.com
-```
-@y
-```text
-email
-docker.user-0@example.com
-docker.user-1@example.com
-```
-@z
+% snip text...
 
 @x
 CSV file requirements:

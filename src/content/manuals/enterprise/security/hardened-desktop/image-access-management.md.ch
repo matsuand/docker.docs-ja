@@ -118,7 +118,7 @@ To configure Image Access Management:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **Image access**.
 1. Use the **toggle** to enable image access.
 1. Select which image types to allow:
@@ -127,7 +127,7 @@ To configure Image Access Management:
     - **Docker Verified Publisher Images**: Images from Docker partners in the Verified Publisher program, qualified for secure supply chains.
     - **Docker Official Images**: Curated Docker repositories that provide OS repositories, best practices for Dockerfiles, drop-in solutions, and timely security updates.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **Image access**.
 1. Use the **toggle** to enable image access.
 1. Select which image types to allow:

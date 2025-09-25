@@ -136,12 +136,12 @@ Configure Enhanced Container Isolation organization-wide using Settings Manageme
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Go to **Admin Console** > **Desktop Settings Management**.
 1. [Create or edit a setting policy](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md).
 1. Set **Enhanced Container Isolation** to **Always enabled**.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Go to **Admin Console** > **Desktop Settings Management**.
 1. [Create or edit a setting policy](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md).
 1. Set **Enhanced Container Isolation** to **Always enabled**.

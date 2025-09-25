@@ -110,13 +110,15 @@ company.
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company from
+the top-left account drop-down.
 1. Select **Admin Console**, then **Organizations**.
 1. Select **Add organization**.
 1. Choose the organization you want to add from the drop-down menu.
 1. Select **Add organization** to confirm.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company from
+the top-left account drop-down.
 1. Select **Admin Console**, then **Organizations**.
 1. Select **Add organization**.
 1. Choose the organization you want to add from the drop-down menu.
@@ -130,11 +132,13 @@ company.
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company from
+the top-left account drop-down.
 1. Select **Admin Console**, then **Organizations**.
 1. Select the organization you want to manage.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your company.
+1. Sign in to [Docker Home](https://app.docker.com) and select your company from
+the top-left account drop-down.
 1. Select **Admin Console**, then **Organizations**.
 1. Select the organization you want to manage.
 @z

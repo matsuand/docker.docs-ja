@@ -214,12 +214,12 @@ Users are provisioned with JIT by default. If you enable SCIM, you can disable J
 @z
 
 @x
-1. Go to [Docker Home](https://app.docker.com/) and select your organization.
+1. Go to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Action** icon, then select **Disable JIT provisioning**.
 1. Select **Disable** to confirm.
 @y
-1. Go to [Docker Home](https://app.docker.com/) and select your organization.
+1. Go to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Action** icon, then select **Disable JIT provisioning**.
 1. Select **Disable** to confirm.

@@ -63,11 +63,11 @@ To edit this information:
 
 @x
 1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-select your organization.
+select your organization from the top-left account drop-down.
 1. Enter or update your organization’s details, then select **Save**.
 @y
 1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-select your organization.
+select your organization from the top-left account drop-down.
 1. Enter or update your organization’s details, then select **Save**.
 @z
 

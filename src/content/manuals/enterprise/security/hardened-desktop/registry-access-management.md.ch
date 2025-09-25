@@ -102,7 +102,7 @@ To configure registry permissions:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **Registry access**.
 1. Use the **toggle** to enable registry access. By default, Docker Hub is enabled
 in the registry list.
@@ -111,7 +111,7 @@ a **Registry address** and **Registry nickname**.
 1. Select **Create**. You can add up to 100 registries.
 1. Verify your registry appears in the registry list and select **Save changes**.
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **Registry access**.
 1. Use the **toggle** to enable registry access. By default, Docker Hub is enabled
 in the registry list.

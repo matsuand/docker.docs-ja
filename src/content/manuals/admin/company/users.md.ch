@@ -302,12 +302,14 @@ You can resend individual invitations, or bulk invitations from the Admin Consol
 @z
 
 @x
-1. In [Docker Home](https://app.docker.com/), select your company.
+1. In [Docker Home](https://app.docker.com/), select your company from
+the top-left account drop-down.
 2. Select **Admin Console**, then **Users**.
 3. Select the **action menu** next to the invitee and select **Resend**.
 4. Select **Invite** to confirm.
 @y
-1. In [Docker Home](https://app.docker.com/), select your company.
+1. In [Docker Home](https://app.docker.com/), select your company from
+the top-left account drop-down.
 2. Select **Admin Console**, then **Users**.
 3. Select the **action menu** next to the invitee and select **Resend**.
 4. Select **Invite** to confirm.
@@ -320,13 +322,15 @@ You can resend individual invitations, or bulk invitations from the Admin Consol
 @z
 
 @x
-1. In [Docker Home](https://app.docker.com/), select your company.
+1. In [Docker Home](https://app.docker.com/), select your company from
+the top-left account drop-down.
 2. Select **Admin Console**, then **Users**.
 3. Use the **checkboxes** next to **Usernames** to bulk select users.
 4. Select **Resend invites**.
 5. Select **Resend** to confirm.
 @y
-1. In [Docker Home](https://app.docker.com/), select your company.
+1. In [Docker Home](https://app.docker.com/), select your company from
+the top-left account drop-down.
 2. Select **Admin Console**, then **Users**.
 3. Use the **checkboxes** next to **Usernames** to bulk select users.
 4. Select **Resend invites**.
