@@ -26,6 +26,7 @@ When packaging a sharded model --gguf should point to the first shard. All shard
 @x
 | Name              | Type          | Default | Description                                                                            |
 |:------------------|:--------------|:--------|:---------------------------------------------------------------------------------------|
+| `--chat-template` | `string`      |         | absolute path to chat template file (must be Jinja format)                             |
 | `--context-size`  | `uint64`      | `0`     | context size in tokens                                                                 |
 | `--gguf`          | `string`      |         | absolute path to gguf file (required)                                                  |
 | `-l`, `--license` | `stringArray` |         | absolute path to a license file                                                        |
@@ -33,6 +34,7 @@ When packaging a sharded model --gguf should point to the first shard. All shard
 @y
 | Name              | Type          | Default | Description                                                                            |
 |:------------------|:--------------|:--------|:---------------------------------------------------------------------------------------|
+| `--chat-template` | `string`      |         | absolute path to chat template file (must be Jinja format)                             |
 | `--context-size`  | `uint64`      | `0`     | context size in tokens                                                                 |
 | `--gguf`          | `string`      |         | absolute path to gguf file (required)                                                  |
 | `-l`, `--license` | `stringArray` |         | absolute path to a license file                                                        |

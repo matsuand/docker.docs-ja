@@ -21,91 +21,53 @@ long: |-
 
 @x
     You can also use chat mode in the Docker Desktop Dashboard when you select the model in the **Models** tab.
-usage: docker model run MODEL [PROMPT]
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: backend
-      value_type: string
-      description: Specify the backend to use (llama.cpp, openai)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-runtime-memory-check
-      value_type: bool
-      default_value: "false"
-      description: |
-        Do not block pull if estimated runtime memory for model exceeds system resources.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### One-time prompt
 @y
     You can also use chat mode in the Docker Desktop Dashboard when you select the model in the **Models** tab.
+@z
+
+@x
 usage: docker model run MODEL [PROMPT]
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: backend
-      value_type: string
+@y
+usage: docker model run MODEL [PROMPT]
+@z
+
+% options:
+
+@x backend
       description: Specify the backend to use (llama.cpp, openai)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      value_type: bool
-      default_value: "false"
+@y
+      description: Specify the backend to use (llama.cpp, openai)
+@z
+
+@x color
+      description: Use colored output (auto|yes|no)
+@y
+      description: Use colored output (auto|yes|no)
+@z
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: ignore-runtime-memory-check
-      value_type: bool
-      default_value: "false"
+@y
+      description: Enable debug logging
+@z
+
+@x ignore-runtime-memory-check
       description: |
         Do not block pull if estimated runtime memory for model exceeds system resources.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: |
+        Do not block pull if estimated runtime memory for model exceeds system resources.
+@z
+
+@x
+examples: |-
+    ### One-time prompt
+@y
 examples: |-
     ### One-time prompt
 @z
 
-@x
-    ```console
-    docker model run ai/smollm2 "Hi"
-    ```
-@y
-    ```console
-    docker model run ai/smollm2 "Hi"
-    ```
-@z
+% snip command...
 
 @x
     Output:
@@ -113,15 +75,7 @@ examples: |-
     Output:
 @z
 
-@x
-    ```console
-    Hello! How can I assist you today?
-    ```
-@y
-    ```console
-    Hello! How can I assist you today?
-    ```
-@z
+% snip output...
 
 @x
     ### Interactive chat
@@ -129,15 +83,7 @@ examples: |-
     ### Interactive chat
 @z
 
-@x
-    ```console
-    docker model run ai/smollm2
-    ```
-@y
-    ```console
-    docker model run ai/smollm2
-    ```
-@z
+% snip command...
 
 @x
     Output:
@@ -145,32 +91,6 @@ examples: |-
     Output:
 @z
 
-@x
-    ```console
-    Interactive chat mode started. Type '/bye' to exit.
-    > Hi
-    Hi there! It's SmolLM, AI assistant. How can I help you today?
-    > /bye
-    Chat session ended.
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    Interactive chat mode started. Type '/bye' to exit.
-    > Hi
-    Hi there! It's SmolLM, AI assistant. How can I help you today?
-    > /bye
-    Chat session ended.
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip output...
+
+% snip directives...
