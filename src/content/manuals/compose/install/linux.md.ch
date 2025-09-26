@@ -14,14 +14,16 @@ keywords: install docker compose linux, docker compose plugin, docker-compose-pl
 
 @x
 title: Install the Docker Compose plugin
+linkTitle: Plugin
 @y
-title: Install the Docker Compose plugin
+title: Docker Compose プラグインのインストール
+linkTitle: プラグイン
 @z
 
 @x
 This page contains instructions on how to install the Docker Compose plugin on Linux from the command line.
 @y
-This page contains instructions on how to install the Docker Compose plugin on Linux from the command line.
+このページでは、Linux 上においてコマンドラインから Docker Compose プラグインをインストールする手順について説明します。
 @z
 
 @x
@@ -29,9 +31,9 @@ To install the Docker Compose plugin on Linux, you can either:
 - [Set up Docker's repository on your Linux system](#install-using-the-repository).
 - [Install manually](#install-the-plugin-manually).
 @y
-To install the Docker Compose plugin on Linux, you can either:
-- [Set up Docker's repository on your Linux system](#install-using-the-repository).
-- [Install manually](#install-the-plugin-manually).
+Linux 上において Docker Compose プラグインをインストールするには、以下のいずれかの方法をとります。
+- [Linux 上に Docker のリポジトリを設定する方法](#install-using-the-repository).
+- [手動でインストールする方法](#install-the-plugin-manually).
 @z
 
 @x
@@ -41,19 +43,20 @@ To install the Docker Compose plugin on Linux, you can either:
 @y
 > [!NOTE]
 >
-> These instructions assume you already have Docker Engine and Docker CLI installed and now want to install the Docker Compose plugin. 
+> ここに説明する手順は Docker Engine と Docker CLI が既にインストール済であって、そこから Docker Compose プラグインをインストールすることを前提に説明しています。
 @z
 
 @x
 ## Install using the repository
 @y
-## Install using the repository
+## リポジトリを使ったインストール {#install-using-the-repository}
 @z
 
 @x
 1. Set up the repository. Find distribution-specific instructions in:
 @y
-1. Set up the repository. Find distribution-specific instructions in:
+1. リポジトリを設定します。
+   ディストリビューション固有の手順として以下を参照してください。
 @z
 
 @x
@@ -75,13 +78,14 @@ To install the Docker Compose plugin on Linux, you can either:
 @x
 2. Update the package index, and install the latest version of Docker Compose:
 @y
-2. Update the package index, and install the latest version of Docker Compose:
+2. パッケージインデックスを更新します。
+   そして最新版の Docker Compose をインストールします。
 @z
 
 @x
     * For Ubuntu and Debian, run:
 @y
-    * For Ubuntu and Debian, run:
+    * Ubuntu や Debian の場合は以下を実行します。
 @z
 
 % snip command...
@@ -89,7 +93,7 @@ To install the Docker Compose plugin on Linux, you can either:
 @x
     * For RPM-based distributions, run:
 @y
-    * For RPM-based distributions, run:
+    * RPM ベースのディストリビューションでは以下を実行します。
 @z
 
 % snip command...
@@ -97,7 +101,7 @@ To install the Docker Compose plugin on Linux, you can either:
 @x
 3.  Verify that Docker Compose is installed correctly by checking the version.
 @y
-3.  Verify that Docker Compose is installed correctly by checking the version.
+3.  バージョンをチェックすることで Docker Compose が正常にインストールできたことを確認します。
 @z
 
 % snip command...
@@ -105,19 +109,19 @@ To install the Docker Compose plugin on Linux, you can either:
 @x
 ### Update Docker Compose
 @y
-### Update Docker Compose
+### Docker Compose の更新 {#update-docker-dompose}
 @z
 
 @x
 To update the Docker Compose plugin, run the following commands:
 @y
-To update the Docker Compose plugin, run the following commands:
+Docker Compose プラグインを更新するには、以下のコマンドを実行します。
 @z
 
 @x
 * For Ubuntu and Debian, run:
 @y
-* For Ubuntu and Debian, run:
+* Ubuntu や Debian の場合は以下を実行します。
 @z
 
 % snip command...
@@ -125,7 +129,7 @@ To update the Docker Compose plugin, run the following commands:
 @x
 * For RPM-based distributions, run:
 @y
-* For RPM-based distributions, run:
+* RPM ベースのディストリビューションでは以下を実行します。
 @z
 
 % snip command...
@@ -133,7 +137,7 @@ To update the Docker Compose plugin, run the following commands:
 @x
 ## Install the plugin manually
 @y
-## Install the plugin manually
+## プラグインの手動インストール {#install-the-plugin-manually}
 @z
 
 @x
@@ -143,13 +147,14 @@ To update the Docker Compose plugin, run the following commands:
 @y
 > [!WARNING]
 >
-> Manual installations don’t auto-update. For ease of maintenance, use the Docker repository method.
+> 手動によるインストールの場合は自動更新が行われません。
+> 保守を容易にするのであれば Docker リポジトリを利用する方法をとってください。
 @z
 
 @x
 1.  To download and install the Docker Compose CLI plugin, run:
 @y
-1.  To download and install the Docker Compose CLI plugin, run:
+1.  Docker Compose CLI プラグインのダウンロードとインストールを行うため、以下を実行します。
 @z
 
 % snip command...
@@ -157,7 +162,7 @@ To update the Docker Compose plugin, run the following commands:
 @x
     This command downloads and installs the latest release of Docker Compose for the active user under `$HOME` directory.
 @y
-    This command downloads and installs the latest release of Docker Compose for the active user under `$HOME` directory.
+    このコマンドは最新版の Docker Compose をダウンロードし、現ユーザーの `$HOME` ディレクトリ配下にインストールします。
 @z
 
 @x
@@ -166,16 +171,16 @@ To update the Docker Compose plugin, run the following commands:
     - A different version of Compose, substitute `{{% param "compose_version" %}}` with the version of Compose you want to use.
     - For a different architecture, substitute `x86_64` with the [architecture you want](https://github.com/docker/compose/releases).   
 @y
-    To install:
-    - Docker Compose for _all users_ on your system, replace `~/.docker/cli-plugins` with `/usr/local/lib/docker/cli-plugins`.
-    - A different version of Compose, substitute `{{% param "compose_version" %}}` with the version of Compose you want to use.
-    - For a different architecture, substitute `x86_64` with the [architecture you want](https://github.com/docker/compose/releases).   
+    インストールにあたっては、必要に応じて以下を行います。
+    - Docker Compose を _全ユーザー_ 向けの利用とするなら、`~/.docker/cli-plugins` を `/usr/local/lib/docker/cli-plugins` に置き換えます。
+    - Compose の別バージョンを利用するなら `{{% param "compose_version" %}}` を利用したいバージョンに置き換えます。
+    - 別アーキテクチャーの場合は `x86_64` を [所望のアーキテクチャー](https://github.com/docker/compose/releases) に置き換えます。
 @z
 
 @x
 2. Apply executable permissions to the binary:
 @y
-2. Apply executable permissions to the binary:
+2. バイナリーに対して実行権限を与えます。
 @z
 
 % snip command...
@@ -183,7 +188,7 @@ To update the Docker Compose plugin, run the following commands:
 @x
     or, if you chose to install Compose for all users:
 @y
-    or, if you chose to install Compose for all users:
+    または、インストールした Compose を全ユーザー向けとするなら以下を実行します。
 @z
 
 % snip command...
@@ -191,7 +196,7 @@ To update the Docker Compose plugin, run the following commands:
 @x
 3. Test the installation.
 @y
-3. Test the installation.
+3. インストール結果を確認します。
 @z
 
 % snip command...
@@ -199,13 +204,13 @@ To update the Docker Compose plugin, run the following commands:
 @x
 ## What's next?
 @y
-## What's next?
+## 次は何？ {#whats-next}
 @z
 
 @x
 - [Understand how Compose works](/manuals/compose/intro/compose-application-model.md)
 - [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
 @y
-- [Understand how Compose works](manuals/compose/intro/compose-application-model.md)
-- [Try the Quickstart guide](manuals/compose/gettingstarted.md)
+- [Compose はどのように動作するか](manuals/compose/intro/compose-application-model.md)
+- [クィックスタートガイドを始める](manuals/compose/gettingstarted.md)
 @z
