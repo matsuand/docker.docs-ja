@@ -4,5 +4,5 @@
 @x
 title: Introduction to Compose
 @y
-title: Introduction to Compose
+title: Compose 入門
 @z
