@@ -28,7 +28,7 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   link: /compose/intro/features-uses/
 @y
 - title: Compose 利用はなぜ？
-  description: Understand Docker Compose's key benefits
+  description: Docker Compose の主要機能の特性を理解します。
   icon: feature_search
   link: __SUBDIR__/compose/intro/features-uses/
 @z
@@ -40,7 +40,7 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   link: /compose/intro/compose-application-model/
 @y
 - title: Compose はどう動くのか
-  description: Understand how Compose works
+  description: Compose はどのようにして動作するのかを理解します。
   icon: category
   link: __SUBDIR__/compose/intro/compose-application-model/
 @z
@@ -52,7 +52,7 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   link: /compose/install
 @y
 - title: Compose のインストール
-  description: Follow the instructions on how to install Docker Compose.
+  description: Docker Compose のインストール手順を説明していきます。
   icon: download
   link: __SUBDIR__/compose/install
 @z
@@ -65,8 +65,7 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   link: /compose/gettingstarted
 @y
 - title: クィックスタート
-  description: Learn the key concepts of Docker Compose whilst building a simple Python
-    web application.
+  description: 簡単な Pytyhon ウェブアプリケーションをビルドしながら Docker Compose の特徴的な考え方について学んでいきます。
   icon: explore
   link: __SUBDIR__/compose/gettingstarted
 @z
@@ -78,7 +77,7 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   link: /compose/release-notes
 @y
 - title: リリースノートの確認
-  description: Find out about the latest enhancements and bug fixes.
+  description: 最新の機能拡張やバグフィックスを確認します。
   icon: note_add
   link: __SUBDIR__/compose/release-notes
 @z
@@ -95,6 +94,18 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
     Docker application.
   icon: polyline
   link: __SUBDIR__/reference/compose-file
+@z
+
+@x
+- title: Use Compose Bridge
+  description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
+  icon: move_down
+  link: /compose/bridge
+@y
+- title: Compose Bridge の利用
+  description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
+  icon: move_down
+  link: __SUBDIR__/compose/bridge
 @z
 
 @x

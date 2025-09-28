@@ -1,25 +1,43 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ �Ή� (icon svg �t�@�C���ɂ��Ă� no slash �Ή�)
+% __SUBDIR__ 対応 (icon svg ファイルについては no slash 対応)
 
 @x
 title: Docker MCP Catalog and Toolkit
 linkTitle: MCP Catalog and Toolkit
 @y
-title: Docker MCP Catalog and Toolkit
-linkTitle: MCP Catalog and Toolkit
+title: Docker MCP Catalog と Toolkit
+linkTitle: MCP Catalog と Toolkit
+@z
+
+@x
+      text: Beta
+@y
+      text: ベータ
 @z
 
 @x
 description: Learn about Docker's MCP catalog on Docker Hub
 keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, docker hub
 @y
-description: Learn about Docker's MCP catalog on Docker Hub
+description: Docker Hub 上における Docker MCP Catalog について学びます。
 keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, docker hub
 @z
 
 % grid:
+
+@x
+ - title: Get started
+   description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
+   icon: explore
+   link: /ai/mcp-catalog-and-toolkit/get-started/
+@y
+ - title: はじめよう
+   description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
+   icon: explore
+   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/get-started/
+@z
 
 @x
  - title: MCP Catalog
@@ -48,7 +66,7 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @x
 {{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}
 @y
-{{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}
+{{< summary-bar feature_name="Docker MCP Catalog と Toolkit" >}}
 @z
 
 @x
@@ -60,7 +78,7 @@ client-server protocol, where the client, for example an application such as [Go
 [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is
 an open protocol that standardizes how applications provide context and
 additional functionality to large language models. MCP functions as a
-client-server protocol, where the client, for example an application such as [Gordon](manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
+client-server protocol, where the client, for example an application such as [Gordon](/manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
 @z
 
 @x

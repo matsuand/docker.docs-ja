@@ -42,6 +42,58 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
 @z
 
 @x
+  - title: Docker Hardened Images
+    icon: /icons/dhi.svg
+    description: |
+      Secure, minimal images for trusted software delivery.
+    links:
+      - text: "Overview"
+        url: "/dhi/"
+      - text: "Quickstart"
+        url: "/dhi/get-started/"
+      - text: "Use an image"
+        url: "/dhi/how-to/use/"
+@y
+  - title: Docker Hardened イメージ
+    icon: /icons/dhi.svg
+    description: |
+      信頼できるソフトウェア配信を行うためのセキュアで最小限のイメージです。
+    links:
+      - text: "概要"
+        url: "dhi/"
+      - text: "クィックスタート"
+        url: "dhi/get-started/"
+      - text: "イメージの利用"
+        url: "dhi/how-to/use/"
+@z
+
+@x
+  - title: Docker MCP Catalog and Toolkit
+    icon: /icons/toolkit.svg
+    description: |
+      Augment your AI workflows with MCP servers.
+    links:
+      - text: "Overview"
+        url: "/ai/mcp-catalog-and-toolkit/"
+      - text: "Quickstart"
+        url: "/ai/mcp-catalog-and-toolkit/get-started/"
+      - text: "Explore the MCP Toolkit"
+        url: "/ai/mcp-catalog-and-toolkit/toolkit/"
+@y
+  - title: Docker MCP カタログとツールキット
+    icon: /icons/toolkit.svg
+    description: |
+      MCP サーバーを使って AI ワークフローを拡充します。
+    links:
+      - text: "概要"
+        url: "ai/mcp-catalog-and-toolkit/"
+      - text: "クィックスタート"
+        url: "ai/mcp-catalog-and-toolkit/get-started/"
+      - text: "MCP ツールキットの確認"
+        url: "ai/mcp-catalog-and-toolkit/toolkit/"
+@z
+
+@x
   - title: Docker Engine
     icon: developer_board
     description: |
@@ -210,7 +262,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Change subscription"
         url: "/subscription/change/"
 @y
-  - title: Subscription
+  - title: サブスクリプション
     icon: card_membership
     description: |
       Docker コンポーネントの商用利用のためのライセンスです。
@@ -236,7 +288,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "View billing history"
         url: "/billing/history/"
 @y
-  - title: Billing
+  - title: お支払い
     icon: payments
     description: |
       サブスクリプションにおける購入設定を管理します。
@@ -262,7 +314,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Company administration"
         url: "/admin/company/"
 @y
-  - title: Administration
+  - title: 管理
     icon: admin_panel_settings
     description: |
       企業や組織のユーザーやパーミッションなどを管理します。
@@ -288,7 +340,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "SCIM"
         url: "/security/for-admins/provisioning/scim/"
 @y
-  - title: Security
+  - title: セキュリティ
     icon: shield
     description: |
       管理者と開発者の双方に対するセキュリティガードレールです。
@@ -325,4 +377,30 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
         url: "https://testcontainers.com/cloud/docs/#getting-started"
       - text: "CI 向け TCC"
         url: "https://testcontainers.com/cloud/docs/#tcc-for-ci"
+@z
+
+@x
+  - title: Docker Offload
+    icon: cloud
+    description: |
+      Build and run containers in the cloud.
+    links:
+      - text: "Overview"
+        url: "/offload/"
+      - text: "Quickstart"
+        url: "/offload/quickstart/"
+      - text: "About Docker Offload"
+        url: "/offload/about/"
+@y
+  - title: Docker Offload
+    icon: cloud
+    description: |
+      クラウド上でコンテナーをビルドして実行します。
+    links:
+      - text: "概要"
+        url: "offload/"
+      - text: "クィックスタート"
+        url: "offload/quickstart/"
+      - text: "Docker Offload について"
+        url: "offload/about/"
 @z
