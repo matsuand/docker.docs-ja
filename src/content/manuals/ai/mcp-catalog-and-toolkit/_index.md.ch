@@ -66,7 +66,7 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @x
 {{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}
 @y
-{{< summary-bar feature_name="Docker MCP Catalog と Toolkit" >}}
+{{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}
 @z
 
 @x
