@@ -62,6 +62,18 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @z
 
 @x
+    - title: Use a Docker Hardened Image in Kubernetes
+      description: Learn how to use Docker Hardened Images in Kubernetes deployments.
+      icon: play_arrow
+      link: /dhi/how-to/k8s/
+@y
+    - title: Use a Docker Hardened Image in Kubernetes
+      description: Learn how to use Docker Hardened Images in Kubernetes deployments.
+      icon: play_arrow
+      link: __SUBDIR__/dhi/how-to/k8s/
+@z
+
+@x
     - title: Manage Docker Hardened Images
       description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
       icon: reorder

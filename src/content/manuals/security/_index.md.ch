@@ -116,6 +116,18 @@ keywords: docker, docker hub, docker desktop, security, developer security, 2FA,
 @z
 
 @x
+- title: Docker Hardened Images
+  description: Learn how to use Docker Hardened Images to enhance your software supply security.
+  icon: encrypted_add_circle
+  link: /dhi/
+@y
+- title: Docker Hardened Images
+  description: Learn how to use Docker Hardened Images to enhance your software supply security.
+  icon: encrypted_add_circle
+  link: __SUBDIR__/dhi/
+@z
+
+@x
 Docker helps you protect your local environments, infrastructure, and networks
 with its developer-level security features.
 @y

@@ -86,7 +86,7 @@ keywords: msi, docker desktop, windows, installation, mac, pkg, enterprise
 @y
 - title: FAQs
   description: Common questions when deploying Docker Desktop 
-  link: /enterprise/enterprise-deployment/faq/
+  link: __SUBDIR__/enterprise/enterprise-deployment/faq/
 @z
 
 @x

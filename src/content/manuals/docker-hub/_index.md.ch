@@ -28,6 +28,18 @@ title: Docker Hub
 @z
 
 @x
+- title: Library
+  description: Explore the content library, featuring millions of images for operating systems, frameworks, databases, and more.
+  icon: book
+  link: /docker-hub/image-library/
+@y
+- title: Library
+  description: Explore the content library, featuring millions of images for operating systems, frameworks, databases, and more.
+  icon: book
+  link: __SUBDIR__/docker-hub/image-library/
+@z
+
+@x
 - title: Repositories
   description: Create a repository to share your images with your team, customers,
     or the Docker community.

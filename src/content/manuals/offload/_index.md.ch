@@ -1,37 +1,29 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
----
 title: Docker Offload
-weight: 15
-description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
-keywords: build, cloud, cloud build, remote builder
-params:
-  sidebar:
-    group: Products
-    badge:
-      color: blue
-      text: Beta
 @y
----
 title: Docker Offload
-weight: 15
-description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
-keywords: build, cloud, cloud build, remote builder
-params:
-  sidebar:
-    group: Products
-    badge:
-      color: blue
-      text: Beta
 @z
 
 @x
-grid:
+description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
+keywords: build, cloud, cloud build, remote builder
 @y
-grid:
+description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
+keywords: build, cloud, cloud build, remote builder
 @z
+
+@x
+      text: Beta
+@y
+      text: ベータ
+@z
+
+% grid
 
 @x
 - title: Quickstart
@@ -39,10 +31,10 @@ grid:
   icon: rocket_launch
   link: /offload/quickstart/
 @y
-- title: Quickstart
-  description: Get up and running with Docker Offload in just a few steps.
+- title: クィックスタート
+  description: ほんの数ステップで Docker Offload を立ち上げます。
   icon: rocket_launch
-  link: /offload/quickstart/
+  link: __SUBDIR__/offload/quickstart/
 @z
 
 @x
@@ -51,10 +43,10 @@ grid:
   icon: info
   link: /offload/about/
 @y
-- title: About
-  description: Learn about Docker Offload and how it works.
+- title: 概要
+  description: Docker Offload とその動作について学びます。
   icon: info
-  link: /offload/about/
+  link: __SUBDIR__/offload/about/
 @z
 
 @x
@@ -63,10 +55,10 @@ grid:
   icon: tune
   link: /offload/configuration/
 @y
-- title: Configure
-  description: Set up and customize your cloud build environments.
+- title: 設定
+  description: クラウドビルド環境の設定とカスタマイズを行います。
   icon: tune
-  link: /offload/configuration/
+  link: __SUBDIR__/offload/configuration/
 @z
 
 @x
@@ -75,10 +67,10 @@ grid:
   icon: monitor_heart
   link: /offload/usage/
 @y
-- title: Usage
-  description: Learn about Docker Offload usage and how to monitor your cloud resources.
+- title: 利用方法
+  description: Docker Offload 利用方法とクラウドリソースの監視方法について学びます。
   icon: monitor_heart
-  link: /offload/usage/
+  link: __SUBDIR__/offload/usage/
 @z
 
 @x
@@ -87,10 +79,10 @@ grid:
   icon: speed
   link: /offload/optimize/
 @y
-- title: Optimize
-  description: Improve performance, caching, and cost efficiency in Docker Offload.
+- title: 最適化
+  description: Docker Offload のパフォーマンス、キャッシュ、コスト効率を改善します。
   icon: speed
-  link: /offload/optimize/
+  link: __SUBDIR__/offload/optimize/
 @z
 
 @x
@@ -99,10 +91,10 @@ grid:
   icon: bug_report
   link: /offload/troubleshoot/
 @y
-- title: Troubleshoot
-  description: Learn how to troubleshoot issues with Docker Offload.
+- title: トラブルシューティング
+  description: Docker Offload でのトラブルシューティング方法について学びます。
   icon: bug_report
-  link: /offload/troubleshoot/
+  link: __SUBDIR__/offload/troubleshoot/
 @z
 
 @x
@@ -111,20 +103,10 @@ grid:
   icon: feedback
   link: /offload/feedback/
 @y
-- title: Feedback
-  description: Provide feedback on Docker Offload.
+- title: フィードバック
+  description: Docker Offload へのフィードバックを行います。
   icon: feedback
-  link: /offload/feedback/
-@z
-
-@x
-aliases:
-- /harmonia/
----
-@y
-aliases:
-- /harmonia/
----
+  link: __SUBDIR__/offload/feedback/
 @z
 
 @x
@@ -153,8 +135,4 @@ In the following topics, learn about Docker Offload, how to set it up, use it
 for your workflows, and troubleshoot common issues.
 @z
 
-@x
-{{< grid >}}
-@y
-{{< grid >}}
-@z
+% grid
