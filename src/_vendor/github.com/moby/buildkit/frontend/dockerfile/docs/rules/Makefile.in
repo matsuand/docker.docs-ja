@@ -242,6 +242,8 @@ bases = \
 	consistent-instruction-casing.md       \
 	copy-ignored-file.md                   \
 	duplicate-stage-name.md                \
+	expose-invalid-format.md               \
+	expose-proto-casing.md                 \
 	from-as-casing.md                      \
 	from-platform-flag-const-disallowed.md \
 	invalid-default-arg-in-from.md         \

@@ -155,17 +155,22 @@
 @x
                     Docker MCP Catalog and Toolkit
 @y
-                    Docker MCP Catalog and Toolkit
+                    Docker MCP Catalog と Toolkit
 @z
 @x
                   Supercharge your AI applications or agents with secure, containerized tools
 @y
-                  Supercharge your AI applications or agents with secure, containerized tools
+                  安全なコンテナー化ツールを使って AI アプリケーションやエージェントを強化します。
+@z
+@x
+                    href="/ai/mcp-catalog-and-toolkit/get-started/"
+@y
+                    href="ai/mcp-catalog-and-toolkit/get-started/"
 @z
 @x
                     >Let's get started</a>
 @y
-                    >Let's get started</a>
+                    >はじめよう</a>
 @z
 
 @x

@@ -58,7 +58,7 @@ To learn more about how to use build checks, see
 [Checking your build configuration](https://docs.docker.com/build/checks/).
 @y
 To learn more about how to use build checks, see
-[Checking your build configuration](https://docs.docker.com/build/checks/).
+[Checking your build configuration](build/checks/).
 @z
 
 @x

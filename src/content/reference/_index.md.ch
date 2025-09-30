@@ -104,7 +104,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/api/hub/latest/
 @y
   - title: Docker Hub API
-    description: API to interact with Docker Hub.
+    description: Docker Hub との対話を行う API です。
     icon: communities
     link: __SUBDIR__/reference/api/hub/latest/
 @z
@@ -119,6 +119,18 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     description: API for Docker Verified Publishers to fetch analytics data.
     icon: area_chart
     link: __SUBDIR__/reference/api/dvp/latest/
+@z
+
+@x
+  - title: Registry API
+    description: API for Docker Registry.
+    icon: database
+    link: /reference/api/registry/latest/
+@y
+  - title: Registry API
+    description: Docker Registry の API です。
+    icon: database
+    link: __SUBDIR__/reference/api/registry/latest/
 @z
 
 % snip aliases...

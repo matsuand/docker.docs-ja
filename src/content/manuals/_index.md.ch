@@ -58,9 +58,33 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /testcontainers/
 @y
   - title: Testcontainers
-    description: Run containers programmatically in your preferred programming language.
+    description: 好みのプログラミング言語を使ってコンテナーをプログラム的に起動します。
     icon: icons/Testcontainers.svg
     link: __SUBDIR__/testcontainers/
+@z
+
+@x
+  - title: MCP Gateway
+    description: Manage and secure your AI tools with a single gateway.
+    icon: /icons/toolkit.svg
+    link: /ai/mcp-gateway/
+@y
+  - title: MCP Gateway
+    description: 1 つのゲートウェイを使って AI ツールをセキュアに管理します。
+    icon: icons/toolkit.svg
+    link: __SUBDIR__/ai/mcp-gateway/
+@z
+
+@x
+  - title: Cagent
+    description: The open-source multi-agent solution to assist you in your tasks.
+    icon: /icons/cagent.svg
+    link: /ai/cagent
+@y
+  - title: Cagent
+    description: タスクの実現をサポートするオープンソースのマルチエージェントソリューションです。
+    icon: icons/cagent.svg
+    link: __SUBDIR__/ai/cagent
 @z
 
 % ai:
@@ -122,7 +146,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /dhi/
 @y
   - title: Docker Hardened Images
-    description: Secure, minimal images for trusted software delivery.
+    description: 信頼できるソフトウェア配信を行うためのセキュアで最小限のイメージです。
     icon: icons/dhi.svg
     link: __SUBDIR__/dhi/
 @z
@@ -134,7 +158,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /offload/
 @y
   - title: Docker Offload
-    description: Build and run containers in the cloud.
+    description: クラウド上でコンテナーをビルドし実行します。
     icon: cloud
     link: __SUBDIR__/offload/
 @z
@@ -146,7 +170,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /build-cloud/
 @y
   - title: Build Cloud
-    description: Build your images faster in the cloud.
+    description: クラウド上で迅速にイメージビルドを行います。
     icon: icons/logo-build-cloud.svg
     link: __SUBDIR__/build-cloud/
 @z
@@ -170,7 +194,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /scout/
 @y
   - title: Docker Scout
-    description: Image analysis and policy evaluation.
+    description: イメージ分析とポリシー評価を行います。
     icon: icons/Scout.svg
     link: __SUBDIR__/scout/
 @z
@@ -292,10 +316,17 @@ Open source development and containerization technologies.
 以下はオープンソフトウェア開発とコンテナー化技術です。
 @z
 
+% grid items=open-source
+
 @x
-{{< grid items=open-source >}}
+## AI
 @y
-{{< grid items=open-source >}}
+@z
+
+@x
+All the Docker AI tools in one easy-to-access location.
+@y
+All the Docker AI tools in one easy-to-access location.
 @z
 
 @x
@@ -310,11 +341,7 @@ End-to-end developer solutions for innovative teams.
 End-to-end developer solutions for innovative teams.
 @z
 
-@x
-{{< grid items=products >}}
-@y
-{{< grid items=products >}}
-@z
+% grid items=products
 
 @x
 ## Platform
@@ -330,8 +357,4 @@ Docker プラットフォームに関連するドキュメントです。
 機能管理、サブスク管理などがあります。
 @z
 
-@x
-{{< grid items=platform >}}
-@y
-{{< grid items=platform >}}
-@z
+% grid items=platform
