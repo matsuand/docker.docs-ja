@@ -3363,15 +3363,6 @@ definitions:
       Bridge:
         description: |
           Name of the default bridge interface when dockerd's --bridge flag is set.
-        type: "string"
-        example: "docker0"
-      SandboxID:
-        description: SandboxID uniquely represents a container's network stack.
-        type: "string"
-        example: "9d12daf2c33f5959c8bf90aa513e4f65b561738661003029ec84830cd503a0c3"
-      HairpinMode:
-        description: |
-          Indicates if hairpin NAT should be enabled on the virtual interface.
 @y
   NetworkSettings:
     description: "NetworkSettings exposes the network settings in the API"
@@ -3380,6 +3371,21 @@ definitions:
       Bridge:
         description: |
           Name of the default bridge interface when dockerd's --bridge flag is set.
+@z
+
+@x
+          Deprecated: This field is only set when the daemon is started with the --bridge flag specified.
+        type: "string"
+        example: "docker0"
+      SandboxID:
+        description: SandboxID uniquely represents a container's network stack.
+        type: "string"
+        example: "9d12daf2c33f5959c8bf90aa513e4f65b561738661003029ec84830cd503a0c3"
+      HairpinMode:
+        description: |
+          Indicates if hairpin NAT should be enabled on the virtual interface.
+@y
+          Deprecated: This field is only set when the daemon is started with the --bridge flag specified.
         type: "string"
         example: "docker0"
       SandboxID:
@@ -4734,13 +4740,8 @@ definitions:
       password:
         type: "string"
       email:
-        type: "string"
-      serveraddress:
-        type: "string"
-    example:
-      username: "hannibal"
-      password: "xxxx"
-      serveraddress: "https://index.docker.io/v1/"
+        description: |
+          Email is an optional value associated with the username.
 @y
   AuthConfig:
     type: "object"
@@ -4750,6 +4751,21 @@ definitions:
       password:
         type: "string"
       email:
+        description: |
+          Email is an optional value associated with the username.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
+        type: "string"
+      serveraddress:
+        type: "string"
+    example:
+      username: "hannibal"
+      password: "xxxx"
+      serveraddress: "https://index.docker.io/v1/"
+@y
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
         type: "string"
       serveraddress:
         type: "string"
@@ -9161,6 +9177,7 @@ definitions:
           A counter that triggers an update even if no relevant parameters have
           been changed.
         type: "integer"
+        format: "uint64"
       Runtime:
         description: |
           Runtime is the type of runtime specified for the task executor.
@@ -9235,6 +9252,7 @@ definitions:
           A counter that triggers an update even if no relevant parameters have
           been changed.
         type: "integer"
+        format: "uint64"
       Runtime:
         description: |
           Runtime is the type of runtime specified for the task executor.

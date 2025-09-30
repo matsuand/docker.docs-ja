@@ -78,7 +78,7 @@ client-server protocol, where the client, for example an application such as [Go
 [Model Context Protocol](https://modelcontextprotocol.io/introduction) (MCP) is
 an open protocol that standardizes how applications provide context and
 additional functionality to large language models. MCP functions as a
-client-server protocol, where the client, for example an application such as [Gordon](/manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
+client-server protocol, where the client, for example an application such as [Gordon](manuals/ai/gordon/_index.md) or Claude Desktop, sends requests, and the server processes those requests to deliver the necessary context to the AI.
 @z
 
 @x

@@ -4387,16 +4387,14 @@ a base64-encoded AuthConfig object.
         ```
     {
             "username": "jdoe",
-            "password": "secret",
-            "email": "jdoe@acme.com"
+            "password": "secret"
     }
         ```
 @y
         ```
     {
             "username": "jdoe",
-            "password": "secret",
-            "email": "jdoe@acme.com"
+            "password": "secret"
     }
         ```
 @z
@@ -4935,16 +4933,14 @@ The push is cancelled if the HTTP connection is closed.
         ```
     {
             "username": "jdoe",
-            "password": "secret",
-            "email": "jdoe@acme.com",
+            "password": "secret"
     }
         ```
 @y
         ```
     {
             "username": "jdoe",
-            "password": "secret",
-            "email": "jdoe@acme.com",
+            "password": "secret"
     }
         ```
 @z

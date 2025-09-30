@@ -360,10 +360,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `node:18-alpine` - the image to use. Note that this is the base image for
+   - `node:lts-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:18-alpine` - 利用するイメージです。
+   - `node:lts-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
@@ -449,10 +449,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `node:18-alpine` - the image to use. Note that this is the base image for
+   - `node:lts-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:18-alpine` - 利用するイメージです。
+   - `node:lts-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
@@ -538,10 +538,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `node:18-alpine` - the image to use. Note that this is the base image for
+   - `node:lts-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:18-alpine` - 利用するイメージです。
+   - `node:lts-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
@@ -627,10 +627,10 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `node:18-alpine` - the image to use. Note that this is the base image for
+   - `node:lts-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:18-alpine` - 利用するイメージです。
+   - `node:lts-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 

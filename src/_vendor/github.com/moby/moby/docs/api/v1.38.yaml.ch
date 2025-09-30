@@ -2816,13 +2816,8 @@ definitions:
       password:
         type: "string"
       email:
-        type: "string"
-      serveraddress:
-        type: "string"
-    example:
-      username: "hannibal"
-      password: "xxxx"
-      serveraddress: "https://index.docker.io/v1/"
+        description: |
+          Email is an optional value associated with the username.
 @y
   AuthConfig:
     type: "object"
@@ -2832,6 +2827,21 @@ definitions:
       password:
         type: "string"
       email:
+        description: |
+          Email is an optional value associated with the username.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
+        type: "string"
+      serveraddress:
+        type: "string"
+    example:
+      username: "hannibal"
+      password: "xxxx"
+      serveraddress: "https://index.docker.io/v1/"
+@y
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
         type: "string"
       serveraddress:
         type: "string"
@@ -5925,6 +5935,7 @@ definitions:
       ForceUpdate:
         description: "A counter that triggers an update even if no relevant parameters have been changed."
         type: "integer"
+        format: "uint64"
       Runtime:
         description: "Runtime is the type of runtime specified for the task executor."
         type: "string"
@@ -6035,6 +6046,7 @@ definitions:
       ForceUpdate:
         description: "A counter that triggers an update even if no relevant parameters have been changed."
         type: "integer"
+        format: "uint64"
       Runtime:
         description: "Runtime is the type of runtime specified for the task executor."
         type: "string"

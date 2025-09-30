@@ -1408,6 +1408,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @y
               - `"container:<name|id>"`: joins another container's PID namespace
               - `"host"`: use the host's PID namespace inside the container
@@ -1473,6 +1474,7 @@ definitions:
               - "default"
               - "process"
               - "hyperv"
+              - ""
 @z
 
 @x
@@ -2054,6 +2056,23 @@ definitions:
       password:
         type: "string"
       email:
+        description: |
+          Email is an optional value associated with the username.
+@y
+  AuthConfig:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      password:
+        type: "string"
+      email:
+        description: |
+          Email is an optional value associated with the username.
+@z
+
+@x
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
         type: "string"
       serveraddress:
         type: "string"
@@ -2062,14 +2081,7 @@ definitions:
       password: "xxxx"
       serveraddress: "https://index.docker.io/v1/"
 @y
-  AuthConfig:
-    type: "object"
-    properties:
-      username:
-        type: "string"
-      password:
-        type: "string"
-      email:
+          > **Deprecated**: This field is deprecated since docker 1.11 (API v1.23) and will be removed in a future release.
         type: "string"
       serveraddress:
         type: "string"
@@ -3905,6 +3917,7 @@ definitions:
       ForceUpdate:
         description: "A counter that triggers an update even if no relevant parameters have been changed."
         type: "integer"
+        format: "uint64"
       Networks:
         type: "array"
         items:
@@ -4593,6 +4606,7 @@ paths:
       ForceUpdate:
         description: "A counter that triggers an update even if no relevant parameters have been changed."
         type: "integer"
+        format: "uint64"
       Networks:
         type: "array"
         items:

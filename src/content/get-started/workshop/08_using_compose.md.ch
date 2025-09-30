@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Use Docker Compose
@@ -55,29 +56,8 @@ In the `getting-started-app` directory, create a file named `compose.yaml`.
 In the `getting-started-app` directory, create a file named `compose.yaml`.
 @z
 
-@x
-```text
-├── getting-started-app/
-│ ├── Dockerfile
-│ ├── compose.yaml
-│ ├── node_modules/
-│ ├── package.json
-│ ├── spec/
-│ ├── src/
-│ └── yarn.lock
-```
-@y
-```text
-├── getting-started-app/
-│ ├── Dockerfile
-│ ├── compose.yaml
-│ ├── node_modules/
-│ ├── package.json
-│ ├── spec/
-│ ├── src/
-│ └── yarn.lock
-```
-@z
+% snip text...
+
 
 @x
 ## Define the app service
@@ -91,31 +71,7 @@ In [part 6](./07_multi_container.md), you used the following command to start th
 In [part 6](./07_multi_container.md), you used the following command to start the application service.
 @z
 
-@x
-```console
-$ docker run -dp 127.0.0.1:3000:3000 \
-  -w /app -v "$(pwd):/app" \
-  --network todo-app \
-  -e MYSQL_HOST=mysql \
-  -e MYSQL_USER=root \
-  -e MYSQL_PASSWORD=secret \
-  -e MYSQL_DB=todos \
-  node:18-alpine \
-  sh -c "yarn install && yarn run dev"
-```
-@y
-```console
-$ docker run -dp 127.0.0.1:3000:3000 \
-  -w /app -v "$(pwd):/app" \
-  --network todo-app \
-  -e MYSQL_HOST=mysql \
-  -e MYSQL_USER=root \
-  -e MYSQL_PASSWORD=secret \
-  -e MYSQL_DB=todos \
-  node:18-alpine \
-  sh -c "yarn install && yarn run dev"
-```
-@z
+% snip command...
 
 @x
 You'll now define this service in the `compose.yaml` file.
@@ -131,19 +87,7 @@ You'll now define this service in the `compose.yaml` file.
    The name will automatically become a network alias, which will be useful when defining your MySQL service.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-   ```
-@y
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-   ```
-@z
+% snip code...
 
 @x
 2. Typically, you will see `command` close to the `image` definition, although there is no requirement on ordering. Add the `command` to your `compose.yaml` file.
@@ -151,21 +95,7 @@ You'll now define this service in the `compose.yaml` file.
 2. Typically, you will see `command` close to the `image` definition, although there is no requirement on ordering. Add the `command` to your `compose.yaml` file.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-   ```
-@y
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-   ```
-@z
+% snip code...
 
 @x
 3. Now migrate the `-p 127.0.0.1:3000:3000` part of the command by defining the `ports` for the service.
@@ -173,25 +103,7 @@ You'll now define this service in the `compose.yaml` file.
 3. Now migrate the `-p 127.0.0.1:3000:3000` part of the command by defining the `ports` for the service.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-   ```
-@y
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-   ```
-@z
+% snip code...
 
 @x
 4. Next, migrate both the working directory (`-w /app`) and the volume mapping
@@ -207,31 +119,7 @@ You'll now define this service in the `compose.yaml` file.
     One advantage of Docker Compose volume definitions is you can use relative paths from the current directory.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-       working_dir: /app
-       volumes:
-         - ./:/app
-   ```
-@y
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-       working_dir: /app
-       volumes:
-         - ./:/app
-   ```
-@z
+% snip code...
 
 @x
 5. Finally, you need to migrate the environment variable definitions using the `environment` key.
@@ -239,41 +127,7 @@ You'll now define this service in the `compose.yaml` file.
 5. Finally, you need to migrate the environment variable definitions using the `environment` key.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-       working_dir: /app
-       volumes:
-         - ./:/app
-       environment:
-         MYSQL_HOST: mysql
-         MYSQL_USER: root
-         MYSQL_PASSWORD: secret
-         MYSQL_DB: todos
-   ```
-@y
-   ```yaml
-   services:
-     app:
-       image: node:18-alpine
-       command: sh -c "yarn install && yarn run dev"
-       ports:
-         - 127.0.0.1:3000:3000
-       working_dir: /app
-       volumes:
-         - ./:/app
-       environment:
-         MYSQL_HOST: mysql
-         MYSQL_USER: root
-         MYSQL_PASSWORD: secret
-         MYSQL_DB: todos
-   ```
-@z
+% snip code...
 
 @x
 ### Define the MySQL service
@@ -287,25 +141,7 @@ Now, it's time to define the MySQL service. The command that you used for that c
 Now, it's time to define the MySQL service. The command that you used for that container was the following:
 @z
 
-@x
-```console
-$ docker run -d \
-  --network todo-app --network-alias mysql \
-  -v todo-mysql-data:/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=secret \
-  -e MYSQL_DATABASE=todos \
-  mysql:8.0
-```
-@y
-```console
-$ docker run -d \
-  --network todo-app --network-alias mysql \
-  -v todo-mysql-data:/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=secret \
-  -e MYSQL_DATABASE=todos \
-  mysql:8.0
-```
-@z
+% snip command...
 
 @x
 1. First define the new service and name it `mysql` so it automatically gets the network alias. Also specify the image to use as well.
@@ -313,26 +149,10 @@ $ docker run -d \
 1. First define the new service and name it `mysql` so it automatically gets the network alias. Also specify the image to use as well.
 @z
 
-@x
-   ```yaml
-@y
-   ```yaml
-@z
-
-@x
-   services:
-     app:
+@x within code
        # The app service definition
-     mysql:
-       image: mysql:8.0
-   ```
 @y
-   services:
-     app:
        # The app service definition
-     mysql:
-       image: mysql:8.0
-   ```
 @z
 
 @x
@@ -351,34 +171,10 @@ $ docker run -d \
    used.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
+@x within code
        # The app service definition
-     mysql:
-       image: mysql:8.0
-       volumes:
-         - todo-mysql-data:/var/lib/mysql
 @y
-   ```yaml
-   services:
-     app:
        # The app service definition
-     mysql:
-       image: mysql:8.0
-       volumes:
-         - todo-mysql-data:/var/lib/mysql
-@z
-
-@x
-   volumes:
-     todo-mysql-data:
-   ```
-@y
-   volumes:
-     todo-mysql-data:
-   ```
 @z
 
 @x
@@ -387,40 +183,11 @@ $ docker run -d \
 3. Finally, you need to specify the environment variables.
 @z
 
-@x
-   ```yaml
-   services:
-     app:
-       # The app service definition
-     mysql:
-       image: mysql:8.0
-       volumes:
-         - todo-mysql-data:/var/lib/mysql
-       environment:
-         MYSQL_ROOT_PASSWORD: secret
-         MYSQL_DATABASE: todos
-@y
-   ```yaml
-   services:
-     app:
-       # The app service definition
-     mysql:
-       image: mysql:8.0
-       volumes:
-         - todo-mysql-data:/var/lib/mysql
-       environment:
-         MYSQL_ROOT_PASSWORD: secret
-         MYSQL_DATABASE: todos
-@z
 
-@x
-   volumes:
-     todo-mysql-data:
-   ```
+@x within code
+       # The app service definition
 @y
-   volumes:
-     todo-mysql-data:
-   ```
+       # The app service definition
 @z
 
 @x
@@ -429,67 +196,7 @@ At this point, your complete `compose.yaml` should look like this:
 At this point, your complete `compose.yaml` should look like this:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: node:18-alpine
-    command: sh -c "yarn install && yarn run dev"
-    ports:
-      - 127.0.0.1:3000:3000
-    working_dir: /app
-    volumes:
-      - ./:/app
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: todos
-@y
-```yaml
-services:
-  app:
-    image: node:18-alpine
-    command: sh -c "yarn install && yarn run dev"
-    ports:
-      - 127.0.0.1:3000:3000
-    working_dir: /app
-    volumes:
-      - ./:/app
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: todos
-@z
-
-@x
-  mysql:
-    image: mysql:8.0
-    volumes:
-      - todo-mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: todos
-@y
-  mysql:
-    image: mysql:8.0
-    volumes:
-      - todo-mysql-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: todos
-@z
-
-@x
-volumes:
-  todo-mysql-data:
-```
-@y
-volumes:
-  todo-mysql-data:
-```
-@z
+% snip code...
 
 @x
 ## Run the application stack
@@ -517,15 +224,7 @@ Now that you have your `compose.yaml` file, you can start your application.
    `-d` flag to run everything in the background.
 @z
 
-@x
-   ```console
-   $ docker compose up -d
-   ```
-@y
-   ```console
-   $ docker compose up -d
-   ```
-@z
+% snip command...
 
 @x
     When you run the previous command, you should see output like the following:
@@ -533,21 +232,7 @@ Now that you have your `compose.yaml` file, you can start your application.
     When you run the previous command, you should see output like the following:
 @z
 
-@x
-   ```plaintext
-   Creating network "app_default" with the default driver
-   Creating volume "app_todo-mysql-data" with default driver
-   Creating app_app_1   ... done
-   Creating app_mysql_1 ... done
-   ```
-@y
-   ```plaintext
-   Creating network "app_default" with the default driver
-   Creating volume "app_todo-mysql-data" with default driver
-   Creating app_app_1   ... done
-   Creating app_mysql_1 ... done
-   ```
-@z
+% snip output...
 
 @x
     You'll notice that Docker Compose created the volume as well as a network. By default, Docker Compose automatically creates a network specifically for the application stack (which is why you didn't define one in the Compose file).
@@ -571,21 +256,7 @@ Now that you have your `compose.yaml` file, you can start your application.
     If you have run the command already, you'll see output that looks like this:
 @z
 
-@x
-    ```plaintext
-    mysql_1  | 2019-10-03T03:07:16.083639Z 0 [Note] mysqld: ready for connections.
-    mysql_1  | Version: '8.0.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
-    app_1    | Connected to mysql db at host mysql
-    app_1    | Listening on port 3000
-    ```
-@y
-    ```plaintext
-    mysql_1  | 2019-10-03T03:07:16.083639Z 0 [Note] mysqld: ready for connections.
-    mysql_1  | Version: '8.0.31'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
-    app_1    | Connected to mysql db at host mysql
-    app_1    | Listening on port 3000
-    ```
-@z
+% snip output...
 
 @x
     The service name is displayed at the beginning of the line (often colored) to help distinguish messages. If you want to

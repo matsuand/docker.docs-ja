@@ -2,41 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Deprecated Docker Engine features
 linkTitle: Deprecated features
-aliases: ["/engine/misc/deprecated/"]
-description: "Deprecated Features."
-keywords: "docker, documentation, about, technology, deprecate"
----
 @y
----
 title: Deprecated Docker Engine features
 linkTitle: Deprecated features
-aliases: ["/engine/misc/deprecated/"]
-description: "Deprecated Features."
-keywords: "docker, documentation, about, technology, deprecate"
----
 @z
 
 @x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
+description: "Deprecated Features."
+keywords: "docker, documentation, about, technology, deprecate"
 @y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
+description: "Deprecated Features."
+keywords: "docker, documentation, about, technology, deprecate"
 @z
 
 @x
@@ -134,6 +112,8 @@ The following table provides an overview of the current status of deprecated fea
 @x
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Legacy links environment variables](#legacy-links-environment-variables)                                                          | v28.4      | v30.0  |
+| Deprecated | [Special handling for quoted values for TLS flags](#special-handling-for-quoted-values-for-tls-flags)                              | v28.4      | v29.0  |
 | Deprecated | [Empty/nil fields in image Config from inspect API](#emptynil-fields-in-image-config-from-inspect-api)                             | v28.3      | v29.0  |
 | Deprecated | [Configuration for pushing  non-distributable artifacts](#configuration-for-pushing-non-distributable-artifacts)                   | v28.0      | v29.0  |
 | Deprecated | [`--time` option on `docker stop` and `docker restart`](#--time-option-on-docker-stop-and-docker-restart)                          | v28.0      | -      |
@@ -144,6 +124,7 @@ The following table provides an overview of the current status of deprecated fea
 | Removed    | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Removed    | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
+| Deprecated | [Mount `bind-nonrecursive` option](#mount-bind-nonrecursive-option)                                                                | v25.0      | v29.0  |
 | Removed    | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v28.2  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
@@ -204,6 +185,8 @@ The following table provides an overview of the current status of deprecated fea
 @y
 | Status     | Feature                                                                                                                            | Deprecated | Remove |
 |------------|------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
+| Deprecated | [Legacy links environment variables](#legacy-links-environment-variables)                                                          | v28.4      | v30.0  |
+| Deprecated | [Special handling for quoted values for TLS flags](#special-handling-for-quoted-values-for-tls-flags)                              | v28.4      | v29.0  |
 | Deprecated | [Empty/nil fields in image Config from inspect API](#emptynil-fields-in-image-config-from-inspect-api)                             | v28.3      | v29.0  |
 | Deprecated | [Configuration for pushing  non-distributable artifacts](#configuration-for-pushing-non-distributable-artifacts)                   | v28.0      | v29.0  |
 | Deprecated | [`--time` option on `docker stop` and `docker restart`](#--time-option-on-docker-stop-and-docker-restart)                          | v28.0      | -      |
@@ -214,6 +197,7 @@ The following table provides an overview of the current status of deprecated fea
 | Removed    | [`Container` and `ContainerConfig` fields in Image inspect](#container-and-containerconfig-fields-in-image-inspect)                | v25.0      | v26.0  |
 | Removed    | [Deprecate legacy API versions](#deprecate-legacy-api-versions)                                                                    | v25.0      | v26.0  |
 | Removed    | [Container short ID in network Aliases field](#container-short-id-in-network-aliases-field)                                        | v25.0      | v26.0  |
+| Deprecated | [Mount `bind-nonrecursive` option](#mount-bind-nonrecursive-option)                                                                | v25.0      | v29.0  |
 | Removed    | [IsAutomated field, and `is-automated` filter on `docker search`](#isautomated-field-and-is-automated-filter-on-docker-search)     | v25.0      | v28.2  |
 | Removed    | [logentries logging driver](#logentries-logging-driver)                                                                            | v24.0      | v25.0  |
 | Removed    | [OOM-score adjust for the daemon](#oom-score-adjust-for-the-daemon)                                                                | v24.0      | v25.0  |
@@ -274,17 +258,163 @@ The following table provides an overview of the current status of deprecated fea
 @z
 
 @x
+### Legacy links environment variables
+@y
+### Legacy links environment variables
+@z
+
+@x
+**Deprecated in release: v28.4**
+@y
+**Deprecated in release: v28.4**
+@z
+
+@x
+**Disabled by default in release: v29.0**
+@y
+**Disabled by default in release: v29.0**
+@z
+
+@x
+**Target for removal in release: v30.0**
+@y
+**Target for removal in release: v30.0**
+@z
+
+@x
+Containers attached to the default bridge network can specify "legacy links" (e.g.
+using `--links` on the CLI) to get access to other containers attached to that
+network. The linking container (i.e., the container created with `--links`) automatically
+gets environment variables that specify the IP address and port mappings of the linked
+container. However, these environment variables are prefixed with the linked
+container's names, making them impractical.
+@y
+Containers attached to the default bridge network can specify "legacy links" (e.g.
+using `--links` on the CLI) to get access to other containers attached to that
+network. The linking container (i.e., the container created with `--links`) automatically
+gets environment variables that specify the IP address and port mappings of the linked
+container. However, these environment variables are prefixed with the linked
+container's names, making them impractical.
+@z
+
+@x
+Starting with Docker v29.0, these environment variables are no longer set by
+default. Users who still depend on them can start Docker Engine with the
+environment variable `DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS=1` set.
+@y
+Starting with Docker v29.0, these environment variables are no longer set by
+default. Users who still depend on them can start Docker Engine with the
+environment variable `DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS=1` set.
+@z
+
+@x
+Support for legacy links environment variables, as well as the `DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS`
+will be removed in Docker Engine v30.0.
+@y
+Support for legacy links environment variables, as well as the `DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS`
+will be removed in Docker Engine v30.0.
+@z
+
+@x
+### Special handling for quoted values for TLS flags
+@y
+### Special handling for quoted values for TLS flags
+@z
+
+@x
+**Deprecated in release: v28.4**
+@y
+**Deprecated in release: v28.4**
+@z
+
+@x
+**Target for removal in release: v29.0**
+@y
+**Target for removal in release: v29.0**
+@z
+
+@x
+The `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags had
+non-standard behavior for handling values contained in quotes (`"` or `'`).
+Normally, quotes are handled by the shell, for example, in the following
+example, the shell takes care of handling quotes before passing the values
+to the `docker` CLI:
+@y
+The `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags had
+non-standard behavior for handling values contained in quotes (`"` or `'`).
+Normally, quotes are handled by the shell, for example, in the following
+example, the shell takes care of handling quotes before passing the values
+to the `docker` CLI:
+@z
+
+@x
+```console
+docker --some-option "some-value-in-quotes" ...
+```
+@y
+```console
+docker --some-option "some-value-in-quotes" ...
+```
+@z
+
+@x
+However, when passing values using an equal sign (`=`), this may not happen
+and values may be handled including quotes;
+@y
+However, when passing values using an equal sign (`=`), this may not happen
+and values may be handled including quotes;
+@z
+
+@x
+```console
+docker --some-option="some-value-in-quotes" ...
+```
+@y
+```console
+docker --some-option="some-value-in-quotes" ...
+```
+@z
+
+@x
+This caused issues with "Docker Machine", which used this format as part
+of its `docker-machine config` output, and the CLI carried special, non-standard
+handling for these flags.
+@y
+This caused issues with "Docker Machine", which used this format as part
+of its `docker-machine config` output, and the CLI carried special, non-standard
+handling for these flags.
+@z
+
+@x
+Docker Machine reached EOL, and this special handling made the processing
+of flag values inconsistent with other flags used, so this behavior is
+deprecated. Users depending on this behavior are recommended to specify
+the quoted values using a space between the flag and its value, as illustrated
+above.
+@y
+Docker Machine reached EOL, and this special handling made the processing
+of flag values inconsistent with other flags used, so this behavior is
+deprecated. Users depending on this behavior are recommended to specify
+the quoted values using a space between the flag and its value, as illustrated
+above.
+@z
+
+@x
 ### Empty/nil fields in image Config from inspect API
 @y
 ### Empty/nil fields in image Config from inspect API
 @z
 
 @x
-**Deprecated in Release: v28.3**
-**Target For Removal In Release: v29.0**
+**Deprecated in release: v28.3**
 @y
-**Deprecated in Release: v28.3**
-**Target For Removal In Release: v29.0**
+**Deprecated in release: v28.3**
+@z
+
+@x
+**Target for removal in release: v29.0**
+@y
+**Target for removal in release: v29.0**
 @z
 
 @x
@@ -346,11 +476,15 @@ API version for backward compatibility.
 @z
 
 @x
-**Deprecated in Release: v28.0**
-**Target For Removal In Release: v29.0**
+**Deprecated in release: v28.0**
 @y
-**Deprecated in Release: v28.0**
-**Target For Removal In Release: v29.0**
+**Deprecated in release: v28.0**
+@z
+
+@x
+**Target for removal in release: v29.0**
+@y
+**Target for removal in release: v29.0**
 @z
 
 @x
@@ -440,9 +574,9 @@ entirely.
 @z
 
 @x
-**Deprecated in Release: v28.0**
+**Deprecated in release: v28.0**
 @y
-**Deprecated in Release: v28.0**
+**Deprecated in release: v28.0**
 @z
 
 @x
@@ -466,11 +600,15 @@ Users are encouraged to migrate to using the `--timeout` option instead.
 @z
 
 @x
-**Deprecated in Release: v27.0**
-**Removed In Release: v28.2**
+**Deprecated in release: v27.0**
 @y
-**Deprecated in Release: v27.0**
-**Removed In Release: v28.2**
+**Deprecated in release: v27.0**
+@z
+
+@x
+**Removed in release: v28.2**
+@y
+**Removed in release: v28.2**
 @z
 
 @x
@@ -550,13 +688,21 @@ They continue to be included when using clients that use an older API version:
 @z
 
 @x
-**Deprecated in Release: v27.0**
-**Disabled by default in Release: v27.0**
-**Target For Removal In Release: v28.0**
+**Deprecated in**: v27.0**. 
 @y
-**Deprecated in Release: v27.0**
-**Disabled by default in Release: v27.0**
-**Target For Removal In Release: v28.0**
+**Deprecated in**: v27.0**. 
+@z
+
+@x
+**Disabled by default in release: v27.0**
+@y
+**Disabled by default in release: v27.0**
+@z
+
+@x
+**Target for removal in release: v28.0**
+@y
+**Target for removal in release: v28.0**
 @z
 
 @x
@@ -590,12 +736,20 @@ and a custom [snapshotter](https://github.com/containerd/containerd/tree/v1.7.18
 @z
 
 @x
-**Deprecated in Release: v27.0**
-**Disabled by default in Release: v27.0**
+**Deprecated in release: v27.0**
+@y
+**Deprecated in release: v27.0**
+@z
+
+@x
+**Disabled by default in release: v27.0**
+@y
+**Disabled by default in release: v27.0**
+@z
+
+@x
 **Removed in release: v28.0**
 @y
-**Deprecated in Release: v27.0**
-**Disabled by default in Release: v27.0**
 **Removed in release: v28.0**
 @z
 
@@ -644,11 +798,15 @@ If you need to access the API through a browser, use a reverse proxy.
 @z
 
 @x
-**Deprecated in Release: v26.0**
-**Target For Removal In Release: v28.0**
+**Deprecated in release: v26.0**
 @y
-**Deprecated in Release: v26.0**
-**Target For Removal In Release: v28.0**
+**Deprecated in release: v26.0**
+@z
+
+@x
+**Target for removal in release: v28.0**
+@y
+**Target for removal in release: v28.0**
 @z
 
 @x
@@ -712,11 +870,15 @@ configuring TLS (or SSH) for the Docker daemon, refer to
 @z
 
 @x
-**Deprecated in Release: v25.0**
-**Removed In Release: v26.0**
+**Deprecated in release: v25.0**
 @y
-**Deprecated in Release: v25.0**
-**Removed In Release: v26.0**
+**Deprecated in release: v25.0**
+@z
+
+@x
+**Removed in release: v26.0**
+@y
+**Removed in release: v26.0**
 @z
 
 @x
@@ -744,11 +906,15 @@ you can obtain it from the `Config` field.
 @z
 
 @x
-**Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Deprecated in release: v25.0**
 @y
-**Deprecated in Release: v25.0**
-**Target For Removal In Release: v26.0**
+**Deprecated in release: v25.0**
+@z
+
+@x
+**Target for removal in release: v26.0**
+@y
+**Target for removal in release: v26.0**
 @z
 
 @x
@@ -880,11 +1046,15 @@ old clients, and those clients must be supported.
 @z
 
 @x
-**Deprecated in Release: v25.0**
-**Removed In Release: v26.0**
+**Deprecated in release: v25.0**
 @y
-**Deprecated in Release: v25.0**
-**Removed In Release: v26.0**
+**Deprecated in release: v25.0**
+@z
+
+@x
+**Removed in release: v26.0**
+@y
+**Removed in release: v26.0**
 @z
 
 @x
@@ -912,17 +1082,77 @@ introduced in v25.0 and should be used instead of the `Aliases` field.
 @z
 
 @x
+### Mount `bind-nonrecursive` option
+@y
+### Mount `bind-nonrecursive` option
+@z
+
+@x
+**Deprecated in release: v25.0**
+@y
+**Deprecated in release: v25.0**
+@z
+
+@x
+**Scheduled for removal in release: v29.0**
+@y
+**Scheduled for removal in release: v29.0**
+@z
+
+@x
+The `bind-nonrecursive` option was replaced with the [`bind-recursive`]
+option (see [cli-4316], [cli-4671]). The option was still accepted, but
+printed a deprecation warning:
+@y
+The `bind-nonrecursive` option was replaced with the [`bind-recursive`]
+option (see [cli-4316], [cli-4671]). The option was still accepted, but
+printed a deprecation warning:
+@z
+
+@x
+```console
+bind-nonrecursive is deprecated, use bind-recursive=disabled instead
+```
+@y
+```console
+bind-nonrecursive is deprecated, use bind-recursive=disabled instead
+```
+@z
+
+@x
+In the v29.0 release, this warning will be removed and returned as an error.
+Users should use the equivalent `bind-recursive=disabled` option instead.
+@y
+In the v29.0 release, this warning will be removed and returned as an error.
+Users should use the equivalent `bind-recursive=disabled` option instead.
+@z
+
+@x
+[`bind-recursive`]: https://docs.docker.com/engine/storage/bind-mounts/#recursive-mounts
+[cli-4316]: https://github.com/docker/cli/pull/4316
+[cli-4671]: https://github.com/docker/cli/pull/4671
+@y
+[`bind-recursive`]: https://docs.docker.com/engine/storage/bind-mounts/#recursive-mounts
+[cli-4316]: https://github.com/docker/cli/pull/4316
+[cli-4671]: https://github.com/docker/cli/pull/4671
+@z
+
+@x
 ### IsAutomated field, and `is-automated` filter on `docker search`
 @y
 ### IsAutomated field, and `is-automated` filter on `docker search`
 @z
 
 @x
-**Deprecated in Release: v25.0**
-**Removed In Release: v28.2**
+**Deprecated in release: v25.0**
 @y
-**Deprecated in Release: v25.0**
-**Removed In Release: v28.2**
+**Deprecated in release: v25.0**
+@z
+
+@x
+**Removed in release: v28.2**
+@y
+**Removed in release: v28.2**
 @z
 
 @x
@@ -954,11 +1184,15 @@ templating has been removed in v28.2.
 @z
 
 @x
-**Deprecated in Release: v24.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v24.0**
 @y
-**Deprecated in Release: v24.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v24.0**
+@z
+
+@x
+**Removed in release: v25.0**
+@y
+**Removed in release: v25.0**
 @z
 
 @x
@@ -982,11 +1216,15 @@ after upgrading.
 @z
 
 @x
-**Deprecated in Release: v24.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v24.0**
 @y
-**Deprecated in Release: v24.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v24.0**
+@z
+
+@x
+**Removed in release: v25.0**
+@y
+**Removed in release: v25.0**
 @z
 
 @x
@@ -1034,11 +1272,15 @@ the daemon.
 @z
 
 @x
-**Deprecated in Release: v23.0**
-**Removed in Release: v24.0**
+**Deprecated in release: v23.0**
 @y
-**Deprecated in Release: v23.0**
-**Removed in Release: v24.0**
+**Deprecated in release: v23.0**
+@z
+
+@x
+**Removed in release: v24.0**
+@y
+**Removed in release: v24.0**
 @z
 
 @x
@@ -1064,9 +1306,9 @@ information is also embedded into the image configuration if one is generated.
 @z
 
 @x
-**Deprecated in Release: v23.0**
+**Deprecated in release: v23.0**
 @y
-**Deprecated in Release: v23.0**
+**Deprecated in release: v23.0**
 @z
 
 @x
@@ -1138,9 +1380,9 @@ you to report issues in the [BuildKit issue tracker on GitHub](https://github.co
 @z
 
 @x
-**Deprecated in Release: v23.0**
+**Deprecated in release: v23.0**
 @y
-**Deprecated in Release: v23.0**
+**Deprecated in release: v23.0**
 @z
 
 @x
@@ -1252,9 +1494,9 @@ be possible in a future release.
 @z
 
 @x
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @y
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1282,15 +1524,15 @@ of Docker will no longer provide this driver.
 @z
 
 @x
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @z
 
 @x
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @y
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1324,11 +1566,15 @@ to decrypt the private key, and store it un-encrypted to continue using it.
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v23.0**
+@y
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1400,11 +1646,15 @@ CLI configuration file are no longer used, and ignored.
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v28.2**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v28.2**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v28.2**
+@y
+**Removed in release: v28.2**
 @z
 
 @x
@@ -1476,11 +1726,15 @@ no longer needed.
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v23.0**
+@y
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1510,9 +1764,9 @@ Developers who want to run Linux workloads on a Windows host are encouraged to u
 @z
 
 @x
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @z
 
 @x
@@ -1536,11 +1790,15 @@ When using cgroups v2, the `--blkio-weight` options are implemented using
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v23.0**
+@y
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1600,11 +1858,15 @@ take no effect.
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v23.0**
+@y
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1624,11 +1886,15 @@ networks using an external key/value store. The corresponding`--cluster-advertis
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v23.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v23.0**
+@y
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1664,15 +1930,15 @@ been removed.
 @z
 
 @x
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @z
 
 @x
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @y
-**Removed in Release: v23.0**
+**Removed in release: v23.0**
 @z
 
 @x
@@ -1702,9 +1968,9 @@ format.
 @z
 
 @x
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @z
 
 @x
@@ -1720,9 +1986,9 @@ CLI Plugin API is now marked as deprecated.
 @z
 
 @x
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
+**Deprecated in release: v20.10**
 @z
 
 @x
@@ -1782,11 +2048,15 @@ ENV ONE="" TWO="" THREE="world"
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v20.10**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v20.10**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v20.10**
+@y
+**Removed in release: v20.10**
 @z
 
 @x
@@ -1826,11 +2096,15 @@ files.
 @z
 
 @x
-**Deprecated in Release: v20.10**
-**Removed in Release: v28.0**
+**Deprecated in release: v20.10**
 @y
-**Deprecated in Release: v20.10**
-**Removed in Release: v28.0**
+**Deprecated in release: v20.10**
+@z
+
+@x
+**Removed in release: v28.0**
+@y
+**Removed in release: v28.0**
 @z
 
 @x
@@ -1868,21 +2142,21 @@ for the old option has been removed.
 @z
 
 @x
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @z
 
 @x
-**Disabled by default in Release: v26.0**
+**Disabled by default in release: v26.0**
 @y
-**Disabled by default in Release: v26.0**
+**Disabled by default in release: v26.0**
 @z
 
 @x
-**Removed in Release: v28.2**
+**Removed in release: v28.2**
 @y
-**Removed in Release: v28.2**
+**Removed in release: v28.2**
 @z
 
 @x
@@ -1938,15 +2212,15 @@ More information at https://docs.docker.com/go/deprecated-image-specs/
 @z
 
 @x
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @z
 
 @x
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -1978,15 +2252,15 @@ standard package managers.
 @z
 
 @x
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @z
 
 @x
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -2008,15 +2282,15 @@ subcommand.
 @z
 
 @x
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
+**Deprecated in release: v19.03**
 @z
 
 @x
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed in Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -2038,11 +2312,15 @@ using compose files.
 @z
 
 @x
-**Deprecated in Release: v19.03**
-**Removed in Release: v24.0**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
-**Removed in Release: v24.0**
+**Deprecated in release: v19.03**
+@z
+
+@x
+**Removed in release: v24.0**
+@y
+**Removed in release: v24.0**
 @z
 
 @x
@@ -2066,11 +2344,15 @@ option was no longer used.
 @z
 
 @x
-**Deprecated in Release: v19.03**
-**Removed in Release: v24.0**
+**Deprecated in release: v19.03**
 @y
-**Deprecated in Release: v19.03**
-**Removed in Release: v24.0**
+**Deprecated in release: v19.03**
+@z
+
+@x
+**Removed in release: v24.0**
+@y
+**Removed in release: v24.0**
 @z
 
 @x
@@ -2114,11 +2396,15 @@ maintenance of the `aufs` storage driver.
 @z
 
 @x
-**Deprecated in Release: v18.09**
-**Removed in Release: v24.0**
+**Deprecated in release: v18.09**
 @y
-**Deprecated in Release: v18.09**
-**Removed in Release: v24.0**
+**Deprecated in release: v18.09**
+@z
+
+@x
+**Removed in release: v24.0**
+@y
+**Removed in release: v24.0**
 @z
 
 @x
@@ -2154,13 +2440,21 @@ backported), there is no reason to keep maintaining the `overlay` storage driver
 @z
 
 @x
-**Deprecated in Release: v18.09**
-**Disabled by default in Release: v23.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v18.09**
 @y
-**Deprecated in Release: v18.09**
-**Disabled by default in Release: v23.0**
-**Removed in Release: v25.0**
+**Deprecated in release: v18.09**
+@z
+
+@x
+**Disabled by default in release: v23.0**
+@y
+**Disabled by default in release: v23.0**
+@z
+
+@x
+**Removed in release: v25.0**
+@y
+**Removed in release: v25.0**
 @z
 
 @x
@@ -2200,15 +2494,15 @@ is no reason to continue maintenance of the `devicemapper` storage driver.
 @z
 
 @x
-**Deprecated in Release: v18.06**
+**Deprecated in release: v18.06**
 @y
-**Deprecated in Release: v18.06**
+**Deprecated in release: v18.06**
 @z
 
 @x
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -2240,9 +2534,9 @@ use, and will error instead in v20.10 and above.
 @z
 
 @x
-**Removed In Release: v19.03**
+**Removed in release: v19.03**
 @y
-**Removed In Release: v19.03**
+**Removed in release: v19.03**
 @z
 
 @x
@@ -2262,15 +2556,15 @@ but hidden. The flag has been removed in Docker 19.03.
 @z
 
 @x
-**Disabled By Default In Release: v17.06**
+**Disabled by default in release: v17.06**
 @y
-**Disabled By Default In Release: v17.06**
+**Disabled by default in release: v17.06**
 @z
 
 @x
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @y
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @z
 
 @x
@@ -2312,9 +2606,9 @@ start when set.
 @z
 
 @x
-**Deprecated In Release: v17.05**
+**Deprecated in release: v17.05**
 @y
-**Deprecated In Release: v17.05**
+**Deprecated in release: v17.05**
 @z
 
 @x
@@ -2350,15 +2644,15 @@ and `docker service scale` in Docker 17.10.
 @z
 
 @x
-**Deprecated In Release: v17.05**
+**Deprecated in release: v17.05**
 @y
-**Deprecated In Release: v17.05**
+**Deprecated in release: v17.05**
 @z
 
 @x
-**Removed In Release: v23.0**
+**Removed in release: v23.0**
 @y
-**Removed In Release: v23.0**
+**Removed in release: v23.0**
 @z
 
 @x
@@ -2380,15 +2674,15 @@ flag. These flags were deprecated and hidden in v17.05, and removed in v23.0.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Target For Removal In Release: v17.12**
+**Target for removal in release: v17.12**
 @y
-**Target For Removal In Release: v17.12**
+**Target for removal in release: v17.12**
 @z
 
 @x
@@ -2432,15 +2726,15 @@ information.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -2458,15 +2752,15 @@ is now implemented as a regular filter, named `reference`.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @y
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @z
 
 @x
@@ -2492,15 +2786,15 @@ in Docker 17.12.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @y
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @z
 
 @x
@@ -2516,15 +2810,15 @@ The daemon is moved to a separate binary (`dockerd`), and should be used instead
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @y
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @z
 
 @x
@@ -2542,9 +2836,9 @@ will fail to start.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
@@ -2560,15 +2854,15 @@ will fail to start.
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Target For Removal In Release: v17.12**
+**Target for removal in release: v17.12**
 @y
-**Target For Removal In Release: v17.12**
+**Target for removal in release: v17.12**
 @z
 
 @x
@@ -2588,15 +2882,15 @@ future Engine versions. Instead of just requesting, for example, the URL
 @z
 
 @x
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Deprecated In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Deprecated in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @y
-**Removed In Release: v17.12**
+**Removed in release: v17.12**
 @z
 
 @x
@@ -2632,15 +2926,15 @@ Refer to [#27358](https://github.com/docker/docker/issues/27358) for details.
 @z
 
 @x
-**Deprecated in Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Deprecated in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Deprecated in Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Deprecated in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @y
-**Removed In Release: v20.10**
+**Removed in release: v20.10**
 @z
 
 @x
@@ -2658,15 +2952,15 @@ Use `docker search --filter=is-automated=<true|false>` and `docker search --filt
 @z
 
 @x
-**Deprecated In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Deprecated in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Deprecated In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Deprecated in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
-**Target For Removal In Release: v17.09**
+**Target for removal in release: v17.09**
 @y
-**Target For Removal In Release: v17.09**
+**Target for removal in release: v17.09**
 @z
 
 @x
@@ -2688,15 +2982,15 @@ on all subcommands (due to it conflicting with, e.g. `-h` / `--hostname` on
 @z
 
 @x
-**Deprecated In Release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
+**Deprecated in release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
 @y
-**Deprecated In Release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
+**Deprecated in release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
 @z
 
 @x
-**Removed In Release: [v17.06](https://github.com/docker/docker-ce/releases/tag/v17.06.0-ce)**
+**Removed in release: [v17.06](https://github.com/docker/docker-ce/releases/tag/v17.06.0-ce)**
 @y
-**Removed In Release: [v17.06](https://github.com/docker/docker-ce/releases/tag/v17.06.0-ce)**
+**Removed in release: [v17.06](https://github.com/docker/docker-ce/releases/tag/v17.06.0-ce)**
 @z
 
 @x
@@ -2712,15 +3006,15 @@ The `docker login` no longer automatically registers an account with the target 
 @z
 
 @x
-**Deprecated In Release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
+**Deprecated in release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
 @y
-**Deprecated In Release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
+**Deprecated in release: [v1.11.0](https://github.com/docker/docker/releases/tag/v1.11.0)**
 @z
 
 @x
-**Target For Removal In Release: v17.06**
+**Target for removal in release: v17.06**
 @y
-**Target For Removal In Release: v17.06**
+**Target for removal in release: v17.06**
 @z
 
 @x
@@ -2736,9 +3030,9 @@ The flag `--security-opt` doesn't use the colon separator (`:`) anymore to divid
 @z
 
 @x
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
@@ -2756,15 +3050,15 @@ See the events API documentation for the new format.
 @z
 
 @x
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2780,15 +3074,15 @@ To make tagging consistent across the various `docker` commands, the `-f` flag o
 @z
 
 @x
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2806,15 +3100,15 @@ defining it at container creation (`POST /containers/create`).
 @z
 
 @x
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Deprecated In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Deprecated in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2832,15 +3126,15 @@ Use `docker ps --filter=before=...` and `docker ps --filter=since=...` instead.
 @z
 
 @x
-**Deprecated In Release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
+**Deprecated in release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
 @y
-**Deprecated In Release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
+**Deprecated in release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2870,15 +3164,15 @@ $ docker --log-driver=syslog --log-opt tag="{{.ImageName}}/{{.Name}}/{{.ID}}"
 @z
 
 @x
-**Deprecated In Release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
+**Deprecated in release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
 @y
-**Deprecated In Release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
+**Deprecated in release: [v1.9.0](https://github.com/docker/docker/releases/tag/v1.9.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2902,15 +3196,15 @@ Since 1.9, Docker Content Trust Offline key has been renamed to Root key and the
 @z
 
 @x
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @y
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -2926,15 +3220,15 @@ The endpoint `/containers/(id or name)/copy` is deprecated in favor of `/contain
 @z
 
 @x
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @y
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @z
 
 @x
-**Removed In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Removed in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Removed In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Removed in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
@@ -2950,15 +3244,15 @@ The built-in LXC execution driver, the lxc-conf flag, and API fields have been r
 @z
 
 @x
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @y
-**Deprecated In Release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
+**Deprecated in release: [v1.8.0](https://github.com/docker/docker/releases/tag/v1.8.0)**
 @z
 
 @x
-**Removed In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Removed in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @y
-**Removed In Release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
+**Removed in release: [v1.10.0](https://github.com/docker/docker/releases/tag/v1.10.0)**
 @z
 
 @x
@@ -3056,15 +3350,15 @@ The following double-dash options are deprecated and have no replacement:
 @z
 
 @x
-**Deprecated In Release: [v1.5.0](https://github.com/docker/docker/releases/tag/v1.5.0)**
+**Deprecated in release: [v1.5.0](https://github.com/docker/docker/releases/tag/v1.5.0)**
 @y
-**Deprecated In Release: [v1.5.0](https://github.com/docker/docker/releases/tag/v1.5.0)**
+**Deprecated in release: [v1.5.0](https://github.com/docker/docker/releases/tag/v1.5.0)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x
@@ -3080,15 +3374,15 @@ The single-dash (`-help`) was removed, in favor of the double-dash `--help`
 @z
 
 @x
-**Deprecated In Release: [v1.6.0](https://github.com/docker/docker/releases/tag/v1.6.0)**
+**Deprecated in release: [v1.6.0](https://github.com/docker/docker/releases/tag/v1.6.0)**
 @y
-**Deprecated In Release: [v1.6.0](https://github.com/docker/docker/releases/tag/v1.6.0)**
+**Deprecated in release: [v1.6.0](https://github.com/docker/docker/releases/tag/v1.6.0)**
 @z
 
 @x
-**Removed In Release: [v17.09](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)**
+**Removed in release: [v17.09](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)**
 @y
-**Removed In Release: [v17.09](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)**
+**Removed in release: [v17.09](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)**
 @z
 
 @x
@@ -3106,15 +3400,15 @@ The flag `--api-enable-cors` is deprecated since v1.6.0. Use the flag
 @z
 
 @x
-**Deprecated In Release: [v0.10.0](https://github.com/docker/docker/releases/tag/v0.10.0)**
+**Deprecated in release: [v0.10.0](https://github.com/docker/docker/releases/tag/v0.10.0)**
 @y
-**Deprecated In Release: [v0.10.0](https://github.com/docker/docker/releases/tag/v0.10.0)**
+**Deprecated in release: [v0.10.0](https://github.com/docker/docker/releases/tag/v0.10.0)**
 @z
 
 @x
-**Removed In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Removed in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @y
-**Removed In Release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
+**Removed in release: [v1.13.0](https://github.com/docker/docker/releases/tag/v1.13.0)**
 @z
 
 @x
@@ -3132,15 +3426,15 @@ of the `--changes` flag that allows to pass `Dockerfile` commands.
 @z
 
 @x
-**Deprecated In Release: [v0.6.7](https://github.com/docker/docker/releases/tag/v0.6.7)**
+**Deprecated in release: [v0.6.7](https://github.com/docker/docker/releases/tag/v0.6.7)**
 @y
-**Deprecated In Release: [v0.6.7](https://github.com/docker/docker/releases/tag/v0.6.7)**
+**Deprecated in release: [v0.6.7](https://github.com/docker/docker/releases/tag/v0.6.7)**
 @z
 
 @x
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @y
-**Removed In Release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
+**Removed in release: [v1.12.0](https://github.com/docker/docker/releases/tag/v1.12.0)**
 @z
 
 @x

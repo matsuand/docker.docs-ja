@@ -484,12 +484,12 @@ To create a bind mount:
 
 @x
 In this case, the `--mount` flag takes three parameters. A type (`bind`), and
-two paths. The `source` path is a the location on the host that you want to
+two paths. The `source` path is the location on the host that you want to
 bind mount into the container. The `target` path is the mount destination
 inside the container.
 @y
 In this case, the `--mount` flag takes three parameters. A type (`bind`), and
-two paths. The `source` path is a the location on the host that you want to
+two paths. The `source` path is the location on the host that you want to
 bind mount into the container. The `target` path is the mount destination
 inside the container.
 @z
@@ -787,12 +787,12 @@ host supports swap memory).
 @x
 We set memory limit only, this means the processes in the container can use
 300M memory and 300M swap memory, by default, the total virtual memory size
-(--memory-swap) will be set as double of memory, in this case, memory + swap
+(`--memory-swap`) will be set as double of memory, in this case, memory + swap
 would be 2*300M, so processes can use 300M swap memory as well.
 @y
 We set memory limit only, this means the processes in the container can use
 300M memory and 300M swap memory, by default, the total virtual memory size
-(--memory-swap) will be set as double of memory, in this case, memory + swap
+(`--memory-swap`) will be set as double of memory, in this case, memory + swap
 would be 2*300M, so processes can use 300M swap memory as well.
 @z
 
@@ -2069,11 +2069,11 @@ variables defined using a Dockerfile `ENV` instruction when building the image.
 @z
 
 @x
-If the you name an environment variable without specifying a value, the current
+If you name an environment variable without specifying a value, the current
 value of the named variable on the host is propagated into the container's
 environment:
 @y
-If the you name an environment variable without specifying a value, the current
+If you name an environment variable without specifying a value, the current
 value of the named variable on the host is propagated into the container's
 environment:
 @z

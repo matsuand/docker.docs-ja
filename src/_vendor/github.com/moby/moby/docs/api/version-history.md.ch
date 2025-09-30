@@ -36,6 +36,292 @@ keywords: "API, Docker, rcli, REST, documentation"
 @z
 
 @x
+## v1.51 API changes
+@y
+## v1.51 API changes
+@z
+
+@x
+[Docker Engine API v1.51](https://docs.docker.com/reference/api/engine/version/v1.51/) documentation
+@y
+[Docker Engine API v1.51](https://docs.docker.com/reference/api/engine/version/v1.51/) documentation
+@z
+
+@x
+* `GET /images/json` now sets the value of `Containers` field for all images
+  to the count of containers using the image.
+  This field was previously always -1.
+* Deprecated: The field `NetworkSettings.Bridge` returned by `GET /containers/{id}/json`
+  is deprecated and will be removed in the next API version.
+@y
+* `GET /images/json` now sets the value of `Containers` field for all images
+  to the count of containers using the image.
+  This field was previously always -1.
+* Deprecated: The field `NetworkSettings.Bridge` returned by `GET /containers/{id}/json`
+  is deprecated and will be removed in the next API version.
+@z
+
+@x
+## v1.50 API changes
+@y
+## v1.50 API changes
+@z
+
+@x
+[Docker Engine API v1.50](https://docs.docker.com/reference/api/engine/version/v1.50/) documentation
+@y
+[Docker Engine API v1.50](https://docs.docker.com/reference/api/engine/version/v1.50/) documentation
+@z
+
+@x
+* `GET /info` now includes a `DiscoveredDevices` field. This is an array of
+  `DeviceInfo` objects, each providing details about a device discovered by a
+  device driver.
+  Currently only the CDI device driver is supported.
+* `DELETE /images/{name}` now supports a `platforms` query parameter. It accepts
+  an array of JSON-encoded OCI Platform objects, allowing for selecting specific
+  platforms to delete content for.
+* Deprecated: The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the
+  `GET /info` response were deprecated in API v1.48, and are now omitted
+  in API v1.50.
+* Deprecated: `GET /images/{name}/json` no longer returns the following `Config`
+  fields; `Hostname`, `Domainname`, `AttachStdin`, `AttachStdout`, `AttachStderr`
+  `Tty`, `OpenStdin`, `StdinOnce`, `Image`, `NetworkDisabled` (already omitted unless set),
+  `MacAddress` (already omitted unless set), `StopTimeout` (already omitted unless set).
+  These additional fields were included in the response due to an implementation
+  detail but not part of the image's Configuration. These fields were marked
+  deprecated in API v1.46, and are now omitted. Older versions of the API still
+  return these fields, but they are always empty.
+@y
+* `GET /info` now includes a `DiscoveredDevices` field. This is an array of
+  `DeviceInfo` objects, each providing details about a device discovered by a
+  device driver.
+  Currently only the CDI device driver is supported.
+* `DELETE /images/{name}` now supports a `platforms` query parameter. It accepts
+  an array of JSON-encoded OCI Platform objects, allowing for selecting specific
+  platforms to delete content for.
+* Deprecated: The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the
+  `GET /info` response were deprecated in API v1.48, and are now omitted
+  in API v1.50.
+* Deprecated: `GET /images/{name}/json` no longer returns the following `Config`
+  fields; `Hostname`, `Domainname`, `AttachStdin`, `AttachStdout`, `AttachStderr`
+  `Tty`, `OpenStdin`, `StdinOnce`, `Image`, `NetworkDisabled` (already omitted unless set),
+  `MacAddress` (already omitted unless set), `StopTimeout` (already omitted unless set).
+  These additional fields were included in the response due to an implementation
+  detail but not part of the image's Configuration. These fields were marked
+  deprecated in API v1.46, and are now omitted. Older versions of the API still
+  return these fields, but they are always empty.
+@z
+
+@x
+## v1.49 API changes
+@y
+## v1.49 API changes
+@z
+
+@x
+[Docker Engine API v1.49](https://docs.docker.com/reference/api/engine/version/v1.49/) documentation
+@y
+[Docker Engine API v1.49](https://docs.docker.com/reference/api/engine/version/v1.49/) documentation
+@z
+
+@x
+* `GET /images/{name}/json` now supports a `platform` parameter (JSON
+  encoded OCI Platform type) allowing to specify a platform of the multi-platform
+  image to inspect.
+  This option is mutually exclusive with the `manifests` option.
+* `GET /info` now returns a `FirewallBackend` containing information about
+  the daemon's firewalling configuration.
+* Deprecated: The  `AllowNondistributableArtifactsCIDRs` and `AllowNondistributableArtifactsHostnames`
+  fields in the `RegistryConfig` struct in the `GET /info` response are omitted
+  in API v1.49.
+* Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and
+  `InitCommit.Expected` fields in the `GET /info` endpoint were deprecated
+  in API v1.48, and are now omitted in API v1.49.
+@y
+* `GET /images/{name}/json` now supports a `platform` parameter (JSON
+  encoded OCI Platform type) allowing to specify a platform of the multi-platform
+  image to inspect.
+  This option is mutually exclusive with the `manifests` option.
+* `GET /info` now returns a `FirewallBackend` containing information about
+  the daemon's firewalling configuration.
+* Deprecated: The  `AllowNondistributableArtifactsCIDRs` and `AllowNondistributableArtifactsHostnames`
+  fields in the `RegistryConfig` struct in the `GET /info` response are omitted
+  in API v1.49.
+* Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and
+  `InitCommit.Expected` fields in the `GET /info` endpoint were deprecated
+  in API v1.48, and are now omitted in API v1.49.
+@z
+
+@x
+## v1.48 API changes
+@y
+## v1.48 API changes
+@z
+
+@x
+[Docker Engine API v1.48](https://docs.docker.com/reference/api/engine/version/v1.48/) documentation
+@y
+[Docker Engine API v1.48](https://docs.docker.com/reference/api/engine/version/v1.48/) documentation
+@z
+
+@x
+* Deprecated: The "error" and "progress" fields in streaming responses for
+  endpoints that return a JSON progress response, such as `POST /images/create`,
+  `POST /images/{name}/push`, and `POST /build` are deprecated. These fields
+  were marked deprecated in API v1.4 (docker v0.6.0) and API v1.8 (docker v0.7.1)
+  respectively, but still returned. These fields will be left empty or will
+  be omitted in a future API version. Users should use the information in the
+  `errorDetail` and `progressDetail` fields instead.
+* Deprecated: The "allow-nondistributable-artifacts" daemon configuration is
+  deprecated and enabled by default. The  `AllowNondistributableArtifactsCIDRs`
+  and `AllowNondistributableArtifactsHostnames` fields in the `RegistryConfig`
+  struct in the `GET /info` response will now always be `null` and will be
+  omitted in API v1.49.
+* Deprecated: The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the 
+  `GET /info` response are now always be `false` and will be omitted in API
+  v1.49. The netfilter module is now loaded on-demand, and no longer during
+  daemon startup, making these fields obsolete.
+* `GET /images/{name}/history` now supports a `platform` parameter (JSON
+  encoded OCI Platform type) that allows to specify a platform to show the
+  history of.
+* `POST /images/{name}/load` and `GET /images/{name}/get` now support a
+  `platform` parameter (JSON encoded OCI Platform type) that allows to specify
+  a platform to load/save. Not passing this parameter will result in
+  loading/saving the full multi-platform image.
+* `POST /containers/create` now includes a warning in the response when setting
+  the container-wide `Config.VolumeDriver` option in combination with volumes
+  defined through `Mounts` because the `VolumeDriver` option has no effect on
+  those volumes. This warning was previously generated by the CLI, but now
+  moved to the daemon so that other clients can also get this warning.
+* `POST /containers/create` now supports `Mount` of type `image` for mounting
+  an image inside a container.
+* Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and
+  `InitCommit.Expected` fields in the `GET /info` endpoint are deprecated
+  and will be omitted in API v1.49.
+* `Sysctls` in `HostConfig` (top level `--sysctl` settings) for `eth0` are
+  no longer migrated to `DriverOpts`, as described in the changes for v1.46.
+* `GET /images/json` and `GET /images/{name}/json` responses now include
+  `Descriptor` field, which contains an OCI descriptor of the image target.
+  The new field will only be populated if the daemon provides a multi-platform
+  image store.
+  WARNING: This is experimental and may change at any time without any backward
+  compatibility.
+* `GET /images/{name}/json` response now will return the `Manifests` field
+  containing information about the sub-manifests contained in the image index.
+  This includes things like platform-specific manifests and build attestations.
+  The new field will only be populated if the request also sets the `manifests`
+  query parameter to `true`.
+  This acts the same as in the `GET /images/json` endpoint.
+  WARNING: This is experimental and may change at any time without any backward compatibility.
+* `GET /containers/{name}/json` now returns an `ImageManifestDescriptor` field
+  containing the OCI descriptor of the platform-specific image manifest of the
+  image that was used to create the container.
+  This field is only populated if the daemon provides a multi-platform image
+  store.
+* `POST /networks/create` now has an `EnableIPv4` field. Setting it to `false`
+  disables IPv4 IPAM for the network. It can only be set to `false` if the
+  daemon has experimental features enabled.
+* `GET /networks/{id}` now returns an `EnableIPv4` field showing whether the
+  network has IPv4 IPAM enabled.
+* `POST /networks/{id}/connect` and `POST /containers/create` now accept a
+  `GwPriority` field in `EndpointsConfig`. This value is used to determine which
+  network endpoint provides the default gateway for the container. The endpoint
+  with the highest priority is selected. If multiple endpoints have the same
+  priority, endpoints are sorted lexicographically by their network name, and
+  the one that sorts first is picked.
+* `GET /containers/json` now returns a `GwPriority` field in `NetworkSettings`
+  for each network endpoint.
+* API debug endpoints (`GET /debug/vars`, `GET /debug/pprof/`, `GET /debug/pprof/cmdline`,
+  `GET /debug/pprof/profile`, `GET /debug/pprof/symbol`, `GET /debug/pprof/trace`,
+  `GET /debug/pprof/{name}`) are now also accessible through the versioned-API
+  paths (`/v<API-version>/<endpoint>`).
+* `POST /build/prune` renames `keep-bytes` to `reserved-space` and now supports
+  additional prune parameters `max-used-space` and `min-free-space`.
+* `GET /containers/json` now returns an `ImageManifestDescriptor` field
+  matching the same field in `/containers/{name}/json`.
+  This field is only populated if the daemon provides a multi-platform image
+  store.
+@y
+* Deprecated: The "error" and "progress" fields in streaming responses for
+  endpoints that return a JSON progress response, such as `POST /images/create`,
+  `POST /images/{name}/push`, and `POST /build` are deprecated. These fields
+  were marked deprecated in API v1.4 (docker v0.6.0) and API v1.8 (docker v0.7.1)
+  respectively, but still returned. These fields will be left empty or will
+  be omitted in a future API version. Users should use the information in the
+  `errorDetail` and `progressDetail` fields instead.
+* Deprecated: The "allow-nondistributable-artifacts" daemon configuration is
+  deprecated and enabled by default. The  `AllowNondistributableArtifactsCIDRs`
+  and `AllowNondistributableArtifactsHostnames` fields in the `RegistryConfig`
+  struct in the `GET /info` response will now always be `null` and will be
+  omitted in API v1.49.
+* Deprecated: The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the 
+  `GET /info` response are now always be `false` and will be omitted in API
+  v1.49. The netfilter module is now loaded on-demand, and no longer during
+  daemon startup, making these fields obsolete.
+* `GET /images/{name}/history` now supports a `platform` parameter (JSON
+  encoded OCI Platform type) that allows to specify a platform to show the
+  history of.
+* `POST /images/{name}/load` and `GET /images/{name}/get` now support a
+  `platform` parameter (JSON encoded OCI Platform type) that allows to specify
+  a platform to load/save. Not passing this parameter will result in
+  loading/saving the full multi-platform image.
+* `POST /containers/create` now includes a warning in the response when setting
+  the container-wide `Config.VolumeDriver` option in combination with volumes
+  defined through `Mounts` because the `VolumeDriver` option has no effect on
+  those volumes. This warning was previously generated by the CLI, but now
+  moved to the daemon so that other clients can also get this warning.
+* `POST /containers/create` now supports `Mount` of type `image` for mounting
+  an image inside a container.
+* Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and
+  `InitCommit.Expected` fields in the `GET /info` endpoint are deprecated
+  and will be omitted in API v1.49.
+* `Sysctls` in `HostConfig` (top level `--sysctl` settings) for `eth0` are
+  no longer migrated to `DriverOpts`, as described in the changes for v1.46.
+* `GET /images/json` and `GET /images/{name}/json` responses now include
+  `Descriptor` field, which contains an OCI descriptor of the image target.
+  The new field will only be populated if the daemon provides a multi-platform
+  image store.
+  WARNING: This is experimental and may change at any time without any backward
+  compatibility.
+* `GET /images/{name}/json` response now will return the `Manifests` field
+  containing information about the sub-manifests contained in the image index.
+  This includes things like platform-specific manifests and build attestations.
+  The new field will only be populated if the request also sets the `manifests`
+  query parameter to `true`.
+  This acts the same as in the `GET /images/json` endpoint.
+  WARNING: This is experimental and may change at any time without any backward compatibility.
+* `GET /containers/{name}/json` now returns an `ImageManifestDescriptor` field
+  containing the OCI descriptor of the platform-specific image manifest of the
+  image that was used to create the container.
+  This field is only populated if the daemon provides a multi-platform image
+  store.
+* `POST /networks/create` now has an `EnableIPv4` field. Setting it to `false`
+  disables IPv4 IPAM for the network. It can only be set to `false` if the
+  daemon has experimental features enabled.
+* `GET /networks/{id}` now returns an `EnableIPv4` field showing whether the
+  network has IPv4 IPAM enabled.
+* `POST /networks/{id}/connect` and `POST /containers/create` now accept a
+  `GwPriority` field in `EndpointsConfig`. This value is used to determine which
+  network endpoint provides the default gateway for the container. The endpoint
+  with the highest priority is selected. If multiple endpoints have the same
+  priority, endpoints are sorted lexicographically by their network name, and
+  the one that sorts first is picked.
+* `GET /containers/json` now returns a `GwPriority` field in `NetworkSettings`
+  for each network endpoint.
+* API debug endpoints (`GET /debug/vars`, `GET /debug/pprof/`, `GET /debug/pprof/cmdline`,
+  `GET /debug/pprof/profile`, `GET /debug/pprof/symbol`, `GET /debug/pprof/trace`,
+  `GET /debug/pprof/{name}`) are now also accessible through the versioned-API
+  paths (`/v<API-version>/<endpoint>`).
+* `POST /build/prune` renames `keep-bytes` to `reserved-space` and now supports
+  additional prune parameters `max-used-space` and `min-free-space`.
+* `GET /containers/json` now returns an `ImageManifestDescriptor` field
+  matching the same field in `/containers/{name}/json`.
+  This field is only populated if the daemon provides a multi-platform image
+  store.
+@z
+
+@x
 ## v1.47 API changes
 @y
 ## v1.47 API changes
@@ -55,6 +341,11 @@ keywords: "API, Docker, rcli, REST, documentation"
   query parameter to `true`.
   WARNING: This is experimental and may change at any time without any backward
   compatibility.
+* `GET /info` no longer includes warnings when `bridge-nf-call-iptables` or
+  `bridge-nf-call-ip6tables` are disabled when the daemon was started. The
+  `br_netfilter` module is now attempted to be loaded when needed, making those
+  warnings inaccurate. This change is not versioned, and affects all API versions
+  if the daemon has this patch.
 @y
 * `GET /images/json` response now includes `Manifests` field, which contains
   information about the sub-manifests included in the image index. This
@@ -63,6 +354,11 @@ keywords: "API, Docker, rcli, REST, documentation"
   query parameter to `true`.
   WARNING: This is experimental and may change at any time without any backward
   compatibility.
+* `GET /info` no longer includes warnings when `bridge-nf-call-iptables` or
+  `bridge-nf-call-ip6tables` are disabled when the daemon was started. The
+  `br_netfilter` module is now attempted to be loaded when needed, making those
+  warnings inaccurate. This change is not versioned, and affects all API versions
+  if the daemon has this patch.
 @z
 
 @x
@@ -1855,9 +2151,10 @@ are not part of the underlying image's Config, and deprecated:
 * `GET /containers/(name)/json` now accepts a `size` parameter. Setting this parameter to '1' returns container size information in the `SizeRw` and `SizeRootFs` fields.
 * `GET /containers/(name)/json` now returns a `NetworkSettings.Networks` field,
   detailing network settings per network. This field deprecates the
-  `NetworkSettings.Gateway`, `NetworkSettings.IPAddress`,
-  `NetworkSettings.IPPrefixLen`, and `NetworkSettings.MacAddress` fields, which
-  are still returned for backward-compatibility, but will be removed in a future version.
+  `NetworkSettings.EndpointID`, `NetworkSettings.Gateway`, `NetworkSettings.GlobalIPv6Address`,
+  `NetworkSettings.GlobalIPv6PrefixLen` `NetworkSettings.IPAddress`, `NetworkSettings.IPPrefixLen`,
+  `NetworkSettings.IPv6Gateway`, `NetworkSettings.MacAddress` fields, which are
+  still returned for backward-compatibility, but will be removed in a future version.
 * `GET /exec/(id)/json` now returns a `NetworkSettings.Networks` field,
   detailing networksettings per network. This field deprecates the
   `NetworkSettings.Gateway`, `NetworkSettings.IPAddress`,
@@ -1886,9 +2183,10 @@ are not part of the underlying image's Config, and deprecated:
 * `GET /containers/(name)/json` now accepts a `size` parameter. Setting this parameter to '1' returns container size information in the `SizeRw` and `SizeRootFs` fields.
 * `GET /containers/(name)/json` now returns a `NetworkSettings.Networks` field,
   detailing network settings per network. This field deprecates the
-  `NetworkSettings.Gateway`, `NetworkSettings.IPAddress`,
-  `NetworkSettings.IPPrefixLen`, and `NetworkSettings.MacAddress` fields, which
-  are still returned for backward-compatibility, but will be removed in a future version.
+  `NetworkSettings.EndpointID`, `NetworkSettings.Gateway`, `NetworkSettings.GlobalIPv6Address`,
+  `NetworkSettings.GlobalIPv6PrefixLen` `NetworkSettings.IPAddress`, `NetworkSettings.IPPrefixLen`,
+  `NetworkSettings.IPv6Gateway`, `NetworkSettings.MacAddress` fields, which are
+  still returned for backward-compatibility, but will be removed in a future version.
 * `GET /exec/(id)/json` now returns a `NetworkSettings.Networks` field,
   detailing networksettings per network. This field deprecates the
   `NetworkSettings.Gateway`, `NetworkSettings.IPAddress`,
