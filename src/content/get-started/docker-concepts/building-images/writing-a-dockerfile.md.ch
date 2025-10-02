@@ -153,9 +153,39 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-2. Create a file named `Dockerfile` in the same folder as the file `package.json`.
+2. Examine the project.
 @y
-2. Create a file named `Dockerfile` in the same folder as the file `package.json`.
+2. Examine the project.
+@z
+
+@x
+   Explore the contents of `getting-started-todo-app/app/`. You'll notice that a
+   `Dockerfile` already exists. It is a simple text file that you can open in
+   any text or code editor.
+@y
+   Explore the contents of `getting-started-todo-app/app/`. You'll notice that a
+   `Dockerfile` already exists. It is a simple text file that you can open in
+   any text or code editor.
+@z
+
+@x
+3. Delete the existing `Dockerfile`.
+@y
+3. Delete the existing `Dockerfile`.
+@z
+
+@x
+   For this exercise, you'll pretend you're starting from scratch and will
+   create a new `Dockerfile`.
+@y
+   For this exercise, you'll pretend you're starting from scratch and will
+   create a new `Dockerfile`.
+@z
+
+@x
+4. Create a file named `Dockerfile` in the `getting-started-todo-app/app/` folder.
+@y
+4. Create a file named `Dockerfile` in the `getting-started-todo-app/app/` folder.
 @z
 
 @x
@@ -171,41 +201,41 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-3. In the `Dockerfile`, define your base image by adding the following line:
+5. In the `Dockerfile`, define your base image by adding the following line:
 @y
-3. In the `Dockerfile`, define your base image by adding the following line:
+5. In the `Dockerfile`, define your base image by adding the following line:
 @z
 
 % snip code...
 
 @x
-4. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
+6. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
 @y
-4. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
+6. Now, define the working directory by using the `WORKDIR` instruction. This will specify where future commands will run and the directory files will be copied inside the container image.
 @z
 
 % snip code...
 
 @x
-5. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
+7. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
 @y
-5. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
+7. Copy all of the files from your project on your machine into the container image by using the `COPY` instruction:
 @z
 
 % snip code...
 
 @x
-6. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
+8. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
 @y
-6. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
+8. Install the app's dependencies by using the `yarn` CLI and package manager. To do so, run a command using the `RUN` instruction:
 @z
 
 % snip code...
 
 @x
-7. Finally, specify the default command to run by using the `CMD` instruction:
+9. Finally, specify the default command to run by using the `CMD` instruction:
 @y
-7. Finally, specify the default command to run by using the `CMD` instruction:
+9. Finally, specify the default command to run by using the `CMD` instruction:
 @z
 
 % snip code...
