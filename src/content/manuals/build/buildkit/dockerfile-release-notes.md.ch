@@ -31,6 +31,38 @@ For usage, see the [Dockerfile frontend syntax](frontend.md) page.
 @z
 
 @x
+## 1.19.0
+@y
+## 1.19.0
+@z
+
+@x
+{{< release-date date="2025-09-30" >}}
+@y
+{{< release-date date="2025-09-30" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.19.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.19.0).
+@z
+
+% snip code...
+
+@x
+* The `--exclude` flag for `COPY` and `ADD` instructions is now generally available. This flag was previously available under the `labs` channel. [moby/buildkit#6232](https://github.com/moby/buildkit/pull/6232) 
+* Fix issue where adding `--exclude` flag to `COPY` could cause a broken symlink to fail the build. [moby/buildkit#6220](https://github.com/moby/buildkit/pull/6220) 
+* Fix issue where `EXPOSE` instruction did not correctly format the history record it created. [moby/buildkit#6218](https://github.com/moby/buildkit/pull/6218) 
+@y
+* The `--exclude` flag for `COPY` and `ADD` instructions is now generally available. This flag was previously available under the `labs` channel. [moby/buildkit#6232](https://github.com/moby/buildkit/pull/6232) 
+* Fix issue where adding `--exclude` flag to `COPY` could cause a broken symlink to fail the build. [moby/buildkit#6220](https://github.com/moby/buildkit/pull/6220) 
+* Fix issue where `EXPOSE` instruction did not correctly format the history record it created. [moby/buildkit#6218](https://github.com/moby/buildkit/pull/6218) 
+@z
+
+@x
 ## 1.18.0
 @y
 ## 1.18.0

@@ -60,3 +60,23 @@ and invoke that target in your CI.
 @z
 
 % snip code...
+
+@x
+### Using the `call` input directly
+@y
+### Using the `call` input directly
+@z
+
+@x
+You can also set the build method with the `call` input which is equivalent to using the `--call` flag with `docker buildx bake`
+@y
+You can also set the build method with the `call` input which is equivalent to using the `--call` flag with `docker buildx bake`
+@z
+
+@x
+For example, to run a check without defining `call` in your Bake file:
+@y
+For example, to run a check without defining `call` in your Bake file:
+@z
+
+% snip code...

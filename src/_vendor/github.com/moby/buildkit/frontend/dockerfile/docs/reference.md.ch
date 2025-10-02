@@ -2153,7 +2153,7 @@ The available `[OPTIONS]` are:
 | [`--chown`](#add---chown---chmod)       |                            |
 | [`--chmod`](#add---chown---chmod)       | 1.2                        |
 | [`--link`](#add---link)                 | 1.4                        |
-| [`--exclude`](#add---exclude)           | 1.7-labs                   |
+| [`--exclude`](#add---exclude)           | 1.19                       |
 @y
 | Option                                  | Minimum Dockerfile version |
 | --------------------------------------- | -------------------------- |
@@ -2162,7 +2162,7 @@ The available `[OPTIONS]` are:
 | [`--chown`](#add---chown---chmod)       |                            |
 | [`--chmod`](#add---chown---chmod)       | 1.2                        |
 | [`--link`](#add---link)                 | 1.4                        |
-| [`--exclude`](#add---exclude)           | 1.7-labs                   |
+| [`--exclude`](#add---exclude)           | 1.19                       |
 @z
 
 @x
@@ -2859,7 +2859,7 @@ The available `[OPTIONS]` are:
 | [`--chmod`](#copy---chown---chmod) | 1.2                        |
 | [`--link`](#copy---link)           | 1.4                        |
 | [`--parents`](#copy---parents)     | 1.7-labs                   |
-| [`--exclude`](#copy---exclude)     | 1.7-labs                   |
+| [`--exclude`](#copy---exclude)     | 1.19                       |
 @y
 | Option                             | Minimum Dockerfile version |
 | ---------------------------------- | -------------------------- |
@@ -2868,7 +2868,7 @@ The available `[OPTIONS]` are:
 | [`--chmod`](#copy---chown---chmod) | 1.2                        |
 | [`--link`](#copy---link)           | 1.4                        |
 | [`--parents`](#copy---parents)     | 1.7-labs                   |
-| [`--exclude`](#copy---exclude)     | 1.7-labs                   |
+| [`--exclude`](#copy---exclude)     | 1.19                       |
 @z
 
 @x
@@ -3726,14 +3726,6 @@ with the `--parents` flag, the Buildkit is capable of packing multiple
 @z
 
 @x
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
-@y
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
-@z
-
-@x
 ```dockerfile
 COPY [--exclude=<path> ...] <src> ... <dest>
 ```
@@ -3761,21 +3753,7 @@ supporting wildcards and matching using Go's
 For example, to add all files starting with "hom", excluding files with a `.txt` extension:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-
-COPY --exclude=*.txt hom* /mydir/
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-
-COPY --exclude=*.txt hom* /mydir/
-```
-@z
+% snip code...
 
 @x
 You can specify the `--exclude` option multiple times for a `COPY` instruction.
@@ -3789,21 +3767,7 @@ even if the files paths match the pattern specified in `<src>`.
 To add all files starting with "hom", excluding files with either `.txt` or `.md` extensions:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-
-COPY --exclude=*.txt --exclude=*.md hom* /mydir/
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-
-COPY --exclude=*.txt --exclude=*.md hom* /mydir/
-```
-@z
+% snip code...
 
 @x
 ## ENTRYPOINT

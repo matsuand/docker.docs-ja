@@ -62,17 +62,39 @@ example, they can be applied to any DHI.
 @z
 
 @x
-## Step 1: Sign up and subscribe to DHI for access
+## Step 1: Start a free trial to access DHI
 @y
-## Step 1: Sign up and subscribe to DHI for access
+## Step 1: Start a free trial to access DHI
 @z
 
 @x
-To access Docker Hardened Images, your organization must [sign
-up](https://www.docker.com/products/hardened-images/#getstarted) and subscribe.
+You can browse the Docker Hardened Images catalog without a subscription, but to
+use an image, you must either [contact sales to
+subscribe](https://www.docker.com/products/hardened-images/#getstarted) or start
+a free trial for an [organization](/admin/organization/). This guide walks you
+through starting a free trial.
 @y
-To access Docker Hardened Images, your organization must [sign
-up](https://www.docker.com/products/hardened-images/#getstarted) and subscribe.
+You can browse the Docker Hardened Images catalog without a subscription, but to
+use an image, you must either [contact sales to
+subscribe](https://www.docker.com/products/hardened-images/#getstarted) or start
+a free trial for an [organization](__SUBDIR__/admin/organization/). This guide walks you
+through starting a free trial.
+@z
+
+@x
+To start a free trial:
+@y
+To start a free trial:
+@z
+
+@x
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. Select **Start trial** and follow the on-screen instructions.
+@y
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. Select **Start trial** and follow the on-screen instructions.
 @z
 
 @x
@@ -82,23 +104,15 @@ up](https://www.docker.com/products/hardened-images/#getstarted) and subscribe.
 @z
 
 @x
-Once subscribed, Docker Hardened Images will appear under your organization's
-namespace on Docker Hub.
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. In the left sidebar, choose your organization that has DHI access.
+3. In the left sidebar, select **Hardened Images** > **Catalog**.
 @y
-Once subscribed, Docker Hardened Images will appear under your organization's
-namespace on Docker Hub.
-@z
-
-@x
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub** in the top navigation.
-3. In the left sidebar, choose your organization that has DHI access.
-4. In the left sidebar, select **Hardened Images** > **Catalog**.
-@y
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub** in the top navigation.
-3. In the left sidebar, choose your organization that has DHI access.
-4. In the left sidebar, select **Hardened Images** > **Catalog**.
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. In the left sidebar, choose your organization that has DHI access.
+3. In the left sidebar, select **Hardened Images** > **Catalog**.
 @z
 
 @x
@@ -108,10 +122,10 @@ namespace on Docker Hub.
 @z
 
 @x
-5. Use the search bar or filters to find an image (e.g., `python`, `node`,
+4. Use the search bar or filters to find an image (e.g., `python`, `node`,
    `golang`). For this guide, use the Python image as an example.
 @y
-5. Use the search bar or filters to find an image (e.g., `python`, `node`,
+4. Use the search bar or filters to find an image (e.g., `python`, `node`,
    `golang`). For this guide, use the Python image as an example.
 @z
 
@@ -122,9 +136,9 @@ namespace on Docker Hub.
 @z
 
 @x
-6. Select the Python repository to view its details.
+5. Select the Python repository to view its details.
 @y
-6. Select the Python repository to view its details.
+5. Select the Python repository to view its details.
 @z
 
 @x

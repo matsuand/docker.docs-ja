@@ -24,6 +24,68 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 @z
 
 @x
+## 0.29.0
+@y
+## 0.29.0
+@z
+
+@x
+{{< release-date date="2025-09-30" >}}
+@y
+{{< release-date date="2025-09-30" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.29.0).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.29.0).
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- New `--progress=none` option has been added. This is similar to `--progress=quiet`, but it does not print the image ID after image result export. [docker/buildx#3431](https://github.com/docker/buildx/pull/3431)
+- Compose compatibility has been updated to v2.9.0.
+@y
+- New `--progress=none` option has been added. This is similar to `--progress=quiet`, but it does not print the image ID after image result export. [docker/buildx#3431](https://github.com/docker/buildx/pull/3431)
+- Compose compatibility has been updated to v2.9.0.
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- `imagetools create` command now supports `--platform` option to create final image only for specified platforms. The inline attestation for the specified platforms are also kept in the final image. [docker/buildx#3430](https://github.com/docker/buildx/pull/3430)
+- DAP debugger can now show the correct file explorer data when the debugger stops because of a build error. [docker/buildx#3410](https://github.com/docker/buildx/pull/3410)
+- When building from a Git URL, buildx now optionally supports resolution of the context data on the client side. Git repository is still cloned on the server side, but this can help in cases where one can't be sure what version of Git URL resolution the server side supports. [docker/buildx#3415](https://github.com/docker/buildx/pull/3415)
+@y
+- `imagetools create` command now supports `--platform` option to create final image only for specified platforms. The inline attestation for the specified platforms are also kept in the final image. [docker/buildx#3430](https://github.com/docker/buildx/pull/3430)
+- DAP debugger can now show the correct file explorer data when the debugger stops because of a build error. [docker/buildx#3410](https://github.com/docker/buildx/pull/3410)
+- When building from a Git URL, buildx now optionally supports resolution of the context data on the client side. Git repository is still cloned on the server side, but this can help in cases where one can't be sure what version of Git URL resolution the server side supports. [docker/buildx#3415](https://github.com/docker/buildx/pull/3415)
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- Fix DAP debugger location resolution when there are multiple build steps with the same BuildKit digest. [docker/buildx#3408](https://github.com/docker/buildx/pull/3408)
+@y
+- Fix DAP debugger location resolution when there are multiple build steps with the same BuildKit digest. [docker/buildx#3408](https://github.com/docker/buildx/pull/3408)
+@z
+
+@x
 ## 0.28.0
 @y
 ## 0.28.0
@@ -37,10 +99,10 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 
 @x
 The full release notes for this release are available
-[on GitHub](https://github.com/docker/buildx/releases/tag/v0.27.0).
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.28.0).
 @y
 The full release notes for this release are available
-[on GitHub](https://github.com/docker/buildx/releases/tag/v0.27.0).
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.28.0).
 @z
 
 @x

@@ -47,16 +47,52 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 
 % options:
 
+@x allow
+      description: Allow build to access specified resources
+@y
+      description: Allow build to access specified resources
+@z
+
+@x call
+      description: Set method for evaluating build (`check`, `outline`, `targets`)
+@y
+      description: Set method for evaluating build (`check`, `outline`, `targets`)
+@z
+
+@x check
+      description: Shorthand for `--call=check`
+@y
+      description: Shorthand for `--call=check`
+@z
+
 @x file
       description: Build definition file
 @y
       description: ビルド定義ファイル。
 @z
 
-@x load
-      description: Shorthand for `--set=*.output=type=docker`
+@x list
+      description: List targets or variables
 @y
-      description: "`--set=*.output=type=docker` の短縮形。"
+      description: List targets or variables
+@z
+
+@x list-targets
+      description: List available targets
+@y
+      description: List available targets
+@z
+
+@x list-variables
+      description: List defined variables
+@y
+      description: List defined variables
+@z
+
+@x load
+      description: Shorthand for `--set=*.output=type=docker`. Conditional.
+@y
+      description: 条件を定めた `--set=*.output=type=docker` の短縮形。
 @z
 
 @x metadata-file
@@ -79,10 +115,10 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`,  `plain`, `quiet`, `rawjson`, `tty`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`,  `plain`, `quiet`, `rawjson`, `tty`). Use plain to show container output
 @z
 
 @x provenance
@@ -98,9 +134,9 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 @z
 
 @x push
-      description: Shorthand for `--set=*.output=type=registry`
+      description: Shorthand for `--set=*.output=type=registry`. Conditional.
 @y
-      description: "`--set=*.output=type=registry` の短縮形。"
+      description: 条件を定めた `--set=*.output=type=registry` の短縮形。
 @z
 
 @x sbom
@@ -114,6 +150,8 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
 @y
       description: Override target value (e.g., `targetpattern.key=value`)
 @z
+
+% inherited_options:
 
 @x builder
       description: Override the configured builder instance
@@ -155,13 +193,13 @@ examples: |-
 
 @x
     In addition to BuildKit's `network.host` and `security.insecure` entitlements
-    (see [`docker buildx build --allow`](/reference/cli/docker/buildx/build/#allow),
+    (see [`docker buildx build --allow`](/reference/cli/docker/buildx/build/#allow)),
     Bake supports file system entitlements that grant granular control over file
     system access. These are particularly useful when working with builds that need
     access to files outside the default working directory.
 @y
     In addition to BuildKit's `network.host` and `security.insecure` entitlements
-    (see [`docker buildx build --allow`](__SUBDIR__/reference/cli/docker/buildx/build/#allow),
+    (see [`docker buildx build --allow`](__SUBDIR__/reference/cli/docker/buildx/build/#allow)),
     Bake supports file system entitlements that grant granular control over file
     system access. These are particularly useful when working with builds that need
     access to files outside the default working directory.

@@ -36,22 +36,6 @@ to your organization.
 @z
 
 @x
-## Access Docker Hardened Images
-@y
-## Access Docker Hardened Images
-@z
-
-@x
-Docker Hardened Images requires a subscription. [Sign
-up](https://www.docker.com/products/hardened-images/#getstarted) to access
-Docker Hardened Images.
-@y
-Docker Hardened Images requires a subscription. [Sign
-up](https://www.docker.com/products/hardened-images/#getstarted) to access
-Docker Hardened Images.
-@z
-
-@x
 ## Explore Docker Hardened Images
 @y
 ## Explore Docker Hardened Images

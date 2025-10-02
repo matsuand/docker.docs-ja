@@ -1037,6 +1037,12 @@ Buildx uses the default value from the Dockerfile instead.
 @z
 
 @x
+You can also add a description of the variable's purpose with the `description` field. This attribute is useful when combined with the `docker buildx bake --list=variables` option, providing a more informative output when listing the available variables in a Bake file.
+@y
+You can also add a description of the variable's purpose with the `description` field. This attribute is useful when combined with the `docker buildx bake --list=variables` option, providing a more informative output when listing the available variables in a Bake file.
+@z
+
+@x
 You can override variable defaults set in the Bake file using environment variables.
 The following example sets the `TAG` variable to `dev`,
 overriding the default `latest` value shown in the previous example.

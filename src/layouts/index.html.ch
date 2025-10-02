@@ -117,29 +117,24 @@
 @z
 
 @x
-                  Gen AI catalog
+                  Docker Hardened Images
 @y
-                  生成 AI カタログ
+                  Docker Hardened イメージ
 @z
 @x
-                  Integrate AI solutions into your apps with minimal effort
+                  Secure, minimal, production-ready images with near-zero known CVEs.
 @y
-                  手間ひまをかけずに AI 機能をアプリに統合します。
+                  CVE がほぼゼロのセキュアで最小限のイメージです。
 @z
 @x
-                  Explore on Docker Hub
+                  Start your free trial
 @y
-                  Docker Hub 上の確認
+                  フリートライアル開始
 @z
 @x
-                  href="/docker-hub/image-library/catalogs/"
+                  Explore images
 @y
-                  href="docker-hub/image-library/catalogs/"
-@z
-@x
-                  Read the docs
-@y
-                  ドキュメント
+                  イメージの確認
 @z
 @x
                 src="/assets/images/app-wf-light-2.svg"

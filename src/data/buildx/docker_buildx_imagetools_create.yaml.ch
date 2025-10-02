@@ -72,9 +72,9 @@ usage: docker buildx imagetools create [OPTIONS] [SOURCE...]
 @z
 
 @x progress
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`, `plain`, `rawjson`, `tty`). Use plain to show container output
 @y
-        Set type of progress output (`auto`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`, `plain`, `rawjson`, `tty`). Use plain to show container output
 @z
 
 @x tag

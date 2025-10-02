@@ -27,10 +27,10 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 
 @x allow
       description: |
-        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`)
+        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`)
 @y
       description: |
-        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`)
+        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`)
 @z
 
 @x annotation
@@ -209,10 +209,10 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 
 @x progress
       description: |
-        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`,  `plain`, `quiet`, `rawjson`, `tty`). Use plain to show container output
 @y
       description: |
-        Set type of progress output (`auto`, `quiet`, `plain`, `tty`, `rawjson`). Use plain to show container output
+        Set type of progress output (`auto`, `none`,  `plain`, `quiet`, `rawjson`, `tty`). Use plain to show container output
 @z
 
 @x provenance
