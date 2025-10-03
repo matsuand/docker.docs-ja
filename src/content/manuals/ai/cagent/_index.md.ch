@@ -1,7 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+% .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
+% snip å¯¾å¿œ
 
 @x
 title: cagent
@@ -31,7 +32,7 @@ delegates tasks to the sub-agents you define.
 Each agent:
 - uses the model of your choice, with the parameters of your choice.
 - has access to the [built-in tools](#built-in-tools) and MCP servers
-  configured in the [Docker MCP gateway](/manuals/ai/mcp-gateway/_index.md).
+  configured in the [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
 - works in its own context. They do not share knowledge.
 @y
 cagent relies on the concept of a _root agent_ that acts as a team lead and
@@ -39,7 +40,7 @@ delegates tasks to the sub-agents you define.
 Each agent:
 - uses the model of your choice, with the parameters of your choice.
 - has access to the [built-in tools](#built-in-tools) and MCP servers
-  configured in the [Docker MCP gateway](manuals/ai/mcp-gateway/_index.md).
+  configured in the [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
 - works in its own context. They do not share knowledge.
 @z
 
@@ -101,15 +102,7 @@ they don't share knowledge.
    > On macOS and Linux, run:
 @z
 
-@x
-     ```console
-     chmod +x /path/to/downloads/cagent-linux-<arm/amd>64
-     ```
-@y
-     ```console
-     chmod +x /path/to/downloads/cagent-linux-<arm/amd>64
-     ```
-@z
+% snip command...
 
 @x
    > [!NOTE]
@@ -175,27 +168,7 @@ they don't share knowledge.
 1. Create an agent by saving this sample as `assistant.yaml`:
 @z
 
-@x
-   ```yaml {title="assistant.yaml"}
-   agents:
-     root:
-       model: openai/gpt-5-mini
-       description: A helpful AI assistant
-       instruction: |
-         You are a knowledgeable assistant that helps users with various tasks.
-         Be helpful, accurate, and concise in your responses.
-   ```
-@y
-   ```yaml {title="assistant.yaml"}
-   agents:
-     root:
-       model: openai/gpt-5-mini
-       description: A helpful AI assistant
-       instruction: |
-         You are a knowledgeable assistant that helps users with various tasks.
-         Be helpful, accurate, and concise in your responses.
-   ```
-@z
+% snip code...
 
 @x
 1. Start your prompt with your agent:
@@ -203,15 +176,7 @@ they don't share knowledge.
 1. Start your prompt with your agent:
 @z
 
-@x
-   ```bash
-   cagent run assistant.yaml
-   ```
-@y
-   ```bash
-   cagent run assistant.yaml
-   ```
-@z
+% snip command...
 
 @x
 ## Create an agentic team
@@ -227,45 +192,7 @@ You can use AI prompting to generate a team of agents with the `cagent new`
 command:
 @z
 
-@x
-```console
-$ cagent new
-@y
-```console
-$ cagent new
-@z
-
-@x
-For any feedback, visit: https://docker.qualtrics.com/jfe/form/SV_cNsCIg92nQemlfw
-@y
-For any feedback, visit: https://docker.qualtrics.com/jfe/form/SV_cNsCIg92nQemlfw
-@z
-
-@x
-Welcome to cagent! (Ctrl+C to exit)
-@y
-Welcome to cagent! (Ctrl+C to exit)
-@z
-
-@x
-What should your agent/agent team do? (describe its purpose):
-@y
-What should your agent/agent team do? (describe its purpose):
-@z
-
-@x
-> I need a cross-functional feature team. The team owns a specific product
-  feature end-to-end. Include the key responsibilities of each of the roles
-  involved (engineers, designer, product manager, QA). Keep the description
-  short, clear, and focused on how this team delivers value to users and the business.
-```
-@y
-> I need a cross-functional feature team. The team owns a specific product
-  feature end-to-end. Include the key responsibilities of each of the roles
-  involved (engineers, designer, product manager, QA). Keep the description
-  short, clear, and focused on how this team delivers value to users and the business.
-```
-@z
+% snip command...
 
 @x
 Alternatively, you can write your configuration file manually. For example:
@@ -273,85 +200,7 @@ Alternatively, you can write your configuration file manually. For example:
 Alternatively, you can write your configuration file manually. For example:
 @z
 
-@x
-```yaml {title="agentic-team.yaml"}
-agents:
-  root:
-    model: claude
-    description: "Main coordinator agent that delegates tasks and manages workflow"
-    instruction: |
-      You are the root coordinator agent. Your job is to:
-      1. Understand user requests and break them down into manageable tasks.
-      2. Delegate appropriate tasks to your helper agent.
-      3. Coordinate responses and ensure tasks are completed properly.
-      4. Provide final responses to the user.
-      When you receive a request, analyze what needs to be done and decide whether to:
-      - Handle it yourself if it's simple.
-      - Delegate to the helper agent if it requires specific assistance.
-      - Break complex requests into multiple sub-tasks.
-    sub_agents: ["helper"]
-@y
-```yaml {title="agentic-team.yaml"}
-agents:
-  root:
-    model: claude
-    description: "Main coordinator agent that delegates tasks and manages workflow"
-    instruction: |
-      You are the root coordinator agent. Your job is to:
-      1. Understand user requests and break them down into manageable tasks.
-      2. Delegate appropriate tasks to your helper agent.
-      3. Coordinate responses and ensure tasks are completed properly.
-      4. Provide final responses to the user.
-      When you receive a request, analyze what needs to be done and decide whether to:
-      - Handle it yourself if it's simple.
-      - Delegate to the helper agent if it requires specific assistance.
-      - Break complex requests into multiple sub-tasks.
-    sub_agents: ["helper"]
-@z
-
-@x
-  helper:
-    model: claude
-    description: "Assistant agent that helps with various tasks as directed by the root agent"
-    instruction: |
-      You are a helpful assistant agent. Your role is to:
-      1. Complete specific tasks assigned by the root agent.
-      2. Provide detailed and accurate responses.
-      3. Ask for clarification if tasks are unclear.
-      4. Report back to the root agent with your results.
-@y
-  helper:
-    model: claude
-    description: "Assistant agent that helps with various tasks as directed by the root agent"
-    instruction: |
-      You are a helpful assistant agent. Your role is to:
-      1. Complete specific tasks assigned by the root agent.
-      2. Provide detailed and accurate responses.
-      3. Ask for clarification if tasks are unclear.
-      4. Report back to the root agent with your results.
-@z
-
-@x
-      Focus on being thorough and helpful in whatever task you're given.
-@y
-      Focus on being thorough and helpful in whatever task you're given.
-@z
-
-@x
-models:
-  claude:
-    provider: anthropic
-    model: claude-sonnet-4-0
-    max_tokens: 64000
-```
-@y
-models:
-  claude:
-    provider: anthropic
-    model: claude-sonnet-4-0
-    max_tokens: 64000
-```
-@z
+% snip code...
 
 @x
 [See the reference documentation](https://github.com/docker/cagent?tab=readme-ov-file#-configuration-reference).
@@ -373,25 +222,7 @@ cagent includes a set of built-in tools that enhance your agents' capabilities.
 You don't need to configure any external MCP tools to use them.
 @z
 
-@x
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: todo
-      - type: transfer_task
-```
-@y
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: todo
-      - type: transfer_task
-```
-@z
+% snip code...
 
 @x
 ### Think tool
@@ -405,23 +236,7 @@ The think tool allows agents to reason through problems step by step:
 The think tool allows agents to reason through problems step by step:
 @z
 
-@x
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: think
-```
-@y
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: think
-```
-@z
+% snip code...
 
 @x
 ### Todo tool
@@ -435,23 +250,7 @@ The todo tool helps agents manage task lists:
 The todo tool helps agents manage task lists:
 @z
 
-@x
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: todo
-```
-@y
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: todo
-```
-@z
+% snip code...
 
 @x
 ### Memory tool
@@ -465,25 +264,7 @@ The memory tool provides persistent storage:
 The memory tool provides persistent storage:
 @z
 
-@x
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: memory
-        path: "./agent_memory.db"
-```
-@y
-```yaml
-agents:
-  root:
-    # ... other config
-    toolsets:
-      - type: memory
-        path: "./agent_memory.db"
-```
-@z
+% snip code...
 
 @x
 ### Task transfer tool
@@ -508,12 +289,12 @@ sub-agents defined in its configuration.
 @z
 
 @x
-If you use the [Docker MCP gateway](/manuals/ai/mcp-gateway.md),
+If you use the [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 you can configure your agent to interact with the
 gateway and use the MCP servers configured in it. See [docker mcp
 gateway run](/reference/cli/docker/mcp/gateway/gateway_run.md).
 @y
-If you use the [Docker MCP gateway](manuals/ai/mcp-gateway.md),
+If you use the [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 you can configure your agent to interact with the
 gateway and use the MCP servers configured in it. See [docker mcp
 gateway run](reference/cli/docker/mcp/gateway/gateway_run.md).
@@ -525,21 +306,7 @@ For example, to enable an agent to use Duckduckgo via the MCP Gateway:
 For example, to enable an agent to use Duckduckgo via the MCP Gateway:
 @z
 
-@x
-```yaml
-toolsets:
-  - type: mcp
-    command: docker
-    args: ["mcp", "gateway", "run", "--servers=duckduckgo"]
-```
-@y
-```yaml
-toolsets:
-  - type: mcp
-    command: docker
-    args: ["mcp", "gateway", "run", "--servers=duckduckgo"]
-```
-@z
+% snip code...
 
 @x
 ## CLI interactive commands
@@ -591,15 +358,7 @@ To push an agent:
 To push an agent:
 @z
 
-@x
-```bash
-cagent push ./<agent-file>.yaml <namespace>/<reponame>
-```
-@y
-```bash
-cagent push ./<agent-file>.yaml <namespace>/<reponame>
-```
-@z
+% snip command...
 
 @x
 To pull an agent to the current directory:
@@ -607,15 +366,7 @@ To pull an agent to the current directory:
 To pull an agent to the current directory:
 @z
 
-@x
-```bash
-cagent pull <namespace>/<reponame>
-```
-@y
-```bash
-cagent pull <namespace>/<reponame>
-```
-@z
+% snip command...
 
 @x
 The agent's configuration file is named `<namespace>_<reponame>.yaml`. Run
@@ -634,9 +385,9 @@ it with the `cagent run <filename>` command.
 @x
 - For more information about cagent, see the
 [GitHub repository](https://github.com/docker/cagent).
-- [Docker MCP Gateway](/manuals/ai/mcp-gateway/_index.md)
+- [Docker MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
 - For more information about cagent, see the
 [GitHub repository](https://github.com/docker/cagent).
-- [Docker MCP Gateway](manuals/ai/mcp-gateway/_index.md)
+- [Docker MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

@@ -293,7 +293,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = cagent compose gordon mcp-catalog-and-toolkit mcp-gateway model-runner
+SUBDIRS = cagent compose gordon mcp-catalog-and-toolkit model-runner
 all: all-recursive
 
 .SUFFIXES:

@@ -64,18 +64,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: MCP Gateway
-    description: Manage and secure your AI tools with a single gateway.
-    icon: /icons/toolkit.svg
-    link: /ai/mcp-gateway/
-@y
-  - title: MCP Gateway
-    description: 1 つのゲートウェイを使って AI ツールをセキュアに管理します。
-    icon: icons/toolkit.svg
-    link: __SUBDIR__/ai/mcp-gateway/
-@z
-
-@x
   - title: Cagent
     description: The open-source multi-agent solution to assist you in your tasks.
     icon: /icons/cagent.svg

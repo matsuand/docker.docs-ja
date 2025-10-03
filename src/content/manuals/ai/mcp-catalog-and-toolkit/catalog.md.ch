@@ -72,12 +72,12 @@ compatibility.
 @z
 
 @x
-- Over 100 verified MCP servers in one place.
+- Extensive collection of verified MCP servers in one place.
 - Publisher verification and versioned releases.
 - Pull-based distribution using Docker infrastructure.
 - Tools provided by partners such as New Relic, Stripe, Grafana, and more.
 @y
-- Over 100 verified MCP servers in one place.
+- Extensive collection of verified MCP servers in one place.
 - Publisher verification and versioned releases.
 - Pull-based distribution using Docker infrastructure.
 - Tools provided by partners such as New Relic, Stripe, Grafana, and more.
@@ -123,6 +123,54 @@ Each catalog entry displays:
 - Version history.
 - List of tools provided by the MCP server.
 - Example configuration for agent integration.
+@z
+
+@x
+## Server deployment types
+@y
+## Server deployment types
+@z
+
+@x
+The Docker MCP Catalog supports both local and remote server deployments, each optimized for different use cases and requirements.
+@y
+The Docker MCP Catalog supports both local and remote server deployments, each optimized for different use cases and requirements.
+@z
+
+@x
+### Local MCP servers
+@y
+### Local MCP servers
+@z
+
+@x
+Local MCP servers are containerized applications that run directly on your machine. All local servers are built and digitally signed by Docker, providing enhanced security through verified provenance and integrity. These servers run as containers on your local environment and function without internet connectivity once downloaded. Local servers display a Docker icon {{< inline-image src="../../desktop/images/whale-x.svg" alt="docker whale icon" >}} to indicate they are built by Docker.
+@y
+Local MCP servers are containerized applications that run directly on your machine. All local servers are built and digitally signed by Docker, providing enhanced security through verified provenance and integrity. These servers run as containers on your local environment and function without internet connectivity once downloaded. Local servers display a Docker icon {{< inline-image src="../../desktop/images/whale-x.svg" alt="docker whale icon" >}} to indicate they are built by Docker.
+@z
+
+@x
+Local servers offer predictable performance, complete data privacy, and independence from external service availability. They work well for development workflows, sensitive data processing, and scenarios requiring offline functionality.
+@y
+Local servers offer predictable performance, complete data privacy, and independence from external service availability. They work well for development workflows, sensitive data processing, and scenarios requiring offline functionality.
+@z
+
+@x
+### Remote MCP servers
+@y
+### Remote MCP servers
+@z
+
+@x
+Remote MCP servers are hosted services that you connect to through the internet. Service providers maintain and update these servers, ensuring access to current features and live data without requiring local updates or maintenance. Remote servers display a cloud icon {{< inline-image src="../../offload/images/cloud-mode.png" alt="cloud icon" >}} to indicate their hosted nature and external connectivity requirements.
+@y
+Remote MCP servers are hosted services that you connect to through the internet. Service providers maintain and update these servers, ensuring access to current features and live data without requiring local updates or maintenance. Remote servers display a cloud icon {{< inline-image src="../../offload/images/cloud-mode.png" alt="cloud icon" >}} to indicate their hosted nature and external connectivity requirements.
+@z
+
+@x
+Remote servers excel when you need always-current data, want to minimize local resource usage, or require capabilities that benefit from provider-managed infrastructure and scaling.
+@y
+Remote servers excel when you need always-current data, want to minimize local resource usage, or require capabilities that benefit from provider-managed infrastructure and scaling.
 @z
 
 @x

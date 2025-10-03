@@ -242,8 +242,8 @@ copyfiles = \
 	copilot-mode.png           \
 	mcp-overview.svg           \
 	mcp-servers-2.svg          \
-	mcp-servers-overview.svg   \
 	mcp-servers.svg            \
+	mcp-toolkit-overview.png   \
 	tools.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

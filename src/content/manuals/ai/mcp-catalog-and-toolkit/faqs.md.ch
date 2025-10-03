@@ -53,12 +53,12 @@ Currently, a majority of the servers in the catalog are built directly by Docker
 
 @x
 > [!NOTE]
-> When using the images with [Docker MCP gateway](/manuals/ai/mcp-gateway/_index.md),
+> When using the images with [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
 > --verify-signatures` CLI command.
 @y
 > [!NOTE]
-> When using the images with [Docker MCP gateway](manuals/ai/mcp-gateway/_index.md),
+> When using the images with [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
 > --verify-signatures` CLI command.
 @z
@@ -151,8 +151,8 @@ No. MCP servers are not technically uninstalled since they exist as Docker conta
 
 @x
 - [Get started with MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Open-source MCP Gateway](/manuals/ai/mcp-gateway/_index.md)
+- [Open-source MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
 - [Get started with MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Open-source MCP Gateway](manuals/ai/mcp-gateway/_index.md)
+- [Open-source MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

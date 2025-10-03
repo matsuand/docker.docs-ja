@@ -26,16 +26,6 @@ This page contains information on how to diagnose and troubleshoot Docker Deskto
 @z
 
 @x
-> [!WARNING]
->
-> If you're experiencing malware detection issues on Mac, follow the steps documented in [docker/for-mac#7527](https://github.com/docker/for-mac/issues/7527).
-@y
-> [!WARNING]
->
-> If you're experiencing malware detection issues on Mac, follow the steps documented in [docker/for-mac#7527](https://github.com/docker/for-mac/issues/7527).
-@z
-
-@x
 ## Troubleshoot menu
 @y
 ## Troubleshoot menu

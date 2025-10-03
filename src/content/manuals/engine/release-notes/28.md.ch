@@ -36,6 +36,1592 @@ For more information about:
 @z
 
 @x
+## 28.5.0
+@y
+## 28.5.0
+@z
+
+@x
+{{< release-date date="2025-10-02" >}}
+@y
+{{< release-date date="2025-10-02" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.0)
+- [moby/moby, 28.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.0)
+@y
+- [docker/cli, 28.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.0)
+- [moby/moby, 28.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.0)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Don't print warnings in `docker info` for broken symlinks in CLI-plugin directories. [docker/cli#6476](https://github.com/docker/cli/pull/6476)
+- Fix a panic during `stats` on empty event `Actor.ID`. [docker/cli#6471](https://github.com/docker/cli/pull/6471)
+@y
+- Don't print warnings in `docker info` for broken symlinks in CLI-plugin directories. [docker/cli#6476](https://github.com/docker/cli/pull/6476)
+- Fix a panic during `stats` on empty event `Actor.ID`. [docker/cli#6471](https://github.com/docker/cli/pull/6471)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Remove support for legacy CBC cipher suites. [docker/cli#6474](https://github.com/docker/cli/pull/6474)
+- Update Buildkit to [v0.25.0](https://github.com/moby/buildkit/releases/tag/v0.25.0). [moby/moby#51075](https://github.com/moby/moby/pull/51075)
+- Update Dockerfile syntax to [v1.19.0](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.19.0). [moby/moby#51075](https://github.com/moby/moby/pull/51075)
+@y
+- Remove support for legacy CBC cipher suites. [docker/cli#6474](https://github.com/docker/cli/pull/6474)
+- Update Buildkit to [v0.25.0](https://github.com/moby/buildkit/releases/tag/v0.25.0). [moby/moby#51075](https://github.com/moby/moby/pull/51075)
+- Update Dockerfile syntax to [v1.19.0](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.19.0). [moby/moby#51075](https://github.com/moby/moby/pull/51075)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Eliminated harmless warning about deletion of `endpoint_count` from the data store. [moby/moby#51064](https://github.com/moby/moby/pull/51064)
+- Fix a bug causing IPAM plugins to not be loaded on Windows. [moby/moby#51035](https://github.com/moby/moby/pull/51035)
+@y
+- Eliminated harmless warning about deletion of `endpoint_count` from the data store. [moby/moby#51064](https://github.com/moby/moby/pull/51064)
+- Fix a bug causing IPAM plugins to not be loaded on Windows. [moby/moby#51035](https://github.com/moby/moby/pull/51035)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- Deprecate support for kernel memory TCP accounting (`KernelMemoryTCP`). [moby/moby#51067](https://github.com/moby/moby/pull/51067)
+- Fix `GET containers/{name}/checkpoints` returning `null` instead of empty JSON array when there are no checkpoints. [moby/moby#51052](https://github.com/moby/moby/pull/51052)
+@y
+- Deprecate support for kernel memory TCP accounting (`KernelMemoryTCP`). [moby/moby#51067](https://github.com/moby/moby/pull/51067)
+- Fix `GET containers/{name}/checkpoints` returning `null` instead of empty JSON array when there are no checkpoints. [moby/moby#51052](https://github.com/moby/moby/pull/51052)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- cli-plugins/plugin: Run: allow customizing the CLI. [docker/cli#6481](https://github.com/docker/cli/pull/6481)
+- cli/command: add `WithUserAgent` option. [docker/cli#6477](https://github.com/docker/cli/pull/6477)
+@y
+- cli-plugins/plugin: Run: allow customizing the CLI. [docker/cli#6481](https://github.com/docker/cli/pull/6481)
+- cli/command: add `WithUserAgent` option. [docker/cli#6477](https://github.com/docker/cli/pull/6477)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Go-SDK: cli/command: deprecate `DockerCli.Apply`. This method is no longer used and will be removed in the next release if there are no remaining uses. [docker/cli#6497](https://github.com/docker/cli/pull/6497)
+- Go-SDK: cli/command: deprecate `DockerCli.ContentTrustEnabled`. This method is no longer used and will be removed in the next release. [docker/cli#6495](https://github.com/docker/cli/pull/6495)
+- Go-SDK: cli/command: deprecate `DockerCli.DefaultVersion`. This method is no longer used and will be removed in the next release. [docker/cli#6491](https://github.com/docker/cli/pull/6491)
+- Go-SDK: cli/command: deprecate `ResolveDefaultContext` utility. [docker/cli#6529](https://github.com/docker/cli/pull/6529)
+- Go-SDK: cli/command: deprecate `WithContentTrustFromEnv`, `WithContentTrust` options. These options were used internally, and will be removed in the next release.. [docker/cli#6489](https://github.com/docker/cli/pull/6489)
+- Go-SDK: cli/manifest/store: deprecate `IsNotFound()`. [docker/cli#6514](https://github.com/docker/cli/pull/6514)
+- Go-SDK: templates: deprecate NewParse() function. [docker/cli#6469](https://github.com/docker/cli/pull/6469)
+@y
+- Go-SDK: cli/command: deprecate `DockerCli.Apply`. This method is no longer used and will be removed in the next release if there are no remaining uses. [docker/cli#6497](https://github.com/docker/cli/pull/6497)
+- Go-SDK: cli/command: deprecate `DockerCli.ContentTrustEnabled`. This method is no longer used and will be removed in the next release. [docker/cli#6495](https://github.com/docker/cli/pull/6495)
+- Go-SDK: cli/command: deprecate `DockerCli.DefaultVersion`. This method is no longer used and will be removed in the next release. [docker/cli#6491](https://github.com/docker/cli/pull/6491)
+- Go-SDK: cli/command: deprecate `ResolveDefaultContext` utility. [docker/cli#6529](https://github.com/docker/cli/pull/6529)
+- Go-SDK: cli/command: deprecate `WithContentTrustFromEnv`, `WithContentTrust` options. These options were used internally, and will be removed in the next release.. [docker/cli#6489](https://github.com/docker/cli/pull/6489)
+- Go-SDK: cli/manifest/store: deprecate `IsNotFound()`. [docker/cli#6514](https://github.com/docker/cli/pull/6514)
+- Go-SDK: templates: deprecate NewParse() function. [docker/cli#6469](https://github.com/docker/cli/pull/6469)
+@z
+
+@x
+## 28.4.0
+@y
+## 28.4.0
+@z
+
+@x
+{{< release-date date="2025-09-03" >}}
+@y
+{{< release-date date="2025-09-03" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.4.0)
+- [moby/moby, 28.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.4.0)
+@y
+- [docker/cli, 28.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.4.0)
+- [moby/moby, 28.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.4.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Allow Docker CLI to set the `GODEBUG` environment variable when the key-value pair (`"GODEBUG":"..."`) exists inside the docker context metadata. [docker/cli#6399](https://github.com/docker/cli/pull/6399)
+@y
+- Allow Docker CLI to set the `GODEBUG` environment variable when the key-value pair (`"GODEBUG":"..."`) exists inside the docker context metadata. [docker/cli#6399](https://github.com/docker/cli/pull/6399)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Add shell completion for `docker pull` and `docker image pull`. [docker/cli#6420](https://github.com/docker/cli/pull/6420)
+- Fix a regression in v28.3.3 that could cause a panic on `docker push` if the client did not send an `X-Registry-Auth` header. [moby/moby#50738](https://github.com/moby/moby/pull/50738)
+- Windows: Potentially fix an issue with "access denied" error when pulling images. [moby/moby#50871](https://github.com/moby/moby/pull/50871)
+- containerd image store: Fix `docker history` failing with `snapshot X does not exist` when calling on a non-native image that was built locally. [moby/moby#50875](https://github.com/moby/moby/pull/50875)
+- containerd image store: Fix `docker image prune` to emit correct `untag` and `delete` events and list only the deleted images root digests instead of every blob. [moby/moby#50837](https://github.com/moby/moby/pull/50837)
+- Remove interactive login prompt from `docker push` and `docker pull` after a failure caused by missing authentication. [docker/cli#6256](https://github.com/docker/cli/pull/6256)
+@y
+- Add shell completion for `docker pull` and `docker image pull`. [docker/cli#6420](https://github.com/docker/cli/pull/6420)
+- Fix a regression in v28.3.3 that could cause a panic on `docker push` if the client did not send an `X-Registry-Auth` header. [moby/moby#50738](https://github.com/moby/moby/pull/50738)
+- Windows: Potentially fix an issue with "access denied" error when pulling images. [moby/moby#50871](https://github.com/moby/moby/pull/50871)
+- containerd image store: Fix `docker history` failing with `snapshot X does not exist` when calling on a non-native image that was built locally. [moby/moby#50875](https://github.com/moby/moby/pull/50875)
+- containerd image store: Fix `docker image prune` to emit correct `untag` and `delete` events and list only the deleted images root digests instead of every blob. [moby/moby#50837](https://github.com/moby/moby/pull/50837)
+- Remove interactive login prompt from `docker push` and `docker pull` after a failure caused by missing authentication. [docker/cli#6256](https://github.com/docker/cli/pull/6256)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.24.0](https://github.com/moby/buildkit/releases/tag/v0.24.0). [moby#50888](https://github.com/moby/moby/pull/50888)
+- Update Go runtime to [1.24.7](https://go.dev/doc/devel/release#go1.24.6). [moby/moby#50889](https://github.com/moby/moby/pull/50889), [docker/cli#6422](https://github.com/docker/cli/pull/6422)
+- Update `runc` to [v1.3.0](https://github.com/opencontainers/runc/releases/tag/v1.3.0). [moby/moby#50699](https://github.com/moby/moby/pull/50699)
+- Update containerd (static binaries only) to [v1.7.28](https://github.com/containerd/containerd/releases/tag/v1.7.28). [moby/moby#50700](https://github.com/moby/moby/pull/50700)
+@y
+- Update BuildKit to [v0.24.0](https://github.com/moby/buildkit/releases/tag/v0.24.0). [moby#50888](https://github.com/moby/moby/pull/50888)
+- Update Go runtime to [1.24.7](https://go.dev/doc/devel/release#go1.24.6). [moby/moby#50889](https://github.com/moby/moby/pull/50889), [docker/cli#6422](https://github.com/docker/cli/pull/6422)
+- Update `runc` to [v1.3.0](https://github.com/opencontainers/runc/releases/tag/v1.3.0). [moby/moby#50699](https://github.com/moby/moby/pull/50699)
+- Update containerd (static binaries only) to [v1.7.28](https://github.com/containerd/containerd/releases/tag/v1.7.28). [moby/moby#50700](https://github.com/moby/moby/pull/50700)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix an issue that could cause slow container restart on live-restore. [moby/moby#50829](https://github.com/moby/moby/pull/50829)
+@y
+- Fix an issue that could cause slow container restart on live-restore. [moby/moby#50829](https://github.com/moby/moby/pull/50829)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- Update deprecation message for `AuthConfig.Email` field. [moby/moby#50797](https://github.com/moby/moby/pull/50797)
+@y
+- Update deprecation message for `AuthConfig.Email` field. [moby/moby#50797](https://github.com/moby/moby/pull/50797)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- Deprecate profiles package which got migrated to [github.com/moby/profiles](https://github.com/moby/profiles). [moby/moby#50513](https://github.com/moby/moby/pull/50513)
+@y
+- Deprecate profiles package which got migrated to [github.com/moby/profiles](https://github.com/moby/profiles). [moby/moby#50513](https://github.com/moby/moby/pull/50513)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Deprecate special handling for quoted values for the `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags. [docker/cli#6291](https://github.com/docker/cli/pull/6291)
+- Mark legacy links environment variables (`DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS`) as deprecated in v28.4 and set for removal in v30.0. [docker/cli#6309](https://github.com/docker/cli/pull/6309)
+- Go-SDK: Deprecate field `NetworkSettingsBase.Bridge`, struct `NetworkSettingsBase`, all the fields of `DefaultNetworkSettings`, and struct `DefaultNetworkSettings`. [moby/moby#50839](https://github.com/moby/moby/pull/50839)
+- Go-SDK: api/types: `build.CacheDiskUsage`,  `container.DiskUsage`, `images.DiskUsage` and `volumes.DiskUsage` are now deprecated and will be removed in the next major release. [moby/moby#50768](https://github.com/moby/moby/pull/50768)
+- Go-SDK: cli-plugins/manager: deprecate `ReexecEnvvar`. [docker/cli#6411](https://github.com/docker/cli/pull/6411)
+- Go-SDK: cli-plugins/manager: deprecate annotation aliases (`CommandAnnotationPlugin`, `CommandAnnotationPluginVendor`, `CommandAnnotationPluginVersion`, `CommandAnnotationPluginInvalid`, `CommandAnnotationPluginCommandPath`) in favor of their equivalent in `cli-plugins/manager/metadata`. [docker/cli#6298](https://github.com/docker/cli/pull/6298)
+- Go-SDK: cli-plugins/manager: deprecate metadata aliases (`NamePrefix`, `MetadataSubcommandName`, `HookSubcommandName`, `Metadata`, `ReexecEnvvar`) in favor of their equivalent in `cli-plugins/manager/metadata`. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove `Candidate` interface, which was only for internal use. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove `NewPluginError` function, which was only for internal use. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove deprecated `ResourceAttributesEnvvar` const. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli/command/builder: deprecate `NewBuilderCommand` and `NewBakeStubCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/builder: deprecate `NewPruneCommand`. [docker/cli#6343](https://github.com/docker/cli/pull/6343)
+- Go-SDK: cli/command/checkpoint: deprecate `NewCheckpointCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/checkpoint: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/completion: deprecate `NoComplete`. [docker/cli#6405](https://github.com/docker/cli/pull/6405)
+- Go-SDK: cli/command/completion: remove deprecated `ValidArgsFn`. [docker/cli#6259](https://github.com/docker/cli/pull/6259)
+- Go-SDK: cli/command/config: deprecate `NewConfigCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/config: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/config: deprecate `RunConfigCreate`,  `CreateOptions`, `RunConfigInspect`, `InspectOptions`, `RunConfigList`, `ListOptions`, `RunConfigRemove`, and `RemoveOptions`. [docker/cli#6369](https://github.com/docker/cli/pull/6369)
+- Go-SDK: cli/command/container: deprecate `NewBuildCommand`, `NewPullCommand`, `NewPushCommand`, `NewImagesCommand`, `NewImageCommand`, `NewHistoryCommand`, `NewImportCommand`, `NewLoadCommand`, `NewRemoveCommand`, `NewSaveCommand`, `NewTagCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/container: deprecate `NewDiffFormat`, `DiffFormatWrite`. These functions were only used internally and will be removed in the next release. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/container: deprecate `NewRunCommand`, `NewExecCommand`, `NewPsCommand`, `NewContainerCommand`, `NewAttachCommand`, `NewCommitCommand`, `NewCopyCommand`, `NewCreateCommand`, `NewDiffCommand`, `NewExportCommand`, `NewKillCommand`, `NewLogsCommand`, `NewPauseCommand`, `NewPortCommand`, `NewRenameCommand`, `NewRestartCommand`, `NewRmCommand`, `NewStartCommand`, `NewStatsCommand`, `NewStopCommand`, `NewTopCommand`, `NewUnpauseCommand`, `NewUpdateCommand`, `NewWaitCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/context: deprecate `NewContextCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/context: deprecate `RunCreate` and `CreateOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunExport` and `ExportOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunImport`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunRemove` and `RemoveOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunUpdate` and `UpdateOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunUse`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/image: deprecate `AuthResolver` utility. [docker/cli#6357](https://github.com/docker/cli/pull/6357)
+- Go-SDK: cli/command/image: deprecate `NewHistoryFormat`, `HistoryWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341), [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/manifest: deprecate `NewManifestCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/network: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/network: deprecate `NewNetworkCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/node: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/node: deprecate `NewNodeCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/plugin: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/plugin: deprecate `NewPluginCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/registry: deprecate `NewLoginCommand`, `NewLogoutCommand`, `NewSearchCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/registry: deprecate `NewSearchFormat`, `SearchWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/registry: deprecate `OauthLoginEscapeHatchEnvVar` const. [docker/cli#6413](https://github.com/docker/cli/pull/6413)
+- Go-SDK: cli/command/secret: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/secret: deprecate `NewSecretCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/service: deprecate `NewFormat`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/service: deprecate `NewServiceCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/stack: deprecate `NewStackCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/stack: deprecate `RunList`, `RunServices`. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: cli/command/swarm: deprecate `NewSwarmCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/system: deprecate `NewVersionCommand`, `NewInfoCommand`, `NewSystemCommand`, `NewEventsCommand`, `NewInspectCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/task: deprecate `NewTaskFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/trust: deprecate `NewTrustCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/trust: deprecate `SignedTagInfo`, `SignerInfo`, `NewTrustTagFormat`, `NewSignerInfoFormat`, `TagWrite`, `SignerInfoWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/volume: deprecate `NewVolumeCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command: remove `AddTrustSigningFlags`,  `AddTrustVerificationFlags`, and `AddPlatformFlag` utilities, which were only used internally. [docker/cli#6311](https://github.com/docker/cli/pull/6311)
+- Go-SDK: cli/command: remove deprecated `ConfigureAuth` utility. [docker/cli#6257](https://github.com/docker/cli/pull/6257)
+- Go-SDK: cli/command: remove deprecated `CopyToFile` utility. [docker/cli#6257](https://github.com/docker/cli/pull/6257)
+- Go-SDK: cli/config/types: update deprecation message for `AuthConfig.Email` field. [docker/cli#6392](https://github.com/docker/cli/pull/6392)
+- Go-SDK: cli: deprecate `VisitAll`, `DisableFlagsInUseLine` utilities. These utilities were only used internally and will be removed in the next release. [docker/cli#6276](https://github.com/docker/cli/pull/6276)
+- Go-SDK: cli: remove `HasCompletionArg` utility. This utility was only used internally. [docker/cli#6276](https://github.com/docker/cli/pull/6276)
+- Go-SDK: deprecate `cli/command.RegistryAuthenticationPrivilegedFunc`. [docker/cli#6256](https://github.com/docker/cli/pull/6256)
+- Go-SDK: deprecate cli/command/stack/formatter. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/loader. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/options. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/swarm. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: opts: deprecate `NewNamedListOptsRef`, `NewNamedMapOpts`, `NamedListOpts`, `NamedMapOpts`, and `NamedOption`. These types and functions are no longer used and will be removed in the next release. [docker/cli#6292](https://github.com/docker/cli/pull/6292)
+- Go-SDK: opts: deprecate `ParseEnvFile` in favor of `kvfile.Parse`. [docker/cli#6381](https://github.com/docker/cli/pull/6381)
+- Go-SDK: opts: deprecate `QuotedString`. This utility is no longer used, and will be removed in the next release. [docker/cli#6275](https://github.com/docker/cli/pull/6275)
+- Go-SDK: opts: deprecate `ValidateHost` utility. This function is no longer used, and will be removed in the next release. [docker/cli#6280](https://github.com/docker/cli/pull/6280)
+- Go-SDK: pkg/jsonmessage: deprecate the `JSONMessage.From`, `JSONMessage.Time`, and `JSONMessage.TimeNano` fields, as they are no longer returned by the API for progress messages. Use the `events.Message` type instead to unmarshal the `/events` response. [moby/moby#50762](https://github.com/moby/moby/pull/50762)
+- Go-SDK: the cli/registry/client package is deprecated and will be removed in the next release. [docker/cli#6313](https://github.com/docker/cli/pull/6313)
+@y
+- Deprecate special handling for quoted values for the `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags. [docker/cli#6291](https://github.com/docker/cli/pull/6291)
+- Mark legacy links environment variables (`DOCKER_KEEP_DEPRECATED_LEGACY_LINKS_ENV_VARS`) as deprecated in v28.4 and set for removal in v30.0. [docker/cli#6309](https://github.com/docker/cli/pull/6309)
+- Go-SDK: Deprecate field `NetworkSettingsBase.Bridge`, struct `NetworkSettingsBase`, all the fields of `DefaultNetworkSettings`, and struct `DefaultNetworkSettings`. [moby/moby#50839](https://github.com/moby/moby/pull/50839)
+- Go-SDK: api/types: `build.CacheDiskUsage`,  `container.DiskUsage`, `images.DiskUsage` and `volumes.DiskUsage` are now deprecated and will be removed in the next major release. [moby/moby#50768](https://github.com/moby/moby/pull/50768)
+- Go-SDK: cli-plugins/manager: deprecate `ReexecEnvvar`. [docker/cli#6411](https://github.com/docker/cli/pull/6411)
+- Go-SDK: cli-plugins/manager: deprecate annotation aliases (`CommandAnnotationPlugin`, `CommandAnnotationPluginVendor`, `CommandAnnotationPluginVersion`, `CommandAnnotationPluginInvalid`, `CommandAnnotationPluginCommandPath`) in favor of their equivalent in `cli-plugins/manager/metadata`. [docker/cli#6298](https://github.com/docker/cli/pull/6298)
+- Go-SDK: cli-plugins/manager: deprecate metadata aliases (`NamePrefix`, `MetadataSubcommandName`, `HookSubcommandName`, `Metadata`, `ReexecEnvvar`) in favor of their equivalent in `cli-plugins/manager/metadata`. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove `Candidate` interface, which was only for internal use. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove `NewPluginError` function, which was only for internal use. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli-plugins/manager: remove deprecated `ResourceAttributesEnvvar` const. [docker/cli#6269](https://github.com/docker/cli/pull/6269)
+- Go-SDK: cli/command/builder: deprecate `NewBuilderCommand` and `NewBakeStubCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/builder: deprecate `NewPruneCommand`. [docker/cli#6343](https://github.com/docker/cli/pull/6343)
+- Go-SDK: cli/command/checkpoint: deprecate `NewCheckpointCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/checkpoint: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/completion: deprecate `NoComplete`. [docker/cli#6405](https://github.com/docker/cli/pull/6405)
+- Go-SDK: cli/command/completion: remove deprecated `ValidArgsFn`. [docker/cli#6259](https://github.com/docker/cli/pull/6259)
+- Go-SDK: cli/command/config: deprecate `NewConfigCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/config: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/config: deprecate `RunConfigCreate`,  `CreateOptions`, `RunConfigInspect`, `InspectOptions`, `RunConfigList`, `ListOptions`, `RunConfigRemove`, and `RemoveOptions`. [docker/cli#6369](https://github.com/docker/cli/pull/6369)
+- Go-SDK: cli/command/container: deprecate `NewBuildCommand`, `NewPullCommand`, `NewPushCommand`, `NewImagesCommand`, `NewImageCommand`, `NewHistoryCommand`, `NewImportCommand`, `NewLoadCommand`, `NewRemoveCommand`, `NewSaveCommand`, `NewTagCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/container: deprecate `NewDiffFormat`, `DiffFormatWrite`. These functions were only used internally and will be removed in the next release. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/container: deprecate `NewRunCommand`, `NewExecCommand`, `NewPsCommand`, `NewContainerCommand`, `NewAttachCommand`, `NewCommitCommand`, `NewCopyCommand`, `NewCreateCommand`, `NewDiffCommand`, `NewExportCommand`, `NewKillCommand`, `NewLogsCommand`, `NewPauseCommand`, `NewPortCommand`, `NewRenameCommand`, `NewRestartCommand`, `NewRmCommand`, `NewStartCommand`, `NewStatsCommand`, `NewStopCommand`, `NewTopCommand`, `NewUnpauseCommand`, `NewUpdateCommand`, `NewWaitCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/context: deprecate `NewContextCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/context: deprecate `RunCreate` and `CreateOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunExport` and `ExportOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunImport`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunRemove` and `RemoveOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunUpdate` and `UpdateOptions`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/context: deprecate `RunUse`. [docker/cli#6403](https://github.com/docker/cli/pull/6403)
+- Go-SDK: cli/command/image: deprecate `AuthResolver` utility. [docker/cli#6357](https://github.com/docker/cli/pull/6357)
+- Go-SDK: cli/command/image: deprecate `NewHistoryFormat`, `HistoryWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341), [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/manifest: deprecate `NewManifestCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/network: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/network: deprecate `NewNetworkCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/node: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/node: deprecate `NewNodeCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/plugin: deprecate `NewFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/plugin: deprecate `NewPluginCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/registry: deprecate `NewLoginCommand`, `NewLogoutCommand`, `NewSearchCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/registry: deprecate `NewSearchFormat`, `SearchWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/registry: deprecate `OauthLoginEscapeHatchEnvVar` const. [docker/cli#6413](https://github.com/docker/cli/pull/6413)
+- Go-SDK: cli/command/secret: deprecate `NewFormat`, `FormatWrite`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/secret: deprecate `NewSecretCommand`. This functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/service: deprecate `NewFormat`, `InspectFormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/service: deprecate `NewServiceCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/stack: deprecate `NewStackCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/stack: deprecate `RunList`, `RunServices`. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: cli/command/swarm: deprecate `NewSwarmCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/system: deprecate `NewVersionCommand`, `NewInfoCommand`, `NewSystemCommand`, `NewEventsCommand`, `NewInspectCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/task: deprecate `NewTaskFormat`, `FormatWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/trust: deprecate `NewTrustCommand`. This function will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command/trust: deprecate `SignedTagInfo`, `SignerInfo`, `NewTrustTagFormat`, `NewSignerInfoFormat`, `TagWrite`, `SignerInfoWrite`. [docker/cli#6341](https://github.com/docker/cli/pull/6341)
+- Go-SDK: cli/command/volume: deprecate `NewVolumeCommand`, `NewPruneCommand`. These functions will be removed in the next release. [docker/cli#6312](https://github.com/docker/cli/pull/6312)
+- Go-SDK: cli/command: remove `AddTrustSigningFlags`,  `AddTrustVerificationFlags`, and `AddPlatformFlag` utilities, which were only used internally. [docker/cli#6311](https://github.com/docker/cli/pull/6311)
+- Go-SDK: cli/command: remove deprecated `ConfigureAuth` utility. [docker/cli#6257](https://github.com/docker/cli/pull/6257)
+- Go-SDK: cli/command: remove deprecated `CopyToFile` utility. [docker/cli#6257](https://github.com/docker/cli/pull/6257)
+- Go-SDK: cli/config/types: update deprecation message for `AuthConfig.Email` field. [docker/cli#6392](https://github.com/docker/cli/pull/6392)
+- Go-SDK: cli: deprecate `VisitAll`, `DisableFlagsInUseLine` utilities. These utilities were only used internally and will be removed in the next release. [docker/cli#6276](https://github.com/docker/cli/pull/6276)
+- Go-SDK: cli: remove `HasCompletionArg` utility. This utility was only used internally. [docker/cli#6276](https://github.com/docker/cli/pull/6276)
+- Go-SDK: deprecate `cli/command.RegistryAuthenticationPrivilegedFunc`. [docker/cli#6256](https://github.com/docker/cli/pull/6256)
+- Go-SDK: deprecate cli/command/stack/formatter. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/loader. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/options. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: deprecate cli/command/stack/swarm. [docker/cli#6391](https://github.com/docker/cli/pull/6391)
+- Go-SDK: opts: deprecate `NewNamedListOptsRef`, `NewNamedMapOpts`, `NamedListOpts`, `NamedMapOpts`, and `NamedOption`. These types and functions are no longer used and will be removed in the next release. [docker/cli#6292](https://github.com/docker/cli/pull/6292)
+- Go-SDK: opts: deprecate `ParseEnvFile` in favor of `kvfile.Parse`. [docker/cli#6381](https://github.com/docker/cli/pull/6381)
+- Go-SDK: opts: deprecate `QuotedString`. This utility is no longer used, and will be removed in the next release. [docker/cli#6275](https://github.com/docker/cli/pull/6275)
+- Go-SDK: opts: deprecate `ValidateHost` utility. This function is no longer used, and will be removed in the next release. [docker/cli#6280](https://github.com/docker/cli/pull/6280)
+- Go-SDK: pkg/jsonmessage: deprecate the `JSONMessage.From`, `JSONMessage.Time`, and `JSONMessage.TimeNano` fields, as they are no longer returned by the API for progress messages. Use the `events.Message` type instead to unmarshal the `/events` response. [moby/moby#50762](https://github.com/moby/moby/pull/50762)
+- Go-SDK: the cli/registry/client package is deprecated and will be removed in the next release. [docker/cli#6313](https://github.com/docker/cli/pull/6313)
+@z
+
+@x
+## 28.3.3
+@y
+## 28.3.3
+@z
+
+@x
+{{< release-date date="2025-07-29" >}}
+@y
+{{< release-date date="2025-07-29" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.3.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.3)
+- [moby/moby, 28.3.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.3)
+@y
+- [docker/cli, 28.3.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.3)
+- [moby/moby, 28.3.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.3)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release fixes an issue where, after a firewalld reload, published container ports could be accessed directly from the local network, even when they were intended to be accessible only via a loopback address. [CVE-2025-54388](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54388) /  [GHSA-x4rx-4gw3-53p4](https://github.com/moby/moby/security/advisories/GHSA-x4rx-4gw3-53p4) / [moby/moby#50506](https://github.com/moby/moby/pull/50506).
+@y
+This release fixes an issue where, after a firewalld reload, published container ports could be accessed directly from the local network, even when they were intended to be accessible only via a loopback address. [CVE-2025-54388](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-54388) /  [GHSA-x4rx-4gw3-53p4](https://github.com/moby/moby/security/advisories/GHSA-x4rx-4gw3-53p4) / [moby/moby#50506](https://github.com/moby/moby/pull/50506).
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Buildx to [v0.26.1](https://github.com/docker/buildx/releases/tag/v0.26.1). [docker/docker-ce-packaging#1230](https://github.com/docker/docker-ce-packaging/pull/1230)
+- Update Compose to [v2.39.1](https://github.com/docker/compose/releases/tag/v2.39.1). [docker/docker-ce-packaging#1234](https://github.com/docker/docker-ce-packaging/pull/1234)
+- Update Docker Model CLI plugin to [v0.1.36](https://github.com/docker/model-cli/releases/tag/v0.1.36). [docker/docker-ce-packaging#1233](https://github.com/docker/docker-ce-packaging/pull/1233)
+@y
+- Update Buildx to [v0.26.1](https://github.com/docker/buildx/releases/tag/v0.26.1). [docker/docker-ce-packaging#1230](https://github.com/docker/docker-ce-packaging/pull/1230)
+- Update Compose to [v2.39.1](https://github.com/docker/compose/releases/tag/v2.39.1). [docker/docker-ce-packaging#1234](https://github.com/docker/docker-ce-packaging/pull/1234)
+- Update Docker Model CLI plugin to [v0.1.36](https://github.com/docker/model-cli/releases/tag/v0.1.36). [docker/docker-ce-packaging#1233](https://github.com/docker/docker-ce-packaging/pull/1233)
+@z
+
+@x
+## 28.3.2
+@y
+## 28.3.2
+@z
+
+@x
+{{< release-date date="2025-07-09" >}}
+@y
+{{< release-date date="2025-07-09" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.3.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.2)
+- [moby/moby, 28.3.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.2)
+@y
+- [docker/cli, 28.3.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.2)
+- [moby/moby, 28.3.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `--use-api-socket` not working correctly when targeting a remote daemon. [docker/cli#6157](https://github.com/docker/cli/pull/6157)
+- Fix stray "otel error" logs being printed if debug logging is enabled. [docker/cli#6160](https://github.com/docker/cli/pull/6160)
+- Quote SSH arguments when connecting to a remote daemon over an SSH connection to avoid unexpected expansion. [docker/cli#6147](https://github.com/docker/cli/pull/6147)
+- Warn when `DOCKER_AUTH_CONFIG` is set during `docker login` and `docker logout`. [docker/cli#6163](https://github.com/docker/cli/pull/6163)
+@y
+- Fix `--use-api-socket` not working correctly when targeting a remote daemon. [docker/cli#6157](https://github.com/docker/cli/pull/6157)
+- Fix stray "otel error" logs being printed if debug logging is enabled. [docker/cli#6160](https://github.com/docker/cli/pull/6160)
+- Quote SSH arguments when connecting to a remote daemon over an SSH connection to avoid unexpected expansion. [docker/cli#6147](https://github.com/docker/cli/pull/6147)
+- Warn when `DOCKER_AUTH_CONFIG` is set during `docker login` and `docker logout`. [docker/cli#6163](https://github.com/docker/cli/pull/6163)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Compose to [v2.38.2](https://github.com/docker/compose/releases/tag/v2.38.2). [docker/docker-ce-packaging#1225](https://github.com/docker/docker-ce-packaging/pull/1225)
+- Update Docker Model CLI plugin to [v0.1.33](https://github.com/docker/model-cli/releases/tag/v0.1.33). [docker/docker-ce-packaging#1227](https://github.com/docker/docker-ce-packaging/pull/1227)
+- Update Go runtime to 1.24.5. [moby/moby#50354](https://github.com/moby/moby/pull/50354)
+@y
+- Update Compose to [v2.38.2](https://github.com/docker/compose/releases/tag/v2.38.2). [docker/docker-ce-packaging#1225](https://github.com/docker/docker-ce-packaging/pull/1225)
+- Update Docker Model CLI plugin to [v0.1.33](https://github.com/docker/model-cli/releases/tag/v0.1.33). [docker/docker-ce-packaging#1227](https://github.com/docker/docker-ce-packaging/pull/1227)
+- Update Go runtime to 1.24.5. [moby/moby#50354](https://github.com/moby/moby/pull/50354)
+@z
+
+@x
+## 28.3.1
+@y
+## 28.3.1
+@z
+
+@x
+{{< release-date date="2025-07-02" >}}
+@y
+{{< release-date date="2025-07-02" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.3.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.1)
+- [moby/moby, 28.3.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.1)
+@y
+- [docker/cli, 28.3.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.1)
+- [moby/moby, 28.3.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.1)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.23.2](https://github.com/moby/buildkit/releases/tag/v0.23.2). [moby/moby#50309](https://github.com/moby/moby/pull/50309)
+- Update Compose to [v2.38.1](https://github.com/docker/compose/releases/tag/v2.38.1). [docker/docker-ce-packaging#1221](https://github.com/docker/docker-ce-packaging/pull/1221)
+- Update Model to v0.1.32 which adds the support for the new top-level `models:` key in Docker Compose. [docker/docker-ce-packaging#1222](https://github.com/docker/docker-ce-packaging/pull/1222)
+@y
+- Update BuildKit to [v0.23.2](https://github.com/moby/buildkit/releases/tag/v0.23.2). [moby/moby#50309](https://github.com/moby/moby/pull/50309)
+- Update Compose to [v2.38.1](https://github.com/docker/compose/releases/tag/v2.38.1). [docker/docker-ce-packaging#1221](https://github.com/docker/docker-ce-packaging/pull/1221)
+- Update Model to v0.1.32 which adds the support for the new top-level `models:` key in Docker Compose. [docker/docker-ce-packaging#1222](https://github.com/docker/docker-ce-packaging/pull/1222)
+@z
+
+@x
+## 28.3.0
+@y
+## 28.3.0
+@z
+
+@x
+{{< release-date date="2025-06-24" >}}
+@y
+{{< release-date date="2025-06-24" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.3.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.0)
+- [moby/moby, 28.3.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.0)
+@y
+- [docker/cli, 28.3.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.3.0)
+- [moby/moby, 28.3.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.3.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add support for AMD GPUs in `docker run --gpus`. [moby/moby#49952](https://github.com/moby/moby/pull/49952)
+- Use `DOCKER_AUTH_CONFIG` as a credential store. [docker/cli#6008](https://github.com/docker/cli/pull/6008)
+@y
+- Add support for AMD GPUs in `docker run --gpus`. [moby/moby#49952](https://github.com/moby/moby/pull/49952)
+- Use `DOCKER_AUTH_CONFIG` as a credential store. [docker/cli#6008](https://github.com/docker/cli/pull/6008)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Ensure that the state of the container in the daemon database (used by [/containers/json](https://docs.docker.com/reference/api/engine/version/v1.49/#tag/Container/operation/ContainerList) API) is up to date when the container is stopped using the [/containers/{id}/stop](https://docs.docker.com/reference/api/engine/version/v1.49/#tag/Container/operation/ContainerStop) API (before response of API). [moby/moby#50136](https://github.com/moby/moby/pull/50136)
+- Fix `docker image inspect inspect` omitting empty fields. [moby/moby#50135](https://github.com/moby/moby/pull/50135)
+- Fix `docker images --tree` not marking images as in-use when the containerd image store is disabled. [docker/cli#6140](https://github.com/docker/cli/pull/6140)
+- Fix `docker pull/push` hang in non-interactive when authentication is required caused by prompting for login credentials. [docker/cli#6141](https://github.com/docker/cli/pull/6141)
+- Fix a potential resource leak when a node leaves a Swarm. [moby/moby#50115](https://github.com/moby/moby/pull/50115)
+- Fix a regression where a login prompt on `docker pull` would show Docker Hub-specific hints when logging in on other registries. [docker/cli#6135](https://github.com/docker/cli/pull/6135)
+- Fix an issue where all new tasks in the Swarm could get stuck in the PENDING state forever after scaling up a service with placement preferences. [moby/moby#50211](https://github.com/moby/moby/pull/50211)
+- Remove an undocumented, hidden, top-level `docker remove` command that was accidentally introduced in Docker 23.0. [docker/cli#6144](https://github.com/docker/cli/pull/6144)
+- Validate registry-mirrors configuration as part of `dockerd --validate` and improve error messages for invalid mirrors. [moby/moby#50240](https://github.com/moby/moby/pull/50240)
+- `dockerd-rootless-setuptool.sh`: Fix the script from silently returning with no error message when subuid/subgid system requirements are not satisfied. [moby/moby#50059](https://github.com/moby/moby/pull/50059)
+- containerd image store: Fix `docker push` not creating a tag on the remote repository. [moby/moby#50199](https://github.com/moby/moby/pull/50199)
+- containerd image store: Improve handling of errors returned by the token server during `docker pull/push`. [moby/moby#50176](https://github.com/moby/moby/pull/50176)
+@y
+- Ensure that the state of the container in the daemon database (used by [/containers/json](https://docs.docker.com/reference/api/engine/version/v1.49/#tag/Container/operation/ContainerList) API) is up to date when the container is stopped using the [/containers/{id}/stop](https://docs.docker.com/reference/api/engine/version/v1.49/#tag/Container/operation/ContainerStop) API (before response of API). [moby/moby#50136](https://github.com/moby/moby/pull/50136)
+- Fix `docker image inspect inspect` omitting empty fields. [moby/moby#50135](https://github.com/moby/moby/pull/50135)
+- Fix `docker images --tree` not marking images as in-use when the containerd image store is disabled. [docker/cli#6140](https://github.com/docker/cli/pull/6140)
+- Fix `docker pull/push` hang in non-interactive when authentication is required caused by prompting for login credentials. [docker/cli#6141](https://github.com/docker/cli/pull/6141)
+- Fix a potential resource leak when a node leaves a Swarm. [moby/moby#50115](https://github.com/moby/moby/pull/50115)
+- Fix a regression where a login prompt on `docker pull` would show Docker Hub-specific hints when logging in on other registries. [docker/cli#6135](https://github.com/docker/cli/pull/6135)
+- Fix an issue where all new tasks in the Swarm could get stuck in the PENDING state forever after scaling up a service with placement preferences. [moby/moby#50211](https://github.com/moby/moby/pull/50211)
+- Remove an undocumented, hidden, top-level `docker remove` command that was accidentally introduced in Docker 23.0. [docker/cli#6144](https://github.com/docker/cli/pull/6144)
+- Validate registry-mirrors configuration as part of `dockerd --validate` and improve error messages for invalid mirrors. [moby/moby#50240](https://github.com/moby/moby/pull/50240)
+- `dockerd-rootless-setuptool.sh`: Fix the script from silently returning with no error message when subuid/subgid system requirements are not satisfied. [moby/moby#50059](https://github.com/moby/moby/pull/50059)
+- containerd image store: Fix `docker push` not creating a tag on the remote repository. [moby/moby#50199](https://github.com/moby/moby/pull/50199)
+- containerd image store: Improve handling of errors returned by the token server during `docker pull/push`. [moby/moby#50176](https://github.com/moby/moby/pull/50176)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Allow customizing containerd service name for OpenRC. [moby/moby#50156](https://github.com/moby/moby/pull/50156)
+- Update BuildKit to [v0.23.1](https://github.com/moby/buildkit/releases/tag/v0.23.1). [moby/moby#50243](https://github.com/moby/moby/pull/50243)
+- Update Buildx to [v0.25.0](https://github.com/docker/buildx/releases/tag/v0.25.0). [docker/docker-ce-packaging#1217](https://github.com/docker/docker-ce-packaging/pull/1217)
+- Update Compose to [v2.37.2](https://github.com/docker/compose/releases/tag/v2.37.2). [docker/docker-ce-packaging#1219](https://github.com/docker/docker-ce-packaging/pull/1219)
+- Update Docker Model CLI plugin to [v0.1.30](https://github.com/docker/model-cli/releases/tag/v0.1.30). [docker/docker-ce-packaging#1218](https://github.com/docker/docker-ce-packaging/pull/1218)
+- Update Go runtime to [1.24.4](https://go.dev/doc/devel/release#go1.24.4). [docker/docker-ce-packaging#1213](https://github.com/docker/docker-ce-packaging/pull/1213), [moby/moby#50153](https://github.com/moby/moby/pull/50153), [docker/cli#6124](https://github.com/docker/cli/pull/6124)
+@y
+- Allow customizing containerd service name for OpenRC. [moby/moby#50156](https://github.com/moby/moby/pull/50156)
+- Update BuildKit to [v0.23.1](https://github.com/moby/buildkit/releases/tag/v0.23.1). [moby/moby#50243](https://github.com/moby/moby/pull/50243)
+- Update Buildx to [v0.25.0](https://github.com/docker/buildx/releases/tag/v0.25.0). [docker/docker-ce-packaging#1217](https://github.com/docker/docker-ce-packaging/pull/1217)
+- Update Compose to [v2.37.2](https://github.com/docker/compose/releases/tag/v2.37.2). [docker/docker-ce-packaging#1219](https://github.com/docker/docker-ce-packaging/pull/1219)
+- Update Docker Model CLI plugin to [v0.1.30](https://github.com/docker/model-cli/releases/tag/v0.1.30). [docker/docker-ce-packaging#1218](https://github.com/docker/docker-ce-packaging/pull/1218)
+- Update Go runtime to [1.24.4](https://go.dev/doc/devel/release#go1.24.4). [docker/docker-ce-packaging#1213](https://github.com/docker/docker-ce-packaging/pull/1213), [moby/moby#50153](https://github.com/moby/moby/pull/50153), [docker/cli#6124](https://github.com/docker/cli/pull/6124)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Revert Swarm related changes added in 28.2.x builds, due to a regression reported in https://github.com/moby/moby/issues/50129. [moby/moby#50169](https://github.com/moby/moby/pull/50169)
+  * Revert: Fix an issue where `docker network inspect --verbose` could sometimes crash the daemon (https://github.com/moby/moby/pull/49937). 
+  * Revert: Fix an issue where the load-balancer IP address for an overlay network would not be released in certain cases if the Swarm was lacking an ingress network (https://github.com/moby/moby/pull/49948). 
+  * Revert: Improve the reliability of NetworkDB in busy clusters and lossy networks (https://github.com/moby/moby/pull/49932). 
+  * Revert: Improvements to the reliability and convergence speed of NetworkDB (https://github.com/moby/moby/pull/49939). 
+- Fix an issue that could cause container startup to fail, or lead to failed UDP port mappings, when some container ports are mapped to `0.0.0.0` and others are mapped to specific host addresses. [moby/moby#50054](https://github.com/moby/moby/pull/50054)
+- The `network inspect` response for an overlay network now reports that `EnableIPv4` is true. [moby/moby#50147](https://github.com/moby/moby/pull/50147)
+- Windows: Improve daemon startup time in cases where the host has networks of type `"Mirrored"`. [moby/moby#50155](https://github.com/moby/moby/pull/50155)
+- Windows: Make sure `docker system prune` and `docker network prune` only remove networks created by Docker. [moby/moby#50154](https://github.com/moby/moby/pull/50154)
+@y
+- Revert Swarm related changes added in 28.2.x builds, due to a regression reported in https://github.com/moby/moby/issues/50129. [moby/moby#50169](https://github.com/moby/moby/pull/50169)
+  * Revert: Fix an issue where `docker network inspect --verbose` could sometimes crash the daemon (https://github.com/moby/moby/pull/49937). 
+  * Revert: Fix an issue where the load-balancer IP address for an overlay network would not be released in certain cases if the Swarm was lacking an ingress network (https://github.com/moby/moby/pull/49948). 
+  * Revert: Improve the reliability of NetworkDB in busy clusters and lossy networks (https://github.com/moby/moby/pull/49932). 
+  * Revert: Improvements to the reliability and convergence speed of NetworkDB (https://github.com/moby/moby/pull/49939). 
+- Fix an issue that could cause container startup to fail, or lead to failed UDP port mappings, when some container ports are mapped to `0.0.0.0` and others are mapped to specific host addresses. [moby/moby#50054](https://github.com/moby/moby/pull/50054)
+- The `network inspect` response for an overlay network now reports that `EnableIPv4` is true. [moby/moby#50147](https://github.com/moby/moby/pull/50147)
+- Windows: Improve daemon startup time in cases where the host has networks of type `"Mirrored"`. [moby/moby#50155](https://github.com/moby/moby/pull/50155)
+- Windows: Make sure `docker system prune` and `docker network prune` only remove networks created by Docker. [moby/moby#50154](https://github.com/moby/moby/pull/50154)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- Update API version to 1.51. [moby/moby#50145](https://github.com/moby/moby/pull/50145)
+- `GET /images/json` now sets the value of the `Containers` field for all images to the count of containers using the image. [moby/moby#50146](https://github.com/moby/moby/pull/50146)
+@y
+- Update API version to 1.51. [moby/moby#50145](https://github.com/moby/moby/pull/50145)
+- `GET /images/json` now sets the value of the `Containers` field for all images to the count of containers using the image. [moby/moby#50146](https://github.com/moby/moby/pull/50146)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Empty/nil image config fields in the `GET /images/{name}/json` response are now deprecated and will be removed in v29.0. [docker/cli#6129](https://github.com/docker/cli/pull/6129)
+- api/types/container: deprecate `ExecOptions.Detach`. This field is not used, and will be removed in a future release. [moby/moby#50219](https://github.com/moby/moby/pull/50219)
+- pkg/idtools: deprecate `IdentityMapping` and `Identity.Chown`. [moby/moby#50210](https://github.com/moby/moby/pull/50210)
+@y
+- Empty/nil image config fields in the `GET /images/{name}/json` response are now deprecated and will be removed in v29.0. [docker/cli#6129](https://github.com/docker/cli/pull/6129)
+- api/types/container: deprecate `ExecOptions.Detach`. This field is not used, and will be removed in a future release. [moby/moby#50219](https://github.com/moby/moby/pull/50219)
+- pkg/idtools: deprecate `IdentityMapping` and `Identity.Chown`. [moby/moby#50210](https://github.com/moby/moby/pull/50210)
+@z
+
+@x
+## 28.2.2
+@y
+## 28.2.2
+@z
+
+@x
+{{< release-date date="2025-05-30" >}}
+@y
+{{< release-date date="2025-05-30" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.2.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.2.2)
+- [moby/moby, 28.2.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.2.2)
+@y
+- [docker/cli, 28.2.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.2.2)
+- [moby/moby, 28.2.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.2.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Fix a regression causing `docker build --push` to fail. This reverts [the fix](https://github.com/moby/moby/pull/49702) for `docker build` not persisting overridden images as dangling. [moby/moby#50105](https://github.com/moby/moby/pull/50105)
+@y
+- containerd image store: Fix a regression causing `docker build --push` to fail. This reverts [the fix](https://github.com/moby/moby/pull/49702) for `docker build` not persisting overridden images as dangling. [moby/moby#50105](https://github.com/moby/moby/pull/50105)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- When creating the iptables `DOCKER-USER` chain, do not add an explicit `RETURN` rule, allowing users to append as well as insert their own rules. Existing rules are not removed on upgrade, but it won't be replaced after a reboot. [moby/moby#50098](https://github.com/moby/moby/pull/50098)
+@y
+- When creating the iptables `DOCKER-USER` chain, do not add an explicit `RETURN` rule, allowing users to append as well as insert their own rules. Existing rules are not removed on upgrade, but it won't be replaced after a reboot. [moby/moby#50098](https://github.com/moby/moby/pull/50098)
+@z
+
+@x
+## 28.2.1
+@y
+## 28.2.1
+@z
+
+@x
+{{< release-date date="2025-05-29" >}}
+@y
+{{< release-date date="2025-05-29" >}}
+@z
+
+@x
+## Packaging updates
+@y
+## Packaging updates
+@z
+
+@x
+- Fix packaging regression in [v28.2.0](https://github.com/moby/moby/releases/tag/v28.2.0) which broke creating the `docker` group/user on fresh installations. [docker-ce-packaging#1209](https://github.com/docker/docker-ce-packaging/issues/1209)
+@y
+- Fix packaging regression in [v28.2.0](https://github.com/moby/moby/releases/tag/v28.2.0) which broke creating the `docker` group/user on fresh installations. [docker-ce-packaging#1209](https://github.com/docker/docker-ce-packaging/issues/1209)
+@z
+
+@x
+## 28.2.0
+@y
+## 28.2.0
+@z
+
+@x
+{{< release-date date="2025-05-28" >}}
+@y
+{{< release-date date="2025-05-28" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.2.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.2.0)
+- [moby/moby, 28.2.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.2.0)
+@y
+- [docker/cli, 28.2.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.2.0)
+- [moby/moby, 28.2.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.2.0)
+@z
+
+@x
+> [!NOTE]
+> RHEL packages are currently not available and will be released later.
+@y
+> [!NOTE]
+> RHEL packages are currently not available and will be released later.
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `{{.Platform}}` as formatting option for `docker ps` to show the platform of the image the container is running. [docker/cli#6042](https://github.com/docker/cli/pull/6042)
+- Add support for relative parent paths (`../`) on bind mount sources when using `docker run/create` with `-v/--volume` or `--mount type=bind` options. [docker/cli#4966](https://github.com/docker/cli/pull/4966)
+- CDI is now enabled by default. [moby/moby#49963](https://github.com/moby/moby/pull/49963)
+- Show discovered CDI devices in `docker info`. [docker/cli#6078](https://github.com/docker/cli/pull/6078)
+- `docker image rm`: add `--platform` option to remove a variant from multi-platform images. [docker/cli#6109](https://github.com/docker/cli/pull/6109)
+- containerd image store: Initial BuildKit support for building Windows container images on Windows (requires an opt-in with `DOCKER_BUILDKIT=1`). [moby/moby#49740](https://github.com/moby/moby/pull/49740)
+@y
+- Add `{{.Platform}}` as formatting option for `docker ps` to show the platform of the image the container is running. [docker/cli#6042](https://github.com/docker/cli/pull/6042)
+- Add support for relative parent paths (`../`) on bind mount sources when using `docker run/create` with `-v/--volume` or `--mount type=bind` options. [docker/cli#4966](https://github.com/docker/cli/pull/4966)
+- CDI is now enabled by default. [moby/moby#49963](https://github.com/moby/moby/pull/49963)
+- Show discovered CDI devices in `docker info`. [docker/cli#6078](https://github.com/docker/cli/pull/6078)
+- `docker image rm`: add `--platform` option to remove a variant from multi-platform images. [docker/cli#6109](https://github.com/docker/cli/pull/6109)
+- containerd image store: Initial BuildKit support for building Windows container images on Windows (requires an opt-in with `DOCKER_BUILDKIT=1`). [moby/moby#49740](https://github.com/moby/moby/pull/49740)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Add a new log option for fluentd log driver (`fluentd-write-timeout`), which enables specifying write timeouts for fluentd connections. [moby/moby#49911](https://github.com/moby/moby/pull/49911)
+- Add support for `DOCKER_AUTH_CONFIG` for the experimental `--use-api-socket` option. [docker/cli#6019](https://github.com/docker/cli/pull/6019)
+- Fix `docker exec` waiting for 10 seconds if a non-existing user or group was specified. [moby/moby#49868](https://github.com/moby/moby/pull/49868)
+- Fix `docker swarm init` ignoring `cacert` option of `--external-ca`. [docker/cli#5995](https://github.com/docker/cli/pull/5995)
+- Fix an issue where the CLI would not correctly save the configuration file (`~/.docker/config.json`) if it was a relative symbolic link. [docker/cli#5282](https://github.com/docker/cli/pull/5282)
+- Fix containers with `--restart always` policy using CDI devices failing to start on daemon restart. [moby/moby#49990](https://github.com/moby/moby/pull/49990)
+- Fix shell-completion to only complete some flags once, even though they can be set multiple times. [docker/cli#6030](https://github.com/docker/cli/pull/6030)
+- Fix the `plugin does not implement PluginAddr interface` error for Swarm CSI drivers. [moby/moby#49961](https://github.com/moby/moby/pull/49961)
+- Improve `docker login` error messages for invalid options. [docker/cli#6036](https://github.com/docker/cli/pull/6036)
+- Make sure the terminal state is restored if the CLI is forcefully terminated. [docker/cli#6058](https://github.com/docker/cli/pull/6058)
+- Update the default seccomp profile to match the libseccomp v2.6.0. The new syscalls are: `listmount`, `statmount`, `lsm_get_self_attr`, `lsm_list_modules`, `lsm_set_self_attr`, `mseal`, `uretprobe`, `riscv_hwprobe`, `getxattrat`, `listxattrat`, `removexattrat`, and `setxattrat`. This prevents containers from receiving EPERM errors when using them. [moby/moby#50077](https://github.com/moby/moby/pull/50077)
+- `docker inspect`: add shell completion, improve flag-description for `--type` and improve validation. [docker/cli#6052](https://github.com/docker/cli/pull/6052)
+- containerd image store: Enable BuildKit garbage collector by default. [moby/moby#49899](https://github.com/moby/moby/pull/49899)
+- containerd image store: Fix `docker build` not persisting overridden images as dangling. [moby/moby#49702](https://github.com/moby/moby/pull/49702)
+- containerd image store: Fix `docker system df` reporting a negative reclaimable space amount. [moby/moby#49707](https://github.com/moby/moby/pull/49707)
+- containerd image store: Fix duplicate `PUT` requests when pushing a multi-platform image. [moby/moby#49949](https://github.com/moby/moby/pull/49949)
+@y
+- Add a new log option for fluentd log driver (`fluentd-write-timeout`), which enables specifying write timeouts for fluentd connections. [moby/moby#49911](https://github.com/moby/moby/pull/49911)
+- Add support for `DOCKER_AUTH_CONFIG` for the experimental `--use-api-socket` option. [docker/cli#6019](https://github.com/docker/cli/pull/6019)
+- Fix `docker exec` waiting for 10 seconds if a non-existing user or group was specified. [moby/moby#49868](https://github.com/moby/moby/pull/49868)
+- Fix `docker swarm init` ignoring `cacert` option of `--external-ca`. [docker/cli#5995](https://github.com/docker/cli/pull/5995)
+- Fix an issue where the CLI would not correctly save the configuration file (`~/.docker/config.json`) if it was a relative symbolic link. [docker/cli#5282](https://github.com/docker/cli/pull/5282)
+- Fix containers with `--restart always` policy using CDI devices failing to start on daemon restart. [moby/moby#49990](https://github.com/moby/moby/pull/49990)
+- Fix shell-completion to only complete some flags once, even though they can be set multiple times. [docker/cli#6030](https://github.com/docker/cli/pull/6030)
+- Fix the `plugin does not implement PluginAddr interface` error for Swarm CSI drivers. [moby/moby#49961](https://github.com/moby/moby/pull/49961)
+- Improve `docker login` error messages for invalid options. [docker/cli#6036](https://github.com/docker/cli/pull/6036)
+- Make sure the terminal state is restored if the CLI is forcefully terminated. [docker/cli#6058](https://github.com/docker/cli/pull/6058)
+- Update the default seccomp profile to match the libseccomp v2.6.0. The new syscalls are: `listmount`, `statmount`, `lsm_get_self_attr`, `lsm_list_modules`, `lsm_set_self_attr`, `mseal`, `uretprobe`, `riscv_hwprobe`, `getxattrat`, `listxattrat`, `removexattrat`, and `setxattrat`. This prevents containers from receiving EPERM errors when using them. [moby/moby#50077](https://github.com/moby/moby/pull/50077)
+- `docker inspect`: add shell completion, improve flag-description for `--type` and improve validation. [docker/cli#6052](https://github.com/docker/cli/pull/6052)
+- containerd image store: Enable BuildKit garbage collector by default. [moby/moby#49899](https://github.com/moby/moby/pull/49899)
+- containerd image store: Fix `docker build` not persisting overridden images as dangling. [moby/moby#49702](https://github.com/moby/moby/pull/49702)
+- containerd image store: Fix `docker system df` reporting a negative reclaimable space amount. [moby/moby#49707](https://github.com/moby/moby/pull/49707)
+- containerd image store: Fix duplicate `PUT` requests when pushing a multi-platform image. [moby/moby#49949](https://github.com/moby/moby/pull/49949)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Drop Ubuntu 20.04 "Focal" packages as it reached end of life. [docker/docker-ce-packaging#1200](https://github.com/docker/docker-ce-packaging/pull/1200)
+- Fix install location for RPM-based `docker-ce` man-pages. [docker/docker-ce-packaging#1203](https://github.com/docker/docker-ce-packaging/pull/1203)
+- Update BuildKit to [v0.22.0](https://github.com/moby/buildkit/releases/tag/v0.22.0). [moby/moby#50046](https://github.com/moby/moby/pull/50046)
+- Update Buildx to [v0.24.0](https://github.com/docker/buildx/releases/tag/v0.24.0). [docker/docker-ce-packaging#1205](https://github.com/docker/docker-ce-packaging/pull/1205)
+- Update Compose to [v2.36.2](https://github.com/docker/compose/releases/tag/v2.36.2). [docker/docker-ce-packaging#1208](https://github.com/docker/docker-ce-packaging/pull/1208)
+- Update Go runtime to [1.24.3](https://go.dev/doc/devel/release#go1.24.3). [docker/docker-ce-packaging#1192](https://github.com/docker/docker-ce-packaging/pull/1192), [docker/cli#6060](https://github.com/docker/cli/pull/6060), [moby/moby#49174](https://github.com/moby/moby/pull/49174)
+@y
+- Drop Ubuntu 20.04 "Focal" packages as it reached end of life. [docker/docker-ce-packaging#1200](https://github.com/docker/docker-ce-packaging/pull/1200)
+- Fix install location for RPM-based `docker-ce` man-pages. [docker/docker-ce-packaging#1203](https://github.com/docker/docker-ce-packaging/pull/1203)
+- Update BuildKit to [v0.22.0](https://github.com/moby/buildkit/releases/tag/v0.22.0). [moby/moby#50046](https://github.com/moby/moby/pull/50046)
+- Update Buildx to [v0.24.0](https://github.com/docker/buildx/releases/tag/v0.24.0). [docker/docker-ce-packaging#1205](https://github.com/docker/docker-ce-packaging/pull/1205)
+- Update Compose to [v2.36.2](https://github.com/docker/compose/releases/tag/v2.36.2). [docker/docker-ce-packaging#1208](https://github.com/docker/docker-ce-packaging/pull/1208)
+- Update Go runtime to [1.24.3](https://go.dev/doc/devel/release#go1.24.3). [docker/docker-ce-packaging#1192](https://github.com/docker/docker-ce-packaging/pull/1192), [docker/cli#6060](https://github.com/docker/cli/pull/6060), [moby/moby#49174](https://github.com/moby/moby/pull/49174)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Add bridge network option `"com.docker.network.bridge.trusted_host_interfaces"`, accepting a colon-separated list of interface names. These interfaces have direct access to published ports on container IP addresses. [moby/moby#49832](https://github.com/moby/moby/pull/49832)
+- Add daemon option `"allow-direct-routing"` to disable filtering of packets from outside the host addressed directly to containers. [moby/moby#49832](https://github.com/moby/moby/pull/49832)
+- Do not display network options `com.docker.network.enable_ipv4` or `com.docker.network.enable_ipv6` in inspect output if they have been overridden by `EnableIPv4` or `EnableIPv6` in the network create request. [moby/moby#49866](https://github.com/moby/moby/pull/49866)
+- Fix an issue that could cause network deletion to fail after a daemon restart, with error "has active endpoints" listing empty endpoint names. [moby/moby#49901](https://github.com/moby/moby/pull/49901)
+- Fix an issue where `docker network inspect --verbose` could sometimes crash the daemon. [moby/moby#49937](https://github.com/moby/moby/pull/49937)
+- Fix an issue where the load-balancer IP address for an overlay network would not be released in certain cases if the Swarm was lacking an ingress network. [moby/moby#49948](https://github.com/moby/moby/pull/49948)
+- Improve the reliability of NetworkDB in busy clusters and lossy networks. [moby/moby#49932](https://github.com/moby/moby/pull/49932)
+- Improvements to the reliability and convergence speed of NetworkDB. [moby/moby#49939](https://github.com/moby/moby/pull/49939)
+@y
+- Add bridge network option `"com.docker.network.bridge.trusted_host_interfaces"`, accepting a colon-separated list of interface names. These interfaces have direct access to published ports on container IP addresses. [moby/moby#49832](https://github.com/moby/moby/pull/49832)
+- Add daemon option `"allow-direct-routing"` to disable filtering of packets from outside the host addressed directly to containers. [moby/moby#49832](https://github.com/moby/moby/pull/49832)
+- Do not display network options `com.docker.network.enable_ipv4` or `com.docker.network.enable_ipv6` in inspect output if they have been overridden by `EnableIPv4` or `EnableIPv6` in the network create request. [moby/moby#49866](https://github.com/moby/moby/pull/49866)
+- Fix an issue that could cause network deletion to fail after a daemon restart, with error "has active endpoints" listing empty endpoint names. [moby/moby#49901](https://github.com/moby/moby/pull/49901)
+- Fix an issue where `docker network inspect --verbose` could sometimes crash the daemon. [moby/moby#49937](https://github.com/moby/moby/pull/49937)
+- Fix an issue where the load-balancer IP address for an overlay network would not be released in certain cases if the Swarm was lacking an ingress network. [moby/moby#49948](https://github.com/moby/moby/pull/49948)
+- Improve the reliability of NetworkDB in busy clusters and lossy networks. [moby/moby#49932](https://github.com/moby/moby/pull/49932)
+- Improvements to the reliability and convergence speed of NetworkDB. [moby/moby#49939](https://github.com/moby/moby/pull/49939)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- `DELETE /images/{name}` now supports a `platforms` query parameter. It accepts an array of JSON-encoded OCI Platform objects, allowing for selecting a specific platforms to delete content for. [moby/moby#49982](https://github.com/moby/moby/pull/49982)
+- `GET /info` now includes a `DiscoveredDevices` field. This is an array of `DeviceInfo` objects, each providing details about a device discovered by a device driver. [moby/moby#49980](https://github.com/moby/moby/pull/49980)
+@y
+- `DELETE /images/{name}` now supports a `platforms` query parameter. It accepts an array of JSON-encoded OCI Platform objects, allowing for selecting a specific platforms to delete content for. [moby/moby#49982](https://github.com/moby/moby/pull/49982)
+- `GET /info` now includes a `DiscoveredDevices` field. This is an array of `DeviceInfo` objects, each providing details about a device discovered by a device driver. [moby/moby#49980](https://github.com/moby/moby/pull/49980)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- `api/types/container`: add `ContainerState` and constants for container state. [moby/moby#49965](https://github.com/moby/moby/pull/49965)
+- `api/types/container`: change `Summary.State` to a `ContainerState`. [moby/moby#49991](https://github.com/moby/moby/pull/49991)
+- `api/types/container`: define `HealthStatus` type for health-status constants. [moby/moby#49876](https://github.com/moby/moby/pull/49876)
+- `api/types`: deprecate `BuildResult`, `ImageBuildOptions`, `ImageBuildOutput`, `ImageBuildResponse`, `BuilderVersion`, `BuilderV1`, and `BuilderBuildKi` which were moved to `api/types/build`. [moby/moby#50025](https://github.com/moby/moby/pull/50025)
+@y
+- `api/types/container`: add `ContainerState` and constants for container state. [moby/moby#49965](https://github.com/moby/moby/pull/49965)
+- `api/types/container`: change `Summary.State` to a `ContainerState`. [moby/moby#49991](https://github.com/moby/moby/pull/49991)
+- `api/types/container`: define `HealthStatus` type for health-status constants. [moby/moby#49876](https://github.com/moby/moby/pull/49876)
+- `api/types`: deprecate `BuildResult`, `ImageBuildOptions`, `ImageBuildOutput`, `ImageBuildResponse`, `BuilderVersion`, `BuilderV1`, and `BuilderBuildKi` which were moved to `api/types/build`. [moby/moby#50025](https://github.com/moby/moby/pull/50025)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- API: Deprecated: `GET /images/{name}/json` no longer returns the following fields: `Config`, `Hostname`, `Domainname`, `AttachStdin`, `AttachStdout`, `AttachStderr`, `Tty`, `OpenStdin`, `StdinOnce`, `Image`, `NetworkDisabled` (already omitted unless set), `MacAddress` (already omitted unless set), `StopTimeout` (already omitted unless set). These additional fields were included in the response due to an implementation detail but not part of the image's Configuration, were marked deprecated in API v1.46, and are now omitted. [moby/moby#48457](https://github.com/moby/moby/pull/48457)
+- Go-SDK: Deprecate builder/remotecontext.Rel(). This function was needed on older versions of Go, but can now be replaced by `filepath.Rel()`. [moby/moby#49843](https://github.com/moby/moby/pull/49843)
+- Go-SDK: api/types: deprecate `BuildCachePruneOptions` in favor of `api/types/builder.CachePruneOptions`. [moby/moby#50015](https://github.com/moby/moby/pull/50015)
+- Go-SDK: api/types: deprecate `BuildCachePruneReport` in favor of `api/types/builder.CachePruneReport`. [moby/moby#50015](https://github.com/moby/moby/pull/50015)
+- Go-SDK: api/types: deprecate `NodeListOptions`, `NodeRemoveOptions`, `ServiceCreateOptions`, `ServiceUpdateOptions`, `RegistryAuthFromSpec`, `RegistryAuthFromPreviousSpec`, `ServiceListOptions`, `ServiceInspectOptions`, and `SwarmUnlockKeyResponse` which were moved to `api/types/swarm`. [moby/moby#50027](https://github.com/moby/moby/pull/50027)
+- Go-SDK: api/types: deprecate `SecretCreateResponse`, `SecretListOptions`, `ConfigCreateResponse`, `ConfigListOptions` which were moved to api/types/swarm. [moby/moby#50024](https://github.com/moby/moby/pull/50024)
+- Go-SDK: client: deprecate `IsErrNotFound`. [moby/moby#50012](https://github.com/moby/moby/pull/50012)
+- Go-SDK: container: deprecate `IsValidHealthString` in favor of `api/types/container.ValidateHealthStatus`. [moby/moby#49893](https://github.com/moby/moby/pull/49893)
+- Go-SDK: container: deprecate `StateStatus`, `WaitCondition`, and the related  `WaitConditionNotRunning`, `WaitConditionNextExit`, and `WaitConditionRemoved` consts in favor of their equivalents in `api/types/container`. [moby/moby#49874](https://github.com/moby/moby/pull/49874)
+- Go-SDK: opts: deprecate `ListOpts.GetAll` in favor of `ListOpts.GetSlice`. [docker/cli#6032](https://github.com/docker/cli/pull/6032)
+- Remove deprecated `IsAutomated` formatting placeholder from `docker search`. [docker/cli#6091](https://github.com/docker/cli/pull/6091)
+- Remove fallback for pulling images from non-OCI-compliant `docker.pkg.github.com` registry. [moby/moby#50094](https://github.com/moby/moby/pull/50094)
+- Remove support for pulling legacy v2, schema 1 images and remove `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable. [moby/moby#50036](https://github.com/moby/moby/pull/50036), [moby/moby#42300](https://github.com/moby/moby/pull/42300)
+- The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the `GET /info` response were deprecated in API v1.48, and are now omitted in API v1.50. [moby/moby#49904](https://github.com/moby/moby/pull/49904)
+- errdefs: Deprecate `errdefs.FromStatusCode`. Use containerd's `errhttp.ToNative` instead. [moby/moby#50030](https://github.com/moby/moby/pull/50030)
+@y
+- API: Deprecated: `GET /images/{name}/json` no longer returns the following fields: `Config`, `Hostname`, `Domainname`, `AttachStdin`, `AttachStdout`, `AttachStderr`, `Tty`, `OpenStdin`, `StdinOnce`, `Image`, `NetworkDisabled` (already omitted unless set), `MacAddress` (already omitted unless set), `StopTimeout` (already omitted unless set). These additional fields were included in the response due to an implementation detail but not part of the image's Configuration, were marked deprecated in API v1.46, and are now omitted. [moby/moby#48457](https://github.com/moby/moby/pull/48457)
+- Go-SDK: Deprecate builder/remotecontext.Rel(). This function was needed on older versions of Go, but can now be replaced by `filepath.Rel()`. [moby/moby#49843](https://github.com/moby/moby/pull/49843)
+- Go-SDK: api/types: deprecate `BuildCachePruneOptions` in favor of `api/types/builder.CachePruneOptions`. [moby/moby#50015](https://github.com/moby/moby/pull/50015)
+- Go-SDK: api/types: deprecate `BuildCachePruneReport` in favor of `api/types/builder.CachePruneReport`. [moby/moby#50015](https://github.com/moby/moby/pull/50015)
+- Go-SDK: api/types: deprecate `NodeListOptions`, `NodeRemoveOptions`, `ServiceCreateOptions`, `ServiceUpdateOptions`, `RegistryAuthFromSpec`, `RegistryAuthFromPreviousSpec`, `ServiceListOptions`, `ServiceInspectOptions`, and `SwarmUnlockKeyResponse` which were moved to `api/types/swarm`. [moby/moby#50027](https://github.com/moby/moby/pull/50027)
+- Go-SDK: api/types: deprecate `SecretCreateResponse`, `SecretListOptions`, `ConfigCreateResponse`, `ConfigListOptions` which were moved to api/types/swarm. [moby/moby#50024](https://github.com/moby/moby/pull/50024)
+- Go-SDK: client: deprecate `IsErrNotFound`. [moby/moby#50012](https://github.com/moby/moby/pull/50012)
+- Go-SDK: container: deprecate `IsValidHealthString` in favor of `api/types/container.ValidateHealthStatus`. [moby/moby#49893](https://github.com/moby/moby/pull/49893)
+- Go-SDK: container: deprecate `StateStatus`, `WaitCondition`, and the related  `WaitConditionNotRunning`, `WaitConditionNextExit`, and `WaitConditionRemoved` consts in favor of their equivalents in `api/types/container`. [moby/moby#49874](https://github.com/moby/moby/pull/49874)
+- Go-SDK: opts: deprecate `ListOpts.GetAll` in favor of `ListOpts.GetSlice`. [docker/cli#6032](https://github.com/docker/cli/pull/6032)
+- Remove deprecated `IsAutomated` formatting placeholder from `docker search`. [docker/cli#6091](https://github.com/docker/cli/pull/6091)
+- Remove fallback for pulling images from non-OCI-compliant `docker.pkg.github.com` registry. [moby/moby#50094](https://github.com/moby/moby/pull/50094)
+- Remove support for pulling legacy v2, schema 1 images and remove `DOCKER_ENABLE_DEPRECATED_PULL_SCHEMA_1_IMAGE` environment-variable. [moby/moby#50036](https://github.com/moby/moby/pull/50036), [moby/moby#42300](https://github.com/moby/moby/pull/42300)
+- The `BridgeNfIptables` and `BridgeNfIp6tables` fields in the `GET /info` response were deprecated in API v1.48, and are now omitted in API v1.50. [moby/moby#49904](https://github.com/moby/moby/pull/49904)
+- errdefs: Deprecate `errdefs.FromStatusCode`. Use containerd's `errhttp.ToNative` instead. [moby/moby#50030](https://github.com/moby/moby/pull/50030)
+@z
+
+@x
+## 28.1.1
+@y
+## 28.1.1
+@z
+
+@x
+{{< release-date date="2025-04-18" >}}
+@y
+{{< release-date date="2025-04-18" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.1.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.1.1)
+- [moby/moby, 28.1.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.1.1)
+@y
+- [docker/cli, 28.1.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.1.1)
+- [moby/moby, 28.1.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.1.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `dockerd-rootless-setuptool.sh` incorrectly reporting missing `iptables`. [moby/moby#49833](https://github.com/moby/moby/pull/49833)
+- containerd image store: Fix a potential daemon crash when using `docker load` with archives containing zero-size tar headers. [moby/moby#49837](https://github.com/moby/moby/pull/49837)
+@y
+- Fix `dockerd-rootless-setuptool.sh` incorrectly reporting missing `iptables`. [moby/moby#49833](https://github.com/moby/moby/pull/49833)
+- containerd image store: Fix a potential daemon crash when using `docker load` with archives containing zero-size tar headers. [moby/moby#49837](https://github.com/moby/moby/pull/49837)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Buildx to [v0.23.0](https://github.com/docker/buildx/releases/tag/v0.23.0). [docker/docker-ce-packaging#1185](https://github.com/docker/docker-ce-packaging/pull/1185)
+- Update Compose to [v2.35.1](https://github.com/docker/compose/releases/tag/v2.35.1). [docker/docker-ce-packaging#1188](https://github.com/docker/docker-ce-packaging/pull/1188)
+@y
+- Update Buildx to [v0.23.0](https://github.com/docker/buildx/releases/tag/v0.23.0). [docker/docker-ce-packaging#1185](https://github.com/docker/docker-ce-packaging/pull/1185)
+- Update Compose to [v2.35.1](https://github.com/docker/compose/releases/tag/v2.35.1). [docker/docker-ce-packaging#1188](https://github.com/docker/docker-ce-packaging/pull/1188)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Add a warning to a container's `/etc/resolv.conf` when no upstream DNS servers were found. [moby/moby#49827](https://github.com/moby/moby/pull/49827)
+@y
+- Add a warning to a container's `/etc/resolv.conf` when no upstream DNS servers were found. [moby/moby#49827](https://github.com/moby/moby/pull/49827)
+@z
+
+@x
+## 28.1.0
+@y
+## 28.1.0
+@z
+
+@x
+{{< release-date date="2025-04-17" >}}
+@y
+{{< release-date date="2025-04-17" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.1.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.1.0)
+- [moby/moby, 28.1.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.1.0)
+@y
+- [docker/cli, 28.1.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.1.0)
+- [moby/moby, 28.1.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.1.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `docker bake` sub-command as alias for `docker buildx bake`. [docker/cli#5947](https://github.com/docker/cli/pull/5947)
+- Experimental: add a new `--use-api-socket` flag on `docker run` and `docker create` to enable access to Docker socket from inside a container and to share credentials from the host with the container. [docker/cli#5858](https://github.com/docker/cli/pull/5858)
+- `docker image inspect` now supports a `--platform` flag to inspect a specific platform of a multi-platform image. [docker/cli#5934](https://github.com/docker/cli/pull/5934)
+@y
+- Add `docker bake` sub-command as alias for `docker buildx bake`. [docker/cli#5947](https://github.com/docker/cli/pull/5947)
+- Experimental: add a new `--use-api-socket` flag on `docker run` and `docker create` to enable access to Docker socket from inside a container and to share credentials from the host with the container. [docker/cli#5858](https://github.com/docker/cli/pull/5858)
+- `docker image inspect` now supports a `--platform` flag to inspect a specific platform of a multi-platform image. [docker/cli#5934](https://github.com/docker/cli/pull/5934)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Add CLI shell-completion for context names. [docker/cli#6016](https://github.com/docker/cli/pull/6016)
+- Fix `docker images --tree` not including non-container images content size in the total image content size. [docker/cli#6000](https://github.com/docker/cli/pull/6000)
+- Fix `docker load` not preserving replaced images. [moby/moby#49650](https://github.com/moby/moby/pull/49650)
+- Fix `docker login` hints when logging in to a custom registry. [docker/cli#6015](https://github.com/docker/cli/pull/6015)
+- Fix `docker stats` not working properly on machines with high CPU core count. [moby/moby#49734](https://github.com/moby/moby/pull/49734)
+- Fix a regression causing `docker pull/push` to fail when interacting with a private repository. [docker/cli#5964](https://github.com/docker/cli/pull/5964)
+- Fix an issue preventing rootless Docker setup on a host with no `ip_tables` kernel module. [moby/moby#49727](https://github.com/moby/moby/pull/49727)
+- Fix an issue that could lead to unwanted iptables rules being restored and never deleted following a firewalld reload. [moby/moby#49728](https://github.com/moby/moby/pull/49728)
+- Improve CLI completion of `docker service scale`. [docker/cli#5968](https://github.com/docker/cli/pull/5968)
+- `docker images --tree` now hides both untagged and dangling images by default. [docker/cli#5924](https://github.com/docker/cli/pull/5924)
+- `docker system info` will provide an exit code if a connection cannot be established to the Docker daemon. [docker/cli#5918](https://github.com/docker/cli/pull/5918)
+- containerd image store: Fix `image tag` event not being emitted when building with BuildKit. [moby/moby#49678](https://github.com/moby/moby/pull/49678)
+- containerd image store: Improve `docker push/pull` handling of remote registry errors. [moby/moby#49770](https://github.com/moby/moby/pull/49770)
+- containerd image store: Show pull progress for non-layer image blobs. [moby/moby#49746](https://github.com/moby/moby/pull/49746)
+@y
+- Add CLI shell-completion for context names. [docker/cli#6016](https://github.com/docker/cli/pull/6016)
+- Fix `docker images --tree` not including non-container images content size in the total image content size. [docker/cli#6000](https://github.com/docker/cli/pull/6000)
+- Fix `docker load` not preserving replaced images. [moby/moby#49650](https://github.com/moby/moby/pull/49650)
+- Fix `docker login` hints when logging in to a custom registry. [docker/cli#6015](https://github.com/docker/cli/pull/6015)
+- Fix `docker stats` not working properly on machines with high CPU core count. [moby/moby#49734](https://github.com/moby/moby/pull/49734)
+- Fix a regression causing `docker pull/push` to fail when interacting with a private repository. [docker/cli#5964](https://github.com/docker/cli/pull/5964)
+- Fix an issue preventing rootless Docker setup on a host with no `ip_tables` kernel module. [moby/moby#49727](https://github.com/moby/moby/pull/49727)
+- Fix an issue that could lead to unwanted iptables rules being restored and never deleted following a firewalld reload. [moby/moby#49728](https://github.com/moby/moby/pull/49728)
+- Improve CLI completion of `docker service scale`. [docker/cli#5968](https://github.com/docker/cli/pull/5968)
+- `docker images --tree` now hides both untagged and dangling images by default. [docker/cli#5924](https://github.com/docker/cli/pull/5924)
+- `docker system info` will provide an exit code if a connection cannot be established to the Docker daemon. [docker/cli#5918](https://github.com/docker/cli/pull/5918)
+- containerd image store: Fix `image tag` event not being emitted when building with BuildKit. [moby/moby#49678](https://github.com/moby/moby/pull/49678)
+- containerd image store: Improve `docker push/pull` handling of remote registry errors. [moby/moby#49770](https://github.com/moby/moby/pull/49770)
+- containerd image store: Show pull progress for non-layer image blobs. [moby/moby#49746](https://github.com/moby/moby/pull/49746)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Add Debian "Trixie" packages. [docker/docker-ce-packaging#1181](https://github.com/docker/docker-ce-packaging/pull/1181)
+- Add Fedora 42 packages. [docker/containerd-packaging#418](https://github.com/docker/containerd-packaging/pull/418), [docker/docker-ce-packaging#1169](https://github.com/docker/docker-ce-packaging/pull/1169)
+- Add Ubuntu 25.04 "Plucky Puffin" packages. [docker/containerd-packaging#419](https://github.com/docker/containerd-packaging/pull/419), [docker/docker-ce-packaging#1177](https://github.com/docker/docker-ce-packaging/pull/1177)
+- Update BuildKit to [v0.21.0](https://github.com/moby/buildkit/releases/tag/v0.21.0). [moby/moby#49809](https://github.com/moby/moby/pull/49809)
+- Update Compose to [v2.35.0](https://github.com/docker/compose/releases/tag/v2.35.0). [docker/docker-ce-packaging#1183](https://github.com/docker/docker-ce-packaging/pull/1183)
+- Update Go runtime to [1.23.8](https://go.dev/doc/devel/release#go1.23.8). [docker/cli#5986](https://github.com/docker/cli/pull/5986), [docker/docker-ce-packaging#1180](https://github.com/docker/docker-ce-packaging/pull/1180), [moby/moby#49737](https://github.com/moby/moby/pull/49737)
+@y
+- Add Debian "Trixie" packages. [docker/docker-ce-packaging#1181](https://github.com/docker/docker-ce-packaging/pull/1181)
+- Add Fedora 42 packages. [docker/containerd-packaging#418](https://github.com/docker/containerd-packaging/pull/418), [docker/docker-ce-packaging#1169](https://github.com/docker/docker-ce-packaging/pull/1169)
+- Add Ubuntu 25.04 "Plucky Puffin" packages. [docker/containerd-packaging#419](https://github.com/docker/containerd-packaging/pull/419), [docker/docker-ce-packaging#1177](https://github.com/docker/docker-ce-packaging/pull/1177)
+- Update BuildKit to [v0.21.0](https://github.com/moby/buildkit/releases/tag/v0.21.0). [moby/moby#49809](https://github.com/moby/moby/pull/49809)
+- Update Compose to [v2.35.0](https://github.com/docker/compose/releases/tag/v2.35.0). [docker/docker-ce-packaging#1183](https://github.com/docker/docker-ce-packaging/pull/1183)
+- Update Go runtime to [1.23.8](https://go.dev/doc/devel/release#go1.23.8). [docker/cli#5986](https://github.com/docker/cli/pull/5986), [docker/docker-ce-packaging#1180](https://github.com/docker/docker-ce-packaging/pull/1180), [moby/moby#49737](https://github.com/moby/moby/pull/49737)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix a bug causing host port-mappings on Swarm containers to be duplicated on `docker ps` and `docker inspect`. [moby/moby#49724](https://github.com/moby/moby/pull/49724)
+- Fix an issue that caused container network attachment to fail with error "Bridge port not forwarding". [moby/moby#49705](https://github.com/moby/moby/pull/49705)
+- Fix an issue with removal of a `--link` from a container in the default bridge network. [moby/moby#49778](https://github.com/moby/moby/pull/49778)
+- Improve how network-endpoint relationships are tracked to reduce the chance of the "has active endpoints" error to be wrongfully returned. [moby/moby#49736](https://github.com/moby/moby/pull/49736)
+- Improve the "has active endpoints" error message by including the name of endpoints still connected to the network being deleted. [moby/moby#49773](https://github.com/moby/moby/pull/49773)
+@y
+- Fix a bug causing host port-mappings on Swarm containers to be duplicated on `docker ps` and `docker inspect`. [moby/moby#49724](https://github.com/moby/moby/pull/49724)
+- Fix an issue that caused container network attachment to fail with error "Bridge port not forwarding". [moby/moby#49705](https://github.com/moby/moby/pull/49705)
+- Fix an issue with removal of a `--link` from a container in the default bridge network. [moby/moby#49778](https://github.com/moby/moby/pull/49778)
+- Improve how network-endpoint relationships are tracked to reduce the chance of the "has active endpoints" error to be wrongfully returned. [moby/moby#49736](https://github.com/moby/moby/pull/49736)
+- Improve the "has active endpoints" error message by including the name of endpoints still connected to the network being deleted. [moby/moby#49773](https://github.com/moby/moby/pull/49773)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- Update API version to [v1.49](https://docs.docker.com/engine/api/v1.49/). [moby/moby#49718](https://github.com/moby/moby/pull/49718)
+- `GET /image/{name}/json` now supports a `platform` parameter allowing to specify which platform variant of a multi-platform image to inspect. [moby/moby#49586](https://github.com/moby/moby/pull/49586)
+- `GET /info` now returns a `FirewallBackend` containing information about the daemon's firewalling configuration. [moby/moby#49761](https://github.com/moby/moby/pull/49761)
+@y
+- Update API version to [v1.49](https://docs.docker.com/engine/api/v1.49/). [moby/moby#49718](https://github.com/moby/moby/pull/49718)
+- `GET /image/{name}/json` now supports a `platform` parameter allowing to specify which platform variant of a multi-platform image to inspect. [moby/moby#49586](https://github.com/moby/moby/pull/49586)
+- `GET /info` now returns a `FirewallBackend` containing information about the daemon's firewalling configuration. [moby/moby#49761](https://github.com/moby/moby/pull/49761)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- Update minimum required Go version to go1.23. [docker/cli#5868](https://github.com/docker/cli/pull/5868)
+- cli/command/context: remove temporary `ContextType` field from JSON output. [docker/cli#5981](https://github.com/docker/cli/pull/5981)
+- client: Keep image references in canonical format where possible. [moby/moby#49609](https://github.com/moby/moby/pull/49609)
+@y
+- Update minimum required Go version to go1.23. [docker/cli#5868](https://github.com/docker/cli/pull/5868)
+- cli/command/context: remove temporary `ContextType` field from JSON output. [docker/cli#5981](https://github.com/docker/cli/pull/5981)
+- client: Keep image references in canonical format where possible. [moby/moby#49609](https://github.com/moby/moby/pull/49609)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- API: Deprecated `AllowNondistributableArtifactsCIDRs` and `AllowNondistributableArtifactsHostnames` fields in the `RegistryConfig` struct in the `GET /info` response are omitted in API v1.49. [moby/moby#49749](https://github.com/moby/moby/pull/49749)
+- API: Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and `InitCommit.Expected` fields in the `GET /info` endpoint were deprecated in API v1.48, and are now omitted in API v1.49. [moby/moby#48556](https://github.com/moby/moby/pull/48556)
+- Go-SDK: cli/command/image: Deprecate `RunPull`: this function was only used internally and will be removed in the next release. [docker/cli#5975](https://github.com/docker/cli/pull/5975)
+- Go-SDK: cli/config/configfile: deprecate `ConfigFile.Experimental` field. Experimental CLI features are always enabled since version v20.10 and this field is no longer used. Use `ConfigFile.Features` instead for optional features. This field will be removed in a future release. [docker/cli#5977](https://github.com/docker/cli/pull/5977)
+- Go-SDK: deprecate `pkg/archive`, which was migrated to `github.com/moby/go-archive`. [moby/moby#49743](https://github.com/moby/moby/pull/49743)
+- Go-SDK: deprecate `pkg/atomicwriter`, which was migrated to `github.com/moby/sys/atomicwriter`. [moby/moby#49748](https://github.com/moby/moby/pull/49748)
+- Go-SDK: opts: remove deprecated `PortOpt`, `ConfigOpt`, `SecretOpt` aliases. [docker/cli#5953](https://github.com/docker/cli/pull/5953)
+- Go-SDK: registry: deprecate `APIEndpoint.Official` field. [moby/moby#49706](https://github.com/moby/moby/pull/49706)
+@y
+- API: Deprecated `AllowNondistributableArtifactsCIDRs` and `AllowNondistributableArtifactsHostnames` fields in the `RegistryConfig` struct in the `GET /info` response are omitted in API v1.49. [moby/moby#49749](https://github.com/moby/moby/pull/49749)
+- API: Deprecated: The `ContainerdCommit.Expected`, `RuncCommit.Expected`, and `InitCommit.Expected` fields in the `GET /info` endpoint were deprecated in API v1.48, and are now omitted in API v1.49. [moby/moby#48556](https://github.com/moby/moby/pull/48556)
+- Go-SDK: cli/command/image: Deprecate `RunPull`: this function was only used internally and will be removed in the next release. [docker/cli#5975](https://github.com/docker/cli/pull/5975)
+- Go-SDK: cli/config/configfile: deprecate `ConfigFile.Experimental` field. Experimental CLI features are always enabled since version v20.10 and this field is no longer used. Use `ConfigFile.Features` instead for optional features. This field will be removed in a future release. [docker/cli#5977](https://github.com/docker/cli/pull/5977)
+- Go-SDK: deprecate `pkg/archive`, which was migrated to `github.com/moby/go-archive`. [moby/moby#49743](https://github.com/moby/moby/pull/49743)
+- Go-SDK: deprecate `pkg/atomicwriter`, which was migrated to `github.com/moby/sys/atomicwriter`. [moby/moby#49748](https://github.com/moby/moby/pull/49748)
+- Go-SDK: opts: remove deprecated `PortOpt`, `ConfigOpt`, `SecretOpt` aliases. [docker/cli#5953](https://github.com/docker/cli/pull/5953)
+- Go-SDK: registry: deprecate `APIEndpoint.Official` field. [moby/moby#49706](https://github.com/moby/moby/pull/49706)
+@z
+
+@x
+## 28.0.4
+@y
+## 28.0.4
+@z
+
+@x
+{{< release-date date="2025-03-25" >}}
+@y
+{{< release-date date="2025-03-25" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.0.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.4)
+- [moby/moby, 28.0.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.4)
+@y
+- [docker/cli, 28.0.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.4)
+- [moby/moby, 28.0.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.4)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression causing `docker pull/push` to fail when interacting with a private repository. [docker/cli#5964](https://github.com/docker/cli/pull/5964)
+@y
+- Fix a regression causing `docker pull/push` to fail when interacting with a private repository. [docker/cli#5964](https://github.com/docker/cli/pull/5964)
+@z
+
+@x
+## 28.0.3
+@y
+## 28.0.3
+@z
+
+@x
+{{< release-date date="2025-03-25" >}}
+@y
+{{< release-date date="2025-03-25" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.3)
+- [moby/moby, 28.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.3)
+@y
+- [docker/cli, 28.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.3)
+- [moby/moby, 28.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.3)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `docker run` truncating the `STDOUT`/`STDERR` prematurely when the container exits before the data is consumed. [docker/cli#5957](https://github.com/docker/cli/pull/5957)
+@y
+- Fix `docker run` truncating the `STDOUT`/`STDERR` prematurely when the container exits before the data is consumed. [docker/cli#5957](https://github.com/docker/cli/pull/5957)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.20.2](https://github.com/moby/buildkit/releases/tag/v0.20.2). [moby/moby#49698](https://github.com/moby/moby/pull/49698)
+- Update `runc` to [v1.2.6](https://github.com/opencontainers/runc/releases/tag/v1.2.6). [moby/moby#49682](https://github.com/moby/moby/pull/49682)
+- Update containerd to [v1.7.26](https://github.com/containerd/containerd/releases/tag/v1.7.26). [docker/containerd-packaging#409](https://github.com/docker/containerd-packaging/pull/409)
+@y
+- Update BuildKit to [v0.20.2](https://github.com/moby/buildkit/releases/tag/v0.20.2). [moby/moby#49698](https://github.com/moby/moby/pull/49698)
+- Update `runc` to [v1.2.6](https://github.com/opencontainers/runc/releases/tag/v1.2.6). [moby/moby#49682](https://github.com/moby/moby/pull/49682)
+- Update containerd to [v1.7.26](https://github.com/containerd/containerd/releases/tag/v1.7.26). [docker/containerd-packaging#409](https://github.com/docker/containerd-packaging/pull/409)
+@z
+
+@x
+## 28.0.2
+@y
+## 28.0.2
+@z
+
+@x
+{{< release-date date="2025-03-19" >}}
+@y
+{{< release-date date="2025-03-19" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.2)
+- [moby/moby, 28.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.2)
+@y
+- [docker/cli, 28.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.2)
+- [moby/moby, 28.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix CLI-specific attributes (`docker.cli.*`) being unintentionally passed to downstream OTel services. [docker/cli#5842](https://github.com/docker/cli/pull/5842)
+- Fix an issue where user-specified `OTEL_RESOURCE_ATTRIBUTES` were being overridden by CLI's internal telemetry attributes. The CLI now properly merges user-specified attributes with internal ones, allowing both to coexist. [docker/cli#5842](https://github.com/docker/cli/pull/5842)
+- Fix the daemon failing to start on Windows when a container created before v28.0.0 was present. [moby/moby#49626](https://github.com/moby/moby/pull/49626)
+- Fix possible error on `docker buildx prune` with `--min-free-space`. [moby/moby#49623](https://github.com/moby/moby/pull/49623)
+- Fix spurious `io: read/write on closed pipe` error in the daemon log when closing a container. [moby/moby#49590](https://github.com/moby/moby/pull/49590)
+- Fix the Docker daemon failing too early if the containerd socket isn't immediately available. [moby/moby#49603](https://github.com/moby/moby/pull/49603)
+- Mask Linux thermal interrupt info in a container's `/proc` and `/sys` by default. [moby/moby#49560](https://github.com/moby/moby/pull/49560)
+- Update `contrib/check-config.sh` to check for more kernel modules related to iptables. [moby/moby#49622](https://github.com/moby/moby/pull/49622)
+- containerd image store: Fix integer overflow in User ID handling passed via `--user`. [moby/moby#49652](https://github.com/moby/moby/pull/49652)
+- containerd image store: Fix spurious `reference for unknown type: application/vnd.in-toto+json` warning being logged to the daemon's log. [moby/moby#49652](https://github.com/moby/moby/pull/49652)
+- containerd image store: Improve performance of `docker ps` when running a large number of containers. [moby/moby#49365](https://github.com/moby/moby/pull/49365)
+@y
+- Fix CLI-specific attributes (`docker.cli.*`) being unintentionally passed to downstream OTel services. [docker/cli#5842](https://github.com/docker/cli/pull/5842)
+- Fix an issue where user-specified `OTEL_RESOURCE_ATTRIBUTES` were being overridden by CLI's internal telemetry attributes. The CLI now properly merges user-specified attributes with internal ones, allowing both to coexist. [docker/cli#5842](https://github.com/docker/cli/pull/5842)
+- Fix the daemon failing to start on Windows when a container created before v28.0.0 was present. [moby/moby#49626](https://github.com/moby/moby/pull/49626)
+- Fix possible error on `docker buildx prune` with `--min-free-space`. [moby/moby#49623](https://github.com/moby/moby/pull/49623)
+- Fix spurious `io: read/write on closed pipe` error in the daemon log when closing a container. [moby/moby#49590](https://github.com/moby/moby/pull/49590)
+- Fix the Docker daemon failing too early if the containerd socket isn't immediately available. [moby/moby#49603](https://github.com/moby/moby/pull/49603)
+- Mask Linux thermal interrupt info in a container's `/proc` and `/sys` by default. [moby/moby#49560](https://github.com/moby/moby/pull/49560)
+- Update `contrib/check-config.sh` to check for more kernel modules related to iptables. [moby/moby#49622](https://github.com/moby/moby/pull/49622)
+- containerd image store: Fix integer overflow in User ID handling passed via `--user`. [moby/moby#49652](https://github.com/moby/moby/pull/49652)
+- containerd image store: Fix spurious `reference for unknown type: application/vnd.in-toto+json` warning being logged to the daemon's log. [moby/moby#49652](https://github.com/moby/moby/pull/49652)
+- containerd image store: Improve performance of `docker ps` when running a large number of containers. [moby/moby#49365](https://github.com/moby/moby/pull/49365)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.20.1](https://github.com/moby/buildkit/releases/tag/v0.20.1). [moby/moby#49587](https://github.com/moby/moby/pull/49587)
+- Update Buildx to [v0.22.0](https://github.com/docker/buildx/releases/tag/v0.22.0). [docker/docker-ce-packaging#1175](https://github.com/docker/docker-ce-packaging/pull/1175)
+- Update Compose to [v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0). [docker/docker-ce-packaging#1172](https://github.com/docker/docker-ce-packaging/pull/1172)
+- Update Go runtime to [1.23.7](https://go.dev/doc/devel/release#go1.23.7). [docker/cli#5890](https://github.com/docker/cli/pull/5890), [docker/docker-ce-packaging#1171](https://github.com/docker/docker-ce-packaging/pull/1171), [moby/moby#49580](https://github.com/moby/moby/pull/49580)
+- Update RootlessKit to [v2.3.4](https://github.com/rootless-containers/rootlesskit/releases/tag/v2.3.4). [moby/moby#49614](https://github.com/moby/moby/pull/49614)
+- Update containerd (static binaries only) to [v1.7.27](https://www.github.com/containerd/containerd/releases/tag/v1.7.27). [moby/moby#49656](https://github.com/moby/moby/pull/49656)
+@y
+- Update BuildKit to [v0.20.1](https://github.com/moby/buildkit/releases/tag/v0.20.1). [moby/moby#49587](https://github.com/moby/moby/pull/49587)
+- Update Buildx to [v0.22.0](https://github.com/docker/buildx/releases/tag/v0.22.0). [docker/docker-ce-packaging#1175](https://github.com/docker/docker-ce-packaging/pull/1175)
+- Update Compose to [v2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0). [docker/docker-ce-packaging#1172](https://github.com/docker/docker-ce-packaging/pull/1172)
+- Update Go runtime to [1.23.7](https://go.dev/doc/devel/release#go1.23.7). [docker/cli#5890](https://github.com/docker/cli/pull/5890), [docker/docker-ce-packaging#1171](https://github.com/docker/docker-ce-packaging/pull/1171), [moby/moby#49580](https://github.com/moby/moby/pull/49580)
+- Update RootlessKit to [v2.3.4](https://github.com/rootless-containers/rootlesskit/releases/tag/v2.3.4). [moby/moby#49614](https://github.com/moby/moby/pull/49614)
+- Update containerd (static binaries only) to [v1.7.27](https://www.github.com/containerd/containerd/releases/tag/v1.7.27). [moby/moby#49656](https://github.com/moby/moby/pull/49656)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Add the environment variable `DOCKER_INSECURE_NO_IPTABLES_RAW=1` to allow Docker to run on systems where the Linux kernel can't provide `CONFIG_IP_NF_RAW` support. When enabled, Docker will not create rules in the iptables `raw` table. Warning: This is not recommended for production environments as it reduces security by allowing other hosts on the local network to route to ports published to host addresses, even when they are published to `127.0.0.1.` This option bypasses some of the security hardening introduced in Docker Engine 28.0.0. [moby/moby#49621](https://github.com/moby/moby/pull/49621)
+- Allow container startup when an endpoint is attached to a macvlan network driver where the parent interface is down. [moby/moby#49630](https://github.com/moby/moby/pull/49630)
+- Do not skip DNAT for packets originating in a `gateway_mode=routed` network. [moby/moby#49577](https://github.com/moby/moby/pull/49577)
+- Fix a bug causing `docker ps` to inconsistently report dual-stack port mappings. [moby/moby#49657](https://github.com/moby/moby/pull/49657)
+- Fix a bug that could cause `docker-proxy` to stop forwarding UDP datagrams to containers. [moby/moby#49649](https://github.com/moby/moby/pull/49649)
+- Fix a bug that was causing `docker-proxy` to close UDP connections to containers eagerly and resulting in the source address to change needlessly. [moby/moby#49649](https://github.com/moby/moby/pull/49649)
+@y
+- Add the environment variable `DOCKER_INSECURE_NO_IPTABLES_RAW=1` to allow Docker to run on systems where the Linux kernel can't provide `CONFIG_IP_NF_RAW` support. When enabled, Docker will not create rules in the iptables `raw` table. Warning: This is not recommended for production environments as it reduces security by allowing other hosts on the local network to route to ports published to host addresses, even when they are published to `127.0.0.1.` This option bypasses some of the security hardening introduced in Docker Engine 28.0.0. [moby/moby#49621](https://github.com/moby/moby/pull/49621)
+- Allow container startup when an endpoint is attached to a macvlan network driver where the parent interface is down. [moby/moby#49630](https://github.com/moby/moby/pull/49630)
+- Do not skip DNAT for packets originating in a `gateway_mode=routed` network. [moby/moby#49577](https://github.com/moby/moby/pull/49577)
+- Fix a bug causing `docker ps` to inconsistently report dual-stack port mappings. [moby/moby#49657](https://github.com/moby/moby/pull/49657)
+- Fix a bug that could cause `docker-proxy` to stop forwarding UDP datagrams to containers. [moby/moby#49649](https://github.com/moby/moby/pull/49649)
+- Fix a bug that was causing `docker-proxy` to close UDP connections to containers eagerly and resulting in the source address to change needlessly. [moby/moby#49649](https://github.com/moby/moby/pull/49649)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- Move various types and consts from `cli-plugins/manager` to a separate package. [docker/cli#5902](https://github.com/docker/cli/pull/5902)
+- Update minimum required Go version to go1.23. [moby/moby#49541](https://github.com/moby/moby/pull/49541)
+- `cli/command`: Move `PrettyPrint` utility to `cli/command/formatter`. [docker/cli#5916](https://github.com/docker/cli/pull/5916)
+- runconfig/errors: split `ErrConflictHostNetwork` into `ErrConflictConnectToHostNetwork` and `ErrConflictDisconnectFromHostNetwork`. [moby/moby#49605](https://github.com/moby/moby/pull/49605)
+@y
+- Move various types and consts from `cli-plugins/manager` to a separate package. [docker/cli#5902](https://github.com/docker/cli/pull/5902)
+- Update minimum required Go version to go1.23. [moby/moby#49541](https://github.com/moby/moby/pull/49541)
+- `cli/command`: Move `PrettyPrint` utility to `cli/command/formatter`. [docker/cli#5916](https://github.com/docker/cli/pull/5916)
+- runconfig/errors: split `ErrConflictHostNetwork` into `ErrConflictConnectToHostNetwork` and `ErrConflictDisconnectFromHostNetwork`. [moby/moby#49605](https://github.com/moby/moby/pull/49605)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Go-SDK: Deprecate `cli-plugins/manager.ResourceAttributesEnvvar` constant. It was used internally, but holds the `OTEL_RESOURCE_ATTRIBUTES` name, which is part of the OpenTelemetry specification. Users of this constant should define their own. It will be removed in the next release. [docker/cli#5881](https://github.com/docker/cli/pull/5881)
+- Go-SDK: Deprecate `opts.PortOpt`, `opts.ConfigOpt` and `opts.SecretOpt`. These types were moved to the `opts/swarmopts` package. [docker/cli#5907](https://github.com/docker/cli/pull/5907)
+- Go-SDK: Remove `service/logs` package. [docker/cli#5910](https://github.com/docker/cli/pull/5910)
+- Go-SDK: `cli/command/image`: Deprecate `PushTrustedReference` and move to `cli/trust`. [docker/cli#5894](https://github.com/docker/cli/pull/5894)
+- Go-SDK: `cli/command/image`: Deprecate and internalize `TrustedPush`. [docker/cli#5894](https://github.com/docker/cli/pull/5894)
+- Go-SDK: `cli/command`: deprecate `Cli.NotaryClient`: use [`trust.GetNotaryRepository`](https://pkg.go.dev/github.com/docker/cli@v28.0.1+incompatible/cli/trust#GetNotaryRepository) instead. This method is no longer used and will be removed in the next release. [docker/cli#5885](https://github.com/docker/cli/pull/5885)
+- Go-SDK: `cli/command`: deprecate `Cli.RegistryClient`. This method was only used internally and will be removed in the next release. Use [`client.NewRegistryClient`](https://pkg.go.dev/github.com/docker/cli@v28.0.1+incompatible/cli/registry/client#NewRegistryClient) instead. [docker/cli#5889](https://github.com/docker/cli/pull/5889), [docker/cli#5889](https://github.com/docker/cli/pull/5889)
+- Go-SDK: `registry`: Deprecate `RepositoryInfo.Official` field. [moby/moby#49567](https://github.com/moby/moby/pull/49567)
+- Go-SDK: `registry`: deprecate `HostCertsDir`: this function was only used internally and will be removed in the next release. [moby/moby#49612](https://github.com/moby/moby/pull/49612)
+- Go-SDK: `registry`: deprecate `SetCertsDir`: the cert-directory is now automatically selected when running with RootlessKit, and should no longer be set manually. [moby/moby#49612](https://github.com/moby/moby/pull/49612)
+@y
+- Go-SDK: Deprecate `cli-plugins/manager.ResourceAttributesEnvvar` constant. It was used internally, but holds the `OTEL_RESOURCE_ATTRIBUTES` name, which is part of the OpenTelemetry specification. Users of this constant should define their own. It will be removed in the next release. [docker/cli#5881](https://github.com/docker/cli/pull/5881)
+- Go-SDK: Deprecate `opts.PortOpt`, `opts.ConfigOpt` and `opts.SecretOpt`. These types were moved to the `opts/swarmopts` package. [docker/cli#5907](https://github.com/docker/cli/pull/5907)
+- Go-SDK: Remove `service/logs` package. [docker/cli#5910](https://github.com/docker/cli/pull/5910)
+- Go-SDK: `cli/command/image`: Deprecate `PushTrustedReference` and move to `cli/trust`. [docker/cli#5894](https://github.com/docker/cli/pull/5894)
+- Go-SDK: `cli/command/image`: Deprecate and internalize `TrustedPush`. [docker/cli#5894](https://github.com/docker/cli/pull/5894)
+- Go-SDK: `cli/command`: deprecate `Cli.NotaryClient`: use [`trust.GetNotaryRepository`](https://pkg.go.dev/github.com/docker/cli@v28.0.1+incompatible/cli/trust#GetNotaryRepository) instead. This method is no longer used and will be removed in the next release. [docker/cli#5885](https://github.com/docker/cli/pull/5885)
+- Go-SDK: `cli/command`: deprecate `Cli.RegistryClient`. This method was only used internally and will be removed in the next release. Use [`client.NewRegistryClient`](https://pkg.go.dev/github.com/docker/cli@v28.0.1+incompatible/cli/registry/client#NewRegistryClient) instead. [docker/cli#5889](https://github.com/docker/cli/pull/5889), [docker/cli#5889](https://github.com/docker/cli/pull/5889)
+- Go-SDK: `registry`: Deprecate `RepositoryInfo.Official` field. [moby/moby#49567](https://github.com/moby/moby/pull/49567)
+- Go-SDK: `registry`: deprecate `HostCertsDir`: this function was only used internally and will be removed in the next release. [moby/moby#49612](https://github.com/moby/moby/pull/49612)
+- Go-SDK: `registry`: deprecate `SetCertsDir`: the cert-directory is now automatically selected when running with RootlessKit, and should no longer be set manually. [moby/moby#49612](https://github.com/moby/moby/pull/49612)
+@z
+
+@x
+## 28.0.1
+@y
+## 28.0.1
+@z
+
+@x
+{{< release-date date="2025-02-26" >}}
+@y
+{{< release-date date="2025-02-26" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.1)
+- [moby/moby, 28.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.1)
+@y
+- [docker/cli, 28.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.0.1)
+- [moby/moby, 28.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.0.1)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Remove dependency on kernel modules `ip_set`, `ip_set_hash_net` and `netfilter_xt_set`.
+  * The dependency was introduced in release 28.0.0 but proved too disruptive. The iptables rules using these modules have been replaced. [moby/moby#49530](https://github.com/moby/moby/pull/49530)
+- Allow daemon startup on a host with IPv6 disabled without requiring `--ip6tables=false`. [moby/moby#49525](https://github.com/moby/moby/pull/49525)
+- Fix a bug that was causing containers with `--restart=always` and a published port already in use to restart in a tight loop. [moby/moby#49507](https://github.com/moby/moby/pull/49507)
+- Fix an issue with Swarm ingress, caused by incorrect ordering of iptables rules. [moby/moby#49538](https://github.com/moby/moby/pull/49538)
+- Fix creation of a swarm-scoped network from a `--config-only` network. [moby/moby#49521](https://github.com/moby/moby/pull/49521)
+- Fix `docker network inspect` reporting an IPv6 gateway with CIDR suffix for a newly created network with no specific IPAM config, until a daemon restart. [moby/moby#49520](https://github.com/moby/moby/pull/49520)
+- Improve the error reported when kernel modules `ip_set`, `ip_set_hash_net` and `netilter_xt_set` are not available. [moby/moby#49524](https://github.com/moby/moby/pull/49524)
+- Move most of Docker's iptables rules out of the filter-FORWARD chain, so that other applications are free to append rules that must follow Docker's rules. [moby/moby#49518](https://github.com/moby/moby/pull/49518)
+- Update `--help` output and man page lo state which options only apply to the default bridge network. [moby/moby#49522](https://github.com/moby/moby/pull/49522)
+@y
+- Remove dependency on kernel modules `ip_set`, `ip_set_hash_net` and `netfilter_xt_set`.
+  * The dependency was introduced in release 28.0.0 but proved too disruptive. The iptables rules using these modules have been replaced. [moby/moby#49530](https://github.com/moby/moby/pull/49530)
+- Allow daemon startup on a host with IPv6 disabled without requiring `--ip6tables=false`. [moby/moby#49525](https://github.com/moby/moby/pull/49525)
+- Fix a bug that was causing containers with `--restart=always` and a published port already in use to restart in a tight loop. [moby/moby#49507](https://github.com/moby/moby/pull/49507)
+- Fix an issue with Swarm ingress, caused by incorrect ordering of iptables rules. [moby/moby#49538](https://github.com/moby/moby/pull/49538)
+- Fix creation of a swarm-scoped network from a `--config-only` network. [moby/moby#49521](https://github.com/moby/moby/pull/49521)
+- Fix `docker network inspect` reporting an IPv6 gateway with CIDR suffix for a newly created network with no specific IPAM config, until a daemon restart. [moby/moby#49520](https://github.com/moby/moby/pull/49520)
+- Improve the error reported when kernel modules `ip_set`, `ip_set_hash_net` and `netilter_xt_set` are not available. [moby/moby#49524](https://github.com/moby/moby/pull/49524)
+- Move most of Docker's iptables rules out of the filter-FORWARD chain, so that other applications are free to append rules that must follow Docker's rules. [moby/moby#49518](https://github.com/moby/moby/pull/49518)
+- Update `--help` output and man page lo state which options only apply to the default bridge network. [moby/moby#49522](https://github.com/moby/moby/pull/49522)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `docker context create` always returning an error when using the `"skip-tls-verify"` option. [docker/cli#5850](https://github.com/docker/cli/pull/5850)
+- Fix shell completion suggesting IDs instead of names for services and nodes. [docker/cli#5848](https://github.com/docker/cli/pull/5848)
+- Fix unintentionally printing exit status to standard error output when `docker exec/run` returns a non-zero status. [docker/cli#5854](https://github.com/docker/cli/pull/5854)
+- Fix regression `protocol "tcp" is not supported by the RootlessKit port driver "slirp4netns"`. [moby/moby#49514](https://github.com/moby/moby/pull/49514)
+- containerd image store: Fix `docker inspect` not being able to show multi-platform images with missing layers for all platforms. [moby/moby#49533](https://github.com/moby/moby/pull/49533)
+- containerd image store: Fix `docker images --tree` reporting wrong content size. [moby/moby#49535](https://github.com/moby/moby/pull/49535)
+- Fix compilation on i386 [moby/moby#49526](https://github.com/moby/moby/pull/49526)
+@y
+- Fix `docker context create` always returning an error when using the `"skip-tls-verify"` option. [docker/cli#5850](https://github.com/docker/cli/pull/5850)
+- Fix shell completion suggesting IDs instead of names for services and nodes. [docker/cli#5848](https://github.com/docker/cli/pull/5848)
+- Fix unintentionally printing exit status to standard error output when `docker exec/run` returns a non-zero status. [docker/cli#5854](https://github.com/docker/cli/pull/5854)
+- Fix regression `protocol "tcp" is not supported by the RootlessKit port driver "slirp4netns"`. [moby/moby#49514](https://github.com/moby/moby/pull/49514)
+- containerd image store: Fix `docker inspect` not being able to show multi-platform images with missing layers for all platforms. [moby/moby#49533](https://github.com/moby/moby/pull/49533)
+- containerd image store: Fix `docker images --tree` reporting wrong content size. [moby/moby#49535](https://github.com/moby/moby/pull/49535)
+- Fix compilation on i386 [moby/moby#49526](https://github.com/moby/moby/pull/49526)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update `github.com/go-jose/go-jose/v4` to v4.0.5 to address [GHSA-c6gw-w398-hv78](https://github.com/go-jose/go-jose/security/advisories/GHSA-c6gw-w398-hv78) / [CVE-2025-27144](https://www.cve.org/CVERecord?id=CVE-2025-27144). [docker/cli#5867](https://github.com/docker/cli/pull/5867)
+- Update Buildx to [v0.21.1](https://github.com/docker/buildx/releases/tag/v0.21.1). [docker/docker-ce-packaging#1167](https://github.com/docker/docker-ce-packaging/pull/1167)
+- Update Compose to [v2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1). [docker/docker-ce-packaging#1168](https://github.com/docker/docker-ce-packaging/pull/1168)
+@y
+- Update `github.com/go-jose/go-jose/v4` to v4.0.5 to address [GHSA-c6gw-w398-hv78](https://github.com/go-jose/go-jose/security/advisories/GHSA-c6gw-w398-hv78) / [CVE-2025-27144](https://www.cve.org/CVERecord?id=CVE-2025-27144). [docker/cli#5867](https://github.com/docker/cli/pull/5867)
+- Update Buildx to [v0.21.1](https://github.com/docker/buildx/releases/tag/v0.21.1). [docker/docker-ce-packaging#1167](https://github.com/docker/docker-ce-packaging/pull/1167)
+- Update Compose to [v2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1). [docker/docker-ce-packaging#1168](https://github.com/docker/docker-ce-packaging/pull/1168)
+@z
+
+@x
+### API
+@y
+### API
+@z
+
+@x
+- containerd image store: Fix `GET /images/json?manifests=1` not filling `Manifests` for index-only images [moby/moby#49533](https://github.com/moby/moby/pull/49533)
+- containerd image store: Fix `GET /images/json and /images/<name>/json` `Size.Content` field including the size of content that's not available locally [moby/moby#49535](https://github.com/moby/moby/pull/49535)
+@y
+- containerd image store: Fix `GET /images/json?manifests=1` not filling `Manifests` for index-only images [moby/moby#49533](https://github.com/moby/moby/pull/49533)
+- containerd image store: Fix `GET /images/json and /images/<name>/json` `Size.Content` field including the size of content that's not available locally [moby/moby#49535](https://github.com/moby/moby/pull/49535)
+@z
+
+@x
 ## 28.0.0
 @y
 ## 28.0.0

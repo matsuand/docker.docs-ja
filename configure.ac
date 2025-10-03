@@ -150,7 +150,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/gordon/mcp/Makefile
 	src/content/manuals/ai/mcp-catalog-and-toolkit/Makefile
 	src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile
-	src/content/manuals/ai/mcp-gateway/Makefile
 	src/content/manuals/ai/model-runner/Makefile
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/billing/Makefile
