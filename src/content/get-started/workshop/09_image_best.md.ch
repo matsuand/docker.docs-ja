@@ -109,17 +109,19 @@ in the `package.json` file. You can copy only that file in first, install the
 dependencies, and then copy in everything else. Then, you only recreate the yarn
 dependencies if there was a change to the `package.json`.
 @y
-To fix it, you need to restructure your Dockerfile to help support the caching
-of the dependencies. For Node-based applications, those dependencies are defined
-in the `package.json` file. You can copy only that file in first, install the
-dependencies, and then copy in everything else. Then, you only recreate the yarn
-dependencies if there was a change to the `package.json`.
+ここを改善するには Dockerfile を書き換えます。
+依存パッケージのキャッシング機能を利用するようにします。
+Node ベースのアプリケーションの場合、依存パッケージは `package.json` ファイルに定義します。
+最初にコピーするのはこのファイルだけとします。
+依存パッケージをインストールしたら、その後に残りをすべてコピーします。
+こうすると `package.json` への変更が発生した場合にのみ yarn の依存関係だけが再構築されることになります。
 @z
 
 @x
 1. Update the Dockerfile to copy in the `package.json` first, install dependencies, and then copy everything else in.
 @y
-1. Update the Dockerfile to copy in the `package.json` first, install dependencies, and then copy everything else in.
+1. Dockerfile を修正して、初めに `package.json` をコピーするようにします。
+   依存パッケージのインストールやもろもろのコピーはその後とします。
 @z
 
 % snip code...
@@ -127,7 +129,7 @@ dependencies if there was a change to the `package.json`.
 @x
 2. Build a new image using `docker build`.
 @y
-2. Build a new image using `docker build`.
+2. `docker build` を実行して新たなイメージをビルドします。
 @z
 
 % snip command...
@@ -135,7 +137,7 @@ dependencies if there was a change to the `package.json`.
 @x
     You should see output like the following.
 @y
-    You should see output like the following.
+    以下のような出力が得られます。
 @z
 
 % snip output...
@@ -143,13 +145,15 @@ dependencies if there was a change to the `package.json`.
 @x
 3. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
 @y
-3. Now, make a change to the `src/static/index.html` file. For example, change the `<title>` to "The Awesome Todo App".
+3. そこで `src/static/index.html` ファイルに変更を加えます。
+   たとえば `<title>` を "The Awesome Todo App" に変えます。
 @z
 
 @x
 4. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
 @y
-4. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
+4. 再度 `docker build -t getting-started .` を実行して Docker イメージをビルドします。
+   今回の出力は、前のものとは多少違ってきます。
 @z
 
 % snip output...
@@ -159,37 +163,37 @@ dependencies if there was a change to the `package.json`.
     that several steps are using previously cached layers. Pushing and pulling
     this image and updates to it will be much faster as well. 
 @y
-    First off, you should notice that the build was much faster. And, you'll see
-    that several steps are using previously cached layers. Pushing and pulling
-    this image and updates to it will be much faster as well. 
+    なによりもまず、ビルドが各段に早くなったはずです。
+    そして処理ステップがそれ以前にキャッシュされたレイヤーを使っていることも見てとれます。
+    このイメージのプッシュ、プル、更新も、より早く改善されるはずです。
 @z
 
 @x
 ## Multi-stage builds
 @y
-## Multi-stage builds
+## マルチステージビルド {#multi-stage-builds}
 @z
 
 @x
 Multi-stage builds are an incredibly powerful
 tool to help use multiple stages to create an image. There are several advantages for them:
 @y
-Multi-stage builds are an incredibly powerful
-tool to help use multiple stages to create an image. There are several advantages for them:
+マルチステージビルドとは非常に強力な機能であり、複数のステージを使ってイメージ生成を行うものです。
+これには以下のような利点があります。
 @z
 
 @x
 - Separate build-time dependencies from runtime dependencies
 - Reduce overall image size by shipping only what your app needs to run
 @y
-- Separate build-time dependencies from runtime dependencies
-- Reduce overall image size by shipping only what your app needs to run
+- ビルド時の依存パッケージと実行時の依存パッケージを分けることができます。
+- アプリ実行に本当に必要なものだけを作り出すので、イメージサイズを抑えることができます。
 @z
 
 @x
 ### Maven/Tomcat example
 @y
-### Maven/Tomcat example
+### Maven/Tomcat の例 {#maventomcat-example}
 @z
 
 @x
@@ -197,9 +201,11 @@ When building Java-based applications, you need a JDK to compile the source code
 that JDK isn't needed in production. Also, you might be using tools like Maven or Gradle to help build the app.
 Those also aren't needed in your final image. Multi-stage builds help.
 @y
-When building Java-based applications, you need a JDK to compile the source code to Java bytecode. However,
-that JDK isn't needed in production. Also, you might be using tools like Maven or Gradle to help build the app.
-Those also aren't needed in your final image. Multi-stage builds help.
+Java ベースのアプリケーションをビルドするには、JDK のソースコードをコンパイルして Java バイトコードを生成する必要があります。
+しかし JDK は本番環境においては不要です。
+またアプリのビルドを行うために Maven や Gradle といったツールを使うかもしれません。
+これらも最終イメージには不要なものです。
+マルチステージビルドがこれを解決します。
 @z
 
 % snip code...
@@ -209,15 +215,16 @@ In this example, you use one stage (called `build`) to perform the actual Java b
 stage (starting at `FROM tomcat`), you copy in files from the `build` stage. The final image is only the last stage
 being created, which can be overridden using the `--target` flag.
 @y
-In this example, you use one stage (called `build`) to perform the actual Java build using Maven. In the second
-stage (starting at `FROM tomcat`), you copy in files from the `build` stage. The final image is only the last stage
-being created, which can be overridden using the `--target` flag.
+この例では Maven を使って Java のビルドを行う第一ステージ (`build` と命名) を用いています。
+第二のステージ (`FROM tomcat` から始まる) では、`build` ステージからファイル類をコピーします。
+最終的なイメージは、最後に生成されたステージのみとなります。
+これは `--target` フラグを使えば上書きすることができます。
 @z
 
 @x
 ### React example
 @y
-### React example
+### React の例 {#react-example}
 @z
 
 @x
@@ -225,9 +232,9 @@ When building React applications, you need a Node environment to compile the JS 
 and more into static HTML, JS, and CSS. If you aren't doing server-side rendering, you don't even need a Node environment
 for your production build. You can ship the static resources in a static nginx container.
 @y
-When building React applications, you need a Node environment to compile the JS code (typically JSX), SASS stylesheets,
-and more into static HTML, JS, and CSS. If you aren't doing server-side rendering, you don't even need a Node environment
-for your production build. You can ship the static resources in a static nginx container.
+React アプリケーションをビルドするには、Node 環境を使って JS コード (JSX)、SASS スタイルシートなどをコンパイルして、スタティックな HTML、JS、CSS を生成する必要があります。
+サーバーサイドのレンダリングを行っていないなら、本番環境向けビルドには Node 環境すら必要ありません。
+静的リソースは静的な nginx コンテナーに構築できます。
 @z
 
 % snip code...
@@ -236,8 +243,8 @@ for your production build. You can ship the static resources in a static nginx c
 In the previous Dockerfile example, it uses the `node:lts` image to perform the build (maximizing layer caching) and then copies the output
 into an nginx container.
 @y
-In the previous Dockerfile example, it uses the `node:lts` image to perform the build (maximizing layer caching) and then copies the output
-into an nginx container.
+上の Dockerfile 例では、ビルドの実現 (最大限のレイヤーキャッシングの実現) のために `node:lts` イメージを使っています。
+そして出力結果を nginx コンテナーにコピーしています。
 @z
 
 @x
@@ -249,7 +256,7 @@ into an nginx container.
 @x
 In this section, you learned a few image building best practices, including layer caching and multi-stage builds.
 @y
-In this section, you learned a few image building best practices, including layer caching and multi-stage builds.
+この節では、イメージビルドのベストプラクティスとして、レイヤーキャッシングとマルチステージビルドについて少しばかり学びました。
 @z
 
 @x
@@ -271,7 +278,7 @@ Related information:
 @x
 In the next section, you'll learn about additional resources you can use to continue learning about containers.
 @y
-In the next section, you'll learn about additional resources you can use to continue learning about containers.
+次の節では、コンテナーについて学ぶためのさらなるリソースについて学びます。
 @z
 
 @x

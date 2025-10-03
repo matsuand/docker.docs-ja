@@ -121,6 +121,15 @@ filesystem you can share with containers. For details about accessing the settin
 @z
 
 @x
+    > [!NOTE]
+    > The **File sharing** tab is only available in Hyper-V mode, because the files are automatically shared in WSL 2 mode and Windows container mode.
+@y
+    > [!NOTE]
+    > **File sharing** (ファイル共有) タブは Hyper-V モードにおいてのみ利用可能です。
+    > WSL2 モードや Windows コンテナーモードでは、ファイルは自動的に共有されるからです。
+@z
+
+@x
 2. Open a terminal and change directory to the `getting-started-app`
    directory.
 @y

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Overview of the Docker workshop
@@ -24,7 +24,8 @@ description: Get started with the Docker basics in this workshop, You'll
 @x
 This 45-minute workshop contains step-by-step instructions on how to get started with Docker. This workshop shows you how to:
 @y
-This 45-minute workshop contains step-by-step instructions on how to get started with Docker. This workshop shows you how to:
+45 分からなるワークショップでは、Docker をステップアップしながら学んでいく手順を示しています。
+以下の内容が含まれています。
 @z
 
 @x
@@ -47,8 +48,7 @@ This 45-minute workshop contains step-by-step instructions on how to get started
 @y
 > [!NOTE]
 >
-> For a quick introduction to Docker and the benefits of containerizing your
-> applications, see [Getting started](get-started/introduction/_index.md).
+> Docker の簡単な説明や、アプリケーションをコンテナー化するメリットなどに関しては [はじめよう](get-started/introduction/_index.md) を参照してください。
 @z
 
 @x

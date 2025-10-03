@@ -71,6 +71,17 @@ file exists.
 % snip command...
 
 @x
+    > [!TIP]
+    > Any commands you specify after the image name (in this case, `alpine`)
+    > are executed inside the container. In this case, the command `touch
+    > greeting.txt` puts a file named `greeting.txt` on the container's filesystem.
+@y
+    > [!TIP]
+    > イメージ名 (今の場合 `alpine`) の後ろに続くコマンドは、すべてコンテナー内部で実行されます。
+    > ここでは `touch greeting.txt` というコマンドが実行されると、コンテナー内のファイルシステム内に `greeting.txt` という名前のファイルを生成します。
+@z
+
+@x
 2. Run a new Alpine container and use the `stat` command to check whether the file exists.
 @y
 2. 新たな Alpine コンテナーを実行し、`stat` コマンドを使ってそのファイルの存在を確認します。
@@ -395,6 +406,14 @@ you can use the `docker volume inspect` command.
 多くの人からよく尋ねられます。
 「ボリューム利用時に Docker はデータをどこに保存するのか？」
 この答えを知りたければ `docker volume inspect` コマンドを実行してみてください。
+@z
+
+% snip command...
+
+@x
+You should see output like the following:
+@y
+以下のような出力が行われます。
 @z
 
 % snip command...

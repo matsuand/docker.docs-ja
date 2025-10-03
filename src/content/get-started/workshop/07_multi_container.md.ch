@@ -241,14 +241,15 @@ MySQL が起動し実行されていることが確認できたので、さっ�
 To answer the questions above and better understand container networking, you're going to make use of the [nicolaka/netshoot](https://github.com/nicolaka/netshoot) container,
 which ships with a lot of tools that are useful for troubleshooting or debugging networking issues.
 @y
-To answer the questions above and better understand container networking, you're going to make use of the [nicolaka/netshoot](https://github.com/nicolaka/netshoot) container,
-which ships with a lot of tools that are useful for troubleshooting or debugging networking issues.
+上の問いに対する答えを出すには、コンテナーネットワークについてより深く理解しておく必要があります。
+そこで [nicolaka/netshoot](https://github.com/nicolaka/netshoot) コンテナーというものを用いることにしましょう。
+これはネットワークに発生する問題に対して、トラブルシューティングやデバッグを行うために便利なツールをいろいろ用意しています。
 @z
 
 @x
 1. Start a new container using the nicolaka/netshoot image. Make sure to connect it to the same network.
 @y
-1. nicolaka/netshoot というイメージを使ったコンテナーを新たに起動します。
+1. nicolaka/netshoot イメージを使ったコンテナーを新たに起動します。
    ネットワークは同一のものに接続するようにします。
 @z
 
@@ -324,41 +325,47 @@ todo アプリは環境変数をいくつか設定することによって MySQL
 > when running applications in production. Diogo Monica, a former lead of security at Docker,
 > [wrote a fantastic blog post](https://blog.diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
 > explaining why.
->
-> A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
-> these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
-> also support env vars with a `_FILE` suffix to point to a file containing the variable.
->
-> As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file
-> as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
-> the variable and get the file contents.
 @y
 > [!NOTE]
 >
-> While using env vars to set connection settings is generally accepted for development, it's highly discouraged
-> when running applications in production. Diogo Monica, a former lead of security at Docker,
-> [wrote a fantastic blog post](https://blog.diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
-> explaining why.
->
+> DB 接続設定を環境変数を通じて行うのは、一般的には開発環境でのみ許容されることです。
+> 本番環境においてアプリケーションを動作させる際に、この方法を用いることは推奨されません。
+> Docker 社の全セキュリティリーダー Diogo Monica が、なぜそうなのかを [優れたブログポスト](https://blog.diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/) において説明しています。
+@z
+
+@x
 > A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
 > these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
 > also support env vars with a `_FILE` suffix to point to a file containing the variable.
->
+@y
+> よりセキュアなメカニズムとするには、コンテナーオーケストレーションのフレームワークが提供する secret サポートを用いることです。
+> この secret というものは、たいていは実行コンテナー内のファイルとしてマウントされます。
+> この後に見ていくアプリ (MySQL イメージや todo アプリ) では、変数を定義するファイルを `_FILE` というサフィックスをつけた環境変数に設定する方法もサポートしています。
+@z
+
+@x
 > As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file
 > as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
 > the variable and get the file contents.
+@y
+> たとえば `MYSQL_PASSWORD_FILE` という変数を設定します。
+> これは DB 接続時のパスワードを含めたファイルをアプリが参照するようにしているものです。
+> Docker はこういった環境変数の対応は一切行いません。
+> 変数の定義先を探しファイル内容を読み取るのは、実装するアプリが行うべきことと覚えておいてください。
 @z
 
 @x
 You can now start your dev-ready container.
 @y
-You can now start your dev-ready container.
+そこで開発向けコンテナーを起動させます。
 @z
 
 @x
 1. Specify each of the previous environment variables, as well as connect the container to your app network. Make sure that you are in the `getting-started-app` directory when you run this command.
 @y
-1. Specify each of the previous environment variables, as well as connect the container to your app network. Make sure that you are in the `getting-started-app` directory when you run this command.
+1. 先に述べた環境変数を個々に設定します。
+   そしてコンテナーをアプリケーションネットワークに接続させます。
+   このコマンドは `getting-started-app` ディレクトリにおいて実行します。
 @z
 
 @x
@@ -378,7 +385,7 @@ You can now start your dev-ready container.
 @y
    {{< /tab >}}
    {{< tab name="PowerShell" >}}
-   In Windows, run this command in PowerShell.
+   Windows においてこのコマンドを PowerShell を使って実行します。
 @z
 
 % snip command...
@@ -390,7 +397,7 @@ You can now start your dev-ready container.
 @y
    {{< /tab >}}
    {{< tab name="Command Prompt" >}}
-   In Windows, run this command in Command Prompt.
+   Windows においてこのコマンドを Command Prompt を使って実行します。
 @z
 
 % snip command...
@@ -417,8 +424,8 @@ You can now start your dev-ready container.
 2. If you look at the logs for the container (`docker logs -f <container-id>`), you should see a message similar to the following, which indicates it's
    using the mysql database.
 @y
-2. If you look at the logs for the container (`docker logs -f <container-id>`), you should see a message similar to the following, which indicates it's
-   using the mysql database.
+2. コンテナーのログを確認すると (`docker logs -f <container-id>`)、以下のようなメッセージを確認することができます。
+   メッセージから mysql データベースが使われていることが分かります。
 @z
 
 % snip command...
@@ -426,15 +433,15 @@ You can now start your dev-ready container.
 @x
 3. Open the app in your browser and add a few items to your todo list.
 @y
-3. Open the app in your browser and add a few items to your todo list.
+3. ブラウザー上でアプリを開き、todo リストにいくつかアイテムを加えます。
 @z
 
 @x
 4. Connect to the mysql database and prove that the items are being written to the database. Remember, the password
    is `secret`.
 @y
-4. Connect to the mysql database and prove that the items are being written to the database. Remember, the password
-   is `secret`.
+4. mysql データベースに接続して、アイテムがデータベースに書き込まれていることを確認します。
+   なおパスワードは `secret` です。
 @z
 
 % snip command...
@@ -442,7 +449,7 @@ You can now start your dev-ready container.
 @x
    And in the mysql shell, run the following:
 @y
-   And in the mysql shell, run the following:
+   そして mysql シェルから以下を実行します。
 @z
 
 % snip command...
@@ -450,7 +457,8 @@ You can now start your dev-ready container.
 @x
    Your table will look different because it has your items. But, you should see them stored there.
 @y
-   Your table will look different because it has your items. But, you should see them stored there.
+   データベーステーブルの内容は、追加したアイテム次第で見た目は変わるはずです。
+   ただしデータが保存されていることは確認できたはずです。
 @z
 
 @x
@@ -463,8 +471,8 @@ You can now start your dev-ready container.
 At this point, you have an application that now stores its data in an external database running in a separate
 container. You learned a little bit about container networking and service discovery using DNS.
 @y
-At this point, you have an application that now stores its data in an external database running in a separate
-container. You learned a little bit about container networking and service discovery using DNS.
+ここまでに作り出したアプリケーションにより、別コンテナー上に起動する外部データベースにデータを保存しました。
+コンテナーネットワークや DNS によるサービス検出にも少しは触れることができました。
 @z
 
 @x
@@ -488,17 +496,17 @@ There's a good chance you are starting to feel a little overwhelmed with everyth
 this application. You have to create a network, start containers, specify all of the environment variables, expose
 ports, and more. That's a lot to remember and it's certainly making things harder to pass along to someone else.
 @y
-There's a good chance you are starting to feel a little overwhelmed with everything you need to do to start up
-this application. You have to create a network, start containers, specify all of the environment variables, expose
-ports, and more. That's a lot to remember and it's certainly making things harder to pass along to someone else.
+このアプリケーションを起動するにはいろいろとやらねければならないことがあるなぁと、大変さを少し感じてきているかもしれません。
+ネットワークを作ってコンテナーを起動して、必要な環境変数を設定してポートを開放して・・・
+覚えることがたくさん出てきて、誰かに説明するのも大変になってきます。
 @z
 
 @x
 In the next section, you'll learn about Docker Compose. With Docker Compose, you can share your application stacks in a
 much easier way and let others spin them up with a single, simple command.
 @y
-In the next section, you'll learn about Docker Compose. With Docker Compose, you can share your application stacks in a
-much easier way and let others spin them up with a single, simple command.
+次の節では Docker Compose について学びます。
+Docker Compose を使うと、アプリケーションを極めて簡単に共有でき、誰にとってもたった一つのシンプルなコマンドでアプリケーションを起動できるようになります。
 @z
 
 @x

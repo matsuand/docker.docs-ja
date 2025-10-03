@@ -127,6 +127,11 @@
                   CVE がほぼゼロのセキュアで最小限のイメージです。
 @z
 @x
+                  href="/dhi/get-started/"
+@y
+                  href="dhi/get-started/"
+@z
+@x
                   Start your free trial
 @y
                   フリートライアル開始
