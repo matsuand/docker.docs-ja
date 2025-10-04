@@ -4,5 +4,5 @@
 @x
 title: How-tos
 @y
-title: How-tos
+title: ハウツー
 @z

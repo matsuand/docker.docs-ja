@@ -6,7 +6,7 @@ title: Interpolation
 description: Substitute environment variables in Docker Compose files using interpolation syntax.
 keywords: compose, compose specification, interpolation, compose file reference
 @y
-title: Interpolation
+title: 補間
 description: Substitute environment variables in Docker Compose files using interpolation syntax.
 keywords: compose, compose specification, interpolation, compose file reference
 @z
@@ -19,36 +19,52 @@ keywords: compose, compose specification, interpolation, compose file reference
 
 @x
 For braced expressions, the following formats are supported:
+@y
+ブレース (波カッコ) 表現は以下の書式がサポートされています。
+@z
+
+@x
 - Direct substitution
   - `${VAR}` -> value of `VAR`
+@y
+- 単純な置き換え
+  - `${VAR}` -> `VAR` の値
+@z
+
+@x
 - Default value
   - `${VAR:-default}` -> value of `VAR` if set and non-empty, otherwise `default`
   - `${VAR-default}` -> value of `VAR` if set, otherwise `default`
+@y
+- デフォルト値の指定
+  - `${VAR:-default}` -> `VAR` が設定済または空でないならその値、それ以外は `default`
+  - `${VAR-default}` -> `VAR` が設定済ならその値、それ以外は `default`
+@z
+
+@x
 - Required value
   - `${VAR:?error}` -> value of `VAR` if set and non-empty, otherwise exit with error
   - `${VAR?error}` -> value of `VAR` if set, otherwise exit with error
+@y
+- 値指定の必須
+  - `${VAR:?error}` -> `VAR` が設定済または空でないならその値、それ以外はエラー終了
+  - `${VAR?error}` -> `VAR` が設定済ならその値、それ以外はエラー終了
+@z
+
+@x
 - Alternative value
   - `${VAR:+replacement}` -> `replacement` if `VAR` is set and non-empty, otherwise empty
   - `${VAR+replacement}` -> `replacement` if `VAR` is set, otherwise empty
 @y
-For braced expressions, the following formats are supported:
-- Direct substitution
-  - `${VAR}` -> value of `VAR`
-- Default value
-  - `${VAR:-default}` -> value of `VAR` if set and non-empty, otherwise `default`
-  - `${VAR-default}` -> value of `VAR` if set, otherwise `default`
-- Required value
-  - `${VAR:?error}` -> value of `VAR` if set and non-empty, otherwise exit with error
-  - `${VAR?error}` -> value of `VAR` if set, otherwise exit with error
-- Alternative value
-  - `${VAR:+replacement}` -> `replacement` if `VAR` is set and non-empty, otherwise empty
-  - `${VAR+replacement}` -> `replacement` if `VAR` is set, otherwise empty
+- 別の指定値
+  - `${VAR:+replacement}` -> `VAR` が設定済または空でないなら `replacement`、そうでないなら空
+  - `${VAR+replacement}` -> `VAR` が設定済なら `replacement`、そうでないなら空
 @z
 
 @x
 Interpolation can also be nested:
 @y
-Interpolation can also be nested:
+補間表現はネスト化することもできます。
 @z
 
 @x
@@ -65,8 +81,7 @@ Interpolation can also be nested:
 Other extended shell-style features, such as `${VARIABLE/foo/bar}`, are not
 supported by Compose.
 @y
-Other extended shell-style features, such as `${VARIABLE/foo/bar}`, are not
-supported by Compose.
+これ以外にシェル形式の機能にある `${VARIABLE/foo/bar}` といったものは Compose ではサポートされていません。
 @z
 
 @x
@@ -81,19 +96,7 @@ allows you to refer to environment variables that you don't want processed by
 Compose.
 @z
 
-@x
-```yml
-web:
-  build: .
-  command: "$$VAR_NOT_INTERPOLATED_BY_COMPOSE"
-```
-@y
-```yml
-web:
-  build: .
-  command: "$$VAR_NOT_INTERPOLATED_BY_COMPOSE"
-```
-@z
+% snip code...
 
 @x
 If Compose can't resolve a substituted variable and no default value is defined, it displays a warning and substitutes the variable with an empty string.
@@ -119,34 +122,4 @@ user-defined strings, such as [labels](services.md#labels) or [environment](serv
 must be used for interpolation to apply. For example:
 @z
 
-@x
-```yml
-services:
-  foo:
-    labels:
-      "$VAR_NOT_INTERPOLATED_BY_COMPOSE": "BAR"
-```
-@y
-```yml
-services:
-  foo:
-    labels:
-      "$VAR_NOT_INTERPOLATED_BY_COMPOSE": "BAR"
-```
-@z
-
-@x
-```yml
-services:
-  foo:
-    labels:
-      - "$VAR_INTERPOLATED_BY_COMPOSE=BAR"
-```
-@y
-```yml
-services:
-  foo:
-    labels:
-      - "$VAR_INTERPOLATED_BY_COMPOSE=BAR"
-```
-@z
+% snip code...
