@@ -6,6 +6,7 @@
 @x
 title: Create your organization
 @y
+title: Create your organization
 @z
 
 @x

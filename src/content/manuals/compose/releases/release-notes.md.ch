@@ -26,6 +26,134 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.39.4
+@y
+## 2.39.4
+@z
+
+@x
+{{< release-date date="2025-09-19" >}}
+@y
+{{< release-date date="2025-09-19" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added `initial_sync` attribute to the Compose Develop Specification definition, to sync files after starting a watch session
+- Fixed a TLS issue when building with bake
+- Disabled Tty on `run` when running as a piped command
+@y
+- Added `initial_sync` attribute to the Compose Develop Specification definition, to sync files after starting a watch session
+- Fixed a TLS issue when building with bake
+- Disabled Tty on `run` when running as a piped command
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump compose-go to v2.9.0
+@y
+- Dependencies upgrade: bump compose-go to v2.9.0
+@z
+
+@x
+## 2.40.0
+@y
+## 2.40.0
+@z
+
+@x
+{{< release-date date="2025-10-03" >}}
+@y
+{{< release-date date="2025-10-03" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added the option to publish Compose applications as a `compose.yaml` with images
+- Fixed support for secrets based on environment variables when building with bake
+- Fixed support for escaped '$' character when building with bake
+@y
+- Added the option to publish Compose applications as a `compose.yaml` with images
+- Fixed support for secrets based on environment variables when building with bake
+- Fixed support for escaped '$' character when building with bake
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.5.0
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.5.0
+@z
+
+@x
+## 2.39.3
+@y
+## 2.39.3
+@z
+
+@x
+{{< release-date date="2025-09-09" >}}
+@y
+{{< release-date date="2025-09-09" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added completions for `--progress` flag
+- Fixed minor issues when building with `bake`
+- Fixed issue when publishing a Compose stack with bind mounts and `-y` flag
+@y
+- Added completions for `--progress` flag
+- Fixed minor issues when building with `bake`
+- Fixed issue when publishing a Compose stack with bind mounts and `-y` flag
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump docker engine and cli to v28.4.0
+- Dependencies upgrade: bump compose-go to v2.8.2
+- Dependencies upgrade: bump buildx to v0.28.0
+- Dependencies upgrade: bump buildkit to v0.24.0
+- Dependencies upgrade: bump golang to v1.24.7
+@y
+- Dependencies upgrade: bump docker engine and cli to v28.4.0
+- Dependencies upgrade: bump compose-go to v2.8.2
+- Dependencies upgrade: bump buildx to v0.28.0
+- Dependencies upgrade: bump buildkit to v0.24.0
+- Dependencies upgrade: bump golang to v1.24.7
+@z
+
+@x
 ## 2.39.2
 @y
 ## 2.39.2

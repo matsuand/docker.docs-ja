@@ -8,6 +8,9 @@ title: Enforce Docker Hardened Image usage with policies
 linktitle: Enforce image usage
 description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
 @y
+title: Enforce Docker Hardened Image usage with policies
+linktitle: Enforce image usage
+description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
 @z
 
 @x

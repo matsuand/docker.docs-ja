@@ -239,7 +239,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	_index.md \
-	add.md
+	add.md    \
+	get.md    \
+	list.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

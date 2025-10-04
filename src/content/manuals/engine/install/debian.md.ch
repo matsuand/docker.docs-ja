@@ -84,11 +84,13 @@ Docker Engine をインストールするには、以下に示す 64 ビット D
 @z
 
 @x
-- Debian Bookworm 12 (stable)
-- Debian Bullseye 11 (oldstable)
+- Debian Trixie 13 (stable)
+- Debian Bookworm 12 (oldstable)
+- Debian Bullseye 11 (oldoldstable)
 @y
-- Debian Bookworm 12 (stable)
-- Debian Bullseye 11 (oldstable)
+- Debian Trixie 13 (stable)
+- Debian Bookworm 12 (oldstable)
+- Debian Bullseye 11 (oldoldstable)
 @z
 
 @x

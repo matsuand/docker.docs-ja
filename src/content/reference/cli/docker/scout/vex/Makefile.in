@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/_vendor/github.com/docker/scout-cli/docs
+subdir = src/content/reference/cli/docker/scout/vex
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -120,7 +120,7 @@ am__can_run_installinfo = \
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/main.mk
+	$(top_srcdir)/build-aux/copy.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -237,83 +237,16 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-bases = \
-	docker_scout.yaml                         \
-	docker_scout_attestation.yaml             \
-	docker_scout_attestation_add.yaml         \
-	docker_scout_attestation_get.yaml         \
-	docker_scout_attestation_list.yaml        \
-	docker_scout_cache.yaml                   \
-	docker_scout_cache_df.yaml                \
-	docker_scout_cache_prune.yaml             \
-	docker_scout_compare.yaml                 \
-	docker_scout_config.yaml                  \
-	docker_scout_cves.yaml                    \
-	docker_scout_docker-cli-plugin-hooks.yaml \
-	docker_scout_enroll.yaml                  \
-	docker_scout_environment.yaml             \
-	docker_scout_help.yaml                    \
-	docker_scout_integration.yaml             \
-	docker_scout_integration_configure.yaml   \
-	docker_scout_integration_delete.yaml      \
-	docker_scout_integration_list.yaml        \
-	docker_scout_policy.yaml                  \
-	docker_scout_push.yaml                    \
-	docker_scout_quickview.yaml               \
-	docker_scout_recommendations.yaml         \
-	docker_scout_repo.yaml                    \
-	docker_scout_repo_disable.yaml            \
-	docker_scout_repo_enable.yaml             \
-	docker_scout_repo_list.yaml               \
-	docker_scout_sbom.yaml                    \
-	docker_scout_stream.yaml                  \
-	docker_scout_version.yaml                 \
-	docker_scout_vex.yaml                     \
-	docker_scout_vex_get.yaml                 \
-	docker_scout_watch.yaml                   \
-	scout.md                                  \
-	scout_attestation.md                      \
-	scout_attestation_add.md                  \
-	scout_attestation_get.md                  \
-	scout_attestation_list.md                 \
-	scout_cache.md                            \
-	scout_cache_df.md                         \
-	scout_cache_prune.md                      \
-	scout_compare.md                          \
-	scout_config.md                           \
-	scout_cves.md                             \
-	scout_docker-cli-plugin-hooks.md          \
-	scout_enroll.md                           \
-	scout_environment.md                      \
-	scout_help.md                             \
-	scout_integration.md                      \
-	scout_integration_configure.md            \
-	scout_integration_delete.md               \
-	scout_integration_list.md                 \
-	scout_policy.md                           \
-	scout_push.md                             \
-	scout_quickview.md                        \
-	scout_recommendations.md                  \
-	scout_repo.md                             \
-	scout_repo_disable.md                     \
-	scout_repo_enable.md                      \
-	scout_repo_list.md                        \
-	scout_sbom.md                             \
-	scout_stream.md                           \
-	scout_version.md                          \
-	scout_vex.md                              \
-	scout_vex_get.md                          \
-	scout_watch.md
+copyfiles = \
+	_index.md  \
+	get.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
-changes = $(bases:=.ch) # change files
-transes = $(bases)      # translated files
-EXTRA_DIST = $(changes)
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -322,9 +255,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/_vendor/github.com/docker/scout-cli/docs/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/reference/cli/docker/scout/vex/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/_vendor/github.com/docker/scout-cli/docs/Makefile
+	  $(AUTOMAKE) --foreign src/content/reference/cli/docker/scout/vex/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -333,7 +266,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -506,22 +439,11 @@ ctie:
 	fi
 
 .PHONY: all
-all: $(transes)
+all: $(copyfiles)
 
-submakename ?= Makefile.sub
-
--include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
-
-@MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
-@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
-@MAINT@	@if test ! -f $@; then \
-@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
-@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$||"` $@; \
-@MAINT@	fi
+-include copyfiles.sub
+copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

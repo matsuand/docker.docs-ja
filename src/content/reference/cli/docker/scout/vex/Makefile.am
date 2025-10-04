@@ -3,10 +3,8 @@
 ##
 
 copyfiles = \
-	_index.md \
-	add.md    \
-	get.md    \
-	list.md
+	_index.md  \
+	get.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

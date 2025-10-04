@@ -341,6 +341,7 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/scout/cache/Makefile
 	src/content/reference/cli/docker/scout/integration/Makefile
 	src/content/reference/cli/docker/scout/repo/Makefile
+	src/content/reference/cli/docker/scout/vex/Makefile
 	src/content/reference/cli/docker/secret/Makefile
 	src/content/reference/cli/docker/service/Makefile
 	src/content/reference/cli/docker/stack/Makefile

@@ -2,11 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-short: Manage attestations on image indexes
-long: Manage attestations on image indexes
+command: docker scout attestation
+aliases: docker scout attestation, docker scout attest
+short: Manage attestations on images
+long: Manage attestations on images
 @y
-short: Manage attestations on image indexes
-long: Manage attestations on image indexes
+command: docker scout attestation
+aliases: docker scout attestation, docker scout attest
+short: Manage attestations on images
+long: Manage attestations on images
 @z
 
 @x debug

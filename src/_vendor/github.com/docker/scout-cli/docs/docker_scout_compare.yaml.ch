@@ -145,6 +145,14 @@ plink: docker_scout.yaml
       description: Filter out CVEs introduced from base image
 @z
 
+@x ignore-suppressed
+      description: |
+        Filter CVEs found in Scout exceptions based on the specified exception scope
+@y
+      description: |
+        Filter CVEs found in Scout exceptions based on the specified exception scope
+@z
+
 @x ignore-unchanged
       description: Filter out unchanged packages
 @y
@@ -189,6 +197,12 @@ plink: docker_scout.yaml
       description: Filter to unfixed CVEs
 @y
       description: Filter to unfixed CVEs
+@z
+
+@x only-vex-affected
+      description: Filter CVEs by VEX statements with status not affected
+@y
+      description: Filter CVEs by VEX statements with status not affected
 @z
 
 @x org
@@ -251,6 +265,24 @@ plink: docker_scout.yaml
       description: Name of stream to compare to
 @y
       description: Name of stream to compare to
+@z
+
+@x vex
+      description: Apply VEX statements to filter CVEs
+@y
+      description: Apply VEX statements to filter CVEs
+@z
+
+@x  vex-author
+      description: List of VEX statement authors to accept
+@y
+      description: List of VEX statement authors to accept
+@z
+
+@x vex-location
+      description: File location of directory or file containing VEX statements
+@y
+      description: File location of directory or file containing VEX statements
 @z
 
 % inherited_options:

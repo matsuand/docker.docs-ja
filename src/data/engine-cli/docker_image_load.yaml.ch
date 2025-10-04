@@ -10,6 +10,13 @@ long: |-
     bzip2, xz or zstd) from a file or STDIN. It restores both images and tags.
 usage: docker image load [OPTIONS]
 @y
+command: docker image load
+aliases: docker image load, docker load
+short: Load an image from a tar archive or STDIN
+long: |-
+    Load an image or repository from a tar archive (even if compressed with gzip,
+    bzip2, xz or zstd) from a file or STDIN. It restores both images and tags.
+usage: docker image load [OPTIONS]
 @z
 
 % options:
@@ -17,17 +24,21 @@ usage: docker image load [OPTIONS]
 @x input
       description: Read from tar archive file, instead of STDIN
 @y
+      description: Read from tar archive file, instead of STDIN
 @z
 
 @x platform
       description: |
         Load only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
 @y
+      description: |
+        Load only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
 @z
 
 @x quiet
       description: Suppress the load output
 @y
+      description: Suppress the load output
 @z
 
 % inherited_options:
@@ -35,6 +46,7 @@ usage: docker image load [OPTIONS]
 @x help
       description: Print usage
 @y
+      description: Print usage
 @z
 
 @x

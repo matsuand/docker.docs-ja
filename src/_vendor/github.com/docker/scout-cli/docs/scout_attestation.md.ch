@@ -8,11 +8,9 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
-Manage attestations on image indexes
+Manage attestations on images
 @y
-<!---MARKER_GEN_START-->
-Manage attestations on image indexes
+Manage attestations on images
 @z
 
 @x
@@ -34,17 +32,15 @@ Manage attestations on image indexes
 @z
 
 @x
-| Name                              | Description              |
-|:----------------------------------|:-------------------------|
-| [`add`](scout_attestation_add.md) | Add attestation to image |
+| Name                                | Description                 |
+|:------------------------------------|:----------------------------|
+| [`add`](scout_attestation_add.md)   | Add attestation to image    |
+| [`get`](scout_attestation_get.md)   | Get attestation for image   |
+| [`list`](scout_attestation_list.md) | List attestations for image |
 @y
-| Name                              | Description              |
-|:----------------------------------|:-------------------------|
-| [`add`](scout_attestation_add.md) | Add attestation to image |
-@z
-
-@x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
+| Name                                | Description                 |
+|:------------------------------------|:----------------------------|
+| [`add`](scout_attestation_add.md)   | Add attestation to image    |
+| [`get`](scout_attestation_get.md)   | Get attestation for image   |
+| [`list`](scout_attestation_list.md) | List attestations for image |
 @z

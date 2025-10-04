@@ -34,7 +34,7 @@ Command line tool for Docker Scout
 @x
 | Name                                                          | Description                                                                                 |
 |:--------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-| [`attestation`](scout_attestation.md)                         | Manage attestations on image indexes                                                        |
+| [`attestation`](scout_attestation.md)                         | Manage attestations on images                                                               |
 | [`cache`](scout_cache.md)                                     | Manage Docker Scout cache and temporary files                                               |
 | [`compare`](scout_compare.md)                                 | Compare two images and display differences (experimental)                                   |
 | [`config`](scout_config.md)                                   | Manage Docker Scout configuration                                                           |
@@ -52,11 +52,12 @@ Command line tool for Docker Scout
 | [`sbom`](scout_sbom.md)                                       | Generate or display SBOM of an image                                                        |
 | [`stream`](scout_stream.md)                                   | Manage streams (experimental)                                                               |
 | [`version`](scout_version.md)                                 | Show Docker Scout version information                                                       |
+| [`vex`](scout_vex.md)                                         | Manage VEX attestations on images                                                           |
 | [`watch`](scout_watch.md)                                     | Watch repositories in a registry and push images and indexes to Docker Scout (experimental) |
 @y
 | Name                                                          | Description                                                                                 |
 |:--------------------------------------------------------------|:--------------------------------------------------------------------------------------------|
-| [`attestation`](scout_attestation.md)                         | Manage attestations on image indexes                                                        |
+| [`attestation`](scout_attestation.md)                         | Manage attestations on images                                                               |
 | [`cache`](scout_cache.md)                                     | Manage Docker Scout cache and temporary files                                               |
 | [`compare`](scout_compare.md)                                 | Compare two images and display differences (experimental)                                   |
 | [`config`](scout_config.md)                                   | Manage Docker Scout configuration                                                           |
@@ -74,11 +75,6 @@ Command line tool for Docker Scout
 | [`sbom`](scout_sbom.md)                                       | Generate or display SBOM of an image                                                        |
 | [`stream`](scout_stream.md)                                   | Manage streams (experimental)                                                               |
 | [`version`](scout_version.md)                                 | Show Docker Scout version information                                                       |
+| [`vex`](scout_vex.md)                                         | Manage VEX attestations on images                                                           |
 | [`watch`](scout_watch.md)                                     | Watch repositories in a registry and push images and indexes to Docker Scout (experimental) |
-@z
-
-@x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
 @z

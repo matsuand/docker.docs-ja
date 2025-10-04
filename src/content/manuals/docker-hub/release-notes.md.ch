@@ -7,6 +7,8 @@
 title: Docker Hub release notes
 linkTitle: Release notes
 @y
+title: Docker Hub release notes
+linkTitle: Release notes
 @z
 
 @x

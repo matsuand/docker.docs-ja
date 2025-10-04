@@ -157,6 +157,26 @@ usage: docker scout cves [OPTIONS] [IMAGE|DIRECTORY|ARCHIVE]
       description: Filter out CVEs introduced from base image
 @z
 
+@x ignore-suppressed
+      description: |
+        Filter CVEs found in Scout exceptions based on the specified exception scope
+@y
+      description: |
+        Filter CVEs found in Scout exceptions based on the specified exception scope
+@z
+
+@x local
+      description: Local mode
+@y
+      description: Local mode
+@z
+
+@x local-vulndb
+      description: Local vulnerability database
+@y
+      description: Local vulnerability database
+@z
+
 @x locations
       description: Print package locations including file paths and layer diff_id
 @y

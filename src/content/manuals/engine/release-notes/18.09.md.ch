@@ -950,6 +950,7 @@ supported at this time, but support will be removed in a future release.
 @x
 For more information on the list of deprecated flags and APIs, have a look at the [deprecation information](/engine/deprecated/) where you can find the target removal dates.
 @y
+For more information on the list of deprecated flags and APIs, have a look at the [deprecation information](__SUBDIR__/engine/deprecated/) where you can find the target removal dates.
 @z
 
 @x

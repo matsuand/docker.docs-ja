@@ -26,6 +26,30 @@ and the `docker/scout-action` [GitHub Action](https://github.com/docker/scout-ac
 @z
 
 @x
+## 1.18.4
+@y
+## 1.18.4
+@z
+
+@x
+{{< release-date date="2025-10-02" >}}
+@y
+{{< release-date date="2025-10-02" >}}
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- VEX and SPDX fixes.
+@y
+- VEX and SPDX fixes.
+@z
+
+@x
 ## 1.18.3
 @y
 ## 1.18.3

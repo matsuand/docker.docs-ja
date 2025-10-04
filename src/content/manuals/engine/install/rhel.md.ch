@@ -52,9 +52,11 @@ RHEL versions:
 @x
 - RHEL 8
 - RHEL 9
+- RHEL 10
 @y
 - RHEL 8
 - RHEL 9
+- RHEL 10
 @z
 
 @x

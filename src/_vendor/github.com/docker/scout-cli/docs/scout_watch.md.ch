@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 # docker scout watch
 @y
@@ -8,10 +10,8 @@
 @z
 
 @x
-<!---MARKER_GEN_START-->
 Watch repositories in a registry and push images and indexes to Docker Scout (experimental)
 @y
-<!---MARKER_GEN_START-->
 Watch repositories in a registry and push images and indexes to Docker Scout (experimental)
 @z
 
@@ -50,12 +50,6 @@ Watch repositories in a registry and push images and indexes to Docker Scout (ex
 @z
 
 @x
-<!---MARKER_GEN_END-->
-@y
-<!---MARKER_GEN_END-->
-@z
-
-@x
 ## Description
 @y
 ## Description
@@ -81,15 +75,9 @@ and pushes images or analysis results to Docker Scout.
 ### Watch for new images from two repositories and push them
 @z
 
-@x
-```console
-$ docker scout watch --org my-org --repository registry-1.example.com/repo-1 --repository registry-2.example.com/repo-2
-```
-@y
-```console
-$ docker scout watch --org my-org --repository registry-1.example.com/repo-1 --repository registry-2.example.com/repo-2
-```
-@z
+% snip command...
+
+% snip command...
 
 @x
 ### Only push images with a specific tag
@@ -97,15 +85,7 @@ $ docker scout watch --org my-org --repository registry-1.example.com/repo-1 --r
 ### Only push images with a specific tag
 @z
 
-@x
-```console
-$ docker scout watch --org my-org --repository registry.example.com/my-service --tag latest
-```
-@y
-```console
-$ docker scout watch --org my-org --repository registry.example.com/my-service --tag latest
-```
-@z
+% snip command...
 
 @x
 ### Watch all repositories of a registry
@@ -113,15 +93,7 @@ $ docker scout watch --org my-org --repository registry.example.com/my-service -
 ### Watch all repositories of a registry
 @z
 
-@x
-```console
-$ docker scout watch --org my-org --registry registry.example.com
-```
-@y
-```console
-$ docker scout watch --org my-org --registry registry.example.com
-```
-@z
+% snip command...
 
 @x
 ### Push all images and not just the new ones
@@ -129,12 +101,4 @@ $ docker scout watch --org my-org --registry registry.example.com
 ### Push all images and not just the new ones
 @z
 
-@x
-```console
-$ docker scout watch--org my-org --repository registry.example.com/my-service --all-images
-```
-@y
-```console
-$ docker scout watch--org my-org --repository registry.example.com/my-service --all-images
-```
-@z
+% snip command...
