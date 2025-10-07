@@ -47,9 +47,11 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/mcp-gateway/docs/Makefile
 	src/_vendor/github.com/docker/mcp-gateway/docs/generator/Makefile
 	src/_vendor/github.com/docker/mcp-gateway/docs/generator/reference/Makefile
-	src/_vendor/github.com/docker/model-cli/Makefile
-	src/_vendor/github.com/docker/model-cli/docs/Makefile
-	src/_vendor/github.com/docker/model-cli/docs/reference/Makefile
+	src/_vendor/github.com/docker/model-runner/Makefile
+	src/_vendor/github.com/docker/model-runner/cmd/Makefile
+	src/_vendor/github.com/docker/model-runner/cmd/cli/Makefile
+	src/_vendor/github.com/docker/model-runner/cmd/cli/docs/Makefile
+	src/_vendor/github.com/docker/model-runner/cmd/cli/docs/reference/Makefile
 	src/_vendor/github.com/docker/scout-cli/Makefile
 	src/_vendor/github.com/docker/scout-cli/docs/Makefile
 	src/_vendor/github.com/moby/Makefile
@@ -333,6 +335,7 @@ AC_CONFIG_FILES([
  	src/content/reference/cli/docker/mcp/secrets/Makefile
  	src/content/reference/cli/docker/mcp/server/Makefile
  	src/content/reference/cli/docker/mcp/tools/Makefile
+	src/content/reference/cli/docker/model/Makefile
 	src/content/reference/cli/docker/network/Makefile
 	src/content/reference/cli/docker/node/Makefile
 	src/content/reference/cli/docker/plugin/Makefile

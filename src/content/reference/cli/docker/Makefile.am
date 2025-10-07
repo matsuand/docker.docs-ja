@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = builder buildx checkpoint compose config container context \
-	desktop image manifest mcp network node plugin scout secret  \
+SUBDIRS = builder buildx checkpoint compose config container context      \
+	desktop image manifest mcp model network node plugin scout secret \
 	service stack swarm system trust volume
 
 bases = \

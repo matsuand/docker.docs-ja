@@ -5096,12 +5096,6 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-{{< desktop-install win=true version="4.24.1" build_path="/123237/" >}}
-@y
-{{< desktop-install win=true version="4.24.1" build_path="/123237/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements

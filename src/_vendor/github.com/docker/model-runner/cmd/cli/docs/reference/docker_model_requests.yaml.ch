@@ -2,38 +2,38 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model requests
+short: Fetch requests+responses from Docker Model Runner
+long: Fetch requests+responses from Docker Model Runner
+usage: docker model requests [OPTIONS]
 pname: docker model
 plink: docker_model.yaml
 options:
-    - option: do-not-track
+    - option: follow
+      shorthand: f
       value_type: bool
       default_value: "false"
-      description: Do not track models usage in Docker Model Runner
+      description: Follow requests stream
       deprecated: false
       hidden: false
       experimental: false
       experimentalcli: false
       kubernetes: false
       swarm: false
-    - option: gpu
+    - option: include-existing
+      value_type: bool
+      default_value: "false"
+      description: |
+        Include existing requests when starting to follow (only available with --follow)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: model
       value_type: string
-      default_value: auto
-      description: Specify GPU support (none|auto|cuda)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: port
-      value_type: uint16
-      default_value: "12434"
-      description: Docker container port for Docker Model Runner
+      description: Specify the model to filter requests
       deprecated: false
       hidden: false
       experimental: false
@@ -47,38 +47,38 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model requests
+short: Fetch requests+responses from Docker Model Runner
+long: Fetch requests+responses from Docker Model Runner
+usage: docker model requests [OPTIONS]
 pname: docker model
 plink: docker_model.yaml
 options:
-    - option: do-not-track
+    - option: follow
+      shorthand: f
       value_type: bool
       default_value: "false"
-      description: Do not track models usage in Docker Model Runner
+      description: Follow requests stream
       deprecated: false
       hidden: false
       experimental: false
       experimentalcli: false
       kubernetes: false
       swarm: false
-    - option: gpu
+    - option: include-existing
+      value_type: bool
+      default_value: "false"
+      description: |
+        Include existing requests when starting to follow (only available with --follow)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: model
       value_type: string
-      default_value: auto
-      description: Specify GPU support (none|auto|cuda)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: port
-      value_type: uint16
-      default_value: "12434"
-      description: Docker container port for Docker Model Runner
+      description: Specify the model to filter requests
       deprecated: false
       hidden: false
       experimental: false

@@ -18,6 +18,7 @@ bases = \
 	docker_model_ps.yaml               \
 	docker_model_pull.yaml             \
 	docker_model_push.yaml             \
+	docker_model_requests.yaml         \
 	docker_model_rm.yaml               \
 	docker_model_run.yaml              \
 	docker_model_status.yaml           \
@@ -36,6 +37,7 @@ bases = \
 	model_ps.md                        \
 	model_pull.md                      \
 	model_push.md                      \
+	model_requests.md                  \
 	model_rm.md                        \
 	model_run.md                       \
 	model_status.md                    \

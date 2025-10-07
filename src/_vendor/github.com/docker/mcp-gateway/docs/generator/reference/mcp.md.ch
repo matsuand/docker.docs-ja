@@ -37,7 +37,7 @@ Manage MCP servers and clients
 | Name                        | Description                   |
 |:----------------------------|:------------------------------|
 | [`catalog`](mcp_catalog.md) | Manage the catalog            |
-| [`client`](mcp_client.md)   | Manage MCP clients            |
+| [`client`](mcp_client.md)   | MCP クライアントの管理        |
 | [`config`](mcp_config.md)   | Manage the configuration      |
 | [`gateway`](mcp_gateway.md) | Manage the MCP Server gateway |
 | [`policy`](mcp_policy.md)   | Manage secret policies        |

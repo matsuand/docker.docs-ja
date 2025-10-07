@@ -5,12 +5,14 @@
 
 @x
 title: Build release notes
-weight: 120
+@y
+title: Build release notes
+@z
+
+@x
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
 @y
-title: Build release notes
-weight: 120
 description: Learn about the new features, bug fixes, and breaking changes for the newest Buildx release
 keywords: build, buildx, buildkit, release notes
 @z
@@ -21,6 +23,50 @@ fixes in [Docker Buildx](https://github.com/docker/buildx).
 @y
 This page contains information about the new features, improvements, and bug
 fixes in [Docker Buildx](https://github.com/docker/buildx).
+@z
+
+@x
+## 0.29.1
+@y
+## 0.29.1
+@z
+
+@x
+{{< release-date date="2025-10-03" >}}
+@y
+{{< release-date date="2025-10-03" >}}
+@z
+
+@x
+The full release notes for this release are available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.29.1).
+@y
+The full release notes for this release are available
+[on GitHub](https://github.com/docker/buildx/releases/tag/v0.29.1).
+@z
+
+@x
+### Enhancements
+@y
+### Enhancements
+@z
+
+@x
+- `imagetools`: Silence warning for empty-type mediatype used in artifacts. [docker/buildx#3448](https://github.com/docker/buildx/pull/3448)
+@y
+- `imagetools`: Silence warning for empty-type mediatype used in artifacts. [docker/buildx#3448](https://github.com/docker/buildx/pull/3448)
+@z
+
+@x
+### Bug fixes
+@y
+### Bug fixes
+@z
+
+@x
+- `imagetools`: Fix possible chain copy on create. [docker/buildx#3447](https://github.com/docker/buildx/pull/3447)
+@y
+- `imagetools`: Fix possible chain copy on create. [docker/buildx#3447](https://github.com/docker/buildx/pull/3447)
 @z
 
 @x

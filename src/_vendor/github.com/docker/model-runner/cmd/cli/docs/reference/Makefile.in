@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/_vendor/github.com/docker/model-cli/docs/reference
+subdir = src/_vendor/github.com/docker/model-runner/cmd/cli/docs/reference
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -253,6 +253,7 @@ bases = \
 	docker_model_ps.yaml               \
 	docker_model_pull.yaml             \
 	docker_model_push.yaml             \
+	docker_model_requests.yaml         \
 	docker_model_rm.yaml               \
 	docker_model_run.yaml              \
 	docker_model_status.yaml           \
@@ -271,6 +272,7 @@ bases = \
 	model_ps.md                        \
 	model_pull.md                      \
 	model_push.md                      \
+	model_requests.md                  \
 	model_rm.md                        \
 	model_run.md                       \
 	model_status.md                    \
@@ -296,9 +298,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/_vendor/github.com/docker/model-cli/docs/reference/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/_vendor/github.com/docker/model-runner/cmd/cli/docs/reference/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/_vendor/github.com/docker/model-cli/docs/reference/Makefile
+	  $(AUTOMAKE) --foreign src/_vendor/github.com/docker/model-runner/cmd/cli/docs/reference/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
