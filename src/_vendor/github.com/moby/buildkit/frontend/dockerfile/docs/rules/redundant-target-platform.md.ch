@@ -8,13 +8,13 @@ description: >-
 @y
 title: RedundantTargetPlatform
 description: >-
-  Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
+  FROM において定義済み $TARGETPLATFORM をプラットフォーム指定することは、デフォルト動作であって冗長です。
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,12 +25,13 @@ Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is t
 ```text
 Setting platform to predefined $TARGETPLATFORM in FROM is redundant as this is the default behavior
 ```
+(訳： FROM において定義済み $TARGETPLATFORM をプラットフォーム指定することは、デフォルト動作であって冗長です)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
@@ -38,49 +39,29 @@ A custom platform can be used for a base image. The default platform is the
 same platform as the target output so setting the platform to `$TARGETPLATFORM`
 is redundant and unnecessary.
 @y
-A custom platform can be used for a base image. The default platform is the
-same platform as the target output so setting the platform to `$TARGETPLATFORM`
-is redundant and unnecessary.
+ベースイメージの指定においてはプラットフォームをカスタマイズすることができます。
+デフォルトのプラットフォームは出力ターゲットと同じプラットフォームです。
+したがってプラットフォームとして `$TARGETPLATFORM` を指定することは冗長であり必要ありません。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: this usage of `--platform` is redundant since `$TARGETPLATFORM` is the default.
 @y
-❌ Bad: this usage of `--platform` is redundant since `$TARGETPLATFORM` is the default.
+❌ 不可: 以下の `--platform` の使い方は `$TARGETPLATFORM` がデフォルトであるため冗長です。
 @z
 
-@x
-```dockerfile
-FROM --platform=$TARGETPLATFORM alpine AS builder
-RUN apk add --no-cache git
-```
-@y
-```dockerfile
-FROM --platform=$TARGETPLATFORM alpine AS builder
-RUN apk add --no-cache git
-```
-@z
+% snip code...
 
 @x
 ✅ Good: omit the `--platform` argument.
 @y
-✅ Good: omit the `--platform` argument.
+✅ 可: `--platform` 引数を省略しました。
 @z
 
-@x
-```dockerfile
-FROM alpine AS builder
-RUN apk add --no-cache git
-```
-@y
-```dockerfile
-FROM alpine AS builder
-RUN apk add --no-cache git
-```
-@z
+% snip code...

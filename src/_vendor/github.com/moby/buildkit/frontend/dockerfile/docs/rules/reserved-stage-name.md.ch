@@ -8,13 +8,13 @@ description: >-
 @y
 title: ReservedStageName
 description: >-
-  Reserved words should not be used as stage names
+  予約語はステージ名として用いることはできません。
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,20 +25,21 @@ description: >-
 ```text
 'scratch' is reserved and should not be used as a stage name
 ```
+(訳： 'scratch' は予約語であるためステージ名として用いることはできません)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
 Reserved words should not be used as names for stages in multi-stage builds.
 The reserved words are:
 @y
-Reserved words should not be used as names for stages in multi-stage builds.
-The reserved words are:
+マルチステージビルドにおけるステージ名に予約語を用いることはできません。
+予約語とは以下のものです。
 @z
 
 @x
@@ -52,39 +53,21 @@ The reserved words are:
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: `scratch` and `context` are reserved names.
 @y
-❌ Bad: `scratch` and `context` are reserved names.
+❌ 不可: `scratch` と `context` は予約語です。
 @z
 
-@x
-```dockerfile
-FROM alpine AS scratch
-FROM alpine AS context
-```
-@y
-```dockerfile
-FROM alpine AS scratch
-FROM alpine AS context
-```
-@z
+% snip code...
 
 @x
 ✅ Good: the stage name `builder` is not reserved.
 @y
-✅ Good: the stage name `builder` is not reserved.
+✅ Good: ステージ名 `builder` は予約語ではありません。
 @z
 
-@x
-```dockerfile
-FROM alpine AS builder
-```
-@y
-```dockerfile
-FROM alpine AS builder
-```
-@z
+% snip code...

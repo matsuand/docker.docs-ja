@@ -8,13 +8,13 @@ description: >-
 @y
 title: InvalidDefaultArgInFrom
 description: >-
-  Default value for global ARG results in an empty or invalid base image name
+  グローバルな ARG のデフォルト値によっては、ベースイメージ名が空か不適切なものになります
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,94 +25,56 @@ Using the global ARGs with default values should produce a valid build.
 ```text
 Using the global ARGs with default values should produce a valid build.
 ```
+(訳： グローバルな ARG にデフォルト値を設定していれば、適正なビルドが実現できます)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
 An `ARG` used in an image reference should be valid when no build arguments are used. An image build should not require `--build-arg` to be used to produce a valid build.
 @y
-An `ARG` used in an image reference should be valid when no build arguments are used. An image build should not require `--build-arg` to be used to produce a valid build.
+イメージ参照を行うような `ARG` においては、ビルド引数が与えられなくてもその参照が適正でなければなりません。
+イメージビルドは `--build-arg` がなくても、適正なビルドができなければなりません。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: don't rely on an ARG being set for an image reference to be valid
 @y
-❌ Bad: don't rely on an ARG being set for an image reference to be valid
+❌ 不可: イメージ参照を妥当なものとするため、ARG が設定されていることを前提にしてはいけません。
 @z
 
-@x
-```dockerfile
-ARG TAG
-FROM busybox:${TAG}
-```
-@y
-```dockerfile
-ARG TAG
-FROM busybox:${TAG}
-```
-@z
+% snip code...
 
 @x
 ✅ Good: include a default for the ARG
 @y
-✅ Good: include a default for the ARG
+✅ 可: ARG のデフォルト値が設定されています。
 @z
 
-@x
-```dockerfile
-ARG TAG=latest
-FROM busybox:${TAG}
-```
-@y
-```dockerfile
-ARG TAG=latest
-FROM busybox:${TAG}
-```
-@z
+% snip code...
 
 @x
 ✅ Good: ARG can be empty if the image would be valid with it empty
 @y
-✅ Good: ARG can be empty if the image would be valid with it empty
+✅ 可: ARG が空であってもイメージ名が妥当であれば ARG は空になってもかまいません。
 @z
 
-@x
-```dockerfile
-ARG VARIANT
-FROM busybox:stable${VARIANT}
-```
-@y
-```dockerfile
-ARG VARIANT
-FROM busybox:stable${VARIANT}
-```
-@z
+% snip code...
 
 @x
 ✅ Good: Use a default value if the build arg is not present
 @y
-✅ Good: Use a default value if the build arg is not present
+✅ 可: ビルド引数が存在しなかった場合のデフォルト値が設定されています。
 @z
 
-@x
-```dockerfile
-ARG TAG
-FROM alpine:${TAG:-3.14}
-```
-@y
-```dockerfile
-ARG TAG
-FROM alpine:${TAG:-3.14}
-```
-@z
+% snip code...

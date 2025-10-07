@@ -8,13 +8,13 @@ description: >-
 @y
 title: MultipleInstructionsDisallowed
 description: >-
-  Multiple instructions of the same type should not be used in the same stage
+  一つのステージ内では同一タイプの命令を複数用いることはできません。
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,12 +25,13 @@ Multiple CMD instructions should not be used in the same stage because only the 
 ```text
 Multiple CMD instructions should not be used in the same stage because only the last one will be used
 ```
+(訳： ステージ内に CMD 命令を使用しても最後の一つしか評価されません)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
@@ -38,85 +39,47 @@ If you have multiple `CMD`, `HEALTHCHECK`, or `ENTRYPOINT` instructions in your
 Dockerfile, only the last occurrence is used. An image can only ever have one
 `CMD`, `HEALTHCHECK`, and `ENTRYPOINT`.
 @y
-If you have multiple `CMD`, `HEALTHCHECK`, or `ENTRYPOINT` instructions in your
-Dockerfile, only the last occurrence is used. An image can only ever have one
-`CMD`, `HEALTHCHECK`, and `ENTRYPOINT`.
+Dockerfile 内に `CMD`、`HEALTHCHECK`、`ENTRYPOINT` という命令を複数記述したとしても、最後のものしか評価されません。
+一つのイメージに記述する `CMD`、`HEALTHCHECK`、`ENTRYPOINT`は一つだけです。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: Duplicate instructions.
 @y
-❌ Bad: Duplicate instructions.
+❌ 不可: 命令が重複しています。
 @z
 
-@x
-```dockerfile
-FROM alpine
-ENTRYPOINT ["echo", "Hello, Norway!"]
-ENTRYPOINT ["echo", "Hello, Sweden!"]
+@x within code
 # Only "Hello, Sweden!" will be printed
-```
 @y
-```dockerfile
-FROM alpine
-ENTRYPOINT ["echo", "Hello, Norway!"]
-ENTRYPOINT ["echo", "Hello, Sweden!"]
-# Only "Hello, Sweden!" will be printed
-```
+# "Hello, Sweden!" だけが出力されます。
 @z
 
 @x
 ✅ Good: only one `ENTRYPOINT` instruction.
 @y
-✅ Good: only one `ENTRYPOINT` instruction.
+✅ 可: `ENTRYPOINT` 命令は一つだけです。
 @z
 
-@x
-```dockerfile
-FROM alpine
-ENTRYPOINT ["echo", "Hello, Norway!\nHello, Sweden!"]
-```
-@y
-```dockerfile
-FROM alpine
-ENTRYPOINT ["echo", "Hello, Norway!\nHello, Sweden!"]
-```
-@z
+% snip code...
 
 @x
 You can have both a regular, top-level `CMD`
 and a separate `CMD` for a `HEALTHCHECK` instruction.
 @y
-You can have both a regular, top-level `CMD`
-and a separate `CMD` for a `HEALTHCHECK` instruction.
+通常のトップレベルの `CMD` とは別に、`HEALTHCHECK` 命令内に別レベル `CMD` を記述することは可能です。
 @z
 
 @x
 ✅ Good: only one top-level `CMD` instruction.
 @y
-✅ Good: only one top-level `CMD` instruction.
+✅ 可: トップレベルの `CMD` 命令は一つだけです。
 @z
 
-@x
-```dockerfile
-FROM python:alpine
-RUN apk add curl
-HEALTHCHECK --interval=1s --timeout=3s \
-  CMD ["curl", "-f", "http://localhost:8080"]
-CMD ["python", "-m", "http.server", "8080"]
-```
-@y
-```dockerfile
-FROM python:alpine
-RUN apk add curl
-HEALTHCHECK --interval=1s --timeout=3s \
-  CMD ["curl", "-f", "http://localhost:8080"]
-CMD ["python", "-m", "http.server", "8080"]
-```
-@z
+% snip code...

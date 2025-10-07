@@ -8,13 +8,13 @@ description: >-
 @y
 title: UndefinedArgInFrom
 description: >-
-  FROM command must use declared ARGs
+  FROM コマンドで用いる ARG は宣言されていなければなりません。
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,20 +25,20 @@ FROM argument 'VARIANT' is not declared
 ```text
 FROM argument 'VARIANT' is not declared
 ```
+(訳： FROM の引数 'VARIANT' が宣言されていません)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
 This rule warns for cases where you're consuming an undefined build argument in
 `FROM` instructions.
 @y
-This rule warns for cases where you're consuming an undefined build argument in
-`FROM` instructions.
+このルールは `FROM` 命令において未定義のビルド引数が指定された場合に警告します。
 @z
 
 @x
@@ -47,90 +47,47 @@ flexibility to your build, and lets you pass arguments that overriding the base
 image of a stage. For example, you might use a build argument to specify the
 image tag:
 @y
-Interpolating build arguments in `FROM` instructions can be a good way to add
-flexibility to your build, and lets you pass arguments that overriding the base
-image of a stage. For example, you might use a build argument to specify the
-image tag:
+`FROM` 命令内にビルド引数による補間機能を用いると、ビルド処理を柔軟に行うことができます。
+つまり引数を与えることで、特定のステージにおけるベースイメージを上書きすることができます。
+たとえば、イメージタグの指定にビルド引数を用いるものとします。
 @z
 
-@x
-```dockerfile
-ARG ALPINE_VERSION=3.20
-@y
-```dockerfile
-ARG ALPINE_VERSION=3.20
-@z
-
-@x
-FROM alpine:${ALPINE_VERSION}
-```
-@y
-FROM alpine:${ALPINE_VERSION}
-```
-@z
+% snip command...
 
 @x
 This makes it possible to run the build with a different `alpine` version by
 specifying a build argument:
 @y
-This makes it possible to run the build with a different `alpine` version by
-specifying a build argument:
+このようにするとビルドを実行する際に、ビルド引数を指定することによって `alpine` の異なるバージョンをビルドできるようになります。
 @z
 
-@x
-```console
-$ docker buildx build --build-arg ALPINE_VERSION=edge .
-```
-@y
-```console
-$ docker buildx build --build-arg ALPINE_VERSION=edge .
-```
-@z
+% snip command...
 
 @x
 This check also tries to detect and warn when a `FROM` instruction reference
 miss-spelled built-in build arguments, like `BUILDPLATFORM`.
 @y
-This check also tries to detect and warn when a `FROM` instruction reference
-miss-spelled built-in build arguments, like `BUILDPLATFORM`.
+このチェックは同時に `FROM` 命令がスペル誤りによって、たとえば `BUILDPLATFORM` のような組み込みのビルド引数を参照していないかを確認し警告を出します。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: the `VARIANT` build argument is undefined.
 @y
-❌ Bad: the `VARIANT` build argument is undefined.
+❌ 不可: ビルド引数 `VARIANT` が定義されていません。
 @z
 
-@x
-```dockerfile
-FROM node:22${VARIANT} AS jsbuilder
-```
-@y
-```dockerfile
-FROM node:22${VARIANT} AS jsbuilder
-```
-@z
+% snip code...
 
 @x
 ✅ Good: the `VARIANT` build argument is defined.
 @y
-✅ Good: the `VARIANT` build argument is defined.
+✅ 可: ビルド引数 `VARIANT` が定義されています。
 @z
 
-@x
-```dockerfile
-ARG VARIANT="-alpine3.20"
-FROM node:22${VARIANT} AS jsbuilder
-```
-@y
-```dockerfile
-ARG VARIANT="-alpine3.20"
-FROM node:22${VARIANT} AS jsbuilder
-```
-@z
+% snip code...

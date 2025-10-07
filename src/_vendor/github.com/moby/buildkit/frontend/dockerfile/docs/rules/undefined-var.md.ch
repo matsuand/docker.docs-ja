@@ -8,13 +8,13 @@ description: >-
 @y
 title: UndefinedVar
 description: >-
-  Variables should be defined before their use
+  変数は利用する前に定義しなければなりません
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,12 +25,13 @@ Usage of undefined variable '$foo'
 ```text
 Usage of undefined variable '$foo'
 ```
+(訳： 定義されていない変数 '$foo' が使われています)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
@@ -39,10 +40,9 @@ declared before being used. While undeclared variables might not cause an
 immediate build failure, they can lead to unexpected behavior or errors later
 in the build process.
 @y
-This check ensures that environment variables and build arguments are correctly
-declared before being used. While undeclared variables might not cause an
-immediate build failure, they can lead to unexpected behavior or errors later
-in the build process.
+このチェックは、環境変数やビルド引数が利用される前に正しく宣言されていることを確認します。
+変数が宣言されていなかったとしても、即座にビルドエラーになることはないかもしれません。
+しかしビルド処理のどこかにおいて、予期しない動作を引き起こす可能性があります。
 @z
 
 @x
@@ -51,36 +51,24 @@ This check does not evaluate undefined variables for `RUN`, `CMD`, and
 That's because when you use shell form, variables are resolved by the command
 shell.
 @y
-This check does not evaluate undefined variables for `RUN`, `CMD`, and
-`ENTRYPOINT` instructions where you use the [shell form](https://docs.docker.com/reference/dockerfile/#shell-form).
-That's because when you use shell form, variables are resolved by the command
-shell.
+このチェックにおいては、`RUN`、`CMD`、`ENTRYPOINT` といった命令の [シェル形式](https://docs.docker.com/reference/dockerfile/#shell-form) を使った場合には、変数が未定義であったとしてもその評価はしません。
+シェル形式の場合、変数はコマンドシェルが解決するからです。
 @z
 
 @x
 It also detects common mistakes like typos in variable names. For example, in
 the following Dockerfile:
 @y
-It also detects common mistakes like typos in variable names. For example, in
-the following Dockerfile:
+またこのチェックでは変数名のタイポのような、よく引き起こすミスについてもチェックします。
+たとえば Dockerfile 内において以下のように記述したとします。
 @z
 
-@x
-```dockerfile
-FROM alpine
-ENV PATH=$PAHT:/app/bin
-```
-@y
-```dockerfile
-FROM alpine
-ENV PATH=$PAHT:/app/bin
-```
-@z
+% snip code...
 
 @x
 The check identifies that `$PAHT` is undefined and likely a typo for `$PATH`:
 @y
-The check identifies that `$PAHT` is undefined and likely a typo for `$PATH`:
+このチェックにおいて `$PAHT` は未定義であることを検出すると同時に `$PATH` のタイポであろうと予測します。
 @z
 
 @x
@@ -91,84 +79,43 @@ Usage of undefined variable '$PAHT' (did you mean $PATH?)
 ```text
 Usage of undefined variable '$PAHT' (did you mean $PATH?)
 ```
+(訳： 定義されていない変数 '$PAHT' が使われています ($PATH のことですか？) )
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: `$foo` is an undefined build argument.
 @y
-❌ Bad: `$foo` is an undefined build argument.
+❌ 不可: `$foo` は定義されていないビルド引数です。
 @z
 
-@x
-```dockerfile
-FROM alpine AS base
-COPY $foo .
-```
-@y
-```dockerfile
-FROM alpine AS base
-COPY $foo .
-```
-@z
+% snip code...
 
 @x
 ✅ Good: declaring `foo` as a build argument before attempting to access it.
 @y
-✅ Good: declaring `foo` as a build argument before attempting to access it.
+✅ 可: `foo` は変数アクセスする前に、ビルド引数として宣言しています。
 @z
 
-@x
-```dockerfile
-FROM alpine AS base
-ARG foo
-COPY $foo .
-```
-@y
-```dockerfile
-FROM alpine AS base
-ARG foo
-COPY $foo .
-```
-@z
+% snip code...
 
 @x
 ❌ Bad: `$foo` is undefined.
 @y
-❌ Bad: `$foo` is undefined.
+❌ 不可: `$foo` は定義されていません。
 @z
 
-@x
-```dockerfile
-FROM alpine AS base
-ARG VERSION=$foo
-```
-@y
-```dockerfile
-FROM alpine AS base
-ARG VERSION=$foo
-```
-@z
+% snip code...
 
 @x
 ✅ Good: the base image defines `$PYTHON_VERSION`
 @y
-✅ Good: the base image defines `$PYTHON_VERSION`
+✅ 可: ベースイメージが `$PYTHON_VERSION` を定義しています。
 @z
 
-@x
-```dockerfile
-FROM python AS base
-ARG VERSION=$PYTHON_VERSION
-```
-@y
-```dockerfile
-FROM python AS base
-ARG VERSION=$PYTHON_VERSION
-```
-@z
+% snip code...

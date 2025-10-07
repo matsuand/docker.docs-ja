@@ -10,7 +10,7 @@ Activity logs:
 @y
 Activity logs:
   subscription: [Team, Business]
-  for: Administrators
+  for: 管理者
 @z
 
 @x
@@ -20,7 +20,7 @@ Admin Console:
 @y
 Admin Console:
   subscription: [Business]
-  for: Administrators
+  for: 管理者
 @z
 
 @x
@@ -30,7 +30,7 @@ Admin orgs:
 @y
 Admin orgs:
   subscription: [Team, Business]
-  for: Administrators
+  for: 管理者
 @z
 
 @x
@@ -38,7 +38,7 @@ Air-gapped containers:
   requires: Docker Desktop [4.29.0](/manuals/desktop/release-notes.md#4290) and later
 @y
 Air-gapped containers:
-  requires: Docker Desktop [4.29.0](manuals/desktop/release-notes.md#4290) and later
+  requires: Docker Desktop [4.29.0](manuals/desktop/release-notes.md#4290) およびそれ以降
 @z
 
 @x
@@ -46,7 +46,7 @@ Allow list:
   for: Administrators
 @y
 Allow list:
-  for: Administrators
+  for: 管理者
 @z
 
 @x
@@ -54,7 +54,7 @@ Amazon S3 cache:
   availability: Experimental
 @y
 Amazon S3 cache:
-  availability: Experimental
+  availability: 試験的
 @z
 
 @x
@@ -63,8 +63,8 @@ Ask Gordon:
   requires: Docker Desktop [4.38.0](/manuals/desktop/release-notes.md#4380) or later
 @y
 Ask Gordon:
-  availability: Beta
-  requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) or later
+  availability: ベータ
+  requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) およびそれ以降
 @z
 
 @x
@@ -80,7 +80,7 @@ Azure blob:
   availability: Experimental
 @y
 Azure blob:
-  availability: Experimental
+  availability: 試験的
 @z
 
 @x
@@ -88,7 +88,7 @@ Build additional contexts:
   requires: Docker Compose [2.17.0](/manuals/compose/releases/release-notes.md#2170) and later
 @y
 Build additional contexts:
-  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) and later
+  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) およびそれ以降
 @z
 
 @x
@@ -97,8 +97,8 @@ Build checks:
   requires: Docker Buildx [0.15.0](/manuals/compose/releases/release-notes.md#0150) and later
 @y
 Build checks:
-  availability: Beta
-  requires: Docker Buildx [0.15.0](manuals/compose/releases/release-notes.md#0150) and later
+  availability: ベータ
+  requires: Docker Buildx [0.15.0](manuals/compose/releases/release-notes.md#0150) およびそれ以降
 @z
 
 @x
@@ -106,7 +106,7 @@ Build dockerfile inline:
   requires: Docker Compose [2.17.0](/manuals/compose/releases/release-notes.md#2170) and later
 @y
 Build dockerfile inline:
-  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) and later
+  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) およびそれ以降
 @z
 
 @x
@@ -114,7 +114,7 @@ Build entitlements:
   requires: Docker Compose [2.27.1](/manuals/compose/releases/release-notes.md#2271) and later
 @y
 Build entitlements:
-  requires: Docker Compose [2.27.1](manuals/compose/releases/release-notes.md#2271) and later
+  requires: Docker Compose [2.27.1](manuals/compose/releases/release-notes.md#2271) およびそれ以降
 @z
 
 @x
@@ -122,7 +122,7 @@ Build multiple exporters:
   requires: Docker Buildx [0.13.0](/manuals/build/release-notes.md#0130) and later
 @y
 Build multiple exporters:
-  requires: Docker Buildx [0.13.0](manuals/build/release-notes.md#0130) and later
+  requires: Docker Buildx [0.13.0](manuals/build/release-notes.md#0130) およびそれ以降
 @z
 
 @x
@@ -138,7 +138,7 @@ Buildkit host:
   requires: Docker Buildx [0.9.0](/manuals/build/release-notes.md#090) and later
 @y
 Buildkit host:
-  requires: Docker Buildx [0.9.0](manuals/build/release-notes.md#090) and later
+  requires: Docker Buildx [0.9.0](manuals/build/release-notes.md#090) およびそれ以降
 @z
 
 @x
@@ -146,7 +146,7 @@ Build privileged:
   requires: Docker Compose [2.15.0](/manuals/compose/releases/release-notes.md#2) and later
 @y
 Build privileged:
-  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2) and later
+  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2) およびそれ以降
 @z
 
 @x
@@ -154,7 +154,7 @@ Build ulimits:
   requires: Docker Compose [2.23.1](/manuals/compose/releases/release-notes.md#2231) and later
 @y
 Build ulimits:
-  requires: Docker Compose [2.23.1](manuals/compose/releases/release-notes.md#2231) and later
+  requires: Docker Compose [2.23.1](manuals/compose/releases/release-notes.md#2231) およびそれ以降
 @z
 
 @x
@@ -162,7 +162,7 @@ Buildx bake file:
   requires: Docker Buildx [0.26.0](/manuals/build/release-notes.md#0260) and later
 @y
 Buildx bake file:
-  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) and later
+  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) およびそれ以降
 @z
 
 @x
@@ -170,7 +170,7 @@ Buildx bake file separator:
   requires: Docker Buildx [0.26.0](/manuals/build/release-notes.md#0260) and later
 @y
 Buildx bake file separator:
-  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) and later
+  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) およびそれ以降
 @z
 
 @x
@@ -178,7 +178,7 @@ Buildx bake Git auth token:
   requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
 @y
 Buildx bake Git auth token:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
 @z
 
 @x
@@ -186,7 +186,7 @@ Buildx bake Git SSH:
   requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
 @y
 Buildx bake Git SSH:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
 @z
 
 @x
@@ -194,7 +194,7 @@ Buildx CPU profile:
   requires: Docker Buildx [0.18.0](/manuals/build/release-notes.md#0180) and later
 @y
 Buildx CPU profile:
-  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) and later
+  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) およびそれ以降
 @z
 
 @x
@@ -202,7 +202,7 @@ Buildx Git check dirty:
   requires: Docker Buildx [0.10.4](/manuals/build/release-notes.md#0104) and later
 @y
 Buildx Git check dirty:
-  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) and later
+  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) およびそれ以降
 @z
 
 @x
@@ -210,7 +210,7 @@ Buildx Git info:
   requires: Docker Buildx [0.10.0](/manuals/build/release-notes.md#0100) and later
 @y
 Buildx Git info:
-  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) and later
+  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) およびそれ以降
 @z
 
 @x
@@ -218,7 +218,7 @@ Buildx Git labels:
   requires: Docker Buildx [0.10.0](/manuals/build/release-notes.md#0100) and later
 @y
 Buildx Git labels:
-  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) and later
+  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) およびそれ以降
 @z
 
 @x
@@ -226,7 +226,7 @@ Buildx mem profile:
   requires: Docker Buildx [0.18.0](/manuals/build/release-notes.md#0180) and later
 @y
 Buildx mem profile:
-  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) and later
+  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) およびそれ以降
 @z
 
 @x
@@ -234,7 +234,7 @@ Buildx metadata provenance:
   requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
 @y
 Buildx metadata provenance:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
 @z
 
 @x
@@ -242,7 +242,7 @@ Buildx metadata warnings:
   requires: Docker Buildx [0.16.0](/manuals/build/release-notes.md#0160) and later
 @y
 Buildx metadata warnings:
-  requires: Docker Buildx [0.16.0](manuals/build/release-notes.md#0160) and later
+  requires: Docker Buildx [0.16.0](manuals/build/release-notes.md#0160) およびそれ以降
 @z
 
 @x
@@ -250,7 +250,7 @@ Buildx no default:
   requires: Docker Buildx [0.10.4](/manuals/build/release-notes.md#0104) and later
 @y
 Buildx no default:
-  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) and later
+  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) およびそれ以降
 @z
 
 @x
@@ -258,7 +258,7 @@ Cache backend API:
   availability: Experimental
 @y
 Cache backend API:
-  availability: Experimental
+  availability: 試験的
 @z
 
 @x
@@ -266,7 +266,7 @@ cagent:
   availability: Experimental
 @y
 cagent:
-  availability: Experimental
+  availability: 試験的
 @z
 
 @x
@@ -276,7 +276,7 @@ Company:
 @y
 Company:
   subscription: [Business]
-  for: Administrators
+  for: 管理者
 @z
 
 @x
@@ -288,9 +288,9 @@ Compliance reporting:
 @y
 Compliance reporting:
   subscription: [Business]
-  for: Administrators
+  for: 管理者
   requires: Docker Desktop 4.40 およびそれ以降
-  availability: Early Access
+  availability: 早期アクセス
 @z
 
 @x

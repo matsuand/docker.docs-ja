@@ -8,13 +8,13 @@ description: >-
 @y
 title: ConsistentInstructionCasing
 description: >-
-  All commands within the Dockerfile should use the same casing (either upper or lower)
+  Dockerfile 内のコマンドはすべて英大文字か小文字に統一する必要があります。
 @z
 
 @x
 ## Output
 @y
-## Output
+## 出力 {#output}
 @z
 
 @x
@@ -25,12 +25,13 @@ Command 'EntryPoint' should be consistently cased
 ```text
 Command 'EntryPoint' should be consistently cased
 ```
+(訳： コマンド 'EntryPoint' は英大文字小文字が統一されていません)
 @z
 
 @x
 ## Description
 @y
-## Description
+## 内容説明 {#description}
 @z
 
 @x
@@ -38,73 +39,36 @@ Instruction keywords should use consistent casing (all lowercase or all
 uppercase). Using a case that mixes uppercase and lowercase, such as
 `PascalCase` or `snakeCase`, letters result in poor readability.
 @y
-Instruction keywords should use consistent casing (all lowercase or all
-uppercase). Using a case that mixes uppercase and lowercase, such as
-`PascalCase` or `snakeCase`, letters result in poor readability.
+命令キーワードは英小文字大文字を統一して記述する必要があります (すべて小文字、あるいはすべて大文字とします)。
+大文字小文字を混在させた `PascalCase` や `snakeCase` などは読みにくくなるからです。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ❌ Bad: don't mix uppercase and lowercase.
 @y
-❌ Bad: don't mix uppercase and lowercase.
+❌ 不可: 大文字小文字を混在させてはいけません。
 @z
 
-@x
-```dockerfile
-From alpine
-Run echo hello > /greeting.txt
-EntRYpOiNT ["cat", "/greeting.txt"]
-```
-@y
-```dockerfile
-From alpine
-Run echo hello > /greeting.txt
-EntRYpOiNT ["cat", "/greeting.txt"]
-```
-@z
+% snip code...
 
 @x
 ✅ Good: all uppercase.
 @y
-✅ Good: all uppercase.
+✅ 可: すべて大文字です。
 @z
 
-@x
-```dockerfile
-FROM alpine
-RUN echo hello > /greeting.txt
-ENTRYPOINT ["cat", "/greeting.txt"]
-```
-@y
-```dockerfile
-FROM alpine
-RUN echo hello > /greeting.txt
-ENTRYPOINT ["cat", "/greeting.txt"]
-```
-@z
+% snip code...
 
 @x
 ✅ Good: all lowercase.
 @y
-✅ Good: all lowercase.
+✅ 可: すべて小文字です。
 @z
 
-@x
-```dockerfile
-from alpine
-run echo hello > /greeting.txt
-entrypoint ["cat", "/greeting.txt"]
-```
-@y
-```dockerfile
-from alpine
-run echo hello > /greeting.txt
-entrypoint ["cat", "/greeting.txt"]
-```
-@z
+% snip code...

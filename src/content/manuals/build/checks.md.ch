@@ -7,8 +7,8 @@
 title: Checking your build configuration
 linkTitle: Build checks
 @y
-title: Checking your build configuration
-linkTitle: Build checks
+title: ビルド設定のチェック
+linkTitle: ビルドチェック
 @z
 
 @x
