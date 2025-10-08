@@ -22,7 +22,7 @@
 @x
     pagefind = await import("/pagefind/pagefind.js");
 @y
-    pagefind = await import("pagefind/pagefind.js");
+    pagefind = await import("__SUBDIR__/pagefind/pagefind.js");
 @z
 
 @x

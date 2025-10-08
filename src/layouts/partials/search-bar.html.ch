@@ -16,7 +16,7 @@
 @x
       const pagefind = await import("/pagefind/pagefind.js");
 @y
-      const pagefind = await import("pagefind/pagefind.js");
+      const pagefind = await import("__SUBDIR__/pagefind/pagefind.js");
 @z
 
 @x
