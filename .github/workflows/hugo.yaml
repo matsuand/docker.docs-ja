@@ -75,6 +75,10 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}"
+      - name: Build pagefind
+        run: |
+          cd build/src
+          npx pagefind@v1.3.0
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
