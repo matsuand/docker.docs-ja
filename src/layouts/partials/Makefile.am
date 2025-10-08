@@ -9,6 +9,7 @@ bases = \
 	github-links.html           \
 	guides-stepper.html         \
 	head.html                   \
+	header.html                 \
 	heading.html                \
 	md-dropdown.html            \
 	search-bar.html
@@ -20,7 +21,6 @@ copyfiles = \
 	aside.html           \
 	breadcrumbs.html     \
 	content-default.html \
-	header.html          \
 	icon.html            \
 	languages.html       \
 	meta.html            \

@@ -14,6 +14,12 @@
 @z
 
 @x
+        <button onclick="askAI('search-bar-input')" class="link">Ask AI</button
+@y
+        <button onclick="askAI('search-bar-input')" class="link">AI に質問</button
+@z
+
+@x
       const pagefind = await import("/pagefind/pagefind.js");
 @y
       const pagefind = await import("__SUBDIR__/pagefind/pagefind.js");

@@ -2,15 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<!doctype html>
-<html lang="en">
+          <span class="hidden lg:inline">Ask&nbsp;AI</span>
 @y
-<!doctype html>
-<html lang="ja">
-@z
-
-@x
-              <span>Ask&nbsp;AI</span>
-@y
-              <span>AI に質問</span>
+          <span class="hidden lg:inline">AI&nbsp;に</span>
 @z

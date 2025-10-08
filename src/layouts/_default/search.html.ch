@@ -2,6 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+  <h1 class="py-4">{{ .Title }}</h1>
+@y
+  <h1 class="py-4">検索</h1>
+@z
+
+@x
         placeholder="Search…"
 @y
         placeholder="検索中…"
@@ -23,6 +29,18 @@
     pagefind = await import("/pagefind/pagefind.js");
 @y
     pagefind = await import("__SUBDIR__/pagefind/pagefind.js");
+@z
+
+@x
+        searchPageResults.innerHTML = `<div class="p-4">No results found</div>`;
+@y
+        searchPageResults.innerHTML = `<div class="p-4">見つかりませんでした。</div>`;
+@z
+
+@x
+      let resultsHTML = `<div class="text-gray-400 dark:text-gray-500 p-2">${resultsLength} results</div>`;
+@y
+      let resultsHTML = `<div class="text-gray-400 dark:text-gray-500 p-2">${resultsLength} 件</div>`;
 @z
 
 @x
