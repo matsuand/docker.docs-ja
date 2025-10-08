@@ -21,6 +21,44 @@ linkTitle: Raspberry Pi OS (32-bit / armhf)
 @z
 
 @x
+> [!WARNING]
+>
+> **Raspberry Pi OS 32-bit (armhf) Deprecation**
+>
+> Docker Engine v28 will be the last major version to support Raspberry Pi OS 32-bit (armhf).
+> Starting with Docker Engine v29, new major versions will no longer provide packages for Raspberry Pi OS 32-bit (armhf).
+@y
+> [!WARNING]
+>
+> **Raspberry Pi OS 32-bit (armhf) Deprecation**
+>
+> Docker Engine v28 will be the last major version to support Raspberry Pi OS 32-bit (armhf).
+> Starting with Docker Engine v29, new major versions will no longer provide packages for Raspberry Pi OS 32-bit (armhf).
+@z
+
+@x
+> **Migration options**
+> - **64-bit ARM:** Install the Debian `arm64` packages (fully supported). See the
+>   [Debian installation instructions](debian.md).
+> - **32-bit ARM (v7):** Install the Debian `armhf` packages (targets ARMv7 CPUs).
+@y
+> **Migration options**
+> - **64-bit ARM:** Install the Debian `arm64` packages (fully supported). See the
+>   [Debian installation instructions](debian.md).
+> - **32-bit ARM (v7):** Install the Debian `armhf` packages (targets ARMv7 CPUs).
+@z
+
+@x
+> **Note:** Older devices based on the ARMv6 architecture are no longer supported by official packages, including:
+> - Raspberry Pi 1 (Model A/B/A+/B+)
+> - Raspberry Pi Zero and Zero W
+@y
+> **Note:** Older devices based on the ARMv6 architecture are no longer supported by official packages, including:
+> - Raspberry Pi 1 (Model A/B/A+/B+)
+> - Raspberry Pi Zero and Zero W
+@z
+
+@x
 To get started with Docker Engine on Raspberry Pi OS, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).

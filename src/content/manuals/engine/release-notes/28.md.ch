@@ -62,6 +62,40 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
+> [!WARNING]
+> **Raspberry Pi OS 32-bit (armhf) Deprecation**
+>
+> Docker Engine v28 will be the last major version to support Raspberry Pi OS 32-bit (armhf).
+> Starting with Docker Engine v29, new major versions will **no longer provide packages** for Raspberry Pi OS 32-bit (armhf).
+@y
+> [!WARNING]
+> **Raspberry Pi OS 32-bit (armhf) Deprecation**
+>
+> Docker Engine v28 will be the last major version to support Raspberry Pi OS 32-bit (armhf).
+> Starting with Docker Engine v29, new major versions will **no longer provide packages** for Raspberry Pi OS 32-bit (armhf).
+@z
+
+@x
+> #### Migration options
+> - **64-bit ARM:** Install the Debian `arm64` packages (fully supported).
+> - **32-bit ARM (v7):** Install the Debian `armhf` packages (targets ARMv7 CPUs).
+@y
+> #### Migration options
+> - **64-bit ARM:** Install the Debian `arm64` packages (fully supported).
+> - **32-bit ARM (v7):** Install the Debian `armhf` packages (targets ARMv7 CPUs).
+@z
+
+@x
+> **Note:** Older devices based on the ARMv6 architecture are no longer supported by official packages, including:
+> - Raspberry Pi 1 (Model A/B/A+/B+)
+> - Raspberry Pi Zero and Zero W
+@y
+> **Note:** Older devices based on the ARMv6 architecture are no longer supported by official packages, including:
+> - Raspberry Pi 1 (Model A/B/A+/B+)
+> - Raspberry Pi Zero and Zero W
+@z
+
+@x
 ### Bug fixes and enhancements
 @y
 ### Bug fixes and enhancements
@@ -794,9 +828,9 @@ For a full list of pull requests and changes in this release, refer to the relev
 @z
 
 @x
-## Packaging updates
+### Packaging updates
 @y
-## Packaging updates
+### Packaging updates
 @z
 
 @x

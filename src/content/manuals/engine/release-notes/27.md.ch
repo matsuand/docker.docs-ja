@@ -36,6 +36,512 @@ For more information about:
 @z
 
 @x
+## 27.5
+@y
+## 27.5
+@z
+
+@x
+Release notes for Docker Engine version 27.5 releases.
+@y
+Release notes for Docker Engine version 27.5 releases.
+@z
+
+@x
+### 27.5.1
+@y
+### 27.5.1
+@z
+
+@x
+{{< release-date date="2025-01-22" >}}
+@y
+{{< release-date date="2025-01-22" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.5.1)
+- [moby/moby, 27.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.5.1)
+@y
+- [docker/cli, 27.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.5.1)
+- [moby/moby, 27.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.5.1)
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- Fix an issue that could persistently prevent daemon startup after failure to initialize the default bridge. [moby/moby#49307](https://github.com/moby/moby/pull/49307)
+- Add a `DOCKER_IGNORE_BR_NETFILTER_ERROR` environment variable. Setting it to `1` allows running on hosts that cannot load `br_netfilter`. Some things won't work, including disabling inter-container communication in a bridge network. With the userland proxy disabled, it won't be possible to access one container's published ports from another container on the same network.  [moby/moby#49306](https://github.com/moby/moby/pull/49306)
+@y
+- Fix an issue that could persistently prevent daemon startup after failure to initialize the default bridge. [moby/moby#49307](https://github.com/moby/moby/pull/49307)
+- Add a `DOCKER_IGNORE_BR_NETFILTER_ERROR` environment variable. Setting it to `1` allows running on hosts that cannot load `br_netfilter`. Some things won't work, including disabling inter-container communication in a bridge network. With the userland proxy disabled, it won't be possible to access one container's published ports from another container on the same network.  [moby/moby#49306](https://github.com/moby/moby/pull/49306)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Go runtime to 1.22.11 (fix CVE-2024-45341, CVE-2024-45336). [moby/moby#49312](https://github.com/moby/moby/pull/49312), [docker/docker-ce-packaging#1147](https://github.com/docker/docker-ce-packaging/pull/1147), [docker/cli#5762](https://github.com/docker/cli/pull/5762)
+- Update RootlessKit to v2.3.2 to support `passt` >= 2024_10_30.ee7d0b6. [moby/moby#49304](https://github.com/moby/moby/pull/49304)
+- Update Buildx to [v0.20.0](https://github.com/docker/buildx/releases/tag/v0.20.0). [docker/docker-ce-packaging#1149](https://github.com/docker/docker-ce-packaging/pull/1149)
+@y
+- Update Go runtime to 1.22.11 (fix CVE-2024-45341, CVE-2024-45336). [moby/moby#49312](https://github.com/moby/moby/pull/49312), [docker/docker-ce-packaging#1147](https://github.com/docker/docker-ce-packaging/pull/1147), [docker/cli#5762](https://github.com/docker/cli/pull/5762)
+- Update RootlessKit to v2.3.2 to support `passt` >= 2024_10_30.ee7d0b6. [moby/moby#49304](https://github.com/moby/moby/pull/49304)
+- Update Buildx to [v0.20.0](https://github.com/docker/buildx/releases/tag/v0.20.0). [docker/docker-ce-packaging#1149](https://github.com/docker/docker-ce-packaging/pull/1149)
+@z
+
+@x
+### 27.5.0
+@y
+### 27.5.0
+@z
+
+@x
+{{< release-date date="2025-01-13" >}}
+@y
+{{< release-date date="2025-01-13" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.5.0)
+- [moby/moby, 27.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.5.0)
+@y
+- [docker/cli, 27.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.5.0)
+- [moby/moby, 27.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.5.0)
+@z
+
+@x
+#### Bugfixes and enhancements
+@y
+#### Bugfixes and enhancements
+@z
+
+@x
+- containerd image store: Fix passing a build context via tarball to the `/build` endpoint. [moby/moby#49194](https://github.com/moby/moby/pull/49194)
+- Builder garbage collection policies without a `keepStorage` value now inherit the `defaultKeepStorage` limit as intended. [moby/moby#49137](https://github.com/moby/moby/pull/49137)
+- Preserve network labels during daemon startup. [moby/moby#49200](https://github.com/moby/moby/pull/49200)
+- Fix a potential race condition error when deleting a container. [moby/moby#49239](https://github.com/moby/moby/pull/49239)
+@y
+- containerd image store: Fix passing a build context via tarball to the `/build` endpoint. [moby/moby#49194](https://github.com/moby/moby/pull/49194)
+- Builder garbage collection policies without a `keepStorage` value now inherit the `defaultKeepStorage` limit as intended. [moby/moby#49137](https://github.com/moby/moby/pull/49137)
+- Preserve network labels during daemon startup. [moby/moby#49200](https://github.com/moby/moby/pull/49200)
+- Fix a potential race condition error when deleting a container. [moby/moby#49239](https://github.com/moby/moby/pull/49239)
+@z
+
+@x
+#### Go SDK
+@y
+#### Go SDK
+@z
+
+@x
+- `pkg/sysinfo`: deprecate `NumCPU`. This utility has the same behavior as `runtime.NumCPU`. [moby/moby#49247](https://github.com/moby/moby/pull/49247)
+- `pkg/fileutils`: deprecate `GetTotalUsedFds`: this function is only used internally and will be removed in the next release. [moby/moby#49209](https://github.com/moby/moby/pull/49209)
+- `pkg/ioutils`: deprecate `BytesPipe`, `NewBytesPipe`, `ErrClosed`, `WriteCounter`, `NewWriteCounter`, `NewReaderErrWrapper`, `NopFlusher`, `NopWriter`, `NopWriteCloser`. They were only used internally and will be removed in the next release. [moby/moby#49246](https://github.com/moby/moby/pull/49246), [moby/moby#49255](https://github.com/moby/moby/pull/49255)
+- `pkg/reexec`: This package is deprecated and moved to a separate module. Use `github.com/moby/sys/reexec` instead. [moby/moby#49135](https://github.com/moby/moby/pull/49135)
+@y
+- `pkg/sysinfo`: deprecate `NumCPU`. This utility has the same behavior as `runtime.NumCPU`. [moby/moby#49247](https://github.com/moby/moby/pull/49247)
+- `pkg/fileutils`: deprecate `GetTotalUsedFds`: this function is only used internally and will be removed in the next release. [moby/moby#49209](https://github.com/moby/moby/pull/49209)
+- `pkg/ioutils`: deprecate `BytesPipe`, `NewBytesPipe`, `ErrClosed`, `WriteCounter`, `NewWriteCounter`, `NewReaderErrWrapper`, `NopFlusher`, `NopWriter`, `NopWriteCloser`. They were only used internally and will be removed in the next release. [moby/moby#49246](https://github.com/moby/moby/pull/49246), [moby/moby#49255](https://github.com/moby/moby/pull/49255)
+- `pkg/reexec`: This package is deprecated and moved to a separate module. Use `github.com/moby/sys/reexec` instead. [moby/moby#49135](https://github.com/moby/moby/pull/49135)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update containerd to [v1.7.25](https://github.com/containerd/containerd/releases/tag/v1.7.25) [moby/moby#49253](https://github.com/moby/moby/pull/49253)
+- Update `runc` to [v1.2.4](https://github.com/opencontainers/runc/releases/tag/v1.2.4) [moby/moby#49243](https://github.com/moby/moby/pull/49243)
+- Update BuildKit to [v0.18.2](https://github.com/moby/buildkit/releases/tag/v0.18.2) [moby/moby#48949](https://github.com/moby/moby/pull/48949)
+- Update Compose to [v2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) [docker/docker-ce-packaging#1140](https://github.com/docker/docker-ce-packaging/pull/1140)
+@y
+- Update containerd to [v1.7.25](https://github.com/containerd/containerd/releases/tag/v1.7.25) [moby/moby#49253](https://github.com/moby/moby/pull/49253)
+- Update `runc` to [v1.2.4](https://github.com/opencontainers/runc/releases/tag/v1.2.4) [moby/moby#49243](https://github.com/moby/moby/pull/49243)
+- Update BuildKit to [v0.18.2](https://github.com/moby/buildkit/releases/tag/v0.18.2) [moby/moby#48949](https://github.com/moby/moby/pull/48949)
+- Update Compose to [v2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) [docker/docker-ce-packaging#1140](https://github.com/docker/docker-ce-packaging/pull/1140)
+@z
+
+@x
+## 27.4
+@y
+## 27.4
+@z
+
+@x
+Release notes for Docker Engine version 27.4 releases.
+@y
+Release notes for Docker Engine version 27.4 releases.
+@z
+
+@x
+### 27.4.1
+@y
+### 27.4.1
+@z
+
+@x
+{{< release-date date="2024-12-18" >}}
+@y
+{{< release-date date="2024-12-18" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.4.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.4.1)
+- [moby/moby, 27.4.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.4.1)
+@y
+- [docker/cli, 27.4.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.4.1)
+- [moby/moby, 27.4.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.4.1)
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- Fix excessive memory allocations when OTel is not configured. [moby/moby#49079](https://github.com/moby/moby/pull/49079)
+- The `docker info` command and the corresponding `GET /info` API endpoint no longer include warnings when `bridge-nf-call-iptables` or `bridge-nf-call-ip6tables` are disabled at the daemon is started. The `br_netfilter` kernel module is now attempted to be loaded when needed, which made those warnings inaccurate. [moby/moby#49090](https://github.com/moby/moby/pull/49090)
+- Attempt to load kernel modules, including `ip6_tables` and `br_netfilter` when required, using a method that is likely to succeed inside a Docker-in-Docker container. [moby/moby#49043](https://github.com/moby/moby/pull/49043)
+- Fix a bug that could result in an iptables `DOCKER FILTER` chain not being cleaned up on failure. [moby/moby#49110](https://github.com/moby/moby/pull/49110)
+@y
+- Fix excessive memory allocations when OTel is not configured. [moby/moby#49079](https://github.com/moby/moby/pull/49079)
+- The `docker info` command and the corresponding `GET /info` API endpoint no longer include warnings when `bridge-nf-call-iptables` or `bridge-nf-call-ip6tables` are disabled at the daemon is started. The `br_netfilter` kernel module is now attempted to be loaded when needed, which made those warnings inaccurate. [moby/moby#49090](https://github.com/moby/moby/pull/49090)
+- Attempt to load kernel modules, including `ip6_tables` and `br_netfilter` when required, using a method that is likely to succeed inside a Docker-in-Docker container. [moby/moby#49043](https://github.com/moby/moby/pull/49043)
+- Fix a bug that could result in an iptables `DOCKER FILTER` chain not being cleaned up on failure. [moby/moby#49110](https://github.com/moby/moby/pull/49110)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Compose to [v2.32.1](https://github.com/docker/compose/releases/tag/v2.32.1). [docker/docker-ce-packaging#1130](https://github.com/docker/docker-ce-packaging/pull/1130)
+- Update Buildx to [v0.19.3](https://github.com/docker/buildx/releases/tag/v0.19.3). [docker/docker-ce-packaging#1132](https://github.com/docker/docker-ce-packaging/pull/1132)
+- Update runc (static binaries only) to [v1.2.3](https://github.com/opencontainers/runc/releases/tag/v1.2.3) [moby/moby#49085](https://github.com/moby/moby/pull/49085)
+@y
+- Update Compose to [v2.32.1](https://github.com/docker/compose/releases/tag/v2.32.1). [docker/docker-ce-packaging#1130](https://github.com/docker/docker-ce-packaging/pull/1130)
+- Update Buildx to [v0.19.3](https://github.com/docker/buildx/releases/tag/v0.19.3). [docker/docker-ce-packaging#1132](https://github.com/docker/docker-ce-packaging/pull/1132)
+- Update runc (static binaries only) to [v1.2.3](https://github.com/opencontainers/runc/releases/tag/v1.2.3) [moby/moby#49085](https://github.com/moby/moby/pull/49085)
+@z
+
+@x
+### 27.4.0
+@y
+### 27.4.0
+@z
+
+@x
+{{< release-date date="2024-12-09" >}}
+@y
+{{< release-date date="2024-12-09" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.4.0)
+- [moby/moby, 27.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.4.0)
+@y
+- [docker/cli, 27.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A27.4.0)
+- [moby/moby, 27.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A27.4.0)
+@z
+
+@x
+#### API
+@y
+#### API
+@z
+
+@x
+- `GET /images/json` with the `manifests` option enabled now preserves the original order in which manifests appeared in the manifest-index. [moby/moby#48712](https://github.com/moby/moby/pull/48712)
+@y
+- `GET /images/json` with the `manifests` option enabled now preserves the original order in which manifests appeared in the manifest-index. [moby/moby#48712](https://github.com/moby/moby/pull/48712)
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- When reading logs with the `jsonfile` or `local` log drivers, any errors while trying to read or parse underlying log files will cause the rest of the file to be skipped and move to the next log file (if one exists) rather than returning an error to the client and closing the stream. The errors are viewable in the Docker Daemon logs and exported to traces when tracing is configured. [moby/moby#48842](https://github.com/moby/moby/pull/48842)
+- When reading log files, compressed log files are now only decompressed when needed rather than decompressing all files before starting the log stream. [moby/moby#48842](https://github.com/moby/moby/pull/48842)
+- Fix an issue that meant published ports from one container on a bridge network were not accessible from another container on the same network with `userland-proxy` disabled, if the kernel's `br_netfilter` module was not loaded and enabled. The daemon will now attempt to load the module and enable `bridge-nf-call-iptables` or `bridge-nf-call-ip6tables` when creating a network with the userland proxy disabled. [moby/moby#48685](https://github.com/moby/moby/pull/48685)
+- Fix loading of `bridge` and `br_netfilter` kernel modules. [moby/moby#48966](https://github.com/moby/moby/pull/48966)
+- containerd image store: Fix Docker daemon failing to fully start with a "context deadline exceeded error" with containerd snapshotter and many builds/images. [moby/moby#48954](https://github.com/moby/moby/pull/48954)
+- containerd image store: Fix partially pulled images not being garbage-collected. [moby#48910](https://github.com/moby/moby/pull/48910), [moby/moby#48957](https://github.com/moby/moby/pull/48957)
+- containerd image store: Fix `docker image inspect` outputting duplicate references in `RepoDigests`. [moby/moby#48785](https://github.com/moby/moby/pull/48785)
+- containerd image store: Fix not being able to connect to some insecure registries in cases where the HTTPS request failed due to a non-TLS related error. [moby/moby#48758](https://github.com/moby/moby/pull/48758)
+- containerd image store: Remove a confusing warning log when tagging a non-dangling image. [moby/moby#49010](https://github.com/moby/moby/pull/49010)
+- containerd image store: Do not underline names in `docker image ls --tree`. [docker/cli#5519](https://github.com/docker/cli/pull/5519)
+- containerd image store: Change name of `USED` column in `docker image ls --tree` to `IN USE`. [docker/cli#5518](https://github.com/docker/cli/pull/5518)
+- `dockerd-rootless-setuptool.sh install --force` now ignores RootlessKit errors [moby/moby#48695](https://github.com/moby/moby/pull/48695)
+- Disable IPv6 Duplicate Address Detection (DAD) for addresses assigned to the bridges belonging to bridge networks. [moby/moby#48684](https://github.com/moby/moby/pull/48684)
+- Remove BuildKit init timeout. [moby/moby#48963](https://github.com/moby/moby/pull/48963)
+- Ignore "dataset does not exist" error when removing dataset on ZFS. [moby/moby#48968](https://github.com/moby/moby/pull/48968)
+- Client: Prevent idle connections leaking FDs. [moby/moby#48764](https://github.com/moby/moby/pull/48764)
+- Fix anonymous volumes being created through the `--mount` option not being marked as anonymous. [moby/moby#48755](https://github.com/moby/moby/pull/48755)
+- After a daemon restart with live-restore, ensure an iptables jump to the `DOCKER-USER` chain is placed before other rules. [moby/moby#48714](https://github.com/moby/moby/pull/48714)
+- Fix a possible memory leak caused by OTel meters. [moby/moby#48693](https://github.com/moby/moby/pull/48693)
+- Create distinct build history db for each image store. [moby/moby#48688](https://github.com/moby/moby/pull/48688)
+- Fix an issue that caused excessive memory usage when DNS resolution was made in a tight loop. [moby/moby#48840](https://github.com/moby/moby/pull/48840)
+- Fix a bug preventing image pulls from being cancelled during `docker run`. [docker/cli#5654](https://github.com/docker/cli/pull/5654)
+- The `docker login` and `docker logout` command no longer update the configuration file if the credentials didn't change. [docker/cli#5569](https://github.com/docker/cli/pull/5569)
+- Optimize `docker stats` to reduce flickering issues. [docker/cli#5588](https://github.com/docker/cli/pull/5588), [docker/cli#5635](https://github.com/docker/cli/pull/5635)
+- Fix inaccessible plugins paths preventing plugins from being detected. [docker/cli#5652](https://github.com/docker/cli/pull/5652)
+- Add support for `events --filter` in cobra generated shell completions. [docker/cli#5614](https://github.com/docker/cli/pull/5614)
+- Fix bash completion for `events --filter daemon=`. [docker/cli#5563](https://github.com/docker/cli/pull/5563)
+- Improve shell completion of containers for `docker rm`. [docker/cli#5540](https://github.com/docker/cli/pull/5540)
+- Add shell completion for `--platform` flags. [docker/cli#5540](https://github.com/docker/cli/pull/5540)
+- rootless: Make `/etc/cdi` and `/var/run/cdi` accessible by the Container Device Interface (CDI) integration. [moby/moby#49027](https://github.com/moby/moby/pull/49027)
+@y
+- When reading logs with the `jsonfile` or `local` log drivers, any errors while trying to read or parse underlying log files will cause the rest of the file to be skipped and move to the next log file (if one exists) rather than returning an error to the client and closing the stream. The errors are viewable in the Docker Daemon logs and exported to traces when tracing is configured. [moby/moby#48842](https://github.com/moby/moby/pull/48842)
+- When reading log files, compressed log files are now only decompressed when needed rather than decompressing all files before starting the log stream. [moby/moby#48842](https://github.com/moby/moby/pull/48842)
+- Fix an issue that meant published ports from one container on a bridge network were not accessible from another container on the same network with `userland-proxy` disabled, if the kernel's `br_netfilter` module was not loaded and enabled. The daemon will now attempt to load the module and enable `bridge-nf-call-iptables` or `bridge-nf-call-ip6tables` when creating a network with the userland proxy disabled. [moby/moby#48685](https://github.com/moby/moby/pull/48685)
+- Fix loading of `bridge` and `br_netfilter` kernel modules. [moby/moby#48966](https://github.com/moby/moby/pull/48966)
+- containerd image store: Fix Docker daemon failing to fully start with a "context deadline exceeded error" with containerd snapshotter and many builds/images. [moby/moby#48954](https://github.com/moby/moby/pull/48954)
+- containerd image store: Fix partially pulled images not being garbage-collected. [moby#48910](https://github.com/moby/moby/pull/48910), [moby/moby#48957](https://github.com/moby/moby/pull/48957)
+- containerd image store: Fix `docker image inspect` outputting duplicate references in `RepoDigests`. [moby/moby#48785](https://github.com/moby/moby/pull/48785)
+- containerd image store: Fix not being able to connect to some insecure registries in cases where the HTTPS request failed due to a non-TLS related error. [moby/moby#48758](https://github.com/moby/moby/pull/48758)
+- containerd image store: Remove a confusing warning log when tagging a non-dangling image. [moby/moby#49010](https://github.com/moby/moby/pull/49010)
+- containerd image store: Do not underline names in `docker image ls --tree`. [docker/cli#5519](https://github.com/docker/cli/pull/5519)
+- containerd image store: Change name of `USED` column in `docker image ls --tree` to `IN USE`. [docker/cli#5518](https://github.com/docker/cli/pull/5518)
+- `dockerd-rootless-setuptool.sh install --force` now ignores RootlessKit errors [moby/moby#48695](https://github.com/moby/moby/pull/48695)
+- Disable IPv6 Duplicate Address Detection (DAD) for addresses assigned to the bridges belonging to bridge networks. [moby/moby#48684](https://github.com/moby/moby/pull/48684)
+- Remove BuildKit init timeout. [moby/moby#48963](https://github.com/moby/moby/pull/48963)
+- Ignore "dataset does not exist" error when removing dataset on ZFS. [moby/moby#48968](https://github.com/moby/moby/pull/48968)
+- Client: Prevent idle connections leaking FDs. [moby/moby#48764](https://github.com/moby/moby/pull/48764)
+- Fix anonymous volumes being created through the `--mount` option not being marked as anonymous. [moby/moby#48755](https://github.com/moby/moby/pull/48755)
+- After a daemon restart with live-restore, ensure an iptables jump to the `DOCKER-USER` chain is placed before other rules. [moby/moby#48714](https://github.com/moby/moby/pull/48714)
+- Fix a possible memory leak caused by OTel meters. [moby/moby#48693](https://github.com/moby/moby/pull/48693)
+- Create distinct build history db for each image store. [moby/moby#48688](https://github.com/moby/moby/pull/48688)
+- Fix an issue that caused excessive memory usage when DNS resolution was made in a tight loop. [moby/moby#48840](https://github.com/moby/moby/pull/48840)
+- Fix a bug preventing image pulls from being cancelled during `docker run`. [docker/cli#5654](https://github.com/docker/cli/pull/5654)
+- The `docker login` and `docker logout` command no longer update the configuration file if the credentials didn't change. [docker/cli#5569](https://github.com/docker/cli/pull/5569)
+- Optimize `docker stats` to reduce flickering issues. [docker/cli#5588](https://github.com/docker/cli/pull/5588), [docker/cli#5635](https://github.com/docker/cli/pull/5635)
+- Fix inaccessible plugins paths preventing plugins from being detected. [docker/cli#5652](https://github.com/docker/cli/pull/5652)
+- Add support for `events --filter` in cobra generated shell completions. [docker/cli#5614](https://github.com/docker/cli/pull/5614)
+- Fix bash completion for `events --filter daemon=`. [docker/cli#5563](https://github.com/docker/cli/pull/5563)
+- Improve shell completion of containers for `docker rm`. [docker/cli#5540](https://github.com/docker/cli/pull/5540)
+- Add shell completion for `--platform` flags. [docker/cli#5540](https://github.com/docker/cli/pull/5540)
+- rootless: Make `/etc/cdi` and `/var/run/cdi` accessible by the Container Device Interface (CDI) integration. [moby/moby#49027](https://github.com/moby/moby/pull/49027)
+@z
+
+@x
+#### Removed
+@y
+#### Removed
+@z
+
+@x
+- Deprecate `Daemon.Exists()` and `Daemon.IsPaused()`. These functions are no longer used and will be removed in the next release. [moby/moby#48719](https://github.com/moby/moby/pull/48719)
+- Deprecate `container.ErrNameReserved` and `container.ErrNameNotReserved`. [moby/moby#48697](https://github.com/moby/moby/pull/48697)
+- Deprecate `pkg/platform` - this package is only used internally, and will be removed in the next release. [moby/moby#48863](https://github.com/moby/moby/pull/48863)
+- Deprecate `RepositoryInfo.Class`. This field is no longer used, and will be removed in the next release. [moby/moby#49013](https://github.com/moby/moby/pull/49013)
+- Go SDK: Fix deprecation of `cli/command.ConfigureAuth()`, which was deprecated since v27.2.1. [docker/cli#5552](https://github.com/docker/cli/pull/5552)
+- Go SDK: Deprecate `cli.Errors` type in favour of Go's `errors.Join` [docker/cli#5548](https://github.com/docker/cli/pull/5548)
+@y
+- Deprecate `Daemon.Exists()` and `Daemon.IsPaused()`. These functions are no longer used and will be removed in the next release. [moby/moby#48719](https://github.com/moby/moby/pull/48719)
+- Deprecate `container.ErrNameReserved` and `container.ErrNameNotReserved`. [moby/moby#48697](https://github.com/moby/moby/pull/48697)
+- Deprecate `pkg/platform` - this package is only used internally, and will be removed in the next release. [moby/moby#48863](https://github.com/moby/moby/pull/48863)
+- Deprecate `RepositoryInfo.Class`. This field is no longer used, and will be removed in the next release. [moby/moby#49013](https://github.com/moby/moby/pull/49013)
+- Go SDK: Fix deprecation of `cli/command.ConfigureAuth()`, which was deprecated since v27.2.1. [docker/cli#5552](https://github.com/docker/cli/pull/5552)
+- Go SDK: Deprecate `cli.Errors` type in favour of Go's `errors.Join` [docker/cli#5548](https://github.com/docker/cli/pull/5548)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Go runtime to 1.22.10. [moby/moby#49026](https://github.com/moby/moby/pull/49026), [docker/cli#5669](https://github.com/docker/cli/pull/5669), [docker/docker-ce-packaging#1120](https://github.com/docker/docker-ce-packaging/pull/1120).
+- Update Compose to [v2.31.0](https://github.com/docker/compose/releases/tag/v2.31.0). [docker/docker-ce-packaging#1100](https://github.com/docker/docker-ce-packaging/pull/1117)
+- Update BuildKit to [v0.17.3](https://github.com/moby/buildkit/releases/tag/v0.17.3). [moby/moby#49024](https://github.com/moby/moby/pull/49024)
+- Update Buildx to [v0.19.1](https://github.com/docker/buildx/releases/tag/v0.19.1). [docker/docker-ce-packaging#1115](https://github.com/docker/docker-ce-packaging/pull/1115)
+- Update containerd to [v1.7.24](https://github.com/containerd/containerd/releases/tag/v1.7.24). [moby/moby#48934](https://github.com/moby/moby/pull/48934)
+- Update containerd (static binaries only) to [v1.7.24](https://github.com/containerd/containerd/releases/tag/v1.7.24). [moby/moby#48919](https://github.com/moby/moby/pull/48919)
+- Update runc to [v1.2.2](https://github.com/opencontainers/runc/releases/tag/v1.2.2). [moby/moby#48919](https://github.com/moby/moby/pull/48919)
+@y
+- Update Go runtime to 1.22.10. [moby/moby#49026](https://github.com/moby/moby/pull/49026), [docker/cli#5669](https://github.com/docker/cli/pull/5669), [docker/docker-ce-packaging#1120](https://github.com/docker/docker-ce-packaging/pull/1120).
+- Update Compose to [v2.31.0](https://github.com/docker/compose/releases/tag/v2.31.0). [docker/docker-ce-packaging#1100](https://github.com/docker/docker-ce-packaging/pull/1117)
+- Update BuildKit to [v0.17.3](https://github.com/moby/buildkit/releases/tag/v0.17.3). [moby/moby#49024](https://github.com/moby/moby/pull/49024)
+- Update Buildx to [v0.19.1](https://github.com/docker/buildx/releases/tag/v0.19.1). [docker/docker-ce-packaging#1115](https://github.com/docker/docker-ce-packaging/pull/1115)
+- Update containerd to [v1.7.24](https://github.com/containerd/containerd/releases/tag/v1.7.24). [moby/moby#48934](https://github.com/moby/moby/pull/48934)
+- Update containerd (static binaries only) to [v1.7.24](https://github.com/containerd/containerd/releases/tag/v1.7.24). [moby/moby#48919](https://github.com/moby/moby/pull/48919)
+- Update runc to [v1.2.2](https://github.com/opencontainers/runc/releases/tag/v1.2.2). [moby/moby#48919](https://github.com/moby/moby/pull/48919)
+@z
+
+@x
+## 27.3
+@y
+## 27.3
+@z
+
+@x
+Release notes for Docker Engine version 27.3 releases.
+@y
+Release notes for Docker Engine version 27.3 releases.
+@z
+
+@x
+### 27.3.1
+@y
+### 27.3.1
+@z
+
+@x
+{{< release-date date="2024-09-20" >}}
+@y
+{{< release-date date="2024-09-20" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.3.1 milestone](https://github.com/docker/cli/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.1)
+- [moby/moby, 27.3.1 milestone](https://github.com/moby/moby/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.1)
+@y
+- [docker/cli, 27.3.1 milestone](https://github.com/docker/cli/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.1)
+- [moby/moby, 27.3.1 milestone](https://github.com/moby/moby/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.1)
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- CLI: Fix issue with command execution metrics not being exported correctly. [docker/cli#5457](https://github.com/docker/cli/pull/5457)
+@y
+- CLI: Fix issue with command execution metrics not being exported correctly. [docker/cli#5457](https://github.com/docker/cli/pull/5457)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update Compose to [v2.29.7](https://github.com/docker/compose/releases/tag/v2.29.7)
+@y
+- Update Compose to [v2.29.7](https://github.com/docker/compose/releases/tag/v2.29.7)
+@z
+
+@x
+### 27.3.0
+@y
+### 27.3.0
+@z
+
+@x
+{{< release-date date="2024-09-19" >}}
+@y
+{{< release-date date="2024-09-19" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 27.3.0 milestone](https://github.com/docker/cli/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.0)
+- [moby/moby, 27.3.0 milestone](https://github.com/moby/moby/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.0)
+@y
+- [docker/cli, 27.3.0 milestone](https://github.com/docker/cli/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.0)
+- [moby/moby, 27.3.0 milestone](https://github.com/moby/moby/issues?q=sort%3Aupdated-desc+is%3Aclosed+milestone%3A27.3.0)
+@z
+
+@x
+#### Bug fixes and enhancements
+@y
+#### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Fix `docker image prune -a` untagging images used by containers started from images referenced by a digested reference. [moby/moby#48488](https://github.com/moby/moby/pull/48488)
+- Add a `--feature` flag to the daemon options. [moby/moby#48487](https://github.com/moby/moby/pull/48487)
+- Updated the handling of the `--gpus=0` flag to be consistent with the NVIDIA Container Runtime. [moby/moby#48483](https://github.com/moby/moby/pull/48483)
+- Support WSL2 mirrored-mode networking's use of interface `loopback0` for packets from the Windows host. [moby/moby#48514](https://github.com/moby/moby/pull/48514)
+- Fix an issue that prevented communication between containers on an IPv4 bridge network when running with `--iptables=false`, `--ip6tables=true` (the default), a firewall with a DROP rule for forwarded packets on hosts where the `br_netfilter` kernel module was not normally loaded. [moby/moby#48511](https://github.com/moby/moby/pull/48511)
+- CLI: Fix issue where `docker volume update` command would cause the CLI to panic if no argument/volume was passed. [docker/cli#5426](https://github.com/docker/cli/pull/5426)
+- CLI: Properly report metrics when run in WSL environment on Windows. [docker/cli#5432](https://github.com/docker/cli/pull/5432)
+@y
+- containerd image store: Fix `docker image prune -a` untagging images used by containers started from images referenced by a digested reference. [moby/moby#48488](https://github.com/moby/moby/pull/48488)
+- Add a `--feature` flag to the daemon options. [moby/moby#48487](https://github.com/moby/moby/pull/48487)
+- Updated the handling of the `--gpus=0` flag to be consistent with the NVIDIA Container Runtime. [moby/moby#48483](https://github.com/moby/moby/pull/48483)
+- Support WSL2 mirrored-mode networking's use of interface `loopback0` for packets from the Windows host. [moby/moby#48514](https://github.com/moby/moby/pull/48514)
+- Fix an issue that prevented communication between containers on an IPv4 bridge network when running with `--iptables=false`, `--ip6tables=true` (the default), a firewall with a DROP rule for forwarded packets on hosts where the `br_netfilter` kernel module was not normally loaded. [moby/moby#48511](https://github.com/moby/moby/pull/48511)
+- CLI: Fix issue where `docker volume update` command would cause the CLI to panic if no argument/volume was passed. [docker/cli#5426](https://github.com/docker/cli/pull/5426)
+- CLI: Properly report metrics when run in WSL environment on Windows. [docker/cli#5432](https://github.com/docker/cli/pull/5432)
+@z
+
+@x
+#### Packaging updates
+@y
+#### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries only) to [v1.7.22](https://github.com/containerd/containerd/releases/tag/v1.7.22)
+[moby/moby#48468](https://github.com/moby/moby/pull/48468)
+- Updated Buildkit to [v0.16.0](https://github.com/moby/buildkit/releases/tag/v0.16.0)
+- Update Compose to [v2.29.6](https://github.com/docker/compose/releases/tag/v2.29.6)
+- Update Buildx to [v0.17.1](https://github.com/docker/buildx/releases/tag/v0.17.1)
+@y
+- Update containerd (static binaries only) to [v1.7.22](https://github.com/containerd/containerd/releases/tag/v1.7.22)
+[moby/moby#48468](https://github.com/moby/moby/pull/48468)
+- Updated Buildkit to [v0.16.0](https://github.com/moby/buildkit/releases/tag/v0.16.0)
+- Update Compose to [v2.29.6](https://github.com/docker/compose/releases/tag/v2.29.6)
+- Update Buildx to [v0.17.1](https://github.com/docker/buildx/releases/tag/v0.17.1)
+@z
+
+@x
 ## 27.2
 @y
 ## 27.2

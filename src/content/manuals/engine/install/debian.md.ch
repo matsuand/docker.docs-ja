@@ -77,10 +77,9 @@ Debian 上での Docker Engine を使い始めるにあたっては、[前提条
 @z
 
 @x
-To install Docker Engine, you need the 64-bit version of one of these Debian
-versions:
+To install Docker Engine, you need one of these Debian versions:
 @y
-Docker Engine をインストールするには、以下に示す 64 ビット Debian バージョンのいずれかであることが必要です。
+Docker Engine をインストールするには、以下に示す Debian バージョンのいずれかであることが必要です。
 @z
 
 @x
@@ -94,10 +93,10 @@ Docker Engine をインストールするには、以下に示す 64 ビット D
 @z
 
 @x
-Docker Engine for Debian is compatible with x86_64 (or amd64), armhf, arm64,
-and ppc64le (ppc64el) architectures.
+Docker Engine for Debian is compatible with x86_64 (or amd64), armhf (arm/v7),
+arm64, and ppc64le (ppc64el) architectures.
 @y
-Debian における Docker Engine は x86_64 (または amd64), armhf, arm64, ppc64le (ppc64el) の各アーキテクチャーに対応しています。
+Debian における Docker Engine は x86_64 (または amd64), armhf (arm/v7), arm64, ppc64le (ppc64el) の各アーキテクチャーに対応しています。
 @z
 
 @x
@@ -218,6 +217,12 @@ Docker Engine のインストール方法はいくつかあるので、必要に
 @z
 
 @x
+{{% include "engine-license.md" %}}
+@y
+{{% include "engine-license.md" %}}
+@z
+
+@x
 ### Install using the `apt` repository {#install-using-the-repository}
 @y
 ### `apt` リポジトリを利用したインストール {#install-using-the-repository}
@@ -329,6 +334,29 @@ Docker Engine を初めてマシン上にインストールするには、Docker
    {{< /tab >}}
    {{< /tabs >}}
 @z
+
+@x
+    > [!NOTE]
+    >
+    > The Docker service starts automatically after installation. To verify that
+    > Docker is running, use:
+@y
+    > [!NOTE]
+    >
+    > インストール後は Docker サービスが自動起動します。
+    > Docker が動作しているかどうかは、以下により確認します。
+@z
+
+% snip command...
+
+@x
+    > Some systems may have this behavior disabled and will require a manual start:
+@y
+    > システムの中にはこの自動起動という動作を無効にするものがあります。
+    > その場合は手動により以下を実行します。
+@z
+
+% snip command...
 
 @x
 3. Verify that the installation is successful by running the `hello-world` image:

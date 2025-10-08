@@ -295,6 +295,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/faqs/Makefile
 	src/content/manuals/security/faqs/single-sign-on/Makefile
 	src/content/manuals/subscription/Makefile
+	src/content/manuals/unassociated-machines/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/dvp/Makefile

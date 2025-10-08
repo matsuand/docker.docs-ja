@@ -4,7 +4,7 @@
 
 SUBDIRS = accounts admin ai billing build build-cloud compose copilot \
 	desktop dhi docker-hub engine enterprise extensions offload   \
-	scout security subscription
+	scout security subscription unassociated-machines
 
 bases = \
 	_index.md                 \

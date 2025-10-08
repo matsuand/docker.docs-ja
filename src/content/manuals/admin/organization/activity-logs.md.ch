@@ -64,14 +64,6 @@ Owners can also see the activity logs for their repository if the repository is 
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
 To view activity logs in the Admin Console:
 @y
 To view activity logs in the Admin Console:
@@ -85,42 +77,6 @@ organization.
 1. Sign in to [Docker Home](https://app.docker.com) and select your
 organization.
 1. Select **Admin Console**, then **Activity logs**.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% include "hub-org-management.md" %}}
-@y
-{{% include "hub-org-management.md" %}}
-@z
-
-@x
-To view activity logs in Docker Hub:
-@y
-To view activity logs in Docker Hub:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub**, your organization, and then **Activity**.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub**, your organization, and then **Activity**.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x

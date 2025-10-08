@@ -122,14 +122,6 @@ For more information on roles, see
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
 1. Sign in to [Docker Home](https://app.docker.com) and select your
 organization.
 1. Select **Teams**.
@@ -137,42 +129,6 @@ organization.
 1. Sign in to [Docker Home](https://app.docker.com) and select your
 organization.
 1. Select **Teams**.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% include "hub-org-management.md" %}}
-@y
-{{% include "hub-org-management.md" %}}
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select the **Teams** and then select **Create Team**.
-1. Fill out your team's information and select **Create**.
-1. [Add members to your team](members.md#add-a-member-to-a-team).
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select the **Teams** and then select **Create Team**.
-1. Fill out your team's information and select **Create**.
-1. [Add members to your team](members.md#add-a-member-to-a-team).
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x
@@ -366,14 +322,6 @@ won't delete any resources.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
 organization.
 1. Select **Teams**.
@@ -387,46 +335,6 @@ organization.
 1. Select the **Actions** icon next to the name of the team you want to delete.
 1. Select **Delete team**.
 1. Review the confirmation message, then select **Delete**.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% include "hub-org-management.md" %}}
-@y
-{{% include "hub-org-management.md" %}}
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select **Teams**.
-1. Select the name of the team that you want to delete.
-1. Select **Settings**.
-1. Select **Delete Team**.
-1. Review the confirmation message, then select **Delete**.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select **Teams**.
-1. Select the name of the team that you want to delete.
-1. Select **Settings**.
-1. Select **Delete Team**.
-1. Review the confirmation message, then select **Delete**.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x

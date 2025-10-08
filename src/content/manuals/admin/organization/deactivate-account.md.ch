@@ -98,14 +98,6 @@ your organization before deactivating it.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@y
-{{< tabs >}}
-{{< tab name="Admin Console" >}}
-@z
-
-@x
 1. Sign in to [Docker Home](https://app.docker.com) and select the organization
 you want to deactivate.
 1. Select **Admin Console**, then **Deactivate**. If the **Deactivate**
@@ -119,38 +111,4 @@ you want to deactivate.
 button is unavailable, confirm you've completed all [Prerequisites](#prerequisites).
 1. Enter the organization name to confirm deactivation.
 1. Select **Deactivate organization**.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@y
-{{< /tab >}}
-{{< tab name="Docker Hub" >}}
-@z
-
-@x
-{{% include "hub-org-management.md" %}}
-@y
-{{% include "hub-org-management.md" %}}
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Choose the organization you want to deactivate.
-1. In **Settings**, select **Deactivate org**.
-1. Select **Deactivate organization**.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Choose the organization you want to deactivate.
-1. In **Settings**, select **Deactivate org**.
-1. Select **Deactivate organization**.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
