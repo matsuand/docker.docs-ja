@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Configure sign-in enforcement
 linkTitle: Configure
@@ -85,10 +87,9 @@ To configure the registry key method manually:
 1. Create the registry key:
 @z
 
+% snip code...
+
 @x
-   ```console
-   $ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop
-   ```
 1. Create a multi-string value name `allowedOrgs`.
 1. Use your organization names as string data:
    - Use lowercase letters only
@@ -97,9 +98,6 @@ To configure the registry key method manually:
 1. Restart Docker Desktop.
 1. Verify the `Sign in required!` prompt appears in Docker Desktop.
 @y
-   ```console
-   $ HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop
-   ```
 1. Create a multi-string value name `allowedOrgs`.
 1. Use your organization names as string data:
    - Use lowercase letters only
@@ -186,56 +184,20 @@ Deploy the registry key across your organization using Group Policy:
 @z
 
 @x
-Configuration profiles provide the most secure enforcement method for macOS because they're protected by Apple's System Integrity Protection.
+Configuration profiles provide the most secure enforcement method for macOS, as they're protected by Apple's System Integrity Protection.
 @y
-Configuration profiles provide the most secure enforcement method for macOS because they're protected by Apple's System Integrity Protection.
+Configuration profiles provide the most secure enforcement method for macOS, as they're protected by Apple's System Integrity Protection.
 @z
 
 @x
 1. Create a file named `docker.mobileconfig` with this content:
-   ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>PayloadContent</key>
-        <array>
-          <dict>
-            <key>PayloadType</key>
-            <string>com.docker.config</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.docker.config</string>
-            <key>PayloadUUID</key>
-            <string>eed295b0-a650-40b0-9dda-90efb12be3c7</string>
-            <key>PayloadDisplayName</key>
-            <string>Docker Desktop Configuration</string>
-            <key>PayloadDescription</key>
-            <string>Configuration profile to manage Docker Desktop settings.</string>
-            <key>PayloadOrganization</key>
-            <string>Your Company Name</string>
-            <key>allowedOrgs</key>
-            <string>first_org;second_org</string>
-          </dict>
-        </array>
-        <key>PayloadType</key>
-        <string>Configuration</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.yourcompany.docker.config</string>
-        <key>PayloadUUID</key>
-        <string>0deedb64-7dc9-46e5-b6bf-69d64a9561ce</string>
-        <key>PayloadDisplayName</key>
-        <string>Docker Desktop Config Profile</string>
-        <key>PayloadDescription</key>
-        <string>Config profile to enforce Docker Desktop settings for allowed organizations.</string>
-        <key>PayloadOrganization</key>
-        <string>Your Company Name</string>
-      </dict>
-    </plist>
-   ```
+@y
+1. Create a file named `docker.mobileconfig` with this content:
+@z
+
+% snip code...
+
+@x
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
@@ -243,50 +205,6 @@ Configuration profiles provide the most secure enforcement method for macOS beca
 1. Deploy the profile using your MDM solution.
 1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)** profiles.
 @y
-1. Create a file named `docker.mobileconfig` with this content:
-   ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>PayloadContent</key>
-        <array>
-          <dict>
-            <key>PayloadType</key>
-            <string>com.docker.config</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.docker.config</string>
-            <key>PayloadUUID</key>
-            <string>eed295b0-a650-40b0-9dda-90efb12be3c7</string>
-            <key>PayloadDisplayName</key>
-            <string>Docker Desktop Configuration</string>
-            <key>PayloadDescription</key>
-            <string>Configuration profile to manage Docker Desktop settings.</string>
-            <key>PayloadOrganization</key>
-            <string>Your Company Name</string>
-            <key>allowedOrgs</key>
-            <string>first_org;second_org</string>
-          </dict>
-        </array>
-        <key>PayloadType</key>
-        <string>Configuration</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>PayloadIdentifier</key>
-        <string>com.yourcompany.docker.config</string>
-        <key>PayloadUUID</key>
-        <string>0deedb64-7dc9-46e5-b6bf-69d64a9561ce</string>
-        <key>PayloadDisplayName</key>
-        <string>Docker Desktop Config Profile</string>
-        <key>PayloadDescription</key>
-        <string>Config profile to enforce Docker Desktop settings for allowed organizations.</string>
-        <key>PayloadOrganization</key>
-        <string>Your Company Name</string>
-      </dict>
-    </plist>
-   ```
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
@@ -318,38 +236,18 @@ Use this alternative method for macOS with Docker Desktop version 4.32 and later
 @x
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
 1. Add this content, replacing `myorg1` and `myorg2` with your organization names:
-   ```xml
-   <?xml version="1.0" encoding="UTF-8"?>
-   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-   <plist version="1.0">
-     <dict>
-	     <key>allowedOrgs</key>
-	     <array>
-             <string>myorg1</string>
-             <string>myorg2</string>
-         </array>
-     </dict>
-   </plist>
-   ```
-1. Set file permissions to prevent editing by non-administrator users.
-1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
 @y
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
 1. Add this content, replacing `myorg1` and `myorg2` with your organization names:
-   ```xml
-   <?xml version="1.0" encoding="UTF-8"?>
-   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-   <plist version="1.0">
-     <dict>
-	     <key>allowedOrgs</key>
-	     <array>
-             <string>myorg1</string>
-             <string>myorg2</string>
-         </array>
-     </dict>
-   </plist>
-   ```
+@z
+
+% snip code...
+
+@x
+1. Set file permissions to prevent editing by non-administrator users.
+1. Restart Docker Desktop.
+1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+@y
 1. Set file permissions to prevent editing by non-administrator users.
 1. Restart Docker Desktop.
 1. Verify the `Sign in required!` prompt appears in Docker Desktop.
@@ -369,40 +267,20 @@ Create and deploy a script for organization-wide distribution:
 Create and deploy a script for organization-wide distribution:
 @z
 
-@x
-```bash
-#!/bin/bash
-@y
-```bash
-#!/bin/bash
-@z
-
-@x
+@x within code
 # Create directory if it doesn't exist
-sudo mkdir -p "/Library/Application Support/com.docker.docker"
 @y
 # Create directory if it doesn't exist
-sudo mkdir -p "/Library/Application Support/com.docker.docker"
 @z
-
 @x
 # Write the plist file
-sudo defaults write "/Library/Application Support/com.docker.docker/desktop.plist" allowedOrgs -array "myorg1" "myorg2"
 @y
 # Write the plist file
-sudo defaults write "/Library/Application Support/com.docker.docker/desktop.plist" allowedOrgs -array "myorg1" "myorg2"
 @z
-
 @x
 # Set appropriate permissions
-sudo chmod 644 "/Library/Application Support/com.docker.docker/desktop.plist"
-sudo chown root:admin "/Library/Application Support/com.docker.docker/desktop.plist"
-```
 @y
 # Set appropriate permissions
-sudo chmod 644 "/Library/Application Support/com.docker.docker/desktop.plist"
-sudo chown root:admin "/Library/Application Support/com.docker.docker/desktop.plist"
-```
 @z
 
 @x

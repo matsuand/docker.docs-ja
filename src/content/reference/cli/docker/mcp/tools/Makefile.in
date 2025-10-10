@@ -241,8 +241,10 @@ copyfiles = \
 	_index.md        \
 	tools_call.md    \
 	tools_count.md   \
+	tools_disable.md \
+	tools_enable.md  \
 	tools_inspect.md \
-	tools_list.md
+	tools_ls.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

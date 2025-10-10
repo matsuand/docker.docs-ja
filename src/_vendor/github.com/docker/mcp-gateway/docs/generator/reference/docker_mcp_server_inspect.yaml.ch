@@ -3,8 +3,8 @@
 
 @x
 command: docker mcp server inspect
-short: Get information about a server
-long: Get information about a server
+short: Get information about a server or inspect an OCI artifact
+long: Get information about a server or inspect an OCI artifact
 usage: docker mcp server inspect
 pname: docker mcp server
 plink: docker_mcp_server.yaml
@@ -16,8 +16,8 @@ kubernetes: false
 swarm: false
 @y
 command: docker mcp server inspect
-short: Get information about a server
-long: Get information about a server
+short: Get information about a server or inspect an OCI artifact
+long: Get information about a server or inspect an OCI artifact
 usage: docker mcp server inspect
 pname: docker mcp server
 plink: docker_mcp_server.yaml

@@ -43,9 +43,11 @@ Docker Engine をインストールするには、以下に示す CentOS バー�
 @z
 
 @x
-- CentOS 9 (stream)
+- CentOS Stream 10
+- CentOS Stream 9
 @y
-- CentOS 9 (stream)
+- CentOS Stream 10
+- CentOS Stream 9
 @z
 
 @x

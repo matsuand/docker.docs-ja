@@ -298,6 +298,15 @@ Compose sets `com.docker.compose.project` and `com.docker.compose.volume` labels
 @z
 
 @x
+> [!NOTE]
+>
+> Labels defined here apply to named volumes only. They’re stored on the volume resource and visible via `docker volume inspect`. They do not apply to bind mounts and do not change mount semantics.
+@y
+> [!NOTE]
+>
+> Labels defined here apply to named volumes only. They’re stored on the volume resource and visible via `docker volume inspect`. They do not apply to bind mounts and do not change mount semantics.
+@z
+@x
 ### `name`
 @y
 ### `name`

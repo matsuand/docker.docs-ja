@@ -242,7 +242,7 @@ copyfiles = \
 	server_disable.md \
 	server_enable.md  \
 	server_inspect.md \
-	server_list.md    \
+	server_ls.md      \
 	server_reset.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-List configured catalogs
+List all configured catalogs including Docker's official catalog and any locally managed catalogs.
 @y
 <!---MARKER_GEN_START-->
-List configured catalogs
+List all configured catalogs including Docker's official catalog and any locally managed catalogs.
 @z
 
 @x
@@ -22,13 +22,13 @@ List configured catalogs
 @z
 
 @x
-| Name     | Type   | Default | Description    |
-|:---------|:-------|:--------|:---------------|
-| `--json` | `bool` |         | Print as JSON. |
+| Name       | Type     | Default | Description                               |
+|:-----------|:---------|:--------|:------------------------------------------|
+| `--format` | `format` |         | Output format. Supported: "json", "yaml". |
 @y
-| Name     | Type   | Default | Description    |
-|:---------|:-------|:--------|:---------------|
-| `--json` | `bool` |         | Print as JSON. |
+| Name       | Type     | Default | Description                               |
+|:-----------|:---------|:--------|:------------------------------------------|
+| `--format` | `format` |         | Output format. Supported: "json", "yaml". |
 @z
 
 @x

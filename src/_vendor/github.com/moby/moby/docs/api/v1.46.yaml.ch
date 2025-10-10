@@ -188,7 +188,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -197,7 +196,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -4433,9 +4431,35 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
+      GraphDriver:
+        $ref: "#/definitions/GraphDriverData"
+      RootFS:
         description: |
-          Total size of the image including all layers it is composed of.
+          Information about the image's RootFS, including the layer IDs.
+        type: "object"
+        required: [Type]
+        properties:
+          Type:
+            type: "string"
+            x-nullable: false
+            example: "layers"
+          Layers:
+            type: "array"
+            items:
+              type: "string"
+            example:
+              - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
+              - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      Metadata:
+        description: |
+          Additional metadata of the image in the local cache. This information
+          is local to the daemon, and not part of the image itself.
+        type: "object"
+        properties:
+          LastTagTime:
+            description: |
+              Date and time at which the image was last tagged in
+              [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
 @y
           Depending on how the image was created, this field may be empty.
         type: "string"
@@ -4482,50 +4506,6 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
-        description: |
-          Total size of the image including all layers it is composed of.
-@z
-
-@x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 1239828
-      GraphDriver:
-        $ref: "#/definitions/GraphDriverData"
-      RootFS:
-        description: |
-          Information about the image's RootFS, including the layer IDs.
-        type: "object"
-        required: [Type]
-        properties:
-          Type:
-            type: "string"
-            x-nullable: false
-            example: "layers"
-          Layers:
-            type: "array"
-            items:
-              type: "string"
-            example:
-              - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
-              - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
-      Metadata:
-        description: |
-          Additional metadata of the image in the local cache. This information
-          is local to the daemon, and not part of the image itself.
-        type: "object"
-        properties:
-          LastTagTime:
-            description: |
-              Date and time at which the image was last tagged in
-              [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-@y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 1239828
       GraphDriver:
         $ref: "#/definitions/GraphDriverData"
       RootFS:
@@ -4770,26 +4750,6 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@y
-          This size is not calculated by default. `-1` indicates that the value
-          has not been set / calculated.
-        type: "integer"
-        format: "int64"
-        x-nullable: false
-        example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@z
-
-@x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 172064416
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
@@ -4804,10 +4764,12 @@ definitions:
           Number of containers using this image. Includes both stopped and running
           containers.
 @y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
+          This size is not calculated by default. `-1` indicates that the value
+          has not been set / calculated.
         type: "integer"
         format: "int64"
-        example: 172064416
+        x-nullable: false
+        example: 1239828
       Labels:
         description: "User-defined key/value metadata."
         type: "object"

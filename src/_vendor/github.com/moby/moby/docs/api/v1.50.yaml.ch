@@ -188,7 +188,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -197,7 +196,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -1355,52 +1353,60 @@ definitions:
 
 @x
           This field is omitted when empty.
-        type: "integer"
-        format: "int64"
-      MemoryReservation:
-        description: "Memory soft limit in bytes."
-        type: "integer"
-        format: "int64"
-      MemorySwap:
-        description: |
-          Total memory limit (memory + swap). Set as `-1` to enable unlimited
-          swap.
-        type: "integer"
-        format: "int64"
-      MemorySwappiness:
-        description: |
-          Tune a container's memory swappiness behavior. Accepts an integer
-          between 0 and 100.
-        type: "integer"
-        format: "int64"
-        minimum: 0
-        maximum: 100
-      NanoCpus:
-        description: "CPU quota in units of 10<sup>-9</sup> CPUs."
-        type: "integer"
-        format: "int64"
-      OomKillDisable:
-        description: "Disable OOM Killer for the container."
-        type: "boolean"
-      Init:
-        description: |
-          Run an init inside the container that forwards signals and reaps
-          processes. This field is omitted if empty, and the default (as
-          configured on the daemon) is used.
-        type: "boolean"
-        x-nullable: true
-      PidsLimit:
-        description: |
-          Tune a container's PIDs limit. Set `0` or `-1` for unlimited, or `null`
-          to not change.
-        type: "integer"
-        format: "int64"
-        x-nullable: true
-      Ulimits:
-        description: |
-          A list of resource limits to set in the container. For example:
 @y
           This field is omitted when empty.
+@z
+
+@x
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated `memory.kmem.tcp.limit_in_bytes` field
+          for cgroups v1. This field will be removed in a future release.
+        type: "integer"
+        format: "int64"
+      MemoryReservation:
+        description: "Memory soft limit in bytes."
+        type: "integer"
+        format: "int64"
+      MemorySwap:
+        description: |
+          Total memory limit (memory + swap). Set as `-1` to enable unlimited
+          swap.
+        type: "integer"
+        format: "int64"
+      MemorySwappiness:
+        description: |
+          Tune a container's memory swappiness behavior. Accepts an integer
+          between 0 and 100.
+        type: "integer"
+        format: "int64"
+        minimum: 0
+        maximum: 100
+      NanoCpus:
+        description: "CPU quota in units of 10<sup>-9</sup> CPUs."
+        type: "integer"
+        format: "int64"
+      OomKillDisable:
+        description: "Disable OOM Killer for the container."
+        type: "boolean"
+      Init:
+        description: |
+          Run an init inside the container that forwards signals and reaps
+          processes. This field is omitted if empty, and the default (as
+          configured on the daemon) is used.
+        type: "boolean"
+        x-nullable: true
+      PidsLimit:
+        description: |
+          Tune a container's PIDs limit. Set `0` or `-1` for unlimited, or `null`
+          to not change.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+      Ulimits:
+        description: |
+          A list of resource limits to set in the container. For example:
+@y
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated `memory.kmem.tcp.limit_in_bytes` field
+          for cgroups v1. This field will be removed in a future release.
         type: "integer"
         format: "int64"
       MemoryReservation:
@@ -3175,37 +3181,6 @@ definitions:
         items:
           type: "string"
         example: ["/bin/sh", "-c"]
-    # FIXME(thaJeztah): temporarily using a full example to remove some "omitempty" fields. Remove once the fields are removed.
-    example:
-      "User": "web:web"
-      "ExposedPorts": {
-        "80/tcp": {},
-        "443/tcp": {}
-      }
-      "Env": ["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"]
-      "Cmd": ["/bin/sh"]
-      "Healthcheck": {
-        "Test": ["string"],
-        "Interval": 0,
-        "Timeout": 0,
-        "Retries": 0,
-        "StartPeriod": 0,
-        "StartInterval": 0
-      }
-      "ArgsEscaped": true
-      "Volumes": {
-        "/app/data": {},
-        "/app/config": {}
-      }
-      "WorkingDir": "/public/"
-      "Entrypoint": []
-      "OnBuild": []
-      "Labels": {
-        "com.example.some-label": "some-value",
-        "com.example.some-other-label": "some-other-value"
-      }
-      "StopSignal": "SIGTERM"
-      "Shell": ["/bin/sh", "-c"]
 @y
           If the array consists of exactly one empty string (`[""]`) then the
           entry point is reset to system default (i.e., the entry point used by
@@ -3244,37 +3219,6 @@ definitions:
         items:
           type: "string"
         example: ["/bin/sh", "-c"]
-    # FIXME(thaJeztah): temporarily using a full example to remove some "omitempty" fields. Remove once the fields are removed.
-    example:
-      "User": "web:web"
-      "ExposedPorts": {
-        "80/tcp": {},
-        "443/tcp": {}
-      }
-      "Env": ["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"]
-      "Cmd": ["/bin/sh"]
-      "Healthcheck": {
-        "Test": ["string"],
-        "Interval": 0,
-        "Timeout": 0,
-        "Retries": 0,
-        "StartPeriod": 0,
-        "StartInterval": 0
-      }
-      "ArgsEscaped": true
-      "Volumes": {
-        "/app/data": {},
-        "/app/config": {}
-      }
-      "WorkingDir": "/public/"
-      "Entrypoint": []
-      "OnBuild": []
-      "Labels": {
-        "com.example.some-label": "some-value",
-        "com.example.some-other-label": "some-other-value"
-      }
-      "StopSignal": "SIGTERM"
-      "Shell": ["/bin/sh", "-c"]
 @z
 
 @x
@@ -4271,9 +4215,35 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
+      GraphDriver:
+        $ref: "#/definitions/DriverData"
+      RootFS:
         description: |
-          Total size of the image including all layers it is composed of.
+          Information about the image's RootFS, including the layer IDs.
+        type: "object"
+        required: [Type]
+        properties:
+          Type:
+            type: "string"
+            x-nullable: false
+            example: "layers"
+          Layers:
+            type: "array"
+            items:
+              type: "string"
+            example:
+              - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
+              - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+      Metadata:
+        description: |
+          Additional metadata of the image in the local cache. This information
+          is local to the daemon, and not part of the image itself.
+        type: "object"
+        properties:
+          LastTagTime:
+            description: |
+              Date and time at which the image was last tagged in
+              [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
 @y
           Depending on how the image was created, this field may be empty.
         type: "string"
@@ -4320,50 +4290,6 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
-        description: |
-          Total size of the image including all layers it is composed of.
-@z
-
-@x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 1239828
-      GraphDriver:
-        $ref: "#/definitions/DriverData"
-      RootFS:
-        description: |
-          Information about the image's RootFS, including the layer IDs.
-        type: "object"
-        required: [Type]
-        properties:
-          Type:
-            type: "string"
-            x-nullable: false
-            example: "layers"
-          Layers:
-            type: "array"
-            items:
-              type: "string"
-            example:
-              - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
-              - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
-      Metadata:
-        description: |
-          Additional metadata of the image in the local cache. This information
-          is local to the daemon, and not part of the image itself.
-        type: "object"
-        properties:
-          LastTagTime:
-            description: |
-              Date and time at which the image was last tagged in
-              [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-@y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 1239828
       GraphDriver:
         $ref: "#/definitions/DriverData"
       RootFS:
@@ -4608,26 +4534,6 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@y
-          This size is not calculated by default. `-1` indicates that the value
-          has not been set / calculated.
-        type: "integer"
-        format: "int64"
-        x-nullable: false
-        example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@z
-
-@x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 172064416
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
@@ -4642,10 +4548,12 @@ definitions:
           Number of containers using this image. Includes both stopped and running
           containers.
 @y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
+          This size is not calculated by default. `-1` indicates that the value
+          has not been set / calculated.
         type: "integer"
         format: "int64"
-        example: 172064416
+        x-nullable: false
+        example: 1239828
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
@@ -13400,31 +13308,37 @@ definitions:
 @x
           Kernel memory TCP limits are not supported when using cgroups v2, which
           does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
-        type: "boolean"
-        example: true
-      CpuCfsPeriod:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CpuCfsQuota:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CPUShares:
-        description: |
-          Indicates if CPU Shares limiting is supported by the host.
-        type: "boolean"
-        example: true
-      CPUSet:
-        description: |
-          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
 @y
           Kernel memory TCP limits are not supported when using cgroups v2, which
           does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
+@z
+
+@x
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated kernel memory TCP accounting.
+        type: "boolean"
+        example: true
+      CpuCfsPeriod:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CpuCfsQuota:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CPUShares:
+        description: |
+          Indicates if CPU Shares limiting is supported by the host.
+        type: "boolean"
+        example: true
+      CPUSet:
+        description: |
+          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
+@y
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated kernel memory TCP accounting.
         type: "boolean"
         example: true
       CpuCfsPeriod:
@@ -13464,69 +13378,6 @@ definitions:
         description: "Indicates IPv4 forwarding is enabled."
         type: "boolean"
         example: true
-      BridgeNfIptables:
-        description: |
-          Indicates if `bridge-nf-call-iptables` is available on the host when
-          the daemon was started.
-@y
-          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-        type: "boolean"
-        example: true
-      PidsLimit:
-        description: "Indicates if the host kernel has PID limit support enabled."
-        type: "boolean"
-        example: true
-      OomKillDisable:
-        description: "Indicates if OOM killer disable is supported on the host."
-        type: "boolean"
-      IPv4Forwarding:
-        description: "Indicates IPv4 forwarding is enabled."
-        type: "boolean"
-        example: true
-      BridgeNfIptables:
-        description: |
-          Indicates if `bridge-nf-call-iptables` is available on the host when
-          the daemon was started.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Deprecated**: netfilter module is now loaded on-demand and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
-      BridgeNfIp6tables:
-        description: |
-          Indicates if `bridge-nf-call-ip6tables` is available on the host.
-@y
-          > **Deprecated**: netfilter module is now loaded on-demand and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
-      BridgeNfIp6tables:
-        description: |
-          Indicates if `bridge-nf-call-ip6tables` is available on the host.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
       Debug:
         description: |
           Indicates if the daemon is running in debug-mode / with debug-level
@@ -13537,11 +13388,20 @@ definitions:
         description: |
           The total number of file Descriptors in use by the daemon process.
 @y
-          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
+          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
         type: "boolean"
-        example: false
+        example: true
+      PidsLimit:
+        description: "Indicates if the host kernel has PID limit support enabled."
+        type: "boolean"
+        example: true
+      OomKillDisable:
+        description: "Indicates if OOM killer disable is supported on the host."
+        type: "boolean"
+      IPv4Forwarding:
+        description: "Indicates IPv4 forwarding is enabled."
+        type: "boolean"
+        example: true
       Debug:
         description: |
           Indicates if the daemon is running in debug-mode / with debug-level

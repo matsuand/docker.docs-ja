@@ -9,10 +9,12 @@
 
 @x
 <!---MARKER_GEN_START-->
-Update a specific catalog or all catalogs if no name is provided
+Update one or more catalogs by re-downloading from their original sources.
+If no name is provided, updates all catalogs that have remote sources.
 @y
 <!---MARKER_GEN_START-->
-Update a specific catalog or all catalogs if no name is provided
+Update one or more catalogs by re-downloading from their original sources.
+If no name is provided, updates all catalogs that have remote sources.
 @z
 
 @x

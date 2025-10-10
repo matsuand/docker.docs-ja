@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Get information about a server
+Get information about a server or inspect an OCI artifact
 @y
 <!---MARKER_GEN_START-->
-Get information about a server
+Get information about a server or inspect an OCI artifact
 @z
 
 @x

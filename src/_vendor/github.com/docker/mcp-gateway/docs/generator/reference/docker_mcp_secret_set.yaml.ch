@@ -6,52 +6,30 @@ command: docker mcp secret set
 short: Set a secret in Docker Desktop's secret store
 long: Set a secret in Docker Desktop's secret store
 usage: docker mcp secret set key[=value]
-pname: docker mcp secret
-plink: docker_mcp_secret.yaml
-options:
-    - option: provider
-      value_type: string
-      description: 'Supported: credstore, oauth/<provider>'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Use secrets for postgres password with default policy
 @y
 command: docker mcp secret set
 short: Set a secret in Docker Desktop's secret store
 long: Set a secret in Docker Desktop's secret store
 usage: docker mcp secret set key[=value]
-pname: docker mcp secret
-plink: docker_mcp_secret.yaml
-options:
-    - option: provider
-      value_type: string
+@z
+
+% options:
+
+@x provider
       description: 'Supported: credstore, oauth/<provider>'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 'Supported: credstore, oauth/<provider>'
+@z
+
+@x
+examples: |-
+    ### Use secrets for postgres password with default policy
+@y
 examples: |-
     ### Use secrets for postgres password with default policy
 @z
 
-@x
-    ```console
-    docker mcp secret set POSTGRES_PASSWORD=my-secret-password
-    docker run -d -l x-secret:POSTGRES_PASSWORD=/pwd.txt -e POSTGRES_PASSWORD_FILE=/pwd.txt -p 5432 postgres
-    ```
-@y
-    ```console
-    docker mcp secret set POSTGRES_PASSWORD=my-secret-password
-    docker run -d -l x-secret:POSTGRES_PASSWORD=/pwd.txt -e POSTGRES_PASSWORD_FILE=/pwd.txt -p 5432 postgres
-    ```
-@z
+% snip code...
 
 @x
     ### Pass the secret via STDIN
@@ -59,26 +37,5 @@ examples: |-
     ### Pass the secret via STDIN
 @z
 
-@x
-    ```console
-    echo my-secret-password > pwd.txt
-    cat pwd.txt | docker mcp secret set POSTGRES_PASSWORD
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    echo my-secret-password > pwd.txt
-    cat pwd.txt | docker mcp secret set POSTGRES_PASSWORD
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip code...
+% snip directives...

@@ -188,7 +188,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -197,7 +196,6 @@ info:
     {
       "username": "string",
       "password": "string",
-      "email": "string",
       "serveraddress": "string"
     }
     ```
@@ -1355,52 +1353,60 @@ definitions:
 
 @x
           This field is omitted when empty.
-        type: "integer"
-        format: "int64"
-      MemoryReservation:
-        description: "Memory soft limit in bytes."
-        type: "integer"
-        format: "int64"
-      MemorySwap:
-        description: |
-          Total memory limit (memory + swap). Set as `-1` to enable unlimited
-          swap.
-        type: "integer"
-        format: "int64"
-      MemorySwappiness:
-        description: |
-          Tune a container's memory swappiness behavior. Accepts an integer
-          between 0 and 100.
-        type: "integer"
-        format: "int64"
-        minimum: 0
-        maximum: 100
-      NanoCpus:
-        description: "CPU quota in units of 10<sup>-9</sup> CPUs."
-        type: "integer"
-        format: "int64"
-      OomKillDisable:
-        description: "Disable OOM Killer for the container."
-        type: "boolean"
-      Init:
-        description: |
-          Run an init inside the container that forwards signals and reaps
-          processes. This field is omitted if empty, and the default (as
-          configured on the daemon) is used.
-        type: "boolean"
-        x-nullable: true
-      PidsLimit:
-        description: |
-          Tune a container's PIDs limit. Set `0` or `-1` for unlimited, or `null`
-          to not change.
-        type: "integer"
-        format: "int64"
-        x-nullable: true
-      Ulimits:
-        description: |
-          A list of resource limits to set in the container. For example:
 @y
           This field is omitted when empty.
+@z
+
+@x
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated `memory.kmem.tcp.limit_in_bytes` field
+          for cgroups v1. This field will be removed in a future release.
+        type: "integer"
+        format: "int64"
+      MemoryReservation:
+        description: "Memory soft limit in bytes."
+        type: "integer"
+        format: "int64"
+      MemorySwap:
+        description: |
+          Total memory limit (memory + swap). Set as `-1` to enable unlimited
+          swap.
+        type: "integer"
+        format: "int64"
+      MemorySwappiness:
+        description: |
+          Tune a container's memory swappiness behavior. Accepts an integer
+          between 0 and 100.
+        type: "integer"
+        format: "int64"
+        minimum: 0
+        maximum: 100
+      NanoCpus:
+        description: "CPU quota in units of 10<sup>-9</sup> CPUs."
+        type: "integer"
+        format: "int64"
+      OomKillDisable:
+        description: "Disable OOM Killer for the container."
+        type: "boolean"
+      Init:
+        description: |
+          Run an init inside the container that forwards signals and reaps
+          processes. This field is omitted if empty, and the default (as
+          configured on the daemon) is used.
+        type: "boolean"
+        x-nullable: true
+      PidsLimit:
+        description: |
+          Tune a container's PIDs limit. Set `0` or `-1` for unlimited, or `null`
+          to not change.
+        type: "integer"
+        format: "int64"
+        x-nullable: true
+      Ulimits:
+        description: |
+          A list of resource limits to set in the container. For example:
+@y
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated `memory.kmem.tcp.limit_in_bytes` field
+          for cgroups v1. This field will be removed in a future release.
         type: "integer"
         format: "int64"
       MemoryReservation:
@@ -3175,37 +3181,6 @@ definitions:
         items:
           type: "string"
         example: ["/bin/sh", "-c"]
-    # FIXME(thaJeztah): temporarily using a full example to remove some "omitempty" fields. Remove once the fields are removed.
-    example:
-      "User": "web:web"
-      "ExposedPorts": {
-        "80/tcp": {},
-        "443/tcp": {}
-      }
-      "Env": ["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"]
-      "Cmd": ["/bin/sh"]
-      "Healthcheck": {
-        "Test": ["string"],
-        "Interval": 0,
-        "Timeout": 0,
-        "Retries": 0,
-        "StartPeriod": 0,
-        "StartInterval": 0
-      }
-      "ArgsEscaped": true
-      "Volumes": {
-        "/app/data": {},
-        "/app/config": {}
-      }
-      "WorkingDir": "/public/"
-      "Entrypoint": []
-      "OnBuild": []
-      "Labels": {
-        "com.example.some-label": "some-value",
-        "com.example.some-other-label": "some-other-value"
-      }
-      "StopSignal": "SIGTERM"
-      "Shell": ["/bin/sh", "-c"]
 @y
           If the array consists of exactly one empty string (`[""]`) then the
           entry point is reset to system default (i.e., the entry point used by
@@ -3244,37 +3219,6 @@ definitions:
         items:
           type: "string"
         example: ["/bin/sh", "-c"]
-    # FIXME(thaJeztah): temporarily using a full example to remove some "omitempty" fields. Remove once the fields are removed.
-    example:
-      "User": "web:web"
-      "ExposedPorts": {
-        "80/tcp": {},
-        "443/tcp": {}
-      }
-      "Env": ["PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"]
-      "Cmd": ["/bin/sh"]
-      "Healthcheck": {
-        "Test": ["string"],
-        "Interval": 0,
-        "Timeout": 0,
-        "Retries": 0,
-        "StartPeriod": 0,
-        "StartInterval": 0
-      }
-      "ArgsEscaped": true
-      "Volumes": {
-        "/app/data": {},
-        "/app/config": {}
-      }
-      "WorkingDir": "/public/"
-      "Entrypoint": []
-      "OnBuild": []
-      "Labels": {
-        "com.example.some-label": "some-value",
-        "com.example.some-other-label": "some-other-value"
-      }
-      "StopSignal": "SIGTERM"
-      "Shell": ["/bin/sh", "-c"]
 @z
 
 @x
@@ -4171,23 +4115,35 @@ definitions:
           Depending on how the image was created, this field may be empty and
           is only set for images that were built/created locally. This field
           is empty if the image was pulled from an image registry.
-        type: "string"
-        x-nullable: false
-        example: ""
-      Comment:
-        description: |
-          Optional message that was set when committing or importing the image.
-        type: "string"
-        x-nullable: false
-        example: ""
-      Created:
-        description: |
-          Date and time at which the image was created, formatted in
-          [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
 @y
           Depending on how the image was created, this field may be empty and
           is only set for images that were built/created locally. This field
           is empty if the image was pulled from an image registry.
+@z
+
+@x
+          > **Deprecated**: This field is only set when using the deprecated
+          > legacy builder. It is included in API responses for informational
+          > purposes, but should not be depended on as it will be omitted
+          > once the legacy builder is removed.
+        type: "string"
+        x-nullable: false
+        example: ""
+      Comment:
+        description: |
+          Optional message that was set when committing or importing the image.
+        type: "string"
+        x-nullable: false
+        example: ""
+      Created:
+        description: |
+          Date and time at which the image was created, formatted in
+          [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
+@y
+          > **Deprecated**: This field is only set when using the deprecated
+          > legacy builder. It is included in API responses for informational
+          > purposes, but should not be depended on as it will be omitted
+          > once the legacy builder is removed.
         type: "string"
         x-nullable: false
         example: ""
@@ -4227,108 +4183,58 @@ definitions:
 
 @x
           Depending on how the image was created, this field may be empty.
-        type: "string"
-        x-nullable: false
-        example: "27.0.1"
-      Author:
-        description: |
-          Name of the author that was specified when committing the image, or as
-          specified through MAINTAINER (deprecated) in the Dockerfile.
-        type: "string"
-        x-nullable: false
-        example: ""
-      Config:
-        $ref: "#/definitions/ImageConfig"
-      Architecture:
-        description: |
-          Hardware CPU architecture that the image runs on.
-        type: "string"
-        x-nullable: false
-        example: "arm"
-      Variant:
-        description: |
-          CPU architecture variant (presently ARM-only).
-        type: "string"
-        x-nullable: true
-        example: "v7"
-      Os:
-        description: |
-          Operating System the image is built to run on.
-        type: "string"
-        x-nullable: false
-        example: "linux"
-      OsVersion:
-        description: |
-          Operating System version the image is built to run on (especially
-          for Windows).
-        type: "string"
-        example: ""
-        x-nullable: true
-      Size:
-        description: |
-          Total size of the image including all layers it is composed of.
-        type: "integer"
-        format: "int64"
-        x-nullable: false
-        example: 1239828
-      VirtualSize:
-        description: |
-          Total size of the image including all layers it is composed of.
 @y
           Depending on how the image was created, this field may be empty.
-        type: "string"
-        x-nullable: false
-        example: "27.0.1"
-      Author:
-        description: |
-          Name of the author that was specified when committing the image, or as
-          specified through MAINTAINER (deprecated) in the Dockerfile.
-        type: "string"
-        x-nullable: false
-        example: ""
-      Config:
-        $ref: "#/definitions/ImageConfig"
-      Architecture:
-        description: |
-          Hardware CPU architecture that the image runs on.
-        type: "string"
-        x-nullable: false
-        example: "arm"
-      Variant:
-        description: |
-          CPU architecture variant (presently ARM-only).
-        type: "string"
-        x-nullable: true
-        example: "v7"
-      Os:
-        description: |
-          Operating System the image is built to run on.
-        type: "string"
-        x-nullable: false
-        example: "linux"
-      OsVersion:
-        description: |
-          Operating System version the image is built to run on (especially
-          for Windows).
-        type: "string"
-        example: ""
-        x-nullable: true
-      Size:
-        description: |
-          Total size of the image including all layers it is composed of.
-        type: "integer"
-        format: "int64"
-        x-nullable: false
-        example: 1239828
-      VirtualSize:
-        description: |
-          Total size of the image including all layers it is composed of.
 @z
 
 @x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
+          > **Deprecated**: This field is only set when using the deprecated
+          > legacy builder. It is included in API responses for informational
+          > purposes, but should not be depended on as it will be omitted
+          > once the legacy builder is removed.
+        type: "string"
+        x-nullable: false
+        example: "27.0.1"
+      Author:
+        description: |
+          Name of the author that was specified when committing the image, or as
+          specified through MAINTAINER (deprecated) in the Dockerfile.
+        type: "string"
+        x-nullable: false
+        example: ""
+      Config:
+        $ref: "#/definitions/ImageConfig"
+      Architecture:
+        description: |
+          Hardware CPU architecture that the image runs on.
+        type: "string"
+        x-nullable: false
+        example: "arm"
+      Variant:
+        description: |
+          CPU architecture variant (presently ARM-only).
+        type: "string"
+        x-nullable: true
+        example: "v7"
+      Os:
+        description: |
+          Operating System the image is built to run on.
+        type: "string"
+        x-nullable: false
+        example: "linux"
+      OsVersion:
+        description: |
+          Operating System version the image is built to run on (especially
+          for Windows).
+        type: "string"
+        example: ""
+        x-nullable: true
+      Size:
+        description: |
+          Total size of the image including all layers it is composed of.
         type: "integer"
         format: "int64"
+        x-nullable: false
         example: 1239828
       GraphDriver:
         $ref: "#/definitions/DriverData"
@@ -4360,9 +4266,53 @@ definitions:
               Date and time at which the image was last tagged in
               [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
 @y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
+          > **Deprecated**: This field is only set when using the deprecated
+          > legacy builder. It is included in API responses for informational
+          > purposes, but should not be depended on as it will be omitted
+          > once the legacy builder is removed.
+        type: "string"
+        x-nullable: false
+        example: "27.0.1"
+      Author:
+        description: |
+          Name of the author that was specified when committing the image, or as
+          specified through MAINTAINER (deprecated) in the Dockerfile.
+        type: "string"
+        x-nullable: false
+        example: ""
+      Config:
+        $ref: "#/definitions/ImageConfig"
+      Architecture:
+        description: |
+          Hardware CPU architecture that the image runs on.
+        type: "string"
+        x-nullable: false
+        example: "arm"
+      Variant:
+        description: |
+          CPU architecture variant (presently ARM-only).
+        type: "string"
+        x-nullable: true
+        example: "v7"
+      Os:
+        description: |
+          Operating System the image is built to run on.
+        type: "string"
+        x-nullable: false
+        example: "linux"
+      OsVersion:
+        description: |
+          Operating System version the image is built to run on (especially
+          for Windows).
+        type: "string"
+        example: ""
+        x-nullable: true
+      Size:
+        description: |
+          Total size of the image including all layers it is composed of.
         type: "integer"
         format: "int64"
+        x-nullable: false
         example: 1239828
       GraphDriver:
         $ref: "#/definitions/DriverData"
@@ -4608,26 +4558,6 @@ definitions:
         format: "int64"
         x-nullable: false
         example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@y
-          This size is not calculated by default. `-1` indicates that the value
-          has not been set / calculated.
-        type: "integer"
-        format: "int64"
-        x-nullable: false
-        example: 1239828
-      VirtualSize:
-        description: |-
-          Total size of the image including all layers it is composed of.
-@z
-
-@x
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
-        type: "integer"
-        format: "int64"
-        example: 172064416
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
@@ -4642,10 +4572,12 @@ definitions:
           Number of containers using this image. Includes both stopped and running
           containers.
 @y
-          Deprecated: this field is omitted in API v1.44, but kept for backward compatibility. Use Size instead.
+          This size is not calculated by default. `-1` indicates that the value
+          has not been set / calculated.
         type: "integer"
         format: "int64"
-        example: 172064416
+        x-nullable: false
+        example: 1239828
       Labels:
         description: "User-defined key/value metadata."
         type: "object"
@@ -6630,10 +6562,92 @@ definitions:
           - Args
         properties:
           DockerVersion:
-            description: "Docker Version used to create the plugin"
+            description: |-
+              Docker Version used to create the plugin.
+@y
+  Plugin:
+    description: "A plugin for the Engine API"
+    type: "object"
+    required: [Settings, Enabled, Config, Name]
+    properties:
+      Id:
+        type: "string"
+        example: "5724e2c8652da337ab2eedd19fc6fc0ec908e4bd907c7421bf6a8dfc70c4c078"
+      Name:
+        type: "string"
+        x-nullable: false
+        example: "tiborvass/sample-volume-plugin"
+      Enabled:
+        description:
+          True if the plugin is running. False if the plugin is not running,
+          only installed.
+        type: "boolean"
+        x-nullable: false
+        example: true
+      Settings:
+        description: "Settings that can be modified by users."
+        type: "object"
+        x-nullable: false
+        required: [Args, Devices, Env, Mounts]
+        properties:
+          Mounts:
+            type: "array"
+            items:
+              $ref: "#/definitions/PluginMount"
+          Env:
+            type: "array"
+            items:
+              type: "string"
+            example:
+              - "DEBUG=0"
+          Args:
+            type: "array"
+            items:
+              type: "string"
+          Devices:
+            type: "array"
+            items:
+              $ref: "#/definitions/PluginDevice"
+      PluginReference:
+        description: "plugin remote reference used to push/pull the plugin"
+        type: "string"
+        x-nullable: false
+        example: "localhost:5000/tiborvass/sample-volume-plugin:latest"
+      Config:
+        description: "The config of a plugin."
+        type: "object"
+        x-nullable: false
+        required:
+          - Description
+          - Documentation
+          - Interface
+          - Entrypoint
+          - WorkDir
+          - Network
+          - Linux
+          - PidHost
+          - PropagatedMount
+          - IpcHost
+          - Mounts
+          - Env
+          - Args
+        properties:
+          DockerVersion:
+            description: |-
+              Docker Version used to create the plugin.
+@z
+
+@x
+              Depending on how the plugin was created, this field may be empty or omitted.
+@y
+              Depending on how the plugin was created, this field may be empty or omitted.
+@z
+
+@x
+              Deprecated: this field is no longer set, and will be removed in the next API version.
             type: "string"
             x-nullable: false
-            example: "17.06.0-ce"
+            x-omitempty: true
           Description:
             type: "string"
             x-nullable: false
@@ -6777,78 +6791,10 @@ definitions:
                   - "sha256:675532206fbf3030b8458f88d6e26d4eb1577688a25efec97154c94e8b6b4887"
                   - "sha256:e216a057b1cb1efc11f8a268f37ef62083e70b1b38323ba252e25ac88904a7e8"
 @y
-  Plugin:
-    description: "A plugin for the Engine API"
-    type: "object"
-    required: [Settings, Enabled, Config, Name]
-    properties:
-      Id:
-        type: "string"
-        example: "5724e2c8652da337ab2eedd19fc6fc0ec908e4bd907c7421bf6a8dfc70c4c078"
-      Name:
-        type: "string"
-        x-nullable: false
-        example: "tiborvass/sample-volume-plugin"
-      Enabled:
-        description:
-          True if the plugin is running. False if the plugin is not running,
-          only installed.
-        type: "boolean"
-        x-nullable: false
-        example: true
-      Settings:
-        description: "Settings that can be modified by users."
-        type: "object"
-        x-nullable: false
-        required: [Args, Devices, Env, Mounts]
-        properties:
-          Mounts:
-            type: "array"
-            items:
-              $ref: "#/definitions/PluginMount"
-          Env:
-            type: "array"
-            items:
-              type: "string"
-            example:
-              - "DEBUG=0"
-          Args:
-            type: "array"
-            items:
-              type: "string"
-          Devices:
-            type: "array"
-            items:
-              $ref: "#/definitions/PluginDevice"
-      PluginReference:
-        description: "plugin remote reference used to push/pull the plugin"
-        type: "string"
-        x-nullable: false
-        example: "localhost:5000/tiborvass/sample-volume-plugin:latest"
-      Config:
-        description: "The config of a plugin."
-        type: "object"
-        x-nullable: false
-        required:
-          - Description
-          - Documentation
-          - Interface
-          - Entrypoint
-          - WorkDir
-          - Network
-          - Linux
-          - PidHost
-          - PropagatedMount
-          - IpcHost
-          - Mounts
-          - Env
-          - Args
-        properties:
-          DockerVersion:
-            description: "Docker Version used to create the plugin"
+              Deprecated: this field is no longer set, and will be removed in the next API version.
             type: "string"
             x-nullable: false
-            example: "17.06.0-ce"
+            x-omitempty: true
           Description:
             type: "string"
             x-nullable: false
@@ -13398,31 +13344,37 @@ definitions:
 @x
           Kernel memory TCP limits are not supported when using cgroups v2, which
           does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
-        type: "boolean"
-        example: true
-      CpuCfsPeriod:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CpuCfsQuota:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CPUShares:
-        description: |
-          Indicates if CPU Shares limiting is supported by the host.
-        type: "boolean"
-        example: true
-      CPUSet:
-        description: |
-          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
 @y
           Kernel memory TCP limits are not supported when using cgroups v2, which
           does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
+@z
+
+@x
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated kernel memory TCP accounting.
+        type: "boolean"
+        example: true
+      CpuCfsPeriod:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CpuCfsQuota:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CPUShares:
+        description: |
+          Indicates if CPU Shares limiting is supported by the host.
+        type: "boolean"
+        example: true
+      CPUSet:
+        description: |
+          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
+@y
+          **Deprecated**: This field is deprecated as kernel 6.12 has deprecated kernel memory TCP accounting.
         type: "boolean"
         example: true
       CpuCfsPeriod:
@@ -13462,69 +13414,6 @@ definitions:
         description: "Indicates IPv4 forwarding is enabled."
         type: "boolean"
         example: true
-      BridgeNfIptables:
-        description: |
-          Indicates if `bridge-nf-call-iptables` is available on the host when
-          the daemon was started.
-@y
-          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-        type: "boolean"
-        example: true
-      PidsLimit:
-        description: "Indicates if the host kernel has PID limit support enabled."
-        type: "boolean"
-        example: true
-      OomKillDisable:
-        description: "Indicates if OOM killer disable is supported on the host."
-        type: "boolean"
-      IPv4Forwarding:
-        description: "Indicates IPv4 forwarding is enabled."
-        type: "boolean"
-        example: true
-      BridgeNfIptables:
-        description: |
-          Indicates if `bridge-nf-call-iptables` is available on the host when
-          the daemon was started.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Deprecated**: netfilter module is now loaded on-demand and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
-      BridgeNfIp6tables:
-        description: |
-          Indicates if `bridge-nf-call-ip6tables` is available on the host.
-@y
-          > **Deprecated**: netfilter module is now loaded on-demand and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
-      BridgeNfIp6tables:
-        description: |
-          Indicates if `bridge-nf-call-ip6tables` is available on the host.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
-        type: "boolean"
-        example: false
       Debug:
         description: |
           Indicates if the daemon is running in debug-mode / with debug-level
@@ -13535,11 +13424,20 @@ definitions:
         description: |
           The total number of file Descriptors in use by the daemon process.
 @y
-          > **Deprecated**: netfilter module is now loaded on-demand, and no longer
-          > during daemon startup, making this field obsolete. This field is always
-          > `false` and will be removed in a API v1.49.
+          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
         type: "boolean"
-        example: false
+        example: true
+      PidsLimit:
+        description: "Indicates if the host kernel has PID limit support enabled."
+        type: "boolean"
+        example: true
+      OomKillDisable:
+        description: "Indicates if OOM killer disable is supported on the host."
+        type: "boolean"
+      IPv4Forwarding:
+        description: "Indicates IPv4 forwarding is enabled."
+        type: "boolean"
+        example: true
       Debug:
         description: |
           Indicates if the daemon is running in debug-mode / with debug-level

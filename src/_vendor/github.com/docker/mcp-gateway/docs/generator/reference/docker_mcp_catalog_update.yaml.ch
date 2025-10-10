@@ -3,28 +3,36 @@
 
 @x
 command: docker mcp catalog update
-short: Update a specific catalog or all catalogs if no name is provided
-long: Update a specific catalog or all catalogs if no name is provided
+short: Update catalog(s) from remote sources
+long: |-
+    Update one or more catalogs by re-downloading from their original sources.
+    If no name is provided, updates all catalogs that have remote sources.
 usage: docker mcp catalog update [name]
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp catalog update
-short: Update a specific catalog or all catalogs if no name is provided
-long: Update a specific catalog or all catalogs if no name is provided
+short: Update catalog(s) from remote sources
+long: |-
+    Update one or more catalogs by re-downloading from their original sources.
+    If no name is provided, updates all catalogs that have remote sources.
 usage: docker mcp catalog update [name]
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+@x
+examples: |4-
+      # Update all catalogs
+      docker mcp catalog update
+@y
+examples: |4-
+      # Update all catalogs
+      docker mcp catalog update
+@z
+
+@x
+      # Update specific catalog
+      docker mcp catalog update team-servers
+@y
+      # Update specific catalog
+      docker mcp catalog update team-servers
+@z
+
+% snip directives...

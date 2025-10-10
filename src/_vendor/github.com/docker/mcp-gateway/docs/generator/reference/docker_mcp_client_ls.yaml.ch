@@ -6,71 +6,27 @@ command: docker mcp client ls
 short: List client configurations
 long: List client configurations
 usage: docker mcp client ls
-pname: docker mcp client
-plink: docker_mcp_client.yaml
-options:
-    - option: global
-      shorthand: g
-      value_type: bool
-      default_value: "false"
-      description: |
-        Change the system wide configuration or the clients setup in your current git repo.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Print as JSON.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp client ls
 short: List client configurations
 long: List client configurations
 usage: docker mcp client ls
-pname: docker mcp client
-plink: docker_mcp_client.yaml
-options:
-    - option: global
-      shorthand: g
-      value_type: bool
-      default_value: "false"
+@z
+
+% options:
+
+@x global
       description: |
         Change the system wide configuration or the clients setup in your current git repo.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Print as JSON.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Change the system wide configuration or the clients setup in your current git repo.
 @z
+
+@x json
+      description: Print as JSON.
+@y
+      description: Print as JSON.
+@z
+
+% snip directives...

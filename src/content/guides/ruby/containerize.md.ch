@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Containerize a Ruby on Rails application
@@ -79,6 +80,19 @@ Rails 7.1 generates multistage Dockerfile out of the box, below is an example of
 Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
 @y
 Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
+@z
+
+@x within code
+# This Dockerfile is designed for production, not development.
+@y
+# This Dockerfile is designed for production, not development.
+@z
+% ...
+
+@x
+This Dockerfile uses a script at `./bin/docker-entrypoint` as the container's entrypoint. This script prepares the database and runs the application server. Below is an example of such a script.
+@y
+This Dockerfile uses a script at `./bin/docker-entrypoint` as the container's entrypoint. This script prepares the database and runs the application server. Below is an example of such a script.
 @z
 
 @x

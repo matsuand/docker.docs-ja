@@ -46,6 +46,106 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
+## 4.48.0
+@y
+## 4.48.0
+@z
+
+@x
+{{< release-date date="2025-10-09" >}}
+@y
+{{< release-date date="2025-10-09" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.48.0" build_path="/207573/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.48.0" build_path="/207573/" >}}
+@z
+
+@x
+> [IMPORTANT]
+>
+> Support for macOS 13 has ended. Installing Docker Desktop will require macOS 14 in the next release.
+@y
+> [IMPORTANT]
+>
+> Support for macOS 13 has ended. Installing Docker Desktop will require macOS 14 in the next release.
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- You can now specify PAC files and Embedded PAC scripts with installer flags. 
+- Administrators can set proxy settings via macOS configuration profiles. 
+@y
+- You can now specify PAC files and Embedded PAC scripts with installer flags. 
+- Administrators can set proxy settings via macOS configuration profiles. 
+@z
+
+@x
+### Upgrades
+@y
+### Upgrades
+@z
+
+@x
+- [Docker Compose v2.40.0](https://github.com/docker/compose/releases/tag/v2.40.0)
+- [Docker Buildx v0.29.1](https://github.com/docker/buildx/releases/tag/v0.29.1)
+- [Docker Engine v28.5.1](https://docs.docker.com/engine/release-notes/28/#2851)
+- Docker MCP plugin `v0.22.0`
+@y
+- [Docker Compose v2.40.0](https://github.com/docker/compose/releases/tag/v2.40.0)
+- [Docker Buildx v0.29.1](https://github.com/docker/buildx/releases/tag/v0.29.1)
+- [Docker Engine v28.5.1](https://docs.docker.com/engine/release-notes/28/#2851)
+- Docker MCP plugin `v0.22.0`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms 
+@y
+#### For all platforms 
+@z
+
+@x
+- Fixed an issue where kind cluster state is sometimes reset when Desktop restarts. Fixes [docker/for-mac#77445](https://github.com/docker/for-mac/issues/7745).
+- Removed the obsolete `mcp` key to align with the latest VS Code MCP server changes.
+- Update credential helpers to [v0.9.4](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.4).
+- Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one. 
+- Fixed a bug which caused Docker Desktop to regularly create new processes with Docker CLI tools under certain conditions. Fixes [docker/for-win#14944](https://github.com/docker/for-win/issues/14944).
+@y
+- Fixed an issue where kind cluster state is sometimes reset when Desktop restarts. Fixes [docker/for-mac#77445](https://github.com/docker/for-mac/issues/7745).
+- Removed the obsolete `mcp` key to align with the latest VS Code MCP server changes.
+- Update credential helpers to [v0.9.4](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.4).
+- Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one. 
+- Fixed a bug which caused Docker Desktop to regularly create new processes with Docker CLI tools under certain conditions. Fixes [docker/for-win#14944](https://github.com/docker/for-win/issues/14944).
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Removed the `HKLM\SOFTWARE\Docker Inc.\Docker\1.0` registry key. Look for `docker.exe` in the path to find out where Docker Desktop is installed instead.
+- Fixed startup in WSL 2 mode when IPv6 has been disabled.
+@y
+- Removed the `HKLM\SOFTWARE\Docker Inc.\Docker\1.0` registry key. Look for `docker.exe` in the path to find out where Docker Desktop is installed instead.
+- Fixed startup in WSL 2 mode when IPv6 has been disabled.
+@z
+
+@x
 ## 4.47.0
 @y
 ## 4.47.0

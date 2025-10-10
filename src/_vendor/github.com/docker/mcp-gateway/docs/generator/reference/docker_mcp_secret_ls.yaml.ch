@@ -6,47 +6,19 @@ command: docker mcp secret ls
 short: List all secret names in Docker Desktop's secret store
 long: List all secret names in Docker Desktop's secret store
 usage: docker mcp secret ls
-pname: docker mcp secret
-plink: docker_mcp_secret.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Print as JSON.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp secret ls
 short: List all secret names in Docker Desktop's secret store
 long: List all secret names in Docker Desktop's secret store
 usage: docker mcp secret ls
-pname: docker mcp secret
-plink: docker_mcp_secret.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Print as JSON.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x json
+      description: Print as JSON.
+@y
+      description: Print as JSON.
+@z
+
+% snip directives...

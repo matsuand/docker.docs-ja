@@ -1,7 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS =  catalog client config gateway oauth policy secrets server tools
+SUBDIRS =  catalog client config feature gateway oauth policy secrets \
+	server tools
 
 copyfiles = \
 	_index.md  \

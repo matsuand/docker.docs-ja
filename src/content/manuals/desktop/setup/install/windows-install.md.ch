@@ -579,6 +579,8 @@ The `install` command accepts the following flags:
 - `--override-proxy-https=<URL>`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests, requires `--proxy-http-mode` to be `manual`
 - `--override-proxy-exclude=<hosts/domains>`: Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.
 - `--proxy-enable-kerberosntlm`: Enables Kerberos and NTLM proxy authentication. If you are enabling this, ensure your proxy server is properly configured for Kerberos/NTLM authentication. Available with Docker Desktop 4.32 and later.
+- `--override-proxy-pac=<PAC file URL>`: Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode.
+- `--override-proxy-embedded-pac=<PAC script>`: Specifies an embedded PAC (Proxy Auto-Config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `--override-proxy-pac` flag.
 @y
 - `--proxy-http-mode=<mode>`: HTTP プロキシーモードを設定します。`system` (デフォルト) または `manual` です。
 - `--override-proxy-http=<URL>`: HTTP リクエストに対して用いられる HTTP プロキシーの URL を設定します。
@@ -590,7 +592,17 @@ The `install` command accepts the following flags:
 - `--proxy-enable-kerberosntlm`: Kerberos と NTLM プロキシー認証を有効にします。
   これを有効にすると Kerberos/NTLM 認証への設定がプロキシーサーバーに対して適切に設定されます。
   Docker Desktop 4.32 またはそれ以降において利用可能です。
+- `--override-proxy-pac=<PAC file URL>`: Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode.
+- `--override-proxy-embedded-pac=<PAC script>`: Specifies an embedded PAC (Proxy Auto-Config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `--override-proxy-pac` flag.
 @z
+
+@x
+###### Example of specifying PAC file / PAC script
+@y
+###### Example of specifying PAC file / PAC script
+@z
+
+% snip code...
 
 @x
 ##### Data root and disk location

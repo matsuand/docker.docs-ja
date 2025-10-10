@@ -4,27 +4,27 @@
 @x
 command: docker mcp catalog rm
 short: Remove a catalog
-long: Remove a catalog
+long: |-
+    Remove a locally configured catalog. This will delete the catalog and all its server definitions.
+    The Docker official catalog cannot be removed.
 usage: docker mcp catalog rm <name>
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: true
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp catalog rm
 short: Remove a catalog
-long: Remove a catalog
+long: |-
+    Remove a locally configured catalog. This will delete the catalog and all its server definitions.
+    The Docker official catalog cannot be removed.
 usage: docker mcp catalog rm <name>
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: true
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+@x
+examples: |4-
+      # Remove a catalog
+      docker mcp catalog rm old-servers
+@y
+examples: |4-
+      # Remove a catalog
+      docker mcp catalog rm old-servers
+@z
+
+% snip directives...

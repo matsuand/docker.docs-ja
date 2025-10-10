@@ -7,108 +7,38 @@ aliases: docker mcp tools list, docker mcp tools ls
 short: List tools
 long: List tools
 usage: docker mcp tools list
-pname: docker mcp tools
-plink: docker_mcp_tools.yaml
-inherited_options:
-    - option: format
-      value_type: string
-      default_value: list
-      description: Output format (json|list)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gateway-arg
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional arguments passed to the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      value_type: string
-      default_value: "2"
-      description: Version of the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp tools list
 aliases: docker mcp tools list, docker mcp tools ls
 short: List tools
 long: List tools
 usage: docker mcp tools list
-pname: docker mcp tools
-plink: docker_mcp_tools.yaml
-inherited_options:
-    - option: format
-      value_type: string
-      default_value: list
-      description: Output format (json|list)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gateway-arg
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional arguments passed to the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      value_type: string
-      default_value: "2"
-      description: Version of the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% inherited_options:
+
+@x format
+      description: Output format (json|list)
+@y
+      description: Output format (json|list)
+@z
+
+@x gateway-arg
+      description: Additional arguments passed to the gateway
+@y
+      description: Additional arguments passed to the gateway
+@z
+
+@x verbose
+      description: Verbose output
+@y
+      description: Verbose output
+@z
+
+@x version
+      description: Version of the gateway
+@y
+      description: Version of the gateway
+@z
+
+% snip directives...

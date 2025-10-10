@@ -7,7 +7,7 @@ copyfiles = \
 	server_disable.md \
 	server_enable.md  \
 	server_inspect.md \
-	server_list.md    \
+	server_ls.md      \
 	server_reset.md
 
 include $(top_srcdir)/build-aux/common.mk

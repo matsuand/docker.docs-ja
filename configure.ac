@@ -330,6 +330,7 @@ AC_CONFIG_FILES([
  	src/content/reference/cli/docker/mcp/catalog/Makefile
  	src/content/reference/cli/docker/mcp/client/Makefile
  	src/content/reference/cli/docker/mcp/config/Makefile
+ 	src/content/reference/cli/docker/mcp/feature/Makefile
  	src/content/reference/cli/docker/mcp/gateway/Makefile
  	src/content/reference/cli/docker/mcp/oauth/Makefile
  	src/content/reference/cli/docker/mcp/policy/Makefile

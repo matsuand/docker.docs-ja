@@ -238,16 +238,18 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	_index.md         \
-	catalog_add.md    \
-	catalog_create.md \
-	catalog_fork.md   \
-	catalog_import.md \
-	catalog_init.md   \
-	catalog_ls.md     \
-	catalog_reset.md  \
-	catalog_rm.md     \
-	catalog_show.md   \
+	_index.md            \
+	catalog_add.md       \
+	catalog_bootstrap.md \
+	catalog_create.md    \
+	catalog_export.md    \
+	catalog_fork.md      \
+	catalog_import.md    \
+	catalog_init.md      \
+	catalog_ls.md        \
+	catalog_reset.md     \
+	catalog_rm.md        \
+	catalog_show.md      \
 	catalog_update.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

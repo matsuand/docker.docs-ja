@@ -6,25 +6,19 @@ command: docker mcp oauth authorize
 short: Authorize the specified OAuth app.
 long: Authorize the specified OAuth app.
 usage: docker mcp oauth authorize <app>
-pname: docker mcp oauth
-plink: docker_mcp_oauth.yaml
-deprecated: false
-hidden: true
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp oauth authorize
 short: Authorize the specified OAuth app.
 long: Authorize the specified OAuth app.
 usage: docker mcp oauth authorize <app>
-pname: docker mcp oauth
-plink: docker_mcp_oauth.yaml
-deprecated: false
-hidden: true
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x scopes
+      description: OAuth scopes to request (space-separated)
+@y
+      description: OAuth scopes to request (space-separated)
+@z
+
+% snip directives...

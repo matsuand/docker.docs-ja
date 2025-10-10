@@ -84,11 +84,11 @@ Docker Engine をインストールするには、以下に示す 64 ビット U
 @z
 
 @x
-- Ubuntu Oracular 24.10
+- Ubuntu Plucky 25.04
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
 @y
-- Ubuntu Oracular 24.10
+- Ubuntu Plucky 25.04
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
 @z

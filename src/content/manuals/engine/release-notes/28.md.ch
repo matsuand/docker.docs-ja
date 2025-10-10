@@ -36,6 +36,60 @@ For more information about:
 @z
 
 @x
+## 28.5.1
+@y
+## 28.5.1
+@z
+
+@x
+{{< release-date date="2025-10-08" >}}
+@y
+{{< release-date date="2025-10-08" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.1)
+- [moby/moby, 28.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.1)
+@y
+- [docker/cli, 28.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.1)
+- [moby/moby, 28.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Update BuildKit to v0.25.1. [moby/moby#51137](https://github.com/moby/moby/pull/51137)
+- Update Go runtime to [1.24.8](https://go.dev/doc/devel/release#go1.24.8). [moby/moby#51133](https://github.com/moby/moby/pull/51133), [docker/cli#6541](https://github.com/docker/cli/pull/6541)
+@y
+- Update BuildKit to v0.25.1. [moby/moby#51137](https://github.com/moby/moby/pull/51137)
+- Update Go runtime to [1.24.8](https://go.dev/doc/devel/release#go1.24.8). [moby/moby#51133](https://github.com/moby/moby/pull/51133), [docker/cli#6541](https://github.com/docker/cli/pull/6541)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- api/types/image: InspectResponse: deprecate `Parent` and `DockerVersion` fields. [moby/moby#51105](https://github.com/moby/moby/pull/51105)
+- api/types/plugin: deprecate `Config.DockerVersion` field. [moby/moby#51110](https://github.com/moby/moby/pull/51110)
+@y
+- api/types/image: InspectResponse: deprecate `Parent` and `DockerVersion` fields. [moby/moby#51105](https://github.com/moby/moby/pull/51105)
+- api/types/plugin: deprecate `Config.DockerVersion` field. [moby/moby#51110](https://github.com/moby/moby/pull/51110)
+@z
+
+@x
 ## 28.5.0
 @y
 ## 28.5.0

@@ -3,128 +3,40 @@
 
 @x
 command: docker mcp tools
-short: List/count/call MCP tools
-long: List/count/call MCP tools
-pname: docker mcp
-plink: docker_mcp.yaml
-cname:
-    - docker mcp tools call
-    - docker mcp tools count
-    - docker mcp tools inspect
-    - docker mcp tools list
-clink:
-    - docker_mcp_tools_call.yaml
-    - docker_mcp_tools_count.yaml
-    - docker_mcp_tools_inspect.yaml
-    - docker_mcp_tools_list.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: list
-      description: Output format (json|list)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gateway-arg
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional arguments passed to the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      value_type: string
-      default_value: "2"
-      description: Version of the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+short: Manage tools
+long: Manage tools
 @y
 command: docker mcp tools
-short: List/count/call MCP tools
-long: List/count/call MCP tools
-pname: docker mcp
-plink: docker_mcp.yaml
-cname:
-    - docker mcp tools call
-    - docker mcp tools count
-    - docker mcp tools inspect
-    - docker mcp tools list
-clink:
-    - docker_mcp_tools_call.yaml
-    - docker_mcp_tools_count.yaml
-    - docker_mcp_tools_inspect.yaml
-    - docker_mcp_tools_list.yaml
-options:
-    - option: format
-      value_type: string
-      default_value: list
-      description: Output format (json|list)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: gateway-arg
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional arguments passed to the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: version
-      value_type: string
-      default_value: "2"
-      description: Version of the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+short: Manage tools
+long: Manage tools
 @z
+
+% cname:
+% clink:
+% options:
+
+@x format
+      description: Output format (json|list)
+@y
+      description: Output format (json|list)
+@z
+
+@x gateway-arg
+      description: Additional arguments passed to the gateway
+@y
+      description: Additional arguments passed to the gateway
+@z
+
+@x verbose
+      description: Verbose output
+@y
+      description: Verbose output
+@z
+
+@x version
+      description: Version of the gateway
+@y
+      description: Version of the gateway
+@z
+
+% snip directives...

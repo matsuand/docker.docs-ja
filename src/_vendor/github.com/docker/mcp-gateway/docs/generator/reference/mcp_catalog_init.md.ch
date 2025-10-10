@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Initialize the catalog
+Initialize the local catalog management system by creating the necessary configuration files and directories.
 @y
 <!---MARKER_GEN_START-->
-Initialize the catalog
+Initialize the local catalog management system by creating the necessary configuration files and directories.
 @z
 
 @x

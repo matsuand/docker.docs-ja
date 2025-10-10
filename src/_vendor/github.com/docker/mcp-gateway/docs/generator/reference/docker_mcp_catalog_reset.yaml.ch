@@ -4,29 +4,27 @@
 @x
 command: docker mcp catalog reset
 aliases: docker mcp catalog reset, docker mcp catalog empty
-short: Empty the catalog
-long: Empty the catalog
+short: Reset the catalog system
+long: |
+    Reset the local catalog management system by removing all user-managed catalogs and configuration. This does not affect Docker's official catalog.
 usage: docker mcp catalog reset
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp catalog reset
 aliases: docker mcp catalog reset, docker mcp catalog empty
-short: Empty the catalog
-long: Empty the catalog
+short: Reset the catalog system
+long: |
+    Reset the local catalog management system by removing all user-managed catalogs and configuration. This does not affect Docker's official catalog.
 usage: docker mcp catalog reset
-pname: docker mcp catalog
-plink: docker_mcp_catalog.yaml
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+@x
+examples: |4-
+      # Reset all user catalogs
+      docker mcp catalog reset
+@y
+examples: |4-
+      # Reset all user catalogs
+      docker mcp catalog reset
+@z
+
+% snip directives...

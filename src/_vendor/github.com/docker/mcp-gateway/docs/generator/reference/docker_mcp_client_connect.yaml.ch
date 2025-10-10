@@ -4,87 +4,41 @@
 @x
 command: docker mcp client connect
 short: |
-    Connect the Docker MCP Toolkit to a client. Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
+    Connect the Docker MCP Toolkit to a client. Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
 long: |
-    Connect the Docker MCP Toolkit to a client. Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
+    Connect the Docker MCP Toolkit to a client. Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
 usage: |-
     docker mcp client connect [OPTIONS] <mcp-client>
 @y
 command: docker mcp client connect
 short: |
-    Connect the Docker MCP Toolkit to a client. Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
+    Connect the Docker MCP Toolkit to a client. Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
 long: |
-    Connect the Docker MCP Toolkit to a client. Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
+    Connect the Docker MCP Toolkit to a client. Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
 usage: |-
     docker mcp client connect [OPTIONS] <mcp-client>
 @z
 
 @x
-    Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
-pname: docker mcp client
-plink: docker_mcp_client.yaml
-options:
-    - option: global
-      shorthand: g
-      value_type: bool
-      default_value: "false"
-      description: |
-        Change the system wide configuration or the clients setup in your current git repo.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display errors.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
 @y
-    Supported clients: claude-desktop continue cursor gemini goose gordon lmstudio sema4 vscode
-pname: docker mcp client
-plink: docker_mcp_client.yaml
-options:
-    - option: global
-      shorthand: g
-      value_type: bool
-      default_value: "false"
+    Supported clients: claude-code claude-desktop codex continue cursor gemini goose gordon lmstudio opencode sema4 vscode zed
+@z
+
+% options:
+
+@x global
       description: |
         Change the system wide configuration or the clients setup in your current git repo.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display errors.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Change the system wide configuration or the clients setup in your current git repo.
 @z
+
+@x quiet
+      description: Only display errors.
+@y
+      description: Only display errors.
+@z
+
+% snip directives...

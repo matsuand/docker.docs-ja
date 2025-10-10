@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Empty the catalog
+Reset the local catalog management system by removing all user-managed catalogs and configuration. This does not affect Docker's official catalog.
 @y
 <!---MARKER_GEN_START-->
-Empty the catalog
+Reset the local catalog management system by removing all user-managed catalogs and configuration. This does not affect Docker's official catalog.
 @z
 
 @x

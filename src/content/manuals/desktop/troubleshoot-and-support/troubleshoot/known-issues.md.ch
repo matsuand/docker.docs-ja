@@ -24,6 +24,12 @@ tags: [ Troubleshooting ]
 @z
 
 @x
+- **"Docker.app is damaged" dialog**: If you see a "Docker.app is damaged and can't be opened" dialog during installation or updates, this is typically caused by non-atomic copy operations when other applications are using the Docker CLI. See [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) for resolution steps.
+@y
+- **"Docker.app is damaged" dialog**: If you see a "Docker.app is damaged and can't be opened" dialog during installation or updates, this is typically caused by non-atomic copy operations when other applications are using the Docker CLI. See [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) for resolution steps.
+@z
+
+@x
 - Force-ejecting the `.dmg` after running `Docker.app` from it can cause the
   whale icon to become unresponsive, Docker tasks to show as not responding in the Activity Monitor, and for some processes to consume a large amount of CPU resources. Reboot and restart Docker to resolve these issues.
 @y

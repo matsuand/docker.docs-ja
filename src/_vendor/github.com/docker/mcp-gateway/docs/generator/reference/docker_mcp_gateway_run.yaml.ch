@@ -6,541 +6,209 @@ command: docker mcp gateway run
 short: Run the gateway
 long: Run the gateway
 usage: docker mcp gateway run
-pname: docker mcp gateway
-plink: docker_mcp_gateway.yaml
-options:
-    - option: additional-catalog
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional catalog paths to append to the default catalogs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: additional-config
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional config paths to merge with the default config.yaml
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: additional-registry
-      value_type: stringSlice
-      default_value: '[]'
-      description: Additional registry paths to merge with the default registry.yaml
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: block-network
-      value_type: bool
-      default_value: "false"
-      description: Block tools from accessing forbidden network resources
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: block-secrets
-      value_type: bool
-      default_value: "true"
-      description: Block secrets from being/received sent to/from tools
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: catalog
-      value_type: stringSlice
-      default_value: '[docker-mcp.yaml]'
-      description: |
-        Paths to docker catalogs (absolute or relative to ~/.docker/mcp/catalogs/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: central
-      value_type: bool
-      default_value: "false"
-      description: In central mode, clients tell us which servers to enable
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: config
-      value_type: stringSlice
-      default_value: '[config.yaml]'
-      description: Paths to the config files (absolute or relative to ~/.docker/mcp/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: int
-      default_value: "1"
-      description: CPUs allocated to each MCP Server (default is 1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug-dns
-      value_type: bool
-      default_value: "false"
-      description: Debug DNS resolution
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: |
-        Start the gateway but do not listen for connections (useful for testing the configuration)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interceptor
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        List of interceptors to use (format: when:type:path, e.g. 'before:exec:/bin/path')
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-calls
-      value_type: bool
-      default_value: "true"
-      description: Log calls to the tools
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: long-lived
-      value_type: bool
-      default_value: "false"
-      description: |
-        Containers are long-lived and will not be removed until the gateway is stopped, useful for stateful servers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      value_type: string
-      default_value: 2Gb
-      description: Memory allocated to each MCP Server (default is 2Gb)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: port
-      value_type: int
-      default_value: "0"
-      description: TCP port to listen on (default is to listen on stdio)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: registry
-      value_type: stringSlice
-      default_value: '[registry.yaml]'
-      description: |
-        Paths to the registry files (absolute or relative to ~/.docker/mcp/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: secrets
-      value_type: string
-      default_value: docker-desktop
-      description: |
-        Colon separated paths to search for secrets. Can be `docker-desktop` or a path to a .env file (default to using Docker Desktop's secrets API)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: servers
-      value_type: stringSlice
-      default_value: '[]'
-      description: |
-        Names of the servers to enable (if non empty, ignore --registry flag)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: static
-      value_type: bool
-      default_value: "false"
-      description: Enable static mode (aka pre-started servers)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tools
-      value_type: stringSlice
-      default_value: '[]'
-      description: List of tools to enable
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: transport
-      value_type: string
-      default_value: stdio
-      description: stdio, sse or streaming (default is stdio)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verify-signatures
-      value_type: bool
-      default_value: "false"
-      description: Verify signatures of the server images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: watch
-      value_type: bool
-      default_value: "true"
-      description: Watch for changes and reconfigure the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker mcp gateway run
 short: Run the gateway
 long: Run the gateway
 usage: docker mcp gateway run
-pname: docker mcp gateway
-plink: docker_mcp_gateway.yaml
-options:
-    - option: additional-catalog
-      value_type: stringSlice
-      default_value: '[]'
+@z
+
+% options:
+
+@x additional-catalog
       description: Additional catalog paths to append to the default catalogs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: additional-config
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Additional catalog paths to append to the default catalogs
+@z
+
+@x additional-config
       description: Additional config paths to merge with the default config.yaml
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: additional-registry
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: Additional config paths to merge with the default config.yaml
+@z
+
+@x additional-registry
       description: Additional registry paths to merge with the default registry.yaml
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: block-network
-      value_type: bool
-      default_value: "false"
+@y
+      description: Additional registry paths to merge with the default registry.yaml
+@z
+
+@x additional-tools-config
+      description: Additional tools paths to merge with the default tools.yaml
+@y
+      description: Additional tools paths to merge with the default tools.yaml
+@z
+
+@x block-network
       description: Block tools from accessing forbidden network resources
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: block-secrets
-      value_type: bool
-      default_value: "true"
+@y
+      description: Block tools from accessing forbidden network resources
+@z
+
+@x block-secrets
       description: Block secrets from being/received sent to/from tools
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: catalog
-      value_type: stringSlice
-      default_value: '[docker-mcp.yaml]'
+@y
+      description: Block secrets from being/received sent to/from tools
+@z
+
+@x catalog
       description: |
         Paths to docker catalogs (absolute or relative to ~/.docker/mcp/catalogs/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: central
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Paths to docker catalogs (absolute or relative to ~/.docker/mcp/catalogs/)
+@z
+
+@x central
       description: In central mode, clients tell us which servers to enable
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: config
-      value_type: stringSlice
-      default_value: '[config.yaml]'
+@y
+      description: In central mode, clients tell us which servers to enable
+@z
+
+@x config
       description: Paths to the config files (absolute or relative to ~/.docker/mcp/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: cpus
-      value_type: int
-      default_value: "1"
+@y
+      description: Paths to the config files (absolute or relative to ~/.docker/mcp/)
+@z
+
+@x cpus
       description: CPUs allocated to each MCP Server (default is 1)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug-dns
-      value_type: bool
-      default_value: "false"
+@y
+      description: CPUs allocated to each MCP Server (default is 1)
+@z
+
+@x debug-dns
       description: Debug DNS resolution
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: Debug DNS resolution
+@z
+
+@x dry-run
       description: |
         Start the gateway but do not listen for connections (useful for testing the configuration)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interceptor
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: |
+        Start the gateway but do not listen for connections (useful for testing the configuration)
+@z
+
+@x enable-all-servers
+      description: |
+        Enable all servers in the catalog (instead of using individual --servers options)
+@y
+      description: |
+        Enable all servers in the catalog (instead of using individual --servers options)
+@z
+
+@x interceptor
       description: |
         List of interceptors to use (format: when:type:path, e.g. 'before:exec:/bin/path')
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-calls
-      value_type: bool
-      default_value: "true"
+@y
+      description: |
+        List of interceptors to use (format: when:type:path, e.g. 'before:exec:/bin/path')
+@z
+
+@x log-calls
       description: Log calls to the tools
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: long-lived
-      value_type: bool
-      default_value: "false"
+@y
+      description: Log calls to the tools
+@z
+
+@x long-lived
       description: |
         Containers are long-lived and will not be removed until the gateway is stopped, useful for stateful servers
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: memory
-      value_type: string
-      default_value: 2Gb
+@y
+      description: |
+        Containers are long-lived and will not be removed until the gateway is stopped, useful for stateful servers
+@z
+
+@x mcp-registry
+      description: MCP registry URLs to fetch servers from (can be repeated)
+@y
+      description: MCP registry URLs to fetch servers from (can be repeated)
+@z
+
+@x memory
       description: Memory allocated to each MCP Server (default is 2Gb)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: port
-      value_type: int
-      default_value: "0"
+@y
+      description: Memory allocated to each MCP Server (default is 2Gb)
+@z
+
+@x oci-ref
+      description: OCI image references to use
+@y
+      description: OCI image references to use
+@z
+
+@x port
       description: TCP port to listen on (default is to listen on stdio)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: registry
-      value_type: stringSlice
-      default_value: '[registry.yaml]'
+@y
+      description: TCP port to listen on (default is to listen on stdio)
+@z
+
+@x registry
       description: |
         Paths to the registry files (absolute or relative to ~/.docker/mcp/)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: secrets
-      value_type: string
-      default_value: docker-desktop
+@y
+      description: |
+        Paths to the registry files (absolute or relative to ~/.docker/mcp/)
+@z
+
+@x secrets
       description: |
         Colon separated paths to search for secrets. Can be `docker-desktop` or a path to a .env file (default to using Docker Desktop's secrets API)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: servers
-      value_type: stringSlice
-      default_value: '[]'
+@y
+      description: |
+        Colon separated paths to search for secrets. Can be `docker-desktop` or a path to a .env file (default to using Docker Desktop's secrets API)
+@z
+
+@x servers
       description: |
         Names of the servers to enable (if non empty, ignore --registry flag)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: static
-      value_type: bool
-      default_value: "false"
-      description: Enable static mode (aka pre-started servers)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tools
-      value_type: stringSlice
-      default_value: '[]'
-      description: List of tools to enable
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: transport
-      value_type: string
-      default_value: stdio
-      description: stdio, sse or streaming (default is stdio)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verbose
-      value_type: bool
-      default_value: "false"
-      description: Verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: verify-signatures
-      value_type: bool
-      default_value: "false"
-      description: Verify signatures of the server images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: watch
-      value_type: bool
-      default_value: "true"
-      description: Watch for changes and reconfigure the gateway
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Names of the servers to enable (if non empty, ignore --registry flag)
 @z
+
+@x static
+      description: Enable static mode (aka pre-started servers)
+@y
+      description: Enable static mode (aka pre-started servers)
+@z
+
+@x tools
+      description: List of tools to enable
+@y
+      description: List of tools to enable
+@z
+
+@x tools-config
+      description: Paths to the tools files (absolute or relative to ~/.docker/mcp/)
+@y
+      description: Paths to the tools files (absolute or relative to ~/.docker/mcp/)
+@z
+
+@x transport
+      description: stdio, sse or streaming (default is stdio)
+@y
+      description: stdio, sse or streaming (default is stdio)
+@z
+
+@x verbose
+      description: Verbose output
+@y
+      description: Verbose output
+@z
+
+@x verify-signatures
+      description: Verify signatures of the server images
+@y
+      description: Verify signatures of the server images
+@z
+
+@x watch
+      description: Watch for changes and reconfigure the gateway
+@y
+      description: Watch for changes and reconfigure the gateway
+@z
+
+% snip directives...
