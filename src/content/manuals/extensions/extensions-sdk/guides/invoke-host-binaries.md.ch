@@ -30,12 +30,10 @@ You could do that by executing the CLI from a container with the extension SDK. 
 @z
 
 @x
-However host binaries invoke from the extension executables (as binaries, shell scripts)
-shipped as part of your extension and deployed to the host. As extensions can run on multiple platforms, this
+This page describes how to run executables on the host (binaries, shell scripts) that are shipped as part of your extension and deployed to the host. As extensions can run on multiple platforms, this
 means that you need to ship the executables for all the platforms you want to support.
 @y
-However host binaries invoke from the extension executables (as binaries, shell scripts)
-shipped as part of your extension and deployed to the host. As extensions can run on multiple platforms, this
+This page describes how to run executables on the host (binaries, shell scripts) that are shipped as part of your extension and deployed to the host. As extensions can run on multiple platforms, this
 means that you need to ship the executables for all the platforms you want to support.
 @z
 
@@ -48,11 +46,11 @@ Learn more about extensions [architecture](../architecture/_index.md).
 @x
 > [!NOTE]
 >
-> Only executables shipped as part of the extension can be invoked with the SDK. 
+>  Note that extensions run with user access rights, this API is not restricted to binaries listed in the [host section](../architecture/metadata.md#host-section) of the extension metadata (some extensions might install software during user interaction, and invoke newly installed binaries even if not listed in the extension metadata).
 @y
 > [!NOTE]
 >
-> Only executables shipped as part of the extension can be invoked with the SDK. 
+>  Note that extensions run with user access rights, this API is not restricted to binaries listed in the [host section](../architecture/metadata.md#host-section) of the extension metadata (some extensions might install software during user interaction, and invoke newly installed binaries even if not listed in the extension metadata).
 @z
 
 @x

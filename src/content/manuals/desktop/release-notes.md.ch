@@ -64,11 +64,11 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @z
 
 @x
-> [IMPORTANT]
+> [!IMPORTANT]
 >
 > Support for macOS 13 has ended. Installing Docker Desktop will require macOS 14 in the next release.
 @y
-> [IMPORTANT]
+> [!IMPORTANT]
 >
 > Support for macOS 13 has ended. Installing Docker Desktop will require macOS 14 in the next release.
 @z
@@ -98,11 +98,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 - [Docker Buildx v0.29.1](https://github.com/docker/buildx/releases/tag/v0.29.1)
 - [Docker Engine v28.5.1](https://docs.docker.com/engine/release-notes/28/#2851)
 - Docker MCP plugin `v0.22.0`
+- [Docker Model CLI v0.1.42](https://github.com/docker/model-cli/releases/tag/v0.1.42)
 @y
 - [Docker Compose v2.40.0](https://github.com/docker/compose/releases/tag/v2.40.0)
 - [Docker Buildx v0.29.1](https://github.com/docker/buildx/releases/tag/v0.29.1)
 - [Docker Engine v28.5.1](https://docs.docker.com/engine/release-notes/28/#2851)
 - Docker MCP plugin `v0.22.0`
+- [Docker Model CLI v0.1.42](https://github.com/docker/model-cli/releases/tag/v0.1.42)
 @z
 
 @x
@@ -123,12 +125,14 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 - Update credential helpers to [v0.9.4](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.4).
 - Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one. 
 - Fixed a bug which caused Docker Desktop to regularly create new processes with Docker CLI tools under certain conditions. Fixes [docker/for-win#14944](https://github.com/docker/for-win/issues/14944).
+- Fixed a bug which caused models to not be configured for embeddings with Docker Model Runner via Compose. To specify that a model should be configured for embeddings, you must explicitly add the `--embeddings` runtime flag as described in [AI Models in Docker Compose](https://docs.docker.com/ai/compose/models-and-compose/#model-configuration-options). Fixes [docker/model-runner#166](https://github.com/docker/model-runner/issues/166).
 @y
 - Fixed an issue where kind cluster state is sometimes reset when Desktop restarts. Fixes [docker/for-mac#77445](https://github.com/docker/for-mac/issues/7745).
 - Removed the obsolete `mcp` key to align with the latest VS Code MCP server changes.
 - Update credential helpers to [v0.9.4](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.4).
 - Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one. 
 - Fixed a bug which caused Docker Desktop to regularly create new processes with Docker CLI tools under certain conditions. Fixes [docker/for-win#14944](https://github.com/docker/for-win/issues/14944).
+- Fixed a bug which caused models to not be configured for embeddings with Docker Model Runner via Compose. To specify that a model should be configured for embeddings, you must explicitly add the `--embeddings` runtime flag as described in [AI Models in Docker Compose](https://docs.docker.com/ai/compose/models-and-compose/#model-configuration-options). Fixes [docker/model-runner#166](https://github.com/docker/model-runner/issues/166).
 @z
 
 @x

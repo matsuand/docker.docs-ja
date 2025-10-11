@@ -597,9 +597,17 @@ The `install` command accepts the following flags:
 @z
 
 @x
-###### Example of specifying PAC file / PAC script
+###### Example of specifying PAC file
 @y
-###### Example of specifying PAC file / PAC script
+###### Example of specifying PAC file
+@z
+
+% snip code...
+
+@x
+###### Example of specifying PAC script
+@y
+###### Example of specifying PAC script
 @z
 
 % snip code...
