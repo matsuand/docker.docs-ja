@@ -202,6 +202,7 @@ Configuration profiles provide the most secure enforcement method for macOS, as 
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
+   - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
 1. Deploy the profile using your MDM solution.
 1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)** profiles.
 @y
@@ -209,6 +210,7 @@ Configuration profiles provide the most secure enforcement method for macOS, as 
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
+   - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
 1. Deploy the profile using your MDM solution.
 1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)** profiles.
 @z
