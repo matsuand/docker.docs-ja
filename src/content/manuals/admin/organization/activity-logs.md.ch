@@ -64,9 +64,17 @@ Owners can also see the activity logs for their repository if the repository is 
 @z
 
 @x
-To view activity logs in the Admin Console:
+{{< tabs >}}
+{{< tab name="Docker Home">}}
 @y
-To view activity logs in the Admin Console:
+{{< tabs >}}
+{{< tab name="Docker Home">}}
+@z
+
+@x
+To view activity logs in Docker Home:
+@y
+To view activity logs in Docker Home:
 @z
 
 @x
@@ -80,19 +88,57 @@ organization.
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="API">}}
+@y
+{{< /tab >}}
+{{< tab name="API">}}
+@z
+
+@x
+To view activity logs using the Docker Hub API, use the [Audit logs endpoints](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+@y
+To view activity logs using the Docker Hub API, use the [Audit logs endpoints](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ## Filter and customize activity logs
 @y
 ## Filter and customize activity logs
 @z
 
 @x
-By default, the **Activity** tab displays all recorded events. To narrow your
-view, use the calendar to select a specific date range. The log updates to
-show only the activities that occurred during that period.
+> [!IMPORTANT]
+>
+> Docker Home retains activity logs for 30 days. To retrieve
+activities beyond 30 days, you must use the
+[Docker Hub API](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
 @y
-By default, the **Activity** tab displays all recorded events. To narrow your
-view, use the calendar to select a specific date range. The log updates to
-show only the activities that occurred during that period.
+> [!IMPORTANT]
+>
+> Docker Home retains activity logs for 30 days. To retrieve
+activities beyond 30 days, you must use the
+[Docker Hub API](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+@z
+
+@x
+By default, the **Activity** tab displays all recorded events within
+the last 30 days. To narrow your view, use the calendar to select a specific
+date range. The log updates to show only the activities that occurred during
+that period.
+@y
+By default, the **Activity** tab displays all recorded events within
+the last 30 days. To narrow your view, use the calendar to select a specific
+date range. The log updates to show only the activities that occurred during
+that period.
 @z
 
 @x
@@ -125,18 +171,6 @@ event type.
 > [!NOTE]
 >
 > Events triggered by Docker Support appear under the username **dockersupport**.
-@z
-
-@x
-> [!IMPORTANT]
->
-> Docker retains activity logs for three months. To maintain access to older
-data, export logs regularly.
-@y
-> [!IMPORTANT]
->
-> Docker retains activity logs for three months. To maintain access to older
-data, export logs regularly.
 @z
 
 @x
