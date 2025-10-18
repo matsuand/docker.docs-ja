@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Networking overview
@@ -21,40 +21,88 @@ keywords: networking, container, standalone, IP address, DNS resolution
 
 @x
 Container networking refers to the ability for containers to connect to and
-communicate with each other, or to non-Docker workloads.
+communicate with each other, and with non-Docker network services.
 @y
 Container networking refers to the ability for containers to connect to and
-communicate with each other, or to non-Docker workloads.
+communicate with each other, and with non-Docker network services.
 @z
 
 @x
 Containers have networking enabled by default, and they can make outgoing
 connections. A container has no information about what kind of network it's
-attached to, or whether their peers are also Docker workloads or not. A
+attached to, or whether its network peers are also Docker containers. A
 container only sees a network interface with an IP address, a gateway, a
-routing table, DNS services, and other networking details. That is, unless the
-container uses the `none` network driver.
+routing table, DNS services, and other networking details.
 @y
 Containers have networking enabled by default, and they can make outgoing
 connections. A container has no information about what kind of network it's
-attached to, or whether their peers are also Docker workloads or not. A
+attached to, or whether its network peers are also Docker containers. A
 container only sees a network interface with an IP address, a gateway, a
-routing table, DNS services, and other networking details. That is, unless the
-container uses the `none` network driver.
+routing table, DNS services, and other networking details.
 @z
 
 @x
 This page describes networking from the point of view of the container,
 and the concepts around container networking.
-This page doesn't describe OS-specific details about how Docker networks work.
-For information about how Docker manipulates `iptables` rules on Linux,
-see [Packet filtering and firewalls](packet-filtering-firewalls.md).
 @y
 This page describes networking from the point of view of the container,
 and the concepts around container networking.
-This page doesn't describe OS-specific details about how Docker networks work.
-For information about how Docker manipulates `iptables` rules on Linux,
-see [Packet filtering and firewalls](packet-filtering-firewalls.md).
+@z
+
+@x
+When Docker Engine on Linux starts for the first time, it has a single
+built-in network called the "default bridge" network. When you run a
+container without the `--network` option, it is connected to the default
+bridge.
+@y
+When Docker Engine on Linux starts for the first time, it has a single
+built-in network called the "default bridge" network. When you run a
+container without the `--network` option, it is connected to the default
+bridge.
+@z
+
+@x
+Containers attached to the default bridge have access to network services
+outside the Docker host. They use "masquerading" which means, if the
+Docker host has Internet access, no additional configuration is needed
+for the container to have Internet access.
+@y
+Containers attached to the default bridge have access to network services
+outside the Docker host. They use "masquerading" which means, if the
+Docker host has Internet access, no additional configuration is needed
+for the container to have Internet access.
+@z
+
+@x
+For example, to run a container on the default bridge network, and have
+it ping an Internet host:
+@y
+For example, to run a container on the default bridge network, and have
+it ping an Internet host:
+@z
+
+@x
+```console
+$ docker run --rm -ti busybox ping -c1 docker.com
+PING docker.com (23.185.0.4): 56 data bytes
+64 bytes from 23.185.0.4: seq=0 ttl=62 time=6.564 ms
+@y
+```console
+$ docker run --rm -ti busybox ping -c1 docker.com
+PING docker.com (23.185.0.4): 56 data bytes
+64 bytes from 23.185.0.4: seq=0 ttl=62 time=6.564 ms
+@z
+
+@x
+--- docker.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 6.564/6.564/6.564 ms
+```
+@y
+--- docker.com ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 6.564/6.564/6.564 ms
+```
 @z
 
 @x
@@ -64,32 +112,50 @@ see [Packet filtering and firewalls](packet-filtering-firewalls.md).
 @z
 
 @x
-You can create custom, user-defined networks, and connect multiple containers
-to the same network. Once connected to a user-defined network, containers can
-communicate with each other using container IP addresses or container names.
+With the default configuration, containers attached to the default
+bridge network have unrestricted network access to each other using
+container IP addresses. They cannot refer to each other by name.
 @y
-You can create custom, user-defined networks, and connect multiple containers
-to the same network. Once connected to a user-defined network, containers can
-communicate with each other using container IP addresses or container names.
+With the default configuration, containers attached to the default
+bridge network have unrestricted network access to each other using
+container IP addresses. They cannot refer to each other by name.
+@z
+
+@x
+It can be useful to separate groups of containers that should have full
+access to each other, but restricted access to containers in other groups.
+@y
+It can be useful to separate groups of containers that should have full
+access to each other, but restricted access to containers in other groups.
+@z
+
+@x
+You can create custom, user-defined networks, and connect groups of containers
+to the same network. Once connected to a user-defined network, containers
+can communicate with each other using container IP addresses or container names.
+@y
+You can create custom, user-defined networks, and connect groups of containers
+to the same network. Once connected to a user-defined network, containers
+can communicate with each other using container IP addresses or container names.
 @z
 
 @x
 The following example creates a network using the `bridge` network driver and
-running a container in the created network:
+runs a container in that network:
 @y
 The following example creates a network using the `bridge` network driver and
-running a container in the created network:
+runs a container in that network:
 @z
 
 @x
 ```console
 $ docker network create -d bridge my-net
-$ docker run --network=my-net -itd --name=container3 busybox
+$ docker run --network=my-net -it busybox
 ```
 @y
 ```console
 $ docker network create -d bridge my-net
-$ docker run --network=my-net -itd --name=container3 busybox
+$ docker run --network=my-net -it busybox
 ```
 @z
 
@@ -100,39 +166,47 @@ $ docker run --network=my-net -itd --name=container3 busybox
 @z
 
 @x
-The following network drivers are available by default, and provide core
-networking functionality:
+Docker Engine has a number of network drivers, as well as the default "bridge".
+On Linux, the following built-in network drivers are available:
 @y
-The following network drivers are available by default, and provide core
-networking functionality:
+Docker Engine has a number of network drivers, as well as the default "bridge".
+On Linux, the following built-in network drivers are available:
 @z
 
 @x
-| Driver    | Description                                                              |
-| :-------- | :----------------------------------------------------------------------- |
-| `bridge`  | The default network driver.                                              |
-| `host`    | Remove network isolation between the container and the Docker host.      |
-| `none`    | Completely isolate a container from the host and other containers.       |
-| `overlay` | Overlay networks connect multiple Docker daemons together.               |
-| `ipvlan`  | IPvlan networks provide full control over both IPv4 and IPv6 addressing. |
-| `macvlan` | Assign a MAC address to a container.                                     |
+| Driver                          | Description                                                         |
+|:--------------------------------|:--------------------------------------------------------------------|
+| [bridge](./drivers/bridge.md)   | The default network driver.                                         |
+| [host](./drivers/host.md)       | Remove network isolation between the container and the Docker host. |
+| [none](./drivers/none.md)       | Completely isolate a container from the host and other containers.  |
+| [overlay](./drivers/overlay.md) | Swarm Overlay networks connect multiple Docker daemons together.    |
+| [ipvlan](./drivers/ipvlan.md)   | Connect containers to external VLANs.                               |
+| [macvlan](./drivers/macvlan.md) | Containers appear as devices on the host's network.                 |
 @y
-| Driver    | Description                                                              |
-| :-------- | :----------------------------------------------------------------------- |
-| `bridge`  | The default network driver.                                              |
-| `host`    | Remove network isolation between the container and the Docker host.      |
-| `none`    | Completely isolate a container from the host and other containers.       |
-| `overlay` | Overlay networks connect multiple Docker daemons together.               |
-| `ipvlan`  | IPvlan networks provide full control over both IPv4 and IPv6 addressing. |
-| `macvlan` | Assign a MAC address to a container.                                     |
+| Driver                          | Description                                                         |
+|:--------------------------------|:--------------------------------------------------------------------|
+| [bridge](./drivers/bridge.md)   | The default network driver.                                         |
+| [host](./drivers/host.md)       | Remove network isolation between the container and the Docker host. |
+| [none](./drivers/none.md)       | Completely isolate a container from the host and other containers.  |
+| [overlay](./drivers/overlay.md) | Swarm Overlay networks connect multiple Docker daemons together.    |
+| [ipvlan](./drivers/ipvlan.md)   | Connect containers to external VLANs.                               |
+| [macvlan](./drivers/macvlan.md) | Containers appear as devices on the host's network.                 |
 @z
 
 @x
-For more information about the different drivers, see [Network drivers
-overview](./drivers/_index.md).
+More information can be found in the network driver specific pages, including
+their configuration options and details about their functionality.
 @y
-For more information about the different drivers, see [Network drivers
-overview](./drivers/_index.md).
+More information can be found in the network driver specific pages, including
+their configuration options and details about their functionality.
+@z
+
+@x
+Native Windows containers have a different set of drivers, see
+[Windows container network drivers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/container-networking/network-drivers-topologies).
+@y
+Native Windows containers have a different set of drivers, see
+[Windows container network drivers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/container-networking/network-drivers-topologies).
 @z
 
 @x
@@ -142,9 +216,13 @@ overview](./drivers/_index.md).
 @z
 
 @x
-A container can be connected to multiple networks.
+Connecting a container to a network can be compared to connecting an Ethernet
+cable to a physical host. Just as a host can be connected to multiple Ethernet
+networks, a container can be connected to multiple Docker networks.
 @y
-A container can be connected to multiple networks.
+Connecting a container to a network can be compared to connecting an Ethernet
+cable to a physical host. Just as a host can be connected to multiple Ethernet
+networks, a container can be connected to multiple Docker networks.
 @z
 
 @x
@@ -169,6 +247,12 @@ access to local services.
 A container may also be connected to different types of network. For example,
 an `ipvlan` network to provide internet access, and a `bridge` network for
 access to local services.
+@z
+
+@x
+Containers can also share networking stacks, see [Container networks](#container-networks).
+@y
+Containers can also share networking stacks, see [Container networks](#container-networks).
 @z
 
 @x
@@ -222,187 +306,41 @@ $ docker network connect anet2 myctr
 @z
 
 @x
-## Container networks
-@y
-## Container networks
-@z
-
-@x
-In addition to user-defined networks, you can attach a container to another
-container's networking stack directly, using the `--network
-container:<name|id>` flag format.
-@y
-In addition to user-defined networks, you can attach a container to another
-container's networking stack directly, using the `--network
-container:<name|id>` flag format.
-@z
-
-@x
-The following flags aren't supported for containers using the `container:`
-networking mode:
-@y
-The following flags aren't supported for containers using the `container:`
-networking mode:
-@z
-
-@x
-- `--add-host`
-- `--hostname`
-- `--dns`
-- `--dns-search`
-- `--dns-option`
-- `--mac-address`
-- `--publish`
-- `--publish-all`
-- `--expose`
-@y
-- `--add-host`
-- `--hostname`
-- `--dns`
-- `--dns-search`
-- `--dns-option`
-- `--mac-address`
-- `--publish`
-- `--publish-all`
-- `--expose`
-@z
-
-@x
-The following example runs a Redis container, with Redis binding to
-`localhost`, then running the `redis-cli` command and connecting to the Redis
-server over the `localhost` interface.
-@y
-The following example runs a Redis container, with Redis binding to
-`localhost`, then running the `redis-cli` command and connecting to the Redis
-server over the `localhost` interface.
-@z
-
-@x
-```console
-$ docker run -d --name redis example/redis --bind 127.0.0.1
-$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
-```
-@y
-```console
-$ docker run -d --name redis example/redis --bind 127.0.0.1
-$ docker run --rm -it --network container:redis example/redis-cli -h 127.0.0.1
-```
-@z
-
-@x
 ## Published ports
 @y
 ## Published ports
 @z
 
 @x
-By default, when you create or run a container using `docker create` or `docker run`,
-containers on bridge networks don't expose any ports to the outside world.
-Use the `--publish` or `-p` flag to make a port available to services
-outside the bridge network.
-This creates a firewall rule in the host,
-mapping a container port to a port on the Docker host to the outside world.
-Here are some examples:
+When you create or run a container using `docker create` or `docker run`, all
+ports of containers on bridge networks are accessible from the Docker host and
+other containers connected to the same network. Ports are not accessible from
+outside the host or, with the default configuration, from containers in other
+networks.
 @y
-By default, when you create or run a container using `docker create` or `docker run`,
-containers on bridge networks don't expose any ports to the outside world.
-Use the `--publish` or `-p` flag to make a port available to services
-outside the bridge network.
-This creates a firewall rule in the host,
-mapping a container port to a port on the Docker host to the outside world.
-Here are some examples:
+When you create or run a container using `docker create` or `docker run`, all
+ports of containers on bridge networks are accessible from the Docker host and
+other containers connected to the same network. Ports are not accessible from
+outside the host or, with the default configuration, from containers in other
+networks.
 @z
 
 @x
-| Flag value                      | Description                                                                                                                                             |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-p 8080:80`                    | Map port `8080` on the Docker host to TCP port `80` in the container.                                                                                   |
-| `-p 192.168.1.100:8080:80`      | Map port `8080` on the Docker host IP `192.168.1.100` to TCP port `80` in the container.                                                                |
-| `-p 8080:80/udp`                | Map port `8080` on the Docker host to UDP port `80` in the container.                                                                                   |
-| `-p 8080:80/tcp -p 8080:80/udp` | Map TCP port `8080` on the Docker host to TCP port `80` in the container, and map UDP port `8080` on the Docker host to UDP port `80` in the container. |
+Use the `--publish` or `-p` flag to make a port available outside the host,
+and to containers in other bridge networks.
 @y
-| Flag value                      | Description                                                                                                                                             |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-p 8080:80`                    | Map port `8080` on the Docker host to TCP port `80` in the container.                                                                                   |
-| `-p 192.168.1.100:8080:80`      | Map port `8080` on the Docker host IP `192.168.1.100` to TCP port `80` in the container.                                                                |
-| `-p 8080:80/udp`                | Map port `8080` on the Docker host to UDP port `80` in the container.                                                                                   |
-| `-p 8080:80/tcp -p 8080:80/udp` | Map TCP port `8080` on the Docker host to TCP port `80` in the container, and map UDP port `8080` on the Docker host to UDP port `80` in the container. |
-@z
-
-@x
-> [!IMPORTANT]
->
-> Publishing container ports is insecure by default. Meaning, when you publish
-> a container's ports it becomes available not only to the Docker host, but to
-> the outside world as well.
->
-> If you include the localhost IP address (`127.0.0.1`, or `::1`) with the
-> publish flag, only the Docker host and its containers can access the
-> published container port.
->
-> ```console
-> $ docker run -p 127.0.0.1:8080:80 -p '[::1]:8080:80' nginx
-> ```
->
-> > [!WARNING]
-> >
-> > In releases older than 28.0.0, hosts within the same L2 segment (for example,
-> > hosts connected to the same network switch) can reach ports published to localhost.
-> > For more information, see
-> > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-@y
-> [!IMPORTANT]
->
-> Publishing container ports is insecure by default. Meaning, when you publish
-> a container's ports it becomes available not only to the Docker host, but to
-> the outside world as well.
->
-> If you include the localhost IP address (`127.0.0.1`, or `::1`) with the
-> publish flag, only the Docker host and its containers can access the
-> published container port.
->
-> ```console
-> $ docker run -p 127.0.0.1:8080:80 -p '[::1]:8080:80' nginx
-> ```
->
-> > [!WARNING]
-> >
-> > In releases older than 28.0.0, hosts within the same L2 segment (for example,
-> > hosts connected to the same network switch) can reach ports published to localhost.
-> > For more information, see
-> > [moby/moby#45610](https://github.com/moby/moby/issues/45610)
-@z
-
-@x
-If you want to make a container accessible to other containers,
-it isn't necessary to publish the container's ports.
-You can enable inter-container communication by connecting the containers to the
-same network, usually a [bridge network](./drivers/bridge.md).
-@y
-If you want to make a container accessible to other containers,
-it isn't necessary to publish the container's ports.
-You can enable inter-container communication by connecting the containers to the
-same network, usually a [bridge network](./drivers/bridge.md).
-@z
-
-@x
-Ports on the host's IPv6 addresses will map to the container's IPv4 address
-if no host IP is given in a port mapping, the bridge network is IPv4-only,
-and `--userland-proxy=true` (default).
-@y
-Ports on the host's IPv6 addresses will map to the container's IPv4 address
-if no host IP is given in a port mapping, the bridge network is IPv4-only,
-and `--userland-proxy=true` (default).
+Use the `--publish` or `-p` flag to make a port available outside the host,
+and to containers in other bridge networks.
 @z
 
 @x
 For more information about port mapping, including how to disable it and use
 direct routing to containers, see
-[packet filtering and firewalls](./packet-filtering-firewalls.md).
+[port publishing](./port-publishing.md).
 @y
 For more information about port mapping, including how to disable it and use
 direct routing to containers, see
-[packet filtering and firewalls](./packet-filtering-firewalls.md).
+[port publishing](./port-publishing.md).
 @z
 
 @x
@@ -550,15 +488,69 @@ container hosts file](reference/cli/docker/container/run.md#add-host) in the
 @z
 
 @x
-## Proxy server
+## Container networks
 @y
-## Proxy server
+## Container networks
 @z
 
 @x
-If your container needs to use a proxy server, see
-[Use a proxy server](/manuals/engine/daemon/proxy.md).
+In addition to user-defined networks, you can attach a container to another
+container's networking stack directly, using the `--network
+container:<name|id>` flag format.
 @y
-If your container needs to use a proxy server, see
-[Use a proxy server](manuals/engine/daemon/proxy.md).
+In addition to user-defined networks, you can attach a container to another
+container's networking stack directly, using the `--network
+container:<name|id>` flag format.
+@z
+
+@x
+The following flags aren't supported for containers using the `container:`
+networking mode:
+@y
+The following flags aren't supported for containers using the `container:`
+networking mode:
+@z
+
+@x
+- `--add-host`
+- `--hostname`
+- `--dns`
+- `--dns-search`
+- `--dns-option`
+- `--mac-address`
+- `--publish`
+- `--publish-all`
+- `--expose`
+@y
+- `--add-host`
+- `--hostname`
+- `--dns`
+- `--dns-search`
+- `--dns-option`
+- `--mac-address`
+- `--publish`
+- `--publish-all`
+- `--expose`
+@z
+
+@x
+The following example runs a Redis container, with Redis binding to
+127.0.0.1, then running the `redis-cli` command and connecting to the Redis
+server over 127.0.0.1.
+@y
+The following example runs a Redis container, with Redis binding to
+127.0.0.1, then running the `redis-cli` command and connecting to the Redis
+server over 127.0.0.1.
+@z
+
+@x
+```console
+$ docker run -d --name redis redis --bind 127.0.0.1
+$ docker run --rm -it --network container:redis redis redis-cli -h 127.0.0.1
+```
+@y
+```console
+$ docker run -d --name redis redis --bind 127.0.0.1
+$ docker run --rm -it --network container:redis redis redis-cli -h 127.0.0.1
+```
 @z
