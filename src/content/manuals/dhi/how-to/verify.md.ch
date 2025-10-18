@@ -146,9 +146,11 @@ offers several key advantages when working with Docker Hardened Images:
 @z
 
 @x
-In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving you full visibility and the option to fall back to cosign when needed.
+In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving
+you full visibility and the option to fall back to cosign when needed.
 @y
-In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving you full visibility and the option to fall back to cosign when needed.
+In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving
+you full visibility and the option to fall back to cosign when needed.
 @z
 
 @x
@@ -161,15 +163,27 @@ In short, Docker Scout streamlines the verification process and reduces the chan
 To list attestations for a mirrored DHI:
 @y
 To list attestations for a mirrored DHI:
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @z
 
 @x
 ```console
-$ docker scout attest list <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+$ docker scout attest list <your-org-namespace>/dhi-<image>:<tag>
 ```
 @y
 ```console
-$ docker scout attest list <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+$ docker scout attest list <your-org-namespace>/dhi-<image>:<tag>
 ```
 @z
 
@@ -194,15 +208,27 @@ To retrieve a specific attestation, use the `--predicate-type` flag with the ful
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @z
 
 @x
@@ -214,14 +240,14 @@ For example:
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
-  docs/dhi-python:3.13 --platform linux/amd64
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
+  docs/dhi-python:3.13
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
-  docs/dhi-python:3.13 --platform linux/amd64
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
+  docs/dhi-python:3.13
 ```
 @z
 
@@ -234,16 +260,16 @@ To retrieve only the predicate body:
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --predicate \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --predicate \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
 @z
 
@@ -256,16 +282,16 @@ For example:
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --predicate \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @z
 
@@ -291,6 +317,20 @@ $ docker scout attest get <image-name>:<tag> \
 $ docker scout attest get <image-name>:<tag> \
    --predicate-type https://scout.docker.com/sbom/v0.1 --verify
 ```
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-node:20.19-debian12-fips-20250701182639` instead of
+> `docs/dhi-node:20.19-debian12-fips-20250701182639`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-node:20.19-debian12-fips-20250701182639` instead of
+> `docs/dhi-node:20.19-debian12-fips-20250701182639`.
 @z
 
 @x
@@ -369,14 +409,14 @@ To skip the transparency log check and validate against Docker's key, use the
 ```console
 $ docker scout attest get \
   --predicate-type https://cyclonedx.org/bom/v1.6 \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform> \
+  <your-org-namespace>/dhi-<image>:<tag> \
   --verify --skip-tlog
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type https://cyclonedx.org/bom/v1.6 \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform> \
+  <your-org-namespace>/dhi-<image>:<tag> \
   --verify --skip-tlog
 ```
 @z
@@ -386,11 +426,17 @@ $ docker scout attest get \
 >
 > The `--skip-tlog` flag is only available in Docker Scout CLI version 1.18.2 and
 > later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @y
 > [!NOTE]
 >
 > The `--skip-tlog` flag is only available in Docker Scout CLI version 1.18.2 and
 > later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @z
 
 @x
@@ -420,17 +466,29 @@ When using the `--verify` flag, it also prints the corresponding
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --verify \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --verify \
-  <your-org-namespace>/dhi-<image>:<tag> --platform <platform>
+  <your-org-namespace>/dhi-<image>:<tag>
 ```
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @z
 
 @x
@@ -442,16 +500,16 @@ For example:
 @x
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --verify \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @y
 ```console
 $ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.5 \
+  --predicate-type https://cyclonedx.org/bom/v1.6 \
   --verify \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @z
 

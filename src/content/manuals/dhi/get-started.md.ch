@@ -196,25 +196,9 @@ it.
 @z
 
 @x
-2. Follow the on-screen instructions to choose a name. For this guide, the
-   example uses the name `dhi-python`. Note that the name must start with
-   `dhi-`.
+2. Follow the on-screen instructions to mirror the repository.
 @y
-2. Follow the on-screen instructions to choose a name. For this guide, the
-   example uses the name `dhi-python`. Note that the name must start with
-   `dhi-`.
-@z
-
-@x
-   ![Mirror a repository page](./images/dhi-mirror-screen.png)
-@y
-   ![Mirror a repository page](./images/dhi-mirror-screen.png)
-@z
-
-@x
-3. Select **Create repository** to start the mirroring process.
-@y
-3. Select **Create repository** to start the mirroring process.
+2. Follow the on-screen instructions to mirror the repository.
 @z
 
 @x

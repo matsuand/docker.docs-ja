@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Install the Docker Compose standalone
-linkTitle: Standalone
+title: Install the Docker Compose standalone (Legacy)
+linkTitle: Standalone (Legacy)
 description: Instructions for installing the legacy Docker Compose standalone tool on Linux and Windows Server
 keywords: install docker-compose, standalone docker compose, docker-compose windows server, install docker compose linux, legacy compose install
 @y
-title: Install the Docker Compose standalone
-linkTitle: Standalone
+title: Install the Docker Compose standalone (Legacy)
+linkTitle: Standalone (Legacy)
 description: Instructions for installing the legacy Docker Compose standalone tool on Linux and Windows Server
 keywords: install docker-compose, standalone docker compose, docker-compose windows server, install docker compose linux, legacy compose install
 @z

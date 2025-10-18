@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a Bun application
@@ -96,19 +96,53 @@ You should now have the following contents in your `bun-docker` directory.
 % snip text...
 
 @x
-In the Dockerfile, you'll notice that the `FROM` instruction uses `oven/bun`
-as the base image. This is the official image for Bun created by Oven, the
-company behind Bun. This image is [available on the Docker Hub](https://hub.docker.com/r/oven/bun).
+## Create a Dockerfile
 @y
-Dockerfile では `FROM` 命令において、ベースイメージとして `oven/bun` を指定しています。
-これは Bun の開発元である企業 Oven によって生成されている Bun の公式イメージです。
-このイメージは [Docker Hub から入手](https://hub.docker.com/r/oven/bun) が可能です。
+## Dockerfile の生成 {#create-a-dockerfile}
 @z
 
 @x
-# Use the Bun image as the base image
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Bun Docker Official Image](https://hub.docker.com/r/oven/bun) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
 @y
-# ベースイメージとして Bun イメージを利用
+Dockerfile を生成するには、まずベースイメージを決定する必要があります。
+[Bun 用の Docker 公式イメージ](https://hub.docker.com/r/oven/bun) を利用することが出来ますし、[Hardened イメージカタログ](https://hub.docker.com/hardened-images/catalog) から Docker Hardened イメージ (DHI) を選ぶこともできます。
+@z
+
+@x
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@y
+DHI を選ぶと、軽量でセキュアなイメージを本番環境向けにすぐ活用できます。
+詳しくは [Docker Hardened イメージ](https://docs.docker.com/dhi/) を参照してください。
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hardened イメージの利用" >}}
+@z
+
+@x
+Docker Hardened Images (DHIs) are available for Bun on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/bun). Unlike using the Docker Official Image, you must first mirror the Bun image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](/dhi/get-started/) to create a mirrored repository for Bun.
+@y
+Bun 向けの Docker Hardened イメージ (DHIs) は [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/bun) から入手できます。
+Docker 公式イメージの場合とは異なり、組織内において Bun イメージのミラーをまずはじめに行い、それをベースイメージとして設定することが必要になります。
+Bun 向けにミラーリポジトリを生成する詳しい手順については [DHI クィックスタート](/dhi/get-started/) を参照してください。
+@z
+
+@x
+Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-bun:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-bun:1` as the base image.
+@y
+ミラーリポジトリの先頭文字には `dhi-` をつけてください。
+たとえば `FROM <あなたの名前空間>/dhi-bun:<tag>` です。
+以下に示す Dockerfile では `FROM` 命令におけるベースイメージの指定は `<your-namespace>/dhi-bun:1` としています。
+@z
+
+@x
+# Use the DHI Bun image as the base image
+@y
+# ベースイメージとして DHI Bun イメージを利用
 @z
 @x
 # Set the working directory in the container
@@ -132,15 +166,73 @@ Dockerfile では `FROM` 命令において、ベースイメージとして `ov
 @z
 
 @x
-Aside from specifying `oven/bun` as the base image, this Dockerfile also:
+{{< /tab >}}
+{{< tab name="Using the official image" >}}
 @y
-ベースイメージとして `oven/bun` を指定している他にも Dockerfile では以下の内容が示されています。
+{{< /tab >}}
+{{< tab name="公式イメージの利用" >}}
 @z
 
 @x
-- Sets the working directory in the container to `/app`
-- Copies the contents of the current directory to the `/app` directory in the container
-- Exposes port 3000, where the API is listening for requests
+Using the Docker Official Image is straightforward. In the following Dockerfile, you'll notice that the `FROM` instruction uses `oven/bun` as the base image.
+@y
+Docker 公式イメージを用いるのが一番簡単です。
+以下の Dockerfile では `FROM` 命令のベースイメージに `oven/bun` を指定しています。
+@z
+
+@x
+You can find the image on [Docker Hub](https://hub.docker.com/r/oven/bun). This is the Docker Official Image for Bun created by Oven, the company behind Bun, and it's available on Docker Hub.
+
+@y
+このイメージは [Docker Hub](https://hub.docker.com/r/oven/bun) にあります。
+これは Bun 向けの Docker 公式イメージであり、Bun に関係する企業 Oven により生成されています。
+これは Docker Hub から利用できるものではありません。
+@z
+
+@x within code
+# Use the official Bun image
+@y
+# 公式 Bun イメージの利用
+@z
+@x
+# Set the working directory in the container
+@y
+# コンテナー内でのワーキングディレクトリの設定
+@z
+@x
+# Copy the current directory contents into the container at /app
+@y
+# カレントディレクトリ内のコンテンツをコンテナー内の /app にコピー
+@z
+@x
+# Expose the port on which the API will listen
+@y
+# API が利用するポートを開放
+@z
+@x
+# Run the server when the container launches
+@y
+# コンテナー起動時にサーバーを実行
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+In addition to specifying the base image, the Dockerfile also:
+@y
+ベースイメージの指定に続けて Dockerfile では以下も行っています。
+@z
+
+@x
+- Sets the working directory in the container to `/app`.
+- Copies the content of the current directory to the `/app` directory in the container.
+- Exposes port 3000, where the API is listening for requests.
 - And finally, starts the server when the container launches with the command `bun server.js`.
 @y
 - コンテナー内のワーキングディレクトリを `/app` に設定しています。
@@ -232,11 +324,13 @@ Related information:
  - [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](/manuals/compose/_index.md)
  - [Compose file reference](/reference/compose-file/_index.md)
+ - [Docker Hardened Images](/dhi/)
 @y
  - [Dockerfile リファレンス](reference/dockerfile.md)
  - [.dockerignore ファイル](reference/dockerfile.md#dockerignore-file)
  - [Docker Compose 概要](manuals/compose/_index.md)
  - [Compose ファイルリファレンス](reference/compose-file/_index.md)
+ - [Docker Hardened イメージ](__SUBDIR__/dhi/)
 @z
 
 @x

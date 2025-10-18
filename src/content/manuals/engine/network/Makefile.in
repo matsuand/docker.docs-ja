@@ -299,8 +299,11 @@ SUBDIRS = drivers tutorials
 bases = \
 	_index.md                     \
 	ca-certs.md                   \
+	firewall-iptables.md          \
+	firewall-nftables.md          \
 	links.md                      \
-	packet-filtering-firewalls.md
+	packet-filtering-firewalls.md \
+	port-publishing.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

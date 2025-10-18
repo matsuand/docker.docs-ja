@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: How Docker Hardened Images are tested
 linktitle: Image testing
@@ -189,21 +191,7 @@ You can view and verify this attestation using the Docker Scout CLI.
 1. Use the `docker scout attest get` command with the test predicate type:
 @z
 
-@x
-   ```console
-   $ docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --predicate \
-     <your-namespace>/dhi-<image>:<tag> --platform <platform>
-   ```
-@y
-   ```console
-   $ docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --predicate \
-     <your-namespace>/dhi-<image>:<tag> --platform <platform>
-   ```
-@z
+% snip code...
 
 @x
    For example:
@@ -211,21 +199,7 @@ You can view and verify this attestation using the Docker Scout CLI.
    For example:
 @z
 
-@x
-   ```console
-   $ docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --predicate \
-     docs/dhi-python:3.13 --platform linux/amd64
-   ```
-@y
-   ```console
-   $ docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --predicate \
-     docs/dhi-python:3.13 --platform linux/amd64
-   ```
-@z
+% snip code...
 
 @x
    This contains a list of tests and their results.
@@ -239,45 +213,7 @@ You can view and verify this attestation using the Docker Scout CLI.
    Example output:
 @z
 
-@x
-    ```console
-        v SBOM obtained from attestation, 101 packages found
-        v Provenance obtained from attestation
-        {
-          "reportFormat": "CTRF",
-          "results": {
-            "summary": {
-              "failed": 0,
-              "passed": 1,
-              "skipped": 0,
-              "start": 1749216533,
-              "stop": 1749216574,
-              "tests": 1
-            },
-            "tests": [
-              {
-                ...
-   ```
-@y
-    ```console
-        v SBOM obtained from attestation, 101 packages found
-        v Provenance obtained from attestation
-        {
-          "reportFormat": "CTRF",
-          "results": {
-            "summary": {
-              "failed": 0,
-              "passed": 1,
-              "skipped": 0,
-              "start": 1749216533,
-              "stop": 1749216574,
-              "tests": 1
-            },
-            "tests": [
-              {
-                ...
-   ```
-@z
+% snip code...
 
 @x
 2. Verify the test attestation signature. To ensure the attestation is authentic
@@ -287,21 +223,7 @@ You can view and verify this attestation using the Docker Scout CLI.
    and signed by Docker, run:
 @z
 
-@x
-   ```console
-   docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --verify \
-     <your-namespace>/dhi-<image>:<tag> --platform <platform>
-   ```
-@y
-   ```console
-   docker scout attest get \
-     --predicate-type https://scout.docker.com/tests/v0.1 \
-     --verify \
-     <your-namespace>/dhi-<image>:<tag> --platform <platform>
-   ```
-@z
+% snip code...
 
 @x
    Example output:
@@ -309,43 +231,7 @@ You can view and verify this attestation using the Docker Scout CLI.
    Example output:
 @z
 
-@x
-   ```console
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v cosign verify registry.scout.docker.com/docker/dhi-python@sha256:70c8299c4d3cb4d5432734773c45ae58d8acc2f2f07803435c65515f662136d5 \
-        --key https://registry.scout.docker.com/keyring/dhi/latest.pub --experimental-oci11
-@y
-   ```console
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v cosign verify registry.scout.docker.com/docker/dhi-python@sha256:70c8299c4d3cb4d5432734773c45ae58d8acc2f2f07803435c65515f662136d5 \
-        --key https://registry.scout.docker.com/keyring/dhi/latest.pub --experimental-oci11
-@z
-
-@x
-      Verification for registry.scout.docker.com/docker/dhi-python@sha256:70c8299c4d3cb4d5432734773c45ae58d8acc2f2f07803435c65515f662136d5 --
-      The following checks were performed on each of these signatures:
-        - The cosign claims were validated
-        - Existence of the claims in the transparency log was verified offline
-        - The signatures were verified against the specified public key
-@y
-      Verification for registry.scout.docker.com/docker/dhi-python@sha256:70c8299c4d3cb4d5432734773c45ae58d8acc2f2f07803435c65515f662136d5 --
-      The following checks were performed on each of these signatures:
-        - The cosign claims were validated
-        - Existence of the claims in the transparency log was verified offline
-        - The signatures were verified against the specified public key
-@z
-
-@x
-    i Signature payload
-    ...
-    ```
-@y
-    i Signature payload
-    ...
-    ```
-@z
+% snip code...
 
 @x
 If the attestation is valid, Docker Scout will confirm the signature and show

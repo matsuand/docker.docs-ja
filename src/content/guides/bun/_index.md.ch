@@ -33,10 +33,9 @@ languages: [js]
 @z
 
 @x
-The Bun getting started guide teaches you how to create a containerized Bun application using Docker. In this guide, you'll learn how to:
+The Bun getting started guide teaches you how to create a containerized Bun application using Docker.
 @y
 Bun 向けのこの言語別ガイドでは、Docker を使った Bun アプリケーションのコンテナー化についての説明をはじめます。
-このガイドでは以下について学んでいきます。
 @z
 
 @x

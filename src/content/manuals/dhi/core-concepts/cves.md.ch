@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Common Vulnerabilities and Exposures (CVEs)
 linktitle: CVEs
@@ -302,6 +304,24 @@ To manually retrieve the VEX attestation for tools that support it:
 @z
 
 % snip command...
+
+@x
+> [!NOTE]
+>
+> The `docker scout vex get` command requires [Docker Scout
+> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@y
+> [!NOTE]
+>
+> The `docker scout vex get` command requires [Docker Scout
+> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@z
 
 @x
 For example:

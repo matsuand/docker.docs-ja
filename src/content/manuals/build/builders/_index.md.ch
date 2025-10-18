@@ -204,66 +204,28 @@ builder before it sends your build to BuildKit.
 @z
 
 @x
-To use the `docker build` command with a non-default builder, you must either:
+To use the `docker build` command with a non-default builder, you must either
+specify the builder explicitly:
 @y
-To use the `docker build` command with a non-default builder, you must either:
+To use the `docker build` command with a non-default builder, you must either
+specify the builder explicitly:
 @z
 
 @x
-- Specify the builder explicitly, using the `--builder` flag or the `BUILDX_BUILDER` environment variable:
+- Using the `--builder` flag:
 @y
-- Specify the builder explicitly, using the `--builder` flag or the `BUILDX_BUILDER` environment variable:
+- Using the `--builder` flag:
 @z
 
-@x
-  ```console
-  $ BUILDX_BUILDER=my_builder docker build .
-  $ docker build --builder my_builder .
-  ```
-@y
-  ```console
-  $ BUILDX_BUILDER=my_builder docker build .
-  $ docker build --builder my_builder .
-  ```
-@z
+% snip code...
 
 @x
-- Configure Buildx as the default client by running the following command:
+- Or the `BUILDX_BUILDER` environment variable:
 @y
-- Configure Buildx as the default client by running the following command:
+- Or the `BUILDX_BUILDER` environment variable:
 @z
 
-@x
-  ```console
-  $ docker buildx install
-  ```
-@y
-  ```console
-  $ docker buildx install
-  ```
-@z
-
-@x
-  This updates your [Docker CLI configuration file](/reference/cli/docker/_index.md#configuration-files)
-  to ensure all of your build-related commands are routed via Buildx.
-@y
-  This updates your [Docker CLI configuration file](reference/cli/docker/_index.md#configuration-files)
-  to ensure all of your build-related commands are routed via Buildx.
-@z
-
-@x
-  > [!TIP]
-  > To undo this change, run `docker buildx uninstall`.
-@y
-  > [!TIP]
-  > To undo this change, run `docker buildx uninstall`.
-@z
-
-@x
-<!-- vale Docker.We = NO -->
-@y
-<!-- vale Docker.We = NO -->
-@z
+% snip code...
 
 @x
 In general, we recommend that you use the `docker buildx build` command when
@@ -273,12 +235,6 @@ builder](#selected-builder) configuration is interpreted correctly.
 In general, we recommend that you use the `docker buildx build` command when
 you want to use custom builders. This ensures that your [selected
 builder](#selected-builder) configuration is interpreted correctly.
-@z
-
-@x
-<!-- vale Docker.We = YES -->
-@y
-<!-- vale Docker.We = YES -->
 @z
 
 @x

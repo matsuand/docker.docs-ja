@@ -6,7 +6,7 @@
 @x
 title: Network drivers
 @y
-title: ネットワークドライバー
+title: Network drivers
 @z
 
 @x

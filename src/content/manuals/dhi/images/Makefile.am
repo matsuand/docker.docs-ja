@@ -5,7 +5,6 @@
 copyfiles = \
 	dhi-catalog.png       \
 	dhi-mirror-button.png \
-	dhi-mirror-screen.png \
 	dhi-python-mirror.png \
 	dhi-python-search.png
 

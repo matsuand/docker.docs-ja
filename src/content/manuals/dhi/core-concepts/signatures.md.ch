@@ -149,12 +149,24 @@ To lists all attestations, including signature metadata, attached to the image, 
 
 @x
 ```console
-$ docker scout attest list <image-name>:<tag> --platform <platform>
+$ docker scout attest list <image-name>:<tag>
 ```
 @y
 ```console
-$ docker scout attest list <image-name>:<tag> --platform <platform>
+$ docker scout attest list <image-name>:<tag>
 ```
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python` instead of `docs/dhi-python`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python` instead of `docs/dhi-python`.
 @z
 
 @x
@@ -168,15 +180,27 @@ To verify a specific signed attestation (e.g., SBOM, VEX, provenance):
 $ docker scout attest get \
   --predicate-type <predicate-uri> \
   --verify \
-  <image-name>:<tag> --platform <platform>
+  <image-name>:<tag>
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type <predicate-uri> \
   --verify \
-  <image-name>:<tag> --platform <platform>
+  <image-name>:<tag>
 ```
+@z
+
+@x
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@y
+> [!NOTE]
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
 @z
 
 @x
@@ -190,14 +214,14 @@ For example:
 $ docker scout attest get \
   --predicate-type https://openvex.dev/ns/v0.2.0 \
   --verify \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type https://openvex.dev/ns/v0.2.0 \
   --verify \
-  docs/dhi-python:3.13 --platform linux/amd64
+  docs/dhi-python:3.13
 ```
 @z
 
