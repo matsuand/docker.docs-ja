@@ -26,7 +26,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/dockerfile/
 @y
   - title: Dockerfile
-    description: Defines the contents and startup behavior of a single container.
+    description: 1 つのコンテナーの内容と起動方法を定義します。
     icon: edit_document
     link: __SUBDIR__/reference/dockerfile/
 @z
@@ -38,7 +38,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/compose-file/
 @y
   - title: Compose ファイル
-    description: Defines a multi-container application.
+    description: マルチコンテナーアプリケーションを定義します。
     icon: polyline
     link: __SUBDIR__/reference/compose-file/
 @z
@@ -52,7 +52,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/cli/docker/
 @y
   - title: Docker CLI
-    description: The main Docker CLI, includes all `docker` commands.
+    description: "`docker` コマンドをはじめとする主要な Docker CLI です。"
     icon: terminal
     link: __SUBDIR__/reference/cli/docker/
 @z
@@ -65,7 +65,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/cli/docker/compose/
 @y
   - title: Compose CLI
-    description: The CLI for Docker Compose, for building and running multi-container
+    description: Docker Compose 向けの CLI であり、マルチコンテナーをビルドし実行します。
       applications.
     icon: subtitles
     link: __SUBDIR__/reference/cli/docker/compose/
@@ -78,7 +78,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/cli/dockerd/
 @y
   - title: Daemon CLI (dockerd)
-    description: Persistent process that manages containers.
+    description: コンテナーを管理する常駐プロセスです。
     icon: developer_board
     link: __SUBDIR__/reference/cli/dockerd/
 @z
@@ -92,7 +92,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/api/engine/
 @y
   - title: Engine API
-    description: The main API for Docker, provides programmatic access to a daemon.
+    description: Docker のメイン API であり、デーモンへのプログラム的なアクセスを実現します。
     icon: api
     link: __SUBDIR__/reference/api/engine/
 @z
@@ -116,7 +116,7 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
     link: /reference/api/dvp/latest/
 @y
   - title: DVP Data API
-    description: API for Docker Verified Publishers to fetch analytics data.
+    description: Docker 認定公開者 (Docker Verified Publishers) が分析データを取得するための API です。
     icon: area_chart
     link: __SUBDIR__/reference/api/dvp/latest/
 @z

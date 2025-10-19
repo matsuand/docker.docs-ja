@@ -2,13 +2,14 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Secrets
 description: Explore all the attributes the secrets top-level element can have.
 keywords: compose, compose specification, secrets, compose file reference
 @y
-title: Secrets
+title: secrets
 description: Explore all the attributes the secrets top-level element can have.
 keywords: compose, compose specification, secrets, compose file reference
 @z
@@ -44,7 +45,7 @@ application. The source of the secret is either `file` or `environment`.
 @x
 ## Example 1
 @y
-## Example 1
+## 例１ {#example-1}
 @z
 
 @x
@@ -55,24 +56,12 @@ by registering content of the `server.cert` as a platform secret.
 by registering content of the `server.cert` as a platform secret.
 @z
 
-@x
-```yml
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@y
-```yml
-secrets:
-  server-certificate:
-    file: ./server.cert
-```
-@z
+% snip code...
 
 @x
 ## Example 2
 @y
-## Example 2
+## 例２ {#example-2}
 @z
 
 @x
@@ -83,24 +72,12 @@ by registering the content of the `OAUTH_TOKEN` environment variable as a platfo
 by registering the content of the `OAUTH_TOKEN` environment variable as a platform secret.
 @z
 
-@x
-```yml
-secrets:
-  token:
-    environment: "OAUTH_TOKEN"
-```
-@y
-```yml
-secrets:
-  token:
-    environment: "OAUTH_TOKEN"
-```
-@z
+% snip code...
 
 @x
 ## Additional resources
 @y
-## Additional resources
+## さらなる情報 {#additional-resources}
 @z
 
 @x

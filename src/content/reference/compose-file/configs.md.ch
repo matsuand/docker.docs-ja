@@ -10,8 +10,8 @@ title: Configs top-level element
 description: Manage and share configuration data using the configs element in Docker Compose.
 keywords: compose, compose specification, configs, compose file reference
 @y
-linkTitle: Configs 
-title: Configs top-level element
+linkTitle: configs
+title: トップレベル要素 configs
 description: Manage and share configuration data using the configs element in Docker Compose.
 keywords: compose, compose specification, configs, compose file reference
 @z
@@ -25,7 +25,7 @@ keywords: compose, compose specification, configs, compose file reference
 @x
 Services can only access configs when explicitly granted by a [`configs`](services.md#configs) attribute within the `services` top-level element.
 @y
-Services can only access configs when explicitly granted by a [`configs`](services.md#configs) attribute within the `services` top-level element.
+サービスから config にアクセスできるのは、トップレベル要素 `services` における [`configs`](services.md#configs) 属性により明示的にアクセスが許可された場合だけです。
 @z
 
 @x
@@ -33,32 +33,49 @@ By default, the config:
 - Is owned by the user running the container command but can be overridden by service configuration.
 - Has world-readable permissions (mode 0444), unless the service is configured to override this.
 @y
-By default, the config:
-- Is owned by the user running the container command but can be overridden by service configuration.
-- Has world-readable permissions (mode 0444), unless the service is configured to override this.
+デフォルトにおいて、config は以下の特徴を持ちます。
+- config の所有者はコンテナー実行を行っているユーザーですが、サービス設定により上書き変更が可能です。
+- ワールド読み込みの権限 (モード 0444) を持ちますが、サービス設定により上書きされていればそれに従います。
 @z
 
 @x
 The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file`, `environment`, `content`, or `external`.
 @y
-The top-level `configs` declaration defines or references configuration data that is granted to services in your Compose application. The source of the config is either `file`, `environment`, `content`, or `external`.
+トップレベル要素 `configs` による宣言は、Compose アプリケーション内のサービスに対して、設定データを定義したり参照したりするための定義を行うものです。
+ The source of the config is either `file`, `environment`, `content`, or `external`.
 @z
 
 @x
 - `file`: The config is created with the contents of the file at the specified path.
+@y
+- `file`: The config is created with the contents of the file at the specified path.
+@z
+
+@x
 - `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](/manuals/compose/releases/release-notes.md#2231).
-- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](/manuals/compose/releases/release-notes.md#2231).
-- `external`: If set to true, `external` specifies that this config has already been created. Compose does not
-  attempt to create it, and if it does not exist, an error occurs.
-- `name`: The name of the config object in the container engine to look up. This field can be used to
-  reference configs that contain special characters. The name is used as is
-  and will **not** be scoped with the project name.
 @y
-- `file`: The config is created with the contents of the file at the specified path.
 - `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](manuals/compose/releases/release-notes.md#2231).
+@z
+
+@x
+- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](/manuals/compose/releases/release-notes.md#2231).
+@y
 - `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](manuals/compose/releases/release-notes.md#2231).
+@z
+
+@x
 - `external`: If set to true, `external` specifies that this config has already been created. Compose does not
   attempt to create it, and if it does not exist, an error occurs.
+@y
+- `external`: If set to true, `external` specifies that this config has already been created. Compose does not
+  attempt to create it, and if it does not exist, an error occurs.
+@z
+
+@x
+- `name`: The name of the config object in the container engine to look up. This field can be used to
+  reference configs that contain special characters. The name is used as is
+  and will **not** be scoped with the project name.
+@y
 - `name`: The name of the config object in the container engine to look up. This field can be used to
   reference configs that contain special characters. The name is used as is
   and will **not** be scoped with the project name.
@@ -67,14 +84,14 @@ The top-level `configs` declaration defines or references configuration data tha
 @x
 ## Example 1
 @y
-## Example 1
+## 例１ {#example-1}
 @z
 
 @x
 `<project_name>_http_config` is created when the application is deployed,
 by registering the content of the `httpd.conf` as the configuration data.
 @y
-`<project_name>_http_config` is created when the application is deployed,
+`<プロジェクト名>_http_config` is created when the application is deployed,
 by registering the content of the `httpd.conf` as the configuration data.
 @z
 
@@ -91,7 +108,7 @@ Alternatively, `http_config` can be declared as external. Compose looks up `http
 @x
 ## Example 2
 @y
-## Example 2
+## 例２ {#example-2}
 @z
 
 @x
@@ -115,7 +132,7 @@ variables, but exposed to containers as hard-coded ID `http_config`.
 @x
 ## Example 3
 @y
-## Example 3
+## 例３ {#example-3}
 @z
 
 @x
@@ -131,7 +148,7 @@ adjust content according to service configuration:
 @x
 ## Example 4
 @y
-## Example 4
+## 例４ {#example-4}
 @z
 
 @x

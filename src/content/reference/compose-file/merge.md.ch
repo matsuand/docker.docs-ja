@@ -10,8 +10,8 @@ title: Merge Compose files
 description: Understand how Docker Compose merges multiple files and resolves conflicts
 keywords: compose, compose specification, merge, compose file reference
 @y
-linkTitle: Merge
-title: Merge Compose files
+linkTitle: マージ
+title: Compose ファイルのマージ
 description: Understand how Docker Compose merges multiple files and resolves conflicts
 keywords: compose, compose specification, merge, compose file reference
 @z
@@ -21,25 +21,25 @@ keywords: compose, compose specification, merge, compose file reference
 @x
 These rules are outlined below. 
 @y
-These rules are outlined below. 
+そのルールの概要は以下のとおりです。
 @z
 
 @x
 ## Mapping
 @y
-## mapping
+## マッピング {#mapping}
 @z
 
 @x
 A YAML `mapping` gets merged by adding missing entries and merging the conflicting ones.
 @y
-A YAML `mapping` gets merged by adding missing entries and merging the conflicting ones.
+YAML の `mapping` では、存在しないエントリーは追加され、衝突したエントリーはマージされます。
 @z
 
 @x
 Merging the following example YAML trees:
 @y
-Merging the following example YAML trees:
+以下の YAML ツリーをマージするものとします。
 @z
 
 % snip code...
@@ -47,7 +47,7 @@ Merging the following example YAML trees:
 @x
 Results in a Compose application model equivalent to the YAML tree:
 @y
-Results in a Compose application model equivalent to the YAML tree:
+結果となる Compose アプリケーションモデルは、以下のような YAML ツリーになります。
 @z
 
 % snip code...
@@ -55,19 +55,19 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ## Sequence
 @y
-## sequence
+## シーケンス {#sequence}
 @z
 
 @x
 A YAML `sequence` is merged by appending values from the overriding Compose file to the previous one.
 @y
-A YAML `sequence` is merged by appending values from the overriding Compose file to the previous one.
+YAML の `sequence` (順序) は、前の Compose ファイルに後ろのものに対して、値を付け加えてマージします。
 @z
 
 @x
 Merging the following example YAML trees:
 @y
-Merging the following example YAML trees:
+以下の YAML ツリーをマージするものとします。
 @z
 
 % snip code...
@@ -75,7 +75,7 @@ Merging the following example YAML trees:
 @x
 Results in a Compose application model equivalent to the YAML tree:
 @y
-Results in a Compose application model equivalent to the YAML tree:
+結果となる Compose アプリケーションモデルは、以下のような YAML ツリーになります。
 @z
 
 % snip code...
@@ -83,7 +83,7 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ## Exceptions
 @y
-## Exceptions
+## 例外 {#exceptions}
 @z
 
 @x
@@ -101,7 +101,7 @@ When merging Compose files that use the services attributes [command](services.m
 @x
 Merging the following example YAML trees:
 @y
-Merging the following example YAML trees:
+以下の YAML ツリーをマージするものとします。
 @z
 
 % snip code...
@@ -109,7 +109,7 @@ Merging the following example YAML trees:
 @x
 Results in a Compose application model equivalent to the YAML tree:
 @y
-Results in a Compose application model equivalent to the YAML tree:
+結果となる Compose アプリケーションモデルは、以下のような YAML ツリーになります。
 @z
 
 % snip code...
@@ -117,7 +117,7 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ### Unique resources
 @y
-### Unique resources
+### ユニークなリソース {#unique-resources}
 @z
 
 @x
@@ -136,7 +136,7 @@ While these types are modeled in a Compose file as a sequence, they have special
 | configs     |  target                  |
 | ports       |  {ip, target, published, protocol}   |
 @y
-| Attribute   | Unique key               |
+| 属性        | ユニークキー             |
 |-------------|--------------------------|
 | volumes     |  target                  |
 | secrets     |  target                  |
@@ -153,7 +153,7 @@ When merging Compose files, Compose appends new entries that do not violate a un
 @x
 Merging the following example YAML trees:
 @y
-Merging the following example YAML trees:
+以下の YAML ツリーをマージするものとします。
 @z
 
 % snip code...
@@ -161,7 +161,7 @@ Merging the following example YAML trees:
 @x
 Results in a Compose application model equivalent to the YAML tree:
 @y
-Results in a Compose application model equivalent to the YAML tree:
+結果となる Compose アプリケーションモデルは、以下のような YAML ツリーになります。
 @z
 
 % snip code...
@@ -169,7 +169,7 @@ Results in a Compose application model equivalent to the YAML tree:
 @x
 ### Reset value
 @y
-### Reset value
+### Reset value {#reset-value}
 @z
 
 @x
@@ -221,7 +221,7 @@ Results in:
 @x
 ### Replace value
 @y
-### Replace value
+### Replace value {#replace-value}
 @z
 
 @x
@@ -271,7 +271,7 @@ If `!override` had not been used, both `8080:80` and `8443:443` would be exposed
 @x
 ## Additional resources
 @y
-## Additional resources
+## さらなる情報 {#additional-resources}
 @z
 
 @x

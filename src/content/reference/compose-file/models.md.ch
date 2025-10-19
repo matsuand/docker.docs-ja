@@ -8,7 +8,7 @@ title: Models
 description: Learn about the models top-level element
 keywords: compose, compose specification, models, compose file reference
 @y
-title: Models
+title: models
 description: Learn about the models top-level element
 keywords: compose, compose specification, models, compose file reference
 @z
@@ -22,59 +22,35 @@ keywords: compose, compose specification, models, compose file reference
 @x
 The top-level `models` section declares AI models that are used by your Compose application. These models are typically pulled as OCI artifacts, run by a model runner, and exposed as an API that your service containers can consume.
 @y
-The top-level `models` section declares AI models that are used by your Compose application. These models are typically pulled as OCI artifacts, run by a model runner, and exposed as an API that your service containers can consume.
+トップレベルの `models` セクションは AI モデルを宣言するものであり、Compose アプリケーションにおいて利用されます。
+このモデルは通常 ACI アーティファクトとしてプルされて、モデルランナーによって実行されます。
+またサービスコンテナーとして利用できる API として公開されます。
 @z
 
 @x
 Services can only access models when explicitly granted by a [`models` attribute](services.md#models) within the `services` top-level element.
 @y
-Services can only access models when explicitly granted by a [`models` attribute](services.md#models) within the `services` top-level element.
+サービスがモデルにアクセスできるのは、トップレベル要素 `services` 内の [`models` 属性](services.md#models) によって明示的に許可された場合のみです。
 @z
 
 @x
 ## Examples
 @y
-## Examples
+## 例 {#examples}
 @z
 
 @x
 ### Example 1
 @y
-### Example 1
+## 例１ {#example-1}
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      - ai_model
-@y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      - ai_model
-@z
-
-@x
-models:
-  ai_model:
-    model: ai/model
-```
-@y
-models:
-  ai_model:
-    model: ai/model
-```
-@z
+% snip code...
 
 @x
 In this basic example:
 @y
-In this basic example:
+この基本的な例は以下を示しています。
 @z
 
 @x
@@ -82,73 +58,40 @@ In this basic example:
  - The `ai_model` is defined as an OCI artifact (`ai/model`) that is pulled and served by the model runner.
  - Docker Compose injects connection info, for example `AI_MODEL_URL`, into the container. 
 @y
- - The app service uses the `ai_model`.
- - The `ai_model` is defined as an OCI artifact (`ai/model`) that is pulled and served by the model runner.
- - Docker Compose injects connection info, for example `AI_MODEL_URL`, into the container. 
+ - app サービスが `ai_model` を利用します。
+ - `ai_model` は OCI アーティファクト (`ai/model`) として定義されます。
+   これはモデルランナーによってプルされて提供されます。
+ - Docker Compose は `AI_MODEL_URL` といった接続情報をコンテナーに設定します。
 @z
 
 @x
 ### Example 2
 @y
-### Example 2
+## 例２ {#example-2}
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      my_model:
-        endpoint_var: MODEL_URL
-@y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      my_model:
-        endpoint_var: MODEL_URL
-@z
+% snip code...
 
-@x
-models:
-  my_model:
-    model: ai/model
-    context_size: 1024
-    runtime_flags: 
-      - "--a-flag"
-      - "--another-flag=42"
-```
-@y
-models:
-  my_model:
-    model: ai/model
-    context_size: 1024
-    runtime_flags: 
-      - "--a-flag"
-      - "--another-flag=42"
-```
-@z
+% snip code...
 
 @x
 In this advanced setup:
 @y
-In this advanced setup:
+この応用的な設定は以下を示しています。
 @z
 
 @x
  - The service app references `my_model` using the long syntax.
  - Compose injects the model runner's URL as the environment variable `MODEL_URL`.
 @y
- - The service app references `my_model` using the long syntax.
- - Compose injects the model runner's URL as the environment variable `MODEL_URL`.
+ - サービス app は長い文法形式を使って `my_model` を参照しています。
+ - Compose は環境変数 `MODEL_URL` に示されるモデルランナーの URL を設定しています。
 @z
 
 @x
 ## Attributes
 @y
-## Attributes
+## 属性 {#attributes}
 @z
 
 @x
@@ -156,19 +99,20 @@ In this advanced setup:
 - `context_size`: Defines the maximum token context size for the model.
 - `runtime_flags`: A list of raw command-line flags passed to the inference engine when the model is started.
 @y
-- `model` (required): The OCI artifact identifier for the model. This is what Compose pulls and runs via the model runner. 
-- `context_size`: Defines the maximum token context size for the model.
-- `runtime_flags`: A list of raw command-line flags passed to the inference engine when the model is started.
+- `model` (必須): モデルに対する OCI アーティファクト識別子。
+  これにより Compose がモデルランナーを通じてプルと実行を行います。
+- `context_size`: モデル用のトークンコンテキストの最大サイズを定義します。
+- `runtime_flags`: モデルが起動した際に推論エンジンに受け渡されるコマンドラインフラグのリストです。
 @z
 
 @x
 ## Additional resources
 @y
-## Additional resources
+## さらなる情報 {#additional-resources}
 @z
 
 @x
 For more examples and information on using `model`, see [Use AI models in Compose](/manuals/ai/compose/models-and-compose.md)
 @y
-For more examples and information on using `model`, see [Use AI models in Compose](manuals/ai/compose/models-and-compose.md)
+`model` の利用例や詳しい情報については [Compose における AI モデルの利用](manuals/ai/compose/models-and-compose.md) を参照してください。
 @z

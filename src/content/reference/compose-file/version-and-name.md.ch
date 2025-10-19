@@ -8,7 +8,7 @@ title: Version and name top-level elements
 description: Understand when and if to set the version and name top-level element
 keywords: compose, compose specification, services, compose file reference
 @y
-title: トップレベル項目 version と name
+title: version と name
 description: Understand when and if to set the version and name top-level element
 keywords: compose, compose specification, services, compose file reference
 @z
@@ -16,7 +16,7 @@ keywords: compose, compose specification, services, compose file reference
 @x
 ## Version top-level element (obsolete)
 @y
-## トップレベル項目 version (廃止予定) {#version-top-level-element-obsolete}
+## トップレベル要素 version (廃止予定) {#version-top-level-element-obsolete}
 @z
 
 @x
@@ -47,7 +47,7 @@ Compose は Compose ファイルが完全に解析可能であるかどうかを
 @x
 ## Name top-level element
 @y
-## トップレベル項目 name {#name-top-level-element}
+## トップレベル要素 name {#name-top-level-element}
 @z
 
 @x
@@ -60,7 +60,7 @@ The top-level `name` property is defined by the Compose Specification as the pro
 Compose offers a way for you to override this name, and sets a
 default project name to be used if the top-level `name` element is not set.
 @y
-Compose においてプロジェクト名を上書き設定するために指定する方法であり、トップレベルのこの `name` 項目が設定されなかった場合は、デフォルトのプロジェクト名が採用されます。
+Compose においてプロジェクト名を上書き設定するために指定する方法であり、トップレベルのこの `name` 要素が設定されなかった場合は、デフォルトのプロジェクト名が採用されます。
 @z
 
 @x

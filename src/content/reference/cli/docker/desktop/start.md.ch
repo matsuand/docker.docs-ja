@@ -14,5 +14,6 @@ title: docker desktop start
 @y
 > [!NOTE]
 >
-> `docker desktop start` doesn't work when executed via SSH on Windows due to a limitation in how WinCred stores credentials securely.
+> `docker desktop start` は Windows から SSH を通じて実行した場合には動作しません。
+> WinCred が資格情報を安全に保持する方法に制限があるためです。
 @z

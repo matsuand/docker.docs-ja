@@ -8,7 +8,7 @@ title: Compose Build Specification
 description: Learn about the Compose Build Specification
 keywords: compose, compose specification, compose file reference, compose build specification
 @y
-title: Compose Build Specification
+title: Compose ビルド仕様
 description: Learn about the Compose Build Specification
 keywords: compose, compose specification, compose file reference, compose build specification
 @z
