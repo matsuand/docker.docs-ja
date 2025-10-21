@@ -4,6 +4,5 @@
 @x
 Apache License, Version 2.0. See [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full license.
 @y
-Apache License, Version 2.0. 
-詳しくは [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
+Apache ライセンスバージョン 2.0 の詳細は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
 @z

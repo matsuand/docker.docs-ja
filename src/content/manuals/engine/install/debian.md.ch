@@ -316,7 +316,7 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @x comment in command
    # List the available versions:
 @y
-   # 利用可能なバージョンを一覧表示
+   # 利用可能バージョンの一覧表示
 @z
 
 @x

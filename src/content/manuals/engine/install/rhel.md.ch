@@ -15,7 +15,7 @@ description: Learn how to install Docker Engine on RHEL. These instructions cove
   the different installation methods, how to uninstall, and next steps.
 keywords: requirements, dnf, installation, rhel, rpm, install, install docker engine, uninstall, upgrade,
   update
-title: Install Docker Engine on RHEL
+title: RHEL への Docker Engine インストール
 linkTitle: RHEL
 @z
 
@@ -24,29 +24,26 @@ To get started with Docker Engine on RHEL, make sure you
 [meet the prerequisites](#prerequisites), and then follow the
 [installation steps](#installation-methods).
 @y
-To get started with Docker Engine on RHEL, make sure you
-[meet the prerequisites](#prerequisites), and then follow the
-[installation steps](#installation-methods).
+RHEL 上での Docker Engine を使い始めるにあたっては、[前提条件](#prerequisites) を満たしていることを確認した上で、以下の [インストール手順](#installation-methods) に従ってください。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 ### OS requirements
 @y
-### OS requirements
+### OS 要件 {#os-requirements}
 @z
 
 @x
 To install Docker Engine, you need a maintained version of one of the following
 RHEL versions:
 @y
-To install Docker Engine, you need a maintained version of one of the following
-RHEL versions:
+Docker Engine をインストールするには、以下に示すような、メンテナンスされている RHEL のバージョンのいずれかであることが必要です。
 @z
 
 @x
@@ -62,13 +59,13 @@ RHEL versions:
 @x
 ### Uninstall old versions
 @y
-### Uninstall old versions
+### 古いバージョンのアンインストール {#uninstall-old-versions}
 @z
 
 @x
 Before you can install Docker Engine, you need to uninstall any conflicting packages.
 @y
-Before you can install Docker Engine, you need to uninstall any conflicting packages.
+Docker Engine をインストールするにあたっては、衝突しそうなパッケージをすべてアンインストールする必要があります。
 @z
 
 @x
@@ -76,9 +73,9 @@ Your Linux distribution may provide unofficial Docker packages, which may confli
 with the official packages provided by Docker. You must uninstall these packages
 before you install the official version of Docker Engine.
 @y
-Your Linux distribution may provide unofficial Docker packages, which may conflict
-with the official packages provided by Docker. You must uninstall these packages
-before you install the official version of Docker Engine.
+この Linux ディストリビューションでは Docker の非公式パッケージが提供されているかもしれません。
+これは Docker が提供する公式パッケージとの間で衝突を引き起こします。
+したがって Docker Engine の公式バージョンをインストールするには、そういったパッケージはあらかじめアンインストールしておく必要があります。
 @z
 
 % snip command...
@@ -86,27 +83,26 @@ before you install the official version of Docker Engine.
 @x
 `dnf` might report that you have none of these packages installed.
 @y
-`dnf` might report that you have none of these packages installed.
+`dnf` の出力として、上記パッケージがどれもインストールされていないと示してくるかもしれません。
 @z
 
 @x
 Images, containers, volumes, and networks stored in `/var/lib/docker/` aren't
 automatically removed when you uninstall Docker.
 @y
-Images, containers, volumes, and networks stored in `/var/lib/docker/` aren't
-automatically removed when you uninstall Docker.
+イメージ、コンテナー、ボリューム、ネットワークの各情報は `/var/lib/docker/` に保存されますが、これらは Docker をアンインストールしても自動的には削除されません。
 @z
 
 @x
 ## Installation methods
 @y
-## Installation methods
+## インストール方法 {#installation-methods}
 @z
 
 @x
 You can install Docker Engine in different ways, depending on your needs:
 @y
-You can install Docker Engine in different ways, depending on your needs:
+Docker Engine のインストール方法はいくつかあるので、必要に応じて選んでください。
 @z
 
 @x
@@ -115,10 +111,9 @@ You can install Docker Engine in different ways, depending on your needs:
   from them, for ease of installation and upgrade tasks. This is the
   recommended approach.
 @y
-- You can
-  [set up Docker's repositories](#install-using-the-repository) and install
-  from them, for ease of installation and upgrade tasks. This is the
-  recommended approach.
+- [Docker リポジトリの設定](#install-using-the-repository) を行ってインストールを行います。
+  インストールやアップグレードの作業は簡単に行うことができます。
+  これが推奨される方法です。
 @z
 
 @x
@@ -127,24 +122,22 @@ You can install Docker Engine in different ways, depending on your needs:
   upgrades completely manually. This is useful in situations such as installing
   Docker on air-gapped systems with no access to the internet.
 @y
-- You can download the RPM package,
-  [install it manually](#install-from-a-package), and manage
-  upgrades completely manually. This is useful in situations such as installing
-  Docker on air-gapped systems with no access to the internet.
+- RPM パッケージとしてダウンロードすることができるので、[手動でのインストール](#install-from-a-package) が可能です。
+  手動によりアップグレード管理も十分に行うことができます。
+  この方法はインターネットにアクセスできないオフライン環境において Docker をインストールする場合などに利用できます。
 @z
 
 @x
 - In testing and development environments, you can use automated
   [convenience scripts](#install-using-the-convenience-script) to install Docker.
 @y
-- In testing and development environments, you can use automated
-  [convenience scripts](#install-using-the-convenience-script) to install Docker.
+- テスト環境や開発環境向けであれば、Docker インストールを自動化している [便利スクリプト](#install-using-the-convenience-script) を利用することができます。
 @z
 
 @x
 ### Install using the rpm repository {#install-using-the-repository}
 @y
-### Install using the rpm repository {#install-using-the-repository}
+### rpm リポジトリを利用したインストール {#install-using-the-repository}
 @z
 
 @x
@@ -152,23 +145,21 @@ Before you install Docker Engine for the first time on a new host machine, you
 need to set up the Docker repository. Afterward, you can install and update
 Docker from the repository.
 @y
-Before you install Docker Engine for the first time on a new host machine, you
-need to set up the Docker repository. Afterward, you can install and update
-Docker from the repository.
+Docker Engine を初めてマシン上にインストールするには、Docker リポジトリの設定があらかじめ必要です。
+これを行った後に、そのリポジトリから Docker のインストールやアップグレードを行います。
 @z
 
 @x
 #### Set up the repository
 @y
-#### Set up the repository
+#### リポジトリの設定 {#set-up-the-repository}
 @z
 
 @x
 Install the `dnf-plugins-core` package (which provides the commands to manage
 your DNF repositories) and set up the repository.
 @y
-Install the `dnf-plugins-core` package (which provides the commands to manage
-your DNF repositories) and set up the repository.
+`dnf-plugins-core` パッケージ (DNF リポジトリ管理を行うコマンドを提供) をインストールし、リポジトリ設定を行います。
 @z
 
 % snip command...
@@ -176,13 +167,13 @@ your DNF repositories) and set up the repository.
 @x
 #### Install Docker Engine
 @y
-#### Install Docker Engine
+#### Docker Engine のインストール {#install-docker-engine}
 @z
 
 @x
 1. Install the Docker packages.
 @y
-1. Install the Docker packages.
+1. Docker パッケージをインストールします。
 @z
 
 @x
@@ -190,13 +181,13 @@ your DNF repositories) and set up the repository.
    {{< tab name="Latest" >}}
 @y
    {{< tabs >}}
-   {{< tab name="Latest" >}}
+   {{< tab name="最新バージョン" >}}
 @z
 
 @x
    To install the latest version, run:
 @y
-   To install the latest version, run:
+   最新バージョンをインストールするには以下を実行します。
 @z
 
 % snip command...
@@ -205,16 +196,16 @@ your DNF repositories) and set up the repository.
    If prompted to accept the GPG key, verify that the fingerprint matches
    `060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35`, and if so, accept it.
 @y
-   If prompted to accept the GPG key, verify that the fingerprint matches
-   `060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35`, and if so, accept it.
+   GPG 鍵の受け入れを問うプロンプトが表示されたら、そのフィンガープリントが `060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35` であるかどうか確認し、正しければ受け入れます。
 @z
 
 @x
    This command installs Docker, but it doesn't start Docker. It also creates a
    `docker` group, however, it doesn't add any users to the group by default.
 @y
-   This command installs Docker, but it doesn't start Docker. It also creates a
-   `docker` group, however, it doesn't add any users to the group by default.
+   これによって Docker がインストールされますが、まだ Docker は起動していません。
+   この際には `docker` グループが生成されます。
+   デフォルトではこのグループにユーザーは一人も属していません。
 @z
 
 @x
@@ -222,15 +213,14 @@ your DNF repositories) and set up the repository.
    {{< tab name="Specific version" >}}
 @y
    {{< /tab >}}
-   {{< tab name="Specific version" >}}
+   {{< tab name="特定バージョン" >}}
 @z
 
 @x
    To install a specific version, start by listing the available versions in
    the repository:
 @y
-   To install a specific version, start by listing the available versions in
-   the repository:
+   特定バージョンをインストールするには、まずリポジトリ内の利用可能なバージョンを一覧表示します。
 @z
 
 % snip command...
@@ -239,8 +229,8 @@ your DNF repositories) and set up the repository.
    The list returned depends on which repositories are enabled, and is specific
    to your version of RHEL (indicated by the `.el9` suffix in this example).
 @y
-   The list returned depends on which repositories are enabled, and is specific
-   to your version of RHEL (indicated by the `.el9` suffix in this example).
+   表示される一覧は、どのリポジトリを有効にしているかによって変わります。
+   そして RHEL の対象バージョンを示しています (この例では `.el9` というサフィックスにより示されます)。
 @z
 
 @x
@@ -248,17 +238,16 @@ your DNF repositories) and set up the repository.
    the package name (`docker-ce`) plus the version string (2nd column),
    separated by a hyphen (`-`). For example, `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9`.
 @y
-   Install a specific version by its fully qualified package name, which is
-   the package name (`docker-ce`) plus the version string (2nd column),
-   separated by a hyphen (`-`). For example, `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9`.
+   目的のバージョンを完全なパッケージ文字列を指定してインストールします。
+   完全な文字列とは、まずパッケージ名 (`docker-ce`) があり、次にハイフン (`-`) で区切って (2 カラムめに) バージョン文字列が続きます。
+   この例では `docker-ce-3:{{% param "docker_ce_version" %}}-1.el9` といったものです。
 @z
 
 @x
    Replace `<VERSION_STRING>` with the desired version and then run the following
    command to install:
 @y
-   Replace `<VERSION_STRING>` with the desired version and then run the following
-   command to install:
+   `<VERSION_STRING>` の部分は目的とするバージョン文字列に置き換えた上で、以下のコマンドを実行してインストールします。
 @z
 
 % snip command...
@@ -267,8 +256,9 @@ your DNF repositories) and set up the repository.
    This command installs Docker, but it doesn't start Docker. It also creates a
    `docker` group, however, it doesn't add any users to the group by default.
 @y
-   This command installs Docker, but it doesn't start Docker. It also creates a
-   `docker` group, however, it doesn't add any users to the group by default.
+   これによって Docker がインストールされますが、まだ Docker は起動していません。
+   この際には `docker` グループが生成されます。
+   デフォルトではこのグループにユーザーは一人も属していません。
 @z
 
 @x
@@ -282,7 +272,7 @@ your DNF repositories) and set up the repository.
 @x
 2. Start Docker Engine.
 @y
-2. Start Docker Engine.
+2. Docker Engine を起動します。
 @z
 
 % snip command...
@@ -292,15 +282,14 @@ your DNF repositories) and set up the repository.
    boot your system. If you don't want Docker to start automatically, use `sudo
    systemctl start docker` instead.
 @y
-   This configures the Docker systemd service to start automatically when you
-   boot your system. If you don't want Docker to start automatically, use `sudo
-   systemctl start docker` instead.
+   これによって Docker の systemd サービスがシステム起動時に自動的に実行されるようになります。
+   Docker を自動起動させたくない場合は、ここではその代わりに `sudo systemctl start docker` を実行してください。
 @z
 
 @x
 3. Verify that the installation is successful by running the `hello-world` image:
 @y
-3. Verify that the installation is successful by running the `hello-world` image:
+3. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -309,14 +298,14 @@ your DNF repositories) and set up the repository.
    This command downloads a test image and runs it in a container. When the
    container runs, it prints a confirmation message and exits.
 @y
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
+   このコマンドを実行すると、テストイメージがダウンロードされてコンテナーとして実行します。
+   コンテナーが実行されると、確認メッセージが表示されて終了します。
 @z
 
 @x
 You have now successfully installed and started Docker Engine.
 @y
-You have now successfully installed and started Docker Engine.
+Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
@@ -328,21 +317,21 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
 To upgrade Docker Engine, follow the [installation instructions](#install-using-the-repository),
 choosing the new version you want to install.
 @y
-To upgrade Docker Engine, follow the [installation instructions](#install-using-the-repository),
-choosing the new version you want to install.
+Docker Engine をアップグレードする場合は [インストール作業](#install-using-the-repository) に従います。
+そこではインストールしたい新バージョンを選びます。
 @z
 
 @x
 ### Install from a package
 @y
-### Install from a package
+### パッケージからのインストール {#install-from-a-package}
 @z
 
 @x
@@ -350,39 +339,34 @@ If you can't use Docker's `rpm` repository to install Docker Engine, you can
 download the `.rpm` file for your release and install it manually. You need to
 download a new file each time you want to upgrade Docker Engine.
 @y
-If you can't use Docker's `rpm` repository to install Docker Engine, you can
-download the `.rpm` file for your release and install it manually. You need to
-download a new file each time you want to upgrade Docker Engine.
+Docker Engine のインストールにあたって Docker の `rpm` リポジトリを利用したくない場合は、対象となるリリースの `.rpm` ファイルをダウンロードして手動でインストールします。
+Docker Engine のアップグレード時には、その都度、新しいファイルをダウンロードしてくることになります。
 @z
 
 @x
-<!-- markdownlint-disable-next-line -->
 1. Go to [{{% param "download-url-base" %}}/]({{% param "download-url-base" %}}/).
 @y
-<!-- markdownlint-disable-next-line -->
-1. Go to [{{% param "download-url-base" %}}/]({{% param "download-url-base" %}}/).
+1. [{{% param "download-url-base" %}}/]({{% param "download-url-base" %}}/) にアクセスします。
 @z
 
 @x
 2. Select your RHEL version in the list.
 @y
-2. Select your RHEL version in the list.
+2. 一覧の中から目的の RHEL バージョンを選択します。
 @z
 
 @x
 3. Select the applicable architecture (`x86_64`, `aarch64`, or `s390x`), and
    then go to `stable/Packages/`.
 @y
-3. Select the applicable architecture (`x86_64`, `aarch64`, or `s390x`), and
-   then go to `stable/Packages/`.
+3. 採用したいアーキテクチャー (`x86_64`、`aarch64`、`s390x`) を選択して、`stable/Packages/` にアクセスします。
 @z
 
 @x
 4. Download the following `rpm` files for the Docker Engine, CLI, containerd,
    and Docker Compose packages:
 @y
-4. Download the following `rpm` files for the Docker Engine, CLI, containerd,
-   and Docker Compose packages:
+4. Docker Engine、CLI、containerd、Docker Compose パッケージに対応する以下の `rpm` ファイルをダウンロードします。
 @z
 
 @x
@@ -403,8 +387,8 @@ download a new file each time you want to upgrade Docker Engine.
 5. Install Docker Engine, changing the following path to the path where you downloaded
    the packages.
 @y
-5. Install Docker Engine, changing the following path to the path where you downloaded
-   the packages.
+5. Docker Engine をインストールします。
+   以下におけるパス指定は、先ほどパッケージ類をダウンロードしたパスを指定します。
 @z
 
 % snip command...
@@ -413,14 +397,15 @@ download a new file each time you want to upgrade Docker Engine.
    Docker is installed but not started. The `docker` group is created, but no
    users are added to the group.
 @y
-   Docker is installed but not started. The `docker` group is created, but no
-   users are added to the group.
+   Docker がインストールされますが、まだ起動はしていません。
+   この際には `docker` グループが生成されます。
+   デフォルトではこのグループにユーザーは一人も属していません。
 @z
 
 @x
 6. Start Docker Engine.
 @y
-6. Start Docker Engine.
+6. Docker Engine を起動します。
 @z
 
 % snip command...
@@ -430,15 +415,14 @@ download a new file each time you want to upgrade Docker Engine.
    boot your system. If you don't want Docker to start automatically, use `sudo
    systemctl start docker` instead.
 @y
-   This configures the Docker systemd service to start automatically when you
-   boot your system. If you don't want Docker to start automatically, use `sudo
-   systemctl start docker` instead.
+   これによって Docker の systemd サービスがシステム起動時に自動的に実行されるようになります。
+   Docker を自動起動させたくない場合は、ここではその代わりに `sudo systemctl start docker` を実行してください。
 @z
 
 @x
 7. Verify that the installation is successful by running the `hello-world` image:
 @y
-7. Verify that the installation is successful by running the `hello-world` image:
+7. インストールが成功したことを確認するために `hello-world` イメージを実行します。
 @z
 
 % snip command...
@@ -447,14 +431,14 @@ download a new file each time you want to upgrade Docker Engine.
    This command downloads a test image and runs it in a container. When the
    container runs, it prints a confirmation message and exits.
 @y
-   This command downloads a test image and runs it in a container. When the
-   container runs, it prints a confirmation message and exits.
+   このコマンドを実行すると、テストイメージがダウンロードされてコンテナーとして実行します。
+   コンテナーが実行されると、確認メッセージが表示されて終了します。
 @z
 
 @x
 You have now successfully installed and started Docker Engine.
 @y
-You have now successfully installed and started Docker Engine.
+Docker Engine のインストールと起動が正常に行われました。
 @z
 
 @x
@@ -466,7 +450,7 @@ You have now successfully installed and started Docker Engine.
 @x
 #### Upgrade Docker Engine
 @y
-#### Upgrade Docker Engine
+#### Docker Engine のアップグレード {#upgrade-docker-engine}
 @z
 
 @x
@@ -474,9 +458,8 @@ To upgrade Docker Engine, download the newer package files and repeat the
 [installation procedure](#install-from-a-package), using `dnf upgrade`
 instead of `dnf install`, and point to the new files.
 @y
-To upgrade Docker Engine, download the newer package files and repeat the
-[installation procedure](#install-from-a-package), using `dnf upgrade`
-instead of `dnf install`, and point to the new files.
+Docker Engine をアップグレードするには、より最新のパッケージファイルをダウンロードして [インストール手順](#install-from-a-package) を再度行います。
+その際には `dnf install` ではなく `dnf upgrade` を用いて新たなファイルを指定します。
 @z
 
 @x
@@ -488,13 +471,13 @@ instead of `dnf install`, and point to the new files.
 @x
 ## Uninstall Docker Engine
 @y
-## Uninstall Docker Engine
+## Docker Engine のアンインストール {#uninstall-docker-engine}
 @z
 
 @x
 1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
 @y
-1. Uninstall the Docker Engine, CLI, containerd, and Docker Compose packages:
+1. Docker Engine, CLI、containerd、Docker Compose パッケージをアンインストールするには以下を行います。
 @z
 
 % snip command...
@@ -503,8 +486,8 @@ instead of `dnf install`, and point to the new files.
 2. Images, containers, volumes, or custom configuration files on your host
    aren't automatically removed. To delete all images, containers, and volumes:
 @y
-2. Images, containers, volumes, or custom configuration files on your host
-   aren't automatically removed. To delete all images, containers, and volumes:
+2. イメージ、コンテナー、ボリューム、独自の設定ファイルは自動的には削除されません。
+   イメージ、コンテナー、ボリュームを削除するには以下を行います。
 @z
 
 % snip command...
@@ -512,17 +495,17 @@ instead of `dnf install`, and point to the new files.
 @x
 You have to delete any edited configuration files manually.
 @y
-You have to delete any edited configuration files manually.
+独自に編集した設定ファイルは手動で削除する必要があります。
 @z
 
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
 - Continue to [Post-installation steps for Linux](linux-postinstall.md).
 @y
-- Continue to [Post-installation steps for Linux](linux-postinstall.md).
+- [Linux インストール後の作業](linux-postinstall.md) に進んでください。
 @z

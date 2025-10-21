@@ -103,6 +103,17 @@ Ubuntu における Docker Engine は x86_64 (または amd64), armhf, arm64, s3
 @z
 
 @x
+> [!NOTE]
+>
+> Installation on Ubuntu derivative distributions, such as Linux Mint, is not officially
+> supported (though it may work).
+@y
+> [!NOTE]
+>
+> Ubuntu 派生のディストリビューション、たとえば Linux Mint などにおけるインストールは、(動作はするかもしれませんが) 公式にはサポートしていません。
+@z
+
+@x
 ### Uninstall old versions
 @y
 ### 古いバージョンのアンインストール {#uninstall-old-versions}
@@ -313,6 +324,29 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @z
 
 @x
+    > [!NOTE]
+    >
+    > The Docker service starts automatically after installation. To verify that
+    > Docker is running, use:
+@y
+    > [!NOTE]
+    >
+    > インストール後は Docker サービスが自動起動します。
+    > Docker が動作しているかどうかは、以下により確認します。
+@z
+
+% snip command...
+
+@x
+    > Some systems may have this behavior disabled and will require a manual start:
+@y
+    > システムの中にはこの自動起動という動作を無効にするものがあります。
+    > その場合は手動により以下を実行します。
+@z
+
+% snip command...
+
+@x
 3. Verify that the installation is successful by running the `hello-world` image:
 @y
 3. インストールが成功したことを確認するために `hello-world` イメージを実行します。
@@ -511,6 +545,14 @@ Docker Engine をアップグレードするには、新たなパッケージフ
 @y
 2. イメージ、コンテナー、ボリューム、独自の設定ファイルは自動的には削除されません。
    イメージ、コンテナー、ボリュームを削除するには以下を行います。
+@z
+
+% snip command...
+
+@x
+3. Remove source list and keyrings
+@y
+3. ソースリストとキーリングを削除します。
 @z
 
 % snip command...
