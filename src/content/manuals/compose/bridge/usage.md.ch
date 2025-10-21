@@ -26,9 +26,15 @@ keywords: docker compose bridge, compose kubernetes transform, kubernetes from c
 @z
 
 @x
-Compose Bridge supplies an out-of-the-box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
+Compose Bridge includes a built-in transformation that automatically converts your Compose configuration into a set of Kubernetes manifests.
 @y
-Compose Bridge supplies an out-of-the-box transformation for your Compose configuration file. Based on an arbitrary `compose.yaml` file, Compose Bridge produces:
+Compose Bridge includes a built-in transformation that automatically converts your Compose configuration into a set of Kubernetes manifests.
+@z
+
+@x
+Based on your `compose.yaml` file, it produces:
+@y
+Based on your `compose.yaml` file, it produces:
 @z
 
 @x
@@ -55,12 +61,62 @@ Compose Bridge supplies an out-of-the-box transformation for your Compose config
 It also supplies a Kustomize overlay dedicated to Docker Desktop with:
  - `Loadbalancer` for services which need to expose ports on host.
  - A `PersistentVolumeClaim` to use the Docker Desktop storage provisioner `desktop-storage-provisioner` to handle volume provisioning more effectively.
- - A Kustomize file to link all the resources together.
+ - A `Kustomization.yaml` file to link all the resources together.
 @y
 It also supplies a Kustomize overlay dedicated to Docker Desktop with:
  - `Loadbalancer` for services which need to expose ports on host.
  - A `PersistentVolumeClaim` to use the Docker Desktop storage provisioner `desktop-storage-provisioner` to handle volume provisioning more effectively.
- - A Kustomize file to link all the resources together.
+ - A `Kustomization.yaml` file to link all the resources together.
+@z
+
+@x
+If your Compose file defines a `models` section for a service, Compose Bridge automatically configures your deployment so your service can locate and use its models via Docker Model Runner.
+@y
+If your Compose file defines a `models` section for a service, Compose Bridge automatically configures your deployment so your service can locate and use its models via Docker Model Runner.
+@z
+
+@x
+For each declared model, the transformation injects two environment variables:
+@y
+For each declared model, the transformation injects two environment variables:
+@z
+
+@x
+- `<MODELNAME>_URL`: The endpoint for Docker Model Runner serving that model  
+- `<MODELNAME>_MODEL`: The model’s name or identifier
+@y
+- `<MODELNAME>_URL`: The endpoint for Docker Model Runner serving that model  
+- `<MODELNAME>_MODEL`: The model’s name or identifier
+@z
+
+@x
+You can optionally customize these variable names using `endpoint_var` and `model_var`.
+@y
+You can optionally customize these variable names using `endpoint_var` and `model_var`.
+@z
+
+@x
+The default transformation generates two different overlays - one for Docker Desktop whilst using a local instance of Docker Model Runner, and a `model-runner` overlay with all the relevant Kubernetes resources to deploy Docker Model Runner in a pod. 
+@y
+The default transformation generates two different overlays - one for Docker Desktop whilst using a local instance of Docker Model Runner, and a `model-runner` overlay with all the relevant Kubernetes resources to deploy Docker Model Runner in a pod. 
+@z
+
+@x
+| Environment    | Endpoint                                        |
+| -------------- | ----------------------------------------------- |
+| Docker Desktop | `http://host.docker.internal:12434/engines/v1/` |
+| Kubernetes     | `http://model-runner/engines/v1/`               |
+@y
+| Environment    | Endpoint                                        |
+| -------------- | ----------------------------------------------- |
+| Docker Desktop | `http://host.docker.internal:12434/engines/v1/` |
+| Kubernetes     | `http://model-runner/engines/v1/`               |
+@z
+
+@x
+For more details, see [Use Model Runner](use-model-runner.md).
+@y
+For more details, see [Use Model Runner](use-model-runner.md).
 @z
 
 @x
@@ -70,134 +126,56 @@ It also supplies a Kustomize overlay dedicated to Docker Desktop with:
 @z
 
 @x
-To use the default transformation run the following command:
+To convert your Compose file using the default transformation:
 @y
-To use the default transformation run the following command:
+To convert your Compose file using the default transformation:
+@z
+
+% snip command...
+
+@x
+Compose looks for a `compose.yaml` file inside the current directory and generates Kubernetes manifests.
+@y
+Compose looks for a `compose.yaml` file inside the current directory and generates Kubernetes manifests.
 @z
 
 @x
-```console
-$ docker compose bridge convert
-```
+Example output:
 @y
-```console
-$ docker compose bridge convert
-```
+Example output:
+@z
+
+% snip command...
+
+@x
+All generated files are stored in the `/out` directory in your project.
+@y
+All generated files are stored in the `/out` directory in your project.
 @z
 
 @x
-Compose looks for a `compose.yaml` file inside the current directory and then converts it.
+## Deploy the generated manifests
 @y
-Compose looks for a `compose.yaml` file inside the current directory and then converts it.
-@z
-
-@x
-When successful, Compose Bridge generates Kubernetes manifests and logs output similar to the following:
-@y
-When successful, Compose Bridge generates Kubernetes manifests and logs output similar to the following:
-@z
-
-@x
-```console
-$ docker compose bridge convert -f compose.yaml 
-Kubernetes resource api-deployment.yaml created
-Kubernetes resource db-deployment.yaml created
-Kubernetes resource web-deployment.yaml created
-Kubernetes resource api-expose.yaml created
-Kubernetes resource db-expose.yaml created
-Kubernetes resource web-expose.yaml created
-Kubernetes resource 0-avatars-namespace.yaml created
-Kubernetes resource default-network-policy.yaml created
-Kubernetes resource private-network-policy.yaml created
-Kubernetes resource public-network-policy.yaml created
-Kubernetes resource db-db_data-persistentVolumeClaim.yaml created
-Kubernetes resource api-service.yaml created
-Kubernetes resource web-service.yaml created
-Kubernetes resource kustomization.yaml created
-Kubernetes resource db-db_data-persistentVolumeClaim.yaml created
-Kubernetes resource api-service.yaml created
-Kubernetes resource web-service.yaml created
-Kubernetes resource kustomization.yaml created
-```
-@y
-```console
-$ docker compose bridge convert -f compose.yaml 
-Kubernetes resource api-deployment.yaml created
-Kubernetes resource db-deployment.yaml created
-Kubernetes resource web-deployment.yaml created
-Kubernetes resource api-expose.yaml created
-Kubernetes resource db-expose.yaml created
-Kubernetes resource web-expose.yaml created
-Kubernetes resource 0-avatars-namespace.yaml created
-Kubernetes resource default-network-policy.yaml created
-Kubernetes resource private-network-policy.yaml created
-Kubernetes resource public-network-policy.yaml created
-Kubernetes resource db-db_data-persistentVolumeClaim.yaml created
-Kubernetes resource api-service.yaml created
-Kubernetes resource web-service.yaml created
-Kubernetes resource kustomization.yaml created
-Kubernetes resource db-db_data-persistentVolumeClaim.yaml created
-Kubernetes resource api-service.yaml created
-Kubernetes resource web-service.yaml created
-Kubernetes resource kustomization.yaml created
-```
-@z
-
-@x
-These files are then stored within your project in the `/out` folder. 
-@y
-These files are then stored within your project in the `/out` folder. 
-@z
-
-@x
-The Kubernetes manifests can then be used to run the application on Kubernetes using
-the standard deployment command `kubectl apply -k out/overlays/desktop/`.
-@y
-The Kubernetes manifests can then be used to run the application on Kubernetes using
-the standard deployment command `kubectl apply -k out/overlays/desktop/`.
+## Deploy the generated manifests
 @z
 
 @x
 > [!IMPORTANT]
 >
-> Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
+> Before you deploy your Compose Bridge transformations, make sure you have [enabled Kubernetes](/manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
 @y
 > [!IMPORTANT]
 >
-> Make sure you have enabled Kubernetes in Docker Desktop before you deploy your Compose Bridge transformations.
+> Before you deploy your Compose Bridge transformations, make sure you have [enabled Kubernetes](manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
 @z
 
 @x
-If you want to convert a `compose.yaml` file that is located in another directory, you can run:
+Once the manifests are generated, deploy them to your local Kubernetes cluster:
 @y
-If you want to convert a `compose.yaml` file that is located in another directory, you can run:
+Once the manifests are generated, deploy them to your local Kubernetes cluster:
 @z
 
-@x
-```console
-$ docker compose bridge convert -f <path-to-file>/compose.yaml 
-```
-@y
-```console
-$ docker compose bridge convert -f <path-to-file>/compose.yaml 
-```
-@z
-
-@x
-To see all available flags, run:
-@y
-To see all available flags, run:
-@z
-
-@x
-```console
-$ docker compose bridge convert --help
-```
-@y
-```console
-$ docker compose bridge convert --help
-```
-@z
+% snip command...
 
 @x
 > [!TIP]
@@ -214,6 +192,28 @@ $ docker compose bridge convert --help
 @z
 
 @x
+## Additional commands
+@y
+## Additional commands
+@z
+
+@x
+Convert a `compose.yaml` file located in another directory:
+@y
+Convert a `compose.yaml` file located in another directory:
+@z
+
+% snip command...
+
+@x
+To see all available flags, run:
+@y
+To see all available flags, run:
+@z
+
+% snip command...
+
+@x
 ## What's next?
 @y
 ## What's next?
@@ -221,6 +221,8 @@ $ docker compose bridge convert --help
 
 @x
 - [Explore how you can customize Compose Bridge](customize.md)
+- [Use Model Runner](use-model-runner.md).
 @y
 - [Explore how you can customize Compose Bridge](customize.md)
+- [Use Model Runner](use-model-runner.md).
 @z

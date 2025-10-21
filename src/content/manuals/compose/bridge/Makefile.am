@@ -2,9 +2,10 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index.md               \
-	customize.md            \
-	usage.md
+	_index.md           \
+	customize.md        \
+	usage.md            \
+	use-model-runner.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
