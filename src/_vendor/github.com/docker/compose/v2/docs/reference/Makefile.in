@@ -263,6 +263,7 @@ bases = \
 	compose_pause.md                   \
 	compose_port.md                    \
 	compose_ps.md                      \
+	compose_publish.md                 \
 	compose_pull.md                    \
 	compose_push.md                    \
 	compose_restart.md                 \
@@ -304,6 +305,7 @@ bases = \
 	docker_compose_pause.yaml          \
 	docker_compose_port.yaml           \
 	docker_compose_ps.yaml             \
+	docker_compose_publish.yaml        \
 	docker_compose_pull.yaml           \
 	docker_compose_push.yaml           \
 	docker_compose_restart.yaml        \

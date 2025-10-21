@@ -2,15 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker compose alpha publish
+command: docker compose publish
 short: Publish compose application
 long: Publish compose application
-usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
+usage: docker compose publish [OPTIONS] REPOSITORY[:TAG]
 @y
-command: docker compose alpha publish
+command: docker compose publish
 short: Publish compose application
 long: Publish compose application
-usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
+usage: docker compose publish [OPTIONS] REPOSITORY[:TAG]
 @z
 
 % options:
@@ -41,7 +41,7 @@ usage: docker compose alpha publish [OPTIONS] REPOSITORY[:TAG]
       description: Include environment variables in the published OCI artifact
 @z
 
-@x "y"
+@x "yes"
       description: Assume "yes" as answer to all prompts
 @y
       description: Assume "yes" as answer to all prompts

@@ -609,12 +609,10 @@ docker compose alpha:
 
 @x
 Docker Debug:
-  subscription: [Pro, Team, Business]
-  requires: Docker Desktop [4.33.0](/manuals/desktop/release-notes.md#4330) and later
+  requires: Docker Desktop 4.48 and later. For Docker Desktop versions 4.47.0 and earlier, you must have a Pro, Team, or Business subscription
 @y
 Docker Debug:
-  subscription: [Pro, Team, Business]
-  requires: Docker Desktop [4.33.0](manuals/desktop/release-notes.md#4330) およびそれ以降
+  requires: Docker Desktop 4.48 およびそれ以降。For Docker Desktop versions 4.47.0 and earlier, you must have a Pro, Team, or Business subscription
 @z
 
 @x

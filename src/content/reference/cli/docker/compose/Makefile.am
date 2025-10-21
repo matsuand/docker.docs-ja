@@ -17,6 +17,7 @@ copyfiles = \
 	logs.md    \
 	ls.md      \
 	pause.md   \
+	publish.md \
 	port.md    \
 	ps.md      \
 	pull.md    \
