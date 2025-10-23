@@ -902,6 +902,14 @@ OATs:
 @z
 
 @x
+Pay by invoice:
+  subscription: [Team, Business]
+@y
+Pay by invoice:
+  subscription: [Team, Business]
+@z
+
+@x
 PKG installer:
   subscription: [Business]
   requires: Docker Desktop [4.36](/manuals/desktop/release-notes.md#4360) and later

@@ -136,3 +136,27 @@ For academic pricing, contact the
 For academic pricing, contact the
 [Docker Sales Team](https://www.docker.com/company/contact).
 @z
+
+@x
+### Can I use pay by invoice for upgrades or additional seats?
+@y
+### Can I use pay by invoice for upgrades or additional seats?
+@z
+
+@x
+No. Pay by invoice is only available for renewing annual subscriptions, not for
+purchasing upgrades or additional seats. You must use card payment or US bank
+accounts for these changes.
+@y
+No. Pay by invoice is only available for renewing annual subscriptions, not for
+purchasing upgrades or additional seats. You must use card payment or US bank
+accounts for these changes.
+@z
+
+@x
+For a list of supported payment methods, see
+[Add or update a payment method](/manuals/billing/payment-method.md).
+@y
+For a list of supported payment methods, see
+[Add or update a payment method](/manuals/billing/payment-method.md).
+@z

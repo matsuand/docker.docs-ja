@@ -60,13 +60,15 @@ To add seats:
 organization.
 1. Select **Billing**.
 1. Select **Add seats** and follow the on-screen instructions to complete
-adding seats.
+adding seats. Note, you can't use pay by invoice for purchasing additional
+seats. You must use a card or US bank account.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
 organization.
 1. Select **Billing**.
 1. Select **Add seats** and follow the on-screen instructions to complete
-adding seats.
+adding seats. Note, you can't use pay by invoice for purchasing additional
+seats. You must use a card or US bank account.
 @z
 
 @x

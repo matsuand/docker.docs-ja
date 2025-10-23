@@ -1,28 +1,32 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
-title: View billing history
+title: Invoices and billing history
 @y
-title: View billing history
+title: Invoices and billing history
 @z
 
 @x
-description: Learn how to view and download billing history, manage invoices, and check your subscription renewal date.
-keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, download invoices, VAT, billing support, Docker billing
+description: Learn how to view invoices and your billing history
+keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, pay invoice
 @y
-description: Learn how to view and download billing history, manage invoices, and check your subscription renewal date.
-keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, download invoices, VAT, billing support, Docker billing
+description: Learn how to view invoices and your billing history
+keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, pay invoice
 @z
 
 @x
-Learn how you can view your billing history, manage your invoices, and verify
-your renewal date. All monthly and annual subscriptions are automatically
-renewed at the end of the term using the original form of payment.
+Learn how to view and pay invoices, view your billing history, and verify
+your billing renewal date. All monthly and annual subscriptions are
+automatically renewed at the end of the subscription term using your default
+payment method.
 @y
-Learn how you can view your billing history, manage your invoices, and verify
-your renewal date. All monthly and annual subscriptions are automatically
-renewed at the end of the term using the original form of payment.
+Learn how to view and pay invoices, view your billing history, and verify
+your billing renewal date. All monthly and annual subscriptions are
+automatically renewed at the end of the subscription term using your default
+payment method.
 @z
 
 @x
@@ -32,9 +36,9 @@ renewed at the end of the term using the original form of payment.
 @z
 
 @x
-## Invoices
+## View an invoice
 @y
-## Invoices
+## View an invoice
 @z
 
 @x
@@ -46,59 +50,137 @@ Your invoice includes the following:
 @x
 - Invoice number
 - Date of issue
-- Date due
+- Due date
 - Your "Bill to" information
 - Amount due (in USD)
+- Pay online: Select this link to pay your invoice online
 - Description of your order, quantity if applicable, unit price, and
 amount (in USD)
+- Subtotal, discount (if applicable), and total
 @y
 - Invoice number
 - Date of issue
-- Date due
+- Due date
 - Your "Bill to" information
 - Amount due (in USD)
+- Pay online: Select this link to pay your invoice online
 - Description of your order, quantity if applicable, unit price, and
 amount (in USD)
+- Subtotal, discount (if applicable), and total
 @z
 
 @x
-The information listed in the **Bill to** section of your invoice is based on
+The information listed in the "Bill to" section of your invoice is based on
 your billing information. Not all fields are required. The billing information
 includes the following:
 @y
-The information listed in the **Bill to** section of your invoice is based on
+The information listed in the "Bill to" section of your invoice is based on
 your billing information. Not all fields are required. The billing information
 includes the following:
 @z
 
 @x
 - Name (required): The name of the administrator or company
+- Address (required)
 - Email address (required): The email address that receives all billing-related
 emails for the account
-- Address (required)
 - Phone number
 - Tax ID or VAT
 @y
 - Name (required): The name of the administrator or company
+- Address (required)
 - Email address (required): The email address that receives all billing-related
 emails for the account
-- Address (required)
 - Phone number
 - Tax ID or VAT
 @z
 
 @x
-You can’t change an invoice once it's been issued. When you update your billing
-information, this change won't update an existing invoice. If you need to
-update your billing information, make sure you do so before your subscription
-renewal date when your invoice is finalized. For more information, see
-[Update the billing information](details.md).
+You can’t make changes to a paid or unpaid billing invoice. When you update
+your billing information, this change won't update an existing invoice.
 @y
-You can’t change an invoice once it's been issued. When you update your billing
-information, this change won't update an existing invoice. If you need to
-update your billing information, make sure you do so before your subscription
-renewal date when your invoice is finalized. For more information, see
-[Update the billing information](details.md).
+You can’t make changes to a paid or unpaid billing invoice. When you update
+your billing information, this change won't update an existing invoice.
+@z
+
+@x
+If you need
+to update your billing information, make sure you do so before your
+subscription renewal date when your invoice is finalized.
+@y
+If you need
+to update your billing information, make sure you do so before your
+subscription renewal date when your invoice is finalized.
+@z
+
+@x
+For more information, see [Update billing information](details.md).
+@y
+For more information, see [Update billing information](details.md).
+@z
+
+@x
+## Pay an invoice
+@y
+## Pay an invoice
+@z
+
+@x
+> [!NOTE]
+>
+> Pay by invoice is only available for subscribers on an annual billing cycle.
+To change your billing cycle, see [Change your billing cycle](/manuals/billing/cycle.md).
+@y
+> [!NOTE]
+>
+> Pay by invoice is only available for subscribers on an annual billing cycle.
+To change your billing cycle, see [Change your billing cycle](manuals/billing/cycle.md).
+@z
+
+@x
+If you've selected pay by invoice for your subscription, you'll receive email
+reminders to pay your invoice at 10 days before the due date, on the due date,
+and 15 days after the due date.
+@y
+If you've selected pay by invoice for your subscription, you'll receive email
+reminders to pay your invoice at 10 days before the due date, on the due date,
+and 15 days after the due date.
+@z
+
+@x
+You can pay an invoice from the Docker Billing Console:
+@y
+You can pay an invoice from the Docker Billing Console:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and choose your organization.
+1. Select **Billing**.
+1. Select **Invoices** and locate the invoice you want to pay.
+1. In the **Actions** column, select **Pay invoice**.
+1. Fill out your payment details and select **Pay**.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and choose your organization.
+1. Select **Billing**.
+1. Select **Invoices** and locate the invoice you want to pay.
+1. In the **Actions** column, select **Pay invoice**.
+1. Fill out your payment details and select **Pay**.
+@z
+
+@x
+When your payment has processed, the invoice's **Status** column will update to
+**Paid** and you will receive a confirmation email.
+@y
+When your payment has processed, the invoice's **Status** column will update to
+**Paid** and you will receive a confirmation email.
+@z
+
+@x
+If you choose to pay using a US bank account, you must verify the account. For
+more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+@y
+If you choose to pay using a US bank account, you must verify the account. For
+more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @z
 
 @x
@@ -117,12 +199,12 @@ renewal date when your invoice is finalized. For more information, see
 
 @x
 You receive your invoice when the subscription renews. To verify your renewal
-date, sign in to [Docker Billing](https://app.docker.com/billing). Your renewal
-date and amount are displayed on your subscription card.
+date, sign in to the [Docker Home Billing](https://app.docker.com/billing).
+Your renewal date and amount are displayed on your subscription plan card.
 @y
 You receive your invoice when the subscription renews. To verify your renewal
-date, sign in to [Docker Billing](https://app.docker.com/billing). Your renewal
-date and amount are displayed on your subscription card.
+date, sign in to the [Docker Home Billing](https://app.docker.com/billing).
+Your renewal date and amount are displayed on your subscription plan card.
 @z
 
 @x
@@ -164,23 +246,23 @@ you can find your renewal date and the renewal amount.
 @z
 
 @x
-### Include your VAT number on your invoice
+## Include your VAT number on your invoice
 @y
-### Include your VAT number on your invoice
+## Include your VAT number on your invoice
 @z
 
 @x
 > [!NOTE]
 >
 > If the VAT number field is not available, complete the
-[Contact Support form](https://hub.docker.com/support/contact/). This field may
-need to be manually added.
+[Contact Support form](https://hub.docker.com/support/contact/). This field
+may need to be manually added.
 @y
 > [!NOTE]
 >
 > If the VAT number field is not available, complete the
-[Contact Support form](https://hub.docker.com/support/contact/). This field may
-need to be manually added.
+[Contact Support form](https://hub.docker.com/support/contact/). This field
+may need to be manually added.
 @z
 
 @x
@@ -306,10 +388,10 @@ Your VAT number will be included on your next invoice.
 @z
 
 @x
-You can view the billing history and download past invoices for a personal
+You can view your billing history and download past invoices for a personal
 account or organization.
 @y
-You can view the billing history and download past invoices for a personal
+You can view your billing history and download past invoices for a personal
 account or organization.
 @z
 
@@ -396,13 +478,9 @@ you can download an invoice.
 @z
 
 @x
-> [!NOTE]
->
-> You must be an owner of the organization to view the billing history.
+You must be an owner of the organization to view the billing history.
 @y
-> [!NOTE]
->
-> You must be an owner of the organization to view the billing history.
+You must be an owner of the organization to view the billing history.
 @z
 
 @x

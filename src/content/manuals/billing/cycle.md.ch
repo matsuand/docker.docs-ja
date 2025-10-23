@@ -17,34 +17,20 @@ keywords: billing, cycle, payments, subscription
 
 @x
 You can choose between a monthly or annual billing cycle when purchasing a
-Docker subscription. If you have a monthly billing cycle, you can choose to
-switch to an annual
-billing cycle.
+subscription. If you have a monthly billing cycle, you can choose to
+switch to an annual billing cycle.
 @y
 You can choose between a monthly or annual billing cycle when purchasing a
-Docker subscription. If you have a monthly billing cycle, you can choose to
-switch to an annual
-billing cycle.
+subscription. If you have a monthly billing cycle, you can choose to
+switch to an annual billing cycle.
 @z
 
 @x
-> [!NOTE]
->
-> Docker Business subscriptions are only available on an annual billing cycle.
+If you're on a monthly plan, you can switch to a yearly plan at any time.
+However, switching from a yearly to a monthly cycle isn't supported.
 @y
-> [!NOTE]
->
-> Docker Business subscriptions are only available on an annual billing cycle.
-@z
-
-@x
-> [!NOTE]
->
-> Switching from an annual billing cycle to a monthly cycle isn't supported.
-@y
-> [!NOTE]
->
-> Switching from an annual billing cycle to a monthly cycle isn't supported.
+If you're on a monthly plan, you can switch to a yearly plan at any time.
+However, switching from a yearly to a monthly cycle isn't supported.
 @z
 
 @x
@@ -98,11 +84,19 @@ final charge is $95 ($100-$5).
 @z
 
 @x
-Follow these steps to switch from a monthly to annual billing
-cycle for your Docker subscription:
+> [!IMPORTANT]
+>
+> Pay by invoice is not available for subscription upgrades or changes.
 @y
-Follow these steps to switch from a monthly to annual billing
-cycle for your Docker subscription:
+> [!IMPORTANT]
+>
+> Pay by invoice is not available for subscription upgrades or changes.
+@z
+
+@x
+To change your billing cycle:
+@y
+To change your billing cycle:
 @z
 
 @x
@@ -138,11 +132,9 @@ your organization.
 @z
 
 @x
-After completing the change, the billing plans and usage page displays
-your updated annual subscription details.
+The billing plans and usage page will now reflect your new annual plan details.
 @y
-After completing the change, the billing plans and usage page displays
-your updated annual subscription details.
+The billing plans and usage page will now reflect your new annual plan details.
 @z
 
 @x
@@ -190,13 +182,9 @@ page and select **Accept Terms and Purchase** to confirm.
 @z
 
 @x
-> [!NOTE]
->
-> You must be an organization owner to make changes to the payment information.
+You must be an organization owner to make changes to the payment information.
 @y
-> [!NOTE]
->
-> You must be an organization owner to make changes to the payment information.
+You must be an organization owner to make changes to the payment information.
 @z
 
 @x
@@ -205,6 +193,16 @@ page and select **Accept Terms and Purchase** to confirm.
 @y
 {{< tabs >}}
 {{< tab name="Docker subscription" >}}
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Pay by invoice is not available for subscription upgrades or changes.
+@y
+> [!IMPORTANT]
+>
+> Pay by invoice is not available for subscription upgrades or changes.
 @z
 
 @x
