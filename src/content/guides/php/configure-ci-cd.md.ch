@@ -16,7 +16,7 @@ keywords: php, CI/CD
 description: Learn how to Configure CI/CD for your PHP application
 @y
 keywords: php, CI/CD
-description: Learn how to Configure CI/CD for your PHP application
+description: PHP アプリケーションに対しての CI/CD 設定方法について学びます。
 @z
 
 @x
@@ -28,7 +28,8 @@ description: Learn how to Configure CI/CD for your PHP application
 @x
 Complete all the previous sections of this guide, starting with [Containerize a PHP application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
 @y
-Complete all the previous sections of this guide, starting with [Containerize a PHP application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
+[PHP アプリケーションのコンテナー化](containerize.md) から始まる、ここまでのガイドすべてを終えていること。
+本節を進めるには [GitHub](https://github.com/signup) アカウントと [Docker](https://hub.docker.com/signup) アカウントを持っていることが必要です。
 @z
 
 @x
@@ -40,7 +41,8 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 @x
 In this section, you'll learn how to set up and use GitHub Actions to build and test your Docker image as well as push it to Docker Hub. You will complete the following steps:
 @y
-In this section, you'll learn how to set up and use GitHub Actions to build and test your Docker image as well as push it to Docker Hub. You will complete the following steps:
+本節では GitHub アクションを利用した CI/CD パイプラインの設定と利用方法について学び、Docker イメージのビルドとテストを行った上で Docker Hub へのプッシュを行います。
+これより以下の手順を進めます。
 @z
 
 @x
@@ -62,7 +64,7 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 @x
 Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
 @y
-Create a GitHub repository, configure the Docker Hub credentials, and push your source code.
+GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソースコードのプッシュを行います。
 @z
 
 @x
@@ -75,28 +77,29 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 2. Open the repository **Settings**, and go to **Secrets and variables** >
    **Actions**.
 @y
-2. Open the repository **Settings**, and go to **Secrets and variables** >
-   **Actions**.
+2. リポジトリの **Settings** (設定) を開き、**Secrets and variables** > **Actions** に進みます。
 @z
 
 @x
 3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
 @y
-3. Create a new **Repository variable** named `DOCKER_USERNAME` and your Docker ID as a value.
+3. 新たな **Repository variable** (リポジトリ変数) として、名称を `DOCKER_USERNAME`、その値に自身の Docker ID を設定して生成します。
 @z
 
 @x
 4. Create a new [Personal Access Token (PAT)](/manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
 @y
-4. Create a new [Personal Access Token (PAT)](manuals/security/access-tokens.md#create-an-access-token) for Docker Hub. You can name this token `docker-tutorial`. Make sure access permissions include Read and Write.
+4. Docker Hub に対しての [パーソナルアクセストークン (Personal Access Token; PAT)](manuals/security/access-tokens.md#create-an-access-token) を新たに生成します。
+`docker-tutorial` と名づけることにします。
+アクセスパーミッションは Read and Write (読み書き) とします。
 @z
 
 @x
 5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
    `DOCKERHUB_TOKEN`.
 @y
-5. Add the PAT as a **Repository secret** in your GitHub repository, with the name
-   `DOCKERHUB_TOKEN`.
+5. GitHub リポジトリの **Repository secrets** (リポジトリシークレット) として PAT を追加します。
+   その名前は `DOCKERHUB_TOKEN` とします。
 @z
 
 @x
@@ -105,10 +108,8 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
    `your-username` to your GitHub username and `your-repository` to the name of
    the repository you created.
 @y
-6. In your local repository on your machine, run the following command to change
-   the origin to the repository you just created. Make sure you change
-   `your-username` to your GitHub username and `your-repository` to the name of
-   the repository you created.
+6. 手元のマシン内にあるローカルリポジトリにおいて、以下のコマンドを実行して origin を生成済みのリポジトリに変更します。
+   ここで `your-username` には GitHub のユーザー名、`your-repository` の部分は生成したリポジトリ名とします。
 @z
 
 % snip command...
@@ -117,8 +118,7 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 7. In your local repository on your machine, run the following command to rename
    the branch to main.
 @y
-7. In your local repository on your machine, run the following command to rename
-   the branch to main.
+7. 手元のローカルリポジトリにおいて、以下のコマンドを実行してブランチ名を main にします。
 @z
 
 % snip command...
@@ -127,8 +127,7 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 8. Run the following commands to stage, commit, and then push your local
    repository to GitHub.
 @y
-8. Run the following commands to stage, commit, and then push your local
-   repository to GitHub.
+8. 以下のコマンドを実行して、ローカルリポジトリから GitHub に向けてのステージング、コミット、プッシュを行います。
 @z
 
 % snip command...
@@ -136,41 +135,41 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 @x
 ## Step two: Set up the workflow
 @y
-## Step two: Set up the workflow
+## 手順 2: ワークフローの設定 {#step-two-set-up-the-workflow}
 @z
 
 @x
 Set up your GitHub Actions workflow for building, testing, and pushing the image
 to Docker Hub.
 @y
-Set up your GitHub Actions workflow for building, testing, and pushing the image
-to Docker Hub.
+Docker Hub に対してのイメージビルド、テスト、プッシュを行う GitHub Actions ワークフローを設定します。
 @z
 
 @x
 1. Go to your repository on GitHub and then select the **Actions** tab.
 @y
-1. Go to your repository on GitHub and then select the **Actions** tab.
+1. GitHub 上の対象リポジトリにアクセスします。
+   そして **Actions** (アクション) タブを選びます。
 @z
 
 @x
 2. Select **set up a workflow yourself**.
 @y
-2. Select **set up a workflow yourself**.
+2. **set up a workflow yourself** (自分でワークフローを設定) を選びます。
 @z
 
 @x
    This takes you to a page for creating a new GitHub actions workflow file in
    your repository, under `.github/workflows/main.yml` by default.
 @y
-   This takes you to a page for creating a new GitHub actions workflow file in
-   your repository, under `.github/workflows/main.yml` by default.
+   これを行うと、リポジトリ内に新たな GitHub Actions ワークフローファイルを生成するためのページに進みます。
+   そのファイルは、デフォルトでは `.github/workflows/main.yml` です。
 @z
 
 @x
 3. In the editor window, copy and paste the following YAML configuration.
 @y
-3. In the editor window, copy and paste the following YAML configuration.
+3. 編集画面において、以下の YAML 設定をコピーペーストします。
 @z
 
 % snip code...
@@ -179,72 +178,70 @@ to Docker Hub.
    For more information about the YAML syntax for `docker/build-push-action`,
    refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
 @y
-   For more information about the YAML syntax for `docker/build-push-action`,
-   refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
+   `docker/build-push-action` で利用している YAML 文法についての詳細は [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md) を参照してください。
 @z
 
 @x
 ## Step three: Run the workflow
 @y
-## Step three: Run the workflow
+## 手順	3: ワークフローの実行 {#step-three-run-the-workflow}
 @z
 
 @x
 Save the workflow file and run the job.
 @y
-Save the workflow file and run the job.
+ワークフローファイルを保存してジョブ実行します。
 @z
 
 @x
 1. Select **Commit changes...** and push the changes to the `main` branch.
 @y
-1. Select **Commit changes...** and push the changes to the `main` branch.
+1. **Commit changes...** (変更のコミット) を選び、`main` ブランチに変更をプッシュします。
 @z
 
 @x
    After pushing the commit, the workflow starts automatically.
 @y
-   After pushing the commit, the workflow starts automatically.
+   コミットのプッシュを行うと、ワークフローは自動的に起動します。
 @z
 
 @x
 2. Go to the **Actions** tab. It displays the workflow.
 @y
-2. Go to the **Actions** tab. It displays the workflow.
+2. **Actions** (アクション) タブに移動します。
+   そこにワークフローが表示されます。
 @z
 
 @x
    Selecting the workflow shows you the breakdown of all the steps.
 @y
-   Selecting the workflow shows you the breakdown of all the steps.
+   ワークフローを選ぶと、全ステップが展開されて表示されます。
 @z
 
 @x
 3. When the workflow is complete, go to your
    [repositories on Docker Hub](https://hub.docker.com/repositories).
 @y
-3. When the workflow is complete, go to your
-   [repositories on Docker Hub](https://hub.docker.com/repositories).
+3. ワークフローが完了したら [Docker Hub 上のリポジトリ](https://hub.docker.com/repositories) に移動します。
 @z
 
 @x
    If you see the new repository in that list, it means the GitHub Actions
    successfully pushed the image to Docker Hub.
 @y
-   If you see the new repository in that list, it means the GitHub Actions
-   successfully pushed the image to Docker Hub.
+   一覧内に新たなリポジトリが表示されていれば、GitHub Actions によって Docker Hub へのイメージのプッシュが成功したということになります。
 @z
 
 @x
 ## Summary
 @y
-## Summary
+## まとめ {#summary}
 @z
 
 @x
 In this section, you learned how to set up a GitHub Actions workflow for your application.
 @y
-In this section, you learned how to set up a GitHub Actions workflow for your application.
+本節では .NET アプリケーション向けの GitHub Actions ワークフローの設定方法について学びました。
 @z
 
 @x
@@ -258,9 +255,9 @@ Related information:
 - [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-- [Introduction to GitHub Actions](guides/gha.md)
+- [GitHub Actions 導入](guides/gha.md)
 - [Docker Build GitHub Actions](manuals/build/ci/github-actions/_index.md)
-- [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+- [GitHub Actions ワークフローの文法](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 
 @x
@@ -272,5 +269,5 @@ Related information:
 @x
 Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
 @y
-Next, learn how you can locally test and debug your workloads on Kubernetes before deploying.
+次の節では、デプロイ前に Kubernetes 上のワークロードをローカルにおいてテスト、デバッグする方法について学びます。
 @z

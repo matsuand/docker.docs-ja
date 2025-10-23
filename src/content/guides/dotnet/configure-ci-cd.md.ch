@@ -30,7 +30,6 @@ Complete all the previous sections of this guide, starting with [Containerize a 
 @y
 [.NET アプリケーションのコンテナー化](containerize.md) から始まる、ここまでのガイドすべてを終えていること。
 本節を進めるには [GitHub](https://github.com/signup) アカウントと [Docker](https://hub.docker.com/signup) アカウントを持っていることが必要です。
-
 @z
 
 @x
@@ -52,14 +51,14 @@ In this section, you'll learn how to set up and use GitHub Actions to build and 
 3. Run the workflow.
 @y
 1. GitHub 上に新たなリポジトリを生成します。
-2. GitHub アクションワークフローを定義します。
+2. GitHub Actions ワークフローを定義します。
 3. ワークフローを実行します。
 @z
 
 @x
 ## Step one: Create the repository
 @y
-## 手順1: リポジトリの生成 {#step-one-create-the-repository}
+## 手順 1: リポジトリの生成 {#step-one-create-the-repository}
 @z
 
 @x
@@ -143,7 +142,7 @@ GitHub リポジトリの生成、Docker Hub 機密情報の設定、ソース�
 Set up your GitHub Actions workflow for building, testing, and pushing the image
 to Docker Hub.
 @y
-Docker Hub に対してのイメージビルド、テスト、プッシュを行う GitHub アクションワークフローを設定します。
+Docker Hub に対してのイメージビルド、テスト、プッシュを行う GitHub Actions ワークフローを設定します。
 @z
 
 @x
@@ -163,7 +162,7 @@ Docker Hub に対してのイメージビルド、テスト、プッシュを行
    This takes you to a page for creating a new GitHub actions workflow file in
    your repository, under `.github/workflows/main.yml` by default.
 @y
-   これを行うと、リポジトリないに新たな GitHub アクションワークフローファイルを生成するためのページに進みます。
+   これを行うと、リポジトリ内に新たな GitHub Actions ワークフローファイルを生成するためのページに進みます。
    そのファイルは、デフォルトでは `.github/workflows/main.yml` です。
 @z
 
@@ -230,7 +229,7 @@ Save the workflow file and run the job.
    If you see the new repository in that list, it means the GitHub Actions
    successfully pushed the image to Docker Hub.
 @y
-   一覧内に新たなリポジトリが表示されていれば、GitHub アクションによって Docker Hub へのイメージのプッシュが成功したということになります。
+   一覧内に新たなリポジトリが表示されていれば、GitHub Actions によって Docker Hub へのイメージのプッシュが成功したということになります。
 @z
 
 @x
@@ -242,7 +241,7 @@ Save the workflow file and run the job.
 @x
 In this section, you learned how to set up a GitHub Actions workflow for your application.
 @y
-本節では .NET アプリケーション向けの GitHub アクションワークフローの設定方法について学びました。
+本節では .NET アプリケーション向けの GitHub Actions ワークフローの設定方法について学びました。
 @z
 
 @x
@@ -256,9 +255,9 @@ Related information:
 - [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md)
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @y
-- [GitHub アクション導入](guides/gha.md)
+- [GitHub Actions 導入](guides/gha.md)
 - [Docker Build GitHub Actions](manuals/build/ci/github-actions/_index.md)
-- [GitHub アクションワークフローの文法](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+- [GitHub Actions ワークフローの文法](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
 @z
 
 @x

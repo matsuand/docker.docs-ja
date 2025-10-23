@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -130,7 +130,7 @@ Kubernetes オブジェクトについての詳細は [Kubernetes ドキュメ�
    つまり Kubernetes オブジェクトは正常に生成されたはずです。
 @z
 
-% snip command...
+% snip output...
 
 @x
 2. Make sure everything worked by listing your deployments.
