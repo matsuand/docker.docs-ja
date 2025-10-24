@@ -11,38 +11,139 @@ linkTitle: Release notes
 @y
 description: Find the Docker Desktop release notes for Mac, Linux, and Windows.
 keywords: Docker desktop, release notes, linux, mac, windows
-title: Docker Desktop release notes
-linkTitle: Release notes
+title: Docker Desktop リリースノート
+linkTitle: リリースノート
 @z
 
 @x
 {{< rss-button feed="/desktop/release-notes/index.xml" text="Subscribe to Docker Desktop RSS feed" >}}
 @y
-{{< rss-button feed="/desktop/release-notes/index.xml" text="Subscribe to Docker Desktop RSS feed" >}}
+{{< rss-button feed="__SUBDIR__/desktop/release-notes/index.xml" text="Docker Desktop RSS フィードを購読" >}}
 @z
 
 @x
 This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases.
 @y
-This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases.
+このページでは Docker Desktop リリースにおける新機能、更新状況、既知の不具合、バグフィックスといった情報を示します。
 @z
 
 @x
 Releases are gradually rolled out to ensure quality control. If the latest version is not yet available to you, allow some time — updates typically become available within a week of the release date.
 @y
-Releases are gradually rolled out to ensure quality control. If the latest version is not yet available to you, allow some time — updates typically become available within a week of the release date.
+各リリースは品質を保持しながら順次公開されます。
+最新版が入手できない場合はしばらくお待ちください。
+リリース日から一週間以内には更新され入手できるようになります。
 @z
 
 @x
 Docker Desktop versions older than 6 months from the latest release are not available for download. Previous release notes are available in our [documentation repository](https://github.com/docker/docs/tree/main/content/manuals/desktop/previous-versions).
 @y
-Docker Desktop versions older than 6 months from the latest release are not available for download. Previous release notes are available in our [documentation repository](https://github.com/docker/docs/tree/main/content/manuals/desktop/previous-versions).
+Docker Desktop バージョンのうち、最新リリースから 6 カ月以上すぎたものはダウンロードすることができません。
+古いリリースノートは [ドキュメントリポジトリ](https://github.com/docker/docs/tree/main/content/manuals/desktop/previous-versions) から入手できます。
 @z
 
 @x
 For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/releases.md).
 @y
-For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot-and-support/faqs/releases.md).
+よくたずねられる質問は [FAQs](manuals/desktop/troubleshoot-and-support/faqs/releases.md) にあります。
+@z
+
+@x
+## 4.49.0
+@y
+## 4.49.0
+@z
+
+@x
+{{< release-date date="2025-10-23" >}}
+@y
+{{< release-date date="2025-10-23" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.49.0" build_path="/208700/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.49.0" build_path="/208700/" >}}
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Support for Windows 10 and 11 22H2 (19045) has ended. Installing Docker Desktop will require Windows 11 23H2 in the next release.
+@y
+> [!IMPORTANT]
+>
+> Windows 10 および 11 22H2 (19045) 向けサポートは終了しました。
+> 次回リリースから Docker Desktop のインストールには Windows 11 23H2 が必要となります。
+@z
+
+@x
+### New 
+@y
+### 新機能 {#new}
+@z
+
+@x
+- [cagent](/manuals/ai/cagent/_index.md) is now available through Docker Desktop. 
+- [Docker Debug](/reference/cli/docker/debug.md) is now free for all users. 
+@y
+- [cagent](manuals/ai/cagent/_index.md) が Docker Desktop を通じて利用可能になりました。
+- [Docker Debug](reference/cli/docker/debug.md) が全ユーザー向けに無償利用可能となりました。
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Docker Engine v28.5.1](/manuals/engine/release-notes/28.md#2851)
+- [Docker Compose v2.40.2](https://github.com/docker/compose/releases/tag/v2.40.2)
+- [NVIDIA Container Toolkit v1.17.9](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.9)
+- Docker Debug `v0.0.45` 
+@y
+- [Docker Engine v28.5.1](manuals/engine/release-notes/28.md#2851)
+- [Docker Compose v2.40.2](https://github.com/docker/compose/releases/tag/v2.40.2)
+- [NVIDIA Container Toolkit v1.17.9](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.17.9)
+- Docker Debug `v0.0.45` 
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one.
+- Fixed a 'chown' error shown on startup with Docker Debug.
+@y
+- プロキシーパスワードが期限切れになっていても、新たなパスワードの入力を待つ間は、期限切れパスワードが用いられてしまう問題を修正しました。
+- Docker Debug を利用した起動時に発生する 'chown' エラーを修正しました。
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed Kubernetes startup hanging when another Kubernetes context was active. Fixes https://github.com/docker/for-mac/issues/7771.
+- If a Rosetta install is cancelled or fails, Rosetta will be disabled in Docker Desktop.
+- Minimum OS version to install or update Docker Desktop on macOS is now macOS Sonoma (version 14) or later.
+@y
+- Kubernetes コンテキストがアクティブな状態で、別の Kubernetes 起動がハングアップする問題を修正しました。
+  https://github.com/docker/for-mac/issues/7771 を Fix に。
+- Rosetta インストールをキャンセルまたは失敗した場合、Docker Desktop 内にて Rosetta が無効になります。
+- macOS における Docker Desktop のインストールまたは更新の対象となる最小 OS バージョンは、今後は macOS Sonoma (バージョン 14) またはそれ以降になります。
 @z
 
 @x
@@ -60,7 +161,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.48.0" build_path="/207573/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.48.0" build_path="/207573/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.48.0" build_path="/207573/" >}}
 @z
 
 @x
@@ -76,7 +177,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -90,7 +191,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -110,13 +211,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms 
 @y
-#### For all platforms 
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -138,7 +239,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -164,13 +265,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.47.0" build_path="/206054/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.47.0" build_path="/206054/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.47.0" build_path="/206054/" >}}
 @z
 
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -182,7 +283,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -198,7 +299,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -220,13 +321,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -242,7 +343,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -260,7 +361,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -288,13 +389,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.46.0" build_path="/204649/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.46.0" build_path="/204649/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.46.0" build_path="/204649/" >}}
 @z
 
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -310,7 +411,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -324,13 +425,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -344,7 +445,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -358,7 +459,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -370,7 +471,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -394,13 +495,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.45.0" build_path="/203075/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.45.0" build_path="/203075/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.45.0" build_path="/203075/" >}}
 @z
 
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -412,7 +513,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -430,13 +531,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -450,7 +551,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -466,7 +567,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -496,13 +597,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.3" build_path="/202357/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.3" build_path="/202357/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.44.3" build_path="/202357/" >}}
 @z
 
 @x
 ### Security 
 @y
-### Security 
+### セキュリティ {#security}
 @z
 
 @x
@@ -514,7 +615,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -538,13 +639,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.2" build_path="/202017/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.2" build_path="/202017/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.44.2" build_path="/202017/" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -568,19 +669,19 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.1" build_path="/201842/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.1" build_path="/201842/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.44.1" build_path="/201842/" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -592,7 +693,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -620,13 +721,13 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.0" build_path="/201307/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.44.0" build_path="/201307/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.44.0" build_path="/201307/" >}}
 @z
 
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -654,7 +755,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -676,7 +777,7 @@ For more frequently asked questions, see the [FAQs](manuals/desktop/troubleshoot
 @x
 ### Security 
 @y
-### Security 
+### セキュリティ {#security}
 @z
 
 @x
@@ -688,13 +789,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -724,7 +825,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -748,7 +849,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -782,13 +883,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.2" build_path="/199162/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.2" build_path="/199162/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.43.2" build_path="/199162/" >}}
 @z
 
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -816,19 +917,19 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.1" build_path="/198352/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.1" build_path="/198352/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.43.1" build_path="/198352/" >}}
 @z
 
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -854,13 +955,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.0" build_path="/198134/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.43.0" build_path="/198134/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.43.0" build_path="/198134/" >}}
 @z
 
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -872,7 +973,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -890,7 +991,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -902,13 +1003,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -934,7 +1035,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -946,7 +1047,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -960,13 +1061,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -986,7 +1087,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1010,13 +1111,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.1" build_path="/196648/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.1" build_path="/196648/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.42.1" build_path="/196648/" >}}
 @z
 
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1028,13 +1129,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1050,7 +1151,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1062,7 +1163,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1086,13 +1187,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 {{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.0" build_path="/195023/" >}}
 @y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.0" build_path="/195023/" >}}
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.42.0" build_path="/195023/" >}}
 @z
 
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -1112,7 +1213,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1134,13 +1235,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1178,7 +1279,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1198,7 +1299,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1224,13 +1325,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1242,7 +1343,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1274,13 +1375,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1310,13 +1411,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1328,7 +1429,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1358,7 +1459,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -1378,7 +1479,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1398,7 +1499,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -1414,13 +1515,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1450,7 +1551,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1466,7 +1567,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1480,13 +1581,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1498,7 +1599,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1528,7 +1629,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -1540,7 +1641,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1562,13 +1663,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1590,7 +1691,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1608,7 +1709,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1622,13 +1723,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1660,7 +1761,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -1674,7 +1775,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1694,7 +1795,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -1706,13 +1807,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1734,7 +1835,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1758,7 +1859,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1778,7 +1879,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -1802,7 +1903,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -1826,7 +1927,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -1854,13 +1955,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1890,7 +1991,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1910,7 +2011,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -1926,7 +2027,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -1944,7 +2045,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -1968,13 +2069,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -1986,13 +2087,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2016,13 +2117,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2036,13 +2137,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2066,7 +2167,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -2080,7 +2181,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -2100,13 +2201,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2136,7 +2237,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2148,7 +2249,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2162,13 +2263,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2180,7 +2281,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2198,7 +2299,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2224,13 +2325,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2242,13 +2343,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2272,7 +2373,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -2300,7 +2401,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -2324,13 +2425,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2372,7 +2473,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2392,7 +2493,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2418,13 +2519,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2436,13 +2537,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2466,7 +2567,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2490,7 +2591,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -2508,7 +2609,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -2532,13 +2633,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2586,7 +2687,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2604,7 +2705,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2624,7 +2725,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -2636,13 +2737,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2654,7 +2755,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2678,13 +2779,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2696,13 +2797,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2732,7 +2833,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -2744,7 +2845,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -2772,13 +2873,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2790,7 +2891,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -2822,13 +2923,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2852,7 +2953,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -2876,7 +2977,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -2898,13 +2999,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -2928,7 +3029,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -2946,7 +3047,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -2964,7 +3065,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -3002,13 +3103,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3020,13 +3121,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3050,13 +3151,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3086,7 +3187,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -3104,7 +3205,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -3128,13 +3229,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3178,7 +3279,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3196,7 +3297,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -3210,13 +3311,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3228,7 +3329,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3240,13 +3341,13 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3278,13 +3379,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3296,13 +3397,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3326,7 +3427,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -3344,7 +3445,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -3364,13 +3465,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3412,7 +3513,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3426,7 +3527,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3456,13 +3557,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3474,7 +3575,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3492,13 +3593,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3516,7 +3617,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -3532,7 +3633,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -3560,13 +3661,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3602,7 +3703,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3614,7 +3715,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3628,7 +3729,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -3640,13 +3741,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3678,7 +3779,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3690,7 +3791,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3702,13 +3803,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3720,7 +3821,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -3744,13 +3845,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3764,7 +3865,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3776,7 +3877,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -3806,13 +3907,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3850,7 +3951,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -3872,7 +3973,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3890,13 +3991,13 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -3912,7 +4013,7 @@ For more information, see [microsoft/WSL#11794](https://github.com/microsoft/WSL
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -3926,7 +4027,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -3950,7 +4051,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -3982,7 +4083,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4006,13 +4107,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4062,7 +4163,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4076,7 +4177,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4090,7 +4191,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -4102,7 +4203,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### Security
 @y
-#### Security
+#### セキュリティ {#security}
 @z
 
 @x
@@ -4116,13 +4217,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4146,7 +4247,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -4162,7 +4263,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4200,13 +4301,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4250,7 +4351,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4264,7 +4365,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4282,13 +4383,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4312,7 +4413,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4328,13 +4429,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4370,7 +4471,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4398,7 +4499,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4414,13 +4515,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4444,7 +4545,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -4466,7 +4567,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4494,13 +4595,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4568,7 +4669,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4586,7 +4687,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4604,13 +4705,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4622,13 +4723,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4640,7 +4741,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4664,13 +4765,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4682,7 +4783,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4706,7 +4807,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -4724,7 +4825,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -4760,13 +4861,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4818,7 +4919,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -4844,7 +4945,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4858,13 +4959,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4888,13 +4989,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4906,7 +5007,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4930,13 +5031,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -4952,7 +5053,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -4980,7 +5081,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -4998,7 +5099,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5020,13 +5121,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5072,7 +5173,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5090,7 +5191,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5102,7 +5203,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -5114,13 +5215,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5134,7 +5235,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5146,7 +5247,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5170,13 +5271,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5202,13 +5303,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5232,7 +5333,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -5250,7 +5351,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5272,13 +5373,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5328,7 +5429,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5350,7 +5451,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5366,13 +5467,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5396,7 +5497,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5418,7 +5519,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -5446,13 +5547,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5494,7 +5595,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5510,7 +5611,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -5522,7 +5623,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5536,13 +5637,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5556,7 +5657,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -5580,13 +5681,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5598,7 +5699,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5622,7 +5723,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5652,7 +5753,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -5666,13 +5767,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5712,7 +5813,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5726,7 +5827,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5754,7 +5855,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5766,7 +5867,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5790,7 +5891,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -5806,7 +5907,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5832,13 +5933,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5864,7 +5965,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -5876,7 +5977,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5916,13 +6017,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -5936,7 +6037,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -5960,7 +6061,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -5980,13 +6081,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6008,7 +6109,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6024,7 +6125,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -6040,7 +6141,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -6064,7 +6165,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -6098,7 +6199,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -6120,13 +6221,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6154,7 +6255,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -6172,7 +6273,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6190,7 +6291,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -6202,13 +6303,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6246,7 +6347,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -6262,7 +6363,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -6284,13 +6385,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6364,13 +6465,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6382,7 +6483,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6394,7 +6495,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -6418,13 +6519,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -6442,7 +6543,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -6466,7 +6567,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -6486,7 +6587,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -6502,13 +6603,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6554,7 +6655,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6628,13 +6729,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6660,13 +6761,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -6692,13 +6793,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6712,7 +6813,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6724,7 +6825,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -6748,13 +6849,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6778,7 +6879,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -6800,7 +6901,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -6822,13 +6923,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -6860,7 +6961,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -6908,7 +7009,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -6932,7 +7033,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -6966,7 +7067,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -6984,13 +7085,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7012,7 +7113,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7024,7 +7125,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7038,7 +7139,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -7064,13 +7165,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7082,7 +7183,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7108,7 +7209,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -7146,13 +7247,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7198,7 +7299,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7214,7 +7315,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7232,7 +7333,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -7268,13 +7369,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7290,7 +7391,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7304,7 +7405,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7328,7 +7429,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -7374,13 +7475,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7444,7 +7545,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7460,7 +7561,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -7484,7 +7585,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -7542,13 +7643,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7562,7 +7663,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7582,7 +7683,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7630,7 +7731,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7652,7 +7753,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7676,13 +7777,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7694,7 +7795,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7718,7 +7819,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -7760,13 +7861,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -7808,7 +7909,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7820,7 +7921,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7836,7 +7937,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -7860,13 +7961,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -7878,7 +7979,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -7902,7 +8003,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -7958,13 +8059,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8002,7 +8103,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8022,7 +8123,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8038,7 +8139,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -8052,7 +8153,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
@@ -8082,13 +8183,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8112,7 +8213,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -8158,13 +8259,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8184,7 +8285,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8196,7 +8297,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8210,13 +8311,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -8268,13 +8369,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -8298,7 +8399,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -8316,7 +8417,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -8328,13 +8429,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -8358,7 +8459,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -8398,7 +8499,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8444,7 +8545,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8460,7 +8561,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8472,13 +8573,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8490,7 +8591,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Linux
 @y
-#### For Linux
+#### Linux 向け {#for-linux}
 @z
 
 @x
@@ -8514,13 +8615,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8532,7 +8633,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8558,7 +8659,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -8594,7 +8695,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -8608,13 +8709,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8632,7 +8733,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8648,7 +8749,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8686,7 +8787,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
@@ -8714,13 +8815,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8732,7 +8833,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8750,7 +8851,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8774,13 +8875,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8794,7 +8895,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8806,7 +8907,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8818,13 +8919,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -8838,7 +8939,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8858,7 +8959,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8878,13 +8979,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8908,13 +9009,13 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -8948,7 +9049,7 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -8974,13 +9075,13 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -8992,7 +9093,7 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9004,13 +9105,13 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9024,7 +9125,7 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -9044,7 +9145,7 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9056,13 +9157,13 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9086,13 +9187,13 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9104,13 +9205,13 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9138,13 +9239,13 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9156,13 +9257,13 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9190,7 +9291,7 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -9206,7 +9307,7 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9224,7 +9325,7 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -9244,13 +9345,13 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Bug fixes and enhancements
 @y
-### Bug fixes and enhancements
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9264,7 +9365,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -9280,7 +9381,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9292,13 +9393,13 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Known issues
 @y
-### Known issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9310,7 +9411,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9338,7 +9439,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -9358,7 +9459,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9370,7 +9471,7 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -9408,7 +9509,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9420,7 +9521,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Security
 @y
-### Security
+### セキュリティ {#security}
 @z
 
 @x
@@ -9460,7 +9561,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9484,13 +9585,13 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9510,7 +9611,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -9522,7 +9623,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9534,7 +9635,7 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 ### Known issue
 @y
-### Known issue
+### 既知の問題 {#known-issue}
 @z
 
 @x
@@ -9582,7 +9683,7 @@ actual memory usage. See
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -9618,7 +9719,7 @@ actual memory usage. See
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9640,13 +9741,13 @@ actual memory usage. See
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9660,7 +9761,7 @@ actual memory usage. See
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -9678,7 +9779,7 @@ actual memory usage. See
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9708,13 +9809,13 @@ actual memory usage. See
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -9736,7 +9837,7 @@ actual memory usage. See
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9762,7 +9863,7 @@ actual memory usage. See
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -9778,7 +9879,7 @@ actual memory usage. See
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9802,13 +9903,13 @@ actual memory usage. See
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9834,13 +9935,13 @@ actual memory usage. See
 @x
 ### Known Issues
 @y
-### Known Issues
+### 既知の問題 {#known-issues}
 @z
 
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9864,7 +9965,7 @@ Docker Desktop may fail to start when upgrading to 4.1.0 on some WSL-based distr
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9882,13 +9983,13 @@ Docker Desktop may fail to start when upgrading to 4.1.0 on some WSL-based distr
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For all platforms
 @y
-#### For all platforms
+#### 全プラットフォーム向け {#for-all-platforms}
 @z
 
 @x
@@ -9900,7 +10001,7 @@ Docker Desktop may fail to start when upgrading to 4.1.0 on some WSL-based distr
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x
@@ -9924,7 +10025,7 @@ Docker Desktop may fail to start when upgrading to 4.1.0 on some WSL-based distr
 @x
 ### New
 @y
-### New
+### 新機能 {#new}
 @z
 
 @x
@@ -9966,7 +10067,7 @@ For more information, see [Docker subscription overview](../subscription/_index.
 @x
 ### Upgrades
 @y
-### Upgrades
+### 機能更新 {#upgrades}
 @z
 
 @x
@@ -9986,13 +10087,13 @@ For more information, see [Docker subscription overview](../subscription/_index.
 @x
 ### Bug fixes and minor changes
 @y
-### Bug fixes and minor changes
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
 @z
 
 @x
 #### For Mac
 @y
-#### For Mac
+#### Mac 向け {#for-mac}
 @z
 
 @x
@@ -10004,7 +10105,7 @@ For more information, see [Docker subscription overview](../subscription/_index.
 @x
 #### For Windows
 @y
-#### For Windows
+#### Windows 向け {#for-windows}
 @z
 
 @x

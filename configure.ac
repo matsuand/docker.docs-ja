@@ -110,6 +110,7 @@ AC_CONFIG_FILES([
 	src/content/guides/genai-pdf-bot/Makefile
 	src/content/guides/genai-video-bot/Makefile
 	src/content/guides/genai-video-bot/images/Makefile
+	src/content/guides/github-sonarqube-sandbox/Makefile
 	src/content/guides/golang/Makefile
 	src/content/guides/go-prometheus-monitoring/Makefile
 	src/content/guides/images/Makefile

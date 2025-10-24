@@ -84,6 +84,18 @@ compatibility.
 @z
 
 @x
+> [!NOTE]
+> E2B sandboxes now include direct access to the Docker MCP Catalog, giving developers
+> access to over 200 tools and services to seamlessly build and run AI agents. For
+> more information, see [E2B Sandboxes](sandboxes.md).
+@y
+> [!NOTE]
+> E2B sandboxes now include direct access to the Docker MCP Catalog, giving developers
+> access to over 200 tools and services to seamlessly build and run AI agents. For
+> more information, see [E2B Sandboxes](sandboxes.md).
+@z
+
+@x
 ## How it works
 @y
 ## How it works

@@ -6,7 +6,6 @@ copyfiles = \
 	delete-containers.webp            \
 	delete-httpd-container.webp       \
 	delete-multi-container-apps.webp  \
-	delete-the-container.webp         \
 	deleted-files.webp                \
 	exec-into-postgres-container.webp \
 	list-containers.webp              \

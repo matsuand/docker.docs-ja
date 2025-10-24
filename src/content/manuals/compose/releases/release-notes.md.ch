@@ -26,6 +26,38 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.40.2
+@y
+## 2.40.2
+@z
+
+@x
+{{< release-date date="2025-10-22" >}}
+@y
+{{< release-date date="2025-10-22" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Added a check to fail builds if the minimal required Buildx version isn’t installed
+- Removed unused code to rely solely on api.Service
+- Improved image detection by checking digests/canonical references, not just tags
+- Introduced `WithPrompt` which adds a pluggable UI for user interactions
+- Reverted fix for secret/config setup of `uid:gid` to match container's `USER` definition
+@y
+- Added a check to fail builds if the minimal required Buildx version isn’t installed
+- Removed unused code to rely solely on api.Service
+- Improved image detection by checking digests/canonical references, not just tags
+- Introduced `WithPrompt` which adds a pluggable UI for user interactions
+- Reverted fix for secret/config setup of `uid:gid` to match container's `USER` definition
+@z
+
+@x
 ## 2.40.1
 @y
 ## 2.40.1
@@ -47,12 +79,12 @@ For more detailed information, see the [release notes in the Compose repo](https
 - Fixed a few issues when building with bake
 - Added support of extends with profiles when using the `publish` command
 - Added support of `CTRL+Z` to run Compose in background
-- Fixed secret/config setup of uid:gid to match container's USER definition
+- Fixed secret/config setup of `uid:gid` to match container's `USER` definition
 @y
 - Fixed a few issues when building with bake
 - Added support of extends with profiles when using the `publish` command
 - Added support of `CTRL+Z` to run Compose in background
-- Fixed secret/config setup of uid:gid to match container's USER definition
+- Fixed secret/config setup of `uid:gid` to match container's `USER` definition
 @z
 
 @x

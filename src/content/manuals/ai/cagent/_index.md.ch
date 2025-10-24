@@ -1,8 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
-% snip å¯¾å¿œ
+% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+% snip ‘Î‰ž
 
 @x
 title: cagent
@@ -85,39 +85,17 @@ they don't share knowledge.
 @z
 
 @x
-1. Download the [latest release](https://github.com/docker/cagent/releases)
-   for your operating system.
+1. The easiest way to get cagent is to [install Docker Desktop version 4.49 or later](/manuals/desktop/release-notes.md) for your operating system.
 @y
-1. Download the [latest release](https://github.com/docker/cagent/releases)
-   for your operating system.
+1. The easiest way to get cagent is to [install Docker Desktop version 4.49 or later](manuals/desktop/release-notes.md) for your operating system.
 @z
 
 @x
    > [!NOTE]
-   > You might need to give the binary executable permissions.
-   > On macOS and Linux, run:
+   > You can also build cagent from the source. For more information, see the [cagent GitHub repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
 @y
    > [!NOTE]
-   > You might need to give the binary executable permissions.
-   > On macOS and Linux, run:
-@z
-
-% snip command...
-
-@x
-   > [!NOTE]
-   > You can also build cagent from the source. See the [repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
-@y
-   > [!NOTE]
-   > You can also build cagent from the source. See the [repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
-@z
-
-@x
-1. Optional: Rename the binary as needed and update your PATH to include
-   cagent's executable.
-@y
-1. Optional: Rename the binary as needed and update your PATH to include
-   cagent's executable.
+   > You can also build cagent from the source. For more information, see the [cagent GitHub repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
 @z
 
 @x
@@ -126,22 +104,13 @@ they don't share knowledge.
 1. Set the following environment variables:
 @z
 
-@x
-   ```bash
+@x within code
    # If using the Docker AI Gateway, set this environment variable or use
    # the `--models-gateway <url_to_docker_ai_gateway>` CLI flag
 @y
-   ```bash
    # If using the Docker AI Gateway, set this environment variable or use
    # the `--models-gateway <url_to_docker_ai_gateway>` CLI flag
 @z
-
-@x
-   export CAGENT_MODELS_GATEWAY=<url_to_docker_ai_gateway>
-@y
-   export CAGENT_MODELS_GATEWAY=<url_to_docker_ai_gateway>
-@z
-
 @x
    # Alternatively, set keys for remote inference services.
    # These are not needed if you are using Docker AI Gateway.
@@ -149,17 +118,14 @@ they don't share knowledge.
    # Alternatively, set keys for remote inference services.
    # These are not needed if you are using Docker AI Gateway.
 @z
-
 @x
    export OPENAI_API_KEY=<your_api_key_here>    # For OpenAI models
    export ANTHROPIC_API_KEY=<your_api_key_here> # For Anthropic models
    export GOOGLE_API_KEY=<your_api_key_here>    # For Gemini models
-   ```
 @y
    export OPENAI_API_KEY=<your_api_key_here>    # For OpenAI models
    export ANTHROPIC_API_KEY=<your_api_key_here> # For Anthropic models
    export GOOGLE_API_KEY=<your_api_key_here>    # For Gemini models
-   ```
 @z
 
 @x
@@ -222,7 +188,11 @@ cagent includes a set of built-in tools that enhance your agents' capabilities.
 You don't need to configure any external MCP tools to use them.
 @z
 
-% snip code...
+@x within code
+    # ... other config
+@y
+    # ... other config
+@z
 
 @x
 ### Think tool
@@ -236,7 +206,11 @@ The think tool allows agents to reason through problems step by step:
 The think tool allows agents to reason through problems step by step:
 @z
 
-% snip code...
+@x within code
+    # ... other config
+@y
+    # ... other config
+@z
 
 @x
 ### Todo tool
@@ -250,7 +224,11 @@ The todo tool helps agents manage task lists:
 The todo tool helps agents manage task lists:
 @z
 
-% snip code...
+@x within code
+    # ... other config
+@y
+    # ... other config
+@z
 
 @x
 ### Memory tool
@@ -264,7 +242,11 @@ The memory tool provides persistent storage:
 The memory tool provides persistent storage:
 @z
 
-% snip code...
+@x within code
+    # ... other config
+@y
+    # ... other config
+@z
 
 @x
 ### Task transfer tool

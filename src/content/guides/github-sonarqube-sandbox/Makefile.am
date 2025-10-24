@@ -1,18 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-SUBDIRS = images
-
 bases = \
-	_index.md      \
-	catalog.md     \
-	faqs.md        \
-	get-started.md \
-	hub-mcp.md     \
-	mcp-gateway.md \
-	sandboxes.md   \
-	toolkit.md
+	_index.md       \
+	customize.md    \
+	troubleshoot.md \
+	workflow.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

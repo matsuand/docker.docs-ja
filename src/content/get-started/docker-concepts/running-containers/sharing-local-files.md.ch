@@ -342,15 +342,9 @@ The container continues to run until you stop it.
 @z
 
 @x
-3. Select the **Delete** action in the Actions column.
+3. Select the **Stop** action in the Actions column.
 @y
-3. Select the **Delete** action in the Actions column.
-@z
-
-@x
-![A screenshot of Docker Desktop Dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
-@y
-![A screenshot of Docker Desktop Dashboard showing how to delete the container](images/delete-the-container.webp?border=true)
+3. Select the **Stop** action in the Actions column.
 @z
 
 @x

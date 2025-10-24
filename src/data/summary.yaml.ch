@@ -609,10 +609,10 @@ docker compose alpha:
 
 @x
 Docker Debug:
-  requires: Docker Desktop 4.48 and later. For Docker Desktop versions 4.47.0 and earlier, you must have a Pro, Team, or Business subscription
+  requires: Docker Desktop 4.49 and later. For Docker Desktop versions 4.48.0 and earlier, you must have a Pro, Team, or Business subscription
 @y
 Docker Debug:
-  requires: Docker Desktop 4.48 およびそれ以降。For Docker Desktop versions 4.47.0 and earlier, you must have a Pro, Team, or Business subscription
+  requires: Docker Desktop 4.49 およびそれ以降。For Docker Desktop versions 4.48.0 and earlier, you must have a Pro, Team, or Business subscription
 @z
 
 @x
