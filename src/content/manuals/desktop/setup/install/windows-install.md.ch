@@ -84,7 +84,8 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 
 @x
 - WSL version 2.1.5 or later.
-- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 or higher.
+- Windows 10 64-bit: Enterprise, Pro, or Education version 22H2 (build 19045).
+- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 (build 22631) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 - The following hardware prerequisites are required to successfully run
@@ -95,7 +96,8 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#docker-desktop-fails-due-to-virtualization-not-working).
 @y
 - WSL バージョン 2.1.5 またはそれ以降。
-- Windows 11 64 ビット: Enterprise, Pro, Education バージョン 23H2 またはそれ以降。
+- Windows 10 64 ビット: Enterprise, Pro, Education バージョン 22H2 (ビルド 19045)。
+- Windows 11 64 ビット: Enterprise, Pro, Education バージョン 23H2 (ビルド22631) またはそれ以降。
 - Windows 上での WSL 2 機能を有効化すること。
   詳しい手順については [Microsoft のドキュメント](https://docs.microsoft.com/en-us/windows/wsl/install-win10) を参照してください。
 - Windows 10 または Windows 11 上の WSL 2 を正常動作させるためには、以下のハードウェア要件が必要。
@@ -144,12 +146,14 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 @z
 
 @x
-- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 or higher.
+- Windows 10 64-bit: Enterprise, Pro, or Education version 22H2 (build 19045).
+- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 (build 22631) or higher.
 - Turn on Hyper-V and Containers Windows features.
 - The following hardware prerequisites are required to successfully run Client
   Hyper-V on Windows 10:
 @y
-- Windows 11 64 ビット: Enterprise, Pro, Education バージョンの 23H2 またはそれ以降。
+- Windows 10 64 ビット: Enterprise, Pro, Education バージョンの 22H2 (ビルド 19045)。
+- Windows 11 64 ビット: Enterprise, Pro, Education バージョンの 23H2 (ビルド 22631) またはそれ以降。
 - Windows 上での Hyper-V およびコンテナーウィンドウ機能を有効化すること。
 - Windows 10 上のクライアント Hyper-V を正常動作させるためには、以下のハードウェア要件が必要。
 @z
@@ -201,7 +205,8 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
 
 @x
 - WSL version 2.1.5 or later.
-- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 or higher.
+- Windows 10 64-bit: Enterprise, Pro, or Education version 22H2 (build 19045).
+- Windows 11 64-bit: Enterprise, Pro, or Education version 23H2 (build 22631) or higher.
 - Turn on the WSL 2 feature on Windows. For detailed instructions, refer to the
   [Microsoft documentation](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 - The following hardware prerequisites are required to successfully run
@@ -212,7 +217,8 @@ Docker Desktop を用いる際の WSL 2 の設定に関する詳細は [WSL](man
     [Virtualization](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md#virtualization).
 @y
 - WSL バージョン 2.1.5 またはそれ以降。
-- Windows 11 64 ビット: Enterprise, Pro, Education バージョン 23H2 またはそれ以降。
+- Windows 10 64 ビット: Enterprise, Pro, Education バージョン 22H2 (ビルド 19045)。
+- Windows 11 64 ビット: Enterprise, Pro, Education バージョン 23H2 (ビルド 22631) またはそれ以降。
 - Windows 上での WSL 2 機能を有効化すること。
   詳しい手順については [Microsoft のドキュメント](https://docs.microsoft.com/en-us/windows/wsl/install-win10) を参照してください。
 - Windows 10 または Windows 11 上の WSL 2 を正常動作させるためには、以下のハードウェア要件が必要。

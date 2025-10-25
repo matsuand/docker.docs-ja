@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Customize a Docker Hardened Image
@@ -85,10 +86,10 @@ To customize a Docker Hardened Image, follow these steps:
 
 @x
 7. Select the image version you want to customize.
-8. Add packages.
+8. Optional. Add packages.
 @y
 7. Select the image version you want to customize.
-8. Add packages.
+8. Optional. Add packages.
 @z
 
 @x
@@ -178,9 +179,39 @@ To customize a Docker Hardened Image, follow these steps:
 @z
 
 @x
-9. Select **Next: Configure** and then configure the following options.
+   3. In the **Scripts** section, you can add, edit, or remove scripts.
 @y
-9. Select **Next: Configure** and then configure the following options.
+   3. In the **Scripts** section, you can add, edit, or remove scripts.
+@z
+
+@x
+      Scripts let you add files to the container image that you can access at runtime. They are not executed during 
+      the build process. This is useful for services that require pre-start initialization, such as setup scripts or 
+      file writes to directories like `/var/lock` or `/out`.
+@y
+      Scripts let you add files to the container image that you can access at runtime. They are not executed during 
+      the build process. This is useful for services that require pre-start initialization, such as setup scripts or 
+      file writes to directories like `/var/lock` or `/out`.
+@z
+
+@x
+      You must specify the following:
+        - The path where the script will be placed
+        - The script content
+        - The UID and GID ownership of the script
+        - The octal file permissions of the script
+@y
+      You must specify the following:
+        - The path where the script will be placed
+        - The script content
+        - The UID and GID ownership of the script
+        - The octal file permissions of the script
+@z
+
+@x
+10. Select **Next: Configure** and then configure the following options.
+@y
+10. Select **Next: Configure** and then configure the following options.
 @z
 
 @x
@@ -198,7 +229,7 @@ To customize a Docker Hardened Image, follow these steps:
       values that the image will contain.
    8. Add [annotations](/build/metadata/annotations/) to the image.
    9. Add [labels](/reference/dockerfile/#label) to the image.
-10. Select **Create Customization**.
+11. Select **Create Customization**.
 @y
    1. Specify a suffix that is appended to the customized image's tag. For
       example, if you specify `custom` when customizing the `dhi-python:3.13`
@@ -214,7 +245,7 @@ To customize a Docker Hardened Image, follow these steps:
       values that the image will contain.
    8. Add [annotations](__SUBDIR__/build/metadata/annotations/) to the image.
    9. Add [labels](__SUBDIR__/reference/dockerfile/#label) to the image.
-10. Select **Create Customization**.
+11. Select **Create Customization**.
 @z
 
 @x
@@ -313,49 +344,7 @@ certificate with the system and outputs an updated CA bundle, which can be
 extracted into a minimal final image:
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-@z
-
-@x
-FROM <your-namespace>/dhi-bash:5-dev AS certs
-@y
-FROM <your-namespace>/dhi-bash:5-dev AS certs
-@z
-
-@x
-ENV DEBIAN_FRONTEND=noninteractive
-@y
-ENV DEBIAN_FRONTEND=noninteractive
-@z
-
-@x
-RUN mkdir -p /usr/local/share/ca-certificates/my-rootca
-COPY certs/rootCA.crt /usr/local/share/ca-certificates/my-rootca
-@y
-RUN mkdir -p /usr/local/share/ca-certificates/my-rootca
-COPY certs/rootCA.crt /usr/local/share/ca-certificates/my-rootca
-@z
-
-@x
-RUN update-ca-certificates
-@y
-RUN update-ca-certificates
-@z
-
-@x
-FROM scratch
-COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-```
-@y
-FROM scratch
-COPY --from=certs /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
-```
-@z
+% snip code...
 
 @x
 You can follow this pattern to create other OCI artifacts, such as images
