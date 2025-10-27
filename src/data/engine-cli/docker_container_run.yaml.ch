@@ -36,7 +36,7 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x add-host
       description: Add a custom host-to-IP mapping (host:ip)
 @y
-      description: Add a custom host-to-IP mapping (host:ip)
+      description: ホスト－IP マッピングのカスタム設定を追加します。(ホスト名:ip)
 @z
 
 @x annotation
@@ -50,7 +50,7 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x attach
       description: Attach to STDIN, STDOUT or STDERR
 @y
-      description: Attach to STDIN, STDOUT or STDERR
+      description: STDIN、STDOUT、STDERR にアタッチします。
 @z
 
 @x blkio-weight
@@ -58,31 +58,31 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
 @y
       description: |
-        Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)
+        ブロック I/O（相対的な重みづけ）、10 から 1000、0 は無効化。（デフォルトは 0）
 @z
 
 @x blkio-weight-device
       description: Block IO weight (relative device weight)
 @y
-      description: Block IO weight (relative device weight)
+      description: ブロック I/O 重みづけ。（相対的なデバイス重みづけ）
 @z
 
 @x cap-add
       description: Add Linux capabilities
 @y
-      description: Add Linux capabilities
+      description: Linux ケーパビリティーを追加します。
 @z
 
 @x cap-drop
       description: Drop Linux capabilities
 @y
-      description: Drop Linux capabilities
+      description: Linux ケーパビリティーを削除します。
 @z
 
 @x cgroup-parent
       description: Optional parent cgroup for the container
 @y
-      description: Optional parent cgroup for the container
+      description: 任意に指定するコンテナーの親 cgroup。
 @z
 
 @x cgroupns
@@ -104,31 +104,31 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x cidfile
       description: Write the container ID to the file
 @y
-      description: Write the container ID to the file
+      description: コンテナー ID をファイルに書き出します。
 @z
 
 @x cpu-count
       description: CPU count (Windows only)
 @y
-      description: CPU count (Windows only)
+      description: CPU カウント。(Windows のみ)
 @z
 
 @x cpu-percent
       description: CPU percent (Windows only)
 @y
-      description: CPU percent (Windows only)
+      description: CPU パーセント。(Windows のみ)
 @z
 
 @x cpu-period
       description: Limit CPU CFS (Completely Fair Scheduler) period
 @y
-      description: Limit CPU CFS (Completely Fair Scheduler) period
+      description: CPU の CFS（Completely Fair Scheduler）間隔を制限します。
 @z
 
 @x cpu-quota
       description: Limit CPU CFS (Completely Fair Scheduler) quota
 @y
-      description: Limit CPU CFS (Completely Fair Scheduler) quota
+      description: CPU の CFS（Completely Fair Scheduler）クォータを制限します。
 @z
 
 @x cpu-rt-period
@@ -330,13 +330,13 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x help
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 @x hostname
       description: Container host name
 @y
-      description: Container host name
+      description: コンテナーのホスト名。
 @z
 
 @x init
@@ -649,6 +649,12 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
       description: Ulimit options
 @y
       description: Ulimit options
+@z
+
+@x use-api-socket
+      description: Bind mount Docker API socket and required auth
+@y
+      description: Docker API ソケットと必要な auth をバインドマウントします。
 @z
 
 @x user

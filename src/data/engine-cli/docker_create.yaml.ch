@@ -616,6 +616,12 @@ usage: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
       description: ulimit オプション。
 @z
 
+@x use-api-socket
+      description: Bind mount Docker API socket and required auth
+@y
+      description: Docker API ソケットと必要な auth をバインドマウントします。
+@z
+
 @x user
       description: 'Username or UID (format: <name|uid>[:<group|gid>])'
 @y

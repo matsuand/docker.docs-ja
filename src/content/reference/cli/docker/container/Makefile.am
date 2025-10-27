@@ -2,6 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+bases = \
+	exec.md
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk
+
 copyfiles = \
 	_index.md  \
 	attach.md  \
@@ -9,7 +15,6 @@ copyfiles = \
 	cp.md      \
 	create.md  \
 	diff.md    \
-	exec.md    \
 	export.md  \
 	inspect.md \
 	kill.md    \
@@ -30,5 +35,4 @@ copyfiles = \
 	update.md  \
 	wait.md
 
-include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

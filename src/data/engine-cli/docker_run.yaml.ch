@@ -638,7 +638,7 @@ usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x use-api-socket
       description: Bind mount Docker API socket and required auth
 @y
-      description: Bind mount Docker API socket and required auth
+      description: Docker API ソケットと必要な auth をバインドマウントします。
 @z
 
 @x user

@@ -10,9 +10,9 @@ long: |-
 @y
 command: docker container exec
 aliases: docker container exec, docker exec
-short: Execute a command in a running container
+short: 実行中コンテナーにおいてコマンドを実行します。
 long: |-
-    The `docker exec` command runs a new command in a running container.
+    `docker exec` コマンドは、実行中のコンテナー内において新たなコマンドを実行します。
 @z
 
 @x
@@ -20,29 +20,29 @@ long: |-
     primary process (`PID 1`) is running, and it isn't restarted if the container
     is restarted.
 @y
-    The command you specify with `docker exec` only runs while the container's
-    primary process (`PID 1`) is running, and it isn't restarted if the container
-    is restarted.
+    `docker exec` において指定したコマンドは、コンテナー内にプライマリープロセス (`PID 1`) が稼働中である場合にのみ実行されます。
+    そしてコンテナーが再起動した際には再実行されません。
 @z
 
 @x
     The command runs in the default working directory of the container.
 @y
-    The command runs in the default working directory of the container.
+    コマンドは、コンテナーのデフォルトワーキングディレクトリにおいて実行されます。
 @z
 
 @x
     The command must be an executable. A chained or a quoted command doesn't work.
 @y
-    The command must be an executable. A chained or a quoted command doesn't work.
+    コマンドは実行可能でなければなりません。
+    複数コマンドが連結したものやクォートで囲まれたコマンドでは動作しません。
 @z
 
 @x
     - This works: `docker exec -it my_container sh -c "echo a && echo b"`
     - This doesn't work: `docker exec -it my_container "echo a && echo b"`
 @y
-    - This works: `docker exec -it my_container sh -c "echo a && echo b"`
-    - This doesn't work: `docker exec -it my_container "echo a && echo b"`
+    - 以下は動作します: `docker exec -it my_container sh -c "echo a && echo b"`
+    - 以下は動作しません: `docker exec -it my_container "echo a && echo b"`
 @z
 
 @x
@@ -56,55 +56,55 @@ usage: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 @x detach
       description: 'Detached mode: run command in the background'
 @y
-      description: 'Detached mode: run command in the background'
+      description: 'デタッチモード。コマンドをバックグラウンドで実行します。'
 @z
 
 @x detach-keys
       description: Override the key sequence for detaching a container
 @y
-      description: Override the key sequence for detaching a container
+      description: コンテナーデタッチ時のキーシーケンスを上書きします。
 @z
 
 @x env
       description: Set environment variables
 @y
-      description: Set environment variables
+      description: 環境変数を設定します。
 @z
 
 @x env-file
       description: Read in a file of environment variables
 @y
-      description: Read in a file of environment variables
+      description: 環境変数ファイルを読み込みます。
 @z
 
 @x interactive
       description: Keep STDIN open even if not attached
 @y
-      description: Keep STDIN open even if not attached
+      description: アタッチされていなくても STDIN は開放し続けます。
 @z
 
 @x privileged
       description: Give extended privileges to the command
 @y
-      description: Give extended privileges to the command
+      description: コマンドに拡張権限を付与します。
 @z
 
 @x tty
       description: Allocate a pseudo-TTY
 @y
-      description: Allocate a pseudo-TTY
+      description: 擬似 TTY を割り当てます。
 @z
 
 @x user
       description: 'Username or UID (format: `<name|uid>[:<group|gid>]`)'
 @y
-      description: 'Username or UID (format: `<name|uid>[:<group|gid>]`)'
+      description: 'ユーザー名または UID。(記述書式: `<name|uid>[:<group|gid>]`)'
 @z
 
 @x workdir
       description: Working directory inside the container
 @y
-      description: Working directory inside the container
+      description: コンテナー内部のワーキングディレクトリ。
 @z
 
 % inherited_options:
@@ -112,7 +112,7 @@ usage: docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]
 @x help
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 @x
@@ -120,24 +120,16 @@ examples: |-
     ### Run `docker exec` on a running container
 @y
 examples: |-
-    ### Run `docker exec` on a running container
+    ### 実行中コンテナーでの `docker exec` 実行 {#run-docker-exec-on-a-running-container}
 @z
 
 @x
     First, start a container.
 @y
-    First, start a container.
+    まずはコンテナーを起動します。
 @z
 
-@x
-    ```console
-    $ docker run --name mycontainer -d -i -t alpine /bin/sh
-    ```
-@y
-    ```console
-    $ docker run --name mycontainer -d -i -t alpine /bin/sh
-    ```
-@z
+% snip command...
 
 @x
     This creates and starts a container named `mycontainer` from an `alpine` image
@@ -146,17 +138,18 @@ examples: |-
     attached (`-t`). The `-i` option is set to keep `STDIN` attached (`-i`), which
     prevents the `sh` process from exiting immediately.
 @y
-    This creates and starts a container named `mycontainer` from an `alpine` image
-    with an `sh` shell as its main process. The `-d` option (shorthand for `--detach`)
-    sets the container to run in the background, in detached mode, with a pseudo-TTY
-    attached (`-t`). The `-i` option is set to keep `STDIN` attached (`-i`), which
-    prevents the `sh` process from exiting immediately.
+    上のコマンドは `alpine` イメージから `mycontainer` という名前のコンテナーを生成し起動します。
+    メインのプロセスとしてシェル `sh` を用います。
+    `-d` オプション (`--detach` の短縮形) はコンテナーをデタッチモード、つまりバックグラウンドで実行します。
+    また 疑似 TTY をアタッチします (`-t`)。
+    `-i` オプションは `STDIN` のアタッチを継続するものです。
+    これによって `sh` プロセスが即座に終了しないようにします。
 @z
 
 @x
     Next, execute a command on the container.
 @y
-    Next, execute a command on the container.
+    次にコンテナー内にてコマンドを実行します。
 @z
 
 % snip command...
@@ -165,14 +158,13 @@ examples: |-
     This creates a new file `/tmp/execWorks` inside the running container
     `mycontainer`, in the background.
 @y
-    This creates a new file `/tmp/execWorks` inside the running container
-    `mycontainer`, in the background.
+    上のコマンドにより、バックグラウンドで実行中のコンテナー `mycontainer` 内に `/tmp/execWorks` というファイルを新規生成します。
 @z
 
 @x
     Next, execute an interactive `sh` shell on the container.
 @y
-    Next, execute an interactive `sh` shell on the container.
+    次に対話シェル `sh` をコンテナー上にて実行します。
 @z
 
 % snip command...
@@ -180,19 +172,19 @@ examples: |-
 @x
     This starts a new shell session in the container `mycontainer`.
 @y
-    This starts a new shell session in the container `mycontainer`.
+    コンテナー `mycontainer` 内に新たなシェルセッションが起動します。
 @z
 
 @x
     ### Set environment variables for the exec process (--env, -e) {#env}
 @y
-    ### Set environment variables for the exec process (--env, -e) {#env}
+    ### exec プロセスでの環境変数設定 (--env, -e) {#env}
 @z
 
 @x
     Next, set environment variables in the current bash session.
 @y
-    Next, set environment variables in the current bash session.
+    次は現在の bash セッション内において環境変数を設定します。
 @z
 
 @x
@@ -201,10 +193,9 @@ examples: |-
     override global environment variables, or to set additional environment
     variables for the process started by `docker exec`.
 @y
-    The `docker exec` command inherits the environment variables that are set at the
-    time the container is created. Use the `--env` (or the `-e` shorthand) to
-    override global environment variables, or to set additional environment
-    variables for the process started by `docker exec`.
+    `docker exec` コマンドは、コンテナーが生成された段階で設定される環境変数を受け継ぎます。
+    `--env` (短縮形 `-e`) を使うとグローバルな環境変数を上書きします。
+    あるいは `docker exec` によって起動したプロセスに対しては追加的に環境変数を設定できます。
 @z
 
 @x
@@ -214,11 +205,9 @@ examples: |-
     `docker exec` command, and aren't available to other processes running inside
     the container.
 @y
-    The following example creates a new shell session in the container `mycontainer`,
-    with environment variables `$VAR_A` set to `1`, and `$VAR_B` set to `2`.
-    These environment variables are only valid for the `sh` process started by that
-    `docker exec` command, and aren't available to other processes running inside
-    the container.
+    以下の例ではコンテナー `mycontainer` 内に新たなシェルセッションを生成し、環境変数 `$VAR_A` に `1`、`$VAR_B` `2` を設定します。
+    この環境変数の値は `docker exec` コマンドを起動した `sh` プロセスにおいてのみ有効です。
+    つまりコンテナー内で稼働する別プロセスではアクセスすることはできません。
 @z
 
 % snip command...
@@ -226,27 +215,26 @@ examples: |-
 @x
     ### Escalate container privileges (--privileged) {#privileged}
 @y
-    ### Escalate container privileges (--privileged) {#privileged}
+    ### コンテナー権限の昇格 (--privileged) {#privileged}
 @z
 
 @x
     See [`docker run --privileged`](/reference/cli/docker/container/run/#privileged).
 @y
-    See [`docker run --privileged`](__SUBDIR__/reference/cli/docker/container/run/#privileged).
+    [`docker run --privileged`](__SUBDIR__/reference/cli/docker/container/run/#privileged) を参照してください。
 @z
 
 @x
     ### Set the working directory for the exec process (--workdir, -w) {#workdir}
 @y
-    ### Set the working directory for the exec process (--workdir, -w) {#workdir}
+    ### exec プロセスに対するワーキングディレクトリ設定 (--workdir, -w) {#workdir}
 @z
 
 @x
     By default `docker exec` command runs in the same working directory set when
     the container was created.
 @y
-    By default `docker exec` command runs in the same working directory set when
-    the container was created.
+    `docker exec` コマンドは、デフォルトでコンテナーが生成されたときと同じワークディレクトリにおいて実行されます。
 @z
 
 % snip command...
@@ -255,8 +243,7 @@ examples: |-
     You can specify an alternative working directory for the command to execute
     using the `--workdir` option (or the `-w` shorthand):
 @y
-    You can specify an alternative working directory for the command to execute
-    using the `--workdir` option (or the `-w` shorthand):
+    ワーキングディレクトリを別の場所に指定したい場合は、このコマンドの実行時に `--workdir` オプション (短縮形 `-w`) を用います。
 @z
 
 % snip command...
@@ -264,13 +251,13 @@ examples: |-
 @x
     ### Try to run `docker exec` on a paused container
 @y
-    ### Try to run `docker exec` on a paused container
+    ### 停止コンテナーに対する `docker exec` 実行 {#try-to-run-docker-exec-on-a-paused-container}
 @z
 
 @x
     If the container is paused, then the `docker exec` command fails with an error:
 @y
-    If the container is paused, then the `docker exec` command fails with an error:
+    コンテナーが一時停止している場合、`docker exec` はエラー終了します。
 @z
 
 % snip command...

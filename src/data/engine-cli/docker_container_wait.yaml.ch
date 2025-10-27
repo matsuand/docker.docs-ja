@@ -7,120 +7,58 @@ aliases: docker container wait, docker wait
 short: Block until one or more containers stop, then print their exit codes
 long: Block until one or more containers stop, then print their exit codes
 usage: docker container wait CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    Start a container in the background.
 @y
 command: docker container wait
 aliases: docker container wait, docker wait
-short: Block until one or more containers stop, then print their exit codes
-long: Block until one or more containers stop, then print their exit codes
+short: 1 つまたは複数コンテナーが停止するまで待ち、各終了コードを表示します。
+long: 1 つまたは複数コンテナーが停止するまで待ち、各終了コードを表示します。
 usage: docker container wait CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
 examples: |-
     Start a container in the background.
+@y
+examples: |-
+    コンテナーをバックグラウンドで実行します。
 @z
 
-@x
-    ```console
-    $ docker run -dit --name=my_container ubuntu bash
-    ```
-@y
-    ```console
-    $ docker run -dit --name=my_container ubuntu bash
-    ```
-@z
+% snip command...
 
 @x
     Run `docker wait`, which should block until the container exits.
 @y
-    Run `docker wait`, which should block until the container exits.
+    `docker wait` を実行します。
+    コンテナーが終了するまでコマンドはブロックされます。
 @z
 
-@x
-    ```console
-    $ docker wait my_container
-    ```
-@y
-    ```console
-    $ docker wait my_container
-    ```
-@z
+% snip command...
 
 @x
     In another terminal, stop the first container. The `docker wait` command above
     returns the exit code.
 @y
-    In another terminal, stop the first container. The `docker wait` command above
-    returns the exit code.
+    別端末から最初のコンテナーを停止させます。
+    上の `docker wait` コマンドが終了コードを返します。
 @z
 
-@x
-    ```console
-    $ docker stop my_container
-    ```
-@y
-    ```console
-    $ docker stop my_container
-    ```
-@z
+% snip command...
 
 @x
     This is the same `docker wait` command from above, but it now exits, returning
     `0`.
 @y
-    This is the same `docker wait` command from above, but it now exits, returning
-    `0`.
+    以下ははじめの `docker wait` コマンドと同じです。
+    ただしこの場合は終了して `0` を返します。
 @z
 
-@x
-    ```console
-    $ docker wait my_container
-@y
-    ```console
-    $ docker wait my_container
-@z
-
-@x
-    0
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    0
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

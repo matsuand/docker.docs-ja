@@ -7,48 +7,20 @@ aliases: docker container top, docker top
 short: Display the running processes of a container
 long: Display the running processes of a container
 usage: docker container top CONTAINER [ps OPTIONS]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker container top
 aliases: docker container top, docker top
-short: Display the running processes of a container
-long: Display the running processes of a container
+short: コンテナーの実行プロセスを表示します。
+long: コンテナーの実行プロセスを表示します。
 usage: docker container top CONTAINER [ps OPTIONS]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

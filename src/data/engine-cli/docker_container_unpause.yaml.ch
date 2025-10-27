@@ -11,68 +11,39 @@ long: |-
 @y
 command: docker container unpause
 aliases: docker container unpause, docker unpause
-short: Unpause all processes within one or more containers
+short: 1 つまたは複数コンテナー内における停止中プロセスを再開します。
 long: |-
-    The `docker unpause` command un-suspends all processes in the specified containers.
-    On Linux, it does this using the freezer cgroup.
+    `docker unpause` コマンドは指定されたコンテナー内のプロセスすべてについて、停止状態を解除します。
+    Linux においては freezer cgroup を使ってこれが実現されます。
 @z
 
 @x
     See the
     [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
     for further details.
-usage: docker container unpause CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker unpause my_container
-    my_container
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    See the
-    [freezer cgroup documentation](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt)
-    for further details.
-usage: docker container unpause CONTAINER [CONTAINER...]
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker unpause my_container
-    my_container
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+    詳しくは [freezer cgroup のドキュメント](https://www.kernel.org/doc/Documentation/cgroup-v1/freezer-subsystem.txt) を参照してください。
 @z
+
+@x
+usage: docker container unpause CONTAINER [CONTAINER...]
+@y
+usage: docker container unpause CONTAINER [CONTAINER...]
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
+examples: |-
+@y
+examples: |-
+@z
+
+% snip command...
+% snip directives...

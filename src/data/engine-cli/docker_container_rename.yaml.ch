@@ -7,44 +7,26 @@ aliases: docker container rename, docker rename
 short: Rename a container
 long: The `docker rename` command renames a container.
 usage: docker container rename CONTAINER NEW_NAME
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker rename my_container my_new_container
-    ```
 @y
 command: docker container rename
 aliases: docker container rename, docker rename
-short: Rename a container
-long: The `docker rename` command renames a container.
+short: コンテナーの名前を変更します。
+long: "`docker rename` コマンドはコンテナーの名前を変更します。"
 usage: docker container rename CONTAINER NEW_NAME
-pname: docker container
-plink: docker_container.yaml
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker rename my_container my_new_container
-    ```
 @z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+@x
+examples: |-
+@y
+examples: |-
+@z
+
+% snip command...
