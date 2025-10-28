@@ -2,6 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = images
+
 bases = \
 	_index.md             \
 	dsos-program.md       \

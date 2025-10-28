@@ -219,6 +219,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/repos/manage/hub-images/Makefile
 	src/content/manuals/docker-hub/repos/manage/hub-images/images/Makefile
 	src/content/manuals/docker-hub/repos/manage/trusted-content/Makefile
+	src/content/manuals/docker-hub/repos/manage/trusted-content/images/Makefile
 	src/content/manuals/docker-hub/repos/manage/images/Makefile
 	src/content/manuals/docker-hub/usage/Makefile
 	src/content/manuals/enterprise/Makefile

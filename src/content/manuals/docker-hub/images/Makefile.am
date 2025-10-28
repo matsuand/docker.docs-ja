@@ -8,12 +8,10 @@ copyfiles = \
 	default_logo_sm.png              \
 	download-analytics-data.png      \
 	official-image-badge-iso.png     \
-	organization-tabs.png            \
 	sponsored-badge-iso.png          \
 	sponsored-badge.png              \
 	supported_tags.webp              \
 	upload_logo_sm.png               \
-	verified-publisher-badge-iso.png \
 	verified-publisher-badge.png
 
 include $(top_srcdir)/build-aux/common.mk

@@ -78,6 +78,20 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Fixed [CVE-2025-9164](https://www.cve.org/cverecord?id=CVE-2025-9164) where the Docker Desktop for Windows installer was vulnerable to DLL hijacking due to insecure DLL search order. The installer searches for required DLLs in the user's Downloads folder before checking system directories, allowing local privilege escalation through malicious DLL placement.
+@y
+- Docker Desktop for Windows のインストーラーにおいて、DLL 検索順が安全ではないために DLL ハイジャックに対してのぜい弱性があった [CVE-2025-9164](https://www.cve.org/cverecord?id=CVE-2025-9164) を修正しました。
+  インストーラーは必要な DLL の検索にあたって、システムディレクトリを検索する前にユーザーがダウンロードした DLL の中から必要となる DLL を探していました。
+  これを通じて悪意のある DLL 配置が可能となり権限昇格を許していました。
+@z
+
+@x
 ### New 
 @y
 ### 新機能 {#new}

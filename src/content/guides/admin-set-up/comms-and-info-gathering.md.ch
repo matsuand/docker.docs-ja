@@ -12,69 +12,165 @@ description: Gather your company's requirements from key stakeholders and commun
 @z
 
 @x
-## Step one: Communicate with your developers and IT teams
+## Communicate with your developers and IT teams
 @y
-## Step one: Communicate with your developers and IT teams
+## Communicate with your developers and IT teams
 @z
 
 @x
-### Docker user communication
+Before rolling out Docker Desktop across your organization, coordinate with key stakeholders to ensure a smooth transition.
 @y
-### Docker user communication
+Before rolling out Docker Desktop across your organization, coordinate with key stakeholders to ensure a smooth transition.
 @z
 
 @x
-You may already have Docker Desktop users within your company, and some steps in this process may affect how they interact with the platform. It's highly recommended to communicate early with users, informing them that as part of the subscription onboarding, they will be upgraded to a supported version of Docker Desktop. 
+### Notify Docker Desktop users
 @y
-You may already have Docker Desktop users within your company, and some steps in this process may affect how they interact with the platform. It's highly recommended to communicate early with users, informing them that as part of the subscription onboarding, they will be upgraded to a supported version of Docker Desktop. 
+### Notify Docker Desktop users
 @z
 
 @x
-Additionally, communicate that settings will be reviewed to optimize productivity, and users will be required to sign in to the company’s Docker organization using their business email to fully utilize the subscription benefits.
+You may already have Docker Desktop users within your company. Some steps in
+this onboarding process may affect how they interact with the platform.
 @y
-Additionally, communicate that settings will be reviewed to optimize productivity, and users will be required to sign in to the company’s Docker organization using their business email to fully utilize the subscription benefits.
+You may already have Docker Desktop users within your company. Some steps in
+this onboarding process may affect how they interact with the platform.
 @z
 
 @x
-### MDM team communication
+Communicate early with users to inform them that:
 @y
-### MDM team communication
+Communicate early with users to inform them that:
 @z
 
 @x
-Device management solutions, such as Intune and Jamf, are commonly used for software distribution across enterprises, typically managed by a dedicated MDM team. It is recommended that you engage with this team early in the process to understand their requirements and the lead time for deploying changes.
+- They'll be upgraded to a supported version of Docker Desktop as part of the subscription onboarding
+- Settings will be reviewed and optimized for productivity
+- They'll need to sign in to the company's Docker organization using their
+  business email to access subscription benefits
 @y
-Device management solutions, such as Intune and Jamf, are commonly used for software distribution across enterprises, typically managed by a dedicated MDM team. It is recommended that you engage with this team early in the process to understand their requirements and the lead time for deploying changes.
+- They'll be upgraded to a supported version of Docker Desktop as part of the subscription onboarding
+- Settings will be reviewed and optimized for productivity
+- They'll need to sign in to the company's Docker organization using their
+  business email to access subscription benefits
 @z
 
 @x
-Several key setup steps in this guide require the use of JSON files, registry keys, or .plist files that need to be distributed to developer machines. It’s a best practice to use MDM tools for deploying these configuration files and ensuring their integrity is preserved.
+### Engage with your MDM team
 @y
-Several key setup steps in this guide require the use of JSON files, registry keys, or .plist files that need to be distributed to developer machines. It’s a best practice to use MDM tools for deploying these configuration files and ensuring their integrity is preserved.
+### Engage with your MDM team
 @z
 
 @x
-## Step two: Identify Docker organizations
+Device management solutions, such as Intune and Jamf, are commonly used for
+software distribution across enterprises. These tools are typically managed by a dedicated MDM team.
 @y
-## Step two: Identify Docker organizations
+Device management solutions, such as Intune and Jamf, are commonly used for
+software distribution across enterprises. These tools are typically managed by a dedicated MDM team.
 @z
 
 @x
-Some companies may have more than one [Docker organization](/manuals/admin/organization/_index.md) created. These organizations may have been created for specific purposes, or may not be needed anymore. If you suspect your company has more than one Docker organization, it's recommended you survey your teams to see if they have their own organizations. You can also contact your Docker Customer Success representative to get a list of organizations with users whose emails match your domain name.
+Engage with this team early in the process to:
 @y
-Some companies may have more than one [Docker organization](manuals/admin/organization/_index.md) created. These organizations may have been created for specific purposes, or may not be needed anymore. If you suspect your company has more than one Docker organization, it's recommended you survey your teams to see if they have their own organizations. You can also contact your Docker Customer Success representative to get a list of organizations with users whose emails match your domain name.
+Engage with this team early in the process to:
 @z
 
 @x
-## Step three: Gather requirements
+- Understand their requirements and lead time for deploying changes
+- Coordinate the distribution of configuration files
 @y
-## Step three: Gather requirements
+- Understand their requirements and lead time for deploying changes
+- Coordinate the distribution of configuration files
 @z
 
 @x
-Through [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md), Docker provides numerous configuration parameters that can be preset. The Docker organization owner, development lead, and infosec representative should review these settings to establish the company’s baseline configuration, including security features and [enforcing sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for Docker Desktop users. Additionally, they should decide whether to take advantage of other Docker products, such as [Docker Scout](/manuals/scout/_index.md), which is included in the subscription.
+Several setup steps in this guide require JSON files, registry keys, or .plist
+files to be distributed to developer machines. Use MDM tools to deploy these configuration files and ensure their integrity.
 @y
-Through [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md), Docker provides numerous configuration parameters that can be preset. The Docker organization owner, development lead, and infosec representative should review these settings to establish the company’s baseline configuration, including security features and [enforcing sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) for Docker Desktop users. Additionally, they should decide whether to take advantage of other Docker products, such as [Docker Scout](manuals/scout/_index.md), which is included in the subscription.
+Several setup steps in this guide require JSON files, registry keys, or .plist
+files to be distributed to developer machines. Use MDM tools to deploy these configuration files and ensure their integrity.
+@z
+
+@x
+## Identify Docker organizations
+@y
+## Identify Docker organizations
+@z
+
+@x
+Some companies may have more than one
+[Docker organization](/manuals/admin/organization/_index.md) created. These
+organizations may have been created for specific purposes, or may not be
+needed anymore.
+@y
+Some companies may have more than one
+[Docker organization](manuals/admin/organization/_index.md) created. These
+organizations may have been created for specific purposes, or may not be
+needed anymore.
+@z
+
+@x
+If you suspect your company has multiple Docker organizations:
+@y
+If you suspect your company has multiple Docker organizations:
+@z
+
+@x
+- Survey your teams to see if they have their own organizations
+- Contact your Docker Support to get a list of organizations with users whose
+  emails match your domain name
+@y
+- Survey your teams to see if they have their own organizations
+- Contact your Docker Support to get a list of organizations with users whose
+  emails match your domain name
+@z
+
+@x
+## Gather requirements
+@y
+## Gather requirements
+@z
+
+@x
+[Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) lets you preset numerous configuration parameters for Docker Desktop.
+@y
+[Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) lets you preset numerous configuration parameters for Docker Desktop.
+@z
+
+@x
+Work with the following stakeholders to establish your company's baseline
+configuration:
+@y
+Work with the following stakeholders to establish your company's baseline
+configuration:
+@z
+
+@x
+- Docker organization owner
+- Development lead
+- Information security representative
+@y
+- Docker organization owner
+- Development lead
+- Information security representative
+@z
+
+@x
+Review these areas together:
+@y
+Review these areas together:
+@z
+
+@x
+- Security features and
+  [enforcing sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md)
+  for Docker Desktop users
+- Additional Docker products included in your subscriptions
+@y
+- Security features and
+  [enforcing sign-in](manuals/enterprise/security/enforce-sign-in/_index.md)
+  for Docker Desktop users
+- Additional Docker products included in your subscriptions
 @z
 
 @x
@@ -84,13 +180,21 @@ To view the parameters that can be preset, see [Configure Settings Management](m
 @z
 
 @x
-## Optional step four: Meet with the Docker Implementation team
+## Optional: Meet with the Docker Implementation team
 @y
-## Optional step four: Meet with the Docker Implementation team
+## Optional: Meet with the Docker Implementation team
 @z
 
 @x
-The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign-in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
+The Docker Implementation team can help you set up your organization,
+configure SSO, enforce sign-in, and configure Docker Desktop.
 @y
-The Docker Implementation team can help you step through setting up your organization, configuring SSO, enforcing sign-in, and configuring Docker. You can reach out to set up a meeting by emailing successteam@docker.com.
+The Docker Implementation team can help you set up your organization,
+configure SSO, enforce sign-in, and configure Docker Desktop.
+@z
+
+@x
+To schedule a meeting, email successteam@docker.com.
+@y
+To schedule a meeting, email successteam@docker.com.
 @z

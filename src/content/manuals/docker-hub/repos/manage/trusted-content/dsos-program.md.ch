@@ -80,11 +80,9 @@ This lets you override the default organization-level logo on a per-repository b
 @z
 
 @x
-Only a user with administrative access (owner or team member with administrator permission)
-over the repository can change the repository logo.
+Only a user with an owner or editor role for the organization can change the repository logo.
 @y
-Only a user with administrative access (owner or team member with administrator permission)
-over the repository can change the repository logo.
+Only a user with an owner or editor role for the organization can change the repository logo.
 @z
 
 @x

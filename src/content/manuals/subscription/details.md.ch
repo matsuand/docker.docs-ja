@@ -33,6 +33,8 @@ Docker subscriptions provide licensing for commercial use of Docker products and
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs): Container-based
   testing automation that provides faster tests, a unified developer experience,
   and more.
+- [Docker Hardened Images](/manuals/dhi/_index.md): Minimal, secure, and
+  production-ready container base and application images maintained by Docker.
 @y
 - [Docker Desktop](../desktop/_index.md): The industry-leading container-first
   development solution that includes, Docker Engine, Docker CLI, Docker Compose,
@@ -45,6 +47,8 @@ Docker subscriptions provide licensing for commercial use of Docker products and
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs): Container-based
   testing automation that provides faster tests, a unified developer experience,
   and more.
+- [Docker Hardened Images](manuals/dhi/_index.md): Minimal, secure, and
+  production-ready container base and application images maintained by Docker.
 @z
 
 @x

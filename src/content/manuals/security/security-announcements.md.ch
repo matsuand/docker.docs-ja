@@ -9,16 +9,36 @@ keywords: Docker, CVEs, security, notice, Log4J 2, Log4Shell, Text4Shell, announ
 title: Docker security announcements
 linkTitle: Security announcements
 @y
-description: Docker security announcements
+description: Docker セキュリティ報告
 keywords: Docker, CVEs, security, notice, Log4J 2, Log4Shell, Text4Shell, announcements
-title: Docker security announcements
-linkTitle: Security announcements
+title: Docker セキュリティ報告
+linkTitle: セキュリティ報告
 @z
 
 @x
 {{< rss-button feed="/security/security-announcements/index.xml" text="Subscribe to security RSS feed" >}}
 @y
-{{< rss-button feed="/security/security-announcements/index.xml" text="Subscribe to security RSS feed" >}}
+{{< rss-button feed="__SUBDIR__/security/security-announcements/index.xml" text="Subscribe to security RSS feed" >}}
+@z
+
+@x
+## Docker Desktop 4.49.0 security update: CVE-2025-9164
+@y
+## Docker Desktop 4.49.0 セキュリティアップデート: CVE-2025-9164 {#docker-desktop-4490-security-update-cve-2025-9164}
+@z
+
+@x
+A vulnerability in Docker Desktop for Windows was fixed on October 23 in the [4.49.0](/manuals/desktop/release-notes.md#4490) release:
+@y
+Docker Desktop for Windows におけるぜい弱性は 10 月 23 日の [4.49.0](manuals/desktop/release-notes.md#4490) リリースにおいて修正されました。
+@z
+
+@x
+- Fixed [CVE-2025-9164](https://www.cve.org/cverecord?id=CVE-2025-9164) where the Docker Desktop for Windows installer was vulnerable to DLL hijacking due to insecure DLL search order. The installer searches for required DLLs in the user's Downloads folder before checking system directories, allowing local privilege escalation through malicious DLL placement.
+@y
+- Docker Desktop for Windows のインストーラーにおいて、DLL 検索順が安全ではないために DLL ハイジャックに対してのぜい弱性があった [CVE-2025-9164](https://www.cve.org/cverecord?id=CVE-2025-9164) を修正しました。
+  インストーラーは必要な DLL の検索にあたって、システムディレクトリを検索する前にユーザーがダウンロードした DLL の中から必要となる DLL を探していました。
+  これを通じて悪意のある DLL 配置が可能となり権限昇格を許していました。
 @z
 
 @x

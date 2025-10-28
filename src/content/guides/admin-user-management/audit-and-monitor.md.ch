@@ -32,9 +32,9 @@ Activity logs track events at the organization and repository levels, offering a
 @z
 
 @x
-It is available for Docker Team or Docker Business plans, with data retained for three months.
+Activity logs are available for Docker Team or Docker Business plans, with data retained for three months.
 @y
-It is available for Docker Team or Docker Business plans, with data retained for three months.
+Activity logs are available for Docker Team or Docker Business plans, with data retained for three months.
 @z
 
 @x
@@ -44,15 +44,11 @@ It is available for Docker Team or Docker Business plans, with data retained for
 @z
 
 @x
- - Change tracking: View what changed, who made the change, and when.
+- Change tracking: View what changed, who made the change, and when.
+- Comprehensive reporting: Monitor critical events such as repository creation, deletion, privacy changes, and role assignments.
 @y
- - Change tracking: View what changed, who made the change, and when.
-@z
-
-@x
- - Comprehensive reporting: Monitor critical events such as repository creation, deletion, privacy changes, and role assignments.
-@y
- - Comprehensive reporting: Monitor critical events such as repository creation, deletion, privacy changes, and role assignments.
+- Change tracking: View what changed, who made the change, and when.
+- Comprehensive reporting: Monitor critical events such as repository creation, deletion, privacy changes, and role assignments.
 @z
 
 @x
@@ -62,21 +58,13 @@ It is available for Docker Team or Docker Business plans, with data retained for
 @z
 
 @x
- - Audit trail for security: A repository’s privacy settings were updated unexpectedly. The activity logs reveal which user made the change and when, helping administrators address potential security risks.
+- Audit trail for security: A repository’s privacy settings were updated unexpectedly. The activity logs reveal which user made the change and when, helping administrators address potential security risks.
+- Team collaboration review: Logs show which team members pushed updates to a critical repository, ensuring accountability during a development sprint.
+- Billing adjustments: Track who added or removed subscription seats to maintain budgetary control and compliance.
 @y
- - Audit trail for security: A repository’s privacy settings were updated unexpectedly. The activity logs reveal which user made the change and when, helping administrators address potential security risks.
-@z
-
-@x
- - Team collaboration review: Logs show which team members pushed updates to a critical repository, ensuring accountability during a development sprint.
-@y
- - Team collaboration review: Logs show which team members pushed updates to a critical repository, ensuring accountability during a development sprint.
-@z
-
-@x
- - Billing adjustments: Track who added or removed subscription seats to maintain budgetary control and compliance.
-@y
- - Billing adjustments: Track who added or removed subscription seats to maintain budgetary control and compliance.
+- Audit trail for security: A repository’s privacy settings were updated unexpectedly. The activity logs reveal which user made the change and when, helping administrators address potential security risks.
+- Team collaboration review: Logs show which team members pushed updates to a critical repository, ensuring accountability during a development sprint.
+- Billing adjustments: Track who added or removed subscription seats to maintain budgetary control and compliance.
 @z
 
 @x
@@ -104,21 +92,13 @@ Insights provide data-driven views of Docker usage to improve team productivity 
 @z
 
 @x
- - Standardized environments: Ensure consistent configurations and enforce best practices across teams.
+- Standardized environments: Ensure consistent configurations and enforce best practices across teams.
+- Improved visibility: Monitor metrics like Docker Desktop usage, builds, and container activity to understand team workflows and engagement.
+- Optimized resources: Track license usage and feature adoption to maximize the value of your Docker subscription.
 @y
- - Standardized environments: Ensure consistent configurations and enforce best practices across teams.
-@z
-
-@x
- - Improved visibility: Monitor metrics like Docker Desktop usage, builds, and container activity to understand team workflows and engagement.
-@y
- - Improved visibility: Monitor metrics like Docker Desktop usage, builds, and container activity to understand team workflows and engagement.
-@z
-
-@x
- - Optimized resources: Track license usage and feature adoption to maximize the value of your Docker subscription.
-@y
- - Optimized resources: Track license usage and feature adoption to maximize the value of your Docker subscription.
+- Standardized environments: Ensure consistent configurations and enforce best practices across teams.
+- Improved visibility: Monitor metrics like Docker Desktop usage, builds, and container activity to understand team workflows and engagement.
+- Optimized resources: Track license usage and feature adoption to maximize the value of your Docker subscription.
 @z
 
 @x
@@ -128,25 +108,41 @@ Insights provide data-driven views of Docker usage to improve team productivity 
 @z
 
 @x
- - Usage trends: Identify underutilized licenses or resources, allowing reallocation to more active teams.
+- Usage trends: Identify underutilized licenses or resources, allowing reallocation to more active teams.
+- Build efficiency: Track average build times and success rates to pinpoint bottlenecks in development processes.
+- Container utilization: Analyze container activity across departments to ensure proper resource distribution and cost efficiency.
 @y
- - Usage trends: Identify underutilized licenses or resources, allowing reallocation to more active teams.
+- Usage trends: Identify underutilized licenses or resources, allowing reallocation to more active teams.
+- Build efficiency: Track average build times and success rates to pinpoint bottlenecks in development processes.
+- Container utilization: Analyze container activity across departments to ensure proper resource distribution and cost efficiency.
 @z
 
 @x
- - Build efficiency: Track average build times and success rates to pinpoint bottlenecks in development processes.
+For more information, see [Insights](/manuals/admin/organization/insights.md).
 @y
- - Build efficiency: Track average build times and success rates to pinpoint bottlenecks in development processes.
+For more information, see [Insights](manuals/admin/organization/insights.md).
 @z
 
 @x
- - Container utilization: Analyze container activity across departments to ensure proper resource distribution and cost efficiency.
+## Next steps
 @y
- - Container utilization: Analyze container activity across departments to ensure proper resource distribution and cost efficiency.
+## Next steps
 @z
 
 @x
- For more information, see [Insights](/manuals/admin/organization/insights.md).
+Now that you've mastered user and access management in Docker, you can:
 @y
- For more information, see [Insights](manuals/admin/organization/insights.md).
+Now that you've mastered user and access management in Docker, you can:
+@z
+
+@x
+- Review your [activity logs](/manuals/admin/organization/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](/manuals/admin/organization/insights.md) to identify opportunities for optimization
+- Explore [advanced security features](/manuals/enterprise/security/_index.md) to further enhance your Docker environment
+- Share best practices with your team to ensure consistent adoption of security policies
+@y
+- Review your [activity logs](manuals/admin/organization/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](manuals/admin/organization/insights.md) to identify opportunities for optimization
+- Explore [advanced security features](manuals/enterprise/security/_index.md) to further enhance your Docker environment
+- Share best practices with your team to ensure consistent adoption of security policies
 @z

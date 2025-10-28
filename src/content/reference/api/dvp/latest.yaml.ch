@@ -10,7 +10,7 @@ info:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
   description: |
-     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved as raw data, or in a summary format.
+     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
 @y
 openapi: 3.0.0
 info:
@@ -20,7 +20,7 @@ info:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
   description: |
-     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved as raw data, or in a summary format.
+     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
 @z
 
 @x
