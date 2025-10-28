@@ -6,91 +6,33 @@ command: docker checkpoint create
 short: Create a checkpoint from a running container
 long: Create a checkpoint from a running container
 usage: docker checkpoint create [OPTIONS] CONTAINER CHECKPOINT
-pname: docker checkpoint
-plink: docker_checkpoint.yaml
-options:
-    - option: checkpoint-dir
-      value_type: string
-      description: Use a custom checkpoint storage directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: leave-running
-      value_type: bool
-      default_value: "false"
-      description: Leave the container running after checkpoint
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: true
-experimentalcli: false
-kubernetes: false
-swarm: false
-os_type: linux
 @y
 command: docker checkpoint create
-short: Create a checkpoint from a running container
-long: Create a checkpoint from a running container
+short: 実行中コンテナーにチェックポイントを生成します。
+long: 実行中コンテナーにチェックポイントを生成します。
 usage: docker checkpoint create [OPTIONS] CONTAINER CHECKPOINT
-pname: docker checkpoint
-plink: docker_checkpoint.yaml
-options:
-    - option: checkpoint-dir
-      value_type: string
-      description: Use a custom checkpoint storage directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: leave-running
-      value_type: bool
-      default_value: "false"
-      description: Leave the container running after checkpoint
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: true
-experimentalcli: false
-kubernetes: false
-swarm: false
-os_type: linux
 @z
+
+% options:
+
+@x checkpoint-dir
+      description: Use a custom checkpoint storage directory
+@y
+      description: チェックポイントの情報を保存するカスタムディレクトリを用います。
+@z
+
+@x leave-running
+      description: Leave the container running after checkpoint
+@y
+      description: チェックポイント以降もコンテナーを実行し続けます。
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

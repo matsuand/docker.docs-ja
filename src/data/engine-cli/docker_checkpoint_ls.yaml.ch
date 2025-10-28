@@ -7,72 +7,28 @@ aliases: docker checkpoint ls, docker checkpoint list
 short: List checkpoints for a container
 long: List checkpoints for a container
 usage: docker checkpoint ls [OPTIONS] CONTAINER
-pname: docker checkpoint
-plink: docker_checkpoint.yaml
-options:
-    - option: checkpoint-dir
-      value_type: string
-      description: Use a custom checkpoint storage directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: true
-experimentalcli: false
-kubernetes: false
-swarm: false
-os_type: linux
 @y
 command: docker checkpoint ls
 aliases: docker checkpoint ls, docker checkpoint list
-short: List checkpoints for a container
-long: List checkpoints for a container
+short: コンテナーのチェックポイントを一覧表示します。
+long: コンテナーのチェックポイントを一覧表示します。
 usage: docker checkpoint ls [OPTIONS] CONTAINER
-pname: docker checkpoint
-plink: docker_checkpoint.yaml
-options:
-    - option: checkpoint-dir
-      value_type: string
-      description: Use a custom checkpoint storage directory
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: true
-experimentalcli: false
-kubernetes: false
-swarm: false
-os_type: linux
 @z
+
+% options:
+
+@x checkpoint-dir
+      description: Use a custom checkpoint storage directory
+@y
+      description: チェックポイントの情報を保存するカスタムディレクトリを用います。
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

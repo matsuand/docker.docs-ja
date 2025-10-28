@@ -51,11 +51,10 @@ Experimental features are intended for testing and feedback as their
 functionality or design may change between releases without warning or
 can be removed entirely in a future release.
 @y
-**This command is experimental.**
+**このコマンドは試験的なものです。**
 
-Experimental features are intended for testing and feedback as their
-functionality or design may change between releases without warning or
-can be removed entirely in a future release.
+試験的機能はテスト向けに意図されたものであり、その機能に関してのフィードバックを得る目的があります。
+この機能はリリース時に予告なく変更される場合があり、また今後のリリースに向けて削除されることがあります。
 @z
 
 @x
