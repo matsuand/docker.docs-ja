@@ -5,9 +5,6 @@ copyfiles = \
 	claude-desktop-example.png \
 	copilot-mode.png           \
 	mcp-overview.svg           \
-	mcp-servers-2.svg          \
-	mcp-servers.svg            \
-	mcp-toolkit-overview.png   \
 	tools.png
 
 include $(top_srcdir)/build-aux/common.mk

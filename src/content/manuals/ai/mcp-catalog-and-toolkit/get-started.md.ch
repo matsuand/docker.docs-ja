@@ -1,7 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Get started with Docker MCP Toolkit
@@ -22,15 +23,23 @@ keywords: Docker MCP Toolkit, MCP server, MCP client, AI agents
 @z
 
 @x
-Docker Model Context Protocol (MCP) Toolkit makes it easy to set up, manage, and run containerized MCP servers, and connect them to AI agents. It provides secure defaults, one-click setup, and support for a growing ecosystem of LLM-based clients. This page shows you how to get started quickly with the Docker MCP Toolkit.
+The Docker MCP Toolkit makes it easy to set up, manage, and run containerized
+Model Context Protocol (MCP) servers, and connect them to AI agents. It
+provides secure defaults and support for a growing ecosystem of LLM-based
+clients. This page shows you how to get started quickly with the Docker MCP
+Toolkit.
 @y
-Docker Model Context Protocol (MCP) Toolkit makes it easy to set up, manage, and run containerized MCP servers, and connect them to AI agents. It provides secure defaults, one-click setup, and support for a growing ecosystem of LLM-based clients. This page shows you how to get started quickly with the Docker MCP Toolkit.
+The Docker MCP Toolkit makes it easy to set up, manage, and run containerized
+Model Context Protocol (MCP) servers, and connect them to AI agents. It
+provides secure defaults and support for a growing ecosystem of LLM-based
+clients. This page shows you how to get started quickly with the Docker MCP
+Toolkit.
 @z
 
 @x
-## Requirements
+## Setup
 @y
-## Requirements
+## Setup
 @z
 
 @x
@@ -40,61 +49,51 @@ Before you begin, make sure you meet the following requirements to get started w
 @z
 
 @x
-### Download and install Docker Desktop
+1. Download and install the latest version of [Docker Desktop](/get-started/get-docker/).
+2. Open the Docker Desktop settings and select **Beta features**.
+3. Select **Enable Docker MCP Toolkit**.
+4. Select **Apply**.
 @y
-### Download and install Docker Desktop
-@z
-
-@x
-- Install [Docker Desktop version 4.42.0](/manuals/desktop/release-notes.md#4420) and later.
-- To try the MCP Toolkit Learning center walkthrough, you must install [Docker Desktop version 4.46.0](/manuals/desktop/release-notes.md#4460) and later.
-@y
-- Install [Docker Desktop version 4.42.0](manuals/desktop/release-notes.md#4420) and later.
-- To try the MCP Toolkit Learning center walkthrough, you must install [Docker Desktop version 4.46.0](manuals/desktop/release-notes.md#4460) and later.
-@z
-
-@x
-### Enable Docker MCP Toolkit
-@y
-### Enable Docker MCP Toolkit
-@z
-
-@x
-1. Open the Docker Desktop settings and select **Beta features**.
-2. Select **Enable Docker MCP Toolkit**.
-3. Select **Apply**.
-@y
-1. Open the Docker Desktop settings and select **Beta features**.
-2. Select **Enable Docker MCP Toolkit**.
-3. Select **Apply**.
+1. Download and install the latest version of [Docker Desktop](__SUBDIR__/get-started/get-docker/).
+2. Open the Docker Desktop settings and select **Beta features**.
+3. Select **Enable Docker MCP Toolkit**.
+4. Select **Apply**.
 @z
 
 @x
 There are multiple ways to get started with Docker MCP Toolkit. You can:
--  Try the [Learning center](#learning-center) walkthrough in Docker Desktop, available in [Docker Desktop version 4.46.0](/manuals/desktop/release-notes.md#4460) and later.
--  Alternatively, follow the step-by-step instructions on this page to use Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server), [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup) with example prompts.
 @y
 There are multiple ways to get started with Docker MCP Toolkit. You can:
--  Try the [Learning center](#learning-center) walkthrough in Docker Desktop, available in [Docker Desktop version 4.46.0](manuals/desktop/release-notes.md#4460) and later.
--  Alternatively, follow the step-by-step instructions on this page to use Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server), [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup) with example prompts.
 @z
 
 @x
-## Learning center
+- The **Learning center** in Docker Desktop provides walkthroughs and resources
+  to help you get started with Docker products and features.
 @y
-## Learning center
+- The **Learning center** in Docker Desktop provides walkthroughs and resources
+  to help you get started with Docker products and features.
 @z
 
 @x
-The **Learning center** in Docker Desktop provides walkthroughs and resources to help you get started with Docker products and features.
+  On the **MCP Toolkit** page, the **Get started** walkthrough that guides you
+  through installing an MCP server, connecting a client, and testing your
+  setup.
 @y
-The **Learning center** in Docker Desktop provides walkthroughs and resources to help you get started with Docker products and features.
+  On the **MCP Toolkit** page, the **Get started** walkthrough that guides you
+  through installing an MCP server, connecting a client, and testing your
+  setup.
 @z
 
 @x
-On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthrough that guides you through installing an MCP server, connecting a client, and testing your setup.
+- Alternatively, follow the step-by-step instructions on this page to use
+  Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server),
+  [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup)
+  with example prompts.
 @y
-On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthrough that guides you through installing an MCP server, connecting a client, and testing your setup.
+- Alternatively, follow the step-by-step instructions on this page to use
+  Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server),
+  [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup)
+  with example prompts.
 @z
 
 @x
@@ -122,11 +121,11 @@ On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthroug
 @z
 
 @x
-   >[!NOTE]
+   > [!NOTE]
    >
    > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
 @y
-   >[!NOTE]
+   > [!NOTE]
    >
    > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
 @z
@@ -159,15 +158,7 @@ On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthroug
 1. Add the GitHub Official MCP server. Run:
 @z
 
-@x
-   ```console
-   $ docker mcp server enable github-official
-   ```
-@y
-   ```console
-   $ docker mcp server enable github-official
-   ```
-@z
+% snip command...
 
 @x
 2. Authenticate the server by running the following command:
@@ -175,22 +166,14 @@ On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthroug
 2. Authenticate the server by running the following command:
 @z
 
-@x
-   ```console
-   $ docker mcp oauth authorize github
-   ```
-@y
-   ```console
-   $ docker mcp oauth authorize github
-   ```
-@z
+% snip command...
 
 @x
-   >[!NOTE]
+   > [!NOTE]
    >
    > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
 @y
-   >[!NOTE]
+   > [!NOTE]
    >
    > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
 @z
@@ -207,18 +190,14 @@ On the **MCP Toolkit** page, Docker Desktop shows the **Get started** walkthroug
 3. Add the **Playwright** server. Run:
 @z
 
+% snip command...
+
 @x
-   ```console
-   $ docker mcp server enable playwright
-   ```
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @y
-   ```console
-   $ docker mcp server enable playwright
-   ```
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -257,23 +236,23 @@ After you've installed MCP servers, you can add clients to the MCP Toolkit. Thes
 
 @x
    If Claude Desktop isn't installed, select **Download** to install it, then select **Connect**.
-3. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-4. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet Opus 4.1 model:
 @y
    If Claude Desktop isn't installed, select **Download** to install it, then select **Connect**.
+@z
+
+@x
 3. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-4. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet Opus 4.1 model:
+4. Open Claude Desktop and run a test by submitting the following prompt:
+@y
+3. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
+4. Open Claude Desktop and run a test by submitting the following prompt:
 @z
 
+% snip text...
+
 @x
-   ```text
-   Take a screenshot of the header element on docs.docker.com
-   ```
    Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
 @y
-   ```text
-   Take a screenshot of the header element on docs.docker.com
-   ```
    Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
 @z
 
@@ -297,29 +276,21 @@ After you've installed MCP servers, you can add clients to the MCP Toolkit. Thes
 1. In a terminal window, run the following commands to connect the Claude Desktop client:
 @z
 
+% snip command...
+
 @x
-   ```console
-   $ docker mcp client connect claude-desktop --global
-   ```
 2. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
 3. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet 4 model:
 @y
-   ```console
-   $ docker mcp client connect claude-desktop --global
-   ```
 2. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
 3. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet 4 model:
 @z
 
+% snip text...
+
 @x
-   ```text
-   Take a screenshot of the header element on docs.docker.com
-   ```
    Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
 @y
-   ```text
-   Take a screenshot of the header element on docs.docker.com
-   ```
    Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
 @z
 
@@ -338,17 +309,17 @@ After you've installed MCP servers, you can add clients to the MCP Toolkit. Thes
 @z
 
 @x
-## Related pages
+## Further reading
 @y
-## Related pages
+## Further reading
 @z
 
 @x
 - [MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
 - [MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [Open-source MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
 - [MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
 - [MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [Open-source MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

@@ -22,27 +22,17 @@ keywords: Docker MCP Toolkit, MCP server, MCP client, AI agents
 @z
 
 @x
-The Docker MCP Toolkit is a gateway that lets you set up, manage, and run
-containerized MCP servers and connect them to AI agents. It removes friction
-from tool usage by offering secure defaults, one-click setup, and support for a
-growing ecosystem of LLM-based clients. It is the fastest way from MCP tool
-discovery to local execution.
+The Docker MCP Toolkit is a management interface integrated into Docker Desktop
+that lets you set up, manage, and run containerized MCP servers and connect
+them to AI agents. It removes friction from tool usage by offering secure
+defaults, easy setup, and support for a growing ecosystem of LLM-based clients.
+It is the fastest way from MCP tool discovery to local execution.
 @y
-The Docker MCP Toolkit is a gateway that lets you set up, manage, and run
-containerized MCP servers and connect them to AI agents. It removes friction
-from tool usage by offering secure defaults, one-click setup, and support for a
-growing ecosystem of LLM-based clients. It is the fastest way from MCP tool
-discovery to local execution.
-@z
-
-@x
-> [!NOTE]
-> If you need to run your own MCP gateway,
-> see [Docker MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
-@y
-> [!NOTE]
-> If you need to run your own MCP gateway,
-> see [Docker MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
+The Docker MCP Toolkit is a management interface integrated into Docker Desktop
+that lets you set up, manage, and run containerized MCP servers and connect
+them to AI agents. It removes friction from tool usage by offering secure
+defaults, easy setup, and support for a growing ecosystem of LLM-based clients.
+It is the fastest way from MCP tool discovery to local execution.
 @z
 
 @x
@@ -52,14 +42,14 @@ discovery to local execution.
 @z
 
 @x
-- Cross-LLM compatibility: Instantly works with Claude Desktop, Cursor, Continue.dev, and [Gordon](/manuals/ai/gordon/_index.md).
+- Cross-LLM compatibility: Works with Claude, Cursor, and other MCP clients.
 - Integrated tool discovery: Browse and launch MCP servers from the Docker MCP Catalog directly in Docker Desktop.
-- Zero manual setup: No dependency management, runtime configuration, or server setup required.
+- Zero manual setup: No dependency management, runtime configuration, or setup required.
 - Functions as both an MCP server aggregator and a gateway for clients to access installed MCP servers.
 @y
-- Cross-LLM compatibility: Instantly works with Claude Desktop, Cursor, Continue.dev, and [Gordon](manuals/ai/gordon/_index.md).
+- Cross-LLM compatibility: Works with Claude, Cursor, and other MCP clients.
 - Integrated tool discovery: Browse and launch MCP servers from the Docker MCP Catalog directly in Docker Desktop.
-- Zero manual setup: No dependency management, runtime configuration, or server setup required.
+- Zero manual setup: No dependency management, runtime configuration, or setup required.
 - Functions as both an MCP server aggregator and a gateway for clients to access installed MCP servers.
 @z
 
@@ -103,46 +93,10 @@ runtimes.
 
 @x
 Depending on the MCP server, the tools it provides might run within the same
-container as the server or in dedicated containers:
+container as the server or in dedicated containers for better isolation.
 @y
 Depending on the MCP server, the tools it provides might run within the same
-container as the server or in dedicated containers:
-@z
-
-@x
-{{< tabs group="" >}}
-{{< tab name="Single container">}}
-@y
-{{< tabs group="" >}}
-{{< tab name="Single container">}}
-@z
-
-@x
-![Screenshot showing a single-container MCP Toolkit setup.](./images/mcp-servers.svg)
-@y
-![Screenshot showing a single-container MCP Toolkit setup.](./images/mcp-servers.svg)
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Separate containers">}}
-@y
-{{< /tab >}}
-{{< tab name="Separate containers">}}
-@z
-
-@x
-![Screenshot showing a multi-container MCP Toolkit setup.](./images/mcp-servers-2.svg)
-@y
-![Screenshot showing a multi-container MCP Toolkit setup.](./images/mcp-servers-2.svg)
-@z
-
-@x
-{{< /tab >}}
-{{</tabs >}}
-@y
-{{< /tab >}}
-{{</tabs >}}
+container as the server or in dedicated containers for better isolation.
 @z
 
 @x
@@ -166,15 +120,23 @@ surfaces and ensure safe runtime behavior.
 @z
 
 @x
-- Image signing and attestation: All MCP server images under `mcp/` in the [catalog](catalog.md)
-  are built by Docker and digitally
-  signed to verify their source and integrity. Each image includes a Software
-  Bill of Materials (SBOM) for full transparency.
+Passive security refers to measures implemented at build-time, when the MCP
+server code is packaged into a Docker image.
 @y
-- Image signing and attestation: All MCP server images under `mcp/` in the [catalog](catalog.md)
-  are built by Docker and digitally
-  signed to verify their source and integrity. Each image includes a Software
-  Bill of Materials (SBOM) for full transparency.
+Passive security refers to measures implemented at build-time, when the MCP
+server code is packaged into a Docker image.
+@z
+
+@x
+- Image signing and attestation: All MCP server images under `mcp/` in the [MCP
+  Catalog](catalog.md) are built by Docker and digitally signed to verify their
+  source and integrity. Each image includes a Software Bill of Materials (SBOM)
+  for full transparency.
+@y
+- Image signing and attestation: All MCP server images under `mcp/` in the [MCP
+  Catalog](catalog.md) are built by Docker and digitally signed to verify their
+  source and integrity. Each image includes a Software Bill of Materials (SBOM)
+  for full transparency.
 @z
 
 @x
@@ -184,9 +146,11 @@ surfaces and ensure safe runtime behavior.
 @z
 
 @x
-Security at runtime is enforced through resource and access limitations:
+Active security refers to security measures at runtime, before and after tools
+are invoked, enforced through resource and access limitations.
 @y
-Security at runtime is enforced through resource and access limitations:
+Active security refers to security measures at runtime, before and after tools
+are invoked, enforced through resource and access limitations.
 @z
 
 @x
@@ -222,37 +186,73 @@ Security at runtime is enforced through resource and access limitations:
 @z
 
 @x
-To learn more about the MCP server catalog, see [Catalog](catalog.md).
+### OAuth authentication
 @y
-To learn more about the MCP server catalog, see [Catalog](catalog.md).
+### OAuth authentication
 @z
 
 @x
-### Example: Use the **GitHub Official** MCP server
+Some MCP servers require authentication to access external services. The MCP
+Toolkit handles OAuth flows for supported services, currently limited to
+GitHub. When you authorize the MCP Toolkit to access your GitHub account, any
+installed MCP server that needs GitHub access can use those credentials without
+requiring separate authentication.
 @y
-### Example: Use the **GitHub Official** MCP server
+Some MCP servers require authentication to access external services. The MCP
+Toolkit handles OAuth flows for supported services, currently limited to
+GitHub. When you authorize the MCP Toolkit to access your GitHub account, any
+installed MCP server that needs GitHub access can use those credentials without
+requiring separate authentication.
 @z
 
 @x
-Imagine you want to enable [Ask Gordon](/manuals/ai/gordon/_index.md) to interact with your GitHub account:
+To set up OAuth for a service, use the **OAuth** tab in the MCP Toolkit section
+in Docker Desktop. Once authorized, the credentials are available to any MCP
+server that needs them. You can revoke access at any time from the same tab.
 @y
-Imagine you want to enable [Ask Gordon](manuals/ai/gordon/_index.md) to interact with your GitHub account:
+To set up OAuth for a service, use the **OAuth** tab in the MCP Toolkit section
+in Docker Desktop. Once authorized, the credentials are available to any MCP
+server that needs them. You can revoke access at any time from the same tab.
 @z
 
 @x
-1. From the **MCP Toolkit** menu, select the **Catalog** tab and find
-   the **GitHub Official** server and add it.
-2. In the server's **Config** tab, [connect via OAuth](#authenticate-via-oauth).
+## Usage examples
+@y
+## Usage examples
+@z
+
+@x
+### Example: Use the GitHub Official MCP server with Ask Gordon
+@y
+### Example: Use the GitHub Official MCP server with Ask Gordon
+@z
+
+@x
+To illustrate how the MCP Toolkit works, here's how to enable the GitHub
+Official MCP server and use [Ask Gordon](/manuals/ai/gordon/_index.md) to
+interact with your GitHub account:
+@y
+To illustrate how the MCP Toolkit works, here's how to enable the GitHub
+Official MCP server and use [Ask Gordon](manuals/ai/gordon/_index.md) to
+interact with your GitHub account:
+@z
+
+@x
+1. From the **MCP Toolkit** menu in Docker Desktop, select the **Catalog** tab
+   and find the **GitHub Official** server and add it.
+2. In the server's **Config** tab, authenticate via OAuth.
 3. In the **Clients** tab, ensure Gordon is connected.
 4. From the **Ask Gordon** menu, you can now send requests related to your
-   GitHub account, in accordance to the tools provided by the GitHub Official server. To test it, ask Gordon:
+   GitHub account, in accordance to the tools provided by the GitHub Official
+   server. To test it, ask Gordon:
 @y
-1. From the **MCP Toolkit** menu, select the **Catalog** tab and find
-   the **GitHub Official** server and add it.
-2. In the server's **Config** tab, [connect via OAuth](#authenticate-via-oauth).
+1. From the **MCP Toolkit** menu in Docker Desktop, select the **Catalog** tab
+   and find the **GitHub Official** server and add it.
+2. In the server's **Config** tab, authenticate via OAuth.
 3. In the **Clients** tab, ensure Gordon is connected.
 4. From the **Ask Gordon** menu, you can now send requests related to your
-   GitHub account, in accordance to the tools provided by the GitHub Official server. To test it, ask Gordon:
+   GitHub account, in accordance to the tools provided by the GitHub Official
+   server. To test it, ask Gordon:
 @z
 
 @x
@@ -266,18 +266,20 @@ Imagine you want to enable [Ask Gordon](manuals/ai/gordon/_index.md) to interact
 @z
 
 @x
-   Make sure to allow Gordon to interact with GitHub by selecting **Always allow** in Gordon's answer.
+   Make sure to allow Gordon to interact with GitHub by selecting **Always
+   allow** in Gordon's answer.
 @y
-   Make sure to allow Gordon to interact with GitHub by selecting **Always allow** in Gordon's answer.
+   Make sure to allow Gordon to interact with GitHub by selecting **Always
+   allow** in Gordon's answer.
 @z
 
 @x
 > [!TIP]
-> By default, the Gordon client is enabled,
+> The Gordon client is enabled by default,
 > which means Gordon can automatically interact with your MCP servers.
 @y
 > [!TIP]
-> By default, the Gordon client is enabled,
+> The Gordon client is enabled by default,
 > which means Gordon can automatically interact with your MCP servers.
 @z
 
@@ -336,12 +338,6 @@ You can interact with all your installed MCP servers in Visual Studio Code:
 @z
 
 @x
-<!-- vale off -->
-@y
-<!-- vale off -->
-@z
-
-@x
 1. To enable the MCP Toolkit:
 @y
 1. To enable the MCP Toolkit:
@@ -356,9 +352,9 @@ You can interact with all your installed MCP servers in Visual Studio Code:
 @z
 
 @x
-   1. Insert the following in your Visual Studio Code's User`mcp.json`:
+   1. Insert the following in your Visual Studio Code's User `mcp.json`:
 @y
-   1. Insert the following in your Visual Studio Code's User`mcp.json`:
+   1. Insert the following in your Visual Studio Code's User `mcp.json`:
 @z
 
 @x
@@ -423,12 +419,22 @@ You can interact with all your installed MCP servers in Visual Studio Code:
 
 @x
       > [!NOTE]
-      > This command creates a `.vscode/mcp.json` file in the current directory. We
-      > recommend you add it to your  `.gitignore` file.
+      > This command creates a `.vscode/mcp.json` file in the current
+      > directory. As this is a user-specific file, add it to your `.gitignore`
+      > file to prevent it from being committed to the repository.
+      >
+      > ```console
+      > echo ".vscode/mcp.json" >> .gitignore
+      > ```
 @y
       > [!NOTE]
-      > This command creates a `.vscode/mcp.json` file in the current directory. We
-      > recommend you add it to your  `.gitignore` file.
+      > This command creates a `.vscode/mcp.json` file in the current
+      > directory. As this is a user-specific file, add it to your `.gitignore`
+      > file to prevent it from being committed to the repository.
+      >
+      > ```console
+      > echo ".vscode/mcp.json" >> .gitignore
+      > ```
 @z
 
 @x
@@ -472,57 +478,15 @@ For more information about the Agent mode, see the
 @z
 
 @x
-<!-- vale on -->
+## Further reading
 @y
-<!-- vale on -->
+## Further reading
 @z
 
 @x
-## Authenticate via OAuth
+- [MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
-## Authenticate via OAuth
-@z
-
-@x
-You can connect the MCP Toolkit to your development workflow via
-OAuth integration. For now, the MCP Toolkit only supports GitHub OAuth.
-@y
-You can connect the MCP Toolkit to your development workflow via
-OAuth integration. For now, the MCP Toolkit only supports GitHub OAuth.
-@z
-
-@x
-1. On https://github.com/, ensure you are signed in.
-1. In Docker Desktop, select **MCP Toolkit** and select the **OAuth** tab.
-1. In the GitHub entry, select **Authorize**. Your browser opens the GitHub authorization page.
-1. In the GitHub authorization page, select **Authorize Docker**. Once the authorization
-   is successful, you are automatically redirected to Docker Desktop.
-1. Install the **GitHub Official** MCP server, see [Install an MCP server](/manuals/ai/mcp-catalog-and-toolkit/get-started.md#install-an-mcp-server).
-@y
-1. On https://github.com/, ensure you are signed in.
-1. In Docker Desktop, select **MCP Toolkit** and select the **OAuth** tab.
-1. In the GitHub entry, select **Authorize**. Your browser opens the GitHub authorization page.
-1. In the GitHub authorization page, select **Authorize Docker**. Once the authorization
-   is successful, you are automatically redirected to Docker Desktop.
-1. Install the **GitHub Official** MCP server, see [Install an MCP server](manuals/ai/mcp-catalog-and-toolkit/get-started.md#install-an-mcp-server).
-@z
-
-@x
-The MCP Toolkit now has access to your GitHub account. To revoke access, select **Revoke** in the **OAuth** tab.
-See an example in [Use the **GitHub Official** MCP server](#example-use-the-github-official-mcp-server).
-@y
-The MCP Toolkit now has access to your GitHub account. To revoke access, select **Revoke** in the **OAuth** tab.
-See an example in [Use the **GitHub Official** MCP server](#example-use-the-github-official-mcp-server).
-@z
-
-@x
-## Related pages
-@y
-## Related pages
-@z
-
-@x
-- [Open-source MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
-@y
-- [Open-source MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

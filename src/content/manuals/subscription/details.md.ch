@@ -158,14 +158,14 @@ Docker Pro includes:
 @x
 - Full access to all Docker tools
 - 200 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - 2 Docker Scout repositories with vulnerability analysis
 - 100 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
 @y
 - Full access to all Docker tools
 - 200 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - 2 Docker Scout repositories with vulnerability analysis
 - 100 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
@@ -199,20 +199,20 @@ Docker Team includes:
 
 @x
 - 500 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - Unlimited Docker Scout repositories with vulnerability analysis
 - 500 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
 - Advanced collaboration tools including organization management, [Role Based Access Control
-(RBAC)](/security/for-admins/roles-and-permissions/), [activity logs](/admin/organization/activity-logs/), and more
+  (RBAC)](/security/for-admins/roles-and-permissions/), [activity logs](/admin/organization/activity-logs/), and more
 @y
 - 500 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - Unlimited Docker Scout repositories with vulnerability analysis
 - 500 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
 - Advanced collaboration tools including organization management, [Role Based Access Control
-(RBAC)](__SUBDIR__/security/for-admins/roles-and-permissions/), [activity logs](__SUBDIR__/admin/organization/activity-logs/), and more
+  (RBAC)](__SUBDIR__/security/for-admins/roles-and-permissions/), [activity logs](__SUBDIR__/admin/organization/activity-logs/), and more
 @z
 
 @x
@@ -243,40 +243,40 @@ Docker Business includes:
 
 @x
 - 1500 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - Unlimited Docker Scout repositories with vulnerability analysis
 - 1500 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
 - Enterprise security features:
   - [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
   - [Image Access
-  Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
-  which lets admins control what content developers can access
+    Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+    which lets admins control what content developers can access
   - [Registry Access
-  Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md)
-  which lets admins control what registries developers can access
+    Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md)
+    which lets admins control what registries developers can access
   - [Company layer](/admin/company/) to manage multiple organizations and settings
   - [Single sign-on](/security/for-admins/single-sign-on/)
   - [System for Cross-domain Identity
-  Management](/security/for-admins/provisioning/scim/)
+    Management](/security/for-admins/provisioning/scim/)
 @y
 - 1500 Docker Build Cloud minutes per month, Docker Build Cloud minutes do not
-rollover month to month
+  rollover month to month
 - Unlimited Docker Scout repositories with vulnerability analysis
 - 1500 Testcontainers Cloud runtime minutes per month, Testcontainers Cloud runtime minutes do not rollover month to month
 - No Docker Hub pull rate limits
 - Enterprise security features:
   - [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md)
   - [Image Access
-  Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
-  which lets admins control what content developers can access
+    Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
+    which lets admins control what content developers can access
   - [Registry Access
-  Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md)
-  which lets admins control what registries developers can access
+    Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md)
+    which lets admins control what registries developers can access
   - [Company layer](__SUBDIR__/admin/company/) to manage multiple organizations and settings
   - [Single sign-on](__SUBDIR__/security/for-admins/single-sign-on/)
   - [System for Cross-domain Identity
-  Management](__SUBDIR__/security/for-admins/provisioning/scim/)
+    Management](__SUBDIR__/security/for-admins/provisioning/scim/)
 @z
 
 @x
@@ -333,6 +333,11 @@ their customers.
 
 @x
 Legacy Docker Pro includes:
+@y
+Legacy Docker Pro includes:
+@z
+
+@x
 - Unlimited public repositories
 - Unlimited [Scoped Access Tokens](/security/access-tokens/)
 - Unlimited [collaborators](/docker-hub/repos/manage/access/#collaborators) for public repositories at no cost per month.
@@ -342,7 +347,6 @@ Legacy Docker Pro includes:
 - [Auto Builds](/docker-hub/builds/) with 5 concurrent builds
 - 300 [Vulnerability Scans](/docker-hub/vulnerability-scanning/)
 @y
-Legacy Docker Pro includes:
 - Unlimited public repositories
 - Unlimited [Scoped Access Tokens](__SUBDIR__/security/access-tokens/)
 - Unlimited [collaborators](__SUBDIR__/docker-hub/repos/manage/access/#collaborators) for public repositories at no cost per month.
@@ -413,13 +417,17 @@ Docker Hub.
 
 @x
 Legacy Docker Team includes:
+@y
+Legacy Docker Team includes:
+@z
+
+@x
 - Everything included in legacy Docker Pro
 - Unlimited teams
 - [Auto Builds](/docker-hub/builds/) with 15 concurrent builds
 - Unlimited [Vulnerability Scanning](/docker-hub/vulnerability-scanning/)
 - 5000 image [pulls per day](/manuals/docker-hub/usage/pulls.md) for each team member
 @y
-Legacy Docker Team includes:
 - Everything included in legacy Docker Pro
 - Unlimited teams
 - [Auto Builds](__SUBDIR__/docker-hub/builds/) with 15 concurrent builds
@@ -495,6 +503,11 @@ use of Docker components including Docker Desktop and Docker Hub.
 
 @x
 Legacy Docker Business includes:
+@y
+Legacy Docker Business includes:
+@z
+
+@x
 - Everything included in legacy Docker Team
 - [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
 - [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md) which lets admins control what content developers can access
@@ -503,7 +516,6 @@ Legacy Docker Business includes:
 - [Single Sign-On](/security/for-admins/single-sign-on/)
 - [System for Cross-domain Identity Management](/security/for-admins/provisioning/scim/) and more.
 @y
-Legacy Docker Business includes:
 - Everything included in legacy Docker Team
 - [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md)
 - [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md) which lets admins control what content developers can access
@@ -694,11 +706,11 @@ For a list of features available in each tier, see [Docker Pricing](https://www.
 @z
 
 @x
- This section describes the features available for the different legacy Docker
- Build Cloud subscription tiers.
+This section describes the features available for the different legacy Docker
+Build Cloud subscription tiers.
 @y
- This section describes the features available for the different legacy Docker
- Build Cloud subscription tiers.
+This section describes the features available for the different legacy Docker
+Build Cloud subscription tiers.
 @z
 
 @x
@@ -900,7 +912,41 @@ A dedicated Docker account manager handles setup and management for Docker Busin
 @z
 
 @x
-All Docker Pro, Team, and Business subscribers receive email support for their subscriptions.
+All Docker Pro, Team, and Business subscribers receive email support for their subscriptions, including help with account management, billing, configuration, installation, and usage issues.
 @y
-All Docker Pro, Team, and Business subscribers receive email support for their subscriptions.
+All Docker Pro, Team, and Business subscribers receive email support for their subscriptions, including help with account management, billing, configuration, installation, and usage issues.
+@z
+
+@x
+Support response times and availability vary by subscription tier:
+@y
+Support response times and availability vary by subscription tier:
+@z
+
+@x
+- Docker Pro: 3 business day response
+- Docker Team: 2 business day response, 24×5 availability
+- Docker Business: 1 business day response, 24×5 availability
+@y
+- Docker Pro: 3 business day response
+- Docker Team: 2 business day response, 24×5 availability
+- Docker Business: 1 business day response, 24×5 availability
+@z
+
+@x
+Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+@y
+Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+@z
+
+@x
+For detailed support features and response times, see [Docker Pricing](https://www.docker.com/pricing/).
+@y
+For detailed support features and response times, see [Docker Pricing](https://www.docker.com/pricing/).
+@z
+
+@x
+All Docker users can also access community support through the [Docker Community Forums](https://forums.docker.com/) and [Docker Community Slack](https://dockr.ly/comm-slack).
+@y
+All Docker users can also access community support through the [Docker Community Forums](https://forums.docker.com/) and [Docker Community Slack](https://dockr.ly/comm-slack).
 @z
