@@ -672,6 +672,16 @@ Docker Hardened Images:
 @z
 
 @x
+Docker Hardened Image charts:
+  availability: Early Access
+  subscription: [Docker Hardened Images]
+@y
+Docker Hardened Image charts:
+  availability: Early Access
+  subscription: [Docker Hardened Images]
+@z
+
+@x
 Docker Init:
   requires: Docker Desktop [4.27](/manuals/desktop/release-notes.md#4270) and later
 @y

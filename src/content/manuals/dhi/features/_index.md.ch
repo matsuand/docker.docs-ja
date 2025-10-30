@@ -74,6 +74,18 @@ description: Explore the core features of Docker Hardened Images, including hard
 @z
 
 @x
+    - title: Docker Hardened Image charts
+      description: Learn about Docker Hardened Image charts.
+      icon: leaderboard
+      link: /dhi/features/helm/
+@y
+    - title: Docker Hardened Image charts
+      description: Learn about Docker Hardened Image charts.
+      icon: leaderboard
+      link: __SUBDIR__/dhi/features/helm/
+@z
+
+@x
 Docker Hardened Images (DHIs) go beyond minimal base and application images by
 incorporating hardened defaults, signed metadata, and broad ecosystem
 compatibility. Whether you're securing a single service or rolling out

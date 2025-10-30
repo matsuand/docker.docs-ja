@@ -184,9 +184,11 @@ Follow the instructions to run the to-do list app on your system.
 @z
 
 @x
-5. With everything now up and running, you can open [http://localhost:3000](http://localhost:3000) in your browser to see the site. Feel free to add items to the list, check them off, and remove them.
+5. With everything now up and running, you can open [http://localhost:3000](http://localhost:3000) in your browser to see the site. Note that the application may take 10-15 seconds to fully start. If the page doesn't load right away, wait a moment and refresh. Feel free to add items to the list, check them off, and remove them.
 @y
 5. すべてが出そろい起動が行われたら、ブラウザーから [http://localhost:3000](http://localhost:3000) にアクセスしてサイトを確認します。
+アプリケーションは完全に起動するまでに 10 から 15 秒かかります。
+ページロードがすぐに行われなかったら、しばらく待ってから表示更新してみてください。
 アイテムの追加、確認、削除をさまざまに行ってみてください。
 @z
 

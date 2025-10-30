@@ -7,6 +7,7 @@ bases = \
 	customize.md \
 	debug.md     \
 	explore.md   \
+	helm.md      \
 	k8s.md       \
 	manage.md    \
 	migrate.md   \

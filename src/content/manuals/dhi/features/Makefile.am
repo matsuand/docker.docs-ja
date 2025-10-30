@@ -5,6 +5,7 @@
 bases = \
 	_index.md      \
 	flexible.md    \
+	helm.md        \
 	integration.md \
 	patching.md    \
 	secure.md      \
