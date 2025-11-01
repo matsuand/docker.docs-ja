@@ -202,9 +202,9 @@ Before you begin, make sure you have:
 @z
 
 @x within code
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
 @y
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
 @z
 
 @x

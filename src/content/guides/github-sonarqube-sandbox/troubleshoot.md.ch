@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Troubleshoot code quality workflows
 linkTitle: Troubleshoot
@@ -48,85 +50,35 @@ Solution:
 @z
 
 @x
-1. Verify you're using the authorization header:
+1.  Verify you're using the authorization header:
 @y
-1. Verify you're using the authorization header:
+1.  Verify you're using the authorization header:
 @z
 
 % snip code...
 
 @x
-2. Check you're waiting for MCP initialization:
+2.  Check you're waiting for MCP initialization.
 @y
-2. Check you're waiting for MCP initialization:
-@z
-
-@x
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
-@y
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
+2.  Check you're waiting for MCP initialization.
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="Python" >}}
+3.  Ensure credentials are in both `envs` and `mcp` configuration:
 @y
-{{< /tab >}}
-{{< tab name="Python" >}}
+3.  Ensure credentials are in both `envs` and `mcp` configuration:
 @z
 
 % snip code...
 
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
-3. Ensure credentials are in both `envs` and `mcp` configuration:
-@y
-3. Ensure credentials are in both `envs` and `mcp` configuration:
-@z
-
-@x
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
-@y
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
-@z
-
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="Python" >}}
+4.  Verify your API tokens are valid and have proper scopes.
 @y
-{{< /tab >}}
-{{< tab name="Python" >}}
-@z
-
-% snip code...
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
-4. Verify your API tokens are valid and have proper scopes.
-@y
-4. Verify your API tokens are valid and have proper scopes.
+4.  Verify your API tokens are valid and have proper scopes.
 @z
 
 @x
@@ -159,11 +111,7 @@ testing one.
 {{< tab name="TypeScript" >}}
 @z
 
-@x within code
-// Include both servers even if only using one
-@y
-// Include both servers even if only using one
-@z
+% snip code...
 
 @x
 {{< /tab >}}
@@ -216,31 +164,31 @@ Solution:
 @z
 
 @x
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
+   {{< tabs group="language" >}}
+   {{< tab name="TypeScript" >}}
 @y
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
+   {{< tabs group="language" >}}
+   {{< tab name="TypeScript" >}}
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="Python" >}}
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @y
-{{< /tab >}}
-{{< tab name="Python" >}}
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @y
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -268,39 +216,31 @@ Solutions:
 @z
 
 @x
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
+   {{< tabs group="language" >}}
+   {{< tab name="TypeScript" >}}
 @y
-{{< tabs group="language" >}}
-{{< tab name="TypeScript" >}}
+   {{< tabs group="language" >}}
+   {{< tab name="TypeScript" >}}
 @z
 
-@x within code
-    timeoutMs: 0, // No timeout
-@y
-    timeoutMs: 0, // No timeout
-@z
+% snip code...
 
 @x
-{{< /tab >}}
-{{< tab name="Python" >}}
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @y
-{{< /tab >}}
-{{< tab name="Python" >}}
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @z
 
-@x within code
-    timeout_ms=0,  # No timeout
-@y
-    timeout_ms=0,  # No timeout
-@z
+% snip code...
 
 @x
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @y
-{{< /tab >}}
-{{< /tabs >}}
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -423,62 +363,94 @@ Solution:
 3. Check variable names match exactly (case-sensitive):
 @z
 
-@x within code
-// .env file
-@y
-// .env file
-@z
 @x
-// In code
+   ```typescript
+   // .env file
+   GITHUB_TOKEN = ghp_xxxxx;
 @y
-// In code
+   ```typescript
+   // .env file
+   GITHUB_TOKEN = ghp_xxxxx;
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Python" >}}
+   // In code
+   process.env.GITHUB_TOKEN; // Correct
+   process.env.github_token; // Wrong - case doesn't match
+   ```
 @y
-{{< /tab >}}
-{{< tab name="Python" >}}
+   // In code
+   process.env.GITHUB_TOKEN; // Correct
+   process.env.github_token; // Wrong - case doesn't match
+   ```
 @z
 
 @x
-1. Ensure `dotenv` is loaded at the top of your file:
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @y
-1. Ensure `dotenv` is loaded at the top of your file:
-@z
-
-% snip code...
-
-@x
-2. Verify the `.env` file is in the same directory as your script.
-@y
-2. Verify the `.env` file is in the same directory as your script.
+   {{< /tab >}}
+   {{< tab name="Python" >}}
 @z
 
 @x
-3. Check variable names match exactly (case-sensitive):
+   1. Ensure `dotenv` is loaded at the top of your file:
 @y
-3. Check variable names match exactly (case-sensitive):
-@z
-
-@x within code
-# .env file
-@y
-# .env file
-@z
-@x
-# In code
-@y
-# In code
+   1. Ensure `dotenv` is loaded at the top of your file:
 @z
 
 @x
-{{< /tab >}}
-{{< /tabs >}}
+      ```python
+      from dotenv import load_dotenv
+      load_dotenv()
+      ```
 @y
-{{< /tab >}}
-{{< /tabs >}}
+      ```python
+      from dotenv import load_dotenv
+      load_dotenv()
+      ```
+@z
+
+@x
+   2. Verify the `.env` file is in the same directory as your script.
+@y
+   2. Verify the `.env` file is in the same directory as your script.
+@z
+
+@x
+   3. Check variable names match exactly (case-sensitive):
+@y
+   3. Check variable names match exactly (case-sensitive):
+@z
+
+@x
+      ```python
+      # .env file
+      GITHUB_TOKEN=ghp_xxxxx
+@y
+      ```python
+      # .env file
+      GITHUB_TOKEN=ghp_xxxxx
+@z
+
+@x
+      # In code
+      os.getenv("GITHUB_TOKEN")  # Correct
+      os.getenv("github_token")  # Wrong - case doesn't match
+      ```
+@y
+      # In code
+      os.getenv("GITHUB_TOKEN")  # Correct
+      os.getenv("github_token")  # Wrong - case doesn't match
+      ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x

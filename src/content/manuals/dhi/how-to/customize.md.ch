@@ -58,20 +58,20 @@ To customize a Docker Hardened Image, follow these steps:
 
 @x
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has a mirrored DHI
+1. Select **My Hub**.
+1. In the namespace drop-down, select your organization that has a mirrored DHI
    repository.
-4. Select **Hardened Images** > **Management**.
-5. For the mirrored DHI repository you want to customize, select the menu icon in the far right column.
-6. Select **Customize**.
+1. Select **Hardened Images** > **Management**.
+1. For the mirrored DHI repository you want to customize, select the menu icon in the far right column.
+1. Select **Customize**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has a mirrored DHI
+1. Select **My Hub**.
+1. In the namespace drop-down, select your organization that has a mirrored DHI
    repository.
-4. Select **Hardened Images** > **Management**.
-5. For the mirrored DHI repository you want to customize, select the menu icon in the far right column.
-6. Select **Customize**.
+1. Select **Hardened Images** > **Management**.
+1. For the mirrored DHI repository you want to customize, select the menu icon in the far right column.
+1. Select **Customize**.
 @z
 
 @x
@@ -85,11 +85,11 @@ To customize a Docker Hardened Image, follow these steps:
 @z
 
 @x
-7. Select the image version you want to customize.
-8. Optional. Add packages.
+1. Select the image version you want to customize.
+1. Optional. Add packages.
 @y
-7. Select the image version you want to customize.
-8. Optional. Add packages.
+1. Select the image version you want to customize.
+1. Optional. Add packages.
 @z
 
 @x
@@ -113,12 +113,12 @@ To customize a Docker Hardened Image, follow these steps:
 @z
 
 @x
-   2. In the **OCI artifacts** drop-down, first, select the repository that
+   1. In the **OCI artifacts** drop-down, first, select the repository that
       contains the OCI artifact image. Then, select the tag you want to use from
       that repository. Finally, specify the specific paths you want to include
       from the OCI artifact image.
 @y
-   2. In the **OCI artifacts** drop-down, first, select the repository that
+   1. In the **OCI artifacts** drop-down, first, select the repository that
       contains the OCI artifact image. Then, select the tag you want to use from
       that repository. Finally, specify the specific paths you want to include
       from the OCI artifact image.
@@ -179,9 +179,9 @@ To customize a Docker Hardened Image, follow these steps:
 @z
 
 @x
-   3. In the **Scripts** section, you can add, edit, or remove scripts.
+   1. In the **Scripts** section, you can add, edit, or remove scripts.
 @y
-   3. In the **Scripts** section, you can add, edit, or remove scripts.
+   1. In the **Scripts** section, you can add, edit, or remove scripts.
 @z
 
 @x
@@ -196,66 +196,66 @@ To customize a Docker Hardened Image, follow these steps:
 
 @x
       You must specify the following:
-        - The path where the script will be placed
-        - The script content
-        - The UID and GID ownership of the script
-        - The octal file permissions of the script
 @y
       You must specify the following:
-        - The path where the script will be placed
-        - The script content
-        - The UID and GID ownership of the script
-        - The octal file permissions of the script
 @z
 
 @x
-10. Select **Next: Configure** and then configure the following options.
+      - The path where the script will be placed
+      - The script content
+      - The UID and GID ownership of the script
+      - The octal file permissions of the script
 @y
-10. Select **Next: Configure** and then configure the following options.
+      - The path where the script will be placed
+      - The script content
+      - The UID and GID ownership of the script
+      - The octal file permissions of the script
 @z
 
 @x
-   1. Specify a suffix that is appended to the customized image's tag. For
-      example, if you specify `custom` when customizing the `dhi-python:3.13`
-      image, the customized image will be tagged as `dhi-python:3.13_custom`.
-   2. Select the platforms you want to build the image for.
-   3. Add [`ENTRYPOINT`](/reference/dockerfile/#entrypoint) and
-      [`CMD`](/reference/dockerfile/#cmd) arguments to the image. These
-      arguments are appended to the base image's entrypoint and command.
-   4. Specify the users to add to the image.
-   5. Specify the user groups to add to the image.
-   6. Select which [user](/reference/dockerfile/#user) to run the images as.
-   7. Specify the [environment variables](/reference/dockerfile/#env) and their
-      values that the image will contain.
-   8. Add [annotations](/build/metadata/annotations/) to the image.
-   9. Add [labels](/reference/dockerfile/#label) to the image.
-11. Select **Create Customization**.
+1. Select **Next: Configure** and then configure the following options.
+1. Specify a suffix that is appended to the customized image's tag. For
+   example, if you specify `custom` when customizing the `dhi-python:3.13`
+   image, the customized image will be tagged as `dhi-python:3.13_custom`.
+1. Select the platforms you want to build the image for.
+1. Add [`ENTRYPOINT`](/reference/dockerfile/#entrypoint) and
+   [`CMD`](/reference/dockerfile/#cmd) arguments to the image. These
+   arguments are appended to the base image's entrypoint and command.
+1. Specify the users to add to the image.
+1. Specify the user groups to add to the image.
+1. Select which [user](/reference/dockerfile/#user) to run the images as.
+1. Specify the [environment variables](/reference/dockerfile/#env) and their
+   values that the image will contain.
+1. Add [annotations](/build/metadata/annotations/) to the image.
+1. Add [labels](/reference/dockerfile/#label) to the image.
+1. Select **Create Customization**.
 @y
-   1. Specify a suffix that is appended to the customized image's tag. For
-      example, if you specify `custom` when customizing the `dhi-python:3.13`
-      image, the customized image will be tagged as `dhi-python:3.13_custom`.
-   2. Select the platforms you want to build the image for.
-   3. Add [`ENTRYPOINT`](__SUBDIR__/reference/dockerfile/#entrypoint) and
-      [`CMD`](__SUBDIR__/reference/dockerfile/#cmd) arguments to the image. These
-      arguments are appended to the base image's entrypoint and command.
-   4. Specify the users to add to the image.
-   5. Specify the user groups to add to the image.
-   6. Select which [user](__SUBDIR__/reference/dockerfile/#user) to run the images as.
-   7. Specify the [environment variables](__SUBDIR__/reference/dockerfile/#env) and their
-      values that the image will contain.
-   8. Add [annotations](__SUBDIR__/build/metadata/annotations/) to the image.
-   9. Add [labels](__SUBDIR__/reference/dockerfile/#label) to the image.
-11. Select **Create Customization**.
+1. Select **Next: Configure** and then configure the following options.
+1. Specify a suffix that is appended to the customized image's tag. For
+   example, if you specify `custom` when customizing the `dhi-python:3.13`
+   image, the customized image will be tagged as `dhi-python:3.13_custom`.
+1. Select the platforms you want to build the image for.
+1. Add [`ENTRYPOINT`](/reference/dockerfile/#entrypoint) and
+   [`CMD`](/reference/dockerfile/#cmd) arguments to the image. These
+   arguments are appended to the base image's entrypoint and command.
+1. Specify the users to add to the image.
+1. Specify the user groups to add to the image.
+1. Select which [user](/reference/dockerfile/#user) to run the images as.
+1. Specify the [environment variables](/reference/dockerfile/#env) and their
+   values that the image will contain.
+1. Add [annotations](/build/metadata/annotations/) to the image.
+1. Add [labels](/reference/dockerfile/#label) to the image.
+1. Select **Create Customization**.
 @z
 
 @x
-    A summary of the customization appears. It may take some time for the image
-    to build. Once built, it will appear in the **Tags** tab of the repository,
-    and your team members can pull it like any other image.
+   A summary of the customization appears. It may take some time for the image
+   to build. Once built, it will appear in the **Tags** tab of the repository,
+   and your team members can pull it like any other image.
 @y
-    A summary of the customization appears. It may take some time for the image
-    to build. Once built, it will appear in the **Tags** tab of the repository,
-    and your team members can pull it like any other image.
+   A summary of the customization appears. It may take some time for the image
+   to build. Once built, it will appear in the **Tags** tab of the repository,
+   and your team members can pull it like any other image.
 @z
 
 @x
