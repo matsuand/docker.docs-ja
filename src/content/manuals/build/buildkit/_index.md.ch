@@ -380,9 +380,9 @@ see [GitHub issues](https://github.com/moby/buildkit/issues?q=is%3Aissue%20state
 @z
 
 @x
-3. Install containerd version 1.7.7 or later following the setup instructions [here](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd-on-windows).
+3. Install containerd version 1.7.7 or later following the [setup instructions](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd-on-windows).
 @y
-3. Install containerd version 1.7.7 or later following the setup instructions [here](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd-on-windows).
+3. Install containerd version 1.7.7 or later following the [setup instructions](https://github.com/containerd/containerd/blob/main/docs/getting-started.md#installing-containerd-on-windows).
 @z
 
 @x

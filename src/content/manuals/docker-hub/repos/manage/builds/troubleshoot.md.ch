@@ -6,11 +6,13 @@ title: Troubleshoot your autobuilds
 description: How to troubleshoot Automated builds
 keywords: docker hub, troubleshoot, automated builds, autobuilds
 tags: [ Troubleshooting ]
+linkTitle: Troubleshoot
 @y
 title: Troubleshoot your autobuilds
 description: How to troubleshoot Automated builds
 keywords: docker hub, troubleshoot, automated builds, autobuilds
 tags: [ Troubleshooting ]
+linkTitle: Troubleshoot
 @z
 
 @x
@@ -145,14 +147,14 @@ system access to the repositories.
 
 @x
 2. Copy the private half of the keypair to your clipboard.
-3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, follow the steps [here](index.md#configure-automated-builds) to configure the automated build.)
+3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, [follow the steps here](index.md#configure-automated-builds) to configure the automated build.)
 4. At the bottom of the screen, select the **plus** icon next to **Build Environment variables**.
 5. Enter `SSH_PRIVATE` as the name for the new environment variable.
 6. Paste the private half of the keypair into the **Value** field.
 7. Select **Save**, or **Save and Build** to validate that the build now completes.
 @y
 2. Copy the private half of the keypair to your clipboard.
-3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, follow the steps [here](index.md#configure-automated-builds) to configure the automated build.)
+3. In Docker Hub, navigate to the build page for the repository that has linked private submodules. (If necessary, [follow the steps here](index.md#configure-automated-builds) to configure the automated build.)
 4. At the bottom of the screen, select the **plus** icon next to **Build Environment variables**.
 5. Enter `SSH_PRIVATE` as the name for the new environment variable.
 6. Paste the private half of the keypair into the **Value** field.

@@ -290,11 +290,11 @@ the unused contexts.
 @z
 
 @x
-Illustrative examples of how this is used in Buildx can be found
-[here](https://github.com/docker/buildx/blob/master/docs/reference/buildx_build.md#-additional-build-contexts---build-context).
+Refer to the reference documentation for [`docker buildx build --build-context`](https://github.com/docker/buildx/blob/master/docs/reference/buildx_build.md#-additional-build-contexts---build-context)
+for example usage.
 @y
-Illustrative examples of how this is used in Buildx can be found
-[here](https://github.com/docker/buildx/blob/master/docs/reference/buildx_build.md#-additional-build-contexts---build-context).
+Refer to the reference documentation for [`docker buildx build --build-context`](https://github.com/docker/buildx/blob/master/docs/reference/buildx_build.md#-additional-build-contexts---build-context)
+for example usage.
 @z
 
 @x

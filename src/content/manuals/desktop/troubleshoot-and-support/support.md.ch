@@ -42,19 +42,23 @@ Support response times and availability vary by subscription tier:
 @z
 
 @x
-- **Docker Pro**: 3 business day response
-- **Docker Team**: 2 business day response, 24×5 availability
-- **Docker Business**: 1 business day response, 24×5 availability
+- Docker Pro: 3 business day response
+- Docker Team: 2 business day response, 24×5 availability
+- Docker Business: 1 business day response, 24×5 availability
 @y
-- **Docker Pro**: 3 business day response
-- **Docker Team**: 2 business day response, 24×5 availability
-- **Docker Business**: 1 business day response, 24×5 availability
+- Docker Pro: 3 business day response
+- Docker Team: 2 business day response, 24×5 availability
+- Docker Business: 1 business day response, 24×5 availability
 @z
 
 @x
-Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+> [!NOTE]
+>
+> Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
 @y
-Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+> [!NOTE]
+>
+> Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
 @z
 
 @x

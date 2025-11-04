@@ -64,9 +64,9 @@ If all of the above criteria are met, you can reference the following best pract
 @z
 
 @x
-Videos are not hosted in the Docker documentation repository. To add a video, you can use a [link](./links.md) to hosted content, or embed using an [iframe](#iframe).
+Videos are not hosted in the Docker documentation repository. To add a video, you can [link to](./links.md) hosted content, or embed using an [iframe](#iframe).
 @y
-Videos are not hosted in the Docker documentation repository. To add a video, you can use a [link](./links.md) to hosted content, or embed using an [iframe](#iframe).
+Videos are not hosted in the Docker documentation repository. To add a video, you can [link to](./links.md) hosted content, or embed using an [iframe](#iframe).
 @z
 
 @x

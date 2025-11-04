@@ -22,7 +22,7 @@ linkTitle: Compose Bridge
 @z
 
 @x
-Compose Bridge converts your Docker Compose configuration into platform-specific deployment formats such as Kubernetes manifests. By default, it geneterates:
+Compose Bridge converts your Docker Compose configuration into platform-specific deployment formats such as Kubernetes manifests. By default, it generates:
 @y
 Compose Bridge は Docker Compose 設定を、Kubernetes マニフェストのようなプラットフォーム固有のデプロイフォーマットへと変換するものです。
 デフォルトでは以下を生成します。

@@ -26,6 +26,36 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 2.40.3
+@y
+## 2.40.3
+@z
+
+@x
+{{< release-date date="2025-10-30" >}}
+@y
+{{< release-date date="2025-10-30" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Lifecycle hooks now apply to the `restart` command
+- Improved override support when publishing OCI artifacts
+- Fixed an issue to ensure an image exists only for targeted services with the `run` command
+- Added a default Prompt implementation
+@y
+- Lifecycle hooks now apply to the `restart` command
+- Improved override support when publishing OCI artifacts
+- Fixed an issue to ensure an image exists only for targeted services with the `run` command
+- Added a default Prompt implementation
+@z
+
+@x
 ## 2.40.2
 @y
 ## 2.40.2

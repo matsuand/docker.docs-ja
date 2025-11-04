@@ -56,8 +56,8 @@ Here are the most common types of instructions:
 | [`COPY <src> <dest>`](/reference/dockerfile.md#copy)      | Copies new files or directories from `<src>` and adds them to the filesystem of the container at the path `<dest>`.                                                                                      |
 | [`CMD <command>`](/reference/dockerfile.md#cmd)           | Lets you define the default program that is run once you start the container based on this image. Each Dockerfile only has one `CMD`, and only the last `CMD` instance is respected when multiple exist. |
 @y
-| Instruction                                              | Description                                                                                                                                                                                              |
-|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Instruction                                               | Description                                                                                                                                                                                              |
+|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [`FROM <image>`](reference/dockerfile.md#from)           | Defines a base for your image.                                                                                                                                                                           |
 | [`RUN <command>`](reference/dockerfile.md#run)           | Executes any commands in a new layer on top of the current image and commits the result. `RUN` also has a shell form for running commands.                                                               |
 | [`WORKDIR <directory>`](reference/dockerfile.md#workdir) | Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions that follow it in the Dockerfile.                                                                          |
@@ -362,10 +362,10 @@ Dockerfile `FROM` instruction.
 @z
 
 @x
-[Docker Hub](https://hub.docker.com/search?image_filter=official&q=&type=image)
+[Docker Hub](https://hub.docker.com/search?badges=official)
 contains a large set of official images that you can use for this purpose.
 @y
-[Docker Hub](https://hub.docker.com/search?image_filter=official&q=&type=image)
+[Docker Hub](https://hub.docker.com/search?badges=official)
 contains a large set of official images that you can use for this purpose.
 @z
 
@@ -482,11 +482,11 @@ use the command to install the flask web framework.
 @x
 The next instruction uses the
 [`COPY` instruction](/reference/dockerfile.md#copy) to copy the
-`hello.py` file from the local build context into the root directory of our image. 
+`hello.py` file from the local build context into the root directory of our image.
 @y
 The next instruction uses the
 [`COPY` instruction](reference/dockerfile.md#copy) to copy the
-`hello.py` file from the local build context into the root directory of our image. 
+`hello.py` file from the local build context into the root directory of our image.
 @z
 
 @x
@@ -703,4 +703,16 @@ Docker host.
 @y
 This publishes the container's port 8000 to `http://localhost:8000` on the
 Docker host.
+@z
+
+@x
+> [!TIP]
+>
+> To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
+> see [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=docker.docker).
+@y
+> [!TIP]
+>
+> To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
+> see [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=docker.docker).
 @z

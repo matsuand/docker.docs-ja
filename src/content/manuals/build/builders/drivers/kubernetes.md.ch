@@ -171,12 +171,10 @@ is configurable using the following driver options:
 
 @x
   These options allow requesting and limiting the resources available to each
-  BuildKit pod according to the official Kubernetes documentation
-  [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).
+  BuildKit pod [according to the official Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).
 @y
   These options allow requesting and limiting the resources available to each
-  BuildKit pod according to the official Kubernetes documentation
-  [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).
+  BuildKit pod [according to the official Kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/).
 @z
 
 @x
@@ -591,12 +589,12 @@ that you want to support.
 
 @x
 The Kubernetes driver supports rootless mode. For more information on how
-rootless mode works, and its requirements, see
-[here](https://github.com/moby/buildkit/blob/master/docs/rootless.md).
+rootless mode works, and its requirements, refer to the
+[Rootless Buildkit documentation](https://github.com/moby/buildkit/blob/master/docs/rootless.md).
 @y
 The Kubernetes driver supports rootless mode. For more information on how
-rootless mode works, and its requirements, see
-[here](https://github.com/moby/buildkit/blob/master/docs/rootless.md).
+rootless mode works, and its requirements, refer to the
+[Rootless Buildkit documentation](https://github.com/moby/buildkit/blob/master/docs/rootless.md).
 @z
 
 @x

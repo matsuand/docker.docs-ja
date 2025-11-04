@@ -52,17 +52,15 @@ CONFIG_SECCOMP=y
 @z
 
 @x
-The default `seccomp` profile provides a sane default for running containers with
-seccomp and disables around 44 system calls out of 300+. It is moderately
-protective while providing wide application compatibility. The default Docker
-profile can be found
-[here](https://github.com/moby/profiles/blob/main/seccomp/default.json).
+The [default `seccomp` profile](https://github.com/moby/profiles/blob/main/seccomp/default.json)
+provides a sane default for running containers with seccomp and disables around
+44 system calls out of 300+. It is moderately protective while providing wide
+application compatibility.
 @y
-The default `seccomp` profile provides a sane default for running containers with
-seccomp and disables around 44 system calls out of 300+. It is moderately
-protective while providing wide application compatibility. The default Docker
-profile can be found
-[here](https://github.com/moby/profiles/blob/main/seccomp/default.json).
+The [default `seccomp` profile](https://github.com/moby/profiles/blob/main/seccomp/default.json)
+provides a sane default for running containers with seccomp and disables around
+44 system calls out of 300+. It is moderately protective while providing wide
+application compatibility.
 @z
 
 @x

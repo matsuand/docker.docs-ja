@@ -235,12 +235,10 @@ The newly created configuration file contains information about the location of 
 
 @x
 For more detailed information about how to use notary outside of the
-Docker Content Trust use cases, refer to the Notary CLI documentation
-[here](https://github.com/theupdateframework/notary/blob/master/docs/command_reference.md) 
+Docker Content Trust use cases, refer to the [Notary CLI documentation](https://github.com/theupdateframework/notary/blob/master/docs/command_reference.md) 
 @y
 For more detailed information about how to use notary outside of the
-Docker Content Trust use cases, refer to the Notary CLI documentation
-[here](https://github.com/theupdateframework/notary/blob/master/docs/command_reference.md) 
+Docker Content Trust use cases, refer to the [Notary CLI documentation](https://github.com/theupdateframework/notary/blob/master/docs/command_reference.md) 
 @z
 
 @x
@@ -471,14 +469,14 @@ jeff                                    9deed251daa1aa6f9d5f9b752847647cf8d705da
 When the first delegation is added to the Notary Server using `$ docker trust`,
 we automatically initiate trust data for the repository. This includes creating 
 the notary target and snapshots keys, and rotating the snapshot key to be 
-managed by the notary server. More information on these keys can be found 
-[here](trust_key_mng.md)
+managed by the notary server. More information on these keys can be found in
+[Manage keys for content trust](trust_key_mng.md).
 @y
 When the first delegation is added to the Notary Server using `$ docker trust`,
 we automatically initiate trust data for the repository. This includes creating 
 the notary target and snapshots keys, and rotating the snapshot key to be 
-managed by the notary server. More information on these keys can be found 
-[here](trust_key_mng.md)
+managed by the notary server. More information on these keys can be found in
+[Manage keys for content trust](trust_key_mng.md).
 @z
 
 @x
@@ -948,11 +946,11 @@ Successfully removed ben from registry.example.com/admin/demo
 @z
 
 @x
-   More information on the `$ notary witness` command can be found 
-   [here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
+   For more information on the `notary witness` command, refer to the
+   [Notary client advanced usage guide](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
 @y
-   More information on the `$ notary witness` command can be found 
-   [here](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
+   For more information on the `notary witness` command, refer to the
+   [Notary client advanced usage guide](https://github.com/theupdateframework/notary/blob/master/docs/advanced_usage.md#recovering-a-delegation)
 @z
 
 @x

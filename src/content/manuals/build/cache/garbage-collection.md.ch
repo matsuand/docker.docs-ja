@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Build garbage collection
@@ -217,29 +218,7 @@ The following snippet shows the default builder configuration for the `docker`
 driver for Docker Desktop users:
 @z
 
-@x
-```json
-{
-  "builder": {
-    "gc": {
-      "defaultKeepStorage": "20GB",
-      "enabled": true
-    }
-  }
-}
-```
-@y
-```json
-{
-  "builder": {
-    "gc": {
-      "defaultKeepStorage": "20GB",
-      "enabled": true
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 The `defaultKeepStorage` option configures the size limit of the build cache,
@@ -273,51 +252,7 @@ Given the Docker Desktop default value for `defaultKeepStorage` of 20GB, the
 default GC policies resolve to:
 @z
 
-@x
-```json
-{
-  "builder": {
-    "gc": {
-      "enabled": true,
-      "policy": [
-        {
-          "keepStorage": "2.764GB",
-          "filter": [
-            "unused-for=48h",
-            "type==source.local,type==exec.cachemount,type==source.git.checkout"
-          ]
-        },
-        { "keepStorage": "20GB", "filter": ["unused-for=1440h"] },
-        { "keepStorage": "20GB" },
-        { "keepStorage": "20GB", "all": true }
-      ]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "builder": {
-    "gc": {
-      "enabled": true,
-      "policy": [
-        {
-          "keepStorage": "2.764GB",
-          "filter": [
-            "unused-for=48h",
-            "type==source.local,type==exec.cachemount,type==source.git.checkout"
-          ]
-        },
-        { "keepStorage": "20GB", "filter": ["unused-for=1440h"] },
-        { "keepStorage": "20GB" },
-        { "keepStorage": "20GB", "all": true }
-      ]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 The easiest way to tweak the build cache configuration for the `docker` driver
@@ -333,6 +268,12 @@ is to adjust the `defaultKeepStorage` option:
 @y
 - Increase the limit if you feel like you think the GC is too aggressive.
 - Decrease the limit if you need to preserve space.
+@z
+
+@x
+#### Custom GC policies in the Docker daemon configuration file
+@y
+#### Custom GC policies in the Docker daemon configuration file
 @z
 
 @x
@@ -355,46 +296,42 @@ following policies:
 3. Remove any cache entries if build cache exceeds 100GB.
 @z
 
+% snip code...
+
 @x
-```json
-{
-  "builder": {
-    "gc": {
-      "enabled": true,
-      "defaultKeepStorage": "50GB",
-      "policy": [
-        { "keepStorage": "0", "filter": ["unused-for=1440h"] },
-        { "keepStorage": "0" },
-        { "keepStorage": "100GB", "all": true }
-      ]
-    }
-  }
-}
-```
+> [!NOTE]
+> In the Docker daemon configuration file, the "equals" operator in GC filters
+> is denoted using a single `=`, whereas BuildKit's configuration file uses
+> `==`:
 @y
-```json
-{
-  "builder": {
-    "gc": {
-      "enabled": true,
-      "defaultKeepStorage": "50GB",
-      "policy": [
-        { "keepStorage": "0", "filter": ["unused-for=1440h"] },
-        { "keepStorage": "0" },
-        { "keepStorage": "100GB", "all": true }
-      ]
-    }
-  }
-}
-```
+> [!NOTE]
+> In the Docker daemon configuration file, the "equals" operator in GC filters
+> is denoted using a single `=`, whereas BuildKit's configuration file uses
+> `==`:
 @z
 
 @x
-Policies 1 and 2 here set `keepStorage` to `0`, which means they'll fall back
-to the default limit of 50GB as defined by `defaultKeepStorage`.
+> | `daemon.json`       | `buildkitd.toml`     |
+> |---------------------|----------------------|
+> | `type=source.local` | `type==source.local` |
+> | `private=true`      | `private==true`      |
+> | `shared=true`       | `shared==true`       |
 @y
-Policies 1 and 2 here set `keepStorage` to `0`, which means they'll fall back
-to the default limit of 50GB as defined by `defaultKeepStorage`.
+> | `daemon.json`       | `buildkitd.toml`     |
+> |---------------------|----------------------|
+> | `type=source.local` | `type==source.local` |
+> | `private=true`      | `private==true`      |
+> | `shared=true`       | `shared==true`       |
+@z
+
+@x
+> See [prune filters](/reference/cli/docker/buildx/prune/#filter) for
+> information about available GC filters. GC configuration in `daemon.json`
+> supports all filters except `mutable` and `immutable`.
+@y
+> See [prune filters](/reference/cli/docker/buildx/prune/#filter) for
+> information about available GC filters. GC configuration in `daemon.json`
+> supports all filters except `mutable` and `immutable`.
 @z
 
 @x
@@ -685,4 +622,12 @@ when defining a GC policy you have two additional configuration options:
   pruned.
 - `filters`: Filters let you specify specific types of cache records that a GC
   policy is allowed to prune.
+@z
+
+@x
+See [buildx prune filters](/reference/cli/docker/buildx/prune/#filter) for
+information about available GC filters.
+@y
+See [buildx prune filters](/reference/cli/docker/buildx/prune/#filter) for
+information about available GC filters.
 @z

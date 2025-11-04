@@ -6,15 +6,11 @@
 @x
 title: Set, use, and manage variables in a Compose file with interpolation
 linkTitle: Interpolation
+description: How to set, use, and manage variables in your Compose file with interpolation
+keywords: compose, orchestration, environment, variables, interpolation
 @y
 title: Set, use, and manage variables in a Compose file with interpolation
 linkTitle: Interpolation
-@z
-
-@x
-description: How to set, use, and manage variables in your Compose file with interpolation
-keywords: compose, orchestration, environment, variables, interpolation
-@y
 description: How to set, use, and manage variables in your Compose file with interpolation
 keywords: compose, orchestration, environment, variables, interpolation
 @z
@@ -41,7 +37,25 @@ Below is a simple example:
 Below is a simple example: 
 @z
 
-% snip command...
+@x
+```console
+$ cat .env
+TAG=v1.5
+$ cat compose.yaml
+services:
+  web:
+    image: "webapp:${TAG}"
+```
+@y
+```console
+$ cat .env
+TAG=v1.5
+$ cat compose.yaml
+services:
+  web:
+    image: "webapp:${TAG}"
+```
+@z
 
 @x
 When you run `docker compose up`, the `web` service defined in the Compose file [interpolates](variable-interpolation.md) in the image `webapp:v1.5` which was set in the `.env` file. You can verify this with the
@@ -51,7 +65,21 @@ When you run `docker compose up`, the `web` service defined in the Compose file 
 [config command](reference/cli/docker/compose/config.md), which prints your resolved application config to the terminal:
 @z
 
-% snip command...
+@x
+```console
+$ docker compose config
+services:
+  web:
+    image: 'webapp:v1.5'
+```
+@y
+```console
+$ docker compose config
+services:
+  web:
+    image: 'webapp:v1.5'
+```
+@z
 
 @x
 ## Interpolation syntax
@@ -159,7 +187,49 @@ Basic example:
 Basic example: 
 @z
 
-% snip command...
+@x
+```console
+$ cat .env
+## define COMPOSE_DEBUG based on DEV_MODE, defaults to false
+COMPOSE_DEBUG=${DEV_MODE:-false}
+@y
+```console
+$ cat .env
+## define COMPOSE_DEBUG based on DEV_MODE, defaults to false
+COMPOSE_DEBUG=${DEV_MODE:-false}
+@z
+
+@x
+$ cat compose.yaml 
+  services:
+    webapp:
+      image: my-webapp-image
+      environment:
+        - DEBUG=${COMPOSE_DEBUG}
+@y
+$ cat compose.yaml 
+  services:
+    webapp:
+      image: my-webapp-image
+      environment:
+        - DEBUG=${COMPOSE_DEBUG}
+@z
+
+@x
+$ DEV_MODE=true docker compose config
+services:
+  webapp:
+    environment:
+      DEBUG: "true"
+```
+@y
+$ DEV_MODE=true docker compose config
+services:
+  webapp:
+    environment:
+      DEBUG: "true"
+```
+@z
 
 @x
 #### Additional information 
@@ -169,15 +239,23 @@ Basic example:
 
 @x
 - If you define a variable in your `.env` file, you can reference it directly in your `compose.yaml` with the [`environment` attribute](/reference/compose-file/services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yaml` file looks like this:
+   ```yaml
+    services:
+      webapp:
+        image: my-webapp-image
+        environment:
+          - DEBUG=${DEBUG}
+   ```
+   Docker Compose replaces `${DEBUG}` with the value from the `.env` file
 @y
 - If you define a variable in your `.env` file, you can reference it directly in your `compose.yaml` with the [`environment` attribute](reference/compose-file/services.md#environment). For example, if your `.env` file contains the environment variable `DEBUG=1` and your `compose.yaml` file looks like this:
-@z
-
-% snip code...
-
-@x
-   Docker Compose replaces `${DEBUG}` with the value from the `.env` file
-@y
+   ```yaml
+    services:
+      webapp:
+        image: my-webapp-image
+        environment:
+          - DEBUG=${DEBUG}
+   ```
    Docker Compose replaces `${DEBUG}` with the value from the `.env` file
 @z
 
@@ -234,9 +312,13 @@ The following syntax rules apply to environment files:
 - Blank lines are ignored.
 - Unquoted and double-quoted (`"`) values have interpolation applied.
 - Each line represents a key-value pair. Values can optionally be quoted.
+- Delimiter separating key and value can be either `=` or `:`.
+- Spaces before and after value are ignored.
   - `VAR=VAL` -> `VAL`
   - `VAR="VAL"` -> `VAL`
   - `VAR='VAL'` -> `VAL`
+  - `VAR: VAL` -> `VAL`
+  - `VAR = VAL  ` -> `VAL` <!-- markdownlint-disable-line no-space-in-code -->
 - Inline comments for unquoted values must be preceded with a space.
   - `VAR=VAL # comment` -> `VAL`
   - `VAR=VAL# not a comment` -> `VAL# not a comment`
@@ -253,14 +335,19 @@ The following syntax rules apply to environment files:
   - `VAR="some\tvalue"` -> `some  value`
   - `VAR='some\tvalue'` -> `some\tvalue`
   - `VAR=some\tvalue` -> `some\tvalue`
+- Single-quoted values can span multiple lines. Example:
 @y
 - Lines beginning with `#` are processed as comments and ignored.
 - Blank lines are ignored.
 - Unquoted and double-quoted (`"`) values have interpolation applied.
 - Each line represents a key-value pair. Values can optionally be quoted.
+- Delimiter separating key and value can be either `=` or `:`.
+- Spaces before and after value are ignored.
   - `VAR=VAL` -> `VAL`
   - `VAR="VAL"` -> `VAL`
   - `VAR='VAL'` -> `VAL`
+  - `VAR: VAL` -> `VAL`
+  - `VAR = VAL  ` -> `VAL` <!-- markdownlint-disable-line no-space-in-code -->
 - Inline comments for unquoted values must be preceded with a space.
   - `VAR=VAL # comment` -> `VAL`
   - `VAR=VAL# not a comment` -> `VAL# not a comment`
@@ -277,6 +364,41 @@ The following syntax rules apply to environment files:
   - `VAR="some\tvalue"` -> `some  value`
   - `VAR='some\tvalue'` -> `some\tvalue`
   - `VAR=some\tvalue` -> `some\tvalue`
+- Single-quoted values can span multiple lines. Example:
+@z
+
+@x
+   ```yaml
+   KEY='SOME
+   VALUE'
+   ```
+@y
+   ```yaml
+   KEY='SOME
+   VALUE'
+   ```
+@z
+
+@x
+   If you then run `docker compose config`, you'll see:
+@y
+   If you then run `docker compose config`, you'll see:
+@z
+
+@x
+   ```yaml
+   environment:
+     KEY: |-
+       SOME
+       VALUE
+   ```
+@y
+   ```yaml
+   environment:
+     KEY: |-
+       SOME
+       VALUE
+   ```
 @z
 
 @x
@@ -299,7 +421,15 @@ The advantage of this method is that you can store the file anywhere and name it
 This file path is relative to the current working directory where the Docker Compose command is executed. Passing the file path is done using the `--env-file` option:
 @z
 
-% snip command...
+@x
+```console
+$ docker compose --env-file ./config/.env.dev up
+```
+@y
+```console
+$ docker compose --env-file ./config/.env.dev up
+```
+@z
 
 @x
 #### Additional information 
@@ -310,41 +440,84 @@ This file path is relative to the current working directory where the Docker Com
 @x
 - This method is useful if you want to temporarily override an `.env` file that is already referenced in your `compose.yaml` file. For example you may have different `.env` files for production ( `.env.prod`) and testing (`.env.test`).
   In the following example, there are two environment files, `.env` and `.env.dev`. Both have different values set for `TAG`. 
+  ```console
+  $ cat .env
+  TAG=v1.5
+  $ cat ./config/.env.dev
+  TAG=v1.6
+  $ cat compose.yaml
+  services:
+    web:
+      image: "webapp:${TAG}"
+  ```
+  If the `--env-file` is not used in the command line, the `.env` file is loaded by default:
+  ```console
+  $ docker compose config
+  services:
+    web:
+      image: 'webapp:v1.5'
+  ```
+  Passing the `--env-file` argument overrides the default file path:
+  ```console
+  $ docker compose --env-file ./config/.env.dev config
+  services:
+    web:
+      image: 'webapp:v1.6'
+  ```
+  When an invalid file path is being passed as an `--env-file` argument, Compose returns an error:
+  ```console
+  $ docker compose --env-file ./doesnotexist/.env.dev  config
+  ERROR: Couldn't find env file: /home/user/./doesnotexist/.env.dev
+  ```
+- You can use multiple `--env-file` options to specify multiple environment files, and Docker Compose reads them in order. Later files can override variables from earlier files.
+  ```console
+  $ docker compose --env-file .env --env-file .env.override up
+  ```
+- You can override specific environment variables from the command line when starting containers. 
+  ```console
+  $ docker compose --env-file .env.dev up -e DATABASE_URL=mysql://new_user:new_password@new_db:3306/new_database
+  ```
 @y
 - This method is useful if you want to temporarily override an `.env` file that is already referenced in your `compose.yaml` file. For example you may have different `.env` files for production ( `.env.prod`) and testing (`.env.test`).
   In the following example, there are two environment files, `.env` and `.env.dev`. Both have different values set for `TAG`. 
-@z
-% snip command...
-@x
+  ```console
+  $ cat .env
+  TAG=v1.5
+  $ cat ./config/.env.dev
+  TAG=v1.6
+  $ cat compose.yaml
+  services:
+    web:
+      image: "webapp:${TAG}"
+  ```
   If the `--env-file` is not used in the command line, the `.env` file is loaded by default:
-@y
-  If the `--env-file` is not used in the command line, the `.env` file is loaded by default:
-@z
-% snip command...
-@x
+  ```console
+  $ docker compose config
+  services:
+    web:
+      image: 'webapp:v1.5'
+  ```
   Passing the `--env-file` argument overrides the default file path:
-@y
-  Passing the `--env-file` argument overrides the default file path:
-@z
-% snip command...
-@x
+  ```console
+  $ docker compose --env-file ./config/.env.dev config
+  services:
+    web:
+      image: 'webapp:v1.6'
+  ```
   When an invalid file path is being passed as an `--env-file` argument, Compose returns an error:
-@y
-  When an invalid file path is being passed as an `--env-file` argument, Compose returns an error:
-@z
-% snip command...
-@x
+  ```console
+  $ docker compose --env-file ./doesnotexist/.env.dev  config
+  ERROR: Couldn't find env file: /home/user/./doesnotexist/.env.dev
+  ```
 - You can use multiple `--env-file` options to specify multiple environment files, and Docker Compose reads them in order. Later files can override variables from earlier files.
-@y
-- You can use multiple `--env-file` options to specify multiple environment files, and Docker Compose reads them in order. Later files can override variables from earlier files.
-@z
-% snip command...
-@x
+  ```console
+  $ docker compose --env-file .env --env-file .env.override up
+  ```
 - You can override specific environment variables from the command line when starting containers. 
-@y
-- You can override specific environment variables from the command line when starting containers. 
+  ```console
+  $ docker compose --env-file .env.dev up -e DATABASE_URL=mysql://new_user:new_password@new_db:3306/new_database
+  ```
 @z
-% snip command...
 
 @x
 ### local `.env` file versus &lt;project directory&gt; `.env` file
@@ -374,7 +547,47 @@ This mechanism makes it possible to invoke an existing Compose project with a cu
 This mechanism makes it possible to invoke an existing Compose project with a custom set of variables as overrides, without the need to pass environment variables by the command line.
 @z
 
-% snip command...
+@x
+```console
+$ cat .env
+COMPOSE_FILE=../compose.yaml
+POSTGRES_VERSION=9.3
+@y
+```console
+$ cat .env
+COMPOSE_FILE=../compose.yaml
+POSTGRES_VERSION=9.3
+@z
+
+@x
+$ cat ../compose.yaml 
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION}"
+$ cat ../.env
+POSTGRES_VERSION=9.2
+@y
+$ cat ../compose.yaml 
+services:
+  db:
+    image: "postgres:${POSTGRES_VERSION}"
+$ cat ../.env
+POSTGRES_VERSION=9.2
+@z
+
+@x
+$ docker compose config
+services:
+  db:
+    image: "postgres:9.3"
+```
+@y
+$ docker compose config
+services:
+  db:
+    image: "postgres:9.3"
+```
+@z
 
 @x
 ### Substitute from the shell 
@@ -390,7 +603,17 @@ You can use existing environment variables from your host machine or from the sh
 For example, suppose the shell contains `POSTGRES_VERSION=9.3` and you supply the following configuration:
 @z
 
-% snip code...
+@x
+```yaml
+db:
+  image: "postgres:${POSTGRES_VERSION}"
+```
+@y
+```yaml
+db:
+  image: "postgres:${POSTGRES_VERSION}"
+```
+@z
 
 @x
 When you run `docker compose up` with this configuration, Compose looks for the `POSTGRES_VERSION` environment variable in the shell and substitutes its value in. For this example, Compose resolves the image to `postgres:9.3` before running the configuration.

@@ -13,11 +13,11 @@ title: Docker Verified Publisher Program
 
 @x
 [The Docker Verified Publisher
-Program](https://hub.docker.com/search?q=&image_filter=store) provides
+Program](https://hub.docker.com/search?badges=verified_publisher) provides
 high-quality images from commercial publishers verified by Docker.
 @y
 [The Docker Verified Publisher
-Program](https://hub.docker.com/search?q=&image_filter=store) provides
+Program](https://hub.docker.com/search?badges=verified_publisher) provides
 high-quality images from commercial publishers verified by Docker.
 @z
 

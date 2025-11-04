@@ -14,9 +14,9 @@ keywords: docker hub, hub, insights, analytics, open source, Docker sponsored, p
 @z
 
 @x
-[Docker-Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
+[Docker-Sponsored Open Source images](https://hub.docker.com/search?badges=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
 @y
-[Docker-Sponsored Open Source images](https://hub.docker.com/search?q=&image_filter=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
+[Docker-Sponsored Open Source images](https://hub.docker.com/search?badges=open_source) are published and maintained by open-source projects sponsored by Docker through the program.
 @z
 
 @x

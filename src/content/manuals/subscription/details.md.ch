@@ -934,9 +934,13 @@ Support response times and availability vary by subscription tier:
 @z
 
 @x
-Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+> [!NOTE]
+>
+> Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
 @y
-Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
+> [!NOTE]
+>
+> Premium Support with faster response times and 24×7 availability is available as an add-on for Docker Business subscribers.
 @z
 
 @x

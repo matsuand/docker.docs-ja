@@ -63,13 +63,13 @@ Docker Hub のリポジトリにおいては、ソースプロバイダーへの
 @x
    > [!NOTE]
    >
-   > You may be redirected to the settings page to [link](link-source.md) the
-   > code repository service. Otherwise, if you are editing the build settings
+   > You may be redirected to the settings page to [link the code repository
+   > service](link-source.md). Otherwise, if you are editing the build settings
    > for an existing automated build, select **Configure automated builds**.
 @y
    > [!NOTE]
    >
-   > コードリポジトリサービスに [リンク](link-source.md) する設定ページにリダイレクトされる場合があります。
+   > [コードリポジトリサービスにリンク](link-source.md) する設定ページにリダイレクトされる場合があります。
    > そうではない場合であって、既存の自動ビルドに対する設定を修正しようとしている場合は **Configure automated builds** (自動ビルドの設定) を選びます。
 @z
 

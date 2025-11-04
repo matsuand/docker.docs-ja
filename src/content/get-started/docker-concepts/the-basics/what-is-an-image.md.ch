@@ -99,15 +99,15 @@ Docker Hub が提供するのはさまざまなイメージであり、そこに
 @z
 
 @x
-- [Docker Official Images](https://hub.docker.com/search?q=&type=image&image_filter=official) - a curated set of Docker repositories, serve as the starting point for the majority of users, and are some of the most secure on Docker Hub
-- [Docker Verified Publishers](https://hub.docker.com/search?q=&image_filter=store) - high-quality images from commercial publishers verified by Docker
-- [Docker-Sponsored Open Source](https://hub.docker.com/search?q=&image_filter=open_source) - images published and maintained by open-source projects sponsored by Docker through Docker's open source program
+- [Docker Official Images](https://hub.docker.com/search?badges=official) - a curated set of Docker repositories, serve as the starting point for the majority of users, and are some of the most secure on Docker Hub
+- [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher) - high-quality images from commercial publishers verified by Docker
+- [Docker-Sponsored Open Source](https://hub.docker.com/search?badges=open_source) - images published and maintained by open-source projects sponsored by Docker through Docker's open source program
 @y
-- [Docker 公式イメージ](https://hub.docker.com/search?q=&type=image&image_filter=official) - Docker が監修するリポジトリセットです。
+- [Docker 公式イメージ](https://hub.docker.com/search?badges=official) - Docker が監修するリポジトリセットです。
   非常に多くのユーザーがこのイメージをベースとして利用しています。
   Docker Hub の中でも最も安全なイメージです。
-- [Docker 認定公開者](https://hub.docker.com/search?q=&image_filter=store) (Docker Verified Publishers) - Docker 社が認定する商用公開者による高品質なイメージです。
-- [Docker がスポンサーとなっているオープンソース](https://hub.docker.com/search?q=&image_filter=open_source) - Docker のオープンソースプログラムを通じたオープンソースプロジェクトが公開管理するイメージ。
+- [Docker 認定公開者](https://hub.docker.com/search?badges=verified_publisher) (Docker Verified Publishers) - Docker 社が認定する商用公開者による高品質なイメージです。
+- [Docker がスポンサーとなっているオープンソース](https://hub.docker.com/search?badges=open_source) - Docker のオープンソースプログラムを通じたオープンソースプロジェクトが公開管理するイメージ。
 @z
 
 @x

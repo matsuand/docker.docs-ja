@@ -772,14 +772,10 @@ Steps:
 
 @x
 3. To add cross-compilation support, update the Dockerfile to use the
-   pre-defined `BUILDPLATFORM` and `TARGETPLATFORM` build arguments. These
-   arguments are automatically available in the Dockerfile when you use the
-   `--platform` flag with `docker build`.
+   pre-defined `BUILDPLATFORM`, `TARGETOS` and `TARGETARCH` build arguments.
 @y
 3. To add cross-compilation support, update the Dockerfile to use the
-   pre-defined `BUILDPLATFORM` and `TARGETPLATFORM` build arguments. These
-   arguments are automatically available in the Dockerfile when you use the
-   `--platform` flag with `docker build`.
+   pre-defined `BUILDPLATFORM`, `TARGETOS` and `TARGETARCH` build arguments.
 @z
 
 @x

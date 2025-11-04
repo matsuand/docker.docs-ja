@@ -69,10 +69,10 @@ usage: docker compose exec [OPTIONS] SERVICE COMMAND [ARGS...]
 
 @x no-tty
       description: |
-        Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY.
+        Disable pseudo-TTY allocation. By default 'docker compose exec' allocates a TTY.
 @y
       description: |
-        Disable pseudo-TTY allocation. By default `docker compose exec` allocates a TTY.
+        Disable pseudo-TTY allocation. By default 'docker compose exec' allocates a TTY.
 @z
 
 @x privileged

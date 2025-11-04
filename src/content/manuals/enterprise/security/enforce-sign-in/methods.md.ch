@@ -8,11 +8,13 @@ title: Configure sign-in enforcement
 linkTitle: Configure
 description: Configure sign-in enforcement for Docker Desktop using registry keys, configuration profiles, plist files, or registry.json files
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, linux
+tags: [admin]
 @y
 title: Configure sign-in enforcement
 linkTitle: Configure
 description: Configure sign-in enforcement for Docker Desktop using registry keys, configuration profiles, plist files, or registry.json files
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, linux
+tags: [admin]
 @z
 
 @x
@@ -190,9 +192,47 @@ Configuration profiles provide the most secure enforcement method for macOS, as 
 @z
 
 @x
-1. Create a file named `docker.mobileconfig` with this content:
+The payload is a dictionary of key-values. Docker Desktop supports the following keys:
 @y
-1. Create a file named `docker.mobileconfig` with this content:
+The payload is a dictionary of key-values. Docker Desktop supports the following keys:
+@z
+
+@x
+- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is separated by a semi-colon.
+@y
+- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is separated by a semi-colon.
+@z
+
+@x
+In Docker Desktop version 4.48 and later, the following keys are also supported: 
+@y
+In Docker Desktop version 4.48 and later, the following keys are also supported: 
+@z
+
+@x
+- `overrideProxyHTTP`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.
+- `overrideProxyHTTPS`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.
+- `overrideProxyExclude`: Bypasses proxy settings for the specified hosts and domains. Uses a comma-separated list.
+- `overrideProxyPAC`: Sets the file path where the PAC file is located. It has precedence over the remote PAC file on the selected proxy.
+- `overrideProxyEmbeddedPAC`: Sets the content of an in-memory PAC file. It has precedence over `overrideProxyPAC`.
+@y
+- `overrideProxyHTTP`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.
+- `overrideProxyHTTPS`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.
+- `overrideProxyExclude`: Bypasses proxy settings for the specified hosts and domains. Uses a comma-separated list.
+- `overrideProxyPAC`: Sets the file path where the PAC file is located. It has precedence over the remote PAC file on the selected proxy.
+- `overrideProxyEmbeddedPAC`: Sets the content of an in-memory PAC file. It has precedence over `overrideProxyPAC`.
+@z
+
+@x
+Overriding at least one of the proxy settings via Configuration profiles will automatically lock the settings as they're managed by macOS.
+@y
+Overriding at least one of the proxy settings via Configuration profiles will automatically lock the settings as they're managed by macOS.
+@z
+
+@x
+1. Create a file named `docker.mobileconfig` and include the following content:
+@y
+1. Create a file named `docker.mobileconfig` and include the following content:
 @z
 
 % snip code...
@@ -201,19 +241,29 @@ Configuration profiles provide the most secure enforcement method for macOS, as 
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
+   - Replace `PayloadUUID` with a randomly generated UUID
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
    - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
 1. Deploy the profile using your MDM solution.
-1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)** profiles.
+1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)**. Ensure the profile is listed with the correct name and settings.
 @y
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your Company Name` with your organization name
+   - Replace `PayloadUUID` with a randomly generated UUID
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
    - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
 1. Deploy the profile using your MDM solution.
-1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)** profiles.
+1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)**. Ensure the profile is listed with the correct name and settings.
 @z
+
+@x
+Some MDM solutions let you specify the payload as a plain dictionary of key-value settings without the full `.mobileconfig` wrapper:
+@y
+Some MDM solutions let you specify the payload as a plain dictionary of key-value settings without the full `.mobileconfig` wrapper:
+@z
+
+% snip code...
 
 @x
 ## macOS: plist file method
@@ -269,20 +319,40 @@ Create and deploy a script for organization-wide distribution:
 Create and deploy a script for organization-wide distribution:
 @z
 
-@x within code
+@x
+```bash
+#!/bin/bash
+@y
+```bash
+#!/bin/bash
+@z
+
+@x
 # Create directory if it doesn't exist
+sudo mkdir -p "/Library/Application Support/com.docker.docker"
 @y
 # Create directory if it doesn't exist
+sudo mkdir -p "/Library/Application Support/com.docker.docker"
 @z
+
 @x
 # Write the plist file
+sudo defaults write "/Library/Application Support/com.docker.docker/desktop.plist" allowedOrgs -array "myorg1" "myorg2"
 @y
 # Write the plist file
+sudo defaults write "/Library/Application Support/com.docker.docker/desktop.plist" allowedOrgs -array "myorg1" "myorg2"
 @z
+
 @x
 # Set appropriate permissions
+sudo chmod 644 "/Library/Application Support/com.docker.docker/desktop.plist"
+sudo chown root:admin "/Library/Application Support/com.docker.docker/desktop.plist"
+```
 @y
 # Set appropriate permissions
+sudo chmod 644 "/Library/Application Support/com.docker.docker/desktop.plist"
+sudo chown root:admin "/Library/Application Support/com.docker.docker/desktop.plist"
+```
 @z
 
 @x
