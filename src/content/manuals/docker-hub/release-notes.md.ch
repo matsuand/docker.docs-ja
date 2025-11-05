@@ -126,9 +126,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](scim.md#set-up-role-mapping). 
+- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](scim.md#set-up-role-mapping).
 @y
-- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](scim.md#set-up-role-mapping). 
+- Organizations with SSO enabled can assign members to roles, organizations, and teams with [SCIM role mapping](scim.md#set-up-role-mapping).
 @z
 
 @x
@@ -144,9 +144,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- Organizations can assign the [editor role](roles-and-permissions.md) to members to grant additional permissions without full administrative access.
+- Organizations can assign the [editor role](/manuals/enterprise/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
 @y
-- Organizations can assign the [editor role](roles-and-permissions.md) to members to grant additional permissions without full administrative access.
+- Organizations can assign the [editor role](manuals/enterprise/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
 @z
 
 @x
