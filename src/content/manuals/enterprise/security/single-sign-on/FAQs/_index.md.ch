@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Single sign-on
+title: FAQs
 @y
-title: Single sign-on
+title: FAQs
 @z

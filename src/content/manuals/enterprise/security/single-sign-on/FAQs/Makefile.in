@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/manuals/security/faqs/single-sign-on
+subdir = src/content/manuals/enterprise/security/single-sign-on/FAQs
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -241,7 +241,7 @@ bases = \
 	_index.md           \
 	domain-faqs.md      \
 	enforcement-faqs.md \
-	faqs.md             \
+	general.md          \
 	idp-faqs.md         \
 	users-faqs.md
 
@@ -262,9 +262,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/security/faqs/single-sign-on/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/enterprise/security/single-sign-on/FAQs/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/manuals/security/faqs/single-sign-on/Makefile
+	  $(AUTOMAKE) --foreign src/content/manuals/enterprise/security/single-sign-on/FAQs/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

@@ -94,9 +94,9 @@ For detailed instructions, see [Configure single sign-on](manuals/enterprise/sec
 @z
 
 @x
-Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provisioned when they authenticate with SSO. If users leave the organization, administrators must manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
+Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provisioned when they authenticate with SSO. If users leave the organization, administrators must manually [remove the user](/manuals/admin/organization/members.md#remove-a-member-or-invitee) from the organization.
 @y
-Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provisioned when they authenticate with SSO. If users leave the organization, administrators must manually [remove the user](../../../admin/organization/members.md#remove-a-member-or-invitee) from the organization.
+Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provisioned when they authenticate with SSO. If users leave the organization, administrators must manually [remove the user](manuals/admin/organization/members.md#remove-a-member-or-invitee) from the organization.
 @z
 
 @x

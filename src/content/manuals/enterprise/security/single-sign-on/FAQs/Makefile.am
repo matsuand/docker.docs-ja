@@ -6,7 +6,7 @@ bases = \
 	_index.md           \
 	domain-faqs.md      \
 	enforcement-faqs.md \
-	faqs.md             \
+	general.md          \
 	idp-faqs.md         \
 	users-faqs.md
 

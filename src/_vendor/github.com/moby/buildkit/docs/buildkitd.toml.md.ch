@@ -43,6 +43,11 @@ trace = true
 root = "/var/lib/buildkit"
 # insecure-entitlements allows insecure entitlements, disabled by default.
 insecure-entitlements = [ "network.host", "security.insecure", "device" ]
+# provenanceEnvDir is the directory where extra config is loaded that is added
+# to the provenance of builds:
+# slsa v0.2: invocation.environment.*
+# slsa v1: buildDefinition.internalParameters.*
+provenanceEnvDir = "/etc/buildkit/provenance.d"
 @y
 ```toml
 # debug enables additional debug logging
@@ -53,6 +58,11 @@ trace = true
 root = "/var/lib/buildkit"
 # insecure-entitlements allows insecure entitlements, disabled by default.
 insecure-entitlements = [ "network.host", "security.insecure", "device" ]
+# provenanceEnvDir is the directory where extra config is loaded that is added
+# to the provenance of builds:
+# slsa v0.2: invocation.environment.*
+# slsa v1: buildDefinition.internalParameters.*
+provenanceEnvDir = "/etc/buildkit/provenance.d"
 @z
 
 @x

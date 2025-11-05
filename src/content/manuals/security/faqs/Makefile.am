@@ -1,7 +1,6 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = single-sign-on
 
 bases = \
 	_index.md             \

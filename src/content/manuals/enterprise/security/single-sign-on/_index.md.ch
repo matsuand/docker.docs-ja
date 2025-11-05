@@ -157,10 +157,10 @@ Using a PAT ensures continued CLI access. For more information, see the
 
 @x
 - Start [configuring SSO](configure.md).
-- Read the [FAQs](/manuals/security/faqs/single-sign-on/faqs.md).
+- Read the [FAQs](/manuals/enterprise/security/single-sign-on/faqs/general.md).
 - [Troubleshoot](/manuals/enterprise/troubleshoot/troubleshoot-sso.md) SSO issues.
 @y
 - Start [configuring SSO](configure.md).
-- Read the [FAQs](manuals/security/faqs/single-sign-on/faqs.md).
+- Read the [FAQs](manuals/enterprise/security/single-sign-on/faqs/general.md).
 - [Troubleshoot](manuals/enterprise/troubleshoot/troubleshoot-sso.md) SSO issues.
 @z
