@@ -147,6 +147,7 @@ Docker Scout supports the following policy types:
 - [Default Non-Root User](#default-non-root-user)
 - [Approved Base Images](#approved-base-images)
 - [SonarQube Quality Gates](#sonarqube-quality-gates)
+- [Valid Docker Hardened Image (DHI) or DHI base image](#valid-docker-hardened-image-dhi-or-dhi-base-image)
 @y
 - [Severity-Based Vulnerability](#severity-based-vulnerability)
 - [Compliant Licenses](#compliant-licenses)
@@ -156,18 +157,31 @@ Docker Scout supports the following policy types:
 - [Default Non-Root User](#default-non-root-user)
 - [Approved Base Images](#approved-base-images)
 - [SonarQube Quality Gates](#sonarqube-quality-gates)
+- [Valid Docker Hardened Image (DHI) or DHI base image](#valid-docker-hardened-image-dhi-or-dhi-base-image)
 @z
 
 @x
 Docker Scout automatically provides default policies for repositories where it
-is enabled, except for the SonarQube Quality Gates policy, which requires
-[integration with SonarQube](/manuals/scout/integrations/code-quality/sonarqube.md)
-before use.
+is enabled, except for the following policies, which are optional and must be
+configured:
 @y
 Docker Scout automatically provides default policies for repositories where it
-is enabled, except for the SonarQube Quality Gates policy, which requires
-[integration with SonarQube](manuals/scout/integrations/code-quality/sonarqube.md)
-before use.
+is enabled, except for the following policies, which are optional and must be
+configured:
+@z
+
+@x
+- The **SonarQube Quality Gates** policy, which requires
+  [integration with SonarQube](/manuals/scout/integrations/code-quality/sonarqube.md)
+  before use.
+- The **Valid Docker Hardened Image (DHI) or DHI base image** policy, which can
+  be configured if you want to enforce the use of Docker Hardened Images.
+@y
+- The **SonarQube Quality Gates** policy, which requires
+  [integration with SonarQube](/manuals/scout/integrations/code-quality/sonarqube.md)
+  before use.
+- The **Valid Docker Hardened Image (DHI) or DHI base image** policy, which can
+  be configured if you want to enforce the use of Docker Hardened Images.
 @z
 
 @x
@@ -910,6 +924,58 @@ in the CLI.
 > is enabled. Docker Scout doesn't have access to historic evaluations. Trigger
 > a SonarQube analysis and policy evaluation after enabling the integration to
 > view the results in Docker Scout.
+@z
+
+@x
+### Valid Docker Hardened Image (DHI) or DHI base image
+@y
+### Valid Docker Hardened Image (DHI) or DHI base image
+@z
+
+@x
+The **Valid Docker Hardened Image (DHI) or DHI base image** policy type ensures
+that your images are either Docker Hardened Images (DHI) or are built using a
+DHI as the base image.
+@y
+The **Valid Docker Hardened Image (DHI) or DHI base image** policy type ensures
+that your images are either Docker Hardened Images (DHI) or are built using a
+DHI as the base image.
+@z
+
+@x
+This policy validates images by checking for a valid Docker signed verification
+summary attestation. The policy considers an image compliant if either:
+@y
+This policy validates images by checking for a valid Docker signed verification
+summary attestation. The policy considers an image compliant if either:
+@z
+
+@x
+- The image itself is a Docker Hardened Image with a valid Docker signed
+  verification summary attestation, or
+- The base image used in the build (identified from SLSA provenance
+  attestations) has a valid Docker signed verification summary attestation
+@y
+- The image itself is a Docker Hardened Image with a valid Docker signed
+  verification summary attestation, or
+- The base image used in the build (identified from SLSA provenance
+  attestations) has a valid Docker signed verification summary attestation
+@z
+
+@x
+Images are non-compliant with this policy if they lack the required Docker
+signed verification summary attestation and are not built from a base image
+with such an attestation.
+@y
+Images are non-compliant with this policy if they lack the required Docker
+signed verification summary attestation and are not built from a base image
+with such an attestation.
+@z
+
+@x
+This policy has no configurable parameters.
+@y
+This policy has no configurable parameters.
 @z
 
 @x

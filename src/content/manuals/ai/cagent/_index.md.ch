@@ -105,20 +105,6 @@ they don't share knowledge.
 @z
 
 @x within code
-   # If using the Docker AI Gateway, set this environment variable or use
-   # the `--models-gateway <url_to_docker_ai_gateway>` CLI flag
-@y
-   # If using the Docker AI Gateway, set this environment variable or use
-   # the `--models-gateway <url_to_docker_ai_gateway>` CLI flag
-@z
-@x
-   # Alternatively, set keys for remote inference services.
-   # These are not needed if you are using Docker AI Gateway.
-@y
-   # Alternatively, set keys for remote inference services.
-   # These are not needed if you are using Docker AI Gateway.
-@z
-@x
    export OPENAI_API_KEY=<your_api_key_here>    # For OpenAI models
    export ANTHROPIC_API_KEY=<your_api_key_here> # For Anthropic models
    export GOOGLE_API_KEY=<your_api_key_here>    # For Gemini models

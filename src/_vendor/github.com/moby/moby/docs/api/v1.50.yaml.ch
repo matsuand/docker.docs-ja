@@ -5582,9 +5582,6 @@ definitions:
         description: |
           Unique ID of the build cache record.
         example: "ndlpt0hhvkqcdfkputsk4cq9c"
-      Parent:
-        description: |
-          ID of the parent build cache record.
 @y
   BuildCache:
     type: "object"
@@ -5596,16 +5593,9 @@ definitions:
         description: |
           Unique ID of the build cache record.
         example: "ndlpt0hhvkqcdfkputsk4cq9c"
-      Parent:
-        description: |
-          ID of the parent build cache record.
 @z
 
 @x
-          > **Deprecated**: This field is deprecated, and omitted if empty.
-        type: "string"
-        x-nullable: true
-        example: ""
       Parents:
         description: |
           List of parent build cache record IDs.
@@ -5666,10 +5656,6 @@ definitions:
         type: "integer"
         example: 26
 @y
-          > **Deprecated**: This field is deprecated, and omitted if empty.
-        type: "string"
-        x-nullable: true
-        example: ""
       Parents:
         description: |
           List of parent build cache record IDs.

@@ -40,6 +40,22 @@ DHIs, are used across your environments.
 @z
 
 @x
+Docker Scout includes a dedicated [**Valid Docker Hardened Image (DHI) or DHI
+base
+image**](../../scout/policy/_index.md#valid-docker-hardened-image-dhi-or-dhi-base-image)
+policy type that validates whether your images are Docker Hardened Images or are
+built using a DHI as the base image. This policy checks for valid Docker signed
+verification summary attestations.
+@y
+Docker Scout includes a dedicated [**Valid Docker Hardened Image (DHI) or DHI
+base
+image**](../../scout/policy/_index.md#valid-docker-hardened-image-dhi-or-dhi-base-image)
+policy type that validates whether your images are Docker Hardened Images or are
+built using a DHI as the base image. This policy checks for valid Docker signed
+verification summary attestations.
+@z
+
+@x
 With policy evaluation built into Docker Scout, you can monitor image compliance
 in real time, integrate checks into your CI/CD workflows, and maintain
 consistent standards for image security and provenance.
@@ -90,49 +106,37 @@ images and layers.
 @z
 
 @x
-## Create policies for your DHI-based images
+## Evaluate DHI policy compliance for your images
 @y
-## Create policies for your DHI-based images
+## Evaluate DHI policy compliance for your images
 @z
 
 @x
-To ensure that the images you build using Docker Hardened Images remain secure,
-you can create Docker Scout policies tailored to your requirements for your own
-repositories. These policies help enforce security standards such as preventing
-high-severity vulnerabilities, requiring up-to-date base images, or validating
-the presence of key metadata.
+When you enable Docker Scout for your repositories, you can configure the
+[**Valid Docker Hardened Image (DHI) or DHI base
+image**](../../scout/policy/_index.md#valid-docker-hardened-image-dhi-or-dhi-base-image)
+policy. This optional policy validates whether your images are DHIs or built with DHI
+base images by checking for Docker signed verification summary attestations.
 @y
-To ensure that the images you build using Docker Hardened Images remain secure,
-you can create Docker Scout policies tailored to your requirements for your own
-repositories. These policies help enforce security standards such as preventing
-high-severity vulnerabilities, requiring up-to-date base images, or validating
-the presence of key metadata.
+When you enable Docker Scout for your repositories, you can configure the
+[**Valid Docker Hardened Image (DHI) or DHI base
+image**](../../scout/policy/_index.md#valid-docker-hardened-image-dhi-or-dhi-base-image)
+policy. This optional policy validates whether your images are DHIs or built with DHI
+base images by checking for Docker signed verification summary attestations.
 @z
 
 @x
-Policies evaluate images when they are pushed to a repository, allowing you to
-track compliance, get notified of deviations, and integrate policy checks into
-your CI/CD pipeline.
+The following example shows how to build an image using a DHI base image and
+evaluate its compliance with the DHI policy.
 @y
-Policies evaluate images when they are pushed to a repository, allowing you to
-track compliance, get notified of deviations, and integrate policy checks into
-your CI/CD pipeline.
+The following example shows how to build an image using a DHI base image and
+evaluate its compliance with the DHI policy.
 @z
 
 @x
-### Example: Create a policy for DHI-based images
+### Example: Build and evaluate a DHI-based image
 @y
-### Example: Create a policy for DHI-based images
-@z
-
-@x
-This example shows how to create a policy that requires all images in your
-organization to use Docker Hardened Images as their base. This ensures that
-your applications are built on secure, minimal, and production-ready images.
-@y
-This example shows how to create a policy that requires all images in your
-organization to use Docker Hardened Images as their base. This ensures that
-your applications are built on secure, minimal, and production-ready images.
+### Example: Build and evaluate a DHI-based image
 @z
 
 @x
@@ -224,39 +228,49 @@ $ docker scout repo enable --org YOUR_ORG YOUR_ORG/my-dhi-app
 @z
 
 @x
-#### Step 4: Create a policy
+#### Step 4: Configure the DHI policy
 @y
-#### Step 4: Create a policy
+#### Step 4: Configure the DHI policy
+@z
+
+@x
+Once Docker Scout is enabled, you can configure the **Valid Docker Hardened
+Image (DHI) or DHI base image** policy for your organization:
+@y
+Once Docker Scout is enabled, you can configure the **Valid Docker Hardened
+Image (DHI) or DHI base image** policy for your organization:
 @z
 
 @x
 1. Go to the [Docker Scout dashboard](https://scout.docker.com).
 2. Select your organization and navigate to **Policies**.
-3. Select **Add policy**.
-4. Select **Configure** for **Approved Base Images Policy**.
-5. Give the policy a compliant name, such as **Approved DHI Base Images**.
-6. In **Approved base image sources**, delete the default item.
-7. In **Approved base image sources**, add approved base image sources. For this
-   example, use the wildcard (`*`) to allow all mirrored DHI repositories,
-   `docker.io/ORG_NAME/dhi-*`. Replace `ORG_NAME` with your organization name.
-8. Select **Save policy**.
+3. Configure the **Valid Docker Hardened Image (DHI) or DHI base image** policy
+   to enable it for your repositories.
 @y
 1. Go to the [Docker Scout dashboard](https://scout.docker.com).
 2. Select your organization and navigate to **Policies**.
-3. Select **Add policy**.
-4. Select **Configure** for **Approved Base Images Policy**.
-5. Give the policy a compliant name, such as **Approved DHI Base Images**.
-6. In **Approved base image sources**, delete the default item.
-7. In **Approved base image sources**, add approved base image sources. For this
-   example, use the wildcard (`*`) to allow all mirrored DHI repositories,
-   `docker.io/ORG_NAME/dhi-*`. Replace `ORG_NAME` with your organization name.
-8. Select **Save policy**.
+3. Configure the **Valid Docker Hardened Image (DHI) or DHI base image** policy
+   to enable it for your repositories.
 @z
 
 @x
-#### Step 5: Evaluate policy compliance
+For more information on configuring policies, see
+[Configure policies](../../scout/policy/configure.md).
 @y
-#### Step 5: Evaluate policy compliance
+For more information on configuring policies, see
+[Configure policies](../../scout/policy/configure.md).
+@z
+
+@x
+#### Step 5: View policy compliance
+@y
+#### Step 5: View policy compliance
+@z
+
+@x
+Once the DHI policy is configured and active, you can view compliance results:
+@y
+Once the DHI policy is configured and active, you can view compliance results:
 @z
 
 @x
@@ -270,11 +284,15 @@ $ docker scout repo enable --org YOUR_ORG YOUR_ORG/my-dhi-app
 @z
 
 @x
-This shows the policy compliance results for your image, including whether it
-meets the requirements of the **Approved DHI Base Images** policy.
+This shows the policy compliance results for your image. The **Valid Docker
+Hardened Image (DHI) or DHI base image** policy evaluates whether your image has
+a valid Docker signed verification summary attestation or if its base image has
+such an attestation.
 @y
-This shows the policy compliance results for your image, including whether it
-meets the requirements of the **Approved DHI Base Images** policy.
+This shows the policy compliance results for your image. The **Valid Docker
+Hardened Image (DHI) or DHI base image** policy evaluates whether your image has
+a valid Docker signed verification summary attestation or if its base image has
+such an attestation.
 @z
 
 @x

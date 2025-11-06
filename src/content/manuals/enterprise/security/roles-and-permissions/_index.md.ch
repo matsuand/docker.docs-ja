@@ -156,9 +156,9 @@ Use custom roles when:
 @z
 
 @x
-Users and teams can be assigned either a core role or a custom role, but not both. However, roles work in combination with team permissions:
+You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
 @y
-Users and teams can be assigned either a core role or a custom role, but not both. However, roles work in combination with team permissions:
+You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
 @z
 
 @x

@@ -1972,12 +1972,12 @@ Images built with `ONBUILD` should get a separate tag. For example,
 @z
 
 @x
-Be careful when putting `ADD` or `COPY` in `ONBUILD`. The `onbuild image
+Be careful when putting `ADD` or `COPY` in `ONBUILD`. The image
 fails catastrophically if the new build's context is missing the resource being
 added. Adding a separate tag, as recommended above, helps mitigate this by
 allowing the Dockerfile author to make a choice.
 @y
-Be careful when putting `ADD` or `COPY` in `ONBUILD`. The `onbuild image
+Be careful when putting `ADD` or `COPY` in `ONBUILD`. The image
 fails catastrophically if the new build's context is missing the resource being
 added. Adding a separate tag, as recommended above, helps mitigate this by
 allowing the Dockerfile author to make a choice.

@@ -36,6 +36,98 @@ For more information about:
 @z
 
 @x
+## 28.5.2
+@y
+## 28.5.2
+@z
+
+@x
+{{< release-date date="2025-11-05" >}}
+@y
+{{< release-date date="2025-11-05" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 28.5.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.2)
+- [moby/moby, 28.5.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.2)
+@y
+- [docker/cli, 28.5.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A28.5.2)
+- [moby/moby, 28.5.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A28.5.2)
+@z
+
+@x
+> [!CAUTION]
+> This release contains fixes for three high-severity security vulnerabilities in runc:
+> - [CVE-2025-31133](https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2)
+> - [CVE-2025-52565](https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r)
+> - [CVE-2025-52881](https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm)
+@y
+> [!CAUTION]
+> This release contains fixes for three high-severity security vulnerabilities in runc:
+> - [CVE-2025-31133](https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2)
+> - [CVE-2025-52565](https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r)
+> - [CVE-2025-52881](https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm)
+@z
+
+@x
+> All three vulnerabilities ultimately allow (through different methods) for full container breakouts by bypassing runc's restrictions for writing to arbitrary `/proc` files.
+@y
+> All three vulnerabilities ultimately allow (through different methods) for full container breakouts by bypassing runc's restrictions for writing to arbitrary `/proc` files.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- dockerd-rootless.sh: if slirp4netns is not installed, try using pasta (passt). [moby/moby#51162](https://github.com/moby/moby/pull/51162)
+@y
+- dockerd-rootless.sh: if slirp4netns is not installed, try using pasta (passt). [moby/moby#51162](https://github.com/moby/moby/pull/51162)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.25.2](https://github.com/moby/buildkit/releases/tag/v0.25.2). [moby/moby#51398](https://github.com/moby/moby/pull/51398)
+- Update Go runtime to [1.24.9](https://go.dev/doc/devel/release#go1.24.9). [moby/moby#51387](https://github.com/moby/moby/pull/51387), [docker/cli#6613](https://github.com/docker/cli/pull/6613)
+- Update runc to [v1.3.3](https://github.com/opencontainers/runc/releases/tag/v1.3.3). [moby/moby#51394](https://github.com/moby/moby/pull/51394)
+@y
+- Update BuildKit to [v0.25.2](https://github.com/moby/buildkit/releases/tag/v0.25.2). [moby/moby#51398](https://github.com/moby/moby/pull/51398)
+- Update Go runtime to [1.24.9](https://go.dev/doc/devel/release#go1.24.9). [moby/moby#51387](https://github.com/moby/moby/pull/51387), [docker/cli#6613](https://github.com/docker/cli/pull/6613)
+- Update runc to [v1.3.3](https://github.com/opencontainers/runc/releases/tag/v1.3.3). [moby/moby#51394](https://github.com/moby/moby/pull/51394)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Go-SDK: cli/command/image/build: deprecate `DefaultDockerfileName`, `DetectArchiveReader`, `WriteTempDockerfile`, `ResolveAndValidateContextPath`. These utilities were only used internally and will be removed in the next release. [docker/cli#6610](https://github.com/docker/cli/pull/6610)
+- Go-SDK: cli/command/image/build: deprecate IsArchive utility. [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+- Go-SDK: opts: deprecate `ValidateMACAddress`. [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+- Go-SDK: opts: deprecate ListOpts.Delete(). [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+@y
+- Go-SDK: cli/command/image/build: deprecate `DefaultDockerfileName`, `DetectArchiveReader`, `WriteTempDockerfile`, `ResolveAndValidateContextPath`. These utilities were only used internally and will be removed in the next release. [docker/cli#6610](https://github.com/docker/cli/pull/6610)
+- Go-SDK: cli/command/image/build: deprecate IsArchive utility. [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+- Go-SDK: opts: deprecate `ValidateMACAddress`. [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+- Go-SDK: opts: deprecate ListOpts.Delete(). [docker/cli#6560](https://github.com/docker/cli/pull/6560)
+@z
+
+@x
 ## 28.5.1
 @y
 ## 28.5.1

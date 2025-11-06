@@ -384,10 +384,10 @@ docker.io/docker/desktop-kubernetes:<tag>
 
 @x
 The image tags are automatically selected by Docker Desktop based on several
-factors, including the version of Kubernetes being used. The tags vary for each image.
+factors, including the version of Kubernetes being used. The tags vary for each image and may change between Docker Desktop releases. To stay informed, monitor the Docker Desktop release notes.
 @y
 The image tags are automatically selected by Docker Desktop based on several
-factors, including the version of Kubernetes being used. The tags vary for each image.
+factors, including the version of Kubernetes being used. The tags vary for each image and may change between Docker Desktop releases. To stay informed, monitor the Docker Desktop release notes.
 @z
 
 @x
