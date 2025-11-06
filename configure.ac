@@ -190,6 +190,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
 	src/content/manuals/desktop/features/Makefile
+	src/content/manuals/desktop/features/networking/Makefile
 	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile
 	src/content/manuals/desktop/previous-versions/Makefile

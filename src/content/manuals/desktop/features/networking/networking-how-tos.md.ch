@@ -5,15 +5,15 @@
 % snip 対応
 
 @x
-description: Understand how networking works on Docker Desktop and see the known limitations
-keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
-title: Explore networking features on Docker Desktop
-linkTitle: Networking
+description: Learn how to connect containers to the host, across containers, or through proxies and VPNs in Docker Desktop.
+keywords: docker desktop, networking, vpn, proxy, port mapping, dns
+title: Explore networking how-tos on Docker Desktop
+linkTitle: How-tos
 @y
-description: Understand how networking works on Docker Desktop and see the known limitations
-keywords: networking, docker desktop, proxy, vpn, Linux, Mac, Windows
-title: Explore networking features on Docker Desktop
-linkTitle: Networking
+description: Learn how to connect containers to the host, across containers, or through proxies and VPNs in Docker Desktop.
+keywords: docker desktop, networking, vpn, proxy, port mapping, dns
+title: Explore networking how-tos on Docker Desktop
+linkTitle: How-tos
 @z
 
 @x
