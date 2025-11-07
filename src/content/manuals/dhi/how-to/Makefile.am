@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md    \
+	compare.md   \
 	customize.md \
 	debug.md     \
 	explore.md   \

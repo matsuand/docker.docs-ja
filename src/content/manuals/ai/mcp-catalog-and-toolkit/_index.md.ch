@@ -58,27 +58,39 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @z
 
 @x
+ - title: Dynamic MCP
+   description: Discover and add MCP servers on-demand using natural language
+   icon: search
+   link: /ai/mcp-catalog-and-toolkit/dynamic-mcp/
+@y
+ - title: Dynamic MCP
+   description: Discover and add MCP servers on-demand using natural language
+   icon: search
+   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/dynamic-mcp/
+@z
+
+@x
  - title: MCP Gateway
    description: Learn about the underlying technology that powers the MCP Toolkit
    icon: developer_board
-   link: /ai/mcp-catalog-and-toolkit/toolkit/
+   link: /ai/mcp-catalog-and-toolkit/mcp-gateway/
 @y
  - title: MCP Gateway
    description: Learn about the underlying technology that powers the MCP Toolkit
    icon: developer_board
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/toolkit/
+   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/
 @z
 
 @x
  - title: Docker Hub MCP server
    description: Explore about the Docker Hub server for searching images, managing repositories, and more
    icon: device_hub
-   link: /ai/mcp-catalog-and-toolkit/toolkit/
+   link: /ai/mcp-catalog-and-toolkit/hub-mcp/
 @y
  - title: Docker Hub MCP server
    description: Explore about the Docker Hub server for searching images, managing repositories, and more
    icon: device_hub
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/toolkit/
+   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/hub-mcp/
 @z
 
 @x

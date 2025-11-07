@@ -54,6 +54,20 @@ It is the fastest way from MCP tool discovery to local execution.
 @z
 
 @x
+> [!TIP]
+> The MCP Toolkit includes [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md),
+> which enables AI agents to discover, add, and compose MCP servers on-demand during
+> conversations, without manual configuration. Your agent can search the catalog and
+> add tools as needed when you connect to the gateway.
+@y
+> [!TIP]
+> The MCP Toolkit includes [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md),
+> which enables AI agents to discover, add, and compose MCP servers on-demand during
+> conversations, without manual configuration. Your agent can search the catalog and
+> add tools as needed when you connect to the gateway.
+@z
+
+@x
 ## How the MCP Toolkit works
 @y
 ## How the MCP Toolkit works

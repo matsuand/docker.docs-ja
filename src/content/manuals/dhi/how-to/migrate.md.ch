@@ -838,3 +838,29 @@ migrate your Dockerfile:
 @y
 {{% include "gordondhi.md" %}}
 @z
+
+@x
+## What's next
+@y
+## What's next
+@z
+
+@x
+After migrating to Docker Hardened Images, you can:
+@y
+After migrating to Docker Hardened Images, you can:
+@z
+
+@x
+- [Compare images](./compare.md) to see the security improvements and
+  differences between your DHI and the original image
+- [Verify the image](./verify.md) to check signed attestations like SBOMs and
+  provenance
+- [Scan the image](./scan.md) to analyze it for known vulnerabilities
+@y
+- [Compare images](./compare.md) to see the security improvements and
+  differences between your DHI and the original image
+- [Verify the image](./verify.md) to check signed attestations like SBOMs and
+  provenance
+- [Scan the image](./scan.md) to analyze it for known vulnerabilities
+@z

@@ -49,6 +49,74 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.50.0
+@y
+## 4.50.0
+@z
+
+@x
+{{< release-date date="2025-11-06" >}}
+@y
+{{< release-date date="2025-11-06" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.50.0" build_path="/209931/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.50.0" build_path="/209931/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Introduced a new Welcome Survey to improve onboarding. New users can now provide information to help tailor their Docker Desktop experience.
+@y
+- オンボードのウェルカムアンケート (Webcome Survey) を新しくしました。
+  新規ユーザーへの情報提供を通じて、Docker Desktop の導入を調整できるようにします。
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Docker Compose v2.40.3](https://github.com/docker/compose/releases/tag/v2.40.3)
+- [NVIDIA Container Toolkit v1.18.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.18.0)
+@y
+- [Docker Compose v2.40.3](https://github.com/docker/compose/releases/tag/v2.40.3)
+- [NVIDIA Container Toolkit v1.18.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.18.0)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms 
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Docker Desktop now detects and attempts to avoid clashes between the "Docker subnet" and physical networks using RFC1918 addresses. For example if the host has a non-default route which overlaps with `192.168.65.0/24` then an alternative network will be chosen automatically. You can still override the choice as before via Docker Desktop settings and admin settings.
+- Docker Desktop no longer treats Stargz Snapshotter failures as fatal. If a failure occurs, Docker Desktop continues to run without the Stargz Snapshotter.
+@y
+- Docker Desktop では "Docker サブネット" と RFC1918 アドレスを使った物理ネットワークとの間の衝突を検出し解消を試みるものとなりました。
+  たとえばホスト側がデフォルトではないルートであって `192.168.65.0/24` をオーバーラップするものである場合、別のネットワークが自動的に選択されます。
+  Docker Desktop 設定や管理設定によって、事前にその選択を上書きすることもできます。
+- Docker Desktop では Stargz Snapshotter による失敗を致命的とは取り扱わないものとしました。
+  失敗が発生した場合、Docker Desktop は Stargz Snapshotter を無しにして処理を続行します。
+@z
+
+@x
 ## 4.49.0
 @y
 ## 4.49.0
@@ -138,9 +206,11 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @x
 - Fixed an issue where Docker Desktop used an expired proxy password while waiting for the user to enter a new one.
 - Fixed a 'chown' error shown on startup with Docker Debug.
+- Fixed a bug that caused some forwarded UDP ports to hang.
 @y
 - プロキシーパスワードが期限切れになっていても、新たなパスワードの入力を待つ間は、期限切れパスワードが用いられてしまう問題を修正しました。
 - Docker Debug を利用した起動時に発生する 'chown' エラーを修正しました。
+- Fixed a bug that caused some forwarded UDP ports to hang.
 @z
 
 @x

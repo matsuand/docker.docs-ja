@@ -11,7 +11,7 @@ title: How-tos
 description: Step-by-step guidance for working with Docker Hardened Images, from discovery to debugging.
 @z
 
-% grid_howto:
+% grid_discover:
 
 @x
     - title: Explore Docker Hardened Images
@@ -24,6 +24,8 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       icon: travel_explore
       link: __SUBDIR__/dhi/how-to/explore/
 @z
+
+% grid_adopt:
 
 @x
     - title: Mirror a Docker Hardened Image repository
@@ -109,6 +111,22 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/migrate/
 @z
 
+% grid_evaluate:
+
+@x
+    - title: Compare Docker Hardened Images
+      description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
+      icon: compare
+      link: /dhi/how-to/compare/
+@y
+    - title: Compare Docker Hardened Images
+      description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
+      icon: compare
+      link: __SUBDIR__/dhi/how-to/compare/
+@z
+
+% grid_verify:
+
 @x
     - title: Verify a Docker Hardened Image
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images.
@@ -133,6 +151,8 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/scan/
 @z
 
+% grid_govern:
+
 @x
     - title: Enforce Docker Hardened Image usage with policies
       description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
@@ -144,6 +164,8 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       icon: policy
       link: __SUBDIR__/dhi/how-to/policies/
 @z
+
+% grid_troubleshoot:
 
 @x
     - title: Debug a Docker Hardened Image
@@ -158,71 +180,159 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @z
 
 @x
-This section provides practical, step-by-step guidance for working with Docker
+This section provides practical, task-based guidance for working with Docker
 Hardened Images (DHIs). Whether you're evaluating DHIs for the first time or
-integrating them into a production CI/CD pipeline, these topics walk you
-through each phase of the adoption journey, from discovery to debugging.
+integrating them into a production CI/CD pipeline, these topics cover the key
+tasks across the adoption journey, from discovery to debugging.
 @y
-This section provides practical, step-by-step guidance for working with Docker
+This section provides practical, task-based guidance for working with Docker
 Hardened Images (DHIs). Whether you're evaluating DHIs for the first time or
-integrating them into a production CI/CD pipeline, these topics walk you
-through each phase of the adoption journey, from discovery to debugging.
+integrating them into a production CI/CD pipeline, these topics cover the key
+tasks across the adoption journey, from discovery to debugging.
 @z
 
 @x
-To help you get started and stay secure, the topics are organized around the
-typical lifecycle of working with DHIs.
+The topics are organized around the typical lifecycle of working with DHIs, but
+you can use them as needed based on your specific workflow.
 @y
-To help you get started and stay secure, the topics are organized around the
-typical lifecycle of working with DHIs.
+The topics are organized around the typical lifecycle of working with DHIs, but
+you can use them as needed based on your specific workflow.
 @z
 
 @x
-## Lifecycle flow
+Explore the topics below that match your current needs.
 @y
-## Lifecycle flow
+Explore the topics below that match your current needs.
 @z
 
 @x
-1. Explore available images and metadata in the DHI catalog.
-2. Mirror trusted images into your namespace or registry.
-3. Adopt DHIs in your workflows by pulling, using in development and CI, and
-   migrating existing applications to use secure, minimal base images.
-4. Analyze images by verifying signatures, SBOMs, and provenance, and scanning
-   for vulnerabilities.
-5. Enforce policies to maintain security and compliance.
-6. Debug containers based on DHIs without modifying the image.
+## Discover
 @y
-1. Explore available images and metadata in the DHI catalog.
-2. Mirror trusted images into your namespace or registry.
-3. Adopt DHIs in your workflows by pulling, using in development and CI, and
-   migrating existing applications to use secure, minimal base images.
-4. Analyze images by verifying signatures, SBOMs, and provenance, and scanning
-   for vulnerabilities.
-5. Enforce policies to maintain security and compliance.
-6. Debug containers based on DHIs without modifying the image.
+## Discover
 @z
 
 @x
-Each of the following topics aligns with a step in this lifecycle, so you can progress
-confidently through exploration, implementation, and ongoing maintenance.
+Explore available images and metadata in the DHI catalog.
 @y
-Each of the following topics aligns with a step in this lifecycle, so you can progress
-confidently through exploration, implementation, and ongoing maintenance.
-@z
-
-@x
-## Step-by-step topics
-@y
-## Step-by-step topics
+Explore available images and metadata in the DHI catalog.
 @z
 
 @x
 {{< grid
-  items="grid_howto"
+  items="grid_discover"
 >}}
 @y
 {{< grid
-  items="grid_howto"
+  items="grid_discover"
+>}}
+@z
+
+@x
+## Adopt
+@y
+## Adopt
+@z
+
+@x
+Mirror trusted images, customize as needed, and integrate into your workflows.
+@y
+Mirror trusted images, customize as needed, and integrate into your workflows.
+@z
+
+@x
+{{< grid
+  items="grid_adopt"
+>}}
+@y
+{{< grid
+  items="grid_adopt"
+>}}
+@z
+
+@x
+## Evaluate
+@y
+## Evaluate
+@z
+
+@x
+Compare with other images to understand security improvements.
+@y
+Compare with other images to understand security improvements.
+@z
+
+@x
+{{< grid
+  items="grid_evaluate"
+>}}
+@y
+{{< grid
+  items="grid_evaluate"
+>}}
+@z
+
+@x
+## Verify
+@y
+## Verify
+@z
+
+@x
+Check signatures, SBOMs, and provenance, and scan for vulnerabilities.
+@y
+Check signatures, SBOMs, and provenance, and scan for vulnerabilities.
+@z
+
+@x
+{{< grid
+  items="grid_verify"
+>}}
+@y
+{{< grid
+  items="grid_verify"
+>}}
+@z
+
+@x
+## Govern
+@y
+## Govern
+@z
+
+@x
+Enforce policies to maintain security and compliance.
+@y
+Enforce policies to maintain security and compliance.
+@z
+
+@x
+{{< grid
+  items="grid_govern"
+>}}
+@y
+{{< grid
+  items="grid_govern"
+>}}
+@z
+
+@x
+## Troubleshoot
+@y
+## Troubleshoot
+@z
+
+@x
+Debug containers based on DHIs without modifying the image.
+@y
+Debug containers based on DHIs without modifying the image.
+@z
+
+@x
+{{< grid
+  items="grid_troubleshoot"
+>}}
+@y
+{{< grid
+  items="grid_troubleshoot"
 >}}
 @z

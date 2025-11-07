@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 linktitle: Quickstart
@@ -269,15 +270,7 @@ a simple Python command just like you would with any other Docker image:
    replacing `<your-namespace>` with your organization's namespace:
 @z
 
-@x
-   ```console
-   $ docker pull <your-namespace>/dhi-python:3.13
-   ```
-@y
-   ```console
-   $ docker pull <your-namespace>/dhi-python:3.13
-   ```
-@z
+% snip command...
 
 @x
 2. Run the image to confirm everything works:
@@ -285,15 +278,7 @@ a simple Python command just like you would with any other Docker image:
 2. Run the image to confirm everything works:
 @z
 
-@x
-    ```console
-    $ docker run --rm <your-namespace>/dhi-python:3.13 python -c "print('Hello from DHI')"
-    ```
-@y
-    ```console
-    $ docker run --rm <your-namespace>/dhi-python:3.13 python -c "print('Hello from DHI')"
-    ```
-@z
+% snip command...
 
 @x
     This starts a container from the `dhi-python:3.13` image and runs a simple
@@ -304,9 +289,75 @@ a simple Python command just like you would with any other Docker image:
 @z
 
 @x
-To dive deeper into using images see [Use a Docker Hardened Image](./how-to/use.md).
+To dive deeper into using images, see:
 @y
-To dive deeper into using images see [Use a Docker Hardened Image](./how-to/use.md).
+To dive deeper into using images, see:
+@z
+
+@x
+- [Use a Docker Hardened Image](./how-to/use.md) for general usage
+- [Use in Kubernetes](./how-to/k8s.md) for Kubernetes deployments
+- [Use a Helm chart](./how-to/helm.md) for deploying with Helm
+@y
+- [Use a Docker Hardened Image](./how-to/use.md) for general usage
+- [Use in Kubernetes](./how-to/k8s.md) for Kubernetes deployments
+- [Use a Helm chart](./how-to/helm.md) for deploying with Helm
+@z
+
+@x
+## Step 5: Compare with the other images
+@y
+## Step 5: Compare with the other images
+@z
+
+@x
+You can quickly compare DHIs with other images to see the security
+improvements and differences. This comparison helps you understand the value of
+using hardened images.
+@y
+You can quickly compare DHIs with other images to see the security
+improvements and differences. This comparison helps you understand the value of
+using hardened images.
+@z
+
+@x
+Run the following command to see a summary comparison, replacing
+`<your-namespace>` with your organization's namespace:
+@y
+Run the following command to see a summary comparison, replacing
+`<your-namespace>` with your organization's namespace:
+@z
+
+% snip command...
+
+@x
+Example output:
+@y
+Example output:
+@z
+
+% snip text...
+
+@x
+This comparison shows that the Docker Hardened Image:
+@y
+This comparison shows that the Docker Hardened Image:
+@z
+
+@x
+- Removes vulnerabilities: 1 high, 5 medium, 141 low, and 2 unspecified severity CVEs removed
+- Reduces size: From 412 MB down to 35 MB (91% reduction)
+- Minimizes packages: From 610 packages down to 80 (87% reduction)
+@y
+- Removes vulnerabilities: 1 high, 5 medium, 141 low, and 2 unspecified severity CVEs removed
+- Reduces size: From 412 MB down to 35 MB (91% reduction)
+- Minimizes packages: From 610 packages down to 80 (87% reduction)
+@z
+
+@x
+To dive deeper into comparing images see [Compare Docker Hardened Images](./how-to/compare.md).
+@y
+To dive deeper into comparing images see [Compare Docker Hardened Images](./how-to/compare.md).
 @z
 
 @x

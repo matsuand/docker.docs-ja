@@ -299,6 +299,7 @@ SUBDIRS = images
 bases = \
 	_index.md      \
 	catalog.md     \
+	dynamic-mcp.md \
 	faqs.md        \
 	get-started.md \
 	hub-mcp.md     \
