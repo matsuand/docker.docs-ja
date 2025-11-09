@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Manage Docker products
@@ -39,12 +39,14 @@ product, including how to set up and configure them, see the following manuals:
 - [Docker Build Cloud](../../build-cloud/_index.md)
 - [Docker Scout](../../scout/_index.md)
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs/#getting-started)
+- [Docker Offload](../../offload/_index.md)
 @y
 - [Docker Desktop](../../desktop/_index.md)
 - [Docker Hub](../../docker-hub/_index.md)
 - [Docker Build Cloud](../../build-cloud/_index.md)
 - [Docker Scout](../../scout/_index.md)
 - [Testcontainers Cloud](https://testcontainers.com/cloud/docs/#getting-started)
+- [Docker Offload](../../offload/_index.md)
 @z
 
 @x
@@ -261,6 +263,84 @@ select **Account**.
 
 @x
 {{< /tab >}}
+{{< tab name="Docker Offload" >}}
+@y
+{{< /tab >}}
+{{< tab name="Docker Offload" >}}
+@z
+
+@x
+### Manage Docker Offload access
+@y
+### Manage Docker Offload access
+@z
+
+@x
+> [!NOTE]
+>
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
+> up](https://www.docker.com/products/docker-offload/) and subscribe.
+@y
+> [!NOTE]
+>
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
+> up](https://www.docker.com/products/docker-offload/) and subscribe.
+@z
+
+@x
+To manage Docker Offload access for your organization, use [Settings
+Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md):
+@y
+To manage Docker Offload access for your organization, use [Settings
+Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md):
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) as an organization owner.
+1. Select **Admin Console** > **Desktop Settings Management**.
+1. Configure the **Enable Docker Offload** setting to control whether Docker Offload features are available in Docker
+   Desktop. You can configure this setting in five states:
+   - **Always enabled**: Docker Offload is always enabled and users cannot disable it. The Offload
+     toggle is always visible in Docker Desktop header. Recommended for VDI environments where local Docker execution is
+     not possible.
+   - **Enabled**: Docker Offload is enabled by default but users can disable it in Docker Desktop
+     settings. Suitable for hybrid environments.
+   - **Disabled**: Docker Offload is disabled by default but users can enable it in Docker Desktop
+     settings.
+   - **Always disabled**: Docker Offload is disabled and users cannot enable it. The option is
+     visible but locked. Use when Docker Offload is not approved for organizational use.
+   - **User defined**: No enforced default. Users choose whether to enable or disable Docker Offload in their
+     Docker Desktop settings.
+1. Select **Save**.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) as an organization owner.
+1. Select **Admin Console** > **Desktop Settings Management**.
+1. Configure the **Enable Docker Offload** setting to control whether Docker Offload features are available in Docker
+   Desktop. You can configure this setting in five states:
+   - **Always enabled**: Docker Offload is always enabled and users cannot disable it. The Offload
+     toggle is always visible in Docker Desktop header. Recommended for VDI environments where local Docker execution is
+     not possible.
+   - **Enabled**: Docker Offload is enabled by default but users can disable it in Docker Desktop
+     settings. Suitable for hybrid environments.
+   - **Disabled**: Docker Offload is disabled by default but users can enable it in Docker Desktop
+     settings.
+   - **Always disabled**: Docker Offload is disabled and users cannot enable it. The option is
+     visible but locked. Use when Docker Offload is not approved for organizational use.
+   - **User defined**: No enforced default. Users choose whether to enable or disable Docker Offload in their
+     Docker Desktop settings.
+1. Select **Save**.
+@z
+
+@x
+For more details on Settings Management, see the [Settings
+reference](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#enable-docker-offload).
+@y
+For more details on Settings Management, see the [Settings
+reference](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#enable-docker-offload).
+@z
+
+@x
+{{< /tab >}}
 {{< /tabs >}}
 @y
 {{< /tab >}}
@@ -285,12 +365,16 @@ To view usage for Docker products:
 - Docker Build Cloud: View the **Build minutes** page in [Docker Build Cloud](http://app.docker.com/build).
 - Docker Scout: View the [**Repository settings** page](https://scout.docker.com/settings/repos) in Docker Scout.
 - Testcontainers Cloud: View the [**Billing** page](https://app.testcontainers.cloud/dashboard/billing) in Testcontainers Cloud.
+- Docker Offload: View the **Offload** > **Offload overview** page in [Docker Home](https://app.docker.com/). For more details, see
+  [Docker Offload usage and billing](/offload/usage/).
 @y
 - Docker Desktop: View the **Insights** page in [Docker Home](https://app.docker.com/). For more details, see [Insights](./insights.md).
 - Docker Hub: View the [**Usage** page](https://hub.docker.com/usage) in Docker Hub.
 - Docker Build Cloud: View the **Build minutes** page in [Docker Build Cloud](http://app.docker.com/build).
 - Docker Scout: View the [**Repository settings** page](https://scout.docker.com/settings/repos) in Docker Scout.
 - Testcontainers Cloud: View the [**Billing** page](https://app.testcontainers.cloud/dashboard/billing) in Testcontainers Cloud.
+- Docker Offload: View the **Offload** > **Offload overview** page in [Docker Home](https://app.docker.com/). For more details, see
+  [Docker Offload usage and billing](__SUBDIR__/offload/usage/).
 @z
 
 @x

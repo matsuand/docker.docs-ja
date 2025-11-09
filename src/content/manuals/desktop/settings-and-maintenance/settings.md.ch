@@ -1346,3 +1346,35 @@ For more information on each configuration and use case, see [Permission require
 @y
 For more information on each configuration and use case, see [Permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md).
 @z
+
+@x
+## Docker Offload
+@y
+## Docker Offload
+@z
+
+@x
+When signed in with a Docker account that has access to [Docker Offload](../../offload/_index.md), you can manage your
+Offload settings from the **Docker Offload** tab.
+@y
+When signed in with a Docker account that has access to [Docker Offload](../../offload/_index.md), you can manage your
+Offload settings from the **Docker Offload** tab.
+@z
+
+@x
+Use the **Docker Offload** tab to:
+@y
+Use the **Docker Offload** tab to:
+@z
+
+@x
+- Toggle **Enable Docker Offload**. When enabled, you can start Offload sessions.
+- Select **Idle timeout**. This is the duration of time between no activity and Docker Offload entering idle mode.For
+  details about idle timeout, see [Active and idle states](../../offload/configuration.md#understand-active-and-idle-states)
+- Check **Enable GPU support**. When enabled, workloads can use cloud GPU if available.
+@y
+- Toggle **Enable Docker Offload**. When enabled, you can start Offload sessions.
+- Select **Idle timeout**. This is the duration of time between no activity and Docker Offload entering idle mode.For
+  details about idle timeout, see [Active and idle states](../../offload/configuration.md#understand-active-and-idle-states)
+- Check **Enable GPU support**. When enabled, workloads can use cloud GPU if available.
+@z

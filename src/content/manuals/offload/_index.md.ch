@@ -18,9 +18,9 @@ keywords: build, cloud, cloud build, remote builder
 @z
 
 @x
-      text: Beta
+      text: Early Access
 @y
-      text: ベータ
+      text: 早期アクセス
 @z
 
 % grid
@@ -62,25 +62,25 @@ keywords: build, cloud, cloud build, remote builder
 @z
 
 @x
-- title: Usage
-  description: Learn about Docker Offload usage and how to monitor your cloud resources.
+- title: Usage and billing
+  description: Learn about Docker Offload usage and billing, and how to monitor your cloud resources.
   icon: monitor_heart
   link: /offload/usage/
 @y
-- title: 利用方法
-  description: Docker Offload 利用方法とクラウドリソースの監視方法について学びます。
+- title: 利用方法と支払い
+  description: Docker Offload 利用方法と支払い、クラウドリソースの監視方法について学びます。
   icon: monitor_heart
   link: __SUBDIR__/offload/usage/
 @z
 
 @x
 - title: Optimize
-  description: Improve performance, caching, and cost efficiency in Docker Offload.
+  description: Improve performance and cost efficiency in Docker Offload.
   icon: speed
   link: /offload/optimize/
 @y
 - title: 最適化
-  description: Docker Offload のパフォーマンス、キャッシュ、コスト効率を改善します。
+  description: Docker Offload のパフォーマンス、コスト効率を改善します。
   icon: speed
   link: __SUBDIR__/offload/optimize/
 @z
@@ -118,13 +118,13 @@ keywords: build, cloud, cloud build, remote builder
 @x
 Docker Offload is a fully managed service that lets you offload building and
 running containers to the cloud using the Docker tools you already know. It
-provides cloud infrastructure for fast, consistent builds and compute-heavy
-workloads like running LLMs or machine learning pipelines.
+enables developers to work efficiently in virtual desktop infrastructure (VDI)
+environments or systems that don't support nested virtualization.
 @y
 Docker Offload is a fully managed service that lets you offload building and
 running containers to the cloud using the Docker tools you already know. It
-provides cloud infrastructure for fast, consistent builds and compute-heavy
-workloads like running LLMs or machine learning pipelines.
+enables developers to work efficiently in virtual desktop infrastructure (VDI)
+environments or systems that don't support nested virtualization.
 @z
 
 @x

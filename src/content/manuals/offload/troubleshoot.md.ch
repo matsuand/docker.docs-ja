@@ -31,14 +31,14 @@ Docker Offload requires:
 - Authentication
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
-- Beta access to Docker Offload
-- Docker Desktop 4.43 or later
+- Access to Docker Offload
+- Docker Desktop 4.50 or later
 @y
 - Authentication
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
-- Beta access to Docker Offload
-- Docker Desktop 4.43 or later
+- Access to Docker Offload
+- Docker Desktop 4.50 or later
 @z
 
 @x
@@ -59,12 +59,12 @@ session errors, use the following steps to help resolve the issue.
 
 @x
    1. Open Docker Desktop and sign in.
-   2. Go to **Settings** > **Beta features**.
-   3. Ensure that **Docker Offload** is checked.
+   2. Go to **Settings** > **Docker Offload**.
+   3. Ensure that **Enable Docker Offload** is toggled on.
 @y
    1. Open Docker Desktop and sign in.
-   2. Go to **Settings** > **Beta features**.
-   3. Ensure that **Docker Offload** is checked.
+   2. Go to **Settings** > **Docker Offload**.
+   3. Ensure that **Enable Docker Offload** is toggled on.
 @z
 
 @x

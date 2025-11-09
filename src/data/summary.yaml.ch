@@ -591,12 +591,12 @@ Docker CLI OpenTelemetry:
 
 @x
 Docker Offload:
-  availability: Beta
-  requires: Docker Desktop 4.43 and later
+  availability: Early Access
+  requires: Docker Desktop 4.50 and later
 @y
 Docker Offload:
-  availability: ベータ
-  requires: Docker Desktop 4.43 およびそれ以降
+  availability: 早期アクセス
+  requires: Docker Desktop 4.50 およびそれ以降
 @z
 
 @x

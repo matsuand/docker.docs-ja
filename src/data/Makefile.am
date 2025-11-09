@@ -1,7 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli
+SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli \
+	offload-cli
 
 bases = \
 	desktop_release.yaml        \

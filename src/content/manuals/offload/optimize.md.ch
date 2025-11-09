@@ -13,48 +13,36 @@ linktitle: Optimize usage
 
 @x
 description: Learn how to optimize your Docker Offload usage.
-keywords: cloud, optimize, performance, caching, cost efficiency
+keywords: cloud, optimize, performance, offload
 @y
 description: Learn how to optimize your Docker Offload usage.
-keywords: cloud, optimize, performance, caching, cost efficiency
+keywords: cloud, optimize, performance, offload
 @z
 
 @x
-Docker Offload runs your builds remotely, not on the machine where you invoke the
-build. This means that files must be transferred from your local system to the
+Docker Offload builds and runs your containers remotely, not on the machine where you invoke the
+commands. This means that files must be transferred from your local system to the
 cloud over the network.
 @y
-Docker Offload runs your builds remotely, not on the machine where you invoke the
-build. This means that files must be transferred from your local system to the
+Docker Offload builds and runs your containers remotely, not on the machine where you invoke the
+commands. This means that files must be transferred from your local system to the
 cloud over the network.
 @z
 
 @x
 Transferring files over the network introduces higher latency and lower
-bandwidth compared to local transfers. To reduce these effects, Docker Offload
-includes several performance optimizations:
+bandwidth compared to local transfers.
 @y
 Transferring files over the network introduces higher latency and lower
-bandwidth compared to local transfers. To reduce these effects, Docker Offload
-includes several performance optimizations:
+bandwidth compared to local transfers.
 @z
 
 @x
-- It uses attached storage volumes for build cache, which makes reading and writing cache fast.
-- When pulling build results back to your local machine, it only transfers layers that changed since the previous build.
+Even with optimizations, large projects or slower network connections can lead to longer transfer times. Here are
+several ways to optimize your setup for Docker Offload:
 @y
-- It uses attached storage volumes for build cache, which makes reading and writing cache fast.
-- When pulling build results back to your local machine, it only transfers layers that changed since the previous build.
-@z
-
-@x
-Even with these optimizations, large projects or slower network connections can
-lead to longer transfer times. Here are several ways to optimize your build
-setup for Docker Offload:
-@y
-Even with these optimizations, large projects or slower network connections can
-lead to longer transfer times. Here are several ways to optimize your build
-setup for Docker Offload:
+Even with optimizations, large projects or slower network connections can lead to longer transfer times. Here are
+several ways to optimize your setup for Docker Offload:
 @z
 
 @x

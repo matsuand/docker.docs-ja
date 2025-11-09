@@ -31,13 +31,11 @@ depending on whether nested virtualization is supported:
 @x
 - If your environment supports nested virtualization, you can run Docker Desktop
   with its default local Linux VM.
-- If nested virtualization is not supported, Docker recommends using [Docker
-  Offload](/offload/).
+- If nested virtualization is not supported, Docker recommends subscribing to and using Docker Offload.
 @y
 - If your environment supports nested virtualization, you can run Docker Desktop
   with its default local Linux VM.
-- If nested virtualization is not supported, Docker recommends using [Docker
-  Offload](__SUBDIR__/offload/).
+- If nested virtualization is not supported, Docker recommends subscribing to and using Docker Offload.
 @z
 
 @x
@@ -47,23 +45,21 @@ depending on whether nested virtualization is supported:
 @z
 
 @x
-Docker Offload lets you offload container workloads to a high-performance, fully
-hosted cloud environment, enabling a seamless hybrid experience.
+[Docker Offload](/offload/) lets you offload container workloads to a high-performance, fully hosted cloud environment,
+enabling a seamless hybrid experience.
 @y
-Docker Offload lets you offload container workloads to a high-performance, fully
-hosted cloud environment, enabling a seamless hybrid experience.
+[Docker Offload](__SUBDIR__/offload/) lets you offload container workloads to a high-performance, fully hosted cloud environment,
+enabling a seamless hybrid experience.
 @z
 
 @x
-Docker Offload is useful in virtual desktop environments where nested
-virtualization isn't supported. In these environments, Docker Desktop defaults
-to using Docker Offload to ensure you can still build and run containers without
-relying on local virtualization.
+Docker Offload is useful in virtual desktop environments where nested virtualization isn't supported. In these
+environments, Docker Desktop can use Docker Offload to ensure you can still build and run containers without relying on
+local virtualization.
 @y
-Docker Offload is useful in virtual desktop environments where nested
-virtualization isn't supported. In these environments, Docker Desktop defaults
-to using Docker Offload to ensure you can still build and run containers without
-relying on local virtualization.
+Docker Offload is useful in virtual desktop environments where nested virtualization isn't supported. In these
+environments, Docker Desktop can use Docker Offload to ensure you can still build and run containers without relying on
+local virtualization.
 @z
 
 @x

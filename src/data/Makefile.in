@@ -295,7 +295,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli
+SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli \
+	offload-cli
+
 bases = \
 	desktop_release.yaml        \
 	frontmatter.yaml            \

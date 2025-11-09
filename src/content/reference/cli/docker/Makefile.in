@@ -296,9 +296,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = builder buildx checkpoint compose config container context      \
-	desktop image manifest mcp model network node plugin scout secret \
-	service stack swarm system trust volume
+SUBDIRS = builder buildx checkpoint compose config container context \
+	desktop image manifest mcp model network node offload plugin \
+	scout secret service stack swarm system trust volume
 
 bases = \
 	README.md \
