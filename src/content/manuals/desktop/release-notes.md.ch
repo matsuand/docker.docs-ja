@@ -73,8 +73,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+- [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(Experimental) is now available in Docker Desktop .
 - Introduced a new Welcome Survey to improve onboarding. New users can now provide information to help tailor their Docker Desktop experience.
 @y
+- [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(試験的) が Docker Desktop にて利用可能となりました。
 - オンボードのウェルカムアンケート (Webcome Survey) を新しくしました。
   新規ユーザーへの情報提供を通じて、Docker Desktop の導入を調整できるようにします。
 @z

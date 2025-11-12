@@ -204,6 +204,32 @@ project requirements.
 @z
 
 @x
+### GitHub Copilot extension
+@y
+### GitHub Copilot extension
+@z
+
+@x
+The Docker for GitHub Copilot extension integrated Docker capabilities with
+GitHub Copilot Chat, helping developers containerize applications, generate
+Docker assets, and analyze vulnerabilities through conversational prompts. The
+extension was available in early access on the GitHub Marketplace. GitHub
+[deprecated Copilot Extensions](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)
+which led to the retirement of the Docker for GitHub Copilot extension. If
+you're looking for AI-assisted Docker workflows, explore the Docker MCP Toolkit
+and MCP Catalog, or use Ask Gordon in Docker Desktop and the Docker CLI.
+@y
+The Docker for GitHub Copilot extension integrated Docker capabilities with
+GitHub Copilot Chat, helping developers containerize applications, generate
+Docker assets, and analyze vulnerabilities through conversational prompts. The
+extension was available in early access on the GitHub Marketplace. GitHub
+[deprecated Copilot Extensions](https://github.blog/changelog/2025-09-24-deprecate-github-copilot-extensions-github-apps/)
+which led to the retirement of the Docker for GitHub Copilot extension. If
+you're looking for AI-assisted Docker workflows, explore the Docker MCP Toolkit
+and MCP Catalog, or use Ask Gordon in Docker Desktop and the Docker CLI.
+@z
+
+@x
 ## Open source projects
 @y
 ## Open source projects

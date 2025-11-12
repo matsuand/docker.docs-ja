@@ -188,18 +188,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Docker for GitHub Copilot
-    description: Integrate Docker's capabilities with GitHub Copilot.
-    icon: chat
-    link: /copilot/
-@y
-  - title: Docker for GitHub Copilot
-    description: Integrate Docker's capabilities with GitHub Copilot.
-    icon: chat
-    link: /copilot/
-@z
-
-@x
   - title: Docker Extensions
     description: Customize your Docker Desktop workflow.
     icon: extension

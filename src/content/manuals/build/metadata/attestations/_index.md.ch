@@ -48,9 +48,9 @@ images based on policy rules you've defined.
 @z
 
 @x
-Two types of build annotations are available:
+Two types of build attestations are available:
 @y
-Two types of build annotations are available:
+Two types of build attestations are available:
 @z
 
 @x

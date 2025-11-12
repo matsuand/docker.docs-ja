@@ -61,7 +61,7 @@ It is the fastest way from MCP tool discovery to local execution.
 > add tools as needed when you connect to the gateway.
 @y
 > [!TIP]
-> The MCP Toolkit includes [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md),
+> The MCP Toolkit includes [Dynamic MCP](manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md),
 > which enables AI agents to discover, add, and compose MCP servers on-demand during
 > conversations, without manual configuration. Your agent can search the catalog and
 > add tools as needed when you connect to the gateway.
@@ -206,27 +206,145 @@ are invoked, enforced through resource and access limitations.
 @z
 
 @x
-Some MCP servers require authentication to access external services. The MCP
-Toolkit handles OAuth flows for supported services, currently limited to
-GitHub. When you authorize the MCP Toolkit to access your GitHub account, any
-installed MCP server that needs GitHub access can use those credentials without
-requiring separate authentication.
+Some MCP servers require authentication to access external services like
+GitHub, Notion, and Linear. The MCP Toolkit handles OAuth authentication
+automatically. You authorize access through your browser, and the Toolkit
+manages credentials securely. You don't need to manually create API tokens or
+configure authentication for each service.
 @y
-Some MCP servers require authentication to access external services. The MCP
-Toolkit handles OAuth flows for supported services, currently limited to
-GitHub. When you authorize the MCP Toolkit to access your GitHub account, any
-installed MCP server that needs GitHub access can use those credentials without
-requiring separate authentication.
+Some MCP servers require authentication to access external services like
+GitHub, Notion, and Linear. The MCP Toolkit handles OAuth authentication
+automatically. You authorize access through your browser, and the Toolkit
+manages credentials securely. You don't need to manually create API tokens or
+configure authentication for each service.
 @z
 
 @x
-To set up OAuth for a service, use the **OAuth** tab in the MCP Toolkit section
-in Docker Desktop. Once authorized, the credentials are available to any MCP
-server that needs them. You can revoke access at any time from the same tab.
+#### Authorize a server with OAuth
 @y
-To set up OAuth for a service, use the **OAuth** tab in the MCP Toolkit section
-in Docker Desktop. Once authorized, the credentials are available to any MCP
-server that needs them. You can revoke access at any time from the same tab.
+#### Authorize a server with OAuth
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Desktop">}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Desktop">}}
+@z
+
+@x
+1. In Docker Desktop, go to **MCP Toolkit** and select the **Catalog** tab.
+2. Find and add an MCP server that requires OAuth.
+3. In the server's **Configuration** tab, select the **OAuth** authentication
+   method. Follow the link to begin the OAuth authorization.
+4. Your browser opens the authorization page for the service. Follow the
+   on-screen instructions to complete authentication.
+5. Return to Docker Desktop when authentication is complete.
+@y
+1. In Docker Desktop, go to **MCP Toolkit** and select the **Catalog** tab.
+2. Find and add an MCP server that requires OAuth.
+3. In the server's **Configuration** tab, select the **OAuth** authentication
+   method. Follow the link to begin the OAuth authorization.
+4. Your browser opens the authorization page for the service. Follow the
+   on-screen instructions to complete authentication.
+5. Return to Docker Desktop when authentication is complete.
+@z
+
+@x
+View all authorized services in the **OAuth** tab. To revoke access, select
+**Revoke** next to the service you want to disconnect.
+@y
+View all authorized services in the **OAuth** tab. To revoke access, select
+**Revoke** next to the service you want to disconnect.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI">}}
+@y
+{{< /tab >}}
+{{< tab name="CLI">}}
+@z
+
+@x
+Enable an MCP server:
+@y
+Enable an MCP server:
+@z
+
+@x
+```console
+$ docker mcp server enable github-official
+```
+@y
+```console
+$ docker mcp server enable github-official
+```
+@z
+
+@x
+If the server requires OAuth, authorize the connection:
+@y
+If the server requires OAuth, authorize the connection:
+@z
+
+@x
+```console
+$ docker mcp oauth authorize github
+```
+@y
+```console
+$ docker mcp oauth authorize github
+```
+@z
+
+@x
+Your browser opens the authorization page. Complete the authentication process,
+then return to your terminal.
+@y
+Your browser opens the authorization page. Complete the authentication process,
+then return to your terminal.
+@z
+
+@x
+View authorized services:
+@y
+View authorized services:
+@z
+
+@x
+```console
+$ docker mcp oauth ls
+```
+@y
+```console
+$ docker mcp oauth ls
+```
+@z
+
+@x
+Revoke access to a service:
+@y
+Revoke access to a service:
+@z
+
+@x
+```console
+$ docker mcp oauth revoke github
+```
+@y
+```console
+$ docker mcp oauth revoke github
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -254,7 +372,7 @@ interact with your GitHub account:
 @x
 1. From the **MCP Toolkit** menu in Docker Desktop, select the **Catalog** tab
    and find the **GitHub Official** server and add it.
-2. In the server's **Config** tab, authenticate via OAuth.
+2. In the server's **Configuration** tab, authenticate via OAuth.
 3. In the **Clients** tab, ensure Gordon is connected.
 4. From the **Ask Gordon** menu, you can now send requests related to your
    GitHub account, in accordance to the tools provided by the GitHub Official
@@ -262,7 +380,7 @@ interact with your GitHub account:
 @y
 1. From the **MCP Toolkit** menu in Docker Desktop, select the **Catalog** tab
    and find the **GitHub Official** server and add it.
-2. In the server's **Config** tab, authenticate via OAuth.
+2. In the server's **Configuration** tab, authenticate via OAuth.
 3. In the **Clients** tab, ensure Gordon is connected.
 4. From the **Ask Gordon** menu, you can now send requests related to your
    GitHub account, in accordance to the tools provided by the GitHub Official

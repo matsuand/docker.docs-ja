@@ -297,14 +297,14 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = images
 bases = \
-	_index.md      \
-	catalog.md     \
-	dynamic-mcp.md \
-	faqs.md        \
-	get-started.md \
-	hub-mcp.md     \
-	mcp-gateway.md \
-	sandboxes.md   \
+	_index.md        \
+	catalog.md       \
+	dynamic-mcp.md   \
+	e2b-sandboxes.md \
+	faqs.md          \
+	get-started.md   \
+	hub-mcp.md       \
+	mcp-gateway.md   \
 	toolkit.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

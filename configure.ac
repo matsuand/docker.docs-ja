@@ -155,6 +155,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile
 	src/content/manuals/ai/model-runner/Makefile
 	src/content/manuals/ai/model-runner/images/Makefile
+	src/content/manuals/ai/sandboxes/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
@@ -185,8 +186,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/compose/intro/Makefile
 	src/content/manuals/compose/releases/Makefile
 	src/content/manuals/compose/support-and-feedback/Makefile
-	src/content/manuals/copilot/Makefile
-	src/content/manuals/copilot/images/Makefile
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
 	src/content/manuals/desktop/features/Makefile
@@ -346,6 +345,7 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/node/Makefile
 	src/content/reference/cli/docker/offload/Makefile
 	src/content/reference/cli/docker/plugin/Makefile
+	src/content/reference/cli/docker/sandbox/Makefile
 	src/content/reference/cli/docker/scout/Makefile
 	src/content/reference/cli/docker/scout/attestation/Makefile
 	src/content/reference/cli/docker/scout/cache/Makefile
@@ -390,6 +390,7 @@ AC_CONFIG_FILES([
 	src/data/engine-cli/Makefile
 	src/data/init-cli/Makefile
 	src/data/offload-cli/Makefile
+	src/data/sandbox-cli/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile
 	src/layouts/_default/Makefile

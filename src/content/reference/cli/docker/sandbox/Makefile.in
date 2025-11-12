@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/manuals/ai/mcp-catalog-and-toolkit/images
+subdir = src/content/reference/cli/docker/sandbox
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -238,19 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	ask-gordon.avif         \
-	claude-desktop.avif     \
-	copilot-mode.png        \
-	cursor.avif             \
-	goose.avif              \
-	lm-studio.avif          \
-	mcp-overview.svg        \
-	sema4-edit-agent.avif   \
-	sema4-mcp-list.avif     \
-	tools.png               \
-	vscode-extensions.avif  \
-	zed-agent-settings.avif \
-	zed-cmd-palette.avif
+	_index.md  \
+	inspect.md \
+	ls.md      \
+	rm.md      \
+	run.md     \
+	version.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -266,9 +259,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/reference/cli/docker/sandbox/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile
+	  $(AUTOMAKE) --foreign src/content/reference/cli/docker/sandbox/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

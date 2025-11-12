@@ -656,14 +656,6 @@ Docker Desktop CLI kubernetes:
 @z
 
 @x
-Docker GitHub Copilot:
-  availability: Early Access
-@y
-Docker GitHub Copilot:
-  availability: 早期アクセス
-@z
-
-@x
 Docker Hardened Images:
   subscription: [Docker Hardened Images]
 @y
@@ -729,6 +721,16 @@ Docker Projects:
 @y
 Docker Projects:
   availability: ベータ
+@z
+
+@x
+Docker Sandboxes:
+  availability: Experimental
+  requires: Docker Desktop [4.50](/manuals/desktop/release-notes.md#4500) or later
+@y
+Docker Sandboxes:
+  availability: 試験的
+  requires: Docker Desktop [4.50](/manuals/desktop/release-notes.md#4500) or later
 @z
 
 @x

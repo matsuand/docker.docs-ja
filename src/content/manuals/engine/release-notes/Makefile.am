@@ -28,6 +28,7 @@ bases = \
 	26.1.md           \
 	27.md             \
 	28.md             \
+	29.md             \
 	prior-releases.md
 
 include $(top_srcdir)/build-aux/common.mk

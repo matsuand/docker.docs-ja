@@ -17,6 +17,12 @@ keywords: Docker MCP Toolkit, MCP server, MCP client, AI agents
 @z
 
 @x
+  test_prompt: Use the GitHub MCP server to show me my open pull requests
+@y
+  test_prompt: Use the GitHub MCP server to show me my open pull requests
+@z
+
+@x
 {{< summary-bar feature_name="Docker MCP Toolkit" >}}
 @y
 {{< summary-bar feature_name="Docker MCP Toolkit" >}}
@@ -61,53 +67,45 @@ Before you begin, make sure you meet the following requirements to get started w
 @z
 
 @x
-There are multiple ways to get started with Docker MCP Toolkit. You can:
+The **Learning center** in Docker Desktop provides walkthroughs and resources
+to help you get started with Docker products and features. On the **MCP
+Toolkit** page, the **Get started** walkthrough that guides you through
+installing an MCP server, connecting a client, and testing your setup.
 @y
-There are multiple ways to get started with Docker MCP Toolkit. You can:
+The **Learning center** in Docker Desktop provides walkthroughs and resources
+to help you get started with Docker products and features. On the **MCP
+Toolkit** page, the **Get started** walkthrough that guides you through
+installing an MCP server, connecting a client, and testing your setup.
 @z
 
 @x
-- The **Learning center** in Docker Desktop provides walkthroughs and resources
-  to help you get started with Docker products and features.
+Alternatively, follow the step-by-step instructions on this page to:
 @y
-- The **Learning center** in Docker Desktop provides walkthroughs and resources
-  to help you get started with Docker products and features.
+Alternatively, follow the step-by-step instructions on this page to:
 @z
 
 @x
-  On the **MCP Toolkit** page, the **Get started** walkthrough that guides you
-  through installing an MCP server, connecting a client, and testing your
-  setup.
+- [Install MCP servers](#install-mcp-servers)
+- [Connect clients](#connect-clients)
+- [Verify connections](#verify-connections)
 @y
-  On the **MCP Toolkit** page, the **Get started** walkthrough that guides you
-  through installing an MCP server, connecting a client, and testing your
-  setup.
+- [Install MCP servers](#install-mcp-servers)
+- [Connect clients](#connect-clients)
+- [Verify connections](#verify-connections)
 @z
 
 @x
-- Alternatively, follow the step-by-step instructions on this page to use
-  Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server),
-  [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup)
-  with example prompts.
+## Install MCP servers
 @y
-- Alternatively, follow the step-by-step instructions on this page to use
-  Docker Desktop or the CLI to [Install an MCP server](#install-an-mcp-server),
-  [add a client, and test your setup](#install-an-mcp-client-and-test-your-setup)
-  with example prompts.
+## Install MCP servers
 @z
 
 @x
-## Install an MCP server
+{{< tabs >}}
+{{< tab name="Docker Desktop">}}
 @y
-## Install an MCP server
-@z
-
-@x
-{{< tabs group="release" >}}
-{{< tab name="From Docker Desktop">}}
-@y
-{{< tabs group="release" >}}
-{{< tab name="From Docker Desktop">}}
+{{< tabs >}}
+{{< tab name="Docker Desktop">}}
 @z
 
 @x
@@ -146,10 +144,10 @@ There are multiple ways to get started with Docker MCP Toolkit. You can:
 
 @x
 {{< /tab >}}
-{{< tab name="From the Docker CLI">}}
+{{< tab name="CLI">}}
 @y
 {{< /tab >}}
-{{< tab name="From the Docker CLI">}}
+{{< tab name="CLI">}}
 @z
 
 @x
@@ -201,104 +199,322 @@ There are multiple ways to get started with Docker MCP Toolkit. You can:
 @z
 
 @x
-You’ve now successfully added an MCP server. Next, install an MCP client and test your setup with an example prompt.
+You’ve now successfully added an MCP server. Next, connect an MCP client to use
+the MCP Toolkit in an AI application.
 @y
-You’ve now successfully added an MCP server. Next, install an MCP client and test your setup with an example prompt.
+You’ve now successfully added an MCP server. Next, connect an MCP client to use
+the MCP Toolkit in an AI application.
 @z
 
 @x
-## Install an MCP client and test your setup
+## Connect clients
 @y
-## Install an MCP client and test your setup
+## Connect clients
 @z
 
 @x
-After you've installed MCP servers, you can add clients to the MCP Toolkit. These clients can interact with the installed MCP servers, turning the MCP Toolkit into a gateway. In the following section, let’s add the Claude Desktop client.
+To connect a client to MCP Toolkit:
 @y
-After you've installed MCP servers, you can add clients to the MCP Toolkit. These clients can interact with the installed MCP servers, turning the MCP Toolkit into a gateway. In the following section, let’s add the Claude Desktop client.
-@z
-
-@x
-{{< tabs group="release" >}}
-{{< tab name="From Docker Desktop">}}
-@y
-{{< tabs group="release" >}}
-{{< tab name="From Docker Desktop">}}
+To connect a client to MCP Toolkit:
 @z
 
 @x
 1. In Docker Desktop, select **MCP Toolkit** and select the **Clients** tab.
-2. Find **Claude Desktop** and select **Connect**.
+2. Find your application in the list.
+3. Select **Connect** to configure the client.
 @y
 1. In Docker Desktop, select **MCP Toolkit** and select the **Clients** tab.
-2. Find **Claude Desktop** and select **Connect**.
+2. Find your application in the list.
+3. Select **Connect** to configure the client.
 @z
 
 @x
-   If Claude Desktop isn't installed, select **Download** to install it, then select **Connect**.
+If your client isn't listed, you can connect the MCP Toolkit manually over
+`stdio` by configuring your client to run the following command:
 @y
-   If Claude Desktop isn't installed, select **Download** to install it, then select **Connect**.
-@z
-
-@x
-3. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-4. Open Claude Desktop and run a test by submitting the following prompt:
-@y
-3. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-4. Open Claude Desktop and run a test by submitting the following prompt:
-@z
-
-% snip text...
-
-@x
-   Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
-@y
-   Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
-@z
-
-@x
-   ![Screenshot showing the header of Docker docs.](./images/claude-desktop-example.png)
-@y
-   ![Screenshot showing the header of Docker docs.](./images/claude-desktop-example.png)
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="From the Docker CLI">}}
-@y
-{{< /tab >}}
-{{< tab name="From the Docker CLI">}}
-@z
-
-@x
-1. In a terminal window, run the following commands to connect the Claude Desktop client:
-@y
-1. In a terminal window, run the following commands to connect the Claude Desktop client:
+If your client isn't listed, you can connect the MCP Toolkit manually over
+`stdio` by configuring your client to run the following command:
 @z
 
 % snip command...
 
 @x
-2. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-3. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet 4 model:
+For example, if your client uses a JSON file to configure MCP servers, you may
+add an entry like:
 @y
-2. Restart Claude Desktop if it's running, and it can now access all the servers in the MCP Toolkit.
-3. Open Claude Desktop and run a test by submitting the following prompt using the Sonnet 4 model:
+For example, if your client uses a JSON file to configure MCP servers, you may
+add an entry like:
+@z
+
+% snip code...
+
+@x
+Consult the documentation of the application you're using for instructions on
+how to set up MCP servers manually.
+@y
+Consult the documentation of the application you're using for instructions on
+how to set up MCP servers manually.
+@z
+
+@x
+## Verify connections
+@y
+## Verify connections
+@z
+
+@x
+Refer to the relevant section for instructions on how to verify that your setup
+is working:
+@y
+Refer to the relevant section for instructions on how to verify that your setup
+is working:
+@z
+
+@x
+- [Claude Code](#claude-code)
+- [Claude Desktop](#claude-desktop)
+- [OpenAI Codex](#codex)
+- [Continue](#continue)
+- [Cursor](#cursor)
+- [Gemini](#gemini)
+- [Goose](#goose)
+- [Gordon](#gordon)
+- [LM Studio](#lm-studio)
+- [OpenCode](#opencode)
+- [Sema4.ai](#sema4)
+- [Visual Studio Code](#vscode)
+- [Zed](#zed)
+@y
+- [Claude Code](#claude-code)
+- [Claude Desktop](#claude-desktop)
+- [OpenAI Codex](#codex)
+- [Continue](#continue)
+- [Cursor](#cursor)
+- [Gemini](#gemini)
+- [Goose](#goose)
+- [Gordon](#gordon)
+- [LM Studio](#lm-studio)
+- [OpenCode](#opencode)
+- [Sema4.ai](#sema4)
+- [Visual Studio Code](#vscode)
+- [Zed](#zed)
+@z
+
+@x
+### Claude Code
+@y
+### Claude Code
+@z
+
+@x
+If you configured the MCP Toolkit for a specific project, navigate to the
+relevant project directory. Then run `claude mcp list`. The output should show
+`MCP_DOCKER` with a "connected" status:
+@y
+If you configured the MCP Toolkit for a specific project, navigate to the
+relevant project directory. Then run `claude mcp list`. The output should show
+`MCP_DOCKER` with a "connected" status:
+@z
+
+% snip command...
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip command...
+
+@x
+### Claude Desktop
+@y
+### Claude Desktop
+@z
+
+@x
+Restart Claude Desktop and check the **Search and tools** menu in the chat
+input. You should see the `MCP_DOCKER` server listed and enabled:
+@y
+Restart Claude Desktop and check the **Search and tools** menu in the chat
+input. You should see the `MCP_DOCKER` server listed and enabled:
+@z
+
+@x
+![Claude Desktop](images/claude-desktop.avif)
+@y
+![Claude Desktop](images/claude-desktop.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
 @z
 
 % snip text...
 
 @x
-   Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
+### Codex
 @y
-   Claude prompts you for permissions and shares a screenshot of the header element from the Docker documentation page.
+### Codex
 @z
 
 @x
-   ![Screenshot showing the header of Docker docs.](./images/claude-desktop-example.png)
+Run `codex mcp list` to view active MCP servers and their statuses. The
+`MCP_DOCKER` server should appear in the list with an "enabled" status:
 @y
-   ![Screenshot showing the header of Docker docs.](./images/claude-desktop-example.png)
+Run `codex mcp list` to view active MCP servers and their statuses. The
+`MCP_DOCKER` server should appear in the list with an "enabled" status:
 @z
+
+% snip command...
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip command...
+
+@x
+### Continue
+@y
+### Continue
+@z
+
+@x
+Launch the Continue terminal UI by running `cn`. Use the `/mcp` command to view
+active MCP servers and their statuses. The `MCP_DOCKER` server should appear in
+the list with a "connected" status:
+@y
+Launch the Continue terminal UI by running `cn`. Use the `/mcp` command to view
+active MCP servers and their statuses. The `MCP_DOCKER` server should appear in
+the list with a "connected" status:
+@z
+
+% snip text...
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip command...
+
+@x
+### Cursor
+@y
+### Cursor
+@z
+
+@x
+Open Cursor. If you configured the MCP Toolkit for a specific project, open the
+relevant project directory. Then navigate to **Cursor Settings > Tools & MCP**.
+You should see `MCP_DOCKER` under **Installed MCP Servers**:
+@y
+Open Cursor. If you configured the MCP Toolkit for a specific project, open the
+relevant project directory. Then navigate to **Cursor Settings > Tools & MCP**.
+You should see `MCP_DOCKER` under **Installed MCP Servers**:
+@z
+
+@x
+![Cursor](images/cursor.avif)
+@y
+![Cursor](images/cursor.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
+
+@x
+### Gemini
+@y
+### Gemini
+@z
+
+@x
+Run `gemini mcp list` to view active MCP servers and their statuses. The
+`MCP_DOCKER` should appear in the list with a "connected" status.
+@y
+Run `gemini mcp list` to view active MCP servers and their statuses. The
+`MCP_DOCKER` should appear in the list with a "connected" status.
+@z
+
+% snip command...
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip command...
+
+@x
+### Goose
+@y
+### Goose
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Desktop app" >}}
+@y
+{{< tabs >}}
+{{< tab name="Desktop app" >}}
+@z
+
+@x
+Open the Goose desktop application and select **Extensions** in the sidebar.
+Under **Enabled Extensions**, you should see an extension named `Mcpdocker`:
+@y
+Open the Goose desktop application and select **Extensions** in the sidebar.
+Under **Enabled Extensions**, you should see an extension named `Mcpdocker`:
+@z
+
+@x
+![Goose desktop app](images/goose.avif)
+@y
+![Goose desktop app](images/goose.avif)
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+Run `goose info -v` and look for an entry named `mcpdocker` under extensions.
+The status should show `enabled: true`:
+@y
+Run `goose info -v` and look for an entry named `mcpdocker` under extensions.
+The status should show `enabled: true`:
+@z
+
+% snip command...
 
 @x
 {{< /tab >}}
@@ -307,6 +523,224 @@ After you've installed MCP servers, you can add clients to the MCP Toolkit. Thes
 {{< /tab >}}
 {{< /tabs >}}
 @z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
+
+@x
+### Gordon
+@y
+### Gordon
+@z
+
+@x
+Open the **Ask Gordon** view in Docker Desktop and select the toolbox icon in
+the chat input area. The **MCP Toolkit** tab shows whether MCP Toolkit is
+enabled and displays all the provided tools:
+@y
+Open the **Ask Gordon** view in Docker Desktop and select the toolbox icon in
+the chat input area. The **MCP Toolkit** tab shows whether MCP Toolkit is
+enabled and displays all the provided tools:
+@z
+
+@x
+![MCP Toolkit in the Ask Gordon UI](images/ask-gordon.avif)
+@y
+![MCP Toolkit in the Ask Gordon UI](images/ask-gordon.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers, either directly in Docker Desktop or using the CLI:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers, either directly in Docker Desktop or using the CLI:
+@z
+
+% snip command...
+
+@x
+### LM Studio
+@y
+### LM Studio
+@z
+
+@x
+Restart LM Studio and start a new chat. Open the integrations menu and look for
+an entry named `mcp/mcp-docker`. Use the toggle to enable the server:
+@y
+Restart LM Studio and start a new chat. Open the integrations menu and look for
+an entry named `mcp/mcp-docker`. Use the toggle to enable the server:
+@z
+
+@x
+![LM Studio](images/lm-studio.avif)
+@y
+![LM Studio](images/lm-studio.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
+
+@x
+### OpenCode
+@y
+### OpenCode
+@z
+
+@x
+The OpenCode configuration file (at `~/.config/opencode/opencode.json` by
+default) contains the setup for MCP Toolkit:
+@y
+The OpenCode configuration file (at `~/.config/opencode/opencode.json` by
+default) contains the setup for MCP Toolkit:
+@z
+
+% snip code...
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip command...
+
+@x
+### Sema4.ai Studio {#sema4}
+@y
+### Sema4.ai Studio {#sema4}
+@z
+
+@x
+In Sema4.ai Studio, select **Actions** in the sidebar, then select the **MCP
+Servers** tab. You should see Docker MCP Toolkit in the list:
+@y
+In Sema4.ai Studio, select **Actions** in the sidebar, then select the **MCP
+Servers** tab. You should see Docker MCP Toolkit in the list:
+@z
+
+@x
+![Docker MCP Toolkit in Sema4.ai Studio](./images/sema4-mcp-list.avif)
+@y
+![Docker MCP Toolkit in Sema4.ai Studio](./images/sema4-mcp-list.avif)
+@z
+
+@x
+To use MCP Toolkit with Sema4.ai, add it as an agent action. Find the agent you
+want to connect to the MCP Toolkit and open the agent editor. Select **Add
+Action**, enable Docker MCP Toolkit in the list, then save your agent:
+@y
+To use MCP Toolkit with Sema4.ai, add it as an agent action. Find the agent you
+want to connect to the MCP Toolkit and open the agent editor. Select **Add
+Action**, enable Docker MCP Toolkit in the list, then save your agent:
+@z
+
+@x
+![Editing an agent in Sema4.ai Studio](images/sema4-edit-agent.avif)
+@y
+![Editing an agent in Sema4.ai Studio](images/sema4-edit-agent.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
+
+@x
+### Visual Studio Code {#vscode}
+@y
+### Visual Studio Code {#vscode}
+@z
+
+@x
+Open Visual Studio Code. If you configured the MCP Toolkit for a specific
+project, open the relevant project directory. Then open the **Extensions**
+pane. You should see the `MCP_DOCKER` server listed under installed MCP
+servers.
+@y
+Open Visual Studio Code. If you configured the MCP Toolkit for a specific
+project, open the relevant project directory. Then open the **Extensions**
+pane. You should see the `MCP_DOCKER` server listed under installed MCP
+servers.
+@z
+
+@x
+![MCP_DOCKER installed in Visual Studio Code](images/vscode-extensions.avif)
+@y
+![MCP_DOCKER installed in Visual Studio Code](images/vscode-extensions.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
+
+@x
+### Zed
+@y
+### Zed
+@z
+
+@x
+Launch Zed and open agent settings:
+@y
+Launch Zed and open agent settings:
+@z
+
+@x
+![Opening Zed agent settings from command palette](images/zed-cmd-palette.avif)
+@y
+![Opening Zed agent settings from command palette](images/zed-cmd-palette.avif)
+@z
+
+@x
+Ensure that `MCP_DOCKER` is listed and enabled in the MCP Servers section:
+@y
+Ensure that `MCP_DOCKER` is listed and enabled in the MCP Servers section:
+@z
+
+@x
+![MCP_DOCKER in Zed's agent settings](images/zed-agent-settings.avif)
+@y
+![MCP_DOCKER in Zed's agent settings](images/zed-agent-settings.avif)
+@z
+
+@x
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@y
+Test the connection by submitting a prompt that invokes one of your installed
+MCP servers:
+@z
+
+% snip text...
 
 @x
 ## Further reading

@@ -153,24 +153,36 @@
 @z
 
 @x
-                    Docker MCP Catalog and Toolkit
+		          Docker State of Application Development survey
 @y
-                    Docker MCP Catalog と Toolkit
+		          Docker State of Application Development survey
 @z
 @x
-                  Supercharge your AI applications or agents with secure, containerized tools
+		          Share your feedback and help us better understand and serve
+		          the application development community. It will take just 20
+		          minutes of your time. We want to know where you are
+		          focused, what you are working on, and what is most
+		          important to you.
 @y
-                  安全なコンテナー化ツールを使って AI アプリケーションやエージェントを強化します。
+		          Share your feedback and help us better understand and serve
+		          the application development community. It will take just 20
+		          minutes of your time. We want to know where you are
+		          focused, what you are working on, and what is most
+		          important to you.
 @z
 @x
-                    href="/ai/mcp-catalog-and-toolkit/get-started/"
+		          You can save your progress and return at any time. As a
+		          thank-you, you can opt into a raffle for Docker swag and
+		          other prizes.
 @y
-                    href="ai/mcp-catalog-and-toolkit/get-started/"
+		          You can save your progress and return at any time. As a
+		          thank-you, you can opt into a raffle for Docker swag and
+		          other prizes.
 @z
 @x
-                    >Let's get started</a>
+                  >Take the survey</a>
 @y
-                    >はじめよう</a>
+                  >Take the survey</a>
 @z
 
 @x
