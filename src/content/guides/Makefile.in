@@ -295,12 +295,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = admin-set-up admin-user-management bake bun compose-bake cpp deno  \
-	docker-build-cloud docker-compose docker-scout dotnet frameworks     \
-	genai-leveraging-rag genai-pdf-bot genai-video-bot                   \
-	github-sonarqube-sandbox golang go-prometheus-monitoring images java \
-	nodejs php python r rag-ollama ruby rust testcontainers-cloud        \
-	zscaler
+SUBDIRS = admin-set-up admin-user-management angular bake bun compose-bake \
+	cpp deno docker-build-cloud docker-compose docker-scout dotnet     \
+	frameworks genai-leveraging-rag genai-pdf-bot genai-video-bot      \
+	github-sonarqube-sandbox golang go-prometheus-monitoring images    \
+	java nodejs php python r rag-ollama ruby rust testcontainers-cloud \
+	vuejs zscaler
 
 bases = \
 	_index.md                          \

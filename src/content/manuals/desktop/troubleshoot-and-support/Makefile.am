@@ -5,8 +5,7 @@ SUBDIRS = faqs troubleshoot
 
 bases = \
 	_index.md   \
-	feedback.md \
-	support.md
+	feedback.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

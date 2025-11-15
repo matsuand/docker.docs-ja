@@ -1,6 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 SUBDIRS = networking wsl
 
 bases = \
@@ -8,7 +9,6 @@ bases = \
 	containerd.md                \
 	desktop-cli.md               \
 	gpu.md                       \
-	kubernetes.md                \
 	synchronized-file-sharing.md \
 	usbip.md                     \
 	vmm.md                       \

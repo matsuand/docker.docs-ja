@@ -4,17 +4,21 @@
 % .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
 
 @x
-description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
+description:
+  Understand how to diagnose and troubleshoot Docker Desktop, and how to
   check the logs.
 keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
-toc_max: 2
+@y
+description:
+  Understand how to diagnose and troubleshoot Docker Desktop, and how to
+  check the logs.
+keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
+@z
+
+@x
 title: Troubleshoot Docker Desktop
 linkTitle: Troubleshoot and diagnose
 @y
-description: Understand how to diagnose and troubleshoot Docker Desktop, and how to
-  check the logs.
-keywords: Linux, Mac, Windows, troubleshooting, logs, issues, Docker Desktop
-toc_max: 2
 title: Troubleshoot Docker Desktop
 linkTitle: Troubleshoot and diagnose
 @z
@@ -65,18 +69,18 @@ The **Troubleshooting** menu contains the following options:
 
 @x
 - **Clean / Purge data**. This option resets all Docker data without a
-reset to factory defaults. Selecting this option results in the loss of existing settings.
+  reset to factory defaults. Selecting this option results in the loss of existing settings.
 @y
 - **Clean / Purge data**. This option resets all Docker data without a
-reset to factory defaults. Selecting this option results in the loss of existing settings.
+  reset to factory defaults. Selecting this option results in the loss of existing settings.
 @z
 
 @x
 - **Reset to factory defaults**: Choose this option to reset all options on
-Docker Desktop to their initial state, the same as when Docker Desktop was first installed.
+  Docker Desktop to their initial state, the same as when Docker Desktop was first installed.
 @y
 - **Reset to factory defaults**: Choose this option to reset all options on
-Docker Desktop to their initial state, the same as when Docker Desktop was first installed.
+  Docker Desktop to their initial state, the same as when Docker Desktop was first installed.
 @z
 
 @x
@@ -120,47 +124,47 @@ If you are a Mac or Linux user, you also have the option to **Uninstall** Docker
 2. When the diagnostics collection process is complete, select **Upload to get a Diagnostic ID**.
 3. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 4. Use your diagnostics ID to get help:
-    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
-        > [!NOTE]
-        >
-        > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/desktop/troubleshoot-and-support/support.md).
-    - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
+   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
+     > [!NOTE]
+     >
+     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/support/_index.md).
+   - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
 @y
 1. From **Troubleshoot**, select **Get support**. This opens the in-app Support page and starts collecting the diagnostics.
 2. When the diagnostics collection process is complete, select **Upload to get a Diagnostic ID**.
 3. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 4. Use your diagnostics ID to get help:
-    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
-        > [!NOTE]
-        >
-        > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](manuals/desktop/troubleshoot-and-support/support.md).
-    - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
+   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
+     > [!NOTE]
+     >
+     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](manuals/support/_index.md).
+   - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
 @z
 
 @x
-### Diagnose from an error message 
+### Diagnose from an error message
 @y
-### Diagnose from an error message 
+### Diagnose from an error message
 @z
 
 @x
 1. When an error message appears, select **Gather diagnostics**.
 2. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 3. Use your diagnostics ID to get help:
-    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
-        > [!NOTE]
-        >
-        > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/desktop/troubleshoot-and-support/support.md).
-    - If you don't have a paid Docker subscription, you can open a new Docker Desktop issue on GitHub for [Mac](https://github.com/docker/for-mac/issues), [Windows](https://github.com/docker/for-win/issues), or [Linux](https://github.com/docker/for-linux/issues). Complete the information required and ensure you add the diagnostic ID printed in step two. 
+   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
+     > [!NOTE]
+     >
+     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/support/_index.md).
+   - If you don't have a paid Docker subscription, you can open a new Docker Desktop issue on GitHub for [Mac](https://github.com/docker/for-mac/issues), [Windows](https://github.com/docker/for-win/issues), or [Linux](https://github.com/docker/for-linux/issues). Complete the information required and ensure you add the diagnostic ID printed in step two.
 @y
 1. When an error message appears, select **Gather diagnostics**.
 2. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 3. Use your diagnostics ID to get help:
-    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
-        > [!NOTE]
-        >
-        > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](manuals/desktop/troubleshoot-and-support/support.md).
-    - If you don't have a paid Docker subscription, you can open a new Docker Desktop issue on GitHub for [Mac](https://github.com/docker/for-mac/issues), [Windows](https://github.com/docker/for-win/issues), or [Linux](https://github.com/docker/for-linux/issues). Complete the information required and ensure you add the diagnostic ID printed in step two. 
+   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
+     > [!NOTE]
+     >
+     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](manuals/support/_index.md).
+   - If you don't have a paid Docker subscription, you can open a new Docker Desktop issue on GitHub for [Mac](https://github.com/docker/for-mac/issues), [Windows](https://github.com/docker/for-win/issues), or [Linux](https://github.com/docker/for-linux/issues). Complete the information required and ensure you add the diagnostic ID printed in step two.
 @z
 
 @x
@@ -218,9 +222,9 @@ Docker Desktop cannot start.
 @z
 
 @x
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @y
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @z
 
 @x
@@ -264,9 +268,9 @@ After the diagnostics have finished, the terminal displays your diagnostics ID a
 @z
 
 @x
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @y
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @z
 
 @x
@@ -310,9 +314,9 @@ After the diagnostics have finished, the terminal displays your diagnostics ID a
 @z
 
 @x
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @y
-After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`. 
+After the diagnostics have finished, the terminal displays your diagnostics ID and the path to the diagnostics file. The diagnostics ID is composed of your user ID and a timestamp. For example `BE9AFAAF-F68B-41D0-9D12-84760E6B8740/20190905152051`.
 @z
 
 @x
@@ -346,11 +350,11 @@ To view the contents of the diagnostic file:
 @x
    ```powershell
    $ Expand-Archive -LiteralPath "C:\Users\testUser\AppData\Local\Temp\5DE9978A-3848-429E-8776-950FC869186F\20230607101602.zip" -DestinationPath "C:\Users\testuser\AppData\Local\Temp\5DE9978A-3848-429E-8776-950FC869186F\20230607101602"
-   ```  
+   ```
 @y
    ```powershell
    $ Expand-Archive -LiteralPath "C:\Users\testUser\AppData\Local\Temp\5DE9978A-3848-429E-8776-950FC869186F\20230607101602.zip" -DestinationPath "C:\Users\testuser\AppData\Local\Temp\5DE9978A-3848-429E-8776-950FC869186F\20230607101602"
-   ```  
+   ```
 @z
 
 @x
@@ -665,8 +669,10 @@ to learn how to view the Docker Daemon logs.
 - View specific [troubleshoot topics](topics.md).
 - View information on [known issues](known-issues.md)
 - [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) - Resolve macOS installation issues
+- [Get support for Docker products](/manuals/support/_index.md)
 @y
 - View specific [troubleshoot topics](topics.md).
 - View information on [known issues](known-issues.md)
 - [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) - Resolve macOS installation issues
+- [Get support for Docker products](manuals/support/_index.md)
 @z

@@ -65,9 +65,21 @@ If you have an existing Rails application, you will need to create the Docker as
 @z
 
 @x
-Rails 7.1 generates multistage Dockerfile out of the box, below is an example of such file generated from a Rails template.
+Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHI) and another using the official Docker image.
 @y
-Rails 7.1 generates multistage Dockerfile out of the box, below is an example of such file generated from a Rails template.
+Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHI) and another using the official Docker image.
+@z
+
+@x
+> [Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker.
+@y
+> [Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker.
+@z
+
+@x
+DHI images are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance.
+@y
+DHI images are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance.
 @z
 
 @x
@@ -82,12 +94,28 @@ Although the Dockerfile is generated automatically, understanding its purpose an
 Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
 @z
 
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@z
+
 @x within code
 # This Dockerfile is designed for production, not development.
 @y
 # This Dockerfile is designed for production, not development.
 @z
 % ...
+
+@x
+{{< /tab >}}
+{{< tab name="Using the official Docker image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the official Docker image" >}}
+@z
 
 @x
 This Dockerfile uses a script at `./bin/docker-entrypoint` as the container's entrypoint. This script prepares the database and runs the application server. Below is an example of such a script.

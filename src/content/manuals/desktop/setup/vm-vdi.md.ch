@@ -105,9 +105,9 @@ quickstart](__SUBDIR__/offload/quickstart/).
 @z
 
 @x
-Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](/manuals/desktop/troubleshoot-and-support/support.md).
+Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](/manuals/support/_index.md).
 @y
-Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](manuals/desktop/troubleshoot-and-support/support.md).
+Docker support includes installing and running Docker Desktop within the VM, provided that nested virtualization is correctly enabled. The only hypervisors successfully tested are VMware ESXi and Azure, and there is no support for other VMs. For more information on Docker Desktop support, see [Get support](manuals/support/_index.md).
 @z
 
 @x
@@ -117,9 +117,9 @@ For troubleshooting problems and intermittent failures that are outside of Docke
 @z
 
 @x
-Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment. 
+Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment.
 @y
-Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment. 
+Docker does not support running multiple instances of Docker Desktop on the same machine in a VM or VDI environment.
 @z
 
 @x
@@ -217,15 +217,15 @@ Docker Desktop follows the VDI support definitions outlined [previously](#virtua
 @z
 
 @x
- - Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
+- Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
 @y
- - Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
+- Persistent VDI environments (Supported): You receive the same virtual desktop instance across sessions, preserving installed software and configurations.
 @z
 
 @x
- - Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
+- Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
 @y
- - Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
+- Non-persistent VDI environments (Not supported): Docker Desktop does not support environments where the OS resets between sessions, requiring re-installation or reconfiguration each time. 
 @z
 
 @x

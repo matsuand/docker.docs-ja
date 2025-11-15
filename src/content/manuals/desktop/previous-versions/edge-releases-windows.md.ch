@@ -2679,11 +2679,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 * New
-  - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as docker commands. See [the Kubernetes section](/manuals/desktop/features/kubernetes.md).
+  - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as docker commands. See [the Kubernetes section](/manuals/desktop/use-desktop/kubernetes.md).
   - LCOW containers can now be run next to Windows containers (on Windows RS3 build 16299 and later). Use `--platform=linux` in Windows container mode to run Linux Containers On Windows. Note that LCOW is still experimental, and requires daemon `experimental` option.
 @y
 * New
-  - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as docker commands. See [the Kubernetes section](manuals/desktop/features/kubernetes.md).
+  - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker for Windows settings and use kubectl commands as well as docker commands. See [the Kubernetes section](manuals/desktop/use-desktop/kubernetes.md).
   - LCOW containers can now be run next to Windows containers (on Windows RS3 build 16299 and later). Use `--platform=linux` in Windows container mode to run Linux Containers On Windows. Note that LCOW is still experimental, and requires daemon `experimental` option.
 @z
 

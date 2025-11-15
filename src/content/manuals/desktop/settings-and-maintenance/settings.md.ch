@@ -44,6 +44,12 @@ You can also locate the `settings-store.json` file (or `settings.json` for Docke
 @z
 
 @x
+For additional information on settings that can be set in the Docker Desktop Dashboard and by administrators via the Admin Console, see the [Settings reference](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
+@y
+For additional information on settings that can be set in the Docker Desktop Dashboard and by administrators via the Admin Console, see the [Settings reference](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
+@z
+
+@x
 ## General
 @y
 ## General
@@ -1097,20 +1103,20 @@ You can only start and stop builders using the `docker-container` driver.
 Docker Desktop includes a standalone Kubernetes server, so that you can test
 deploying your Docker workloads on Kubernetes. To turn on Kubernetes support and
 install a standalone instance of Kubernetes running as a Docker container,
-select **Enable Kubernetes**.
+select **Enable Kubernetes**. This can also be done from the **Kubernetes** view. 
 @y
 Docker Desktop includes a standalone Kubernetes server, so that you can test
 deploying your Docker workloads on Kubernetes. To turn on Kubernetes support and
 install a standalone instance of Kubernetes running as a Docker container,
-select **Enable Kubernetes**.
+select **Enable Kubernetes**. This can also be done from the **Kubernetes** view. 
 @z
 
 @x
-With Docker Desktop version 4.38 and later, you can choose your cluster provisioning method:
+You can choose your cluster provisioning method:
  - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
  - **kind** creates a multi-node cluster and you can set the version and number of nodes. 
 @y
-With Docker Desktop version 4.38 and later, you can choose your cluster provisioning method:
+You can choose your cluster provisioning method:
  - **Kubeadm** creates a single-node cluster and the version is set by Docker Desktop.
  - **kind** creates a multi-node cluster and you can set the version and number of nodes. 
 @z
@@ -1131,10 +1137,10 @@ Select **Reset Kubernetes cluster** to delete all stacks and Kubernetes resource
 
 @x
 For more information about using the Kubernetes integration with Docker Desktop,
-see [Deploy on Kubernetes](/manuals/desktop/features/kubernetes.md).
+see [Explore the Kubernetes view](/manuals/desktop/use-desktop/kubernetes.md).
 @y
 For more information about using the Kubernetes integration with Docker Desktop,
-see [Deploy on Kubernetes](manuals/desktop/features/kubernetes.md).
+see [Explore the Kubernetes view](manuals/desktop/use-desktop/kubernetes.md).
 @z
 
 @x

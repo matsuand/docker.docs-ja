@@ -24,9 +24,9 @@ summary: |
 @z
 
 @x
-The Deno getting started guide teaches you how to create a containerized Deno application using Docker. In this guide, you'll learn how to:
+The Deno getting started guide teaches you how to create a containerized Deno application using Docker.
 @y
-The Deno getting started guide teaches you how to create a containerized Deno application using Docker. In this guide, you'll learn how to:
+The Deno getting started guide teaches you how to create a containerized Deno application using Docker.
 @z
 
 @x

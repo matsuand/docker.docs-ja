@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a Deno application
@@ -65,7 +65,15 @@ directory to a directory that you want to work in, and run the following
 command to clone the repository:
 @z
 
-% snip command...
+@x
+```console
+$ git clone https://github.com/dockersamples/docker-deno.git && cd docker-deno
+```
+@y
+```console
+$ git clone https://github.com/dockersamples/docker-deno.git && cd docker-deno
+```
+@z
 
 @x
 You should now have the following contents in your `deno-docker` directory.
@@ -73,7 +81,25 @@ You should now have the following contents in your `deno-docker` directory.
 You should now have the following contents in your `deno-docker` directory.
 @z
 
-% snip text...
+@x
+```text
+├── deno-docker/
+│ ├── compose.yml
+│ ├── Dockerfile
+│ ├── LICENSE
+│ ├── server.ts
+│ └── README.md
+```
+@y
+```text
+├── deno-docker/
+│ ├── compose.yml
+│ ├── Dockerfile
+│ ├── LICENSE
+│ ├── server.ts
+│ └── README.md
+```
+@z
 
 @x
 ## Understand the sample application
@@ -144,11 +170,103 @@ await app.listen({ port: 8000 });
 @z
 
 @x
-In the Dockerfile, you'll notice that the `FROM` instruction uses `denoland/deno:latest`
-as the base image. This is the official image for Deno. This image is [available on the Docker Hub](https://hub.docker.com/r/denoland/deno).
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Deno Docker Official Image](https://hub.docker.com/r/denoland/deno) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
 @y
-In the Dockerfile, you'll notice that the `FROM` instruction uses `denoland/deno:latest`
-as the base image. This is the official image for Deno. This image is [available on the Docker Hub](https://hub.docker.com/r/denoland/deno).
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Deno Docker Official Image](https://hub.docker.com/r/denoland/deno) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
+@z
+
+@x
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@y
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Deno on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/deno). Unlike using the Docker Official Image, you must first mirror the Deno image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](/dhi/get-started/) to create a mirrored repository for Deno.
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Deno on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/deno). Unlike using the Docker Official Image, you must first mirror the Deno image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](__SUBDIR__/dhi/get-started/) to create a mirrored repository for Deno.
+@z
+
+@x
+Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-deno:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-deno:2` as the base image.
+@y
+Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-deno:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-deno:2` as the base image.
+@z
+
+@x
+```dockerfile
+# Use the DHI Deno image as the base image
+FROM <your-namespace>/dhi-deno:2
+@y
+```dockerfile
+# Use the DHI Deno image as the base image
+FROM <your-namespace>/dhi-deno:2
+@z
+
+@x
+# Set the working directory
+WORKDIR /app
+@y
+# Set the working directory
+WORKDIR /app
+@z
+
+@x
+# Copy server code into the container
+COPY server.ts .
+@y
+# Copy server code into the container
+COPY server.ts .
+@z
+
+@x
+# Set permissions (optional but recommended for security)
+USER deno
+@y
+# Set permissions (optional but recommended for security)
+USER deno
+@z
+
+@x
+# Expose port 8000
+EXPOSE 8000
+@y
+# Expose port 8000
+EXPOSE 8000
+@z
+
+@x
+# Run the Deno server
+CMD ["run", "--allow-net", "server.ts"]
+```
+@y
+# Run the Deno server
+CMD ["run", "--allow-net", "server.ts"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Using the official image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the official image" >}}
+@z
+
+@x
+Using the Docker Official Image is straightforward. In the following Dockerfile, you'll notice that the `FROM` instruction uses `denoland/deno:latest` as the base image.
+@y
+Using the Docker Official Image is straightforward. In the following Dockerfile, you'll notice that the `FROM` instruction uses `denoland/deno:latest` as the base image.
+@z
+
+@x
+This is the official image for Deno. This image is [available on the Docker Hub](https://hub.docker.com/r/denoland/deno).
+@y
+This is the official image for Deno. This image is [available on the Docker Hub](https://hub.docker.com/r/denoland/deno).
 @z
 
 @x
@@ -204,9 +322,17 @@ CMD ["run", "--allow-net", "server.ts"]
 @z
 
 @x
-Aside from specifying `denoland/deno:latest` as the base image, the Dockerfile:
+{{< /tab >}}
+{{< /tabs >}}
 @y
-Aside from specifying `denoland/deno:latest` as the base image, the Dockerfile:
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+In addition to specifying the base image, the Dockerfile also:
+@y
+In addition to specifying the base image, the Dockerfile also:
 @z
 
 @x
@@ -237,7 +363,15 @@ Make sure you are in the `deno-docker` directory. Run the following command in a
 Make sure you are in the `deno-docker` directory. Run the following command in a terminal to build and run the application.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose up --build
+```
+@y
+```console
+$ docker compose up --build
+```
+@z
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000). You will see a message `{"Status" : "OK"}` in the browser.
@@ -267,7 +401,15 @@ option. Inside the `deno-docker` directory, run the following command
 in a terminal.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose up --build -d
+```
+@y
+```console
+$ docker compose up --build -d
+```
+@z
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000).
@@ -281,7 +423,15 @@ In the terminal, run the following command to stop the application.
 In the terminal, run the following command to stop the application.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose down
+```
+@y
+```console
+$ docker compose down
+```
+@z
 
 @x
 ## Summary
@@ -308,11 +458,13 @@ Related information:
  - [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](/manuals/compose/_index.md)
  - [Compose file reference](/reference/compose-file/_index.md)
+ - [Docker Hardened Images](/dhi/)
 @y
  - [Dockerfile reference](reference/dockerfile.md)
  - [.dockerignore file](reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](manuals/compose/_index.md)
  - [Compose file reference](reference/compose-file/_index.md)
+ - [Docker Hardened Images](__SUBDIR__/dhi/)
 @z
 
 @x

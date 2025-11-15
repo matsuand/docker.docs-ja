@@ -298,8 +298,7 @@ top_srcdir = @top_srcdir@
 SUBDIRS = faqs troubleshoot
 bases = \
 	_index.md   \
-	feedback.md \
-	support.md
+	feedback.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

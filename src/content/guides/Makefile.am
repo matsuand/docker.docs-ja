@@ -1,12 +1,12 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin-set-up admin-user-management bake bun compose-bake cpp deno  \
-	docker-build-cloud docker-compose docker-scout dotnet frameworks     \
-	genai-leveraging-rag genai-pdf-bot genai-video-bot                   \
-	github-sonarqube-sandbox golang go-prometheus-monitoring images java \
-	nodejs php python r rag-ollama ruby rust testcontainers-cloud        \
-	zscaler
+SUBDIRS = admin-set-up admin-user-management angular bake bun compose-bake \
+	cpp deno docker-build-cloud docker-compose docker-scout dotnet     \
+	frameworks genai-leveraging-rag genai-pdf-bot genai-video-bot      \
+	github-sonarqube-sandbox golang go-prometheus-monitoring images    \
+	java nodejs php python r rag-ollama ruby rust testcontainers-cloud \
+	vuejs zscaler
 
 bases = \
 	_index.md                          \

@@ -1081,14 +1081,14 @@ The available `[OPTIONS]` for the `RUN` instruction are:
 | [`--device`](#run---device)     | 1.14-labs                  |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
-| [`--security`](#run---security) | 1.1.2-labs                 |
+| [`--security`](#run---security) | 1.20                       |
 @y
 | Option                          | Minimum Dockerfile version |
 |---------------------------------|----------------------------|
 | [`--device`](#run---device)     | 1.14-labs                  |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
-| [`--security`](#run---security) | 1.1.2-labs                 |
+| [`--security`](#run---security) | 1.20                       |
 @z
 
 @x
@@ -1531,14 +1531,6 @@ The command is run in the host's network environment (similar to
 ### RUN --security
 @y
 ### RUN --security
-@z
-
-@x
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
-@y
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
 @z
 
 % snip code...
@@ -2422,15 +2414,13 @@ ADD arr[[]0].txt /dest/
 @x
 When using a local tar archive as the source for `ADD`, and the archive is in a
 recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
-archive is decompressed and extracted into the specified destination. Only
-local tar archives are extracted. If the tar archive is a remote URL, the
-archive is not extracted, but downloaded and placed at the destination.
+archive is decompressed and extracted into the specified destination. Local tar
+archives are extracted by default, see the [`ADD --unpack` flag].
 @y
 When using a local tar archive as the source for `ADD`, and the archive is in a
 recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
-archive is decompressed and extracted into the specified destination. Only
-local tar archives are extracted. If the tar archive is a remote URL, the
-archive is not extracted, but downloaded and placed at the destination.
+archive is decompressed and extracted into the specified destination. Local tar
+archives are extracted by default, see the [`ADD --unpack` flag].
 @z
 
 @x
@@ -2487,6 +2477,14 @@ timestamp from that header will be used to set the `mtime` on the destination
 file. However, like any other file processed during an `ADD`, `mtime` isn't
 included in the determination of whether or not the file has changed and the
 cache should be updated.
+@z
+
+@x
+If remote file is a tar archive, the archive is not extracted by default. To
+download and extract the archive, use the [`ADD --unpack` flag].
+@y
+If remote file is a tar archive, the archive is not extracted by default. To
+download and extract the archive, use the [`ADD --unpack` flag].
 @z
 
 @x
@@ -2818,6 +2816,28 @@ See [`COPY --exclude`](#copy---exclude).
 @y
 See [`COPY --exclude`](#copy---exclude).
 @z
+
+@x
+### ADD --unpack
+@y
+### ADD --unpack
+@z
+
+% snip code...
+
+@x
+The `--unpack` flag controls whether or not to automatically unpack tar
+archives (including compressed formats like `gzip` or `bzip2`) when adding them
+to the image. Local tar archives are unpacked by default, whereas remote tar
+archives (where `src` is a URL) are downloaded without unpacking.
+@y
+The `--unpack` flag controls whether or not to automatically unpack tar
+archives (including compressed formats like `gzip` or `bzip2`) when adding them
+to the image. Local tar archives are unpacked by default, whereas remote tar
+archives (where `src` is a URL) are downloaded without unpacking.
+@z
+
+% snip code...
 
 @x
 ## COPY
@@ -2858,7 +2878,7 @@ The available `[OPTIONS]` are:
 | [`--chown`](#copy---chown---chmod) |                            |
 | [`--chmod`](#copy---chown---chmod) | 1.2                        |
 | [`--link`](#copy---link)           | 1.4                        |
-| [`--parents`](#copy---parents)     | 1.7-labs                   |
+| [`--parents`](#copy---parents)     | 1.20                       |
 | [`--exclude`](#copy---exclude)     | 1.19                       |
 @y
 | Option                             | Minimum Dockerfile version |
@@ -2867,7 +2887,7 @@ The available `[OPTIONS]` are:
 | [`--chown`](#copy---chown---chmod) |                            |
 | [`--chmod`](#copy---chown---chmod) | 1.2                        |
 | [`--link`](#copy---link)           | 1.4                        |
-| [`--parents`](#copy---parents)     | 1.7-labs                   |
+| [`--parents`](#copy---parents)     | 1.20                       |
 | [`--exclude`](#copy---exclude)     | 1.19                       |
 @z
 
@@ -3584,14 +3604,6 @@ conditions for cache reuse.
 @z
 
 @x
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
-@y
-> [!NOTE]
-> Not yet available in stable syntax, use [`docker/dockerfile:1-labs`](#syntax) version.
-@z
-
-@x
 ```dockerfile
 COPY [--parents[=<boolean>]] <src> ... <dest>
 ```
@@ -3607,35 +3619,7 @@ The `--parents` flag preserves parent directories for `src` entries. This flag d
 The `--parents` flag preserves parent directories for `src` entries. This flag defaults to `false`.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-@y
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-@z
-
-@x
-COPY ./x/a.txt ./y/a.txt /no_parents/
-COPY --parents ./x/a.txt ./y/a.txt /parents/
-@y
-COPY ./x/a.txt ./y/a.txt /no_parents/
-COPY --parents ./x/a.txt ./y/a.txt /parents/
-@z
-
-@x
-# /no_parents/a.txt
-# /parents/x/a.txt
-# /parents/y/a.txt
-```
-@y
-# /no_parents/a.txt
-# /parents/x/a.txt
-# /parents/y/a.txt
-```
-@z
+% snip code...
 
 @x
 This behavior is similar to the [Linux `cp` utility's](https://www.man7.org/linux/man-pages/man1/cp.1.html)
@@ -3657,40 +3641,15 @@ directories after it will be preserved. This may be especially useful copies bet
 with `--from` where the source paths need to be absolute.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-@y
-```dockerfile
-# syntax=docker/dockerfile:1-labs
-FROM scratch
-@z
-
-@x
-COPY --parents ./x/./y/*.txt /parents/
-@y
-COPY --parents ./x/./y/*.txt /parents/
-@z
-
-@x
+@x within code
 # Build context:
-# ./x/y/a.txt
-# ./x/y/b.txt
-#
-# Output:
-# /parents/y/a.txt
-# /parents/y/b.txt
-```
 @y
 # Build context:
-# ./x/y/a.txt
-# ./x/y/b.txt
-#
+@z
+@x
 # Output:
-# /parents/y/a.txt
-# /parents/y/b.txt
-```
+@y
+# Output:
 @z
 
 @x
@@ -5817,10 +5776,12 @@ started, and then again **interval** seconds after each previous check completes
 
 @x
 If a single run of the check takes longer than **timeout** seconds then the check
-is considered to have failed.
+is considered to have failed. The process performing the check is abruptly stopped
+with a `SIGKILL`.
 @y
 If a single run of the check takes longer than **timeout** seconds then the check
-is considered to have failed.
+is considered to have failed. The process performing the check is abruptly stopped
+with a `SIGKILL`.
 @z
 
 @x

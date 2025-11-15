@@ -63,8 +63,8 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/docs/Makefile
 	src/_vendor/github.com/moby/buildkit/frontend/dockerfile/docs/rules/Makefile
 	src/_vendor/github.com/moby/moby/Makefile
-	src/_vendor/github.com/moby/moby/docs/Makefile
-	src/_vendor/github.com/moby/moby/docs/api/Makefile
+	src/_vendor/github.com/moby/moby/api/Makefile
+	src/_vendor/github.com/moby/moby/api/docs//Makefile
 	src/assets/Makefile
 	src/assets/css/Makefile
 	src/assets/icons/Makefile
@@ -95,6 +95,7 @@ AC_CONFIG_FILES([
 	src/content/guides/Makefile
 	src/content/guides/admin-set-up/Makefile
 	src/content/guides/admin-user-management/Makefile
+	src/content/guides/angular/Makefile
 	src/content/guides/bake/Makefile
 	src/content/guides/bun/Makefile
 	src/content/guides/compose-bake/Makefile
@@ -124,6 +125,7 @@ AC_CONFIG_FILES([
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
 	src/content/guides/testcontainers-cloud/Makefile
+	src/content/guides/vuejs/Makefile
 	src/content/guides/zscaler/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
@@ -298,6 +300,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/2fa/Makefile
 	src/content/manuals/security/faqs/Makefile
 	src/content/manuals/subscription/Makefile
+	src/content/manuals/support/Makefile
 	src/content/manuals/unassociated-machines/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile

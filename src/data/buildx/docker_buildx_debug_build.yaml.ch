@@ -286,9 +286,9 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 @z
 
 @x tag
-      description: 'Name and optionally a tag (format: `name:tag`)'
+      description: 'Image identifier (format: `[registry/]repository[:tag]`)'
 @y
-      description: 'Name and optionally a tag (format: `name:tag`)'
+      description: 'Image identifier (format: `[registry/]repository[:tag]`)'
 @z
 
 @x target

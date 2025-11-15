@@ -243,7 +243,6 @@ copyfiles = \
 	dashboard.png                  \
 	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
-	k8s-settings.png               \
 	resource-saver-settings.png    \
 	resource-saver-status-bar.png  \
 	shared-folder-on-demand.png    \

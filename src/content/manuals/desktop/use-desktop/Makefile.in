@@ -242,6 +242,7 @@ bases = \
 	builds.md         \
 	container.md      \
 	images.md         \
+	kubernetes.md     \
 	pause.md          \
 	resource-saver.md \
 	volumes.md

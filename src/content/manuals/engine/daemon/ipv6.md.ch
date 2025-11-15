@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Use IPv6 networking
@@ -306,6 +306,14 @@ high probability of uniqueness.
 @z
 
 @x
+The built-in default address pool configuration is shown in [Subnet allocation](../network/_index.md#subnet-allocation).
+It does not include any IPv6 pools.
+@y
+The built-in default address pool configuration is shown in [Subnet allocation](../network/_index.md#subnet-allocation).
+It does not include any IPv6 pools.
+@z
+
+@x
 To use different pools of IPv6 subnets for dynamic address allocation,
 you must manually configure address pools of the daemon to include:
 @y
@@ -322,62 +330,22 @@ you must manually configure address pools of the daemon to include:
 @z
 
 @x
-The default address pool configuration is:
+The following example shows a valid configuration with IPv4 and IPv6 pools,
+both pools provide 256 subnets. IPv4 subnets with prefix length `/24` will
+be allocated from a `/16` pool. IPv6 subnets with prefix length `/64` will
+be allocated from a `/56` pool.
 @y
-The default address pool configuration is:
+The following example shows a valid configuration with IPv4 and IPv6 pools,
+both pools provide 256 subnets. IPv4 subnets with prefix length `/24` will
+be allocated from a `/16` pool. IPv6 subnets with prefix length `/64` will
+be allocated from a `/56` pool.
 @z
 
 @x
 ```json
 {
   "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 16 },
-    { "base": "172.18.0.0/16", "size": 16 },
-    { "base": "172.19.0.0/16", "size": 16 },
-    { "base": "172.20.0.0/14", "size": 16 },
-    { "base": "172.24.0.0/14", "size": 16 },
-    { "base": "172.28.0.0/14", "size": 16 },
-    { "base": "192.168.0.0/16", "size": 20 }
-  ]
-}
-```
-@y
-```json
-{
-  "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 16 },
-    { "base": "172.18.0.0/16", "size": 16 },
-    { "base": "172.19.0.0/16", "size": 16 },
-    { "base": "172.20.0.0/14", "size": 16 },
-    { "base": "172.24.0.0/14", "size": 16 },
-    { "base": "172.28.0.0/14", "size": 16 },
-    { "base": "192.168.0.0/16", "size": 20 }
-  ]
-}
-```
-@z
-
-@x
-The following example shows a valid configuration with the default values and
-an IPv6 pool. The IPv6 pool in the example provides up to 256 IPv6 subnets of
-size `/64`, from an IPv6 pool of prefix length `/56`.
-@y
-The following example shows a valid configuration with the default values and
-an IPv6 pool. The IPv6 pool in the example provides up to 256 IPv6 subnets of
-size `/64`, from an IPv6 pool of prefix length `/56`.
-@z
-
-@x
-```json
-{
-  "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 16 },
-    { "base": "172.18.0.0/16", "size": 16 },
-    { "base": "172.19.0.0/16", "size": 16 },
-    { "base": "172.20.0.0/14", "size": 16 },
-    { "base": "172.24.0.0/14", "size": 16 },
-    { "base": "172.28.0.0/14", "size": 16 },
-    { "base": "192.168.0.0/16", "size": 20 },
+    { "base": "172.17.0.0/16", "size": 24 },
     { "base": "2001:db8::/56", "size": 64 }
   ]
 }
@@ -386,13 +354,7 @@ size `/64`, from an IPv6 pool of prefix length `/56`.
 ```json
 {
   "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 16 },
-    { "base": "172.18.0.0/16", "size": 16 },
-    { "base": "172.19.0.0/16", "size": 16 },
-    { "base": "172.20.0.0/14", "size": 16 },
-    { "base": "172.24.0.0/14", "size": 16 },
-    { "base": "172.28.0.0/14", "size": 16 },
-    { "base": "192.168.0.0/16", "size": 20 },
+    { "base": "172.17.0.0/16", "size": 24 },
     { "base": "2001:db8::/56", "size": 64 }
   ]
 }
@@ -417,6 +379,14 @@ size `/64`, from an IPv6 pool of prefix length `/56`.
 >
 > The default IPv4 pools are from the private address range,
 > similar to the default IPv6 [ULA][wikipedia-ipv6-ula] networks.
+@z
+
+@x
+See [Subnet allocation](../network/_index.md#subnet-allocation) for more information about
+`default-address-pools`.
+@y
+See [Subnet allocation](../network/_index.md#subnet-allocation) for more information about
+`default-address-pools`.
 @z
 
 @x

@@ -54,12 +54,12 @@ keywords: how to use docker desktop, what is docker desktop used for, what does 
 @x
 - title: Explore its key features
   description: |
-    Find information about [Docker VMM](/desktop/features/vmm/), [WSL](/desktop/features/wsl/), [deploying on Kubernetes](/desktop/features/kubernetes/), and more.
+    Find information about [Networking](/desktop/features/networking/), [Docker VMM](/desktop/features/vmm/), [WSL](/desktop/features/wsl/), and more.
   icon: category
 @y
 - title: 主要機能を確認
   description: |
-    Find information about [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), [deploying on Kubernetes](__SUBDIR__/desktop/features/kubernetes/), and more.
+    Find information about [Networking](__SUBDIR__/desktop/features/networking/), [Docker VMM](__SUBDIR__/desktop/features/vmm/), [WSL](__SUBDIR__/desktop/features/wsl/), and more.
   icon: category
 @z
 

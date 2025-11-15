@@ -175,9 +175,9 @@ Run the following command to uninstall all conflicting packages:
 % snip command...
 
 @x
-`apt-get` might report that you have none of these packages installed.
+`apt` might report that you have none of these packages installed.
 @y
-インストールされていないパッケージがあれば `apt-get` がその旨を表示します。
+インストールされていないパッケージがあれば `apt` がその旨を表示します。
 @z
 
 @x
@@ -299,12 +299,6 @@ Docker Engine を初めてマシン上にインストールするには、Docker
    available versions in the repository:
 @y
    Docker Engine の特定バージョンをインストールするには、まずリポジトリ内の利用可能なバージョンを一覧表示します。
-@z
-
-@x
-   # List the available versions:
-@y
-   # 利用可能なバージョンを一覧表示
 @z
 
 @x

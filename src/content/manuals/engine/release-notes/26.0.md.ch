@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Docker Engine 26.0 release notes
 linkTitle: Engine v26.0
@@ -27,10 +29,10 @@ For more information about:
 
 @x
 - Deprecated and removed features, see [Deprecated Engine Features](../deprecated.md).
-- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history.md).
+- Changes to the Engine API, see [Engine API version history](/reference/api/engine/version-history/).
 @y
 - 非推奨とした機能と削除した機能。詳細は [Engine の非推奨機能](../deprecated.md) を参照。
-- Engine API の変更点。詳細は [Engine API バージョン履歴](reference/api/engine/version-history.md) を参照。
+- Engine API の変更点。詳細は [Engine API バージョン履歴](__SUBDIR__/reference/api/engine/version-history/) を参照。
 @z
 
 @x

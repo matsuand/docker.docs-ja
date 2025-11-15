@@ -154,9 +154,15 @@ change.
 @z
 
 @x
-Report issues on [GitHub](https://github.com/docker/desktop-feedback).
+Report issues on GitHub:
+- [Docker Desktop for Mac](https://github.com/docker/for-mac)
+- [Docker Desktop for Windows](https://github.com/docker/for-win)
+- [Docker Desktop for Linux](https://github.com/docker/desktop-linux)
 @y
-Report issues on [GitHub](https://github.com/docker/desktop-feedback).
+Report issues on GitHub:
+- [Docker Desktop for Mac](https://github.com/docker/for-mac)
+- [Docker Desktop for Windows](https://github.com/docker/for-win)
+- [Docker Desktop for Linux](https://github.com/docker/desktop-linux)
 @z
 
 @x

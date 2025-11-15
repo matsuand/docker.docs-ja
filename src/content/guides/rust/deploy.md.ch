@@ -27,10 +27,10 @@ description: Learn how to test your Rust deployment locally using Kubernetes
 
 @x
 - Complete the previous sections of this guide, starting with [Develop your Rust application](develop.md).
-- [Turn on Kubernetes](/manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](/manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 @y
 - Complete the previous sections of this guide, starting with [Develop your Rust application](develop.md).
-- [Turn on Kubernetes](manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](manuals/desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 @z
 
 @x
@@ -197,10 +197,10 @@ Related information:
 
 @x
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/features/kubernetes.md)
+- [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
 - [Swarm mode overview](/manuals/engine/swarm/_index.md)
 @y
 - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-- [Deploy on Kubernetes with Docker Desktop](manuals/desktop/features/kubernetes.md)
+- [Deploy on Kubernetes with Docker Desktop](manuals/desktop/use-desktop/kubernetes.md)
 - [Swarm mode overview](manuals/engine/swarm/_index.md)
 @z

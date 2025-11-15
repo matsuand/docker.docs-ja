@@ -27,10 +27,10 @@ description: Kubernetes を使ってローカルにおいてデプロイする�
 
 @x
 - Complete all the previous sections of this guide, starting with [Containerize a Bun application](containerize.md).
-- [Turn on Kubernetes](/manuals//desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](/manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 @y
 - [Bun アプリケーションのコンテナー化](containerize.md) から始まる、ここまでのガイドすべてを終えていること。
-- Docker Desktop において [Kubernetes を有効](manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) にしていること。
+- Docker Desktop において [Kubernetes を有効](manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) にしていること。
 @z
 
 @x
@@ -201,10 +201,10 @@ Related information:
 
 @x
    - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-   - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/features/kubernetes.md)
+   - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
    - [Swarm mode overview](/manuals/engine/swarm/_index.md)
 @y
    - [Kubernetes ドキュメント](https://kubernetes.io/docs/home/)
-   - [Docker Deskitop を使った Kubernetes へのデプロイ](manuals/desktop/features/kubernetes.md)
+   - [Docker Deskitop を使った Kubernetes へのデプロイ](manuals/desktop/use-desktop/kubernetes.md)
    - [Swarm モード概要](manuals/engine/swarm/_index.md)
 @z

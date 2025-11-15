@@ -27,10 +27,10 @@ description: Learn how to develop locally using Kubernetes
 
 @x
 - Complete all the previous sections of this guide, starting with [Containerize a Deno application](containerize.md).
-- [Turn on Kubernetes](/manuals//desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](/manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 @y
 - Complete all the previous sections of this guide, starting with [Containerize a Deno application](containerize.md).
-- [Turn on Kubernetes](manuals/desktop/features/kubernetes.md#install-and-turn-on-kubernetes) in Docker Desktop.
+- [Turn on Kubernetes](manuals//desktop/use-desktop/kubernetes.md#enable-kubernetes) in Docker Desktop.
 @z
 
 @x
@@ -336,11 +336,11 @@ In this section, you learned how to use Docker Desktop to deploy your Deno appli
 @x
 Related information:
    - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-   - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/features/kubernetes.md)
+   - [Deploy on Kubernetes with Docker Desktop](/manuals/desktop/use-desktop/kubernetes.md)
    - [Swarm mode overview](/manuals/engine/swarm/_index.md)
 @y
 Related information:
    - [Kubernetes documentation](https://kubernetes.io/docs/home/)
-   - [Deploy on Kubernetes with Docker Desktop](manuals/desktop/features/kubernetes.md)
+   - [Deploy on Kubernetes with Docker Desktop](manuals/desktop/use-desktop/kubernetes.md)
    - [Swarm mode overview](manuals/engine/swarm/_index.md)
 @z

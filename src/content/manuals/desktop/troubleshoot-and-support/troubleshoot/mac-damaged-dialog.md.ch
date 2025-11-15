@@ -75,12 +75,16 @@ Follow these steps to resolve the issue:
 
 @x
 Close any applications that might call Docker in the background:
+@y
+Close any applications that might call Docker in the background:
+@z
+
+@x
 - Visual Studio Code and other IDEs
 - Terminal applications
 - Agent apps or development tools
 - Any scripts or processes that use the Docker CLI
 @y
-Close any applications that might call Docker in the background:
 - Visual Studio Code and other IDEs
 - Terminal applications
 - Agent apps or development tools
@@ -127,19 +131,23 @@ If you continue to see the "damaged" dialog after following the recovery steps:
 
 @x
 1. Gather diagnostics using the terminal. Follow the instructions in [Diagnose from the terminal](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-terminal).
-   - Note down the your diagnostics ID displayed in the terminal after running diagnostics.
 @y
 1. Gather diagnostics using the terminal. Follow the instructions in [Diagnose from the terminal](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-terminal).
+@z
+
+@x
+   - Note down the your diagnostics ID displayed in the terminal after running diagnostics.
+@y
    - Note down the your diagnostics ID displayed in the terminal after running diagnostics.
 @z
 
 @x
 2. Get help:
-   - If you have a paid Docker subscription, [contact support](/manuals/desktop/troubleshoot-and-support/support.md) and include your diagnostics ID
+   - If you have a paid Docker subscription, [contact support](/manuals/support/_index.md) and include your diagnostics ID
    - For community users, [open an issue on GitHub](https://github.com/docker/for-mac/issues) and include your diagnostics ID
 @y
 2. Get help:
-   - If you have a paid Docker subscription, [contact support](manuals/desktop/troubleshoot-and-support/support.md) and include your diagnostics ID
+   - If you have a paid Docker subscription, [contact support](manuals/support/_index.md) and include your diagnostics ID
    - For community users, [open an issue on GitHub](https://github.com/docker/for-mac/issues) and include your diagnostics ID
 @z
 

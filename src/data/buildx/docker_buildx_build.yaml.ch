@@ -297,9 +297,9 @@ long: The `docker buildx build` command starts a build using BuildKit.
 @z
 
 @x tag
-      description: 'Name and optionally a tag (format: `name:tag`)'
+      description: 'Image identifier (format: `[registry/]repository[:tag]`)'
 @y
-      description: 'Name and optionally a tag (format: `name:tag`)'
+      description: 'Image identifier (format: `[registry/]repository[:tag]`)'
 @z
 
 @x target

@@ -117,11 +117,11 @@ For more information, see [Docker Engine Python SDK reference](https://docker-py
 @x
 You can
 [view the reference for the latest version of the API](/reference/api/engine/latest/)
-or [choose a specific version](/reference/api/engine/version-history/).
+or [choose a specific version](/reference/api/engine/#api-version-matrix).
 @y
 You can
 [view the reference for the latest version of the API](__SUBDIR__/reference/api/engine/latest/)
-or [choose a specific version](__SUBDIR__/reference/api/engine/version-history/).
+or [choose a specific version](__SUBDIR__/reference/api/engine/#api-version-matrix).
 @z
 
 @x

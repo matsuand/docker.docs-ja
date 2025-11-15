@@ -1,13 +1,13 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 copyfiles = \
 	build-ui-jaeger-screenshot.png \
 	console.png                    \
 	dashboard.png                  \
 	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
-	k8s-settings.png               \
 	resource-saver-settings.png    \
 	resource-saver-status-bar.png  \
 	shared-folder-on-demand.png    \

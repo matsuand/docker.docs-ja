@@ -85,14 +85,14 @@ To follow along with this guide, you need:
 @x
 - A Kubernetes cluster set up and [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed. To
   test locally, you can use Docker Desktop with Kubernetes enabled. For more information, see [Install Docker
-  Desktop](/desktop/install/windows-install/) and [Enable Kubernetes](/desktop/features/kubernetes/).
+  Desktop](/desktop/install/windows-install/) and [Enable Kubernetes](/desktop/use-desktop/kubernetes/).
 - Helm installed. For more information, see the [Helm installation guide](https://helm.sh/docs/intro/install/).
 - Access to DHI. For more information about starting a free trial, see [Get started with Docker Hardened
   Images](/dhi/get-started/).
 @y
 - A Kubernetes cluster set up and [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed. To
   test locally, you can use Docker Desktop with Kubernetes enabled. For more information, see [Install Docker
-  Desktop](__SUBDIR__/desktop/install/windows-install/) and [Enable Kubernetes](__SUBDIR__/desktop/features/kubernetes/).
+  Desktop](__SUBDIR__/desktop/install/windows-install/) and [Enable Kubernetes](__SUBDIR__/desktop/use-desktop/kubernetes/).
 - Helm installed. For more information, see the [Helm installation guide](https://helm.sh/docs/intro/install/).
 - Access to DHI. For more information about starting a free trial, see [Get started with Docker Hardened
   Images](__SUBDIR__/dhi/get-started/).
