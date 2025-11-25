@@ -6,22 +6,12 @@ title: HTTP routing with Traefik
 description: &desc Use Traefik to easily route traffic between multiple containers or non-containerized workloads
 keywords: traefik, container-supported development
 linktitle: HTTP routing with Traefik
-summary: *desc
 @y
 title: HTTP routing with Traefik
 description: &desc Use Traefik to easily route traffic between multiple containers or non-containerized workloads
 keywords: traefik, container-supported development
 linktitle: HTTP routing with Traefik
-summary: *desc
 @z
-
-@x
-tags: [networking]
-@y
-tags: [networking]
-@z
-
-%params:
 
 @x
   time: 20 minutes
@@ -143,11 +133,11 @@ Let’s do a quick demo of starting Traefik and then configuring two additional 
 
 @x
    ```console
-   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.1.2 --providers.docker
+   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.6.2 --providers.docker
    ```
 @y
    ```console
-   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.1.2 --providers.docker
+   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.6.2 --providers.docker
    ```
 @z
 
@@ -239,7 +229,7 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
    ```yaml
    services:
      proxy:
-       image: traefik:v3.1.2
+       image: traefik:v3.6.2
        command: --providers.docker
        ports:
          - 80:80
@@ -250,7 +240,7 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
    ```yaml
    services:
      proxy:
-       image: traefik:v3.1.2
+       image: traefik:v3.6.2
        command: --providers.docker
        ports:
          - 80:80
@@ -463,7 +453,7 @@ With this file, the only change is to the Compose configuration for Traefik. The
 ```yaml
 services:
   proxy:
-    image: traefik:v3.1.2
+    image: traefik:v3.6.2
     command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
     ports:
       - 80:80
@@ -476,7 +466,7 @@ services:
 ```yaml
 services:
   proxy:
-    image: traefik:v3.1.2
+    image: traefik:v3.6.2
     command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
     ports:
       - 80:80

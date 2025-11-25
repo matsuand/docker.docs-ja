@@ -10,13 +10,11 @@ linkTitle: Debug a container
 @z
 
 @x
-keywords: debug, hardened images, DHI, troubleshooting, ephemeral container, docker debug
+keywords: debug, hardened images, DHI, troubleshooting, ephemeral container, docker debug, non-root containers, hardened container image, debug secure container
 description: Learn how to use Docker Debug to troubleshoot Docker Hardened Images (DHI) locally or in production.
-keywords: docker debug, ephemeral container, non-root containers, hardened container image, debug secure container
 @y
-keywords: debug, hardened images, DHI, troubleshooting, ephemeral container, docker debug
+keywords: debug, hardened images, DHI, troubleshooting, ephemeral container, docker debug, non-root containers, hardened container image, debug secure container
 description: Learn how to use Docker Debug to troubleshoot Docker Hardened Images (DHI) locally or in production.
-keywords: docker debug, ephemeral container, non-root containers, hardened container image, debug secure container
 @z
 
 @x

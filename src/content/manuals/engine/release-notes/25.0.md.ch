@@ -415,14 +415,14 @@ For a full list of pull requests and changes in this release, refer to the relev
 
 @x
   This change currently only affects build containers created with `docker
-  build` when using BuildKit with the `docker` driver. Future versions of
-  containerd will also use this limit, which will cause this behavior to affect
-  all containers, not only build containers.
+  build` when using BuildKit with the `docker` driver. Starting with Docker
+  Engine v29.0 (containerd v2.1.5), this limit applies to all containers, not
+  only build containers.
 @y
   This change currently only affects build containers created with `docker
-  build` when using BuildKit with the `docker` driver. Future versions of
-  containerd will also use this limit, which will cause this behavior to affect
-  all containers, not only build containers.
+  build` when using BuildKit with the `docker` driver. Starting with Docker
+  Engine v29.0 (containerd v2.1.5), this limit applies to all containers, not
+  only build containers.
 @z
 
 @x

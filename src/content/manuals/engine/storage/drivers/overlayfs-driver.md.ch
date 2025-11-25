@@ -29,11 +29,25 @@ storage driver as `overlay2`.
 
 @x
 > [!NOTE]
->
+> Docker Engine 29.0 and later uses the
+> [containerd image store](/manuals/engine/storage/containerd.md) by default.
+> The `overlay2` driver is a legacy storage driver that is superseded by the
+> `overlayfs` containerd snapshotter. For more information, see
+> [Select a storage driver](/manuals/engine/storage/drivers/select-storage-driver.md).
+@y
+> [!NOTE]
+> Docker Engine 29.0 and later uses the
+> [containerd image store](/manuals/engine/storage/containerd.md) by default.
+> The `overlay2` driver is a legacy storage driver that is superseded by the
+> `overlayfs` containerd snapshotter. For more information, see
+> [Select a storage driver](/manuals/engine/storage/drivers/select-storage-driver.md).
+@z
+
+@x
+> [!NOTE]
 > For `fuse-overlayfs` driver, check [Rootless mode documentation](/manuals/engine/security/rootless.md).
 @y
 > [!NOTE]
->
 > For `fuse-overlayfs` driver, check [Rootless mode documentation](manuals/engine/security/rootless.md).
 @z
 
@@ -44,11 +58,9 @@ storage driver as `overlay2`.
 @z
 
 @x
-OverlayFS is the recommended storage driver, and supported if you meet the following
-prerequisites:
+The `overlay2` driver is supported if you meet the following prerequisites:
 @y
-OverlayFS is the recommended storage driver, and supported if you meet the following
-prerequisites:
+The `overlay2` driver is supported if you meet the following prerequisites:
 @z
 
 @x

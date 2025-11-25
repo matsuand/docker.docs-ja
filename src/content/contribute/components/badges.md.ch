@@ -27,12 +27,14 @@ toc_max: 3
 {{< badge color=red text="red badge" >}}
 {{< badge color=green text="green badge" >}}
 {{< badge color=violet text="violet badge" >}}
+{{< badge color=gray text="gray badge" >}}
 @y
 {{< badge color=blue text="blue badge" >}}
 {{< badge color=amber text="amber badge" >}}
 {{< badge color=red text="red badge" >}}
 {{< badge color=green text="green badge" >}}
 {{< badge color=violet text="violet badge" >}}
+{{< badge color=gray text="gray badge" >}}
 @z
 
 @x

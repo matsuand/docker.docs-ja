@@ -558,14 +558,6 @@ Compose sbom:
 @z
 
 @x
-containerd:
-  availability: Experimental
-@y
-containerd:
-  availability: 試験的
-@z
-
-@x
 Dev Environments:
   availability: Beta
 @y

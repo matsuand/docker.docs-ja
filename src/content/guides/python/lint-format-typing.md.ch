@@ -64,6 +64,20 @@ Ruff is an extremely fast Python linter and formatter written in Rust. It replac
 @z
 
 @x
+Before using Ruff, install it in your Python environment:
+@y
+Before using Ruff, install it in your Python environment:
+@z
+
+% snip command...
+
+@x
+If you're using a virtual environment, make sure it is activated so the `ruff` command is available when you run the commands below.
+@y
+If you're using a virtual environment, make sure it is activated so the `ruff` command is available when you run the commands below.
+@z
+
+@x
 Create a `pyproject.toml` file:
 @y
 Create a `pyproject.toml` file:

@@ -18,6 +18,48 @@ keywords: storage, persistence, data persistence, volumes, mounts, bind mounts, 
 @z
 
 @x
+Docker storage covers two different concepts:
+@y
+Docker storage covers two different concepts:
+@z
+
+@x
+**Container data persistence** (this page): How to store application data
+outside containers using volumes, bind mounts, and tmpfs mounts. This data
+persists independently of container lifecycle.
+@y
+**Container data persistence** (this page): How to store application data
+outside containers using volumes, bind mounts, and tmpfs mounts. This data
+persists independently of container lifecycle.
+@z
+
+@x
+**Daemon storage backends** ([containerd image store](containerd.md) and
+[storage drivers](drivers/)): How the daemon stores image layers and container
+writable layers on disk.
+@y
+**Daemon storage backends** ([containerd image store](containerd.md) and
+[storage drivers](drivers/)): How the daemon stores image layers and container
+writable layers on disk.
+@z
+
+@x
+This page focuses on container data persistence. For information about how
+Docker stores images and container layers, see
+[containerd image store](containerd.md) or [Storage drivers](drivers/).
+@y
+This page focuses on container data persistence. For information about how
+Docker stores images and container layers, see
+[containerd image store](containerd.md) or [Storage drivers](drivers/).
+@z
+
+@x
+## Container layer basics
+@y
+## Container layer basics
+@z
+
+@x
 By default all files created inside a container are stored on a writable
 container layer that sits on top of the read-only, immutable image layers.
 @y
@@ -497,17 +539,31 @@ that sits on top of the read-only, immutable image layers.
 @z
 
 @x
-- Learn more about [volumes](./volumes.md).
-- Learn more about [bind mounts](./bind-mounts.md).
-- Learn more about [tmpfs mounts](./tmpfs.md).
-- Learn more about [storage drivers](/engine/storage/drivers/), which
-  are not related to bind mounts or volumes, but allow you to store data in a
-  container's writable layer.
+Learn more about container data persistence:
 @y
-- [ボリューム](./volumes.md) について学びます。
-- [バインドマウント](./bind-mounts.md) について学びます。
-- [tmpfs マウント](./tmpfs.md) について学びます。
-- [ストレージドライバー](__SUBDIR__/engine/storage/drivers/) について学びます。
-  これはバインドマウントやボリュームに関連するものではありませんが、
-  コンテナーの書き込み可能レイヤーにデータを保存できるものです。
+Learn more about container data persistence:
+@z
+
+@x
+- [Volumes](./volumes.md)
+- [Bind mounts](./bind-mounts.md)
+- [tmpfs mounts](./tmpfs.md)
+@y
+- [ボリューム](./volumes.md)
+- [バインドマウント](./bind-mounts.md)
+- [tmpfs マウント](./tmpfs.md)
+@z
+
+@x
+Learn more about daemon storage backends:
+@y
+Learn more about daemon storage backends:
+@z
+
+@x
+- [containerd image store](containerd.md)
+- [Storage drivers](drivers/)
+@y
+- [containerd image store](containerd.md)
+- [ストレージドライバー](drivers/)
 @z

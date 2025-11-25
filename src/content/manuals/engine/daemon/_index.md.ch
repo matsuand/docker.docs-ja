@@ -1,17 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-% snip 対応
+% .md リンクへの (no slash) 対応
 
 @x
 description: Configuring the Docker daemon
 keywords: docker, daemon, configuration
 title: Docker daemon configuration overview
+linkTitle: Daemon
 @y
-description: Docker デーモンを設定します。
+description: Configuring the Docker daemon
 keywords: docker, daemon, configuration
-title: Docker デーモンの設定概要
+title: Docker daemon configuration overview
+linkTitle: Daemon
 @z
 
 @x
@@ -171,39 +172,79 @@ definition, and secrets.
 @z
 
 @x
-By default this directory is:
+By default the daemon stores data in:
 @y
-By default this directory is:
+By default the daemon stores data in:
 @z
 
 @x
-- `/var/lib/docker` on Linux.
-- `C:\ProgramData\docker` on Windows.
+- `/var/lib/docker` on Linux
+- `C:\ProgramData\docker` on Windows
 @y
-- `/var/lib/docker` on Linux.
-- `C:\ProgramData\docker` on Windows.
+- `/var/lib/docker` on Linux
+- `C:\ProgramData\docker` on Windows
 @z
 
 @x
-You can configure the Docker daemon to use a different directory, using the
-`data-root` configuration option. For example:
+When using the [containerd image store](/manuals/engine/storage/containerd.md)
+(the default for Docker Engine 29.0 and later on fresh installations), image
+contents and container snapshots are stored in `/var/lib/containerd`. Other
+daemon data (volumes, configs) remains in `/var/lib/docker`.
 @y
-You can configure the Docker daemon to use a different directory, using the
-`data-root` configuration option. For example:
+When using the [containerd image store](manuals/engine/storage/containerd.md)
+(the default for Docker Engine 29.0 and later on fresh installations), image
+contents and container snapshots are stored in `/var/lib/containerd`. Other
+daemon data (volumes, configs) remains in `/var/lib/docker`.
+@z
+
+@x
+When using [classic storage drivers](/manuals/engine/storage/drivers/_index.md)
+like `overlay2` (the default for upgraded installations), all data is stored in
+`/var/lib/docker`.
+@y
+When using [classic storage drivers](manuals/engine/storage/drivers/_index.md)
+like `overlay2` (the default for upgraded installations), all data is stored in
+`/var/lib/docker`.
+@z
+
+@x
+### Configure the data directory location
+@y
+### Configure the data directory location
+@z
+
+@x
+You can configure the Docker daemon to use a different storage directory using
+the `data-root` configuration option.
+@y
+You can configure the Docker daemon to use a different storage directory using
+the `data-root` configuration option.
 @z
 
 % snip code...
 
 @x
-Since the state of a Docker daemon is kept on this directory, make sure you use
-a dedicated directory for each daemon. If two daemons share the same directory,
-for example, an NFS share, you are going to experience errors that are difficult
-to troubleshoot.
+The `data-root` option does not affect image and container data stored in
+`/var/lib/containerd` when using the containerd image store. To change the
+storage location of containerd snapshotters, use the system containerd
+configuration file:
 @y
-Since the state of a Docker daemon is kept on this directory, make sure you use
-a dedicated directory for each daemon. If two daemons share the same directory,
-for example, an NFS share, you are going to experience errors that are difficult
-to troubleshoot.
+The `data-root` option does not affect image and container data stored in
+`/var/lib/containerd` when using the containerd image store. To change the
+storage location of containerd snapshotters, use the system containerd
+configuration file:
+@z
+
+% snip code...
+
+@x
+Make sure you use a dedicated directory for each daemon. If two daemons share
+the same directory, for example an NFS share, you will experience errors that
+are difficult to troubleshoot.
+@y
+Make sure you use a dedicated directory for each daemon. If two daemons share
+the same directory, for example an NFS share, you will experience errors that
+are difficult to troubleshoot.
 @z
 
 @x

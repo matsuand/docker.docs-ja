@@ -107,6 +107,22 @@ use the same answers for your prompts.
 以下の利用例において `docker init` の質問への答えを示しているので、これを参考に同様の入力を行ってください。
 @z
 
+@x
+Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
+or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
+@y
+Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
+or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
+@z
+
+@x
+Docker Hardened Images (DHIs) are minimal, secure, and production-ready base images maintained by Docker.
+They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
+@y
+Docker Hardened Images (DHIs) are minimal, secure, and production-ready base images maintained by Docker.
+They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
+@z
+
 % snip command...
 
 @x
@@ -150,10 +166,10 @@ Create a file named `.gitignore` with the following contents.
 
 @x
 {{< /tab >}}
-{{< tab name="Manually create assets" >}}
+{{< tab name="Using the official Docker image" >}}
 @y
 {{< /tab >}}
-{{< tab name="手動によるアセット生成" >}}
+{{< tab name="公式 Docker イメージの利用" >}}
 @z
 
 @x
@@ -320,6 +336,186 @@ Create a file named `.gitignore` with the following contents.
 # Environments
 @y
 # 環境
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Using Docker Hardened Image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using Docker Hardened Image" >}}
+@z
+
+@x
+If you don't have Docker Desktop installed or prefer creating the assets
+manually, you can create the following files in your project directory.
+@y
+If you don't have Docker Desktop installed or prefer creating the assets
+manually, you can create the following files in your project directory.
+@z
+
+@x
+Create a file named `Dockerfile` with the following contents.
+@y
+Create a file named `Dockerfile` with the following contents.
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
+@z
+@x
+# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+@y
+# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+@z
+@x
+# This Dockerfile uses Docker Hardened Images (DHI) for enhanced security.
+# For more information, see https://docs.docker.com/dhi/
+@y
+# This Dockerfile uses Docker Hardened Images (DHI) for enhanced security.
+# For more information, see https://docs.docker.com/dhi/
+@z
+@x
+# Prevents Python from writing pyc files.
+@y
+# Prevents Python from writing pyc files.
+@z
+@x
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+@y
+# Keeps Python from buffering stdout and stderr to avoid situations where
+# the application crashes without emitting any logs due to buffering.
+@z
+@x
+#Add dependencies for adduser
+@y
+#Add dependencies for adduser
+@z
+@x
+# Create a non-privileged user that the app will run under.
+# See https://docs.docker.com/go/dockerfile-user-best-practices/
+@y
+# Create a non-privileged user that the app will run under.
+# See https://docs.docker.com/go/dockerfile-user-best-practices/
+@z
+@x
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
+# Leverage a bind mount to requirements.txt to avoid having to copy them into
+# into this layer.
+@y
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
+# Leverage a bind mount to requirements.txt to avoid having to copy them into
+# into this layer.
+@z
+@x
+# Switch to the non-privileged user to run the application.
+@y
+# Switch to the non-privileged user to run the application.
+@z
+@x
+# Copy the source code into the container.
+@y
+# Copy the source code into the container.
+@z
+@x
+# Expose the port that the application listens on.
+@y
+# Expose the port that the application listens on.
+@z
+@x
+# Run the application.
+@y
+# Run the application.
+@z
+
+@x
+Create a file named `compose.yaml` with the following contents.
+@y
+Create a file named `compose.yaml` with the following contents.
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+@z
+@x
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@y
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@z
+
+@x
+Create a file named `.dockerignore` with the following contents.
+@y
+Create a file named `.dockerignore` with the following contents.
+@z
+
+@x within code
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/go/build-context-dockerignore/
+@y
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/go/build-context-dockerignore/
+@z
+
+@x
+Create a file named `.gitignore` with the following contents.
+@y
+Create a file named `.gitignore` with the following contents.
+@z
+
+@x within code
+# Byte-compiled / optimized / DLL files
+@y
+# Byte-compiled / optimized / DLL files
+@z
+@x
+# C extensions
+@y
+# C extensions
+@z
+@x
+# Distribution / packaging
+@y
+# Distribution / packaging
+@z
+@x
+# Unit test / coverage reports
+@y
+# Unit test / coverage reports
+@z
+@x
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+@y
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 @z
 
 @x

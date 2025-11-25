@@ -136,9 +136,9 @@ which resolves to the internal IP address used by the host.
 @z
 
 @x
-For more information and examples, see [how to connect from a container to a service on the host](/manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+For more information and examples, see [how to connect from a container to a service on the host](/manuals/desktop/features/networking.md#connect-a-container-to-a-service-on-the-host).
 @y
-For more information and examples, see [how to connect from a container to a service on the host](manuals/desktop/features/networking.md#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+For more information and examples, see [how to connect from a container to a service on the host](manuals/desktop/features/networking.md#connect-a-container-to-a-service-on-the-host).
 @z
 
 @x

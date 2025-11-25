@@ -62,469 +62,1201 @@ In this section, you'll learn how to set up a development environment for your c
 @z
 
 @x
-You can use containers to set up local services, like a database. In this section, you'll update the `compose.yaml` file to define a database service and a volume to persist data.
+The application uses PostgreSQL for data persistence. Add a database service to your Docker Compose configuration.
 @y
-コンテナーでは、ローカルサービスとしてたとえばデータベースを構築することができます。
-本節では `compose.yaml` ファイルを編集して、データベースサービスを追加してデータ保存のためのボリュームを定義します。
+The application uses PostgreSQL for data persistence. Add a database service to your Docker Compose configuration.
 @z
 
 @x
-1. Open your `compose.yaml` file in an IDE or text editor.
+### Add database service to Docker Compose
 @y
-1. IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
+### Add database service to Docker Compose
 @z
 
 @x
-2. Uncomment the database related instructions. The following is the updated
-   `compose.yaml` file.
+If you haven't already created a `compose.yml` file in the previous section, or if you need to add the database service, update your `compose.yml` file to include the PostgreSQL database service:
 @y
-2. データベースに関する命令部分のコメントを解除します。
-   書き換えた `compose.yaml` ファイルは以下のようになります。
+If you haven't already created a `compose.yml` file in the previous section, or if you need to add the database service, update your `compose.yml` file to include the PostgreSQL database service:
 @z
 
 @x
-   > [!IMPORTANT]
-   >
-   > For this section, don't run `docker compose up` until you are instructed to. Running the command at intermediate points may incorrectly initialize your database.
+```yaml
+services:
+  # ... existing app services ...
 @y
-   > [!IMPORTANT]
-   >
-   > 本節においては、指示があるまで `docker compose up` は実行しないでください。
-   > 作業の途中においてコマンド実行してしまうと、データベースが誤って初期化されてしまう場合があります。
-@z
-
-@x within code
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@y
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@z
-@x
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@y
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@z
-@x
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
-@y
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
+```yaml
+services:
+  # ... existing app services ...
 @z
 
 @x
-   > [!NOTE]
-   >
-   > To learn more about the instructions in the Compose file, see [Compose file
-   > reference](/reference/compose-file/).
+  # ========================================
+  # PostgreSQL Database Service
+  # ========================================
+  db:
+    image: postgres:16-alpine
+    container_name: todoapp-db
+    environment:
+      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
+      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - todoapp-network
 @y
-   > [!NOTE]
-   >
-   > Compose ファイル内の命令について詳しく学ぶには [Compose ファイルリファレンス](__SUBDIR__/reference/compose-file/) を参照してください。
+  # ========================================
+  # PostgreSQL Database Service
+  # ========================================
+  db:
+    image: postgres:16-alpine
+    container_name: todoapp-db
+    environment:
+      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
+      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - todoapp-network
 @z
 
 @x
-3. Open `src/persistence/postgres.js` in an IDE or text editor. You'll notice
-   that this application uses a Postgres database and requires some environment
-   variables in order to connect to the database. The `compose.yaml` file doesn't
-   have these variables defined yet.
+# ========================================
+# Volume Configuration
+# ========================================
+volumes:
+  postgres_data:
+    name: todoapp-postgres-data
+    driver: local
 @y
-3. IDE またはテキストエディターを使って `src/persistence/postgres.js` を開きます。
-   中を覗いてみると、このアプリケーションは Postgres データベースを利用しており、データベースへの接続に環境変数を利用していることがすぐにわかります。
-   `compose.yaml` ファイルでは、まだそれらの環境変数を定義していません。
+# ========================================
+# Volume Configuration
+# ========================================
+volumes:
+  postgres_data:
+    name: todoapp-postgres-data
+    driver: local
 @z
 
 @x
-4. Add the environment variables that specify the database configuration. The
-   following is the updated `compose.yaml` file.
+# ========================================
+# Network Configuration
+# ========================================
+networks:
+  todoapp-network:
+    name: todoapp-network
+    driver: bridge
+```
 @y
-4. データベースの設定を行う環境変数を追加します。
-   書き換えた `compose.yaml` ファイルは以下のようになります。
-@z
-
-@x within code
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@y
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@z
-@x
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@y
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@z
-@x
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
-@y
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
+# ========================================
+# Network Configuration
+# ========================================
+networks:
+  todoapp-network:
+    name: todoapp-network
+    driver: bridge
+```
 @z
 
 @x
-5. Add the `secrets` section under the `server` service so that your application securely handles the database password. The following is the updated `compose.yaml` file.
+### Update your application service
 @y
-5. `server` サービス配下に `secrets` セクションを追加します。
-   これにより、アプリケーションが利用するデータベースパスワードを安全に取り扱います。
-   書き換えた `compose.yaml` ファイルは以下のようになります。
-@z
-
-@x within code
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@y
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Docker Compose reference guide at
-   # https://docs.docker.com/go/compose-spec-reference/
-@z
-@x
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@y
-   # Here the instructions define your application as a service called "server".
-   # This service is built from the Dockerfile in the current directory.
-   # You can add other services your application may depend on here, such as a
-   # database or a cache. For examples, see the Awesome Compose repository:
-   # https://github.com/docker/awesome-compose
-@z
-@x
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
-@y
-       # The commented out section below is an example of how to define a PostgreSQL
-       # database that your application can use. `depends_on` tells Docker Compose to
-       # start the database before your application. The `db-data` volume persists the
-       # database data between container restarts. The `db-password` secret is used
-       # to set the database password. You must create `db/password.txt` and add
-       # a password of your choosing to it before running `docker compose up`.
+### Update your application service
 @z
 
 @x
-6. In the `docker-nodejs-sample` directory, create a directory named `db`.
+Make sure your application service in `compose.yml` is configured to connect to the database:
 @y
-6. `docker-nodejs-sample` ディレクトリ内に `db` という名前のディレクトリを生成します。
+Make sure your application service in `compose.yml` is configured to connect to the database:
 @z
 
 @x
-7. In the `db` directory, create a file named `password.txt`. This file will
-   contain your database password.
+```yaml {hl_lines="18-20,42-44",collapse=true,title=compose.yml}
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: todoapp-dev
+    ports:
+      - '${APP_PORT:-3000}:3000' # API server
+      - '${VITE_PORT:-5173}:5173' # Vite dev server
+      - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
+    environment:
+      NODE_ENV: development
+      DOCKER_ENV: 'true'
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: todoapp
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json
+      - ./vite.config.ts:/app/vite.config.ts:ro
+      - ./tailwind.config.js:/app/tailwind.config.js:ro
+      - ./postcss.config.js:/app/postcss.config.js:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - '**/*.test.*'
+            - '**/__tests__/**'
+        - action: rebuild
+          path: ./package.json
+        - action: sync
+          path: ./vite.config.ts
+          target: /app/vite.config.ts
+        - action: sync
+          path: ./tailwind.config.js
+          target: /app/tailwind.config.js
+        - action: sync
+          path: ./postcss.config.js
+          target: /app/postcss.config.js
+    restart: unless-stopped
+    networks:
+      - todoapp-network
 @y
-7. `db` ディレクトリ内に `password.txt` という名前のファイルを生成します。
-   このファイルにデータベースパスワードを記述します。
+```yaml {hl_lines="18-20,42-44",collapse=true,title=compose.yml}
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: todoapp-dev
+    ports:
+      - '${APP_PORT:-3000}:3000' # API server
+      - '${VITE_PORT:-5173}:5173' # Vite dev server
+      - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
+    environment:
+      NODE_ENV: development
+      DOCKER_ENV: 'true'
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: todoapp
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json
+      - ./vite.config.ts:/app/vite.config.ts:ro
+      - ./tailwind.config.js:/app/tailwind.config.js:ro
+      - ./postcss.config.js:/app/postcss.config.js:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - '**/*.test.*'
+            - '**/__tests__/**'
+        - action: rebuild
+          path: ./package.json
+        - action: sync
+          path: ./vite.config.ts
+          target: /app/vite.config.ts
+        - action: sync
+          path: ./tailwind.config.js
+          target: /app/tailwind.config.js
+        - action: sync
+          path: ./postcss.config.js
+          target: /app/postcss.config.js
+    restart: unless-stopped
+    networks:
+      - todoapp-network
 @z
 
 @x
-   You should now have at least the following contents in your
-   `docker-nodejs-sample` directory.
+  db:
+    image: postgres:16-alpine
+    container_name: todoapp-db
+    environment:
+      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
+      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - todoapp-network
 @y
-   ここまでにより `docker-nodejs-sample` ディレクトリ内は少なくとも以下のようになっているはずです。
-@z
-
-% snip text...
-
-@x
-8. Open the `password.txt` file in an IDE or text editor, and specify a password
-   of your choice. Your password must be on a single line with no additional
-   lines. Ensure that the file doesn't contain any newline characters or other
-   hidden characters.
-@y
-8. IDE またはテキストエディターを使って `password.txt` ファイルを開きます。
-   そしてパスワードを任意に取り決めて記述します。
-   このパスワードは 1 行内に記述し、これ以外の行を記述してはなりません。
-   改行文字や隠し文字などは一切含めないようにしてください。
-@z
-
-@x
-9. Ensure that you save your changes to all the files that you have modified.
-@y
-9. ここまでに修正したファイルは、すべて適切に保存したことを確認します。
-@z
-
-@x
-10. Run the following command to start your application.
-@y
-10. 以下のコマンドを実行してアプリケーションを起動します。
-@z
-
-% snip command...
-
-@x
-11. Open a browser and verify that the application is running at
-    [http://localhost:3000](http://localhost:3000).
-@y
-11. ブラウザーを開きます。
-    アプリケーションが起動していることを確認するため [http://localhost:3000](http://localhost:3000) にアクセスします。
-@z
-
-@x
-12. Add some items to the todo list to test data persistence.
-@y
-12. データが保持されることを確認するため、todo リストにアイテムをいくつか追加します。
+  db:
+    image: postgres:16-alpine
+    container_name: todoapp-db
+    environment:
+      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
+      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - '${DB_PORT:-5432}:5432'
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - todoapp-network
 @z
 
 @x
-13. After adding some items to the todo list, press `ctrl+c` in the terminal to
-    stop your application.
+volumes:
+  postgres_data:
+    name: todoapp-postgres-data
+    driver: local
 @y
-13. todo リストへの追加をある程度行ったら、端末上において `ctrl+c` を入力してアプリケーションを停止します。
+volumes:
+  postgres_data:
+    name: todoapp-postgres-data
+    driver: local
 @z
 
 @x
-14. In the terminal, run `docker compose rm` to remove your containers.
+networks:
+  todoapp-network:
+    name: todoapp-network
+    driver: bridge
+```
 @y
-14. 端末上において `docker compose rm` を実行してコンテナーを削除します。
+networks:
+  todoapp-network:
+    name: todoapp-network
+    driver: bridge
+```
 @z
 
-% snip command...
-
 @x
-15. Run `docker compose up` to run your application again.
+1. The PostgreSQL database configuration is handled automatically by the application. The database is created and initialized when the application starts, with data persisted using the `postgres_data` volume.
 @y
-15. `docker compose up` を実行してアプリケーションを再度起動します。
+1. The PostgreSQL database configuration is handled automatically by the application. The database is created and initialized when the application starts, with data persisted using the `postgres_data` volume.
 @z
 
-% snip command...
+@x
+1. Configure your environment by copying the example file:
+@y
+1. Configure your environment by copying the example file:
+@z
 
 @x
-16. Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+   ```console
+   $ cp .env.example .env
+   ```
 @y
-16. ブラウザーにおいて [http://localhost:3000](http://localhost:3000) の表示を更新します。
-    todo リスト内のアイテムが保持されていることを確認します。
-    コンテナーを削除した後の再起動であってもデータが保持されているはずです。
+   ```console
+   $ cp .env.example .env
+   ```
+@z
+
+@x
+   Update the `.env` file with your preferred settings:
+@y
+   Update the `.env` file with your preferred settings:
+@z
+
+@x
+   ```env
+   # Application Configuration
+   NODE_ENV=development
+   APP_PORT=3000
+   VITE_PORT=5173
+   DEBUG_PORT=9230
+@y
+   ```env
+   # Application Configuration
+   NODE_ENV=development
+   APP_PORT=3000
+   VITE_PORT=5173
+   DEBUG_PORT=9230
+@z
+
+@x
+   # Database Configuration
+   POSTGRES_HOST=db
+   POSTGRES_PORT=5432
+   POSTGRES_DB=todoapp
+   POSTGRES_USER=todoapp
+   POSTGRES_PASSWORD=todoapp_password
+@y
+   # Database Configuration
+   POSTGRES_HOST=db
+   POSTGRES_PORT=5432
+   POSTGRES_DB=todoapp
+   POSTGRES_USER=todoapp
+   POSTGRES_PASSWORD=todoapp_password
+@z
+
+@x
+   # Security Configuration
+   ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+   ```
+@y
+   # Security Configuration
+   ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+   ```
+@z
+
+@x
+1. Run the following command to start your application in development mode:
+@y
+1. Run the following command to start your application in development mode:
+@z
+
+@x
+   ```console
+   $ docker compose up app-dev --build
+   ```
+@y
+   ```console
+   $ docker compose up app-dev --build
+   ```
+@z
+
+@x
+1. Open a browser and verify that the application is running at [http://localhost:5173](http://localhost:5173) for the frontend or [http://localhost:3000](http://localhost:3000) for the API. The React frontend is served by Vite dev server on port 5173, with API calls proxied to the Express server on port 3000.
+@y
+1. Open a browser and verify that the application is running at [http://localhost:5173](http://localhost:5173) for the frontend or [http://localhost:3000](http://localhost:3000) for the API. The React frontend is served by Vite dev server on port 5173, with API calls proxied to the Express server on port 3000.
+@z
+
+@x
+1. Add some items to the todo list to test data persistence.
+@y
+1. Add some items to the todo list to test data persistence.
+@z
+
+@x
+1. After adding some items to the todo list, press `CTRL + C` in the terminal to stop your application.
+@y
+1. After adding some items to the todo list, press `CTRL + C` in the terminal to stop your application.
+@z
+
+@x
+1. Run the application again:
+   ```console
+   $ docker compose up app-dev
+   ```
+@y
+1. Run the application again:
+   ```console
+   $ docker compose up app-dev
+   ```
+@z
+
+@x
+1. Refresh [http://localhost:5173](http://localhost:5173) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
+@y
+1. Refresh [http://localhost:5173](http://localhost:5173) in your browser and verify that the todo items persisted, even after the containers were removed and ran again.
 @z
 
 @x
 ## Configure and run a development container
 @y
-## 開発用コンテナーの設定と起動 {#configure-and-run-a-development-container}
+## Configure and run a development container
 @z
 
 @x
 You can use a bind mount to mount your source code into the container. The container can then see the changes you make to the code immediately, as soon as you save a file. This means that you can run processes, like nodemon, in the container that watch for filesystem changes and respond to them. To learn more about bind mounts, see [Storage overview](/manuals/engine/storage/_index.md).
 @y
-バインドマウントを利用すれば、ソースコードをコンテナー内にマウントすることができます。
-コードに対して変更を行って保存すれば、即座にコンテナー側でそれを利用することができます。
-これはつまり、ファイルシステム内の変更を監視しそれに反応する処理を行う、nodemon のようなプロセスでも実行できるということです。
-バインドマウントに関する詳細は [ストレージ概要](manuals/engine/storage/_index.md) を参照してください。
+You can use a bind mount to mount your source code into the container. The container can then see the changes you make to the code immediately, as soon as you save a file. This means that you can run processes, like nodemon, in the container that watch for filesystem changes and respond to them. To learn more about bind mounts, see [Storage overview](/manuals/engine/storage/_index.md).
 @z
 
 @x
 In addition to adding a bind mount, you can configure your Dockerfile and `compose.yaml` file to install development dependencies and run development tools.
 @y
-バインドマウントの追加に加えて、Dockerfile と `compose.yaml` ファイルにおいて、開発のための依存パッケージのインストール設定を行い、また開発ツールを実行します。
+In addition to adding a bind mount, you can configure your Dockerfile and `compose.yaml` file to install development dependencies and run development tools.
 @z
 
 @x
 ### Update your Dockerfile for development
 @y
-### 開発向けの Dockerfile 修正 {#update-your-dockerfile-for-development}
+### Update your Dockerfile for development
 @z
 
 @x
-Open the Dockerfile in an IDE or text editor. Note that the Dockerfile doesn't
-install development dependencies and doesn't run nodemon. You'll
-need to update your Dockerfile to install the development dependencies and run
-nodemon.
+Your Dockerfile should be configured as a multi-stage build with separate stages for development, production, and testing. If you followed the previous section, your Dockerfile already includes a development stage that has all development dependencies and runs the application with hot reload enabled.
 @y
-IDE またはテキストエディターを使って Dockerfile を開きます。
-Dockerfile にはこの時点で開発用の依存パッケージをインストールするものでなく、nodemon も実行していません。
-ここからは Dockerfile を修正して、開発用依存パッケージのインストールと nodemon の実行を行うようにします。
+Your Dockerfile should be configured as a multi-stage build with separate stages for development, production, and testing. If you followed the previous section, your Dockerfile already includes a development stage that has all development dependencies and runs the application with hot reload enabled.
 @z
 
 @x
-Rather than creating one Dockerfile for production, and another Dockerfile for
-development, you can use one multi-stage Dockerfile for both.
+Here's the development stage from your multi-stage Dockerfile:
 @y
-ここでは本番環境向けの Dockerfile、開発向けの Dockerfile をそれぞれ作成するのではなく、1 つの Dockerfile をマルチステージにより両方に利用するものとします。
+Here's the development stage from your multi-stage Dockerfile:
 @z
 
 @x
-Update your Dockerfile to the following multi-stage Dockerfile.
+```dockerfile {hl_lines="5-26",collapse=true,title=Dockerfile}
+# ========================================
+# Development Stage
+# ========================================
+FROM build-deps AS development
 @y
-Dockerfile を以下のように修正して、以下のようなマルチステージの Dockerfile とします。
+```dockerfile {hl_lines="5-26",collapse=true,title=Dockerfile}
+# ========================================
+# Development Stage
+# ========================================
+FROM build-deps AS development
 @z
 
-% snip code...
+@x
+# Set environment
+ENV NODE_ENV=development \
+    NPM_CONFIG_LOGLEVEL=warn
+@y
+# Set environment
+ENV NODE_ENV=development \
+    NPM_CONFIG_LOGLEVEL=warn
+@z
 
 @x
-In the Dockerfile, you first add a label `as base` to the `FROM
-node:${NODE_VERSION}-alpine` statement. This lets you refer to this build stage
-in other build stages. Next, you add a new build stage labeled `dev` to install
-your development dependencies and start the container using `npm run dev`.
-Finally, you add a stage labeled `prod` that omits the dev dependencies and runs
-your application using `node src/index.js`. To learn more about multi-stage
-builds, see [Multi-stage builds](/manuals/build/building/multi-stage.md).
+# Copy source files
+COPY . .
 @y
-この Dockerfile においては `FROM node:${NODE_VERSION}-alpine` ステートメントに `as base` としてラベルをつけています。
-こうすることで、このビルドステージを別のビルドステージにて参照できるようになります。
-そして新たなビルドステージに対しては `dev` というラベルをつけて、開発向けの依存パッケージのインストールを行い、`npm run dev` を使ってコンテナーを起動させます。
-最終的に `prod` というラベルのステージを作り出し、開発用依存パッケージは持たずに、`node src/index.js` を使ってアプリケーションを起動します。
-マルチビルドステージの詳細については [マルチステージビルド](manuals/build/building/multi-stage.md) を参照してください。
+# Copy source files
+COPY . .
+@z
+
+@x
+# Ensure all directories have proper permissions
+RUN mkdir -p /app/node_modules/.vite && \
+    chown -R nodejs:nodejs /app && \
+    chmod -R 755 /app
+@y
+# Ensure all directories have proper permissions
+RUN mkdir -p /app/node_modules/.vite && \
+    chown -R nodejs:nodejs /app && \
+    chmod -R 755 /app
+@z
+
+@x
+# Switch to non-root user
+USER nodejs
+@y
+# Switch to non-root user
+USER nodejs
+@z
+
+@x
+# Expose ports
+EXPOSE 3000 5173 9229
+@y
+# Expose ports
+EXPOSE 3000 5173 9229
+@z
+
+@x
+# Start development server
+CMD ["npm", "run", "dev:docker"]
+```
+@y
+# Start development server
+CMD ["npm", "run", "dev:docker"]
+```
+@z
+
+@x
+The development stage:
+@y
+The development stage:
+@z
+
+@x
+- Installs all dependencies including dev dependencies
+- Exposes ports for the API server (3000), Vite dev server (5173), and Node.js debugger (9229)
+- Runs `npm run dev` which starts both the Express server and Vite dev server concurrently
+- Includes health checks for monitoring container status
+@y
+- Installs all dependencies including dev dependencies
+- Exposes ports for the API server (3000), Vite dev server (5173), and Node.js debugger (9229)
+- Runs `npm run dev` which starts both the Express server and Vite dev server concurrently
+- Includes health checks for monitoring container status
 @z
 
 @x
 Next, you'll need to update your Compose file to use the new stage.
 @y
-次は Compose ファイルを修正して、新たなビルドステージを用いるようにします。
+Next, you'll need to update your Compose file to use the new stage.
 @z
 
 @x
 ### Update your Compose file for development
 @y
-### 開発向けの Compose ファイル修正 {#update-your-compose-file-for-development}
+### Update your Compose file for development
 @z
 
 @x
-To run the `dev` stage with Compose, you need to update your `compose.yaml`
-file. Open your `compose.yaml` file in an IDE or text editor, and then add the
-`target: dev` instruction to target the `dev` stage from your multi-stage
-Dockerfile.
+Update your `compose.yml` file to run the development stage with bind mounts for hot reloading:
 @y
-`dev` ステージを Compose から実行するには `compose.yaml` ファイルの変更が必要です。
-IDE またはテキストエディターを使って `compose.yaml` ファイルを開きます。
-そして `target: dev` 命令を加えることで、マルチステージ Dockerfile 内の `dev` ステージを用いるように指定します。
+Update your `compose.yml` file to run the development stage with bind mounts for hot reloading:
 @z
 
 @x
-Also, add a new volume to the server service for the bind mount. For this application, you'll mount `./src` from your local machine to `/usr/src/app/src` in the container.
+```yaml {hl_lines=[5,8-10,20-27],collapse=true,title=compose.yml}
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: todoapp-dev
+    ports:
+      - '${APP_PORT:-3000}:3000' # API server
+      - '${VITE_PORT:-5173}:5173' # Vite dev server
+      - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
+    environment:
+      NODE_ENV: development
+      DOCKER_ENV: 'true'
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: todoapp
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json
+      - ./vite.config.ts:/app/vite.config.ts:ro
+      - ./tailwind.config.js:/app/tailwind.config.js:ro
+      - ./postcss.config.js:/app/postcss.config.js:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - '**/*.test.*'
+            - '**/__tests__/**'
+        - action: rebuild
+          path: ./package.json
+        - action: sync
+          path: ./vite.config.ts
+          target: /app/vite.config.ts
+        - action: sync
+          path: ./tailwind.config.js
+          target: /app/tailwind.config.js
+        - action: sync
+          path: ./postcss.config.js
+          target: /app/postcss.config.js
+    restart: unless-stopped
+    networks:
+      - todoapp-network
+```
 @y
-また server サービスへのバインドマウントを行うためのボリュームを新たに追加します。
-このアプリケーションでは、ローカルマシンの `./src` を、コンテナー内の `/usr/src/app/src` にマウントします。
+```yaml {hl_lines=[5,8-10,20-27],collapse=true,title=compose.yml}
+services:
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: todoapp-dev
+    ports:
+      - '${APP_PORT:-3000}:3000' # API server
+      - '${VITE_PORT:-5173}:5173' # Vite dev server
+      - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
+    environment:
+      NODE_ENV: development
+      DOCKER_ENV: 'true'
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: todoapp
+      POSTGRES_USER: todoapp
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
+      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
+    volumes:
+      - ./src:/app/src:ro
+      - ./package.json:/app/package.json
+      - ./vite.config.ts:/app/vite.config.ts:ro
+      - ./tailwind.config.js:/app/tailwind.config.js:ro
+      - ./postcss.config.js:/app/postcss.config.js:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - '**/*.test.*'
+            - '**/__tests__/**'
+        - action: rebuild
+          path: ./package.json
+        - action: sync
+          path: ./vite.config.ts
+          target: /app/vite.config.ts
+        - action: sync
+          path: ./tailwind.config.js
+          target: /app/tailwind.config.js
+        - action: sync
+          path: ./postcss.config.js
+          target: /app/postcss.config.js
+    restart: unless-stopped
+    networks:
+      - todoapp-network
+```
 @z
 
 @x
-Lastly, publish port `9229` for debugging.
+Key features of the development configuration:
 @y
-そしてデバッグ用にポート `9229` を開放します。
+Key features of the development configuration:
 @z
 
 @x
-The following is the updated Compose file. All comments have been removed.
+- **Multi-port exposure**: API server (3000), Vite dev server (5173), and debugger (9229)
+- **Comprehensive bind mounts**: Source code, configuration files, and package files for hot reloading
+- **Environment variables**: Configurable through `.env` file or defaults
+- **PostgreSQL database**: Production-ready database with persistent storage
+- **Docker Compose watch**: Automatic file synchronization and container rebuilds
+- **Health checks**: Database health monitoring with automatic dependency management
 @y
-以下が修正を行った Compose jファイルです。
-コメントはすべて解除されています。
+- **Multi-port exposure**: API server (3000), Vite dev server (5173), and debugger (9229)
+- **Comprehensive bind mounts**: Source code, configuration files, and package files for hot reloading
+- **Environment variables**: Configurable through `.env` file or defaults
+- **PostgreSQL database**: Production-ready database with persistent storage
+- **Docker Compose watch**: Automatic file synchronization and container rebuilds
+- **Health checks**: Database health monitoring with automatic dependency management
 @z
-
-% snip code...
 
 @x
 ### Run your development container and debug your application
 @y
-### 開発用コンテナーの実行とアプリケーションのデバッグ {#run-your-development-container-and-debug-your-application}
+### Run your development container and debug your application
 @z
 
 @x
-Run the following command to run your application with the new changes to the `Dockerfile` and `compose.yaml` file.
+Run the following command to run your application with the development configuration:
 @y
-以下のコマンドを実行して、修正した `Dockerfile` と `compose.yaml` ファイルを使ったアプリケーションを実行します。
-@z
-
-% snip command...
-
-@x
-Open a browser and verify that the application is running at [http://localhost:3000](http://localhost:3000).
-@y
-ブラウザーを開きます。
-アプリケーションが起動していることを確認するため [http://localhost:3000](http://localhost:3000) にアクセスします。
+Run the following command to run your application with the development configuration:
 @z
 
 @x
-Any changes to the application's source files on your local machine will now be
-immediately reflected in the running container.
+```console
+$ docker compose up app-dev --build
+```
 @y
-ローカルマシン内にあるアプリケーションのソースファイルは、変更すると同時に実行コンテナー内にも即座に反映されることになります。
+```console
+$ docker compose up app-dev --build
+```
 @z
 
 @x
-Open `docker-nodejs-sample/src/static/js/app.js` in an IDE or text editor and update the button text on line 109 from `Add Item` to `Add`.
+Or with file watching for automatic updates:
 @y
-IDE またはテキストエディターを使って `docker-nodejs-sample/src/static/js/app.js` を開きます。
-そして 109 行めにあるボタンテキストを `Add Item` から `Add` に変更します。
-@z
-
-% snip code...
-
-@x
-Refresh [http://localhost:3000](http://localhost:3000) in your browser and verify that the updated text appears.
-@y
-ブラウザーにおいて [http://localhost:3000](http://localhost:3000) の表示を更新します。
-更新したボタンテキストが変更されていることを確認します。
+Or with file watching for automatic updates:
 @z
 
 @x
-You can now connect an inspector client to your application for debugging. For
-more details about inspector clients, see the [Node.js
-documentation](https://nodejs.org/en/docs/guides/debugging-getting-started).
+```console
+$ docker compose up app-dev --watch
+```
 @y
-アプリケーションに対してインスペクタークライアントを接続して、デバッグを行うことができます。
-インスペクタークライアントの詳細については [Node.js ドキュメント](https://nodejs.org/en/docs/guides/debugging-getting-started) を参照してください。
+```console
+$ docker compose up app-dev --watch
+```
+@z
+
+@x
+For local development without Docker:
+@y
+For local development without Docker:
+@z
+
+@x
+```console
+$ npm run dev:with-db
+```
+@y
+```console
+$ npm run dev:with-db
+```
+@z
+
+@x
+Or start services separately:
+@y
+Or start services separately:
+@z
+
+@x
+```console
+$ npm run db:start    # Start PostgreSQL container
+$ npm run dev         # Start both server and client
+```
+@y
+```console
+$ npm run db:start    # Start PostgreSQL container
+$ npm run dev         # Start both server and client
+```
+@z
+
+@x
+### Using Task Runner (alternative)
+@y
+### Using Task Runner (alternative)
+@z
+
+@x
+The project includes a Taskfile.yml for advanced workflows:
+@y
+The project includes a Taskfile.yml for advanced workflows:
+@z
+
+@x
+```console
+# Development
+$ task dev              # Start development environment
+$ task dev:build        # Build development image
+$ task dev:run          # Run development container
+@y
+```console
+# Development
+$ task dev              # Start development environment
+$ task dev:build        # Build development image
+$ task dev:run          # Run development container
+@z
+
+@x
+# Production
+$ task build            # Build production image
+$ task run              # Run production container
+$ task build-run        # Build and run in one step
+@y
+# Production
+$ task build            # Build production image
+$ task run              # Run production container
+$ task build-run        # Build and run in one step
+@z
+
+@x
+# Testing
+$ task test             # Run all tests
+$ task test:unit        # Run unit tests with coverage
+$ task test:lint        # Run linting
+@y
+# Testing
+$ task test             # Run all tests
+$ task test:unit        # Run unit tests with coverage
+$ task test:lint        # Run linting
+@z
+
+@x
+# Kubernetes
+$ task k8s:deploy       # Deploy to Kubernetes
+$ task k8s:status       # Check deployment status
+$ task k8s:logs         # View pod logs
+@y
+# Kubernetes
+$ task k8s:deploy       # Deploy to Kubernetes
+$ task k8s:status       # Check deployment status
+$ task k8s:logs         # View pod logs
+@z
+
+@x
+# Utilities
+$ task clean            # Clean up containers and images
+$ task health           # Check application health
+$ task logs             # View container logs
+```
+@y
+# Utilities
+$ task clean            # Clean up containers and images
+$ task health           # Check application health
+$ task logs             # View container logs
+```
+@z
+
+@x
+The application will start with both the Express API server and Vite development server:
+@y
+The application will start with both the Express API server and Vite development server:
+@z
+
+@x
+- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
+- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
+- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
+@y
+- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
+- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
+- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
+@z
+
+@x
+Any changes to the application's source files on your local machine will now be immediately reflected in the running container thanks to the bind mounts.
+@y
+Any changes to the application's source files on your local machine will now be immediately reflected in the running container thanks to the bind mounts.
+@z
+
+@x
+Try making a change to test hot reloading:
+@y
+Try making a change to test hot reloading:
+@z
+
+@x
+1. Open `src/client/components/TodoApp.tsx` in an IDE or text editor.
+1. Update the main heading text:
+@y
+1. Open `src/client/components/TodoApp.tsx` in an IDE or text editor.
+1. Update the main heading text:
+@z
+
+@x
+    ```diff
+    - <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    -   Modern Todo App
+    - </h1>
+    + <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    +   My Todo App
+    + </h1>
+    ```
+@y
+    ```diff
+    - <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    -   Modern Todo App
+    - </h1>
+    + <h1 className="text-3xl font-bold text-gray-900 mb-8">
+    +   My Todo App
+    + </h1>
+    ```
+@z
+
+@x
+1. Save the file and the Vite dev server will automatically reload the page with your changes.
+@y
+1. Save the file and the Vite dev server will automatically reload the page with your changes.
+@z
+
+@x
+**Debugging support:**
+@y
+**Debugging support:**
+@z
+
+@x
+You can connect a debugger to your application on port 9229. The Node.js inspector is enabled with `--inspect=0.0.0.0:9230` in the development script (`dev:server`).
+@y
+You can connect a debugger to your application on port 9229. The Node.js inspector is enabled with `--inspect=0.0.0.0:9230` in the development script (`dev:server`).
+@z
+
+@x
+### VS Code debugger setup
+@y
+### VS Code debugger setup
+@z
+
+@x
+1. Create a launch configuration in `.vscode/launch.json`:
+@y
+1. Create a launch configuration in `.vscode/launch.json`:
+@z
+
+@x
+    ```json
+    {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Attach to Docker Container",
+          "type": "node",
+          "request": "attach",
+          "port": 9229,
+          "address": "localhost",
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/app",
+          "protocol": "inspector",
+          "restart": true,
+          "sourceMaps": true,
+          "skipFiles": ["<node_internals>/**"]
+        }
+      ]
+    }
+    ```
+@y
+    ```json
+    {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Attach to Docker Container",
+          "type": "node",
+          "request": "attach",
+          "port": 9229,
+          "address": "localhost",
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/app",
+          "protocol": "inspector",
+          "restart": true,
+          "sourceMaps": true,
+          "skipFiles": ["<node_internals>/**"]
+        }
+      ]
+    }
+    ```
+@z
+
+@x
+1. Start your development container:
+@y
+1. Start your development container:
+@z
+
+@x
+    ```console
+    docker compose up app-dev --build
+    ```
+@y
+    ```console
+    docker compose up app-dev --build
+    ```
+@z
+
+@x
+1. Attach the debugger:
+   - Open VS Code
+   - From the Debug panel (Ctrl/Cmd + Shift + D), select **Attach to Docker Container** from the drop-down
+   - Select the green play button or press F5
+@y
+1. Attach the debugger:
+   - Open VS Code
+   - From the Debug panel (Ctrl/Cmd + Shift + D), select **Attach to Docker Container** from the drop-down
+   - Select the green play button or press F5
+@z
+
+@x
+### Chrome DevTools (alternative)
+@y
+### Chrome DevTools (alternative)
+@z
+
+@x
+You can also use Chrome DevTools for debugging:
+@y
+You can also use Chrome DevTools for debugging:
+@z
+
+@x
+1. Start your container (if not already running):
+@y
+1. Start your container (if not already running):
+@z
+
+@x
+    ```console
+    docker compose up app-dev --build
+    ```
+@y
+    ```console
+    docker compose up app-dev --build
+    ```
+@z
+
+@x
+1. Open Chrome and go to `chrome://inspect`.
+@y
+1. Open Chrome and go to `chrome://inspect`.
+@z
+
+@x
+1. From the **Configure** option, add:
+@y
+1. From the **Configure** option, add:
+@z
+
+@x
+    ```text
+    localhost:9229
+    ```
+@y
+    ```text
+    localhost:9229
+    ```
+@z
+
+@x
+1. When your Node.js target appears, select **inspect**.
+@y
+1. When your Node.js target appears, select **inspect**.
+@z
+
+@x
+### Debugging configuration details
+@y
+### Debugging configuration details
+@z
+
+@x
+The debugger configuration:
+@y
+The debugger configuration:
+@z
+
+@x
+- **Container port**: 9230 (internal debugger port)
+- **Host port**: 9229 (mapped external port)
+- **Script**: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
+@y
+- **Container port**: 9230 (internal debugger port)
+- **Host port**: 9229 (mapped external port)
+- **Script**: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
+@z
+
+@x
+The debugger listens on all interfaces (`0.0.0.0`) inside the container on port 9230 and is accessible on port 9229 from your host machine.
+@y
+The debugger listens on all interfaces (`0.0.0.0`) inside the container on port 9230 and is accessible on port 9229 from your host machine.
+@z
+
+@x
+### Troubleshooting debugger connection
+@y
+### Troubleshooting debugger connection
+@z
+
+@x
+If the debugger doesn't connect:
+@y
+If the debugger doesn't connect:
+@z
+
+@x
+1. Check if the container is running:
+@y
+1. Check if the container is running:
+@z
+
+@x
+    ```console
+    docker ps
+    ```
+@y
+    ```console
+    docker ps
+    ```
+@z
+
+@x
+1. Check if the port is exposed:
+@y
+1. Check if the port is exposed:
+@z
+
+@x
+    ```console
+    docker port todoapp-dev
+    ```
+@y
+    ```console
+    docker port todoapp-dev
+    ```
+@z
+
+@x
+1. Check container logs:
+@y
+1. Check container logs:
+@z
+
+@x
+    ```console
+    docker compose logs app-dev
+    ```
+@y
+    ```console
+    docker compose logs app-dev
+    ```
+@z
+
+@x
+    You should see a message like:
+@y
+    You should see a message like:
+@z
+
+@x
+    ```text
+    Debugger listening on ws://0.0.0.0:9230/...
+    ```
+@y
+    ```text
+    Debugger listening on ws://0.0.0.0:9230/...
+    ```
+@z
+
+@x
+Now you can set breakpoints in your TypeScript source files and debug your containerized Node.js application.
+@y
+Now you can set breakpoints in your TypeScript source files and debug your containerized Node.js application.
+@z
+
+@x
+For more details about Node.js debugging, see the [Node.js documentation](https://nodejs.org/en/docs/guides/debugging-getting-started).
+@y
+For more details about Node.js debugging, see the [Node.js documentation](https://nodejs.org/en/docs/guides/debugging-getting-started).
 @z
 
 @x
 ## Summary
 @y
-## まとめ {#summary}
+## Summary
 @z
 
 @x
-In this section, you took a look at setting up your Compose file to add a mock
-database and persist data. You also learned how to create a multi-stage
-Dockerfile and set up a bind mount for development.
+You've set up your Compose file with a PostgreSQL database and data persistence. You also created a multi-stage Dockerfile and configured bind mounts for development.
 @y
-本節では Compose ファイルの設定を通じて、簡単なデータベースを追加しデータの保持を行う方法を見てきました。
-またマルチステージ Dockerfile の生成方法と、開発向けのバインドマウントの設定方法について学びました。
+You've set up your Compose file with a PostgreSQL database and data persistence. You also created a multi-stage Dockerfile and configured bind mounts for development.
 @z
 
 @x
 Related information:
 @y
-関連情報
+Related information:
 @z
 
 @x
@@ -532,19 +1264,19 @@ Related information:
 - [Services top-level element](/reference/compose-file/services/)
 - [Multi-stage builds](/manuals/build/building/multi-stage.md)
 @y
-- [ボリュームの最上位項目](__SUBDIR__/reference/compose-file/volumes/)
-- [サービスの最上位項目](__SUBDIR__/reference/compose-file/services/)
-- [マルチステージビルド](manuals/build/building/multi-stage.md)
+- [Volumes top-level element](/reference/compose-file/volumes/)
+- [Services top-level element](/reference/compose-file/services/)
+- [Multi-stage builds](/manuals/build/building/multi-stage.md)
 @z
 
 @x
 ## Next steps
 @y
-## 次のステップ {#next-steps}
+## Next steps
 @z
 
 @x
 In the next section, you'll learn how to run unit tests using Docker.
 @y
-次の節では、Docker を用いたユニットテストの実行方法について学びます。
+In the next section, you'll learn how to run unit tests using Docker.
 @z

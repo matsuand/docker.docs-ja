@@ -36,6 +36,108 @@ For more information about:
 @z
 
 @x
+## 29.0.2
+@y
+## 29.0.2
+@z
+
+@x
+{{< release-date date="2025-11-17" >}}
+@y
+{{< release-date date="2025-11-17" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.2)
+- [moby/moby, 29.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.2)
+@y
+- [docker/cli, 29.0.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.2)
+- [moby/moby, 29.0.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.2)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix an issue that could lead to an "endpoint not found" error when creating a container with multiple network connections, when one of the networks is non-internal but does not have its own external IP connectivity. [moby/moby#51538](https://github.com/moby/moby/pull/51538)
+- Fix an issue that prevented rootless Docker from starting on a host with IPv6 disabled. [moby/moby#51543](https://github.com/moby/moby/pull/51543)
+@y
+- Fix an issue that could lead to an "endpoint not found" error when creating a container with multiple network connections, when one of the networks is non-internal but does not have its own external IP connectivity. [moby/moby#51538](https://github.com/moby/moby/pull/51538)
+- Fix an issue that prevented rootless Docker from starting on a host with IPv6 disabled. [moby/moby#51543](https://github.com/moby/moby/pull/51543)
+@z
+
+@x
+## 29.0.1
+@y
+## 29.0.1
+@z
+
+@x
+{{< release-date date="2025-11-14" >}}
+@y
+{{< release-date date="2025-11-14" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.1)
+- [moby/moby, 29.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.1)
+@y
+- [docker/cli, 29.0.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.1)
+- [moby/moby, 29.0.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- `docker image ls` no longer truncates the name width when output is redirect (e.g. for `grep`). [docker/cli#6656](https://github.com/docker/cli/pull/6656)
+- `docker image ls` now considers the `NO_COLOR` environment variable for choosing the colored output. [docker/cli#6654](https://github.com/docker/cli/pull/6654)
+- containerd image store: Fix a bug causing `docker build` to ignore the explicitly set `unpack` image exporter option. [moby/moby#51514](https://github.com/moby/moby/pull/51514)
+- Fix a bug causing `docker image ls --all` to not show untagged/dangling images. [docker/cli#6657](https://github.com/docker/cli/pull/6657)
+- Fix build on i386. [moby/moby#51528](https://github.com/moby/moby/pull/51528)
+- Fix explicit graphdriver configuration (`"storage-driver"`) being treated as containerd snapshotter when prior graphdriver state exists. [moby/moby#51516](https://github.com/moby/moby/pull/51516)
+- Fix output format of the `ApiVersion` and `MinApiVersion` fields in  `docker version --format=json` to align with previous versions. [docker/cli#6648](https://github.com/docker/cli/pull/6648)
+@y
+- `docker image ls` no longer truncates the name width when output is redirect (e.g. for `grep`). [docker/cli#6656](https://github.com/docker/cli/pull/6656)
+- `docker image ls` now considers the `NO_COLOR` environment variable for choosing the colored output. [docker/cli#6654](https://github.com/docker/cli/pull/6654)
+- containerd image store: Fix a bug causing `docker build` to ignore the explicitly set `unpack` image exporter option. [moby/moby#51514](https://github.com/moby/moby/pull/51514)
+- Fix a bug causing `docker image ls --all` to not show untagged/dangling images. [docker/cli#6657](https://github.com/docker/cli/pull/6657)
+- Fix build on i386. [moby/moby#51528](https://github.com/moby/moby/pull/51528)
+- Fix explicit graphdriver configuration (`"storage-driver"`) being treated as containerd snapshotter when prior graphdriver state exists. [moby/moby#51516](https://github.com/moby/moby/pull/51516)
+- Fix output format of the `ApiVersion` and `MinApiVersion` fields in  `docker version --format=json` to align with previous versions. [docker/cli#6648](https://github.com/docker/cli/pull/6648)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix a bug preventing DNS resolution of containers attached to non swarm-scoped networks once the node has joined a Swarm cluster. [moby/moby#51515](https://github.com/moby/moby/pull/51515)
+@y
+- Fix a bug preventing DNS resolution of containers attached to non swarm-scoped networks once the node has joined a Swarm cluster. [moby/moby#51515](https://github.com/moby/moby/pull/51515)
+@z
+
+@x
 ## 29.0.0
 @y
 ## 29.0.0
@@ -208,8 +310,6 @@ For a full list of pull requests and changes in this release, refer to the relev
 - The Windows overlay network driver now supports option `--dns`. [moby/moby#51229](https://github.com/moby/moby/pull/51229)
 - Update BuildKit to [v0.25.2](https://github.com/moby/buildkit/releases/tag/v0.25.2). [moby/moby#51397](https://github.com/moby/moby/pull/51397)
 - Update containerd to [v2.1.5](https://github.com/containerd/containerd/releases/tag/v2.1.5). [moby/moby#51409](https://github.com/moby/moby/pull/51409)
-- Update Go runtime to [1.25.4](https://go.dev/doc/devel/release#go1.25.4). [moby/moby#51418](https://github.com/moby/moby/pull/51418), [docker/cli#6632](https://github.com/docker/cli/pull/6632)
-- Users can request a specific prefix size for networks allocated from the default pools by using the unspecified address, for example `--subnet 0.0.0.0/24 --subnet ::/96`. [moby/moby#50114](https://github.com/moby/moby/pull/50114)
 @y
 - client: remove legacy CBC cipher suites from client config. [moby/moby#50126](https://github.com/moby/moby/pull/50126)
 - contrib: remove `editorconfig` as it was unmaintained. [moby/moby#50607](https://github.com/moby/moby/pull/50607)
@@ -219,8 +319,6 @@ For a full list of pull requests and changes in this release, refer to the relev
 - The Windows overlay network driver now supports option `--dns`. [moby/moby#51229](https://github.com/moby/moby/pull/51229)
 - Update BuildKit to [v0.25.2](https://github.com/moby/buildkit/releases/tag/v0.25.2). [moby/moby#51397](https://github.com/moby/moby/pull/51397)
 - Update containerd to [v2.1.5](https://github.com/containerd/containerd/releases/tag/v2.1.5). [moby/moby#51409](https://github.com/moby/moby/pull/51409)
-- Update Go runtime to [1.25.4](https://go.dev/doc/devel/release#go1.25.4). [moby/moby#51418](https://github.com/moby/moby/pull/51418), [docker/cli#6632](https://github.com/docker/cli/pull/6632)
-- Users can request a specific prefix size for networks allocated from the default pools by using the unspecified address, for example `--subnet 0.0.0.0/24 --subnet ::/96`. [moby/moby#50114](https://github.com/moby/moby/pull/50114)
 @z
 
 @x

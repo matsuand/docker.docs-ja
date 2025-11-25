@@ -2666,11 +2666,11 @@ examples: |-
 @x
     It's conventional to use `host.docker.internal` as the hostname referring to
     `host-gateway`. Docker Desktop automatically resolves this hostname, see
-    [Explore networking features](/desktop/features/networking/networking-how-tos/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+    [Explore networking features](/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host).
 @y
     It's conventional to use `host.docker.internal` as the hostname referring to
     `host-gateway`. Docker Desktop automatically resolves this hostname, see
-    [Explore networking features](__SUBDIR__/desktop/features/networking/networking-how-tos/#i-want-to-connect-from-a-container-to-a-service-on-the-host).
+    [Explore networking features](__SUBDIR__/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host).
 @z
 
 @x

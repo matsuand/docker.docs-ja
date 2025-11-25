@@ -49,6 +49,168 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.52.0
+@y
+## 4.52.0
+@z
+
+@x
+{{< release-date date="2025-11-20" >}}
+@y
+{{< release-date date="2025-11-20" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.52.0" build_path="/210994/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.52.0" build_path="/210994/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Added new port binding settings to Docker Desktop. This can also be controlled by administrators via Settings Management using the `admin-settings.json` file.
+- Added a new Docker Model Runner command. With `docker model purge` you can remove all your models.
+@y
+- Docker Desktop に新たなポート割り当て設定機能を追加しました。
+  これは管理権限者が `admin-settings.json` ファイルと合わせて Settings Management (設定管理) 機能から制御することもできます。
+- Docker Model Runner に新たなコマンドを追加しました。
+  `docker model purge` を使うと、モデルを一括削除できます。
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Docker Engine v29.0.0](/manuals/engine/release-notes/28.md#2900)
+- [Docker Model Runner v1.0.3](https://github.com/docker/model-runner/releases/tag/v1.0.3)
+- [Docker Model Runner CLI v1.0.0](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.0)
+- Docker MCP plugin `v0.28.0`
+@y
+- [Docker Engine v29.0.0](manuals/engine/release-notes/28.md#2900)
+- [Docker Model Runner v1.0.3](https://github.com/docker/model-runner/releases/tag/v1.0.3)
+- [Docker Model Runner CLI v1.0.0](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.0)
+- Docker MCP プラグイン `v0.28.0`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms 
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Docker MCP Toolkit improvements:
+   - Amazon Q client support
+   - OAuth DCR (Dynamic Client Registration) with Docker Engine
+   - Create MCP profiles using the CLI
+@y
+- Docker MCP Toolkit の改善
+   - Amazon Q クライアントサポート
+   - Docker Engine とともに利用する OAuth DCR (Dynamic Client Registration)
+   - CLI を使った MCP プロファイルの生成
+@z
+
+@x
+- Docker Model Runner improvements:
+   - You can now skip the `/engines` prefix for [Docker Model Runner's OpenAI API endpoint](/manuals/ai/model-runner/api-reference.md#rest-api-examples) `curl http://localhost:12434/v1/models`.
+   - You can now skip the `ai/` prefix for the models [published on Docker Hub with](https://hub.docker.com/u/ai) `docker model pull`.
+   - Downloads are now resumed when they get interrupted.
+@y
+- Docker Model Runner の改善
+   - You can now skip the `/engines` prefix for [Docker Model Runner's OpenAI API endpoint](manuals/ai/model-runner/api-reference.md#rest-api-examples) `curl http://localhost:12434/v1/models`.
+   - You can now skip the `ai/` prefix for the models [published on Docker Hub with](https://hub.docker.com/u/ai) `docker model pull`.
+   - Downloads are now resumed when they get interrupted.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed an issue with Kerberos/NTLM proxy sign in.
+@y
+- Kerberos/NTLM プロキシーのサインインに関する問題を修正しました。
+@z
+
+@x
+## 4.51.0
+@y
+## 4.51.0
+@z
+
+@x
+{{< release-date date="2025-11-13" >}}
+@y
+{{< release-date date="2025-11-13" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.51.0" build_path="/210443/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.51.0" build_path="/210443/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- You can now set up your Kubernetes resources from the **Kubernetes** view. This new view also provides a real-time display of your pods, services, and deployments. 
+@y
+- You can now set up your Kubernetes resources from the **Kubernetes** view. This new view also provides a real-time display of your pods, services, and deployments. 
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Docker Engine v28.5.2](/manuals/engine/release-notes/28.md#2852)
+- Linux kernel `v6.12.54`
+@y
+- [Docker Engine v28.5.2](manuals/engine/release-notes/28.md#2852)
+- Linux kernel `v6.12.54`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms 
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Kind now only pulls required dependency images if they are not available locally.
+@y
+- プル時に必要となる依存イメージは、ローカル環境から取得できないときに限って取得するようにしました。
+@z
+
+@x
 ## 4.50.0
 @y
 ## 4.50.0
@@ -76,7 +238,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(Experimental) is now available in Docker Desktop .
 - Introduced a new Welcome Survey to improve onboarding. New users can now provide information to help tailor their Docker Desktop experience.
 @y
-- [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(試験的) が Docker Desktop にて利用可能となりました。
+- [Dynamic MCP](manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md)(試験的) が Docker Desktop にて利用可能となりました。
 - オンボードのウェルカムアンケート (Webcome Survey) を新しくしました。
   新規ユーザーへの情報提供を通じて、Docker Desktop の導入を調整できるようにします。
 @z

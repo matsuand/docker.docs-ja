@@ -493,11 +493,13 @@ The following tables describe all available settings in the `admin-settings.json
 |:-------------------------------|---|:-------------------------------|---|
 | `defaultNetworkingMode` | Windows and Mac only | Defines the default IP protocol for new Docker networks: `dual-stack` (IPv4 + IPv6, default), `ipv4only`, or `ipv6only`. | Docker Desktop version 4.43 and later. |
 | `dnsInhibition` | Windows and Mac only | Controls DNS record filtering returned to containers. Options: `auto` (recommended), `ipv4`, `ipv6`, `none`| Docker Desktop version 4.43 and later. |
+| `portBindingBehavior` | Linux-based containers only | Defines port binding restrictions and default behavior, allowing admins to control how a user exposes ports from their containers. Options: `default-port-binding`, `default-local-port-binding`, `local-only-port-binding` | Docker Desktop version 4.52 and later. |
 @y
 |Parameter|OS|Description|Version|
 |:-------------------------------|---|:-------------------------------|---|
 | `defaultNetworkingMode` | Windows and Mac only | Defines the default IP protocol for new Docker networks: `dual-stack` (IPv4 + IPv6, default), `ipv4only`, or `ipv6only`. | Docker Desktop version 4.43 and later. |
 | `dnsInhibition` | Windows and Mac only | Controls DNS record filtering returned to containers. Options: `auto` (recommended), `ipv4`, `ipv6`, `none`| Docker Desktop version 4.43 and later. |
+| `portBindingBehavior` | Linux-based containers only | Defines port binding restrictions and default behavior, allowing admins to control how a user exposes ports from their containers. Options: `default-port-binding`, `default-local-port-binding`, `local-only-port-binding` | Docker Desktop version 4.52 and later. |
 @z
 
 @x

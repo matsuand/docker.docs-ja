@@ -39,28 +39,93 @@ languages: [js]
 @z
 
 @x
-The Node.js language-specific guide teaches you how to containerize a Node.js application using Docker. In this guide, you’ll learn how to:
+[Node.js](https://nodejs.org/en) is a JavaScript runtime for building web applications. This guide shows you how to containerize a TypeScript Node.js application with a React frontend and PostgreSQL database.
 @y
-言語別ガイド Node.js 向けでは、Docker を使った Node.js アプリケーションのコンテナー化についての説明をはじめます。
-このガイドでは以下について学んでいきます。
+[Node.js](https://nodejs.org/en) is a JavaScript runtime for building web applications. This guide shows you how to containerize a TypeScript Node.js application with a React frontend and PostgreSQL database.
 @z
 
 @x
-- Containerize and run a Node.js application
-- Set up a local environment to develop a Node.js application using containers
-- Run tests for a Node.js application using containers
-- Configure a CI/CD pipeline for a containerized Node.js application using GitHub Actions
-- Deploy your containerized Node.js application locally to Kubernetes to test and debug your deployment
+The sample application is a modern full-stack Todo application featuring:
 @y
-- Node.js アプリケーションをコンテナー化して実行します。
-- コンテナーを利用して Node.js アプリケーションを開発するローカル環境を構築します。
-- コンテナーを使って Node.js アプリケーションのテストを実行します。
-- GitHub アクションを使って、コンテナー化した Node.js アプリケーションの CI/CD パイプラインを設定します。
-- コンテナー化した Node.js アプリケーションをローカルな Kubernetes にデプロイして、テストおよびデバッグを行います。
+The sample application is a modern full-stack Todo application featuring:
 @z
 
 @x
-Start by containerizing an existing Node.js application.
+- **Backend**: Express.js with TypeScript, PostgreSQL database, and RESTful API
+- **Frontend**: React.js with Vite and Tailwind CSS 4
 @y
-では手元にある Node.js アプリケーションのコンテナー化からはじめます。
+- **Backend**: Express.js with TypeScript, PostgreSQL database, and RESTful API
+- **Frontend**: React.js with Vite and Tailwind CSS 4
+@z
+
+@x
+> **Acknowledgment**
+>
+> Docker extends its sincere gratitude to [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) for authoring this guide. As a Docker Captain and experienced Full-stack engineer, his expertise in Docker, DevOps, and modern web development has made this resource invaluable for the community, helping developers navigate and optimize their Docker workflows.
+@y
+> **Acknowledgment**
+>
+> Docker extends its sincere gratitude to [Kristiyan Velkov](https://www.linkedin.com/in/kristiyan-velkov-763130b3/) for authoring this guide. As a Docker Captain and experienced Full-stack engineer, his expertise in Docker, DevOps, and modern web development has made this resource invaluable for the community, helping developers navigate and optimize their Docker workflows.
+@z
+
+@x
+## What will you learn?
+@y
+## What will you learn?
+@z
+
+@x
+In this guide, you will learn how to:
+@y
+In this guide, you will learn how to:
+@z
+
+@x
+- Containerize and run a Node.js application using Docker.
+- Run tests inside a Docker container.
+- Set up a development container environment.
+- Configure GitHub Actions for CI/CD with Docker.
+- Deploy your Dockerized Node.js app to Kubernetes.
+@y
+- Containerize and run a Node.js application using Docker.
+- Run tests inside a Docker container.
+- Set up a development container environment.
+- Configure GitHub Actions for CI/CD with Docker.
+- Deploy your Dockerized Node.js app to Kubernetes.
+@z
+
+@x
+To begin, you’ll start by containerizing an existing Node.js application.
+@y
+To begin, you’ll start by containerizing an existing Node.js application.
+@z
+
+@x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+Before you begin, make sure you're familiar with the following:
+@y
+Before you begin, make sure you're familiar with the following:
+@z
+
+@x
+- Basic understanding of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [TypeScript](https://www.typescriptlang.org/).
+- Basic knowledge of [Node.js](https://nodejs.org/en), [npm](https://docs.npmjs.com/about-npm), and [React](https://react.dev/) for modern web development.
+- Understanding of Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
+- Familiarity with [Express.js](https://expressjs.com/) for backend API development.
+@y
+- Basic understanding of [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [TypeScript](https://www.typescriptlang.org/).
+- Basic knowledge of [Node.js](https://nodejs.org/en), [npm](https://docs.npmjs.com/about-npm), and [React](https://react.dev/) for modern web development.
+- Understanding of Docker concepts such as images, containers, and Dockerfiles. If you're new to Docker, start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide.
+- Familiarity with [Express.js](https://expressjs.com/) for backend API development.
+@z
+
+@x
+Once you've completed the Node.js getting started modules, you’ll be ready to containerize your own Node.js application using the examples and instructions provided in this guide.
+@y
+Once you've completed the Node.js getting started modules, you’ll be ready to containerize your own Node.js application using the examples and instructions provided in this guide.
 @z

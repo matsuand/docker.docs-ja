@@ -156,9 +156,9 @@ For example, with `docker run -p 80:80 nginx`:
 @z
 
 @x
-By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (localhost) or a particular network adapter.
+By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (`localhost`) or a particular network adapter. This behavior can be modified to bind to `localhost` by default in [Docker Desktop's network settings](/manuals/desktop/settings-and-maintenance/settings.md#network)
 @y
-By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (localhost) or a particular network adapter.
+By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (`localhost`) or a particular network adapter. This behavior can be modified to bind to `localhost` by default in [Docker Desktop's network settings](/manuals/desktop/settings-and-maintenance/settings.md#network)
 @z
 
 @x

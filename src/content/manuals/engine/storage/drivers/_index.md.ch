@@ -5,12 +5,34 @@
 
 @x
 description: Learn the technologies that support storage drivers.
-keywords: container, storage, driver, btrfs, overlayfs, vfs, zfs
+keywords: container, storage, driver, btrfs, overlayfs, vfs, zfs, containerd
 title: Storage drivers
 @y
 description: Learn the technologies that support storage drivers.
-keywords: container, storage, driver, btrfs, overlayfs, vfs, zfs
+keywords: container, storage, driver, btrfs, overlayfs, vfs, zfs, containerd
 title: Storage drivers
+@z
+
+@x
+> [!NOTE]
+> Docker Engine 29.0 and later uses the
+> [containerd image store](../containerd.md) by default for fresh installations.
+> The containerd image store uses snapshotters instead of the classic storage
+> drivers described on this page. If you're running a fresh installation of
+> Docker Engine 29.0 or later, or if you've migrated to the containerd image
+> store, this page provides background on how image layers work but the
+> implementation details differ. For information about the containerd image
+> store, see [containerd image store](../containerd.md).
+@y
+> [!NOTE]
+> Docker Engine 29.0 and later uses the
+> [containerd image store](../containerd.md) by default for fresh installations.
+> The containerd image store uses snapshotters instead of the classic storage
+> drivers described on this page. If you're running a fresh installation of
+> Docker Engine 29.0 or later, or if you've migrated to the containerd image
+> store, this page provides background on how image layers work but the
+> implementation details differ. For information about the containerd image
+> store, see [containerd image store](../containerd.md).
 @z
 
 @x
