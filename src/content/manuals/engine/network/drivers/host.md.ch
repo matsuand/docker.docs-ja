@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 title: Host network driver
 description: All about exposing containers on the Docker host's network
@@ -74,9 +72,35 @@ This is because it doesn't require network address translation (NAT), and no "us
 @z
 
 @x
-The host networking driver is supported on Docker Engine (Linux only) and Docker Desktop version 4.34 and later.
+## Platform support
 @y
-The host networking driver is supported on Docker Engine (Linux only) and Docker Desktop version 4.34 and later.
+## Platform support
+@z
+
+@x
+The host networking driver is supported on:
+@y
+The host networking driver is supported on:
+@z
+
+@x
+- Docker Engine on Linux
+- Docker Desktop version 4.34 and later (requires enabling the feature in
+  Settings)
+@y
+- Docker Engine on Linux
+- Docker Desktop version 4.34 and later (requires enabling the feature in
+  Settings)
+@z
+
+@x
+> [!NOTE]
+> For Docker Desktop users, see the [Docker Desktop section](#docker-desktop)
+> below for setup instructions.
+@y
+> [!NOTE]
+> For Docker Desktop users, see the [Docker Desktop section](#docker-desktop)
+> below for setup instructions.
 @z
 
 @x
@@ -229,26 +253,152 @@ $ nc localhost 80
 
 @x
 - Processes inside the container cannot bind to the IP addresses of the host
- because the container has no direct access to the interfaces of the host.
+  because the container has no direct access to the interfaces of the host.
 - The host network feature of Docker Desktop works on layer 4. This means that
-unlike with Docker on Linux, network protocols that operate below TCP or UDP are
-not supported.
+  unlike with Docker on Linux, network protocols that operate below TCP or UDP are
+  not supported.
 - This feature doesn't work with Enhanced Container Isolation enabled, since
-isolating your containers from the host and allowing them access to the host
-network contradict each other.
+  isolating your containers from the host and allowing them access to the host
+  network contradict each other.
 - Only Linux containers are supported. Host networking does not work with
   Windows containers.
 @y
 - Processes inside the container cannot bind to the IP addresses of the host
- because the container has no direct access to the interfaces of the host.
+  because the container has no direct access to the interfaces of the host.
 - The host network feature of Docker Desktop works on layer 4. This means that
-unlike with Docker on Linux, network protocols that operate below TCP or UDP are
-not supported.
+  unlike with Docker on Linux, network protocols that operate below TCP or UDP are
+  not supported.
 - This feature doesn't work with Enhanced Container Isolation enabled, since
-isolating your containers from the host and allowing them access to the host
-network contradict each other.
+  isolating your containers from the host and allowing them access to the host
+  network contradict each other.
 - Only Linux containers are supported. Host networking does not work with
   Windows containers.
+@z
+
+@x
+## Usage example
+@y
+## Usage example
+@z
+
+@x
+This example shows how to start an Nginx container that binds directly to port
+80 on the Docker host. From a networking perspective, this provides the same
+level of isolation as if Nginx were running directly on the host, but the
+container remains isolated in all other aspects (storage, process namespace,
+user namespace).
+@y
+This example shows how to start an Nginx container that binds directly to port
+80 on the Docker host. From a networking perspective, this provides the same
+level of isolation as if Nginx were running directly on the host, but the
+container remains isolated in all other aspects (storage, process namespace,
+user namespace).
+@z
+
+@x
+### Prerequisites
+@y
+### Prerequisites
+@z
+
+@x
+- Port 80 must be available on the Docker host. To make Nginx listen on a
+  different port, see the [Nginx image documentation](https://hub.docker.com/_/nginx/).
+- The host networking driver only works on Linux hosts, and as an opt-in
+  feature in Docker Desktop version 4.34 and later.
+@y
+- Port 80 must be available on the Docker host. To make Nginx listen on a
+  different port, see the [Nginx image documentation](https://hub.docker.com/_/nginx/).
+- The host networking driver only works on Linux hosts, and as an opt-in
+  feature in Docker Desktop version 4.34 and later.
+@z
+
+@x
+### Steps
+@y
+### Steps
+@z
+
+@x
+1. Create and start the container as a detached process. The `--rm` option
+   removes the container when it exits. The `-d` flag starts it in the
+   background:
+@y
+1. Create and start the container as a detached process. The `--rm` option
+   removes the container when it exits. The `-d` flag starts it in the
+   background:
+@z
+
+@x
+   ```console
+   $ docker run --rm -d --network host --name my_nginx nginx
+   ```
+@y
+   ```console
+   $ docker run --rm -d --network host --name my_nginx nginx
+   ```
+@z
+
+@x
+2. Access Nginx by browsing to [http://localhost:80/](http://localhost:80/).
+@y
+2. Access Nginx by browsing to [http://localhost:80/](http://localhost:80/).
+@z
+
+@x
+3. Examine your network stack:
+@y
+3. Examine your network stack:
+@z
+
+@x
+   Check all network interfaces and verify that no new interface was created:
+@y
+   Check all network interfaces and verify that no new interface was created:
+@z
+
+@x
+   ```console
+   $ ip addr show
+   ```
+@y
+   ```console
+   $ ip addr show
+   ```
+@z
+
+@x
+   Verify which process is bound to port 80 using `netstat`. You need `sudo`
+   because the process is owned by the Docker daemon user:
+@y
+   Verify which process is bound to port 80 using `netstat`. You need `sudo`
+   because the process is owned by the Docker daemon user:
+@z
+
+@x
+   ```console
+   $ sudo netstat -tulpn | grep :80
+   ```
+@y
+   ```console
+   $ sudo netstat -tulpn | grep :80
+   ```
+@z
+
+@x
+4. Stop the container. It's removed automatically because of the `--rm` option:
+@y
+4. Stop the container. It's removed automatically because of the `--rm` option:
+@z
+
+@x
+   ```console
+   $ docker container stop my_nginx
+   ```
+@y
+   ```console
+   $ docker container stop my_nginx
+   ```
 @z
 
 @x
@@ -258,13 +408,11 @@ network contradict each other.
 @z
 
 @x
-- Go through the [host networking tutorial](/manuals/engine/network/tutorials/host.md)
 - Learn about [networking from the container's point of view](../_index.md)
 - Learn about [bridge networks](./bridge.md)
 - Learn about [overlay networks](./overlay.md)
 - Learn about [Macvlan networks](./macvlan.md)
 @y
-- Go through the [host networking tutorial](manuals/engine/network/tutorials/host.md)
 - Learn about [networking from the container's point of view](../_index.md)
 - Learn about [bridge networks](./bridge.md)
 - Learn about [overlay networks](./overlay.md)

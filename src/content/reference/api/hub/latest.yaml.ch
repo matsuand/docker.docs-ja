@@ -73,7 +73,7 @@ tags:
   - name: changelog
     x-displayName: Changelog
     description: |
-      See the [Changelog](__SUBDIR__/reference/api/hub/changelog) for a summary of changes across Docker Hub API versions.
+      See the [Changelog](reference/api/hub/changelog) for a summary of changes across Docker Hub API versions.
   - name: resources
     x-displayName: Resources
     description: |
@@ -2315,7 +2315,7 @@ paths:
 
 @x
         **Only users with administrative privileges for the repository can modify these settings.**
-      tags: 
+      tags:
         - repositories
       security:
         - bearerAuth: []
@@ -2343,7 +2343,7 @@ paths:
         Validates  the immutable tags regex pass in parameter and returns a list of tags matching it in this repository.
 @y
         **Only users with administrative privileges for the repository can modify these settings.**
-      tags: 
+      tags:
         - repositories
       security:
         - bearerAuth: []
@@ -5582,6 +5582,10 @@ components:
             - repo:read
           items:
             type: string
+        expires_at:
+          type: string
+          format: date-time
+          example: "2021-10-28T18:30:19.520861Z"
     createAccessTokenRequest:
       type: object
       required:
@@ -7013,6 +7017,10 @@ components:
             - repo:read
           items:
             type: string
+        expires_at:
+          type: string
+          format: date-time
+          example: "2021-10-28T18:30:19.520861Z"
     createAccessTokenRequest:
       type: object
       required:

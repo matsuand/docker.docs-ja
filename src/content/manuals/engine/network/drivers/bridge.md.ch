@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -18,19 +18,23 @@ keywords: network, bridge, user-defined, standalone
 A Docker bridge network has an IPv4 subnet and, optionally, an IPv6 subnet.
 Each container connected to the bridge network has a network interface with
 addresses in the network's subnets. By default, it:
-- Allows unrestricted network access to containers in the network from
-  the host, and from other containers connected to the same bridge network.
-- Blocks access from containers in other networks and from outside the
-  Docker host.
-- Uses masquerading to give containers external network access. Devices on
-  the host's external networks only see the IP address of the Docker host.
-- Supports port publishing, where network traffic is forwarded between
-  container ports and ports on host IP addresses. The published ports
-  can be accessed from outside the Docker host, on its IP addresses.
 @y
 A Docker bridge network has an IPv4 subnet and, optionally, an IPv6 subnet.
 Each container connected to the bridge network has a network interface with
 addresses in the network's subnets. By default, it:
+@z
+
+@x
+- Allows unrestricted network access to containers in the network from
+  the host, and from other containers connected to the same bridge network.
+- Blocks access from containers in other networks and from outside the
+  Docker host.
+- Uses masquerading to give containers external network access. Devices on
+  the host's external networks only see the IP address of the Docker host.
+- Supports port publishing, where network traffic is forwarded between
+  container ports and ports on host IP addresses. The published ports
+  can be accessed from outside the Docker host, on its IP addresses.
+@y
 - Allows unrestricted network access to containers in the network from
   the host, and from other containers connected to the same bridge network.
 - Blocks access from containers in other networks and from outside the
@@ -211,17 +215,13 @@ network.**
   was to link them using the [`--link` flag](../links.md). This type of
   variable sharing isn't possible with user-defined networks. However, there
   are superior ways to share environment variables. A few ideas:
+  - Multiple containers can mount a file or directory containing the shared
+    information, using a Docker volume.
 @y
   Originally, the only way to share environment variables between two containers
   was to link them using the [`--link` flag](../links.md). This type of
   variable sharing isn't possible with user-defined networks. However, there
   are superior ways to share environment variables. A few ideas:
-@z
-
-@x
-  - Multiple containers can mount a file or directory containing the shared
-    information, using a Docker volume.
-@y
   - Multiple containers can mount a file or directory containing the shared
     information, using a Docker volume.
 @z
@@ -272,7 +272,7 @@ The following table describes the driver-specific options that you can pass to
 
 @x
 | Option                                                                                          | Default                     | Description                                                                                         |
-|-------------------------------------------------------------------------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------|
+| ----------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
 | `com.docker.network.bridge.name`                                                                |                             | Interface name to use when creating the Linux bridge.                                               |
 | `com.docker.network.bridge.enable_ip_masquerade`                                                | `true`                      | Enable IP masquerading.                                                                             |
 | `com.docker.network.host_ipv4`<br/>`com.docker.network.host_ipv6`                               |                             | Address to use for source NAT. See [Packet filtering and firewalls](packet-filtering-firewalls.md). |
@@ -284,7 +284,7 @@ The following table describes the driver-specific options that you can pass to
 | `com.docker.network.bridge.inhibit_ipv4`                                                        | `false`                     | Prevent Docker from [assigning an IP address](#skip-bridge-ip-address-configuration) to the bridge. |
 @y
 | Option                                                                                          | Default                     | Description                                                                                         |
-|-------------------------------------------------------------------------------------------------|-----------------------------|-----------------------------------------------------------------------------------------------------|
+| ----------------------------------------------------------------------------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------- |
 | `com.docker.network.bridge.name`                                                                |                             | Interface name to use when creating the Linux bridge.                                               |
 | `com.docker.network.bridge.enable_ip_masquerade`                                                | `true`                      | Enable IP masquerading.                                                                             |
 | `com.docker.network.host_ipv4`<br/>`com.docker.network.host_ipv6`                               |                             | Address to use for source NAT. See [Packet filtering and firewalls](packet-filtering-firewalls.md). |
@@ -410,15 +410,7 @@ Use the `docker network create` command to create a user-defined bridge
 network.
 @z
 
-@x
-```console
-$ docker network create my-net
-```
-@y
-```console
-$ docker network create my-net
-```
-@z
+% snip command...
 
 @x
 You can specify the subnet, the IP address range, the gateway, and other
@@ -444,15 +436,7 @@ network. If containers are currently connected to the network,
 first.
 @z
 
-@x
-```console
-$ docker network rm my-net
-```
-@y
-```console
-$ docker network rm my-net
-```
-@z
+% snip command...
 
 @x
 > **What's really happening?**
@@ -494,21 +478,7 @@ clients can access that port. Any other container connected to the `my-net`
 network has access to all ports on the `my-nginx` container, and vice versa.
 @z
 
-@x
-```console
-$ docker create --name my-nginx \
-  --network my-net \
-  --publish 8080:80 \
-  nginx:latest
-```
-@y
-```console
-$ docker create --name my-nginx \
-  --network my-net \
-  --publish 8080:80 \
-  nginx:latest
-```
-@z
+% snip command...
 
 @x
 To connect a **running** container to an existing user-defined bridge, use the
@@ -520,15 +490,7 @@ To connect a **running** container to an existing user-defined bridge, use the
 `my-nginx` container to an already-existing `my-net` network:
 @z
 
-@x
-```console
-$ docker network connect my-net my-nginx
-```
-@y
-```console
-$ docker network connect my-net my-nginx
-```
-@z
+% snip command...
 
 @x
 ## Disconnect a container from a user-defined bridge
@@ -546,15 +508,7 @@ To disconnect a running container from a user-defined bridge, use the
 the `my-nginx` container from the `my-net` network.
 @z
 
-@x
-```console
-$ docker network disconnect my-net my-nginx
-```
-@y
-```console
-$ docker network disconnect my-net my-nginx
-```
-@z
+% snip command...
 
 @x
 ## Use IPv6 in a user-defined bridge network
@@ -568,14 +522,36 @@ When you create your network, you can specify the `--ipv6` flag to enable IPv6.
 When you create your network, you can specify the `--ipv6` flag to enable IPv6.
 @z
 
+% snip command...
+
 @x
-```console
-$ docker network create --ipv6 --subnet 2001:db8:1234::/64 my-net
-```
+If you do not provide a `--subnet` option, a Unique Local Address (ULA) prefix
+will be chosen automatically.
 @y
-```console
-$ docker network create --ipv6 --subnet 2001:db8:1234::/64 my-net
-```
+If you do not provide a `--subnet` option, a Unique Local Address (ULA) prefix
+will be chosen automatically.
+@z
+
+@x
+## IPv6-only bridge networks
+@y
+## IPv6-only bridge networks
+@z
+
+@x
+To skip IPv4 address configuration on the bridge and in its containers, create
+the network with option `--ipv4=false`, and enable IPv6 using `--ipv6`.
+@y
+To skip IPv4 address configuration on the bridge and in its containers, create
+the network with option `--ipv4=false`, and enable IPv6 using `--ipv6`.
+@z
+
+% snip command...
+
+@x
+IPv4 address configuration cannot be disabled in the default bridge network.
+@y
+IPv4 address configuration cannot be disabled in the default bridge network.
 @z
 
 @x
@@ -630,27 +606,7 @@ Here is an example `daemon.json` with several options specified. Only specify
 the settings you need to customize.
 @z
 
-@x
-```json
-{
-  "bip": "192.168.1.1/24",
-  "fixed-cidr": "192.168.1.0/25",
-  "mtu": 1500,
-  "default-gateway": "192.168.1.254",
-  "dns": ["10.20.1.2","10.20.1.3"]
-}
-```
-@y
-```json
-{
-  "bip": "192.168.1.1/24",
-  "fixed-cidr": "192.168.1.0/25",
-  "mtu": 1500,
-  "default-gateway": "192.168.1.254",
-  "dns": ["10.20.1.2","10.20.1.3"]
-}
-```
-@z
+% snip code...
 
 @x
 In this example:
@@ -723,6 +679,22 @@ IPv6 documentation range.
 % snip code...
 
 @x
+If no `bip6` is specified, `fixed-cidr-v6` defines the subnet for the bridge
+network. If no `bip6` or `fixed-cidr-v6` is specified, a ULA prefix will be
+chosen.
+@y
+If no `bip6` is specified, `fixed-cidr-v6` defines the subnet for the bridge
+network. If no `bip6` or `fixed-cidr-v6` is specified, a ULA prefix will be
+chosen.
+@z
+
+@x
+Restart Docker for changes to take effect.
+@y
+Restart Docker for changes to take effect.
+@z
+
+@x
 ## Connection limit for bridge networks
 @y
 ## Connection limit for bridge networks
@@ -791,18 +763,340 @@ This option can only be used with user-defined bridge networks.
 @z
 
 @x
+## Usage examples
+@y
+## Usage examples
+@z
+
+@x
+This section provides hands-on examples for working with bridge networks.
+@y
+This section provides hands-on examples for working with bridge networks.
+@z
+
+@x
+### Use the default bridge network
+@y
+### Use the default bridge network
+@z
+
+@x
+This example shows how the default `bridge` network works. You start two
+`alpine` containers on the default bridge and test how they communicate.
+@y
+This example shows how the default `bridge` network works. You start two
+`alpine` containers on the default bridge and test how they communicate.
+@z
+
+@x
+> [!NOTE]
+> The default `bridge` network is not recommended for production. Use
+> user-defined bridge networks instead.
+@y
+> [!NOTE]
+> The default `bridge` network is not recommended for production. Use
+> user-defined bridge networks instead.
+@z
+
+@x
+1. List current networks:
+@y
+1. List current networks:
+@z
+
+% snip command...
+
+@x
+   The default `bridge` network is listed, along with `host` and `none`.
+@y
+   The default `bridge` network is listed, along with `host` and `none`.
+@z
+
+@x
+2. Start two `alpine` containers running `ash`. The `-dit` flags mean detached,
+   interactive, and with a TTY. Since you haven't specified a `--network` flag,
+   the containers connect to the default `bridge` network.
+@y
+2. Start two `alpine` containers running `ash`. The `-dit` flags mean detached,
+   interactive, and with a TTY. Since you haven't specified a `--network` flag,
+   the containers connect to the default `bridge` network.
+@z
+
+% snip command...
+
+@x
+   Verify both containers are running:
+@y
+   Verify both containers are running:
+@z
+
+% snip command...
+
+@x
+3. Inspect the `bridge` network to see connected containers:
+@y
+3. Inspect the `bridge` network to see connected containers:
+@z
+
+% snip command...
+
+@x
+   The output shows both containers connected, with their assigned IP addresses
+   (`172.17.0.2` for `alpine1` and `172.17.0.3` for `alpine2`).
+@y
+   The output shows both containers connected, with their assigned IP addresses
+   (`172.17.0.2` for `alpine1` and `172.17.0.3` for `alpine2`).
+@z
+
+@x
+4. Connect to `alpine1`:
+@y
+4. Connect to `alpine1`:
+@z
+
+% snip command...
+
+@x
+   Show the network interfaces for `alpine1` from within the container:
+@y
+   Show the network interfaces for `alpine1` from within the container:
+@z
+
+% snip command...
+
+@x
+   In this example, the `eth0` interface has the IP address `172.17.0.2`.
+@y
+   In this example, the `eth0` interface has the IP address `172.17.0.2`.
+@z
+
+@x
+5. From within `alpine1`, verify you can connect to the internet:
+@y
+5. From within `alpine1`, verify you can connect to the internet:
+@z
+
+% snip command...
+
+@x
+6. Ping the second container by its IP address:
+@y
+6. Ping the second container by its IP address:
+@z
+
+% snip command...
+
+@x
+   This succeeds. Now try pinging by container name:
+@y
+   This succeeds. Now try pinging by container name:
+@z
+
+% snip command...
+
+@x
+   On the default bridge network, containers can't resolve each other by name.
+@y
+   On the default bridge network, containers can't resolve each other by name.
+@z
+
+@x
+7. Detach from `alpine1` without stopping it using `CTRL+p CTRL+q`.
+@y
+7. Detach from `alpine1` without stopping it using `CTRL+p CTRL+q`.
+@z
+
+@x
+8. Clean up: stop the containers and remove them.
+@y
+8. Clean up: stop the containers and remove them.
+@z
+
+% snip command...
+
+@x
+   Stopped containers lose their IP addresses.
+@y
+   Stopped containers lose their IP addresses.
+@z
+
+@x
+### Use user-defined bridge networks
+@y
+### Use user-defined bridge networks
+@z
+
+@x
+This example shows how user-defined bridge networks provide better isolation
+and automatic DNS resolution between containers.
+@y
+This example shows how user-defined bridge networks provide better isolation
+and automatic DNS resolution between containers.
+@z
+
+@x
+1. Create the `alpine-net` network:
+@y
+1. Create the `alpine-net` network:
+@z
+
+% snip command...
+
+@x
+2. List Docker's networks:
+@y
+2. List Docker's networks:
+@z
+
+% snip command...
+
+@x
+   Inspect the `alpine-net` network:
+@y
+   Inspect the `alpine-net` network:
+@z
+
+% snip command...
+
+@x
+   This shows the network's gateway (for example, `172.18.0.1`) and that no
+   containers are connected yet.
+@y
+   This shows the network's gateway (for example, `172.18.0.1`) and that no
+   containers are connected yet.
+@z
+
+@x
+3. Create four containers. Three connect to `alpine-net`, and one connects to
+   the default `bridge`. Then connect one container to both networks:
+@y
+3. Create four containers. Three connect to `alpine-net`, and one connects to
+   the default `bridge`. Then connect one container to both networks:
+@z
+
+% snip command...
+
+@x
+   Verify all containers are running:
+@y
+   Verify all containers are running:
+@z
+
+% snip command...
+
+@x
+4. Inspect both networks again to see which containers are connected:
+@y
+4. Inspect both networks again to see which containers are connected:
+@z
+
+% snip command...
+
+@x
+   Containers `alpine3` and `alpine4` are connected to the `bridge` network.
+@y
+   Containers `alpine3` and `alpine4` are connected to the `bridge` network.
+@z
+
+% snip command...
+
+@x
+   Containers `alpine1`, `alpine2`, and `alpine4` are connected to
+   `alpine-net`.
+@y
+   Containers `alpine1`, `alpine2`, and `alpine4` are connected to
+   `alpine-net`.
+@z
+
+@x
+5. On user-defined networks, containers can resolve each other by name. Connect
+   to `alpine1` and test:
+@y
+5. On user-defined networks, containers can resolve each other by name. Connect
+   to `alpine1` and test:
+@z
+
+@x
+   > [!NOTE]
+   > Automatic service discovery only resolves custom container names, not
+   > default automatically generated names.
+@y
+   > [!NOTE]
+   > Automatic service discovery only resolves custom container names, not
+   > default automatically generated names.
+@z
+
+% snip command...
+
+@x
+6. From `alpine1`, you can't connect to `alpine3` because it's on a different
+   network:
+@y
+6. From `alpine1`, you can't connect to `alpine3` because it's on a different
+   network:
+@z
+
+% snip command...
+
+@x
+   You also can't connect by IP address. If `alpine3`'s IP is `172.17.0.2`:
+@y
+   You also can't connect by IP address. If `alpine3`'s IP is `172.17.0.2`:
+@z
+
+% snip command...
+
+@x
+   Detach from `alpine1` using `CTRL+p CTRL+q`.
+@y
+   Detach from `alpine1` using `CTRL+p CTRL+q`.
+@z
+
+@x
+7. Since `alpine4` is connected to both networks, it can reach all containers.
+   However, you need to use `alpine3`'s IP address:
+@y
+7. Since `alpine4` is connected to both networks, it can reach all containers.
+   However, you need to use `alpine3`'s IP address:
+@z
+
+% snip command...
+
+@x
+8. Verify all containers can connect to the internet:
+@y
+8. Verify all containers can connect to the internet:
+@z
+
+% snip command...
+
+@x
+   Detach with `CTRL+p CTRL+q` and repeat for `alpine3` and `alpine1` if
+   desired.
+@y
+   Detach with `CTRL+p CTRL+q` and repeat for `alpine3` and `alpine1` if
+   desired.
+@z
+
+@x
+9. Clean up:
+@y
+9. Clean up:
+@z
+
+% snip command...
+
+@x
 ## Next steps
 @y
 ## Next steps
 @z
 
 @x
-- Go through the [standalone networking tutorial](/manuals/engine/network/tutorials/standalone.md)
 - Learn about [networking from the container's point of view](../_index.md)
 - Learn about [overlay networks](./overlay.md)
 - Learn about [Macvlan networks](./macvlan.md)
 @y
-- Go through the [standalone networking tutorial](manuals/engine/network/tutorials/standalone.md)
 - Learn about [networking from the container's point of view](../_index.md)
 - Learn about [overlay networks](./overlay.md)
 - Learn about [Macvlan networks](./macvlan.md)

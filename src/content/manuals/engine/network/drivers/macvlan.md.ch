@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Macvlan network driver
-description: All about using Macvlan to make your containers appear like physical
+description:
+  All about using Macvlan to make your containers appear like physical
   machines on the network
 keywords: network, macvlan, standalone
 @y
 title: Macvlan network driver
-description: All about using Macvlan to make your containers appear like physical
+description:
+  All about using Macvlan to make your containers appear like physical
   machines on the network
 keywords: network, macvlan, standalone
 @z
@@ -36,9 +38,33 @@ isolate your Macvlan networks using different physical network interfaces.
 @z
 
 @x
-Keep the following things in mind:
+## Platform support and requirements
 @y
-Keep the following things in mind:
+## Platform support and requirements
+@z
+
+@x
+- The macvlan driver only works on Linux hosts. It is not supported on
+  Docker Desktop for Mac or Windows, or Docker Engine on Windows.
+- Most cloud providers block macvlan networking. You may need physical access to
+  your networking equipment.
+- Requires at least Linux kernel version 3.9 (version 4.0 or later is
+  recommended).
+- The macvlan driver is not supported in rootless mode.
+@y
+- The macvlan driver only works on Linux hosts. It is not supported on
+  Docker Desktop for Mac or Windows, or Docker Engine on Windows.
+- Most cloud providers block macvlan networking. You may need physical access to
+  your networking equipment.
+- Requires at least Linux kernel version 3.9 (version 4.0 or later is
+  recommended).
+- The macvlan driver is not supported in rootless mode.
+@z
+
+@x
+## Considerations
+@y
+## Considerations
 @z
 
 @x
@@ -67,6 +93,22 @@ Keep the following things in mind:
 - If your application can work using a bridge (on a single Docker host) or
   overlay (to communicate across multiple Docker hosts), these solutions may be
   better in the long term.
+@z
+
+@x
+- Containers attached to a macvlan network cannot communicate with the host
+  directly, this is a restriction in the Linux kernel. If you need communication
+  between the host and the containers, you can connect the containers to a
+  bridge network as well as the macvlan. It is also possible to create a
+  macvlan interface on the host with the same parent interface, and assign it
+  an IP address in the Docker network's subnet.
+@y
+- Containers attached to a macvlan network cannot communicate with the host
+  directly, this is a restriction in the Linux kernel. If you need communication
+  between the host and the containers, you can connect the containers to a
+  bridge network as well as the macvlan. It is also possible to create a
+  macvlan interface on the host with the same parent interface, and assign it
+  an IP address in the Docker network's subnet.
 @z
 
 @x
@@ -257,7 +299,21 @@ There are some notes about the trade-offs in the [Linux kernel
 documentation](https://docs.kernel.org/networking/ipvlan.html#what-to-choose-macvlan-vs-ipvlan).
 @z
 
-% snip command...
+@x
+```console
+$ docker network create -d ipvlan \
+    --subnet=192.168.210.0/24 \
+    --gateway=192.168.210.254 \
+     -o ipvlan_mode=l2 -o parent=eth0 ipvlan210
+```
+@y
+```console
+$ docker network create -d ipvlan \
+    --subnet=192.168.210.0/24 \
+    --gateway=192.168.210.254 \
+     -o ipvlan_mode=l2 -o parent=eth0 ipvlan210
+```
+@z
 
 @x
 ## Use IPv6
@@ -294,15 +350,415 @@ $ docker network create -d macvlan \
 @z
 
 @x
-## Next steps
+## Usage examples
 @y
-## Next steps
+## Usage examples
 @z
 
 @x
-Learn how to use the Macvlan driver in the
-[Macvlan networking tutorial](/manuals/engine/network/tutorials/macvlan.md).
+This section provides hands-on examples for working with macvlan networks,
+including bridge mode and 802.1Q trunk bridge mode.
 @y
-Learn how to use the Macvlan driver in the
-[Macvlan networking tutorial](manuals/engine/network/tutorials/macvlan.md).
+This section provides hands-on examples for working with macvlan networks,
+including bridge mode and 802.1Q trunk bridge mode.
+@z
+
+@x
+> [!NOTE]
+> These examples assume your ethernet interface is `eth0`. If your device has a
+> different name, use that instead.
+@y
+> [!NOTE]
+> These examples assume your ethernet interface is `eth0`. If your device has a
+> different name, use that instead.
+@z
+
+@x
+### Bridge mode example
+@y
+### Bridge mode example
+@z
+
+@x
+In bridge mode, your traffic flows through `eth0` and Docker routes traffic to
+your container using its MAC address. To network devices on your network, your
+container appears to be physically attached to the network.
+@y
+In bridge mode, your traffic flows through `eth0` and Docker routes traffic to
+your container using its MAC address. To network devices on your network, your
+container appears to be physically attached to the network.
+@z
+
+@x
+1. Create a macvlan network called `my-macvlan-net`. Modify the `subnet`,
+   `gateway`, and `parent` values to match your environment:
+@y
+1. Create a macvlan network called `my-macvlan-net`. Modify the `subnet`,
+   `gateway`, and `parent` values to match your environment:
+@z
+
+@x
+   ```console
+   $ docker network create -d macvlan \
+     --subnet=172.16.86.0/24 \
+     --gateway=172.16.86.1 \
+     -o parent=eth0 \
+     my-macvlan-net
+   ```
+@y
+   ```console
+   $ docker network create -d macvlan \
+     --subnet=172.16.86.0/24 \
+     --gateway=172.16.86.1 \
+     -o parent=eth0 \
+     my-macvlan-net
+   ```
+@z
+
+@x
+   Verify the network was created:
+@y
+   Verify the network was created:
+@z
+
+@x
+   ```console
+   $ docker network ls
+   $ docker network inspect my-macvlan-net
+   ```
+@y
+   ```console
+   $ docker network ls
+   $ docker network inspect my-macvlan-net
+   ```
+@z
+
+@x
+2. Start an `alpine` container and attach it to the `my-macvlan-net` network.
+   The `-dit` flags start the container in the background. The `--rm` flag
+   removes the container when it stops:
+@y
+2. Start an `alpine` container and attach it to the `my-macvlan-net` network.
+   The `-dit` flags start the container in the background. The `--rm` flag
+   removes the container when it stops:
+@z
+
+@x
+   ```console
+   $ docker run --rm -dit \
+     --network my-macvlan-net \
+     --name my-macvlan-alpine \
+     alpine:latest \
+     ash
+   ```
+@y
+   ```console
+   $ docker run --rm -dit \
+     --network my-macvlan-net \
+     --name my-macvlan-alpine \
+     alpine:latest \
+     ash
+   ```
+@z
+
+@x
+3. Inspect the container and notice the `MacAddress` key within the `Networks`
+   section:
+@y
+3. Inspect the container and notice the `MacAddress` key within the `Networks`
+   section:
+@z
+
+@x
+   ```console
+   $ docker container inspect my-macvlan-alpine
+   ```
+@y
+   ```console
+   $ docker container inspect my-macvlan-alpine
+   ```
+@z
+
+@x
+   Look for output similar to:
+@y
+   Look for output similar to:
+@z
+
+@x
+   ```json
+   "Networks": {
+     "my-macvlan-net": {
+       "Gateway": "172.16.86.1",
+       "IPAddress": "172.16.86.2",
+       "IPPrefixLen": 24,
+       "MacAddress": "02:42:ac:10:56:02",
+       ...
+     }
+   }
+   ```
+@y
+   ```json
+   "Networks": {
+     "my-macvlan-net": {
+       "Gateway": "172.16.86.1",
+       "IPAddress": "172.16.86.2",
+       "IPPrefixLen": 24,
+       "MacAddress": "02:42:ac:10:56:02",
+       ...
+     }
+   }
+   ```
+@z
+
+@x
+4. Check how the container sees its own network interfaces:
+@y
+4. Check how the container sees its own network interfaces:
+@z
+
+@x
+   ```console
+   $ docker exec my-macvlan-alpine ip addr show eth0
+@y
+   ```console
+   $ docker exec my-macvlan-alpine ip addr show eth0
+@z
+
+@x
+   9: eth0@tunl0: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+   link/ether 02:42:ac:10:56:02 brd ff:ff:ff:ff:ff:ff
+   inet 172.16.86.2/24 brd 172.16.86.255 scope global eth0
+      valid_lft forever preferred_lft forever
+   ```
+@y
+   9: eth0@tunl0: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+   link/ether 02:42:ac:10:56:02 brd ff:ff:ff:ff:ff:ff
+   inet 172.16.86.2/24 brd 172.16.86.255 scope global eth0
+      valid_lft forever preferred_lft forever
+   ```
+@z
+
+@x
+   Check the routing table:
+@y
+   Check the routing table:
+@z
+
+@x
+   ```console
+   $ docker exec my-macvlan-alpine ip route
+@y
+   ```console
+   $ docker exec my-macvlan-alpine ip route
+@z
+
+@x
+   default via 172.16.86.1 dev eth0
+   172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
+   ```
+@y
+   default via 172.16.86.1 dev eth0
+   172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
+   ```
+@z
+
+@x
+5. Stop the container (Docker removes it automatically) and remove the network:
+@y
+5. Stop the container (Docker removes it automatically) and remove the network:
+@z
+
+@x
+   ```console
+   $ docker container stop my-macvlan-alpine
+   $ docker network rm my-macvlan-net
+   ```
+@y
+   ```console
+   $ docker container stop my-macvlan-alpine
+   $ docker network rm my-macvlan-net
+   ```
+@z
+
+@x
+### 802.1Q trunked bridge mode example
+@y
+### 802.1Q trunked bridge mode example
+@z
+
+@x
+In 802.1Q trunk bridge mode, your traffic flows through a sub-interface of
+`eth0` (called `eth0.10`) and Docker routes traffic to your container using its
+MAC address. To network devices on your network, your container appears to be
+physically attached to the network.
+@y
+In 802.1Q trunk bridge mode, your traffic flows through a sub-interface of
+`eth0` (called `eth0.10`) and Docker routes traffic to your container using its
+MAC address. To network devices on your network, your container appears to be
+physically attached to the network.
+@z
+
+@x
+1. Create a macvlan network called `my-8021q-macvlan-net`. Modify the `subnet`,
+   `gateway`, and `parent` values to match your environment:
+@y
+1. Create a macvlan network called `my-8021q-macvlan-net`. Modify the `subnet`,
+   `gateway`, and `parent` values to match your environment:
+@z
+
+@x
+   ```console
+   $ docker network create -d macvlan \
+     --subnet=172.16.86.0/24 \
+     --gateway=172.16.86.1 \
+     -o parent=eth0.10 \
+     my-8021q-macvlan-net
+   ```
+@y
+   ```console
+   $ docker network create -d macvlan \
+     --subnet=172.16.86.0/24 \
+     --gateway=172.16.86.1 \
+     -o parent=eth0.10 \
+     my-8021q-macvlan-net
+   ```
+@z
+
+@x
+   Verify the network was created and has parent `eth0.10`. You can use `ip addr
+show` on the Docker host to verify that the interface `eth0.10` exists:
+@y
+   Verify the network was created and has parent `eth0.10`. You can use `ip addr
+show` on the Docker host to verify that the interface `eth0.10` exists:
+@z
+
+@x
+   ```console
+   $ docker network ls
+   $ docker network inspect my-8021q-macvlan-net
+   ```
+@y
+   ```console
+   $ docker network ls
+   $ docker network inspect my-8021q-macvlan-net
+   ```
+@z
+
+@x
+2. Start an `alpine` container and attach it to the `my-8021q-macvlan-net`
+   network:
+@y
+2. Start an `alpine` container and attach it to the `my-8021q-macvlan-net`
+   network:
+@z
+
+@x
+   ```console
+   $ docker run --rm -itd \
+     --network my-8021q-macvlan-net \
+     --name my-second-macvlan-alpine \
+     alpine:latest \
+     ash
+   ```
+@y
+   ```console
+   $ docker run --rm -itd \
+     --network my-8021q-macvlan-net \
+     --name my-second-macvlan-alpine \
+     alpine:latest \
+     ash
+   ```
+@z
+
+@x
+3. Inspect the container and notice the `MacAddress` key:
+@y
+3. Inspect the container and notice the `MacAddress` key:
+@z
+
+@x
+   ```console
+   $ docker container inspect my-second-macvlan-alpine
+   ```
+@y
+   ```console
+   $ docker container inspect my-second-macvlan-alpine
+   ```
+@z
+
+@x
+   Look for the `Networks` section with the MAC address.
+@y
+   Look for the `Networks` section with the MAC address.
+@z
+
+@x
+4. Check how the container sees its own network interfaces:
+@y
+4. Check how the container sees its own network interfaces:
+@z
+
+@x
+   ```console
+   $ docker exec my-second-macvlan-alpine ip addr show eth0
+@y
+   ```console
+   $ docker exec my-second-macvlan-alpine ip addr show eth0
+@z
+
+@x
+   11: eth0@if10: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+   link/ether 02:42:ac:10:56:02 brd ff:ff:ff:ff:ff:ff
+   inet 172.16.86.2/24 brd 172.16.86.255 scope global eth0
+      valid_lft forever preferred_lft forever
+   ```
+@y
+   11: eth0@if10: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+   link/ether 02:42:ac:10:56:02 brd ff:ff:ff:ff:ff:ff
+   inet 172.16.86.2/24 brd 172.16.86.255 scope global eth0
+      valid_lft forever preferred_lft forever
+   ```
+@z
+
+@x
+   Check the routing table:
+@y
+   Check the routing table:
+@z
+
+@x
+   ```console
+   $ docker exec my-second-macvlan-alpine ip route
+@y
+   ```console
+   $ docker exec my-second-macvlan-alpine ip route
+@z
+
+@x
+   default via 172.16.86.1 dev eth0
+   172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
+   ```
+@y
+   default via 172.16.86.1 dev eth0
+   172.16.86.0/24 dev eth0 scope link  src 172.16.86.2
+   ```
+@z
+
+@x
+5. Stop the container and remove the network:
+@y
+5. Stop the container and remove the network:
+@z
+
+@x
+   ```console
+   $ docker container stop my-second-macvlan-alpine
+   $ docker network rm my-8021q-macvlan-net
+   ```
+@y
+   ```console
+   $ docker container stop my-second-macvlan-alpine
+   $ docker network rm my-8021q-macvlan-net
+   ```
 @z

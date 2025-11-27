@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = drivers tutorials
+SUBDIRS = drivers
 
 bases = \
 	_index.md                     \

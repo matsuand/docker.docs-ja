@@ -162,7 +162,7 @@ In this command:
 @z
 
 @x
-To verify that you container is running, run `docker ps` in a terminal
+To verify that your container is running, run `docker ps` in a terminal
 @y
 コンテナーが起動しているかどうかは、端末から `docker ps` を実行して確認します。
 @z

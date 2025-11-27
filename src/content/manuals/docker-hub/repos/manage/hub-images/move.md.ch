@@ -1,6 +1,9 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+% snip 対応
+
 @x
 description: Discover how to move images between repositories.
 keywords: Docker Hub, Hub, repository content, move
@@ -28,6 +31,18 @@ organized under the correct accounts or namespaces.
 @z
 
 @x
+> [!NOTE]
+>
+> For bulk migrations, multi-arch images, or scripted workflows, see [Bulk
+> migrate Docker images](/manuals/docker-hub/repos/manage/hub-images/bulk-migrate.md).
+@y
+> [!NOTE]
+>
+> For bulk migrations, multi-arch images, or scripted workflows, see [Bulk
+> migrate Docker images](manuals/docker-hub/repos/manage/hub-images/bulk-migrate.md).
+@z
+
+@x
 ## Personal to personal
 @y
 ## Personal to personal
@@ -49,15 +64,7 @@ When consolidating personal repositories, you can pull private images from the i
 3. Pull your images:
 @z
 
-@x
-   ```console
-   $ docker pull namespace1/docker101tutorial
-   ```
-@y
-   ```console
-   $ docker pull namespace1/docker101tutorial
-   ```
-@z
+% snip command...
 
 @x
 4. Tag your private images with your newly created Docker username, for example:
@@ -65,27 +72,15 @@ When consolidating personal repositories, you can pull private images from the i
 4. Tag your private images with your newly created Docker username, for example:
 @z
 
+% snip command...
+
 @x
-   ```console
-   $ docker tag namespace1/docker101tutorial new_namespace/docker101tutorial
-   ```
 5. Using `docker login` from the CLI, sign in with your newly created Docker account, and push your newly tagged private images to your new Docker account namespace:
 @y
-   ```console
-   $ docker tag namespace1/docker101tutorial new_namespace/docker101tutorial
-   ```
 5. Using `docker login` from the CLI, sign in with your newly created Docker account, and push your newly tagged private images to your new Docker account namespace:
 @z
 
-@x
-   ```console
-   $ docker push new_namespace/docker101tutorial
-   ```
-@y
-   ```console
-   $ docker push new_namespace/docker101tutorial
-   ```
-@z
+% snip command...
 
 @x
 The private images that existed in your previous account are now available in your new account.
@@ -117,39 +112,23 @@ personal account and push them to an organization that's owned by you.
 3. Sign in to [Docker Hub](https://hub.docker.com) using your original Docker account, and pull your images:
 @z
 
+% snip command...
+
 @x
-   ```console
-   $ docker pull namespace1/docker101tutorial
-   ```
 4. Tag your images with your new organization namespace:
 @y
-   ```console
-   $ docker pull namespace1/docker101tutorial
-   ```
 4. Tag your images with your new organization namespace:
 @z
 
+% snip command...
+
 @x
-   ```console
-   $ docker tag namespace1/docker101tutorial <new_org>/docker101tutorial
-   ```
 5. Push your newly tagged images to your new org namespace:
 @y
-   ```console
-   $ docker tag namespace1/docker101tutorial <new_org>/docker101tutorial
-   ```
 5. Push your newly tagged images to your new org namespace:
 @z
 
-@x
-   ```console
-   $ docker push new_org/docker101tutorial
-   ```
-@y
-   ```console
-   $ docker push new_org/docker101tutorial
-   ```
-@z
+% snip command...
 
 @x
 The private images that existed in your user account are now available for your organization.

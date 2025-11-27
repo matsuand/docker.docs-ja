@@ -181,12 +181,12 @@ Overlay networks are always created as `attachable`. You can optionally set the 
 @z
 
 @x
-Consult the [Swarm mode section](/manuals/engine/swarm/_index.md), to see how to set up
-a Swarm cluster, and the [Getting started with multi-host networking](/manuals/engine/network/tutorials/overlay.md)
+Consult the [Swarm mode section](/manuals/engine/swarm/_index.md) to see how to set up
+a Swarm cluster, and the [overlay network driver documentation](/manuals/engine/network/drivers/overlay.md)
 to learn about multi-host overlay networks.
 @y
-Consult the [Swarm mode section](manuals/engine/swarm/_index.md), to see how to set up
-a Swarm cluster, and the [Getting started with multi-host networking](manuals/engine/network/tutorials/overlay.md)
+Consult the [Swarm mode section](/manuals/engine/swarm/_index.md) to see how to set up
+a Swarm cluster, and the [overlay network driver documentation](/manuals/engine/network/drivers/overlay.md)
 to learn about multi-host overlay networks.
 @z
 
@@ -265,9 +265,9 @@ Instead of attempting to create a network called `[projectname]_default`, Compos
 @z
 
 @x
-## Further reference information 
+## Further reference information
 @y
-## Further reference information 
+## Further reference information
 @z
 
 @x

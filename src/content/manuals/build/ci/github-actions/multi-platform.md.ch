@@ -48,20 +48,22 @@ the `platforms` option, as shown in the following example:
 @z
 
 @x
-In the previous example, each platform is built on the same runner which can
-take a long time depending on the number of platforms and your Dockerfile.
-@y
-In the previous example, each platform is built on the same runner which can
-take a long time depending on the number of platforms and your Dockerfile.
-@z
-
-@x
-To solve this issue you can use a matrix strategy to distribute the build for
-each platform across multiple runners and create manifest list using the
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. By distributing platform-specific builds across multiple
+runners using a matrix strategy, you can drastically reduce build durations and
+streamline your CI pipeline. These examples demonstrate how to allocate each
+platform build to a dedicated runner, including ARM-native runners where
+applicable, and create a unified manifest list using the
 [`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create.md).
 @y
-To solve this issue you can use a matrix strategy to distribute the build for
-each platform across multiple runners and create manifest list using the
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. By distributing platform-specific builds across multiple
+runners using a matrix strategy, you can drastically reduce build durations and
+streamline your CI pipeline. These examples demonstrate how to allocate each
+platform build to a dedicated runner, including ARM-native runners where
+applicable, and create a unified manifest list using the
 [`buildx imagetools create` command](reference/cli/docker/buildx/imagetools/create.md).
 @z
 

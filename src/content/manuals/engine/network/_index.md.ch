@@ -406,6 +406,202 @@ you can use the `--alias` flag to specify an additional network alias for the co
 @z
 
 @x
+### Subnet allocation
+@y
+### Subnet allocation
+@z
+
+@x
+Docker networks can use either explicitly configured subnets or automatically allocated ones from default pools.
+@y
+Docker networks can use either explicitly configured subnets or automatically allocated ones from default pools.
+@z
+
+@x
+#### Explicit subnet configuration
+@y
+#### Explicit subnet configuration
+@z
+
+@x
+You can specify exact subnets when creating a network:
+@y
+You can specify exact subnets when creating a network:
+@z
+
+@x
+```console
+$ docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
+```
+@y
+```console
+$ docker network create --ipv6 --subnet 192.0.2.0/24 --subnet 2001:db8::/64 mynet
+```
+@z
+
+@x
+#### Automatic subnet allocation
+@y
+#### Automatic subnet allocation
+@z
+
+@x
+When no `--subnet` option is provided, Docker automatically selects a subnet from predefined "default address pools".
+These pools can be configured in `/etc/docker/daemon.json`. Docker's built-in default is equivalent to:
+@y
+When no `--subnet` option is provided, Docker automatically selects a subnet from predefined "default address pools".
+These pools can be configured in `/etc/docker/daemon.json`. Docker's built-in default is equivalent to:
+@z
+
+@x
+```json
+{
+  "default-address-pools": [
+    {"base":"172.17.0.0/16","size":16},
+    {"base":"172.18.0.0/16","size":16},
+    {"base":"172.19.0.0/16","size":16},
+    {"base":"172.20.0.0/14","size":16},
+    {"base":"172.24.0.0/14","size":16},
+    {"base":"172.28.0.0/14","size":16},
+    {"base":"192.168.0.0/16","size":20}
+  ]
+}
+```
+@y
+```json
+{
+  "default-address-pools": [
+    {"base":"172.17.0.0/16","size":16},
+    {"base":"172.18.0.0/16","size":16},
+    {"base":"172.19.0.0/16","size":16},
+    {"base":"172.20.0.0/14","size":16},
+    {"base":"172.24.0.0/14","size":16},
+    {"base":"172.28.0.0/14","size":16},
+    {"base":"192.168.0.0/16","size":20}
+  ]
+}
+```
+@z
+
+@x
+- `base`: The subnet that can be allocated from.
+- `size`: The prefix length used for each allocated subnet.
+@y
+- `base`: The subnet that can be allocated from.
+- `size`: The prefix length used for each allocated subnet.
+@z
+
+@x
+When an IPv6 subnet is required and there are no IPv6 addresses in  `default-address-pools`, Docker allocates
+subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them to your
+`default-address-pools`. See [Dynamic IPv6 subnet allocation](../daemon/ipv6.md#dynamic-ipv6-subnet-allocation)
+for more information.
+@y
+When an IPv6 subnet is required and there are no IPv6 addresses in  `default-address-pools`, Docker allocates
+subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them to your
+`default-address-pools`. See [Dynamic IPv6 subnet allocation](../daemon/ipv6.md#dynamic-ipv6-subnet-allocation)
+for more information.
+@z
+
+@x
+Docker attempts to avoid address prefixes already in use on the host. However, you may need to customize
+`default-address-pools` to prevent routing conflicts in some network environments.
+@y
+Docker attempts to avoid address prefixes already in use on the host. However, you may need to customize
+`default-address-pools` to prevent routing conflicts in some network environments.
+@z
+
+@x
+The default pools use large subnets, which limits the number of networks you can create. You can divide base
+subnets into smaller pools to support more networks.
+@y
+The default pools use large subnets, which limits the number of networks you can create. You can divide base
+subnets into smaller pools to support more networks.
+@z
+
+@x
+For example, this configuration allows Docker to create 256 networks from `172.17.0.0/16`.
+Docker will allocate subnets `172.17.0.0/24`, `172.17.1.0/24`, and so on, up to `172.17.255.0/24`:
+@y
+For example, this configuration allows Docker to create 256 networks from `172.17.0.0/16`.
+Docker will allocate subnets `172.17.0.0/24`, `172.17.1.0/24`, and so on, up to `172.17.255.0/24`:
+@z
+
+@x
+```json
+{
+  "default-address-pools": [
+    {"base": "172.17.0.0/16", "size": 24}
+  ]
+}
+```
+@y
+```json
+{
+  "default-address-pools": [
+    {"base": "172.17.0.0/16", "size": 24}
+  ]
+}
+```
+@z
+
+@x
+You can also request a subnet with a specific prefix length from the default pools by using unspecified
+addresses in the `--subnet` option:
+@y
+You can also request a subnet with a specific prefix length from the default pools by using unspecified
+addresses in the `--subnet` option:
+@z
+
+@x
+```console
+$ docker network create --ipv6 --subnet ::/56 --subnet 0.0.0.0/24 mynet
+6686a6746b17228f5052528113ddad0e6d68e2e3905d648e336b33409f2d3b64
+$ docker network inspect mynet -f '{{json .IPAM.Config}}' | jq .
+[
+  {
+    "Subnet": "172.19.0.0/24",
+    "Gateway": "172.19.0.1"
+  },
+  {
+    "Subnet": "fdd3:6f80:972c::/56",
+    "Gateway": "fdd3:6f80:972c::1"
+  }
+]
+```
+@y
+```console
+$ docker network create --ipv6 --subnet ::/56 --subnet 0.0.0.0/24 mynet
+6686a6746b17228f5052528113ddad0e6d68e2e3905d648e336b33409f2d3b64
+$ docker network inspect mynet -f '{{json .IPAM.Config}}' | jq .
+[
+  {
+    "Subnet": "172.19.0.0/24",
+    "Gateway": "172.19.0.1"
+  },
+  {
+    "Subnet": "fdd3:6f80:972c::/56",
+    "Gateway": "fdd3:6f80:972c::1"
+  }
+]
+```
+@z
+
+@x
+> [!NOTE]
+>
+> Support for unspecified addresses in `--subnet` was introduced in Docker 29.0.0.
+> If Docker is downgraded to an older version, networks created in this way will become unusable.
+> They can be removed and re-created, or will function again if the daemon is restored to 29.0.0 or later.
+@y
+> [!NOTE]
+>
+> Support for unspecified addresses in `--subnet` was introduced in Docker 29.0.0.
+> If Docker is downgraded to an older version, networks created in this way will become unusable.
+> They can be removed and re-created, or will function again if the daemon is restored to 29.0.0 or later.
+@z
+
+@x
 ## DNS services
 @y
 ## DNS services
@@ -424,7 +620,7 @@ By default, containers inherit the DNS settings as defined in the
 `/etc/resolv.conf` configuration file.
 Containers that attach to the default `bridge` network receive a copy of this file.
 Containers that attach to a
-[custom network](tutorials/standalone.md#use-user-defined-bridge-networks)
+[custom network](drivers/bridge.md#use-user-defined-bridge-networks)
 use Docker's embedded DNS server.
 The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
 @y
@@ -432,7 +628,7 @@ By default, containers inherit the DNS settings as defined in the
 `/etc/resolv.conf` configuration file.
 Containers that attach to the default `bridge` network receive a copy of this file.
 Containers that attach to a
-[custom network](tutorials/standalone.md#use-user-defined-bridge-networks)
+[custom network](drivers/bridge.md#use-user-defined-bridge-networks)
 use Docker's embedded DNS server.
 The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
 @z

@@ -36,6 +36,108 @@ For more information about:
 @z
 
 @x
+## 29.0.4
+@y
+## 29.0.4
+@z
+
+@x
+{{< release-date date="2025-11-24" >}}
+@y
+{{< release-date date="2025-11-24" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.0.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.4)
+- [moby/moby, 29.0.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.4)
+@y
+- [docker/cli, 29.0.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.4)
+- [moby/moby, 29.0.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.4)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- `docker image ls` no longer truncates the image names. [docker/cli#6675](https://github.com/docker/cli/pull/6675)
+@y
+- `docker image ls` no longer truncates the image names. [docker/cli#6675](https://github.com/docker/cli/pull/6675)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Allow creation of a container with a specific IP address when its networks were not configured with a specific subnet. [moby/moby#51583](https://github.com/moby/moby/pull/51583)
+@y
+- Allow creation of a container with a specific IP address when its networks were not configured with a specific subnet. [moby/moby#51583](https://github.com/moby/moby/pull/51583)
+@z
+
+@x
+## 29.0.3
+@y
+## 29.0.3
+@z
+
+@x
+{{< release-date date="2025-11-24" >}}
+@y
+{{< release-date date="2025-11-24" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.3)
+- [moby/moby, 29.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.3)
+@y
+- [docker/cli, 29.0.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.0.3)
+- [moby/moby, 29.0.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.0.3)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- `docker version --format json`: restore top-level `BuildTime` field to use RFC3339Nano format. [docker/cli#6668](https://github.com/docker/cli/pull/6668)
+- Fix `docker image ls` ignoring a custom `imageFormat` from `docker.json`. [docker/cli#6667](https://github.com/docker/cli/pull/6667)
+@y
+- `docker version --format json`: restore top-level `BuildTime` field to use RFC3339Nano format. [docker/cli#6668](https://github.com/docker/cli/pull/6668)
+- Fix `docker image ls` ignoring a custom `imageFormat` from `docker.json`. [docker/cli#6667](https://github.com/docker/cli/pull/6667)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix an issue that caused daemon crash when using a remote network driver plugin. [moby/moby#51558](https://github.com/moby/moby/pull/51558)
+@y
+- Fix an issue that caused daemon crash when using a remote network driver plugin. [moby/moby#51558](https://github.com/moby/moby/pull/51558)
+@z
+
+@x
 ## 29.0.2
 @y
 ## 29.0.2

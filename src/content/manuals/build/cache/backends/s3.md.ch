@@ -68,39 +68,41 @@ The following table describes the available CSV parameters that you can pass to
 @z
 
 @x
-| Name                 | Option                  | Type        | Default | Description                                                    |
-| -------------------- | ----------------------- | ----------- | ------- | -------------------------------------------------------------- |
-| `region`             | `cache-to`,`cache-from` | String      |         | Required. Geographic location.                                 |
-| `bucket`             | `cache-to`,`cache-from` | String      |         | Required. Name of the S3 bucket.                               |
-| `name`               | `cache-to`,`cache-from` | String      |         | Name of the cache image.                                       |
-| `endpoint_url`       | `cache-to`,`cache-from` | String      |         | Endpoint of the S3 bucket.                                     |
-| `blobs_prefix`       | `cache-to`,`cache-from` | String      |         | Prefix to prepend to blob filenames.                           |
-| `upload_parallelism` | `cache-to`              | Integer     | `4`     | Number of parallel layer uploads.                              |
-| `touch_refresh`      | `cache-to`              | Time        | `24h`   | Interval for updating the timestamp of unchanged cache layers. |
-| `manifests_prefix`   | `cache-to`,`cache-from` | String      |         | Prefix to prepend on manifest filenames.                       |
-| `use_path_style`     | `cache-to`,`cache-from` | Boolean     | `false` | When `true`, uses `bucket` in the URL instead of hostname.     |
-| `access_key_id`      | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `secret_access_key`  | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `session_token`      | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `mode`               | `cache-to`              | `min`,`max` | `min`   | Cache layers to export, see [cache mode][2].                   |
-| `ignore-error`       | `cache-to`              | Boolean     | `false` | Ignore errors caused by failed cache exports.                  |
+| Name                 | Option                  | Type        | Default      | Description                                                    |
+|----------------------| ----------------------- | ----------- |--------------|----------------------------------------------------------------|
+| `region`             | `cache-to`,`cache-from` | String      |              | Required. Geographic location.                                 |
+| `bucket`             | `cache-to`,`cache-from` | String      |              | Required. Name of the S3 bucket.                               |
+| `name`               | `cache-to`,`cache-from` | String      | `buildkit`   | Name of the cache image.                                       |
+| `endpoint_url`       | `cache-to`,`cache-from` | String      |              | Endpoint of the S3 bucket.                                     |
+| `prefix`             | `cache-to`,`cache-from` | String      |              | Prefix to prepend to all filenames.                            |
+| `blobs_prefix`       | `cache-to`,`cache-from` | String      | `blobs/`     | Prefix to prepend to blob filenames.                           |
+| `upload_parallelism` | `cache-to`              | Integer     | `4`          | Number of parallel layer uploads.                              |
+| `touch_refresh`      | `cache-to`              | Time        | `24h`        | Interval for updating the timestamp of unchanged cache layers. |
+| `manifests_prefix`   | `cache-to`,`cache-from` | String      | `manifests/` | Prefix to prepend to manifest filenames.                       |
+| `use_path_style`     | `cache-to`,`cache-from` | Boolean     | `false`      | When `true`, uses `bucket` in the URL instead of hostname.     |
+| `access_key_id`      | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `secret_access_key`  | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `session_token`      | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `mode`               | `cache-to`              | `min`,`max` | `min`        | Cache layers to export, see [cache mode][2].                   |
+| `ignore-error`       | `cache-to`              | Boolean     | `false`      | Ignore errors caused by failed cache exports.                  |
 @y
-| Name                 | Option                  | Type        | Default | Description                                                    |
-| -------------------- | ----------------------- | ----------- | ------- | -------------------------------------------------------------- |
-| `region`             | `cache-to`,`cache-from` | String      |         | Required. Geographic location.                                 |
-| `bucket`             | `cache-to`,`cache-from` | String      |         | Required. Name of the S3 bucket.                               |
-| `name`               | `cache-to`,`cache-from` | String      |         | Name of the cache image.                                       |
-| `endpoint_url`       | `cache-to`,`cache-from` | String      |         | Endpoint of the S3 bucket.                                     |
-| `blobs_prefix`       | `cache-to`,`cache-from` | String      |         | Prefix to prepend to blob filenames.                           |
-| `upload_parallelism` | `cache-to`              | Integer     | `4`     | Number of parallel layer uploads.                              |
-| `touch_refresh`      | `cache-to`              | Time        | `24h`   | Interval for updating the timestamp of unchanged cache layers. |
-| `manifests_prefix`   | `cache-to`,`cache-from` | String      |         | Prefix to prepend on manifest filenames.                       |
-| `use_path_style`     | `cache-to`,`cache-from` | Boolean     | `false` | When `true`, uses `bucket` in the URL instead of hostname.     |
-| `access_key_id`      | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `secret_access_key`  | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `session_token`      | `cache-to`,`cache-from` | String      |         | See [authentication][1].                                       |
-| `mode`               | `cache-to`              | `min`,`max` | `min`   | Cache layers to export, see [cache mode][2].                   |
-| `ignore-error`       | `cache-to`              | Boolean     | `false` | Ignore errors caused by failed cache exports.                  |
+| Name                 | Option                  | Type        | Default      | Description                                                    |
+|----------------------| ----------------------- | ----------- |--------------|----------------------------------------------------------------|
+| `region`             | `cache-to`,`cache-from` | String      |              | Required. Geographic location.                                 |
+| `bucket`             | `cache-to`,`cache-from` | String      |              | Required. Name of the S3 bucket.                               |
+| `name`               | `cache-to`,`cache-from` | String      | `buildkit`   | Name of the cache image.                                       |
+| `endpoint_url`       | `cache-to`,`cache-from` | String      |              | Endpoint of the S3 bucket.                                     |
+| `prefix`             | `cache-to`,`cache-from` | String      |              | Prefix to prepend to all filenames.                            |
+| `blobs_prefix`       | `cache-to`,`cache-from` | String      | `blobs/`     | Prefix to prepend to blob filenames.                           |
+| `upload_parallelism` | `cache-to`              | Integer     | `4`          | Number of parallel layer uploads.                              |
+| `touch_refresh`      | `cache-to`              | Time        | `24h`        | Interval for updating the timestamp of unchanged cache layers. |
+| `manifests_prefix`   | `cache-to`,`cache-from` | String      | `manifests/` | Prefix to prepend to manifest filenames.                       |
+| `use_path_style`     | `cache-to`,`cache-from` | Boolean     | `false`      | When `true`, uses `bucket` in the URL instead of hostname.     |
+| `access_key_id`      | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `secret_access_key`  | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `session_token`      | `cache-to`,`cache-from` | String      |              | See [authentication][1].                                       |
+| `mode`               | `cache-to`              | `min`,`max` | `min`        | Cache layers to export, see [cache mode][2].                   |
+| `ignore-error`       | `cache-to`              | Boolean     | `false`      | Ignore errors caused by failed cache exports.                  |
 @z
 
 @x
@@ -138,9 +140,9 @@ authentication using environment variables and credentials file.
 @z
 
 @x
-[3]: https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials
+[3]: https://docs.aws.amazon.com/sdk-for-go/v2/developer-guide/configure-gosdk.html#specifying-credentials
 @y
-[3]: https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials
+[3]: https://docs.aws.amazon.com/sdk-for-go/v2/developer-guide/configure-gosdk.html#specifying-credentials
 @z
 
 @x

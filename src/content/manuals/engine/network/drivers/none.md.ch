@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-
 @x
 title: None network driver
 description: How to isolate the networking stack of a container using the none driver
@@ -76,14 +74,14 @@ $ docker run --rm --network none --name no-net-alpine alpine:latest ip addr show
 @z
 
 @x
-- Go through the [host networking tutorial](/manuals/engine/network/tutorials/host.md)
 - Learn about [networking from the container's point of view](../_index.md)
+- Learn about [host networking](host.md)
 - Learn about [bridge networks](bridge.md)
 - Learn about [overlay networks](overlay.md)
 - Learn about [Macvlan networks](macvlan.md)
 @y
-- Go through the [host networking tutorial](manuals/engine/network/tutorials/host.md)
 - Learn about [networking from the container's point of view](../_index.md)
+- Learn about [host networking](host.md)
 - Learn about [bridge networks](bridge.md)
 - Learn about [overlay networks](overlay.md)
 - Learn about [Macvlan networks](macvlan.md)

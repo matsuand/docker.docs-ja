@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md     \
+	changelog.md  \
 	deprecated.md \
 	dvp.yaml      \
 	latest.md     \

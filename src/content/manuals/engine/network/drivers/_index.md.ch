@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 title: Network drivers
@@ -160,27 +160,15 @@ exist by default, and provide core networking functionality:
 @z
 
 @x
-## Networking tutorials
+## Next steps
 @y
-## Networking tutorials
+## Next steps
 @z
 
 @x
-Now that you understand the basics about Docker networks, deepen your
-understanding using the following tutorials:
+Each driver page includes detailed explanations, configuration options, and
+hands-on usage examples to help you work with that driver effectively.
 @y
-Now that you understand the basics about Docker networks, deepen your
-understanding using the following tutorials:
-@z
-
-@x
-- [Standalone networking tutorial](/manuals/engine/network/tutorials/standalone.md)
-- [Host networking tutorial](/manuals/engine/network/tutorials/host.md)
-- [Overlay networking tutorial](/manuals/engine/network/tutorials/overlay.md)
-- [Macvlan networking tutorial](/manuals/engine/network/tutorials/macvlan.md)
-@y
-- [Standalone networking tutorial](manuals/engine/network/tutorials/standalone.md)
-- [Host networking tutorial](manuals/engine/network/tutorials/host.md)
-- [Overlay networking tutorial](manuals/engine/network/tutorials/overlay.md)
-- [Macvlan networking tutorial](manuals/engine/network/tutorials/macvlan.md)
+Each driver page includes detailed explanations, configuration options, and
+hands-on usage examples to help you work with that driver effectively.
 @z

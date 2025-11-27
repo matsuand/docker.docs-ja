@@ -5,6 +5,7 @@ SUBDIRS = images
 
 bases = \
 	_index.md        \
+	bulk-migrate.md  \
 	manage.md        \
 	move.md          \
 	oci-artifacts.md \

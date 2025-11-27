@@ -107,6 +107,8 @@ AC_CONFIG_FILES([
 	src/content/guides/dotnet/Makefile
 	src/content/guides/frameworks/Makefile
 	src/content/guides/frameworks/laravel/Makefile
+	src/content/guides/genai-claude-code-mcp/Makefile
+	src/content/guides/genai-claude-code-mcp/Images/Makefile
 	src/content/guides/genai-leveraging-rag/Makefile
 	src/content/guides/genai-pdf-bot/Makefile
 	src/content/guides/genai-video-bot/Makefile
@@ -250,7 +252,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/engine/network/Makefile
 	src/content/manuals/engine/network/drivers/Makefile
 	src/content/manuals/engine/network/drivers/images/Makefile
-	src/content/manuals/engine/network/tutorials/Makefile
 	src/content/manuals/engine/release-notes/Makefile
 	src/content/manuals/engine/security/Makefile
 	src/content/manuals/engine/security/https/Makefile

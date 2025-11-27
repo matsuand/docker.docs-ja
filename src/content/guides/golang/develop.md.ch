@@ -168,9 +168,9 @@ Now that the housekeeping chores are done, you can run CockroachDB in a containe
 % snip command...
 
 @x
-Notice a clever use of the tag `latest-v20.1` to make sure that you're pulling the latest patch version of 20.1. The diversity of available tags depend on the image maintainer. Here, your intent was to have the latest patched version of CockroachDB while not straying too far away from the known working version as the time goes by. To see the tags available for the CockroachDB image, you can go to the [CockroachDB page on Docker Hub](https://hub.docker.com/r/cockroachdb/cockroach/tags).
+Notice a clever use of the tag `latest-v25.4` to make sure that you're pulling the latest patch version of 25.4. The diversity of available tags depend on the image maintainer. Here, your intent was to have the latest patched version of CockroachDB while not straying too far away from the known working version as the time goes by. To see the tags available for the CockroachDB image, you can go to the [CockroachDB page on Docker Hub](https://hub.docker.com/r/cockroachdb/cockroach/tags).
 @y
-Notice a clever use of the tag `latest-v20.1` to make sure that you're pulling the latest patch version of 20.1. The diversity of available tags depend on the image maintainer. Here, your intent was to have the latest patched version of CockroachDB while not straying too far away from the known working version as the time goes by. To see the tags available for the CockroachDB image, you can go to the [CockroachDB page on Docker Hub](https://hub.docker.com/r/cockroachdb/cockroach/tags).
+Notice a clever use of the tag `latest-v25.4` to make sure that you're pulling the latest patch version of 25.4. The diversity of available tags depend on the image maintainer. Here, your intent was to have the latest patched version of CockroachDB while not straying too far away from the known working version as the time goes by. To see the tags available for the CockroachDB image, you can go to the [CockroachDB page on Docker Hub](https://hub.docker.com/r/cockroachdb/cockroach/tags).
 @z
 
 @x
