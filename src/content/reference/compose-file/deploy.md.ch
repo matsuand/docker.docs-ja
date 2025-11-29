@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Compose Deploy Specification
@@ -231,21 +232,7 @@ For more detailed information about job options and behavior, see the [Docker CL
 `constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#constraint).
 @z
 
-@x
-```yml
-deploy:
-  placement:
-    constraints:
-      - disktype=ssd
-```
-@y
-```yml
-deploy:
-  placement:
-    constraints:
-      - disktype=ssd
-```
-@z
+% snip code...
 
 @x
 #### `preferences`

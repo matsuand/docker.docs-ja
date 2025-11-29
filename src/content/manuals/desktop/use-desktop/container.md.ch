@@ -174,9 +174,9 @@ If you have enabled Docker Debug in settings, or toggled on **Debug mode** to th
 @z
 
 @x
-Debug mode requires a [Pro, Team, or Business subscription](/subscription/details/). Debug mode has several advantages, such as:
+Debug mode has several advantages, such as:
 @y
-Debug mode requires a [Pro, Team, or Business subscription](__SUBDIR__/subscription/details/). Debug mode has several advantages, such as:
+Debug mode has several advantages, such as:
 @z
 
 @x

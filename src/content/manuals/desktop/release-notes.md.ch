@@ -49,6 +49,54 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.53.0
+@y
+## 4.53.0
+@z
+
+@x
+{{< release-date date="2025-11-27" >}}
+@y
+{{< release-date date="2025-11-27" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.53.0" build_path="/211793/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.53.0" build_path="/211793/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue where the Support Diagnostics tooling inadvertently captured expired Docker Hub authorization bearer tokens.
+@y
+- 期限切れの Docker Hub 認証 bearer トークンを、サポート診断ツールが誤ってキャプチャーする問題を修正しました。
+@z
+
+@x
+### Security 
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Added security patches to address CVEs [2025-52565](https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2), [2025-52881](https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm), and [2025-31133](https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r) when using [Enhanced Container Isolation](https://docs.docker.com/enterprise/security/hardened-desktop/enhanced-container-isolation). 
+@y
+- CVE [2025-52565](https://github.com/opencontainers/runc/security/advisories/GHSA-9493-h29p-rfm2), [2025-52881](https://github.com/opencontainers/runc/security/advisories/GHSA-cgrx-mc8f-2prm), and [2025-31133](https://github.com/opencontainers/runc/security/advisories/GHSA-qw9x-cqr3-wc7r) when using [Enhanced Container Isolation](https://docs.docker.com/enterprise/security/hardened-desktop/enhanced-container-isolation) に対処するセキュリティパッチを追加しました。
+@z
+
+@x
 ## 4.52.0
 @y
 ## 4.52.0
