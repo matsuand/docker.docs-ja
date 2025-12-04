@@ -105,6 +105,42 @@ frequently changed where possible.
 @z
 
 @x
+## WORKDIR and SOURCE_DATE_EPOCH
+@y
+## WORKDIR and SOURCE_DATE_EPOCH
+@z
+
+@x
+The `WORKDIR` instruction respects the `SOURCE_DATE_EPOCH` build argument when
+determining cache validity. Changing `SOURCE_DATE_EPOCH` between builds
+invalidates the cache for `WORKDIR` and all subsequent instructions.
+@y
+The `WORKDIR` instruction respects the `SOURCE_DATE_EPOCH` build argument when
+determining cache validity. Changing `SOURCE_DATE_EPOCH` between builds
+invalidates the cache for `WORKDIR` and all subsequent instructions.
+@z
+
+@x
+`SOURCE_DATE_EPOCH` sets timestamps for files created during the build. If you
+set this to a dynamic value like a Git commit timestamp, the cache breaks with
+each commit. This is expected behavior when tracking build provenance.
+@y
+`SOURCE_DATE_EPOCH` sets timestamps for files created during the build. If you
+set this to a dynamic value like a Git commit timestamp, the cache breaks with
+each commit. This is expected behavior when tracking build provenance.
+@z
+
+@x
+For reproducible builds without frequent cache invalidation, use a fixed
+timestamp:
+@y
+For reproducible builds without frequent cache invalidation, use a fixed
+timestamp:
+@z
+
+% snip command...
+
+@x
 ## RUN instructions
 @y
 ## RUN 命令 {#run-instructions}

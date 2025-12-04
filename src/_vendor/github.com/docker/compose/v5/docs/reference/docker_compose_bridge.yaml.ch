@@ -2,12 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker compose start
-short: Start services
-long: Starts existing containers for a service
-usage: docker compose start [SERVICE...]
+command: docker compose bridge
+short: Convert compose files into another model
+long: Convert compose files into another model
 pname: docker compose
 plink: docker_compose.yaml
+cname:
+    - docker compose bridge convert
+    - docker compose bridge transformations
+clink:
+    - docker_compose_bridge_convert.yaml
+    - docker_compose_bridge_transformations.yaml
 inherited_options:
     - option: dry-run
       value_type: bool
@@ -26,12 +31,17 @@ experimentalcli: false
 kubernetes: false
 swarm: false
 @y
-command: docker compose start
-short: Start services
-long: Starts existing containers for a service
-usage: docker compose start [SERVICE...]
+command: docker compose bridge
+short: Convert compose files into another model
+long: Convert compose files into another model
 pname: docker compose
 plink: docker_compose.yaml
+cname:
+    - docker compose bridge convert
+    - docker compose bridge transformations
+clink:
+    - docker_compose_bridge_convert.yaml
+    - docker_compose_bridge_transformations.yaml
 inherited_options:
     - option: dry-run
       value_type: bool

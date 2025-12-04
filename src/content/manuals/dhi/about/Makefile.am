@@ -5,6 +5,7 @@
 bases = \
 	_index.md         \
 	available.md      \
+	build-process.md  \
 	feedback.md       \
 	responsibility.md \
 	test.md           \

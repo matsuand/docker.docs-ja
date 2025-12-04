@@ -199,6 +199,34 @@ If you are not an organization administrator:
 % snip code...
 
 @x
+The example above uses `docker/build-push-action`, which automatically uses the
+builder set up by `setup-buildx-action`. If you need to use the `docker build`
+command directly instead, you have two options:
+@y
+The example above uses `docker/build-push-action`, which automatically uses the
+builder set up by `setup-buildx-action`. If you need to use the `docker build`
+command directly instead, you have two options:
+@z
+
+@x
+- Use `docker buildx build` instead of `docker build`
+- Set the `BUILDX_BUILDER` environment variable to use the cloud builder:
+@y
+- Use `docker buildx build` instead of `docker build`
+- Set the `BUILDX_BUILDER` environment variable to use the cloud builder:
+@z
+
+% snip code...
+
+@x
+For more information about the `BUILDX_BUILDER` environment variable, see
+[Build variables](/manuals/build/building/variables.md#buildx_builder).
+@y
+For more information about the `BUILDX_BUILDER` environment variable, see
+[Build variables](manuals/build/building/variables.md#buildx_builder).
+@z
+
+@x
 ### GitLab
 @y
 ### GitLab

@@ -25,6 +25,18 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @z
 
 @x
+    - title: Build process
+      description: Learn how Docker builds, tests, and maintains Docker Hardened Images through an automated, security-focused pipeline.
+      icon: build
+      link: /dhi/about/build-process/
+@y
+    - title: Build process
+      description: Learn how Docker builds, tests, and maintains Docker Hardened Images through an automated, security-focused pipeline.
+      icon: build
+      link: __SUBDIR__/dhi/about/build-process/
+@z
+
+@x
     - title: Image testing
       description: See how Docker Hardened Images are automatically tested for standards compliance, functionality, and security.
       icon: science

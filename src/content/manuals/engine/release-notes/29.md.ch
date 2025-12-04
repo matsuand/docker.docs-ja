@@ -36,6 +36,90 @@ For more information about:
 @z
 
 @x
+## 29.1.2
+@y
+## 29.1.2
+@z
+
+@x
+{{< release-date date="2025-12-02" >}}
+@y
+{{< release-date date="2025-12-02" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.1.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.2)
+- [moby/moby, 29.1.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.2)
+@y
+- [docker/cli, 29.1.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.2)
+- [moby/moby, 29.1.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+- Update Go runtime to [1.25.5](https://go.dev/doc/devel/release#go1.25.5). [moby/moby#51648](https://github.com/moby/moby/pull/51648), [docker/cli#6688](https://github.com/docker/cli/pull/6688)
+  - Fixes a potential DoS via excessive resource usage when formatting hostname validation errors [**CVE-2025-61729**](https://nvd.nist.gov/vuln/detail/CVE-2025-61729)
+  - Fixes incorrect enforcement of excluded subdomain constraints for wildcard SANs, which could allow improperly trusted certificates [**CVE-2025-61727**](https://nvd.nist.gov/vuln/detail/CVE-2025-22874)
+@y
+- Update Go runtime to [1.25.5](https://go.dev/doc/devel/release#go1.25.5). [moby/moby#51648](https://github.com/moby/moby/pull/51648), [docker/cli#6688](https://github.com/docker/cli/pull/6688)
+  - Fixes a potential DoS via excessive resource usage when formatting hostname validation errors [**CVE-2025-61729**](https://nvd.nist.gov/vuln/detail/CVE-2025-61729)
+  - Fixes incorrect enforcement of excluded subdomain constraints for wildcard SANs, which could allow improperly trusted certificates [**CVE-2025-61727**](https://nvd.nist.gov/vuln/detail/CVE-2025-22874)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Fix `docker image inspect` failing to return available image data in case where not all distributable blobs are available locally. [moby/moby#51629](https://github.com/moby/moby/pull/51629)
+- dockerd-rootless-setuptool.sh: fix `nsenter: no namespace specified`. [moby/moby#51622](https://github.com/moby/moby/pull/51622)
+- Fix `docker system df` showing `N/A` for shared size and unique size when using graph-drivers as storage. [moby/moby#51631](https://github.com/moby/moby/pull/51631)
+@y
+- containerd image store: Fix `docker image inspect` failing to return available image data in case where not all distributable blobs are available locally. [moby/moby#51629](https://github.com/moby/moby/pull/51629)
+- dockerd-rootless-setuptool.sh: fix `nsenter: no namespace specified`. [moby/moby#51622](https://github.com/moby/moby/pull/51622)
+- Fix `docker system df` showing `N/A` for shared size and unique size when using graph-drivers as storage. [moby/moby#51631](https://github.com/moby/moby/pull/51631)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update runc (in static binaries) to [v1.3.4](https://github.com/opencontainers/runc/releases/tag/v1.3.4). [moby/moby#51633](https://github.com/moby/moby/pull/51633)
+@y
+- Update runc (in static binaries) to [v1.3.4](https://github.com/opencontainers/runc/releases/tag/v1.3.4). [moby/moby#51633](https://github.com/moby/moby/pull/51633)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix a bug preventing port mappings in rootless mode when slirp4netns is used. [moby/moby#51616](https://github.com/moby/moby/pull/51616)
+- Prevent a crash when making an API request with `HostConfig.PublishAllPorts` set (`-P`), and no port bindings. [moby/moby#51621](https://github.com/moby/moby/pull/51621)
+@y
+- Fix a bug preventing port mappings in rootless mode when slirp4netns is used. [moby/moby#51616](https://github.com/moby/moby/pull/51616)
+- Prevent a crash when making an API request with `HostConfig.PublishAllPorts` set (`-P`), and no port bindings. [moby/moby#51621](https://github.com/moby/moby/pull/51621)
+@z
+
+@x
 ## 29.1.1
 @y
 ## 29.1.1
@@ -872,7 +956,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Go SDK: container: remove deprecated `IsValidHealthString`. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
 - Go SDK: container: remove deprecated `IsValidStateString`. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
 - Go SDK: container: remove deprecated `StateStatus`, `WaitCondition`, and the related `WaitConditionNotRunning`, `WaitConditionNextExit`, and `WaitConditionRemoved` consts. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
-- Go SDK: deprecate `pkg/stdcopy`, which was moved to `api/stdcopy`. [moby/moby#50462](https://github.com/moby/moby/pull/50462)
+- Go SDK: deprecate `pkg/stdcopy`, which was moved to `api/pkg/stdcopy`. [moby/moby#50462](https://github.com/moby/moby/pull/50462)
 - Go SDK: Deprecate field `NetworkSettingsBase.Bridge`, struct `NetworkSettingsBase`, all the fields of `DefaultNetworkSettings`, and struct `DefaultNetworkSettings`. [moby/moby#50848](https://github.com/moby/moby/pull/50848)
 - Go SDK: deprecate pkg/stringid in favour of `github.com/moby/moby/client/pkg/stringid`. [moby/moby#50504](https://github.com/moby/moby/pull/50504)
 - Go SDK: deprecate profiles package which got migrated to `github.com/moby/profiles`. [moby/moby#50481](https://github.com/moby/moby/pull/50481)
@@ -899,7 +983,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Hide the `--kernel-memory` option on `docker run` and `docker create`, and produce a warning when used as it's no longer supported by the daemon and kernel. [docker/cli#6455](https://github.com/docker/cli/pull/6455)
 - Remove `VirtualSize` field from `docker image ls` output when using JSON format. [docker/cli#6524](https://github.com/docker/cli/pull/6524)
 - Remove `VirtualSize` formatting options and output. [docker/cli#6524](https://github.com/docker/cli/pull/6524)
-- Remove API version compatibility for API version v1.44 and earlier (Docker v24.0 and older). [docker/cli#6551](https://github.com/docker/cli/pull/6551)
+- Remove API version compatibility for API version < v1.44 (Docker v24.0 and older). [docker/cli#6551](https://github.com/docker/cli/pull/6551)
 - Remove deprecated `bind-nonrecursive` option for `--mount`. [docker/cli#6241](https://github.com/docker/cli/pull/6241)
 - Remove deprecated packages (`pkg/archive`, `pkg/chrootarchive`, `pkg/atomicwriter`, `pkg/reexec`, `pkg/platform`, `pkg/parsers`), `pkg/system.MkdirAll`. For replacements, see `github.com/moby/go-archive`, `github.com/moby/sys` and the standard library. [moby/moby#50208](https://github.com/moby/moby/pull/50208)
 - Remove special handling for quoted values for the `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags. [docker/cli#6306](https://github.com/docker/cli/pull/6306)
@@ -1018,7 +1102,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Go SDK: container: remove deprecated `IsValidHealthString`. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
 - Go SDK: container: remove deprecated `IsValidStateString`. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
 - Go SDK: container: remove deprecated `StateStatus`, `WaitCondition`, and the related `WaitConditionNotRunning`, `WaitConditionNextExit`, and `WaitConditionRemoved` consts. [moby/moby#50378](https://github.com/moby/moby/pull/50378)
-- Go SDK: deprecate `pkg/stdcopy`, which was moved to `api/stdcopy`. [moby/moby#50462](https://github.com/moby/moby/pull/50462)
+- Go SDK: deprecate `pkg/stdcopy`, which was moved to `api/pkg/stdcopy`. [moby/moby#50462](https://github.com/moby/moby/pull/50462)
 - Go SDK: Deprecate field `NetworkSettingsBase.Bridge`, struct `NetworkSettingsBase`, all the fields of `DefaultNetworkSettings`, and struct `DefaultNetworkSettings`. [moby/moby#50848](https://github.com/moby/moby/pull/50848)
 - Go SDK: deprecate pkg/stringid in favour of `github.com/moby/moby/client/pkg/stringid`. [moby/moby#50504](https://github.com/moby/moby/pull/50504)
 - Go SDK: deprecate profiles package which got migrated to `github.com/moby/profiles`. [moby/moby#50481](https://github.com/moby/moby/pull/50481)
@@ -1045,7 +1129,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - Hide the `--kernel-memory` option on `docker run` and `docker create`, and produce a warning when used as it's no longer supported by the daemon and kernel. [docker/cli#6455](https://github.com/docker/cli/pull/6455)
 - Remove `VirtualSize` field from `docker image ls` output when using JSON format. [docker/cli#6524](https://github.com/docker/cli/pull/6524)
 - Remove `VirtualSize` formatting options and output. [docker/cli#6524](https://github.com/docker/cli/pull/6524)
-- Remove API version compatibility for API version v1.44 and earlier (Docker v24.0 and older). [docker/cli#6551](https://github.com/docker/cli/pull/6551)
+- Remove API version compatibility for API version < v1.44 (Docker v24.0 and older). [docker/cli#6551](https://github.com/docker/cli/pull/6551)
 - Remove deprecated `bind-nonrecursive` option for `--mount`. [docker/cli#6241](https://github.com/docker/cli/pull/6241)
 - Remove deprecated packages (`pkg/archive`, `pkg/chrootarchive`, `pkg/atomicwriter`, `pkg/reexec`, `pkg/platform`, `pkg/parsers`), `pkg/system.MkdirAll`. For replacements, see `github.com/moby/go-archive`, `github.com/moby/sys` and the standard library. [moby/moby#50208](https://github.com/moby/moby/pull/50208)
 - Remove special handling for quoted values for the `--tlscacert`, `--tlscert`, and `--tlskey` command-line flags. [docker/cli#6306](https://github.com/docker/cli/pull/6306)

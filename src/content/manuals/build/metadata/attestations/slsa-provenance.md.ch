@@ -38,11 +38,15 @@ details such as:
 @z
 
 @x
-Provenance attestations follow the
-[SLSA provenance schema, version 0.2](https://slsa.dev/provenance/v0.2#schema).
+By default, provenance attestations follow the
+[SLSA provenance schema, version 0.2](https://slsa.dev/spec/v0.2/provenance#schema).
+You can optionally enable [SLSA Provenance v1](https://slsa.dev/spec/v1.1/provenance#schema)
+using [the `version` parameter](#version).
 @y
-Provenance attestations follow the
-[SLSA provenance schema, version 0.2](https://slsa.dev/provenance/v0.2#schema).
+By default, provenance attestations follow the
+[SLSA provenance schema, version 0.2](https://slsa.dev/spec/v0.2/provenance#schema).
+You can optionally enable [SLSA Provenance v1](https://slsa.dev/spec/v1.1/provenance#schema)
+using [the `version` parameter](#version).
 @z
 
 @x
@@ -70,21 +74,23 @@ to the `docker buildx build` command:
 @x
 ```console
 $ docker buildx build --tag <namespace>/<image>:<version> \
-    --attest type=provenance,mode=[min,max] .
+    --attest type=provenance,mode=[min,max],version=[v0.2,v1] .
 ```
 @y
 ```console
 $ docker buildx build --tag <namespace>/<image>:<version> \
-    --attest type=provenance,mode=[min,max] .
+    --attest type=provenance,mode=[min,max],version=[v0.2,v1] .
 ```
 @z
 
 @x
 Alternatively, you can use the shorthand `--provenance=true` option instead of `--attest type=provenance`.
-To specify the `mode` parameter using the shorthand option, use: `--provenance=mode=max`.
+To specify the `mode` or `version` parameters using the shorthand option, use:
+`--provenance=mode=max,version=v1`.
 @y
 Alternatively, you can use the shorthand `--provenance=true` option instead of `--attest type=provenance`.
-To specify the `mode` parameter using the shorthand option, use: `--provenance=mode=max`.
+To specify the `mode` or `version` parameters using the shorthand option, use:
+`--provenance=mode=max,version=v1`.
 @z
 
 @x
@@ -343,6 +349,50 @@ detailed information for analysis.
 > tokens, or other secrets, you should refactor your build to pass the secrets using
 > [secret mounts](reference/cli/docker/buildx/build.md#secret) instead.
 > Secret mounts don't leak outside of the build and are never included in provenance attestations.
+@z
+
+@x
+## Version
+@y
+## Version
+@z
+
+@x
+The `version` parameter lets you specify which SLSA provenance schema version
+to use. Supported values are `version=v0.2` (default) and `version=v1`.
+@y
+The `version` parameter lets you specify which SLSA provenance schema version
+to use. Supported values are `version=v0.2` (default) and `version=v1`.
+@z
+
+@x
+To use SLSA Provenance v1:
+@y
+To use SLSA Provenance v1:
+@z
+
+@x
+```console
+$ docker buildx build --tag <namespace>/<image>:<version> \
+    --attest type=provenance,mode=max,version=v1 .
+```
+@y
+```console
+$ docker buildx build --tag <namespace>/<image>:<version> \
+    --attest type=provenance,mode=max,version=v1 .
+```
+@z
+
+@x
+For more information about SLSA Provenance v1, see the
+[SLSA specification](https://slsa.dev/spec/v1.1/provenance). To see the
+difference between SLSA v0.2 and v1 provenance attestations, refer to
+[SLSA definitions](./slsa-definitions.md)
+@y
+For more information about SLSA Provenance v1, see the
+[SLSA specification](https://slsa.dev/spec/v1.1/provenance). To see the
+difference between SLSA v0.2 and v1 provenance attestations, refer to
+[SLSA definitions](./slsa-definitions.md)
 @z
 
 @x

@@ -278,32 +278,6 @@ the repository, regardless of the rights their team membership has given them.
 @z
 
 @x
-## View team permissions for all repositories
-@y
-## View team permissions for all repositories
-@z
-
-@x
-To view a team's permissions across all repositories:
-@y
-To view a team's permissions across all repositories:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select **Teams** and choose your team name.
-1. Select the **Permissions** tab, where you can view the repositories this
-team can access.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select **My Hub** and choose your organization.
-1. Select **Teams** and choose your team name.
-1. Select the **Permissions** tab, where you can view the repositories this
-team can access.
-@z
-
-@x
 ## Delete a team
 @y
 ## Delete a team

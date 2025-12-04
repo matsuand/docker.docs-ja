@@ -40,9 +40,9 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/cli/docs/extend/images/Makefile
 	src/_vendor/github.com/docker/cli/docs/reference/Makefile
 	src/_vendor/github.com/docker/compose/Makefile
-	src/_vendor/github.com/docker/compose/v2/Makefile
-	src/_vendor/github.com/docker/compose/v2/docs/Makefile
-	src/_vendor/github.com/docker/compose/v2/docs/reference/Makefile
+	src/_vendor/github.com/docker/compose/v5/Makefile
+	src/_vendor/github.com/docker/compose/v5/docs/Makefile
+	src/_vendor/github.com/docker/compose/v5/docs/reference/Makefile
 	src/_vendor/github.com/docker/mcp-gateway/Makefile
 	src/_vendor/github.com/docker/mcp-gateway/docs/Makefile
 	src/_vendor/github.com/docker/mcp-gateway/docs/generator/Makefile

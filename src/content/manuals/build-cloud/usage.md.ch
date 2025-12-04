@@ -118,17 +118,17 @@ uses the `default` builder, unless you specify the `--builder` flag explicitly.
 @z
 
 @x
-If you use build scripts, such as `make`, we recommend that you update your
-build commands from `docker build` to `docker buildx build`, to avoid any
-confusion with regards to builder selection. Alternatively, you can run `docker
-buildx install` to make the default `docker build` command behave like `docker
-buildx build`, without discrepancies.
+If you use build scripts, such as `make`, that use the `docker build` command,
+we recommend updating your build commands to `docker buildx build`. Alternatively,
+you can set the [`BUILDX_BUILDER` environment
+variable](/manuals/build/building/variables.md#buildx_builder) to specify which
+builder `docker build` should use.
 @y
-If you use build scripts, such as `make`, we recommend that you update your
-build commands from `docker build` to `docker buildx build`, to avoid any
-confusion with regards to builder selection. Alternatively, you can run `docker
-buildx install` to make the default `docker build` command behave like `docker
-buildx build`, without discrepancies.
+If you use build scripts, such as `make`, that use the `docker build` command,
+we recommend updating your build commands to `docker buildx build`. Alternatively,
+you can set the [`BUILDX_BUILDER` environment
+variable](manuals/build/building/variables.md#buildx_builder) to specify which
+builder `docker build` should use.
 @z
 
 @x
