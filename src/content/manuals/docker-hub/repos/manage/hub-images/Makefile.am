@@ -4,12 +4,13 @@
 SUBDIRS = images
 
 bases = \
-	_index.md        \
-	bulk-migrate.md  \
-	manage.md        \
-	move.md          \
-	oci-artifacts.md \
-	push.md          \
+	_index.md         \
+	bulk-migrate.md   \
+	immutable-tags.md \
+	manage.md         \
+	move.md           \
+	oci-artifacts.md  \
+	push.md           \
 	tags.md
 
 include $(top_srcdir)/build-aux/common.mk
