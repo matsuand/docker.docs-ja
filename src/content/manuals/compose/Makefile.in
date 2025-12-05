@@ -300,6 +300,7 @@ SUBDIRS = bridge how-tos images install intro releases \
 
 bases = \
 	_index.md         \
+	compose-sdk.md    \
 	gettingstarted.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

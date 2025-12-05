@@ -49,6 +49,73 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.54.0
+@y
+## 4.54.0
+@z
+
+@x
+{{< release-date date="2025-12-04" >}}
+@y
+{{< release-date date="2025-12-04" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.54.0" build_path="/212467/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.54.0" build_path="/212467/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Added support for vLLM in Docker Model Runner on Windows with WSL2 and NVIDIA GPUs.
+@y
+- Windows 上において WSL2 と NVIDIA GPU を用いた環境に対して、Docker Model Runner 内での vLLM サポートを追加しました。
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed a bug where `/dev/shm` did not have enough permission for containers to write into. Fixes [docker/for-mac#7804](https://github.com/docker/for-mac/issues/7804).
+@y
+- コンテナーにおいて `/dev/shm` への書き込み権限が充分でない場合に発生するバグを修正しました。
+  [docker/for-mac#7804](https://github.com/docker/for-mac/issues/7804) を Fix に。
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Docker Buildx v0.30.1](https://github.com/docker/buildx/releases/tag/v0.30.1)
+- [Docker Engine v29.1.2](https://docs.docker.com/engine/release-notes/29/#2912)
+- [Runc v1.3.4](https://github.com/opencontainers/runc/releases/tag/v1.3.4)
+- [Docker Model Runner CLI v1.0.2](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.2)
+@y
+- [Docker Buildx v0.30.1](https://github.com/docker/buildx/releases/tag/v0.30.1)
+- [Docker Engine v29.1.2](https://docs.docker.com/engine/release-notes/29/#2912)
+- [Runc v1.3.4](https://github.com/opencontainers/runc/releases/tag/v1.3.4)
+- [Docker Model Runner CLI v1.0.2](https://github.com/docker/model-runner/releases/tag/cmd%2Fcli%2Fv1.0.2)
+@z
+
+@x
 ## 4.53.0
 @y
 ## 4.53.0

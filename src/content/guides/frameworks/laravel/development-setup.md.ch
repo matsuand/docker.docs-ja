@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Laravel Development Setup with Docker Compose
 description: Set up a Laravel development environment using Docker Compose.
-weight: 30
----
 @y
----
 title: Laravel Development Setup with Docker Compose
 description: Set up a Laravel development environment using Docker Compose.
-weight: 30
----
 @z
 
 @x
@@ -657,7 +651,7 @@ services:
 
 @x
   postgres:
-    image: postgres:16
+    image: postgres:18
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     environment:
@@ -665,12 +659,12 @@ services:
       - POSTGRES_USER=laravel
       - POSTGRES_PASSWORD=secret
     volumes:
-      - postgres-data-development:/var/lib/postgresql/data
+      - postgres-data-development:/var/lib/postgresql
     networks:
       - laravel-development
 @y
   postgres:
-    image: postgres:16
+    image: postgres:18
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     environment:
@@ -678,7 +672,7 @@ services:
       - POSTGRES_USER=laravel
       - POSTGRES_PASSWORD=secret
     volumes:
-      - postgres-data-development:/var/lib/postgresql/data
+      - postgres-data-development:/var/lib/postgresql
     networks:
       - laravel-development
 @z

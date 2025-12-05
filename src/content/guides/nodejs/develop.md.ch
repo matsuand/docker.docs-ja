@@ -79,102 +79,37 @@ If you haven't already created a `compose.yml` file in the previous section, or 
 If you haven't already created a `compose.yml` file in the previous section, or if you need to add the database service, update your `compose.yml` file to include the PostgreSQL database service:
 @z
 
-@x
-```yaml
-services:
+@x within code
   # ... existing app services ...
 @y
-```yaml
-services:
   # ... existing app services ...
 @z
-
 @x
   # ========================================
   # PostgreSQL Database Service
   # ========================================
-  db:
-    image: postgres:16-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
 @y
   # ========================================
   # PostgreSQL Database Service
   # ========================================
-  db:
-    image: postgres:16-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
 @z
-
 @x
 # ========================================
 # Volume Configuration
 # ========================================
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
 @y
 # ========================================
 # Volume Configuration
 # ========================================
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
 @z
-
 @x
 # ========================================
 # Network Configuration
 # ========================================
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
 @y
 # ========================================
 # Network Configuration
 # ========================================
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
 @z
 
 @x
@@ -189,182 +124,14 @@ Make sure your application service in `compose.yml` is configured to connect to 
 Make sure your application service in `compose.yml` is configured to connect to the database:
 @z
 
-@x
-```yaml {hl_lines="18-20,42-44",collapse=true,title=compose.yml}
-services:
-  app-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: development
-    container_name: todoapp-dev
-    ports:
+@x within code
       - '${APP_PORT:-3000}:3000' # API server
       - '${VITE_PORT:-5173}:5173' # Vite dev server
       - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
-    environment:
-      NODE_ENV: development
-      DOCKER_ENV: 'true'
-      POSTGRES_HOST: db
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: todoapp
-      POSTGRES_USER: todoapp
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
-    volumes:
-      - ./src:/app/src:ro
-      - ./package.json:/app/package.json
-      - ./vite.config.ts:/app/vite.config.ts:ro
-      - ./tailwind.config.js:/app/tailwind.config.js:ro
-      - ./postcss.config.js:/app/postcss.config.js:ro
-    depends_on:
-      db:
-        condition: service_healthy
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
-          ignore:
-            - '**/*.test.*'
-            - '**/__tests__/**'
-        - action: rebuild
-          path: ./package.json
-        - action: sync
-          path: ./vite.config.ts
-          target: /app/vite.config.ts
-        - action: sync
-          path: ./tailwind.config.js
-          target: /app/tailwind.config.js
-        - action: sync
-          path: ./postcss.config.js
-          target: /app/postcss.config.js
-    restart: unless-stopped
-    networks:
-      - todoapp-network
 @y
-```yaml {hl_lines="18-20,42-44",collapse=true,title=compose.yml}
-services:
-  app-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: development
-    container_name: todoapp-dev
-    ports:
       - '${APP_PORT:-3000}:3000' # API server
       - '${VITE_PORT:-5173}:5173' # Vite dev server
       - '${DEBUG_PORT:-9229}:9229' # Node.js debugger
-    environment:
-      NODE_ENV: development
-      DOCKER_ENV: 'true'
-      POSTGRES_HOST: db
-      POSTGRES_PORT: 5432
-      POSTGRES_DB: todoapp
-      POSTGRES_USER: todoapp
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-      ALLOWED_ORIGINS: '${ALLOWED_ORIGINS:-http://localhost:3000,http://localhost:5173}'
-    volumes:
-      - ./src:/app/src:ro
-      - ./package.json:/app/package.json
-      - ./vite.config.ts:/app/vite.config.ts:ro
-      - ./tailwind.config.js:/app/tailwind.config.js:ro
-      - ./postcss.config.js:/app/postcss.config.js:ro
-    depends_on:
-      db:
-        condition: service_healthy
-    develop:
-      watch:
-        - action: sync
-          path: ./src
-          target: /app/src
-          ignore:
-            - '**/*.test.*'
-            - '**/__tests__/**'
-        - action: rebuild
-          path: ./package.json
-        - action: sync
-          path: ./vite.config.ts
-          target: /app/vite.config.ts
-        - action: sync
-          path: ./tailwind.config.js
-          target: /app/tailwind.config.js
-        - action: sync
-          path: ./postcss.config.js
-          target: /app/postcss.config.js
-    restart: unless-stopped
-    networks:
-      - todoapp-network
-@z
-
-@x
-  db:
-    image: postgres:16-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
-@y
-  db:
-    image: postgres:16-alpine
-    container_name: todoapp-db
-    environment:
-      POSTGRES_DB: '${POSTGRES_DB:-todoapp}'
-      POSTGRES_USER: '${POSTGRES_USER:-todoapp}'
-      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-todoapp_password}'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    ports:
-      - '${DB_PORT:-5432}:5432'
-    restart: unless-stopped
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-todoapp} -d ${POSTGRES_DB:-todoapp}']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    networks:
-      - todoapp-network
-@z
-
-@x
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
-@y
-volumes:
-  postgres_data:
-    name: todoapp-postgres-data
-    driver: local
-@z
-
-@x
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
-@y
-networks:
-  todoapp-network:
-    name: todoapp-network
-    driver: bridge
-```
 @z
 
 @x

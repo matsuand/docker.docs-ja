@@ -78,712 +78,109 @@ Create a new file called `nodejs-sample-kubernetes.yaml` in your project root:
 Create a new file called `nodejs-sample-kubernetes.yaml` in your project root:
 @z
 
-@x
-```yaml
+@x within code
 # ========================================
 # Node.js Todo App - Kubernetes Deployment
 # ========================================
 @y
-```yaml
 # ========================================
 # Node.js Todo App - Kubernetes Deployment
 # ========================================
 @z
-
 @x
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: todoapp
-  labels:
-    app: todoapp
-@y
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: todoapp
-  labels:
-    app: todoapp
-@z
-
-@x
----
 # ========================================
 # ConfigMap for Application Configuration
 # ========================================
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: todoapp-config
-  namespace: todoapp
-data:
-  NODE_ENV: 'production'
-  ALLOWED_ORIGINS: 'https://yourdomain.com'
-  POSTGRES_HOST: 'todoapp-postgres'
-  POSTGRES_PORT: '5432'
-  POSTGRES_DB: 'todoapp'
-  POSTGRES_USER: 'todoapp'
 @y
----
 # ========================================
 # ConfigMap for Application Configuration
 # ========================================
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: todoapp-config
-  namespace: todoapp
-data:
-  NODE_ENV: 'production'
-  ALLOWED_ORIGINS: 'https://yourdomain.com'
-  POSTGRES_HOST: 'todoapp-postgres'
-  POSTGRES_PORT: '5432'
-  POSTGRES_DB: 'todoapp'
-  POSTGRES_USER: 'todoapp'
 @z
-
 @x
----
 # ========================================
 # Secret for Database Credentials
 # ========================================
-apiVersion: v1
-kind: Secret
-metadata:
-  name: todoapp-secrets
-  namespace: todoapp
-type: Opaque
-data:
-  postgres-password: dG9kb2FwcF9wYXNzd29yZA== # base64 encoded "todoapp_password"
 @y
----
 # ========================================
 # Secret for Database Credentials
 # ========================================
-apiVersion: v1
-kind: Secret
-metadata:
-  name: todoapp-secrets
-  namespace: todoapp
-type: Opaque
-data:
+@z
+@x
+  postgres-password: dG9kb2FwcF9wYXNzd29yZA== # base64 encoded "todoapp_password"
+@y
   postgres-password: dG9kb2FwcF9wYXNzd29yZA== # base64 encoded "todoapp_password"
 @z
-
 @x
----
 # ========================================
 # PostgreSQL PersistentVolumeClaim
 # ========================================
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-  namespace: todoapp
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
-  storageClassName: standard
 @y
----
 # ========================================
 # PostgreSQL PersistentVolumeClaim
 # ========================================
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: postgres-pvc
-  namespace: todoapp
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 10Gi
-  storageClassName: standard
 @z
-
 @x
----
 # ========================================
 # PostgreSQL Deployment
 # ========================================
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: todoapp-postgres
-  namespace: todoapp
-  labels:
-    app: todoapp-postgres
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: todoapp-postgres
-  template:
-    metadata:
-      labels:
-        app: todoapp-postgres
-    spec:
-      containers:
-        - name: postgres
-          image: postgres:16-alpine
-          ports:
-            - containerPort: 5432
-              name: postgres
-          env:
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: todoapp-secrets
-                  key: postgres-password
-          volumeMounts:
-            - name: postgres-storage
-              mountPath: /var/lib/postgresql/data
-          livenessProbe:
-            exec:
-              command:
-                - pg_isready
-                - -U
-                - todoapp
-                - -d
-                - todoapp
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            exec:
-              command:
-                - pg_isready
-                - -U
-                - todoapp
-                - -d
-                - todoapp
-            initialDelaySeconds: 5
-            periodSeconds: 5
-      volumes:
-        - name: postgres-storage
-          persistentVolumeClaim:
-            claimName: postgres-pvc
 @y
----
 # ========================================
 # PostgreSQL Deployment
 # ========================================
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: todoapp-postgres
-  namespace: todoapp
-  labels:
-    app: todoapp-postgres
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: todoapp-postgres
-  template:
-    metadata:
-      labels:
-        app: todoapp-postgres
-    spec:
-      containers:
-        - name: postgres
-          image: postgres:16-alpine
-          ports:
-            - containerPort: 5432
-              name: postgres
-          env:
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: todoapp-secrets
-                  key: postgres-password
-          volumeMounts:
-            - name: postgres-storage
-              mountPath: /var/lib/postgresql/data
-          livenessProbe:
-            exec:
-              command:
-                - pg_isready
-                - -U
-                - todoapp
-                - -d
-                - todoapp
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            exec:
-              command:
-                - pg_isready
-                - -U
-                - todoapp
-                - -d
-                - todoapp
-            initialDelaySeconds: 5
-            periodSeconds: 5
-      volumes:
-        - name: postgres-storage
-          persistentVolumeClaim:
-            claimName: postgres-pvc
 @z
-
 @x
----
 # ========================================
 # PostgreSQL Service
 # ========================================
-apiVersion: v1
-kind: Service
-metadata:
-  name: todoapp-postgres
-  namespace: todoapp
-  labels:
-    app: todoapp-postgres
-spec:
-  type: ClusterIP
-  ports:
-    - port: 5432
-      targetPort: 5432
-      protocol: TCP
-      name: postgres
-  selector:
-    app: todoapp-postgres
 @y
----
 # ========================================
 # PostgreSQL Service
 # ========================================
-apiVersion: v1
-kind: Service
-metadata:
-  name: todoapp-postgres
-  namespace: todoapp
-  labels:
-    app: todoapp-postgres
-spec:
-  type: ClusterIP
-  ports:
-    - port: 5432
-      targetPort: 5432
-      protocol: TCP
-      name: postgres
-  selector:
-    app: todoapp-postgres
 @z
-
 @x
----
 # ========================================
 # Application Deployment
 # ========================================
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: todoapp-deployment
-  namespace: todoapp
-  labels:
-    app: todoapp
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: todoapp
-  template:
-    metadata:
-      labels:
-        app: todoapp
-    spec:
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1001
-        fsGroup: 1001
-      containers:
-        - name: todoapp
-          image: ghcr.io/your-username/docker-nodejs-sample:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 3000
-              name: http
-              protocol: TCP
-          env:
-            - name: NODE_ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: NODE_ENV
-            - name: ALLOWED_ORIGINS
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: ALLOWED_ORIGINS
-            - name: POSTGRES_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_HOST
-            - name: POSTGRES_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_PORT
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: todoapp-secrets
-                  key: postgres-password
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              memory: '256Mi'
-              cpu: '250m'
-            limits:
-              memory: '512Mi'
-              cpu: '500m'
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            capabilities:
-              drop:
-                - ALL
 @y
----
 # ========================================
 # Application Deployment
 # ========================================
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: todoapp-deployment
-  namespace: todoapp
-  labels:
-    app: todoapp
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: todoapp
-  template:
-    metadata:
-      labels:
-        app: todoapp
-    spec:
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1001
-        fsGroup: 1001
-      containers:
-        - name: todoapp
-          image: ghcr.io/your-username/docker-nodejs-sample:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 3000
-              name: http
-              protocol: TCP
-          env:
-            - name: NODE_ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: NODE_ENV
-            - name: ALLOWED_ORIGINS
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: ALLOWED_ORIGINS
-            - name: POSTGRES_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_HOST
-            - name: POSTGRES_PORT
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_PORT
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_DB
-            - name: POSTGRES_USER
-              valueFrom:
-                configMapKeyRef:
-                  name: todoapp-config
-                  key: POSTGRES_USER
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: todoapp-secrets
-                  key: postgres-password
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              memory: '256Mi'
-              cpu: '250m'
-            limits:
-              memory: '512Mi'
-              cpu: '500m'
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            capabilities:
-              drop:
-                - ALL
 @z
-
 @x
----
 # ========================================
 # Application Service
 # ========================================
-apiVersion: v1
-kind: Service
-metadata:
-  name: todoapp-service
-  namespace: todoapp
-  labels:
-    app: todoapp
-spec:
-  type: ClusterIP
-  ports:
-    - name: http
-      port: 80
-      targetPort: 3000
-      protocol: TCP
-  selector:
-    app: todoapp
 @y
----
 # ========================================
 # Application Service
 # ========================================
-apiVersion: v1
-kind: Service
-metadata:
-  name: todoapp-service
-  namespace: todoapp
-  labels:
-    app: todoapp
-spec:
-  type: ClusterIP
-  ports:
-    - name: http
-      port: 80
-      targetPort: 3000
-      protocol: TCP
-  selector:
-    app: todoapp
 @z
-
 @x
----
 # ========================================
 # Ingress for External Access
 # ========================================
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: todoapp-ingress
-  namespace: todoapp
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: 'letsencrypt-prod'
-spec:
-  tls:
-    - hosts:
-        - yourdomain.com
-      secretName: todoapp-tls
-  rules:
-    - host: yourdomain.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: todoapp-service
-                port:
-                  number: 80
 @y
----
 # ========================================
 # Ingress for External Access
 # ========================================
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: todoapp-ingress
-  namespace: todoapp
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: 'letsencrypt-prod'
-spec:
-  tls:
-    - hosts:
-        - yourdomain.com
-      secretName: todoapp-tls
-  rules:
-    - host: yourdomain.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: todoapp-service
-                port:
-                  number: 80
 @z
-
 @x
----
 # ========================================
 # HorizontalPodAutoscaler
 # ========================================
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: todoapp-hpa
-  namespace: todoapp
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: todoapp-deployment
-  minReplicas: 1
-  maxReplicas: 5
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 70
-    - type: Resource
-      resource:
-        name: memory
-        target:
-          type: Utilization
-          averageUtilization: 80
 @y
----
 # ========================================
 # HorizontalPodAutoscaler
 # ========================================
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: todoapp-hpa
-  namespace: todoapp
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: todoapp-deployment
-  minReplicas: 1
-  maxReplicas: 5
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 70
-    - type: Resource
-      resource:
-        name: memory
-        target:
-          type: Utilization
-          averageUtilization: 80
 @z
-
 @x
----
 # ========================================
 # PodDisruptionBudget
 # ========================================
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: todoapp-pdb
-  namespace: todoapp
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: todoapp
-```
 @y
----
 # ========================================
 # PodDisruptionBudget
 # ========================================
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: todoapp-pdb
-  namespace: todoapp
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: todoapp
-```
 @z
 
 @x

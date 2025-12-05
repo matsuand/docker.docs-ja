@@ -3,8 +3,9 @@
 ##
 
 bases = \
-	_index.md  \
-	migrate.md \
+	_index.md         \
+	migrate.md        \
+	prior-releases.md \
 	release-notes.md
 
 include $(top_srcdir)/build-aux/common.mk

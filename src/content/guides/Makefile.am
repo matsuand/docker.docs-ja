@@ -24,6 +24,7 @@ bases = \
 	opentelemetry.md                   \
 	orchestration.md                   \
 	pgadmin.md                         \
+	pre-seeding.md                     \
 	sentiment-analysis.md              \
 	swarm-deploy.md                    \
 	tensorflowjs.md                    \

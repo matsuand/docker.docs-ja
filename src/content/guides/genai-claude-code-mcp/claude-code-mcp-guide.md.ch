@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 description: Learn how to use Claude Code with Docker MCP Toolkit to generate production-ready Docker Compose files from natural language using the Docker Hub MCP server.
@@ -60,12 +61,6 @@ In this guide, you’ll learn how to:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Use Claude Code and Docker MCP Toolkit to generate a Docker Compose file from natural language
 @y
 ## Use Claude Code and Docker MCP Toolkit to generate a Docker Compose file from natural language
@@ -89,12 +84,6 @@ In this guide, you’ll learn how to:
 **Estimated time**: ~15 minutes
 @y
 **Estimated time**: ~15 minutes
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -122,12 +111,6 @@ The Model Context Protocol (MCP) bridges Claude Code and Docker Desktop, giving 
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## 2. Prerequisites
 @y
 ## 2. Prerequisites
@@ -151,12 +134,6 @@ Make sure you have:
 - Claude Code installed
 @y
 - Claude Code installed
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -206,12 +183,6 @@ Public images work without credentials. For private repositories, you can add yo
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## 4. Connect Claude Code to Docker MCP Toolkit
 @y
 ## 4. Connect Claude Code to Docker MCP Toolkit
@@ -253,21 +224,7 @@ You can connect from Docker Desktop or using the CLI.
 ### Option B. Connect using the CLI
 @z
 
-@x
-```console
-$ claude mcp add MCP_DOCKER -s user -- docker mcp gateway run
-```
-@y
-```console
-$ claude mcp add MCP_DOCKER -s user -- docker mcp gateway run
-```
-@z
-
-@x
----
-@y
----
-@z
+% snip command...
 
 @x
 ## 5. Verify MCP servers inside Claude Code
@@ -281,15 +238,7 @@ $ claude mcp add MCP_DOCKER -s user -- docker mcp gateway run
 1. Navigate to your project folder:
 @z
 
-@x
-```console
-$ cd /path/to/project
-```
-@y
-```console
-$ cd /path/to/project
-```
-@z
+% snip command...
 
 @x
 1. Start Claude Code:
@@ -297,15 +246,7 @@ $ cd /path/to/project
 1. Start Claude Code:
 @z
 
-@x
-```console
-$ claude
-```
-@y
-```console
-$ claude
-```
-@z
+% snip command...
 
 @x
 1. In the input box, type:
@@ -313,15 +254,7 @@ $ claude
 1. In the input box, type:
 @z
 
-@x
-```console
-/mcp
-```
-@y
-```console
-/mcp
-```
-@z
+% snip input...
 
 @x
 You should now see:
@@ -350,12 +283,6 @@ If not, restart Claude Code or check Docker Desktop to confirm the connection.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## 6. Create a basic Node.js app
 @y
 ## 6. Create a basic Node.js app
@@ -373,21 +300,7 @@ Inside project folder, create a folder named `app`:
 Inside project folder, create a folder named `app`:
 @z
 
-@x
-```console
-$ mkdir app
-$ cd app
-$ npm init -y
-$ npm install express
-```
-@y
-```console
-$ mkdir app
-$ cd app
-$ npm init -y
-$ npm install express
-```
-@z
+% snip command...
 
 @x
 Create `index.js`:
@@ -395,37 +308,7 @@ Create `index.js`:
 Create `index.js`:
 @z
 
-@x
-```console
-const express = require("express");
-const app = express();
-@y
-```console
-const express = require("express");
-const app = express();
-@z
-
-@x
-app.get("/", (req, res) => {
-  res.send("Node.js, Docker, and MCP Toolkit are working together!");
-});
-@y
-app.get("/", (req, res) => {
-  res.send("Node.js, Docker, and MCP Toolkit are working together!");
-});
-@z
-
-@x
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
-```
-@y
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
-```
-@z
+% snip code...
 
 @x
 Add a start script to `package.json`:
@@ -433,30 +316,12 @@ Add a start script to `package.json`:
 Add a start script to `package.json`:
 @z
 
-@x
-```console
-"scripts": {
-  "start": "node index.js"
-}
-```
-@y
-```console
-"scripts": {
-  "start": "node index.js"
-}
-```
-@z
+% snip code...
 
 @x
 Return to your project root (`cd ..`) once the app is ready.
 @y
 Return to your project root (`cd ..`) once the app is ready.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -471,64 +336,12 @@ Paste this message into Claude Code:
 Paste this message into Claude Code:
 @z
 
-@x
-```console
-Using the Docker Hub MCP server:
-@y
-```console
-Using the Docker Hub MCP server:
-@z
-
-@x
-Search Docker Hub for an official Node.js image and a PostgreSQL image.
-Choose stable, commonly used tags such as the Node LTS version and a recent major Postgres version.
-@y
-Search Docker Hub for an official Node.js image and a PostgreSQL image.
-Choose stable, commonly used tags such as the Node LTS version and a recent major Postgres version.
-@z
-
-@x
-Generate a Docker Compose file (`docker-compose.yaml`) with:
-- app:
-  - runs on port 3000
-  - bind mounts the existing ./app directory into /usr/src/app
-  - sets /usr/src/app as the working directory and runs `npm install && npm start`
-- db: running on port 5432 using a named volume
-@y
-Generate a Docker Compose file (`docker-compose.yaml`) with:
-- app:
-  - runs on port 3000
-  - bind mounts the existing ./app directory into /usr/src/app
-  - sets /usr/src/app as the working directory and runs `npm install && npm start`
-- db: running on port 5432 using a named volume
-@z
-
-@x
-Include:
-- Environment variables for Postgres
-- A shared bridge network
-- Healthchecks where appropriate
-- Pin the image version using the tag + index digest
-```
-@y
-Include:
-- Environment variables for Postgres
-- A shared bridge network
-- Healthchecks where appropriate
-- Pin the image version using the tag + index digest
-```
-@z
+% snip text...
 
 @x
 Claude will search images through MCP, inspect the `app` directory, and generate a Compose file that mounts and runs your local code.
 @y
 Claude will search images through MCP, inspect the `app` directory, and generate a Compose file that mounts and runs your local code.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -543,15 +356,7 @@ Tell Claude:
 Tell Claude:
 @z
 
-@x
-```console
-Save the final Docker Compose file (docker-compose.yaml) into the current project directory.
-```
-@y
-```console
-Save the final Docker Compose file (docker-compose.yaml) into the current project directory.
-```
-@z
+% snip text...
 
 @x
 You should see something like this:
@@ -559,89 +364,7 @@ You should see something like this:
 You should see something like this:
 @z
 
-@x
-```console
-services:
-  app:
-    image: node:<tag>
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    networks:
-      - app-net
-@y
-```console
-services:
-  app:
-    image: node:<tag>
-    working_dir: /usr/src/app
-    volumes:
-      - .:/usr/src/app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    networks:
-      - app-net
-@z
-
-@x
-  db:
-    image: postgres:<tag>
-    environment:
-      POSTGRES_USER: example
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: appdb
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    networks:
-      - app-net
-@y
-  db:
-    image: postgres:<tag>
-    environment:
-      POSTGRES_USER: example
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: appdb
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    networks:
-      - app-net
-@z
-
-@x
-volumes:
-  db-data:
-@y
-volumes:
-  db-data:
-@z
-
-@x
-networks:
-  app-net:
-    driver: bridge
-```
-@y
-networks:
-  app-net:
-    driver: bridge
-```
-@z
-
-@x
----
-@y
----
-@z
+% snip code...
 
 @x
 ## 9. Run the Docker Compose stack
@@ -655,15 +378,7 @@ From your project root:
 From your project root:
 @z
 
-@x
-```console
-$ docker compose up
-```
-@y
-```console
-$ docker compose up
-```
-@z
+% snip command...
 
 @x
 Docker will:
@@ -687,28 +402,12 @@ Open your browser:
 Open your browser:
 @z
 
-@x
-```console
-http://localhost:3000
-```
-![Local Host](./Images/Localhost.avif)
-@y
-```console
-http://localhost:3000
-```
-![Local Host](./Images/Localhost.avif)
-@z
+% snip command...
 
 @x
 Your Node.js app should now be running.
 @y
 Your Node.js app should now be running.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -721,12 +420,6 @@ Your Node.js app should now be running.
 By combining Claude Code with the Docker MCP Toolkit, Docker Desktop, and the Docker Hub MCP server, you can describe your stack in natural language and let MCP handle the details. This removes context switching and replaces it with a smooth, guided workflow powered by model context protocol integrations.
 @y
 By combining Claude Code with the Docker MCP Toolkit, Docker Desktop, and the Docker Hub MCP server, you can describe your stack in natural language and let MCP handle the details. This removes context switching and replaces it with a smooth, guided workflow powered by model context protocol integrations.
-@z
-
-@x
----
-@y
----
 @z
 
 @x

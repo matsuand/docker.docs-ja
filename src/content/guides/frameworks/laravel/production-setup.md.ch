@@ -2,17 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Laravel Production Setup with Docker Compose
 description: Set up a production-ready environment for Laravel using Docker Compose.
-weight: 20
----
 @y
----
 title: Laravel Production Setup with Docker Compose
 description: Set up a production-ready environment for Laravel using Docker Compose.
-weight: 20
----
 @z
 
 @x
@@ -875,7 +869,7 @@ services:
 
 @x
   postgres:
-    image: postgres:16
+    image: postgres:18
     restart: unless-stopped
     user: postgres
     ports:
@@ -885,7 +879,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USERNAME}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
-      - postgres-data-production:/var/lib/postgresql/data
+      - postgres-data-production:/var/lib/postgresql
     networks:
       - laravel-production
     # Health check for PostgreSQL
@@ -901,7 +895,7 @@ services:
       retries: 5
 @y
   postgres:
-    image: postgres:16
+    image: postgres:18
     restart: unless-stopped
     user: postgres
     ports:
@@ -911,7 +905,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USERNAME}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     volumes:
-      - postgres-data-production:/var/lib/postgresql/data
+      - postgres-data-production:/var/lib/postgresql
     networks:
       - laravel-production
     # Health check for PostgreSQL

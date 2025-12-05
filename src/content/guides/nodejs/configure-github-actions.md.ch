@@ -46,6 +46,12 @@ You must also have:
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Overview
 @y
 ## Overview
@@ -67,6 +73,12 @@ In this section, you'll set up a **CI/CD pipeline** using [GitHub Actions](https
 - Run unit and integration tests, and make sure your application meets solid code quality standards.
 - Perform security scanning and vulnerability assessment.
 - Push production-ready images to [Docker Hub](https://hub.docker.com).
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -328,6 +340,12 @@ Once completed, your code will be available on GitHub, and any GitHub Actions wo
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ### Step 2: Set up the workflow
 @y
 ### Step 2: Set up the workflow
@@ -404,7 +422,7 @@ jobs:
 @x
     services:
       postgres:
-        image: postgres:16-alpine
+        image: postgres:18-alpine
         env:
           POSTGRES_DB: todoapp_test
           POSTGRES_USER: postgres
@@ -419,7 +437,7 @@ jobs:
 @y
     services:
       postgres:
-        image: postgres:16-alpine
+        image: postgres:18-alpine
         env:
           POSTGRES_DB: todoapp_test
           POSTGRES_USER: postgres
@@ -659,6 +677,12 @@ This workflow performs the following tasks for your Node.js application:
 @y
 > [!NOTE]
 > For more information about `docker/build-push-action`, refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -819,6 +843,12 @@ Deepen your understanding of automation and best practices for containerized app
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) – Full reference for writing GitHub workflows
 - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) – Learn about GHCR features and usage
 - [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Optimize your image for performance and security
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x

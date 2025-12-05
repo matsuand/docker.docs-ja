@@ -75,65 +75,7 @@ The following is the updated `compose.yaml` file.
 The following is the updated `compose.yaml` file.
 @z
 
-@x
-```yaml {hl_lines="07-25"}
-services:
-  web:
-    build: .
-    command: bundle exec rails s -b '0.0.0.0'
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    environment:
-      - RAILS_ENV=test
-    env_file: "webapp.env"
-  db:
-    image: postgres:latest
-    secrets:
-      - db-password
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-@y
-```yaml {hl_lines="07-25"}
-services:
-  web:
-    build: .
-    command: bundle exec rails s -b '0.0.0.0'
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-    environment:
-      - RAILS_ENV=test
-    env_file: "webapp.env"
-  db:
-    image: postgres:latest
-    secrets:
-      - db-password
-    environment:
-      - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-@z
-
-@x
-volumes:
-  postgres_data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@y
-volumes:
-  postgres_data:
-secrets:
-  db-password:
-    file: db/password.txt
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
@@ -159,15 +101,7 @@ In the cloned repository's directory, create a new directory named `db` and insi
 In the cloned repository's directory, create a new directory named `db` and inside that directory create a file named `password.txt` that contains the password for the database. Using your favorite IDE or text editor, add the following contents to the `password.txt` file.
 @z
 
-@x
-```text
-mysecretpassword
-```
-@y
-```text
-mysecretpassword
-```
-@z
+% snip text...
 
 @x
 Save and close the `password.txt` file. In addition, in the file `webapp.env` you can change the password to connect to the database.
@@ -183,61 +117,7 @@ You should now have the following contents in your `docker-ruby-on-rails`
 directory.
 @z
 
-@x
-```text
-.
-├── Dockerfile
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── Rakefile
-├── app/
-├── bin/
-├── compose.yaml
-├── config/
-├── config.ru
-├── db/
-│   ├── development.sqlite3
-│   ├── migrate
-│   ├── password.txt
-│   ├── schema.rb
-│   └── seeds.rb
-├── lib/
-├── log/
-├── public/
-├── storage/
-├── test/
-├── tmp/
-└── vendor
-```
-@y
-```text
-.
-├── Dockerfile
-├── Gemfile
-├── Gemfile.lock
-├── README.md
-├── Rakefile
-├── app/
-├── bin/
-├── compose.yaml
-├── config/
-├── config.ru
-├── db/
-│   ├── development.sqlite3
-│   ├── migrate
-│   ├── password.txt
-│   ├── schema.rb
-│   └── seeds.rb
-├── lib/
-├── log/
-├── public/
-├── storage/
-├── test/
-├── tmp/
-└── vendor
-```
-@z
+% snip text...
 
 @x
 Now, run the following `docker compose up` command to start your application.
@@ -245,15 +125,7 @@ Now, run the following `docker compose up` command to start your application.
 Now, run the following `docker compose up` command to start your application.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 In Ruby on Rails, `db:migrate` is a Rake task that is used to run migrations on the database. Migrations are a way to alter the structure of your database schema over time in a consistent and easy way. 
@@ -261,15 +133,7 @@ In Ruby on Rails, `db:migrate` is a Rake task that is used to run migrations on 
 In Ruby on Rails, `db:migrate` is a Rake task that is used to run migrations on the database. Migrations are a way to alter the structure of your database schema over time in a consistent and easy way. 
 @z
 
-@x
-```console
-$ docker exec -it docker-ruby-on-rails-web-1 rake db:migrate RAILS_ENV=test
-```
-@y
-```console
-$ docker exec -it docker-ruby-on-rails-web-1 rake db:migrate RAILS_ENV=test
-```
-@z
+% snip command...
 
 @x
 You will see a similar message like this:

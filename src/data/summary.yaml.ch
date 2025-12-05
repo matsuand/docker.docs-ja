@@ -558,6 +558,14 @@ Compose sbom:
 @z
 
 @x
+Compose SDK:
+  requires: Docker Compose [5.00.0](/manuals/compose/releases/release-notes.md#5000) and later
+@y
+Compose SDK:
+  requires: Docker Compose [5.00.0](/manuals/compose/releases/release-notes.md#5000) and later
+@z
+
+@x
 Dev Environments:
   availability: Beta
 @y

@@ -59,15 +59,7 @@ As an example, imagine you create a volume named `log-data`.
 As an example, imagine you create a volume named `log-data`. 
 @z
 
-@x
-```console
-$ docker volume create log-data
-```
-@y
-```console
-$ docker volume create log-data
-```
-@z
+% snip command...
 
 @x
 When starting a container with the following command, the volume will be mounted (or attached) into the container at `/logs`:
@@ -75,15 +67,7 @@ When starting a container with the following command, the volume will be mounted
 When starting a container with the following command, the volume will be mounted (or attached) into the container at `/logs`:
 @z
 
-@x
-```console
-$ docker run -d -p 80:80 -v log-data:/logs docker/welcome-to-docker
-```
-@y
-```console
-$ docker run -d -p 80:80 -v log-data:/logs docker/welcome-to-docker
-```
-@z
+% snip command...
 
 @x
 If the volume `log-data` doesn't exist, Docker will automatically create it for you. 
@@ -136,9 +120,9 @@ Volumes have their own lifecycle beyond that of containers and can grow quite la
 @z
 
 @x
-In this guide, you’ll practice creating and using volumes to persist data created by a Postgres container. When the database runs, it stores files into the `/var/lib/postgresql/data` directory. By attaching the volume here, you will be able to restart the container multiple times while keeping the data.
+In this guide, you'll practice creating and using volumes to persist data created by a Postgres container. When the database runs, it stores files into the `/var/lib/postgresql` directory. By attaching the volume here, you will be able to restart the container multiple times while keeping the data.
 @y
-In this guide, you’ll practice creating and using volumes to persist data created by a Postgres container. When the database runs, it stores files into the `/var/lib/postgresql/data` directory. By attaching the volume here, you will be able to restart the container multiple times while keeping the data.
+In this guide, you'll practice creating and using volumes to persist data created by a Postgres container. When the database runs, it stores files into the `/var/lib/postgresql` directory. By attaching the volume here, you will be able to restart the container multiple times while keeping the data.
 @z
 
 @x
@@ -159,15 +143,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 2. Start a container using the [Postgres image](https://hub.docker.com/_/postgres) with the following command:
 @z
 
-@x
-    ```console
-    $ docker run --name=db -e POSTGRES_PASSWORD=secret -d -v postgres_data:/var/lib/postgresql/data postgres
-    ```
-@y
-    ```console
-    $ docker run --name=db -e POSTGRES_PASSWORD=secret -d -v postgres_data:/var/lib/postgresql/data postgres
-    ```
-@z
+% snip command...
 
 @x
     This will start the database in the background, configure it with a password, and attach a volume to the directory PostgreSQL will persist the database files.
@@ -181,15 +157,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 3. Connect to the database by using the following command:
 @z
 
-@x
-    ```console
-    $ docker exec -ti db psql -U postgres
-    ```
-@y
-    ```console
-    $ docker exec -ti db psql -U postgres
-    ```
-@z
+% snip command...
 
 @x
 4. In the PostgreSQL command line, run the following to create a database table and insert two records:
@@ -197,23 +165,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 4. In the PostgreSQL command line, run the following to create a database table and insert two records:
 @z
 
-@x
-    ```text
-    CREATE TABLE tasks (
-        id SERIAL PRIMARY KEY,
-        description VARCHAR(100)
-    );
-    INSERT INTO tasks (description) VALUES ('Finish work'), ('Have fun');
-    ```
-@y
-    ```text
-    CREATE TABLE tasks (
-        id SERIAL PRIMARY KEY,
-        description VARCHAR(100)
-    );
-    INSERT INTO tasks (description) VALUES ('Finish work'), ('Have fun');
-    ```
-@z
+% snip code...
 
 @x
 5. Verify the data is in the database by running the following in the PostgreSQL command line:
@@ -221,15 +173,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 5. Verify the data is in the database by running the following in the PostgreSQL command line:
 @z
 
-@x
-    ```text
-    SELECT * FROM tasks;
-    ```
-@y
-    ```text
-    SELECT * FROM tasks;
-    ```
-@z
+% snip code...
 
 @x
     You should get output that looks like the following:
@@ -237,23 +181,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
     You should get output that looks like the following:
 @z
 
-@x
-    ```text
-     id | description
-    ----+-------------
-      1 | Finish work
-      2 | Have fun
-    (2 rows)
-    ```
-@y
-    ```text
-     id | description
-    ----+-------------
-      1 | Finish work
-      2 | Have fun
-    (2 rows)
-    ```
-@z
+% snip output...
 
 @x
 6. Exit out of the PostgreSQL shell by running the following command:
@@ -261,15 +189,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 6. Exit out of the PostgreSQL shell by running the following command:
 @z
 
-@x
-    ```console
-    \q
-    ```
-@y
-    ```console
-    \q
-    ```
-@z
+% snip command...
 
 @x
 7. Stop and remove the database container. Remember that, even though the container has been deleted, the data is persisted in the `postgres_data` volume.
@@ -277,17 +197,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 7. Stop and remove the database container. Remember that, even though the container has been deleted, the data is persisted in the `postgres_data` volume.
 @z
 
-@x
-    ```console
-    $ docker stop db
-    $ docker rm db
-    ```
-@y
-    ```console
-    $ docker stop db
-    $ docker rm db
-    ```
-@z
+% snip command...
 
 @x
 8. Start a new container by running the following command, attaching the same volume with the persisted data:
@@ -295,15 +205,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 8. Start a new container by running the following command, attaching the same volume with the persisted data:
 @z
 
-@x
-    ```console
-    $ docker run --name=new-db -d -v postgres_data:/var/lib/postgresql/data postgres 
-    ```
-@y
-    ```console
-    $ docker run --name=new-db -d -v postgres_data:/var/lib/postgresql/data postgres 
-    ```
-@z
+% snip command...
 
 @x
     You might have noticed that the `POSTGRES_PASSWORD` environment variable has been omitted. That’s because that variable is only used when bootstrapping a new database.
@@ -317,15 +219,7 @@ In this guide, you’ll practice creating and using volumes to persist data crea
 9. Verify the database still has the records by running the following command:
 @z
 
-@x
-    ```console
-    $ docker exec -ti new-db psql -U postgres -c "SELECT * FROM tasks"
-    ```
-@y
-    ```console
-    $ docker exec -ti new-db psql -U postgres -c "SELECT * FROM tasks"
-    ```
-@z
+% snip command...
 
 @x
 ### View volume contents
@@ -375,15 +269,7 @@ Before removing a volume, it must not be attached to any containers. If you have
 Before removing a volume, it must not be attached to any containers. If you haven’t removed the previous container, do so with the following command (the `-f` will stop the container first and then remove it):
 @z
 
-@x
-```console
-$ docker rm -f new-db
-```
-@y
-```console
-$ docker rm -f new-db
-```
-@z
+% snip command...
 
 @x
 There are a few methods to remove volumes, including the following:
@@ -399,27 +285,15 @@ There are a few methods to remove volumes, including the following:
 - Use the `docker volume rm` command:
 @z
 
+% snip command...
+
 @x
-    ```console
-    $ docker volume rm postgres_data
-    ```
 - Use the `docker volume prune` command to remove all unused volumes:
 @y
-    ```console
-    $ docker volume rm postgres_data
-    ```
 - Use the `docker volume prune` command to remove all unused volumes:
 @z
 
-@x
-    ```console
-    $ docker volume prune
-    ```
-@y
-    ```console
-    $ docker volume prune
-    ```
-@z
+% snip command...
 
 @x
 ## Additional resources

@@ -6,6 +6,7 @@ SUBDIRS = bridge how-tos images install intro releases \
 
 bases = \
 	_index.md         \
+	compose-sdk.md    \
 	gettingstarted.md
 
 include $(top_srcdir)/build-aux/common.mk

@@ -1,30 +1,28 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 description: Visualizing your PostgreSQL databases with pgAdmin
 keywords: pgadmin, container-supported development
 title: Visualizing your PostgreSQL databases with pgAdmin
 linktitle: Visualizing your PostgreSQL databases with pgAdmin
 summary: |
   Explore how to add pgAdmin to your development stack and make it as easy as possible for your teammates to navigate through your PostgreSQL databases.
-tags: [databases]
-params:
-  time: 10 minutes
----
 @y
----
 description: Visualizing your PostgreSQL databases with pgAdmin
 keywords: pgadmin, container-supported development
 title: Visualizing your PostgreSQL databases with pgAdmin
 linktitle: Visualizing your PostgreSQL databases with pgAdmin
 summary: |
   Explore how to add pgAdmin to your development stack and make it as easy as possible for your teammates to navigate through your PostgreSQL databases.
-tags: [databases]
-params:
+@z
+
+@x
   time: 10 minutes
----
+@y
+  time: 10 分
 @z
 
 @x
@@ -71,62 +69,20 @@ In this guide you will learn how to:
 1. In your `compose.yaml` file, add the `pgadmin` service next to your existing `postgres` service:
 @z
 
-@x
-    ```yaml
-    services:
-      postgres:
-        image: postgres:17.4
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: secret
-          POSTGRES_DB: demo
-@y
-    ```yaml
-    services:
-      postgres:
-        image: postgres:17.4
-        environment:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: secret
-          POSTGRES_DB: demo
-@z
-
-@x
-      pgadmin:
-        image: dpage/pgadmin4:9.8
-        ports:
-          - 5050:80
-        environment:
+@x within code
           # Required by pgAdmin
-          PGADMIN_DEFAULT_EMAIL: demo@example.com
-          PGADMIN_DEFAULT_PASSWORD: secret
 @y
-      pgadmin:
-        image: dpage/pgadmin4:9.8
-        ports:
-          - 5050:80
-        environment:
           # Required by pgAdmin
-          PGADMIN_DEFAULT_EMAIL: demo@example.com
-          PGADMIN_DEFAULT_PASSWORD: secret
 @z
-
 @x
           # Don't require the user to login
-          PGADMIN_CONFIG_SERVER_MODE: 'False'
 @y
           # Don't require the user to login
-          PGADMIN_CONFIG_SERVER_MODE: 'False'
 @z
-
 @x
           # Don't require a "master" password after logging in
-          PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
-    ```
 @y
           # Don't require a "master" password after logging in
-          PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: 'False'
-    ```
 @z
 
 @x
@@ -135,15 +91,7 @@ In this guide you will learn how to:
 2. Start the Compose stack with the following command:
 @z
 
-@x
-    ```console
-    $ docker compose up
-    ```
-@y
-    ```console
-    $ docker compose up
-    ```
-@z
+% snip command...
 
 @x
     After the image is downloaded the container starts, you will see output that looks similar to the following indicating pgAdmin is ready:
@@ -151,21 +99,7 @@ In this guide you will learn how to:
     After the image is downloaded the container starts, you will see output that looks similar to the following indicating pgAdmin is ready:
 @z
 
-@x
-    ```console
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Starting gunicorn 23.0.0
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Listening at: http://[::]:80 (1)
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Using worker: gthread
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [119] [INFO] Booting worker with pid: 119
-    ```
-@y
-    ```console
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Starting gunicorn 23.0.0
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Listening at: http://[::]:80 (1)
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [1] [INFO] Using worker: gthread
-    pgadmin-1   | [2025-09-22 15:52:47 +0000] [119] [INFO] Booting worker with pid: 119
-    ```
-@z
+% snip output...
 
 @x
 3. Open pgAdmin by going to http://localhost:5050.
@@ -263,45 +197,7 @@ Fortunately, there is an ability to auto-connect to the database.
     Add the following to your `compose.yaml` file to define a config file for the `servers.json` file:
 @z
 
-@x
-    ```yaml
-    configs:
-      pgadmin-servers:
-        content: |
-          {
-            "Servers": {
-              "1": {
-                "Name": "Local Postgres",
-                "Group": "Servers",
-                "Host": "postgres",
-                "Port": 5432,
-                "MaintenanceDB": "postgres",
-                "Username": "postgres",
-                "PassFile": "/config/pgpass"
-              }
-            }
-          }
-    ```
-@y
-    ```yaml
-    configs:
-      pgadmin-servers:
-        content: |
-          {
-            "Servers": {
-              "1": {
-                "Name": "Local Postgres",
-                "Group": "Servers",
-                "Host": "postgres",
-                "Port": 5432,
-                "MaintenanceDB": "postgres",
-                "Username": "postgres",
-                "PassFile": "/config/pgpass"
-              }
-            }
-          }
-    ```
-@z
+% snip code...
 
 @x
 2. The `servers.json` file defines a `PassFile` field, which is a reference to a [postgreSQL password files](https://www.postgresql.org/docs/current/libpq-pgpass.html). These are often referred to as a pgpass file.
@@ -315,21 +211,7 @@ Fortunately, there is an ability to auto-connect to the database.
     Add the following config to your `compose.yaml` file to define a pgpass file:
 @z
 
-@x
-    ```yaml
-    config:
-      pgadmin-pgpass:
-        content: |
-          postgres:5432:*:postgres:secret
-    ```
-@y
-    ```yaml
-    config:
-      pgadmin-pgpass:
-        content: |
-          postgres:5432:*:postgres:secret
-    ```
-@z
+% snip code...
 
 @x
     This will indicate any connection requests to `postgres:5432` using the username `postgres` should provide a password of `secret`.
@@ -343,37 +225,7 @@ Fortunately, there is an ability to auto-connect to the database.
 3. In your `compose.yaml`, update the `pgadmin` service to inject the config files:
 @z
 
-@x
-    ```yaml
-    services:
-      pgadmin:
-        ...
-        configs:
-          - source: pgadmin-pgpass
-            target: /config/pgpass
-            uid: "5050"
-            gid: "5050"
-            mode: 0400
-          - source: pgadmin-servers
-            target: /pgadmin4/servers.json
-            mode: 0444
-    ```
-@y
-    ```yaml
-    services:
-      pgadmin:
-        ...
-        configs:
-          - source: pgadmin-pgpass
-            target: /config/pgpass
-            uid: "5050"
-            gid: "5050"
-            mode: 0400
-          - source: pgadmin-servers
-            target: /pgadmin4/servers.json
-            mode: 0444
-    ```
-@z
+% snip code...
 
 @x
 4. Update the application stack by running `docker compose up` again:
@@ -381,15 +233,7 @@ Fortunately, there is an ability to auto-connect to the database.
 4. Update the application stack by running `docker compose up` again:
 @z
 
-@x
-    ```console
-    $ docker compose up
-    ```
-@y
-    ```console
-    $ docker compose up
-    ```
-@z
+% snip command...
 
 @x
 5. Once the application is restarted, open your browser to http://localhost:5050. You should be able to access the database without any logging in or configuration.
