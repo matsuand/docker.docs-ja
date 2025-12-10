@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/reference/cli/docker/model
+subdir = src/data/secrets-engine
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -120,7 +120,7 @@ am__can_run_installinfo = \
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/copy.mk
+	$(top_srcdir)/build-aux/main.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -237,34 +237,22 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-copyfiles = \
-	_index.md           \
-	bench.md            \
-	inspect.md          \
-	install-runner.md   \
-	list.md             \
-	logs.md             \
-	package.md          \
-	pull.md             \
-	purge.md            \
-	push.md             \
-	reinstall-runner.md \
-	restart-runner.md   \
-	rm.md               \
-	run.md              \
-	start-runner.md     \
-	status.md           \
-	stop-runner.md      \
-	tag.md              \
-	uninstall-runner.md \
-	version.md
+bases = \
+	docker_pass.yaml     \
+	docker_pass_get.yaml \
+	docker_pass_ls.yaml  \
+	docker_pass_rm.yaml  \
+	docker_pass_set.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
+changes = $(bases:=.ch) # change files
+transes = $(bases)      # translated files
+EXTRA_DIST = $(changes)
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -273,9 +261,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/reference/cli/docker/model/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/data/secrets-engine/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/reference/cli/docker/model/Makefile
+	  $(AUTOMAKE) --foreign src/data/secrets-engine/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -284,7 +272,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -457,11 +445,22 @@ ctie:
 	fi
 
 .PHONY: all
-all: $(copyfiles)
+all: $(transes)
 
--include copyfiles.sub
-copyfiles.sub: $(top_srcdir)/bin/makecp.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makecp.sh copyfiles . $(copyfiles)
+submakename ?= Makefile.sub
+
+-include $(submakename)
+$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
+	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
+
+@MAINT@.PHONY: chbuild
+@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
+@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
+@MAINT@	@if test ! -f $@; then \
+@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
+@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
+@MAINT@	    -e "s|\.ch$$||"` $@; \
+@MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

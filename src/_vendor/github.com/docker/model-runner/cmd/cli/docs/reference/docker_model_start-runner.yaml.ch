@@ -2,17 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model start-runner
+short: Start Docker Model Runner (Docker Engine only)
+long: |-
+    This command starts the Docker Model Runner without pulling container images. Use this command to start the runner when you already have the required images locally.
+
+    For the first-time setup or to ensure you have the latest images, use `docker model install-runner` instead.
 @y
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model start-runner
+short: Start Docker Model Runner (Docker Engine only)
+long: |-
+    This command starts the Docker Model Runner without pulling container images. Use this command to start the runner when you already have the required images locally.
+
+    For the first-time setup or to ensure you have the latest images, use `docker model install-runner` instead.
+@z
+
+@x
+usage: docker model start-runner
+@y
+usage: docker model start-runner
 @z
 
 % options:
@@ -39,12 +47,6 @@ usage: docker model install-runner
       description: Specify GPU support (none|auto|cuda|rocm|musa|cann)
 @y
       description: Specify GPU support (none|auto|cuda|rocm|musa|cann)
-@z
-
-@x host
-      description: Host address to bind Docker Model Runner
-@y
-      description: Host address to bind Docker Model Runner
 @z
 
 @x port

@@ -95,6 +95,7 @@ pass to `--driver-opt`:
 | `cgroup-parent`  | String  | `/docker/buildx` | Sets the cgroup parent of the container if Docker is using the "cgroupfs" driver.                                      |
 | `restart-policy` | String  | `unless-stopped` | Sets the container's [restart policy](/manuals/engine/containers/start-containers-automatically.md#use-a-restart-policy).      |
 | `env.<key>`      | String  |                  | Sets the environment variable `key` to the specified `value` in the container.                                         |
+| `provenance-add-gha`   | Boolean |    `true`       | Automatically writes GitHub Actions context into the builder for provenance.                                                   |
 @y
 | Parameter        | Type    | Default          | Description                                                                                                            |
 | ---------------- | ------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -111,6 +112,7 @@ pass to `--driver-opt`:
 | `cgroup-parent`  | String  | `/docker/buildx` | Sets the cgroup parent of the container if Docker is using the "cgroupfs" driver.                                      |
 | `restart-policy` | String  | `unless-stopped` | Sets the container's [restart policy](manuals/engine/containers/start-containers-automatically.md#use-a-restart-policy).      |
 | `env.<key>`      | String  |                  | Sets the environment variable `key` to the specified `value` in the container.                                         |
+| `provenance-add-gha`   | Boolean |    `true`       | Automatically writes GitHub Actions context into the builder for provenance.                                                   |
 @z
 
 @x

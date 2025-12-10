@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/reference/cli/docker/model
+subdir = src/content/reference/cli/docker/pass
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -238,26 +238,11 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	_index.md           \
-	bench.md            \
-	inspect.md          \
-	install-runner.md   \
-	list.md             \
-	logs.md             \
-	package.md          \
-	pull.md             \
-	purge.md            \
-	push.md             \
-	reinstall-runner.md \
-	restart-runner.md   \
-	rm.md               \
-	run.md              \
-	start-runner.md     \
-	status.md           \
-	stop-runner.md      \
-	tag.md              \
-	uninstall-runner.md \
-	version.md
+	_index.md \
+	get.md    \
+	ls.md     \
+	rm.md     \
+	set.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -273,9 +258,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/reference/cli/docker/model/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/reference/cli/docker/pass/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/reference/cli/docker/model/Makefile
+	  $(AUTOMAKE) --foreign src/content/reference/cli/docker/pass/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

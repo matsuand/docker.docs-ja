@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Uninstall Docker Model Runner
+Uninstall Docker Model Runner (Docker Engine only)
 @y
 <!---MARKER_GEN_START-->
-Uninstall Docker Model Runner
+Uninstall Docker Model Runner (Docker Engine only)
 @z
 
 @x

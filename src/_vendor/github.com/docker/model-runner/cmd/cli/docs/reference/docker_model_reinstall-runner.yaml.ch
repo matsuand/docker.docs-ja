@@ -2,17 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
+command: docker model reinstall-runner
+short: Reinstall Docker Model Runner (Docker Engine only)
 long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+    This command removes the existing Docker Model Runner container and reinstalls it with the specified configuration. Models and images are preserved during reinstallation.
+usage: docker model reinstall-runner
 @y
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
+command: docker model reinstall-runner
+short: Reinstall Docker Model Runner (Docker Engine only)
 long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+    This command removes the existing Docker Model Runner container and reinstalls it with the specified configuration. Models and images are preserved during reinstallation.
+usage: docker model reinstall-runner
 @z
 
 % options:

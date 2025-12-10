@@ -198,23 +198,13 @@ To use debug mode:
 @z
 
 @x
-1. Sign in to Docker Desktop with an account that has a Pro, Team, or Business
-   subscription.
-2. After you're signed in, either:
+- Hover over your running container and under the **Actions** column, select the **Show container actions**
+menu. From the drop-down menu, select **Use Docker Debug**.
+- Or, select the container and then select the **Debug** tab.
 @y
-1. Sign in to Docker Desktop with an account that has a Pro, Team, or Business
-   subscription.
-2. After you're signed in, either:
-@z
-
-@x
-   - Hover over your running container and under the **Actions** column, select the **Show container actions**
-     menu. From the drop-down menu, select **Use Docker Debug**.
-   - Or, select the container and then select the **Debug** tab. 
-@y
-   - Hover over your running container and under the **Actions** column, select the **Show container actions**
-     menu. From the drop-down menu, select **Use Docker Debug**.
-   - Or, select the container and then select the **Debug** tab. 
+- Hover over your running container and under the **Actions** column, select the **Show container actions**
+menu. From the drop-down menu, select **Use Docker Debug**.
+- Or, select the container and then select the **Debug** tab.
 @z
 
 @x

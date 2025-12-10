@@ -155,13 +155,6 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 #### リポジトリの設定 {#set-up-the-repository}
 @z
 
-@x
-Install the `dnf-plugins-core` package (which provides the commands to manage
-your DNF repositories) and set up the repository.
-@y
-`dnf-plugins-core` パッケージ (DNF リポジトリ管理を行うコマンドを提供) をインストールし、リポジトリ設定を行います。
-@z
-
 % snip command...
 
 @x

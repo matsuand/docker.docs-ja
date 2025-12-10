@@ -24,14 +24,16 @@ Run a model and interact with it using a submitted prompt or chat mode
 @x
 | Name                            | Type     | Default | Description                                                                       |
 |:--------------------------------|:---------|:--------|:----------------------------------------------------------------------------------|
-| `--color`                       | `string` | `auto`  | Use colored output (auto\|yes\|no)                                                |
+| `--color`                       | `string` | `no`    | Use colored output (auto\|yes\|no)                                                |
 | `--debug`                       | `bool`   |         | Enable debug logging                                                              |
+| `-d`, `--detach`                | `bool`   |         | Load the model in the background without interaction                              |
 | `--ignore-runtime-memory-check` | `bool`   |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
 @y
 | Name                            | Type     | Default | Description                                                                       |
 |:--------------------------------|:---------|:--------|:----------------------------------------------------------------------------------|
-| `--color`                       | `string` | `auto`  | Use colored output (auto\|yes\|no)                                                |
+| `--color`                       | `string` | `no`    | Use colored output (auto\|yes\|no)                                                |
 | `--debug`                       | `bool`   |         | Enable debug logging                                                              |
+| `-d`, `--detach`                | `bool`   |         | Load the model in the background without interaction                              |
 | `--ignore-runtime-memory-check` | `bool`   |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
 @z
 
@@ -127,18 +129,36 @@ Output:
 
 @x
 ```console
-Interactive chat mode started. Type '/bye' to exit.
 > Hi
 Hi there! It's SmolLM, AI assistant. How can I help you today?
 > /bye
-Chat session ended.
 ```
 @y
 ```console
-Interactive chat mode started. Type '/bye' to exit.
 > Hi
 Hi there! It's SmolLM, AI assistant. How can I help you today?
 > /bye
-Chat session ended.
 ```
+@z
+
+@x
+### Pre-load a model
+@y
+### Pre-load a model
+@z
+
+@x
+```console
+docker model run --detach ai/smollm2
+```
+@y
+```console
+docker model run --detach ai/smollm2
+```
+@z
+
+@x
+This loads the model into memory without interaction, ensuring maximum performance for subsequent requests.
+@y
+This loads the model into memory without interaction, ensuring maximum performance for subsequent requests.
 @z

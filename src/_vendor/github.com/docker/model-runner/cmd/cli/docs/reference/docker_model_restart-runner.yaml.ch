@@ -2,26 +2,28 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model restart-runner
+short: Restart Docker Model Runner (Docker Engine only)
+long: |-
+    This command restarts the Docker Model Runner without pulling container images. Use this command to restart the runner when you already have the required images locally.
+
+    For the first-time setup or to ensure you have the latest images, use `docker model install-runner` instead.
 @y
-command: docker model install-runner
-short: Install Docker Model Runner (Docker Engine only)
-long: |
-    This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
-usage: docker model install-runner
+command: docker model restart-runner
+short: Restart Docker Model Runner (Docker Engine only)
+long: |-
+    This command restarts the Docker Model Runner without pulling container images. Use this command to restart the runner when you already have the required images locally.
+
+    For the first-time setup or to ensure you have the latest images, use `docker model install-runner` instead.
+@z
+
+@x
+usage: docker model restart-runner
+@y
+usage: docker model restart-runner
 @z
 
 % options:
-
-@x backend
-      description: 'Specify backend (llama.cpp|vllm). Default: llama.cpp'
-@y
-      description: 'Specify backend (llama.cpp|vllm). Default: llama.cpp'
-@z
 
 @x debug
       description: Enable debug logging

@@ -82,23 +82,41 @@ This runs an n-body simulation benchmark on the GPU. The output will be similar 
 % snip output...
 
 @x
-## Run a real-world model: Llama2 with Ollama
+## Run a real-world model: SmolLM2 with Docker Model Runner
 @y
-## Run a real-world model: Llama2 with Ollama
+## Run a real-world model: SmolLM2 with Docker Model Runner
 @z
 
 @x
-Use the [official Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 LLM with GPU acceleration:
+> [!NOTE]
+>
+> Docker Model Runner with vLLM for Windows with WSL2 is available starting with Docker Desktop 4.54.
 @y
-Use the [official Ollama image](https://hub.docker.com/r/ollama/ollama) to run the Llama2 LLM with GPU acceleration:
+> [!NOTE]
+>
+> Docker Model Runner with vLLM for Windows with WSL2 is available starting with Docker Desktop 4.54.
+@z
+
+@x
+Use Docker Model Runner to run the SmolLM2 LLM with vLLM and GPU acceleration:
+@y
+Use Docker Model Runner to run the SmolLM2 LLM with vLLM and GPU acceleration:
 @z
 
 % snip command...
 
 @x
-Then start the model:
+Check it's correctly installed:
 @y
-Then start the model:
+Check it's correctly installed:
+@z
+
+% snip command...
+
+@x
+Run the model:
+@y
+Run the model:
 @z
 
 % snip command...

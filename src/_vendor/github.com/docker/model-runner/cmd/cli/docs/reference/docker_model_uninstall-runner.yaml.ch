@@ -3,70 +3,28 @@
 
 @x
 command: docker model uninstall-runner
-short: Uninstall Docker Model Runner
-long: Uninstall Docker Model Runner
+short: Uninstall Docker Model Runner (Docker Engine only)
+long: Uninstall Docker Model Runner (Docker Engine only)
 usage: docker model uninstall-runner
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: images
-      value_type: bool
-      default_value: "false"
-      description: Remove docker/model-runner images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: models
-      value_type: bool
-      default_value: "false"
-      description: Remove model storage volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker model uninstall-runner
-short: Uninstall Docker Model Runner
-long: Uninstall Docker Model Runner
+short: Uninstall Docker Model Runner (Docker Engine only)
+long: Uninstall Docker Model Runner (Docker Engine only)
 usage: docker model uninstall-runner
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: images
-      value_type: bool
-      default_value: "false"
-      description: Remove docker/model-runner images
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: models
-      value_type: bool
-      default_value: "false"
-      description: Remove model storage volume
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x images
+      description: Remove docker/model-runner images
+@y
+      description: Remove docker/model-runner images
+@z
+
+@x models
+      description: Remove model storage volume
+@y
+      description: Remove model storage volume
+@z
+
+% snip directives...

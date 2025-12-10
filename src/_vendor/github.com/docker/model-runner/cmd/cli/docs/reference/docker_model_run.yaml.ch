@@ -33,12 +33,6 @@ usage: docker model run MODEL [PROMPT]
 
 % options:
 
-@x backend
-      description: Specify the backend to use (llama.cpp, openai)
-@y
-      description: Specify the backend to use (llama.cpp, openai)
-@z
-
 @x color
       description: Use colored output (auto|yes|no)
 @y
@@ -49,6 +43,12 @@ usage: docker model run MODEL [PROMPT]
       description: Enable debug logging
 @y
       description: Enable debug logging
+@z
+
+@x detach
+      description: Load the model in the background without interaction
+@y
+      description: Load the model in the background without interaction
 @z
 
 @x ignore-runtime-memory-check

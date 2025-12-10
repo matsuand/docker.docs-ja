@@ -2,8 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 SUBDIRS = builder buildx checkpoint compose config container context \
-	desktop image manifest mcp model network node offload plugin \
-	sandbox scout secret service stack swarm system trust volume
+	desktop image manifest mcp model network node offload pass   \
+	plugin sandbox scout secret service stack swarm system trust \
+	volume
 
 bases = \
 	README.md \

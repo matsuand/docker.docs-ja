@@ -6,69 +6,25 @@ command: docker model logs
 short: Fetch the Docker Model Runner logs
 long: Fetch the Docker Model Runner logs
 usage: docker model logs [OPTIONS]
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: View logs with real-time streaming
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-engines
-      value_type: bool
-      default_value: "false"
-      description: Exclude inference engine logs from the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker model logs
 short: Fetch the Docker Model Runner logs
 long: Fetch the Docker Model Runner logs
 usage: docker model logs [OPTIONS]
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: follow
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: View logs with real-time streaming
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: no-engines
-      value_type: bool
-      default_value: "false"
-      description: Exclude inference engine logs from the output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% options:
+
+@x follow
+      description: View logs with real-time streaming
+@y
+      description: View logs with real-time streaming
+@z
+
+@x no-engines
+      description: Exclude inference engine logs from the output
+@y
+      description: Exclude inference engine logs from the output
+@z
+
+% snip directives...

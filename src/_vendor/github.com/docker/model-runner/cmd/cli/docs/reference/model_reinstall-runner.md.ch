@@ -2,17 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-# docker model install-runner
+# docker model reinstall-runner
 @y
-# docker model install-runner
+# docker model reinstall-runner
 @z
 
 @x
 <!---MARKER_GEN_START-->
-Install Docker Model Runner (Docker Engine only)
+Reinstall Docker Model Runner (Docker Engine only)
 @y
 <!---MARKER_GEN_START-->
-Install Docker Model Runner (Docker Engine only)
+Reinstall Docker Model Runner (Docker Engine only)
 @z
 
 @x
@@ -54,7 +54,7 @@ Install Docker Model Runner (Docker Engine only)
 @z
 
 @x
- This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
+This command removes the existing Docker Model Runner container and reinstalls it with the specified configuration. Models and images are preserved during reinstallation.
 @y
- This command runs implicitly when a docker model command is executed. You can run this command explicitly to add a new configuration.
+This command removes the existing Docker Model Runner container and reinstalls it with the specified configuration. Models and images are preserved during reinstallation.
 @z

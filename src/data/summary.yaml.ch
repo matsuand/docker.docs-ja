@@ -716,6 +716,16 @@ Docker MCP Toolkit:
 @z
 
 @x
+Docker Pass:
+  requires: Docker Desktop 4.54 and later
+  availability: Beta
+@y
+Docker Pass:
+  requires: Docker Desktop 4.54 and later
+  availability: Beta
+@z
+
+@x
 Docker Projects:
   availability: Beta
 @y
