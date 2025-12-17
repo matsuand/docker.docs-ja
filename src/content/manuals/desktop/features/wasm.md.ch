@@ -28,6 +28,16 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
+> [!IMPORTANT]
+>
+> Wasm workloads will be deprecated and removed in a future Docker Desktop release. It is no longer actively maintained.
+@y
+> [!IMPORTANT]
+>
+> Wasm workloads will be deprecated and removed in a future Docker Desktop release. It is no longer actively maintained.
+@z
+
+@x
 WebAssembly (Wasm) is a fast, light alternative to Linux and
 Windows containers.  With Docker Desktop, you can now run Wasm workloads side by side with traditional containers.
 @y

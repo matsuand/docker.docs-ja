@@ -4,7 +4,6 @@
 SUBDIRS = admonitions components sidebar utils
 
 bases = \
-	contact-support-button.html \
 	footer.html                 \
 	github-links.html           \
 	guides-stepper.html         \

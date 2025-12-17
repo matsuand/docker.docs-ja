@@ -1,15 +1,24 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
-% snip ‘Î‰ž
+% .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
 
 @x
 title: cagent
 description: cagent lets you build, orchestrate, and share AI agents that work together as a team.
+weight: 60
 @y
 title: cagent
 description: cagent lets you build, orchestrate, and share AI agents that work together as a team.
+weight: 60
+@z
+
+@x
+      text: Experimental
+keywords: [ai, agent, cagent]
+@y
+      text: è©¦é¨“çš„
+keywords: [ai, agent, cagent]
 @z
 
 @x
@@ -19,343 +28,365 @@ description: cagent lets you build, orchestrate, and share AI agents that work t
 @z
 
 @x
-[cagent](https://github.com/docker/cagent) lets you build, orchestrate, and share
-AI agents. You can use it to define AI agents that work as a team.
+[cagent](https://github.com/docker/cagent) is an open source tool for building
+teams of specialized AI agents. Instead of prompting one generalist model, you
+define agents with specific roles and instructions that collaborate to solve
+problems. Run these agent teams from your terminal using any LLM provider.
 @y
-[cagent](https://github.com/docker/cagent) lets you build, orchestrate, and share
-AI agents. You can use it to define AI agents that work as a team.
+[cagent](https://github.com/docker/cagent) is an open source tool for building
+teams of specialized AI agents. Instead of prompting one generalist model, you
+define agents with specific roles and instructions that collaborate to solve
+problems. Run these agent teams from your terminal using any LLM provider.
 @z
 
 @x
-cagent relies on the concept of a _root agent_ that acts as a team lead and
-delegates tasks to the sub-agents you define.
-Each agent:
-- uses the model of your choice, with the parameters of your choice.
-- has access to the [built-in tools](#built-in-tools) and MCP servers
-  configured in the [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
-- works in its own context. They do not share knowledge.
+## Why agent teams
 @y
-cagent relies on the concept of a _root agent_ that acts as a team lead and
-delegates tasks to the sub-agents you define.
-Each agent:
-- uses the model of your choice, with the parameters of your choice.
-- has access to the [built-in tools](#built-in-tools) and MCP servers
-  configured in the [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md).
-- works in its own context. They do not share knowledge.
+## Why agent teams
 @z
 
 @x
-The root agent is your main contact point. Each agent has its own context,
-they don't share knowledge.
+One agent handling complex work means constant context-switching. Split the work
+across focused agents instead - each handles what it's best at. cagent manages
+the coordination.
 @y
-The root agent is your main contact point. Each agent has its own context,
-they don't share knowledge.
+One agent handling complex work means constant context-switching. Split the work
+across focused agents instead - each handles what it's best at. cagent manages
+the coordination.
 @z
 
 @x
-## Key features
+Here's a two-agent team that debugs problems:
 @y
-## Key features
+Here's a two-agent team that debugs problems:
 @z
 
 @x
-- ï¸Multi-tenant architecture with client isolation and session management.
-- Rich tool ecosystem via Model Context Protocol (MCP) integration.
-- Hierarchical agent system with intelligent task delegation.
-- Multiple interfaces including CLI, TUI, API server, and MCP server.
-- Agent distribution via Docker registry integration.
-- Security-first design with proper client scoping and resource isolation.
-- Event-driven streaming for real-time interactions.
-- Multi-model support (OpenAI, Anthropic, Gemini, DMR, Docker AI Gateway).
+```yaml
+agents:
+  root:
+    model: openai/gpt-5-mini # Change to the model that you want to use
+    description: Bug investigator
+    instruction: |
+      Analyze error messages, stack traces, and code to find bug root causes.
+      Explain what's wrong and why it's happening.
+      Delegate fix implementation to the fixer agent.
+    sub_agents: [fixer]
+    toolsets:
+      - type: filesystem
+      - type: mcp
+        ref: docker:duckduckgo
 @y
-- ï¸Multi-tenant architecture with client isolation and session management.
-- Rich tool ecosystem via Model Context Protocol (MCP) integration.
-- Hierarchical agent system with intelligent task delegation.
-- Multiple interfaces including CLI, TUI, API server, and MCP server.
-- Agent distribution via Docker registry integration.
-- Security-first design with proper client scoping and resource isolation.
-- Event-driven streaming for real-time interactions.
-- Multi-model support (OpenAI, Anthropic, Gemini, DMR, Docker AI Gateway).
+```yaml
+agents:
+  root:
+    model: openai/gpt-5-mini # Change to the model that you want to use
+    description: Bug investigator
+    instruction: |
+      Analyze error messages, stack traces, and code to find bug root causes.
+      Explain what's wrong and why it's happening.
+      Delegate fix implementation to the fixer agent.
+    sub_agents: [fixer]
+    toolsets:
+      - type: filesystem
+      - type: mcp
+        ref: docker:duckduckgo
 @z
 
 @x
-## Get started with cagent
+  fixer:
+    model: anthropic/claude-sonnet-4-5 # Change to the model that you want to use
+    description: Fix implementer
+    instruction: |
+      Write fixes for bugs diagnosed by the investigator.
+      Make minimal, targeted changes and add tests to prevent regression.
+    toolsets:
+      - type: filesystem
+      - type: shell
+```
 @y
-## Get started with cagent
+  fixer:
+    model: anthropic/claude-sonnet-4-5 # Change to the model that you want to use
+    description: Fix implementer
+    instruction: |
+      Write fixes for bugs diagnosed by the investigator.
+      Make minimal, targeted changes and add tests to prevent regression.
+    toolsets:
+      - type: filesystem
+      - type: shell
+```
 @z
 
 @x
-1. The easiest way to get cagent is to [install Docker Desktop version 4.49 or later](/manuals/desktop/release-notes.md) for your operating system.
+The root agent investigates and explains the problem. When it understands the
+issue, it hands off to `fixer` for implementation. Each agent stays focused on
+its specialty.
 @y
-1. The easiest way to get cagent is to [install Docker Desktop version 4.49 or later](manuals/desktop/release-notes.md) for your operating system.
+The root agent investigates and explains the problem. When it understands the
+issue, it hands off to `fixer` for implementation. Each agent stays focused on
+its specialty.
 @z
 
 @x
-   > [!NOTE]
-   > You can also build cagent from the source. For more information, see the [cagent GitHub repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
+## Installation
 @y
-   > [!NOTE]
-   > You can also build cagent from the source. For more information, see the [cagent GitHub repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source).
+## Installation
 @z
 
 @x
-1. Set the following environment variables:
+cagent is included in Docker Desktop 4.49 and later.
 @y
-1. Set the following environment variables:
-@z
-
-@x within code
-   export OPENAI_API_KEY=<your_api_key_here>    # For OpenAI models
-   export ANTHROPIC_API_KEY=<your_api_key_here> # For Anthropic models
-   export GOOGLE_API_KEY=<your_api_key_here>    # For Gemini models
-@y
-   export OPENAI_API_KEY=<your_api_key_here>    # For OpenAI models
-   export ANTHROPIC_API_KEY=<your_api_key_here> # For Anthropic models
-   export GOOGLE_API_KEY=<your_api_key_here>    # For Gemini models
+cagent is included in Docker Desktop 4.49 and later.
 @z
 
 @x
-1. Create an agent by saving this sample as `assistant.yaml`:
+For Docker Engine users or custom installations:
 @y
-1. Create an agent by saving this sample as `assistant.yaml`:
-@z
-
-% snip code...
-
-@x
-1. Start your prompt with your agent:
-@y
-1. Start your prompt with your agent:
-@z
-
-% snip command...
-
-@x
-## Create an agentic team
-@y
-## Create an agentic team
+For Docker Engine users or custom installations:
 @z
 
 @x
-You can use AI prompting to generate a team of agents with the `cagent new`
-command:
+- **Homebrew**: `brew install cagent`
+- **Winget**: `winget install Docker.Cagent`
+- **Pre-built binaries**: [GitHub
+  releases](https://github.com/docker/cagent/releases)
+- **From source**: See the [cagent
+  repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source)
 @y
-You can use AI prompting to generate a team of agents with the `cagent new`
-command:
-@z
-
-% snip command...
-
-@x
-Alternatively, you can write your configuration file manually. For example:
-@y
-Alternatively, you can write your configuration file manually. For example:
-@z
-
-% snip code...
-
-@x
-[See the reference documentation](https://github.com/docker/cagent?tab=readme-ov-file#-configuration-reference).
-@y
-[See the reference documentation](https://github.com/docker/cagent?tab=readme-ov-file#-configuration-reference).
+- **Homebrew**: `brew install cagent`
+- **Winget**: `winget install Docker.Cagent`
+- **Pre-built binaries**: [GitHub
+  releases](https://github.com/docker/cagent/releases)
+- **From source**: See the [cagent
+  repository](https://github.com/docker/cagent?tab=readme-ov-file#build-from-source)
 @z
 
 @x
-## Built-in tools
+## Get started
 @y
-## Built-in tools
+## Get started
 @z
 
 @x
-cagent includes a set of built-in tools that enhance your agents' capabilities.
-You don't need to configure any external MCP tools to use them.
+Try the bug analyzer team:
 @y
-cagent includes a set of built-in tools that enhance your agents' capabilities.
-You don't need to configure any external MCP tools to use them.
-@z
-
-@x within code
-    # ... other config
-@y
-    # ... other config
+Try the bug analyzer team:
 @z
 
 @x
-### Think tool
+1. Set your API key for the model provider you want to use:
 @y
-### Think tool
+1. Set your API key for the model provider you want to use:
 @z
 
 @x
-The think tool allows agents to reason through problems step by step:
+   ```console
+   $ export ANTHROPIC_API_KEY=<your_key>  # For Claude models
+   $ export OPENAI_API_KEY=<your_key>     # For OpenAI models
+   $ export GOOGLE_API_KEY=<your_key>     # For Gemini models
+   ```
 @y
-The think tool allows agents to reason through problems step by step:
-@z
-
-@x within code
-    # ... other config
-@y
-    # ... other config
-@z
-
-@x
-### Todo tool
-@y
-### Todo tool
+   ```console
+   $ export ANTHROPIC_API_KEY=<your_key>  # For Claude models
+   $ export OPENAI_API_KEY=<your_key>     # For OpenAI models
+   $ export GOOGLE_API_KEY=<your_key>     # For Gemini models
+   ```
 @z
 
 @x
-The todo tool helps agents manage task lists:
+2. Save the [example configuration](#why-agent-teams) as `debugger.yaml`.
 @y
-The todo tool helps agents manage task lists:
-@z
-
-@x within code
-    # ... other config
-@y
-    # ... other config
+2. Save the [example configuration](#why-agent-teams) as `debugger.yaml`.
 @z
 
 @x
-### Memory tool
+3. Run your agent team:
 @y
-### Memory tool
+3. Run your agent team:
 @z
 
 @x
-The memory tool provides persistent storage:
+   ```console
+   $ cagent run debugger.yaml
+   ```
 @y
-The memory tool provides persistent storage:
-@z
-
-@x within code
-    # ... other config
-@y
-    # ... other config
-@z
-
-@x
-### Task transfer tool
-@y
-### Task transfer tool
+   ```console
+   $ cagent run debugger.yaml
+   ```
 @z
 
 @x
-The task transfer tool is an internal tool that allows an agent to delegate a task
-to sub-agents. To prevent an agent from delegating work, make sure it doesn't have
-sub-agents defined in its configuration.
+You'll see a prompt where you can describe bugs or paste error messages. The
+investigator analyzes the problem, then hands off to the fixer for
+implementation.
 @y
-The task transfer tool is an internal tool that allows an agent to delegate a task
-to sub-agents. To prevent an agent from delegating work, make sure it doesn't have
-sub-agents defined in its configuration.
+You'll see a prompt where you can describe bugs or paste error messages. The
+investigator analyzes the problem, then hands off to the fixer for
+implementation.
 @z
 
 @x
-### Using tools via the Docker MCP Gateway
+## How it works
 @y
-### Using tools via the Docker MCP Gateway
+## How it works
 @z
 
 @x
-If you use the [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
-you can configure your agent to interact with the
-gateway and use the MCP servers configured in it. See [docker mcp
-gateway run](/reference/cli/docker/mcp/gateway/gateway_run.md).
+You interact with the _root agent_, which can delegate work to sub-agents you
+define. Each agent:
 @y
-If you use the [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
-you can configure your agent to interact with the
-gateway and use the MCP servers configured in it. See [docker mcp
-gateway run](reference/cli/docker/mcp/gateway/gateway_run.md).
+You interact with the _root agent_, which can delegate work to sub-agents you
+define. Each agent:
 @z
 
 @x
-For example, to enable an agent to use Duckduckgo via the MCP Gateway:
+- Uses its own model and parameters
+- Has its own context (agents don't share knowledge)
+- Can access built-in tools like todo lists, memory, and task delegation
+- Can use external tools via [MCP
+  servers](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
-For example, to enable an agent to use Duckduckgo via the MCP Gateway:
-@z
-
-% snip code...
-
-@x
-## CLI interactive commands
-@y
-## CLI interactive commands
-@z
-
-@x
-You can use the following CLI commands, during
-CLI sessions with your agents:
-@y
-You can use the following CLI commands, during
-CLI sessions with your agents:
+- Uses its own model and parameters
+- Has its own context (agents don't share knowledge)
+- Can access built-in tools like todo lists, memory, and task delegation
+- Can use external tools via [MCP
+  servers](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z
 
 @x
-| Command  | Description                              |
-|----------|------------------------------------------|
-| /exit    | Exit the program                         |
-| /reset   | Clear conversation history               |
-| /eval    | Save current conversation for evaluation |
-| /compact | Compact the current session              |
+The root agent delegates tasks to agents listed under `sub_agents`. Sub-agents
+can have their own sub-agents for deeper hierarchies.
 @y
-| Command  | Description                              |
-|----------|------------------------------------------|
-| /exit    | Exit the program                         |
-| /reset   | Clear conversation history               |
-| /eval    | Save current conversation for evaluation |
-| /compact | Compact the current session              |
+The root agent delegates tasks to agents listed under `sub_agents`. Sub-agents
+can have their own sub-agents for deeper hierarchies.
 @z
 
 @x
-## Share your agents
+## Configuration options
 @y
-## Share your agents
+## Configuration options
 @z
 
 @x
-Agent configurations can be packaged and shared via Docker Hub.
-Before you start, make sure you have a [Docker repository](/manuals/docker-hub/repos/create.md).
+Agent configurations are YAML files. A basic structure looks like this:
 @y
-Agent configurations can be packaged and shared via Docker Hub.
-Before you start, make sure you have a [Docker repository](manuals/docker-hub/repos/create.md).
+Agent configurations are YAML files. A basic structure looks like this:
 @z
 
 @x
-To push an agent:
+```yaml
+agents:
+  root:
+    model: claude-sonnet-4-0
+    description: Brief role summary
+    instruction: |
+      Detailed instructions for this agent...
+    sub_agents: [helper]
 @y
-To push an agent:
-@z
-
-% snip command...
-
-@x
-To pull an agent to the current directory:
-@y
-To pull an agent to the current directory:
-@z
-
-% snip command...
-
-@x
-The agent's configuration file is named `<namespace>_<reponame>.yaml`. Run
-it with the `cagent run <filename>` command.
-@y
-The agent's configuration file is named `<namespace>_<reponame>.yaml`. Run
-it with the `cagent run <filename>` command.
+```yaml
+agents:
+  root:
+    model: claude-sonnet-4-0
+    description: Brief role summary
+    instruction: |
+      Detailed instructions for this agent...
+    sub_agents: [helper]
 @z
 
 @x
-## Related pages
+  helper:
+    model: gpt-5-mini
+    description: Specialist agent role
+    instruction: |
+      Instructions for the helper agent...
+```
 @y
-## Related pages
+  helper:
+    model: gpt-5-mini
+    description: Specialist agent role
+    instruction: |
+      Instructions for the helper agent...
+```
 @z
 
 @x
-- For more information about cagent, see the
-[GitHub repository](https://github.com/docker/cagent).
-- [Docker MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+You can also configure model settings (like context limits), tools (including
+MCP servers), and more. See the [configuration
+reference](./reference/config.md)
+for complete details.
 @y
-- For more information about cagent, see the
-[GitHub repository](https://github.com/docker/cagent).
-- [Docker MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+You can also configure model settings (like context limits), tools (including
+MCP servers), and more. See the [configuration
+reference](./reference/config.md)
+for complete details.
+@z
+
+@x
+## Share agent teams
+@y
+## Share agent teams
+@z
+
+@x
+Agent configurations are packaged as OCI artifacts. Push and pull them like
+container images:
+@y
+Agent configurations are packaged as OCI artifacts. Push and pull them like
+container images:
+@z
+
+@x
+```console
+$ cagent push ./debugger.yaml myusername/debugger
+$ cagent pull myusername/debugger
+```
+@y
+```console
+$ cagent push ./debugger.yaml myusername/debugger
+$ cagent pull myusername/debugger
+```
+@z
+
+@x
+Use Docker Hub or any OCI-compatible registry. Pushing creates the repository if
+it doesn't exist yet.
+@y
+Use Docker Hub or any OCI-compatible registry. Pushing creates the repository if
+it doesn't exist yet.
+@z
+
+@x
+## What's next
+@y
+## What's next
+@z
+
+@x
+- Follow the [tutorial](./tutorial.md) to build your first coding agent
+- Learn [best practices](./best-practices.md) for building effective agents
+- Integrate cagent with your [editor](./integrations/acp.md) or use agents as
+  [tools in MCP clients](./integrations/mcp.md)
+- Browse example agent configurations in the [cagent
+  repository](https://github.com/docker/cagent/tree/main/examples)
+- Use `cagent new` to generate agent teams with AI <!-- TODO: link to some page
+  where we explain this, probably a CLI reference? -->
+- Connect agents to external tools via the [Docker MCP
+  Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- Read the full [configuration
+  reference](https://github.com/docker/cagent?tab=readme-ov-file#-configuration-reference)
+  <!-- TODO: move to this site/repo -->
+@y
+- Follow the [tutorial](./tutorial.md) to build your first coding agent
+- Learn [best practices](./best-practices.md) for building effective agents
+- Integrate cagent with your [editor](./integrations/acp.md) or use agents as
+  [tools in MCP clients](./integrations/mcp.md)
+- Browse example agent configurations in the [cagent
+  repository](https://github.com/docker/cagent/tree/main/examples)
+- Use `cagent new` to generate agent teams with AI <!-- TODO: link to some page
+  where we explain this, probably a CLI reference? -->
+- Connect agents to external tools via the [Docker MCP
+  Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- Read the full [configuration
+  reference](https://github.com/docker/cagent?tab=readme-ov-file#-configuration-reference)
+  <!-- TODO: move to this site/repo -->
 @z

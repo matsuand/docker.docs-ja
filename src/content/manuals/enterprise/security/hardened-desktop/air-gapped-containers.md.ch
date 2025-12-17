@@ -96,12 +96,10 @@ Some important considerations include:
 @x
 - The existing `proxy` setting continues to apply to Docker Desktop application traffic on the host
 - If PAC file download fails, containers block requests to target URLs
-- URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
 - Hostname is available for ports 80 and 443, but only IP addresses for other ports
 @y
 - The existing `proxy` setting continues to apply to Docker Desktop application traffic on the host
 - If PAC file download fails, containers block requests to target URLs
-- URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
 - Hostname is available for ports 80 and 443, but only IP addresses for other ports
 @z
 
@@ -345,6 +343,46 @@ function FindProxyForURL(url, host) {
     return "PROXY reject.docker.internal:1234";
 }
 ```
+@z
+
+@x
+### General considerations
+@y
+### General considerations
+@z
+
+@x
+ - `FindProxyForURL` function URL parameter format is http://host_or_ip:port or https://host_or_ip:port
+ - If you have an internal container trying to access https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers the docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the url value to FindProxyForURL, if you are using `shExpMatch` function in your PAC file as follows:
+@y
+ - `FindProxyForURL` function URL parameter format is http://host_or_ip:port or https://host_or_ip:port
+ - If you have an internal container trying to access https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers the docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the url value to FindProxyForURL, if you are using `shExpMatch` function in your PAC file as follows:
+@z
+
+@x
+   ```console
+   if(shExpMatch(url, "https://docs.docker.com:443/enterprise/security/*")) return "DIRECT";
+   ```
+@y
+   ```console
+   if(shExpMatch(url, "https://docs.docker.com:443/enterprise/security/*")) return "DIRECT";
+   ```
+@z
+
+@x
+   `shExpMatch` function will fail, instead use:
+@y
+   `shExpMatch` function will fail, instead use:
+@z
+
+@x
+   ```console
+   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
+   ```
+@y
+   ```console
+   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
+   ```
 @z
 
 @x

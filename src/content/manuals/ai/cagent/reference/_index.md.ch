@@ -2,9 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<!doctype html>
-<html lang="en">
+title: Reference
 @y
-<!doctype html>
-<html lang="ja">
+title: Reference
 @z

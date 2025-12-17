@@ -49,6 +49,70 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.55.0
+@y
+## 4.55.0
+@z
+
+@x
+{{< release-date date="2025-12-16" >}}
+@y
+{{< release-date date="2025-12-16" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.55.0" build_path="/213807/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.55.0" build_path="/213807/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
+- [cagent v1.15.1](https://github.com/docker/cagent/releases/tag/v1.15.1)
+@y
+- [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
+- [cagent v1.15.1](https://github.com/docker/cagent/releases/tag/v1.15.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue that caused Docker Desktop to get stuck during startup.
+- Improved the error message when the `daemon.json` is invalid.
+- Fixed performance issues on every keystroke within a long Ask Gordon session.
+@y
+- Docker Desktop の起動が停止してしまう問題を修正しました。
+- `daemon.json` の記述が不適切である場合のエラーメッセージを改善しました。
+- Ask Gordon セッションが長く続く場合に、各キーストローク性能に関する問題を修正しました。
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Wasm workloads will be deprecated and removed in a future Docker Desktop release.
+@y
+> [!IMPORTANT]
+>
+> wasm ワークロードは廃止予定となり、将来の Docker Desktop リリースにおいて削除されます。
+@z
+
+@x
 ## 4.54.0
 @y
 ## 4.54.0
@@ -387,12 +451,16 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @x
 - Docker Desktop now detects and attempts to avoid clashes between the "Docker subnet" and physical networks using RFC1918 addresses. For example if the host has a non-default route which overlaps with `192.168.65.0/24` then an alternative network will be chosen automatically. You can still override the choice as before via Docker Desktop settings and admin settings.
 - Docker Desktop no longer treats Stargz Snapshotter failures as fatal. If a failure occurs, Docker Desktop continues to run without the Stargz Snapshotter.
+- Ask Gordon no longer displays images with user provided URLs.
+- Ask Gordon now asks for confirmation before running all built-in and all user added MCP tools.
 @y
 - Docker Desktop では "Docker サブネット" と RFC1918 アドレスを使った物理ネットワークとの間の衝突を検出し解消を試みるものとなりました。
   たとえばホスト側がデフォルトではないルートであって `192.168.65.0/24` をオーバーラップするものである場合、別のネットワークが自動的に選択されます。
   Docker Desktop 設定や管理設定によって、事前にその選択を上書きすることもできます。
 - Docker Desktop では Stargz Snapshotter による失敗を致命的とは取り扱わないものとしました。
   失敗が発生した場合、Docker Desktop は Stargz Snapshotter を無しにして処理を続行します。
+- Ask Gordon no longer displays images with user provided URLs.
+- Ask Gordon now asks for confirmation before running all built-in and all user added MCP tools.
 @z
 
 @x
@@ -7588,7 +7656,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -7720,7 +7788,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -7808,7 +7876,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -7976,7 +8044,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -8206,7 +8274,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -8396,7 +8464,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -8602,7 +8670,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -8704,7 +8772,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -8840,7 +8908,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -9038,7 +9106,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -9138,7 +9206,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -9208,7 +9276,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x
@@ -9426,7 +9494,7 @@ Alternatively, you can edit the Docker Desktop settings file located at `%APPDAT
 @x
 ### Updates
 @y
-### Updates
+### 機能更新 {#updates}
 @z
 
 @x

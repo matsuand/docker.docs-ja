@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ÉäÉìÉNÇ÷ÇÃ (no slash) ëŒâû
+% .md „É™„É≥„ÇØ„Å∏„ÅÆ (no slash) ÂØæÂøú
 
 @x
 description: Frequently asked Docker Desktop questions for all platforms
@@ -151,6 +151,114 @@ For more information and examples, see [how to connect from a container to a ser
 Docker Desktop does not support direct USB device passthrough. However, you can use USB over IP to connect common USB devices to the Docker Desktop VM and in turn be forwarded to a container. For more details, see [Using USB/IP with Docker Desktop](/manuals/desktop/features/usbip.md).
 @y
 Docker Desktop does not support direct USB device passthrough. However, you can use USB over IP to connect common USB devices to the Docker Desktop VM and in turn be forwarded to a container. For more details, see [Using USB/IP with Docker Desktop](manuals/desktop/features/usbip.md).
+@z
+
+@x
+### How do I verify Docker Desktop is using a proxy server ?
+@y
+### How do I verify Docker Desktop is using a proxy server ?
+@z
+
+@x
+To verify, look at the most recent events logged in `httpproxy.log`. This is located at `~/Library/Containers/com.docker.docker/Data/log/host` on macOS or `%LOCALAPPDATA%/Docker/log/host/` on Windows. 
+@y
+To verify, look at the most recent events logged in `httpproxy.log`. This is located at `~/Library/Containers/com.docker.docker/Data/log/host` on macOS or `%LOCALAPPDATA%/Docker/log/host/` on Windows. 
+@z
+
+@x
+The following shows a few examples of what you can expect to see:
+@y
+The following shows a few examples of what you can expect to see:
+@z
+
+@x
+- Docker Desktop using app level settings (proxy mode manual) for proxy:
+@y
+- Docker Desktop using app level settings (proxy mode manual) for proxy:
+@z
+
+@x
+   ```console
+   host will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
+   Linux will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
+   ```
+@y
+   ```console
+   host will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
+   Linux will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
+   ```
+@z
+
+@x
+- Docker Desktop using system level settings (proxy mode system) for proxy:
+@y
+- Docker Desktop using system level settings (proxy mode system) for proxy:
+@z
+
+@x
+   ```console
+   host will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
+   Linux will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
+   ```
+@y
+   ```console
+   host will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
+   Linux will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
+   ```
+@z
+
+@x
+- Docker Desktop is not configured to use a proxy server:
+@y
+- Docker Desktop is not configured to use a proxy server:
+@z
+
+@x
+   ```console
+   host will use proxy: disabled
+   Linux will use proxy: disabled
+   ```
+@y
+   ```console
+   host will use proxy: disabled
+   Linux will use proxy: disabled
+   ```
+@z
+
+@x
+- Docker Desktop is configured to use app level settings (proxy mode manual) and using a PAC file:
+@y
+- Docker Desktop is configured to use app level settings (proxy mode manual) and using a PAC file:
+@z
+
+@x
+   ```console
+   using a proxy PAC file: http://127.0.0.1:8081/proxy.pac
+   host will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
+   Linux will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
+   ```
+@y
+   ```console
+   using a proxy PAC file: http://127.0.0.1:8081/proxy.pac
+   host will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
+   Linux will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
+   ```
+@z
+
+@x
+- Connect request using the configured proxy server:
+@y
+- Connect request using the configured proxy server:
+@z
+
+@x
+   ```console
+   CONNECT desktop.docker.com:443: host connecting via static system HTTPS proxy http://172.211.16.3:3128
+   ```
+@y
+   ```console
+   CONNECT desktop.docker.com:443: host connecting via static system HTTPS proxy http://172.211.16.3:3128
+   ```
 @z
 
 @x

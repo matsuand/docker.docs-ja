@@ -2,14 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = images integrations reference
-
 bases = \
-	_index.md         \
-	best-practices.md \
-	rag.md            \
-	sharing-agents.md \
-	tutorial.md
+	_index.md   \
+	cli.md      \
+	config.md   \
+	examples.md \
+	toolsets.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

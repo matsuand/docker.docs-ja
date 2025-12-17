@@ -151,6 +151,9 @@ AC_CONFIG_FILES([
 	src/content/manuals/admin/organization/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/cagent/Makefile
+	src/content/manuals/ai/cagent/images/Makefile
+	src/content/manuals/ai/cagent/integrations/Makefile
+	src/content/manuals/ai/cagent/reference/Makefile
 	src/content/manuals/ai/compose/Makefile
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/images/Makefile

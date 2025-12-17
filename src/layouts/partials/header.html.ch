@@ -2,7 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-          <span class="hidden lg:inline">Ask&nbsp;AI</span>
+            {{ partial "utils/svg.html" "/icons/sparkle.svg" }}
 @y
-          <span class="hidden lg:inline">AI&nbsp;に</span>
+            {{ partial "utils/svg.html" "icons/sparkle.svg" }}
+@z
+
+@x
+          <span class="hidden px-1 lg:inline">Ask&nbsp;AI</span>
+@y
+          <span class="hidden px-1 lg:inline">AI&nbsp;に</span>
 @z
