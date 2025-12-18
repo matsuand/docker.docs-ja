@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Debug a Docker Hardened Image container
 linkTitle: Debug a container
@@ -15,12 +17,6 @@ description: Learn how to use Docker Debug to troubleshoot Docker Hardened Image
 @y
 keywords: debug, hardened images, DHI, troubleshooting, ephemeral container, docker debug, non-root containers, hardened container image, debug secure container
 description: Learn how to use Docker Debug to troubleshoot Docker Hardened Images (DHI) locally or in production.
-@z
-
-@x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -50,9 +46,9 @@ development. You can also debug containers remotely using the `--host` option.
 @z
 
 @x
-The following example uses a mirrored `dhi-python:3.13` image, but the same steps apply to any image.
+The following example uses a mirrored `python:3.13` image, but the same steps apply to any image.
 @y
-The following example uses a mirrored `dhi-python:3.13` image, but the same steps apply to any image.
+The following example uses a mirrored `python:3.13` image, but the same steps apply to any image.
 @z
 
 @x
@@ -67,15 +63,7 @@ Start with a DHI-based container that simulates an issue:
 Start with a DHI-based container that simulates an issue:
 @z
 
-@x
-```console
-$ docker run -d --name myapp <YOUR_ORG>/dhi-python:3.13 python -c "import time; time.sleep(300)"
-```
-@y
-```console
-$ docker run -d --name myapp <YOUR_ORG>/dhi-python:3.13 python -c "import time; time.sleep(300)"
-```
-@z
+% snip command...
 
 @x
 This container doesn't include a shell or tools like `ps`, `top`, or `cat`.
@@ -89,15 +77,7 @@ If you try:
 If you try:
 @z
 
-@x
-```console
-$ docker exec -it myapp sh
-```
-@y
-```console
-$ docker exec -it myapp sh
-```
-@z
+% snip command...
 
 @x
 You'll see:
@@ -105,15 +85,7 @@ You'll see:
 You'll see:
 @z
 
-@x
-```console
-exec: "sh": executable file not found in $PATH
-```
-@y
-```console
-exec: "sh": executable file not found in $PATH
-```
-@z
+% snip output...
 
 @x
 ## Step 2: Use Docker Debug to inspect the container
@@ -127,15 +99,7 @@ Use the `docker debug` command to attach a temporary, tool-rich debug container 
 Use the `docker debug` command to attach a temporary, tool-rich debug container to the running instance.
 @z
 
-@x
-```console
-$ docker debug myapp
-```
-@y
-```console
-$ docker debug myapp
-```
-@z
+% snip command...
 
 @x
 From here, you can inspect running processes, network status, or mounted files.
@@ -149,15 +113,7 @@ For example, to check running processes:
 For example, to check running processes:
 @z
 
-@x
-```console
-$ ps aux
-```
-@y
-```console
-$ ps aux
-```
-@z
+% snip command...
 
 @x
 Exit the debug session with:
@@ -165,15 +121,7 @@ Exit the debug session with:
 Exit the debug session with:
 @z
 
-@x
-```console
-$ exit
-```
-@y
-```console
-$ exit
-```
-@z
+% snip command...
 
 @x
 ## What's next

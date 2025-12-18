@@ -7,251 +7,109 @@
 @x
 linktitle: Quickstart
 title: Docker Hardened Images quickstart
-description: Follow a quickstart guide to explore, mirror, and run a Docker Hardened Image.
+description: Follow a quickstart guide to explore and run a Docker Hardened Image.
 @y
 linktitle: Quickstart
 title: Docker Hardened Images quickstart
-description: Follow a quickstart guide to explore, mirror, and run a Docker Hardened Image.
+description: Follow a quickstart guide to explore and run a Docker Hardened Image.
 @z
 
 @x
-keywords: docker hardened images quickstart, mirror container image, run secure image
+keywords: docker hardened images quickstart, run secure image
 @y
-keywords: docker hardened images quickstart, mirror container image, run secure image
-@z
-
-@x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
+keywords: docker hardened images quickstart, run secure image
 @z
 
 @x
 This guide shows you how to go from zero to running a Docker Hardened Image
-(DHI) using a real example. While the steps use a specific image as an
-example, they can be applied to any DHI.
+(DHI) using a real example. At the end, you'll compare the DHI to a standard
+Docker image to better understand the differences. While the steps use a
+specific image as an example, they can be applied to any DHI.
 @y
 This guide shows you how to go from zero to running a Docker Hardened Image
-(DHI) using a real example. While the steps use a specific image as an
-example, they can be applied to any DHI.
+(DHI) using a real example. At the end, you'll compare the DHI to a standard
+Docker image to better understand the differences. While the steps use a
+specific image as an example, they can be applied to any DHI.
+@z
+
+@x
+> [!NOTE]
+>
+> Docker Hardened Images are freely available to everyone with no subscription
+> required, no usage restrictions, and no vendor lock-in. You can upgrade to a
+> DHI Enterprise subscription when you require enterprise features like FIPS or
+> STIG compliance variants, customization capabilities, or SLA-backed support.
+@y
+> [!NOTE]
+>
+> Docker Hardened Images are freely available to everyone with no subscription
+> required, no usage restrictions, and no vendor lock-in. You can upgrade to a
+> DHI Enterprise subscription when you require enterprise features like FIPS or
+> STIG compliance variants, customization capabilities, or SLA-backed support.
+@z
+
+@x
+## Step 1: Find an image to use
+@y
+## Step 1: Find an image to use
+@z
+
+@x
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. In the left sidebar, select **Hardened Images**. If you have DHI Enterprise,
+   then select **Hardened Images** > **Catalog**.
+3. Use the search bar or filters to find an image (e.g., `python`, `node`,
+   `golang`). For this guide, use the Python image as an example.
+4. Select the Python repository to view its details.
+@y
+1. Go to the Hardened Images catalog in [Docker
+   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
+2. In the left sidebar, select **Hardened Images**. If you have DHI Enterprise,
+   then select **Hardened Images** > **Catalog**.
+3. Use the search bar or filters to find an image (e.g., `python`, `node`,
+   `golang`). For this guide, use the Python image as an example.
+4. Select the Python repository to view its details.
+@z
+
+@x
+Continue to the next step to pull and run the image. To dive deeper into exploring
+images see [Explore Docker Hardened Images](./how-to/explore.md).
+@y
+Continue to the next step to pull and run the image. To dive deeper into exploring
+images see [Explore Docker Hardened Images](./how-to/explore.md).
+@z
+
+@x
+## Step 2: Pull and run the image
+@y
+## Step 2: Pull and run the image
+@z
+
+@x
+You can pull and run a DHI like any other Docker image. Note that Docker Hardened
+Images are designed to be minimal and secure, so they may not include all the
+tools or libraries you expect in a typical image. You can view the typical
+differences in [Considerations when adopting
+DHIs](./how-to/use.md#considerations-when-adopting-dhis).
+@y
+You can pull and run a DHI like any other Docker image. Note that Docker Hardened
+Images are designed to be minimal and secure, so they may not include all the
+tools or libraries you expect in a typical image. You can view the typical
+differences in [Considerations when adopting
+DHIs](./how-to/use.md#considerations-when-adopting-dhis).
 @z
 
 @x
 > [!TIP]
 >
-> You can keep using the same tools and workflows you already know when moving
-> to DHI from other images on Docker Hub, such as Bitnami public catalog images.
-> Note that [Bitnami announced](https://github.com/bitnami/charts/issues/35164)
-> that its public catalog images will no longer be available after September 29,
-> 2025.
->
-> In most cases, migrating is as simple as updating the image reference in your
-> configuration or commands. Start with this guide, then see the [migration
-> guide](./how-to/migrate.md) for more details and examples.
+> On every repository page in the DHI catalog, you'll find instructions for
+> pulling and scanning the image by selecting **Use this image**.
 @y
 > [!TIP]
 >
-> You can keep using the same tools and workflows you already know when moving
-> to DHI from other images on Docker Hub, such as Bitnami public catalog images.
-> Note that [Bitnami announced](https://github.com/bitnami/charts/issues/35164)
-> that its public catalog images will no longer be available after September 29,
-> 2025.
->
-> In most cases, migrating is as simple as updating the image reference in your
-> configuration or commands. Start with this guide, then see the [migration
-> guide](./how-to/migrate.md) for more details and examples.
-@z
-
-@x
-## Step 1: Start a free trial to access DHI
-@y
-## Step 1: Start a free trial to access DHI
-@z
-
-@x
-You can browse the Docker Hardened Images catalog without a subscription, but to
-use an image, you must either [contact sales to
-subscribe](https://www.docker.com/products/hardened-images/#getstarted) or start
-a free trial for an [organization](/admin/organization/). This guide walks you
-through starting a free trial.
-@y
-You can browse the Docker Hardened Images catalog without a subscription, but to
-use an image, you must either [contact sales to
-subscribe](https://www.docker.com/products/hardened-images/#getstarted) or start
-a free trial for an [organization](__SUBDIR__/admin/organization/). This guide walks you
-through starting a free trial.
-@z
-
-@x
-To start a free trial:
-@y
-To start a free trial:
-@z
-
-@x
-1. Go to the Hardened Images catalog in [Docker
-   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
-2. Select **Start trial** and follow the on-screen instructions.
-@y
-1. Go to the Hardened Images catalog in [Docker
-   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
-2. Select **Start trial** and follow the on-screen instructions.
-@z
-
-@x
-## Step 2: Find an image to use
-@y
-## Step 2: Find an image to use
-@z
-
-@x
-1. Go to the Hardened Images catalog in [Docker
-   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
-2. In the left sidebar, choose your organization that has DHI access.
-3. In the left sidebar, select **Hardened Images** > **Catalog**.
-@y
-1. Go to the Hardened Images catalog in [Docker
-   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
-2. In the left sidebar, choose your organization that has DHI access.
-3. In the left sidebar, select **Hardened Images** > **Catalog**.
-@z
-
-@x
-   ![Docker Hub sidebar showing DHI catalog](./images/dhi-catalog.png)
-@y
-   ![Docker Hub sidebar showing DHI catalog](./images/dhi-catalog.png)
-@z
-
-@x
-4. Use the search bar or filters to find an image (e.g., `python`, `node`,
-   `golang`). For this guide, use the Python image as an example.
-@y
-4. Use the search bar or filters to find an image (e.g., `python`, `node`,
-   `golang`). For this guide, use the Python image as an example.
-@z
-
-@x
-    ![DHI catalog with Python repository shown](./images/dhi-python-search.png)
-@y
-    ![DHI catalog with Python repository shown](./images/dhi-python-search.png)
-@z
-
-@x
-5. Select the Python repository to view its details.
-@y
-5. Select the Python repository to view its details.
-@z
-
-@x
-Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](./how-to/explore.md).
-@y
-Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](./how-to/explore.md).
-@z
-
-@x
-## Step 3: Mirror the image
-@y
-## Step 3: Mirror the image
-@z
-
-@x
-To use a Docker Hardened Image, you must mirror it to your organization. Only
-organization owners can perform this action. Mirroring creates a copy of the
-image in your organization's namespace, allowing team members to pull and use
-it.
-@y
-To use a Docker Hardened Image, you must mirror it to your organization. Only
-organization owners can perform this action. Mirroring creates a copy of the
-image in your organization's namespace, allowing team members to pull and use
-it.
-@z
-
-@x
-1. In the image repository page, select **Mirror to repository**.
-@y
-1. In the image repository page, select **Mirror to repository**.
-@z
-
-@x
-   ![An image of the Python page with the Mirror to repository button showing](./images/dhi-mirror-button.png)
-@y
-   ![An image of the Python page with the Mirror to repository button showing](./images/dhi-mirror-button.png)
-@z
-
-@x
-   > [!NOTE]
-   >
-   > If you don't see the **Mirror to repository** button, the repository may
-   > already be mirrored to your organization. In this case, you can select
-   > **View in repository** to see the mirrored image's location or mirror it to
-   > another repository.
-@y
-   > [!NOTE]
-   >
-   > If you don't see the **Mirror to repository** button, the repository may
-   > already be mirrored to your organization. In this case, you can select
-   > **View in repository** to see the mirrored image's location or mirror it to
-   > another repository.
-@z
-
-@x
-2. Follow the on-screen instructions to mirror the repository.
-@y
-2. Follow the on-screen instructions to mirror the repository.
-@z
-
-@x
-It may take a few minutes for all the tags to finish mirroring. Once
-mirrored, the image repository appears in your organization's namespace. For
-example, in [Docker Hub](https://hub.docker.com), go to **My Hub** > ***YOUR_ORG*** > **Repositories**,
-and you should see `dhi-python` listed. You can now pull it
-like any other image.
-@y
-It may take a few minutes for all the tags to finish mirroring. Once
-mirrored, the image repository appears in your organization's namespace. For
-example, in [Docker Hub](https://hub.docker.com), go to **My Hub** > ***YOUR_ORG*** > **Repositories**,
-and you should see `dhi-python` listed. You can now pull it
-like any other image.
-@z
-
-@x
-![Repository list with mirrored repository showing](./images/dhi-python-mirror.png)
-@y
-![Repository list with mirrored repository showing](./images/dhi-python-mirror.png)
-@z
-
-@x
-Continue to the next step to pull and run the image. To dive deeper into
-mirroring images see [Mirror a Docker Hardened Image
-repository](./how-to/mirror.md).
-@y
-Continue to the next step to pull and run the image. To dive deeper into
-mirroring images see [Mirror a Docker Hardened Image
-repository](./how-to/mirror.md).
-@z
-
-@x
-## Step 4: Pull and run the image
-@y
-## Step 4: Pull and run the image
-@z
-
-@x
-Once you've mirrored the image to your organization, you can pull and run it
-like any other Docker image. Note that Docker Hardened Images are designed to be
-minimal and secure, so they may not include all the tools or libraries you
-expect in a typical image. You can view the typical differences in
-[Considerations when adopting
-DHIs](./how-to/use.md#considerations-when-adopting-dhis).
-@y
-Once you've mirrored the image to your organization, you can pull and run it
-like any other Docker image. Note that Docker Hardened Images are designed to be
-minimal and secure, so they may not include all the tools or libraries you
-expect in a typical image. You can view the typical differences in
-[Considerations when adopting
-DHIs](./how-to/use.md#considerations-when-adopting-dhis).
+> On every repository page in the DHI catalog, you'll find instructions for
+> pulling and scanning the image by selecting **Use this image**.
 @z
 
 @x
@@ -263,11 +121,9 @@ a simple Python command just like you would with any other Docker image:
 @z
 
 @x
-1. Pull the mirrored image. Open a terminal and run the following command,
-   replacing `<your-namespace>` with your organization's namespace:
+1. Open a terminal and run the following commands:
 @y
-1. Pull the mirrored image. Open a terminal and run the following command,
-   replacing `<your-namespace>` with your organization's namespace:
+1. Open a terminal and run the following commands:
 @z
 
 % snip command...
@@ -281,10 +137,10 @@ a simple Python command just like you would with any other Docker image:
 % snip command...
 
 @x
-    This starts a container from the `dhi-python:3.13` image and runs a simple
+    This starts a container from the `python:3.13` image and runs a simple
     Python script that prints `Hello from DHI`.
 @y
-    This starts a container from the `dhi-python:3.13` image and runs a simple
+    This starts a container from the `python:3.13` image and runs a simple
     Python script that prints `Hello from DHI`.
 @z
 
@@ -305,9 +161,9 @@ To dive deeper into using images, see:
 @z
 
 @x
-## Step 5: Compare with the other images
+## Step 3: Compare with the other images
 @y
-## Step 5: Compare with the other images
+## Step 3: Compare with the other images
 @z
 
 @x
@@ -321,11 +177,13 @@ using hardened images.
 @z
 
 @x
-Run the following command to see a summary comparison, replacing
-`<your-namespace>` with your organization's namespace:
+Run the following command to see a summary comparison between the Docker
+Hardened Image for Python and the non-hardened Docker Official Image for Python
+from Docker Hub:
 @y
-Run the following command to see a summary comparison, replacing
-`<your-namespace>` with your organization's namespace:
+Run the following command to see a summary comparison between the Docker
+Hardened Image for Python and the non-hardened Docker Official Image for Python
+from Docker Hub:
 @z
 
 % snip command...
@@ -336,7 +194,29 @@ Example output:
 Example output:
 @z
 
-% snip text...
+% snip output...
+
+@x
+> [!NOTE]
+>
+> This is example output. Your results may vary depending on newly discovered
+> CVEs and image updates.
+>
+> Docker maintains near-zero CVEs in Docker Hardened Images. For DHI Enterprise
+> subscriptions, when new CVEs are discovered, the CVEs are remediated within
+> the industry-leading SLA timeframe. Learn more about the [SLA-backed security
+> features](./features.md#sla-backed-security).
+@y
+> [!NOTE]
+>
+> This is example output. Your results may vary depending on newly discovered
+> CVEs and image updates.
+>
+> Docker maintains near-zero CVEs in Docker Hardened Images. For DHI Enterprise
+> subscriptions, when new CVEs are discovered, the CVEs are remediated within
+> the industry-leading SLA timeframe. Learn more about the [SLA-backed security
+> features](./features.md#sla-backed-security).
+@z
 
 @x
 This comparison shows that the Docker Hardened Image:
@@ -373,11 +253,33 @@ You've pulled and run your first Docker Hardened Image. Here are a few ways to k
 @z
 
 @x
-- [Migrate existing applications to DHIs](./how-to/migrate.md): Learn how to
-  update your Dockerfiles to use Docker Hardened Images as the base.
+- [Migrate existing applications to DHIs](./migration/migrate-with-ai.md): Use
+  Docker's AI assistant to update your Dockerfiles to use Docker Hardened Images
+  as the base.
 @y
-- [Migrate existing applications to DHIs](./how-to/migrate.md): Learn how to
-  update your Dockerfiles to use Docker Hardened Images as the base.
+- [Migrate existing applications to DHIs](./migration/migrate-with-ai.md): Use
+  Docker's AI assistant to update your Dockerfiles to use Docker Hardened Images
+  as the base.
+@z
+
+@x
+- [Start a trial](https://hub.docker.com/hardened-images/start-free-trial) to
+  explore the benefits of a DHI Enterprise subscription, such as access to FIPS
+  and STIG variants, customized images, and SLA-backed updates.
+@y
+- [Start a trial](https://hub.docker.com/hardened-images/start-free-trial) to
+  explore the benefits of a DHI Enterprise subscription, such as access to FIPS
+  and STIG variants, customized images, and SLA-backed updates.
+@z
+
+@x
+- [Mirror a repository](./how-to/mirror.md): After subscribing to DHI Enterprise
+  or starting a trial, learn how to mirror a DHI repository to enable
+  customization, access compliance variants, and get SLA-backed updates.
+@y
+- [Mirror a repository](./how-to/mirror.md): After subscribing to DHI Enterprise
+  or starting a trial, learn how to mirror a DHI repository to enable
+  customization, access compliance variants, and get SLA-backed updates.
 @z
 
 @x

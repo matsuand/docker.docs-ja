@@ -16,12 +16,6 @@ keywords: compare docker images, docker scout compare, image comparison, vulnera
 @z
 
 @x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@z
-
-@x
 Docker Hardened Images (DHIs) are designed to provide enhanced security,
 minimized attack surfaces, and production-ready foundations for your
 applications. Comparing a DHI to a standard image helps you understand the
@@ -87,13 +81,13 @@ compare`](__SUBDIR__/reference/cli/docker/scout/compare/) command:
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-<image>:<tag> \
+$ docker scout compare dhi.io/<image>:<tag> \
     --to <comparison-image>:<tag> \
     --platform <platform>
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-<image>:<tag> \
+$ docker scout compare dhi.io/<image>:<tag> \
     --to <comparison-image>:<tag> \
     --platform <platform>
 ```
@@ -107,13 +101,13 @@ For example, to compare a DHI Node.js image with the official Node.js image:
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64
 ```
@@ -151,14 +145,14 @@ To focus only on the differences and ignore unchanged packages, use the
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64 \
     --ignore-unchanged
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64 \
     --ignore-unchanged
@@ -191,7 +185,7 @@ overview section using standard shell tools:
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64 \
     --ignore-unchanged \
@@ -199,7 +193,7 @@ $ docker scout compare <your-namespace>/dhi-node:22-debian13 \
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
+$ docker scout compare dhi.io/node:22-debian13 \
     --to node:22 \
     --platform linux/amd64 \
     --ignore-unchanged \
@@ -226,7 +220,7 @@ images. Example output:
 @x
                       │                    Analyzed Image                     │              Comparison Image
   ────────────────────┼───────────────────────────────────────────────────────┼─────────────────────────────────────────────
-    Target            │  docker/dhi-node:22-debian13                          │  node:22
+    Target            │  dhi.io/node:22-debian13                              │  node:22
       digest          │  55d471f61608                                         │  9ee3220f602f
       tag             │  22-debian13                                          │  22
       platform        │ linux/amd64                                           │ linux/amd64
@@ -241,7 +235,7 @@ images. Example output:
 @y
                       │                    Analyzed Image                     │              Comparison Image
   ────────────────────┼───────────────────────────────────────────────────────┼─────────────────────────────────────────────
-    Target            │  docker/dhi-node:22-debian13                          │  node:22
+    Target            │  dhi.io/node:22-debian13                              │  node:22
       digest          │  55d471f61608                                         │  9ee3220f602f
       tag             │  22-debian13                                          │  22
       platform        │ linux/amd64                                           │ linux/amd64
@@ -419,14 +413,14 @@ understand the security improvements. For example:
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-python:3.13 \
+$ docker scout compare dhi.io/python:3.13 \
     --to python:3.13 \
     --platform linux/amd64 \
     --ignore-unchanged
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-python:3.13 \
+$ docker scout compare dhi.io/python:3.13 \
     --to python:3.13 \
     --platform linux/amd64 \
     --ignore-unchanged
@@ -458,13 +452,13 @@ ensure you haven't introduced new vulnerabilities. For example:
 @x
 ```console
 $ docker scout compare <your-namespace>/dhi-python:3.13-custom \
-    --to <your-namespace>/dhi-python:3.13 \
+    --to dhi.io/python:3.13 \
     --platform linux/amd64
 ```
 @y
 ```console
 $ docker scout compare <your-namespace>/dhi-python:3.13-custom \
-    --to <your-namespace>/dhi-python:3.13 \
+    --to dhi.io/python:3.13 \
     --platform linux/amd64
 ```
 @z
@@ -483,15 +477,15 @@ Compare different versions of the same DHI to see what changed between releases.
 
 @x
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
-    --to <your-namespace>/dhi-node:20-debian12 \
+$ docker scout compare dhi.io/node:22-debian13 \
+    --to dhi.io/node:20-debian12 \
     --platform linux/amd64 \
     --ignore-unchanged
 ```
 @y
 ```console
-$ docker scout compare <your-namespace>/dhi-node:22-debian13 \
-    --to <your-namespace>/dhi-node:20-debian12 \
+$ docker scout compare dhi.io/node:22-debian13 \
+    --to dhi.io/node:20-debian12 \
     --platform linux/amd64 \
     --ignore-unchanged
 ```

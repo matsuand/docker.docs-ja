@@ -7,11 +7,11 @@ bases = \
 	compare.md   \
 	customize.md \
 	debug.md     \
+	els.md       \
 	explore.md   \
 	helm.md      \
 	k8s.md       \
 	manage.md    \
-	migrate.md   \
 	mirror.md    \
 	policies.md  \
 	scan.md      \

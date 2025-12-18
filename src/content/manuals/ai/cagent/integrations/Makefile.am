@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md \
+	a2a.md    \
 	acp.md    \
 	mcp.md
 

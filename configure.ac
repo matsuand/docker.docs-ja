@@ -210,11 +210,12 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
 	src/content/manuals/dhi/Makefile
-	src/content/manuals/dhi/about/Makefile
 	src/content/manuals/dhi/core-concepts/Makefile
-	src/content/manuals/dhi/features/Makefile
+	src/content/manuals/dhi/explore/Makefile
 	src/content/manuals/dhi/how-to/Makefile
 	src/content/manuals/dhi/images/Makefile
+	src/content/manuals/dhi/migration/Makefile
+	src/content/manuals/dhi/migration/examples/Makefile
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/images/Makefile
 	src/content/manuals/docker-hub/image-library/Makefile
@@ -381,6 +382,7 @@ AC_CONFIG_FILES([
 	src/content/tags/data-science/Makefile
 	src/content/tags/deploy/Makefile
 	src/content/tags/devops/Makefile
+	src/content/tags/dhi/Makefile
 	src/content/tags/distributed-systems/Makefile
 	src/content/tags/faq/Makefile
 	src/content/tags/frameworks/Makefile
@@ -412,6 +414,7 @@ AC_CONFIG_FILES([
 	src/layouts/partials/components/Makefile
 	src/layouts/partials/sidebar/Makefile
 	src/layouts/partials/utils/Makefile
+	src/layouts/redirect/Makefile
 	src/layouts/samples/Makefile
 	src/layouts/security-announcements/Makefile
 	src/layouts/shortcodes/Makefile

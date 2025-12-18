@@ -40,13 +40,13 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @z
 
 @x
-    - title: Customize a Docker Hardened Image
-      description: Learn how to customize a DHI to suit your organization's needs.
+    - title: Customize a Docker Hardened Image or chart
+      description: Learn how to customize Docker Hardened Images and charts.
       icon: settings
       link: /dhi/how-to/customize/
 @y
-    - title: Customize a Docker Hardened Image
-      description: Learn how to customize a DHI to suit your organization's needs.
+    - title: Customize a Docker Hardened Image or chart
+      description: Learn how to customize Docker Hardened Images and charts.
       icon: settings
       link: __SUBDIR__/dhi/how-to/customize/
 @z
@@ -88,27 +88,27 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @z
 
 @x
-    - title: Manage Docker Hardened Images
+    - title: Use Extended Lifecycle Support for Docker Hardened Images
+      description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
+      icon: update
+      link: /dhi/how-to/els/
+@y
+    - title: Use Extended Lifecycle Support for Docker Hardened Images
+      description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
+      icon: update
+      link: /dhi/how-to/els/
+@z
+
+@x
+    - title: Manage Docker Hardened Images and charts
       description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
       icon: reorder
       link: /dhi/how-to/manage/
 @y
-    - title: Manage Docker Hardened Images
+    - title: Manage Docker Hardened Images and charts
       description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
       icon: reorder
       link: __SUBDIR__/dhi/how-to/manage/
-@z
-
-@x
-    - title: Migrate an existing application to use Docker Hardened Images
-      description: Follow a step-by-step guide to update your Dockerfiles and adopt Docker Hardened Images for secure, minimal, and production-ready builds.
-      icon: directions_run
-      link: /dhi/how-to/migrate/
-@y
-    - title: Migrate an existing application to use Docker Hardened Images
-      description: Follow a step-by-step guide to update your Dockerfiles and adopt Docker Hardened Images for secure, minimal, and production-ready builds.
-      icon: directions_run
-      link: __SUBDIR__/dhi/how-to/migrate/
 @z
 
 % grid_evaluate:
@@ -128,24 +128,24 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 % grid_verify:
 
 @x
-    - title: Verify a Docker Hardened Image
-      description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images.
+    - title: Verify a Docker Hardened Image or chart
+      description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
       icon: check_circle
       link: /dhi/how-to/verify/
 @y
-    - title: Verify a Docker Hardened Image
-      description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images.
+    - title: Verify a Docker Hardened Image or chart
+      description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
       icon: check_circle
       link: __SUBDIR__/dhi/how-to/verify/
 @z
 
 @x
-    - title: Scan a Docker Hardened Image
+    - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
       icon: bug_report
       link: /dhi/how-to/scan/
 @y
-    - title: Scan a Docker Hardened Image
+    - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
       icon: bug_report
       link: __SUBDIR__/dhi/how-to/scan/

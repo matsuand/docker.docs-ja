@@ -238,7 +238,12 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	bake.webp
+	bake.webp                \
+	dhi-examples-go.webp     \
+	dhi-examples-nodejs.webp \
+	dhi-examples-python.webp \
+	dhi-migrate-doi.webp     \
+	dhi-migrate-wolfi.webp
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

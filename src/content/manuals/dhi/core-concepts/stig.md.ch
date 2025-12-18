@@ -2,13 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: STIG
-description: Learn how Docker Hardened Images provide STIG-hardened container images with verifiable security scan attestations for government and enterprise compliance requirements.
-keywords: docker stig, stig-hardened images, stig guidance, openscap docker, secure container images
+title: 'STIG <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linkTitle: STIG
+description: Learn how Docker Hardened Images provide STIG-ready container images with verifiable security scan attestations for government and enterprise compliance requirements.
+keywords: docker stig, stig-ready images, stig guidance, openscap docker, secure container images
 @y
-title: STIG
-description: Learn how Docker Hardened Images provide STIG-hardened container images with verifiable security scan attestations for government and enterprise compliance requirements.
-keywords: docker stig, stig-hardened images, stig guidance, openscap docker, secure container images
+title: 'STIG <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linkTitle: STIG
+description: Learn how Docker Hardened Images provide STIG-ready container images with verifiable security scan attestations for government and enterprise compliance requirements.
+keywords: docker stig, stig-ready images, stig guidance, openscap docker, secure container images
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -106,6 +114,14 @@ attestations can support audits and compliance reporting.
 @z
 
 @x
+While Docker Hardened Images are available to all, the STIG variant requires a
+Docker subscription.
+@y
+While Docker Hardened Images are available to all, the STIG variant requires a
+Docker subscription.
+@z
+
+@x
 Docker creates custom STIG-based profiles for images based on the GPOS SRG and
 DoD Container Hardening Process Guide. Because DISA has not published a STIG
 specifically for containers, these profiles help apply STIG-like guidance to
@@ -158,6 +174,20 @@ repository, and find images labeled with **STIG** in the **Compliance** column.
 @z
 
 @x
+## Use a STIG variant
+@y
+## Use a STIG variant
+@z
+
+@x
+To use a STIG variant, you must [mirror](../how-to/mirror.md) the repository
+and then pull the STIG image from your mirrored repository.
+@y
+To use a STIG variant, you must [mirror](../how-to/mirror.md) the repository
+and then pull the STIG image from your mirrored repository.
+@z
+
+@x
 ## View and verify STIG scan results
 @y
 ## View and verify STIG scan results
@@ -165,11 +195,11 @@ repository, and find images labeled with **STIG** in the **Compliance** column.
 
 @x
 Docker provides a signed [STIG scan
-attestation](../core-concepts/attestations.md) for each STIG-hardened image.
+attestation](../core-concepts/attestations.md) for each STIG-ready image.
 These attestations include:
 @y
 Docker provides a signed [STIG scan
-attestation](../core-concepts/attestations.md) for each STIG-hardened image.
+attestation](../core-concepts/attestations.md) for each STIG-ready image.
 These attestations include:
 @z
 
@@ -203,7 +233,7 @@ $ docker scout attest get \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
-  <your-namespace>/dhi-<image>:<tag>
+  dhi.io/<image>:<tag>
 ```
 @y
 ```console
@@ -211,7 +241,7 @@ $ docker scout attest get \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
-  <your-namespace>/dhi-<image>:<tag>
+  dhi.io/<image>:<tag>
 ```
 @z
 
@@ -229,7 +259,7 @@ To extract and view the human-readable HTML report:
 
 @x
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
@@ -237,7 +267,7 @@ $ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
 ```
 @y
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
@@ -259,7 +289,7 @@ To extract the XML (XCCDF) report for integration with other tools:
 
 @x
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
@@ -267,7 +297,7 @@ $ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
 ```
 @y
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
@@ -289,7 +319,7 @@ To view just the scan summary without the full reports:
 
 @x
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \
@@ -297,7 +327,7 @@ $ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
 ```
 @y
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://docker.com/dhi/stig/v0.1 \
   --verify \
   --predicate \

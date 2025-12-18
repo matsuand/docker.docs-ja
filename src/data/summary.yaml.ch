@@ -657,20 +657,10 @@ Docker Desktop CLI kubernetes:
 
 @x
 Docker Hardened Images:
-  subscription: [Docker Hardened Images]
+  subscription: [Docker Hardened Images Enterprise]
 @y
 Docker Hardened Images:
-  subscription: [Docker Hardened Images]
-@z
-
-@x
-Docker Hardened Image charts:
-  availability: Early Access
-  subscription: [Docker Hardened Images]
-@y
-Docker Hardened Image charts:
-  availability: Early Access
-  subscription: [Docker Hardened Images]
+  subscription: [Docker Hardened Images Enterprise]
 @z
 
 @x

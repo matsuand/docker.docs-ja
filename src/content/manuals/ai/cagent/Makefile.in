@@ -297,10 +297,13 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = images integrations reference
 bases = \
-	_index.md         \
-	best-practices.md \
-	rag.md            \
-	sharing-agents.md \
+	_index.md          \
+	best-practices.md  \
+	evals.md           \
+	local-models.md    \
+	model-providers.md \
+	rag.md             \
+	sharing-agents.md  \
 	tutorial.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

@@ -16,12 +16,6 @@ keywords: scan container image, docker scout cves, grype scanner, trivy containe
 @z
 
 @x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@z
-
-@x
 Docker Hardened Images (DHIs) are designed to be secure by default, but like any
 container image, it's important to scan them regularly as part of your
 vulnerability management process.
@@ -46,17 +40,39 @@ be mirrored into your organization on Docker Hub.
 @x
 > [!NOTE]
 >
-> [Docker Scout](/manuals/scout/_index.md) is automatically enabled at no
-> additional cost for all mirrored Docker Hardened Image repositories on Docker
-> Hub. You can view scan results directly in the Docker Hub UI under your
-> organization's repository.
+> When you have a Docker Hardened Images Enterprise subscription, [Docker
+> Scout](/manuals/scout/_index.md) is automatically enabled at no additional
+> cost for all mirrored Docker Hardened Image repositories on Docker Hub. You
+> can view scan results directly in the Docker Hub UI under your organization's
+> repository.
 @y
 > [!NOTE]
 >
-> [Docker Scout](manuals/scout/_index.md) is automatically enabled at no
-> additional cost for all mirrored Docker Hardened Image repositories on Docker
-> Hub. You can view scan results directly in the Docker Hub UI under your
-> organization's repository.
+> When you have a Docker Hardened Images Enterprise subscription, [Docker
+> Scout](manuals/scout/_index.md) is automatically enabled at no additional
+> cost for all mirrored Docker Hardened Image repositories on Docker Hub. You
+> can view scan results directly in the Docker Hub UI under your organization's
+> repository.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> You must authenticate to the Docker Hardened Image registry (`dhi.io`) to pull images. To
+> do this, you can use [`docker login`](../../../reference/cli/docker/login.md):
+>
+> ```console
+> $ docker login dhi.io
+> ```
+@y
+> [!IMPORTANT]
+>
+> You must authenticate to the Docker Hardened Image registry (`dhi.io`) to pull images. To
+> do this, you can use [`docker login`](../../../reference/cli/docker/login.md):
+>
+> ```console
+> $ docker login dhi.io
+> ```
 @z
 
 @x
@@ -87,7 +103,15 @@ To scan a Docker Hardened Image using Docker Scout, run the following
 command:
 @z
 
-% snip command...
+@x
+```console
+$ docker scout cves dhi.io/<image>:<tag> --platform <platform>
+```
+@y
+```console
+$ docker scout cves dhi.io/<image>:<tag> --platform <platform>
+```
+@z
 
 @x
 Example output:
@@ -95,7 +119,23 @@ Example output:
 Example output:
 @z
 
-% snip output...
+@x
+```plaintext
+    v SBOM obtained from attestation, 101 packages found
+    v Provenance obtained from attestation
+    v VEX statements obtained from attestation
+    v No vulnerable package detected
+    ...
+```
+@y
+```plaintext
+    v SBOM obtained from attestation, 101 packages found
+    v Provenance obtained from attestation
+    v VEX statements obtained from attestation
+    v No vulnerable package detected
+    ...
+```
+@z
 
 @x
 For more detailed filtering and JSON output, see [Docker Scout CLI reference](../../../reference/cli/docker/scout/_index.md).
@@ -137,7 +177,119 @@ The following is a sample GitHub Actions workflow that builds an image and scans
 it using Docker Scout:
 @z
 
-% snip code...
+@x
+```yaml {collapse="true"}
+name: DHI Vulnerability Scan
+@y
+```yaml {collapse="true"}
+name: DHI Vulnerability Scan
+@z
+
+@x
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ "**" ]
+@y
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ "**" ]
+@z
+
+@x
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ${{ github.repository }}
+  SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
+@y
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ${{ github.repository }}
+  SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
+@z
+
+@x
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      pull-requests: write
+@y
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      pull-requests: write
+@z
+
+@x
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+@y
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+@z
+
+@x
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@y
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+@z
+
+@x
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+@y
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+@z
+
+@x
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }} .
+@y
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }} .
+@z
+
+@x
+      - name: Run Docker Scout CVE scan
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
+          only-severities: critical,high
+          exit-code: true
+```
+@y
+      - name: Run Docker Scout CVE scan
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
+          only-severities: critical,high
+          exit-code: true
+```
+@z
 
 @x
 The `exit-code: true` parameter ensures that the workflow fails if any critical or
@@ -158,6 +310,54 @@ Scout with other systems](manuals/scout/integrations/_index.md).
 @z
 
 @x
+### Comparing Docker Scout results with other scanners
+@y
+### Comparing Docker Scout results with other scanners
+@z
+
+@x
+Some vulnerabilities reported by other scanners may not appear in Docker Scout results. This can happen for several
+reasons:
+@y
+Some vulnerabilities reported by other scanners may not appear in Docker Scout results. This can happen for several
+reasons:
+@z
+
+@x
+- Hardware-specific vulnerabilities: Certain vulnerabilities may only affect specific hardware architectures (for
+  example, Power10 processors) that are not relevant to Docker images, so they are not reported by Docker Scout.
+- VEX statement filtering: Docker Scout automatically applies VEX statements to document and suppress vulnerabilities
+  that do not apply to the image. If your scanner does not consume VEX statements, you may see more vulnerabilities
+  reported than what appears in Docker Scout results.
+- Temporary vulnerability identifiers: Temporary vulnerability identifiers (like `TEMP-xxxxxxx` from Debian) are not
+  surfaced by Docker Scout, as they are not intended for external reference.
+@y
+- Hardware-specific vulnerabilities: Certain vulnerabilities may only affect specific hardware architectures (for
+  example, Power10 processors) that are not relevant to Docker images, so they are not reported by Docker Scout.
+- VEX statement filtering: Docker Scout automatically applies VEX statements to document and suppress vulnerabilities
+  that do not apply to the image. If your scanner does not consume VEX statements, you may see more vulnerabilities
+  reported than what appears in Docker Scout results.
+- Temporary vulnerability identifiers: Temporary vulnerability identifiers (like `TEMP-xxxxxxx` from Debian) are not
+  surfaced by Docker Scout, as they are not intended for external reference.
+@z
+
+@x
+While Docker Scout handles this filtering automatically, you can manually configure similar filtering with other
+scanners using [Grype ignore rules](https://github.com/anchore/grype#specifying-matches-to-ignore) in its configuration
+file (`~/.grype.yaml`) or [Trivy policy exceptions](https://trivy.dev/v0.19.2/misconfiguration/policy/exceptions/) using
+REGO rules to filter out specific vulnerabilities by CVE ID, package name, fix state, or other criteria. You can also
+use VEX statements with other scanners as described in [Use VEX to filter known non-exploitable
+CVEs](#use-vex-to-filter-known-non-exploitable-cves).
+@y
+While Docker Scout handles this filtering automatically, you can manually configure similar filtering with other
+scanners using [Grype ignore rules](https://github.com/anchore/grype#specifying-matches-to-ignore) in its configuration
+file (`~/.grype.yaml`) or [Trivy policy exceptions](https://trivy.dev/v0.19.2/misconfiguration/policy/exceptions/) using
+REGO rules to filter out specific vulnerabilities by CVE ID, package name, fix state, or other criteria. You can also
+use VEX statements with other scanners as described in [Use VEX to filter known non-exploitable
+CVEs](#use-vex-to-filter-known-non-exploitable-cves).
+@z
+
+@x
 ## Grype
 @y
 ## Grype
@@ -187,7 +387,17 @@ After installing Grype, you can scan a Docker Hardened Image by pulling
 the image and running the scan command:
 @z
 
-% snip command...
+@x
+```console
+$ docker pull dhi.io/<image>:<tag>
+$ grype dhi.io/<image>:<tag>
+```
+@y
+```console
+$ docker pull dhi.io/<image>:<tag>
+$ grype dhi.io/<image>:<tag>
+```
+@z
 
 @x
 Example output:
@@ -195,7 +405,23 @@ Example output:
 Example output:
 @z
 
-% snip output...
+@x
+```plaintext
+NAME               INSTALLED              FIXED-IN     TYPE  VULNERABILITY     SEVERITY    EPSS%  RISK
+libperl5.36        5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+perl               5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+perl-base          5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+...
+```
+@y
+```plaintext
+NAME               INSTALLED              FIXED-IN     TYPE  VULNERABILITY     SEVERITY    EPSS%  RISK
+libperl5.36        5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+perl               5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+perl-base          5.36.0-7+deb12u2       (won't fix)  deb   CVE-2023-31484    High        79.45    1.1
+...
+```
+@z
 
 @x
 You should include the `--vex` flag to apply VEX statements during the scan,
@@ -237,7 +463,17 @@ After installing Trivy, you can scan a Docker Hardened Image by pulling
 the image and running the scan command:
 @z
 
-% snip command...
+@x
+```console
+$ docker pull dhi.io/<image>:<tag>
+$ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
+```
+@y
+```console
+$ docker pull dhi.io/<image>:<tag>
+$ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
+```
+@z
 
 @x
 Example output:
@@ -245,16 +481,40 @@ Example output:
 Example output:
 @z
 
-% snip output...
+@x
+```plaintext
+Report Summary
+@y
+```plaintext
+Report Summary
+@z
+
+@x
+┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
+├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ dhi.io/<image>:<tag> (debian 12.11)                                          │   debian   │       66        │    -    │
+├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
+└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+```
+@y
+┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
+├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ dhi.io/<image>:<tag> (debian 12.11)                                          │   debian   │       66        │    -    │
+├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
+└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+```
+@z
 
 @x
 You should include the `--vex` flag to apply VEX statements during the scan,
-which filter out known non-exploitable CVEs. For more information, see the [VEX
-section](#use-vex-to-filter-known-non-exploitable-cves).
+which filter out known non-exploitable CVEs.
 @y
 You should include the `--vex` flag to apply VEX statements during the scan,
-which filter out known non-exploitable CVEs. For more information, see the [VEX
-section](#use-vex-to-filter-known-non-exploitable-cves).
+which filter out known non-exploitable CVEs.
 @z
 
 @x
@@ -286,13 +546,13 @@ manual configuration needed.
 >
 > By default, VEX attestations are fetched from `registry.scout.docker.com`. Ensure that you can access this registry
 > if your network has outbound restrictions. You can also mirror the attestations to an alternate registry. For more
-> details, see [Mirror a Docker Hardened Image repository](mirror.md#mirror-from-docker-hub-to-another-registry).
+> details, see [Mirror to a third-party registry](mirror.md#mirror-to-a-third-party-registry).
 @y
 > [!NOTE]
 >
 > By default, VEX attestations are fetched from `registry.scout.docker.com`. Ensure that you can access this registry
 > if your network has outbound restrictions. You can also mirror the attestations to an alternate registry. For more
-> details, see [Mirror a Docker Hardened Image repository](mirror.md#mirror-from-docker-hub-to-another-registry).
+> details, see [Mirror to a third-party registry](mirror.md#mirror-to-a-third-party-registry).
 @z
 
 @x
@@ -301,7 +561,15 @@ To manually create a JSON file of VEX attestations for tools that support it:
 To manually create a JSON file of VEX attestations for tools that support it:
 @z
 
-% snip command...
+@x
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@y
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@z
 
 @x
 > [!NOTE]
@@ -327,7 +595,15 @@ For example:
 For example:
 @z
 
-% snip command...
+@x
+```console
+$ docker scout vex get dhi.io/python:3.13 --output vex.json
+```
+@y
+```console
+$ docker scout vex get dhi.io/python:3.13 --output vex.json
+```
+@z
 
 @x
 This creates a `vex.json` file containing the VEX statements for the specified
@@ -340,11 +616,19 @@ known non-exploitable CVEs.
 @z
 
 @x
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
+For example, with Grype you can use the `--vex` flag to apply the VEX
 statements during the scan:
 @y
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
+For example, with Grype you can use the `--vex` flag to apply the VEX
 statements during the scan:
 @z
 
-% snip command...
+@x
+```console
+$ grype dhi.io/python:3.13 --vex vex.json
+```
+@y
+```console
+$ grype dhi.io/python:3.13 --vex vex.json
+```
+@z

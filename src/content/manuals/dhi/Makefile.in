@@ -295,9 +295,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = about images core-concepts features how-to
+SUBDIRS = explore images core-concepts how-to migration
 bases = \
 	_index.md       \
+	features.md     \
 	get-started.md  \
 	troubleshoot.md
 

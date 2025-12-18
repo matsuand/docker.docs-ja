@@ -20,23 +20,19 @@ keywords: docker scout policies, enforce image compliance, container security po
 @z
 
 @x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
+When you have a Docker Hardened Images Enterprise subscription, mirroring a
+Docker Hardened Image (DHI) repository automatically enables [Docker
+Scout](/scout/), allowing you to start enforcing security and compliance
+policies for your images without additional setup. Using Docker Scout policies,
+you can define and apply rules that ensure only approved and secure images, such
+as those based on DHIs, are used across your environments.
 @y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@z
-
-@x
-Mirroring a Docker Hardened Image (DHI) repository automatically enables [Docker
-Scout](/scout/), allowing you to start enforcing security and compliance policies for your
-images without additional setup. Using Docker Scout policies, you can define and
-apply rules that ensure only approved and secure images, such as those based on
-DHIs, are used across your environments.
-@y
-Mirroring a Docker Hardened Image (DHI) repository automatically enables [Docker
-Scout](__SUBDIR__/scout/), allowing you to start enforcing security and compliance policies for your
-images without additional setup. Using Docker Scout policies, you can define and
-apply rules that ensure only approved and secure images, such as those based on
-DHIs, are used across your environments.
+When you have a Docker Hardened Images Enterprise subscription, mirroring a
+Docker Hardened Image (DHI) repository automatically enables [Docker
+Scout](__SUBDIR__/scout/), allowing you to start enforcing security and compliance
+policies for your images without additional setup. Using Docker Scout policies,
+you can define and apply rules that ensure only approved and secure images, such
+as those based on DHIs, are used across your environments.
 @z
 
 @x
@@ -156,11 +152,11 @@ base. For example:
 @x
 ```dockerfile
 # Dockerfile
-FROM ORG_NAME/dhi-python:3.13-alpine3.21
+FROM <your-namespace>/dhi-python:3.13-alpine3.21
 @y
 ```dockerfile
 # Dockerfile
-FROM ORG_NAME/dhi-python:3.13-alpine3.21
+FROM <your-namespace>/dhi-python:3.13-alpine3.21
 @z
 
 @x
@@ -189,13 +185,13 @@ build and push the image to your Docker Hub repository:
 ```console
 $ docker build \
   --push \
-  -t YOUR_ORG/my-dhi-app:v1 .
+  -t <your-namespace>/my-dhi-app:v1 .
 ```
 @y
 ```console
 $ docker build \
   --push \
-  -t YOUR_ORG/my-dhi-app:v1 .
+  -t <your-namespace>/my-dhi-app:v1 .
 ```
 @z
 
@@ -216,14 +212,14 @@ following commands in your terminal:
 @x
 ```console
 $ docker login
-$ docker scout enroll YOUR_ORG
-$ docker scout repo enable --org YOUR_ORG YOUR_ORG/my-dhi-app
+$ docker scout enroll <your-namespace>
+$ docker scout repo enable --org <your-namespace> <your-namespace>/my-dhi-app
 ```
 @y
 ```console
 $ docker login
-$ docker scout enroll YOUR_ORG
-$ docker scout repo enable --org YOUR_ORG YOUR_ORG/my-dhi-app
+$ docker scout enroll <your-namespace>
+$ docker scout repo enable --org <your-namespace> <your-namespace>/my-dhi-app
 ```
 @z
 
@@ -276,11 +272,11 @@ Once the DHI policy is configured and active, you can view compliance results:
 @x
 1. Go to the [Docker Scout dashboard](https://scout.docker.com).
 2. Select your organization and navigate to **Images**.
-3. Find your image, `YOUR_ORG/my-dhi-app:v1`, and select the link in the **Compliance** column.
+3. Find your image, `<your-namespace>/my-dhi-app:v1`, and select the link in the **Compliance** column.
 @y
 1. Go to the [Docker Scout dashboard](https://scout.docker.com).
 2. Select your organization and navigate to **Images**.
-3. Find your image, `YOUR_ORG/my-dhi-app:v1`, and select the link in the **Compliance** column.
+3. Find your image, `<your-namespace>/my-dhi-app:v1`, and select the link in the **Compliance** column.
 @z
 
 @x

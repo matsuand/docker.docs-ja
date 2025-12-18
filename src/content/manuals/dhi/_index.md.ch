@@ -11,30 +11,36 @@ title: Docker Hardened Images
 description: Secure, minimal, and production-ready base images
 @z
 
+@x
+      text: New
+@y
+      text: New
+@z
+
 % grid_sections:
 
 @x
     - title: Quickstart
-      description: Follow a step-by-step guide to explore, mirror, and run a Docker Hardened Image.
+      description: Follow a step-by-step guide to explore and run a Docker Hardened Image.
       icon: rocket_launch
       link: /dhi/get-started/
 @y
     - title: Quickstart
-      description: Follow a step-by-step guide to explore, mirror, and run a Docker Hardened Image.
+      description: Follow a step-by-step guide to explore and run a Docker Hardened Image.
       icon: rocket_launch
       link: __SUBDIR__/dhi/get-started/
 @z
 
 @x
-    - title: About
+    - title: Explore
       description: Learn what Docker Hardened Images are, how they're built, and what sets them apart from typical base images.
       icon: info
-      link: /dhi/about/
+      link: /dhi/explore/
 @y
-    - title: About
+    - title: Explore
       description: Learn what Docker Hardened Images are, how they're built, and what sets them apart from typical base images.
       icon: info
-      link: __SUBDIR__/dhi/about/
+      link: __SUBDIR__/dhi/explore/
 @z
 
 @x
@@ -86,21 +92,33 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
+Docker Hardened Images (DHI) are minimal, secure, and production-ready container
+base and application images maintained by Docker. Designed to reduce
+vulnerabilities and simplify compliance, DHI integrates easily into your
+existing Docker-based workflows with little to no retooling required.
 @y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
+Docker Hardened Images (DHI) are minimal, secure, and production-ready container
+base and application images maintained by Docker. Designed to reduce
+vulnerabilities and simplify compliance, DHI integrates easily into your
+existing Docker-based workflows with little to no retooling required.
 @z
 
 @x
-Docker Hardened Images (DHIs) are minimal, secure, and production-ready
-container base and application images maintained by Docker. Designed to reduce
-vulnerabilities and simplify compliance, DHIs integrate easily into your
-existing Docker-based workflows with little to no retooling required.
+DHI is available in two tiers: **DHI Free** provides core security features at
+no cost, while **DHI Enterprise** adds SLA-backed support, compliance variants,
+customization, and Extended Lifecycle Support for organizations with advanced
+requirements.
 @y
-Docker Hardened Images (DHIs) are minimal, secure, and production-ready
-container base and application images maintained by Docker. Designed to reduce
-vulnerabilities and simplify compliance, DHIs integrate easily into your
-existing Docker-based workflows with little to no retooling required.
+DHI is available in two tiers: **DHI Free** provides core security features at
+no cost, while **DHI Enterprise** adds SLA-backed support, compliance variants,
+customization, and Extended Lifecycle Support for organizations with advanced
+requirements.
+@z
+
+@x
+![DHI Subscription](./images/dhi-subscription.png)
+@y
+![DHI Subscription](./images/dhi-subscription.png)
 @z
 
 @x

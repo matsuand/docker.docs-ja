@@ -233,7 +233,7 @@ Docker クライアントは複数のデーモンと通信することができ�
 @z
 
 @x
-Docker Desktop is an easy-to-install application for your Mac, Windows or Linux environment that enables you to build and share containerized applications and microservices. Docker Desktop includes the Docker daemon (`dockerd`), the Docker client (`docker`), Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper. For more information, see [Docker Desktop](/manuals/desktop/_index.md).
+Docker Desktop is an easy-to-install application for your Mac, Windows, or Linux environment that enables you to build and share containerized applications and microservices. Docker Desktop includes the Docker daemon (`dockerd`), the Docker client (`docker`), Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper. For more information, see [Docker Desktop](/manuals/desktop/_index.md).
 @y
 Docker Desktop は Mac、Windows、Linux の各環境に簡単にインストールできるアプリケーションです。
 これを使って、コンテナー化アプリケーションやマイクロサービスをビルドし共有することができます。
@@ -290,14 +290,14 @@ Docker の利用時は、イメージ、コンテナー、ネットワーク、�
 @x
 An image is a read-only template with instructions for creating a Docker
 container. Often, an image is based on another image, with some additional
-customization. For example, you may build an image which is based on the `ubuntu`
-image, but installs the Apache web server and your application, as well as the
+customization. For example, you may build an image that is based on the Ubuntu image
+but includes the Apache web server and your application, as well as the
 configuration details needed to make your application run.
 @y
 イメージとは、Docker コンテナーを作成する命令が入った読み込み専用のテンプレートです。
 通常イメージは、他のイメージをベースにしてそれをカスタマイズして利用します。
-たとえば`ubuntu`イメージをベースとするイメージを作ったとします。
-そこには Apache ウェブサーバーや自開発したアプリケーションといったものをインストールするかもしれません。
+たとえば Ubuntu イメージをベースとするイメージを作ったとします。
+そこには Apache ウェブサーバーや自開発したアプリケーションといったものが含まれるかもしれません。
 さらにアプリケーション実行に必要となる詳細な設定も加えることにもなるでしょう。
 @z
 

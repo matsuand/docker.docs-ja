@@ -440,9 +440,9 @@ high-quality commercial publishers.
 @z
 
 @x
-![Docker-Sponsored Open Source badge](../images/verified-publisher-badge-iso.png)
+![Docker-Verified Publisher badge](../images/verified-publisher-badge-iso.png)
 @y
-![Docker-Sponsored Open Source badge](../images/verified-publisher-badge-iso.png)
+![Docker-Verified Publisher badge](../images/verified-publisher-badge-iso.png)
 @z
 
 @x

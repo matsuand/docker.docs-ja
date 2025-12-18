@@ -4,12 +4,12 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Mirror a Docker Hardened Image repository
-linktitle: Mirror an image
+title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linktitle: Mirror a repository
 description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
 @y
-title: Mirror a Docker Hardened Image repository
-linktitle: Mirror an image
+title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linktitle: Mirror a repository
 description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
 @z
 
@@ -26,49 +26,119 @@ keywords: mirror docker image, private container registry, docker hub automation
 @z
 
 @x
-Before you can use a Docker Hardened Image (DHI), you must mirror its repository
-to your organization. Only organization owners can perform this action. Once
-mirrored, the image becomes available in your organization's namespace, and
-users with access can begin pulling and using it.
+Mirroring requires a DHI Enterprise subscription. Without a DHI Enterprise
+subscription, you can pull Docker Hardened Images directly from `dhi.io` without
+mirroring. With a DHI Enterprise subscription, you must mirror to get:
 @y
-Before you can use a Docker Hardened Image (DHI), you must mirror its repository
-to your organization. Only organization owners can perform this action. Once
-mirrored, the image becomes available in your organization's namespace, and
-users with access can begin pulling and using it.
+Mirroring requires a DHI Enterprise subscription. Without a DHI Enterprise
+subscription, you can pull Docker Hardened Images directly from `dhi.io` without
+mirroring. With a DHI Enterprise subscription, you must mirror to get:
 @z
 
 @x
-Mirrored repositories automatically stay up to date. Docker continues to sync
-new tags and image updates from the upstream DHI catalog, so you always have
-access to the latest secure version.
+- Compliance variants (FIPS-enabled or STIG-ready images)
+- Extended Lifecycle Support (ELS) variants (requires add-on)
+- Image or Helm chart customization
+- Air-gapped or restricted network environments
+- SLA-backed security updates
 @y
-Mirrored repositories automatically stay up to date. Docker continues to sync
-new tags and image updates from the upstream DHI catalog, so you always have
-access to the latest secure version.
+- Compliance variants (FIPS-enabled or STIG-ready images)
+- Extended Lifecycle Support (ELS) variants (requires add-on)
+- Image or Helm chart customization
+- Air-gapped or restricted network environments
+- SLA-backed security updates
 @z
 
 @x
-## Prerequisites
+## How to mirror
 @y
-## Prerequisites
+## How to mirror
 @z
 
 @x
-- To manage mirroring, you must be an [organization owner](/admin/).
-- Your organization must be [signed
-  up](https://www.docker.com/products/hardened-images/#getstarted) to use
-  Docker Hardened Images.
+This topic covers two types of mirroring for Docker Hardened Image (DHI)
+repositories:
 @y
-- To manage mirroring, you must be an [organization owner](__SUBDIR__/admin/).
-- Your organization must be [signed
-  up](https://www.docker.com/products/hardened-images/#getstarted) to use
-  Docker Hardened Images.
+This topic covers two types of mirroring for Docker Hardened Image (DHI)
+repositories:
 @z
 
 @x
-## Mirror an image repository
+- [Mirror to Docker Hub](#mirror-a-dhi-repository-to-docker-hub): Mirror a DHI
+  repository to your organization's namespace on Docker Hub. This requires a DHI
+  Enterprise subscription and is used to [customize an image or
+  chart](./customize.md) and access compliance variants and ELS variants
+  (requires add-on). This must be done through the Docker Hub web interface.
 @y
-## Mirror an image repository
+- [Mirror to Docker Hub](#mirror-a-dhi-repository-to-docker-hub): Mirror a DHI
+  repository to your organization's namespace on Docker Hub. This requires a DHI
+  Enterprise subscription and is used to [customize an image or
+  chart](./customize.md) and access compliance variants and ELS variants
+  (requires add-on). This must be done through the Docker Hub web interface.
+@z
+
+@x
+- [Mirror to a third-party
+  registry](#mirror-a-dhi-repository-to-a-third-party-registry): Mirror a
+  repository to another container registry, such as Amazon ECR, Google Artifact
+  Registry, or a private Harbor instance.
+@y
+- [Mirror to a third-party
+  registry](#mirror-a-dhi-repository-to-a-third-party-registry): Mirror a
+  repository to another container registry, such as Amazon ECR, Google Artifact
+  Registry, or a private Harbor instance.
+@z
+
+@x
+## Mirror a DHI repository to Docker Hub
+@y
+## Mirror a DHI repository to Docker Hub
+@z
+
+@x
+Mirroring a repository to Docker Hub requires a DHI Enterprise subscription and
+enables access to compliance variants, Extended Lifecycle Support (ELS) variants
+(requires add-on), and customization capabilities:
+@y
+Mirroring a repository to Docker Hub requires a DHI Enterprise subscription and
+enables access to compliance variants, Extended Lifecycle Support (ELS) variants
+(requires add-on), and customization capabilities:
+@z
+
+@x
+- Image repositories: Mirroring lets you customize images by adding packages,
+  OCI artifacts (such as custom certificates or additional tools), environment
+  variables, labels, and other configuration settings. For more details, see
+  [Customize a Docker Hardened Image](./customize.md#customize-a-docker-hardened-image).
+@y
+- Image repositories: Mirroring lets you customize images by adding packages,
+  OCI artifacts (such as custom certificates or additional tools), environment
+  variables, labels, and other configuration settings. For more details, see
+  [Customize a Docker Hardened Image](./customize.md#customize-a-docker-hardened-image).
+@z
+
+@x
+- Chart repositories: Mirroring lets you customize image references within
+  the chart. This is particularly useful when using customized images or when
+  you've mirrored images to a third-party registry and need the chart to
+  reference those custom locations. For more details, see [Customize a Docker
+  Hardened Helm chart](./customize.md#customize-a-docker-hardened-helm-chart).
+@y
+- Chart repositories: Mirroring lets you customize image references within
+  the chart. This is particularly useful when using customized images or when
+  you've mirrored images to a third-party registry and need the chart to
+  reference those custom locations. For more details, see [Customize a Docker
+  Hardened Helm chart](./customize.md#customize-a-docker-hardened-helm-chart).
+@z
+
+@x
+Only organization owners can perform mirroring. Once mirrored, the repository
+becomes available in your organization's namespace, and you can customize it as
+needed.
+@y
+Only organization owners can perform mirroring. Once mirrored, the repository
+becomes available in your organization's namespace, and you can customize it as
+needed.
 @z
 
 @x
@@ -80,81 +150,49 @@ To mirror a Docker Hardened Image repository:
 @x
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has access to DHI.
+3. In the namespace drop-down, select your organization.
 4. Select **Hardened Images** > **Catalog**.
 5. Select a DHI repository to view its details.
-6. Select **Mirror to repository** and follow the on-screen instructions.
+6. Mirror the repository:
+    - To mirror an image repository, select **Use this image** > **Mirror
+      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
+      select **Enable support for end-of-life versions**.
+    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
 @y
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has access to DHI.
+3. In the namespace drop-down, select your organization.
 4. Select **Hardened Images** > **Catalog**.
 5. Select a DHI repository to view its details.
-6. Select **Mirror to repository** and follow the on-screen instructions.
+6. Mirror the repository:
+    - To mirror an image repository, select **Use this image** > **Mirror
+      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
+      select **Enable support for end-of-life versions**.
+    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
 @z
 
 @x
-It may take a few minutes for all the tags to finish mirroring. Once an image
-has been mirrored, the **Mirror to repository** button changes to **View in
-repository**. Selecting **View in repository** opens a drop-down list of
-repositories that the image has already been mirrored to. From this drop-down,
-you can:
+It may take a few minutes for all the tags to finish mirroring.
 @y
-It may take a few minutes for all the tags to finish mirroring. Once an image
-has been mirrored, the **Mirror to repository** button changes to **View in
-repository**. Selecting **View in repository** opens a drop-down list of
-repositories that the image has already been mirrored to. From this drop-down,
-you can:
-@z
-
-@x
- - Select an existing mirrored repository to view its details
- - Select **Mirror to repository** again to mirror the image to an additional
-   repository
-@y
- - Select an existing mirrored repository to view its details
- - Select **Mirror to repository** again to mirror the image to an additional
-   repository
+It may take a few minutes for all the tags to finish mirroring.
 @z
 
 @x
 After mirroring a repository, the repository appears in your organization's
-repository list, prefixed by `dhi-`. It will
-continue to receive updated images.
+repository list, prefixed by `dhi-`. It will continue to receive updated images.
 @y
 After mirroring a repository, the repository appears in your organization's
-repository list, prefixed by `dhi-`. It will
-continue to receive updated images.
+repository list, prefixed by `dhi-`. It will continue to receive updated images.
 @z
 
 @x
-![Repository list with mirrored repository showing](../images/dhi-python-mirror.png)
+Once mirrored, the repository works like any other private repository on Docker
+Hub and you can now customize it. To learn more about customization, see
+[Customize a Docker Hardened Image or chart](./customize.md).
 @y
-![Repository list with mirrored repository showing](../images/dhi-python-mirror.png)
-@z
-
-@x
-> [!IMPORTANT]
->
-> The mirrored repository's visibility must remain private. Changing its
-> visibility to public will stop updates from being mirrored.
-@y
-> [!IMPORTANT]
->
-> The mirrored repository's visibility must remain private. Changing its
-> visibility to public will stop updates from being mirrored.
-@z
-
-@x
-Once mirrored, the image repository works like any other private repository on
-Docker Hub. Team members with access to the repository can now pull and use the
-image. To learn how to manage access, view tags, or configure settings, see
-[Repositories](/manuals/docker-hub/repos.md).
-@y
-Once mirrored, the image repository works like any other private repository on
-Docker Hub. Team members with access to the repository can now pull and use the
-image. To learn how to manage access, view tags, or configure settings, see
-[Repositories](manuals/docker-hub/repos.md).
+Once mirrored, the repository works like any other private repository on Docker
+Hub and you can now customize it. To learn more about customization, see
+[Customize a Docker Hardened Image or chart](./customize.md).
 @z
 
 @x
@@ -262,71 +300,77 @@ When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 @z
 
 @x
-## Stop mirroring an image repository
+### Stop mirroring a repository
 @y
-## Stop mirroring an image repository
+### Stop mirroring a repository
 @z
 
 @x
 Only organization owners can stop mirroring a repository. After you stop
 mirroring, the repository remains, but it will
-no longer receive updates. You can still pull the last image that was mirrored,
+no longer receive updates. You can still use the last images or charts that were mirrored,
 but the repository will not receive new tags or updates from the original
 repository.
 @y
 Only organization owners can stop mirroring a repository. After you stop
 mirroring, the repository remains, but it will
-no longer receive updates. You can still pull the last image that was mirrored,
+no longer receive updates. You can still use the last images or charts that were mirrored,
 but the repository will not receive new tags or updates from the original
 repository.
 @z
 
 @x
- To stop mirroring an image repository:
+> [!NOTE]
+>
+> If you only want to stop mirroring ELS versions, you can uncheck the ELS
+> option in the mirrored repository's **Settings** tab. For more details, see
+> [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
 @y
- To stop mirroring an image repository:
+> [!NOTE]
+>
+> If you only want to stop mirroring ELS versions, you can uncheck the ELS
+> option in the mirrored repository's **Settings** tab. For more details, see
+> [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
+@z
+
+@x
+ To stop mirroring a repository:
+@y
+ To stop mirroring a repository:
 @z
 
 @x
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization that has access to DHI.
-4. Select **Hardened Images** > **Management**.
-5. In the far right column of the repository you want to stop mirroring, select the menu icon.
-6. Select **Stop mirroring**.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
+6. In the far right column of the repository you want to stop mirroring, select the menu icon.
+7. Select **Stop mirroring**.
 @y
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization that has access to DHI.
-4. Select **Hardened Images** > **Management**.
-5. In the far right column of the repository you want to stop mirroring, select the menu icon.
-6. Select **Stop mirroring**.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
+6. In the far right column of the repository you want to stop mirroring, select the menu icon.
+7. Select **Stop mirroring**.
 @z
 
 @x
-Once you have stopped mirroring a repository, you can choose another DHI
-repository to mirror.
+## Mirror a DHI repository to a third-party registry
 @y
-Once you have stopped mirroring a repository, you can choose another DHI
-repository to mirror.
+## Mirror a DHI repository to a third-party registry
 @z
 
 @x
-## Mirror from Docker Hub to another registry
+You can optionally mirror a DHI repository to another container registry, such as Amazon
+ECR, Google Artifact Registry, GitHub Container Registry, or a private Harbor
+instance.
 @y
-## Mirror from Docker Hub to another registry
-@z
-
-@x
-After you've mirrored a Docker Hardened Image repository to your organization's
-namespace on Docker Hub, you can optionally mirror it to another container
-registry, such as Amazon ECR, Google Artifact Registry, GitHub Container
-Registry, or a private Harbor instance.
-@y
-After you've mirrored a Docker Hardened Image repository to your organization's
-namespace on Docker Hub, you can optionally mirror it to another container
-registry, such as Amazon ECR, Google Artifact Registry, GitHub Container
-Registry, or a private Harbor instance.
+You can optionally mirror a DHI repository to another container registry, such as Amazon
+ECR, Google Artifact Registry, GitHub Container Registry, or a private Harbor
+instance.
 @z
 
 @x
@@ -343,14 +387,14 @@ automation.
 
 @x
 However, to preserve the full security context, including attestations, you must
-also mirror its associated OCI artifacts. Docker Hardened Images store the image
-layers on Docker Hub (`docker.io`) and the signed attestations in a separate
-registry (`registry.scout.docker.com`).
+also mirror its associated OCI artifacts. DHI repositories store the image
+layers on `dhi.io` (or `docker.io` for customized images) and the signed
+attestations in a separate registry (`registry.scout.docker.com`).
 @y
 However, to preserve the full security context, including attestations, you must
-also mirror its associated OCI artifacts. Docker Hardened Images store the image
-layers on Docker Hub (`docker.io`) and the signed attestations in a separate
-registry (`registry.scout.docker.com`).
+also mirror its associated OCI artifacts. DHI repositories store the image
+layers on `dhi.io` (or `docker.io` for customized images) and the signed
+attestations in a separate registry (`registry.scout.docker.com`).
 @z
 
 @x
@@ -381,6 +425,18 @@ The following example shows how to mirror a specific tag of a Docker Hardened
 Image from Docker Hub to another registry, along with its associated
 attestations using `regctl`. You must [install
 `regctl`](https://github.com/regclient/regclient) first.
+@z
+
+@x
+The example assumes you have mirrored the DHI repository to your organization's
+namespace on Docker Hub as described in the previous section. You can apply the
+same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
+`SRC_REPO` variables accordingly.
+@y
+The example assumes you have mirrored the DHI repository to your organization's
+namespace on Docker Hub as described in the previous section. You can apply the
+same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
+`SRC_REPO` variables accordingly.
 @z
 
 @x
@@ -682,15 +738,13 @@ $ regsync once -c regsync.yaml
 @z
 
 @x
-## What's next
+## What next
 @y
-## What's next
+## What next
 @z
 
 @x
-After mirroring an image repository, you can you can start [using the
-image](./use.md).
+After mirroring, see [Pull a DHI](./use.md#pull-a-dhi) to learn how to pull and use mirrored images.
 @y
-After mirroring an image repository, you can you can start [using the
-image](./use.md).
+After mirroring, see [Pull a DHI](./use.md#pull-a-dhi) to learn how to pull and use mirrored images.
 @z

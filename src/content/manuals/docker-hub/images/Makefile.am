@@ -12,7 +12,8 @@ copyfiles = \
 	sponsored-badge.png              \
 	supported_tags.webp              \
 	upload_logo_sm.png               \
-	verified-publisher-badge.png
+	verified-publisher-badge.png     \
+	verified-publisher-badge-iso.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

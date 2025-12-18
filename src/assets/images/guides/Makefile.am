@@ -3,7 +3,12 @@
 ##
 
 copyfiles = \
-	bake.webp
+	bake.webp                \
+	dhi-examples-go.webp     \
+	dhi-examples-nodejs.webp \
+	dhi-examples-python.webp \
+	dhi-migrate-doi.webp     \
+	dhi-migrate-wolfi.webp
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

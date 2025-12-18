@@ -58,9 +58,9 @@ For example, you might find repositories like the following in the DHI catalog:
 @z
 
 @x
-## Compatibility options
+## Base image distributions
 @y
-## Compatibility options
+## Base image distributions
 @z
 
 @x
@@ -190,9 +190,15 @@ For example, you might find tags like the following in a DHI repository:
 @z
 
 @x
-## FIPS variants
+## FIPs and STIG variants {{< badge color="blue" text="DHI Enterprise" >}}
 @y
-## FIPS variants
+## FIPs and STIG variants {{< badge color="blue" text="DHI Enterprise" >}}
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -241,4 +247,86 @@ frameworks that require cryptographic validation.
 FIPS variants can be used in the same way as any other Docker Hardened Image and
 are ideal for teams operating in regulated industries or under compliance
 frameworks that require cryptographic validation.
+@z
+
+@x
+In addition to FIPS variants, some Docker Hardened Images also include
+STIG-ready variants. These images are scanned against custom STIG-based
+profiles and come with signed STIG scan attestations to support audits and
+compliance reporting. To identify STIG-ready variants, look for the **STIG**
+in the **Compliance** column of the image tags list in the Docker Hub catalog.
+@y
+In addition to FIPS variants, some Docker Hardened Images also include
+STIG-ready variants. These images are scanned against custom STIG-based
+profiles and come with signed STIG scan attestations to support audits and
+compliance reporting. To identify STIG-ready variants, look for the **STIG**
+in the **Compliance** column of the image tags list in the Docker Hub catalog.
+@z
+
+@x
+## Compatibility variants
+@y
+## Compatibility variants
+@z
+
+@x
+Some Docker Hardened Images include a compatiability variant. These variants
+provide additional tools and configurations for specific use cases without
+bloating the minimal base images.
+@y
+Some Docker Hardened Images include a compatiability variant. These variants
+provide additional tools and configurations for specific use cases without
+bloating the minimal base images.
+@z
+
+@x
+Compatibility variants are created to support:
+@y
+Compatibility variants are created to support:
+@z
+
+@x
+- Helm chart compatibility: Applications deployed via Helm charts and
+  Kubernetes that require specific runtime configurations or utilities for
+  seamless integration with popular Helm charts.
+@y
+- Helm chart compatibility: Applications deployed via Helm charts and
+  Kubernetes that require specific runtime configurations or utilities for
+  seamless integration with popular Helm charts.
+@z
+
+@x
+- Special application use-cases: Applications that need optional tools not
+  included in the minimal image.
+@y
+- Special application use-cases: Applications that need optional tools not
+  included in the minimal image.
+@z
+
+@x
+By offering these as separate image flavors, DHI ensures that the minimal images
+remain lean and secure, while providing the tools you need in dedicated
+variants. This approach maintains a minimal attack surface for standard
+deployments while supporting specialized requirements when needed.
+@y
+By offering these as separate image flavors, DHI ensures that the minimal images
+remain lean and secure, while providing the tools you need in dedicated
+variants. This approach maintains a minimal attack surface for standard
+deployments while supporting specialized requirements when needed.
+@z
+
+@x
+You can recognize compatibility variants by their tag that includes `-compat`.
+@y
+You can recognize compatibility variants by their tag that includes `-compat`.
+@z
+
+@x
+Use compatibility variants when your deployment requires additional tools beyond
+the minimal runtime, such as when using Helm charts or applications with
+specific tooling requirements.
+@y
+Use compatibility variants when your deployment requires additional tools beyond
+the minimal runtime, such as when using Helm charts or applications with
+specific tooling requirements.
 @z

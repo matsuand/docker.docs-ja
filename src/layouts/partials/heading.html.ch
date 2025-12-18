@@ -7,16 +7,10 @@
 
 @x
 {{ $id := .id | default (anchorize (plainify .text)) }}
-<h{{ .level }} class="{{ .class }} scroll-mt-20" id="{{ $id }}">
+<h{{ .level }} class="{{ .class }} scroll-mt-20 flex items-center gap-2" id="{{ $id }}">
   <a class="text-black dark:text-white no-underline hover:underline" href="#{{ $id }}">
-    {{ .text }}
-  </a>
-</h{{ .level }}>
 @y
 {{ $id := .id }}
-<h{{ .level }} class="{{ .class }} scroll-mt-20" id="{{ $id }}">
+<h{{ .level }} class="{{ .class }} scroll-mt-20 flex items-center gap-2" id="{{ $id }}">
   <a class="text-black dark:text-white no-underline hover:underline" href="#{{ $id }}">
-    {{ .text }}
-  </a>
-</h{{ .level }}>
 @z

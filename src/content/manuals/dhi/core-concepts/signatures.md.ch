@@ -161,12 +161,12 @@ $ docker scout attest list <image-name>:<tag>
 > [!NOTE]
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python` instead of `docs/dhi-python`.
+> `registry://dhi.io/python` instead of `dhi.io/python`.
 @y
 > [!NOTE]
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python` instead of `docs/dhi-python`.
+> `registry://dhi.io/python` instead of `dhi.io/python`.
 @z
 
 @x
@@ -195,12 +195,12 @@ $ docker scout attest get \
 > [!NOTE]
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @y
 > [!NOTE]
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @z
 
 @x
@@ -214,14 +214,14 @@ For example:
 $ docker scout attest get \
   --predicate-type https://openvex.dev/ns/v0.2.0 \
   --verify \
-  docs/dhi-python:3.13
+  dhi.io/python:3.13
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type https://openvex.dev/ns/v0.2.0 \
   --verify \
-  docs/dhi-python:3.13
+  dhi.io/python:3.13
 ```
 @z
 

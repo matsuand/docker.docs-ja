@@ -14,6 +14,11 @@ bases = \
 	container-supported-development.md \
 	databases.md                       \
 	dex.md                             \
+	dhi-from-doi.md                    \
+	dhi-from-wolfi.md                  \
+	dhi-go-example.md                  \
+	dhi-nodejs-example.md              \
+	dhi-python-example.md              \
 	gha.md                             \
 	jupyter.md                         \
 	kafka.md                           \

@@ -5,10 +5,13 @@
 SUBDIRS = images integrations reference
 
 bases = \
-	_index.md         \
-	best-practices.md \
-	rag.md            \
-	sharing-agents.md \
+	_index.md          \
+	best-practices.md  \
+	evals.md           \
+	local-models.md    \
+	model-providers.md \
+	rag.md             \
+	sharing-agents.md  \
 	tutorial.md
 
 include $(top_srcdir)/build-aux/common.mk

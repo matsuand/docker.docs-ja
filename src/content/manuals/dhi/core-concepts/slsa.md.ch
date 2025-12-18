@@ -223,13 +223,13 @@ To get and verify SLSA provenance for a DHI, you can use Docker Scout.
 
 @x
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://slsa.dev/provenance/v0.2 \
   --verify
 ```
 @y
 ```console
-$ docker scout attest get <your-namespace>/dhi-<image>:<tag> \
+$ docker scout attest get dhi.io/<image>:<tag> \
   --predicate-type https://slsa.dev/provenance/v0.2 \
   --verify
 ```
@@ -243,13 +243,13 @@ For example:
 
 @x
 ```console
-$ docker scout attest get docs/dhi-node:20.19-debian12-fips-20250701182639 \
+$ docker scout attest get dhi.io/node:20.19-debian12 \
   --predicate-type https://slsa.dev/provenance/v0.2 \
   --verify
 ```
 @y
 ```console
-$ docker scout attest get docs/dhi-node:20.19-debian12-fips-20250701182639 \
+$ docker scout attest get dhi.io/node:20.19-debian12 \
   --predicate-type https://slsa.dev/provenance/v0.2 \
   --verify
 ```
@@ -262,7 +262,9 @@ $ docker scout attest get docs/dhi-node:20.19-debian12-fips-20250701182639 \
 @z
 
 @x
-For more details about SLSA definitions and Docker Build, see [SLSA definitions](/build/metadata/attestations/slsa-definitions/).
+For more details about SLSA definitions and Docker Build, see [SLSA
+definitions](/build/metadata/attestations/slsa-definitions/).
 @y
-For more details about SLSA definitions and Docker Build, see [SLSA definitions](__SUBDIR__/build/metadata/attestations/slsa-definitions/).
+For more details about SLSA definitions and Docker Build, see [SLSA
+definitions](__SUBDIR__/build/metadata/attestations/slsa-definitions/).
 @z

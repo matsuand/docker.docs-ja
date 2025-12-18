@@ -2,13 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: FIPS
+title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linkTitle: FIPS
 description: Learn how Docker Hardened Images support FIPS 140 through validated cryptographic modules to help organizations meet compliance requirements.
 keywords: docker fips, fips 140 images, fips docker images, docker compliance, secure container images
 @y
-title: FIPS
+title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linkTitle: FIPS
 description: Learn how Docker Hardened Images support FIPS 140 through validated cryptographic modules to help organizations meet compliance requirements.
 keywords: docker fips, fips 140 images, fips docker images, docker compliance, secure container images
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -87,6 +95,14 @@ Using software components that rely on validated cryptographic modules can help 
 ## How Docker Hardened Images support FIPS compliance
 @y
 ## How Docker Hardened Images support FIPS compliance
+@z
+
+@x
+While Docker Hardened Images are available to all, the FIPS variant requires a
+Docker Hardened Images Enterprise subscription.
+@y
+While Docker Hardened Images are available to all, the FIPS variant requires a
+Docker Hardened Images Enterprise subscription.
 @z
 
 @x
@@ -170,6 +186,20 @@ ending with `-fips`, such as `3.13-fips`.
 @z
 
 @x
+## Use a FIPS variant
+@y
+## Use a FIPS variant
+@z
+
+@x
+To use a FIPS variant, you must [mirror](../how-to/mirror.md) the repository
+and then pull the FIPS image from your mirrored repository.
+@y
+To use a FIPS variant, you must [mirror](../how-to/mirror.md) the repository
+and then pull the FIPS image from your mirrored repository.
+@z
+
+@x
 ## View the FIPS attestation
 @y
 ## View the FIPS attestation
@@ -194,14 +224,14 @@ You can retrieve and inspect the FIPS attestation using the Docker Scout CLI:
 $ docker scout attest get \
   --predicate-type https://docker.com/dhi/fips/v0.1 \
   --predicate \
-  <your-namespace>/dhi-<image>:<tag>
+  dhi.io/<image>:<tag>
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type https://docker.com/dhi/fips/v0.1 \
   --predicate \
-  <your-namespace>/dhi-<image>:<tag>
+  dhi.io/<image>:<tag>
 ```
 @z
 
@@ -216,14 +246,14 @@ For example:
 $ docker scout attest get \
   --predicate-type https://docker.com/dhi/fips/v0.1 \
   --predicate \
-  docs/dhi-python:3.13-fips
+  dhi.io/python:3.13-fips
 ```
 @y
 ```console
 $ docker scout attest get \
   --predicate-type https://docker.com/dhi/fips/v0.1 \
   --predicate \
-  docs/dhi-python:3.13-fips
+  dhi.io/python:3.13-fips
 ```
 @z
 

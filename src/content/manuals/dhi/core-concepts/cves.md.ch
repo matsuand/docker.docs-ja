@@ -217,10 +217,12 @@ advisories.
 
 @x
 After installing Grype, you can scan a Docker Hardened Image by pulling
-the image and running the scan command:
+the image and running the scan command. Grype requires you to export the VEX
+attestation to a file first:
 @y
 After installing Grype, you can scan a Docker Hardened Image by pulling
-the image and running the scan command:
+the image and running the scan command. Grype requires you to export the VEX
+attestation to a file first:
 @z
 
 % snip command...
@@ -290,11 +292,11 @@ runtime behavior.
 @z
 
 @x
-When using Docker Scout, these VEX statements are automatically applied and no
-manual configuration needed.
+When using Docker Scout or Trivy, these VEX statements are automatically
+applied using the previous examples, and no manual configuration needed.
 @y
-When using Docker Scout, these VEX statements are automatically applied and no
-manual configuration needed.
+When using Docker Scout or Trivy, these VEX statements are automatically
+applied using the previous examples, and no manual configuration needed.
 @z
 
 @x
@@ -312,7 +314,7 @@ To manually retrieve the VEX attestation for tools that support it:
 > CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @y
 > [!NOTE]
 >
@@ -320,7 +322,7 @@ To manually retrieve the VEX attestation for tools that support it:
 > CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
-> `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @z
 
 @x
@@ -338,13 +340,3 @@ image. You can then use this file with tools that support VEX to filter out know
 This creates a `vex.json` file containing the VEX statements for the specified
 image. You can then use this file with tools that support VEX to filter out known non-exploitable CVEs.
 @z
-
-@x
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
-statements during the scan:
-@y
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
-statements during the scan:
-@z
-
-% snip command...

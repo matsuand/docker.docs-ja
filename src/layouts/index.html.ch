@@ -9,222 +9,155 @@
 <html lang="ja">
 @z
 
-@x 暫定公開 タイトル文 追加
-    <main class="flex min-h-screen w-full flex-col items-stretch self-center">
-@y
-    <main class="flex min-h-screen w-full flex-col items-stretch self-center">
-      <div align="right" style="height:0px">
-        暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
-      </div>
-@z
 @x
-              <h1 class="text-2xl">Get Docker</h1>
+	<main class="flex w-full flex-col items-stretch gap-20 self-center pt-20">
 @y
-              <h1 class="text-2xl">Docker の入手</h1>
-@z
-@x
-              Learn how to install Docker for Mac, Windows, or Linux and explore
-              our developer tools.
-@y
-              Docker for Mac, Windows, Linux のインストール方法を学び、開発ツール類を確認していきます。
-@z
-@x
-              href="/get-started/get-docker/"
-@y
-              href="get-started/get-docker/"
-@z
-@x
-              Get Docker
-@y
-              Docker の入手
-@z
-@x
-              src="/assets/images/app-wf-light-1.svg"
-@y
-              src="assets/images/app-wf-light-1.svg"
-@z
-@x
-              src="/assets/images/app-wf-dark-1.svg"
-@y
-              src="assets/images/app-wf-dark-1.svg"
+	<main class="flex w-full flex-col items-stretch gap-20 self-center pt-20">
+          <div align="right" style="height:0;padding:0;margin:0;border:none;transform:translate(0,-60px);">
+           暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
+          </div>
 @z
 
 @x
-              <a class="h-full" href="/get-started/">
+						<h1 class="text-xl">Get Docker</h1>
 @y
-              <a class="h-full" href="get-started/">
+						<h1 class="text-xl">Docker の入手</h1>
+@z
+@x
+						Learn how to install Docker for Mac, Windows, or Linux and explore
+						our developer tools.
+@y
+						Docker for Mac, Windows, Linux のインストール方法を学び、開発ツール類を確認していきます。
+@z
+@x
+					<a href="/get-started/get-docker/"
+@y
+					<a href="get-started/get-docker/"
+@z
+@x
+						Get Docker
+@y
+						Docker の入手
 @z
 
 @x
-                      <div class="section-card-title">Get started</div>
+						<h2 class="text-xl">Docker Hardened Images, now free to use</h1>
 @y
-                      <div class="section-card-title">はじめよう</div>
+						<h2 class="text-xl">Docker Hardened イメージが無償利用できる</h1>
+@z
+@x
+						Minimal, hardened base images with full transparency:
+						signed SBOMs, SLSA Level 3 provenance, and complete CVE
+						data.
+@y
+						Minimal, hardened base images with full transparency:
+						signed SBOMs, SLSA Level 3 provenance, and complete CVE
+						data.
+@z
+@x
+					<a href="/dhi/"
+@y
+					<a href="dhi/"
+@z
+@x
+						Get started for free
+@y
+						無償での利用を開始
 @z
 
 @x
-                    Learn Docker basics and the benefits of containerization.
+					<a class="h-full" href="/get-started/">
 @y
-                    Docker の基本やコンテナー技術の利点を学びます。
+					<a class="h-full" href="get-started/">
+@z
+@x
+									<div class="section-card-title">Get started</div>
+@y
+									<div class="section-card-title">はじめよう</div>
+@z
+@x
+								Learn Docker basics and the benefits of containerization.
+@y
+								Docker の基本やコンテナー技術の利点を学びます。
 @z
 
 @x
-              <a class="h-full" href="/guides/">
+					<a class="h-full" href="/guides/">
 @y
-              <a class="h-full" href="guides/">
+					<a class="h-full" href="guides/">
 @z
 @x
-                      <div class="section-card-title">Guides</div>
+									<div class="section-card-title">Guides</div>
 @y
-                      <div class="section-card-title">ガイド</div>
+									<div class="section-card-title">ガイド</div>
 @z
 @x
-                    Learn how Docker can optimize your development workflows.
+								Learn how Docker can optimize your development workflows.
 @y
-                    Docker が開発ワークフローをいかに最適化できるかを学びます。
-@z
-
-@x
-              <a class="h-full" href="/manuals/">
-@y
-              <a class="h-full" href="manuals/">
-@z
-@x
-                      <div class="section-card-title">Manuals</div>
-@y
-                      <div class="section-card-title">マニュアル</div>
-@z
-@x
-                    Learn how to install, set up, configure, and use Docker
-                    products.
-@y
-                    Docker 製品のインストール、セットアップ、設定、利用について学びます。
+								Docker が開発ワークフローをいかに最適化できるかを学びます。
 @z
 
 @x
-              <a class="h-full" href="/reference/">
+					<a class="h-full" href="/manuals/">
 @y
-              <a class="h-full" href="reference/">
+					<a class="h-full" href="manuals/">
 @z
 @x
-                      <div class="section-card-title">Reference</div>
+									<div class="section-card-title">Manuals</div>
 @y
-                      <div class="section-card-title">リファレンス</div>
+									<div class="section-card-title">マニュアル</div>
 @z
 @x
-                    Browse the CLI and API documentation.
+								Learn how to install, set up, configure, and use Docker
+								products.
 @y
-                    CLI および API ドキュメントを確認します。
-@z
-
-@x
-                  Docker Hardened Images
-@y
-                  Docker Hardened イメージ
-@z
-@x
-                  Secure, minimal, production-ready images with near-zero known CVEs.
-@y
-                  CVE がほぼゼロのセキュアで最小限のイメージです。
-@z
-@x
-                  href="/dhi/get-started/"
-@y
-                  href="dhi/get-started/"
-@z
-@x
-                  Start your free trial
-@y
-                  フリートライアル開始
-@z
-@x
-                  Explore images
-@y
-                  イメージの確認
-@z
-@x
-                src="/assets/images/app-wf-light-2.svg"
-@y
-                src="assets/images/app-wf-light-2.svg"
-@z
-@x
-                src="/assets/images/app-wf-dark-2.svg"
-@y
-                src="assets/images/app-wf-dark-2.svg"
+								Docker 製品のインストール、セットアップ、設定、利用について学びます。
 @z
 
 @x
-		          Docker State of Application Development survey
+					<a class="h-full" href="/reference/">
 @y
-		          Docker State of Application Development survey
+					<a class="h-full" href="reference/">
 @z
 @x
-		          Share your feedback and help us better understand and serve
-		          the application development community. It will take just 20
-		          minutes of your time. We want to know where you are
-		          focused, what you are working on, and what is most
-		          important to you.
+									<div class="section-card-title">Reference</div>
 @y
-		          Share your feedback and help us better understand and serve
-		          the application development community. It will take just 20
-		          minutes of your time. We want to know where you are
-		          focused, what you are working on, and what is most
-		          important to you.
+									<div class="section-card-title">リファレンス</div>
 @z
 @x
-		          You can save your progress and return at any time. As a
-		          thank-you, you can opt into a raffle for Docker swag and
-		          other prizes.
+								Browse the CLI and API documentation.
 @y
-		          You can save your progress and return at any time. As a
-		          thank-you, you can opt into a raffle for Docker swag and
-		          other prizes.
-@z
-@x
-                  >Take the survey</a>
-@y
-                  >Take the survey</a>
+								CLI および API ドキュメントを確認します。
 @z
 
 @x
-          <h2 class="mb-4 text-xl">Browse by section</h2>
+					<h2 class="text-2xl">Community resources</h2>
 @y
-          <h2 class="mb-4 text-xl">項目別のブラウズ</h2>
-@z
-
-@x
-          <h2 class="mb-4 text-xl">Browse by tag</h2>
-@y
-          <h2 class="mb-4 text-xl">タグ別のブラウズ</h2>
-@z
-
-@x
-            <h2 class="text-2xl">Community resources</h2>
-@y
-            <h2 class="text-2xl">コミュニティリソース</h2>
+					<h2 class="text-2xl">コミュニティリソース</h2>
 @z
 @x
-              Find fellow Docker enthusiasts, engage in insightful discussions,
-              share knowledge, and collaborate on projects. Our communities
-              offer a rich online experience for developers to create valuable
-              connections that challenge and inspire!
+						Find fellow Docker enthusiasts, engage in insightful discussions,
+						share knowledge, and collaborate on projects. Our communities
+						offer a rich online experience for developers to create valuable
+						connections that challenge and inspire!
 @y
-              Find fellow Docker enthusiasts, engage in insightful discussions,
-              share knowledge, and collaborate on projects. Our communities
-              offer a rich online experience for developers to create valuable
-              connections that challenge and inspire!
+						Find fellow Docker enthusiasts, engage in insightful discussions,
+						share knowledge, and collaborate on projects. Our communities
+						offer a rich online experience for developers to create valuable
+						connections that challenge and inspire!
 @z
 @x
-                Visit Docker Forum
+							Visit Docker Forum
 @y
-                Docker フォーラムへどうぞ
+							Docker フォーラムを確認
 @z
 @x
-                Join Docker Slack
+							Join Docker Slack
 @y
-                Docker Slack への参加
+							Docker Slack へ参加
 @z
 @x
-                Find your Docker Captain
+							Find your Docker Captain
 @y
-                Docker キャプテンを探せ
+							Docker Captain を探そう
 @z

@@ -1,9 +1,9 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admin ai app-dev best-practices cloud-services data-science \
-	databases deploy devops distributed-systems faq frameworks    \
-	networking observability product-demo release-notes secrets   \
+SUBDIRS = admin ai app-dev best-practices cloud-services data-science  \
+	databases deploy devops dhi distributed-systems faq frameworks \
+	networking observability product-demo release-notes secrets    \
 	troubleshooting
 
 bases = \

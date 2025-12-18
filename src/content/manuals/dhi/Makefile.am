@@ -2,10 +2,11 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS =  about images core-concepts features how-to
+SUBDIRS =  explore images core-concepts how-to migration
 
 bases = \
 	_index.md       \
+	features.md     \
 	get-started.md  \
 	troubleshoot.md
 

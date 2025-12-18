@@ -150,11 +150,19 @@ vulnerability management.
 @z
 
 @x
-When using Docker Scout, VEX statements are automatically applied and no
-manual configuration is needed.
+When using Docker Scout or Trivy, VEX statements are automatically applied as
+shown in the examples in [Common Vulnerabilities and Exposures (CVEs)](./cves.md).
 @y
-When using Docker Scout, VEX statements are automatically applied and no
-manual configuration is needed.
+When using Docker Scout or Trivy, VEX statements are automatically applied as
+shown in the examples in [Common Vulnerabilities and Exposures (CVEs)](./cves.md).
+@z
+
+@x
+For Grype, you need to export the VEX attestation to a file first before
+scanning, as shown in the [Grype scanning example](./cves.md#scan-a-dhi-using-grype).
+@y
+For Grype, you need to export the VEX attestation to a file first before
+scanning, as shown in the [Grype scanning example](./cves.md#scan-a-dhi-using-grype).
 @z
 
 @x
@@ -179,7 +187,33 @@ To manually retrieve the VEX attestation for tools that support it:
 To manually retrieve the VEX attestation for tools that support it:
 @z
 
-% snip command...
+@x
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@y
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@z
+
+@x
+> [!NOTE]
+>
+> The `docker scout vex get` command requires [Docker Scout
+> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
+@y
+> [!NOTE]
+>
+> The `docker scout vex get` command requires [Docker Scout
+> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
+>
+> If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
+> `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
+@z
 
 @x
 For example:
@@ -187,7 +221,15 @@ For example:
 For example:
 @z
 
-% snip command...
+@x
+```console
+$ docker scout vex get dhi.io/python:3.13 --output vex.json
+```
+@y
+```console
+$ docker scout vex get dhi.io/python:3.13 --output vex.json
+```
+@z
 
 @x
 This creates a `vex.json` file containing the VEX statements for the specified
@@ -198,13 +240,3 @@ This creates a `vex.json` file containing the VEX statements for the specified
 image. You can then use this file with tools that support VEX to filter out
 known non-exploitable CVEs.
 @z
-
-@x
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
-statements during the scan:
-@y
-For example, with Grype and Trivy, you can use the `--vex` flag to apply the VEX
-statements during the scan:
-@z
-
-% snip command...

@@ -16,13 +16,25 @@ keywords: docker hardened images, slsa build level 3, automated patching, ai gua
 @x
 Docker Hardened Images are built through an automated pipeline that monitors
 upstream sources, applies security updates, and publishes signed artifacts.
-This page explains the build process for both DHI images and customized
-images built from them.
+This page explains the build process for both base DHI images and DHI Enterprise
+customized images.
 @y
 Docker Hardened Images are built through an automated pipeline that monitors
 upstream sources, applies security updates, and publishes signed artifacts.
-This page explains the build process for both DHI images and customized
-images built from them.
+This page explains the build process for both base DHI images and DHI Enterprise
+customized images.
+@z
+
+@x
+With a DHI Enterprise subscription, the automated security update pipeline for
+both base and customized images is backed by SLA commitments, including a 7-day
+SLA for critical and high severity vulnerabilities. Only DHI Enterprise includes
+SLAs. DHI Free offers a secure baseline but no guaranteed remediation timelines.
+@y
+With a DHI Enterprise subscription, the automated security update pipeline for
+both base and customized images is backed by SLA commitments, including a 7-day
+SLA for critical and high severity vulnerabilities. Only DHI Enterprise includes
+SLAs. DHI Free offers a secure baseline but no guaranteed remediation timelines.
 @z
 
 @x
@@ -116,9 +128,15 @@ the support window that use that package.
 @z
 
 @x
-### Customization changes
+### Customization changes {tier="DHI Enterprise"}
 @y
-### Customization changes
+### Customization changes {tier="DHI Enterprise"}
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -130,13 +148,15 @@ images.
 @z
 
 @x
-When you customize a DHI image, your changes are packaged as OCI artifacts that
-layer on top of the base image. Docker monitors your artifact repositories and
-automatically rebuilds your customized images whenever you push updates.
+When you customize a DHI image with DHI Enterprise, your changes are packaged as
+OCI artifacts that layer on top of the base image. Docker monitors your artifact
+repositories and automatically rebuilds your customized images whenever you push
+updates.
 @y
-When you customize a DHI image, your changes are packaged as OCI artifacts that
-layer on top of the base image. Docker monitors your artifact repositories and
-automatically rebuilds your customized images whenever you push updates.
+When you customize a DHI image with DHI Enterprise, your changes are packaged as
+OCI artifacts that layer on top of the base image. Docker monitors your artifact
+repositories and automatically rebuilds your customized images whenever you push
+updates.
 @z
 
 @x
@@ -242,13 +262,17 @@ Each Docker Hardened Image is built through an automated pipeline:
 @x
 Docker responds quickly to critical vulnerabilities. By building essential
 components from source rather than waiting for packaged updates, Docker can
-patch Critical and High-severity CVEs within days of upstream fixes and publish
-updated images with new attestations.
+patch critical and high severity CVEs within days of upstream fixes and publish
+updated images with new attestations. For DHI Enterprise subscriptions, this
+rapid response is backed by a 7-day SLA for critical and high severity
+vulnerabilities.
 @y
 Docker responds quickly to critical vulnerabilities. By building essential
 components from source rather than waiting for packaged updates, Docker can
-patch Critical and High-severity CVEs within days of upstream fixes and publish
-updated images with new attestations.
+patch critical and high severity CVEs within days of upstream fixes and publish
+updated images with new attestations. For DHI Enterprise subscriptions, this
+rapid response is backed by a 7-day SLA for critical and high severity
+vulnerabilities.
 @z
 
 @x
@@ -286,15 +310,21 @@ The following diagram shows the base image build flow:
 @z
 
 @x
-### Customized image pipeline
+### Customized image pipeline {tier="DHI Enterprise"}
 @y
-### Customized image pipeline
+### Customized image pipeline {tier="DHI Enterprise"}
 @z
 
 @x
-When you customize a DHI image, the build process is simplified:
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @y
-When you customize a DHI image, the build process is simplified:
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@z
+
+@x
+When you customize a DHI image with DHI Enterprise, the build process is simplified:
+@y
+When you customize a DHI image with DHI Enterprise, the build process is simplified:
 @z
 
 @x

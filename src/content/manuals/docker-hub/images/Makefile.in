@@ -248,7 +248,8 @@ copyfiles = \
 	sponsored-badge.png              \
 	supported_tags.webp              \
 	upload_logo_sm.png               \
-	verified-publisher-badge.png
+	verified-publisher-badge.png     \
+	verified-publisher-badge-iso.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

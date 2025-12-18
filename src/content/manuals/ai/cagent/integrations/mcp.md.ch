@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: MCP mode
 linkTitle: MCP
@@ -85,6 +87,66 @@ If your configuration has multiple agents, each one becomes a separate tool. A
 config with `root`, `designer`, and `engineer` agents gives Claude three tools
 to choose from. Claude might call the engineer directly or use the root
 coordinator—depends on your agent descriptions and what you ask for.
+@z
+
+@x
+## MCP Gateway
+@y
+## MCP Gateway
+@z
+
+@x
+Docker provides an [MCP Gateway](/ai/mcp-catalog-and-toolkit/mcp-gateway/) that
+gives cagent agents access to a catalog of pre-configured MCP servers. Instead
+of configuring individual MCP servers, agents can use the gateway to access
+tools like web search, database queries, and more.
+@y
+Docker provides an [MCP Gateway](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) that
+gives cagent agents access to a catalog of pre-configured MCP servers. Instead
+of configuring individual MCP servers, agents can use the gateway to access
+tools like web search, database queries, and more.
+@z
+
+@x
+Configure MCP toolset with gateway reference:
+@y
+Configure MCP toolset with gateway reference:
+@z
+
+@x
+```yaml
+agents:
+  root:
+    toolsets:
+      - type: mcp
+        ref: docker:duckduckgo # Uses Docker MCP Gateway
+```
+@y
+```yaml
+agents:
+  root:
+    toolsets:
+      - type: mcp
+        ref: docker:duckduckgo # Uses Docker MCP Gateway
+```
+@z
+
+@x
+The `docker:` prefix tells cagent to use the MCP Gateway for this server. See
+the [MCP Gateway documentation](/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
+available servers and configuration options.
+@y
+The `docker:` prefix tells cagent to use the MCP Gateway for this server. See
+the [MCP Gateway documentation](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
+available servers and configuration options.
+@z
+
+@x
+You can also use the [MCP Toolkit](/ai/mcp-catalog-and-toolkit/) to explore and
+manage MCP servers interactively.
+@y
+You can also use the [MCP Toolkit](__SUBDIR__/ai/mcp-catalog-and-toolkit/) to explore and
+manage MCP servers interactively.
 @z
 
 @x
@@ -656,56 +718,16 @@ around.
 @z
 
 @x
-## ACP vs MCP integration
-@y
-## ACP vs MCP integration
-@z
-
-@x
-Both protocols let you integrate cagent agents with other tools, but they're
-designed for different use cases:
-@y
-Both protocols let you integrate cagent agents with other tools, but they're
-designed for different use cases:
-@z
-
-@x
-| Feature     | ACP Integration              | MCP Integration                |
-| ----------- | ---------------------------- | ------------------------------ |
-| Use case    | Embedded agents in editors   | Agents as tools in MCP clients |
-| Filesystem  | Delegated to client (editor) | Direct cagent access           |
-| Working dir | Client workspace             | Configurable per agent         |
-| Best for    | Code editing workflows       | Using agents as callable tools |
-@y
-| Feature     | ACP Integration              | MCP Integration                |
-| ----------- | ---------------------------- | ------------------------------ |
-| Use case    | Embedded agents in editors   | Agents as tools in MCP clients |
-| Filesystem  | Delegated to client (editor) | Direct cagent access           |
-| Working dir | Client workspace             | Configurable per agent         |
-| Best for    | Code editing workflows       | Using agents as callable tools |
-@z
-
-@x
-Use ACP when you want agents embedded in your editor. Use MCP when you want to
-expose agents as tools to MCP clients like Claude Desktop or Claude Code.
-@y
-Use ACP when you want agents embedded in your editor. Use MCP when you want to
-expose agents as tools to MCP clients like Claude Desktop or Claude Code.
-@z
-
-@x
-For ACP integration setup, see [ACP integration](./acp.md).
-@y
-For ACP integration setup, see [ACP integration](./acp.md).
-@z
-
-@x
 ## What's next
 @y
 ## What's next
 @z
 
 @x
+- Use the [MCP Gateway](/ai/mcp-catalog-and-toolkit/mcp-gateway/) to give your
+  agents access to pre-configured MCP servers
+- Explore MCP servers interactively with the [MCP
+  Toolkit](/ai/mcp-catalog-and-toolkit/)
 - Review the [configuration reference](../reference/config.md) for advanced
   agent setup
 - Explore the [toolsets reference](../reference/toolsets.md) to learn what tools
@@ -716,6 +738,10 @@ For ACP integration setup, see [ACP integration](./acp.md).
   configurations](https://github.com/docker/cagent/tree/main/examples) for
   different agent types
 @y
+- Use the [MCP Gateway](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) to give your
+  agents access to pre-configured MCP servers
+- Explore MCP servers interactively with the [MCP
+  Toolkit](__SUBDIR__/ai/mcp-catalog-and-toolkit/)
 - Review the [configuration reference](../reference/config.md) for advanced
   agent setup
 - Explore the [toolsets reference](../reference/toolsets.md) to learn what tools

@@ -14,25 +14,17 @@ keywords: explore docker images, image variants, docker hub catalog, container i
 @z
 
 @x
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@y
-{{< summary-bar feature_name="Docker Hardened Images" >}}
-@z
-
-@x
 Docker Hardened Images (DHI) are a curated set of secure, production-ready
-container images designed for enterprise use. This page explains how to explore
-available DHI repositories, review image metadata, examine variant details, and
-understand the security attestations provided. Use this information to evaluate
-and select the right image variants for your applications before mirroring them
-to your organization.
+container images. This page explains how to explore available DHI repositories,
+review image metadata, examine variant details, and understand the security
+attestations provided. Use this information to evaluate and select the right
+image variants for your applications.
 @y
 Docker Hardened Images (DHI) are a curated set of secure, production-ready
-container images designed for enterprise use. This page explains how to explore
-available DHI repositories, review image metadata, examine variant details, and
-understand the security attestations provided. Use this information to evaluate
-and select the right image variants for your applications before mirroring them
-to your organization.
+container images. This page explains how to explore available DHI repositories,
+review image metadata, examine variant details, and understand the security
+attestations provided. Use this information to evaluate and select the right
+image variants for your applications.
 @z
 
 @x
@@ -301,20 +293,4 @@ The image variant details page provides the following information:
   the image's build process, contents, and security posture. These attestations
   are signed and can be verified using cosign. For a list of available
   attestations, see [Attestations](../core-concepts/attestations.md).
-@z
-
-@x
-## What's next
-@y
-## What's next
-@z
-
-@x
-After finding an image you need, you can [mirror the image to your
-organization](./mirror.md). If the image is already mirrored, then you can start
-[using the image](./use.md).
-@y
-After finding an image you need, you can [mirror the image to your
-organization](./mirror.md). If the image is already mirrored, then you can start
-[using the image](./use.md).
 @z

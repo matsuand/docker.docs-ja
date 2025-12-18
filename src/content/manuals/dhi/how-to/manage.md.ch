@@ -2,13 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Manage Docker Hardened Images
-linktitle: Manage images
+title: 'Manage Docker Hardened Images and charts <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linktitle: Manage images and charts
 description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
 keywords: manage docker hardened images, custom hardened images
 @y
-title: Manage Docker Hardened Images
-linktitle: Manage images
+title: 'Manage Docker Hardened Images and charts <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+linktitle: Manage images and charts
 description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
 keywords: manage docker hardened images, custom hardened images
 @z
@@ -20,19 +20,19 @@ keywords: manage docker hardened images, custom hardened images
 @z
 
 @x
-On the **Management** screen in Docker Hub, you can manage both your mirrored
-Docker Hardened Image (DHI) repositories and customized DHI images in your
-organization.
+On the **Manage** screen in Docker Hub, you can manage your mirrored Docker
+Hardened Image (DHI) repositories, mirrored DHI chart repositories, and
+customizations in your organization.
 @y
-On the **Management** screen in Docker Hub, you can manage both your mirrored
-Docker Hardened Image (DHI) repositories and customized DHI images in your
-organization.
+On the **Manage** screen in Docker Hub, you can manage your mirrored Docker
+Hardened Image (DHI) repositories, mirrored DHI chart repositories, and
+customizations in your organization.
 @z
 
 @x
-## Manage mirrored Docker Hardened Images
+## Manage mirrored Docker Hardened Image repositories
 @y
-## Manage mirrored Docker Hardened Images
+## Manage mirrored Docker Hardened Image repositories
 @z
 
 @x
@@ -45,26 +45,16 @@ To manage your mirrored DHI repositories:
 1. Go to the [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Management**.
+4. Select **Hardened Images** > **Manage**.
+5. Select **Mirrored Images**
+6. Select the menu icon in the far right column of the repository you want to manage.
 @y
 1. Go to the [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Management**.
-@z
-
-@x
-   On this page, you can view your mirrored DHI
-   repositories and view which source repositories they are mirrored from.
-@y
-   On this page, you can view your mirrored DHI
-   repositories and view which source repositories they are mirrored from.
-@z
-
-@x
-5. Select the menu icon in the far right column of the repository you want to manage.
-@y
-5. Select the menu icon in the far right column of the repository you want to manage.
+4. Select **Hardened Images** > **Manage**.
+5. Select **Mirrored Images**
+6. Select the menu icon in the far right column of the repository you want to manage.
 @z
 
 @x
@@ -82,9 +72,9 @@ To manage your mirrored DHI repositories:
 @z
 
 @x
-## Manage customized Docker Hardened Images
+## Manage customized Docker Hardened Image repositories
 @y
-## Manage customized Docker Hardened Images
+## Manage customized Docker Hardened Image repositories
 @z
 
 @x
@@ -97,13 +87,13 @@ To manage your customized DHI repositories:
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Management**.
+4. Select **Hardened Images** > **Manage**.
 5. Select **Customizations**.
 @y
 1. Go to [Docker Hub](https://hub.docker.com) and sign in.
 2. Select **My Hub**.
 3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Management**.
+4. Select **Hardened Images** > **Manage**.
 5. Select **Customizations**.
 @z
 
