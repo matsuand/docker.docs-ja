@@ -162,11 +162,11 @@ For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pri
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @z
 
 @x
@@ -200,11 +200,11 @@ the organization you want to downgrade.
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to downgrade your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @z
 
 @x

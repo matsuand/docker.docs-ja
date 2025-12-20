@@ -190,9 +190,9 @@ For example, you might find tags like the following in a DHI repository:
 @z
 
 @x
-## FIPs and STIG variants {{< badge color="blue" text="DHI Enterprise" >}}
+## FIPs and STIG variants {tier="DHI Enterprise"}
 @y
-## FIPs and STIG variants {{< badge color="blue" text="DHI Enterprise" >}}
+## FIPs and STIG variants {tier="DHI Enterprise"}
 @z
 
 @x

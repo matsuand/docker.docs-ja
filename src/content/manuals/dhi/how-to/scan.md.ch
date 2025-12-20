@@ -58,21 +58,21 @@ be mirrored into your organization on Docker Hub.
 @x
 > [!IMPORTANT]
 >
-> You must authenticate to the Docker Hardened Image registry (`dhi.io`) to pull images. To
-> do this, you can use [`docker login`](../../../reference/cli/docker/login.md):
+> You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
+> pull images. Use your Docker ID credentials (the same username and password
+> you use for Docker Hub) when signing in. If you don't have a Docker account,
+> [create one](../../accounts/create-account.md) for free.
 >
-> ```console
-> $ docker login dhi.io
-> ```
+> Run `docker login dhi.io` to authenticate.
 @y
 > [!IMPORTANT]
 >
-> You must authenticate to the Docker Hardened Image registry (`dhi.io`) to pull images. To
-> do this, you can use [`docker login`](../../../reference/cli/docker/login.md):
+> You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
+> pull images. Use your Docker ID credentials (the same username and password
+> you use for Docker Hub) when signing in. If you don't have a Docker account,
+> [create one](../../accounts/create-account.md) for free.
 >
-> ```console
-> $ docker login dhi.io
-> ```
+> Run `docker login dhi.io` to authenticate.
 @z
 
 @x
@@ -466,6 +466,88 @@ the image and running the scan command:
 @x
 ```console
 $ docker pull dhi.io/<image>:<tag>
+$ trivy image --scanners vuln dhi.io/<image>:<tag>
+```
+@y
+```console
+$ docker pull dhi.io/<image>:<tag>
+$ trivy image --scanners vuln dhi.io/<image>:<tag>
+```
+@z
+
+@x
+To filter vulnerabilities using VEX statements, Trivy supports multiple
+approaches. Docker recommends using VEX Hub, which provides a seamless workflow
+for automatically downloading and applying VEX statements from configured
+repositories.
+@y
+To filter vulnerabilities using VEX statements, Trivy supports multiple
+approaches. Docker recommends using VEX Hub, which provides a seamless workflow
+for automatically downloading and applying VEX statements from configured
+repositories.
+@z
+
+@x
+#### Using VEX Hub (recommended)
+@y
+#### Using VEX Hub (recommended)
+@z
+
+@x
+Configure Trivy to download the Docker Hardened Images advisories repository
+from VEX Hub. Run the following commands to set up the VEX repository:
+@y
+Configure Trivy to download the Docker Hardened Images advisories repository
+from VEX Hub. Run the following commands to set up the VEX repository:
+@z
+
+@x
+```console
+$ trivy vex repo init
+$ cat << REPO > ~/.trivy/vex/repository.yaml
+repositories:
+  - name: default
+    url: https://github.com/aquasecurity/vexhub
+    enabled: true
+    username: ""
+    password: ""
+    token: ""
+  - name: dhi-vex
+    url: https://github.com/docker-hardened-images/advisories
+    enabled: true
+REPO
+$ trivy vex repo list
+$ trivy vex repo download
+```
+@y
+```console
+$ trivy vex repo init
+$ cat << REPO > ~/.trivy/vex/repository.yaml
+repositories:
+  - name: default
+    url: https://github.com/aquasecurity/vexhub
+    enabled: true
+    username: ""
+    password: ""
+    token: ""
+  - name: dhi-vex
+    url: https://github.com/docker-hardened-images/advisories
+    enabled: true
+REPO
+$ trivy vex repo list
+$ trivy vex repo download
+```
+@z
+
+@x
+After setting up VEX Hub, you can scan a Docker Hardened Image with VEX filtering:
+@y
+After setting up VEX Hub, you can scan a Docker Hardened Image with VEX filtering:
+@z
+
+@x
+```console
+$ docker pull dhi.io/<image>:<tag>
 $ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
 ```
 @y
@@ -476,6 +558,22 @@ $ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
 @z
 
 @x
+For example, scanning the `dhi.io/python:3.13` image:
+@y
+For example, scanning the `dhi.io/python:3.13` image:
+@z
+
+@x
+```console
+$ trivy image --scanners vuln --vex repo dhi.io/python:3.13
+```
+@y
+```console
+$ trivy image --scanners vuln --vex repo dhi.io/python:3.13
+```
+@z
+
+@x
 Example output:
 @y
 Example output:
@@ -490,31 +588,85 @@ Report Summary
 @z
 
 @x
-┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
-│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ dhi.io/<image>:<tag> (debian 12.11)                                          │   debian   │       66        │    -    │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
-└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+┌─────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
+│                                   Target                                    │    Type    │ Vulnerabilities │
+├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ dhi.io/python:3.13 (debian 13.2)                                            │   debian   │        0        │
+├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/python-3.13.11/lib/python3.13/site-packages/pip-25.3.dist-info/METADATA │ python-pkg │        0        │
+└─────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
 ```
 @y
-┌──────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
-│                                    Target                                    │    Type    │ Vulnerabilities │ Secrets │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ dhi.io/<image>:<tag> (debian 12.11)                                          │   debian   │       66        │    -    │
-├──────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
-│ opt/python-3.13.4/lib/python3.13/site-packages/pip-25.1.1.dist-info/METADATA │ python-pkg │        0        │    -    │
-└──────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+┌─────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
+│                                   Target                                    │    Type    │ Vulnerabilities │
+├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ dhi.io/python:3.13 (debian 13.2)                                            │   debian   │        0        │
+├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/python-3.13.11/lib/python3.13/site-packages/pip-25.3.dist-info/METADATA │ python-pkg │        0        │
+└─────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
 ```
 @z
 
 @x
-You should include the `--vex` flag to apply VEX statements during the scan,
-which filter out known non-exploitable CVEs.
+The `--vex repo` flag applies VEX statements from the configured repository during the scan,
+which filters out known non-exploitable CVEs.
 @y
-You should include the `--vex` flag to apply VEX statements during the scan,
-which filter out known non-exploitable CVEs.
+The `--vex repo` flag applies VEX statements from the configured repository during the scan,
+which filters out known non-exploitable CVEs.
+@z
+
+@x
+#### Using local VEX files
+@y
+#### Using local VEX files
+@z
+
+@x
+In addition to VEX Hub, Trivy also supports the use of local VEX files for
+vulnerability filtering. You can download the VEX attestation that Docker
+Hardened Images provide and use it directly with Trivy.
+@y
+In addition to VEX Hub, Trivy also supports the use of local VEX files for
+vulnerability filtering. You can download the VEX attestation that Docker
+Hardened Images provide and use it directly with Trivy.
+@z
+
+@x
+First, download the VEX attestation for your image:
+@y
+First, download the VEX attestation for your image:
+@z
+
+@x
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@y
+```console
+$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
+```
+@z
+
+@x
+Then scan the image with the local VEX file:
+@y
+Then scan the image with the local VEX file:
+@z
+
+@x
+```console
+$ trivy image --scanners vuln --vex vex.json dhi.io/<image>:<tag>
+```
+@y
+```console
+$ trivy image --scanners vuln --vex vex.json dhi.io/<image>:<tag>
+```
 @z
 
 @x

@@ -26,6 +26,88 @@ For more detailed information, see the [release notes in the Compose repo](https
 @z
 
 @x
+## 5.0.1
+@y
+## 5.0.1
+@z
+
+@x
+{{< release-date date="2025-12-18" >}}
+@y
+{{< release-date date="2025-12-18" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Restored support for `COMPOSE_COMPATIBILITY`.
+- Fixed grammatical errors and improve clarity in code..
+- Fixed broken `run --quiet`.
+- Fixed SDK example.
+- Added a check buildx version is set before comparing.
+- Fixed grammar: pluralize 'service' and remove apostrophes.
+- Fixed progress UI not restoring terminal once operation.
+- Fixed status alignment in progress UI.
+- Restored image layer download progress details on pull.
+- Added 'configured' event at the end of model configuration phase.
+- Introduced a build tag to select watcher implementation.
+- Removed mention for v2 on README.
+- Fixed missing error handling in setEnvWithDotEnv.
+- Adopted morikuni/aec library over raw ANSI sequences.
+- Prevented incorrect progress metrics to break compose.
+- Restored support for `BUILDKIT_PROGRESS`.
+- Added check model plugin is successfully loaded.
+- Added a warning when no service has been selected to build.
+@y
+- Restored support for `COMPOSE_COMPATIBILITY`.
+- Fixed grammatical errors and improve clarity in code..
+- Fixed broken `run --quiet`.
+- Fixed SDK example.
+- Added a check buildx version is set before comparing.
+- Fixed grammar: pluralize 'service' and remove apostrophes.
+- Fixed progress UI not restoring terminal once operation.
+- Fixed status alignment in progress UI.
+- Restored image layer download progress details on pull.
+- Added 'configured' event at the end of model configuration phase.
+- Introduced a build tag to select watcher implementation.
+- Removed mention for v2 on README.
+- Fixed missing error handling in setEnvWithDotEnv.
+- Adopted morikuni/aec library over raw ANSI sequences.
+- Prevented incorrect progress metrics to break compose.
+- Restored support for `BUILDKIT_PROGRESS`.
+- Added check model plugin is successfully loaded.
+- Added a warning when no service has been selected to build.
+@z
+
+@x
+### Update
+@y
+### Update
+@z
+
+@x
+- Dependencies upgrade: bump golang 1.24.11
+- Dependencies upgrade: bump osxcross
+- Dependencies upgrade: bump golang.org/x/sys to 0.39.0
+- Dependencies upgrade: bump github.com/docker/cli-docs-tool to 0.11.0
+- Dependencies upgrade: bump golang.org/x/sync to 0.19.0
+- Dependencies upgrade: bump tags.cncf.io/container-device-interface to 1.1.0
+- Dependencies upgrade: bump github.com/moby/buildkit to 0.26.3
+@y
+- Dependencies upgrade: bump golang 1.24.11
+- Dependencies upgrade: bump osxcross
+- Dependencies upgrade: bump golang.org/x/sys to 0.39.0
+- Dependencies upgrade: bump github.com/docker/cli-docs-tool to 0.11.0
+- Dependencies upgrade: bump golang.org/x/sync to 0.19.0
+- Dependencies upgrade: bump tags.cncf.io/container-device-interface to 1.1.0
+- Dependencies upgrade: bump github.com/moby/buildkit to 0.26.3
+@z
+
+@x
 ## 5.0.0
 @y
 ## 5.0.0

@@ -42,11 +42,11 @@ You can add or remove seats from your Docker Team or Business subscription at an
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
 @z
 
 @x
@@ -100,11 +100,11 @@ You can now add more members to your organization. For more information, see [Ma
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to add seats to your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
 @z
 
 @x
@@ -190,11 +190,11 @@ For example, if you're billed on the 8th of every month for 10 seats and remove 
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
 @z
 
 @x
@@ -234,11 +234,11 @@ You can cancel the removal of seats before your next billing cycle. To do so, se
 @x
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
 @y
 > [!IMPORTANT]
 >
-> If you have a [sales-assisted Docker Business subscription](details.md#sales-assisted), contact your account manager to remove seats from your subscription.
+> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
 @z
 
 @x

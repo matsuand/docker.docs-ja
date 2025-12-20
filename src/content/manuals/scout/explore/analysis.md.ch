@@ -70,13 +70,13 @@ see [Integrating Docker Scout with other systems](manuals/scout/integrations/_in
 @x
 Docker Personal comes with 1 Scout-enabled repository. You can upgrade your
 Docker subscription if you need additional repositories.
-See [Subscriptions and features](../../subscription/details.md)
+See [Subscriptions and features](https://www.docker.com/pricing/)
 to learn how many Scout-enabled
 repositories come with each subscription tier.
 @y
 Docker Personal comes with 1 Scout-enabled repository. You can upgrade your
 Docker subscription if you need additional repositories.
-See [Subscriptions and features](../../subscription/details.md)
+See [Subscriptions and features](https://www.docker.com/pricing/)
 to learn how many Scout-enabled
 repositories come with each subscription tier.
 @z

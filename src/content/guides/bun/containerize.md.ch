@@ -124,19 +124,33 @@ DHI を選ぶと、軽量でセキュアなイメージを本番環境向けに�
 @z
 
 @x
-Docker Hardened Images (DHIs) are available for Bun on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/bun). Unlike using the Docker Official Image, you must first mirror the Bun image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](/dhi/get-started/) to create a mirrored repository for Bun.
+Docker Hardened Images (DHIs) are available for Bun in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/bun). You can pull DHIs directly from the `dhi.io` registry.
 @y
-Bun 向けの Docker Hardened イメージ (DHIs) は [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/bun) から入手できます。
-Docker 公式イメージの場合とは異なり、組織内において Bun イメージのミラーをまずはじめに行い、それをベースイメージとして設定することが必要になります。
-Bun 向けにミラーリポジトリを生成する詳しい手順については [DHI クィックスタート](/dhi/get-started/) を参照してください。
+Bun 向けの Docker Hardened イメージ (DHI) は [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/bun) から入手します。
+DHI は `dhi.io` レジストリから直接プルすることができます。
 @z
 
 @x
-Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-bun:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-bun:1` as the base image.
+1. Sign in to the DHI registry:
 @y
-ミラーリポジトリの先頭文字には `dhi-` をつけてください。
-たとえば `FROM <あなたの名前空間>/dhi-bun:<tag>` です。
-以下に示す Dockerfile では `FROM` 命令におけるベースイメージの指定は `<your-namespace>/dhi-bun:1` としています。
+1. DHI レジストリにサインインします。
+@z
+
+% snip command...
+
+@x
+2. Pull the Bun DHI as `dhi.io/bun:1`. The tag (`1`) in this example refers to the version to the latest 1.x version of Bun.
+@y
+2. Bun DHI を `dhi.io/bun:1` としてプルします。
+   この例に示すタグ (`1`) は、Bun の最新 1.x バージョンを指します。
+@z
+
+% snip command...
+
+@x
+For other available versions, refer to the [catalog](https://hub.docker.com/hardened-images/catalog/dhi/bun).
+@y
+上以外に利用可能なバージョンについては [カタログ](https://hub.docker.com/hardened-images/catalog/dhi/bun) を参照してください。
 @z
 
 @x

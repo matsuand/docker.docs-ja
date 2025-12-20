@@ -32,10 +32,10 @@ keywords: ai assistant, migrate dockerfile, docker hardened images, automated mi
 @z
 
 @x
-You can use Docker's AI-powered assistant, to automatically migrate your
+You can use Docker's AI-powered assistant to automatically migrate your
 Dockerfile to use Docker Hardened Images (DHI).
 @y
-You can use Docker's AI-powered assistant, to automatically migrate your
+You can use Docker's AI-powered assistant to automatically migrate your
 Dockerfile to use Docker Hardened Images (DHI).
 @z
 

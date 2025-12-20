@@ -184,27 +184,47 @@ Choosing DHI offers the advantage of a production-ready image that is lightweigh
 @x
 {{< tabs >}}
 {{< tab name="Using Docker Hardened Images" >}}
-Docker Hardened Images (DHIs) are available for Deno on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/deno). Unlike using the Docker Official Image, you must first mirror the Deno image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](/dhi/get-started/) to create a mirrored repository for Deno.
 @y
 {{< tabs >}}
 {{< tab name="Using Docker Hardened Images" >}}
-Docker Hardened Images (DHIs) are available for Deno on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/deno). Unlike using the Docker Official Image, you must first mirror the Deno image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](__SUBDIR__/dhi/get-started/) to create a mirrored repository for Deno.
 @z
 
 @x
-Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-deno:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-deno:2` as the base image.
+Docker Hardened Images (DHIs) are available for Deno in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/deno). You can pull DHIs directly from the `dhi.io` registry.
 @y
-Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-deno:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-deno:2` as the base image.
+Docker Hardened Images (DHIs) are available for Deno in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/deno). You can pull DHIs directly from the `dhi.io` registry.
+@z
+
+@x
+1. Sign in to the DHI registry:
+@y
+1. Sign in to the DHI registry:
+@z
+
+% snip command...
+
+@x
+2. Pull the Deno DHI as `dhi.io/deno:2`. The tag (`2`) in this example refers to the version to the latest 2.x version of Deno.
+@y
+2. Pull the Deno DHI as `dhi.io/deno:2`. The tag (`2`) in this example refers to the version to the latest 2.x version of Deno.
+@z
+
+% snip command...
+
+@x
+For other available versions, refer to the [catalog](https://hub.docker.com/hardened-images/catalog/dhi/deno).
+@y
+For other available versions, refer to the [catalog](https://hub.docker.com/hardened-images/catalog/dhi/deno).
 @z
 
 @x
 ```dockerfile
 # Use the DHI Deno image as the base image
-FROM <your-namespace>/dhi-deno:2
+FROM dhi.io/deno:2
 @y
 ```dockerfile
 # Use the DHI Deno image as the base image
-FROM <your-namespace>/dhi-deno:2
+FROM dhi.io/deno:2
 @z
 
 @x

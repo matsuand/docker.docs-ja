@@ -43,11 +43,11 @@ Before you begin creating an organization:
 
 @x
 - You need a [Docker ID](/accounts/create-account/)
-- Review the [Docker subscriptions and features](../../subscription/details.md)
+- Review the [Docker subscriptions and features](https://www.docker.com/pricing/)
   to determine what subscription to choose for your organization
 @y
 - You need a [Docker ID](__SUBDIR__/accounts/create-account/)
-- Review the [Docker subscriptions and features](../../subscription/details.md)
+- Review the [Docker subscriptions and features](https://www.docker.com/pricing/)
   to determine what subscription to choose for your organization
 @z
 

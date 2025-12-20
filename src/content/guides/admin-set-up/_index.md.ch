@@ -38,7 +38,7 @@ tags: [admin]
     - title: Image Access Management
       url: /security/for-admins/hardened-desktop/image-access-management/
     - title: Docker subscription information
-      url: /subscription/details/
+      url: "https://www.docker.com/pricing/"
 @y
     - title: Overview of Administration in Docker
       url: __SUBDIR__/admin/
@@ -55,7 +55,7 @@ tags: [admin]
     - title: Image Access Management
       url: __SUBDIR__/security/for-admins/hardened-desktop/image-access-management/
     - title: Docker subscription information
-      url: __SUBDIR__/subscription/details/
+      url: "https://www.docker.com/pricing/"
 @z
 
 @x

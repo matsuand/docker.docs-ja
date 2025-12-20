@@ -154,11 +154,11 @@ product line.
 @x
 > [!NOTE]  
 > For information about enterprise-level features offered by Docker today,
-> see the [Docker Business subscription](/manuals/subscription/details.md#docker-business).
+> see the [Docker Business subscription](https://www.docker.com/pricing/).
 @y
 > [!NOTE]  
 > For information about enterprise-level features offered by Docker today,
-> see the [Docker Business subscription](manuals/subscription/details.md#docker-business).
+> see the [Docker Business subscription](https://www.docker.com/pricing/).
 @z
 
 @x

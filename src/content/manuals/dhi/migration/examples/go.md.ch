@@ -48,6 +48,10 @@ Hardened Images. Each example includes four variations:
 > supported for simplicity, but come with tradeoffs in size and security.
 >
 > You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
+> Use your Docker ID credentials (the same username and password you use for
+> Docker Hub). If you don't have a Docker account, [create
+> one](../../../accounts/create-account.md) for free.
+>
 > Run `docker login dhi.io` to authenticate.
 @y
 > [!NOTE]
@@ -56,6 +60,10 @@ Hardened Images. Each example includes four variations:
 > supported for simplicity, but come with tradeoffs in size and security.
 >
 > You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
+> Use your Docker ID credentials (the same username and password you use for
+> Docker Hub). If you don't have a Docker account, [create
+> one](../../../accounts/create-account.md) for free.
+>
 > Run `docker login dhi.io` to authenticate.
 @z
 

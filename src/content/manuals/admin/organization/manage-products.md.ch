@@ -59,12 +59,12 @@ product, including how to set up and configure them, see the following manuals:
 Access to the Docker products included in your subscription is turned on by
 default for all users. For an overview of products included in your
 subscription, see
-[Docker subscriptions and features](/manuals/subscription/details.md).
+[Docker subscriptions and features](https://www.docker.com/pricing/).
 @y
 Access to the Docker products included in your subscription is turned on by
 default for all users. For an overview of products included in your
 subscription, see
-[Docker subscriptions and features](manuals/subscription/details.md).
+[Docker subscriptions and features](https://www.docker.com/pricing/).
 @z
 
 @x

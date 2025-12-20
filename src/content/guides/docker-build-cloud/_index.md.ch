@@ -43,7 +43,7 @@ $ resource_links:
     - title: Docker Build Cloud overview
       url: /build-cloud/
     - title: Subscriptions and features
-      url: /subscription/details/
+      url: "https://www.docker.com/pricing/"
     - title: Using Docker Build Cloud
       url: /build-cloud/usage/
 @y
@@ -52,7 +52,7 @@ $ resource_links:
     - title: Docker Build Cloud 概要
       url: __SUBDIR__/build-cloud/
     - title: サブスクリプションと機能
-      url: __SUBDIR__/subscription/details/
+      url: "https://www.docker.com/pricing/"
     - title: Docker Build Cloud の利用
       url: __SUBDIR__/build-cloud/usage/
 @z

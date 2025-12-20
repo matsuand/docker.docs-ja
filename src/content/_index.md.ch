@@ -258,7 +258,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Overview"
         url: "/subscription/"
       - text: "Subscriptions and features"
-        url: "/subscription/details/"
+        url: "https://www.docker.com/pricing/"
       - text: "Change subscription"
         url: "/subscription/change/"
 @y
@@ -270,7 +270,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "概要"
         url: "subscription/"
       - text: "サブスクリプションと機能"
-        url: "subscription/details/"
+        url: "https://www.docker.com/pricing/"
       - text: "サブスクリプションの変更"
         url: "subscription/change/"
 @z

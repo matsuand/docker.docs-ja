@@ -20,14 +20,14 @@ keywords: docker subscription, pricing, billing, pro, team, business, subscripti
 % grid_subscriptions:
 
 @x
-- title: Docker subscriptions and features
-  description: Explore what you can do with your Docker subscription.
-  link: /subscription/details/
+- title: Compare Docker subscriptions
+  description: Visit the pricing page to see what's included in different Docker subscriptions.
+  link: "https://www.docker.com/pricing/"
   icon: feature_search
 @y
-- title: Docker subscriptions and features
-  description: Explore what you can do with your Docker subscription.
-  link: __SUBDIR__/subscription/details/
+- title: Compare Docker subscriptions
+  description: Visit the pricing page to see what's included in different Docker subscriptions.
+  link: "https://www.docker.com/pricing/"
   icon: feature_search
 @z
 

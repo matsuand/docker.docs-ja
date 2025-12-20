@@ -30,11 +30,13 @@ in improving the Hardened Images ecosystem.
 @z
 
 @x
-You can use the [GitHub Discussions board](https://github.com/docker-hardened-images/discussion) to engage with the DHI
-team for:
+You can use the [GitHub Discussions
+board](https://github.com/orgs/docker-hardened-images/discussions) to engage
+with the DHI team for:
 @y
-You can use the [GitHub Discussions board](https://github.com/docker-hardened-images/discussion) to engage with the DHI
-team for:
+You can use the [GitHub Discussions
+board](https://github.com/orgs/docker-hardened-images/discussions) to engage
+with the DHI team for:
 @z
 
 @x
@@ -58,9 +60,9 @@ team for:
 @z
 
 @x
-You can [open a new issue](https://github.com/docker-hardened-images/discussion/issues/) for topics such as:
+You can [open a new issue](https://github.com/docker-hardened-images/catalog/issues) for topics such as:
 @y
-You can [open a new issue](https://github.com/docker-hardened-images/discussion/issues/) for topics such as:
+You can [open a new issue](https://github.com/docker-hardened-images/catalog/issues) for topics such as:
 @z
 
 @x

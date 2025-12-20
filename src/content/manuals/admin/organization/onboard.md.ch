@@ -71,10 +71,10 @@ Before you start onboarding your organization, ensure you:
 
 @x
 - Have a Docker Team or Business subscription. For more details, see
-[Docker subscriptions and features](/manuals/subscription/details.md).
+[Docker subscriptions and features](https://www.docker.com/pricing/).
 @y
 - Have a Docker Team or Business subscription. For more details, see
-[Docker subscriptions and features](manuals/subscription/details.md).
+[Docker subscriptions and features](https://www.docker.com/pricing/).
 @z
 
 @x
@@ -353,13 +353,13 @@ automatically via SSO and SCIM. See the following for more details:
 By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
 receive the
-[benefits of your organization’s subscription](../../subscription/details.md)
+[benefits of your organization’s subscription](https://www.docker.com/pricing/)
 and they can circumvent [Docker’s security features](/manuals/enterprise/security/hardened-desktop/_index.md).
 @y
 By default, members of your organization can use Docker Desktop without signing
 in. When users don’t sign in as a member of your organization, they don’t
 receive the
-[benefits of your organization’s subscription](../../subscription/details.md)
+[benefits of your organization’s subscription](https://www.docker.com/pricing/)
 and they can circumvent [Docker’s security features](manuals/enterprise/security/hardened-desktop/_index.md).
 @z
 
@@ -419,8 +419,8 @@ security posture:
 
 @x
 Your Docker subscription provides many more additional features. To learn more,
-see [Docker subscriptions and features](/subscription/details/).
+see [Docker subscriptions and features](https://www.docker.com/pricing/).
 @y
 Your Docker subscription provides many more additional features. To learn more,
-see [Docker subscriptions and features](__SUBDIR__/subscription/details/).
+see [Docker subscriptions and features](https://www.docker.com/pricing/).
 @z

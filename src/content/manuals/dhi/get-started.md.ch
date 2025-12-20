@@ -121,17 +121,27 @@ a simple Python command just like you would with any other Docker image:
 @z
 
 @x
-1. Open a terminal and run the following commands:
+1. Open a terminal and sign in to the Docker Hardened Images registry using your
+   Docker ID credentials.
 @y
-1. Open a terminal and run the following commands:
+1. Open a terminal and sign in to the Docker Hardened Images registry using your
+   Docker ID credentials.
 @z
 
 % snip command...
 
 @x
-2. Run the image to confirm everything works:
+2. Pull the image:
 @y
-2. Run the image to confirm everything works:
+2. Pull the image:
+@z
+
+% snip command...
+
+@x
+3. Run the image to confirm everything works:
+@y
+3. Run the image to confirm everything works:
 @z
 
 % snip command...
