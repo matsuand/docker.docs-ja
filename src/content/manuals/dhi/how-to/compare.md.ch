@@ -9,7 +9,7 @@ linktitle: Compare images
 description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
 keywords: compare docker images, docker scout compare, image comparison, vulnerability comparison, security comparison
 @y
-title: Compare Docker Hardened Images
+title: Docker Hardened イメージの比較
 linktitle: Compare images
 description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
 keywords: compare docker images, docker scout compare, image comparison, vulnerability comparison, security comparison

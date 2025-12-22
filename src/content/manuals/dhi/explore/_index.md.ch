@@ -8,7 +8,7 @@ linktitle: Explore
 title: Explore Docker Hardened Images
 description: Learn about Docker Hardened Images, their purpose, how they are built and tested, and the shared responsibility model for security.
 @y
-linktitle: Explore
+linktitle: イメージの確認
 title: Explore Docker Hardened Images
 description: Learn about Docker Hardened Images, their purpose, how they are built and tested, and the shared responsibility model for security.
 @z
@@ -21,7 +21,7 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       icon: info
       link: /dhi/explore/what/
 @y
-    - title: What are hardened images and why use them?
+    - title: hardened イメージとは？ なぜ利用するのか？
       description: Learn what a hardened image is, how Docker Hardened Images are built, what sets them apart from typical base and application images, and why you should use them.
       icon: info
       link: __SUBDIR__/dhi/explore/what/
@@ -33,7 +33,7 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       icon: build
       link: /dhi/explore/build-process/
 @y
-    - title: Build process
+    - title: ビルド作業
       description: Learn how Docker builds, tests, and maintains Docker Hardened Images through an automated, security-focused pipeline.
       icon: build
       link: __SUBDIR__/dhi/explore/build-process/
@@ -45,7 +45,7 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       icon: science
       link: /dhi/explore/test/
 @y
-    - title: Image testing
+    - title: イメージのテスト
       description: See how Docker Hardened Images are automatically tested for standards compliance, functionality, and security.
       icon: science
       link: __SUBDIR__/dhi/explore/test/
@@ -69,7 +69,7 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       icon: view_module
       link: /dhi/explore/available/
 @y
-    - title: Image types
+    - title: イメージのタイプ
       description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
       icon: view_module
       link: __SUBDIR__/dhi/explore/available/
@@ -81,7 +81,7 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       description: Docker welcomes all contributions and feedback.
       link: /dhi/explore/feedback
 @y
-    - title: Give feedback
+    - title: フィードバック
       icon: question_exchange
       description: Docker welcomes all contributions and feedback.
       link: __SUBDIR__/dhi/explore/feedback

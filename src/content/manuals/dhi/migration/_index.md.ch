@@ -7,7 +7,7 @@
 title: Migration
 description: Learn how to migrate your existing applications to Docker Hardened Images
 @y
-title: Migration
+title: 移行
 description: Learn how to migrate your existing applications to Docker Hardened Images
 @z
 
@@ -25,7 +25,7 @@ keywords: migrate, docker hardened images, dhi, migration guide
       icon: smart_toy
       link: /dhi/migration/migrate-with-ai/
 @y
-    - title: Migrate with Docker's AI assistant
+    - title: Docker AI アシスタントを利用した移行
       description: Use Docker's AI assistant to automatically migrate your Dockerfile to Docker Hardened Images with guidance and recommendations.
       icon: smart_toy
       link: __SUBDIR__/dhi/migration/migrate-with-ai/
@@ -37,7 +37,7 @@ keywords: migrate, docker hardened images, dhi, migration guide
       icon: code
       link: /dhi/migration/migrate-from-doi/
 @y
-    - title: Migrate from Alpine or Debian images
+    - title: Alpine や Debian イメージからの移行
       description: Manual migration guide for moving from Docker Official Images (Alpine or Debian-based) to Docker Hardened Images.
       icon: code
       link: __SUBDIR__/dhi/migration/migrate-from-doi/
@@ -49,7 +49,7 @@ keywords: migrate, docker hardened images, dhi, migration guide
       icon: transform
       link: /dhi/migration/migrate-from-wolfi/
 @y
-    - title: Migrate from Wolfi
+    - title: Wolfi からの移行
       description: Manual migration guide for transitioning from Wolfi-based images to Docker Hardened Images.
       icon: transform
       link: __SUBDIR__/dhi/migration/migrate-from-wolfi/
@@ -63,7 +63,7 @@ keywords: migrate, docker hardened images, dhi, migration guide
       icon: checklist
       link: /dhi/migration/checklist/
 @y
-    - title: Migration checklist
+    - title: 移行チェックリスト
       description: A comprehensive checklist of migration considerations to ensure successful transition to Docker Hardened Images.
       icon: checklist
       link: __SUBDIR__/dhi/migration/checklist/
@@ -75,7 +75,7 @@ keywords: migrate, docker hardened images, dhi, migration guide
       icon: preview
       link: /dhi/migration/examples/
 @y
-    - title: Examples
+    - title: 移行例
       description: Example Dockerfile migrations for different programming languages and frameworks to guide your migration process.
       icon: preview
       link: __SUBDIR__/dhi/migration/examples/
@@ -96,13 +96,13 @@ security features.
 @x
 ## Migration paths
 @y
-## Migration paths
+## 移行への手引き {#migration-paths}
 @z
 
 @x
 Choose the migration approach that best fits your needs:
 @y
-Choose the migration approach that best fits your needs:
+必要となっている移行作業に合わせて、以下のいずれかを選んでください。
 @z
 
 @x
@@ -114,7 +114,7 @@ Choose the migration approach that best fits your needs:
 @x
 ## Resources
 @y
-## Resources
+## リソース {#resources}
 @z
 
 @x

@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ �Ή�
+% __SUBDIR__ 対応
 
 @x
 title: Docker Hardened Images features
 linktitle: Features
 description: Docker Hardened Images provide total transparency, minimal attack surface, and enterprise-grade security for every application—free and open source.
 @y
-title: Docker Hardened Images features
+title: Docker Hardened イメージの機能
 linktitle: Features
 description: Docker Hardened Images provide total transparency, minimal attack surface, and enterprise-grade security for every application—free and open source.
 @z

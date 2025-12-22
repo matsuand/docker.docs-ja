@@ -60,7 +60,7 @@ package manager, and may run as a nonroot user by default.
 @x
 ## Considerations when adopting DHIs
 @y
-## Considerations when adopting DHIs
+## DHI 選定の際に考慮すべきこと {#considerations-when-adopting-dhis}
 @z
 
 @x

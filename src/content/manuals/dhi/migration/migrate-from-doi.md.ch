@@ -7,7 +7,7 @@
 title: Migrate from Alpine or Debian
 description: Step-by-step guide to migrate from Docker Official Images to Docker Hardened Images
 @y
-title: Migrate from Alpine or Debian
+title: Alpine や Debian からの移行
 description: Step-by-step guide to migrate from Docker Official Images to Docker Hardened Images
 @z
 
@@ -23,8 +23,8 @@ variants](../explore/available.md). In many cases, migrating from another image
 based on these distributions is as simple as changing the base image in your
 Dockerfile.
 @y
-Docker Hardened Images (DHI) come in both [Alpine-based and Debian-based
-variants](../explore/available.md). In many cases, migrating from another image
+Docker Hardened イメージ (DHI) は [Alpine ベースまたは Debian ベース](../explore/available.md) の派生物として提供されています。
+In many cases, migrating from another image
 based on these distributions is as simple as changing the base image in your
 Dockerfile.
 @z
