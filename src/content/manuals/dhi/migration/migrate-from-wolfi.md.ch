@@ -7,7 +7,7 @@
 title: Migrate from Wolfi
 description: Step-by-step guide to migrate from Wolfi distribution images to Docker Hardened Images
 @y
-title: Migrate from Wolfi
+title: Wolfi からの移行
 description: Step-by-step guide to migrate from Wolfi distribution images to Docker Hardened Images
 @z
 

@@ -6,7 +6,7 @@ title: Go
 description: Migrate a Go application to Docker Hardened Images
 @y
 title: Go
-description: Migrate a Go application to Docker Hardened Images
+description: Go アプリケーションを Docker Hardened イメージに移行します。
 @z
 
 @x
@@ -18,15 +18,15 @@ keywords: go, golang, migration, dhi
 @x
 This example shows how to migrate a Go application to Docker Hardened Images.
 @y
-This example shows how to migrate a Go application to Docker Hardened Images.
+ここに示す例は、Go アプリケーションを Docker Hardened イメージに移行する方法を示すものです。
 @z
 
 @x
 The following examples show Dockerfiles before and after migration to Docker
 Hardened Images. Each example includes four variations:
 @y
-The following examples show Dockerfiles before and after migration to Docker
-Hardened Images. Each example includes four variations:
+以下の例では Docker Hardened イメージへの移行前後における Dockerfile を示します。
+例は 4 種類あります。
 @z
 
 @x
@@ -35,10 +35,10 @@ Hardened Images. Each example includes four variations:
 - After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
 - After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
 @y
-- Before (Wolfi): A sample Dockerfile using Wolfi distribution images, before migrating to DHI
-- Before (DOI): A sample Dockerfile using Docker Official Images, before migrating to DHI
-- After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
-- After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
+- 移行前 (Wolfi): サンプルの Dockerfile は Wolfi ディストリビューションイメージを用いているものであり、DHI への移行前のものです。
+- 移行前 (DOI): サンプルの Dockerfile Docker 公式イメージを用いているものであり、DHI への移行前のものです。
+- 移行後 (マルチステージ): サンプルの Dockerfile を DHI へ移行した後のものであり、マルチステージビルドとしています (最小でセキュアなイメージとして推奨されます)。
+- 移行後 (シングルステージ): サンプルの Dockerfile を DHI へ移行した後のものであり、シングルステージビルドとしています (より単純なものですが、イメージサイズは大きくなり、攻撃対象領域も大きくなります)。
 @z
 
 @x
@@ -56,15 +56,14 @@ Hardened Images. Each example includes four variations:
 @y
 > [!NOTE]
 >
-> Multi-stage builds are recommended for most use cases. Single-stage builds are
-> supported for simplicity, but come with tradeoffs in size and security.
+> マルチステージビルドは、たいていのユースケースに対して推奨されます。
+> シングルステージビルドは、単純であるためにサポートされていますが、サイズやセキュリティとのトレードオフを考慮することが必要です。
 >
-> You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
-> Use your Docker ID credentials (the same username and password you use for
-> Docker Hub). If you don't have a Docker account, [create
-> one](../../../accounts/create-account.md) for free.
+> Docker Hardened イメージをプルするにあたっては、あらかじめ `dhi.io` への認証を行っておく必要があります。
+> その際には Docker ID 情報 (Docker Hub 用として用いるユーザー名、パスワードと同じ）を用います。
+> Docker アカウントを持っていない場合は、それを [生成](../../../accounts/create-account.md) してください。
 >
-> Run `docker login dhi.io` to authenticate.
+> 認証をするには `docker login dhi.io` を実行します。
 @z
 
 @x
@@ -72,51 +71,13 @@ Hardened Images. Each example includes four variations:
 {{< tab name="Before (Wolfi)" >}}
 @y
 {{< tabs >}}
-{{< tab name="Before (Wolfi)" >}}
+{{< tab name="移行前 (Wolfi)" >}}
 @z
 
-@x
-```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
-FROM cgr.dev/chainguard/go:latest-dev
-@y
-FROM cgr.dev/chainguard/go:latest-dev
-@z
-
-@x
-WORKDIR /app
-ADD . ./
-@y
-WORKDIR /app
-ADD . ./
-@z
-
-@x
+@x within code
 # Install any additional packages if needed using apk
-# RUN apk add --no-cache git
 @y
-# Install any additional packages if needed using apk
-# RUN apk add --no-cache git
-@z
-
-@x
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@y
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@z
-
-@x
-ENTRYPOINT ["/app/main"]
-```
-@y
-ENTRYPOINT ["/app/main"]
-```
+# パッケージの追加を必要とする場合は apk を使ってインストールすること
 @z
 
 @x
@@ -124,51 +85,13 @@ ENTRYPOINT ["/app/main"]
 {{< tab name="Before (DOI)" >}}
 @y
 {{< /tab >}}
-{{< tab name="Before (DOI)" >}}
+{{< tab name="移行前 (DOI)" >}}
 @z
 
-@x
-```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
-FROM golang:latest
-@y
-FROM golang:latest
-@z
-
-@x
-WORKDIR /app
-ADD . ./
-@y
-WORKDIR /app
-ADD . ./
-@z
-
-@x
+@x within code
 # Install any additional packages if needed using apt
-# RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 @y
-# Install any additional packages if needed using apt
-# RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
-@z
-
-@x
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@y
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@z
-
-@x
-ENTRYPOINT ["/app/main"]
-```
-@y
-ENTRYPOINT ["/app/main"]
-```
+# パッケージの追加を必要とする場合は apt を使ってインストールすること
 @z
 
 @x
@@ -176,69 +99,23 @@ ENTRYPOINT ["/app/main"]
 {{< tab name="After (multi-stage)" >}}
 @y
 {{< /tab >}}
-{{< tab name="After (multi-stage)" >}}
+{{< tab name="移行後 (マルチステージ)" >}}
 @z
 
-@x
-```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
+@x within code
 # === Build stage: Compile Go application ===
-FROM dhi.io/golang:1-alpine3.21-dev AS builder
 @y
-# === Build stage: Compile Go application ===
-FROM dhi.io/golang:1-alpine3.21-dev AS builder
+# === ビルドステージ: Go アプリケーションのコンパイル ===
 @z
-
-@x
-WORKDIR /app
-ADD . ./
-@y
-WORKDIR /app
-ADD . ./
-@z
-
 @x
 # Install any additional packages if needed using apk
-# RUN apk add --no-cache git
 @y
-# Install any additional packages if needed using apk
-# RUN apk add --no-cache git
+# パッケージの追加を必要とする場合は apk を使ってインストールすること
 @z
-
-@x
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@y
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@z
-
 @x
 # === Final stage: Create minimal runtime image ===
-FROM dhi.io/golang:1-alpine3.21
 @y
-# === Final stage: Create minimal runtime image ===
-FROM dhi.io/golang:1-alpine3.21
-@z
-
-@x
-WORKDIR /app
-COPY --from=builder /app/main  /app/main
-@y
-WORKDIR /app
-COPY --from=builder /app/main  /app/main
-@z
-
-@x
-ENTRYPOINT ["/app/main"]
-```
-@y
-ENTRYPOINT ["/app/main"]
-```
+# === 最終ステージ: 最小ランタイムイメージの生成 ===
 @z
 
 @x
@@ -246,51 +123,13 @@ ENTRYPOINT ["/app/main"]
 {{< tab name="After (single-stage)" >}}
 @y
 {{< /tab >}}
-{{< tab name="After (single-stage)" >}}
+{{< tab name="移行後 (シングルステージ)" >}}
 @z
 
-@x
-```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
-FROM dhi.io/golang:1-alpine3.21-dev
-@y
-FROM dhi.io/golang:1-alpine3.21-dev
-@z
-
-@x
-WORKDIR /app
-ADD . ./
-@y
-WORKDIR /app
-ADD . ./
-@z
-
-@x
+@x within code
 # Install any additional packages if needed using apk
-# RUN apk add --no-cache git
 @y
-# Install any additional packages if needed using apk
-# RUN apk add --no-cache git
-@z
-
-@x
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@y
-RUN CGO_ENABLED=0 GOOS=linux go build -a -ldflags="-s -w" --installsuffix cgo -o main .
-@z
-
-@x
-ENTRYPOINT ["/app/main"]
-```
-@y
-ENTRYPOINT ["/app/main"]
-```
+# パッケージの追加を必要とする場合は apk を使ってインストールすること
 @z
 
 @x

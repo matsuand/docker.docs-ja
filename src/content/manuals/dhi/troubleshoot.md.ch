@@ -5,7 +5,7 @@
 title: Troubleshoot
 description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
 @y
-title: Troubleshoot
+title: トラブルシューティング
 description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
 @z
 

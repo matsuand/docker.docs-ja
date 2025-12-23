@@ -7,7 +7,7 @@
 title: How-tos
 description: Step-by-step guidance for working with Docker Hardened Images, from discovery to debugging.
 @y
-title: How-tos
+title: ハウツー
 description: Step-by-step guidance for working with Docker Hardened Images, from discovery to debugging.
 @z
 

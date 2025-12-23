@@ -7,7 +7,7 @@
 title: Migration examples
 description: Real-world examples of migrating to Docker Hardened Images
 @y
-title: Migration examples
+title: 移行例
 description: Real-world examples of migrating to Docker Hardened Images
 @z
 
@@ -64,7 +64,7 @@ This section provides detailed migration examples for common programming languag
 @x
 ## Available examples
 @y
-## Available examples
+## 利用可能な例 {#available-examples}
 @z
 
 @x

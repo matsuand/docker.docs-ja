@@ -7,7 +7,7 @@
 title: Core concepts
 description: Learn the core concepts behind Docker Hardened Images, including security metadata, vulnerability management, image structure, and verification.
 @y
-title: Core concepts
+title: 基本的な考え方
 description: Learn the core concepts behind Docker Hardened Images, including security metadata, vulnerability management, image structure, and verification.
 @z
 

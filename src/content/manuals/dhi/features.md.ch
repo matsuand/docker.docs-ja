@@ -9,7 +9,7 @@ linktitle: Features
 description: Docker Hardened Images provide total transparency, minimal attack surface, and enterprise-grade security for every application—free and open source.
 @y
 title: Docker Hardened イメージの機能
-linktitle: Features
+linktitle: 機能
 description: Docker Hardened Images provide total transparency, minimal attack surface, and enterprise-grade security for every application—free and open source.
 @z
 
