@@ -300,6 +300,7 @@ bases = \
 	_index.md       \
 	features.md     \
 	get-started.md  \
+	resources.md    \
 	troubleshoot.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

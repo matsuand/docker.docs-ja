@@ -8,6 +8,7 @@ bases = \
 	_index.md       \
 	features.md     \
 	get-started.md  \
+	resources.md    \
 	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk

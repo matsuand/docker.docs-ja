@@ -92,6 +92,18 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
+    - title: Additional resources
+      description: Links to blog posts, Docker Hub catalog, GitHub repositories, and more.
+      icon: link
+      link: /dhi/resources/
+@y
+    - title: その他のリソース
+      description: ブログ投稿、Docker Hub カタログ、GitHub リポジトリなどへのリンクを示しています。
+      icon: link
+      link: __SUBDIR__/dhi/resources/
+@z
+
+@x
 Docker Hardened Images (DHI) are minimal, secure, and production-ready container
 base and application images maintained by Docker. Designed to reduce
 vulnerabilities and simplify compliance, DHI integrates easily into your
