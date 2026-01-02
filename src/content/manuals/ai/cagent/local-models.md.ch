@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Local models with Docker Model Runner
@@ -9,8 +10,8 @@ linkTitle: Local models
 description: Run AI models locally using Docker Model Runner - no API keys required
 keywords: [cagent, docker model runner, dmr, local models, embeddings, offline]
 @y
-title: Local models with Docker Model Runner
-linkTitle: Local models
+title: Docker Model Runner でのローカルモデル利用
+linkTitle: ローカルモデル
 description: Run AI models locally using Docker Model Runner - no API keys required
 keywords: [cagent, docker model runner, dmr, local models, embeddings, offline]
 @z
@@ -19,14 +20,14 @@ keywords: [cagent, docker model runner, dmr, local models, embeddings, offline]
 Docker Model Runner lets you run AI models locally on your machine. No API
 keys, no recurring costs, and your data stays private.
 @y
-Docker Model Runner lets you run AI models locally on your machine. No API
-keys, no recurring costs, and your data stays private.
+Docker Model Runner では、ローカルマシン上における AI モデルを実行することができます。
+API キーや定期的コストは不要であり、データをプライベートに保つことができます。
 @z
 
 @x
 ## Why use local models
 @y
-## Why use local models
+## ローカルモデルをなぜ使うのか {#why-use-local-models}
 @z
 
 @x
@@ -35,22 +36,22 @@ costs. Your data stays on your machine, and you can work offline once models
 are downloaded. This is an alternative to [cloud model
 providers](model-providers.md).
 @y
-Docker Model Runner lets you run models locally without API keys or recurring
-costs. Your data stays on your machine, and you can work offline once models
-are downloaded. This is an alternative to [cloud model
-providers](model-providers.md).
+Docker Model Runner を利用すると、API キーや定期的コストがなくても、ローカル環境においてモデルを実行できます。
+データはローカルマシン内に保持します。
+モデルをダウンロードしていれば、オフラインにより作動させることができます。
+これは [クラウドモデルプロバイダー](model-providers.md) に代わるものです。
 @z
 
 @x
 ## Prerequisites
 @y
-## Prerequisites
+## 前提条件 {#prerequisites}
 @z
 
 @x
 You need Docker Model Runner installed and running:
 @y
-You need Docker Model Runner installed and running:
+Docker Model Runner をインストールしており、さらに以下を起動しておくことが必要です。
 @z
 
 @x
@@ -62,47 +63,37 @@ You need Docker Model Runner installed and running:
 docker-model-plugin` or `sudo dnf install docker-model-plugin`. See [Get
   started with DMR](/manuals/ai/model-runner/get-started.md#docker-engine).
 @y
-- Docker Desktop (macOS/Windows) - Enable Docker Model Runner in
-  **Settings > AI > Enable Docker Model Runner**. See [Get started with
-  DMR](manuals/ai/model-runner/get-started.md#enable-docker-model-runner) for
-  detailed instructions.
-- Docker Engine (Linux) - Install with `sudo apt-get install
-docker-model-plugin` or `sudo dnf install docker-model-plugin`. See [Get
-  started with DMR](manuals/ai/model-runner/get-started.md#docker-engine).
+- Docker Desktop (macOS/Windows) - **Settings > AI > Enable Docker Model Runner** により Docker Model Runner を有効にします。
+ 具体的な手順については [DMR をはじめよう](manuals/ai/model-runner/get-started.md#enable-docker-model-runner) を参照してください。
+- Docker Engine (Linux) - `sudo apt-get install docker-model-plugin` または `sudo dnf install docker-model-plugin` によりインストールします。
+  詳しくは [DMR をはじめよう](manuals/ai/model-runner/get-started.md#docker-engine) を参照してください。
 @z
 
 @x
 Verify Docker Model Runner is available:
 @y
-Verify Docker Model Runner is available:
+Docker Model Runner が利用可能かどうかを確認します。
 @z
 
-@x
-```console
-$ docker model version
-```
-@y
-```console
-$ docker model version
-```
-@z
+% snip command...
 
 @x
 If the command returns version information, you're ready to use local models.
 @y
-If the command returns version information, you're ready to use local models.
+上のコマンドによりバージョン情報が返ってくれば、ローカルモデルを利用することができます。
 @z
 
 @x
 ## Using models with DMR
 @y
-## Using models with DMR
+## DMR によるモデルの利用 {#using-models-with-dmr}
 @z
 
 @x
 Docker Model Runner can run any compatible model. Models can come from:
 @y
-Docker Model Runner can run any compatible model. Models can come from:
+Docker Model Runner は互換性のあるモデルであれば何であっても動作します。
+モデルは以下から入手可能です。
 @z
 
 @x
@@ -111,92 +102,55 @@ Docker Model Runner can run any compatible model. Models can come from:
 - HuggingFace models directly (`hf.co/org/model-name`)
 - The Docker Model catalog in Docker Desktop
 @y
-- Docker Hub repositories (`docker.io/namespace/model-name`)
-- Your own OCI artifacts packaged and pushed to any registry
-- HuggingFace models directly (`hf.co/org/model-name`)
-- The Docker Model catalog in Docker Desktop
+- Docker Hub リポジトリ (`docker.io/namespace/model-name`)
+- 独自のレジストリにプッシュしパッケージ化した OCI 成果物
+- HuggingFace モデルへの直接アクセス (`hf.co/org/model-name`)
+- Docker Desktop 内の Docker Model カタログ
 @z
 
 @x
-To see models available through the Docker catalog, run:
+To see models available to the local Docker catalog, run:
 @y
-To see models available through the Docker catalog, run:
+ローカルの Docker カタログにおいてモデルが利用可能かどうかを確認するには、以下を実行します。
 @z
 
-@x
-```console
-$ docker model list --available
-```
-@y
-```console
-$ docker model list --available
-```
-@z
+% snip command...
 
 @x
 To use a model, reference it in your configuration. DMR automatically pulls
 models on first use if they're not already local.
 @y
-To use a model, reference it in your configuration. DMR automatically pulls
-models on first use if they're not already local.
+モデルを利用する場合は、それを参照するように設定します。
+ローカルにまだモデルがプルされていない場合は、DMR がその利用の初回に自動的にプルを行います。
 @z
 
 @x
 ## Configuration
 @y
-## Configuration
+## 設定 {#configuration}
 @z
 
 @x
 Configure your agent to use Docker Model Runner with the `dmr` provider:
 @y
-Configure your agent to use Docker Model Runner with the `dmr` provider:
+agent においては Docker Model Runner の利用にあたって `dmr` プロバイダーを指定します。
 @z
 
-@x
-```yaml
-agents:
-  root:
-    model: dmr/ai/qwen3
-    instruction: You are a helpful assistant
-    toolsets:
-      - type: filesystem
-```
-@y
-```yaml
-agents:
-  root:
-    model: dmr/ai/qwen3
-    instruction: You are a helpful assistant
-    toolsets:
-      - type: filesystem
-```
-@z
+% snip code...
 
 @x
 When you first run your agent, cagent prompts you to pull the model if it's
 not already available locally:
 @y
-When you first run your agent, cagent prompts you to pull the model if it's
-not already available locally:
+agent を初めて実行する際に、ローカル環境にモデルがプルされていない場合には、cagent がモデルのプルをプロンプトにより促してきます。
 @z
 
-@x
-```console
-$ cagent run agent.yaml
-Model not found locally. Do you want to pull it now? ([y]es/[n]o)
-```
-@y
-```console
-$ cagent run agent.yaml
-Model not found locally. Do you want to pull it now? ([y]es/[n]o)
-```
-@z
+% snip command...
 
 @x
 ## How it works
 @y
-## How it works
+## どうやって動作するのか {#how-it-works}
 @z
 
 @x
@@ -205,60 +159,29 @@ local Docker Model Runner and routes inference requests to it. If a model isn't
 available locally, cagent prompts you to pull it on first use. No API keys or
 authentication are required.
 @y
-When you configure an agent to use DMR, cagent automatically connects to your
-local Docker Model Runner and routes inference requests to it. If a model isn't
-available locally, cagent prompts you to pull it on first use. No API keys or
-authentication are required.
+DMR の利用にあたってモデルを指定した場合、cagent は自動的にローカル環境にある Docker Model Runner への接続を行い、指示を行うためのインターフェースを確立します。
+ローカル環境にモデルがまだ存在せず、それが初めての利用であるとき、cagent がモデルのプルをプロンプトにより促します。
+この場合に API キーや認証は不要です。
 @z
 
 @x
 ## Advanced configuration
 @y
-## Advanced configuration
+## さらなる設定 {#advanced-configuration}
 @z
 
 @x
 For more control over model behavior, define a model configuration:
 @y
-For more control over model behavior, define a model configuration:
+モデルの動作をさらに細かく指定する場合は、モデル設定を定義します。
 @z
 
-@x
-```yaml
-models:
-  local-qwen:
-    provider: dmr
-    model: ai/qwen3:14B
-    temperature: 0.7
-    max_tokens: 8192
-@y
-```yaml
-models:
-  local-qwen:
-    provider: dmr
-    model: ai/qwen3:14B
-    temperature: 0.7
-    max_tokens: 8192
-@z
-
-@x
-agents:
-  root:
-    model: local-qwen
-    instruction: You are a helpful coding assistant
-```
-@y
-agents:
-  root:
-    model: local-qwen
-    instruction: You are a helpful coding assistant
-```
-@z
+% snip code...
 
 @x
 ### Faster inference with speculative decoding
 @y
-### Faster inference with speculative decoding
+### Faster inference with speculative decoding {#faster-inference-with-speculative-decoding}
 @z
 
 @x
@@ -267,29 +190,7 @@ Speed up model responses using speculative decoding with a smaller draft model:
 Speed up model responses using speculative decoding with a smaller draft model:
 @z
 
-@x
-```yaml
-models:
-  fast-qwen:
-    provider: dmr
-    model: ai/qwen3:14B
-    provider_opts:
-      speculative_draft_model: ai/qwen3:0.6B-Q4_K_M
-      speculative_num_tokens: 16
-      speculative_acceptance_rate: 0.8
-```
-@y
-```yaml
-models:
-  fast-qwen:
-    provider: dmr
-    model: ai/qwen3:14B
-    provider_opts:
-      speculative_draft_model: ai/qwen3:0.6B-Q4_K_M
-      speculative_num_tokens: 16
-      speculative_acceptance_rate: 0.8
-```
-@z
+% snip code...
 
 @x
 The draft model generates token candidates, and the main model validates them.
@@ -302,7 +203,7 @@ This can significantly improve throughput for longer responses.
 @x
 ### Runtime flags
 @y
-### Runtime flags
+### Runtime flags {#runtime-flags}
 @z
 
 @x
@@ -311,25 +212,7 @@ Pass engine-specific flags to optimize performance:
 Pass engine-specific flags to optimize performance:
 @z
 
-@x
-```yaml
-models:
-  optimized-qwen:
-    provider: dmr
-    model: ai/qwen3
-    provider_opts:
-      runtime_flags: ["--ngl=33", "--threads=8"]
-```
-@y
-```yaml
-models:
-  optimized-qwen:
-    provider: dmr
-    model: ai/qwen3
-    provider_opts:
-      runtime_flags: ["--ngl=33", "--threads=8"]
-```
-@z
+% snip code...
 
 @x
 Common flags:
@@ -371,27 +254,7 @@ Use local embeddings for indexing your knowledge base:
 Use local embeddings for indexing your knowledge base:
 @z
 
-@x
-```yaml
-rag:
-  codebase:
-    docs: [./src]
-    strategies:
-      - type: chunked-embeddings
-        embedding_model: dmr/ai/embeddinggemma
-        database: ./code.db
-```
-@y
-```yaml
-rag:
-  codebase:
-    docs: [./src]
-    strategies:
-      - type: chunked-embeddings
-        embedding_model: dmr/ai/embeddinggemma
-        database: ./code.db
-```
-@z
+% snip code...
 
 @x
 ### Reranking with DMR
@@ -405,49 +268,7 @@ DMR provides native reranking for improved RAG results:
 DMR provides native reranking for improved RAG results:
 @z
 
-@x
-```yaml
-models:
-  reranker:
-    provider: dmr
-    model: hf.co/ggml-org/qwen3-reranker-0.6b-q8_0-gguf
-@y
-```yaml
-models:
-  reranker:
-    provider: dmr
-    model: hf.co/ggml-org/qwen3-reranker-0.6b-q8_0-gguf
-@z
-
-@x
-rag:
-  docs:
-    docs: [./documentation]
-    strategies:
-      - type: chunked-embeddings
-        embedding_model: dmr/ai/embeddinggemma
-        limit: 20
-    results:
-      reranking:
-        model: reranker
-        threshold: 0.5
-      limit: 5
-```
-@y
-rag:
-  docs:
-    docs: [./documentation]
-    strategies:
-      - type: chunked-embeddings
-        embedding_model: dmr/ai/embeddinggemma
-        limit: 20
-    results:
-      reranking:
-        model: reranker
-        threshold: 0.5
-      limit: 5
-```
-@z
+% snip code...
 
 @x
 Native DMR reranking is the fastest option for reranking RAG results.
@@ -473,15 +294,7 @@ If cagent can't find Docker Model Runner:
 1. Verify Docker Model Runner status:
 @z
 
-@x
-   ```console
-   $ docker model status
-   ```
-@y
-   ```console
-   $ docker model status
-   ```
-@z
+% snip command...
 
 @x
 2. Check available models:
@@ -489,15 +302,7 @@ If cagent can't find Docker Model Runner:
 2. Check available models:
 @z
 
-@x
-   ```console
-   $ docker model list
-   ```
-@y
-   ```console
-   $ docker model list
-   ```
-@z
+% snip command...
 
 @x
 3. Check model logs for errors:
@@ -505,15 +310,7 @@ If cagent can't find Docker Model Runner:
 3. Check model logs for errors:
 @z
 
-@x
-   ```console
-   $ docker model logs
-   ```
-@y
-   ```console
-   $ docker model logs
-   ```
-@z
+% snip command...
 
 @x
 4. Ensure Docker Desktop has Model Runner enabled in settings (macOS/Windows)
