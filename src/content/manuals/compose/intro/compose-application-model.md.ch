@@ -321,10 +321,10 @@ The `docker compose up` command starts the `frontend` and `backend` services, cr
 
 @x
 - [Try the Quickstart guide](/manuals/compose/gettingstarted.md)
-- [Explore some sample applications](/manuals/compose/support-and-feedback/samples-for-compose.md)
+- [Explore some sample applications](https://github.com/docker/awesome-compose)
 - [Familiarize yourself with the Compose Specification](/reference/compose-file/_index.md)
 @y
 - [クィックスタートガイドを始める](manuals/compose/gettingstarted.md)
-- [サンプルアプリケーションの確認](manuals/compose/support-and-feedback/samples-for-compose.md)
+- [サンプルアプリケーションの確認](https://github.com/docker/awesome-compose)
 - [Compose 仕様について学ぶ](reference/compose-file/_index.md)
 @z

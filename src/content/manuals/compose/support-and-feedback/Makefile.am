@@ -5,8 +5,7 @@
 bases = \
 	_index.md   \
 	faq.md      \
-	feedback.md \
-	samples-for-compose.md
+	feedback.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

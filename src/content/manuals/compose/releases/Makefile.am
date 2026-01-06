@@ -4,7 +4,6 @@
 
 bases = \
 	_index.md         \
-	migrate.md        \
 	prior-releases.md \
 	release-notes.md
 

@@ -24,10 +24,8 @@ Compose services can define GPU device reservations if the Docker host contains 
 
 @x
 The examples in the following sections focus specifically on providing service containers access to GPU devices with Docker Compose. 
-You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](/manuals/compose/releases/migrate.md).
 @y
 The examples in the following sections focus specifically on providing service containers access to GPU devices with Docker Compose. 
-You can use either `docker-compose` or `docker compose` commands. For more information, see [Migrate to Compose V2](manuals/compose/releases/migrate.md).
 @z
 
 @x

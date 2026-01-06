@@ -108,8 +108,8 @@ The precedence order for each method, from highest to lowest, is as follows:
 
 @x
 - Read up on [working with multiple Compose files](multiple-compose-files/_index.md).
-- Explore some [sample apps](samples-for-compose.md).
+- Explore some [sample apps](https://github.com/docker/awesome-compose).
 @y
 - Read up on [working with multiple Compose files](multiple-compose-files/_index.md).
-- Explore some [sample apps](samples-for-compose.md).
+- Explore some [sample apps](https://github.com/docker/awesome-compose).
 @z

@@ -15,12 +15,6 @@ title: Networking in Compose
 @z
 
 @x
-{{% include "compose-eol.md" %}}
-@y
-{{% include "compose-eol.md" %}}
-@z
-
-@x
 By default Compose sets up a single
 [network](/reference/cli/docker/network/create.md) for your app. Each
 container for a service joins the default network and is both reachable by

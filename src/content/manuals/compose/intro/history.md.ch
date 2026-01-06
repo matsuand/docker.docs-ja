@@ -124,9 +124,9 @@ Compose v2 uses the Compose Specification for project definition. Unlike the pri
 @z
 
 @x
-To make [migration](/manuals/compose/releases/migrate.md) easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make migration easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @y
-To make [migration](manuals/compose/releases/migrate.md) easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
+To make migration easier, Compose v2 has backwards compatibility for certain elements that have been deprecated or changed between Compose file format 2.x/3.x and the Compose Specification.
 @z
 
 @x
@@ -138,9 +138,7 @@ To make [migration](manuals/compose/releases/migrate.md) easier, Compose v2 has 
 @x
 - [How Compose works](compose-application-model.md)
 - [Compose Specification reference](/reference/compose-file/_index.md)
-- [Migrate from Compose v1 to v2](/manuals/compose/releases/migrate.md)
 @y
 - [How Compose works](compose-application-model.md)
 - [Compose Specification reference](reference/compose-file/_index.md)
-- [Migrate from Compose v1 to v2](manuals/compose/releases/migrate.md)
 @z
