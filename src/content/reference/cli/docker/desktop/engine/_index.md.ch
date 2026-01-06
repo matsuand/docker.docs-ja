@@ -4,6 +4,5 @@
 @x
 title: docker desktop engine
 @y
-datafolder: desktop-cli
 title: docker desktop engine
 @z

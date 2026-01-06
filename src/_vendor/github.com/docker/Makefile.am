@@ -1,4 +1,4 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = buildx cli compose mcp-gateway model-runner scout-cli
+SUBDIRS = buildx cli compose mcp-gateway model-runner

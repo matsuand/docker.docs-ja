@@ -30,8 +30,6 @@ languages:
     languageName: English
 @y
 languages:
-  en:
-    languageName: English
   ja:
     languageName: 日本語
 @z

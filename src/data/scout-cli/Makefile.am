@@ -35,40 +35,7 @@ bases = \
 	docker_scout_version.yaml                 \
 	docker_scout_vex.yaml                     \
 	docker_scout_vex_get.yaml                 \
-	docker_scout_watch.yaml                   \
-	scout.md                                  \
-	scout_attestation.md                      \
-	scout_attestation_add.md                  \
-	scout_attestation_get.md                  \
-	scout_attestation_list.md                 \
-	scout_cache.md                            \
-	scout_cache_df.md                         \
-	scout_cache_prune.md                      \
-	scout_compare.md                          \
-	scout_config.md                           \
-	scout_cves.md                             \
-	scout_docker-cli-plugin-hooks.md          \
-	scout_enroll.md                           \
-	scout_environment.md                      \
-	scout_help.md                             \
-	scout_integration.md                      \
-	scout_integration_configure.md            \
-	scout_integration_delete.md               \
-	scout_integration_list.md                 \
-	scout_policy.md                           \
-	scout_push.md                             \
-	scout_quickview.md                        \
-	scout_recommendations.md                  \
-	scout_repo.md                             \
-	scout_repo_disable.md                     \
-	scout_repo_enable.md                      \
-	scout_repo_list.md                        \
-	scout_sbom.md                             \
-	scout_stream.md                           \
-	scout_version.md                          \
-	scout_vex.md                              \
-	scout_vex_get.md                          \
-	scout_watch.md
+	docker_scout_watch.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

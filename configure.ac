@@ -52,8 +52,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/model-runner/cmd/cli/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/cli/docs/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/cli/docs/reference/Makefile
-	src/_vendor/github.com/docker/scout-cli/Makefile
-	src/_vendor/github.com/docker/scout-cli/docs/Makefile
 	src/_vendor/github.com/moby/Makefile
 	src/_vendor/github.com/moby/buildkit/Makefile
 	src/_vendor/github.com/moby/buildkit/docs/Makefile
@@ -401,6 +399,7 @@ AC_CONFIG_FILES([
 	src/data/init-cli/Makefile
 	src/data/offload-cli/Makefile
 	src/data/sandbox-cli/Makefile
+	src/data/scout-cli/Makefile
 	src/data/secrets-engine/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile

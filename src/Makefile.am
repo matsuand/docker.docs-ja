@@ -30,7 +30,6 @@ copyfiles = \
 	docker-bake.hcl    \
 	go.mod             \
 	go.sum             \
-	hugo_stats.json    \
 	netlify.toml       \
 	package-lock.json  \
 	pagefind.yml

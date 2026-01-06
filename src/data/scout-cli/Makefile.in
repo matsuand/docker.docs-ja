@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/_vendor/github.com/docker/scout-cli/docs
+subdir = src/data/scout-cli
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -270,40 +270,7 @@ bases = \
 	docker_scout_version.yaml                 \
 	docker_scout_vex.yaml                     \
 	docker_scout_vex_get.yaml                 \
-	docker_scout_watch.yaml                   \
-	scout.md                                  \
-	scout_attestation.md                      \
-	scout_attestation_add.md                  \
-	scout_attestation_get.md                  \
-	scout_attestation_list.md                 \
-	scout_cache.md                            \
-	scout_cache_df.md                         \
-	scout_cache_prune.md                      \
-	scout_compare.md                          \
-	scout_config.md                           \
-	scout_cves.md                             \
-	scout_docker-cli-plugin-hooks.md          \
-	scout_enroll.md                           \
-	scout_environment.md                      \
-	scout_help.md                             \
-	scout_integration.md                      \
-	scout_integration_configure.md            \
-	scout_integration_delete.md               \
-	scout_integration_list.md                 \
-	scout_policy.md                           \
-	scout_push.md                             \
-	scout_quickview.md                        \
-	scout_recommendations.md                  \
-	scout_repo.md                             \
-	scout_repo_disable.md                     \
-	scout_repo_enable.md                      \
-	scout_repo_list.md                        \
-	scout_sbom.md                             \
-	scout_stream.md                           \
-	scout_version.md                          \
-	scout_vex.md                              \
-	scout_vex_get.md                          \
-	scout_watch.md
+	docker_scout_watch.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
@@ -322,9 +289,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/_vendor/github.com/docker/scout-cli/docs/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/data/scout-cli/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/_vendor/github.com/docker/scout-cli/docs/Makefile
+	  $(AUTOMAKE) --foreign src/data/scout-cli/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

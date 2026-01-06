@@ -3,14 +3,14 @@
 
 @x
 ---
-_build:
+build:
   list: never
   publishResources: false
   render: never
 ---
 @y
 ---
-_build:
+build:
   list: never
   publishResources: false
   render: never

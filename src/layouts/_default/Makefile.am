@@ -4,7 +4,7 @@
 SUBDIRS = _markup
 
 bases = \
-	api-baseof.html  \
+	api.html         \
 	baseof.html      \
 	cli.html         \
 	list.markdown.md \

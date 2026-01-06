@@ -298,7 +298,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = _markup
 bases = \
-	api-baseof.html  \
+	api.html         \
 	baseof.html      \
 	cli.html         \
 	list.markdown.md \

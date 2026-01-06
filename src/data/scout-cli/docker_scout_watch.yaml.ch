@@ -4,14 +4,14 @@
 @x
 command: docker scout watch
 short: |
-    Watch repositories in a registry and push images and indexes to Docker Scout (experimental)
+    Watch repositories in a registry and push images and indexes to Docker Scout
 long: |
     The docker scout watch command watches repositories in a registry and pushes images or image indexes to Docker Scout.
 usage: docker scout watch
 @y
 command: docker scout watch
 short: |
-    Watch repositories in a registry and push images and indexes to Docker Scout (experimental)
+    Watch repositories in a registry and push images and indexes to Docker Scout
 long: |
     The docker scout watch command watches repositories in a registry and pushes images or image indexes to Docker Scout.
 usage: docker scout watch

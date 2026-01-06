@@ -96,10 +96,12 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - Fixed an issue that caused Docker Desktop to get stuck during startup.
 - Improved the error message when the `daemon.json` is invalid.
 - Fixed performance issues on every keystroke within a long Ask Gordon session.
+- Fixed an issue that prevented Kubernetes in kubeadm mode from starting up when an organization has configured Registry Access Management to block Docker Hub.
 @y
 - Docker Desktop の起動が停止してしまう問題を修正しました。
 - `daemon.json` の記述が不適切である場合のエラーメッセージを改善しました。
 - Ask Gordon セッションが長く続く場合に、各キーストローク性能に関する問題を修正しました。
+- 組織内のレジストリアクセス管理として Docker Hub をブロックするように設定している場合に、kubeadm モードの Kubernetes が起動できない問題を修正しました。
 @z
 
 @x

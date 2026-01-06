@@ -64,9 +64,9 @@ examples: |-
 % snip command...
 
 @x
-    ### Delete temporary _and_ cache data
+    ### Delete temporary and cache data
 @y
-    ### Delete temporary _and_ cache data
+    ### Delete temporary and cache data
 @z
 
 % snip command...

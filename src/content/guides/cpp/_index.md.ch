@@ -10,7 +10,6 @@ keywords: getting started, c++
 title: C++ 向けガイド
 linkTitle: C++
 description: Containerize and develop C++ applications using Docker.
-linkTitle: C++
 keywords: getting started, c++
 @z
 

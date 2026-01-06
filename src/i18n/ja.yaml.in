@@ -21,14 +21,14 @@ warning: 警告
 ## AlertType
 caution:
   other: 注意
-important:
-  other: 重要
-note:
-  other: メモ
-tip:
-  other: 情報
-warning:
-  other: 警告
+#important:
+#  other: 重要
+#note:
+#  other: メモ
+#tip:
+#  other: 情報
+#warning:
+#  other: 警告
 
 ## openapi strings:
 
