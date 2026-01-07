@@ -30,8 +30,9 @@ description: Learn how to containerize a Ruby on Rails application.
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
 - You have a [Git client](https://git-scm.com/downloads). The examples in this section show the Git CLI, but you can use any client.
 @y
-- You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
-- You have a [Git client](https://git-scm.com/downloads). The examples in this section show the Git CLI, but you can use any client.
+- [Docker Desktop](get-started/get-docker.md) の最新バージョンをインストールしていること。
+- [git クライアント](https://git-scm.com/downloads) が利用可能であること。
+  本節の利用例では Git CLI を扱っていますが、別のクライアントを用いてもかまいません。
 @z
 
 @x
@@ -43,7 +44,7 @@ description: Learn how to containerize a Ruby on Rails application.
 @x
 This section walks you through containerizing and running a [Ruby on Rails](https://rubyonrails.org/) application.
 @y
-This section walks you through containerizing and running a [Ruby on Rails](https://rubyonrails.org/) application.
+本節では [Ruby on Rails](https://rubyonrails.org/) アプリケーションをコンテナー化して実行する手順を示していきます。
 @z
 
 @x
@@ -65,41 +66,35 @@ If you have an existing Rails application, you will need to create the Docker as
 @z
 
 @x
-Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHI) and another using the official Docker image.
+Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHIs) and another using the Docker Official Image (DOIs). Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
 @y
-Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHI) and another using the official Docker image.
+Rails 7.1 and newer generates multistage Dockerfile out of the box. Following are two versions of such a file: one using Docker Hardened Images (DHIs) and another using the Docker Official Image (DOIs). Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
 @z
 
 @x
-> [Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker.
+[Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker. DHIs are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance, freely available to everyone with no subscription required, no usage restrictions, and no vendor lock-in.
 @y
-> [Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker.
+[Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker. DHIs are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance, freely available to everyone with no subscription required, no usage restrictions, and no vendor lock-in.
 @z
 
 @x
-DHI images are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance.
+Multistage Dockerfiles help create smaller, more efficient images by separating build and runtime dependencies, ensuring only necessary components are included in the final image. Read more in the [Multi-stage builds guide](/get-started/docker-concepts/building-images/multi-stage-builds/).
 @y
-DHI images are recommended whenever it is possible for better security. They are designed to reduce vulnerabilities and simplify compliance.
-@z
-
-@x
-> Multistage Dockerfiles help create smaller, more efficient images by separating build and runtime dependencies, ensuring only necessary components are included in the final image. Read more in the [Multi-stage builds guide](/get-started/docker-concepts/building-images/multi-stage-builds/).
-@y
-> Multistage Dockerfiles help create smaller, more efficient images by separating build and runtime dependencies, ensuring only necessary components are included in the final image. Read more in the [Multi-stage builds guide](__SUBDIR__/get-started/docker-concepts/building-images/multi-stage-builds/).
-@z
-
-@x
-Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
-@y
-Although the Dockerfile is generated automatically, understanding its purpose and functionality is important. Reviewing the following example is highly recommended.
+Multistage Dockerfiles help create smaller, more efficient images by separating build and runtime dependencies, ensuring only necessary components are included in the final image. Read more in the [Multi-stage builds guide](/get-started/docker-concepts/building-images/multi-stage-builds/).
 @z
 
 @x
 {{< tabs >}}
-{{< tab name="Using Docker Hardened Images" >}}
+{{< tab name="Using DHIs" >}}
 @y
 {{< tabs >}}
-{{< tab name="Using Docker Hardened Images" >}}
+{{< tab name="Using DHIs" >}}
+@z
+
+@x
+You must authenticate to `dhi.io` before you can pull Docker Hardened Images. Run `docker login dhi.io` to authenticate.
+@y
+You must authenticate to `dhi.io` before you can pull Docker Hardened Images. Run `docker login dhi.io` to authenticate.
 @z
 
 @x within code
@@ -111,10 +106,10 @@ Although the Dockerfile is generated automatically, understanding its purpose an
 
 @x
 {{< /tab >}}
-{{< tab name="Using the official Docker image" >}}
+{{< tab name="Using DOIs" >}}
 @y
 {{< /tab >}}
-{{< tab name="Using the official Docker image" >}}
+{{< tab name="Using DOIs" >}}
 @z
 
 @x
@@ -288,11 +283,11 @@ Related information:
 @x
 ## Next steps
 @y
-## Next steps
+## 次のステップ {#next-steps}
 @z
 
 @x
 In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
 @y
-In the next section, you'll take a look at how to set up a CI/CD pipeline using GitHub Actions.
+次の節では GitHub アクションを使って CI/CD パイプラインを設定する方法について学びます。
 @z
