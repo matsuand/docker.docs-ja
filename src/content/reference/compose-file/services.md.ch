@@ -1,4 +1,4 @@
-k%This is the change file for the original Docker's Documentation file.
+%This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
@@ -788,12 +788,12 @@ expressed in the short form.
 @x
 - `restart`: When set to `true` Compose restarts this service after it updates the dependency service.
   This applies to an explicit restart controlled by a Compose operation, and excludes automated restart by the container runtime
-  after the container dies. Introduced in Docker Compose version [2.17.0](/manuals/compose/releases/release-notes.md#2170).
+  after the container dies. Introduced in Docker Compose version [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0).
 @y
 - `restart`: これが `true` に設定されていると、Compose は依存サービスが更新された時に、対象サービスを再起動します。
   これは Compose 処理として制御される明示的な再起動を実現します。
   そしてコンテナーが停止した際にコンテナーランタイムが行う自動再起動には適用されません。
-  この機能は Docker Compose バージョン [2.17.0](manuals/compose/releases/release-notes.md#2170) から導入されたものです。
+  この機能は Docker Compose バージョン [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) から導入されたものです。
 @z
 
 @x
@@ -813,11 +813,11 @@ expressed in the short form.
 
 @x
 - `required`: When set to `false` Compose only warns you when the dependency service isn't started or available. If it's not defined
-    the default value of `required` is `true`. Introduced in Docker Compose version [2.20.0](/manuals/compose/releases/release-notes.md#2200).
+    the default value of `required` is `true`. Introduced in Docker Compose version [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0).
 @y
 - `required`: これが `false` に設定されていると、依存サービスが起動されなかったり利用不能である場合に、Compose が警告のみを行います。
   `required` が定義されていない場合のデフォルト値は `true` です。
-  この機能は Docker Compose バージョン [2.20.0](manuals/compose/releases/release-notes.md#2200) から導入されました。
+  この機能は Docker Compose バージョン [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) から導入されました。
 @z
 
 @x
@@ -1716,9 +1716,9 @@ IPv6 addresses can be enclosed in square brackets, for example:
 % snip code...
 
 @x
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](/manuals/compose/releases/release-notes.md#2241). For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](https://github.com/docker/compose/releases/tag/v2.24.1). For example:
 @y
-The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](manuals/compose/releases/release-notes.md#2241). For example:
+The separator `=` is preferred, but `:` can also be used. Introduced in Docker Compose version [2.24.1](https://github.com/docker/compose/releases/tag/v2.24.1). For example:
 @z
 
 % snip code...
@@ -1830,9 +1830,9 @@ For more information on `HEALTHCHECK`, see the [Dockerfile reference](reference/
 % snip code...
 
 @x
-`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](/manuals/compose/releases/release-notes.md#2202)
+`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](https://github.com/docker/compose/releases/tag/v2.20.2)
 @y
-`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](manuals/compose/releases/release-notes.md#2202)
+`interval`, `timeout`, `start_period`, and `start_interval` are [specified as durations](extension.md#specifying-durations). Introduced in Docker Compose version [2.20.2](https://github.com/docker/compose/releases/tag/v2.20.2)
 @z
 
 @x
@@ -2824,7 +2824,7 @@ expressed in the short form.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The host IP mapping. If it is not set, it binds to all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
-- `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](/manuals/compose/releases/release-notes.md#2260).
+- `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0).
 - `mode`: Specifies how the port is published in a Swarm setup. If set to `host`, it publishes the port on every node in Swarm. If set to `ingress`, it allows load balancing across the nodes in Swarm. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document its usage within the service.
 @y
@@ -2832,7 +2832,7 @@ expressed in the short form.
 - `published`: The publicly exposed port. It is defined as a string and can be set as a range using syntax `start-end`. It means the actual port is assigned a remaining available port, within the set range.
 - `host_ip`: The host IP mapping. If it is not set, it binds to all network interfaces (`0.0.0.0`).
 - `protocol`: The port protocol (`tcp` or `udp`). Defaults to `tcp`.
-- `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](manuals/compose/releases/release-notes.md#2260).
+- `app_protocol`: The application protocol (TCP/IP level 4 / OSI level 7) this port is used for. This is optional and can be used as a hint for Compose to offer richer behavior for protocols that it understands. Introduced in Docker Compose version [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0).
 - `mode`: Specifies how the port is published in a Swarm setup. If set to `host`, it publishes the port on every node in Swarm. If set to `ingress`, it allows load balancing across the nodes in Swarm. Defaults to `ingress`.
 - `name`: A human-readable name for the port, used to document its usage within the service.
 @z
@@ -3677,9 +3677,9 @@ expressed in the short form.
   - `subpath`: Path inside a volume to mount instead of the volume root.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
-  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](/manuals/compose/releases/release-notes.md#2260).
+  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](https://github.com/docker/compose/releases/tag/v2.14.0).
 - `image`: Configures additional image options:
-  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](/manuals/compose/releases/release-notes.md#2350)
+  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](https://github.com/docker/compose/releases/tag/v2.35.0)
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @y
 - `type`: The mount type. Either `volume`, `bind`, `tmpfs`, `image`, `npipe`, or `cluster`
@@ -3697,9 +3697,9 @@ expressed in the short form.
   - `subpath`: Path inside a volume to mount instead of the volume root.
 - `tmpfs`: Configures additional tmpfs options:
   - `size`: The size for the tmpfs mount in bytes (either numeric or as bytes unit).
-  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](manuals/compose/releases/release-notes.md#2260).
+  - `mode`: The file mode for the tmpfs mount as Unix permission bits as an octal number. Introduced in Docker Compose version [2.14.0](https://github.com/docker/compose/releases/tag/v2.14.0).
 - `image`: Configures additional image options:
-  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](manuals/compose/releases/release-notes.md#2350)
+  - `subpath`: Path inside the source image to mount instead of the image root. Available in [Docker Compose version 2.35.0](https://github.com/docker/compose/releases/tag/v2.35.0)
 - `consistency`: The consistency requirements of the mount. Available values are platform specific.
 @z
 

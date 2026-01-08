@@ -52,15 +52,15 @@ The top-level `configs` declaration defines or references configuration data tha
 @z
 
 @x
-- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](/manuals/compose/releases/release-notes.md#2231).
+- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1).
 @y
-- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](manuals/compose/releases/release-notes.md#2231).
+- `environment`: The config content is created with the value of an environment variable. Introduced in Docker Compose version [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1).
 @z
 
 @x
-- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](/manuals/compose/releases/release-notes.md#2231).
+- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1).
 @y
-- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](manuals/compose/releases/release-notes.md#2231).
+- `content`: The content is created with the inlined value. Introduced in Docker Compose version [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1).
 @z
 
 @x

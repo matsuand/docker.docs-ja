@@ -295,13 +295,12 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = bridge how-tos images install intro releases \
-	support-and-feedback
-
+SUBDIRS = bridge how-tos images install intro support-and-feedback
 bases = \
 	_index.md         \
 	compose-sdk.md    \
-	gettingstarted.md
+	gettingstarted.md \
+	release-notes.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

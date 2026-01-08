@@ -74,12 +74,12 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
 - title: View the release notes
   description: Find out about the latest enhancements and bug fixes.
   icon: note_add
-  link: /compose/release-notes
+  link: "https://github.com/docker/compose/releases"
 @y
 - title: リリースノートの確認
   description: 最新の機能拡張やバグフィックスを確認します。
   icon: note_add
-  link: __SUBDIR__/compose/release-notes
+  link: "https://github.com/docker/compose/releases"
 @z
 
 @x
@@ -118,18 +118,6 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
   description: Explore general FAQs and find out how to give feedback.
   icon: help
   link: __SUBDIR__/compose/faq
-@z
-
-@x
-- title: Migrate to Compose v2
-  description: Learn how to migrate from Compose v1 to v2
-  icon: folder_delete
-  link: /compose/releases/migrate/
-@y
-- title: Migrate to Compose v2
-  description: Learn how to migrate from Compose v1 to v2
-  icon: folder_delete
-  link: __SUBDIR__/compose/releases/migrate/
 @z
 
 % snip aliases...

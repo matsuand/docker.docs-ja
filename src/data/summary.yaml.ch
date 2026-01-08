@@ -95,36 +95,36 @@ Azure blob:
 
 @x
 Build additional contexts:
-  requires: Docker Compose [2.17.0](/manuals/compose/releases/release-notes.md#2170) and later
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
 @y
 Build additional contexts:
-  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) およびそれ以降
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) およびそれ以降
 @z
 
 @x
 Build checks:
   availability: Beta
-  requires: Docker Buildx [0.15.0](/manuals/compose/releases/release-notes.md#0150) and later
+  requires: Docker Buildx [0.15.0](/manuals/build/release-notes.md#0150) and later
 @y
 Build checks:
   availability: ベータ
-  requires: Docker Buildx [0.15.0](manuals/compose/releases/release-notes.md#0150) およびそれ以降
+  requires: Docker Buildx [0.15.0](manuals/build/release-notes.md#0150) およびそれ以降
 @z
 
 @x
 Build dockerfile inline:
-  requires: Docker Compose [2.17.0](/manuals/compose/releases/release-notes.md#2170) and later
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
 @y
 Build dockerfile inline:
-  requires: Docker Compose [2.17.0](manuals/compose/releases/release-notes.md#2170) およびそれ以降
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) およびそれ以降
 @z
 
 @x
 Build entitlements:
-  requires: Docker Compose [2.27.1](/manuals/compose/releases/release-notes.md#2271) and later
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) and later
 @y
 Build entitlements:
-  requires: Docker Compose [2.27.1](manuals/compose/releases/release-notes.md#2271) およびそれ以降
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) およびそれ以降
 @z
 
 @x
@@ -153,18 +153,18 @@ Buildkit host:
 
 @x
 Build privileged:
-  requires: Docker Compose [2.15.0](/manuals/compose/releases/release-notes.md#2) and later
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) and later
 @y
 Build privileged:
-  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2) およびそれ以降
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) およびそれ以降
 @z
 
 @x
 Build ulimits:
-  requires: Docker Compose [2.23.1](/manuals/compose/releases/release-notes.md#2231) and later
+  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) and later
 @y
 Build ulimits:
-  requires: Docker Compose [2.23.1](manuals/compose/releases/release-notes.md#2231) およびそれ以降
+  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) およびそれ以降
 @z
 
 @x
@@ -305,10 +305,10 @@ Compliance reporting:
 
 @x
 Compose attach:
-  requires: Docker Compose [2.20.0](/manuals/compose/releases/release-notes.md#2200) and later
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) and later
 @y
 Compose attach:
-  requires: Docker Compose [2.20.0](manuals/compose/releases/release-notes.md#2200) およびそれ以降
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) およびそれ以降
 @z
 
 @x
@@ -329,250 +329,250 @@ Config profiles:
 
 @x
 Compose dependent images:
-  requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose dependent images:
-  requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
 @z
 
 @x
 Compose cgroup:
-  requires: Docker Compose [2.15.0](/manuals/compose/releases/release-notes.md#2150) and later
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) and later
 @y
 Compose cgroup:
-  requires: Docker Compose [2.15.0](manuals/compose/releases/release-notes.md#2150) およびそれ以降
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) およびそれ以降
 @z
 
 @x
 Compose develop:
-  requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose develop:
-  requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
 @z
 
 @x
 Compose driver opts:
-  requires: Docker Compose [2.27.1](/manuals/compose/releases/release-notes.md#2271) and later
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) and later
 @y
 Compose driver opts:
-  requires: Docker Compose [2.27.1](manuals/compose/releases/release-notes.md#2271) およびそれ以降
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) およびそれ以降
 @z
 
 @x
 Compose exec:
-  requires: Docker Compose [2.32.2](/manuals/compose/releases/release-notes.md#2232) and later
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) and later
 @y
 Compose exec:
-  requires: Docker Compose [2.32.2](manuals/compose/releases/release-notes.md#2232) およびそれ以降
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) およびそれ以降
 @z
 
 @x
 Compose experimental:
-  requires: Docker Compose [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) and later
 @y
 Compose experimental:
-  requires: Docker Compose [2.26.0](manuals/compose/releases/release-notes.md#2260) およびそれ以降
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) およびそれ以降
 @z
 
 @x
 Compose enable ipv4:
-  requires: Docker Compose [2.33.1](/manuals/compose/releases/release-notes.md#2331) and later
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) and later
 @y
 Compose enable ipv4:
-  requires: Docker Compose [2.33.1](manuals/compose/releases/release-notes.md#2331) およびそれ以降
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) およびそれ以降
 @z
 
 @x
 Compose file watch:
-  requires: Docker Compose [2.22.0](/manuals/compose/releases/release-notes.md#2220) and later
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose file watch:
-  requires: Docker Compose [2.22.0](manuals/compose/releases/release-notes.md#2220) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
 @z
 
 @x
 Compose format:
-  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose format:
-  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
 @z
 
 @x
 Compose gpus:
-  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose gpus:
-  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
 @z
 
 @x
 Compose gw priority:
-  requires: Docker Compose [2.33.1](/manuals/compose/releases/release-notes.md#2331) and later
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) and later
 @y
 Compose gw priority:
-  requires: Docker Compose [2.33.1](manuals/compose/releases/release-notes.md#2331) およびそれ以降
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) およびそれ以降
 @z
 
 @x
 Compose include:
-  requires: Docker Compose [2.20.3](/manuals/compose/releases/release-notes.md#2203) and later
+  requires: Docker Compose [2.20.3](https://github.com/docker/compose/releases/tag/v2.20.3) and later
 @y
 Compose include:
-  requires: Docker Compose [2.20.3](manuals/compose/releases/release-notes.md#2203) およびそれ以降
+  requires: Docker Compose [2.20.3](https://github.com/docker/compose/releases/tag/v2.20.3) およびそれ以降
 @z
 
 @x
 Compose interface-name:
-  requires: Docker Compose [2.36.0](/manuals/compose/releases/release-notes.md#2360) and later
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose interface-name:
-  requires: Docker Compose [2.36.0](manuals/compose/releases/release-notes.md#2360) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
 @z
 
 @x
 Compose label file:
-  requires: Docker Compose [2.32.2](/manuals/compose/releases/release-notes.md#2232) and later
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) and later
 @y
 Compose label file:
-  requires: Docker Compose [2.32.2](manuals/compose/releases/release-notes.md#2232) およびそれ以降
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) およびそれ以降
 @z
 
 @x
 Compose lifecycle hooks:
-  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose lifecycle hooks:
-  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
 @z
 
 @x
 Compose mac address:
-  requires: Docker Compose [2.23.2](/manuals/compose/releases/release-notes.md#2232) and later
+  requires: Docker Compose [2.23.2](https://github.com/docker/compose/releases/tag/v2.23.2) and later
 @y
 Compose mac address:
-  requires: Docker Compose [2.23.2](manuals/compose/releases/release-notes.md#2232) およびそれ以降
+  requires: Docker Compose [2.23.2](https://github.com/docker/compose/releases/tag/v2.23.2) およびそれ以降
 @z
 
 @x
 Compose menu:
-  requires: Docker Compose [2.26.0](/manuals/compose/releases/release-notes.md#2260) and later
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) and later
 @y
 Compose menu:
-  requires: Docker Compose [2.26.0](manuals/compose/releases/release-notes.md#2260) およびそれ以降
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) およびそれ以降
 @z
 
 @x
 Compose models:
-  requires: Docker Compose [2.38.0](/manuals/compose/releases/release-notes.md#2380) and later
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later
 @y
 Compose models:
-  requires: Docker Compose [2.38.0](manuals/compose/releases/release-notes.md#2380) およびそれ以降
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) およびそれ以降
 @z
 
 @x
 Compose model runner:
-  requires: Docker Compose [2.38.0](/manuals/compose/releases/release-notes.md#2350) and later, and Docker Desktop 4.43 and later
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later, and Docker Desktop 4.43 and later
 @y
 Compose model runner:
-  requires: Docker Compose [2.38.0](manuals/compose/releases/release-notes.md#2350) およびそれ以降、Docker Desktop 4.43 およびそれ以降
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) およびそれ以降、Docker Desktop 4.43 およびそれ以降
 @z
 
 @x
 Compose OCI artifact:
-  requires: Docker Compose [2.34.0](/manuals/compose/releases/release-notes.md#2340) and later
+  requires: Docker Compose [2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0) and later
 @y
 Compose OCI artifact:
-  requires: Docker Compose [2.34.0](manuals/compose/releases/release-notes.md#2340) およびそれ以降
+  requires: Docker Compose [2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0) およびそれ以降
 @z
 
 @x
 Compose provider services:
-  requires: Docker Compose [2.36.0](/manuals/compose/releases/release-notes.md) and later
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose provider services:
-  requires: Docker Compose [2.36.0](manuals/compose/releases/release-notes.md) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
 @z
 
 @x
 Compose progress:
-  requires: Docker Compose [2.36.0](/manuals/compose/releases/release-notes.md) and later
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose progress:
-  requires: Docker Compose [2.36.0](manuals/compose/releases/release-notes.md) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
 @z
 
 @x
 Compose replace file:
-  requires: Docker Compose [2.24.4](/manuals/compose/releases/release-notes.md#2244) and later
+  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) and later
 @y
 Compose replace file:
-  requires: Docker Compose [2.24.4](manuals/compose/releases/release-notes.md#2244) およびそれ以降
+  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) およびそれ以降
 @z
 
 @x
 Compose required:
-  requires: Docker Compose [2.24.0](/manuals/compose/releases/release-notes.md#2271) and later
+  requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) and later
 @y
 Compose required:
-  requires: Docker Compose [2.24.0](manuals/compose/releases/release-notes.md#2271) およびそれ以降
+  requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) およびそれ以降
 @z
 
 @x
 Compose post start:
-  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose post start:
-  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
 @z
 
 @x
 Compose pre stop:
-  requires: Docker Compose [2.30.0](/manuals/compose/releases/release-notes.md#2300) and later
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose pre stop:
-  requires: Docker Compose [2.30.0](manuals/compose/releases/release-notes.md#2300) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
 @z
 
 @x
 Compose provenance:
-  requires: Docker Compose [2.39.0](/manuals/compose/releases/release-notes.md#2390) and later
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
 @y
 Compose provenance:
-  requires: Docker Compose [2.39.0](manuals/compose/releases/release-notes.md#2390) およびそれ以降
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) およびそれ以降
 @z
 
 @x
 Compose uts:
-  requires: Docker Compose [2.15.1](/manuals/compose/releases/release-notes.md#2151) and later
+  requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) and later
 @y
 Compose uts:
-  requires: Docker Compose [2.15.1](manuals/compose/releases/release-notes.md#2151) およびそれ以降
+  requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) およびそれ以降
 @z
 
 @x
 Composefile include:
-  requires: Docker Compose [2.20.0](/manuals/compose/releases/release-notes.md#2200) and later
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) and later
 @y
 Composefile include:
-  requires: Docker Compose [2.20.0](manuals/compose/releases/release-notes.md#2200) およびそれ以降
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) およびそれ以降
 @z
 
 @x
 Compose sbom:
-  requires: Docker Compose [2.39.0](/manuals/compose/releases/release-notes.md#2390) and later
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
 @y
 Compose sbom:
-  requires: Docker Compose [2.39.0](manuals/compose/releases/release-notes.md#2390) およびそれ以降
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) およびそれ以降
 @z
 
 @x
 Compose SDK:
-  requires: Docker Compose [5.00.0](/manuals/compose/releases/release-notes.md#5000) and later
+  requires: Docker Compose [5.00.0](https://github.com/docker/compose/releases/tag/v5.00.0) and later
 @y
 Compose SDK:
-  requires: Docker Compose [5.00.0](/manuals/compose/releases/release-notes.md#5000) and later
+  requires: Docker Compose [5.00.0](https://github.com/docker/compose/releases/tag/v5.00.0) およびそれ以降
 @z
 
 @x

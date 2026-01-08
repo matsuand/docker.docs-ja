@@ -4,13 +4,13 @@
 SUBDIRS = admonitions components sidebar utils
 
 bases = \
-	footer.html                 \
-	github-links.html           \
-	guides-stepper.html         \
-	head.html                   \
-	header.html                 \
-	heading.html                \
-	md-dropdown.html            \
+	footer.html         \
+	github-links.html   \
+	guides-stepper.html \
+	head.html           \
+	header.html         \
+	heading.html        \
+	md-dropdown.html    \
 	search-bar.html
 
 include $(top_srcdir)/build-aux/common.mk
@@ -25,6 +25,7 @@ copyfiles = \
 	meta.html            \
 	pagemeta.html        \
 	pagination.html      \
+	schema.html          \
 	tags.html            \
 	tooltip.html         \
 	youtube-script.html

@@ -298,13 +298,13 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = admonitions components sidebar utils
 bases = \
-	footer.html                 \
-	github-links.html           \
-	guides-stepper.html         \
-	head.html                   \
-	header.html                 \
-	heading.html                \
-	md-dropdown.html            \
+	footer.html         \
+	github-links.html   \
+	guides-stepper.html \
+	head.html           \
+	header.html         \
+	heading.html        \
+	md-dropdown.html    \
 	search-bar.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
@@ -321,6 +321,7 @@ copyfiles = \
 	meta.html            \
 	pagemeta.html        \
 	pagination.html      \
+	schema.html          \
 	tags.html            \
 	tooltip.html         \
 	youtube-script.html

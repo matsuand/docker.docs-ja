@@ -189,7 +189,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/compose/images/Makefile
 	src/content/manuals/compose/install/Makefile
 	src/content/manuals/compose/intro/Makefile
-	src/content/manuals/compose/releases/Makefile
 	src/content/manuals/compose/support-and-feedback/Makefile
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
