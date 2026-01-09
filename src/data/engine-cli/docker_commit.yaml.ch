@@ -7,132 +7,54 @@ aliases: docker container commit, docker commit
 short: Create a new image from a container's changes
 long: Create a new image from a container's changes
 usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-pname: docker
-plink: docker.yaml
-options:
-    - option: author
-      shorthand: a
-      value_type: string
-      description: Author (e.g., `John Hannibal Smith <hannibal@a-team.com>`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: change
-      shorthand: c
-      value_type: list
-      description: Apply Dockerfile instruction to the created image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: message
-      shorthand: m
-      value_type: string
-      description: Commit message
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pause
-      shorthand: p
-      value_type: bool
-      default_value: "true"
-      description: Pause container during commit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker commit
 aliases: docker container commit, docker commit
-short: Create a new image from a container's changes
-long: Create a new image from a container's changes
+short: コンテナーの変更内容からイメージを新たに生成します。
+long: コンテナーの変更内容からイメージを新たに生成します。
 usage: docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
-pname: docker
-plink: docker.yaml
-options:
-    - option: author
-      shorthand: a
-      value_type: string
-      description: Author (e.g., `John Hannibal Smith <hannibal@a-team.com>`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: change
-      shorthand: c
-      value_type: list
-      description: Apply Dockerfile instruction to the created image
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: message
-      shorthand: m
-      value_type: string
-      description: Commit message
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: pause
-      shorthand: p
-      value_type: bool
-      default_value: "true"
-      description: Pause container during commit
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% pname: docker
+% plink: docker.yaml
+% options:
+
+@x author
+      description: Author (e.g., `John Hannibal Smith <hannibal@a-team.com>`)
+@y
+      description: 作者。(たとえば `John Hannibal Smith <hannibal@a-team.com>`)
+@z
+
+@x change
+      description: Apply Dockerfile instruction to the created image
+@y
+      description: Dockerfile 命令を生成イメージに適用します。
+@z
+
+@x message
+      description: Commit message
+@y
+      description: コミットメッセージ。
+@z
+
+@x no-pause
+      description: Disable pausing container during commit
+@y
+      description: コミット時のコンテナー一時停止を無効にします。
+@z
+
+@x pause
+      description: 'Pause container during commit (deprecated: use --no-pause instead)'
+@y
+      description: 'コミット中はコンテナーを一時停止します (廃止予定: 代わりに --no-pause を使ってください)。'
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: 利用方法を表示します。
+@z
+
+% snip directives...

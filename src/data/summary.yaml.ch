@@ -104,11 +104,11 @@ Build additional contexts:
 @x
 Build checks:
   availability: Beta
-  requires: Docker Buildx [0.15.0](/manuals/build/release-notes.md#0150) and later
+  requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) and later
 @y
 Build checks:
   availability: ベータ
-  requires: Docker Buildx [0.15.0](manuals/build/release-notes.md#0150) およびそれ以降
+  requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) およびそれ以降
 @z
 
 @x
@@ -129,26 +129,26 @@ Build entitlements:
 
 @x
 Build multiple exporters:
-  requires: Docker Buildx [0.13.0](/manuals/build/release-notes.md#0130) and later
+  requires: Docker Buildx [0.13.0](https://github.com/docker/buildx/releases/tag/v0.13.0) and later
 @y
 Build multiple exporters:
-  requires: Docker Buildx [0.13.0](manuals/build/release-notes.md#0130) およびそれ以降
+  requires: Docker Buildx [0.13.0](https://github.com/docker/buildx/releases/tag/v0.13.0) およびそれ以降
 @z
 
 @x
 Build URL Queries:
-  requires: Docker Buildx [0.28.0](/manuals/build/release-notes.md#0280) and later, Dockerfile [1.18.0](/manuals/build/buildkit/dockerfile-release-notes.md#1180) and later, and Docker Desktop [4.46.0](/manuals/desktop/release-notes.md#4460) and later
+  requires: Docker Buildx [0.28.0](https://github.com/docker/buildx/releases/tag/v0.28.0) and later, Dockerfile [1.18.0](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.18.0) and later, and Docker Desktop [4.46.0](/manuals/desktop/release-notes.md#4460) and later
 @y
 Build URL Queries:
-  requires: Docker Buildx [0.28.0](manuals/build/release-notes.md#0280) and later, Dockerfile [1.18.0](manuals/build/buildkit/dockerfile-release-notes.md#1180) and later, and Docker Desktop [4.46.0](manuals/desktop/release-notes.md#4460) and later
+  requires: Docker Buildx [0.28.0](https://github.com/docker/buildx/releases/tag/v0.28.0) and later, Dockerfile [1.18.0](https://github.com/moby/buildkit/releases/tag/dockerfile%2F1.18.0) and later, and Docker Desktop [4.46.0](/manuals/desktop/release-notes.md#4460) and later
 @z
 
 @x
 Buildkit host:
-  requires: Docker Buildx [0.9.0](/manuals/build/release-notes.md#090) and later
+  requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) and later
 @y
 Buildkit host:
-  requires: Docker Buildx [0.9.0](manuals/build/release-notes.md#090) およびそれ以降
+  requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) およびそれ以降
 @z
 
 @x
@@ -169,98 +169,98 @@ Build ulimits:
 
 @x
 Buildx bake file:
-  requires: Docker Buildx [0.26.0](/manuals/build/release-notes.md#0260) and later
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) and later
 @y
 Buildx bake file:
-  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) およびそれ以降
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) およびそれ以降
 @z
 
 @x
 Buildx bake file separator:
-  requires: Docker Buildx [0.26.0](/manuals/build/release-notes.md#0260) and later
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) and later
 @y
 Buildx bake file separator:
-  requires: Docker Buildx [0.26.0](manuals/build/release-notes.md#0260) およびそれ以降
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) およびそれ以降
 @z
 
 @x
 Buildx bake Git auth token:
-  requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx bake Git auth token:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
 @z
 
 @x
 Buildx bake Git SSH:
-  requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx bake Git SSH:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
 @z
 
 @x
 Buildx CPU profile:
-  requires: Docker Buildx [0.18.0](/manuals/build/release-notes.md#0180) and later
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) and later
 @y
 Buildx CPU profile:
-  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) およびそれ以降
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) およびそれ以降
 @z
 
 @x
 Buildx Git check dirty:
-  requires: Docker Buildx [0.10.4](/manuals/build/release-notes.md#0104) and later
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) and later
 @y
 Buildx Git check dirty:
-  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) およびそれ以降
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) およびそれ以降
 @z
 
 @x
 Buildx Git info:
-  requires: Docker Buildx [0.10.0](/manuals/build/release-notes.md#0100) and later
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) and later
 @y
 Buildx Git info:
-  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) およびそれ以降
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) およびそれ以降
 @z
 
 @x
 Buildx Git labels:
-  requires: Docker Buildx [0.10.0](/manuals/build/release-notes.md#0100) and later
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) and later
 @y
 Buildx Git labels:
-  requires: Docker Buildx [0.10.0](manuals/build/release-notes.md#0100) およびそれ以降
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) およびそれ以降
 @z
 
 @x
 Buildx mem profile:
-  requires: Docker Buildx [0.18.0](/manuals/build/release-notes.md#0180) and later
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) and later
 @y
 Buildx mem profile:
-  requires: Docker Buildx [0.18.0](manuals/build/release-notes.md#0180) およびそれ以降
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) およびそれ以降
 @z
 
 @x
 Buildx metadata provenance:
-  requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx metadata provenance:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
 @z
 
 @x
 Buildx metadata warnings:
-  requires: Docker Buildx [0.16.0](/manuals/build/release-notes.md#0160) and later
+  requires: Docker Buildx [0.16.0](https://github.com/docker/buildx/releases/tag/v0.16.0) and later
 @y
 Buildx metadata warnings:
-  requires: Docker Buildx [0.16.0](manuals/build/release-notes.md#0160) およびそれ以降
+  requires: Docker Buildx [0.16.0](https://github.com/docker/buildx/releases/tag/v0.16.0) およびそれ以降
 @z
 
 @x
 Buildx no default:
-  requires: Docker Buildx [0.10.4](/manuals/build/release-notes.md#0104) and later
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) and later
 @y
 Buildx no default:
-  requires: Docker Buildx [0.10.4](manuals/build/release-notes.md#0104) およびそれ以降
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) およびそれ以降
 @z
 
 @x
@@ -897,10 +897,10 @@ Jamf Pro:
 
 @x
 Load by default:
-  requires: Docker Buildx [0.14.0](/manuals/build/release-notes.md#0140) and later
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Load by default:
-  requires: Docker Buildx [0.14.0](manuals/build/release-notes.md#0140) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
 @z
 
 @x

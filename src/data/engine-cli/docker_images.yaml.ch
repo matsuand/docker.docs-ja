@@ -18,9 +18,9 @@ usage: docker images [OPTIONS] [REPOSITORY[:TAG]]
 % options:
 
 @x all
-      description: Show all images (default hides intermediate images)
+      description: Show all images (default hides intermediate and dangling images)
 @y
-      description: Show all images (default hides intermediate images)
+      description: Show all images (default hides intermediate and dangling images)
 @z
 
 @x digests

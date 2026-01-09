@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 command: docker
@@ -43,39 +44,7 @@ long: |-
     `--help` option.
 @z
 
-@x
-    ```console
-    $ docker run --help
-@y
-    ```console
-    $ docker run --help
-@z
-
-@x
-    Usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-@y
-    Usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-@z
-
-@x
-    Create and run a new container from an image
-@y
-    Create and run a new container from an image
-@z
-
-@x
-    Options:
-          --add-host value             Add a custom host-to-IP mapping (host:ip) (default [])
-      -a, --attach value               Attach to STDIN, STDOUT or STDERR (default [])
-    <...>
-    ```
-@y
-    Options:
-          --add-host value             Add a custom host-to-IP mapping (host:ip) (default [])
-      -a, --attach value               Attach to STDIN, STDOUT or STDERR (default [])
-    <...>
-    ```
-@z
+% snip command...
 
 @x
     ### Environment variables
@@ -97,8 +66,6 @@ long: |-
     | `DOCKER_API_VERSION`          | Override the negotiated API version to use for debugging (e.g. `1.19`)                                                                                                                                                                                            |
     | `DOCKER_CERT_PATH`            | Location of your authentication keys. This variable is used both by the `docker` CLI and the [`dockerd` daemon](/reference/cli/dockerd/)                                                                                                   |
     | `DOCKER_CONFIG`               | The location of your client configuration files.                                                                                                                                                                                                                  |
-    | `DOCKER_CONTENT_TRUST_SERVER` | The URL of the Notary server to use. Defaults to the same URL as the registry.                                                                                                                                                                                    |
-    | `DOCKER_CONTENT_TRUST`        | When set Docker uses notary to sign and verify images. Equates to `--disable-content-trust=false` for build, create, pull, push, run.                                                                                                                             |
     | `DOCKER_CONTEXT`              | Name of the `docker context` to use (overrides `DOCKER_HOST` env var and default context set with `docker context use`)                                                                                                                                           |
     | `DOCKER_CUSTOM_HEADERS`       | (Experimental) Configure [custom HTTP headers](#custom-http-headers) to be sent by the client. Headers must be provided as a comma-separated list of `name=value` pairs. This is the equivalent to the `HttpHeaders` field in the configuration file.             |
     | `DOCKER_DEFAULT_PLATFORM`     | Default platform for commands that take the `--platform` flag.                                                                                                                                                                                                    |
@@ -107,14 +74,13 @@ long: |-
     | `DOCKER_TLS`                  | Enable TLS for connections made by the `docker` CLI (equivalent of the `--tls` command-line option). Set to a non-empty value to enable TLS. Note that TLS is enabled automatically if any of the other TLS options are set.                                      |
     | `DOCKER_TLS_VERIFY`           | When set Docker uses TLS and verifies the remote. This variable is used both by the `docker` CLI and the [`dockerd` daemon](/reference/cli/dockerd/)                                                                                       |
     | `BUILDKIT_PROGRESS`           | Set type of progress output (`auto`, `plain`, `tty`, `rawjson`) when [building](/reference/cli/docker/image/build/) with [BuildKit backend](/build/buildkit/). Use plain to show container output (default `auto`). |
+    | `NO_COLOR`                    | Disable any ANSI escape codes in the output in accordance with https://no-color.org/
 @y
     | Variable                      | Description                                                                                                                                                                                                                                                       |
     | :---------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     | `DOCKER_API_VERSION`          | Override the negotiated API version to use for debugging (e.g. `1.19`)                                                                                                                                                                                            |
     | `DOCKER_CERT_PATH`            | Location of your authentication keys. This variable is used both by the `docker` CLI and the [`dockerd` daemon](__SUBDIR__/reference/cli/dockerd/)                                                                                                   |
     | `DOCKER_CONFIG`               | The location of your client configuration files.                                                                                                                                                                                                                  |
-    | `DOCKER_CONTENT_TRUST_SERVER` | The URL of the Notary server to use. Defaults to the same URL as the registry.                                                                                                                                                                                    |
-    | `DOCKER_CONTENT_TRUST`        | When set Docker uses notary to sign and verify images. Equates to `--disable-content-trust=false` for build, create, pull, push, run.                                                                                                                             |
     | `DOCKER_CONTEXT`              | Name of the `docker context` to use (overrides `DOCKER_HOST` env var and default context set with `docker context use`)                                                                                                                                           |
     | `DOCKER_CUSTOM_HEADERS`       | (Experimental) Configure [custom HTTP headers](#custom-http-headers) to be sent by the client. Headers must be provided as a comma-separated list of `name=value` pairs. This is the equivalent to the `HttpHeaders` field in the configuration file.             |
     | `DOCKER_DEFAULT_PLATFORM`     | Default platform for commands that take the `--platform` flag.                                                                                                                                                                                                    |
@@ -123,6 +89,7 @@ long: |-
     | `DOCKER_TLS`                  | Enable TLS for connections made by the `docker` CLI (equivalent of the `--tls` command-line option). Set to a non-empty value to enable TLS. Note that TLS is enabled automatically if any of the other TLS options are set.                                      |
     | `DOCKER_TLS_VERIFY`           | When set Docker uses TLS and verifies the remote. This variable is used both by the `docker` CLI and the [`dockerd` daemon](__SUBDIR__/reference/cli/dockerd/)                                                                                       |
     | `BUILDKIT_PROGRESS`           | Set type of progress output (`auto`, `plain`, `tty`, `rawjson`) when [building](__SUBDIR__/reference/cli/docker/image/build/) with [BuildKit backend](__SUBDIR__/build/buildkit/). Use plain to show container output (default `auto`). |
+    | `NO_COLOR`                    | Disable any ANSI escape codes in the output in accordance with https://no-color.org/
 @z
 
 @x
@@ -205,15 +172,7 @@ long: |-
     set to the non-default value by explicitly setting them to `false`:
 @z
 
-@x
-    ```console
-    $ docker build --rm=false .
-    ```
-@y
-    ```console
-    $ docker build --rm=false .
-    ```
-@z
+% snip command...
 
 @x
     #### Multi
@@ -229,21 +188,7 @@ long: |-
     for example in these commands:
 @z
 
-@x
-    ```console
-    $ docker run -a stdin -a stdout -i -t ubuntu /bin/bash
-@y
-    ```console
-    $ docker run -a stdin -a stdout -i -t ubuntu /bin/bash
-@z
-
-@x
-    $ docker run -a stdin -a stdout -a stderr ubuntu /bin/ls
-    ```
-@y
-    $ docker run -a stdin -a stdout -a stderr ubuntu /bin/ls
-    ```
-@z
+% snip command...
 
 @x
     Sometimes, multiple options can call for a more complex value string as for
@@ -253,15 +198,7 @@ long: |-
     `-v`:
 @z
 
-@x
-    ```console
-    $ docker run -v /host:/container example/mysql
-    ```
-@y
-    ```console
-    $ docker run -v /host:/container example/mysql
-    ```
-@z
+% snip command...
 
 @x
     > [!NOTE]
@@ -353,15 +290,7 @@ long: |-
     `config.json` file located in the `~/testconfigs/` directory.
 @z
 
-@x
-    ```console
-    $ docker --config ~/testconfigs/ ps
-    ```
-@y
-    ```console
-    $ docker --config ~/testconfigs/ ps
-    ```
-@z
+% snip command...
 
 @x
     This flag only applies to whatever command is being ran. For persistent
@@ -375,15 +304,7 @@ long: |-
     directory to be `HOME/newdir/.docker`.
 @z
 
-@x
-    ```console
-    $ echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
-    ```
-@y
-    ```console
-    $ echo export DOCKER_CONFIG=$HOME/newdir/.docker > ~/.profile
-    ```
-@z
+% snip command...
 
 @x
     ### Docker CLI configuration file (`config.json`) properties
@@ -586,13 +507,13 @@ long: |-
 @x
     These settings are used to configure proxy settings for containers only, and not
     used as proxy settings for the `docker` CLI or the `dockerd` daemon. Refer to the
-    [environment variables](#environment-variables) and [HTTP/HTTPS proxy](/engine/daemon/proxy/#httphttps-proxy)
-    sections for configuring proxy settings for the CLI and daemon.
+    [environment variables](#environment-variables) section and the [Daemon proxy configuration](/engine/daemon/proxy/)
+    guide for configuring proxy settings for the CLI and daemon.
 @y
     These settings are used to configure proxy settings for containers only, and not
     used as proxy settings for the `docker` CLI or the `dockerd` daemon. Refer to the
-    [environment variables](#environment-variables) and [HTTP/HTTPS proxy](__SUBDIR__/engine/daemon/proxy/#httphttps-proxy)
-    sections for configuring proxy settings for the CLI and daemon.
+    [environment variables](#environment-variables) section and the [Daemon proxy configuration](/engine/daemon/proxy/)
+    guide for configuring proxy settings for the CLI and daemon.
 @z
 
 @x
@@ -689,97 +610,7 @@ long: |-
     various fields:
 @z
 
-@x
-    ```json
-    {
-      "HttpHeaders": {
-        "MyHeader": "MyValue"
-      },
-      "psFormat": "table {{.ID}}\\t{{.Image}}\\t{{.Command}}\\t{{.Labels}}",
-      "imagesFormat": "table {{.ID}}\\t{{.Repository}}\\t{{.Tag}}\\t{{.CreatedAt}}",
-      "pluginsFormat": "table {{.ID}}\t{{.Name}}\t{{.Enabled}}",
-      "statsFormat": "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}",
-      "servicesFormat": "table {{.ID}}\t{{.Name}}\t{{.Mode}}",
-      "secretFormat": "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}\t{{.UpdatedAt}}",
-      "configFormat": "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}\t{{.UpdatedAt}}",
-      "serviceInspectFormat": "pretty",
-      "nodesFormat": "table {{.ID}}\t{{.Hostname}}\t{{.Availability}}",
-      "detachKeys": "ctrl-e,e",
-      "credsStore": "secretservice",
-      "credHelpers": {
-        "awesomereg.example.org": "hip-star",
-        "unicorn.example.com": "vcbait"
-      },
-      "plugins": {
-        "plugin1": {
-          "option": "value"
-        },
-        "plugin2": {
-          "anotheroption": "anothervalue",
-          "athirdoption": "athirdvalue"
-        }
-      },
-      "proxies": {
-        "default": {
-          "httpProxy":  "http://user:pass@example.com:3128",
-          "httpsProxy": "https://my-proxy.example.com:3129",
-          "noProxy":    "intra.mycorp.example.com",
-          "ftpProxy":   "http://user:pass@example.com:3128",
-          "allProxy":   "socks://example.com:1234"
-        },
-        "https://manager1.mycorp.example.com:2377": {
-          "httpProxy":  "http://user:pass@example.com:3128",
-          "httpsProxy": "https://my-proxy.example.com:3129"
-        }
-      }
-    }
-    ```
-@y
-    ```json
-    {
-      "HttpHeaders": {
-        "MyHeader": "MyValue"
-      },
-      "psFormat": "table {{.ID}}\\t{{.Image}}\\t{{.Command}}\\t{{.Labels}}",
-      "imagesFormat": "table {{.ID}}\\t{{.Repository}}\\t{{.Tag}}\\t{{.CreatedAt}}",
-      "pluginsFormat": "table {{.ID}}\t{{.Name}}\t{{.Enabled}}",
-      "statsFormat": "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}",
-      "servicesFormat": "table {{.ID}}\t{{.Name}}\t{{.Mode}}",
-      "secretFormat": "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}\t{{.UpdatedAt}}",
-      "configFormat": "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}\t{{.UpdatedAt}}",
-      "serviceInspectFormat": "pretty",
-      "nodesFormat": "table {{.ID}}\t{{.Hostname}}\t{{.Availability}}",
-      "detachKeys": "ctrl-e,e",
-      "credsStore": "secretservice",
-      "credHelpers": {
-        "awesomereg.example.org": "hip-star",
-        "unicorn.example.com": "vcbait"
-      },
-      "plugins": {
-        "plugin1": {
-          "option": "value"
-        },
-        "plugin2": {
-          "anotheroption": "anothervalue",
-          "athirdoption": "athirdvalue"
-        }
-      },
-      "proxies": {
-        "default": {
-          "httpProxy":  "http://user:pass@example.com:3128",
-          "httpsProxy": "https://my-proxy.example.com:3129",
-          "noProxy":    "intra.mycorp.example.com",
-          "ftpProxy":   "http://user:pass@example.com:3128",
-          "allProxy":   "socks://example.com:1234"
-        },
-        "https://manager1.mycorp.example.com:2377": {
-          "httpProxy":  "http://user:pass@example.com:3128",
-          "httpsProxy": "https://my-proxy.example.com:3129"
-        }
-      }
-    }
-    ```
-@z
+% snip code...
 
 @x
     #### Experimental features
@@ -824,477 +655,87 @@ long: |-
 @x
     Alternatively you can trust the certificate globally by adding it to your system's
     list of root Certificate Authorities.
-cname:
-    - docker attach
-    - docker bake
-    - docker build
-    - docker builder
-    - docker checkpoint
-    - docker commit
-    - docker config
-    - docker container
-    - docker context
-    - docker cp
-    - docker create
-    - docker diff
-    - docker events
-    - docker exec
-    - docker export
-    - docker history
-    - docker image
-    - docker images
-    - docker import
-    - docker info
-    - docker inspect
-    - docker kill
-    - docker load
-    - docker login
-    - docker logout
-    - docker logs
-    - docker manifest
-    - docker network
-    - docker node
-    - docker pause
-    - docker plugin
-    - docker port
-    - docker ps
-    - docker pull
-    - docker push
-    - docker rename
-    - docker restart
-    - docker rm
-    - docker rmi
-    - docker run
-    - docker save
-    - docker search
-    - docker secret
-    - docker service
-    - docker stack
-    - docker start
-    - docker stats
-    - docker stop
-    - docker swarm
-    - docker system
-    - docker tag
-    - docker top
-    - docker trust
-    - docker unpause
-    - docker update
-    - docker version
-    - docker volume
-    - docker wait
-clink:
-    - docker_attach.yaml
-    - docker_bake.yaml
-    - docker_build.yaml
-    - docker_builder.yaml
-    - docker_checkpoint.yaml
-    - docker_commit.yaml
-    - docker_config.yaml
-    - docker_container.yaml
-    - docker_context.yaml
-    - docker_cp.yaml
-    - docker_create.yaml
-    - docker_diff.yaml
-    - docker_events.yaml
-    - docker_exec.yaml
-    - docker_export.yaml
-    - docker_history.yaml
-    - docker_image.yaml
-    - docker_images.yaml
-    - docker_import.yaml
-    - docker_info.yaml
-    - docker_inspect.yaml
-    - docker_kill.yaml
-    - docker_load.yaml
-    - docker_login.yaml
-    - docker_logout.yaml
-    - docker_logs.yaml
-    - docker_manifest.yaml
-    - docker_network.yaml
-    - docker_node.yaml
-    - docker_pause.yaml
-    - docker_plugin.yaml
-    - docker_port.yaml
-    - docker_ps.yaml
-    - docker_pull.yaml
-    - docker_push.yaml
-    - docker_rename.yaml
-    - docker_restart.yaml
-    - docker_rm.yaml
-    - docker_rmi.yaml
-    - docker_run.yaml
-    - docker_save.yaml
-    - docker_search.yaml
-    - docker_secret.yaml
-    - docker_service.yaml
-    - docker_stack.yaml
-    - docker_start.yaml
-    - docker_stats.yaml
-    - docker_stop.yaml
-    - docker_swarm.yaml
-    - docker_system.yaml
-    - docker_tag.yaml
-    - docker_top.yaml
-    - docker_trust.yaml
-    - docker_unpause.yaml
-    - docker_update.yaml
-    - docker_version.yaml
-    - docker_volume.yaml
-    - docker_wait.yaml
-options:
-    - option: config
-      value_type: string
-      default_value: /root/.docker
+@y
+    Alternatively you can trust the certificate globally by adding it to your system's
+    list of root Certificate Authorities.
+@z
+
+% cname:
+% clink:
+% options:
+
+@x config
       description: Location of client config files
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: context
-      shorthand: c
-      value_type: string
+@y
+      description: Location of client config files
+@z
+
+@x context
       description: |
         Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with `docker context use`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with `docker context use`)
+@z
+
+@x debug
       description: Enable debug mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Enable debug mode
+@z
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: host
-      shorthand: H
-      value_type: list
+@y
+      description: Print usage
+@z
+
+@x host
       description: Daemon socket to connect to
-      details_url: '#host'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-level
-      shorthand: l
-      value_type: string
-      default_value: info
+@y
+      description: Daemon socket to connect to
+@z
+
+@x log-level
       description: Set the logging level (`debug`, `info`, `warn`, `error`, `fatal`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tls
-      value_type: bool
-      default_value: "false"
+@y
+      description: Set the logging level (`debug`, `info`, `warn`, `error`, `fatal`)
+@z
+
+@x tls
       description: Use TLS; implied by --tlsverify
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlscacert
-      value_type: string
-      default_value: /root/.docker/ca.pem
+@y
+      description: Use TLS; implied by --tlsverify
+@z
+
+@x tlscacert
       description: Trust certs signed only by this CA
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlscert
-      value_type: string
-      default_value: /root/.docker/cert.pem
+@y
+      description: Trust certs signed only by this CA
+@z
+
+@x tlscert
       description: Path to TLS certificate file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlskey
-      value_type: string
-      default_value: /root/.docker/key.pem
+@y
+      description: Path to TLS certificate file
+@z
+
+@x tlskey
       description: Path to TLS key file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlsverify
-      value_type: bool
-      default_value: "false"
+@y
+      description: Path to TLS key file
+@z
+
+@x tlsverify
       description: Use TLS and verify the remote
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Use TLS and verify the remote
+@z
+
+@x
 examples: |-
     ### Specify daemon host (-H, --host) {#host}
 @y
-    Alternatively you can trust the certificate globally by adding it to your system's
-    list of root Certificate Authorities.
-cname:
-    - docker attach
-    - docker bake
-    - docker build
-    - docker builder
-    - docker checkpoint
-    - docker commit
-    - docker config
-    - docker container
-    - docker context
-    - docker cp
-    - docker create
-    - docker diff
-    - docker events
-    - docker exec
-    - docker export
-    - docker history
-    - docker image
-    - docker images
-    - docker import
-    - docker info
-    - docker inspect
-    - docker kill
-    - docker load
-    - docker login
-    - docker logout
-    - docker logs
-    - docker manifest
-    - docker network
-    - docker node
-    - docker pause
-    - docker plugin
-    - docker port
-    - docker ps
-    - docker pull
-    - docker push
-    - docker rename
-    - docker restart
-    - docker rm
-    - docker rmi
-    - docker run
-    - docker save
-    - docker search
-    - docker secret
-    - docker service
-    - docker stack
-    - docker start
-    - docker stats
-    - docker stop
-    - docker swarm
-    - docker system
-    - docker tag
-    - docker top
-    - docker trust
-    - docker unpause
-    - docker update
-    - docker version
-    - docker volume
-    - docker wait
-clink:
-    - docker_attach.yaml
-    - docker_bake.yaml
-    - docker_build.yaml
-    - docker_builder.yaml
-    - docker_checkpoint.yaml
-    - docker_commit.yaml
-    - docker_config.yaml
-    - docker_container.yaml
-    - docker_context.yaml
-    - docker_cp.yaml
-    - docker_create.yaml
-    - docker_diff.yaml
-    - docker_events.yaml
-    - docker_exec.yaml
-    - docker_export.yaml
-    - docker_history.yaml
-    - docker_image.yaml
-    - docker_images.yaml
-    - docker_import.yaml
-    - docker_info.yaml
-    - docker_inspect.yaml
-    - docker_kill.yaml
-    - docker_load.yaml
-    - docker_login.yaml
-    - docker_logout.yaml
-    - docker_logs.yaml
-    - docker_manifest.yaml
-    - docker_network.yaml
-    - docker_node.yaml
-    - docker_pause.yaml
-    - docker_plugin.yaml
-    - docker_port.yaml
-    - docker_ps.yaml
-    - docker_pull.yaml
-    - docker_push.yaml
-    - docker_rename.yaml
-    - docker_restart.yaml
-    - docker_rm.yaml
-    - docker_rmi.yaml
-    - docker_run.yaml
-    - docker_save.yaml
-    - docker_search.yaml
-    - docker_secret.yaml
-    - docker_service.yaml
-    - docker_stack.yaml
-    - docker_start.yaml
-    - docker_stats.yaml
-    - docker_stop.yaml
-    - docker_swarm.yaml
-    - docker_system.yaml
-    - docker_tag.yaml
-    - docker_top.yaml
-    - docker_trust.yaml
-    - docker_unpause.yaml
-    - docker_update.yaml
-    - docker_version.yaml
-    - docker_volume.yaml
-    - docker_wait.yaml
-options:
-    - option: config
-      value_type: string
-      default_value: /root/.docker
-      description: Location of client config files
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: context
-      shorthand: c
-      value_type: string
-      description: |
-        Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with `docker context use`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: host
-      shorthand: H
-      value_type: list
-      description: Daemon socket to connect to
-      details_url: '#host'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: log-level
-      shorthand: l
-      value_type: string
-      default_value: info
-      description: Set the logging level (`debug`, `info`, `warn`, `error`, `fatal`)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tls
-      value_type: bool
-      default_value: "false"
-      description: Use TLS; implied by --tlsverify
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlscacert
-      value_type: string
-      default_value: /root/.docker/ca.pem
-      description: Trust certs signed only by this CA
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlscert
-      value_type: string
-      default_value: /root/.docker/cert.pem
-      description: Path to TLS certificate file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlskey
-      value_type: string
-      default_value: /root/.docker/key.pem
-      description: Path to TLS key file
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tlsverify
-      value_type: bool
-      default_value: "false"
-      description: Use TLS and verify the remote
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Specify daemon host (-H, --host) {#host}
 @z
@@ -1375,15 +816,7 @@ examples: |-
     daemon with IP address `174.17.0.1`, listening on port `2376`:
 @z
 
-@x
-    ```console
-    $ docker -H tcp://174.17.0.1:2376 ps
-    ```
-@y
-    ```console
-    $ docker -H tcp://174.17.0.1:2376 ps
-    ```
-@z
+% snip command...
 
 @x
     > [!NOTE]
@@ -1409,15 +842,7 @@ examples: |-
     to the `/var/run/docker.sock` Unix socket on the SSH host.
 @z
 
-@x
-    ```console
-    $ docker -H ssh://user@192.168.64.5 ps
-    ```
-@y
-    ```console
-    $ docker -H ssh://user@192.168.64.5 ps
-    ```
-@z
+% snip command...
 
 @x
     You can optionally specify the location of the socket by appending a path
@@ -1427,24 +852,5 @@ examples: |-
     component to the end of the SSH address.
 @z
 
-@x
-    ```console
-    $ docker -H ssh://user@192.168.64.5/var/run/docker.sock ps
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    $ docker -H ssh://user@192.168.64.5/var/run/docker.sock ps
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

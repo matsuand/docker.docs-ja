@@ -61,7 +61,7 @@ usage: docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 @x author
       description: Author (e.g., `John Hannibal Smith <hannibal@a-team.com>`)
 @y
-      description: 著者。 (たとえば `John Hannibal Smith <hannibal@a-team.com>`)
+      description: 作者。(たとえば `John Hannibal Smith <hannibal@a-team.com>`)
 @z
 
 @x change
@@ -76,10 +76,16 @@ usage: docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
       description: コミットメッセージ。
 @z
 
-@x pause
-      description: Pause container during commit
+@x no-pause
+      description: Disable pausing container during commit
 @y
-      description: コミット中にコンテナーを一時停止します。
+      description: コミット時のコンテナー一時停止を無効にします。
+@z
+
+@x pause
+      description: 'Pause container during commit (deprecated: use --no-pause instead)'
+@y
+      description: 'コミット中はコンテナーを一時停止します (廃止予定: 代わりに --no-pause を使ってください)。'
 @z
 
 % inherited_options:

@@ -16,12 +16,6 @@ linkTitle: リリースノート
 @z
 
 @x
-{{< rss-button feed="/desktop/release-notes/index.xml" text="Subscribe to Docker Desktop RSS feed" >}}
-@y
-{{< rss-button feed="__SUBDIR__/desktop/release-notes/index.xml" text="Docker Desktop RSS フィードを購読" >}}
-@z
-
-@x
 This page contains information about the new features, improvements, known issues, and bug fixes in Docker Desktop releases.
 @y
 このページでは Docker Desktop リリースにおける新機能、更新状況、既知の不具合、バグフィックスといった情報を示します。

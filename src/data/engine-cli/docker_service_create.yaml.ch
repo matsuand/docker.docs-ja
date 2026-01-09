@@ -1029,103 +1029,52 @@ examples: |-
 @z
 
 @x
-    <table>
-      <tr>
         <th>Option</th>
         <th>Description</th>
-      </tr>
-      <tr>
-        <td><b>bind-propagation</b></td>
-        <td>
-          <p>See the <a href="#bind-propagation">bind propagation section</a>.</p>
-        </td>
-      </tr>
-      <tr>
-        <td><b>consistency</b></td>
-        <td>
-          <p>The consistency requirements for the mount; one of </p>
-          <ul>
-           <li><tt>default</tt>: Equivalent to <tt>consistent</tt>.</li>
-           <li><tt>consistent</tt>: Full consistency.  The container runtime and the host maintain an identical view of the mount at all times.</li>
-           <li><tt>cached</tt>: The host's view of the mount is authoritative.  There may be delays before updates made on the host are visible within a container.</li>
-           <li><tt>delegated</tt>: The container runtime's view of the mount is authoritative.  There may be delays before updates made in a container are visible on the host.</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><b>bind-recursive</b></td>
-        <td>
-          By default, submounts are recursively bind-mounted as well. However, this behavior can be confusing when a
-          bind mount is configured with <tt>readonly</tt> option, because submounts may not be mounted as read-only,
-          depending on the kernel version.
-          Set <tt>bind-recursive</tt> to control the behavior of the recursive bind-mount.<br />
-          <br />
-          A value is one of:<br />
-          <br />
-          <ul>
-            <li><<tt>enabled</tt>: Enables recursive bind-mount.
-            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
-            Otherwise they are not made recursively read-only.</li>
-            <li><<tt>disabled</tt>: Disables recursive bind-mount.</li>
-            <li><<tt>writable</tt>: Enables recursive bind-mount.
-            Read-only mounts are not made recursively read-only.</li>
-            <li><<tt>readonly</tt>: Enables recursive bind-mount.
-            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
-            Otherwise the Engine raises an error.</li>
-          </ul>
-          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
-        </td>
-      </tr>
-      <tr>
-        <td><b>bind-nonrecursive</b></td>
-        <td>
-          <tt>bind-nonrecursive</tt> is deprecated since Docker Engine v25.0.
-          Use <tt>bind-recursive</tt>instead.<br />
-          <br />
-          A value is optional:<br />
-          <br />
-          <ul>
-            <li><tt>true</tt> or <tt>1</tt>:  Equivalent to <tt>bind-recursive=disabled</tt>.</li>
-            <li><tt>false</tt> or <tt>0</tt>: Equivalent to <tt>bind-recursive=enabled</tt>.</li>
-          </ul>
-        </td>
-      </tr>
-    </table>
 @y
-    <table>
-      <tr>
         <th>Option</th>
         <th>Description</th>
-      </tr>
-      <tr>
-        <td><b>bind-propagation</b></td>
-        <td>
+@z
+
+@x bind-propagation
           <p>See the <a href="#bind-propagation">bind propagation section</a>.</p>
-        </td>
-      </tr>
-      <tr>
-        <td><b>consistency</b></td>
-        <td>
+@y
+          <p>See the <a href="#bind-propagation">bind propagation section</a>.</p>
+@z
+
+@x consistency
           <p>The consistency requirements for the mount; one of </p>
-          <ul>
+@y
+          <p>The consistency requirements for the mount; one of </p>
+@z
+@x
            <li><tt>default</tt>: Equivalent to <tt>consistent</tt>.</li>
            <li><tt>consistent</tt>: Full consistency.  The container runtime and the host maintain an identical view of the mount at all times.</li>
            <li><tt>cached</tt>: The host's view of the mount is authoritative.  There may be delays before updates made on the host are visible within a container.</li>
            <li><tt>delegated</tt>: The container runtime's view of the mount is authoritative.  There may be delays before updates made in a container are visible on the host.</li>
-          </ul>
-        </td>
-      </tr>
-      <tr>
-        <td><b>bind-recursive</b></td>
-        <td>
+@y
+           <li><tt>default</tt>: Equivalent to <tt>consistent</tt>.</li>
+           <li><tt>consistent</tt>: Full consistency.  The container runtime and the host maintain an identical view of the mount at all times.</li>
+           <li><tt>cached</tt>: The host's view of the mount is authoritative.  There may be delays before updates made on the host are visible within a container.</li>
+           <li><tt>delegated</tt>: The container runtime's view of the mount is authoritative.  There may be delays before updates made in a container are visible on the host.</li>
+@z
+
+@x bind-recursive
           By default, submounts are recursively bind-mounted as well. However, this behavior can be confusing when a
           bind mount is configured with <tt>readonly</tt> option, because submounts may not be mounted as read-only,
           depending on the kernel version.
           Set <tt>bind-recursive</tt> to control the behavior of the recursive bind-mount.<br />
           <br />
           A value is one of:<br />
+@y
+          By default, submounts are recursively bind-mounted as well. However, this behavior can be confusing when a
+          bind mount is configured with <tt>readonly</tt> option, because submounts may not be mounted as read-only,
+          depending on the kernel version.
+          Set <tt>bind-recursive</tt> to control the behavior of the recursive bind-mount.<br />
           <br />
-          <ul>
+          A value is one of:<br />
+@z
+@x
             <li><<tt>enabled</tt>: Enables recursive bind-mount.
             Read-only mounts are made recursively read-only if kernel is v5.12 or later.
             Otherwise they are not made recursively read-only.</li>
@@ -1135,25 +1084,21 @@ examples: |-
             <li><<tt>readonly</tt>: Enables recursive bind-mount.
             Read-only mounts are made recursively read-only if kernel is v5.12 or later.
             Otherwise the Engine raises an error.</li>
-          </ul>
+@y
+            <li><<tt>enabled</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise they are not made recursively read-only.</li>
+            <li><<tt>disabled</tt>: Disables recursive bind-mount.</li>
+            <li><<tt>writable</tt>: Enables recursive bind-mount.
+            Read-only mounts are not made recursively read-only.</li>
+            <li><<tt>readonly</tt>: Enables recursive bind-mount.
+            Read-only mounts are made recursively read-only if kernel is v5.12 or later.
+            Otherwise the Engine raises an error.</li>
+@z
+@x
           When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
-        </td>
-      </tr>
-      <tr>
-        <td><b>bind-nonrecursive</b></td>
-        <td>
-          <tt>bind-nonrecursive</tt> is deprecated since Docker Engine v25.0.
-          Use <tt>bind-recursive</tt>instead.<br />
-          <br />
-          A value is optional:<br />
-          <br />
-          <ul>
-            <li><tt>true</tt> or <tt>1</tt>:  Equivalent to <tt>bind-recursive=disabled</tt>.</li>
-            <li><tt>false</tt> or <tt>0</tt>: Equivalent to <tt>bind-recursive=enabled</tt>.</li>
-          </ul>
-        </td>
-      </tr>
-    </table>
+@y
+          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
 @z
 
 @x

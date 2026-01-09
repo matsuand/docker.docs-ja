@@ -7,134 +7,48 @@ aliases: docker image pull, docker pull
 short: Download an image from a registry
 long: Download an image from a registry
 usage: docker pull [OPTIONS] NAME[:TAG|@DIGEST]
-pname: docker
-plink: docker.yaml
-options:
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Download all tagged images in the repository
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker pull
 aliases: docker image pull, docker pull
 short: Download an image from a registry
 long: Download an image from a registry
 usage: docker pull [OPTIONS] NAME[:TAG|@DIGEST]
-pname: docker
-plink: docker.yaml
-options:
-    - option: all-tags
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Download all tagged images in the repository
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: disable-content-trust
-      value_type: bool
-      default_value: "true"
-      description: Skip image verification
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: platform
-      value_type: string
-      description: Set platform if server is multi-platform capable
-      deprecated: false
-      hidden: false
-      min_api_version: "1.32"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% pname: docker
+% plink: docker.yaml
+% options:
+
+@x all-tags
+      description: Download all tagged images in the repository
+@y
+      description: Download all tagged images in the repository
+@z
+
+@x disable-content-trust
+      description: Skip image verification (deprecated)
+@y
+      description: Skip image verification (deprecated)
+@z
+
+@x platform
+      description: Set platform if server is multi-platform capable
+@y
+      description: Set platform if server is multi-platform capable
+@z
+
+@x quiet
+      description: Suppress verbose output
+@y
+      description: Suppress verbose output
+@z
+
+% inherited_options:
+
+@x help
+      description: Print usage
+@y
+      description: Print usage
+@z
+
+% snip directives...

@@ -130,7 +130,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "Packaging your software"
         url: "/build/building/packaging/"
       - text: "Release notes"
-        url: "/build/release-notes/"
+        url: "https://github.com/docker/buildx/releases"
 @y
   - title: Docker Build
     icon: build
@@ -142,7 +142,7 @@ keywords: Docker, documentation, manual, guide, reference, api, samples
       - text: "ソフトウエアのパッケージング"
         url: "build/building/packaging/"
       - text: "リリースノート"
-        url: "build/release-notes/"
+        url: "https://github.com/docker/buildx/releases"
 @z
 
 @x

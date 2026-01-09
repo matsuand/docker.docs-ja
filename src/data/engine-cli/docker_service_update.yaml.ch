@@ -337,6 +337,18 @@ usage: docker service update [OPTIONS] SERVICE
         Number of job tasks to run concurrently (default equal to --replicas)
 @z
 
+@x memory-swap
+      description: Swap Bytes (-1 for unlimited)
+@y
+      description: Swap Bytes (-1 for unlimited)
+@z
+
+@x memory-swappiness
+      description: Tune memory swappiness (0-100), -1 to reset to default
+@y
+      description: Tune memory swappiness (0-100), -1 to reset to default
+@z
+
 @x mount-add
       description: Add or update a mount on a service
 @y

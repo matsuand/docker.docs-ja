@@ -84,9 +84,9 @@ usage: docker image push [OPTIONS] NAME[:TAG]
 @z
 
 @x disable-content-trust
-      description: Skip image signing
+      description: Skip image verification (deprecated)
 @y
-      description: Skip image signing
+      description: Skip image verification (deprecated)
 @z
 
 @x platform

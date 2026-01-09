@@ -231,9 +231,9 @@ usage: docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: イメージの検証を省略します。
+      description: イメージの検証を省略します (廃止予定)。
 @z
 
 @x dns
@@ -351,7 +351,7 @@ usage: docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x hostname
       description: Container host name
 @y
-      description: コンテナーホスト名。
+      description: コンテナーのホスト名。
 @z
 
 @x init
@@ -405,9 +405,9 @@ usage: docker container create [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x kernel-memory
-      description: Kernel memory limit
+      description: Kernel memory limit (deprecated)
 @y
-      description: カーネルメモリ上限。
+      description: カーネルメモリ上限 (廃止予定)。
 @z
 
 @x label

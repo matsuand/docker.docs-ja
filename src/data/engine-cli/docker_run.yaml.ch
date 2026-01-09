@@ -200,9 +200,9 @@ usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @z
 
 @x dns
@@ -374,9 +374,9 @@ usage: docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x kernel-memory
-      description: Kernel memory limit
+      description: Kernel memory limit (deprecated)
 @y
-      description: Kernel memory limit
+      description: Kernel memory limit (deprecated)
 @z
 
 @x label

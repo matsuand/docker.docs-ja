@@ -59,75 +59,7 @@ long: |-
     machine running Docker Desktop:
 @z
 
-@x
-    ```console
-    $ docker version
-@y
-    ```console
-    $ docker version
-@z
-
-@x
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@y
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.42
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           default
-@z
-
-@x
-    Server: Docker Desktop 4.19.0 (12345)
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     false
-     containerd:
-      Version:          1.6.20
-      GitCommit:        2806fc1057397dbaeefbea0e4e17bddfbd388f38
-     runc:
-      Version:          1.1.5
-      GitCommit:        v1.1.5-0-gf19387a
-     docker-init:
-      Version:          0.19.0
-      GitCommit:        de40ad0
-    ```
-@y
-    Server: Docker Desktop 4.19.0 (12345)
-     Engine:
-      Version:          23.0.3
-      API version:      1.42 (minimum version 1.12)
-      Go version:       go1.19.7
-      Git commit:       59118bf
-      Built:            Tue Apr  4 22:05:41 2023
-      OS/Arch:          linux/amd64
-      Experimental:     false
-     containerd:
-      Version:          1.6.20
-      GitCommit:        2806fc1057397dbaeefbea0e4e17bddfbd388f38
-     runc:
-      Version:          1.1.5
-      GitCommit:        v1.1.5-0-gf19387a
-     docker-init:
-      Version:          0.19.0
-      GitCommit:        de40ad0
-    ```
-@z
+% snip command...
 
 @x
     ### Client and server versions
@@ -155,81 +87,7 @@ long: |-
     on a Linux server:
 @z
 
-@x
-    ```console
-    $ docker context use remote-test-server
-    remote-test-server
-@y
-    ```console
-    $ docker context use remote-test-server
-    remote-test-server
-@z
-
-@x
-    $ docker version
-@y
-    $ docker version
-@z
-
-@x
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.40 (downgraded from 1.42)
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           remote-test-server
-@y
-    Client: Docker Engine - Community
-     Version:           23.0.3
-     API version:       1.40 (downgraded from 1.42)
-     Go version:        go1.19.7
-     Git commit:        3e7cbfd
-     Built:             Tue Apr  4 22:05:41 2023
-     OS/Arch:           darwin/amd64
-     Context:           remote-test-server
-@z
-
-@x
-    Server: Docker Engine - Community
-     Engine:
-      Version:          19.03.8
-      API version:      1.40 (minimum version 1.12)
-      Go version:       go1.12.17
-      Git commit:       afacb8b
-      Built:            Wed Mar 11 01:29:16 2020
-      OS/Arch:          linux/amd64
-     containerd:
-      Version:          v1.2.13
-      GitCommit:        7ad184331fa3e55e52b890ea95e65ba581ae3429
-     runc:
-      Version:          1.0.0-rc10
-      GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
-     docker-init:
-      Version:          0.18.0
-      GitCommit:        fec3683
-    ```
-@y
-    Server: Docker Engine - Community
-     Engine:
-      Version:          19.03.8
-      API version:      1.40 (minimum version 1.12)
-      Go version:       go1.12.17
-      Git commit:       afacb8b
-      Built:            Wed Mar 11 01:29:16 2020
-      OS/Arch:          linux/amd64
-     containerd:
-      Version:          v1.2.13
-      GitCommit:        7ad184331fa3e55e52b890ea95e65ba581ae3429
-     runc:
-      Version:          1.0.0-rc10
-      GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd
-     docker-init:
-      Version:          0.18.0
-      GitCommit:        fec3683
-    ```
-@z
+% snip command...
 
 @x
     ### API version and version negotiation
@@ -250,30 +108,16 @@ long: |-
 @z
 
 @x
-    For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
-    to API version 1.40 (refer to the [API version matrix](/reference/api/engine/#api-version-matrix)
+    For example, if the CLI is connecting with Docker Engine version 27.5, it downgrades
+    to API version 1.47 (refer to the [API version matrix](/reference/api/engine/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @y
-    For example, if the CLI is connecting with Docker Engine version 19.03, it downgrades
-    to API version 1.40 (refer to the [API version matrix](__SUBDIR__/reference/api/engine/#api-version-matrix)
+    For example, if the CLI is connecting with Docker Engine version 27.5, it downgrades
+    to API version 1.47 (refer to the [API version matrix](__SUBDIR__/reference/api/engine/#api-version-matrix)
     to learn about the supported API versions for Docker Engine):
 @z
 
-@x
-    ```console
-    $ docker version --format '{{.Client.APIVersion}}'
-@y
-    ```console
-    $ docker version --format '{{.Client.APIVersion}}'
-@z
-
-@x
-    1.40
-    ```
-@y
-    1.40
-    ```
-@z
+% snip command...
 
 @x
     Be aware that API version can also be overridden using the `DOCKER_API_VERSION`
@@ -289,96 +133,44 @@ long: |-
     variable removes the override, and re-enables API version negotiation:
 @z
 
-@x
-    ```console
-    $ env | grep DOCKER_API_VERSION
-    DOCKER_API_VERSION=1.39
-@y
-    ```console
-    $ env | grep DOCKER_API_VERSION
-    DOCKER_API_VERSION=1.39
-@z
+% snip command...
 
 @x
-    $ docker version --format '{{.Client.APIVersion}}'
-    1.39
-@y
-    $ docker version --format '{{.Client.APIVersion}}'
-    1.39
-@z
-
-@x
-    $ unset DOCKER_API_VERSION
-    $ docker version --format '{{.Client.APIVersion}}'
-    1.42
-    ```
 usage: docker version [OPTIONS]
-pname: docker
-plink: docker.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
+@y
+usage: docker version [OPTIONS]
+@z
+
+% pname: docker
+% plink: docker.yaml
+%  options:
+
+@x format
       description: |-
         Format output using a custom template:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Format output using a custom template:
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
     ### Format the output (--format) {#format}
 @y
-    $ unset DOCKER_API_VERSION
-    $ docker version --format '{{.Client.APIVersion}}'
-    1.42
-    ```
-usage: docker version [OPTIONS]
-pname: docker
-plink: docker.yaml
-options:
-    - option: format
-      shorthand: f
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
 examples: |-
     ### Format the output (--format) {#format}
 @z
@@ -401,21 +193,7 @@ examples: |-
     ### Get the server version
 @z
 
-@x
-    ```console
-    $ docker version --format '{{.Server.Version}}'
-@y
-    ```console
-    $ docker version --format '{{.Server.Version}}'
-@z
-
-@x
-    23.0.3
-    ```
-@y
-    23.0.3
-    ```
-@z
+% snip command...
 
 @x
     ### Get the client API version
@@ -429,21 +207,7 @@ examples: |-
     The following example prints the API version that is used by the client:
 @z
 
-@x
-    ```console
-    $ docker version --format '{{.Client.APIVersion}}'
-@y
-    ```console
-    $ docker version --format '{{.Client.APIVersion}}'
-@z
-
-@x
-    1.42
-    ```
-@y
-    1.42
-    ```
-@z
+% snip command...
 
 @x
     The version shown is the API version that is negotiated between the client
@@ -461,30 +225,5 @@ examples: |-
     ### Dump raw JSON data
 @z
 
-@x
-    ```console
-    $ docker version --format '{{json .}}'
-@y
-    ```console
-    $ docker version --format '{{json .}}'
-@z
-
-@x
-    {"Client":"Version":"23.0.3","ApiVersion":"1.42", ...}
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    {"Client":"Version":"23.0.3","ApiVersion":"1.42", ...}
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

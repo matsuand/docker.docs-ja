@@ -25,10 +25,10 @@ usage: docker save [OPTIONS] IMAGE [IMAGE...]
 
 @x platform
       description: |
-        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+        Save only the given platform(s). Formatted as a comma-separated list of `os[/arch[/variant]]` (e.g., `linux/amd64,linux/arm64/v8`)
 @y
       description: |
-        Save only the given platform variant. Formatted as `os[/arch[/variant]]` (e.g., `linux/amd64`)
+        Save only the given platform(s). Formatted as a comma-separated list of `os[/arch[/variant]]` (e.g., `linux/amd64,linux/arm64/v8`)
 @z
 
 % inherited_options:

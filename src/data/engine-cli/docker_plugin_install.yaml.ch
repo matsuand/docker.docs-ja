@@ -42,9 +42,9 @@ usage: docker plugin install [OPTIONS] PLUGIN [KEY=VALUE...]
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: イメージの検証を省略します。
+      description: イメージの検証を省略します (廃止予定)。
 @z
 
 @x grant-all-permissions

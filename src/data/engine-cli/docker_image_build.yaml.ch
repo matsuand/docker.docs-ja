@@ -151,20 +151,18 @@ long: |-
 
 @x
 usage: docker image build [OPTIONS] PATH | URL | -
-pname: docker image
-plink: docker_image.yaml
 @y
 usage: docker image build [OPTIONS] PATH | URL | -
-pname: docker image
-plink: docker_image.yaml
 @z
 
+% pname:
+% plink:
 % options:
 
 @x add-host
       description: Add a custom host-to-IP mapping (`host:ip`)
 @y
-      description: Add a custom host-to-IP mapping (`host:ip`)
+      description: ホスト－IP マッピングのカスタム設定を追加します。(`host:ip`)
 @z
 
 @x build-arg
@@ -194,37 +192,37 @@ plink: docker_image.yaml
 @x cpu-period
       description: Limit the CPU CFS (Completely Fair Scheduler) period
 @y
-      description: Limit the CPU CFS (Completely Fair Scheduler) period
+      description: CPU の CFS（Completely Fair Scheduler）間隔を制限します。
 @z
 
 @x cpu-quota
       description: Limit the CPU CFS (Completely Fair Scheduler) quota
 @y
-      description: Limit the CPU CFS (Completely Fair Scheduler) quota
+      description: CPU の CFS（Completely Fair Scheduler）クォータを制限します。
 @z
 
 @x cpu-shares
       description: CPU shares (relative weight)
 @y
-      description: CPU shares (relative weight)
+      description: CPU 配分。（相対的な重みづけ）
 @z
 
 @x cpuset-cpus
       description: CPUs in which to allow execution (0-3, 0,1)
 @y
-      description: CPUs in which to allow execution (0-3, 0,1)
+      description: 利用を許容する CPU 数。（0-3、0,1）
 @z
 
 @x cpuset-mems
       description: MEMs in which to allow execution (0-3, 0,1)
 @y
-      description: MEMs in which to allow execution (0-3, 0,1)
+      description: 利用を許容するメモリ数。（0-3、0,1）
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: Skip image verification
+      description: イメージの検証を省略します (廃止予定)。
 @z
 
 @x file
@@ -248,25 +246,25 @@ plink: docker_image.yaml
 @x isolation
       description: Container isolation technology
 @y
-      description: Container isolation technology
+      description: コンテナーの分離技術（isolation technology）方式。
 @z
 
 @x label
       description: Set metadata for an image
 @y
-      description: Set metadata for an image
+      description: イメージに対してメタデータを設定します。
 @z
 
 @x memory
       description: Memory limit
 @y
-      description: Memory limit
+      description: メモリ上限。
 @z
 
 @x memory-swap
       description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
 @y
-      description: 'Swap limit equal to memory plus swap: -1 to enable unlimited swap'
+      description: 'メモリとスワップの総量を制限します。-1 設定時はスワップ無制限。'
 @z
 
 @x network
@@ -284,7 +282,7 @@ plink: docker_image.yaml
 @x platform
       description: Set platform if server is multi-platform capable
 @y
-      description: Set platform if server is multi-platform capable
+      description: サーバーがマルチプラットフォームに対応している場合に、プラットフォームを指定します。
 @z
 
 @x pull
@@ -308,13 +306,13 @@ plink: docker_image.yaml
 @x security-opt
       description: Security options
 @y
-      description: Security options
+      description: セキュリティオプション。
 @z
 
 @x shm-size
       description: Size of `/dev/shm`
 @y
-      description: Size of `/dev/shm`
+      description: '`/dev/shm` のサイズ。'
 @z
 
 @x squash
@@ -338,7 +336,7 @@ plink: docker_image.yaml
 @x ulimit
       description: Ulimit options
 @y
-      description: Ulimit options
+      description: ulimit オプション。
 @z
 
 % inherited_options:
@@ -346,7 +344,7 @@ plink: docker_image.yaml
 @x help
       description: Print usage
 @y
-      description: Print usage
+      description: 利用方法を表示します。
 @z
 
 @x

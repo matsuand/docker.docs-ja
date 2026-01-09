@@ -78,9 +78,9 @@ usage: docker build [OPTIONS] PATH | URL | -
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @z
 
 @x file

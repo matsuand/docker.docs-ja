@@ -242,7 +242,7 @@ copyfiles = \
 	quick-hello-world-1.png  \
 	quick-hello-world-2.png  \
 	quick-hello-world-3.png  \
-	v1-versus-v2.png
+	v1-versus-v2-versus-v5.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

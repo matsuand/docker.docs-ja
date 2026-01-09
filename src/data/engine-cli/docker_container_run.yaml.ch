@@ -44,7 +44,7 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Add an annotation to the container (passed through to the OCI runtime)
 @y
       description: |
-        Add an annotation to the container (passed through to the OCI runtime)
+        (OCI ランタイムに受け渡された) コンテナーに注釈 (annotation) を追加します。
 @z
 
 @x attach
@@ -94,11 +94,11 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
                    default-cgroupns-mode option on the daemon (default)
 @y
       description: |-
-        Cgroup namespace to use (host|private)
-        'host':    Run the container in the Docker host's cgroup namespace
-        'private': Run the container in its own private cgroup namespace
-        '':        Use the cgroup namespace as configured by the
-                   default-cgroupns-mode option on the daemon (default)
+        利用する cgroup 名前空間（host|private）。
+        'host':    Dockerホストのcgroup名前空間内でコンテナーを起動。
+        'private': プライベートなcgroup名前空間内でコンテナーを起動。
+        '':        デーモンのdefault-cgroupns-modeオプションによって
+                   設定されるcgroup名前空間を利用（デフォルト）。
 @z
 
 @x cidfile
@@ -134,37 +134,37 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x cpu-rt-period
       description: Limit CPU real-time period in microseconds
 @y
-      description: Limit CPU real-time period in microseconds
+      description: CPU へのリアルタイムアクセス時間をマイクロ秒で制限します。
 @z
 
 @x cpu-rt-runtime
       description: Limit CPU real-time runtime in microseconds
 @y
-      description: Limit CPU real-time runtime in microseconds
+      description: CPU へのリアルタイムアクセスランタイムをマイクロ秒で制限します。
 @z
 
 @x cpu-shares
       description: CPU shares (relative weight)
 @y
-      description: CPU shares (relative weight)
+      description: CPU 配分。（相対的な重みづけ）
 @z
 
 @x cpus
       description: Number of CPUs
 @y
-      description: Number of CPUs
+      description: CPU 数。
 @z
 
 @x cpuset-cpus
       description: CPUs in which to allow execution (0-3, 0,1)
 @y
-      description: CPUs in which to allow execution (0-3, 0,1)
+      description: 利用を許容する CPU 数。（0-3、0,1）
 @z
 
 @x cpuset-mems
       description: MEMs in which to allow execution (0-3, 0,1)
 @y
-      description: MEMs in which to allow execution (0-3, 0,1)
+      description: 利用を許容するメモリ数。（0-3、0,1）
 @z
 
 @x detach
@@ -182,127 +182,127 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x device
       description: Add a host device to the container
 @y
-      description: Add a host device to the container
+      description: ホストのデバイスをコンテナーに追加します。
 @z
 
 @x device-cgroup-rule
       description: Add a rule to the cgroup allowed devices list
 @y
-      description: Add a rule to the cgroup allowed devices list
+      description: cgroup がアクセス可能なデバイスリストにルールを追加します。
 @z
 
 @x device-read-bps
       description: Limit read rate (bytes per second) from a device
 @y
-      description: Limit read rate (bytes per second) from a device
+      description: デバイスからの読み込み割合（秒あたりのバイト数）を制限します。
 @z
 
 @x device-read-iops
       description: Limit read rate (IO per second) from a device
 @y
-      description: Limit read rate (IO per second) from a device
+      description: デバイスからの読み込み割合（秒あたりの I/O）を制限します。
 @z
 
 @x device-write-bps
       description: Limit write rate (bytes per second) to a device
 @y
-      description: Limit write rate (bytes per second) to a device
+      description: デバイスへの書き込み割合（秒あたりのバイト数）を制限します。
 @z
 
 @x device-write-iops
       description: Limit write rate (IO per second) to a device
 @y
-      description: Limit write rate (IO per second) to a device
+      description: デバイスへの書き込み割合（秒あたりの I/O）を制限します。
 @z
 
 @x disable-content-trust
-      description: Skip image verification
+      description: Skip image verification (deprecated)
 @y
-      description: Skip image verification
+      description: イメージの検証を省略します (廃止予定)。
 @z
 
 @x dns
       description: Set custom DNS servers
 @y
-      description: Set custom DNS servers
+      description: カスタム DNS サーバーを設定します。
 @z
 
 @x dns-opt
       description: Set DNS options
 @y
-      description: Set DNS options
+      description: DNS オプションを設定します。
 @z
 
 @x dns-option
       description: Set DNS options
 @y
-      description: Set DNS options
+      description: DNS オプションを設定します。
 @z
 
 @x dns-search
       description: Set custom DNS search domains
 @y
-      description: Set custom DNS search domains
+      description: カスタム DNS 検索ドメインを設定します。
 @z
 
 @x domainname
       description: Container NIS domain name
 @y
-      description: Container NIS domain name
+      description: コンテナーの NIS ドメイン名。
 @z
 
 @x entrypoint
       description: Overwrite the default ENTRYPOINT of the image
 @y
-      description: Overwrite the default ENTRYPOINT of the image
+      description: イメージのデフォルト ENTRYPOINT をオーバーライドします。
 @z
 
 @x env
       description: Set environment variables
 @y
-      description: Set environment variables
+      description: 環境変数を設定します。
 @z
 
 @x env-file
       description: Read in a file of environment variables
 @y
-      description: Read in a file of environment variables
+      description: 環境変数ファイルを読み込みます。
 @z
 
 @x expose
       description: Expose a port or a range of ports
 @y
-      description: Expose a port or a range of ports
+      description: ポートまたはポート範囲を公開します。
 @z
 
 @x gpus
       description: GPU devices to add to the container ('all' to pass all GPUs)
 @y
-      description: GPU devices to add to the container ('all' to pass all GPUs)
+      description: コンテナーに追加する GPU デバイスを指定します。('all' により全 GPU)
 @z
 
 @x group-add
       description: Add additional groups to join
 @y
-      description: Add additional groups to join
+      description: 新たに参加するグループを追加します。
 @z
 
 @x health-cmd
       description: Command to run to check health
 @y
-      description: Command to run to check health
+      description: ヘルスチェックを実行するコマンド。
 @z
 
 @x health-interval
       description: Time between running the check (ms|s|m|h) (default 0s)
 @y
-      description: Time between running the check (ms|s|m|h) (default 0s)
+      description: ヘルスチェックの実行間隔。(ms|s|m|h) （デフォルトは 0s）
 @z
 
 @x health-retries
       description: Consecutive failures needed to report unhealthy
 @y
-      description: Consecutive failures needed to report unhealthy
+      description: 不健康（unhealthy）であると報告するのに必要な連続失敗回数。
 @z
 
 @x health-start-interval
@@ -310,7 +310,7 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Time between running the check during the start period (ms|s|m|h) (default 0s)
 @y
       description: |
-        Time between running the check during the start period (ms|s|m|h) (default 0s)
+        起動時間内のヘルスチェックの実行間隔。(ms|s|m|h) (デフォルトは 0s)
 @z
 
 @x health-start-period
@@ -318,13 +318,13 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
 @y
       description: |
-        Start period for the container to initialize before starting health-retries countdown (ms|s|m|h) (default 0s)
+        ヘルスチェックのリトライを数え始める前の、コンテナー初期化を行う開始時間。(ms|s|m|h) （デフォルトは 0s）
 @z
 
 @x health-timeout
       description: Maximum time to allow one check to run (ms|s|m|h) (default 0s)
 @y
-      description: Maximum time to allow one check to run (ms|s|m|h) (default 0s)
+      description: 1 つのチェック処理実行に許容する最大時間。(ms|s|m|h) （デフォルトは 0s）
 @z
 
 @x help
@@ -344,67 +344,67 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Run an init inside the container that forwards signals and reaps processes
 @y
       description: |
-        Run an init inside the container that forwards signals and reaps processes
+        コンテナー内部にて、シグナル送信と子プロセス管理を行う初期化処理を実行します。
 @z
 
 @x interactive
       description: Keep STDIN open even if not attached
 @y
-      description: Keep STDIN open even if not attached
+      description: アタッチされていなくても STDIN は開放し続けます。
 @z
 
 @x io-maxbandwidth
       description: Maximum IO bandwidth limit for the system drive (Windows only)
 @y
-      description: Maximum IO bandwidth limit for the system drive (Windows only)
+      description: システムデバイスの I/O 帯域幅の上限。（Windows のみ）
 @z
 
 @x io-maxiops
       description: Maximum IOps limit for the system drive (Windows only)
 @y
-      description: Maximum IOps limit for the system drive (Windows only)
+      description: システムデバイスの IOps の上限。（Windows のみ）
 @z
 
 @x ip
       description: IPv4 address (e.g., 172.30.100.104)
 @y
-      description: IPv4 アドレスを指定します。（たとえば 172.30.100.104 など）
+      description: IPv4 アドレス。(たとえば 172.30.100.104)
 @z
 
 @x ip6
       description: IPv6 address (e.g., 2001:db8::33)
 @y
-      description: IPv6 アドレスを指定します。（たとえば 2001:db8::33 など）
+      description: IPv6 アドレス。(たとえば 2001:db8::33)
 @z
 
 @x ipc
       description: IPC mode to use
 @y
-      description: IPC mode to use
+      description: 利用する IPC mode モード。
 @z
 
 @x isolation
       description: Container isolation technology
 @y
-      description: Container isolation technology
+      description: コンテナーの分離技術（isolation technology）方式。
 @z
 
 @x kernel-memory
-      description: Kernel memory limit
+      description: Kernel memory limit (deprecated)
 @y
-      description: Kernel memory limit
+      description: カーネルメモリ上限 (廃止予定)。
 @z
 
 @x label
       description: Set meta data on a container
 @y
-      description: Set meta data on a container
+      description: コンテナーに対してメタデータを設定します。
 @z
 
 @x label-file
       description: Read in a line delimited file of labels
 @y
-      description: Read in a line delimited file of labels
+      description: 行ごとにラベルが記述されたファイルを読み込みます。
 @z
 
 @x link
@@ -416,37 +416,37 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x link-local-ip
       description: Container IPv4/IPv6 link-local addresses
 @y
-      description: コンテナーの IPv4/IPv6 リンクローカルアドレスを追加します。
+      description: コンテナーの IPv4/IPv6 によるリンクローカルアドレス。
 @z
 
 @x log-driver
       description: Logging driver for the container
 @y
-      description: Logging driver for the container
+      description: コンテナーにおけるログドライバー。
 @z
 
 @x log-opt
       description: Log driver options
 @y
-      description: Log driver options
+      description: ログドライバーオプション。
 @z
 
 @x mac-address
       description: Container MAC address (e.g., 92:d0:c6:0a:29:33)
 @y
-      description: Container MAC address (e.g., 92:d0:c6:0a:29:33)
+      description: コンテナーの MAC アドレス。（たとえば 92:d0:c6:0a:29:33）
 @z
 
 @x memory
       description: Memory limit
 @y
-      description: Memory limit
+      description: メモリ上限。
 @z
 
 @x memory-reservation
       description: Memory soft limit
 @y
-      description: Memory soft limit
+      description: メモリのソフト上限。
 @z
 
 @x memory-swap
@@ -454,127 +454,127 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Swap limit equal to memory plus swap: '-1' to enable unlimited swap
 @y
       description: |
-        Swap limit equal to memory plus swap: '-1' to enable unlimited swap
+        メモリとスワップの総量を制限します。'-1' 設定時はスワップ無制限。
 @z
 
 @x memory-swappiness
       description: Tune container memory swappiness (0 to 100)
 @y
-      description: Tune container memory swappiness (0 to 100)
+      description: コンテナーのスワップ割合を調整します。（0 から 100）
 @z
 
 @x mount
       description: Attach a filesystem mount to the container
 @y
-      description: Attach a filesystem mount to the container
+      description: ファイルシステムマウントをコンテナーにアタッチします。
 @z
 
 @x name
       description: Assign a name to the container
 @y
-      description: Assign a name to the container
+      description: コンテナーに名前を割り当てます。
 @z
 
 @x net
       description: Connect a container to a network
 @y
-      description: Connect a container to a network
+      description: コンテナーをネットワークに接続します。
 @z
 
 @x net-alias
       description: Add network-scoped alias for the container
 @y
-      description: Add network-scoped alias for the container
+      description: ネットワーク範囲内のエイリアスをコンテナーに追加します。
 @z
 
 @x network
       description: Connect a container to a network
 @y
-      description: Connect a container to a network
+      description: コンテナーをネットワークに接続します。
 @z
 
 @x network-alias
       description: Add network-scoped alias for the container
 @y
-      description: Add network-scoped alias for the container
+      description: ネットワーク範囲内のエイリアスをコンテナーに追加します。
 @z
 
 @x no-healthcheck
       description: Disable any container-specified HEALTHCHECK
 @y
-      description: Disable any container-specified HEALTHCHECK
+      description: コンテナー固有の HEALTHCHECK を無効にします。
 @z
 
 @x oom-kill-disable
       description: Disable OOM Killer
 @y
-      description: Disable OOM Killer
+      description: OOM キラーを無効にします。
 @z
 
 @x oom-score-adj
       description: Tune host's OOM preferences (-1000 to 1000)
 @y
-      description: Tune host's OOM preferences (-1000 to 1000)
+      description: ホストの OOM に対する優先順位を設定します。（-1000 から 1000）
 @z
 
 @x pid
       description: PID namespace to use
 @y
-      description: PID namespace to use
+      description: 利用する PID 名前空間。
 @z
 
 @x pids-limit
       description: Tune container pids limit (set -1 for unlimited)
 @y
-      description: Tune container pids limit (set -1 for unlimited)
+      description: コンテナーの PID 制限を調整します。（-1 により無制限）
 @z
 
 @x platform
       description: Set platform if server is multi-platform capable
 @y
-      description: Set platform if server is multi-platform capable
+      description: サーバーがマルチプラットフォームに対応している場合にプラットフォームを指定します。
 @z
 
 @x privileged
       description: Give extended privileges to this container
 @y
-      description: Give extended privileges to this container
+      description: コンテナーに拡張権限を付与します。
 @z
 
 @x publish
       description: Publish a container's port(s) to the host
 @y
-      description: Publish a container's port(s) to the host
+      description: ホストに対してコンテナーのポートを公開します。
 @z
 
 @x publish-all
       description: Publish all exposed ports to random ports
 @y
-      description: Publish all exposed ports to random ports
+      description: 公開されたポートをランダムポートとして公開します。
 @z
 
 @x pull
       description: Pull image before running (`always`, `missing`, `never`)
 @y
-      description: Pull image before running (`always`, `missing`, `never`)
+      description: イメージ実行前にプルを行います（`always`, `missing`, `never`）。
 @z
 
 @x quiet
       description: Suppress the pull output
 @y
-      description: Suppress the pull output
+      description: プル処理時の出力を省略します。
 @z
 
 @x read-only
       description: Mount the container's root filesystem as read only
 @y
-      description: Mount the container's root filesystem as read only
+      description: コンテナーのルートファイルシステムを読み込み専用としてマウントします。
 @z
 
 @x restart
       description: Restart policy to apply when a container exits
 @y
-      description: Restart policy to apply when a container exits
+      description: コンテナー終了時に適用する再起動ポリシー。
 @z
 
 @x rm
@@ -582,73 +582,73 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
         Automatically remove the container and its associated anonymous volumes when it exits
 @y
       description: |
-        Automatically remove the container and its associated anonymous volumes when it exits
+        終了時にコンテナーと関連する匿名ボリュームがあればそれを自動的に削除します。
 @z
 
 @x runtime
       description: Runtime to use for this container
 @y
-      description: Runtime to use for this container
+      description: このコンテナー向けに利用するランタイム。
 @z
 
 @x security-opt
       description: Security Options
 @y
-      description: Security Options
+      description: セキュリティオプション。
 @z
 
 @x shm-size
       description: Size of /dev/shm
 @y
-      description: Size of /dev/shm
+      description: /dev/shm のサイズ。
 @z
 
 @x sig-proxy
       description: Proxy received signals to the process
 @y
-      description: Proxy received signals to the process
+      description: プロセスへのシグナルを受信するプロキシー。
 @z
 
 @x stop-signal
       description: Signal to stop the container
 @y
-      description: Signal to stop the container
+      description: コンテナーを停止するシグナル。
 @z
 
 @x stop-timeout
       description: Timeout (in seconds) to stop a container
 @y
-      description: Timeout (in seconds) to stop a container
+      description: コンテナー停止時の中断時間（秒単位）。
 @z
 
 @x storage-opt
       description: Storage driver options for the container
 @y
-      description: Storage driver options for the container
+      description: コンテナーにおけるストレージドライバーのオプション。
 @z
 
 @x sysctl
       description: Sysctl options
 @y
-      description: Sysctl options
+      description: sysctl オプション。
 @z
 
 @x tmpfs
       description: Mount a tmpfs directory
 @y
-      description: Mount a tmpfs directory
+      description: tmpfs ディレクトリのマウント。
 @z
 
 @x tty
       description: Allocate a pseudo-TTY
 @y
-      description: Allocate a pseudo-TTY
+      description: 擬似 TTY を割り当てます。
 @z
 
 @x ulimit
       description: Ulimit options
 @y
-      description: Ulimit options
+      description: ulimit オプション。
 @z
 
 @x use-api-socket
@@ -660,43 +660,43 @@ usage: docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
 @x user
       description: 'Username or UID (format: <name|uid>[:<group|gid>])'
 @y
-      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
+      description: 'ユーザー名または UID。（記述書式: <name|uid>[:<group|gid>]）'
 @z
 
 @x userns
       description: User namespace to use
 @y
-      description: User namespace to use
+      description: 利用するユーザー名前空間。
 @z
 
 @x uts
       description: UTS namespace to use
 @y
-      description: UTS namespace to use
+      description: 利用する UTS 名前空間。
 @z
 
 @x volume
       description: Bind mount a volume
 @y
-      description: Bind mount a volume
+      description: ボリュームをバインドマウントします。
 @z
 
 @x volume-driver
       description: Optional volume driver for the container
 @y
-      description: Optional volume driver for the container
+      description: 任意に指定するボリュームドライバー。
 @z
 
 @x volumes-from
       description: Mount volumes from the specified container(s)
 @y
-      description: Mount volumes from the specified container(s)
+      description: 指定されたコンテナーからボリュームをマウントします。
 @z
 
 @x workdir
       description: Working directory inside the container
 @y
-      description: Working directory inside the container
+      description: コンテナー内部のワーキングディレクトリ。
 @z
 
 @x
@@ -2666,11 +2666,15 @@ examples: |-
 @x
     It's conventional to use `host.docker.internal` as the hostname referring to
     `host-gateway`. Docker Desktop automatically resolves this hostname, see
-    [Explore networking features](/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host).
+    [Explore networking how-tos on Docker Desktop](/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host)
+    and
+    [Configure host gateway IP](/reference/cli/dockerd/#configure-host-gateway-ip).
 @y
     It's conventional to use `host.docker.internal` as the hostname referring to
     `host-gateway`. Docker Desktop automatically resolves this hostname, see
-    [Explore networking features](__SUBDIR__/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host).
+    [Explore networking how-tos on Docker Desktop](__SUBDIR__/desktop/features/networking/networking-how-tos/#connect-a-container-to-a-service-on-the-host)
+    and
+    [Configure host gateway IP](__SUBDIR__/reference/cli/dockerd/#configure-host-gateway-ip).
 @z
 
 @x
