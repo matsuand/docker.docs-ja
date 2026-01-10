@@ -24,20 +24,16 @@
 						<h1 class="text-xl">Docker の入手</h1>
 @z
 @x
-						Learn how to install Docker for Mac, Windows, or Linux and explore
-						our developer tools.
+						Download Docker Desktop for your platform or
+						<a href="/get-started/get-docker/" class="text-blue dark:text-blue-400 hover:underline">view getting started guides</a>.
 @y
-						Docker for Mac, Windows, Linux のインストール方法を学び、開発ツール類を確認していきます。
+						各プラットフォーム向けの Docker Desktop をダウンロード、または
+						<a href="get-started/get-docker/" class="text-blue dark:text-blue-400 hover:underline">はじめようガイド</a> を参照してください。
 @z
 @x
-					<a href="/get-started/get-docker/"
+									<span x-text="getPrimaryLabel()">Download Docker Desktop</span>
 @y
-					<a href="get-started/get-docker/"
-@z
-@x
-						Get Docker
-@y
-						Docker の入手
+									<span x-text="getPrimaryLabel()">Docker Desktop のダウンロード</span>
 @z
 
 @x
@@ -50,9 +46,8 @@
 						signed SBOMs, SLSA Level 3 provenance, and complete CVE
 						data.
 @y
-						Minimal, hardened base images with full transparency:
-						signed SBOMs, SLSA Level 3 provenance, and complete CVE
-						data.
+						最小化し強化されたベースイメージ。
+                                                SBOM 署名、SLSA レベル 3 対応、CVE への完全対応。
 @z
 @x
 					<a href="/dhi/"
@@ -141,10 +136,9 @@
 						offer a rich online experience for developers to create valuable
 						connections that challenge and inspire!
 @y
-						Find fellow Docker enthusiasts, engage in insightful discussions,
-						share knowledge, and collaborate on projects. Our communities
-						offer a rich online experience for developers to create valuable
-						connections that challenge and inspire!
+						Docker に詳しい人を見つけてください。
+                                                理解を深める議論に参加し知識を共有して、プロジェクト作業を進めてください。
+                                                このコミュニティではオンラインにより開発者同士とのつながりを通して、貴重な挑戦や啓発などを得ることができます。
 @z
 @x
 							Visit Docker Forum

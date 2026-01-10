@@ -36,6 +36,60 @@ For more information about:
 @z
 
 @x
+## 29.1.4
+@y
+## 29.1.4
+@z
+
+@x
+{{< release-date date="2026-01-08" >}}
+@y
+{{< release-date date="2026-01-08" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.1.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.4)
+- [moby/moby, 29.1.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.4)
+@y
+- [docker/cli, 29.1.4 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.4)
+- [moby/moby, 29.1.4 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.4)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `docker run --network none` panic on Windows. [moby/moby#51830](https://github.com/moby/moby/pull/51830)
+- Fix image mounts failing with "file name too long" for long mount paths. [moby/moby#51829](https://github.com/moby/moby/pull/51829)
+- Fix potential creation of orphaned overlay2 layers. [moby/moby#51826](https://github.com/moby/moby/pull/51826), [moby/moby#51824](https://github.com/moby/moby/pull/51824)
+@y
+- Fix `docker run --network none` panic on Windows. [moby/moby#51830](https://github.com/moby/moby/pull/51830)
+- Fix image mounts failing with "file name too long" for long mount paths. [moby/moby#51829](https://github.com/moby/moby/pull/51829)
+- Fix potential creation of orphaned overlay2 layers. [moby/moby#51826](https://github.com/moby/moby/pull/51826), [moby/moby#51824](https://github.com/moby/moby/pull/51824)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.26.3](https://github.com/moby/buildkit/releases/tag/v0.26.3). [moby/moby#51821](https://github.com/moby/moby/pull/51821)
+@y
+- Update BuildKit to [v0.26.3](https://github.com/moby/buildkit/releases/tag/v0.26.3). [moby/moby#51821](https://github.com/moby/moby/pull/51821)
+@z
+
+@x
 ## 29.1.3
 @y
 ## 29.1.3

@@ -48,12 +48,6 @@ Before you begin, make sure the following tools are installed and available on y
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Overview
 @y
 ## Overview
@@ -75,23 +69,17 @@ By the end of this guide, you will:
 - Containerize an Vue.js application using Docker.
 - Create and optimize a Dockerfile for production builds. 
 - Use multi-stage builds to minimize image size.
-- Serve the application efficiently with a custom NGINX configuration.
+- Serve the application efficiently with a custom Nginx configuration.
 - Build secure and maintainable Docker images by following best practices.
 @y
 - Containerize an Vue.js application using Docker.
 - Create and optimize a Dockerfile for production builds. 
 - Use multi-stage builds to minimize image size.
-- Serve the application efficiently with a custom NGINX configuration.
+- Serve the application efficiently with a custom Nginx configuration.
 - Build secure and maintainable Docker images by following best practices.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Get the sample application
 @y
 ## Get the sample application
@@ -105,17 +93,7 @@ Clone the sample application to use with this guide. Open a terminal, navigate t
 to clone the git repository:
 @z
 
-@x
-```console
-$ git clone https://github.com/kristiyan-velkov/docker-vuejs-sample
-```
----
-@y
-```console
-$ git clone https://github.com/kristiyan-velkov/docker-vuejs-sample
-```
----
-@z
+% snip command...
 
 @x
 ## Generate a Dockerfile
@@ -135,15 +113,7 @@ To begin, navigate to the root of your project directory:
 To begin, navigate to the root of your project directory:
 @z
 
-@x
-```console
-$ cd docker-vuejs-sample
-```
-@y
-```console
-$ cd docker-vuejs-sample
-```
-@z
+% snip command...
 
 @x
 Then run the following command:
@@ -151,47 +121,15 @@ Then run the following command:
 Then run the following command:
 @z
 
+% snip command...
+
 @x
-```console
-$ docker init
-```
 You’ll see output similar to:
 @y
-```console
-$ docker init
-```
 You’ll see output similar to:
 @z
 
-@x
-```text
-Welcome to the Docker Init CLI!
-@y
-```text
-Welcome to the Docker Init CLI!
-@z
-
-@x
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@y
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@z
-
-@x
-Let's get started!
-```
-@y
-Let's get started!
-```
-@z
+% snip output...
 
 @x
 The CLI will prompt you with a few questions about your app setup.
@@ -199,7 +137,7 @@ For consistency, please use the same responses shown in the example below when p
 | Question                                                   | Answer          |
 |------------------------------------------------------------|-----------------|
 | What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 23.11.0-alpine  |
+| What version of Node do you want to use?                   | 24.12.0-alpine  |
 | Which package manager do you want to use?                  | npm             |
 | Do you want to run "npm run build" before starting server? | yes             |
 | What directory is your build output to?                    | dist            |
@@ -211,7 +149,7 @@ For consistency, please use the same responses shown in the example below when p
 | Question                                                   | Answer          |
 |------------------------------------------------------------|-----------------|
 | What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 23.11.0-alpine  |
+| What version of Node do you want to use?                   | 24.12.0-alpine |
 | Which package manager do you want to use?                  | npm             |
 | Do you want to run "npm run build" before starting server? | yes             |
 | What directory is your build output to?                    | dist            |
@@ -225,29 +163,7 @@ After completion, your project directory will contain the following new files:
 After completion, your project directory will contain the following new files:
 @z
 
-@x
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@z
-
-@x
----
-@y
----
-@z
+% snip text...
 
 @x
 ## Build the Docker image
@@ -275,11 +191,11 @@ In this step, you’ll improve the Dockerfile and configuration files by followi
 
 @x
 - Use multi-stage builds to keep the final image clean and small  
-- Serve the app using NGINX, a fast and secure web server  
+- Serve the app using Nginx, a fast and secure web server  
 - Improve performance and security by only including what’s needed  
 @y
 - Use multi-stage builds to keep the final image clean and small  
-- Serve the app using NGINX, a fast and secure web server  
+- Serve the app using Nginx, a fast and secure web server  
 - Improve performance and security by only including what’s needed  
 @z
 
@@ -306,139 +222,240 @@ These updates help ensure your app is easy to deploy, fast to load, and producti
 @z
 
 @x
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Node.js Official Image](https://hub.docker.com/_/node) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
+@y
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Node.js Official Image](https://hub.docker.com/_/node) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
+@z
+
+@x
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@y
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@z
+
+@x
+> [!IMPORTANT]
+> This guide uses a stable Node.js LTS image tag that is considered secure when the guide is written. Because new releases and security patches are published regularly, the tag shown here may no longer be the safest option when you follow the guide. Always review the latest available image tags and select a secure, up-to-date version before building or deploying your application.
+>
+> Official Node.js Docker Images: https://hub.docker.com/_/node
+@y
+> [!IMPORTANT]
+> This guide uses a stable Node.js LTS image tag that is considered secure when the guide is written. Because new releases and security patches are published regularly, the tag shown here may no longer be the safest option when you follow the guide. Always review the latest available image tags and select a secure, up-to-date version before building or deploying your application.
+>
+> Official Node.js Docker Images: https://hub.docker.com/_/node
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@z
+
+@x
+1. Sign in to the DHI registry:
+@y
+1. Sign in to the DHI registry:
+@z
+
+% snip command...
+
+@x
+2. Pull the Node.js DHI (check the catalog for available versions):
+@y
+2. Pull the Node.js DHI (check the catalog for available versions):
+@z
+
+% snip command...
+
+@x
+3. Pull the Nginx DHI (check the catalog for available versions):
+@y
+3. Pull the Nginx DHI (check the catalog for available versions):
+@z
+
+% snip command...
+
+@x
+In the following Dockerfile, the `FROM` instructions use `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev` as the base images.
+@y
+In the following Dockerfile, the `FROM` instructions use `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev` as the base images.
+@z
+
+@x within code
+# Stage 1: Build the Vue.js Application
+@y
+@z
+@x
+# Use a lightweight DHI Node.js image for building
+@y
+# Use a lightweight DHI Node.js image for building
+@z
+@x
+# Set the working directory inside the container
+@y
+# Set the working directory inside the container
+@z
+@x
+# Copy package-related files first to leverage Docker's caching mechanism
+@y
+# Copy package-related files first to leverage Docker's caching mechanism
+@z
+@x
+# Install project dependencies using npm ci (ensures a clean, reproducible install)
+@y
+# Install project dependencies using npm ci (ensures a clean, reproducible install)
+@z
+@x
+# Copy the rest of the application source code into the container
+@y
+# Copy the rest of the application source code into the container
+@z
+@x
+# Build the Vue.js application
+@y
+# Build the Vue.js application
+@z
+@x
+# Stage 2: Prepare Nginx to Serve Static Files
+@y
+# Stage 2: Prepare Nginx to Serve Static Files
+@z
+@x
+# Copy custom Nginx config
+@y
+# Copy custom Nginx config
+@z
+@x
+# Copy the static build output from the build stage to Nginx's default HTML serving directory
+@y
+# Copy the static build output from the build stage to Nginx's default HTML serving directory
+@z
+@x
+# Use a built-in non-root user for security best practices
+@y
+# Use a built-in non-root user for security best practices
+@z
+@x
+# Expose port 8080 to allow HTTP traffic
+# Note: The default Nginx container now listens on port 8080 instead of 80 
+@y
+# Expose port 8080 to allow HTTP traffic
+# Note: The default Nginx container now listens on port 8080 instead of 80 
+@z
+@x
+# Start Nginx directly with custom config
+@y
+# Start Nginx directly with custom config
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Using the Docker Official Image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the Docker Official Image" >}}
+@z
+
+@x
 Replace the contents of your current `Dockerfile` with the optimized configuration below. This setup is tailored specifically for building and serving Vue.js applications in a clean, efficient, and production-ready environment.
 @y
 Replace the contents of your current `Dockerfile` with the optimized configuration below. This setup is tailored specifically for building and serving Vue.js applications in a clean, efficient, and production-ready environment.
 @z
 
-@x
-```dockerfile
-# =========================================
+@x within code
 # Stage 1: Build the Vue.js Application
-# =========================================
-ARG NODE_VERSION=23.11.0-alpine
-ARG NGINX_VERSION=alpine3.22
 @y
-```dockerfile
-# =========================================
 # Stage 1: Build the Vue.js Application
-# =========================================
-ARG NODE_VERSION=23.11.0-alpine
-ARG NGINX_VERSION=alpine3.22
 @z
-
 @x
 # Use a lightweight Node.js image for building (customizable via ARG)
-FROM node:${NODE_VERSION} AS builder
 @y
 # Use a lightweight Node.js image for building (customizable via ARG)
-FROM node:${NODE_VERSION} AS builder
 @z
-
 @x
 # Set the working directory inside the container
-WORKDIR /app
 @y
 # Set the working directory inside the container
-WORKDIR /app
 @z
-
 @x
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
 @y
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
 @z
-
 @x
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
-RUN --mount=type=cache,target=/root/.npm npm ci
 @y
 # Install project dependencies using npm ci (ensures a clean, reproducible install)
-RUN --mount=type=cache,target=/root/.npm npm ci
 @z
-
 @x
 # Copy the rest of the application source code into the container
-COPY . .
 @y
 # Copy the rest of the application source code into the container
-COPY . .
 @z
-
 @x
 # Build the Vue.js application
-RUN npm run build
 @y
 # Build the Vue.js application
-RUN npm run build
 @z
-
 @x
-# =========================================
 # Stage 2: Prepare Nginx to Serve Static Files
-# =========================================
 @y
-# =========================================
 # Stage 2: Prepare Nginx to Serve Static Files
-# =========================================
 @z
-
-@x
-FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runner
-@y
-FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runner
-@z
-
-@x
-# Use a built-in non-root user for security best practices
-USER nginx
-@y
-# Use a built-in non-root user for security best practices
-USER nginx
-@z
-
 @x
 # Copy custom Nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
 @y
 # Copy custom Nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
 @z
-
 @x
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --chown=nginx:nginx --from=builder /app/dist /usr/share/nginx/html
 @y
 # Copy the static build output from the build stage to Nginx's default HTML serving directory
-COPY --chown=nginx:nginx --from=builder /app/dist /usr/share/nginx/html
 @z
-
+@x
+# Use a built-in non-root user for security best practices
+@y
+# Use a built-in non-root user for security best practices
+@z
 @x
 # Expose port 8080 to allow HTTP traffic
-# Note: The default NGINX container now listens on port 8080 instead of 80 
-EXPOSE 8080
+# Note: The default Nginx container now listens on port 8080 instead of 80 
 @y
 # Expose port 8080 to allow HTTP traffic
-# Note: The default NGINX container now listens on port 8080 instead of 80 
-EXPOSE 8080
+# Note: The default Nginx container now listens on port 8080 instead of 80 
+@z
+@x
+# Start Nginx directly with custom config
+@y
+# Start Nginx directly with custom config
 @z
 
 @x
-# Start Nginx directly with custom config
-ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
-CMD ["-g", "daemon off;"]
+> [!NOTE]
+> We are using nginx-unprivileged instead of the standard Nginx image to follow security best practices.
+> Running as a non-root user in the final image:
+>- Reduces the attack surface
+>- Aligns with Docker’s recommendations for container hardening
+>- Helps comply with stricter security policies in production environments
 @y
-# Start Nginx directly with custom config
-ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
-CMD ["-g", "daemon off;"]
+> [!NOTE]
+> We are using nginx-unprivileged instead of the standard Nginx image to follow security best practices.
+> Running as a non-root user in the final image:
+>- Reduces the attack surface
+>- Aligns with Docker’s recommendations for container hardening
+>- Helps comply with stricter security policies in production environments
 @z
 
 @x
-```
+{{< /tab >}}
+{{< /tabs >}}
 @y
-```
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -468,7 +485,7 @@ The `.dockerignore` file plays a crucial role in optimizing your Docker image by
 >- Speed up the build process  
 >- Prevent sensitive or unnecessary files (like `.env`, `.git`, or `node_modules`) from being added to the final image.
 >
-> To learn more, visit the [.dockerignore reference](reference/dockerfile.md#dockerignore-file).
+> To learn more, visit the [.dockerignore reference](/reference/dockerfile.md#dockerignore-file).
 @z
 
 @x
@@ -477,188 +494,65 @@ Copy and replace the contents of your existing `.dockerignore` with the configur
 Copy and replace the contents of your existing `.dockerignore` with the configuration below:
 @z
 
-@x
-```dockerignore
-# -------------------------------
+@x within code
 # Dependency directories
-# -------------------------------
-node_modules/
 @y
-```dockerignore
-# -------------------------------
 # Dependency directories
-# -------------------------------
-node_modules/
 @z
-
 @x
-# -------------------------------
 # Production and build outputs
-# -------------------------------
-dist/
-out/
-build/
-public/build/
 @y
-# -------------------------------
 # Production and build outputs
-# -------------------------------
-dist/
-out/
-build/
-public/build/
 @z
-
 @x
-# -------------------------------
 # Vite, VuePress, and cache dirs
-# -------------------------------
-.vite/
-.vitepress/
-.cache/
-.tmp/
 @y
-# -------------------------------
 # Vite, VuePress, and cache dirs
-# -------------------------------
-.vite/
-.vitepress/
-.cache/
-.tmp/
 @z
-
 @x
-# -------------------------------
 # Test output and coverage
-# -------------------------------
-coverage/
-reports/
-jest/
-cypress/
-cypress/screenshots/
-cypress/videos/
 @y
-# -------------------------------
 # Test output and coverage
-# -------------------------------
-coverage/
-reports/
-jest/
-cypress/
-cypress/screenshots/
-cypress/videos/
 @z
-
 @x
-# -------------------------------
 # Environment and config files
-# -------------------------------
-*.env*
-!.env.production    # Keep production env if needed
-*.local
-*.log
 @y
-# -------------------------------
 # Environment and config files
-# -------------------------------
-*.env*
+@z
+@x
 !.env.production    # Keep production env if needed
-*.local
-*.log
+@y
+!.env.production    # Keep production env if needed
 @z
-
 @x
-# -------------------------------
 # TypeScript artifacts
-# -------------------------------
-*.tsbuildinfo
 @y
-# -------------------------------
 # TypeScript artifacts
-# -------------------------------
-*.tsbuildinfo
 @z
-
 @x
-# -------------------------------
 # Editor and IDE config
-# -------------------------------
-.vscode/
-.idea/
-*.swp
 @y
-# -------------------------------
 # Editor and IDE config
-# -------------------------------
-.vscode/
-.idea/
-*.swp
 @z
-
 @x
-# -------------------------------
 # System files
-# -------------------------------
-.DS_Store
-Thumbs.db
 @y
-# -------------------------------
 # System files
-# -------------------------------
-.DS_Store
-Thumbs.db
 @z
-
 @x
-# -------------------------------
 # Lockfiles (optional)
-# -------------------------------
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 @y
-# -------------------------------
 # Lockfiles (optional)
-# -------------------------------
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 @z
-
 @x
-# -------------------------------
 # Git files
-# -------------------------------
-.git/
-.gitignore
 @y
-# -------------------------------
 # Git files
-# -------------------------------
-.git/
-.gitignore
 @z
-
 @x
-# -------------------------------
 # Docker-related files
-# -------------------------------
-Dockerfile
-.dockerignore
-docker-compose.yml
-docker-compose.override.yml
-```
 @y
-# -------------------------------
 # Docker-related files
-# -------------------------------
-Dockerfile
-.dockerignore
-docker-compose.yml
-docker-compose.override.yml
-```
 @z
 
 @x
@@ -668,9 +562,9 @@ docker-compose.override.yml
 @z
 
 @x
-To serve your Vue.js application efficiently inside the container, you’ll configure NGINX with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
+To serve your Vue.js application efficiently inside the container, you’ll configure Nginx with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
 @y
-To serve your Vue.js application efficiently inside the container, you’ll configure NGINX with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
+To serve your Vue.js application efficiently inside the container, you’ll configure Nginx with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
 @z
 
 @x
@@ -681,151 +575,13 @@ Create a file named `nginx.conf` in the root of your project directory, and add 
 
 @x
 > [!NOTE]
-> To learn more about configuring NGINX, see the [official NGINX documentation](https://nginx.org/en/docs/).
+> To learn more about configuring Nginx, see the [official Nginx documentation](https://nginx.org/en/docs/).
 @y
 > [!NOTE]
-> To learn more about configuring NGINX, see the [official NGINX documentation](https://nginx.org/en/docs/).
+> To learn more about configuring Nginx, see the [official Nginx documentation](https://nginx.org/en/docs/).
 @z
 
-@x
-```nginx
-worker_processes auto;
-pid /tmp/nginx.pid;
-@y
-```nginx
-worker_processes auto;
-pid /tmp/nginx.pid;
-@z
-
-@x
-events {
-    worker_connections 1024;
-}
-@y
-events {
-    worker_connections 1024;
-}
-@z
-
-@x
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
-    charset       utf-8;
-@y
-http {
-    include       /etc/nginx/mime.types;
-    default_type  application/octet-stream;
-    charset       utf-8;
-@z
-
-@x
-    access_log    off;
-    error_log     /dev/stderr warn;
-@y
-    access_log    off;
-    error_log     /dev/stderr warn;
-@z
-
-@x
-    sendfile        on;
-    tcp_nopush      on;
-    tcp_nodelay     on;
-    keepalive_timeout  65;
-    keepalive_requests 1000;
-@y
-    sendfile        on;
-    tcp_nopush      on;
-    tcp_nodelay     on;
-    keepalive_timeout  65;
-    keepalive_requests 1000;
-@z
-
-@x
-    gzip on;
-    gzip_comp_level 6;
-    gzip_proxied any;
-    gzip_min_length 256;
-    gzip_vary on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;
-@y
-    gzip on;
-    gzip_comp_level 6;
-    gzip_proxied any;
-    gzip_min_length 256;
-    gzip_vary on;
-    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript image/svg+xml;
-@z
-
-@x
-    server {
-        listen       8080;
-        server_name  localhost;
-@y
-    server {
-        listen       8080;
-        server_name  localhost;
-@z
-
-@x
-        root   /usr/share/nginx/html;
-        index  index.html;
-@y
-        root   /usr/share/nginx/html;
-        index  index.html;
-@z
-
-@x
-        location / {
-            try_files $uri $uri/ /index.html;
-        }
-@y
-        location / {
-            try_files $uri $uri/ /index.html;
-        }
-@z
-
-@x
-        location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg|map)$ {
-            expires 1y;
-            access_log off;
-            add_header Cache-Control "public, immutable";
-            add_header X-Content-Type-Options nosniff;
-        }
-@y
-        location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg|map)$ {
-            expires 1y;
-            access_log off;
-            add_header Cache-Control "public, immutable";
-            add_header X-Content-Type-Options nosniff;
-        }
-@z
-
-@x
-        location /assets/ {
-            expires 1y;
-            add_header Cache-Control "public, immutable";
-            add_header X-Content-Type-Options nosniff;
-        }
-@y
-        location /assets/ {
-            expires 1y;
-            add_header Cache-Control "public, immutable";
-            add_header X-Content-Type-Options nosniff;
-        }
-@z
-
-@x
-        error_page 404 /index.html;
-    }
-}
-```
-@y
-        error_page 404 /index.html;
-    }
-}
-```
-@z
+% snip code...
 
 @x
 ### Step 5: Build the Vue.js application image
@@ -846,10 +602,10 @@ The updated setup includes:
 @z
 
 @x
-- The updated setup includes a clean, production-ready NGINX configuration tailored specifically for Vue.js.
+- The updated setup includes a clean, production-ready Nginx configuration tailored specifically for Vue.js.
 - Efficient multi-stage Docker build, ensuring a small and secure final image.
 @y
-- The updated setup includes a clean, production-ready NGINX configuration tailored specifically for Vue.js.
+- The updated setup includes a clean, production-ready Nginx configuration tailored specifically for Vue.js.
 - Efficient multi-stage Docker build, ensuring a small and secure final image.
 @z
 
@@ -859,25 +615,7 @@ After completing the previous steps, your project directory should now contain t
 After completing the previous steps, your project directory should now contain the following files:
 @z
 
-@x
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 Now that your Dockerfile is configured, you can build the Docker image for your Vue.js application.
@@ -890,7 +628,7 @@ Now that your Dockerfile is configured, you can build the Docker image for your 
 > The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
 @y
 > [!NOTE]
-> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](__SUBDIR__/build/concepts/context/#what-is-a-build-context)).
+> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
 @z
 
 @x
@@ -899,15 +637,7 @@ Run the following command from the root of your project:
 Run the following command from the root of your project:
 @z
 
-@x
-```console
-$ docker build --tag docker-vuejs-sample .
-```
-@y
-```console
-$ docker build --tag docker-vuejs-sample .
-```
-@z
+% snip command...
 
 @x
 What this command does:
@@ -930,7 +660,7 @@ What this command does:
 @x
 After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @y
-After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
+After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @z
 
 @x
@@ -939,15 +669,7 @@ To list all locally available Docker images, run the following command:
 To list all locally available Docker images, run the following command:
 @z
 
-@x
-```console
-$ docker images
-```
-@y
-```console
-$ docker images
-```
-@z
+% snip command...
 
 @x
 Example Output:
@@ -955,17 +677,7 @@ Example Output:
 Example Output:
 @z
 
-@x
-```shell
-REPOSITORY                TAG               IMAGE ID       CREATED         SIZE
-docker-vuejs-sample       latest            8c9c199179d4   14 seconds ago   76.2MB
-```
-@y
-```shell
-REPOSITORY                TAG               IMAGE ID       CREATED         SIZE
-docker-vuejs-sample       latest            8c9c199179d4   14 seconds ago   76.2MB
-```
-@z
+% snip output...
 
 @x
 This output provides key details about your images:
@@ -994,12 +706,6 @@ If the build was successful, you should see `docker-vuejs-sample` image listed.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Run the containerized application
 @y
 ## Run the containerized application
@@ -1019,15 +725,7 @@ Inside the `docker-vuejs-sample` directory, run the following command in a
 terminal.
 @z
 
-@x
-```console
-$ docker compose up --build
-```
-@y
-```console
-$ docker compose up --build
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple Vue.js web application.
@@ -1057,15 +755,7 @@ option. Inside the `docker-vuejs-sample` directory, run the following command
 in a terminal.
 @z
 
-@x
-```console
-$ docker compose up --build -d
-```
-@y
-```console
-$ docker compose up --build -d
-```
-@z
+% snip command...
 
 @x
 Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see your Vue.js application running in the browser.
@@ -1079,15 +769,7 @@ To confirm that the container is running, use `docker ps` command:
 To confirm that the container is running, use `docker ps` command:
 @z
 
-@x
-```console
-$ docker ps
-```
-@y
-```console
-$ docker ps
-```
-@z
+% snip command...
 
 @x
 This will list all active containers along with their ports, names, and status. Look for a container exposing port 8080.
@@ -1101,17 +783,7 @@ Example Output:
 Example Output:
 @z
 
-@x
-```shell
-CONTAINER ID   IMAGE                          COMMAND                  CREATED             STATUS             PORTS                    NAMES
-37a1fa85e4b0   docker-vuejs-sample-server     "nginx -c /etc/nginx…"   About a minute ago  Up About a minute  0.0.0.0:8080->8080/tcp   docker-vuejs-sample-server-1
-```
-@y
-```shell
-CONTAINER ID   IMAGE                          COMMAND                  CREATED             STATUS             PORTS                    NAMES
-37a1fa85e4b0   docker-vuejs-sample-server     "nginx -c /etc/nginx…"   About a minute ago  Up About a minute  0.0.0.0:8080->8080/tcp   docker-vuejs-sample-server-1
-```
-@z
+% snip output...
 
 @x
 To stop the application, run:
@@ -1119,15 +791,7 @@ To stop the application, run:
 To stop the application, run:
 @z
 
-@x
-```console
-$ docker compose down
-```
-@y
-```console
-$ docker compose down
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -1136,13 +800,7 @@ $ docker compose down
 @y
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](reference/cli/docker/compose/_index.md).
-@z
-
-@x
----
-@y
----
+> reference](/reference/cli/docker/compose/_index.md).
 @z
 
 @x
@@ -1181,12 +839,6 @@ What you accomplished:
 You now have a fully containerized Vue.js application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
 @y
 You now have a fully containerized Vue.js application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -1211,20 +863,14 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
 - [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @y
-- [Multi-stage builds](__SUBDIR__/build/building/multi-stage/) – Learn how to separate build and runtime stages.
-- [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
-- [Build context in Docker](__SUBDIR__/build/concepts/context/) – Learn how context affects image builds.  
-- [`docker init` CLI reference](__SUBDIR__/reference/cli/docker/init/) – Scaffold Docker assets automatically.
-- [`docker build` CLI reference](__SUBDIR__/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
-- [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/images/) – Manage and inspect local Docker images.
-- [`docker compose up` CLI reference](__SUBDIR__/reference/cli/docker/compose/up/) – Start and run multi-container applications.
-- [`docker compose down` CLI reference](__SUBDIR__/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
-@z
-
-@x
----
-@y
----
+- [Multi-stage builds](/build/building/multi-stage/) – Learn how to separate build and runtime stages.
+- [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
+- [Build context in Docker](/build/concepts/context/) – Learn how context affects image builds.  
+- [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
+- [`docker build` CLI reference](/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
+- [`docker images` CLI reference](/reference/cli/docker/images/) – Manage and inspect local Docker images.
+- [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
+- [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @z
 
 @x

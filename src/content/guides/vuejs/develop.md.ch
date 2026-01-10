@@ -56,12 +56,6 @@ You’ll learn how to:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Automatically update services (Development Mode)
 @y
 ## Automatically update services (Development Mode)
@@ -91,104 +85,60 @@ Create a file named `Dockerfile.dev` in your project root with the following con
 Create a file named `Dockerfile.dev` in your project root with the following content:
 @z
 
-@x
-```dockerfile
-# =========================================
+@x within code
 # Stage 1: Develop the Vue.js Application
-# =========================================
-ARG NODE_VERSION=23.11.0-alpine
 @y
-```dockerfile
-# =========================================
 # Stage 1: Develop the Vue.js Application
-# =========================================
-ARG NODE_VERSION=23.11.0-alpine
 @z
-
 @x
 # Use a lightweight Node.js image for development
-FROM node:${NODE_VERSION} AS dev
 @y
 # Use a lightweight Node.js image for development
-FROM node:${NODE_VERSION} AS dev
 @z
-
 @x
 # Set environment variable to indicate development mode
-ENV NODE_ENV=development
 @y
 # Set environment variable to indicate development mode
-ENV NODE_ENV=development
 @z
-
 @x
 # Set the working directory inside the container
-WORKDIR /app
 @y
 # Set the working directory inside the container
-WORKDIR /app
 @z
-
 @x
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
 @y
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
 @z
-
 @x
 # Install project dependencies
-RUN --mount=type=cache,target=/root/.npm npm install
 @y
 # Install project dependencies
-RUN --mount=type=cache,target=/root/.npm npm install
 @z
-
 @x
 # Copy the rest of the application source code into the container
-COPY . .
 @y
 # Copy the rest of the application source code into the container
-COPY . .
 @z
-
 @x
 # Change ownership of the application directory to the node user
-RUN chown -R node:node /app
 @y
 # Change ownership of the application directory to the node user
-RUN chown -R node:node /app
 @z
-
 @x
 # Switch to the node user
-USER node
 @y
 # Switch to the node user
-USER node
 @z
-
 @x
 # Expose the port used by the Vite development server
-EXPOSE 5173
 @y
 # Expose the port used by the Vite development server
-EXPOSE 5173
 @z
-
 @x
 # Use a default command, can be overridden in Docker compose.yml file
-CMD [ "npm", "run", "dev", "--", "--host" ]
 @y
 # Use a default command, can be overridden in Docker compose.yml file
-CMD [ "npm", "run", "dev", "--", "--host" ]
-@z
-
-@x
-```
-@y
-```
 @z
 
 @x
@@ -215,69 +165,13 @@ Here’s an example configuration for an Vue.js application:
 Here’s an example configuration for an Vue.js application:
 @z
 
-@x
-```yaml
-services:
-  vuejs-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker-vuejs-sample
-    ports:
-      - "8080:8080"
-@y
-```yaml
-services:
-  vuejs-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker-vuejs-sample
-    ports:
-      - "8080:8080"
-@z
+% snip code...
 
 @x
-  vuejs-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "5173:5173"
-    develop:
-      watch:
-        - path: ./src
-          target: /app/src
-          action: sync
-        - path: ./package.json
-          target: /app/package.json
-          action: restart
-        - path: ./vite.config.js
-          target: /app/vite.config.js
-          action: restart
-```
 - The `vuejs-prod` service builds and serves your static production app using Nginx.
 - The `vuejs-dev` service runs your Vue.js development server with live reload and hot module replacement.
 - `watch` triggers file sync with Compose Watch.
 @y
-  vuejs-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "5173:5173"
-    develop:
-      watch:
-        - path: ./src
-          target: /app/src
-          action: sync
-        - path: ./package.json
-          target: /app/package.json
-          action: restart
-        - path: ./vite.config.js
-          target: /app/vite.config.js
-          action: restart
-```
 - The `vuejs-prod` service builds and serves your static production app using Nginx.
 - The `vuejs-dev` service runs your Vue.js development server with live reload and hot module replacement.
 - `watch` triggers file sync with Compose Watch.
@@ -297,27 +191,7 @@ After completing the previous steps, your project directory should now contain t
 After completing the previous steps, your project directory should now contain the following files:
 @z
 
-@x
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-vuejs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 ### Step 4: Start Compose Watch
@@ -331,15 +205,7 @@ Run the following command from the project root to start the container in watch 
 Run the following command from the project root to start the container in watch mode
 @z
 
-@x
-```console
-$ docker compose watch vuejs-dev
-```
-@y
-```console
-$ docker compose watch vuejs-dev
-```
-@z
+% snip command...
 
 @x
 ### Step 5: Test Compose Watch with Vue.js
@@ -410,12 +276,6 @@ You should see the updated text appear instantly, without needing to rebuild the
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -445,12 +305,6 @@ Here’s what you accomplished:
 With this setup, you're now equipped to build, run, and iterate on your Vue.js app entirely within containers—efficiently and consistently across environments.
 @y
 With this setup, you're now equipped to build, run, and iterate on your Vue.js app entirely within containers—efficiently and consistently across environments.
-@z
-
-@x
----
-@y
----
 @z
 
 @x

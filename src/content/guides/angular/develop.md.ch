@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Use containers for Angular development
@@ -56,12 +57,6 @@ You’ll learn how to:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Automatically update services (Development Mode)
 @y
 ## Automatically update services (Development Mode)
@@ -85,94 +80,55 @@ Create a file named `Dockerfile.dev` in your project root with the following con
 Create a file named `Dockerfile.dev` in your project root with the following content:
 @z
 
-@x
-```dockerfile
-# =========================================
+@x within code
 # Stage 1: Development - Angular Application
-# =========================================
 @y
-```dockerfile
-# =========================================
 # Stage 1: Development - Angular Application
-# =========================================
 @z
-
 @x
 # Define the Node.js version to use (Alpine for a small footprint)
-ARG NODE_VERSION=24.7.0-alpine
 @y
 # Define the Node.js version to use (Alpine for a small footprint)
-ARG NODE_VERSION=24.7.0-alpine
 @z
-
 @x
 # Set the base image for development
-FROM node:${NODE_VERSION} AS dev
 @y
 # Set the base image for development
-FROM node:${NODE_VERSION} AS dev
 @z
-
 @x
 # Set environment variable to indicate development mode
-ENV NODE_ENV=development
 @y
 # Set environment variable to indicate development mode
-ENV NODE_ENV=development
 @z
-
 @x
 # Set the working directory inside the container
-WORKDIR /app
 @y
 # Set the working directory inside the container
-WORKDIR /app
 @z
-
 @x
 # Copy only the dependency files first to optimize Docker caching
-COPY package.json package-lock.json ./
 @y
 # Copy only the dependency files first to optimize Docker caching
-COPY package.json package-lock.json ./
 @z
-
 @x
 # Install dependencies using npm with caching to speed up subsequent builds
-RUN --mount=type=cache,target=/root/.npm npm install
 @y
 # Install dependencies using npm with caching to speed up subsequent builds
-RUN --mount=type=cache,target=/root/.npm npm install
 @z
-
 @x
 # Copy all application source files into the container
-COPY . .
 @y
 # Copy all application source files into the container
-COPY . .
 @z
-
 @x
 # Expose the port Angular uses for the dev server (default is 4200)
-EXPOSE 4200
 @y
 # Expose the port Angular uses for the dev server (default is 4200)
-EXPOSE 4200
 @z
-
 @x
 # Start the Angular dev server and bind it to all network interfaces
-CMD ["npm", "start", "--", "--host=0.0.0.0"]
 @y
 # Start the Angular dev server and bind it to all network interfaces
-CMD ["npm", "start", "--", "--host=0.0.0.0"]
-@z
-
-@x
-```
-@y
-```
 @z
 
 @x
@@ -199,57 +155,13 @@ Here’s an example configuration for an Angular application:
 Here’s an example configuration for an Angular application:
 @z
 
-@x
-```yaml
-services:
-  angular-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker-angular-sample
-    ports:
-      - "8080:8080"
-@y
-```yaml
-services:
-  angular-prod:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: docker-angular-sample
-    ports:
-      - "8080:8080"
-@z
+% snip code...
 
 @x
-  angular-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "4200:4200"
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /app
-```
 - The `angular-prod` service builds and serves your static production app using Nginx.
 - The `angular-dev` service runs your Angular development server with live reload and hot module replacement.
 - `watch` triggers file sync with Compose Watch.
 @y
-  angular-dev:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    ports:
-      - "4200:4200"
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /app
-```
 - The `angular-prod` service builds and serves your static production app using Nginx.
 - The `angular-dev` service runs your Angular development server with live reload and hot module replacement.
 - `watch` triggers file sync with Compose Watch.
@@ -269,27 +181,7 @@ After completing the previous steps, your project directory should now contain t
 After completing the previous steps, your project directory should now contain the following files:
 @z
 
-@x
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 ### Step 4: Start Compose Watch
@@ -303,15 +195,7 @@ Run the following command from the project root to start the container in watch 
 Run the following command from the project root to start the container in watch mode
 @z
 
-@x
-```console
-$ docker compose watch angular-dev
-```
-@y
-```console
-$ docker compose watch angular-dev
-```
-@z
+% snip command...
 
 @x
 ### Step 5: Test Compose Watch with Angular
@@ -382,12 +266,6 @@ You should see the updated text appear instantly, without needing to rebuild the
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -417,12 +295,6 @@ Here’s what you accomplished:
 With this setup, you're now equipped to build, run, and iterate on your Angular app entirely within containers—efficiently and consistently across environments.
 @y
 With this setup, you're now equipped to build, run, and iterate on your Angular app entirely within containers—efficiently and consistently across environments.
-@z
-
-@x
----
-@y
----
 @z
 
 @x

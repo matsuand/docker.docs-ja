@@ -20,12 +20,6 @@ description: Learn how to containerize an Angular application with Docker by cre
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Prerequisites
 @y
 ## Prerequisites
@@ -81,13 +75,13 @@ By the end of this guide, you will:
 - Containerize an Angular application using Docker.
 - Create and optimize a Dockerfile for production builds. 
 - Use multi-stage builds to minimize image size.
-- Serve the application efficiently with a custom NGINX configuration.
+- Serve the application efficiently with a custom Nginx configuration.
 - Build secure and maintainable Docker images by following best practices.
 @y
 - Containerize an Angular application using Docker.
 - Create and optimize a Dockerfile for production builds. 
 - Use multi-stage builds to minimize image size.
-- Serve the application efficiently with a custom NGINX configuration.
+- Serve the application efficiently with a custom Nginx configuration.
 - Build secure and maintainable Docker images by following best practices.
 @z
 
@@ -202,22 +196,26 @@ Let's get started!
 @x
 The CLI will prompt you with a few questions about your app setup.
 For consistency, please use the same responses shown in the example below when prompted:
-| Question                                                   | Answer          |
-|------------------------------------------------------------|-----------------|
-| What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 23.11.0-alpine  |
-| Which package manager do you want to use?                  | npm             |
-| Do you want to run "npm run build" before starting server? | yes             |
-| What directory is your build output to?                    | dist            |
-| What command do you want to use to start the app?          | npm run start   |
-| What port does your server listen on?                      | 8080            |
 @y
 The CLI will prompt you with a few questions about your app setup.
 For consistency, please use the same responses shown in the example below when prompted:
+@z
+
+@x
 | Question                                                   | Answer          |
 |------------------------------------------------------------|-----------------|
 | What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 23.11.0-alpine  |
+| What version of Node do you want to use?                   | 24.12.0-alpine  |
+| Which package manager do you want to use?                  | npm             |
+| Do you want to run "npm run build" before starting server? | yes             |
+| What directory is your build output to?                    | dist            |
+| What command do you want to use to start the app?          | npm run start   |
+| What port does your server listen on?                      | 8080            |
+@y
+| Question                                                   | Answer          |
+|------------------------------------------------------------|-----------------|
+| What application platform does your project use?           | Node            |
+| What version of Node do you want to use?                   | 24.12.0-alpine  |
 | Which package manager do you want to use?                  | npm             |
 | Do you want to run "npm run build" before starting server? | yes             |
 | What directory is your build output to?                    | dist            |
@@ -250,12 +248,6 @@ After completion, your project directory will contain the following new files:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Build the Docker image
 @y
 ## Build the Docker image
@@ -281,11 +273,11 @@ In this step, you’ll improve the Dockerfile and configuration files by followi
 
 @x
 - Use multi-stage builds to keep the final image clean and small  
-- Serve the app using NGINX, a fast and secure web server  
+- Serve the app using Nginx, a fast and secure web server  
 - Improve performance and security by only including what’s needed  
 @y
 - Use multi-stage builds to keep the final image clean and small  
-- Serve the app using NGINX, a fast and secure web server  
+- Serve the app using Nginx, a fast and secure web server  
 - Improve performance and security by only including what’s needed  
 @z
 
@@ -312,9 +304,67 @@ These updates help ensure your app is easy to deploy, fast to load, and producti
 @z
 
 @x
-Copy and replace the contents of your existing `Dockerfile` with the configuration below:
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Node.js Official Image](https://hub.docker.com/_/node) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
 @y
-Copy and replace the contents of your existing `Dockerfile` with the configuration below:
+Before creating a Dockerfile, you need to choose a base image. You can either use the [Node.js Official Image](https://hub.docker.com/_/node) or a Docker Hardened Image (DHI) from the [Hardened Image catalog](https://hub.docker.com/hardened-images/catalog).
+@z
+
+@x
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@y
+Choosing DHI offers the advantage of a production-ready image that is lightweight and secure. For more information, see [Docker Hardened Images](https://docs.docker.com/dhi/).
+@z
+
+@x
+> [!IMPORTANT]
+> This guide uses a stable Node.js LTS image tag that is considered secure when the guide is written. Because new releases and security patches are published regularly, the tag shown here may no longer be the safest option when you follow the guide. Always review the latest available image tags and select a secure, up-to-date version before building or deploying your application.
+>
+> Official Node.js Docker Images: https://hub.docker.com/_/node
+@y
+> [!IMPORTANT]
+> This guide uses a stable Node.js LTS image tag that is considered secure when the guide is written. Because new releases and security patches are published regularly, the tag shown here may no longer be the safest option when you follow the guide. Always review the latest available image tags and select a secure, up-to-date version before building or deploying your application.
+>
+> Official Node.js Docker Images: https://hub.docker.com/_/node
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@z
+
+@x
+1. Sign in to the DHI registry:
+   ```console
+   $ docker login dhi.io
+   ```
+@y
+1. Sign in to the DHI registry:
+   ```console
+   $ docker login dhi.io
+   ```
+@z
+
+@x
+2. Pull the Node.js DHI (check the catalog for available versions):
+   ```console
+   $ docker pull dhi.io/node:24-alpine3.22-dev
+   ```
+@y
+2. Pull the Node.js DHI (check the catalog for available versions):
+   ```console
+   $ docker pull dhi.io/node:24-alpine3.22-dev
+   ```
+@z
+
+@x
+In the following Dockerfile, the `FROM` instruction uses `dhi.io/node:24-alpine3.22-dev` as the base image.
+@y
+In the following Dockerfile, the `FROM` instruction uses `dhi.io/node:24-alpine3.22-dev` as the base image.
 @z
 
 @x
@@ -322,20 +372,150 @@ Copy and replace the contents of your existing `Dockerfile` with the configurati
 # =========================================
 # Stage 1: Build the Angular Application
 # =========================================
+@y
+```dockerfile
 # =========================================
 # Stage 1: Build the Angular Application
 # =========================================
-ARG NODE_VERSION=24.7.0-alpine
+@z
+
+@x
+# Use a lightweight DHI Node.js image for building
+FROM dhi.io/node:24-alpine3.22-dev AS builder
+@y
+# Use a lightweight DHI Node.js image for building
+FROM dhi.io/node:24-alpine3.22-dev AS builder
+@z
+
+@x
+# Set the working directory inside the container
+WORKDIR /app
+@y
+# Set the working directory inside the container
+WORKDIR /app
+@z
+
+@x
+# Copy package-related files first to leverage Docker's caching mechanism
+COPY package.json package-lock.json* ./
+@y
+# Copy package-related files first to leverage Docker's caching mechanism
+COPY package.json package-lock.json* ./
+@z
+
+@x
+# Install project dependencies using npm ci (ensures a clean, reproducible install)
+RUN --mount=type=cache,target=/root/.npm npm ci
+@y
+# Install project dependencies using npm ci (ensures a clean, reproducible install)
+RUN --mount=type=cache,target=/root/.npm npm ci
+@z
+
+@x
+# Copy the rest of the application source code into the container
+COPY . .
+@y
+# Copy the rest of the application source code into the container
+COPY . .
+@z
+
+@x
+# Build the Angular application
+RUN npm run build 
+@y
+# Build the Angular application
+RUN npm run build 
+@z
+
+@x
+# =========================================
+# Stage 2: Prepare Nginx to Serve Static Files
+# =========================================
+@y
+# =========================================
+# Stage 2: Prepare Nginx to Serve Static Files
+# =========================================
+@z
+
+@x
+FROM dhi.io/nginx:1.28.0-alpine3.21-dev AS runner
+@y
+FROM dhi.io/nginx:1.28.0-alpine3.21-dev AS runner
+@z
+
+@x
+# Copy custom Nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+@y
+# Copy custom Nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+@z
+
+@x
+# Copy the static build output from the build stage to Nginx's default HTML serving directory
+COPY --chown=nginx:nginx --from=builder /app/dist/*/browser /usr/share/nginx/html
+@y
+# Copy the static build output from the build stage to Nginx's default HTML serving directory
+COPY --chown=nginx:nginx --from=builder /app/dist/*/browser /usr/share/nginx/html
+@z
+
+@x
+# Use a non-root user for security best practices
+USER nginx
+@y
+# Use a non-root user for security best practices
+USER nginx
+@z
+
+@x
+# Expose port 8080 to allow HTTP traffic
+# Note: The default Nginx container now listens on port 8080 instead of 80 
+EXPOSE 8080
+@y
+# Expose port 8080 to allow HTTP traffic
+# Note: The default Nginx container now listens on port 8080 instead of 80 
+EXPOSE 8080
+@z
+
+@x
+# Start Nginx directly with custom config
+ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
+CMD ["-g", "daemon off;"]
+```
+@y
+# Start Nginx directly with custom config
+ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
+CMD ["-g", "daemon off;"]
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Using the Docker Official Image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the Docker Official Image" >}}
+@z
+
+@x
+Now you need to create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following optimized configuration:
+@y
+Now you need to create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following optimized configuration:
+@z
+
+@x
+```dockerfile
+# =========================================
+# Stage 1: Build the Angular Application
+# =========================================
+ARG NODE_VERSION=24.12.0-alpine
 ARG NGINX_VERSION=alpine3.22
 @y
 ```dockerfile
 # =========================================
 # Stage 1: Build the Angular Application
 # =========================================
-# =========================================
-# Stage 1: Build the Angular Application
-# =========================================
-ARG NODE_VERSION=24.7.0-alpine
+ARG NODE_VERSION=24.12.0-alpine
 ARG NGINX_VERSION=alpine3.22
 @z
 
@@ -357,10 +537,10 @@ WORKDIR /app
 
 @x
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY package.json *package-lock.json* ./
 @y
 # Copy package-related files first to leverage Docker's caching mechanism
-COPY package.json package-lock.json ./
+COPY package.json *package-lock.json* ./
 @z
 
 @x
@@ -404,14 +584,6 @@ FROM nginxinc/nginx-unprivileged:${NGINX_VERSION} AS runner
 @z
 
 @x
-# Use a built-in non-root user for security best practices
-USER nginx
-@y
-# Use a built-in non-root user for security best practices
-USER nginx
-@z
-
-@x
 # Copy custom Nginx config
 COPY nginx.conf /etc/nginx/nginx.conf
 @y
@@ -428,12 +600,20 @@ COPY --chown=nginx:nginx --from=builder /app/dist/*/browser /usr/share/nginx/htm
 @z
 
 @x
+# Use a built-in non-root user for security best practices
+USER nginx
+@y
+# Use a built-in non-root user for security best practices
+USER nginx
+@z
+
+@x
 # Expose port 8080 to allow HTTP traffic
-# Note: The default NGINX container now listens on port 8080 instead of 80 
+# Note: The default Nginx container now listens on port 8080 instead of 80 
 EXPOSE 8080
 @y
 # Expose port 8080 to allow HTTP traffic
-# Note: The default NGINX container now listens on port 8080 instead of 80 
+# Note: The default Nginx container now listens on port 8080 instead of 80 
 EXPOSE 8080
 @z
 
@@ -441,32 +621,36 @@ EXPOSE 8080
 # Start Nginx directly with custom config
 ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
 CMD ["-g", "daemon off;"]
+```
 @y
 # Start Nginx directly with custom config
 ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]
 CMD ["-g", "daemon off;"]
-@z
-
-@x
-```
-@y
 ```
 @z
 
 @x
 > [!NOTE]
-> We are using nginx-unprivileged instead of the standard NGINX image to follow security best practices.
+> We are using nginx-unprivileged instead of the standard Nginx image to follow security best practices.
 > Running as a non-root user in the final image:
 >- Reduces the attack surface
 >- Aligns with Docker’s recommendations for container hardening
 >- Helps comply with stricter security policies in production environments
 @y
 > [!NOTE]
-> We are using nginx-unprivileged instead of the standard NGINX image to follow security best practices.
+> We are using nginx-unprivileged instead of the standard Nginx image to follow security best practices.
 > Running as a non-root user in the final image:
 >- Reduces the attack surface
 >- Aligns with Docker’s recommendations for container hardening
 >- Helps comply with stricter security policies in production environments
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -496,7 +680,7 @@ The `.dockerignore` file tells Docker which files and folders to exclude when bu
 >- Speed up the build process  
 >- Prevent sensitive or unnecessary files (like `.env`, `.git`, or `node_modules`) from being added to the final image.
 >
-> To learn more, visit the [.dockerignore reference](reference/dockerfile.md#dockerignore-file).
+> To learn more, visit the [.dockerignore reference](/reference/dockerfile.md#dockerignore-file).
 @z
 
 @x
@@ -654,9 +838,9 @@ docker-compose*.yml
 @z
 
 @x
-To serve your Angular application efficiently inside the container, you’ll configure NGINX with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
+To serve your Angular application efficiently inside the container, you’ll configure Nginx with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
 @y
-To serve your Angular application efficiently inside the container, you’ll configure NGINX with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
+To serve your Angular application efficiently inside the container, you’ll configure Nginx with a custom setup. This configuration is optimized for performance, browser caching, gzip compression, and support for client-side routing.
 @z
 
 @x
@@ -667,10 +851,10 @@ Create a file named `nginx.conf` in the root of your project directory, and add 
 
 @x
 > [!NOTE]
-> To learn more about configuring NGINX, see the [official NGINX documentation](https://nginx.org/en/docs/).
+> To learn more about configuring Nginx, see the [official Nginx documentation](https://nginx.org/en/docs/).
 @y
 > [!NOTE]
-> To learn more about configuring NGINX, see the [official NGINX documentation](https://nginx.org/en/docs/).
+> To learn more about configuring Nginx, see the [official Nginx documentation](https://nginx.org/en/docs/).
 @z
 
 @x
@@ -705,6 +889,20 @@ http {
 http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
+@z
+
+@x
+    client_body_temp_path /tmp/client_temp;
+    proxy_temp_path       /tmp/proxy_temp_path;
+    fastcgi_temp_path     /tmp/fastcgi_temp;
+    uwsgi_temp_path       /tmp/uwsgi_temp;
+    scgi_temp_path        /tmp/scgi_temp;
+@y
+    client_body_temp_path /tmp/client_temp;
+    proxy_temp_path       /tmp/proxy_temp_path;
+    fastcgi_temp_path     /tmp/fastcgi_temp;
+    uwsgi_temp_path       /tmp/uwsgi_temp;
+    scgi_temp_path        /tmp/scgi_temp;
 @z
 
 @x
@@ -860,10 +1058,10 @@ The updated setup includes:
 @z
 
 @x
-- The updated setup includes a clean, production-ready NGINX configuration tailored specifically for Angular.
+- The updated setup includes a clean, production-ready Nginx configuration tailored specifically for Angular.
 - Efficient multi-stage Docker build, ensuring a small and secure final image.
 @y
-- The updated setup includes a clean, production-ready NGINX configuration tailored specifically for Angular.
+- The updated setup includes a clean, production-ready Nginx configuration tailored specifically for Angular.
 - Efficient multi-stage Docker build, ensuring a small and secure final image.
 @z
 
@@ -904,7 +1102,7 @@ Now that your Dockerfile is configured, you can build the Docker image for your 
 > The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
 @y
 > [!NOTE]
-> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](__SUBDIR__/build/concepts/context/#what-is-a-build-context)).
+> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
 @z
 
 @x
@@ -944,7 +1142,7 @@ What this command does:
 @x
 After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @y
-After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
+After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @z
 
 @x
@@ -1150,7 +1348,7 @@ $ docker compose down
 @y
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](reference/cli/docker/compose/_index.md).
+> reference](/reference/cli/docker/compose/_index.md).
 @z
 
 @x
@@ -1225,14 +1423,14 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
 - [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @y
-- [Multi-stage builds](__SUBDIR__/build/building/multi-stage/) – Learn how to separate build and runtime stages.
-- [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
-- [Build context in Docker](__SUBDIR__/build/concepts/context/) – Learn how context affects image builds.  
-- [`docker init` CLI reference](__SUBDIR__/reference/cli/docker/init/) – Scaffold Docker assets automatically.
-- [`docker build` CLI reference](__SUBDIR__/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
-- [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/images/) – Manage and inspect local Docker images.
-- [`docker compose up` CLI reference](__SUBDIR__/reference/cli/docker/compose/up/) – Start and run multi-container applications.
-- [`docker compose down` CLI reference](__SUBDIR__/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
+- [Multi-stage builds](/build/building/multi-stage/) – Learn how to separate build and runtime stages.
+- [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
+- [Build context in Docker](/build/concepts/context/) – Learn how context affects image builds.  
+- [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
+- [`docker build` CLI reference](/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
+- [`docker images` CLI reference](/reference/cli/docker/images/) – Manage and inspect local Docker images.
+- [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
+- [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @z
 
 @x
