@@ -1,16 +1,13 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-
-SUBDIRS = examples
-
 bases = \
-	_index.md              \
-	checklist.md           \
-	migrate-from-doi.md    \
-	migrate-from-ubuntu.md \
-	migrate-from-wolfi.md  \
-	migrate-with-ai.md
+	_index.md                   \
+	configure-github-actions.md \
+	containerize.md             \
+	deploy.md                   \
+	develop.md                  \
+	run-tests.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -20,6 +20,7 @@ copyfiles = \
 	aside.html           \
 	breadcrumbs.html     \
 	content-default.html \
+	gordon-chat.html     \
 	icon.html            \
 	languages.html       \
 	meta.html            \

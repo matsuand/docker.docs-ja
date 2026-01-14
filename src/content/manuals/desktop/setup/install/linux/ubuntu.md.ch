@@ -4,18 +4,22 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
+description:
+  Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
   quick guide will cover prerequisites, installation methods, and more.
-keywords: install docker ubuntu, ubuntu install docker, install docker on ubuntu,
+keywords:
+  install docker ubuntu, ubuntu install docker, install docker on ubuntu,
   docker install ubuntu, how to install docker on ubuntu, ubuntu docker install, docker
   installation on ubuntu, docker ubuntu install, docker installing ubuntu, installing
   docker on ubuntu, docker desktop for ubuntu
 title: Install Docker Desktop on Ubuntu
 linkTitle: Ubuntu
 @y
-description: Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
+description:
+  Learn how to install, launch, and upgrade Docker Desktop on Ubuntu. This
   quick guide will cover prerequisites, installation methods, and more.
-keywords: install docker ubuntu, ubuntu install docker, install docker on ubuntu,
+keywords:
+  install docker ubuntu, ubuntu install docker, install docker on ubuntu,
   docker install ubuntu, how to install docker on ubuntu, ubuntu docker install, docker
   installation on ubuntu, docker ubuntu install, docker installing ubuntu, installing
   docker on ubuntu, docker desktop for ubuntu

@@ -2,31 +2,25 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-      <span class="font-normal">Page options</span>
+      <span>Copy as Markdown</span>
 @y
-      <span class="font-normal">ページオプション</span>
+      <span>マークダウンとしてコピー</span>
 @z
 
 @x
-          <div class="text-base">Copy page as Markdown for LLMs</div>
+      <span>Open Markdown</span>
 @y
-          <div class="text-base">LLM 向けマークダウンとしてページをコピー</div>
+      <span>マークダウンを開く</span>
 @z
 
 @x
-          <div class="text-base">View page as plain text</div>
+      <span>Ask Docs AI</span>
 @y
-          <div class="text-base">プレーンテキストとしてページ表示</div>
+      <span>Docs AI に聞く</span>
 @z
 
 @x
-          <div class="text-base">Ask questions with Docs AI</div>
+      <span>Open in Claude</span>
 @y
-          <div class="text-base">Docs AI に質問</div>
-@z
-
-@x
-          <div class="text-base">Open in Claude</div>
-@y
-          <div class="text-base">Claude を開く</div>
+      <span>Claude で開く</span>
 @z

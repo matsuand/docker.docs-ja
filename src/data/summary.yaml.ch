@@ -569,10 +569,10 @@ Compose sbom:
 
 @x
 Compose SDK:
-  requires: Docker Compose [5.00.0](https://github.com/docker/compose/releases/tag/v5.00.0) and later
+  requires: Docker Compose [5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0) and later
 @y
 Compose SDK:
-  requires: Docker Compose [5.00.0](https://github.com/docker/compose/releases/tag/v5.00.0) およびそれ以降
+  requires: Docker Compose [5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0) およびそれ以降
 @z
 
 @x

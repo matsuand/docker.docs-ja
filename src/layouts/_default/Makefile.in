@@ -312,6 +312,8 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
+	api.markdown.md    \
+	cli.markdown.md    \
 	index.llms.txt     \
 	list.html          \
 	single.html        \

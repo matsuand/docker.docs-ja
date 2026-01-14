@@ -44,6 +44,18 @@ keywords: migrate, docker hardened images, dhi, migration guide
 @z
 
 @x
+    - title: Migrate from Ubuntu
+      description: Manual migration guide for transitioning from Ubuntu-based images to Docker Hardened Images.
+      icon: upgrade
+      link: /dhi/migration/migrate-from-ubuntu/
+@y
+    - title: Ubuntu からの移行
+      description: Manual migration guide for transitioning from Ubuntu-based images to Docker Hardened Images.
+      icon: upgrade
+      link: __SUBDIR__/dhi/migration/migrate-from-ubuntu/
+@z
+
+@x
     - title: Migrate from Wolfi
       description: Manual migration guide for transitioning from Wolfi-based images to Docker Hardened Images.
       icon: transform

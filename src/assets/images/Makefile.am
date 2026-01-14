@@ -5,6 +5,7 @@
 SUBDIRS = guides learning-paths
 
 copyfiles = \
+	ask-ai-logo.svg                 \
 	docker-docs-white-condensed.svg \
 	docker-docs-white.svg           \
 	home-abstract-faint.svg         \

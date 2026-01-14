@@ -5,38 +5,40 @@
 
 @x
 title: DMR REST API
-description: Reference documentation for the Docker Model Runner REST API endpoints and usage examples.
+description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI and Ollama compatibility.
 @y
 title: DMR REST API
-description: Reference documentation for the Docker Model Runner REST API endpoints and usage examples.
+description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI and Ollama compatibility.
 @z
 
 @x
-keywords: Docker, ai, model runner, rest api, openai, endpoints, documentation
+keywords: Docker, ai, model runner, rest api, openai, ollama, endpoints, documentation, cline, continue, cursor
 @y
-keywords: Docker, ai, model runner, rest api, openai, endpoints, documentation
+keywords: Docker, ai, model runner, rest api, openai, ollama, endpoints, documentation, cline, continue, cursor
 @z
 
 @x
 Once Model Runner is enabled, new API endpoints are available. You can use
-these endpoints to interact with a model programmatically.
+these endpoints to interact with a model programmatically. Docker Model Runner
+provides compatibility with both OpenAI and Ollama API formats.
 @y
 Once Model Runner is enabled, new API endpoints are available. You can use
-these endpoints to interact with a model programmatically.
+these endpoints to interact with a model programmatically. Docker Model Runner
+provides compatibility with both OpenAI and Ollama API formats.
 @z
 
 @x
-### Determine the base URL
+## Determine the base URL
 @y
-### Determine the base URL
+## Determine the base URL
 @z
 
 @x
-The base URL to interact with the endpoints depends
-on how you run Docker:
+The base URL to interact with the endpoints depends on how you run Docker and
+which API format you're using.
 @y
-The base URL to interact with the endpoints depends
-on how you run Docker:
+The base URL to interact with the endpoints depends on how you run Docker and
+which API format you're using.
 @z
 
 @x
@@ -48,13 +50,23 @@ on how you run Docker:
 @z
 
 @x
-- From containers: `http://model-runner.docker.internal/`
-- From host processes: `http://localhost:12434/`, assuming TCP host access is
-  enabled on the default port (12434).
+| Access from | Base URL |
+|-------------|----------|
+| Containers | `http://model-runner.docker.internal` |
+| Host processes (TCP) | `http://localhost:12434` |
 @y
-- From containers: `http://model-runner.docker.internal/`
-- From host processes: `http://localhost:12434/`, assuming TCP host access is
-  enabled on the default port (12434).
+| Access from | Base URL |
+|-------------|----------|
+| Containers | `http://model-runner.docker.internal` |
+| Host processes (TCP) | `http://localhost:12434` |
+@z
+
+@x
+> [!NOTE]
+> TCP host access must be enabled. See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
+@y
+> [!NOTE]
+> TCP host access must be enabled. See [Enable Docker Model Runner](get-started.md#enable-docker-model-runner-in-docker-desktop).
 @z
 
 @x
@@ -66,11 +78,15 @@ on how you run Docker:
 @z
 
 @x
-- From containers: `http://172.17.0.1:12434/` (with `172.17.0.1` representing the host gateway address)
-- From host processes: `http://localhost:12434/`
+| Access from | Base URL |
+|-------------|----------|
+| Containers | `http://172.17.0.1:12434` |
+| Host processes | `http://localhost:12434` |
 @y
-- From containers: `http://172.17.0.1:12434/` (with `172.17.0.1` representing the host gateway address)
-- From host processes: `http://localhost:12434/`
+| Access from | Base URL |
+|-------------|----------|
+| Containers | `http://172.17.0.1:12434` |
+| Host processes | `http://localhost:12434` |
 @z
 
 @x
@@ -83,7 +99,7 @@ on how you run Docker:
 > extra_hosts:
 >   - "model-runner.docker.internal:host-gateway"
 > ```
-> Then you can access the Docker Model Runner APIs at http://model-runner.docker.internal:12434/
+> Then you can access the Docker Model Runner APIs at `http://model-runner.docker.internal:12434/`
 @y
 > [!NOTE]
 > The `172.17.0.1` interface may not be available by default to containers
@@ -94,7 +110,7 @@ on how you run Docker:
 > extra_hosts:
 >   - "model-runner.docker.internal:host-gateway"
 > ```
-> Then you can access the Docker Model Runner APIs at http://model-runner.docker.internal:12434/
+> Then you can access the Docker Model Runner APIs at `http://model-runner.docker.internal:12434/`
 @z
 
 @x
@@ -106,181 +122,327 @@ on how you run Docker:
 @z
 
 @x
-### Available DMR endpoints
+### Base URLs for third-party tools
 @y
-### Available DMR endpoints
+### Base URLs for third-party tools
 @z
 
 @x
-- Create a model:
+When configuring third-party tools that expect OpenAI-compatible APIs, use these base URLs:
 @y
-- Create a model:
+When configuring third-party tools that expect OpenAI-compatible APIs, use these base URLs:
 @z
 
 @x
-  ```text
-  POST /models/create
-  ```
+| Tool type | Base URL format |
+|-----------|-----------------|
+| OpenAI SDK / clients | `http://localhost:12434/engines/v1` |
+| Ollama-compatible clients | `http://localhost:12434` |
 @y
-  ```text
-  POST /models/create
-  ```
+| Tool type | Base URL format |
+|-----------|-----------------|
+| OpenAI SDK / clients | `http://localhost:12434/engines/v1` |
+| Ollama-compatible clients | `http://localhost:12434` |
 @z
 
 @x
-- List models:
+See [IDE and tool integrations](ide-integrations.md) for specific configuration examples.
 @y
-- List models:
+See [IDE and tool integrations](ide-integrations.md) for specific configuration examples.
 @z
 
 @x
-  ```text
-  GET /models
-  ```
+## Supported APIs
 @y
-  ```text
-  GET /models
-  ```
+## Supported APIs
 @z
 
 @x
-- Get a model:
+Docker Model Runner supports multiple API formats:
 @y
-- Get a model:
+Docker Model Runner supports multiple API formats:
 @z
 
 @x
-  ```text
-  GET /models/{namespace}/{name}
-  ```
+| API | Description | Use case |
+|-----|-------------|----------|
+| [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
+| [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
+| [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @y
-  ```text
-  GET /models/{namespace}/{name}
-  ```
+| API | Description | Use case |
+|-----|-------------|----------|
+| [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
+| [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
+| [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @z
 
 @x
-- Delete a local model:
+## OpenAI-compatible API
 @y
-- Delete a local model:
+## OpenAI-compatible API
 @z
 
 @x
-  ```text
-  DELETE /models/{namespace}/{name}
-  ```
+DMR implements the OpenAI API specification for maximum compatibility with existing tools and frameworks.
 @y
-  ```text
-  DELETE /models/{namespace}/{name}
-  ```
+DMR implements the OpenAI API specification for maximum compatibility with existing tools and frameworks.
 @z
 
 @x
-### Available OpenAI endpoints
+### Endpoints
 @y
-### Available OpenAI endpoints
+### Endpoints
 @z
 
 @x
-DMR supports the following OpenAI endpoints:
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/engines/v1/models` | GET | [List models](https://platform.openai.com/docs/api-reference/models/list) |
+| `/engines/v1/models/{namespace}/{name}` | GET | [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve) |
+| `/engines/v1/chat/completions` | POST | [Create chat completion](https://platform.openai.com/docs/api-reference/chat/create) |
+| `/engines/v1/completions` | POST | [Create completion](https://platform.openai.com/docs/api-reference/completions/create) |
+| `/engines/v1/embeddings` | POST | [Create embeddings](https://platform.openai.com/docs/api-reference/embeddings/create) |
 @y
-DMR supports the following OpenAI endpoints:
-@z
-
-@x
-- [List models](https://platform.openai.com/docs/api-reference/models/list):
-@y
-- [List models](https://platform.openai.com/docs/api-reference/models/list):
-@z
-
-@x
-  ```text
-  GET /engines/llama.cpp/v1/models
-  ```
-@y
-  ```text
-  GET /engines/llama.cpp/v1/models
-  ```
-@z
-
-@x
-- [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve):
-@y
-- [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve):
-@z
-
-@x
-  ```text
-  GET /engines/llama.cpp/v1/models/{namespace}/{name}
-  ```
-@y
-  ```text
-  GET /engines/llama.cpp/v1/models/{namespace}/{name}
-  ```
-@z
-
-@x
-- [List chat completions](https://platform.openai.com/docs/api-reference/chat/list):
-@y
-- [List chat completions](https://platform.openai.com/docs/api-reference/chat/list):
-@z
-
-@x
-  ```text
-  POST /engines/llama.cpp/v1/chat/completions
-  ```
-@y
-  ```text
-  POST /engines/llama.cpp/v1/chat/completions
-  ```
-@z
-
-@x
-- [Create completions](https://platform.openai.com/docs/api-reference/completions/create):
-@y
-- [Create completions](https://platform.openai.com/docs/api-reference/completions/create):
-@z
-
-@x
-  ```text
-  POST /engines/llama.cpp/v1/completions
-  ```
-@y
-  ```text
-  POST /engines/llama.cpp/v1/completions
-  ```
-@z
-
-@x
-- [Create embeddings](https://platform.openai.com/docs/api-reference/embeddings/create):
-@y
-- [Create embeddings](https://platform.openai.com/docs/api-reference/embeddings/create):
-@z
-
-@x
-  ```text
-  POST /engines/llama.cpp/v1/embeddings
-  ```
-@y
-  ```text
-  POST /engines/llama.cpp/v1/embeddings
-  ```
-@z
-
-@x
-To call these endpoints via a Unix socket (`/var/run/docker.sock`), prefix their path
-with `/exp/vDD4.40`.
-@y
-To call these endpoints via a Unix socket (`/var/run/docker.sock`), prefix their path
-with `/exp/vDD4.40`.
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/engines/v1/models` | GET | [List models](https://platform.openai.com/docs/api-reference/models/list) |
+| `/engines/v1/models/{namespace}/{name}` | GET | [Retrieve model](https://platform.openai.com/docs/api-reference/models/retrieve) |
+| `/engines/v1/chat/completions` | POST | [Create chat completion](https://platform.openai.com/docs/api-reference/chat/create) |
+| `/engines/v1/completions` | POST | [Create completion](https://platform.openai.com/docs/api-reference/completions/create) |
+| `/engines/v1/embeddings` | POST | [Create embeddings](https://platform.openai.com/docs/api-reference/embeddings/create) |
 @z
 
 @x
 > [!NOTE]
-> You can omit `llama.cpp` from the path. For example: `POST /engines/v1/chat/completions`.
+> You can optionally include the engine name in the path: `/engines/llama.cpp/v1/chat/completions`.
+> This is useful when running multiple inference engines.
 @y
 > [!NOTE]
-> You can omit `llama.cpp` from the path. For example: `POST /engines/v1/chat/completions`.
+> You can optionally include the engine name in the path: `/engines/llama.cpp/v1/chat/completions`.
+> This is useful when running multiple inference engines.
+@z
+
+@x
+### Model name format
+@y
+### Model name format
+@z
+
+@x
+When specifying a model in API requests, use the full model identifier including the namespace:
+@y
+When specifying a model in API requests, use the full model identifier including the namespace:
+@z
+
+@x
+```json
+{
+  "model": "ai/smollm2",
+  "messages": [...]
+}
+```
+@y
+```json
+{
+  "model": "ai/smollm2",
+  "messages": [...]
+}
+```
+@z
+
+@x
+Common model name formats:
+- Docker Hub models: `ai/smollm2`, `ai/llama3.2`, `ai/qwen2.5-coder`
+- Tagged versions: `ai/smollm2:360M-Q4_K_M`
+- Custom models: `myorg/mymodel`
+@y
+Common model name formats:
+- Docker Hub models: `ai/smollm2`, `ai/llama3.2`, `ai/qwen2.5-coder`
+- Tagged versions: `ai/smollm2:360M-Q4_K_M`
+- Custom models: `myorg/mymodel`
+@z
+
+@x
+### Supported parameters
+@y
+### Supported parameters
+@z
+
+@x
+The following OpenAI API parameters are supported:
+@y
+The following OpenAI API parameters are supported:
+@z
+
+@x
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier. |
+| `messages` | array | Required for chat completions. The conversation history. |
+| `prompt` | string | Required for completions. The prompt text. |
+| `max_tokens` | integer | Maximum tokens to generate. |
+| `temperature` | float | Sampling temperature (0.0-2.0). |
+| `top_p` | float | Nucleus sampling parameter (0.0-1.0). |
+| `stream` | Boolean | Enable streaming responses. |
+| `stop` | string/array | Stop sequences. |
+| `presence_penalty` | float | Presence penalty (-2.0 to 2.0). |
+| `frequency_penalty` | float | Frequency penalty (-2.0 to 2.0). |
+@y
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier. |
+| `messages` | array | Required for chat completions. The conversation history. |
+| `prompt` | string | Required for completions. The prompt text. |
+| `max_tokens` | integer | Maximum tokens to generate. |
+| `temperature` | float | Sampling temperature (0.0-2.0). |
+| `top_p` | float | Nucleus sampling parameter (0.0-1.0). |
+| `stream` | Boolean | Enable streaming responses. |
+| `stop` | string/array | Stop sequences. |
+| `presence_penalty` | float | Presence penalty (-2.0 to 2.0). |
+| `frequency_penalty` | float | Frequency penalty (-2.0 to 2.0). |
+@z
+
+@x
+### Limitations and differences from OpenAI
+@y
+### Limitations and differences from OpenAI
+@z
+
+@x
+Be aware of these differences when using DMR's OpenAI-compatible API:
+@y
+Be aware of these differences when using DMR's OpenAI-compatible API:
+@z
+
+@x
+| Feature | DMR behavior |
+|---------|--------------|
+| API key | Not required. DMR ignores the `Authorization` header. |
+| Function calling | Supported with llama.cpp for compatible models. |
+| Vision | Supported for multi-modal models (e.g., LLaVA). |
+| JSON mode | Supported via `response_format: {"type": "json_object"}`. |
+| Logprobs | Supported. |
+| Token counting | Uses the model's native token encoder, which may differ from OpenAI's. |
+@y
+| Feature | DMR behavior |
+|---------|--------------|
+| API key | Not required. DMR ignores the `Authorization` header. |
+| Function calling | Supported with llama.cpp for compatible models. |
+| Vision | Supported for multi-modal models (e.g., LLaVA). |
+| JSON mode | Supported via `response_format: {"type": "json_object"}`. |
+| Logprobs | Supported. |
+| Token counting | Uses the model's native token encoder, which may differ from OpenAI's. |
+@z
+
+@x
+## Ollama-compatible API
+@y
+## Ollama-compatible API
+@z
+
+@x
+DMR also provides Ollama-compatible endpoints for tools and frameworks built for Ollama.
+@y
+DMR also provides Ollama-compatible endpoints for tools and frameworks built for Ollama.
+@z
+
+@x
+### Endpoints
+@y
+### Endpoints
+@z
+
+@x
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/tags` | GET | List available models |
+| `/api/show` | POST | Show model information |
+| `/api/chat` | POST | Generate chat completion |
+| `/api/generate` | POST | Generate completion |
+| `/api/embeddings` | POST | Generate embeddings |
+@y
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/tags` | GET | List available models |
+| `/api/show` | POST | Show model information |
+| `/api/chat` | POST | Generate chat completion |
+| `/api/generate` | POST | Generate completion |
+| `/api/embeddings` | POST | Generate embeddings |
+@z
+
+@x
+### Example: Chat with Ollama API
+@y
+### Example: Chat with Ollama API
+@z
+
+@x
+```bash
+curl http://localhost:12434/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+@y
+```bash
+curl http://localhost:12434/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+@z
+
+@x
+### Example: List models
+@y
+### Example: List models
+@z
+
+@x
+```bash
+curl http://localhost:12434/api/tags
+```
+@y
+```bash
+curl http://localhost:12434/api/tags
+```
+@z
+
+@x
+## DMR native endpoints
+@y
+## DMR native endpoints
+@z
+
+@x
+These endpoints are specific to Docker Model Runner for model management:
+@y
+These endpoints are specific to Docker Model Runner for model management:
+@z
+
+@x
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/models/create` | POST | Pull/create a model |
+| `/models` | GET | List local models |
+| `/models/{namespace}/{name}` | GET | Get model details |
+| `/models/{namespace}/{name}` | DELETE | Delete a local model |
+@y
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/models/create` | POST | Pull/create a model |
+| `/models` | GET | List local models |
+| `/models/{namespace}/{name}` | GET | Get model details |
+| `/models/{namespace}/{name}` | DELETE | Delete a local model |
 @z
 
 @x
@@ -310,7 +472,7 @@ To call the `chat/completions` OpenAI endpoint from within another container usi
 @z
 
 @x
-curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
+curl http://model-runner.docker.internal/engines/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d '{
         "model": "ai/smollm2",
@@ -326,7 +488,7 @@ curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
         ]
     }'
 @y
-curl http://model-runner.docker.internal/engines/llama.cpp/v1/chat/completions \
+curl http://model-runner.docker.internal/engines/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d '{
         "model": "ai/smollm2",
@@ -392,38 +554,38 @@ To call the `chat/completions` OpenAI endpoint from the host via TCP:
 @z
 
 @x
-  curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
+curl http://localhost:12434/engines/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+      "model": "ai/smollm2",
+      "messages": [
+          {
+              "role": "system",
+              "content": "You are a helpful assistant."
+          },
+          {
+              "role": "user",
+              "content": "Please write 500 words about the fall of Rome."
+          }
+      ]
+  }'
 ```
 @y
-  curl http://localhost:12434/engines/llama.cpp/v1/chat/completions \
-    -H "Content-Type: application/json" \
-    -d '{
-        "model": "ai/smollm2",
-        "messages": [
-            {
-                "role": "system",
-                "content": "You are a helpful assistant."
-            },
-            {
-                "role": "user",
-                "content": "Please write 500 words about the fall of Rome."
-            }
-        ]
-    }'
+curl http://localhost:12434/engines/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+      "model": "ai/smollm2",
+      "messages": [
+          {
+              "role": "system",
+              "content": "You are a helpful assistant."
+          },
+          {
+              "role": "user",
+              "content": "Please write 500 words about the fall of Rome."
+          }
+      ]
+  }'
 ```
 @z
 
@@ -449,7 +611,7 @@ To call the `chat/completions` OpenAI endpoint through the Docker socket from th
 
 @x
 curl --unix-socket $HOME/.docker/run/docker.sock \
-    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
+    localhost/exp/vDD4.40/engines/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d '{
         "model": "ai/smollm2",
@@ -467,7 +629,7 @@ curl --unix-socket $HOME/.docker/run/docker.sock \
 ```
 @y
 curl --unix-socket $HOME/.docker/run/docker.sock \
-    localhost/exp/vDD4.40/engines/llama.cpp/v1/chat/completions \
+    localhost/exp/vDD4.40/engines/v1/chat/completions \
     -H "Content-Type: application/json" \
     -d '{
         "model": "ai/smollm2",
@@ -483,4 +645,160 @@ curl --unix-socket $HOME/.docker/run/docker.sock \
         ]
     }'
 ```
+@z
+
+@x
+### Streaming responses
+@y
+### Streaming responses
+@z
+
+@x
+To receive streaming responses, set `stream: true`:
+@y
+To receive streaming responses, set `stream: true`:
+@z
+
+@x
+```bash
+curl http://localhost:12434/engines/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+      "model": "ai/smollm2",
+      "stream": true,
+      "messages": [
+          {"role": "user", "content": "Count from 1 to 10"}
+      ]
+  }'
+```
+@y
+```bash
+curl http://localhost:12434/engines/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+      "model": "ai/smollm2",
+      "stream": true,
+      "messages": [
+          {"role": "user", "content": "Count from 1 to 10"}
+      ]
+  }'
+```
+@z
+
+@x
+## Using with OpenAI SDKs
+@y
+## Using with OpenAI SDKs
+@z
+
+@x
+### Python
+@y
+### Python
+@z
+
+@x
+```python
+from openai import OpenAI
+@y
+```python
+from openai import OpenAI
+@z
+
+@x
+client = OpenAI(
+    base_url="http://localhost:12434/engines/v1",
+    api_key="not-needed"  # DMR doesn't require an API key
+)
+@y
+client = OpenAI(
+    base_url="http://localhost:12434/engines/v1",
+    api_key="not-needed"  # DMR doesn't require an API key
+)
+@z
+
+@x
+response = client.chat.completions.create(
+    model="ai/smollm2",
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)
+@y
+response = client.chat.completions.create(
+    model="ai/smollm2",
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)
+@z
+
+@x
+print(response.choices[0].message.content)
+```
+@y
+print(response.choices[0].message.content)
+```
+@z
+
+@x
+### Node.js
+@y
+### Node.js
+@z
+
+@x
+```javascript
+import OpenAI from 'openai';
+@y
+```javascript
+import OpenAI from 'openai';
+@z
+
+@x
+const client = new OpenAI({
+  baseURL: 'http://localhost:12434/engines/v1',
+  apiKey: 'not-needed',
+});
+@y
+const client = new OpenAI({
+  baseURL: 'http://localhost:12434/engines/v1',
+  apiKey: 'not-needed',
+});
+@z
+
+@x
+const response = await client.chat.completions.create({
+  model: 'ai/smollm2',
+  messages: [{ role: 'user', content: 'Hello!' }],
+});
+@y
+const response = await client.chat.completions.create({
+  model: 'ai/smollm2',
+  messages: [{ role: 'user', content: 'Hello!' }],
+});
+@z
+
+@x
+console.log(response.choices[0].message.content);
+```
+@y
+console.log(response.choices[0].message.content);
+```
+@z
+
+@x
+## What's next
+@y
+## What's next
+@z
+
+@x
+- [IDE and tool integrations](ide-integrations.md) - Configure Cline, Continue, Cursor, and other tools
+- [Configuration options](configuration.md) - Adjust context size and runtime parameters
+- [Inference engines](inference-engines.md) - Learn about llama.cpp and vLLM options
+@y
+- [IDE and tool integrations](ide-integrations.md) - Configure Cline, Continue, Cursor, and other tools
+- [Configuration options](configuration.md) - Adjust context size and runtime parameters
+- [Inference engines](inference-engines.md) - Learn about llama.cpp and vLLM options
 @z

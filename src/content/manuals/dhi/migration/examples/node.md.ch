@@ -23,18 +23,20 @@ This example shows how to migrate a Node.js application to Docker Hardened Image
 
 @x
 The following examples show Dockerfiles before and after migration to Docker
-Hardened Images. Each example includes four variations:
+Hardened Images. Each example includes five variations:
 @y
 以下の例では Docker Hardened イメージへの移行前後における Dockerfile を示します。
-例は 4 種類あります。
+例は 5 種類あります。
 @z
 
 @x
+- Before (Ubuntu): A sample Dockerfile using Ubuntu-based images, before migrating to DHI
 - Before (Wolfi): A sample Dockerfile using Wolfi distribution images, before migrating to DHI
 - Before (DOI): A sample Dockerfile using Docker Official Images, before migrating to DHI
 - After (multi-stage): A sample Dockerfile after migrating to DHI with multi-stage builds (recommended for minimal, secure images)
 - After (single-stage): A sample Dockerfile after migrating to DHI with single-stage builds (simpler but results in a larger image with a broader attack surface)
 @y
+- 移行前 (Ubuntu): サンプルの Dockerfile は Ubuntu ベースのイメージを用いているものであり、DHI への移行前のものです。
 - 移行前 (Wolfi): サンプルの Dockerfile は Wolfi ディストリビューションイメージを用いているものであり、DHI への移行前のものです。
 - 移行前 (DOI): サンプルの Dockerfile Docker 公式イメージを用いているものであり、DHI への移行前のものです。
 - 移行後 (マルチステージ): サンプルの Dockerfile を DHI へ移行した後のものであり、マルチステージビルドとしています (最小でセキュアなイメージとして推奨されます)。
@@ -68,9 +70,19 @@ Hardened Images. Each example includes four variations:
 
 @x
 {{< tabs >}}
-{{< tab name="Before (Wolfi)" >}}
+{{< tab name="Before (Ubuntu)" >}}
 @y
 {{< tabs >}}
+{{< tab name="移行前 (Ubuntu)" >}}
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< tab name="Before (Wolfi)" >}}
+@y
+{{< /tab >}}
 {{< tab name="移行前 (Wolfi)" >}}
 @z
 

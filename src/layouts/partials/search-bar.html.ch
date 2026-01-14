@@ -13,10 +13,16 @@
     @click="window.location.href = '__SUBDIR__/search/?q=' + $refs.searchBarInput.value;"
 @z
 
-@x
-        <button onclick="askAI('search-bar-input')" class="link">Ask AI</button
-@y
         <button onclick="askAI('search-bar-input')" class="link">AI に質問</button
+@x
+        Start typing to search or try
+@y
+        Start typing to search or try
+@z
+@x
+        " class="link">Ask AI</button>.
+@y
+        " class="link">AI に質問</button>.
 @z
 
 @x

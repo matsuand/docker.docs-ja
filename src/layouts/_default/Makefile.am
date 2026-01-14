@@ -16,6 +16,8 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
+	api.markdown.md    \
+	cli.markdown.md    \
 	index.llms.txt     \
 	list.html          \
 	single.html        \

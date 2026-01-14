@@ -5,10 +5,14 @@
 SUBDIRS = images
 
 bases = \
-	_index.md        \
-	api-reference.md \
-	examples.md      \
-	get-started.md
+	_index.md            \
+	api-reference.md     \
+	configuration.md     \
+	examples.md          \
+	get-started.md       \
+	ide-integrations.md  \
+	inference-engines.md \
+	openwebui-integration.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
