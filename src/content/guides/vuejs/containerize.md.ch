@@ -288,6 +288,7 @@ In the following Dockerfile, the `FROM` instructions use `dhi.io/node:24-alpine3
 @x within code
 # Stage 1: Build the Vue.js Application
 @y
+# Stage 1: Build the Vue.js Application
 @z
 @x
 # Use a lightweight DHI Node.js image for building

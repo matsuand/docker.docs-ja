@@ -30,11 +30,6 @@
 						各プラットフォーム向けの Docker Desktop をダウンロード、または
 						<a href="get-started/get-docker/" class="text-blue dark:text-blue-400 hover:underline">はじめようガイド</a> を参照してください。
 @z
-@x
-									<span x-text="getPrimaryLabel()">Download Docker Desktop</span>
-@y
-									<span x-text="getPrimaryLabel()">Docker Desktop のダウンロード</span>
-@z
 
 @x
 						<h2 class="text-xl">Docker Hardened Images, now free to use</h1>

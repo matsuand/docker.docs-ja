@@ -148,19 +148,163 @@ metadata: # Optional - author, license, readme
 @z
 
 @x
-Use `sub_agents` to break work into tasks. The root agent assigns work to a
-sub-agent and gets results back while staying in control.
+Agents support two different delegation mechanisms. Choose based on whether you
+need task results or conversation control.
 @y
-Use `sub_agents` to break work into tasks. The root agent assigns work to a
-sub-agent and gets results back while staying in control.
+Agents support two different delegation mechanisms. Choose based on whether you
+need task results or conversation control.
 @z
 
 @x
-Use `handoffs` to transfer the entire conversation to a different agent. The new
-agent takes over completely.
+#### Sub_agents: Hierarchical task delegation
 @y
-Use `handoffs` to transfer the entire conversation to a different agent. The new
-agent takes over completely.
+#### Sub_agents: Hierarchical task delegation
+@z
+
+@x
+Use `sub_agents` for hierarchical task delegation. The parent agent assigns a
+specific task to a child agent using the `transfer_task` tool. The child
+executes in its own context and returns results. The parent maintains control
+and can delegate to multiple agents in sequence.
+@y
+Use `sub_agents` for hierarchical task delegation. The parent agent assigns a
+specific task to a child agent using the `transfer_task` tool. The child
+executes in its own context and returns results. The parent maintains control
+and can delegate to multiple agents in sequence.
+@z
+
+@x
+This works well for structured workflows where you need to combine results from
+specialists, or when tasks have clear boundaries. Each delegated task runs
+independently and reports back to the parent.
+@y
+This works well for structured workflows where you need to combine results from
+specialists, or when tasks have clear boundaries. Each delegated task runs
+independently and reports back to the parent.
+@z
+
+@x
+**Example:**
+@y
+**Example:**
+@z
+
+@x
+```yaml
+agents:
+  root:
+    sub_agents: [researcher, analyst]
+    instruction: |
+      Delegate research to researcher.
+      Delegate analysis to analyst.
+      Combine results and present findings.
+```
+@y
+```yaml
+agents:
+  root:
+    sub_agents: [researcher, analyst]
+    instruction: |
+      Delegate research to researcher.
+      Delegate analysis to analyst.
+      Combine results and present findings.
+```
+@z
+
+@x
+Root calls: `transfer_task(agent="researcher", task="Find pricing data")`. The
+researcher completes the task and returns results to root.
+@y
+Root calls: `transfer_task(agent="researcher", task="Find pricing data")`. The
+researcher completes the task and returns results to root.
+@z
+
+@x
+#### Handoffs: Conversation transfer
+@y
+#### Handoffs: Conversation transfer
+@z
+
+@x
+Use `handoffs` to transfer conversation control to a different agent. When an
+agent uses the `handoff` tool, the new agent takes over completely. The
+original agent steps back until someone hands back to it.
+@y
+Use `handoffs` to transfer conversation control to a different agent. When an
+agent uses the `handoff` tool, the new agent takes over completely. The
+original agent steps back until someone hands back to it.
+@z
+
+@x
+This works well when different agents should own different parts of an ongoing
+conversation, or when specialists need to collaborate as peers without a
+coordinator managing every step.
+@y
+This works well when different agents should own different parts of an ongoing
+conversation, or when specialists need to collaborate as peers without a
+coordinator managing every step.
+@z
+
+@x
+**Example:**
+@y
+**Example:**
+@z
+
+@x
+```yaml
+agents:
+  generalist:
+    handoffs: [database_expert, security_expert]
+    instruction: |
+      Help with general development questions.
+      If the conversation moves to database optimization,
+      hand off to database_expert.
+      If security concerns arise, hand off to security_expert.
+@y
+```yaml
+agents:
+  generalist:
+    handoffs: [database_expert, security_expert]
+    instruction: |
+      Help with general development questions.
+      If the conversation moves to database optimization,
+      hand off to database_expert.
+      If security concerns arise, hand off to security_expert.
+@z
+
+@x
+  database_expert:
+    handoffs: [generalist, security_expert]
+    instruction: Handle database design and optimization.
+@y
+  database_expert:
+    handoffs: [generalist, security_expert]
+    instruction: Handle database design and optimization.
+@z
+
+@x
+  security_expert:
+    handoffs: [generalist, database_expert]
+    instruction: Review code for security vulnerabilities.
+```
+@y
+  security_expert:
+    handoffs: [generalist, database_expert]
+    instruction: Review code for security vulnerabilities.
+```
+@z
+
+@x
+When the user asks about query performance, generalist executes:
+`handoff(agent="database_expert")`. The database expert now owns the
+conversation and can continue working with the user directly, or hand off to
+security_expert if the discussion shifts to SQL injection concerns.
+@y
+When the user asks about query performance, generalist executes:
+`handoff(agent="database_expert")`. The database expert now owns the
+conversation and can continue working with the user directly, or hand off to
+security_expert if the discussion shifts to SQL injection concerns.
 @z
 
 @x

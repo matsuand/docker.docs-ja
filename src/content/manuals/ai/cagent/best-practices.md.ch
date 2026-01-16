@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Best practices
 description: Patterns and techniques for building effective cagent agents
@@ -55,25 +57,7 @@ through it if needed.
 **Don't do this:**
 @z
 
-@x
-```yaml
-reviewer:
-  instruction: |
-    Run validation: `docker buildx bake validate`
-    Check the output for errors.
-  toolsets:
-    - type: shell
-```
-@y
-```yaml
-reviewer:
-  instruction: |
-    Run validation: `docker buildx bake validate`
-    Check the output for errors.
-  toolsets:
-    - type: shell
-```
-@z
+% snip code...
 
 @x
 The validation output goes directly into context. If it's large, the agent fails
@@ -89,37 +73,7 @@ with a context overflow error.
 **Do this:**
 @z
 
-@x
-```yaml
-reviewer:
-  instruction: |
-    Run validation and save output:
-    `docker buildx bake validate > validation.log 2>&1`
-@y
-```yaml
-reviewer:
-  instruction: |
-    Run validation and save output:
-    `docker buildx bake validate > validation.log 2>&1`
-@z
-
-@x
-    Read validation.log to check for errors.
-    The file can be large - read the first 2000 lines.
-    Errors usually appear at the beginning.
-  toolsets:
-    - type: filesystem
-    - type: shell
-```
-@y
-    Read validation.log to check for errors.
-    The file can be large - read the first 2000 lines.
-    Errors usually appear at the beginning.
-  toolsets:
-    - type: filesystem
-    - type: shell
-```
-@z
+% snip code...
 
 @x
 The output goes to a file, not context. The agent reads what it needs using the
@@ -159,83 +113,7 @@ and delegates to specialists. Each specialist focuses on one thing.
 **Example: Documentation writing team**
 @z
 
-@x
-```yaml
-agents:
-  root:
-    description: Technical writing coordinator
-    instruction: |
-      Coordinate documentation work:
-      1. Delegate to writer for content creation
-      2. Delegate to editor for formatting polish
-      3. Delegate to reviewer for validation
-      4. Loop back through editor if reviewer finds issues
-    sub_agents: [writer, editor, reviewer]
-    toolsets: [filesystem, todo]
-@y
-```yaml
-agents:
-  root:
-    description: Technical writing coordinator
-    instruction: |
-      Coordinate documentation work:
-      1. Delegate to writer for content creation
-      2. Delegate to editor for formatting polish
-      3. Delegate to reviewer for validation
-      4. Loop back through editor if reviewer finds issues
-    sub_agents: [writer, editor, reviewer]
-    toolsets: [filesystem, todo]
-@z
-
-@x
-  writer:
-    description: Creates and edits documentation content
-    instruction: |
-      Write clear, practical documentation.
-      Focus on content quality - the editor handles formatting.
-    toolsets: [filesystem, think]
-@y
-  writer:
-    description: Creates and edits documentation content
-    instruction: |
-      Write clear, practical documentation.
-      Focus on content quality - the editor handles formatting.
-    toolsets: [filesystem, think]
-@z
-
-@x
-  editor:
-    description: Polishes formatting and style
-    instruction: |
-      Fix formatting issues, wrap lines, run prettier.
-      Remove AI-isms and polish style.
-      Don't change meaning or add content.
-    toolsets: [filesystem, shell]
-@y
-  editor:
-    description: Polishes formatting and style
-    instruction: |
-      Fix formatting issues, wrap lines, run prettier.
-      Remove AI-isms and polish style.
-      Don't change meaning or add content.
-    toolsets: [filesystem, shell]
-@z
-
-@x
-  reviewer:
-    description: Runs validation tools
-    instruction: |
-      Run validation suite, report failures.
-    toolsets: [filesystem, shell]
-```
-@y
-  reviewer:
-    description: Runs validation tools
-    instruction: |
-      Run validation suite, report failures.
-    toolsets: [filesystem, shell]
-```
-@z
+% snip code...
 
 @x
 Each agent has clear responsibilities. The writer doesn't worry about line
@@ -243,6 +121,20 @@ wrapping. The editor doesn't generate content. The reviewer just runs tools.
 @y
 Each agent has clear responsibilities. The writer doesn't worry about line
 wrapping. The editor doesn't generate content. The reviewer just runs tools.
+@z
+
+@x
+This example uses `sub_agents` where root delegates discrete tasks and gets
+results back. The root agent maintains control and coordinates all work. For
+different coordination patterns where agents should transfer control to each
+other, see the `handoffs` mechanism in the [configuration
+reference](./reference/config.md#task-delegation-versus-conversation-handoff).
+@y
+This example uses `sub_agents` where root delegates discrete tasks and gets
+results back. The root agent maintains control and coordinates all work. For
+different coordination patterns where agents should transfer control to each
+other, see the `handoffs` mechanism in the [configuration
+reference](./reference/config.md#task-delegation-versus-conversation-handoff).
 @z
 
 @x
@@ -305,32 +197,15 @@ Don't index everything. Index what's relevant for the agent's work.
 Don't index everything. Index what's relevant for the agent's work.
 @z
 
-@x
-```yaml
+@x within code
 # Too broad - indexes entire codebase
-rag:
-  codebase:
-    docs: [./]
 @y
-```yaml
 # Too broad - indexes entire codebase
-rag:
-  codebase:
-    docs: [./]
 @z
-
 @x
 # Better - indexes only relevant directories
-rag:
-  codebase:
-    docs: [./src/api, ./docs, ./examples]
-```
 @y
 # Better - indexes only relevant directories
-rag:
-  codebase:
-    docs: [./src/api, ./docs, ./examples]
-```
 @z
 
 @x
@@ -353,28 +228,16 @@ Process more chunks per API call and make parallel requests.
 Process more chunks per API call and make parallel requests.
 @z
 
-@x
-```yaml
-strategies:
-  - type: chunked-embeddings
-    embedding_model: openai/text-embedding-3-small
+@x within code
     batch_size: 50 # More chunks per API call
     max_embedding_concurrency: 10 # Parallel requests
     chunking:
       size: 2000 # Larger chunks = fewer total chunks
-      overlap: 150
-```
 @y
-```yaml
-strategies:
-  - type: chunked-embeddings
-    embedding_model: openai/text-embedding-3-small
     batch_size: 50 # More chunks per API call
     max_embedding_concurrency: 10 # Parallel requests
     chunking:
       size: 2000 # Larger chunks = fewer total chunks
-      overlap: 150
-```
 @z
 
 @x
@@ -397,23 +260,7 @@ If you need exact term matching (function names, error messages, identifiers),
 BM25 is fast and runs locally without API calls.
 @z
 
-@x
-```yaml
-strategies:
-  - type: bm25
-    database: ./bm25.db
-    chunking:
-      size: 1500
-```
-@y
-```yaml
-strategies:
-  - type: bm25
-    database: ./bm25.db
-    chunking:
-      size: 1500
-```
-@z
+% snip code...
 
 @x
 Combine with embeddings using hybrid retrieval when you need both semantic
@@ -455,39 +302,7 @@ character. A focused 90-line how-to becomes a 200-line reference.
 **Build this into instructions:**
 @z
 
-@x
-```yaml
-writer:
-  instruction: |
-    When updating documentation:
-@y
-```yaml
-writer:
-  instruction: |
-    When updating documentation:
-@z
-
-@x
-    1. Understand the current document's scope and length
-    2. Match that character - don't transform minimal guides into tutorials
-    3. Add only what's genuinely missing
-    4. Value brevity - not every topic needs comprehensive coverage
-@y
-    1. Understand the current document's scope and length
-    2. Match that character - don't transform minimal guides into tutorials
-    3. Add only what's genuinely missing
-    4. Value brevity - not every topic needs comprehensive coverage
-@z
-
-@x
-    Good additions fill gaps. Bad additions change the document's character.
-    When in doubt, add less rather than more.
-```
-@y
-    Good additions fill gaps. Bad additions change the document's character.
-    When in doubt, add less rather than more.
-```
-@z
+% snip code...
 
 @x
 Tell your agents explicitly to preserve the existing document's scope. Without
