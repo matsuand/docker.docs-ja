@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Verify a Docker Hardened Image or chart
@@ -191,15 +192,7 @@ To list attestations for a mirrored DHI image:
 > `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @z
 
-@x
-```console
-$ docker scout attest list dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker scout attest list dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 This command shows all available attestations, including SBOMs, provenance, vulnerability reports, and more.
@@ -219,19 +212,7 @@ To retrieve a specific attestation, use the `--predicate-type` flag with the ful
 To retrieve a specific attestation, use the `--predicate-type` flag with the full predicate type URI:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -251,19 +232,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/python:3.13
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/python:3.13
-```
-@z
+% snip command...
 
 @x
 To retrieve only the predicate body:
@@ -271,21 +240,7 @@ To retrieve only the predicate body:
 To retrieve only the predicate body:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 For example:
@@ -293,21 +248,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  dhi.io/python:3.13
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  dhi.io/python:3.13
-```
-@z
+% snip command...
 
 @x
 ### Validate the attestation with Docker Scout
@@ -321,17 +262,7 @@ To validate the attestation using Docker Scout, you can use the `--verify` flag:
 To validate the attestation using Docker Scout, you can use the `--verify` flag:
 @z
 
-@x
-```console
-$ docker scout attest get dhi.io/<image>:<tag> \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@y
-```console
-$ docker scout attest get dhi.io/<image>:<tag> \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -353,17 +284,7 @@ For example, to verify the SBOM attestation for the `dhi.io/node:20.19-debian12`
 For example, to verify the SBOM attestation for the `dhi.io/node:20.19-debian12` image:
 @z
 
-@x
-```console
-$ docker scout attest get dhi.io/node:20.19-debian12 \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@y
-```console
-$ docker scout attest get dhi.io/node:20.19-debian12 \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@z
+% snip command...
 
 @x
 #### Handle missing transparency log entries
@@ -377,15 +298,7 @@ When using `--verify`, you may sometimes see an error like:
 When using `--verify`, you may sometimes see an error like:
 @z
 
-@x
-```text
-ERROR no matching signatures: signature not found in transparency log
-```
-@y
-```text
-ERROR no matching signatures: signature not found in transparency log
-```
-@z
+% snip output...
 
 @x
 This occurs because Docker Hardened Images don't always record attestations in
@@ -419,21 +332,7 @@ To skip the transparency log check and validate against Docker's key, use the
 `--skip-tlog` flag:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/<image>:<tag> \
-  --verify --skip-tlog
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  dhi.io/<image>:<tag> \
-  --verify --skip-tlog
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -477,21 +376,7 @@ When using the `--verify` flag, it also prints the corresponding
 [cosign](https://docs.sigstore.dev/) command to verify the image signature:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --verify \
-  dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --verify \
-  dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -511,21 +396,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --verify \
-  dhi.io/python:3.13
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --verify \
-  dhi.io/python:3.13
-```
-@z
+% snip command...
 
 @x
 If verification succeeds, Docker Scout prints the full `cosign verify` command.
@@ -539,19 +410,7 @@ Example output:
 Example output:
 @z
 
-@x
-```console
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v cosign verify ...
-```
-@y
-```console
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v cosign verify ...
-```
-@z
+% snip command...
 
 @x
 > [!IMPORTANT]
@@ -560,12 +419,6 @@ Example output:
 > and the Docker Scout registry.
 >
 > For example:
->
-> ```console
-> $ docker login dhi.io
-> $ docker login registry.scout.docker.com
-> $ cosign verify ...
-> ```
 @y
 > [!IMPORTANT]
 >
@@ -573,13 +426,9 @@ Example output:
 > and the Docker Scout registry.
 >
 > For example:
->
-> ```console
-> $ docker login dhi.io
-> $ docker login registry.scout.docker.com
-> $ cosign verify ...
-> ```
 @z
+
+% snip command...
 
 @x
 ## Verify Helm chart attestations with Docker Scout
@@ -609,31 +458,15 @@ To list attestations for a DHI Helm chart:
 To list attestations for a DHI Helm chart:
 @z
 
-@x
-```console
-$ docker scout attest list oci://dhi.io/<chart>:<version>
-```
-@y
-```console
-$ docker scout attest list oci://dhi.io/<chart>:<version>
-```
-@z
+% snip command...
 
 @x
-For example, to list attestations for the Redis HA chart:
+For example, to list attestations for the external-dns chart:
 @y
-For example, to list attestations for the Redis HA chart:
+For example, to list attestations for the external-dns chart:
 @z
 
-@x
-```console
-$ docker scout attest list oci://dhi.io/redis-ha-chart:0.1.0
-```
-@y
-```console
-$ docker scout attest list oci://dhi.io/redis-ha-chart:0.1.0
-```
-@z
+% snip command...
 
 @x
 This command shows all available chart attestations, including SBOMs, provenance, vulnerability reports, and more.
@@ -653,19 +486,7 @@ To retrieve a specific attestation from a Helm chart, use the `--predicate-type`
 To retrieve a specific attestation from a Helm chart, use the `--predicate-type` flag with the full predicate type URI:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  oci://dhi.io/<chart>:<version>
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  oci://dhi.io/<chart>:<version>
-```
-@z
+% snip command...
 
 @x
 For example:
@@ -673,19 +494,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  oci://dhi.io/redis-ha-chart:0.1.0
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  oci://dhi.io/redis-ha-chart:0.1.0
-```
-@z
+% snip command...
 
 @x
 To retrieve only the predicate body:
@@ -693,21 +502,7 @@ To retrieve only the predicate body:
 To retrieve only the predicate body:
 @z
 
-@x
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  oci://dhi.io/<chart>:<version>
-```
-@y
-```console
-$ docker scout attest get \
-  --predicate-type https://cyclonedx.org/bom/v1.6 \
-  --predicate \
-  oci://dhi.io/<chart>:<version>
-```
-@z
+% snip command...
 
 @x
 ### Validate chart attestations with Docker Scout
@@ -721,35 +516,15 @@ To validate a chart attestation using Docker Scout, use the `--verify` flag:
 To validate a chart attestation using Docker Scout, use the `--verify` flag:
 @z
 
-@x
-```console
-$ docker scout attest get oci://dhi.io/<chart>:<version> \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@y
-```console
-$ docker scout attest get oci://dhi.io/<chart>:<version> \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@z
+% snip command...
 
 @x
-For example, to verify the SBOM attestation for the Redis HA chart:
+For example, to verify the SBOM attestation for the external-dns chart:
 @y
-For example, to verify the SBOM attestation for the Redis HA chart:
+For example, to verify the SBOM attestation for the external-dns chart:
 @z
 
-@x
-```console
-$ docker scout attest get oci://dhi.io/redis-ha-chart:0.1.0 \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@y
-```console
-$ docker scout attest get oci://dhi.io/redis-ha-chart:0.1.0 \
-   --predicate-type https://scout.docker.com/sbom/v0.1 --verify
-```
-@z
+% snip command...
 
 @x
 The same `--skip-tlog` flag described in [Handle missing transparency log
