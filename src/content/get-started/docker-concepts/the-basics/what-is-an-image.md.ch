@@ -100,23 +100,26 @@ Docker Hub が提供するのはさまざまなイメージであり、そこに
 
 @x
 - [Docker Official Images](https://hub.docker.com/search?badges=official) - a curated set of Docker repositories, serve as the starting point for the majority of users, and are some of the most secure on Docker Hub
+- [Docker Hardened Images](https://hub.docker.com/hardened-images/catalog) - minimal, secure, production-ready images with near-zero CVEs, designed to reduce attack surface and simplify compliance. Free and open source under Apache 2.0
 - [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher) - high-quality images from commercial publishers verified by Docker
 - [Docker-Sponsored Open Source](https://hub.docker.com/search?badges=open_source) - images published and maintained by open-source projects sponsored by Docker through Docker's open source program
 @y
 - [Docker 公式イメージ](https://hub.docker.com/search?badges=official) - Docker が監修するリポジトリセットです。
   非常に多くのユーザーがこのイメージをベースとして利用しています。
   Docker Hub の中でも最も安全なイメージです。
+- [Docker Hardened イメージ](https://hub.docker.com/hardened-images/catalog) - minimal, secure, production-ready images with near-zero CVEs, designed to reduce attack surface and simplify compliance. Free and open source under Apache 2.0
 - [Docker 認定公開者](https://hub.docker.com/search?badges=verified_publisher) (Docker Verified Publishers) - Docker 社が認定する商用公開者による高品質なイメージです。
 - [Docker がスポンサーとなっているオープンソース](https://hub.docker.com/search?badges=open_source) - Docker のオープンソースプログラムを通じたオープンソースプロジェクトが公開管理するイメージ。
 @z
 
 @x
-For example, [Redis](https://hub.docker.com/_/redis) and [Memcached](https://hub.docker.com/_/memcached) are a few popular ready-to-go Docker Official Images. You can download these images and have these services up and running in a matter of seconds. There are also base images, like the [Node.js](https://hub.docker.com/_/node) Docker image, that you can use as a starting point and add your own files and configurations.
+For example, [Redis](https://hub.docker.com/_/redis) and [Memcached](https://hub.docker.com/_/memcached) are a few popular ready-to-go Docker Official Images. You can download these images and have these services up and running in a matter of seconds. There are also base images, like the [Node.js](https://hub.docker.com/_/node) Docker image, that you can use as a starting point and add your own files and configurations. For production workloads requiring enhanced security, Docker Hardened Images offer minimal variants of popular images like Node.js, Python, and Go.
 @y
 たとえば [Redis](https://hub.docker.com/_/redis) や [Memcached](https://hub.docker.com/_/memcached) は、即座に利用できる人気の Docker 公式イメージです。
 このイメージをダウンロードすれば、ほんの数秒でそのサービスを起動することができます。
 また [Node.js](https://hub.docker.com/_/node) のようなベースイメージもあります。
 これをベースとして利用すれば、独自のファイルや設定を加えていくことができます。
+強固なセキュリティを必要とする本番環境の作業に向けて、Docker Hardened イメージは Node.js、Python、Go といった人気のイメージを最小サイズにて提供します。
 @z
 
 @x

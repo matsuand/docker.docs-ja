@@ -90,6 +90,22 @@ Docker Hub はご自身のイメージを保存する場所となると同時に
 @z
 
 @x
+When choosing base images, Docker Hub offers two categories of trusted, Docker-maintained images:
+@y
+ベースイメージを選ぶにあたって、Docker Hub は Docker 社メンテナンスによる信頼のおけるイメージを二種類提供しています。
+@z
+
+@x
+- [Docker Official Images (DOI)](/manuals/docker-hub/image-library/trusted-content.md#docker-official-images) – Curated images for popular software, following best practices and regularly updated.
+- [Docker Hardened Images (DHI)](/manuals/dhi/_index.md) – Minimal, secure, production-ready images with near-zero CVEs, designed to reduce attack surface and simplify compliance. DHI images are free and open source under Apache 2.0.
+@y
+- [Docker 公式イメージ (Docker Official Images; DOI)](manuals/docker-hub/image-library/trusted-content.md#docker-official-images) – 人気のソフトウェアを厳選したイメージ。
+  ベストプラクティスに従い定期的に更新されます。
+- [Docker Hardened イメージ (Docker Hardened Images; DHI)](manuals/dhi/_index.md) – コンパクトにまとめられたセキュアな実運用向けイメージであり、CVE はほぼゼロ、攻撃面を廃しコンプライアンスを単純化するように設計されています。
+  DHI イメージは無償であり Apache 2.0 に基づくオープンソースです。
+@z
+
+@x
 In [Develop with containers](develop-with-containers.md), you used the following images that came from Docker Hub, each of which are [Docker Official Images](/manuals/docker-hub/image-library/trusted-content.md#docker-official-images):
 @y
 [コンテナーを使った開発](develop-with-containers.md) では Docker Hub から入手した以下のイメージを利用しました。
@@ -109,9 +125,17 @@ In [Develop with containers](develop-with-containers.md), you used the following
 @z
 
 @x
-Explore the full catalog of [Docker Official Images](https://hub.docker.com/search?badges=official), [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher), and [Docker Sponsored Open Source Software](https://hub.docker.com/search?badges=open_source) images to see more of what there is to run and build on.
+Explore the full catalog of trusted content on Docker Hub:
+- [Docker Official Images](https://hub.docker.com/search?badges=official) – Curated images for popular software
+- [Docker Hardened Images](https://hub.docker.com/hardened-images/catalog) – Security-hardened, minimal production images (also available at [dhi.io](https://dhi.io))
+- [Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher) – Images from verified software vendors
+- [Docker Sponsored Open Source](https://hub.docker.com/search?badges=open_source) – Images from sponsored OSS projects
 @y
-[Docker 公式イメージ](https://hub.docker.com/search?badges=official)、[Docker Verified Publishers](https://hub.docker.com/search?badges=verified_publisher), [Docker Sponsored Open Source Software](https://hub.docker.com/search?badges=open_source) イメージの内容をいろいろ探ってみて、実行やビルドができるものにどのようなものがあるのかを確認してみてください。
+Docker Hub 上の信頼できる以下のコンテンツを確認してください。
+- [Docker 公式イメージ](https://hub.docker.com/search?badges=official) – 人気の高いソフトウェアから厳選されたイメージ。
+- [Docker Hardened イメージ](https://hub.docker.com/hardened-images/catalog) – セキュリティ的に堅牢で最小の本番環境向けイメージ ([dhi.io](https://dhi.io) からも入手可能)。
+- [Docker 認定公開者](https://hub.docker.com/search?badges=verified_publisher) – 認定公開者が提供するイメージ。
+- [Docker 支援のオープンソース](https://hub.docker.com/search?badges=open_source) – Docker 社が支援する OSS プロジェクトのイメージ。
 @z
 
 @x

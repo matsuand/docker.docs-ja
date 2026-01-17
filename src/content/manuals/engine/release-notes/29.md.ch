@@ -36,6 +36,56 @@ For more information about:
 @z
 
 @x
+## 29.1.5
+@y
+## 29.1.5
+@z
+
+@x
+{{< release-date date="2026-01-16" >}}
+@y
+{{< release-date date="2026-01-16" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.1.5 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.5)
+- [moby/moby, 29.1.5 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.5)
+@y
+- [docker/cli, 29.1.5 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.1.5)
+- [moby/moby, 29.1.5 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.1.5)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Go runtime to [1.25.6](https://go.dev/doc/devel/release#go1.25.6). [moby/moby#51860](https://github.com/moby/moby/pull/51860), [docker/cli#6750](https://github.com/docker/cli/pull/6750)
+@y
+- Update Go runtime to [1.25.6](https://go.dev/doc/devel/release#go1.25.6). [moby/moby#51860](https://github.com/moby/moby/pull/51860), [docker/cli#6750](https://github.com/docker/cli/pull/6750)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fixed a regression where established network connections could be disrupted during a container's shutdown grace period. [moby/moby#51843](https://github.com/moby/moby/pull/51843)
+@y
+- Fixed a regression where established network connections could be disrupted during a container's shutdown grace period. [moby/moby#51843](https://github.com/moby/moby/pull/51843)
+@z
+
+@x
 ## 29.1.4
 @y
 ## 29.1.4
