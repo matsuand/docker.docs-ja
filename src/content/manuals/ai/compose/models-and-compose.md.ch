@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Define AI Models in Docker Compose applications
@@ -79,33 +80,7 @@ To define models in your Compose application, use the `models` top-level element
 To define models in your Compose application, use the `models` top-level element:
 @z
 
-@x
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      - llm
-@y
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      - llm
-@z
-
-@x
-models:
-  llm:
-    model: ai/smollm2
-```
-@y
-models:
-  llm:
-    model: ai/smollm2
-```
-@z
+% snip code...
 
 @x
 This example defines:
@@ -129,27 +104,7 @@ Models support various configuration options:
 Models support various configuration options:
 @z
 
-@x
-```yaml
-models:
-  llm:
-    model: ai/smollm2
-    context_size: 1024
-    runtime_flags:
-      - "--a-flag"
-      - "--another-flag=42"
-```
-@y
-```yaml
-models:
-  llm:
-    model: ai/smollm2
-    context_size: 1024
-    runtime_flags:
-      - "--a-flag"
-      - "--another-flag=42"
-```
-@z
+% snip code...
 
 @x
 Common configuration options include:
@@ -215,39 +170,7 @@ The short syntax is the simplest way to bind a model to a service:
 The short syntax is the simplest way to bind a model to a service:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: my-app
-    models:
-      - llm
-      - embedding-model
-@y
-```yaml
-services:
-  app:
-    image: my-app
-    models:
-      - llm
-      - embedding-model
-@z
-
-@x
-models:
-  llm:
-    model: ai/smollm2
-  embedding-model:
-    model: ai/all-minilm
-```
-@y
-models:
-  llm:
-    model: ai/smollm2
-  embedding-model:
-    model: ai/all-minilm
-```
-@z
+% snip code...
 
 @x
 With short syntax, the platform automatically generates environment variables based on the model name:
@@ -275,47 +198,7 @@ The long syntax allows you to customize environment variable names:
 The long syntax allows you to customize environment variable names:
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: my-app
-    models:
-      llm:
-        endpoint_var: AI_MODEL_URL
-        model_var: AI_MODEL_NAME
-      embedding-model:
-        endpoint_var: EMBEDDING_URL
-        model_var: EMBEDDING_NAME
-@y
-```yaml
-services:
-  app:
-    image: my-app
-    models:
-      llm:
-        endpoint_var: AI_MODEL_URL
-        model_var: AI_MODEL_NAME
-      embedding-model:
-        endpoint_var: EMBEDDING_URL
-        model_var: EMBEDDING_NAME
-@z
-
-@x
-models:
-  llm:
-    model: ai/smollm2
-  embedding-model:
-    model: ai/all-minilm
-```
-@y
-models:
-  llm:
-    model: ai/smollm2
-  embedding-model:
-    model: ai/all-minilm
-```
-@z
+% snip code...
 
 @x
 With this configuration, your service receives:
@@ -351,43 +234,7 @@ When [Docker Model Runner is enabled](/manuals/ai/model-runner/_index.md):
 When [Docker Model Runner is enabled](manuals/ai/model-runner/_index.md):
 @z
 
-@x
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      llm:
-        endpoint_var: AI_MODEL_URL
-        model_var: AI_MODEL_NAME
-@y
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      llm:
-        endpoint_var: AI_MODEL_URL
-        model_var: AI_MODEL_NAME
-@z
-
-@x
-models:
-  llm:
-    model: ai/smollm2
-    context_size: 4096
-    runtime_flags:
-      - "--no-prefill-assistant"
-```
-@y
-models:
-  llm:
-    model: ai/smollm2
-    context_size: 4096
-    runtime_flags:
-      - "--no-prefill-assistant"
-```
-@z
+% snip code...
 
 @x
 Docker Model Runner will:
@@ -413,41 +260,7 @@ The same Compose file can run on cloud providers that support Compose models:
 The same Compose file can run on cloud providers that support Compose models:
 @z
 
-@x
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      - llm
-@y
-```yaml
-services:
-  chat-app:
-    image: my-chat-app
-    models:
-      - llm
-@z
-
-@x
-models:
-  llm:
-    model: ai/smollm2
-    # Cloud-specific configurations
-    x-cloud-options:
-      - "cloud.instance-type=gpu-small"
-      - "cloud.region=us-west-2"
-```
-@y
-models:
-  llm:
-    model: ai/smollm2
-    # Cloud-specific configurations
-    x-cloud-options:
-      - "cloud.instance-type=gpu-small"
-      - "cloud.region=us-west-2"
-```
-@z
+% snip code...
 
 @x
 Cloud providers might:
@@ -481,50 +294,18 @@ Below are some example configurations for various use cases.
 ### Development
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      dev_model:
-        endpoint_var: DEV_URL
-        model_var: DEV_MODEL
-@y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      dev_model:
-        endpoint_var: DEV_URL
-        model_var: DEV_MODEL
-@z
-
-@x
-models:
-  dev_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
+@x within code
       - "--verbose"                       # Set verbosity level to infinity
       - "--verbose-prompt"                # Print a verbose prompt before generation
       - "--log-prefix"                    # Enable prefix in log messages
       - "--log-timestamps"                # Enable timestamps in log messages
       - "--log-colors"                    # Enable colored logging
-```
 @y
-models:
-  dev_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
       - "--verbose"                       # Set verbosity level to infinity
       - "--verbose-prompt"                # Print a verbose prompt before generation
       - "--log-prefix"                    # Enable prefix in log messages
       - "--log-timestamps"                # Enable timestamps in log messages
       - "--log-colors"                    # Enable colored logging
-```
 @z
 
 @x
@@ -533,52 +314,20 @@ models:
 ### Conservative with disabled reasoning
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      conservative_model:
-        endpoint_var: CONSERVATIVE_URL
-        model_var: CONSERVATIVE_MODEL
+@x within code
+      - "--temp"                # Temperature
 @y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      conservative_model:
-        endpoint_var: CONSERVATIVE_URL
-        model_var: CONSERVATIVE_MODEL
+      - "--temp"                # Temperature
 @z
-
 @x
-models:
-  conservative_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0.1"
       - "--top-k"               # Top-k sampling
-      - "1"
-      - "--reasoning-budget"    # Disable reasoning
-      - "0"
-```
 @y
-models:
-  conservative_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0.1"
       - "--top-k"               # Top-k sampling
-      - "1"
+@z
+@x
       - "--reasoning-budget"    # Disable reasoning
-      - "0"
-```
+@y
+      - "--reasoning-budget"    # Disable reasoning
 @z
 
 @x
@@ -587,48 +336,15 @@ models:
 ### Creative with high randomness
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      creative_model:
-        endpoint_var: CREATIVE_URL
-        model_var: CREATIVE_MODEL
+@x within code
+      - "--temp"                # Temperature
 @y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      creative_model:
-        endpoint_var: CREATIVE_URL
-        model_var: CREATIVE_MODEL
+      - "--temp"                # Temperature
 @z
-
 @x
-models:
-  creative_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "1"
       - "--top-p"               # Top-p sampling
-      - "0.9"
-```
 @y
-models:
-  creative_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "1"
       - "--top-p"               # Top-p sampling
-      - "0.9"
-```
 @z
 
 @x
@@ -637,48 +353,15 @@ models:
 ### Highly deterministic
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      deterministic_model:
-        endpoint_var: DET_URL
-        model_var: DET_MODEL
+@x within code
+      - "--temp"                # Temperature
 @y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      deterministic_model:
-        endpoint_var: DET_URL
-        model_var: DET_MODEL
+      - "--temp"                # Temperature
 @z
-
 @x
-models:
-  deterministic_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0"
       - "--top-k"               # Top-k sampling
-      - "1"
-```
 @y
-models:
-  deterministic_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0"
       - "--top-k"               # Top-k sampling
-      - "1"
-```
 @z
 
 @x
@@ -687,46 +370,15 @@ models:
 ### Concurrent processing
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      concurrent_model:
-        endpoint_var: CONCURRENT_URL
-        model_var: CONCURRENT_MODEL
+@x within code
+      - "--threads"             # Number of threads to use during generation
 @y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      concurrent_model:
-        endpoint_var: CONCURRENT_URL
-        model_var: CONCURRENT_MODEL
+      - "--threads"             # Number of threads to use during generation
 @z
-
 @x
-models:
-  concurrent_model:
-    model: ai/model
-    context_size: 2048
-    runtime_flags:
-      - "--threads"             # Number of threads to use during generation
-      - "8"
       - "--mlock"               # Lock memory to prevent swapping
-```
 @y
-models:
-  concurrent_model:
-    model: ai/model
-    context_size: 2048
-    runtime_flags:
-      - "--threads"             # Number of threads to use during generation
-      - "8"
       - "--mlock"               # Lock memory to prevent swapping
-```
 @z
 
 @x
@@ -735,49 +387,66 @@ models:
 ### Rich vocabulary model
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: app
-    models:
-      rich_vocab_model:
-        endpoint_var: RICH_VOCAB_URL
-        model_var: RICH_VOCAB_MODEL
+@x within code
+      - "--temp"                # Temperature
 @y
-```yaml
-services:
-  app:
-    image: app
-    models:
-      rich_vocab_model:
-        endpoint_var: RICH_VOCAB_URL
-        model_var: RICH_VOCAB_MODEL
+      - "--temp"                # Temperature
+@z
+@x
+      - "--top-p"               # Top-p sampling
+@y
+      - "--top-p"               # Top-p sampling
 @z
 
 @x
-models:
-  rich_vocab_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0.1"
-      - "--top-p"               # Top-p sampling
-      - "0.9"
-```
+### Embeddings
 @y
-models:
-  rich_vocab_model:
-    model: ai/model
-    context_size: 4096
-    runtime_flags:
-      - "--temp"                # Temperature
-      - "0.1"
-      - "--top-p"               # Top-p sampling
-      - "0.9"
-```
+### Embeddings
 @z
+
+@x
+When using embedding models with the `/v1/embeddings` endpoint, you must include the `--embeddings` runtime flag for the model to be properly configured.
+@y
+When using embedding models with the `/v1/embeddings` endpoint, you must include the `--embeddings` runtime flag for the model to be properly configured.
+@z
+
+@x within code
+      - "--embeddings"          # Required for embedding models
+@y
+      - "--embeddings"          # Required for embedding models
+@z
+
+@x
+## Alternative configuration with provider services
+@y
+## Alternative configuration with provider services
+@z
+
+@x
+> [!IMPORTANT]
+>
+> This approach is deprecated. Use the [`models` top-level element](#basic-model-definition) instead.
+@y
+> [!IMPORTANT]
+>
+> This approach is deprecated. Use the [`models` top-level element](#basic-model-definition) instead.
+@z
+
+@x
+You can also use the `provider` service type, which allows you to declare platform capabilities required by your application.
+For AI models, you can use the `model` type to declare model dependencies.
+@y
+You can also use the `provider` service type, which allows you to declare platform capabilities required by your application.
+For AI models, you can use the `model` type to declare model dependencies.
+@z
+
+@x
+To define a model provider:
+@y
+To define a model provider:
+@z
+
+% snip code...
 
 @x
 ## Reference

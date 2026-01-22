@@ -2,29 +2,30 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: DMR REST API
-description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI and Ollama compatibility.
+description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI, Anthropic, and Ollama compatibility.
 @y
 title: DMR REST API
-description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI and Ollama compatibility.
+description: Reference documentation for the Docker Model Runner REST API endpoints, including OpenAI, Anthropic, and Ollama compatibility.
 @z
 
 @x
-keywords: Docker, ai, model runner, rest api, openai, ollama, endpoints, documentation, cline, continue, cursor
+keywords: Docker, ai, model runner, rest api, openai, anthropic, ollama, endpoints, documentation, cline, continue, cursor
 @y
-keywords: Docker, ai, model runner, rest api, openai, ollama, endpoints, documentation, cline, continue, cursor
+keywords: Docker, ai, model runner, rest api, openai, anthropic, ollama, endpoints, documentation, cline, continue, cursor
 @z
 
 @x
 Once Model Runner is enabled, new API endpoints are available. You can use
 these endpoints to interact with a model programmatically. Docker Model Runner
-provides compatibility with both OpenAI and Ollama API formats.
+provides compatibility with OpenAI, Anthropic, and Ollama API formats.
 @y
 Once Model Runner is enabled, new API endpoints are available. You can use
 these endpoints to interact with a model programmatically. Docker Model Runner
-provides compatibility with both OpenAI and Ollama API formats.
+provides compatibility with OpenAI, Anthropic, and Ollama API formats.
 @z
 
 @x
@@ -137,11 +138,13 @@ When configuring third-party tools that expect OpenAI-compatible APIs, use these
 | Tool type | Base URL format |
 |-----------|-----------------|
 | OpenAI SDK / clients | `http://localhost:12434/engines/v1` |
+| Anthropic SDK / clients | `http://localhost:12434` |
 | Ollama-compatible clients | `http://localhost:12434` |
 @y
 | Tool type | Base URL format |
 |-----------|-----------------|
 | OpenAI SDK / clients | `http://localhost:12434/engines/v1` |
+| Anthropic SDK / clients | `http://localhost:12434` |
 | Ollama-compatible clients | `http://localhost:12434` |
 @z
 
@@ -167,12 +170,14 @@ Docker Model Runner supports multiple API formats:
 | API | Description | Use case |
 |-----|-------------|----------|
 | [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
+| [Anthropic API](#anthropic-compatible-api) | Anthropic-compatible messages endpoint | Tools built for Claude |
 | [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
 | [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @y
 | API | Description | Use case |
 |-----|-------------|----------|
 | [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
+| [Anthropic API](#anthropic-compatible-api) | Anthropic-compatible messages endpoint | Tools built for Claude |
 | [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
 | [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @z
@@ -334,6 +339,90 @@ Be aware of these differences when using DMR's OpenAI-compatible API:
 | Logprobs | Supported. |
 | Token counting | Uses the model's native token encoder, which may differ from OpenAI's. |
 @z
+
+@x
+## Anthropic-compatible API
+@y
+## Anthropic-compatible API
+@z
+
+@x
+DMR provides [Anthropic Messages API](https://platform.claude.com/docs/en/api/messages) compatibility for tools and frameworks built for Claude.
+@y
+DMR provides [Anthropic Messages API](https://platform.claude.com/docs/en/api/messages) compatibility for tools and frameworks built for Claude.
+@z
+
+@x
+### Endpoints
+@y
+### Endpoints
+@z
+
+@x
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/anthropic/v1/messages` | POST | [Create a message](https://platform.claude.com/docs/en/api/messages/create) |
+| `/anthropic/v1/messages/count_tokens` | POST | [Count tokens](https://docs.anthropic.com/en/api/messages-count-tokens) |
+@y
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/anthropic/v1/messages` | POST | [Create a message](https://platform.claude.com/docs/en/api/messages/create) |
+| `/anthropic/v1/messages/count_tokens` | POST | [Count tokens](https://docs.anthropic.com/en/api/messages-count-tokens) |
+@z
+
+@x
+### Supported parameters
+@y
+### Supported parameters
+@z
+
+@x
+The following Anthropic API parameters are supported:
+@y
+The following Anthropic API parameters are supported:
+@z
+
+@x
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier. |
+| `messages` | array | Required. The conversation messages. |
+| `max_tokens` | integer | Maximum tokens to generate. |
+| `temperature` | float | Sampling temperature (0.0-1.0). |
+| `top_p` | float | Nucleus sampling parameter. |
+| `top_k` | integer | Top-k sampling parameter. |
+| `stream` | Boolean | Enable streaming responses. |
+| `stop_sequences` | array | Custom stop sequences. |
+| `system` | string | System prompt. |
+@y
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier. |
+| `messages` | array | Required. The conversation messages. |
+| `max_tokens` | integer | Maximum tokens to generate. |
+| `temperature` | float | Sampling temperature (0.0-1.0). |
+| `top_p` | float | Nucleus sampling parameter. |
+| `top_k` | integer | Top-k sampling parameter. |
+| `stream` | Boolean | Enable streaming responses. |
+| `stop_sequences` | array | Custom stop sequences. |
+| `system` | string | System prompt. |
+@z
+
+@x
+### Example: Chat with Anthropic API
+@y
+### Example: Chat with Anthropic API
+@z
+
+% snip command...
+
+@x
+### Example: Streaming response
+@y
+### Example: Streaming response
+@z
+
+% snip command...
 
 @x
 ## Ollama-compatible API

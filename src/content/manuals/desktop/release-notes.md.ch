@@ -43,6 +43,71 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.57.0
+@y
+## 4.57.0
+@z
+
+@x
+{{< release-date date="2026-01-19" >}}
+@y
+{{< release-date date="2026-01-19" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.57.0" build_path="/215387/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.57.0" build_path="/215387/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Docker Desktop now has a new issue tracker for all platforms at https://github.com/docker/desktop-feedback. Relevant, actively discussed issues from the previous platform-specific trackers will be migrated.
+@y
+- Docker Desktop では全プラットフォーム向けのイシュートラッカー (issue tracker) を https://github.com/docker/desktop-feedback において新たに設けました。
+  これに伴って、プラットフォーム個別のトラッカーにて現在議論されているイシューについては、今後移行する予定です。
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Compose v5.0.1](https://github.com/docker/compose/releases/tag/v5.0.1)
+@y
+- [Docker Compose v5.0.1](https://github.com/docker/compose/releases/tag/v5.0.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Improved alignment of the Ask Gordon streaming indicator so it stays in sync with content on large screens.
+- Fixed a bug where `docker debug` failed on containers started with environement variables but no '='. For example, `docker run -e NONEXISTENT_ENV_VAR`.
+@y
+- Ask Gordon のストリーミングインジケーターの配置を改善しました。
+  これにより大画面表示した場合にも、表示内容が変わらないものとなりました。
+- `docker debug` において環境変数の指定に '=' をつけなかった場合に、エラーとなっていた点を修正しました。
+  たとえば `docker run -e NONEXISTENT_ENV_VAR` とした場合です。
+@z
+
+@x
 ## 4.56.0
 @y
 ## 4.56.0

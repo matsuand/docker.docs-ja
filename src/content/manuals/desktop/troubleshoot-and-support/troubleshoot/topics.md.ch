@@ -18,19 +18,11 @@ linkTitle: Common topics
 @x
 > [!TIP]
 >
-> If you do not find a solution in troubleshooting, browse the GitHub repositories or create a new issue:
->
-> - [docker/for-mac](https://github.com/docker/for-mac/issues)
-> - [docker/for-win](https://github.com/docker/for-win/issues)
-> - [docker/for-linux](https://github.com/docker/for-linux/issues)
+> If you do not find a solution in troubleshooting, browse the GitHub repositories or [create a new issue](https://github.com/docker/desktop-feedback).
 @y
 > [!TIP]
 >
-> If you do not find a solution in troubleshooting, browse the GitHub repositories or create a new issue:
->
-> - [docker/for-mac](https://github.com/docker/for-mac/issues)
-> - [docker/for-win](https://github.com/docker/for-win/issues)
-> - [docker/for-linux](https://github.com/docker/for-linux/issues)
+> If you do not find a solution in troubleshooting, browse the GitHub repositories or [create a new issue](https://github.com/docker/desktop-feedback).
 @z
 
 @x

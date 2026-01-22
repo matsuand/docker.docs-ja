@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Multi-container applications
@@ -143,15 +144,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
    Use the following command in a terminal to clone the sample application repository.
 @z
 
-@x
-   ```console
-   $ git clone https://github.com/dockersamples/nginx-node-redis
-   ```
-@y
-   ```console
-   $ git clone https://github.com/dockersamples/nginx-node-redis
-   ```
-@z
+% snip command...
 
 @x
    Navigate into the `nginx-node-redis` directory:
@@ -159,15 +152,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
    Navigate into the `nginx-node-redis` directory:
 @z
 
-@x
-   ```console
-   $ cd nginx-node-redis
-   ```
-@y
-   ```console
-   $ cd nginx-node-redis
-   ```
-@z
+% snip command...
 
 @x
    Inside this directory, you'll find two sub-directories - `nginx` and `web`.
@@ -201,15 +186,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
    Navigate into the `nginx-node-redis-main` directory:
 @z
 
-@x
-   ```console
-   $ cd nginx-node-redis-main
-   ```
-@y
-   ```console
-   $ cd nginx-node-redis-main
-   ```
-@z
+% snip command...
 
 @x
    Inside this directory, you'll find two sub-directories - `nginx` and `web`.
@@ -243,15 +220,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 1. Navigate into the `nginx` directory to build the image by running the following command:
 @z
 
-@x
-    ```console
-    $ docker build -t nginx .
-    ```
-@y
-    ```console
-    $ docker build -t nginx .
-    ```
-@z
+% snip command...
 
 @x
 2. Navigate into the `web` directory and run the following command to build the first web image:
@@ -259,15 +228,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 2. Navigate into the `web` directory and run the following command to build the first web image:
 @z
 
-@x
-    ```console
-    $ docker build -t web .
-    ```
-@y
-    ```console
-    $ docker build -t web .
-    ```
-@z
+% snip command...
 
 @x
 ### Run the containers
@@ -281,15 +242,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 1. Before you can run a multi-container application, you need to create a network for them all to communicate through. You can do so using the `docker network create` command:
 @z
 
-@x
-    ```console
-    $ docker network create sample-app
-    ```
-@y
-    ```console
-    $ docker network create sample-app
-    ```
-@z
+% snip command...
 
 @x
 2. Start the Redis container by running the following command, which will attach it to the previously created network and create a network alias (useful for DNS lookups):
@@ -297,15 +250,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 2. Start the Redis container by running the following command, which will attach it to the previously created network and create a network alias (useful for DNS lookups):
 @z
 
-@x
-    ```console
-    $ docker run -d  --name redis --network sample-app --network-alias redis redis
-    ```
-@y
-    ```console
-    $ docker run -d  --name redis --network sample-app --network-alias redis redis
-    ```
-@z
+% snip command...
 
 @x
 3. Start the first web container by running the following command:
@@ -313,15 +258,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 3. Start the first web container by running the following command:
 @z
 
-@x
-    ```console
-    $ docker run -d --name web1 -h web1 --network sample-app --network-alias web1 web
-    ```
-@y
-    ```console
-    $ docker run -d --name web1 -h web1 --network sample-app --network-alias web1 web
-    ```
-@z
+% snip command...
 
 @x
 4. Start the second web container by running the following:
@@ -329,15 +266,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 4. Start the second web container by running the following:
 @z
 
-@x
-    ```console
-    $ docker run -d --name web2 -h web2 --network sample-app --network-alias web2 web
-    ```
-@y
-    ```console
-    $ docker run -d --name web2 -h web2 --network sample-app --network-alias web2 web
-    ```
-@z
+% snip command...
 
 @x
 5. Start the Nginx container by running the following command:
@@ -345,15 +274,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 5. Start the Nginx container by running the following command:
 @z
 
-@x
-    ```console
-    $ docker run -d --name nginx --network sample-app  -p 80:80 nginx
-    ```
-@y
-    ```console
-    $ docker run -d --name nginx --network sample-app  -p 80:80 nginx
-    ```
-@z
+% snip command...
 
 @x
      > [!NOTE]
@@ -371,15 +292,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 6.  Verify the containers are up by running the following command:
 @z
 
-@x
-    ```console
-    $ docker ps
-    ```
-@y
-    ```console
-    $ docker ps
-    ```
-@z
+% snip command...
 
 @x
     You will see output like the following: 
@@ -387,23 +300,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
     You will see output like the following: 
 @z
 
-@x
-    ```text
-    CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                NAMES
-    2cf7c484c144   nginx     "/docker-entrypoint.…"   9 seconds ago        Up 8 seconds        0.0.0.0:80->80/tcp   nginx
-    7a070c9ffeaa   web       "docker-entrypoint.s…"   19 seconds ago       Up 18 seconds                            web2
-    6dc6d4e60aaf   web       "docker-entrypoint.s…"   34 seconds ago       Up 33 seconds                            web1
-    008e0ecf4f36   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp             redis
-    ```
-@y
-    ```text
-    CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                NAMES
-    2cf7c484c144   nginx     "/docker-entrypoint.…"   9 seconds ago        Up 8 seconds        0.0.0.0:80->80/tcp   nginx
-    7a070c9ffeaa   web       "docker-entrypoint.s…"   19 seconds ago       Up 18 seconds                            web2
-    6dc6d4e60aaf   web       "docker-entrypoint.s…"   34 seconds ago       Up 33 seconds                            web1
-    008e0ecf4f36   redis     "docker-entrypoint.s…"   About a minute ago   Up About a minute   6379/tcp             redis
-    ```
-@z
+% snip output...
 
 @x
 7. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.
@@ -423,21 +320,7 @@ In this hands-on guide, you'll first see how to build and run a counter web appl
 8. With everything up and running, you can open [http://localhost](http://localhost) in your browser to see the site. Refresh the page several times to see the host that’s handling the request and the total number of requests:
 @z
 
-@x
-    ```console
-    web2: Number of visits is: 9
-    web1: Number of visits is: 10
-    web2: Number of visits is: 11
-    web1: Number of visits is: 12
-    ```
-@y
-    ```console
-    web2: Number of visits is: 9
-    web1: Number of visits is: 10
-    web2: Number of visits is: 11
-    web1: Number of visits is: 12
-    ```
-@z
+% snip output...
 
 @x
     > [!NOTE]
@@ -485,15 +368,7 @@ Navigate to the root of the project directory. Inside this directory, you'll fin
 1. Use the `docker compose up` command to start the application:
 @z
 
-@x
-    ```console
-    $ docker compose up -d --build
-    ```
-@y
-    ```console
-    $ docker compose up -d --build
-    ```
-@z
+% snip command...
 
 @x
     When you run this command, you should see output similar to the following:
@@ -501,25 +376,7 @@ Navigate to the root of the project directory. Inside this directory, you'll fin
     When you run this command, you should see output similar to the following:
 @z
 
-@x
-    ```console
-    Running 5/5
-    ✔ Network nginx-nodejs-redis_default    Created                                                0.0s
-    ✔ Container nginx-nodejs-redis-web1-1   Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-redis-1  Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-web2-1   Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-nginx-1  Started
-    ```
-@y
-    ```console
-    Running 5/5
-    ✔ Network nginx-nodejs-redis_default    Created                                                0.0s
-    ✔ Container nginx-nodejs-redis-web1-1   Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-redis-1  Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-web2-1   Started                                                0.1s
-    ✔ Container nginx-nodejs-redis-nginx-1  Started
-    ```
-@z
+% snip output...
 
 @x
 2. If you look at the Docker Desktop Dashboard, you can see the containers and dive deeper into their configuration.

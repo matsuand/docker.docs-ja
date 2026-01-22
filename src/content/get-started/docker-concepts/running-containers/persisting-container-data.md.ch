@@ -228,9 +228,9 @@ In this guide, you'll practice creating and using volumes to persist data create
 @z
 
 @x
-The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
+The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, empty, delete and clone volumes.
 @y
-The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, and clone volumes.
+The Docker Desktop Dashboard provides the ability to view the contents of any volume, as well as the ability to export, import, empty, delete and clone volumes.
 @z
 
 @x
@@ -246,9 +246,9 @@ The Docker Desktop Dashboard provides the ability to view the contents of any vo
 @z
 
 @x
-3. The **Data** tab shows the contents of the volume and provides the ability to navigate the files. Double-clicking on a file will let you see the contents and make changes.
+3. The **Stored Data** tab shows the contents of the volume and provides the ability to navigate the files. The **Container in-use** tab displays the name of the container using the volume, the image name, the port number used by the container, and the target. A target is a path inside a container that gives access to the files in the volume. The **Exports** tab lets you export the volume. Double-clicking on a file will let you see the contents and make changes.
 @y
-3. The **Data** tab shows the contents of the volume and provides the ability to navigate the files. Double-clicking on a file will let you see the contents and make changes.
+3. The **Stored Data** tab shows the contents of the volume and provides the ability to navigate the files. The **Container in-use** tab displays the name of the container using the volume, the image name, the port number used by the container, and the target. A target is a path inside a container that gives access to the files in the volume. The **Exports** tab lets you export the volume. Double-clicking on a file will let you see the contents and make changes.
 @z
 
 @x

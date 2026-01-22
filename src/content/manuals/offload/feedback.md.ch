@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Find a way to provide feedback that's right for you
 keywords: Feedback, Docker Offload, bugs, problems, issues
 title: Give feedback
-weight: 900
----
 @y
----
 description: Find a way to provide feedback that's right for you
 keywords: Feedback, Docker Offload, bugs, problems, issues
 title: Give feedback
-weight: 900
----
 @z
 
 @x
@@ -62,17 +56,7 @@ opens a feedback form where you can share ideas directly with the Docker Team.
 @z
 
 @x
-To report bugs or problems, visit:
-- [Docker Desktop for Mac issues on
-GitHub](https://github.com/docker/for-mac/issues)
-- [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
-- [Docker Desktop for Linux issues on
-GitHub](https://github.com/docker/desktop-linux/issues)
+To report bugs or problems, visit the [Docker Desktop issue tracker](https://github.com/docker/desktop-feedback).
 @y
-To report bugs or problems, visit:
-- [Docker Desktop for Mac issues on
-GitHub](https://github.com/docker/for-mac/issues)
-- [Docker Desktop for Windows issues on GitHub](https://github.com/docker/for-win/issues)
-- [Docker Desktop for Linux issues on
-GitHub](https://github.com/docker/desktop-linux/issues)
+To report bugs or problems, visit the [Docker Desktop issue tracker](https://github.com/docker/desktop-feedback).
 @z

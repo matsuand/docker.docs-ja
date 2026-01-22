@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Docker Model Runner
@@ -251,15 +252,7 @@ Models have a configurable context size (context length) that determines how man
 Models have a configurable context size (context length) that determines how many tokens they can process. The default varies by model but is typically 2,048-8,192 tokens. You can adjust this per-model:
 @z
 
-@x
-```console
-$ docker model configure --context-size 8192 ai/qwen2.5-coder
-```
-@y
-```console
-$ docker model configure --context-size 8192 ai/qwen2.5-coder
-```
-@z
+% snip command...
 
 @x
 See [Configuration options](configuration.md) for details on context size and other parameters.
@@ -303,15 +296,7 @@ If you run a Docker Model Runner command and see:
 If you run a Docker Model Runner command and see:
 @z
 
-@x
-```text
-docker: 'model' is not a docker command
-```
-@y
-```text
-docker: 'model' is not a docker command
-```
-@z
+% snip output...
 
 @x
 It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
@@ -325,20 +310,50 @@ To fix this, create a symlink so Docker can detect it:
 To fix this, create a symlink so Docker can detect it:
 @z
 
-@x
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-@y
-```console
-$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
-```
-@z
+% snip command...
 
 @x
 Once linked, rerun the command.
 @y
 Once linked, rerun the command.
+@z
+
+@x
+## Privacy and data collection
+@y
+## Privacy and data collection
+@z
+
+@x
+Docker Model Runner respects your privacy settings in Docker Desktop. Data collection is controlled by the **Send usage statistics** setting:
+@y
+Docker Model Runner respects your privacy settings in Docker Desktop. Data collection is controlled by the **Send usage statistics** setting:
+@z
+
+@x
+- **Disabled**: No usage data is collected
+- **Enabled**: Only minimal, non-personal data is collected:
+  - [Model names](https://github.com/docker/model-runner/blob/eb76b5defb1a598396f99001a500a30bbbb48f01/pkg/metrics/metrics.go#L96) (via HEAD requests to Docker Hub)
+  - User agent information
+  - Whether requests originate from the host or containers
+@y
+- **Disabled**: No usage data is collected
+- **Enabled**: Only minimal, non-personal data is collected:
+  - [Model names](https://github.com/docker/model-runner/blob/eb76b5defb1a598396f99001a500a30bbbb48f01/pkg/metrics/metrics.go#L96) (via HEAD requests to Docker Hub)
+  - User agent information
+  - Whether requests originate from the host or containers
+@z
+
+@x
+When using Docker Model Runner with Docker Engine, HEAD requests to Docker Hub are made to track model names, regardless of any settings.
+@y
+When using Docker Model Runner with Docker Engine, HEAD requests to Docker Hub are made to track model names, regardless of any settings.
+@z
+
+@x
+No prompt content, responses, or personally identifiable information is ever collected.
+@y
+No prompt content, responses, or personally identifiable information is ever collected.
 @z
 
 @x
