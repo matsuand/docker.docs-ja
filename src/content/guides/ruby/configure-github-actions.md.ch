@@ -26,9 +26,9 @@ description: Learn how to configure CI/CD using GitHub Actions for your Ruby on 
 @z
 
 @x
-Complete all the previous sections of this guide, starting with [Containerize a Ruby on Rails application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
+Complete all the previous sections of this guide, starting with [Containerize a Ruby on Rails application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
 @y
-Complete all the previous sections of this guide, starting with [Containerize a Ruby on Rails application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
+Complete all the previous sections of this guide, starting with [Containerize a Ruby on Rails application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
 @z
 
 @x

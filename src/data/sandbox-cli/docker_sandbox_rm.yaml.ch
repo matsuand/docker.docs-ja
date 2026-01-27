@@ -3,28 +3,30 @@
 
 @x
 command: docker sandbox rm
+aliases: docker sandbox rm, docker sandbox remove
 short: Remove one or more sandboxes
+long: |-
+    Remove one or more sandboxes and all their associated resources.
+
+    This command will:
+    - Check if the sandbox exists
+    - Remove the sandbox and clean up its associated resources
 @y
 command: docker sandbox rm
+aliases: docker sandbox rm, docker sandbox remove
 short: Remove one or more sandboxes
+long: |-
+    Remove one or more sandboxes and all their associated resources.
+
+    This command will:
+    - Check if the sandbox exists
+    - Remove the sandbox and clean up its associated resources
 @z
 
 @x
-long: |-
-    Remove one or more sandboxes by their IDs or names.
-
-    This command removes the specified sandboxes. Each sandbox is identified by its unique ID or name.
+usage: docker sandbox rm SANDBOX [SANDBOX...]
 @y
-long: |-
-    Remove one or more sandboxes by their IDs or names.
-
-    This command removes the specified sandboxes. Each sandbox is identified by its unique ID or name.
-@z
-
-@x
-usage: docker sandbox rm [OPTIONS] SANDBOX [SANDBOX...]
-@y
-usage: docker sandbox rm [OPTIONS] SANDBOX [SANDBOX...]
+usage: docker sandbox rm SANDBOX [SANDBOX...]
 @z
 
 % inherited_options:
@@ -33,6 +35,14 @@ usage: docker sandbox rm [OPTIONS] SANDBOX [SANDBOX...]
       description: Enable debug logging
 @y
       description: Enable debug logging
+@z
+
+@x socket
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
 
 @x

@@ -20,9 +20,21 @@ description: Run Claude Code in an isolated sandbox. Quick setup guide with prer
 @z
 
 @x
-This guide will help you run Claude Code in a sandboxed environment for the first time.
+This guide runs Claude Code in an isolated sandbox for the first time.
 @y
-This guide will help you run Claude Code in a sandboxed environment for the first time.
+This guide runs Claude Code in an isolated sandbox for the first time.
+@z
+
+@x
+> [!NOTE]
+> Upgrading from an earlier version of Docker Desktop? See the
+> [migration guide](migration.md) for information about the new microVM
+> architecture.
+@y
+> [!NOTE]
+> Upgrading from an earlier version of Docker Desktop? See the
+> [migration guide](migration.md) for information about the new microVM
+> architecture.
 @z
 
 @x
@@ -38,75 +50,99 @@ Before you begin, ensure you have:
 @z
 
 @x
-- Docker Desktop 4.50 or later
-- A Claude Code subscription
+- Docker Desktop 4.58 or later
+- macOS, or Windows {{< badge color=violet text=Experimental >}}
+- A Claude API key
 @y
-- Docker Desktop 4.50 or later
-- A Claude Code subscription
+- Docker Desktop 4.58 or later
+- macOS, or Windows {{< badge color=violet text=Experimental >}}
+- A Claude API key
 @z
 
 @x
-## Run a sandboxed agent
+## Run your first sandbox
 @y
-## Run a sandboxed agent
+## Run your first sandbox
 @z
 
 @x
-Follow these steps to run Claude Code in a sandboxed environment:
+Follow these steps to run Claude Code:
 @y
-Follow these steps to run Claude Code in a sandboxed environment:
+Follow these steps to run Claude Code:
 @z
 
 @x
-1. Navigate to Your Project
+1. Set your Anthropic API key as an environment variable.
 @y
-1. Navigate to Your Project
+1. Set your Anthropic API key as an environment variable.
 @z
 
 @x
-   ```console
-   $ cd ~/my-project
+   Add the API key to your shell configuration file:
+@y
+   Add the API key to your shell configuration file:
+@z
+
+@x
+   ```plaintext {title="~/.bashrc or ~/.zshrc"}
+   export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
    ```
 @y
-   ```console
-   $ cd ~/my-project
-   ```
-@z
-
-@x
-2. Start Claude in a sandbox
-@y
-2. Start Claude in a sandbox
-@z
-
-@x
-   ```console
-   $ docker sandbox run claude
-   ```
-@y
-   ```console
-   $ docker sandbox run claude
+   ```plaintext {title="~/.bashrc or ~/.zshrc"}
+   export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
    ```
 @z
 
 @x
-3. Authenticate: on first run, Claude will prompt you to authenticate.
+   Docker Sandboxes use a daemon process that runs independently of your
+   current shell session. This means setting the environment variable inline or
+   in your current session will not work. You must set it globally in your
+   shell configuration file to ensure the daemon can access it.
 @y
-3. Authenticate: on first run, Claude will prompt you to authenticate.
+   Docker Sandboxes use a daemon process that runs independently of your
+   current shell session. This means setting the environment variable inline or
+   in your current session will not work. You must set it globally in your
+   shell configuration file to ensure the daemon can access it.
 @z
 
 @x
-   Once you've authenticated, the credentials are stored in a persistent Docker
-   volume and reused for future sessions.
+   Then apply the changes:
+   1. Source your shell configuration.
+   2. Restart Docker Desktop so the daemon picks up the new environment variable.
 @y
-   Once you've authenticated, the credentials are stored in a persistent Docker
-   volume and reused for future sessions.
+   Then apply the changes:
+   1. Source your shell configuration.
+   2. Restart Docker Desktop so the daemon picks up the new environment variable.
 @z
 
 @x
-4. Claude Code launches inside the container.
+2. Create and run a sandbox for Claude Code for your workspace:
 @y
-4. Claude Code launches inside the container.
+2. Create and run a sandbox for Claude Code for your workspace:
+@z
+
+@x
+   ```console
+   $ docker sandbox run claude ~/my-project
+   ```
+@y
+   ```console
+   $ docker sandbox run claude ~/my-project
+   ```
+@z
+
+@x
+   This creates a microVM sandbox. Docker assigns it a name automatically.
+@y
+   This creates a microVM sandbox. Docker assigns it a name automatically.
+@z
+
+@x
+3. Claude Code starts and you can begin working. The first run takes longer
+   while Docker initializes the microVM and pulls the template image.
+@y
+3. Claude Code starts and you can begin working. The first run takes longer
+   while Docker initializes the microVM and pulls the template image.
 @z
 
 @x
@@ -116,33 +152,29 @@ Follow these steps to run Claude Code in a sandboxed environment:
 @z
 
 @x
-When you ran `docker sandbox run claude`:
+When you ran `docker sandbox run`:
 @y
-When you ran `docker sandbox run claude`:
+When you ran `docker sandbox run`:
 @z
 
 @x
-- Docker created a container from a template image
-- Your current directory was mounted at the same path inside the container
-- Your Git name and email were injected into the container
-- Your API key was stored in a Docker volume (`docker-claude-sandbox-data`)
-- Claude Code started with bypass permissions enabled
+- Docker created a lightweight microVM with a private Docker daemon
+- The sandbox was assigned a name based on the workspace path
+- Your workspace synced into the VM
+- Docker started the Claude Code agent as a container inside the sandbox VM
 @y
-- Docker created a container from a template image
-- Your current directory was mounted at the same path inside the container
-- Your Git name and email were injected into the container
-- Your API key was stored in a Docker volume (`docker-claude-sandbox-data`)
-- Claude Code started with bypass permissions enabled
+- Docker created a lightweight microVM with a private Docker daemon
+- The sandbox was assigned a name based on the workspace path
+- Your workspace synced into the VM
+- Docker started the Claude Code agent as a container inside the sandbox VM
 @z
 
 @x
-The container continues running in the background. Running `docker sandbox run
-claude` again in the same directory reuses the existing container, allowing the
-agent to maintain state (installed packages, temporary files) across sessions.
+The sandbox persists until you remove it. Installed packages and configuration
+remain available. Run `docker sandbox run <sandbox-name>` again to reconnect.
 @y
-The container continues running in the background. Running `docker sandbox run
-claude` again in the same directory reuses the existing container, allowing the
-agent to maintain state (installed packages, temporary files) across sessions.
+The sandbox persists until you remove it. Installed packages and configuration
+remain available. Run `docker sandbox run <sandbox-name>` again to reconnect.
 @z
 
 @x
@@ -152,15 +184,15 @@ agent to maintain state (installed packages, temporary files) across sessions.
 @z
 
 @x
-Here are a few essential commands to manage your sandboxes:
+Here are essential commands to manage your sandboxes:
 @y
-Here are a few essential commands to manage your sandboxes:
+Here are essential commands to manage your sandboxes:
 @z
 
 @x
-### List your sandboxes
+### List sandboxes
 @y
-### List your sandboxes
+### List sandboxes
 @z
 
 @x
@@ -180,6 +212,40 @@ Shows all your sandboxes with their IDs, names, status, and creation time.
 @z
 
 @x
+> [!NOTE]
+> Sandboxes don't appear in `docker ps` because they're microVMs, not
+> containers. Use `docker sandbox ls` to see them.
+@y
+> [!NOTE]
+> Sandboxes don't appear in `docker ps` because they're microVMs, not
+> containers. Use `docker sandbox ls` to see them.
+@z
+
+@x
+### Access a running sandbox
+@y
+### Access a running sandbox
+@z
+
+@x
+```console
+$ docker sandbox exec -it <sandbox-name> bash
+```
+@y
+```console
+$ docker sandbox exec -it <sandbox-name> bash
+```
+@z
+
+@x
+Executes a command inside the container in the sandbox. Use `-it` to open an
+interactive shell for debugging or installing additional tools.
+@y
+Executes a command inside the container in the sandbox. Use `-it` to open an
+interactive shell for debugging or installing additional tools.
+@z
+
+@x
 ### Remove a sandbox
 @y
 ### Remove a sandbox
@@ -187,68 +253,96 @@ Shows all your sandboxes with their IDs, names, status, and creation time.
 
 @x
 ```console
-$ docker sandbox rm <sandbox-id>
+$ docker sandbox rm <sandbox-name>
 ```
 @y
 ```console
-$ docker sandbox rm <sandbox-id>
+$ docker sandbox rm <sandbox-name>
 ```
 @z
 
 @x
-Deletes a sandbox when you're done with it. Get the sandbox ID from `docker sandbox ls`.
+Deletes the sandbox VM and all installed packages inside it. You can remove
+multiple sandboxes at once by specifying multiple names:
 @y
-Deletes a sandbox when you're done with it. Get the sandbox ID from `docker sandbox ls`.
-@z
-
-@x
-### View sandbox details
-@y
-### View sandbox details
+Deletes the sandbox VM and all installed packages inside it. You can remove
+multiple sandboxes at once by specifying multiple names:
 @z
 
 @x
 ```console
-$ docker sandbox inspect <sandbox-id>
+$ docker sandbox rm <sandbox-1> <sandbox-2>
 ```
 @y
 ```console
-$ docker sandbox inspect <sandbox-id>
+$ docker sandbox rm <sandbox-1> <sandbox-2>
 ```
 @z
 
 @x
-Shows detailed information about a specific sandbox in JSON format.
+### Recreate a sandbox
 @y
-Shows detailed information about a specific sandbox in JSON format.
+### Recreate a sandbox
 @z
 
 @x
-For a complete list of all commands and options, see the [CLI reference](/reference/cli/docker/sandbox/).
+To start fresh with a clean environment, remove and recreate the sandbox:
 @y
-For a complete list of all commands and options, see the [CLI reference](__SUBDIR__/reference/cli/docker/sandbox/).
+To start fresh with a clean environment, remove and recreate the sandbox:
 @z
 
 @x
-## Next Steps
+```console
+$ docker sandbox rm <sandbox-name>
+$ docker sandbox run claude ~/project
+```
 @y
-## Next Steps
+```console
+$ docker sandbox rm <sandbox-name>
+$ docker sandbox run claude ~/project
+```
 @z
 
 @x
-Now that you have Claude running in a sandboxed environment, learn more about:
+Configuration like custom templates and workspace paths are set when you create
+the sandbox. To change these settings, remove and recreate.
 @y
-Now that you have Claude running in a sandboxed environment, learn more about:
+Configuration like custom templates and workspace paths are set when you create
+the sandbox. To change these settings, remove and recreate.
 @z
 
 @x
-- [Authentication strategies](claude-code.md#authentication)
-- [Configuration options](claude-code.md#configuration)
-- [Advanced configurations](advanced-config.md)
-- [Troubleshooting guide](troubleshooting.md)
+For a complete list of commands and options, see the
+[CLI reference](/reference/cli/docker/sandbox/).
 @y
-- [Authentication strategies](claude-code.md#authentication)
-- [Configuration options](claude-code.md#configuration)
-- [Advanced configurations](advanced-config.md)
-- [Troubleshooting guide](troubleshooting.md)
+For a complete list of commands and options, see the
+[CLI reference](reference/cli/docker/sandbox/).
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+Now that you have Claude running in a sandbox, learn more about:
+@y
+Now that you have Claude running in a sandbox, learn more about:
+@z
+
+@x
+- [Claude Code configuration](claude-code.md)
+- [Supported agents](agents.md)
+- [Using sandboxes effectively](workflows.md)
+- [Custom templates](templates.md)
+- [Network policies](network-policies.md)
+- [Troubleshooting](troubleshooting.md)
+@y
+- [Claude Code configuration](claude-code.md)
+- [Supported agents](agents.md)
+- [Using sandboxes effectively](workflows.md)
+- [Custom templates](templates.md)
+- [Network policies](network-policies.md)
+- [Troubleshooting](troubleshooting.md)
 @z

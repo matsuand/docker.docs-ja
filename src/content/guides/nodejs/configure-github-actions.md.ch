@@ -39,10 +39,10 @@ You must also have:
 
 @x
 - A [GitHub](https://github.com/signup) account.
-- A [Docker Hub](https://hub.docker.com/signup) account.
+- A verified [Docker Hub](https://hub.docker.com/signup) account.
 @y
 - A [GitHub](https://github.com/signup) account.
-- A [Docker Hub](https://hub.docker.com/signup) account.
+- A verified [Docker Hub](https://hub.docker.com/signup) account.
 @z
 
 @x

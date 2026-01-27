@@ -26,10 +26,10 @@ description: Bun アプリケーションに対して GitHub Action を使った
 @z
 
 @x
-Complete all the previous sections of this guide, starting with [Containerize a Bun application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a [Docker](https://hub.docker.com/signup) account to complete this section.
+Complete all the previous sections of this guide, starting with [Containerize a Bun application](containerize.md). You must have a [GitHub](https://github.com/signup) account and a verified [Docker](https://hub.docker.com/signup) account to complete this section.
 @y
 [Bun アプリケーションのコンテナー化](containerize.md) から始まる、ここまでのガイドすべてを終えていること。
-本節を進めるには [GitHub](https://github.com/signup) アカウントと [Docker](https://hub.docker.com/signup) アカウントを持っていることが必要です。
+本節を進めるには [GitHub](https://github.com/signup) アカウントと認証済み [Docker](https://hub.docker.com/signup) アカウントを持っていることが必要です。
 @z
 
 @x

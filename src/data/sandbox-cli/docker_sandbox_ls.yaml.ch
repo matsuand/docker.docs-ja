@@ -4,32 +4,24 @@
 @x
 command: docker sandbox ls
 aliases: docker sandbox ls, docker sandbox list
-short: List sandboxes
+short: List VMs
+long: List all VMs managed by sandboxd with their sandboxes
+usage: docker sandbox ls [OPTIONS]
 @y
 command: docker sandbox ls
 aliases: docker sandbox ls, docker sandbox list
-short: List sandboxes
-@z
-
-@x
-long: |-
-    List all sandboxes.
-
-    This command lists all sandboxes using the Docker API.
-@y
-long: |-
-    List all sandboxes.
-
-    This command lists all sandboxes using the Docker API.
-@z
-
-@x
-usage: docker sandbox ls
-@y
-usage: docker sandbox ls
+short: List VMs
+long: List all VMs managed by sandboxd with their sandboxes
+usage: docker sandbox ls [OPTIONS]
 @z
 
 % options:
+
+@x json
+      description: Output in JSON format
+@y
+      description: Output in JSON format
+@z
 
 @x no-trunc
       description: Don't truncate output
@@ -38,9 +30,9 @@ usage: docker sandbox ls
 @z
 
 @x quiet
-      description: Only display sandbox IDs
+      description: Only display VM names
 @y
-      description: Only display sandbox IDs
+      description: Only display VM names
 @z
 
 % inherited_options:
@@ -51,28 +43,36 @@ usage: docker sandbox ls
       description: Enable debug logging
 @z
 
+@x socket
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@z
+
 @x
 examples: |-
-    ### List all sandboxes
+    ### List all VMs
 @y
 examples: |-
-    ### List all sandboxes
+    ### List all VMs
 @z
 
 % snip command...
 
 @x
-    ### Show only sandbox IDs (--quiet) {#quiet}
+    ### Show only VM names (--quiet) {#quiet}
 @y
-    ### Show only sandbox IDs (--quiet) {#quiet}
+    ### Show only VM names (--quiet) {#quiet}
 @z
 
 % snip text...
 
 @x
-    Output only sandbox IDs:
+    Output only VM names:
 @y
-    Output only sandbox IDs:
+    Output only VM names:
 @z
 
 % snip command...
@@ -86,9 +86,25 @@ examples: |-
 % snip text...
 
 @x
-    By default, long sandbox IDs and workspace paths are truncated for readability. Use `--no-trunc` to display the full values:
+    By default, long VM IDs, workspace paths, and socket paths are truncated for readability. Use `--no-trunc` to display the full values:
 @y
-    By default, long sandbox IDs and workspace paths are truncated for readability. Use `--no-trunc` to display the full values:
+    By default, long VM IDs, workspace paths, and socket paths are truncated for readability. Use `--no-trunc` to display the full values:
+@z
+
+% snip command...
+
+@x
+    ### JSON output (--json)
+@y
+    ### JSON output (--json)
+@z
+
+% snip text...
+
+@x
+    Output detailed VM information in JSON format:
+@y
+    Output detailed VM information in JSON format:
 @z
 
 % snip command...

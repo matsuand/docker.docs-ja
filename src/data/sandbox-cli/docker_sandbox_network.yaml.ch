@@ -1,0 +1,86 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker sandbox network
+short: Manage sandbox networking
+long: Manage sandbox networking
+usage: docker sandbox network
+pname: docker sandbox
+plink: docker_sandbox.yaml
+cname:
+    - docker sandbox network log
+    - docker sandbox network proxy
+clink:
+    - docker_sandbox_network_log.yaml
+    - docker_sandbox_network_proxy.yaml
+inherited_options:
+    - option: debug
+      shorthand: D
+      value_type: bool
+      default_value: "false"
+      description: Enable debug logging
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: socket
+      value_type: string
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker sandbox network
+short: Manage sandbox networking
+long: Manage sandbox networking
+usage: docker sandbox network
+pname: docker sandbox
+plink: docker_sandbox.yaml
+cname:
+    - docker sandbox network log
+    - docker sandbox network proxy
+clink:
+    - docker_sandbox_network_log.yaml
+    - docker_sandbox_network_proxy.yaml
+inherited_options:
+    - option: debug
+      shorthand: D
+      value_type: bool
+      default_value: "false"
+      description: Enable debug logging
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+    - option: socket
+      value_type: string
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+      deprecated: false
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

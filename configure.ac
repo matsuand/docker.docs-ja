@@ -353,6 +353,8 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/pass/Makefile
 	src/content/reference/cli/docker/plugin/Makefile
 	src/content/reference/cli/docker/sandbox/Makefile
+	src/content/reference/cli/docker/sandbox/create/Makefile
+	src/content/reference/cli/docker/sandbox/network/Makefile
 	src/content/reference/cli/docker/scout/Makefile
 	src/content/reference/cli/docker/scout/attestation/Makefile
 	src/content/reference/cli/docker/scout/cache/Makefile

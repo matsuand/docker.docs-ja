@@ -34,17 +34,11 @@ Complete all the previous sections of this guide, starting with [Containerize an
 @x
 You must also have:
 - A [GitHub](https://github.com/signup) account.
-- A [Docker Hub](https://hub.docker.com/signup) account.
+- A verified [Docker Hub](https://hub.docker.com/signup) account.
 @y
 You must also have:
 - A [GitHub](https://github.com/signup) account.
-- A [Docker Hub](https://hub.docker.com/signup) account.
-@z
-
-@x
----
-@y
----
+- A verified [Docker Hub](https://hub.docker.com/signup) account.
 @z
 
 @x
@@ -67,12 +61,6 @@ In this section, you'll set up a CI/CD pipeline using [GitHub Actions](https://d
 - Build your Angular application inside a Docker container.
 - Run tests in a consistent environment.
 - Push the production-ready image to [Docker Hub](https://hub.docker.com).
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -327,12 +315,6 @@ Once completed, your code will be available on GitHub, and any GitHub Actions wo
 > - [Git commit](https://git-scm.com/docs/git-commit) – Save a snapshot of your staged changes  
 > - [Git push](https://git-scm.com/docs/git-push) – Upload local commits to your GitHub repository  
 > - [Git remote](https://git-scm.com/docs/git-remote) – View and manage remote repository URLs
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -620,12 +602,6 @@ This workflow performs the following tasks for your Angular application:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ### Step 3: Run the workflow
 @y
 ### Step 3: Run the workflow
@@ -759,12 +735,6 @@ Here's what you accomplished:
 With this setup, your Angular application is now ready for automated testing and deployment across environments — increasing confidence, consistency, and team productivity.
 @y
 With this setup, your Angular application is now ready for automated testing and deployment across environments — increasing confidence, consistency, and team productivity.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -791,12 +761,6 @@ Deepen your understanding of automation and best practices for containerized app
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) – Full reference for writing GitHub workflows  
 - [Compose file reference](__SUBDIR__/compose/compose-file/) – Full configuration reference for `compose.yaml`  
 - [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Optimize your image for performance and security  
-@z
-
-@x
----
-@y
----
 @z
 
 @x

@@ -162,8 +162,8 @@ ensure all developers authenticate with your organization.
     - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
     - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
 @y
-1. Check that you have [added and verified](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
-2. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to
+1. Check that you have [added and verified](manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
+2. [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to
 ensure all developers authenticate with your organization.
 3. Choose a configuration method:
     - Use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.

@@ -4,6 +4,8 @@
 absORIGDIR=@absORIGDIR@/static
 
 copyfiles = \
+	apple-touch-icon.png \
+	favicon.ico          \
 	sitemap.xsl
 
 include $(top_srcdir)/build-aux/common.mk

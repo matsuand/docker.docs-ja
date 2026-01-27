@@ -40,9 +40,39 @@ Your Docker ID becomes your username for hosted Docker services, and
 @z
 
 @x
+> [!TIP]
+>
+> Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+@y
+> [!TIP]
+>
+> Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+@z
+
+@x
 ## Create an account
 @y
 ## アカウントの生成 {#create-an-account}
+@z
+
+@x
+Signing up with an email address, Google, or GitHub account requires additional verification to complete account creation:
+@y
+Signing up with an email address, Google, or GitHub account requires additional verification to complete account creation:
+@z
+
+@x
+- If you sign up with Google or GitHub, you must first verify your email address with that provider.
+- If you sign up with an email address, Docker sends a verification email. Follow the procedures in that email to verify your account and complete the sign-up process.
+@y
+- If you sign up with Google or GitHub, you must first verify your email address with that provider.
+- If you sign up with an email address, Docker sends a verification email. Follow the procedures in that email to verify your account and complete the sign-up process.
+@z
+
+@x
+Docker blocks sign-in until you've verified your account. 
+@y
+Docker blocks sign-in until you've verified your account. 
 @z
 
 @x
@@ -52,70 +82,21 @@ Your Docker ID becomes your username for hosted Docker services, and
 @z
 
 @x
-1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
-@y
-1. [Docker サインアップページ](https://app.docker.com/signup/) にアクセスします。
-@z
-
-@x
-1. Enter a unique, valid email address.
-@y
-1. 適切なメールアドレスを入力します。
-@z
-
-@x
+1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
-you can't reuse it in the future if you deactivate this account.
-@y
-1. Docker ID として利用するユーザー名を入力します。
-   Once you create your Docker ID you can't reuse it in the future if you deactivate this account.
-@z
-
-@x
-    Your username:
+you can't reuse it in the future if you deactivate this account. Your username:
     - Must be between 4 and 30 characters long
     - Can only contain numbers and lowercase letters
+1. Choose a password that's at least 9 characters long, then select **Sign Up**.
+1. Verify your email address when you receive the Docker verification email. This completes the registration process.
 @y
-    Your username:
+1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
+1. Enter a username to use as your Docker ID. Once you create your Docker ID
+you can't reuse it in the future if you deactivate this account. Your username:
     - Must be between 4 and 30 characters long
     - Can only contain numbers and lowercase letters
-@z
-
-@x
-1. Enter a password that's at least 9 characters long.
-@y
-1. パスワードを入力します。最低 9 文字が必要です。
-@z
-
-@x
-1. Select **Sign Up**.
-@y
-1. **Sign Up** (サインアップ) をクリックします。
-@z
-
-@x
-1. Open your email client. Docker sends a verification email to the
-address you provided.
-@y
-1. Open your email client. Docker sends a verification email to the
-address you provided.
-@z
-
-@x
-1. Verify your email address to complete the registration process.
-@y
-1. メールアドレスを確認して登録操作を終了します。
-@z
-
-@x
-> [!NOTE]
->
-> You must verify your email address before you have full access to Docker's
-features.
-@y
-> [!NOTE]
->
-> Docker 機能へのアクセスをすべて行うために、メールアドレスを確認しておく必要があります。
+1. Choose a password that's at least 9 characters long, then select **Sign Up**.
+1. Verify your email address when you receive the Docker verification email. This completes the registration process.
 @z
 
 @x
@@ -125,69 +106,31 @@ features.
 @z
 
 @x
-> [!IMPORTANT]
->
-> To sign up with your social provider, you must verify your email address with
-your provider before you begin.
-@y
-> [!IMPORTANT]
->
-> To sign up with your social provider, you must verify your email address with
-your provider before you begin.
-@z
-
-@x
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
-@y
-1. [Docker サインアップページ](https://app.docker.com/signup/) にアクセスします。
-@z
-
-@x
 1. Select your social provider, Google or GitHub.
-@y
-1. ソーシャルプロバイダーである Google または GitHub のいずれかを選択します。
-@z
-
-@x
 1. Select the social account you want to link to your Docker account.
-@y
-1. Docker アカウントへのリンクづけを行いたいソーシャルアカウントを選びます。
-@z
-
-@x
 1. Select **Authorize Docker** to let Docker access your social account
 information. You will be re-routed to the sign-up page.
-@y
-1. Select **Authorize Docker** to let Docker access your social account
-information. You will be re-routed to the sign-up page.
-@z
-
-@x
-1. Enter a username to use as your Docker ID.
-@y
-1. Docker ID として利用するユーザー名を入力します。
-@z
-
-@x
-    Your username:
+1. Enter a username to use as your Docker ID. Your username:
     - Must be between 4 and 30 characters long
     - Can only contain numbers and lowercase letters
-@y
-    Your username:
-    - Must be between 4 and 30 characters long
-    - Can only contain numbers and lowercase letters
-@z
-
-@x
 1. Select **Sign up**.
 @y
-1. **Sign Up** (サインアップ) をクリックします。
+1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
+1. Select your social provider, Google or GitHub.
+1. Select the social account you want to link to your Docker account.
+1. Select **Authorize Docker** to let Docker access your social account
+information. You will be re-routed to the sign-up page.
+1. Enter a username to use as your Docker ID. Your username:
+    - Must be between 4 and 30 characters long
+    - Can only contain numbers and lowercase letters
+1. Select **Sign up**.
 @z
 
 @x
 ## Sign in to your account
 @y
-## アカウントへのサインイン {#sign-in-to-your-account}
+## Sign in to your account
 @z
 
 @x
@@ -224,16 +167,6 @@ To reset your password, see [Reset your password](#reset-your-password).
 ### Sign in with Google or GitHub
 @y
 ### Sign in with Google or GitHub
-@z
-
-@x
-> [!IMPORTANT]
->
-> Your Google or GitHub account must have a verified email address.
-@y
-> [!IMPORTANT]
->
-> Your Google or GitHub account must have a verified email address.
 @z
 
 @x
@@ -271,7 +204,7 @@ Use the `docker login` command to authenticate from the command line. For
 details, see [`docker login`](/reference/cli/docker/login/).
 @y
 Use the `docker login` command to authenticate from the command line. For
-details, see [`docker login`](__SUBDIR__/reference/cli/docker/login/).
+details, see [`docker login`](reference/cli/docker/login/).
 @z
 
 @x
@@ -301,7 +234,7 @@ details, see [`docker login`](__SUBDIR__/reference/cli/docker/login/).
 @x
 ## Reset your password
 @y
-## Reset your password {#reset-your-password}
+## Reset your password
 @z
 
 @x
@@ -323,7 +256,7 @@ To reset your password:
 @x
 ## Troubleshooting
 @y
-## Troubleshooting {#troubleshooting}
+## Troubleshooting
 @z
 
 @x

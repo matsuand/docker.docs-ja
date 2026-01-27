@@ -3,13 +3,13 @@
 
 @x
 command: docker sandbox version
-short: Show sandboxd version information
-long: Show sandboxd version information
+short: Show sandbox version information
+long: Show sandbox version information
 usage: docker sandbox version
 @y
 command: docker sandbox version
-short: Show sandboxd version information
-long: Show sandboxd version information
+short: Show sandbox version information
+long: Show sandbox version information
 usage: docker sandbox version
 @z
 
@@ -19,6 +19,14 @@ usage: docker sandbox version
       description: Enable debug logging
 @y
       description: Enable debug logging
+@z
+
+@x socket
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
 
 % snip directives...

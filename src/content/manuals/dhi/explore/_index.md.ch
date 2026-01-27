@@ -40,6 +40,30 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @z
 
 @x
+    - title: Image types
+      description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
+      icon: view_module
+      link: /dhi/explore/available/
+@y
+    - title: イメージのタイプ
+      description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
+      icon: view_module
+      link: __SUBDIR__/dhi/explore/available/
+@z
+
+@x
+    - title: Scanner integrations
+      description: Discover which vulnerability scanners integrate with Docker Hardened Images and support open standards like OpenVEX.
+      icon: security
+      link: /dhi/explore/scanner-integrations/
+@y
+    - title: Scanner integrations
+      description: Discover which vulnerability scanners integrate with Docker Hardened Images and support open standards like OpenVEX.
+      icon: security
+      link: __SUBDIR__/dhi/explore/scanner-integrations/
+@z
+
+@x
     - title: Image testing
       description: See how Docker Hardened Images are automatically tested for standards compliance, functionality, and security.
       icon: science
@@ -61,18 +85,6 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
       description: Understand Docker's role and your responsibilities when using Docker Hardened Images as part of your secure software supply chain.
       icon: group
       link: __SUBDIR__/dhi/explore/responsibility/
-@z
-
-@x
-    - title: Image types
-      description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
-      icon: view_module
-      link: /dhi/explore/available/
-@y
-    - title: イメージのタイプ
-      description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
-      icon: view_module
-      link: __SUBDIR__/dhi/explore/available/
 @z
 
 @x

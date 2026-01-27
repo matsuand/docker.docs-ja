@@ -119,9 +119,10 @@ In this hands-on, you will learn how to build and push a Docker image to the Doc
 @z
 
 @x
-1. If you haven't created one yet, head over to the [Docker Hub](https://hub.docker.com) page to sign up for a new Docker account.
+1. If you haven't created one yet, head over to the [Docker Hub](https://hub.docker.com) page to sign up for a new Docker account. Be sure to finish the verification steps sent to your email.
 @y
 1. まだ Docker アカウントを生成していない場合は、[Docker Hub](https://hub.docker.com) ページにアクセスして、新規の Docker アカウントをサインアップします。
+   メールに送信された認証手順を必ず完了してください。
 @z
 
 @x

@@ -3,12 +3,13 @@
 ##
 
 bases = \
-	_index.md         \
-	available.md      \
-	build-process.md  \
-	feedback.md       \
-	responsibility.md \
-	test.md           \
+	_index.md               \
+	available.md            \
+	build-process.md        \
+	feedback.md             \
+	responsibility.md       \
+	scanner-integrations.md \
+	test.md                 \
 	what.md
 
 include $(top_srcdir)/build-aux/common.mk

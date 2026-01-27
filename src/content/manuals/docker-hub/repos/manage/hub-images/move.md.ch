@@ -55,11 +55,11 @@ When consolidating personal repositories, you can pull private images from the i
 @z
 
 @x
-1. [Sign up](https://app.docker.com/signup) for a new Docker account with a personal subscription.
+1. [Sign up](https://app.docker.com/signup) for a new Docker account with a personal subscription. (Be sure to verify your account after you've signed up.)
 2. Sign in to [Docker](https://app.docker.com/login) using your original Docker account
 3. Pull your images:
 @y
-1. [Sign up](https://app.docker.com/signup) for a new Docker account with a personal subscription.
+1. [Sign up](https://app.docker.com/signup) for a new Docker account with a personal subscription. (Be sure to verify your account after you've signed up.)
 2. Sign in to [Docker](https://app.docker.com/login) using your original Docker account
 3. Pull your images:
 @z

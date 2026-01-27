@@ -1,0 +1,12 @@
+##
+## This is part of Japanese translation version for Docker's Documantation.
+##
+
+bases = \
+	cagent.md \
+	codex.md  \
+	gemini.md \
+	kiro.md
+
+include $(top_srcdir)/build-aux/common.mk
+include $(top_srcdir)/build-aux/main.mk

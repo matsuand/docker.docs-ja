@@ -238,11 +238,16 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md          \
-	advanced-config.md \
-	claude-code.md     \
-	get-started.md     \
-	troubleshooting.md
+	_index.md           \
+	agents.md           \
+	architecture.md     \
+	claude-code.md      \
+	get-started.md      \
+	migration.md        \
+	network-policies.md \
+	templates.md        \
+	troubleshooting.md  \
+	workflows.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

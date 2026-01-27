@@ -138,47 +138,9 @@ Claude can't authenticate, or you see API key errors.
 @z
 
 @x
-The API key is likely invalid, expired, or not configured correctly. How to fix depends on your credential mode:
+The API key is likely invalid, expired, or not configured correctly.
 @y
-The API key is likely invalid, expired, or not configured correctly. How to fix depends on your credential mode:
-@z
-
-@x
-If using `--credentials=sandbox` (the default):
-@y
-If using `--credentials=sandbox` (the default):
-@z
-
-@x
-1. Remove the stored credentials:
-@y
-1. Remove the stored credentials:
-@z
-
-@x
-   ```console
-   $ docker volume rm docker-claude-sandbox-data
-   ```
-@y
-   ```console
-   $ docker volume rm docker-claude-sandbox-data
-   ```
-@z
-
-@x
-2. Start a new sandbox and complete the authentication workflow:
-@y
-2. Start a new sandbox and complete the authentication workflow:
-@z
-
-@x
-   ```console
-   $ docker sandbox run claude
-   ```
-@y
-   ```console
-   $ docker sandbox run claude
-   ```
+The API key is likely invalid, expired, or not configured correctly.
 @z
 
 @x

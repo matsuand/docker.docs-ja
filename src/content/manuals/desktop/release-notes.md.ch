@@ -43,6 +43,133 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.58.0
+@y
+## 4.58.0
+@z
+
+@x
+{{< release-date date="2026-01-26" >}}
+@y
+{{< release-date date="2026-01-26" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.58.0" build_path="/216728/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.58.0" build_path="/216728/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- A new version of [Docker Sandboxes](/manuals/ai/sandboxes/_index.md) is now available on Docker Desktop. It provides a secure, isolated, microVM-based environment for running coding agents.
+@y
+- Docker Desktop において [Docker Sandboxes](manuals/ai/sandboxes/_index.md) の新バージョンが利用できるようになりました。
+  It provides a secure, isolated, microVM-based environment for running coding agents.
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Linux kernel `v6.12.65`
+- [Credential helpers v0.9.5](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.5)
+- [Docker Engine v29.1.5](https://docs.docker.com/engine/release-notes/29/#2915)
+@y
+- Linux kernel `v6.12.65`
+- [Credential helpers v0.9.5](https://github.com/docker/docker-credential-helpers/releases/tag/v0.9.5)
+- [Docker Engine v29.1.5](https://docs.docker.com/engine/release-notes/29/#2915)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Docker Model Runner now exposes an [Anthropic-compatible API](/manuals/ai/model-runner/api-reference.md#anthropic-compatible-api).
+- Docker Desktop now supports UTF-8 BOM for `admin-settings.json` and `registry.json`.
+@y
+- Docker Model Runner now exposes an [Anthropic-compatible API](manuals/ai/model-runner/api-reference.md#anthropic-compatible-api).
+- Docker Desktop now supports UTF-8 BOM for `admin-settings.json` and `registry.json`.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> Starting with Docker Desktop version 4.59, installing an update from the tray menu will proceed without opening the Docker Desktop Dashboard.
+@y
+> [!IMPORTANT]
+>
+> Docker Desktop バージョン 4.59 以降では、トレイメニューから更新インストールを行うと、Docker Desktop ダッシュボードを開くことなく処理を進めることができます。
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed a bug where shared file permissions could be modified inadvertently while using DockerVMM on macOS. Fixes [docker/for-mac#7830](https://github.com/docker/for-mac/issues/7830).
+@y
+- Fixed a bug where shared file permissions could be modified inadvertently while using DockerVMM on macOS. Fixes [docker/for-mac#7830](https://github.com/docker/for-mac/issues/7830).
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed an issue where the installer failed because of special ACLs set on `ProgramData`.
+@y
+- Fixed an issue where the installer failed because of special ACLs set on `ProgramData`.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Updated Kubernetes images to address CVEs.
+   - Kind:
+      - `docker/desktop-containerd-registry-mirror:v0.0.3`
+      - `docker/desktop-cloud-provider-kind:v0.5.0`
+   - Kubeadm:
+      - `docker/desktop-vpnkit-controller:v4.0`
+      - `docker/desktop-storage-provisioner:v3.0`
+- The `kind` dependency image `envoyproxy/envoy` was upgraded from v1.32.6 to v1.36.4. If you mirror `kind` images, ensure your mirrors are updated.
+@y
+- Updated Kubernetes images to address CVEs.
+   - Kind:
+      - `docker/desktop-containerd-registry-mirror:v0.0.3`
+      - `docker/desktop-cloud-provider-kind:v0.5.0`
+   - Kubeadm:
+      - `docker/desktop-vpnkit-controller:v4.0`
+      - `docker/desktop-storage-provisioner:v3.0`
+- The `kind` dependency image `envoyproxy/envoy` was upgraded from v1.32.6 to v1.36.4. If you mirror `kind` images, ensure your mirrors are updated.
+@z
+
+@x
 ## 4.57.0
 @y
 ## 4.57.0
@@ -1712,12 +1839,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.1" build_path="/196648/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.42.1" build_path="/196648/" >}}
-@z
-
-@x
 ### Upgrades
 @y
 ### 機能更新 {#upgrades}
@@ -1785,12 +1906,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 {{< release-date date="2025-06-04" >}}
 @y
 {{< release-date date="2025-06-04" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.42.0" build_path="/195023/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.42.0" build_path="/195023/" >}}
 @z
 
 @x
@@ -1970,12 +2085,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.2" build_path="/191736/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.2" build_path="/191736/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### バグフィックスと拡張 {#bug-fixes-and-enhancements}
@@ -2003,12 +2112,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 {{< release-date date="2025-04-30" >}}
 @y
 {{< release-date date="2025-04-30" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.1" build_path="/191279/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.1" build_path="/191279/" >}}
 @z
 
 @x
@@ -2051,12 +2154,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 {{< release-date date="2025-04-28" >}}
 @y
 {{< release-date date="2025-04-28" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.0" build_path="/190950/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.41.0" build_path="/190950/" >}}
 @z
 
 @x
@@ -2224,12 +2321,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.40.0" build_path="/187762/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.40.0" build_path="/187762/" >}}
-@z
-
-@x
 ### New
 @y
 ### 新機能 {#new}
@@ -2353,12 +2444,6 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 {{< release-date date="2025-03-05" >}}
 @y
 {{< release-date date="2025-03-05" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.39.0" build_path="/184744/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Beta" version="4.39.0" build_path="/184744/" >}}
 @z
 
 @x

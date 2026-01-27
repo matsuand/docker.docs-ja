@@ -736,11 +736,11 @@ Docker Projects:
 @x
 Docker Sandboxes:
   availability: Experimental
-  requires: Docker Desktop [4.50](/manuals/desktop/release-notes.md#4500) or later
+  requires: Docker Desktop [4.58](/manuals/desktop/release-notes.md#4580) or later
 @y
 Docker Sandboxes:
   availability: 試験的
-  requires: Docker Desktop [4.50](/manuals/desktop/release-notes.md#4500) or later
+  requires: Docker Desktop [4.58](manuals/desktop/release-notes.md#4580) or later
 @z
 
 @x

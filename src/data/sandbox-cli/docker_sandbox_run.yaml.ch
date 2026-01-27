@@ -3,72 +3,74 @@
 
 @x
 command: docker sandbox run
-short: Run an AI agent inside a sandbox
+short: Run an agent in a sandbox
+long: |-
+    Run an agent in a sandbox. Create the sandbox if it does not exist.
 @y
 command: docker sandbox run
-short: Run an AI agent inside a sandbox
+short: Run an agent in a sandbox
+long: |-
+    Run an agent in a sandbox. Create the sandbox if it does not exist.
 @z
 
 @x
-long: |-
-    Run an AI agent inside a sandbox with access to a host workspace.
-
-    The agent argument must be one of: claude, gemini.
-    Agent-specific options can be passed after the agent name.
-    If no workspace is specified via the "--workspace" option, the current working directory is used.
-    The workspace is exposed inside the sandbox at the same path as on the host.
+    Pass agent arguments after the "--" separator.
 @y
-long: |-
-    Run an AI agent inside a sandbox with access to a host workspace.
-
-    The agent argument must be one of: claude, gemini.
-    Agent-specific options can be passed after the agent name.
-    If no workspace is specified via the "--workspace" option, the current working directory is used.
-    The workspace is exposed inside the sandbox at the same path as on the host.
+    Pass agent arguments after the "--" separator.
 @z
 
 @x
-usage: docker sandbox run [options] <agent> [agent-options]
+    Examples:
+      # Create and run a sandbox with claude in current directory
+      docker sandbox run claude .
 @y
-usage: docker sandbox run [options] <agent> [agent-options]
+    Examples:
+      # Create and run a sandbox with claude in current directory
+      docker sandbox run claude .
 @z
 
+@x
+      # Run an existing sandbox
+      docker sandbox run existing-sandbox
+@y
+      # Run an existing sandbox
+      docker sandbox run existing-sandbox
+@z
+
+@x
+      # Run a sandbox with agent arguments
+      docker sandbox run claude . -- -p "What version are you running?"
+@y
+      # Run a sandbox with agent arguments
+      docker sandbox run claude . -- -p "What version are you running?"
+@z
+
+@x
+usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT_ARGS...]
+@y
+usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT_ARGS...]
+@z
+
+% pname:
+% plink:
 % options:
 
-@x credentials
-      description: Credentials source (host, sandbox, or none)
-@y
-      description: Credentials source (host, sandbox, or none)
-@z
-
 @x detached
-      description: Create sandbox without running agent interactively
+      description: Return sandbox ID without running agent (hidden, for testing)
 @y
-      description: Create sandbox without running agent interactively
+      description: Return sandbox ID without running agent (hidden, for testing)
 @z
 
-@x env
-      description: 'Set environment variables (format: KEY=VALUE)'
+@x load-local-template
+      description: Load a locally built template image into the sandbox
 @y
-      description: 'Set environment variables (format: KEY=VALUE)'
-@z
-
-@x mount-docker-socket
-      description: Mount the host's Docker socket into the sandbox
-@y
-      description: Mount the host's Docker socket into the sandbox
+      description: Load a locally built template image into the sandbox
 @z
 
 @x name
-      description: Name for the sandbox
+      description: 'Name for the sandbox (default: <agent>-<workdir>)'
 @y
-      description: Name for the sandbox
-@z
-
-@x quiet
-      description: Suppress verbose output
-@y
-      description: Suppress verbose output
+      description: 'Name for the sandbox (default: <agent>-<workdir>)'
 @z
 
 @x template
@@ -78,22 +80,7 @@ usage: docker sandbox run [options] <agent> [agent-options]
       description: |
         Container image to use for the sandbox (default: agent-specific image)
 @z
-
-@x volume
-      description: |
-        Bind mount a volume or host file or directory into the sandbox (format: hostpath:sandboxpath[:readonly|:ro])
-@y
-      description: |
-        Bind mount a volume or host file or directory into the sandbox (format: hostpath:sandboxpath[:readonly|:ro])
-@z
-
-@x workspace
-      description: Workspace path
-@y
-      description: Workspace path
-@z
-
-% inherited_options:
+inherited_options:
 
 @x debug
       description: Enable debug logging
@@ -101,6 +88,14 @@ usage: docker sandbox run [options] <agent> [agent-options]
       description: Enable debug logging
 @z
 
+@x socket
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
+@z
+
 @x
 examples: |-
     ### Run Claude in the current directory
@@ -202,32 +197,6 @@ examples: |-
 @y
     Use `:ro` or `:readonly` to make mounts read-only.
 @z
-
-@x
-    ### Configure credential access (--credentials) {#credentials}
-@y
-    ### Configure credential access (--credentials) {#credentials}
-@z
-
-% snip text...
-
-@x
-    Control how the agent accesses credentials. Valid modes are:
-@y
-    Control how the agent accesses credentials. Valid modes are:
-@z
-
-@x
-    - `sandbox` (default): Authenticate once and share credentials across sandboxes
-    - `host`: Share host credentials (~/.gitconfig, ~/.ssh, etc.)
-    - `none`: Handle authentication manually
-@y
-    - `sandbox` (default): Authenticate once and share credentials across sandboxes
-    - `host`: Share host credentials (~/.gitconfig, ~/.ssh, etc.)
-    - `none`: Handle authentication manually
-@z
-
-% snip command...
 
 @x
     ### Use a custom base image (-t, --template) {#template}

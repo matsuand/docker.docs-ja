@@ -43,10 +43,10 @@ through creating a custom image and sharing it through Docker Hub.
 
 @x
 - [Download and install Docker](../../get-started/get-docker.md)
-- [Create a Docker account](https://app.docker.com/signup)
+- A verified [Docker](https://app.docker.com/signup) account
 @y
 - [Download and install Docker](../../get-started/get-docker.md)
-- [Create a Docker account](https://app.docker.com/signup)
+- A verified [Docker](https://app.docker.com/signup) account
 @z
 
 @x

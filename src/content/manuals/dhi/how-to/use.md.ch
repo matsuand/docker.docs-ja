@@ -630,9 +630,9 @@ from the final image.
 @z
 
 @x
-## Use compliance variants {{< badge color="blue" text="DHI Enterprise" >}}
+## Use compliance variants {tier="DHI Enterprise"}
 @y
-## Use compliance variants {{< badge color="blue" text="DHI Enterprise" >}}
+## Use compliance variants {tier="DHI Enterprise"}
 @z
 
 @x

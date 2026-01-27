@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Cache management with GitHub Actions
 linkTitle: Cache management
@@ -49,71 +51,7 @@ To use `max` cache mode, push the image and the cache separately using the
 registry cache exporter with the `cache-to` option, as shown in the [registry cache example](#registry-cache).
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:latest
-          cache-to: type=inline
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:latest
-          cache-to: type=inline
-```
-@z
+% snip code...
 
 @x
 ## Registry cache
@@ -129,71 +67,7 @@ You can import/export cache from a cache manifest or (special) image
 configuration on the registry with the [registry cache exporter](../../cache/backends/registry.md).
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=registry,ref=user/app:buildcache
-          cache-to: type=registry,ref=user/app:buildcache,mode=max
-```
-@z
+% snip code...
 
 @x
 ## GitHub cache
@@ -229,71 +103,7 @@ backend in a GitHub Action workflow, as the `url` (`$ACTIONS_RESULTS_URL`) and
 context.
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-```
-@z
+% snip code...
 
 @x
 > [!IMPORTANT]
@@ -451,41 +261,7 @@ Example Dockerfile in `build/package/Dockerfile`
 Example Dockerfile in `build/package/Dockerfile`
 @z
 
-@x
-```Dockerfile
-FROM golang:1.21.1-alpine as base-build
-@y
-```Dockerfile
-FROM golang:1.21.1-alpine as base-build
-@z
-
-@x
-WORKDIR /build
-RUN go env -w GOMODCACHE=/root/.cache/go-build
-@y
-WORKDIR /build
-RUN go env -w GOMODCACHE=/root/.cache/go-build
-@z
-
-@x
-COPY go.mod go.sum ./
-RUN --mount=type=cache,target=/root/.cache/go-build go mod download
-@y
-COPY go.mod go.sum ./
-RUN --mount=type=cache,target=/root/.cache/go-build go mod download
-@z
-
-@x
-COPY ./src ./
-RUN --mount=type=cache,target=/root/.cache/go-build go build -o /bin/app /build/src
-...
-```
-@y
-COPY ./src ./
-RUN --mount=type=cache,target=/root/.cache/go-build go build -o /bin/app /build/src
-...
-```
-@z
+% snip code...
 
 @x
 Example CI action
@@ -493,135 +269,7 @@ Example CI action
 Example CI action
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-@y
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: user/app
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-@y
-      - name: Docker meta
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: user/app
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-@z
-
-@x
-      - name: Go Build Cache for Docker
-        uses: actions/cache@v4
-        with:
-          path: go-build-cache
-          key: ${{ runner.os }}-go-build-cache-${{ hashFiles('**/go.sum') }}
-@y
-      - name: Go Build Cache for Docker
-        uses: actions/cache@v4
-        with:
-          path: go-build-cache
-          key: ${{ runner.os }}-go-build-cache-${{ hashFiles('**/go.sum') }}
-@z
-
-@x
-      - name: Inject go-build-cache
-        uses: reproducible-containers/buildkit-cache-dance@4b2444fec0c0fb9dbf175a96c094720a692ef810 # v2.1.4
-        with:
-          cache-source: go-build-cache
-@y
-      - name: Inject go-build-cache
-        uses: reproducible-containers/buildkit-cache-dance@4b2444fec0c0fb9dbf175a96c094720a692ef810 # v2.1.4
-        with:
-          cache-source: go-build-cache
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          file: build/package/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64
-```
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          file: build/package/Dockerfile
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          platforms: linux/amd64,linux/arm64
-```
-@z
+% snip code...
 
 @x
 For more information about this workaround, refer to the
@@ -661,104 +309,4 @@ using the [actions/cache](https://github.com/actions/cache) and [local cache exp
 with this action:
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Cache Docker layers
-        uses: actions/cache@v4
-        with:
-          path: ${{ runner.temp }}/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-@y
-      - name: Cache Docker layers
-        uses: actions/cache@v4
-        with:
-          path: ${{ runner.temp }}/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
-@z
-
-@x
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=local,src=${{ runner.temp }}/.buildx-cache
-          cache-to: type=local,dest=${{ runner.temp }}/.buildx-cache-new,mode=max
-@y
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          push: true
-          tags: user/app:latest
-          cache-from: type=local,src=${{ runner.temp }}/.buildx-cache
-          cache-to: type=local,dest=${{ runner.temp }}/.buildx-cache-new,mode=max
-@z
-
-@x
-      - # Temp fix
-        # https://github.com/docker/build-push-action/issues/252
-        # https://github.com/moby/buildkit/issues/1896
-        name: Move cache
-        run: |
-          rm -rf ${{ runner.temp }}/.buildx-cache
-          mv ${{ runner.temp }}/.buildx-cache-new ${{ runner.temp }}/.buildx-cache
-```
-@y
-      - # Temp fix
-        # https://github.com/docker/build-push-action/issues/252
-        # https://github.com/moby/buildkit/issues/1896
-        name: Move cache
-        run: |
-          rm -rf ${{ runner.temp }}/.buildx-cache
-          mv ${{ runner.temp }}/.buildx-cache-new ${{ runner.temp }}/.buildx-cache
-```
-@z
+% snip code...

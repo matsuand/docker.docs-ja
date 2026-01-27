@@ -49,10 +49,10 @@ If you want to follow along with the guide, ensure you have the following:
 @z
 
 @x
-- A Docker account.
+- A verified Docker account.
 - Familiarity with Dockerfiles.
 @y
-- A Docker account.
+- A verified Docker account.
 - Familiarity with Dockerfiles.
 @z
 
