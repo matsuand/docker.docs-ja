@@ -53,11 +53,9 @@ long: |-
 @z
 
 @x
-    The following list of environment variables are supported by the `docker` command
-    line:
+    The following environment variables control the behavior of the `docker` command-line client:
 @y
-    The following list of environment variables are supported by the `docker` command
-    line:
+    The following environment variables control the behavior of the `docker` command-line client:
 @z
 
 @x

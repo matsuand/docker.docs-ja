@@ -6,7 +6,6 @@ copyfiles = \
 	items-added.webp              \
 	multi-container.webp          \
 	push-command.webp             \
-	pwd-add-new-instance.webp     \
 	todo-list-empty.webp          \
 	updated-add-button.webp
 

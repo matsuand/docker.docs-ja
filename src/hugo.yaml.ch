@@ -44,9 +44,9 @@ languages:
 suburldir 追加
 ------------------------------
 @x
-  example_node_version: "20"
+  example_node_version: "24"
 @y
-  example_node_version: "20"
+  example_node_version: "24"
 
   suburldir: /docker.docs-ja
 @z

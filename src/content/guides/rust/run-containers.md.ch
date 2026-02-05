@@ -63,11 +63,11 @@ Use `docker run` to run the image you built in [Build your Rust image](build-ima
 
 @x
 ```console
-$ docker run docker-rust-image
+$ docker run docker-rust-image-dhi
 ```
 @y
 ```console
-$ docker run docker-rust-image
+$ docker run docker-rust-image-dhi
 ```
 @z
 
@@ -135,11 +135,11 @@ You didn't specify a port when running the application in the container and the 
 
 @x
 ```console
-$ docker run --publish 3001:8000 docker-rust-image
+$ docker run --publish 3001:8000 docker-rust-image-dhi
 ```
 @y
 ```console
-$ docker run --publish 3001:8000 docker-rust-image
+$ docker run --publish 3001:8000 docker-rust-image-dhi
 ```
 @z
 
@@ -201,13 +201,13 @@ This is great so far, but your sample application is a web server and you don't 
 
 @x
 ```console
-$ docker run -d -p 3001:8000 docker-rust-image
-ce02b3179f0f10085db9edfccd731101868f58631bdf918ca490ff6fd223a93b
+$ docker run -d -p 3001:8000 docker-rust-image-dhi
+3e4830e7f01304811d97dd3469d47a0c7a916a8b6c28ce0ef19c6f689a521144
 ```
 @y
 ```console
-$ docker run -d -p 3001:8000 docker-rust-image
-ce02b3179f0f10085db9edfccd731101868f58631bdf918ca490ff6fd223a93b
+$ docker run -d -p 3001:8000 docker-rust-image-dhi
+3e4830e7f01304811d97dd3469d47a0c7a916a8b6c28ce0ef19c6f689a521144
 ```
 @z
 
@@ -269,13 +269,13 @@ You should see output like the following.
 
 @x
 ```console
-CONTAINER ID   IMAGE                   COMMAND         CREATED         STATUS         PORTS                    NAMES
-3074745e412c   docker-rust-image       "/bin/server"   8 seconds ago   Up 7 seconds   0.0.0.0:3001->8000/tcp   wonderful_kalam
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                23 seconds ago   Up 22 seconds   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   youthful_lamport
 ```
 @y
 ```console
-CONTAINER ID   IMAGE                   COMMAND         CREATED         STATUS         PORTS                    NAMES
-3074745e412c   docker-rust-image       "/bin/server"   8 seconds ago   Up 7 seconds   0.0.0.0:3001->8000/tcp   wonderful_kalam
+CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                23 seconds ago   Up 22 seconds   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   youthful_lamport
 ```
 @z
 
@@ -293,13 +293,13 @@ You are probably wondering where the name of your container is coming from. Sinc
 
 @x
 ```console
-$ docker stop wonderful_kalam
-wonderful_kalam
+$ docker stop youthful_lamport
+youthful_lamport
 ```
 @y
 ```console
-$ docker stop wonderful_kalam
-wonderful_kalam
+$ docker stop youthful_lamport
+youthful_lamport
 ```
 @z
 
@@ -336,26 +336,18 @@ You can start, stop, and restart Docker containers. When you stop a container, i
 @x
 ```console
 $ docker ps -a
-CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                      PORTS                       
-     NAMES
-3074745e412c   docker-rust-image       "/bin/server"            3 minutes ago    Exited (0) 6 seconds ago                                
-     wonderful_kalam
-6cfa26e2e3c9   docker-rust-image       "/bin/server"            14 minutes ago   Exited (0) 5 minutes ago                                
-     friendly_montalcini
-4cbe94b2ea0e   docker-rust-image       "/bin/server"            15 minutes ago   Exited (0) 14 minutes ago                               
-     tender_bose
+CONTAINER ID   IMAGE                   COMMAND                  CREATED              STATUS                          PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                About a minute ago   Exited (0) 28 seconds ago                                                     youthful_lamport
+60009b7eaf40   docker-rust-image-dhi   "/server"                2 minutes ago        Exited (0) About a minute ago                                                 sharp_noyce
+152e1d7d9eea   docker-rust-image-dhi   "/server ."              4 minutes ago        Exited (0) 2 minutes ago                                                      magical_bhabha
 ```
 @y
 ```console
 $ docker ps -a
-CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                      PORTS                       
-     NAMES
-3074745e412c   docker-rust-image       "/bin/server"            3 minutes ago    Exited (0) 6 seconds ago                                
-     wonderful_kalam
-6cfa26e2e3c9   docker-rust-image       "/bin/server"            14 minutes ago   Exited (0) 5 minutes ago                                
-     friendly_montalcini
-4cbe94b2ea0e   docker-rust-image       "/bin/server"            15 minutes ago   Exited (0) 14 minutes ago                               
-     tender_bose
+CONTAINER ID   IMAGE                   COMMAND                  CREATED              STATUS                          PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                About a minute ago   Exited (0) 28 seconds ago                                                     youthful_lamport
+60009b7eaf40   docker-rust-image-dhi   "/server"                2 minutes ago        Exited (0) About a minute ago                                                 sharp_noyce
+152e1d7d9eea   docker-rust-image-dhi   "/server ."              4 minutes ago        Exited (0) 2 minutes ago                                                      magical_bhabha
 ```
 @z
 
@@ -373,41 +365,35 @@ Restart the container that you just stopped. Locate the name of the container yo
 
 @x
 ```console
-$ docker restart wonderful_kalam
+$ docker restart youthful_lamport
 ```
 @y
 ```console
-$ docker restart wonderful_kalam
+$ docker restart youthful_lamport
 ```
 @z
 
 @x
-Now list all the containers again using the `docker ps` command.
+Now list all the containers again using the `docker ps --all` command.
 @y
-Now list all the containers again using the `docker ps` command.
+Now list all the containers again using the `docker ps --all` command.
 @z
 
 @x
 ```console
 $ docker ps --all
-CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                      PORTS                       
-     NAMES
-3074745e412c   docker-rust-image       "/bin/server"            6 minutes ago    Up 4 seconds                0.0.0.0:3001->8000/tcp           wonderful_kalam
-6cfa26e2e3c9   docker-rust-image       "/bin/server"            16 minutes ago   Exited (0) 7 minutes ago                                
-     friendly_montalcini
-4cbe94b2ea0e   docker-rust-image       "/bin/server"            18 minutes ago   Exited (0) 17 minutes ago                               
-     tender_bose
+CONTAINER ID   IMAGE                   COMMAND                  CREATED             STATUS                         PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                3 minutes ago       Up 7 seconds                   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   youthful_lamport
+60009b7eaf40   docker-rust-image-dhi   "/server"                4 minutes ago       Exited (0) 3 minutes ago                                                     sharp_noyce
+152e1d7d9eea   docker-rust-image-dhi   "/server ."              5 minutes ago       Exited (0) 4 minutes ago                                                     magical_bhabha
 ```
 @y
 ```console
 $ docker ps --all
-CONTAINER ID   IMAGE                   COMMAND                  CREATED          STATUS                      PORTS                       
-     NAMES
-3074745e412c   docker-rust-image       "/bin/server"            6 minutes ago    Up 4 seconds                0.0.0.0:3001->8000/tcp           wonderful_kalam
-6cfa26e2e3c9   docker-rust-image       "/bin/server"            16 minutes ago   Exited (0) 7 minutes ago                                
-     friendly_montalcini
-4cbe94b2ea0e   docker-rust-image       "/bin/server"            18 minutes ago   Exited (0) 17 minutes ago                               
-     tender_bose
+CONTAINER ID   IMAGE                   COMMAND                  CREATED             STATUS                         PORTS                                         NAMES
+3e4830e7f013   docker-rust-image-dhi   "/server"                3 minutes ago       Up 7 seconds                   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   youthful_lamport
+60009b7eaf40   docker-rust-image-dhi   "/server"                4 minutes ago       Exited (0) 3 minutes ago                                                     sharp_noyce
+152e1d7d9eea   docker-rust-image-dhi   "/server ."              5 minutes ago       Exited (0) 4 minutes ago                                                     magical_bhabha
 ```
 @z
 
@@ -425,13 +411,13 @@ Now, stop and remove all of your containers and take a look at fixing the random
 
 @x
 ```console
-$ docker stop wonderful_kalam
-wonderful_kalam
+$ docker stop youthful_lamport
+youthful_lamport
 ```
 @y
 ```console
-$ docker stop wonderful_kalam
-wonderful_kalam
+$ docker stop youthful_lamport
+youthful_lamport
 ```
 @z
 
@@ -449,17 +435,17 @@ To remove a container, run the `docker rm` command with the container name. You 
 
 @x
 ```console
-$ docker rm wonderful_kalam friendly_montalcini tender_bose
-wonderful_kalam
-friendly_montalcini
-tender_bose
+$ docker rm youthful_lamport friendly_montalcini tender_bose
+youthful_lamport
+sharp_noyce
+magical_bhabha
 ```
 @y
 ```console
-$ docker rm wonderful_kalam friendly_montalcini tender_bose
-wonderful_kalam
-friendly_montalcini
-tender_bose
+$ docker rm youthful_lamport friendly_montalcini tender_bose
+youthful_lamport
+sharp_noyce
+magical_bhabha
 ```
 @z
 
@@ -483,19 +469,19 @@ To name a container, you just need to pass the `--name` flag to the `docker run`
 
 @x
 ```console
-$ docker run -d -p 3001:8000 --name docker-rust-container docker-rust-image
+$ docker run -d -p 3001:8000 --name docker-rust-container docker-rust-image-dhi
 1aa5d46418a68705c81782a58456a4ccdb56a309cb5e6bd399478d01eaa5cdda
 $ docker ps
-CONTAINER ID   IMAGE                   COMMAND         CREATED         STATUS         PORTS                    NAMES
-c68fa18de1f6   docker-rust-image       "/bin/server"   7 seconds ago   Up 6 seconds   0.0.0.0:3001->8000/tcp   docker-rust-container
+CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+219b2e3c7c38   docker-rust-image-dhi   "/server"                6 seconds ago   Up 5 seconds   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   docker-rust-container
 ```
 @y
 ```console
-$ docker run -d -p 3001:8000 --name docker-rust-container docker-rust-image
+$ docker run -d -p 3001:8000 --name docker-rust-container docker-rust-image-dhi
 1aa5d46418a68705c81782a58456a4ccdb56a309cb5e6bd399478d01eaa5cdda
 $ docker ps
-CONTAINER ID   IMAGE                   COMMAND         CREATED         STATUS         PORTS                    NAMES
-c68fa18de1f6   docker-rust-image       "/bin/server"   7 seconds ago   Up 6 seconds   0.0.0.0:3001->8000/tcp   docker-rust-container
+CONTAINER ID   IMAGE                   COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+219b2e3c7c38   docker-rust-image-dhi   "/server"                6 seconds ago   Up 5 seconds   0.0.0.0:3001->8000/tcp, [::]:3001->8000/tcp   docker-rust-container
 ```
 @z
 

@@ -109,15 +109,29 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
    そしてその内容は以下のようにします。
 @z
 
+% snip code...
+
 @x
-   This Dockerfile starts off with a `node:lts-alpine` base image, a
-   light-weight Linux image that comes with Node.js and the Yarn package
-   manager pre-installed. It copies all of the source code into the image,
-   installs the necessary dependencies, and starts the application.
+   This Dockerfile does the following:
 @y
-   この Dockerfile はベースイメージ `node:lts-alpine` の記述から始まります。
-   これは Node.js とYarn パッケージマネージャーがあらかじめインストールされている、軽量な Linux イメージです。
-   イメージに対しては全ソースコードがコピーされ、必要な依存パッケージがインストールされた上で、アプリケーションが起動します。
+   この Dockerfile は以下のようになっています。
+@z
+
+@x
+   - Uses `node:24-alpine` as the base image, a lightweight Linux image with Node.js pre-installed
+   - Sets `/app` as the working directory
+   - Copies source code into the image
+   - Installs the necessary dependencies
+   - Specifies the command to start the application
+   - Documents that the app listens on port 3000
+@y
+   - ベースイメージとして `node:24-alpine` を利用します。
+     これは Node.js をインストール済みの軽量 Linux イメージです。
+   - ワーキングディレクトリを `/app` に設定します。
+   - ソースコードをイメージにコピーします。
+   - 必要な依存パッケージをインストールします。
+   - アプリケーション起動のためのコマンドを指定します。
+   - アプリケーションが利用するポートを 3000 に指定します。
 @z
 
 @x
@@ -144,19 +158,18 @@ Docker はこのスクリプトを使ってコンテナーイメージをビル�
 % snip command...
 
 @x
-   The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:lts-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
+   The `docker build` command uses the Dockerfile to build a new image. You might have noticed that Docker downloaded a lot of "layers". This is because you instructed the builder that you wanted to start from the `node:24-alpine` image. But, since you didn't have that on your machine, Docker needed to download the image.
 @y
    `docker build` コマンドは Dockerfile を利用して新たなイメージをビルドします。
    実行すればわかることですが、Docker は数々の「レイヤー」をダウンロードします。
-   そうなるのは、ビルド処理に対して指示を行ったからであり、`node:lts-alpine` イメージから処理を始めることを伝えたためです。
+   そうなるのは、ビルド処理に対して指示を行ったからであり、`node:24-alpine` イメージから処理を始めることを伝えたためです。
    マシン内にそのイメージがなかったので、Docker がダウンロードする必要があったということになります。
 @z
 
 @x
-   After Docker downloaded the image, the instructions from the Dockerfile copied in your application and used `yarn` to install your application's dependencies. The `CMD` directive specifies the default command to run when starting a container from this image.
+   After Docker downloaded the image, the instructions from the Dockerfile copied in your application and used `npm` to install your application's dependencies.
 @y
-   Docker がイメージをダウンロードした後は、Dockerfile に示された命令に従って、アプリケーションがコピーされ、さらに `yarn` によってアプリケーションの依存パッケージがインストールされます。
-   `CMD` ディレクティブがデフォルトコマンドを指定しているので、このイメージから生成されるコンテナーが起動した際にそれが実行されます。
+   Docker がイメージをダウンロードした後は、Dockerfile に示された命令に従って、アプリケーションがコピーされ、さらに `npm` によってアプリケーションの依存パッケージがインストールされます。
 @z
 
 @x

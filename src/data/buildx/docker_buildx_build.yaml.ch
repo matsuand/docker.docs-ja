@@ -212,6 +212,14 @@ long: The `docker buildx build` command starts a build using BuildKit.
       description: Set target platform for build
 @z
 
+@x policy
+      description: |
+        Policy configuration (format: `filename=path[,filename=path][,reset=true|false][,disabled=true|false][,strict=true|false][,log-level=level]`)
+@y
+      description: |
+        Policy configuration (format: `filename=path[,filename=path][,reset=true|false][,disabled=true|false][,strict=true|false][,log-level=level]`)
+@z
+
 @x print
       description: Print result of information request (e.g., outline, targets)
 @y
@@ -239,9 +247,9 @@ long: The `docker buildx build` command starts a build using BuildKit.
 @z
 
 @x push
-      description: Shorthand for `--output=type=registry`
+      description: Shorthand for `--output=type=registry,unpack=false`
 @y
-      description: Shorthand for `--output=type=registry`
+      description: Shorthand for `--output=type=registry,unpack=false`
 @z
 
 @x quiet
@@ -775,11 +783,25 @@ examples: |-
 @z
 
 @x
-    Define additional build context with specified contents. In Dockerfile the context can be accessed when `FROM name` or `--from=name` is used.
-    When Dockerfile defines a stage with the same name it is overwritten.
+    Define additional build context with specified contents.
 @y
-    Define additional build context with specified contents. In Dockerfile the context can be accessed when `FROM name` or `--from=name` is used.
-    When Dockerfile defines a stage with the same name it is overwritten.
+    Define additional build context with specified contents.
+@z
+
+@x
+    In a Dockerfile:
+@y
+    In a Dockerfile:
+@z
+
+@x
+    - the context can be accessed when `FROM name` or `--from=name` is used
+    - the context overrides a stage called `name` when used as `FROM ... AS name`
+    - the context overrides a `#syntax` directive when used as `#syntax=name`
+@y
+    - the context can be accessed when `FROM name` or `--from=name` is used
+    - the context overrides a stage called `name` when used as `FROM ... AS name`
+    - the context overrides a `#syntax` directive when used as `#syntax=name`
 @z
 
 @x

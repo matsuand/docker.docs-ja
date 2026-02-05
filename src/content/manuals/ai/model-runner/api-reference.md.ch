@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
-% snip 対応
 
 @x
 title: DMR REST API
@@ -172,6 +171,7 @@ Docker Model Runner supports multiple API formats:
 | [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
 | [Anthropic API](#anthropic-compatible-api) | Anthropic-compatible messages endpoint | Tools built for Claude |
 | [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
+| [Image Generation API](#image-generation-api-diffusers) | Diffusers-based image generation | Generating images from text prompts |
 | [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @y
 | API | Description | Use case |
@@ -179,6 +179,7 @@ Docker Model Runner supports multiple API formats:
 | [OpenAI API](#openai-compatible-api) | OpenAI-compatible chat completions, embeddings | Most AI frameworks and tools |
 | [Anthropic API](#anthropic-compatible-api) | Anthropic-compatible messages endpoint | Tools built for Claude |
 | [Ollama API](#ollama-compatible-api) | Ollama-compatible endpoints | Tools built for Ollama |
+| [Image Generation API](#image-generation-api-diffusers) | Diffusers-based image generation | Generating images from text prompts |
 | [DMR API](#dmr-native-endpoints) | Native Docker Model Runner endpoints | Model management |
 @z
 
@@ -414,7 +415,31 @@ The following Anthropic API parameters are supported:
 ### Example: Chat with Anthropic API
 @z
 
-% snip command...
+@x
+```bash
+curl http://localhost:12434/v1/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "max_tokens": 1024,
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+@y
+```bash
+curl http://localhost:12434/v1/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "max_tokens": 1024,
+    "messages": [
+      {"role": "user", "content": "Hello!"}
+    ]
+  }'
+```
+@z
 
 @x
 ### Example: Streaming response
@@ -422,7 +447,33 @@ The following Anthropic API parameters are supported:
 ### Example: Streaming response
 @z
 
-% snip command...
+@x
+```bash
+curl http://localhost:12434/v1/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "max_tokens": 1024,
+    "stream": true,
+    "messages": [
+      {"role": "user", "content": "Count from 1 to 10"}
+    ]
+  }'
+```
+@y
+```bash
+curl http://localhost:12434/v1/messages \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "ai/smollm2",
+    "max_tokens": 1024,
+    "stream": true,
+    "messages": [
+      {"role": "user", "content": "Count from 1 to 10"}
+    ]
+  }'
+```
+@z
 
 @x
 ## Ollama-compatible API
@@ -504,6 +555,144 @@ curl http://localhost:12434/api/tags
 ```bash
 curl http://localhost:12434/api/tags
 ```
+@z
+
+@x
+## Image generation API (Diffusers)
+@y
+## Image generation API (Diffusers)
+@z
+
+@x
+DMR supports image generation through the Diffusers backend, enabling you to generate
+images from text prompts using models like Stable Diffusion.
+@y
+DMR supports image generation through the Diffusers backend, enabling you to generate
+images from text prompts using models like Stable Diffusion.
+@z
+
+@x
+> [!NOTE]
+> The Diffusers backend requires an NVIDIA GPU with CUDA support and is only
+> available on Linux (x86_64 and ARM64). See [Inference engines](inference-engines.md#diffusers)
+> for setup instructions.
+@y
+> [!NOTE]
+> The Diffusers backend requires an NVIDIA GPU with CUDA support and is only
+> available on Linux (x86_64 and ARM64). See [Inference engines](inference-engines.md#diffusers)
+> for setup instructions.
+@z
+
+@x
+### Endpoint
+@y
+### Endpoint
+@z
+
+@x
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/engines/diffusers/v1/images/generations` | POST | Generate an image from a text prompt |
+@y
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/engines/diffusers/v1/images/generations` | POST | Generate an image from a text prompt |
+@z
+
+@x
+### Supported parameters
+@y
+### Supported parameters
+@z
+
+@x
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier (e.g., `stable-diffusion:Q4`). |
+| `prompt` | string | Required. The text description of the image to generate. |
+| `size` | string | Image dimensions in `WIDTHxHEIGHT` format (e.g., `512x512`). |
+@y
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `model` | string | Required. The model identifier (e.g., `stable-diffusion:Q4`). |
+| `prompt` | string | Required. The text description of the image to generate. |
+| `size` | string | Image dimensions in `WIDTHxHEIGHT` format (e.g., `512x512`). |
+@z
+
+@x
+### Response format
+@y
+### Response format
+@z
+
+@x
+The API returns a JSON response with the generated image encoded in base64:
+@y
+The API returns a JSON response with the generated image encoded in base64:
+@z
+
+@x
+```json
+{
+  "data": [
+    {
+      "b64_json": "<base64-encoded-image-data>"
+    }
+  ]
+}
+```
+@y
+```json
+{
+  "data": [
+    {
+      "b64_json": "<base64-encoded-image-data>"
+    }
+  ]
+}
+```
+@z
+
+@x
+### Example: Generate an image
+@y
+### Example: Generate an image
+@z
+
+@x
+```bash
+curl -s -X POST http://localhost:12434/engines/diffusers/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "stable-diffusion:Q4",
+    "prompt": "A picture of a nice cat",
+    "size": "512x512"
+  }' | jq -r '.data[0].b64_json' | base64 -d > image.png
+```
+@y
+```bash
+curl -s -X POST http://localhost:12434/engines/diffusers/v1/images/generations \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "stable-diffusion:Q4",
+    "prompt": "A picture of a nice cat",
+    "size": "512x512"
+  }' | jq -r '.data[0].b64_json' | base64 -d > image.png
+```
+@z
+
+@x
+This command:
+1. Sends a POST request to the Diffusers image generation endpoint
+2. Specifies the model, prompt, and output image size
+3. Extracts the base64-encoded image from the response using `jq`
+4. Decodes the base64 data and saves it as `image.png`
+@y
+This command:
+1. Sends a POST request to the Diffusers image generation endpoint
+2. Specifies the model, prompt, and output image size
+3. Extracts the base64-encoded image from the response using `jq`
+4. Decodes the base64 data and saves it as `image.png`
 @z
 
 @x
@@ -885,9 +1074,9 @@ console.log(response.choices[0].message.content);
 @x
 - [IDE and tool integrations](ide-integrations.md) - Configure Cline, Continue, Cursor, and other tools
 - [Configuration options](configuration.md) - Adjust context size and runtime parameters
-- [Inference engines](inference-engines.md) - Learn about llama.cpp and vLLM options
+- [Inference engines](inference-engines.md) - Learn about llama.cpp, vLLM, and Diffusers options
 @y
 - [IDE and tool integrations](ide-integrations.md) - Configure Cline, Continue, Cursor, and other tools
 - [Configuration options](configuration.md) - Adjust context size and runtime parameters
-- [Inference engines](inference-engines.md) - Learn about llama.cpp and vLLM options
+- [Inference engines](inference-engines.md) - Learn about llama.cpp, vLLM, and Diffusers options
 @z

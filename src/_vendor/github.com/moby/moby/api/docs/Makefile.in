@@ -268,7 +268,8 @@ bases = \
 	v1.49.yaml   \
 	v1.50.yaml   \
 	v1.51.yaml   \
-	v1.52.yaml
+	v1.52.yaml   \
+	v1.53.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

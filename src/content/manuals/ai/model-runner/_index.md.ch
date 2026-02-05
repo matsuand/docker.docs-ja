@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
-% snip 対応
 
 @x
 title: Docker Model Runner
@@ -14,10 +13,10 @@ linkTitle: Model Runner
 
 @x
 description: Learn how to use Docker Model Runner to manage and run AI models.
-keywords: Docker, ai, model runner, docker desktop, docker engine, llm, openai, ollama, llama.cpp, vllm, cpu, nvidia, cuda, amd, rocm, vulkan, cline, continue, cursor
+keywords: Docker, ai, model runner, docker desktop, docker engine, llm, openai, ollama, llama.cpp, vllm, diffusers, cpu, nvidia, cuda, amd, rocm, vulkan, cline, continue, cursor, image generation, stable diffusion
 @y
 description: Learn how to use Docker Model Runner to manage and run AI models.
-keywords: Docker, ai, model runner, docker desktop, docker engine, llm, openai, ollama, llama.cpp, vllm, cpu, nvidia, cuda, amd, rocm, vulkan, cline, continue, cursor
+keywords: Docker, ai, model runner, docker desktop, docker engine, llm, openai, ollama, llama.cpp, vllm, diffusers, cpu, nvidia, cuda, amd, rocm, vulkan, cline, continue, cursor, image generation, stable diffusion
 @z
 
 @x
@@ -73,7 +72,8 @@ with AI models locally.
 @x
 - [Pull and push models to and from Docker Hub](https://hub.docker.com/u/ai)
 - Serve models on [OpenAI and Ollama-compatible APIs](api-reference.md) for easy integration with existing apps
-- Support for both [llama.cpp and vLLM inference engines](inference-engines.md) (vLLM on Linux x86_64/amd64 and Windows WSL2 with NVIDIA GPUs)
+- Support for [llama.cpp, vLLM, and Diffusers inference engines](inference-engines.md) (vLLM and Diffusers on Linux with NVIDIA GPUs)
+- [Generate images from text prompts](inference-engines.md#diffusers) using Stable Diffusion models with the Diffusers backend
 - Package GGUF and Safetensors files as OCI Artifacts and publish them to any Container Registry
 - Run and interact with AI models directly from the command line or from the Docker Desktop GUI
 - [Connect to AI coding tools](ide-integrations.md) like Cline, Continue, Cursor, and Aider
@@ -85,7 +85,8 @@ with AI models locally.
 @y
 - [Pull and push models to and from Docker Hub](https://hub.docker.com/u/ai)
 - Serve models on [OpenAI and Ollama-compatible APIs](api-reference.md) for easy integration with existing apps
-- Support for both [llama.cpp and vLLM inference engines](inference-engines.md) (vLLM on Linux x86_64/amd64 and Windows WSL2 with NVIDIA GPUs)
+- Support for [llama.cpp, vLLM, and Diffusers inference engines](inference-engines.md) (vLLM and Diffusers on Linux with NVIDIA GPUs)
+- [Generate images from text prompts](inference-engines.md#diffusers) using Stable Diffusion models with the Diffusers backend
 - Package GGUF and Safetensors files as OCI Artifacts and publish them to any Container Registry
 - Run and interact with AI models directly from the command line or from the Docker Desktop GUI
 - [Connect to AI coding tools](ide-integrations.md) like Cline, Continue, Cursor, and Aider
@@ -217,9 +218,9 @@ access. You can interact with the model using
 @z
 
 @x
-Docker Model Runner supports two inference engines:
+Docker Model Runner supports three inference engines:
 @y
-Docker Model Runner supports two inference engines:
+Docker Model Runner supports three inference engines:
 @z
 
 @x
@@ -227,17 +228,19 @@ Docker Model Runner supports two inference engines:
 |--------|----------|--------------|
 | [llama.cpp](inference-engines.md#llamacpp) | Local development, resource efficiency | GGUF (quantized) |
 | [vLLM](inference-engines.md#vllm) | Production, high throughput | Safetensors |
+| [Diffusers](inference-engines.md#diffusers) | Image generation (Stable Diffusion) | Safetensors |
 @y
 | Engine | Best for | Model format |
 |--------|----------|--------------|
 | [llama.cpp](inference-engines.md#llamacpp) | Local development, resource efficiency | GGUF (quantized) |
 | [vLLM](inference-engines.md#vllm) | Production, high throughput | Safetensors |
+| [Diffusers](inference-engines.md#diffusers) | Image generation (Stable Diffusion) | Safetensors |
 @z
 
 @x
-llama.cpp is the default engine and works on all platforms. vLLM requires NVIDIA GPUs and is supported on Linux x86_64 and Windows with WSL2. See [Inference engines](inference-engines.md) for detailed comparison and setup.
+llama.cpp is the default engine and works on all platforms. vLLM requires NVIDIA GPUs and is supported on Linux x86_64 and Windows with WSL2. Diffusers enables image generation and requires NVIDIA GPUs on Linux (x86_64 or ARM64). See [Inference engines](inference-engines.md) for detailed comparison and setup.
 @y
-llama.cpp is the default engine and works on all platforms. vLLM requires NVIDIA GPUs and is supported on Linux x86_64 and Windows with WSL2. See [Inference engines](inference-engines.md) for detailed comparison and setup.
+llama.cpp is the default engine and works on all platforms. vLLM requires NVIDIA GPUs and is supported on Linux x86_64 and Windows with WSL2. Diffusers enables image generation and requires NVIDIA GPUs on Linux (x86_64 or ARM64). See [Inference engines](inference-engines.md) for detailed comparison and setup.
 @z
 
 @x
@@ -252,7 +255,15 @@ Models have a configurable context size (context length) that determines how man
 Models have a configurable context size (context length) that determines how many tokens they can process. The default varies by model but is typically 2,048-8,192 tokens. You can adjust this per-model:
 @z
 
-% snip command...
+@x
+```console
+$ docker model configure --context-size 8192 ai/qwen2.5-coder
+```
+@y
+```console
+$ docker model configure --context-size 8192 ai/qwen2.5-coder
+```
+@z
 
 @x
 See [Configuration options](configuration.md) for details on context size and other parameters.
@@ -296,7 +307,15 @@ If you run a Docker Model Runner command and see:
 If you run a Docker Model Runner command and see:
 @z
 
-% snip output...
+@x
+```text
+docker: 'model' is not a docker command
+```
+@y
+```text
+docker: 'model' is not a docker command
+```
+@z
 
 @x
 It means Docker can't find the plugin because it's not in the expected CLI plugins directory.
@@ -310,7 +329,15 @@ To fix this, create a symlink so Docker can detect it:
 To fix this, create a symlink so Docker can detect it:
 @z
 
-% snip command...
+@x
+```console
+$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
+```
+@y
+```console
+$ ln -s /Applications/Docker.app/Contents/Resources/cli-plugins/docker-model ~/.docker/cli-plugins/docker-model
+```
+@z
 
 @x
 Once linked, rerun the command.
@@ -378,14 +405,14 @@ Thanks for trying out Docker Model Runner. To report bugs or request features, [
 - [Get started with DMR](get-started.md) - Enable DMR and run your first model
 - [API reference](api-reference.md) - OpenAI and Ollama-compatible API documentation
 - [Configuration options](configuration.md) - Context size and runtime parameters
-- [Inference engines](inference-engines.md) - llama.cpp and vLLM details
+- [Inference engines](inference-engines.md) - llama.cpp, vLLM, and Diffusers details
 - [IDE integrations](ide-integrations.md) - Connect Cline, Continue, Cursor, and more
 - [Open WebUI integration](openwebui-integration.md) - Set up a web chat interface
 @y
 - [Get started with DMR](get-started.md) - Enable DMR and run your first model
 - [API reference](api-reference.md) - OpenAI and Ollama-compatible API documentation
 - [Configuration options](configuration.md) - Context size and runtime parameters
-- [Inference engines](inference-engines.md) - llama.cpp and vLLM details
+- [Inference engines](inference-engines.md) - llama.cpp, vLLM, and Diffusers details
 - [IDE integrations](ide-integrations.md) - Connect Cline, Continue, Cursor, and more
 - [Open WebUI integration](openwebui-integration.md) - Set up a web chat interface
 @z

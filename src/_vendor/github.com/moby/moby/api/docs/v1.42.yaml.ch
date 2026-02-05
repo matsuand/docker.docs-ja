@@ -387,6 +387,34 @@ tags:
 
 @x
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -415,6 +443,34 @@ definitions:
       Type: "tcp"
 @y
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -444,6 +500,46 @@ definitions:
 @z
 
 @x
+  MountType:
+    description: |-
+      The mount type. Available types:
+@y
+  MountType:
+    description: |-
+      The mount type. Available types:
+@z
+
+@x
+      - `bind` a mount of a file or directory from the host into the container.
+      - `cluster` a Swarm cluster volume.
+      - `npipe` a named pipe from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "cluster"
+      - "npipe"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@y
+      - `bind` a mount of a file or directory from the host into the container.
+      - `cluster` a Swarm cluster volume.
+      - `npipe` a named pipe from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "cluster"
+      - "npipe"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@z
+
+@x
   MountPoint:
     type: "object"
     description: |
@@ -467,17 +563,12 @@ definitions:
 
 @x
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
-          - `tmpfs` a `tmpfs`.
+          - `cluster` a Swarm cluster volume.
           - `npipe` a named pipe from the host into the container.
-          - `cluster` a Swarm cluster volume
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
-          - "cluster"
+          - `tmpfs` a `tmpfs`.
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -490,17 +581,12 @@ definitions:
           Source location of the mount.
 @y
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
-          - `tmpfs` a `tmpfs`.
+          - `cluster` a Swarm cluster volume.
           - `npipe` a named pipe from the host into the container.
-          - `cluster` a Swarm cluster volume
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
-          - "cluster"
+          - `tmpfs` a `tmpfs`.
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -735,11 +821,11 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
-        type: "string"
-      Type:
-        description: |
-          The mount type. Available types:
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must either exist, or the `CreateMountpoint` must be set to `true` to
+          create the source path on the host if missing.
 @y
   Mount:
     type: "object"
@@ -748,7 +834,21 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must either exist, or the `CreateMountpoint` must be set to `true` to
+          create the source path on the host if missing.
+@z
+
+@x
+          For `Type=npipe`, the pipe must exist prior to creating the container.
+        type: "string"
+      Type:
+        description: |
+          The mount type. Available types:
+@y
+          For `Type=npipe`, the pipe must exist prior to creating the container.
         type: "string"
       Type:
         description: |
@@ -756,18 +856,13 @@ definitions:
 @z
 
 @x
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
-          - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-          - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
           - `cluster` a Swarm cluster volume
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
-          - "cluster"
+          - `npipe` Mounts a named pipe from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
+          - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -830,21 +925,19 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
 @y
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
-          - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-          - `npipe` Mounts a named pipe from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
           - `cluster` a Swarm cluster volume
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
-          - "cluster"
+          - `npipe` Mounts a named pipe from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
+          - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -907,7 +1000,10 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
 @z
 
@@ -1603,7 +1699,9 @@ definitions:
 
 @x
   HealthConfig:
-    description: "A test to perform to check that the container is healthy."
+    description: |
+      A test to perform to check that the container is healthy.
+      Healthcheck commands should be side-effect free.
     type: "object"
     properties:
       Test:
@@ -1611,7 +1709,9 @@ definitions:
           The test to perform. Possible values are:
 @y
   HealthConfig:
-    description: "A test to perform to check that the container is healthy."
+    description: |
+      A test to perform to check that the container is healthy.
+      Healthcheck commands should be side-effect free.
     type: "object"
     properties:
       Test:
@@ -1624,6 +1724,19 @@ definitions:
           - `["NONE"]` disable healthcheck
           - `["CMD", args...]` exec arguments directly
           - `["CMD-SHELL", command]` run command with system's default shell
+@y
+          - `[]` inherit healthcheck from image or parent image
+          - `["NONE"]` disable healthcheck
+          - `["CMD", args...]` exec arguments directly
+          - `["CMD-SHELL", command]` run command with system's default shell
+@z
+
+@x
+          A non-zero exit code indicates a failed healthcheck:
+          - `0` healthy
+          - `1` unhealthy
+          - `2` reserved (treated as unhealthy)
+          - other values: error running probe
         type: "array"
         items:
           type: "string"
@@ -1637,6 +1750,31 @@ definitions:
         description: |
           The time to wait before considering the check to have hung. It should
           be 0 or at least 1000000 (1 ms). 0 means inherit.
+@y
+          A non-zero exit code indicates a failed healthcheck:
+          - `0` healthy
+          - `1` unhealthy
+          - `2` reserved (treated as unhealthy)
+          - other values: error running probe
+        type: "array"
+        items:
+          type: "string"
+      Interval:
+        description: |
+          The time to wait between checks in nanoseconds. It should be 0 or at
+          least 1000000 (1 ms). 0 means inherit.
+        type: "integer"
+        format: "int64"
+      Timeout:
+        description: |
+          The time to wait before considering the check to have hung. It should
+          be 0 or at least 1000000 (1 ms). 0 means inherit.
+@z
+
+@x
+          If the health check command does not complete within this timeout,
+          the check is considered failed and the health check process is
+          forcibly terminated without a graceful shutdown.
         type: "integer"
         format: "int64"
       Retries:
@@ -1652,23 +1790,9 @@ definitions:
         type: "integer"
         format: "int64"
 @y
-          - `[]` inherit healthcheck from image or parent image
-          - `["NONE"]` disable healthcheck
-          - `["CMD", args...]` exec arguments directly
-          - `["CMD-SHELL", command]` run command with system's default shell
-        type: "array"
-        items:
-          type: "string"
-      Interval:
-        description: |
-          The time to wait between checks in nanoseconds. It should be 0 or at
-          least 1000000 (1 ms). 0 means inherit.
-        type: "integer"
-        format: "int64"
-      Timeout:
-        description: |
-          The time to wait before considering the check to have hung. It should
-          be 0 or at least 1000000 (1 ms). 0 means inherit.
+          If the health check command does not complete within this timeout,
+          the check is considered failed and the health check process is
+          forcibly terminated without a graceful shutdown.
         type: "integer"
         format: "int64"
       Retries:
@@ -10226,8 +10350,8 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a secret, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           It must be empty if the Driver field is set, in which case the data is
           loaded from an external secret store. The maximum allowed size is 500KB,
           as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0/api/validation#MaxSecretSize).
@@ -10248,8 +10372,8 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a secret, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           It must be empty if the Driver field is set, in which case the data is
           loaded from an external secret store. The maximum allowed size is 500KB,
           as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0/api/validation#MaxSecretSize).
@@ -10347,8 +10471,8 @@ definitions:
           type: "string"
       Data:
         description: |
-          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a config, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
@@ -10368,8 +10492,8 @@ definitions:
           type: "string"
       Data:
         description: |
-          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a config, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
@@ -10767,12 +10891,7 @@ definitions:
         example: "linux"
       Arch:
         description: |
-          The architecture that the daemon is running on
-        type: "string"
-        example: "amd64"
-      KernelVersion:
-        description: |
-          The kernel version (`uname -r`) that the daemon is running on.
+          Architecture of the daemon, as returned by the Go runtime (`GOARCH`).
 @y
                 These messages can be printed by the client as information to the user.
               type: "object"
@@ -10809,539 +10928,556 @@ definitions:
         example: "linux"
       Arch:
         description: |
-          The architecture that the daemon is running on
-        type: "string"
-        example: "amd64"
-      KernelVersion:
-        description: |
-          The kernel version (`uname -r`) that the daemon is running on.
-@z
-
-@x
-          This field is omitted when empty.
-        type: "string"
-        example: "4.19.76-linuxkit"
-      Experimental:
-        description: |
-          Indicates if the daemon is started with experimental features enabled.
-@y
-          This field is omitted when empty.
-        type: "string"
-        example: "4.19.76-linuxkit"
-      Experimental:
-        description: |
-          Indicates if the daemon is started with experimental features enabled.
-@z
-
-@x
-          This field is omitted when empty / false.
-        type: "boolean"
-        example: true
-      BuildTime:
-        description: |
-          The date and time that the daemon was compiled.
-        type: "string"
-        example: "2020-06-22T15:49:27.000000000+00:00"
-@y
-          This field is omitted when empty / false.
-        type: "boolean"
-        example: true
-      BuildTime:
-        description: |
-          The date and time that the daemon was compiled.
-        type: "string"
-        example: "2020-06-22T15:49:27.000000000+00:00"
-@z
-
-@x
-  SystemInfo:
-    type: "object"
-    properties:
-      ID:
-        description: |
-          Unique identifier of the daemon.
-@y
-  SystemInfo:
-    type: "object"
-    properties:
-      ID:
-        description: |
-          Unique identifier of the daemon.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Note**: The format of the ID itself is not part of the API, and
-          > should not be considered stable.
-        type: "string"
-        example: "7TRN:IPZB:QYBB:VPBQ:UMPP:KARE:6ZNR:XE6T:7EWV:PKF4:ZOJD:TPYS"
-      Containers:
-        description: "Total number of containers on the host."
-        type: "integer"
-        example: 14
-      ContainersRunning:
-        description: |
-          Number of containers with status `"running"`.
-        type: "integer"
-        example: 3
-      ContainersPaused:
-        description: |
-          Number of containers with status `"paused"`.
-        type: "integer"
-        example: 1
-      ContainersStopped:
-        description: |
-          Number of containers with status `"stopped"`.
-        type: "integer"
-        example: 10
-      Images:
-        description: |
-          Total number of images on the host.
-@y
-          > **Note**: The format of the ID itself is not part of the API, and
-          > should not be considered stable.
-        type: "string"
-        example: "7TRN:IPZB:QYBB:VPBQ:UMPP:KARE:6ZNR:XE6T:7EWV:PKF4:ZOJD:TPYS"
-      Containers:
-        description: "Total number of containers on the host."
-        type: "integer"
-        example: 14
-      ContainersRunning:
-        description: |
-          Number of containers with status `"running"`.
-        type: "integer"
-        example: 3
-      ContainersPaused:
-        description: |
-          Number of containers with status `"paused"`.
-        type: "integer"
-        example: 1
-      ContainersStopped:
-        description: |
-          Number of containers with status `"stopped"`.
-        type: "integer"
-        example: 10
-      Images:
-        description: |
-          Total number of images on the host.
-@z
-
-@x
-          Both _tagged_ and _untagged_ (dangling) images are counted.
-        type: "integer"
-        example: 508
-      Driver:
-        description: "Name of the storage driver in use."
-        type: "string"
-        example: "overlay2"
-      DriverStatus:
-        description: |
-          Information specific to the storage driver, provided as
-          "label" / "value" pairs.
-@y
-          Both _tagged_ and _untagged_ (dangling) images are counted.
-        type: "integer"
-        example: 508
-      Driver:
-        description: "Name of the storage driver in use."
-        type: "string"
-        example: "overlay2"
-      DriverStatus:
-        description: |
-          Information specific to the storage driver, provided as
-          "label" / "value" pairs.
-@z
-
-@x
-          This information is provided by the storage driver, and formatted
-          in a way consistent with the output of `docker info` on the command
-          line.
-@y
-          This information is provided by the storage driver, and formatted
-          in a way consistent with the output of `docker info` on the command
-          line.
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Note**: The information returned in this field, including the
-          > formatting of values and labels, should not be considered stable,
-          > and may change without notice.
-        type: "array"
-        items:
-          type: "array"
-          items:
-            type: "string"
-        example:
-          - ["Backing Filesystem", "extfs"]
-          - ["Supports d_type", "true"]
-          - ["Native Overlay Diff", "true"]
-      DockerRootDir:
-        description: |
-          Root directory of persistent Docker state.
-@y
-          > **Note**: The information returned in this field, including the
-          > formatting of values and labels, should not be considered stable,
-          > and may change without notice.
-        type: "array"
-        items:
-          type: "array"
-          items:
-            type: "string"
-        example:
-          - ["Backing Filesystem", "extfs"]
-          - ["Supports d_type", "true"]
-          - ["Native Overlay Diff", "true"]
-      DockerRootDir:
-        description: |
-          Root directory of persistent Docker state.
-@z
-
-@x
-          Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
-          on Windows.
-        type: "string"
-        example: "/var/lib/docker"
-      Plugins:
-        $ref: "#/definitions/PluginsInfo"
-      MemoryLimit:
-        description: "Indicates if the host has memory limit support enabled."
-        type: "boolean"
-        example: true
-      SwapLimit:
-        description: "Indicates if the host has memory swap limit support enabled."
-        type: "boolean"
-        example: true
-      KernelMemoryTCP:
-        description: |
-          Indicates if the host has kernel memory TCP limit support enabled. This
-          field is omitted if not supported.
-@y
-          Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
-          on Windows.
-        type: "string"
-        example: "/var/lib/docker"
-      Plugins:
-        $ref: "#/definitions/PluginsInfo"
-      MemoryLimit:
-        description: "Indicates if the host has memory limit support enabled."
-        type: "boolean"
-        example: true
-      SwapLimit:
-        description: "Indicates if the host has memory swap limit support enabled."
-        type: "boolean"
-        example: true
-      KernelMemoryTCP:
-        description: |
-          Indicates if the host has kernel memory TCP limit support enabled. This
-          field is omitted if not supported.
-@z
-
-@x
-          Kernel memory TCP limits are not supported when using cgroups v2, which
-          does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
-        type: "boolean"
-        example: true
-      CpuCfsPeriod:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CpuCfsQuota:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CPUShares:
-        description: |
-          Indicates if CPU Shares limiting is supported by the host.
-        type: "boolean"
-        example: true
-      CPUSet:
-        description: |
-          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
-@y
-          Kernel memory TCP limits are not supported when using cgroups v2, which
-          does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
-        type: "boolean"
-        example: true
-      CpuCfsPeriod:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CpuCfsQuota:
-        description: |
-          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
-          the host.
-        type: "boolean"
-        example: true
-      CPUShares:
-        description: |
-          Indicates if CPU Shares limiting is supported by the host.
-        type: "boolean"
-        example: true
-      CPUSet:
-        description: |
-          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
-@z
-
-@x
-          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-        type: "boolean"
-        example: true
-      PidsLimit:
-        description: "Indicates if the host kernel has PID limit support enabled."
-        type: "boolean"
-        example: true
-      OomKillDisable:
-        description: "Indicates if OOM killer disable is supported on the host."
-        type: "boolean"
-      IPv4Forwarding:
-        description: "Indicates IPv4 forwarding is enabled."
-        type: "boolean"
-        example: true
-      BridgeNfIptables:
-        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
-        type: "boolean"
-        example: true
-      BridgeNfIp6tables:
-        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
-        type: "boolean"
-        example: true
-      Debug:
-        description: |
-          Indicates if the daemon is running in debug-mode / with debug-level
-          logging enabled.
-        type: "boolean"
-        example: true
-      NFd:
-        description: |
-          The total number of file Descriptors in use by the daemon process.
-@y
-          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-        type: "boolean"
-        example: true
-      PidsLimit:
-        description: "Indicates if the host kernel has PID limit support enabled."
-        type: "boolean"
-        example: true
-      OomKillDisable:
-        description: "Indicates if OOM killer disable is supported on the host."
-        type: "boolean"
-      IPv4Forwarding:
-        description: "Indicates IPv4 forwarding is enabled."
-        type: "boolean"
-        example: true
-      BridgeNfIptables:
-        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
-        type: "boolean"
-        example: true
-      BridgeNfIp6tables:
-        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
-        type: "boolean"
-        example: true
-      Debug:
-        description: |
-          Indicates if the daemon is running in debug-mode / with debug-level
-          logging enabled.
-        type: "boolean"
-        example: true
-      NFd:
-        description: |
-          The total number of file Descriptors in use by the daemon process.
-@z
-
-@x
-          This information is only returned if debug-mode is enabled.
-        type: "integer"
-        example: 64
-      NGoroutines:
-        description: |
-          The  number of goroutines that currently exist.
-@y
-          This information is only returned if debug-mode is enabled.
-        type: "integer"
-        example: 64
-      NGoroutines:
-        description: |
-          The  number of goroutines that currently exist.
-@z
-
-@x
-          This information is only returned if debug-mode is enabled.
-        type: "integer"
-        example: 174
-      SystemTime:
-        description: |
-          Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
-          format with nano-seconds.
-        type: "string"
-        example: "2017-08-08T20:28:29.06202363Z"
-      LoggingDriver:
-        description: |
-          The logging driver to use as a default for new containers.
-        type: "string"
-      CgroupDriver:
-        description: |
-          The driver to use for managing cgroups.
-        type: "string"
-        enum: ["cgroupfs", "systemd", "none"]
-        default: "cgroupfs"
-        example: "cgroupfs"
-      CgroupVersion:
-        description: |
-          The version of the cgroup.
-        type: "string"
-        enum: ["1", "2"]
-        default: "1"
-        example: "1"
-      NEventsListener:
-        description: "Number of event listeners subscribed."
-        type: "integer"
-        example: 30
-      KernelVersion:
-        description: |
-          Kernel version of the host.
-@y
-          This information is only returned if debug-mode is enabled.
-        type: "integer"
-        example: 174
-      SystemTime:
-        description: |
-          Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
-          format with nano-seconds.
-        type: "string"
-        example: "2017-08-08T20:28:29.06202363Z"
-      LoggingDriver:
-        description: |
-          The logging driver to use as a default for new containers.
-        type: "string"
-      CgroupDriver:
-        description: |
-          The driver to use for managing cgroups.
-        type: "string"
-        enum: ["cgroupfs", "systemd", "none"]
-        default: "cgroupfs"
-        example: "cgroupfs"
-      CgroupVersion:
-        description: |
-          The version of the cgroup.
-        type: "string"
-        enum: ["1", "2"]
-        default: "1"
-        example: "1"
-      NEventsListener:
-        description: "Number of event listeners subscribed."
-        type: "integer"
-        example: 30
-      KernelVersion:
-        description: |
-          Kernel version of the host.
-@z
-
-@x
-          On Linux, this information obtained from `uname`. On Windows this
-          information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
-          registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
-        type: "string"
-        example: "4.9.38-moby"
-      OperatingSystem:
-        description: |
-          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
-          or "Windows Server 2016 Datacenter"
-        type: "string"
-        example: "Alpine Linux v3.5"
-      OSVersion:
-        description: |
-          Version of the host's operating system
-@y
-          On Linux, this information obtained from `uname`. On Windows this
-          information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
-          registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
-        type: "string"
-        example: "4.9.38-moby"
-      OperatingSystem:
-        description: |
-          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
-          or "Windows Server 2016 Datacenter"
-        type: "string"
-        example: "Alpine Linux v3.5"
-      OSVersion:
-        description: |
-          Version of the host's operating system
-@z
-
-@x
-          <p><br /></p>
-@y
-          <p><br /></p>
-@z
-
-@x
-          > **Note**: The information returned in this field, including its
-          > very existence, and the formatting of values, should not be considered
-          > stable, and may change without notice.
-        type: "string"
-        example: "16.04"
-      OSType:
-        description: |
-          Generic type of the operating system of the host, as returned by the
-          Go runtime (`GOOS`).
-@y
-          > **Note**: The information returned in this field, including its
-          > very existence, and the formatting of values, should not be considered
-          > stable, and may change without notice.
-        type: "string"
-        example: "16.04"
-      OSType:
-        description: |
-          Generic type of the operating system of the host, as returned by the
-          Go runtime (`GOOS`).
-@z
-
-@x
-          Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
-        type: "string"
-        example: "linux"
-      Architecture:
-        description: |
-          Hardware architecture of the host, as returned by the Go runtime
-          (`GOARCH`).
-@y
-          Currently returned values are "linux" and "windows". A full list of
-          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
-        type: "string"
-        example: "linux"
-      Architecture:
-        description: |
-          Hardware architecture of the host, as returned by the Go runtime
-          (`GOARCH`).
+          Architecture of the daemon, as returned by the Go runtime (`GOARCH`).
 @z
 
 @x
           A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+        type: "string"
+        example: "amd64"
+      KernelVersion:
+        description: |
+          The kernel version (`uname -r`) that the daemon is running on.
+@y
+          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+        type: "string"
+        example: "amd64"
+      KernelVersion:
+        description: |
+          The kernel version (`uname -r`) that the daemon is running on.
+@z
+
+@x
+          This field is omitted when empty.
+        type: "string"
+        example: "4.19.76-linuxkit"
+      Experimental:
+        description: |
+          Indicates if the daemon is started with experimental features enabled.
+@y
+          This field is omitted when empty.
+        type: "string"
+        example: "4.19.76-linuxkit"
+      Experimental:
+        description: |
+          Indicates if the daemon is started with experimental features enabled.
+@z
+
+@x
+          This field is omitted when empty / false.
+        type: "boolean"
+        example: true
+      BuildTime:
+        description: |
+          The date and time that the daemon was compiled.
+        type: "string"
+        example: "2020-06-22T15:49:27.000000000+00:00"
+@y
+          This field is omitted when empty / false.
+        type: "boolean"
+        example: true
+      BuildTime:
+        description: |
+          The date and time that the daemon was compiled.
+        type: "string"
+        example: "2020-06-22T15:49:27.000000000+00:00"
+@z
+
+@x
+  SystemInfo:
+    type: "object"
+    properties:
+      ID:
+        description: |
+          Unique identifier of the daemon.
+@y
+  SystemInfo:
+    type: "object"
+    properties:
+      ID:
+        description: |
+          Unique identifier of the daemon.
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Note**: The format of the ID itself is not part of the API, and
+          > should not be considered stable.
+        type: "string"
+        example: "7TRN:IPZB:QYBB:VPBQ:UMPP:KARE:6ZNR:XE6T:7EWV:PKF4:ZOJD:TPYS"
+      Containers:
+        description: "Total number of containers on the host."
+        type: "integer"
+        example: 14
+      ContainersRunning:
+        description: |
+          Number of containers with status `"running"`.
+        type: "integer"
+        example: 3
+      ContainersPaused:
+        description: |
+          Number of containers with status `"paused"`.
+        type: "integer"
+        example: 1
+      ContainersStopped:
+        description: |
+          Number of containers with status `"stopped"`.
+        type: "integer"
+        example: 10
+      Images:
+        description: |
+          Total number of images on the host.
+@y
+          > **Note**: The format of the ID itself is not part of the API, and
+          > should not be considered stable.
+        type: "string"
+        example: "7TRN:IPZB:QYBB:VPBQ:UMPP:KARE:6ZNR:XE6T:7EWV:PKF4:ZOJD:TPYS"
+      Containers:
+        description: "Total number of containers on the host."
+        type: "integer"
+        example: 14
+      ContainersRunning:
+        description: |
+          Number of containers with status `"running"`.
+        type: "integer"
+        example: 3
+      ContainersPaused:
+        description: |
+          Number of containers with status `"paused"`.
+        type: "integer"
+        example: 1
+      ContainersStopped:
+        description: |
+          Number of containers with status `"stopped"`.
+        type: "integer"
+        example: 10
+      Images:
+        description: |
+          Total number of images on the host.
+@z
+
+@x
+          Both _tagged_ and _untagged_ (dangling) images are counted.
+        type: "integer"
+        example: 508
+      Driver:
+        description: "Name of the storage driver in use."
+        type: "string"
+        example: "overlay2"
+      DriverStatus:
+        description: |
+          Information specific to the storage driver, provided as
+          "label" / "value" pairs.
+@y
+          Both _tagged_ and _untagged_ (dangling) images are counted.
+        type: "integer"
+        example: 508
+      Driver:
+        description: "Name of the storage driver in use."
+        type: "string"
+        example: "overlay2"
+      DriverStatus:
+        description: |
+          Information specific to the storage driver, provided as
+          "label" / "value" pairs.
+@z
+
+@x
+          This information is provided by the storage driver, and formatted
+          in a way consistent with the output of `docker info` on the command
+          line.
+@y
+          This information is provided by the storage driver, and formatted
+          in a way consistent with the output of `docker info` on the command
+          line.
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Note**: The information returned in this field, including the
+          > formatting of values and labels, should not be considered stable,
+          > and may change without notice.
+        type: "array"
+        items:
+          type: "array"
+          items:
+            type: "string"
+        example:
+          - ["Backing Filesystem", "extfs"]
+          - ["Supports d_type", "true"]
+          - ["Native Overlay Diff", "true"]
+      DockerRootDir:
+        description: |
+          Root directory of persistent Docker state.
+@y
+          > **Note**: The information returned in this field, including the
+          > formatting of values and labels, should not be considered stable,
+          > and may change without notice.
+        type: "array"
+        items:
+          type: "array"
+          items:
+            type: "string"
+        example:
+          - ["Backing Filesystem", "extfs"]
+          - ["Supports d_type", "true"]
+          - ["Native Overlay Diff", "true"]
+      DockerRootDir:
+        description: |
+          Root directory of persistent Docker state.
+@z
+
+@x
+          Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
+          on Windows.
+        type: "string"
+        example: "/var/lib/docker"
+      Plugins:
+        $ref: "#/definitions/PluginsInfo"
+      MemoryLimit:
+        description: "Indicates if the host has memory limit support enabled."
+        type: "boolean"
+        example: true
+      SwapLimit:
+        description: "Indicates if the host has memory swap limit support enabled."
+        type: "boolean"
+        example: true
+      KernelMemoryTCP:
+        description: |
+          Indicates if the host has kernel memory TCP limit support enabled. This
+          field is omitted if not supported.
+@y
+          Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
+          on Windows.
+        type: "string"
+        example: "/var/lib/docker"
+      Plugins:
+        $ref: "#/definitions/PluginsInfo"
+      MemoryLimit:
+        description: "Indicates if the host has memory limit support enabled."
+        type: "boolean"
+        example: true
+      SwapLimit:
+        description: "Indicates if the host has memory swap limit support enabled."
+        type: "boolean"
+        example: true
+      KernelMemoryTCP:
+        description: |
+          Indicates if the host has kernel memory TCP limit support enabled. This
+          field is omitted if not supported.
+@z
+
+@x
+          Kernel memory TCP limits are not supported when using cgroups v2, which
+          does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
+        type: "boolean"
+        example: true
+      CpuCfsPeriod:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CpuCfsQuota:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CPUShares:
+        description: |
+          Indicates if CPU Shares limiting is supported by the host.
+        type: "boolean"
+        example: true
+      CPUSet:
+        description: |
+          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
+@y
+          Kernel memory TCP limits are not supported when using cgroups v2, which
+          does not support the corresponding `memory.kmem.tcp.limit_in_bytes` cgroup.
+        type: "boolean"
+        example: true
+      CpuCfsPeriod:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) period is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CpuCfsQuota:
+        description: |
+          Indicates if CPU CFS(Completely Fair Scheduler) quota is supported by
+          the host.
+        type: "boolean"
+        example: true
+      CPUShares:
+        description: |
+          Indicates if CPU Shares limiting is supported by the host.
+        type: "boolean"
+        example: true
+      CPUSet:
+        description: |
+          Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
+@z
+
+@x
+          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
+        type: "boolean"
+        example: true
+      PidsLimit:
+        description: "Indicates if the host kernel has PID limit support enabled."
+        type: "boolean"
+        example: true
+      OomKillDisable:
+        description: "Indicates if OOM killer disable is supported on the host."
+        type: "boolean"
+      IPv4Forwarding:
+        description: "Indicates IPv4 forwarding is enabled."
+        type: "boolean"
+        example: true
+      BridgeNfIptables:
+        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
+        type: "boolean"
+        example: true
+      BridgeNfIp6tables:
+        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
+        type: "boolean"
+        example: true
+      Debug:
+        description: |
+          Indicates if the daemon is running in debug-mode / with debug-level
+          logging enabled.
+        type: "boolean"
+        example: true
+      NFd:
+        description: |
+          The total number of file Descriptors in use by the daemon process.
+@y
+          See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
+        type: "boolean"
+        example: true
+      PidsLimit:
+        description: "Indicates if the host kernel has PID limit support enabled."
+        type: "boolean"
+        example: true
+      OomKillDisable:
+        description: "Indicates if OOM killer disable is supported on the host."
+        type: "boolean"
+      IPv4Forwarding:
+        description: "Indicates IPv4 forwarding is enabled."
+        type: "boolean"
+        example: true
+      BridgeNfIptables:
+        description: "Indicates if `bridge-nf-call-iptables` is available on the host."
+        type: "boolean"
+        example: true
+      BridgeNfIp6tables:
+        description: "Indicates if `bridge-nf-call-ip6tables` is available on the host."
+        type: "boolean"
+        example: true
+      Debug:
+        description: |
+          Indicates if the daemon is running in debug-mode / with debug-level
+          logging enabled.
+        type: "boolean"
+        example: true
+      NFd:
+        description: |
+          The total number of file Descriptors in use by the daemon process.
+@z
+
+@x
+          This information is only returned if debug-mode is enabled.
+        type: "integer"
+        example: 64
+      NGoroutines:
+        description: |
+          The  number of goroutines that currently exist.
+@y
+          This information is only returned if debug-mode is enabled.
+        type: "integer"
+        example: 64
+      NGoroutines:
+        description: |
+          The  number of goroutines that currently exist.
+@z
+
+@x
+          This information is only returned if debug-mode is enabled.
+        type: "integer"
+        example: 174
+      SystemTime:
+        description: |
+          Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          format with nano-seconds.
+        type: "string"
+        example: "2017-08-08T20:28:29.06202363Z"
+      LoggingDriver:
+        description: |
+          The logging driver to use as a default for new containers.
+        type: "string"
+      CgroupDriver:
+        description: |
+          The driver to use for managing cgroups.
+        type: "string"
+        enum: ["cgroupfs", "systemd", "none"]
+        default: "cgroupfs"
+        example: "cgroupfs"
+      CgroupVersion:
+        description: |
+          The version of the cgroup.
+        type: "string"
+        enum: ["1", "2"]
+        default: "1"
+        example: "1"
+      NEventsListener:
+        description: "Number of event listeners subscribed."
+        type: "integer"
+        example: 30
+      KernelVersion:
+        description: |
+          Kernel version of the host.
+@y
+          This information is only returned if debug-mode is enabled.
+        type: "integer"
+        example: 174
+      SystemTime:
+        description: |
+          Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
+          format with nano-seconds.
+        type: "string"
+        example: "2017-08-08T20:28:29.06202363Z"
+      LoggingDriver:
+        description: |
+          The logging driver to use as a default for new containers.
+        type: "string"
+      CgroupDriver:
+        description: |
+          The driver to use for managing cgroups.
+        type: "string"
+        enum: ["cgroupfs", "systemd", "none"]
+        default: "cgroupfs"
+        example: "cgroupfs"
+      CgroupVersion:
+        description: |
+          The version of the cgroup.
+        type: "string"
+        enum: ["1", "2"]
+        default: "1"
+        example: "1"
+      NEventsListener:
+        description: "Number of event listeners subscribed."
+        type: "integer"
+        example: 30
+      KernelVersion:
+        description: |
+          Kernel version of the host.
+@z
+
+@x
+          On Linux, this information obtained from `uname`. On Windows this
+          information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
+          registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
+        type: "string"
+        example: "4.9.38-moby"
+      OperatingSystem:
+        description: |
+          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
+          or "Windows Server 2016 Datacenter"
+        type: "string"
+        example: "Alpine Linux v3.5"
+      OSVersion:
+        description: |
+          Version of the host's operating system
+@y
+          On Linux, this information obtained from `uname`. On Windows this
+          information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
+          registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
+        type: "string"
+        example: "4.9.38-moby"
+      OperatingSystem:
+        description: |
+          Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
+          or "Windows Server 2016 Datacenter"
+        type: "string"
+        example: "Alpine Linux v3.5"
+      OSVersion:
+        description: |
+          Version of the host's operating system
+@z
+
+@x
+          <p><br /></p>
+@y
+          <p><br /></p>
+@z
+
+@x
+          > **Note**: The information returned in this field, including its
+          > very existence, and the formatting of values, should not be considered
+          > stable, and may change without notice.
+        type: "string"
+        example: "16.04"
+      OSType:
+        description: |
+          Generic type of the operating system of the host, as returned by the
+          Go runtime (`GOOS`).
+@y
+          > **Note**: The information returned in this field, including its
+          > very existence, and the formatting of values, should not be considered
+          > stable, and may change without notice.
+        type: "string"
+        example: "16.04"
+      OSType:
+        description: |
+          Generic type of the operating system of the host, as returned by the
+          Go runtime (`GOOS`).
+@z
+
+@x
+          Currently returned values are "linux" and "windows". A full list of
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+        type: "string"
+        example: "linux"
+      Architecture:
+        description: |
+          Hardware architecture of the host, as returned by the operating system.
+          This is equivalent to the output of `uname -m` on Linux.
+@y
+          Currently returned values are "linux" and "windows". A full list of
+          possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+        type: "string"
+        example: "linux"
+      Architecture:
+        description: |
+          Hardware architecture of the host, as returned by the operating system.
+          This is equivalent to the output of `uname -m` on Linux.
+@z
+
+@x
+          Unlike `Arch` (from `/version`), this reports the machine's native
+          architecture, which can differ from the Go runtime architecture when
+          running a binary compiled for a different architecture (for example,
+          a 32-bit binary running on 64-bit hardware).
         type: "string"
         example: "x86_64"
       NCPU:
         description: |
           The number of logical CPUs usable by the daemon.
 @y
-          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+          Unlike `Arch` (from `/version`), this reports the machine's native
+          architecture, which can differ from the Go runtime architecture when
+          running a binary compiled for a different architecture (for example,
+          a 32-bit binary running on 64-bit hardware).
         type: "string"
         example: "x86_64"
       NCPU:
@@ -15206,7 +15342,8 @@ paths:
 @x
         To calculate the values shown by the `stats` command of the docker cli tool
         the following formulas can be used:
-        * used_memory = `memory_stats.usage - memory_stats.stats.cache`
+        * used_memory = `memory_stats.usage - memory_stats.stats.cache` (cgroups v1)
+        * used_memory = `memory_stats.usage - memory_stats.stats.inactive_file` (cgroups v2)
         * available_memory = `memory_stats.limit`
         * Memory usage % = `(used_memory / available_memory) * 100.0`
         * cpu_delta = `cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage`
@@ -15635,7 +15772,8 @@ paths:
 @y
         To calculate the values shown by the `stats` command of the docker cli tool
         the following formulas can be used:
-        * used_memory = `memory_stats.usage - memory_stats.stats.cache`
+        * used_memory = `memory_stats.usage - memory_stats.stats.cache` (cgroups v1)
+        * used_memory = `memory_stats.usage - memory_stats.stats.inactive_file` (cgroups v2)
         * available_memory = `memory_stats.limit`
         * Memory usage % = `(used_memory / available_memory) * 100.0`
         * cpu_delta = `cpu_stats.cpu_usage.total_usage - precpu_stats.cpu_usage.total_usage`
@@ -18123,33 +18261,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: HistoryResponseItem
-              title: "HistoryResponseItem"
-              description: "individual image layer information in response to ImageHistory operation"
-              required: [Id, Created, CreatedBy, Tags, Size, Comment]
-              properties:
-                Id:
-                  type: "string"
-                  x-nullable: false
-                Created:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                CreatedBy:
-                  type: "string"
-                  x-nullable: false
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                Comment:
-                  type: "string"
-                  x-nullable: false
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -18244,33 +18356,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: HistoryResponseItem
-              title: "HistoryResponseItem"
-              description: "individual image layer information in response to ImageHistory operation"
-              required: [Id, Created, CreatedBy, Tags, Size, Comment]
-              properties:
-                Id:
-                  type: "string"
-                  x-nullable: false
-                Created:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                CreatedBy:
-                  type: "string"
-                  x-nullable: false
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                Comment:
-                  type: "string"
-                  x-nullable: false
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -18424,7 +18510,25 @@ paths:
   /images/{name}/tag:
     post:
       summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+      description: |
+        Create a tag that refers to a source image.
+@y
+            Refer to the [authentication section](#section/Authentication) for
+            details.
+          type: "string"
+          required: true
+      tags: ["Image"]
+  /images/{name}/tag:
+    post:
+      summary: "Tag an image"
+      description: |
+        Create a tag that refers to a source image.
+@z
+
+@x
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:
@@ -18467,15 +18571,9 @@ paths:
         Remove an image, along with any untagged parent images that were
         referenced by that image.
 @y
-            Refer to the [authentication section](#section/Authentication) for
-            details.
-          type: "string"
-          required: true
-      tags: ["Image"]
-  /images/{name}/tag:
-    post:
-      summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:

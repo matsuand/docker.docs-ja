@@ -240,6 +240,62 @@ To preserve a configured environment, create a [Custom template](templates.md).
 @z
 
 @x
+## Security considerations
+@y
+## Security considerations
+@z
+
+@x
+Agents can create and modify any files in your mounted workspace, including
+scripts, configuration files, and hidden files.
+@y
+Agents can create and modify any files in your mounted workspace, including
+scripts, configuration files, and hidden files.
+@z
+
+@x
+After an agent works in a workspace, review changes before performing actions
+on your host that might execute code:
+@y
+After an agent works in a workspace, review changes before performing actions
+on your host that might execute code:
+@z
+
+@x
+- Committing changes (executes Git hooks)
+- Opening the workspace in an IDE (may auto-run scripts or extensions)
+- Running scripts or executables the agent created or modified
+@y
+- Committing changes (executes Git hooks)
+- Opening the workspace in an IDE (may auto-run scripts or extensions)
+- Running scripts or executables the agent created or modified
+@z
+
+@x
+Review what changed:
+@y
+Review what changed:
+@z
+
+% snip command...
+
+@x
+Check for untracked files and be aware that some changes, like Git hooks in
+`.git/hooks/`, won't appear in standard diffs.
+@y
+Check for untracked files and be aware that some changes, like Git hooks in
+`.git/hooks/`, won't appear in standard diffs.
+@z
+
+@x
+This is the same trust model used by editors like Visual Studio Code, which
+warn when opening new workspaces for similar reasons.
+@y
+This is the same trust model used by editors like Visual Studio Code, which
+warn when opening new workspaces for similar reasons.
+@z
+
+@x
 ## Named sandboxes
 @y
 ## Named sandboxes

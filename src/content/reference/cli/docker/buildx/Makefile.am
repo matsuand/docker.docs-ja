@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = debug imagetools
+SUBDIRS = debug history imagetools policy
 
 copyfiles = \
 	_index.md  \

@@ -195,10 +195,10 @@ To learn more about how to use build checks, see
 @z
 
 @x
-      <td><a href="./copy-ignored-file/">CopyIgnoredFile (experimental)</a></td>
+      <td><a href="./copy-ignored-file/">CopyIgnoredFile</a></td>
       <td>Attempting to Copy file that is excluded by .dockerignore</td>
 @y
-      <td><a href="./copy-ignored-file/">CopyIgnoredFile (試験的)</a></td>
+      <td><a href="./copy-ignored-file/">CopyIgnoredFile</a></td>
       <td>.dockerignore によって除外されているファイルをコピーしようとしてます</td>
 @z
 

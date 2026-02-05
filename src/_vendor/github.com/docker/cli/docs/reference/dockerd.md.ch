@@ -2142,7 +2142,7 @@ You can view the configured CDI specification directories using the `docker info
 @z
 
 @x
-The feature in enabled by default. To disable it, use the `cdi` options in the `deamon.json` file:
+The feature in enabled by default. To disable it, use the `cdi` options in the `daemon.json` file:
 @y
 The feature in enabled by default. To disable it, use the `cdi` options in the `deamon.json` file:
 @z

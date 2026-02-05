@@ -217,12 +217,14 @@ title: Bake standard library functions
 | [`reverselist`](#reverselist)                       | Returns the given list with its elements in reverse order.                                                                                                                                                   |
 | [`rsadecrypt`](#rsadecrypt)                         | Decrypts an RSA-encrypted ciphertext.                                                                                                                                                                        |
 | [`sanitize`](#sanitize)                             | Replaces all non-alphanumeric characters with a underscore, leaving only characters that are valid for a Bake target name.                                                                                   |
+| [`semvercmp`](#semvercmp)                           | Returns true if version satisfies a constraint.                                                                                                                                                              |
 | [`sethaselement`](#sethaselement)                   | Returns true if the given set contains the given element, or false otherwise.                                                                                                                                |
 | [`setintersection`](#setintersection)               | Returns the intersection of all given sets.                                                                                                                                                                  |
 @y
 | [`reverselist`](#reverselist)                       | Returns the given list with its elements in reverse order.                                                                                                                                                   |
 | [`rsadecrypt`](#rsadecrypt)                         | Decrypts an RSA-encrypted ciphertext.                                                                                                                                                                        |
 | [`sanitize`](#sanitize)                             | Replaces all non-alphanumeric characters with a underscore, leaving only characters that are valid for a Bake target name.                                                                                   |
+| [`semvercmp`](#semvercmp)                           | Returns true if version satisfies a constraint.                                                                                                                                                              |
 | [`sethaselement`](#sethaselement)                   | Returns true if the given set contains the given element, or false otherwise.                                                                                                                                |
 | [`setintersection`](#setintersection)               | Returns the intersection of all given sets.                                                                                                                                                                  |
 @z
@@ -308,783 +310,785 @@ title: Bake standard library functions
 @z
 
 @x
-## Examples
+## `absolute`
 @y
-## Examples
+## `absolute`
 @z
 
+% snip code...
+
 @x
-### <a name="absolute"></a> `absolute`
+## `add`
 @y
-### <a name="absolute"></a> `absolute`
+## `add`
 @z
 
 % snip code...
 
 @x
-### <a name="add"></a> `add`
+## `and`
 @y
-### <a name="add"></a> `add`
+## `and`
 @z
 
 % snip code...
 
 @x
-### <a name="and"></a> `and`
+## `base64decode`
 @y
-### <a name="and"></a> `and`
+## `base64decode`
 @z
 
 % snip code...
 
 @x
-### <a name="base64decode"></a> `base64decode`
+## `base64encode`
 @y
-### <a name="base64decode"></a> `base64decode`
+## `base64encode`
 @z
 
 % snip code...
 
 @x
-### <a name="base64encode"></a> `base64encode`
+## `basename`
 @y
-### <a name="base64encode"></a> `base64encode`
+## `basename`
 @z
 
 % snip code...
 
 @x
-### <a name="basename"></a> `basename`
+## `bcrypt`
 @y
-### <a name="basename"></a> `basename`
+## `bcrypt`
 @z
 
 % snip code...
 
 @x
-### <a name="bcrypt"></a> `bcrypt`
+## `byteslen`
 @y
-### <a name="bcrypt"></a> `bcrypt`
+## `byteslen`
 @z
 
 % snip code...
 
 @x
-### <a name="byteslen"></a> `byteslen`
+## `bytesslice`
 @y
-### <a name="byteslen"></a> `byteslen`
+## `bytesslice`
 @z
 
 % snip code...
 
 @x
-### <a name="bytesslice"></a> `bytesslice`
+## `can`
 @y
-### <a name="bytesslice"></a> `bytesslice`
+## `can`
 @z
 
 % snip code...
 
 @x
-### <a name="can"></a> `can`
+## `ceil`
 @y
-### <a name="can"></a> `can`
+## `ceil`
 @z
 
 % snip code...
 
 @x
-### <a name="ceil"></a> `ceil`
+## `chomp`
 @y
-### <a name="ceil"></a> `ceil`
+## `chomp`
 @z
 
 % snip code...
 
 @x
-### <a name="chomp"></a> `chomp`
+## `chunklist`
 @y
-### <a name="chomp"></a> `chomp`
+## `chunklist`
 @z
 
 % snip code...
 
 @x
-### <a name="chunklist"></a> `chunklist`
+## `cidrhost`
 @y
-### <a name="chunklist"></a> `chunklist`
+## `cidrhost`
 @z
 
 % snip code...
 
 @x
-### <a name="cidrhost"></a> `cidrhost`
+## `cidrnetmask`
 @y
-### <a name="cidrhost"></a> `cidrhost`
+## `cidrnetmask`
 @z
 
 % snip code...
 
 @x
-### <a name="cidrnetmask"></a> `cidrnetmask`
+## `cidrsubnet`
 @y
-### <a name="cidrnetmask"></a> `cidrnetmask`
+## `cidrsubnet`
 @z
 
 % snip code...
 
 @x
-### <a name="cidrsubnet"></a> `cidrsubnet`
+## `cidrsubnets`
 @y
-### <a name="cidrsubnet"></a> `cidrsubnet`
+## `cidrsubnets`
 @z
 
 % snip code...
 
 @x
-### <a name="cidrsubnets"></a> `cidrsubnets`
+## `coalesce`
 @y
-### <a name="cidrsubnets"></a> `cidrsubnets`
+## `coalesce`
 @z
 
 % snip code...
 
 @x
-### <a name="coalesce"></a> `coalesce`
+## `coalescelist`
 @y
-### <a name="coalesce"></a> `coalesce`
+## `coalescelist`
 @z
 
 % snip code...
 
 @x
-### <a name="coalescelist"></a> `coalescelist`
+## `compact`
 @y
-### <a name="coalescelist"></a> `coalescelist`
+## `compact`
 @z
 
 % snip code...
 
 @x
-### <a name="compact"></a> `compact`
+## `concat`
 @y
-### <a name="compact"></a> `compact`
+## `concat`
 @z
 
 % snip code...
 
 @x
-### <a name="concat"></a> `concat`
+## `contains`
 @y
-### <a name="concat"></a> `concat`
+## `contains`
 @z
 
 % snip code...
 
 @x
-### <a name="contains"></a> `contains`
+## `convert`
 @y
-### <a name="contains"></a> `contains`
+## `convert`
 @z
 
 % snip code...
 
 @x
-### <a name="convert"></a> `convert`
+## `csvdecode`
 @y
-### <a name="convert"></a> `convert`
+## `csvdecode`
 @z
 
 % snip code...
 
 @x
-### <a name="csvdecode"></a> `csvdecode`
+## `dirname`
 @y
-### <a name="csvdecode"></a> `csvdecode`
+## `dirname`
 @z
 
 % snip code...
 
 @x
-### <a name="dirname"></a> `dirname`
+## `distinct`
 @y
-### <a name="dirname"></a> `dirname`
+## `distinct`
 @z
 
 % snip code...
 
 @x
-### <a name="distinct"></a> `distinct`
+## `divide`
 @y
-### <a name="distinct"></a> `distinct`
+## `divide`
 @z
 
 % snip code...
 
 @x
-### <a name="divide"></a> `divide`
+## `element`
 @y
-### <a name="divide"></a> `divide`
+## `element`
 @z
 
 % snip code...
 
 @x
-### <a name="element"></a> `element`
+## `equal`
 @y
-### <a name="element"></a> `element`
+## `equal`
 @z
 
 % snip code...
 
 @x
-### <a name="equal"></a> `equal`
+## `flatten`
 @y
-### <a name="equal"></a> `equal`
+## `flatten`
 @z
 
 % snip code...
 
 @x
-### <a name="flatten"></a> `flatten`
+## `floor`
 @y
-### <a name="flatten"></a> `flatten`
+## `floor`
 @z
 
 % snip code...
 
 @x
-### <a name="floor"></a> `floor`
+## `format`
 @y
-### <a name="floor"></a> `floor`
+## `format`
 @z
 
 % snip code...
 
 @x
-### <a name="format"></a> `format`
+## `formatdate`
 @y
-### <a name="format"></a> `format`
+## `formatdate`
 @z
 
 % snip code...
 
 @x
-### <a name="formatdate"></a> `formatdate`
+## `formatlist`
 @y
-### <a name="formatdate"></a> `formatdate`
+## `formatlist`
 @z
 
 % snip code...
 
 @x
-### <a name="formatlist"></a> `formatlist`
+## `greaterthan`
 @y
-### <a name="formatlist"></a> `formatlist`
+## `greaterthan`
 @z
 
 % snip code...
 
 @x
-### <a name="greaterthan"></a> `greaterthan`
+## `greaterthanorequalto`
 @y
-### <a name="greaterthan"></a> `greaterthan`
+## `greaterthanorequalto`
 @z
 
 % snip code...
 
 @x
-### <a name="greaterthanorequalto"></a> `greaterthanorequalto`
+## `hasindex`
 @y
-### <a name="greaterthanorequalto"></a> `greaterthanorequalto`
+## `hasindex`
 @z
 
 % snip code...
 
 @x
-### <a name="hasindex"></a> `hasindex`
+## `homedir`
 @y
-### <a name="hasindex"></a> `hasindex`
+## `homedir`
 @z
 
 % snip code...
 
 @x
-### <a name="homedir"></a> `homedir`
+## `indent`
 @y
-### <a name="homedir"></a> `homedir`
+## `indent`
 @z
 
 % snip code...
 
 @x
-### <a name="indent"></a> `indent`
+## `index`
 @y
-### <a name="indent"></a> `indent`
+## `index`
 @z
 
 % snip code...
 
 @x
-### <a name="index"></a> `index`
+## `indexof`
 @y
-### <a name="index"></a> `index`
+## `indexof`
 @z
 
 % snip code...
 
 @x
-### <a name="indexof"></a> `indexof`
+## `int`
 @y
-### <a name="indexof"></a> `indexof`
+## `int`
 @z
 
 % snip code...
 
 @x
-### <a name="int"></a> `int`
+## `join`
 @y
-### <a name="int"></a> `int`
+## `join`
 @z
 
 % snip code...
 
 @x
-### <a name="join"></a> `join`
+## `jsondecode`
 @y
-### <a name="join"></a> `join`
+## `jsondecode`
 @z
 
 % snip code...
 
 @x
-### <a name="jsondecode"></a> `jsondecode`
+## `jsonencode`
 @y
-### <a name="jsondecode"></a> `jsondecode`
+## `jsonencode`
 @z
 
 % snip code...
 
 @x
-### <a name="jsonencode"></a> `jsonencode`
+## `keys`
 @y
-### <a name="jsonencode"></a> `jsonencode`
+## `keys`
 @z
 
 % snip code...
 
 @x
-### <a name="keys"></a> `keys`
+## `length`
 @y
-### <a name="keys"></a> `keys`
+## `length`
 @z
 
 % snip code...
 
 @x
-### <a name="length"></a> `length`
+## `lessthan`
 @y
-### <a name="length"></a> `length`
+## `lessthan`
 @z
 
 % snip code...
 
 @x
-### <a name="lessthan"></a> `lessthan`
+## `lessthanorequalto`
 @y
-### <a name="lessthan"></a> `lessthan`
+## `lessthanorequalto`
 @z
 
 % snip code...
 
 @x
-### <a name="lessthanorequalto"></a> `lessthanorequalto`
+## `log`
 @y
-### <a name="lessthanorequalto"></a> `lessthanorequalto`
+## `log`
 @z
 
 % snip code...
 
 @x
-### <a name="log"></a> `log`
+## `lookup`
 @y
-### <a name="log"></a> `log`
+## `lookup`
 @z
 
 % snip code...
 
 @x
-### <a name="lookup"></a> `lookup`
+## `lower`
 @y
-### <a name="lookup"></a> `lookup`
+## `lower`
 @z
 
 % snip code...
 
 @x
-### <a name="lower"></a> `lower`
+## `max`
 @y
-### <a name="lower"></a> `lower`
+## `max`
 @z
 
 % snip code...
 
 @x
-### <a name="max"></a> `max`
+## `md5`
 @y
-### <a name="max"></a> `max`
+## `md5`
 @z
 
 % snip code...
 
 @x
-### <a name="md5"></a> `md5`
+## `merge`
 @y
-### <a name="md5"></a> `md5`
+## `merge`
 @z
 
 % snip code...
 
 @x
-### <a name="merge"></a> `merge`
+## `min`
 @y
-### <a name="merge"></a> `merge`
+## `min`
 @z
 
 % snip code...
 
 @x
-### <a name="min"></a> `min`
+## `modulo`
 @y
-### <a name="min"></a> `min`
+## `modulo`
 @z
 
 % snip code...
 
 @x
-### <a name="modulo"></a> `modulo`
+## `multiply`
 @y
-### <a name="modulo"></a> `modulo`
+## `multiply`
 @z
 
 % snip code...
 
 @x
-### <a name="multiply"></a> `multiply`
+## `negate`
 @y
-### <a name="multiply"></a> `multiply`
+## `negate`
 @z
 
 % snip code...
 
 @x
-### <a name="negate"></a> `negate`
+## `not`
 @y
-### <a name="negate"></a> `negate`
+## `not`
 @z
 
 % snip code...
 
 @x
-### <a name="not"></a> `not`
+## `notequal`
 @y
-### <a name="not"></a> `not`
+## `notequal`
 @z
 
 % snip code...
 
 @x
-### <a name="notequal"></a> `notequal`
+## `or`
 @y
-### <a name="notequal"></a> `notequal`
+## `or`
 @z
 
 % snip code...
 
 @x
-### <a name="or"></a> `or`
+## `parseint`
 @y
-### <a name="or"></a> `or`
+## `parseint`
 @z
 
 % snip code...
 
 @x
-### <a name="parseint"></a> `parseint`
+## `pow`
 @y
-### <a name="parseint"></a> `parseint`
+## `pow`
 @z
 
 % snip code...
 
 @x
-### <a name="pow"></a> `pow`
+## `range`
 @y
-### <a name="pow"></a> `pow`
+## `range`
 @z
 
 % snip code...
 
 @x
-### <a name="range"></a> `range`
+## `regex`
 @y
-### <a name="range"></a> `range`
+## `regex`
 @z
 
 % snip code...
 
 @x
-### <a name="regex"></a> `regex`
+## `regex_replace`
 @y
-### <a name="regex"></a> `regex`
+## `regex_replace`
 @z
 
 % snip code...
 
 @x
-### <a name="regex_replace"></a> `regex_replace`
+## `regexall`
 @y
-### <a name="regex_replace"></a> `regex_replace`
+## `regexall`
 @z
 
 % snip code...
 
 @x
-### <a name="regexall"></a> `regexall`
+## `replace`
 @y
-### <a name="regexall"></a> `regexall`
+## `replace`
 @z
 
 % snip code...
 
 @x
-### <a name="replace"></a> `replace`
+## `reverse`
 @y
-### <a name="replace"></a> `replace`
+## `reverse`
 @z
 
 % snip code...
 
 @x
-### <a name="reverse"></a> `reverse`
+## `reverselist`
 @y
-### <a name="reverse"></a> `reverse`
+## `reverselist`
 @z
 
 % snip code...
 
 @x
-### <a name="reverselist"></a> `reverselist`
+## `rsadecrypt`
 @y
-### <a name="reverselist"></a> `reverselist`
+## `rsadecrypt`
 @z
 
 % snip code...
 
 @x
-### <a name="rsadecrypt"></a> `rsadecrypt`
+## `sanitize`
 @y
-### <a name="rsadecrypt"></a> `rsadecrypt`
+## `sanitize`
 @z
 
 % snip code...
 
 @x
-### <a name="sanitize"></a> `sanitize`
+## `semvercmp`
 @y
-### <a name="sanitize"></a> `sanitize`
+## `semvercmp`
 @z
 
 % snip code...
 
 @x
-### <a name="sethaselement"></a> `sethaselement`
+## `sethaselement`
 @y
-### <a name="sethaselement"></a> `sethaselement`
+## `sethaselement`
 @z
 
 % snip code...
 
 @x
-### <a name="setintersection"></a> `setintersection`
+## `setintersection`
 @y
-### <a name="setintersection"></a> `setintersection`
+## `setintersection`
 @z
 
 % snip code...
 
 @x
-### <a name="setproduct"></a> `setproduct`
+## `setproduct`
 @y
-### <a name="setproduct"></a> `setproduct`
+## `setproduct`
 @z
 
 % snip code...
 
 @x
-### <a name="setsubtract"></a> `setsubtract`
+## `setsubtract`
 @y
-### <a name="setsubtract"></a> `setsubtract`
+## `setsubtract`
 @z
 
 % snip code...
 
 @x
-### <a name="setsymmetricdifference"></a> `setsymmetricdifference`
+## `setsymmetricdifference`
 @y
-### <a name="setsymmetricdifference"></a> `setsymmetricdifference`
+## `setsymmetricdifference`
 @z
 
 % snip code...
 
 @x
-### <a name="setunion"></a> `setunion`
+## `setunion`
 @y
-### <a name="setunion"></a> `setunion`
+## `setunion`
 @z
 
 % snip code...
 
 @x
-### <a name="sha1"></a> `sha1`
+## `sha1`
 @y
-### <a name="sha1"></a> `sha1`
+## `sha1`
 @z
 
 % snip code...
 
 @x
-### <a name="sha256"></a> `sha256`
+## `sha256`
 @y
-### <a name="sha256"></a> `sha256`
+## `sha256`
 @z
 
 % snip code...
 
 @x
-### <a name="sha512"></a> `sha512`
+## `sha512`
 @y
-### <a name="sha512"></a> `sha512`
+## `sha512`
 @z
 
 % snip code...
 
 @x
-### <a name="signum"></a> `signum`
+## `signum`
 @y
-### <a name="signum"></a> `signum`
+## `signum`
 @z
 
 % snip code...
 
 @x
-### <a name="slice"></a> `slice`
+## `slice`
 @y
-### <a name="slice"></a> `slice`
+## `slice`
 @z
 
 % snip code...
 
 @x
-### <a name="sort"></a> `sort`
+## `sort`
 @y
-### <a name="sort"></a> `sort`
+## `sort`
 @z
 
 % snip code...
 
 @x
-### <a name="split"></a> `split`
+## `split`
 @y
-### <a name="split"></a> `split`
+## `split`
 @z
 
 % snip code...
 
 @x
-### <a name="strlen"></a> `strlen`
+## `strlen`
 @y
-### <a name="strlen"></a> `strlen`
+## `strlen`
 @z
 
 % snip code...
 
 @x
-### <a name="substr"></a> `substr`
+## `substr`
 @y
-### <a name="substr"></a> `substr`
+## `substr`
 @z
 
 % snip code...
 
 @x
-### <a name="subtract"></a> `subtract`
+## `subtract`
 @y
-### <a name="subtract"></a> `subtract`
+## `subtract`
 @z
 
 % snip code...
 
 @x
-### <a name="timeadd"></a> `timeadd`
+## `timeadd`
 @y
-### <a name="timeadd"></a> `timeadd`
+## `timeadd`
 @z
 
 % snip code...
 
 @x
-### <a name="timestamp"></a> `timestamp`
+## `timestamp`
 @y
-### <a name="timestamp"></a> `timestamp`
+## `timestamp`
 @z
 
 % snip code...
 
 @x
-### <a name="title"></a> `title`
+## `title`
 @y
-### <a name="title"></a> `title`
+## `title`
 @z
 
 % snip code...
 
 @x
-### <a name="trim"></a> `trim`
+## `trim`
 @y
-### <a name="trim"></a> `trim`
+## `trim`
 @z
 
 % snip code...
 
 @x
-### <a name="trimprefix"></a> `trimprefix`
+## `trimprefix`
 @y
-### <a name="trimprefix"></a> `trimprefix`
+## `trimprefix`
 @z
 
 % snip code...
 
 @x
-### <a name="trimspace"></a> `trimspace`
+## `trimspace`
 @y
-### <a name="trimspace"></a> `trimspace`
+## `trimspace`
 @z
 
 % snip code...
 
 @x
-### <a name="trimsuffix"></a> `trimsuffix`
+## `trimsuffix`
 @y
-### <a name="trimsuffix"></a> `trimsuffix`
+## `trimsuffix`
 @z
 
 % snip code...
 
 @x
-### <a name="try"></a> `try`
+## `try`
 @y
-### <a name="try"></a> `try`
+## `try`
 @z
 
 @x within code
@@ -1099,33 +1103,33 @@ title: Bake standard library functions
 @z
 
 @x
-### <a name="upper"></a> `upper`
+## `upper`
 @y
-### <a name="upper"></a> `upper`
+## `upper`
 @z
 
 % snip code...
 
 @x
-### <a name="urlencode"></a> `urlencode`
+## `urlencode`
 @y
-### <a name="urlencode"></a> `urlencode`
+## `urlencode`
 @z
 
 % snip code...
 
 @x
-### <a name="uuidv4"></a> `uuidv4`
+## `uuidv4`
 @y
-### <a name="uuidv4"></a> `uuidv4`
+## `uuidv4`
 @z
 
 % snip code...
 
 @x
-### <a name="uuidv5"></a> `uuidv5`
+## `uuidv5`
 @y
-### <a name="uuidv5"></a> `uuidv5`
+## `uuidv5`
 @z
 
 @x within code
@@ -1142,17 +1146,17 @@ title: Bake standard library functions
 @z
 
 @x
-### <a name="values"></a> `values`
+## `values`
 @y
-### <a name="values"></a> `values`
+## `values`
 @z
 
 % snip code...
 
 @x
-### <a name="zipmap"></a> `zipmap`
+## `zipmap`
 @y
-### <a name="zipmap"></a> `zipmap`
+## `zipmap`
 @z
 
 % snip code...

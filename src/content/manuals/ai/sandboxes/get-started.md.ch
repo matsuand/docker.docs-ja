@@ -178,6 +178,18 @@ remain available. Run `docker sandbox run <sandbox-name>` again to reconnect.
 @z
 
 @x
+> [!NOTE]
+> Agents can modify files in your workspace. Review changes before executing
+> code or performing actions that auto-run scripts. See
+> [Security considerations](workflows.md#security-considerations) for details.
+@y
+> [!NOTE]
+> Agents can modify files in your workspace. Review changes before executing
+> code or performing actions that auto-run scripts. See
+> [Security considerations](workflows.md#security-considerations) for details.
+@z
+
+@x
 ## Basic commands
 @y
 ## Basic commands

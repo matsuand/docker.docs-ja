@@ -362,31 +362,31 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `--mount type=bind,src="$(pwd)",target=/app` - bind mount the current
+   - `--mount type=bind,src=.,target=/app` - bind mount the current
      directory from the host into the `/app` directory in the container
 @y
-   - `--mount type=bind,src="$(pwd)",target=/app` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
+   - `--mount type=bind,src=.,target=/app` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
 @z
 
 @x
-   - `node:lts-alpine` - the image to use. Note that this is the base image for
+   - `node:24-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:lts-alpine` - 利用するイメージです。
+   - `node:24-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
 @x
-   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
-     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
-     install packages and then running `yarn run dev` to start the development
+   - `sh -c "npm install && npm run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `npm install` to
+     install packages and then running `npm run dev` to start the development
      server. If you look in the `package.json`, you'll see that the `dev` script
      starts `nodemon`.
 @y
-   - `sh -c "yarn install && yarn run dev"` - 実行するコマンドです。
+   - `sh -c "npm install && npm run dev"` - 実行するコマンドです。
      `sh` によってシェルを起動しています。
      (alpine に `bash` はありません。)
-     そして `yarn install` を実行してパッケージのインストールを行うとともに `yarn run dev` によって開発サーバーを起動します。
+     そして `npm install` を実行してパッケージのインストールを行うとともに `npm run dev` によって開発サーバーを起動します。
      `package.json` を確認してみればわかりますが、`dev` スクリプトが `nodemon` を起動しています。
 @z
 
@@ -451,31 +451,31 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `--mount "type=bind,src=$pwd,target=/app"` - bind mount the current
+   - `--mount "type=bind,src=.,target=/app"` - bind mount the current
      directory from the host into the `/app` directory in the container
 @y
-   - `--mount "type=bind,src=$pwd,target=/app"` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
+   - `--mount "type=bind,src=.,target=/app"` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
 @z
 
 @x
-   - `node:lts-alpine` - the image to use. Note that this is the base image for
+   - `node:24-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:lts-alpine` - 利用するイメージです。
+   - `node:24-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
 @x
-   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
-     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
-     install packages and then running `yarn run dev` to start the development
+   - `sh -c "npm install && npm run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `npm install` to
+     install packages and then running `npm run dev` to start the development
      server. If you look in the `package.json`, you'll see that the `dev` script
      starts `nodemon`.
 @y
-   - `sh -c "yarn install && yarn run dev"` - 実行するコマンドです。
+   - `sh -c "npm install && npm run dev"` - 実行するコマンドです。
      `sh` によってシェルを起動しています。
      (alpine に `bash` はありません。)
-     そして `yarn install` を実行してパッケージのインストールを行うとともに `yarn run dev` によって開発サーバーを起動します。
+     そして `npm install` を実行してパッケージのインストールを行うとともに `npm run dev` によって開発サーバーを起動します。
      `package.json` を確認してみればわかりますが、`dev` スクリプトが `nodemon` を起動しています。
 @z
 
@@ -547,24 +547,24 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `node:lts-alpine` - the image to use. Note that this is the base image for
+   - `node:24-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:lts-alpine` - 利用するイメージです。
+   - `node:24-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
 @x
-   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
-     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
-     install packages and then running `yarn run dev` to start the development
+   - `sh -c "npm install && npm run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `npm install` to
+     install packages and then running `npm run dev` to start the development
      server. If you look in the `package.json`, you'll see that the `dev` script
      starts `nodemon`.
 @y
-   - `sh -c "yarn install && yarn run dev"` - 実行するコマンドです。
+   - `sh -c "npm install && npm run dev"` - 実行するコマンドです。
      `sh` によってシェルを起動しています。
      (alpine に `bash` はありません。)
-     そして `yarn install` を実行してパッケージのインストールを行うとともに `yarn run dev` によって開発サーバーを起動します。
+     そして `npm install` を実行してパッケージのインストールを行うとともに `npm run dev` によって開発サーバーを起動します。
      `package.json` を確認してみればわかりますが、`dev` スクリプトが `nodemon` を起動しています。
 @z
 
@@ -629,31 +629,31 @@ You can use the CLI or Docker Desktop to run your container with a bind mount.
 @z
 
 @x
-   - `--mount type=bind,src="/$(pwd)",target=/app` - bind mount the current
+   - `--mount type=bind,src="/.",target=/app` - bind mount the current
      directory from the host into the `/app` directory in the container
 @y
-   - `--mount type=bind,src="/$(pwd)",target=/app` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
+   - `--mount type=bind,src="/.",target=/app` - ホスト上の現在のディレクトリを、コンテナー内の `/app` ディレクトリにバインドマウントします。
 @z
 
 @x
-   - `node:lts-alpine` - the image to use. Note that this is the base image for
+   - `node:24-alpine` - the image to use. Note that this is the base image for
      your app from the Dockerfile
 @y
-   - `node:lts-alpine` - 利用するイメージです。
+   - `node:24-alpine` - 利用するイメージです。
      アプリ実行のためのベースイメージとしているものであり Dockerfile に指定しています。
 @z
 
 @x
-   - `sh -c "yarn install && yarn run dev"` - the command. You're starting a
-     shell using `sh` (alpine doesn't have `bash`) and running `yarn install` to
-     install packages and then running `yarn run dev` to start the development
+   - `sh -c "npm install && npm run dev"` - the command. You're starting a
+     shell using `sh` (alpine doesn't have `bash`) and running `npm install` to
+     install packages and then running `npm run dev` to start the development
      server. If you look in the `package.json`, you'll see that the `dev` script
      starts `nodemon`.
 @y
-   - `sh -c "yarn install && yarn run dev"` - 実行するコマンドです。
+   - `sh -c "npm install && npm run dev"` - 実行するコマンドです。
      `sh` によってシェルを起動しています。
      (alpine に `bash` はありません。)
-     そして `yarn install` を実行してパッケージのインストールを行うとともに `yarn run dev` によって開発サーバーを起動します。
+     そして `npm install` を実行してパッケージのインストールを行うとともに `npm run dev` によって開発サーバーを起動します。
      `package.json` を確認してみればわかりますが、`dev` スクリプトが `nodemon` を起動しています。
 @z
 

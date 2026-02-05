@@ -54,19 +54,15 @@ specific image as an example, they can be applied to any DHI.
 
 @x
 1. Go to the Hardened Images catalog in [Docker
-   Hub](https://hub.docker.com/hardened-images/catalog) and sign in.
-2. In the left sidebar, select **Hardened Images**. If you have DHI Enterprise,
-   then select **Hardened Images** > **Catalog**.
-3. Use the search bar or filters to find an image (e.g., `python`, `node`,
+   Hub](https://hub.docker.com/hardened-images/catalog).
+2. Use the search bar or filters to find an image (e.g., `python`, `node`,
    `golang`). For this guide, use the Python image as an example.
-4. Select the Python repository to view its details.
+3. Select the Python repository to view its details.
 @y
-1. [Docker Hub](https://hub.docker.com/hardened-images/catalog) 内にある Hardened イメージカタログにアクセスし、サインインします。
-2. 左側のサイドバーから **Hardened Images** を選びます。
-   DHI エンタープライズを利用している場合は **Hardened Images** > **Catalog** を選びます。
-3. 検索バーや検索フィルターを使ってイメージ (`python`, `node`, `golang` など) を検索します。
+1. [Docker Hub](https://hub.docker.com/hardened-images/catalog) 内にある Hardened イメージカタログにアクセスしします。
+2. 検索バーや検索フィルターを使ってイメージ (`python`, `node`, `golang` など) を検索します。
    本ガイドでは例として Python イメージを用いることにします。
-4. Python リポジトリを選択すれば、その詳細を確認できます。
+3. Python リポジトリを選択すれば、その詳細を確認できます。
 @z
 
 @x

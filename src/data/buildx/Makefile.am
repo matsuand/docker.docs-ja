@@ -30,6 +30,9 @@ bases = \
 	docker_buildx_inspect.yaml                    \
 	docker_buildx_install.yaml                    \
 	docker_buildx_ls.yaml                         \
+	docker_buildx_policy.yaml                     \
+	docker_buildx_policy_eval.yaml                \
+	docker_buildx_policy_test.yaml                \
 	docker_buildx_prune.yaml                      \
 	docker_buildx_rm.yaml                         \
 	docker_buildx_stop.yaml                       \

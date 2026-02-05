@@ -151,6 +151,12 @@ usage: docker buildx bake [OPTIONS] [TARGET...]
       description: Override target value (e.g., `targetpattern.key=value`)
 @z
 
+@x var
+      description: Set a variable value (e.g., `name=value`)
+@y
+      description: Set a variable value (e.g., `name=value`)
+@z
+
 % inherited_options:
 
 @x builder
@@ -558,6 +564,7 @@ examples: |-
     $ docker buildx bake --set *.platform=linux/arm64       # overrides platform for all targets
     $ docker buildx bake --set foo*.no-cache                # bypass caching only for targets starting with 'foo'
     $ docker buildx bake --set target.platform+=linux/arm64 # appends 'linux/arm64' to the platform list
+    $ docker buildx bake --set target.contexts.bar=../bar   # overrides 'bar' named context
     ```
 @y
     ```console
@@ -567,6 +574,7 @@ examples: |-
     $ docker buildx bake --set *.platform=linux/arm64       # overrides platform for all targets
     $ docker buildx bake --set foo*.no-cache                # bypass caching only for targets starting with 'foo'
     $ docker buildx bake --set target.platform+=linux/arm64 # appends 'linux/arm64' to the platform list
+    $ docker buildx bake --set target.contexts.bar=../bar   # overrides 'bar' named context
     ```
 @z
 

@@ -303,6 +303,34 @@ tags:
 
 @x
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -330,6 +358,34 @@ definitions:
       Type: "tcp"
 @y
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -358,6 +414,38 @@ definitions:
 @z
 
 @x
+  MountType:
+    description: |-
+      The mount type. Available types:
+@y
+  MountType:
+    description: |-
+      The mount type. Available types:
+@z
+
+@x
+      - `bind` a mount of a file or directory from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@y
+      - `bind` a mount of a file or directory from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@z
+
+@x
   MountPoint:
     type: "object"
     description: |
@@ -381,13 +469,10 @@ definitions:
 
 @x
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
           - `tmpfs` a `tmpfs`.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -400,13 +485,10 @@ definitions:
           Source location of the mount.
 @y
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
           - `tmpfs` a `tmpfs`.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -565,7 +647,11 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must exist prior to creating the container.
+        type: "string"
       Type:
         description: |
           The mount type. Available types:
@@ -577,21 +663,22 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must exist prior to creating the container.
+        type: "string"
       Type:
         description: |
           The mount type. Available types:
 @z
 
 @x
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -642,20 +729,20 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
   RestartPolicy:
     description: |
       The behavior to apply when the container exits. The default is not to restart.
 @y
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -706,7 +793,10 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
   RestartPolicy:
     description: |
@@ -9248,24 +9338,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              properties:
-                Id:
-                  type: "string"
-                Created:
-                  type: "integer"
-                  format: "int64"
-                CreatedBy:
-                  type: "string"
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                Comment:
-                  type: "string"
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -9489,24 +9562,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              properties:
-                Id:
-                  type: "string"
-                Created:
-                  type: "integer"
-                  format: "int64"
-                CreatedBy:
-                  type: "string"
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                Comment:
-                  type: "string"
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -9635,7 +9691,36 @@ paths:
   /images/{name}/tag:
     post:
       summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+      description: |
+        Create a tag that refers to a source image.
+@y
+            Use the `tag` parameter to specify the tag to push.
+          type: "string"
+          required: true
+        - name: "tag"
+          in: "query"
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
+          type: "string"
+        - name: "X-Registry-Auth"
+          in: "header"
+          description: "A base64-encoded auth configuration. [See the authentication section for details.](#section/Authentication)"
+          type: "string"
+          required: true
+      tags: ["Image"]
+  /images/{name}/tag:
+    post:
+      summary: "Tag an image"
+      description: |
+        Create a tag that refers to a source image.
+@z
+
+@x
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:
@@ -9677,26 +9762,9 @@ paths:
       description: |
         Remove an image, along with any untagged parent images that were referenced by that image.
 @y
-            Use the `tag` parameter to specify the tag to push.
-          type: "string"
-          required: true
-        - name: "tag"
-          in: "query"
-          description: |
-            Tag of the image to push. For example, `latest`. If no tag is provided,
-            all tags of the given image that are present in the local image store
-            are pushed.
-          type: "string"
-        - name: "X-Registry-Auth"
-          in: "header"
-          description: "A base64-encoded auth configuration. [See the authentication section for details.](#section/Authentication)"
-          type: "string"
-          required: true
-      tags: ["Image"]
-  /images/{name}/tag:
-    post:
-      summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:

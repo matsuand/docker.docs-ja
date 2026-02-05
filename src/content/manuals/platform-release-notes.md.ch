@@ -22,6 +22,28 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
+## 2026-01-27
+@y
+## 2026-01-27
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Administrators can now use an allow list with [Image Access
+  Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+  to approve specific repositories that bypass image access controls.
+@y
+- Administrators can now use an allow list with [Image Access
+  Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+  to approve specific repositories that bypass image access controls.
+@z
+
+@x
 ## 2025-01-30
 @y
 ## 2025-01-30

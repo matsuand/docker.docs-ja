@@ -12,16 +12,6 @@ description: >-
 @z
 
 @x
-> [!NOTE]
-> This check is experimental and is not enabled by default. To enable it, see
-> [Experimental checks](https://docs.docker.com/go/build-checks-experimental/).
-@y
-> [!NOTE]
-> 本チェックは試験的であり、デフォルトでは無効となっています。
-> これを有効にする方法は [試験的チェック](__SUBDIR__/build/checks/#experimental-checks) を参照してください。
-@z
-
-@x
 ## Output
 @y
 ## 出力 {#output}

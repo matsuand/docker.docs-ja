@@ -333,6 +333,34 @@ tags:
 
 @x
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -360,6 +388,34 @@ definitions:
       Type: "tcp"
 @y
 definitions:
+  ImageHistoryResponseItem:
+    type: "object"
+    x-go-name: HistoryResponseItem
+    title: "HistoryResponseItem"
+    description: "individual image layer information in response to ImageHistory operation"
+    required: [Id, Created, CreatedBy, Tags, Size, Comment]
+    properties:
+      Id:
+        type: "string"
+        x-nullable: false
+      Created:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      CreatedBy:
+        type: "string"
+        x-nullable: false
+      Tags:
+        type: "array"
+        items:
+          type: "string"
+      Size:
+        type: "integer"
+        format: "int64"
+        x-nullable: false
+      Comment:
+        type: "string"
+        x-nullable: false
   Port:
     type: "object"
     description: "An open port on a container"
@@ -388,6 +444,42 @@ definitions:
 @z
 
 @x
+  MountType:
+    description: |-
+      The mount type. Available types:
+@y
+  MountType:
+    description: |-
+      The mount type. Available types:
+@z
+
+@x
+      - `bind` a mount of a file or directory from the host into the container.
+      - `npipe` a named pipe from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "npipe"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@y
+      - `bind` a mount of a file or directory from the host into the container.
+      - `npipe` a named pipe from the host into the container.
+      - `tmpfs` a `tmpfs`.
+      - `volume` a docker volume with the given `Name`.
+    type: "string"
+    enum:
+      - "bind"
+      - "npipe"
+      - "tmpfs"
+      - "volume"
+    example: "volume"
+@z
+
+@x
   MountPoint:
     type: "object"
     description: |
@@ -411,15 +503,11 @@ definitions:
 
 @x
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
-          - `tmpfs` a `tmpfs`.
           - `npipe` a named pipe from the host into the container.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
+          - `tmpfs` a `tmpfs`.
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -432,15 +520,11 @@ definitions:
           Source location of the mount.
 @y
           - `bind` a mount of a file or directory from the host into the container.
-          - `volume` a docker volume with the given `Name`.
-          - `tmpfs` a `tmpfs`.
           - `npipe` a named pipe from the host into the container.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
-          - "npipe"
+          - `tmpfs` a `tmpfs`.
+          - `volume` a docker volume with the given `Name`.
+        allOf:
+          - $ref: "#/definitions/MountType"
         example: "volume"
       Name:
         description: |
@@ -599,11 +683,10 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
-        type: "string"
-      Type:
-        description: |
-          The mount type. Available types:
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must exist prior to creating the container.
 @y
   Mount:
     type: "object"
@@ -612,7 +695,20 @@ definitions:
         description: "Container path."
         type: "string"
       Source:
-        description: "Mount source (e.g. a volume name, a host path)."
+        description: |-
+          Mount source (e.g. a volume name, a host path). The source cannot be
+          specified when using `Type=tmpfs`. For `Type=bind`, the source path
+          must exist prior to creating the container.
+@z
+
+@x
+          For `Type=npipe`, the pipe must exist prior to creating the container.
+        type: "string"
+      Type:
+        description: |
+          The mount type. Available types:
+@y
+          For `Type=npipe`, the pipe must exist prior to creating the container.
         type: "string"
       Type:
         description: |
@@ -620,14 +716,12 @@ definitions:
 @z
 
 @x
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
+          - `npipe` Mounts a named pipe from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -682,17 +776,18 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
 @y
-          - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
+          - `bind` Mounts a file or directory from the host into the container. The `Source` must exist prior to creating the container.
+          - `npipe` Mounts a named pipe from the host into the container. The `Source` must exist prior to creating the container.
+          - `tmpfs` Create a tmpfs with the given options. The mount `Source` cannot be specified for tmpfs.
           - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
-          - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-        type: "string"
-        enum:
-          - "bind"
-          - "volume"
-          - "tmpfs"
+        allOf:
+          - $ref: "#/definitions/MountType"
       ReadOnly:
         description: "Whether the mount should be read-only."
         type: "boolean"
@@ -747,7 +842,10 @@ definitions:
             type: "integer"
             format: "int64"
           Mode:
-            description: "The permission mode for the tmpfs mount in an integer."
+            description: |
+              The permission mode for the tmpfs mount in an integer.
+              The value must not be in octal format (e.g. 755) but rather
+              the decimal representation of the octal value (e.g. 493).
             type: "integer"
 @z
 
@@ -1245,7 +1343,9 @@ definitions:
 
 @x
   HealthConfig:
-    description: "A test to perform to check that the container is healthy."
+    description: |
+      A test to perform to check that the container is healthy.
+      Healthcheck commands should be side-effect free.
     type: "object"
     properties:
       Test:
@@ -1253,7 +1353,9 @@ definitions:
           The test to perform. Possible values are:
 @y
   HealthConfig:
-    description: "A test to perform to check that the container is healthy."
+    description: |
+      A test to perform to check that the container is healthy.
+      Healthcheck commands should be side-effect free.
     type: "object"
     properties:
       Test:
@@ -1266,6 +1368,19 @@ definitions:
           - `["NONE"]` disable healthcheck
           - `["CMD", args...]` exec arguments directly
           - `["CMD-SHELL", command]` run command with system's default shell
+@y
+          - `[]` inherit healthcheck from image or parent image
+          - `["NONE"]` disable healthcheck
+          - `["CMD", args...]` exec arguments directly
+          - `["CMD-SHELL", command]` run command with system's default shell
+@z
+
+@x
+          A non-zero exit code indicates a failed healthcheck:
+          - `0` healthy
+          - `1` unhealthy
+          - `2` reserved (treated as unhealthy)
+          - other values: error running probe
         type: "array"
         items:
           type: "string"
@@ -1282,10 +1397,11 @@ definitions:
         description: "Start period for the container to initialize before starting health-retries countdown in nanoseconds. It should be 0 or at least 1000000 (1 ms). 0 means inherit."
         type: "integer"
 @y
-          - `[]` inherit healthcheck from image or parent image
-          - `["NONE"]` disable healthcheck
-          - `["CMD", args...]` exec arguments directly
-          - `["CMD-SHELL", command]` run command with system's default shell
+          A non-zero exit code indicates a failed healthcheck:
+          - `0` healthy
+          - `1` unhealthy
+          - `2` reserved (treated as unhealthy)
+          - other values: error running probe
         type: "array"
         items:
           type: "string"
@@ -7046,8 +7162,8 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a secret, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           It must be empty if the Driver field is set, in which case the data is
           loaded from an external secret store. The maximum allowed size is 500KB,
           as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0/api/validation#MaxSecretSize).
@@ -7068,8 +7184,8 @@ definitions:
           com.example.some-other-label: "some-other-value"
       Data:
         description: |
-          Data is the data to store as a secret, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a secret, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           It must be empty if the Driver field is set, in which case the data is
           loaded from an external secret store. The maximum allowed size is 500KB,
           as defined in [MaxSecretSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0/api/validation#MaxSecretSize).
@@ -7163,8 +7279,8 @@ definitions:
           type: "string"
       Data:
         description: |
-          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a config, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
@@ -7184,8 +7300,8 @@ definitions:
           type: "string"
       Data:
         description: |
-          Data is the data to store as a config, formatted as a Base64-url-safe-encoded
-          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-5)) string.
+          Data is the data to store as a config, formatted as a standard base64-encoded
+          ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-4)) string.
           The maximum allowed size is 1000KB, as defined in [MaxConfigSize](https://pkg.go.dev/github.com/moby/swarmkit/v2@v2.0.0-20250103191802-8c1959736554/manager/controlapi#MaxConfigSize).
         type: "string"
       Templating:
@@ -7710,8 +7826,8 @@ definitions:
         example: "linux"
       Architecture:
         description: |
-          Hardware architecture of the host, as returned by the Go runtime
-          (`GOARCH`).
+          Hardware architecture of the host, as returned by the operating system.
+          This is equivalent to the output of `uname -m` on Linux.
 @y
           Currently returned values are "linux" and "windows". A full list of
           possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
@@ -7719,19 +7835,25 @@ definitions:
         example: "linux"
       Architecture:
         description: |
-          Hardware architecture of the host, as returned by the Go runtime
-          (`GOARCH`).
+          Hardware architecture of the host, as returned by the operating system.
+          This is equivalent to the output of `uname -m` on Linux.
 @z
 
 @x
-          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+          Unlike `Arch` (from `/version`), this reports the machine's native
+          architecture, which can differ from the Go runtime architecture when
+          running a binary compiled for a different architecture (for example,
+          a 32-bit binary running on 64-bit hardware).
         type: "string"
         example: "x86_64"
       NCPU:
         description: |
           The number of logical CPUs usable by the daemon.
 @y
-          A full list of possible values can be found in the [Go documentation](https://go.dev/doc/install/source#environment).
+          Unlike `Arch` (from `/version`), this reports the machine's native
+          architecture, which can differ from the Go runtime architecture when
+          running a binary compiled for a different architecture (for example,
+          a 32-bit binary running on 64-bit hardware).
         type: "string"
         example: "x86_64"
       NCPU:
@@ -13269,33 +13391,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: HistoryResponseItem
-              title: "HistoryResponseItem"
-              description: "individual image layer information in response to ImageHistory operation"
-              required: [Id, Created, CreatedBy, Tags, Size, Comment]
-              properties:
-                Id:
-                  type: "string"
-                  x-nullable: false
-                Created:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                CreatedBy:
-                  type: "string"
-                  x-nullable: false
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                Comment:
-                  type: "string"
-                  x-nullable: false
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -13560,33 +13656,7 @@ paths:
           schema:
             type: "array"
             items:
-              type: "object"
-              x-go-name: HistoryResponseItem
-              title: "HistoryResponseItem"
-              description: "individual image layer information in response to ImageHistory operation"
-              required: [Id, Created, CreatedBy, Tags, Size, Comment]
-              properties:
-                Id:
-                  type: "string"
-                  x-nullable: false
-                Created:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                CreatedBy:
-                  type: "string"
-                  x-nullable: false
-                Tags:
-                  type: "array"
-                  items:
-                    type: "string"
-                Size:
-                  type: "integer"
-                  format: "int64"
-                  x-nullable: false
-                Comment:
-                  type: "string"
-                  x-nullable: false
+              $ref: "#/definitions/ImageHistoryResponseItem"
           examples:
             application/json:
               - Id: "3db9c44f45209632d6050b35958829c3a2aa256d81b9a7be45b362ff85c54710"
@@ -13715,7 +13785,36 @@ paths:
   /images/{name}/tag:
     post:
       summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+      description: |
+        Create a tag that refers to a source image.
+@y
+            Use the `tag` parameter to specify the tag to push.
+          type: "string"
+          required: true
+        - name: "tag"
+          in: "query"
+          description: |
+            Tag of the image to push. For example, `latest`. If no tag is provided,
+            all tags of the given image that are present in the local image store
+            are pushed.
+          type: "string"
+        - name: "X-Registry-Auth"
+          in: "header"
+          description: "A base64-encoded auth configuration. [See the authentication section for details.](#section/Authentication)"
+          type: "string"
+          required: true
+      tags: ["Image"]
+  /images/{name}/tag:
+    post:
+      summary: "Tag an image"
+      description: |
+        Create a tag that refers to a source image.
+@z
+
+@x
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:
@@ -13758,26 +13857,9 @@ paths:
         Remove an image, along with any untagged parent images that were
         referenced by that image.
 @y
-            Use the `tag` parameter to specify the tag to push.
-          type: "string"
-          required: true
-        - name: "tag"
-          in: "query"
-          description: |
-            Tag of the image to push. For example, `latest`. If no tag is provided,
-            all tags of the given image that are present in the local image store
-            are pushed.
-          type: "string"
-        - name: "X-Registry-Auth"
-          in: "header"
-          description: "A base64-encoded auth configuration. [See the authentication section for details.](#section/Authentication)"
-          type: "string"
-          required: true
-      tags: ["Image"]
-  /images/{name}/tag:
-    post:
-      summary: "Tag an image"
-      description: "Tag an image so that it becomes part of a repository."
+        This creates an additional reference (tag) to the source image. The tag
+        can include a different repository name and/or tag. If the repository
+        or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
         201:

@@ -181,6 +181,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/build/images/Makefile
 	src/content/manuals/build/metadata/Makefile
 	src/content/manuals/build/metadata/attestations/Makefile
+	src/content/manuals/build/policies/Makefile
 	src/content/manuals/build-cloud/Makefile
 	src/content/manuals/compose/Makefile
 	src/content/manuals/compose/bridge/Makefile
@@ -323,6 +324,7 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/docker/buildx/history/Makefile
 	src/content/reference/cli/docker/buildx/history/inspect/Makefile
 	src/content/reference/cli/docker/buildx/imagetools/Makefile
+	src/content/reference/cli/docker/buildx/policy/Makefile
 	src/content/reference/cli/docker/checkpoint/Makefile
 	src/content/reference/cli/docker/compose/Makefile
 	src/content/reference/cli/docker/compose/alpha/Makefile

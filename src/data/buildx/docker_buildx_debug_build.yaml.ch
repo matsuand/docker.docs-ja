@@ -201,6 +201,14 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
       description: Set target platform for build
 @z
 
+@x policy
+      description: |
+        Policy configuration (format: `filename=path[,filename=path][,reset=true|false][,disabled=true|false][,strict=true|false][,log-level=level]`)
+@y
+      description: |
+        Policy configuration (format: `filename=path[,filename=path][,reset=true|false][,disabled=true|false][,strict=true|false][,log-level=level]`)
+@z
+
 @x print
       description: Print result of information request (e.g., outline, targets)
 @y
@@ -228,9 +236,9 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 @z
 
 @x push
-      description: Shorthand for `--output=type=registry`
+      description: Shorthand for `--output=type=registry,unpack=false`
 @y
-      description: Shorthand for `--output=type=registry`
+      description: Shorthand for `--output=type=registry,unpack=false`
 @z
 
 @x quiet

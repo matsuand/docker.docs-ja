@@ -10,9 +10,9 @@
 @z
 
 @x
-    <main class="flex-1">
+      <section class="relative overflow-hidden py-16 md:py-20">
 @y
-    <main class="flex-1">
+      <section class="relative overflow-hidden py-16 md:py-20">
           <div align="right" style="height:0;padding:0;margin:0;border:none;transform:translate(0,-60px);">
            暫定公開中 __THISDATE__<br/>(<a href="https://github.com/docker/docs/commit/__COMMITHASH__" target="_blank">__COMMITHASH__ 対応, __COMMITDATE__</a>)
           </div>

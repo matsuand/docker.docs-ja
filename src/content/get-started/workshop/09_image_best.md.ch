@@ -95,10 +95,10 @@ Look at the following Dockerfile you created for the getting started app.
 
 @x
 Going back to the image history output, you see that each command in the Dockerfile becomes a new layer in the image.
-You might remember that when you made a change to the image, the yarn dependencies had to be reinstalled. It doesn't make much sense to ship around the same dependencies every time you build.
+You might remember that when you made a change to the image, the dependencies had to be reinstalled. It doesn't make much sense to ship around the same dependencies every time you build.
 @y
 イメージ履歴の出力に戻って確認してみると、Dockerfile 内の各コマンドが、イメージ内のより新しいレイヤーとして生成されていることがわかります。
-以前の処理を覚えていると思いますが、イメージに対しての修正を行ったら、yarn による依存パッケージの再インストールが必要になっていました。
+以前の処理を覚えていると思いますが、イメージに対しての修正を行ったら、依存パッケージの再インストールが必要になっていました。
 ただしビルドのたびに同じ依存パッケージをインストールしなければならないのは、どうにも無意味なことです。
 @z
 
@@ -106,7 +106,7 @@ You might remember that when you made a change to the image, the yarn dependenci
 To fix it, you need to restructure your Dockerfile to help support the caching
 of the dependencies. For Node-based applications, those dependencies are defined
 in the `package.json` file. You can copy only that file in first, install the
-dependencies, and then copy in everything else. Then, you only recreate the yarn
+dependencies, and then copy in everything else. Then, you only recreate the
 dependencies if there was a change to the `package.json`.
 @y
 ここを改善するには Dockerfile を書き換えます。
@@ -114,7 +114,7 @@ dependencies if there was a change to the `package.json`.
 Node ベースのアプリケーションの場合、依存パッケージは `package.json` ファイルに定義します。
 最初にコピーするのはこのファイルだけとします。
 依存パッケージをインストールしたら、その後に残りをすべてコピーします。
-こうすると `package.json` への変更が発生した場合にのみ yarn の依存関係だけが再構築されることになります。
+こうすると `package.json` への変更が発生した場合にのみ依存パッケージだけが再構築されることになります。
 @z
 
 @x
@@ -240,10 +240,10 @@ React アプリケーションをビルドするには、Node 環境を使って
 % snip code...
 
 @x
-In the previous Dockerfile example, it uses the `node:lts` image to perform the build (maximizing layer caching) and then copies the output
+In the previous Dockerfile example, it uses the `node:24-alpine` image to perform the build (maximizing layer caching) and then copies the output
 into an nginx container.
 @y
-上の Dockerfile 例では、ビルドの実現 (最大限のレイヤーキャッシングの実現) のために `node:lts` イメージを使っています。
+上の Dockerfile 例では、ビルドの実現 (最大限のレイヤーキャッシングの実現) のために `node:24-alpine` イメージを使っています。
 そして出力結果を nginx コンテナーにコピーしています。
 @z
 

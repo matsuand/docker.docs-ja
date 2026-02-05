@@ -290,3 +290,41 @@ $ cd <workspace>
 $ pwd
 ```
 @z
+
+@x
+## Sandbox crashes on Windows when launching multiple sandboxes
+@y
+## Sandbox crashes on Windows when launching multiple sandboxes
+@z
+
+@x
+On Windows, launching too many sandboxes simultaneously can cause crashes.
+@y
+On Windows, launching too many sandboxes simultaneously can cause crashes.
+@z
+
+@x
+If this happens, recover by closing the OpenVMM processes:
+@y
+If this happens, recover by closing the OpenVMM processes:
+@z
+
+@x
+1. Open Task Manager (Ctrl+Shift+Esc).
+2. Find all `docker.openvmm.exe` processes.
+3. End each process.
+4. Restart Docker Desktop if needed.
+@y
+1. Open Task Manager (Ctrl+Shift+Esc).
+2. Find all `docker.openvmm.exe` processes.
+3. End each process.
+4. Restart Docker Desktop if needed.
+@z
+
+@x
+To avoid this issue, launch sandboxes one at a time rather than creating
+multiple sandboxes concurrently.
+@y
+To avoid this issue, launch sandboxes one at a time rather than creating
+multiple sandboxes concurrently.
+@z

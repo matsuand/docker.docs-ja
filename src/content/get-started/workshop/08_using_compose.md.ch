@@ -111,9 +111,9 @@ You'll now define this service in the `compose.yaml` file.
 
 @x
 4. Next, migrate both the working directory (`-w /app`) and the volume mapping
-   (`-v "$(pwd):/app"`) by using the `working_dir` and `volumes` definitions.
+   (`-v ".:/app"`) by using the `working_dir` and `volumes` definitions.
 @y
-4. またワーキングディレクトリ (`-w /app`)、ボリュームマッピング (`-v "$(pwd):/app"`) として定めていたものを、それぞれ `working_dir`、`volumes` を使って定義します。
+4. またワーキングディレクトリ (`-w /app`)、ボリュームマッピング (`-v ".:/app"`) として定めていたものを、それぞれ `working_dir`、`volumes` を使って定義します。
 @z
 
 @x

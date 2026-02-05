@@ -33,7 +33,8 @@ bases = \
 	v1.49.yaml   \
 	v1.50.yaml   \
 	v1.51.yaml   \
-	v1.52.yaml
+	v1.52.yaml   \
+	v1.53.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
