@@ -22,10 +22,12 @@ copyfiles = \
 	.markdownlint.json \
 	.prettierrc        \
 	.vale.ini          \
+	COMPONENTS.md      \
 	CONTRIBUTING.md    \
 	Dockerfile         \
 	LICENSE            \
 	README.md          \
+	STYLE.md           \
 	compose.yaml       \
 	docker-bake.hcl    \
 	go.mod             \

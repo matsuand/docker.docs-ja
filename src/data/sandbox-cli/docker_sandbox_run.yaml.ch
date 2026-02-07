@@ -6,43 +6,15 @@ command: docker sandbox run
 short: Run an agent in a sandbox
 long: |-
     Run an agent in a sandbox. Create the sandbox if it does not exist.
+
+    Pass agent arguments after the "--" separator.
 @y
 command: docker sandbox run
 short: Run an agent in a sandbox
 long: |-
     Run an agent in a sandbox. Create the sandbox if it does not exist.
-@z
 
-@x
     Pass agent arguments after the "--" separator.
-@y
-    Pass agent arguments after the "--" separator.
-@z
-
-@x
-    Examples:
-      # Create and run a sandbox with claude in current directory
-      docker sandbox run claude .
-@y
-    Examples:
-      # Create and run a sandbox with claude in current directory
-      docker sandbox run claude .
-@z
-
-@x
-      # Run an existing sandbox
-      docker sandbox run existing-sandbox
-@y
-      # Run an existing sandbox
-      docker sandbox run existing-sandbox
-@z
-
-@x
-      # Run a sandbox with agent arguments
-      docker sandbox run claude . -- -p "What version are you running?"
-@y
-      # Run a sandbox with agent arguments
-      docker sandbox run claude . -- -p "What version are you running?"
 @z
 
 @x
@@ -51,9 +23,9 @@ usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT
 usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT_ARGS...]
 @z
 
-% pname:
-% plink:
-% options:
+% pname
+% plink
+% options
 
 @x detached
       description: Return sandbox ID without running agent (hidden, for testing)
@@ -80,7 +52,8 @@ usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT
       description: |
         Container image to use for the sandbox (default: agent-specific image)
 @z
-inherited_options:
+
+% inherited_options:
 
 @x debug
       description: Enable debug logging
@@ -98,26 +71,26 @@ inherited_options:
 
 @x
 examples: |-
-    ### Run Claude in the current directory
+    ### Create and run Claude in the current directory
 @y
 examples: |-
-    ### Run Claude in the current directory
+    ### Create and run Claude in the current directory
 @z
 
 % snip command...
 
 @x
-    ### Specify a workspace directory (-w, --workspace) {#workspace}
+    ### Run an existing sandbox
 @y
-    ### Specify a workspace directory (-w, --workspace) {#workspace}
+    ### Run an existing sandbox
 @z
 
-% snip text...
+% snip command...
 
 @x
-    Run the agent in a specific directory:
+    ### Create and run with a specific workspace
 @y
-    Run the agent in a specific directory:
+    ### Create and run with a specific workspace
 @z
 
 % snip command...
@@ -129,74 +102,20 @@ examples: |-
 @z
 
 @x
-    ### Enable Docker-in-Docker (--mount-docker-socket) {#mount-docker-socket}
+    ### Name the sandbox (--name) {#name}
 @y
-    ### Enable Docker-in-Docker (--mount-docker-socket) {#mount-docker-socket}
+    ### Name the sandbox (--name) {#name}
 @z
 
-% snip text...
+% snip code...
 
 @x
-    Mount the host's Docker socket into the sandbox, giving the agent access to Docker commands:
+    Assign a custom name when creating a sandbox:
 @y
-    Mount the host's Docker socket into the sandbox, giving the agent access to Docker commands:
+    Assign a custom name when creating a sandbox:
 @z
 
 % snip command...
-
-@x
-    > [!CAUTION]
-    > This grants the agent full access to your Docker daemon with root-level
-    > privileges. Only use when you trust the code being executed.
-@y
-    > [!CAUTION]
-    > This grants the agent full access to your Docker daemon with root-level
-    > privileges. Only use when you trust the code being executed.
-@z
-
-@x
-    The agent can now build images, run containers, and manage your Docker environment.
-@y
-    The agent can now build images, run containers, and manage your Docker environment.
-@z
-
-@x
-    ### Set environment variables (-e, --env) {#env}
-@y
-    ### Set environment variables (-e, --env) {#env}
-@z
-
-% snip text...
-
-@x
-    Pass environment variables to the sandbox:
-@y
-    Pass environment variables to the sandbox:
-@z
-
-% snip command...
-
-@x
-    ### Mount additional volumes (-v, --volume) {#volume}
-@y
-    ### Mount additional volumes (-v, --volume) {#volume}
-@z
-
-% snip text...
-
-@x
-    Mount additional directories or files into the sandbox:
-@y
-    Mount additional directories or files into the sandbox:
-@z
-
-% snip command...
-
-@x
-    Use `:ro` or `:readonly` to make mounts read-only.
-@y
-    Use `:ro` or `:readonly` to make mounts read-only.
-@z
 
 @x
     ### Use a custom base image (-t, --template) {#template}
@@ -204,12 +123,12 @@ examples: |-
     ### Use a custom base image (-t, --template) {#template}
 @z
 
-% snip text...
+% snip code...
 
 @x
-    Specify a custom container image to use as the sandbox base:
+    Specify a custom container image when creating a sandbox:
 @y
-    Specify a custom container image to use as the sandbox base:
+    Specify a custom container image when creating a sandbox:
 @z
 
 % snip command...
@@ -223,18 +142,31 @@ examples: |-
 @z
 
 @x
-    ### Name the sandbox (--name) {#name}
+    ### Pass arguments to the agent
 @y
-    ### Name the sandbox (--name) {#name}
+    ### Pass arguments to the agent
 @z
 
-% snip text...
-
 @x
-    Assign a custom name to the sandbox for easier identification:
+    Use `--` to separate sandbox options from agent arguments:
 @y
-    Assign a custom name to the sandbox for easier identification:
+    Use `--` to separate sandbox options from agent arguments:
 @z
 
 % snip command...
+
+@x
+    ### Run with locally built template
+@y
+    ### Run with locally built template
+@z
+
+@x
+    Use `--load-local-template` to test local template changes:
+@y
+    Use `--load-local-template` to test local template changes:
+@z
+
+% snip command...
+
 % snip directives...

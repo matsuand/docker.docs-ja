@@ -61,9 +61,43 @@ This page provides download links, system requirements, and step-by-step install
 
 @x
 {{< tabs >}}
-{{< tab name="Mac with Intel chip" >}}
+{{< tab name="Mac with Apple silicon" >}}
 @y
 {{< tabs >}}
+{{< tab name="Apple silicon の Mac の場合" >}}
+@z
+
+@x
+- A supported version of macOS.
+@y
+- A supported version of macOS.
+@z
+
+@x
+  > [!IMPORTANT]
+  >
+  > Docker Desktop is supported on the current and two previous major macOS releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
+@y
+  > [!IMPORTANT]
+  >
+  > Docker Desktop is supported on the current and two previous major macOS releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
+@z
+
+@x
+- At least 4 GB of RAM.
+- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
+@y
+- At least 4 GB of RAM.
+- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
+@z
+
+% snip command...
+
+@x
+{{< /tab >}}
+{{< tab name="Mac with Intel chip" >}}
+@y
+{{< /tab >}}
 {{< tab name="Intel チップ Mac の場合" >}}
 @z
 
@@ -91,44 +125,32 @@ This page provides download links, system requirements, and step-by-step install
 
 @x
 {{< /tab >}}
-{{< tab name="Mac with Apple silicon" >}}
-@y
-{{< /tab >}}
-{{< tab name="Apple silicon Mac の場合" >}}
-@z
-
-@x
-- A supported version of macOS.
-@y
-- A supported version of macOS.
-@z
-
-@x
-  > [!IMPORTANT]
-  >
-  > Docker Desktop is supported on the current and two previous major macOS releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
-@y
-  > [!IMPORTANT]
-  >
-  > Docker Desktop is supported on the current and two previous major macOS releases. As new major versions of macOS are made generally available, Docker stops supporting the oldest version and supports the newest version of macOS (in addition to the previous two releases).
-@z
-
-@x
-- At least 4 GB of RAM.
-- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
-@y
-- At least 4 GB of RAM.
-- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
-@z
-
-% snip command...
-
-@x
-{{< /tab >}}
 {{< /tabs >}}
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+> **Before you install or update**
+>
+> - Quit tools that might call Docker in the background (Visual Studio Code, terminals, agent apps).
+>
+> - If you manage fleets or install via MDM, use the [**PKG installer**](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md).
+>
+> - Keep the installer volume mounted until the installation completes.
+>
+> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/mac-damaged-dialog.md).
+@y
+> **Before you install or update**
+>
+> - Quit tools that might call Docker in the background (Visual Studio Code, terminals, agent apps).
+>
+> - If you manage fleets or install via MDM, use the [**PKG installer**](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md).
+>
+> - Keep the installer volume mounted until the installation completes.
+>
+> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/mac-damaged-dialog.md).
 @z
 
 @x
@@ -144,7 +166,7 @@ This page provides download links, system requirements, and step-by-step install
 @y
 > [!TIP]
 >
-> See the [FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
+> See the [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md#how-do-I-run-docker-desktop-without-administrator-privileges) on how to install and run Docker Desktop without needing administrator privileges.
 @z
 
 @x
@@ -156,7 +178,7 @@ This page provides download links, system requirements, and step-by-step install
 @x
 1. Download the installer using the download buttons at the top of the page, or from the [release notes](/manuals/desktop/release-notes.md).
 @y
-1. Download the installer using the download buttons at the top of the page, or from the [release notes](manuals/desktop/release-notes.md).
+1. Download the installer using the download buttons at the top of the page, or from the [release notes](/manuals/desktop/release-notes.md).
 @z
 
 @x
@@ -213,15 +235,11 @@ This page provides download links, system requirements, and step-by-step install
 6. From the installation window, select either: 
    - **Use recommended settings (Requires password)**. This lets Docker Desktop automatically set the necessary configuration settings. 
    - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](/manuals/desktop/settings-and-maintenance/settings.md#advanced), for more information and how to set the location of the Docker CLI tools.
+7. Select **Finish**. If you have applied any of the previous configurations that require a password in step 6, enter your password to confirm your choice.  
 @y
 6. From the installation window, select either: 
    - **Use recommended settings (Requires password)**. This lets Docker Desktop automatically set the necessary configuration settings. 
-   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](manuals/desktop/settings-and-maintenance/settings.md#advanced), for more information and how to set the location of the Docker CLI tools.
-@z
-
-@x
-7. Select **Finish**. If you have applied any of the previous configurations that require a password in step 6, enter your password to confirm your choice.  
-@y
+   - **Use advanced settings**. You can then set the location of the Docker CLI tools either in the system or user directory, enable the default Docker socket, and enable privileged port mapping. See [Settings](/manuals/desktop/settings-and-maintenance/settings.md#advanced), for more information and how to set the location of the Docker CLI tools.
 7. Select **Finish**. If you have applied any of the previous configurations that require a password in step 6, enter your password to confirm your choice.  
 @z
 
@@ -234,10 +252,22 @@ This page provides download links, system requirements, and step-by-step install
 @x
 After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](/manuals/desktop/release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
 @y
-After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](manuals/desktop/release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
+After downloading `Docker.dmg` from either the download buttons at the top of the page or from the [release notes](/manuals/desktop/release-notes.md), run the following commands in a terminal to install Docker Desktop in the **Applications** folder:
 @z
 
-% snip command...
+@x
+```console
+$ sudo hdiutil attach Docker.dmg
+$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
+$ sudo hdiutil detach /Volumes/Docker
+```
+@y
+```console
+$ sudo hdiutil attach Docker.dmg
+$ sudo /Volumes/Docker/Docker.app/Contents/MacOS/install
+$ sudo hdiutil detach /Volumes/Docker
+```
+@z
 
 @x
 By default, Docker Desktop is installed at `/Applications/Docker.app`. As macOS typically performs security checks the first time an application is used, the `install` command can take several minutes to run.
@@ -268,7 +298,7 @@ The `install` command accepts the following flags:
 - `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
 @y
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run.
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
+- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
 @z
 
 @x
@@ -285,8 +315,8 @@ The `install` command accepts the following flags:
   - For example: `--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 @y
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
+- `--user=<username>`: Performs the privileged configurations once during installation. This removes the need for the user to grant root privileges on first run. For more information, see [Privileged helper permission requirements](/manuals/desktop/setup/install/mac-permission-requirements.md#permission-requirements). To find the username, enter `ls /Users` in the CLI.
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by administrators to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example: `--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 @z
@@ -319,7 +349,15 @@ The `install` command accepts the following flags:
 ###### Example of specifying PAC file
 @z
 
-% snip code...
+@x
+```console
+$ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-pac="http://localhost:8080/myproxy.pac"
+```
+@y
+```console
+$ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-pac="http://localhost:8080/myproxy.pac"
+```
+@z
 
 @x
 ###### Example of specifying PAC script
@@ -327,7 +365,15 @@ The `install` command accepts the following flags:
 ###### Example of specifying PAC script
 @z
 
-% snip code...
+@x
+```console
+$ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-embedded-pac="function FindProxyForURL(url, host) { return \"DIRECT\"; }"
+```
+@y
+```console
+$ sudo /Applications/Docker.app/Contents/MacOS/install --user testuser --proxy-http-mode="manual" --override-proxy-embedded-pac="function FindProxyForURL(url, host) { return \"DIRECT\"; }"
+```
+@z
 
 @x
 > [!TIP]
@@ -341,7 +387,7 @@ The `install` command accepts the following flags:
 @y
 > [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -367,12 +413,12 @@ The `install` command accepts the following flags:
   on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
-- [Get started with Docker](get-started/introduction/_index.md).
-- [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
-- [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how
+- [Get started with Docker](/get-started/introduction/_index.md).
+- [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
+- [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how
   to run and submit diagnostics, and submit issues.
-- [FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.
-- [Release notes](manuals/desktop/release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
-- [Back up and restore data](manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
+- [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.
+- [Release notes](/manuals/desktop/release-notes.md) lists component updates, new features, and improvements associated with Docker Desktop releases.
+- [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @z

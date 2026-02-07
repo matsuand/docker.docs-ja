@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Supported agents
 description: AI coding agents supported by Docker Sandboxes with experimental status and configuration details.
@@ -30,21 +32,23 @@ inside microVMs with private Docker daemons.
 @z
 
 @x
-| Agent       | Command  | Status       | Notes                      |
-| ----------- | -------- | ------------ | -------------------------- |
-| Claude Code | `claude` | Experimental | Most tested implementation |
-| Codex       | `codex`  | Experimental | In development             |
-| Gemini      | `gemini` | Experimental | In development             |
-| cagent      | `cagent` | Experimental | In development             |
-| Kiro        | `kiro`   | Experimental | In development             |
+| Agent       | Command    | Status       | Notes                      |
+| ----------- | ---------- | ------------ | -------------------------- |
+| Claude Code | `claude`   | Experimental | Most tested implementation |
+| Codex       | `codex`    | Experimental | In development             |
+| Copilot     | `copilot`  | Experimental | In development             |
+| Gemini      | `gemini`   | Experimental | In development             |
+| cagent      | `cagent`   | Experimental | In development             |
+| Kiro        | `kiro`     | Experimental | In development             |
 @y
-| Agent       | Command  | Status       | Notes                      |
-| ----------- | -------- | ------------ | -------------------------- |
-| Claude Code | `claude` | Experimental | Most tested implementation |
-| Codex       | `codex`  | Experimental | In development             |
-| Gemini      | `gemini` | Experimental | In development             |
-| cagent      | `cagent` | Experimental | In development             |
-| Kiro        | `kiro`   | Experimental | In development             |
+| Agent       | Command    | Status       | Notes                      |
+| ----------- | ---------- | ------------ | -------------------------- |
+| Claude Code | `claude`   | Experimental | Most tested implementation |
+| Codex       | `codex`    | Experimental | In development             |
+| Copilot     | `copilot`  | Experimental | In development             |
+| Gemini      | `gemini`   | Experimental | In development             |
+| cagent      | `cagent`   | Experimental | In development             |
+| Kiro        | `kiro`     | Experimental | In development             |
 @z
 
 @x
@@ -89,23 +93,7 @@ The agent type is specified when creating a sandbox:
 The agent type is specified when creating a sandbox:
 @z
 
-@x
-```console
-$ docker sandbox create claude ~/my-project
-$ docker sandbox create codex ~/my-project
-$ docker sandbox create gemini ~/my-project
-$ docker sandbox create cagent ~/my-project
-$ docker sandbox create kiro ~/my-project
-```
-@y
-```console
-$ docker sandbox create claude ~/my-project
-$ docker sandbox create codex ~/my-project
-$ docker sandbox create gemini ~/my-project
-$ docker sandbox create cagent ~/my-project
-$ docker sandbox create kiro ~/my-project
-```
-@z
+% snip command...
 
 @x
 Each agent runs in its own isolated sandbox. The agent type is bound to the

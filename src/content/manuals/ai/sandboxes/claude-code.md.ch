@@ -98,23 +98,31 @@ This starts Claude and immediately processes the prompt.
 @z
 
 @x
-Claude Code needs an Anthropic API key to work. The recommended approach is to
-set the `ANTHROPIC_API_KEY` environment variable in your shell configuration
-file.
+Claude Code requires an Anthropic API key. You can authenticate using an environment variable (recommended) or through interactive login.
 @y
-Claude Code needs an Anthropic API key to work. The recommended approach is to
-set the `ANTHROPIC_API_KEY` environment variable in your shell configuration
-file.
+Claude Code requires an Anthropic API key. You can authenticate using an environment variable (recommended) or through interactive login.
 @z
 
 @x
-Docker Sandboxes run through a daemon process that doesn't inherit environment
-variables from your current shell session. To make your API key available to
-sandboxes, you need to set it globally in your shell configuration file.
+### Environment variable (recommended)
 @y
-Docker Sandboxes run through a daemon process that doesn't inherit environment
+### Environment variable (recommended)
+@z
+
+@x
+The recommended approach is to set the `ANTHROPIC_API_KEY` environment variable in your shell configuration file.
+@y
+The recommended approach is to set the `ANTHROPIC_API_KEY` environment variable in your shell configuration file.
+@z
+
+@x
+Docker Sandboxes use a daemon process that doesn't inherit environment
 variables from your current shell session. To make your API key available to
-sandboxes, you need to set it globally in your shell configuration file.
+sandboxes, set it globally in your shell configuration file.
+@y
+Docker Sandboxes use a daemon process that doesn't inherit environment
+variables from your current shell session. To make your API key available to
+sandboxes, set it globally in your shell configuration file.
 @z
 
 @x
@@ -134,9 +142,9 @@ export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
 @z
 
 @x
-Then apply the changes:
+Apply the changes:
 @y
-Then apply the changes:
+Apply the changes:
 @z
 
 @x
@@ -162,9 +170,9 @@ $ docker sandbox run <sandbox-name>
 @z
 
 @x
-The sandbox will detect the environment variable and use it automatically.
+The sandbox detects the environment variable and uses it automatically.
 @y
-The sandbox will detect the environment variable and use it automatically.
+The sandbox detects the environment variable and uses it automatically.
 @z
 
 @x
@@ -174,21 +182,31 @@ The sandbox will detect the environment variable and use it automatically.
 @z
 
 @x
-If no credentials are found, Claude Code prompts you to authenticate when it
-starts. You'll need to authenticate for each workspace separately when using
-this method.
+If no credentials are found, Claude Code prompts you to authenticate interactively when it starts. You can also trigger the login flow manually using the `/login` command within Claude Code.
 @y
-If no credentials are found, Claude Code prompts you to authenticate when it
-starts. You'll need to authenticate for each workspace separately when using
-this method.
+If no credentials are found, Claude Code prompts you to authenticate interactively when it starts. You can also trigger the login flow manually using the `/login` command within Claude Code.
 @z
 
 @x
-To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment
-variable method described above.
+When using interactive authentication:
 @y
-To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment
-variable method described above.
+When using interactive authentication:
+@z
+
+@x
+- You'll need to authenticate for each workspace/sandbox separately
+- If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
+- Authentication sessions aren't persisted outside the sandbox
+@y
+- You'll need to authenticate for each workspace/sandbox separately
+- If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
+- Authentication sessions aren't persisted outside the sandbox
+@z
+
+@x
+To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment variable method described above.
+@y
+To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment variable method described above.
 @z
 
 @x
@@ -302,5 +320,5 @@ See [Custom templates](templates.md) for details.
 - [Custom templates](templates.md)
 - [Network policies](network-policies.md)
 - [Troubleshooting](troubleshooting.md)
-- [CLI Reference](reference/cli/docker/sandbox/)
+- [CLI Reference](__SUBDIR__/reference/cli/docker/sandbox/)
 @z

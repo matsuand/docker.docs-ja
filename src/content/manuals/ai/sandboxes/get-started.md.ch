@@ -20,9 +20,9 @@ description: Run Claude Code in an isolated sandbox. Quick setup guide with prer
 @z
 
 @x
-This guide runs Claude Code in an isolated sandbox for the first time.
+This guide shows how to run Claude Code in an isolated sandbox for the first time.
 @y
-This guide runs Claude Code in an isolated sandbox for the first time.
+This guide shows how to run Claude Code in an isolated sandbox for the first time.
 @z
 
 @x
@@ -52,11 +52,11 @@ Before you begin, ensure you have:
 @x
 - Docker Desktop 4.58 or later
 - macOS, or Windows {{< badge color=violet text=Experimental >}}
-- A Claude API key
+- A Claude API key (can be provided via environment variable or interactively)
 @y
 - Docker Desktop 4.58 or later
 - macOS, or Windows {{< badge color=violet text=Experimental >}}
-- A Claude API key
+- A Claude API key (can be provided via environment variable or interactively)
 @z
 
 @x
@@ -72,9 +72,9 @@ Follow these steps to run Claude Code:
 @z
 
 @x
-1. Set your Anthropic API key as an environment variable.
+1. (Optional but recommended) Set your Anthropic API key as an environment variable.
 @y
-1. Set your Anthropic API key as an environment variable.
+1. (Optional but recommended) Set your Anthropic API key as an environment variable.
 @z
 
 @x
@@ -106,13 +106,25 @@ Follow these steps to run Claude Code:
 @z
 
 @x
-   Then apply the changes:
+   Apply the changes:
    1. Source your shell configuration.
    2. Restart Docker Desktop so the daemon picks up the new environment variable.
 @y
-   Then apply the changes:
+   Apply the changes:
    1. Source your shell configuration.
    2. Restart Docker Desktop so the daemon picks up the new environment variable.
+@z
+
+@x
+   Alternatively, you can skip this step and authenticate interactively when
+   Claude Code starts. If no credentials are found, you'll be prompted to log
+   in. Note that interactive authentication requires you to authenticate for
+   each workspace separately.
+@y
+   Alternatively, you can skip this step and authenticate interactively when
+   Claude Code starts. If no credentials are found, you'll be prompted to log
+   in. Note that interactive authentication requires you to authenticate for
+   each workspace separately.
 @z
 
 @x

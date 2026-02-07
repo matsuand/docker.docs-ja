@@ -36,6 +36,54 @@ For more information about:
 @z
 
 @x
+## 29.2.1
+@y
+## 29.2.1
+@z
+
+@x
+{{< release-date date="2026-02-02" >}}
+@y
+{{< release-date date="2026-02-02" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.2.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.2.1)
+- [moby/moby, 29.2.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.2.1)
+@y
+- [docker/cli, 29.2.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.2.1)
+- [moby/moby, 29.2.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.2.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Update BuildKit to [v0.27.1](https://github.com/moby/buildkit/releases/tag/v0.27.1). [moby/moby#51962](https://github.com/moby/moby/pull/51962)
+- Fix `docker system df` failing when run concurrently with `docker system prune`. [moby/moby#51979](https://github.com/moby/moby/pull/51979)
+- Fix daemon handling of duplicate container exit events to avoid repeated cleanup and state transitions. [moby/moby#51925](https://github.com/moby/moby/pull/51925)
+- Fix panic after failed daemon initialization. [moby/moby#51943](https://github.com/moby/moby/pull/51943)
+- Fix encrypted overlay networks not passing traffic to containers on v28 and older Engines. Encrypted overlay networks will no longer pass traffic to containers on v29.2.0 thru v29.0.0, v28.2.2, v25.0.14 or v25.0.13. [moby/moby#51951](https://github.com/moby/moby/pull/51951)
+- Fix potential panic on `docker network prune`. [moby/moby#51966](https://github.com/moby/moby/pull/51966)
+@y
+- Update BuildKit to [v0.27.1](https://github.com/moby/buildkit/releases/tag/v0.27.1). [moby/moby#51962](https://github.com/moby/moby/pull/51962)
+- Fix `docker system df` failing when run concurrently with `docker system prune`. [moby/moby#51979](https://github.com/moby/moby/pull/51979)
+- Fix daemon handling of duplicate container exit events to avoid repeated cleanup and state transitions. [moby/moby#51925](https://github.com/moby/moby/pull/51925)
+- Fix panic after failed daemon initialization. [moby/moby#51943](https://github.com/moby/moby/pull/51943)
+- Fix encrypted overlay networks not passing traffic to containers on v28 and older Engines. Encrypted overlay networks will no longer pass traffic to containers on v29.2.0 thru v29.0.0, v28.2.2, v25.0.14 or v25.0.13. [moby/moby#51951](https://github.com/moby/moby/pull/51951)
+- Fix potential panic on `docker network prune`. [moby/moby#51966](https://github.com/moby/moby/pull/51966)
+@z
+
+@x
 ## 29.2.0
 @y
 ## 29.2.0

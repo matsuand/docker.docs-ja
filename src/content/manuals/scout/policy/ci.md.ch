@@ -1,22 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Evaluate policy compliance in CI
 description: |
   Configure your continuous integration pipelines to fail
   when Policy Evaluation for an image is worse compared to baseline
 keywords: scout, supply chain, policy, ci
----
 @y
----
 title: Evaluate policy compliance in CI
 description: |
   Configure your continuous integration pipelines to fail
   when Policy Evaluation for an image is worse compared to baseline
 keywords: scout, supply chain, policy, ci
----
 @z
 
 @x
@@ -175,165 +173,7 @@ default, which requires this permission. For details, see
 [Pull Request Comments](https://github.com/docker/scout-action#pull-request-comments).
 @z
 
-@x
-```yaml
-name: Docker
-@y
-```yaml
-name: Docker
-@z
-
-@x
-on:
-  push:
-    tags: ["*"]
-    branches:
-      - "main"
-  pull_request:
-    branches: ["**"]
-@y
-on:
-  push:
-    tags: ["*"]
-    branches:
-      - "main"
-  pull_request:
-    branches: ["**"]
-@z
-
-@x
-env:
-  REGISTRY: docker.io
-  IMAGE_NAME: <IMAGE_NAME>
-  DOCKER_ORG: <ORG>
-@y
-env:
-  REGISTRY: docker.io
-  IMAGE_NAME: <IMAGE_NAME>
-  DOCKER_ORG: <ORG>
-@z
-
-@x
-jobs:
-  build:
-    permissions:
-      pull-requests: write
-@y
-jobs:
-  build:
-    permissions:
-      pull-requests: write
-@z
-
-@x
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log into registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
-@y
-    runs-on: ubuntu-latest
-    steps:
-      - name: Log into registry ${{ env.REGISTRY }}
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USER }}
-          password: ${{ secrets.REGISTRY_TOKEN }}
-@z
-
-@x
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Setup Docker buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@y
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.IMAGE_NAME }}
-@z
-
-@x
-      - name: Build image
-        id: build-and-push
-        uses: docker/build-push-action@v4
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          sbom: ${{ github.event_name != 'pull_request' }}
-          provenance: ${{ github.event_name != 'pull_request' }}
-          push: ${{ github.event_name != 'pull_request' }}
-          load: ${{ github.event_name == 'pull_request' }}
-@y
-      - name: Build image
-        id: build-and-push
-        uses: docker/build-push-action@v4
-        with:
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-          sbom: ${{ github.event_name != 'pull_request' }}
-          provenance: ${{ github.event_name != 'pull_request' }}
-          push: ${{ github.event_name != 'pull_request' }}
-          load: ${{ github.event_name == 'pull_request' }}
-@z
-
-@x
-      - name: Authenticate with Docker
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PAT }}
-@y
-      - name: Authenticate with Docker
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PAT }}
-@z
-
-@x
-      - name: Compare
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: docker/scout-action@v1
-        with:
-          command: compare
-          image: ${{ steps.meta.outputs.tags }}
-          to-env: production
-          platform: "linux/amd64"
-          ignore-unchanged: true
-          only-severities: critical,high
-          organization: ${{ env.DOCKER_ORG }}
-          exit-on: policy
-```
-@y
-      - name: Compare
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: docker/scout-action@v1
-        with:
-          command: compare
-          image: ${{ steps.meta.outputs.tags }}
-          to-env: production
-          platform: "linux/amd64"
-          ignore-unchanged: true
-          only-severities: critical,high
-          organization: ${{ env.DOCKER_ORG }}
-          exit-on: policy
-```
-@z
+% snip code...
 
 @x
 The following screenshot shows what the GitHub PR comment looks like when a

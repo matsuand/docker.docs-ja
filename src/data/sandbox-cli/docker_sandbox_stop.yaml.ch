@@ -7,70 +7,55 @@ short: Stop one or more sandboxes without removing them
 long: |
     Stop one or more sandboxes without removing them. The sandboxes can be restarted later.
 usage: docker sandbox stop SANDBOX [SANDBOX...]
-pname: docker sandbox
-plink: docker_sandbox.yaml
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker sandbox stop
 short: Stop one or more sandboxes without removing them
 long: |
     Stop one or more sandboxes without removing them. The sandboxes can be restarted later.
 usage: docker sandbox stop SANDBOX [SANDBOX...]
-pname: docker sandbox
-plink: docker_sandbox.yaml
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% inherited_options
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+@x
+examples: |-
+    ### Stop a sandbox
+@y
+examples: |-
+    ### Stop a sandbox
+@z
+
+% snip command...
+
+@x
+    ### Stop multiple sandboxes
+@y
+    ### Stop multiple sandboxes
+@z
+
+% snip command...
+
+@x
+    ### Stop all running sandboxes
+@y
+    ### Stop all running sandboxes
+@z
+
+% snip command...
+% snip directives...

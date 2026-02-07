@@ -4977,14 +4977,14 @@ events or unexpected unmounts.
 * Improved Moby syslog facilities
 * Improved file-sharing tab
 * `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
-* `docker build/events/logs/stats...` won't leak when iterrupted with Ctrl-C
+* `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
 @y
 * Filesystem sharing permissions can only be configured in the UI (no more `/Mac` in moby)
 * `com.docker.osx.xhyve.hyperkit`: increased max number of fds to 10240
 * Improved Moby syslog facilities
 * Improved file-sharing tab
 * `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
-* `docker build/events/logs/stats...` won't leak when iterrupted with Ctrl-C
+* `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
 @z
 
 @x

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Checking your build configuration
@@ -115,31 +116,7 @@ build output. For example, the following command both builds the image and runs
 the checks:
 @z
 
-@x
-```console
-$ docker build .
-[+] Building 3.5s (11/11) FINISHED
-...
-@y
-```console
-$ docker build .
-[+] Building 3.5s (11/11) FINISHED
-...
-@z
-
-@x
-1 warning found (use --debug to expand):
-  - Lint Rule 'JSONArgsRecommended': JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 7)
-@y
-1 warning found (use --debug to expand):
-  - Lint Rule 'JSONArgsRecommended': JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 7)
-@z
-
-@x
-```
-@y
-```
-@z
+% snip command...
 
 @x
 In this example, the build ran successfully, but a
@@ -157,35 +134,7 @@ With the GitHub Actions, the checks display in the diff view of pull requests.
 With the GitHub Actions, the checks display in the diff view of pull requests.
 @z
 
-@x
-```yaml
-name: Build and push Docker images
-on:
-  push:
-@y
-```yaml
-name: Build and push Docker images
-on:
-  push:
-@z
-
-@x
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build and push
-        uses: docker/build-push-action@v6.6.0
-```
-@y
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build and push
-        uses: docker/build-push-action@v6.6.0
-```
-@z
+% snip code...
 
 @x
 ![GitHub Actions build check annotations](./images/gha-check-annotations.png)
@@ -211,49 +160,7 @@ Dockerfile the issue originated. If you want to see more detailed information
 about the checks, you can use the `--debug` flag. For example:
 @z
 
-@x
-```console
-$ docker --debug build .
-[+] Building 3.5s (11/11) FINISHED
-...
-@y
-```console
-$ docker --debug build .
-[+] Building 3.5s (11/11) FINISHED
-...
-@z
-
-@x
- 1 warning found:
- - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 4)
-JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-More info: https://docs.docker.com/go/dockerfile/rule/json-args-recommended/
-Dockerfile:4
---------------------
-   2 |
-   3 |     FROM alpine
-   4 | >>> CMD echo "Hello, world!"
-   5 |
---------------------
-@y
- 1 warning found:
- - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 4)
-JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-More info: https://docs.docker.com/go/dockerfile/rule/json-args-recommended/
-Dockerfile:4
---------------------
-   2 |
-   3 |     FROM alpine
-   4 | >>> CMD echo "Hello, world!"
-   5 |
---------------------
-@z
-
-@x
-```
-@y
-```
-@z
+% snip command...
 
 @x
 With the `--debug` flag, the output includes a link to the documentation for
@@ -279,15 +186,7 @@ command as you typically would, but with the addition of the `--check` flag.
 Here's an example:
 @z
 
-@x
-```console
-$ docker build --check .
-```
-@y
-```console
-$ docker build --check .
-```
-@z
+% snip command...
 
 @x
 Instead of executing the build steps, this command only runs the checks and
@@ -299,47 +198,7 @@ reports any issues it finds. If there are any issues, they will be reported in
 the output. For example:
 @z
 
-@x
-```text {title="Output with --check"}
-[+] Building 1.5s (5/5) FINISHED
-=> [internal] connecting to local controller
-=> [internal] load build definition from Dockerfile
-=> => transferring dockerfile: 253B
-=> [internal] load metadata for docker.io/library/node:22
-=> [auth] library/node:pull token for registry-1.docker.io
-=> [internal] load .dockerignore
-=> => transferring context: 50B
-JSONArgsRecommended - https://docs.docker.com/go/dockerfile/rule/json-args-recommended/
-JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-Dockerfile:7
---------------------
-5 |
-6 |     COPY index.js .
-7 | >>> CMD node index.js
-8 |
---------------------
-```
-@y
-```text {title="Output with --check"}
-[+] Building 1.5s (5/5) FINISHED
-=> [internal] connecting to local controller
-=> [internal] load build definition from Dockerfile
-=> => transferring dockerfile: 253B
-=> [internal] load metadata for docker.io/library/node:22
-=> [auth] library/node:pull token for registry-1.docker.io
-=> [internal] load .dockerignore
-=> => transferring context: 50B
-JSONArgsRecommended - https://docs.docker.com/go/dockerfile/rule/json-args-recommended/
-JSON arguments recommended for ENTRYPOINT/CMD to prevent unintended behavior related to OS signals
-Dockerfile:7
---------------------
-5 |
-6 |     COPY index.js .
-7 | >>> CMD node index.js
-8 |
---------------------
-```
-@z
+% snip output...
 
 @x
 This output with `--check` shows the [verbose message](#more-verbose-output)
@@ -377,25 +236,7 @@ cause the build to error out when after the build checks are run, before the
 actual build gets executed.
 @z
 
-@x
-```dockerfile {title=Dockerfile,linenos=true,hl_lines=2}
-# syntax=docker/dockerfile:1
-# check=error=true
-@y
-```dockerfile {title=Dockerfile,linenos=true,hl_lines=2}
-# syntax=docker/dockerfile:1
-# check=error=true
-@z
-
-@x
-FROM alpine
-CMD echo "Hello, world!"
-```
-@y
-FROM alpine
-CMD echo "Hello, world!"
-```
-@z
+% snip code...
 
 @x
 Without the `# check=error=true` directive, this build would complete with an
@@ -407,45 +248,7 @@ exit code of 0. However, with the directive, build check violation results in
 non-zero exit code:
 @z
 
-@x
-```console
-$ docker build .
-[+] Building 1.5s (5/5) FINISHED
-...
-@y
-```console
-$ docker build .
-[+] Building 1.5s (5/5) FINISHED
-...
-@z
-
-@x
- 1 warning found (use --debug to expand):
- - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 5)
-Dockerfile:1
---------------------
-   1 | >>> # syntax=docker/dockerfile:1
-   2 |     # check=error=true
-   3 |
---------------------
-ERROR: lint violation found for rules: JSONArgsRecommended
-$ echo $?
-1
-```
-@y
- 1 warning found (use --debug to expand):
- - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 5)
-Dockerfile:1
---------------------
-   1 | >>> # syntax=docker/dockerfile:1
-   2 |     # check=error=true
-   3 |
---------------------
-ERROR: lint violation found for rules: JSONArgsRecommended
-$ echo $?
-1
-```
-@z
+% snip command...
 
 @x
 You can also set the error directive on the CLI by passing the
@@ -455,15 +258,7 @@ You can also set the error directive on the CLI by passing the
 `BUILDKIT_DOCKERFILE_CHECK` build argument:
 @z
 
-@x
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=error=true" .
-```
-@y
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=error=true" .
-```
-@z
+% snip command...
 
 @x
 ## Skip checks
@@ -483,25 +278,7 @@ The `skip` parameter takes a CSV string of the check IDs you want to skip.
 For example:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=JSONArgsRecommended,StageNameCasing
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=JSONArgsRecommended,StageNameCasing
-@z
-
-@x
-FROM alpine AS BASE_STAGE
-CMD echo "Hello, world!"
-```
-@y
-FROM alpine AS BASE_STAGE
-CMD echo "Hello, world!"
-```
-@z
+% snip code...
 
 @x
 Building this Dockerfile results in no check violations.
@@ -517,15 +294,7 @@ You can also skip checks by passing the `BUILDKIT_DOCKERFILE_CHECK` build
 argument with a CSV string of check IDs you want to skip. For example:
 @z
 
-@x
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecommended,StageNameCasing" .
-```
-@y
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecommended,StageNameCasing" .
-```
-@z
+% snip command...
 
 @x
 To skip all checks, use the `skip=all` parameter:
@@ -533,17 +302,7 @@ To skip all checks, use the `skip=all` parameter:
 To skip all checks, use the `skip=all` parameter:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=all
-```
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=all
-```
-@z
+% snip code...
 
 @x
 ## Combine error and skip parameters for check directives
@@ -561,27 +320,8 @@ To both skip specific checks and error on check violations, pass both the
 directive in your Dockerfile or in a build argument. For example:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=JSONArgsRecommended,StageNameCasing;error=true
-```
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=JSONArgsRecommended,StageNameCasing;error=true
-```
-@z
-
-@x
-```console {title="Build argument"}
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecommended,StageNameCasing;error=true" .
-```
-@y
-```console {title="Build argument"}
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=skip=JSONArgsRecommended,StageNameCasing;error=true" .
-```
-@z
+% snip code...
+% snip command...
 
 @x
 ## Experimental checks
@@ -607,15 +347,7 @@ To enable all experimental checks, set the `BUILDKIT_DOCKERFILE_CHECK` build
 argument to `experimental=all`:
 @z
 
-@x
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=experimental=all" .
-```
-@y
-```console
-$ docker build --check --build-arg "BUILDKIT_DOCKERFILE_CHECK=experimental=all" .
-```
-@z
+% snip command...
 
 @x
 You can also enable experimental checks in your Dockerfile using the `check`
@@ -625,17 +357,7 @@ You can also enable experimental checks in your Dockerfile using the `check`
 directive:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=experimental=all
-```
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=experimental=all
-```
-@z
+% snip code...
 
 @x
 To selectively enable experimental checks, you can pass a CSV string of the
@@ -647,17 +369,7 @@ check IDs you want to enable, either to the `check` directive in your Dockerfile
 or as a build argument. For example:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=experimental=JSONArgsRecommended,StageNameCasing
-```
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=experimental=JSONArgsRecommended,StageNameCasing
-```
-@z
+% snip code...
 
 @x
 Note that the `experimental` directive takes precedence over the `skip`
@@ -671,17 +383,7 @@ directive you have set. For example, if you set `skip=all` and enable
 experimental checks, the experimental checks will still run:
 @z
 
-@x
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=all;experimental=all
-```
-@y
-```dockerfile {title=Dockerfile}
-# syntax=docker/dockerfile:1
-# check=skip=all;experimental=all
-```
-@z
+% snip code...
 
 @x
 ## Further reading

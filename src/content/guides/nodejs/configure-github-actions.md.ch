@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Automate your builds with GitHub Actions
@@ -46,12 +47,6 @@ You must also have:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Overview
 @y
 ## Overview
@@ -73,12 +68,6 @@ In this section, you'll set up a **CI/CD pipeline** using [GitHub Actions](https
 - Run unit and integration tests, and make sure your application meets solid code quality standards.
 - Perform security scanning and vulnerability assessment.
 - Push production-ready images to [Docker Hub](https://hub.docker.com).
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -183,15 +172,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    Link your local project `docker-nodejs-sample` to the GitHub repository you just created by running the following command from your project root:
 @z
 
-@x
-   ```console
-      $ git remote set-url origin https://github.com/{your-username}/{your-repository-name}.git
-   ```
-@y
-   ```console
-      $ git remote set-url origin https://github.com/{your-username}/{your-repository-name}.git
-   ```
-@z
+% snip command...
 
 @x
    > [!IMPORTANT]
@@ -207,15 +188,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    To confirm that your local project is correctly connected to the remote GitHub repository, run:
 @z
 
-@x
-   ```console
-   $ git remote -v
-   ```
-@y
-   ```console
-   $ git remote -v
-   ```
-@z
+% snip command...
 
 @x
    You should see output similar to:
@@ -223,17 +196,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    You should see output similar to:
 @z
 
-@x
-   ```console
-   origin  https://github.com/{your-username}/{your-repository-name}.git (fetch)
-   origin  https://github.com/{your-username}/{your-repository-name}.git (push)
-   ```
-@y
-   ```console
-   origin  https://github.com/{your-username}/{your-repository-name}.git (fetch)
-   origin  https://github.com/{your-username}/{your-repository-name}.git (push)
-   ```
-@z
+% snip output...
 
 @x
    This confirms that your local repository is properly linked and ready to push your source code to GitHub.
@@ -255,15 +218,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    1. Stage all files for commit.
 @z
 
-@x
-      ```console
-      $ git add -A
-      ```
-@y
-      ```console
-      $ git add -A
-      ```
-@z
+% snip command...
 
 @x
       This command stages all changes — including new, modified, and deleted files — preparing them for commit.
@@ -277,15 +232,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    2. Commit your changes.
 @z
 
-@x
-      ```console
-      $ git commit -m "Initial commit with CI/CD pipeline"
-      ```
-@y
-      ```console
-      $ git commit -m "Initial commit with CI/CD pipeline"
-      ```
-@z
+% snip command...
 
 @x
       This command creates a commit that snapshots the staged changes with a descriptive message.
@@ -299,15 +246,7 @@ To enable GitHub Actions to build and push Docker images, you'll securely store 
    3. Push the code to the `main` branch.
 @z
 
-@x
-      ```console
-      $ git push -u origin main
-      ```
-@y
-      ```console
-      $ git push -u origin main
-      ```
-@z
+% snip command...
 
 @x
       This command pushes your local commits to the `main` branch of the remote GitHub repository and sets the upstream branch.
@@ -337,12 +276,6 @@ Once completed, your code will be available on GitHub, and any GitHub Actions wo
 > - [Git commit](https://git-scm.com/docs/git-commit) – Save a snapshot of your staged changes
 > - [Git push](https://git-scm.com/docs/git-push) – Upload local commits to your GitHub repository
 > - [Git remote](https://git-scm.com/docs/git-remote) – View and manage remote repository URLs
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -383,267 +316,7 @@ Now you'll create a GitHub Actions workflow that builds your Docker image, runs 
 3. Add the following workflow configuration to the new file:
 @z
 
-@x
-```yaml
-name: CI/CD – Node.js Application with Docker
-@y
-```yaml
-name: CI/CD – Node.js Application with Docker
-@z
-
-@x
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
-@y
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
-@z
-
-@x
-jobs:
-  test:
-    name: Run Node.js Tests
-    runs-on: ubuntu-latest
-@y
-jobs:
-  test:
-    name: Run Node.js Tests
-    runs-on: ubuntu-latest
-@z
-
-@x
-    services:
-      postgres:
-        image: postgres:18-alpine
-        env:
-          POSTGRES_DB: todoapp_test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-@y
-    services:
-      postgres:
-        image: postgres:18-alpine
-        env:
-          POSTGRES_DB: todoapp_test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-@z
-
-@x
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-@y
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-
-@y
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-
-@z
-
-@x
-      - name: Build test image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: test
-          tags: nodejs-app-test:latest
-          platforms: linux/amd64
-          load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-@y
-      - name: Build test image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: test
-          tags: nodejs-app-test:latest
-          platforms: linux/amd64
-          load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-@z
-
-@x
-      - name: Run tests inside container
-        run: |
-          docker run --rm \
-            --network host \
-            -e NODE_ENV=test \
-            -e POSTGRES_HOST=localhost \
-            -e POSTGRES_PORT=5432 \
-            -e POSTGRES_DB=todoapp_test \
-            -e POSTGRES_USER=postgres \
-            -e POSTGRES_PASSWORD=postgres \
-            nodejs-app-test:latest
-        env:
-          CI: true
-        timeout-minutes: 10
-@y
-      - name: Run tests inside container
-        run: |
-          docker run --rm \
-            --network host \
-            -e NODE_ENV=test \
-            -e POSTGRES_HOST=localhost \
-            -e POSTGRES_PORT=5432 \
-            -e POSTGRES_DB=todoapp_test \
-            -e POSTGRES_USER=postgres \
-            -e POSTGRES_PASSWORD=postgres \
-            nodejs-app-test:latest
-        env:
-          CI: true
-        timeout-minutes: 10
-@z
-
-@x
-  build-and-push:
-    name: Build and Push Docker Image
-    runs-on: ubuntu-latest
-    needs: test
-@y
-  build-and-push:
-    name: Build and Push Docker Image
-    runs-on: ubuntu-latest
-    needs: test
-@z
-
-@x
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-@y
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Cache Docker layers
-        uses: actions/cache@v4
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-buildx-
-@y
-      - name: Cache Docker layers
-        uses: actions/cache@v4
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: ${{ runner.os }}-buildx-
-@z
-
-@x
-      - name: Extract metadata
-        id: meta
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> "$GITHUB_OUTPUT"
-          echo "SHORT_SHA=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
-@y
-      - name: Extract metadata
-        id: meta
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> "$GITHUB_OUTPUT"
-          echo "SHORT_SHA=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
-@z
-
-@x
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@y
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-@z
-
-@x
-      - name: Build and push multi-arch production image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: production
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:${{ steps.meta.outputs.SHORT_SHA }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-```
-@y
-      - name: Build and push multi-arch production image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          target: production
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:${{ steps.meta.outputs.SHORT_SHA }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
-```
-@z
+% snip code...
 
 @x
 This workflow performs the following tasks for your Node.js application:
@@ -677,12 +350,6 @@ This workflow performs the following tasks for your Node.js application:
 @y
 > [!NOTE]
 > For more information about `docker/build-push-action`, refer to the [GitHub Action README](https://github.com/docker/build-push-action/blob/master/README.md).
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -766,12 +433,6 @@ After adding your workflow file, trigger the CI/CD process.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -811,12 +472,6 @@ What you accomplished:
 Your Node.js application now has automated testing and deployment.
 @y
 Your Node.js application now has automated testing and deployment.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -843,12 +498,6 @@ Deepen your understanding of automation and best practices for containerized app
 - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) – Full reference for writing GitHub workflows
 - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) – Learn about GHCR features and usage
 - [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Optimize your image for performance and security
-@z
-
-@x
----
-@y
----
 @z
 
 @x

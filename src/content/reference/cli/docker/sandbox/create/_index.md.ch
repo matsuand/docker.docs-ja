@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Style guide
+title: docker sandbox create
 @y
-title: Style guide
+title: docker sandbox create
 @z

@@ -6,189 +6,74 @@ command: docker sandbox create
 short: Create a sandbox for an agent
 long: |-
     Create a sandbox with access to a host workspace for an agent.
+
+    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
 @y
 command: docker sandbox create
 short: Create a sandbox for an agent
 long: |-
     Create a sandbox with access to a host workspace for an agent.
+
+    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
 @z
 
 @x
-    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
 usage: docker sandbox create [OPTIONS] AGENT WORKSPACE
-pname: docker sandbox
-plink: docker_sandbox.yaml
-cname:
-    - docker sandbox create cagent
-    - docker sandbox create claude
-    - docker sandbox create codex
-    - docker sandbox create gemini
-    - docker sandbox create kiro
-clink:
-    - docker_sandbox_create_cagent.yaml
-    - docker_sandbox_create_claude.yaml
-    - docker_sandbox_create_codex.yaml
-    - docker_sandbox_create_gemini.yaml
-    - docker_sandbox_create_kiro.yaml
-options:
-    - option: load-local-template
-      value_type: bool
-      default_value: "false"
-      description: |
-        Load a locally built template image into the sandbox (useful for testing local changes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
-      description: |
-        Name for the sandbox (default: <agent>-<workdir>, letters, numbers, hyphens, and underscores)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: template
-      shorthand: t
-      value_type: string
-      description: |
-        Container image to use for the sandbox (default: agent-specific image)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
 usage: docker sandbox create [OPTIONS] AGENT WORKSPACE
-pname: docker sandbox
-plink: docker_sandbox.yaml
-cname:
-    - docker sandbox create cagent
-    - docker sandbox create claude
-    - docker sandbox create codex
-    - docker sandbox create gemini
-    - docker sandbox create kiro
-clink:
-    - docker_sandbox_create_cagent.yaml
-    - docker_sandbox_create_claude.yaml
-    - docker_sandbox_create_codex.yaml
-    - docker_sandbox_create_gemini.yaml
-    - docker_sandbox_create_kiro.yaml
-options:
-    - option: load-local-template
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% cname
+% clink
+
+% options:
+
+@x load-local-template
       description: |
         Load a locally built template image into the sandbox (useful for testing local changes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: name
-      value_type: string
+@y
+      description: |
+        Load a locally built template image into the sandbox (useful for testing local changes)
+@z
+
+@x name
       description: |
         Name for the sandbox (default: <agent>-<workdir>, letters, numbers, hyphens, and underscores)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Name for the sandbox (default: <agent>-<workdir>, letters, numbers, hyphens, and underscores)
+@z
+
+@x quiet
       description: Suppress verbose output
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: template
-      shorthand: t
-      value_type: string
+@y
+      description: Suppress verbose output
+@z
+
+@x template
       description: |
         Container image to use for the sandbox (default: agent-specific image)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Container image to use for the sandbox (default: agent-specific image)
+@z
+
+% inherited_options:
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+% snip directives...

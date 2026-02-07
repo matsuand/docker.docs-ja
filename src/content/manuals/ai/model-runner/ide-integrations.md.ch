@@ -572,6 +572,46 @@ print(response.text)
 @z
 
 @x
+## OpenCode
+@y
+## OpenCode
+@z
+
+@x
+[OpenCode](https://opencode.ai/) is an open-source coding assistant designed to integrate directly into developer workflows. It supports multiple model providers and exposes a flexible configuration system that makes it easy to switch between them.
+@y
+[OpenCode](https://opencode.ai/) is an open-source coding assistant designed to integrate directly into developer workflows. It supports multiple model providers and exposes a flexible configuration system that makes it easy to switch between them.
+@z
+
+@x
+### Configuration
+@y
+### Configuration
+@z
+
+@x
+1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
+2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+@y
+1. Install OpenCode (see [docs](https://opencode.ai/docs/#install))
+2. Reference DMR in your OpenCode configuration, either globally at `~/.config/opencode/opencode.json` or project specific with a `opencode.json` file in the root of your project
+@z
+
+% snip code...
+
+@x
+3. Select the model you want in OpenCode
+@y
+3. Select the model you want in OpenCode
+@z
+
+@x
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+@y
+You can find more details in [this Docker Blog post](https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/)
+@z
+
+@x
 ## Common issues
 @y
 ## Common issues

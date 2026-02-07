@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Using build policies
@@ -101,15 +102,7 @@ To see the inputs that your Dockerfile references (images, Git repos, HTTP
 downloads), build with debug logging:
 @z
 
-@x
-```console
-$ docker buildx build --progress=plain --policy log-level=debug .
-```
-@y
-```console
-$ docker buildx build --progress=plain --policy log-level=debug .
-```
-@z
+% snip command...
 
 @x
 Example output for an image source:
@@ -117,43 +110,7 @@ Example output for an image source:
 Example output for an image source:
 @z
 
-@x
-```text
-#1 0.010 checking policy for source docker-image://alpine:3.19 (linux/arm64)
-#1 0.011 policy input: {
-#1 0.011   "env": {
-#1 0.011     "filename": "."
-#1 0.011   },
-#1 0.011   "image": {
-#1 0.011     "ref": "docker.io/library/alpine:3.19",
-#1 0.011     "host": "docker.io",
-#1 0.011     "repo": "alpine",
-#1 0.011     "tag": "3.19",
-#1 0.011     "platform": "linux/arm64"
-#1 0.011   }
-#1 0.011 }
-#1 0.011 unknowns for policy evaluation: [input.image.checksum input.image.labels ...]
-#1 0.012 policy decision for source docker-image://alpine:3.19: ALLOW
-```
-@y
-```text
-#1 0.010 checking policy for source docker-image://alpine:3.19 (linux/arm64)
-#1 0.011 policy input: {
-#1 0.011   "env": {
-#1 0.011     "filename": "."
-#1 0.011   },
-#1 0.011   "image": {
-#1 0.011     "ref": "docker.io/library/alpine:3.19",
-#1 0.011     "host": "docker.io",
-#1 0.011     "repo": "alpine",
-#1 0.011     "tag": "3.19",
-#1 0.011     "platform": "linux/arm64"
-#1 0.011   }
-#1 0.011 }
-#1 0.011 unknowns for policy evaluation: [input.image.checksum input.image.labels ...]
-#1 0.012 policy decision for source docker-image://alpine:3.19: ALLOW
-```
-@z
+% snip output...
 
 @x
 This shows the complete input structure, which fields are unresolved, and the
@@ -195,15 +152,7 @@ Test if your policy allows the local context:
 Test if your policy allows the local context:
 @z
 
-@x
-```console
-$ docker buildx policy eval .
-```
-@y
-```console
-$ docker buildx policy eval .
-```
-@z
+% snip command...
 
 @x
 No output means the policy allowed the source. If denied, you see:
@@ -211,15 +160,7 @@ No output means the policy allowed the source. If denied, you see:
 No output means the policy allowed the source. If denied, you see:
 @z
 
-@x
-```console
-ERROR: policy denied
-```
-@y
-```console
-ERROR: policy denied
-```
-@z
+% snip output...
 
 @x
 Test other sources:
@@ -251,15 +192,7 @@ metadata that requires fetching the source (like `labels`, `checksum`, or
 `hasProvenance`), specify which fields to fetch with `--fields`:
 @z
 
-@x
-```console
-$ docker buildx policy eval --print --fields image.labels docker-image://alpine:3.19
-```
-@y
-```console
-$ docker buildx policy eval --print --fields image.labels docker-image://alpine:3.19
-```
-@z
+% snip command...
 
 @x
 Multiple fields can be specified as a comma-separated list.
@@ -285,33 +218,7 @@ Here's a practical workflow for developing policies:
 1. Start with basic deny-all policy:
 @z
 
-@x
-   ```rego {title="Dockerfile.rego"}
-   package docker
-@y
-   ```rego {title="Dockerfile.rego"}
-   package docker
-@z
-
-@x
-   default allow := false
-@y
-   default allow := false
-@z
-
-@x
-   allow if input.local
-@y
-   allow if input.local
-@z
-
-@x
-   decision := {"allow": allow}
-   ```
-@y
-   decision := {"allow": allow}
-   ```
-@z
+% snip code...
 
 @x
 2. Build with debug logging to see what inputs your Dockerfile uses:
@@ -319,15 +226,7 @@ Here's a practical workflow for developing policies:
 2. Build with debug logging to see what inputs your Dockerfile uses:
 @z
 
-@x
-   ```console
-   $ docker buildx build --progress=plain --policy log-level=debug .
-   ```
-@y
-   ```console
-   $ docker buildx build --progress=plain --policy log-level=debug .
-   ```
-@z
+% snip command...
 
 @x
    The output shows the denied image and its input structure:
@@ -335,33 +234,7 @@ Here's a practical workflow for developing policies:
    The output shows the denied image and its input structure:
 @z
 
-@x
-   ```text
-   #1 0.026 checking policy for source docker-image://docker.io/library/alpine:3.19
-   #1 0.027 policy input: {
-   #1 0.027   "image": {
-   #1 0.027     "repo": "alpine",
-   #1 0.027     "tag": "3.19",
-   #1 0.027     ...
-   #1 0.027   }
-   #1 0.027 }
-   #1 0.028 policy decision for source docker-image://alpine:3.19: DENY
-   #1 ERROR: source "docker-image://alpine:3.19" not allowed by policy
-   ```
-@y
-   ```text
-   #1 0.026 checking policy for source docker-image://docker.io/library/alpine:3.19
-   #1 0.027 policy input: {
-   #1 0.027   "image": {
-   #1 0.027     "repo": "alpine",
-   #1 0.027     "tag": "3.19",
-   #1 0.027     ...
-   #1 0.027   }
-   #1 0.027 }
-   #1 0.028 policy decision for source docker-image://alpine:3.19: DENY
-   #1 ERROR: source "docker-image://alpine:3.19" not allowed by policy
-   ```
-@z
+% snip output...
 
 @x
 3. Add a rule allowing the alpine image:
@@ -369,19 +242,7 @@ Here's a practical workflow for developing policies:
 3. Add a rule allowing the alpine image:
 @z
 
-@x
-   ```rego
-   allow if {
-       input.image.repo == "alpine"
-   }
-   ```
-@y
-   ```rego
-   allow if {
-       input.image.repo == "alpine"
-   }
-   ```
-@z
+% snip code...
 
 @x
 4. Build again to verify the policy works:
@@ -389,15 +250,7 @@ Here's a practical workflow for developing policies:
 4. Build again to verify the policy works:
 @z
 
-@x
-   ```console
-   $ docker buildx build .
-   ```
-@y
-   ```console
-   $ docker buildx build .
-   ```
-@z
+% snip command...
 
 @x
 If it fails, see [Debugging](./debugging.md) for troubleshooting guidance.
@@ -429,55 +282,7 @@ Create a policy alongside your Dockerfile:
 Create a policy alongside your Dockerfile:
 @z
 
-@x
-```dockerfile {title="Dockerfile"}
-FROM alpine:3.19
-RUN echo "hello"
-```
-@y
-```dockerfile {title="Dockerfile"}
-FROM alpine:3.19
-RUN echo "hello"
-```
-@z
-
-@x
-```rego {title="Dockerfile.rego"}
-package docker
-@y
-```rego {title="Dockerfile.rego"}
-package docker
-@z
-
-@x
-default allow := false
-@y
-default allow := false
-@z
-
-@x
-allow if input.local
-@y
-allow if input.local
-@z
-
-@x
-allow if {
-    input.image.repo == "alpine"
-}
-@y
-allow if {
-    input.image.repo == "alpine"
-}
-@z
-
-@x
-decision := {"allow": allow}
-```
-@y
-decision := {"allow": allow}
-```
-@z
+% snip code...
 
 @x
 Build normally:
@@ -485,15 +290,7 @@ Build normally:
 Build normally:
 @z
 
-@x
-```console
-$ docker buildx build .
-```
-@y
-```console
-$ docker buildx build .
-```
-@z
+% snip command...
 
 @x
 Buildx loads the policy automatically and validates the `alpine:3.19` image
@@ -515,15 +312,7 @@ Specify the Dockerfile with `-f`:
 Specify the Dockerfile with `-f`:
 @z
 
-@x
-```console
-$ docker buildx build -f app.Dockerfile .
-```
-@y
-```console
-$ docker buildx build -f app.Dockerfile .
-```
-@z
+% snip command...
 
 @x
 Buildx looks for `app.Dockerfile.rego` in the same directory.
@@ -543,15 +332,7 @@ Add an extra policy to the automatic one:
 Add an extra policy to the automatic one:
 @z
 
-@x
-```console
-$ docker buildx build --policy filename=extra-checks.rego .
-```
-@y
-```console
-$ docker buildx build --policy filename=extra-checks.rego .
-```
-@z
+% snip command...
 
 @x
 Both `Dockerfile.rego` (automatic) and `extra-checks.rego` (manual) must pass.
@@ -571,15 +352,7 @@ Use only your specified policy:
 Use only your specified policy:
 @z
 
-@x
-```console
-$ docker buildx build --policy reset=true,filename=strict.rego .
-```
-@y
-```console
-$ docker buildx build --policy reset=true,filename=strict.rego .
-```
-@z
+% snip command...
 
 @x
 ## Using policies with bake
@@ -595,15 +368,7 @@ build`. Place `Dockerfile.rego` alongside your Dockerfile and run:
 build`. Place `Dockerfile.rego` alongside your Dockerfile and run:
 @z
 
-@x
-```console
-$ docker buildx bake
-```
-@y
-```console
-$ docker buildx bake
-```
-@z
+% snip command...
 
 @x
 ### Manual policy in bake files
@@ -617,21 +382,7 @@ Specify additional policies in your `docker-bake.hcl`:
 Specify additional policies in your `docker-bake.hcl`:
 @z
 
-@x
-```hcl {title="docker-bake.hcl"}
-target "default" {
-  dockerfile = "Dockerfile"
-  policy = ["extra.rego"]
-}
-```
-@y
-```hcl {title="docker-bake.hcl"}
-target "default" {
-  dockerfile = "Dockerfile"
-  policy = ["extra.rego"]
-}
-```
-@z
+% snip code...
 
 @x
 The `policy` attribute takes a list of policy files. Bake loads these in
@@ -647,27 +398,7 @@ addition to the automatic `Dockerfile.rego` (if it exists).
 ### Multiple policies in bake
 @z
 
-@x
-```hcl {title="docker-bake.hcl"}
-target "webapp" {
-  dockerfile = "Dockerfile"
-  policy = [
-    "shared/base-policy.rego",
-    "security/image-signing.rego"
-  ]
-}
-```
-@y
-```hcl {title="docker-bake.hcl"}
-target "webapp" {
-  dockerfile = "Dockerfile"
-  policy = [
-    "shared/base-policy.rego",
-    "security/image-signing.rego"
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 All policies must pass for the target to build successfully.
@@ -687,33 +418,7 @@ Apply different validation rules to different targets:
 Apply different validation rules to different targets:
 @z
 
-@x
-```hcl {title="docker-bake.hcl"}
-target "development" {
-  dockerfile = "dev.Dockerfile"
-  policy = ["policies/permissive.rego"]
-}
-@y
-```hcl {title="docker-bake.hcl"}
-target "development" {
-  dockerfile = "dev.Dockerfile"
-  policy = ["policies/permissive.rego"]
-}
-@z
-
-@x
-target "production" {
-  dockerfile = "prod.Dockerfile"
-  policy = ["policies/strict.rego", "policies/signing-required.rego"]
-}
-```
-@y
-target "production" {
-  dockerfile = "prod.Dockerfile"
-  policy = ["policies/strict.rego", "policies/signing-required.rego"]
-}
-```
-@z
+% snip code...
 
 @x
 Build with the appropriate target:
@@ -721,17 +426,7 @@ Build with the appropriate target:
 Build with the appropriate target:
 @z
 
-@x
-```console
-$ docker buildx bake development  # Uses permissive policy
-$ docker buildx bake production   # Uses strict policies
-```
-@y
-```console
-$ docker buildx bake development  # Uses permissive policy
-$ docker buildx bake production   # Uses strict policies
-```
-@z
+% snip command...
 
 @x
 ### Bake with policy options
@@ -747,15 +442,7 @@ Currently, bake doesn't support policy options (reset, strict, disabled) in the
 HCL file. Use command-line flags instead:
 @z
 
-@x
-```console
-$ docker buildx bake --policy disabled=true production
-```
-@y
-```console
-$ docker buildx bake --policy disabled=true production
-```
-@z
+% snip command...
 
 @x
 ## Testing in CI/CD
@@ -775,37 +462,7 @@ Test policies during CI builds:
 Test policies during CI builds:
 @z
 
-@x
-```yaml {title=".github/workflows/test-policies.yml"}
-name: Test Build Policies
-on: [push, pull_request]
-@y
-```yaml {title=".github/workflows/test-policies.yml"}
-name: Test Build Policies
-on: [push, pull_request]
-@z
-
-@x
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - name: Test build with policy
-        run: docker buildx build --policy strict=true .
-```
-@y
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: docker/setup-buildx-action@v3
-      - name: Test build with policy
-        run: docker buildx build --policy strict=true .
-```
-@z
+% snip code...
 
 @x
 This ensures policy changes don't break builds and that new rules work as
@@ -851,24 +508,15 @@ directory. For a file named `app.Dockerfile`, it looks for
 `app.Dockerfile.rego`.
 @z
 
-@x
-```text
-project/
-├── Dockerfile
+@x within text
 ├── Dockerfile.rego          # Loaded automatically for Dockerfile
-├── app.Dockerfile
-├── app.Dockerfile.rego      # Loaded automatically for app.Dockerfile
-└── src/
-```
 @y
-```text
-project/
-├── Dockerfile
 ├── Dockerfile.rego          # Loaded automatically for Dockerfile
-├── app.Dockerfile
+@z
+@x
 ├── app.Dockerfile.rego      # Loaded automatically for app.Dockerfile
-└── src/
-```
+@y
+├── app.Dockerfile.rego      # Loaded automatically for app.Dockerfile
 @z
 
 @x
@@ -879,15 +527,7 @@ This automatic loading means you don't need command-line flags in most cases.
 Create the policy file alongside your Dockerfile and build:
 @z
 
-@x
-```console
-$ docker buildx build .
-```
-@y
-```console
-$ docker buildx build .
-```
-@z
+% snip command...
 
 @x
 Buildx detects `Dockerfile.rego` and evaluates it before running the build.
@@ -919,15 +559,7 @@ If buildx can't find a matching `.rego` file, the build proceeds without policy
 evaluation. To require policies and fail if none are found, use strict mode:
 @z
 
-@x
-```console
-$ docker buildx build --policy strict=true .
-```
-@y
-```console
-$ docker buildx build --policy strict=true .
-```
-@z
+% snip command...
 
 @x
 This fails the build if no policy loads or if the BuildKit daemon doesn't
@@ -957,15 +589,7 @@ Basic syntax:
 Basic syntax:
 @z
 
-@x
-```console
-$ docker buildx build --policy filename=custom.rego .
-```
-@y
-```console
-$ docker buildx build --policy filename=custom.rego .
-```
-@z
+% snip command...
 
 @x
 This loads `custom.rego` in addition to the automatic `Dockerfile.rego` (if it
@@ -981,15 +605,7 @@ Multiple policies:
 Multiple policies:
 @z
 
-@x
-```console
-$ docker buildx build --policy filename=policy1.rego --policy filename=policy2.rego .
-```
-@y
-```console
-$ docker buildx build --policy filename=policy1.rego --policy filename=policy2.rego .
-```
-@z
+% snip command...
 
 @x
 All policies must pass for the build to succeed. Use this to enforce layered
@@ -1029,15 +645,7 @@ Combine options with commas:
 Combine options with commas:
 @z
 
-@x
-```console
-$ docker buildx build --policy filename=extra.rego,strict=true .
-```
-@y
-```console
-$ docker buildx build --policy filename=extra.rego,strict=true .
-```
-@z
+% snip command...
 
 @x
 ### Exploring sources with policy eval
@@ -1067,37 +675,8 @@ Use `--print` to see the input structure for any source without running policy
 evaluation:
 @z
 
-@x
-```console
-$ docker buildx policy eval --print https://github.com/moby/buildkit.git
-```
-@y
-```console
-$ docker buildx policy eval --print https://github.com/moby/buildkit.git
-```
-@z
-
-@x
-```json
-{
-  "git": {
-    "schema": "https",
-    "host": "github.com",
-    "remote": "https://github.com/moby/buildkit.git"
-  }
-}
-```
-@y
-```json
-{
-  "git": {
-    "schema": "https",
-    "host": "github.com",
-    "remote": "https://github.com/moby/buildkit.git"
-  }
-}
-```
-@z
+% snip command...
+% snip code...
 
 @x
 Test different source types:
@@ -1105,32 +684,20 @@ Test different source types:
 Test different source types:
 @z
 
-@x
-```console
+@x within command
 # HTTP downloads
-$ docker buildx policy eval --print https://releases.hashicorp.com/terraform/1.5.0/terraform.zip
 @y
-```console
 # HTTP downloads
-$ docker buildx policy eval --print https://releases.hashicorp.com/terraform/1.5.0/terraform.zip
 @z
-
 @x
 # Images (requires docker-image:// prefix)
-$ docker buildx policy eval --print docker-image://alpine:3.19
 @y
 # Images (requires docker-image:// prefix)
-$ docker buildx policy eval --print docker-image://alpine:3.19
 @z
-
 @x
 # Local context
-$ docker buildx policy eval --print .
-```
 @y
 # Local context
-$ docker buildx policy eval --print .
-```
 @z
 
 @x
@@ -1163,15 +730,7 @@ For example, to test a source against the policy for `app.Dockerfile`:
 For example, to test a source against the policy for `app.Dockerfile`:
 @z
 
-@x
-```console
-$ docker buildx policy eval --filename app.Dockerfile .
-```
-@y
-```console
-$ docker buildx policy eval --filename app.Dockerfile .
-```
-@z
+% snip command...
 
 @x
 This loads `app.Dockerfile.rego` and tests whether it allows the source `.`
@@ -1187,17 +746,7 @@ Test different sources against your policy:
 Test different sources against your policy:
 @z
 
-@x
-```console
-$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
-$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
-```
-@y
-```console
-$ docker buildx policy eval --filename app.Dockerfile https://github.com/org/repo.git
-$ docker buildx policy eval --filename app.Dockerfile docker-image://alpine:3.19
-```
-@z
+% snip command...
 
 @x
 ### Reset automatic loading
@@ -1211,15 +760,7 @@ To use only your specified policies and ignore automatic `.rego` files:
 To use only your specified policies and ignore automatic `.rego` files:
 @z
 
-@x
-```console
-$ docker buildx build --policy reset=true,filename=custom.rego .
-```
-@y
-```console
-$ docker buildx build --policy reset=true,filename=custom.rego .
-```
-@z
+% snip command...
 
 @x
 This skips `Dockerfile.rego` and loads only `custom.rego`.
@@ -1239,15 +780,7 @@ Disable policy evaluation for testing or emergencies:
 Disable policy evaluation for testing or emergencies:
 @z
 
-@x
-```console
-$ docker buildx build --policy disabled=true .
-```
-@y
-```console
-$ docker buildx build --policy disabled=true .
-```
-@z
+% snip command...
 
 @x
 The build proceeds without any policy checks. Use this carefully - you're

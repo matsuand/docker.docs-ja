@@ -125,12 +125,12 @@ Docker Hub にイメージをプッシュしていきます。
 
 @x
    This failure is expected because the image isn't tagged correctly yet.
-   Docker is looking for an image name `docker/getting started`, but your
+   Docker is looking for an image name `docker/getting-started`, but your
    local image is still named `getting-started`.
 @y
    このエラーは起こるべくして起きます。
    それはまだイメージへのタグづけがまだ正しく行われていないためです。
-   Docker は `docker/getting started` という名前のイメージを探します。
+   Docker は `docker/getting-started` という名前のイメージを探します。
    しかし今あるローカルイメージの名前は、まだ `getting-started` です。
 @z
 

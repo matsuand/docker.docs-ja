@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Automate your builds with GitHub Actions
@@ -183,15 +184,7 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    Link your local project `docker-vuejs-sample` to the GitHub repository you just created by running the following command from your project root:
 @z
 
-@x
-   ```console
-      $ git remote set-url origin https://github.com/{your-username}/{your-repository-name}.git
-   ```
-@y
-   ```console
-      $ git remote set-url origin https://github.com/{your-username}/{your-repository-name}.git
-   ```
-@z
+% snip command...
 
 @x
    >[!IMPORTANT]
@@ -207,15 +200,7 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    To confirm that your local project is correctly connected to the remote GitHub repository, run:
 @z
 
-@x
-   ```console
-   $ git remote -v
-   ```
-@y
-   ```console
-   $ git remote -v
-   ```
-@z
+% snip command...
 
 @x
    You should see output similar to:
@@ -223,17 +208,7 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    You should see output similar to:
 @z
 
-@x
-   ```console
-   origin  https://github.com/{your-username}/{your-repository-name}.git (fetch)
-   origin  https://github.com/{your-username}/{your-repository-name}.git (push)
-   ```
-@y
-   ```console
-   origin  https://github.com/{your-username}/{your-repository-name}.git (fetch)
-   origin  https://github.com/{your-username}/{your-repository-name}.git (push)
-   ```
-@z
+% snip output...
 
 @x
    This confirms that your local repository is properly linked and ready to push your source code to GitHub.
@@ -259,15 +234,11 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    1. Stage all files for commit.
 @z
 
+% snip command...
+
 @x
-      ```console
-      $ git add -A
-      ```
       This command stages all changes — including new, modified, and deleted files — preparing them for commit.
 @y
-      ```console
-      $ git add -A
-      ```
       This command stages all changes — including new, modified, and deleted files — preparing them for commit.
 @z
 
@@ -277,15 +248,11 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    2. Commit the staged changes with a descriptive message.
 @z
 
+% snip command...
+
 @x
-      ```console
-      $ git commit -m "Initial commit"
-      ```
       This command creates a commit that snapshots the staged changes with a descriptive message.  
 @y
-      ```console
-      $ git commit -m "Initial commit"
-      ```
       This command creates a commit that snapshots the staged changes with a descriptive message.  
 @z
 
@@ -295,15 +262,11 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
    3. Push the code to the `main` branch.
 @z
 
+% snip command...
+
 @x
-      ```console
-      $ git push -u origin main
-      ```
       This command pushes your local commits to the `main` branch of the remote GitHub repository and sets the upstream branch.
 @y
-      ```console
-      $ git push -u origin main
-      ```
       This command pushes your local commits to the `main` branch of the remote GitHub repository and sets the upstream branch.
 @z
 
@@ -373,220 +336,51 @@ Now you'll create a GitHub Actions workflow that builds your Docker image, runs 
 3. Add the following workflow configuration to the new file:
 @z
 
-@x
-```yaml
-name: CI/CD – Vue.js App with Docker
-@y
-```yaml
-name: CI/CD – Vue.js App with Docker
-@z
-
-@x
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
-@y
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-    types: [opened, synchronize, reopened]
-@z
-
-@x
-jobs:
-  build-test-deploy:
-    name: Build, Test & Deploy
-    runs-on: ubuntu-latest
-@y
-jobs:
-  build-test-deploy:
-    name: Build, Test & Deploy
-    runs-on: ubuntu-latest
-@z
-
-@x
-    steps:
+@x within code
       # 1. Checkout the codebase
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 @y
-    steps:
       # 1. Checkout the codebase
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 @z
-
 @x
       # 2. Set up Docker Buildx
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 @y
       # 2. Set up Docker Buildx
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
 @z
-
 @x
       # 3. Cache Docker layers
-      - name: Cache Docker Layers
-        uses: actions/cache@v4
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
 @y
       # 3. Cache Docker layers
-      - name: Cache Docker Layers
-        uses: actions/cache@v4
-        with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-
 @z
-
 @x
       # 4. Cache npm dependencies
-      - name: Cache npm Dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
 @y
       # 4. Cache npm dependencies
-      - name: Cache npm Dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
 @z
-
 @x
       # 5. Generate build metadata
-      - name: Generate Build Metadata
-        id: meta
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> "$GITHUB_OUTPUT"
-          echo "SHORT_SHA=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
 @y
       # 5. Generate build metadata
-      - name: Generate Build Metadata
-        id: meta
-        run: |
-          echo "REPO_NAME=${GITHUB_REPOSITORY##*/}" >> "$GITHUB_OUTPUT"
-          echo "SHORT_SHA=${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
 @z
-
 @x
       # 6. Build Docker image for testing
-      - name: Build Dev Docker Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile.dev
-          tags: ${{ steps.meta.outputs.REPO_NAME }}-dev:latest
-          load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
 @y
       # 6. Build Docker image for testing
-      - name: Build Dev Docker Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile.dev
-          tags: ${{ steps.meta.outputs.REPO_NAME }}-dev:latest
-          load: true
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache,mode=max
 @z
-
 @x
       # 7. Run unit tests inside container
-      - name: Run Vue.js Tests
-        run: |
-          docker run --rm \
-            --workdir /app \
-            --entrypoint "" \
-            ${{ steps.meta.outputs.REPO_NAME }}-dev:latest \
-            sh -c "npm ci && npm run test -- --ci --runInBand"
-        env:
-          CI: true
-          NODE_ENV: test
-        timeout-minutes: 10
 @y
       # 7. Run unit tests inside container
-      - name: Run Vue.js Tests
-        run: |
-          docker run --rm \
-            --workdir /app \
-            --entrypoint "" \
-            ${{ steps.meta.outputs.REPO_NAME }}-dev:latest \
-            sh -c "npm ci && npm run test -- --ci --runInBand"
-        env:
-          CI: true
-          NODE_ENV: test
-        timeout-minutes: 10
 @z
 
 @x
       # 8. Log in to Docker Hub
-      - name: Docker Hub Login
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
 @y
       # 8. Log in to Docker Hub
-      - name: Docker Hub Login
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
 @z
-
 @x
       # 9. Build and push production image
-      - name: Build and Push Production Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:${{ steps.meta.outputs.SHORT_SHA }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-```
 @y
       # 9. Build and push production image
-      - name: Build and Push Production Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:latest
-            ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKERHUB_PROJECT_NAME }}:${{ steps.meta.outputs.SHORT_SHA }}
-          cache-from: type=local,src=/tmp/.buildx-cache
-```
 @z
 
 @x

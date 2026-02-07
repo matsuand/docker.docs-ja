@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Configure CI/CD for your Deno application
@@ -111,15 +112,7 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
    the repository you created.
 @z
 
-@x
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@y
-   ```console
-   $ git remote set-url origin https://github.com/your-username/your-repository.git
-   ```
-@z
+% snip command...
 
 @x
 7. Run the following commands to stage, commit, and push your local repository to GitHub.
@@ -127,19 +120,7 @@ Create a GitHub repository, configure the Docker Hub credentials, and push your 
 7. Run the following commands to stage, commit, and push your local repository to GitHub.
 @z
 
-@x
-   ```console
-   $ git add -A
-   $ git commit -m "my commit"
-   $ git push -u origin main
-   ```
-@y
-   ```console
-   $ git add -A
-   $ git commit -m "my commit"
-   $ git push -u origin main
-   ```
-@z
+% snip command...
 
 @x
 ## Step two: Set up the workflow
@@ -181,71 +162,7 @@ to Docker Hub.
 3. In the editor window, copy and paste the following YAML configuration and commit the changes.
 @z
 
-@x
-   ```yaml
-   name: ci
-@y
-   ```yaml
-   name: ci
-@z
-
-@x
-   on:
-     push:
-       branches:
-         - main
-@y
-   on:
-     push:
-       branches:
-         - main
-@z
-
-@x
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ vars.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and push
-           uses: docker/build-push-action@v6
-           with:
-             platforms: linux/amd64,linux/arm64
-             push: true
-             tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@y
-   jobs:
-     build:
-       runs-on: ubuntu-latest
-       steps:
-         -
-           name: Login to Docker Hub
-           uses: docker/login-action@v3
-           with:
-             username: ${{ vars.DOCKER_USERNAME }}
-             password: ${{ secrets.DOCKERHUB_TOKEN }}
-         -
-           name: Set up Docker Buildx
-           uses: docker/setup-buildx-action@v3
-         -
-           name: Build and push
-           uses: docker/build-push-action@v6
-           with:
-             platforms: linux/amd64,linux/arm64
-             push: true
-             tags: ${{ vars.DOCKER_USERNAME }}/${{ github.event.repository.name }}:latest
-   ```
-@z
+% snip code...
 
 @x
    For more information about the YAML syntax for `docker/build-push-action`,

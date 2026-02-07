@@ -53,11 +53,11 @@ GitHub Actions:
 @z
 
 @x
-- `docker/build-push-action@v6`
-- `docker/bake-action@v6`
+- `docker/build-push-action@{{% param "build_push_action_version" %}}`
+- `docker/bake-action@{{% param "bake_action_version" %}}`
 @y
-- `docker/build-push-action@v6`
-- `docker/bake-action@v6`
+- `docker/build-push-action@{{% param "build_push_action_version" %}}`
+- `docker/bake-action@{{% param "bake_action_version" %}}`
 @z
 
 @x

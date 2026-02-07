@@ -29,4 +29,13 @@ usage: docker sandbox version
         Connect to daemon at specific socket path (for development/debugging)
 @z
 
+@x
+examples: |-
+    ### Show version information
+@y
+examples: |-
+    ### Show version information
+@z
+
+% snip command...
 % snip directives...

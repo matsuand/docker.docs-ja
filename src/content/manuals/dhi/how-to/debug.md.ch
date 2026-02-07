@@ -38,23 +38,25 @@ without modifying the original image.
 @z
 
 @x
-This guide shows how to debug Docker Hardened Images locally during
-development. You can also debug containers remotely using the `--host` option.
+This guide shows how to debug Docker Hardened Images locally during development.
+With Docker Debug, you can also debug containers remotely using the `--host`
+option.
 @y
-This guide shows how to debug Docker Hardened Images locally during
-development. You can also debug containers remotely using the `--host` option.
+This guide shows how to debug Docker Hardened Images locally during development.
+With Docker Debug, you can also debug containers remotely using the `--host`
+option.
 @z
 
 @x
-The following example uses a mirrored `python:3.13` image, but the same steps apply to any image.
+## Use Docker Debug
 @y
-The following example uses a mirrored `python:3.13` image, but the same steps apply to any image.
+## Use Docker Debug
 @z
 
 @x
-## Step 1: Run a container from a Hardened Image
+### Step 1: Run a container from a Hardened Image
 @y
-## Step 1: Run a container from a Hardened Image
+### Step 1: Run a container from a Hardened Image
 @z
 
 @x
@@ -88,9 +90,9 @@ You'll see:
 % snip output...
 
 @x
-## Step 2: Use Docker Debug to inspect the container
+### Step 2: Use Docker Debug to inspect the container
 @y
-## Step 2: Use Docker Debug to inspect the container
+### Step 2: Use Docker Debug to inspect the container
 @z
 
 @x
@@ -116,27 +118,147 @@ For example, to check running processes:
 % snip command...
 
 @x
-Exit the debug session with:
+Type `exit` to leave the container when done.
 @y
-Exit the debug session with:
+Type `exit` to leave the container when done.
+@z
+
+@x
+## Alternative debugging approaches
+@y
+## Alternative debugging approaches
+@z
+
+@x
+In addition to using Docker Debug, you can also use the following approaches for
+debugging DHI containers.
+@y
+In addition to using Docker Debug, you can also use the following approaches for
+debugging DHI containers.
+@z
+
+@x
+### Use the -dev variant
+@y
+### Use the -dev variant
+@z
+
+@x
+Docker Hardened Images offer a `-dev` variant that includes a shell
+and a package manager to install debugging tools. Simply replace the image tag
+with `-dev`:
+@y
+Docker Hardened Images offer a `-dev` variant that includes a shell
+and a package manager to install debugging tools. Simply replace the image tag
+with `-dev`:
 @z
 
 % snip command...
 
 @x
+Type `exit` to leave the container when done. Note that using the `-dev` variant
+increases the attack surface and it is not recommended as a runtime for
+production environments.
+@y
+Type `exit` to leave the container when done. Note that using the `-dev` variant
+increases the attack surface and it is not recommended as a runtime for
+production environments.
+@z
+
+@x
+### Mount debugging tools with image mounts
+@y
+### Mount debugging tools with image mounts
+@z
+
+@x
+You can use the image mount feature to mount debugging tools into your container
+without modifying the base image.
+@y
+You can use the image mount feature to mount debugging tools into your container
+without modifying the base image.
+@z
+
+@x
+#### Step 1: Run a container from a Hardened Image
+@y
+#### Step 1: Run a container from a Hardened Image
+@z
+
+@x
+Start with a DHI-based container that simulates an issue:
+@y
+Start with a DHI-based container that simulates an issue:
+@z
+
+% snip command...
+
+@x
+#### Step 2: Mount debugging tools into the container
+@y
+#### Step 2: Mount debugging tools into the container
+@z
+
+@x
+Run a new container that mounts a tool-rich image (like `busybox`) into
+the running container's namespace:
+@y
+Run a new container that mounts a tool-rich image (like `busybox`) into
+the running container's namespace:
+@z
+
+% snip command...
+
+@x
+This mounts the BusyBox image at `/dbg`, giving you access to its tools while
+keeping your original container image unchanged. Since the hardened Python image
+doesn't include standard utilities, you need to use the full path to the mounted
+tools:
+@y
+This mounts the BusyBox image at `/dbg`, giving you access to its tools while
+keeping your original container image unchanged. Since the hardened Python image
+doesn't include standard utilities, you need to use the full path to the mounted
+tools:
+@z
+
+% snip command...
+
+@x
+Type `exit` to leave the container when done.
+@y
+Type `exit` to leave the container when done.
+@z
+
+@x
 ## What's next
 @y
 ## What's next
 @z
 
 @x
-Docker Debug helps you troubleshoot hardened containers without compromising the
-integrity of the original image. Because the debug container is ephemeral and
-separate, it avoids introducing security risks into production environments.
+This guide covered three approaches for debugging Docker Hardened Images:
 @y
-Docker Debug helps you troubleshoot hardened containers without compromising the
-integrity of the original image. Because the debug container is ephemeral and
-separate, it avoids introducing security risks into production environments.
+This guide covered three approaches for debugging Docker Hardened Images:
+@z
+
+@x
+- Docker Debug: Attach an ephemeral debug container without modifying the original image
+- `-dev` variants: Use development images that include debugging tools
+- Image mount: Mount tool-rich images like BusyBox to access debugging utilities
+@y
+- Docker Debug: Attach an ephemeral debug container without modifying the original image
+- `-dev` variants: Use development images that include debugging tools
+- Image mount: Mount tool-rich images like BusyBox to access debugging utilities
+@z
+
+@x
+Each method helps you troubleshoot hardened containers while maintaining
+security. Docker Debug and image mounts avoid modifying your production images,
+while `-dev` variants provide convenience during development.
+@y
+Each method helps you troubleshoot hardened containers while maintaining
+security. Docker Debug and image mounts avoid modifying your production images,
+while `-dev` variants provide convenience during development.
 @z
 
 @x

@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Remote Bake file definition
 description: Build with Bake using a remote file definition using Git or HTTP
 keywords: build, buildx, bake, file, remote, git, http
----
 @y
----
 title: Remote Bake file definition
 description: Build with Bake using a remote file definition using Git or HTTP
 keywords: build, buildx, bake, file, remote, git, http
----
 @z
 
 @x

@@ -6,13 +6,13 @@ SUBDIRS = create network
 
 copyfiles = \
 	_index.md  \
-	create.md  \
 	exec.md    \
 	inspect.md \
 	ls.md      \
 	reset.md   \
 	rm.md      \
 	run.md     \
+	save.md    \
 	stop.md    \
 	version.md
 

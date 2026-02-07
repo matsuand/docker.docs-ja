@@ -29,14 +29,14 @@ keywords: Docker, ai, model runner, docker desktop, docker engine, llm, openai, 
 Docker Model Runner (DMR) makes it easy to manage, run, and
 deploy AI models using Docker. Designed for developers,
 Docker Model Runner streamlines the process of pulling, running, and serving
-large language models (LLMs) and other AI models directly from Docker Hub or any
-OCI-compliant registry.
+large language models (LLMs) and other AI models directly from Docker Hub,
+any OCI-compliant registry, or [Hugging Face](https://huggingface.co/).
 @y
 Docker Model Runner (DMR) makes it easy to manage, run, and
 deploy AI models using Docker. Designed for developers,
 Docker Model Runner streamlines the process of pulling, running, and serving
-large language models (LLMs) and other AI models directly from Docker Hub or any
-OCI-compliant registry.
+large language models (LLMs) and other AI models directly from Docker Hub,
+any OCI-compliant registry, or [Hugging Face](https://huggingface.co/).
 @z
 
 @x
@@ -70,7 +70,8 @@ with AI models locally.
 @z
 
 @x
-- [Pull and push models to and from Docker Hub](https://hub.docker.com/u/ai)
+- [Pull and push models to and from Docker Hub or any OCI-compliant registry](https://hub.docker.com/u/ai)
+- [Pull models from Hugging Face](https://huggingface.co/)
 - Serve models on [OpenAI and Ollama-compatible APIs](api-reference.md) for easy integration with existing apps
 - Support for [llama.cpp, vLLM, and Diffusers inference engines](inference-engines.md) (vLLM and Diffusers on Linux with NVIDIA GPUs)
 - [Generate images from text prompts](inference-engines.md#diffusers) using Stable Diffusion models with the Diffusers backend
@@ -83,7 +84,8 @@ with AI models locally.
 - Display prompt and response details
 - Conversational context support for multi-turn interactions
 @y
-- [Pull and push models to and from Docker Hub](https://hub.docker.com/u/ai)
+- [Pull and push models to and from Docker Hub or any OCI-compliant registry](https://hub.docker.com/u/ai)
+- [Pull models from Hugging Face](https://huggingface.co/)
 - Serve models on [OpenAI and Ollama-compatible APIs](api-reference.md) for easy integration with existing apps
 - Support for [llama.cpp, vLLM, and Diffusers inference engines](inference-engines.md) (vLLM and Diffusers on Linux with NVIDIA GPUs)
 - [Generate images from text prompts](inference-engines.md#diffusers) using Stable Diffusion models with the Diffusers backend
@@ -196,18 +198,20 @@ Docker Engine only:
 @z
 
 @x
-Models are pulled from Docker Hub the first time you use them and are stored
-locally. They load into memory only at runtime when a request is made, and
-unload when not in use to optimize resources. Because models can be large, the
-initial pull may take some time. After that, they're cached locally for faster
-access. You can interact with the model using
+Models are pulled from Docker Hub, an OCI-compliant registry, or
+[Hugging Face](https://huggingface.co/) the first time you use them and are
+stored locally. They load into memory only at runtime when a request is made,
+and unload when not in use to optimize resources. Because models can be large,
+the initial pull may take some time. After that, they're cached locally for
+faster access. You can interact with the model using
 [OpenAI and Ollama-compatible APIs](api-reference.md).
 @y
-Models are pulled from Docker Hub the first time you use them and are stored
-locally. They load into memory only at runtime when a request is made, and
-unload when not in use to optimize resources. Because models can be large, the
-initial pull may take some time. After that, they're cached locally for faster
-access. You can interact with the model using
+Models are pulled from Docker Hub, an OCI-compliant registry, or
+[Hugging Face](https://huggingface.co/) the first time you use them and are
+stored locally. They load into memory only at runtime when a request is made,
+and unload when not in use to optimize resources. Because models can be large,
+the initial pull may take some time. After that, they're cached locally for
+faster access. You can interact with the model using
 [OpenAI and Ollama-compatible APIs](api-reference.md).
 @z
 

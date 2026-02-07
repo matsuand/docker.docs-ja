@@ -74,9 +74,6 @@ AC_CONFIG_FILES([
 	src/assets/theme/Makefile
 	src/assets/theme/icons/Makefile
 	src/content/Makefile
-	src/content/contribute/Makefile
-	src/content/contribute/components/Makefile
-	src/content/contribute/style/Makefile
 	src/content/get-started/Makefile
 	src/content/get-started/docker-concepts/Makefile
 	src/content/get-started/docker-concepts/building-images/Makefile

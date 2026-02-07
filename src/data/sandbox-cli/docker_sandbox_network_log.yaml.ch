@@ -6,133 +6,104 @@ command: docker sandbox network log
 short: Show network logs
 long: Show network logs
 usage: docker sandbox network log
-pname: docker sandbox network
-plink: docker_sandbox_network.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
-      description: Output in JSON format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: limit
-      value_type: int
-      default_value: "0"
-      description: Maximum number of log entries to show
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display log entries
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker sandbox network log
 short: Show network logs
 long: Show network logs
 usage: docker sandbox network log
-pname: docker sandbox network
-plink: docker_sandbox_network.yaml
-options:
-    - option: json
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% options
+
+@x json
       description: Output in JSON format
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: limit
-      value_type: int
-      default_value: "0"
+@y
+      description: Output in JSON format
+@z
+
+@x limit
       description: Maximum number of log entries to show
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: Maximum number of log entries to show
+@z
+
+@x quiet
       description: Only display log entries
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only display log entries
+@z
+
+% inherited_options
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+@x
+examples: |-
+    ### Show network logs
+@y
+examples: |-
+    ### Show network logs
+@z
+
+% snip command...
+
+@x
+    ### Show only log entries (--quiet) {#quiet}
+@y
+    ### Show only log entries (--quiet) {#quiet}
+@z
+
+% snip code...
+
+@x
+    Suppress headers and only show log entries:
+@y
+    Suppress headers and only show log entries:
+@z
+
+% snip command...
+
+@x
+    ### Limit number of entries (--limit) {#limit}
+@y
+    ### Limit number of entries (--limit) {#limit}
+@z
+
+% snip code...
+
+@x
+    Show only the last N log entries:
+@y
+    Show only the last N log entries:
+@z
+
+% snip command...
+
+@x
+    ### JSON output (--json) {#json}
+@y
+    ### JSON output (--json) {#json}
+@z
+
+@x
+    Output logs in JSON format for parsing:
+@y
+    Output logs in JSON format for parsing:
+@z
+
+% snip command...
+% snip directives...

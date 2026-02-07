@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: GitHub Actions cache
@@ -51,19 +52,7 @@ To use this feature, create a new builder using a different driver. See
 ## Synopsis
 @z
 
-@x
-```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=gha[,parameters...] \
-  --cache-from type=gha[,parameters...] .
-```
-@y
-```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=gha[,parameters...] \
-  --cache-from type=gha[,parameters...] .
-```
-@z
+% snip command...
 
 @x
 The following table describes the available CSV parameters that you can pass to
@@ -159,25 +148,7 @@ with a specific name. In the following example, the cache is set to the image
 name, to ensure each image gets its own cache:
 @z
 
-@x
-```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=gha,url=...,token=...,scope=image \
-  --cache-from type=gha,url=...,token=...,scope=image .
-$ docker buildx build --push -t <registry>/<image2> \
-  --cache-to type=gha,url=...,token=...,scope=image2 \
-  --cache-from type=gha,url=...,token=...,scope=image2 .
-```
-@y
-```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=gha,url=...,token=...,scope=image \
-  --cache-from type=gha,url=...,token=...,scope=image .
-$ docker buildx build --push -t <registry>/<image2> \
-  --cache-to type=gha,url=...,token=...,scope=image2 \
-  --cache-from type=gha,url=...,token=...,scope=image2 .
-```
-@z
+% snip command...
 
 @x
 GitHub's [cache access restrictions](https://docs.github.com/en/actions/advanced-guides/caching-dependencies-to-speed-up-workflows#restrictions-for-accessing-a-cache),
@@ -213,29 +184,7 @@ For example:
 For example:
 @z
 
-@x
-```yaml
-- name: Build and push
-  uses: docker/build-push-action@v6
-  with:
-    context: .
-    push: true
-    tags: "<registry>/<image>:latest"
-    cache-from: type=gha
-    cache-to: type=gha,mode=max
-```
-@y
-```yaml
-- name: Build and push
-  uses: docker/build-push-action@v6
-  with:
-    context: .
-    push: true
-    tags: "<registry>/<image>:latest"
-    cache-from: type=gha
-    cache-to: type=gha,mode=max
-```
-@z
+% snip code...
 
 @x
 ## Avoid GitHub Actions cache API throttling
@@ -265,33 +214,7 @@ requests in a short period of time, which may happen as a result of cache
 lookups during a build using the `gha` cache backend.
 @z
 
-@x
-```text
-#31 exporting to GitHub Actions Cache
-#31 preparing build cache for export
-#31 preparing build cache for export 600.3s done
-#31 ERROR: maximum timeout reached
-------
- > exporting to GitHub Actions Cache:
-------
-ERROR: failed to solve: maximum timeout reached
-make: *** [Makefile:35: release] Error 1
-Error: Process completed with exit code 2.
-```
-@y
-```text
-#31 exporting to GitHub Actions Cache
-#31 preparing build cache for export
-#31 preparing build cache for export 600.3s done
-#31 ERROR: maximum timeout reached
-------
- > exporting to GitHub Actions Cache:
-------
-ERROR: failed to solve: maximum timeout reached
-make: *** [Makefile:35: release] Error 1
-Error: Process completed with exit code 2.
-```
-@z
+% snip output...
 
 @x
 To mitigate this issue, you can supply a GitHub token to BuildKit. This lets
@@ -327,31 +250,7 @@ action. You can also set the `ghtoken` parameter manually using the
 `github-token` input, as shown in the following example:
 @z
 
-@x
-```yaml
-- name: Build and push
-  uses: docker/build-push-action@v6
-  with:
-    context: .
-    push: true
-    tags: "<registry>/<image>:latest"
-    cache-from: type=gha
-    cache-to: type=gha,mode=max
-    github-token: ${{ secrets.MY_CUSTOM_TOKEN }}
-```
-@y
-```yaml
-- name: Build and push
-  uses: docker/build-push-action@v6
-  with:
-    context: .
-    push: true
-    tags: "<registry>/<image>:latest"
-    cache-from: type=gha
-    cache-to: type=gha,mode=max
-    github-token: ${{ secrets.MY_CUSTOM_TOKEN }}
-```
-@z
+% snip code...
 
 @x
 ## Further reading

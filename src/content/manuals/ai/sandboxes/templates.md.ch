@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Custom templates
 description: Create custom sandbox templates to standardize development environments with pre-installed tools and configurations.
@@ -58,9 +60,9 @@ to install what's needed.
 @z
 
 @x
-## Building a template
+## Building templates with Dockerfiles
 @y
-## Building a template
+## Building templates with Dockerfiles
 @z
 
 @x
@@ -69,64 +71,25 @@ Start from Docker's official sandbox templates:
 Start from Docker's official sandbox templates:
 @z
 
-@x
-```dockerfile
-FROM docker/sandbox-templates:claude-code
-@y
-```dockerfile
-FROM docker/sandbox-templates:claude-code
-@z
-
-@x
-USER root
-@y
-USER root
-@z
-
-@x
+@x within code
 # Install system packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
 @y
 # Install system packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/*
 @z
-
 @x
 # Install development tools
-RUN pip3 install --no-cache-dir \
-    pytest \
-    black \
-    pylint
 @y
 # Install development tools
-RUN pip3 install --no-cache-dir \
-    pytest \
-    black \
-    pylint
 @z
 
 @x
-USER agent
-```
+Official templates include the agent binary, Ubuntu base, and development tools
+like Git, Docker CLI, Node.js, Python, and Go. They run as the non-root
+`agent` user with sudo access.
 @y
-USER agent
-```
-@z
-
-@x
-Official templates include the agent binary, Ubuntu base, development tools
-(Git, Docker CLI, Node.js, Python, Go), and the non-root `agent` user with
-sudo access.
-@y
-Official templates include the agent binary, Ubuntu base, development tools
-(Git, Docker CLI, Node.js, Python, Go), and the non-root `agent` user with
-sudo access.
+Official templates include the agent binary, Ubuntu base, and development tools
+like Git, Docker CLI, Node.js, Python, and Go. They run as the non-root
+`agent` user with sudo access.
 @z
 
 @x
@@ -148,9 +111,9 @@ the end of your Dockerfile so the agent runs with the correct permissions.
 @z
 
 @x
-### Using templates
+### Using templates built from Dockerfiles
 @y
-### Using templates
+### Using templates built from Dockerfiles
 @z
 
 @x
@@ -159,80 +122,98 @@ Build your template:
 Build your template:
 @z
 
+% snip command...
+
 @x
-```console
-$ docker build -t my-template:v1 .
-```
+Use it directly from your local Docker daemon:
 @y
-```console
-$ docker build -t my-template:v1 .
-```
+Use it directly from your local Docker daemon:
+@z
+
+% snip command...
+
+@x
+The `--load-local-template` flag tells the sandbox to use an image from your
+local Docker daemon. Without it, the sandbox looks for the image in a registry.
+@y
+The `--load-local-template` flag tells the sandbox to use an image from your
+local Docker daemon. Without it, the sandbox looks for the image in a registry.
 @z
 
 @x
-Then choose how to use it:
+To share the template with others, push it to a registry:
 @y
-Then choose how to use it:
+To share the template with others, push it to a registry:
+@z
+
+% snip command...
+
+@x
+Once pushed to a registry, you don't need `--load-local-template`.
+@y
+Once pushed to a registry, you don't need `--load-local-template`.
 @z
 
 @x
-Option 1: Load from local images (quick, for personal use)
+## Creating templates from existing sandboxes
 @y
-Option 1: Load from local images (quick, for personal use)
+## Creating templates from existing sandboxes
 @z
 
 @x
-```console
-$ docker sandbox create --template my-template:v1 \
-    --load-local-template \
-    claude ~/project
-$ docker sandbox run <sandbox-name>
-```
+Rather than writing a Dockerfile, you can start with a sandbox, configure it,
+then save it as a template. This is convenient when you already have a working
+environment set up by the agent.
 @y
-```console
-$ docker sandbox create --template my-template:v1 \
-    --load-local-template \
-    claude ~/project
-$ docker sandbox run <sandbox-name>
-```
+Rather than writing a Dockerfile, you can start with a sandbox, configure it,
+then save it as a template. This is convenient when you already have a working
+environment set up by the agent.
 @z
 
 @x
-The `--load-local-template` flag loads the image from your local Docker daemon
-into the sandbox VM. This works for quick iteration and personal templates.
+Start a sandbox and have the agent install what you need:
 @y
-The `--load-local-template` flag loads the image from your local Docker daemon
-into the sandbox VM. This works for quick iteration and personal templates.
+Start a sandbox and have the agent install what you need:
 @z
 
-@x
-Option 2: Push to a registry (for sharing and persistence)
-@y
-Option 2: Push to a registry (for sharing and persistence)
-@z
+% snip command...
 
 @x
-```console
-$ docker tag my-template:v1 myorg/my-template:v1
-$ docker push myorg/my-template:v1
-$ docker sandbox create --template myorg/my-template:v1 claude ~/project
-$ docker sandbox run <sandbox-name>
-```
+Inside the sandbox, ask the agent to install tools and configure the
+environment. Once everything works, exit and save the sandbox as a template:
 @y
-```console
-$ docker tag my-template:v1 myorg/my-template:v1
-$ docker push myorg/my-template:v1
-$ docker sandbox create --template myorg/my-template:v1 claude ~/project
-$ docker sandbox run <sandbox-name>
-```
+Inside the sandbox, ask the agent to install tools and configure the
+environment. Once everything works, exit and save the sandbox as a template:
 @z
 
+% snip command...
+
 @x
-Pushing to a registry makes templates available to your team and persists them
-beyond your local machine.
+This saves the image to your local Docker daemon. Use `--load-local-template`
+to create new sandboxes from it:
 @y
-Pushing to a registry makes templates available to your team and persists them
-beyond your local machine.
+This saves the image to your local Docker daemon. Use `--load-local-template`
+to create new sandboxes from it:
+@z
+
+% snip command...
+
+@x
+To save as a tar file instead (for example, to transfer to another machine):
+@y
+To save as a tar file instead (for example, to transfer to another machine):
+@z
+
+% snip command...
+
+@x
+Use a Dockerfile when you want a clear record of how the environment is built.
+Use `docker sandbox save` when you already have a working sandbox and want to
+reuse it.
+@y
+Use a Dockerfile when you want a clear record of how the environment is built.
+Use `docker sandbox save` when you already have a working sandbox and want to
+reuse it.
 @z
 
 @x
@@ -242,65 +223,26 @@ beyond your local machine.
 @z
 
 @x
-```dockerfile
-FROM docker/sandbox-templates:claude-code
+This template adds Node.js 20 and common development tools:
 @y
-```dockerfile
-FROM docker/sandbox-templates:claude-code
+This template adds Node.js 20 and common development tools:
 @z
 
-@x
-USER root
-@y
-USER root
-@z
-
-@x
-RUN apt-get update && apt-get install -y curl \
-    && rm -rf /var/lib/apt/lists/*
-@y
-RUN apt-get update && apt-get install -y curl \
-    && rm -rf /var/lib/apt/lists/*
-@z
-
-@x
+@x within code
 # Install Node.js 20 LTS
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs \
-    && rm -rf /var/lib/apt/lists/*
 @y
 # Install Node.js 20 LTS
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs \
-    && rm -rf /var/lib/apt/lists/*
 @z
-
 @x
 # Install common tools
-RUN npm install -g \
-    typescript@5.1.6 \
-    eslint@8.46.0 \
-    prettier@3.0.0
 @y
 # Install common tools
-RUN npm install -g \
-    typescript@5.1.6 \
-    eslint@8.46.0 \
-    prettier@3.0.0
 @z
 
 @x
-USER agent
-```
+Pin specific versions for reproducible builds across your team.
 @y
-USER agent
-```
-@z
-
-@x
-Pin versions for reproducible builds.
-@y
-Pin versions for reproducible builds.
+Pin specific versions for reproducible builds across your team.
 @z
 
 @x
@@ -323,25 +265,7 @@ Using a standard image directly creates the sandbox but fails at runtime:
 Using a standard image directly creates the sandbox but fails at runtime:
 @z
 
-@x
-```console
-$ docker sandbox create --template python:3-slim claude ~/project
-✓ Created sandbox claude-sandbox-2026-01-16-170525 in VM claude-project
-@y
-```console
-$ docker sandbox create --template python:3-slim claude ~/project
-✓ Created sandbox claude-sandbox-2026-01-16-170525 in VM claude-project
-@z
-
-@x
-$ docker sandbox run claude-project
-agent binary "claude" not found in sandbox: verify this is the correct sandbox type
-```
-@y
-$ docker sandbox run claude-project
-agent binary "claude" not found in sandbox: verify this is the correct sandbox type
-```
-@z
+% snip command...
 
 @x
 To use a standard image, you'd need to install the agent binary, add sandbox
@@ -360,45 +284,35 @@ dependencies, configure the shell, and set up the `agent` user. Building from
 @z
 
 @x
-Push templates to a registry and version them:
+To share templates, push them to a registry with version tags:
 @y
-Push templates to a registry and version them:
+To share templates, push them to a registry with version tags:
 @z
 
-@x
-```console
-$ docker build -t myorg/sandbox-templates:python-v1.0 .
-$ docker push myorg/sandbox-templates:python-v1.0
-```
-@y
-```console
-$ docker build -t myorg/sandbox-templates:python-v1.0 .
-$ docker push myorg/sandbox-templates:python-v1.0
-```
-@z
+% snip command...
 
 @x
-Team members can then use the template:
+Or tag and push a saved sandbox:
 @y
-Team members can then use the template:
+Or tag and push a saved sandbox:
 @z
 
-@x
-```console
-$ docker sandbox create --template myorg/sandbox-templates:python-v1.0 claude ~/project
-```
-@y
-```console
-$ docker sandbox create --template myorg/sandbox-templates:python-v1.0 claude ~/project
-```
-@z
+% snip command...
 
 @x
-Using version tags (`:v1.0`, `:v2.0`) instead of `:latest` ensures stability
-across your team.
+Team members use the template by referencing the registry image:
 @y
-Using version tags (`:v1.0`, `:v2.0`) instead of `:latest` ensures stability
-across your team.
+Team members use the template by referencing the registry image:
+@z
+
+% snip command...
+
+@x
+Use version tags like `:v1.0` instead of `:latest` for consistency across your
+team.
+@y
+Use version tags like `:v1.0` instead of `:latest` for consistency across your
+team.
 @z
 
 @x

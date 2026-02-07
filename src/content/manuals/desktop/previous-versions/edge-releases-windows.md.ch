@@ -6509,12 +6509,12 @@ are working on a solution.
   - Improve layout of About and Settings dialog
   - Improve Updater
   - Link to *Help*
-  - Link to *Send Feeback*
+  - Link to *Send Feedback*
 @y
   - Improve layout of About and Settings dialog
   - Improve Updater
   - Link to *Help*
-  - Link to *Send Feeback*
+  - Link to *Send Feedback*
 @z
 
 @x

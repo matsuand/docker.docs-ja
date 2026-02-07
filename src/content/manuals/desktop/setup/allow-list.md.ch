@@ -54,6 +54,8 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | https://docker-pinata-support.s3.amazonaws.com                                       | Troubleshooting                              |
 | https://api.dso.docker.com                                                           | Docker Scout service                         |
 | https://api.docker.com                                                               | New API                                      |
+| https://dhi.io                                                                        | Docker Hardened Images                       |
+| https://registry.scout.docker.com                                                    | Docker Scout registry for DHI attestations   |
 @y
 | Domains                                                                              | Description                                  |
 | ------------------------------------------------------------------------------------ | -------------------------------------------- |
@@ -73,4 +75,6 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 | https://docker-pinata-support.s3.amazonaws.com                                       | Troubleshooting                              |
 | https://api.dso.docker.com                                                           | Docker Scout service                         |
 | https://api.docker.com                                                               | New API                                      |
+| https://dhi.io                                                                        | Docker Hardened Images                       |
+| https://registry.scout.docker.com                                                    | Docker Scout registry for DHI attestations   |
 @z

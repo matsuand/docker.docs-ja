@@ -20,16 +20,6 @@
 @z
 
 @x
-    {{- with .GetPage "/contribute" }}
-      <a href="{{ .Permalink }}" class="inline-flex truncate whitespace-normal"
-        >{{ .LinkTitle }}</a
-@y
-    {{- with .GetPage "/contribute" }}
-      <a href="{{ .Permalink }}" class="inline-flex truncate whitespace-normal"
-        >ドキュメント貢献</a
-@z
-
-@x
       Cookies Settings
 @y
       Cookies 設定

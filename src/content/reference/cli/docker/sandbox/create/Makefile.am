@@ -3,9 +3,11 @@
 ##
 
 bases = \
-	cagent.md \
-	codex.md  \
-	gemini.md \
+	_index.md  \
+	cagent.md  \
+	codex.md   \
+	copilot.md \
+	gemini.md  \
 	kiro.md
 
 include $(top_srcdir)/build-aux/common.mk

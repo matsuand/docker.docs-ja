@@ -6,81 +6,59 @@ command: docker sandbox network
 short: Manage sandbox networking
 long: Manage sandbox networking
 usage: docker sandbox network
-pname: docker sandbox
-plink: docker_sandbox.yaml
-cname:
-    - docker sandbox network log
-    - docker sandbox network proxy
-clink:
-    - docker_sandbox_network_log.yaml
-    - docker_sandbox_network_proxy.yaml
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker sandbox network
 short: Manage sandbox networking
 long: Manage sandbox networking
 usage: docker sandbox network
-pname: docker sandbox
-plink: docker_sandbox.yaml
-cname:
-    - docker sandbox network log
-    - docker sandbox network proxy
-clink:
-    - docker_sandbox_network_log.yaml
-    - docker_sandbox_network_proxy.yaml
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% cname
+% clink
+% inherited_options:
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+@x
+examples: |-
+    ### View network logs
+@y
+examples: |-
+    ### View network logs
+@z
+
+% snip command...
+
+@x
+    ### Configure proxy for a sandbox
+@y
+    ### Configure proxy for a sandbox
+@z
+
+% snip command...
+
+@x
+    See the subcommands for more details:
+    - [`docker sandbox network log`](/reference/cli/docker/sandbox/network/log/) - Show network logs
+    - [`docker sandbox network proxy`](/reference/cli/docker/sandbox/network/proxy/) - Manage proxy configuration
+@y
+    See the subcommands for more details:
+    - [`docker sandbox network log`](/reference/cli/docker/sandbox/network/log/) - Show network logs
+    - [`docker sandbox network proxy`](/reference/cli/docker/sandbox/network/proxy/) - Manage proxy configuration
+@z
+
+% snip directives...

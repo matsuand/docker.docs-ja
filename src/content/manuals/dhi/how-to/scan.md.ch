@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Scan Docker Hardened Images
@@ -93,17 +94,7 @@ To scan a Docker Hardened Image using Docker Scout, run the following
 command:
 @z
 
-@x
-```console
-$ docker login dhi.io
-$ docker scout cves dhi.io/<image>:<tag> --platform <platform>
-```
-@y
-```console
-$ docker login dhi.io
-$ docker scout cves dhi.io/<image>:<tag> --platform <platform>
-```
-@z
+% snip command...
 
 @x
 Example output:
@@ -111,23 +102,7 @@ Example output:
 Example output:
 @z
 
-@x
-```plaintext
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v VEX statements obtained from attestation
-    v No vulnerable package detected
-    ...
-```
-@y
-```plaintext
-    v SBOM obtained from attestation, 101 packages found
-    v Provenance obtained from attestation
-    v VEX statements obtained from attestation
-    v No vulnerable package detected
-    ...
-```
-@z
+% snip output...
 
 @x
 For more detailed filtering and JSON output, see [Docker Scout CLI reference](../../../reference/cli/docker/scout/_index.md).
@@ -169,119 +144,7 @@ The following is a sample GitHub Actions workflow that builds an image and scans
 it using Docker Scout:
 @z
 
-@x
-```yaml {collapse="true"}
-name: DHI Vulnerability Scan
-@y
-```yaml {collapse="true"}
-name: DHI Vulnerability Scan
-@z
-
-@x
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ "**" ]
-@y
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ "**" ]
-@z
-
-@x
-env:
-  REGISTRY: docker.io
-  IMAGE_NAME: ${{ github.repository }}
-  SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
-@y
-env:
-  REGISTRY: docker.io
-  IMAGE_NAME: ${{ github.repository }}
-  SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
-@z
-
-@x
-jobs:
-  scan:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      pull-requests: write
-@y
-jobs:
-  scan:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      pull-requests: write
-@z
-
-@x
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-@y
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-@y
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-@z
-
-@x
-      - name: Build Docker image
-        run: |
-          docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }} .
-@y
-      - name: Build Docker image
-        run: |
-          docker build -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }} .
-@z
-
-@x
-      - name: Run Docker Scout CVE scan
-        uses: docker/scout-action@v1
-        with:
-          command: cves
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
-          only-severities: critical,high
-          exit-code: true
-```
-@y
-      - name: Run Docker Scout CVE scan
-        uses: docker/scout-action@v1
-        with:
-          command: cves
-          image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.SHA }}
-          only-severities: critical,high
-          exit-code: true
-```
-@z
+% snip code...
 
 @x
 The `exit-code: true` parameter ensures that the workflow fails if any critical or
@@ -331,21 +194,7 @@ To scan a Docker Hardened Image using Grype with VEX filtering, first export
 the VEX attestation and then scan with the `--vex` flag:
 @z
 
-@x
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-$ grype dhi.io/<image>:<tag> --vex vex.json
-```
-@y
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-$ grype dhi.io/<image>:<tag> --vex vex.json
-```
-@z
+% snip command...
 
 @x
 The `--vex` flag applies VEX statements during the scan, filtering out known
@@ -393,19 +242,7 @@ After installing Trivy, you can scan a Docker Hardened Image by pulling
 the image and running the scan command:
 @z
 
-@x
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ trivy image --scanners vuln dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ trivy image --scanners vuln dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 To filter vulnerabilities using VEX statements, Trivy supports multiple
@@ -433,43 +270,7 @@ Configure Trivy to download the Docker Hardened Images advisories repository
 from VEX Hub. Run the following commands to set up the VEX repository:
 @z
 
-@x
-```console
-$ trivy vex repo init
-$ cat << REPO > ~/.trivy/vex/repository.yaml
-repositories:
-  - name: default
-    url: https://github.com/aquasecurity/vexhub
-    enabled: true
-    username: ""
-    password: ""
-    token: ""
-  - name: dhi-vex
-    url: https://github.com/docker-hardened-images/advisories
-    enabled: true
-REPO
-$ trivy vex repo list
-$ trivy vex repo download
-```
-@y
-```console
-$ trivy vex repo init
-$ cat << REPO > ~/.trivy/vex/repository.yaml
-repositories:
-  - name: default
-    url: https://github.com/aquasecurity/vexhub
-    enabled: true
-    username: ""
-    password: ""
-    token: ""
-  - name: dhi-vex
-    url: https://github.com/docker-hardened-images/advisories
-    enabled: true
-REPO
-$ trivy vex repo list
-$ trivy vex repo download
-```
-@z
+% snip command...
 
 @x
 After setting up VEX Hub, you can scan a Docker Hardened Image with VEX filtering:
@@ -477,19 +278,7 @@ After setting up VEX Hub, you can scan a Docker Hardened Image with VEX filterin
 After setting up VEX Hub, you can scan a Docker Hardened Image with VEX filtering:
 @z
 
-@x
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ trivy image --scanners vuln --vex repo dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 For example, scanning the `dhi.io/python:3.13` image:
@@ -497,15 +286,7 @@ For example, scanning the `dhi.io/python:3.13` image:
 For example, scanning the `dhi.io/python:3.13` image:
 @z
 
-@x
-```console
-$ trivy image --scanners vuln --vex repo dhi.io/python:3.13
-```
-@y
-```console
-$ trivy image --scanners vuln --vex repo dhi.io/python:3.13
-```
-@z
+% snip command...
 
 @x
 Example output:
@@ -513,39 +294,7 @@ Example output:
 Example output:
 @z
 
-@x
-```plaintext
-Report Summary
-@y
-```plaintext
-Report Summary
-@z
-
-@x
-┌─────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
-│                                   Target                                    │    Type    │ Vulnerabilities │
-├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
-│ dhi.io/python:3.13 (debian 13.2)                                            │   debian   │        0        │
-├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
-│ opt/python-3.13.11/lib/python3.13/site-packages/pip-25.3.dist-info/METADATA │ python-pkg │        0        │
-└─────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
-Legend:
-- '-': Not scanned
-- '0': Clean (no security findings detected)
-```
-@y
-┌─────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
-│                                   Target                                    │    Type    │ Vulnerabilities │
-├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
-│ dhi.io/python:3.13 (debian 13.2)                                            │   debian   │        0        │
-├─────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
-│ opt/python-3.13.11/lib/python3.13/site-packages/pip-25.3.dist-info/METADATA │ python-pkg │        0        │
-└─────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
-Legend:
-- '-': Not scanned
-- '0': Clean (no security findings detected)
-```
-@z
+% snip output...
 
 @x
 The `--vex repo` flag applies VEX statements from the configured repository during the scan,
@@ -577,15 +326,7 @@ First, download the VEX attestation for your image:
 First, download the VEX attestation for your image:
 @z
 
-@x
-```console
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-```
-@y
-```console
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-```
-@z
+% snip command...
 
 @x
 Then scan the image with the local VEX file:
@@ -593,15 +334,7 @@ Then scan the image with the local VEX file:
 Then scan the image with the local VEX file:
 @z
 
-@x
-```console
-$ trivy image --scanners vuln --vex vex.json dhi.io/<image>:<tag>
-```
-@y
-```console
-$ trivy image --scanners vuln --vex vex.json dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 ## Wiz
@@ -635,19 +368,7 @@ After acquiring a Wiz subscription and installing the Wiz CLI, you can scan a
 Docker Hardened Image by pulling the image and running the scan command:
 @z
 
-@x
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ wiz docker scan --image dhi.io/<image>:<tag>
-```
-@y
-```console
-$ docker login dhi.io
-$ docker pull dhi.io/<image>:<tag>
-$ wiz docker scan --image dhi.io/<image>:<tag>
-```
-@z
+% snip command...
 
 @x
 ## Export VEX attestations
@@ -683,15 +404,7 @@ Export VEX attestations to a JSON file:
 Export VEX attestations to a JSON file:
 @z
 
-@x
-```console
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-```
-@y
-```console
-$ docker scout vex get dhi.io/<image>:<tag> --output vex.json
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]

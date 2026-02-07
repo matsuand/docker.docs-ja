@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Introduction to GitHub Actions with Docker
@@ -102,15 +103,7 @@ use your own GitHub project or create a new repository from the template.
 {{ $data := resources.GetRemote "https://raw.githubusercontent.com/dvdksn/rpg-name-generator/refs/heads/main/Dockerfile" }}
 @z
 
-@x
-```dockerfile {collapse=true}
-{{ $data.Content }}
-```
-@y
-```dockerfile {collapse=true}
-{{ $data.Content }}
-```
-@z
+% snip code...
 
 @x
 {{% /dockerfile.inline %}}
@@ -194,29 +187,7 @@ Create a file named `docker-ci.yml` in the `.github/workflows/` directory of
 your repository. Start with the basic workflow configuration:
 @z
 
-@x
-```yaml
-name: Build and Push Docker Image
-@y
-```yaml
-name: Build and Push Docker Image
-@z
-
-@x
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-```
-@y
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-```
-@z
+% snip code...
 
 @x
 This configuration runs the workflow on pushes to the main branch and on pull
@@ -252,35 +223,7 @@ Add the following YAML to your workflow file:
 Add the following YAML to your workflow file:
 @z
 
-@x
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Extract Docker image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ vars.DOCKER_USERNAME }}/my-image
-```
-@y
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Extract Docker image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ vars.DOCKER_USERNAME }}/my-image
-```
-@z
+% snip code...
 
 @x
 These steps prepare metadata to tag and annotate your images during the build
@@ -320,23 +263,7 @@ To authenticate with Docker Hub, add the following step to your workflow:
 To authenticate with Docker Hub, add the following step to your workflow:
 @z
 
-@x
-```yaml
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-```
-@y
-```yaml
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-```
-@z
+% snip code...
 
 @x
 This step uses the Docker credentials [configured in the repository settings](#configure-your-github-repository).
@@ -358,25 +285,7 @@ Finally, build the final production image and push it to your registry. The
 following configuration builds the image and pushes it directly to a registry.
 @z
 
-@x
-```yaml
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-```
-@y
-```yaml
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-```
-@z
+% snip code...
 
 @x
 In this configuration:
@@ -456,37 +365,7 @@ Here's the updated snippet:
 Here's the updated snippet:
 @z
 
-@x
-```yaml
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-```yaml
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          provenance: true
-          sbom: true
-```
-@y
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          provenance: true
-          sbom: true
-```
-@z
+% snip code...
 
 @x
 For more details about attestations, refer to
@@ -510,101 +389,7 @@ With all the steps outlined in the previous section, here's the full workflow
 configuration:
 @z
 
-@x
-```yaml
-name: Build and Push Docker Image
-@y
-```yaml
-name: Build and Push Docker Image
-@z
-
-@x
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-@y
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-@z
-
-@x
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@y
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-@z
-
-@x
-      - name: Extract Docker image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ vars.DOCKER_USERNAME }}/my-image
-@y
-      - name: Extract Docker image metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ vars.DOCKER_USERNAME }}/my-image
-@z
-
-@x
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-@y
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ vars.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          provenance: true
-          sbom: true
-```
-@y
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v6
-        with:
-          push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          annotations: ${{ steps.meta.outputs.annotations }}
-          provenance: true
-          sbom: true
-```
-@z
+% snip code...
 
 @x
 This workflow implements best practices for building and pushing Docker images

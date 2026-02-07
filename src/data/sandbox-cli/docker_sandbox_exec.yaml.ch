@@ -6,265 +6,171 @@ command: docker sandbox exec
 short: Execute a command inside a sandbox
 long: |-
     Execute a command in a sandbox that was previously created with 'docker sandbox create'.
+
+    The command and any additional arguments are executed inside the sandbox container.
 @y
 command: docker sandbox exec
 short: Execute a command inside a sandbox
 long: |-
     Execute a command in a sandbox that was previously created with 'docker sandbox create'.
+
+    The command and any additional arguments are executed inside the sandbox container.
 @z
 
 @x
-    The command and any additional arguments are executed inside the sandbox container.
 usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
-pname: docker sandbox
-plink: docker_sandbox.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
-      description: 'Detached mode: run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
-      description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
-      description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: stringArray
-      default_value: '[]'
-      description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
-      description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
-      description: Give extended privileges to the command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
-      description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
-      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
-      description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
-    The command and any additional arguments are executed inside the sandbox container.
-usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
-pname: docker sandbox
-plink: docker_sandbox.yaml
-options:
-    - option: detach
-      shorthand: d
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% options:
+
+@x detach
       description: 'Detached mode: run command in the background'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: detach-keys
-      value_type: string
+@y
+      description: 'Detached mode: run command in the background'
+@z
+
+@x detach-keys
       description: Override the key sequence for detaching a container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env
-      shorthand: e
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Override the key sequence for detaching a container
+@z
+
+@x env
       description: Set environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: env-file
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Set environment variables
+@z
+
+@x env-file
       description: Read in a file of environment variables
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: interactive
-      shorthand: i
-      value_type: bool
-      default_value: "false"
+@y
+      description: Read in a file of environment variables
+@z
+
+@x interactive
       description: Keep STDIN open even if not attached
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: privileged
-      value_type: bool
-      default_value: "false"
+@y
+      description: Keep STDIN open even if not attached
+@z
+
+@x privileged
       description: Give extended privileges to the command
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: tty
-      shorthand: t
-      value_type: bool
-      default_value: "false"
+@y
+      description: Give extended privileges to the command
+@z
+
+@x tty
       description: Allocate a pseudo-TTY
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: user
-      shorthand: u
-      value_type: string
+@y
+      description: Allocate a pseudo-TTY
+@z
+
+@x user
       description: 'Username or UID (format: <name|uid>[:<group|gid>])'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: workdir
-      shorthand: w
-      value_type: string
+@y
+      description: 'Username or UID (format: <name|uid>[:<group|gid>])'
+@z
+
+@x workdir
       description: Working directory inside the container
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@y
+      description: Working directory inside the container
+@z
+
+% inherited_options:
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+@x
+examples: |-
+    ### Execute a command in a sandbox
+@y
+examples: |-
+    ### Execute a command in a sandbox
+@z
+
+% snip command...
+
+@x
+    ### Run an interactive shell
+@y
+    ### Run an interactive shell
+@z
+
+% snip command...
+
+@x
+    ### Set environment variables (-e, --env) {#env}
+@y
+    ### Set environment variables (-e, --env) {#env}
+@z
+
+% snip code...
+
+@x
+    Pass environment variables to the command:
+@y
+    Pass environment variables to the command:
+@z
+
+% snip command...
+
+@x
+    ### Set working directory (-w, --workdir) {#workdir}
+@y
+    ### Set working directory (-w, --workdir) {#workdir}
+@z
+
+% snip code...
+
+@x
+    Run the command in a specific directory:
+@y
+    Run the command in a specific directory:
+@z
+
+@x
+    ### Run as specific user (-u, --user) {#user}
+@y
+    ### Run as specific user (-u, --user) {#user}
+@z
+
+% snip code...
+
+@x
+    Execute command as a different user:
+@y
+    Execute command as a different user:
+@z
+
+% snip command...
+
+@x
+    ### Run in background (-d, --detach) {#detach}
+@y
+    ### Run in background (-d, --detach) {#detach}
+@z
+
+@x
+    Run a long-running command in the background:
+@y
+    Run a long-running command in the background:
+@z
+
+% snip command...
+% snip directives...

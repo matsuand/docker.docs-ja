@@ -74,85 +74,19 @@ In this example, the secret name is `github_token`. The following workflow
 exposes this secret using the `secrets` input:
 @z
 
-@x
-```yaml
-name: ci
-@y
-```yaml
-name: ci
-@z
-
-@x
-on:
-  push:
-@y
-on:
-  push:
-@z
-
-@x
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-@y
-jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-@z
-
-@x
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@y
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-@z
-
-@x
-      - name: Build
-        uses: docker/build-push-action@v6
-        with:
-          platforms: linux/amd64,linux/arm64
-          tags: user/app:latest
-          secrets: |
-            "github_token=${{ secrets.GITHUB_TOKEN }}"
-```
-@y
-      - name: Build
-        uses: docker/build-push-action@v6
-        with:
-          platforms: linux/amd64,linux/arm64
-          tags: user/app:latest
-          secrets: |
-            "github_token=${{ secrets.GITHUB_TOKEN }}"
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
 >
 > You can also expose a secret file to the build with the `secret-files` input:
->
-> ```yaml
-> secret-files: |
->   "MY_SECRET=./secret.txt"
-> ```
 @y
 > [!NOTE]
 >
 > You can also expose a secret file to the build with the `secret-files` input:
->
-> ```yaml
-> secret-files: |
->   "MY_SECRET=./secret.txt"
-> ```
 @z
+
+% snip code...
 
 @x
 If you're using [GitHub secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
@@ -164,39 +98,7 @@ and need to handle multi-line value, you will need to place the key-value pair
 between quotes:
 @z
 
-@x
-```yaml
-secrets: |
-  "MYSECRET=${{ secrets.GPG_KEY }}"
-  GIT_AUTH_TOKEN=abcdefghi,jklmno=0123456789
-  "MYSECRET=aaaaaaaa
-  bbbbbbb
-  ccccccccc"
-  FOO=bar
-  "EMPTYLINE=aaaa
-@y
-```yaml
-secrets: |
-  "MYSECRET=${{ secrets.GPG_KEY }}"
-  GIT_AUTH_TOKEN=abcdefghi,jklmno=0123456789
-  "MYSECRET=aaaaaaaa
-  bbbbbbb
-  ccccccccc"
-  FOO=bar
-  "EMPTYLINE=aaaa
-@z
-
-@x
-  bbbb
-  ccc"
-  "JSON_SECRET={""key1"":""value1"",""key2"":""value2""}"
-```
-@y
-  bbbb
-  ccc"
-  "JSON_SECRET={""key1"":""value1"",""key2"":""value2""}"
-```
-@z
+% snip code...
 
 @x
 | Key              | Value                               |
@@ -252,94 +154,15 @@ The following Dockerfile example uses an SSH mount
 to fetch Go modules from a private GitHub repository.
 @z
 
-@x
-```dockerfile {collapse=1}
-# syntax=docker/dockerfile:1
-@y
-```dockerfile {collapse=1}
-# syntax=docker/dockerfile:1
-@z
-
-@x
-ARG GO_VERSION="{{% param example_go_version %}}"
-@y
-ARG GO_VERSION="{{% param example_go_version %}}"
-@z
-
-@x
-FROM golang:${GO_VERSION}-alpine AS base
-ENV CGO_ENABLED=0
-ENV GOPRIVATE="github.com/foo/*"
-RUN apk add --no-cache file git rsync openssh-client
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-WORKDIR /src
-@y
-FROM golang:${GO_VERSION}-alpine AS base
-ENV CGO_ENABLED=0
-ENV GOPRIVATE="github.com/foo/*"
-RUN apk add --no-cache file git rsync openssh-client
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-WORKDIR /src
-@z
-
-@x
-FROM base AS vendor
+@x within code...
 # this step configure git and checks the ssh key is loaded
-RUN --mount=type=ssh <<EOT
-  set -e
-  echo "Setting Git SSH protocol"
-  git config --global url."git@github.com:".insteadOf "https://github.com/"
-  (
-    set +e
-    ssh -T git@github.com
-    if [ ! "$?" = "1" ]; then
-      echo "No GitHub SSH key loaded exiting..."
-      exit 1
-    fi
-  )
-EOT
-# this one download go modules
-RUN --mount=type=bind,target=. \
-    --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=ssh \
-    go mod download -x
 @y
-FROM base AS vendor
 # this step configure git and checks the ssh key is loaded
-RUN --mount=type=ssh <<EOT
-  set -e
-  echo "Setting Git SSH protocol"
-  git config --global url."git@github.com:".insteadOf "https://github.com/"
-  (
-    set +e
-    ssh -T git@github.com
-    if [ ! "$?" = "1" ]; then
-      echo "No GitHub SSH key loaded exiting..."
-      exit 1
-    fi
-  )
-EOT
-# this one download go modules
-RUN --mount=type=bind,target=. \
-    --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=ssh \
-    go mod download -x
 @z
-
 @x
-FROM vendor AS build
-RUN --mount=type=bind,target=. \
-    --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache \
-    go build ...
-```
+# this one download go modules
 @y
-FROM vendor AS build
-RUN --mount=type=bind,target=. \
-    --mount=type=cache,target=/go/pkg/mod \
-    --mount=type=cache,target=/root/.cache \
-    go build ...
-```
+# this one download go modules
 @z
 
 @x
