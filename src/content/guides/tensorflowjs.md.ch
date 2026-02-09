@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 description: Learn how to deploy pre-trained models in a TensorFlow.js web applications to perform face detection.
 keywords: tensorflow.js, machine learning, ml, mediapipe, blazeface, face detection
@@ -146,15 +148,7 @@ In a terminal, clone the sample application using the following command.
 In a terminal, clone the sample application using the following command.
 @z
 
-@x
-```console
-$ git clone https://github.com/harsh4870/TensorJS-Face-Detection
-```
-@y
-```console
-$ git clone https://github.com/harsh4870/TensorJS-Face-Detection
-```
-@z
+% snip command...
 
 @x
 After cloning the application, you'll notice the application has a `Dockerfile`.
@@ -176,15 +170,7 @@ Run the following command inside the `TensorJS-Face-Detection` directory to
 build an image named `face-detection-tensorjs`.
 @z
 
-@x
-```console
-$ docker build -t face-detection-tensorjs .
-```
-@y
-```console
-$ docker build -t face-detection-tensorjs .
-```
-@z
+% snip command...
 
 @x
 The command builds the application into an image. Depending on your network
@@ -202,15 +188,7 @@ To run the image as a container, run the following command in a terminal.
 To run the image as a container, run the following command in a terminal.
 @z
 
-@x
-```console
-$ docker run -p 80:80 face-detection-tensorjs
-```
-@y
-```console
-$ docker run -p 80:80 face-detection-tensorjs
-```
-@z
+% snip command...
 
 @x
 The command runs the container and maps port 80 in the container to port 80 on
@@ -428,175 +406,7 @@ It also uses the following additional libraries:
 {{< accordion title="index.html" >}}
 @z
 
-@x
-```html
-<style>
-  body {
-    margin: 25px;
-  }
-@y
-```html
-<style>
-  body {
-    margin: 25px;
-  }
-@z
-
-@x
-  .true {
-    color: green;
-  }
-@y
-  .true {
-    color: green;
-  }
-@z
-
-@x
-  .false {
-    color: red;
-  }
-@y
-  .false {
-    color: red;
-  }
-@z
-
-@x
-  #main {
-    position: relative;
-    margin: 50px 0;
-  }
-@y
-  #main {
-    position: relative;
-    margin: 50px 0;
-  }
-@z
-
-@x
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-@y
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-@z
-
-@x
-  #description {
-    margin-top: 20px;
-    width: 600px;
-  }
-@y
-  #description {
-    margin-top: 20px;
-    width: 600px;
-  }
-@z
-
-@x
-  #description-title {
-    font-weight: bold;
-    font-size: 18px;
-  }
-</style>
-@y
-  #description-title {
-    font-weight: bold;
-    font-size: 18px;
-  }
-</style>
-@z
-
-@x
-<body>
-  <div id="main">
-    <video
-      id="video"
-      playsinline
-      style="
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      width: auto;
-      height: auto;
-      "
-    ></video>
-    <canvas id="output"></canvas>
-    <video
-      id="video"
-      playsinline
-      style="
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      visibility: hidden;
-      width: auto;
-      height: auto;
-      "
-    ></video>
-  </div>
-</body>
-<script src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
-<script src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
-@y
-<body>
-  <div id="main">
-    <video
-      id="video"
-      playsinline
-      style="
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      width: auto;
-      height: auto;
-      "
-    ></video>
-    <canvas id="output"></canvas>
-    <video
-      id="video"
-      playsinline
-      style="
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      visibility: hidden;
-      width: auto;
-      height: auto;
-      "
-    ></video>
-  </div>
-</body>
-<script src="https://unpkg.com/@tensorflow/tfjs-core@2.1.0/dist/tf-core.js"></script>
-<script src="https://unpkg.com/@tensorflow/tfjs-converter@2.1.0/dist/tf-converter.js"></script>
-@z
-
-@x
-<script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
-<script src="https://unpkg.com/@tensorflow/tfjs-backend-cpu@2.1.0/dist/tf-backend-cpu.js"></script>
-<script src="./tf-backend-wasm.js"></script>
-@y
-<script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@2.1.0/dist/tf-backend-webgl.js"></script>
-<script src="https://unpkg.com/@tensorflow/tfjs-backend-cpu@2.1.0/dist/tf-backend-cpu.js"></script>
-<script src="./tf-backend-wasm.js"></script>
-@z
-
-@x
-<script src="https://unpkg.com/@tensorflow-models/blazeface@0.0.5/dist/blazeface.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-<script src="./index.js"></script>
-```
-@y
-<script src="https://unpkg.com/@tensorflow-models/blazeface@0.0.5/dist/blazeface.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.6/dat.gui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
-<script src="./index.js"></script>
-```
-@z
+% snip code...
 
 @x
 {{< /accordion >}}
@@ -674,315 +484,7 @@ breakdown of some of its key components and functionalities:
 {{< accordion title="index.js" >}}
 @z
 
-@x
-```javascript
-const stats = new Stats();
-stats.showPanel(0);
-document.body.prepend(stats.domElement);
-@y
-```javascript
-const stats = new Stats();
-stats.showPanel(0);
-document.body.prepend(stats.domElement);
-@z
-
-@x
-let model, ctx, videoWidth, videoHeight, video, canvas;
-@y
-let model, ctx, videoWidth, videoHeight, video, canvas;
-@z
-
-@x
-const state = {
-  backend: "wasm",
-};
-@y
-const state = {
-  backend: "wasm",
-};
-@z
-
-@x
-const gui = new dat.GUI();
-gui
-  .add(state, "backend", ["wasm", "webgl", "cpu"])
-  .onChange(async (backend) => {
-    await tf.setBackend(backend);
-    addFlagLables();
-  });
-@y
-const gui = new dat.GUI();
-gui
-  .add(state, "backend", ["wasm", "webgl", "cpu"])
-  .onChange(async (backend) => {
-    await tf.setBackend(backend);
-    addFlagLables();
-  });
-@z
-
-@x
-async function addFlagLables() {
-  if (!document.querySelector("#simd_supported")) {
-    const simdSupportLabel = document.createElement("div");
-    simdSupportLabel.id = "simd_supported";
-    simdSupportLabel.style = "font-weight: bold";
-    const simdSupported = await tf.env().getAsync("WASM_HAS_SIMD_SUPPORT");
-    simdSupportLabel.innerHTML = `SIMD supported: <span class=${simdSupported}>${simdSupported}<span>`;
-    document.querySelector("#description").appendChild(simdSupportLabel);
-  }
-@y
-async function addFlagLables() {
-  if (!document.querySelector("#simd_supported")) {
-    const simdSupportLabel = document.createElement("div");
-    simdSupportLabel.id = "simd_supported";
-    simdSupportLabel.style = "font-weight: bold";
-    const simdSupported = await tf.env().getAsync("WASM_HAS_SIMD_SUPPORT");
-    simdSupportLabel.innerHTML = `SIMD supported: <span class=${simdSupported}>${simdSupported}<span>`;
-    document.querySelector("#description").appendChild(simdSupportLabel);
-  }
-@z
-
-@x
-  if (!document.querySelector("#threads_supported")) {
-    const threadSupportLabel = document.createElement("div");
-    threadSupportLabel.id = "threads_supported";
-    threadSupportLabel.style = "font-weight: bold";
-    const threadsSupported = await tf
-      .env()
-      .getAsync("WASM_HAS_MULTITHREAD_SUPPORT");
-    threadSupportLabel.innerHTML = `Threads supported: <span class=${threadsSupported}>${threadsSupported}</span>`;
-    document.querySelector("#description").appendChild(threadSupportLabel);
-  }
-}
-@y
-  if (!document.querySelector("#threads_supported")) {
-    const threadSupportLabel = document.createElement("div");
-    threadSupportLabel.id = "threads_supported";
-    threadSupportLabel.style = "font-weight: bold";
-    const threadsSupported = await tf
-      .env()
-      .getAsync("WASM_HAS_MULTITHREAD_SUPPORT");
-    threadSupportLabel.innerHTML = `Threads supported: <span class=${threadsSupported}>${threadsSupported}</span>`;
-    document.querySelector("#description").appendChild(threadSupportLabel);
-  }
-}
-@z
-
-@x
-async function setupCamera() {
-  video = document.getElementById("video");
-@y
-async function setupCamera() {
-  video = document.getElementById("video");
-@z
-
-@x
-  const stream = await navigator.mediaDevices.getUserMedia({
-    audio: false,
-    video: { facingMode: "user" },
-  });
-  video.srcObject = stream;
-@y
-  const stream = await navigator.mediaDevices.getUserMedia({
-    audio: false,
-    video: { facingMode: "user" },
-  });
-  video.srcObject = stream;
-@z
-
-@x
-  return new Promise((resolve) => {
-    video.onloadedmetadata = () => {
-      resolve(video);
-    };
-  });
-}
-@y
-  return new Promise((resolve) => {
-    video.onloadedmetadata = () => {
-      resolve(video);
-    };
-  });
-}
-@z
-
-@x
-const renderPrediction = async () => {
-  stats.begin();
-@y
-const renderPrediction = async () => {
-  stats.begin();
-@z
-
-@x
-  const returnTensors = false;
-  const flipHorizontal = true;
-  const annotateBoxes = true;
-  const predictions = await model.estimateFaces(
-    video,
-    returnTensors,
-    flipHorizontal,
-    annotateBoxes,
-  );
-@y
-  const returnTensors = false;
-  const flipHorizontal = true;
-  const annotateBoxes = true;
-  const predictions = await model.estimateFaces(
-    video,
-    returnTensors,
-    flipHorizontal,
-    annotateBoxes,
-  );
-@z
-
-@x
-  if (predictions.length > 0) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-@y
-  if (predictions.length > 0) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-@z
-
-@x
-    for (let i = 0; i < predictions.length; i++) {
-      if (returnTensors) {
-        predictions[i].topLeft = predictions[i].topLeft.arraySync();
-        predictions[i].bottomRight = predictions[i].bottomRight.arraySync();
-        if (annotateBoxes) {
-          predictions[i].landmarks = predictions[i].landmarks.arraySync();
-        }
-      }
-@y
-    for (let i = 0; i < predictions.length; i++) {
-      if (returnTensors) {
-        predictions[i].topLeft = predictions[i].topLeft.arraySync();
-        predictions[i].bottomRight = predictions[i].bottomRight.arraySync();
-        if (annotateBoxes) {
-          predictions[i].landmarks = predictions[i].landmarks.arraySync();
-        }
-      }
-@z
-
-@x
-      const start = predictions[i].topLeft;
-      const end = predictions[i].bottomRight;
-      const size = [end[0] - start[0], end[1] - start[1]];
-      ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-      ctx.fillRect(start[0], start[1], size[0], size[1]);
-@y
-      const start = predictions[i].topLeft;
-      const end = predictions[i].bottomRight;
-      const size = [end[0] - start[0], end[1] - start[1]];
-      ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-      ctx.fillRect(start[0], start[1], size[0], size[1]);
-@z
-
-@x
-      if (annotateBoxes) {
-        const landmarks = predictions[i].landmarks;
-@y
-      if (annotateBoxes) {
-        const landmarks = predictions[i].landmarks;
-@z
-
-@x
-        ctx.fillStyle = "blue";
-        for (let j = 0; j < landmarks.length; j++) {
-          const x = landmarks[j][0];
-          const y = landmarks[j][1];
-          ctx.fillRect(x, y, 5, 5);
-        }
-      }
-    }
-  }
-@y
-        ctx.fillStyle = "blue";
-        for (let j = 0; j < landmarks.length; j++) {
-          const x = landmarks[j][0];
-          const y = landmarks[j][1];
-          ctx.fillRect(x, y, 5, 5);
-        }
-      }
-    }
-  }
-@z
-
-@x
-  stats.end();
-@y
-  stats.end();
-@z
-
-@x
-  requestAnimationFrame(renderPrediction);
-};
-@y
-  requestAnimationFrame(renderPrediction);
-};
-@z
-
-@x
-const setupPage = async () => {
-  await tf.setBackend(state.backend);
-  addFlagLables();
-  await setupCamera();
-  video.play();
-@y
-const setupPage = async () => {
-  await tf.setBackend(state.backend);
-  addFlagLables();
-  await setupCamera();
-  video.play();
-@z
-
-@x
-  videoWidth = video.videoWidth;
-  videoHeight = video.videoHeight;
-  video.width = videoWidth;
-  video.height = videoHeight;
-@y
-  videoWidth = video.videoWidth;
-  videoHeight = video.videoHeight;
-  video.width = videoWidth;
-  video.height = videoHeight;
-@z
-
-@x
-  canvas = document.getElementById("output");
-  canvas.width = videoWidth;
-  canvas.height = videoHeight;
-  ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-@y
-  canvas = document.getElementById("output");
-  canvas.width = videoWidth;
-  canvas.height = videoHeight;
-  ctx = canvas.getContext("2d");
-  ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
-@z
-
-@x
-  model = await blazeface.load();
-@y
-  model = await blazeface.load();
-@z
-
-@x
-  renderPrediction();
-};
-@y
-  renderPrediction();
-};
-@z
-
-@x
-setupPage();
-```
-@y
-setupPage();
-```
-@z
+% snip code...
 
 @x
 {{< /accordion >}}
@@ -1060,19 +562,7 @@ The following is the Dockerfile for this project.
 The following is the Dockerfile for this project.
 @z
 
-@x
-```dockerfile
-FROM nginx:stable-alpine3.17-slim
-WORKDIR /usr/share/nginx/html
-COPY . .
-```
-@y
-```dockerfile
-FROM nginx:stable-alpine3.17-slim
-WORKDIR /usr/share/nginx/html
-COPY . .
-```
-@z
+% snip code...
 
 @x
 This Dockerfile defines an image that serves static content using Nginx from an
@@ -1112,35 +602,7 @@ file, in the `TensorJS-Face-Detection` directory, create a text file named
 `compose.yaml` and then add the following contents.
 @z
 
-@x
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 80:80
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /usr/share/nginx/html
-```
-@y
-```yaml
-services:
-  server:
-    build:
-      context: .
-    ports:
-      - 80:80
-    develop:
-      watch:
-        - action: sync
-          path: .
-          target: /usr/share/nginx/html
-```
-@z
+% snip code...
 
 @x
 This Compose file defines a service that is built using the Dockerfile in the
@@ -1164,15 +626,7 @@ Save the changes to your `compose.yaml` file and then run the following command 
 Save the changes to your `compose.yaml` file and then run the following command to run the application.
 @z
 
-@x
-```console
-$ docker compose watch
-```
-@y
-```console
-$ docker compose watch
-```
-@z
+% snip command...
 
 @x
 Once the application is running, open a web browser and access the application
@@ -1200,17 +654,7 @@ Open the `index.js` file and update the landmark points to be green instead of
 blue on line 83.
 @z
 
-@x
-```diff
--        ctx.fillStyle = "blue";
-+        ctx.fillStyle = "green";
-```
-@y
-```diff
--        ctx.fillStyle = "blue";
-+        ctx.fillStyle = "green";
-```
-@z
+% snip code...
 
 @x
 Save the changes to the `index.js` file and then refresh the browser page. The
@@ -1264,15 +708,7 @@ developer ecosystem. To share your image:
    with your Docker ID.
 @z
 
-@x
-   ```console
-   $ docker build -t YOUR-USER-NAME/face-detection-tensorjs .
-   ```
-@y
-   ```console
-   $ docker build -t YOUR-USER-NAME/face-detection-tensorjs .
-   ```
-@z
+% snip command...
 
 @x
 3. Run the following `docker push` command to push the image to Docker Hub.
@@ -1282,15 +718,7 @@ developer ecosystem. To share your image:
    Replace `YOUR-USER-NAME` with your Docker ID.
 @z
 
-@x
-   ```console
-   $ docker push YOUR-USER-NAME/face-detection-tensorjs
-   ```
-@y
-   ```console
-   $ docker push YOUR-USER-NAME/face-detection-tensorjs
-   ```
-@z
+% snip command...
 
 @x
 4. Verify that you pushed the image to Docker Hub.
@@ -1310,15 +738,7 @@ Other users can now download and run your image using the `docker run` command. 
 Other users can now download and run your image using the `docker run` command. They need to replace `YOUR-USER-NAME` with your Docker ID.
 @z
 
-@x
-```console
-$ docker run -p 80:80 YOUR-USER-NAME/face-detection-tensorjs
-```
-@y
-```console
-$ docker run -p 80:80 YOUR-USER-NAME/face-detection-tensorjs
-```
-@z
+% snip command...
 
 @x
 ## Summary

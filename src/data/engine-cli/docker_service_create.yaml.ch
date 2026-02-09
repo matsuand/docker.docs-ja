@@ -1096,9 +1096,9 @@ examples: |-
             Otherwise the Engine raises an error.</li>
 @z
 @x
-          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
+          When the option is not specified, the default behavior corresponds to setting <tt>enabled</tt>.
 @y
-          When the option is not specified, the default behavior correponds to setting <tt>enabled</tt>.
+          When the option is not specified, the default behavior corresponds to setting <tt>enabled</tt>.
 @z
 
 @x

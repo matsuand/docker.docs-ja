@@ -350,14 +350,14 @@ tags:
 @z
 
 @x
-      For more information, seee [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
+      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
   - name: invites
     x-displayName: Invites
     x-audience: public
     description: |
       The invites endpoints allow you to manage invites for users to join your Docker organization.
 @y
-      For more information, seee [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
+      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
   - name: invites
     x-displayName: Invites
     x-audience: public

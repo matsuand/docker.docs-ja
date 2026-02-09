@@ -19,10 +19,10 @@ keywords: accounts, docker ID, account settings, account management, docker home
 
 @x
 You can centrally manage your Docker account using Docker Home, including
-adminstrative and security settings.
+administrative and security settings.
 @y
 You can centrally manage your Docker account using Docker Home, including
-adminstrative and security settings.
+administrative and security settings.
 @z
 
 @x
