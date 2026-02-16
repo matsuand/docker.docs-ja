@@ -43,6 +43,104 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.60.1
+@y
+## 4.60.1
+@z
+
+@x
+{{< release-date date="2026-02-10" >}}
+@y
+{{< release-date date="2026-02-10" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.60.1" build_path="/218372/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.60.1" build_path="/218372/" >}}
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed a rare issue that crashed the Docker Desktop Dashboard after sign-in.
+@y
+- Fixed a rare issue that crashed the Docker Desktop Dashboard after sign-in.
+@z
+
+@x
+## 4.60.0
+@y
+## 4.60.0
+@z
+
+@x
+{{< release-date date="2026-02-09" >}}
+@y
+{{< release-date date="2026-02-09" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.60.0" build_path="/218231/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.60.0" build_path="/218231/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Added a new `docker desktop diagnose` command to gather diagnostics.
+@y
+- Added a new `docker desktop diagnose` command to gather diagnostics.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed `ping6 host.docker.internal`.
+- Enabled landlock LSM.
+- Docker Sandboxes improvements:
+   - Improved agent system prompt with network access documentation      
+   - Fixed Gemini API key injection  
+   - Sandboxes now block `console.anthropic.com/claude.ai` in proxy default rules
+   - Fix CLI help text for `run <agent> --help`
+   - Improved terminal size handling
+@y
+- Fixed `ping6 host.docker.internal`.
+- Enabled landlock LSM.
+- Docker Sandboxes improvements:
+   - Improved agent system prompt with network access documentation      
+   - Fixed Gemini API key injection  
+   - Sandboxes now block `console.anthropic.com/claude.ai` in proxy default rules
+   - Fix CLI help text for `run <agent> --help`
+   - Improved terminal size handling
+@z
+
+@x
 ## 4.59.1
 @y
 ## 4.59.1

@@ -109,6 +109,26 @@ For more information, see [Docker Engine Python SDK reference](https://docker-py
 @z
 
 @x
+> [!NOTE]
+> Docker Desktop for Linux users
+>
+> Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. To use Docker SDKs with Docker Desktop for Linux, set the `DOCKER_HOST` environment variable:
+@y
+> [!NOTE]
+> Docker Desktop for Linux users
+>
+> Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. To use Docker SDKs with Docker Desktop for Linux, set the `DOCKER_HOST` environment variable:
+@z
+
+% snip command...
+
+@x
+> For more details, see [the Linux FAQs](/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux).
+@y
+> For more details, see [the Linux FAQs](manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux).
+@z
+
+@x
 ## View the API reference
 @y
 ## View the API reference

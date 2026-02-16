@@ -32,15 +32,15 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @z
 
 @x
-    During research, the most frequently cited reason for users wanting Docker Desktop for Linux was to ensure a consistent Docker Desktop
-    experience with feature parity across all major operating systems. Utilizing
-    a VM ensures that the Docker Desktop experience for Linux users will closely
-    match that of Windows and macOS.
+   During research, the most frequently cited reason for users wanting Docker Desktop for Linux was to ensure a consistent Docker Desktop
+   experience with feature parity across all major operating systems. Utilizing
+   a VM ensures that the Docker Desktop experience for Linux users will closely
+   match that of Windows and macOS.
 @y
-    During research, the most frequently cited reason for users wanting Docker Desktop for Linux was to ensure a consistent Docker Desktop
-    experience with feature parity across all major operating systems. Utilizing
-    a VM ensures that the Docker Desktop experience for Linux users will closely
-    match that of Windows and macOS.
+   During research, the most frequently cited reason for users wanting Docker Desktop for Linux was to ensure a consistent Docker Desktop
+   experience with feature parity across all major operating systems. Utilizing
+   a VM ensures that the Docker Desktop experience for Linux users will closely
+   match that of Windows and macOS.
 @z
 
 @x
@@ -50,9 +50,9 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @z
 
 @x
-    Sometimes we want to make use of new operating system features. Because we control the kernel and the OS inside the VM, we can roll these out to all users immediately, even to users who are intentionally sticking on an LTS version of their machine OS.
+   Because Docker controls the kernel and the OS inside the VM, Docker can roll these out to all users immediately, even to users who are intentionally sticking on an LTS version of their machine OS.
 @y
-    Sometimes we want to make use of new operating system features. Because we control the kernel and the OS inside the VM, we can roll these out to all users immediately, even to users who are intentionally sticking on an LTS version of their machine OS.
+   Because Docker controls the kernel and the OS inside the VM, Docker can roll these out to all users immediately, even to users who are intentionally sticking on an LTS version of their machine OS.
 @z
 
 @x
@@ -62,15 +62,15 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @z
 
 @x
-    Container image vulnerabilities pose a security risk for the host environment. There is a large number of unofficial images that are not guaranteed to be verified for known vulnerabilities. Malicious users can push images to public registries and use different methods to trick users into pulling and running them. The VM approach mitigates this threat as any malware that gains root privileges is restricted to the VM environment without access to the host.
+   Container image vulnerabilities pose a security risk for the host environment. There is a large number of unofficial images that are not guaranteed to be verified for known vulnerabilities. Malicious users can push images to public registries and use different methods to trick users into pulling and running them. The VM approach mitigates this threat as any malware that gains root privileges is restricted to the VM environment without access to the host.
 @y
-    Container image vulnerabilities pose a security risk for the host environment. There is a large number of unofficial images that are not guaranteed to be verified for known vulnerabilities. Malicious users can push images to public registries and use different methods to trick users into pulling and running them. The VM approach mitigates this threat as any malware that gains root privileges is restricted to the VM environment without access to the host.
+   Container image vulnerabilities pose a security risk for the host environment. There is a large number of unofficial images that are not guaranteed to be verified for known vulnerabilities. Malicious users can push images to public registries and use different methods to trick users into pulling and running them. The VM approach mitigates this threat as any malware that gains root privileges is restricted to the VM environment without access to the host.
 @z
 
 @x
-    Why not run rootless Docker? Although this has the benefit of superficially limiting access to the root user so everything looks safer in "top", it allows unprivileged users to gain `CAP_SYS_ADMIN` in their own user namespace and access kernel APIs which are not expecting to be used by unprivileged users, resulting in [vulnerabilities](https://www.openwall.com/lists/oss-security/2022/01/18/7).
+   Why not run rootless Docker? Although this has the benefit of superficially limiting access to the root user so everything looks safer in "top", it allows unprivileged users to gain `CAP_SYS_ADMIN` in their own user namespace and access kernel APIs which are not expecting to be used by unprivileged users, resulting in [vulnerabilities](https://www.openwall.com/lists/oss-security/2022/01/18/7).
 @y
-    Why not run rootless Docker? Although this has the benefit of superficially limiting access to the root user so everything looks safer in "top", it allows unprivileged users to gain `CAP_SYS_ADMIN` in their own user namespace and access kernel APIs which are not expecting to be used by unprivileged users, resulting in [vulnerabilities](https://www.openwall.com/lists/oss-security/2022/01/18/7).
+   Why not run rootless Docker? Although this has the benefit of superficially limiting access to the root user so everything looks safer in "top", it allows unprivileged users to gain `CAP_SYS_ADMIN` in their own user namespace and access kernel APIs which are not expecting to be used by unprivileged users, resulting in [vulnerabilities](https://www.openwall.com/lists/oss-security/2022/01/18/7).
 @z
 
 @x
@@ -80,15 +80,15 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @z
 
 @x
-    The VM utilized by Docker Desktop for Linux uses [`VirtioFS`](https://virtio-fs.gitlab.io), a shared file system that allows virtual machines to access a directory tree located on the host. Our internal benchmarking shows that with the right resource allocation to the VM, near native file system performance can be achieved with VirtioFS.
+   The VM utilized by Docker Desktop for Linux uses [`VirtioFS`](https://virtio-fs.gitlab.io), a shared file system that allows virtual machines to access a directory tree located on the host. Docker's internal benchmarking shows that with the right resource allocation to the VM, near native file system performance can be achieved with VirtioFS.
 @y
-    The VM utilized by Docker Desktop for Linux uses [`VirtioFS`](https://virtio-fs.gitlab.io), a shared file system that allows virtual machines to access a directory tree located on the host. Our internal benchmarking shows that with the right resource allocation to the VM, near native file system performance can be achieved with VirtioFS.
+   The VM utilized by Docker Desktop for Linux uses [`VirtioFS`](https://virtio-fs.gitlab.io), a shared file system that allows virtual machines to access a directory tree located on the host. Docker's internal benchmarking shows that with the right resource allocation to the VM, near native file system performance can be achieved with VirtioFS.
 @z
 
 @x
-    As such, we have adjusted the default memory available to the VM in Docker Desktop for Linux. You can tweak this setting to your specific needs by using the **Memory** slider within the **Settings** > **Resources** tab of Docker Desktop.
+   As such, the default memory available to the VM in Docker Desktop for Linux is adjusted. You can tweak this setting to your specific needs by using the **Memory** slider within the **Settings** > **Resources** tab of Docker Desktop.
 @y
-    As such, we have adjusted the default memory available to the VM in Docker Desktop for Linux. You can tweak this setting to your specific needs by using the **Memory** slider within the **Settings** > **Resources** tab of Docker Desktop.
+   As such, the default memory available to the VM in Docker Desktop for Linux is adjusted. You can tweak this setting to your specific needs by using the **Memory** slider within the **Settings** > **Resources** tab of Docker Desktop.
 @z
 
 @x
@@ -100,11 +100,11 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 @x
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
 default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM. 
+and Docker Desktop VM.
 @y
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
 default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM. 
+and Docker Desktop VM.
 @z
 
 @x
@@ -142,7 +142,7 @@ mappings for IDs greater than 0 in the containers.
 @x
 | ID in container | ID on host                                                                       |
 | --------------- | -------------------------------------------------------------------------------- |
-| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                            |
+| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                |
 | 1               | 0 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100000) |
 | 2               | 1 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100001) |
 | 3               | 2 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100002) |
@@ -150,7 +150,7 @@ mappings for IDs greater than 0 in the containers.
 @y
 | ID in container | ID on host                                                                       |
 | --------------- | -------------------------------------------------------------------------------- |
-| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                            |
+| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                |
 | 1               | 0 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100000) |
 | 2               | 1 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100001) |
 | 3               | 2 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100002) |
@@ -230,6 +230,50 @@ ACL (see `setfacl(1)`) for folders shared with the Docker Desktop VM.
 @z
 
 @x
+### How do I use Docker SDKs with Docker Desktop for Linux?
+@y
+### How do I use Docker SDKs with Docker Desktop for Linux?
+@z
+
+@x
+Docker Desktop for Linux uses a per-user socket located at `~/.docker/desktop/docker.sock` instead of the system-wide `/var/run/docker.sock`. The Docker CLI handles this automatically through the `desktop-linux` context, but Docker SDKs and other tools that connect directly to the Docker daemon also need the `DOCKER_HOST` environment variable set.
+@y
+Docker Desktop for Linux uses a per-user socket located at `~/.docker/desktop/docker.sock` instead of the system-wide `/var/run/docker.sock`. The Docker CLI handles this automatically through the `desktop-linux` context, but Docker SDKs and other tools that connect directly to the Docker daemon also need the `DOCKER_HOST` environment variable set.
+@z
+
+@x
+Without setting `DOCKER_HOST`, SDKs attempt to connect to `/var/run/docker.sock` and fail with an error like:
+@y
+Without setting `DOCKER_HOST`, SDKs attempt to connect to `/var/run/docker.sock` and fail with an error like:
+@z
+
+% snip text...
+
+@x
+To fix this, set the `DOCKER_HOST` environment variable before running your SDK-based application:
+@y
+To fix this, set the `DOCKER_HOST` environment variable before running your SDK-based application:
+@z
+
+% snip command...
+
+@x
+Or dynamically retrieve it from the `desktop-linux` context:
+@y
+Or dynamically retrieve it from the `desktop-linux` context:
+@z
+
+% snip command...
+
+@x
+To make this permanent, add the export command to your shell profile (`~/.bashrc`, `~/.zshrc`, or similar):
+@y
+To make this permanent, add the export command to your shell profile (`~/.bashrc`, `~/.zshrc`, or similar):
+@z
+
+% snip command...
+
+@x
 ### Where does Docker Desktop store Linux containers?
 @y
 ### Where does Docker Desktop store Linux containers?
@@ -294,9 +338,9 @@ To move the disk image file to a different location:
 @z
 
 @x
-1. Select **Settings** then  **Advanced** from the **Resources** tab.
+1. Select **Settings** then **Advanced** from the **Resources** tab.
 @y
-1. Select **Settings** then  **Advanced** from the **Resources** tab.
+1. Select **Settings** then **Advanced** from the **Resources** tab.
 @z
 
 @x

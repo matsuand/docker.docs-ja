@@ -50,13 +50,9 @@ Docker organizations have three core roles:
 @z
 
 @x
-> [!NOTE]
->
-> A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](/admin/company/).
+A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](/admin/company/).
 @y
-> [!NOTE]
->
-> A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](__SUBDIR__/admin/company/).
+A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](__SUBDIR__/admin/company/).
 @z
 
 @x
@@ -82,6 +78,7 @@ These permissions apply organization-wide, including all repositories in your or
 | Edit and delete publisher repository logos            | ❌     | ✅     | ✅    |
 | Observe content engagement as a publisher             | ❌     | ❌     | ✅    |
 | Create public and private repositories                | ❌     | ✅     | ✅    |
+| Disable public repositories                           | ❌     | ✅     | ✅    |
 | Edit and delete repositories                          | ❌     | ✅     | ✅    |
 | Manage tags                                           | ❌     | ✅     | ✅    |
 | View repository activity                              | ❌     | ❌     | ✅    |
@@ -100,6 +97,7 @@ These permissions apply organization-wide, including all repositories in your or
 | Edit and delete publisher repository logos            | ❌     | ✅     | ✅    |
 | Observe content engagement as a publisher             | ❌     | ❌     | ✅    |
 | Create public and private repositories                | ❌     | ✅     | ✅    |
+| Disable public repositories                           | ❌     | ✅     | ✅    |
 | Edit and delete repositories                          | ❌     | ✅     | ✅    |
 | Manage tags                                           | ❌     | ✅     | ✅    |
 | View repository activity                              | ❌     | ❌     | ✅    |
@@ -145,6 +143,7 @@ beyond their organization role:
 | Export and reporting                                              | ❌     | ❌     | ✅    |
 | Image Access Management                                           | ❌     | ❌     | ✅    |
 | Registry Access Management                                        | ❌     | ❌     | ✅    |
+| Namespace access control                                          | ❌     | ❌     | ✅    |
 | Set up Single Sign-On (SSO) and SCIM                              | ❌     | ❌     | ✅ \* |
 | Require Docker Desktop sign-in                                    | ❌     | ❌     | ✅ \* |
 | Manage billing information (for example, billing address)         | ❌     | ❌     | ✅    |
@@ -167,6 +166,7 @@ beyond their organization role:
 | Export and reporting                                              | ❌     | ❌     | ✅    |
 | Image Access Management                                           | ❌     | ❌     | ✅    |
 | Registry Access Management                                        | ❌     | ❌     | ✅    |
+| Namespace access control                                          | ❌     | ❌     | ✅    |
 | Set up Single Sign-On (SSO) and SCIM                              | ❌     | ❌     | ✅ \* |
 | Require Docker Desktop sign-in                                    | ❌     | ❌     | ✅ \* |
 | Manage billing information (for example, billing address)         | ❌     | ❌     | ✅    |

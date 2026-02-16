@@ -26,16 +26,16 @@
 
 @x
               "How do I get started with Docker?"
+			  "Can I run my AI agent in a sandbox?"
               "What is a container?"
-              "How do I write a Dockerfile?"
+              "What are Docker Hardened Images?"
               "Why should I use Docker Compose?"
-              "Migrate from Wolfi to DHI"
 @y
               "How do I get started with Docker?"
+			  "Can I run my AI agent in a sandbox?"
               "What is a container?"
-              "How do I write a Dockerfile?"
+              "What are Docker Hardened Images?"
               "Why should I use Docker Compose?"
-              "Migrate from Wolfi to DHI"
 @z
 
 @x
@@ -58,14 +58,14 @@
 
 @x
               (dict "url" "/dhi/" "title" "Docker Hardened Images")
-              (dict "url" "/ai/sandboxes/" "title" "Docker Sandboxes")
+              (dict "url" "/ai/sandboxes/get-started/" "title" "Get started with Docker Sandboxes")
               (dict "url" "/desktop/" "title" "Docker Desktop overview")
               (dict "url" "/engine/install/" "title" "Install Docker Engine")
               (dict "url" "/reference/dockerfile/" "title" "Dockerfile reference")
               (dict "url" "/build/" "title" "Docker Build overview")
 @y
               (dict "url" "dhi/" "title" "Docker Hardened イメージ")
-              (dict "url" "ai/sandboxes/" "title" "Docker Sandboxes")
+              (dict "url" "ai/sandboxes/get-started/" "title" "Docker Sandbox をはじめよう")
               (dict "url" "desktop/" "title" "Docker Desktop 概要")
               (dict "url" "engine/install/" "title" "Docker Engine インストール")
               (dict "url" "reference/dockerfile/" "title" "Dockerfile リファレンス")

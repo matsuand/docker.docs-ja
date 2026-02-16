@@ -186,13 +186,25 @@ repository list, prefixed by `dhi-`. It will continue to receive updated images.
 @z
 
 @x
-Once mirrored, the repository works like any other private repository on Docker
-Hub and you can now customize it. To learn more about customization, see
-[Customize a Docker Hardened Image or chart](./customize.md).
+Once mirrored, the repository is a standard Docker Hub repository in your
+organization's namespace. It behaves exactly like any other Hub repository,
+which means you can manage access and permissions, configure webhooks, and use
+other standard Hub features. See [Docker Hub
+repositories](/manuals/docker-hub/repos/_index.md) for details.
 @y
-Once mirrored, the repository works like any other private repository on Docker
-Hub and you can now customize it. To learn more about customization, see
-[Customize a Docker Hardened Image or chart](./customize.md).
+Once mirrored, the repository is a standard Docker Hub repository in your
+organization's namespace. It behaves exactly like any other Hub repository,
+which means you can manage access and permissions, configure webhooks, and use
+other standard Hub features. See [Docker Hub
+repositories](/manuals/docker-hub/repos/_index.md) for details.
+@z
+
+@x
+Additionally, mirrored DHI repositories let you customize images and charts. To
+learn more, see [Customize a Docker Hardened Image or chart](./customize.md).
+@y
+Additionally, mirrored DHI repositories let you customize images and charts. To
+learn more, see [Customize a Docker Hardened Image or chart](./customize.md).
 @z
 
 @x

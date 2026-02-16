@@ -5,16 +5,20 @@
 % snip 対応
 
 @x
-description: Install Docker on Linux with ease using our step-by-step installation
+description:
+  Install Docker on Linux with ease using our step-by-step installation
   guide covering system requirements, supported platforms, and where to go next.
-keywords: linux, docker linux install, docker linux, linux docker installation, docker
+keywords:
+  linux, docker linux install, docker linux, linux docker installation, docker
   for linux, docker desktop for linux, installing docker on linux, docker download
   linux, how to install docker on linux, linux vs docker engine, switch docker contexts
 title: Install Docker Desktop on Linux
 @y
-description: Install Docker on Linux with ease using our step-by-step installation
+description:
+  Install Docker on Linux with ease using our step-by-step installation
   guide covering system requirements, supported platforms, and where to go next.
-keywords: linux, docker linux install, docker linux, linux docker installation, docker
+keywords:
+  linux, docker linux install, docker linux, linux docker installation, docker
   for linux, docker desktop for linux, installing docker on linux, docker download
   linux, how to install docker on linux, linux vs docker engine, switch docker contexts
 title: Linux への Docker Desktop のインストール
@@ -41,17 +45,17 @@ This page contains information about general system requirements, supported plat
 @x
 > [!IMPORTANT]
 >
->Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
+> Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup.
 >
->This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux. 
+> This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux.
 >
 > {{< accordion title=" Docker Desktop vs Docker Engine: What's the difference?" >}}
 @y
 > [!IMPORTANT]
 >
->Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup. 
+> Docker Desktop on Linux runs a Virtual Machine (VM) which creates and uses a custom docker context, `desktop-linux`, on startup.
 >
->This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux. 
+> This means images and containers deployed on the Linux Docker Engine (before installation) are not available in Docker Desktop for Linux.
 >
 > {{< accordion title=" Docker Desktop vs Docker Engine: What's the difference?" >}}
 @z
@@ -73,9 +77,9 @@ Docker Desktop for Linux provides a user-friendly graphical interface that simpl
 @z
 
 @x
-#### Installing Docker Desktop and Docker Engine
+### Installing Docker Desktop and Docker Engine
 @y
-#### Docker Desktop と Docker Engine のインストール {#installing-docker-desktop-and-docker-engine}
+### Docker Desktop と Docker Engine のインストール {#installing-docker-desktop-and-docker-engine}
 @z
 
 @x
@@ -229,19 +233,19 @@ and architectures:
 @z
 
 @x
-| Platform                | x86_64 / amd64          | 
-|:------------------------|:-----------------------:|
-| [Ubuntu](ubuntu.md)                         | ✅  |
-| [Debian](debian.md)                         | ✅  |
-| [Red Hat Enterprise Linux (RHEL)](rhel.md)  | ✅  |
-| [Fedora](fedora.md)                         | ✅  |
+| Platform                                   | x86_64 / amd64 |
+| :----------------------------------------- | :------------: |
+| [Ubuntu](ubuntu.md)                        |       ✅       |
+| [Debian](debian.md)                        |       ✅       |
+| [Red Hat Enterprise Linux (RHEL)](rhel.md) |       ✅       |
+| [Fedora](fedora.md)                        |       ✅       |
 @y
-| プラットフォーム        | x86_64 / amd64          |
-|:------------------------|:-----------------------:|
-| [Ubuntu](ubuntu.md)                         | ✅  |
-| [Debian](debian.md)                         | ✅  |
-| [Red Hat Enterprise Linux (RHEL)](rhel.md)  | ✅  |
-| [Fedora](fedora.md)                         | ✅  |
+| プラットフォーム                           | x86_64 / amd64 |
+| :----------------------------------------- | :------------: |
+| [Ubuntu](ubuntu.md)                        |       ✅       |
+| [Debian](debian.md)                        |       ✅       |
+| [Red Hat Enterprise Linux (RHEL)](rhel.md) |       ✅       |
+| [Fedora](fedora.md)                        |       ✅       |
 @z
 
 @x
@@ -393,6 +397,18 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @z
 
 @x
+## Using Docker SDKs with Docker Desktop
+@y
+## Using Docker SDKs with Docker Desktop
+@z
+
+@x
+Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. Docker SDKs and tools that connect directly to the Docker daemon need the `DOCKER_HOST` environment variable set to connect to Docker Desktop. For configuration details, see [How do I use Docker SDKs with Docker Desktop for Linux?](/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux).
+@y
+Docker Desktop for Linux uses a per-user socket instead of the system-wide `/var/run/docker.sock`. Docker SDKs and tools that connect directly to the Docker daemon need the `DOCKER_HOST` environment variable set to connect to Docker Desktop. For configuration details, see [How do I use Docker SDKs with Docker Desktop for Linux?](/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux).
+@z
+
+@x
 ## Where to go next
 @y
 ## Where to go next
@@ -400,16 +416,16 @@ Sign out and sign back in so that your group membership is re-evaluated.
 
 @x
 - Install Docker Desktop for Linux for your specific Linux distribution:
-   - [Install on Ubuntu](ubuntu.md)
-   - [Install on Debian](debian.md)
-   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
-   - [Install on Fedora](fedora.md)
-   - [Install on Arch](archlinux.md)
+  - [Install on Ubuntu](ubuntu.md)
+  - [Install on Debian](debian.md)
+  - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+  - [Install on Fedora](fedora.md)
+  - [Install on Arch](archlinux.md)
 @y
 - Install Docker Desktop for Linux for your specific Linux distribution:
-   - [Install on Ubuntu](ubuntu.md)
-   - [Install on Debian](debian.md)
-   - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
-   - [Install on Fedora](fedora.md)
-   - [Install on Arch](archlinux.md)
+  - [Install on Ubuntu](ubuntu.md)
+  - [Install on Debian](debian.md)
+  - [Install on Red Hat Enterprise Linux (RHEL)](rhel.md)
+  - [Install on Fedora](fedora.md)
+  - [Install on Arch](archlinux.md)
 @z

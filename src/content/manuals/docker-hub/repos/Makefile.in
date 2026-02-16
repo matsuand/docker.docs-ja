@@ -297,11 +297,10 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = images manage
 bases = \
-	_index.md   \
-	archive.md  \
-	create.md   \
-	delete.md   \
-	settings.md
+	_index.md  \
+	archive.md \
+	create.md  \
+	delete.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

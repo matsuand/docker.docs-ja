@@ -24,6 +24,7 @@ long: |-
 @x
 usage: docker sandbox create kiro WORKSPACE
 @y
+usage: docker sandbox create kiro WORKSPACE
 @z
 
 % pname

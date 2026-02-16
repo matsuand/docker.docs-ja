@@ -27,21 +27,11 @@ account or for an organization.
 
 @x
 You can add a payment method or update your account's existing payment method
-at any time.
-@y
-You can add a payment method or update your account's existing payment method
-at any time.
-@z
-
-@x
-> [!IMPORTANT]
->
-> If you want to remove all payment methods, you must first downgrade your
+at any time. If you want to remove all payment methods, you must first downgrade your
 subscription to a free subscription. See [Downgrade](../subscription/change.md).
 @y
-> [!IMPORTANT]
->
-> If you want to remove all payment methods, you must first downgrade your
+You can add a payment method or update your account's existing payment method
+at any time. If you want to remove all payment methods, you must first downgrade your
 subscription to a free subscription. See [Downgrade](../subscription/change.md).
 @z
 
@@ -178,15 +168,9 @@ the **Delete** action.
 @z
 
 @x
-> [!NOTE]
->
-> If you want to set a US bank account as your default payment method, you must
-> [verify the account](#verify-a-bank-account) first.
+If you want to set a US bank account as your default payment method, you must [verify the account](#verify-a-bank-account) first.
 @y
-> [!NOTE]
->
-> If you want to set a US bank account as your default payment method, you must
-> [verify the account](#verify-a-bank-account) first.
+If you want to set a US bank account as your default payment method, you must [verify the account](#verify-a-bank-account) first.
 @z
 
 @x
@@ -256,13 +240,9 @@ the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
-> [!NOTE]
->
-> You must be an organization owner to make changes to the payment information.
+You must be an organization owner to make changes to the payment information.
 @y
-> [!NOTE]
->
-> You must be an organization owner to make changes to the payment information.
+You must be an organization owner to make changes to the payment information.
 @z
 
 @x
@@ -332,15 +312,9 @@ the **Delete** action.
 @z
 
 @x
-> [!NOTE]
->
-> If you want to set a US bank account as your default payment method, you must
-> verify the account first.
+If you want to set a US bank account as your default payment method, you must verify the account first.
 @y
-> [!NOTE]
->
-> If you want to set a US bank account as your default payment method, you must
-> verify the account first.
+If you want to set a US bank account as your default payment method, you must verify the account first.
 @z
 
 @x
@@ -453,6 +427,12 @@ organization.
 1. To enable pay by invoice, select the toggle.
 1. Confirm your billing contact details. If you need to change them, select
 **Change** and enter your new details.
+@z
+
+@x
+If you want to pay by invoice, [upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/).
+@y
+If you want to pay by invoice, [upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/).
 @z
 
 @x
@@ -590,14 +570,10 @@ verification email and enter the amount of this deposit to verify your account.
 @z
 
 @x
-> [!NOTE]
->
-> You can't manually retry a failed payment. Docker will retry failed payments
+You can't manually retry a failed payment. Docker will retry failed payments
 based on the retry schedule.
 @y
-> [!NOTE]
->
-> You can't manually retry a failed payment. Docker will retry failed payments
+You can't manually retry a failed payment. Docker will retry failed payments
 based on the retry schedule.
 @z
 

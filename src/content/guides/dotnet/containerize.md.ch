@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a .NET application
@@ -85,20 +85,113 @@ run the following command to clone the repository.
 @z
 
 @x
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`docker-dotnet-sample` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. Refer to the following example to answer
-the prompts from `docker init` and use the same answers for your prompts.
+Now that you have an application, you can create the necessary Docker assets to containerize it. You can choose between using the official .NET images or Docker Hardened Images (DHI).
 @y
-アプリケーションを入手できたので、アプリケーションのコンテナー化に向けて `docker init` を実行し、必要な Docker アセットを生成します。
-端末上から `docker-dotnet-sample` ディレクトリに移動して `docker init` コマンドを実行します。
-`docker init` はデフォルトの設定を生成していくものであり、アプリケーションに対する質問が出されるのでこれに答えていきます。
-以下の例における `docker init` への回答プロンプトを参考にして、同様の回答を行ってください。
+アプリケーションを入手できたので、必要な Docker アセットを生成してコンテナー化を行います。
+方法として 公式 .NET イメージと Docker Hardened イメージ (DHI) のいずれかを用います。
+@z
+
+@x
+> [Docker Hardened Images (DHIs)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker. DHI images are recommended for better security—they are designed to reduce vulnerabilities and simplify compliance.
+@y
+> [Docker Hardened イメージ (DHI)](https://docs.docker.com/dhi/) are minimal, secure, and production-ready container base and application images maintained by Docker. DHI images are recommended for better security—they are designed to reduce vulnerabilities and simplify compliance.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@z
+
+@x
+Docker Hardened Images (DHIs) for .NET are available in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/aspnetcore). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@y
+Docker Hardened Images (DHIs) for .NET are available in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/aspnetcore). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+@z
+
+@x
+1. Sign in to the DHI registry:
+@y
+1. DHI レジストリにサインインします。
 @z
 
 % snip command...
+
+@x
+2. Pull the .NET SDK DHI (check the catalog for available versions):
+@y
+2. .NET SDK DHI をプルします (利用可能なバージョンについてはカタログを確認してください)。
+@z
+
+% snip command...
+
+@x
+3. Pull the ASP.NET Core runtime DHI (check the catalog for available versions):
+@y
+3. ASP.NET コアランタイム DHI をプルします (利用可能なバージョンについてはカタログを確認してください)。
+@z
+
+% snip command...
+
+@x
+You can use `docker init` to generate Docker assets, then modify the Dockerfile to use DHI images:
+@y
+You can use `docker init` to generate Docker assets, then modify the Dockerfile to use DHI images:
+@z
+
+% snip command...
+
+@x
+In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` and `dhi.io/aspnetcore:10` as the base images.
+@y
+In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` and `dhi.io/aspnetcore:10` as the base images.
+@z
+
+% snip code...
+
+@x
+> [!NOTE]
+>
+> DHI runtime images already run as a non-root user (`nonroot`, UID 65532), so there's no need to create a user or specify `USER` in your Dockerfile. This reduces the attack surface and simplifies your configuration.
+@y
+> [!NOTE]
+>
+> DHI runtime images already run as a non-root user (`nonroot`, UID 65532), so there's no need to create a user or specify `USER` in your Dockerfile. This reduces the attack surface and simplifies your configuration.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Using the official .NET 10 image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the official .NET 10 image" >}}
+@z
+
+@x
+You can use `docker init` to create the necessary Docker assets. Inside the `docker-dotnet-sample` directory, run the `docker init` command in a terminal. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. Refer to the following example to answer the prompts from `docker init` and use the same answers for your prompts.
+@y
+You can use `docker init` to create the necessary Docker assets. Inside the `docker-dotnet-sample` directory, run the `docker init` command in a terminal. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. Refer to the following example to answer the prompts from `docker init` and use the same answers for your prompts.
+@z
+
+% snip command...
+
+@x
+This generates a Dockerfile using the official .NET 10 images from Microsoft Container Registry:
+@y
+This generates a Dockerfile using the official .NET 10 images from Microsoft Container Registry:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
 
 @x
 You should now have the following contents in your `docker-dotnet-sample`
@@ -110,9 +203,9 @@ directory.
 % snip text...
 
 @x
-To learn more about the files that `docker init` added, see the following:
+To learn more about the files, see the following:
 @y
-`docker init` が追加した各ファイルについての詳細は以下を参照してください。
+各ファイルについての詳細は以下を参照してください。
 @z
 
 @x
@@ -216,10 +309,12 @@ Related information:
  - [Dockerfile reference](/reference/dockerfile.md)
  - [.dockerignore file reference](/reference/dockerfile.md#dockerignore-file)
  - [Docker Compose overview](/manuals/compose/_index.md)
+ - [Docker Hardened Images](/dhi/)
 @y
  - [Dockerfile リファレンス](reference/dockerfile.md)
  - [.dockerignore ファイルリファレンス](reference/dockerfile.md#dockerignore-file)
  - [Docker Compose 概要](manuals/compose/_index.md)
+ - [Docker Hardened イメージ](__SUBDIR__/dhi/)
 @z
 
 @x

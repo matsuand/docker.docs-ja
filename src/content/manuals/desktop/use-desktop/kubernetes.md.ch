@@ -307,6 +307,18 @@ factors, including the version of Kubernetes being used. The tags vary for each 
 @z
 
 @x
+> [!NOTE]
+>
+> In Docker Desktop versions 4.44 or later you can run `docker desktop kubernetes images list` to list Kubernetes images used by the currently installed version of Docker Desktop.
+> For more information, see the [Docker Desktop CLI](/reference/cli/docker/desktop/kubernetes/images).
+@y
+> [!NOTE]
+>
+> In Docker Desktop versions 4.44 or later you can run `docker desktop kubernetes images list` to list Kubernetes images used by the currently installed version of Docker Desktop.
+> For more information, see the [Docker Desktop CLI](/reference/cli/docker/desktop/kubernetes/images).
+@z
+
+@x
 To accommodate scenarios where access to Docker Hub is not allowed, admins can
 configure Docker Desktop to pull the above listed images from a different registry (e.g., a mirror)
 using the [KubernetesImagesRepository](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
@@ -354,7 +366,9 @@ The recommended approach to set this up is the following:
 
 @x
 1. Start Kubernetes using the desired cluster provisioning method: `kubeadm` or `kind`.
-2. Once Kubernetes has started, use `docker ps` to view the container images used by Docker Desktop for the Kubernetes control plane.
+2. After Kubernetes has started, use either:
+   - (Docker Desktop version 4.44 or later) `docker desktop kubernetes images list` to list the image tags that will be pulled by the current Docker Desktop installation
+   - `docker ps` to view the container images used by Docker Desktop for the Kubernetes control plane
 3. Clone or mirror those images (with matching tags) to your custom registry.
 4. Stop the Kubernetes cluster.
 5. Configure the `KubernetesImagesRepository` setting to point to your custom registry.
@@ -362,7 +376,9 @@ The recommended approach to set this up is the following:
 7. Verify that the Kubernetes cluster is using the custom registry images using the `docker ps` command.
 @y
 1. Start Kubernetes using the desired cluster provisioning method: `kubeadm` or `kind`.
-2. Once Kubernetes has started, use `docker ps` to view the container images used by Docker Desktop for the Kubernetes control plane.
+2. After Kubernetes has started, use either:
+   - (Docker Desktop version 4.44 or later) `docker desktop kubernetes images list` to list the image tags that will be pulled by the current Docker Desktop installation
+   - `docker ps` to view the container images used by Docker Desktop for the Kubernetes control plane
 3. Clone or mirror those images (with matching tags) to your custom registry.
 4. Stop the Kubernetes cluster.
 5. Configure the `KubernetesImagesRepository` setting to point to your custom registry.

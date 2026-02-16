@@ -30,6 +30,28 @@ known issues for each Docker Hub release.
 @z
 
 @x
+## 2026-02-13
+@y
+## 2026-02-13
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Administrators can now prevent creating public repositories within
+  organization namespaces using the [Disable public
+  repositories](./settings.md#disable-creation-of-public-repos) setting.
+@y
+- Administrators can now prevent creating public repositories within
+  organization namespaces using the [Disable public
+  repositories](./settings.md#disable-creation-of-public-repos) setting.
+@z
+
+@x
 ## 2025-02-18
 @y
 ## 2025-02-18

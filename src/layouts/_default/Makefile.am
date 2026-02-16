@@ -9,7 +9,6 @@ bases = \
 	cli.html         \
 	list.markdown.md \
 	scout-cli.html   \
-	search.html      \
 	series.html
 
 include $(top_srcdir)/build-aux/common.mk

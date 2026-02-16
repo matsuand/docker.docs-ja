@@ -4,11 +4,10 @@
 SUBDIRS = images manage
 
 bases = \
-	_index.md   \
-	archive.md  \
-	create.md   \
-	delete.md   \
-	settings.md
+	_index.md  \
+	archive.md \
+	create.md  \
+	delete.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

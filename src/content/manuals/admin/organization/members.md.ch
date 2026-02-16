@@ -283,9 +283,9 @@ After accepting an invitation, you are now a member of the organization.
 @z
 
 @x
-After inviting members, you can resend or remove invitations as needed.
+After inviting members, you can resend or remove invitations as needed. Need to manage more than 1,000 team members? [Upgrade to Docker Business for unlimited user invites](https://www.docker.com/pricing/) and advanced role management.
 @y
-After inviting members, you can resend or remove invitations as needed.
+After inviting members, you can resend or remove invitations as needed. Need to manage more than 1,000 team members? [Upgrade to Docker Business for unlimited user invites](https://www.docker.com/pricing/) and advanced role management.
 @z
 
 @x
@@ -407,13 +407,9 @@ organization.
 @z
 
 @x
-   > [!NOTE]
-   >
-   > An invitee must first accept the invitation to join the organization before being added to the team.
+An invitee must first accept the invitation to join the organization before being added to the team.
 @y
-   > [!NOTE]
-   >
-   > An invitee must first accept the invitation to join the organization before being added to the team.
+An invitee must first accept the invitation to join the organization before being added to the team.
 @z
 
 @x

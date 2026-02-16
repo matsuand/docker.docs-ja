@@ -20,6 +20,7 @@ long: |-
 @x
 usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
 @y
+usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
 @z
 
 % pname

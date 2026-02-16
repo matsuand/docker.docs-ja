@@ -300,6 +300,7 @@ bases = \
 	_index.md                     \
 	air-gapped-containers.md      \
 	image-access-management.md    \
+	namespace-access.md           \
 	registry-access-management.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

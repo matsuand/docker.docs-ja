@@ -844,11 +844,31 @@ Hardened Docker Desktop:
 @z
 
 @x
+Disable public repositories:
+  subscription: [Business]
+  for: Administrators
+@y
+Disable public repositories:
+  subscription: [Business]
+  for: 管理者
+@z
+
+@x
 Image management:
   availability: Beta
 @y
 Image management:
   availability: ベータ
+@z
+
+@x
+Namespace access:
+  subscription: [Business]
+  for: Administrators
+@y
+Namespace access:
+  subscription: [Business]
+  for: 管理者
 @z
 
 @x

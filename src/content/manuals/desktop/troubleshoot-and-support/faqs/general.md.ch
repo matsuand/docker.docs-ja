@@ -120,6 +120,12 @@ For details, see [Docker Engine API](reference/api/engine/_index.md).
 @z
 
 @x
+See the [Linux FAQs](linuxfaqs.md) for Linux specific setup.
+@y
+See the [Linux FAQs](linuxfaqs.md) for Linux specific setup.
+@z
+
+@x
 ### How do I connect from a container to a service on the host?
 @y
 ### How do I connect from a container to a service on the host?

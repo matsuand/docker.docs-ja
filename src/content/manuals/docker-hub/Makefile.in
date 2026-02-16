@@ -301,6 +301,7 @@ bases = \
 	quickstart.md       \
 	release-notes.md    \
 	service-accounts.md \
+	settings.md         \
 	troubleshoot.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

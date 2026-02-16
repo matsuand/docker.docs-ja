@@ -8,6 +8,7 @@ bases = \
 	quickstart.md       \
 	release-notes.md    \
 	service-accounts.md \
+	settings.md         \
 	troubleshoot.md
 
 include $(top_srcdir)/build-aux/common.mk

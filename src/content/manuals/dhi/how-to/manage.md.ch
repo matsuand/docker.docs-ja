@@ -30,6 +30,24 @@ customizations in your organization.
 @z
 
 @x
+Mirrored DHI repositories are standard Docker Hub repositories in your
+organization's namespace. They behave exactly like any other Hub repository,
+which means you can manage access and permissions, configure webhooks, and use
+other standard Hub features. See [Docker Hub
+repositories](/manuals/docker-hub/repos/_index.md) for details. The **Manage**
+screen provides DHI-specific actions like customizing images and stopping
+mirroring.
+@y
+Mirrored DHI repositories are standard Docker Hub repositories in your
+organization's namespace. They behave exactly like any other Hub repository,
+which means you can manage access and permissions, configure webhooks, and use
+other standard Hub features. See [Docker Hub
+repositories](/manuals/docker-hub/repos/_index.md) for details. The **Manage**
+screen provides DHI-specific actions like customizing images and stopping
+mirroring.
+@z
+
+@x
 ## Manage mirrored Docker Hardened Image repositories
 @y
 ## Manage mirrored Docker Hardened Image repositories

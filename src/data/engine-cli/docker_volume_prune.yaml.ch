@@ -8,57 +8,6 @@ long: |-
     Remove all unused local volumes. Unused local volumes are those which are not
     referenced by any containers. By default, it only removes anonymous volumes.
 usage: docker volume prune [OPTIONS]
-pname: docker volume
-plink: docker_volume.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
-      description: Remove all unused volumes, not just anonymous ones
-      details_url: '#all'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.42"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: filter
-      value_type: filter
-      description: Provide filter values (e.g. `label=<label>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
-      description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker volume prune
 @y
 command: docker volume prune
 short: Remove unused local volumes
@@ -66,80 +15,45 @@ long: |-
     Remove all unused local volumes. Unused local volumes are those which are not
     referenced by any containers. By default, it only removes anonymous volumes.
 usage: docker volume prune [OPTIONS]
-pname: docker volume
-plink: docker_volume.yaml
-options:
-    - option: all
-      shorthand: a
-      value_type: bool
-      default_value: "false"
+@z
+
+% pname
+% plink
+% options:
+
+@x all
       description: Remove all unused volumes, not just anonymous ones
-      details_url: '#all'
-      deprecated: false
-      hidden: false
-      min_api_version: "1.42"
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: filter
-      value_type: filter
+@y
+      description: Remove all unused volumes, not just anonymous ones
+@z
+
+@x filter
       description: Provide filter values (e.g. `label=<label>`)
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: force
-      shorthand: f
-      value_type: bool
-      default_value: "false"
+@y
+      description: Provide filter values (e.g. `label=<label>`)
+@z
+
+@x force
       description: Do not prompt for confirmation
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Do not prompt for confirmation
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
-    ```console
-    $ docker volume prune
+@y
+examples: |-
 @z
 
-@x
-    WARNING! This will remove anonymous local volumes not used by at least one container.
-    Are you sure you want to continue? [y/N] y
-    Deleted Volumes:
-    07c7bdf3e34ab76d921894c2b834f073721fccfbbcba792aa7648e3a7a664c2e
-    my-named-vol
-@y
-    WARNING! This will remove anonymous local volumes not used by at least one container.
-    Are you sure you want to continue? [y/N] y
-    Deleted Volumes:
-    07c7bdf3e34ab76d921894c2b834f073721fccfbbcba792aa7648e3a7a664c2e
-    my-named-vol
-@z
-
-@x
-    Total reclaimed space: 36 B
-    ```
-@y
-    Total reclaimed space: 36 B
-    ```
-@z
+% snip command...
 
 @x
     ### Filtering (--all, -a) {#all}
@@ -184,23 +98,11 @@ examples: |-
     which removes volumes with the specified labels. The other
     format is the `label!=...` (`label!=<key>` or `label!=<key>=<value>`), which removes
     volumes without the specified labels.
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     The `label` filter accepts two formats. One is the `label=...` (`label=<key>` or `label=<key>=<value>`),
     which removes volumes with the specified labels. The other
     format is the `label!=...` (`label!=<key>` or `label!=<key>=<value>`), which removes
     volumes without the specified labels.
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

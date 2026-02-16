@@ -25,6 +25,7 @@ copyfiles = \
 	languages.html       \
 	meta.html            \
 	pagemeta.html        \
+	pagefind-meta.html   \
 	pagination.html      \
 	schema.html          \
 	tags.html            \

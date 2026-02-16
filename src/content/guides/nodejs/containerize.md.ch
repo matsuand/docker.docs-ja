@@ -310,12 +310,6 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Build the Docker image
 @y
 ## Build the Docker image
@@ -396,17 +390,45 @@ Choosing DHI offers the advantage of a production-ready image that is lightweigh
 @x
 {{< tabs >}}
 {{< tab name="Using Docker Hardened Images" >}}
-Docker Hardened Images (DHIs) are available for Node.js on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/node). Unlike using the Docker Official Image, you must first mirror the Node.js image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](/dhi/get-started/) to create a mirrored repository for Node.js.
 @y
 {{< tabs >}}
 {{< tab name="Using Docker Hardened Images" >}}
-Docker Hardened Images (DHIs) are available for Node.js on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/node). Unlike using the Docker Official Image, you must first mirror the Node.js image into your organization and then use it as your base image. Follow the instructions in the [DHI quickstart](__SUBDIR__/dhi/get-started/) to create a mirrored repository for Node.js.
 @z
 
 @x
-Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-node:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-node:24-alpine3.22-dev` as the base image.
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
 @y
-Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace>/dhi-node:<tag>`. In the following Dockerfile, the `FROM` instruction uses `<your-namespace>/dhi-node:24-alpine3.22-dev` as the base image.
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](__SUBDIR__/dhi/get-started/) guide.
+@z
+
+@x
+1. Sign in to the DHI registry:
+@y
+1. Sign in to the DHI registry:
+@z
+
+@x
+   $ docker login dhi.io
+@y
+   $ docker login dhi.io
+@z
+
+@x
+2. Pull the Node.js DHI (check the catalog for available versions):
+@y
+2. Pull the Node.js DHI (check the catalog for available versions):
+@z
+
+@x
+   $ docker pull dhi.io/node:24-alpine3.22-dev
+@y
+   $ docker pull dhi.io/node:24-alpine3.22-dev
+@z
+
+@x
+In the following Dockerfile, the `FROM` instruction uses `dhi.io/node:24-alpine3.22-dev` as the base image.
+@y
+In the following Dockerfile, the `FROM` instruction uses `dhi.io/node:24-alpine3.22-dev` as the base image.
 @z
 
 @x
@@ -424,9 +446,9 @@ Mirrored repositories must start with `dhi-`, for example: `FROM <your-namespace
 @z
 
 @x
-FROM <your-namespace>/dhi-node:24-alpine3.22-dev AS base
+FROM dhi.io/node:24-alpine3.22-dev AS base
 @y
-FROM <your-namespace>/dhi-node:24-alpine3.22-dev AS base
+FROM dhi.io/node:24-alpine3.22-dev AS base
 @z
 
 @x
@@ -637,12 +659,12 @@ CMD ["npm", "run", "dev:docker"]
 # ========================================
 # Production Stage
 # ========================================
-FROM <your-namespace>/dhi-node:24-alpine3.22-dev AS production
+FROM dhi.io/node:24-alpine3.22-dev AS production
 @y
 # ========================================
 # Production Stage
 # ========================================
-FROM <your-namespace>/dhi-node:24-alpine3.22-dev AS production
+FROM dhi.io/node:24-alpine3.22-dev AS production
 @z
 
 @x
@@ -1464,12 +1486,6 @@ If the build was successful, you should see `docker-nodejs-sample` image listed.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Run the containerized application
 @y
 ## Run the containerized application
@@ -1674,12 +1690,6 @@ $ docker compose down
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -1723,12 +1733,6 @@ What you accomplished:
 You now have a fully containerized Node.js application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
 @y
 You now have a fully containerized Node.js application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -1761,12 +1765,6 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/images/) – Manage and inspect local Docker images.
 - [`docker compose up` CLI reference](__SUBDIR__/reference/cli/docker/compose/up/) – Start and run multi-container applications.
 - [`docker compose down` CLI reference](__SUBDIR__/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
-@z
-
-@x
----
-@y
----
 @z
 
 @x

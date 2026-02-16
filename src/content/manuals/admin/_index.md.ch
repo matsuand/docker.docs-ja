@@ -136,19 +136,19 @@ Companies are only available for Docker Business subscribers.
 @z
 
 @x
-Companies have the following administrator role available:
+Companies have the company owner administrator role available:
 @y
-Companies have the following administrator role available:
+Companies have the company owner administrator role available:
 @z
 
 @x
-- Company owner: Can view and manage all organizations within the company.
-Has full access to company-wide settings and inherits the same permissions as
-organization owners.
+- Can view and manage all organizations within the company
+- Has full access to company-wide settings and inherits the same permissions as organization owners
+- Do not occupy a seat
 @y
-- Company owner: Can view and manage all organizations within the company.
-Has full access to company-wide settings and inherits the same permissions as
-organization owners.
+- Can view and manage all organizations within the company
+- Has full access to company-wide settings and inherits the same permissions as organization owners
+- Do not occupy a seat
 @z
 
 @x
@@ -166,17 +166,15 @@ subscribers must have at least one organization.
 @z
 
 @x
-Organizations have the following administrator role available:
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/admin/faqs/organization-faqs/#what-is-the-difference-between-user-invitee-seat-and-member). If you want to [upgrade to a Docker Business plan](https://www.docker.com/pricing/), you can access the company owner role.
 @y
-Organizations have the following administrator role available:
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/admin/faqs/organization-faqs/#what-is-the-difference-between-user-invitee-seat-and-member). If you want to [upgrade to a Docker Business plan](https://www.docker.com/pricing/), you can access the company owner role.
 @z
 
 @x
-- Organization owner: Can manage organization settings, users, and access
-controls.
+While creating a company is optional, organizations are required for Team and Business subscriptions.
 @y
-- Organization owner: Can manage organization settings, users, and access
-controls.
+While creating a company is optional, organizations are required for Team and Business subscriptions.
 @z
 
 @x
@@ -207,18 +205,6 @@ owners can assign roles to members to define their level of access.
 @y
 A member is any Docker user added to an organization. Organization and company
 owners can assign roles to members to define their level of access.
-@z
-
-@x
-> [!NOTE]
->
-> Creating a company is optional, but organizations are required for Team and
-Business subscriptions.
-@y
-> [!NOTE]
->
-> Creating a company is optional, but organizations are required for Team and
-Business subscriptions.
 @z
 
 @x

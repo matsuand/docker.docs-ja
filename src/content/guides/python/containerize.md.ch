@@ -28,11 +28,11 @@ description: Learn how to containerize a Python application.
 
 @x
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
-- You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
+- You have a [Git client](https://git-scm.com/downloads). The examples in this section use a command-line based Git client, but you can use any client.
 @y
 - [Docker Desktop](get-started/get-docker.md) の最新版をインストールしていること。
-- [git クライアント](https://git-scm.com/downloads) が利用可能であること。
-  本節の利用例ではコマンドラインベースの git クライアントを用いていきますが、別のクライアントを用いてもかまいません。
+- [Git クライアント](https://git-scm.com/downloads) が利用可能であること。
+  本節の利用例ではコマンドラインベースの Git クライアントを用いていきますが、別のクライアントを用いてもかまいません。
 @z
 
 @x
@@ -347,12 +347,26 @@ Create a file named `.gitignore` with the following contents.
 @z
 
 @x
-If you don't have Docker Desktop installed or prefer creating the assets
-manually, you can create the following files in your project directory.
+Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/python). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
 @y
-If you don't have Docker Desktop installed or prefer creating the assets
-manually, you can create the following files in your project directory.
+Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/python). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
 @z
+
+@x
+1. Sign in to the DHI registry:
+@y
+1. Sign in to the DHI registry:
+@z
+
+% snip command...
+
+@x
+2. Pull the Python DHI (check the catalog for available versions):
+@y
+2. Pull the Python DHI (check the catalog for available versions):
+@z
+
+% snip command...
 
 @x
 Create a file named `Dockerfile` with the following contents.

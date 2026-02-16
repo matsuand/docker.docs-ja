@@ -303,7 +303,6 @@ bases = \
 	cli.html         \
 	list.markdown.md \
 	scout-cli.html   \
-	search.html      \
 	series.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

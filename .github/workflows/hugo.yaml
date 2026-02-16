@@ -78,7 +78,7 @@ jobs:
       - name: Build pagefind
         run: |
           cd build/src
-          npx pagefind@v1.3.0
+          npx pagefind@v1.5.0-beta.1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

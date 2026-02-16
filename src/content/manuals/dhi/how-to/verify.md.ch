@@ -22,14 +22,10 @@ keywords: verify container image, docker scout attest, cosign verify, sbom valid
 
 @x
 Docker Hardened Images (DHI) and charts include signed attestations that verify
-the build process, contents, and security posture. These attestations are
-available for each image variant and chart and can be verified using
-[cosign](https://docs.sigstore.dev/) or the Docker Scout CLI.
+the build process, contents, and security posture.
 @y
 Docker Hardened Images (DHI) and charts include signed attestations that verify
-the build process, contents, and security posture. These attestations are
-available for each image variant and chart and can be verified using
-[cosign](https://docs.sigstore.dev/) or the Docker Scout CLI.
+the build process, contents, and security posture.
 @z
 
 @x
@@ -44,6 +40,24 @@ Docker's public key for DHI images and charts is published at:
 @y
 - https://registry.scout.docker.com/keyring/dhi/latest.pub
 - https://github.com/docker-hardened-images/keyring
+@z
+
+@x
+Docker recommends using [Docker Scout](/scout/), but you can use
+[`regctl`](https://github.com/regclient/regclient) and
+[`cosign`](https://docs.sigstore.dev/) to retrieve and verify attestations.
+Docker Scout offers several key advantages: it understands DHI attestation
+structures, automatically resolves platforms, provides human-readable summaries,
+validates in one step with `--verify`, and integrates tightly with Docker's
+attestation infrastructure.
+@y
+Docker recommends using [Docker Scout](__SUBDIR__/scout/), but you can use
+[`regctl`](https://github.com/regclient/regclient) and
+[`cosign`](https://docs.sigstore.dev/) to retrieve and verify attestations.
+Docker Scout offers several key advantages: it understands DHI attestation
+structures, automatically resolves platforms, provides human-readable summaries,
+validates in one step with `--verify`, and integrates tightly with Docker's
+attestation infrastructure.
 @z
 
 @x
@@ -67,17 +81,9 @@ Docker's public key for DHI images and charts is published at:
 @z
 
 @x
-## Verify image attestations with Docker Scout
+## Verify image attestations
 @y
-## Verify image attestations with Docker Scout
-@z
-
-@x
-You can use the [Docker Scout](/scout/) CLI to list and retrieve attestations for Docker
-Hardened Images.
-@y
-You can use the [Docker Scout](__SUBDIR__/scout/) CLI to list and retrieve attestations for Docker
-Hardened Images.
+## Verify image attestations
 @z
 
 @x
@@ -95,80 +101,6 @@ Hardened Images.
 @z
 
 @x
-### Why use Docker Scout instead of cosign directly?
-@y
-### Why use Docker Scout instead of cosign directly?
-@z
-
-@x
-While you can use cosign to verify attestations manually, the Docker Scout CLI
-offers several key advantages when working with Docker Hardened Images and charts:
-@y
-While you can use cosign to verify attestations manually, the Docker Scout CLI
-offers several key advantages when working with Docker Hardened Images and charts:
-@z
-
-@x
-- Purpose-built experience: Docker Scout understands the structure of DHI
-  attestations and naming conventions, so you don't have to construct full
-  digests or URIs manually.
-@y
-- Purpose-built experience: Docker Scout understands the structure of DHI
-  attestations and naming conventions, so you don't have to construct full
-  digests or URIs manually.
-@z
-
-@x
-- Automatic platform resolution: With Scout, you can specify the platform (e.g.,
-  `--platform linux/amd64`), and it automatically verifies the correct image
-  variant. Cosign requires you to look up the digest yourself.
-@y
-- Automatic platform resolution: With Scout, you can specify the platform (e.g.,
-  `--platform linux/amd64`), and it automatically verifies the correct image
-  variant. Cosign requires you to look up the digest yourself.
-@z
-
-@x
-- Human-readable summaries: Scout returns summaries of attestation contents
-  (e.g., package counts, provenance steps), whereas cosign only returns raw
-  signature validation output.
-@y
-- Human-readable summaries: Scout returns summaries of attestation contents
-  (e.g., package counts, provenance steps), whereas cosign only returns raw
-  signature validation output.
-@z
-
-@x
-- One-step validation: The `--verify` flag in `docker scout attest get` validates
-  the attestation and shows the equivalent cosign command, making it easier to
-  understand what's happening behind the scenes.
-@y
-- One-step validation: The `--verify` flag in `docker scout attest get` validates
-  the attestation and shows the equivalent cosign command, making it easier to
-  understand what's happening behind the scenes.
-@z
-
-@x
-- Integrated with Docker Hub and DHI trust model: Docker Scout is tightly
-  integrated with Docker’s attestation infrastructure and public keyring,
-  ensuring compatibility and simplifying verification for users within the
-  Docker ecosystem.
-@y
-- Integrated with Docker Hub and DHI trust model: Docker Scout is tightly
-  integrated with Docker’s attestation infrastructure and public keyring,
-  ensuring compatibility and simplifying verification for users within the
-  Docker ecosystem.
-@z
-
-@x
-In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving
-you full visibility and the option to fall back to cosign when needed.
-@y
-In short, Docker Scout streamlines the verification process and reduces the chances of human error, while still giving
-you full visibility and the option to fall back to cosign when needed.
-@z
-
-@x
 ### List available attestations
 @y
 ### List available attestations
@@ -178,6 +110,14 @@ you full visibility and the option to fall back to cosign when needed.
 To list attestations for a mirrored DHI image:
 @y
 To list attestations for a mirrored DHI image:
+@z
+
+@x
+{{< tabs group="tool" >}}
+{{< tab name="Docker Scout" >}}
+@y
+{{< tabs group="tool" >}}
+{{< tab name="Docker Scout" >}}
 @z
 
 @x
@@ -201,9 +141,63 @@ This command shows all available attestations, including SBOMs, provenance, vuln
 @z
 
 @x
+{{< /tab >}}
+{{< tab name="regctl" >}}
+@y
+{{< /tab >}}
+{{< tab name="regctl" >}}
+@z
+
+@x
+First, authenticate to both registries. Prepare a [personal access token
+(PAT)](../../security/access-tokens.md) for your user with `read only` access:
+@y
+First, authenticate to both registries. Prepare a [personal access token
+(PAT)](../../security/access-tokens.md) for your user with `read only` access:
+@z
+
+% snip command...
+
+@x
+Then list attestations using the `--external` flag. DHI repositories store image
+layers on `dhi.io` (or `docker.io` for mirrored images) and signed attestations
+in `registry.scout.docker.com`:
+@y
+Then list attestations using the `--external` flag. DHI repositories store image
+layers on `dhi.io` (or `docker.io` for mirrored images) and signed attestations
+in `registry.scout.docker.com`:
+@z
+
+% snip command...
+
+@x
+For example:
+@y
+For example:
+@z
+
+% snip command...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ### Retrieve a specific attestation
 @y
 ### Retrieve a specific attestation
+@z
+
+@x
+{{< tabs group="tool" >}}
+{{< tab name="Docker Scout" >}}
+@y
+{{< tabs group="tool" >}}
+{{< tab name="Docker Scout" >}}
 @z
 
 @x
@@ -243,17 +237,49 @@ To retrieve only the predicate body:
 % snip command...
 
 @x
-For example:
+{{< /tab >}}
+{{< tab name="regctl" >}}
 @y
-For example:
+{{< /tab >}}
+{{< tab name="regctl" >}}
+@z
+
+@x
+Once you've listed attestations, download the full attestation artifact using the digest from the `Name` field:
+@y
+Once you've listed attestations, download the full attestation artifact using the digest from the `Name` field:
 @z
 
 % snip command...
 
 @x
-### Validate the attestation with Docker Scout
+For example, to save a SLSA provenance attestation:
 @y
-### Validate the attestation with Docker Scout
+For example, to save a SLSA provenance attestation:
+@z
+
+% snip command...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+### Validate the attestation
+@y
+### Validate the attestation
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Scout" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Scout" >}}
 @z
 
 @x
@@ -287,15 +313,65 @@ For example, to verify the SBOM attestation for the `dhi.io/node:20.19-debian12`
 % snip command...
 
 @x
+{{< /tab >}}
+{{< tab name="cosign" >}}
+@y
+{{< /tab >}}
+{{< tab name="cosign" >}}
+@z
+
+@x
+Once you've listed the attestations and obtained the digest from the `Name` field, verify them using cosign:
+@y
+Once you've listed the attestations and obtained the digest from the `Name` field, verify them using cosign:
+@z
+
+% snip command...
+
+@x
+For example:
+@y
+For example:
+@z
+
+% snip command...
+
+@x
+> [!NOTE]
+>
+> The `--insecure-ignore-tlog=true` flag is needed because DHI attestations
+> may not be recorded in the public Rekor transparency log to protect private
+> customer information. The attestation signature is still verified against
+> Docker's public key.
+@y
+> [!NOTE]
+>
+> The `--insecure-ignore-tlog=true` flag is needed because DHI attestations
+> may not be recorded in the public Rekor transparency log to protect private
+> customer information. The attestation signature is still verified against
+> Docker's public key.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 #### Handle missing transparency log entries
 @y
 #### Handle missing transparency log entries
 @z
 
 @x
-When using `--verify`, you may sometimes see an error like:
+When using `--verify` with Docker Scout or `cosign verify`, you may sometimes
+see an error like:
 @y
-When using `--verify`, you may sometimes see an error like:
+When using `--verify` with Docker Scout or `cosign verify`, you may sometimes
+see an error like:
 @z
 
 % snip output...

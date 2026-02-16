@@ -12,6 +12,7 @@ copyfiles = \
 	components.css   \
 	global.css       \
 	hack.css         \
+	pagefind.css     \
 	syntax-dark.css  \
 	syntax-light.css \
 	theme.css

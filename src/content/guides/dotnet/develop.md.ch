@@ -383,7 +383,7 @@ IDE またはテキストエディターを使って `docker-dotnet-sample/src/P
 % snip diff...
 
 @x
-Save the changes to `Index.cshmtl` and then wait a few seconds for the application to rebuild. Refresh [http://localhost:8080](http://localhost:8080) in your browser and verify that the updated text appears.
+Save the changes to `Index.cshtml` and then wait a few seconds for the application to rebuild. Refresh [http://localhost:8080](http://localhost:8080) in your browser and verify that the updated text appears.
 @y
 `Index.cshmtl` への変更を保存します。
 アプリケーションが再ビルドされるまでしばらく待ちます。
@@ -425,7 +425,33 @@ The following is the updated Dockerfile.
 以下は修正した Dockerfile ファイルです。
 @z
 
+@x
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@y
+{{< tabs >}}
+{{< tab name="Using Docker Hardened Images" >}}
+@z
+
 % snip code...
+
+@x
+{{< /tab >}}
+{{< tab name="Using the official .NET 10 image" >}}
+@y
+{{< /tab >}}
+{{< tab name="Using the official .NET 10 image" >}}
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
 
 @x
 The following is the updated `compose.yaml` file.
@@ -436,9 +462,9 @@ The following is the updated `compose.yaml` file.
 % snip code...
 
 @x
-Your containerized application will now use the `mcr.microsoft.com/dotnet/sdk:8.0-alpine` image, which includes development tools like `dotnet test`. Continue to the next section to learn how you can run `dotnet test`.
+Your containerized application will now use the SDK image (either `dhi.io/dotnet:10-sdk` for DHI or `mcr.microsoft.com/dotnet/sdk:10.0-alpine` for official images), which includes development tools like `dotnet test`. Continue to the next section to learn how you can run `dotnet test`.
 @y
-コンテナー化したアプリケーションは、今は `mcr.microsoft.com/dotnet/sdk:8.0-alpine` イメージを用いるようになりました。
+コンテナー化したアプリケーションは、今は SDK イメージ (DHI の場合は `dhi.io/dotnet:10-sdk`、公式イメージの場合は `mcr.microsoft.com/dotnet/sdk:8.0-alpine`) を用いるようになりました。
 ここには `dotnet test` のような開発ツールが含まれています。
 続けて次の節では `dotnet test` の実行方法について学びます。
 @z

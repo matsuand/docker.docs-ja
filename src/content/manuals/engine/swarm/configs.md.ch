@@ -328,11 +328,11 @@ Docker configs.
 @x
 The `docker stack` command supports defining configs in a Compose file.
 However, the `configs` key is not supported for `docker compose`. See
-[the Compose file reference](/reference/compose-file/legacy-versions.md) for details.
+[the Compose file reference](/reference/compose-file/configs.md) for details.
 @y
 The `docker stack` command supports defining configs in a Compose file.
 However, the `configs` key is not supported for `docker compose`. See
-[the Compose file reference](reference/compose-file/legacy-versions.md) for details.
+[the Compose file reference](reference/compose-file/configs.md) for details.
 @z
 
 @x
