@@ -243,7 +243,8 @@ copyfiles = \
 	dhi-examples-nodejs.webp \
 	dhi-examples-python.webp \
 	dhi-migrate-doi.webp     \
-	dhi-migrate-wolfi.webp
+	dhi-migrate-wolfi.webp   \
+	ros2.jpg
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
