@@ -320,6 +320,16 @@ After the diagnostics have finished, the terminal displays your diagnostics ID a
 @z
 
 @x
+> [!TIP]
+>
+> You can also use the [`docker desktop diagnose` command](/manuals/desktop/features/desktop-cli.md) to diagnose Docker Desktop and upload the diagnostics ID.
+@y
+> [!TIP]
+>
+> You can also use the [`docker desktop diagnose` command](/manuals/desktop/features/desktop-cli.md) to diagnose Docker Desktop and upload the diagnostics ID.
+@z
+
+@x
 To view the contents of the diagnostic file:
 @y
 To view the contents of the diagnostic file:

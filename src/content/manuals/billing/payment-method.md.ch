@@ -430,9 +430,11 @@ organization.
 @z
 
 @x
-If you want to pay by invoice, [upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/).
+> [!TIP]
+> Do you need to pay by invoice? [Upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/) and choose the annual subscription.
 @y
-If you want to pay by invoice, [upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/).
+> [!TIP]
+> Do you need to pay by invoice? [Upgrade to a Docker Business or Docker Team plan](https://www.docker.com/pricing/) and choose the annual subscription.
 @z
 
 @x

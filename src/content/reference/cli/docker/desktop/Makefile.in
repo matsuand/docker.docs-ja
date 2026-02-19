@@ -297,12 +297,13 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = disable enable engine
 bases = \
-	_index.md  \
-	logs.md    \
-	restart.md \
-	start.md   \
-	status.md  \
-	stop.md    \
+	_index.md   \
+	diagnose.md \
+	logs.md     \
+	restart.md  \
+	start.md    \
+	status.md   \
+	stop.md     \
 	update.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

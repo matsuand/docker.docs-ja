@@ -8,6 +8,7 @@ long: |-
     Run an agent in a sandbox. Create the sandbox if it does not exist.
 
     Pass agent arguments after the "--" separator.
+    Additional workspaces can be provided as extra arguments. Append ":ro" to mount them read-only.
 @y
 command: docker sandbox run
 short: Run an agent in a sandbox
@@ -15,12 +16,47 @@ long: |-
     Run an agent in a sandbox. Create the sandbox if it does not exist.
 
     Pass agent arguments after the "--" separator.
+    Additional workspaces can be provided as extra arguments. Append ":ro" to mount them read-only.
 @z
 
 @x
-usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT_ARGS...]
+    Examples:
+      # Create and run a sandbox with claude in current directory
+      docker sandbox run claude
+
+      # Create and run a sandbox with claude in current directory (explicit)
+      docker sandbox run claude .
+
+      # Create and run with additional workspaces (read-only)
+      docker sandbox run claude . /path/to/docs:ro
+
+      # Run an existing sandbox
+      docker sandbox run existing-sandbox
+
+      # Run a sandbox with agent arguments
+      docker sandbox run claude -- --continue
 @y
-usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT_ARGS...]
+    Examples:
+      # Create and run a sandbox with claude in current directory
+      docker sandbox run claude
+
+      # Create and run a sandbox with claude in current directory (explicit)
+      docker sandbox run claude .
+
+      # Create and run with additional workspaces (read-only)
+      docker sandbox run claude . /path/to/docs:ro
+
+      # Run an existing sandbox
+      docker sandbox run existing-sandbox
+
+      # Run a sandbox with agent arguments
+      docker sandbox run claude -- --continue
+@z
+
+@x
+usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT [WORKSPACE] [EXTRA_WORKSPACE...] [-- AGENT_ARGS...]
+@y
+usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT [WORKSPACE] [EXTRA_WORKSPACE...] [-- AGENT_ARGS...]
 @z
 
 % pname
@@ -33,16 +69,24 @@ usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT WORKSPACE [-- AGENT
       description: Return sandbox ID without running agent (hidden, for testing)
 @z
 
-@x load-local-template
-      description: Load a locally built template image into the sandbox
-@y
-      description: Load a locally built template image into the sandbox
-@z
-
 @x name
       description: 'Name for the sandbox (default: <agent>-<workdir>)'
 @y
       description: 'Name for the sandbox (default: <agent>-<workdir>)'
+@z
+
+@x patch-settings
+      description: Intercept claude settings API call and patch payload
+@y
+      description: Intercept claude settings API call and patch payload
+@z
+
+@x pull-template
+      description: |
+        Template image pull policy: always (always pull from registry), missing (pull only if not cached), never (use only cached images)
+@y
+      description: |
+        Template image pull policy: always (always pull from registry), missing (pull only if not cached), never (use only cached images)
 @z
 
 @x template
@@ -154,19 +198,4 @@ examples: |-
 @z
 
 % snip command...
-
-@x
-    ### Run with locally built template
-@y
-    ### Run with locally built template
-@z
-
-@x
-    Use `--load-local-template` to test local template changes:
-@y
-    Use `--load-local-template` to test local template changes:
-@z
-
-% snip command...
-
 % snip directives...

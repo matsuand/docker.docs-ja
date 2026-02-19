@@ -47,16 +47,18 @@ usage: docker sandbox network proxy <sandbox> [OPTIONS]
 
 @x bypass-cidr
       description: |
-        Bypass proxy for an IP range in CIDR notation (can be specified multiple times)
+        Bypass MITM proxy for an IP range in CIDR notation (can be specified multiple times)
 @y
       description: |
-        Bypass proxy for an IP range in CIDR notation (can be specified multiple times)
+        Bypass MITM proxy for an IP range in CIDR notation (can be specified multiple times)
 @z
 
 @x bypass-host
-      description: Bypass proxy for a domain or IP (can be specified multiple times)
+      description: |
+        Bypass MITM proxy for a domain or IP (can be specified multiple times)
 @y
-      description: Bypass proxy for a domain or IP (can be specified multiple times)
+      description: |
+        Bypass MITM proxy for a domain or IP (can be specified multiple times)
 @z
 
 @x policy
@@ -132,33 +134,33 @@ examples: |-
 % snip command...
 
 @x
-    ### Bypass proxy for domain (--bypass-host) {#bypass-host}
+    ### Bypass MITM proxy for domain (--bypass-host) {#bypass-host}
 @y
-    ### Bypass proxy for domain (--bypass-host) {#bypass-host}
+    ### Bypass MITM proxy for domain (--bypass-host) {#bypass-host}
 @z
 
 % snip code...
 
 @x
-    Bypass proxy for specific domains:
+    Bypass MITM proxy for specific domains:
 @y
-    Bypass proxy for specific domains:
+    Bypass MITM proxy for specific domains:
 @z
 
 % snip command...
 
 @x
-    ### Bypass proxy for IP range (--bypass-cidr) {#bypass-cidr}
+    ### Bypass MITM proxy for IP range (--bypass-cidr) {#bypass-cidr}
 @y
-    ### Bypass proxy for IP range (--bypass-cidr) {#bypass-cidr}
+    ### Bypass MITM proxy for IP range (--bypass-cidr) {#bypass-cidr}
 @z
 
 % snip code...
 
 @x
-    Bypass proxy for an IP range:
+    Bypass MITM proxy for an IP range:
 @y
-    Bypass proxy for an IP range:
+    Bypass MITM proxy for an IP range:
 @z
 
 % snip command...

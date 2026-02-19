@@ -102,6 +102,48 @@ subscription. Contact your Docker sales representative or
 @z
 
 @x
+## Configure DVP analytics settings
+@y
+## Configure DVP analytics settings
+@z
+
+@x
+Organization owners and editors can configure DVP analytics settings through the
+Admin Console to control tracked companies and benchmark report allocations for
+your verified publisher namespaces.
+@y
+Organization owners and editors can configure DVP analytics settings through the
+Admin Console to control tracked companies and benchmark report allocations for
+your verified publisher namespaces.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console** > **Verified Publisher**.
+3. Configure the settings:
+   - **Tracked companies**: Set the number of companies to track for reporting
+     purposes. This setting determines how many company domains appear in your
+     [Tracked companies report](#tracked-companies-report). You can only set
+     this number up to the maximum included in your DVP subscription.
+   - **Benchmark report allocations**: If your organization has benchmark
+     reports enabled, enter the number of companies to include in the benchmark
+     report for each namespace listed.
+4. Select **Save** to apply your changes.
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console** > **Verified Publisher**.
+3. Configure the settings:
+   - **Tracked companies**: Set the number of companies to track for reporting
+     purposes. This setting determines how many company domains appear in your
+     [Tracked companies report](#tracked-companies-report). You can only set
+     this number up to the maximum included in your DVP subscription.
+   - **Benchmark report allocations**: If your organization has benchmark
+     reports enabled, enter the number of companies to include in the benchmark
+     report for each namespace listed.
+4. Select **Save** to apply your changes.
+@z
+
+@x
 ### Summary report
 @y
 ### Summary report

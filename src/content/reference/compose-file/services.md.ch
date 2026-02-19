@@ -765,11 +765,11 @@ Simple example:
 @x
 Compose guarantees dependency services have been started before
 starting a dependent service.
-Compose waits for dependency services to be "ready" before
+With short syntax, Compose does not wait for dependency services to be "healthy" before
 starting a dependent service.
 @y
 依存するサービスを持つ対象サービスは、その依存サービスが起動してから対象サービスが起動するよう、Compose が確実に保証します。
-依存するサービスが起動するまで、その対象サービスは「待機状態」に置かれます。
+短い文法の場合、依存するサービスが起動するまで、Compose はその依存サービスが「待機状態」になるまで待ちません。
 @z
 
 @x

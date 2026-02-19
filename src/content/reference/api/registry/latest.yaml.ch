@@ -488,6 +488,16 @@ tags:
 @z
 
 @x
+      > **Note**
+      >
+      > Manifest deletion operations may experience latency and could return a `500 Internal Server Error` during deletion. The system automatically retries the deletion in the background, so the manifest will eventually be removed. You do not need to manually retry the request.
+@y
+      > **Note**
+      >
+      > Manifest deletion operations may experience latency and could return a `500 Internal Server Error` during deletion. The system automatically retries the deletion in the background, so the manifest will eventually be removed. You do not need to manually retry the request.
+@z
+
+@x
       This section outlines the basic steps to delete an image using the registry API.
 @y
       This section outlines the basic steps to delete an image using the registry API.
@@ -1455,6 +1465,21 @@ paths:
 
 @x
         This operation requires `delete` access to the repository.
+@y
+        This operation requires `delete` access to the repository.
+@z
+
+@x
+        > **Note**
+        >
+        > Manifest deletion operations may take some time and could return a `500 Internal Server Error`. The system automatically retries the deletion in the background. Manual intervention is not required.
+@y
+        > **Note**
+        >
+        > Manifest deletion operations may take some time and could return a `500 Internal Server Error`. The system automatically retries the deletion in the background. Manual intervention is not required.
+@z
+
+@x
       parameters:
         - name: name
           in: path
@@ -1506,7 +1531,6 @@ paths:
       description: |
         Initiate an upload session for a blob (layer or config) in a repository.
 @y
-        This operation requires `delete` access to the repository.
       parameters:
         - name: name
           in: path

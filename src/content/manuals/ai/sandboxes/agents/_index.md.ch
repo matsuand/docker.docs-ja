@@ -5,9 +5,11 @@
 
 @x
 title: Supported agents
+linkTitle: Agents
 description: AI coding agents supported by Docker Sandboxes with experimental status and configuration details.
 @y
 title: Supported agents
+linkTitle: Agents
 description: AI coding agents supported by Docker Sandboxes with experimental status and configuration details.
 @z
 
@@ -32,23 +34,27 @@ inside microVMs with private Docker daemons.
 @z
 
 @x
-| Agent       | Command    | Status       | Notes                      |
-| ----------- | ---------- | ------------ | -------------------------- |
-| Claude Code | `claude`   | Experimental | Most tested implementation |
-| Codex       | `codex`    | Experimental | In development             |
-| Copilot     | `copilot`  | Experimental | In development             |
-| Gemini      | `gemini`   | Experimental | In development             |
-| cagent      | `cagent`   | Experimental | In development             |
-| Kiro        | `kiro`     | Experimental | In development             |
+| Agent       | Command    | Status       | Notes                                     |
+| ----------- | ---------- | ------------ | ----------------------------------------- |
+| Claude Code | `claude`   | Experimental | Most tested implementation                |
+| Codex       | `codex`    | Experimental | In development                            |
+| Copilot     | `copilot`  | Experimental | In development                            |
+| Gemini      | `gemini`   | Experimental | In development                            |
+| cagent      | `cagent`   | Experimental | In development                            |
+| Kiro        | `kiro`     | Experimental | In development                            |
+| OpenCode    | `opencode` | Experimental | In development                            |
+| Custom shell | `shell`   | Experimental | Minimal environment for manual setup      |
 @y
-| Agent       | Command    | Status       | Notes                      |
-| ----------- | ---------- | ------------ | -------------------------- |
-| Claude Code | `claude`   | Experimental | Most tested implementation |
-| Codex       | `codex`    | Experimental | In development             |
-| Copilot     | `copilot`  | Experimental | In development             |
-| Gemini      | `gemini`   | Experimental | In development             |
-| cagent      | `cagent`   | Experimental | In development             |
-| Kiro        | `kiro`     | Experimental | In development             |
+| Agent       | Command    | Status       | Notes                                     |
+| ----------- | ---------- | ------------ | ----------------------------------------- |
+| Claude Code | `claude`   | Experimental | Most tested implementation                |
+| Codex       | `codex`    | Experimental | In development                            |
+| Copilot     | `copilot`  | Experimental | In development                            |
+| Gemini      | `gemini`   | Experimental | In development                            |
+| cagent      | `cagent`   | Experimental | In development                            |
+| Kiro        | `kiro`     | Experimental | In development                            |
+| OpenCode    | `opencode` | Experimental | In development                            |
+| Custom shell | `shell`   | Experimental | Minimal environment for manual setup      |
 @z
 
 @x
@@ -110,17 +116,39 @@ sandbox when created and cannot be changed later.
 @z
 
 @x
-Different agents may require different authentication methods or configuration.
+Each agent has its own credential requirements and authentication flow.
+Credentials are scoped per agent and must be provided specifically for that
+agent (no fallback authentication methods are used).
+@y
+Each agent has its own credential requirements and authentication flow.
+Credentials are scoped per agent and must be provided specifically for that
+agent (no fallback authentication methods are used).
+@z
+
+@x
 See the agent-specific documentation:
 @y
-Different agents may require different authentication methods or configuration.
 See the agent-specific documentation:
 @z
 
 @x
-- [Claude Code configuration](claude-code.md)
+- [Claude Code](./claude-code.md)
+- [cagent](./cagent.md)
+- [Codex](./codex.md)
+- [Copilot](./copilot.md)
+- [Gemini](./gemini.md)
+- [Kiro](./kiro.md)
+- [OpenCode](./opencode.md)
+- [Custom shell](./shell.md)
 @y
-- [Claude Code configuration](claude-code.md)
+- [Claude Code](./claude-code.md)
+- [cagent](./cagent.md)
+- [Codex](./codex.md)
+- [Copilot](./copilot.md)
+- [Gemini](./gemini.md)
+- [Kiro](./kiro.md)
+- [OpenCode](./opencode.md)
+- [Custom shell](./shell.md)
 @z
 
 @x
@@ -141,20 +169,4 @@ See the agent-specific documentation:
   - macOS with virtualization.framework
   - Windows with Hyper-V {{< badge color=violet text=Experimental >}}
 - API keys or credentials for your chosen agent
-@z
-
-@x
-## Next steps
-@y
-## Next steps
-@z
-
-@x
-- [Claude Code configuration](claude-code.md)
-- [Custom templates](templates.md)
-- [Using sandboxes effectively](workflows.md)
-@y
-- [Claude Code configuration](claude-code.md)
-- [Custom templates](templates.md)
-- [Using sandboxes effectively](workflows.md)
 @z

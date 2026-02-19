@@ -6,7 +6,6 @@ copyfiles = \
 	build-ui-jaeger-screenshot.png \
 	console.png                    \
 	dashboard.webp                 \
-	gordon-run-ctr.png             \
 	hyperv-enabled.png             \
 	resource-saver-settings.webp   \
 	shared-folder-on-demand.png    \

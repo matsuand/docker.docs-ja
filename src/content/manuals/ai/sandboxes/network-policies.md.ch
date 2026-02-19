@@ -156,6 +156,74 @@ the name `localhost` will work in the allow-list.
 @z
 
 @x
+## Default policy
+@y
+## Default policy
+@z
+
+@x
+New sandboxes use this default policy unless you configure a custom policy:
+@y
+New sandboxes use this default policy unless you configure a custom policy:
+@z
+
+@x
+**Policy mode:** `allow` (permit all traffic except what's explicitly blocked)
+@y
+**Policy mode:** `allow` (permit all traffic except what's explicitly blocked)
+@z
+
+@x
+**Blocked CIDRs:**
+@y
+**Blocked CIDRs:**
+@z
+
+@x
+- `10.0.0.0/8` - Private network (Class A)
+- `127.0.0.0/8` - Loopback addresses
+- `169.254.0.0/16` - Link-local addresses
+- `172.16.0.0/12` - Private network (Class B)
+- `192.168.0.0/16` - Private network (Class C)
+- `::1/128` - IPv6 loopback
+- `fc00::/7` - IPv6 unique local addresses
+- `fe80::/10` - IPv6 link-local addresses
+@y
+- `10.0.0.0/8` - Private network (Class A)
+- `127.0.0.0/8` - Loopback addresses
+- `169.254.0.0/16` - Link-local addresses
+- `172.16.0.0/12` - Private network (Class B)
+- `192.168.0.0/16` - Private network (Class C)
+- `::1/128` - IPv6 loopback
+- `fc00::/7` - IPv6 unique local addresses
+- `fe80::/10` - IPv6 link-local addresses
+@z
+
+@x
+**Allowed hosts:**
+@y
+**Allowed hosts:**
+@z
+
+@x
+- `*.anthropic.com` - Claude API and services
+- `platform.claude.com:443` - Claude platform services
+@y
+- `*.anthropic.com` - Claude API and services
+- `platform.claude.com:443` - Claude platform services
+@z
+
+@x
+The default policy blocks access to private networks, localhost, and cloud
+metadata services while allowing internet access. Explicitly allowed hosts
+bypass CIDR checks for performance.
+@y
+The default policy blocks access to private networks, localhost, and cloud
+metadata services while allowing internet access. Explicitly allowed hosts
+bypass CIDR checks for performance.
+@z
+
+@x
 ## Monitor network activity
 @y
 ## Monitor network activity
@@ -178,9 +246,97 @@ $ docker sandbox network log
 @z
 
 @x
-Network logs help you understand agent behavior and define policies.
+The network log shows aggregated summaries of HTTP/HTTPS network requests:
 @y
-Network logs help you understand agent behavior and define policies.
+The network log shows aggregated summaries of HTTP/HTTPS network requests:
+@z
+
+@x
+- **Allowed requests** - Requests that were permitted by your network policy
+- **Blocked requests** - Requests that were denied by your network policy
+@y
+- **Allowed requests** - Requests that were permitted by your network policy
+- **Blocked requests** - Requests that were denied by your network policy
+@z
+
+@x
+For each host accessed, the log shows:
+@y
+For each host accessed, the log shows:
+@z
+
+@x
+- **Sandbox** - Name of the sandbox making the request
+- **Host** - The destination (hostname and port)
+- **Rule** - The policy rule that matched this request (or `<default policy>`)
+- **Last Seen** - When this host was most recently accessed
+- **Count** - Number of requests to this host since tracking began
+@y
+- **Sandbox** - Name of the sandbox making the request
+- **Host** - The destination (hostname and port)
+- **Rule** - The policy rule that matched this request (or `<default policy>`)
+- **Last Seen** - When this host was most recently accessed
+- **Count** - Number of requests to this host since tracking began
+@z
+
+@x
+Use network logs to understand agent behavior, identify blocked requests that
+should be allowed, and debug network policy issues. The logs are especially
+helpful when defining policies - they show exactly what your agent is trying to
+access.
+@y
+Use network logs to understand agent behavior, identify blocked requests that
+should be allowed, and debug network policy issues. The logs are especially
+helpful when defining policies - they show exactly what your agent is trying to
+access.
+@z
+
+@x
+### Example log output
+@y
+### Example log output
+@z
+
+@x
+```console
+$ docker sandbox network log
+Blocked requests:
+SANDBOX          HOST                    RULE             LAST SEEN         COUNT
+my-sandbox       internal.corp.com:443   <default policy> 14:30:15 12-Feb   3
+my-sandbox       192.168.1.100:22        <default policy> 14:25:10 12-Feb   1
+@y
+```console
+$ docker sandbox network log
+Blocked requests:
+SANDBOX          HOST                    RULE             LAST SEEN         COUNT
+my-sandbox       internal.corp.com:443   <default policy> 14:30:15 12-Feb   3
+my-sandbox       192.168.1.100:22        <default policy> 14:25:10 12-Feb   1
+@z
+
+@x
+Allowed requests:
+SANDBOX          HOST                          RULE                   LAST SEEN         COUNT
+my-sandbox       api.anthropic.com:443         api.anthropic.com      14:35:21 12-Feb   15
+my-sandbox       registry.npmjs.org:443        *.npmjs.org            14:32:18 12-Feb   8
+my-sandbox       raw.githubusercontent.com:443 *.githubusercontent.com 14:30:45 12-Feb   2
+```
+@y
+Allowed requests:
+SANDBOX          HOST                          RULE                   LAST SEEN         COUNT
+my-sandbox       api.anthropic.com:443         api.anthropic.com      14:35:21 12-Feb   15
+my-sandbox       registry.npmjs.org:443        *.npmjs.org            14:32:18 12-Feb   8
+my-sandbox       raw.githubusercontent.com:443 *.githubusercontent.com 14:30:45 12-Feb   2
+```
+@z
+
+@x
+The log displays both blocked and allowed requests in separate sections. Use
+`--json` for machine-readable output, `--quiet` to suppress headers, or
+`--limit N` to show only the first N entries.
+@y
+The log displays both blocked and allowed requests in separate sections. Use
+`--json` for machine-readable output, `--quiet` to suppress headers, or
+`--limit N` to show only the first N entries.
 @z
 
 @x
@@ -254,29 +410,13 @@ This policy:
 @x
 > [!NOTE]
 > These CIDR blocks are already blocked by default. The example above shows how
-> to explicitly configure them if needed. The default policy blocks:
->
-> - `10.0.0.0/8`
-> - `127.0.0.0/8`
-> - `169.254.0.0/16`
-> - `172.16.0.0/12`
-> - `192.168.0.0/16`
-> - `::1/128`
-> - `fc00::/7`
-> - `fe80::/10`
+> to explicitly configure them. See [Default policy](#default-policy) for the
+> complete list.
 @y
 > [!NOTE]
 > These CIDR blocks are already blocked by default. The example above shows how
-> to explicitly configure them if needed. The default policy blocks:
->
-> - `10.0.0.0/8`
-> - `127.0.0.0/8`
-> - `169.254.0.0/16`
-> - `172.16.0.0/12`
-> - `192.168.0.0/16`
-> - `::1/128`
-> - `fc00::/7`
-> - `fe80::/10`
+> to explicitly configure them. See [Default policy](#default-policy) for the
+> complete list.
 @z
 
 @x
@@ -798,13 +938,11 @@ first sandbox starts, but only if it doesn't already exist.
 @x
 The current default policy is `allow`, which permits all outbound connections
 except to blocked CIDR ranges (private networks, localhost, and cloud metadata
-services). This default will change to `deny` in a future release to provide
-more restrictive defaults.
+services).
 @y
 The current default policy is `allow`, which permits all outbound connections
 except to blocked CIDR ranges (private networks, localhost, and cloud metadata
-services). This default will change to `deny` in a future release to provide
-more restrictive defaults.
+services).
 @z
 
 @x
@@ -839,20 +977,4 @@ modified by upgrades, preserving your custom configuration.
 Review and customize the default policy to match your security requirements
 before creating new sandboxes. Once created, the default policy file won't be
 modified by upgrades, preserving your custom configuration.
-@z
-
-@x
-## Next steps
-@y
-## Next steps
-@z
-
-@x
-- [Architecture](architecture.md)
-- [Using sandboxes effectively](workflows.md)
-- [Custom templates](templates.md)
-@y
-- [Architecture](architecture.md)
-- [Using sandboxes effectively](workflows.md)
-- [Custom templates](templates.md)
 @z

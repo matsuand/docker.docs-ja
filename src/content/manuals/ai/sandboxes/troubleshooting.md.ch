@@ -18,9 +18,9 @@ description: Resolve common issues when sandboxing agents locally.
 @z
 
 @x
-This guide helps you resolve common issues when sandboxing Claude Code locally.
+This guide helps you resolve common issues when using Docker Sandboxes with AI coding agents.
 @y
-This guide helps you resolve common issues when sandboxing Claude Code locally.
+This guide helps you resolve common issues when using Docker Sandboxes with AI coding agents.
 @z
 
 @x
@@ -327,4 +327,42 @@ multiple sandboxes concurrently.
 @y
 To avoid this issue, launch sandboxes one at a time rather than creating
 multiple sandboxes concurrently.
+@z
+
+@x
+## Persistent issues or corrupted state
+@y
+## Persistent issues or corrupted state
+@z
+
+@x
+If sandboxes behave unexpectedly or fail to start, reset all sandbox state:
+@y
+If sandboxes behave unexpectedly or fail to start, reset all sandbox state:
+@z
+
+@x
+```console
+$ docker sandbox reset
+```
+@y
+```console
+$ docker sandbox reset
+```
+@z
+
+@x
+This stops all running VMs and deletes all sandbox data. The daemon continues
+running. After reset, create fresh sandboxes as needed.
+@y
+This stops all running VMs and deletes all sandbox data. The daemon continues
+running. After reset, create fresh sandboxes as needed.
+@z
+
+@x
+Use reset when troubleshooting persistent problems or to reclaim disk space from
+all sandboxes at once.
+@y
+Use reset when troubleshooting persistent problems or to reclaim disk space from
+all sandboxes at once.
 @z

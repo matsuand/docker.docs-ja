@@ -133,11 +133,11 @@ Use it directly from your local Docker daemon:
 % snip command...
 
 @x
-The `--load-local-template` flag tells the sandbox to use an image from your
-local Docker daemon. Without it, the sandbox looks for the image in a registry.
+The `--pull-template never` flag tells the sandbox to use local template
+images.
 @y
-The `--load-local-template` flag tells the sandbox to use an image from your
-local Docker daemon. Without it, the sandbox looks for the image in a registry.
+The `--pull-template never` flag tells the sandbox to use local template
+images.
 @z
 
 @x
@@ -149,9 +149,79 @@ To share the template with others, push it to a registry:
 % snip command...
 
 @x
-Once pushed to a registry, you don't need `--load-local-template`.
+For registry images, the default `--pull-template missing` policy automatically
+pulls if not cached.
 @y
-Once pushed to a registry, you don't need `--load-local-template`.
+For registry images, the default `--pull-template missing` policy automatically
+pulls if not cached.
+@z
+
+@x
+## Template caching and pull policies
+@y
+## Template caching and pull policies
+@z
+
+@x
+Docker Sandboxes caches template images to speed up sandbox creation. The
+`--pull-template` flag controls when images are pulled from registries.
+@y
+Docker Sandboxes caches template images to speed up sandbox creation. The
+`--pull-template` flag controls when images are pulled from registries.
+@z
+
+@x
+- `--pull-template missing` (default)
+@y
+- `--pull-template missing` (default)
+@z
+
+@x
+  Pull the image only if it's not already cached locally. First sandbox
+  creation automatically pulls the image, and subsequent sandboxes are created
+  quickly because the image is cached.
+@y
+  Pull the image only if it's not already cached locally. First sandbox
+  creation automatically pulls the image, and subsequent sandboxes are created
+  quickly because the image is cached.
+@z
+
+@x
+- `--pull-template always`
+@y
+- `--pull-template always`
+@z
+
+@x
+  Always pull the image from the registry before creating the sandbox, even if
+  it's cached. Slower than `missing` but guarantees freshness.
+@y
+  Always pull the image from the registry before creating the sandbox, even if
+  it's cached. Slower than `missing` but guarantees freshness.
+@z
+
+@x
+- `--pull-template never`
+@y
+- `--pull-template never`
+@z
+
+@x
+  Use only cached images. Never pull from a registry. Fails if the image isn't
+  in the cache.
+@y
+  Use only cached images. Never pull from a registry. Fails if the image isn't
+  in the cache.
+@z
+
+@x
+The cache stores template images separately from your host Docker daemon's
+images. Cached images persist across sandbox creation and deletion, but are
+removed when you run `docker sandbox reset`.
+@y
+The cache stores template images separately from your host Docker daemon's
+images. Cached images persist across sandbox creation and deletion, but are
+removed when you run `docker sandbox reset`.
 @z
 
 @x
@@ -189,10 +259,10 @@ environment. Once everything works, exit and save the sandbox as a template:
 % snip command...
 
 @x
-This saves the image to your local Docker daemon. Use `--load-local-template`
+This saves the image to your local Docker daemon. Use `--pull-template never`
 to create new sandboxes from it:
 @y
-This saves the image to your local Docker daemon. Use `--load-local-template`
+This saves the image to your local Docker daemon. Use `--pull-template never`
 to create new sandboxes from it:
 @z
 
@@ -313,20 +383,4 @@ team.
 @y
 Use version tags like `:v1.0` instead of `:latest` for consistency across your
 team.
-@z
-
-@x
-## Next steps
-@y
-## Next steps
-@z
-
-@x
-- [Using sandboxes effectively](workflows.md)
-- [Architecture](architecture.md)
-- [Network policies](network-policies.md)
-@y
-- [Using sandboxes effectively](workflows.md)
-- [Architecture](architecture.md)
-- [Network policies](network-policies.md)
 @z

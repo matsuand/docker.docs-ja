@@ -38,6 +38,58 @@ SLAs. DHI Free offers a secure baseline but no guaranteed remediation timelines.
 @z
 
 @x
+## Build transparency
+@y
+## Build transparency
+@z
+
+@x
+Docker Hardened Images provide transparency into how images are built through
+publicly available definitions and verifiable attestations.
+@y
+Docker Hardened Images provide transparency into how images are built through
+publicly available definitions and verifiable attestations.
+@z
+
+@x
+### Image definitions
+@y
+### Image definitions
+@z
+
+@x
+All image definitions are publicly available in the [catalog
+repository](https://github.com/docker-hardened-images/catalog).
+@y
+All image definitions are publicly available in the [catalog
+repository](https://github.com/docker-hardened-images/catalog).
+@z
+
+@x
+Each image definition is a declarative YAML specification that includes metadata,
+contents, build pipeline steps, security configurations, and runtime settings.
+@y
+Each image definition is a declarative YAML specification that includes metadata,
+contents, build pipeline steps, security configurations, and runtime settings.
+@z
+
+@x
+### SLSA attestations
+@y
+### SLSA attestations
+@z
+
+@x
+Every Docker Hardened Image includes a SLSA Build Level 3 attestation that
+provides verifiable build provenance. For details on SLSA attestations and how to
+verify them, see [SLSA](../core-concepts/slsa.md).
+@y
+Every Docker Hardened Image includes a SLSA Build Level 3 attestation that
+provides verifiable build provenance. For details on SLSA attestations and how to
+verify them, see [SLSA](../core-concepts/slsa.md).
+@z
+
+@x
 ## Build triggers
 @y
 ## Build triggers

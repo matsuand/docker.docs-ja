@@ -18,13 +18,13 @@ description: Migrate from container-based sandboxes to microVM-based sandboxes
 @z
 
 @x
-Docker Desktop 4.58 introduces microVM-based sandboxes, replacing the previous
-container-based implementation. This guide helps you migrate from legacy
-sandboxes to the new architecture.
+The most recent versions of Docker Desktop create microVM-based sandboxes,
+replacing the container-based implementation released in earlier versions. This
+guide helps you migrate from legacy sandboxes to the new architecture.
 @y
-Docker Desktop 4.58 introduces microVM-based sandboxes, replacing the previous
-container-based implementation. This guide helps you migrate from legacy
-sandboxes to the new architecture.
+The most recent versions of Docker Desktop create microVM-based sandboxes,
+replacing the container-based implementation released in earlier versions. This
+guide helps you migrate from legacy sandboxes to the new architecture.
 @z
 
 @x
@@ -54,9 +54,9 @@ policies.
 @z
 
 @x
-After upgrading to Docker Desktop 4.58:
+After upgrading to Docker Desktop 4.58 or later:
 @y
-After upgrading to Docker Desktop 4.58:
+After upgrading to Docker Desktop 4.58 or later:
 @z
 
 @x
@@ -320,18 +320,30 @@ template.
 @x
    ```console
    $ docker sandbox create --template my-sandbox-template:v1 \
-       --load-local-template \
+       --pull-template=never \
        claude ~/project
    ```
 @y
    ```console
    $ docker sandbox create --template my-sandbox-template:v1 \
-       --load-local-template \
+       --pull-template=never \
        claude ~/project
    ```
 @z
 
 @x
+   > [!NOTE]
+   > The `--pull-template` flag was introduced in Docker Desktop 4.61 (Sandbox
+   > version 0.12). For Docker Desktop 4.58–4.60, substitute
+   > `--pull-template=never` with `--load-local-template`.
+@y
+   > [!NOTE]
+   > The `--pull-template` flag was introduced in Docker Desktop 4.61 (Sandbox
+   > version 0.12). For Docker Desktop 4.58–4.60, substitute
+   > `--pull-template=never` with `--load-local-template`.
+@z
+
+@x
 5. Run the sandbox:
 @y
 5. Run the sandbox:
@@ -502,9 +514,9 @@ $ docker sandbox run claude ~/project
 @z
 
 @x
-The agent name (`claude`, `codex`, `gemini`, `cagent`, `kiro`) is now a
-required parameter when creating sandboxes, and you run the sandbox by name.
+The agent name is now a required parameter when creating sandboxes, and you run
+the sandbox by name.
 @y
-The agent name (`claude`, `codex`, `gemini`, `cagent`, `kiro`) is now a
-required parameter when creating sandboxes, and you run the sandbox by name.
+The agent name is now a required parameter when creating sandboxes, and you run
+the sandbox by name.
 @z

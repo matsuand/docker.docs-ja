@@ -43,6 +43,84 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.61.0
+@y
+## 4.61.0
+@z
+
+@x
+{{< release-date date="2026-02-18" >}}
+@y
+{{< release-date date="2026-02-18" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.61.0" build_path="/219004/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.61.0" build_path="/219004/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- You can now customize the left-hand navigation to show only the tabs that matter to you, and hide the ones that don’t.
+@y
+- You can now customize the left-hand navigation to show only the tabs that matter to you, and hide the ones that don’t.
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Linux kernel `v6.12.68`
+- [Docker Engine v29.2.1](https://docs.docker.com/engine/release-notes/29/#2921)
+- Docker Sandbox `v0.12.0`
+@y
+- Linux kernel `v6.12.68`
+- [Docker Engine v29.2.1](https://docs.docker.com/engine/release-notes/29/#2921)
+- Docker Sandbox `v0.12.0`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforma
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Docker Sandboxes:
+   - Added automated image caching to prevent re-downloading images unnecessarily.
+   - Added Shell mode for blank coding agent sandboxes.
+   - Added support for OpenCode.
+   - Added support for mounting multiple workspaces.
+   - Added experimental Linux support (single user only, UID 1000).
+   - Added support for running in WSL 2.
+   - Sandboxes now start in the current working directory if no path is provided.
+@y
+- Docker Sandboxes:
+   - Added automated image caching to prevent re-downloading images unnecessarily.
+   - Added Shell mode for blank coding agent sandboxes.
+   - Added support for OpenCode.
+   - Added support for mounting multiple workspaces.
+   - Added experimental Linux support (single user only, UID 1000).
+   - Added support for running in WSL 2.
+   - Sandboxes now start in the current working directory if no path is provided.
+@z
+
+@x
 ## 4.60.1
 @y
 ## 4.60.1

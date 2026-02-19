@@ -4,11 +4,17 @@
 % __SUBDIR__ 対応
 
 @x
-title: Configure Claude Code
-description: Learn how to configure Claude Code authentication, pass CLI options, and customize your sandboxed agent environment with Docker.
+title: Claude Code sandbox
+description: |
+  Use Claude Code in Docker Sandboxes with authentication, configuration, and
+  YOLO mode for AI-assisted development.
+keywords: docker, sandboxes, claude code, anthropic, ai agent, authentication, configuration
 @y
-title: Configure Claude Code
-description: Learn how to configure Claude Code authentication, pass CLI options, and customize your sandboxed agent environment with Docker.
+title: Claude Code sandbox
+description: |
+  Use Claude Code in Docker Sandboxes with authentication, configuration, and
+  YOLO mode for AI-assisted development.
+keywords: docker, sandboxes, claude code, anthropic, ai agent, authentication, configuration
 @z
 
 @x
@@ -98,9 +104,9 @@ This starts Claude and immediately processes the prompt.
 @z
 
 @x
-Claude Code requires an Anthropic API key. You can authenticate using an environment variable (recommended) or through interactive login.
+Claude Code requires an Anthropic API key. Credentials are scoped per sandbox.
 @y
-Claude Code requires an Anthropic API key. You can authenticate using an environment variable (recommended) or through interactive login.
+Claude Code requires an Anthropic API key. Credentials are scoped per sandbox.
 @z
 
 @x
@@ -182,9 +188,13 @@ The sandbox detects the environment variable and uses it automatically.
 @z
 
 @x
-If no credentials are found, Claude Code prompts you to authenticate interactively when it starts. You can also trigger the login flow manually using the `/login` command within Claude Code.
+If the `ANTHROPIC_API_KEY` environment variable is not set, Claude Code prompts
+you to authenticate interactively when it starts. You can also trigger the login
+flow manually using the `/login` command within Claude Code.
 @y
-If no credentials are found, Claude Code prompts you to authenticate interactively when it starts. You can also trigger the login flow manually using the `/login` command within Claude Code.
+If the `ANTHROPIC_API_KEY` environment variable is not set, Claude Code prompts
+you to authenticate interactively when it starts. You can also trigger the login
+flow manually using the `/login` command within Claude Code.
 @z
 
 @x
@@ -194,19 +204,21 @@ When using interactive authentication:
 @z
 
 @x
-- You'll need to authenticate for each workspace/sandbox separately
+- You must authenticate each sandbox separately
 - If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
 - Authentication sessions aren't persisted outside the sandbox
+- No fallback authentication methods are used
 @y
-- You'll need to authenticate for each workspace/sandbox separately
+- You must authenticate each sandbox separately
 - If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
 - Authentication sessions aren't persisted outside the sandbox
+- No fallback authentication methods are used
 @z
 
 @x
-To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment variable method described above.
+To avoid repeated authentication, set the `ANTHROPIC_API_KEY` environment variable.
 @y
-To avoid repeated authentication, use the `ANTHROPIC_API_KEY` environment variable method described above.
+To avoid repeated authentication, set the `ANTHROPIC_API_KEY` environment variable.
 @z
 
 @x
@@ -256,10 +268,10 @@ $ docker sandbox run <sandbox-name> -- --continue
 @z
 
 @x
-See the [Claude Code CLI reference](https://docs.claude.com/en/docs/claude-code/cli-reference)
+See the [Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference)
 for available options.
 @y
-See the [Claude Code CLI reference](https://docs.claude.com/en/docs/claude-code/cli-reference)
+See the [Claude Code CLI reference](https://code.claude.com/docs/en/cli-reference)
 for available options.
 @z
 
@@ -270,55 +282,19 @@ for available options.
 @z
 
 @x
-The Claude Code sandbox template is a container image that runs inside the
-sandbox VM. It includes:
+Template: `docker/sandbox-templates:claude-code`
 @y
-The Claude Code sandbox template is a container image that runs inside the
-sandbox VM. It includes:
+Template: `docker/sandbox-templates:claude-code`
 @z
 
 @x
-- Ubuntu-based environment with Claude Code
-- Development tools: Docker CLI, GitHub CLI, Node.js, Go, Python 3, Git, ripgrep, jq
-- Non-root `agent` user with sudo access
-- Private Docker daemon for running additional containers
+Claude Code launches with `--dangerously-skip-permissions` by default in sandboxes.
 @y
-- Ubuntu-based environment with Claude Code
-- Development tools: Docker CLI, GitHub CLI, Node.js, Go, Python 3, Git, ripgrep, jq
-- Non-root `agent` user with sudo access
-- Private Docker daemon for running additional containers
+Claude Code launches with `--dangerously-skip-permissions` by default in sandboxes.
 @z
 
 @x
-Claude launches with `--dangerously-skip-permissions` by default in sandboxes.
+See [Custom templates](../templates.md) to build your own agent images.
 @y
-Claude launches with `--dangerously-skip-permissions` by default in sandboxes.
-@z
-
-@x
-You can build custom templates based on `docker/sandbox-templates:claude-code`.
-See [Custom templates](templates.md) for details.
-@y
-You can build custom templates based on `docker/sandbox-templates:claude-code`.
-See [Custom templates](templates.md) for details.
-@z
-
-@x
-## Next steps
-@y
-## Next steps
-@z
-
-@x
-- [Using sandboxes effectively](workflows.md)
-- [Custom templates](templates.md)
-- [Network policies](network-policies.md)
-- [Troubleshooting](troubleshooting.md)
-- [CLI Reference](/reference/cli/docker/sandbox/)
-@y
-- [Using sandboxes effectively](workflows.md)
-- [Custom templates](templates.md)
-- [Network policies](network-policies.md)
-- [Troubleshooting](troubleshooting.md)
-- [CLI Reference](__SUBDIR__/reference/cli/docker/sandbox/)
+See [Custom templates](../templates.md) to build your own agent images.
 @z

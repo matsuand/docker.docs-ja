@@ -4,6 +4,7 @@
 
 bases = \
 	docker_desktop.yaml                      \
+	docker_desktop_diagnose.yaml             \
 	docker_desktop_disable.yaml              \
 	docker_desktop_disable_model_runner.yaml \
 	docker_desktop_enable.yaml               \

@@ -7,7 +7,6 @@ bases = \
 	_index.md           \
 	quickstart.md       \
 	release-notes.md    \
-	service-accounts.md \
 	settings.md         \
 	troubleshoot.md
 

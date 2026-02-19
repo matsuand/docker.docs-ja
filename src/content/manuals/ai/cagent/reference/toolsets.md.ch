@@ -99,7 +99,7 @@ MCP toolsets
 (stdio) or remote servers (HTTP/SSE). MCP enables access to a wide ecosystem
 of standardized tools.
 Custom toolsets
-: Shell scripts wrapped as tools with typed parameters (`script_shell`). This
+: Shell scripts wrapped as tools with typed parameters (`script`). This
 lets you define domain-specific tools for your use case.
 @y
 Built-in toolsets
@@ -111,7 +111,7 @@ MCP toolsets
 (stdio) or remote servers (HTTP/SSE). MCP enables access to a wide ecosystem
 of standardized tools.
 Custom toolsets
-: Shell scripts wrapped as tools with typed parameters (`script_shell`). This
+: Shell scripts wrapped as tools with typed parameters (`script`). This
 lets you define domain-specific tools for your use case.
 @z
 
@@ -189,7 +189,7 @@ agents:
 
 @x
       # Custom shell tools
-      - type: script_shell
+      - type: script
         tools:
           build:
             cmd: npm run build
@@ -197,7 +197,7 @@ agents:
 ```
 @y
       # Custom shell tools
-      - type: script_shell
+      - type: script
         tools:
           build:
             cmd: npm run build
@@ -682,6 +682,128 @@ toolsets:
 @z
 
 @x
+### Tasks
+@y
+### Tasks
+@z
+
+@x
+The `tasks` toolset is an advanced version of the `todo` toolset, and provides
+task management with priorities, dependencies, and persistence. Your agent can
+create tasks with different priority levels, establish prerequisite
+relationships between tasks, and automatically track which tasks are blocked by
+incomplete dependencies. Tasks are sorted by priority and blocking status,
+making it easy to identify the next actionable work.
+@y
+The `tasks` toolset is an advanced version of the `todo` toolset, and provides
+task management with priorities, dependencies, and persistence. Your agent can
+create tasks with different priority levels, establish prerequisite
+relationships between tasks, and automatically track which tasks are blocked by
+incomplete dependencies. Tasks are sorted by priority and blocking status,
+making it easy to identify the next actionable work.
+@z
+
+@x
+Tasks are stored in a JSON file and persist across cagent sessions.
+@y
+Tasks are stored in a JSON file and persist across cagent sessions.
+@z
+
+@x
+#### Configuration
+@y
+#### Configuration
+@z
+
+@x
+```yaml
+toolsets:
+  - type: tasks
+@y
+```yaml
+toolsets:
+  - type: tasks
+@z
+
+@x
+  # Optional: specify storage location
+  - type: tasks
+    path: ./project-tasks.json
+```
+@y
+  # Optional: specify storage location
+  - type: tasks
+    path: ./project-tasks.json
+```
+@z
+
+@x
+#### Available tools
+@y
+#### Available tools
+@z
+
+@x
+The tasks toolset provides these tools:
+@y
+The tasks toolset provides these tools:
+@z
+
+@x
+- **create_task**: Create a new task with title, description, priority, and
+  dependencies
+- **get_task**: Retrieve full details of a task by ID, including effective
+  status
+- **update_task**: Modify task fields (title, description, priority, status,
+  dependencies)
+- **delete_task**: Remove a task and clean up its dependencies
+- **list_tasks**: List all tasks sorted by priority, optionally filtered by
+  status or priority
+- **next_task**: Get the highest-priority actionable task (not blocked or done)
+- **add_dependency**: Add a dependency between tasks (with cycle detection)
+- **remove_dependency**: Remove a dependency from a task
+@y
+- **create_task**: Create a new task with title, description, priority, and
+  dependencies
+- **get_task**: Retrieve full details of a task by ID, including effective
+  status
+- **update_task**: Modify task fields (title, description, priority, status,
+  dependencies)
+- **delete_task**: Remove a task and clean up its dependencies
+- **list_tasks**: List all tasks sorted by priority, optionally filtered by
+  status or priority
+- **next_task**: Get the highest-priority actionable task (not blocked or done)
+- **add_dependency**: Add a dependency between tasks (with cycle detection)
+- **remove_dependency**: Remove a dependency from a task
+@z
+
+@x
+#### Task statuses and priorities
+@y
+#### Task statuses and priorities
+@z
+
+@x
+Tasks have four statuses: `pending`, `in_progress`, `done`, and `blocked`. The
+agent automatically calculates the effective status. A task becomes `blocked`
+if any of its dependencies are not `done`, regardless of its assigned status.
+@y
+Tasks have four statuses: `pending`, `in_progress`, `done`, and `blocked`. The
+agent automatically calculates the effective status. A task becomes `blocked`
+if any of its dependencies are not `done`, regardless of its assigned status.
+@z
+
+@x
+Priority levels (from highest to lowest): `critical`, `high`, `medium`
+(default), `low`. Tasks are sorted by blocking status first (unblocked tasks
+first), then by priority, then by creation time.
+@y
+Priority levels (from highest to lowest): `critical`, `high`, `medium`
+(default), `low`. Tasks are sorted by blocking status first (unblocked tasks
+first), then by priority, then by creation time.
+@z
+
+@x
 ### Memory
 @y
 ### Memory
@@ -779,6 +901,74 @@ toolsets:
 toolsets:
   - type: fetch
 ```
+@z
+
+@x
+### User Prompt
+@y
+### User Prompt
+@z
+
+@x
+The `user_prompt` toolset lets your agent ask you questions during task
+execution. When the agent needs clarification, decisions, or additional
+information it can't determine on its own, it displays a dialog and waits for
+your response.
+@y
+The `user_prompt` toolset lets your agent ask you questions during task
+execution. When the agent needs clarification, decisions, or additional
+information it can't determine on its own, it displays a dialog and waits for
+your response.
+@z
+
+@x
+You'll see a prompt with the agent's question. Depending on what the agent
+needs, you might provide free-form text, select from options, or fill out a
+form with multiple fields. You can accept and provide the information, decline
+to answer, or cancel the operation entirely.
+@y
+You'll see a prompt with the agent's question. Depending on what the agent
+needs, you might provide free-form text, select from options, or fill out a
+form with multiple fields. You can accept and provide the information, decline
+to answer, or cancel the operation entirely.
+@z
+
+@x
+#### Configuration
+@y
+#### Configuration
+@z
+
+@x
+```yaml
+toolsets:
+  - type: user_prompt
+```
+@y
+```yaml
+toolsets:
+  - type: user_prompt
+```
+@z
+
+@x
+No additional configuration is required. The tool becomes available to the
+agent once configured. When the agent calls this tool, the user sees a dialog
+with the prompt. The user can:
+@y
+No additional configuration is required. The tool becomes available to the
+agent once configured. When the agent calls this tool, the user sees a dialog
+with the prompt. The user can:
+@z
+
+@x
+- **Accept**: Provide the requested information
+- **Decline**: Refuse to provide the information
+- **Cancel**: Cancel the operation
+@y
+- **Accept**: Provide the requested information
+- **Decline**: Refuse to provide the information
+- **Cancel**: Cancel the operation
 @z
 
 @x
@@ -789,12 +979,12 @@ toolsets:
 
 @x
 The `api` toolset lets you define custom tools that call HTTP APIs. Similar to
-`script_shell` but for web services, this allows you to expose REST APIs,
+`script` but for web services, this allows you to expose REST APIs,
 webhooks, or any HTTP endpoint as a tool your agent can use. The agent sees
 these as typed tools with automatic parameter validation.
 @y
 The `api` toolset lets you define custom tools that call HTTP APIs. Similar to
-`script_shell` but for web services, this allows you to expose REST APIs,
+`script` but for web services, this allows you to expose REST APIs,
 webhooks, or any HTTP endpoint as a tool your agent can use. The agent sees
 these as typed tools with automatic parameter validation.
 @z
@@ -908,19 +1098,19 @@ Supported argument types: `string`, `number`, `boolean`, `array`, `object`.
 @z
 
 @x
-### Script Shell
+### Script
 @y
-### Script Shell
+### Script
 @z
 
 @x
-The `script_shell` toolset lets you define custom tools by wrapping shell
+The `script` toolset lets you define custom tools by wrapping shell
 commands with typed parameters. This allows you to expose domain-specific
 operations to your agent as first-class tools. The agent sees these custom
 tools just like built-in tools, with parameter validation and type checking
 handled automatically.
 @y
-The `script_shell` toolset lets you define custom tools by wrapping shell
+The `script` toolset lets you define custom tools by wrapping shell
 commands with typed parameters. This allows you to expose domain-specific
 operations to your agent as first-class tools. The agent sees these custom
 tools just like built-in tools, with parameter validation and type checking
@@ -952,7 +1142,7 @@ parameters:
 @x
 ```yaml
 toolsets:
-  - type: script_shell
+  - type: script
     tools:
       deploy:
         cmd: ./deploy.sh
@@ -968,7 +1158,7 @@ toolsets:
 @y
 ```yaml
 toolsets:
-  - type: script_shell
+  - type: script
     tools:
       deploy:
         cmd: ./deploy.sh

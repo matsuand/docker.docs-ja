@@ -3,9 +3,9 @@
 ##
 
 bases = \
-	_index.md         \
-	built-in-tools.md \
-	yaml.md
+	_index.md       \
+	capabilities.md \
+	data-privacy.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

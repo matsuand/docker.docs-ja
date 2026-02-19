@@ -78,6 +78,11 @@ docker desktop COMMAND [OPTIONS]
 | `engine use`         | Switch between Linux and Windows containers (Windows only) |
 | `update`             | Manage Docker Desktop updates. Available for Mac only with Docker Desktop version 4.38, or all OSs with Docker Desktop version 4.39 and later. |
 | `logs`               | Print log entries                        |
+| `disable`            | Disable a feature                        |
+| `enable`             | Enable a feature                         | 
+| `version`            | Show the Docker Desktop CLI plugin version information |
+| `kubernetes`         | List Kubernetes images used by Docker Desktop or restart the cluster. Available with Docker Desktop version 4.44 and later.          |
+| `diagnose`.          | Diagnose Docker Desktop and upload the diagnostics. Available with Docker Desktop 4.60 and later. |
 @y
 | Command              | Description                              |
 |:---------------------|:-----------------------------------------|
@@ -89,6 +94,11 @@ docker desktop COMMAND [OPTIONS]
 | `engine use`         | Switch between Linux and Windows containers (Windows only) |
 | `update`             | Manage Docker Desktop updates. Available for Mac only with Docker Desktop version 4.38, or all OSs with Docker Desktop version 4.39 and later. |
 | `logs`               | Print log entries                        |
+| `disable`            | Disable a feature                        |
+| `enable`             | Enable a feature                         | 
+| `version`            | Show the Docker Desktop CLI plugin version information |
+| `kubernetes`         | List Kubernetes images used by Docker Desktop or restart the cluster. Available with Docker Desktop version 4.44 and later.          |
+| `diagnose`.          | Diagnose Docker Desktop and upload the diagnostics. Available with Docker Desktop 4.60 and later. |
 @z
 
 @x

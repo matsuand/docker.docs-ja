@@ -23,12 +23,6 @@ usage: docker sandbox ls [OPTIONS]
       description: Output in JSON format
 @z
 
-@x no-trunc
-      description: Don't truncate output
-@y
-      description: Don't truncate output
-@z
-
 @x quiet
       description: Only display VM names
 @y
@@ -73,22 +67,6 @@ examples: |-
     Output only VM names:
 @y
     Output only VM names:
-@z
-
-% snip command...
-
-@x
-    ### Don't truncate output (--no-trunc) {#no-trunc}
-@y
-    ### Don't truncate output (--no-trunc) {#no-trunc}
-@z
-
-% snip text...
-
-@x
-    By default, long VM IDs, workspace paths, and socket paths are truncated for readability. Use `--no-trunc` to display the full values:
-@y
-    By default, long VM IDs, workspace paths, and socket paths are truncated for readability. Use `--no-trunc` to display the full values:
 @z
 
 % snip command...

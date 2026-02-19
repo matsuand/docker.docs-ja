@@ -26,12 +26,12 @@ description: Run AI agents in isolated environments
 
 @x
 Docker Sandboxes lets you run AI coding agents in isolated environments on your
-machine. If you're building with agents like Claude Code, Sandboxes provides a
-secure way to give agents autonomy without compromising your system.
+machine. Sandboxes provides a secure way to give agents autonomy without
+compromising your system.
 @y
 Docker Sandboxes lets you run AI coding agents in isolated environments on your
-machine. If you're building with agents like Claude Code, Sandboxes provides a
-secure way to give agents autonomy without compromising your system.
+machine. Sandboxes provides a secure way to give agents autonomy without
+compromising your system.
 @z
 
 @x
@@ -109,13 +109,15 @@ To create and run a sandbox:
 % snip command...
 
 @x
-This command creates a sandbox for your workspace (`~/my-project`) and starts
-the Claude Code agent inside it. The agent can now work with your code, install
-tools, and run containers inside the isolated sandbox.
+Replace `claude` with your [preferred agent](./agents/_index.md). This command
+creates a sandbox for your workspace (`~/my-project`) and starts the agent. The
+agent can now work with your code, install tools, and run containers inside the
+isolated sandbox.
 @y
-This command creates a sandbox for your workspace (`~/my-project`) and starts
-the Claude Code agent inside it. The agent can now work with your code, install
-tools, and run containers inside the isolated sandbox.
+Replace `claude` with your [preferred agent](./agents/_index.md). This command
+creates a sandbox for your workspace (`~/my-project`) and starts the agent. The
+agent can now work with your code, install tools, and run containers inside the
+isolated sandbox.
 @z
 
 @x
@@ -195,19 +197,29 @@ Docker Sandboxes works with multiple AI coding agents:
 @z
 
 @x
-- **Claude Code** - Anthropic's coding agent
-- **Codex** - OpenAI's Codex agent (partial support; in development)
-- **Copilot** - GitHub Copilot agent (partial support; in development)
-- **Gemini** - Google's Gemini agent (partial support; in development)
-- **cagent** - Docker's [cagent](/ai/cagent/) (partial support; in development)
-- **Kiro** - by AWS (partial support; in development)
+- **Claude Code** - Anthropic's coding agent (production-ready)
+- **Codex** - OpenAI's Codex agent (in development)
+- **Copilot** - GitHub Copilot agent (in development)
+- **Gemini** - Google's Gemini agent (in development)
+- **OpenCode** - Multi-provider agent with TUI interface (in development)
+- **cagent** - Docker's multi-provider coding agent (in development)
+- **Kiro** - Interactive agent with device flow auth (in development)
+- **Shell** - Minimal sandbox for manual agent installation
 @y
-- **Claude Code** - Anthropic's coding agent
-- **Codex** - OpenAI's Codex agent (partial support; in development)
-- **Copilot** - GitHub Copilot agent (partial support; in development)
-- **Gemini** - Google's Gemini agent (partial support; in development)
-- **cagent** - Docker's [cagent](__SUBDIR__/ai/cagent/) (partial support; in development)
-- **Kiro** - by AWS (partial support; in development)
+- **Claude Code** - Anthropic's coding agent (production-ready)
+- **Codex** - OpenAI's Codex agent (in development)
+- **Copilot** - GitHub Copilot agent (in development)
+- **Gemini** - Google's Gemini agent (in development)
+- **OpenCode** - Multi-provider agent with TUI interface (in development)
+- **cagent** - Docker's multi-provider coding agent (in development)
+- **Kiro** - Interactive agent with device flow auth (in development)
+- **Shell** - Minimal sandbox for manual agent installation
+@z
+
+@x
+For detailed configuration instructions, see [Supported agents](agents/).
+@y
+For detailed configuration instructions, see [Supported agents](agents/).
 @z
 
 @x

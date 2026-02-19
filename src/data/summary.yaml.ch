@@ -58,13 +58,13 @@ Amazon S3 cache:
 @z
 
 @x
-Ask Gordon:
+Gordon:
   availability: Beta
-  requires: Docker Desktop [4.38.0](/manuals/desktop/release-notes.md#4380) or later
+  requires: Docker Desktop [4.61.0](/manuals/desktop/release-notes.md#4610) or later
 @y
-Ask Gordon:
+Gordon:
   availability: ベータ
-  requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) およびそれ以降
+  requires: Docker Desktop [4.61.0](manuals/desktop/release-notes.md#4610) およびそれ以降
 @z
 
 @x

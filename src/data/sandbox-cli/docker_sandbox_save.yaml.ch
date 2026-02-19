@@ -16,93 +16,61 @@ long: |-
 @x
     By default, the image is loaded into the host's Docker daemon (requires Docker to be running).
     Use --output to save the image to a tar file instead.
-usage: docker sandbox save SANDBOX TAG
-pname: docker sandbox
-plink: docker_sandbox.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      description: |
-        Save image to specified tar file instead of loading into host Docker
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
-      description: |
-        Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     By default, the image is loaded into the host's Docker daemon (requires Docker to be running).
     Use --output to save the image to a tar file instead.
+@z
+
+@x
+    Examples:
+      # Load into host Docker (requires host Docker running)
+      docker sandbox save my-sandbox myimage:v1.0
+@y
+    Examples:
+      # Load into host Docker (requires host Docker running)
+      docker sandbox save my-sandbox myimage:v1.0
+@z
+
+@x
+      # Save to file (works without host Docker)
+      docker sandbox save my-sandbox myimage:v1.0 --output /tmp/myimage.tar
+@y
+      # Save to file (works without host Docker)
+      docker sandbox save my-sandbox myimage:v1.0 --output /tmp/myimage.tar
+@z
+
+@x
 usage: docker sandbox save SANDBOX TAG
-pname: docker sandbox
-plink: docker_sandbox.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
+@y
+usage: docker sandbox save SANDBOX TAG
+@z
+
+% pname
+% plink
+% options
+
+@x output
       description: |
         Save image to specified tar file instead of loading into host Docker
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Save image to specified tar file instead of loading into host Docker
+@z
+
+% inherited_options:
+
+@x debug
       description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: socket
-      value_type: string
+@y
+      description: Enable debug logging
+@z
+
+@x socket
       description: |
         Connect to daemon at specific socket path (for development/debugging)
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: |
+        Connect to daemon at specific socket path (for development/debugging)
 @z
+
+% snip directives...

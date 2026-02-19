@@ -230,6 +230,36 @@ and MCP Catalog, or use Ask Gordon in Docker Desktop and the Docker CLI.
 @z
 
 @x
+### Enhanced Service Account add-ons
+@y
+### Enhanced Service Account add-ons
+@z
+
+@x
+Enhanced Service Account add-ons provided tiered pull rate limits for automated
+workflows and service accounts accessing Docker Hub.
+@y
+Enhanced Service Account add-ons provided tiered pull rate limits for automated
+workflows and service accounts accessing Docker Hub.
+@z
+
+@x
+Docker recommends transitioning to [Organization Access Tokens
+(OATs)](/manuals/enterprise/security/access-tokens.md), which provide secure,
+programmatic access to Docker Hub with granular repository permissions, token
+expiration, and better security auditing. OATs are included with Docker Team
+and Business subscriptions and offer similar functionality without requiring
+separate add-on purchases.
+@y
+Docker recommends transitioning to [Organization Access Tokens
+(OATs)](manuals/enterprise/security/access-tokens.md), which provide secure,
+programmatic access to Docker Hub with granular repository permissions, token
+expiration, and better security auditing. OATs are included with Docker Team
+and Business subscriptions and offer similar functionality without requiring
+separate add-on purchases.
+@z
+
+@x
 ## Open source projects
 @y
 ## Open source projects

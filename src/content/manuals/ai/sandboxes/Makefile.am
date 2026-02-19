@@ -2,11 +2,11 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = agents
+
 bases = \
 	_index.md           \
-	agents.md           \
 	architecture.md     \
-	claude-code.md      \
 	get-started.md      \
 	migration.md        \
 	network-policies.md \

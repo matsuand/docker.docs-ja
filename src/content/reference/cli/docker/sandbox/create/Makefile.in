@@ -238,12 +238,14 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md  \
-	cagent.md  \
-	codex.md   \
-	copilot.md \
-	gemini.md  \
-	kiro.md
+	_index.md   \
+	cagent.md   \
+	codex.md    \
+	copilot.md  \
+	gemini.md   \
+	kiro.md     \
+	opencode.md \
+	shell.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

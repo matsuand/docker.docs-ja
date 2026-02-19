@@ -5,12 +5,13 @@
 SUBDIRS = disable enable engine
 
 bases = \
-	_index.md  \
-	logs.md    \
-	restart.md \
-	start.md   \
-	status.md  \
-	stop.md    \
+	_index.md   \
+	diagnose.md \
+	logs.md     \
+	restart.md  \
+	start.md    \
+	status.md   \
+	stop.md     \
 	update.md
 
 include $(top_srcdir)/build-aux/common.mk
