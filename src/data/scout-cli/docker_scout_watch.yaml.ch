@@ -98,9 +98,140 @@ usage: docker scout watch
 @z
 
 @x
-examples: "  Watch for new images from two repositories and push them\n  $ docker scout watch --org my-org --repository registry-1.example.com/repo-1 --repository registry-2.example.com/repo-2\e[0m\n\n  Only push images with a specific tag\n  $ docker scout watch --org my-org --repository registry.example.com/my-service --tag latest\e[0m\n\n  Watch all repositories of a registry\n  $ docker scout watch --org my-org --registry registry.example.com\e[0m\n\n  Push all images and not just the new ones\n  $ docker scout watch --org my-org --repository registry.example.com/my-service --all-images\e[0m"
+examples: |-
+    ### Watch for new images from two repositories and push them
 @y
-examples: "  Watch for new images from two repositories and push them\n  $ docker scout watch --org my-org --repository registry-1.example.com/repo-1 --repository registry-2.example.com/repo-2\e[0m\n\n  Only push images with a specific tag\n  $ docker scout watch --org my-org --repository registry.example.com/my-service --tag latest\e[0m\n\n  Watch all repositories of a registry\n  $ docker scout watch --org my-org --registry registry.example.com\e[0m\n\n  Push all images and not just the new ones\n  $ docker scout watch --org my-org --repository registry.example.com/my-service --all-images\e[0m"
+examples: |-
+    ### Watch for new images from two repositories and push them
 @z
 
+% snip command...
+
+@x
+    ### Only push images with a specific tag
+@y
+    ### Only push images with a specific tag
+@z
+
+% snip command...
+
+@x
+    ### Watch all repositories of a registry
+@y
+    ### Watch all repositories of a registry
+@z
+
+% snip command...
+
+@x
+    ### Push all images and not just the new ones
+@y
+    ### Push all images and not just the new ones
+@z
+
+% snip command...
+
+@x
+    ### Configure Artifactory integration
+@y
+    ### Configure Artifactory integration
+@z
+
+@x
+    The following example creates a web hook endpoint for Artifactory to push new
+    image events into:
+@y
+    The following example creates a web hook endpoint for Artifactory to push new
+    image events into:
+@z
+
+% snip command...
+
+@x
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@y
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@z
+
+@x
+    ### Configure Harbor integration
+@y
+    ### Configure Harbor integration
+@z
+
+@x
+    The following example creates a web hook endpoint for Harbor to push new image
+    events into:
+@y
+    The following example creates a web hook endpoint for Harbor to push new image
+    events into:
+@z
+
+% snip command...
+
+@x
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@y
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@z
+
+@x
+    ### Configure Nexus integration
+@y
+    ### Configure Nexus integration
+@z
+
+@x
+    The following example shows how to configure Sonartype Nexus integration:
+@y
+    The following example shows how to configure Sonartype Nexus integration:
+@z
+
+% snip command...
+
+@x
+    This ingests all images and tags in Nexus repositories called `docker-test1`
+    and `docker-test2` that match the `*/foo/*` include and `*/bar/*` exclude glob
+    pattern.
+@y
+    This ingests all images and tags in Nexus repositories called `docker-test1`
+    and `docker-test2` that match the `*/foo/*` include and `*/bar/*` exclude glob
+    pattern.
+@z
+
+@x
+    You can also create a web hook endpoint for Nexus to push new image events into:
+@y
+    You can also create a web hook endpoint for Nexus to push new image events into:
+@z
+
+% snip command...
+
+@x
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@y
+    This will launch an HTTP server on port `9000` that will receive all `component` web
+    hook events, optionally validating the HMAC signature.
+@z
+
+@x
+    ### Configure integration for other OCI registries
+@y
+    ### Configure integration for other OCI registries
+@z
+
+@x
+    The following example shows how to integrate an OCI registry that implements the
+    `_catalog` endpoint:
+@y
+    The following example shows how to integrate an OCI registry that implements the
+    `_catalog` endpoint:
+@z
+
+% snip command...
 % snip directives...

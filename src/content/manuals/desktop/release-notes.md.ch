@@ -95,7 +95,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-#### For all platforma
+#### For all platforms
 @y
 #### 全プラットフォーム向け {#for-all-platforms}
 @z

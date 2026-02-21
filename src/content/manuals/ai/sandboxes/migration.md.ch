@@ -111,15 +111,7 @@ sandbox with the new architecture.
 2. Remove the old sandbox containers:
 @z
 
-@x
-   ```console
-   $ docker rm -f $(docker ps -q -a --filter="label=docker/sandbox=true")
-   ```
-@y
-   ```console
-   $ docker rm -f $(docker ps -q -a --filter="label=docker/sandbox=true")
-   ```
-@z
+% snip command...
 
 @x
 3. Remove the credential volume:
@@ -127,15 +119,7 @@ sandbox with the new architecture.
 3. Remove the credential volume:
 @z
 
-@x
-   ```console
-   $ docker volume rm docker-claude-sandbox-data
-   ```
-@y
-   ```console
-   $ docker volume rm docker-claude-sandbox-data
-   ```
-@z
+% snip command...
 
 @x
 4. Create a new microVM sandbox:
@@ -143,17 +127,7 @@ sandbox with the new architecture.
 4. Create a new microVM sandbox:
 @z
 
-@x
-   ```console
-   $ docker sandbox create claude ~/project
-   $ docker sandbox run <sandbox-name>
-   ```
-@y
-   ```console
-   $ docker sandbox create claude ~/project
-   $ docker sandbox run <sandbox-name>
-   ```
-@z
+% snip command...
 
 @x
 5. Reinstall dependencies. Ask the agent to install needed tools:
@@ -161,17 +135,7 @@ sandbox with the new architecture.
 5. Reinstall dependencies. Ask the agent to install needed tools:
 @z
 
-@x
-   ```plaintext
-   You: "Install all the tools needed to build and test this project"
-   Claude: [Installs tools]
-   ```
-@y
-   ```plaintext
-   You: "Install all the tools needed to build and test this project"
-   Claude: [Installs tools]
-   ```
-@z
+% snip text...
 
 @x
 What you lose:
@@ -227,15 +191,7 @@ template.
 1. Inspect your old sandbox to see what's installed:
 @z
 
-@x
-   ```console
-   $ docker exec <old-sandbox-container> dpkg -l
-   ```
-@y
-   ```console
-   $ docker exec <old-sandbox-container> dpkg -l
-   ```
-@z
+% snip command...
 
 @x
 2. Create a custom template with your tools:
@@ -243,56 +199,20 @@ template.
 2. Create a custom template with your tools:
 @z
 
-@x
-   ```dockerfile
-   FROM docker/sandbox-templates:claude-code
-@y
-   ```dockerfile
-   FROM docker/sandbox-templates:claude-code
-@z
-
-@x
-   USER root
-@y
-   USER root
-@z
-
-@x
+@x within code
    # Install your tools
-   RUN apt-get update && apt-get install -y \
-       build-essential \
-       nodejs \
-       npm
 @y
    # Install your tools
-   RUN apt-get update && apt-get install -y \
-       build-essential \
-       nodejs \
-       npm
 @z
-
 @x
    # Install language-specific packages
-   RUN npm install -g typescript eslint
 @y
    # Install language-specific packages
-   RUN npm install -g typescript eslint
 @z
-
 @x
    # Add any custom configuration
-   ENV EDITOR=vim
 @y
    # Add any custom configuration
-   ENV EDITOR=vim
-@z
-
-@x
-   USER agent
-   ```
-@y
-   USER agent
-   ```
 @z
 
 @x
@@ -301,15 +221,7 @@ template.
 3. Build your template:
 @z
 
-@x
-   ```console
-   $ docker build -t my-sandbox-template:v1 .
-   ```
-@y
-   ```console
-   $ docker build -t my-sandbox-template:v1 .
-   ```
-@z
+% snip command...
 
 @x
 4. Create a new sandbox with your template:
@@ -317,30 +229,18 @@ template.
 4. Create a new sandbox with your template:
 @z
 
-@x
-   ```console
-   $ docker sandbox create --template my-sandbox-template:v1 \
-       --pull-template=never \
-       claude ~/project
-   ```
-@y
-   ```console
-   $ docker sandbox create --template my-sandbox-template:v1 \
-       --pull-template=never \
-       claude ~/project
-   ```
-@z
+% snip command...
 
 @x
    > [!NOTE]
    > The `--pull-template` flag was introduced in Docker Desktop 4.61 (Sandbox
-   > version 0.12). For Docker Desktop 4.58–4.60, substitute
-   > `--pull-template=never` with `--load-local-template`.
+   > version 0.12). On Docker Desktop 4.58–4.60, use `--load-local-template`
+   > to use a locally-built template image.
 @y
    > [!NOTE]
    > The `--pull-template` flag was introduced in Docker Desktop 4.61 (Sandbox
-   > version 0.12). For Docker Desktop 4.58–4.60, substitute
-   > `--pull-template=never` with `--load-local-template`.
+   > version 0.12). On Docker Desktop 4.58–4.60, use `--load-local-template`
+   > to use a locally-built template image.
 @z
 
 @x
@@ -349,15 +249,7 @@ template.
 5. Run the sandbox:
 @z
 
-@x
-   ```console
-   $ docker sandbox run <sandbox-name>
-   ```
-@y
-   ```console
-   $ docker sandbox run <sandbox-name>
-   ```
-@z
+% snip command...
 
 @x
 If you want to share this template with your team, push it to a registry. See
@@ -385,17 +277,7 @@ Remove specific sandbox:
 Remove specific sandbox:
 @z
 
-@x
-```console
-$ docker rm -f <old-sandbox-container>
-$ docker volume rm docker-claude-sandbox-data
-```
-@y
-```console
-$ docker rm -f <old-sandbox-container>
-$ docker volume rm docker-claude-sandbox-data
-```
-@z
+% snip command...
 
 @x
 Remove all stopped containers and unused volumes:
@@ -403,17 +285,7 @@ Remove all stopped containers and unused volumes:
 Remove all stopped containers and unused volumes:
 @z
 
-@x
-```console
-$ docker container prune
-$ docker volume prune
-```
-@y
-```console
-$ docker container prune
-$ docker volume prune
-```
-@z
+% snip command...
 
 @x
 > [!WARNING]
@@ -487,15 +359,7 @@ Old command structure:
 Old command structure:
 @z
 
-@x
-```console
-$ docker sandbox run ~/project
-```
-@y
-```console
-$ docker sandbox run ~/project
-```
-@z
+% snip command...
 
 @x
 New command structure:
@@ -503,15 +367,7 @@ New command structure:
 New command structure:
 @z
 
-@x
-```console
-$ docker sandbox run claude ~/project
-```
-@y
-```console
-$ docker sandbox run claude ~/project
-```
-@z
+% snip command...
 
 @x
 The agent name is now a required parameter when creating sandboxes, and you run

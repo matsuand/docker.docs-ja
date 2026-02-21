@@ -16,9 +16,9 @@ keywords: docker, sandboxes, opencode, ai agent, multi-provider, authentication,
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes v0.12" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes v0.12" >}}
 @z
 
 @x

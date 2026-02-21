@@ -16,9 +16,9 @@ keywords: docker, sandboxes, shell, custom, manual setup, development environmen
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes v0.12" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes v0.12" >}}
 @z
 
 @x

@@ -1,11 +1,20 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = _default guides partials redirect samples security-announcements \
-	shortcodes tag
+SUBDIRS = _markup _partials _shortcodes guides redirect samples \
+	security-announcements tags
 
 bases = \
-	404.html
+	404.html         \
+	api.html         \
+	api.markdown.md  \
+	baseof.html      \
+	cli.html         \
+	cli.markdown.md  \
+	glossary.html    \
+	list.markdown.md \
+	scout-cli.html   \
+	series.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -15,10 +24,10 @@ commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short
 commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
 
 .PHONY: _touch
-all: _touch index.html
-index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
-	@echo Processing index.html...
-	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/index.html $(srcdir)/index.html.ch >/dev/null
+all: _touch home.html
+home.html: $(abs_origdir)/home.html $(srcdir)/home.html.ch
+	@echo Processing home.html...
+	@$(top_builddir)/$(CTIE) -m $@ $(abs_origdir)/home.html $(srcdir)/home.html.ch >/dev/null
 	@sed -i -e "s@__THISDATE__@$(thisdate)@" \
 	        -e "s@__COMMITDATE__@$(commitdate)@" \
 	        -e "s@__COMMITHASH__@$(commithash)@g" $@
@@ -26,10 +35,15 @@ index.html: $(abs_origdir)/index.html $(srcdir)/index.html.ch
 	@echo "commithash: $(commithash)" >> ../../commit.txt
 
 copyfiles = \
-	index.metadata.json  \
-	index.redirects.json \
-	index.robots.txt     \
-	sitemap.xml
+	home.llms.txt       \
+	home.metadata.json  \
+	home.redirects.json \
+	home.robots.txt     \
+	list.html           \
+	single.html         \
+	single.markdown.md  \
+	sitemap.xml         \
+	wide.html
 
 include $(top_srcdir)/build-aux/copy.mk
 

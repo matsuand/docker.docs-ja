@@ -407,20 +407,19 @@ AC_CONFIG_FILES([
 	src/data/secrets-engine/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile
-	src/layouts/_default/Makefile
-	src/layouts/_default/_markup/Makefile
+	src/layouts/_markup/Makefile
+	src/layouts/_partials/Makefile
+	src/layouts/_partials/admonitions/Makefile
+	src/layouts/_partials/admonitions/icons/Makefile
+	src/layouts/_partials/components/Makefile
+	src/layouts/_partials/sidebar/Makefile
+	src/layouts/_partials/utils/Makefile
+	src/layouts/_shortcodes/Makefile
 	src/layouts/guides/Makefile
-	src/layouts/partials/Makefile
-	src/layouts/partials/admonitions/Makefile
-	src/layouts/partials/admonitions/icons/Makefile
-	src/layouts/partials/components/Makefile
-	src/layouts/partials/sidebar/Makefile
-	src/layouts/partials/utils/Makefile
 	src/layouts/redirect/Makefile
 	src/layouts/samples/Makefile
 	src/layouts/security-announcements/Makefile
-	src/layouts/shortcodes/Makefile
-	src/layouts/tag/Makefile
+	src/layouts/tags/Makefile
 	src/static/Makefile
 ])
 AC_OUTPUT

@@ -133,11 +133,11 @@ Use it directly from your local Docker daemon:
 % snip command...
 
 @x
-The `--pull-template never` flag tells the sandbox to use local template
-images.
+The default `--pull-template missing` policy finds the image in your local
+Docker daemon without pulling from a registry.
 @y
-The `--pull-template never` flag tells the sandbox to use local template
-images.
+The default `--pull-template missing` policy finds the image in your local
+Docker daemon without pulling from a registry.
 @z
 
 @x
@@ -177,13 +177,13 @@ Docker Sandboxes caches template images to speed up sandbox creation. The
 @z
 
 @x
-  Pull the image only if it's not already cached locally. First sandbox
-  creation automatically pulls the image, and subsequent sandboxes are created
-  quickly because the image is cached.
+  Use the local image if present, otherwise pull from the registry. Works for
+  both locally-built images and registry images. On first use, registry images
+  are pulled and cached; subsequent sandboxes reuse the cache.
 @y
-  Pull the image only if it's not already cached locally. First sandbox
-  creation automatically pulls the image, and subsequent sandboxes are created
-  quickly because the image is cached.
+  Use the local image if present, otherwise pull from the registry. Works for
+  both locally-built images and registry images. On first use, registry images
+  are pulled and cached; subsequent sandboxes reuse the cache.
 @z
 
 @x
@@ -193,11 +193,13 @@ Docker Sandboxes caches template images to speed up sandbox creation. The
 @z
 
 @x
-  Always pull the image from the registry before creating the sandbox, even if
-  it's cached. Slower than `missing` but guarantees freshness.
+  Always pull the latest image from the registry and update the host cache.
+  The VM uses the refreshed cache. Slower than `missing` but guarantees the
+  sandbox uses the latest version. Requires a registry image.
 @y
-  Always pull the image from the registry before creating the sandbox, even if
-  it's cached. Slower than `missing` but guarantees freshness.
+  Always pull the latest image from the registry and update the host cache.
+  The VM uses the refreshed cache. Slower than `missing` but guarantees the
+  sandbox uses the latest version. Requires a registry image.
 @z
 
 @x
@@ -207,11 +209,11 @@ Docker Sandboxes caches template images to speed up sandbox creation. The
 @z
 
 @x
-  Use only cached images. Never pull from a registry. Fails if the image isn't
-  in the cache.
+  Never use the host cache. The sandbox VM pulls the image directly from the
+  registry on every startup. Requires a registry image.
 @y
-  Use only cached images. Never pull from a registry. Fails if the image isn't
-  in the cache.
+  Never use the host cache. The sandbox VM pulls the image directly from the
+  registry on every startup. Requires a registry image.
 @z
 
 @x
@@ -259,11 +261,11 @@ environment. Once everything works, exit and save the sandbox as a template:
 % snip command...
 
 @x
-This saves the image to your local Docker daemon. Use `--pull-template never`
-to create new sandboxes from it:
+This saves the image to your local Docker daemon. The default pull policy finds
+the image locally:
 @y
-This saves the image to your local Docker daemon. Use `--pull-template never`
-to create new sandboxes from it:
+This saves the image to your local Docker daemon. The default pull policy finds
+the image locally:
 @z
 
 % snip command...

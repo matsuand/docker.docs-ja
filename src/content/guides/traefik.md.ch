@@ -126,19 +126,103 @@ Let’s do a quick demo of starting Traefik and then configuring two additional 
 @z
 
 @x
-2. Start a Traefik container using the following command. The command exposes Traefik on port 80, mounts the Docker socket (which is used to monitor containers to update configuration), and passes the `--providers.docker` argument to configure Traefik to use the Docker provider.
+2. Start a Traefik container using one of the following methods. These commands exposes Traefik on port 80, mounts the Docker socket (which is used to monitor containers to update configuration), and passes the `--providers.docker` argument to configure Traefik to use the Docker provider.
 @y
-2. Start a Traefik container using the following command. The command exposes Traefik on port 80, mounts the Docker socket (which is used to monitor containers to update configuration), and passes the `--providers.docker` argument to configure Traefik to use the Docker provider.
+2. Start a Traefik container using one of the following methods. These commands exposes Traefik on port 80, mounts the Docker socket (which is used to monitor containers to update configuration), and passes the `--providers.docker` argument to configure Traefik to use the Docker provider.
+@z
+
+@x
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@y
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@z
+
+@x
+   Docker Hardened Images (DHI) for Traefik are available on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/traefik).
+   If you haven't authenticated yet, first run:
+@y
+   Docker Hardened Images (DHI) for Traefik are available on [Docker Hub](https://hub.docker.com/hardened-images/catalog/dhi/traefik).
+   If you haven't authenticated yet, first run:
+@z
+
+@x
+   ```bash
+   $ docker login dhi.io
+   ```
+@y
+   ```bash
+   $ docker login dhi.io
+   ```
+@z
+
+@x
+   Then start a container using the Hardened image:
+@y
+   Then start a container using the Hardened image:
 @z
 
 @x
    ```console
-   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.6.2 --providers.docker
+   $ docker run -d --network=traefik-demo \
+     -p 80:80 \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     dhi.io/traefik:3.6.2 \
+     --providers.docker
    ```
 @y
    ```console
-   $ docker run -d --network=traefik-demo -p 80:80 -v /var/run/docker.sock:/var/run/docker.sock traefik:v3.6.2 --providers.docker
+   $ docker run -d --network=traefik-demo \
+     -p 80:80 \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     dhi.io/traefik:3.6.2 \
+     --providers.docker
    ```
+@z
+
+@x
+   {{< /tab >}}
+@y
+   {{< /tab >}}
+@z
+
+@x
+   {{< tab name="Using the official image" >}}
+@y
+   {{< tab name="Using the official image" >}}
+@z
+
+@x
+   You can also use the official image from Docker Hub:
+@y
+   You can also use the official image from Docker Hub:
+@z
+
+@x
+   ```console
+   $ docker run -d --network=traefik-demo \
+     -p 80:80 \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     traefik:v3.6.2 \
+     --providers.docker
+   ```
+@y
+   ```console
+   $ docker run -d --network=traefik-demo \
+     -p 80:80 \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     traefik:v3.6.2 \
+     --providers.docker
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -148,13 +232,83 @@ Let’s do a quick demo of starting Traefik and then configuring two additional 
 @z
 
 @x
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@y
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@z
+
+@x
+   Docker Hardened Images (DHI) for Nginx are available on [Nginx DHI image](https://hub.docker.com/hardened-images/catalog/dhi/nginx).
+   If you haven't authenticated yet, first run:
+@y
+   Docker Hardened Images (DHI) for Nginx are available on [Nginx DHI image](https://hub.docker.com/hardened-images/catalog/dhi/nginx).
+   If you haven't authenticated yet, first run:
+@z
+
+@x
+   ```bash
+   $ docker login dhi.io
+   ```
+@y
+   ```bash
+   $ docker login dhi.io
+   ```
+@z
+
+@x
    ```console
-   $ docker run -d --network=traefik-demo --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' nginx
+   $ docker run -d --network=traefik-demo \
+     --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' \
+     dhi.io/nginx:1.29.3
    ```
 @y
    ```console
-   $ docker run -d --network=traefik-demo --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' nginx
+   $ docker run -d --network=traefik-demo \
+     --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' \
+     dhi.io/nginx:1.29.3
    ```
+@z
+
+@x
+   {{< /tab >}}
+@y
+   {{< /tab >}}
+@z
+
+@x
+   {{< tab name="Using the official image" >}}
+@y
+   {{< tab name="Using the official image" >}}
+@z
+
+@x
+   You can also run the official Nginx image as follows:
+@y
+   You can also run the official Nginx image as follows:
+@z
+
+@x
+   ```console
+   $ docker run -d --network=traefik-demo \
+     --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' \
+     nginx:1.29.3
+   ```
+@y
+   ```console
+   $ docker run -d --network=traefik-demo \
+     --label 'traefik.http.routers.nginx.rule=Host(`nginx.localhost`)' \
+     nginx:1.29.3
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -226,6 +380,50 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
 @z
 
 @x
+   {{< tabs >}}
+   {{< tab name="Using DHI image" >}}
+@y
+   {{< tabs >}}
+   {{< tab name="Using DHI image" >}}
+@z
+
+@x
+   ```yaml
+   services:
+     proxy:
+       image: dhi.io/traefik:3.6.2
+       command: --providers.docker
+       ports:
+         - 80:80
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+   ```
+@y
+   ```yaml
+   services:
+     proxy:
+       image: dhi.io/traefik:3.6.2
+       command: --providers.docker
+       ports:
+         - 80:80
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+   ```
+@z
+
+@x
+   {{< /tab >}}
+@y
+   {{< /tab >}}
+@z
+
+@x
+   {{< tab name="Using official image" >}}
+@y
+   {{< tab name="Using official image" >}}
+@z
+
+@x
    ```yaml
    services:
      proxy:
@@ -250,6 +448,14 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
 @z
 
 @x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
+@z
+
+@x
    Note that this is essentially the same configuration as used earlier, but now in a Compose syntax.
 @y
    Note that this is essentially the same configuration as used earlier, but now in a Compose syntax.
@@ -262,27 +468,107 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
 @z
 
 @x
-   ```yaml {hl_lines=[7,8]}
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@y
+   {{< tabs >}}
+   {{< tab name="Using Docker Hardened Images" >}}
+@z
+
+@x
+   Docker Hardened Images (DHI) for Nginx are available on [Nginx DHI image](https://hub.docker.com/hardened-images/catalog/dhi/nginx).
+@y
+   Docker Hardened Images (DHI) for Nginx are available on [Nginx DHI image](https://hub.docker.com/hardened-images/catalog/dhi/nginx).
+@z
+
+@x
+   If you haven't authenticated yet, first run:
+@y
+   If you haven't authenticated yet, first run:
+@z
+
+@x
+   ```bash
+   $ docker login dhi.io
+   ```
+@y
+   ```bash
+   $ docker login dhi.io
+   ```
+@z
+
+@x
+   You can use it as your base image as shown following:
+@y
+   You can use it as your base image as shown following:
+@z
+
+@x
+   ```yaml
    services:
      # …
      client:
-       image: nginx:alpine
+       image: dhi.io/nginx:1.29.3-alpine3.21
        volumes:
          - "./client:/usr/share/nginx/html"
        labels:
          traefik.http.routers.client.rule: "Host(`localhost`)"
    ```
 @y
-   ```yaml {hl_lines=[7,8]}
+   ```yaml
    services:
      # …
      client:
-       image: nginx:alpine
+       image: dhi.io/nginx:1.29.3-alpine3.21
        volumes:
          - "./client:/usr/share/nginx/html"
        labels:
          traefik.http.routers.client.rule: "Host(`localhost`)"
    ```
+@z
+
+@x
+   {{< /tab >}}
+@y
+   {{< /tab >}}
+@z
+
+@x
+   {{< tab name="Using the official image" >}}
+@y
+   {{< tab name="Using the official image" >}}
+@z
+
+@x
+   ```yaml
+   services:
+     # …
+     client:
+       image: nginx:1.29.3-alpine3.22
+       volumes:
+         - "./client:/usr/share/nginx/html"
+       labels:
+         traefik.http.routers.client.rule: "Host(`localhost`)"
+   ```
+@y
+   ```yaml
+   services:
+     # …
+     client:
+       image: nginx:1.29.3-alpine3.22
+       volumes:
+         - "./client:/usr/share/nginx/html"
+       labels:
+         traefik.http.routers.client.rule: "Host(`localhost`)"
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
 @z
 
 @x
@@ -354,9 +640,9 @@ The application can be accessed on GitHub at [dockersamples/easy-http-routing-wi
 @z
 
 @x
-And that’s it. Now, you only need to spin up the Compose stack with a `docker compose up` and all of the services and applications will be ready for development.
+   And that’s it. Now, you only need to spin up the Compose stack with a `docker compose up` and all of the services and applications will be ready for development.
 @y
-And that’s it. Now, you only need to spin up the Compose stack with a `docker compose up` and all of the services and applications will be ready for development.
+   And that’s it. Now, you only need to spin up the Compose stack with a `docker compose up` and all of the services and applications will be ready for development.
 @z
 
 @x
@@ -450,31 +736,87 @@ With this file, the only change is to the Compose configuration for Traefik. The
 @z
 
 @x
-```yaml
-services:
-  proxy:
-    image: traefik:v3.6.2
-    command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
-    ports:
-      - 80:80
-      - 8080:8080
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./dev/traefik-config.yaml:/config/traefik-config.yaml
-```
+  {{< tabs >}}
+  {{< tab name="Using DHI image" >}}
 @y
-```yaml
-services:
-  proxy:
-    image: traefik:v3.6.2
-    command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
-    ports:
-      - 80:80
-      - 8080:8080
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./dev/traefik-config.yaml:/config/traefik-config.yaml
-```
+  {{< tabs >}}
+  {{< tab name="Using DHI image" >}}
+@z
+
+@x
+  ```yaml
+  services:
+    proxy:
+      image: dhi.io/traefik:3.6.2
+      command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
+      ports:
+        - 80:80
+        - 8080:8080
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./dev/traefik-config.yaml:/config/traefik-config.yaml
+  ```
+@y
+  ```yaml
+  services:
+    proxy:
+      image: dhi.io/traefik:3.6.2
+      command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
+      ports:
+        - 80:80
+        - 8080:8080
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./dev/traefik-config.yaml:/config/traefik-config.yaml
+  ```
+@z
+
+@x
+  {{< /tab >}}
+@y
+  {{< /tab >}}
+@z
+
+@x
+  {{< tab name="Using official image" >}}
+@y
+  {{< tab name="Using official image" >}}
+@z
+
+@x
+  ```yaml
+  services:
+    proxy:
+      image: traefik:v3.6.2
+      command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
+      ports:
+        - 80:80
+        - 8080:8080
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./dev/traefik-config.yaml:/config/traefik-config.yaml
+  ```
+@y
+  ```yaml
+  services:
+    proxy:
+      image: traefik:v3.6.2
+      command: --providers.docker --providers.file.filename=/config/traefik-config.yaml --api.insecure
+      ports:
+        - 80:80
+        - 8080:8080
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - ./dev/traefik-config.yaml:/config/traefik-config.yaml
+  ```
+@z
+
+@x
+  {{< /tab >}}
+  {{< /tabs >}}
+@y
+  {{< /tab >}}
+  {{< /tabs >}}
 @z
 
 @x

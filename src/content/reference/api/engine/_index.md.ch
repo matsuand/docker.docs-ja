@@ -201,12 +201,24 @@ You can specify the API version to use in any of the following ways:
 @z
 
 @x
+| 29.2           | [1.53](/reference/api/engine/version/v1.53/) | [changes](/reference/api/engine/version-history/#v153-api-changes) |
+| 29.1           | [1.52](/reference/api/engine/version/v1.52/) | [changes](/reference/api/engine/version-history/#v152-api-changes) |
 | 29.0           | [1.52](/reference/api/engine/version/v1.52/) | [changes](/reference/api/engine/version-history/#v152-api-changes) |
+@y
+| 29.2           | [1.53](__SUBDIR__/reference/api/engine/version/v1.53/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v153-api-changes) |
+| 29.1           | [1.52](__SUBDIR__/reference/api/engine/version/v1.52/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v152-api-changes) |
+| 29.0           | [1.52](__SUBDIR__/reference/api/engine/version/v1.52/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v152-api-changes) |
+@z
+
+@x
+| 28.5           | [1.51](/reference/api/engine/version/v1.51/) | [changes](/reference/api/engine/version-history/#v151-api-changes) |
+| 28.4           | [1.51](/reference/api/engine/version/v1.51/) | [changes](/reference/api/engine/version-history/#v151-api-changes) |
 | 28.3           | [1.51](/reference/api/engine/version/v1.51/) | [changes](/reference/api/engine/version-history/#v151-api-changes) |
 | 28.2           | [1.50](/reference/api/engine/version/v1.50/) | [changes](/reference/api/engine/version-history/#v150-api-changes) |
 | 28.1           | [1.49](/reference/api/engine/version/v1.49/) | [changes](/reference/api/engine/version-history/#v149-api-changes) |
 @y
-| 29.0           | [1.52](__SUBDIR__/reference/api/engine/version/v1.52/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v152-api-changes) |
+| 28.5           | [1.51](__SUBDIR__/reference/api/engine/version/v1.51/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v151-api-changes) |
+| 28.4           | [1.51](__SUBDIR__/reference/api/engine/version/v1.51/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v151-api-changes) |
 | 28.3           | [1.51](__SUBDIR__/reference/api/engine/version/v1.51/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v151-api-changes) |
 | 28.2           | [1.50](__SUBDIR__/reference/api/engine/version/v1.50/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v150-api-changes) |
 | 28.1           | [1.49](__SUBDIR__/reference/api/engine/version/v1.49/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v149-api-changes) |

@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/layouts/shortcodes
+subdir = src/layouts/_partials/admonitions/icons
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -120,8 +120,7 @@ am__can_run_installinfo = \
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/copy.mk \
-	$(top_srcdir)/build-aux/main.mk
+	$(top_srcdir)/build-aux/copy.mk
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -238,52 +237,19 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-bases = \
-	desktop-install.html    \
-	desktop-install-v2.html \
-	experimental.html       \
-	restricted.html         \
-	summary-bar.html
+copyfiles = \
+	error.svg     \
+	important.svg \
+	info.svg      \
+	lightbulb.svg \
+	warning.svg
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
-changes = $(bases:=.ch) # change files
-transes = $(bases)      # translated files
-EXTRA_DIST = $(changes)
-copyfiles = \
-	accordion.html                 \
-	accordion.markdown.md          \
-	badge.html                     \
-	badge.markdown.md              \
-	button.html                    \
-	button.markdown.md             \
-	card.html                      \
-	card.markdown.md               \
-	cta.html                       \
-	cta.markdown.md                \
-	desktop-install-v2.markdown.md \
-	experimental.markdown.md       \
-	grid.html                      \
-	grid.markdown.md               \
-	include.html                   \
-	inline-image.html              \
-	inline-image.markdown.md       \
-	release-date.html              \
-	restricted.markdown.md         \
-	rss-button.html                \
-	rss-button.markdown.md         \
-	sectionlinks.html              \
-	summary-bar.markdown.md        \
-	tab.html                       \
-	tabs.html                      \
-	tabs.markdown.md               \
-	youtube-embed.html             \
-	youtube-embed.markdown.md
-
 all: all-am
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -292,9 +258,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/layouts/shortcodes/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/layouts/_partials/admonitions/icons/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/layouts/shortcodes/Makefile
+	  $(AUTOMAKE) --foreign src/layouts/_partials/admonitions/icons/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -303,7 +269,7 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
+$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/copy.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -474,24 +440,6 @@ ctie:
 	@if test ! -x "$(top_builddir)/$@/$@"; then \
 	  @$(MAKE) -C $(top_builddir)/$@ $@ >/dev/null; \
 	fi
-
-.PHONY: all
-all: $(transes)
-
-submakename ?= Makefile.sub
-
--include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
-
-@MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
-@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
-@MAINT@	@if test ! -f $@; then \
-@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
-@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$||"` $@; \
-@MAINT@	fi
 
 .PHONY: all
 all: $(copyfiles)

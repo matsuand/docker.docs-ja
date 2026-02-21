@@ -740,7 +740,17 @@ Docker Sandboxes:
 @y
 Docker Sandboxes:
   availability: 試験的
-  requires: Docker Desktop [4.58](manuals/desktop/release-notes.md#4580) or later
+  requires: Docker Desktop [4.58](manuals/desktop/release-notes.md#4580) およびそれ以降
+@z
+
+@x
+Docker Sandboxes v0.12:
+  availability: Experimental
+  requires: Docker Desktop [4.61](/manuals/desktop/release-notes.md#4610) or later
+@y
+Docker Sandboxes v0.12:
+  availability: 試験的
+  requires: Docker Desktop [4.61](/manuals/desktop/release-notes.md#4610) およびそれ以降
 @z
 
 @x

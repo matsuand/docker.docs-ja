@@ -45,7 +45,7 @@
 
 @x
     {{- if eq .Type "desktop-release" -}}
-      {{- $releases := .Site.Data.desktop_release.releases -}}
+      {{- $releases := hugo.Data.desktop_release.releases -}}
       {{- range $index, $release := $releases -}}
         {{- if lt $index 20 -}}
     <item>
@@ -58,7 +58,7 @@
         {{- end -}}
       {{- end -}}
     {{- else if eq .Type "security-announcements" -}}
-      {{- $announcements := .Site.Data.security_announcements.announcements -}}
+      {{- $announcements := hugo.Data.security_announcements.announcements -}}
       {{- range $index, $announcement := $announcements -}}
         {{- if lt $index 20 -}}
     <item>
@@ -75,7 +75,7 @@
 </rss>
 @y
     {{- if eq .Type "desktop-release" -}}
-      {{- $releases := .Site.Data.desktop_release.releases -}}
+      {{- $releases := hugo.Data.desktop_release.releases -}}
       {{- range $index, $release := $releases -}}
         {{- if lt $index 20 -}}
     <item>
@@ -88,7 +88,7 @@
         {{- end -}}
       {{- end -}}
     {{- else if eq .Type "security-announcements" -}}
-      {{- $announcements := .Site.Data.security_announcements.announcements -}}
+      {{- $announcements := hugo.Data.security_announcements.announcements -}}
       {{- range $index, $announcement := $announcements -}}
         {{- if lt $index 20 -}}
     <item>

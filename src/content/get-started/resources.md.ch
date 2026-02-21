@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ �Ή�
 
 @x
 title: Educational resources
@@ -9,7 +9,7 @@ keywords: get started, setup, orientation, quickstart, intro, concepts, kubernet
   docker desktop
 description: Get started resources learning docker
 @y
-title: 学習情報
+title: Educational resources
 keywords: get started, setup, orientation, quickstart, intro, concepts, kubernetes,
   docker desktop
 description: Get started resources learning docker
@@ -28,77 +28,9 @@ Docker and the broader community of Docker experts have put together many differ
 @z
 
 @x
-Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/trainings/). 
+Learn Docker and containerization fundamentals through self-paced, [hands-on training courses](/get-started/introduction) created by Docker experts.
 @y
-Expand your knowledge on all things Docker with [basic to advanced trainings from Docker experts](https://www.docker.com/trainings/). 
-@z
-
-@x
-You can find recorded content at your own convenience, or register for a live session to participate in Q&A.
-@y
-You can find recorded content at your own convenience, or register for a live session to participate in Q&A.
-@z
-
-@x
-## Hosted labs
-@y
-## Hosted labs
-@z
-
-@x
-These self-paced and hands-on workshops use a free, hosted environment ([Play with Kubernetes](https://labs.play-with-k8s.com/)) that doesn't require any installation. Follow along and learn more about Kubernetes.
-@y
-These self-paced and hands-on workshops use a free, hosted environment ([Play with Kubernetes](https://labs.play-with-k8s.com/)) that doesn't require any installation. Follow along and learn more about Kubernetes.
-@z
-
-@x
-* [Kubernetes Workshop](https://training.play-with-kubernetes.com/kubernetes-workshop/)
-@y
-* [Kubernetes Workshop](https://training.play-with-kubernetes.com/kubernetes-workshop/)
-@z
-
-@x
-\* Labs are free but require registration with a Docker ID.
-@y
-\* Labs are free but require registration with a Docker ID.
-@z
-
-@x
-## Self-guided tutorials
-@y
-## Self-guided tutorials
-@z
-
-@x
-Created by experts in the Docker community, these free tutorials provide guided step-by-step workflows for working with the Docker platform.
-@y
-Created by experts in the Docker community, these free tutorials provide guided step-by-step workflows for working with the Docker platform.
-@z
-
-@x
-* **Integrating Docker with Your IDE**
-    * [Java Development: Eclipse](https://training.play-with-docker.com/java-debugging-eclipse/)
-    * [Java Development: IntelliJ](https://training.play-with-docker.com/java-debugging-intellij/)
-    * [Java Development: Netbeans](https://training.play-with-docker.com/java-debugging-netbeans/)
-    * [Live Debugging Node.js with Docker and Visual Studio Code](https://training.play-with-docker.com/nodejs-live-debugging/)
-@y
-* **Integrating Docker with Your IDE**
-    * [Java Development: Eclipse](https://training.play-with-docker.com/java-debugging-eclipse/)
-    * [Java Development: IntelliJ](https://training.play-with-docker.com/java-debugging-intellij/)
-    * [Java Development: Netbeans](https://training.play-with-docker.com/java-debugging-netbeans/)
-    * [Live Debugging Node.js with Docker and Visual Studio Code](https://training.play-with-docker.com/nodejs-live-debugging/)
-@z
-
-@x
-* **Windows Containers**
-    * [Windows Container Setup](https://training.play-with-docker.com/windows-containers-setup/)
-    * [Windows Container Basics](https://training.play-with-docker.com/windows-containers-basics/)
-    * [Windows Containers Multi-Container Applications](https://training.play-with-docker.com/windows-containers-multicontainer/)
-@y
-* **Windows Containers**
-    * [Windows Container Setup](https://training.play-with-docker.com/windows-containers-setup/)
-    * [Windows Container Basics](https://training.play-with-docker.com/windows-containers-basics/)
-    * [Windows Containers Multi-Container Applications](https://training.play-with-docker.com/windows-containers-multicontainer/)
+Learn Docker and containerization fundamentals through self-paced, [hands-on training courses](__SUBDIR__/get-started/introduction) created by Docker experts.
 @z
 
 @x
@@ -164,7 +96,6 @@ A number of Docker Captains have also created video courses on Docker and Kubern
 * [Elton Stoneman](https://docker4.net/udemy): Docker for .NET Apps - on Linux and Windows. Includes the discount code `644ABCBC33F474541885`.
 * [Nick Janetakis](https://nickjanetakis.com/courses/) Dive into Docker, Docker for DevOps
 * [Nigel Poulton](https://nigelpoulton.com/video-courses): Kubernetes 101, Getting Started with Kubernetes, Docker and Kubernetes: The Big Picture, Kubernetes Deep Dive, Docker Deep Dive
-* [Arun Gupta](https://www.lynda.com/Docker-tutorials/Docker-Java-developers/576584-2.html): Docker for Java Developers
 * [Ajeet Singh Raina](https://collabnix.com/): Docker and Kubernetes Labs
 * \[French\] [Luc Juggery](https://www.udemy.com/user/lucjuggery/): Introduction to Kubernetes, The Docker Platform
 @y
@@ -172,7 +103,6 @@ A number of Docker Captains have also created video courses on Docker and Kubern
 * [Elton Stoneman](https://docker4.net/udemy): Docker for .NET Apps - on Linux and Windows. Includes the discount code `644ABCBC33F474541885`.
 * [Nick Janetakis](https://nickjanetakis.com/courses/) Dive into Docker, Docker for DevOps
 * [Nigel Poulton](https://nigelpoulton.com/video-courses): Kubernetes 101, Getting Started with Kubernetes, Docker and Kubernetes: The Big Picture, Kubernetes Deep Dive, Docker Deep Dive
-* [Arun Gupta](https://www.lynda.com/Docker-tutorials/Docker-Java-developers/576584-2.html): Docker for Java Developers
 * [Ajeet Singh Raina](https://collabnix.com/): Docker and Kubernetes Labs
 * \[French\] [Luc Juggery](https://www.udemy.com/user/lucjuggery/): Introduction to Kubernetes, The Docker Platform
 @z
@@ -181,30 +111,4 @@ A number of Docker Captains have also created video courses on Docker and Kubern
 \* Many of the courses are fee-based
 @y
 \* Many of the courses are fee-based
-@z
-
-@x
-## Community-translated docs
-@y
-## Community-translated docs
-@z
-
-@x
-> [!NOTE]
->
-> The following section contains a subset of Docker docs that are translated by community
-> members. This is not an officially translated version of Docker docs and it may not be up to date.
-> You must use the community-translated docs at your own discretion.
-@y
-> [!NOTE]
->
-> The following section contains a subset of Docker docs that are translated by community
-> members. This is not an officially translated version of Docker docs and it may not be up to date.
-> You must use the community-translated docs at your own discretion.
-@z
-
-@x
-- [Subset of Docker docs in Japanese](https://docs.docker.jp/index.html) translated by Docker Captain [Masahito Zembutsu](https://github.com/zembutsu).
-@y
-- [Subset of Docker docs in Japanese](https://docs.docker.jp/index.html) translated by Docker Captain [Masahito Zembutsu](https://github.com/zembutsu).
 @z

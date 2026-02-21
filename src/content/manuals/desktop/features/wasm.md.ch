@@ -30,11 +30,11 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @x
 > [!IMPORTANT]
 >
-> Wasm workloads will be deprecated and removed in a future Docker Desktop release. It is no longer actively maintained.
+> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained.
 @y
 > [!IMPORTANT]
 >
-> Wasm workloads will be deprecated and removed in a future Docker Desktop release. It is no longer actively maintained.
+> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained.
 @z
 
 @x

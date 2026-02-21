@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応(一部)
 
 @x
 title: Docker Scout metrics exporter
@@ -297,39 +298,7 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
    replace `ORG` in the `metrics_path` property on line 6 with the namespace of your Docker organization.
 @z
 
-@x
-   ```yaml {title="prometheus/prometheus.yml",hl_lines="6",linenos=1}
-   global:
-     scrape_interval: 60s
-     scrape_timeout: 40s
-   scrape_configs:
-     - job_name: Docker Scout policy
-       metrics_path: /v1/exporter/org/<ORG>/metrics
-       scheme: https
-       static_configs:
-         - targets:
-             - api.scout.docker.com
-       authorization:
-         type: Bearer
-         credentials_file: /etc/prometheus/token
-   ```
-@y
-   ```yaml {title="prometheus/prometheus.yml",hl_lines="6",linenos=1}
-   global:
-     scrape_interval: 60s
-     scrape_timeout: 40s
-   scrape_configs:
-     - job_name: Docker Scout policy
-       metrics_path: /v1/exporter/org/<ORG>/metrics
-       scheme: https
-       static_configs:
-         - targets:
-             - api.scout.docker.com
-       authorization:
-         type: Bearer
-         credentials_file: /etc/prometheus/token
-   ```
-@z
+% snip code...
 
 @x
 4. Start the compose services.
