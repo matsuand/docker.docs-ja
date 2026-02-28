@@ -1,0 +1,66 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker mcp secret set
+short: Set a secret in the local OS Keychain
+long: Set a secret in the local OS Keychain
+usage: docker mcp secret set key[=value]
+pname: docker mcp secret
+plink: docker_mcp_secret.yaml
+options:
+    - option: provider
+      value_type: string
+      description: 'Supported: credstore, oauth/<provider>'
+      deprecated: true
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ### Pass the secret via STDIN
+@y
+command: docker mcp secret set
+short: Set a secret in the local OS Keychain
+long: Set a secret in the local OS Keychain
+usage: docker mcp secret set key[=value]
+pname: docker mcp secret
+plink: docker_mcp_secret.yaml
+options:
+    - option: provider
+      value_type: string
+      description: 'Supported: credstore, oauth/<provider>'
+      deprecated: true
+      hidden: true
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+examples: |-
+    ### Pass the secret via STDIN
+@z
+
+@x
+    ```console
+    echo my-secret-password > pwd.txt
+    cat pwd.txt | docker mcp secret set postgres_password
+    ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+    ```console
+    echo my-secret-password > pwd.txt
+    cat pwd.txt | docker mcp secret set postgres_password
+    ```
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: Learn how to get started using Docker Hub
@@ -369,13 +369,13 @@ You can run images from Docker Hub using the CLI or Docker Desktop Dashboard.
    The `docker run` command automatically pulls and runs the image without the
    need to run `docker pull` first. To learn more about the command and its
    options, see the [`docker run` CLI
-   reference](../../reference/cli/docker/container/run.md). After running the
+   reference](/reference/cli/docker/container/run/). After running the
    command, you should see output similar to the following.
 @y
    The `docker run` command automatically pulls and runs the image without the
    need to run `docker pull` first. To learn more about the command and its
    options, see the [`docker run` CLI
-   reference](../../reference/cli/docker/container/run.md). After running the
+   reference](__SUBDIR__/reference/cli/docker/container/run/). After running the
    command, you should see output similar to the following.
 @z
 
@@ -545,13 +545,13 @@ customize your own images to suit specific needs.
    This command builds your image and tags it so that Docker understands which
    repository to push it to in Docker Hub. To learn more about the command and
    its options, see the [`docker build` CLI
-   reference](../../reference/cli/docker/buildx/build.md). After running the
+   reference](/reference/cli/docker/buildx/build/). After running the
    command, you should see output similar to the following.
 @y
    This command builds your image and tags it so that Docker understands which
    repository to push it to in Docker Hub. To learn more about the command and
    its options, see the [`docker build` CLI
-   reference](../../reference/cli/docker/buildx/build.md). After running the
+   reference](__SUBDIR__/reference/cli/docker/buildx/build/). After running the
    command, you should see output similar to the following.
 @z
 
@@ -657,13 +657,13 @@ customize your own images to suit specific needs.
    The command pushes the image to Docker Hub and automatically
    creates the repository if it doesn't exist. To learn more about the command,
    see the [`docker push` CLI
-   reference](../../reference/cli/docker/image/push.md). After running the
+   reference](/reference/cli/docker/image/push/). After running the
    command, you should see output similar to the following.
 @y
    The command pushes the image to Docker Hub and automatically
    creates the repository if it doesn't exist. To learn more about the command,
    see the [`docker push` CLI
-   reference](../../reference/cli/docker/image/push.md). After running the
+   reference](__SUBDIR__/reference/cli/docker/image/push/). After running the
    command, you should see output similar to the following.
 @z
 

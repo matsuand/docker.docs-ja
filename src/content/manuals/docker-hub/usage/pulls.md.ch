@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -191,11 +191,11 @@ the on-screen instructions to complete the sign-in process.
 @x
 If you're using a standalone version of Docker Engine, run the `docker login`
 command from a terminal to authenticate with Docker Hub. For information on how
-to use the command, see [docker login](/reference/cli/docker/login.md).
+to use the command, see [docker login](/reference/cli/docker/login/).
 @y
 If you're using a standalone version of Docker Engine, run the `docker login`
 command from a terminal to authenticate with Docker Hub. For information on how
-to use the command, see [docker login](reference/cli/docker/login.md).
+to use the command, see [docker login](__SUBDIR__/reference/cli/docker/login/).
 @z
 
 @x
@@ -207,15 +207,15 @@ to use the command, see [docker login](reference/cli/docker/login.md).
 @x
 If you're running Docker Swarm, you must use the `--with-registry-auth` flag to
 authenticate with Docker Hub. For more information, see [Create a
-service](/reference/cli/docker/service/create.md#with-registry-auth). If you
+service](/reference/cli/docker/service/create/#with-registry-auth). If you
 are using a Docker Compose file to deploy an application stack, see [docker
-stack deploy](/reference/cli/docker/stack/deploy.md).
+stack deploy](/reference/cli/docker/stack/deploy/).
 @y
 If you're running Docker Swarm, you must use the `--with-registry-auth` flag to
 authenticate with Docker Hub. For more information, see [Create a
-service](reference/cli/docker/service/create.md#with-registry-auth). If you
+service](__SUBDIR__/reference/cli/docker/service/create/#with-registry-auth). If you
 are using a Docker Compose file to deploy an application stack, see [docker
-stack deploy](reference/cli/docker/stack/deploy.md).
+stack deploy](__SUBDIR__/reference/cli/docker/stack/deploy/).
 @z
 
 @x

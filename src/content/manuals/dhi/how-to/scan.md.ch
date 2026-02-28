@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -105,9 +105,9 @@ Example output:
 % snip output...
 
 @x
-For more detailed filtering and JSON output, see [Docker Scout CLI reference](../../../reference/cli/docker/scout/_index.md).
+For more detailed filtering and JSON output, see [Docker Scout CLI reference](/reference/cli/docker/scout/).
 @y
-For more detailed filtering and JSON output, see [Docker Scout CLI reference](../../../reference/cli/docker/scout/_index.md).
+For more detailed filtering and JSON output, see [Docker Scout CLI reference](__SUBDIR__/reference/cli/docker/scout/).
 @z
 
 @x

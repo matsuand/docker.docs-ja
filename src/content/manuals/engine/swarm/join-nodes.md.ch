@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: Add worker and manager nodes to a swarm
@@ -252,9 +252,9 @@ This node joined a swarm as a manager.
 @z
 
 @x
-* `swarm join` [command line reference](/reference/cli/docker/swarm/join.md)
+* `swarm join` [command line reference](/reference/cli/docker/swarm/join/)
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
-* `swarm join` [command line reference](reference/cli/docker/swarm/join.md)
+* `swarm join` [command line reference](__SUBDIR__/reference/cli/docker/swarm/join/)
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

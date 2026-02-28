@@ -8,7 +8,7 @@
 @z
 
 @x
-  <a href="/guides/" class="link mt-2">« Back to all guides</a>
+  <a href="/guides/" class="link mt-2">&laquo; Back to all guides</a>
 @y
-  <a href="__SUBDIR__/guides/" class="link mt-2">« 全ガイドに戻る</a>
+  <a href="__SUBDIR__/guides/" class="link mt-2">&laquo; 全ガイドに戻る</a>
 @z

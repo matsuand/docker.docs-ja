@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -28,12 +28,12 @@ keywords: build, buildx, bake, buildkit, hcl
 In addition to the main `context` key that defines the build context, each
 target can also define additional named contexts with a map defined with key
 `contexts`. These values map to the `--build-context` flag in the [build
-command](/reference/cli/docker/buildx/build.md#build-context).
+command](/reference/cli/docker/buildx/build/#build-context).
 @y
 In addition to the main `context` key that defines the build context, each
 target can also define additional named contexts with a map defined with key
 `contexts`. These values map to the `--build-context` flag in the [build
-command](reference/cli/docker/buildx/build.md#build-context).
+command](__SUBDIR__/reference/cli/docker/buildx/build/#build-context).
 @z
 
 @x

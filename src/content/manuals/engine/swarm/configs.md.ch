@@ -279,17 +279,7 @@ Use these links to read about specific commands, or continue to the
 [example about using configs with a service](#advanced-example-use-configs-with-a-nginx-service).
 @z
 
-@x
-- [`docker config create`](/reference/cli/docker/config/create.md)
-- [`docker config inspect`](/reference/cli/docker/config/inspect.md)
-- [`docker config ls`](/reference/cli/docker/config/ls.md)
-- [`docker config rm`](/reference/cli/docker/config/rm.md)
-@y
-- [`docker config create`](reference/cli/docker/config/create.md)
-- [`docker config inspect`](reference/cli/docker/config/inspect.md)
-- [`docker config ls`](reference/cli/docker/config/ls.md)
-- [`docker config rm`](reference/cli/docker/config/rm.md)
-@z
+% snip command links...
 
 @x
 ## Examples

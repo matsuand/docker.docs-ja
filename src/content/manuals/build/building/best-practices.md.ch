@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Building best practices
@@ -1533,14 +1533,14 @@ as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](/reference/cli/docker/buildx/build.md#git-repositories).
+[Git URLs](/reference/cli/docker/buildx/build/).
 @y
 The `ADD` instruction is best for when you need to download a remote artifact
 as part of your build. `ADD` is better than manually adding files using
 something like `wget` and `tar`, because it ensures a more precise build cache.
 `ADD` also has built-in support for checksum validation of the remote
 resources, and a protocol for parsing branches, tags, and subdirectories from
-[Git URLs](reference/cli/docker/buildx/build.md#git-repositories).
+[Git URLs](__SUBDIR__/reference/cli/docker/buildx/build/).
 @z
 
 @x

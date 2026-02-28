@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Base image hardening
 linktitle: Hardening
@@ -190,11 +192,11 @@ Because Docker Hardened Images strip out many common tools, they may not work ou
 @x
 - Use multi-stage builds to compile code or install dependencies in a `-dev` image and copy the output into a hardened runtime image
 - Replace shell scripts with equivalent entrypoint binaries or explicitly include a shell if needed
-- Use [Docker Debug](../../../reference/cli/docker/debug.md) to temporarily inspect or troubleshoot containers without altering the base image
+- Use [Docker Debug](/reference/cli/docker/debug/) to temporarily inspect or troubleshoot containers without altering the base image
 @y
 - Use multi-stage builds to compile code or install dependencies in a `-dev` image and copy the output into a hardened runtime image
 - Replace shell scripts with equivalent entrypoint binaries or explicitly include a shell if needed
-- Use [Docker Debug](../../../reference/cli/docker/debug.md) to temporarily inspect or troubleshoot containers without altering the base image
+- Use [Docker Debug](__SUBDIR__/reference/cli/docker/debug/) to temporarily inspect or troubleshoot containers without altering the base image
 @z
 
 @x

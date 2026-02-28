@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -92,11 +92,11 @@ need to consume the secret in your Dockerfile.
 
 @x
 To pass a secret to a build, use the [`docker build --secret`
-flag](/reference/cli/docker/buildx/build.md#secret), or the
+flag](/reference/cli/docker/buildx/build/#secret), or the
 equivalent options for [Bake](../bake/reference.md#targetsecret).
 @y
 To pass a secret to a build, use the [`docker build --secret`
-flag](reference/cli/docker/buildx/build.md#secret), or the
+flag](__SUBDIR__/reference/cli/docker/buildx/build/#secret), or the
 equivalent options for [Bake](../bake/reference.md#targetsecret).
 @z
 
@@ -164,14 +164,14 @@ builds, such as API tokens, passwords, or SSH keys.
 
 @x
 The source of a secret can be either a
-[file](/reference/cli/docker/buildx/build.md#file) or an
-[environment variable](/reference/cli/docker/buildx/build.md#env).
+[file](/reference/cli/docker/buildx/build/#file) or an
+[environment variable](/reference/cli/docker/buildx/build/#typeenv).
 When you use the CLI or Bake, the type can be detected automatically. You can
 also specify it explicitly with `type=file` or `type=env`.
 @y
 The source of a secret can be either a
-[file](reference/cli/docker/buildx/build.md#file) or an
-[environment variable](reference/cli/docker/buildx/build.md#env).
+[file](__SUBDIR__/reference/cli/docker/buildx/build/#file) or an
+[environment variable](__SUBDIR__/reference/cli/docker/buildx/build/#typeenv).
 When you use the CLI or Bake, the type can be detected automatically. You can
 also specify it explicitly with `type=file` or `type=env`.
 @z
@@ -286,11 +286,11 @@ SSH mount](reference/dockerfile.md#run---mounttypessh).
 
 @x
 To pass an SSH socket the build, you use the [`docker build --ssh`
-flag](/reference/cli/docker/buildx/build.md#ssh), or equivalent
+flag](/reference/cli/docker/buildx/build/#ssh), or equivalent
 options for [Bake](../bake/reference.md#targetssh).
 @y
 To pass an SSH socket the build, you use the [`docker build --ssh`
-flag](reference/cli/docker/buildx/build.md#ssh), or equivalent
+flag](__SUBDIR__/reference/cli/docker/buildx/build/#ssh), or equivalent
 options for [Bake](../bake/reference.md#targetssh).
 @z
 

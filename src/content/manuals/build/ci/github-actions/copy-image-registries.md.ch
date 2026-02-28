@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -21,9 +22,9 @@ keywords: ci, github actions, gha, buildkit, buildx, registry
 
 @x
 [Multi-platform images](../../building/multi-platform.md) built using Buildx can
-be copied from one registry to another using the [`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create.md):
+be copied from one registry to another using the [`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create/):
 @y
-Buildx を用いてビルドした [マルチプラットフォームイメージ](../../building/multi-platform.md) は、[`buildx imagetools create`](reference/cli/docker/buildx/imagetools/create.md) コマンドによりレジストリ間でコピーすることができます。
+Buildx を用いてビルドした [マルチプラットフォームイメージ](../../building/multi-platform.md) は、[`buildx imagetools create`](__SUBDIR__/reference/cli/docker/buildx/imagetools/create/) コマンドによりレジストリ間でコピーすることができます。
 @z
 
 % snip code...

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: Integrate your runtime environments with Docker Scout using the CLI client
@@ -35,10 +35,10 @@ GitHub and as a container image on Docker Hub. Use the client to invoke the
 
 @x
 For more information about how to use the `docker scout environment` command,
-refer to the [CLI reference](/reference/cli/docker/scout/environment.md).
+refer to the [CLI reference](/reference/cli/docker/scout/environment/).
 @y
 For more information about how to use the `docker scout environment` command,
-refer to the [CLI reference](reference/cli/docker/scout/environment.md).
+refer to the [CLI reference](__SUBDIR__/reference/cli/docker/scout/environment/).
 @z
 
 @x

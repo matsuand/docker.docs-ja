@@ -704,14 +704,14 @@ Related information:
 @x
 - [Dockerfile reference](/reference/dockerfile.md)
 - [.dockerignore file](/reference/dockerfile.md#dockerignore-file)
-- [docker init CLI reference](/reference/cli/docker/init.md)
-- [docker build CLI reference](/reference/cli/docker/buildx/build.md)
+- [docker init CLI reference](/reference/cli/docker/init/)
+- [docker build CLI reference](/reference/cli/docker/buildx/build/)
 - [Docker Hardened Images](/dhi/)
 @y
 - [Dockerfile reference](reference/dockerfile.md)
 - [.dockerignore file](reference/dockerfile.md#dockerignore-file)
-- [docker init CLI reference](reference/cli/docker/init.md)
-- [docker build CLI reference](reference/cli/docker/buildx/build.md)
+- [docker init CLI reference](__SUBDIR__/reference/cli/docker/init/)
+- [docker build CLI reference](__SUBDIR__/reference/cli/docker/buildx/build/)
 - [Docker Hardened Images](__SUBDIR__/dhi/)
 @z
 

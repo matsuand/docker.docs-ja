@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -56,7 +56,7 @@ runners using a matrix strategy, you can drastically reduce build durations and
 streamline your CI pipeline. These examples demonstrate how to allocate each
 platform build to a dedicated runner, including ARM-native runners where
 applicable, and create a unified manifest list using the
-[`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create.md).
+[`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create/).
 @y
 Building multiple platforms on the same runner can significantly extend build
 times, particularly when dealing with complex Dockerfiles or a high number of
@@ -65,7 +65,7 @@ runners using a matrix strategy, you can drastically reduce build durations and
 streamline your CI pipeline. These examples demonstrate how to allocate each
 platform build to a dedicated runner, including ARM-native runners where
 applicable, and create a unified manifest list using the
-[`buildx imagetools create` command](reference/cli/docker/buildx/imagetools/create.md).
+[`buildx imagetools create` command](__SUBDIR__/reference/cli/docker/buildx/imagetools/create/).
 @z
 
 @x

@@ -244,7 +244,7 @@ copyfiles = \
 	cursor.avif             \
 	goose.avif              \
 	lm-studio.avif          \
-	mcp-overview.svg        \
+	mcp_toolkit.avif        \
 	sema4-edit-agent.avif   \
 	sema4-mcp-list.avif     \
 	tools.png               \

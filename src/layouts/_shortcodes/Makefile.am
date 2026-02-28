@@ -32,7 +32,6 @@ copyfiles = \
 	inline-image.markdown.md       \
 	release-date.html              \
 	restricted.markdown.md         \
-	rss-button.html                \
 	rss-button.markdown.md         \
 	sectionlinks.html              \
 	summary-bar.markdown.md        \

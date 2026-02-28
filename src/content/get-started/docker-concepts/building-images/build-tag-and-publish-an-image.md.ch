@@ -565,15 +565,15 @@ To learn more about building, tagging, and publishing images, visit the followin
 
 @x
 * [What is a build context?](/build/concepts/context/#what-is-a-build-context)
-* [docker build reference](/engine/reference/commandline/image_build/)
-* [docker image tag reference](/engine/reference/commandline/image_tag/)
-* [docker push reference](/engine/reference/commandline/image_push/)
+* [docker build reference](/reference/cli/docker/buildx/build/)
+* [docker image tag reference](/reference/cli/docker/image/tag/)
+* [docker push reference](/reference/cli/docker/image/push/)
 * [What is a registry?](/get-started/docker-concepts/the-basics/what-is-a-registry/)
 @y
 * [What is a build context?](__SUBDIR__/build/concepts/context/#what-is-a-build-context)
-* [docker build reference](__SUBDIR__/engine/reference/commandline/image_build/)
-* [docker image tag reference](__SUBDIR__/engine/reference/commandline/image_tag/)
-* [docker push reference](__SUBDIR__/engine/reference/commandline/image_push/)
+* [docker build reference](__SUBDIR__/reference/cli/docker/buildx/build/)
+* [docker image tag reference](__SUBDIR__/reference/cli/docker/image/tag/)
+* [docker push reference](__SUBDIR__/reference/cli/docker/image/push/)
 * [What is a registry?](__SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-registry/)
 @z
 

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Overlay network driver
@@ -104,14 +104,14 @@ participating in an overlay network:
 @x
 | Ports                  | Description                                                                                                                                             |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](/reference/cli/docker/swarm/join.md#--listen-addr-value) |
-| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](/reference/cli/docker/swarm/init.md#data-path-port)          |
+| `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](/reference/cli/docker/swarm/join/#listen-addr) |
+| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](/reference/cli/docker/swarm/init/#data-path-port)          |
 | `7946/tcp`, `7946/udp` | Used for communication among nodes, not configurable                                                                                                    |
 @y
 | Ports                  | Description                                                                                                                                             |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](reference/cli/docker/swarm/join.md#--listen-addr-value) |
-| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](reference/cli/docker/swarm/init.md#data-path-port)          |
+| `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](__SUBDIR__/reference/cli/docker/swarm/join/#listen-addr) |
+| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](__SUBDIR__/reference/cli/docker/swarm/init/#data-path-port)          |
 | `7946/tcp`, `7946/udp` | Used for communication among nodes, not configurable                                                                                                    |
 @z
 

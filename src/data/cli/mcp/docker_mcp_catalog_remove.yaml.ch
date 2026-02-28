@@ -1,0 +1,32 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker mcp catalog remove
+aliases: docker mcp catalog remove, docker mcp catalog rm
+short: Remove a catalog
+long: Remove a catalog
+usage: docker mcp catalog remove <oci-reference>
+pname: docker mcp catalog
+plink: docker_mcp_catalog.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker mcp catalog remove
+aliases: docker mcp catalog remove, docker mcp catalog rm
+short: Remove a catalog
+long: Remove a catalog
+usage: docker mcp catalog remove <oci-reference>
+pname: docker mcp catalog
+plink: docker_mcp_catalog.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

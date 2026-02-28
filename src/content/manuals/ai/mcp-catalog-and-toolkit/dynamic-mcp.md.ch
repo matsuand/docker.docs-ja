@@ -5,12 +5,12 @@
 
 @x
 title: Dynamic MCP
-linkTitle: Dynamic MCP
+linkTitle: Dynamic discovery
 description: Discover and add MCP servers on-demand using natural language with Dynamic MCP servers
 keywords: dynamic mcps, mcp discovery, mcp-find, mcp-add, code-mode, ai agents, model context protocol
 @y
 title: Dynamic MCP
-linkTitle: Dynamic MCP
+linkTitle: Dynamic discovery
 description: Discover and add MCP servers on-demand using natural language with Dynamic MCP servers
 keywords: dynamic mcps, mcp discovery, mcp-find, mcp-add, code-mode, ai agents, model context protocol
 @z
@@ -77,11 +77,11 @@ general questions and feature requests.
 
 @x
 When you connect a client to the MCP Gateway, the gateway exposes a small set
-of management tools alongside any MCP servers you've already enabled. These
+of management tools alongside any MCP servers in your active profile. These
 management tools let agents interact with the gateway's configuration:
 @y
 When you connect a client to the MCP Gateway, the gateway exposes a small set
-of management tools alongside any MCP servers you've already enabled. These
+of management tools alongside any MCP servers in your active profile. These
 management tools let agents interact with the gateway's configuration:
 @z
 
@@ -117,12 +117,16 @@ restart or manual configuration.
 
 @x
 Dynamically added servers and tools are associated with your _current session
-only_. When you start a new session, previously added servers are not
-automatically included.
+only_. They're not persisted to your profile. When you start a new session,
+only servers you've added to your profile through the
+[MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md) or
+[Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) are available.
 @y
 Dynamically added servers and tools are associated with your _current session
-only_. When you start a new session, previously added servers are not
-automatically included.
+only_. They're not persisted to your profile. When you start a new session,
+only servers you've added to your profile through the
+[MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md) or
+[Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md) are available.
 @z
 
 @x

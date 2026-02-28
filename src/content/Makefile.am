@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = get-started guides includes languages manuals reference tags
+SUBDIRS = get-started guides includes manuals reference
 
 bases = \
 	_index.md

@@ -5,13 +5,13 @@
 % snip 対応
 
 @x
-title: Security FAQs
-linkTitle: Security FAQs
+title: MCP Toolkit FAQs
+linkTitle: FAQs
 description: Frequently asked questions related to MCP Catalog and Toolkit security
 keywords: MCP, Toolkit, MCP server, MCP client, security, faq
 @y
-title: Security FAQs
-linkTitle: Security FAQs
+title: MCP Toolkit FAQs
+linkTitle: FAQ
 description: Frequently asked questions related to MCP Catalog and Toolkit security
 keywords: MCP, Toolkit, MCP server, MCP client, security, faq
 @z
@@ -56,12 +56,12 @@ Currently, a majority of the servers in the catalog are built directly by Docker
 > [!NOTE]
 > When using the images with [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
-> --verify-signatures` CLI command.
+--verify-signatures` CLI command.
 @y
 > [!NOTE]
 > When using the images with [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
-> --verify-signatures` CLI command.
+--verify-signatures` CLI command.
 @z
 
 @x
@@ -172,6 +172,106 @@ Update your catalog by running:
 After the update completes, refresh the **Catalog** tab in Docker Desktop.
 @y
 After the update completes, refresh the **Catalog** tab in Docker Desktop.
+@z
+
+@x
+### What's the difference between profiles and the catalog?
+@y
+### What's the difference between profiles and the catalog?
+@z
+
+@x
+The [catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md) is the source of
+available MCP servers - a library of tools you can choose from.
+[Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) are collections of
+servers you've added to organize your work. Think of the catalog as a library,
+and profiles as your personal bookshelves containing the books you've selected
+for different purposes.
+@y
+The [catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md) is the source of
+available MCP servers - a library of tools you can choose from.
+[Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md) are collections of
+servers you've added to organize your work. Think of the catalog as a library,
+and profiles as your personal bookshelves containing the books you've selected
+for different purposes.
+@z
+
+@x
+### Can I share profiles with my team?
+@y
+### Can I share profiles with my team?
+@z
+
+@x
+Yes. Profiles can be pushed to OCI-compliant registries using
+`docker mcp profile push my-profile registry.example.com/profiles/my-profile:v1`.
+Team members can pull your profile with
+`docker mcp profile pull registry.example.com/profiles/my-profile:v1`. Note
+that credentials aren't included in shared profiles for security reasons - team
+members need to configure OAuth and other credentials separately.
+@y
+Yes. Profiles can be pushed to OCI-compliant registries using
+`docker mcp profile push my-profile registry.example.com/profiles/my-profile:v1`.
+Team members can pull your profile with
+`docker mcp profile pull registry.example.com/profiles/my-profile:v1`. Note
+that credentials aren't included in shared profiles for security reasons - team
+members need to configure OAuth and other credentials separately.
+@z
+
+@x
+### Do I need to create a profile to use MCP Toolkit?
+@y
+### Do I need to create a profile to use MCP Toolkit?
+@z
+
+@x
+Yes, MCP Toolkit requires a profile to run servers. If you're upgrading from a
+version before profiles were introduced, a default profile is automatically
+created for you with your existing server configurations. You can create
+additional named profiles to organize servers for different projects or
+environments.
+@y
+Yes, MCP Toolkit requires a profile to run servers. If you're upgrading from a
+version before profiles were introduced, a default profile is automatically
+created for you with your existing server configurations. You can create
+additional named profiles to organize servers for different projects or
+environments.
+@z
+
+@x
+### What happens to servers when I switch profiles?
+@y
+### What happens to servers when I switch profiles?
+@z
+
+@x
+Each profile contains its own set of servers and configurations. When you run
+the gateway with `--profile profile-name`, only servers in that profile are
+available to clients. The default profile is used when no profile is specified.
+Switching between profiles changes which servers your AI applications can
+access.
+@y
+Each profile contains its own set of servers and configurations. When you run
+the gateway with `--profile profile-name`, only servers in that profile are
+available to clients. The default profile is used when no profile is specified.
+Switching between profiles changes which servers your AI applications can
+access.
+@z
+
+@x
+### Can I use the same server in multiple profiles?
+@y
+### Can I use the same server in multiple profiles?
+@z
+
+@x
+Yes. You can add the same MCP server to multiple profiles, each with different
+configurations if needed. This is useful when you need the same server with
+different settings for different projects or environments.
+@y
+Yes. You can add the same MCP server to multiple profiles, each with different
+configurations if needed. This is useful when you need the same server with
+different settings for different projects or environments.
 @z
 
 @x

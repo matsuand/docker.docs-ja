@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: How PKI works in swarm mode
@@ -31,14 +31,14 @@ as a manager node. By default, the manager node generates a new root Certificate
 Authority (CA) along with a key pair, which are used to secure communications
 with other nodes that join the swarm. If you prefer, you can specify your own
 externally-generated root CA, using the `--external-ca` flag of the
-[docker swarm init](/reference/cli/docker/swarm/init.md) command.
+[docker swarm init](/reference/cli/docker/swarm/init/) command.
 @y
 When you create a swarm by running `docker swarm init`, Docker designates itself
 as a manager node. By default, the manager node generates a new root Certificate
 Authority (CA) along with a key pair, which are used to secure communications
 with other nodes that join the swarm. If you prefer, you can specify your own
 externally-generated root CA, using the `--external-ca` flag of the
-[docker swarm init](reference/cli/docker/swarm/init.md) command.
+[docker swarm init](__SUBDIR__/reference/cli/docker/swarm/init/) command.
 @z
 
 @x
@@ -128,14 +128,14 @@ By default, each node in the swarm renews its certificate every three months.
 You can configure this interval by running the `docker swarm update
 --cert-expiry <TIME PERIOD>` command. The minimum rotation value is 1 hour.
 Refer to the
-[docker swarm update](/reference/cli/docker/swarm/update.md) CLI
+[docker swarm update](/reference/cli/docker/swarm/update/) CLI
 reference for details.
 @y
 By default, each node in the swarm renews its certificate every three months.
 You can configure this interval by running the `docker swarm update
 --cert-expiry <TIME PERIOD>` command. The minimum rotation value is 1 hour.
 Refer to the
-[docker swarm update](reference/cli/docker/swarm/update.md) CLI
+[docker swarm update](__SUBDIR__/reference/cli/docker/swarm/update/) CLI
 reference for details.
 @z
 

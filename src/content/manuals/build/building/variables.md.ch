@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -240,10 +240,10 @@ For more information on how to use build arguments, refer to:
 
 @x
 - [`ARG` Dockerfile reference](/reference/dockerfile.md#arg)
-- [`docker build --build-arg` reference](/reference/cli/docker/buildx/build.md#build-arg)
+- [`docker build --build-arg` reference](/reference/cli/docker/buildx/build/#build-arg)
 @y
 - [`ARG` Dockerfile reference](reference/dockerfile.md#arg)
-- [`docker build --build-arg` reference](reference/cli/docker/buildx/build.md#build-arg)
+- [`docker build --build-arg` reference](__SUBDIR__/reference/cli/docker/buildx/build/#build-arg)
 @z
 
 @x

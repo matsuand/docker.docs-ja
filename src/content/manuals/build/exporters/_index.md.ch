@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -23,12 +23,12 @@ keywords: build, buildx, buildkit, exporter, image, registry, local, tar, oci, d
 @x
 Exporters save your build results to a specified output type. You specify the
 exporter to use with the
-[`--output` CLI option](/reference/cli/docker/buildx/build.md#output).
+[`--output` CLI option](/reference/cli/docker/buildx/build/#output).
 Buildx supports the following exporters:
 @y
 Exporters save your build results to a specified output type. You specify the
 exporter to use with the
-[`--output` CLI option](reference/cli/docker/buildx/build.md#output).
+[`--output` CLI option](__SUBDIR__/reference/cli/docker/buildx/build/#output).
 Buildx supports the following exporters:
 @z
 

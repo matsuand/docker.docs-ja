@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: OpenTelemetry support
@@ -72,9 +72,9 @@ $ docker buildx create --use \
 @z
 
 @x
-Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect.md):
+Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect/):
 @y
-Boot and [inspect `mybuilder`](reference/cli/docker/buildx/inspect.md):
+Boot and [inspect `mybuilder`](__SUBDIR__/reference/cli/docker/buildx/inspect/):
 @z
 
 @x

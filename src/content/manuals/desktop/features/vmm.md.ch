@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Virtual Machine Manager for Docker Desktop on Mac
-linkTitle: Virtual Machine Manager 
+linkTitle: Virtual Machine Manager
 keywords: virtualization software, resource allocation, mac, docker desktop, vm monitoring, vm performance, apple silicon
-description: Discover Docker Desktop for Mac's Virtual Machine Manager (VMM) options, including the new Docker VMM for Apple Silicon, offering enhanced performance and efficiency
+description: Discover Docker Desktop for Mac's Virtual Machine Manager (VMM) options, including Docker VMM for Apple Silicon, offering enhanced performance and efficiency
 @y
 title: Virtual Machine Manager for Docker Desktop on Mac
-linkTitle: Virtual Machine Manager 
+linkTitle: Virtual Machine Manager
 keywords: virtualization software, resource allocation, mac, docker desktop, vm monitoring, vm performance, apple silicon
-description: Discover Docker Desktop for Mac's Virtual Machine Manager (VMM) options, including the new Docker VMM for Apple Silicon, offering enhanced performance and efficiency
+description: Discover Docker Desktop for Mac's Virtual Machine Manager (VMM) options, including Docker VMM for Apple Silicon, offering enhanced performance and efficiency
 @z
 
 @x
@@ -38,19 +40,23 @@ To change the VMM, go to **Settings** > **General** > **Virtual Machine Manager*
 @z
 
 @x
-Docker VMM is a new, container-optimized hypervisor. By optimizing both the Linux kernel and hypervisor layers, Docker VMM delivers significant performance enhancements across common developer tasks.
+Docker VMM is a container-optimized hypervisor. By optimizing both the Linux kernel and hypervisor layers, Docker VMM delivers significant performance enhancements across common developer tasks.
 @y
-Docker VMM is a new, container-optimized hypervisor. By optimizing both the Linux kernel and hypervisor layers, Docker VMM delivers significant performance enhancements across common developer tasks.
+Docker VMM is a container-optimized hypervisor. By optimizing both the Linux kernel and hypervisor layers, Docker VMM delivers significant performance enhancements across common developer tasks.
 @z
 
 @x
 Some key performance enhancements provided by Docker VMM include:
- - Faster I/O operations: With a cold cache, iterating over a large shared filesystem with `find` is 2x faster than when the Apple Virtualization framework is used.
- - Improved caching: With a warm cache, performance can improve by as much as 25x, even surpassing native Mac operations.
 @y
 Some key performance enhancements provided by Docker VMM include:
- - Faster I/O operations: With a cold cache, iterating over a large shared filesystem with `find` is 2x faster than when the Apple Virtualization framework is used.
- - Improved caching: With a warm cache, performance can improve by as much as 25x, even surpassing native Mac operations.
+@z
+
+@x
+- Faster I/O operations: With a cold cache, iterating over a large shared filesystem with `find` is 2x faster than when the Apple Virtualization framework is used.
+- Improved caching: With a warm cache, performance can improve by as much as 25x, even surpassing native Mac operations.
+@y
+- Faster I/O operations: With a cold cache, iterating over a large shared filesystem with `find` is 2x faster than when the Apple Virtualization framework is used.
+- Improved caching: With a warm cache, performance can improve by as much as 25x, even surpassing native Mac operations.
 @z
 
 @x
@@ -110,17 +116,17 @@ The Apple Virtualization framework is a stable and well-established option for m
 @x
 > [!NOTE]
 >
-> QEMU has been deprecated in versions 4.44 and later. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/) 
+> QEMU has been deprecated in versions 4.44 and later. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/)
 @y
 > [!NOTE]
 >
-> QEMU has been deprecated in versions 4.44 and later. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/) 
+> QEMU has been deprecated in versions 4.44 and later. For more information, see the [blog announcement](https://www.docker.com/blog/docker-desktop-for-mac-qemu-virtualization-option-to-be-deprecated-in-90-days/)
 @z
 
 @x
-QEMU is a legacy virtualization option for Apple Silicon Macs, primarily supported for older use cases. 
+QEMU is a legacy virtualization option for Apple Silicon Macs, primarily supported for older use cases.
 @y
-QEMU is a legacy virtualization option for Apple Silicon Macs, primarily supported for older use cases. 
+QEMU is a legacy virtualization option for Apple Silicon Macs, primarily supported for older use cases.
 @z
 
 @x

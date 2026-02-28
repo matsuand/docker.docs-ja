@@ -2,20 +2,10 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-{{- $data := "" }}
-{{- if .Params.datafolder }}
-  {{- $data = index (index site.Data .Params.datafolder) .Params.datafile }}
-{{- else }}
-  {{- $data = index site.Data .Params.datafile }}
-{{- end -}}
+{{- $data := index site.Data.cli .Params.datafolder .Params.datafile -}}
 # {{ .Title }}
 @y
-{{- $data := "" }}
-{{- if .Params.datafolder }}
-  {{- $data = index (index site.Data .Params.datafolder) .Params.datafile }}
-{{- else }}
-  {{- $data = index site.Data .Params.datafile }}
-{{- end -}}
+{{- $data := index site.Data.cli .Params.datafolder .Params.datafile -}}
 # {{ .Title }}
 @z
 
@@ -35,12 +25,6 @@
 {{ with $data.aliases }}{{ $aliases := strings.Replace . (printf "%s, " $.Title) "" }}**Aliases:** {{ range $i, $alias := (strings.Split $aliases ", ") }}{{ if $i }}, {{ end }}`{{ $alias }}`{{ end }}{{ end }}
 @y
 {{ with $data.aliases }}{{ $aliases := strings.Replace . (printf "%s, " $.Title) "" }}**Aliases:** {{ range $i, $alias := (strings.Split $aliases ", ") }}{{ if $i }}, {{ end }}`{{ $alias }}`{{ end }}{{ end }}
-@z
-
-@x
-{{ .Content }}
-@y
-{{ .Content }}
 @z
 
 @x
@@ -136,13 +120,13 @@
 @x
 | Command | Description |
 |---------|-------------|
-{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index (index site.Data .Params.datafolder) .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
+{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index site.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
 {{ end }}{{ end }}
 {{ end }}
 @y
 | Command | Description |
 |---------|-------------|
-{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index (index site.Data .Params.datafolder) .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
+{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index site.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
 {{ end }}{{ end }}
 {{ end }}
 @z

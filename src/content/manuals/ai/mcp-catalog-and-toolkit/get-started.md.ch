@@ -29,17 +29,29 @@ keywords: Docker MCP Toolkit, MCP server, MCP client, AI agents
 @z
 
 @x
+> [!NOTE]
+> This page describes the MCP Toolkit interface in Docker Desktop 4.62 and
+> later. Earlier versions have a different UI. Upgrade to follow these
+> instructions exactly.
+@y
+> [!NOTE]
+> This page describes the MCP Toolkit interface in Docker Desktop 4.62 and
+> later. Earlier versions have a different UI. Upgrade to follow these
+> instructions exactly.
+@z
+
+@x
 The Docker MCP Toolkit makes it easy to set up, manage, and run containerized
-Model Context Protocol (MCP) servers, and connect them to AI agents. It
-provides secure defaults and support for a growing ecosystem of LLM-based
-clients. This page shows you how to get started quickly with the Docker MCP
-Toolkit.
+Model Context Protocol (MCP) servers in profiles, and connect them to AI
+agents. It provides secure defaults and support for a growing ecosystem of
+LLM-based clients. This page shows you how to get started quickly with the
+Docker MCP Toolkit.
 @y
 The Docker MCP Toolkit makes it easy to set up, manage, and run containerized
-Model Context Protocol (MCP) servers, and connect them to AI agents. It
-provides secure defaults and support for a growing ecosystem of LLM-based
-clients. This page shows you how to get started quickly with the Docker MCP
-Toolkit.
+Model Context Protocol (MCP) servers in profiles, and connect them to AI
+agents. It provides secure defaults and support for a growing ecosystem of
+LLM-based clients. This page shows you how to get started quickly with the
+Docker MCP Toolkit.
 @z
 
 @x
@@ -69,141 +81,129 @@ Before you begin, make sure you meet the following requirements to get started w
 @x
 The **Learning center** in Docker Desktop provides walkthroughs and resources
 to help you get started with Docker products and features. On the **MCP
-Toolkit** page, the **Get started** walkthrough that guides you through
-installing an MCP server, connecting a client, and testing your setup.
+Toolkit** page, the **Get started** walkthrough guides you through installing
+an MCP server, connecting a client, and testing your setup.
 @y
 The **Learning center** in Docker Desktop provides walkthroughs and resources
 to help you get started with Docker products and features. On the **MCP
-Toolkit** page, the **Get started** walkthrough that guides you through
-installing an MCP server, connecting a client, and testing your setup.
+Toolkit** page, the **Get started** walkthrough guides you through installing
+an MCP server, connecting a client, and testing your setup.
 @z
 
 @x
-Alternatively, follow the step-by-step instructions on this page to:
+Alternatively, follow the step-by-step instructions on this page:
 @y
-Alternatively, follow the step-by-step instructions on this page to:
+Alternatively, follow the step-by-step instructions on this page:
 @z
 
 @x
-- [Install MCP servers](#install-mcp-servers)
-- [Connect clients](#connect-clients)
-- [Verify connections](#verify-connections)
+- [Create a profile](#create-a-profile) - Your workspace for organizing servers
+- [Add MCP servers to your profile](#add-mcp-servers) - Select tools from the catalog
+- [Connect clients](#connect-clients) - Link AI applications to your profile
+- [Verify connections](#verify-connections) - Test that everything works
 @y
-- [Install MCP servers](#install-mcp-servers)
-- [Connect clients](#connect-clients)
-- [Verify connections](#verify-connections)
+- [Create a profile](#create-a-profile) - Your workspace for organizing servers
+- [Add MCP servers to your profile](#add-mcp-servers) - Select tools from the catalog
+- [Connect clients](#connect-clients) - Link AI applications to your profile
+- [Verify connections](#verify-connections) - Test that everything works
 @z
 
 @x
-## Install MCP servers
+Once configured, your AI applications can use all the servers in your profile.
 @y
-## Install MCP servers
+Once configured, your AI applications can use all the servers in your profile.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker Desktop">}}
+> [!TIP]
+> Prefer working from the terminal? See [Use MCP Toolkit from the CLI](cli.md)
+> for instructions on using the `docker mcp` commands.
 @y
-{{< tabs >}}
-{{< tab name="Docker Desktop">}}
+> [!TIP]
+> Prefer working from the terminal? See [Use MCP Toolkit from the CLI](cli.md)
+> for instructions on using the `docker mcp` commands.
+@z
+
+@x
+## Create a profile
+@y
+## Create a profile
+@z
+
+@x
+Profiles organize your MCP servers into collections. Create a profile for your
+work:
+@y
+Profiles organize your MCP servers into collections. Create a profile for your
+work:
+@z
+
+@x
+> [!NOTE]
+> If you're upgrading from a previous version of MCP Toolkit, your existing
+> server configurations are already in a `default` profile. You can continue
+> using the default profile or create new profiles for different projects.
+@y
+> [!NOTE]
+> If you're upgrading from a previous version of MCP Toolkit, your existing
+> server configurations are already in a `default` profile. You can continue
+> using the default profile or create new profiles for different projects.
+@z
+
+@x
+1. In Docker Desktop, select **MCP Toolkit** and select the **Profiles** tab.
+2. Select **Create profile**.
+3. Enter a name for your profile (e.g., "Frontend development").
+4. Optionally, add servers and clients now, or add them later.
+5. Select **Create**.
+@y
+1. In Docker Desktop, select **MCP Toolkit** and select the **Profiles** tab.
+2. Select **Create profile**.
+3. Enter a name for your profile (e.g., "Frontend development").
+4. Optionally, add servers and clients now, or add them later.
+5. Select **Create**.
+@z
+
+@x
+Your new profile appears in the profiles list.
+@y
+Your new profile appears in the profiles list.
+@z
+
+@x
+## Add MCP servers
+@y
+## Add MCP servers
 @z
 
 @x
 1. In Docker Desktop, select **MCP Toolkit** and select the **Catalog** tab.
-2. Search for the **GitHub Official** server from the catalog and then select the plus icon to add it.
-3. In the **GitHub Official** server page, select the **Configuration** tab and select **OAuth**.
+2. Browse the catalog and select the servers you want to add.
+3. Select the **Add to** button and choose whether you want to add the servers
+   to an existing profile, or create a new profile.
 @y
 1. In Docker Desktop, select **MCP Toolkit** and select the **Catalog** tab.
-2. Search for the **GitHub Official** server from the catalog and then select the plus icon to add it.
-3. In the **GitHub Official** server page, select the **Configuration** tab and select **OAuth**.
+2. Browse the catalog and select the servers you want to add.
+3. Select the **Add to** button and choose whether you want to add the servers
+   to an existing profile, or create a new profile.
 @z
 
 @x
-   > [!NOTE]
-   >
-   > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
+If a server requires configuration, a **Configuration Required** badge appears
+next to the server's name. You must complete the mandatory configuration before
+you can use the server.
 @y
-   > [!NOTE]
-   >
-   > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
+If a server requires configuration, a **Configuration Required** badge appears
+next to the server's name. You must complete the mandatory configuration before
+you can use the server.
 @z
 
 @x
-   Your browser opens the GitHub authorization page. Follow the on-screen instructions to [authenticate via OAuth](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#authenticate-via-oauth).
+You've now successfully added MCP servers to your profile. Next, connect an MCP
+client to use the servers in your profile.
 @y
-   Your browser opens the GitHub authorization page. Follow the on-screen instructions to [authenticate via OAuth](manuals/ai/mcp-catalog-and-toolkit/toolkit.md#authenticate-via-oauth).
-@z
-
-@x
-4. Return to Docker Desktop when the authentication process is complete.
-5. Search for the **Playwright** server from the catalog and add it.
-@y
-4. Return to Docker Desktop when the authentication process is complete.
-5. Search for the **Playwright** server from the catalog and add it.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="CLI">}}
-@y
-{{< /tab >}}
-{{< tab name="CLI">}}
-@z
-
-@x
-1. Add the GitHub Official MCP server. Run:
-@y
-1. Add the GitHub Official MCP server. Run:
-@z
-
-% snip command...
-
-@x
-2. Authenticate the server by running the following command:
-@y
-2. Authenticate the server by running the following command:
-@z
-
-% snip command...
-
-@x
-   > [!NOTE]
-   >
-   > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
-@y
-   > [!NOTE]
-   >
-   > The type of configuration required depends on the server you select. For the GitHub Official server, you must authenticate using OAuth.
-@z
-
-@x
-   Your browser opens the GitHub authorization page. Follow the on-screen instructions to [authenticate via OAuth](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#authenticate-via-oauth).
-@y
-   Your browser opens the GitHub authorization page. Follow the on-screen instructions to [authenticate via OAuth](manuals/ai/mcp-catalog-and-toolkit/toolkit.md#authenticate-via-oauth).
-@z
-
-@x
-3. Add the **Playwright** server. Run:
-@y
-3. Add the **Playwright** server. Run:
-@z
-
-% snip command...
-
-@x
-   {{< /tab >}}
-   {{< /tabs >}}
-@y
-   {{< /tab >}}
-   {{< /tabs >}}
-@z
-
-@x
-You’ve now successfully added an MCP server. Next, connect an MCP client to use
-the MCP Toolkit in an AI application.
-@y
-You’ve now successfully added an MCP server. Next, connect an MCP client to use
-the MCP Toolkit in an AI application.
+You've now successfully added MCP servers to your profile. Next, connect an MCP
+client to use the servers in your profile.
 @z
 
 @x
@@ -230,10 +230,10 @@ To connect a client to MCP Toolkit:
 
 @x
 If your client isn't listed, you can connect the MCP Toolkit manually over
-`stdio` by configuring your client to run the following command:
+`stdio` by configuring your client to run the gateway with your profile:
 @y
 If your client isn't listed, you can connect the MCP Toolkit manually over
-`stdio` by configuring your client to run the following command:
+`stdio` by configuring your client to run the gateway with your profile:
 @z
 
 % snip command...
@@ -278,7 +278,6 @@ is working:
 - [Cursor](#cursor)
 - [Gemini](#gemini)
 - [Goose](#goose)
-- [Gordon](#gordon)
 - [LM Studio](#lm-studio)
 - [OpenCode](#opencode)
 - [Sema4.ai](#sema4)
@@ -292,7 +291,6 @@ is working:
 - [Cursor](#cursor)
 - [Gemini](#gemini)
 - [Goose](#goose)
-- [Gordon](#gordon)
 - [LM Studio](#lm-studio)
 - [OpenCode](#opencode)
 - [Sema4.ai](#sema4)
@@ -356,7 +354,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip code...
 
 @x
 ### Codex
@@ -382,7 +380,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip command...
+% snip code...
 
 @x
 ### Continue
@@ -400,7 +398,7 @@ active MCP servers and their statuses. The `MCP_DOCKER` server should appear in
 the list with a "connected" status:
 @z
 
-% snip text...
+% snip output...
 
 @x
 Test the connection by submitting a prompt that invokes one of your installed
@@ -442,7 +440,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip code...
 
 @x
 ### Gemini
@@ -532,39 +530,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
-
-@x
-### Gordon
-@y
-### Gordon
-@z
-
-@x
-Open the **Ask Gordon** view in Docker Desktop and select the toolbox icon in
-the chat input area. The **MCP Toolkit** tab shows whether MCP Toolkit is
-enabled and displays all the provided tools:
-@y
-Open the **Ask Gordon** view in Docker Desktop and select the toolbox icon in
-the chat input area. The **MCP Toolkit** tab shows whether MCP Toolkit is
-enabled and displays all the provided tools:
-@z
-
-@x
-![MCP Toolkit in the Ask Gordon UI](images/ask-gordon.avif)
-@y
-![MCP Toolkit in the Ask Gordon UI](images/ask-gordon.avif)
-@z
-
-@x
-Test the connection by submitting a prompt that invokes one of your installed
-MCP servers, either directly in Docker Desktop or using the CLI:
-@y
-Test the connection by submitting a prompt that invokes one of your installed
-MCP servers, either directly in Docker Desktop or using the CLI:
-@z
-
-% snip command...
+% snip output...
 
 @x
 ### LM Studio
@@ -594,7 +560,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip output...
 
 @x
 ### OpenCode
@@ -666,7 +632,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip output...
 
 @x
 ### Visual Studio Code {#vscode}
@@ -700,7 +666,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip output...
 
 @x
 ### Zed
@@ -740,7 +706,7 @@ Test the connection by submitting a prompt that invokes one of your installed
 MCP servers:
 @z
 
-% snip text...
+% snip output...
 
 @x
 ## Further reading
@@ -749,10 +715,12 @@ MCP servers:
 @z
 
 @x
+- [MCP Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md)
 - [MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
 - [MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md)
 - [MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
+- [MCP Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md)
 - [MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
 - [MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md)
 - [MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)

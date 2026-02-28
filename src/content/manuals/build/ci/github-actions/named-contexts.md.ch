@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -16,11 +17,11 @@ keywords: ci, github actions, gha, buildkit, buildx, context
 @z
 
 @x
-You can define [additional build contexts](/reference/cli/docker/buildx/build.md#build-context),
+You can define [additional build contexts](/reference/cli/docker/buildx/build/#build-context),
 and access them in your Dockerfile with `FROM name` or `--from=name`. When
 Dockerfile defines a stage with the same name it's overwritten.
 @y
-You can define [additional build contexts](reference/cli/docker/buildx/build.md#build-context),
+You can define [additional build contexts](__SUBDIR__/reference/cli/docker/buildx/build/#build-context),
 and access them in your Dockerfile with `FROM name` or `--from=name`. When
 Dockerfile defines a stage with the same name it's overwritten.
 @z

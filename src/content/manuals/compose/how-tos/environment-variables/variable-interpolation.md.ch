@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Set, use, and manage variables in a Compose file with interpolation
@@ -59,10 +59,10 @@ services:
 
 @x
 When you run `docker compose up`, the `web` service defined in the Compose file [interpolates](variable-interpolation.md) in the image `webapp:v1.5` which was set in the `.env` file. You can verify this with the
-[config command](/reference/cli/docker/compose/config.md), which prints your resolved application config to the terminal:
+[config command](/reference/cli/docker/compose/config/), which prints your resolved application config to the terminal:
 @y
 When you run `docker compose up`, the `web` service defined in the Compose file [interpolates](variable-interpolation.md) in the image `webapp:v1.5` which was set in the `.env` file. You can verify this with the
-[config command](reference/cli/docker/compose/config.md), which prints your resolved application config to the terminal:
+[config command](__SUBDIR__/reference/cli/docker/compose/config/), which prints your resolved application config to the terminal:
 @z
 
 @x

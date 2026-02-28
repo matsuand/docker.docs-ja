@@ -10,7 +10,6 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	mainnav.html \
-	tags.html
+	mainnav.html
 
 include $(top_srcdir)/build-aux/copy.mk

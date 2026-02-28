@@ -21,14 +21,14 @@ copyfiles = \
 	breadcrumbs.html     \
 	content-default.html \
 	gordon-chat.html     \
+	guide-languages.html \
+	guide-tags.html      \
 	icon.html            \
-	languages.html       \
 	meta.html            \
 	pagemeta.html        \
 	pagefind-meta.html   \
 	pagination.html      \
 	schema.html          \
-	tags.html            \
 	tooltip.html         \
 	youtube-script.html
 

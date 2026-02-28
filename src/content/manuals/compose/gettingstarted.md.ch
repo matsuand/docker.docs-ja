@@ -555,12 +555,12 @@ This is a simplified example, but it demonstrates the basic principle of `includ
 
 @x
 - Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
-- [Explore the full list of Compose commands](/reference/cli/docker/compose.md)
+- [Explore the full list of Compose commands](/reference/cli/docker/compose/)
 - [Explore the Compose file reference](/reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @y
 - [Compose を使ったサンプルアプリ](https://github.com/docker/awesome-compose) を試してみてください。
-- [Compose コマンドの全一覧](reference/cli/docker/compose.md)
+- [Compose コマンドの全一覧](__SUBDIR__/reference/cli/docker/compose/)
 - [Compose ファイルリファレンス](reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
 @z

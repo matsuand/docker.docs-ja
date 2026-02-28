@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: How to back up and restore your Docker Desktop data
@@ -44,9 +44,9 @@ Use this procedure to back up and restore your images and container data. This i
 @z
 
 @x
-1. Commit your containers to an image with [`docker container commit`](/reference/cli/docker/container/commit.md).
+1. Commit your containers to an image with [`docker container commit`](/reference/cli/docker/container/commit/).
 @y
-1. Commit your containers to an image with [`docker container commit`](reference/cli/docker/container/commit.md).
+1. Commit your containers to an image with [`docker container commit`](__SUBDIR__/reference/cli/docker/container/commit/).
 @z
 
 @x
@@ -72,10 +72,10 @@ Use this procedure to back up and restore your images and container data. This i
 @z
 
 @x
-2. Use [`docker push`](/reference/cli/docker/image/push.md) to push any
+2. Use [`docker push`](/reference/cli/docker/image/push/) to push any
    images you have built locally and want to keep to the [Docker Hub registry](/manuals/docker-hub/_index.md).
 @y
-2. Use [`docker push`](reference/cli/docker/image/push.md) to push any
+2. Use [`docker push`](__SUBDIR__/reference/cli/docker/image/push/) to push any
    images you have built locally and want to keep to the [Docker Hub registry](manuals/docker-hub/_index.md).
 @z
 
@@ -90,10 +90,10 @@ Use this procedure to back up and restore your images and container data. This i
 @z
 
 @x
-   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](/reference/cli/docker/image/save.md)
+   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](/reference/cli/docker/image/save/)
    to save any images you want to keep to a local `.tar` file. 
 @y
-   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](reference/cli/docker/image/save.md)
+   Alternatively, use [`docker image save -o images.tar image1 [image2 ...]`](__SUBDIR__/reference/cli/docker/image/save/)
    to save any images you want to keep to a local `.tar` file. 
 @z
 
@@ -150,10 +150,10 @@ and [install a different version](manuals/desktop/release-notes.md) or reset Doc
 @z
 
 @x
-2. Re-create your containers if needed, using [`docker run`](/reference/cli/docker/container/run.md),
+2. Re-create your containers if needed, using [`docker run`](/reference/cli/docker/container/run/),
    or [Docker Compose](/manuals/compose/_index.md).
 @y
-2. Re-create your containers if needed, using [`docker run`](reference/cli/docker/container/run.md),
+2. Re-create your containers if needed, using [`docker run`](__SUBDIR__/reference/cli/docker/container/run/),
    or [Docker Compose](manuals/compose/_index.md).
 @z
 

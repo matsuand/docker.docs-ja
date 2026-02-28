@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: SBOM attestations
@@ -417,10 +417,10 @@ sbom.spdx.json
 
 @x
 To explore created SBOMs exported through the `image` exporter, you can use
-[`imagetools inspect`](/reference/cli/docker/buildx/imagetools/inspect.md).
+[`imagetools inspect`](/reference/cli/docker/buildx/imagetools/inspect/).
 @y
 To explore created SBOMs exported through the `image` exporter, you can use
-[`imagetools inspect`](reference/cli/docker/buildx/imagetools/inspect.md).
+[`imagetools inspect`](__SUBDIR__/reference/cli/docker/buildx/imagetools/inspect/).
 @z
 
 @x

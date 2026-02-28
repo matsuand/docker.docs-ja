@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -189,19 +189,19 @@ fields:
 @x
 | Name              | Type   | Description                                                                                                                                                                                                                                                             |
 | ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`            | String | [Name of the node](/reference/cli/docker/buildx/create.md#node). If empty, it's the name of the builder it belongs to, with an index number suffix. This is useful to set it if you want to modify/remove a node in an underlying step of you workflow. |
-| `endpoint`        | String | [Docker context or endpoint](/reference/cli/docker/buildx/create.md#description) of the node to add to the builder                                                                                                                                      |
-| `driver-opts`     | List   | List of additional [driver-specific options](/reference/cli/docker/buildx/create.md#driver-opt)                                                                                                                                                         |
-| `buildkitd-flags` | String | [Flags for buildkitd](/reference/cli/docker/buildx/create.md#buildkitd-flags) daemon                                                                                                                                                                    |
-| `platforms`       | String | Fixed [platforms](/reference/cli/docker/buildx/create.md#platform) for the node. If not empty, values take priority over the detected ones.                                                                                                             |
+| `name`            | String | [Name of the node](/reference/cli/docker/buildx/create/#node). If empty, it's the name of the builder it belongs to, with an index number suffix. This is useful to set it if you want to modify/remove a node in an underlying step of you workflow. |
+| `endpoint`        | String | [Docker context or endpoint](/reference/cli/docker/buildx/create/#description) of the node to add to the builder                                                                                                                                      |
+| `driver-opts`     | List   | List of additional [driver-specific options](/reference/cli/docker/buildx/create/#driver-opt)                                                                                                                                                         |
+| `buildkitd-flags` | String | [Flags for buildkitd](/reference/cli/docker/buildx/create/#buildkitd-flags) daemon                                                                                                                                                                    |
+| `platforms`       | String | Fixed [platforms](/reference/cli/docker/buildx/create/#platform) for the node. If not empty, values take priority over the detected ones.                                                                                                             |
 @y
 | Name              | Type   | Description                                                                                                                                                                                                                                                             |
 | ----------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`            | String | [Name of the node](reference/cli/docker/buildx/create.md#node). If empty, it's the name of the builder it belongs to, with an index number suffix. This is useful to set it if you want to modify/remove a node in an underlying step of you workflow. |
-| `endpoint`        | String | [Docker context or endpoint](reference/cli/docker/buildx/create.md#description) of the node to add to the builder                                                                                                                                      |
-| `driver-opts`     | List   | List of additional [driver-specific options](reference/cli/docker/buildx/create.md#driver-opt)                                                                                                                                                         |
-| `buildkitd-flags` | String | [Flags for buildkitd](reference/cli/docker/buildx/create.md#buildkitd-flags) daemon                                                                                                                                                                    |
-| `platforms`       | String | Fixed [platforms](reference/cli/docker/buildx/create.md#platform) for the node. If not empty, values take priority over the detected ones.                                                                                                             |
+| `name`            | String | [Name of the node](__SUBDIR__/reference/cli/docker/buildx/create/#node). If empty, it's the name of the builder it belongs to, with an index number suffix. This is useful to set it if you want to modify/remove a node in an underlying step of you workflow. |
+| `endpoint`        | String | [Docker context or endpoint](__SUBDIR__/reference/cli/docker/buildx/create/#description) of the node to add to the builder                                                                                                                                      |
+| `driver-opts`     | List   | List of additional [driver-specific options](__SUBDIR__/reference/cli/docker/buildx/create/#driver-opt)                                                                                                                                                         |
+| `buildkitd-flags` | String | [Flags for buildkitd](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-flags) daemon                                                                                                                                                                    |
+| `platforms`       | String | Fixed [platforms](__SUBDIR__/reference/cli/docker/buildx/create/#platform) for the node. If not empty, values take priority over the detected ones.                                                                                                             |
 @z
 
 @x

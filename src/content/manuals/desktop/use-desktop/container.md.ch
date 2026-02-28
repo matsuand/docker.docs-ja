@@ -162,9 +162,9 @@ Using the **Exec** tab is the same as running one of the following commands:
 @z
 
 @x
-For more details, see the [`docker exec` CLI reference](/reference/cli/docker/exec/).
+For more details, see the [`docker exec` CLI reference](/reference/cli/docker/container/exec/).
 @y
-For more details, see the [`docker exec` CLI reference](__SUBDIR__/reference/cli/docker/exec/).
+For more details, see the [`docker exec` CLI reference](__SUBDIR__/reference/cli/docker/container/exec/).
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 title: Use the Docker Desktop CLI
@@ -102,7 +102,7 @@ docker desktop COMMAND [OPTIONS]
 @z
 
 @x
-For more details on each command, see the [Docker Desktop CLI reference](/reference/cli/docker/desktop/_index.md).
+For more details on each command, see the [Docker Desktop CLI reference](/reference/cli/docker/desktop/).
 @y
-For more details on each command, see the [Docker Desktop CLI reference](reference/cli/docker/desktop/_index.md).
+For more details on each command, see the [Docker Desktop CLI reference](__SUBDIR__/reference/cli/docker/desktop/).
 @z

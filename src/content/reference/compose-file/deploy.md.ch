@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -203,9 +203,9 @@ services:
 @z
 
 @x
-For more detailed information about job options and behavior, see the [Docker CLI documentation](/reference/cli/docker/service/create.md#running-as-a-job)
+For more detailed information about job options and behavior, see the [Docker CLI documentation](/reference/cli/docker/service/create/#running-as-a-job)
 @y
-For more detailed information about job options and behavior, see the [Docker CLI documentation](reference/cli/docker/service/create.md#running-as-a-job)
+For more detailed information about job options and behavior, see the [Docker CLI documentation](__SUBDIR__/reference/cli/docker/service/create/#running-as-a-job)
 @z
 
 @x
@@ -227,9 +227,9 @@ For more detailed information about job options and behavior, see the [Docker CL
 @z
 
 @x
-`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#constraint).
+`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create/#constraint).
 @y
-`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#constraint).
+`constraints` defines a required property the platform's node must fulfill to run the service container. For a further example, see the [CLI reference docs](__SUBDIR__/reference/cli/docker/service/create/#constraint).
 @z
 
 % snip code...
@@ -242,10 +242,10 @@ For more detailed information about job options and behavior, see the [Docker CL
 
 @x
 `preferences` defines a strategy (currently `spread` is the only supported strategy) to spread tasks evenly 
-over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create.md#placement-pref)
+over the values of the datacenter node label. For a further example, see the [CLI reference docs](/reference/cli/docker/service/create/#placement-pref)
 @y
 `preferences` defines a strategy (currently `spread` is the only supported strategy) to spread tasks evenly 
-over the values of the datacenter node label. For a further example, see the [CLI reference docs](reference/cli/docker/service/create.md#placement-pref)
+over the values of the datacenter node label. For a further example, see the [CLI reference docs](__SUBDIR__/reference/cli/docker/service/create/#placement-pref)
 @z
 
 @x

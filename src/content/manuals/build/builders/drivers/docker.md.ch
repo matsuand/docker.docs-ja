@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 title: Docker driver
@@ -87,8 +87,8 @@ If you need additional configuration and flexibility, consider using the
 
 @x
 For more information on the Docker driver, see the
-[buildx reference](/reference/cli/docker/buildx/create.md#driver).
+[buildx reference](/reference/cli/docker/buildx/create/#driver).
 @y
 For more information on the Docker driver, see the
-[buildx reference](reference/cli/docker/buildx/create.md#driver).
+[buildx reference](__SUBDIR__/reference/cli/docker/buildx/create/#driver).
 @z

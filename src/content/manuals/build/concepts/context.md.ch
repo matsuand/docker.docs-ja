@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Build context
@@ -687,12 +687,12 @@ either SSH or token-based authentication.
 Buildx automatically detects and uses SSH credentials if the Git context you
 specify is an SSH or Git address. By default, this uses `$SSH_AUTH_SOCK`.
 You can configure the SSH credentials to use with the
-[`--ssh` flag](/reference/cli/docker/buildx/build.md#ssh).
+[`--ssh` flag](/reference/cli/docker/buildx/build/#ssh).
 @y
 Buildx automatically detects and uses SSH credentials if the Git context you
 specify is an SSH or Git address. By default, this uses `$SSH_AUTH_SOCK`.
 You can configure the SSH credentials to use with the
-[`--ssh` flag](reference/cli/docker/buildx/build.md#ssh).
+[`--ssh` flag](__SUBDIR__/reference/cli/docker/buildx/build/#ssh).
 @z
 
 @x
@@ -708,11 +708,11 @@ $ docker buildx build --ssh default git@github.com:user/private.git
 @x
 If you want to use token-based authentication instead, you can pass the token
 using the
-[`--secret` flag](/reference/cli/docker/buildx/build.md#secret).
+[`--secret` flag](/reference/cli/docker/buildx/build/#secret).
 @y
 If you want to use token-based authentication instead, you can pass the token
 using the
-[`--secret` flag](reference/cli/docker/buildx/build.md#secret).
+[`--secret` flag](__SUBDIR__/reference/cli/docker/buildx/build/#secret).
 @z
 
 @x
@@ -1888,9 +1888,9 @@ For more information about working with named contexts, see:
 @z
 
 @x
-- [`--build-context` CLI reference](/reference/cli/docker/buildx/build.md#build-context)
+- [`--build-context` CLI reference](/reference/cli/docker/buildx/build/#build-context)
 - [Using Bake with additional contexts](/manuals/build/bake/contexts.md)
 @y
-- [`--build-context` CLI reference](reference/cli/docker/buildx/build.md#build-context)
+- [`--build-context` CLI reference](__SUBDIR__/reference/cli/docker/buildx/build/#build-context)
 - [Using Bake with additional contexts](manuals/build/bake/contexts.md)
 @z

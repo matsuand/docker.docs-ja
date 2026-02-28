@@ -6,9 +6,3 @@
 @y
   {{ partial "heading.html" (dict "text" "モジュール" "level" 2) }}
 @z
-
-@x
-    {{ $b := fmt.Printf "%s\n\n{{< button url=`%s` text=`%s` >}}" $e.Summary $e.Permalink "Start" }}
-@y
-    {{ $b := fmt.Printf "%s\n\n{{< button url=`%s` text=`%s` >}}" $e.Summary $e.Permalink "スタート" }}
-@z

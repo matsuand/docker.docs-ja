@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -187,9 +187,9 @@ Bake can also be selected as the default builder by editing your `$HOME/.docker/
 @z
 
 @x
-- [Docker Compose build reference](/reference/cli/docker/compose/build.md)
+- [Docker Compose build reference](/reference/cli/docker/compose/build/)
 - [Learn about multi-stage Dockerfiles](/manuals/build/building/multi-stage.md)
 @y
-- [Docker Compose build reference](reference/cli/docker/compose/build.md)
+- [Docker Compose build reference](__SUBDIR__/reference/cli/docker/compose/build/)
 - [Learn about multi-stage Dockerfiles](manuals/build/building/multi-stage.md)
 @z

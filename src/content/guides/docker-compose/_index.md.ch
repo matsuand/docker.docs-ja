@@ -32,7 +32,7 @@ tags: [product-demo]
 % resource_links:
 @x
     - title: Overview of Docker Compose CLI
-      url: /compose/reference/
+      url: /reference/cli/docker/compose/
     - title: Overview of Docker Compose
       url: /compose/
     - title: How Compose works
@@ -45,7 +45,7 @@ tags: [product-demo]
       url: /compose/compose-file/build/
 @y
     - title: Docker Compose CLI 概要
-      url: __SUBDIR__/compose/reference/
+      url: __SUBDIR__/reference/cli/docker/compose/
     - title: Docker Compose 概要
       url: __SUBDIR__/compose/
     - title: How Compose works

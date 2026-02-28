@@ -1,0 +1,44 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+{{- $_ := .Content -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Docs - Security Announcements</title>
+    <description>Docker security announcements and updates</description>
+    <link>{{ .Permalink }}</link>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.LanguageCode | default "en" }}</language>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
+    {{- range (index .Fragments.Headings 0).Headings }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ $.Permalink }}#{{ .ID }}</link>
+      <guid>security-{{ .ID }}</guid>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
+@y
+{{- $_ := .Content -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker Docs - Security Announcements</title>
+    <description>Docker security announcements and updates</description>
+    <link>{{ .Permalink }}</link>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ .Site.LanguageCode | default "en" }}</language>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
+    {{- range (index .Fragments.Headings 0).Headings }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ $.Permalink }}#{{ .ID }}</link>
+      <guid>security-{{ .ID }}</guid>
+    </item>
+    {{- end }}
+  </channel>
+</rss>
+@z

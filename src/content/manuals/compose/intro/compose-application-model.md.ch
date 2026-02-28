@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: How Compose works
@@ -220,9 +220,9 @@ To list all the services along with their current status:
 % snip command...
 
 @x
-For a full list of all the Compose CLI commands, see the [reference documentation](/reference/cli/docker/compose/_index.md).
+For a full list of all the Compose CLI commands, see the [reference documentation](/reference/cli/docker/compose/).
 @y
-Compose CLI コマンドの全一覧は [リファレンスドキュメント](reference/cli/docker/compose/_index.md) を参照してください。
+Compose CLI コマンドの全一覧は [リファレンスドキュメント](__SUBDIR__/reference/cli/docker/compose/) を参照してください。
 @z
 
 @x

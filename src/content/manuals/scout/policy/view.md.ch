@@ -191,8 +191,8 @@ command.
 
 @x
 For more information about the command, refer to the [CLI
-reference](/reference/cli/docker/scout/policy.md).
+reference](/reference/cli/docker/scout/policy/).
 @y
 For more information about the command, refer to the [CLI
-reference](reference/cli/docker/scout/policy.md).
+reference](__SUBDIR__/reference/cli/docker/scout/policy/).
 @z

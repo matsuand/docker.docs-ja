@@ -425,12 +425,4 @@ Read about the commands and supported flags in the CLI reference documentation:
 Read about the commands and supported flags in the CLI reference documentation:
 @z
 
-@x
-- [`docker scout quickview`](/reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](/reference/cli/docker/scout/cves.md)
-- [`docker scout compare`](/reference/cli/docker/scout/compare.md)
-@y
-- [`docker scout quickview`](reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](reference/cli/docker/scout/cves.md)
-- [`docker scout compare`](reference/cli/docker/scout/compare.md)
-@z
+% snip command list...

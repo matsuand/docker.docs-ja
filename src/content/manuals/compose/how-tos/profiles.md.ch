@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Using profiles with Compose
@@ -86,10 +86,10 @@ Valid profiles names follow the regex format of `[a-zA-Z0-9][a-zA-Z0-9_.-]+`.
 @z
 
 @x
-To start a specific profile supply the `--profile` [command-line option](/reference/cli/docker/compose.md) or
+To start a specific profile supply the `--profile` [command-line option](/reference/cli/docker/compose/) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @y
-To start a specific profile supply the `--profile` [command-line option](reference/cli/docker/compose.md) or
+To start a specific profile supply the `--profile` [command-line option](__SUBDIR__/reference/cli/docker/compose/) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 
@@ -194,10 +194,10 @@ If the targeted service has dependencies that are also gated behind a profile, y
 @z
 
 @x
-As with starting specific profiles, you can use the `--profile` [command-line option](/reference/cli/docker/compose.md#use--p-to-specify-a-project-name) or
+As with starting specific profiles, you can use the `--profile` [command-line option](/reference/cli/docker/compose/#use--p-to-specify-a-project-name) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @y
-As with starting specific profiles, you can use the `--profile` [command-line option](reference/cli/docker/compose.md#use--p-to-specify-a-project-name) or
+As with starting specific profiles, you can use the `--profile` [command-line option](__SUBDIR__/reference/cli/docker/compose/#use--p-to-specify-a-project-name) or
 use the [`COMPOSE_PROFILES` environment variable](environment-variables/envvars.md#compose_profiles):
 @z
 

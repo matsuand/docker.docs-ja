@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -3097,11 +3097,11 @@ Optionally, limit the number of restart retries the Docker daemon attempts.
 
 @x
 You can find more detailed information on restart policies in the
-[Restart Policies (--restart)](/reference/cli/docker/container/run.md#restart)
+[Restart Policies (--restart)](/reference/cli/docker/container/run/#restart)
 section of the Docker run reference page.
 @y
 You can find more detailed information on restart policies in the
-[Restart Policies (--restart)](reference/cli/docker/container/run.md#restart)
+[Restart Policies (--restart)](__SUBDIR__/reference/cli/docker/container/run/#restart)
 section of the Docker run reference page.
 @z
 
@@ -3280,9 +3280,9 @@ to the contents of the file `./server.cert`.
 % snip code...
 
 @x
-For further default labeling schemes you can override, see [Security configuration](/reference/cli/docker/container/run.md#security-opt).
+For further default labeling schemes you can override, see [Security configuration](/reference/cli/docker/container/run/#security-opt).
 @y
-For further default labeling schemes you can override, see [Security configuration](reference/cli/docker/container/run.md#security-opt).
+For further default labeling schemes you can override, see [Security configuration](__SUBDIR__/reference/cli/docker/container/run/#security-opt).
 @z
 
 @x
@@ -3307,10 +3307,10 @@ It's specified as a [byte value](extension.md#specifying-byte-values).
 
 @x
 `stdin_open` configures a service's container to run with an allocated stdin. This is the same as running a container with the
-`-i` flag. For more information, see [Keep stdin open](/reference/cli/docker/container/run.md#interactive).
+`-i` flag. For more information, see [Keep stdin open](/reference/cli/docker/container/run/#interactive).
 @y
 `stdin_open` configures a service's container to run with an allocated stdin. This is the same as running a container with the
-`-i` flag. For more information, see [Keep stdin open](reference/cli/docker/container/run.md#interactive).
+`-i` flag. For more information, see [Keep stdin open](__SUBDIR__/reference/cli/docker/container/run/#interactive).
 @z
 
 @x
@@ -3393,12 +3393,12 @@ If unset containers are stopped by Compose by sending `SIGTERM`.
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to [configure namespaced kernel
-parameters (sysctls) at runtime](/reference/cli/docker/container/run.md#sysctl).
+parameters (sysctls) at runtime](/reference/cli/docker/container/run/#sysctl).
 @y
 You can only use sysctls that are namespaced in the kernel. Docker does not
 support changing sysctls inside a container that also modify the host system.
 For an overview of supported sysctls, refer to [configure namespaced kernel
-parameters (sysctls) at runtime](reference/cli/docker/container/run.md#sysctl).
+parameters (sysctls) at runtime](__SUBDIR__/reference/cli/docker/container/run/#sysctl).
 @z
 
 @x
@@ -3449,10 +3449,10 @@ Available options:
 
 @x
 `tty` configures a service's container to run with a TTY. This is the same as running a container with the
-`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](/reference/cli/docker/container/run.md#tty).
+`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](/reference/cli/docker/container/run/#tty).
 @y
 `tty` configures a service's container to run with a TTY. This is the same as running a container with the
-`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](reference/cli/docker/container/run.md#tty).
+`-t` or `--tty` flag. For more information, see [Allocate a pseudo-TTY](__SUBDIR__/reference/cli/docker/container/run/#tty).
 @z
 
 @x

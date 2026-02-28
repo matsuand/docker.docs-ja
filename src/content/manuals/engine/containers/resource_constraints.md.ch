@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Resource constraints
@@ -34,13 +34,13 @@ on when you should set such limits and the possible implications of setting them
 @x
 Many of these features require your kernel to support Linux capabilities. To
 check for support, you can use the
-[`docker info`](/reference/cli/docker/system/info.md) command. If a capability
+[`docker info`](/reference/cli/docker/system/info/) command. If a capability
 is disabled in your kernel, you may see a warning at the end of the output like
 the following:
 @y
 Many of these features require your kernel to support Linux capabilities. To
 check for support, you can use the
-[`docker info`](reference/cli/docker/system/info.md) command. If a capability
+[`docker info`](__SUBDIR__/reference/cli/docker/system/info/) command. If a capability
 is disabled in your kernel, you may see a warning at the end of the output like
 the following:
 @z

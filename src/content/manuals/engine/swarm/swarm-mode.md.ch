@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Run Docker Engine in swarm mode
@@ -78,11 +78,11 @@ When you run the command to create a swarm, Docker Engine starts running in Swar
 @z
 
 @x
-Run [`docker swarm init`](/reference/cli/docker/swarm/init.md)
+Run [`docker swarm init`](/reference/cli/docker/swarm/init/)
 to create a single-node swarm on the current node. The engine sets up the swarm
 as follows:
 @y
-Run [`docker swarm init`](reference/cli/docker/swarm/init.md)
+Run [`docker swarm init`](__SUBDIR__/reference/cli/docker/swarm/init/)
 to create a single-node swarm on the current node. The engine sets up the swarm
 as follows:
 @z
@@ -274,11 +274,11 @@ all the subnets are exhausted.
 @x
 Refer to the following pages for more information:
 - [Swarm networking](./networking.md) for more information about the default address pool usage
-- `docker swarm init` [CLI reference](/reference/cli/docker/swarm/init.md) for more detail on the `--default-addr-pool` flag.
+- `docker swarm init` [CLI reference](/reference/cli/docker/swarm/init/) for more detail on the `--default-addr-pool` flag.
 @y
 Refer to the following pages for more information:
 - [Swarm networking](./networking.md) for more information about the default address pool usage
-- `docker swarm init` [CLI reference](reference/cli/docker/swarm/init.md) for more detail on the `--default-addr-pool` flag.
+- `docker swarm init` [CLI reference](__SUBDIR__/reference/cli/docker/swarm/init/) for more detail on the `--default-addr-pool` flag.
 @z
 
 @x
@@ -340,10 +340,10 @@ to other nodes that subsequently connect to it.
 @z
 
 @x
-Refer to the `docker swarm init` [CLI reference](/reference/cli/docker/swarm/init.md)
+Refer to the `docker swarm init` [CLI reference](/reference/cli/docker/swarm/init/)
 for more detail on the advertise address.
 @y
-Refer to the `docker swarm init` [CLI reference](reference/cli/docker/swarm/init.md)
+Refer to the `docker swarm init` [CLI reference](__SUBDIR__/reference/cli/docker/swarm/init/)
 for more detail on the advertise address.
 @z
 
@@ -549,10 +549,10 @@ To add a worker to this swarm, run the following command:
 
 @x
 * [Join nodes to a swarm](join-nodes.md)
-* `swarm init` [command line reference](/reference/cli/docker/swarm/init.md)
+* `swarm init` [command line reference](/reference/cli/docker/swarm/init/)
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
 * [Join nodes to a swarm](join-nodes.md)
-* `swarm init` [command line reference](reference/cli/docker/swarm/init.md)
+* `swarm init` [command line reference](__SUBDIR__/reference/cli/docker/swarm/init/)
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -77,7 +77,7 @@ attestations to your image, with the following conditions:
 > arguments to pass secrets to your build, such as user credentials or
 > authentication tokens, those secrets are exposed in the provenance
 > attestation. Refactor your build to pass those secrets using
-> [secret mounts](/reference/cli/docker/buildx/build.md#secret)
+> [secret mounts](/reference/cli/docker/buildx/build/#secret)
 > instead. Also remember to rotate any secrets you may have exposed.
 @y
 > [!WARNING]
@@ -88,7 +88,7 @@ attestations to your image, with the following conditions:
 > arguments to pass secrets to your build, such as user credentials or
 > authentication tokens, those secrets are exposed in the provenance
 > attestation. Refactor your build to pass those secrets using
-> [secret mounts](reference/cli/docker/buildx/build.md#secret)
+> [secret mounts](__SUBDIR__/reference/cli/docker/buildx/build/#secret)
 > instead. Also remember to rotate any secrets you may have exposed.
 @z
 

@@ -229,26 +229,10 @@ roll back to a previous version of the service.
 * Learn Swarm mode [key concepts](key-concepts.md).
 * Get started with the [Swarm mode tutorial](swarm-tutorial/_index.md).
 * Explore Swarm mode CLI commands
-  * [swarm init](/reference/cli/docker/swarm/init.md)
-  * [swarm join](/reference/cli/docker/swarm/join.md)
-  * [service create](/reference/cli/docker/service/create.md)
-  * [service inspect](/reference/cli/docker/service/inspect.md)
-  * [service ls](/reference/cli/docker/service/ls.md)
-  * [service rm](/reference/cli/docker/service/rm.md)
-  * [service scale](/reference/cli/docker/service/scale.md)
-  * [service ps](/reference/cli/docker/service/ps.md)
-  * [service update](/reference/cli/docker/service/update.md)
 @y
 * Learn Swarm mode [key concepts](key-concepts.md).
 * Get started with the [Swarm mode tutorial](swarm-tutorial/_index.md).
 * Explore Swarm mode CLI commands
-  * [swarm init](reference/cli/docker/swarm/init.md)
-  * [swarm join](reference/cli/docker/swarm/join.md)
-  * [service create](reference/cli/docker/service/create.md)
-  * [service inspect](reference/cli/docker/service/inspect.md)
-  * [service ls](reference/cli/docker/service/ls.md)
-  * [service rm](reference/cli/docker/service/rm.md)
-  * [service scale](reference/cli/docker/service/scale.md)
-  * [service ps](reference/cli/docker/service/ps.md)
-  * [service update](reference/cli/docker/service/update.md)
 @z
+
+% snip command links...

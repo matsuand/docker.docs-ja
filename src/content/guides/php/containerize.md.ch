@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a PHP application
@@ -193,9 +193,9 @@ In the terminal, run the following command to stop the application.
 
 @x
 For more information about Compose commands, see the [Compose CLI
-reference](/reference/cli/docker/compose/_index.md).
+reference](/reference/cli/docker/compose/).
 @y
-Compose コマンドの詳細は [Compose CLI リファレンス](reference/cli/docker/compose/_index.md) を参照してください。
+Compose コマンドの詳細は [Compose CLI リファレンス](__SUBDIR__/reference/cli/docker/compose/) を参照してください。
 @z
 
 @x
@@ -218,9 +218,9 @@ Related information:
 @z
 
 @x
-- [docker init reference](/reference/cli/docker/init.md)
+- [docker init reference](/reference/cli/docker/init/)
 @y
-- [docker init リファレンス](reference/cli/docker/init.md)
+- [docker init リファレンス](__SUBDIR__/reference/cli/docker/init/)
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Secure Software Development Lifecycle
 linktitle: SSDLC
@@ -89,14 +91,14 @@ organizations can shift left and reduce both cost and complexity.
 Docker provides tools and secure content that make SSDLC practices easier to
 adopt across the container lifecycle. With [Docker Hardened
 Images](../_index.md) (DHIs), [Docker
-Debug](../../../reference/cli/docker/debug.md), and [Docker
+Debug](/reference/cli/docker/debug/), and [Docker
 Scout](../../../manuals/scout/_index.md), teams can add security without losing
 velocity.
 @y
 Docker provides tools and secure content that make SSDLC practices easier to
 adopt across the container lifecycle. With [Docker Hardened
 Images](../_index.md) (DHIs), [Docker
-Debug](../../../reference/cli/docker/debug.md), and [Docker
+Debug](__SUBDIR__/reference/cli/docker/debug/), and [Docker
 Scout](../../../manuals/scout/_index.md), teams can add security without losing
 velocity.
 @z
@@ -158,9 +160,9 @@ Hardened Images support secure-by-default development:
 @z
 
 @x
-[Docker Debug](../../../reference/cli/docker/debug.md) helps developers:
+[Docker Debug](/reference/cli/docker/debug/) helps developers:
 @y
-[Docker Debug](../../../reference/cli/docker/debug.md) helps developers:
+[Docker Debug](__SUBDIR__/reference/cli/docker/debug/) helps developers:
 @z
 
 @x

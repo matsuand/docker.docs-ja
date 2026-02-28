@@ -299,10 +299,10 @@ This page was a brief introduction to Compose. In the following resources, you c
 
 @x
 * [Overview of Docker Compose](/compose/)
-* [Overview of Docker Compose CLI](/compose/reference/)
+* [Overview of Docker Compose CLI](/reference/cli/docker/compose/)
 * [How Compose works](/compose/intro/compose-application-model/)
 @y
 * [Docker Compose 概要](__SUBDIR__/compose/)
-* [Docker Compose CLI 概要](__SUBDIR__/compose/reference/)
+* [Docker Compose CLI 概要](__SUBDIR__//reference/cli/docker/compose/)
 * [Compose はどう動くのか](__SUBDIR__/compose/intro/compose-application-model/)
 @z

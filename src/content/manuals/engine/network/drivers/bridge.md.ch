@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -415,12 +415,12 @@ network.
 @x
 You can specify the subnet, the IP address range, the gateway, and other
 options. See the
-[docker network create](/reference/cli/docker/network/create.md#specify-advanced-options)
+[docker network create](/reference/cli/docker/network/create/#specify-advanced-options)
 reference or the output of `docker network create --help` for details.
 @y
 You can specify the subnet, the IP address range, the gateway, and other
 options. See the
-[docker network create](reference/cli/docker/network/create.md#specify-advanced-options)
+[docker network create](__SUBDIR__/reference/cli/docker/network/create/#specify-advanced-options)
 reference or the output of `docker network create --help` for details.
 @z
 

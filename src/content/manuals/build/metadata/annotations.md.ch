@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Annotations
@@ -169,12 +169,12 @@ For examples on how to add annotations to images built with GitHub Actions, see
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](/reference/cli/docker/buildx/imagetools/create.md#annotation).
+[CLI reference](/reference/cli/docker/buildx/imagetools/create/#annotation).
 @y
 You can also add annotations to an image created using `docker buildx
 imagetools create`. This command only supports adding annotations to an index
 or manifest descriptors, see
-[CLI reference](reference/cli/docker/buildx/imagetools/create.md#annotation).
+[CLI reference](__SUBDIR__/reference/cli/docker/buildx/imagetools/create/#annotation).
 @z
 
 @x
@@ -490,13 +490,13 @@ Reference information:
 @z
 
 @x
-- [`docker buildx build --annotation`](/reference/cli/docker/buildx/build.md#annotation)
+- [`docker buildx build --annotation`](/reference/cli/docker/buildx/build/#annotation)
 - [Bake file reference: `annotations`](/manuals/build/bake/reference.md#targetannotations)
-- [`docker buildx imagetools create --annotation`](/reference/cli/docker/buildx/imagetools/create.md#annotation)
+- [`docker buildx imagetools create --annotation`](/reference/cli/docker/buildx/imagetools/create/#annotation)
 @y
-- [`docker buildx build --annotation`](reference/cli/docker/buildx/build.md#annotation)
+- [`docker buildx build --annotation`](__SUBDIR__/reference/cli/docker/buildx/build/#annotation)
 - [Bake file reference: `annotations`](manuals/build/bake/reference.md#targetannotations)
-- [`docker buildx imagetools create --annotation`](reference/cli/docker/buildx/imagetools/create.md#annotation)
+- [`docker buildx imagetools create --annotation`](__SUBDIR__/reference/cli/docker/buildx/imagetools/create/#annotation)
 @z
 
 @x

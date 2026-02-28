@@ -164,10 +164,10 @@ availability.
 @z
 
 @x
-Refer to the [`docker node update`](/reference/cli/docker/node/update.md)
+Refer to the [`docker node update`](/reference/cli/docker/node/update/)
 command line reference to see how to change node availability.
 @y
-Refer to the [`docker node update`](reference/cli/docker/node/update.md)
+Refer to the [`docker node update`](__SUBDIR__/reference/cli/docker/node/update/)
 command line reference to see how to change node availability.
 @z
 
@@ -180,19 +180,19 @@ command line reference to see how to change node availability.
 @x
 You can promote a worker node to be a manager by running `docker node promote`.
 For example, you may want to promote a worker node when you
-take a manager node offline for maintenance. See [node promote](/reference/cli/docker/node/promote.md).
+take a manager node offline for maintenance. See [node promote](/reference/cli/docker/node/promote/).
 @y
 You can promote a worker node to be a manager by running `docker node promote`.
 For example, you may want to promote a worker node when you
-take a manager node offline for maintenance. See [node promote](reference/cli/docker/node/promote.md).
+take a manager node offline for maintenance. See [node promote](__SUBDIR__/reference/cli/docker/node/promote/).
 @z
 
 @x
 You can also demote a manager node to a worker node. See
-[node demote](/reference/cli/docker/node/demote.md).
+[node demote](/reference/cli/docker/node/demote/).
 @y
 You can also demote a manager node to a worker node. See
-[node demote](reference/cli/docker/node/demote.md).
+[node demote](__SUBDIR__/reference/cli/docker/node/demote/).
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Docker security announcements
@@ -16,9 +16,27 @@ linkTitle: セキュリティ報告
 @z
 
 @x
-{{< rss-button feed="/security/security-announcements/index.xml" text="Subscribe to security RSS feed" >}}
+[Subscribe to security RSS feed](/security/security-announcements/index.xml)
 @y
-{{< rss-button feed="__SUBDIR__/security/security-announcements/index.xml" text="Subscribe to security RSS feed" >}}
+[Subscribe to security RSS feed](__SUBDIR__/security/security-announcements/index.xml)
+@z
+
+@x
+## Docker Desktop 4.62.0 security update: CVE-2026-2664
+@y
+## Docker Desktop 4.62.0 security update: CVE-2026-2664
+@z
+
+@x
+A vulnerability in Docker Desktop was fixed on February 23 in the [4.62.0](/manuals/desktop/release-notes.md#4620) release:
+@y
+A vulnerability in Docker Desktop was fixed on February 23 in the [4.62.0](manuals/desktop/release-notes.md#4620) release:
+@z
+
+@x
+- Fixed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in gRPC-FUSE kernel module.
+@y
+- Fixed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in gRPC-FUSE kernel module.
 @z
 
 @x
@@ -264,9 +282,9 @@ Docker is pleased to announce that we have received our SOC 2 Type 2 attestation
 @z
 
 @x
-Security is a fundamental pillar to Docker’s operations, which is embedded into our overall mission and company strategy. Docker’s products are core to our user community and our SOC 2 Type 2 attestation and ISO 27001 certification demonstrate Docker’s ongoing commitment to security to our user base.
+Security is a fundamental pillar to Docker's operations, which is embedded into our overall mission and company strategy. Docker's products are core to our user community and our SOC 2 Type 2 attestation and ISO 27001 certification demonstrate Docker's ongoing commitment to security to our user base.
 @y
-Security is a fundamental pillar to Docker’s operations, which is embedded into our overall mission and company strategy. Docker’s products are core to our user community and our SOC 2 Type 2 attestation and ISO 27001 certification demonstrate Docker’s ongoing commitment to security to our user base.
+Security is a fundamental pillar to Docker's operations, which is embedded into our overall mission and company strategy. Docker's products are core to our user community and our SOC 2 Type 2 attestation and ISO 27001 certification demonstrate Docker's ongoing commitment to security to our user base.
 @z
 
 @x
@@ -294,9 +312,9 @@ We at Docker prioritize the security and integrity of our software and the trust
 @z
 
 @x
-We are committed to maintaining the highest security standards. We have published patched versions of runc, BuildKit, and Moby on January 31 and released an update for Docker Desktop on February 1 to address these vulnerabilities. Additionally, our latest BuildKit and Moby releases included fixes for [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) and [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557), discovered respectively by an independent researcher and through Docker’s internal research initiatives.
+We are committed to maintaining the highest security standards. We have published patched versions of runc, BuildKit, and Moby on January 31 and released an update for Docker Desktop on February 1 to address these vulnerabilities. Additionally, our latest BuildKit and Moby releases included fixes for [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) and [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557), discovered respectively by an independent researcher and through Docker's internal research initiatives.
 @y
-We are committed to maintaining the highest security standards. We have published patched versions of runc, BuildKit, and Moby on January 31 and released an update for Docker Desktop on February 1 to address these vulnerabilities. Additionally, our latest BuildKit and Moby releases included fixes for [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) and [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557), discovered respectively by an independent researcher and through Docker’s internal research initiatives.
+We are committed to maintaining the highest security standards. We have published patched versions of runc, BuildKit, and Moby on January 31 and released an update for Docker Desktop on February 1 to address these vulnerabilities. Additionally, our latest BuildKit and Moby releases included fixes for [CVE-2024-23650](https://scout.docker.com/v/CVE-2024-23650) and [CVE-2024-24557](https://scout.docker.com/v/CVE-2024-24557), discovered respectively by an independent researcher and through Docker's internal research initiatives.
 @z
 
 @x
@@ -316,9 +334,9 @@ We are committed to maintaining the highest security standards. We have publishe
 @z
 
 @x
-### What should I do if I’m on an affected version?
+### What should I do if I'm on an affected version?
 @y
-### What should I do if I’m on an affected version?
+### What should I do if I'm on an affected version?
 @z
 
 @x
@@ -351,7 +369,7 @@ If you are unable to update to an unaffected version promptly, follow these best
 
 @x
 * Only use trusted Docker images (such as [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images)).
-* Don’t build Docker images from untrusted sources or untrusted Dockerfiles.
+* Don't build Docker images from untrusted sources or untrusted Dockerfiles.
 * If you are a Docker Business customer using Docker Desktop and unable to update to v4.27.1, make sure to enable [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md) features such as:
   * [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md), which mitigates the impact of CVE-2024-21626 in the case of running containers from malicious images.
   * [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md), and [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md), which give organizations control over which images and repositories their users can access.
@@ -359,7 +377,7 @@ If you are unable to update to an unaffected version promptly, follow these best
 * To mitigate CVE-2024-24557, make sure to either use BuildKit or disable caching when building images. From the CLI this can be done via the `DOCKER_BUILDKIT=1` environment variable (default for Moby >= v23.0 if the buildx plugin is installed) or the `--no-cache flag`. If you are using the HTTP API directly or through a client, the same can be done by setting `nocache` to `true` or `version` to `2` for the [/build API endpoint](https://docs.docker.com/reference/api/engine/version/v1.44/#tag/Image/operation/ImageBuild).
 @y
 * Only use trusted Docker images (such as [Docker Official Images](../docker-hub/image-library/trusted-content.md#docker-official-images)).
-* Don’t build Docker images from untrusted sources or untrusted Dockerfiles.
+* Don't build Docker images from untrusted sources or untrusted Dockerfiles.
 * If you are a Docker Business customer using Docker Desktop and unable to update to v4.27.1, make sure to enable [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md) features such as:
   * [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md), which mitigates the impact of CVE-2024-21626 in the case of running containers from malicious images.
   * [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md), and [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md), which give organizations control over which images and repositories their users can access.

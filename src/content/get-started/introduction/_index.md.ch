@@ -30,13 +30,13 @@ summary: |
 
 % params:
 @x
-  skill: Beginner
+  proficiencyLevel: Beginner
   time: 15 minutes
-  prereq: None
+  prerequisites: None
 @y
-  skill: 初心者向け
+  proficiencyLevel: 初心者向け
   time: 15 分
-  prereq: なし
+  prerequisites: なし
 @z
 
 @x

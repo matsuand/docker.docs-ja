@@ -43,10 +43,6 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v5/Makefile
 	src/_vendor/github.com/docker/compose/v5/docs/Makefile
 	src/_vendor/github.com/docker/compose/v5/docs/reference/Makefile
-	src/_vendor/github.com/docker/mcp-gateway/Makefile
-	src/_vendor/github.com/docker/mcp-gateway/docs/Makefile
-	src/_vendor/github.com/docker/mcp-gateway/docs/generator/Makefile
-	src/_vendor/github.com/docker/mcp-gateway/docs/generator/reference/Makefile
 	src/_vendor/github.com/docker/model-runner/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/cli/Makefile
@@ -128,17 +124,6 @@ AC_CONFIG_FILES([
 	src/content/guides/zscaler/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
-	src/content/languages/Makefile
-	src/content/languages/c-sharp/Makefile
-	src/content/languages/cpp/Makefile
-	src/content/languages/go/Makefile
-	src/content/languages/java/Makefile
-	src/content/languages/js/Makefile
-	src/content/languages/php/Makefile
-	src/content/languages/python/Makefile
-	src/content/languages/r/Makefile
-	src/content/languages/ruby/Makefile
-	src/content/languages/rust/Makefile
 	src/content/manuals/Makefile
 	src/content/manuals/accounts/Makefile
 	src/content/manuals/admin/Makefile
@@ -317,94 +302,21 @@ AC_CONFIG_FILES([
 	src/content/reference/api/registry/Makefile
 	src/content/reference/api/registry/images/Makefile
 	src/content/reference/cli/Makefile
-	src/content/reference/cli/docker/Makefile
-	src/content/reference/cli/docker/builder/Makefile
-	src/content/reference/cli/docker/buildx/Makefile
-	src/content/reference/cli/docker/buildx/debug/Makefile
-	src/content/reference/cli/docker/buildx/history/Makefile
-	src/content/reference/cli/docker/buildx/history/inspect/Makefile
-	src/content/reference/cli/docker/buildx/imagetools/Makefile
-	src/content/reference/cli/docker/buildx/policy/Makefile
-	src/content/reference/cli/docker/checkpoint/Makefile
-	src/content/reference/cli/docker/compose/Makefile
-	src/content/reference/cli/docker/compose/alpha/Makefile
-	src/content/reference/cli/docker/config/Makefile
-	src/content/reference/cli/docker/container/Makefile
-	src/content/reference/cli/docker/context/Makefile
-	src/content/reference/cli/docker/desktop/Makefile
-	src/content/reference/cli/docker/desktop/disable/Makefile
-	src/content/reference/cli/docker/desktop/enable/Makefile
-	src/content/reference/cli/docker/desktop/engine/Makefile
-	src/content/reference/cli/docker/image/Makefile
-	src/content/reference/cli/docker/manifest/Makefile
-	src/content/reference/cli/docker/mcp/Makefile
- 	src/content/reference/cli/docker/mcp/catalog/Makefile
- 	src/content/reference/cli/docker/mcp/client/Makefile
- 	src/content/reference/cli/docker/mcp/config/Makefile
- 	src/content/reference/cli/docker/mcp/feature/Makefile
- 	src/content/reference/cli/docker/mcp/gateway/Makefile
- 	src/content/reference/cli/docker/mcp/oauth/Makefile
- 	src/content/reference/cli/docker/mcp/policy/Makefile
- 	src/content/reference/cli/docker/mcp/secrets/Makefile
- 	src/content/reference/cli/docker/mcp/server/Makefile
- 	src/content/reference/cli/docker/mcp/tools/Makefile
-	src/content/reference/cli/docker/model/Makefile
-	src/content/reference/cli/docker/network/Makefile
-	src/content/reference/cli/docker/node/Makefile
-	src/content/reference/cli/docker/offload/Makefile
-	src/content/reference/cli/docker/pass/Makefile
-	src/content/reference/cli/docker/plugin/Makefile
-	src/content/reference/cli/docker/sandbox/Makefile
-	src/content/reference/cli/docker/sandbox/create/Makefile
-	src/content/reference/cli/docker/sandbox/network/Makefile
-	src/content/reference/cli/docker/scout/Makefile
-	src/content/reference/cli/docker/scout/attestation/Makefile
-	src/content/reference/cli/docker/scout/cache/Makefile
-	src/content/reference/cli/docker/scout/integration/Makefile
-	src/content/reference/cli/docker/scout/repo/Makefile
-	src/content/reference/cli/docker/scout/vex/Makefile
-	src/content/reference/cli/docker/secret/Makefile
-	src/content/reference/cli/docker/service/Makefile
-	src/content/reference/cli/docker/stack/Makefile
-	src/content/reference/cli/docker/swarm/Makefile
-	src/content/reference/cli/docker/system/Makefile
-	src/content/reference/cli/docker/trust/Makefile
-	src/content/reference/cli/docker/trust/key/Makefile
-	src/content/reference/cli/docker/trust/signer/Makefile
-	src/content/reference/cli/docker/volume/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/reference/samples/Makefile
-	src/content/tags/Makefile
-	src/content/tags/admin/Makefile
-	src/content/tags/ai/Makefile
-	src/content/tags/app-dev/Makefile
-	src/content/tags/best-practices/Makefile
-	src/content/tags/cloud-services/Makefile
-	src/content/tags/databases/Makefile
-	src/content/tags/data-science/Makefile
-	src/content/tags/deploy/Makefile
-	src/content/tags/devops/Makefile
-	src/content/tags/dhi/Makefile
-	src/content/tags/distributed-systems/Makefile
-	src/content/tags/faq/Makefile
-	src/content/tags/frameworks/Makefile
-	src/content/tags/networking/Makefile
-	src/content/tags/observability/Makefile
-	src/content/tags/product-demo/Makefile
-	src/content/tags/release-notes/Makefile
-	src/content/tags/secrets/Makefile
-	src/content/tags/troubleshooting/Makefile
 	src/data/Makefile
-	src/data/buildx/Makefile
-	src/data/debug-cli/Makefile
-	src/data/desktop-cli/Makefile
+	src/data/cli/Makefile
+	src/data/cli/buildx/Makefile
+	src/data/cli/debug/Makefile
+	src/data/cli/desktop/Makefile
+	src/data/cli/engine/Makefile
+	src/data/cli/init/Makefile
+	src/data/cli/mcp/Makefile
+	src/data/cli/offload/Makefile
+	src/data/cli/sandbox/Makefile
+	src/data/cli/secrets/Makefile
+	src/data/cli/scout/Makefile
 	src/data/docsarchive/Makefile
-	src/data/engine-cli/Makefile
-	src/data/init-cli/Makefile
-	src/data/offload-cli/Makefile
-	src/data/sandbox-cli/Makefile
-	src/data/scout-cli/Makefile
-	src/data/secrets-engine/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile
 	src/layouts/_markup/Makefile
@@ -418,8 +330,6 @@ AC_CONFIG_FILES([
 	src/layouts/guides/Makefile
 	src/layouts/redirect/Makefile
 	src/layouts/samples/Makefile
-	src/layouts/security-announcements/Makefile
-	src/layouts/tags/Makefile
 	src/static/Makefile
 ])
 AC_OUTPUT

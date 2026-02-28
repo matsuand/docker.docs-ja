@@ -334,7 +334,7 @@ Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened 
 @y
 {{< tabs >}}
 {{< tab name="Using Docker Hardened Images" >}}
-Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/node). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](__SUBDIR__/dhi/get-started/) guide.
 @z
 
 @x
@@ -680,7 +680,7 @@ The `.dockerignore` file tells Docker which files and folders to exclude when bu
 >- Speed up the build process  
 >- Prevent sensitive or unnecessary files (like `.env`, `.git`, or `node_modules`) from being added to the final image.
 >
-> To learn more, visit the [.dockerignore reference](/reference/dockerfile.md#dockerignore-file).
+> To learn more, visit the [.dockerignore reference](reference/dockerfile.md#dockerignore-file).
 @z
 
 @x
@@ -1102,7 +1102,7 @@ Now that your Dockerfile is configured, you can build the Docker image for your 
 > The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
 @y
 > [!NOTE]
-> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](/build/concepts/context/#what-is-a-build-context)).
+> The `docker build` command packages your application into an image using the instructions in the Dockerfile. It includes all necessary files from the current directory (called the [build context](__SUBDIR__/build/concepts/context/#what-is-a-build-context)).
 @z
 
 @x
@@ -1142,7 +1142,7 @@ What this command does:
 @x
 After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @y
-After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](/manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
+After building your Docker image, you can check which images are available on your local machine using either the Docker CLI or [Docker Desktop](manuals/desktop/use-desktop/images.md). Since you're already working in the terminal, let's use the Docker CLI.
 @z
 
 @x
@@ -1344,11 +1344,11 @@ $ docker compose down
 @x
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](/reference/cli/docker/compose/_index.md).
+> reference](/reference/cli/docker/compose/).
 @y
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](/reference/cli/docker/compose/_index.md).
+> reference](__SUBDIR__/reference/cli/docker/compose/).
 @z
 
 @x
@@ -1418,19 +1418,19 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
 - [Build context in Docker](/build/concepts/context/) – Learn how context affects image builds.  
 - [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
-- [`docker build` CLI reference](/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
-- [`docker images` CLI reference](/reference/cli/docker/images/) – Manage and inspect local Docker images.
+- [`docker build` CLI reference](/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
+- [`docker images` CLI reference](/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
 - [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
 - [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @y
-- [Multi-stage builds](/build/building/multi-stage/) – Learn how to separate build and runtime stages.
-- [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
-- [Build context in Docker](/build/concepts/context/) – Learn how context affects image builds.  
-- [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
-- [`docker build` CLI reference](/reference/cli/docker/build/) – Build Docker images from a Dockerfile.
-- [`docker images` CLI reference](/reference/cli/docker/images/) – Manage and inspect local Docker images.
-- [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
-- [`docker compose down` CLI reference](/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
+- [Multi-stage builds](__SUBDIR__/build/building/multi-stage/) – Learn how to separate build and runtime stages.
+- [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
+- [Build context in Docker](__SUBDIR__/build/concepts/context/) – Learn how context affects image builds.  
+- [`docker init` CLI reference](__SUBDIR__/reference/cli/docker/init/) – Scaffold Docker assets automatically.
+- [`docker build` CLI reference](__SUBDIR__/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
+- [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
+- [`docker compose up` CLI reference](__SUBDIR__/reference/cli/docker/compose/up/) – Start and run multi-container applications.
+- [`docker compose down` CLI reference](__SUBDIR__/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
 @z
 
 @x

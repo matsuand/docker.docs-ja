@@ -372,10 +372,10 @@ directly. These labels are more easily "trusted" by the swarm orchestrator.
 @z
 
 @x
-Refer to the `docker service create` [CLI reference](/reference/cli/docker/service/create.md)
+Refer to the `docker service create` [CLI reference](/reference/cli/docker/service/create/)
 for more information about service constraints.
 @y
-Refer to the `docker service create` [CLI reference](reference/cli/docker/service/create.md)
+Refer to the `docker service create` [CLI reference](__SUBDIR__/reference/cli/docker/service/create/)
 for more information about service constraints.
 @z
 

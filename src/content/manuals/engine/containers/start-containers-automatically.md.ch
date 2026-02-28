@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: How to start containers automatically
@@ -14,13 +14,13 @@ title: コンテナーの自動起動
 @z
 
 @x
-Docker provides [restart policies](/reference/cli/docker/container/run.md#restart)
+Docker provides [restart policies](/reference/cli/docker/container/run/#restart)
 to control whether your containers start automatically when they exit, or when
 Docker restarts. Restart policies start linked containers in the correct order.
 Docker recommends that you use restart policies, and avoid using process
 managers to start containers.
 @y
-Docker では [リスタートポリシー](reference/cli/docker/container/run.md#restart) というものを提供しています。
+Docker では [リスタートポリシー](__SUBDIR__/reference/cli/docker/container/run/#restart) というものを提供しています。
 これはコンテナーが終了した際、あるいは Docker そのものが再起動した際に、自動的にコンテナーをリスタート (再起動) するかどうかを制御します。
 リスタートポリシーはリンクづいているコンテナーを適切な順に再起動します。
 Docker ではリスタートポリシーの利用を推奨しているため、プロセスマネージャーなどを用いてコンテナーを起動させることはやめてください。
@@ -42,11 +42,11 @@ a Docker upgrade, though networking and user input are interrupted.
 @z
 
 @x
-To configure the restart policy for a container, use the [`--restart`](/reference/cli/docker/container/run.md#restart) flag
+To configure the restart policy for a container, use the [`--restart`](/reference/cli/docker/container/run/#restart) flag
 when using the `docker run` command. The value of the `--restart` flag can be
 any of the following:
 @y
-コンテナーに対するリスタートポリシーの設定は、`docker run` コマンド実行時に  [`--restart`](reference/cli/docker/container/run.md#restart) フラグを利用します。
+コンテナーに対するリスタートポリシーの設定は、`docker run` コマンド実行時に  [`--restart`](__SUBDIR__/reference/cli/docker/container/run/#restart) フラグを利用します。
 `--restart` フラグには以下のいずれかの値を指定します。
 @z
 
@@ -128,10 +128,10 @@ Keep the following in mind when using restart policies:
 @x
 - Restart policies only apply to containers. To configure restart policies for
   Swarm services, see
-  [flags related to service restart](/reference/cli/docker/service/create.md).
+  [flags related to service restart](/reference/cli/docker/service/create/).
 @y
 - リスタートポリシーはコンテナーにのみ適用されます。
-  swarm サービスに対するリスタートポリシーを設定する場合は [サービスリスタート関連のフラグ](reference/cli/docker/service/create.md) を参照してください。
+  swarm サービスに対するリスタートポリシーを設定する場合は [サービスリスタート関連のフラグ](__SUBDIR__/reference/cli/docker/service/create/) を参照してください。
 @z
 
 @x

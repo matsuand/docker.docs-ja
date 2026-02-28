@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = _markup _partials _shortcodes guides redirect samples \
-	security-announcements tags
+
+SUBDIRS = _markup _partials _shortcodes guides redirect samples
 
 bases = \
 	404.html         \
@@ -13,7 +13,7 @@ bases = \
 	cli.markdown.md  \
 	glossary.html    \
 	list.markdown.md \
-	scout-cli.html   \
+	security-announcements.rss.xml \
 	series.html
 
 include $(top_srcdir)/build-aux/common.mk

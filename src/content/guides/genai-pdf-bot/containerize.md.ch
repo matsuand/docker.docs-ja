@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Containerize a generative AI application
@@ -350,9 +350,9 @@ Related information:
 @z
 
 @x
-- [docker init CLI reference](../../../reference/cli/docker/init.md)
+- [docker init CLI reference](/reference/cli/docker/init/)
 @y
-- [docker init CLI reference](../../../reference/cli/docker/init.md)
+- [docker init CLI reference](__SUBDIR__/reference/cli/docker/init/)
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 @x
 description: Learn how to connect containers to the host, across containers, or through proxies and VPNs in Docker Desktop.
@@ -132,10 +132,10 @@ to give the container direct access to the network stack of the host.
 @z
 
 @x
-See the [run command](/reference/cli/docker/container/run.md) for more details on
+See the [run command](/reference/cli/docker/container/run/) for more details on
 publish options used with `docker run`.
 @y
-See the [run command](reference/cli/docker/container/run.md) for more details on
+See the [run command](__SUBDIR__/reference/cli/docker/container/run/) for more details on
 publish options used with `docker run`.
 @z
 
@@ -212,9 +212,9 @@ For more details on proxies and proxy configurations, see the [Proxy settings do
 @z
 
 @x
-With Docker Desktop version 4.42 and later, you can control how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
+You can control how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
 @y
-With Docker Desktop version 4.42 and later, you can control how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
+You can control how Docker handles container networking and DNS resolution to better support a range of environments — from IPv4-only to dual-stack and IPv6-only systems. These settings help prevent timeouts and connectivity issues caused by incompatible or misconfigured host networks.
 @z
 
 @x

@@ -248,8 +248,7 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	mainnav.html \
-	tags.html
+	mainnav.html
 
 all: all-am
 

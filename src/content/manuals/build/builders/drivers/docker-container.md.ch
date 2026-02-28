@@ -318,10 +318,10 @@ if you need to use a specific network for your builds.
 @z
 
 @x
-For example, let's [create a network](/reference/cli/docker/network/create.md)
+For example, let's [create a network](/reference/cli/docker/network/create/)
 named `foonet`:
 @y
-For example, let's [create a network](reference/cli/docker/network/create.md)
+For example, let's [create a network](__SUBDIR__/reference/cli/docker/network/create/)
 named `foonet`:
 @z
 
@@ -336,10 +336,10 @@ $ docker network create foonet
 @z
 
 @x
-Now create a [`docker-container` builder](/reference/cli/docker/buildx/create.md)
+Now create a [`docker-container` builder](/reference/cli/docker/buildx/create/)
 that will use this network:
 @y
-Now create a [`docker-container` builder](reference/cli/docker/buildx/create.md)
+Now create a [`docker-container` builder](__SUBDIR__/reference/cli/docker/buildx/create/)
 that will use this network:
 @z
 
@@ -360,9 +360,9 @@ $ docker buildx create --use \
 @z
 
 @x
-Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect.md):
+Boot and [inspect `mybuilder`](/reference/cli/docker/buildx/inspect/):
 @y
-Boot and [inspect `mybuilder`](reference/cli/docker/buildx/inspect.md):
+Boot and [inspect `mybuilder`](__SUBDIR__/reference/cli/docker/buildx/inspect/):
 @z
 
 @x
@@ -376,10 +376,10 @@ $ docker buildx inspect --bootstrap
 @z
 
 @x
-[Inspect the builder container](/reference/cli/docker/inspect.md)
+[Inspect the builder container](/reference/cli/docker/inspect/)
 and see what network is being used:
 @y
-[Inspect the builder container](reference/cli/docker/inspect.md)
+[Inspect the builder container](__SUBDIR__/reference/cli/docker/inspect/)
 and see what network is being used:
 @z
 
@@ -403,8 +403,8 @@ map[foonet:0xc00018c0c0]
 
 @x
 For more information on the Docker container driver, see the
-[buildx reference](/reference/cli/docker/buildx/create.md#driver).
+[buildx reference](/reference/cli/docker/buildx/create/#driver).
 @y
 For more information on the Docker container driver, see the
-[buildx reference](reference/cli/docker/buildx/create.md#driver).
+[buildx reference](__SUBDIR__/reference/cli/docker/buildx/create/#driver).
 @z

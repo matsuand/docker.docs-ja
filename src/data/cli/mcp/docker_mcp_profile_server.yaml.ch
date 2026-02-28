@@ -1,0 +1,44 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker mcp profile server
+short: Manage servers in profiles
+long: Manage servers in profiles
+pname: docker mcp profile
+plink: docker_mcp_profile.yaml
+cname:
+    - docker mcp profile server add
+    - docker mcp profile server ls
+    - docker mcp profile server remove
+clink:
+    - docker_mcp_profile_server_add.yaml
+    - docker_mcp_profile_server_ls.yaml
+    - docker_mcp_profile_server_remove.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker mcp profile server
+short: Manage servers in profiles
+long: Manage servers in profiles
+pname: docker mcp profile
+plink: docker_mcp_profile.yaml
+cname:
+    - docker mcp profile server add
+    - docker mcp profile server ls
+    - docker mcp profile server remove
+clink:
+    - docker_mcp_profile_server_add.yaml
+    - docker_mcp_profile_server_ls.yaml
+    - docker_mcp_profile_server_remove.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

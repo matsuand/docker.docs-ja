@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Configure BuildKit
@@ -16,12 +16,12 @@ keywords: build, buildkit, configuration, buildx, network, cni, registry
 @x
 If you create a `docker-container` or `kubernetes` builder with Buildx, you can
 apply a custom [BuildKit configuration](toml-configuration.md) by passing the
-[`--buildkitd-config` flag](/reference/cli/docker/buildx/create.md#buildkitd-config)
+[`--buildkitd-config` flag](/reference/cli/docker/buildx/create/#buildkitd-config)
 to the `docker buildx create` command.
 @y
 If you create a `docker-container` or `kubernetes` builder with Buildx, you can
 apply a custom [BuildKit configuration](toml-configuration.md) by passing the
-[`--buildkitd-config` flag](reference/cli/docker/buildx/create.md#buildkitd-config)
+[`--buildkitd-config` flag](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-config)
 to the `docker buildx create` command.
 @z
 
@@ -411,10 +411,10 @@ ADD https://raw.githubusercontent.com/moby/buildkit/${BUILDKIT_VERSION}/hack/fix
 
 @x
 Now you can build this image, and create a builder instance from it using
-[the `--driver-opt image` option](/reference/cli/docker/buildx/create.md#driver-opt):
+[the `--driver-opt image` option](/reference/cli/docker/buildx/create/#driver-opt):
 @y
 Now you can build this image, and create a builder instance from it using
-[the `--driver-opt image` option](reference/cli/docker/buildx/create.md#driver-opt):
+[the `--driver-opt image` option](__SUBDIR__/reference/cli/docker/buildx/create/#driver-opt):
 @z
 
 @x
@@ -452,11 +452,11 @@ $ docker buildx create --use --bootstrap \
 @x
 You can limit the parallelism of the BuildKit solver, which is particularly useful
 for low-powered machines, using a [BuildKit configuration](toml-configuration.md)
-while creating a builder with the [`--buildkitd-config` flag](/reference/cli/docker/buildx/create.md#buildkitd-config).
+while creating a builder with the [`--buildkitd-config` flag](/reference/cli/docker/buildx/create/#buildkitd-config).
 @y
 You can limit the parallelism of the BuildKit solver, which is particularly useful
 for low-powered machines, using a [BuildKit configuration](toml-configuration.md)
-while creating a builder with the [`--buildkitd-config` flag](reference/cli/docker/buildx/create.md#buildkitd-config).
+while creating a builder with the [`--buildkitd-config` flag](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-config).
 @z
 
 @x

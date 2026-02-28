@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Answers to common questions about Docker Compose, including v1 vs v2, commands, shutdown behavior, and development setup.
@@ -95,13 +95,13 @@ containers.
 
 @x
 The `docker compose stop` command attempts to stop a container by sending a `SIGTERM`. It then waits
-for a [default timeout of 10 seconds](/reference/cli/docker/compose/stop.md). After the timeout,
+for a [default timeout of 10 seconds](/reference/cli/docker/compose/stop/). After the timeout,
 a `SIGKILL` is sent to the container to forcefully kill it. If you
 are waiting for this timeout, it means that your containers aren't shutting down
 when they receive the `SIGTERM` signal.
 @y
 The `docker compose stop` command attempts to stop a container by sending a `SIGTERM`. It then waits
-for a [default timeout of 10 seconds](reference/cli/docker/compose/stop.md). After the timeout,
+for a [default timeout of 10 seconds](__SUBDIR__/reference/cli/docker/compose/stop/). After the timeout,
 a `SIGKILL` is sent to the container to forcefully kill it. If you
 are waiting for this timeout, it means that your containers aren't shutting down
 when they receive the `SIGTERM` signal.

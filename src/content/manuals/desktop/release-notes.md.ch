@@ -43,6 +43,102 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.62.0
+@y
+## 4.62.0
+@z
+
+@x
+{{< release-date date="2026-02-23" >}}
+@y
+{{< release-date date="2026-02-23" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.62.0" build_path="/219486/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.62.0" build_path="/219486/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- With Docker MCP Toolkit, you can now use [profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) to organize your MCP servers into named collections. You can also create custom catalogs — curated collections of servers for your team or organization.
+@y
+- With Docker MCP Toolkit, you can now use [profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) to organize your MCP servers into named collections. You can also create custom catalogs — curated collections of servers for your team or organization.
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Linux kernel `v6.12.69`
+@y
+- Linux kernel `v6.12.69`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue where background update checks did not respect the **Automatically check for updates** setting when disabled. Fixes [docker/for-mac#3908](https://github.com/docker/for-mac/issues/3908).
+@y
+- Fixed an issue where background update checks did not respect the **Automatically check for updates** setting when disabled. Fixes [docker/for-mac#3908](https://github.com/docker/for-mac/issues/3908).
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Added support for vLLM Metal in Docker Model Runner.
+@y
+- Added support for vLLM Metal in Docker Model Runner.
+@z
+
+@x
+#### For Linux 
+@y
+#### Linux 向け {#for-linux}
+@z
+
+@x
+- Fixed a networking crash on QEMU 10.2.0 and later.
+@y
+- Fixed a networking crash on QEMU 10.2.0 and later.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Addressed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in grpcfuse kernel module.
+@y
+- Addressed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in grpcfuse kernel module.
+@z
+
+@x
 ## 4.61.0
 @y
 ## 4.61.0
@@ -1169,10 +1265,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 @x
 - [cagent](/manuals/ai/cagent/_index.md) is now available through Docker Desktop. 
-- [Docker Debug](/reference/cli/docker/debug.md) is now free for all users. 
+- [Docker Debug](/reference/cli/docker/debug/) is now free for all users. 
 @y
 - [cagent](manuals/ai/cagent/_index.md) が Docker Desktop を通じて利用可能になりました。
-- [Docker Debug](reference/cli/docker/debug.md) が全ユーザー向けに無償利用可能となりました。
+- [Docker Debug](__SUBDIR__/reference/cli/docker/debug/) が全ユーザー向けに無償利用可能となりました。
 @z
 
 @x
@@ -2810,10 +2906,10 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 
 @x
 - The [Docker Desktop CLI](/manuals/desktop/features/desktop-cli.md) is now generally available. You can now also print logs with the new `docker desktop logs` command.
-- Docker Desktop now supports the `--platform` flag on [`docker load`](/reference/cli/docker/image/load.md) and [`docker save`](/reference/cli/docker/image/save.md). This helps you import and export a subset of multi-platform images.
+- Docker Desktop now supports the `--platform` flag on [`docker load`](/reference/cli/docker/image/load/) and [`docker save`](/reference/cli/docker/image/save/). This helps you import and export a subset of multi-platform images.
 @y
 - The [Docker Desktop CLI](manuals/desktop/features/desktop-cli.md) is now generally available. You can now also print logs with the new `docker desktop logs` command.
-- Docker Desktop now supports the `--platform` flag on [`docker load`](reference/cli/docker/image/load.md) and [`docker save`](reference/cli/docker/image/save.md). This helps you import and export a subset of multi-platform images.
+- Docker Desktop now supports the `--platform` flag on [`docker load`](__SUBDIR__/reference/cli/docker/image/load/) and [`docker save`](__SUBDIR__/reference/cli/docker/image/save/). This helps you import and export a subset of multi-platform images.
 @z
 
 @x
@@ -2954,7 +3050,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 - Installing Docker Desktop via the PKG installer is now generally available.
 - Enforcing sign-in via configuration profiles is now generally available.
 - Docker Compose, Docker Scout, the Docker CLI, and Ask Gordon can now be updated independently of Docker Desktop and without a full restart (Beta).
-- The new [`update` command](/reference/cli/docker/desktop/update.md) has been added to the Docker Desktop CLI (Mac only).
+- The new [`update` command](/reference/cli/docker/desktop/update/) has been added to the Docker Desktop CLI (Mac only).
 - [Bake](/manuals//build/bake/_index.md) is now generally available, with support for entitlements and composable attributes.
 - You can now create [multi-node Kubernetes clusters](/manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
 - [Ask Gordon](/manuals/ai/gordon/_index.md) is more widely available. It is still in Beta.
@@ -2962,7 +3058,7 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 - Installing Docker Desktop via the PKG installer is now generally available.
 - Enforcing sign-in via configuration profiles is now generally available.
 - Docker Compose, Docker Scout, the Docker CLI, and Ask Gordon can now be updated independently of Docker Desktop and without a full restart (Beta).
-- The new [`update` command](reference/cli/docker/desktop/update.md) has been added to the Docker Desktop CLI (Mac only).
+- The new [`update` command](__SUBDIR__/reference/cli/docker/desktop/update/) has been added to the Docker Desktop CLI (Mac only).
 - [Bake](manuals//build/bake/_index.md) is now generally available, with support for entitlements and composable attributes.
 - You can now create [multi-node Kubernetes clusters](manuals/desktop/settings-and-maintenance/settings.md#kubernetes) in Docker Desktop.
 - [Ask Gordon](manuals/ai/gordon/_index.md) is more widely available. It is still in Beta.
@@ -4235,12 +4331,12 @@ We are aware of [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266
 @z
 
 @x
-- [Docker Debug](/reference/cli/docker/debug.md) is now generally available.
+- [Docker Debug](/reference/cli/docker/debug/) is now generally available.
 - BuildKit now evaluates Dockerfile rules to inform you of potential issues.
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
 - New and improved experience for [troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @y
-- [Docker Debug](reference/cli/docker/debug.md) is now generally available.
+- [Docker Debug](__SUBDIR__/reference/cli/docker/debug/) is now generally available.
 - BuildKit now evaluates Dockerfile rules to inform you of potential issues.
 - **Resource Allocation** settings can now be accessed directly from the resource usage data displayed in the Dashboard footer.
 - New and improved experience for [troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
@@ -5597,14 +5693,14 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 - [Synchronized File Shares](/manuals/desktop/features/synchronized-file-sharing.md) provides fast and flexible host-to-VM file sharing within Docker Desktop. Utilizing the technology behind [Docker’s acquisition of Mutagen](https://www.docker.com/blog/mutagen-acquisition/), this feature provides an alternative to virtual bind mounts that uses synchronized filesystem caches, improving performance for developers working with large codebases.
 - Organization admins can now [configure Docker socket mount permissions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md) when ECI is enabled.
 - [Containerd Image Store](/manuals/desktop/features/containerd.md) support is now generally available to all users.
-- Get a debug shell into any container or image with the new [`docker debug` command](/reference/cli/docker/debug.md) (Beta).
+- Get a debug shell into any container or image with the new [`docker debug` command](/reference/cli/docker/debug/) (Beta).
 - Organization admins, with a Docker Business subscription, can now configure a custom list of extensions with [Private Extensions Marketplace](/manuals/extensions/private-marketplace.md) enabled (Beta)
 @y
 - Docker init now supports Java and is generally available to all users.
 - [Synchronized File Shares](manuals/desktop/features/synchronized-file-sharing.md) provides fast and flexible host-to-VM file sharing within Docker Desktop. Utilizing the technology behind [Docker’s acquisition of Mutagen](https://www.docker.com/blog/mutagen-acquisition/), this feature provides an alternative to virtual bind mounts that uses synchronized filesystem caches, improving performance for developers working with large codebases.
 - Organization admins can now [configure Docker socket mount permissions](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md) when ECI is enabled.
 - [Containerd Image Store](manuals/desktop/features/containerd.md) support is now generally available to all users.
-- Get a debug shell into any container or image with the new [`docker debug` command](reference/cli/docker/debug.md) (Beta).
+- Get a debug shell into any container or image with the new [`docker debug` command](__SUBDIR__/reference/cli/docker/debug/) (Beta).
 - Organization admins, with a Docker Business subscription, can now configure a custom list of extensions with [Private Extensions Marketplace](manuals/extensions/private-marketplace.md) enabled (Beta)
 @z
 
@@ -5649,7 +5745,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-- The `docker scan` command has been removed. To continue learning about the vulnerabilities of your images, and many other features, use the [`docker scout` command](/reference/cli/docker/scout/_index.md).
+- The `docker scan` command has been removed. To continue learning about the vulnerabilities of your images, and many other features, use the [`docker scout` command](/reference/cli/docker/scout/).
 - Fixed a bug where automatic updates would not download when the **Always download updates** checkbox was selected.
 - Fixed typo in the dashboard tooltip. Fixes [docker/for-mac#7132](https://github.com/docker/for-mac/issues/7132)
 - Improved signal handling behavior (e.g. when pressing Ctrl-C in the terminal while running a `docker` command).
@@ -5679,7 +5775,7 @@ This can be resolved by adding the user to the **docker-users** group. Before st
   - Fixed an issue where build names could be empty.
   - Fixed a general issue with the Builds view when Resource saver mode is enabled.
 @y
-- The `docker scan` command has been removed. To continue learning about the vulnerabilities of your images, and many other features, use the [`docker scout` command](reference/cli/docker/scout/_index.md).
+- The `docker scan` command has been removed. To continue learning about the vulnerabilities of your images, and many other features, use the [`docker scout` command](__SUBDIR__/reference/cli/docker/scout/).
 - Fixed a bug where automatic updates would not download when the **Always download updates** checkbox was selected.
 - Fixed typo in the dashboard tooltip. Fixes [docker/for-mac#7132](https://github.com/docker/for-mac/issues/7132)
 - Improved signal handling behavior (e.g. when pressing Ctrl-C in the terminal while running a `docker` command).
@@ -6568,11 +6664,11 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 
 @x
 - Added support for new Wasm runtimes: wws and lunatic.
-- [`docker init`](/reference/cli/docker/init.md) now supports ASP.NET
+- [`docker init`](/reference/cli/docker/init/) now supports ASP.NET
 - Increased performance of exposed ports on macOS, for example with `docker run -p`.
 @y
 - Added support for new Wasm runtimes: wws and lunatic.
-- [`docker init`](reference/cli/docker/init.md) now supports ASP.NET
+- [`docker init`](__SUBDIR__/reference/cli/docker/init/) now supports ASP.NET
 - Increased performance of exposed ports on macOS, for example with `docker run -p`.
 @z
 
@@ -7235,9 +7331,9 @@ This can be resolved by adding the user to the **docker-users** group. Before st
 @z
 
 @x
-- Removed `docker scan` command. To continue learning about the vulnerabilities of your images, and many other features, use the new `docker scout` command. Run `docker scout --help`, or [read the docs to learn more](/reference/cli/docker/scout/_index.md).
+- Removed `docker scan` command. To continue learning about the vulnerabilities of your images, and many other features, use the new `docker scout` command. Run `docker scout --help`, or [read the docs to learn more](/reference/cli/docker/scout/).
 @y
-- Removed `docker scan` command. To continue learning about the vulnerabilities of your images, and many other features, use the new `docker scout` command. Run `docker scout --help`, or [read the docs to learn more](reference/cli/docker/scout/_index.md).
+- Removed `docker scan` command. To continue learning about the vulnerabilities of your images, and many other features, use the new `docker scout` command. Run `docker scout --help`, or [read the docs to learn more](__SUBDIR__/reference/cli/docker/scout/).
 @z
 
 @x
@@ -10685,14 +10781,14 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @x
 Docker Desktop Dashboard incorrectly displays the container memory usage as zero on
 Hyper-V based machines.
-You can use the [`docker stats`](/reference/cli/docker/container/stats.md)
+You can use the [`docker stats`](/reference/cli/docker/container/stats/)
 command on the command line as a workaround to view the
 actual memory usage. See
 [docker/for-mac#6076](https://github.com/docker/for-mac/issues/6076).
 @y
 Docker Desktop Dashboard incorrectly displays the container memory usage as zero on
 Hyper-V based machines.
-You can use the [`docker stats`](reference/cli/docker/container/stats.md)
+You can use the [`docker stats`](__SUBDIR__/reference/cli/docker/container/stats/)
 command on the command line as a workaround to view the
 actual memory usage. See
 [docker/for-mac#6076](https://github.com/docker/for-mac/issues/6076).

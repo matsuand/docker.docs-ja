@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: Automated builds
@@ -284,10 +284,10 @@ the automated build fails.
 @z
 
 @x
-Refer to the [docker build documentation](/reference/cli/docker/buildx/build.md#build-arg)
+Refer to the [docker build documentation](/reference/cli/docker/buildx/build/#build-arg)
 to learn more about Docker build-time variables.
 @y
-Refer to the [docker build documentation](reference/cli/docker/buildx/build.md#build-arg)
+Refer to the [docker build documentation](__SUBDIR__/reference/cli/docker/buildx/build/#build-arg)
 to learn more about Docker build-time variables.
 @z
 

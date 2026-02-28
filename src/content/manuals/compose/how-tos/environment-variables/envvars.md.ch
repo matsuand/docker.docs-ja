@@ -158,9 +158,9 @@ constraint, you must use one of the other mechanisms.
 @z
 
 @x
-See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](/reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
+See also [using `-p` to specify a project name](/reference/cli/docker/compose/#use--p-to-specify-a-project-name).
 @y
-See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-p` to specify a project name](reference/cli/docker/compose/_index.md#use--p-to-specify-a-project-name).
+See also [using `-p` to specify a project name](__SUBDIR__/reference/cli/docker/compose/#use--p-to-specify-a-project-name).
 @z
 
 @x
@@ -202,9 +202,9 @@ Specifies the path to a Compose file. Specifying multiple Compose files is suppo
 @z
 
 @x
-See also the [command-line options overview](/reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
+See also [using `-f` to specify name and path of one or more Compose files](/reference/cli/docker/compose/#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @y
-See also the [command-line options overview](reference/cli/docker/compose/_index.md#command-options-overview-and-help) and [using `-f` to specify name and path of one or more Compose files](reference/cli/docker/compose/_index.md#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
+See also [using `-f` to specify name and path of one or more Compose files](__SUBDIR__/reference/cli/docker/compose/#use--f-to-specify-the-name-and-path-of-one-or-more-compose-files).
 @z
 
 @x
@@ -256,9 +256,9 @@ COMPOSE_PROFILES=frontend,debug
 @z
 
 @x
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](/reference/cli/docker/compose/#use-profiles-to-enable-optional-services).
 @y
-See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](reference/cli/docker/compose/_index.md#use-profiles-to-enable-optional-services).
+See also [Using profiles with Compose](../profiles.md) and the [`--profile` command-line option](__SUBDIR__/reference/cli/docker/compose/#use-profiles-to-enable-optional-services).
 @z
 
 @x
@@ -534,9 +534,9 @@ Default is `auto`.
 @z
 
 @x
-When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug.md).
+When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](/reference/cli/docker/debug/).
 @y
-When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](reference/cli/docker/debug.md).
+When enabled, Compose displays a navigation menu where you can choose to open the Compose stack in Docker Desktop, switch on [`watch` mode](../file-watch.md), or use [Docker Debug](__SUBDIR__/reference/cli/docker/debug/).
 @z
 
 @x

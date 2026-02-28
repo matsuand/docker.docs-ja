@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -24,7 +25,7 @@ Docker Hardened Images (DHI) prioritize minimalism and security, which means
 they intentionally leave out many common debugging tools (like shells or package
 managers). This makes direct troubleshooting difficult without introducing risk.
 To address this, you can use [Docker
-Debug](../../../reference/cli/docker/debug.md), a secure workflow that
+Debug](/reference/cli/docker/debug/), a secure workflow that
 temporarily attaches an ephemeral debug container to a running service or image
 without modifying the original image.
 @y
@@ -32,7 +33,7 @@ Docker Hardened Images (DHI) prioritize minimalism and security, which means
 they intentionally leave out many common debugging tools (like shells or package
 managers). This makes direct troubleshooting difficult without introducing risk.
 To address this, you can use [Docker
-Debug](../../../reference/cli/docker/debug.md), a secure workflow that
+Debug](__SUBDIR__/reference/cli/docker/debug/), a secure workflow that
 temporarily attaches an ephemeral debug container to a running service or image
 without modifying the original image.
 @z

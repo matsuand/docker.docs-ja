@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -169,12 +169,12 @@ To force a re-execution of the `RUN` instruction, you can:
 @x
 - Make sure that a layer before it has changed
 - Clear the build cache ahead of the build using
-  [`docker builder prune`](/reference/cli/docker/builder/prune.md)
+  [`docker builder prune`](/reference/cli/docker/builder/prune/)
 - Use the `--no-cache` or `--no-cache-filter` options
 @y
 - Make sure that a layer before it has changed
 - Clear the build cache ahead of the build using
-  [`docker builder prune`](reference/cli/docker/builder/prune.md)
+  [`docker builder prune`](__SUBDIR__/reference/cli/docker/builder/prune/)
 - Use the `--no-cache` or `--no-cache-filter` options
 @z
 

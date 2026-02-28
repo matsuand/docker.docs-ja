@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Provenance attestations
@@ -333,21 +333,21 @@ detailed information for analysis.
 > [!WARNING]
 >
 > Note that `mode=max` exposes the values of
-> [build arguments](/reference/cli/docker/buildx/build.md#build-arg).
+> [build arguments](/reference/cli/docker/buildx/build/#build-arg).
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
-> [secret mounts](/reference/cli/docker/buildx/build.md#secret) instead.
+> [secret mounts](/reference/cli/docker/buildx/build/#secret) instead.
 > Secret mounts don't leak outside of the build and are never included in provenance attestations.
 @y
 > [!WARNING]
 >
 > Note that `mode=max` exposes the values of
-> [build arguments](reference/cli/docker/buildx/build.md#build-arg).
+> [build arguments](__SUBDIR__/reference/cli/docker/buildx/build/#build-arg).
 >
 > If you're misusing build arguments to pass credentials, authentication
 > tokens, or other secrets, you should refactor your build to pass the secrets using
-> [secret mounts](reference/cli/docker/buildx/build.md#secret) instead.
+> [secret mounts](__SUBDIR__/reference/cli/docker/buildx/build/#secret) instead.
 > Secret mounts don't leak outside of the build and are never included in provenance attestations.
 @z
 
@@ -403,10 +403,10 @@ difference between SLSA v0.2 and v1 provenance attestations, refer to
 
 @x
 To explore created Provenance exported through the `image` exporter, you can
-use [`imagetools inspect`](/reference/cli/docker/buildx/imagetools/inspect.md).
+use [`imagetools inspect`](/reference/cli/docker/buildx/imagetools/inspect/).
 @y
 To explore created Provenance exported through the `image` exporter, you can
-use [`imagetools inspect`](reference/cli/docker/buildx/imagetools/inspect.md).
+use [`imagetools inspect`](__SUBDIR__/reference/cli/docker/buildx/imagetools/inspect/).
 @z
 
 @x

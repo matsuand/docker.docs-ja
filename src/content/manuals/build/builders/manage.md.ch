@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Manage builders
@@ -40,10 +40,10 @@ which runs the BuildKit daemon in a container.
 
 @x
 Use the
-[`docker buildx create`](/reference/cli/docker/buildx/create.md)
+[`docker buildx create`](/reference/cli/docker/buildx/create/)
 command to create a builder.
 @y
-[`docker buildx create`](reference/cli/docker/buildx/create.md) コマンドを使ってビルダーを生成します。
+[`docker buildx create`](__SUBDIR__/reference/cli/docker/buildx/create/) コマンドを使ってビルダーを生成します。
 @z
 
 % snip command...
@@ -121,11 +121,11 @@ for all available builders. To see usage for a specific builder, use the
 
 @x
 Use the
-[`docker buildx remove`](/reference/cli/docker/buildx/create.md)
+[`docker buildx remove`](/reference/cli/docker/buildx/create/)
 command to remove a builder.
 @y
 Use the
-[`docker buildx remove`](reference/cli/docker/buildx/create.md)
+[`docker buildx remove`](__SUBDIR__/reference/cli/docker/buildx/create/)
 command to remove a builder.
 @z
 

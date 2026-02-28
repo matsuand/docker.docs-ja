@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Build multi-arch extensions
@@ -93,10 +93,10 @@ $ docker buildx build --push --platform=linux/amd64,linux/arm64 --tag=username/m
 
 @x
 You can then check the image manifest to see if the image is available for both
-architectures using the [`docker buildx imagetools` command](/reference/cli/docker/buildx/imagetools/_index.md):
+architectures using the [`docker buildx imagetools` command](/reference/cli/docker/buildx/imagetools/):
 @y
 You can then check the image manifest to see if the image is available for both
-architectures using the [`docker buildx imagetools` command](reference/cli/docker/buildx/imagetools/_index.md):
+architectures using the [`docker buildx imagetools` command](__SUBDIR__/reference/cli/docker/buildx/imagetools/):
 @z
 
 @x

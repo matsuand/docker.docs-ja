@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Kubernetes driver
@@ -253,10 +253,10 @@ multiple times to the same node each time, ensuring better use of local cache.
 
 @x
 For more information on scalability, see the options for
-[`docker buildx create`](/reference/cli/docker/buildx/create.md#driver-opt).
+[`docker buildx create`](/reference/cli/docker/buildx/create/#driver-opt).
 @y
 For more information on scalability, see the options for
-[`docker buildx create`](reference/cli/docker/buildx/create.md#driver-opt).
+[`docker buildx create`](__SUBDIR__/reference/cli/docker/buildx/create/#driver-opt).
 @z
 
 @x
@@ -847,8 +847,8 @@ That's it: you've now built an image from a Kubernetes pod, using Buildx.
 
 @x
 For more information on the Kubernetes driver, see the
-[buildx reference](/reference/cli/docker/buildx/create.md#driver).
+[buildx reference](/reference/cli/docker/buildx/create/#driver).
 @y
 For more information on the Kubernetes driver, see the
-[buildx reference](reference/cli/docker/buildx/create.md#driver).
+[buildx reference](__SUBDIR__/reference/cli/docker/buildx/create/#driver).
 @z

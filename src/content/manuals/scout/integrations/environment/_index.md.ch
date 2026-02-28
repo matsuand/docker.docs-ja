@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description:
@@ -203,11 +203,11 @@ staging or production.
 
 @x
 You can also compare with streams using the `--to-env` flag on the
-[`docker scout compare`](/reference/cli/docker/scout/compare.md)
+[`docker scout compare`](/reference/cli/docker/scout/compare/)
 CLI command:
 @y
 You can also compare with streams using the `--to-env` flag on the
-[`docker scout compare`](reference/cli/docker/scout/compare.md)
+[`docker scout compare`](__SUBDIR__/reference/cli/docker/scout/compare/)
 CLI command:
 @z
 

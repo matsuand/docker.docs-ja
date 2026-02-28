@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Dockerfile overview
@@ -96,14 +96,14 @@ Some projects may need distinct Dockerfiles for specific purposes. A common
 convention is to name these `<something>.Dockerfile`. You can specify the
 Dockerfile filename using the `--file` flag for the `docker build` command.
 Refer to the
-[`docker build` CLI reference](/reference/cli/docker/buildx/build.md#file)
+[`docker build` CLI reference](/reference/cli/docker/buildx/build/#file)
 to learn about the `--file` flag.
 @y
 Some projects may need distinct Dockerfiles for specific purposes. A common
 convention is to name these `<something>.Dockerfile`. You can specify the
 Dockerfile filename using the `--file` flag for the `docker build` command.
 Refer to the
-[`docker build` CLI reference](reference/cli/docker/buildx/build.md#file)
+[`docker build` CLI reference](__SUBDIR__/reference/cli/docker/buildx/build/#file)
 to learn about the `--file` flag.
 @z
 

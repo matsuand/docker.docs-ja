@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Manage sensitive data with Docker secrets
@@ -283,20 +283,14 @@ Use these links to read about specific commands, or continue to the
 [example about using secrets with a service](secrets.md#simple-example-get-started-with-secrets).
 @z
 
+% snip command links...
+
 @x
-- [`docker secret create`](/reference/cli/docker/secret/create.md)
-- [`docker secret inspect`](/reference/cli/docker/secret/inspect.md)
-- [`docker secret ls`](/reference/cli/docker/secret/ls.md)
-- [`docker secret rm`](/reference/cli/docker/secret/rm.md)
-- [`--secret`](/reference/cli/docker/service/create.md#secret) flag for `docker service create`
-- [`--secret-add` and `--secret-rm`](/reference/cli/docker/service/update.md#secret-add) flags for `docker service update`
+- [`--secret`](/reference/cli/docker/service/create/#secret) flag for `docker service create`
+- [`--secret-add` and `--secret-rm`](/reference/cli/docker/service/update/#secret-add) flags for `docker service update`
 @y
-- [`docker secret create`](reference/cli/docker/secret/create.md)
-- [`docker secret inspect`](reference/cli/docker/secret/inspect.md)
-- [`docker secret ls`](reference/cli/docker/secret/ls.md)
-- [`docker secret rm`](reference/cli/docker/secret/rm.md)
-- [`--secret`](reference/cli/docker/service/create.md#secret) flag for `docker service create`
-- [`--secret-add` and `--secret-rm`](reference/cli/docker/service/update.md#secret-add) flags for `docker service update`
+- [`--secret`](__SUBDIR__/reference/cli/docker/service/create/#secret) flag for `docker service create`
+- [`--secret-add` and `--secret-rm`](__SUBDIR__/reference/cli/docker/service/update/#secret-add) flags for `docker service update`
 @z
 
 @x

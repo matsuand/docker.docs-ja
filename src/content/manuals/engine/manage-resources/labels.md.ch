@@ -201,16 +201,16 @@ Labels on Swarm nodes and services can be updated dynamically.
 
 @x
   - [Adding labels to images](/reference/dockerfile.md#label)
-  - [Overriding a container's labels at runtime](/reference/cli/docker/container/run.md#label)
-  - [Inspecting labels on images or containers](/reference/cli/docker/inspect.md)
-  - [Filtering images by label](/reference/cli/docker/image/ls.md#filter)
-  - [Filtering containers by label](/reference/cli/docker/container/ls.md#filter)
+  - [Overriding a container's labels at runtime](/reference/cli/docker/container/run/#label)
+  - [Inspecting labels on images or containers](/reference/cli/docker/inspect/)
+  - [Filtering images by label](/reference/cli/docker/image/ls/#filter)
+  - [Filtering containers by label](/reference/cli/docker/container/ls/#filter)
 @y
   - [Adding labels to images](reference/dockerfile.md#label)
-  - [Overriding a container's labels at runtime](reference/cli/docker/container/run.md#label)
-  - [Inspecting labels on images or containers](reference/cli/docker/inspect.md)
-  - [Filtering images by label](reference/cli/docker/image/ls.md#filter)
-  - [Filtering containers by label](reference/cli/docker/container/ls.md#filter)
+  - [Overriding a container's labels at runtime](__SUBDIR__/reference/cli/docker/container/run/#label)
+  - [Inspecting labels on images or containers](__SUBDIR__/reference/cli/docker/inspect/)
+  - [Filtering images by label](__SUBDIR__/reference/cli/docker/image/ls/#filter)
+  - [Filtering containers by label](__SUBDIR__/reference/cli/docker/container/ls/#filter)
 @z
 
 @x
@@ -221,10 +221,10 @@ Labels on Swarm nodes and services can be updated dynamically.
 
 @x
   - [Adding labels to a Docker daemon at runtime](/reference/cli/dockerd.md)
-  - [Inspecting a Docker daemon's labels](/reference/cli/docker/system/info.md)
+  - [Inspecting a Docker daemon's labels](/reference/cli/docker/system/info/)
 @y
   - [Adding labels to a Docker daemon at runtime](reference/cli/dockerd.md)
-  - [Inspecting a Docker daemon's labels](reference/cli/docker/system/info.md)
+  - [Inspecting a Docker daemon's labels](__SUBDIR__/reference/cli/docker/system/info/)
 @z
 
 @x
@@ -234,13 +234,13 @@ Labels on Swarm nodes and services can be updated dynamically.
 @z
 
 @x
-  - [Adding labels to volumes](/reference/cli/docker/volume/create.md)
-  - [Inspecting a volume's labels](/reference/cli/docker/volume/inspect.md)
-  - [Filtering volumes by label](/reference/cli/docker/volume/ls.md#filter)
+  - [Adding labels to volumes](/reference/cli/docker/volume/create/)
+  - [Inspecting a volume's labels](/reference/cli/docker/volume/inspect/)
+  - [Filtering volumes by label](/reference/cli/docker/volume/ls/#filter)
 @y
-  - [Adding labels to volumes](reference/cli/docker/volume/create.md)
-  - [Inspecting a volume's labels](reference/cli/docker/volume/inspect.md)
-  - [Filtering volumes by label](reference/cli/docker/volume/ls.md#filter)
+  - [Adding labels to volumes](__SUBDIR__/reference/cli/docker/volume/create/)
+  - [Inspecting a volume's labels](__SUBDIR__/reference/cli/docker/volume/inspect/)
+  - [Filtering volumes by label](__SUBDIR__/reference/cli/docker/volume/ls/#filter)
 @z
 
 @x
@@ -250,13 +250,13 @@ Labels on Swarm nodes and services can be updated dynamically.
 @z
 
 @x
-  - [Adding labels to a network](/reference/cli/docker/network/create.md)
-  - [Inspecting a network's labels](/reference/cli/docker/network/inspect.md)
-  - [Filtering networks by label](/reference/cli/docker/network/ls.md#filter)
+  - [Adding labels to a network](/reference/cli/docker/network/create/)
+  - [Inspecting a network's labels](/reference/cli/docker/network/inspect/)
+  - [Filtering networks by label](/reference/cli/docker/network/ls/#filter)
 @y
-  - [Adding labels to a network](reference/cli/docker/network/create.md)
-  - [Inspecting a network's labels](reference/cli/docker/network/inspect.md)
-  - [Filtering networks by label](reference/cli/docker/network/ls.md#filter)
+  - [Adding labels to a network](__SUBDIR__/reference/cli/docker/network/create/)
+  - [Inspecting a network's labels](__SUBDIR__/reference/cli/docker/network/inspect/)
+  - [Filtering networks by label](__SUBDIR__/reference/cli/docker/network/ls/#filter)
 @z
 
 @x
@@ -266,25 +266,25 @@ Labels on Swarm nodes and services can be updated dynamically.
 @z
 
 @x
-  - [Adding or updating a Swarm node's labels](/reference/cli/docker/node/update.md#label-add)
-  - [Inspecting a Swarm node's labels](/reference/cli/docker/node/inspect.md)
-  - [Filtering Swarm nodes by label](/reference/cli/docker/node/ls.md#filter)
+  - [Adding or updating a Swarm node's labels](/reference/cli/docker/node/update/#label-add)
+  - [Inspecting a Swarm node's labels](/reference/cli/docker/node/inspect/)
+  - [Filtering Swarm nodes by label](/reference/cli/docker/node/ls/#filter)
 @y
-  - [Adding or updating a Swarm node's labels](reference/cli/docker/node/update.md#label-add)
-  - [Inspecting a Swarm node's labels](reference/cli/docker/node/inspect.md)
-  - [Filtering Swarm nodes by label](reference/cli/docker/node/ls.md#filter)
+  - [Adding or updating a Swarm node's labels](__SUBDIR__/reference/cli/docker/node/update/#label-add)
+  - [Inspecting a Swarm node's labels](__SUBDIR__/reference/cli/docker/node/inspect/)
+  - [Filtering Swarm nodes by label](__SUBDIR__/reference/cli/docker/node/ls/#filter)
 @z
 
 @x
 - Swarm services
-  - [Adding labels when creating a Swarm service](/reference/cli/docker/service/create.md#label)
-  - [Updating a Swarm service's labels](/reference/cli/docker/service/update.md)
-  - [Inspecting a Swarm service's labels](/reference/cli/docker/service/inspect.md)
-  - [Filtering Swarm services by label](/reference/cli/docker/service/ls.md#filter)
+  - [Adding labels when creating a Swarm service](/reference/cli/docker/service/create/#label)
+  - [Updating a Swarm service's labels](/reference/cli/docker/service/update/)
+  - [Inspecting a Swarm service's labels](/reference/cli/docker/service/inspect/)
+  - [Filtering Swarm services by label](/reference/cli/docker/service/ls/#filter)
 @y
 - Swarm services
-  - [Adding labels when creating a Swarm service](reference/cli/docker/service/create.md#label)
-  - [Updating a Swarm service's labels](reference/cli/docker/service/update.md)
-  - [Inspecting a Swarm service's labels](reference/cli/docker/service/inspect.md)
-  - [Filtering Swarm services by label](reference/cli/docker/service/ls.md#filter)
+  - [Adding labels when creating a Swarm service](__SUBDIR__/reference/cli/docker/service/create/#label)
+  - [Updating a Swarm service's labels](__SUBDIR__/reference/cli/docker/service/update/)
+  - [Inspecting a Swarm service's labels](__SUBDIR__/reference/cli/docker/service/inspect/)
+  - [Filtering Swarm services by label](__SUBDIR__/reference/cli/docker/service/ls/#filter)
 @z

@@ -250,10 +250,10 @@ In the terminal, run the following command to stop the application.
 
 @x
 For more information about Compose commands, see the
-[Compose CLI reference](/reference/cli/docker/compose/_index.md).
+[Compose CLI reference](/reference/cli/docker/compose/).
 @y
 For more information about Compose commands, see the
-[Compose CLI reference](reference/cli/docker/compose/_index.md).
+[Compose CLI reference](__SUBDIR__/reference/cli/docker/compose/).
 @z
 
 @x

@@ -231,42 +231,4 @@ For more information about filtering commands, refer to the CLI reference
 description for commands that support the `--filter` flag:
 @z
 
-@x
-- [`docker config ls`](/reference/cli/docker/config/ls.md)
-- [`docker container prune`](/reference/cli/docker/container/prune.md)
-- [`docker image prune`](/reference/cli/docker/image/prune.md)
-- [`docker image ls`](/reference/cli/docker/image/ls.md)
-- [`docker network ls`](/reference/cli/docker/network/ls.md)
-- [`docker network prune`](/reference/cli/docker/network/prune.md)
-- [`docker node ls`](/reference/cli/docker/node/ls.md)
-- [`docker node ps`](/reference/cli/docker/node/ps.md)
-- [`docker plugin ls`](/reference/cli/docker/plugin/ls.md)
-- [`docker container ls`](/reference/cli/docker/container/ls.md)
-- [`docker search`](/reference/cli/docker/search.md)
-- [`docker secret ls`](/reference/cli/docker/secret/ls.md)
-- [`docker service ls`](/reference/cli/docker/service/ls.md)
-- [`docker service ps`](/reference/cli/docker/service/ps.md)
-- [`docker stack ps`](/reference/cli/docker/stack/ps.md)
-- [`docker system prune`](/reference/cli/docker/system/prune.md)
-- [`docker volume ls`](/reference/cli/docker/volume/ls.md)
-- [`docker volume prune`](/reference/cli/docker/volume/prune.md)
-@y
-- [`docker config ls`](reference/cli/docker/config/ls.md)
-- [`docker container prune`](reference/cli/docker/container/prune.md)
-- [`docker image prune`](reference/cli/docker/image/prune.md)
-- [`docker image ls`](reference/cli/docker/image/ls.md)
-- [`docker network ls`](reference/cli/docker/network/ls.md)
-- [`docker network prune`](reference/cli/docker/network/prune.md)
-- [`docker node ls`](reference/cli/docker/node/ls.md)
-- [`docker node ps`](reference/cli/docker/node/ps.md)
-- [`docker plugin ls`](reference/cli/docker/plugin/ls.md)
-- [`docker container ls`](reference/cli/docker/container/ls.md)
-- [`docker search`](reference/cli/docker/search.md)
-- [`docker secret ls`](reference/cli/docker/secret/ls.md)
-- [`docker service ls`](reference/cli/docker/service/ls.md)
-- [`docker service ps`](reference/cli/docker/service/ps.md)
-- [`docker stack ps`](reference/cli/docker/stack/ps.md)
-- [`docker system prune`](reference/cli/docker/system/prune.md)
-- [`docker volume ls`](reference/cli/docker/volume/ls.md)
-- [`docker volume prune`](reference/cli/docker/volume/prune.md)
-@z
+% snip command links...

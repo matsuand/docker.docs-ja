@@ -22,75 +22,111 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 % grid:
 
 @x
- - title: Get started with MCP Toolkit
-   description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
-   icon: explore
-   link: /ai/mcp-catalog-and-toolkit/get-started/
+  - title: Get started with MCP Toolkit
+    description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
+    icon: explore
+    link: /ai/mcp-catalog-and-toolkit/get-started/
 @y
- - title: Get started with MCP Toolkit
-   description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
-   icon: explore
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/get-started/
+  - title: Get started with MCP Toolkit
+    description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
+    icon: explore
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/get-started/
 @z
 
 @x
- - title: MCP Catalog
-   description: Learn about the benefits of the MCP Catalog, how you can use it, and how you can contribute
-   icon: hub
-   link: /ai/mcp-catalog-and-toolkit/catalog/
+  - title: MCP Catalog
+    description: Browse Docker's curated collection of verified MCP servers
+    icon: hub
+    link: /ai/mcp-catalog-and-toolkit/catalog/
 @y
- - title: MCP Catalog
-   description: Learn about the benefits of the MCP Catalog, how you can use it, and how you can contribute
-   icon: hub
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/catalog/
+  - title: MCP Catalog
+    description: Browse Docker's curated collection of verified MCP servers
+    icon: hub
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/catalog/
 @z
 
 @x
- - title: MCP Toolkit
-   description: Learn about the MCP Toolkit to manage MCP servers and clients
-   icon: /icons/toolkit.svg
-   link: /ai/mcp-catalog-and-toolkit/toolkit/
+  - title: MCP Profiles
+    description: Organize servers into profiles for different projects and share configurations
+    icon: folder
+    link: /ai/mcp-catalog-and-toolkit/profiles/
 @y
- - title: MCP Toolkit
-   description: Learn about the MCP Toolkit to manage MCP servers and clients
-   icon: icons/toolkit.svg
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/toolkit/
+  - title: MCP Profiles
+    description: Organize servers into profiles for different projects and share configurations
+    icon: folder
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/profiles/
 @z
 
 @x
- - title: Dynamic MCP
-   description: Discover and add MCP servers on-demand using natural language
-   icon: search
-   link: /ai/mcp-catalog-and-toolkit/dynamic-mcp/
+  - title: MCP Toolkit
+    description: Use Docker Desktop's UI to discover, configure, and manage MCP servers
+    icon: /icons/toolkit.svg
+    link: /ai/mcp-catalog-and-toolkit/toolkit/
 @y
- - title: Dynamic MCP
-   description: Discover and add MCP servers on-demand using natural language
-   icon: search
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/dynamic-mcp/
+  - title: MCP Toolkit
+    description: Use Docker Desktop's UI to discover, configure, and manage MCP servers
+    icon: icons/toolkit.svg
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/toolkit/
 @z
 
 @x
- - title: MCP Gateway
-   description: Learn about the underlying technology that powers the MCP Toolkit
-   icon: developer_board
-   link: /ai/mcp-catalog-and-toolkit/mcp-gateway/
+  - title: MCP Gateway
+    description: Use the CLI and Gateway to run MCP servers with custom configurations
+    icon: developer_board
+    link: /ai/mcp-catalog-and-toolkit/mcp-gateway/
 @y
- - title: MCP Gateway
-   description: Learn about the underlying technology that powers the MCP Toolkit
-   icon: developer_board
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/
+  - title: MCP Gateway
+    description: Use the CLI and Gateway to run MCP servers with custom configurations
+    icon: developer_board
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/
 @z
 
 @x
- - title: Docker Hub MCP server
-   description: Explore about the Docker Hub server for searching images, managing repositories, and more
-   icon: device_hub
-   link: /ai/mcp-catalog-and-toolkit/hub-mcp/
+  - title: Dynamic MCP
+    description: Discover and add MCP servers on-demand using natural language
+    icon: search
+    link: /ai/mcp-catalog-and-toolkit/dynamic-mcp/
 @y
- - title: Docker Hub MCP server
-   description: Explore about the Docker Hub server for searching images, managing repositories, and more
-   icon: device_hub
-   link: __SUBDIR__/ai/mcp-catalog-and-toolkit/hub-mcp/
+  - title: Dynamic MCP
+    description: Discover and add MCP servers on-demand using natural language
+    icon: search
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/dynamic-mcp/
+@z
+
+@x
+  - title: Docker Hub MCP server
+    description: Use the Docker Hub MCP server to search images and manage repositories
+    icon: device_hub
+    link: /ai/mcp-catalog-and-toolkit/hub-mcp/
+@y
+  - title: Docker Hub MCP server
+    description: Use the Docker Hub MCP server to search images and manage repositories
+    icon: device_hub
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/hub-mcp/
+@z
+
+@x
+  - title: Security FAQs
+    description: Common questions about MCP security, credentials, and server verification
+    icon: security
+    link: /ai/mcp-catalog-and-toolkit/faqs/
+@y
+  - title: Security FAQs
+    description: Common questions about MCP security, credentials, and server verification
+    icon: security
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/faqs/
+@z
+
+@x
+  - title: E2B sandboxes
+    description: Cloud sandboxes for AI agents with built-in MCP Catalog access
+    icon: cloud
+    link: /ai/mcp-catalog-and-toolkit/e2b-sandboxes/
+@y
+  - title: E2B sandboxes
+    description: Cloud sandboxes for AI agents with built-in MCP Catalog access
+    icon: cloud
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/e2b-sandboxes/
 @z
 
 @x
@@ -114,31 +150,19 @@ training.
 @z
 
 @x
-Through a client-server architecture, applications such as Claude, ChatGPT, and
-[Gordon](/manuals/ai/gordon/_index.md) act as clients that send requests to MCP
-servers, which then process these requests and deliver the necessary context to
-AI models.
+The challenge is that running MCP servers locally creates operational friction.
+Each server requires separate installation and configuration for every
+application you use. You run untrusted code directly on your machine, manage
+updates manually, and troubleshoot dependency conflicts yourself. Configure a
+GitHub server for Claude, then configure it again for Cursor, and so on. Each
+time you manage credentials, permissions, and environment setup.
 @y
-Through a client-server architecture, applications such as Claude, ChatGPT, and
-[Gordon](manuals/ai/gordon/_index.md) act as clients that send requests to MCP
-servers, which then process these requests and deliver the necessary context to
-AI models.
-@z
-
-@x
-MCP servers extend the utility of AI applications, but running servers locally
-also presents several operational challenges. Typically, servers must be
-installed directly on your machine and configured individually for each
-application. Running untrusted code locally requires careful vetting, and the
-responsibility of keeping servers up-to-date and resolving environment
-conflicts falls on the user.
-@y
-MCP servers extend the utility of AI applications, but running servers locally
-also presents several operational challenges. Typically, servers must be
-installed directly on your machine and configured individually for each
-application. Running untrusted code locally requires careful vetting, and the
-responsibility of keeping servers up-to-date and resolving environment
-conflicts falls on the user.
+The challenge is that running MCP servers locally creates operational friction.
+Each server requires separate installation and configuration for every
+application you use. You run untrusted code directly on your machine, manage
+updates manually, and troubleshoot dependency conflicts yourself. Configure a
+GitHub server for Claude, then configure it again for Cursor, and so on. Each
+time you manage credentials, permissions, and environment setup.
 @z
 
 @x
@@ -148,77 +172,63 @@ conflicts falls on the user.
 @z
 
 @x
-Docker provides three integrated components that address the challenges of
-running local MCP servers:
+The [MCP Toolkit](/ai/mcp-catalog-and-toolkit/toolkit/) and [MCP
+Gateway](/ai/mcp-catalog-and-toolkit/mcp-gateway/) solve these challenges
+through centralized management. Instead of configuring each server for every AI
+application separately, you set things up once and connect all your clients to
+it. The workflow centers on three concepts: catalogs, profiles, and clients.
 @y
-Docker provides three integrated components that address the challenges of
-running local MCP servers:
+The [MCP Toolkit](__SUBDIR__/ai/mcp-catalog-and-toolkit/toolkit/) and [MCP
+Gateway](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) solve these challenges
+through centralized management. Instead of configuring each server for every AI
+application separately, you set things up once and connect all your clients to
+it. The workflow centers on three concepts: catalogs, profiles, and clients.
 @z
 
 @x
-MCP Catalog
-: A curated collection of verified MCP servers, packaged and distributed as
-container images via Docker Hub. All servers are versioned, come with full
-provenance and SBOM metadata, and are continuously maintained and updated with
-security patches.
+![MCP overview](./images/mcp_toolkit.avif)
 @y
-MCP Catalog
-: A curated collection of verified MCP servers, packaged and distributed as
-container images via Docker Hub. All servers are versioned, come with full
-provenance and SBOM metadata, and are continuously maintained and updated with
-security patches.
+![MCP overview](./images/mcp_toolkit.avif)
 @z
 
 @x
-MCP Toolkit
-: A graphical interface in Docker Desktop for discovering, configuring, and
-managing MCP servers. The Toolkit provides a unified way to search for servers,
-handle authentication, and connect them to AI applications.
+[Catalogs](/ai/mcp-catalog-and-toolkit/catalog/) are curated collections of
+MCP servers. The Docker MCP Catalog provides 300+ verified servers packaged as
+container images with versioning, provenance, and security updates. Organizations
+can create [custom
+catalogs](/ai/mcp-catalog-and-toolkit/catalog/#custom-catalogs) with approved
+servers for their teams.
 @y
-MCP Toolkit
-: A graphical interface in Docker Desktop for discovering, configuring, and
-managing MCP servers. The Toolkit provides a unified way to search for servers,
-handle authentication, and connect them to AI applications.
+[Catalogs](__SUBDIR__/ai/mcp-catalog-and-toolkit/catalog/) are curated collections of
+MCP servers. The Docker MCP Catalog provides 300+ verified servers packaged as
+container images with versioning, provenance, and security updates. Organizations
+can create [custom
+catalogs](__SUBDIR__/ai/mcp-catalog-and-toolkit/catalog/#custom-catalogs) with approved
+servers for their teams.
 @z
 
 @x
-MCP Gateway
-: The core open source component that powers the MCP Toolkit. The MCP Gateway
-manages MCP containers provides a unified endpoint that exposes your enabled
-servers to all AI applications you use.
+[Profiles](/ai/mcp-catalog-and-toolkit/profiles/) organize servers into named
+collections for different projects. Your "web-dev" profile might use GitHub and
+Playwright; your "backend" profile, database tools. Profiles support both
+containerized servers from catalogs and remote MCP servers. Configure a profile
+once, then share it across clients or with your team.
 @y
-MCP Gateway
-: The core open source component that powers the MCP Toolkit. The MCP Gateway
-manages MCP containers provides a unified endpoint that exposes your enabled
-servers to all AI applications you use.
+[Profiles](__SUBDIR__/ai/mcp-catalog-and-toolkit/profiles/) organize servers into named
+collections for different projects. Your "web-dev" profile might use GitHub and
+Playwright; your "backend" profile, database tools. Profiles support both
+containerized servers from catalogs and remote MCP servers. Configure a profile
+once, then share it across clients or with your team.
 @z
 
 @x
-This integrated approach ensures:
+Clients are the AI applications that connect to your profiles. Claude Code,
+Cursor, Zed, and others connect through the MCP Gateway, which routes requests
+to the right server and handles authentication and lifecycle management.
 @y
-This integrated approach ensures:
-@z
-
-@x
-- Simplified discovery and setup of trusted MCP servers from a curated catalog
-  of tools
-- Centralized configuration and authentication from within Docker Desktop
-- A secure, consistent execution environment by default
-- Improved performance since applications can share a single server runtime,
-  compared to having to spin up duplicate servers for each application.
-@y
-- Simplified discovery and setup of trusted MCP servers from a curated catalog
-  of tools
-- Centralized configuration and authentication from within Docker Desktop
-- A secure, consistent execution environment by default
-- Improved performance since applications can share a single server runtime,
-  compared to having to spin up duplicate servers for each application.
-@z
-
-@x
-![MCP overview](./images/mcp-overview.svg)
-@y
-![MCP overview](./images/mcp-overview.svg)
+Clients are the AI applications that connect to your profiles. Claude Code,
+Cursor, Zed, and others connect through the MCP Gateway, which routes requests
+to the right server and handles authentication and lifecycle management.
 @z
 
 @x

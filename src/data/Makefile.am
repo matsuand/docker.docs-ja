@@ -1,16 +1,16 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = buildx debug-cli desktop-cli docsarchive engine-cli init-cli \
-	offload-cli sandbox-cli scout-cli secrets-engine
+SUBDIRS = cli docsarchive
 
 bases = \
-	desktop_release.yaml        \
-	frontmatter.yaml            \
-	redirects.yml               \
-	samples.yaml                \
-	security_announcements.yaml \
-	summary.yaml
+	desktop_release.yaml \
+	frontmatter.yaml     \
+	languages.yaml       \
+	redirects.yml        \
+	samples.yaml         \
+	summary.yaml         \
+	tags.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

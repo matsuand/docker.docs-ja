@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Scout SBOMs
@@ -131,10 +131,10 @@ $ docker scout sbom --format list alpine
 
 @x
 For more information about the `docker scout sbom` command, refer to the [CLI
-reference](/reference/cli/docker/scout/sbom.md).
+reference](/reference/cli/docker/scout/sbom/).
 @y
 For more information about the `docker scout sbom` command, refer to the [CLI
-reference](reference/cli/docker/scout/sbom.md).
+reference](__SUBDIR__/reference/cli/docker/scout/sbom/).
 @z
 
 @x

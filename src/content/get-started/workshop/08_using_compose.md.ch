@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -358,12 +358,12 @@ the way you define and share multi-service applications.
 Related information:
  - [Compose overview](/manuals/compose/_index.md)
  - [Compose file reference](/reference/compose-file/_index.md)
- - [Compose CLI reference](/reference/cli/docker/compose/_index.md)
+ - [Compose CLI reference](/reference/cli/docker/compose/)
 @y
 関連情報
  - [Compose 概要](manuals/compose/_index.md)
  - [Compose ファイルリファレンス](reference/compose-file/_index.md)
- - [Compose CLI リファレンス](reference/cli/docker/compose/_index.md)
+ - [Compose CLI リファレンス](__SUBDIR__/reference/cli/docker/compose/)
 @z
 
 @x

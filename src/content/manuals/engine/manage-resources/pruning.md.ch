@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 description: Free up disk space by removing unused resources with the prune command
@@ -125,11 +125,11 @@ $ docker image prune -a --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker image prune` reference](/reference/cli/docker/image/prune.md)
+[`docker image prune` reference](/reference/cli/docker/image/prune/)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker image prune` reference](reference/cli/docker/image/prune.md)
+[`docker image prune` reference](__SUBDIR__/reference/cli/docker/image/prune/)
 for more examples.
 @z
 
@@ -203,11 +203,11 @@ $ docker container prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker container prune` reference](/reference/cli/docker/container/prune.md)
+[`docker container prune` reference](/reference/cli/docker/container/prune/)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker container prune` reference](reference/cli/docker/container/prune.md)
+[`docker container prune` reference](__SUBDIR__/reference/cli/docker/container/prune/)
 for more examples.
 @z
 
@@ -275,11 +275,11 @@ $ docker volume prune --filter "label!=keep"
 
 @x
 Other filtering expressions are available. See the
-[`docker volume prune` reference](/reference/cli/docker/volume/prune.md)
+[`docker volume prune` reference](/reference/cli/docker/volume/prune/)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker volume prune` reference](reference/cli/docker/volume/prune.md)
+[`docker volume prune` reference](__SUBDIR__/reference/cli/docker/volume/prune/)
 for more examples.
 @z
 
@@ -349,11 +349,11 @@ $ docker network prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker network prune` reference](/reference/cli/docker/network/prune.md)
+[`docker network prune` reference](/reference/cli/docker/network/prune/)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker network prune` reference](reference/cli/docker/network/prune.md)
+[`docker network prune` reference](__SUBDIR__/reference/cli/docker/network/prune/)
 for more examples.
 @z
 
@@ -471,10 +471,10 @@ $ docker system prune --filter "until=24h"
 
 @x
 Other filtering expressions are available. See the
-[`docker system prune` reference](/reference/cli/docker/system/prune.md)
+[`docker system prune` reference](/reference/cli/docker/system/prune/)
 for more examples.
 @y
 Other filtering expressions are available. See the
-[`docker system prune` reference](reference/cli/docker/system/prune.md)
+[`docker system prune` reference](__SUBDIR__/reference/cli/docker/system/prune/)
 for more examples.
 @z

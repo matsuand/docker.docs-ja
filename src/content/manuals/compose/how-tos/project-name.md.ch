@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
 title: Specify a project name
 @y
@@ -31,12 +33,12 @@ This page offers examples of scenarios where custom project names can be helpful
 > [!NOTE]
 >
 > The default project directory is the base directory of the Compose file. A custom value can also be set
-> for it using the [`--project-directory` command line option](/reference/cli/docker/compose.md#options).
+> for it using the [`--project-directory` command line option](/reference/cli/docker/compose/#options).
 @y
 > [!NOTE]
 >
 > デフォルトのプロジェクトディレクトリは、Compose ファイルがあるベースディレクトリです。
-> これについても [コマンドラインオプション `--project-directory`](reference/cli/docker/compose.md#options) を使って、独自のものに設定することができます。
+> これについても [コマンドラインオプション `--project-directory`](__SUBDIR__/reference/cli/docker/compose/#options) を使って、独自のものに設定することができます。
 @z
 
 @x

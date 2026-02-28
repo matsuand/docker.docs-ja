@@ -405,13 +405,13 @@ service's configuration in a similar way.
 
 @x
 See the command-line references for
-[`docker service create`](/reference/cli/docker/service/create.md) and
-[`docker service update`](/reference/cli/docker/service/update.md), or run
+[`docker service create`](/reference/cli/docker/service/create/) and
+[`docker service update`](/reference/cli/docker/service/update/), or run
 one of those commands with the `--help` flag.
 @y
 See the command-line references for
-[`docker service create`](reference/cli/docker/service/create.md) and
-[`docker service update`](reference/cli/docker/service/update.md), or run
+[`docker service create`](__SUBDIR__/reference/cli/docker/service/create/) and
+[`docker service update`](__SUBDIR__/reference/cli/docker/service/update/), or run
 one of those commands with the `--help` flag.
 @z
 
@@ -1321,13 +1321,13 @@ Service constraints let you set criteria for a node to meet before the scheduler
 deploys a service to the node. You can apply constraints to the
 service based upon node attributes and metadata or engine metadata. For more
 information on constraints, refer to the `docker service create`
-[CLI reference](/reference/cli/docker/service/create.md).
+[CLI reference](/reference/cli/docker/service/create/).
 @y
 Service constraints let you set criteria for a node to meet before the scheduler
 deploys a service to the node. You can apply constraints to the
 service based upon node attributes and metadata or engine metadata. For more
 information on constraints, refer to the `docker service create`
-[CLI reference](reference/cli/docker/service/create.md).
+[CLI reference](__SUBDIR__/reference/cli/docker/service/create/).
 @z
 
 @x
@@ -1442,10 +1442,10 @@ possible to fulfill.
 
 @x
 For more information on constraints, refer to the `docker service create`
-[CLI reference](/reference/cli/docker/service/create.md).
+[CLI reference](/reference/cli/docker/service/create/).
 @y
 For more information on constraints, refer to the `docker service create`
-[CLI reference](reference/cli/docker/service/create.md).
+[CLI reference](__SUBDIR__/reference/cli/docker/service/create/).
 @z
 
 @x

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -38,10 +38,10 @@ The following is a sample output from the `docker stats` command
 % snip command...
 
 @x
-The [`docker stats`](/reference/cli/docker/container/stats.md) reference
+The [`docker stats`](/reference/cli/docker/container/stats/) reference
 page has more details about the `docker stats` command.
 @y
-[`docker stats`](reference/cli/docker/container/stats.md) リファレンスページでは `docker stats` コマンドのより詳細について示しています。
+[`docker stats`](__SUBDIR__/reference/cli/docker/container/stats/) リファレンスページでは `docker stats` コマンドのより詳細について示しています。
 @z
 
 @x

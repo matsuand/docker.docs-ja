@@ -233,12 +233,12 @@ $ docker compose run --rm angular-test
 This command will:
 - Start the `angular-test` service defined in your `compose.yaml` file.
 - Execute the `npm run test` script using the same environment as development.
-- Automatically removes the container after tests complete, using the [`docker compose run --rm`](/engine/reference/commandline/compose_run) command.
+- Automatically removes the container after tests complete, using the [`docker compose run --rm`](/reference/cli/docker/compose/run/) command.
 @y
 This command will:
 - Start the `angular-test` service defined in your `compose.yaml` file.
 - Execute the `npm run test` script using the same environment as development.
-- Automatically removes the container after tests complete, using the [`docker compose run --rm`](__SUBDIR__/engine/reference/commandline/compose_run) command.
+- Automatically removes the container after tests complete, using the [`docker compose run --rm`](__SUBDIR__/reference/cli/docker/compose/run/) command.
 @z
 
 @x
@@ -266,11 +266,11 @@ Time:        1.529 s
 @x
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](/reference/cli/docker/compose/_index.md).
+> reference](/reference/cli/docker/compose/).
 @y
 > [!NOTE]
 > For more information about Compose commands, see the [Compose CLI
-> reference](reference/cli/docker/compose/_index.md).
+> reference](__SUBDIR__/reference/cli/docker/compose/).
 @z
 
 @x

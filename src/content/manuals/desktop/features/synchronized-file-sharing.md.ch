@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Synchronized file shares
@@ -128,11 +128,11 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 @x
 > [!NOTE]
 >
-> When you create a new service, setting the [bind mount option consistency](/reference/cli/docker/service/create.md#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares. 
+> When you create a new service, setting the [bind mount option consistency](/reference/cli/docker/service/create/#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares.
 @y
 > [!NOTE]
 >
-> When you create a new service, setting the [bind mount option consistency](reference/cli/docker/service/create.md#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares. 
+> When you create a new service, setting the [bind mount option consistency](__SUBDIR__/reference/cli/docker/service/create/#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares.
 @z
 
 @x

@@ -29,59 +29,7 @@ This guide demonstrates how to set up a production-ready Laravel environment usi
 ## Project structure
 @z
 
-@x
-```plaintext
-my-laravel-app/
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-├── docker/
-│   ├── common/
-│   │   └── php-fpm/
-│   │       └── Dockerfile
-│   ├── development/
-│   ├── production/
-│   │   ├── php-fpm/
-│   │   │   └── entrypoint.sh
-│   │   └── nginx
-│   │       ├── Dockerfile
-│   │       └── nginx.conf
-├── compose.dev.yaml
-├── compose.prod.yaml
-├── .dockerignore
-├── .env
-├── vendor/
-├── ...
-```
-@y
-```plaintext
-my-laravel-app/
-├── app/
-├── bootstrap/
-├── config/
-├── database/
-├── public/
-├── docker/
-│   ├── common/
-│   │   └── php-fpm/
-│   │       └── Dockerfile
-│   ├── development/
-│   ├── production/
-│   │   ├── php-fpm/
-│   │   │   └── entrypoint.sh
-│   │   └── nginx
-│   │       ├── Dockerfile
-│   │       └── nginx.conf
-├── compose.dev.yaml
-├── compose.prod.yaml
-├── .dockerignore
-├── .env
-├── vendor/
-├── ...
-```
-@z
+% snip text...
 
 @x
 This layout represents a typical Laravel project, with Docker configurations stored in a unified `docker` directory. You’ll find **two** Compose files — `compose.dev.yaml` (for development) and `compose.prod.yaml` (for production) — to keep your environments separate and manageable.
@@ -208,16 +156,14 @@ For production, the `php-fpm` Dockerfile creates an optimized image with only th
 # -----------------------------------------------------------
 @z
 @x
-# Enable PHP-FPM status page by modifying zz-docker.conf with sed
+# Keep the image-provided FPM global config intact and add pool overrides separately
 @y
-# Enable PHP-FPM status page by modifying zz-docker.conf with sed
+# Keep the image-provided FPM global config intact and add pool overrides separately
 @z
 @x
 # Update the variables_order to include E (for ENV)
-#RUN sed -i 's/variables_order = "GPCS"/variables_order = "EGPCS"/' "$PHP_INI_DIR/php.ini"
 @y
 # Update the variables_order to include E (for ENV)
-#RUN sed -i 's/variables_order = "GPCS"/variables_order = "EGPCS"/' "$PHP_INI_DIR/php.ini"
 @z
 @x
 # Copy the application code and dependencies from the build stage
@@ -278,184 +224,83 @@ If you need a separate CLI container with different extensions or strict separat
 If you need a separate CLI container with different extensions or strict separation of concerns, consider a php-cli Dockerfile:
 @z
 
-@x
-```dockerfile
+@x within code
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.4-cli AS builder
 @y
-```dockerfile
 # Stage 1: Build environment and Composer dependencies
-FROM php:8.4-cli AS builder
 @z
-
 @x
 # Install system dependencies and PHP extensions required for Laravel + MySQL/PostgreSQL support
 # Some dependencies are required for PHP extensions only in the build stage
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    unzip \
-    libpq-dev \
-    libonig-dev \
-    libssl-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    libicu-dev \
-    libzip-dev \
-    && docker-php-ext-install -j$(nproc) \
-    pdo_mysql \
-    pdo_pgsql \
-    pgsql \
-    opcache \
-    intl \
-    zip \
-    bcmath \
-    soap \
-    && pecl install redis \
-    && docker-php-ext-enable redis \
-    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @y
 # Install system dependencies and PHP extensions required for Laravel + MySQL/PostgreSQL support
 # Some dependencies are required for PHP extensions only in the build stage
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    unzip \
-    libpq-dev \
-    libonig-dev \
-    libssl-dev \
-    libxml2-dev \
-    libcurl4-openssl-dev \
-    libicu-dev \
-    libzip-dev \
-    && docker-php-ext-install -j$(nproc) \
-    pdo_mysql \
-    pdo_pgsql \
-    pgsql \
-    opcache \
-    intl \
-    zip \
-    bcmath \
-    soap \
-    && pecl install redis \
-    && docker-php-ext-enable redis \
-    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @z
-
 @x
 # Set the working directory inside the container
-WORKDIR /var/www
 @y
 # Set the working directory inside the container
-WORKDIR /var/www
 @z
-
 @x
 # Copy the entire Laravel application code into the container
-COPY . /var/www
 @y
 # Copy the entire Laravel application code into the container
-COPY . /var/www
 @z
-
 @x
 # Install Composer and dependencies
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer install --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
 @y
 # Install Composer and dependencies
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer install --no-dev --optimize-autoloader --no-interaction --no-progress --prefer-dist
 @z
-
 @x
 # Stage 2: Production environment
-FROM php:8.4-cli
 @y
 # Stage 2: Production environment
-FROM php:8.4-cli
 @z
-
 @x
 # Install client libraries required for php extensions in runtime
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpq-dev \
-    libicu-dev \
-    libzip-dev \
-    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @y
 # Install client libraries required for php extensions in runtime
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libpq-dev \
-    libicu-dev \
-    libzip-dev \
-    && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @z
-
 @x
 # Copy PHP extensions and libraries from the builder stage
-COPY --from=builder /usr/local/lib/php/extensions/ /usr/local/lib/php/extensions/
-COPY --from=builder /usr/local/etc/php/conf.d/ /usr/local/etc/php/conf.d/
-COPY --from=builder /usr/local/bin/docker-php-ext-* /usr/local/bin/
 @y
 # Copy PHP extensions and libraries from the builder stage
-COPY --from=builder /usr/local/lib/php/extensions/ /usr/local/lib/php/extensions/
-COPY --from=builder /usr/local/etc/php/conf.d/ /usr/local/etc/php/conf.d/
-COPY --from=builder /usr/local/bin/docker-php-ext-* /usr/local/bin/
 @z
-
 @x
 # Use the default production configuration for PHP runtime arguments
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 @y
 # Use the default production configuration for PHP runtime arguments
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 @z
-
 @x
 # Copy the application code and dependencies from the build stage
-COPY --from=builder /var/www /var/www
 @y
 # Copy the application code and dependencies from the build stage
-COPY --from=builder /var/www /var/www
 @z
-
 @x
 # Set working directory
-WORKDIR /var/www
 @y
 # Set working directory
-WORKDIR /var/www
 @z
-
 @x
 # Ensure correct permissions
-RUN chown -R www-data:www-data /var/www
 @y
 # Ensure correct permissions
-RUN chown -R www-data:www-data /var/www
 @z
-
 @x
 # Switch to the non-privileged user to run the application
-USER www-data
 @y
 # Switch to the non-privileged user to run the application
-USER www-data
+@z
+@x
+# Default command: Provide a bash shell to allow running any command
+@y
+# Default command: Provide a bash shell to allow running any command
 @z
 
 @x
-# Default command: Provide a bash shell to allow running any command
-CMD ["bash"]
-```
+This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.5-cli` image as the base image and sets up the container for running CLI commands.
 @y
-# Default command: Provide a bash shell to allow running any command
-CMD ["bash"]
-```
-@z
-
-@x
-This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.4-cli` image as the base image and sets up the container for running CLI commands.
-@y
-This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.4-cli` image as the base image and sets up the container for running CLI commands.
+This Dockerfile is similar to the PHP-FPM Dockerfile, but it uses the `php:8.5-cli` image as the base image and sets up the container for running CLI commands.
 @z
 
 @x
@@ -470,114 +315,67 @@ Nginx serves as the web server for the Laravel application. You can include stat
 Nginx serves as the web server for the Laravel application. You can include static assets directly to the container. Here's an example of possible Dockerfile for Nginx:
 @z
 
-@x
-```dockerfile
-# docker/nginx/Dockerfile
+@x within code
 # Stage 1: Build assets
-FROM debian AS builder
 @y
-```dockerfile
-# docker/nginx/Dockerfile
 # Stage 1: Build assets
-FROM debian AS builder
 @z
-
 @x
 # Install Node.js and build tools
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    nodejs \
-    npm \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @y
 # Install Node.js and build tools
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    nodejs \
-    npm \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 @z
-
 @x
 # Set working directory
-WORKDIR /var/www
 @y
 # Set working directory
-WORKDIR /var/www
 @z
-
 @x
 # Copy Laravel application code
-COPY . /var/www
 @y
 # Copy Laravel application code
-COPY . /var/www
 @z
-
 @x
 # Install Node.js dependencies and build assets
-RUN npm install && npm run build
 @y
 # Install Node.js dependencies and build assets
-RUN npm install && npm run build
 @z
-
 @x
 # Stage 2: Nginx production image
-FROM nginx:alpine
 @y
 # Stage 2: Nginx production image
-FROM nginx:alpine
 @z
-
 @x
 # Copy custom Nginx configuration
-# -----------------------------------------------------------
-# Replace the default Nginx configuration with our custom one
-# that is optimized for serving a Laravel application.
-# -----------------------------------------------------------
-COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 @y
 # Copy custom Nginx configuration
-# -----------------------------------------------------------
+@z
+@x
 # Replace the default Nginx configuration with our custom one
 # that is optimized for serving a Laravel application.
-# -----------------------------------------------------------
-COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
+@y
+# Replace the default Nginx configuration with our custom one
+# that is optimized for serving a Laravel application.
 @z
-
 @x
 # Copy Laravel's public assets from the builder stage
-# -----------------------------------------------------------
-# We only need the 'public' directory from our Laravel app.
-# -----------------------------------------------------------
-COPY --from=builder /var/www/public /var/www/public
 @y
 # Copy Laravel's public assets from the builder stage
-# -----------------------------------------------------------
+@z
+@x
 # We only need the 'public' directory from our Laravel app.
-# -----------------------------------------------------------
-COPY --from=builder /var/www/public /var/www/public
+@y
+# We only need the 'public' directory from our Laravel app.
 @z
-
 @x
 # Set the working directory to the public folder
-WORKDIR /var/www/public
 @y
 # Set the working directory to the public folder
-WORKDIR /var/www/public
 @z
-
 @x
 # Expose port 80 and start Nginx
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-```
 @y
 # Expose port 80 and start Nginx
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-```
 @z
 
 @x
@@ -598,274 +396,103 @@ To bring all the services together, create a `compose.prod.yaml` file that defin
 To bring all the services together, create a `compose.prod.yaml` file that defines the services, volumes, and networks for the production environment. Here's an example configuration:
 @z
 
-@x
-```yaml
-services:
-  web:
-    build:
-      context: .
-      dockerfile: ./docker/production/nginx/Dockerfile
-    restart: unless-stopped # Automatically restart unless the service is explicitly stopped
-    volumes:
+@x within code
       # Mount the 'laravel-storage' volume to '/var/www/storage' inside the container.
-      # -----------------------------------------------------------
+@y
+      # Mount the 'laravel-storage' volume to '/var/www/storage' inside the container.
+@z
+@x
       # This volume stores persistent data like uploaded files and cache.
       # The ':ro' option mounts it as read-only in the 'web' service because Nginx only needs to read these files.
       # The 'php-fpm' service mounts the same volume without ':ro' to allow write operations.
-      # -----------------------------------------------------------
-      - laravel-storage-production:/var/www/storage:ro
-    networks:
-      - laravel-production
-    ports:
-      # Map port 80 inside the container to the port specified by 'NGINX_PORT' on the host machine.
-      # -----------------------------------------------------------
-      # This allows external access to the Nginx web server running inside the container.
-      # For example, if 'NGINX_PORT' is set to '8080', accessing 'http://localhost:8080' will reach the application.
-      # -----------------------------------------------------------
-      - "${NGINX_PORT:-80}:80"
-    depends_on:
-      php-fpm:
-        condition: service_healthy # Wait for php-fpm health check
 @y
-```yaml
-services:
-  web:
-    build:
-      context: .
-      dockerfile: ./docker/production/nginx/Dockerfile
-    restart: unless-stopped # Automatically restart unless the service is explicitly stopped
-    volumes:
-      # Mount the 'laravel-storage' volume to '/var/www/storage' inside the container.
-      # -----------------------------------------------------------
       # This volume stores persistent data like uploaded files and cache.
       # The ':ro' option mounts it as read-only in the 'web' service because Nginx only needs to read these files.
       # The 'php-fpm' service mounts the same volume without ':ro' to allow write operations.
-      # -----------------------------------------------------------
-      - laravel-storage-production:/var/www/storage:ro
-    networks:
-      - laravel-production
-    ports:
+@z
+@x
       # Map port 80 inside the container to the port specified by 'NGINX_PORT' on the host machine.
-      # -----------------------------------------------------------
+@y
+      # Map port 80 inside the container to the port specified by 'NGINX_PORT' on the host machine.
+@z
+@x
       # This allows external access to the Nginx web server running inside the container.
       # For example, if 'NGINX_PORT' is set to '8080', accessing 'http://localhost:8080' will reach the application.
-      # -----------------------------------------------------------
-      - "${NGINX_PORT:-80}:80"
-    depends_on:
-      php-fpm:
-        condition: service_healthy # Wait for php-fpm health check
+@y
+      # This allows external access to the Nginx web server running inside the container.
+      # For example, if 'NGINX_PORT' is set to '8080', accessing 'http://localhost:8080' will reach the application.
 @z
-
 @x
-  php-fpm:
     # For the php-fpm service, we will create a custom image to install the necessary PHP extensions and setup proper permissions.
-    build:
-      context: .
-      dockerfile: ./docker/common/php-fpm/Dockerfile
-      target: production # Use the 'production' stage in the Dockerfile
-    restart: unless-stopped
-    volumes:
-      - laravel-storage-production:/var/www/storage # Mount the storage volume
-    env_file:
-      - .env
-    networks:
-      - laravel-production
-    healthcheck:
-      test: ["CMD-SHELL", "php-fpm-healthcheck || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
+@y
+    # For the php-fpm service, we will create a custom image to install the necessary PHP extensions and setup proper permissions.
+@z
+@x
     # The 'depends_on' attribute with 'condition: service_healthy' ensures that
     # this service will not start until the 'postgres' service passes its health check.
     # This prevents the application from trying to connect to the database before it's ready.
-    depends_on:
-      postgres:
-        condition: service_healthy
 @y
-  php-fpm:
-    # For the php-fpm service, we will create a custom image to install the necessary PHP extensions and setup proper permissions.
-    build:
-      context: .
-      dockerfile: ./docker/common/php-fpm/Dockerfile
-      target: production # Use the 'production' stage in the Dockerfile
-    restart: unless-stopped
-    volumes:
-      - laravel-storage-production:/var/www/storage # Mount the storage volume
-    env_file:
-      - .env
-    networks:
-      - laravel-production
-    healthcheck:
-      test: ["CMD-SHELL", "php-fpm-healthcheck || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
     # The 'depends_on' attribute with 'condition: service_healthy' ensures that
     # this service will not start until the 'postgres' service passes its health check.
     # This prevents the application from trying to connect to the database before it's ready.
-    depends_on:
-      postgres:
-        condition: service_healthy
 @z
-
 @x
   # The 'php-cli' service provides a command-line interface for running Artisan commands and other CLI tasks.
-  # -----------------------------------------------------------
-  # This is useful for running migrations, seeders, or any custom scripts.
-  # It shares the same codebase and environment as the 'php-fpm' service.
-  # -----------------------------------------------------------
-  php-cli:
-    build:
-      context: .
-      dockerfile: ./docker/php-cli/Dockerfile
-    tty: true # Enables an interactive terminal
-    stdin_open: true # Keeps standard input open for 'docker exec'
-    env_file:
-      - .env
-    networks:
-      - laravel
 @y
   # The 'php-cli' service provides a command-line interface for running Artisan commands and other CLI tasks.
-  # -----------------------------------------------------------
+@z
+@x
   # This is useful for running migrations, seeders, or any custom scripts.
   # It shares the same codebase and environment as the 'php-fpm' service.
-  # -----------------------------------------------------------
-  php-cli:
-    build:
-      context: .
-      dockerfile: ./docker/php-cli/Dockerfile
-    tty: true # Enables an interactive terminal
-    stdin_open: true # Keeps standard input open for 'docker exec'
-    env_file:
-      - .env
-    networks:
-      - laravel
+@y
+  # This is useful for running migrations, seeders, or any custom scripts.
+  # It shares the same codebase and environment as the 'php-fpm' service.
 @z
-
 @x
-  postgres:
-    image: postgres:18
-    restart: unless-stopped
-    user: postgres
-    ports:
-      - "${POSTGRES_PORT}:5432"
-    environment:
-      - POSTGRES_DB=${POSTGRES_DATABASE}
-      - POSTGRES_USER=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - postgres-data-production:/var/lib/postgresql
-    networks:
-      - laravel-production
     # Health check for PostgreSQL
-    # -----------------------------------------------------------
+@y
+    # Health check for PostgreSQL
+@z
+@x
     # Health checks allow Docker to determine if a service is operational.
     # The 'pg_isready' command checks if PostgreSQL is ready to accept connections.
     # This prevents dependent services from starting before the database is ready.
-    # -----------------------------------------------------------
-    healthcheck:
-      test: ["CMD", "pg_isready"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 @y
-  postgres:
-    image: postgres:18
-    restart: unless-stopped
-    user: postgres
-    ports:
-      - "${POSTGRES_PORT}:5432"
-    environment:
-      - POSTGRES_DB=${POSTGRES_DATABASE}
-      - POSTGRES_USER=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    volumes:
-      - postgres-data-production:/var/lib/postgresql
-    networks:
-      - laravel-production
-    # Health check for PostgreSQL
-    # -----------------------------------------------------------
     # Health checks allow Docker to determine if a service is operational.
     # The 'pg_isready' command checks if PostgreSQL is ready to accept connections.
     # This prevents dependent services from starting before the database is ready.
-    # -----------------------------------------------------------
-    healthcheck:
-      test: ["CMD", "pg_isready"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 @z
-
 @x
-  redis:
-    image: redis:alpine
-    restart: unless-stopped # Automatically restart unless the service is explicitly stopped
-    networks:
-      - laravel-production
     # Health check for Redis
-    # -----------------------------------------------------------
+@y
+    # Health check for Redis
+@z
+@x
     # Checks if Redis is responding to the 'PING' command.
     # This ensures that the service is not only running but also operational.
-    # -----------------------------------------------------------
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
 @y
-  redis:
-    image: redis:alpine
-    restart: unless-stopped # Automatically restart unless the service is explicitly stopped
-    networks:
-      - laravel-production
-    # Health check for Redis
-    # -----------------------------------------------------------
     # Checks if Redis is responding to the 'PING' command.
     # This ensures that the service is not only running but also operational.
-    # -----------------------------------------------------------
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
 @z
-
 @x
-networks:
   # Attach the service to the 'laravel-production' network.
-  # -----------------------------------------------------------
+@y
+  # Attach the service to the 'laravel-production' network.
+@z
+@x
   # This custom network allows all services within it to communicate using their service names as hostnames.
   # For example, 'php-fpm' can connect to 'postgres' by using 'postgres' as the hostname.
-  # -----------------------------------------------------------
-  laravel-production:
 @y
-networks:
-  # Attach the service to the 'laravel-production' network.
-  # -----------------------------------------------------------
   # This custom network allows all services within it to communicate using their service names as hostnames.
   # For example, 'php-fpm' can connect to 'postgres' by using 'postgres' as the hostname.
-  # -----------------------------------------------------------
-  laravel-production:
-@z
-
-@x
-volumes:
-  postgres-data-production:
-  laravel-storage-production:
-```
-@y
-volumes:
-  postgres-data-production:
-  laravel-storage-production:
-```
 @z
 
 @x
 > [!NOTE]
-> Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations (e.g., database and Xdebug settings) to match the Docker Compose setup.
+> Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations to match the Docker Compose setup.
 @y
 > [!NOTE]
-> Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations (e.g., database and Xdebug settings) to match the Docker Compose setup.
+> Ensure you have an `.env` file at the root of your Laravel project with the necessary configurations to match the Docker Compose setup.
 @z
 
 @x

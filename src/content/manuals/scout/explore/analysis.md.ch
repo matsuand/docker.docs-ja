@@ -353,13 +353,7 @@ For more information about these commands and how to use them, refer to the CLI
 reference documentation:
 @z
 
-@x (no slash) 対応
-- [`docker scout quickview`](/reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](/reference/cli/docker/scout/cves.md)
-@y
-- [`docker scout quickview`](reference/cli/docker/scout/quickview.md)
-- [`docker scout cves`](reference/cli/docker/scout/cves.md)
-@z
+% snip command list...
 
 @x
 ## Vulnerability severity assessment

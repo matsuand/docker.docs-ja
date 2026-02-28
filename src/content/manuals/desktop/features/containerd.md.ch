@@ -8,29 +8,23 @@ title: containerd image store
 @z
 
 @x
-description: How to activate the containerd integration feature in Docker Desktop
+description: Learn about the containerd image store in Docker Desktop and how it extends image management capabilities.
 keywords: Docker, containerd, engine, image store, lazy-pull
 @y
-description: How to activate the containerd integration feature in Docker Desktop
+description: Learn about the containerd image store in Docker Desktop and how it extends image management capabilities.
 keywords: Docker, containerd, engine, image store, lazy-pull
 @z
 
 @x
-Docker Desktop is transitioning to use containerd for image and filesystem management. This page outlines the benefits, setup process, and new capabilities enabled by the containerd image store.
+Docker Desktop uses containerd as its image store by default. The image store
+is the component responsible for pushing, pulling, and storing images on your
+filesystem. The containerd image store supports features like multi-platform
+images, image attestations, and alternative snapshotters.
 @y
-Docker Desktop is transitioning to use containerd for image and filesystem management. This page outlines the benefits, setup process, and new capabilities enabled by the containerd image store.
-@z
-
-@x
-> [!NOTE]
-> 
-> Docker Desktop maintains separate image stores for the classic and containerd image stores.
-> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
-@y
-> [!NOTE]
-> 
-> Docker Desktop maintains separate image stores for the classic and containerd image stores.
-> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
+Docker Desktop uses containerd as its image store by default. The image store
+is the component responsible for pushing, pulling, and storing images on your
+filesystem. The containerd image store supports features like multi-platform
+images, image attestations, and alternative snapshotters.
 @z
 
 @x
@@ -40,15 +34,13 @@ Docker Desktop is transitioning to use containerd for image and filesystem manag
 @z
 
 @x
-`containerd` is a container runtime that provides a lightweight, consistent interface for container lifecycle management. It is already used under the hood by Docker Engine for creating, starting, and stopping containers.
+`containerd` is a container runtime that provides a lightweight, consistent
+interface for container lifecycle and image management. It is used under the
+hood by Docker Engine for creating, starting, and stopping containers.
 @y
-`containerd` is a container runtime that provides a lightweight, consistent interface for container lifecycle management. It is already used under the hood by Docker Engine for creating, starting, and stopping containers.
-@z
-
-@x
-Docker Desktop’s ongoing integration of containerd now extends to the image store, offering more flexibility and modern image support.
-@y
-Docker Desktop’s ongoing integration of containerd now extends to the image store, offering more flexibility and modern image support.
+`containerd` is a container runtime that provides a lightweight, consistent
+interface for container lifecycle and image management. It is used under the
+hood by Docker Engine for creating, starting, and stopping containers.
 @z
 
 @x
@@ -63,20 +55,6 @@ and storing images on the filesystem.
 @y
 The image store is the component responsible for pushing, pulling,
 and storing images on the filesystem.
-@z
-
-@x
-The classic Docker image store is limited in the types of images that it supports.
-For example, it doesn't support image indices, containing manifest lists.
-When you create multi-platform images, for example,
-the image index resolves all the platform-specific variants of the image.
-An image index is also required when building images with attestations.
-@y
-The classic Docker image store is limited in the types of images that it supports.
-For example, it doesn't support image indices, containing manifest lists.
-When you create multi-platform images, for example,
-the image index resolves all the platform-specific variants of the image.
-An image index is also required when building images with attestations.
 @z
 
 @x
@@ -116,23 +94,43 @@ it's a prerequisite for unlocking a range of new use cases, including:
 @z
 
 @x
-## Enable the containerd image store
+## Classic image store
 @y
-## Enable the containerd image store
+## Classic image store
 @z
 
 @x
-The containerd image store is enabled by default in Docker Desktop version 4.52
-and later.
+The classic image store is Docker's legacy storage backend, replaced by the
+containerd image store. It doesn't support image indices or manifest lists, so
+you can't load multi-platform images locally or build images with attestations.
 @y
-The containerd image store is enabled by default in Docker Desktop version 4.52
-and later.
+The classic image store is Docker's legacy storage backend, replaced by the
+containerd image store. It doesn't support image indices or manifest lists, so
+you can't load multi-platform images locally or build images with attestations.
 @z
 
 @x
-To manually select which image store Docker Desktop uses:
+Most users have no reason to use the classic image store. It's available for
+cases where you need to match older behavior or have compatibility
+requirements.
 @y
-To manually select which image store Docker Desktop uses:
+Most users have no reason to use the classic image store. It's available for
+cases where you need to match older behavior or have compatibility
+requirements.
+@z
+
+@x
+## Switch image stores
+@y
+## Switch image stores
+@z
+
+@x
+The containerd image store is enabled by default in Docker Desktop version 4.34
+and later. To switch between image stores:
+@y
+The containerd image store is enabled by default in Docker Desktop version 4.34
+and later. To switch between image stores:
 @z
 
 @x
@@ -146,16 +144,28 @@ To manually select which image store Docker Desktop uses:
 @z
 
 @x
+> [!NOTE]
+>
+> Docker Desktop maintains separate image stores for the classic and containerd image stores.
+> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
+@y
+> [!NOTE]
+>
+> Docker Desktop maintains separate image stores for the classic and containerd image stores.
+> When switching between them, images and containers from the inactive store remain on disk but are hidden until you switch back.
+@z
+
+@x
 ## Build multi-platform images
 @y
 ## Build multi-platform images
 @z
 
 @x
-Enabling the containerd image store lets you build multi-platform images
+The containerd image store lets you build multi-platform images
 and load them to your local image store:
 @y
-Enabling the containerd image store lets you build multi-platform images
+The containerd image store lets you build multi-platform images
 and load them to your local image store:
 @z
 
