@@ -11,6 +11,7 @@ bases = \
 	gpu-support.md       \
 	lifecycle.md         \
 	networking.md        \
+	oci-artifact.md      \
 	production.md        \
 	profiles.md          \
 	project-name.md      \

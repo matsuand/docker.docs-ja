@@ -32,18 +32,28 @@ specific image as an example, they can be applied to any DHI.
 @z
 
 @x
-> [!NOTE]
->
-> Docker Hardened Images are freely available to everyone with no subscription
-> required, no usage restrictions, and no vendor lock-in. You can upgrade to a
-> DHI Enterprise subscription when you require enterprise features like FIPS or
-> STIG compliance variants, customization capabilities, or SLA-backed support.
+Docker Hardened Images are freely available to everyone with no subscription
+required, no usage restrictions, and no vendor lock-in. This quickstart covers
+free DHI images pulled from `dhi.io`. If you have a DHI Enterprise subscription
+or have started a trial and need compliance variants (FIPS), customization
+capabilities, or SLA-backed updates, you must [mirror DHI
+repositories](./how-to/mirror.md) to your organization's namespace on Docker
+Hub. You then pull mirrored images from `docker.io` (not `dhi.io`) using your
+organization's namespace path. For example, `docker pull
+docker.io/<yourorg>/dhi-python:3.13` instead of `docker pull
+dhi.io/python:3.13`.
 @y
-> [!NOTE]
->
-> Docker Hardened イメージは無償利用が可能になりました。
-> これはサブスクリプション購入を必要とせず、利用制限やベンダーロックインもありません。
-> FIPS や STIG などのコンプライアンスへの準拠、カスタマイズ機能、SLA ベースのサポートといったエンタープライズ機能を必要とする場合は DHI エンタープライズサブスクリプションへのアップグレードも可能です。
+Docker Hardened イメージは無償利用が可能になりました。
+これはサブスクリプション購入を必要とせず、利用制限やベンダーロックインもありません。
+This quickstart covers
+free DHI images pulled from `dhi.io`. If you have a DHI Enterprise subscription
+or have started a trial and need compliance variants (FIPS), customization
+capabilities, or SLA-backed updates, you must [mirror DHI
+repositories](./how-to/mirror.md) to your organization's namespace on Docker
+Hub. You then pull mirrored images from `docker.io` (not `dhi.io`) using your
+organization's namespace path. For example, `docker pull
+docker.io/<yourorg>/dhi-python:3.13` instead of `docker pull
+dhi.io/python:3.13`.
 @z
 
 @x

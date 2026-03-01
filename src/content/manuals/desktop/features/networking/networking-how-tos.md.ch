@@ -168,9 +168,9 @@ the host as if it originated from the Docker application.
 @z
 
 @x
-For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](/manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility.md).
+For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](/manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility).
 @y
-For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility.md).
+For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility).
 @z
 
 @x

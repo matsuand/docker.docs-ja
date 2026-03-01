@@ -1,0 +1,186 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+title: "Lab: Building Agentic Apps with Docker"
+linkTitle: "Lab: Building Agentic Apps"
+description: |
+  Build agentic applications with Docker Model Runner, MCP Gateway, and Compose
+  in this hands-on interactive lab.
+summary: |
+  Hands-on lab: Build agentic apps with Docker Model Runner, MCP Gateway, and
+  Compose. Learn about models, tools, and agentic frameworks.
+keywords: AI, Docker, Model Runner, MCP Gateway, agentic apps, lab, labspace
+@y
+title: "Lab: Building Agentic Apps with Docker"
+linkTitle: "Lab: Building Agentic Apps"
+description: |
+  Build agentic applications with Docker Model Runner, MCP Gateway, and Compose
+  in this hands-on interactive lab.
+summary: |
+  Hands-on lab: Build agentic apps with Docker Model Runner, MCP Gateway, and
+  Compose. Learn about models, tools, and agentic frameworks.
+keywords: AI, Docker, Model Runner, MCP Gateway, agentic apps, lab, labspace
+@z
+
+@x
+  time: 20 minutes
+@y
+  time: 20 分
+@z
+
+@x
+    - title: Docker Model Runner docs
+      url: /ai/model-runner/
+    - title: Docker MCP Gateway docs
+      url: /ai/mcp-gateway/
+    - title: Labspace repository
+      url: https://github.com/dockersamples/labspace-agentic-apps-with-docker
+@y
+    - title: Docker Model Runner docs
+      url: __SUBDIR__/ai/model-runner/
+    - title: Docker MCP Gateway docs
+      url: __SUBDIR__/ai/mcp-gateway/
+    - title: Labspace repository
+      url: https://github.com/dockersamples/labspace-agentic-apps-with-docker
+@z
+
+@x
+Get up and running with building agentic applications using Compose, Docker
+Model Runner, and the Docker MCP Gateway. This hands-on lab takes you from
+understanding AI models to building complete agentic applications.
+@y
+Get up and running with building agentic applications using Compose, Docker
+Model Runner, and the Docker MCP Gateway. This hands-on lab takes you from
+understanding AI models to building complete agentic applications.
+@z
+
+@x
+## What you'll learn
+@y
+## What you'll learn
+@z
+
+@x
+This lab covers three core areas of agentic application development:
+@y
+This lab covers three core areas of agentic application development:
+@z
+
+@x
+**Models**: What models are, how to interact with them, configuring Docker
+Model Runner in Compose, and writing code that connects to the Model Runner
+@y
+**Models**: What models are, how to interact with them, configuring Docker
+Model Runner in Compose, and writing code that connects to the Model Runner
+@z
+
+@x
+**Tools**: Understanding tools and how they work, how MCP (Model Context
+Protocol) fits in, configuring the Docker MCP Gateway, and connecting to the
+MCP Gateway in code
+@y
+**Tools**: Understanding tools and how they work, how MCP (Model Context
+Protocol) fits in, configuring the Docker MCP Gateway, and connecting to the
+MCP Gateway in code
+@z
+
+@x
+**Code**: What agentic frameworks are, defining models and tools in a Compose
+file, and configuring your app to use those models and tools
+@y
+**Code**: What agentic frameworks are, defining models and tools in a Compose
+file, and configuring your app to use those models and tools
+@z
+
+@x
+## Modules
+@y
+## Modules
+@z
+
+@x
+| # | Module | Description |
+|---|--------|-------------|
+| 1 | Introduction | Overview of agentic applications and the Docker AI stack |
+| 2 | Understanding Model Interactions | Learn how to interact with AI models |
+| 3 | The Docker Model Runner | Configure and use Docker Model Runner with Compose |
+| 4 | Understanding Tools and MCP | Deep dive into tools, tool calling, and MCP |
+| 5 | The Docker MCP Gateway | Set up and configure the MCP Gateway |
+| 6 | Putting It All Together | Build a complete agentic application |
+| 7 | Conclusion | Summary and next steps |
+@y
+| # | Module | Description |
+|---|--------|-------------|
+| 1 | Introduction | Overview of agentic applications and the Docker AI stack |
+| 2 | Understanding Model Interactions | Learn how to interact with AI models |
+| 3 | The Docker Model Runner | Configure and use Docker Model Runner with Compose |
+| 4 | Understanding Tools and MCP | Deep dive into tools, tool calling, and MCP |
+| 5 | The Docker MCP Gateway | Set up and configure the MCP Gateway |
+| 6 | Putting It All Together | Build a complete agentic application |
+| 7 | Conclusion | Summary and next steps |
+@z
+
+@x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+- Install the latest version of Docker Desktop
+- Enable **Docker Model Runner** by going into Settings in Docker Desktop, choosing AI, then selecting Docker Model Runner
+- Pull the Gemma 3 model before launching by running this command:
+@y
+- Install the latest version of Docker Desktop
+- Enable **Docker Model Runner** by going into Settings in Docker Desktop, choosing AI, then selecting Docker Model Runner
+- Pull the Gemma 3 model before launching by running this command:
+@z
+
+@x
+```console
+$ docker model pull ai/gemma3
+```
+@y
+```console
+$ docker model pull ai/gemma3
+```
+@z
+
+@x
+## Launch the lab
+@y
+## Launch the lab
+@z
+
+@x
+Start the labspace:
+@y
+Start the labspace:
+@z
+
+@x
+```console
+$ docker compose -f oci://dockersamples/labspace-agentic-apps-with-docker up -d
+```
+@y
+```console
+$ docker compose -f oci://dockersamples/labspace-agentic-apps-with-docker up -d
+```
+@z
+
+@x
+Then open your browser to [http://localhost:3030](http://localhost:3030).
+@y
+Then open your browser to [http://localhost:3030](http://localhost:3030).
+@z
+
+@x
+> [!NOTE]
+>
+> It may take a little while to start due to the AI model download.
+@y
+> [!NOTE]
+>
+> It may take a little while to start due to the AI model download.
+@z

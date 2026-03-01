@@ -13,12 +13,12 @@ linkTitle: アカウントの生成
 
 @x
 description: Learn how to register for a Docker ID and sign in to your account
-keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
-  base, beta access, email, activation, verification
+keywords:
+  accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
 @y
 description: Learn how to register for a Docker ID and sign in to your account
-keywords: accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
-  base, beta access, email, activation, verification
+keywords:
+  accounts, docker ID, billing, paid plans, support, Hub, Store, Forums, knowledge
 @z
 
 @x
@@ -70,9 +70,9 @@ Signing up with an email address, Google, or GitHub account requires additional 
 @z
 
 @x
-Docker blocks sign-in until you've verified your account. 
+Docker blocks sign-in until you've verified your account.
 @y
-Docker blocks sign-in until you've verified your account. 
+Docker blocks sign-in until you've verified your account.
 @z
 
 @x
@@ -84,17 +84,13 @@ Docker blocks sign-in until you've verified your account.
 @x
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
-you can't reuse it in the future if you deactivate this account. Your username:
-    - Must be between 4 and 30 characters long
-    - Can only contain numbers and lowercase letters
+   you can't reuse it in the future if you deactivate this account. Your username: - Must be between 4 and 30 characters long - Can only contain numbers and lowercase letters
 1. Choose a password that's at least 9 characters long, then select **Sign Up**.
 1. Verify your email address when you receive the Docker verification email. This completes the registration process.
 @y
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
-you can't reuse it in the future if you deactivate this account. Your username:
-    - Must be between 4 and 30 characters long
-    - Can only contain numbers and lowercase letters
+   you can't reuse it in the future if you deactivate this account. Your username: - Must be between 4 and 30 characters long - Can only contain numbers and lowercase letters
 1. Choose a password that's at least 9 characters long, then select **Sign Up**.
 1. Verify your email address when you receive the Docker verification email. This completes the registration process.
 @z
@@ -110,20 +106,20 @@ you can't reuse it in the future if you deactivate this account. Your username:
 1. Select your social provider, Google or GitHub.
 1. Select the social account you want to link to your Docker account.
 1. Select **Authorize Docker** to let Docker access your social account
-information. You will be re-routed to the sign-up page.
+   information. You will be re-routed to the sign-up page.
 1. Enter a username to use as your Docker ID. Your username:
-    - Must be between 4 and 30 characters long
-    - Can only contain numbers and lowercase letters
+   - Must be between 4 and 30 characters long
+   - Can only contain numbers and lowercase letters
 1. Select **Sign up**.
 @y
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/).
 1. Select your social provider, Google or GitHub.
 1. Select the social account you want to link to your Docker account.
 1. Select **Authorize Docker** to let Docker access your social account
-information. You will be re-routed to the sign-up page.
+   information. You will be re-routed to the sign-up page.
 1. Enter a username to use as your Docker ID. Your username:
-    - Must be between 4 and 30 characters long
-    - Can only contain numbers and lowercase letters
+   - Must be between 4 and 30 characters long
+   - Can only contain numbers and lowercase letters
 1. Select **Sign up**.
 @z
 
@@ -186,10 +182,10 @@ If no Docker ID exists, Docker creates a new account for you.
 @z
 
 @x
-Docker doesn't currently support linking multiple sign-in methods
+Docker doesn't support linking multiple sign-in methods
 to the same Docker ID.
 @y
-Docker doesn't currently support linking multiple sign-in methods
+Docker doesn't support linking multiple sign-in methods
 to the same Docker ID.
 @z
 
@@ -271,12 +267,16 @@ If you have a paid Docker subscription,
 All Docker users can seek troubleshooting information and support through the
 following resources, where Docker or the community respond on a best effort
 basis:
-   - [Docker Community Forums](https://forums.docker.com/)
-   - [Docker Community Slack](http://dockr.ly/comm-slack)
 @y
 All Docker users can seek troubleshooting information and support through the
 following resources, where Docker or the community respond on a best effort
 basis:
-   - [Docker Community Forums](https://forums.docker.com/)
-   - [Docker Community Slack](http://dockr.ly/comm-slack)
+@z
+
+@x
+- [Docker Community Forums](https://forums.docker.com/)
+- [Docker Community Slack](http://dockr.ly/comm-slack)
+@y
+- [Docker Community Forums](https://forums.docker.com/)
+- [Docker Community Slack](http://dockr.ly/comm-slack)
 @z

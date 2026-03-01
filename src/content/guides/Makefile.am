@@ -23,6 +23,11 @@ bases = \
 	jupyter.md                         \
 	kafka.md                           \
 	kube-deploy.md                     \
+	lab-agentic-apps.md                \
+	lab-cagent.md                      \
+	lab-docker-for-ai-redirect.md      \
+	lab-fine-tuning.md                 \
+	lab-mcp-gateway.md                 \
 	language-translation.md            \
 	localstack.md                      \
 	named-entity-recognition.md        \

@@ -716,6 +716,16 @@ Docker MCP Toolkit:
 @z
 
 @x
+MCP Profiles:
+  availability: Early Access
+  requires: Docker Desktop 4.63 and later
+@y
+MCP Profiles:
+  availability: 早期アクセス
+  requires: Docker Desktop 4.63 およびそれ以降
+@z
+
+@x
 Docker Pass:
   requires: Docker Desktop 4.54 and later
   availability: Beta

@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 title: Compose Build Specification
 description: Learn about the Compose Build Specification
@@ -20,21 +18,33 @@ keywords: compose, compose specification, compose file reference, compose build 
 @z
 
 @x
-In the former case, the whole path is used as a Docker context to execute a Docker build, looking for a canonical
-`Dockerfile` at the root of the directory. The path can be absolute or relative. If it is relative, it is resolved
-from the directory containing your Compose file. If it is absolute, the path prevents the Compose file from being portable so Compose displays a warning. 
+When `build` is specified as a string, the whole path is used as a
+Docker context to execute a Docker build, looking for a canonical
+`Dockerfile` at the root of the directory.
 @y
-In the former case, the whole path is used as a Docker context to execute a Docker build, looking for a canonical
-`Dockerfile` at the root of the directory. The path can be absolute or relative. If it is relative, it is resolved
-from the directory containing your Compose file. If it is absolute, the path prevents the Compose file from being portable so Compose displays a warning. 
+When `build` is specified as a string, the whole path is used as a
+Docker context to execute a Docker build, looking for a canonical
+`Dockerfile` at the root of the directory.
 @z
 
 @x
-In the latter case, build arguments can be specified, including an alternate `Dockerfile` location. The path can be absolute or relative. If it is relative, it is resolved
-from the directory containing your Compose file. If it is absolute, the path prevents the Compose file from being portable so Compose displays a warning.
+When `build` is specified as a detailed structure, build arguments can
+be specified, including an alternate `Dockerfile` location.
 @y
-In the latter case, build arguments can be specified, including an alternate `Dockerfile` location. The path can be absolute or relative. If it is relative, it is resolved
-from the directory containing your Compose file. If it is absolute, the path prevents the Compose file from being portable so Compose displays a warning.
+When `build` is specified as a detailed structure, build arguments can
+be specified, including an alternate `Dockerfile` location.
+@z
+
+@x
+In both cases, the path can be absolute or relative. If it is relative,
+it is resolved from the directory containing your Compose file. If it is
+absolute, the path prevents the Compose file from being portable so
+Compose displays a warning.
+@y
+In both cases, the path can be absolute or relative. If it is relative,
+it is resolved from the directory containing your Compose file. If it is
+absolute, the path prevents the Compose file from being portable so
+Compose displays a warning.
 @z
 
 @x
@@ -44,15 +54,15 @@ from the directory containing your Compose file. If it is absolute, the path pre
 @z
 
 @x
-When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute. 
+When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute.
 @y
-When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute. 
+When Compose is confronted with both a `build` subsection for a service and an `image` attribute, it follows the rules defined by the [`pull_policy`](services.md#pull_policy) attribute.
 @z
 
 @x
-If `pull_policy` is missing from the service definition, Compose attempts to pull the image first and then builds from source if the image isn't found in the registry or platform cache. 
+If `pull_policy` is missing from the service definition, Compose attempts to pull the image first and then builds from source if the image isn't found in the registry or platform cache.
 @y
-If `pull_policy` is missing from the service definition, Compose attempts to pull the image first and then builds from source if the image isn't found in the registry or platform cache. 
+If `pull_policy` is missing from the service definition, Compose attempts to pull the image first and then builds from source if the image isn't found in the registry or platform cache.
 @z
 
 @x
@@ -124,13 +134,13 @@ When used to build service images from source, the Compose file creates three Do
 @z
 
 @x
-* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
-* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
-* A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
+- `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
+- `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
+- A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @y
-* `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
-* `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
-* A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
+- `example/webapp`: A Docker image is built using `webapp` sub-directory, within the Compose file's folder, as the Docker build context. Lack of a `Dockerfile` within this folder returns an error.
+- `example/database`: A Docker image is built using `backend` sub-directory within the Compose file's folder. `backend.Dockerfile` file is used to define build steps, this file is searched relative to the context path, which means `..` resolves to the Compose file's folder, so `backend.Dockerfile` is a sibling file.
+- A Docker image is built using the `custom` directory with the user's `$HOME` as the Docker context. Compose displays a warning about the non-portable path used to build image.
 @z
 
 @x
@@ -155,9 +165,13 @@ The `build` subsection defines configuration options that are applied by Compose
 
 @x
 Using the string syntax, only the build context can be configured as either:
-- A relative path to the Compose file's folder. This path must be a directory and must contain a `Dockerfile`
 @y
 Using the string syntax, only the build context can be configured as either:
+@z
+
+@x
+- A relative path to the Compose file's folder. This path must be a directory and must contain a `Dockerfile`
+@y
 - A relative path to the Compose file's folder. This path must be a directory and must contain a `Dockerfile`
 @z
 
@@ -177,12 +191,12 @@ Using the string syntax, only the build context can be configured as either:
 
 @x
 - A Git repository URL. Git URLs accept context configuration in their fragment section, separated by a colon (`:`).
-The first part represents the reference that Git checks out, and can be either a branch, a tag, or a remote reference.
-The second part represents a subdirectory inside the repository that is used as a build context.
+  The first part represents the reference that Git checks out, and can be either a branch, a tag, or a remote reference.
+  The second part represents a subdirectory inside the repository that is used as a build context.
 @y
 - A Git repository URL. Git URLs accept context configuration in their fragment section, separated by a colon (`:`).
-The first part represents the reference that Git checks out, and can be either a branch, a tag, or a remote reference.
-The second part represents a subdirectory inside the repository that is used as a build context.
+  The first part represents the reference that Git checks out, and can be either a branch, a tag, or a remote reference.
+  The second part represents a subdirectory inside the repository that is used as a build context.
 @z
 
 @x
@@ -310,38 +324,38 @@ layers between service images.
 @x
 ```yaml
 services:
- base:
-  build:
-    context: .
-    dockerfile_inline: |
-      FROM alpine
-      RUN ...
- my-service:
-  build:
-    context: .
-    dockerfile_inline: |
-      FROM base # image built for service base
-      RUN ...
-    additional_contexts:
-      base: service:base
+  base:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM alpine
+        RUN ...
+  my-service:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM base # image built for service base
+        RUN ...
+      additional_contexts:
+        base: service:base
 ```
 @y
 ```yaml
 services:
- base:
-  build:
-    context: .
-    dockerfile_inline: |
-      FROM alpine
-      RUN ...
- my-service:
-  build:
-    context: .
-    dockerfile_inline: |
-      FROM base # image built for service base
-      RUN ...
-    additional_contexts:
-      base: service:base
+  base:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM alpine
+        RUN ...
+  my-service:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM base # image built for service base
+        RUN ...
+      additional_contexts:
+        base: service:base
 ```
 @z
 
@@ -506,16 +520,16 @@ Unsupported caches are ignored and don't prevent you from building images.
 build:
   context: .
   cache_to:
-   - user/app:cache
-   - type=local,dest=path/to/cache
+    - user/app:cache
+    - type=local,dest=path/to/cache
 ```
 @y
 ```yml
 build:
   context: .
   cache_to:
-   - user/app:cache
-   - type=local,dest=path/to/cache
+    - user/app:cache
+    - type=local,dest=path/to/cache
 ```
 @z
 
@@ -580,9 +594,9 @@ services:
 @z
 
 @x
-If not set explicitly, `context` defaults to project directory (`.`). 
+If not set explicitly, `context` defaults to project directory (`.`).
 @y
-If not set explicitly, `context` defaults to project directory (`.`). 
+If not set explicitly, `context` defaults to project directory (`.`).
 @z
 
 @x
@@ -686,17 +700,17 @@ build:
 @z
 
 @x
- ```yaml
- entitlements:
-   - network.host
-   - security.insecure
- ```
+```yaml
+entitlements:
+  - network.host
+  - security.insecure
+```
 @y
- ```yaml
- entitlements:
-   - network.host
-   - security.insecure
- ```
+```yaml
+entitlements:
+  - network.host
+  - security.insecure
+```
 @z
 
 @x
@@ -718,14 +732,18 @@ extra_hosts:
   - "otherhost=50.31.209.229"
   - "myhostv6=::1"
 ```
+@y
+```yml
+extra_hosts:
+  - "somehost=162.242.195.82"
+  - "otherhost=50.31.209.229"
+  - "myhostv6=::1"
+```
+@z
+
+@x
 IPv6 addresses can be enclosed in square brackets, for example:
 @y
-```yml
-extra_hosts:
-  - "somehost=162.242.195.82"
-  - "otherhost=50.31.209.229"
-  - "myhostv6=::1"
-```
 IPv6 addresses can be enclosed in square brackets, for example:
 @z
 
@@ -872,13 +890,13 @@ Set the network containers connect to for the `RUN` instructions during build.
 build:
   context: .
   network: host
-```  
+```
 @y
 ```yaml
 build:
   context: .
   network: host
-```  
+```
 @z
 
 @x
@@ -979,10 +997,14 @@ platform, otherwise users won't be able to run images they built.
 
 @x
 Composes reports an error in the following cases:
-- When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
-- When the list contains an unsupported platform.
 @y
 Composes reports an error in the following cases:
+@z
+
+@x
+- When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
+- When the list contains an unsupported platform.
+@y
 - When the list contains multiple platforms but the implementation is incapable of storing multi-platform images.
 - When the list contains an unsupported platform.
 @z
@@ -995,7 +1017,6 @@ Composes reports an error in the following cases:
       - "linux/amd64"
       - "unsupported/unsupported"
   ```
-- When the list is non-empty and does not contain the service's platform.
 @y
   ```yml
   build:
@@ -1004,6 +1025,11 @@ Composes reports an error in the following cases:
       - "linux/amd64"
       - "unsupported/unsupported"
   ```
+@z
+
+@x
+- When the list is non-empty and does not contain the service's platform.
+@y
 - When the list is non-empty and does not contain the service's platform.
 @z
 
@@ -1068,15 +1094,15 @@ build:
 @z
 
 @x
-{{< summary-bar feature_name="Compose provenance" >}} 
+{{< summary-bar feature_name="Compose provenance" >}}
 @y
-{{< summary-bar feature_name="Compose provenance" >}} 
+{{< summary-bar feature_name="Compose provenance" >}}
 @z
 
 @x
-`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image.
 @y
-`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+`provenance` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image.
 @z
 
 @x
@@ -1142,11 +1168,11 @@ available in the local image store.
 @z
 
 @x
-`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image.
 The value can be either a boolean to enable/disable sbom attestation, or a key=value string to set SBOM generator configuration. This let you
 select an alternative SBOM generator image (see https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md)
 @y
-`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image. 
+`sbom` configures the builder to add a [provenance attestation](https://slsa.dev/provenance/v0.2#schema) to the published image.
 The value can be either a boolean to enable/disable sbom attestation, or a key=value string to set SBOM generator configuration. This let you
 select an alternative SBOM generator image (see https://github.com/moby/buildkit/blob/master/docs/attestations/sbom-protocol.md)
 @z
@@ -1373,12 +1399,16 @@ Such grant must be explicit within service specification as [secrets](services.m
 
 @x
 `ssh` property syntax can be either:
-* `default`: Let the builder connect to the SSH-agent.
-* `ID=path`: A key/value definition of an ID and the associated path. It can be either a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file, or path to ssh-agent socket.
 @y
 `ssh` property syntax can be either:
-* `default`: Let the builder connect to the SSH-agent.
-* `ID=path`: A key/value definition of an ID and the associated path. It can be either a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file, or path to ssh-agent socket.
+@z
+
+@x
+- `default`: Let the builder connect to the SSH-agent.
+- `ID=path`: A key/value definition of an ID and the associated path. It can be either a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file, or path to ssh-agent socket.
+@y
+- `default`: Let the builder connect to the SSH-agent.
+- `ID=path`: A key/value definition of an ID and the associated path. It can be either a [PEM](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) file, or path to ssh-agent socket.
 @z
 
 @x
@@ -1386,31 +1416,44 @@ Such grant must be explicit within service specification as [secrets](services.m
 build:
   context: .
   ssh:
-    - default   # mount the default SSH agent
-```
-or
-```yaml
-build:
-  context: .
-  ssh: ["default"]   # mount the default SSH agent
+    - default # mount the default SSH agent
 ```
 @y
 ```yaml
 build:
   context: .
   ssh:
-    - default   # mount the default SSH agent
+    - default # mount the default SSH agent
 ```
+@z
+
+@x
 or
+@y
+or
+@z
+
+@x
 ```yaml
 build:
   context: .
-  ssh: ["default"]   # mount the default SSH agent
+  ssh: ["default"] # mount the default SSH agent
+```
+@y
+```yaml
+build:
+  context: .
+  ssh: ["default"] # mount the default SSH agent
 ```
 @z
 
 @x
 Using a custom id `myproject` with path to a local SSH key:
+@y
+Using a custom id `myproject` with path to a local SSH key:
+@z
+
+@x
 ```yaml
 build:
   context: .
@@ -1418,7 +1461,6 @@ build:
     - myproject=~/.ssh/myproject.pem
 ```
 @y
-Using a custom id `myproject` with path to a local SSH key:
 ```yaml
 build:
   context: .
@@ -1467,13 +1509,13 @@ as an integer value representing the number of bytes or as a string expressing a
 ```yml
 build:
   context: .
-  shm_size: '2gb'
+  shm_size: "2gb"
 ```
 @y
 ```yml
 build:
   context: .
-  shm_size: '2gb'
+  shm_size: "2gb"
 ```
 @z
 

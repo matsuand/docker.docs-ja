@@ -304,6 +304,8 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/reference/samples/Makefile
+	src/content/tags/Makefile
+	src/content/tags/labs/Makefile
 	src/data/Makefile
 	src/data/cli/Makefile
 	src/data/cli/buildx/Makefile

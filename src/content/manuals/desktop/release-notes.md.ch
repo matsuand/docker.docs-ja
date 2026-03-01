@@ -134,8 +134,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 @x
 - Addressed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in grpcfuse kernel module.
+- Addressed [CVE-2026-28400](https://www.cve.org/cverecord?id=CVE-2026-28400), runtime flag injection in Docker Model Runner.
 @y
 - Addressed [CVE-2026-2664](https://www.cve.org/cverecord?id=CVE-2026-2664), out of bounds read in grpcfuse kernel module.
+- Addressed [CVE-2026-28400](https://www.cve.org/cverecord?id=CVE-2026-28400), runtime flag injection in Docker Model Runner.
 @z
 
 @x

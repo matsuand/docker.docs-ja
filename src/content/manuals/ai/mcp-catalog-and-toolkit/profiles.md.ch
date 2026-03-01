@@ -16,21 +16,23 @@ keywords: Docker MCP, profiles, MCP servers, configuration, sharing
 @z
 
 @x
-{{< summary-bar feature_name="Docker MCP Toolkit" >}}
+{{< summary-bar feature_name="MCP Profiles" >}}
 @y
-{{< summary-bar feature_name="Docker MCP Toolkit" >}}
+{{< summary-bar feature_name="MCP Profiles" >}}
 @z
 
 @x
-> [!NOTE]
-> This page describes the MCP Toolkit interface in Docker Desktop 4.62 and
-> later. Earlier versions have a different UI. Upgrade to follow these
-> instructions exactly.
+> [!IMPORTANT]
+> MCP Profiles is rolling out gradually in Docker Desktop 4.63. If you don't
+> see the **Profiles** tab in your Docker Desktop, it hasn't been enabled for
+> your account yet. It will become available to all users as the rollout
+> completes.
 @y
-> [!NOTE]
-> This page describes the MCP Toolkit interface in Docker Desktop 4.62 and
-> later. Earlier versions have a different UI. Upgrade to follow these
-> instructions exactly.
+> [!IMPORTANT]
+> MCP Profiles is rolling out gradually in Docker Desktop 4.63. If you don't
+> see the **Profiles** tab in your Docker Desktop, it hasn't been enabled for
+> your account yet. It will become available to all users as the rollout
+> completes.
 @z
 
 @x

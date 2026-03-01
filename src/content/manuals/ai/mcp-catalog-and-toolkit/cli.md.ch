@@ -6,12 +6,12 @@
 @x
 title: Use MCP Toolkit from the CLI
 linkTitle: Use with CLI
-description: Manage MCP profiles, servers, and catalogs using the Docker MCP CLI.
+description: Manage MCP profiles, servers, and catalogs using Docker MCP CLI.
 keywords: docker mcp, cli, profiles, servers, catalog, gateway
 @y
 title: Use MCP Toolkit from the CLI
 linkTitle: Use with CLI
-description: Manage MCP profiles, servers, and catalogs using the Docker MCP CLI.
+description: Manage MCP profiles, servers, and catalogs using Docker MCP CLI.
 keywords: docker mcp, cli, profiles, servers, catalog, gateway
 @z
 
@@ -196,19 +196,19 @@ comes from:
 @z
 
 @x
-| Format | Source |
-| --- | --- |
-| `catalog://<catalog-ref>/<server-id>` | An OCI catalog |
-| `docker://<image>:<tag>` | A Docker image |
-| `https://<url>/v0/servers/<uuid>` | The MCP community registry |
-| `file://<path>` | A local YAML or JSON file |
+| Format                                | Source                     |
+| ------------------------------------- | -------------------------- |
+| `catalog://<catalog-ref>/<server-id>` | An OCI catalog             |
+| `docker://<image>:<tag>`              | A Docker image             |
+| `https://<url>/v0/servers/<uuid>`     | The MCP community registry |
+| `file://<path>`                       | A local YAML or JSON file  |
 @y
-| Format | Source |
-| --- | --- |
-| `catalog://<catalog-ref>/<server-id>` | An OCI catalog |
-| `docker://<image>:<tag>` | A Docker image |
-| `https://<url>/v0/servers/<uuid>` | The MCP community registry |
-| `file://<path>` | A local YAML or JSON file |
+| Format                                | Source                     |
+| ------------------------------------- | -------------------------- |
+| `catalog://<catalog-ref>/<server-id>` | An OCI catalog             |
+| `docker://<image>:<tag>`              | A Docker image             |
+| `https://<url>/v0/servers/<uuid>`     | The MCP community registry |
+| `file://<path>`                       | A local YAML or JSON file  |
 @z
 
 @x
@@ -574,35 +574,31 @@ $ echo ".vscode/mcp.json" >> .gitignore
 @z
 
 @x
+Share profiles with your team using OCI registries or version control.
+@y
+Share profiles with your team using OCI registries or version control.
+@z
+
+@x
+### Share via OCI registry
+@y
+### Share via OCI registry
+@z
+
+@x
 Profiles are shared as OCI artifacts via any OCI-compatible registry.
 Credentials are not included for security reasons. Team members configure
-OAuth separately after pulling.
+authentication credentials separately after pulling.
 @y
 Profiles are shared as OCI artifacts via any OCI-compatible registry.
 Credentials are not included for security reasons. Team members configure
-OAuth separately after pulling.
+authentication credentials separately after pulling.
 @z
 
 @x
-### Push a profile
+To push an existing profile called `web-dev` to an OCI registry:
 @y
-### Push a profile
-@z
-
-@x
-```console
-$ docker mcp profile push <profile-id> <registry-reference>
-```
-@y
-```console
-$ docker mcp profile push <profile-id> <registry-reference>
-```
-@z
-
-@x
-For example:
-@y
-For example:
+To push an existing profile called `web-dev` to an OCI registry:
 @z
 
 @x
@@ -616,25 +612,9 @@ $ docker mcp profile push web-dev registry.example.com/profiles/web-dev:v1
 @z
 
 @x
-### Pull a profile
+To pull the same profile:
 @y
-### Pull a profile
-@z
-
-@x
-```console
-$ docker mcp profile pull <registry-reference>
-```
-@y
-```console
-$ docker mcp profile pull <registry-reference>
-```
-@z
-
-@x
-For example:
-@y
-For example:
+To pull the same profile:
 @z
 
 @x
@@ -648,19 +628,77 @@ $ docker mcp profile pull registry.example.com/profiles/team-standard:latest
 @z
 
 @x
+### Share via version control
+@y
+### Share via version control
+@z
+
+@x
+For project-specific profiles, you can use the `export` and `import` commands
+and store the profiles in version control alongside your code. Team members can
+import the file to get the same configuration.
+@y
+For project-specific profiles, you can use the `export` and `import` commands
+and store the profiles in version control alongside your code. Team members can
+import the file to get the same configuration.
+@z
+
+@x
+To export a profile to your project directory:
+@y
+To export a profile to your project directory:
+@z
+
+@x
+```console
+$ mkdir -p .docker
+$ docker mcp profile export web-dev .docker/mcp-profile.json
+```
+@y
+```console
+$ mkdir -p .docker
+$ docker mcp profile export web-dev .docker/mcp-profile.json
+```
+@z
+
+@x
+Team members who clone the repository can import the profile:
+@y
+Team members who clone the repository can import the profile:
+@z
+
+@x
+```console
+$ docker mcp profile import .docker/mcp-profile.json
+```
+@y
+```console
+$ docker mcp profile import .docker/mcp-profile.json
+```
+@z
+
+@x
+This creates a profile with the servers and configuration defined in the
+file. Any authentication credentials must be configured separately if needed.
+@y
+This creates a profile with the servers and configuration defined in the
+file. Any authentication credentials must be configured separately if needed.
+@z
+
+@x
 ## Custom catalogs
 @y
 ## Custom catalogs
 @z
 
 @x
-Custom catalogs let you curate a focused collection of servers for your team or
-organization. For an overview of what custom catalogs are and when to use them,
-see [Custom catalogs](/manuals/ai/mcp-catalog-and-toolkit/catalog.md#custom-catalogs).
+Custom catalogs let you curate a focused collection of servers for your team
+or organization. For an overview of what custom catalogs are and when to use
+them, see [Custom catalogs](/manuals/ai/mcp-catalog-and-toolkit/catalog.md#custom-catalogs).
 @y
-Custom catalogs let you curate a focused collection of servers for your team or
-organization. For an overview of what custom catalogs are and when to use them,
-see [Custom catalogs](manuals/ai/mcp-catalog-and-toolkit/catalog.md#custom-catalogs).
+Custom catalogs let you curate a focused collection of servers for your team
+or organization. For an overview of what custom catalogs are and when to use
+them, see [Custom catalogs](manuals/ai/mcp-catalog-and-toolkit/catalog.md#custom-catalogs).
 @z
 
 @x
@@ -691,11 +729,13 @@ organization's needs. Copy it first:
 
 @x
 ```console
-$ docker mcp catalog tag mcp/docker-mcp-catalog registry.example.com/mcp/company-tools:latest
+$ docker mcp catalog tag mcp/docker-mcp-catalog \
+  registry.example.com/mcp/company-tools:latest
 ```
 @y
 ```console
-$ docker mcp catalog tag mcp/docker-mcp-catalog registry.example.com/mcp/company-tools:latest
+$ docker mcp catalog tag mcp/docker-mcp-catalog \
+  registry.example.com/mcp/company-tools:latest
 ```
 @z
 
@@ -723,12 +763,14 @@ Remove servers your organization doesn't approve:
 
 @x
 ```console
-$ docker mcp catalog server remove registry.example.com/mcp/company-tools:latest \
+$ docker mcp catalog server remove \
+  registry.example.com/mcp/company-tools:latest \
   --name <server-name>
 ```
 @y
 ```console
-$ docker mcp catalog server remove registry.example.com/mcp/company-tools:latest \
+$ docker mcp catalog server remove \
+  registry.example.com/mcp/company-tools:latest \
   --name <server-name>
 ```
 @z
@@ -927,11 +969,13 @@ To enable specific servers from your catalog without using a profile:
 
 @x
 ```console
-$ docker mcp gateway run --catalog <oci-reference> --servers <name1> --servers <name2>
+$ docker mcp gateway run --catalog <oci-reference> \
+  --servers <name1> --servers <name2>
 ```
 @y
 ```console
-$ docker mcp gateway run --catalog <oci-reference> --servers <name1> --servers <name2>
+$ docker mcp gateway run --catalog <oci-reference> \
+  --servers <name1> --servers <name2>
 ```
 @z
 

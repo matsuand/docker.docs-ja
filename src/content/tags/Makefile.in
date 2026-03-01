@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = src/content/manuals/compose/how-tos
+subdir = src/content/tags
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/progs.m4 \
 	$(top_srcdir)/configure.ac
@@ -151,9 +151,7 @@ am__define_uniq_tagged_files = \
     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
   done | $(am__uniquify_input)`
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in \
-	$(top_srcdir)/build-aux/common.mk \
-	$(top_srcdir)/build-aux/main.mk
+am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
   dir0=`pwd`; \
@@ -240,7 +238,7 @@ UPLOADURL = @UPLOADURL@
 VERSION = @VERSION@
 absORIGDIR = @absORIGDIR@
 abs_builddir = @abs_builddir@
-abs_origdir = @abs_origdir@/$(thisdir)
+abs_origdir = @abs_origdir@
 abs_publishdir = @abs_publishdir@
 abs_srcdir = @abs_srcdir@
 abs_targetdir = @abs_targetdir@
@@ -295,31 +293,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = environment-variables multiple-compose-files
-bases = \
-	_index.md            \
-	dependent-images.md  \
-	file-watch.md        \
-	gpu-support.md       \
-	lifecycle.md         \
-	networking.md        \
-	oci-artifact.md      \
-	production.md        \
-	profiles.md          \
-	project-name.md      \
-	provider-services.md \
-	startup-order.md     \
-	use-secrets.md
-
-thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
-abs_thisdir = @abs_srcdir@
-changes = $(bases:=.ch) # change files
-transes = $(bases)      # translated files
-EXTRA_DIST = $(changes)
+SUBDIRS = labs
 all: all-recursive
 
 .SUFFIXES:
-$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__configure_deps)
+$(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
@@ -328,9 +306,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/manuals/compose/how-tos/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/content/tags/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --foreign src/content/manuals/compose/how-tos/Makefile
+	  $(AUTOMAKE) --foreign src/content/tags/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -339,7 +317,6 @@ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles)'; \
 	    cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__maybe_remake_depfiles);; \
 	esac;
-$(top_srcdir)/build-aux/common.mk $(top_srcdir)/build-aux/main.mk $(am__empty):
 
 $(top_builddir)/config.status: $(top_srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
@@ -623,31 +600,6 @@ uninstall-am:
 
 .PRECIOUS: Makefile
 
-
-.PHONY: all ctie
-all: ctie
-ctie:
-	@if test ! -x "$(top_builddir)/$@/$@"; then \
-	  @$(MAKE) -C $(top_builddir)/$@ $@ >/dev/null; \
-	fi
-
-.PHONY: all
-all: $(transes)
-
-submakename ?= Makefile.sub
-
--include $(submakename)
-$(submakename): $(top_srcdir)/bin/makesub.sh $(srcdir)/Makefile.am $(top_builddir)/config.log
-	@$(top_srcdir)/bin/makesub.sh $(submakename) . $(transes)
-
-@MAINT@.PHONY: chbuild
-@MAINT@chbuild: $(addprefix $(abs_thisdir)/, $(changes))
-@MAINT@$(addprefix $(abs_thisdir)/, $(changes)):
-@MAINT@	@if test ! -f $@; then \
-@MAINT@	  $(top_srcdir)/bin/buildch.perl `echo $@ | \
-@MAINT@	    sed -e "s|^$(abs_thisdir)|$(abs_origdir)|" \
-@MAINT@	    -e "s|\.ch$$||"` $@; \
-@MAINT@	fi
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
