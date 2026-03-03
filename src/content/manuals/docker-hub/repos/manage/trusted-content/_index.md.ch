@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 description: Learn how to manage and contribute to trusted content.
 keywords: Docker Hub, Hub, trusted content
@@ -63,4 +65,14 @@ In this section, learn about:
 - [Insights and analytics](./insights-analytics.md): Access detailed metrics on
   image and extension usage, including pull counts, geolocation, and client
   data, to understand user behavior and optimize your content.
+@z
+
+@x
+For Docker Hardened Images guidance, including how to contribute, see
+[Contribute to the catalog](/dhi/how-to/build/#contribute-to-the-catalog) in the
+dedicated DHI docs section.
+@y
+For Docker Hardened Images guidance, including how to contribute, see
+[Contribute to the catalog](__SUBDIR__/dhi/how-to/build/#contribute-to-the-catalog) in the
+dedicated DHI docs section.
 @z

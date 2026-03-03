@@ -105,11 +105,11 @@ see [Add organizations to a company](./organizations.md#add-organizations-to-a-c
 
 @x
 - [Manage organizations](./organizations.md)
-- [Manage company users](./users.md)
+- [Manage company members](./users.md)
 - [Manage company owners](./owners.md)
 @y
 - [Manage organizations](./organizations.md)
-- [Manage company users](./users.md)
+- [Manage company members](./users.md)
 - [Manage company owners](./owners.md)
 @z
 

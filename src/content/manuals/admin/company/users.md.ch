@@ -5,12 +5,12 @@
 
 @x
 title: Manage company members
-description: Learn how to manage company users in the Docker Admin Console.
-keywords: company, company users, users, admin, Admin Console, member management, organization management, company management, bulk invite, resend invites
+description: Learn how to manage company members in the Docker Admin Console.
+keywords: company, company members, members, admin, Admin Console, member management, organization management, company management, bulk invite, resend invites
 @y
 title: Manage company members
-description: Learn how to manage company users in the Docker Admin Console.
-keywords: company, company users, users, admin, Admin Console, member management, organization management, company management, bulk invite, resend invites
+description: Learn how to manage company members in the Docker Admin Console.
+keywords: company, company members, members, admin, Admin Console, member management, organization management, company management, bulk invite, resend invites
 @z
 
 @x

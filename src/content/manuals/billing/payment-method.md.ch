@@ -54,8 +54,8 @@ The following payment methods are supported:
   - Stripe Link
 - Bank accounts
   - Automated Clearing House (ACH) transfer with a
-  [verified](manuals/billing/payment-method.md#verify-a-bank-account) US
-  bank account
+    [verified](/manuals/billing/payment-method.md#verify-a-bank-account) US
+    bank account
 - [Pay by invoice](/manuals/billing/history.md)
 @y
 - Cards
@@ -70,8 +70,8 @@ The following payment methods are supported:
   - Stripe Link
 - Bank accounts
   - Automated Clearing House (ACH) transfer with a
-  [verified](manuals/billing/payment-method.md#verify-a-bank-account) US
-  bank account
+    [verified](manuals/billing/payment-method.md#verify-a-bank-account) US
+    bank account
 - [Pay by invoice](manuals/billing/history.md)
 @z
 
@@ -115,56 +115,56 @@ To add a payment method:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods** from the left-hand menu.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you don't already use Link, you must fill out the card information
-        form to store a card for Link payments.
-    - Add a bank account:
-        - Select **US bank account**.
-        - Verify your **Email** and **Full name**.
-        - If your bank is listed, select your bank's name.
-        - If your bank is not listed, select **Search for your bank**.
-        - To verify your bank account, see
-        [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you don't already use Link, you must fill out the card information
+       form to store a card for Link payments.
+   - Add a bank account:
+     - Select **US bank account**.
+     - Verify your **Email** and **Full name**.
+     - If your bank is listed, select your bank's name.
+     - If your bank is not listed, select **Search for your bank**.
+     - To verify your bank account, see
+       [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add payment method**.
 1. Optional. You can set a new default payment method by selecting
-the **Set as default** action.
+   the **Set as default** action.
 1. Optional. You can remove non-default payment methods by selecting
-the **Delete** action.
+   the **Delete** action.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods** from the left-hand menu.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you don't already use Link, you must fill out the card information
-        form to store a card for Link payments.
-    - Add a bank account:
-        - Select **US bank account**.
-        - Verify your **Email** and **Full name**.
-        - If your bank is listed, select your bank's name.
-        - If your bank is not listed, select **Search for your bank**.
-        - To verify your bank account, see
-        [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you don't already use Link, you must fill out the card information
+       form to store a card for Link payments.
+   - Add a bank account:
+     - Select **US bank account**.
+     - Verify your **Email** and **Full name**.
+     - If your bank is listed, select your bank's name.
+     - If your bank is not listed, select **Search for your bank**.
+     - To verify your bank account, see
+       [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add payment method**.
 1. Optional. You can set a new default payment method by selecting
-the **Set as default** action.
+   the **Set as default** action.
 1. Optional. You can remove non-default payment methods by selecting
-the **Delete** action.
+   the **Delete** action.
 @z
 
 @x
@@ -193,36 +193,36 @@ To add a payment method:
 1. Select the **Payment methods** link.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
 1. Select **Add**.
 1. Select the **Actions** icon, then select **Make default** to ensure that
-your new payment method applies to all purchases and subscriptions.
+   your new payment method applies to all purchases and subscriptions.
 1. Optional. You can remove non-default payment methods by selecting
-the **Actions** icon. Then, select **Delete**.
+   the **Actions** icon. Then, select **Delete**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 1. Select **Billing**.
 1. Select the **Payment methods** link.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
 1. Select **Add**.
 1. Select the **Actions** icon, then select **Make default** to ensure that
-your new payment method applies to all purchases and subscriptions.
+   your new payment method applies to all purchases and subscriptions.
 1. Optional. You can remove non-default payment methods by selecting
-the **Actions** icon. Then, select **Delete**.
+   the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
@@ -261,54 +261,54 @@ To add a payment method:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods** from the left-hand menu.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
-    - Add a bank account:
-        - Select **US bank account**.
-        - Verify your **Email** and **Full name**.
-        - If your bank is listed, select your bank's name.
-        - If your bank is not listed, select **Search for your bank**.
-        - To verify your bank account, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
+   - Add a bank account:
+     - Select **US bank account**.
+     - Verify your **Email** and **Full name**.
+     - If your bank is listed, select your bank's name.
+     - If your bank is not listed, select **Search for your bank**.
+     - To verify your bank account, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add payment method**.
 1. Optional. You can set a new default payment method by selecting
-the **Set as default** action.
+   the **Set as default** action.
 1. Optional. You can remove non-default payment methods by selecting
-the **Delete** action.
+   the **Delete** action.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods** from the left-hand menu.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
-    - Add a bank account:
-        - Select **US bank account**.
-        - Verify your **Email** and **Full name**.
-        - If your bank is listed, select your bank's name.
-        - If your bank is not listed, select **Search for your bank**.
-        - To verify your bank account, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
+   - Add a bank account:
+     - Select **US bank account**.
+     - Verify your **Email** and **Full name**.
+     - If your bank is listed, select your bank's name.
+     - If your bank is not listed, select **Search for your bank**.
+     - To verify your bank account, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add payment method**.
 1. Optional. You can set a new default payment method by selecting
-the **Set as default** action.
+   the **Set as default** action.
 1. Optional. You can remove non-default payment methods by selecting
-the **Delete** action.
+   the **Delete** action.
 @z
 
 @x
@@ -337,36 +337,36 @@ To add a payment method:
 1. Select the **Payment methods** link.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
 1. Select **Add payment method**.
 1. Select the **Actions** icon, then select **Make default** to ensure that
-your new payment method applies to all purchases and subscriptions.
+   your new payment method applies to all purchases and subscriptions.
 1. Optional. You can remove non-default payment methods by selecting
-the **Actions** icon. Then, select **Delete**.
+   the **Actions** icon. Then, select **Delete**.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com).
 1. Select your organization, then select **Billing**.
 1. Select the **Payment methods** link.
 1. Select **Add payment method**.
 1. Enter your new payment information:
-    - Add a card:
-        - Select **Card** and fill out the card information form.
-    - Add a Link payment:
-        - Select **Secure, 1-click checkout with Link** and enter your
-        Link **email address** and **phone number**.
-        - If you are not an existing Link customer, you must fill out the
-        card information form to store a card for Link payments.
+   - Add a card:
+     - Select **Card** and fill out the card information form.
+   - Add a Link payment:
+     - Select **Secure, 1-click checkout with Link** and enter your
+       Link **email address** and **phone number**.
+     - If you are not an existing Link customer, you must fill out the
+       card information form to store a card for Link payments.
 1. Select **Add payment method**.
 1. Select the **Actions** icon, then select **Make default** to ensure that
-your new payment method applies to all purchases and subscriptions.
+   your new payment method applies to all purchases and subscriptions.
 1. Optional. You can remove non-default payment methods by selecting
-the **Actions** icon. Then, select **Delete**.
+   the **Actions** icon. Then, select **Delete**.
 @z
 
 @x
@@ -413,20 +413,20 @@ subscription upgrades or changes.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods**, then **Pay by invoice**.
 1. To enable pay by invoice, select the toggle.
 1. Confirm your billing contact details. If you need to change them, select
-**Change** and enter your new details.
+   **Change** and enter your new details.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Billing**.
 1. Select **Payment methods**, then **Pay by invoice**.
 1. To enable pay by invoice, select the toggle.
 1. Confirm your billing contact details. If you need to change them, select
-**Change** and enter your new details.
+   **Change** and enter your new details.
 @z
 
 @x
@@ -451,11 +451,11 @@ There are two ways to verify a bank account as a payment method:
 
 @x
 - Instant verification: Docker supports several major banks for instant
-verification.
+  verification.
 - Manual verification: All other banks must be verified manually.
 @y
 - Instant verification: Docker supports several major banks for instant
-verification.
+  verification.
 - Manual verification: All other banks must be verified manually.
 @z
 
@@ -485,18 +485,18 @@ from the Docker billing flow:
 1. Choose **US bank account** as your payment method.
 1. Verify your **Email** and **Full name**.
 1. If your bank is listed, select your bank's name or
-select **Search for your bank**.
+   select **Search for your bank**.
 1. Sign in to your bank and review the terms and conditions. This agreement
-allows Docker to debit payments from your connected bank account.
+   allows Docker to debit payments from your connected bank account.
 1. Select **Agree and continue**.
 1. Select an account to link and verify, and select **Connect account**.
 @y
 1. Choose **US bank account** as your payment method.
 1. Verify your **Email** and **Full name**.
 1. If your bank is listed, select your bank's name or
-select **Search for your bank**.
+   select **Search for your bank**.
 1. Sign in to your bank and review the terms and conditions. This agreement
-allows Docker to debit payments from your connected bank account.
+   allows Docker to debit payments from your connected bank account.
 1. Select **Agree and continue**.
 1. Select an account to link and verify, and select **Connect account**.
 @z

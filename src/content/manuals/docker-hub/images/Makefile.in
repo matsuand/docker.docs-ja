@@ -242,6 +242,8 @@ copyfiles = \
 	chart.png                        \
 	clear_logo_sm.png                \
 	default_logo_sm.png              \
+	dhi-chart-label.png              \
+	dhi-image-label.png              \
 	download-analytics-data.png      \
 	official-image-badge-iso.png     \
 	sponsored-badge-iso.png          \

@@ -43,6 +43,86 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.63.0
+@y
+## 4.63.0
+@z
+
+@x
+{{< release-date date="2026-03-02" >}}
+@y
+{{< release-date date="2026-03-02" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.63.0" build_path="/220185/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.63.0" build_path="/220185/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Added SLSA v1 provenance support in the **Builds** view.
+@y
+- Added SLSA v1 provenance support in the **Builds** view.
+@z
+
+@x
+### Upgrades
+@y
+### 機能更新 {#upgrades}
+@z
+
+@x
+- [Kubernetes v1.34.3](https://github.com/kubernetes/kubernetes/releases/tag/v1.34.3)
+- Linux kernel `v6.12.72`
+@y
+- [Kubernetes v1.34.3](https://github.com/kubernetes/kubernetes/releases/tag/v1.34.3)
+- Linux kernel `v6.12.72`
+@z
+
+@x
+### Bug fixes and minor changes
+@y
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Enhanced the proxy settings UI and added a separate proxy for containers.
+- Fixed an issue where community registry MCP catalogs failed to load when a server's config object contained `"required": null`.
+- Fixed an issue where `mcp-gateway` would hang when fetching secrets from the Secrets Engine while the Docker Desktop VM was in Resource Saver mode.
+- Rebranded "Docker AI" references to "Gordon".
+@y
+- Enhanced the proxy settings UI and added a separate proxy for containers.
+- Fixed an issue where community registry MCP catalogs failed to load when a server's config object contained `"required": null`.
+- Fixed an issue where `mcp-gateway` would hang when fetching secrets from the Secrets Engine while the Docker Desktop VM was in Resource Saver mode.
+- Rebranded "Docker AI" references to "Gordon".
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Improved startup time on Windows.
+@y
+- Improved startup time on Windows.
+@z
+
+@x
 ## 4.62.0
 @y
 ## 4.62.0
