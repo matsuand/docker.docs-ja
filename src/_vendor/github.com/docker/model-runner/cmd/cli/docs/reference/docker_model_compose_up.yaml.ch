@@ -29,6 +29,12 @@ usage: docker model compose up
       description: model to use
 @z
 
+@x runtime-flags
+      description: raw runtime flags to pass to the inference engine
+@y
+      description: raw runtime flags to pass to the inference engine
+@z
+
 @x speculative-draft-model
       description: draft model for speculative decoding
 @y

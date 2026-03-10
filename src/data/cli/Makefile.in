@@ -293,7 +293,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = buildx debug desktop engine init mcp offload sandbox \
+SUBDIRS = buildx debug desktop dhi engine init mcp offload sandbox \
 	scout secrets
 
 all: all-recursive

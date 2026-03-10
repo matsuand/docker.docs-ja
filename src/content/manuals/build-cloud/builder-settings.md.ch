@@ -191,15 +191,13 @@ login` to authenticate before building.
 @z
 
 @x
-Note that if you use a private registry that requires authentication, you will
-need to authenticate with `docker login` twice before building. This is because
-the cloud builder needs to authenticate with Docker to use the cloud builder,
-and then again to authenticate with the private registry.
+If you use a private registry that requires authentication, you need to
+authenticate twice before building: once to Docker Hub (to access Docker Build
+Cloud), and once to your private registry (to push/pull images).
 @y
-Note that if you use a private registry that requires authentication, you will
-need to authenticate with `docker login` twice before building. This is because
-the cloud builder needs to authenticate with Docker to use the cloud builder,
-and then again to authenticate with the private registry.
+If you use a private registry that requires authentication, you need to
+authenticate twice before building: once to Docker Hub (to access Docker Build
+Cloud), and once to your private registry (to push/pull images).
 @z
 
 % snip command...

@@ -3,22 +3,36 @@
 
 @x
 command: docker model configure
-short: Configure runtime options for a model
-long: Configure runtime options for a model
-usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<model>] [--hf_overrides=<json>] [--reasoning-budget=<n>] MODEL
 @y
 command: docker model configure
-short: Configure runtime options for a model
-long: Configure runtime options for a model
-usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<model>] [--hf_overrides=<json>] [--reasoning-budget=<n>] MODEL
 @z
 
-% options:
+@x
+short: Manage model runtime configurations
+long: Manage model runtime configurations
+usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<model>] [--hf_overrides=<json>] [--gpu-memory-utilization=<float>] [--mode=<mode>] [--think] [--keep-alive=<duration>] MODEL [-- <runtime-flags...>]
+@y
+short: Manage model runtime configurations
+long: Manage model runtime configurations
+usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<model>] [--hf_overrides=<json>] [--gpu-memory-utilization=<float>] [--mode=<mode>] [--think] [--keep-alive=<duration>] MODEL [-- <runtime-flags...>]
+@z
+
+% cname
+% clink
+% options
 
 @x context-size
       description: context size (in tokens)
 @y
       description: context size (in tokens)
+@z
+
+@x gpu-memory-utilization
+      description: |
+        fraction of GPU memory to use for the model executor (0.0-1.0) - vLLM only
+@y
+      description: |
+        fraction of GPU memory to use for the model executor (0.0-1.0) - vLLM only
 @z
 
 @x hf_overrides
@@ -27,10 +41,20 @@ usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<m
       description: HuggingFace model config overrides (JSON) - vLLM only
 @z
 
-@x reasoning-budget
-      description: reasoning budget for reasoning models - llama.cpp only
+@x keep-alive
+      description: |
+        duration to keep model loaded (e.g., '5m', '1h', '0' to unload immediately, '-1' to never unload)
 @y
-      description: reasoning budget for reasoning models - llama.cpp only
+      description: |
+        duration to keep model loaded (e.g., '5m', '1h', '0' to unload immediately, '-1' to never unload)
+@z
+
+@x mode
+      description: |
+        backend operation mode (completion, embedding, reranking, image-generation)
+@y
+      description: |
+        backend operation mode (completion, embedding, reranking, image-generation)
 @z
 
 @x speculative-draft-model
@@ -49,6 +73,12 @@ usage: docker model configure [--context-size=<n>] [--speculative-draft-model=<m
       description: number of tokens to predict speculatively
 @y
       description: number of tokens to predict speculatively
+@z
+
+@x think
+      description: enable reasoning mode for thinking models
+@y
+      description: enable reasoning mode for thinking models
 @z
 
 % snip directives...

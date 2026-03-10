@@ -65,6 +65,18 @@ usage: docker buildx imagetools create [OPTIONS] [SOURCE...]
       description: Read source descriptor from file
 @z
 
+@x metadata-file
+      description: Write create result metadata to a file
+@y
+      description: Write create result metadata to a file
+@z
+
+@x platform
+      description: Filter specified platforms of target image
+@y
+      description: Filter specified platforms of target image
+@z
+
 @x prefer-index
         When only a single source is specified, prefer outputting an image index or manifest list instead of performing a carbon copy
 @y
@@ -220,6 +232,25 @@ examples: |-
 @y
     The supported fields for the descriptor are defined in [OCI spec](https://github.com/opencontainers/image-spec/blob/master/descriptor.md#properties) .
 @z
+
+@x
+    ### Write create result metadata to a file (--metadata-file) {#metadata-file}
+@y
+    ### Write create result metadata to a file (--metadata-file) {#metadata-file}
+@z
+
+@x
+    To output metadata such as the image digest, pass the `--metadata-file` flag.
+    The metadata will be written as a JSON object to the specified file. The
+    directory of the specified file must already exist and be writable.
+@y
+    To output metadata such as the image digest, pass the `--metadata-file` flag.
+    The metadata will be written as a JSON object to the specified file. The
+    directory of the specified file must already exist and be writable.
+@z
+
+% snip command...
+% snip code...
 
 @x
     ### Set reference for new image  (-t, --tag) {#tag}

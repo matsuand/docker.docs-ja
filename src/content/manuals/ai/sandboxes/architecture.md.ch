@@ -400,6 +400,62 @@ are allowed. See [Network policies](network-policies.md).
 @z
 
 @x
+### Credential injection
+@y
+### Credential injection
+@z
+
+@x
+The HTTP/HTTPS proxy automatically injects credentials into API requests for
+supported providers (OpenAI, Anthropic, Google, GitHub, etc.). When you set
+environment variables like `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` on your
+host, the proxy intercepts outbound requests to those services and adds the
+appropriate authentication headers.
+@y
+The HTTP/HTTPS proxy automatically injects credentials into API requests for
+supported providers (OpenAI, Anthropic, Google, GitHub, etc.). When you set
+environment variables like `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` on your
+host, the proxy intercepts outbound requests to those services and adds the
+appropriate authentication headers.
+@z
+
+@x
+This approach keeps credentials on your host system - they're never stored
+inside the sandbox VM. The agent makes API requests without credentials, and
+the proxy injects them transparently. When the sandbox is removed, no
+credentials remain inside.
+@y
+This approach keeps credentials on your host system - they're never stored
+inside the sandbox VM. The agent makes API requests without credentials, and
+the proxy injects them transparently. When the sandbox is removed, no
+credentials remain inside.
+@z
+
+@x
+For multi-provider agents (OpenCode, Docker Agent), the proxy automatically selects
+the correct credentials based on the API endpoint being called. See individual
+[agent configuration](agents/) for credential setup instructions.
+@y
+For multi-provider agents (OpenCode, Docker Agent), the proxy automatically selects
+the correct credentials based on the API endpoint being called. See individual
+[agent configuration](agents/) for credential setup instructions.
+@z
+
+@x
+When building custom templates or installing agents manually in the shell
+sandbox, some agents may require environment variables like `OPENAI_API_KEY`
+to be set before they start. Set these to placeholder values (e.g.,
+`proxy-managed`) if needed - the proxy will inject actual credentials
+regardless of the environment variable value.
+@y
+When building custom templates or installing agents manually in the shell
+sandbox, some agents may require environment variables like `OPENAI_API_KEY`
+to be set before they start. Set these to placeholder values (e.g.,
+`proxy-managed`) if needed - the proxy will inject actual credentials
+regardless of the environment variable value.
+@z
+
+@x
 ### Sandbox isolation
 @y
 ### Sandbox isolation

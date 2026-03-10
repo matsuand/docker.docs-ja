@@ -348,15 +348,7 @@ examples: |-
     `my-hostname` and `my_hostname_v6`:
 @z
 
-@x
-    ```console
-    $ docker buildx build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
-    ```
-@y
-    ```console
-    $ docker buildx build --add-host my_hostname=8.8.8.8 --add-host my_hostname_v6=2001:4860:4860::8888 .
-    ```
-@z
+% snip command...
 
 @x
     If you need your build to connect to services running on the host, you can use
@@ -368,15 +360,7 @@ examples: |-
     build containers resolve `host.docker.internal` to the host's gateway IP.
 @z
 
-@x
-    ```console
-    $ docker buildx build --add-host host.docker.internal=host-gateway .
-    ```
-@y
-    ```console
-    $ docker buildx build --add-host host.docker.internal=host-gateway .
-    ```
-@z
+% snip command...
 
 @x
     You can wrap an IPv6 address in square brackets.
@@ -388,15 +372,7 @@ examples: |-
     Both formats in the following example are valid:
 @z
 
-@x
-    ```console
-    $ docker buildx build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
-    ```
-@y
-    ```console
-    $ docker buildx build --add-host my-hostname:10.180.0.1 --add-host my-hostname_v6=[2001:4860:4860::8888] .
-    ```
-@z
+% snip command...
 
 @x
     ### Create annotations (--annotation) {#annotation}
@@ -404,17 +380,7 @@ examples: |-
     ### Create annotations (--annotation) {#annotation}
 @z
 
-@x
-    ```text
-    --annotation="key=value"
-    --annotation="[type:]key=value"
-    ```
-@y
-    ```text
-    --annotation="key=value"
-    --annotation="[type:]key=value"
-    ```
-@z
+% snip code...
 
 @x
     Add OCI annotations to the image index, manifest, or descriptor.
@@ -424,15 +390,7 @@ examples: |-
     The following example adds the `foo=bar` annotation to the image manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can optionally add a type prefix to specify the level of the annotation. By
@@ -444,15 +402,7 @@ examples: |-
     `foo=bar` annotation the image index instead of the manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "index:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can specify multiple types, separated by a comma (,) to add the annotation
@@ -464,15 +414,7 @@ examples: |-
     annotation to image index, descriptors, manifests:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "index,manifest,manifest-descriptor:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     You can also specify a platform qualifier in square brackets (`[os/arch]`) in
@@ -486,15 +428,7 @@ examples: |-
     the manifest with the `linux/amd64` platform:
 @z
 
-@x
-    ```console
-    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
-    ```
-@y
-    ```console
-    $ docker buildx build -t TAG --annotation "manifest[linux/amd64]:foo=bar" --push .
-    ```
-@z
+% snip command...
 
 @x
     Wildcards are not supported in the platform qualifier; you can't specify a type
@@ -520,17 +454,7 @@ examples: |-
     ### Create attestations (--attest) {#attest}
 @z
 
-@x
-    ```text
-    --attest=type=sbom,...
-    --attest=type=provenance,...
-    ```
-@y
-    ```text
-    --attest=type=sbom,...
-    --attest=type=provenance,...
-    ```
-@z
+% snip code...
 
 @x
     Create [image attestations](/build/metadata/attestations/).
@@ -594,15 +518,7 @@ examples: |-
     ### Allow extra privileged entitlement (--allow) {#allow}
 @z
 
-@x
-    ```text
-    --allow=ENTITLEMENT
-    ```
-@y
-    ```text
-    --allow=ENTITLEMENT
-    ```
-@z
+% snip code...
 
 @x
     Allow extra privileged entitlement. List of entitlements:
@@ -628,17 +544,7 @@ examples: |-
     with `--allow-insecure-entitlement` (see [`create --buildkitd-flags`](__SUBDIR__/reference/cli/docker/buildx/create/#buildkitd-flags)).
 @z
 
-@x
-    ```console
-    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
-    $ docker buildx build --allow security.insecure .
-    ```
-@y
-    ```console
-    $ docker buildx create --use --name insecure-builder --buildkitd-flags '--allow-insecure-entitlement security.insecure'
-    $ docker buildx build --allow security.insecure .
-    ```
-@z
+% snip command...
 
 @x
     ### Set build-time variables (--build-arg) {#build-arg}
@@ -668,15 +574,7 @@ examples: |-
     can set at build-time using the  `--build-arg` flag:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-arg HTTP_PROXY=http://10.20.30.2:1234 --build-arg FTP_PROXY=http://40.50.60.5:4567 .
-    ```
-@z
+% snip command...
 
 @x
     This flag allows you to pass the build-time variables that are
@@ -714,17 +612,7 @@ examples: |-
     propagates the value from the local environment into the Docker container it's building:
 @z
 
-@x
-    ```console
-    $ export HTTP_PROXY=http://10.20.30.2:1234
-    $ docker buildx build --build-arg HTTP_PROXY .
-    ```
-@y
-    ```console
-    $ export HTTP_PROXY=http://10.20.30.2:1234
-    $ docker buildx build --build-arg HTTP_PROXY .
-    ```
-@z
+% snip command...
 
 @x
     This example is similar to how `docker run -e` works. Refer to the [`docker run` documentation](/reference/cli/docker/container/run/#env)
@@ -750,15 +638,7 @@ examples: |-
     * `BUILDKIT_MULTI_PLATFORM=<bool>`: opt into deterministic output regardless of multi-platform output or not
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-arg BUILDKIT_MULTI_PLATFORM=1 .
-    ```
-@z
+% snip command...
 
 @x
     Learn more about the built-in build arguments in the [Dockerfile reference docs](/reference/dockerfile/#buildkit-built-in-build-args).
@@ -772,15 +652,7 @@ examples: |-
     ### Additional build contexts (--build-context) {#build-context}
 @z
 
-@x
-    ```text
-    --build-context=name=VALUE
-    ```
-@y
-    ```text
-    --build-context=name=VALUE
-    ```
-@z
+% snip code...
 
 @x
     Define additional build context with specified contents.
@@ -836,17 +708,7 @@ examples: |-
     Expose a secondary local source directory:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context project=path/to/project/source .
-    # docker buildx build --build-context project=https://github.com/myuser/project.git .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context project=path/to/project/source .
-    # docker buildx build --build-context project=https://github.com/myuser/project.git .
-    ```
-@z
+% snip command...
 
 @x
     #### Use a container image {#docker-image}
@@ -866,29 +728,8 @@ examples: |-
     Replace `alpine:latest` with a pinned one:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context alpine=docker-image://alpine@sha256:0123456789 .
-    ```
-@z
-
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    COPY --from=project myfile /
-    ```
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    COPY --from=project myfile /
-    ```
-@z
+% snip command...
+% snip code...
 
 @x
     #### Use an OCI layout directory as build context {#source-oci-layout}
@@ -912,39 +753,8 @@ examples: |-
     either by tag, or by digest:
 @z
 
-@x
-    ```console
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
-    ```
-@y
-    ```console
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout:<tag>
-    $ docker buildx build --build-context foo=oci-layout:///path/to/local/layout@sha256:<digest>
-    ```
-@z
-
-@x
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add git
-    COPY --from=foo myfile /
-@y
-    ```dockerfile
-    # syntax=docker/dockerfile:1
-    FROM alpine
-    RUN apk add git
-    COPY --from=foo myfile /
-@z
-
-@x
-    FROM foo
-    ```
-@y
-    FROM foo
-    ```
-@z
+% snip command...
+% snip code...
 
 @x
     The OCI layout directory must be compliant with the [OCI layout specification](https://github.com/opencontainers/image-spec/blob/main/image-layout.md).
@@ -970,15 +780,7 @@ examples: |-
     ### Use an external cache source for a build (--cache-from) {#cache-from}
 @z
 
-@x
-    ```text
-    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@y
-    ```text
-    --cache-from=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@z
+% snip code...
 
 @x
     Use an external cache source for a build. Supported types are:
@@ -1024,25 +826,7 @@ examples: |-
     If no type is specified, `registry` exporter is used with a specified reference.
 @z
 
-@x
-    ```console
-    $ docker buildx build --cache-from=user/app:cache .
-    $ docker buildx build --cache-from=user/app .
-    $ docker buildx build --cache-from=type=registry,ref=user/app .
-    $ docker buildx build --cache-from=type=local,src=path/to/cache .
-    $ docker buildx build --cache-from=type=gha .
-    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@y
-    ```console
-    $ docker buildx build --cache-from=user/app:cache .
-    $ docker buildx build --cache-from=user/app .
-    $ docker buildx build --cache-from=type=registry,ref=user/app .
-    $ docker buildx build --cache-from=type=local,src=path/to/cache .
-    $ docker buildx build --cache-from=type=gha .
-    $ docker buildx build --cache-from=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@z
+% snip command...
 
 @x
     > [!NOTE]
@@ -1060,15 +844,7 @@ examples: |-
     ### Export build cache to an external cache destination (--cache-to) {#cache-to}
 @z
 
-@x
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@y
-    ```text
-    --cache-to=[NAME|type=TYPE[,KEY=VALUE]]
-    ```
-@z
+% snip code...
 
 @x
     Export build cache to an external cache destination. Supported types are:
@@ -1104,25 +880,7 @@ examples: |-
       cache to an Azure bucket.
 @z
 
-@x
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@y
-    ```console
-    $ docker buildx build --cache-to=user/app:cache .
-    $ docker buildx build --cache-to=type=inline .
-    $ docker buildx build --cache-to=type=registry,ref=user/app .
-    $ docker buildx build --cache-to=type=local,dest=path/to/cache .
-    $ docker buildx build --cache-to=type=gha .
-    $ docker buildx build --cache-to=type=s3,region=eu-west-1,bucket=mybucket .
-    ```
-@z
+% snip command...
 
 @x
     > [!NOTE]
@@ -1140,15 +898,7 @@ examples: |-
     ### Invoke a frontend method (--call) {#call}
 @z
 
-@x
-    ```text
-    --call=[build|check|outline|targets]
-    ```
-@y
-    ```text
-    --call=[build|check|outline|targets]
-    ```
-@z
+% snip code...
 
 @x
     BuildKit frontends can support alternative modes of executions for builds,
@@ -1550,39 +1300,73 @@ examples: |-
     ### Specify a Dockerfile (-f, --file) {#file}
 @z
 
-@x
-    ```console
-    $ docker buildx build -f <filepath> .
-    ```
-@y
-    ```console
-    $ docker buildx build -f <filepath> .
-    ```
-@z
+% snip command...
 
 @x
-    Specifies the filepath of the Dockerfile to use.
+    Specifies the location of the Dockerfile to use.
     If unspecified, a file named `Dockerfile` at the root of the build context is used by default.
 @y
-    Specifies the filepath of the Dockerfile to use.
+    Specifies the location of the Dockerfile to use.
     If unspecified, a file named `Dockerfile` at the root of the build context is used by default.
 @z
 
 @x
-    To read a Dockerfile from stdin, you can use `-` as the argument for `--file`.
+    The supported inputs formats are:
 @y
-    To read a Dockerfile from stdin, you can use `-` as the argument for `--file`.
+    The supported inputs formats are:
 @z
 
 @x
-    ```console
-    $ cat Dockerfile | docker buildx build -f - .
-    ```
+    - [`Local file path`](#local-file-path)
+    - [`Remote URL`](#remote-url)
+    - [`Standard input`](#standard-input)
 @y
-    ```console
-    $ cat Dockerfile | docker buildx build -f - .
-    ```
+    - [`Local file path`](#local-file-path)
+    - [`Remote URL`](#remote-url)
+    - [`Standard input`](#standard-input)
 @z
+
+@x
+    #### Local file path
+@y
+    #### Local file path
+@z
+
+@x
+    To specify a path to a local Dockerfile:
+@y
+    To specify a path to a local Dockerfile:
+@z
+
+% snip command...
+
+@x
+    #### Remote URL
+@y
+    #### Remote URL
+@z
+
+@x
+    To specify a URL to a remote Dockerfile:
+@y
+    To specify a URL to a remote Dockerfile:
+@z
+
+% snip command...
+
+@x
+    #### Standard input
+@y
+    #### Standard input
+@z
+
+@x
+    To read a Dockerfile from stdin, use `-` as the argument:
+@y
+    To read a Dockerfile from stdin, use `-` as the argument:
+@z
+
+% snip command...
 
 @x
     ### Load the single-platform build result to `docker images` (--load) {#load}

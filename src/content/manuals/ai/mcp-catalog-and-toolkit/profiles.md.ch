@@ -22,20 +22,6 @@ keywords: Docker MCP, profiles, MCP servers, configuration, sharing
 @z
 
 @x
-> [!IMPORTANT]
-> MCP Profiles is rolling out gradually in Docker Desktop 4.63. If you don't
-> see the **Profiles** tab in your Docker Desktop, it hasn't been enabled for
-> your account yet. It will become available to all users as the rollout
-> completes.
-@y
-> [!IMPORTANT]
-> MCP Profiles is rolling out gradually in Docker Desktop 4.63. If you don't
-> see the **Profiles** tab in your Docker Desktop, it hasn't been enabled for
-> your account yet. It will become available to all users as the rollout
-> completes.
-@z
-
-@x
 Profiles organize your MCP servers into named collections. Without profiles,
 you'd configure servers separately for every AI application you use. Each time
 you want to change which servers are available, you'd update Claude Desktop, VS

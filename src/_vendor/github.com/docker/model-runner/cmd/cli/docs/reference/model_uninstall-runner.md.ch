@@ -18,7 +18,7 @@ Uninstall Docker Model Runner (Docker Engine only)
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x

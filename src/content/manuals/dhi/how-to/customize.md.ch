@@ -5,10 +5,10 @@
 % snip 対応
 
 @x
-title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Select & Enterprise</span>'
 linkTitle: Customize an image or chart
 @y
-title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: 'Customize a Docker Hardened Image or chart <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Select & Enterprise</span>'
 linkTitle: Customize an image or chart
 @z
 
@@ -27,13 +27,13 @@ description: Learn how to customize Docker Hardened Images (DHI) and charts.
 @z
 
 @x
-When you have a Docker Hardened Images subscription, you can customize Docker
+When you have a DHI Select or DHI Enterprise subscription, you can customize Docker
 Hardened Images (DHI) and charts to suit your specific needs using the Docker
 Hub web interface. For images, this lets you select a base image, add packages,
 add OCI artifacts (such as custom certificates or additional tools), and
 configure settings. For charts, this lets you customize the image references.
 @y
-When you have a Docker Hardened Images subscription, you can customize Docker
+When you have a DHI Select or DHI Enterprise subscription, you can customize Docker
 Hardened Images (DHI) and charts to suit your specific needs using the Docker
 Hub web interface. For images, this lets you select a base image, add packages,
 add OCI artifacts (such as custom certificates or additional tools), and
@@ -77,15 +77,67 @@ mirrored DHI repository can create a customized image.
 @z
 
 @x
-### Create an image customization
+You can create customizations using either the DHI CLI or the Docker Hub web interface.
 @y
-### Create an image customization
+You can create customizations using either the DHI CLI or the Docker Hub web interface.
 @z
 
 @x
-To customize a Docker Hardened Image, follow these steps:
+### Customize using the DHI CLI
 @y
-To customize a Docker Hardened Image, follow these steps:
+### Customize using the DHI CLI
+@z
+
+@x
+The DHI CLI provides a command-line interface for managing Docker Hardened Image
+customizations. For installation instructions and usage details, see [Use
+the DHI CLI](./cli.md#customize-dhi-images).
+@y
+The DHI CLI provides a command-line interface for managing Docker Hardened Image
+customizations. For installation instructions and usage details, see [Use
+the DHI CLI](./cli.md#customize-dhi-images).
+@z
+
+@x
+#### Monitor customization builds
+@y
+#### Monitor customization builds
+@z
+
+@x
+List builds for a customization:
+@y
+List builds for a customization:
+@z
+
+% snip command...
+
+@x
+Get details of a specific build:
+@y
+Get details of a specific build:
+@z
+
+% snip command...
+
+@x
+View build logs:
+@y
+View build logs:
+@z
+
+% snip command...
+
+@x
+### Customize using the Docker Hub web interface
+@y
+### Customize using the Docker Hub web interface
+@z
+
+@x
+To customize a Docker Hardened Image using the web interface, follow these steps:
+@y
+To customize a Docker Hardened Image using the web interface, follow these steps:
 @z
 
 @x
@@ -125,23 +177,27 @@ To customize a Docker Hardened Image, follow these steps:
 @z
 
 @x
-   1. In the **Packages** drop-down, select the packages you want to add to the
-      image.
+   1. In the packages drop-down (labeled **Hardened packages** for Alpine
+      distributions or **Packages** for Debian distributions), select the
+      packages you want to add to the image.
 @y
-   1. In the **Packages** drop-down, select the packages you want to add to the
-      image.
+   1. In the packages drop-down (labeled **Hardened packages** for Alpine
+      distributions or **Packages** for Debian distributions), select the
+      packages you want to add to the image.
 @z
 
 @x
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For example, if you are customizing the Alpine
-      variant of the Python DHI, the list will include all Alpine system
-      packages.
+      selected image variant. For Alpine-based images, these are hardened
+      packages that have been built from source by Docker with cryptographic
+      signatures and full supply chain security. For Debian-based images,
+      these are standard Debian system packages.
 @y
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For example, if you are customizing the Alpine
-      variant of the Python DHI, the list will include all Alpine system
-      packages.
+      selected image variant. For Alpine-based images, these are hardened
+      packages that have been built from source by Docker with cryptographic
+      signatures and full supply chain security. For Debian-based images,
+      these are standard Debian system packages.
 @z
 
 @x

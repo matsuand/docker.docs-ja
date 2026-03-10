@@ -18,9 +18,9 @@ usage: docker model reinstall-runner
 % options:
 
 @x backend
-      description: 'Specify backend (llama.cpp|vllm). Default: llama.cpp'
+      description: 'Specify backend (llama.cpp|vllm|diffusers). Default: llama.cpp'
 @y
-      description: 'Specify backend (llama.cpp|vllm). Default: llama.cpp'
+      description: 'Specify backend (llama.cpp|vllm|diffusers). Default: llama.cpp'
 @z
 
 @x debug
@@ -53,6 +53,38 @@ usage: docker model reinstall-runner
 @y
       description: |
         Docker container port for Docker Model Runner (default: 12434 for Docker Engine, 12435 for Cloud mode)
+@z
+
+@x proxy-cert
+      description: Path to a CA certificate file for proxy SSL inspection
+@y
+      description: Path to a CA certificate file for proxy SSL inspection
+@z
+
+@x tls
+      description: Enable TLS/HTTPS for Docker Model Runner API
+@y
+      description: Enable TLS/HTTPS for Docker Model Runner API
+@z
+
+@x tls-cert
+      description: Path to TLS certificate file (auto-generated if not provided)
+@y
+      description: Path to TLS certificate file (auto-generated if not provided)
+@z
+
+@x tls-key
+      description: Path to TLS private key file (auto-generated if not provided)
+@y
+      description: Path to TLS private key file (auto-generated if not provided)
+@z
+
+@x tls-port
+      description: |
+        TLS port for Docker Model Runner (default: 12444 for Docker Engine, 12445 for Cloud mode)
+@y
+      description: |
+        TLS port for Docker Model Runner (default: 12444 for Docker Engine, 12445 for Cloud mode)
 @z
 
 % snip directives...

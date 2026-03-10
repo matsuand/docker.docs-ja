@@ -3,8 +3,8 @@
 
 @x
 command: docker model push
-short: Push a model to Docker Hub
-long: Push a model to Docker Hub
+short: Push a model to Docker Hub or Hugging Face
+long: Push a model to Docker Hub or Hugging Face
 usage: docker model push MODEL
 pname: docker model
 plink: docker_model.yaml
@@ -16,8 +16,8 @@ kubernetes: false
 swarm: false
 @y
 command: docker model push
-short: Push a model to Docker Hub
-long: Push a model to Docker Hub
+short: Push a model to Docker Hub or Hugging Face
+long: Push a model to Docker Hub or Hugging Face
 usage: docker model push MODEL
 pname: docker model
 plink: docker_model.yaml

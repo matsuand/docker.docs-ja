@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Select & Enterprise</span>'
 linkTitle: FIPS
 description: Learn how Docker Hardened Images support FIPS 140 through validated cryptographic modules to help organizations meet compliance requirements.
 keywords: docker fips, fips 140 images, fips docker images, docker compliance, secure container images
 @y
-title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: 'FIPS <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Select & Enterprise</span>'
 linkTitle: FIPS
 description: Learn how Docker Hardened Images support FIPS 140 through validated cryptographic modules to help organizations meet compliance requirements.
 keywords: docker fips, fips 140 images, fips docker images, docker compliance, secure container images
@@ -99,10 +99,10 @@ Using software components that rely on validated cryptographic modules can help 
 
 @x
 While Docker Hardened Images are available to all, the FIPS variant requires a
-Docker Hardened Images Enterprise subscription.
+paid Docker Hardened Images subscription.
 @y
 While Docker Hardened Images are available to all, the FIPS variant requires a
-Docker Hardened Images Enterprise subscription.
+paid Docker Hardened Images subscription.
 @z
 
 @x

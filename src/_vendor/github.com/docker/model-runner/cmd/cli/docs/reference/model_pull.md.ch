@@ -16,22 +16,6 @@ Pull a model from Docker Hub or HuggingFace to your local environment
 @z
 
 @x
-### Options
-@y
-### Options
-@z
-
-@x
-| Name                            | Type   | Default | Description                                                                       |
-|:--------------------------------|:-------|:--------|:----------------------------------------------------------------------------------|
-| `--ignore-runtime-memory-check` | `bool` |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
-@y
-| Name                            | Type   | Default | Description                                                                       |
-|:--------------------------------|:-------|:--------|:----------------------------------------------------------------------------------|
-| `--ignore-runtime-memory-check` | `bool` |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
-@z
-
-@x
 <!---MARKER_GEN_END-->
 @y
 <!---MARKER_GEN_END-->

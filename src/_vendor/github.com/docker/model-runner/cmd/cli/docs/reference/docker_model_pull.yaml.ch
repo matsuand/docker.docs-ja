@@ -7,55 +7,26 @@ short: Pull a model from Docker Hub or HuggingFace to your local environment
 long: |
     Pull a model to your local environment. Downloaded models also appear in the Docker Desktop Dashboard.
 usage: docker model pull MODEL
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: ignore-runtime-memory-check
-      value_type: bool
-      default_value: "false"
-      description: |
-        Do not block pull if estimated runtime memory for model exceeds system resources.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ### Pulling a model from Docker Hub
 @y
 command: docker model pull
 short: Pull a model from Docker Hub or HuggingFace to your local environment
 long: |
     Pull a model to your local environment. Downloaded models also appear in the Docker Desktop Dashboard.
 usage: docker model pull MODEL
-pname: docker model
-plink: docker_model.yaml
-options:
-    - option: ignore-runtime-memory-check
-      value_type: bool
-      default_value: "false"
-      description: |
-        Do not block pull if estimated runtime memory for model exceeds system resources.
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@z
+
+% pname
+% plink
+
+@x
+examples: |-
+    ### Pulling a model from Docker Hub
+@y
 examples: |-
     ### Pulling a model from Docker Hub
 @z
 
-@x
-    ```console
-    docker model pull ai/smollm2
-    ```
-@y
-    ```console
-    docker model pull ai/smollm2
-    ```
-@z
+% snip command...
 
 @x
     ### Pulling from HuggingFace
@@ -81,24 +52,5 @@ examples: |-
     `docker model pull hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF:Q4_K_S`
 @z
 
-@x
-    ```console
-    docker model pull hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@y
-    ```console
-    docker model pull hf.co/bartowski/Llama-3.2-1B-Instruct-GGUF
-    ```
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
-@z
+% snip command...
+% snip directives...

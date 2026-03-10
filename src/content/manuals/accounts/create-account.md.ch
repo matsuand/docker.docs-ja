@@ -50,9 +50,9 @@ Your Docker ID becomes your username for hosted Docker services, and
 @z
 
 @x
-## Create an account
+## Create and verify your account
 @y
-## アカウントの生成 {#create-an-account}
+## アカウントの生成と確認 {#create-and-verify-your-account}
 @z
 
 @x
@@ -63,10 +63,14 @@ Signing up with an email address, Google, or GitHub account requires additional 
 
 @x
 - If you sign up with Google or GitHub, you must first verify your email address with that provider.
-- If you sign up with an email address, Docker sends a verification email. Follow the procedures in that email to verify your account and complete the sign-up process.
+- If you sign up with an email address, you need to follow verification steps.
+  - After creating an account, Docker asks for a one-time password (OTP).
+  - Find the email from Docker with your code, then return to the OTP page to paste in your OTP code.
 @y
 - If you sign up with Google or GitHub, you must first verify your email address with that provider.
-- If you sign up with an email address, Docker sends a verification email. Follow the procedures in that email to verify your account and complete the sign-up process.
+- If you sign up with an email address, you need to follow verification steps.
+  - After creating an account, Docker asks for a one-time password (OTP).
+  - Find the email from Docker with your code, then return to the OTP page to paste in your OTP code.
 @z
 
 @x
@@ -86,13 +90,13 @@ Docker blocks sign-in until you've verified your account.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
    you can't reuse it in the future if you deactivate this account. Your username: - Must be between 4 and 30 characters long - Can only contain numbers and lowercase letters
 1. Choose a password that's at least 9 characters long, then select **Sign Up**.
-1. Verify your email address when you receive the Docker verification email. This completes the registration process.
+1. Verify your email address when you receive the Docker OTP verification email. This completes the registration process.
 @y
 1. Go to the [Docker sign-up page](https://app.docker.com/signup/) and enter a unique, valid email address.
 1. Enter a username to use as your Docker ID. Once you create your Docker ID
    you can't reuse it in the future if you deactivate this account. Your username: - Must be between 4 and 30 characters long - Can only contain numbers and lowercase letters
 1. Choose a password that's at least 9 characters long, then select **Sign Up**.
-1. Verify your email address when you receive the Docker verification email. This completes the registration process.
+1. Verify your email address when you receive the Docker OTP verification email. This completes the registration process.
 @z
 
 @x

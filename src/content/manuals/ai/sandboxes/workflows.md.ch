@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Using sandboxes effectively
 linkTitle: Workflows
@@ -35,17 +37,7 @@ Create a sandbox for your project:
 Create a sandbox for your project:
 @z
 
-@x
-```console
-$ cd ~/my-project
-$ docker sandbox run AGENT
-```
-@y
-```console
-$ cd ~/my-project
-$ docker sandbox run AGENT
-```
-@z
+% snip command...
 
 @x
 Replace `AGENT` with your preferred agent (`claude`, `codex`, `copilot`, etc.).
@@ -57,15 +49,7 @@ The workspace defaults to your current directory when omitted. You can also
 specify an explicit path:
 @z
 
-@x
-```console
-$ docker sandbox run AGENT ~/my-project
-```
-@y
-```console
-$ docker sandbox run AGENT ~/my-project
-```
-@z
+% snip command...
 
 @x
 The `docker sandbox run` command is idempotent. Running the same command
@@ -75,17 +59,7 @@ The `docker sandbox run` command is idempotent. Running the same command
 multiple times reuses the existing sandbox instead of creating a new one:
 @z
 
-@x
-```console
-$ docker sandbox run AGENT ~/my-project  # Creates sandbox
-$ docker sandbox run AGENT ~/my-project  # Reuses same sandbox
-```
-@y
-```console
-$ docker sandbox run AGENT ~/my-project  # Creates sandbox
-$ docker sandbox run AGENT ~/my-project  # Reuses same sandbox
-```
-@z
+% snip command...
 
 @x
 This works with workspace path (absolute or relative) or omitted workspace. The
@@ -97,15 +71,7 @@ sandbox persists. Stop and restart it without losing installed packages or
 configuration:
 @z
 
-@x
-```console
-$ docker sandbox run <sandbox-name>  # Reconnect by name
-```
-@y
-```console
-$ docker sandbox run <sandbox-name>  # Reconnect by name
-```
-@z
+% snip command...
 
 @x
 When using the `--name` flag, the behavior is also idempotent based on the
@@ -115,17 +81,7 @@ When using the `--name` flag, the behavior is also idempotent based on the
 name:
 @z
 
-@x
-```console
-$ docker sandbox run --name dev AGENT  # Creates sandbox named "dev"
-$ docker sandbox run --name dev AGENT  # Reuses sandbox "dev"
-```
-@y
-```console
-$ docker sandbox run --name dev AGENT  # Creates sandbox named "dev"
-$ docker sandbox run --name dev AGENT  # Reuses sandbox "dev"
-```
-@z
+% snip command...
 
 @x
 ## Installing dependencies
@@ -139,25 +95,7 @@ Ask the agent to install what's needed:
 Ask the agent to install what's needed:
 @z
 
-@x
-```plaintext
-You: "Install pytest and black"
-Agent: [Installs packages via pip]
-@y
-```plaintext
-You: "Install pytest and black"
-Agent: [Installs packages via pip]
-@z
-
-@x
-You: "Install build-essential"
-Agent: [Installs via apt]
-```
-@y
-You: "Install build-essential"
-Agent: [Installs via apt]
-```
-@z
+% snip text...
 
 @x
 The agent has sudo access. Installed packages persist for the sandbox lifetime.
@@ -195,25 +133,7 @@ runs inside the sandbox's private Docker daemon.
 ### Testing containerized apps
 @z
 
-@x
-```plaintext
-You: "Build the Docker image and run the tests"
-@y
-```plaintext
-You: "Build the Docker image and run the tests"
-@z
-
-@x
-Agent: *runs*
-  docker build -t myapp:test .
-  docker run myapp:test npm test
-```
-@y
-Agent: *runs*
-  docker build -t myapp:test .
-  docker run myapp:test npm test
-```
-@z
+% snip text...
 
 @x
 Containers started by the agent run inside the sandbox, not on your host. They
@@ -229,27 +149,7 @@ don't appear in your host's `docker ps`.
 ### Multi-container stacks
 @z
 
-@x
-```plaintext
-You: "Start the application with docker-compose and run integration tests"
-@y
-```plaintext
-You: "Start the application with docker-compose and run integration tests"
-@z
-
-@x
-Agent: *runs*
-  docker-compose up -d
-  docker-compose exec api pytest tests/integration
-  docker-compose down
-```
-@y
-Agent: *runs*
-  docker-compose up -d
-  docker-compose exec api pytest tests/integration
-  docker-compose down
-```
-@z
+% snip text...
 
 @x
 Remove the sandbox, and all images, containers, and volumes are deleted.
@@ -347,16 +247,12 @@ Review what changed:
 Review what changed:
 @z
 
-@x
-```console
+@x within code
 $ git status                        # See modified and new files
 $ git diff                          # Review changes to tracked files
-```
 @y
-```console
 $ git status                        # See modified and new files
 $ git diff                          # Review changes to tracked files
-```
 @z
 
 @x
@@ -387,19 +283,7 @@ Create sandboxes for different projects:
 Create sandboxes for different projects:
 @z
 
-@x
-```console
-$ docker sandbox create claude ~/project-a
-$ docker sandbox create codex ~/project-b
-$ docker sandbox create copilot ~/work/client-project
-```
-@y
-```console
-$ docker sandbox create claude ~/project-a
-$ docker sandbox create codex ~/project-b
-$ docker sandbox create copilot ~/work/client-project
-```
-@z
+% snip command...
 
 @x
 Each sandbox is completely isolated. Switch between them by running the
@@ -415,15 +299,7 @@ Remove unused sandboxes to reclaim disk space:
 Remove unused sandboxes to reclaim disk space:
 @z
 
-@x
-```console
-$ docker sandbox rm <sandbox-name>
-```
-@y
-```console
-$ docker sandbox rm <sandbox-name>
-```
-@z
+% snip command...
 
 @x
 ## Named sandboxes
@@ -441,15 +317,7 @@ directory (for example, `claude-my-project`). You can also specify custom names
 using the `--name` flag:
 @z
 
-@x
-```console
-$ docker sandbox run --name myproject AGENT ~/project
-```
-@y
-```console
-$ docker sandbox run --name myproject AGENT ~/project
-```
-@z
+% snip command...
 
 @x
 Create multiple sandboxes for the same workspace:
@@ -457,19 +325,7 @@ Create multiple sandboxes for the same workspace:
 Create multiple sandboxes for the same workspace:
 @z
 
-@x
-```console
-$ docker sandbox create --name dev claude ~/project
-$ docker sandbox create --name staging codex ~/project
-$ docker sandbox run dev
-```
-@y
-```console
-$ docker sandbox create --name dev claude ~/project
-$ docker sandbox create --name staging codex ~/project
-$ docker sandbox run dev
-```
-@z
+% snip command...
 
 @x
 Each maintains separate packages, Docker images, and state, but share the
@@ -493,15 +349,7 @@ Mount multiple directories into a single sandbox for working with related
 projects or when the agent needs access to documentation and shared libraries.
 @z
 
-@x
-```console
-$ docker sandbox run AGENT ~/my-project ~/shared-docs
-```
-@y
-```console
-$ docker sandbox run AGENT ~/my-project ~/shared-docs
-```
-@z
+% snip command...
 
 @x
 The primary workspace (first argument) is always mounted read-write. Additional
@@ -523,15 +371,7 @@ Mount additional workspaces as read-only by appending `:ro` or `:readonly`:
 Mount additional workspaces as read-only by appending `:ro` or `:readonly`:
 @z
 
-@x
-```console
-$ docker sandbox run AGENT . /path/to/docs:ro /path/to/lib:readonly
-```
-@y
-```console
-$ docker sandbox run AGENT . /path/to/docs:ro /path/to/lib:readonly
-```
-@z
+% snip command...
 
 @x
 The primary workspace remains fully writable while read-only workspaces are
@@ -561,17 +401,7 @@ Example:
 Example:
 @z
 
-@x
-```console
-$ cd /Users/bob/projects
-$ docker sandbox run AGENT ./app ~/docs:ro
-```
-@y
-```console
-$ cd /Users/bob/projects
-$ docker sandbox run AGENT ./app ~/docs:ro
-```
-@z
+% snip command...
 
 @x
 Inside the sandbox:
@@ -607,29 +437,7 @@ A single path can be included in multiple sandboxes simultaneously:
 A single path can be included in multiple sandboxes simultaneously:
 @z
 
-@x
-```console
-$ docker sandbox create --name sb1 claude ./project-a
-$ docker sandbox create --name sb2 claude ./project-a ./project-b
-$ docker sandbox create --name sb3 cagent ./project-a
-$ docker sandbox ls
-SANDBOX   AGENT    STATUS    WORKSPACE
-sb1       claude   running   /Users/bob/src/project-a
-sb2       claude   running   /Users/bob/src/project-a, /Users/bob/src/project-b
-sb3       cagent   running   /Users/bob/src/project-a
-```
-@y
-```console
-$ docker sandbox create --name sb1 claude ./project-a
-$ docker sandbox create --name sb2 claude ./project-a ./project-b
-$ docker sandbox create --name sb3 cagent ./project-a
-$ docker sandbox ls
-SANDBOX   AGENT    STATUS    WORKSPACE
-sb1       claude   running   /Users/bob/src/project-a
-sb2       claude   running   /Users/bob/src/project-a, /Users/bob/src/project-b
-sb3       cagent   running   /Users/bob/src/project-a
-```
-@z
+% snip command...
 
 @x
 Each sandbox runs in isolation with separate configurations while sharing the
@@ -653,15 +461,7 @@ If you encounter issues with sandbox state, use the reset command to clean up
 all VMs and registries:
 @z
 
-@x
-```console
-$ docker sandbox reset
-```
-@y
-```console
-$ docker sandbox reset
-```
-@z
+% snip command...
 
 @x
 This command:
@@ -701,15 +501,7 @@ Access the sandbox directly with an interactive shell:
 Access the sandbox directly with an interactive shell:
 @z
 
-@x
-```console
-$ docker sandbox exec -it <sandbox-name> bash
-```
-@y
-```console
-$ docker sandbox exec -it <sandbox-name> bash
-```
-@z
+% snip command...
 
 @x
 Inside the shell, you can inspect the environment, manually install packages,
@@ -719,17 +511,7 @@ Inside the shell, you can inspect the environment, manually install packages,
 or check Docker containers:
 @z
 
-@x
-```console
-agent@sandbox:~$ docker ps
-agent@sandbox:~$ docker images
-```
-@y
-```console
-agent@sandbox:~$ docker ps
-agent@sandbox:~$ docker images
-```
-@z
+% snip command...
 
 @x
 List all sandboxes:
@@ -737,12 +519,4 @@ List all sandboxes:
 List all sandboxes:
 @z
 
-@x
-```console
-$ docker sandbox ls
-```
-@y
-```console
-$ docker sandbox ls
-```
-@z
+% snip command...

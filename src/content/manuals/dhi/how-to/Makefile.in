@@ -238,20 +238,22 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md    \
-	build.md     \
-	compare.md   \
-	customize.md \
-	debug.md     \
-	els.md       \
-	explore.md   \
-	helm.md      \
-	k8s.md       \
-	manage.md    \
-	mirror.md    \
-	policies.md  \
-	scan.md      \
-	use.md       \
+	_index.md            \
+	build.md             \
+	cli.md               \
+	compare.md           \
+	customize.md         \
+	debug.md             \
+	els.md               \
+	explore.md           \
+	hardened-packages.md \
+	helm.md              \
+	k8s.md               \
+	manage.md            \
+	mirror.md            \
+	policies.md          \
+	scan.md              \
+	use.md               \
 	verify.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

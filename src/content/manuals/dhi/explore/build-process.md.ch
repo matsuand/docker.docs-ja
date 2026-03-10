@@ -16,25 +16,25 @@ keywords: docker hardened images, slsa build level 3, automated patching, ai gua
 @x
 Docker Hardened Images are built through an automated pipeline that monitors
 upstream sources, applies security updates, and publishes signed artifacts.
-This page explains the build process for both base DHI images and DHI Enterprise
-customized images.
+This page explains the build process for both base DHI images and customized
+images available with DHI Select and DHI Enterprise subscriptions.
 @y
 Docker Hardened Images are built through an automated pipeline that monitors
 upstream sources, applies security updates, and publishes signed artifacts.
-This page explains the build process for both base DHI images and DHI Enterprise
-customized images.
+This page explains the build process for both base DHI images and customized
+images available with DHI Select and DHI Enterprise subscriptions.
 @z
 
 @x
-With a DHI Enterprise subscription, the automated security update pipeline for
+With DHI Select or DHI Enterprise subscriptions, the automated security update pipeline for
 both base and customized images is backed by SLA commitments, including a 7-day
-SLA for critical and high severity vulnerabilities. Only DHI Enterprise includes
-SLAs. DHI Free offers a secure baseline but no guaranteed remediation timelines.
+SLA for critical and high severity vulnerabilities. DHI Community offers a secure baseline
+but no guaranteed remediation timelines.
 @y
-With a DHI Enterprise subscription, the automated security update pipeline for
+With DHI Select or DHI Enterprise subscriptions, the automated security update pipeline for
 both base and customized images is backed by SLA commitments, including a 7-day
-SLA for critical and high severity vulnerabilities. Only DHI Enterprise includes
-SLAs. DHI Free offers a secure baseline but no guaranteed remediation timelines.
+SLA for critical and high severity vulnerabilities. DHI Community offers a secure baseline
+but no guaranteed remediation timelines.
 @z
 
 @x
@@ -180,9 +180,9 @@ the support window that use that package.
 @z
 
 @x
-### Customization changes {tier="DHI Enterprise"}
+### Customization changes {tier="DHI Select and Enterprise"}
 @y
-### Customization changes {tier="DHI Enterprise"}
+### Customization changes {tier="DHI Select and Enterprise"}
 @z
 
 @x
@@ -200,12 +200,12 @@ images.
 @z
 
 @x
-When you customize a DHI image with DHI Enterprise, your changes are packaged as
+When you customize a DHI image with DHI Select or DHI Enterprise, your changes are packaged as
 OCI artifacts that layer on top of the base image. Docker monitors your artifact
 repositories and automatically rebuilds your customized images whenever you push
 updates.
 @y
-When you customize a DHI image with DHI Enterprise, your changes are packaged as
+When you customize a DHI image with DHI Select or DHI Enterprise, your changes are packaged as
 OCI artifacts that layer on top of the base image. Docker monitors your artifact
 repositories and automatically rebuilds your customized images whenever you push
 updates.
@@ -364,9 +364,9 @@ The following diagram shows the base image build flow:
 @z
 
 @x
-### Customized image pipeline {tier="DHI Enterprise"}
+### Customized image pipeline {tier="DHI Select and Enterprise"}
 @y
-### Customized image pipeline {tier="DHI Enterprise"}
+### Customized image pipeline {tier="DHI Select and Enterprise"}
 @z
 
 @x
@@ -376,9 +376,9 @@ The following diagram shows the base image build flow:
 @z
 
 @x
-When you customize a DHI image with DHI Enterprise, the build process is simplified:
+When you customize a DHI image with DHI Select or DHI Enterprise, the build process is simplified:
 @y
-When you customize a DHI image with DHI Enterprise, the build process is simplified:
+When you customize a DHI image with DHI Select or DHI Enterprise, the build process is simplified:
 @z
 
 @x

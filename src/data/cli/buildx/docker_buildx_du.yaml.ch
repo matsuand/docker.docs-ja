@@ -27,6 +27,12 @@ usage: docker buildx du
       description: Format the output
 @z
 
+@x timeout
+      description: Override the default timeout for loading builder status
+@y
+      description: Override the default timeout for loading builder status
+@z
+
 @x verbose
       description: Shorthand for `--format=pretty`
 @y

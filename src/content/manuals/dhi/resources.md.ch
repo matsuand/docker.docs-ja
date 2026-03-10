@@ -114,6 +114,8 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   keys and verification tools
 - [Log](https://github.com/docker-hardened-images/log): Log of references (tag >
   digest) for Docker Hardened Images
+- [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
+  interface for managing and interacting with Docker Hardened Images
 - [Discussions](https://github.com/orgs/docker-hardened-images/discussions):
   Community forum and product discussions
 @y
@@ -125,6 +127,8 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   keys and verification tools
 - [ログ](https://github.com/docker-hardened-images/log): Log of references (tag >
   digest) for Docker Hardened Images
+- [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
+  interface for managing and interacting with Docker Hardened Images
 - [ディスカッション](https://github.com/orgs/docker-hardened-images/discussions):
   Community forum and product discussions
 @z
@@ -137,26 +141,26 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
 
 @x
 - [Start a free trial](https://hub.docker.com/hardened-images/start-free-trial):
-  Explore DHI Enterprise features including FIPS/STIG variants, customization,
+  Explore DHI Select and Enterprise features including FIPS/STIG variants, customization,
   and SLA-backed support
 - [Request a demo](https://www.docker.com/products/hardened-images/#getstarted): Get a
-  personalized demo and information about DHI Enterprise subscriptions
+  personalized demo and information about DHI Select and Enterprise subscriptions
 - [Request an image](https://github.com/docker-hardened-images/catalog/issues):
   Submit a request for a specific Docker Hardened Image
 - [Contact Sales](https://www.docker.com/pricing/contact-sales/): Connect with
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
-  for DHI Enterprise customers
+  for DHI Select and Enterprise customers
 @y
 - [Start a free trial](https://hub.docker.com/hardened-images/start-free-trial):
-  Explore DHI Enterprise features including FIPS/STIG variants, customization,
+  Explore DHI Select and Enterprise features including FIPS/STIG variants, customization,
   and SLA-backed support
 - [Request a demo](https://www.docker.com/products/hardened-images/#getstarted): Get a
-  personalized demo and information about DHI Enterprise subscriptions
+  personalized demo and information about DHI Select and Enterprise subscriptions
 - [Request an image](https://github.com/docker-hardened-images/catalog/issues):
   Submit a request for a specific Docker Hardened Image
 - [Contact Sales](https://www.docker.com/pricing/contact-sales/): Connect with
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
-  for DHI Enterprise customers
+  for DHI Select and Enterprise customers
 @z

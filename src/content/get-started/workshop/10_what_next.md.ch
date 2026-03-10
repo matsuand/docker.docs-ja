@@ -98,13 +98,13 @@ summary: |
 @z
 
 @x
-- title: Build AI agents with cagent
+- title: Build AI agents with Docker Agent
   description: Create teams of specialized AI agents that collaborate to solve complex problems.
-  link: /ai/cagent/
+  link: /ai/docker-agent/
 @y
-- title: Build AI agents with cagent
+- title: Build AI agents with Docker Agent
   description: Create teams of specialized AI agents that collaborate to solve complex problems.
-  link: __SUBDIR__/ai/cagent/
+  link: __SUBDIR__/ai/docker-agent/
 @z
 
 @x

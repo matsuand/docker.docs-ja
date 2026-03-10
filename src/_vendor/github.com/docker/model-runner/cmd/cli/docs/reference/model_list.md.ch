@@ -18,7 +18,7 @@ List the models pulled to your local environment
 @x
 ### Aliases
 @y
-### Aliases
+### エイリアス {#aliases}
 @z
 
 @x
@@ -30,21 +30,23 @@ List the models pulled to your local environment
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
-| Name            | Type   | Default | Description                     |
-|:----------------|:-------|:--------|:--------------------------------|
-| `--json`        | `bool` |         | List models in a JSON format    |
-| `--openai`      | `bool` |         | List models in an OpenAI format |
-| `-q`, `--quiet` | `bool` |         | Only show model IDs             |
+| Name            | Type     | Default | Description                                            |
+|:----------------|:---------|:--------|:-------------------------------------------------------|
+| `--json`        | `bool`   |         | List models in a JSON format                           |
+| `--openai`      | `bool`   |         | List models in an OpenAI format                        |
+| `--openaiurl`   | `string` |         | OpenAI-compatible API endpoint URL to list models from |
+| `-q`, `--quiet` | `bool`   |         | Only show model IDs                                    |
 @y
-| Name            | Type   | Default | Description                     |
-|:----------------|:-------|:--------|:--------------------------------|
-| `--json`        | `bool` |         | List models in a JSON format    |
-| `--openai`      | `bool` |         | List models in an OpenAI format |
-| `-q`, `--quiet` | `bool` |         | Only show model IDs             |
+| Name            | Type     | Default | Description                                            |
+|:----------------|:---------|:--------|:-------------------------------------------------------|
+| `--json`        | `bool`   |         | List models in a JSON format                           |
+| `--openai`      | `bool`   |         | List models in an OpenAI format                        |
+| `--openaiurl`   | `string` |         | OpenAI-compatible API endpoint URL to list models from |
+| `-q`, `--quiet` | `bool`   |         | Only show model IDs                                    |
 @z
 
 @x

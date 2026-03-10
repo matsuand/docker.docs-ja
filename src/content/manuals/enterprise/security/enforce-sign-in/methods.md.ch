@@ -451,12 +451,12 @@ Create the `registry.json` file (UTF-8 without BOM) at the appropriate location:
 > [!TIP]
 >
 > If users have issues starting Docker Desktop after enforcing sign-in,
-they may need to update to the latest version.
+> they may need to update to the latest version.
 @y
 > [!TIP]
 >
 > If users have issues starting Docker Desktop after enforcing sign-in,
-they may need to update to the latest version.
+> they may need to update to the latest version.
 @z
 
 @x
@@ -601,24 +601,14 @@ When multiple configuration methods exist on the same system, Docker Desktop use
 
 @x
 1. Registry key (Windows only)
-2. Configuration profiles (macOS only)
-3. plist file (macOS only)
-4. registry.json file
+1. Configuration profiles (macOS only)
+1. plist file (macOS only)
+1. registry.json file
 @y
 1. Registry key (Windows only)
-2. Configuration profiles (macOS only)
-3. plist file (macOS only)
-4. registry.json file
-@z
-
-@x
-> [!IMPORTANT]
->
-> Docker Desktop version 4.36 and later supports multiple organizations in a single configuration. Earlier versions (4.35 and below) fail silently when multiple organizations are specified.
-@y
-> [!IMPORTANT]
->
-> Docker Desktop version 4.36 and later supports multiple organizations in a single configuration. Earlier versions (4.35 and below) fail silently when multiple organizations are specified.
+1. Configuration profiles (macOS only)
+1. plist file (macOS only)
+1. registry.json file
 @z
 
 @x

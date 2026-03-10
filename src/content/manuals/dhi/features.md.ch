@@ -32,27 +32,27 @@ DHI provides security for everyone:
 @z
 
 @x
-- [DHI Free](#dhi-free-features) provides core security features available to
-  everyone with no licensing restrictions under Apache 2.0
-- [DHI Enterprise subscription
-  features](#dhi-enterprise-subscription-features) add
-  SLA-backed security updates, compliance variants (like FIPS and STIG), image
-  customization, and optional Extended Lifecycle Support (ELS) for post-EOL
-  coverage
+- [DHI Community](#dhi-community-features) provides core security features available to
+  everyone with no licensing restrictions under Apache 2.0.
+- [DHI Select and DHI Enterprise](#dhi-select-and-enterprise-features) add SLA-backed
+  security updates, FIPS/STIG compliance variants, and customization
+  capabilities, with DHI Enterprise offering unlimited customization, full
+  catalog access, and optional Extended Lifecycle Support (ELS) for post-EOL
+  coverage.
 @y
-- [DHI Free](#dhi-free-features) provides core security features available to
-  everyone with no licensing restrictions under Apache 2.0
-- [DHI Enterprise subscription
-  features](#dhi-enterprise-subscription-features) add
-  SLA-backed security updates, compliance variants (like FIPS and STIG), image
-  customization, and optional Extended Lifecycle Support (ELS) for post-EOL
-  coverage
+- [DHI Community](#dhi-community-features) provides core security features available to
+  everyone with no licensing restrictions under Apache 2.0.
+- [DHI Select and DHI Enterprise](#dhi-select-and-enterprise-features) add SLA-backed
+  security updates, FIPS/STIG compliance variants, and customization
+  capabilities, with DHI Enterprise offering unlimited customization, full
+  catalog access, and optional Extended Lifecycle Support (ELS) for post-EOL
+  coverage.
 @z
 
 @x
-## DHI Free features
+## DHI Community features
 @y
-## DHI Free features
+## DHI Community features
 @z
 
 @x
@@ -71,18 +71,56 @@ licensing surprises, backed by an Apache 2.0 license.
 
 @x
 - Near-zero CVEs: Continuously scanned and patched to maintain minimal known
-  exploitable vulnerabilities, with no SLA-backed time commitments for non-DHI
-  Enterprise users
+  exploitable vulnerabilities, with no SLA-backed time commitments for DHI Community users
 - Minimal attack surface: Distroless variants reduce attack surface by up to 95% by removing unnecessary components
 - Non-root execution: Run as non-root by default, following the principle of least privilege
 - Transparent vulnerability reporting: Every CVE is visible and assessed using public data—no suppressed feeds or proprietary scoring
 @y
 - Near-zero CVEs: Continuously scanned and patched to maintain minimal known
-  exploitable vulnerabilities, with no SLA-backed time commitments for non-DHI
-  Enterprise users
+  exploitable vulnerabilities, with no SLA-backed time commitments for DHI Community users
 - Minimal attack surface: Distroless variants reduce attack surface by up to 95% by removing unnecessary components
 - Non-root execution: Run as non-root by default, following the principle of least privilege
 - Transparent vulnerability reporting: Every CVE is visible and assessed using public data—no suppressed feeds or proprietary scoring
+@z
+
+@x
+### Hardened system packages
+@y
+### Hardened system packages
+@z
+
+@x
+Docker Hardened Images maintain supply chain integrity throughout the entire
+image stack with hardened system packages:
+@y
+Docker Hardened Images maintain supply chain integrity throughout the entire
+image stack with hardened system packages:
+@z
+
+@x
+- Source-built packages: For supported distributions, system packages are built
+  from source code by Docker
+- Cryptographic signatures: Every package is cryptographically signed and verified
+- Supply chain security: Eliminates risk from potentially compromised public packages
+@y
+- Source-built packages: For supported distributions, system packages are built
+  from source code by Docker
+- Cryptographic signatures: Every package is cryptographically signed and verified
+- Supply chain security: Eliminates risk from potentially compromised public packages
+@z
+
+@x
+Hardened system packages are included in supported distributions of DHI images.
+Community users can also configure their package manager to use Docker's public
+hardened package repository in their own images for the same packages included
+in the base images. See [Use hardened system packages](./how-to/hardened-packages.md)
+for details.
+@y
+Hardened system packages are included in supported distributions of DHI images.
+Community users can also configure their package manager to use Docker's public
+hardened package repository in their own images for the same packages included
+in the base images. See [Use hardened system packages](./how-to/hardened-packages.md)
+for details.
 @z
 
 @x
@@ -200,23 +238,61 @@ metadata to ensure transparency and trust:
 @z
 
 @x
-## DHI Enterprise subscription features
+## DHI Select and Enterprise features
 @y
-## DHI Enterprise subscription features
+## DHI Select and Enterprise features
 @z
 
 @x
 For organizations with strict security requirements, regulatory demands, or
-operational needs, DHI Enterprise delivers additional capabilities.
+operational needs, DHI Select and Enterprise deliver additional capabilities.
 @y
 For organizations with strict security requirements, regulatory demands, or
-operational needs, DHI Enterprise delivers additional capabilities.
+operational needs, DHI Select and Enterprise deliver additional capabilities.
 @z
 
 @x
-### Compliance variants {tier="DHI Enterprise"}
+DHI Select offers customizations, compliance variants, and SLA-backed updates
+for teams and organizations with production workloads. DHI Enterprise includes
+everything in Select with unlimited customizations, plus an optional Extended
+Lifecycle Support add-on and full catalog access for large enterprises with
+advanced security needs.
 @y
-### Compliance variants {tier="DHI Enterprise"}
+DHI Select offers customizations, compliance variants, and SLA-backed updates
+for teams and organizations with production workloads. DHI Enterprise includes
+everything in Select with unlimited customizations, plus an optional Extended
+Lifecycle Support add-on and full catalog access for large enterprises with
+advanced security needs.
+@z
+
+@x
+For a detailed comparison, see [Docker Hardened Images subscription
+comparison](https://www.docker.com/products/hardened-images/#compare).
+@y
+For a detailed comparison, see [Docker Hardened Images subscription
+comparison](https://www.docker.com/products/hardened-images/#compare).
+@z
+
+@x
+### SLA-backed security {tier="DHI Select & DHI Enterprise"}
+@y
+### SLA-backed security {tier="DHI Select & DHI Enterprise"}
+@z
+
+@x
+- CVE remediation SLA: 7-day SLA for critical and high severity vulnerabilities
+- Continuous patching: Regular security updates backed by SLA commitments
+- Enterprise support: Access to Docker's support team for mission-critical applications
+@y
+- CVE remediation SLA: 7-day SLA for critical and high severity vulnerabilities
+- Continuous patching: Regular security updates backed by SLA commitments
+- Enterprise support: Access to Docker's support team for mission-critical applications
+@z
+
+@x
+### Compliance variants {tier="DHI Select & DHI Enterprise"}
+@y
+### Compliance variants {tier="DHI Select & DHI Enterprise"}
 @z
 
 @x
@@ -228,38 +304,32 @@ operational needs, DHI Enterprise delivers additional capabilities.
 @z
 
 @x
-### SLA-backed security {tier="DHI Enterprise"}
+### Customization and control {tier="DHI Select & DHI Enterprise"}
 @y
-### SLA-backed security {tier="DHI Enterprise"}
-@z
-
-@x
-- CVE remediation SLA: 7-day SLA for critical and high severity vulnerabilities,
-  with SLA commitments for other severity levels
-- ELS CVE remediation SLA: Extended Lifecycle Support images have SLA commitments
-  for CVE remediation, even after upstream end-of-life
-- Enterprise support: Access to Docker's support team for mission-critical applications
-@y
-- CVE remediation SLA: 7-day SLA for critical and high severity vulnerabilities,
-  with SLA commitments for other severity levels
-- ELS CVE remediation SLA: Extended Lifecycle Support images have SLA commitments
-  for CVE remediation, even after upstream end-of-life
-- Enterprise support: Access to Docker's support team for mission-critical applications
-@z
-
-@x
-### Customization and control {tier="DHI Enterprise"}
-@y
-### Customization and control {tier="DHI Enterprise"}
+### Customization and control {tier="DHI Select & DHI Enterprise"}
 @z
 
 @x
 - Build custom images: Add your own packages, tools, certificates, and configurations
+  - DHI Select: Up to 5 customizations
+  - DHI Enterprise: Unlimited customizations
+- Hardened packages: Access to additional compliance-specific packages (such as
+  FIPS variants) and Docker-patched packages not available in the public repository
+  - DHI Select: Add these packages through the customization UI when customizing hardened images
+  - DHI Enterprise: Add these packages through the customization UI, or configure
+    your package manager to use the enterprise package repository in your own images
 - Secure build infrastructure: Customizations built on Docker's trusted infrastructure
 - Full chain of trust: Customized images maintain provenance and cryptographic signing
 - Automatic updates: Custom images are automatically rebuilt when base images are patched
 @y
 - Build custom images: Add your own packages, tools, certificates, and configurations
+  - DHI Select: Up to 5 customizations
+  - DHI Enterprise: Unlimited customizations
+- Hardened packages: Access to additional compliance-specific packages (such as
+  FIPS variants) and Docker-patched packages not available in the public repository
+  - DHI Select: Add these packages through the customization UI when customizing hardened images
+  - DHI Enterprise: Add these packages through the customization UI, or configure
+    your package manager to use the enterprise package repository in your own images
 - Secure build infrastructure: Customizations built on Docker's trusted infrastructure
 - Full chain of trust: Customized images maintain provenance and cryptographic signing
 - Automatic updates: Custom images are automatically rebuilt when base images are patched
@@ -292,7 +362,7 @@ operational needs, DHI Enterprise delivers additional capabilities.
 - [Get started using DHIs](/dhi/get-started/)
 - [Contact Docker for DHI Enterprise](https://www.docker.com/pricing/contact-sales/)
 @y
-- [Explore how DHI images are built and more](__SUBDIR__/dhi/explore/)
-- [Get started using DHIs](__SUBDIR__/dhi/get-started/)
+- [Explore how DHI images are built and more](/dhi/explore/)
+- [Get started using DHIs](/dhi/get-started/)
 - [Contact Docker for DHI Enterprise](https://www.docker.com/pricing/contact-sales/)
 @z

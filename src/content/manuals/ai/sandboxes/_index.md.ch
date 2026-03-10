@@ -6,10 +6,10 @@
 
 @x
 title: Docker Sandboxes
-description: Run AI agents in isolated environments
+description: Run AI coding agents in isolated environments
 @y
 title: Docker Sandboxes
-description: Run AI agents in isolated environments
+description: Run AI coding agents in isolated environments
 @z
 
 @x
@@ -202,7 +202,7 @@ Docker Sandboxes works with multiple AI coding agents:
 - **Copilot** - GitHub Copilot agent (in development)
 - **Gemini** - Google's Gemini agent (in development)
 - **OpenCode** - Multi-provider agent with TUI interface (in development)
-- **cagent** - Docker's multi-provider coding agent (in development)
+- **[Docker Agent](/ai/docker-agent/)** - Docker's multi-provider coding agent (in development)
 - **Kiro** - Interactive agent with device flow auth (in development)
 - **Shell** - Minimal sandbox for manual agent installation
 @y
@@ -211,7 +211,7 @@ Docker Sandboxes works with multiple AI coding agents:
 - **Copilot** - GitHub Copilot agent (in development)
 - **Gemini** - Google's Gemini agent (in development)
 - **OpenCode** - Multi-provider agent with TUI interface (in development)
-- **cagent** - Docker's multi-provider coding agent (in development)
+- **[Docker Agent](__SUBDIR__/ai/docker-agent/)** - Docker's multi-provider coding agent (in development)
 - **Kiro** - Interactive agent with device flow auth (in development)
 - **Shell** - Minimal sandbox for manual agent installation
 @z

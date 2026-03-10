@@ -212,6 +212,44 @@ For more details, see [Verify image attestations](../how-to/verify.md#verify-ima
 @z
 
 @x
+## Package attestations
+@y
+## Package attestations
+@z
+
+@x
+In addition to image-level attestations, Docker hardened packages also include
+their own attestations. These package-level attestations provide provenance and
+build information for individual packages within an image, allowing you to
+trace the supply chain at a granular level.
+@y
+In addition to image-level attestations, Docker hardened packages also include
+their own attestations. These package-level attestations provide provenance and
+build information for individual packages within an image, allowing you to
+trace the supply chain at a granular level.
+@z
+
+@x
+Package attestations include similar information as image attestations, such as
+SLSA provenance, showing how each package was built and what materials were
+used. You can extract package information from an image's attestations and then
+retrieve the package's own attestations recursively.
+@y
+Package attestations include similar information as image attestations, such as
+SLSA provenance, showing how each package was built and what materials were
+used. You can extract package information from an image's attestations and then
+retrieve the package's own attestations recursively.
+@z
+
+@x
+For detailed instructions on how to access and verify package attestations, see
+[Package attestations](../how-to/hardened-packages.md#package-attestations).
+@y
+For detailed instructions on how to access and verify package attestations, see
+[Package attestations](../how-to/hardened-packages.md#package-attestations).
+@z
+
+@x
 ## Helm chart attestations
 @y
 ## Helm chart attestations

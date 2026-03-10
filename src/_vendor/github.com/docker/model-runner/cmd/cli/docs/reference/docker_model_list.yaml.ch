@@ -6,13 +6,13 @@ command: docker model list
 aliases: docker model list, docker model ls
 short: List the models pulled to your local environment
 long: List the models pulled to your local environment
-usage: docker model list [OPTIONS]
+usage: docker model list [OPTIONS] [MODEL]
 @y
 command: docker model list
 aliases: docker model list, docker model ls
 short: List the models pulled to your local environment
 long: List the models pulled to your local environment
-usage: docker model list [OPTIONS]
+usage: docker model list [OPTIONS] [MODEL]
 @z
 
 % options:
@@ -27,6 +27,12 @@ usage: docker model list [OPTIONS]
       description: List models in an OpenAI format
 @y
       description: List models in an OpenAI format
+@z
+
+@x openaiurl
+      description: OpenAI-compatible API endpoint URL to list models from
+@y
+      description: OpenAI-compatible API endpoint URL to list models from
 @z
 
 @x quiet

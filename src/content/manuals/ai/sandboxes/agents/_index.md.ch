@@ -34,27 +34,27 @@ inside microVMs with private Docker daemons.
 @z
 
 @x
-| Agent       | Command    | Status       | Notes                                     |
-| ----------- | ---------- | ------------ | ----------------------------------------- |
-| Claude Code | `claude`   | Experimental | Most tested implementation                |
-| Codex       | `codex`    | Experimental | In development                            |
-| Copilot     | `copilot`  | Experimental | In development                            |
-| Gemini      | `gemini`   | Experimental | In development                            |
-| cagent      | `cagent`   | Experimental | In development                            |
-| Kiro        | `kiro`     | Experimental | In development                            |
-| OpenCode    | `opencode` | Experimental | In development                            |
-| Custom shell | `shell`   | Experimental | Minimal environment for manual setup      |
+| Agent                             | Command    | Status       | Notes                                |
+| --------------------------------- | ---------- | ------------ | ------------------------------------ |
+| Claude Code                       | `claude`   | Experimental | Most tested implementation           |
+| Codex                             | `codex`    | Experimental | In development                       |
+| Copilot                           | `copilot`  | Experimental | In development                       |
+| Gemini                            | `gemini`   | Experimental | In development                       |
+| [Docker Agent](/ai/docker-agent/) | `cagent`   | Experimental | Also available as a standalone tool  |
+| Kiro                              | `kiro`     | Experimental | In development                       |
+| OpenCode                          | `opencode` | Experimental | In development                       |
+| Custom shell                      | `shell`    | Experimental | Minimal environment for manual setup |
 @y
-| Agent       | Command    | Status       | Notes                                     |
-| ----------- | ---------- | ------------ | ----------------------------------------- |
-| Claude Code | `claude`   | Experimental | Most tested implementation                |
-| Codex       | `codex`    | Experimental | In development                            |
-| Copilot     | `copilot`  | Experimental | In development                            |
-| Gemini      | `gemini`   | Experimental | In development                            |
-| cagent      | `cagent`   | Experimental | In development                            |
-| Kiro        | `kiro`     | Experimental | In development                            |
-| OpenCode    | `opencode` | Experimental | In development                            |
-| Custom shell | `shell`   | Experimental | Minimal environment for manual setup      |
+| Agent                             | Command    | Status       | Notes                                |
+| --------------------------------- | ---------- | ------------ | ------------------------------------ |
+| Claude Code                       | `claude`   | Experimental | Most tested implementation           |
+| Codex                             | `codex`    | Experimental | In development                       |
+| Copilot                           | `copilot`  | Experimental | In development                       |
+| Gemini                            | `gemini`   | Experimental | In development                       |
+| [Docker Agent](/ai/docker-agent/) | `cagent`   | Experimental | Also available as a standalone tool  |
+| Kiro                              | `kiro`     | Experimental | In development                       |
+| OpenCode                          | `opencode` | Experimental | In development                       |
+| Custom shell                      | `shell`    | Experimental | Minimal environment for manual setup |
 @z
 
 @x
@@ -133,7 +133,7 @@ See the agent-specific documentation:
 
 @x
 - [Claude Code](./claude-code.md)
-- [cagent](./cagent.md)
+- [Docker Agent](./docker-agent.md)
 - [Codex](./codex.md)
 - [Copilot](./copilot.md)
 - [Gemini](./gemini.md)
@@ -142,7 +142,7 @@ See the agent-specific documentation:
 - [Custom shell](./shell.md)
 @y
 - [Claude Code](./claude-code.md)
-- [cagent](./cagent.md)
+- [Docker Agent](./docker-agent.md)
 - [Codex](./codex.md)
 - [Copilot](./copilot.md)
 - [Gemini](./gemini.md)

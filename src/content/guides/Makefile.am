@@ -24,7 +24,7 @@ bases = \
 	kafka.md                           \
 	kube-deploy.md                     \
 	lab-agentic-apps.md                \
-	lab-cagent.md                      \
+	lab-docker-agent.md                \
 	lab-docker-for-ai-redirect.md      \
 	lab-fine-tuning.md                 \
 	lab-mcp-gateway.md                 \

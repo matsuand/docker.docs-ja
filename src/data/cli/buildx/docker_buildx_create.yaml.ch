@@ -107,6 +107,12 @@ usage: docker buildx create [OPTIONS] [CONTEXT|ENDPOINT]
       description: Fixed platforms for current node
 @z
 
+@x timeout
+      description: Override the default timeout for loading builder status
+@y
+      description: Override the default timeout for loading builder status
+@z
+
 @x use
       description: Set the current builder instance
 @y

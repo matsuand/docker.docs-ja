@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Push a model to Docker Hub
+Push a model to Docker Hub or Hugging Face
 @y
 <!---MARKER_GEN_START-->
-Push a model to Docker Hub
+Push a model to Docker Hub or Hugging Face
 @z
 
 @x

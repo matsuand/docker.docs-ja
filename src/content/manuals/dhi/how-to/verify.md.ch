@@ -507,6 +507,32 @@ Example output:
 % snip command...
 
 @x
+## Verify package attestations
+@y
+## Verify package attestations
+@z
+
+@x
+In addition to image attestations, individual hardened packages have their own
+attestations. These package-level attestations allow you to verify the
+provenance and build information for specific packages within an image.
+@y
+In addition to image attestations, individual hardened packages have their own
+attestations. These package-level attestations allow you to verify the
+provenance and build information for specific packages within an image.
+@z
+
+@x
+For instructions on how to extract package information from image attestations
+and retrieve package-level attestations, see [Package
+attestations](./hardened-packages.md#package-attestations).
+@y
+For instructions on how to extract package information from image attestations
+and retrieve package-level attestations, see [Package
+attestations](./hardened-packages.md#package-attestations).
+@z
+
+@x
 ## Verify Helm chart attestations with Docker Scout
 @y
 ## Verify Helm chart attestations with Docker Scout

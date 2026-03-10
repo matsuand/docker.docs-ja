@@ -123,6 +123,18 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+@y
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+@z
+
+@x
 ## 4.62.0
 @y
 ## 4.62.0
@@ -1346,10 +1358,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-- [cagent](/manuals/ai/cagent/_index.md) is now available through Docker Desktop. 
+- [Docker Agent](/manuals/ai/docker-agent/_index.md) is now available through Docker Desktop.
 - [Docker Debug](/reference/cli/docker/debug/) is now free for all users. 
 @y
-- [cagent](manuals/ai/cagent/_index.md) が Docker Desktop を通じて利用可能になりました。
+- [Docker Agent](manuals/ai/docker-agent/_index.md) が Docker Desktop を通じて利用可能になりました。
 - [Docker Debug](__SUBDIR__/reference/cli/docker/debug/) が全ユーザー向けに無償利用可能となりました。
 @z
 

@@ -24,6 +24,14 @@ development and production needs.
 @z
 
 @x
+You can explore the DHI catalog on [Docker Hub](https://hub.docker.com/search?q=&image_filter=store%2Cdhi) or use the [DHI CLI](../how-to/cli.md) to browse
+available images, tags, and metadata from the command line.
+@y
+You can explore the DHI catalog on [Docker Hub](https://hub.docker.com/search?q=&image_filter=store%2Cdhi) or use the [DHI CLI](../how-to/cli.md) to browse
+available images, tags, and metadata from the command line.
+@z
+
+@x
 ## Framework and application images
 @y
 ## Framework and application images
@@ -190,9 +198,9 @@ For example, you might find tags like the following in a DHI repository:
 @z
 
 @x
-## FIPs and STIG variants {tier="DHI Enterprise"}
+## FIPs and STIG variants {tier="DHI Select & Enterprise"}
 @y
-## FIPs and STIG variants {tier="DHI Enterprise"}
+## FIPs and STIG variants {tier="DHI Select & Enterprise"}
 @z
 
 @x

@@ -272,10 +272,10 @@ Cache backend API:
 @z
 
 @x
-cagent:
+Docker Agent:
   availability: Experimental
 @y
-cagent:
+Docker Agent:
   availability: 試験的
 @z
 
@@ -667,10 +667,10 @@ Docker Desktop CLI kubernetes:
 
 @x
 Docker Hardened Images:
-  subscription: [Docker Hardened Images Enterprise]
+  subscription: [Docker Hardened Images Select or Enterprise]
 @y
 Docker Hardened Images:
-  subscription: [Docker Hardened Images Enterprise]
+  subscription: [Docker Hardened Images Select or Enterprise]
 @z
 
 @x

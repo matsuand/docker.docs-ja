@@ -20,9 +20,13 @@ You can add or remove seats from your Docker Team or Business subscription at an
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
+> [!IMPORTANT]
+> If you have a sales-assisted Docker Business subscription, 
+> contact your account manager to add seats to your subscription.
 @y
-{{% include "tax-compliance.md" %}}
+> [!IMPORTANT]
+> If you have a sales-assisted Docker Business subscription, 
+> contact your account manager to add seats to your subscription.
 @z
 
 @x
@@ -40,16 +44,6 @@ You can add or remove seats from your Docker Team or Business subscription at an
 @z
 
 @x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
-@y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
-@z
-
-@x
 To add seats:
 @y
 To add seats:
@@ -59,28 +53,22 @@ To add seats:
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
 organization.
 1. Select **Billing**.
+   - If you choose to pay using a US bank account, you must verify the account. 
+   - For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add seats** and follow the on-screen instructions to complete
-adding seats. Note, you can't use pay by invoice for purchasing additional
-seats. You must use a card or US bank account.
+adding seats.
+   - You can't use pay by invoice for purchasing additional seats.
+   - You must use a card or US bank account.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
 organization.
 1. Select **Billing**.
+   - If you choose to pay using a US bank account, you must verify the account. 
+   - For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 1. Select **Add seats** and follow the on-screen instructions to complete
-adding seats. Note, you can't use pay by invoice for purchasing additional
-seats. You must use a card or US bank account.
-@z
-
-@x
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-@y
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+adding seats.
+   - You can't use pay by invoice for purchasing additional seats.
+   - You must use a card or US bank account.
 @z
 
 @x
@@ -95,16 +83,6 @@ You can now add more members to your organization. For more information, see [Ma
 @y
 {{< /tab >}}
 {{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
-@y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to add seats to your subscription.
 @z
 
 @x
@@ -188,19 +166,9 @@ For example, if you're billed on the 8th of every month for 10 seats and remove 
 @z
 
 @x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
+ If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats:
 @y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
-@z
-
-@x
-To remove seats:
-@y
-To remove seats:
+ If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats:
 @z
 
 @x
@@ -232,19 +200,9 @@ You can cancel the removal of seats before your next billing cycle. To do so, se
 @z
 
 @x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
+ If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats from your Legacy Docker subscription:
 @y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription.
-@z
-
-@x
-To remove seats from your Legacy Docker subscription:
-@y
-To remove seats from your Legacy Docker subscription:
+ If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats from your Legacy Docker subscription:
 @z
 
 @x

@@ -30,6 +30,14 @@ customizations in your organization.
 @z
 
 @x
+Alternatively, you can use the [DHI CLI](./cli.md) to manage mirrored
+repositories and customizations from the command line.
+@y
+Alternatively, you can use the [DHI CLI](./cli.md) to manage mirrored
+repositories and customizations from the command line.
+@z
+
+@x
 Mirrored DHI repositories are standard Docker Hub repositories in your
 organization's namespace. They behave exactly like any other Hub repository,
 which means you can manage access and permissions, configure webhooks, and use

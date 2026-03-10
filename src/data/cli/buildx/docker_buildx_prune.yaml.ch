@@ -57,6 +57,12 @@ usage: docker buildx prune
       description: Amount of disk space always allowed to keep for cache
 @z
 
+@x timeout
+      description: Override the default timeout for loading builder status
+@y
+      description: Override the default timeout for loading builder status
+@z
+
 @x verbose
       description: Provide a more verbose output
 @y

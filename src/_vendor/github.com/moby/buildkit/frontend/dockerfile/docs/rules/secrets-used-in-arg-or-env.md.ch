@@ -69,9 +69,17 @@ See [Build secrets](https://docs.docker.com/build/building/secrets/).
 @z
 
 @x
-❌ Bad: `AWS_SECRET_ACCESS_KEY` is a secret value.
+❌ Bad: using ARG to pass AWS credentials.
 @y
-❌ 不可: `AWS_SECRET_ACCESS_KEY` は機密情報です。
+❌ 不可: AWS 機密情報に ARG を用いています。
+@z
+
+% snip code...
+
+@x
+To build with these secrets:
+@y
+上の機密情報を用いてビルドするには以下のようにします。
 @z
 
 % snip code...

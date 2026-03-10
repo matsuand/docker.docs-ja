@@ -45,6 +45,12 @@ usage: docker buildx rm [OPTIONS] [NAME...]
       description: Keep BuildKit state
 @z
 
+@x timeout
+      description: Override the default timeout for loading builder status
+@y
+      description: Override the default timeout for loading builder status
+@z
+
 % inherited_options:
 
 @x builder

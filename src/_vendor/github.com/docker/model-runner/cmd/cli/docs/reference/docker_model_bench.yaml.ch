@@ -20,9 +20,9 @@ long: |-
 @z
 
 @x
-usage: docker model bench [MODEL]
+usage: docker model bench MODEL
 @y
-usage: docker model bench [MODEL]
+usage: docker model bench MODEL
 @z
 
 % options:

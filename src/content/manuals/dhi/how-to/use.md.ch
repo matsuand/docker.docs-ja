@@ -630,9 +630,9 @@ from the final image.
 @z
 
 @x
-## Use compliance variants {tier="DHI Enterprise"}
+## Use compliance variants {tier="DHI Select & Enterprise"}
 @y
-## Use compliance variants {tier="DHI Enterprise"}
+## Use compliance variants {tier="DHI Select & Enterprise"}
 @z
 
 @x
@@ -642,12 +642,12 @@ from the final image.
 @z
 
 @x
-When you have a Docker Hardened Images Enterprise subscription, you can access
+When you have a DHI Select or DHI Enterprise subscription, you can access
 compliance variants such as FIPS-enabled and STIG-ready images. These
 variants help meet regulatory and compliance requirements for secure
 deployments.
 @y
-When you have a Docker Hardened Images Enterprise subscription, you can access
+When you have a DHI Select or DHI Enterprise subscription, you can access
 compliance variants such as FIPS-enabled and STIG-ready images. These
 variants help meet regulatory and compliance requirements for secure
 deployments.

@@ -3,11 +3,13 @@
 
 @x
 title: Gordon
-description: AI agent for Docker workflows - execute tasks, debug issues, and
+description:
+  AI assistant for Docker workflows - execute tasks, debug issues, and
   manage containers with intelligent assistance
 @y
 title: Gordon
-description: AI agent for Docker workflows - execute tasks, debug issues, and
+description:
+  AI assistant for Docker workflows - execute tasks, debug issues, and
   manage containers with intelligent assistance
 @z
 
@@ -24,11 +26,11 @@ description: AI agent for Docker workflows - execute tasks, debug issues, and
 @z
 
 @x
-Gordon is an AI agent that takes action on your Docker workflows. It analyzes
+Gordon is an AI-powered assistant that takes action on your Docker workflows. It analyzes
 your environment, proposes solutions, and executes commands with your
 permission. Available in Docker Desktop and via the `docker ai` CLI command.
 @y
-Gordon is an AI agent that takes action on your Docker workflows. It analyzes
+Gordon is an AI-powered assistant that takes action on your Docker workflows. It analyzes
 your environment, proposes solutions, and executes commands with your
 permission. Available in Docker Desktop and via the `docker ai` CLI command.
 @z

@@ -23,6 +23,12 @@ usage: docker buildx inspect [NAME]
       description: Ensure builder has booted before inspecting
 @z
 
+@x timeout
+      description: Override the default timeout for loading builder status
+@y
+      description: Override the default timeout for loading builder status
+@z
+
 % inherited_options:
 
 @x builder

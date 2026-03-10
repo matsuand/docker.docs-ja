@@ -51,12 +51,10 @@ usage: docker model run MODEL [PROMPT]
       description: Load the model in the background without interaction
 @z
 
-@x ignore-runtime-memory-check
-      description: |
-        Do not block pull if estimated runtime memory for model exceeds system resources.
+@x openaiurl
+      description: OpenAI-compatible API endpoint URL to chat with
 @y
-      description: |
-        Do not block pull if estimated runtime memory for model exceeds system resources.
+      description: OpenAI-compatible API endpoint URL to chat with
 @z
 
 @x

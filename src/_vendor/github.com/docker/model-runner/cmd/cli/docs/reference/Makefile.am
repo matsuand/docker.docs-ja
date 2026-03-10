@@ -10,9 +10,11 @@ bases = \
 	docker_model_compose_metadata.yaml \
 	docker_model_compose_up.yaml       \
 	docker_model_configure.yaml        \
+	docker_model_configure_show.yaml   \
 	docker_model_df.yaml               \
 	docker_model_inspect.yaml          \
 	docker_model_install-runner.yaml   \
+	docker_model_launch.yaml           \
 	docker_model_list.yaml             \
 	docker_model_logs.yaml             \
 	docker_model_package.yaml          \
@@ -25,6 +27,9 @@ bases = \
 	docker_model_restart-runner.yaml   \
 	docker_model_rm.yaml               \
 	docker_model_run.yaml              \
+	docker_model_search.yaml           \
+	docker_model_show.yaml             \
+	docker_model_skills.yaml           \
 	docker_model_start-runner.yaml     \
 	docker_model_status.yaml           \
 	docker_model_stop-runner.yaml      \
@@ -38,6 +43,7 @@ bases = \
 	model_df.md                        \
 	model_inspect.md                   \
 	model_install-runner.md            \
+	model_launch.md                    \
 	model_list.md                      \
 	model_logs.md                      \
 	model_package.md                   \
@@ -50,6 +56,9 @@ bases = \
 	model_restart-runner.md            \
 	model_rm.md                        \
 	model_run.md                       \
+	model_search.md                    \
+	model_show.md                      \
+	model_skills.md                    \
 	model_start-runner.md              \
 	model_status.md                    \
 	model_stop-runner.md               \

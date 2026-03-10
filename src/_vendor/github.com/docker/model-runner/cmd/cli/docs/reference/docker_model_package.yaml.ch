@@ -3,27 +3,117 @@
 
 @x
 command: docker model package
-short: |
-    Package a GGUF file, Safetensors directory, or existing model into a Docker model OCI artifact.
+short: Package a model into a Docker Model OCI artifact
 long: |-
-    Package a GGUF file, Safetensors directory, or existing model into a Docker model OCI artifact, with optional licenses. The package is sent to the model-runner, unless --push is specified.
-    When packaging a sharded GGUF model, --gguf should point to the first shard. All shard files should be siblings and should include the index in the file name (e.g. model-00001-of-00015.gguf).
-    When packaging a Safetensors model, --safetensors-dir should point to a directory containing .safetensors files and config files (*.json, merges.txt). All files will be auto-discovered and config files will be packaged into a tar archive.
-    When packaging from an existing model using --from, you can modify properties like context size to create a variant of the original model.
-usage: docker model package (--gguf <path> | --safetensors-dir <path> | --from <model>) [--license <path>...] [--context-size <tokens>] [--push] MODEL
+    Package a model into a Docker Model OCI artifact.
 @y
 command: docker model package
-short: |
-    Package a GGUF file, Safetensors directory, or existing model into a Docker model OCI artifact.
+short: Package a model into a Docker Model OCI artifact
 long: |-
-    Package a GGUF file, Safetensors directory, or existing model into a Docker model OCI artifact, with optional licenses. The package is sent to the model-runner, unless --push is specified.
-    When packaging a sharded GGUF model, --gguf should point to the first shard. All shard files should be siblings and should include the index in the file name (e.g. model-00001-of-00015.gguf).
-    When packaging a Safetensors model, --safetensors-dir should point to a directory containing .safetensors files and config files (*.json, merges.txt). All files will be auto-discovered and config files will be packaged into a tar archive.
-    When packaging from an existing model using --from, you can modify properties like context size to create a variant of the original model.
-usage: docker model package (--gguf <path> | --safetensors-dir <path> | --from <model>) [--license <path>...] [--context-size <tokens>] [--push] MODEL
+    Package a model into a Docker Model OCI artifact.
 @z
 
-% options:
+@x
+    The model source must be one of:
+      --gguf               A GGUF file (single file or first shard of a sharded model)
+      --safetensors-dir    A directory containing .safetensors and configuration files
+      --dduf               A .dduf (Diffusers Unified Format) archive
+      --from               An existing packaged model reference
+@y
+    The model source must be one of:
+      --gguf               A GGUF file (single file or first shard of a sharded model)
+      --safetensors-dir    A directory containing .safetensors and configuration files
+      --dduf               A .dduf (Diffusers Unified Format) archive
+      --from               An existing packaged model reference
+@z
+
+@x
+    By default, the packaged artifact is loaded into the local Model Runner content store.
+    Use --push to publish the model to a registry instead.
+@y
+    By default, the packaged artifact is loaded into the local Model Runner content store.
+    Use --push to publish the model to a registry instead.
+@z
+
+@x
+    MODEL specifies the target model reference (for example: myorg/llama3:8b).
+    When using --push, MODEL must be a registry-qualified reference.
+@y
+    MODEL specifies the target model reference (for example: myorg/llama3:8b).
+    When using --push, MODEL must be a registry-qualified reference.
+@z
+
+@x
+    Packaging behavior:
+@y
+    Packaging behavior:
+@z
+
+@x
+      GGUF
+        --gguf must point to a .gguf file.
+        For sharded models, point to the first shard. All shards must:
+          • reside in the same directory
+          • follow an indexed naming convention (e.g. model-00001-of-00015.gguf)
+        All shards are automatically discovered and packaged together.
+@y
+      GGUF
+        --gguf must point to a .gguf file.
+        For sharded models, point to the first shard. All shards must:
+          • reside in the same directory
+          • follow an indexed naming convention (e.g. model-00001-of-00015.gguf)
+        All shards are automatically discovered and packaged together.
+@z
+
+@x
+      Safetensors
+        --safetensors-dir must point to a directory containing .safetensors files
+        and required configuration files (e.g. model config, tokenizer files).
+        All files under the directory (including nested subdirectories) are
+        automatically discovered. Each file is packaged as a separate OCI layer.
+@y
+      Safetensors
+        --safetensors-dir must point to a directory containing .safetensors files
+        and required configuration files (e.g. model config, tokenizer files).
+        All files under the directory (including nested subdirectories) are
+        automatically discovered. Each file is packaged as a separate OCI layer.
+@z
+
+@x
+      DDUF
+        --dduf must point to a .dduf archive file.
+@y
+      DDUF
+        --dduf must point to a .dduf archive file.
+@z
+
+@x
+      Repackaging
+        --from repackages an existing model. You may override selected properties
+        such as --context-size to create a variant of the original model.
+@y
+      Repackaging
+        --from repackages an existing model. You may override selected properties
+        such as --context-size to create a variant of the original model.
+@z
+
+@x
+      Multimodal models
+        Use --mmproj to include a multimodal projector file.
+@y
+      Multimodal models
+        Use --mmproj to include a multimodal projector file.
+@z
+
+@x
+usage: docker model package (--gguf <path> | --safetensors-dir <path> | --dduf <path> | --from <model>) [--license <path>...] [--mmproj <path>] [--context-size <tokens>] [--push] MODEL
+@y
+usage: docker model package (--gguf <path> | --safetensors-dir <path> | --dduf <path> | --from <model>) [--license <path>...] [--mmproj <path>] [--context-size <tokens>] [--push] MODEL
+@z
+
+% pname
+% plink
+% options
 
 @x chat-template
       description: absolute path to chat template file (must be Jinja format)
@@ -37,12 +127,10 @@ usage: docker model package (--gguf <path> | --safetensors-dir <path> | --from <
       description: context size in tokens
 @z
 
-@x dir-tar
-      description: |
-        relative path to directory to package as tar (can be specified multiple times)
+@x dduf
+      description: absolute path to DDUF archive file (Diffusers Unified Format)
 @y
-      description: |
-        relative path to directory to package as tar (can be specified multiple times)
+      description: absolute path to DDUF archive file (Diffusers Unified Format)
 @z
 
 @x from
@@ -63,12 +151,17 @@ usage: docker model package (--gguf <path> | --safetensors-dir <path> | --from <
       description: absolute path to a license file
 @z
 
+@x mmproj
+      description: absolute path to multimodal projector file
+@y
+      description: absolute path to multimodal projector file
+@z
+
 @x push
       description: |
         push to registry (if not set, the model is loaded into the Model Runner content store)
 @y
       description: |
-        push to registry (if not set, the model is loaded into the Model Runner content store)
 @z
 
 @x safetensors-dir

@@ -22,6 +22,8 @@ copyfiles = \
 	.markdownlint.json \
 	.prettierrc        \
 	.vale.ini          \
+	AGENTS.md          \
+	CLAUDE.md          \
 	COMPONENTS.md      \
 	CONTRIBUTING.md    \
 	Dockerfile         \

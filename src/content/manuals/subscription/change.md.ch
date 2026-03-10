@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: Change your subscription
 description: Upgrade or downgrade your Docker subscription and understand billing changes
@@ -14,25 +12,15 @@ keywords: upgrade subscription, downgrade subscription, docker pricing, subscrip
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 You can upgrade or downgrade your Docker subscription at any time to match your changing needs. This page explains how to make subscription changes and what to expect with billing and feature access.
 @y
 You can upgrade or downgrade your Docker subscription at any time to match your changing needs. This page explains how to make subscription changes and what to expect with billing and feature access.
 @z
 
 @x
-> [!NOTE]
->
-> Legacy Docker subscribers have different interfaces for subscription changes. Legacy subscriptions apply to subscribers who last purchased or renewed before December 10, 2024. For details, see [Announcing Upgraded Docker Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+{{% include "tax-compliance.md" %}}
 @y
-> [!NOTE]
->
-> Legacy Docker subscribers have different interfaces for subscription changes. Legacy subscriptions apply to subscribers who last purchased or renewed before December 10, 2024. For details, see [Announcing Upgraded Docker Plans](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+{{% include "tax-compliance.md" %}}
 @z
 
 @x
@@ -42,9 +30,9 @@ You can upgrade or downgrade your Docker subscription at any time to match your 
 @z
 
 @x
-When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier.
+When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier. 
 @y
-When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier.
+When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier. 
 @z
 
 @x
@@ -73,26 +61,14 @@ you want to upgrade.
 1. Select **Billing**.
 1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/convert-account.md).
 1. Select **Upgrade**.
-1. Follow the on-screen instructions to complete your upgrade.
+1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select the organization
 you want to upgrade.
 1. Select **Billing**.
 1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/convert-account.md).
 1. Select **Upgrade**.
-1. Follow the on-screen instructions to complete your upgrade.
-@z
-
-@x
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-@y
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @z
 
 @x
@@ -166,16 +142,6 @@ For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pri
 @z
 
 @x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
-@y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
-@z
-
-@x
 To downgrade your subscription:
 @y
 To downgrade your subscription:
@@ -201,16 +167,6 @@ the organization you want to downgrade.
 @y
 {{< /tab >}}
 {{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
-@y
-> [!IMPORTANT]
->
-> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @z
 
 @x
@@ -257,6 +213,16 @@ To downgrade your Docker Build Cloud subscription:
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+> [!IMPORTANT]
+>
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
+@y
+> [!IMPORTANT]
+>
+> If you have a sales-assisted Docker Business subscription, contact your account manager to downgrade your subscription.
 @z
 
 @x

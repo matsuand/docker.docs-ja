@@ -18,7 +18,7 @@ Configure runtime options for a model
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x

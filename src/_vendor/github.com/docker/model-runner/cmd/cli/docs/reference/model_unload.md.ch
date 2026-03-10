@@ -18,7 +18,7 @@ Unload running models
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x

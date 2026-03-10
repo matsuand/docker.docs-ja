@@ -104,32 +104,34 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
-Docker Hardened Images (DHI) are minimal, secure, and production-ready container
-base and application images maintained by Docker. Designed to reduce
-vulnerabilities and simplify compliance, DHI integrates easily into your
-existing Docker-based workflows with little to no retooling required.
+Docker Hardened Images (DHI) provide minimal, secure, and production-ready
+container images, Helm charts, and system packages maintained by Docker.
+Designed to reduce vulnerabilities and simplify compliance, DHI integrates
+easily into your existing Docker-based workflows with little to no retooling
+required.
 @y
-Docker Hardened イメージ (DHI) は、コンパクトにまとめられたセキュアな実運用向けコンテナーベースのアプリケーションイメージであり、Docker がメンテナンスを行っているものです。
+Docker Hardened イメージ (DHI) は、コンパクトにまとめられたセキュアで実運用向けコンテナーイメージ、Helm チャート、システムパッケージを提供するものであり、Docker がメンテナンスを行っているものです。
 ぜい弱性を軽減し、コンプライアンスを簡素化するように設計されています。
 このため DHI は既存の Docker ベースのワークフローへの統合が容易となり、ツールの再構築はほとんど必要がありません。
 @z
 
 @x
-DHI is available in two tiers: **DHI Free** provides core security features at
-no cost, while **DHI Enterprise** adds SLA-backed support, compliance variants,
-customization, and Extended Lifecycle Support for organizations with advanced
-requirements.
+DHI is available in the following three subscriptions.
 @y
-DHI は 2 つのカテゴリーから選ぶことができます。
-一つは **DHI Free** であり、無償により基本的でセキュアな機能を提供します。
-もう一つは **DHI Enterprise** であり、さらに以下の機能が加わります。
-つまり組織における応用的な要件に応じた、SLA ベースのサポート、コンプライアンスへの適用、カスタマイズ、拡張ライフサイクルサポートなどです。
+DHI は以下の 3 つのサブスクリプションから選ぶことができます。
 @z
 
 @x
-![DHI Subscription](./images/dhi-subscription.png)
+![DHI Tiers](./images/dhi-tiers.png)
 @y
-![DHI サブスクリプション](./images/dhi-subscription.png)
+![DHI ティア](./images/dhi-tiers.png)
+@z
+
+@x
+For more details see the [Docker Hardened Images subscription
+comparison](https://www.docker.com/products/hardened-images/#compare).
+@y
+詳細は [Docker Hardened イメージのサブスクリプション比較](https://www.docker.com/products/hardened-images/#compare) を参照してください。
 @z
 
 @x

@@ -64,15 +64,15 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Cagent
+  - title: Docker Agent
     description: The open-source multi-agent solution to assist you in your tasks.
     icon: /icons/cagent.svg
-    link: /ai/cagent
+    link: /ai/docker-agent
 @y
-  - title: Cagent
+  - title: Docker Agent
     description: タスクの実現をサポートするオープンソースのマルチエージェントソリューションです。
     icon: icons/cagent.svg
-    link: __SUBDIR__/ai/cagent
+    link: __SUBDIR__/ai/docker-agent
 @z
 
 % ai:

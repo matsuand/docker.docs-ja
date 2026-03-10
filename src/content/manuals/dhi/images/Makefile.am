@@ -3,7 +3,7 @@
 ##
 
 copyfiles = \
-	dhi-subscription.png
+	dhi-tiers.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

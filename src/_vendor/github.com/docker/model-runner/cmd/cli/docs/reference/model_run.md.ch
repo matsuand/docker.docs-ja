@@ -18,23 +18,23 @@ Run a model and interact with it using a submitted prompt or chat mode
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x
-| Name                            | Type     | Default | Description                                                                       |
-|:--------------------------------|:---------|:--------|:----------------------------------------------------------------------------------|
-| `--color`                       | `string` | `no`    | Use colored output (auto\|yes\|no)                                                |
-| `--debug`                       | `bool`   |         | Enable debug logging                                                              |
-| `-d`, `--detach`                | `bool`   |         | Load the model in the background without interaction                              |
-| `--ignore-runtime-memory-check` | `bool`   |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
+| Name             | Type     | Default | Description                                          |
+|:-----------------|:---------|:--------|:-----------------------------------------------------|
+| `--color`        | `string` | `no`    | Use colored output (auto\|yes\|no)                   |
+| `--debug`        | `bool`   |         | Enable debug logging                                 |
+| `-d`, `--detach` | `bool`   |         | Load the model in the background without interaction |
+| `--openaiurl`    | `string` |         | OpenAI-compatible API endpoint URL to chat with      |
 @y
-| Name                            | Type     | Default | Description                                                                       |
-|:--------------------------------|:---------|:--------|:----------------------------------------------------------------------------------|
-| `--color`                       | `string` | `no`    | Use colored output (auto\|yes\|no)                                                |
-| `--debug`                       | `bool`   |         | Enable debug logging                                                              |
-| `-d`, `--detach`                | `bool`   |         | Load the model in the background without interaction                              |
-| `--ignore-runtime-memory-check` | `bool`   |         | Do not block pull if estimated runtime memory for model exceeds system resources. |
+| Name             | Type     | Default | Description                                          |
+|:-----------------|:---------|:--------|:-----------------------------------------------------|
+| `--color`        | `string` | `no`    | Use colored output (auto\|yes\|no)                   |
+| `--debug`        | `bool`   |         | Enable debug logging                                 |
+| `-d`, `--detach` | `bool`   |         | Load the model in the background without interaction |
+| `--openaiurl`    | `string` |         | OpenAI-compatible API endpoint URL to chat with      |
 @z
 
 @x

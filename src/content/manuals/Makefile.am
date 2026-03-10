@@ -8,6 +8,7 @@ SUBDIRS = accounts admin ai billing build build-cloud compose desktop \
 
 bases = \
 	_index.md                 \
+	ai-overview.md            \
 	platform-release-notes.md \
 	release-lifecycle.md      \
 	retired.md                \

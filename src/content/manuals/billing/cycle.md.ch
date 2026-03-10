@@ -86,13 +86,9 @@ When you change your billing cycle:
 @z
 
 @x
-> [!IMPORTANT]
->
-> Pay by invoice is not available for subscription upgrades or changes.
+Pay by invoice is not available for subscription upgrades or changes.
 @y
-> [!IMPORTANT]
->
-> Pay by invoice is not available for subscription upgrades or changes.
+Pay by invoice is not available for subscription upgrades or changes.
 @z
 
 @x
@@ -108,7 +104,7 @@ To change your billing cycle:
 1. On the plans and usage page, select **Switch to annual billing**.
 1. Verify your billing information.
 1. Select **Continue to payment**.
-1. Verify payment information and select **Upgrade subscription**.
+1. Verify payment information and select **Upgrade subscription**. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
    your organization.
@@ -116,21 +112,7 @@ To change your billing cycle:
 1. On the plans and usage page, select **Switch to annual billing**.
 1. Verify your billing information.
 1. Select **Continue to payment**.
-1. Verify payment information and select **Upgrade subscription**.
-@z
-
-@x
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see
-> [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
-@y
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see
-> [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+1. Verify payment information and select **Upgrade subscription**. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @z
 
 @x
@@ -198,13 +180,9 @@ You must be an organization owner to make changes to the payment information.
 @z
 
 @x
-> [!IMPORTANT]
->
-> Pay by invoice is not available for subscription upgrades or changes.
+Pay by invoice is not available for subscription upgrades or changes.
 @y
-> [!IMPORTANT]
->
-> Pay by invoice is not available for subscription upgrades or changes.
+Pay by invoice is not available for subscription upgrades or changes.
 @z
 
 @x
@@ -222,7 +200,7 @@ organization's Docker subscription:
 1. On the plans and usage page, select **Switch to annual billing**.
 1. Verify your billing information.
 1. Select **Continue to payment**.
-1. Verify payment information and select **Upgrade subscription**.
+1. Verify payment information and select **Upgrade subscription**. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
    your organization.
@@ -230,21 +208,7 @@ organization's Docker subscription:
 1. On the plans and usage page, select **Switch to annual billing**.
 1. Verify your billing information.
 1. Select **Continue to payment**.
-1. Verify payment information and select **Upgrade subscription**.
-@z
-
-@x
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see
-> [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
-@y
-> [!NOTE]
->
-> If you choose to pay using a US bank account, you must verify the account. For
-> more information, see
-> [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+1. Verify payment information and select **Upgrade subscription**. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @z
 
 @x

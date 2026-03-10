@@ -3,20 +3,22 @@
 ##
 
 bases = \
-	_index.md    \
-	build.md     \
-	compare.md   \
-	customize.md \
-	debug.md     \
-	els.md       \
-	explore.md   \
-	helm.md      \
-	k8s.md       \
-	manage.md    \
-	mirror.md    \
-	policies.md  \
-	scan.md      \
-	use.md       \
+	_index.md            \
+	build.md             \
+	cli.md               \
+	compare.md           \
+	customize.md         \
+	debug.md             \
+	els.md               \
+	explore.md           \
+	hardened-packages.md \
+	helm.md              \
+	k8s.md               \
+	manage.md            \
+	mirror.md            \
+	policies.md          \
+	scan.md              \
+	use.md               \
 	verify.md
 
 include $(top_srcdir)/build-aux/common.mk

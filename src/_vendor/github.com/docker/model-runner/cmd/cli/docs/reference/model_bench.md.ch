@@ -26,7 +26,7 @@ measuring the tokens per second (TPS) that the model can generate.
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x

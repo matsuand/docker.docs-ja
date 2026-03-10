@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
@@ -26,13 +27,13 @@ keywords: mirror docker image, private container registry, docker hub automation
 @z
 
 @x
-Mirroring requires a DHI Enterprise subscription. Without a DHI Enterprise
+Mirroring requires a DHI Select or Enterprise subscription. Without a
 subscription, you can pull Docker Hardened Images directly from `dhi.io` without
-mirroring. With a DHI Enterprise subscription, you must mirror to get:
+mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
 @y
-Mirroring requires a DHI Enterprise subscription. Without a DHI Enterprise
+Mirroring requires a DHI Select or Enterprise subscription. Without a
 subscription, you can pull Docker Hardened Images directly from `dhi.io` without
-mirroring. With a DHI Enterprise subscription, you must mirror to get:
+mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
 @z
 
 @x
@@ -142,9 +143,51 @@ needed.
 @z
 
 @x
-To mirror a Docker Hardened Image repository:
+You can mirror repositories using either the Docker Hub web interface or the DHI CLI.
 @y
-To mirror a Docker Hardened Image repository:
+You can mirror repositories using either the Docker Hub web interface or the DHI CLI.
+@z
+
+@x
+### Mirror using the DHI CLI
+@y
+### Mirror using the DHI CLI
+@z
+
+@x
+The DHI CLI provides a command-line interface for managing Docker Hardened
+Images, including mirroring operations. For installation instructions and usage
+details, see [Use the DHI CLI](./cli.md#mirror-dhi-images).
+@y
+The DHI CLI provides a command-line interface for managing Docker Hardened
+Images, including mirroring operations. For installation instructions and usage
+details, see [Use the DHI CLI](./cli.md#mirror-dhi-images).
+@z
+
+@x
+### Stop mirroring with the CLI
+@y
+### Stop mirroring with the CLI
+@z
+
+% snip command...
+
+@x
+After stopping mirroring, the repository remains but will no longer receive updates.
+@y
+After stopping mirroring, the repository remains but will no longer receive updates.
+@z
+
+@x
+### Mirror using the Docker Hub web interface
+@y
+### Mirror using the Docker Hub web interface
+@z
+
+@x
+To mirror a Docker Hardened Image repository using the web interface:
+@y
+To mirror a Docker Hardened Image repository using the web interface:
 @z
 
 @x
@@ -269,47 +312,7 @@ When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 @z
 
-@x
-```json
-{
-  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
-  "push_data": {
-    "pushed_at": 1712345678,
-    "pusher": "trustedbuilder",
-    "tag": "3.13-alpine3.21"
-  },
-  "repository": {
-    "name": "dhi-python",
-    "namespace": "exampleorg",
-    "repo_name": "exampleorg/dhi-python",
-    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
-    "is_private": true,
-    "status": "Active",
-    ...
-  }
-}
-```
-@y
-```json
-{
-  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
-  "push_data": {
-    "pushed_at": 1712345678,
-    "pusher": "trustedbuilder",
-    "tag": "3.13-alpine3.21"
-  },
-  "repository": {
-    "name": "dhi-python",
-    "namespace": "exampleorg",
-    "repo_name": "exampleorg/dhi-python",
-    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
-    "is_private": true,
-    "status": "Active",
-    ...
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Stop mirroring a repository
@@ -477,33 +480,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    are not yet supported for `registry.scout.docker.com`.
 @z
 
-@x
-   ```console
-   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
-   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
-   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
-   $ export DEST_REG="registry.example.com"
-   $ export DEST_REPO="mirror/dhi-python"
-   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
-   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
-   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
-   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
-   $ export TAG="3.13-alpine3.21"
-   ```
-@y
-   ```console
-   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
-   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
-   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
-   $ export DEST_REG="registry.example.com"
-   $ export DEST_REPO="mirror/dhi-python"
-   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
-   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
-   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
-   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
-   $ export TAG="3.13-alpine3.21"
-   ```
-@z
+% snip command...
 
 @x
 2. Sign in via `regctl` to Docker Hub, the Scout registry that contains
@@ -513,19 +490,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    the attestations, and your destination registry.
 @z
 
-@x
-   ```console
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
-   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
-   ```
-@y
-   ```console
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
-   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
-   ```
-@z
+% snip command...
 
 @x
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
@@ -533,27 +498,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
 @z
 
-@x
-   ```console
-   $ regctl image copy \
-        "${SRC_REPO}:${TAG}" \
-        "${DEST_REG}/${DEST_REPO}:${TAG}" \
-        --referrers \
-        --referrers-src "${SRC_ATT_REPO}" \
-        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
-        --force-recursive
-   ```
-@y
-   ```console
-   $ regctl image copy \
-        "${SRC_REPO}:${TAG}" \
-        "${DEST_REG}/${DEST_REPO}:${TAG}" \
-        --referrers \
-        --referrers-src "${SRC_ATT_REPO}" \
-        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
-        --force-recursive
-   ```
-@z
+% snip command...
 
 @x
 4. Verify that artifacts were preserved.
@@ -567,15 +512,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    First, get a digest for a specific tag and platform. For example, `linux/amd64`.
 @z
 
-@x
-   ```console
-   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
-   ```
-@y
-   ```console
-   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
-   ```
-@z
+% snip command...
 
 @x
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
@@ -583,15 +520,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
 @z
 
-@x
-   ```console
-   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@y
-   ```console
-   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@z
+% snip command...
 
 @x
    Or, list attached artifacts with `docker scout`.
@@ -599,15 +528,7 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    Or, list attached artifacts with `docker scout`.
 @z
 
-@x
-   ```console
-   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@y
-   ```console
-   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@z
+% snip command...
 
 @x
 ### Example ongoing mirroring with `regsync`
@@ -723,15 +644,7 @@ To do a dry run with the configuration file, you can run the following command.
 You must [install `regsync`](https://github.com/regclient/regclient) first.
 @z
 
-@x
-```console
-$ regsync check -c regsync.yaml
-```
-@y
-```console
-$ regsync check -c regsync.yaml
-```
-@z
+% snip command...
 
 @x
 To run the sync with the configuration file:
@@ -739,15 +652,7 @@ To run the sync with the configuration file:
 To run the sync with the configuration file:
 @z
 
-@x
-```console
-$ regsync once -c regsync.yaml
-```
-@y
-```console
-$ regsync once -c regsync.yaml
-```
-@z
+% snip command...
 
 @x
 ## What next

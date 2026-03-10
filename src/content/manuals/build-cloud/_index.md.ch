@@ -101,20 +101,10 @@ data between cloud builders.
 
 @x
 > [!NOTE]
->
-> Docker Build Cloud is currently only available in the US East region. Users
-> in Europe and Asia may experience increased latency compared to users based
-> in North America.
->
-> Support for multi-region builders is on the roadmap.
+> Docker Build Cloud is only available in the US East region.
 @y
 > [!NOTE]
->
-> Docker Build Cloud is currently only available in the US East region. Users
-> in Europe and Asia may experience increased latency compared to users based
-> in North America.
->
-> Support for multi-region builders is on the roadmap.
+> Docker Build Cloud is only available in the US East region.
 @z
 
 @x

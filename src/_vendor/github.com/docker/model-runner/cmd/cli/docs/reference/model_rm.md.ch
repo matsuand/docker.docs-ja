@@ -18,7 +18,7 @@ Remove local models downloaded from Docker Hub
 @x
 ### Options
 @y
-### Options
+### オプション {#options}
 @z
 
 @x

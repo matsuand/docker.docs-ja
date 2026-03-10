@@ -132,11 +132,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
 	src/content/manuals/ai/Makefile
-	src/content/manuals/ai/cagent/Makefile
-	src/content/manuals/ai/cagent/images/Makefile
-	src/content/manuals/ai/cagent/integrations/Makefile
-	src/content/manuals/ai/cagent/reference/Makefile
 	src/content/manuals/ai/compose/Makefile
+	src/content/manuals/ai/docker-agent/Makefile
+	src/content/manuals/ai/docker-agent/images/Makefile
+	src/content/manuals/ai/docker-agent/integrations/Makefile
+	src/content/manuals/ai/docker-agent/reference/Makefile
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/concepts/Makefile
 	src/content/manuals/ai/gordon/images/Makefile
@@ -311,6 +311,7 @@ AC_CONFIG_FILES([
 	src/data/cli/buildx/Makefile
 	src/data/cli/debug/Makefile
 	src/data/cli/desktop/Makefile
+	src/data/cli/dhi/Makefile
 	src/data/cli/engine/Makefile
 	src/data/cli/init/Makefile
 	src/data/cli/mcp/Makefile
