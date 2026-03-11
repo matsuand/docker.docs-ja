@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: Automating content push pulls with trust
 keywords: trust, security, docker, documentation, automation
 title: Automation with content trust
----
 @y
----
 description: Automating content push pulls with trust
 keywords: trust, security, docker, documentation, automation
 title: Automation with content trust
----
 @z
 
 @x
@@ -47,12 +43,12 @@ When working directly with the Notary client, it uses its [own set of environmen
 
 @x
 To automate importing a delegation private key to the local Docker trust store, we 
-need to pass a passphrase for the new key. This passphrase will be required 
-everytime that delegation signs a tag. 
+need to pass a passphrase for the new key. This passphrase will be required
+every time that delegation signs a tag.
 @y
 To automate importing a delegation private key to the local Docker trust store, we 
-need to pass a passphrase for the new key. This passphrase will be required 
-everytime that delegation signs a tag. 
+need to pass a passphrase for the new key. This passphrase will be required
+every time that delegation signs a tag.
 @z
 
 @x

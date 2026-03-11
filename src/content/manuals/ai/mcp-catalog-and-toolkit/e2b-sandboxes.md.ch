@@ -15,9 +15,9 @@ keywords: E2B, cloud sandboxes, MCP Gateway, AI agents, MCP Catalog
 @z
 
 @x
-Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. Through this partnership, every E2B sandbox includes direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
+Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. E2B sandboxes include direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
 @y
-Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. Through this partnership, every E2B sandbox includes direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
+Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. E2B sandboxes include direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
 @z
 
 @x
@@ -60,13 +60,13 @@ Before you begin, make sure you have the following:
 
 @x
   > [!NOTE]
-  > This example uses Claude Code which comes pre-installed in E2B sandboxes.
+  > This example uses Claude Code, which is pre-installed in E2B sandboxes.
   > However, you can adapt the example to work with other AI assistants of your
   > choice. See [E2B's MCP documentation](https://e2b.dev/docs/mcp/quickstart)
   > for alternative connection methods.
 @y
   > [!NOTE]
-  > This example uses Claude Code which comes pre-installed in E2B sandboxes.
+  > This example uses Claude Code, which is pre-installed in E2B sandboxes.
   > However, you can adapt the example to work with other AI assistants of your
   > choice. See [E2B's MCP documentation](https://e2b.dev/docs/mcp/quickstart)
   > for alternative connection methods.

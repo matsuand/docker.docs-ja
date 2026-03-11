@@ -39,12 +39,12 @@ To access Gordon:
 
 @x
 1. Open Docker Desktop and sign in to your Docker account.
-2. Select **Ask Gordon** in the sidebar.
+2. Select **Gordon** in the sidebar.
 3. Type your question or request in the input field.
 4. Press <kbd>Enter</kbd> or select the send button.
 @y
 1. Open Docker Desktop and sign in to your Docker account.
-2. Select **Ask Gordon** in the sidebar.
+2. Select **Gordon** in the sidebar.
 3. Type your question or request in the input field.
 4. Press <kbd>Enter</kbd> or select the send button.
 @z
@@ -94,12 +94,12 @@ To disable Gordon:
 @x
 1. Open Docker Desktop Settings.
 2. Navigate to the **Beta features** section.
-3. Clear the **Enable Docker AI** option.
+3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @y
 1. Open Docker Desktop Settings.
 2. Navigate to the **Beta features** section.
-3. Clear the **Enable Docker AI** option.
+3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @z
 

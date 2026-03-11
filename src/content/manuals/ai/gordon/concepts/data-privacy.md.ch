@@ -252,12 +252,12 @@ Individual users:
 @x
 1. Open Docker Desktop Settings.
 2. Navigate to the **Beta features** section.
-3. Clear the **Enable Docker AI** option.
+3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @y
 1. Open Docker Desktop Settings.
 2. Navigate to the **Beta features** section.
-3. Clear the **Enable Docker AI** option.
+3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @z
 

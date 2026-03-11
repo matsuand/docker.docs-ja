@@ -4,13 +4,13 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Migrate using Docker's AI-powered assistant
+title: Migrate using Gordon
 linktitle: AI-assisted migration
-description: Use Docker's AI-powered assistant to automatically migrate your Dockerfile to Docker Hardened Images
+description: Use Gordon to automatically migrate your Dockerfile to Docker Hardened Images
 @y
-title: Docker AI アシスタントを使った移行
+title: Gordon を使った移行
 linktitle: AI アシスタントによる移行
-description: Use Docker's AI-powered assistant to automatically migrate your Dockerfile to Docker Hardened Images
+description: Use Gordon to automatically migrate your Dockerfile to Docker Hardened Images
 @z
 
 @x
@@ -26,24 +26,24 @@ keywords: ai assistant, migrate dockerfile, docker hardened images, automated mi
 @z
 
 @x
-{{< summary-bar feature_name="Ask Gordon DHI migration" >}}
+{{< summary-bar feature_name="Gordon DHI migration" >}}
 @y
-{{< summary-bar feature_name="Ask Gordon DHI migration" >}}
+{{< summary-bar feature_name="Gordon DHI migration" >}}
 @z
 
 @x
-You can use Docker's AI-powered assistant to automatically migrate your
+You can use Gordon to automatically migrate your
 Dockerfile to use Docker Hardened Images (DHI).
 @y
-Docker の AI アシスタントを用いると、手元の Dockerfile を自動的に Docker Hardened イメージ (DHI) 利用のものに移行させることができます。
+Gordon を用いると、手元の Dockerfile を自動的に Docker Hardened イメージ (DHI) 利用のものに移行させることができます。
 @z
 
 @x
-1. Ensure Docker's AI-powered assistant is [enabled](/manuals/ai/gordon.md#enable-ask-gordon).
+1. Ensure Gordon is [enabled](/manuals/ai/gordon.md#enable-ask-gordon).
 2. In the terminal, navigate to the directory containing your Dockerfile.
 3. Start a conversation with the assistant:
 @y
-1. Docker の AI アシスタントが [有効](manuals/ai/gordon.md#enable-ask-gordon) であることを確認します。
+1. Gordon が [有効](/manuals/ai/gordon.md#enable-ask-gordon) であることを確認します。
 2. 端末において Dockerfile があるディレクトリに移動します。
 3. アシスタントとの対話を起動します。
 @z

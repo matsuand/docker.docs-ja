@@ -32,11 +32,11 @@ The compose format has some limitations compared to the HCL format:
 @z
 
 @x
-- Specifying variables or global scope attributes is not yet supported
+- Specifying variables or global scope attributes is not supported
 - `inherits` service field is not supported, but you can use [YAML anchors](/reference/compose-file/fragments.md)
   to reference other services, as demonstrated in the previous example with `&build-dev`.
 @y
-- Specifying variables or global scope attributes is not yet supported
+- Specifying variables or global scope attributes is not supported
 - `inherits` service field is not supported, but you can use [YAML anchors](reference/compose-file/fragments.md)
   to reference other services, as demonstrated in the previous example with `&build-dev`.
 @z

@@ -36,22 +36,11 @@ This tutorial aims to introduce fundamental concepts of Docker Compose by guidin
 @z
 
 @x
-Using the Flask framework, the application features a hit counter in Redis, providing a practical example of how Docker Compose can be applied in web development scenarios. 
+Using the Flask framework, the application features a hit counter in Redis, providing a practical example of how Docker Compose can be applied in web development scenarios. The concepts demonstrated here should be understandable even if you're not familiar with Python.
 @y
 このアプリケーションは Flask フレームワークを利用し Redis によりアクセスカウンターを管理します。
 このアプリを通じて Docker Compose をウェブ開発シーンにどのように適用するのか、という実践的な例を示すものです。
-@z
-
-@x
-The concepts demonstrated here should be understandable even if you're not familiar with Python. 
-@y
 ここで示す考え方は Python に不慣れな方でも理解できるようにしています。
-@z
-
-@x
-This is a non-normative example that demonstrates core Compose functionality. 
-@y
-これは標準的な例というわけではないため、Compose のコアな機能を実現するものではありません。
 @z
 
 @x
@@ -75,9 +64,9 @@ Make sure you have:
 @z
 
 @x
-## Step 1: Set up
+## Step 1: Set up the project
 @y
-## 手順 1: セットアップ {#step-1-set-up}
+## 手順 1: プロジェクトのセットアップ {#step-1-set-up-the-project}
 @z
 
 @x
@@ -89,7 +78,7 @@ Make sure you have:
 % snip command...
 
 @x
-2. Create a file called `app.py` in your project directory and paste the following code in:
+2. Create `app.py` in your project directory and add the following:
 @y
 2. プロジェクトディレクトリ内に `app.py` というファイルを生成して、以下のコードを記述します。
 @z
@@ -97,455 +86,631 @@ Make sure you have:
 % snip code...
 
 @x
-   In this example, `redis` is the hostname of the redis container on the
-   application's network and the default port, `6379` is used.
+   The app reads its Redis connection details from environment variables, with sensible defaults so it works out of the box.
 @y
-   この例において `redis` とは、このアプリケーションネットワーク上の redis コンテナーのホスト名です。
-   redis のデフォルトポートとして `6379` を利用します。
+   The app reads its Redis connection details from environment variables, with sensible defaults so it works out of the box.
 @z
 
 @x
-   > [!NOTE]
-   >
-   > Note the way the `get_hit_count` function is written. This basic retry
-   > loop attempts the request multiple times if the Redis service is
-   > not available. This is useful at startup while the application comes
-   > online, but also makes the application more resilient if the Redis
-   > service needs to be restarted anytime during the app's lifetime. In a
-   > cluster, this also helps handling momentary connection drops between
-   > nodes.
+3. Create `requirements.txt` in your project directory and add the following:
 @y
-   > [!NOTE]
-   >
-   > `get_hit_count` という関数がどのように書かれているかを見てください。
-   > この単純なリトライのループにより、redis サービスが起動していなかったとしても、リクエストを何度でも送信できます。
-   > アプリケーションの起動時にはこの方法が適していますが、さらにはこのアプリの動作中に redis サービスを再起動する必要が発生した場合も、アプリが柔軟に対応できる方法です。
-   > クラスターを構成している場合、ノード間でのネットワークの瞬断を制御することもできます。
-@z
-
-@x
-3. Create another file called `requirements.txt` in your project directory and
-   paste the following code in:
-@y
-3. プロジェクト用のディレクトリにもう一つ `requirements.txt` という名称のファイルを作成し、次のコードを記述します。
+3. プロジェクト用のディレクトリに `requirements.txt` というファイルを作成し、次のコードを記述します。
 @z
 
 % snip text...
 
 @x
-4. Create a `Dockerfile` and paste the following code in:
+4. Create a `Dockerfile`:
 @y
-4. `Dockerfile` を生成し、次のコードを記述します。
+4. 以下のような `Dockerfile` を生成します。
 @z
 
 % snip code...
 
 @x
-   {{< accordion title="Understand the Dockerfile" >}}
-@y
-   {{< accordion title="Dockerfile の理解" >}}
-@z
-
-@x
-   This tells Docker to:
-@y
-   これは Docker に対して以下の指示を行います。
-@z
-
-@x
-   * Build an image starting with the Python 3.10 image.
-   * Set the working directory to `/code`.
-   * Set environment variables used by the `flask` command.
-   * Install gcc and other dependencies
-   * Copy `requirements.txt` and install the Python dependencies.
-   * Add metadata to the image to describe that the container is listening on port 5000
-   * Copy the current directory `.` in the project to the workdir `.` in the image.
-   * Set the default command for the container to `flask run --debug`.
-@y
-   * Python 3.10 イメージを使ってこのイメージをビルドします。
-   * ワーキングディレクトリを `/code` に設定します。
-   * `flask` コマンドが利用する環境変数を設定します。
-   * gcc やその依存パッケージをインストールします。
-   * `requirements.txt` をコピーして Python 依存パッケージをインストールします。
-   * イメージにメタデータを追加して、コンテナーがポート 5000 をリッスンするようにします。
-   * このプロジェクトのカレントディレクトリ `.` をイメージ内のワークディレクトリ `.` にコピーします。
-   * コンテナーのデフォルトコマンドを `flask run --debug` にします。
-@z
-
-@x
-   {{< /accordion >}}
-@y
-   {{< /accordion >}}
-@z
-
-@x
    > [!IMPORTANT]
    >
-   >Check that the `Dockerfile` has no file extension like `.txt`. Some editors may append this file extension automatically which results in an error when you run the application.
+   > Make sure the file is named `Dockerfile` with no extension. Some editors add `.txt`
+   > automatically, which causes the build to fail.
 @y
    > [!IMPORTANT]
    >
-   >`Dockerfile` には `.txt` などのような拡張子がないことを確認してください。
-   >エディターの中には自動的に拡張子をつけてしまうものがあり、その場合にはアプリケーション実行時にエラーとなってしまいます。
+   > Make sure the file is named `Dockerfile` with no extension. Some editors add `.txt`
+   > automatically, which causes the build to fail.
 @z
 
 @x
    For more information on how to write Dockerfiles, see the [Dockerfile reference](/reference/dockerfile/).
 @y
-   Dockerfile の書き方の詳細は [Dockerfile リファレンス](__SUBDIR__/reference/dockerfile/) を参照してください。
+   For more information on how to write Dockerfiles, see the [Dockerfile reference](/reference/dockerfile/).
 @z
 
 @x
-## Step 2: Define services in a Compose file
+5. Create a `.env` file to hold configuration values:
 @y
-## 手順 2: Compose ファイルでのサービス定義 {#step-2-define-services-in-a-compose-file}
+5. Create a `.env` file to hold configuration values:
+@z
+
+% snip text...
+
+@x
+   Compose automatically reads `.env` and makes these values available for interpolation
+   in your `compose.yaml`. For this example the gains are modest, but in practice,
+   keeping configuration out of the Compose file makes it easier to:
+   - Change values across environments without editing YAML
+   - Avoid committing secrets to version control
+   - Reuse values across multiple services
+@y
+   Compose automatically reads `.env` and makes these values available for interpolation
+   in your `compose.yaml`. For this example the gains are modest, but in practice,
+   keeping configuration out of the Compose file makes it easier to:
+   - Change values across environments without editing YAML
+   - Avoid committing secrets to version control
+   - Reuse values across multiple services
 @z
 
 @x
-Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single, comprehensible YAML configuration file.
+6. Create a `.dockerignore` file to keep unnecessary files out of your build context:
+@y
+6. Create a `.dockerignore` file to keep unnecessary files out of your build context:
+@z
+
+% snip text...
+
+@x
+   Docker sends everything in your project directory to the daemon when it builds an image.
+   Without `.dockerignore`, that includes your `.env` file (which may contain secrets) and
+   any cached Python bytecode. Excluding them keeps builds fast and avoids accidentally
+   baking sensitive values into an image layer.
+@y
+   Docker sends everything in your project directory to the daemon when it builds an image.
+   Without `.dockerignore`, that includes your `.env` file (which may contain secrets) and
+   any cached Python bytecode. Excluding them keeps builds fast and avoids accidentally
+   baking sensitive values into an image layer.
+@z
+
+@x
+## Step 2: Define and start your services
+@y
+## 手順 2: サービスの定義と起動 {#step-2-define-and-start-your-services}
+@z
+
+@x
+Compose simplifies the control of your entire application stack, making it easy to manage services, networks, and volumes in a single YAML configuration file.
 @y
 Compose はアプリケーションスタック全体の制御を単純化します。
-つまりサービス、ネットワーク、ボリュームを、分かりやすいただ一つの YAML 設定ファイルを使って管理できます。
+つまりサービス、ネットワーク、ボリュームをただ一つの YAML 設定ファイルを使って管理できます。
 @z
 
 @x
-Create a file called `compose.yaml` in your project directory and paste
-the following:
+1. Create `compose.yaml` in your project directory and paste the following:
 @y
-プロジェクト用のディレクトリ内で `compose.yaml` という名称のファイルを作成し、次の内容にします。
+1. プロジェクト用のディレクトリ内で `compose.yaml` ファイルを作成し、次の内容にします。
 @z
 
 % snip code...
 
 @x
-This Compose file defines two services: `web` and `redis`. 
+   This Compose file defines two services:
 @y
-この Compose ファイルは 2 つのサービス `web` と `redis` を定義しています。
+   This Compose file defines two services:
 @z
 
 @x
-The `web` service uses an image that's built from the `Dockerfile` in the current directory.
-It then binds the container and the host machine to the exposed port, `8000`. This example service uses the default port for the Flask web server, `5000`.
+   - The `web` service uses an image that's built from the `Dockerfile` in the current directory. It maps port `8000` on the host to port `5000` on the container where Flask listens by default.
 @y
-`web` サービスは、カレントディレクトリ内の `Dockerfile` からビルドされたイメージを利用します。
-そしてコンテナーとホストマシンを、公開用ポート `8000` でつなぎます。
-このサービス例では Flask ウェブサーバーのデフォルトポートである `5000` を利用するものです。
+   - `web` サービスは、カレントディレクトリ内の `Dockerfile` からビルドされたイメージを利用します。
+     そしてホスト上のポート `8000` をコンテナー上のポート `5000` にマッピングします。
+     これはデフォルトで Flask が利用するポートです。
 @z
 
 @x
-The `redis` service uses a public [Redis](https://registry.hub.docker.com/_/redis/) 
-image pulled from the Docker Hub registry.
+   - The `redis` service uses a public [Redis](https://registry.hub.docker.com/_/redis/) image pulled from the Docker Hub registry.
 @y
-`redis` サービスには Docker Hub レジストリに公開されている [Redis](https://registry.hub.docker.com/_/redis/) イメージを取得して利用します。
+   - `redis` サービスには Docker Hub レジストリに公開されている [Redis](https://registry.hub.docker.com/_/redis/) イメージを取得して利用します。
 @z
 
 @x
-For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
+   For more information on the `compose.yaml` file, see [How Compose works](compose-application-model.md).
 @y
-`compose.yaml` ファイルの詳細については [Compose はどのように動作するか](manuals/compose/intro/compose-application-model.md) を参照してください。
+   `compose.yaml` ファイルの詳細については [Compose はどのように動作するか](manuals/compose/intro/compose-application-model.md) を参照してください。
 @z
 
 @x
-## Step 3: Build and run your app with Compose
+2. Start up your application: 
 @y
-## 手順 3: Compose によるアプリのビルドと実行 {#step-3-build-and-run-your-app-with-compose}
-@z
-
-@x
-With a single command, you create and start all the services from your configuration file.
-@y
-たった 1 つのコマンドを使うだけで、設定ファイルに基づいたサービスのすべてを生成して起動します。
-@z
-
-@x
-1. From your project directory, start up your application by running `docker compose up`.
-@y
-1.  プロジェクト用のディレクトリで `docker-compose up` を実行してアプリケーションを起動します。
+2. Start up your application: 
 @z
 
 % snip command...
 
 @x
-   Compose pulls a Redis image, builds an image for your code, and starts the
-   services you defined. In this case, the code is statically copied into the image at build time.
+   With a single command, you create and start all the services from your configuration file. Compose builds your web image, pulls the Redis image, and starts both containers. 
 @y
-   Compose は Redis イメージを取得し、コードを動作させるイメージを構築した上で、定義されているサービスを開始します。
-   この例ではビルド時において、コードがイメージ内に静的にコピーされます。
+   With a single command, you create and start all the services from your configuration file. Compose builds your web image, pulls the Redis image, and starts both containers. 
 @z
 
 @x
-2. Enter `http://localhost:8000/` in a browser to see the application running.
+3. Open `http://localhost:8000`. You should see:
 @y
-2. ブラウザーから `http://localhost:8000/` を開き、アプリケーションの動作を確認します。
+3. `http://localhost:8000` を開きます。
+   以下のような結果が得られます。
+@z
+
+% snip output...
+
+@x
+   Refresh the page — the counter increments on each visit.
+@y
+   ページを表示更新します。
+   カウンターが更新されたはずです。
 @z
 
 @x
-   If this doesn't resolve, you can also try `http://127.0.0.1:8000`.
+   This minimal setup works, but it has two problems you'll fix in the next steps:
 @y
-   うまくいかなかったら `http://127.0.0.1:8000` も試してみてください。
+   This minimal setup works, but it has two problems you'll fix in the next steps:
 @z
 
 @x
-   You should see a message in your browser saying:
+   - Startup race: `web` starts at the same time as `redis`. If Redis isn't ready yet,
+   the Flask app fails to connect and crashes.
+   - No persistence: If you run `docker compose down` followed by `docker compose up`, the
+   counter resets to zero. `docker compose down` removes the containers, and with them
+   any data written to the container's writable layer. `docker compose stop` preserves
+   the containers so data survives, but you can't rely on that in production where
+   containers are regularly replaced.
 @y
-   ブラウザーには以下のメッセージが表示されます。
+   - Startup race: `web` starts at the same time as `redis`. If Redis isn't ready yet,
+   the Flask app fails to connect and crashes.
+   - No persistence: If you run `docker compose down` followed by `docker compose up`, the
+   counter resets to zero. `docker compose down` removes the containers, and with them
+   any data written to the container's writable layer. `docker compose stop` preserves
+   the containers so data survives, but you can't rely on that in production where
+   containers are regularly replaced.
 @z
 
+@x
+4. Stop the stack before moving on:
+@y
+4. Stop the stack before moving on:
+@z
+
+% snip command...
+
+@x
+## Step 3: Fix the startup race with health checks
+@y
+## Step 3: Fix the startup race with health checks
+@z
+
+@x
+To fix the startup race, Compose needs to wait until `redis` is confirmed healthy before
+starting `web`.
+@y
+To fix the startup race, Compose needs to wait until `redis` is confirmed healthy before
+starting `web`.
+@z
+
+@x
+1. Update `compose.yaml`:
+@y
+1. Update `compose.yaml`:
+@z
+
+% snip code...
+
+@x
+   The `healthcheck` block tells Compose how to test whether Redis is ready:
+@y
+   The `healthcheck` block tells Compose how to test whether Redis is ready:
+@z
+
+@x
+   - `test` is the command Compose runs inside the container to check its health.
+     `redis-cli ping` connects to Redis and expects a `PONG` response — if it gets one,
+     the container is healthy.
+   - `start_period` gives Redis 10 seconds to initialize before health checks begin.
+     Any failures during this window don't count toward the retry limit.
+   - `interval` runs the check every 5 seconds after the start period has elapsed.
+   - `timeout` gives each check 3 seconds to respond before treating it as a failure.
+   - `retries` sets how many consecutive failures are allowed before Compose marks the
+     container as unhealthy. With `interval: 5s` and `retries: 5`, Compose will wait up
+     to 25 seconds before giving up.
+@y
+   - `test` is the command Compose runs inside the container to check its health.
+     `redis-cli ping` connects to Redis and expects a `PONG` response — if it gets one,
+     the container is healthy.
+   - `start_period` gives Redis 10 seconds to initialize before health checks begin.
+     Any failures during this window don't count toward the retry limit.
+   - `interval` runs the check every 5 seconds after the start period has elapsed.
+   - `timeout` gives each check 3 seconds to respond before treating it as a failure.
+   - `retries` sets how many consecutive failures are allowed before Compose marks the
+     container as unhealthy. With `interval: 5s` and `retries: 5`, Compose will wait up
+     to 25 seconds before giving up.
+@z
+
+@x
+2. Start the stack to confirm the ordering is fixed:
+@y
+2. Start the stack to confirm the ordering is fixed:
+@z
+
+% snip command...
+
+@x
+   You should see something similar to:
+@y
+   You should see something similar to:
+@z
+
+% snip output...
+
+@x
+3. Open `http://localhost:8000` to confirm the app is still working, then stop the stack before moving on:
+@y
+3. Open `http://localhost:8000` to confirm the app is still working, then stop the stack before moving on:
+@z
+
+% snip command...
+
+@x
+## Step 4: Enable Compose Watch for live updates
+@y
+## Step 4: Enable Compose Watch for live updates
+@z
+
+@x
+Without Compose Watch, every code change requires you to stop the stack, rebuild the image, and restart the containers. Compose Watch eliminates that cycle by automatically syncing changes into your running container as you save files.
+@y
+Without Compose Watch, every code change requires you to stop the stack, rebuild the image, and restart the containers. Compose Watch eliminates that cycle by automatically syncing changes into your running container as you save files.
+@z
+
+@x
+1. Update `compose.yaml` to add the `develop.watch` block to the `web` service:
+@y
+1. Update `compose.yaml` to add the `develop.watch` block to the `web` service:
+@z
+
+% snip code...
+
+@x
+   The `watch` block defines two rules:
+   - The `sync+restart` action watches your project directory (`.`) on the host. When a file changes, Compose copies any changed files into `/code` inside the running container, then restarts the container. Because the container restarts with the updated files already in place, Flask starts up reading the new code directly — no manual rebuild or restart needed. 
+   - The `rebuild` action on `requirements.txt` triggers a full image rebuild whenever you add a new dependency, since installing packages requires rebuilding the image, not just syncing files.
+@y
+   The `watch` block defines two rules:
+   - The `sync+restart` action watches your project directory (`.`) on the host. When a file changes, Compose copies any changed files into `/code` inside the running container, then restarts the container. Because the container restarts with the updated files already in place, Flask starts up reading the new code directly — no manual rebuild or restart needed. 
+   - The `rebuild` action on `requirements.txt` triggers a full image rebuild whenever you add a new dependency, since installing packages requires rebuilding the image, not just syncing files.
+@z
+
+@x
+2. Start the stack with Watch enabled:
+@y
+2. Start the stack with Watch enabled:
+@z
+
+% snip command...
+
+@x
+3. Make a live change. Open `app.py` and update the greeting:
+@y
+3. Make a live change. Open `app.py` and update the greeting:
+@z
+
+% snip code...
+
+@x
+4. Save the file. Compose Watch detects the change and syncs it immediately:
+@y
+4. Save the file. Compose Watch detects the change and syncs it immediately:
+@z
+
+% snip output...
+
+@x
+5. Refresh `http://localhost:8000`. The updated greeting appears without any restart
+   and the counter should still be incrementing.
+@y
+5. Refresh `http://localhost:8000`. The updated greeting appears without any restart
+   and the counter should still be incrementing.
+@z
+
+@x
+6. Stop the stack before moving on:
+@y
+6. Stop the stack before moving on:
+@z
+
+% snip command...
+
+@x
+   For more information on how Compose Watch works, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
+@y
+   For more information on how Compose Watch works, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md).
+@z
+
+@x
+## Step 5: Persist data with named volumes
+@y
+## Step 5: Persist data with named volumes
+@z
+
+@x
+Each time you stop and restart the stack the visit counter resets to zero. Redis data
+lives inside the container, so it disappears when the container is removed. A named
+volume fixes this by storing the data on the host, outside the container lifecycle.
+@y
+Each time you stop and restart the stack the visit counter resets to zero. Redis data
+lives inside the container, so it disappears when the container is removed. A named
+volume fixes this by storing the data on the host, outside the container lifecycle.
+@z
+
+@x
+1. Update `compose.yaml`:
+@y
+1. Update `compose.yaml`:
+@z
+
+% snip code...
+
+@x
+   The `redis-data:/data` entry under `redis.volumes` mounts the named volume at `/data`, the path where Redis
+   writes its data files. The top-level `volumes` key registers it with Docker so it
+   persists between `compose down` and `compose up` cycles.
+@y
+   The `redis-data:/data` entry under `redis.volumes` mounts the named volume at `/data`, the path where Redis
+   writes its data files. The top-level `volumes` key registers it with Docker so it
+   persists between `compose down` and `compose up` cycles.
+@z
+
+@x
+2. Start the stack with `docker compose up --watch` and refresh `http://localhost:8000` a few times to build up a count.
+@y
+2. Start the stack with `docker compose up --watch` and refresh `http://localhost:8000` a few times to build up a count.
+@z
+
+@x
+3. Tear down the stack with `docker compose down` and then bring it back up again with `docker compose up --watch`.
+@y
+3. Tear down the stack with `docker compose down` and then bring it back up again with `docker compose up --watch`.
+@z
+
+@x
+4. Open `http://localhost:8000` — the counter continues from where it left off.
+@y
+4. Open `http://localhost:8000` — the counter continues from where it left off.
+@z
+
+@x
+5. Now reset the counter with `docker compose down -v`. 
+@y
+5. Now reset the counter with `docker compose down -v`. 
+@z
+
+@x
+   The `-v` flag removes named volumes along with the containers. Use this intentionally — it permanently deletes the stored data.
+@y
+   The `-v` flag removes named volumes along with the containers. Use this intentionally — it permanently deletes the stored data.
+@z
+
+@x
+## Step 6: Structure your project with multiple Compose files
+@y
+## Step 6: Structure your project with multiple Compose files
+@z
+
+@x
+As applications grow, a single `compose.yaml` becomes harder to maintain. The `include`
+top-level element lets you split services across multiple files while keeping them part of the
+same application.
+@y
+As applications grow, a single `compose.yaml` becomes harder to maintain. The `include`
+top-level element lets you split services across multiple files while keeping them part of the
+same application.
+@z
+
+@x
+This is especially useful when different teams own different parts of the stack, or when
+you want to reuse infrastructure definitions across projects.
+@y
+This is especially useful when different teams own different parts of the stack, or when
+you want to reuse infrastructure definitions across projects.
+@z
+
+@x
+1. Create a new file in your project directory called `infra.yaml` and move the Redis service and volume into it:
+@y
+1. Create a new file in your project directory called `infra.yaml` and move the Redis service and volume into it:
+@z
+
+% snip code...
+
+@x
+2. Update `compose.yaml` to include `infra.yaml`:
+@y
+2. Update `compose.yaml` to include `infra.yaml`:
+@z
+
+% snip code...
+
+@x
+3. Run the application to confirm everything still works:
+@y
+3. Run the application to confirm everything still works:
+@z
+
+% snip command...
+
+@x
+   Compose merges both files at startup. The `web` service can still reference `redis`
+   by name because all included services share the same default network.
+@y
+   Compose merges both files at startup. The `web` service can still reference `redis`
+   by name because all included services share the same default network.
+@z
+
+@x
+   This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md).
+@y
+   This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md).
+@z
+
+@x
+4. Stop the stack before moving on:
+@y
+4. Stop the stack before moving on:
+@z
+
+% snip command...
+
+@x
+## Step 7: Inspect and debug your running stack
+@y
+## Step 7: Inspect and debug your running stack
+@z
+
+@x
+With a fully configured stack, you can observe what's happening inside your containers
+without stopping anything. This step covers the core commands for inspecting the resolved configuration, streaming logs, and running commands
+inside a running container.
+@y
+With a fully configured stack, you can observe what's happening inside your containers
+without stopping anything. This step covers the core commands for inspecting the resolved configuration, streaming logs, and running commands
+inside a running container.
+@z
+
+@x
+Before starting the stack, verify that Compose has resolved your `.env` variables and
+merged all files correctly:
+@y
+Before starting the stack, verify that Compose has resolved your `.env` variables and
+merged all files correctly:
+@z
+
+% snip command...
+
+@x
+`docker compose config` doesn't require the stack to be running — it works purely from
+your files. A few things worth noting in the output:
+@y
+`docker compose config` doesn't require the stack to be running — it works purely from
+your files. A few things worth noting in the output:
+@z
+
+@x
+- `${APP_PORT}`, `${REDIS_HOST}`, and `${REDIS_PORT}` have all been replaced with the
+  values from your `.env` file.
+- Short-form port notation (`"8000:5000"`) is expanded into its canonical fields
+  (`target`, `published`, `protocol`).
+- The default network and volume names are made explicit, prefixed with the project name
+  `compose-demo`.
+- The output is the fully resolved configuration, with any files
+  brought in via `include` merged into a single view.
+@y
+- `${APP_PORT}`, `${REDIS_HOST}`, and `${REDIS_PORT}` have all been replaced with the
+  values from your `.env` file.
+- Short-form port notation (`"8000:5000"`) is expanded into its canonical fields
+  (`target`, `published`, `protocol`).
+- The default network and volume names are made explicit, prefixed with the project name
+  `compose-demo`.
+- The output is the fully resolved configuration, with any files
+  brought in via `include` merged into a single view.
+@z
+
+@x
+Use `docker compose config` any time you want to confirm what Compose will actually
+apply, especially when debugging variable substitution or working with multiple Compose files.
+@y
+Use `docker compose config` any time you want to confirm what Compose will actually
+apply, especially when debugging variable substitution or working with multiple Compose files.
+@z
+
+@x
+Now start the stack in detached mode so the terminal stays free for the commands that
+follow:
+@y
+Now start the stack in detached mode so the terminal stays free for the commands that
+follow:
+@z
+
+% snip command...
+
+@x
+### Stream logs from all services
+@y
+### Stream logs from all services
+@z
+
+% snip command...
+
+@x
+The `-f` flag follows the log stream in real time, interleaving output from both
+containers with color-coded service name prefixes. Refresh `http://localhost:8000` a
+few times and watch the Flask request logs appear. To follow logs for a single service,
+pass its name:
+@y
+The `-f` flag follows the log stream in real time, interleaving output from both
+containers with color-coded service name prefixes. Refresh `http://localhost:8000` a
+few times and watch the Flask request logs appear. To follow logs for a single service,
+pass its name:
+@z
+
+% snip command...
+
+@x
+Press `Ctrl+C` to stop following logs. The containers keep running.
+@y
+Press `Ctrl+C` to stop following logs. The containers keep running.
+@z
+
+@x
+### Run commands inside a running container
+@y
+### Run commands inside a running container
+@z
+
+@x
+`docker compose exec` runs a command inside an already-running container without
+starting a new one. This is the primary tool for live debugging.
+@y
+`docker compose exec` runs a command inside an already-running container without
+starting a new one. This is the primary tool for live debugging.
+@z
+
+@x
+#### Verify environment variables are set correctly
+@y
+#### Verify environment variables are set correctly
+@z
+
+% snip command...
 % snip text...
 
 @x
-   ![hello world in browser](images/quick-hello-world-1.png)
+#### Test that the `web` container can reach Redis using the service name as the hostname
 @y
-   ![ブラウザー上の hello world](images/quick-hello-world-1.png)
+#### Test that the `web` container can reach Redis using the service name as the hostname
 @z
 
-@x
-3. Refresh the page.
-@y
-3. ページを更新します。
-@z
-
-@x
-   The number should increment.
-@y
-   数値が更新されたはずです。
-@z
-
+% snip command...
 % snip text...
 
 @x
-   ![hello world in browser](images/quick-hello-world-2.png)
+This uses the same `redis` library your app uses, so a `True` response confirms that
+service discovery, networking, and the Redis connection are all working end to end.
 @y
-   ![ブラウザー上の hello world](images/quick-hello-world-2.png)
+This uses the same `redis` library your app uses, so a `True` response confirms that
+service discovery, networking, and the Redis connection are all working end to end.
 @z
 
 @x
-4. Switch to another terminal window, and type `docker image ls` to list local images.
+#### Inspect the live value of the hit counter in Redis
 @y
-4. 別の端末画面を開いて `docker image ls` を実行し、ローカルのイメージ一覧を表示します。
-@z
-
-@x
-   Listing images at this point should return `redis` and `web`.
-@y
-   この時点で一覧表示されるイメージに `redis` と `web` が含まれます。
+#### Inspect the live value of the hit counter in Redis
 @z
 
 % snip command...
-
-@x
-   You can inspect images with `docker inspect <tag or id>`.
-@y
-   `docker inspect <tag または id>`によってイメージを確認することもできます。
-@z
-
-@x
-5. Stop the application, either by running `docker compose down`
-   from within your project directory in the second terminal, or by
-   hitting `CTRL+C` in the original terminal where you started the app.
-@y
-5. アプリケーションを停止させます。
-   2 つめに開いた端末画面上のプロジェクトディレクトリにおいて `docker-compose down` を実行します。
-   またはアプリを開始したはじめの端末画面上において `CTRL+C` を入力します。
-@z
-
-@x
-## Step 4: Edit the Compose file to use Compose Watch
-@y
-## 手順 4: Compose Watch 利用のための Compose ファイル修正 {#step-4-edit-the-compose-file-to-use-compose-watch}
-@z
-
-@x
-Edit the `compose.yaml` file in your project directory to use `watch` so you can preview your running Compose services which are automatically updated as you edit and save your code:
-@y
-プロジェクトディレクトリにある `compose.yaml` ファイルを修正して `watch` を利用するようにします。
-ソースコードの編集や保存を行った際に、起動中の Compose サービスが自動的に更新される様子を見ることができます。
-@z
-
-% snip code...
-
-@x
-Whenever a file is changed, Compose syncs the file to the corresponding location under `/code` inside the container. Once copied, the bundler updates the running application without a restart.
-@y
-ファイルを変更したら、コンテナー内部の `/code` 配下のファイルとの同期が行われます。
-コピーを行えば bundler が実行中のアプリケーションを再起動することなく更新します。
-@z
-
-@x
-For more information on how Compose Watch works, see [Use Compose Watch](/manuals/compose/how-tos/file-watch.md). Alternatively, see [Manage data in containers](/manuals/engine/storage/volumes.md) for other options.
-@y
-Compose Watch がどのようにして動作するのかについては [Compose Watch の利用](manuals/compose/how-tos/file-watch.md) を参照してください。
-数々のオプションについては [コンテナーでのデータ管理](manuals/engine/storage/volumes.md) にも説明があります。
-@z
-
-@x
-> [!NOTE]
->
-> For this example to work, the `--debug` option is added to the `Dockerfile`. The `--debug` option in Flask enables automatic code reload, making it possible to work on the backend API without the need to restart or rebuild the container.
-> After changing the `.py` file, subsequent API calls will use the new code, but the browser UI will not automatically refresh in this small example. Most frontend development servers include native live reload support that works with Compose.
-@y
-> [!NOTE]
->
-> この例においては `Dockerfile` に `--debug` オプションをつけています。
-> Flask に対して `--debug` オプションを設定すると、コードの再ロードが自動化され、再起動やコンテナーの再ビルドをしなくても、バックエンド API を動作させることができます。
-> `.py` ファイルを編集した後は、その後の API 呼出は新たなコードを用いるようになります。
-> ただしこの単純な例においては、ブラウザー上の UI は自動更新が行われません。
-> たいていのフロントエンド開発サーバーでは、Compose を使って動作する、ネイティブのライブリロード機能がサポートされています。
-@z
-
-@x
-## Step 5: Re-build and run the app with Compose
-@y
-## 手順 5: Compose を使ったアプリの再ビルドと実行 {#step-5-re-build-and-run-the-app-with-compose}
-@z
-
-@x
-From your project directory, type `docker compose watch` or `docker compose up --watch` to build and launch the app and start the file watch mode.
-@y
-プロジェクトディレクトリにおいて `docker compose watch` または `docker compose up --watch` と入力してください。
-アプリのビルドと起動を行い、ファイル監視モード (watch mode) がスタートします。
-@z
-
-% snip command...
-
-@x
-Check the `Hello World` message in a web browser again, and refresh to see the
-count increment.
-@y
-もう一度ウェブブラウザー上の `Hello World` メッセージを確認してください。
-画面更新を行うと、カウンターが更新されるはずです。
-@z
-
-@x
-## Step 6: Update the application
-@y
-## 手順 6: アプリケーションのアップデート {#step-6-update-the-application}
-@z
-
-@x
-To see Compose Watch in action:
-@y
-Compose Watch の動作を確認するには以下を行います。
-@z
-
-@x
-1. Change the greeting in `app.py` and save it. For example, change the `Hello World!`
-message to `Hello from Docker!`:
-@y
-1. `app.py` 内にあるあいさつ文を変更して保存します。
-   たとえば `Hello World!` を `Hello from Docker!` とします。
-@z
-
-% snip code...
-
-@x
-2. Refresh the app in your browser. The greeting should be updated, and the
-counter should still be incrementing.
-@y
-2. ブラウザー上のアプリをリフレッシュします。
-   あいさつ文が更新されます。
-   さらにカウンターも更新されるはずです。
-@z
-
-@x
-   ![hello world in browser](images/quick-hello-world-3.png)
-@y
-   ![ブラウザー上の hello world](images/quick-hello-world-3.png)
-@z
-
-@x
-3. Once you're done, run `docker compose down`.
-@y
-3. すべてを終えたら `docker compose down` を実行します。
-@z
-
-@x
-## Step 7: Split up your services
-@y
-## 手順 7: サービスの分割 {#step-7-split-up-your-services}
-@z
-
-@x
-Using multiple Compose files lets you customize a Compose application for different environments or workflows. This is useful for large applications that may use dozens of containers, with ownership distributed across multiple teams. 
-@y
-Compose ファイルを複数に分けると、さまざまな環境やワークフロー向けに Compose アプリケーションをカスタマイズできます。
-これは何十ものコンテナーを利用するような大きなアプリケーションにとって非常に便利です。
-その管理を複数チームに分かれて行うことができます。
-@z
-
-@x
-1. In your project folder, create a new Compose file called `infra.yaml`.
-@y
-1. プロジェクトフォルダーにおいて `infra.yaml` という Compose ファイルを新規生成します。
-@z
-
-@x
-2. Cut the Redis service from your `compose.yaml` file and paste it into your new `infra.yaml` file. Make sure you add the `services` top-level attribute at the top of your file. Your `infra.yaml` file should now look like this:
-@y
-2. `compose.yaml` ファイル内の Redis サービスの部分を切り取って、新ファイル `infra.yaml` の中に貼り付けます。
-   ファイルの最上段にはトップレベル属性である `services` をつけます。
-   `infra.yaml` ファイルは以下となります。
-@z
-
-% snip code...
-
-@x
-3. In your `compose.yaml` file, add the `include` top-level attribute along with the path to the `infra.yaml` file.
-@y
-3. `compose.yaml` ファイルにはトップレベル属性 `include` を用いて `infra.yaml` ファイルへのパスを記述します。
-@z
-
-% snip code...
-
-@x
-4. Run `docker compose up` to build the app with the updated Compose files, and run it. You should see the `Hello world` message in your browser. 
-@y
-4. 作り替えた Compose ファイルを使って `docker compose up` によりアプリをビルドおよび実行します。
-   ブラウザー上に `Hello world` メッセージが表示されます。
-@z
-
-@x
-This is a simplified example, but it demonstrates the basic principle of `include` and how it can make it easier to modularize complex applications into sub-Compose files. For more information on `include` and working with multiple Compose files, see [Working with multiple Compose files](/manuals/compose/how-tos/multiple-compose-files/_index.md).
-@y
-これは単純化した例にすぎません。
-それでも `include` の基本的な考え方を示していて、複雑なアプリケーションを Compose サブファイルに分割し、簡単にモジュラー化する方法を紹介しています。
-`include` を使った複数 Compose ファイルの利用に関する詳細は [複数 Compose ファイルの利用](manuals/compose/how-tos/multiple-compose-files/_index.md) を参照してください。
-@z
-
-@x
-## Step 8: Experiment with some other commands
-@y
-## 手順 8: 他のコマンドを試す {#step-8-experiment-with-some-other-commands}
-@z
-
-@x
-- If you want to run your services in the background, you can pass the `-d` flag (for "detached" mode) to `docker compose up` and use `docker compose ps` to see what is currently running:
-@y
-- サービスをバックグランド実行したい場合は `docker compose up` に対して `-d` フラグ (「デタッチ detached」モードの意味) をつけて実行します。
-`docker compose ps` を実行すれば、今動いているものが何かを確認できます。
-@z
-
-% snip command...
-
-@x
-- Run `docker compose --help` to see other available commands.
-@y
-- `docker compose --help` の実行によって、これ以外に利用できるコマンドを確認できます。
-@z
-
-@x
-- If you started Compose with `docker compose up -d`, stop your services once you've finished with them:
-@y
-- `docker compose up -d` を使って Compose を起動した場合は、作業終了の後は以下によりサービスを終了します。
-@z
-
-% snip command...
-
-@x
-- You can bring everything down, removing the containers entirely, with the `docker compose down` command. 
-@y
-- `docker compose down` コマンドによって、すべてを停止させコンテナーの完全削除までを行います。
-@z
 
 @x
 ## Where to go next
@@ -554,13 +719,15 @@ This is a simplified example, but it demonstrates the basic principle of `includ
 @z
 
 @x
-- Try the [Sample apps with Compose](https://github.com/docker/awesome-compose)
 - [Explore the full list of Compose commands](/reference/cli/docker/compose/)
 - [Explore the Compose file reference](/reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
+- [Learn how to set environment variables in Compose](/compose/how-tos/environment-variables/set-environment-variables/)
+- [Learn how to package and distribute your Compose app](/compose/how-tos/oci-artifact/)
 @y
-- [Compose を使ったサンプルアプリ](https://github.com/docker/awesome-compose) を試してみてください。
 - [Compose コマンドの全一覧](__SUBDIR__/reference/cli/docker/compose/)
 - [Compose ファイルリファレンス](reference/compose-file/_index.md)
 - [Check out the Learning Docker Compose video on LinkedIn Learning](https://www.linkedin.com/learning/learning-docker-compose/)
+- [Learn how to set environment variables in Compose](/compose/how-tos/environment-variables/set-environment-variables/)
+- [Learn how to package and distribute your Compose app](/compose/how-tos/oci-artifact/)
 @z

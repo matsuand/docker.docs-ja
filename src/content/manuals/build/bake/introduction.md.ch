@@ -133,6 +133,18 @@ The Bake equivalent would be:
 % snip code...
 
 @x
+> [!TIP]
+>
+> Want a better editing experience for Bake files in VS Code?
+> Check out the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension for linting, code navigation, and vulnerability scanning.
+@y
+> [!TIP]
+>
+> Want a better editing experience for Bake files in VS Code?
+> Check out the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension for linting, code navigation, and vulnerability scanning.
+@z
+
+@x
 ## Next steps
 @y
 ## Next steps

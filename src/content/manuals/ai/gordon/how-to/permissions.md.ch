@@ -79,11 +79,11 @@ To change the default permission settings for Gordon:
 
 @x
 1. Open Docker Desktop.
-2. Select **Ask Gordon** in the sidebar.
+2. Select **Gordon** in the sidebar.
 3. Select the settings icon at the bottom of text input.
 @y
 1. Open Docker Desktop.
-2. Select **Ask Gordon** in the sidebar.
+2. Select **Gordon** in the sidebar.
 3. Select the settings icon at the bottom of text input.
 @z
 

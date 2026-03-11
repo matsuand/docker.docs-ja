@@ -87,6 +87,22 @@ The properties you can set for a target closely resemble the CLI flags for
 @z
 
 @x
+The `dockerfile` property specifies the path to the Dockerfile for a target.
+If you also set a `context`, the `dockerfile` path resolves relative to that
+context.
+@y
+The `dockerfile` property specifies the path to the Dockerfile for a target.
+If you also set a `context`, the `dockerfile` path resolves relative to that
+context.
+@z
+
+@x within code
+  # resolves to app/src/www/Dockerfile
+@y
+  # resolves to app/src/www/Dockerfile
+@z
+
+@x
 For all the properties you can set for a target, see the [Bake reference](/build/bake/reference#target).
 @y
 For all the properties you can set for a target, see the [Bake reference](__SUBDIR__/build/bake/reference#target).

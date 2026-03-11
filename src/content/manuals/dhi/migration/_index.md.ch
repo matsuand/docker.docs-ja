@@ -20,13 +20,13 @@ keywords: migrate, docker hardened images, dhi, migration guide
 % grid_migration_paths:
 
 @x
-    - title: Migrate with Docker's AI assistant
-      description: Use Docker's AI assistant to automatically migrate your Dockerfile to Docker Hardened Images with guidance and recommendations.
+    - title: Migrate with Gordon
+      description: Use Gordon to automatically migrate your Dockerfile to Docker Hardened Images with guidance and recommendations.
       icon: smart_toy
       link: /dhi/migration/migrate-with-ai/
 @y
-    - title: Docker AI アシスタントを利用した移行
-      description: Use Docker's AI assistant to automatically migrate your Dockerfile to Docker Hardened Images with guidance and recommendations.
+    - title: Gordon を利用した移行
+      description: Use Gordon to automatically migrate your Dockerfile to Docker Hardened Images with guidance and recommendations.
       icon: smart_toy
       link: __SUBDIR__/dhi/migration/migrate-with-ai/
 @z

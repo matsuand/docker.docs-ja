@@ -42,17 +42,17 @@ This information includes:
 @z
 
 @x
- - Organization Name
- - Company
- - Location
- - Website
- - Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and upload an avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
+- Organization Name
+- Company
+- Location
+- Website
+- Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and upload an avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
 @y
- - Organization Name
- - Company
- - Location
- - Website
- - Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and upload an avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
+- Organization Name
+- Company
+- Location
+- Website
+- Gravatar email: To add an avatar to your Docker account, create a [Gravatar account](https://gravatar.com/) and upload an avatar. Next, add your Gravatar email to your Docker account settings. It may take some time for your avatar to update in Docker.
 @z
 
 @x
@@ -63,11 +63,11 @@ To edit this information:
 
 @x
 1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-select your organization from the top-left account drop-down.
+   select your organization from the top-left account drop-down.
 1. Enter or update your organization’s details, then select **Save**.
 @y
 1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-select your organization from the top-left account drop-down.
+   select your organization from the top-left account drop-down.
 1. Enter or update your organization’s details, then select **Save**.
 @z
 
@@ -87,10 +87,10 @@ After configuring your organization information, you can:
 - [Configure single sign-on (SSO)](/manuals/enterprise/security/single-sign-on/configure.md)
 - [Set up SCIM provisioning](/manuals/enterprise/security/provisioning/scim.md)
 - [Manage domains](/manuals/enterprise/security/domain-management.md)
-- [Create a company](new-company.md)
+- [Create a company](/manuals/admin/company/new-company.md)
 @y
 - [Configure single sign-on (SSO)](manuals/enterprise/security/single-sign-on/configure.md)
 - [Set up SCIM provisioning](manuals/enterprise/security/provisioning/scim.md)
 - [Manage domains](manuals/enterprise/security/domain-management.md)
-- [Create a company](new-company.md)
+- [Create a company](manuals/admin/company/new-company.md)
 @z

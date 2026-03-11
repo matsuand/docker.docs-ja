@@ -685,12 +685,12 @@ to create an efficient and maintainable Dockerfile.
 > [!TIP]
 >
 > To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
-> see [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=docker.docker).
+> see the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension.
 @y
 > [!TIP]
 >
 > To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
-> see [Docker VS Code Extension](https://marketplace.visualstudio.com/items?itemName=docker.docker).
+> see the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension.
 @z
 
 @x

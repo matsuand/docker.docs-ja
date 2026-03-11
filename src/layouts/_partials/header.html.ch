@@ -8,7 +8,7 @@
 @z
 
 @x
-          <span class="hidden px-1 lg:inline">Ask&nbsp;AI</span>
+          <span class="hidden px-1 lg:inline">Gordon</span>
 @y
-          <span class="hidden px-1 lg:inline">AI&nbsp;に</span>
+          <span class="hidden px-1 lg:inline">Gordon に</span>
 @z

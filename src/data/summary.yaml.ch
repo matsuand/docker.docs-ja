@@ -68,11 +68,11 @@ Gordon:
 @z
 
 @x
-Ask Gordon DHI migration:
+Gordon DHI migration:
   availability: Experimental
   requires: Docker Desktop [4.38.0](/manuals/desktop/release-notes.md#4380) or later
 @y
-Ask Gordon DHI migration:
+Gordon DHI migration:
   availability: 試験的
   requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) およびそれ以降
 @z

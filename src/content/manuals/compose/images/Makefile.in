@@ -238,10 +238,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	compose-application.webp \
-	quick-hello-world-1.png  \
-	quick-hello-world-2.png  \
-	quick-hello-world-3.png  \
+	compose-application.webp   \
 	v1-versus-v2-versus-v5.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

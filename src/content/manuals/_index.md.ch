@@ -78,12 +78,12 @@ keywords: docker, docs, manuals, products, user guides, how-to
 % ai:
 
 @x
-  - title: Ask Gordon
+  - title: Gordon
     description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
     icon: note_add
     link: /ai/gordon/
 @y
-  - title: Ask Gordon
+  - title: Gordon
     description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
     icon: note_add
     link: __SUBDIR__/ai/gordon/

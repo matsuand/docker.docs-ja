@@ -173,118 +173,322 @@ you build this functionality into third-party tooling.
 
 @x
 Each type of object with support for labels has mechanisms for adding and
-managing them and using them as they relate to that type of object. These links
-provide a good place to start learning about how you can use labels in your
-Docker deployments.
+managing them and using them as they relate to that type of object.
 @y
 Each type of object with support for labels has mechanisms for adding and
-managing them and using them as they relate to that type of object. These links
-provide a good place to start learning about how you can use labels in your
-Docker deployments.
+managing them and using them as they relate to that type of object.
 @z
 
 @x
-Labels on images, containers, local daemons, volumes, and networks are static for
-the lifetime of the object. To change these labels you must recreate the object.
-Labels on Swarm nodes and services can be updated dynamically.
+Labels on images, containers, local daemons, volumes, and networks are static
+for the lifetime of the object. To change these labels you must recreate the
+object. Labels on Swarm nodes and services can be updated dynamically.
 @y
-Labels on images, containers, local daemons, volumes, and networks are static for
-the lifetime of the object. To change these labels you must recreate the object.
-Labels on Swarm nodes and services can be updated dynamically.
+Labels on images, containers, local daemons, volumes, and networks are static
+for the lifetime of the object. To change these labels you must recreate the
+object. Labels on Swarm nodes and services can be updated dynamically.
 @z
 
 @x
-- Images and containers
+### Images
 @y
-- Images and containers
+### Images
 @z
 
 @x
-  - [Adding labels to images](/reference/dockerfile.md#label)
-  - [Overriding a container's labels at runtime](/reference/cli/docker/container/run/#label)
-  - [Inspecting labels on images or containers](/reference/cli/docker/inspect/)
-  - [Filtering images by label](/reference/cli/docker/image/ls/#filter)
-  - [Filtering containers by label](/reference/cli/docker/container/ls/#filter)
+Add labels to images using the [`LABEL` instruction](/reference/dockerfile.md#label) in a Dockerfile:
 @y
-  - [Adding labels to images](reference/dockerfile.md#label)
-  - [Overriding a container's labels at runtime](__SUBDIR__/reference/cli/docker/container/run/#label)
-  - [Inspecting labels on images or containers](__SUBDIR__/reference/cli/docker/inspect/)
-  - [Filtering images by label](__SUBDIR__/reference/cli/docker/image/ls/#filter)
-  - [Filtering containers by label](__SUBDIR__/reference/cli/docker/container/ls/#filter)
+Add labels to images using the [`LABEL` instruction](reference/dockerfile.md#label) in a Dockerfile:
 @z
 
 @x
-- Local Docker daemons
+```dockerfile
+LABEL com.example.version="1.0"
+LABEL com.example.description="Web application"
+```
 @y
-- Local Docker daemons
+```dockerfile
+LABEL com.example.version="1.0"
+LABEL com.example.description="Web application"
+```
 @z
 
 @x
-  - [Adding labels to a Docker daemon at runtime](/reference/cli/dockerd.md)
-  - [Inspecting a Docker daemon's labels](/reference/cli/docker/system/info/)
+You can also set labels at build time with the `--label` flag, without needing
+a `LABEL` instruction in the Dockerfile:
 @y
-  - [Adding labels to a Docker daemon at runtime](reference/cli/dockerd.md)
-  - [Inspecting a Docker daemon's labels](__SUBDIR__/reference/cli/docker/system/info/)
+You can also set labels at build time with the `--label` flag, without needing
+a `LABEL` instruction in the Dockerfile:
 @z
 
 @x
-- Volumes
+```console
+$ docker build --label "com.example.version=1.0" -t myapp .
+```
 @y
-- Volumes
+```console
+$ docker build --label "com.example.version=1.0" -t myapp .
+```
 @z
 
 @x
-  - [Adding labels to volumes](/reference/cli/docker/volume/create/)
-  - [Inspecting a volume's labels](/reference/cli/docker/volume/inspect/)
-  - [Filtering volumes by label](/reference/cli/docker/volume/ls/#filter)
+Inspect labels on an image using `docker inspect`:
 @y
-  - [Adding labels to volumes](__SUBDIR__/reference/cli/docker/volume/create/)
-  - [Inspecting a volume's labels](__SUBDIR__/reference/cli/docker/volume/inspect/)
-  - [Filtering volumes by label](__SUBDIR__/reference/cli/docker/volume/ls/#filter)
+Inspect labels on an image using `docker inspect`:
 @z
 
 @x
-- Networks
+```console
+$ docker inspect --format='{{json .Config.Labels}}' myapp
+```
 @y
-- Networks
+```console
+$ docker inspect --format='{{json .Config.Labels}}' myapp
+```
 @z
 
 @x
-  - [Adding labels to a network](/reference/cli/docker/network/create/)
-  - [Inspecting a network's labels](/reference/cli/docker/network/inspect/)
-  - [Filtering networks by label](/reference/cli/docker/network/ls/#filter)
+Filter images by label with [`docker image ls --filter`](/reference/cli/docker/image/ls/#filter):
 @y
-  - [Adding labels to a network](__SUBDIR__/reference/cli/docker/network/create/)
-  - [Inspecting a network's labels](__SUBDIR__/reference/cli/docker/network/inspect/)
-  - [Filtering networks by label](__SUBDIR__/reference/cli/docker/network/ls/#filter)
+Filter images by label with [`docker image ls --filter`](__SUBDIR__/reference/cli/docker/image/ls/#filter):
 @z
 
 @x
-- Swarm nodes
+```console
+$ docker image ls --filter "label=com.example.version"
+```
 @y
-- Swarm nodes
+```console
+$ docker image ls --filter "label=com.example.version"
+```
 @z
 
 @x
-  - [Adding or updating a Swarm node's labels](/reference/cli/docker/node/update/#label-add)
-  - [Inspecting a Swarm node's labels](/reference/cli/docker/node/inspect/)
-  - [Filtering Swarm nodes by label](/reference/cli/docker/node/ls/#filter)
+### Containers
 @y
-  - [Adding or updating a Swarm node's labels](__SUBDIR__/reference/cli/docker/node/update/#label-add)
-  - [Inspecting a Swarm node's labels](__SUBDIR__/reference/cli/docker/node/inspect/)
-  - [Filtering Swarm nodes by label](__SUBDIR__/reference/cli/docker/node/ls/#filter)
+### Containers
 @z
 
 @x
-- Swarm services
-  - [Adding labels when creating a Swarm service](/reference/cli/docker/service/create/#label)
-  - [Updating a Swarm service's labels](/reference/cli/docker/service/update/)
-  - [Inspecting a Swarm service's labels](/reference/cli/docker/service/inspect/)
-  - [Filtering Swarm services by label](/reference/cli/docker/service/ls/#filter)
+Override or add labels when starting a container with
+[`docker run --label`](/reference/cli/docker/container/run/#label):
 @y
-- Swarm services
-  - [Adding labels when creating a Swarm service](__SUBDIR__/reference/cli/docker/service/create/#label)
-  - [Updating a Swarm service's labels](__SUBDIR__/reference/cli/docker/service/update/)
-  - [Inspecting a Swarm service's labels](__SUBDIR__/reference/cli/docker/service/inspect/)
-  - [Filtering Swarm services by label](__SUBDIR__/reference/cli/docker/service/ls/#filter)
+Override or add labels when starting a container with
+[`docker run --label`](__SUBDIR__/reference/cli/docker/container/run/#label):
+@z
+
+@x
+```console
+$ docker run --label "com.example.env=prod" myapp
+```
+@y
+```console
+$ docker run --label "com.example.env=prod" myapp
+```
+@z
+
+@x
+Inspect labels on a container:
+@y
+Inspect labels on a container:
+@z
+
+@x
+```console
+$ docker inspect --format='{{json .Config.Labels}}' mycontainer
+```
+@y
+```console
+$ docker inspect --format='{{json .Config.Labels}}' mycontainer
+```
+@z
+
+@x
+Filter containers by label with [`docker container ls --filter`](/reference/cli/docker/container/ls/#filter):
+@y
+Filter containers by label with [`docker container ls --filter`](__SUBDIR__/reference/cli/docker/container/ls/#filter):
+@z
+
+@x
+```console
+$ docker container ls --filter "label=com.example.env=prod"
+```
+@y
+```console
+$ docker container ls --filter "label=com.example.env=prod"
+```
+@z
+
+@x
+### Local Docker daemons
+@y
+### Local Docker daemons
+@z
+
+@x
+Add labels to the Docker daemon by passing `--label` flags when starting
+`dockerd`, or by setting `"labels"` in the
+[daemon configuration file](/reference/cli/dockerd.md#daemon-configuration-file):
+@y
+Add labels to the Docker daemon by passing `--label` flags when starting
+`dockerd`, or by setting `"labels"` in the
+[daemon configuration file](reference/cli/dockerd.md#daemon-configuration-file):
+@z
+
+@x
+```json
+{
+  "labels": ["com.example.environment=production"]
+}
+```
+@y
+```json
+{
+  "labels": ["com.example.environment=production"]
+}
+```
+@z
+
+@x
+View daemon labels with `docker system info`.
+@y
+View daemon labels with `docker system info`.
+@z
+
+@x
+### Volumes
+@y
+### Volumes
+@z
+
+@x
+Add labels when [creating a volume](/reference/cli/docker/volume/create/):
+@y
+Add labels when [creating a volume](__SUBDIR__/reference/cli/docker/volume/create/):
+@z
+
+@x
+```console
+$ docker volume create --label "com.example.purpose=database" myvolume
+```
+@y
+```console
+$ docker volume create --label "com.example.purpose=database" myvolume
+```
+@z
+
+@x
+Inspect volume labels:
+@y
+Inspect volume labels:
+@z
+
+@x
+```console
+$ docker volume inspect myvolume --format='{{json .Labels}}'
+```
+@y
+```console
+$ docker volume inspect myvolume --format='{{json .Labels}}'
+```
+@z
+
+@x
+Filter volumes by label with [`docker volume ls --filter`](/reference/cli/docker/volume/ls/#filter):
+@y
+Filter volumes by label with [`docker volume ls --filter`](__SUBDIR__/reference/cli/docker/volume/ls/#filter):
+@z
+
+@x
+```console
+$ docker volume ls --filter "label=com.example.purpose"
+```
+@y
+```console
+$ docker volume ls --filter "label=com.example.purpose"
+```
+@z
+
+@x
+### Networks
+@y
+### Networks
+@z
+
+@x
+Add labels when [creating a network](/reference/cli/docker/network/create/):
+@y
+Add labels when [creating a network](__SUBDIR__/reference/cli/docker/network/create/):
+@z
+
+@x
+```console
+$ docker network create --label "com.example.purpose=frontend" mynetwork
+```
+@y
+```console
+$ docker network create --label "com.example.purpose=frontend" mynetwork
+```
+@z
+
+@x
+Inspect network labels:
+@y
+Inspect network labels:
+@z
+
+@x
+```console
+$ docker network inspect mynetwork --format='{{json .Labels}}'
+```
+@y
+```console
+$ docker network inspect mynetwork --format='{{json .Labels}}'
+```
+@z
+
+@x
+Filter networks by label with [`docker network ls --filter`](/reference/cli/docker/network/ls/#filter):
+@y
+Filter networks by label with [`docker network ls --filter`](__SUBDIR__/reference/cli/docker/network/ls/#filter):
+@z
+
+@x
+```console
+$ docker network ls --filter "label=com.example.purpose"
+```
+@y
+```console
+$ docker network ls --filter "label=com.example.purpose"
+```
+@z
+
+@x
+### Swarm nodes
+@y
+### Swarm nodes
+@z
+
+@x
+- [Adding or updating a Swarm node's labels](/reference/cli/docker/node/update/#label-add)
+- [Filtering Swarm nodes by label](/reference/cli/docker/node/ls/#filter)
+@y
+- [Adding or updating a Swarm node's labels](__SUBDIR__/reference/cli/docker/node/update/#label-add)
+- [Filtering Swarm nodes by label](__SUBDIR__/reference/cli/docker/node/ls/#filter)
+@z
+
+@x
+### Swarm services
+@y
+### Swarm services
+@z
+
+@x
+- [Adding labels when creating a Swarm service](/reference/cli/docker/service/create/#label)
+- [Updating a Swarm service's labels](/reference/cli/docker/service/update/)
+- [Filtering Swarm services by label](/reference/cli/docker/service/ls/#filter)
+@y
+- [Adding labels when creating a Swarm service](__SUBDIR__/reference/cli/docker/service/create/#label)
+- [Updating a Swarm service's labels](__SUBDIR__/reference/cli/docker/service/update/)
+- [Filtering Swarm services by label](__SUBDIR__/reference/cli/docker/service/ls/#filter)
 @z

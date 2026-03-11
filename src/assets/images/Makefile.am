@@ -8,6 +8,7 @@ copyfiles = \
 	ask-ai-logo.svg                 \
 	docker-docs-white-condensed.svg \
 	docker-docs-white.svg           \
+	gordon-logo.svg                 \
 	home-abstract-faint.svg         \
 	thumbnail.webp
 

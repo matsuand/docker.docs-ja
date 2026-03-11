@@ -85,6 +85,18 @@ Build checks are useful for:
 @z
 
 @x
+> [!TIP]
+>
+> To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
+> see the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension.
+@y
+> [!TIP]
+>
+> To improve linting, code navigation, and vulnerability scanning of your Dockerfiles in Visual Studio Code
+> see the [Docker DX](https://marketplace.visualstudio.com/items?itemName=docker.docker) extension.
+@z
+
+@x
 ## Build with checks
 @y
 ## Build with checks

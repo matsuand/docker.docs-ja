@@ -38,9 +38,9 @@ to find out who is using Docker Desktop.
 @z
 
 @x
-For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-1-identify-your-docker-users-and-their-docker-accounts).
+For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-one-identify-your-docker-users).
 @y
-For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-1-identify-your-docker-users-and-their-docker-accounts).
+For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-one-identify-your-docker-users).
 @z
 
 @x
@@ -78,13 +78,13 @@ Some benefits of enforcing sign-in are:
 @z
 
 @x
-- Administrators can enforce features like [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md).
- - Administrators can ensure compliance by blocking Docker Desktop usage for
- users who don't sign in as members of the organization.
+- Ensures users receive the benefits of your subscription.
+- Ensures security features like [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) are applied.
+- Ensures you gain insights into users' activity.
 @y
-- Administrators can enforce features like [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md).
- - Administrators can ensure compliance by blocking Docker Desktop usage for
- users who don't sign in as members of the organization.
+- Ensures users receive the benefits of your subscription.
+- Ensures security features like [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) are applied.
+- Ensures you gain insights into users' activity.
 @z
 
 @x
@@ -152,19 +152,19 @@ Yes. Organization owners occupy a seat.
 @x
 - User: Docker user with a Docker ID.
 - Invitee: A user that an administrator has invited to join an organization but
-has not yet accepted their invitation.
+  has not yet accepted their invitation.
 - Seats: The number of purchased seats in an organization.
 - Member: A user who has received and accepted an invitation to join an
-organization. Member can also refer to a member of a team within an
-organization.
+  organization. Member can also refer to a member of a team within an
+  organization.
 @y
 - User: Docker user with a Docker ID.
 - Invitee: A user that an administrator has invited to join an organization but
-has not yet accepted their invitation.
+  has not yet accepted their invitation.
 - Seats: The number of purchased seats in an organization.
 - Member: A user who has received and accepted an invitation to join an
-organization. Member can also refer to a member of a team within an
-organization.
+  organization. Member can also refer to a member of a team within an
+  organization.
 @z
 
 @x

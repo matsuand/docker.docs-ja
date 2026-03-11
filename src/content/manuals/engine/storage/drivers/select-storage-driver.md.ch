@@ -109,13 +109,13 @@ The Docker Engine provides the following storage backends on Linux:
 The Docker Engine has a prioritized list of which storage driver to use if no
 storage driver is explicitly configured, assuming that the storage driver meets
 the prerequisites, and automatically selects a compatible storage driver. You
-can see the order in the [source code for Docker Engine {{% param "docker_ce_version" %}}](https://github.com/moby/moby/blob/v{{% param "docker_ce_version" %}}/daemon/graphdriver/driver_linux.go#L52-L53).
+can see the order in the [source code for Docker Engine {{% param "docker_ce_version" %}}](https://github.com/moby/moby/blob/docker-v{{% param "docker_ce_version" %}}/daemon/graphdriver/driver_linux.go).
 { #storage-driver-order }
 @y
 The Docker Engine has a prioritized list of which storage driver to use if no
 storage driver is explicitly configured, assuming that the storage driver meets
 the prerequisites, and automatically selects a compatible storage driver. You
-can see the order in the [source code for Docker Engine {{% param "docker_ce_version" %}}](https://github.com/moby/moby/blob/v{{% param "docker_ce_version" %}}/daemon/graphdriver/driver_linux.go#L52-L53).
+can see the order in the [source code for Docker Engine {{% param "docker_ce_version" %}}](https://github.com/moby/moby/blob/docker-v{{% param "docker_ce_version" %}}/daemon/graphdriver/driver_linux.go).
 { #storage-driver-order }
 @z
 
