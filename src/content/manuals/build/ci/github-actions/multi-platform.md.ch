@@ -1,7 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -43,71 +42,118 @@ the `platforms` option, as shown in the following example:
 % snip code...
 
 @x
-## Distribute build across multiple runners
+## Build and load multi-platform images
 @y
-## Distribute build across multiple runners
+## Build and load multi-platform images
 @z
 
 @x
-Building multiple platforms on the same runner can significantly extend build
-times, particularly when dealing with complex Dockerfiles or a high number of
-target platforms. By distributing platform-specific builds across multiple
-runners using a matrix strategy, you can drastically reduce build durations and
-streamline your CI pipeline. These examples demonstrate how to allocate each
-platform build to a dedicated runner, including ARM-native runners where
-applicable, and create a unified manifest list using the
-[`buildx imagetools create` command](/reference/cli/docker/buildx/imagetools/create/).
+The default Docker setup for GitHub Actions runners does not support loading
+multi-platform images to the local image store of the runner after building
+them. To load a multi-platform image, you need to enable the containerd image
+store option for the Docker Engine.
 @y
-Building multiple platforms on the same runner can significantly extend build
-times, particularly when dealing with complex Dockerfiles or a high number of
-target platforms. By distributing platform-specific builds across multiple
-runners using a matrix strategy, you can drastically reduce build durations and
-streamline your CI pipeline. These examples demonstrate how to allocate each
-platform build to a dedicated runner, including ARM-native runners where
-applicable, and create a unified manifest list using the
-[`buildx imagetools create` command](__SUBDIR__/reference/cli/docker/buildx/imagetools/create/).
+The default Docker setup for GitHub Actions runners does not support loading
+multi-platform images to the local image store of the runner after building
+them. To load a multi-platform image, you need to enable the containerd image
+store option for the Docker Engine.
 @z
 
 @x
-The following workflow will build the image for each platform on a dedicated
-runner using a matrix strategy and push by digest. Then, the `merge` job will
-create manifest lists and push them to Docker Hub. The [`metadata` action](https://github.com/docker/metadata-action)
-is used to set tags and labels.
+There is no way to configure the default Docker setup in the GitHub Actions
+runners directly, but you can use `docker/setup-docker-action` to customize the
+Docker Engine and CLI settings for a job.
 @y
-The following workflow will build the image for each platform on a dedicated
-runner using a matrix strategy and push by digest. Then, the `merge` job will
-create manifest lists and push them to Docker Hub. The [`metadata` action](https://github.com/docker/metadata-action)
-is used to set tags and labels.
+There is no way to configure the default Docker setup in the GitHub Actions
+runners directly, but you can use `docker/setup-docker-action` to customize the
+Docker Engine and CLI settings for a job.
+@z
+
+@x
+The following example workflow enables the containerd image store, builds a
+multi-platform image, and loads the results into the GitHub runner's local
+image store.
+@y
+The following example workflow enables the containerd image store, builds a
+multi-platform image, and loads the results into the GitHub runner's local
+image store.
 @z
 
 % snip code...
 
 @x
+## Distribute build across multiple runners
+@y
+## Distribute build across multiple runners
+@z
+
+@x
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. If you want to split platform builds across multiple runners
+without maintaining a custom matrix and merge job, use the
+[Docker GitHub Builder](github-builder/_index.md). The reusable workflows
+compute the per-platform matrix, run each platform on its own runner, and
+create the final manifest for you.
+@y
+Building multiple platforms on the same runner can significantly extend build
+times, particularly when dealing with complex Dockerfiles or a high number of
+target platforms. If you want to split platform builds across multiple runners
+without maintaining a custom matrix and merge job, use the
+[Docker GitHub Builder](github-builder/_index.md). The reusable workflows
+compute the per-platform matrix, run each platform on its own runner, and
+create the final manifest for you.
+@z
+
+@x
+The following workflow uses the [`build.yml` reusable workflow](github-builder/build.md)
+to distribute a multi-platform Dockerfile build:
+@y
+The following workflow uses the [`build.yml` reusable workflow](github-builder/build.md)
+to distribute a multi-platform Dockerfile build:
+@z
+
+% snip code...
+
+@x
+With `runner: auto` and `distribute: true`, which are the defaults, the
+workflow splits the build into one platform per runner and assembles the final
+multi-platform image in its finalize phase. If you need to control the Docker
+build inputs directly, see [Build with Docker GitHub Builder build.yml](github-builder/build.md).
+@y
+With `runner: auto` and `distribute: true`, which are the defaults, the
+workflow splits the build into one platform per runner and assembles the final
+multi-platform image in its finalize phase. If you need to control the Docker
+build inputs directly, see [Build with Docker GitHub Builder build.yml](github-builder/build.md).
+@z
+
+@x
 ### With Bake
 @y
 ### With Bake
 @z
 
 @x
-It's also possible to build on multiple runners using Bake, with the
-[bake action](https://github.com/docker/bake-action).
+You can use the [`bake.yml` reusable workflow](github-builder/bake.md) for the
+same pattern when your build is defined in a Bake file. The workflow reads the
+target platforms from the Bake definition, distributes the per-platform builds,
+and publishes the final manifest without a separate prepare or merge job.
 @y
-It's also possible to build on multiple runners using Bake, with the
-[bake action](https://github.com/docker/bake-action).
+You can use the [`bake.yml` reusable workflow](github-builder/bake.md) for the
+same pattern when your build is defined in a Bake file. The workflow reads the
+target platforms from the Bake definition, distributes the per-platform builds,
+and publishes the final manifest without a separate prepare or merge job.
 @z
 
-@x
-You can find a live example [in this GitHub repository](https://github.com/crazy-max/docker-linguist).
+@x within code
+// Special target: https://github.com/docker/metadata-action#bake-definition
 @y
-You can find a live example [in this GitHub repository](https://github.com/crazy-max/docker-linguist).
+// Special target: https://github.com/docker/metadata-action#bake-definition
 @z
-
 @x
-The following example achieves the same results as described in
-[the previous section](#distribute-build-across-multiple-runners).
+// Default target if none specified
 @y
-The following example achieves the same results as described in
-[the previous section](#distribute-build-across-multiple-runners).
+// Default target if none specified
 @z
 
 % snip code...

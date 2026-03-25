@@ -127,93 +127,55 @@ selects the `linux/amd64` variant (if you're using Linux containers).
 @z
 
 @x
-To build multi-platform images, you first need to make sure that your Docker
-environment is set up to support it. There are two ways you can do that:
+Multi-platform images require an image store that supports manifest lists.
+Docker Desktop and Docker Engine 29.0+ use the
+[containerd image store](/manuals/desktop/features/containerd.md) by default,
+which supports multi-platform images out of the box. If you're using one of
+these versions, no additional setup is needed.
 @y
-To build multi-platform images, you first need to make sure that your Docker
-environment is set up to support it. There are two ways you can do that:
+Multi-platform images require an image store that supports manifest lists.
+Docker Desktop and Docker Engine 29.0+ use the
+[containerd image store](manuals/desktop/features/containerd.md) by default,
+which supports multi-platform images out of the box. If you're using one of
+these versions, no additional setup is needed.
 @z
 
 @x
-- You can switch from the "classic" image store to the containerd image store.
-- You can create and use a custom builder.
+If you're using an older version of Docker Engine, or if you upgraded from an
+older version that still uses classic storage drivers, you have two options:
 @y
-- You can switch from the "classic" image store to the containerd image store.
-- You can create and use a custom builder.
+If you're using an older version of Docker Engine, or if you upgraded from an
+older version that still uses classic storage drivers, you have two options:
 @z
 
 @x
-The "classic" image store of the Docker Engine does not support multi-platform
-images. Switching to the containerd image store ensures that your Docker Engine
-can push, pull, and build multi-platform images.
+- Enable the containerd image store using the
+  [daemon configuration file](/manuals/engine/storage/containerd.md).
+- Create a custom builder using the `docker-container` driver (see the following section).
 @y
-The "classic" image store of the Docker Engine does not support multi-platform
-images. Switching to the containerd image store ensures that your Docker Engine
-can push, pull, and build multi-platform images.
+- Enable the containerd image store using the
+  [daemon configuration file](manuals/engine/storage/containerd.md).
+- Create a custom builder using the `docker-container` driver (see the following section).
 @z
 
 @x
-Creating a custom builder that uses a driver with multi-platform support,
-such as the `docker-container` driver, will let you build multi-platform images
-without switching to a different image store. However, you still won't be able
-to load the multi-platform images you build into your Docker Engine image
-store. But you can push them to a container registry directly with `docker
-build --push`.
+### Custom builder
 @y
-Creating a custom builder that uses a driver with multi-platform support,
-such as the `docker-container` driver, will let you build multi-platform images
-without switching to a different image store. However, you still won't be able
-to load the multi-platform images you build into your Docker Engine image
-store. But you can push them to a container registry directly with `docker
-build --push`.
+### Custom builder
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="containerd image store" >}}
+As an alternative to using the containerd image store, you can create a custom
+builder that uses the `docker-container` driver. This driver supports
+multi-platform builds, but the resulting images aren't loaded into your Docker
+Engine image store. You can push them to a container registry directly with
+`docker build --push`.
 @y
-{{< tabs >}}
-{{< tab name="containerd image store" >}}
-@z
-
-@x
-The steps for enabling the containerd image store depends on whether you're
-using Docker Desktop or Docker Engine standalone:
-@y
-The steps for enabling the containerd image store depends on whether you're
-using Docker Desktop or Docker Engine standalone:
-@z
-
-@x
-- If you're using Docker Desktop, enable the containerd image store in the
-  [Docker Desktop settings](/manuals/desktop/features/containerd.md).
-@y
-- If you're using Docker Desktop, enable the containerd image store in the
-  [Docker Desktop settings](manuals/desktop/features/containerd.md).
-@z
-
-@x
-- If you're using Docker Engine standalone, enable the containerd image store
-  using the [daemon configuration file](/manuals/engine/storage/containerd.md).
-@y
-- If you're using Docker Engine standalone, enable the containerd image store
-  using the [daemon configuration file](manuals/engine/storage/containerd.md).
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Custom builder" >}}
-@y
-{{< /tab >}}
-{{< tab name="Custom builder" >}}
-@z
-
-@x
-To create a custom builder, use the `docker buildx create` command to create a
-builder that uses the `docker-container` driver.
-@y
-To create a custom builder, use the `docker buildx create` command to create a
-builder that uses the `docker-container` driver.
+As an alternative to using the containerd image store, you can create a custom
+builder that uses the `docker-container` driver. This driver supports
+multi-platform builds, but the resulting images aren't loaded into your Docker
+Engine image store. You can push them to a container registry directly with
+`docker build --push`.
 @z
 
 % snip command...
@@ -228,14 +190,6 @@ builder that uses the `docker-container` driver.
 > Builds with the `docker-container` driver aren't automatically loaded to your
 > Docker Engine image store. For more information, see [Build
 > drivers](manuals/build/builders/drivers/_index.md).
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x
@@ -546,10 +500,8 @@ Prerequisites:
 
 @x
 - Docker Desktop, or Docker Engine with [QEMU installed](#install-qemu-manually)
-- containerd image store enabled
 @y
 - Docker Desktop, or Docker Engine with [QEMU installed](#install-qemu-manually)
-- containerd image store enabled
 @z
 
 @x
@@ -773,12 +725,6 @@ Steps:
 @x
 3. To add cross-compilation support, update the Dockerfile to use the
    pre-defined `BUILDPLATFORM`, `TARGETOS` and `TARGETARCH` build arguments.
-@y
-3. To add cross-compilation support, update the Dockerfile to use the
-   pre-defined `BUILDPLATFORM`, `TARGETOS` and `TARGETARCH` build arguments.
-@z
-
-@x
    - Pin the `golang` image to the platform of the builder using the
      `--platform=$BUILDPLATFORM` option.
    - Add `ARG` instructions for the Go compilation stages to make the
@@ -788,6 +734,8 @@ Steps:
      `TARGETOS` and `TARGETARCH`. The Go compiler uses these variables to do
      cross-compilation.
 @y
+3. To add cross-compilation support, update the Dockerfile to use the
+   pre-defined `BUILDPLATFORM`, `TARGETOS` and `TARGETARCH` build arguments.
    - Pin the `golang` image to the platform of the builder using the
      `--platform=$BUILDPLATFORM` option.
    - Add `ARG` instructions for the Go compilation stages to make the

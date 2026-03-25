@@ -107,7 +107,7 @@ menus:
     - url: https://www.docker.com/products/business
       name: Docker Business
       parent: Product offerings
-    - url: https://www.docker.com/pricing/faq
+    - url: https://www.docker.com/pricing?ref=Docs&refAction=DocsFooter
       name: Pricing FAQs
       parent: Product offerings
     - url: https://www.docker.com/partners/programs
@@ -132,7 +132,7 @@ menus:
     - url: https://www.docker.com/products/business
       name: Docker Business
       parent: 提供製品
-    - url: https://www.docker.com/pricing/faq
+    - url: https://www.docker.com/pricing?ref=Docs&refAction=DocsFooter
       name: 価格に関する FAQ
       parent: 提供製品
     - url: https://www.docker.com/partners/programs

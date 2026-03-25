@@ -142,11 +142,13 @@ $ docker compose down
 @z
 
 @x
-Compose has traditionally been focused on development and testing workflows,
-but with each release we're making progress on more production-oriented features.
+Compose supports production deployments on single hosts. You can use
+Compose to deploy applications to remote Docker hosts and manage
+production-specific configurations.
 @y
-Compose has traditionally been focused on development and testing workflows,
-but with each release we're making progress on more production-oriented features.
+Compose supports production deployments on single hosts. You can use
+Compose to deploy applications to remote Docker hosts and manage
+production-specific configurations.
 @z
 
 @x

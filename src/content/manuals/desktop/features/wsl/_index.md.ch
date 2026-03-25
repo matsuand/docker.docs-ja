@@ -21,21 +21,15 @@ linkTitle: WSL
 @z
 
 @x
-Windows Subsystem for Linux (WSL) 2 is a full Linux kernel built by Microsoft, which lets Linux distributions run without managing virtual machines. With Docker Desktop running on WSL 2, users can leverage Linux workspaces and avoid maintaining both Linux and Windows build scripts. In addition, WSL 2 provides improvements to file system sharing and boot time.
+Windows Subsystem for Linux (WSL) 2 is a full Linux kernel built by Microsoft that lets Linux distributions run without managing virtual machines. With Docker Desktop running on WSL 2, users can leverage Linux workspaces and avoid maintaining both Linux and Windows build scripts. In addition, WSL 2 provides improvements to file system sharing, faster cold-start times, and dynamic resource allocation.
 @y
-Windows Subsystem for Linux (WSL) 2 is a full Linux kernel built by Microsoft, which lets Linux distributions run without managing virtual machines. With Docker Desktop running on WSL 2, users can leverage Linux workspaces and avoid maintaining both Linux and Windows build scripts. In addition, WSL 2 provides improvements to file system sharing and boot time.
+Windows Subsystem for Linux (WSL) 2 is a full Linux kernel built by Microsoft that lets Linux distributions run without managing virtual machines. With Docker Desktop running on WSL 2, users can leverage Linux workspaces and avoid maintaining both Linux and Windows build scripts. In addition, WSL 2 provides improvements to file system sharing, faster cold-start times, and dynamic resource allocation.
 @z
 
 @x
-Docker Desktop uses the dynamic memory allocation feature in WSL 2 to improve the resource consumption. This means Docker Desktop only uses the required amount of CPU and memory resources it needs, while allowing CPU and memory-intensive tasks such as building a container, to run much faster.
+Because WSL 2 uses dynamic memory allocation, Docker Desktop requests only the CPU and memory it actually needs — freeing resources for the rest of your system, while still letting memory-intensive tasks such as multi-stage image builds run at full speed.
 @y
-Docker Desktop uses the dynamic memory allocation feature in WSL 2 to improve the resource consumption. This means Docker Desktop only uses the required amount of CPU and memory resources it needs, while allowing CPU and memory-intensive tasks such as building a container, to run much faster.
-@z
-
-@x
-Additionally, with WSL 2, the time required to start a Docker daemon after a cold start is significantly faster.
-@y
-Additionally, with WSL 2, the time required to start a Docker daemon after a cold start is significantly faster.
+Because WSL 2 uses dynamic memory allocation, Docker Desktop requests only the CPU and memory it actually needs — freeing resources for the rest of your system, while still letting memory-intensive tasks such as multi-stage image builds run at full speed.
 @z
 
 @x
@@ -63,19 +57,13 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @x
 > [!TIP]
 >
-> For a better experience on WSL, consider enabling the WSL
-> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
-> setting available since WSL 1.3.10 (experimental).
->
-> This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
+> Consider enabling the WSL [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings) setting, available since WSL 1.3.10 (experimental).
+>This setting allows Windows to reclaim unused memory from the WSL virtual machine, preventing the Linux kernel's page cache from holding onto large amounts of RAM after container image builds complete. The result is better memory availability for other applications on the host. 
 @y
 > [!TIP]
 >
-> For a better experience on WSL, consider enabling the WSL
-> [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings)
-> setting available since WSL 1.3.10 (experimental).
->
-> This feature enhances the Windows host's ability to reclaim unused memory within the WSL virtual machine, ensuring improved memory availability for other host applications. This capability is especially beneficial for Docker Desktop, as it prevents the WSL VM from retaining large amounts of memory (in GBs) within the Linux kernel's page cache during Docker container image builds, without releasing it back to the host when no longer needed within the VM.
+> Consider enabling the WSL [autoMemoryReclaim](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#experimental-settings) setting, available since WSL 1.3.10 (experimental).
+>This setting allows Windows to reclaim unused memory from the WSL virtual machine, preventing the Linux kernel's page cache from holding onto large amounts of RAM after container image builds complete. The result is better memory availability for other applications on the host. 
 @z
 
 @x
@@ -85,13 +73,11 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
-> [!IMPORTANT]
->
-> To avoid any potential conflicts with using WSL 2 on Docker Desktop, you must uninstall any previous versions of Docker Engine and CLI installed directly through Linux distributions before installing Docker Desktop.
+Before installing Docker Desktop, uninstall any version of Docker Engine or the Docker CLI
+that was installed directly inside a WSL Linux distribution. Running both can cause conflicts.
 @y
-> [!IMPORTANT]
->
-> To avoid any potential conflicts with using WSL 2 on Docker Desktop, you must uninstall any previous versions of Docker Engine and CLI installed directly through Linux distributions before installing Docker Desktop.
+Before installing Docker Desktop, uninstall any version of Docker Engine or the Docker CLI
+that was installed directly inside a WSL Linux distribution. Running both can cause conflicts.
 @z
 
 @x
@@ -99,13 +85,13 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 2. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
 3. Start Docker Desktop from the **Windows Start** menu.
 4. Navigate to **Settings**.
-5. From the **General** tab, select **Use WSL 2 based engine**..
+5. From the **General** tab, select **Use WSL 2 based engine**.
 @y
 1. Download and install the latest version of [Docker Desktop for Windows](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-windows).
 2. Follow the usual installation instructions to install Docker Desktop. Depending on which version of Windows you are using, Docker Desktop may prompt you to turn on WSL 2 during installation. Read the information displayed on the screen and turn on the WSL 2 feature to continue.
 3. Start Docker Desktop from the **Windows Start** menu.
 4. Navigate to **Settings**.
-5. From the **General** tab, select **Use WSL 2 based engine**..
+5. From the **General** tab, select **Use WSL 2 based engine**.
 @z
 
 @x
@@ -117,41 +103,35 @@ Before you turn on the Docker Desktop WSL 2 feature, ensure you have:
 @z
 
 @x
-Now `docker` commands work from Windows using the new WSL 2 engine.
+`docker` commands are now available from any Windows terminal using the WSL 2 engine.
 @y
-Now `docker` commands work from Windows using the new WSL 2 engine.
+`docker` commands are now available from any Windows terminal using the WSL 2 engine.
 @z
 
 @x
 > [!TIP]
 >
 > By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
-> If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.
+> If you want to change the location, go to `Settings -> Resources -> Advanced` page from the Docker Dashboard.
 > Read more about this and other Windows settings at [Changing settings](/manuals/desktop/settings-and-maintenance/settings.md)
 @y
 > [!TIP]
 >
 > By default, Docker Desktop stores the data for the WSL 2 engine at `C:\Users\[USERNAME]\AppData\Local\Docker\wsl`.
-> If you want to change the location, for example, to another drive you can do so via the `Settings -> Resources -> Advanced` page from the Docker Dashboard.
+> If you want to change the location, go to `Settings -> Resources -> Advanced` page from the Docker Dashboard.
 > Read more about this and other Windows settings at [Changing settings](manuals/desktop/settings-and-maintenance/settings.md)
 @z
 
 @x
-## Enabling Docker support in WSL 2 distributions
+## Enable Docker in a WSL 2 distribution
 @y
-## Enabling Docker support in WSL 2 distributions
+## Enable Docker in a WSL 2 distribution
 @z
 
 @x
-WSL 2 adds support for "Linux distributions" to Windows, where each distribution behaves like a VM except they all run on top of a single shared Linux kernel.
+WSL 2 lets multiple Linux distributions run side-by-side on a single shared kernel. Docker Desktop doesn't require a particular distribution to be installed, and `docker` commands work from Windows without one. However, enabling WSL integration for a distribution gives you direct access to `docker` commands from that distribution's terminal — which is useful for Linux-native development workflows.
 @y
-WSL 2 adds support for "Linux distributions" to Windows, where each distribution behaves like a VM except they all run on top of a single shared Linux kernel.
-@z
-
-@x
-Docker Desktop does not require any particular Linux distributions to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distributions. However for the best developer experience, we recommend installing at least one additional distribution and enable Docker support:
-@y
-Docker Desktop does not require any particular Linux distributions to be installed. The `docker` CLI and UI all work fine from Windows without any additional Linux distributions. However for the best developer experience, we recommend installing at least one additional distribution and enable Docker support:
+WSL 2 lets multiple Linux distributions run side-by-side on a single shared kernel. Docker Desktop doesn't require a particular distribution to be installed, and `docker` commands work from Windows without one. However, enabling WSL integration for a distribution gives you direct access to `docker` commands from that distribution's terminal — which is useful for Linux-native development workflows.
 @z
 
 @x
@@ -211,53 +191,41 @@ Docker Desktop does not require any particular Linux distributions to be install
 @z
 
 @x
-> [!NOTE]
->
-> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distributions `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
->
-> With fresh installations of Docker Desktop 4.30 and later, `docker-desktop-data` is no longer created. Instead, Docker Desktop creates and 
-> manages its own virtual hard disk for storage. The `docker-desktop` distribution is still created and used to run the Docker engine.
->
-> Note that Docker Desktop version 4.30 and later keeps using the `docker-desktop-data` distribution if it was already created by an earlier version of Docker Desktop and has not been freshly installed or factory reset.
-@y
-> [!NOTE]
->
-> With Docker Desktop version 4.30 and earlier, Docker Desktop installed two special-purpose internal Linux distributions `docker-desktop` and `docker-desktop-data`. `docker-desktop` is used to run the Docker engine `dockerd`, while `docker-desktop-data` stores containers and images. Neither can be used for general development.
->
-> With fresh installations of Docker Desktop 4.30 and later, `docker-desktop-data` is no longer created. Instead, Docker Desktop creates and 
-> manages its own virtual hard disk for storage. The `docker-desktop` distribution is still created and used to run the Docker engine.
->
-> Note that Docker Desktop version 4.30 and later keeps using the `docker-desktop-data` distribution if it was already created by an earlier version of Docker Desktop and has not been freshly installed or factory reset.
-@z
-
-@x
 ## WSL 2 security in Docker Desktop
 @y
 ## WSL 2 security in Docker Desktop
 @z
 
 @x
-Docker Desktop’s WSL 2 integration operates within the existing security model of WSL and does not introduce additional security risks beyond standard WSL behavior.
+Docker Desktop's WSL 2 integration works within WSL's existing security model and does not introduce security risks beyond standard WSL behavior.
 @y
-Docker Desktop’s WSL 2 integration operates within the existing security model of WSL and does not introduce additional security risks beyond standard WSL behavior.
+Docker Desktop's WSL 2 integration works within WSL's existing security model and does not introduce security risks beyond standard WSL behavior.
 @z
 
 @x
-Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions. 
+Docker Desktop runs inside its own `docker-desktop` WSL distribution, isolated from other distributions in the same way any two WSL distributions are isolated from each other. Interaction between Docker Desktop and other distributions only occurs when you explicitly enable WSL integration for those distributions. This feature allows easy access to the Docker CLI from integrated distributions. 
 @y
-Docker Desktop runs within its own dedicated WSL distribution, `docker-desktop`, which follows the same isolation properties as any other WSL distribution. The only interaction between Docker Desktop and other installed WSL distributions occurs when the Docker Desktop **WSL integration** feature is enabled in settings. This feature allows easy access to the Docker CLI from integrated distributions. 
+Docker Desktop runs inside its own `docker-desktop` WSL distribution, isolated from other distributions in the same way any two WSL distributions are isolated from each other. Interaction between Docker Desktop and other distributions only occurs when you explicitly enable WSL integration for those distributions. This feature allows easy access to the Docker CLI from integrated distributions. 
 @z
 
 @x
-WSL is designed to facilitate interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
+WSL is designed to aid interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
 @y
-WSL is designed to facilitate interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
+WSL is designed to aid interoperability between Windows and Linux environments. Its file system is accessible from the Windows host `\\wsl$`, meaning Windows processes can read and modify files within WSL. This behavior is not specific to Docker Desktop, but rather a core aspect of WSL itself.
 @z
 
 @x
-For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+For environments that require stricter isolation:
 @y
-For organizations concerned about security risks related to WSL and want stricter isolation and security controls, run Docker Desktop in Hyper-V mode instead of WSL 2. Alternatively, run your container workloads with [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) enabled.
+For environments that require stricter isolation:
+@z
+
+@x
+- Run Docker Desktop in Hyper-V mode instead of WSL 2 to avoid the shared-kernel model entirely.
+- Enable [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) to add an additional layer of protection around container workloads regardless of backend.
+@y
+- Run Docker Desktop in Hyper-V mode instead of WSL 2 to avoid the shared-kernel model entirely.
+- Enable [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) to add an additional layer of protection around container workloads regardless of backend.
 @z
 
 @x

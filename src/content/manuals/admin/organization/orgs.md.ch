@@ -63,10 +63,10 @@ These procedures walk you through creating an organization from the Admin Consol
 
 @x
 > [!TIP]
-> Need a different plan for your team's needs? Review different [Docker subscriptions and features](https://www.docker.com/pricing/) to choose a subscription for your organization.
+> Need a different plan for your team's needs? Review different [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminOrgs) to choose a subscription for your organization.
 @y
 > [!TIP]
-> Need a different plan for your team's needs? Review different [Docker subscriptions and features](https://www.docker.com/pricing/) to choose a subscription for your organization.
+> Need a different plan for your team's needs? Review different [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminOrgs) to choose a subscription for your organization.
 @z
 
 @x
@@ -78,7 +78,7 @@ These procedures walk you through creating an organization from the Admin Consol
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and navigate to the bottom
 of the organization list. Select **Create new organization**.
-1. Choose a subscription for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business subscription.
+1. Choose a subscription for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminOrgs) for details on the features offered in the Team and Business subscription.
 1. Select **Continue to profile**, then **Create an organization** to create a new organization.
 1. Enter an **Organization namespace**. This is the official, unique name for
 your organization in Docker Hub. 
@@ -94,7 +94,7 @@ your organization in Docker Hub.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and navigate to the bottom
 of the organization list. Select **Create new organization**.
-1. Choose a subscription for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing/) for details on the features offered in the Team and Business subscription.
+1. Choose a subscription for your organization, a billing cycle, and specify how many seats you need. See [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminOrgs) for details on the features offered in the Team and Business subscription.
 1. Select **Continue to profile**, then **Create an organization** to create a new organization.
 1. Enter an **Organization namespace**. This is the official, unique name for
 your organization in Docker Hub. 

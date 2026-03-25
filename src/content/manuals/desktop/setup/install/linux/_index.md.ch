@@ -29,11 +29,11 @@ title: Linux への Docker Desktop のインストール
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees or more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
+> subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopLinuxInstall).
 @y
 > **Docker Desktop 契約条項**
 >
-> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
+> より大きなエンタープライズ向け（従業員 250 名以上、あるいは年間収益 1 千万 US ドル以上）に Docker Desktop を商用利用する場合は、[有償サブスクリプション](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopLinuxInstall) が必要です。
 @z
 
 @x
@@ -63,11 +63,11 @@ This page contains information about general system requirements, supported plat
 @x
 > [!IMPORTANT]
 >
-> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees or with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
+> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees or with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopLinuxInstall) is required.
 @y
 > [!IMPORTANT]
 >
-> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees or with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing/) is required.
+> For commercial use of Docker Engine obtained via Docker Desktop within larger enterprises (exceeding 250 employees or with annual revenue surpassing $10 million USD), a [paid subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopLinuxInstall) is required.
 @z
 
 @x

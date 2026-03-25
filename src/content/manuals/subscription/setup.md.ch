@@ -18,9 +18,9 @@ Docker subscriptions provide features and benefits for individual developers, te
 @z
 
 @x
-Before you begin, make sure you have a [Docker ID](../accounts/create-account.md). To learn more about what's included with each tier, see [Docker Pricing](https://www.docker.com/pricing/).
+Before you begin, make sure you have a [Docker ID](../accounts/create-account.md). To learn more about what's included in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionSetup).
 @y
-Before you begin, make sure you have a [Docker ID](../accounts/create-account.md). To learn more about what's included with each tier, see [Docker Pricing](https://www.docker.com/pricing/).
+Before you begin, make sure you have a [Docker ID](../accounts/create-account.md). To learn more about what's included in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionSetup).
 @z
 
 @x

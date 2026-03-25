@@ -1,7 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = images
+
+SUBDIRS = github-builder images
 
 bases = \
 	_index.md                \

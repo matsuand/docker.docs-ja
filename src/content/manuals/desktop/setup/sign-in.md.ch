@@ -35,11 +35,11 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @x
 > [!TIP]
 >
-> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopSignIn) to see what else Docker can offer you.
 @y
 > [!TIP]
 >
-> Explore [Docker's core subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you. 
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopSignIn) to see what else Docker can offer you.
 @z
 
 @x

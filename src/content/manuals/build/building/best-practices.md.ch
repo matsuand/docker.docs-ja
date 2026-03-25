@@ -702,12 +702,12 @@ to create an efficient and maintainable Dockerfile.
 @x
 Whenever possible, use current official images as the basis for your
 images. Docker recommends the [Alpine image](https://hub.docker.com/_/alpine/) as it
-is tightly controlled and small in size (currently under 6 MB), while still
+is tightly controlled and small in size (under 6 MB), while still
 being a full Linux distribution.
 @y
 Whenever possible, use current official images as the basis for your
 images. Docker recommends the [Alpine image](https://hub.docker.com/_/alpine/) as it
-is tightly controlled and small in size (currently under 6 MB), while still
+is tightly controlled and small in size (under 6 MB), while still
 being a full Linux distribution.
 @z
 

@@ -735,9 +735,9 @@ To share your image and data, you'll use [Docker Hub](https://hub.docker.com/). 
 @z
 
 @x
-1. [Sign up](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade) or sign in to [Docker Hub](https://hub.docker.com).
+1. [Sign up](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesJupyter) or sign in to [Docker Hub](https://hub.docker.com).
 @y
-1. [Sign up](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade) or sign in to [Docker Hub](https://hub.docker.com).
+1. [Sign up](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesJupyter) or sign in to [Docker Hub](https://hub.docker.com).
 @z
 
 @x

@@ -180,6 +180,20 @@ beyond their organization role:
 @z
 
 @x
+> [!TIP]
+> 
+> If you want more granular access control, you can
+> [upgrade to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsEnterpriseCoreRoles)
+> for custom roles and advanced permissions.
+@y
+> [!TIP]
+> 
+> If you want more granular access control, you can
+> [upgrade to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsEnterpriseCoreRoles)
+> for custom roles and advanced permissions.
+@z
+
+@x
 _\* If not part of a company_
 @y
 _\* If not part of a company_

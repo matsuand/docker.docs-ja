@@ -23,13 +23,13 @@ title: Install Docker Desktop on RHEL
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees or more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
+> subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall).
 @y
 > **Docker Desktop terms**
 >
 > Commercial use of Docker Desktop in larger enterprises (more than 250
 > employees or more than $10 million USD in annual revenue) requires a [paid
-> subscription](https://www.docker.com/pricing/).
+> subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall).
 @z
 
 @x
@@ -203,7 +203,7 @@ You need to first remove the previous version and then download the new package 
 @z
 
 @x
-- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Review [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall) to see what Docker can offer you.
 - Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
@@ -212,7 +212,7 @@ You need to first remove the previous version and then download the new package 
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions
   on backing up and restoring data related to Docker.
 @y
-- Review [Docker's subscriptions](https://www.docker.com/pricing/) to see what Docker can offer you.
+- Review [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopRhelInstall) to see what Docker can offer you.
 - Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.

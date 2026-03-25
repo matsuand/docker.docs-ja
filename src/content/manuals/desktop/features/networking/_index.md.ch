@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Understand how Docker Desktop handles networking, firewalls, file access, proxies, and endpoint visibility.
 keywords: docker desktop, networking, architecture, firewall, proxies, crowdstrike, vpn
@@ -96,9 +98,9 @@ The following table summarizes typical setups in more detail:
 @z
 
 @x
-Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](/manuals/engine/daemon/_index.md).
+Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and manage these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](/manuals/engine/daemon/_index.md).
 @y
-Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](manuals/engine/daemon/_index.md).
+Each Linux container in Docker Desktop runs inside a small virtual network managed by Docker and every container is attached to a Docker-managed network and receives its own internal IP address. You can view and manage these networks with `docker network ls`, `docker network create`, and `docker network inspect`. They are managed by the [`daemon.json`](manuals/engine/daemon/_index.md).
 @z
 
 @x

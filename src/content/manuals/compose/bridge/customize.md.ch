@@ -259,23 +259,35 @@ The default transformation also includes templates for applications that use LLM
 @z
 
 @x
-- `model-runner-deployment.tmpl`
-- `model-runner-service.tmpl`
-- `model-runner-pvc.tmpl`
-- `/overlays/model-runner/kustomization.yaml`
-- `/overlays/desktop/deployment.tmpl`
+- `model-runner-deployment.tmpl`: Generates the Kubernetes deployment for Docker Model Runner. Customize it to change replica counts, image tags, resource requests and limits, GPU scheduling settings, tolerations, or additional environment variables.
+- `model-runner-service.tmpl`: Builds the service that exposes Docker Model Runner. Update it to switch between `ClusterIP`, `NodePort`, or `LoadBalancer` types, adjust ports, or add annotations for ingress and service meshes.
+- `model-runner-pvc.tmpl`: Defines the persistent volume claim used to store downloaded models. Edit it to set storage size, storage class, access modes, or volume annotations required by your storage provider.
+- `/overlays/model-runner/kustomization.yaml`: Kustomize overlay applied when you deploy Model Runner to a standalone Kubernetes cluster. Extend it to add patches for labels and annotations, attach `NetworkPolicies`, or include extra manifests.
+- `/overlays/desktop/deployment.tmpl`: Desktop-specific deployment template that keeps the in-cluster Model Runner scaled down and points workloads to the host endpoint. Adjust it if you change the Desktop endpoint or want to deploy Model Runner on Desktop instead of relying on the host service.
 @y
-- `model-runner-deployment.tmpl`
-- `model-runner-service.tmpl`
-- `model-runner-pvc.tmpl`
-- `/overlays/model-runner/kustomization.yaml`
-- `/overlays/desktop/deployment.tmpl`
+- `model-runner-deployment.tmpl`: Generates the Kubernetes deployment for Docker Model Runner. Customize it to change replica counts, image tags, resource requests and limits, GPU scheduling settings, tolerations, or additional environment variables.
+- `model-runner-service.tmpl`: Builds the service that exposes Docker Model Runner. Update it to switch between `ClusterIP`, `NodePort`, or `LoadBalancer` types, adjust ports, or add annotations for ingress and service meshes.
+- `model-runner-pvc.tmpl`: Defines the persistent volume claim used to store downloaded models. Edit it to set storage size, storage class, access modes, or volume annotations required by your storage provider.
+- `/overlays/model-runner/kustomization.yaml`: Kustomize overlay applied when you deploy Model Runner to a standalone Kubernetes cluster. Extend it to add patches for labels and annotations, attach `NetworkPolicies`, or include extra manifests.
+- `/overlays/desktop/deployment.tmpl`: Desktop-specific deployment template that keeps the in-cluster Model Runner scaled down and points workloads to the host endpoint. Adjust it if you change the Desktop endpoint or want to deploy Model Runner on Desktop instead of relying on the host service.
 @z
 
 @x
-These templates can be extended or replaced to change how Docker Model Runner is deployed or configured.
+Common customization scenarios:
 @y
-These templates can be extended or replaced to change how Docker Model Runner is deployed or configured.
+Common customization scenarios:
+@z
+
+@x
+- Enable GPU support by adding vendor-specific resource requests, limits, and node selectors in `model-runner-deployment.tmpl`.
+- Increase or tune storage for model artifacts by editing `model-runner-pvc.tmpl` to set the desired size, storage class, or access mode.
+- Expose Model Runner outside the cluster by switching the service type in `model-runner-service.tmpl` or adding ingress annotations in the model-runner overlay.
+- Align cluster policies by adding labels, annotations, or NetworkPolicies through `/overlays/model-runner/kustomization.yaml`.
+@y
+- Enable GPU support by adding vendor-specific resource requests, limits, and node selectors in `model-runner-deployment.tmpl`.
+- Increase or tune storage for model artifacts by editing `model-runner-pvc.tmpl` to set the desired size, storage class, or access mode.
+- Expose Model Runner outside the cluster by switching the service type in `model-runner-service.tmpl` or adding ingress annotations in the model-runner overlay.
+- Align cluster policies by adding labels, annotations, or NetworkPolicies through `/overlays/model-runner/kustomization.yaml`.
 @z
 
 @x

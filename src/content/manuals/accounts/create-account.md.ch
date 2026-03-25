@@ -42,11 +42,11 @@ Your Docker ID becomes your username for hosted Docker services, and
 @x
 > [!TIP]
 >
-> Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+> Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsCreateAccount) to see what else Docker can offer you.
 @y
 > [!TIP]
 >
-> Explore [Docker's subscriptions](https://www.docker.com/pricing/) to see what else Docker can offer you.
+> Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsCreateAccount) to see what else Docker can offer you.
 @z
 
 @x

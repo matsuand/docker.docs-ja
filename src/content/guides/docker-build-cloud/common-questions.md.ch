@@ -72,9 +72,9 @@ Docker Build Cloud 互換のクライアント (buildx) をインストールす
 @z
 
 @x
-Pricing details for Docker Build Cloud can be found on the [pricing page](https://www.docker.com/pricing/).
+Pricing details for Docker Build Cloud can be found on the [pricing page](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesBuildCloudFaq).
 @y
-Docker Build Cloud の価格については [価格のページ](https://www.docker.com/pricing/) を参照してください。
+Docker Build Cloud の価格については [価格のページ](https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesBuildCloudFaq) を参照してください。
 @z
 
 @x

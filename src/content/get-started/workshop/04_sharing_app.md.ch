@@ -58,9 +58,9 @@ To push an image, you first need to create a repository on Docker Hub.
 @z
 
 @x
-1. [Sign up](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade) or Sign in to [Docker Hub](https://hub.docker.com).
+1. [Sign up](https://www.docker.com/pricing?ref=Docs&refAction=DocsSharingApp) or Sign in to [Docker Hub](https://hub.docker.com).
 @y
-1. [Docker Hub](https://hub.docker.com) に [サインアップ](https://www.docker.com/pricing?utm_source=docker&utm_medium=webreferral&utm_campaign=docs_driven_upgrade) またはサインインします。
+1. [Docker Hub](https://hub.docker.com) に [サインアップ](https://www.docker.com/pricing?ref=Docs&refAction=DocsSharingApp) またはサインインします。
 @z
 
 @x

@@ -36,9 +36,9 @@ When you upgrade your Docker subscription, you immediately get access to all fea
 @z
 
 @x
-For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing).
+For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @y
-For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing).
+For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @z
 
 @x
@@ -128,9 +128,9 @@ Consider the following before downgrading:
 @z
 
 @x
-For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing).
+For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @y
-For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing).
+For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @z
 
 @x

@@ -165,7 +165,7 @@ Before configuring MCP integration, you need:
 - **Docker Agent installed** - See the [installation guide](../_index.md#installation)
 - **Agent configuration** - A YAML file defining your agent. See the
   [tutorial](../tutorial.md) or [example
-  configurations](https://github.com/docker/cagent/tree/main/examples)
+  configurations](https://github.com/docker/docker-agent/tree/main/examples)
 - **MCP client** - Claude Desktop, Claude Code, or another MCP-compatible
   application
 - **API keys** - Environment variables for any model providers your agents use
@@ -174,7 +174,7 @@ Before configuring MCP integration, you need:
 - **Docker Agent installed** - See the [installation guide](../_index.md#installation)
 - **Agent configuration** - A YAML file defining your agent. See the
   [tutorial](../tutorial.md) or [example
-  configurations](https://github.com/docker/cagent/tree/main/examples)
+  configurations](https://github.com/docker/docker-agent/tree/main/examples)
 - **MCP client** - Claude Desktop, Claude Code, or another MCP-compatible
   application
 - **API keys** - Environment variables for any model providers your agents use
@@ -739,7 +739,7 @@ around.
 - Add [RAG for codebase search](../rag.md) to your agent
 - Check the [CLI reference](../reference/cli.md) for all `docker agent serve mcp` options
 - Browse [example
-  configurations](https://github.com/docker/cagent/tree/main/examples) for
+  configurations](https://github.com/docker/docker-agent/tree/main/examples) for
   different agent types
 @y
 - Use the [MCP Gateway](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) to give your
@@ -753,6 +753,6 @@ around.
 - Add [RAG for codebase search](../rag.md) to your agent
 - Check the [CLI reference](../reference/cli.md) for all `docker agent serve mcp` options
 - Browse [example
-  configurations](https://github.com/docker/cagent/tree/main/examples) for
+  configurations](https://github.com/docker/docker-agent/tree/main/examples) for
   different agent types
 @z

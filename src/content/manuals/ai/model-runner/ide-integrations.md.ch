@@ -10,9 +10,9 @@ description: Configure popular AI coding assistants and tools to use Docker Mode
 @z
 
 @x
-keywords: Docker, ai, model runner, cline, continue, cursor, vscode, ide, integration, openai, ollama
+keywords: Docker, ai, model runner, cline, continue, cursor, vscode, ide, integration, openai, ollama, claude, anthropic, claude-code
 @y
-keywords: Docker, ai, model runner, cline, continue, cursor, vscode, ide, integration, openai, ollama
+keywords: Docker, ai, model runner, cline, continue, cursor, vscode, ide, integration, openai, ollama, claude, anthropic, claude-code
 @z
 
 @x
@@ -61,6 +61,32 @@ Before configuring any tool:
    ```console
    $ docker model pull ai/qwen2.5-coder
    ```
+@z
+
+@x
+> [!TIP]
+>
+> The default context size for many models (such as `gpt-oss`) is 4,096 tokens, which is limiting for coding tasks.
+> You can repackage it with a larger context window:
+>
+> ```console
+> $ docker model pull gpt-oss
+> $ docker model package --from ai/gpt-oss --context-size 32000 gpt-oss:32k
+> ```
+> Alternatively, models like ai/glm-4.7-flash, ai/qwen2.5-coder, and ai/devstral-small-2
+> come with 128K context by default and work without repackaging.
+@y
+> [!TIP]
+>
+> The default context size for many models (such as `gpt-oss`) is 4,096 tokens, which is limiting for coding tasks.
+> You can repackage it with a larger context window:
+>
+> ```console
+> $ docker model pull gpt-oss
+> $ docker model package --from ai/gpt-oss --context-size 32000 gpt-oss:32k
+> ```
+> Alternatively, models like ai/glm-4.7-flash, ai/qwen2.5-coder, and ai/devstral-small-2
+> come with 128K context by default and work without repackaging.
 @z
 
 @x

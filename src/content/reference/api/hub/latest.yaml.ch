@@ -136,9 +136,9 @@ tags:
 @z
 
 @x
-      To learn more about the features available in each subscription and to upgrade your existing subscription, see [Docker Pricing](https://www.docker.com/pricing).
+      To learn more about the features available in each subscription and to upgrade your existing subscription, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsApiHub).
 @y
-      To learn more about the features available in each subscription and to upgrade your existing subscription, see [Docker Pricing](https://www.docker.com/pricing).
+      To learn more about the features available in each subscription and to upgrade your existing subscription, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsApiHub).
 @z
 
 @x

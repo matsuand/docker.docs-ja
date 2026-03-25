@@ -401,12 +401,12 @@ see what shifted.
 - Check the [CLI reference](reference/cli.md#eval) for all `docker agent eval`
   options
 - Learn [best practices](best-practices.md) for building effective agents
-- Review [example configurations](https://github.com/docker/cagent/tree/main/examples)
+- Review [example configurations](https://github.com/docker/docker-agent/tree/main/examples)
   for different agent types
 @y
 - Check the [CLI reference](reference/cli.md#eval) for all `docker agent eval`
   options
 - Learn [best practices](best-practices.md) for building effective agents
-- Review [example configurations](https://github.com/docker/cagent/tree/main/examples)
+- Review [example configurations](https://github.com/docker/docker-agent/tree/main/examples)
   for different agent types
 @z

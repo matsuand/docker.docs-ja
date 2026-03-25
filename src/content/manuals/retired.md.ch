@@ -152,13 +152,13 @@ product line.
 @z
 
 @x
-> [!NOTE]  
+> [!TIP]  
 > For information about enterprise-level features offered by Docker today,
-> see the [Docker Business subscription](https://www.docker.com/pricing/).
+> see the [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsRetired).
 @y
-> [!NOTE]  
+> [!TIP]  
 > For information about enterprise-level features offered by Docker today,
-> see the [Docker Business subscription](https://www.docker.com/pricing/).
+> see the [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsRetired).
 @z
 
 @x

@@ -1066,13 +1066,13 @@ If results lack context:
 @x
 - [Configuration reference](reference/config.md#rag) - Complete RAG options and
   parameters
-- [RAG examples](https://github.com/docker/cagent/tree/main/examples/rag) -
+- [RAG examples](https://github.com/docker/docker-agent/tree/main/examples/rag) -
   Working configurations for different scenarios
 - [Tools reference](reference/toolsets.md) - How RAG search tools work in agent workflows
 @y
 - [Configuration reference](reference/config.md#rag) - Complete RAG options and
   parameters
-- [RAG examples](https://github.com/docker/cagent/tree/main/examples/rag) -
+- [RAG examples](https://github.com/docker/docker-agent/tree/main/examples/rag) -
   Working configurations for different scenarios
 - [Tools reference](reference/toolsets.md) - How RAG search tools work in agent workflows
 @z

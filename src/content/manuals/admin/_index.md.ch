@@ -177,10 +177,10 @@ Organization owners have the organization owner administrator role available. Th
 
 @x
 > [!TIP]
-> [Upgrading to a Docker Business plan](https://www.docker.com/pricing/) grants you the company owner role so you can manage multiple organizations.
+> [Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin) grants you the company owner role so you can manage multiple organizations.
 @y
 > [!TIP]
-> [Upgrading to a Docker Business plan](https://www.docker.com/pricing/) grants you the company owner role so you can manage multiple organizations.
+> [Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin) grants you the company owner role so you can manage multiple organizations.
 @z
 
 @x

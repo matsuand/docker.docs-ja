@@ -70,12 +70,12 @@ To use Insights, you must meet the following requirements:
 @z
 
 @x
-- [Docker Business subscription](https://www.docker.com/pricing/)
+- [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminInsights)
 - Administrators must [enforce sign-in](/security/for-admins/enforce-sign-in/)
 for users
 - Your Account Executive must turn on Insights for your organization
 @y
-- [Docker Business subscription](https://www.docker.com/pricing/)
+- [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminInsights)
 - Administrators must [enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/)
 for users
 - Your Account Executive must turn on Insights for your organization

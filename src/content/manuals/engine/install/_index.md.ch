@@ -215,10 +215,10 @@ Patch releases are always backward compatible with its major and minor version.
 @x
 Commercial use of Docker Engine obtained via Docker Desktop
 within larger enterprises (exceeding 250 employees OR with annual revenue surpassing
-$10 million USD), requires a [paid subscription](https://www.docker.com/pricing/).
+$10 million USD), requires a [paid subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsEngineInstall).
 Apache License, Version 2.0. See [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) for the full license.
 @y
-Docker Desktop 内の Docker Engine を大規模エンタープライズ（従業員 250名以上、または年間収益 1 千万 US ドル以上）向けの商用利用に対しては [有償サブスクリプション](https://www.docker.com/pricing/) が必要です。
+Docker Desktop 内の Docker Engine を大規模エンタープライズ（従業員 250名以上、または年間収益 1 千万 US ドル以上）向けの商用利用に対しては [有償サブスクリプション](https://www.docker.com/pricing?ref=Docs&refAction=DocsEngineInstall) が必要です。
 Apache License, Version 2.0 のライセンス全文は [LICENSE](https://github.com/moby/moby/blob/master/LICENSE) を参照してください。
 @z
 

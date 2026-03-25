@@ -52,11 +52,11 @@ All Docker Pro, Team, and Business subscribers receive email support for Docker 
 @x
 > [!TIP]
 >
-> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing/).
+> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
 @y
 > [!TIP]
 >
-> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing/).
+> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
 @z
 
 @x

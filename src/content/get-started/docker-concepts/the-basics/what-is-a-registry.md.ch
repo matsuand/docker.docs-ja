@@ -90,14 +90,13 @@ The following diagram shows the relationship between a registry, repositories, a
 % snip text...
 
 @x
-> [!NOTE]
+> [!TIP]
 >
-> You can create one private repository and unlimited public repositories using the free version of Docker Hub. For more information, visit the [Docker Hub subscription page](https://www.docker.com/pricing/).
+>A Docker Personal plan gives you one private repository and unlimited public repositories. To get unlimited private repositories, upgrade to the [Docker Team plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry).
 @y
-> [!NOTE]
+> [!TIP]
 >
-> Docker Hub の無償版を利用すると、プライベートリポジトリ 1 つと無制限のパブリックリポジトリを生成することができます。
-> 詳しくは [Docker Hub サブスクリプションページ](https://www.docker.com/pricing/) を参照してください。
+>Docker Personal プランでは 1 つのプライベートリポジトリと無制限のパブリックリポジトリが提供されます。プライベートリポジトリ数を無制限にするには [Docker Team プラン](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry) にアップグレードする必要があります。
 @z
 
 @x

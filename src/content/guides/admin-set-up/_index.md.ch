@@ -38,7 +38,7 @@ tags: [admin]
     - title: Image Access Management
       url: /security/for-admins/hardened-desktop/image-access-management/
     - title: Docker subscription information
-      url: "https://www.docker.com/pricing/"
+      url: "https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesAdminSetup"
 @y
     - title: Overview of Administration in Docker
       url: __SUBDIR__/admin/
@@ -55,7 +55,7 @@ tags: [admin]
     - title: Image Access Management
       url: __SUBDIR__/security/for-admins/hardened-desktop/image-access-management/
     - title: Docker subscription information
-      url: "https://www.docker.com/pricing/"
+      url: "https://www.docker.com/pricing?ref=Docs&refAction=DocsGuidesAdminSetup"
 @z
 
 @x
@@ -98,7 +98,7 @@ policies.
 - Organizations seeking to optimize their use of Docker products for greater
   scalability and efficiency
 - Organizations with a
-  [Docker Business subscription](https://www.docker.com/pricing/)
+  [Docker Business subscription](https://www.docker.com/pricing?ref=DocsGuides&refAction=DocsGuidesCTAClicked)
 @y
 - Administrators responsible for managing Docker environments within their
   organization
@@ -107,7 +107,7 @@ policies.
 - Organizations seeking to optimize their use of Docker products for greater
   scalability and efficiency
 - Organizations with a
-  [Docker Business subscription](https://www.docker.com/pricing/)
+  [Docker Business subscription](https://www.docker.com/pricing?ref=DocsGuides&refAction=DocsGuidesCTAClicked)
 @z
 
 @x

@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Toolsets reference
@@ -395,6 +396,82 @@ significantly reduce context consumption for verbose tool outputs.
 Useful for tools that return large JSON responses (API results, file listings,
 search results). The compression is transparent to the agent but can
 significantly reduce context consumption for verbose tool outputs.
+@z
+
+@x
+### Auto-installation of tool binaries
+@y
+### Auto-installation of tool binaries
+@z
+
+@x
+MCP and LSP toolsets that require a binary command can be auto-installed if the
+command isn't on your system. Docker Agent uses the
+[aqua registry](https://github.com/aquaproj/aqua-registry), a curated index of
+CLI tool packages, to resolve and download binaries.
+@y
+MCP and LSP toolsets that require a binary command can be auto-installed if the
+command isn't on your system. Docker Agent uses the
+[aqua registry](https://github.com/aquaproj/aqua-registry), a curated index of
+CLI tool packages, to resolve and download binaries.
+@z
+
+@x
+When a toolset with a `command` property is loaded, Docker Agent:
+@y
+When a toolset with a `command` property is loaded, Docker Agent:
+@z
+
+@x
+1. Checks if the command exists in your `PATH`.
+2. Checks the Docker Agent tools directory (`~/.cagent/tools/bin/`).
+3. If still not found, looks up the command in the aqua registry and installs it.
+@y
+1. Checks if the command exists in your `PATH`.
+2. Checks the Docker Agent tools directory (`~/.cagent/tools/bin/`).
+3. If still not found, looks up the command in the aqua registry and installs it.
+@z
+
+@x
+Installed binaries are stored under `~/.cagent/tools/`. You can override this
+location with the `DOCKER_AGENT_TOOLS_DIR` environment variable.
+@y
+Installed binaries are stored under `~/.cagent/tools/`. You can override this
+location with the `DOCKER_AGENT_TOOLS_DIR` environment variable.
+@z
+
+@x
+Use the `version` property to pin a specific package and version:
+@y
+Use the `version` property to pin a specific package and version:
+@z
+
+% snip code...
+
+@x
+The format is `owner/repo` or `owner/repo@version`. Without a version tag,
+Docker Agent uses the latest release. Without the `version` property entirely,
+Docker Agent tries to auto-detect the package from the command name.
+@y
+The format is `owner/repo` or `owner/repo@version`. Without a version tag,
+Docker Agent uses the latest release. Without the `version` property entirely,
+Docker Agent tries to auto-detect the package from the command name.
+@z
+
+@x
+To disable auto-installation for a single toolset, set `version` to `"false"`:
+@y
+To disable auto-installation for a single toolset, set `version` to `"false"`:
+@z
+
+% snip code...
+
+@x
+To disable auto-installation globally, set the `DOCKER_AGENT_AUTO_INSTALL`
+environment variable to `false`.
+@y
+To disable auto-installation globally, set the `DOCKER_AGENT_AUTO_INSTALL`
+environment variable to `false`.
 @z
 
 @x
@@ -1265,10 +1342,10 @@ agent to transfer the entire conversation to a different agent.
 - Read the [Configuration file reference](./config.md) for YAML file structure
 - Review the [CLI reference](./cli.md) for running agents
 - Explore [MCP servers](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md) for extended capabilities
-- Browse [example configurations](https://github.com/docker/cagent/tree/main/examples)
+- Browse [example configurations](https://github.com/docker/docker-agent/tree/main/examples)
 @y
 - Read the [Configuration file reference](./config.md) for YAML file structure
 - Review the [CLI reference](./cli.md) for running agents
 - Explore [MCP servers](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md) for extended capabilities
-- Browse [example configurations](https://github.com/docker/cagent/tree/main/examples)
+- Browse [example configurations](https://github.com/docker/docker-agent/tree/main/examples)
 @z

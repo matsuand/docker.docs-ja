@@ -99,10 +99,10 @@ Three major versions of the Compose file format for Compose v1 were released:
 
 @x
 Compose file format 1 is substantially different to all the following formats as it lacks a top-level `services` key.
-Its usage is historical and files written in this format don't run with Compose v2.
+Its usage is historical and files written in this format don't run with Compose v2 or v5.
 @y
 Compose file format 1 is substantially different to all the following formats as it lacks a top-level `services` key.
-Its usage is historical and files written in this format don't run with Compose v2.
+Its usage is historical and files written in this format don't run with Compose v2 or v5.
 @z
 
 @x

@@ -31,14 +31,14 @@ keywords: AI, Docker, docker agent, agents, multi-agent, MCP Toolkit, lab, labsp
 
 @x
     - title: Docker Agent documentation
-      url: https://github.com/docker/cagent
+      url: https://github.com/docker/docker-agent
     - title: Docker MCP Toolkit
       url: https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/
     - title: Labspace repository
       url: https://github.com/ajeetraina/labspace-cagent
 @y
     - title: Docker Agent documentation
-      url: https://github.com/docker/cagent
+      url: https://github.com/docker/docker-agent
     - title: Docker MCP Toolkit
       url: https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/
     - title: Labspace repository

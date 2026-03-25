@@ -22,12 +22,12 @@ keywords: docker subscription, pricing, billing, pro, team, business, subscripti
 @x
 - title: Compare Docker subscriptions
   description: Visit the pricing page to see what's included in different Docker subscriptions.
-  link: "https://www.docker.com/pricing/"
+  link: "https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscription"
   icon: feature_search
 @y
 - title: Compare Docker subscriptions
   description: Visit the pricing page to see what's included in different Docker subscriptions.
-  link: "https://www.docker.com/pricing/"
+  link: "https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscription"
   icon: feature_search
 @z
 
