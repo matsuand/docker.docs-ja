@@ -103,56 +103,36 @@ To update your email address:
 
 @x
 1. Sign in to your [Docker account](https://app.docker.com/login).
-1. Select your avatar in the top-right corner and select **Account settings**.
-1. Select **Email**.
-1. Enter your new email address and your password to confirm the change.
-1. Select **Send verification email**. Docker sends a verification
-link to your new email.
+1. Go to **Settings**, then choose **Email**.
+1. Enter your new email address and confirm your identity with your password. Select **Verify email**.
+1. Go to the new Docker email and copy the 6-digit verification code.
+1. Paste the verification code to complete updating your email.
 @y
 1. Sign in to your [Docker account](https://app.docker.com/login).
-1. Select your avatar in the top-right corner and select **Account settings**.
-1. Select **Email**.
-1. Enter your new email address and your password to confirm the change.
-1. Select **Send verification email**. Docker sends a verification
-link to your new email.
+1. Go to **Settings**, then choose **Email**.
+1. Enter your new email address and confirm your identity with your password. Select **Verify email**.
+1. Go to the new Docker email and copy the 6-digit verification code.
+1. Paste the verification code to complete updating your email.
 @z
 
 @x
-Your new email address will appear as unverified until you complete the
-verification process. You can:
+Your verification session expires after 15 minutes.
 @y
-Your new email address will appear as unverified until you complete the
-verification process. You can:
-@z
-
-@x
-- Resend the verification email if needed.
-- Remove the unverified email address at any time before verification.
-@y
-- Resend the verification email if needed.
-- Remove the unverified email address at any time before verification.
-@z
-
-@x
-To verify your email, open your email client and follow the instructions
-in the Docker verification email.
-@y
-To verify your email, open your email client and follow the instructions
-in the Docker verification email.
+Your verification session expires after 15 minutes.
 @z
 
 @x
 > [!NOTE]
 >
 > Docker accounts only support one verified email address at a time, which
-is used for account notifications and security-related communications. You
-can't add multiple verified email addresses to your account.
+> is used for account notifications and security-related communications. You
+> can't add multiple verified email addresses to your account.
 @y
 > [!NOTE]
 >
 > Docker accounts only support one verified email address at a time, which
-is used for account notifications and security-related communications. You
-can't add multiple verified email addresses to your account.
+> is used for account notifications and security-related communications. You
+> can't add multiple verified email addresses to your account.
 @z
 
 @x

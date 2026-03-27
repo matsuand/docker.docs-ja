@@ -4,9 +4,8 @@
 SUBDIRS = FAQs images
 
 bases = \
-	_index.md    \
-	configure.md \
-	connect.md   \
+	_index.md  \
+	connect.md \
 	manage.md
 
 include $(top_srcdir)/build-aux/common.mk

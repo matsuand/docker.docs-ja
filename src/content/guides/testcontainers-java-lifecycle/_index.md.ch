@@ -11,12 +11,20 @@ summary: |
   using JUnit 5 lifecycle callbacks, extension annotations, and the singleton
   containers pattern.
 @y
+title: Testcontainers container lifecycle management using JUnit 5
+linkTitle: Container lifecycle (Java)
+description: Learn how to manage Testcontainers container lifecycle using JUnit 5 callbacks, extension annotations, and the singleton containers pattern.
+keywords: testcontainers, java, testing, junit, lifecycle, singleton containers, postgresql
+summary: |
+  Learn different approaches to manage container lifecycle with Testcontainers
+  using JUnit 5 lifecycle callbacks, extension annotations, and the singleton
+  containers pattern.
 @z
 
 @x
   time: 20 minutes
 @y
-  time: 20 minutes
+  time: 20 分
 @z
 
 @x

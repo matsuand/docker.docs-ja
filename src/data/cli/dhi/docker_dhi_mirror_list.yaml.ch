@@ -22,43 +22,43 @@ long: |-
 @x
     Examples:
       # List all mirrored repositories
-      dhictl mirror list --org myorg
+      docker dhi mirror list --org myorg
 @y
     Examples:
       # List all mirrored repositories
-      dhictl mirror list --org myorg
+      docker dhi mirror list --org myorg
 @z
 
 @x
       # List only image repositories
-      dhictl mirror list --org myorg --type image
+      docker dhi mirror list --org myorg --type image
 @y
       # List only image repositories
-      dhictl mirror list --org myorg --type image
+      docker dhi mirror list --org myorg --type image
 @z
 
 @x
       # List only helm chart repositories
-      dhictl mirror list --org myorg --type helm-chart
+      docker dhi mirror list --org myorg --type helm-chart
 @y
       # List only helm chart repositories
-      dhictl mirror list --org myorg --type helm-chart
+      docker dhi mirror list --org myorg --type helm-chart
 @z
 
 @x
       # Search for a specific repository by name
-      dhictl mirror list --org myorg --filter dhi-python
+      docker dhi mirror list --org myorg --filter dhi-python
 @y
       # Search for a specific repository by name
-      dhictl mirror list --org myorg --filter dhi-python
+      docker dhi mirror list --org myorg --filter dhi-python
 @z
 
 @x
       # Output in JSON format
-      dhictl mirror list --org myorg --json
+      docker dhi mirror list --org myorg --json
 @y
       # Output in JSON format
-      dhictl mirror list --org myorg --json
+      docker dhi mirror list --org myorg --json
 @z
 
 @x

@@ -10,22 +10,22 @@ linkTitle: Use the CLI
 @z
 
 @x
-keywords: dhictl, CLI, command line, docker hardened images
-description: Learn how to install and use dhictl, the command-line interface for managing Docker Hardened Images.
+keywords: docker dhi, CLI, command line, docker hardened images
+description: Learn how to install and use docker dhi, the command-line interface for managing Docker Hardened Images.
 @y
-keywords: dhictl, CLI, command line, docker hardened images
-description: Learn how to install and use dhictl, the command-line interface for managing Docker Hardened Images.
+keywords: docker dhi, CLI, command line, docker hardened images
+description: Learn how to install and use docker dhi, the command-line interface for managing Docker Hardened Images.
 @z
 
 @x
-`dhictl` is a command-line interface (CLI) tool for managing Docker Hardened Images:
+The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hardened Images:
 - Browse the catalog of available DHI images and their metadata
 - Mirror DHI images to your Docker Hub organization
 - Create and manage customizations of DHI images
 - Generate authentication for enterprise package repositories
 - Monitor customization builds
 @y
-`dhictl` is a command-line interface (CLI) tool for managing Docker Hardened Images:
+The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hardened Images:
 - Browse the catalog of available DHI images and their metadata
 - Mirror DHI images to your Docker Hub organization
 - Create and manage customizations of DHI images
@@ -40,47 +40,29 @@ description: Learn how to install and use dhictl, the command-line interface for
 @z
 
 @x
-`dhictl` will be available by default on [Docker Desktop](https://docs.docker.com/desktop/) soon.
-In the meantime, you can install `dhictl` manually as a Docker CLI plugin or as a standalone binary.
+The `docker dhi` CLI is available in [Docker Desktop](https://docs.docker.com/desktop/) version 4.65 and later.
+You can also install the standalone `dhictl` binary.
 @y
-`dhictl` will be available by default on [Docker Desktop](https://docs.docker.com/desktop/) soon.
-In the meantime, you can install `dhictl` manually as a Docker CLI plugin or as a standalone binary.
+The `docker dhi` CLI is available in [Docker Desktop](https://docs.docker.com/desktop/) version 4.65 and later.
+You can also install the standalone `dhictl` binary.
 @z
 
 @x
-### Docker CLI Plugin
+### Docker Desktop
 @y
-### Docker CLI Plugin
+### Docker Desktop
 @z
 
 @x
-1. Download the `dhictl` binary for your platform from the [releases](https://github.com/docker-hardened-images/dhictl/releases) page.
-2. Rename the binary:
-    - `docker-dhi` on _Linux_ and _macOS_
-    - `docker-dhi.exe` on _Windows_
-3. Copy it to the CLI plugins directory:
-    - `$HOME/.docker/cli-plugins` on _Linux_ and _macOS_
-    - `%USERPROFILE%\.docker\cli-plugins` on _Windows_
-4. Make it executable on _Linux_ and _macOS_:
-    - `chmod +x $HOME/.docker/cli-plugins/docker-dhi`
-5. Run `docker dhi` to verify the installation.
+The `docker dhi` command is included in Docker Desktop 4.65 and later. No additional installation is required.
 @y
-1. Download the `dhictl` binary for your platform from the [releases](https://github.com/docker-hardened-images/dhictl/releases) page.
-2. Rename the binary:
-    - `docker-dhi` on _Linux_ and _macOS_
-    - `docker-dhi.exe` on _Windows_
-3. Copy it to the CLI plugins directory:
-    - `$HOME/.docker/cli-plugins` on _Linux_ and _macOS_
-    - `%USERPROFILE%\.docker\cli-plugins` on _Windows_
-4. Make it executable on _Linux_ and _macOS_:
-    - `chmod +x $HOME/.docker/cli-plugins/docker-dhi`
-5. Run `docker dhi` to verify the installation.
+The `docker dhi` command is included in Docker Desktop 4.65 and later. No additional installation is required.
 @z
 
 @x
-### Standalone Binary
+### Standalone binary
 @y
-### Standalone Binary
+### Standalone binary
 @z
 
 @x
@@ -104,18 +86,6 @@ In the meantime, you can install `dhictl` manually as a Docker CLI plugin or as 
 @z
 
 @x
-> [!NOTE]
->
-> The following examples use `dhictl` to reference the CLI tool. Depending on
-> your installation, you may need to replace `dhictl` with `docker dhi`.
-@y
-> [!NOTE]
->
-> The following examples use `dhictl` to reference the CLI tool. Depending on
-> your installation, you may need to replace `dhictl` with `docker dhi`.
-@z
-
-@x
 Every command has built-in help accessible with the `--help` flag:
 @y
 Every command has built-in help accessible with the `--help` flag:
@@ -123,20 +93,20 @@ Every command has built-in help accessible with the `--help` flag:
 
 @x
 ```bash
-dhictl --help
-dhictl catalog list --help
+docker dhi --help
+docker dhi catalog list --help
 ```
 @y
 ```bash
-dhictl --help
-dhictl catalog list --help
+docker dhi --help
+docker dhi catalog list --help
 ```
 @z
 
 @x
-### Browse the DHI Catalog
+### Browse the DHI catalog
 @y
-### Browse the DHI Catalog
+### Browse the DHI catalog
 @z
 
 @x
@@ -147,11 +117,11 @@ List all available DHI images:
 
 @x
 ```bash
-dhictl catalog list
+docker dhi catalog list
 ```
 @y
 ```bash
-dhictl catalog list
+docker dhi catalog list
 ```
 @z
 
@@ -163,15 +133,17 @@ Filter by type, name, or compliance:
 
 @x
 ```bash
-dhictl catalog list --type image
-dhictl catalog list --filter golang
-dhictl catalog list --fips
+docker dhi catalog list --type image
+docker dhi catalog list --filter golang
+docker dhi catalog list --fips
+docker dhi catalog list --stig
 ```
 @y
 ```bash
-dhictl catalog list --type image
-dhictl catalog list --filter golang
-dhictl catalog list --fips
+docker dhi catalog list --type image
+docker dhi catalog list --filter golang
+docker dhi catalog list --fips
+docker dhi catalog list --stig
 ```
 @z
 
@@ -183,18 +155,18 @@ Get details of a specific image, including available tags and CVE counts:
 
 @x
 ```bash
-dhictl catalog get <image-name>
+docker dhi catalog get <image-name>
 ```
 @y
 ```bash
-dhictl catalog get <image-name>
+docker dhi catalog get <image-name>
 ```
 @z
 
 @x
-### Mirror DHI Images {tier="DHI Select & DHI Enterprise"}
+### Mirror DHI images {tier="DHI Select & DHI Enterprise"}
 @y
-### Mirror DHI Images {tier="DHI Select & DHI Enterprise"}
+### Mirror DHI images {tier="DHI Select & DHI Enterprise"}
 @z
 
 @x
@@ -205,17 +177,33 @@ Start mirroring one or more DHI images to your Docker Hub organization:
 
 @x
 ```bash
-dhictl mirror start --org my-org \
+docker dhi mirror start --org my-org \
   -r dhi/golang,my-org/dhi-golang \
   -r dhi/nginx,my-org/dhi-nginx \
   -r dhi/prometheus-chart,my-org/dhi-prometheus-chart
 ```
 @y
 ```bash
-dhictl mirror start --org my-org \
+docker dhi mirror start --org my-org \
   -r dhi/golang,my-org/dhi-golang \
   -r dhi/nginx,my-org/dhi-nginx \
   -r dhi/prometheus-chart,my-org/dhi-prometheus-chart
+```
+@z
+
+@x
+Mirror with dependencies:
+@y
+Mirror with dependencies:
+@z
+
+@x
+```bash
+docker dhi mirror start --org my-org -r golang --dependencies
+```
+@y
+```bash
+docker dhi mirror start --org my-org -r golang --dependencies
 ```
 @z
 
@@ -227,34 +215,74 @@ List mirrored images in your organization:
 
 @x
 ```bash
-dhictl mirror list --org my-org
+docker dhi mirror list --org my-org
 ```
 @y
 ```bash
-dhictl mirror list --org my-org
+docker dhi mirror list --org my-org
 ```
 @z
 
 @x
-Stop mirroring an image:
+Filter mirrored images by name or type:
 @y
-Stop mirroring an image:
+Filter mirrored images by name or type:
 @z
 
 @x
 ```bash
-dhictl mirror stop --org my-org dhi-golang
+docker dhi mirror list --org my-org --filter python
+docker dhi mirror list --org my-org --type image
+docker dhi mirror list --org my-org --type helm-chart
 ```
 @y
 ```bash
-dhictl mirror stop --org my-org dhi-golang
+docker dhi mirror list --org my-org --filter python
+docker dhi mirror list --org my-org --type image
+docker dhi mirror list --org my-org --type helm-chart
 ```
 @z
 
 @x
-### Customize DHI Images {tier="DHI Select & DHI Enterprise"}
+Stop mirroring one or more images:
 @y
-### Customize DHI Images {tier="DHI Select & DHI Enterprise"}
+Stop mirroring one or more images:
+@z
+
+@x
+```bash
+docker dhi mirror stop dhi-golang --org my-org
+docker dhi mirror stop dhi-python dhi-golang --org my-org
+```
+@y
+```bash
+docker dhi mirror stop dhi-golang --org my-org
+docker dhi mirror stop dhi-python dhi-golang --org my-org
+```
+@z
+
+@x
+Stop mirroring and delete the repositories:
+@y
+Stop mirroring and delete the repositories:
+@z
+
+@x
+```bash
+docker dhi mirror stop dhi-golang --org my-org --delete
+docker dhi mirror stop dhi-golang --org my-org --delete --force
+```
+@y
+```bash
+docker dhi mirror stop dhi-golang --org my-org --delete
+docker dhi mirror stop dhi-golang --org my-org --delete --force
+```
+@z
+
+@x
+### Customize DHI images {tier="DHI Select & DHI Enterprise"}
+@y
+### Customize DHI images {tier="DHI Select & DHI Enterprise"}
 @z
 
 @x
@@ -276,67 +304,87 @@ Quick reference for CLI commands:
 @x
 ```bash
 # Prepare a customization scaffold
-dhictl customization prepare --org my-org golang 1.25 \
+docker dhi customization prepare golang 1.25 \
+  --org my-org \
   --destination my-org/dhi-golang \
   --name "golang with git" \
-  --tag-suffix "_git" \
   --output my-customization.yaml
 @y
 ```bash
 # Prepare a customization scaffold
-dhictl customization prepare --org my-org golang 1.25 \
+docker dhi customization prepare golang 1.25 \
+  --org my-org \
   --destination my-org/dhi-golang \
   --name "golang with git" \
-  --tag-suffix "_git" \
   --output my-customization.yaml
 @z
 
 @x
 # Create a customization
-dhictl customization create --org my-org my-customization.yaml
+docker dhi customization create my-customization.yaml --org my-org
 @y
 # Create a customization
-dhictl customization create --org my-org my-customization.yaml
+docker dhi customization create my-customization.yaml --org my-org
 @z
 
 @x
 # List customizations
-dhictl customization list --org my-org
+docker dhi customization list --org my-org
 @y
 # List customizations
-dhictl customization list --org my-org
+docker dhi customization list --org my-org
+@z
+
+@x
+# Filter customizations by name, repository, or source
+docker dhi customization list --org my-org --filter git
+docker dhi customization list --org my-org --repo dhi-golang
+docker dhi customization list --org my-org --source golang
+@y
+# Filter customizations by name, repository, or source
+docker dhi customization list --org my-org --filter git
+docker dhi customization list --org my-org --repo dhi-golang
+docker dhi customization list --org my-org --source golang
 @z
 
 @x
 # Get a customization
-dhictl customization get --org my-org my-org/dhi-golang "golang with git" --output my-customization.yaml
+docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --output my-customization.yaml
 @y
 # Get a customization
-dhictl customization get --org my-org my-org/dhi-golang "golang with git" --output my-customization.yaml
+docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --output my-customization.yaml
 @z
 
 @x
 # Update a customization
-dhictl customization edit --org my-org my-customization.yaml
+docker dhi customization edit my-customization.yaml --org my-org
 @y
 # Update a customization
-dhictl customization edit --org my-org my-customization.yaml
+docker dhi customization edit my-customization.yaml --org my-org
 @z
 
 @x
 # Delete a customization
-dhictl customization delete --org my-org my-org/dhi-golang "golang with git"
-```
+docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
 @y
 # Delete a customization
-dhictl customization delete --org my-org my-org/dhi-golang "golang with git"
+docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
+@z
+
+@x
+# Delete without confirmation prompt
+docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
+```
+@y
+# Delete without confirmation prompt
+docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
 ```
 @z
 
 @x
-### Enterprise Package Authentication {tier="DHI Enterprise"}
+### Enterprise package authentication {tier="DHI Enterprise"}
 @y
-### Enterprise Package Authentication {tier="DHI Enterprise"}
+### Enterprise package authentication {tier="DHI Enterprise"}
 @z
 
 @x
@@ -355,18 +403,18 @@ repository](./hardened-packages.md#enterprise-repository).
 
 @x
 ```bash
-dhictl auth apk
+docker dhi auth apk
 ```
 @y
 ```bash
-dhictl auth apk
+docker dhi auth apk
 ```
 @z
 
 @x
-### Monitor Customization Builds {tier="DHI Select & DHI Enterprise"}
+### Monitor customization builds {tier="DHI Select & DHI Enterprise"}
 @y
-### Monitor Customization Builds {tier="DHI Select & DHI Enterprise"}
+### Monitor customization builds {tier="DHI Select & DHI Enterprise"}
 @z
 
 @x
@@ -377,11 +425,13 @@ List builds for a customization:
 
 @x
 ```bash
-dhictl customization build list --org my-org my-org/dhi-golang "golang with git"
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
 ```
 @y
 ```bash
-dhictl customization build list --org my-org my-org/dhi-golang "golang with git"
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
 ```
 @z
 
@@ -393,11 +443,13 @@ Get details of a specific build:
 
 @x
 ```bash
-dhictl customization build get --org my-org my-org/dhi-golang "golang with git" <build-id>
+docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org
+docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org --json
 ```
 @y
 ```bash
-dhictl customization build get --org my-org my-org/dhi-golang "golang with git" <build-id>
+docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org
+docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org --json
 ```
 @z
 
@@ -409,18 +461,20 @@ View build logs:
 
 @x
 ```bash
-dhictl customization build logs --org my-org my-org/dhi-golang "golang with git" <build-id>
+docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org
+docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org --json
 ```
 @y
 ```bash
-dhictl customization build logs --org my-org my-org/dhi-golang "golang with git" <build-id>
+docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org
+docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org --json
 ```
 @z
 
 @x
-### JSON Output
+### JSON output
 @y
-### JSON Output
+### JSON output
 @z
 
 @x
@@ -431,15 +485,21 @@ Most list and get commands support a `--json` flag for machine-readable output:
 
 @x
 ```bash
-dhictl catalog list --json
-dhictl mirror list --org my-org --json
-dhictl customization list --org my-org --json
+docker dhi catalog list --json
+docker dhi catalog get golang --json
+docker dhi mirror list --org my-org --json
+docker dhi mirror start --org my-org -r golang --json
+docker dhi customization list --org my-org --json
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
 ```
 @y
 ```bash
-dhictl catalog list --json
-dhictl mirror list --org my-org --json
-dhictl customization list --org my-org --json
+docker dhi catalog list --json
+docker dhi catalog get golang --json
+docker dhi mirror list --org my-org --json
+docker dhi mirror start --org my-org -r golang --json
+docker dhi customization list --org my-org --json
+docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
 ```
 @z
 
@@ -450,11 +510,11 @@ dhictl customization list --org my-org --json
 @z
 
 @x
-`dhictl` can be configured with a YAML file located at:
+The `docker dhi` CLI can be configured with a YAML file located at:
 - `$HOME/.config/dhictl/config.yaml` on _Linux_ and _macOS_
 - `%USERPROFILE%\.config\dhictl\config.yaml` on _Windows_
 @y
-`dhictl` can be configured with a YAML file located at:
+The `docker dhi` CLI can be configured with a YAML file located at:
 - `$HOME/.config/dhictl/config.yaml` on _Linux_ and _macOS_
 - `%USERPROFILE%\.config\dhictl\config.yaml` on _Windows_
 @z

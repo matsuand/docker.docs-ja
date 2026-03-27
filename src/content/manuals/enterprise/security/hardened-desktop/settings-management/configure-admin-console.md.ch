@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Configure Settings Management with the Admin Console
@@ -41,12 +41,12 @@ Before you begin, make sure you have:
 
 @x
 - [Docker Desktop 4.37.1 or later](/manuals/desktop/release-notes.md) installed
-- [A verified domain](/manuals/enterprise/security/single-sign-on/configure.md#step-one-add-and-verify-your-domain)
+- [A verified domain](/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 @y
 - [Docker Desktop 4.37.1 or later](manuals/desktop/release-notes.md) installed
-- [A verified domain](manuals/enterprise/security/single-sign-on/configure.md#step-one-add-and-verify-your-domain)
+- [A verified domain](__SUBDIR__/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
 - [Enforced sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 @z

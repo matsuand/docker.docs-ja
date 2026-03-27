@@ -55,12 +55,6 @@ usage: docker dhi customization prepare <dhi-repository> <tag>
       description: Output file path (if not specified, outputs to stdout)
 @z
 
-@x tag-suffix
-      description: Tag suffix for the customized image
-@y
-      description: Tag suffix for the customized image
-@z
-
 % inherited_options:
 
 @x org

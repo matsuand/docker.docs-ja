@@ -4,13 +4,17 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Manage single sign-on
-linkTitle: Manage
+title: Manage SSO domains and connections
+linkTitle: Manage connections
+@y
+title: Manage SSO domains and connections
+linkTitle: Manage connections
+@z
+
+@x
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, admin console, admin, security, domains, connections, users, provisioning
 @y
-title: Manage single sign-on
-linkTitle: Manage
 description: Learn how to manage Single Sign-On for your organization or company.
 keywords: manage, single sign-on, SSO, sign-on, admin console, admin, security, domains, connections, users, provisioning
 @z

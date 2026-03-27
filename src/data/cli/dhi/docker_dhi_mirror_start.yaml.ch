@@ -42,23 +42,23 @@ long: |-
 @x
     Examples:
       # These are all equivalent (assuming --org myorg):
-      dhictl mirror start --org myorg -r dhi/golang,myorg/dhi-golang
-      dhictl mirror start --org myorg -r golang,dhi-golang
-      dhictl mirror start --org myorg -r golang
+      docker dhi mirror start --org myorg -r dhi/golang,myorg/dhi-golang
+      docker dhi mirror start --org myorg -r golang,dhi-golang
+      docker dhi mirror start --org myorg -r golang
 @y
     Examples:
       # These are all equivalent (assuming --org myorg):
-      dhictl mirror start --org myorg -r dhi/golang,myorg/dhi-golang
-      dhictl mirror start --org myorg -r golang,dhi-golang
-      dhictl mirror start --org myorg -r golang
+      docker dhi mirror start --org myorg -r dhi/golang,myorg/dhi-golang
+      docker dhi mirror start --org myorg -r golang,dhi-golang
+      docker dhi mirror start --org myorg -r golang
 @z
 
 @x
       # Mirror multiple repositories
-      dhictl mirror start --org myorg -r golang -r python
+      docker dhi mirror start --org myorg -r golang -r python
 @y
       # Mirror multiple repositories
-      dhictl mirror start --org myorg -r golang -r python
+      docker dhi mirror start --org myorg -r golang -r python
 @z
 
 @x

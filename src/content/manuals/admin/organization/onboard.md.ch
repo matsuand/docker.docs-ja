@@ -304,14 +304,14 @@ automatically via SSO and SCIM. See the following for more details:
 @z
 
 @x
-   - [Configure SSO](/manuals/enterprise/security/single-sign-on/configure.md)
+   - [Configure SSO](/manuals/enterprise/security/single-sign-on/connect.md)
    to authenticate and add members when they sign in to Docker through your
    identity provider.
    - Optional.
    [Enforce SSO](/manuals/enterprise/security/single-sign-on/connect.md) to
    ensure that when users sign in to Docker, they must use SSO.
 @y
-   - [Configure SSO](manuals/enterprise/security/single-sign-on/configure.md)
+   - [Configure SSO](manuals/enterprise/security/single-sign-on/connect.md)
    to authenticate and add members when they sign in to Docker through your
    identity provider.
    - Optional.

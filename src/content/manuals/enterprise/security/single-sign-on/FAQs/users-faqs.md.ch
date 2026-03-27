@@ -82,9 +82,9 @@ Yes, you can convert existing users to SSO accounts. Ensure users have:
 @z
 
 @x
-For detailed instructions, see [Configure single sign-on](/manuals/enterprise/security/single-sign-on/configure.md).
+For detailed instructions, see [Configure single sign-on](/manuals/enterprise/security/single-sign-on/connect.md).
 @y
-For detailed instructions, see [Configure single sign-on](manuals/enterprise/security/single-sign-on/configure.md).
+For detailed instructions, see [Configure single sign-on](manuals/enterprise/security/single-sign-on/connect.md).
 @z
 
 @x

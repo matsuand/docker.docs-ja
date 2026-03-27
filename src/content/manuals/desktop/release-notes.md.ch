@@ -43,6 +43,36 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.66.1
+@y
+## 4.66.1
+@z
+
+@x
+{{< release-date date="2026-03-26" >}}
+@y
+{{< release-date date="2026-03-26" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.66.1" build_path="/222799/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.66.1" build_path="/222799/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Engine v29.3.1
+@y
+- Docker Engine v29.3.1
+@z
+
+@x
 ## 4.66.0
 @y
 ## 4.66.0

@@ -11,6 +11,14 @@ summary: |
   external REST APIs, then test those integrations using Testcontainers
   and MockServer.
 @y
+title: Testing REST API integrations using MockServer
+linkTitle: MockServer
+description: Learn how to test REST API integrations in a Spring Boot application using the Testcontainers MockServer module.
+keywords: testcontainers, java, spring boot, testing, mockserver, rest api, rest assured
+summary: |
+  Learn how to create a Spring Boot application that integrates with
+  external REST APIs, then test those integrations using Testcontainers
+  and MockServer.
 @z
 
 @x
