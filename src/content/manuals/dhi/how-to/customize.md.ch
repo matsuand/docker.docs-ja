@@ -177,27 +177,27 @@ To customize a Docker Hardened Image using the web interface, follow these steps
 @z
 
 @x
-   1. In the packages drop-down (labeled **Hardened packages** for Alpine
-      distributions or **Packages** for Debian distributions), select the
-      packages you want to add to the image.
+   1. In the packages drop-down, select the packages you want to add to the
+      image.
 @y
-   1. In the packages drop-down (labeled **Hardened packages** for Alpine
-      distributions or **Packages** for Debian distributions), select the
-      packages you want to add to the image.
+   1. In the packages drop-down, select the packages you want to add to the
+      image.
 @z
 
 @x
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For Alpine-based images, these are hardened
-      packages that have been built from source by Docker with cryptographic
-      signatures and full supply chain security. For Debian-based images,
-      these are standard Debian system packages.
+      selected image variant. For version 3.23 Alpine-based images, these are
+      hardened packages that have been built from source by Docker with
+      cryptographic signatures and full supply chain security. For version 3.22
+      Alpine-based images and Debian-based images, these are standard system
+      packages.
 @y
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For Alpine-based images, these are hardened
-      packages that have been built from source by Docker with cryptographic
-      signatures and full supply chain security. For Debian-based images,
-      these are standard Debian system packages.
+      selected image variant. For version 3.23 Alpine-based images, these are
+      hardened packages that have been built from source by Docker with
+      cryptographic signatures and full supply chain security. For version 3.22
+      Alpine-based images and Debian-based images, these are standard system
+      packages.
 @z
 
 @x

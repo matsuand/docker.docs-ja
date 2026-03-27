@@ -22,9 +22,9 @@ This page explains how to configure and use networking features, connect contain
 @z
 
 @x
-For details on how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, see [Network overview](/manuals/desktop/features/networking/index.md#overview).
+For details on how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, see [Network overview](/manuals/desktop/features/networking/_index.md#overview).
 @y
-For details on how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, see [Network overview](manuals/desktop/features/networking/index.md#overview).
+For details on how Docker Desktop routes network traffic and file I/O between containers, the VM, and the host, see [Network overview](manuals/desktop/features/networking/_index.md#overview).
 @z
 
 @x
@@ -141,10 +141,10 @@ publish options used with `docker run`.
 
 @x
 All inbound connections pass through the Docker Desktop backend process (`com.docker.backend` (Mac), `com.docker.backend` (Windows), or `qemu` (Linux), which handles port forwarding into the VM.
-For more details, see [How exposed ports work](/manuals/desktop/features/networking/index.md#how-exposed-ports-work)
+For more details, see [How exposed ports work](/manuals/desktop/features/networking/_index.md#how-exposed-ports-work)
 @y
 All inbound connections pass through the Docker Desktop backend process (`com.docker.backend` (Mac), `com.docker.backend` (Windows), or `qemu` (Linux), which handles port forwarding into the VM.
-For more details, see [How exposed ports work](manuals/desktop/features/networking/index.md#how-exposed-ports-work)
+For more details, see [How exposed ports work](manuals/desktop/features/networking/_index.md#how-exposed-ports-work)
 @z
 
 @x
@@ -168,9 +168,9 @@ the host as if it originated from the Docker application.
 @z
 
 @x
-For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](/manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility).
+For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](/manuals/desktop/features/networking/_index.md#firewalls-and-endpoint-visibility).
 @y
-For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](manuals/desktop/features/networking/index.md#firewalls-and-endpoint-visibility).
+For details about how this traffic appears to host firewalls and endpoint detection systems, see [Firewalls and endpoint visibility](manuals/desktop/features/networking/_index.md#firewalls-and-endpoint-visibility).
 @z
 
 @x

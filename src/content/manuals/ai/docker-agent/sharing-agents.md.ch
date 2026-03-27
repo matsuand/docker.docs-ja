@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Sharing agents
 description: Distribute agent configurations through OCI registries
@@ -69,15 +71,7 @@ Push your agent configuration to a registry:
 Push your agent configuration to a registry:
 @z
 
-@x
-```console
-$ docker agent push ./agent.yml myusername/agent-name
-```
-@y
-```console
-$ docker agent push ./agent.yml myusername/agent-name
-```
-@z
+% snip command...
 
 @x
 Push creates the repository if it doesn't exist yet. Use Docker Hub or
@@ -93,17 +87,7 @@ Tag specific versions:
 Tag specific versions:
 @z
 
-@x
-```console
-$ docker agent push ./agent.yml myusername/agent-name:v1.0.0
-$ docker agent push ./agent.yml myusername/agent-name:latest
-```
-@y
-```console
-$ docker agent push ./agent.yml myusername/agent-name:v1.0.0
-$ docker agent push ./agent.yml myusername/agent-name:latest
-```
-@z
+% snip command...
 
 @x
 ## Using published agents
@@ -117,15 +101,7 @@ Pull an agent to inspect it locally:
 Pull an agent to inspect it locally:
 @z
 
-@x
-```console
-$ docker agent pull agentcatalog/pirate
-```
-@y
-```console
-$ docker agent pull agentcatalog/pirate
-```
-@z
+% snip command...
 
 @x
 This saves the configuration as a local YAML file.

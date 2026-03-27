@@ -112,6 +112,7 @@ AC_CONFIG_FILES([
 	src/content/guides/java/images/Makefile
 	src/content/guides/nodejs/Makefile
 	src/content/guides/php/Makefile
+	src/content/guides/postgresql/Makefile
 	src/content/guides/python/Makefile
 	src/content/guides/r/Makefile
 	src/content/guides/rag-ollama/Makefile
@@ -120,6 +121,25 @@ AC_CONFIG_FILES([
 	src/content/guides/ruby/Makefile
 	src/content/guides/rust/Makefile
 	src/content/guides/testcontainers-cloud/Makefile
+	src/content/guides/testcontainers-dotnet-aspnet-core/Makefile
+	src/content/guides/testcontainers-dotnet-getting-started/Makefile
+	src/content/guides/testcontainers-go-getting-started/Makefile
+	src/content/guides/testcontainers-java-aws-localstack/Makefile
+	src/content/guides/testcontainers-java-getting-started/Makefile
+	src/content/guides/testcontainers-java-jooq-flyway/Makefile
+	src/content/guides/testcontainers-java-keycloak-spring-boot/Makefile
+	src/content/guides/testcontainers-java-lifecycle/Makefile
+	src/content/guides/testcontainers-java-micronaut-kafka/Makefile
+	src/content/guides/testcontainers-java-micronaut-wiremock/Makefile
+	src/content/guides/testcontainers-java-mockserver/Makefile
+	src/content/guides/testcontainers-java-quarkus/Makefile
+	src/content/guides/testcontainers-java-replace-h2/Makefile
+	src/content/guides/testcontainers-java-service-configuration/Makefile
+	src/content/guides/testcontainers-java-spring-boot-kafka/Makefile
+	src/content/guides/testcontainers-java-spring-boot-rest-api/Makefile
+	src/content/guides/testcontainers-java-wiremock/Makefile
+	src/content/guides/testcontainers-nodejs-getting-started/Makefile
+	src/content/guides/testcontainers-python-getting-started/Makefile
 	src/content/guides/vuejs/Makefile
 	src/content/guides/zscaler/Makefile
 	src/content/includes/Makefile
@@ -198,7 +218,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/dhi/core-concepts/Makefile
 	src/content/manuals/dhi/explore/Makefile
 	src/content/manuals/dhi/how-to/Makefile
-	src/content/manuals/dhi/images/Makefile
 	src/content/manuals/dhi/migration/Makefile
 	src/content/manuals/dhi/migration/examples/Makefile
 	src/content/manuals/docker-hub/Makefile

@@ -36,7 +36,7 @@ fair use:
 
 @x
 | User type                | Pull rate limit per 6 hours             |
-|--------------------------|-----------------------------------------|
+| ------------------------ | --------------------------------------- |
 | Business (authenticated) | Unlimited                               |
 | Team (authenticated)     | Unlimited                               |
 | Pro (authenticated)      | Unlimited                               |
@@ -44,7 +44,7 @@ fair use:
 | Unauthenticated Users    | 100 per IPv4 address or IPv6 /64 subnet |
 @y
 | User type                | Pull rate limit per 6 hours             |
-|--------------------------|-----------------------------------------|
+| ------------------------ | --------------------------------------- |
 | Business (authenticated) | Unlimited                               |
 | Team (authenticated)     | Unlimited                               |
 | Pro (authenticated)      | Unlimited                               |
@@ -65,25 +65,25 @@ A pull is defined as the following:
 @z
 
 @x
- - A Docker pull includes both a version check and any download that
-   occurs as a result of the pull. Depending on the client, a `docker pull` can
-   verify the existence of an image or tag without downloading it by performing
-   a version check.
- - Version checks do not count towards usage pricing.
- - A pull for a normal image makes one pull for a [single
-   manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
- - A pull for a multi-arch image will count as one pull for each
-   different architecture.
+- A Docker pull includes both a version check and any download that
+  occurs as a result of the pull. Depending on the client, a `docker pull` can
+  verify the existence of an image or tag without downloading it by performing
+  a version check.
+- Version checks do not count towards usage pricing.
+- A pull for a normal image makes one pull for a [single
+  manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
+- A pull for a multi-arch image will count as one pull for each
+  different architecture.
 @y
- - A Docker pull includes both a version check and any download that
-   occurs as a result of the pull. Depending on the client, a `docker pull` can
-   verify the existence of an image or tag without downloading it by performing
-   a version check.
- - Version checks do not count towards usage pricing.
- - A pull for a normal image makes one pull for a [single
-   manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
- - A pull for a multi-arch image will count as one pull for each
-   different architecture.
+- A Docker pull includes both a version check and any download that
+  occurs as a result of the pull. Depending on the client, a `docker pull` can
+  verify the existence of an image or tag without downloading it by performing
+  a version check.
+- Version checks do not count towards usage pricing.
+- A pull for a normal image makes one pull for a [single
+  manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
+- A pull for a multi-arch image will count as one pull for each
+  different architecture.
 @z
 
 @x
@@ -115,12 +115,12 @@ Attribution is based on the following:
   verified domain, the attribution is set to be the owner of that
   [domain](/manuals/enterprise/security/single-sign-on/faqs/domain-faqs.md).
 - Single organization membership:
-   - If the owner of the verified domain is a company and the user is part of
-     only one organization within that
-     [company](../../admin/faqs/company-faqs.md#what-features-are-supported-at-the-company-level),
-     the pull is attributed to that specific organization.
-   - If the user is part of only one organization, the pull is attributed to
-     that specific organization.
+  - If the owner of the verified domain is a company and the user is part of
+    only one organization within that
+    [company](../../admin/faqs/company-faqs.md#what-features-are-supported-at-the-company-level),
+    the pull is attributed to that specific organization.
+  - If the user is part of only one organization, the pull is attributed to
+    that specific organization.
 - Multiple organization memberships: If the user is part of multiple
   organizations under the company, the pull is attributed to the user's personal
   namespace.
@@ -133,12 +133,12 @@ Attribution is based on the following:
   verified domain, the attribution is set to be the owner of that
   [domain](manuals/enterprise/security/single-sign-on/faqs/domain-faqs.md).
 - Single organization membership:
-   - If the owner of the verified domain is a company and the user is part of
-     only one organization within that
-     [company](../../admin/faqs/company-faqs.md#what-features-are-supported-at-the-company-level),
-     the pull is attributed to that specific organization.
-   - If the user is part of only one organization, the pull is attributed to
-     that specific organization.
+  - If the owner of the verified domain is a company and the user is part of
+    only one organization within that
+    [company](../../admin/faqs/company-faqs.md#what-features-are-supported-at-the-company-level),
+    the pull is attributed to that specific organization.
+  - If the user is part of only one organization, the pull is attributed to
+    that specific organization.
 - Multiple organization memberships: If the user is part of multiple
   organizations under the company, the pull is attributed to the user's personal
   namespace.
@@ -267,12 +267,28 @@ If you're using any third-party platforms, follow your provider’s instructions
 @z
 
 @x
+> [!NOTE]
+>
+> When pulling images via a third-party platform, the platform may use the same
+> IPv4 address or IPv6 /64 subnet to pull images for multiple users. Even if you
+> are authenticated, pulls attributed to a single IPv4 address or IPv6 /64 subnet
+> may cause [abuse rate limiting](./_index.md#abuse-rate-limit).
+@y
+> [!NOTE]
+>
+> When pulling images via a third-party platform, the platform may use the same
+> IPv4 address or IPv6 /64 subnet to pull images for multiple users. Even if you
+> are authenticated, pulls attributed to a single IPv4 address or IPv6 /64 subnet
+> may cause [abuse rate limiting](./_index.md#abuse-rate-limit).
+@z
+
+@x
 - [Artifactory](https://www.jfrog.com/confluence/display/JFROG/Advanced+Settings#AdvancedSettings-RemoteCredentials)
 - [AWS CodeBuild](https://aws.amazon.com/blogs/devops/how-to-use-docker-images-from-a-private-registry-in-aws-codebuild-for-your-build-environment/)
 - [AWS ECS/Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html)
-- [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#sep-docreg)
+- [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml)
 - [Chipper CI](https://docs.chipperci.com/builds/docker/#rate-limit-auth)
-- [CircleCI](https://circleci.com/docs/2.0/private-images/)
+- [CircleCI](https://circleci.com/docs/guides/execution-managed/private-images/)
 - [Codefresh](https://codefresh.io/docs/docs/docker-registries/external-docker-registries/docker-hub/)
 - [Drone.io](https://docs.drone.io/pipeline/docker/syntax/images/#pulling-private-images)
 - [GitLab](https://docs.gitlab.com/ee/user/packages/container_registry/#authenticate-with-the-container-registry)
@@ -282,9 +298,9 @@ If you're using any third-party platforms, follow your provider’s instructions
 - [Artifactory](https://www.jfrog.com/confluence/display/JFROG/Advanced+Settings#AdvancedSettings-RemoteCredentials)
 - [AWS CodeBuild](https://aws.amazon.com/blogs/devops/how-to-use-docker-images-from-a-private-registry-in-aws-codebuild-for-your-build-environment/)
 - [AWS ECS/Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/private-auth.html)
-- [Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml#sep-docreg)
+- [Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints?view=azure-devops&tabs=yaml)
 - [Chipper CI](https://docs.chipperci.com/builds/docker/#rate-limit-auth)
-- [CircleCI](https://circleci.com/docs/2.0/private-images/)
+- [CircleCI](https://circleci.com/docs/guides/execution-managed/private-images/)
 - [Codefresh](https://codefresh.io/docs/docs/docker-registries/external-docker-registries/docker-hub/)
 - [Drone.io](https://docs.drone.io/pipeline/docker/syntax/images/#pulling-private-images)
 - [GitLab](https://docs.gitlab.com/ee/user/packages/container_registry/#authenticate-with-the-container-registry)
@@ -314,7 +330,7 @@ separated file with the following detailed information.
 
 @x
 | CSV column           | Definition                                                                                                                                                                                                         | Usage guidance                                                                                                                                                                      |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `datehour`           | The date and hour (`yyyy/mm/dd/hh`) of the pull that resulted in the data transfer.                                                                                                                                | This helps in identifying peak usage times and patterns.                                                                                                                            |
 | `user_name`          | The Docker ID of the user that pulled the image                                                                                                                                                                    | This lets organization owners track data consumption per user and manage resources effectively.                                                                                     |
 | `repository`         | The name of the repository of the image that was pulled.                                                                                                                                                           | This lets you identify which repositories are most frequently accessed and consume most of the data transfer.                                                                       |
@@ -324,10 +340,10 @@ separated file with the following detailed information.
 | `tag`                | The tag for the image. The tag is only available if the pull included a tag.                                                                                                                                       | This helps in identifying the image. Tags are often used to identify specific versions or variants of an image.                                                                     |
 | `digest`             | The unique image digest for the image.                                                                                                                                                                             | This helps in identifying the image.                                                                                                                                                |
 | `version_checks`     | The number of version checks accumulated for the date and hour of each image repository. Depending on the client, a pull can do a version check to verify the existence of an image or tag without downloading it. | This helps identify the frequency of version checks, which you can use to analyze usage trends and potential unexpected behaviors.                                                  |
-| `pulls`              | The number of pulls accumulated for the date and hour of each image repository.                                                                                                                                            | This helps identify the frequency of repository pulls, which you can use to analyze usage trends and potential unexpected behaviors.                                                |
+| `pulls`              | The number of pulls accumulated for the date and hour of each image repository.                                                                                                                                    | This helps identify the frequency of repository pulls, which you can use to analyze usage trends and potential unexpected behaviors.                                                |
 @y
 | CSV column           | Definition                                                                                                                                                                                                         | Usage guidance                                                                                                                                                                      |
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `datehour`           | The date and hour (`yyyy/mm/dd/hh`) of the pull that resulted in the data transfer.                                                                                                                                | This helps in identifying peak usage times and patterns.                                                                                                                            |
 | `user_name`          | The Docker ID of the user that pulled the image                                                                                                                                                                    | This lets organization owners track data consumption per user and manage resources effectively.                                                                                     |
 | `repository`         | The name of the repository of the image that was pulled.                                                                                                                                                           | This lets you identify which repositories are most frequently accessed and consume most of the data transfer.                                                                       |
@@ -337,7 +353,7 @@ separated file with the following detailed information.
 | `tag`                | The tag for the image. The tag is only available if the pull included a tag.                                                                                                                                       | This helps in identifying the image. Tags are often used to identify specific versions or variants of an image.                                                                     |
 | `digest`             | The unique image digest for the image.                                                                                                                                                                             | This helps in identifying the image.                                                                                                                                                |
 | `version_checks`     | The number of version checks accumulated for the date and hour of each image repository. Depending on the client, a pull can do a version check to verify the existence of an image or tag without downloading it. | This helps identify the frequency of version checks, which you can use to analyze usage trends and potential unexpected behaviors.                                                  |
-| `pulls`              | The number of pulls accumulated for the date and hour of each image repository.                                                                                                                                            | This helps identify the frequency of repository pulls, which you can use to analyze usage trends and potential unexpected behaviors.                                                |
+| `pulls`              | The number of pulls accumulated for the date and hour of each image repository.                                                                                                                                    | This helps identify the frequency of repository pulls, which you can use to analyze usage trends and potential unexpected behaviors.                                                |
 @z
 
 @x
@@ -366,15 +382,7 @@ When you issue a pull and you are over the limit, Docker Hub returns a
 `429` response code with the following body when the manifest is requested:
 @z
 
-@x
-```text
-You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits
-```
-@y
-```text
-You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limits
-```
-@z
+% snip text...
 
 @x
 This error message appears in the Docker CLI or in the Docker Engine logs.
@@ -391,22 +399,18 @@ To view your current pull rate and limit:
 @x
 > [!NOTE]
 >
-> To check your limits, you need `curl`, `grep`, and `jq` installed.
+> To check your limits, you need `curl` and `jq` installed.
 @y
 > [!NOTE]
 >
-> To check your limits, you need `curl`, `grep`, and `jq` installed.
+> To check your limits, you need `curl` and `jq` installed.
 @z
 
 @x
 1. Get a token.
-@y
-1. Get a token.
-@z
-
-@x
    - To get a token anonymously, if you are pulling anonymously:
 @y
+1. Get a token.
    - To get a token anonymously, if you are pulling anonymously:
 @z
 
@@ -440,7 +444,7 @@ To view your current pull rate and limit:
 3. Examine the headers. You should see the following headers.
 @z
 
-% snip code...
+% snip text...
 
 @x
    In the previous example, the pull limit is 100 pulls per 21600 seconds (6

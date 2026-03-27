@@ -13,10 +13,10 @@ description: Additional resources including product information, blog posts, and
 
 @x
 This page provides links to additional resources related to Docker Hardened
-Images (DHI), including blog posts, Docker Hub resources, and GitHub
+Images (DHI), including blog posts, guides, Docker Hub resources, and GitHub
 repositories.
 @y
-本ページでは Docker Hardened イメージ (DHI) のその他のリソースとして、ブログ投稿、Docker Hub リソース、GitHub へのリンクを示すものです。
+本ページでは Docker Hardened イメージ (DHI) のその他のリソースとして、ブログ投稿、ガイド、Docker Hub リソース、GitHub へのリンクを示すものです。
 @z
 
 @x
@@ -42,6 +42,7 @@ features, and announcements:
 @x
 | Date published | Title |
 |------|-------|
+| March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
 | January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
 | January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
 | December 19, 2025 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
@@ -55,16 +56,31 @@ features, and announcements:
 @y
 | 公開日付 | タイトル |
 |------|-------|
-| 2026/01/25 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
-| 2026/01/24 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
-| 2025/12/19 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
-| 2025/12/17 | [A Safer Container Ecosystem with Docker: Free Docker Hardened Images](https://www.docker.com/blog/docker-hardened-images-for-every-developer/) |
-| 2025/11/14 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 1](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-trial-part-1/) |
-| 2025/10/15 | [Docker Hardened Images: Crafted by Humans, Protected by AI](https://www.docker.com/blog/docker-hardened-images-crafted-by-humans-protected-by-ai/) |
-| 2025/09/29 | [Expanding Docker Hardened Images: Secure Helm Charts for Deployments](https://www.docker.com/blog/docker-hardened-images-helm-charts-beta/) |
-| 2025/08/06 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
-| 2025/08/06 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
-| 2025/05/19 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
+| March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
+| January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
+| January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
+| December 19, 2025 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
+| December 17, 2025 | [A Safer Container Ecosystem with Docker: Free Docker Hardened Images](https://www.docker.com/blog/docker-hardened-images-for-every-developer/) |
+| November 14, 2025 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 1](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-trial-part-1/) |
+| October 15, 2025 | [Docker Hardened Images: Crafted by Humans, Protected by AI](https://www.docker.com/blog/docker-hardened-images-crafted-by-humans-protected-by-ai/) |
+| September 29, 2025 | [Expanding Docker Hardened Images: Secure Helm Charts for Deployments](https://www.docker.com/blog/docker-hardened-images-helm-charts-beta/) |
+| August 6, 2025 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
+| August 6, 2025 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
+| May 19, 2025 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
+@z
+
+@x
+## Guides
+@y
+## ガイド {#guides}
+@z
+
+@x
+For guides that demonstrate how to use Docker Hardened Images in various
+scenarios, see the [guides section filtered by DHI](/guides/?tags=dhi).
+@y
+For guides that demonstrate how to use Docker Hardened Images in various
+scenarios, see the [guides section filtered by DHI](__SUBDIR__/guides/?tags=dhi).
 @z
 
 @x

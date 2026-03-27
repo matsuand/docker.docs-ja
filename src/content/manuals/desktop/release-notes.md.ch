@@ -43,6 +43,174 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.66.0
+@y
+## 4.66.0
+@z
+
+@x
+{{< release-date date="2026-03-23" >}}
+@y
+{{< release-date date="2026-03-23" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.66.0" build_path="/222299/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.66.0" build_path="/222299/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Engine v29.3.0](https://docs.docker.com/engine/release-notes/29/#2930)
+- [NVIDIA Container Toolkit v1.19.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.19.0)
+@y
+- [Docker Engine v29.3.0](https://docs.docker.com/engine/release-notes/29/#2930)
+- [NVIDIA Container Toolkit v1.19.0](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.19.0)
+@z
+
+@x
+### Bug fixes and minor changes
+@y
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Gordon improvements:
+   - Provides pre-filled prompts when deeplinking from command-line failure hints.
+   - Prevents Docker Hub rate limiting by authenticating before making requests.
+- Fixed a Kubernetes pod discovery hang when the kube context is broken or unreachable.
+- Fixed a terminal crash caused by an undefined dimensions error during terminal resize.
+- Fixed volume backup export error handling for file, image, and registry export operations.
+@y
+- Gordon improvements:
+   - Provides pre-filled prompts when deeplinking from command-line failure hints.
+   - Prevents Docker Hub rate limiting by authenticating before making requests.
+- Fixed a Kubernetes pod discovery hang when the kube context is broken or unreachable.
+- Fixed a terminal crash caused by an undefined dimensions error during terminal resize.
+- Fixed volume backup export error handling for file, image, and registry export operations.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed high CPU usage in the Windows API proxy caused by unnecessary process enumeration.
+@y
+- Fixed high CPU usage in the Windows API proxy caused by unnecessary process enumeration.
+@z
+
+@x
+## 4.65.0
+@y
+## 4.65.0
+@z
+
+@x
+{{< release-date date="2026-03-16" >}}
+@y
+{{< release-date date="2026-03-16" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.65.0" build_path="/221669/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.65.0" build_path="/221669/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Added a new **Logs** view where you can explore logs from all sources in one unified view. (Beta)
+- Gordon hints now appear when `docker build`, `docker run`, or `docker compose` commands fail, offering contextual suggestions.
+- Community MCP servers now support OAuth authentication directly in the UI.
+- Added the [`docker dhi` CLI plugin](https://github.com/docker-hardened-images/dhictl) for managing Docker Hardened Images.
+@y
+- Added a new **Logs** view where you can explore logs from all sources in one unified view. (Beta)
+- Gordon hints now appear when `docker build`, `docker run`, or `docker compose` commands fail, offering contextual suggestions.
+- Community MCP servers now support OAuth authentication directly in the UI.
+- Added the [`docker dhi` CLI plugin](https://github.com/docker-hardened-images/dhictl) for managing Docker Hardened Images.
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Scout CLI v1.20.1](https://github.com/docker/scout-cli/releases/tag/v1.20.1)
+- [Docker Agent v1.29.0](https://github.com/docker/docker-agent/releases/tag/v1.29.0)
+- [Docker Buildx v0.32.1](https://github.com/docker/buildx/releases/tag/v0.32.1)
+@y
+- [Docker Scout CLI v1.20.1](https://github.com/docker/scout-cli/releases/tag/v1.20.1)
+- [Docker Agent v1.29.0](https://github.com/docker/docker-agent/releases/tag/v1.29.0)
+- [Docker Buildx v0.32.1](https://github.com/docker/buildx/releases/tag/v0.32.1)
+@z
+
+@x
+### Bug fixes and minor changes
+@y
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Kubernetes now defaults to kind for new clusters.
+- Fixed update progress bar not resuming correctly.
+@y
+- Kubernetes now defaults to kind for new clusters.
+- Fixed update progress bar not resuming correctly.
+@z
+
+@x
+#### For Windows 
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Improved startup time by skipping docker-users group check when using WSL2 backend.
+@y
+- Improved startup time by skipping docker-users group check when using WSL2 backend.
+@z
+
+@x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+@y
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+@z
+
+@x
 ## 4.64.0
 @y
 ## 4.64.0
@@ -69,11 +237,11 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @x
 - [Docker Compose v5.1.0](https://github.com/docker/compose/releases/tag/v5.1.0)
 - [Docker Scout CLI v1.20.0](https://github.com/docker/scout-cli/releases/tag/v1.20.0)
-- [cagent v1.27.1](https://github.com/docker/cagent/releases/tag/v1.27.1)
+- [Docker Agent v1.27.1](https://github.com/docker/docker-agent/releases/tag/v1.27.1)
 @y
 - [Docker Compose v5.1.0](https://github.com/docker/compose/releases/tag/v5.1.0)
 - [Docker Scout CLI v1.20.0](https://github.com/docker/scout-cli/releases/tag/v1.20.0)
-- [cagent v1.27.1](https://github.com/docker/cagent/releases/tag/v1.27.1)
+- [Docker Agent v1.27.1](https://github.com/docker/docker-agent/releases/tag/v1.27.1)
 @z
 
 @x
@@ -93,7 +261,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - Fixed the `docker ai` command stopping after a Docker Agent update.
 - Fixed Gordon session title flickering when hover buttons appeared.
 - Improved Gordon summary rendering and reduced narrative verbosity.
-- Fixed a bug where `docker ai` CLI commands did not correctly shell out to cagent.
+- Fixed a bug where `docker ai` CLI commands did not correctly shell out to Docker Agent.
 - Fixed the **OAuth** tab in Docker MCP Toolkit not showing entries from all catalogs.
 - Improved MCP Catalog search.
 - Fixed the **Build logs** tab not retaining search terms and filters when switching tabs.
@@ -103,7 +271,7 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - Fixed the `docker ai` command stopping after a Docker Agent update.
 - Fixed Gordon session title flickering when hover buttons appeared.
 - Improved Gordon summary rendering and reduced narrative verbosity.
-- Fixed a bug where `docker ai` CLI commands did not correctly shell out to cagent.
+- Fixed a bug where `docker ai` CLI commands did not correctly shell out to Docker Agent.
 - Fixed the **OAuth** tab in Docker MCP Toolkit not showing entries from all catalogs.
 - Improved MCP Catalog search.
 - Fixed the **Build logs** tab not retaining search terms and filters when switching tabs.
@@ -906,11 +1074,11 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @x
 - [containerd v2.2.1](https://github.com/containerd/containerd/releases/tag/v2.2.1)
 - [Docker Compose v5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0)
-- [cagent v1.18.6](https://github.com/docker/cagent/releases/tag/v1.18.6)
+- [Docker Agent v1.18.6](https://github.com/docker/docker-agent/releases/tag/v1.18.6)
 @y
 - [containerd v2.2.1](https://github.com/containerd/containerd/releases/tag/v2.2.1)
 - [Docker Compose v5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0)
-- [cagent v1.18.6](https://github.com/docker/cagent/releases/tag/v1.18.6)
+- [Docker Agent v1.18.6](https://github.com/docker/docker-agent/releases/tag/v1.18.6)
 @z
 
 @x
@@ -999,10 +1167,10 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 @x
 - [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
-- [cagent v1.15.1](https://github.com/docker/cagent/releases/tag/v1.15.1)
+- [Docker Agent v1.15.1](https://github.com/docker/docker-agent/releases/tag/v1.15.1)
 @y
 - [Docker Engine v29.1.3](https://docs.docker.com/engine/release-notes/29/#2913)
-- [cagent v1.15.1](https://github.com/docker/cagent/releases/tag/v1.15.1)
+- [Docker Agent v1.15.1](https://github.com/docker/docker-agent/releases/tag/v1.15.1)
 @z
 
 @x

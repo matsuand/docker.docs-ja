@@ -1468,10 +1468,10 @@ Defining runtime arguments via the command line is not supported.
 @z
 
 @x
-For an example configuration for a runc drop-in replacment, see
+For an example configuration for a runc drop-in replacement, see
 [Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @y
-For an example configuration for a runc drop-in replacment, see
+For an example configuration for a runc drop-in replacement, see
 [Alternative container runtimes > youki](https://docs.docker.com/engine/daemon/alternative-runtimes/#youki)
 @z
 

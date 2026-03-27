@@ -133,12 +133,14 @@ agents:
 
 @x
 The `docker:` prefix tells Docker Agent to use the MCP Gateway for this server. See
-the [MCP Gateway documentation](/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
-available servers and configuration options.
+the [MCP Catalog](/ai/mcp-catalog-and-toolkit/catalog/) for available servers and the
+[MCP Gateway documentation](/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
+configuration options.
 @y
 The `docker:` prefix tells Docker Agent to use the MCP Gateway for this server. See
-the [MCP Gateway documentation](__SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
-available servers and configuration options.
+the [MCP Catalog](/ai/mcp-catalog-and-toolkit/catalog/) for available servers and the
+[MCP Gateway documentation](/ai/mcp-catalog-and-toolkit/mcp-gateway/) for
+configuration options.
 @z
 
 @x
@@ -230,7 +232,7 @@ Example configuration:
     "myagent": {
       "command": "docker",
       "args": [
-        "agent", 
+        "agent",
         "serve",
         "mcp",
         "/path/to/agent.yml",
@@ -252,7 +254,7 @@ Example configuration:
     "myagent": {
       "command": "docker",
       "args": [
-        "agent", 
+        "agent",
         "serve",
         "mcp",
         "/path/to/agent.yml",

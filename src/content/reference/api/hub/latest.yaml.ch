@@ -73,7 +73,7 @@ tags:
   - name: changelog
     x-displayName: Changelog
     description: |
-      See the [Changelog](reference/api/hub/changelog) for a summary of changes across Docker Hub API versions.
+      See the [Changelog](__SUBDIR__/reference/api/hub/changelog) for a summary of changes across Docker Hub API versions.
   - name: resources
     x-displayName: Resources
     description: |
@@ -2406,7 +2406,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RepositoryGroupCreationRequest'
+              $ref: "#/components/schemas/RepositoryGroupCreationRequest"
             example:
               group_id: 12345
               permission: "write"
@@ -2416,7 +2416,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RepositoryGroup'
+                $ref: "#/components/schemas/RepositoryGroup"
               example:
                 group_name: "developers"
                 permission: "write"
@@ -2476,7 +2476,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RepositoryGroupCreationRequest'
+              $ref: "#/components/schemas/RepositoryGroupCreationRequest"
             example:
               group_id: 12345
               permission: "write"
@@ -2486,7 +2486,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RepositoryGroup'
+                $ref: "#/components/schemas/RepositoryGroup"
               example:
                 group_name: "developers"
                 permission: "write"
@@ -2518,8 +2518,8 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       parameters:
         - in: query
           name: page
@@ -2638,7 +2638,10 @@ paths:
                   summary: Invalid ordering value
                   value:
                     fields:
-                      ordering: [ "Invalid ordering value. Must be one of: name, -name, last_updated, -last_updated, pull_count, -pull_count" ]
+                      ordering:
+                        [
+                          "Invalid ordering value. Must be one of: name, -name, last_updated, -last_updated, pull_count, -pull_count",
+                        ]
                     text: "Invalid ordering value"
         "401":
           $ref: "#/components/responses/unauthorized"
@@ -2659,13 +2662,13 @@ paths:
       tags:
         - repositories
       security:
-        - BearerAuth: [ ]
+        - BearerAuth: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/repo_creation_request'
+              $ref: "#/components/schemas/repo_creation_request"
             example:
               name: "my-app"
               namespace: "myorganization"
@@ -2679,7 +2682,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -2697,12 +2700,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         400:
@@ -2729,8 +2732,8 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       parameters:
         - in: query
           name: page
@@ -2849,7 +2852,10 @@ paths:
                   summary: Invalid ordering value
                   value:
                     fields:
-                      ordering: [ "Invalid ordering value. Must be one of: name, -name, last_updated, -last_updated, pull_count, -pull_count" ]
+                      ordering:
+                        [
+                          "Invalid ordering value. Must be one of: name, -name, last_updated, -last_updated, pull_count, -pull_count",
+                        ]
                     text: "Invalid ordering value"
         "401":
           $ref: "#/components/responses/unauthorized"
@@ -2870,13 +2876,13 @@ paths:
       tags:
         - repositories
       security:
-        - BearerAuth: [ ]
+        - BearerAuth: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/repo_creation_request'
+              $ref: "#/components/schemas/repo_creation_request"
             example:
               name: "my-app"
               namespace: "myorganization"
@@ -2890,7 +2896,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -2908,12 +2914,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         400:
@@ -2942,14 +2948,14 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -2967,12 +2973,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         401:
@@ -2993,14 +2999,14 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -3018,12 +3024,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         401:
@@ -3046,14 +3052,14 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -3071,12 +3077,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         401:
@@ -3105,14 +3111,14 @@ paths:
       tags:
         - repositories
       security:
-        - bearerAuth: [ ]
-        - { }  # Allow anonymous access for public repositories
+        - bearerAuth: []
+        - {} # Allow anonymous access for public repositories
       responses:
         200:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/repository_info'
+                $ref: "#/components/schemas/repository_info"
               example:
                 name: "my-app"
                 namespace: "myorganization"
@@ -3130,12 +3136,12 @@ paths:
                 hub_user: "myorganization"
                 has_starred: false
                 full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: [ ]
-                content_types: [ ]
-                categories: [ ]
+                media_types: []
+                content_types: []
+                categories: []
                 immutable_tags_settings:
                   enabled: false
-                  rules: [ ]
+                  rules: []
                 storage_size: null
                 source: null
         401:
@@ -5003,7 +5009,7 @@ components:
             Letters must be lowercase.
           minLength: 2
           maxLength: 255
-          pattern: '^[a-z0-9]+(?:[._-][a-z0-9]+)*$'
+          pattern: "^[a-z0-9]+(?:[._-][a-z0-9]+)*$"
           example: "my-app"
         namespace:
           type: string
@@ -5046,7 +5052,7 @@ components:
             - read: Can view and pull from the repository
             - write: Can view, pull, and push to the repository
             - admin: Can view, pull, push, and manage repository settings
-          enum: [ "read", "write", "admin" ]
+          enum: ["read", "write", "admin"]
           example: "write"
     RepositoryGroup:
       type: object
@@ -5058,7 +5064,7 @@ components:
         permission:
           type: string
           description: The permission level granted to the group
-          enum: [ "read", "write", "admin" ]
+          enum: ["read", "write", "admin"]
           example: "write"
         group_id:
           type: integer
@@ -5140,7 +5146,7 @@ components:
           nullable: true
           description: Full description of the repository
         permissions:
-          $ref: '#/components/schemas/repo_permissions'
+          $ref: "#/components/schemas/repo_permissions"
         media_types:
           type: array
           items:
@@ -5155,10 +5161,10 @@ components:
         categories:
           type: array
           items:
-            $ref: '#/components/schemas/category'
+            $ref: "#/components/schemas/category"
           description: Repository categories
         immutable_tags_settings:
-          $ref: '#/components/schemas/immutable_tags_settings'
+          $ref: "#/components/schemas/immutable_tags_settings"
         storage_size:
           type: integer
           format: int64
@@ -5225,7 +5231,7 @@ components:
           type: string
           pattern: '^[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*(\\/[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*)*$'
           description: 'Immutable tags rule regex pattern. Must match format: [a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*(\\/[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*)*'
-          example: 'v.*'
+          example: "v.*"
       required:
         - regex
     immutable_tags_verify_response:
@@ -5237,9 +5243,9 @@ components:
             type: string
           description: List of tags that match the provided regex pattern
           example:
-            - 'v1.0.0'
-            - 'v2.1.3'
-            - 'latest'
+            - "v1.0.0"
+            - "v2.1.3"
+            - "latest"
       required:
         - tags
     repository_list_entry:
@@ -6438,7 +6444,7 @@ components:
             Letters must be lowercase.
           minLength: 2
           maxLength: 255
-          pattern: '^[a-z0-9]+(?:[._-][a-z0-9]+)*$'
+          pattern: "^[a-z0-9]+(?:[._-][a-z0-9]+)*$"
           example: "my-app"
         namespace:
           type: string
@@ -6481,7 +6487,7 @@ components:
             - read: Can view and pull from the repository
             - write: Can view, pull, and push to the repository
             - admin: Can view, pull, push, and manage repository settings
-          enum: [ "read", "write", "admin" ]
+          enum: ["read", "write", "admin"]
           example: "write"
     RepositoryGroup:
       type: object
@@ -6493,7 +6499,7 @@ components:
         permission:
           type: string
           description: The permission level granted to the group
-          enum: [ "read", "write", "admin" ]
+          enum: ["read", "write", "admin"]
           example: "write"
         group_id:
           type: integer
@@ -6575,7 +6581,7 @@ components:
           nullable: true
           description: Full description of the repository
         permissions:
-          $ref: '#/components/schemas/repo_permissions'
+          $ref: "#/components/schemas/repo_permissions"
         media_types:
           type: array
           items:
@@ -6590,10 +6596,10 @@ components:
         categories:
           type: array
           items:
-            $ref: '#/components/schemas/category'
+            $ref: "#/components/schemas/category"
           description: Repository categories
         immutable_tags_settings:
-          $ref: '#/components/schemas/immutable_tags_settings'
+          $ref: "#/components/schemas/immutable_tags_settings"
         storage_size:
           type: integer
           format: int64
@@ -6660,7 +6666,7 @@ components:
           type: string
           pattern: '^[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*(\\/[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*)*$'
           description: 'Immutable tags rule regex pattern. Must match format: [a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*(\\/[a-z0-9]+((\\.|_|__|-+)[a-z0-9]+)*)*'
-          example: 'v.*'
+          example: "v.*"
       required:
         - regex
     immutable_tags_verify_response:
@@ -6672,9 +6678,9 @@ components:
             type: string
           description: List of tags that match the provided regex pattern
           example:
-            - 'v1.0.0'
-            - 'v2.1.3'
-            - 'latest'
+            - "v1.0.0"
+            - "v2.1.3"
+            - "latest"
       required:
         - tags
     repository_list_entry:
@@ -8184,14 +8190,17 @@ components:
 @z
 
 @x
-            To reference public repositories, use `*/*/public` as the path value.
+            For TYPE_REPO resources:
+            - Must be an existing repository name (e.g., "myorg/myrepo")
+            - Can use glob patterns (e.g., "myorg/*" for all repositories in the organization)
+            - Use "*/*/public" to reference all public repositories
           required: true
         scopes:
           type: array
           description: The scopes this token has access to
           items:
             type: string
-            example: "repo-pull"
+            example: "scope-image-pull"
           required: true
     getOrgAccessTokensResponse:
       type: object
@@ -8245,7 +8254,31 @@ components:
     createOrgAccessTokenResponse:
       type: object
       allOf:
-        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            id:
+              type: string
+              example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+            label:
+              type: string
+              example: "My organization token"
+            is_active:
+              type: boolean
+              example: true
+            created_at:
+              type: string
+              format: date-time
+              example: "2022-05-20T00:54:18Z"
+            expires_at:
+              type: string
+              format: date-time
+              example: "2023-05-20T00:54:18Z"
+              nullable: true
+            last_used_at:
+              type: string
+              format: date-time
+              example: "2022-06-15T12:30:45Z"
+              nullable: true
         - type: object
           properties:
             token:
@@ -8534,14 +8567,17 @@ x-tagGroups:
       - groups
       - invites
 @y
-            To reference public repositories, use `*/*/public` as the path value.
+            For TYPE_REPO resources:
+            - Must be an existing repository name (e.g., "myorg/myrepo")
+            - Can use glob patterns (e.g., "myorg/*" for all repositories in the organization)
+            - Use "*/*/public" to reference all public repositories
           required: true
         scopes:
           type: array
           description: The scopes this token has access to
           items:
             type: string
-            example: "repo-pull"
+            example: "scope-image-pull"
           required: true
     getOrgAccessTokensResponse:
       type: object
@@ -8595,7 +8631,31 @@ x-tagGroups:
     createOrgAccessTokenResponse:
       type: object
       allOf:
-        - $ref: "#/components/schemas/orgAccessToken"
+        - type: object
+          properties:
+            id:
+              type: string
+              example: "a7a5ef25-8889-43a0-8cc7-f2a94268e861"
+            label:
+              type: string
+              example: "My organization token"
+            is_active:
+              type: boolean
+              example: true
+            created_at:
+              type: string
+              format: date-time
+              example: "2022-05-20T00:54:18Z"
+            expires_at:
+              type: string
+              format: date-time
+              example: "2023-05-20T00:54:18Z"
+              nullable: true
+            last_used_at:
+              type: string
+              format: date-time
+              example: "2022-06-15T12:30:45Z"
+              nullable: true
         - type: object
           properties:
             token:

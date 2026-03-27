@@ -90,16 +90,6 @@ This runs an n-body simulation benchmark on the GPU. The output will be similar 
 @z
 
 @x
-> [!NOTE]
->
-> Docker Model Runner with vLLM for Windows with WSL2 is available starting with Docker Desktop 4.54.
-@y
-> [!NOTE]
->
-> Docker Model Runner with vLLM for Windows with WSL2 is available starting with Docker Desktop 4.54.
-@z
-
-@x
 Use Docker Model Runner to run the SmolLM2 LLM with vLLM and GPU acceleration:
 @y
 Use Docker Model Runner to run the SmolLM2 LLM with vLLM and GPU acceleration:

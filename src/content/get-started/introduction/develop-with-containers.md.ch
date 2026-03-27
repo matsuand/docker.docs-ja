@@ -76,9 +76,9 @@ In this hands-on guide, you'll learn how to develop with containers.
 % snip command...
 
 @x
-    And after the project is cloned, navigate into the new directory created by the clone:
+   And after the project is cloned, navigate into the new directory created by the clone:
 @y
-    プロジェクトのクローンを行ったら、クローンによって生成されたディレクトリに移動します。
+   プロジェクトのクローンを行ったら、クローンによって生成されたディレクトリに移動します。
 @z
 
 % snip command...
@@ -90,9 +90,9 @@ In this hands-on guide, you'll learn how to develop with containers.
 @z
 
 @x
-    To start the project using the CLI, run the following command:
+   To start the project using the CLI, run the following command:
 @y
-    CLI を使ってプロジェクトを起動するには、以下のコマンドを実行します。
+   CLI を使ってプロジェクトを起動するには、以下のコマンドを実行します。
 @z
 
 % snip command...
@@ -115,9 +115,9 @@ In this hands-on guide, you'll learn how to develop with containers.
 @z
 
 @x
-    ![Screenshot of the getting started to-do app after its first launch](images/develop-getting-started-app-first-launch.webp)
+   ![Screenshot of the getting started to-do app after its first launch](images/develop-getting-started-app-first-launch.webp)
 @y
-    ![初回起動直後の todo アプリのスクリーンショット](images/develop-getting-started-app-first-launch.webp)
+   ![初回起動直後の todo アプリのスクリーンショット](images/develop-getting-started-app-first-launch.webp)
 @z
 
 @x
@@ -186,10 +186,14 @@ The greeting at the top of the page is populated by an API call at `/api/greetin
 @z
 
 @x
-1. Open the `backend/src/routes/getGreeting.js` file in a text editor. This file provides the handler for the API endpoint.
+1. Open the `backend/src/routes/getGreeting.js` file in a text editor on
+   your local machine (in the cloned project directory). This file provides
+   the handler for the API endpoint. Your changes will automatically sync to
+   the running container.
 @y
-1. `backend/src/routes/getGreeting.js` ファイルをテキストエディターで開きます。
+1. `backend/src/routes/getGreeting.js` ファイルをローカルマシン上のテキストエディターで開きます。
    このファイルは API エンドポイントへのハンドラーを提供しています。
+   編集結果は稼働中コンテナーに自動的に同期されます。
 @z
 
 @x
@@ -211,9 +215,9 @@ The greeting at the top of the page is populated by an API call at `/api/greetin
 @z
 
 @x
-    ![Screenshot of the to-do app with a new greeting](images/develop-app-with-greetings.webp)
+   ![Screenshot of the to-do app with a new greeting](images/develop-app-with-greetings.webp)
 @y
-    ![todo アプリの新たなあいさつ文を示したスクリーンショット](images/develop-app-with-greetings.webp)
+   ![todo アプリの新たなあいさつ文を示したスクリーンショット](images/develop-app-with-greetings.webp)
 @z
 
 @x
@@ -231,9 +235,11 @@ When you look at the app, you'll see the placeholder text is simply "New Item". 
 @z
 
 @x
-1. Open the `client/src/components/AddNewItemForm.jsx` file. This provides the component to add a new item to the to-do list.
+1. Open the `client/src/components/AddNewItemForm.jsx` file in your local
+   project directory. This provides the component to add a new item to the
+   to-do list.
 @y
-1. `client/src/components/AddNewItemForm.jsx` ファイルを開きます。
+1. ローカルのプロジェクトディレクトリにおいて `client/src/components/AddNewItemForm.jsx` ファイルを開きます。
    このファイルは todo リストに新規アイテムを追加するコンポーネントを提供しています。
 @z
 
@@ -272,9 +278,9 @@ Before you consider the application finalized, you need to make the colors bette
 @z
 
 @x
-1. Open the `client/src/index.scss` file.
+1. Open the `client/src/index.scss` file in your local project directory.
 @y
-1. `client/src/index.scss` ファイルを開きます。
+1. ローカルのプロジェクトディレクトリにおいて `client/src/index.scss` ファイルを開きます。
 @z
 
 @x
@@ -285,29 +291,29 @@ Before you consider the application finalized, you need to make the colors bette
 @z
 
 @x
-    If you're using an IDE, you can pick a color using the integrated color pickers. Otherwise, feel free to use an online [Color Picker](https://www.w3schools.com/colors/colors_picker.asp).
+   If you're using an IDE, you can pick a color using the integrated color pickers. Otherwise, feel free to use an online [Color Picker](https://www.w3schools.com/colors/colors_picker.asp).
 @y
-    IDE を利用している場合は、カラーピッカー機能を使って色設定を行うことができます。
-    そうでない場合は、必要に応じて [カラーピッカー](https://www.w3schools.com/colors/colors_picker.asp) をご利用ください。
+   IDE を利用している場合は、カラーピッカー機能を使って色設定を行うことができます。
+   そうでない場合は、必要に応じて [カラーピッカー](https://www.w3schools.com/colors/colors_picker.asp) をご利用ください。
 @z
 
 % snip code...
 
 @x
-    Each save should let you see the change immediately in the browser. Keep adjusting it until it's the perfect setup for you.
+   Each save should let you see the change immediately in the browser. Keep adjusting it until it's the perfect setup for you.
 @y
-    ファイル保存によりブラウザー上では即座に変更を確認することができます。
-    好みの色が得られていなければ調整を続けてください。
+   ファイル保存によりブラウザー上では即座に変更を確認することができます。
+   好みの色が得られていなければ調整を続けてください。
 @z
 
 @x
-    ![Screenshot of the to-do app with a new placeholder and background color"](images/develop-app-with-updated-client.webp)
+   ![Screenshot of the to-do app with a new placeholder and background color"](images/develop-app-with-updated-client.webp)
 @y
-    ![テキスト欄と背景色を変更した todo アプリのスクリーンショット](images/develop-app-with-updated-client.webp)
+   ![テキスト欄と背景色を変更した todo アプリのスクリーンショット](images/develop-app-with-updated-client.webp)
 @z
 
 @x
-And with that, you're done. Congrats on updating your website. 
+And with that, you're done. Congrats on updating your website.
 @y
 こうして作業が終了しました。
 ウェブサイトの更新作業、おつかれさまでした。
@@ -337,10 +343,15 @@ Before you move on, take a moment and reflect on what happened here. Within a fe
 @z
 
 @x
-- Make changes and see them immediately. This was made possible because 1) the processes running in each container are watching and responding to file changes and 2) the files are shared with the containerized environment.
+- Make changes and see them immediately. This was made possible because
+  1. the processes running in each container are watching and responding to
+     file changes and 2) the files in your local project directory are shared
+     with the containerized environment, so edits you make locally are
+     automatically synced to the containers.
 @y
 - アプリへの修正を加え、それを即座に確認しました。
-  これが実現できた理由は、1) 各コンテナー内に稼働しているプロセスは、ファイル変更を常に監視しておりそれに応じた対処が可能であるからであり、2) ファイルはコンテナー化環境内において共有されているからです。
+  これが実現できた理由は、各コンテナー内に稼働しているプロセスは、ファイル変更を常に監視しておりそれに応じた対処が可能であるからであり、2) ローカルのプロジェクトディレクトリ内にあるファイルはコンテナー化環境内において共有されているからです。
+  そしてローカルにおいて編集した内容は、コンテナーに対して自動的に同期されます。
 @z
 
 @x

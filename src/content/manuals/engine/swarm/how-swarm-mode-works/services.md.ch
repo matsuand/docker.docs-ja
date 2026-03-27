@@ -2,19 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How swarm mode services work
 keywords: docker, container, cluster, swarm mode, node
 title: How services work
-weight: 20
----
 @y
----
 description: How swarm mode services work
 keywords: docker, container, cluster, swarm mode, node
 title: How services work
-weight: 20
----
 @z
 
 @x
@@ -42,17 +36,17 @@ service including:
 @z
 
 @x
-* The port where the swarm makes the service available outside the swarm
-* An overlay network for the service to connect to other services in the swarm
-* CPU and memory limits and reservations
-* A rolling update policy
-* The number of replicas of the image to run in the swarm
+- The port where the swarm makes the service available outside the swarm
+- An overlay network for the service to connect to other services in the swarm
+- CPU and memory limits and reservations
+- A rolling update policy
+- The number of replicas of the image to run in the swarm
 @y
-* The port where the swarm makes the service available outside the swarm
-* An overlay network for the service to connect to other services in the swarm
-* CPU and memory limits and reservations
-* A rolling update policy
-* The number of replicas of the image to run in the swarm
+- The port where the swarm makes the service available outside the swarm
+- An overlay network for the service to connect to other services in the swarm
+- CPU and memory limits and reservations
+- A rolling update policy
+- The number of replicas of the image to run in the swarm
 @z
 
 @x
@@ -133,12 +127,12 @@ that spawns a new container.
 
 @x
 A task is a one-directional mechanism. It progresses monotonically through a
-series of states: assigned, prepared, running, etc. If the task fails, the
+series of states: `ASSIGNED`, `PREPARING`, `RUNNING`, etc. If the task fails, the
 orchestrator removes the task and its container and then creates a new task to
 replace it according to the desired state specified by the service.
 @y
 A task is a one-directional mechanism. It progresses monotonically through a
-series of states: assigned, prepared, running, etc. If the task fails, the
+series of states: `ASSIGNED`, `PREPARING`, `RUNNING`, etc. If the task fails, the
 orchestrator removes the task and its container and then creates a new task to
 replace it according to the desired state specified by the service.
 @z
@@ -148,15 +142,13 @@ The underlying logic of Docker's Swarm mode is a general purpose scheduler and
 orchestrator. The service and task abstractions themselves are unaware of the
 containers they implement. Hypothetically, you could implement other types of
 tasks such as virtual machine tasks or non-containerized process tasks. The
-scheduler and orchestrator are agnostic about the type of the task. However, the
-current version of Docker only supports container tasks.
+scheduler and orchestrator are agnostic about the type of the task. However, Docker only supports container tasks.
 @y
 The underlying logic of Docker's Swarm mode is a general purpose scheduler and
 orchestrator. The service and task abstractions themselves are unaware of the
 containers they implement. Hypothetically, you could implement other types of
 tasks such as virtual machine tasks or non-containerized process tasks. The
-scheduler and orchestrator are agnostic about the type of the task. However, the
-current version of Docker only supports container tasks.
+scheduler and orchestrator are agnostic about the type of the task. However, Docker only supports container tasks.
 @z
 
 @x
@@ -306,9 +298,9 @@ in black.
 @z
 
 @x
-* Read about how Swarm mode [nodes](nodes.md) work.
-* Learn how [PKI](pki.md) works in Swarm mode.
+- Read about how Swarm mode [nodes](nodes.md) work.
+- Learn how [PKI](pki.md) works in Swarm mode.
 @y
-* Read about how Swarm mode [nodes](nodes.md) work.
-* Learn how [PKI](pki.md) works in Swarm mode.
+- Read about how Swarm mode [nodes](nodes.md) work.
+- Learn how [PKI](pki.md) works in Swarm mode.
 @z

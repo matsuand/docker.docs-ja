@@ -38,9 +38,9 @@ Using Docker Compose offers several benefits that streamline the development, de
 @z
 
 @x
-- Rapid application development: Compose caches the configuration used to create a container. When you restart a service that has not changed, Compose re-uses the existing containers. Re-using containers means that you can make changes to your environment very quickly.
+- Rapid application development: Compose caches the configuration used to create a container. When you restart a service that has not changed, Compose reuses the existing containers. Reusing containers means that you can make changes to your environment quickly.
 @y
-- Rapid application development: Compose caches the configuration used to create a container. When you restart a service that has not changed, Compose re-uses the existing containers. Re-using containers means that you can make changes to your environment very quickly.
+- Rapid application development: Compose caches the configuration used to create a container. When you restart a service that has not changed, Compose reuses the existing containers. Reusing containers means that you can make changes to your environment quickly.
 @z
 
 @x

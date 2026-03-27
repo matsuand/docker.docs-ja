@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Configuration options
@@ -271,15 +272,7 @@ With the `docker model configure` command:
 With the `docker model configure` command:
 @z
 
-@x
-```console
-$ docker model configure --runtime-flag "--temp" --runtime-flag "0.7" --runtime-flag "--top-p" --runtime-flag "0.9" ai/qwen2.5-coder
-```
-@y
-```console
-$ docker model configure --runtime-flag "--temp" --runtime-flag "0.7" --runtime-flag "--top-p" --runtime-flag "0.9" ai/qwen2.5-coder
-```
-@z
+% snip command...
 
 @x
 ### Common llama.cpp parameters

@@ -194,33 +194,13 @@ Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @z
 
 @x
-For Business subscriptions, administrators can control Gordon access for their
-organization using Settings Management.
+For Business subscriptions, administrators can enable or disable Gordon for
+their organization using Settings Management. Review your organization's data
+handling requirements before enabling Gordon.
 @y
-For Business subscriptions, administrators can control Gordon access for their
-organization using Settings Management.
-@z
-
-@x
-Available controls:
-@y
-Available controls:
-@z
-
-@x
-- Enable or disable Gordon for the organization
-- Set usage limits by subscription tier
-@y
-- Enable or disable Gordon for the organization
-- Set usage limits by subscription tier
-@z
-
-@x
-Administrators should review their organization's data handling requirements
-before enabling Gordon.
-@y
-Administrators should review their organization's data handling requirements
-before enabling Gordon.
+For Business subscriptions, administrators can enable or disable Gordon for
+their organization using Settings Management. Review your organization's data
+handling requirements before enabling Gordon.
 @z
 
 @x

@@ -59,12 +59,12 @@ keywords: accounts, docker ID, account management, account settings, docker acco
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/2fa/
-  icon: phonelink_lock
+  icon: mobile_lock_portrait
 @y
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: __SUBDIR__/security/2fa/
-  icon: phonelink_lock
+  icon: mobile_lock_portrait
 @z
 
 @x

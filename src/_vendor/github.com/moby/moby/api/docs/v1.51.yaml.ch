@@ -20072,10 +20072,101 @@ paths:
           required: true
         - name: "manifests"
           in: "query"
-          description: "Include Manifests in the image summary."
+          description: |-
+            Include Manifests in the image summary.
+@y
+            When used with the `fromSrc` option to import an image from an archive,
+            this option sets the platform information for the imported image. If
+            the option is not set, the host's native OS and Architecture are used
+            for the imported image.
+          type: "string"
+          default: ""
+      tags: ["Image"]
+  /images/{name}/json:
+    get:
+      summary: "Inspect an image"
+      description: "Return low-level information about an image."
+      operationId: "ImageInspect"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "No error"
+          schema:
+            $ref: "#/definitions/ImageInspect"
+        404:
+          description: "No such image"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+          examples:
+            application/json:
+              message: "No such image: someimage (tag: latest)"
+        500:
+          description: "Server error"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+      parameters:
+        - name: "name"
+          in: "path"
+          description: "Image name or id"
+          type: "string"
+          required: true
+        - name: "manifests"
+          in: "query"
+          description: |-
+            Include Manifests in the image summary.
+@z
+
+@x
+            The `manifests` and `platform` options are mutually exclusive, and
+            an error is produced if both are set.
           type: "boolean"
           default: false
           required: false
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |-
+            JSON-encoded OCI platform to select the platform-variant.
+            If omitted, it defaults to any locally available platform,
+            prioritizing the daemon's host platform.
+@y
+            The `manifests` and `platform` options are mutually exclusive, and
+            an error is produced if both are set.
+          type: "boolean"
+          default: false
+          required: false
+        - name: "platform"
+          type: "string"
+          in: "query"
+          description: |-
+            JSON-encoded OCI platform to select the platform-variant.
+            If omitted, it defaults to any locally available platform,
+            prioritizing the daemon's host platform.
+@z
+
+@x
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to show inspect. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@y
+            If the daemon provides a multi-platform image store, this selects
+            the platform-variant to show inspect. If the image is
+            a single-platform image, or if the multi-platform image does not
+            provide a variant matching the given platform, an error is returned.
+@z
+
+@x
+            The `platform` and `manifests` options are mutually exclusive, and
+            an error is produced if both are set.
+@y
+            The `platform` and `manifests` options are mutually exclusive, and
+            an error is produced if both are set.
+@z
+
+@x
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /images/{name}/history:
     get:
@@ -20136,48 +20227,7 @@ paths:
             If omitted, it defaults to any locally available platform,
             prioritizing the daemon's host platform.
 @y
-            When used with the `fromSrc` option to import an image from an archive,
-            this option sets the platform information for the imported image. If
-            the option is not set, the host's native OS and Architecture are used
-            for the imported image.
-          type: "string"
-          default: ""
-      tags: ["Image"]
-  /images/{name}/json:
-    get:
-      summary: "Inspect an image"
-      description: "Return low-level information about an image."
-      operationId: "ImageInspect"
-      produces:
-        - "application/json"
-      responses:
-        200:
-          description: "No error"
-          schema:
-            $ref: "#/definitions/ImageInspect"
-        404:
-          description: "No such image"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-          examples:
-            application/json:
-              message: "No such image: someimage (tag: latest)"
-        500:
-          description: "Server error"
-          schema:
-            $ref: "#/definitions/ErrorResponse"
-      parameters:
-        - name: "name"
-          in: "path"
-          description: "Image name or id"
-          type: "string"
-          required: true
-        - name: "manifests"
-          in: "query"
-          description: "Include Manifests in the image summary."
-          type: "boolean"
-          default: false
-          required: false
+            Example: `{"os": "linux", "architecture": "arm", "variant": "v5"}`
       tags: ["Image"]
   /images/{name}/history:
     get:

@@ -18,6 +18,7 @@ copyfiles = \
 	v1.50.md \
 	v1.51.md \
 	v1.52.md \
-	v1.53.md
+	v1.53.md \
+	v1.54.md
 
 include $(top_srcdir)/build-aux/copy.mk

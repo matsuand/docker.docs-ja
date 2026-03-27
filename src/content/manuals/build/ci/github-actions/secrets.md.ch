@@ -78,12 +78,18 @@ exposes this secret using the `secrets` input:
 
 @x
 > [!NOTE]
->
-> You can also expose a secret file to the build with the `secret-files` input:
+> Secrets are mounted as files in the build container.
+> By default, they're available at `/run/secrets/<id>`.
+> You can also use the `env` option to load a secret into an environment variable,
+> or the `target` option to customize the mount path.
+> For details on secret mounts, see [Build secrets](/manuals/build/building/secrets.md).
 @y
 > [!NOTE]
->
-> You can also expose a secret file to the build with the `secret-files` input:
+> Secrets are mounted as files in the build container.
+> By default, they're available at `/run/secrets/<id>`.
+> You can also use the `env` option to load a secret into an environment variable,
+> or the `target` option to customize the mount path.
+> For details on secret mounts, see [Build secrets](/manuals/build/building/secrets.md).
 @z
 
 % snip code...

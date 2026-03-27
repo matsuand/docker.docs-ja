@@ -239,6 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md                         \
+	gpu.md                            \
 	multi-service_container.md        \
 	resource_constraints.md           \
 	runmetrics.md                     \

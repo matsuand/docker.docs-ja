@@ -65,14 +65,14 @@ Following the CIS Docker Benchmark helps organizations:
 
 @x
 Docker Hardened Images (DHIs) are designed with security in mind and are
-verified to be compliant with the relevant controls from the latest CIS
-Docker Benchmark (v1.8.0) for the scope that applies to container images and
-Dockerfile configuration.
+verified to be compliant with the relevant controls from the CIS Docker
+Benchmark for the scope that applies to container images and Dockerfile
+configuration.
 @y
 Docker Hardened Images (DHIs) are designed with security in mind and are
-verified to be compliant with the relevant controls from the latest CIS
-Docker Benchmark (v1.8.0) for the scope that applies to container images and
-Dockerfile configuration.
+verified to be compliant with the relevant controls from the CIS Docker
+Benchmark for the scope that applies to container images and Dockerfile
+configuration.
 @z
 
 @x

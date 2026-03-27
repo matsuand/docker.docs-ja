@@ -4,11 +4,11 @@
 @x
 title: What's next 
 keywords: concepts, build, images, container, docker desktop
-description: Explore step-by-step guides to hep you understand core Docker concepts, building images, and running containers.
+description: Explore step-by-step guides to help you understand core Docker concepts, building images, and running containers.
 @y
 title: 次は何？
 keywords: concepts, build, images, container, docker desktop
-description: Explore step-by-step guides to hep you understand core Docker concepts, building images, and running containers.
+description: Explore step-by-step guides to help you understand core Docker concepts, building images, and running containers.
 @z
 
 @x

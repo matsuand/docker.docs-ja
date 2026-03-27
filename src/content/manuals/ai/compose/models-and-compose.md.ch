@@ -417,38 +417,6 @@ When using embedding models with the `/v1/embeddings` endpoint, you must include
 @z
 
 @x
-## Alternative configuration with provider services
-@y
-## Alternative configuration with provider services
-@z
-
-@x
-> [!IMPORTANT]
->
-> This approach is deprecated. Use the [`models` top-level element](#basic-model-definition) instead.
-@y
-> [!IMPORTANT]
->
-> This approach is deprecated. Use the [`models` top-level element](#basic-model-definition) instead.
-@z
-
-@x
-You can also use the `provider` service type, which allows you to declare platform capabilities required by your application.
-For AI models, you can use the `model` type to declare model dependencies.
-@y
-You can also use the `provider` service type, which allows you to declare platform capabilities required by your application.
-For AI models, you can use the `model` type to declare model dependencies.
-@z
-
-@x
-To define a model provider:
-@y
-To define a model provider:
-@z
-
-% snip code...
-
-@x
 ## Reference
 @y
 ## Reference

@@ -7,10 +7,12 @@
 title: MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure, admin, mdm
+tags: [admin]
 @y
 title: MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
 keywords: msi, windows, docker desktop, install, deploy, configure, admin, mdm
+tags: [admin]
 @z
 
 @x
@@ -38,6 +40,7 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
 5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 6. Configure the Docker Desktop installation. You can:
+   - Create a desktop shortcut
 @y
 1. In [Docker Home](http://app.docker.com), choose your organization.
 2. Select **Admin Console**, then **Enterprise deployment**.
@@ -45,32 +48,31 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
 5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
 6. Configure the Docker Desktop installation. You can:
+   - Create a desktop shortcut
 @z
 
 @x
-    - Create a desktop shortcut
+   - Set the Docker Desktop service startup type to automatic
 @y
-    - Create a desktop shortcut
+   - Set the Docker Desktop service startup type to automatic
 @z
 
 @x
-    - Set the Docker Desktop service startup type to automatic
+   - Disable Windows Container usage
 @y
-    - Set the Docker Desktop service startup type to automatic
+   - Disable Windows Container usage
 @z
 
 @x
-    - Disable Windows Container usage
+   - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 @y
-    - Disable Windows Container usage
+   - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 @z
 
 @x
-    - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 8. When the installation is successful, select **Finish** to complete the installation process.
 @y
-    - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
 7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
 8. When the installation is successful, select **Finish** to complete the installation process.
 @z
@@ -181,7 +183,15 @@ Admin rights are required to run any of the following commands.
 #### Install interactively with verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log"
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log"
+```
+@z
 
 @x
 #### Install interactively without verbose logging
@@ -189,7 +199,15 @@ Admin rights are required to run any of the following commands.
 #### Install interactively without verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi"
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi"
+```
+@z
 
 @x
 #### Install non-interactively with verbose logging
@@ -197,7 +215,15 @@ Admin rights are required to run any of the following commands.
 #### Install non-interactively with verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet
+```
+@z
 
 @x
 #### Install non-interactively and suppressing reboots
@@ -205,7 +231,15 @@ Admin rights are required to run any of the following commands.
 #### Install non-interactively and suppressing reboots
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart
+```
+@z
 
 @x
 #### Install non-interactively with admin settings
@@ -213,7 +247,15 @@ Admin rights are required to run any of the following commands.
 #### Install non-interactively with admin settings
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS="{""configurationFileVersion"":2,""enhancedContainerIsolation"":{""value"":true,""locked"":false}}" ALLOWEDORG="your-organization"
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS="{""configurationFileVersion"":2,""enhancedContainerIsolation"":{""value"":true,""locked"":false}}" ALLOWEDORG="your-organization"
+```
+@z
 
 @x
 #### Install interactively and allow users to switch to Windows containers without admin rights
@@ -221,7 +263,51 @@ Admin rights are required to run any of the following commands.
 #### Install interactively and allow users to switch to Windows containers without admin rights
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ALLOWEDORG="your-organization" ALWAYSRUNSERVICE=1
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ALLOWEDORG="your-organization" ALWAYSRUNSERVICE=1
+```
+@z
+
+@x
+#### Install interactively specifying a PAC file
+@y
+#### Install interactively specifying a PAC file
+@z
+
+@x
+```powershell
+PowerShell
+ msiexec --% /i "DockerDesktop.msi" /L*V ".\msi.log"  PROXYHTTPMODE="manual" OVERRIDEPROXYPAC="http://localhost:8080/myproxy.pac"
+```
+@y
+```powershell
+PowerShell
+ msiexec --% /i "DockerDesktop.msi" /L*V ".\msi.log"  PROXYHTTPMODE="manual" OVERRIDEPROXYPAC="http://localhost:8080/myproxy.pac"
+```
+@z
+
+@x
+#### Install interactively specifying a PAC script
+@y
+#### Install interactively specifying a PAC script
+@z
+
+@x
+```powershell
+PowerShell
+ msiexec --% /i "DockerDesktop.msi" /L*V ".\msi.log"  PROXYHTTPMODE="manual" OVERRIDEPROXYEMBEDDEDPAC="function FindProxyForURL(url,host) {return ""DIRECT"" ;; }"
+```
+@y
+```powershell
+PowerShell
+ msiexec --% /i "DockerDesktop.msi" /L*V ".\msi.log"  PROXYHTTPMODE="manual" OVERRIDEPROXYEMBEDDEDPAC="function FindProxyForURL(url,host) {return ""DIRECT"" ;; }"
+```
+@z
 
 @x
 #### Install with the passive display option
@@ -247,7 +333,15 @@ For example:
 For example:
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
+```
+@y
+```powershell
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /passive /norestart
+```
+@z
 
 @x
 > [!TIP]
@@ -287,7 +381,15 @@ If you no longer have the original `.msi` file, you need to use the product code
 If you no longer have the original `.msi` file, you need to use the product code associated with the installation. To find the product code, run:
 @z
 
-% snip command...
+@x
+```powershell
+Get-WmiObject Win32_Product | Select-Object IdentifyingNumber, Name | Where-Object {$_.Name -eq "Docker Desktop"}
+```
+@y
+```powershell
+Get-WmiObject Win32_Product | Select-Object IdentifyingNumber, Name | Where-Object {$_.Name -eq "Docker Desktop"}
+```
+@z
 
 @x
 It should return output similar to the following:
@@ -295,7 +397,19 @@ It should return output similar to the following:
 It should return output similar to the following:
 @z
 
-% snip output...
+@x
+```text
+IdentifyingNumber                      Name
+-----------------                      ----
+{10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
+```
+@y
+```text
+IdentifyingNumber                      Name
+-----------------                      ----
+{10FC87E2-9145-4D7D-B493-2E99E8D8E103} Docker Desktop
+```
+@z
 
 @x
 > [!NOTE]
@@ -313,7 +427,15 @@ It should return output similar to the following:
 `IdentifyingNumber` is the applications product code and can be used to uninstall Docker Desktop. For example:
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
+```
+@y
+```powershell
+msiexec /x {10FC87E2-9145-4D7D-B493-2E99E8D8E103} /L*V ".\msi.log" /quiet
+```
+@z
 
 @x
 #### Uninstall interactively with verbose logging
@@ -321,7 +443,15 @@ It should return output similar to the following:
 #### Uninstall interactively with verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
+```
+@y
+```powershell
+msiexec /x "DockerDesktop.msi" /L*V ".\msi.log"
+```
+@z
 
 @x
 #### Uninstall interactively without verbose logging
@@ -329,7 +459,15 @@ It should return output similar to the following:
 #### Uninstall interactively without verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /x "DockerDesktop.msi"
+```
+@y
+```powershell
+msiexec /x "DockerDesktop.msi"
+```
+@z
 
 @x
 #### Uninstall non-interactively with verbose logging
@@ -337,7 +475,15 @@ It should return output similar to the following:
 #### Uninstall non-interactively with verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
+```
+@y
+```powershell
+msiexec /x "DockerDesktop.msi" /L*V ".\msi.log" /quiet
+```
+@z
 
 @x
 #### Uninstall non-interactively without verbose logging
@@ -345,7 +491,15 @@ It should return output similar to the following:
 #### Uninstall non-interactively without verbose logging
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /x "DockerDesktop.msi" /quiet
+```
+@y
+```powershell
+msiexec /x "DockerDesktop.msi" /quiet
+```
+@z
 
 @x
 ### Configuration options
@@ -360,47 +514,49 @@ In addition to the following custom properties, the Docker Desktop MSI installer
 @z
 
 @x
-| Property | Description | Default |
-| :--- | :--- | :--- |
-| `ENABLEDESKTOPSHORTCUT` | Creates a desktop shortcut. | 1 |
-| `INSTALLFOLDER` | Specifies a custom location where Docker Desktop will be installed. | C:\Program Files\Docker |
-| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
-| `ALLOWEDORG` | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`. | None |
-| `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
-| `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |
-| `ENGINE` | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows` | `wsl` |
-| `PROXYENABLEKERBEROSNTLM` | When set to 1, enables support for Kerberos and NTLM proxy authentication. Available with Docker Desktop 4.33 and later| 0 |
-| `PROXYHTTPMODE` | Sets the HTTP Proxy mode. This can be either `system` or `manual` | `system` |
-| `OVERRIDEPROXYHTTP` | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests. | None |
-| `OVERRIDEPROXYHTTPS` | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests. | None |
-| `OVERRIDEPROXYEXCLUDE` | Bypasses proxy settings for the hosts and domains. Uses a comma-separated list. | None |
-| `OVERRIDEPROXYPAC` | Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode. | None |
-| `OVERRIDEPROXYEMBEDDEDPAC` | Specifies an embedded PAC (Proxy Auto-Config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `OVERRIDEPROXYPAC` flag.| None |
-| `HYPERVDEFAULTDATAROOT` | Specifies the default location for the Hyper-V VM disk. | None |
-| `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers. | None |
-| `WSLDEFAULTDATAROOT` | Specifies the default location for the WSL distribution disk. | None |
-| `DISABLEANALYTICS` | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics). | 0 |
+| Property                           | Description                                                                                                                                                                                                                                                                                   | Default                 |
+| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
+| `ENABLEDESKTOPSHORTCUT`            | Creates a desktop shortcut.                                                                                                                                                                                                                                                                   | 1                       |
+| `INSTALLFOLDER`                    | Specifies a custom location where Docker Desktop will be installed.                                                                                                                                                                                                                           | C:\Program Files\Docker |
+| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None                    |
+| `ALLOWEDORG`                       | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`.                                                                           | None                    |
+| `ALWAYSRUNSERVICE`                 | Lets users switch to Windows containers without needing admin rights                                                                                                                                                                                                                          | 0                       |
+| `DISABLEWINDOWSCONTAINERS`         | Disables the Windows containers integration                                                                                                                                                                                                                                                   | 0                       |
+| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows`                                                                                                                                                                                       | `wsl`                   |
+| `PROXYENABLEKERBEROSNTLM`          | When set to 1, enables support for Kerberos and NTLM proxy authentication.                                                                                                                                                                                                                    | 0                       |
+| `PROXYHTTPMODE`                    | Sets the HTTP Proxy mode. This can be either `system` or `manual`                                                                                                                                                                                                                             | `system`                |
+| `OVERRIDEPROXYHTTP`                | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.                                                                                                                                                                                                                  | None                    |
+| `OVERRIDEPROXYHTTPS`               | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.                                                                                                                                                                                                                 | None                    |
+| `OVERRIDEPROXYEXCLUDE`             | Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.                                                                                                                                                                                                               | None                    |
+| `OVERRIDEPROXYPAC`                 | Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode.                                                                                                                                                                                                         | None                    |
+| `OVERRIDEPROXYEMBEDDEDPAC`         | Specifies an embedded PAC (Proxy Auto-config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `OVERRIDEPROXYPAC` flag.                                                                                                                      | None                    |
+| `HYPERVDEFAULTDATAROOT`            | Specifies the default location for the Hyper-V VM disk.                                                                                                                                                                                                                                       | None                    |
+| `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers.                                                                                                                                                                                                                                        | None                    |
+| `WSLDEFAULTDATAROOT`               | Specifies the default location for the WSL distribution disk.                                                                                                                                                                                                                                 | None                    |
+| `DISABLEANALYTICS`                 | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics).                                                                                                                                                                          | 0                       |
+| `REMOVEEXISTINGINSTALL`            | When set to 1, any existing EXE installations are removed. Existing settings and content are preserved. Available with Docker Desktop version 4.61 and later.   | 1 |
 @y
-| Property | Description | Default |
-| :--- | :--- | :--- |
-| `ENABLEDESKTOPSHORTCUT` | Creates a desktop shortcut. | 1 |
-| `INSTALLFOLDER` | Specifies a custom location where Docker Desktop will be installed. | C:\Program Files\Docker |
-| `ADMINSETTINGS` | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None |
-| `ALLOWEDORG` | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`. | None |
-| `ALWAYSRUNSERVICE` | Lets users switch to Windows containers without needing admin rights | 0 |
-| `DISABLEWINDOWSCONTAINERS` | Disables the Windows containers integration | 0 |
-| `ENGINE` | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows` | `wsl` |
-| `PROXYENABLEKERBEROSNTLM` | When set to 1, enables support for Kerberos and NTLM proxy authentication. Available with Docker Desktop 4.33 and later| 0 |
-| `PROXYHTTPMODE` | Sets the HTTP Proxy mode. This can be either `system` or `manual` | `system` |
-| `OVERRIDEPROXYHTTP` | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests. | None |
-| `OVERRIDEPROXYHTTPS` | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests. | None |
-| `OVERRIDEPROXYEXCLUDE` | Bypasses proxy settings for the hosts and domains. Uses a comma-separated list. | None |
-| `OVERRIDEPROXYPAC` | Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode. | None |
-| `OVERRIDEPROXYEMBEDDEDPAC` | Specifies an embedded PAC (Proxy Auto-Config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `OVERRIDEPROXYPAC` flag.| None |
-| `HYPERVDEFAULTDATAROOT` | Specifies the default location for the Hyper-V VM disk. | None |
-| `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers. | None |
-| `WSLDEFAULTDATAROOT` | Specifies the default location for the WSL distribution disk. | None |
-| `DISABLEANALYTICS` | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics). | 0 |
+| Property                           | Description                                                                                                                                                                                                                                                                                   | Default                 |
+| :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
+| `ENABLEDESKTOPSHORTCUT`            | Creates a desktop shortcut.                                                                                                                                                                                                                                                                   | 1                       |
+| `INSTALLFOLDER`                    | Specifies a custom location where Docker Desktop will be installed.                                                                                                                                                                                                                           | C:\Program Files\Docker |
+| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None                    |
+| `ALLOWEDORG`                       | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`.                                                                           | None                    |
+| `ALWAYSRUNSERVICE`                 | Lets users switch to Windows containers without needing admin rights                                                                                                                                                                                                                          | 0                       |
+| `DISABLEWINDOWSCONTAINERS`         | Disables the Windows containers integration                                                                                                                                                                                                                                                   | 0                       |
+| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows`                                                                                                                                                                                       | `wsl`                   |
+| `PROXYENABLEKERBEROSNTLM`          | When set to 1, enables support for Kerberos and NTLM proxy authentication.                                                                                                                                                                                                                    | 0                       |
+| `PROXYHTTPMODE`                    | Sets the HTTP Proxy mode. This can be either `system` or `manual`                                                                                                                                                                                                                             | `system`                |
+| `OVERRIDEPROXYHTTP`                | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.                                                                                                                                                                                                                  | None                    |
+| `OVERRIDEPROXYHTTPS`               | Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.                                                                                                                                                                                                                 | None                    |
+| `OVERRIDEPROXYEXCLUDE`             | Bypasses proxy settings for the hosts and domains. Uses a comma-separated list.                                                                                                                                                                                                               | None                    |
+| `OVERRIDEPROXYPAC`                 | Sets the PAC file URL. This setting takes effect only when using `manual` proxy mode.                                                                                                                                                                                                         | None                    |
+| `OVERRIDEPROXYEMBEDDEDPAC`         | Specifies an embedded PAC (Proxy Auto-config) script. This setting takes effect only when using `manual` proxy mode and has precedence over the `OVERRIDEPROXYPAC` flag.                                                                                                                      | None                    |
+| `HYPERVDEFAULTDATAROOT`            | Specifies the default location for the Hyper-V VM disk.                                                                                                                                                                                                                                       | None                    |
+| `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers.                                                                                                                                                                                                                                        | None                    |
+| `WSLDEFAULTDATAROOT`               | Specifies the default location for the WSL distribution disk.                                                                                                                                                                                                                                 | None                    |
+| `DISABLEANALYTICS`                 | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics).                                                                                                                                                                          | 0                       |
+| `REMOVEEXISTINGINSTALL`            | When set to 1, any existing EXE installations are removed. Existing settings and content are preserved. Available with Docker Desktop version 4.61 and later.   | 1 |
 @z
 
 @x
@@ -461,7 +617,15 @@ When you install Docker Desktop from the command line, use the `DISABLEANALYTICS
 When you install Docker Desktop from the command line, use the `DISABLEANALYTICS` property.
 @z
 
-% snip command...
+@x
+```powershell
+msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
+```
+@y
+```powershell
+msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
+```
+@z
 
 @x
 {{< /tab >}}
@@ -495,7 +659,15 @@ The registry key is as follows:
 The registry key is as follows:
 @z
 
-% snip command...
+@x
+```powershell
+SOFTWARE\Docker Inc.\Docker Desktop\DisableMsiAnalytics
+```
+@y
+```powershell
+SOFTWARE\Docker Inc.\Docker Desktop\DisableMsiAnalytics
+```
+@z
 
 @x
 When analytics is disabled, this key is set to `1`.

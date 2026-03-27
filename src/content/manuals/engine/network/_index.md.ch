@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応
 
 @x
 title: Networking overview
@@ -175,7 +175,7 @@ On Linux, the following built-in network drivers are available:
 
 @x
 | Driver                          | Description                                                         |
-|:--------------------------------|:--------------------------------------------------------------------|
+| :------------------------------ | :------------------------------------------------------------------ |
 | [bridge](./drivers/bridge.md)   | The default network driver.                                         |
 | [host](./drivers/host.md)       | Remove network isolation between the container and the Docker host. |
 | [none](./drivers/none.md)       | Completely isolate a container from the host and other containers.  |
@@ -184,7 +184,7 @@ On Linux, the following built-in network drivers are available:
 | [macvlan](./drivers/macvlan.md) | Containers appear as devices on the host's network.                 |
 @y
 | Driver                          | Description                                                         |
-|:--------------------------------|:--------------------------------------------------------------------|
+| :------------------------------ | :------------------------------------------------------------------ |
 | [bridge](./drivers/bridge.md)   | The default network driver.                                         |
 | [host](./drivers/host.md)       | Remove network isolation between the container and the Docker host. |
 | [none](./drivers/none.md)       | Completely isolate a container from the host and other containers.  |
@@ -457,13 +457,13 @@ These pools can be configured in `/etc/docker/daemon.json`. Docker's built-in de
 ```json
 {
   "default-address-pools": [
-    {"base":"172.17.0.0/16","size":16},
-    {"base":"172.18.0.0/16","size":16},
-    {"base":"172.19.0.0/16","size":16},
-    {"base":"172.20.0.0/14","size":16},
-    {"base":"172.24.0.0/14","size":16},
-    {"base":"172.28.0.0/14","size":16},
-    {"base":"192.168.0.0/16","size":20}
+    { "base": "172.17.0.0/16", "size": 16 },
+    { "base": "172.18.0.0/16", "size": 16 },
+    { "base": "172.19.0.0/16", "size": 16 },
+    { "base": "172.20.0.0/14", "size": 16 },
+    { "base": "172.24.0.0/14", "size": 16 },
+    { "base": "172.28.0.0/14", "size": 16 },
+    { "base": "192.168.0.0/16", "size": 20 }
   ]
 }
 ```
@@ -471,13 +471,13 @@ These pools can be configured in `/etc/docker/daemon.json`. Docker's built-in de
 ```json
 {
   "default-address-pools": [
-    {"base":"172.17.0.0/16","size":16},
-    {"base":"172.18.0.0/16","size":16},
-    {"base":"172.19.0.0/16","size":16},
-    {"base":"172.20.0.0/14","size":16},
-    {"base":"172.24.0.0/14","size":16},
-    {"base":"172.28.0.0/14","size":16},
-    {"base":"192.168.0.0/16","size":20}
+    { "base": "172.17.0.0/16", "size": 16 },
+    { "base": "172.18.0.0/16", "size": 16 },
+    { "base": "172.19.0.0/16", "size": 16 },
+    { "base": "172.20.0.0/14", "size": 16 },
+    { "base": "172.24.0.0/14", "size": 16 },
+    { "base": "172.28.0.0/14", "size": 16 },
+    { "base": "192.168.0.0/16", "size": 20 }
   ]
 }
 ```
@@ -492,12 +492,12 @@ These pools can be configured in `/etc/docker/daemon.json`. Docker's built-in de
 @z
 
 @x
-When an IPv6 subnet is required and there are no IPv6 addresses in  `default-address-pools`, Docker allocates
+When an IPv6 subnet is required and there are no IPv6 addresses in `default-address-pools`, Docker allocates
 subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them to your
 `default-address-pools`. See [Dynamic IPv6 subnet allocation](../daemon/ipv6.md#dynamic-ipv6-subnet-allocation)
 for more information.
 @y
-When an IPv6 subnet is required and there are no IPv6 addresses in  `default-address-pools`, Docker allocates
+When an IPv6 subnet is required and there are no IPv6 addresses in `default-address-pools`, Docker allocates
 subnets from a Unique Local Address (ULA) prefix. To use specific IPv6 subnets instead, add them to your
 `default-address-pools`. See [Dynamic IPv6 subnet allocation](../daemon/ipv6.md#dynamic-ipv6-subnet-allocation)
 for more information.
@@ -530,17 +530,13 @@ Docker will allocate subnets `172.17.0.0/24`, `172.17.1.0/24`, and so on, up to 
 @x
 ```json
 {
-  "default-address-pools": [
-    {"base": "172.17.0.0/16", "size": 24}
-  ]
+  "default-address-pools": [{ "base": "172.17.0.0/16", "size": 24 }]
 }
 ```
 @y
 ```json
 {
-  "default-address-pools": [
-    {"base": "172.17.0.0/16", "size": 24}
-  ]
+  "default-address-pools": [{ "base": "172.17.0.0/16", "size": 24 }]
 }
 ```
 @z
@@ -623,6 +619,9 @@ Containers that attach to a
 [custom network](drivers/bridge.md#use-user-defined-bridge-networks)
 use Docker's embedded DNS server.
 The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
+The embedded DNS server address is `127.0.0.11`.
+There is no IPv6 equivalent; the IPv4 address works even in IPv6-only containers.
+If an application requires an explicit DNS server address, use `127.0.0.11`.
 @y
 By default, containers inherit the DNS settings as defined in the
 `/etc/resolv.conf` configuration file.
@@ -631,6 +630,9 @@ Containers that attach to a
 [custom network](drivers/bridge.md#use-user-defined-bridge-networks)
 use Docker's embedded DNS server.
 The embedded DNS server forwards external DNS lookups to the DNS servers configured on the host.
+The embedded DNS server address is `127.0.0.11`.
+There is no IPv6 equivalent; the IPv4 address works even in IPv6-only containers.
+If an application requires an explicit DNS server address, use `127.0.0.11`.
 @z
 
 @x
@@ -647,14 +649,14 @@ configuration.
 
 @x
 | Flag           | Description                                                                                                                                                                                                                                           |
-| -------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--dns`        | The IP address of a DNS server. To specify multiple DNS servers, use multiple `--dns` flags. DNS requests will be forwarded from the container's network namespace so, for example, `--dns=127.0.0.1` refers to the container's own loopback address. |
 | `--dns-search` | A DNS search domain to search non-fully qualified hostnames. To specify multiple DNS search prefixes, use multiple `--dns-search` flags.                                                                                                              |
 | `--dns-opt`    | A key-value pair representing a DNS option and its value. See your operating system's documentation for `resolv.conf` for valid options.                                                                                                              |
 | `--hostname`   | The hostname a container uses for itself. Defaults to the container's ID if not specified.                                                                                                                                                            |
 @y
 | Flag           | Description                                                                                                                                                                                                                                           |
-| -------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--dns`        | The IP address of a DNS server. To specify multiple DNS servers, use multiple `--dns` flags. DNS requests will be forwarded from the container's network namespace so, for example, `--dns=127.0.0.1` refers to the container's own loopback address. |
 | `--dns-search` | A DNS search domain to search non-fully qualified hostnames. To specify multiple DNS search prefixes, use multiple `--dns-search` flags.                                                                                                              |
 | `--dns-opt`    | A key-value pair representing a DNS option and its value. See your operating system's documentation for `resolv.conf` for valid options.                                                                                                              |

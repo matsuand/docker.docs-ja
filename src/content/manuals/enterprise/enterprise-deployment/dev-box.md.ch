@@ -2,27 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 Title: Docker Desktop in Microsoft Dev Box
 linkTitle: Microsoft Dev Box
 description: Learn about the benefits of and  how to setup Docker Desktop in Microsoft Dev Box
 keywords: desktop, docker, windows, microsoft dev box
-weight: 60
-aliases:
- - /desktop/features/dev-box/
- - /desktop/setup/install/enterprise-deployment/dev-box/
----
 @y
----
 Title: Docker Desktop in Microsoft Dev Box
 linkTitle: Microsoft Dev Box
 description: Learn about the benefits of and  how to setup Docker Desktop in Microsoft Dev Box
 keywords: desktop, docker, windows, microsoft dev box
-weight: 60
-aliases:
- - /desktop/features/dev-box/
- - /desktop/setup/install/enterprise-deployment/dev-box/
----
 @z
 
 @x
@@ -64,25 +52,25 @@ Microsoft Dev Box provides cloud-based, pre-configured developer workstations th
 @z
 
 @x
-### Prerequisites 
+### Prerequisites
 @y
-### Prerequisites 
+### Prerequisites
 @z
 
 @x
 - An Azure subscription
 - Access to Microsoft Dev Box
 - A Docker subscription (Pro, Team, or Business). You can use Docker Desktop in Microsoft Dev Box with any of the following subscription options:
-   - An existing or new Docker subscription 
-   - A new Docker subscription purchased through Azure Marketplace
-   - A Docker Business subscription with SSO configured for your organization
+  - An existing or new Docker subscription
+  - A new Docker subscription purchased through Azure Marketplace
+  - A Docker Business subscription with SSO configured for your organization
 @y
 - An Azure subscription
 - Access to Microsoft Dev Box
 - A Docker subscription (Pro, Team, or Business). You can use Docker Desktop in Microsoft Dev Box with any of the following subscription options:
-   - An existing or new Docker subscription 
-   - A new Docker subscription purchased through Azure Marketplace
-   - A Docker Business subscription with SSO configured for your organization
+  - An existing or new Docker subscription
+  - A new Docker subscription purchased through Azure Marketplace
+  - A Docker Business subscription with SSO configured for your organization
 @z
 
 @x
@@ -117,11 +105,11 @@ Once your Dev Box is provisioned with the Docker Desktop image:
 
 @x
 1. Start your Dev Box instance.
-2. Launch Docker Desktop. 
+2. Launch Docker Desktop.
 3. Sign in with your Docker ID.
 @y
 1. Start your Dev Box instance.
-2. Launch Docker Desktop. 
+2. Launch Docker Desktop.
 3. Sign in with your Docker ID.
 @z
 
@@ -152,9 +140,9 @@ For issues related to:
 @z
 
 @x
-- Microsoft Dev Box is currently only available on Windows 10 and 11 (Linux VMs are not supported).
+- Microsoft Dev Box is only available on Windows 10 and 11 (Linux VMs are not supported).
 - Performance may vary based on your Dev Box configuration and network conditions.
 @y
-- Microsoft Dev Box is currently only available on Windows 10 and 11 (Linux VMs are not supported).
+- Microsoft Dev Box is only available on Windows 10 and 11 (Linux VMs are not supported).
 - Performance may vary based on your Dev Box configuration and network conditions.
 @z

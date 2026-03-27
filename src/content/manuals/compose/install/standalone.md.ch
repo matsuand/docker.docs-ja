@@ -14,6 +14,22 @@ keywords: install docker-compose, standalone docker compose, docker-compose wind
 @z
 
 @x
+> [!WARNING]
+>
+> This install scenario is not recommended and is only supported for backward compatibility purposes.
+> Use [Docker Desktop](/manuals/desktop/_index.md) or the
+> [Docker Compose plugin](/manuals/compose/install/linux.md) instead.
+> Use the standalone binary only if you cannot use either of these options.
+@y
+> [!WARNING]
+>
+> This install scenario is not recommended and is only supported for backward compatibility purposes.
+> Use [Docker Desktop](/manuals/desktop/_index.md) or the
+> [Docker Compose plugin](/manuals/compose/install/linux.md) instead.
+> Use the standalone binary only if you cannot use either of these options.
+@z
+
+@x
 This page contains instructions on how to install Docker Compose standalone on Linux or Windows Server, from the command line.
 @y
 このページでは Linux または Windows Server 上において、コマンドラインを使ってスタンドアローンの Docker Compose をインストールする手順を示します。
@@ -24,11 +40,13 @@ This page contains instructions on how to install Docker Compose standalone on L
 >
 > The Docker Compose standalone uses the `-compose` syntax instead of the current standard syntax `compose`.  
 > For example, you must type `docker-compose up` when using Docker Compose standalone, instead of `docker compose up`.
+> Use it only for backward compatibility.
 @y
 > [!WARNING]
 >
 > スタンドアローンの Compose では、現時点の標準文法となっている `compose` ではなく `-compose` を利用します。
 > たとえばスタンドアローンの Compose では `docker compose up` ではなく `docker-compose up` と入力してください。
+> `docker compose up` を使うのは後方互換のためだけです。
 @z
 
 @x
@@ -97,7 +115,7 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
 @z
 
 @x
-2.  Optional. Ensure TLS1.2 is enabled. 
+2.  Optional. Ensure TLS1.2 is enabled.
     GitHub requires TLS1.2 for secure connections. If you’re using an older version of Windows Server, for example 2016, or suspect that TLS1.2 is not enabled, run the following command in PowerShell:
 @y
 2.  任意の作業。
@@ -109,9 +127,9 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
 % snip code...
 
 @x
-3. Download the latest release of Docker Compose ({{% param "compose_version" %}}). Run the following command:
+3.  Download the latest release of Docker Compose ({{% param "compose_version" %}}). Run the following command:
 @y
-3. 以下のコマンドを実行して Docker Compose の最新リリース ({{% param "compose_version" %}}) をダウンロードします。
+3.  以下のコマンドを実行して Docker Compose の最新リリース ({{% param "compose_version" %}}) をダウンロードします。
 @z
 
 % snip code...
@@ -120,8 +138,8 @@ on Microsoft Windows Server](/manuals/engine/install/binaries.md#install-server-
     > [!NOTE]
     >
     > On Windows Server 2019 you can add the Compose executable to `$Env:ProgramFiles\Docker`.
-     Because this directory is registered in the system `PATH`, you can run the `docker-compose --version` 
-     command on the subsequent step with no additional configuration.
+    > Because this directory is registered in the system `PATH`, you can run the `docker-compose --version`
+    > command on the subsequent step with no additional configuration.
 @y
     > [!NOTE]
     >

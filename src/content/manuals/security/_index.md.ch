@@ -21,12 +21,12 @@ keywords: docker, docker hub, docker desktop, security, developer security, 2FA,
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/2fa/
-  icon: phonelink_lock
+  icon: mobile_lock_portrait
 @y
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: __SUBDIR__/security/2fa/
-  icon: phonelink_lock
+  icon: mobile_lock_portrait
 @z
 
 @x

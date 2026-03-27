@@ -28,9 +28,9 @@ Docker Desktop を開くと Docker Desktop Dashboard が表示されます。
 @z
 
 @x
-It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), and [Kubernetes resources](kubernetes.md).
+It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), [Kubernetes resources](kubernetes.md), and [logs](logs.md).
 @y
-It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), and [Kubernetes resources](kubernetes.md).
+It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), [Kubernetes resources](kubernetes.md), and [logs](logs.md).
 @z
 
 @x

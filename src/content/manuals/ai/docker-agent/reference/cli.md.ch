@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: CLI reference
 linkTitle: CLI
@@ -931,15 +933,7 @@ Pull agent from OCI registry.
 Pull agent from OCI registry.
 @z
 
-@x
-```console
-$ docker agent pull registry-ref
-```
-@y
-```console
-$ docker agent pull registry-ref
-```
-@z
+% snip command...
 
 @x
 Arguments:
@@ -975,15 +969,7 @@ Example:
 Example:
 @z
 
-@x
-```console
-$ docker agent pull docker.io/user/agent:latest
-```
-@y
-```console
-$ docker agent pull docker.io/user/agent:latest
-```
-@z
+% snip command...
 
 @x
 Saves to local YAML file.
@@ -1003,15 +989,7 @@ Push agent to OCI registry.
 Push agent to OCI registry.
 @z
 
-@x
-```console
-$ docker agent push agent-file registry-ref
-```
-@y
-```console
-$ docker agent push agent-file registry-ref
-```
-@z
+% snip command...
 
 @x
 Arguments:
@@ -1033,15 +1011,7 @@ Example:
 Example:
 @z
 
-@x
-```console
-$ docker agent push ./agent.yaml docker.io/myuser/myagent:latest
-```
-@y
-```console
-$ docker agent push ./agent.yaml docker.io/myuser/myagent:latest
-```
-@z
+% snip command...
 
 @x
 ### run

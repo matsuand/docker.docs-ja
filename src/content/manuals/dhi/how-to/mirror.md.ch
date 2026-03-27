@@ -239,7 +239,7 @@ Once mirrored, the repository is a standard Docker Hub repository in your
 organization's namespace. It behaves exactly like any other Hub repository,
 which means you can manage access and permissions, configure webhooks, and use
 other standard Hub features. See [Docker Hub
-repositories](/manuals/docker-hub/repos/_index.md) for details.
+repositories](manuals/docker-hub/repos/_index.md) for details.
 @z
 
 @x
@@ -337,13 +337,13 @@ repository.
 @x
 > [!NOTE]
 >
-> If you only want to stop mirroring ELS versions, you can uncheck the ELS
+> If you only want to stop mirroring ELS versions, you can clear the ELS
 > option in the mirrored repository's **Settings** tab. For more details, see
 > [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
 @y
 > [!NOTE]
 >
-> If you only want to stop mirroring ELS versions, you can uncheck the ELS
+> If you only want to stop mirroring ELS versions, you can clear the ELS
 > option in the mirrored repository's **Settings** tab. For more details, see
 > [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
 @z
@@ -425,6 +425,106 @@ you can use [`regsync`](https://regclient.org/cli/regsync/).
 @z
 
 @x
+### Authenticate to `dhi.io` with an organization access token
+@y
+### Authenticate to `dhi.io` with an organization access token
+@z
+
+@x
+You can authenticate to `dhi.io` using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md) instead of a personal access
+token (PAT). OATs are owned by the organization rather than an individual user,
+which makes them better suited for CI/CD pipelines and automated workflows.
+@y
+You can authenticate to `dhi.io` using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md) instead of a personal access
+token (PAT). OATs are owned by the organization rather than an individual user,
+which makes them better suited for CI/CD pipelines and automated workflows.
+@z
+
+@x
+> [!NOTE]
+>
+> When using an OAT, use your organization name as the username, not your
+> personal Docker ID. OATs are org-scoped and will return a `401 Unauthorized`
+> error if presented under an individual user's username.
+@y
+> [!NOTE]
+>
+> When using an OAT, use your organization name as the username, not your
+> personal Docker ID. OATs are org-scoped and will return a `401 Unauthorized`
+> error if presented under an individual user's username.
+@z
+
+@x
+To authenticate using an OAT:
+@y
+To authenticate using an OAT:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console**, then **Access tokens**.
+3. Select **Generate access token**.
+4. Give the token a descriptive name, for example `dhi-pull-automation`.
+5. Expand the **Repository** drop-down and select **Read public repositories**.
+6. Select **Generate token**, then copy and save the token. You won't be able
+   to retrieve it after closing the screen.
+7. Sign in to `dhi.io` using your organization name as the username and the OAT
+   as the password:
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console**, then **Access tokens**.
+3. Select **Generate access token**.
+4. Give the token a descriptive name, for example `dhi-pull-automation`.
+5. Expand the **Repository** drop-down and select **Read public repositories**.
+6. Select **Generate token**, then copy and save the token. You won't be able
+   to retrieve it after closing the screen.
+7. Sign in to `dhi.io` using your organization name as the username and the OAT
+   as the password:
+@z
+
+% snip command...
+
+@x
+   Or non-interactively in a CI/CD pipeline:
+@y
+   Or non-interactively in a CI/CD pipeline:
+@z
+
+% snip command...
+
+@x
+8. Verify access by discovering attestations on a DHI image:
+@y
+8. Verify access by discovering attestations on a DHI image:
+@z
+
+% snip command...
+
+@x
+   > [!NOTE]
+   >
+   > The `--platform` flag is required. Without it, `oras discover` resolves to
+   > the multi-arch image index, which returns only an index-level signature
+   > rather than the full set of per-platform attestations.
+@y
+   > [!NOTE]
+   >
+   > The `--platform` flag is required. Without it, `oras discover` resolves to
+   > the multi-arch image index, which returns only an index-level signature
+   > rather than the full set of per-platform attestations.
+@z
+
+@x
+   A successful response lists the attestations attached to the image,
+   including SBOMs, provenance, vulnerability reports, and changelog metadata.
+@y
+   A successful response lists the attestations attached to the image,
+   including SBOMs, provenance, vulnerability reports, and changelog metadata.
+@z
+
+@x
 ### Example mirroring with `regctl`
 @y
 ### Example mirroring with `regctl`
@@ -445,12 +545,12 @@ attestations using `regctl`. You must [install
 @x
 The example assumes you have mirrored the DHI repository to your organization's
 namespace on Docker Hub as described in the previous section. You can apply the
-same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
+same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 `SRC_REPO` variables accordingly.
 @y
 The example assumes you have mirrored the DHI repository to your organization's
 namespace on Docker Hub as described in the previous section. You can apply the
-same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
+same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 `SRC_REPO` variables accordingly.
 @z
 
@@ -466,18 +566,22 @@ same steps to a non-mirrored image by updating the the `SRC_ATT_REPO` and
    In this example, you use a Docker username to represent a member of the Docker
    Hub organization that the DHI repositories are mirrored in. Prepare a
    [personal access token (PAT)](../../security/access-tokens.md) for the user
-   with `read only` access. Alternatively, you can use an organization namespace and
+   with `read only` access. Alternatively, you can use your organization name and
    an [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md) to sign in to Docker Hub, but OATs
-   are not yet supported for `registry.scout.docker.com`.
+   (OAT)](../../enterprise/security/access-tokens.md) to authenticate with `docker.io`.
+   Note that OATs are not supported for `registry.scout.docker.com`. If your
+   workflow requires authenticating to the Scout registry, use a personal access
+   token (PAT) for that step.
 @y
    In this example, you use a Docker username to represent a member of the Docker
    Hub organization that the DHI repositories are mirrored in. Prepare a
    [personal access token (PAT)](../../security/access-tokens.md) for the user
-   with `read only` access. Alternatively, you can use an organization namespace and
+   with `read only` access. Alternatively, you can use your organization name and
    an [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md) to sign in to Docker Hub, but OATs
-   are not yet supported for `registry.scout.docker.com`.
+   (OAT)](../../enterprise/security/access-tokens.md) to authenticate with `docker.io`.
+   Note that OATs are not supported for `registry.scout.docker.com`. If your
+   workflow requires authenticating to the Scout registry, use a personal access
+   token (PAT) for that step.
 @z
 
 % snip command...

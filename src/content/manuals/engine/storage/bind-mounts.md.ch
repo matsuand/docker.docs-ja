@@ -20,13 +20,15 @@ keywords: storage, persistence, data persistence, mounts, bind mounts
 @x
 When you use a bind mount, a file or directory on the host machine is mounted
 from the host into a container. By contrast, when you use a volume, a new
-directory is created within Docker's storage directory on the host machine, and
-Docker manages that directory's contents.
+directory is created within Docker's storage directory on the host machine.
+Docker creates and maintains this storage location, but containers access it
+directly using standard filesystem operations.
 @y
 When you use a bind mount, a file or directory on the host machine is mounted
 from the host into a container. By contrast, when you use a volume, a new
-directory is created within Docker's storage directory on the host machine, and
-Docker manages that directory's contents.
+directory is created within Docker's storage directory on the host machine.
+Docker creates and maintains this storage location, but containers access it
+directly using standard filesystem operations.
 @z
 
 @x

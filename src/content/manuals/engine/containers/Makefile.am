@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md                         \
+	gpu.md                            \
 	multi-service_container.md        \
 	resource_constraints.md           \
 	runmetrics.md                     \

@@ -311,16 +311,10 @@ To manually retrieve the VEX attestation for tools that support it:
 @x
 > [!NOTE]
 >
-> The `docker scout vex get` command requires [Docker Scout
-> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
->
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
 > `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.
 @y
 > [!NOTE]
->
-> The `docker scout vex get` command requires [Docker Scout
-> CLI](https://github.com/docker/scout-cli/) version 1.18.3 or later.
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
 > `registry://dhi.io/python:3.13` instead of `dhi.io/python:3.13`.

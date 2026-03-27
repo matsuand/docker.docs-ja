@@ -65,10 +65,10 @@ Company owners do not occupy a seat unless one of the following is true:
 
 @x
 - They are added as a member of an organization under your company
-- SSO is enabled
+- SSO is enabled and the company owner signs in via SSO, which automatically adds them as an organization member
 @y
 - They are added as a member of an organization under your company
-- SSO is enabled
+- SSO is enabled and the company owner signs in via SSO, which automatically adds them as an organization member
 @z
 
 @x

@@ -8,6 +8,7 @@ bases = \
 	container.md      \
 	images.md         \
 	kubernetes.md     \
+	logs.md           \
 	pause.md          \
 	resource-saver.md \
 	volumes.md

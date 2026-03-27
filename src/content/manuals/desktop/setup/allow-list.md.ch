@@ -38,8 +38,6 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 @x
 | Domains                                                                              | Description                                  |
 | ------------------------------------------------------------------------------------ | -------------------------------------------- |
-| https://api.segment.io                                                               | Analytics                                    |
-| https://cdn.segment.com                                                              | Analytics                                    |
 | https://notify.bugsnag.com                                                           | Error reports                                |
 | https://sessions.bugsnag.com                                                         | Error reports                                |
 | https://auth.docker.io                                                               | Authentication                               |
@@ -59,8 +57,6 @@ This page contains the domain URLs that you need to add to a firewall allowlist 
 @y
 | Domains                                                                              | Description                                  |
 | ------------------------------------------------------------------------------------ | -------------------------------------------- |
-| https://api.segment.io                                                               | Analytics                                    |
-| https://cdn.segment.com                                                              | Analytics                                    |
 | https://notify.bugsnag.com                                                           | Error reports                                |
 | https://sessions.bugsnag.com                                                         | Error reports                                |
 | https://auth.docker.io                                                               | Authentication                               |

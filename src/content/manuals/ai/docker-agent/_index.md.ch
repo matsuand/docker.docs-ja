@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Docker Agent
@@ -351,17 +352,7 @@ Agent configurations are packaged as OCI artifacts. Push and pull them like
 container images:
 @z
 
-@x
-```console
-$ docker agent push ./debugger.yaml myusername/debugger
-$ docker agent pull myusername/debugger
-```
-@y
-```console
-$ docker agent push ./debugger.yaml myusername/debugger
-$ docker agent pull myusername/debugger
-```
-@z
+% snip command...
 
 @x
 Use Docker Hub or any OCI-compatible registry. Pushing creates the repository if

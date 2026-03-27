@@ -58,34 +58,34 @@ suburldir 追加
 menus:
   # Site header menu
   main:
-  - name: Get started
-    pageRef: /get-started/
-    weight: 1
-  - name: Guides
-    pageRef: /guides/
-    weight: 2
-  - name: Manuals
-    pageRef: /manuals/
-    weight: 3
-  - name: Reference
-    pageRef: /reference/
-    weight: 4
+    - name: Get started
+      pageRef: /get-started/
+      weight: 1
+    - name: Guides
+      pageRef: /guides/
+      weight: 2
+    - name: Manuals
+      pageRef: /manuals/
+      weight: 3
+    - name: Reference
+      pageRef: /reference/
+      weight: 4
 @y
 menus:
   # Site header menu
   main:
-  - name: はじめよう
-    pageRef: /get-started/
-    weight: 1
-  - name: ガイド
-    pageRef: /guides/
-    weight: 2
-  - name: マニュアル
-    pageRef: /manuals/
-    weight: 3
-  - name: リファレンス
-    pageRef: /reference/
-    weight: 4
+    - name: はじめよう
+      pageRef: /get-started/
+      weight: 1
+    - name: ガイド
+      pageRef: /guides/
+      weight: 2
+    - name: マニュアル
+      pageRef: /manuals/
+      weight: 3
+    - name: リファレンス
+      pageRef: /reference/
+      weight: 4
 @z
 
 ------------------------------

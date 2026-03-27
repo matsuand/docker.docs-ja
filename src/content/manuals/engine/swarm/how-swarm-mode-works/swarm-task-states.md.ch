@@ -2,21 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Swarm task states
 description: Learn about tasks that are scheduled on your swarm.
 keywords: swarm, task, service
-aliases:
-- /datacenter/ucp/2.2/guides/admin/monitor-and-troubleshoot/troubleshoot-task-state/
----
 @y
----
 title: Swarm task states
 description: Learn about tasks that are scheduled on your swarm.
 keywords: swarm, task, service
-aliases:
-- /datacenter/ucp/2.2/guides/admin/monitor-and-troubleshoot/troubleshoot-task-state/
----
 @z
 
 @x
@@ -146,7 +138,7 @@ j91iahr8s74p    \_ webserver.1   nginx    UbuntuVM    Shutdown       Failed 50 s
 @z
 
 @x
-- [Learn about swarm tasks](https://github.com/docker/swarmkit/blob/master/design/task_model.md)
+- [Learn about swarm tasks](https://github.com/moby/swarmkit/blob/master/design/task_model.md)
 @y
-- [Learn about swarm tasks](https://github.com/docker/swarmkit/blob/master/design/task_model.md)
+- [Learn about swarm tasks](https://github.com/moby/swarmkit/blob/master/design/task_model.md)
 @z

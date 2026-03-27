@@ -5,8 +5,18 @@ SUBDIRS = admin-set-up admin-user-management angular bake bun compose-bake \
 	cpp deno docker-build-cloud docker-compose docker-scout dotnet     \
 	frameworks genai-leveraging-rag genai-pdf-bot genai-video-bot      \
 	github-sonarqube-sandbox golang go-prometheus-monitoring images    \
-	java nodejs php python r rag-ollama reactjs ros2 ruby rust         \
-	testcontainers-cloud vuejs zscaler
+	java nodejs php postgresql python r rag-ollama reactjs ros2 ruby   \
+	rust testcontainers-cloud testcontainers-dotnet-aspnet-core        \
+	testcontainers-dotnet-getting-started testcontainers-go-getting-started  \
+	testcontainers-java-aws-localstack testcontainers-java-getting-started   \
+	testcontainers-java-jooq-flyway testcontainers-java-keycloak-spring-boot \
+	testcontainers-java-lifecycle testcontainers-java-micronaut-kafka        \
+	testcontainers-java-micronaut-wiremock testcontainers-java-mockserver    \
+	testcontainers-java-quarkus testcontainers-java-replace-h2               \
+	testcontainers-java-service-configuration testcontainers-java-spring-boot-kafka \
+	testcontainers-java-spring-boot-rest-api testcontainers-java-wiremock    \
+	testcontainers-nodejs-getting-started testcontainers-python-getting-started \
+	vuejs zscaler
 
 bases = \
 	_index.md                          \
@@ -14,10 +24,12 @@ bases = \
 	container-supported-development.md \
 	databases.md                       \
 	dex.md                             \
+	dhi-backstage.md                   \
 	dhi-from-doi.md                    \
 	dhi-from-wolfi.md                  \
 	dhi-go-example.md                  \
 	dhi-nodejs-example.md              \
+	dhi-openshift.md                   \
 	dhi-python-example.md              \
 	gha.md                             \
 	jupyter.md                         \
