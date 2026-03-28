@@ -21,6 +21,7 @@ SUBDIRS = admin-set-up admin-user-management angular bake bun compose-bake \
 bases = \
 	_index.md                          \
 	agentic-ai.md                      \
+	claude-code-model-runner.md        \
 	container-supported-development.md \
 	databases.md                       \
 	dex.md                             \
@@ -42,6 +43,7 @@ bases = \
 	language-translation.md            \
 	localstack.md                      \
 	named-entity-recognition.md        \
+	opencode-model-runner.md           \
 	opentelemetry.md                   \
 	orchestration.md                   \
 	pgadmin.md                         \

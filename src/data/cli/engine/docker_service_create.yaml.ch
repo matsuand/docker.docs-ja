@@ -1102,6 +1102,40 @@ examples: |-
 @z
 
 @x
+        <td><b>bind-create-src</b></td>
+@y
+        <td><b>bind-create-src</b></td>
+@z
+
+@x
+          By default, bind mounts require the source path to exist on the daemon host. This is a significant difference
+          from the <tt>-v</tt> flag, which creates the source path if it doesn't exist.<br />
+@y
+          By default, bind mounts require the source path to exist on the daemon host. This is a significant difference
+          from the <tt>-v</tt> flag, which creates the source path if it doesn't exist.<br />
+@z
+
+@x
+          Set <tt>bind-create-src</tt> to create the source path on the daemon host if it doesn't exist.<br />
+@y
+          Set <tt>bind-create-src</tt> to create the source path on the daemon host if it doesn't exist.<br />
+@z
+
+@x
+          A value is optional:<br />
+@y
+          A value is optional:<br />
+@z
+
+@x
+            <li><tt>true</tt> or <tt>1</tt>: Create path on the daemon host if it doesn't exist.</li>
+            <li><tt>false</tt> or <tt>0</tt>: Default behavior. Produces an error if the source path doesn't exist on the daemon host.</li>
+@y
+            <li><tt>true</tt> or <tt>1</tt>: Create path on the daemon host if it doesn't exist.</li>
+            <li><tt>false</tt> or <tt>0</tt>: Default behavior. Produces an error if the source path doesn't exist on the daemon host.</li>
+@z
+
+@x
     ##### Bind propagation
 @y
     ##### Bind propagation
@@ -1386,11 +1420,13 @@ examples: |-
 @x
     - When you use `--mount` with `type=bind`, the host-path must refer to an *existing*
       path on the host. The path will not be created for you and the service will fail
-      with an error if the path does not exist.
+      with an error if the path does not exist. You can use `bind-create-src` to
+      create the host path if it doesn't exist.
 @y
     - When you use `--mount` with `type=bind`, the host-path must refer to an *existing*
       path on the host. The path will not be created for you and the service will fail
-      with an error if the path does not exist.
+      with an error if the path does not exist. You can use `bind-create-src` to
+      create the host path if it doesn't exist.
 @z
 
 @x

@@ -2,11 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: 'Use Extended Lifecycle Support for Docker Hardened Images <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Use Extended Lifecycle Support for Docker Hardened Images
 linktitle: Use Extended Lifecycle Support
 description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
 @y
-title: 'Use Extended Lifecycle Support for Docker Hardened Images <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Use Extended Lifecycle Support for Docker Hardened Images
 linktitle: Use Extended Lifecycle Support
 description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
 @z

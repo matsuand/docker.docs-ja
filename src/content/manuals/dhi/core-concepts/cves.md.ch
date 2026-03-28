@@ -107,12 +107,12 @@ CVE mitigation:
 @z
 
 @x
-- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf),
+- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://docs.docker.com/go/dhi-sla/),
   DHIs are continuously updated to address known vulnerabilities. Critical and
   high-severity CVEs are patched quickly, ensuring that your containers remain
   secure without manual intervention.
 @y
-- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf),
+- Faster CVE remediation: Maintained by Docker with an [enterprise-grade SLA](https://docs.docker.com/go/dhi-sla/),
   DHIs are continuously updated to address known vulnerabilities. Critical and
   high-severity CVEs are patched quickly, ensuring that your containers remain
   secure without manual intervention.

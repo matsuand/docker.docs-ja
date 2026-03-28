@@ -57,6 +57,12 @@ usage: docker model run MODEL [PROMPT]
       description: OpenAI-compatible API endpoint URL to chat with
 @z
 
+@x websearch
+      description: Enable web search tool during chat
+@y
+      description: Enable web search tool during chat
+@z
+
 @x
 examples: |-
     ### One-time prompt

@@ -290,9 +290,9 @@ comparison](https://www.docker.com/products/hardened-images/#compare).
 @z
 
 @x
-For complete details, see the [Support Service Level Agreement](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf).
+For complete details, see the [Support Service Level Agreement](https://docs.docker.com/go/dhi-sla/).
 @y
-For complete details, see the [Support Service Level Agreement](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf).
+For complete details, see the [Support Service Level Agreement](https://docs.docker.com/go/dhi-sla/).
 @z
 
 @x

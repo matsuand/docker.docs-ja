@@ -258,12 +258,6 @@ functions inside your functions.
 @z
 
 @x
-You can't reference user-defined functions from other functions.
-@y
-You can't reference user-defined functions from other functions.
-@z
-
-@x
 The following example uses a global variable (`REPO`) in a custom function.
 @y
 The following example uses a global variable (`REPO`) in a custom function.

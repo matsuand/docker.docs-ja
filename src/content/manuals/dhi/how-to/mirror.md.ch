@@ -5,11 +5,11 @@
 % snip 対応
 
 @x
-title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Mirror a Docker Hardened Image repository
 linktitle: Mirror a repository
 description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
 @y
-title: 'Mirror a Docker Hardened Image repository <span class="not-prose bg-blue-500 dark:bg-blue-400 rounded-sm px-1 text-xs text-white whitespace-nowrap">DHI Enterprise</span>'
+title: Mirror a Docker Hardened Image repository
 linktitle: Mirror a repository
 description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
 @z
@@ -41,13 +41,13 @@ mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
 - Extended Lifecycle Support (ELS) variants (requires add-on)
 - Image or Helm chart customization
 - Air-gapped or restricted network environments
-- [SLA-backed security updates](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf)
+- [SLA-backed security updates](https://docs.docker.com/go/dhi-sla/)
 @y
 - Compliance variants (FIPS-enabled or STIG-ready images)
 - Extended Lifecycle Support (ELS) variants (requires add-on)
 - Image or Helm chart customization
 - Air-gapped or restricted network environments
-- [SLA-backed security updates](https://www.docker.com/static/support-service-level-agreement-for-dhi.pdf)
+- [SLA-backed security updates](https://docs.docker.com/go/dhi-sla/)
 @z
 
 @x

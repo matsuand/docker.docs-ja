@@ -36,6 +36,116 @@ For more information about:
 @z
 
 @x
+## 29.3.1
+@y
+## 29.3.1
+@z
+
+@x
+{{< release-date date="2026-03-25" >}}
+@y
+{{< release-date date="2026-03-25" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.3.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.3.1)
+- [moby/moby, 29.3.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.3.1)
+@y
+- [docker/cli, 29.3.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.3.1)
+- [moby/moby, 29.3.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.3.1)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine and related components.
+@y
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine and related components.
+@z
+
+@x
+- **CVE-2026-34040** Fix an authorization bypass in AuthZ plugins that could allow authorization plugins to be bypassed under specific conditions.
+  [GHSA-x744-4wpc-v9h2](https://github.com/moby/moby/security/advisories/GHSA-x744-4wpc-v9h2)
+@y
+- **CVE-2026-34040** Fix an authorization bypass in AuthZ plugins that could allow authorization plugins to be bypassed under specific conditions.
+  [GHSA-x744-4wpc-v9h2](https://github.com/moby/moby/security/advisories/GHSA-x744-4wpc-v9h2)
+@z
+
+@x
+- **CVE-2026-33997** Fix a flaw in `docker plugin install` where privilege validation could be partially bypassed, potentially leading to unauthorized privilege escalation.
+  [GHSA-pxq6-2prw-chj9](https://github.com/moby/moby/security/advisories/GHSA-pxq6-2prw-chj9)
+@y
+- **CVE-2026-33997** Fix a flaw in `docker plugin install` where privilege validation could be partially bypassed, potentially leading to unauthorized privilege escalation.
+  [GHSA-pxq6-2prw-chj9](https://github.com/moby/moby/security/advisories/GHSA-pxq6-2prw-chj9)
+@z
+
+@x
+- **CVE-2026-33748** Fix insufficient validation of Git URL `#ref:subdir` fragments in BuildKit, which could allow access to files outside the intended repository scope.
+  [GHSA-4vrq-3vrq-g6gg](https://github.com/moby/buildkit/security/advisories/GHSA-4vrq-3vrq-g6gg)
+@y
+- **CVE-2026-33748** Fix insufficient validation of Git URL `#ref:subdir` fragments in BuildKit, which could allow access to files outside the intended repository scope.
+  [GHSA-4vrq-3vrq-g6gg](https://github.com/moby/buildkit/security/advisories/GHSA-4vrq-3vrq-g6gg)
+@z
+
+@x
+- **CVE-2026-33747** Fix a vulnerability in BuildKit where an untrusted frontend could cause files to be written outside the BuildKit state directory.
+  [GHSA-3c29-8rgm-jvjj](https://github.com/moby/buildkit/security/advisories/GHSA-4c29-8rgm-jvjj)
+@y
+- **CVE-2026-33747** Fix a vulnerability in BuildKit where an untrusted frontend could cause files to be written outside the BuildKit state directory.
+  [GHSA-3c29-8rgm-jvjj](https://github.com/moby/buildkit/security/advisories/GHSA-4c29-8rgm-jvjj)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a daemon crash during docker build if `.dockerignore` contained an invalid pattern. [moby/moby#52214](https://github.com/moby/moby/pull/52214)
+- Fix a panic when the containerd client uses a closed stream. [moby/moby#52211](https://github.com/moby/moby/pull/52211)
+@y
+- Fix a daemon crash during docker build if `.dockerignore` contained an invalid pattern. [moby/moby#52214](https://github.com/moby/moby/pull/52214)
+- Fix a panic when the containerd client uses a closed stream. [moby/moby#52211](https://github.com/moby/moby/pull/52211)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries) to [v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2). [moby/moby#52213](https://github.com/moby/moby/pull/52213)
+- Update Go runtime to [1.25.8](https://go.dev/doc/devel/release#go1.25.8). [moby/moby#52210](https://github.com/moby/moby/pull/52210), [docker/cli#6883](https://github.com/docker/cli/pull/6883)
+@y
+- Update containerd (static binaries) to [v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2). [moby/moby#52213](https://github.com/moby/moby/pull/52213)
+- Update Go runtime to [1.25.8](https://go.dev/doc/devel/release#go1.25.8). [moby/moby#52210](https://github.com/moby/moby/pull/52210), [docker/cli#6883](https://github.com/docker/cli/pull/6883)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- Add missing build-tag, which could cause `cannot range over 10 (untyped int constant)`  when importing the `cli/command` package. [docker/cli#6884](https://github.com/docker/cli/pull/6884)
+@y
+- Add missing build-tag, which could cause `cannot range over 10 (untyped int constant)`  when importing the `cli/command` package. [docker/cli#6884](https://github.com/docker/cli/pull/6884)
+@z
+
+@x
 ## 29.3.0
 @y
 ## 29.3.0
