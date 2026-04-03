@@ -427,18 +427,8 @@ examples: |-
 
 @x
     This should cause the debug adapter to be invoked as `docker buildx --builder mybuilder dap build --build-arg FOO=AAA`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @y
     This should cause the debug adapter to be invoked as `docker buildx --builder mybuilder dap build --build-arg FOO=AAA`.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

@@ -13,8 +13,6 @@ long: Evaluate policy for a source
 usage: docker buildx policy eval [OPTIONS] source
 @z
 
-% pname
-% plink
 % options:
 
 @x fields
@@ -23,10 +21,22 @@ usage: docker buildx policy eval [OPTIONS] source
       description: Fields to evaluate
 @z
 
+@x file
+      description: Policy filename to evaluate
+@y
+      description: Policy filename to evaluate
+@z
+
 @x filename
       description: Policy filename to evaluate
 @y
       description: Policy filename to evaluate
+@z
+
+@x platform
+      description: Target platform for policy evaluation
+@y
+      description: Target platform for policy evaluation
 @z
 
 @x print

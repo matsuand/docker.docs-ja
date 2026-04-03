@@ -1,0 +1,54 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx ls
+synopsis: List sandboxes
+description: |
+    List all sandboxes with their agent, status, published ports, and workspace.
+usage: sbx ls [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for ls
+    - name: json
+      default_value: "false"
+      usage: Output in JSON format
+    - name: quiet
+      shorthand: q
+      default_value: "false"
+      usage: Only display sandbox names
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+@y
+name: sbx ls
+synopsis: List sandboxes
+description: |
+    List all sandboxes with their agent, status, published ports, and workspace.
+usage: sbx ls [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for ls
+    - name: json
+      default_value: "false"
+      usage: Output in JSON format
+    - name: quiet
+      shorthand: q
+      default_value: "false"
+      usage: Only display sandbox names
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+@z

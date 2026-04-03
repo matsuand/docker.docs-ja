@@ -2,23 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Kiro sandbox
+---
+title: Kiro
+weight: 50
 description: |
   Use Kiro in Docker Sandboxes with device flow authentication for interactive
   AI-assisted development.
-keywords: docker, sandboxes, kiro, ai agent, authentication, device flow
+---
 @y
-title: Kiro sandbox
+---
+title: Kiro
+weight: 50
 description: |
   Use Kiro in Docker Sandboxes with device flow authentication for interactive
   AI-assisted development.
-keywords: docker, sandboxes, kiro, ai agent, authentication, device flow
+---
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
@@ -49,11 +53,11 @@ Create a sandbox and run Kiro for a project directory:
 
 @x
 ```console
-$ docker sandbox run kiro ~/my-project
+$ sbx run kiro ~/my-project
 ```
 @y
 ```console
-$ docker sandbox run kiro ~/my-project
+$ sbx run kiro ~/my-project
 ```
 @z
 
@@ -66,12 +70,12 @@ The workspace parameter is optional and defaults to the current directory:
 @x
 ```console
 $ cd ~/my-project
-$ docker sandbox run kiro
+$ sbx run kiro
 ```
 @y
 ```console
 $ cd ~/my-project
-$ docker sandbox run kiro
+$ sbx run kiro
 ```
 @z
 
@@ -145,11 +149,11 @@ You can trigger the login flow manually:
 
 @x
 ```console
-$ docker sandbox run <sandbox-name> -- login --use-device-flow
+$ sbx run kiro --name <sandbox-name> -- login --use-device-flow
 ```
 @y
 ```console
-$ docker sandbox run <sandbox-name> -- login --use-device-flow
+$ sbx run kiro --name <sandbox-name> -- login --use-device-flow
 ```
 @z
 
@@ -186,12 +190,26 @@ it.
 @z
 
 @x
+Sandboxes don't pick up user-level configuration from your host. Only
+project-level configuration in the working directory is available inside the
+sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
+@y
+Sandboxes don't pick up user-level configuration from your host. Only
+project-level configuration in the working directory is available inside the
+sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
+@z
+
+@x
 Kiro requires minimal configuration. The agent runs with trust-all-tools mode
-by default, which allows it to execute commands without repeated approval
+by default, which lets it execute commands without repeated approval
 prompts.
 @y
 Kiro requires minimal configuration. The agent runs with trust-all-tools mode
-by default, which allows it to execute commands without repeated approval
+by default, which lets it execute commands without repeated approval
 prompts.
 @z
 
@@ -202,27 +220,19 @@ prompts.
 @z
 
 @x
-Pass Kiro CLI options after the sandbox name and a `--` separator:
+Pass Kiro CLI options after `--`:
 @y
-Pass Kiro CLI options after the sandbox name and a `--` separator:
+Pass Kiro CLI options after `--`:
 @z
 
 @x
 ```console
-$ docker sandbox run <sandbox-name> -- chat --trust-all-tools
+$ sbx run kiro --name <sandbox-name> -- <kiro-options>
 ```
 @y
 ```console
-$ docker sandbox run <sandbox-name> -- chat --trust-all-tools
+$ sbx run kiro --name <sandbox-name> -- <kiro-options>
 ```
-@z
-
-@x
-The `chat --trust-all-tools` command starts Kiro with approval prompts
-disabled.
-@y
-The `chat --trust-all-tools` command starts Kiro with approval prompts
-disabled.
 @z
 
 @x
@@ -238,13 +248,17 @@ Template: `docker/sandbox-templates:kiro`
 @z
 
 @x
-Kiro manages authentication through an interactive device flow. The authentication database is persisted across sandbox restarts. Launches with `chat --trust-all-tools` by default.
+Preconfigured to run without approval prompts. Authentication state is
+persisted across sandbox restarts.
 @y
-Kiro manages authentication through an interactive device flow. The authentication database is persisted across sandbox restarts. Launches with `chat --trust-all-tools` by default.
+Preconfigured to run without approval prompts. Authentication state is
+persisted across sandbox restarts.
 @z
 
 @x
-See [Custom templates](../templates.md) to build your own agent images.
+See [Custom environments](custom-environments.md) to pre-install tools or
+customize this environment.
 @y
-See [Custom templates](../templates.md) to build your own agent images.
+See [Custom environments](custom-environments.md) to pre-install tools or
+customize this environment.
 @z

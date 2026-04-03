@@ -1,0 +1,100 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx reset
+synopsis: Reset all sandboxes and clean up state
+description: |-
+    Reset Docker Sandboxes to a freshly-installed state.
+@y
+name: sbx reset
+synopsis: Reset all sandboxes and clean up state
+description: |-
+    Reset Docker Sandboxes to a freshly-installed state.
+@z
+
+@x
+    This command will:
+    - Stop all running sandboxes gracefully (30s timeout)
+    - Clear image cache
+    - Clear all internal registries
+    - Delete all sandbox state
+    - Remove all policies
+    - Delete all stored secrets
+    - Sign out of Docker Sandboxes
+    - Stop the daemon
+    - Remove all state, cache, and config directories
+@y
+    This command will:
+    - Stop all running sandboxes gracefully (30s timeout)
+    - Clear image cache
+    - Clear all internal registries
+    - Delete all sandbox state
+    - Remove all policies
+    - Delete all stored secrets
+    - Sign out of Docker Sandboxes
+    - Stop the daemon
+    - Remove all state, cache, and config directories
+@z
+
+@x
+    WARNING: This is destructive and cannot be undone.
+    Running agents will be terminated and their work lost.
+    Cached images will be deleted and recreated on next use.
+    Stored secrets will need to be re-entered.
+@y
+    WARNING: This is destructive and cannot be undone.
+    Running agents will be terminated and their work lost.
+    Cached images will be deleted and recreated on next use.
+    Stored secrets will need to be re-entered.
+@z
+
+@x
+    Use --preserve-secrets to keep stored secrets.
+    By default, you will be prompted to confirm (y/N).
+    Use --force to skip the confirmation prompt.
+usage: sbx reset [flags]
+options:
+    - name: force
+      shorthand: f
+      default_value: "false"
+      usage: Skip confirmation prompt
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for reset
+    - name: preserve-secrets
+      default_value: "false"
+      usage: Keep stored secrets
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+@y
+    Use --preserve-secrets to keep stored secrets.
+    By default, you will be prompted to confirm (y/N).
+    Use --force to skip the confirmation prompt.
+usage: sbx reset [flags]
+options:
+    - name: force
+      shorthand: f
+      default_value: "false"
+      usage: Skip confirmation prompt
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for reset
+    - name: preserve-secrets
+      default_value: "false"
+      usage: Keep stored secrets
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+@z

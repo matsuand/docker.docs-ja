@@ -1,34 +1,34 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
-title: Claude Code sandbox
+---
+title: Claude Code
+weight: 10
 description: |
   Use Claude Code in Docker Sandboxes with authentication, configuration, and
   YOLO mode for AI-assisted development.
-keywords: docker, sandboxes, claude code, anthropic, ai agent, authentication, configuration
+---
 @y
-title: Claude Code sandbox
+---
+title: Claude Code
+weight: 10
 description: |
   Use Claude Code in Docker Sandboxes with authentication, configuration, and
   YOLO mode for AI-assisted development.
-keywords: docker, sandboxes, claude code, anthropic, ai agent, authentication, configuration
+---
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
-This guide covers authentication, configuration files, and common options for
-running Claude Code in a sandboxed environment.
+Official documentation: [Claude Code](https://code.claude.com/docs)
 @y
-This guide covers authentication, configuration files, and common options for
-running Claude Code in a sandboxed environment.
+Official documentation: [Claude Code](https://code.claude.com/docs)
 @z
 
 @x
@@ -38,63 +38,45 @@ running Claude Code in a sandboxed environment.
 @z
 
 @x
-To create a sandbox and run Claude Code for a project directory:
+Launch Claude Code in a sandbox by pointing it at a project directory:
 @y
-To create a sandbox and run Claude Code for a project directory:
+Launch Claude Code in a sandbox by pointing it at a project directory:
 @z
 
 @x
 ```console
-$ docker sandbox run claude ~/my-project
+$ sbx run claude ~/my-project
 ```
 @y
 ```console
-$ docker sandbox run claude ~/my-project
+$ sbx run claude ~/my-project
 ```
 @z
 
 @x
-### Pass a prompt directly
+The workspace parameter defaults to the current directory, so `sbx run claude`
+from inside your project works too. To start Claude with a specific prompt:
 @y
-### Pass a prompt directly
-@z
-
-@x
-Start Claude with a specific prompt:
-@y
-Start Claude with a specific prompt:
+The workspace parameter defaults to the current directory, so `sbx run claude`
+from inside your project works too. To start Claude with a specific prompt:
 @z
 
 @x
 ```console
-$ docker sandbox run <sandbox-name> -- "Add error handling to the login function"
+$ sbx run claude --name my-sandbox -- "Add error handling to the login function"
 ```
 @y
 ```console
-$ docker sandbox run <sandbox-name> -- "Add error handling to the login function"
+$ sbx run claude --name my-sandbox -- "Add error handling to the login function"
 ```
 @z
 
 @x
-Or:
+Everything after `--` is passed directly to Claude Code. You can also pipe in a
+prompt from a file with `-- "$(cat prompt.txt)"`.
 @y
-Or:
-@z
-
-@x
-```console
-$ docker sandbox run <sandbox-name> -- "$(cat prompt.txt)"
-```
-@y
-```console
-$ docker sandbox run <sandbox-name> -- "$(cat prompt.txt)"
-```
-@z
-
-@x
-This starts Claude and immediately processes the prompt.
-@y
-This starts Claude and immediately processes the prompt.
+Everything after `--` is passed directly to Claude Code. You can also pipe in a
+prompt from a file with `-- "$(cat prompt.txt)"`.
 @z
 
 @x
@@ -104,121 +86,47 @@ This starts Claude and immediately processes the prompt.
 @z
 
 @x
-Claude Code requires an Anthropic API key. Credentials are scoped per sandbox.
+Claude Code requires either an Anthropic API key or a Claude subscription.
 @y
-Claude Code requires an Anthropic API key. Credentials are scoped per sandbox.
+Claude Code requires either an Anthropic API key or a Claude subscription.
 @z
 
 @x
-### Environment variable (recommended)
+**API key**: Store your key using
+[stored secrets](../security/credentials.md#stored-secrets):
 @y
-### Environment variable (recommended)
-@z
-
-@x
-The recommended approach is to set the `ANTHROPIC_API_KEY` environment variable in your shell configuration file.
-@y
-The recommended approach is to set the `ANTHROPIC_API_KEY` environment variable in your shell configuration file.
-@z
-
-@x
-Docker Sandboxes use a daemon process that doesn't inherit environment
-variables from your current shell session. To make your API key available to
-sandboxes, set it globally in your shell configuration file.
-@y
-Docker Sandboxes use a daemon process that doesn't inherit environment
-variables from your current shell session. To make your API key available to
-sandboxes, set it globally in your shell configuration file.
-@z
-
-@x
-Add the API key to your shell configuration file:
-@y
-Add the API key to your shell configuration file:
-@z
-
-@x
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
-```
-@y
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export ANTHROPIC_API_KEY=sk-ant-api03-xxxxx
-```
-@z
-
-@x
-Apply the changes:
-@y
-Apply the changes:
-@z
-
-@x
-1. Source your shell configuration: `source ~/.bashrc` (or `~/.zshrc`)
-2. Restart Docker Desktop so the daemon picks up the new environment variable
-3. Create and run your sandbox:
-@y
-1. Source your shell configuration: `source ~/.bashrc` (or `~/.zshrc`)
-2. Restart Docker Desktop so the daemon picks up the new environment variable
-3. Create and run your sandbox:
+**API key**: Store your key using
+[stored secrets](../security/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ docker sandbox create claude ~/project
-$ docker sandbox run <sandbox-name>
+$ sbx secret set -g anthropic
 ```
 @y
 ```console
-$ docker sandbox create claude ~/project
-$ docker sandbox run <sandbox-name>
+$ sbx secret set -g anthropic
 ```
 @z
 
 @x
-The sandbox detects the environment variable and uses it automatically.
+Alternatively, export the `ANTHROPIC_API_KEY` environment variable in your
+shell before running the sandbox. See
+[Credentials](../security/credentials.md) for details on both methods.
 @y
-The sandbox detects the environment variable and uses it automatically.
+Alternatively, export the `ANTHROPIC_API_KEY` environment variable in your
+shell before running the sandbox. See
+[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x
-### Interactive authentication
+**Claude subscription**: If no API key is set, Claude Code prompts you to
+authenticate interactively using OAuth. The proxy handles the OAuth flow, so
+credentials aren't stored inside the sandbox.
 @y
-### Interactive authentication
-@z
-
-@x
-If the `ANTHROPIC_API_KEY` environment variable is not set, Claude Code prompts
-you to authenticate interactively when it starts. You can also trigger the login
-flow manually using the `/login` command within Claude Code.
-@y
-If the `ANTHROPIC_API_KEY` environment variable is not set, Claude Code prompts
-you to authenticate interactively when it starts. You can also trigger the login
-flow manually using the `/login` command within Claude Code.
-@z
-
-@x
-When using interactive authentication:
-@y
-When using interactive authentication:
-@z
-
-@x
-- You must authenticate each sandbox separately
-- If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
-- Authentication sessions aren't persisted outside the sandbox
-- No fallback authentication methods are used
-@y
-- You must authenticate each sandbox separately
-- If the sandbox is removed or destroyed, you'll need to authenticate again when you recreate it
-- Authentication sessions aren't persisted outside the sandbox
-- No fallback authentication methods are used
-@z
-
-@x
-To avoid repeated authentication, set the `ANTHROPIC_API_KEY` environment variable.
-@y
-To avoid repeated authentication, set the `ANTHROPIC_API_KEY` environment variable.
+**Claude subscription**: If no API key is set, Claude Code prompts you to
+authenticate interactively using OAuth. The proxy handles the OAuth flow, so
+credentials aren't stored inside the sandbox.
 @z
 
 @x
@@ -228,42 +136,32 @@ To avoid repeated authentication, set the `ANTHROPIC_API_KEY` environment variab
 @z
 
 @x
-Claude Code can be configured through CLI options. Any arguments you pass after
-the sandbox name and a `--` separator are passed directly to Claude Code.
+Sandboxes don't pick up user-level configuration from your host, such as
+`~/.claude`. Only project-level configuration in the working directory is
+available inside the sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
 @y
-Claude Code can be configured through CLI options. Any arguments you pass after
-the sandbox name and a `--` separator are passed directly to Claude Code.
+Sandboxes don't pick up user-level configuration from your host, such as
+`~/.claude`. Only project-level configuration in the working directory is
+available inside the sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
 @z
 
 @x
-Pass options after the sandbox name:
+Any Claude Code CLI options can be passed after the `--` separator:
 @y
-Pass options after the sandbox name:
+Any Claude Code CLI options can be passed after the `--` separator:
 @z
 
 @x
 ```console
-$ docker sandbox run <sandbox-name> -- [claude-options]
+$ sbx run claude --name my-sandbox -- --continue
 ```
 @y
 ```console
-$ docker sandbox run <sandbox-name> -- [claude-options]
-```
-@z
-
-@x
-For example:
-@y
-For example:
-@z
-
-@x
-```console
-$ docker sandbox run <sandbox-name> -- --continue
-```
-@y
-```console
-$ docker sandbox run <sandbox-name> -- --continue
+$ sbx run claude --name my-sandbox -- --continue
 ```
 @z
 
@@ -282,19 +180,13 @@ for available options.
 @z
 
 @x
-Template: `docker/sandbox-templates:claude-code`
+The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
+with `--dangerously-skip-permissions` by default. See
+[Custom environments](custom-environments.md) to build your own image on
+top of this base.
 @y
-Template: `docker/sandbox-templates:claude-code`
-@z
-
-@x
-Claude Code launches with `--dangerously-skip-permissions` by default in sandboxes.
-@y
-Claude Code launches with `--dangerously-skip-permissions` by default in sandboxes.
-@z
-
-@x
-See [Custom templates](../templates.md) to build your own agent images.
-@y
-See [Custom templates](../templates.md) to build your own agent images.
+The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
+with `--dangerously-skip-permissions` by default. See
+[Custom environments](custom-environments.md) to build your own image on
+top of this base.
 @z

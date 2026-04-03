@@ -13,6 +13,7 @@ bases = \
 	cli.markdown.md  \
 	glossary.html    \
 	list.markdown.md \
+	sbx-cli.html     \
 	security-announcements.rss.xml \
 	series.html
 

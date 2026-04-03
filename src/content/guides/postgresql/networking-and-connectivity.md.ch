@@ -190,11 +190,11 @@ docker run -d --name postgres-dev \
 @z
 
 @x
-  # Outout
+  # Output
 CONTAINER ID  IMAGE        COMMAND                 CREATED         STATUS        PORTS     NAMES
 6d351ed89efc  postgres:18  "docker-entrypoint.s…"  9 seconds ago   Up 8 seconds  5432/tcp  postgres-dev
 @y
-  # Outout
+  # Output
 CONTAINER ID  IMAGE        COMMAND                 CREATED         STATUS        PORTS     NAMES
 6d351ed89efc  postgres:18  "docker-entrypoint.s…"  9 seconds ago   Up 8 seconds  5432/tcp  postgres-dev
 @z

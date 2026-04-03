@@ -3,274 +3,56 @@
 
 @x
 title: Architecture
-description: Technical architecture of Docker Sandboxes including microVM isolation, private Docker daemon, and workspace syncing.
 @y
 title: Architecture
-description: Technical architecture of Docker Sandboxes including microVM isolation, private Docker daemon, and workspace syncing.
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+description: Technical architecture of Docker Sandboxes; workspace mounting, storage, networking, and sandbox lifecycle.
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+description: Technical architecture of Docker Sandboxes; workspace mounting, storage, networking, and sandbox lifecycle.
 @z
 
 @x
-This page explains how Docker Sandboxes works and the design decisions behind
-it.
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-This page explains how Docker Sandboxes works and the design decisions behind
-it.
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
-## Why microVMs?
+This page explains how Docker Sandboxes work under the hood. For the security
+properties of the architecture, see [Sandbox isolation](security/isolation.md).
 @y
-## Why microVMs?
+This page explains how Docker Sandboxes work under the hood. For the security
+properties of the architecture, see [Sandbox isolation](security/isolation.md).
 @z
 
 @x
-AI coding agents need to build images, run containers, and use Docker Compose.
-Giving an agent access to your host Docker daemon means it can see your
-containers, pull images, and run workloads directly on your system. That's too
-much access for autonomous code execution.
+## Workspace mounting
 @y
-AI coding agents need to build images, run containers, and use Docker Compose.
-Giving an agent access to your host Docker daemon means it can see your
-containers, pull images, and run workloads directly on your system. That's too
-much access for autonomous code execution.
+## Workspace mounting
 @z
 
 @x
-Running the agent in a container doesn't solve this. Containers share the host
-kernel (or in the case of Docker Desktop, share the same virtual machine) and
-can't safely isolate something that needs its own Docker daemon.
-Docker-in-Docker approaches either compromise isolation (privileged mode with
-host socket mounting) or create nested daemon complexity.
+Your workspace is mounted directly into the sandbox through a filesystem
+passthrough. The sandbox sees your actual host files, so changes in either
+direction are instant with no sync process involved.
 @y
-Running the agent in a container doesn't solve this. Containers share the host
-kernel (or in the case of Docker Desktop, share the same virtual machine) and
-can't safely isolate something that needs its own Docker daemon.
-Docker-in-Docker approaches either compromise isolation (privileged mode with
-host socket mounting) or create nested daemon complexity.
+Your workspace is mounted directly into the sandbox through a filesystem
+passthrough. The sandbox sees your actual host files, so changes in either
+direction are instant with no sync process involved.
 @z
 
 @x
-MicroVMs provide the isolation boundary needed. Each sandbox gets its own VM
-with a private Docker daemon. The agent can build images, start containers, and
-run tests without any access to your host Docker environment. When you remove
-the sandbox, everything inside - images, containers, packages - is gone.
+Your workspace is mounted at the same absolute path as on your host. Preserving
+absolute paths means error messages, configuration files, and build outputs all
+reference paths you can find on your host. The agent sees exactly the directory
+structure you see, which reduces confusion when debugging or reviewing changes.
 @y
-MicroVMs provide the isolation boundary needed. Each sandbox gets its own VM
-with a private Docker daemon. The agent can build images, start containers, and
-run tests without any access to your host Docker environment. When you remove
-the sandbox, everything inside - images, containers, packages - is gone.
-@z
-
-@x
-## Isolation model
-@y
-## Isolation model
-@z
-
-@x
-### Private Docker daemon per sandbox
-@y
-### Private Docker daemon per sandbox
-@z
-
-@x
-Each sandbox runs a complete Docker daemon inside its VM. This daemon is
-isolated from your host and from other sandboxes.
-@y
-Each sandbox runs a complete Docker daemon inside its VM. This daemon is
-isolated from your host and from other sandboxes.
-@z
-
-@x
-```plaintext
-Host system (your Docker Desktop)
-  ├── Your containers and images
-  │
-  ├── Sandbox VM 1
-  │   ├── Docker daemon (isolated)
-  │   ├── Agent container
-  │   └── Other containers (created by agent)
-  │
-  └── Sandbox VM 2
-      ├── Docker daemon (isolated)
-      └── Agent container
-```
-@y
-```plaintext
-Host system (your Docker Desktop)
-  ├── Your containers and images
-  │
-  ├── Sandbox VM 1
-  │   ├── Docker daemon (isolated)
-  │   ├── Agent container
-  │   └── Other containers (created by agent)
-  │
-  └── Sandbox VM 2
-      ├── Docker daemon (isolated)
-      └── Agent container
-```
-@z
-
-@x
-When an agent runs `docker build` or `docker compose up`, those commands
-execute inside the sandbox using the private daemon. The agent sees only
-containers it creates. It cannot access your host containers, images, or
-volumes.
-@y
-When an agent runs `docker build` or `docker compose up`, those commands
-execute inside the sandbox using the private daemon. The agent sees only
-containers it creates. It cannot access your host containers, images, or
-volumes.
-@z
-
-@x
-This architecture solves a fundamental constraint: autonomous agents need full
-Docker capabilities but cannot safely share your Docker daemon.
-@y
-This architecture solves a fundamental constraint: autonomous agents need full
-Docker capabilities but cannot safely share your Docker daemon.
-@z
-
-@x
-### Hypervisor-level isolation
-@y
-### Hypervisor-level isolation
-@z
-
-@x
-Sandboxes use your system's native virtualization:
-@y
-Sandboxes use your system's native virtualization:
-@z
-
-@x
-- macOS: virtualization.framework
-- Windows: Hyper-V {{< badge color=violet text=Experimental >}}
-@y
-- macOS: virtualization.framework
-- Windows: Hyper-V {{< badge color=violet text=Experimental >}}
-@z
-
-@x
-This provides hypervisor-level isolation between the sandbox and your host.
-Unlike containers (which share the host kernel), VMs have separate kernels and
-cannot access host resources outside their defined boundaries.
-@y
-This provides hypervisor-level isolation between the sandbox and your host.
-Unlike containers (which share the host kernel), VMs have separate kernels and
-cannot access host resources outside their defined boundaries.
-@z
-
-@x
-### What this means for security
-@y
-### What this means for security
-@z
-
-@x
-The VM boundary provides:
-@y
-The VM boundary provides:
-@z
-
-@x
-- Process isolation - Agent processes run in a separate kernel
-- Filesystem isolation - Only your workspace is accessible
-- Network isolation - Sandboxes cannot reach each other
-- Docker isolation - No access to host daemon, containers, or images
-@y
-- Process isolation - Agent processes run in a separate kernel
-- Filesystem isolation - Only your workspace is accessible
-- Network isolation - Sandboxes cannot reach each other
-- Docker isolation - No access to host daemon, containers, or images
-@z
-
-@x
-Network filtering adds an additional control layer for HTTP/HTTPS traffic. See
-[Network policies](network-policies.md) for details on that mechanism.
-@y
-Network filtering adds an additional control layer for HTTP/HTTPS traffic. See
-[Network policies](network-policies.md) for details on that mechanism.
-@z
-
-@x
-## Workspace syncing
-@y
-## Workspace syncing
-@z
-
-@x
-### Bidirectional file sync
-@y
-### Bidirectional file sync
-@z
-
-@x
-Your workspace syncs to the sandbox at the same absolute path:
-@y
-Your workspace syncs to the sandbox at the same absolute path:
-@z
-
-@x
-- Host: `/Users/alice/projects/myapp`
-- Sandbox: `/Users/alice/projects/myapp`
-@y
-- Host: `/Users/alice/projects/myapp`
-- Sandbox: `/Users/alice/projects/myapp`
-@z
-
-@x
-Changes sync both ways. Edit a file on your host, and the agent sees it. The
-agent modifies a file, and you see the change on your host.
-@y
-Changes sync both ways. Edit a file on your host, and the agent sees it. The
-agent modifies a file, and you see the change on your host.
-@z
-
-@x
-This is file synchronization, not volume mounting. Files are copied between
-host and VM. This approach works across different filesystems and maintains
-consistent paths regardless of platform differences.
-@y
-This is file synchronization, not volume mounting. Files are copied between
-host and VM. This approach works across different filesystems and maintains
-consistent paths regardless of platform differences.
-@z
-
-@x
-### Path preservation
-@y
-### Path preservation
-@z
-
-@x
-Preserving absolute paths means:
-@y
-Preserving absolute paths means:
-@z
-
-@x
-- File paths in error messages match between host and sandbox
-- Hard-coded paths in configuration files work correctly
-- Build outputs reference paths you can find on your host
-@y
-- File paths in error messages match between host and sandbox
-- Hard-coded paths in configuration files work correctly
-- Build outputs reference paths you can find on your host
-@z
-
-@x
-The agent sees the same directory structure you see, reducing confusion when
-debugging issues or reviewing changes.
-@y
-The agent sees the same directory structure you see, reducing confusion when
-debugging issues or reviewing changes.
+Your workspace is mounted at the same absolute path as on your host. Preserving
+absolute paths means error messages, configuration files, and build outputs all
+reference paths you can find on your host. The agent sees exactly the directory
+structure you see, which reduces confusion when debugging or reviewing changes.
 @z
 
 @x
@@ -280,91 +62,31 @@ debugging issues or reviewing changes.
 @z
 
 @x
-### What persists
+When you create a sandbox, everything inside it persists until you remove it:
+Docker images and containers built or pulled by the agent, installed packages,
+agent state and history, and workspace changes.
 @y
-### What persists
+When you create a sandbox, everything inside it persists until you remove it:
+Docker images and containers built or pulled by the agent, installed packages,
+agent state and history, and workspace changes.
 @z
 
 @x
-When you create a sandbox, these persist until you remove it:
+Sandboxes are isolated from each other. Each one maintains its own Docker
+daemon state, image cache, and package installations. Multiple sandboxes don't
+share images or layers.
 @y
-When you create a sandbox, these persist until you remove it:
+Sandboxes are isolated from each other. Each one maintains its own Docker
+daemon state, image cache, and package installations. Multiple sandboxes don't
+share images or layers.
 @z
 
 @x
-- Docker images and containers - Built or pulled by the agent
-- Installed packages - System packages added with apt, yum, etc.
-- Agent state - Credentials, configuration, history
-- Workspace changes - Files created or modified sync back to host
+Each sandbox consumes disk space for its VM image, Docker images, container
+layers, and volumes, and this grows as you build images and install packages.
 @y
-- Docker images and containers - Built or pulled by the agent
-- Installed packages - System packages added with apt, yum, etc.
-- Agent state - Credentials, configuration, history
-- Workspace changes - Files created or modified sync back to host
-@z
-
-@x
-### What's ephemeral
-@y
-### What's ephemeral
-@z
-
-@x
-Sandboxes are lightweight but not stateless. They persist between runs but are
-isolated from each other. Each sandbox maintains its own:
-@y
-Sandboxes are lightweight but not stateless. They persist between runs but are
-isolated from each other. Each sandbox maintains its own:
-@z
-
-@x
-- Docker daemon state
-- Image cache
-- Package installations
-@y
-- Docker daemon state
-- Image cache
-- Package installations
-@z
-
-@x
-When you remove a sandbox with `docker sandbox rm`, the entire VM and its
-contents are deleted. Images built inside the sandbox, packages installed, and
-any state not synced to your workspace are gone.
-@y
-When you remove a sandbox with `docker sandbox rm`, the entire VM and its
-contents are deleted. Images built inside the sandbox, packages installed, and
-any state not synced to your workspace are gone.
-@z
-
-@x
-### Disk usage
-@y
-### Disk usage
-@z
-
-@x
-Each sandbox consumes disk space for:
-@y
-Each sandbox consumes disk space for:
-@z
-
-@x
-- VM disk image (grows as you build images and install packages)
-- Docker images pulled or built inside the sandbox
-- Container layers and volumes
-@y
-- VM disk image (grows as you build images and install packages)
-- Docker images pulled or built inside the sandbox
-- Container layers and volumes
-@z
-
-@x
-Multiple sandboxes do not share images or layers. Each has its own isolated
-Docker daemon and storage.
-@y
-Multiple sandboxes do not share images or layers. Each has its own isolated
-Docker daemon and storage.
+Each sandbox consumes disk space for its VM image, Docker images, container
+layers, and volumes, and this grows as you build images and install packages.
 @z
 
 @x
@@ -374,109 +96,21 @@ Docker daemon and storage.
 @z
 
 @x
-### Internet access
+All outbound traffic from the sandbox routes through an HTTP/HTTPS proxy on
+your host. Agents are configured to use the proxy automatically. The proxy
+enforces [network access policies](security/policy.md) and handles
+[credential injection](security/credentials.md). See
+[Network isolation](security/isolation.md#network-isolation) for how this
+works and [Default security posture](security/defaults.md) for what is
+allowed out of the box.
 @y
-### Internet access
-@z
-
-@x
-Sandboxes have outbound internet access through your host's network connection.
-Agents can install packages, pull images, and access APIs.
-@y
-Sandboxes have outbound internet access through your host's network connection.
-Agents can install packages, pull images, and access APIs.
-@z
-
-@x
-An HTTP/HTTPS filtering proxy runs on your host and is available at
-`host.docker.internal:3128`. Agents automatically use this proxy for outbound
-web requests. You can configure network policies to control which destinations
-are allowed. See [Network policies](network-policies.md).
-@y
-An HTTP/HTTPS filtering proxy runs on your host and is available at
-`host.docker.internal:3128`. Agents automatically use this proxy for outbound
-web requests. You can configure network policies to control which destinations
-are allowed. See [Network policies](network-policies.md).
-@z
-
-@x
-### Credential injection
-@y
-### Credential injection
-@z
-
-@x
-The HTTP/HTTPS proxy automatically injects credentials into API requests for
-supported providers (OpenAI, Anthropic, Google, GitHub, etc.). When you set
-environment variables like `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` on your
-host, the proxy intercepts outbound requests to those services and adds the
-appropriate authentication headers.
-@y
-The HTTP/HTTPS proxy automatically injects credentials into API requests for
-supported providers (OpenAI, Anthropic, Google, GitHub, etc.). When you set
-environment variables like `OPENAI_API_KEY` or `ANTHROPIC_API_KEY` on your
-host, the proxy intercepts outbound requests to those services and adds the
-appropriate authentication headers.
-@z
-
-@x
-This approach keeps credentials on your host system - they're never stored
-inside the sandbox VM. The agent makes API requests without credentials, and
-the proxy injects them transparently. When the sandbox is removed, no
-credentials remain inside.
-@y
-This approach keeps credentials on your host system - they're never stored
-inside the sandbox VM. The agent makes API requests without credentials, and
-the proxy injects them transparently. When the sandbox is removed, no
-credentials remain inside.
-@z
-
-@x
-For multi-provider agents (OpenCode, Docker Agent), the proxy automatically selects
-the correct credentials based on the API endpoint being called. See individual
-[agent configuration](agents/) for credential setup instructions.
-@y
-For multi-provider agents (OpenCode, Docker Agent), the proxy automatically selects
-the correct credentials based on the API endpoint being called. See individual
-[agent configuration](agents/) for credential setup instructions.
-@z
-
-@x
-When building custom templates or installing agents manually in the shell
-sandbox, some agents may require environment variables like `OPENAI_API_KEY`
-to be set before they start. Set these to placeholder values (e.g.,
-`proxy-managed`) if needed - the proxy will inject actual credentials
-regardless of the environment variable value.
-@y
-When building custom templates or installing agents manually in the shell
-sandbox, some agents may require environment variables like `OPENAI_API_KEY`
-to be set before they start. Set these to placeholder values (e.g.,
-`proxy-managed`) if needed - the proxy will inject actual credentials
-regardless of the environment variable value.
-@z
-
-@x
-### Sandbox isolation
-@y
-### Sandbox isolation
-@z
-
-@x
-Sandboxes cannot communicate with each other. Each VM has its own private
-network namespace. An agent in one sandbox cannot reach services or containers
-in another sandbox.
-@y
-Sandboxes cannot communicate with each other. Each VM has its own private
-network namespace. An agent in one sandbox cannot reach services or containers
-in another sandbox.
-@z
-
-@x
-Sandboxes also cannot access your host's `localhost` services. The VM boundary
-prevents direct access to services running on your host machine.
-@y
-Sandboxes also cannot access your host's `localhost` services. The VM boundary
-prevents direct access to services running on your host machine.
+All outbound traffic from the sandbox routes through an HTTP/HTTPS proxy on
+your host. Agents are configured to use the proxy automatically. The proxy
+enforces [network access policies](security/policy.md) and handles
+[credential injection](security/credentials.md). See
+[Network isolation](security/isolation.md#network-isolation) for how this
+works and [Default security posture](security/defaults.md) for what is
+allowed out of the box.
 @z
 
 @x
@@ -486,59 +120,25 @@ prevents direct access to services running on your host machine.
 @z
 
 @x
-### Creating and running
+`sbx run` initializes a VM with a workspace for a specified agent and starts
+the agent. You can stop and restart without recreating the VM, preserving
+installed packages and Docker images.
 @y
-### Creating and running
-@z
-
-@x
-`docker sandbox run` initializes a VM with a workspace for a specified agent,
-and starts the agent inside an existing sandbox. You can stop and restart the
-agent without recreating the VM, preserving installed packages and Docker
-images.
-@y
-`docker sandbox run` initializes a VM with a workspace for a specified agent,
-and starts the agent inside an existing sandbox. You can stop and restart the
-agent without recreating the VM, preserving installed packages and Docker
-images.
-@z
-
-@x
-`docker sandbox create` initializes the VM with a workspace but doesn't start
-the agent automatically. This separates environment setup from agent execution.
-@y
-`docker sandbox create` initializes the VM with a workspace but doesn't start
-the agent automatically. This separates environment setup from agent execution.
-@z
-
-@x
-### State management
-@y
-### State management
+`sbx run` initializes a VM with a workspace for a specified agent and starts
+the agent. You can stop and restart without recreating the VM, preserving
+installed packages and Docker images.
 @z
 
 @x
 Sandboxes persist until explicitly removed. Stopping an agent doesn't delete
-the VM. This means:
+the VM; environment setup carries over between runs. Use `sbx rm` to delete
+the sandbox, its VM, and all of its contents. If the sandbox used
+`--branch`, the worktree directories and their branches are also removed.
 @y
 Sandboxes persist until explicitly removed. Stopping an agent doesn't delete
-the VM. This means:
-@z
-
-@x
-- Installed packages remain available
-- Built images stay cached
-- Environment setup persists between runs
-@y
-- Installed packages remain available
-- Built images stay cached
-- Environment setup persists between runs
-@z
-
-@x
-Use `docker sandbox rm` to delete a sandbox and reclaim disk space.
-@y
-Use `docker sandbox rm` to delete a sandbox and reclaim disk space.
+the VM; environment setup carries over between runs. Use `sbx rm` to delete
+the sandbox, its VM, and all of its contents. If the sandbox used
+`--branch`, the worktree directories and their branches are also removed.
 @z
 
 @x
@@ -548,35 +148,29 @@ Use `docker sandbox rm` to delete a sandbox and reclaim disk space.
 @z
 
 @x
-Understanding when to use sandboxes versus other approaches:
+| Approach                                            | Isolation            | Docker access      | Use case           |
+| --------------------------------------------------- | -------------------- | ------------------ | ------------------ |
+| Sandboxes (microVMs)                                | Full (hypervisor)    | Isolated daemon    | Autonomous agents  |
+| Container with socket mount                         | Partial (namespaces) | Shared host daemon | Trusted tools      |
+| [Docker-in-Docker](https://hub.docker.com/_/docker) | Partial (privileged) | Nested daemon      | CI/CD pipelines    |
+| Host execution                                      | None                 | Host daemon        | Manual development |
 @y
-Understanding when to use sandboxes versus other approaches:
+| Approach                                            | Isolation            | Docker access      | Use case           |
+| --------------------------------------------------- | -------------------- | ------------------ | ------------------ |
+| Sandboxes (microVMs)                                | Full (hypervisor)    | Isolated daemon    | Autonomous agents  |
+| Container with socket mount                         | Partial (namespaces) | Shared host daemon | Trusted tools      |
+| [Docker-in-Docker](https://hub.docker.com/_/docker) | Partial (privileged) | Nested daemon      | CI/CD pipelines    |
+| Host execution                                      | None                 | Host daemon        | Manual development |
 @z
 
 @x
-| Approach                    | Isolation         | Agent Docker access      | Host impact                         | Use case                                      |
-| --------------------------- | ----------------- | ------------------------ | ----------------------------------- | --------------------------------------------- |
-| Sandboxes (microVMs)        | Hypervisor-level  | Private daemon           | None - fully isolated               | Autonomous agents building/running containers |
-| Container with socket mount | Kernel namespaces | Host daemon (shared)     | Agent sees all host containers      | Trusted tools that need Docker CLI            |
-| Docker-in-Docker            | Nested containers | Private daemon (complex) | Moderate - privileged mode required | CI/CD environments                            |
-| Host execution              | None              | Host daemon              | Full - direct system access         | Manual development by trusted humans          |
+Sandboxes trade higher resource overhead (a VM plus its own daemon) for
+complete isolation. Use containers when you need lightweight packaging without
+Docker access. Use sandboxes when you need to give something autonomous full
+Docker capabilities without trusting it with your host environment.
 @y
-| Approach                    | Isolation         | Agent Docker access      | Host impact                         | Use case                                      |
-| --------------------------- | ----------------- | ------------------------ | ----------------------------------- | --------------------------------------------- |
-| Sandboxes (microVMs)        | Hypervisor-level  | Private daemon           | None - fully isolated               | Autonomous agents building/running containers |
-| Container with socket mount | Kernel namespaces | Host daemon (shared)     | Agent sees all host containers      | Trusted tools that need Docker CLI            |
-| Docker-in-Docker            | Nested containers | Private daemon (complex) | Moderate - privileged mode required | CI/CD environments                            |
-| Host execution              | None              | Host daemon              | Full - direct system access         | Manual development by trusted humans          |
-@z
-
-@x
-Sandboxes trade higher resource overhead (VM + daemon) for complete isolation.
-Use containers when you need lightweight packaging without Docker access. Use
-sandboxes when you need to give something autonomous full Docker capabilities
-without trusting it with your host environment.
-@y
-Sandboxes trade higher resource overhead (VM + daemon) for complete isolation.
-Use containers when you need lightweight packaging without Docker access. Use
-sandboxes when you need to give something autonomous full Docker capabilities
-without trusting it with your host environment.
+Sandboxes trade higher resource overhead (a VM plus its own daemon) for
+complete isolation. Use containers when you need lightweight packaging without
+Docker access. Use sandboxes when you need to give something autonomous full
+Docker capabilities without trusting it with your host environment.
 @z

@@ -1,0 +1,50 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx policy allow
+synopsis: Add an allow policy for sandboxes
+description: |-
+    Add a policy that permits sandboxes to access specified resources.
+@y
+name: sbx policy allow
+synopsis: Add an allow policy for sandboxes
+description: |-
+    Add a policy that permits sandboxes to access specified resources.
+@z
+
+@x
+    Allowed resources are accessible to all sandboxes. If a resource matches both
+    an allow and a deny rule, the deny rule takes precedence.
+usage: sbx policy allow COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for allow
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx policy - Manage sandbox policies
+    - sbx policy allow network - Allow network access to specified hosts
+@y
+    Allowed resources are accessible to all sandboxes. If a resource matches both
+    an allow and a deny rule, the deny rule takes precedence.
+usage: sbx policy allow COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for allow
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx policy - Manage sandbox policies
+    - sbx policy allow network - Allow network access to specified hosts
+@z

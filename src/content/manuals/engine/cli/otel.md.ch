@@ -376,11 +376,11 @@ With these files in place:
 @z
 
 @x
-Docker CLI currently exports a single metric, `command.time`, which measures
+Docker CLI exports a single metric, `command.time`, which measures
 the execution duration of a command in milliseconds. This metric has the
 following attributes:
 @y
-Docker CLI currently exports a single metric, `command.time`, which measures
+Docker CLI exports a single metric, `command.time`, which measures
 the execution duration of a command in milliseconds. This metric has the
 following attributes:
 @z

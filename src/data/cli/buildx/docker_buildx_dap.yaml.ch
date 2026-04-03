@@ -5,74 +5,26 @@
 command: docker buildx dap
 short: Start debug adapter protocol compatible debugger
 long: Start debug adapter protocol compatible debugger
-pname: docker buildx
-plink: docker_buildx.yaml
-cname:
-    - docker buildx dap build
-clink:
-    - docker_buildx_dap_build.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @y
 command: docker buildx dap
 short: Start debug adapter protocol compatible debugger
 long: Start debug adapter protocol compatible debugger
-pname: docker buildx
-plink: docker_buildx.yaml
-cname:
-    - docker buildx dap build
-clink:
-    - docker_buildx_dap_build.yaml
-inherited_options:
-    - option: builder
-      value_type: string
-      description: Override the configured builder instance
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: debug
-      shorthand: D
-      value_type: bool
-      default_value: "false"
-      description: Enable debug logging
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: true
-kubernetes: false
-swarm: false
 @z
+
+% cname:
+% clink:
+% inherited_options:
+
+@x builder
+      description: Override the configured builder instance
+@y
+      description: Override the configured builder instance
+@z
+
+@x debug
+      description: Enable debug logging
+@y
+      description: Enable debug logging
+@z
+
+% snip directives...

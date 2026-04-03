@@ -238,15 +238,15 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	_index.md       \
-	claude-code.md  \
-	codex.md        \
-	copilot.md      \
-	docker-agent.md \
-	gemini.md       \
-	kiro.md         \
-	opencode.md     \
-	shell.md
+	_index.md              \
+	claude-code.md         \
+	codex.md               \
+	copilot.md             \
+	custom-environments.md \
+	docker-agent.md        \
+	gemini.md              \
+	kiro.md                \
+	opencode.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

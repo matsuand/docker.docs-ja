@@ -62,9 +62,9 @@ Instead of compiling CockroachDB from the source code or using the operating sys
 @z
 
 @x
-CockroachDB is compatible with PostgreSQL to a significant extent, and shares many conventions with the latter, particularly the default names for the environment variables. So, if you are familiar with Postgres, don't be surprised if you see some familiar environment variables names. The Go modules that work with Postgres, such as [pgx](https://pkg.go.dev/github.com/jackc/pgx), [pq](https://pkg.go.dev/github.com/lib/pq), [GORM](https://gorm.io/index.html), and [upper/db](https://upper.io/v4/) also work with CockroachDB.
+CockroachDB is compatible with PostgreSQL to a significant extent, and shares many conventions with the latter, particularly the default names for the environment variables. So, if you are familiar with Postgres, don't be surprised if you see some familiar environment variable names. The Go modules that work with Postgres, such as [pgx](https://pkg.go.dev/github.com/jackc/pgx), [pq](https://pkg.go.dev/github.com/lib/pq), [GORM](https://gorm.io/index.html), and [upper/db](https://upper.io/v4/) also work with CockroachDB.
 @y
-CockroachDB is compatible with PostgreSQL to a significant extent, and shares many conventions with the latter, particularly the default names for the environment variables. So, if you are familiar with Postgres, don't be surprised if you see some familiar environment variables names. The Go modules that work with Postgres, such as [pgx](https://pkg.go.dev/github.com/jackc/pgx), [pq](https://pkg.go.dev/github.com/lib/pq), [GORM](https://gorm.io/index.html), and [upper/db](https://upper.io/v4/) also work with CockroachDB.
+CockroachDB is compatible with PostgreSQL to a significant extent, and shares many conventions with the latter, particularly the default names for the environment variables. So, if you are familiar with Postgres, don't be surprised if you see some familiar environment variable names. The Go modules that work with Postgres, such as [pgx](https://pkg.go.dev/github.com/jackc/pgx), [pq](https://pkg.go.dev/github.com/lib/pq), [GORM](https://gorm.io/index.html), and [upper/db](https://upper.io/v4/) also work with CockroachDB.
 @z
 
 @x

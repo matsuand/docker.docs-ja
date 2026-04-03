@@ -93,38 +93,10 @@ are created with root ownership by default).
 - After the container starts, the `chown` command changes the ownership of the `/data` directory to user `1001`.
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: backend
-    user: 1001
-    volumes:
-      - data:/data    
-    post_start:
-      - command: chown -R /data 1001:1001
-        user: root
-@y
-```yaml
-services:
-  app:
-    image: backend
-    user: 1001
-    volumes:
-      - data:/data    
-    post_start:
-      - command: chown -R /data 1001:1001
-        user: root
-@z
-
-@x
-volumes:
+@x witiin code
   data: {} # a Docker volume is created with root ownership
-```
 @y
-volumes:
   data: {} # a Docker volume is created with root ownership
-```
 @z
 
 @x
@@ -151,23 +123,7 @@ In the following example, before the container stops, the `./data_flush.sh` scri
 run to perform any necessary cleanup.
 @z
 
-@x
-```yaml
-services:
-  app:
-    image: backend
-    pre_stop:
-      - command: ./data_flush.sh
-```
-@y
-```yaml
-services:
-  app:
-    image: backend
-    pre_stop:
-      - command: ./data_flush.sh
-```
-@z
+% snip code...
 
 @x
 ## Reference information

@@ -110,6 +110,7 @@ AC_CONFIG_FILES([
 	src/content/guides/images/Makefile
 	src/content/guides/java/Makefile
 	src/content/guides/java/images/Makefile
+	src/content/guides/nextjs/Makefile
 	src/content/guides/nodejs/Makefile
 	src/content/guides/php/Makefile
 	src/content/guides/postgresql/Makefile
@@ -167,6 +168,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/ai/sandboxes/Makefile
 	src/content/manuals/ai/sandboxes/agents/Makefile
+	src/content/manuals/ai/sandboxes/images/Makefile
+	src/content/manuals/ai/sandboxes/security/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
@@ -322,6 +325,7 @@ AC_CONFIG_FILES([
 	src/content/reference/api/registry/Makefile
 	src/content/reference/api/registry/images/Makefile
 	src/content/reference/cli/Makefile
+	src/content/reference/cli/sbx/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/reference/samples/Makefile
 	src/content/tags/Makefile
@@ -340,6 +344,7 @@ AC_CONFIG_FILES([
 	src/data/cli/secrets/Makefile
 	src/data/cli/scout/Makefile
 	src/data/docsarchive/Makefile
+	src/data/sbx_cli/Makefile
 	src/i18n/Makefile
 	src/layouts/Makefile
 	src/layouts/_markup/Makefile

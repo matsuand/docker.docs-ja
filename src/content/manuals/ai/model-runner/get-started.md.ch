@@ -68,18 +68,6 @@ with your local models in the **Models** tab in the Docker Desktop Dashboard.
 @z
 
 @x
-> [!IMPORTANT]
->
-> For Docker Desktop versions 4.45 and earlier, this setting was under the
-> **Beta features** tab.
-@y
-> [!IMPORTANT]
->
-> For Docker Desktop versions 4.45 and earlier, this setting was under the
-> **Beta features** tab.
-@z
-
-@x
 ### Docker Engine
 @y
 ### Docker Engine

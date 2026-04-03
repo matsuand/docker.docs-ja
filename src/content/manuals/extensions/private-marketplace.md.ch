@@ -39,11 +39,11 @@ Docker Extensions' private marketplace is designed specifically for organization
 @z
 
 @x
-- [Download and install Docker Desktop 4.26.0 or later](https://docs.docker.com/desktop/release-notes/).
+- [Download and install Docker Desktop](https://docs.docker.com/desktop/release-notes/).
 - You must be an administrator for your organization.
 - You have the ability to push the `extension-marketplace` folder and `admin-settings.json` file to the locations specified below through device management software such as [Jamf](https://www.jamf.com/).
 @y
-- [Download and install Docker Desktop 4.26.0 or later](https://docs.docker.com/desktop/release-notes/).
+- [Download and install Docker Desktop](https://docs.docker.com/desktop/release-notes/).
 - You must be an administrator for your organization.
 - You have the ability to push the `extension-marketplace` folder and `admin-settings.json` file to the locations specified below through device management software such as [Jamf](https://www.jamf.com/).
 @z
@@ -375,11 +375,11 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
 @x
 > [!IMPORTANT]
 >
-> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), with Docker Desktop version 4.59 and earlier you need to manually delete the `admin-settings.json` file that has been created in the target folder by the `apply` command before step 2. 
+> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary.
 @y
 > [!IMPORTANT]
 >
-> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), with Docker Desktop version 4.59 and earlier you need to manually delete the `admin-settings.json` file that has been created in the target folder by the `apply` command before step 2. 
+> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary.
 @z
 
 @x

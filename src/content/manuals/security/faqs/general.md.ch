@@ -172,9 +172,9 @@ For information about metadata stored by Docker Scout, see [Data handling](manua
 @z
 
 @x
-Security vetting for extensions is on the roadmap but isn't currently implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
+Security vetting for extensions isn't implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
 @y
-Security vetting for extensions is on the roadmap but isn't currently implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
+Security vetting for extensions isn't implemented. Extensions aren't covered as part of Docker's Third-Party Risk Management Program.
 @z
 
 @x

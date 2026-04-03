@@ -43,6 +43,126 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.67.0
+@y
+## 4.67.0
+@z
+
+@x
+{{< release-date date="2026-03-30" >}}
+@y
+{{< release-date date="2026-03-30" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.67.0" build_path="/222858/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.67.0" build_path="/222858/" >}}
+@z
+
+@x
+### New
+@y
+### 新機能 {#new}
+@z
+
+@x
+- Docker MCP Toolkit now has MCP profile template cards and an onboarding tour accessible via the **Profiles** tab.
+@y
+- Docker MCP Toolkit now has MCP profile template cards and an onboarding tour accessible via the **Profiles** tab.
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Compose v5.1.1](https://github.com/docker/compose/releases/tag/v5.1.1)
+- [Docker Agent v1.34.0](https://github.com/docker/docker-agent/releases/tag/v1.34.0)
+- [Docker Scout CLI v1.20.3](https://github.com/docker/scout-cli/releases/tag/v1.20.3)
+- [Docker Model v1.1.25](https://github.com/docker/model-cli/releases/tag/v1.1.25)
+@y
+- [Docker Compose v5.1.1](https://github.com/docker/compose/releases/tag/v5.1.1)
+- [Docker Agent v1.34.0](https://github.com/docker/docker-agent/releases/tag/v1.34.0)
+- [Docker Scout CLI v1.20.3](https://github.com/docker/scout-cli/releases/tag/v1.20.3)
+- [Docker Model v1.1.25](https://github.com/docker/model-cli/releases/tag/v1.1.25)
+@z
+
+@x
+### Bug fixes and minor changes
+@y
+### バグフィックスとマイナーチェンジ {#bug-fixes-and-minor-changes}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Docker Model Runner now supports Qwen3.5.
+- With the new **Logs (Beta)** view, you can now filter container logs by Compose stack.
+- Improved interaction with **Settings** while the Docker engine or Kubernetes is starting or stopping.
+- Fixed a bug where random UDP port bindings reported port `0` instead of the actual assigned port.
+- Fixed an issue with the Docker Desktop shortcut not reopening the Dashboard when Docker Desktop was already running.
+- Fixed an issue where the **Add to existing profile** dialog showed profiles that already contained all selected MCP servers in the dropdown.
+@y
+- Docker Model Runner now supports Qwen3.5.
+- With the new **Logs (Beta)** view, you can now filter container logs by Compose stack.
+- Improved interaction with **Settings** while the Docker engine or Kubernetes is starting or stopping.
+- Fixed a bug where random UDP port bindings reported port `0` instead of the actual assigned port.
+- Fixed an issue with the Docker Desktop shortcut not reopening the Dashboard when Docker Desktop was already running.
+- Fixed an issue where the **Add to existing profile** dialog showed profiles that already contained all selected MCP servers in the dropdown.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed intermittent `exec format error` when starting amd64 containers on Apple Silicon Macs due to a race condition between Rosetta `binfmt` registration and `virtiofs` device availability.
+@y
+- Fixed intermittent `exec format error` when starting amd64 containers on Apple Silicon Macs due to a race condition between Rosetta `binfmt` registration and `virtiofs` device availability.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed Hyper-V being silently re-enabled on every EXE upgrade for WSL 2 users.
+- Fixed an MSI installer bug where Docker Desktop processes could be left running after uninstall.
+- Fixed an issue on Windows where installations or updates using `--installation-dir` would fail due to the installer archive being extracted into the custom installation directory.
+- Improved Docker Desktop startup time on Windows by several seconds when using WSL 2.
+- Fixed a bug on the **Models** > **Logs** screen which caused `docker-model` processes to accumulate on Windows each time the screen was visited.
+@y
+- Fixed Hyper-V being silently re-enabled on every EXE upgrade for WSL 2 users.
+- Fixed an MSI installer bug where Docker Desktop processes could be left running after uninstall.
+- Fixed an issue on Windows where installations or updates using `--installation-dir` would fail due to the installer archive being extracted into the custom installation directory.
+- Improved Docker Desktop startup time on Windows by several seconds when using WSL 2.
+- Fixed a bug on the **Models** > **Logs** screen which caused `docker-model` processes to accumulate on Windows each time the screen was visited.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Addressed [CVE-2026-33990](https://www.cve.org/cverecord?id=CVE-2026-33990), SSRF in Docker Model Runner OCI Registry Client
+@y
+- Addressed [CVE-2026-33990](https://www.cve.org/cverecord?id=CVE-2026-33990), SSRF in Docker Model Runner OCI Registry Client
+@z
+
+@x
 ## 4.66.1
 @y
 ## 4.66.1
@@ -67,9 +187,9 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-- Docker Engine v29.3.1
+- [Docker Engine v29.3.1](/manuals/engine/release-notes/29.md#2931)
 @y
-- Docker Engine v29.3.1
+- [Docker Engine v29.3.1](manuals/engine/release-notes/29.md#2931)
 @z
 
 @x
@@ -235,9 +355,9 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
 @y
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
 @z
 
 @x
@@ -320,6 +440,18 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @y
 - Improved update error reporting with more descriptive diagnostics.
 - Improved update reliability by preparing the updated `Docker.app` under `Application Support` instead of `/tmp`.
+@z
+
+@x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
+@y
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 @z
 
 @x
@@ -409,9 +541,9 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 @y
-- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is 4.59 or later. As a workaround, uninstall the existing version before reinstalling. Note that uninstalling removes all associated data. A fix will be provided in a future MSI release.
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 @z
 
 @x
@@ -591,6 +723,18 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
+@y
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data.
+@z
+
+@x
 ## 4.60.1
 @y
 ## 4.60.1
@@ -686,6 +830,18 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
    - Sandboxes now block `console.anthropic.com/claude.ai` in proxy default rules
    - Fix CLI help text for `run <agent> --help`
    - Improved terminal size handling
+@z
+
+@x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
+@y
+- The Windows MSI installer cannot update an existing Docker Desktop installation when the current version is between 4.56 and 4.65. As a workaround, uninstall the existing version before reinstalling the latest version. Note that uninstalling removes all associated data. 
 @z
 
 @x

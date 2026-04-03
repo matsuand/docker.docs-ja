@@ -1,0 +1,64 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx secret
+synopsis: Manage stored secrets
+description: |-
+    Manage stored secrets for sandbox environments.
+@y
+name: sbx secret
+synopsis: Manage stored secrets
+description: |-
+    Manage stored secrets for sandbox environments.
+@z
+
+@x
+    Secrets are stored per service name (e.g., "github", "anthropic", "openai").
+    When a sandbox starts, the proxy uses stored secrets to authenticate API
+    requests on behalf of the agent. The secret is never exposed directly to the
+    agent.
+@y
+    Secrets are stored per service name (e.g., "github", "anthropic", "openai").
+    When a sandbox starts, the proxy uses stored secrets to authenticate API
+    requests on behalf of the agent. The secret is never exposed directly to the
+    agent.
+@z
+
+@x
+    Secrets can be scoped globally (shared across all sandboxes) or to a
+    specific sandbox.
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for secret
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx secret ls - List stored secrets
+    - sbx secret rm - Remove a secret
+    - sbx secret set - Create or update a secret
+@y
+    Secrets can be scoped globally (shared across all sandboxes) or to a
+    specific sandbox.
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for secret
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx secret ls - List stored secrets
+    - sbx secret rm - Remove a secret
+    - sbx secret set - Create or update a secret
+@z

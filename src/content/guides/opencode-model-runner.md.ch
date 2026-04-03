@@ -10,6 +10,13 @@ summary: |
 keywords: ai, opencode, docker model runner, local models, coding assistant
 tags: [ai]
 @y
+title: Use OpenCode with Docker Model Runner
+description: Configure OpenCode to use Docker Model Runner so you can code with local models.
+summary: |
+  Connect OpenCode to Docker Model Runner with an OpenAI-compatible endpoint,
+  choose coding models, and package `gpt-oss` with a larger context window.
+keywords: ai, opencode, docker model runner, local models, coding assistant
+tags: [ai]
 @z
 
 @x

@@ -16,11 +16,11 @@ keywords: [ai, agent, cagent, configuration, yaml]
 @z
 
 @x
-This reference documents the YAML configuration file format for agents suing Docker Agent.
+This reference documents the YAML configuration file format for agents using Docker Agent.
 It covers file structure, agent parameters, model configuration, toolset setup,
 and RAG sources.
 @y
-This reference documents the YAML configuration file format for agents suing Docker Agent.
+This reference documents the YAML configuration file format for agents using Docker Agent.
 It covers file structure, agent parameters, model configuration, toolset setup,
 and RAG sources.
 @z
@@ -895,10 +895,10 @@ synonyms, and paraphrasing.
 
 @x
 LLM-enhanced semantic search. Uses a language model to generate rich semantic
-summaries of each chunk before embedding, capturing deeper meaning.
+summaries of each chunk before embedding, capturing deeper meaning. Best for complex documents where context and relationships between concepts matter.
 @y
 LLM-enhanced semantic search. Uses a language model to generate rich semantic
-summaries of each chunk before embedding, capturing deeper meaning.
+summaries of each chunk before embedding, capturing deeper meaning. Best for complex documents where context and relationships between concepts matter.
 @z
 
 @x

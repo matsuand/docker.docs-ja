@@ -2,17 +2,16 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = agents
+SUBDIRS = agents images security
 
 bases = \
-	_index.md           \
-	architecture.md     \
-	get-started.md      \
-	migration.md        \
-	network-policies.md \
-	templates.md        \
-	troubleshooting.md  \
-	workflows.md
+	_index.md          \
+	architecture.md    \
+	docker-desktop.md  \
+	faq.md             \
+	get-started.md     \
+	troubleshooting.md \
+	usage.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -18,6 +18,7 @@ bases = \
 	mirror.md            \
 	policies.md          \
 	scan.md              \
+	select-enterprise.md \
 	use.md               \
 	verify.md
 

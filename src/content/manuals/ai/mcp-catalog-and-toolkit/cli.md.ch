@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Use MCP Toolkit from the CLI
@@ -53,15 +54,7 @@ automation, and headless environments.
 ### Create a profile
 @z
 
-@x
-```console
-$ docker mcp profile create --name <profile-id>
-```
-@y
-```console
-$ docker mcp profile create --name <profile-id>
-```
-@z
+% snip command...
 
 @x
 The profile ID is used to reference the profile in subsequent commands:
@@ -69,15 +62,7 @@ The profile ID is used to reference the profile in subsequent commands:
 The profile ID is used to reference the profile in subsequent commands:
 @z
 
-@x
-```console
-$ docker mcp profile create --name web-dev
-```
-@y
-```console
-$ docker mcp profile create --name web-dev
-```
-@z
+% snip command...
 
 @x
 ### List profiles
@@ -85,15 +70,7 @@ $ docker mcp profile create --name web-dev
 ### List profiles
 @z
 
-@x
-```console
-$ docker mcp profile list
-```
-@y
-```console
-$ docker mcp profile list
-```
-@z
+% snip command...
 
 @x
 ### View a profile
@@ -101,15 +78,7 @@ $ docker mcp profile list
 ### View a profile
 @z
 
-@x
-```console
-$ docker mcp profile show <profile-id>
-```
-@y
-```console
-$ docker mcp profile show <profile-id>
-```
-@z
+% snip command...
 
 @x
 ### Remove a profile
@@ -117,15 +86,7 @@ $ docker mcp profile show <profile-id>
 ### Remove a profile
 @z
 
-@x
-```console
-$ docker mcp profile remove <profile-id>
-```
-@y
-```console
-$ docker mcp profile remove <profile-id>
-```
-@z
+% snip command...
 
 @x
 > [!CAUTION]
@@ -155,15 +116,7 @@ List available servers and their IDs:
 List available servers and their IDs:
 @z
 
-@x
-```console
-$ docker mcp catalog server ls mcp/docker-mcp-catalog
-```
-@y
-```console
-$ docker mcp catalog server ls mcp/docker-mcp-catalog
-```
-@z
+% snip command...
 
 @x
 The output lists each server by name. The name (for example, `playwright` or
@@ -221,17 +174,7 @@ The most common format is `catalog://`, where `<catalog-ref>` matches the
 Docker Desktop or in the `catalog server ls` output:
 @z
 
-@x
-```console
-$ docker mcp profile server add <profile-id> \
-  --server catalog://<catalog-ref>/<server-id>
-```
-@y
-```console
-$ docker mcp profile server add <profile-id> \
-  --server catalog://<catalog-ref>/<server-id>
-```
-@z
+% snip command...
 
 @x
 Add multiple servers in one command:
@@ -239,19 +182,7 @@ Add multiple servers in one command:
 Add multiple servers in one command:
 @z
 
-@x
-```console
-$ docker mcp profile server add web-dev \
-  --server catalog://mcp/docker-mcp-catalog/github-official \
-  --server catalog://mcp/docker-mcp-catalog/playwright
-```
-@y
-```console
-$ docker mcp profile server add web-dev \
-  --server catalog://mcp/docker-mcp-catalog/github-official \
-  --server catalog://mcp/docker-mcp-catalog/playwright
-```
-@z
+% snip command...
 
 @x
 To add a server defined in a local YAML file:
@@ -259,17 +190,7 @@ To add a server defined in a local YAML file:
 To add a server defined in a local YAML file:
 @z
 
-@x
-```console
-$ docker mcp profile server add my-profile \
-  --server file://./my-server.yaml
-```
-@y
-```console
-$ docker mcp profile server add my-profile \
-  --server file://./my-server.yaml
-```
-@z
+% snip command...
 
 @x
 The YAML file defines the server image and configuration:
@@ -277,23 +198,7 @@ The YAML file defines the server image and configuration:
 The YAML file defines the server image and configuration:
 @z
 
-@x
-```yaml
-name: my-server
-title: My Server
-type: server
-image: myimage:latest
-description: Description of the server
-```
-@y
-```yaml
-name: my-server
-title: My Server
-type: server
-image: myimage:latest
-description: Description of the server
-```
-@z
+% snip code...
 
 @x
 If the server requires OAuth authentication, authorize it in Docker Desktop
@@ -315,15 +220,7 @@ List all servers across all profiles:
 List all servers across all profiles:
 @z
 
-@x
-```console
-$ docker mcp profile server ls
-```
-@y
-```console
-$ docker mcp profile server ls
-```
-@z
+% snip command...
 
 @x
 Filter by profile:
@@ -331,15 +228,7 @@ Filter by profile:
 Filter by profile:
 @z
 
-@x
-```console
-$ docker mcp profile server ls --filter profile=web-dev
-```
-@y
-```console
-$ docker mcp profile server ls --filter profile=web-dev
-```
-@z
+% snip command...
 
 @x
 ### Remove a server
@@ -347,15 +236,7 @@ $ docker mcp profile server ls --filter profile=web-dev
 ### Remove a server
 @z
 
-@x
-```console
-$ docker mcp profile server remove <profile-id> --name <server-name>
-```
-@y
-```console
-$ docker mcp profile server remove <profile-id> --name <server-name>
-```
-@z
+% snip command...
 
 @x
 Remove multiple servers at once:
@@ -363,19 +244,7 @@ Remove multiple servers at once:
 Remove multiple servers at once:
 @z
 
-@x
-```console
-$ docker mcp profile server remove web-dev \
-  --name github-official \
-  --name playwright
-```
-@y
-```console
-$ docker mcp profile server remove web-dev \
-  --name github-official \
-  --name playwright
-```
-@z
+% snip command...
 
 @x
 ### Configure server settings
@@ -389,19 +258,7 @@ Set and retrieve configuration values for servers in a profile:
 Set and retrieve configuration values for servers in a profile:
 @z
 
-@x
-```console
-$ docker mcp profile config <profile-id> --set <server-id>.<key>=<value>
-$ docker mcp profile config <profile-id> --get-all
-$ docker mcp profile config <profile-id> --del <server-id>.<key>
-```
-@y
-```console
-$ docker mcp profile config <profile-id> --set <server-id>.<key>=<value>
-$ docker mcp profile config <profile-id> --get-all
-$ docker mcp profile config <profile-id> --del <server-id>.<key>
-```
-@z
+% snip command...
 
 @x
 Server configuration keys and their expected values are defined by each server.
@@ -425,15 +282,7 @@ Run the MCP Gateway with a specific profile:
 Run the MCP Gateway with a specific profile:
 @z
 
-@x
-```console
-$ docker mcp gateway run --profile <profile-id>
-```
-@y
-```console
-$ docker mcp gateway run --profile <profile-id>
-```
-@z
+% snip command...
 
 @x
 Omit `--profile` to use the default profile.
@@ -455,31 +304,7 @@ To connect any client that isn't listed in Docker Desktop, configure it to run
 the gateway over `stdio`. For example, in a JSON-based client configuration:
 @z
 
-@x
-```json
-{
-  "servers": {
-    "MCP_DOCKER": {
-      "command": "docker",
-      "args": ["mcp", "gateway", "run", "--profile", "web-dev"],
-      "type": "stdio"
-    }
-  }
-}
-```
-@y
-```json
-{
-  "servers": {
-    "MCP_DOCKER": {
-      "command": "docker",
-      "args": ["mcp", "gateway", "run", "--profile", "web-dev"],
-      "type": "stdio"
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 For Claude Desktop, the format is:
@@ -487,29 +312,7 @@ For Claude Desktop, the format is:
 For Claude Desktop, the format is:
 @z
 
-@x
-```json
-{
-  "mcpServers": {
-    "MCP_DOCKER": {
-      "command": "docker",
-      "args": ["mcp", "gateway", "run", "--profile", "web-dev"]
-    }
-  }
-}
-```
-@y
-```json
-{
-  "mcpServers": {
-    "MCP_DOCKER": {
-      "command": "docker",
-      "args": ["mcp", "gateway", "run", "--profile", "web-dev"]
-    }
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Connect a named client
@@ -523,15 +326,7 @@ Connect a supported client to a profile:
 Connect a supported client to a profile:
 @z
 
-@x
-```console
-$ docker mcp client connect <client> --profile <profile-id>
-```
-@y
-```console
-$ docker mcp client connect <client> --profile <profile-id>
-```
-@z
+% snip command...
 
 @x
 For example, to connect VS Code to a project-specific profile:
@@ -539,15 +334,7 @@ For example, to connect VS Code to a project-specific profile:
 For example, to connect VS Code to a project-specific profile:
 @z
 
-@x
-```console
-$ docker mcp client connect vscode --profile my-project
-```
-@y
-```console
-$ docker mcp client connect vscode --profile my-project
-```
-@z
+% snip command...
 
 @x
 This creates a `.vscode/mcp.json` file in the current directory. Because this
@@ -557,15 +344,7 @@ This creates a `.vscode/mcp.json` file in the current directory. Because this
 is a user-specific file, add it to `.gitignore`:
 @z
 
-@x
-```console
-$ echo ".vscode/mcp.json" >> .gitignore
-```
-@y
-```console
-$ echo ".vscode/mcp.json" >> .gitignore
-```
-@z
+% snip command...
 
 @x
 ## Share profiles
@@ -601,15 +380,7 @@ To push an existing profile called `web-dev` to an OCI registry:
 To push an existing profile called `web-dev` to an OCI registry:
 @z
 
-@x
-```console
-$ docker mcp profile push web-dev registry.example.com/profiles/web-dev:v1
-```
-@y
-```console
-$ docker mcp profile push web-dev registry.example.com/profiles/web-dev:v1
-```
-@z
+% snip command...
 
 @x
 To pull the same profile:
@@ -617,15 +388,7 @@ To pull the same profile:
 To pull the same profile:
 @z
 
-@x
-```console
-$ docker mcp profile pull registry.example.com/profiles/team-standard:latest
-```
-@y
-```console
-$ docker mcp profile pull registry.example.com/profiles/team-standard:latest
-```
-@z
+% snip command...
 
 @x
 ### Share via version control
@@ -649,17 +412,7 @@ To export a profile to your project directory:
 To export a profile to your project directory:
 @z
 
-@x
-```console
-$ mkdir -p .docker
-$ docker mcp profile export web-dev .docker/mcp-profile.json
-```
-@y
-```console
-$ mkdir -p .docker
-$ docker mcp profile export web-dev .docker/mcp-profile.json
-```
-@z
+% snip command...
 
 @x
 Team members who clone the repository can import the profile:
@@ -667,15 +420,7 @@ Team members who clone the repository can import the profile:
 Team members who clone the repository can import the profile:
 @z
 
-@x
-```console
-$ docker mcp profile import .docker/mcp-profile.json
-```
-@y
-```console
-$ docker mcp profile import .docker/mcp-profile.json
-```
-@z
+% snip command...
 
 @x
 This creates a profile with the servers and configuration defined in the
@@ -727,17 +472,7 @@ Use the Docker catalog as a base, then add or remove servers to fit your
 organization's needs. Copy it first:
 @z
 
-@x
-```console
-$ docker mcp catalog tag mcp/docker-mcp-catalog \
-  registry.example.com/mcp/company-tools:latest
-```
-@y
-```console
-$ docker mcp catalog tag mcp/docker-mcp-catalog \
-  registry.example.com/mcp/company-tools:latest
-```
-@z
+% snip command...
 
 @x
 List the servers it contains:
@@ -745,15 +480,7 @@ List the servers it contains:
 List the servers it contains:
 @z
 
-@x
-```console
-$ docker mcp catalog server ls registry.example.com/mcp/company-tools:latest
-```
-@y
-```console
-$ docker mcp catalog server ls registry.example.com/mcp/company-tools:latest
-```
-@z
+% snip command...
 
 @x
 Remove servers your organization doesn't approve:
@@ -761,19 +488,7 @@ Remove servers your organization doesn't approve:
 Remove servers your organization doesn't approve:
 @z
 
-@x
-```console
-$ docker mcp catalog server remove \
-  registry.example.com/mcp/company-tools:latest \
-  --name <server-name>
-```
-@y
-```console
-$ docker mcp catalog server remove \
-  registry.example.com/mcp/company-tools:latest \
-  --name <server-name>
-```
-@z
+% snip command...
 
 @x
 Add your own private servers, packaged as Docker images:
@@ -781,19 +496,7 @@ Add your own private servers, packaged as Docker images:
 Add your own private servers, packaged as Docker images:
 @z
 
-@x
-```console
-$ docker mcp catalog server add registry.example.com/mcp/company-tools:latest \
-  --server docker://registry.example.com/mcp/internal-api:latest \
-  --server docker://registry.example.com/mcp/data-pipeline:latest
-```
-@y
-```console
-$ docker mcp catalog server add registry.example.com/mcp/company-tools:latest \
-  --server docker://registry.example.com/mcp/internal-api:latest \
-  --server docker://registry.example.com/mcp/data-pipeline:latest
-```
-@z
+% snip command...
 
 @x
 Push when ready:
@@ -801,15 +504,7 @@ Push when ready:
 Push when ready:
 @z
 
-@x
-```console
-$ docker mcp catalog push registry.example.com/mcp/company-tools:latest
-```
-@y
-```console
-$ docker mcp catalog push registry.example.com/mcp/company-tools:latest
-```
-@z
+% snip command...
 
 @x
 ### Build a catalog from scratch
@@ -833,23 +528,7 @@ Create a catalog and specify which servers to include:
 Create a catalog and specify which servers to include:
 @z
 
-@x
-```console
-$ docker mcp catalog create registry.example.com/mcp/data-tools:latest \
-  --title "Data Analysis Tools" \
-  --server catalog://mcp/docker-mcp-catalog/postgres \
-  --server catalog://mcp/docker-mcp-catalog/brave-search \
-  --server docker://registry.example.com/mcp/analytics:latest
-```
-@y
-```console
-$ docker mcp catalog create registry.example.com/mcp/data-tools:latest \
-  --title "Data Analysis Tools" \
-  --server catalog://mcp/docker-mcp-catalog/postgres \
-  --server catalog://mcp/docker-mcp-catalog/brave-search \
-  --server docker://registry.example.com/mcp/analytics:latest
-```
-@z
+% snip command...
 
 @x
 View the result:
@@ -857,15 +536,7 @@ View the result:
 View the result:
 @z
 
-@x
-```console
-$ docker mcp catalog show registry.example.com/mcp/data-tools:latest
-```
-@y
-```console
-$ docker mcp catalog show registry.example.com/mcp/data-tools:latest
-```
-@z
+% snip command...
 
 @x
 Push to distribute:
@@ -873,15 +544,7 @@ Push to distribute:
 Push to distribute:
 @z
 
-@x
-```console
-$ docker mcp catalog push registry.example.com/mcp/data-tools:latest
-```
-@y
-```console
-$ docker mcp catalog push registry.example.com/mcp/data-tools:latest
-```
-@z
+% snip command...
 
 @x
 ### Distribute a catalog
@@ -895,15 +558,7 @@ Push your catalog so team members can import it:
 Push your catalog so team members can import it:
 @z
 
-@x
-```console
-$ docker mcp catalog push <oci-reference>
-```
-@y
-```console
-$ docker mcp catalog push <oci-reference>
-```
-@z
+% snip command...
 
 @x
 Team members can pull it using the CLI:
@@ -911,15 +566,7 @@ Team members can pull it using the CLI:
 Team members can pull it using the CLI:
 @z
 
-@x
-```console
-$ docker mcp catalog pull <oci-reference>
-```
-@y
-```console
-$ docker mcp catalog pull <oci-reference>
-```
-@z
+% snip command...
 
 @x
 Or import it using Docker Desktop: select **MCP Toolkit** > **Catalog** >
@@ -941,15 +588,7 @@ Run the gateway with your catalog instead of the default Docker catalog:
 Run the gateway with your catalog instead of the default Docker catalog:
 @z
 
-@x
-```console
-$ docker mcp gateway run --catalog <oci-reference>
-```
-@y
-```console
-$ docker mcp gateway run --catalog <oci-reference>
-```
-@z
+% snip command...
 
 @x
 For [Dynamic MCP](/manuals/ai/mcp-catalog-and-toolkit/dynamic-mcp.md), where
@@ -967,17 +606,7 @@ To enable specific servers from your catalog without using a profile:
 To enable specific servers from your catalog without using a profile:
 @z
 
-@x
-```console
-$ docker mcp gateway run --catalog <oci-reference> \
-  --servers <name1> --servers <name2>
-```
-@y
-```console
-$ docker mcp gateway run --catalog <oci-reference> \
-  --servers <name1> --servers <name2>
-```
-@z
+% snip command...
 
 @x
 ## Further reading

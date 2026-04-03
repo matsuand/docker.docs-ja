@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
-% snip 対応
 
 @x
 title: Docker Sandboxes
@@ -15,211 +14,25 @@ description: Run AI coding agents in isolated environments
 @x
       text: Experimental
 @y
-      text: 試験的
+      text: Experimental
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
-Docker Sandboxes lets you run AI coding agents in isolated environments on your
-machine. Sandboxes provides a secure way to give agents autonomy without
-compromising your system.
+Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
+sandbox gets its own Docker daemon, filesystem, and network — the agent can
+build containers, install packages, and modify files without touching your host
+system.
 @y
-Docker Sandboxes lets you run AI coding agents in isolated environments on your
-machine. Sandboxes provides a secure way to give agents autonomy without
-compromising your system.
-@z
-
-@x
-## Why use Docker Sandboxes
-@y
-## Why use Docker Sandboxes
-@z
-
-@x
-AI agents need to execute commands, install packages, and test code. Running
-them directly on your host machine means they have full access to your files,
-processes, and network. Docker Sandboxes isolates agents in microVMs, each with
-its own Docker daemon. Agents can spin up test containers and modify their
-environment without affecting your host.
-@y
-AI agents need to execute commands, install packages, and test code. Running
-them directly on your host machine means they have full access to your files,
-processes, and network. Docker Sandboxes isolates agents in microVMs, each with
-its own Docker daemon. Agents can spin up test containers and modify their
-environment without affecting your host.
-@z
-
-@x
-You get:
-@y
-You get:
-@z
-
-@x
-- Agent autonomy without host system risk
-- YOLO mode by default - agents work without asking permission
-- Private Docker daemon for running test containers
-- File sharing between host and sandbox
-- Network access control
-@y
-- Agent autonomy without host system risk
-- YOLO mode by default - agents work without asking permission
-- Private Docker daemon for running test containers
-- File sharing between host and sandbox
-- Network access control
-@z
-
-@x
-For a comparison between Docker Sandboxes and other approaches to isolating
-coding agents, see [Comparison to alternatives](./architecture.md#comparison-to-alternatives).
-@y
-For a comparison between Docker Sandboxes and other approaches to isolating
-coding agents, see [Comparison to alternatives](./architecture.md#comparison-to-alternatives).
-@z
-
-@x
-> [!NOTE]
-> MicroVM-based sandboxes require macOS or Windows (experimental). Linux users
-> can use legacy container-based sandboxes with
-> [Docker Desktop 4.57](/desktop/release-notes/#4570).
-@y
-> [!NOTE]
-> MicroVM-based sandboxes require macOS or Windows (experimental). Linux users
-> can use legacy container-based sandboxes with
-> [Docker Desktop 4.57](__SUBDIR__/desktop/release-notes/#4570).
-@z
-
-@x
-## How to use sandboxes
-@y
-## How to use sandboxes
-@z
-
-@x
-To create and run a sandbox:
-@y
-To create and run a sandbox:
-@z
-
-% snip command...
-
-@x
-Replace `claude` with your [preferred agent](./agents/_index.md). This command
-creates a sandbox for your workspace (`~/my-project`) and starts the agent. The
-agent can now work with your code, install tools, and run containers inside the
-isolated sandbox.
-@y
-Replace `claude` with your [preferred agent](./agents/_index.md). This command
-creates a sandbox for your workspace (`~/my-project`) and starts the agent. The
-agent can now work with your code, install tools, and run containers inside the
-isolated sandbox.
-@z
-
-@x
-## How it works
-@y
-## How it works
-@z
-
-@x
-Sandboxes run in lightweight microVMs with private Docker daemons. Each sandbox
-is completely isolated - the agent runs inside the VM and can't access your
-host Docker daemon, containers, or files outside the workspace.
-@y
-Sandboxes run in lightweight microVMs with private Docker daemons. Each sandbox
-is completely isolated - the agent runs inside the VM and can't access your
-host Docker daemon, containers, or files outside the workspace.
-@z
-
-@x
-Your workspace directory syncs between host and sandbox at the same absolute
-path, so file paths in error messages match between environments.
-@y
-Your workspace directory syncs between host and sandbox at the same absolute
-path, so file paths in error messages match between environments.
-@z
-
-@x
-Sandboxes don't appear in `docker ps` on your host because they're VMs, not
-containers. Use `docker sandbox ls` to see them.
-@y
-Sandboxes don't appear in `docker ps` on your host because they're VMs, not
-containers. Use `docker sandbox ls` to see them.
-@z
-
-@x
-For technical details on the architecture, isolation model, and networking, see
-[Architecture](architecture.md).
-@y
-For technical details on the architecture, isolation model, and networking, see
-[Architecture](architecture.md).
-@z
-
-@x
-### Multiple sandboxes
-@y
-### Multiple sandboxes
-@z
-
-@x
-Create separate sandboxes for different projects:
-@y
-Create separate sandboxes for different projects:
-@z
-
-% snip command...
-
-@x
-Each sandbox is completely isolated from the others. Sandboxes persist until
-you remove them, so installed packages and configuration stay available for
-that workspace.
-@y
-Each sandbox is completely isolated from the others. Sandboxes persist until
-you remove them, so installed packages and configuration stay available for
-that workspace.
-@z
-
-@x
-## Supported agents
-@y
-## Supported agents
-@z
-
-@x
-Docker Sandboxes works with multiple AI coding agents:
-@y
-Docker Sandboxes works with multiple AI coding agents:
-@z
-
-@x
-- **Claude Code** - Anthropic's coding agent (production-ready)
-- **Codex** - OpenAI's Codex agent (in development)
-- **Copilot** - GitHub Copilot agent (in development)
-- **Gemini** - Google's Gemini agent (in development)
-- **OpenCode** - Multi-provider agent with TUI interface (in development)
-- **[Docker Agent](/ai/docker-agent/)** - Docker's multi-provider coding agent (in development)
-- **Kiro** - Interactive agent with device flow auth (in development)
-- **Shell** - Minimal sandbox for manual agent installation
-@y
-- **Claude Code** - Anthropic's coding agent (production-ready)
-- **Codex** - OpenAI's Codex agent (in development)
-- **Copilot** - GitHub Copilot agent (in development)
-- **Gemini** - Google's Gemini agent (in development)
-- **OpenCode** - Multi-provider agent with TUI interface (in development)
-- **[Docker Agent](__SUBDIR__/ai/docker-agent/)** - Docker's multi-provider coding agent (in development)
-- **Kiro** - Interactive agent with device flow auth (in development)
-- **Shell** - Minimal sandbox for manual agent installation
-@z
-
-@x
-For detailed configuration instructions, see [Supported agents](agents/).
-@y
-For detailed configuration instructions, see [Supported agents](agents/).
+Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
+sandbox gets its own Docker daemon, filesystem, and network — the agent can
+build containers, install packages, and modify files without touching your host
+system.
 @z
 
 @x
@@ -229,21 +42,127 @@ For detailed configuration instructions, see [Supported agents](agents/).
 @z
 
 @x
-Head to the [Get started guide](get-started.md) to run your first sandboxed agent.
+Install the `sbx` CLI and sign in:
 @y
-Head to the [Get started guide](get-started.md) to run your first sandboxed agent.
+Install the `sbx` CLI and sign in:
 @z
 
 @x
-## Troubleshooting
+{{< tabs >}}
+{{< tab name="macOS" >}}
 @y
-## Troubleshooting
+{{< tabs >}}
+{{< tab name="macOS" >}}
 @z
 
 @x
-See [Troubleshooting](./troubleshooting) for common configuration errors, or
-report issues on the [Docker Desktop issue tracker](https://github.com/docker/desktop-feedback).
+```console
+$ brew install docker/tap/sbx
+$ sbx login
+```
 @y
-See [Troubleshooting](./troubleshooting) for common configuration errors, or
-report issues on the [Docker Desktop issue tracker](https://github.com/docker/desktop-feedback).
+```console
+$ brew install docker/tap/sbx
+$ sbx login
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@y
+{{< /tab >}}
+{{< tab name="Windows" >}}
+@z
+
+@x
+```powershell
+> winget install -h Docker.sbx
+> sbx login
+```
+@y
+```powershell
+> winget install -h Docker.sbx
+> sbx login
+```
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+Then launch an agent in a sandbox:
+@y
+Then launch an agent in a sandbox:
+@z
+
+@x
+```console
+$ cd ~/my-project
+$ sbx run claude
+```
+@y
+```console
+$ cd ~/my-project
+$ sbx run claude
+```
+@z
+
+@x
+See the [get started guide](get-started.md) for a full walkthrough, or jump to
+the [usage guide](usage.md) for common patterns.
+@y
+See the [get started guide](get-started.md) for a full walkthrough, or jump to
+the [usage guide](usage.md) for common patterns.
+@z
+
+@x
+## Learn more
+@y
+## Learn more
+@z
+
+@x
+- [Agents](agents/) — supported agents and per-agent configuration
+- [Custom environments](agents/custom-environments.md) — build reusable sandbox
+  images with pre-installed tools
+- [Architecture](architecture.md) — microVM isolation, workspace mounting,
+  networking
+- [Security](security/) — isolation model, credential handling, network
+  policies, workspace trust
+- [CLI reference](/reference/cli/sbx/) — full list of `sbx` commands and options
+- [Troubleshooting](troubleshooting.md) — common issues and fixes
+- [FAQ](faq.md) — login requirements, telemetry, etc
+@y
+- [Agents](agents/) — supported agents and per-agent configuration
+- [Custom environments](agents/custom-environments.md) — build reusable sandbox
+  images with pre-installed tools
+- [Architecture](architecture.md) — microVM isolation, workspace mounting,
+  networking
+- [Security](security/) — isolation model, credential handling, network
+  policies, workspace trust
+- [CLI reference](__SUBDIR__/reference/cli/sbx/) — full list of `sbx` commands and options
+- [Troubleshooting](troubleshooting.md) — common issues and fixes
+- [FAQ](faq.md) — login requirements, telemetry, etc
+@z
+
+@x
+## Docker Desktop integration
+@y
+## Docker Desktop integration
+@z
+
+@x
+Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
+(`docker sandbox`) with a subset of features. The `sbx` CLI is recommended for
+most use cases.
+@y
+Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
+(`docker sandbox`) with a subset of features. The `sbx` CLI is recommended for
+most use cases.
 @z

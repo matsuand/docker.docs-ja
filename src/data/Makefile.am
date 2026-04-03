@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = cli docsarchive
+SUBDIRS = cli docsarchive sbx_cli
 
 bases = \
 	desktop_release.yaml \

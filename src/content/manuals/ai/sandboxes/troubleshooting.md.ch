@@ -5,364 +5,358 @@
 
 @x
 title: Troubleshooting
-description: Resolve common issues when sandboxing agents locally.
 @y
 title: Troubleshooting
-description: Resolve common issues when sandboxing agents locally.
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+description: Resolve common issues when using Docker Sandboxes.
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+description: Resolve common issues when using Docker Sandboxes.
 @z
 
 @x
-This guide helps you resolve common issues when using Docker Sandboxes with AI coding agents.
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-This guide helps you resolve common issues when using Docker Sandboxes with AI coding agents.
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
-<!-- vale off -->
+## Resetting sandboxes
 @y
-<!-- vale off -->
+## Resetting sandboxes
 @z
 
 @x
-## 'sandbox' is not a docker command
+If you hit persistent issues or corrupted state, run
+[`sbx reset`](/reference/cli/sbx/reset/) to stop all VMs and delete all sandbox
+data. Create fresh sandboxes afterwards.
 @y
-## 'sandbox' is not a docker command
+If you hit persistent issues or corrupted state, run
+[`sbx reset`](__SUBDIR__/reference/cli/sbx/reset/) to stop all VMs and delete all sandbox
+data. Create fresh sandboxes afterwards.
 @z
 
 @x
-<!-- vale on -->
+## Agent can't install packages or reach an API
 @y
-<!-- vale on -->
+## Agent can't install packages or reach an API
 @z
 
 @x
-When you run `docker sandbox`, you see an error saying the command doesn't exist.
+Sandboxes use a [deny-by-default network policy](security/policy.md).
+If the agent fails to install packages or call an external API, the target
+domain is likely not in the allow list. Check which requests are being blocked:
 @y
-When you run `docker sandbox`, you see an error saying the command doesn't exist.
-@z
-
-@x
-This means the CLI plugin isn't installed or isn't in the correct location. To fix:
-@y
-This means the CLI plugin isn't installed or isn't in the correct location. To fix:
-@z
-
-@x
-1. Verify the plugin exists:
-@y
-1. Verify the plugin exists:
-@z
-
-@x
-   ```console
-   $ ls -la ~/.docker/cli-plugins/docker-sandbox
-   ```
-@y
-   ```console
-   $ ls -la ~/.docker/cli-plugins/docker-sandbox
-   ```
-@z
-
-@x
-   The file should exist and be executable.
-@y
-   The file should exist and be executable.
-@z
-
-@x
-2. If using Docker Desktop, restart it to detect the plugin.
-@y
-2. If using Docker Desktop, restart it to detect the plugin.
-@z
-
-@x
-## "Experimental Features" needs to be enabled by your administrator
-@y
-## "Experimental Features" needs to be enabled by your administrator
-@z
-
-@x
-You see an error about beta features being disabled when trying to use sandboxes.
-@y
-You see an error about beta features being disabled when trying to use sandboxes.
-@z
-
-@x
-This happens when your Docker Desktop installation is managed by an
-administrator who has locked settings. If your organization uses [Settings Management](/enterprise/security/hardened-desktop/settings-management/),
-ask your administrator to [allow beta features](/enterprise/security/hardened-desktop/settings-management/configure-json-file/#beta-features):
-@y
-This happens when your Docker Desktop installation is managed by an
-administrator who has locked settings. If your organization uses [Settings Management](__SUBDIR__/enterprise/security/hardened-desktop/settings-management/),
-ask your administrator to [allow beta features](__SUBDIR__/enterprise/security/hardened-desktop/settings-management/configure-json-file/#beta-features):
-@z
-
-@x
-```json
-{
-  "configurationFileVersion": 2,
-  "allowBetaFeatures": {
-    "locked": false,
-    "value": true
-  }
-}
-```
-@y
-```json
-{
-  "configurationFileVersion": 2,
-  "allowBetaFeatures": {
-    "locked": false,
-    "value": true
-  }
-}
-```
-@z
-
-@x
-## Authentication failure
-@y
-## Authentication failure
-@z
-
-@x
-Claude can't authenticate, or you see API key errors.
-@y
-Claude can't authenticate, or you see API key errors.
-@z
-
-@x
-The API key is likely invalid, expired, or not configured correctly.
-@y
-The API key is likely invalid, expired, or not configured correctly.
-@z
-
-@x
-## Workspace contains API key configuration
-@y
-## Workspace contains API key configuration
-@z
-
-@x
-You see a warning about conflicting credentials when starting a sandbox.
-@y
-You see a warning about conflicting credentials when starting a sandbox.
-@z
-
-@x
-This happens when your workspace has a `.claude.json` file with a `primaryApiKey` field. Choose one of these approaches:
-@y
-This happens when your workspace has a `.claude.json` file with a `primaryApiKey` field. Choose one of these approaches:
-@z
-
-@x
-- Remove the `primaryApiKey` field from your `.claude.json`:
-@y
-- Remove the `primaryApiKey` field from your `.claude.json`:
-@z
-
-@x
-  ```json
-  {
-    "apiKeyHelper": "/path/to/script",
-    "env": {
-      "ANTHROPIC_BASE_URL": "https://api.anthropic.com"
-    }
-  }
-  ```
-@y
-  ```json
-  {
-    "apiKeyHelper": "/path/to/script",
-    "env": {
-      "ANTHROPIC_BASE_URL": "https://api.anthropic.com"
-    }
-  }
-  ```
-@z
-
-@x
-- Or proceed with the warning - workspace credentials will be ignored in favor of sandbox credentials.
-@y
-- Or proceed with the warning - workspace credentials will be ignored in favor of sandbox credentials.
-@z
-
-@x
-## Permission denied when accessing workspace files
-@y
-## Permission denied when accessing workspace files
-@z
-
-@x
-Claude or commands fail with "Permission denied" errors when accessing files in the workspace.
-@y
-Claude or commands fail with "Permission denied" errors when accessing files in the workspace.
-@z
-
-@x
-This usually means the workspace path isn't accessible to Docker, or file permissions are too restrictive.
-@y
-This usually means the workspace path isn't accessible to Docker, or file permissions are too restrictive.
-@z
-
-@x
-If using Docker Desktop:
-@y
-If using Docker Desktop:
-@z
-
-@x
-1. Check File Sharing settings at Docker Desktop → **Settings** → **Resources** → **File Sharing**.
-@y
-1. Check File Sharing settings at Docker Desktop → **Settings** → **Resources** → **File Sharing**.
-@z
-
-@x
-2. Ensure your workspace path (or a parent directory) is listed under Virtual file shares.
-@y
-2. Ensure your workspace path (or a parent directory) is listed under Virtual file shares.
-@z
-
-@x
-3. If missing, click "+" to add the directory containing your workspace.
-@y
-3. If missing, click "+" to add the directory containing your workspace.
-@z
-
-@x
-4. Restart Docker Desktop.
-@y
-4. Restart Docker Desktop.
-@z
-
-@x
-For all platforms, verify file permissions:
-@y
-For all platforms, verify file permissions:
+Sandboxes use a [deny-by-default network policy](security/policy.md).
+If the agent fails to install packages or call an external API, the target
+domain is likely not in the allow list. Check which requests are being blocked:
 @z
 
 @x
 ```console
-$ ls -la <workspace>
+$ sbx policy log
 ```
 @y
 ```console
-$ ls -la <workspace>
+$ sbx policy log
 ```
 @z
 
 @x
-Ensure files are readable. If needed:
+Then allow the domains your workflow needs:
 @y
-Ensure files are readable. If needed:
-@z
-
-@x
-```console
-$ chmod -R u+r <workspace>
-```
-@y
-```console
-$ chmod -R u+r <workspace>
-```
-@z
-
-@x
-Also verify the workspace path exists:
-@y
-Also verify the workspace path exists:
+Then allow the domains your workflow needs:
 @z
 
 @x
 ```console
-$ cd <workspace>
-$ pwd
+$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
 ```
 @y
 ```console
-$ cd <workspace>
-$ pwd
+$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
 ```
 @z
 
 @x
-## Sandbox crashes on Windows when launching multiple sandboxes
+To allow all outbound traffic instead:
 @y
-## Sandbox crashes on Windows when launching multiple sandboxes
-@z
-
-@x
-On Windows, launching too many sandboxes simultaneously can cause crashes.
-@y
-On Windows, launching too many sandboxes simultaneously can cause crashes.
-@z
-
-@x
-If this happens, recover by closing the OpenVMM processes:
-@y
-If this happens, recover by closing the OpenVMM processes:
-@z
-
-@x
-1. Open Task Manager (Ctrl+Shift+Esc).
-2. Find all `docker.openvmm.exe` processes.
-3. End each process.
-4. Restart Docker Desktop if needed.
-@y
-1. Open Task Manager (Ctrl+Shift+Esc).
-2. Find all `docker.openvmm.exe` processes.
-3. End each process.
-4. Restart Docker Desktop if needed.
-@z
-
-@x
-To avoid this issue, launch sandboxes one at a time rather than creating
-multiple sandboxes concurrently.
-@y
-To avoid this issue, launch sandboxes one at a time rather than creating
-multiple sandboxes concurrently.
-@z
-
-@x
-## Persistent issues or corrupted state
-@y
-## Persistent issues or corrupted state
-@z
-
-@x
-If sandboxes behave unexpectedly or fail to start, reset all sandbox state:
-@y
-If sandboxes behave unexpectedly or fail to start, reset all sandbox state:
+To allow all outbound traffic instead:
 @z
 
 @x
 ```console
-$ docker sandbox reset
+$ sbx policy allow network "**"
 ```
 @y
 ```console
-$ docker sandbox reset
+$ sbx policy allow network "**"
 ```
 @z
 
 @x
-This stops all running VMs and deletes all sandbox data. The daemon continues
-running. After reset, create fresh sandboxes as needed.
+## Docker authentication failure
 @y
-This stops all running VMs and deletes all sandbox data. The daemon continues
-running. After reset, create fresh sandboxes as needed.
+## Docker authentication failure
 @z
 
 @x
-Use reset when troubleshooting persistent problems or to reclaim disk space from
-all sandboxes at once.
+If you see a message like `You are not authenticated to Docker`, your login
+session has expired. In an interactive terminal, the CLI prompts you to sign in
+again. In non-interactive environments such as scripts or CI, run `sbx login`
+to re-authenticate.
 @y
-Use reset when troubleshooting persistent problems or to reclaim disk space from
-all sandboxes at once.
+If you see a message like `You are not authenticated to Docker`, your login
+session has expired. In an interactive terminal, the CLI prompts you to sign in
+again. In non-interactive environments such as scripts or CI, run `sbx login`
+to re-authenticate.
+@z
+
+@x
+## Agent authentication failure
+@y
+## Agent authentication failure
+@z
+
+@x
+If the agent can't reach its model provider or you see API key errors, the key
+is likely invalid, expired, or not configured. Verify it's set in your shell
+configuration file and that you sourced it or opened a new terminal.
+@y
+If the agent can't reach its model provider or you see API key errors, the key
+is likely invalid, expired, or not configured. Verify it's set in your shell
+configuration file and that you sourced it or opened a new terminal.
+@z
+
+@x
+For agents that use the [credential proxy](security/credentials.md), make sure
+you haven't set the API key to an invalid value inside the sandbox — the proxy
+injects credentials automatically on outbound requests.
+@y
+For agents that use the [credential proxy](security/credentials.md), make sure
+you haven't set the API key to an invalid value inside the sandbox — the proxy
+injects credentials automatically on outbound requests.
+@z
+
+@x
+If credentials are configured correctly but API calls still fail, check
+`sbx policy log` and look at the **PROXY** column. Requests routed through
+the `transparent` proxy don't get credential injection. This can happen when a
+client inside the sandbox (such as a process in a Docker container) isn't
+configured to use the forward proxy. See
+[Monitoring network activity](security/policy.md#monitoring)
+for details.
+@y
+If credentials are configured correctly but API calls still fail, check
+`sbx policy log` and look at the **PROXY** column. Requests routed through
+the `transparent` proxy don't get credential injection. This can happen when a
+client inside the sandbox (such as a process in a Docker container) isn't
+configured to use the forward proxy. See
+[Monitoring network activity](security/policy.md#monitoring)
+for details.
+@z
+
+@x
+## Docker not available inside the sandbox on Windows
+@y
+## Docker not available inside the sandbox on Windows
+@z
+
+@x
+On Windows, sandboxes use non-docker template variants by default, so `docker`
+commands aren't available inside the sandbox. To use Docker inside a sandbox on
+Windows, specify a `-docker` template:
+@y
+On Windows, sandboxes use non-docker template variants by default, so `docker`
+commands aren't available inside the sandbox. To use Docker inside a sandbox on
+Windows, specify a `-docker` template:
+@z
+
+@x
+```console
+$ sbx run --template docker.io/docker/sandbox-templates:claude-code-docker claude
+```
+@y
+```console
+$ sbx run --template docker.io/docker/sandbox-templates:claude-code-docker claude
+```
+@z
+
+@x
+The `-docker` variants work on Windows but have slower startup times. See
+[Base images](agents/custom-environments.md#base-images) for details and the
+full list of templates.
+@y
+The `-docker` variants work on Windows but have slower startup times. See
+[Base images](agents/custom-environments.md#base-images) for details and the
+full list of templates.
+@z
+
+@x
+## Docker build export fails with "lchown: operation not permitted"
+@y
+## Docker build export fails with "lchown: operation not permitted"
+@z
+
+@x
+Running `docker build` with the local exporter (`--output=type=local` or `-o
+<path>`) inside a sandbox fails because the exporter tries to `lchown` output
+files to preserve ownership from the build. Processes inside the sandbox run as
+an unprivileged user without `CAP_CHOWN`, so the operation is denied.
+@y
+Running `docker build` with the local exporter (`--output=type=local` or `-o
+<path>`) inside a sandbox fails because the exporter tries to `lchown` output
+files to preserve ownership from the build. Processes inside the sandbox run as
+an unprivileged user without `CAP_CHOWN`, so the operation is denied.
+@z
+
+@x
+Use the tar exporter and extract the archive instead:
+@y
+Use the tar exporter and extract the archive instead:
+@z
+
+@x
+```console
+$ mkdir -p ./result
+$ docker build --output type=tar,dest=- . | tar xf - -C ./result
+```
+@y
+```console
+$ mkdir -p ./result
+$ docker build --output type=tar,dest=- . | tar xf - -C ./result
+```
+@z
+
+@x
+Extracting the tar archive as the current user avoids the `chown` call.
+@y
+Extracting the tar archive as the current user avoids the `chown` call.
+@z
+
+@x
+## Stale Git worktree after removing a sandbox
+@y
+## Stale Git worktree after removing a sandbox
+@z
+
+@x
+If you used `--branch`, worktree cleanup during `sbx rm` is best-effort. If
+it fails, the sandbox is removed but the branch and worktree are left behind.
+If `git worktree list` shows a stale worktree in `.sbx/` after removing a
+sandbox, clean it up manually:
+@y
+If you used `--branch`, worktree cleanup during `sbx rm` is best-effort. If
+it fails, the sandbox is removed but the branch and worktree are left behind.
+If `git worktree list` shows a stale worktree in `.sbx/` after removing a
+sandbox, clean it up manually:
+@z
+
+@x
+```console
+$ git worktree remove .sbx/<sandbox-name>-worktrees/<branch-name>
+$ git branch -D <branch-name>
+```
+@y
+```console
+$ git worktree remove .sbx/<sandbox-name>-worktrees/<branch-name>
+$ git branch -D <branch-name>
+```
+@z
+
+@x
+## Clock drift after sleep/wake
+@y
+## Clock drift after sleep/wake
+@z
+
+@x
+If your laptop sleeps and wakes while a sandbox is running, the VM clock can
+fall behind the host clock. This causes problems such as:
+@y
+If your laptop sleeps and wakes while a sandbox is running, the VM clock can
+fall behind the host clock. This causes problems such as:
+@z
+
+@x
+- External API calls failing because of timestamp validation.
+- Git commits with incorrect timestamps.
+- TLS certificate errors due to time mismatches.
+@y
+- External API calls failing because of timestamp validation.
+- Git commits with incorrect timestamps.
+- TLS certificate errors due to time mismatches.
+@z
+
+@x
+To fix the issue, stop and restart the sandbox:
+@y
+To fix the issue, stop and restart the sandbox:
+@z
+
+@x
+```console
+$ sbx stop <sandbox-name>
+$ sbx run <sandbox-name>
+```
+@y
+```console
+$ sbx stop <sandbox-name>
+$ sbx run <sandbox-name>
+```
+@z
+
+@x
+Restarting the sandbox re-syncs the VM clock with the host.
+@y
+Restarting the sandbox re-syncs the VM clock with the host.
+@z
+
+@x
+## Removing all state
+@y
+## Removing all state
+@z
+
+@x
+As a last resort, if `sbx reset` doesn't resolve your issue, you can remove the
+`sbx` state directory entirely. This deletes all sandbox data, configuration, and
+cached images. Stop all running sandboxes first with `sbx reset`.
+@y
+As a last resort, if `sbx reset` doesn't resolve your issue, you can remove the
+`sbx` state directory entirely. This deletes all sandbox data, configuration, and
+cached images. Stop all running sandboxes first with `sbx reset`.
+@z
+
+@x
+macOS:
+@y
+macOS:
+@z
+
+@x
+```console
+$ rm -rf ~/Library/Application\ Support/com.docker.sandboxes/
+```
+@y
+```console
+$ rm -rf ~/Library/Application\ Support/com.docker.sandboxes/
+```
+@z
+
+@x
+Windows:
+@y
+Windows:
+@z
+
+@x
+```powershell
+> Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
+```
+@y
+```powershell
+> Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
+```
 @z

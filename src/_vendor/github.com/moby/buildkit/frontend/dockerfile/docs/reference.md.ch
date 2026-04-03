@@ -520,15 +520,27 @@ modifiers as specified below:
 @z
 
 @x
-- `${variable:-word}` indicates that if `variable` is set then the result
-  will be that value. If `variable` is not set then `word` will be the result.
-- `${variable:+word}` indicates that if `variable` is set then `word` will be
-  the result, otherwise the result is the empty string.
+- `${variable:-word}` indicates that if `variable` is set and non-empty then
+  the result will be that value. If `variable` is unset or empty then `word`
+  will be the result.
+- `${variable-word}` indicates that if `variable` is set (even if empty) then
+  the result will be that value. If `variable` is unset then `word` will be
+  the result.
+- `${variable:+word}` indicates that if `variable` is set and non-empty then
+  `word` will be the result, otherwise the result is the empty string.
+- `${variable+word}` indicates that if `variable` is set (even if empty) then
+  `word` will be the result, otherwise the result is the empty string.
 @y
-- `${variable:-word}` indicates that if `variable` is set then the result
-  will be that value. If `variable` is not set then `word` will be the result.
-- `${variable:+word}` indicates that if `variable` is set then `word` will be
-  the result, otherwise the result is the empty string.
+- `${variable:-word}` indicates that if `variable` is set and non-empty then
+  the result will be that value. If `variable` is unset or empty then `word`
+  will be the result.
+- `${variable-word}` indicates that if `variable` is set (even if empty) then
+  the result will be that value. If `variable` is unset then `word` will be
+  the result.
+- `${variable:+word}` indicates that if `variable` is set and non-empty then
+  `word` will be the result, otherwise the result is the empty string.
+- `${variable+word}` indicates that if `variable` is set (even if empty) then
+  `word` will be the result, otherwise the result is the empty string.
 @z
 
 @x
@@ -964,9 +976,6 @@ The image can be any valid image.
   [`COPY --from=<name>`](#copy---from),
   and [`RUN --mount=type=bind,from=<name>`](#run---mounttypebind) instructions
   to refer to the image built in this stage.
-- The `tag` or `digest` values are optional. If you omit either of them, the
-  builder assumes a `latest` tag by default. The builder returns an error if it
-  can't find the `tag` value.
 @y
 - `ARG` is the only instruction that may precede `FROM` in the Dockerfile.
   See [Understand how ARG and FROM interact](#understand-how-arg-and-from-interact).
@@ -980,6 +989,23 @@ The image can be any valid image.
   [`COPY --from=<name>`](#copy---from),
   and [`RUN --mount=type=bind,from=<name>`](#run---mounttypebind) instructions
   to refer to the image built in this stage.
+@z
+
+@x
+  Using a previous build stage as the base for a subsequent stage is a common
+  pattern for sharing a common base environment:
+@y
+  Using a previous build stage as the base for a subsequent stage is a common
+  pattern for sharing a common base environment:
+@z
+
+% snip code...
+
+@x
+- The `tag` or `digest` values are optional. If you omit either of them, the
+  builder assumes a `latest` tag by default. The builder returns an error if it
+  can't find the `tag` value.
+@y
 - The `tag` or `digest` values are optional. If you omit either of them, the
   builder assumes a `latest` tag by default. The builder returns an error if it
   can't find the `tag` value.
@@ -1190,19 +1216,19 @@ bind mount is read-only by default.
 @z
 
 @x
-| Option                             | Description                                                                                    |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `target`, `dst`, `destination`[^1] | Mount path.                                                                                    |
-| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                 |
-| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context. |
-| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded.                                     |
+| Option                             | Description                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                                                                   |
+| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                                                                |
+| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context.                                                |
+| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded after the `RUN` instruction completes and will not be committed to the image layer. |
 @y
-| Option                             | Description                                                                                    |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `target`, `dst`, `destination`[^1] | Mount path.                                                                                    |
-| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                 |
-| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context. |
-| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded.                                     |
+| Option                             | Description                                                                                                                                   |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `target`, `dst`, `destination`[^1] | Mount path.                                                                                                                                   |
+| `source`                           | Source path in the `from`. Defaults to the root of the `from`.                                                                                |
+| `from`                             | Build stage, context, or image name for the root of the source. Defaults to the build context.                                                |
+| `rw`,`readwrite`                   | Allow writes on the mount. Written data will be discarded after the `RUN` instruction completes and will not be committed to the image layer. |
 @z
 
 @x
@@ -1712,6 +1738,22 @@ most-recently-applied value overrides any previously-set value.
 @z
 
 @x
+In a multi-stage build, labels from intermediate stages are only present in
+the final image if the final stage is directly or indirectly based on them
+(via `FROM`). Labels from a stage that you only reference with
+`COPY --from` or `RUN --mount=from=` are not included in the output image.
+Labels from the base image specified in the final `FROM` instruction are
+always inherited.
+@y
+In a multi-stage build, labels from intermediate stages are only present in
+the final image if the final stage is directly or indirectly based on them
+(via `FROM`). Labels from a stage that you only reference with
+`COPY --from` or `RUN --mount=from=` are not included in the output image.
+Labels from the base image specified in the final `FROM` instruction are
+always inherited.
+@z
+
+@x
 To view an image's labels, use the `docker image inspect` command. You can use
 the `--format` option to show just the labels;
 @y
@@ -3784,6 +3826,16 @@ COPY --parents ./x/./y/*.txt /parents/
 @z
 
 @x
+The `**` wildcard matches any number of path components, including none, and
+can be used to recursively match files across directory levels:
+@y
+The `**` wildcard matches any number of path components, including none, and
+can be used to recursively match files across directory levels:
+@z
+
+% snip code...
+
+@x
 Note that, without the `--parents` flag specified, any filename collision will
 fail the Linux `cp` operation with an explicit error message
 (`cp: will not overwrite just-created './x/a.txt' with './y/a.txt'`), where the
@@ -3986,14 +4038,14 @@ the `ENTRYPOINT` instruction using the `docker run --entrypoint` flag.
 @z
 
 @x
-The shell form of `ENTRYPOINT` prevents any `CMD` command line arguments from
-being used. It also starts your `ENTRYPOINT` as a subcommand of `/bin/sh -c`,
+The shell form of `ENTRYPOINT` ignores any `CMD` or `docker run` command line
+arguments. It also starts your `ENTRYPOINT` as a subcommand of `/bin/sh -c`,
 which does not pass signals. This means that the executable will not be the
 container's `PID 1`, and will not receive Unix signals. In this case, your
 executable doesn't receive a `SIGTERM` from `docker stop <container>`.
 @y
-The shell form of `ENTRYPOINT` prevents any `CMD` command line arguments from
-being used. It also starts your `ENTRYPOINT` as a subcommand of `/bin/sh -c`,
+The shell form of `ENTRYPOINT` ignores any `CMD` or `docker run` command line
+arguments. It also starts your `ENTRYPOINT` as a subcommand of `/bin/sh -c`,
 which does not pass signals. This means that the executable will not be the
 container's `PID 1`, and will not receive Unix signals. In this case, your
 executable doesn't receive a `SIGTERM` from `docker stop <container>`.
@@ -4013,12 +4065,26 @@ Only the last `ENTRYPOINT` instruction in the Dockerfile will have an effect.
 
 @x
 You can use the exec form of `ENTRYPOINT` to set fairly stable default commands
-and arguments and then use either form of `CMD` to set additional defaults that
-are more likely to be changed.
+and arguments and then use `CMD` to set additional defaults that are more
+likely to be changed.
 @y
 You can use the exec form of `ENTRYPOINT` to set fairly stable default commands
-and arguments and then use either form of `CMD` to set additional defaults that
-are more likely to be changed.
+and arguments and then use `CMD` to set additional defaults that are more
+likely to be changed.
+@z
+
+@x
+When combining exec form `ENTRYPOINT` with `CMD`, use the exec form of `CMD`
+as well. Using the shell form of `CMD` causes it to be wrapped in
+`/bin/sh -c`, which means the `ENTRYPOINT` receives a shell invocation as its
+argument rather than the bare command and parameters. See
+[Understand how CMD and ENTRYPOINT interact](#understand-how-cmd-and-entrypoint-interact).
+@y
+When combining exec form `ENTRYPOINT` with `CMD`, use the exec form of `CMD`
+as well. Using the shell form of `CMD` causes it to be wrapped in
+`/bin/sh -c`, which means the `ENTRYPOINT` receives a shell invocation as its
+argument rather than the bare command and parameters. See
+[Understand how CMD and ENTRYPOINT interact](#understand-how-cmd-and-entrypoint-interact).
 @z
 
 @x
@@ -5910,6 +5976,18 @@ defined.
 @z
 
 @x
+`STOPSIGNAL` applies to the signal sent by `docker stop` (and by the Docker
+daemon when stopping a container). It does not affect signals sent by keyboard
+shortcuts such as Ctrl+C, which sends `SIGINT` directly to the process
+regardless of the `STOPSIGNAL` setting.
+@y
+`STOPSIGNAL` applies to the signal sent by `docker stop` (and by the Docker
+daemon when stopping a container). It does not affect signals sent by keyboard
+shortcuts such as Ctrl+C, which sends `SIGINT` directly to the process
+regardless of the `STOPSIGNAL` setting.
+@z
+
+@x
 The image's default stopsignal can be overridden per container, using the
 `--stop-signal` flag on `docker run` and `docker create`.
 @y
@@ -5987,6 +6065,14 @@ started, and then again **interval** seconds after each previous check completes
 @y
 The health check will first run **interval** seconds after the container is
 started, and then again **interval** seconds after each previous check completes.
+@z
+
+@x
+During the **start period**, health checks run at **start interval** frequency
+instead.
+@y
+During the **start period**, health checks run at **start interval** frequency
+instead.
 @z
 
 @x

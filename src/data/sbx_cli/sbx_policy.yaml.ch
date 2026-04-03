@@ -1,0 +1,64 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx policy
+synopsis: Manage sandbox policies
+description: |-
+    Manage persistent access policies for sandboxes.
+@y
+name: sbx policy
+synopsis: Manage sandbox policies
+description: |-
+    Manage persistent access policies for sandboxes.
+@z
+
+@x
+    Policies are rules stored locally that control what sandboxes can access.
+    They apply globally across all sandboxes and persist across restarts.
+    Use subcommands to allow, deny, list, or remove policies.
+usage: sbx policy COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for policy
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx policy allow - Add an allow policy for sandboxes
+    - sbx policy deny - Add a deny policy for sandboxes
+    - sbx policy log - Show sandbox policy logs
+    - sbx policy ls - List sandbox policies
+    - sbx policy reset - Reset policies to defaults
+    - sbx policy rm - Remove a policy
+    - sbx policy set-default - Set the default network policy
+@y
+    Policies are rules stored locally that control what sandboxes can access.
+    They apply globally across all sandboxes and persist across restarts.
+    Use subcommands to allow, deny, list, or remove policies.
+usage: sbx policy COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for policy
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx policy allow - Add an allow policy for sandboxes
+    - sbx policy deny - Add a deny policy for sandboxes
+    - sbx policy log - Show sandbox policy logs
+    - sbx policy ls - List sandbox policies
+    - sbx policy reset - Reset policies to defaults
+    - sbx policy rm - Remove a policy
+    - sbx policy set-default - Set the default network policy
+@z

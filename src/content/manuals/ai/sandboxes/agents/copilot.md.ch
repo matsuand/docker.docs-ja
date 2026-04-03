@@ -2,23 +2,27 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Copilot sandbox
+---
+title: Copilot
+weight: 30
 description: |
   Use GitHub Copilot in Docker Sandboxes with GitHub token authentication and
   trusted folder configuration.
-keywords: docker, sandboxes, copilot, github, ai agent, authentication, trusted folders
+---
 @y
-title: Copilot sandbox
+---
+title: Copilot
+weight: 30
 description: |
   Use GitHub Copilot in Docker Sandboxes with GitHub token authentication and
   trusted folder configuration.
-keywords: docker, sandboxes, copilot, github, ai agent, authentication, trusted folders
+---
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
@@ -49,11 +53,11 @@ Create a sandbox and run Copilot for a project directory:
 
 @x
 ```console
-$ docker sandbox run copilot ~/my-project
+$ sbx run copilot ~/my-project
 ```
 @y
 ```console
-$ docker sandbox run copilot ~/my-project
+$ sbx run copilot ~/my-project
 ```
 @z
 
@@ -66,12 +70,12 @@ The workspace parameter is optional and defaults to the current directory:
 @x
 ```console
 $ cd ~/my-project
-$ docker sandbox run copilot
+$ sbx run copilot
 ```
 @y
 ```console
 $ cd ~/my-project
-$ docker sandbox run copilot
+$ sbx run copilot
 ```
 @z
 
@@ -82,101 +86,31 @@ $ docker sandbox run copilot
 @z
 
 @x
-Copilot requires a GitHub token with Copilot access. Credentials are scoped
-per sandbox and must be provided through environment variables on the host.
+Copilot requires a GitHub token with Copilot access. Store your token using
+[stored secrets](../security/credentials.md#stored-secrets):
 @y
-Copilot requires a GitHub token with Copilot access. Credentials are scoped
-per sandbox and must be provided through environment variables on the host.
-@z
-
-@x
-### Environment variable (recommended)
-@y
-### Environment variable (recommended)
-@z
-
-@x
-Set the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in your shell
-configuration file.
-@y
-Set the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in your shell
-configuration file.
-@z
-
-@x
-Docker Sandboxes use a daemon process that doesn't inherit environment
-variables from your current shell session. To make your token available to
-sandboxes, set it globally in your shell configuration file.
-@y
-Docker Sandboxes use a daemon process that doesn't inherit environment
-variables from your current shell session. To make your token available to
-sandboxes, set it globally in your shell configuration file.
-@z
-
-@x
-Add the token to your shell configuration file:
-@y
-Add the token to your shell configuration file:
-@z
-
-@x
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export GH_TOKEN=ghp_xxxxx
-```
-@y
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export GH_TOKEN=ghp_xxxxx
-```
-@z
-
-@x
-Or use `GITHUB_TOKEN`:
-@y
-Or use `GITHUB_TOKEN`:
-@z
-
-@x
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export GITHUB_TOKEN=ghp_xxxxx
-```
-@y
-```plaintext {title="~/.bashrc or ~/.zshrc"}
-export GITHUB_TOKEN=ghp_xxxxx
-```
-@z
-
-@x
-Apply the changes:
-@y
-Apply the changes:
-@z
-
-@x
-1. Source your shell configuration: `source ~/.bashrc` (or `~/.zshrc`)
-2. Restart Docker Desktop so the daemon picks up the new environment variable
-3. Create and run your sandbox:
-@y
-1. Source your shell configuration: `source ~/.bashrc` (or `~/.zshrc`)
-2. Restart Docker Desktop so the daemon picks up the new environment variable
-3. Create and run your sandbox:
+Copilot requires a GitHub token with Copilot access. Store your token using
+[stored secrets](../security/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ docker sandbox create copilot ~/project
-$ docker sandbox run <sandbox-name>
+$ echo "$(gh auth token)" | sbx secret set -g github
 ```
 @y
 ```console
-$ docker sandbox create copilot ~/project
-$ docker sandbox run <sandbox-name>
+$ echo "$(gh auth token)" | sbx secret set -g github
 ```
 @z
 
 @x
-The sandbox detects the environment variable and uses it automatically.
+Alternatively, export the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in
+your shell before running the sandbox. See
+[Credentials](../security/credentials.md) for details on both methods.
 @y
-The sandbox detects the environment variable and uses it automatically.
+Alternatively, export the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in
+your shell before running the sandbox. See
+[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x
@@ -186,33 +120,25 @@ The sandbox detects the environment variable and uses it automatically.
 @z
 
 @x
-Copilot can be configured to trust specific folders, disabling safety prompts
-for those locations. Configure trusted folders in `~/.copilot/config.json`:
+Sandboxes don't pick up user-level configuration from your host. Only
+project-level configuration in the working directory is available inside the
+sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
 @y
-Copilot can be configured to trust specific folders, disabling safety prompts
-for those locations. Configure trusted folders in `~/.copilot/config.json`:
+Sandboxes don't pick up user-level configuration from your host. Only
+project-level configuration in the working directory is available inside the
+sandbox. See
+[Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
+for workarounds.
 @z
 
 @x
-```json
-{
-  "trusted_folders": ["/workspace", "/home/agent/projects"]
-}
-```
+Copilot is configured to trust the workspace directory by default, so it
+operates without repeated confirmations for workspace files.
 @y
-```json
-{
-  "trusted_folders": ["/workspace", "/home/agent/projects"]
-}
-```
-@z
-
-@x
-Workspaces are mounted at `/workspace` by default, so trusting this path
-allows Copilot to operate without repeated confirmations.
-@y
-Workspaces are mounted at `/workspace` by default, so trusting this path
-allows Copilot to operate without repeated confirmations.
+Copilot is configured to trust the workspace directory by default, so it
+operates without repeated confirmations for workspace files.
 @z
 
 @x
@@ -222,27 +148,19 @@ allows Copilot to operate without repeated confirmations.
 @z
 
 @x
-Pass Copilot CLI options after the sandbox name and a `--` separator:
+Pass Copilot CLI options after `--`:
 @y
-Pass Copilot CLI options after the sandbox name and a `--` separator:
+Pass Copilot CLI options after `--`:
 @z
 
 @x
 ```console
-$ docker sandbox run <sandbox-name> -- --yolo
+$ sbx run copilot --name <sandbox-name> -- <copilot-options>
 ```
 @y
 ```console
-$ docker sandbox run <sandbox-name> -- --yolo
+$ sbx run copilot --name <sandbox-name> -- <copilot-options>
 ```
-@z
-
-@x
-The `--yolo` flag disables approval prompts for a single session without
-modifying the configuration file.
-@y
-The `--yolo` flag disables approval prompts for a single session without
-modifying the configuration file.
 @z
 
 @x
@@ -258,13 +176,15 @@ Template: `docker/sandbox-templates:copilot`
 @z
 
 @x
-Copilot launches with `--yolo` by default when trusted folders are configured.
+Preconfigured to trust the workspace directory and run without approval prompts.
 @y
-Copilot launches with `--yolo` by default when trusted folders are configured.
+Preconfigured to trust the workspace directory and run without approval prompts.
 @z
 
 @x
-See [Custom templates](../templates.md) to build your own agent images.
+See [Custom environments](custom-environments.md) to pre-install tools or
+customize this environment.
 @y
-See [Custom templates](../templates.md) to build your own agent images.
+See [Custom environments](custom-environments.md) to pre-install tools or
+customize this environment.
 @z
