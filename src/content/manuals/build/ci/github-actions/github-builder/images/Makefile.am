@@ -1,9 +1,10 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 copyfiles = \
-	sbx-dashboard.png \
-	sbx-security.png
+	architecture-overview.png \
+	execution-flow.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

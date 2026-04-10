@@ -146,9 +146,9 @@ FROM dhi.io/python:3.13-dev AS build
 @z
 
 @x
-To learn how to explore available variants, see [Explore images](./explore.md).
+To learn how to search for available variants, see [Search and evaluate images](./explore.md).
 @y
-To learn how to explore available variants, see [Explore images](./explore.md).
+To learn how to search for available variants, see [Search and evaluate images](./explore.md).
 @z
 
 @x

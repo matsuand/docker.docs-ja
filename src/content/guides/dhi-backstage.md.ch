@@ -1146,13 +1146,13 @@ Different scanners detect different issues. Running all three gives you the most
 - [Create and build a DHI](/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](/dhi/how-to/compare/) — evaluate security improvements between your original and hardened images.
+- [Compare images](/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
 - [Docker Debug](/dhi/how-to/debug/) — troubleshoot distroless containers that have no shell.
 @y
 - [Customize an image](__SUBDIR__/dhi/how-to/customize/) — complete reference on the Enterprise customization UI.
 - [Create and build a DHI](__SUBDIR__/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](__SUBDIR__/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](__SUBDIR__/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](__SUBDIR__/dhi/how-to/compare/) — evaluate security improvements between your original and hardened images.
+- [Compare images](__SUBDIR__/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
 - [Docker Debug](__SUBDIR__/dhi/how-to/debug/) — troubleshoot distroless containers that have no shell.
 @z

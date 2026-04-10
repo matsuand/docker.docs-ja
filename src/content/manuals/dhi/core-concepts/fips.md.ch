@@ -160,9 +160,9 @@ in the Docker Hardened Images catalog.
 @z
 
 @x
-To find DHI repositories with FIPS image variants, [explore images](../how-to/explore.md) and:
+To find DHI repositories with FIPS image variants, [search the catalog](../how-to/explore.md) and:
 @y
-To find DHI repositories with FIPS image variants, [explore images](../how-to/explore.md) and:
+To find DHI repositories with FIPS image variants, [search the catalog](../how-to/explore.md) and:
 @z
 
 @x

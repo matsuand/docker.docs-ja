@@ -2,9 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = images
+
 bases = \
-	_index.md \
-	bake.md   \
+	_index.md       \
+	architecture.md \
+	bake.md         \
 	build.md
 
 include $(top_srcdir)/build-aux/common.mk

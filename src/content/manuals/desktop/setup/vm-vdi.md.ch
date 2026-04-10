@@ -81,11 +81,13 @@ experience. To use Docker Offload:
 @z
 
 @x
-To get started using Docker Offload, see the [Docker Offload
-quickstart](/offload/quickstart/).
+For more information, see the [Docker Offload product
+page](https://www.docker.com/products/docker-offload/) and the [Docker Offload
+documentation](/offload/).
 @y
-To get started using Docker Offload, see the [Docker Offload
-quickstart](__SUBDIR__/offload/quickstart/).
+For more information, see the [Docker Offload product
+page](https://www.docker.com/products/docker-offload/) and the [Docker Offload
+documentation](__SUBDIR__/offload/).
 @z
 
 @x

@@ -6,7 +6,6 @@ bases = \
 	_index.md            \
 	build.md             \
 	cli.md               \
-	compare.md           \
 	customize.md         \
 	debug.md             \
 	els.md               \

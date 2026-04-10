@@ -56,6 +56,18 @@ understanding AI models to building complete agentic applications.
 @z
 
 @x
+## Launch the lab
+@y
+## Launch the lab
+@z
+
+@x
+{{< labspace-launch image="dockersamples/labspace-agentic-apps-with-docker" model-download="true" >}}
+@y
+{{< labspace-launch image="dockersamples/labspace-agentic-apps-with-docker" model-download="true" >}}
+@z
+
+@x
 ## What you'll learn
 @y
 ## What you'll learn
@@ -119,68 +131,4 @@ file, and configuring your app to use those models and tools
 | 5 | The Docker MCP Gateway | Set up and configure the MCP Gateway |
 | 6 | Putting It All Together | Build a complete agentic application |
 | 7 | Conclusion | Summary and next steps |
-@z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-- Install the latest version of Docker Desktop
-- Enable **Docker Model Runner** by going into Settings in Docker Desktop, choosing AI, then selecting Docker Model Runner
-- Pull the Gemma 3 model before launching by running this command:
-@y
-- Install the latest version of Docker Desktop
-- Enable **Docker Model Runner** by going into Settings in Docker Desktop, choosing AI, then selecting Docker Model Runner
-- Pull the Gemma 3 model before launching by running this command:
-@z
-
-@x
-```console
-$ docker model pull ai/gemma3
-```
-@y
-```console
-$ docker model pull ai/gemma3
-```
-@z
-
-@x
-## Launch the lab
-@y
-## Launch the lab
-@z
-
-@x
-Start the labspace:
-@y
-Start the labspace:
-@z
-
-@x
-```console
-$ docker compose -f oci://dockersamples/labspace-agentic-apps-with-docker up -d
-```
-@y
-```console
-$ docker compose -f oci://dockersamples/labspace-agentic-apps-with-docker up -d
-```
-@z
-
-@x
-Then open your browser to [http://localhost:3030](http://localhost:3030).
-@y
-Then open your browser to [http://localhost:3030](http://localhost:3030).
-@z
-
-@x
-> [!NOTE]
->
-> It may take a little while to start due to the AI model download.
-@y
-> [!NOTE]
->
-> It may take a little while to start due to the AI model download.
 @z

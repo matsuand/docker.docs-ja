@@ -7,7 +7,8 @@ bases = \
 	_index.md         \
 	compose-sdk.md    \
 	gettingstarted.md \
-	release-notes.md
+	release-notes.md  \
+	trust-model.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -300,7 +300,8 @@ bases = \
 	_index.md         \
 	compose-sdk.md    \
 	gettingstarted.md \
-	release-notes.md
+	release-notes.md  \
+	trust-model.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

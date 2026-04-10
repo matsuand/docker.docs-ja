@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Manage secrets securely in Docker Compose
 linkTitle: Secrets in Compose
@@ -137,10 +139,12 @@ In the following example, the `npm_token` secret is made available at build time
 @z
 
 @x
+- [Familiarize yourself with Compose's trust model](/manuals/compose/trust-model.md)
 - [Secrets top-level element](/reference/compose-file/secrets.md)
 - [Secrets attribute for services top-level element](/reference/compose-file/services.md#secrets)
 - [Build secrets](https://docs.docker.com/build/building/secrets/)
 @y
+- [Familiarize yourself with Compose's trust model](manuals/compose/trust-model.md)
 - [secret のトップレベル要素](reference/compose-file/secrets.md)
 - [サービスのトップレベル要素に対する secret 属性](reference/compose-file/services.md#secrets)
 - [secret のビルド](https://docs.docker.com/build/building/secrets/)

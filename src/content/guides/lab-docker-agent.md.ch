@@ -58,6 +58,18 @@ Docker.
 @z
 
 @x
+## Launch the lab
+@y
+## Launch the lab
+@z
+
+@x
+{{< labspace-launch image="dockersamples/labspace-cagent" >}}
+@y
+{{< labspace-launch image="dockersamples/labspace-cagent" >}}
+@z
+
+@x
 ## What you'll learn
 @y
 ## What you'll learn
@@ -105,46 +117,4 @@ Docker.
 | 5 | Sharing Agents | Package and share agents via Docker Registry |
 | 6 | Introduction to Sub-agents | Build multi-agent systems with sub-agent orchestration |
 | 7 | Conclusion | Summary and next steps |
-@z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-- Latest version of Docker Desktop
-- Basic familiarity with Docker
-@y
-- Latest version of Docker Desktop
-- Basic familiarity with Docker
-@z
-
-@x
-## Launch the lab
-@y
-## Launch the lab
-@z
-
-@x
-Start the labspace:
-@y
-Start the labspace:
-@z
-
-@x
-```console
-$ docker compose -f oci://dockersamples/labspace-cagent up -d
-```
-@y
-```console
-$ docker compose -f oci://dockersamples/labspace-cagent up -d
-```
-@z
-
-@x
-Then open your browser to [http://localhost:3030](http://localhost:3030).
-@y
-Then open your browser to [http://localhost:3030](http://localhost:3030).
 @z

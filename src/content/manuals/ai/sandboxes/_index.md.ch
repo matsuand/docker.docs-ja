@@ -152,6 +152,24 @@ the [usage guide](usage.md) for common patterns.
 @z
 
 @x
+## Feedback
+@y
+## Feedback
+@z
+
+@x
+Docker Sandboxes is experimental and under active development. Your feedback
+shapes what gets built next. If you run into a bug, hit a missing feature, or
+have a suggestion, open an issue at
+[github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
+@y
+Docker Sandboxes is experimental and under active development. Your feedback
+shapes what gets built next. If you run into a bug, hit a missing feature, or
+have a suggestion, open an issue at
+[github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
+@z
+
+@x
 ## Docker Desktop integration
 @y
 ## Docker Desktop integration

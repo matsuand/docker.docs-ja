@@ -83,33 +83,15 @@ Begin by creating a directory for your Dex project:
 Begin by creating a directory for your Dex project:
 @z
 
+% snip command...
+
 @x
-```bash
-mkdir dex-mock-server
-cd dex-mock-server
-```
 Organize your project with the following structure:
 @y
-```bash
-mkdir dex-mock-server
-cd dex-mock-server
-```
 Organize your project with the following structure:
 @z
 
-@x
-```bash
-dex-mock-server/
-├── config.yaml
-└── compose.yaml
-```
-@y
-```bash
-dex-mock-server/
-├── config.yaml
-└── compose.yaml
-```
-@z
+% snip text...
 
 @x
 Create the Dex Configuration File:
@@ -119,49 +101,7 @@ Create the Dex Configuration File:
 The config.yaml file defines Dex's settings, including connectors, clients, and storage. For a mock server setup, you can use the following minimal configuration:
 @z
 
-@x
-```yaml
-# config.yaml
-issuer: http://localhost:5556/dex
-storage:
-  type: memory
-web:
-  http: 0.0.0.0:5556
-staticClients:
-  - id: example-app
-    redirectURIs:
-      - 'http://localhost:5555/callback'
-    name: 'Example App'
-    secret: ZXhhbXBsZS1hcHAtc2VjcmV0
-enablePasswordDB: true
-staticPasswords:
-  - email: "admin@example.com"
-    hash: "$2a$10$2b2cU8CPhOTaGrs1HRQuAueS7JTT5ZHsHSzYiFPm1leZck7Mc8T4W"
-    username: "admin"
-    userID: "1234"
-```
-@y
-```yaml
-# config.yaml
-issuer: http://localhost:5556/dex
-storage:
-  type: memory
-web:
-  http: 0.0.0.0:5556
-staticClients:
-  - id: example-app
-    redirectURIs:
-      - 'http://localhost:5555/callback'
-    name: 'Example App'
-    secret: ZXhhbXBsZS1hcHAtc2VjcmV0
-enablePasswordDB: true
-staticPasswords:
-  - email: "admin@example.com"
-    hash: "$2a$10$2b2cU8CPhOTaGrs1HRQuAueS7JTT5ZHsHSzYiFPm1leZck7Mc8T4W"
-    username: "admin"
-    userID: "1234"
-```
-@z
+% snip code...
 
 @x
 Explanation:
@@ -215,49 +155,19 @@ or use CLI tools like [htpasswd](https://httpd.apache.org/docs/2.4/programs/htpa
 
 @x
 With Docker Compose configured, start Dex:
-```yaml
-# docker-compose.yaml
 @y
 With Docker Compose configured, start Dex:
-```yaml
-# docker-compose.yaml
 @z
 
-@x
-services:
-  dex:
-    image: dexidp/dex:latest
-    container_name: dex
-    ports:
-      - "5556:5556"
-    volumes:
-      - ./config.yaml:/etc/dex/config.yaml
-    command: ["dex", "serve", "/etc/dex/config.yaml"]
-```
-@y
-services:
-  dex:
-    image: dexidp/dex:latest
-    container_name: dex
-    ports:
-      - "5556:5556"
-    volumes:
-      - ./config.yaml:/etc/dex/config.yaml
-    command: ["dex", "serve", "/etc/dex/config.yaml"]
-```
-@z
+% snip code...
 
 @x
 Now it is possible to run the container using the `docker compose` command.
-```bash
-docker compose up -d
-```
 @y
 Now it is possible to run the container using the `docker compose` command.
-```bash
-docker compose up -d
-```
 @z
+
+% snip command...
 
 @x
 This command will download the Dex Docker image (if not already available) and start the container in detached mode.
@@ -267,15 +177,15 @@ This command will download the Dex Docker image (if not already available) and s
 
 @x
 To verify that Dex is running, check the logs to ensure Dex started successfully:
-```bash
-docker compose logs -f dex
-```
+@y
+To verify that Dex is running, check the logs to ensure Dex started successfully:
+@z
+
+% snip command...
+
+@x
 You should see output indicating that Dex is listening on the specified port.
 @y
-To verify that Dex is running, check the logs to ensure Dex started successfully:
-```bash
-docker compose logs -f dex
-```
 You should see output indicating that Dex is listening on the specified port.
 @z
 
@@ -291,111 +201,19 @@ To test the OAuth flow, you'll need a client application configured to authentic
 To test the OAuth flow, you'll need a client application configured to authenticate against Dex. One of the most typical use cases is to use it inside GitHub Actions. Since Dex supports mock authentication, you can predefine test users as suggested in the [docs](https://dexidp.io/docs). The `config.yaml` file should looks like:
 @z
 
-@x
-```yaml
-issuer: http://127.0.0.1:5556/dex
-@y
-```yaml
-issuer: http://127.0.0.1:5556/dex
-@z
-
-@x
-storage:
-  type: memory
-@y
-storage:
-  type: memory
-@z
-
-@x
-web:
-  http: 0.0.0.0:5556
-@y
-web:
-  http: 0.0.0.0:5556
-@z
-
-@x
-oauth2:
-  skipApprovalScreen: true
-@y
-oauth2:
-  skipApprovalScreen: true
-@z
-
-@x
-staticClients:
-  - name: TestClient
-    id: client_test_id
-    secret: client_test_secret
-    redirectURIs:
-      - http://{ip-your-app}/path/to/callback/ # example: http://localhost:5555/callback
-@y
-staticClients:
-  - name: TestClient
-    id: client_test_id
-    secret: client_test_secret
-    redirectURIs:
-      - http://{ip-your-app}/path/to/callback/ # example: http://localhost:5555/callback
-@z
-
-@x
-connectors:
+@x within code
 # mockCallback connector always returns the user 'kilgore@kilgore.trout'.
-- type: mockCallback
-  id: mock
-  name: Mock
-```
+@y
+# mockCallback connector always returns the user 'kilgore@kilgore.trout'.
+@z
+
+@x
 Now you can insert the Dex service inside your `~/.github/workflows/ci.yaml` file:
 @y
-connectors:
-# mockCallback connector always returns the user 'kilgore@kilgore.trout'.
-- type: mockCallback
-  id: mock
-  name: Mock
-```
 Now you can insert the Dex service inside your `~/.github/workflows/ci.yaml` file:
 @z
 
-@x
-```yaml
-[...]
-jobs:
-  test-oauth:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install Dex
-        run: |
-          curl -L https://github.com/dexidp/dex/releases/download/v2.37.0/dex_linux_amd64 -o dex
-          chmod +x dex
-@y
-```yaml
-[...]
-jobs:
-  test-oauth:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install Dex
-        run: |
-          curl -L https://github.com/dexidp/dex/releases/download/v2.37.0/dex_linux_amd64 -o dex
-          chmod +x dex
-@z
-
-@x
-      - name: Start Dex Server
-        run: |
-          nohup ./dex serve config.yaml > dex.log 2>&1 &
-          sleep 5  # Give Dex time to start
-[...]
-```
-@y
-      - name: Start Dex Server
-        run: |
-          nohup ./dex serve config.yaml > dex.log 2>&1 &
-          sleep 5  # Give Dex time to start
-[...]
-```
-@z
+% snip code...
 
 @x
 ### Conclusion

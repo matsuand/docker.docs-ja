@@ -376,10 +376,12 @@ $ docker compose publish -y username/my-compose-app:latest
 @z
 
 @x
+- [Familiarize yourself with Compose's trust model](/manuals/compose/trust-model.md)
 - [Learn about OCI artifacts in Docker Hub](/manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md)
 - [Compose publish command](/reference/cli/docker/compose/publish/)
 - [Understand `include`](/reference/compose-file/include.md)
 @y
+- [Familiarize yourself with Compose's trust model](manuals/compose/trust-model.md)
 - [Learn about OCI artifacts in Docker Hub](manuals/docker-hub/repos/manage/hub-images/oci-artifacts.md)
 - [Compose publish command](__SUBDIR__/reference/cli/docker/compose/publish/)
 - [Understand `include`](reference/compose-file/include.md)

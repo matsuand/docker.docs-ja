@@ -14,12 +14,12 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 % grid_discover:
 
 @x
-    - title: Explore Docker Hardened Images
+    - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
       icon: travel_explore
       link: /dhi/how-to/explore/
 @y
-    - title: Explore Docker Hardened Images
+    - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
       icon: travel_explore
       link: __SUBDIR__/dhi/how-to/explore/
@@ -133,20 +133,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
       icon: reorder
       link: __SUBDIR__/dhi/how-to/manage/
-@z
-
-% grid_evaluate:
-
-@x
-    - title: Compare Docker Hardened Images
-      description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
-      icon: compare
-      link: /dhi/how-to/compare/
-@y
-    - title: Compare Docker Hardened Images
-      description: Learn how to compare Docker Hardened Images with other container images to evaluate security improvements and differences.
-      icon: compare
-      link: __SUBDIR__/dhi/how-to/compare/
 @z
 
 % grid_verify:
@@ -270,28 +256,6 @@ Mirror trusted images, customize as needed, and integrate into your workflows.
 @y
 {{< grid
   items="grid_adopt"
->}}
-@z
-
-@x
-## Evaluate
-@y
-## Evaluate
-@z
-
-@x
-Compare with other images to understand security improvements.
-@y
-Compare with other images to understand security improvements.
-@z
-
-@x
-{{< grid
-  items="grid_evaluate"
->}}
-@y
-{{< grid
-  items="grid_evaluate"
 >}}
 @z
 

@@ -60,11 +60,11 @@ steps:
 @x
 > [!NOTE]
 >
-> This action supports only Github Action macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
+> This action supports only GitHub Actions macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
 @y
 > [!NOTE]
 >
-> This action supports only Github Action macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
+> This action supports only GitHub Actions macOS runners at the moment. You need to specify `runs-on: macOS-latest` for your end to end tests.
 @z
 
 @x

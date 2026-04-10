@@ -6,6 +6,7 @@ bases = \
 	desktop-install.html    \
 	desktop-install-v2.html \
 	experimental.html       \
+	labspace-launch.html    \
 	restricted.html         \
 	summary-bar.html
 

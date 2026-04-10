@@ -77,11 +77,11 @@ Docker account, pull and run an image, and compare it with a Docker Official Ima
 @z
 
 @x
-Continue to the next step to pull and run the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](./how-to/explore.md).
+Continue to the next step to pull and run the image. To dive deeper into searching
+and evaluating images, see [Search and evaluate Docker Hardened Images](./how-to/explore.md).
 @y
 次の手順に進み、イメージをプルして実行します。
-イメージ内容をさらに深く確認したい場合は [Docker Hardened イメージの確認](./how-to/explore.md) を参照してください。
+イメージを検索して評価したい場合は [Docker Hardened イメージの確認](./how-to/explore.md) を参照してください。
 @z
 
 @x
@@ -246,9 +246,9 @@ This comparison shows that the Docker Hardened Image:
 @z
 
 @x
-To dive deeper into comparing images see [Compare Docker Hardened Images](./how-to/compare.md).
+To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/explore.md#compare-and-evaluate-images).
 @y
-イメージ比較に関しての詳細は [Docker Hardened イメージの比較](./how-to/compare.md) を参照してください。
+イメージ比較に関しての詳細は [Docker Hardened イメージの検索と評価](./how-to/explore.md#compare-and-evaluate-images) を参照してください。
 @z
 
 @x

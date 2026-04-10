@@ -666,11 +666,11 @@ list of attestations available for each DHI chart.
 
 @x
 You can also browse attestations visually when [exploring an image
-variant](./explore.md#view-image-variant-details). The **Attestations** section
+variant](./explore.md#image-variant-details). The **Attestations** section
 lists each available attestation with its:
 @y
 You can also browse attestations visually when [exploring an image
-variant](./explore.md#view-image-variant-details). The **Attestations** section
+variant](./explore.md#image-variant-details). The **Attestations** section
 lists each available attestation with its:
 @z
 

@@ -30,12 +30,6 @@ payment method.
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 ## View an invoice
 @y
 ## View an invoice
@@ -190,32 +184,6 @@ more information, see [Verify a bank account](manuals/billing/payment-method.md#
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@z
-
-@x
-You receive your invoice when the subscription renews. To verify your renewal
-date, sign in to the [Docker Home Billing](https://app.docker.com/billing).
-Your renewal date and amount are displayed on your subscription plan card.
-@y
-You receive your invoice when the subscription renews. To verify your renewal
-date, sign in to the [Docker Home Billing](https://app.docker.com/billing).
-Your renewal date and amount are displayed on your subscription plan card.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
 You receive your invoice when the subscription renews. To verify your renewal
 date:
 @y
@@ -224,25 +192,11 @@ date:
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your user avatar to open the drop-down menu.
-1. Select **Billing**.
-1. Select the user or organization account to view the billing details. Here
-   you can find your renewal date and the renewal amount.
+1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
+1. Find your renewal date and amount on your subscription plan card.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your user avatar to open the drop-down menu.
-1. Select **Billing**.
-1. Select the user or organization account to view the billing details. Here
-   you can find your renewal date and the renewal amount.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
+1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
+1. Find your renewal date and amount on your subscription plan card.
 @z
 
 @x
@@ -263,14 +217,6 @@ date:
 > If the VAT number field is not available, complete the
 > [Contact Support form](https://hub.docker.com/support/contact/). This field
 > may need to be manually added.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -322,66 +268,6 @@ Your VAT number will be included on your next invoice.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-To add or update your VAT number:
-@y
-To add or update your VAT number:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Billing address** link.
-1. In the **Billing Information** section, select **Update information**.
-1. Enter your VAT number in the Tax ID section.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Billing address** link.
-1. In the **Billing Information** section, select **Update information**.
-1. Enter your VAT number in the Tax ID section.
-@z
-
-@x
-   > [!IMPORTANT]
-   >
-   > Your VAT number must include your country prefix. For example, if you are
-   > entering a VAT number for Germany, you would enter `DE123456789`.
-@y
-   > [!IMPORTANT]
-   >
-   > Your VAT number must include your country prefix. For example, if you are
-   > entering a VAT number for Germany, you would enter `DE123456789`.
-@z
-
-@x
-1. Select **Save**.
-@y
-1. Select **Save**.
-@z
-
-@x
-Your VAT number will be included on your next invoice.
-@y
-Your VAT number will be included on your next invoice.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
 ## View billing history
 @y
 ## View billing history
@@ -399,14 +285,6 @@ account or organization.
 ### Personal account
 @y
 ### Personal account
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -432,46 +310,6 @@ To view billing history:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-To view billing history:
-@y
-To view billing history:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Payment methods and billing history** link.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Payment methods and billing history** link.
-@z
-
-@x
-You can find your past invoices in the **Invoice History** section, where
-you can download an invoice.
-@y
-You can find your past invoices in the **Invoice History** section, where
-you can download an invoice.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
 ### Organization
 @y
 ### Organization
@@ -481,14 +319,6 @@ you can download an invoice.
 You must be an owner of the organization to view the billing history.
 @y
 You must be an owner of the organization to view the billing history.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -511,44 +341,4 @@ To view billing history:
 1. Select **Invoices** from the left-hand menu.
 1. Optional. Select the **invoice number** to open invoice details.
 1. Optional. Select the **download** button to download an invoice.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-To view billing history:
-@y
-To view billing history:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Payment methods and billing history** link.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select the **Payment methods and billing history** link.
-@z
-
-@x
-You can find your past invoices in the **Invoice History** section, where you
-can download an invoice.
-@y
-You can find your past invoices in the **Invoice History** section, where you
-can download an invoice.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z

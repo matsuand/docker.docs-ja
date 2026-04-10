@@ -601,12 +601,12 @@ Docker CLI OpenTelemetry:
 
 @x
 Docker Offload:
-  availability: Early Access
-  requires: Docker Desktop 4.50 and later
+  subscription: [Docker Offload]
+  requires: Docker Desktop 4.65 and later
 @y
 Docker Offload:
-  availability: 早期アクセス
-  requires: Docker Desktop 4.50 およびそれ以降
+  subscription: [Docker Offload]
+  requires: Docker Desktop 4.65 およびそれ以降
 @z
 
 @x

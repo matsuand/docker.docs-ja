@@ -55,14 +55,10 @@ tag or by digest, geolocation, cloud provider, client, and more.
 
 @x
 All members of an organization have access to the analytics data. Members can
-access analytics data in the [Docker Hub](https://hub.docker.com/) web interface
-or by using the [DVP Data API](/reference/api/dvp/latest/). The following covers
-the web interface.
+access analytics data in the [Docker Hub](https://hub.docker.com/) web interface.
 @y
 All members of an organization have access to the analytics data. Members can
-access analytics data in the [Docker Hub](https://hub.docker.com/) web interface
-or by using the [DVP Data API](__SUBDIR__/reference/api/dvp/latest/). The following covers
-the web interface.
+access analytics data in the [Docker Hub](https://hub.docker.com/) web interface.
 @z
 
 @x

@@ -10,17 +10,11 @@ title: Docker Offload
 @z
 
 @x
-description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
+description: Find documentation on Docker Offload to help you offload containers to the cloud.
 keywords: build, cloud, cloud build, remote builder
 @y
-description: Find documentation on Docker Offload to help you build and run your container images faster, both locally and in CI
+description: Find documentation on Docker Offload to help you offload containers to the cloud.
 keywords: build, cloud, cloud build, remote builder
-@z
-
-@x
-      text: Early Access
-@y
-      text: 早期アクセス
 @z
 
 % grid
@@ -51,24 +45,24 @@ keywords: build, cloud, cloud build, remote builder
 
 @x
 - title: Configure
-  description: Set up and customize your cloud build environments.
+  description: Configure Docker Offload settings for your organization and Docker Desktop.
   icon: tune
   link: /offload/configuration/
 @y
 - title: 設定
-  description: クラウドビルド環境の設定とカスタマイズを行います。
+  description: Configure Docker Offload settings for your organization and Docker Desktop.
   icon: tune
   link: __SUBDIR__/offload/configuration/
 @z
 
 @x
-- title: Usage and billing
-  description: Learn about Docker Offload usage and billing, and how to monitor your cloud resources.
+- title: Usage
+  description: Learn about Docker Offload usage and how to monitor your cloud resources.
   icon: monitor_heart
   link: /offload/usage/
 @y
-- title: 利用方法と支払い
-  description: Docker Offload 利用方法と支払い、クラウドリソースの監視方法について学びます。
+- title: 利用方法
+  description: Docker Offload の利用方法と、クラウドリソースの監視方法について学びます。
   icon: monitor_heart
   link: __SUBDIR__/offload/usage/
 @z

@@ -32,12 +32,6 @@ along with your country prefix when you update your billing profile.
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 ## Prerequisites
 @y
 ## Prerequisites

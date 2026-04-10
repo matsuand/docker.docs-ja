@@ -24,12 +24,6 @@ Before you begin, make sure you have a [Docker ID](../accounts/create-account.md
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 ## Set up a Docker subscription for a personal account
 @y
 ## Set up a Docker subscription for a personal account

@@ -96,6 +96,22 @@ $ sbx policy allow network "**"
 @z
 
 @x
+## Can't reach a service running on the host
+@y
+## Can't reach a service running on the host
+@z
+
+@x
+If a request to `127.0.0.1` or a local network IP returns "connection refused"
+from inside a sandbox, the address is not routable from within the sandbox VM.
+See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
+@y
+If a request to `127.0.0.1` or a local network IP returns "connection refused"
+from inside a sandbox, the address is not routable from within the sandbox VM.
+See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
+@z
+
+@x
 ## Docker authentication failure
 @y
 ## Docker authentication failure
@@ -155,42 +171,6 @@ client inside the sandbox (such as a process in a Docker container) isn't
 configured to use the forward proxy. See
 [Monitoring network activity](security/policy.md#monitoring)
 for details.
-@z
-
-@x
-## Docker not available inside the sandbox on Windows
-@y
-## Docker not available inside the sandbox on Windows
-@z
-
-@x
-On Windows, sandboxes use non-docker template variants by default, so `docker`
-commands aren't available inside the sandbox. To use Docker inside a sandbox on
-Windows, specify a `-docker` template:
-@y
-On Windows, sandboxes use non-docker template variants by default, so `docker`
-commands aren't available inside the sandbox. To use Docker inside a sandbox on
-Windows, specify a `-docker` template:
-@z
-
-@x
-```console
-$ sbx run --template docker.io/docker/sandbox-templates:claude-code-docker claude
-```
-@y
-```console
-$ sbx run --template docker.io/docker/sandbox-templates:claude-code-docker claude
-```
-@z
-
-@x
-The `-docker` variants work on Windows but have slower startup times. See
-[Base images](agents/custom-environments.md#base-images) for details and the
-full list of templates.
-@y
-The `-docker` variants work on Windows but have slower startup times. See
-[Base images](agents/custom-environments.md#base-images) for details and the
-full list of templates.
 @z
 
 @x
@@ -263,6 +243,64 @@ $ git branch -D <branch-name>
 $ git worktree remove .sbx/<sandbox-name>-worktrees/<branch-name>
 $ git branch -D <branch-name>
 ```
+@z
+
+@x
+## Signed Git commits
+@y
+## Signed Git commits
+@z
+
+@x
+Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
+aren't available in the sandbox environment. Commits created by an agent are
+unsigned.
+@y
+Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
+aren't available in the sandbox environment. Commits created by an agent are
+unsigned.
+@z
+
+@x
+If your repository or organization requires signed commits, use one of these
+workarounds:
+@y
+If your repository or organization requires signed commits, use one of these
+workarounds:
+@z
+
+@x
+- **Commit outside the sandbox.** Let the agent make changes without
+  committing, then commit and sign from your host terminal.
+@y
+- **Commit outside the sandbox.** Let the agent make changes without
+  committing, then commit and sign from your host terminal.
+@z
+
+@x
+- **Sign after the fact.** Let the agent commit inside the sandbox, then
+  re-sign the commits on your host:
+@y
+- **Sign after the fact.** Let the agent commit inside the sandbox, then
+  re-sign the commits on your host:
+@z
+
+@x
+  ```console
+  $ git rebase --exec 'git commit --amend --no-edit -S' origin/main
+  ```
+@y
+  ```console
+  $ git rebase --exec 'git commit --amend --no-edit -S' origin/main
+  ```
+@z
+
+@x
+  This replays each commit on the branch and re-signs it with your local
+  signing key.
+@y
+  This replays each commit on the branch and re-signs it with your local
+  signing key.
 @z
 
 @x
@@ -359,4 +397,18 @@ Windows:
 ```powershell
 > Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
 ```
+@z
+
+@x
+## Report an issue
+@y
+## Report an issue
+@z
+
+@x
+If you've exhausted the steps above and the problem persists, file a GitHub
+issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
+@y
+If you've exhausted the steps above and the problem persists, file a GitHub
+issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
 @z

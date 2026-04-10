@@ -22,6 +22,12 @@ tags: [Troubleshooting]
 @z
 
 @x
+{{< summary-bar feature_name="Docker Offload" >}}
+@y
+{{< summary-bar feature_name="Docker Offload" >}}
+@z
+
+@x
 Docker Offload requires:
 @y
 Docker Offload requires:
@@ -32,13 +38,13 @@ Docker Offload requires:
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
 - Access to Docker Offload
-- Docker Desktop 4.50 or later
+- Docker Desktop 4.65 or later
 @y
 - Authentication
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
 - Access to Docker Offload
-- Docker Desktop 4.50 or later
+- Docker Desktop 4.65 or later
 @z
 
 @x
@@ -140,7 +146,7 @@ session errors, use the following steps to help resolve the issue.
 @z
 
 @x
-7. Verify your usage and billing. For more information, see [Docker Offload usage](/offload/usage/).
+7. Verify your usage. For more information, see [Docker Offload usage](/offload/usage/).
 @y
-7. Verify your usage and billing. For more information, see [Docker Offload usage](__SUBDIR__/offload/usage/).
+7. Verify your usage. For more information, see [Docker Offload usage](__SUBDIR__/offload/usage/).
 @z

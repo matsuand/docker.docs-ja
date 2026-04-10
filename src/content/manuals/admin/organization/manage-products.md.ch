@@ -278,13 +278,11 @@ select **Account**.
 @x
 > [!NOTE]
 >
-> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
-> up](https://www.docker.com/products/docker-offload/) and subscribe.
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [contact sales](https://www.docker.com/products/docker-offload/) and subscribe.
 @y
 > [!NOTE]
 >
-> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [sign
-> up](https://www.docker.com/products/docker-offload/) and subscribe.
+> Docker Offload isn't included in the core Docker subscription plans. To make Docker Offload available, you must [contact sales](https://www.docker.com/products/docker-offload/) and subscribe.
 @z
 
 @x

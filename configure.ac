@@ -182,6 +182,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/build/ci/Makefile
 	src/content/manuals/build/ci/github-actions/Makefile
 	src/content/manuals/build/ci/github-actions/github-builder/Makefile
+	src/content/manuals/build/ci/github-actions/github-builder/images/Makefile
 	src/content/manuals/build/ci/github-actions/images/Makefile
 	src/content/manuals/build/ci/images/Makefile
 	src/content/manuals/build/concepts/Makefile

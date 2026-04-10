@@ -12,9 +12,11 @@ linkTitle: Get started
 @z
 
 @x
-description: Install the sbx CLI and run an AI coding agent in an isolated sandbox.
+description: Install the sbx CLI, configure credentials, and work through your first sandbox session.
+keywords: sandbox, sbx, get started, install, credentials, branch mode, network policy
 @y
-description: Install the sbx CLI and run an AI coding agent in an isolated sandbox.
+description: Install the sbx CLI, configure credentials, and work through your first sandbox session.
+keywords: sandbox, sbx, get started, install, credentials, branch mode, network policy
 @z
 
 @x
@@ -36,6 +38,16 @@ system.
 @z
 
 @x
+This page walks through a typical first session: installing the CLI,
+authenticating your agent, running a sandbox, working with branches, and
+cleaning up.
+@y
+This page walks through a typical first session: installing the CLI,
+authenticating your agent, running a sandbox, working with branches, and
+cleaning up.
+@z
+
+@x
 ## Prerequisites
 @y
 ## Prerequisites
@@ -51,8 +63,7 @@ system.
 - An API key or authentication method for the agent you want to use. Most
   agents require an API key for their model provider (Anthropic, OpenAI,
   Google, and others). See the [agent pages](agents/) for provider-specific
-  instructions, and [Credentials](security/credentials.md) for how to store
-  and manage keys.
+  instructions.
 @y
 - macOS (Apple silicon) or Windows (x86_64, Windows 11 required)
 - If you're on Windows, enable Windows Hypervisor Platform. Open an elevated
@@ -63,8 +74,7 @@ system.
 - An API key or authentication method for the agent you want to use. Most
   agents require an API key for their model provider (Anthropic, OpenAI,
   Google, and others). See the [agent pages](agents/) for provider-specific
-  instructions, and [Credentials](security/credentials.md) for how to store
-  and manage keys.
+  instructions.
 @z
 
 @x
@@ -128,6 +138,14 @@ $ sbx login
 @z
 
 @x
+If you need to install `sbx` manually, download a binary directly from the
+[sbx-releases](https://github.com/docker/sbx-releases/releases) repository.
+@y
+If you need to install `sbx` manually, download a binary directly from the
+[sbx-releases](https://github.com/docker/sbx-releases/releases) repository.
+@z
+
+@x
 `sbx login` opens a browser for Docker OAuth. On first login (and after `sbx
 policy reset`), the CLI prompts you to choose a default network policy for your
 sandboxes:
@@ -164,9 +182,15 @@ Use ↑/↓ to navigate, Enter to select, or press 1–3.
 @z
 
 @x
-See [Policies](security/policy.md) for a full description of each option.
+**Balanced** is a good starting point — it permits traffic to common
+development services while blocking everything else. You can adjust individual
+rules later. See [Policies](security/policy.md) for a full description of each
+option.
 @y
-See [Policies](security/policy.md) for a full description of each option.
+**Balanced** is a good starting point — it permits traffic to common
+development services while blocking everything else. You can adjust individual
+rules later. See [Policies](security/policy.md) for a full description of each
+option.
 @z
 
 @x
@@ -180,15 +204,91 @@ See [Policies](security/policy.md) for a full description of each option.
 @z
 
 @x
+## Authenticate your agent
+@y
+## Authenticate your agent
+@z
+
+@x
+Agents need credentials for their model provider. How you provide them depends
+on the agent.
+@y
+Agents need credentials for their model provider. How you provide them depends
+on the agent.
+@z
+
+@x
+For Claude Code with a Claude subscription (Max, Team, or Enterprise), no
+upfront setup is needed — use the `/login` command inside the sandbox to sign
+in with OAuth. The session token stays on your host and is injected by a
+proxy, not stored inside the sandbox.
+@y
+For Claude Code with a Claude subscription (Max, Team, or Enterprise), no
+upfront setup is needed — use the `/login` command inside the sandbox to sign
+in with OAuth. The session token stays on your host and is injected by a
+proxy, not stored inside the sandbox.
+@z
+
+@x
+For agents that use API keys (or if you prefer API key authentication for
+Claude Code), store the key before starting a sandbox:
+@y
+For agents that use API keys (or if you prefer API key authentication for
+Claude Code), store the key before starting a sandbox:
+@z
+
+@x
+```console
+$ sbx secret set -g anthropic
+```
+@y
+```console
+$ sbx secret set -g anthropic
+```
+@z
+
+@x
+This prompts for the secret value and stores it in your OS keychain. A proxy on
+your host injects the key into outbound API requests so it's never exposed
+inside the sandbox. See [Credentials](security/credentials.md) for details on
+scoping, supported services, and alternative methods.
+@y
+This prompts for the secret value and stores it in your OS keychain. A proxy on
+your host injects the key into outbound API requests so it's never exposed
+inside the sandbox. See [Credentials](security/credentials.md) for details on
+scoping, supported services, and alternative methods.
+@z
+
+@x
+To give the agent access to GitHub for creating pull requests or interacting
+with repositories:
+@y
+To give the agent access to GitHub for creating pull requests or interacting
+with repositories:
+@z
+
+@x
+```console
+$ sbx secret set -g github -t "$(gh auth token)"
+```
+@y
+```console
+$ sbx secret set -g github -t "$(gh auth token)"
+```
+@z
+
+@x
 ## Run your first sandbox
 @y
 ## Run your first sandbox
 @z
 
 @x
-Pick a project directory and launch an agent with [`sbx run`](/reference/cli/sbx/run/):
+Pick a project directory and launch an agent with
+[`sbx run`](/reference/cli/sbx/run/):
 @y
-Pick a project directory and launch an agent with [`sbx run`](__SUBDIR__/reference/cli/sbx/run/):
+Pick a project directory and launch an agent with
+[`sbx run`](__SUBDIR__/reference/cli/sbx/run/):
 @z
 
 @x
@@ -212,11 +312,11 @@ full list.
 @z
 
 @x
-The first run takes a little longer while the agent image is pulled.
-Subsequent runs reuse the cached image and start in seconds.
+The first run takes a little longer while the agent image is pulled. Subsequent
+runs reuse the cached image and start in seconds.
 @y
-The first run takes a little longer while the agent image is pulled.
-Subsequent runs reuse the cached image and start in seconds.
+The first run takes a little longer while the agent image is pulled. Subsequent
+runs reuse the cached image and start in seconds.
 @z
 
 @x
@@ -228,37 +328,227 @@ You can check what's running at any time:
 @x
 ```console
 $ sbx ls
-NAME                 STATUS   UPTIME
-claude-my-project    running  12s
+SANDBOX              AGENT    STATUS    PORTS   WORKSPACE
+claude-my-project    claude   running           ~/my-project
 ```
 @y
 ```console
 $ sbx ls
-NAME                 STATUS   UPTIME
-claude-my-project    running  12s
+SANDBOX              AGENT    STATUS    PORTS   WORKSPACE
+claude-my-project    claude   running           ~/my-project
 ```
 @z
 
 @x
-The agent can modify files in your project directory, so review changes before
-merging. See [Workspace trust](security/workspace.md) for details.
+You can also run `sbx` with no arguments to open an interactive dashboard.
+The dashboard shows your sandboxes with live status, lets you attach to
+agents, open shells, and manage network rules from one place. See
+[Interactive mode](usage.md#interactive-mode) for details.
 @y
-The agent can modify files in your project directory, so review changes before
-merging. See [Workspace trust](security/workspace.md) for details.
+You can also run `sbx` with no arguments to open an interactive dashboard.
+The dashboard shows your sandboxes with live status, lets you attach to
+agents, open shells, and manage network rules from one place. See
+[Interactive mode](usage.md#interactive-mode) for details.
 @z
 
 @x
-> [!CAUTION]
-> Your network policy controls what the sandbox can reach. With **Locked
-> Down**, even your model provider API is blocked. With **Balanced**, a broad
-> set of common development services is allowed by default — add other hosts
-> with `sbx policy allow`. See [Policies](security/policy.md) for details.
+![The sbx interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
 @y
-> [!CAUTION]
-> Your network policy controls what the sandbox can reach. With **Locked
-> Down**, even your model provider API is blocked. With **Balanced**, a broad
-> set of common development services is allowed by default — add other hosts
-> with `sbx policy allow`. See [Policies](security/policy.md) for details.
+![The sbx interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
+@z
+
+@x
+## Use branch mode
+@y
+## Use branch mode
+@z
+
+@x
+By default, the agent edits your working tree directly. To give it its own
+Git branch, use `--branch`:
+@y
+By default, the agent edits your working tree directly. To give it its own
+Git branch, use `--branch`:
+@z
+
+@x
+```console
+$ sbx run claude --branch my-feature
+```
+@y
+```console
+$ sbx run claude --branch my-feature
+```
+@z
+
+@x
+This creates a [Git worktree](https://git-scm.com/docs/git-worktree) under
+`.sbx/` in your repository root. The agent works on its own branch and
+directory without touching your main working tree.
+@y
+This creates a [Git worktree](https://git-scm.com/docs/git-worktree) under
+`.sbx/` in your repository root. The agent works on its own branch and
+directory without touching your main working tree.
+@z
+
+@x
+When the session ends, review what the agent did from the worktree:
+@y
+When the session ends, review what the agent did from the worktree:
+@z
+
+@x
+```console
+$ cd .sbx/<sandbox-name>-worktrees/my-feature
+$ git log
+$ git diff main
+```
+@y
+```console
+$ cd .sbx/<sandbox-name>-worktrees/my-feature
+$ git log
+$ git diff main
+```
+@z
+
+@x
+If you're satisfied, push the branch and open a pull request:
+@y
+If you're satisfied, push the branch and open a pull request:
+@z
+
+@x
+```console
+$ git push -u origin my-feature
+$ gh pr create
+```
+@y
+```console
+$ git push -u origin my-feature
+$ gh pr create
+```
+@z
+
+@x
+Branch mode is especially useful when running multiple agents on the same
+repository — each gets its own branch and can't overwrite the other's changes.
+See [Branch mode](usage.md#branch-mode) for more options, including
+`--branch auto` and multiple branches per sandbox.
+@y
+Branch mode is especially useful when running multiple agents on the same
+repository — each gets its own branch and can't overwrite the other's changes.
+See [Branch mode](usage.md#branch-mode) for more options, including
+`--branch auto` and multiple branches per sandbox.
+@z
+
+@x
+## Manage network access
+@y
+## Manage network access
+@z
+
+@x
+Your network policy controls what the sandbox can reach. If the agent fails to
+connect to an API or service, it's likely blocked by the policy.
+@y
+Your network policy controls what the sandbox can reach. If the agent fails to
+connect to an API or service, it's likely blocked by the policy.
+@z
+
+@x
+Check which rules are in effect:
+@y
+Check which rules are in effect:
+@z
+
+@x
+```console
+$ sbx policy ls
+```
+@y
+```console
+$ sbx policy ls
+```
+@z
+
+@x
+To allow a specific host:
+@y
+To allow a specific host:
+@z
+
+@x
+```console
+$ sbx policy allow network registry.npmjs.org
+```
+@y
+```console
+$ sbx policy allow network registry.npmjs.org
+```
+@z
+
+@x
+With **Locked Down**, even your model provider API is blocked unless you
+explicitly allow it. With **Balanced**, common development services are
+permitted by default. See [Policies](security/policy.md) for the full rule
+set and how to customize it.
+@y
+With **Locked Down**, even your model provider API is blocked unless you
+explicitly allow it. With **Balanced**, common development services are
+permitted by default. See [Policies](security/policy.md) for the full rule
+set and how to customize it.
+@z
+
+@x
+## Clean up
+@y
+## Clean up
+@z
+
+@x
+Sandboxes persist after the agent exits. To stop a sandbox without deleting it:
+@y
+Sandboxes persist after the agent exits. To stop a sandbox without deleting it:
+@z
+
+@x
+```console
+$ sbx stop my-sandbox
+```
+@y
+```console
+$ sbx stop my-sandbox
+```
+@z
+
+@x
+Installed packages, Docker images, and configuration changes are preserved
+across restarts. When you're done with a sandbox, remove it to reclaim disk
+space:
+@y
+Installed packages, Docker images, and configuration changes are preserved
+across restarts. When you're done with a sandbox, remove it to reclaim disk
+space:
+@z
+
+@x
+```console
+$ sbx rm my-sandbox
+```
+@y
+```console
+$ sbx rm my-sandbox
+```
+@z
+
+@x
+Removing a sandbox deletes everything inside it — installed packages, Docker
+images, and any branch mode worktrees under `.sbx/`. Files in your main
+working tree are unaffected.
+@y
+Removing a sandbox deletes everything inside it — installed packages, Docker
+images, and any branch mode worktrees under `.sbx/`. Files in your main
+working tree are unaffected.
 @z
 
 @x
@@ -268,15 +558,21 @@ merging. See [Workspace trust](security/workspace.md) for details.
 @z
 
 @x
-- [Usage guide](usage.md) — common patterns and workflows
+- [Usage guide](usage.md) — sandbox management, reconnecting, multiple
+  workspaces, port forwarding, and more
 - [Agents](agents/) — supported agents and configuration
 - [Custom environments](agents/custom-environments.md) — build your own sandbox
   images
+- [Credentials](security/credentials.md) — credential storage and management
+- [Workspace trust](security/workspace.md) — review agent changes safely
 - [Policies](security/policy.md) — control outbound access
 @y
-- [Usage guide](usage.md) — common patterns and workflows
+- [Usage guide](usage.md) — sandbox management, reconnecting, multiple
+  workspaces, port forwarding, and more
 - [Agents](agents/) — supported agents and configuration
 - [Custom environments](agents/custom-environments.md) — build your own sandbox
   images
+- [Credentials](security/credentials.md) — credential storage and management
+- [Workspace trust](security/workspace.md) — review agent changes safely
 - [Policies](security/policy.md) — control outbound access
 @z

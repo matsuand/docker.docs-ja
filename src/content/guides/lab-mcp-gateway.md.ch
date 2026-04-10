@@ -47,15 +47,27 @@ keywords: AI, Docker, MCP, MCP Gateway, MCP servers, lab, labspace
 
 @x
 This lab provides a comprehensive, hands-on overview of the Docker MCP Gateway,
-which enables you to run containerized MCP servers safely and securely. Learn
+which lets you run containerized MCP servers safely and securely. Learn
 how to configure, secure, and connect MCP servers to your agentic applications.
 @y
 This lab provides a comprehensive, hands-on overview of the Docker MCP Gateway,
-which enables you to run containerized MCP servers safely and securely. Learn
+which lets you run containerized MCP servers safely and securely. Learn
 how to configure, secure, and connect MCP servers to your agentic applications.
 @z
 
 @x
+## Launch the lab
+@y
+## Launch the lab
+@z
+
+@x
+{{< labspace-launch image="dockersamples/labspace-mcp-gateway" >}}
+@y
+{{< labspace-launch image="dockersamples/labspace-mcp-gateway" >}}
+@z
+
+@x
 ## What you'll learn
 @y
 ## What you'll learn
@@ -103,46 +115,4 @@ how to configure, secure, and connect MCP servers to your agentic applications.
 | 5 | Connecting MCP Gateway to Your App | Integrate the MCP Gateway with agentic frameworks |
 | 6 | Using a Custom MCP Server | Build and run your own custom MCP server |
 | 7 | Conclusion | Summary and next steps |
-@z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-- The latest version of Docker Desktop with Docker Model Runner enabled
-- Basic familiarity with Docker and Docker Compose
-@y
-- The latest version of Docker Desktop with Docker Model Runner enabled
-- Basic familiarity with Docker and Docker Compose
-@z
-
-@x
-## Launch the lab
-@y
-## Launch the lab
-@z
-
-@x
-Start the labspace:
-@y
-Start the labspace:
-@z
-
-@x
-```console
-$ docker compose -f oci://dockersamples/labspace-mcp-gateway up -d
-```
-@y
-```console
-$ docker compose -f oci://dockersamples/labspace-mcp-gateway up -d
-```
-@z
-
-@x
-Then open your browser to [http://localhost:3030](http://localhost:3030).
-@y
-Then open your browser to [http://localhost:3030](http://localhost:3030).
 @z

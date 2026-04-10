@@ -3,12 +3,12 @@
 
 @x
 title: Build with Docker GitHub Builder
-linkTitle: Build
+linkTitle: Build workflow
 description: Use the Docker GitHub Builder build.yml reusable workflow to build images and local artifacts from a Dockerfile.
 keywords: ci, github actions, gha, buildkit, buildx, reusable workflow, dockerfile
 @y
 title: Build with Docker GitHub Builder
-linkTitle: Build
+linkTitle: Build workflow
 description: Use the Docker GitHub Builder build.yml reusable workflow to build images and local artifacts from a Dockerfile.
 keywords: ci, github actions, gha, buildkit, buildx, reusable workflow, dockerfile
 @z

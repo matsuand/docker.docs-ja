@@ -189,10 +189,10 @@ can use either interface.
 
 @x
 Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](explore.md).
+images see [Search and evaluate Docker Hardened Images](explore.md).
 @y
 Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Explore Docker Hardened Images](explore.md).
+images see [Search and evaluate Docker Hardened Images](explore.md).
 @z
 
 @x

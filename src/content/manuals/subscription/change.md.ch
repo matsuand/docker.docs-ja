@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Change your subscription
 description: Upgrade or downgrade your Docker subscription and understand billing changes
@@ -18,35 +20,21 @@ You can upgrade or downgrade your Docker subscription at any time to match your 
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 ## Upgrade your subscription
 @y
 ## Upgrade your subscription
 @z
 
 @x
-When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier. 
+When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier.
 @y
-When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier. 
+When you upgrade your Docker subscription, you immediately get access to all features and entitlements in your new subscription tier.
 @z
 
 @x
 For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @y
 For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -57,40 +45,18 @@ To upgrade your subscription:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select the organization
-you want to upgrade.
+   you want to upgrade.
 1. Select **Billing**.
 1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/convert-account.md).
 1. Select **Upgrade**.
-1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select the organization
-you want to upgrade.
+   you want to upgrade.
 1. Select **Billing**.
 1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/convert-account.md).
 1. Select **Upgrade**.
 1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-To upgrade your legacy Docker subscription to a new Docker subscription that includes access to all tools, contact [Docker sales](https://www.docker.com/pricing/contact-sales/).
-@y
-To upgrade your legacy Docker subscription to a new Docker subscription that includes access to all tools, contact [Docker sales](https://www.docker.com/pricing/contact-sales/).
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x
@@ -134,14 +100,6 @@ For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pri
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@z
-
-@x
 To downgrade your subscription:
 @y
 To downgrade your subscription:
@@ -149,70 +107,16 @@ To downgrade your subscription:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-the organization you want to downgrade.
+   the organization you want to downgrade.
 1. Select **Billing**.
 1. Select the action icon and then **Cancel subscription**.
 1. Fill out the feedback survey to continue with cancellation.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-the organization you want to downgrade.
+   the organization you want to downgrade.
 1. Select **Billing**.
 1. Select the action icon and then **Cancel subscription**.
 1. Fill out the feedback survey to continue with cancellation.
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-To downgrade your legacy Docker subscription:
-@y
-To downgrade your legacy Docker subscription:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com/billing).
-1. Select the organization you want to downgrade, then select **Billing**.
-1. To downgrade, you must navigate to the upgrade plan page. Select **Upgrade**.
-1. On the upgrade page, select **Downgrade** in the **Free Team** plan card.
-1. Follow the on-screen instructions to complete your downgrade.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com/billing).
-1. Select the organization you want to downgrade, then select **Billing**.
-1. To downgrade, you must navigate to the upgrade plan page. Select **Upgrade**.
-1. On the upgrade page, select **Downgrade** in the **Free Team** plan card.
-1. Follow the on-screen instructions to complete your downgrade.
-@z
-
-@x
-To downgrade your Docker Build Cloud subscription:
-@y
-To downgrade your Docker Build Cloud subscription:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select **Build Cloud**.
-1. Select **Account settings**, then **Downgrade**.
-1. To confirm your downgrade, type **DOWNGRADE** in the text field and select **Yes, continue**.
-1. The account settings page will update with a notification bar notifying you of your downgrade date (start of next billing cycle).
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select **Build Cloud**.
-1. Select **Account settings**, then **Downgrade**.
-1. To confirm your downgrade, type **DOWNGRADE** in the text field and select **Yes, continue**.
-1. The account settings page will update with a notification bar notifying you of your downgrade date (start of next billing cycle).
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x

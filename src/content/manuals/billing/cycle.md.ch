@@ -66,23 +66,9 @@ When you change your billing cycle:
 @z
 
 @x
-{{% include "tax-compliance.md" %}}
-@y
-{{% include "tax-compliance.md" %}}
-@z
-
-@x
 ## Change personal account to an annual cycle
 @y
 ## Change personal account to an annual cycle
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -122,44 +108,6 @@ The billing plans and usage page will now reflect your new annual plan details.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-Follow these steps to switch from a monthly to annual billing cycle for
-a legacy Docker subscription:
-@y
-Follow these steps to switch from a monthly to annual billing cycle for
-a legacy Docker subscription:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. In the bottom-right of the **Plan** tab, select **Switch to annual billing**.
-1. Review the information displayed on the **Change to an Annual subscription**
-   page and select **Accept Terms and Purchase** to confirm.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. In the bottom-right of the **Plan** tab, select **Switch to annual billing**.
-1. Review the information displayed on the **Change to an Annual subscription**
-   page and select **Accept Terms and Purchase** to confirm.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
 ## Change organization to an annual cycle
 @y
 ## Change organization to an annual cycle
@@ -169,14 +117,6 @@ a legacy Docker subscription:
 You must be an organization owner to make changes to the payment information.
 @y
 You must be an organization owner to make changes to the payment information.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
-@y
-{{< tabs >}}
-{{< tab name="Docker subscription" >}}
 @z
 
 @x
@@ -209,42 +149,4 @@ organization's Docker subscription:
 1. Verify your billing information.
 1. Select **Continue to payment**.
 1. Verify payment information and select **Upgrade subscription**. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@y
-{{< /tab >}}
-{{< tab name="Legacy Docker subscription" >}}
-@z
-
-@x
-Follow these steps to switch from a monthly to annual billing cycle for a
-legacy Docker organization subscription:
-@y
-Follow these steps to switch from a monthly to annual billing cycle for a
-legacy Docker organization subscription:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select **Switch to annual billing**.
-1. Review the information displayed on the **Change to an Annual subscription**
-   page and select **Accept Terms and Purchase** to confirm.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-1. Select your organization, then select **Billing**.
-1. Select **Switch to annual billing**.
-1. Review the information displayed on the **Change to an Annual subscription**
-   page and select **Accept Terms and Purchase** to confirm.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z

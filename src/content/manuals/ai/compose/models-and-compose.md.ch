@@ -36,12 +36,10 @@ Compose lets you define AI models as core components of your application, so you
 
 @x
 - Docker Compose v2.38 or later
-- A platform that supports Compose models such as Docker Model Runner (DMR) or compatible cloud providers.
-  If you are using DMR, see the [requirements](/manuals/ai/model-runner/_index.md#requirements).
+- A platform that supports Compose models such as [Docker Model Runner (DMR)](/manuals/ai/model-runner/_index.md#requirements).
 @y
 - Docker Compose v2.38 or later
-- A platform that supports Compose models such as Docker Model Runner (DMR) or compatible cloud providers.
-  If you are using DMR, see the [requirements](manuals/ai/model-runner/_index.md#requirements).
+- A platform that supports Compose models such as [Docker Model Runner (DMR)](manuals/ai/model-runner/_index.md#requirements).
 @z
 
 @x
@@ -255,23 +253,27 @@ Docker Model Runner will:
 @z
 
 @x
-The same Compose file can run on cloud providers that support Compose models:
+The Compose models specification is portable. Platforms that implement the Compose specification can support the `models` top-level element, allowing the same Compose file to run on different infrastructure. Cloud-specific behavior can be configured using extension attributes (`x-*`):
 @y
-The same Compose file can run on cloud providers that support Compose models:
+The Compose models specification is portable. Platforms that implement the Compose specification can support the `models` top-level element, allowing the same Compose file to run on different infrastructure. Cloud-specific behavior can be configured using extension attributes (`x-*`):
 @z
 
 % snip code...
 
 @x
-Cloud providers might:
+How a platform handles model definitions depends on its implementation. A platform might:
+@y
+How a platform handles model definitions depends on its implementation. A platform might:
+@z
+
+@x
 - Use managed AI services instead of running models locally
-- Apply cloud-specific optimizations and scaling
+- Apply platform-specific optimizations and scaling
 - Provide additional monitoring and logging capabilities
 - Handle model versioning and updates automatically
 @y
-Cloud providers might:
 - Use managed AI services instead of running models locally
-- Apply cloud-specific optimizations and scaling
+- Apply platform-specific optimizations and scaling
 - Provide additional monitoring and logging capabilities
 - Handle model versioning and updates automatically
 @z

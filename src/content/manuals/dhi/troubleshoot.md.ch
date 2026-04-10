@@ -80,11 +80,11 @@ appropriate permissions.
 @x
 To find out which user a DHI runs as, check the repository page for the image on
 Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @y
 To find out which user a DHI runs as, check the repository page for the image on
 Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @z
 
 @x
@@ -136,11 +136,11 @@ the runtime image.
 @x
 To find out which shell, if any, a DHI has, check the repository page for the
 image on Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @y
 To find out which shell, if any, a DHI has, check the repository page for the
 image on Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @z
 
 @x
@@ -168,11 +168,11 @@ or other community images.
 @x
 To find out the ENTRYPOINT or CMD for a DHI, check the repository page for the
 image on Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @y
 To find out the ENTRYPOINT or CMD for a DHI, check the repository page for the
 image on Docker Hub. See [View image variant
-details](./how-to/explore.md#view-image-variant-details) for more information.
+details](./how-to/explore.md#image-variant-details) for more information.
 @z
 
 @x

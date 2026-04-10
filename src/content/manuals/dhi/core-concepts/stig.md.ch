@@ -149,10 +149,10 @@ the Docker Hardened Images catalog.
 
 @x
 To find DHI repositories with STIG image variants, [explore
-images](../how-to/explore.md) and:
+images](../how-to/explore.md#image-variants) and:
 @y
 To find DHI repositories with STIG image variants, [explore
-images](../how-to/explore.md) and:
+images](../how-to/explore.md#image-variants) and:
 @z
 
 @x

@@ -117,11 +117,11 @@ from the benchmark more quickly and confidently.
 
 @x
 CIS-compliant images are labeled as **CIS** in the Docker Hardened Images catalog.
-To find them, [explore images](../how-to/explore.md) and look for the **CIS**
+To find them, [search the catalog](../how-to/explore.md) and look for the **CIS**
 designation on individual listings.
 @y
 CIS-compliant images are labeled as **CIS** in the Docker Hardened Images catalog.
-To find them, [explore images](../how-to/explore.md) and look for the **CIS**
+To find them, [search the catalog](../how-to/explore.md) and look for the **CIS**
 designation on individual listings.
 @z
 

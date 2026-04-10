@@ -145,3 +145,17 @@ commands work with no further configuration.
 Once you've set up your environment variables, all the normal `docker compose`
 commands work with no further configuration.
 @z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- [Familiarize yourself with Compose's trust model](/manuals/compose/trust-model.md)
+- [Using multiple Compose files](multiple-compose-files/_index.md)
+@y
+- [Familiarize yourself with Compose's trust model](/manuals/compose/trust-model.md)
+- [Using multiple Compose files](multiple-compose-files/_index.md)
+@z

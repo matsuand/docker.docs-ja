@@ -10,9 +10,9 @@ title: Policies
 @z
 
 @x
-description: Configure network access and filesystem rules for sandboxes.
+description: Configure network access rules for sandboxes.
 @y
-description: Configure network access and filesystem rules for sandboxes.
+description: Configure network access rules for sandboxes.
 @z
 
 @x
@@ -23,136 +23,18 @@ description: Configure network access and filesystem rules for sandboxes.
 
 @x
 Sandboxes are [network-isolated](isolation.md) from your host and from each
-other. A policy system controls what a sandbox can access — which external
-hosts it can reach over the network, and which host paths it can mount as
-workspaces.
+other. A policy system controls what a sandbox can access over the network.
 @y
 Sandboxes are [network-isolated](isolation.md) from your host and from each
-other. A policy system controls what a sandbox can access — which external
-hosts it can reach over the network, and which host paths it can mount as
-workspaces.
+other. A policy system controls what a sandbox can access over the network.
 @z
 
 @x
-Policies can be set at two levels:
+Use the `sbx policy` command to configure network access rules. Rules apply
+to all sandboxes on the machine.
 @y
-Policies can be set at two levels:
-@z
-
-@x
-- **Organization policies** {{< badge color=blue text="Limited Access" >}} — configured by admins in the
-  [Docker Admin Console](https://app.docker.com/admin) under AI governance
-  settings. These apply to all sandboxes across the organization.
-- **Local policies** — configured by individual users with the `sbx policy`
-  command. These apply to all sandboxes on the local machine.
-@y
-- **Organization policies** {{< badge color=blue text="Limited Access" >}} — configured by admins in the
-  [Docker Admin Console](https://app.docker.com/admin) under AI governance
-  settings. These apply to all sandboxes across the organization.
-- **Local policies** — configured by individual users with the `sbx policy`
-  command. These apply to all sandboxes on the local machine.
-@z
-
-@x
-If your organization has enabled governance, organization policies replace
-local rules — local `sbx policy` rules are not evaluated unless an admin
-also turns on the **User defined** setting. See [Precedence](#precedence)
-for details.
-@y
-If your organization has enabled governance, organization policies replace
-local rules — local `sbx policy` rules are not evaluated unless an admin
-also turns on the **User defined** setting. See [Precedence](#precedence)
-for details.
-@z
-
-@x
-## Organization policies {tier="Limited Access"}
-@y
-## Organization policies {tier="Limited Access"}
-@z
-
-@x
-> [!NOTE]
-> Organization governance is a Limited Access feature. Contact your Docker
-> account team to request access.
-@y
-> [!NOTE]
-> Organization governance is a Limited Access feature. Contact your Docker
-> account team to request access.
-@z
-
-@x
-Organization admins can centrally manage policies through the
-[Docker Admin Console](https://app.docker.com/admin). Navigate to your
-organization settings and enable **Manage AI governance**.
-@y
-Organization admins can centrally manage policies through the
-[Docker Admin Console](https://app.docker.com/admin). Navigate to your
-organization settings and enable **Manage AI governance**.
-@z
-
-@x
-Once enabled, the policies defined in the Admin Console apply to all
-sandboxes across the organization.
-@y
-Once enabled, the policies defined in the Admin Console apply to all
-sandboxes across the organization.
-@z
-
-@x
-### Local extensions to organization policy
-@y
-### Local extensions to organization policy
-@z
-
-@x
-When organization governance is active, local rules are ignored by default.
-Admins can optionally let users extend the organization policy by turning on
-the **User defined** setting in AI governance settings. When turned on,
-local `sbx policy` rules are evaluated alongside organization rules, letting
-users add hosts to the allowlist from their own machine using
-`sbx policy allow network`.
-@y
-When organization governance is active, local rules are ignored by default.
-Admins can optionally let users extend the organization policy by turning on
-the **User defined** setting in AI governance settings. When turned on,
-local `sbx policy` rules are evaluated alongside organization rules, letting
-users add hosts to the allowlist from their own machine using
-`sbx policy allow network`.
-@z
-
-@x
-Local extensions can expand access for domains the organization hasn't
-explicitly denied, but can't override organization-level deny rules. This
-applies to exact matches and wildcard matches alike — if the organization
-denies `*.example.com`, a local allow for `api.example.com` has no effect
-because the org-level wildcard deny covers it.
-@y
-Local extensions can expand access for domains the organization hasn't
-explicitly denied, but can't override organization-level deny rules. This
-applies to exact matches and wildcard matches alike — if the organization
-denies `*.example.com`, a local allow for `api.example.com` has no effect
-because the org-level wildcard deny covers it.
-@z
-
-@x
-For example, given an organization policy that allows `api.anthropic.com`
-and denies `*.corp.internal`:
-@y
-For example, given an organization policy that allows `api.anthropic.com`
-and denies `*.corp.internal`:
-@z
-
-@x
-- `sbx policy allow network api.example.com` — works, because the
-  organization hasn't denied `api.example.com`
-- `sbx policy allow network build.corp.internal` — no effect, because the
-  organization denies `*.corp.internal`
-@y
-- `sbx policy allow network api.example.com` — works, because the
-  organization hasn't denied `api.example.com`
-- `sbx policy allow network build.corp.internal` — no effect, because the
-  organization denies `*.corp.internal`
+Use the `sbx policy` command to configure network access rules. Rules apply
+to all sandboxes on the machine.
 @z
 
 @x
@@ -232,18 +114,6 @@ You can change your effective policy at any time using `sbx policy allow` and
 @z
 
 @x
-> [!NOTE]
-> If your organization manages AI governance policies, organization rules
-> take precedence over the policy you select here. See
-> [Organization policies](#organization-policies).
-@y
-> [!NOTE]
-> If your organization manages AI governance policies, organization rules
-> take precedence over the policy you select here. See
-> [Organization policies](#organization-policies).
-@z
-
-@x
 ### Non-interactive environments
 @y
 ### Non-interactive environments
@@ -298,17 +168,9 @@ services. Run `sbx policy ls` to see the active rules for your installation.
 @z
 
 @x
-Organization admins can modify or remove these defaults when configuring
-[organization policies](#organization-policies).
+### Managing rules
 @y
-Organization admins can modify or remove these defaults when configuring
-[organization policies](#organization-policies).
-@z
-
-@x
-### Managing local rules
-@y
-### Managing local rules
+### Managing rules
 @z
 
 @x
@@ -317,6 +179,7 @@ Use [`sbx policy allow`](/reference/cli/sbx/policy/allow/) and
 rules. Changes take effect immediately and apply to all sandboxes:
 @y
 Use [`sbx policy allow`](__SUBDIR__/reference/cli/sbx/policy/allow/) and
+[`sbx policy deny`](__SUBDIR__/reference/cli/sbx/policy/deny/) to add network access
 rules. Changes take effect immediately and apply to all sandboxes:
 @z
 
@@ -473,32 +336,6 @@ configuration. You can still deny specific hosts with `sbx policy deny`.
 @z
 
 @x
-### Org-level rules {tier="Limited Access"}
-@y
-### Org-level rules {tier="Limited Access"}
-@z
-
-@x
-Define network allow and deny rules in the Admin Console under
-**AI governance > Network access**. Each rule takes a network target (domain,
-wildcard, or CIDR range) and an action (allow or deny). You can add multiple
-entries at once, one per line.
-@y
-Define network allow and deny rules in the Admin Console under
-**AI governance > Network access**. Each rule takes a network target (domain,
-wildcard, or CIDR range) and an action (allow or deny). You can add multiple
-entries at once, one per line.
-@z
-
-@x
-Organization-level rules use the same [wildcard syntax](#wildcard-syntax) as
-local rules.
-@y
-Organization-level rules use the same [wildcard syntax](#wildcard-syntax) as
-local rules.
-@z
-
-@x
 ### Wildcard syntax
 @y
 ### Wildcard syntax
@@ -651,119 +488,27 @@ machine-readable output, or `--type network` to filter by policy type.
 @z
 
 @x
-## Filesystem policies
-@y
-## Filesystem policies
-@z
-
-@x
-Filesystem policies control which host paths a sandbox can mount as
-workspaces. By default, sandboxes can mount any directory the user has
-access to.
-@y
-Filesystem policies control which host paths a sandbox can mount as
-workspaces. By default, sandboxes can mount any directory the user has
-access to.
-@z
-
-@x
-### Org-level restrictions {tier="Limited Access"}
-@y
-### Org-level restrictions {tier="Limited Access"}
-@z
-
-@x
-Admins can restrict which paths are mountable by defining filesystem allow
-and deny rules in the Admin Console under **AI governance > Filesystem access**.
-Each rule takes a path pattern and an action (allow or deny).
-@y
-Admins can restrict which paths are mountable by defining filesystem allow
-and deny rules in the Admin Console under **AI governance > Filesystem access**.
-Each rule takes a path pattern and an action (allow or deny).
-@z
-
-@x
-> [!CAUTION]
-> Use `**` (double wildcard) rather than `*` (single wildcard) when writing
-> path patterns to match path segments recursively. A single `*` only matches
-> within a single path segment. For example, `~/**` matches all paths under the
-> user's home directory, whereas `~/*` matches only paths directly under `~`.
-@y
-> [!CAUTION]
-> Use `**` (double wildcard) rather than `*` (single wildcard) when writing
-> path patterns to match path segments recursively. A single `*` only matches
-> within a single path segment. For example, `~/**` matches all paths under the
-> user's home directory, whereas `~/*` matches only paths directly under `~`.
-@z
-
-@x
 ## Precedence
 @y
 ## Precedence
 @z
 
 @x
-Within any layer, deny rules beat allow rules — if a domain matches both,
-it's blocked regardless of specificity.
-@y
-Within any layer, deny rules beat allow rules — if a domain matches both,
-it's blocked regardless of specificity.
-@z
-
-@x
 All outbound traffic is blocked by default unless an explicit rule allows it.
-How rules are evaluated depends on whether organization governance is active.
+If a domain matches both an allow and a deny rule, the deny rule wins
+regardless of specificity.
 @y
 All outbound traffic is blocked by default unless an explicit rule allows it.
-How rules are evaluated depends on whether organization governance is active.
+If a domain matches both an allow and a deny rule, the deny rule wins
+regardless of specificity.
 @z
 
 @x
-Without organization governance, local rules (`sbx policy`) are the only
-rules evaluated against this default-deny baseline.
+To unblock a domain, find the deny rule with `sbx policy ls` and remove it
+with `sbx policy rm`.
 @y
-Without organization governance, local rules (`sbx policy`) are the only
-rules evaluated against this default-deny baseline.
-@z
-
-@x
-With organization governance, local rules are not evaluated. Only
-organization rules (Docker Admin Console) determine what is allowed or
-denied. Organization-level denials can't be overridden locally.
-@y
-With organization governance, local rules are not evaluated. Only
-organization rules (Docker Admin Console) determine what is allowed or
-denied. Organization-level denials can't be overridden locally.
-@z
-
-@x
-If the admin turns on the **User defined** setting, local rules are also
-evaluated alongside organization rules. Local rules can expand access for
-domains the organization hasn't explicitly denied, but can't override
-organization-level denials.
-@y
-If the admin turns on the **User defined** setting, local rules are also
-evaluated alongside organization rules. Local rules can expand access for
-domains the organization hasn't explicitly denied, but can't override
-organization-level denials.
-@z
-
-@x
-The same model applies to filesystem policies: organization-level rules take
-precedence over local behavior.
-@y
-The same model applies to filesystem policies: organization-level rules take
-precedence over local behavior.
-@z
-
-@x
-To unblock a domain, identify where the deny rule comes from. For local rules,
-remove it with `sbx policy rm`. For organization-level rules, contact your
-organization admin.
-@y
-To unblock a domain, identify where the deny rule comes from. For local rules,
-remove it with `sbx policy rm`. For organization-level rules, contact your
-organization admin.
+To unblock a domain, find the deny rule with `sbx policy ls` and remove it
+with `sbx policy rm`.
 @z
 
 @x
@@ -781,27 +526,9 @@ organization admin.
 @x
 If policy changes aren't taking effect, run `sbx policy reset` to wipe the
 local policy store and restart the daemon. On next start, you are prompted to
-choose a new network policy, and the latest organization policies are pulled if
-governance is enabled.
+choose a new network policy.
 @y
 If policy changes aren't taking effect, run `sbx policy reset` to wipe the
 local policy store and restart the daemon. On next start, you are prompted to
-choose a new network policy, and the latest organization policies are pulled if
-governance is enabled.
-@z
-
-@x
-### Sandbox cannot mount workspace
-@y
-### Sandbox cannot mount workspace
-@z
-
-@x
-If a sandbox fails to mount with a `mount policy denied` error, verify that
-the filesystem allow rule uses `**` rather than `*`. A single `*` doesn't
-match across directory separators.
-@y
-If a sandbox fails to mount with a `mount policy denied` error, verify that
-the filesystem allow rule uses `**` rather than `*`. A single `*` doesn't
-match across directory separators.
+choose a new network policy.
 @z
