@@ -81,10 +81,10 @@ Take the following example:
 % snip code...
 
 @x
-This instructs Compose to re-use only the properties of the `webapp` service
+This instructs Compose to reuse only the properties of the `webapp` service
 defined in the `common-services.yml` file. The `webapp` service itself is not part of the final project.
 @y
-This instructs Compose to re-use only the properties of the `webapp` service
+This instructs Compose to reuse only the properties of the `webapp` service
 defined in the `common-services.yml` file. The `webapp` service itself is not part of the final project.
 @z
 

@@ -47,11 +47,9 @@ Before you begin, you must have:
 
 @x
 - A Docker Business subscription
-- Docker Desktop 4.13 or later
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) (for administrators managing organization-wide settings only)
 @y
 - A Docker Business subscription
-- Docker Desktop 4.13 or later
 - [Enforced sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) (for administrators managing organization-wide settings only)
 @z
 

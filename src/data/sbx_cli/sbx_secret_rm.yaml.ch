@@ -5,49 +5,45 @@
 name: sbx secret rm
 synopsis: Remove a secret
 usage: sbx secret rm [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Delete without confirmation prompt
-    - name: global
-      shorthand: g
-      default_value: "false"
-      usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Remove a global secret
-      sbx secret rm -g github
 @y
 name: sbx secret rm
 synopsis: Remove a secret
 usage: sbx secret rm [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
+@z
+
+% options:
+
+@x force
       usage: Delete without confirmation prompt
-    - name: global
-      shorthand: g
-      default_value: "false"
+@y
+      usage: Delete without confirmation prompt
+@z
+
+@x global
       usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Use global secret scope
+@z
+
+@x help
       usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for rm
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Remove a global secret
+      sbx secret rm -g github
+@y
 example: |4-
       # Remove a global secret
       sbx secret rm -g github
@@ -64,11 +60,23 @@ example: |4-
 @x
       # Remove without confirmation prompt
       sbx secret rm -g github -f
-see_also:
-    - sbx secret - Manage stored secrets
 @y
       # Remove without confirmation prompt
       sbx secret rm -g github -f
-see_also:
+@z
+
+@x
+      # Remove OpenAI credential(s) from global scope
+      sbx secret rm -g openai
+@y
+      # Remove OpenAI credential(s) from global scope
+      sbx secret rm -g openai
+@z
+
+% see_also:
+
+@x
+    - sbx secret - Manage stored secrets
+@y
     - sbx secret - Manage stored secrets
 @z

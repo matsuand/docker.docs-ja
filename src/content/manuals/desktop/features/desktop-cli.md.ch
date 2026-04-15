@@ -20,12 +20,6 @@ keywords: cli, docker desktop, macos, windows, linux
 @z
 
 @x
-{{< summary-bar feature_name="Docker Desktop CLI" >}}
-@y
-{{< summary-bar feature_name="Docker Desktop CLI" >}}
-@z
-
-@x
 The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and updating Docker Desktop directly from the command line.
 @y
 The Docker Desktop CLI lets you perform key operations such as starting, stopping, restarting, and updating Docker Desktop directly from the command line.
@@ -76,7 +70,7 @@ docker desktop COMMAND [OPTIONS]
 | `status`             | Displays whether Docker Desktop is running or stopped.       |
 | `engine ls`          | Lists available engines (Windows only)   |
 | `engine use`         | Switch between Linux and Windows containers (Windows only) |
-| `update`             | Manage Docker Desktop updates. Available for Mac only with Docker Desktop version 4.38, or all OSs with Docker Desktop version 4.39 and later. |
+| `update`             | Manage Docker Desktop updates. |
 | `logs`               | Print log entries                        |
 | `disable`            | Disable a feature                        |
 | `enable`             | Enable a feature                         | 
@@ -92,7 +86,7 @@ docker desktop COMMAND [OPTIONS]
 | `status`             | Displays whether Docker Desktop is running or stopped.       |
 | `engine ls`          | Lists available engines (Windows only)   |
 | `engine use`         | Switch between Linux and Windows containers (Windows only) |
-| `update`             | Manage Docker Desktop updates. Available for Mac only with Docker Desktop version 4.38, or all OSs with Docker Desktop version 4.39 and later. |
+| `update`             | Manage Docker Desktop updates. |
 | `logs`               | Print log entries                        |
 | `disable`            | Disable a feature                        |
 | `enable`             | Enable a feature                         | 

@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Plugin API
 description: "How to write Docker plugins extensions "
 keywords: "API, Usage, plugins, documentation, developer"
----
 @y
----
 title: Docker Plugin API
 description: "How to write Docker plugins extensions "
 keywords: "API, Usage, plugins, documentation, developer"
----
 @z
 
 @x
@@ -59,10 +55,10 @@ directories described in [Plugin discovery](#plugin-discovery).
 
 @x
 Plugins have human-readable names, which are short, lowercase strings. For
-example, `flocker` or `weave`.
+example, `myplugin`.
 @y
 Plugins have human-readable names, which are short, lowercase strings. For
-example, `flocker` or `weave`.
+example, `myplugin`.
 @z
 
 @x
@@ -126,21 +122,21 @@ The name of the file (excluding the extension) determines the plugin name.
 @z
 
 @x
-For example, the `flocker` plugin might create a Unix socket at
-`/run/docker/plugins/flocker.sock`.
+For example, a plugin named `myplugin` might create a Unix socket at
+`/run/docker/plugins/myplugin.sock`.
 @y
-For example, the `flocker` plugin might create a Unix socket at
-`/run/docker/plugins/flocker.sock`.
+For example, a plugin named `myplugin` might create a Unix socket at
+`/run/docker/plugins/myplugin.sock`.
 @z
 
 @x
 You can define each plugin into a separated subdirectory if you want to isolate definitions from each other.
-For example, you can create the `flocker` socket under `/run/docker/plugins/flocker/flocker.sock` and only
-mount `/run/docker/plugins/flocker` inside the `flocker` container.
+For example, you can create the `myplugin` socket under `/run/docker/plugins/myplugin/myplugin.sock` and only
+mount `/run/docker/plugins/myplugin` inside the `myplugin` container.
 @y
 You can define each plugin into a separated subdirectory if you want to isolate definitions from each other.
-For example, you can create the `flocker` socket under `/run/docker/plugins/flocker/flocker.sock` and only
-mount `/run/docker/plugins/flocker` inside the `flocker` container.
+For example, you can create the `myplugin` socket under `/run/docker/plugins/myplugin/myplugin.sock` and only
+mount `/run/docker/plugins/myplugin` inside the `myplugin` container.
 @z
 
 @x

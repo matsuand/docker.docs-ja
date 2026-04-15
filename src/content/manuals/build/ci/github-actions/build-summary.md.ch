@@ -85,12 +85,6 @@ message that caused the build to fail:
 @z
 
 @x
-{{< summary-bar feature_name="Import builds" >}}
-@y
-{{< summary-bar feature_name="Import builds" >}}
-@z
-
-@x
 The job summary includes a link for downloading a build record archive for the
 run. The build record archive is a ZIP file containing the details about a build
 (or builds, if you use `docker/bake-action` to build multiple targets). You can

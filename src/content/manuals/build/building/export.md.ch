@@ -43,11 +43,11 @@ exporter, called the `docker` exporter.
 
 @x
 To export your build results as files instead, you can use the `--output` flag,
-or `-o` for short. the `--output` flag lets you change the output format of
+or `-o` for short. The `--output` flag lets you change the output format of
 your build.
 @y
 To export your build results as files instead, you can use the `--output` flag,
-or `-o` for short. the `--output` flag lets you change the output format of
+or `-o` for short. The `--output` flag lets you change the output format of
 your build.
 @z
 

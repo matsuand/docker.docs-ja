@@ -255,9 +255,9 @@ An experimental package is available for [Arch](archlinux.md)-based distribution
 @z
 
 @x
-Docker supports Docker Desktop on the current LTS release of the aforementioned distributions and the most recent version. As new versions are made available, Docker stops supporting the oldest version and supports the newest version.
+Docker supports Docker Desktop on the current and previous LTS releases of the aforementioned distributions, as well as the most recent version.
 @y
-Docker supports Docker Desktop on the current LTS release of the aforementioned distributions and the most recent version. As new versions are made available, Docker stops supporting the oldest version and supports the newest version.
+Docker supports Docker Desktop on the current and previous LTS releases of the aforementioned distributions, as well as the most recent version.
 @z
 
 @x

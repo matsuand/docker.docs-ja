@@ -226,10 +226,10 @@ host for you. It's always created as a directory.
 @z
 
 @x
-`--mount` does not automatically create a directory if the specified mount
+By default, `--mount` does not automatically create a directory if the specified mount
 path does not exist on the host. Instead, it produces an error:
 @y
-`--mount` does not automatically create a directory if the specified mount
+By default, `--mount` does not automatically create a directory if the specified mount
 path does not exist on the host. Instead, it produces an error:
 @z
 
@@ -242,6 +242,24 @@ docker: Error response from daemon: invalid mount config for type "bind": bind s
 ```console
 $ docker run --mount type=bind,src=/dev/noexist,dst=/mnt/foo alpine
 docker: Error response from daemon: invalid mount config for type "bind": bind source path does not exist: /dev/noexist.
+```
+@z
+
+@x
+You can use the `bind-create-src` option to automatically create the source directory
+on the host if it doesn't exist:
+@y
+You can use the `bind-create-src` option to automatically create the source directory
+on the host if it doesn't exist:
+@z
+
+@x
+```console
+$ docker run --mount type=bind,src=/home/user/mydir,dst=/mnt/foo,bind-create-src alpine
+```
+@y
+```console
+$ docker run --mount type=bind,src=/home/user/mydir,dst=/mnt/foo,bind-create-src alpine
 ```
 @z
 
@@ -278,19 +296,21 @@ Valid options for `--mount type=bind` include:
 @z
 
 @x
-| Option                         | Description                                                                                                     |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                    |
-| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                     |
-| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount). |
-| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                        |
+| Option                         | Description                                                                                                                                                          |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                                                                        |
+| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                                                                         |
+| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).                                                     |
+| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                                                                            |
+| `bind-create-src`              | Automatically creates the source directory on the host if it doesn't exist. By default, `--mount` produces an error if the source path doesn't exist on the daemon. |
 @y
-| Option                         | Description                                                                                                     |
-| ------------------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                    |
-| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                     |
-| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount). |
-| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                        |
+| Option                         | Description                                                                                                                                                          |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                                                                        |
+| `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                                                                         |
+| `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).                                                     |
+| `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                                                                            |
+| `bind-create-src`              | Automatically creates the source directory on the host if it doesn't exist. By default, `--mount` produces an error if the source path doesn't exist on the daemon. |
 @z
 
 @x

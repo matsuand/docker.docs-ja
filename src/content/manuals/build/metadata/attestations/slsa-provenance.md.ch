@@ -148,12 +148,12 @@ such as:
 @z
 
 @x
-Values of build arguments, the identities of secrets, and rich layer metadata is
-not included `mode=min`. The `min`-level provenance is safe to use for all
+Values of build arguments, the identities of secrets, and rich layer metadata are
+not included in `mode=min`. The `min`-level provenance is safe to use for all
 builds, as it doesn't leak information from any part of the build environment.
 @y
-Values of build arguments, the identities of secrets, and rich layer metadata is
-not included `mode=min`. The `min`-level provenance is safe to use for all
+Values of build arguments, the identities of secrets, and rich layer metadata are
+not included in `mode=min`. The `min`-level provenance is safe to use for all
 builds, as it doesn't leak information from any part of the build environment.
 @z
 

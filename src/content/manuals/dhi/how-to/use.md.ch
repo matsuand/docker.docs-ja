@@ -39,30 +39,32 @@ package manager, and may run as a non-root user by default.
 > [!IMPORTANT]
 >
 > You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull images. You can authenticate using either of the following:
+> pull DHI Community images. You can authenticate using either of the following:
 >
-> - **Docker ID (personal credentials):** Use the same username and password
->   you use for Docker Hub. If you don't have a Docker account,
->   [create one](../../accounts/create-account.md) for free.
-> - **Organization access token (OAT):** Use your organization name as the
->   username and an OAT as the password. OATs are recommended for CI/CD
->   pipelines and automated workflows. See
->   [Organization access tokens](../../enterprise/security/access-tokens.md).
+> - **Docker ID and password:** Use your Docker Hub username and password. If
+>   you don't have a Docker account, [create one](../../accounts/create-account.md)
+>   for free.
+> - **Access token:** Use a [personal access token
+>   (PAT)](../../security/access-tokens.md) for personal accounts, or an
+>   [organization access token
+>   (OAT)](../../enterprise/security/access-tokens.md) with your organization
+>   name as the username.
 >
 > Run `docker login dhi.io` to authenticate.
 @y
 > [!IMPORTANT]
 >
 > You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull images. You can authenticate using either of the following:
+> pull DHI Community images. You can authenticate using either of the following:
 >
-> - **Docker ID (personal credentials):** Use the same username and password
->   you use for Docker Hub. If you don't have a Docker account,
->   [create one](../../accounts/create-account.md) for free.
-> - **Organization access token (OAT):** Use your organization name as the
->   username and an OAT as the password. OATs are recommended for CI/CD
->   pipelines and automated workflows. See
->   [Organization access tokens](../../enterprise/security/access-tokens.md).
+> - **Docker ID and password:** Use your Docker Hub username and password. If
+>   you don't have a Docker account, [create one](../../accounts/create-account.md)
+>   for free.
+> - **Access token:** Use a [personal access token
+>   (PAT)](../../security/access-tokens.md) for personal accounts, or an
+>   [organization access token
+>   (OAT)](../../enterprise/security/access-tokens.md) with your organization
+>   name as the username.
 >
 > Run `docker login dhi.io` to authenticate.
 @z
@@ -74,165 +76,81 @@ package manager, and may run as a non-root user by default.
 @z
 
 @x
-Docker Hardened Images are intentionally minimal to improve security. If you're updating existing Dockerfiles or frameworks to use DHIs, keep the considerations in mind:
+Docker Hardened Images are intentionally minimal to improve security. If you're
+updating existing Dockerfiles or frameworks to use DHIs, keep in mind that
+runtime images don't include shells or package managers, run as non-root users
+by default, and may have different configurations than images you're familiar
+with.
 @y
-Docker Hardened Images are intentionally minimal to improve security. If you're updating existing Dockerfiles or frameworks to use DHIs, keep the considerations in mind:
+Docker Hardened Images are intentionally minimal to improve security. If you're
+updating existing Dockerfiles or frameworks to use DHIs, keep in mind that
+runtime images don't include shells or package managers, run as non-root users
+by default, and may have different configurations than images you're familiar
+with.
 @z
 
 @x
-| Feature            | Details                                                                                                                                                                                                                                               |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| No shell or package manager | Runtime images don’t include a shell or package manager. Use `-dev` or `-sdk` variants in build stages to run shell commands or install packages, and then copy artifacts to a minimal runtime image.                                         |
-| Non-root runtime    | Runtime DHIs default to running as a non-root user. Ensure your application doesn't require privileged access and that all needed files are readable and executable by a non-root user.                                                             |
-| Ports               | Applications running as non-root users can't bind to ports lower than 1024 in older versions of Docker or in some Kubernetes configurations. Use ports higher than 1024 for compatibility.                                             |
-| Entry point         | DHIs may not include a default entrypoint or might use a different one than the original image you're familiar with. Check the image configuration and update your `CMD` or `ENTRYPOINT` directives accordingly.                                        |
-| Multi-stage builds  | Always use multi-stage builds for frameworks: a `-dev` image for building or installing dependencies, and a minimal runtime image for the final stage.                                                                                                              |
-| TLS certificates    | DHIs include standard TLS certificates. You do not need to manually install CA certs.                                                                                                                                                               |
+For a comprehensive checklist of migration considerations and detailed guidance,
+see [Migrate to Docker Hardened Images](../migration/_index.md).
 @y
-| Feature            | Details                                                                                                                                                                                                                                               |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| No shell or package manager | Runtime images don’t include a shell or package manager. Use `-dev` or `-sdk` variants in build stages to run shell commands or install packages, and then copy artifacts to a minimal runtime image.                                         |
-| Non-root runtime    | Runtime DHIs default to running as a non-root user. Ensure your application doesn't require privileged access and that all needed files are readable and executable by a non-root user.                                                             |
-| Ports               | Applications running as non-root users can't bind to ports lower than 1024 in older versions of Docker or in some Kubernetes configurations. Use ports higher than 1024 for compatibility.                                             |
-| Entry point         | DHIs may not include a default entrypoint or might use a different one than the original image you're familiar with. Check the image configuration and update your `CMD` or `ENTRYPOINT` directives accordingly.                                        |
-| Multi-stage builds  | Always use multi-stage builds for frameworks: a `-dev` image for building or installing dependencies, and a minimal runtime image for the final stage.                                                                                                              |
-| TLS certificates    | DHIs include standard TLS certificates. You do not need to manually install CA certs.                                                                                                                                                               |
+For a comprehensive checklist of migration considerations and detailed guidance,
+see [Migrate to Docker Hardened Images](../migration/_index.md).
 @z
 
 @x
-If you're migrating an existing application, see  [Migrate an existing application to use Docker Hardened Images](../migration/_index.md).
+## Pull, run, and reference DHIs
 @y
-If you're migrating an existing application, see  [Migrate an existing application to use Docker Hardened Images](../migration/_index.md).
+## Pull, run, and reference DHIs
 @z
 
 @x
-## Use a DHI in a Dockerfile
+Docker Hardened Images use different image references depending on your
+subscription:
 @y
-## Use a DHI in a Dockerfile
+Docker Hardened Images use different image references depending on your
+subscription:
 @z
 
 @x
-To use a DHI as the base image for your container, specify it in the `FROM` instruction in your Dockerfile:
+| Subscription        | Image reference            | Authentication        |
+|---------------------|----------------------------|-----------------------|
+| Community           | `dhi.io/<image>:<tag>`     | `docker login dhi.io` |
+| Select & Enterprise | `<your-org>/<image>:<tag>` | `docker login`        |
 @y
-To use a DHI as the base image for your container, specify it in the `FROM` instruction in your Dockerfile:
+| Subscription        | Image reference            | Authentication        |
+|---------------------|----------------------------|-----------------------|
+| Community           | `dhi.io/<image>:<tag>`     | `docker login dhi.io` |
+| Select & Enterprise | `<your-org>/<image>:<tag>` | `docker login`        |
 @z
 
 @x
-```dockerfile
-FROM dhi.io/<image>:<tag>
-```
+Select and Enterprise users should [mirror](./mirror.md) repositories to their
+Docker Hub organization to access compliance variants and customization
+features.
 @y
-```dockerfile
-FROM dhi.io/<image>:<tag>
-```
+Select and Enterprise users should [mirror](./mirror.md) repositories to their
+Docker Hub organization to access compliance variants and customization
+features.
 @z
 
 @x
-Replace the image name and tag with the variant you want to use. For example,
-use a `-dev` tag if you need a shell or package manager during build stages:
+After authenticating, use the image reference in standard Docker commands and
+Dockerfiles. For example:
 @y
-Replace the image name and tag with the variant you want to use. For example,
-use a `-dev` tag if you need a shell or package manager during build stages:
-@z
-
-@x
-```dockerfile
-FROM dhi.io/python:3.13-dev AS build
-```
-@y
-```dockerfile
-FROM dhi.io/python:3.13-dev AS build
-```
-@z
-
-@x
-To learn how to search for available variants, see [Search and evaluate images](./explore.md).
-@y
-To learn how to search for available variants, see [Search and evaluate images](./explore.md).
-@z
-
-@x
-> [!TIP]
->
-> Use a multi-stage Dockerfile to separate build and runtime stages, using a
-> `-dev` variant in build stages and a minimal runtime image in the final stage.
-@y
-> [!TIP]
->
-> Use a multi-stage Dockerfile to separate build and runtime stages, using a
-> `-dev` variant in build stages and a minimal runtime image in the final stage.
-@z
-
-@x
-## Pull a DHI
-@y
-## Pull a DHI
-@z
-
-@x
-Just like any other image, you can pull DHIs using tools such as
-the Docker CLI or within your CI pipelines.
-@y
-Just like any other image, you can pull DHIs using tools such as
-the Docker CLI or within your CI pipelines.
-@z
-
-@x
-You can pull Docker Hardened Images from three different locations depending on your needs:
-@y
-You can pull Docker Hardened Images from three different locations depending on your needs:
-@z
-
-@x
-- Directly from `dhi.io`
-- From a mirror on Docker Hub
-- From a mirror on a third-party registry
-@y
-- Directly from `dhi.io`
-- From a mirror on Docker Hub
-- From a mirror on a third-party registry
-@z
-
-@x
-To understand which approach is right for your use case, see [Mirror a Docker Hardened Image repository](./mirror.md).
-@y
-To understand which approach is right for your use case, see [Mirror a Docker Hardened Image repository](./mirror.md).
-@z
-
-@x
-The following sections show how to pull images from each location.
-@y
-The following sections show how to pull images from each location.
-@z
-
-@x
-### Pull directly from dhi.io
-@y
-### Pull directly from dhi.io
-@z
-
-@x
-After authenticating to `dhi.io`, you can pull images using standard Docker commands:
-@y
-After authenticating to `dhi.io`, you can pull images using standard Docker commands:
+After authenticating, use the image reference in standard Docker commands and
+Dockerfiles. For example:
 @z
 
 @x
 ```console
-$ docker login dhi.io
 $ docker pull dhi.io/python:3.13
+$ docker run --rm dhi.io/python:3.13 python -c "print('Hello from DHI')"
 ```
 @y
 ```console
-$ docker login dhi.io
 $ docker pull dhi.io/python:3.13
+$ docker run --rm dhi.io/python:3.13 python -c "print('Hello from DHI')"
 ```
-@z
-
-@x
-Reference images in your Dockerfile:
-@y
-Reference images in your Dockerfile:
 @z
 
 @x
@@ -250,123 +168,29 @@ CMD ["python", "/app/main.py"]
 @z
 
 @x
-### Pull from a mirror on Docker Hub
+For multi-stage builds:
+- Use a `-dev` tag for build stages that need a shell or package manager. See
+  [Use dev variants for framework-based
+  applications](#use-dev-variants-for-framework-based-applications).
+- Use the `static` image for compiled executables with minimal runtime
+  dependencies. See [Use a static image for compiled
+  executables](#use-a-static-image-for-compiled-executables).
 @y
-### Pull from a mirror on Docker Hub
+For multi-stage builds:
+- Use a `-dev` tag for build stages that need a shell or package manager. See
+  [Use dev variants for framework-based
+  applications](#use-dev-variants-for-framework-based-applications).
+- Use the `static` image for compiled executables with minimal runtime
+  dependencies. See [Use a static image for compiled
+  executables](#use-a-static-image-for-compiled-executables).
 @z
 
 @x
-Once you've mirrored a repository to Docker Hub, you can pull images from your organization's namespace:
+To learn how to search for available variants, see [Search and evaluate
+images](./explore.md).
 @y
-Once you've mirrored a repository to Docker Hub, you can pull images from your organization's namespace:
-@z
-
-@x
-```console
-$ docker login
-$ docker pull <your-namespace>/dhi-python:3.13
-```
-@y
-```console
-$ docker login
-$ docker pull <your-namespace>/dhi-python:3.13
-```
-@z
-
-@x
-Reference mirrored images in your Dockerfile:
-@y
-Reference mirrored images in your Dockerfile:
-@z
-
-@x
-```dockerfile
-FROM <your-namespace>/dhi-python:3.13
-COPY . /app
-CMD ["python", "/app/main.py"]
-```
-@y
-```dockerfile
-FROM <your-namespace>/dhi-python:3.13
-COPY . /app
-CMD ["python", "/app/main.py"]
-```
-@z
-
-@x
-To learn how to mirror repositories, see [Mirror a DHI repository to Docker Hub](./mirror.md#mirror-a-dhi-repository-to-docker-hub).
-@y
-To learn how to mirror repositories, see [Mirror a DHI repository to Docker Hub](./mirror.md#mirror-a-dhi-repository-to-docker-hub).
-@z
-
-@x
-### Pull from a mirror on a third-party registry
-@y
-### Pull from a mirror on a third-party registry
-@z
-
-@x
-Once you've mirrored a repository to your third-party registry, you can pull images:
-@y
-Once you've mirrored a repository to your third-party registry, you can pull images:
-@z
-
-@x
-```console
-$ docker pull <your-registry>/<your-namespace>/python:3.13
-```
-@y
-```console
-$ docker pull <your-registry>/<your-namespace>/python:3.13
-```
-@z
-
-@x
-Reference third-party mirrored images in your Dockerfile:
-@y
-Reference third-party mirrored images in your Dockerfile:
-@z
-
-@x
-```dockerfile
-FROM <your-registry>/<your-namespace>/python:3.13
-COPY . /app
-CMD ["python", "/app/main.py"]
-```
-@y
-```dockerfile
-FROM <your-registry>/<your-namespace>/python:3.13
-COPY . /app
-CMD ["python", "/app/main.py"]
-```
-@z
-
-@x
-To learn more, see [Mirror to a third-party registry](./mirror.md#mirror-to-a-third-party-registry).
-@y
-To learn more, see [Mirror to a third-party registry](./mirror.md#mirror-to-a-third-party-registry).
-@z
-
-@x
-## Run a DHI
-@y
-## Run a DHI
-@z
-
-@x
-After pulling the image, you can run it using `docker run`. For example:
-@y
-After pulling the image, you can run it using `docker run`. For example:
-@z
-
-@x
-```console
-$ docker run --rm dhi.io/python:3.13 python -c "print('Hello from DHI')"
-```
-@y
-```console
-$ docker run --rm dhi.io/python:3.13 python -c "print('Hello from DHI')"
-```
+To learn how to search for available variants, see [Search and evaluate
+images](./explore.md).
 @z
 
 @x
@@ -399,14 +223,14 @@ security, policy checks, or audit requirements if your tooling supports it.
 
 @x
 To strengthen your software supply chain, consider adding your own attestations
-when building images from DHIs. This lets you document how the image was
-built, verify its integrity, and enable downstream validation and policy
-enforcement using tools like Docker Scout.
+when building images from DHIs. This lets you document how the image was built,
+verify its integrity, and enable downstream validation and policy enforcement
+using tools like Docker Scout.
 @y
 To strengthen your software supply chain, consider adding your own attestations
-when building images from DHIs. This lets you document how the image was
-built, verify its integrity, and enable downstream validation and policy
-enforcement using tools like Docker Scout.
+when building images from DHIs. This lets you document how the image was built,
+verify its integrity, and enable downstream validation and policy enforcement
+using tools like Docker Scout.
 @z
 
 @x
@@ -426,53 +250,31 @@ Attestations](manuals/build/metadata/attestations.md).
 @x
 Docker Hardened Images include a `static` image repository designed specifically
 for running compiled executables in an extremely minimal and secure runtime.
+Unlike a non-hardened `FROM scratch` image, the DHI `static` image includes
+attestations and essential packages like `ca-certificates`.
 @y
 Docker Hardened Images include a `static` image repository designed specifically
 for running compiled executables in an extremely minimal and secure runtime.
+Unlike a non-hardened `FROM scratch` image, the DHI `static` image includes
+attestations and essential packages like `ca-certificates`.
 @z
 
 @x
-Unlike a non-hardened `FROM scratch` image, the DHI `static` image includes all
-the attestations needed to verify its integrity and provenance. Although it is
-minimal, it includes the common packages needed to run containers securely, such
-as `ca-certificates`.
+Use a `-dev` or other builder image to compile your binary, then copy the output
+into a `static` image:
 @y
-Unlike a non-hardened `FROM scratch` image, the DHI `static` image includes all
-the attestations needed to verify its integrity and provenance. Although it is
-minimal, it includes the common packages needed to run containers securely, such
-as `ca-certificates`.
-@z
-
-@x
-Use a `-dev` or other builder image in an earlier stage to compile your binary,
-and copy the output into a `static` image.
-@y
-Use a `-dev` or other builder image in an earlier stage to compile your binary,
-and copy the output into a `static` image.
-@z
-
-@x
-The following example shows a multi-stage Dockerfile that builds a Go application
-and runs it in a minimal static image:
-@y
-The following example shows a multi-stage Dockerfile that builds a Go application
-and runs it in a minimal static image:
+Use a `-dev` or other builder image to compile your binary, then copy the output
+into a `static` image:
 @z
 
 @x
 ```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
 FROM dhi.io/golang:1.22-dev AS build
 WORKDIR /app
 COPY . .
 RUN CGO_ENABLED=0 go build -o myapp
 @y
+```dockerfile
 FROM dhi.io/golang:1.22-dev AS build
 WORKDIR /app
 COPY . .
@@ -492,11 +294,11 @@ ENTRYPOINT ["/myapp"]
 @z
 
 @x
-This pattern ensures a hardened runtime environment with no unnecessary
-components, reducing the attack surface to a bare minimum.
+For more multi-stage build patterns, see the [Go migration
+example](../migration/examples/go.md).
 @y
-This pattern ensures a hardened runtime environment with no unnecessary
-components, reducing the attack surface to a bare minimum.
+For more multi-stage build patterns, see the [Go migration
+example](../migration/examples/go.md).
 @z
 
 @x
@@ -530,119 +332,23 @@ switch to a smaller runtime variant to reduce the attack surface and image size.
 @z
 
 @x
-Dev variants are typically configured with no `ENTRYPOINT` and a default `CMD` that
-launches a shell (for example, ["/bin/bash"]). In those cases, running the
-container without additional arguments starts an interactive shell by default.
+For detailed multi-stage Dockerfile examples using dev variants, see the
+migration examples:
+- [Go](../migration/examples/go.md)
+- [Python](../migration/examples/python.md)
+- [Node.js](../migration/examples/node.md)
 @y
-Dev variants are typically configured with no `ENTRYPOINT` and a default `CMD` that
-launches a shell (for example, ["/bin/bash"]). In those cases, running the
-container without additional arguments starts an interactive shell by default.
+For detailed multi-stage Dockerfile examples using dev variants, see the
+migration examples:
+- [Go](../migration/examples/go.md)
+- [Python](../migration/examples/python.md)
+- [Node.js](../migration/examples/node.md)
 @z
 
 @x
-The following example shows how to build a Python app using a `-dev` variant and
-run it using the smaller runtime variant:
+## Use compliance and ELS variants {tier="DHI Select & Enterprise"}
 @y
-The following example shows how to build a Python app using a `-dev` variant and
-run it using the smaller runtime variant:
-@z
-
-@x
-```dockerfile
-#syntax=docker/dockerfile:1
-@y
-```dockerfile
-#syntax=docker/dockerfile:1
-@z
-
-@x
-FROM dhi.io/python:3.13-alpine3.21-dev AS builder
-@y
-FROM dhi.io/python:3.13-alpine3.21-dev AS builder
-@z
-
-@x
-ENV LANG=C.UTF-8
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV PATH="/app/venv/bin:$PATH"
-@y
-ENV LANG=C.UTF-8
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV PATH="/app/venv/bin:$PATH"
-@z
-
-@x
-WORKDIR /app
-@y
-WORKDIR /app
-@z
-
-@x
-RUN python -m venv /app/venv
-COPY requirements.txt .
-@y
-RUN python -m venv /app/venv
-COPY requirements.txt .
-@z
-
-@x
-RUN pip install --no-cache-dir -r requirements.txt
-@y
-RUN pip install --no-cache-dir -r requirements.txt
-@z
-
-@x
-FROM dhi.io/python:3.13-alpine3.21
-@y
-FROM dhi.io/python:3.13-alpine3.21
-@z
-
-@x
-WORKDIR /app
-@y
-WORKDIR /app
-@z
-
-@x
-ENV PYTHONUNBUFFERED=1
-ENV PATH="/app/venv/bin:$PATH"
-@y
-ENV PYTHONUNBUFFERED=1
-ENV PATH="/app/venv/bin:$PATH"
-@z
-
-@x
-COPY image.py image.png ./
-COPY --from=builder /app/venv /app/venv
-@y
-COPY image.py image.png ./
-COPY --from=builder /app/venv /app/venv
-@z
-
-@x
-ENTRYPOINT [ "python", "/app/image.py" ]
-```
-@y
-ENTRYPOINT [ "python", "/app/image.py" ]
-```
-@z
-
-@x
-This pattern separates the build environment from the runtime environment,
-helping reduce image size and improve security by removing unnecessary tooling
-from the final image.
-@y
-This pattern separates the build environment from the runtime environment,
-helping reduce image size and improve security by removing unnecessary tooling
-from the final image.
-@z
-
-@x
-## Use compliance variants {tier="DHI Select & Enterprise"}
-@y
-## Use compliance variants {tier="DHI Select & Enterprise"}
+## Use compliance and ELS variants {tier="DHI Select & Enterprise"}
 @z
 
 @x
@@ -652,21 +358,295 @@ from the final image.
 @z
 
 @x
-When you have a DHI Select or DHI Enterprise subscription, you can access
-compliance variants such as FIPS-enabled and STIG-ready images. These
-variants help meet regulatory and compliance requirements for secure
-deployments.
+With a DHI Select or DHI Enterprise subscription, you can access additional
+image variants:
 @y
-When you have a DHI Select or DHI Enterprise subscription, you can access
-compliance variants such as FIPS-enabled and STIG-ready images. These
-variants help meet regulatory and compliance requirements for secure
-deployments.
+With a DHI Select or DHI Enterprise subscription, you can access additional
+image variants:
 @z
 
 @x
-To use a compliance variant, you must first [mirror](./mirror.md) the
-repository, and then pull the compliance image from your mirrored repository.
+- Compliance variants: FIPS-enabled and STIG-ready images for regulatory
+  requirements
+- ELS (Extended Lifecycle Support) variants (requires add-on): Security patches
+  for end-of-life image versions
 @y
-To use a compliance variant, you must first [mirror](./mirror.md) the
-repository, and then pull the compliance image from your mirrored repository.
+- Compliance variants: FIPS-enabled and STIG-ready images for regulatory
+  requirements
+- ELS (Extended Lifecycle Support) variants (requires add-on): Security patches
+  for end-of-life image versions
+@z
+
+@x
+To access these variants, [mirror](./mirror.md) the repository to your Docker
+Hub organization. For ELS, enable **Mirror end-of-life images** when setting up
+mirroring. Once mirrored, use the compliance or EOL tags like any other image
+tag.
+@y
+To access these variants, [mirror](./mirror.md) the repository to your Docker
+Hub organization. For ELS, enable **Mirror end-of-life images** when setting up
+mirroring. Once mirrored, use the compliance or EOL tags like any other image
+tag.
+@z
+
+@x
+## Use with Kubernetes
+@y
+## Use with Kubernetes
+@z
+
+@x
+When deploying Docker Hardened Images to Kubernetes, the process is similar to
+using any other container image with one key difference: you must configure
+image pull secrets to authenticate to the DHI registry. This applies whether
+you're pulling directly from `dhi.io`, from a mirror on Docker Hub, or from
+your own third-party registry.
+@y
+When deploying Docker Hardened Images to Kubernetes, the process is similar to
+using any other container image with one key difference: you must configure
+image pull secrets to authenticate to the DHI registry. This applies whether
+you're pulling directly from `dhi.io`, from a mirror on Docker Hub, or from
+your own third-party registry.
+@z
+
+@x
+### Create an image pull secret
+@y
+### Create an image pull secret
+@z
+
+@x
+You can create an image pull secret using either an access token or Docker Desktop credentials.
+@y
+You can create an image pull secret using either an access token or Docker Desktop credentials.
+@z
+
+@x
+For the `--docker-server` value:
+- Use `dhi.io` for community images pulled directly from Docker Hardened Images
+- Use `docker.io` for mirrored repositories on Docker Hub
+- Use your registry's hostname for third-party registries
+@y
+For the `--docker-server` value:
+- Use `dhi.io` for community images pulled directly from Docker Hardened Images
+- Use `docker.io` for mirrored repositories on Docker Hub
+- Use your registry's hostname for third-party registries
+@z
+
+@x
+#### Using an access token
+@y
+#### Using an access token
+@z
+
+@x
+Create a secret using a [Personal Access Token
+(PAT)](../../security/access-tokens.md) or [Organization Access Token
+(OAT)](../../enterprise/security/access-tokens.md). Ensure the token has at
+least read-only access to the repositories.
+@y
+Create a secret using a [Personal Access Token
+(PAT)](../../security/access-tokens.md) or [Organization Access Token
+(OAT)](../../enterprise/security/access-tokens.md). Ensure the token has at
+least read-only access to the repositories.
+@z
+
+@x
+```console
+$ kubectl create -n <kubernetes namespace> secret docker-registry <secret name> --docker-server=<registry server> \
+        --docker-username=<registry user> --docker-password=<access token> \
+        --docker-email=<registry email>
+```
+@y
+```console
+$ kubectl create -n <kubernetes namespace> secret docker-registry <secret name> --docker-server=<registry server> \
+        --docker-username=<registry user> --docker-password=<access token> \
+        --docker-email=<registry email>
+```
+@z
+
+@x
+#### Using Docker Desktop credentials
+@y
+#### Using Docker Desktop credentials
+@z
+
+@x
+If you're already authenticated with Docker Desktop, you can create a secret
+using your stored credentials. This method works for registries you've
+authenticated to via Docker Desktop (using `docker login <registry>`).
+@y
+If you're already authenticated with Docker Desktop, you can create a secret
+using your stored credentials. This method works for registries you've
+authenticated to via Docker Desktop (using `docker login <registry>`).
+@z
+
+@x
+```console
+$ NS=<namespace>
+$ kubectl create -n ${NS} secret docker-registry dhi-pull-secret \
+    --docker-server=<registry server> \
+    --docker-username=<registry user> \
+    --docker-password="$(echo https://<registry server> | docker-credential-desktop get | jq -r .Secret)" \
+    --docker-email=<registry email>
+```
+@y
+```console
+$ NS=<namespace>
+$ kubectl create -n ${NS} secret docker-registry dhi-pull-secret \
+    --docker-server=<registry server> \
+    --docker-username=<registry user> \
+    --docker-password="$(echo https://<registry server> | docker-credential-desktop get | jq -r .Secret)" \
+    --docker-email=<registry email>
+```
+@z
+
+@x
+This method extracts credentials from Docker Desktop's credential store, avoiding the need to create a separate access token for local development.
+@y
+This method extracts credentials from Docker Desktop's credential store, avoiding the need to create a separate access token for local development.
+@z
+
+@x
+### Test the image pull secret
+@y
+### Test the image pull secret
+@z
+
+@x
+After creating the secret, verify it works by deploying a test pod that
+references the secret in its `imagePullSecrets` configuration.
+@y
+After creating the secret, verify it works by deploying a test pod that
+references the secret in its `imagePullSecrets` configuration.
+@z
+
+@x
+Create a test pod:
+@y
+Create a test pod:
+@z
+
+@x
+```console
+kubectl apply --wait -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dhi-test
+  namespace: <kubernetes namespace>
+spec:
+  containers:
+  - name: test
+    image: bash:5
+    command: [ "sh", "-c", "echo 'Hello from DHI in Kubernetes!'" ]
+  imagePullSecrets:
+  - name: <secret name>
+EOF
+```
+@y
+```console
+kubectl apply --wait -f - <<EOF
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dhi-test
+  namespace: <kubernetes namespace>
+spec:
+  containers:
+  - name: test
+    image: bash:5
+    command: [ "sh", "-c", "echo 'Hello from DHI in Kubernetes!'" ]
+  imagePullSecrets:
+  - name: <secret name>
+EOF
+```
+@z
+
+@x
+Check the pod status to ensure it completed successfully:
+@y
+Check the pod status to ensure it completed successfully:
+@z
+
+@x
+```console
+$ kubectl get -n <kubernetes namespace> pods/dhi-test
+```
+@y
+```console
+$ kubectl get -n <kubernetes namespace> pods/dhi-test
+```
+@z
+
+@x
+A successful test shows `Completed` status:
+@y
+A successful test shows `Completed` status:
+@z
+
+@x
+```console
+NAME       READY   STATUS      RESTARTS     AGE
+dhi-test   0/1     Completed   ...          ...
+```
+@y
+```console
+NAME       READY   STATUS      RESTARTS     AGE
+dhi-test   0/1     Completed   ...          ...
+```
+@z
+
+@x
+If you see `ErrImagePull` status instead, there's an issue with your secret
+configuration:
+@y
+If you see `ErrImagePull` status instead, there's an issue with your secret
+configuration:
+@z
+
+@x
+```console
+NAME       READY   STATUS         RESTARTS   AGE
+dhi-test   0/1     ErrImagePull   0          ...
+```
+@y
+```console
+NAME       READY   STATUS         RESTARTS   AGE
+dhi-test   0/1     ErrImagePull   0          ...
+```
+@z
+
+@x
+Verify the pod output matches the expected message:
+@y
+Verify the pod output matches the expected message:
+@z
+
+@x
+```console
+$ kubectl logs -n <kubernetes namespace> pods/dhi-test
+Hello from DHI in Kubernetes!
+```
+@y
+```console
+$ kubectl logs -n <kubernetes namespace> pods/dhi-test
+Hello from DHI in Kubernetes!
+```
+@z
+
+@x
+Clean up the test pod:
+@y
+Clean up the test pod:
+@z
+
+@x
+```console
+$ kubectl delete -n <kubernetes namespace> pods/dhi-test
+```
+@y
+```console
+$ kubectl delete -n <kubernetes namespace> pods/dhi-test
+```
 @z

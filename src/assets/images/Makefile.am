@@ -9,6 +9,7 @@ copyfiles = \
 	docker-docs-white-condensed.svg \
 	docker-docs-white.svg           \
 	gordon-logo.svg                 \
+	gordon-robot.svg                \
 	home-abstract-faint.svg         \
 	thumbnail.webp
 

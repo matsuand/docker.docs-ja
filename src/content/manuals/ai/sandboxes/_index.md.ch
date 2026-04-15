@@ -89,6 +89,32 @@ $ sbx login
 
 @x
 {{< /tab >}}
+{{< tab name="Linux (Ubuntu)" >}}
+@y
+{{< /tab >}}
+{{< tab name="Linux (Ubuntu)" >}}
+@z
+
+@x
+```console
+$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
+$ sudo apt-get install docker-sbx
+$ sudo usermod -aG kvm $USER
+$ newgrp kvm
+$ sbx login
+```
+@y
+```console
+$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
+$ sudo apt-get install docker-sbx
+$ sudo usermod -aG kvm $USER
+$ newgrp kvm
+$ sbx login
+```
+@z
+
+@x
+{{< /tab >}}
 {{< /tabs >}}
 @y
 {{< /tab >}}

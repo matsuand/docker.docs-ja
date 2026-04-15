@@ -133,12 +133,12 @@ in the Docker Engine topics.
 
 @x
 You can add your client certificates
-in `~/.docker/certs.d/<MyRegistry><Port>/client.cert` and
-`~/.docker/certs.d/<MyRegistry><Port>/client.key`. You do not need to push your certificates with `git` commands.
+in `~/.docker/certs.d/<MyRegistry>:<Port>/client.cert` and
+`~/.docker/certs.d/<MyRegistry>:<Port>/client.key`. You do not need to push your certificates with `git` commands.
 @y
 You can add your client certificates
-in `~/.docker/certs.d/<MyRegistry><Port>/client.cert` and
-`~/.docker/certs.d/<MyRegistry><Port>/client.key`. You do not need to push your certificates with `git` commands.
+in `~/.docker/certs.d/<MyRegistry>:<Port>/client.cert` and
+`~/.docker/certs.d/<MyRegistry>:<Port>/client.key`. You do not need to push your certificates with `git` commands.
 @z
 
 @x

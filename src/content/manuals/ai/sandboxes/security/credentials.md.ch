@@ -334,9 +334,9 @@ The proxy reads the variable from your terminal session. See individual
 - Don't set API keys manually inside the sandbox. Credentials stored in
   environment variables or configuration files inside the VM are readable by
   the agent process directly.
-- For Claude Code, the interactive OAuth flow is another secure option: the
-  proxy handles authentication without exposing the token inside the sandbox.
-  Leave `ANTHROPIC_API_KEY` unset to use OAuth.
+- For Claude Code and Codex, OAuth is another secure option: the flow runs on
+  the host, so the token is never exposed inside the sandbox. For Claude Code,
+  use `/login` inside the agent. For Codex, run `sbx secret set -g openai --oauth`.
 @y
 - Use [stored secrets](#stored-secrets) over environment variables. The OS
   keychain encrypts credentials at rest and controls access, while environment
@@ -344,9 +344,9 @@ The proxy reads the variable from your terminal session. See individual
 - Don't set API keys manually inside the sandbox. Credentials stored in
   environment variables or configuration files inside the VM are readable by
   the agent process directly.
-- For Claude Code, the interactive OAuth flow is another secure option: the
-  proxy handles authentication without exposing the token inside the sandbox.
-  Leave `ANTHROPIC_API_KEY` unset to use OAuth.
+- For Claude Code and Codex, OAuth is another secure option: the flow runs on
+  the host, so the token is never exposed inside the sandbox. For Claude Code,
+  use `/login` inside the agent. For Codex, run `sbx secret set -g openai --oauth`.
 @z
 
 @x

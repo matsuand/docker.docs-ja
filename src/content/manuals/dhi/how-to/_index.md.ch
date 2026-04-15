@@ -5,10 +5,10 @@
 
 @x
 title: How-tos
-description: Step-by-step guidance for working with Docker Hardened Images, from discovery to debugging.
+description: Step-by-step guidance for working with Docker Hardened Images, from discovery to governance.
 @y
 title: ハウツー
-description: Step-by-step guidance for working with Docker Hardened Images, from discovery to debugging.
+description: Step-by-step guidance for working with Docker Hardened Images, from discovery to governance.
 @z
 
 % grid_discover:
@@ -88,18 +88,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @z
 
 @x
-    - title: Use a Docker Hardened Image in Kubernetes
-      description: Learn how to use Docker Hardened Images in Kubernetes deployments.
-      icon: play_arrow
-      link: /dhi/how-to/k8s/
-@y
-    - title: Use a Docker Hardened Image in Kubernetes
-      description: Learn how to use Docker Hardened Images in Kubernetes deployments.
-      icon: play_arrow
-      link: __SUBDIR__/dhi/how-to/k8s/
-@z
-
-@x
     - title: Use a Docker Hardened Image chart
       description: Learn how to use a Docker Hardened Image chart.
       icon: leaderboard
@@ -109,18 +97,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       description: Learn how to use a Docker Hardened Image chart.
       icon: leaderboard
       link: __SUBDIR__/dhi/how-to/helm/
-@z
-
-@x
-    - title: Use Extended Lifecycle Support for Docker Hardened Images
-      description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
-      icon: update
-      link: /dhi/how-to/els/
-@y
-    - title: Use Extended Lifecycle Support for Docker Hardened Images
-      description: Learn how to use Extended Lifecycle Support with Docker Hardened Images.
-      icon: update
-      link: /dhi/how-to/els/
 @z
 
 @x
@@ -175,30 +151,16 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/policies/
 @z
 
-% grid_troubleshoot:
-
-@x
-    - title: Debug a Docker Hardened Image
-      description: Use Docker Debug to inspect a running container based on a hardened image without modifying it.
-      icon: terminal
-      link: /dhi/how-to/debug/
-@y
-    - title: Debug a Docker Hardened Image
-      description: Use Docker Debug to inspect a running container based on a hardened image without modifying it.
-      icon: terminal
-      link: __SUBDIR__/dhi/how-to/debug/
-@z
-
 @x
 This section provides practical, task-based guidance for working with Docker
 Hardened Images (DHIs). Whether you're evaluating DHIs for the first time or
 integrating them into a production CI/CD pipeline, these topics cover the key
-tasks across the adoption journey, from discovery to debugging.
+tasks across the adoption journey: discover, adopt, verify, and govern.
 @y
 This section provides practical, task-based guidance for working with Docker
 Hardened Images (DHIs). Whether you're evaluating DHIs for the first time or
 integrating them into a production CI/CD pipeline, these topics cover the key
-tasks across the adoption journey, from discovery to debugging.
+tasks across the adoption journey: discover, adopt, verify, and govern.
 @z
 
 @x
@@ -300,27 +262,5 @@ Enforce policies to maintain security and compliance.
 @y
 {{< grid
   items="grid_govern"
->}}
-@z
-
-@x
-## Troubleshoot
-@y
-## Troubleshoot
-@z
-
-@x
-Debug containers based on DHIs without modifying the image.
-@y
-Debug containers based on DHIs without modifying the image.
-@z
-
-@x
-{{< grid
-  items="grid_troubleshoot"
->}}
-@y
-{{< grid
-  items="grid_troubleshoot"
 >}}
 @z

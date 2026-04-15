@@ -595,11 +595,9 @@ To dive deeper into using images, see:
 
 @x
 - [Use a Docker Hardened Image](use.md) for general usage
-- [Use in Kubernetes](k8s.md) for Kubernetes deployments
 - [Use a Helm chart](helm.md) for deploying with Helm
 @y
 - [Use a Docker Hardened Image](use.md) for general usage
-- [Use in Kubernetes](k8s.md) for Kubernetes deployments
 - [Use a Helm chart](helm.md) for deploying with Helm
 @z
 

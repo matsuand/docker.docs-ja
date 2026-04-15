@@ -163,11 +163,9 @@ To dive deeper into using images, see:
 
 @x
 - [Use a Docker Hardened Image](./how-to/use.md) for general usage
-- [Use in Kubernetes](./how-to/k8s.md) for Kubernetes deployments
 - [Use a Helm chart](./how-to/helm.md) for deploying with Helm
 @y
 - [Docker Hardened イメージの利用](./how-to/use.md) は、全般的な利用方法を説明しています。
-- [Kubernetes とともに利用](./how-to/k8s.md) は、Kubernetes デプロイを説明しています。
 - [Helm チャートの利用](./how-to/helm.md) は、Helm を使ったデプロイを説明しています。
 @z
 

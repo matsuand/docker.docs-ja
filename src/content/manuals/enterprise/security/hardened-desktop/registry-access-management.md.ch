@@ -7,10 +7,13 @@
 title: Registry Access Management
 description: Control access to approved container registries with Registry Access Management for secure Docker Desktop usage
 keywords: registry access management, container registry, security controls, docker business, admin controls
+tags: [admin]
 @y
 title: Registry Access Management
 description: Control access to approved container registries with Registry Access Management for secure Docker Desktop usage
 keywords: registry access management, container registry, security controls, docker business, admin controls
+tags: [admin]
+---
 @z
 
 @x
@@ -44,14 +47,14 @@ Registry Access Management works with any container registry, including:
 @z
 
 @x
- - Docker Hub (allowed by default)
-- Cloud registries: Amazon ECR, Google Container Registry, Azure Container Registry
+- Docker Hub (allowed by default)
+- Cloud registries: Amazon ECR, Google Artifact Registry, Azure Container Registry
 - Git-based registries: GitHub Container Registry, GitLab Container Registry
 - On-premises solutions: Nexus, Artifactory, Harbor
 - Registry mirrors: Including Docker Hub mirrors
 @y
- - Docker Hub (allowed by default)
-- Cloud registries: Amazon ECR, Google Container Registry, Azure Container Registry
+- Docker Hub (allowed by default)
+- Cloud registries: Amazon ECR, Google Artifact Registry, Azure Container Registry
 - Git-based registries: GitHub Container Registry, GitLab Container Registry
 - On-premises solutions: Nexus, Artifactory, Harbor
 - Registry mirrors: Including Docker Hub mirrors
@@ -70,26 +73,16 @@ Before configuring Registry Access Management, you must:
 @z
 
 @x
-- [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to ensure users authenticate with your organization
+- [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). Registry Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
 - Use [personal access tokens (PATs)](/manuals/security/access-tokens.md) for authentication (Organization access tokens aren't supported)
 - Have a Docker Business subscription
 @y
-- [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to ensure users authenticate with your organization
+- [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md). Registry Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
 - Use [personal access tokens (PATs)](manuals/security/access-tokens.md) for authentication (Organization access tokens aren't supported)
 - Have a Docker Business subscription
 @z
 
 @x
-> [!IMPORTANT]
->
-> Registry Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
-@y
-> [!IMPORTANT]
->
-> Registry Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
-@z
-
-@x
 ## Configure registry permissions
 @y
 ## Configure registry permissions
@@ -110,6 +103,9 @@ in the registry list.
 a **Registry address** and **Registry nickname**.
 1. Select **Create**. You can add up to 100 registries.
 1. Verify your registry appears in the registry list and select **Save changes**.
+   >[!NOTE]
+   >
+   > Policy changes can take up to 24 hours to propagate. To apply changes immediately, ask developers to sign out and back in to Docker Desktop.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
 1. Select **Admin Console**, then **Registry access**.
@@ -119,37 +115,28 @@ in the registry list.
 a **Registry address** and **Registry nickname**.
 1. Select **Create**. You can add up to 100 registries.
 1. Verify your registry appears in the registry list and select **Save changes**.
+   >[!NOTE]
+   >
+   > Policy changes can take up to 24 hours to propagate. To apply changes immediately, ask developers to sign out and back in to Docker Desktop.
 @z
 
 @x
-Changes can take up to 24 hours to take effect. To apply them sooner,
-have developers sign out and back in to Docker Desktop.
+If a developer belongs to multiple organizations with different RAM policies, only the policy for the first organization in the configuration file is enforced.
 @y
-Changes can take up to 24 hours to take effect. To apply them sooner,
-have developers sign out and back in to Docker Desktop.
-@z
-
-@x
-> [!IMPORTANT]
->
-> Starting with Docker Desktop 4.36, if a developer belongs to multiple organizations with different RAM policies, only the policy for the first organization in the configuration file is enforced.
-@y
-> [!IMPORTANT]
->
-> Starting with Docker Desktop 4.36, if a developer belongs to multiple organizations with different RAM policies, only the policy for the first organization in the configuration file is enforced.
+If a developer belongs to multiple organizations with different RAM policies, only the policy for the first organization in the configuration file is enforced.
 @z
 
 @x
 > [!TIP]
 >
 > RAM restrictions also apply to Dockerfile `ADD` instructions that fetch content via URL. Include trusted registry domains in your allowlist when using `ADD` with URLs.
-><br><br>
+>
 > RAM is designed for container registries, not general-purpose URLs like package mirrors or storage services. Adding too many domains may cause errors or hit system limits.
 @y
 > [!TIP]
 >
 > RAM restrictions also apply to Dockerfile `ADD` instructions that fetch content via URL. Include trusted registry domains in your allowlist when using `ADD` with URLs.
-><br><br>
+>
 > RAM is designed for container registries, not general-purpose URLs like package mirrors or storage services. Adding too many domains may cause errors or hit system limits.
 @z
 
@@ -249,12 +236,12 @@ These scenarios are not restricted by Registry Access Management:
 
 @x
 - Docker buildx with Kubernetes driver
-- Docker buildx with custom docker-container driver
+- Docker buildx with custom Docker-container driver
 - Some Docker Debug and Kubernetes image pulls (even if Docker Hub is blocked)
 - Images previously cached by registry mirrors may still be blocked if the source registry is restricted
 @y
 - Docker buildx with Kubernetes driver
-- Docker buildx with custom docker-container driver
+- Docker buildx with custom Docker-container driver
 - Some Docker Debug and Kubernetes image pulls (even if Docker Hub is blocked)
 - Images previously cached by registry mirrors may still be blocked if the source registry is restricted
 @z

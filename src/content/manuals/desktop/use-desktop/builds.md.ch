@@ -86,12 +86,6 @@ Docker Desktop settings.
 @z
 
 @x
-{{< summary-bar feature_name="Import builds" >}}
-@y
-{{< summary-bar feature_name="Import builds" >}}
-@z
-
-@x
 The **Import builds** button lets you import build records for builds by other
 people, or builds in a CI environment. When you've imported a build record, it
 gives you full access to the logs, traces, and other data for that build,

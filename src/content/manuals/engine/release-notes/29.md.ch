@@ -36,6 +36,116 @@ For more information about:
 @z
 
 @x
+## 29.4.0
+@y
+## 29.4.0
+@z
+
+@x
+{{< release-date date="2026-04-07" >}}
+@y
+{{< release-date date="2026-04-07" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.0)
+- [moby/moby, 29.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.0)
+@y
+- [docker/cli, 29.4.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.0)
+- [moby/moby, 29.4.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.0)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- docker cp: report both content size and transferred size. [docker/cli#6800](https://github.com/docker/cli/pull/6800)
+- Fix `docker stats --all` still showing containers that were removed. [docker/cli#6863](https://github.com/docker/cli/pull/6863)
+- Fix a rare bug that could cause containers to become unremovable. [moby/moby#51724](https://github.com/moby/moby/pull/51724)
+- Fixed privileged containers losing their explicit AppArmor profile (`--security-opt apparmor=<profile>`) after a container restart. [moby/moby#52215](https://github.com/moby/moby/pull/52215)
+- Improved duplicate container-exit handling by using live containerd task state (not timestamps). [moby/moby#52156](https://github.com/moby/moby/pull/52156)
+- Improved image pull and push performance by enabling HTTP keep-alive for registry connections, avoiding redundant TCP and TLS handshakes. [moby/moby#52198](https://github.com/moby/moby/pull/52198)
+- shell completions: add shell completion for `docker rm --link` and exclude legacy links for container names. [docker/cli#6872](https://github.com/docker/cli/pull/6872)
+- shell completions: don't provide completions that were already used. [docker/cli#6871](https://github.com/docker/cli/pull/6871)
+- Update runc (in static binaries) to [v1.3.5](https://github.com/opencontainers/runc/releases/tag/v1.3.5). [moby/moby#52244](https://github.com/moby/moby/pull/52244)
+- Windows: Fix `DOCKER_TMPDIR` not being respected. [moby/moby#52181](https://github.com/moby/moby/pull/52181)
+@y
+- docker cp: report both content size and transferred size. [docker/cli#6800](https://github.com/docker/cli/pull/6800)
+- Fix `docker stats --all` still showing containers that were removed. [docker/cli#6863](https://github.com/docker/cli/pull/6863)
+- Fix a rare bug that could cause containers to become unremovable. [moby/moby#51724](https://github.com/moby/moby/pull/51724)
+- Fixed privileged containers losing their explicit AppArmor profile (`--security-opt apparmor=<profile>`) after a container restart. [moby/moby#52215](https://github.com/moby/moby/pull/52215)
+- Improved duplicate container-exit handling by using live containerd task state (not timestamps). [moby/moby#52156](https://github.com/moby/moby/pull/52156)
+- Improved image pull and push performance by enabling HTTP keep-alive for registry connections, avoiding redundant TCP and TLS handshakes. [moby/moby#52198](https://github.com/moby/moby/pull/52198)
+- shell completions: add shell completion for `docker rm --link` and exclude legacy links for container names. [docker/cli#6872](https://github.com/docker/cli/pull/6872)
+- shell completions: don't provide completions that were already used. [docker/cli#6871](https://github.com/docker/cli/pull/6871)
+- Update runc (in static binaries) to [v1.3.5](https://github.com/opencontainers/runc/releases/tag/v1.3.5). [moby/moby#52244](https://github.com/moby/moby/pull/52244)
+- Windows: Fix `DOCKER_TMPDIR` not being respected. [moby/moby#52181](https://github.com/moby/moby/pull/52181)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.29.0](https://github.com/moby/buildkit/releases/tag/v0.29.0). [moby/moby#52272](https://github.com/moby/moby/pull/52272)
+@y
+- Update BuildKit to [v0.29.0](https://github.com/moby/buildkit/releases/tag/v0.29.0). [moby/moby#52272](https://github.com/moby/moby/pull/52272)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Prevent a daemon crash during startup after upgrading if a container config containers a malformed IP-address. [moby/moby#52275](https://github.com/moby/moby/pull/52275)
+@y
+- Prevent a daemon crash during startup after upgrading if a container config containers a malformed IP-address. [moby/moby#52275](https://github.com/moby/moby/pull/52275)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- cli/streams: Out, In: preserve original os.File when available. [docker/cli#6906](https://github.com/docker/cli/pull/6906)
+- Update minimum go version to go1.25. [docker/cli#6897](https://github.com/docker/cli/pull/6897)
+@y
+- cli/streams: Out, In: preserve original os.File when available. [docker/cli#6906](https://github.com/docker/cli/pull/6906)
+- Update minimum go version to go1.25. [docker/cli#6897](https://github.com/docker/cli/pull/6897)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- Go SDK: cli-plugins/hooks: deprecate `HookMessage ` and rename to `cli-plugins/hooks.Response`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+- Go SDK: cli-plugins/hooks: deprecate `HookType` and rename to `cli-plugins/hooks.ResponseType`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+- Go SDK: cli-plugins/manager: deprecate `HookPluginData` and move to `cli-plugins/hooks.Request`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+@y
+- Go SDK: cli-plugins/hooks: deprecate `HookMessage ` and rename to `cli-plugins/hooks.Response`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+- Go SDK: cli-plugins/hooks: deprecate `HookType` and rename to `cli-plugins/hooks.ResponseType`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+- Go SDK: cli-plugins/manager: deprecate `HookPluginData` and move to `cli-plugins/hooks.Request`. [docker/cli#6859](https://github.com/docker/cli/pull/6859)
+@z
+
+@x
 ## 29.3.1
 @y
 ## 29.3.1
@@ -1428,7 +1538,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - api/types/plugin: deprecate `Config.DockerVersion` field. [moby/moby#51109](https://github.com/moby/moby/pull/51109)
 - api/types/registry: remove deprecated AuthConfig.Email field. [moby/moby#51059](https://github.com/moby/moby/pull/51059)
 - api/types/strslice: deprecate StrSlice in favor of using a regular `[]string`. [moby/moby#50292](https://github.com/moby/moby/pull/50292)
-- api/types/sytem: remove deprecated `DiskUsage.BuilderSize`. [moby/moby#51180](https://github.com/moby/moby/pull/51180)
+- api/types/system: remove deprecated `DiskUsage.BuilderSize`. [moby/moby#51180](https://github.com/moby/moby/pull/51180)
 - api/types: move plugin types to api/types/plugin. [moby/moby#48114](https://github.com/moby/moby/pull/48114)
 - API: Deprecation: the Engine was automatically backfilling empty `PortBindings` lists with a PortBinding with an empty HostIP and HostPort when starting a container. This behavior is deprecated for API 1.52, and will be dropped in API 1.53. [moby/moby#50874](https://github.com/moby/moby/pull/50874)
 - build: remove DCT support for classic builder. [docker/cli#6195](https://github.com/docker/cli/pull/6195)
@@ -1574,7 +1684,7 @@ For a full list of pull requests and changes in this release, refer to the relev
 - api/types/plugin: deprecate `Config.DockerVersion` field. [moby/moby#51109](https://github.com/moby/moby/pull/51109)
 - api/types/registry: remove deprecated AuthConfig.Email field. [moby/moby#51059](https://github.com/moby/moby/pull/51059)
 - api/types/strslice: deprecate StrSlice in favor of using a regular `[]string`. [moby/moby#50292](https://github.com/moby/moby/pull/50292)
-- api/types/sytem: remove deprecated `DiskUsage.BuilderSize`. [moby/moby#51180](https://github.com/moby/moby/pull/51180)
+- api/types/system: remove deprecated `DiskUsage.BuilderSize`. [moby/moby#51180](https://github.com/moby/moby/pull/51180)
 - api/types: move plugin types to api/types/plugin. [moby/moby#48114](https://github.com/moby/moby/pull/48114)
 - API: Deprecation: the Engine was automatically backfilling empty `PortBindings` lists with a PortBinding with an empty HostIP and HostPort when starting a container. This behavior is deprecated for API 1.52, and will be dropped in API 1.53. [moby/moby#50874](https://github.com/moby/moby/pull/50874)
 - build: remove DCT support for classic builder. [docker/cli#6195](https://github.com/docker/cli/pull/6195)

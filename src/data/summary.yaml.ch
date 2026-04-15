@@ -35,10 +35,12 @@ Admin orgs:
 
 @x
 Air-gapped containers:
-  requires: Docker Desktop [4.29.0](/manuals/desktop/release-notes.md#4290) and later
+  subscription: [Business]
+  for: Administrators
 @y
 Air-gapped containers:
-  requires: Docker Desktop [4.29.0](manuals/desktop/release-notes.md#4290) およびそれ以降
+  subscription: [Business]
+  for: 管理者
 @z
 
 @x
@@ -320,14 +322,6 @@ Compose bridge:
 @z
 
 @x
-Config profiles:
-  requires: Docker Desktop 4.36 and later
-@y
-Config profiles:
-  requires: Docker Desktop 4.36 およびそれ以降
-@z
-
-@x
 Compose dependent images:
   requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
@@ -602,11 +596,11 @@ Docker CLI OpenTelemetry:
 @x
 Docker Offload:
   subscription: [Docker Offload]
-  requires: Docker Desktop 4.65 and later
+  requires: Docker Desktop 4.68 or later
 @y
 Docker Offload:
   subscription: [Docker Offload]
-  requires: Docker Desktop 4.65 およびそれ以降
+  requires: Docker Desktop 4.69 およびそれ以降
 @z
 
 @x
@@ -631,38 +625,6 @@ Docker Desktop Archlinux:
 @y
 Docker Desktop Archlinux:
   availability: 試験的
-@z
-
-@x
-Docker Desktop CLI:
-  requires: Docker Desktop [4.37](/manuals/desktop/release-notes.md#4370) and later
-@y
-Docker Desktop CLI:
-  requires: Docker Desktop [4.37](manuals/desktop/release-notes.md#4370) およびそれ以降
-@z
-
-@x
-Docker Desktop CLI update:
-  requires: Docker Desktop 4.39 and later
-@y
-Docker Desktop CLI update:
-  requires: Docker Desktop 4.39 およびそれ以降
-@z
-
-@x
-Docker Desktop CLI logs:
-  requires: Docker Desktop 4.39 and later
-@y
-Docker Desktop CLI logs:
-  requires: Docker Desktop 4.39 およびそれ以降
-@z
-
-@x
-Docker Desktop CLI kubernetes:
-  requires: Docker Desktop 4.44 and later
-@y
-Docker Desktop CLI kubernetes:
-  requires: Docker Desktop 4.44 およびそれ以降
 @z
 
 @x
@@ -900,16 +862,6 @@ Immutable tags:
 @z
 
 @x
-Import builds:
-  availability: Beta
-  requires: Docker Desktop [4.31](/manuals/desktop/release-notes.md#4310) and later
-@y
-Import builds:
-  availability: ベータ
-  requires: Docker Desktop [4.31](manuals/desktop/release-notes.md#4310) およびそれ以降
-@z
-
-@x
 Insights:
   subscription: [Business]
   for: Administrators
@@ -946,12 +898,10 @@ Load by default:
 @x
 MSI installer:
   subscription: [Business]
-  requires: Docker Desktop [4.32](/manuals/desktop/release-notes.md#4320) and later
   for: Administrators
 @y
 MSI installer:
   subscription: [Business]
-  requires: Docker Desktop [4.32](manuals/desktop/release-notes.md#4320) およびそれ以降
   for: 管理者
 @z
 
@@ -974,12 +924,10 @@ Pay by invoice:
 @x
 PKG installer:
   subscription: [Business]
-  requires: Docker Desktop [4.36](/manuals/desktop/release-notes.md#4360) and later
   for: Administrators
 @y
 PKG installer:
   subscription: [Business]
-  requires: Docker Desktop [4.36](manuals/desktop/release-notes.md#4360) およびそれ以降
   for: 管理者
 @z
 
@@ -1041,21 +989,17 @@ Synchronized file sharing:
 
 @x
 USB/IP support:
-  requires: Docker Desktop [4.35.0](/manuals/desktop/release-notes.md#4350) and later
   for: Docker Desktop for Mac, Linux, and Windows with the Hyper-V backend
 @y
 USB/IP support:
-  requires: Docker Desktop [4.35.0](manuals/desktop/release-notes.md#4350) およびそれ以降
   for: Docker Desktop for Mac, Linux, and Windows with the Hyper-V backend
 @z
 
 @x
 VMM:
-  requires: Docker Desktop [4.35.0](/manuals/desktop/release-notes.md#4350) and later
   for: Docker Desktop on Mac with Apple Silicon
 @y
 VMM:
-  requires: Docker Desktop [4.35.0](manuals/desktop/release-notes.md#4350) およびそれ以降
   for: Docker Desktop on Mac with Apple Silicon
 @z
 

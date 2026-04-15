@@ -108,13 +108,13 @@ context.
 @x
 > [!IMPORTANT]
 >
-> Starting [April 15th, 2025, only GitHub Cache service API v2 will be supported](https://gh.io/gha-cache-sunset).
+> As of April 15th, 2025, [only GitHub Cache service API v2 is supported.](https://gh.io/gha-cache-sunset). The legacy v1 API has been shut down.
 >
 > If you encounter the following error during your build:
 @y
 > [!IMPORTANT]
 >
-> Starting [April 15th, 2025, only GitHub Cache service API v2 will be supported](https://gh.io/gha-cache-sunset).
+> As of April 15th, 2025, [only GitHub Cache service API v2 is supported.](https://gh.io/gha-cache-sunset). The legacy v1 API has been shut down.
 >
 > If you encounter the following error during your build:
 @z

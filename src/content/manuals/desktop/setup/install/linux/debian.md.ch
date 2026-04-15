@@ -115,9 +115,9 @@ Recommended approach to install Docker Desktop on Debian:
 @z
 
 @x
-The RPM package includes a post-install script that completes additional setup steps automatically.
+The DEB package includes a post-install script that completes additional setup steps automatically.
 @y
-The RPM package includes a post-install script that completes additional setup steps automatically.
+The DEB package includes a post-install script that completes additional setup steps automatically.
 @z
 
 @x

@@ -2,21 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Codex
-weight: 20
-description: |
-  Use OpenAI Codex in Docker Sandboxes with API key authentication and YOLO
-  mode configuration.
----
 @y
----
 title: Codex
-weight: 20
+@z
+
+@x
 description: |
   Use OpenAI Codex in Docker Sandboxes with API key authentication and YOLO
   mode configuration.
----
+@y
+description: |
+  Use OpenAI Codex in Docker Sandboxes with API key authentication and YOLO
+  mode configuration.
 @z
 
 @x
@@ -86,10 +84,16 @@ $ sbx run codex
 @z
 
 @x
-Codex requires an OpenAI API key. Store your key using
+Codex supports two authentication methods: an API key or OAuth.
+@y
+Codex supports two authentication methods: an API key or OAuth.
+@z
+
+@x
+**API key**: Store your OpenAI API key using
 [stored secrets](../security/credentials.md#stored-secrets):
 @y
-Codex requires an OpenAI API key. Store your key using
+**API key**: Store your OpenAI API key using
 [stored secrets](../security/credentials.md#stored-secrets):
 @z
 
@@ -105,12 +109,44 @@ $ sbx secret set -g openai
 
 @x
 Alternatively, export the `OPENAI_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
+before running the sandbox.
 @y
 Alternatively, export the `OPENAI_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
+before running the sandbox.
+@z
+
+@x
+**OAuth**: If you prefer not to use an API key, start the OAuth flow on your
+host with:
+@y
+**OAuth**: If you prefer not to use an API key, start the OAuth flow on your
+host with:
+@z
+
+@x
+```console
+$ sbx secret set -g openai --oauth
+```
+@y
+```console
+$ sbx secret set -g openai --oauth
+```
+@z
+
+@x
+This opens a browser window for authentication and stores the resulting tokens
+in your OS keychain. The OAuth flow runs on the host, not inside the sandbox,
+so browser-based authentication works without any extra setup.
+@y
+This opens a browser window for authentication and stores the resulting tokens
+in your OS keychain. The OAuth flow runs on the host, not inside the sandbox,
+so browser-based authentication works without any extra setup.
+@z
+
+@x
+See [Credentials](../security/credentials.md) for more details.
+@y
+See [Credentials](../security/credentials.md) for more details.
 @z
 
 @x

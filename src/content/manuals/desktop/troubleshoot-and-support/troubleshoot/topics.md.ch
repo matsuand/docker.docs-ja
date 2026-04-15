@@ -138,9 +138,9 @@ Disable hardware acceleration:
 @z
 
 @x
-1. Edit Docker Desktop's `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier). You can find this file at:
+1. Edit Docker Desktop's `settings-store.json` file. You can find this file at:
 @y
-1. Edit Docker Desktop's `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier). You can find this file at:
+1. Edit Docker Desktop's `settings-store.json` file. You can find this file at:
 @z
 
 @x
@@ -586,56 +586,6 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](manuals
 @z
 
 @x
-### VPNKit keeps breaking
-@y
-### VPNKit keeps breaking
-@z
-
-@x
-#### Cause
-@y
-#### Cause
-@z
-
-@x
-In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS 13 and later.
-@y
-In Docker Desktop version 4.19, gVisor replaced VPNKit to enhance the performance of VM networking when using the Virtualization framework on macOS 13 and later.
-@z
-
-@x
-#### Solution
-@y
-#### Solution
-@z
-
-@x
-To continue using VPNKit:
-@y
-To continue using VPNKit:
-@z
-
-@x
-1. Open your `settings-store.json` file located at `~/Library/Group Containers/group.com.docker/settings-store.json`
-2. Add:
-@y
-1. Open your `settings-store.json` file located at `~/Library/Group Containers/group.com.docker/settings-store.json`
-2. Add:
-@z
-
-@x
-   ```JSON
-   $ "networkType":"vpnkit"
-   ```
-3. Save the file and restart Docker Desktop.
-@y
-   ```JSON
-   $ "networkType":"vpnkit"
-   ```
-3. Save the file and restart Docker Desktop.
-@z
-
-@x
 ## Topics for Windows
 @y
 ## Topics for Windows
@@ -655,12 +605,12 @@ To continue using VPNKit:
 
 @x
 Some anti-virus software may be incompatible with Hyper-V and Microsoft
-Windows 10 builds. The conflict
+Windows builds. The conflict
 typically occurs after a Windows update and
 manifests as an error response from the Docker daemon and a Docker Desktop start failure.
 @y
 Some anti-virus software may be incompatible with Hyper-V and Microsoft
-Windows 10 builds. The conflict
+Windows builds. The conflict
 typically occurs after a Windows update and
 manifests as an error response from the Docker daemon and a Docker Desktop start failure.
 @z

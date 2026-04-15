@@ -48,15 +48,9 @@ the `platforms` option, as shown in the following example:
 @z
 
 @x
-The default Docker setup for GitHub Actions runners does not support loading
-multi-platform images to the local image store of the runner after building
-them. To load a multi-platform image, you need to enable the containerd image
-store option for the Docker Engine.
+The default Docker setup for GitHub Actions runners supports building and pushing multi-platform images to registries. However, it does not support loading multi-platform images to the local image store of the runner after building them. To load a multi-platform image locally, you need to enable the containerd image store option for the Docker Engine.
 @y
-The default Docker setup for GitHub Actions runners does not support loading
-multi-platform images to the local image store of the runner after building
-them. To load a multi-platform image, you need to enable the containerd image
-store option for the Docker Engine.
+The default Docker setup for GitHub Actions runners supports building and pushing multi-platform images to registries. However, it does not support loading multi-platform images to the local image store of the runner after building them. To load a multi-platform image locally, you need to enable the containerd image store option for the Docker Engine.
 @z
 
 @x

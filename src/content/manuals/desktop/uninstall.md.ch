@@ -20,13 +20,13 @@ linkTitle: Uninstall
 >
 > Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
 > other Docker-related data local to the machine, and removes the files generated
-> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) section.
+> by the application. To preserve important data before uninstalling, refer to the [back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) section.
 @y
 > [!WARNING]
 >
 > Uninstalling Docker Desktop destroys Docker containers, images, volumes, and
 > other Docker-related data local to the machine, and removes the files generated
-> by the application. To learn how to preserve important data before uninstalling, refer to the [back up and restore data](manuals/desktop/settings-and-maintenance/backup-and-restore.md) section.
+> by the application. To preserve important data before uninstalling, refer to the [back up and restore data](manuals/desktop/settings-and-maintenance/backup-and-restore.md) section.
 @z
 
 @x
@@ -220,24 +220,6 @@ $ rm -rf ~/.docker
 ```console
 $ rm -rf ~/Library/Group\ Containers/group.com.docker
 $ rm -rf ~/.docker
-```
-@z
-
-@x
-With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
-@y
-With Docker Desktop version 4.36 and earlier, the following files may also be left on the file system. You can remove these with administrative privileges:
-@z
-
-@x
-```console
-/Library/PrivilegedHelperTools/com.docker.vmnetd
-/Library/PrivilegedHelperTools/com.docker.socket
-```
-@y
-```console
-/Library/PrivilegedHelperTools/com.docker.vmnetd
-/Library/PrivilegedHelperTools/com.docker.socket
 ```
 @z
 

@@ -8,7 +8,6 @@ copyfiles = \
 	dashboard.webp                 \
 	hyperv-enabled.png             \
 	resource-saver-settings.webp   \
-	synched-file-shares.webp       \
 	virtualization-enabled.png     \
 	whale-x.svg                    \
 	wsl2-enabled.png

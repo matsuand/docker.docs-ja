@@ -43,6 +43,102 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.69.0
+@y
+## 4.69.0
+@z
+
+@x
+{{< release-date date="2026-04-13" >}}
+@y
+{{< release-date date="2026-04-13" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.69.0" build_path="/224084/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.69.0" build_path="/224084/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [Docker Agent v1.42.0](https://github.com/docker/docker-agent/releases/tag/v1.42.0)
+- [Docker Model v1.1.29](https://github.com/docker/model-cli/releases/tag/v1.1.29)
+- [containerd v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2)
+- [Docker Buildx v0.33.0](https://github.com/docker/buildx/releases/tag/v0.33.0)
+@y
+- [Docker Agent v1.42.0](https://github.com/docker/docker-agent/releases/tag/v1.42.0)
+- [Docker Model v1.1.29](https://github.com/docker/model-cli/releases/tag/v1.1.29)
+- [containerd v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2)
+- [Docker Buildx v0.33.0](https://github.com/docker/buildx/releases/tag/v0.33.0)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue where `docker logout` from the CLI was ignored by Docker Desktop when OAuth tokens remained in the credential store, leaving the user unexpectedly signed in.
+- Fixed an issue where Docker Desktop could unexpectedly sign users out when unrelated credential updates, `docker login`, or transient network errors triggered a sign-out.
+- Fixed a data loss issue where backup data could be deleted during a failed restore operation, leaving users with no data.
+- Fixed an issue where sign-in credentials (`login-info.json`) could be included in diagnostic bundles, improving privacy and security. Note that this file contains an encoded organisation(s) name, plan name, encoded username, and encoded email only. No passwords or credentials are included.
+- Fixed the footer update label incorrectly showing **Downloading** during the prepare/unpack phase of an update. It now correctly displays **Preparing**.
+- Fixed an issue where Docker Desktop would not start when the internal storage disk was full.
+@y
+- Fixed an issue where `docker logout` from the CLI was ignored by Docker Desktop when OAuth tokens remained in the credential store, leaving the user unexpectedly signed in.
+- Fixed an issue where Docker Desktop could unexpectedly sign users out when unrelated credential updates, `docker login`, or transient network errors triggered a sign-out.
+- Fixed a data loss issue where backup data could be deleted during a failed restore operation, leaving users with no data.
+- Fixed an issue where sign-in credentials (`login-info.json`) could be included in diagnostic bundles, improving privacy and security. Note that this file contains an encoded organisation(s) name, plan name, encoded username, and encoded email only. No passwords or credentials are included.
+- Fixed the footer update label incorrectly showing **Downloading** during the prepare/unpack phase of an update. It now correctly displays **Preparing**.
+- Fixed an issue where Docker Desktop would not start when the internal storage disk was full.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed an issue where the in-app update button was not disabled when `Docker.app` was installed in a non-user-writable directory, preventing failed update attempts.
+- Fixed update failure for users who installed Docker Desktop via Homebrew on Mac.
+@y
+- Fixed an issue where the in-app update button was not disabled when `Docker.app` was installed in a non-user-writable directory, preventing failed update attempts.
+- Fixed update failure for users who installed Docker Desktop via Homebrew on Mac.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed an unexpected WSL terminal popup appearing for Windows users using the Hyper-V backend during Docker Desktop installation or uninstallation.
+- Fixed an issue on Windows where factory reset deleted CLI plugins from `~/.docker/cli-plugins`, causing `docker build` to fall back to the legacy builder.
+- Fixed a bug where Kubernetes failed to start when WSL integration was enabled alongside another distro using cgroup v1 controllers.
+- Fixed a race condition that caused Kubernetes to fail to start when a Registry Access Management policy change occurred during startup.
+@y
+- Fixed an unexpected WSL terminal popup appearing for Windows users using the Hyper-V backend during Docker Desktop installation or uninstallation.
+- Fixed an issue on Windows where factory reset deleted CLI plugins from `~/.docker/cli-plugins`, causing `docker build` to fall back to the legacy builder.
+- Fixed a bug where Kubernetes failed to start when WSL integration was enabled alongside another distro using cgroup v1 controllers.
+- Fixed a race condition that caused Kubernetes to fail to start when a Registry Access Management policy change occurred during startup.
+@z
+
+@x
 ## 4.68.0
 @y
 ## 4.68.0

@@ -376,36 +376,6 @@ $ docker pull <image>
 @z
 
 @x
-## Version compatibility
-@y
-## Version compatibility
-@z
-
-@x
-ECI features have been introduced across different Docker Desktop versions:
-@y
-ECI features have been introduced across different Docker Desktop versions:
-@z
-
-@x
-- Docker Desktop 4.36 and later: Wildcard allowlist support (`"*"`) and improved derived images handling
-- Docker Desktop 4.34 and later: Derived images support (`allowDerivedImages`)
-- Docker Desktop 4.30 and later: Docker Build protection with default driver (except WSL 2)
-- Docker Desktop 4.13 and later: Core ECI functionality
-@y
-- Docker Desktop 4.36 and later: Wildcard allowlist support (`"*"`) and improved derived images handling
-- Docker Desktop 4.34 and later: Derived images support (`allowDerivedImages`)
-- Docker Desktop 4.30 and later: Docker Build protection with default driver (except WSL 2)
-- Docker Desktop 4.13 and later: Core ECI functionality
-@z
-
-@x
-For the latest feature availability, use the most recent Docker Desktop version.
-@y
-For the latest feature availability, use the most recent Docker Desktop version.
-@z
-
-@x
 ## Production compatibility
 @y
 ## Production compatibility

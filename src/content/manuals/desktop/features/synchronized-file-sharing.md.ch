@@ -30,12 +30,6 @@ Synchronized file shares is an alternative file sharing mechanism that provides 
 @z
 
 @x
-![Image of Synchronized file shares pane](../images/synched-file-shares.webp)
-@y
-![Image of Synchronized file shares pane](../images/synched-file-shares.webp)
-@z
-
-@x
 ## Who is it for?
 @y
 ## Who is it for?
@@ -133,18 +127,6 @@ When the status indicator displays **Watching for filesystem changes**, your fil
 > [!NOTE]
 >
 > When you create a new service, setting the [bind mount option consistency](__SUBDIR__/reference/cli/docker/service/create/#options-for-bind-mounts) to `:consistent` bypasses Synchronized file shares.
-@z
-
-@x
-> [!TIP]
->
-> Docker Compose can automatically create file shares for bind mounts. 
-> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
-@y
-> [!TIP]
->
-> Docker Compose can automatically create file shares for bind mounts. 
-> Ensure you're signed in to Docker with a paid subscription and have enabled both **Access experimental features** and **Manage Synchronized file shares with Compose** in Docker Desktop's settings.
 @z
 
 @x

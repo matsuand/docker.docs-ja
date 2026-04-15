@@ -38,13 +38,13 @@ Docker Offload requires:
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
 - Access to Docker Offload
-- Docker Desktop 4.65 or later
+- Docker Desktop 4.68 or later
 @y
 - Authentication
 - An active internet connection
 - No restrictive proxy or firewall blocking traffic to Docker Cloud
 - Access to Docker Offload
-- Docker Desktop 4.65 or later
+- Docker Desktop 4.68 or later
 @z
 
 @x

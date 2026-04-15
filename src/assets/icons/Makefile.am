@@ -15,6 +15,8 @@ copyfiles = \
 	dhi.svg              \
 	facebook.svg         \
 	go.svg               \
+	gordon-happy.svg     \
+	gordon.svg           \
 	headset.svg          \
 	instagram.svg        \
 	java.svg             \

@@ -2349,9 +2349,9 @@ starting a container, you can override the `USER` instruction by passing the
 @z
 
 @x
-The followings examples are all valid:
+The following examples are all valid:
 @y
-The followings examples are all valid:
+The following examples are all valid:
 @z
 
 @x

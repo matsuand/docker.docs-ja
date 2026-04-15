@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Use the DHI CLI
 linkTitle: Use the CLI
@@ -287,18 +289,22 @@ docker dhi mirror stop dhi-golang --org my-org --delete --force
 
 @x
 The CLI can be used to create and manage DHI image customizations. For detailed
-instructions on creating customizations, including the YAML syntax and
-available options, see [Customize a Docker Hardened Image](./customize.md).
+instructions on creating customizations using the GUI, see [Customize a Docker
+Hardened Image](./customize.md).
 @y
 The CLI can be used to create and manage DHI image customizations. For detailed
-instructions on creating customizations, including the YAML syntax and
-available options, see [Customize a Docker Hardened Image](./customize.md).
+instructions on creating customizations using the GUI, see [Customize a Docker
+Hardened Image](./customize.md).
 @z
 
 @x
-Quick reference for CLI commands:
+The following is a quick reference for CLI commands. For complete details on all
+options and flags, see the
+[CLI reference](/reference/cli/docker/dhi/).
 @y
-Quick reference for CLI commands:
+The following is a quick reference for CLI commands. For complete details on all
+options and flags, see the
+[CLI reference](__SUBDIR__/reference/cli/docker/dhi/).
 @z
 
 @x
@@ -356,10 +362,10 @@ docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --
 @z
 
 @x
-# Update a customization
+# The YAML file must include the 'id' field to identify the customization to update
 docker dhi customization edit my-customization.yaml --org my-org
 @y
-# Update a customization
+# The YAML file must include the 'id' field to identify the customization to update
 docker dhi customization edit my-customization.yaml --org my-org
 @z
 

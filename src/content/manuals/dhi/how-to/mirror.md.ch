@@ -337,15 +337,13 @@ repository.
 @x
 > [!NOTE]
 >
-> If you only want to stop mirroring ELS versions, you can clear the ELS
-> option in the mirrored repository's **Settings** tab. For more details, see
-> [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
+> If you only want to stop mirroring ELS versions, clear the **Mirror
+> end-of-life images** option in the mirrored repository's **Settings** tab.
 @y
 > [!NOTE]
 >
-> If you only want to stop mirroring ELS versions, you can clear the ELS
-> option in the mirrored repository's **Settings** tab. For more details, see
-> [Disable ELS for a repository](./els.md#disable-els-for-a-repository).
+> If you only want to stop mirroring ELS versions, clear the **Mirror
+> end-of-life images** option in the mirrored repository's **Settings** tab.
 @z
 
 @x

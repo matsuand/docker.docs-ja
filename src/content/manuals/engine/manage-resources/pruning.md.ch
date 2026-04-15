@@ -5,12 +5,14 @@
 
 @x
 description: Free up disk space by removing unused resources with the prune command
-keywords: pruning, prune, images, volumes, containers, networks, disk, administration,
+keywords:
+  pruning, prune, images, volumes, containers, networks, disk, administration,
   garbage collection
 title: Prune unused Docker objects
 @y
 description: Free up disk space by removing unused resources with the prune command
-keywords: pruning, prune, images, volumes, containers, networks, disk, administration,
+keywords:
+  pruning, prune, images, volumes, containers, networks, disk, administration,
   garbage collection
 title: Prune unused Docker objects
 @z
@@ -355,6 +357,56 @@ for more examples.
 Other filtering expressions are available. See the
 [`docker network prune` reference](__SUBDIR__/reference/cli/docker/network/prune/)
 for more examples.
+@z
+
+@x
+## Prune build cache
+@y
+## Prune build cache
+@z
+
+@x
+`docker buildx prune` removes the build cache for the currently selected
+builder. If you use multiple builders, each builder maintains its own cache —
+use the `--builder` flag to target a specific builder instance.
+@y
+`docker buildx prune` removes the build cache for the currently selected
+builder. If you use multiple builders, each builder maintains its own cache —
+use the `--builder` flag to target a specific builder instance.
+@z
+
+@x
+```console
+$ docker buildx prune
+@y
+```console
+$ docker buildx prune
+@z
+
+@x
+WARNING! This will remove all dangling build cache.
+Are you sure you want to continue? [y/N] y
+```
+@y
+WARNING! This will remove all dangling build cache.
+Are you sure you want to continue? [y/N] y
+```
+@z
+
+@x
+By default, you're prompted to continue. To bypass the prompt, use the `-f` or
+`--force` flag.
+@y
+By default, you're prompted to continue. To bypass the prompt, use the `-f` or
+`--force` flag.
+@z
+
+@x
+See the [`docker buildx prune` reference](/reference/cli/docker/buildx/prune/)
+for all options, including `--all` to also remove internal and frontend images.
+@y
+See the [`docker buildx prune` reference](__SUBDIR__/reference/cli/docker/buildx/prune/)
+for all options, including `--all` to also remove internal and frontend images.
 @z
 
 @x

@@ -26,13 +26,13 @@
 
 @x
               "How do I get started with Docker?"
-			  "Can I run my AI agent in a sandbox?"
+              "Can I run my AI agent in a sandbox?"
               "What is a container?"
               "What are Docker Hardened Images?"
               "Why should I use Docker Compose?"
 @y
               "How do I get started with Docker?"
-			  "Can I run my AI agent in a sandbox?"
+              "Can I run my AI agent in a sandbox?"
               "What is a container?"
               "What are Docker Hardened Images?"
               "Why should I use Docker Compose?"

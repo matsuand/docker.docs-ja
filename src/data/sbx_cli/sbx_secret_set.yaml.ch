@@ -22,56 +22,62 @@ description: |-
 @x
     When no arguments are provided, an interactive prompt guides you through
     scope and service selection.
-usage: sbx secret set [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Overwrite an existing secret when --token is used
-    - name: global
-      shorthand: g
-      default_value: "false"
-      usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for set
-    - name: token
-      shorthand: t
-      usage: 'Secret value (less secure: visible in shell history)'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Store a GitHub token globally (available to all sandboxes)
-      sbx secret set -g github
 @y
     When no arguments are provided, an interactive prompt guides you through
     scope and service selection.
+@z
+
+@x
 usage: sbx secret set [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+usage: sbx secret set [-g | sandbox] [service] [flags]
+@z
+
+% options:
+
+@x force
       usage: Overwrite an existing secret when --token is used
-    - name: global
-      shorthand: g
-      default_value: "false"
+@y
+      usage: Overwrite an existing secret when --token is used
+@z
+
+@x global
       usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Use global secret scope
+@z
+
+@x help
       usage: help for set
-    - name: token
-      shorthand: t
+@y
+      usage: help for set
+@z
+
+@x oauth
+      usage: Start OAuth flow and store OAuth tokens (openai/global only)
+@y
+      usage: Start OAuth flow and store OAuth tokens (openai/global only)
+@z
+
+@x token
       usage: 'Secret value (less secure: visible in shell history)'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: 'Secret value (less secure: visible in shell history)'
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Store a GitHub token globally (available to all sandboxes)
+      sbx secret set -g github
+@y
 example: |4-
       # Store a GitHub token globally (available to all sandboxes)
       sbx secret set -g github
@@ -88,11 +94,23 @@ example: |4-
 @x
       # Non-interactive via stdin (e.g., from a secret manager or env var)
       echo "$ANTHROPIC_API_KEY" | sbx secret set -g anthropic
-see_also:
-    - sbx secret - Manage stored secrets
 @y
       # Non-interactive via stdin (e.g., from a secret manager or env var)
       echo "$ANTHROPIC_API_KEY" | sbx secret set -g anthropic
-see_also:
+@z
+
+@x
+      # Start OpenAI OAuth flow and store global OAuth tokens
+      sbx secret set -g openai --oauth
+@y
+      # Start OpenAI OAuth flow and store global OAuth tokens
+      sbx secret set -g openai --oauth
+@z
+
+% see_also:
+
+@x
+    - sbx secret - Manage stored secrets
+@y
     - sbx secret - Manage stored secrets
 @z

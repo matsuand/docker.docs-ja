@@ -8,11 +8,13 @@ description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
 linkTitle: General
+tags: [FAQ]
 @y
 description: Frequently asked Docker Desktop questions for all platforms
 keywords: desktop, mac, windows, faqs
 title: General FAQs for Desktop
 linkTitle: General
+tags: [FAQ]
 @z
 
 @x
@@ -25,40 +27,10 @@ linkTitle: General
 Yes, you can use Docker Desktop offline. However, you
 cannot access features that require an active internet
 connection. Additionally, any functionality that requires you to sign in won't work while using Docker Desktop offline or in air-gapped environments.
-This includes:
 @y
 Yes, you can use Docker Desktop offline. However, you
 cannot access features that require an active internet
 connection. Additionally, any functionality that requires you to sign in won't work while using Docker Desktop offline or in air-gapped environments.
-This includes:
-@z
-
-@x
-- The resources in the [Learning Center](/manuals/desktop/use-desktop/_index.md)
-- Pulling or pushing an image to Docker Hub
-- [Image Access Management](/manuals/security/access-tokens.md)
-- [Static vulnerability scanning](/manuals/docker-hub/repos/manage/vulnerability-scanning.md)
-- Viewing remote images in the Docker Dashboard
-- Docker Build when using [BuildKit](/manuals/build/buildkit/_index.md#getting-started).
-  You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
-- [Kubernetes](/manuals/desktop/use-desktop/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
-- Checking for updates
-- [In-app diagnostics](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
-- Sending usage statistics
-- When `networkMode` is set to `mirrored`
-@y
-- The resources in the [Learning Center](manuals/desktop/use-desktop/_index.md)
-- Pulling or pushing an image to Docker Hub
-- [Image Access Management](manuals/security/access-tokens.md)
-- [Static vulnerability scanning](manuals/docker-hub/repos/manage/vulnerability-scanning.md)
-- Viewing remote images in the Docker Dashboard
-- Docker Build when using [BuildKit](manuals/build/buildkit/_index.md#getting-started).
-  You can work around this by disabling BuildKit. Run `DOCKER_BUILDKIT=0 docker build .` to disable BuildKit.
-- [Kubernetes](manuals/desktop/use-desktop/kubernetes.md) (Images are download when you enable Kubernetes for the first time)
-- Checking for updates
-- [In-app diagnostics](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app) (including the [Self-diagnose tool](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-app))
-- Sending usage statistics
-- When `networkMode` is set to `mirrored`
 @z
 
 @x
@@ -74,9 +46,9 @@ To connect to the remote Engine API, you might need to provide the location of t
 @z
 
 @x
-Mac and Windows WSL 2 users can connect to the Docker Engine through a Unix socket: `unix:///var/run/docker.sock`.
+Mac and Windows WSL 2 users can connect to the Docker Engine through a Unix socket: `unix:///var/run/docker.sock`. Docker Desktop for Linux uses a [per-user socket](linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux) located at `~/.docker/desktop/docker.sock` instead of the system-wide `/var/run/docker.sock`.
 @y
-Mac and Windows WSL 2 users can connect to the Docker Engine through a Unix socket: `unix:///var/run/docker.sock`.
+Mac and Windows WSL 2 users can connect to the Docker Engine through a Unix socket: `unix:///var/run/docker.sock`. Docker Desktop for Linux uses a [per-user socket](linuxfaqs.md#how-do-i-use-docker-sdks-with-docker-desktop-for-linux) located at `~/.docker/desktop/docker.sock` instead of the system-wide `/var/run/docker.sock`.
 @z
 
 @x
@@ -117,12 +89,6 @@ Docker Desktop Windows users can connect to the Docker Engine through a **named 
 For details, see [Docker Engine API](/reference/api/engine/_index.md).
 @y
 For details, see [Docker Engine API](reference/api/engine/_index.md).
-@z
-
-@x
-See the [Linux FAQs](linuxfaqs.md) for Linux specific setup.
-@y
-See the [Linux FAQs](linuxfaqs.md) for Linux specific setup.
 @z
 
 @x
@@ -312,11 +278,11 @@ You can then sign in to your machine with the user ID specified, and launch Dock
 @x
 > [!NOTE]
 > 
-> Before launching Docker Desktop, if a `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) left behind from any previous installations before launching the application.
+> Before launching Docker Desktop, if a `settings-store.json` file already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings-store.json` file left behind from any previous installations before launching the application.
 @y
 > [!NOTE]
 > 
-> Before launching Docker Desktop, if a `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier) left behind from any previous installations before launching the application.
+> Before launching Docker Desktop, if a `settings-store.json` file already exists in the `~/Library/Group Containers/group.com.docker/` directory, you will see a **Finish setting up Docker Desktop** window that prompts for administrator privileges when you select **Finish**. To avoid this, ensure you delete the `settings-store.json` file left behind from any previous installations before launching the application.
 @z
 
 @x

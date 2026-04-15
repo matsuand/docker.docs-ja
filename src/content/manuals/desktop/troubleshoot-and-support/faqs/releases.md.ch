@@ -20,9 +20,9 @@ linkTitle: Releases
 @z
 
 @x
-New releases are available roughly every month, unless there are critical fixes that need to be released sooner. 
+New releases are available every week, unless there are critical fixes that need to be released sooner.
 @y
-New releases are available roughly every month, unless there are critical fixes that need to be released sooner. 
+New releases are available every week, unless there are critical fixes that need to be released sooner.
 @z
 
 @x

@@ -7,12 +7,9 @@ bases = \
 	build.md             \
 	cli.md               \
 	customize.md         \
-	debug.md             \
-	els.md               \
 	explore.md           \
 	hardened-packages.md \
 	helm.md              \
-	k8s.md               \
 	manage.md            \
 	mirror.md            \
 	policies.md          \

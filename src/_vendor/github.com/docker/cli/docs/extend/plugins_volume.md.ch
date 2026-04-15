@@ -1,18 +1,16 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: Docker volume plugins
 description: "How to manage data with external volume plugins"
 keywords: "Examples, Usage, volume, docker, data, volumes, plugin, api"
----
 @y
----
 title: Docker volume plugins
 description: "How to manage data with external volume plugins"
 keywords: "Examples, Usage, volume, docker, data, volumes, plugin, api"
----
 @z
 
 @x
@@ -119,21 +117,7 @@ accepts a volume name and path on the host, and the `--volume-driver` flag
 accepts a driver type.
 @z
 
-@x
-```console
-$ docker volume create --driver=flocker volumename
-@y
-```console
-$ docker volume create --driver=flocker volumename
-@z
-
-@x
-$ docker container run -it --volume volumename:/data busybox sh
-```
-@y
-$ docker container run -it --volume volumename:/data busybox sh
-```
-@z
+% snip command...
 
 @x
 ### `--volume`
@@ -164,19 +148,37 @@ separated by a colon (`:`) character.
 @z
 
 @x
-### `volumedriver`
+### `--volume-driver`
 @y
-### `volumedriver`
+### `--volume-driver`
 @z
 
 @x
-Specifying a `volumedriver` in conjunction with a `volumename` allows you to
-use plugins such as [Flocker](https://github.com/ScatterHQ/flocker) to manage
-volumes external to a single host, such as those on EBS.
+Specifying the `--volume-driver` flag together with a volume name (using
+`--volume`) allows you to use plugins to manage volumes for the container.
 @y
-Specifying a `volumedriver` in conjunction with a `volumename` allows you to
-use plugins such as [Flocker](https://github.com/ScatterHQ/flocker) to manage
-volumes external to a single host, such as those on EBS.
+Specifying the `--volume-driver` flag together with a volume name (using
+`--volume`) allows you to use plugins to manage volumes for the container.
+@z
+
+@x
+The `--volume-driver` flag is used as a default for all volumes created for
+the container, including anonymous volumes. Use the [`--mount`] flag with
+the [`volume-driver`] option to specify the driver to use for each volume
+individually.
+@y
+The `--volume-driver` flag is used as a default for all volumes created for
+the container, including anonymous volumes. Use the [`--mount`] flag with
+the [`volume-driver`] option to specify the driver to use for each volume
+individually.
+@z
+
+@x
+[`--mount`]: https://docs.docker.com/reference/cli/docker/container/run/#mount
+[`volume-driver`]: https://docs.docker.com/engine/storage/volumes/#start-a-container-which-creates-a-volume-using-a-volume-driver
+@y
+[`--mount`]: https://docs.docker.com/reference/cli/docker/container/run/#mount
+[`volume-driver`]: https://docs.docker.com/engine/storage/volumes/#start-a-container-which-creates-a-volume-using-a-volume-driver
 @z
 
 @x
@@ -237,21 +239,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name",
-    "Opts": {}
-}
-```
-@y
-```json
-{
-    "Name": "volume_name",
-    "Opts": {}
-}
-```
-@z
+% snip code...
 
 @x
 Instruct the plugin that the user wants to create a volume, given a user
@@ -271,19 +259,7 @@ Response:
 Response:
 @z
 
-@x
-```json
-{
-    "Err": ""
-}
-```
-@y
-```json
-{
-    "Err": ""
-}
-```
-@z
+% snip code...
 
 @x
   Respond with a string error if an error occurred.
@@ -303,19 +279,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name"
-}
-```
-@y
-```json
-{
-    "Name": "volume_name"
-}
-```
-@z
+% snip code...
 
 @x
 Delete the specified volume from disk. This request is issued when a user
@@ -331,19 +295,7 @@ Response:
 Response:
 @z
 
-@x
-```json
-{
-    "Err": ""
-}
-```
-@y
-```json
-{
-    "Err": ""
-}
-```
-@z
+% snip code...
 
 @x
 Respond with a string error if an error occurred.
@@ -363,21 +315,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name",
-    "ID": "b87d7442095999a92b65b3d9691e697b61713829cc0ffd1bb72e4ccd51aa4d6c"
-}
-```
-@y
-```json
-{
-    "Name": "volume_name",
-    "ID": "b87d7442095999a92b65b3d9691e697b61713829cc0ffd1bb72e4ccd51aa4d6c"
-}
-```
-@z
+% snip code...
 
 @x
 Docker requires the plugin to provide a volume, given a user specified volume
@@ -409,21 +347,7 @@ Response:
 - v1
 @z
 
-@x
-  ```json
-  {
-      "Mountpoint": "/path/to/directory/on/host",
-      "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-      "Mountpoint": "/path/to/directory/on/host",
-      "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 - v2
@@ -431,21 +355,7 @@ Response:
 - v2
 @z
 
-@x
-  ```json
-  {
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 `Mountpoint` is the path on the host (v1) or in the plugin (v2) where the volume
@@ -473,19 +383,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name"
-}
-```
-@y
-```json
-{
-    "Name": "volume_name"
-}
-```
-@z
+% snip code...
 
 @x
 Request the path to the volume with the given `volume_name`.
@@ -505,21 +403,7 @@ Response:
 - v1
 @z
 
-@x
-  ```json
-  {
-      "Mountpoint": "/path/to/directory/on/host",
-      "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-      "Mountpoint": "/path/to/directory/on/host",
-      "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 - v2
@@ -527,21 +411,7 @@ Response:
 - v2
 @z
 
-@x
-  ```json
-  {
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 Respond with the path on the host (v1) or inside the plugin (v2) where the
@@ -571,21 +441,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name",
-    "ID": "b87d7442095999a92b65b3d9691e697b61713829cc0ffd1bb72e4ccd51aa4d6c"
-}
-```
-@y
-```json
-{
-    "Name": "volume_name",
-    "ID": "b87d7442095999a92b65b3d9691e697b61713829cc0ffd1bb72e4ccd51aa4d6c"
-}
-```
-@z
+% snip code...
 
 @x
 Docker is no longer using the named volume. `Unmount` is called once per
@@ -609,19 +465,7 @@ Response:
 Response:
 @z
 
-@x
-```json
-{
-    "Err": ""
-}
-```
-@y
-```json
-{
-    "Err": ""
-}
-```
-@z
+% snip code...
 
 @x
 Respond with a string error if an error occurred.
@@ -641,19 +485,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{
-    "Name": "volume_name"
-}
-```
-@y
-```json
-{
-    "Name": "volume_name"
-}
-```
-@z
+% snip code...
 
 @x
 Get info about `volume_name`.
@@ -673,29 +505,7 @@ Response:
 - v1
 @z
 
-@x
-  ```json
-  {
-    "Volume": {
-      "Name": "volume_name",
-      "Mountpoint": "/path/to/directory/on/host",
-      "Status": {}
-    },
-    "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-    "Volume": {
-      "Name": "volume_name",
-      "Mountpoint": "/path/to/directory/on/host",
-      "Status": {}
-    },
-    "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 - v2
@@ -703,29 +513,7 @@ Response:
 - v2
 @z
 
-@x
-  ```json
-  {
-    "Volume": {
-      "Name": "volume_name",
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Status": {}
-    },
-    "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-    "Volume": {
-      "Name": "volume_name",
-      "Mountpoint": "/path/under/PropagatedMount",
-      "Status": {}
-    },
-    "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 Respond with a string error if an error occurred. `Mountpoint` and `Status` are
@@ -747,15 +535,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{}
-```
-@y
-```json
-{}
-```
-@z
+% snip code...
 
 @x
 Get the list of volumes registered with the plugin.
@@ -775,31 +555,7 @@ Response:
 - v1
 @z
 
-@x
-  ```json
-  {
-    "Volumes": [
-      {
-        "Name": "volume_name",
-        "Mountpoint": "/path/to/directory/on/host"
-      }
-    ],
-    "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-    "Volumes": [
-      {
-        "Name": "volume_name",
-        "Mountpoint": "/path/to/directory/on/host"
-      }
-    ],
-    "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 - v2
@@ -807,31 +563,7 @@ Response:
 - v2
 @z
 
-@x
-  ```json
-  {
-    "Volumes": [
-      {
-        "Name": "volume_name",
-        "Mountpoint": "/path/under/PropagatedMount"
-      }
-    ],
-    "Err": ""
-  }
-  ```
-@y
-  ```json
-  {
-    "Volumes": [
-      {
-        "Name": "volume_name",
-        "Mountpoint": "/path/under/PropagatedMount"
-      }
-    ],
-    "Err": ""
-  }
-  ```
-@z
+% snip code...
 
 @x
 Respond with a string error if an error occurred. `Mountpoint` is optional.
@@ -851,15 +583,7 @@ Request:
 Request:
 @z
 
-@x
-```json
-{}
-```
-@y
-```json
-{}
-```
-@z
+% snip code...
 
 @x
 Get the list of capabilities the driver supports.
@@ -881,23 +605,7 @@ Response:
 Response:
 @z
 
-@x
-```json
-{
-  "Capabilities": {
-    "Scope": "global"
-  }
-}
-```
-@y
-```json
-{
-  "Capabilities": {
-    "Scope": "global"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 Supported scopes are `global` and `local`. Any other value in `Scope` will be
