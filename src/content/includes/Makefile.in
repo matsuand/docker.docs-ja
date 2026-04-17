@@ -302,6 +302,7 @@ bases = \
 	aci-ecs-eol.md             \
 	buildx-v0.10-disclaimer.md \
 	compose-eol.md             \
+	daemon-cfg-desktop.md      \
 	deploy.md                  \
 	desktop-license-update.md  \
 	desktop-linux-launch.md    \

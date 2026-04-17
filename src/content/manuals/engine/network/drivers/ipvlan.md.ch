@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: IPvlan network driver
 description:
@@ -151,19 +153,7 @@ The parent interface in the next example `-o parent=eth0` is configured as follo
 The parent interface in the next example `-o parent=eth0` is configured as follows:
 @z
 
-@x
-```console
-$ ip addr show eth0
-3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 192.168.1.250/24 brd 192.168.1.255 scope global eth0
-```
-@y
-```console
-$ ip addr show eth0
-3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-    inet 192.168.1.250/24 brd 192.168.1.255 scope global eth0
-```
-@z
+% snip command...
 
 @x
 Use the network from the host's interface as the `--subnet` in the
@@ -181,40 +171,22 @@ Create the IPvlan network and run a container attaching to it:
 Create the IPvlan network and run a container attaching to it:
 @z
 
-@x
-```console
+@x within code
 # IPvlan  (-o ipvlan_mode= Defaults to L2 mode if not specified)
-$ docker network create -d ipvlan \
-    --subnet=192.168.1.0/24 \
-    --gateway=192.168.1.1 \
-    -o ipvlan_mode=l2 \
-    -o parent=eth0 db_net
 @y
-```console
 # IPvlan  (-o ipvlan_mode= Defaults to L2 mode if not specified)
-$ docker network create -d ipvlan \
-    --subnet=192.168.1.0/24 \
-    --gateway=192.168.1.1 \
-    -o ipvlan_mode=l2 \
-    -o parent=eth0 db_net
 @z
-
 @x
 # Start a container on the db_net network
-$ docker run --net=db_net -it --rm alpine /bin/sh
 @y
 # Start a container on the db_net network
-$ docker run --net=db_net -it --rm alpine /bin/sh
 @z
-
 @x
 # NOTE: the containers can NOT ping the underlying host interfaces as
 # they are intentionally filtered by Linux for additional isolation.
-```
 @y
 # NOTE: the containers can NOT ping the underlying host interfaces as
 # they are intentionally filtered by Linux for additional isolation.
-```
 @z
 
 @x
@@ -1261,50 +1233,34 @@ of bridge and L2 modes, which need to be on the same subnet (broadcast domain)
 in order to forward broadcast and multicast packets.
 @z
 
-@x
-```console
+@x within code
 # Create an IPv6+IPv4 Dual Stack IPvlan L3 network
 # Gateways for both v4 and v6 are set to a dev e.g. 'default dev eth0'
-$ docker network create -d ipvlan \
-    --subnet=192.168.110.0/24 \
-    --subnet=192.168.112.0/24 \
-    --subnet=2001:db8:abc6::/64 \
-    -o parent=eth0 \
-    -o ipvlan_mode=l3 ipnet110
 @y
-```console
 # Create an IPv6+IPv4 Dual Stack IPvlan L3 network
 # Gateways for both v4 and v6 are set to a dev e.g. 'default dev eth0'
-$ docker network create -d ipvlan \
-    --subnet=192.168.110.0/24 \
-    --subnet=192.168.112.0/24 \
-    --subnet=2001:db8:abc6::/64 \
-    -o parent=eth0 \
-    -o ipvlan_mode=l3 ipnet110
 @z
-
 @x
 # Start a few of containers on the network (ipnet110)
 # in separate terminals and check connectivity
-$ docker run --net=ipnet110 -it --rm alpine /bin/sh
-# Start a second container specifying the v6 address
-$ docker run --net=ipnet110 --ip6=2001:db8:abc6::10 -it --rm alpine /bin/sh
-# Start a third specifying the IPv4 address
-$ docker run --net=ipnet110 --ip=192.168.112.30 -it --rm alpine /bin/sh
-# Start a 4th specifying both the IPv4 and IPv6 addresses
-$ docker run --net=ipnet110 --ip6=2001:db8:abc6::50 --ip=192.168.112.50 -it --rm alpine /bin/sh
-```
 @y
 # Start a few of containers on the network (ipnet110)
 # in separate terminals and check connectivity
-$ docker run --net=ipnet110 -it --rm alpine /bin/sh
+@z
+@x
 # Start a second container specifying the v6 address
-$ docker run --net=ipnet110 --ip6=2001:db8:abc6::10 -it --rm alpine /bin/sh
+@y
+# Start a second container specifying the v6 address
+@z
+@x
 # Start a third specifying the IPv4 address
-$ docker run --net=ipnet110 --ip=192.168.112.30 -it --rm alpine /bin/sh
+@y
+# Start a third specifying the IPv4 address
+@z
+@x
 # Start a 4th specifying both the IPv4 and IPv6 addresses
-$ docker run --net=ipnet110 --ip6=2001:db8:abc6::50 --ip=192.168.112.50 -it --rm alpine /bin/sh
-```
+@y
+# Start a 4th specifying both the IPv4 and IPv6 addresses
 @z
 
 @x

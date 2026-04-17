@@ -103,15 +103,17 @@ building images in a consistent way, with the same configuration.
 @z
 
 @x
-You can write Bake files in HCL, YAML (Docker Compose files), or JSON. In
-general, HCL is the most expressive and flexible format, which is why you'll
-see it used in most of the examples in this documentation, and in projects that
-use Bake.
+You can write Bake files in HCL or JSON. Bake can also read
+[Docker Compose files](./compose-file.md) and translate each service to a build
+target. HCL is the most expressive and flexible format, which is why you'll see
+it used in most of the examples in this documentation, and in projects that use
+Bake.
 @y
-You can write Bake files in HCL, YAML (Docker Compose files), or JSON. In
-general, HCL is the most expressive and flexible format, which is why you'll
-see it used in most of the examples in this documentation, and in projects that
-use Bake.
+You can write Bake files in HCL or JSON. Bake can also read
+[Docker Compose files](./compose-file.md) and translate each service to a build
+target. HCL is the most expressive and flexible format, which is why you'll see
+it used in most of the examples in this documentation, and in projects that use
+Bake.
 @z
 
 @x

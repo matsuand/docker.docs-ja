@@ -322,6 +322,22 @@ The proxy reads the variable from your terminal session. See individual
 @z
 
 @x
+> [!NOTE]
+> These environment variables are set on your host, not inside the sandbox.
+> Sandbox agents are pre-configured to use credentials managed by the
+> host-side proxy. For custom environment variables not tied to a
+> [supported service](#supported-services), see
+> [Setting custom environment variables](../faq.md#how-do-i-set-custom-environment-variables-inside-a-sandbox).
+@y
+> [!NOTE]
+> These environment variables are set on your host, not inside the sandbox.
+> Sandbox agents are pre-configured to use credentials managed by the
+> host-side proxy. For custom environment variables not tied to a
+> [supported service](#supported-services), see
+> [Setting custom environment variables](../faq.md#how-do-i-set-custom-environment-variables-inside-a-sandbox).
+@z
+
+@x
 ## Best practices
 @y
 ## Best practices
@@ -331,9 +347,8 @@ The proxy reads the variable from your terminal session. See individual
 - Use [stored secrets](#stored-secrets) over environment variables. The OS
   keychain encrypts credentials at rest and controls access, while environment
   variables are plaintext in your shell.
-- Don't set API keys manually inside the sandbox. Credentials stored in
-  environment variables or configuration files inside the VM are readable by
-  the agent process directly.
+- Don't set API keys manually inside the sandbox. Sandbox agents are
+  pre-configured to use proxy-managed credentials.
 - For Claude Code and Codex, OAuth is another secure option: the flow runs on
   the host, so the token is never exposed inside the sandbox. For Claude Code,
   use `/login` inside the agent. For Codex, run `sbx secret set -g openai --oauth`.
@@ -341,9 +356,8 @@ The proxy reads the variable from your terminal session. See individual
 - Use [stored secrets](#stored-secrets) over environment variables. The OS
   keychain encrypts credentials at rest and controls access, while environment
   variables are plaintext in your shell.
-- Don't set API keys manually inside the sandbox. Credentials stored in
-  environment variables or configuration files inside the VM are readable by
-  the agent process directly.
+- Don't set API keys manually inside the sandbox. Sandbox agents are
+  pre-configured to use proxy-managed credentials.
 - For Claude Code and Codex, OAuth is another secure option: the flow runs on
   the host, so the token is never exposed inside the sandbox. For Claude Code,
   use `/login` inside the agent. For Codex, run `sbx secret set -g openai --oauth`.

@@ -22,13 +22,13 @@ also lets you run multiple builds concurrently with a single invocation.
 @z
 
 @x
-A Bake file can be written in HCL, JSON, or YAML formats, where the YAML format
-is an extension of a Docker Compose file. Here's an example Bake file in HCL
-format:
+A Bake file can be written in HCL or JSON format. Bake can also build directly
+from a [Docker Compose file](./compose-file.md). Here's an example Bake file in
+HCL format:
 @y
-A Bake file can be written in HCL, JSON, or YAML formats, where the YAML format
-is an extension of a Docker Compose file. Here's an example Bake file in HCL
-format:
+A Bake file can be written in HCL or JSON format. Bake can also build directly
+from a [Docker Compose file](./compose-file.md). Here's an example Bake file in
+HCL format:
 @z
 
 @x

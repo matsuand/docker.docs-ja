@@ -76,6 +76,18 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @z
 
 @x
+    - title: Malware scanning
+      description: Learn how Docker scans Docker Hardened Images for viruses and malware, and how to view and verify the scan attestation.
+      icon: bug_report
+      link: /dhi/explore/malware-scanning/
+@y
+    - title: Malware scanning
+      description: Learn how Docker scans Docker Hardened Images for viruses and malware, and how to view and verify the scan attestation.
+      icon: bug_report
+      link: __SUBDIR__/dhi/explore/malware-scanning/
+@z
+
+@x
     - title: Responsibility overview
       description: Understand Docker's role and your responsibilities when using Docker Hardened Images as part of your secure software supply chain.
       icon: group

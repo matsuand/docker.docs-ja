@@ -2758,6 +2758,16 @@ in the form:
 @z
 
 @x
+> [!WARNING]
+>
+> If you do not specify a host IP (such as `127.0.0.1`), Docker binds to all interfaces (`0.0.0.0`), bypassing host firewall rules. This can expose the container directly to the internet if the host has a public IP address. For more information, see [Port publishing and mapping](/manuals/engine/network/port-publishing.md).
+@y
+> [!WARNING]
+>
+> If you do not specify a host IP (such as `127.0.0.1`), Docker binds to all interfaces (`0.0.0.0`), bypassing host firewall rules. This can expose the container directly to the internet if the host has a public IP address. For more information, see [Port publishing and mapping](manuals/engine/network/port-publishing.md).
+@z
+
+@x
 Ports can be either a single value or a range. `HOST` and `CONTAINER` must use equivalent ranges.
 @y
 Ports can be either a single value or a range. `HOST` and `CONTAINER` must use equivalent ranges.

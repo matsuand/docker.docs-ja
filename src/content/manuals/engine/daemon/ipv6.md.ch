@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Use IPv6 networking
@@ -35,15 +36,7 @@ IPv6 is only supported on Docker daemons running on Linux hosts.
 - Using `docker network create`:
 @z
 
-@x
-  ```console
-  $ docker network create --ipv6 ip6net
-  ```
-@y
-  ```console
-  $ docker network create --ipv6 ip6net
-  ```
-@z
+% snip command...
 
 @x
 - Using `docker network create`, specifying an IPv6 subnet:
@@ -51,15 +44,7 @@ IPv6 is only supported on Docker daemons running on Linux hosts.
 - Using `docker network create`, specifying an IPv6 subnet:
 @z
 
-@x
-  ```console
-  $ docker network create --ipv6 --subnet 2001:db8::/64 ip6net
-  ```
-@y
-  ```console
-  $ docker network create --ipv6 --subnet 2001:db8::/64 ip6net
-  ```
-@z
+% snip command...
 
 @x
 - Using a Docker Compose file:
@@ -67,24 +52,22 @@ IPv6 is only supported on Docker daemons running on Linux hosts.
 - Using a Docker Compose file:
 @z
 
+% snip comde...
+
 @x
-  ```yaml
-   networks:
-     ip6net:
-       enable_ipv6: true
-       ipam:
-         config:
-           - subnet: 2001:db8::/64
-  ```
+> [!NOTE]
+>
+> The address `2001:db8::/64` in these examples is
+> [reserved for use in documentation][wikipedia-ipv6-reserved].
+> Replace it with a valid IPv6 network, for example a
+> [Unique Local Address (ULA)][wikipedia-ipv6-ula] subnet from `fd00::/8`.
 @y
-  ```yaml
-   networks:
-     ip6net:
-       enable_ipv6: true
-       ipam:
-         config:
-           - subnet: 2001:db8::/64
-  ```
+> [!NOTE]
+>
+> The address `2001:db8::/64` in these examples is
+> [reserved for use in documentation][wikipedia-ipv6-reserved].
+> Replace it with a valid IPv6 network, for example a
+> [Unique Local Address (ULA)][wikipedia-ipv6-ula] subnet from `fd00::/8`.
 @z
 
 @x
@@ -93,15 +76,7 @@ You can now run containers that attach to the `ip6net` network.
 You can now run containers that attach to the `ip6net` network.
 @z
 
-@x
-```console
-$ docker run --rm --network ip6net -p 80:80 traefik/whoami
-```
-@y
-```console
-$ docker run --rm --network ip6net -p 80:80 traefik/whoami
-```
-@z
+% snip command...
 
 @x
 This publishes port 80 on both IPv6 and IPv4.
@@ -113,37 +88,7 @@ You can verify the IPv6 connection by running curl,
 connecting to port 80 on the IPv6 loopback address:
 @z
 
-@x
-```console
-$ curl http://[::1]:80
-Hostname: ea1cfde18196
-IP: 127.0.0.1
-IP: ::1
-IP: 172.17.0.2
-IP: 2001:db8::2
-IP: fe80::42:acff:fe11:2
-RemoteAddr: [2001:db8::1]:37574
-GET / HTTP/1.1
-Host: [::1]
-User-Agent: curl/8.1.2
-Accept: */*
-```
-@y
-```console
-$ curl http://[::1]:80
-Hostname: ea1cfde18196
-IP: 127.0.0.1
-IP: ::1
-IP: 172.17.0.2
-IP: 2001:db8::2
-IP: fe80::42:acff:fe11:2
-RemoteAddr: [2001:db8::1]:37574
-GET / HTTP/1.1
-Host: [::1]
-User-Agent: curl/8.1.2
-Accept: */*
-```
-@z
+% snip command...
 
 @x
 ## Use IPv6 for the default bridge network
@@ -165,20 +110,22 @@ The following steps show you how to use IPv6 on the default bridge network.
    located at `/etc/docker/daemon.json`. Configure the following parameters:
 @z
 
+% snip code...
+
 @x
-   ```json
-   {
-     "ipv6": true,
-     "fixed-cidr-v6": "2001:db8:1::/64"
-   }
-   ```
+   > [!NOTE]
+   >
+   > The address `2001:db8:1::/64` in this example is
+   > [reserved for use in documentation][wikipedia-ipv6-reserved].
+   > Replace it with a valid IPv6 network, for example a
+   > [Unique Local Address (ULA)][wikipedia-ipv6-ula] subnet from `fd00::/8`.
 @y
-   ```json
-   {
-     "ipv6": true,
-     "fixed-cidr-v6": "2001:db8:1::/64"
-   }
-   ```
+   > [!NOTE]
+   >
+   > The address `2001:db8:1::/64` in this example is
+   > [reserved for use in documentation][wikipedia-ipv6-reserved].
+   > Replace it with a valid IPv6 network, for example a
+   > [Unique Local Address (ULA)][wikipedia-ipv6-ula] subnet from `fd00::/8`.
 @z
 
 @x
@@ -203,15 +150,7 @@ The following steps show you how to use IPv6 on the default bridge network.
 3. Restart the Docker daemon for your changes to take effect.
 @z
 
-@x
-   ```console
-   $ sudo systemctl restart docker
-   ```
-@y
-   ```console
-   $ sudo systemctl restart docker
-   ```
-@z
+% snip command...
 
 @x
 You can now run containers on the default bridge network.
@@ -219,15 +158,7 @@ You can now run containers on the default bridge network.
 You can now run containers on the default bridge network.
 @z
 
-@x
-```console
-$ docker run --rm -p 80:80 traefik/whoami
-```
-@y
-```console
-$ docker run --rm -p 80:80 traefik/whoami
-```
-@z
+% snip command...
 
 @x
 This publishes port 80 on both IPv6 and IPv4.
@@ -239,37 +170,7 @@ You can verify the IPv6 connection by making a request
 to port 80 on the IPv6 loopback address:
 @z
 
-@x
-```console
-$ curl http://[::1]:80
-Hostname: ea1cfde18196
-IP: 127.0.0.1
-IP: ::1
-IP: 172.17.0.2
-IP: 2001:db8:1::242:ac12:2
-IP: fe80::42:acff:fe12:2
-RemoteAddr: [2001:db8:1::1]:35558
-GET / HTTP/1.1
-Host: [::1]
-User-Agent: curl/8.1.2
-Accept: */*
-```
-@y
-```console
-$ curl http://[::1]:80
-Hostname: ea1cfde18196
-IP: 127.0.0.1
-IP: ::1
-IP: 172.17.0.2
-IP: 2001:db8:1::242:ac12:2
-IP: fe80::42:acff:fe12:2
-RemoteAddr: [2001:db8:1::1]:35558
-GET / HTTP/1.1
-Host: [::1]
-User-Agent: curl/8.1.2
-Accept: */*
-```
-@z
+% snip command...
 
 @x
 ## Dynamic IPv6 subnet allocation
@@ -341,25 +242,7 @@ be allocated from a `/16` pool. IPv6 subnets with prefix length `/64` will
 be allocated from a `/56` pool.
 @z
 
-@x
-```json
-{
-  "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 24 },
-    { "base": "2001:db8::/56", "size": 64 }
-  ]
-}
-```
-@y
-```json
-{
-  "default-address-pools": [
-    { "base": "172.17.0.0/16", "size": 24 },
-    { "base": "2001:db8::/56", "size": 64 }
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]

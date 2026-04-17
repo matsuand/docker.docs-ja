@@ -40,6 +40,20 @@ UIDs from 0 to 65536, but have no privileges on the host machine itself.
 @z
 
 @x
+> [!NOTE]
+>
+> With `userns-remap`, the Docker daemon still runs as root. To run both the
+> daemon and containers without root privileges, see [Rootless mode](rootless/_index.md)
+> instead.
+@y
+> [!NOTE]
+>
+> With `userns-remap`, the Docker daemon still runs as root. To run both the
+> daemon and containers without root privileges, see [Rootless mode](rootless/_index.md)
+> instead.
+@z
+
+@x
 ## About remapping and subordinate user and group IDs
 @y
 ## About remapping and subordinate user and group IDs

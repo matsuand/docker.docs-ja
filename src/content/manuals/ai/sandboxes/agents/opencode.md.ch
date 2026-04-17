@@ -1,22 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
----
 title: OpenCode
-weight: 60
-description: |
-  Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
-  interface for AI development.
----
 @y
----
 title: OpenCode
-weight: 60
+@z
+
+@x
 description: |
   Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
   interface for AI development.
----
+@y
+description: |
+  Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
+  interface for AI development.
 @z
 
 @x
@@ -51,15 +51,7 @@ Create a sandbox and run OpenCode for a project directory:
 Create a sandbox and run OpenCode for a project directory:
 @z
 
-@x
-```console
-$ sbx run opencode ~/my-project
-```
-@y
-```console
-$ sbx run opencode ~/my-project
-```
-@z
+% snip command...
 
 @x
 The workspace parameter is optional and defaults to the current directory:
@@ -67,17 +59,7 @@ The workspace parameter is optional and defaults to the current directory:
 The workspace parameter is optional and defaults to the current directory:
 @z
 
-@x
-```console
-$ cd ~/my-project
-$ sbx run opencode
-```
-@y
-```console
-$ cd ~/my-project
-$ sbx run opencode
-```
-@z
+% snip command...
 
 @x
 OpenCode launches a TUI (text user interface) where you can select your
@@ -101,25 +83,7 @@ OpenCode supports multiple providers. Store keys for the providers you want to
 use with [stored secrets](../security/credentials.md#stored-secrets):
 @z
 
-@x
-```console
-$ sbx secret set -g openai
-$ sbx secret set -g anthropic
-$ sbx secret set -g google
-$ sbx secret set -g xai
-$ sbx secret set -g groq
-$ sbx secret set -g aws
-```
-@y
-```console
-$ sbx secret set -g openai
-$ sbx secret set -g anthropic
-$ sbx secret set -g google
-$ sbx secret set -g xai
-$ sbx secret set -g groq
-$ sbx secret set -g aws
-```
-@z
+% snip command...
 
 @x
 You only need to configure the providers you want to use. OpenCode detects
@@ -168,6 +132,28 @@ OpenCode uses a TUI interface and doesn't require extensive configuration
 files. The agent prompts you to select a provider when it starts, and you can
 switch providers during a session.
 @z
+
+@x
+### Pass options at runtime
+@y
+### Pass options at runtime
+@z
+
+@x
+Pass OpenCode CLI options after `--`:
+@y
+Pass OpenCode CLI options after `--`:
+@z
+
+% snip command...
+
+@x
+For example, to resume an existing session in a named sandbox:
+@y
+For example, to resume an existing session in a named sandbox:
+@z
+
+% snip command...
 
 @x
 ### TUI mode

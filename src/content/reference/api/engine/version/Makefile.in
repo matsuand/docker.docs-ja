@@ -247,6 +247,10 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
+	v1.40.md \
+	v1.41.md \
+	v1.42.md \
+	v1.43.md \
 	v1.44.md \
 	v1.45.md \
 	v1.46.md \

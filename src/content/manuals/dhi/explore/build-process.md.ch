@@ -280,8 +280,10 @@ Each Docker Hardened Image is built through an automated pipeline:
    projects, improving the code for the entire community. When fixes are accepted
    upstream, the DHI build pipeline applies the patch immediately to protect
    customers while the fix moves through the upstream release process.
-5. Testing: Images undergo comprehensive testing for compatibility and
-   functionality.
+5. Testing and scanning: Images undergo comprehensive
+   [testing](test.md) for compatibility and functionality, and are
+   [scanned for malware](malware-scanning.md), secrets, and
+   vulnerabilities.
 6. Signing and attestations: Docker signs each image and generates
    attestations (SBOMs, VEX documents, build provenance).
 7. Publishing: The signed image is published to the DHI registry and the
@@ -303,8 +305,10 @@ Each Docker Hardened Image is built through an automated pipeline:
    projects, improving the code for the entire community. When fixes are accepted
    upstream, the DHI build pipeline applies the patch immediately to protect
    customers while the fix moves through the upstream release process.
-5. Testing: Images undergo comprehensive testing for compatibility and
-   functionality.
+5. Testing and scanning: Images undergo comprehensive
+   [testing](test.md) for compatibility and functionality, and are
+   [scanned for malware](malware-scanning.md), secrets, and
+   vulnerabilities.
 6. Signing and attestations: Docker signs each image and generates
    attestations (SBOMs, VEX documents, build provenance).
 7. Publishing: The signed image is published to the DHI registry and the
@@ -344,8 +348,8 @@ The following diagram shows the base image build flow:
                                                                                            |
                                                                                            v
 .-------------------.      .-------------------.      .-------------------.      .-------------------.
-| Cascade rebuilds  |<-----| Publish to        |<-----| Sign & generate   |<-----| Testing           |
-| (if needed)       |      | DHI registry      |      | attestations      |      |                   |
+| Cascade rebuilds  |<-----| Publish to        |<-----| Sign & generate   |<-----| Testing &         |
+| (if needed)       |      | DHI registry      |      | attestations      |      | scanning          |
 '-------------------'      '-------------------'      '-------------------'      '-------------------'
 ```
 @y
@@ -357,8 +361,8 @@ The following diagram shows the base image build flow:
                                                                                            |
                                                                                            v
 .-------------------.      .-------------------.      .-------------------.      .-------------------.
-| Cascade rebuilds  |<-----| Publish to        |<-----| Sign & generate   |<-----| Testing           |
-| (if needed)       |      | DHI registry      |      | attestations      |      |                   |
+| Cascade rebuilds  |<-----| Publish to        |<-----| Sign & generate   |<-----| Testing &         |
+| (if needed)       |      | DHI registry      |      | attestations      |      | scanning          |
 '-------------------'      '-------------------'      '-------------------'      '-------------------'
 ```
 @z
@@ -387,9 +391,11 @@ When you customize a DHI image with DHI Select or DHI Enterprise, the build proc
    DHI image is updated, an automated rebuild starts.
 3. Fetch base image: The latest base DHI image is fetched.
 4. Apply customizations: Your OCI artifacts are applied to the base image.
-5. Signing and attestations: Docker signs the customized image and generates
+5. Scanning: The customized image is [scanned for
+   malware](malware-scanning.md), secrets, and vulnerabilities.
+6. Signing and attestations: Docker signs the customized image and generates
    attestations (SBOMs, VEX documents, build provenance).
-6. Publishing: The signed customized image is published to Docker Hub and the
+7. Publishing: The signed customized image is published to Docker Hub and the
    attestations are published to the Docker Scout registry.
 @y
 1. Monitoring: Docker monitors your OCI artifact repositories for changes.
@@ -397,9 +403,11 @@ When you customize a DHI image with DHI Select or DHI Enterprise, the build proc
    DHI image is updated, an automated rebuild starts.
 3. Fetch base image: The latest base DHI image is fetched.
 4. Apply customizations: Your OCI artifacts are applied to the base image.
-5. Signing and attestations: Docker signs the customized image and generates
+5. Scanning: The customized image is [scanned for
+   malware](malware-scanning.md), secrets, and vulnerabilities.
+6. Signing and attestations: Docker signs the customized image and generates
    attestations (SBOMs, VEX documents, build provenance).
-6. Publishing: The signed customized image is published to Docker Hub and the
+7. Publishing: The signed customized image is published to Docker Hub and the
    attestations are published to the Docker Scout registry.
 @z
 
@@ -421,28 +429,28 @@ The following diagram shows the customized image build flow:
 
 @x
 ```goat {class="text-sm"}
-.-------------------.      .-------------------.      .-------------------.
-| Docker monitors   |----->| Trigger rebuild   |----->| Fetch base        |
-| OCI artifacts     |      |                   |      | DHI image         |
-'-------------------'      '-------------------'      '-------------------'
-                                                               |
-                                                               v
-.-------------------.      .-------------------.      .-------------------.
-| Publish to        |<-----| Sign & generate   |<-----| Apply             |
-| Docker Hub        |      | attestations      |      | customizations    |
-'-------------------'      '-------------------'      '-------------------'
+.-------------------.      .-------------------.      .-------------------.      .-------------------.
+| Docker monitors   |----->| Trigger rebuild   |----->| Fetch base        |----->| Apply             |
+| OCI artifacts     |      |                   |      | DHI image         |      | customizations    |
+'-------------------'      '-------------------'      '-------------------'      '-------------------'
+                                                                                           |
+                                                                                           v
+                           .-------------------.      .-------------------.      .-------------------.
+                           | Publish to        |<-----| Sign & generate   |<-----| Scanning          |
+                           | Docker Hub        |      | attestations      |      |                   |
+                           '-------------------'      '-------------------'      '-------------------'
 ```
 @y
 ```goat {class="text-sm"}
-.-------------------.      .-------------------.      .-------------------.
-| Docker monitors   |----->| Trigger rebuild   |----->| Fetch base        |
-| OCI artifacts     |      |                   |      | DHI image         |
-'-------------------'      '-------------------'      '-------------------'
-                                                               |
-                                                               v
-.-------------------.      .-------------------.      .-------------------.
-| Publish to        |<-----| Sign & generate   |<-----| Apply             |
-| Docker Hub        |      | attestations      |      | customizations    |
-'-------------------'      '-------------------'      '-------------------'
+.-------------------.      .-------------------.      .-------------------.      .-------------------.
+| Docker monitors   |----->| Trigger rebuild   |----->| Fetch base        |----->| Apply             |
+| OCI artifacts     |      |                   |      | DHI image         |      | customizations    |
+'-------------------'      '-------------------'      '-------------------'      '-------------------'
+                                                                                           |
+                                                                                           v
+                           .-------------------.      .-------------------.      .-------------------.
+                           | Publish to        |<-----| Sign & generate   |<-----| Scanning          |
+                           | Docker Hub        |      | attestations      |      |                   |
+                           '-------------------'      '-------------------'      '-------------------'
 ```
 @z

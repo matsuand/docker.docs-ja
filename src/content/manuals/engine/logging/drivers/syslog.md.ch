@@ -58,18 +58,20 @@ The format is defined in [RFC 5424](https://tools.ietf.org/html/rfc5424) and Doc
 
 @x
 To use the `syslog` driver as the default logging driver, set the `log-driver`
-and `log-opt` keys to appropriate values in the `daemon.json` file, which is
-located in `/etc/docker/` on Linux hosts or
-`C:\ProgramData\docker\config\daemon.json` on Windows Server. For more about
-configuring Docker using `daemon.json`, see
+and `log-opt` keys to appropriate values in the `daemon.json` file. For more
+about configuring Docker using `daemon.json`, see
 [daemon.json](/reference/cli/dockerd.md#daemon-configuration-file).
 @y
 To use the `syslog` driver as the default logging driver, set the `log-driver`
-and `log-opt` keys to appropriate values in the `daemon.json` file, which is
-located in `/etc/docker/` on Linux hosts or
-`C:\ProgramData\docker\config\daemon.json` on Windows Server. For more about
-configuring Docker using `daemon.json`, see
+and `log-opt` keys to appropriate values in the `daemon.json` file. For more
+about configuring Docker using `daemon.json`, see
 [daemon.json](reference/cli/dockerd.md#daemon-configuration-file).
+@z
+
+@x
+{{% include "daemon-cfg-desktop.md" %}}
+@y
+{{% include "daemon-cfg-desktop.md" %}}
 @z
 
 @x

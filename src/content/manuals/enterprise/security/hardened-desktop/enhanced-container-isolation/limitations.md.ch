@@ -176,15 +176,15 @@ $ docker buildx build --network=host .
 @z
 
 @x
-## Docker Desktop Kubernetes not protected
+## Docker Desktop Kubernetes not protected in Kubeadm mode
 @y
-## Docker Desktop Kubernetes not protected
+## Docker Desktop Kubernetes not protected in Kubeadm mode
 @z
 
 @x
-The integrated Kubernetes feature doesn't benefit from ECI protection. Malicious or privileged pods can compromise the Docker Desktop VM and bypass security controls.
+The integrated Kubernetes feature, when used with the legacy Kubeadm provisioner, doesn't benefit from ECI protection. Malicious or privileged pods can compromise the Docker Desktop VM and bypass security controls.
 @y
-The integrated Kubernetes feature doesn't benefit from ECI protection. Malicious or privileged pods can compromise the Docker Desktop VM and bypass security controls.
+The integrated Kubernetes feature, when used with the legacy Kubeadm provisioner, doesn't benefit from ECI protection. Malicious or privileged pods can compromise the Docker Desktop VM and bypass security controls.
 @z
 
 @x
@@ -194,25 +194,9 @@ The integrated Kubernetes feature doesn't benefit from ECI protection. Malicious
 @z
 
 @x
-Use Kubernetes in Docker (KinD) for ECI-protected Kubernetes:
+Use the newer Docker Desktop Kubernetes "KinD" provisioner (see [Cluster provisioning method](/manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The KinD provisioner is also faster and allows for multi-node Kubernetes clusters.
 @y
-Use Kubernetes in Docker (KinD) for ECI-protected Kubernetes:
-@z
-
-@x
-```console
-$ kind create cluster
-```
-@y
-```console
-$ kind create cluster
-```
-@z
-
-@x
-With ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM.
-@y
-With ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM.
+Use the newer Docker Desktop Kubernetes "KinD" provisioner (see [Cluster provisioning method](manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The KinD provisioner is also faster and allows for multi-node Kubernetes clusters.
 @z
 
 @x
@@ -229,12 +213,10 @@ These container types currently don't benefit from ECI protection:
 
 @x
 - Docker Extensions: Extension containers run without ECI protection
-- Docker Debug: Docker Debug containers bypass ECI restrictions
-- Kubernetes pods: When using Docker Desktop's integrated Kubernetes
+- Kubernetes pods: When using Docker Desktop's integrated Kubernetes with the old Kubeadm provisioner.
 @y
 - Docker Extensions: Extension containers run without ECI protection
-- Docker Debug: Docker Debug containers bypass ECI restrictions
-- Kubernetes pods: When using Docker Desktop's integrated Kubernetes
+- Kubernetes pods: When using Docker Desktop's integrated Kubernetes with the old Kubeadm provisioner.
 @z
 
 @x
@@ -244,9 +226,9 @@ These container types currently don't benefit from ECI protection:
 @z
 
 @x
-Only use extensions from trusted sources and avoid Docker Debug in security-sensitive environments.
+Only use extensions from trusted sources in security-sensitive environments.
 @y
-Only use extensions from trusted sources and avoid Docker Debug in security-sensitive environments.
+Only use extensions from trusted sources in security-sensitive environments.
 @z
 
 @x

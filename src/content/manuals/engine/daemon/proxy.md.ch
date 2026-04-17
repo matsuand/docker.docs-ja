@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Learn how to configure the Docker daemon to use an HTTP proxy
@@ -89,27 +90,7 @@ or using CLI flags for the `--http-proxy` or `--https-proxy` flags for the
 `dockerd` command. Configuration using `daemon.json` is recommended.
 @z
 
-@x
-```json
-{
-  "proxies": {
-    "http-proxy": "http://proxy.example.com:3128",
-    "https-proxy": "https://proxy.example.com:3129",
-    "no-proxy": "*.test.example.com,.example.org,127.0.0.0/8"
-  }
-}
-```
-@y
-```json
-{
-  "proxies": {
-    "http-proxy": "http://proxy.example.com:3128",
-    "https-proxy": "https://proxy.example.com:3129",
-    "no-proxy": "*.test.example.com,.example.org,127.0.0.0/8"
-  }
-}
-```
-@z
+% snip code...
 
 @x
 After changing the configuration file, restart the daemon for the proxy configuration to take effect:
@@ -238,44 +219,44 @@ systemd drop-in file that sets the variables for the `docker` service.
 @z
 
 @x
-   If you are behind an HTTPS proxy server, set the `HTTPS_PROXY` environment
+   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
    variable:
 @y
-   If you are behind an HTTPS proxy server, set the `HTTPS_PROXY` environment
+   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
    variable:
 @z
 
 @x
    ```systemd
    [Service]
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    ```
 @y
    ```systemd
    [Service]
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    ```
 @z
 
 @x
-   Multiple environment variables can be set; to set both a non-HTTPS and a
-   HTTPs proxy;
+   Multiple environment variables can be set; to set both an HTTP and an
+   HTTPS proxy;
 @y
-   Multiple environment variables can be set; to set both a non-HTTPS and a
-   HTTPs proxy;
+   Multiple environment variables can be set; to set both an HTTP and an
+   HTTPS proxy;
 @z
 
 @x
    ```systemd
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    ```
 @y
    ```systemd
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    ```
 @z
 
@@ -353,14 +334,14 @@ systemd drop-in file that sets the variables for the `docker` service.
    ```systemd
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
    ```
 @y
    ```systemd
    [Service]
    Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
+   Environment="HTTPS_PROXY=http://proxy.example.com:3128"
    Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
    ```
 @z
@@ -391,21 +372,7 @@ systemd drop-in file that sets the variables for the `docker` service.
    made, for example:
 @z
 
-@x
-   ```console
-   $ sudo systemctl show --property=Environment docker
-@y
-   ```console
-   $ sudo systemctl show --property=Environment docker
-@z
-
-@x
-   Environment=HTTP_PROXY=http://proxy.example.com:3128 HTTPS_PROXY=https://proxy.example.com:3129 NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp
-   ```
-@y
-   Environment=HTTP_PROXY=http://proxy.example.com:3128 HTTPS_PROXY=https://proxy.example.com:3129 NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp
-   ```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -452,46 +419,24 @@ systemd drop-in file that sets the variables for the `docker` service.
 @z
 
 @x
-   If you are behind an HTTPS proxy server, set the `HTTPS_PROXY` environment
+   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
    variable:
 @y
-   If you are behind an HTTPS proxy server, set the `HTTPS_PROXY` environment
+   To proxy HTTPS requests, set the `HTTPS_PROXY` environment
    variable:
 @z
 
-@x
-   ```systemd
-   [Service]
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   ```
-@y
-   ```systemd
-   [Service]
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   ```
-@z
+% snip code...
 
 @x
-   Multiple environment variables can be set; to set both a non-HTTPS and a
-   HTTPs proxy;
+   Multiple environment variables can be set; to set both an HTTP and an
+   HTTPS proxy;
 @y
-   Multiple environment variables can be set; to set both a non-HTTPS and a
-   HTTPs proxy;
+   Multiple environment variables can be set; to set both an HTTP and an
+   HTTPS proxy;
 @z
 
-@x
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   ```
-@y
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   ```
-@z
+% snip code...
 
 @x
    > [!NOTE]
@@ -563,21 +508,7 @@ systemd drop-in file that sets the variables for the `docker` service.
    Example:
 @z
 
-@x
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-   ```
-@y
-   ```systemd
-   [Service]
-   Environment="HTTP_PROXY=http://proxy.example.com:3128"
-   Environment="HTTPS_PROXY=https://proxy.example.com:3129"
-   Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
-   ```
-@z
+% snip code...
 
 @x
 4. Flush changes and restart Docker
@@ -605,21 +536,7 @@ systemd drop-in file that sets the variables for the `docker` service.
    made, for example:
 @z
 
-@x
-   ```console
-   $ systemctl --user show --property=Environment docker
-@y
-   ```console
-   $ systemctl --user show --property=Environment docker
-@z
-
-@x
-   Environment=HTTP_PROXY=http://proxy.example.com:3128 HTTPS_PROXY=https://proxy.example.com:3129 NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp
-   ```
-@y
-   Environment=HTTP_PROXY=http://proxy.example.com:3128 HTTPS_PROXY=https://proxy.example.com:3129 NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp
-   ```
-@z
+% snip command...
 
 @x
 {{< /tab >}}

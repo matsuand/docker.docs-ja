@@ -7,6 +7,7 @@ bases = \
 	available.md            \
 	build-process.md        \
 	feedback.md             \
+	malware-scanning.md     \
 	responsibility.md       \
 	scanner-integrations.md \
 	test.md                 \
