@@ -1,13 +1,15 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Group mapping
-description: Automate team membership by syncing identity provider groups with Docker teams
+description: Automate team membership by syncing identity provider groups with Docker Teams
 keywords: Group Mapping, SCIM, Docker Admin, admin, security, team management, user provisioning, identity provider
 @y
 title: Group mapping
-description: Automate team membership by syncing identity provider groups with Docker teams
+description: Automate team membership by syncing identity provider groups with Docker Teams
 keywords: Group Mapping, SCIM, Docker Admin, admin, security, team management, user provisioning, identity provider
 @z
 
@@ -32,11 +34,11 @@ This page explains how group mapping works, and how to set up group mapping.
 @x
 > [!TIP]
 >
-> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](scim.md#set-up-role-mapping) may be a better fit for your needs.
+> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](provision-scim.md#set-up-role-mapping) may be a better fit for your needs.
 @y
 > [!TIP]
 >
-> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](scim.md#set-up-role-mapping) may be a better fit for your needs.
+> Group mapping is ideal for adding users to multiple organizations or multiple teams within one organization. If you don't need to set up multi-organization or multi-team assignment, SCIM [user-level attributes](provision-scim.md#set-up-role-mapping) may be a better fit for your needs.
 @z
 
 @x
@@ -66,9 +68,9 @@ Before you being, you must have:
 @z
 
 @x
-Group mapping keeps your Docker teams synchronized with your IdP groups through these key components:
+Group mapping keeps your Docker Teams synchronized with your IdP groups through these key components:
 @y
-Group mapping keeps your Docker teams synchronized with your IdP groups through these key components:
+Group mapping keeps your Docker Teams synchronized with your IdP groups through these key components:
 @z
 
 @x
@@ -136,10 +138,10 @@ For example:
 @z
 
 @x
-- For the "developers" team in the "moby" organization: `mobdy:developers`
+- For the "developers" team in the "moby" organization: `moby:developers`
 - For multi-organization access: `moby:backend` and `whale:desktop`
 @y
-- For the "developers" team in the "moby" organization: `mobdy:developers`
+- For the "developers" team in the "moby" organization: `moby:developers`
 - For multi-organization access: `moby:backend` and `whale:desktop`
 @z
 
@@ -312,9 +314,9 @@ The next time you sync your groups with Docker, your users will map to the Docke
 @z
 
 @x
-Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./scim.md#enable-scim) first.
+Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./provision-scim.md#enable-scim) first.
 @y
-Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./scim.md#enable-scim) first.
+Use group mapping with SCIM for more advanced user lifecycle management. Before you begin, make sure you [set up SCIM](./provision-scim.md#enable-scim) first.
 @z
 
 @x
@@ -474,9 +476,23 @@ Once complete, a user who signs in to Docker through SSO is automatically added 
 @x
 > [!TIP]
 >
-> [Enable SCIM](scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
+> [Enable SCIM](provision-scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
 @y
 > [!TIP]
 >
-> [Enable SCIM](scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
+> [Enable SCIM](provision-scim.md) to take advantage of automatic user provisioning and de-provisioning. If you don't enable SCIM users are only automatically provisioned. You have to de-provision them manually.
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- [Assign roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md) to members of your org.
+- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in.md), if needed.
+@y
+- [Assign roles](manuals/enterprise/security/roles-and-permissions/core-roles.md) to members of your org.
+- [Enforce sign in](manuals/enterprise/security/enforce-sign-in.md), if needed.
 @z

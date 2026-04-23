@@ -99,18 +99,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/helm/
 @z
 
-@x
-    - title: Manage Docker Hardened Images and charts
-      description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
-      icon: reorder
-      link: /dhi/how-to/manage/
-@y
-    - title: Manage Docker Hardened Images and charts
-      description: Learn how to manage your mirrored and customized Docker Hardened Images in your organization.
-      icon: reorder
-      link: __SUBDIR__/dhi/how-to/manage/
-@z
-
 % grid_verify:
 
 @x

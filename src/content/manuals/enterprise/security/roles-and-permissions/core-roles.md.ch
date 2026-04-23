@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Core roles
@@ -50,9 +50,9 @@ Docker organizations have three core roles:
 @z
 
 @x
-A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](/admin/company/).
+A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](/manuals/admin/company/_index.md).
 @y
-A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](__SUBDIR__/admin/company/).
+A company owner has the same organization management permissions as an organization owner, but there are some content and registry permissions that company owners don't have (for example, repository pull/push). For more information, see [Company overview](manuals/admin/company/_index.md).
 @z
 
 @x
@@ -62,9 +62,9 @@ A company owner has the same organization management permissions as an organizat
 @z
 
 @x
-These permissions apply organization-wide, including all repositories in your organization's namespace.
+These permissions apply organization-wide.
 @y
-These permissions apply organization-wide, including all repositories in your organization's namespace.
+These permissions apply organization-wide.
 @z
 
 @x
@@ -110,19 +110,25 @@ These permissions apply organization-wide, including all repositories in your or
 @z
 
 @x
-When you add members to teams, you can grant additional repository permissions
+You can grant repository permissions to members
 beyond their organization role:
 @y
-When you add members to teams, you can grant additional repository permissions
+You can grant repository permissions to members
 beyond their organization role:
 @z
 
 @x
-1. Role permissions: Applied organization-wide (member or editor)
-2. Team permissions: Additional permissions for specific repositories
+- Role permissions: Applied organization-wide (member or editor)
+- Team permissions: Additional permissions for specific repositories
 @y
-1. Role permissions: Applied organization-wide (member or editor)
-2. Team permissions: Additional permissions for specific repositories
+- Role permissions: Applied organization-wide (member or editor)
+- Team permissions: Additional permissions for specific repositories
+@z
+
+@x
+To extend access to private repositories, assign a custom role to organization members or configure team permissions.
+@y
+To extend access to private repositories, assign a custom role to organization members or configure team permissions.
 @z
 
 @x
@@ -181,13 +187,13 @@ beyond their organization role:
 
 @x
 > [!TIP]
-> 
+>
 > If you want more granular access control, you can
 > [upgrade to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsEnterpriseCoreRoles)
 > for custom roles and advanced permissions.
 @y
 > [!TIP]
-> 
+>
 > If you want more granular access control, you can
 > [upgrade to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsEnterpriseCoreRoles)
 > for custom roles and advanced permissions.

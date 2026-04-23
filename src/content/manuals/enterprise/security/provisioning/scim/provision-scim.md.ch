@@ -5,135 +5,19 @@
 % snip 対応
 
 @x
-title: SCIM provisioning
-linkTitle: SCIM
+title: Set up SCIM provisioning
+linkTitle: Setup
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
-keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 @y
-title: SCIM provisioning
-linkTitle: SCIM
+title: Set up SCIM provisioning
+linkTitle: Setup
 description: Learn how System for Cross-domain Identity Management works and how to set it up.
-keywords: SCIM, SSO, user provisioning, de-provisioning, role mapping, assign users
 @z
 
 @x
 {{< summary-bar feature_name="SSO" >}}
 @y
 {{< summary-bar feature_name="SSO" >}}
-@z
-
-@x
-Automate user management for your Docker organization using System for
-Cross-domain Identity Management (SCIM). SCIM automatically provisions and
-de-provisions users, synchronizes team memberships, and keeps your Docker
-organization in sync with your identity provider.
-@y
-Automate user management for your Docker organization using System for
-Cross-domain Identity Management (SCIM). SCIM automatically provisions and
-de-provisions users, synchronizes team memberships, and keeps your Docker
-organization in sync with your identity provider.
-@z
-
-@x
-This page shows you how to automate user provisioning and de-provisioning for
-Docker using SCIM.
-@y
-This page shows you how to automate user provisioning and de-provisioning for
-Docker using SCIM.
-@z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-Before you begin, you must have:
-@y
-Before you begin, you must have:
-@z
-
-@x
-- SSO configured for your organization
-- Administrator access to Docker Home and your identity provider
-@y
-- SSO configured for your organization
-- Administrator access to Docker Home and your identity provider
-@z
-
-@x
-## How SCIM works
-@y
-## How SCIM works
-@z
-
-@x
-SCIM automates user provisioning and de-provisioning for Docker through your
-identity provider. After you enable SCIM, any user assigned to your
-Docker application in your identity provider is automatically provisioned and
-added to your Docker organization. When a user is removed from the Docker
-application in your identity provider, SCIM deactivates and removes them from
-your Docker organization.
-@y
-SCIM automates user provisioning and de-provisioning for Docker through your
-identity provider. After you enable SCIM, any user assigned to your
-Docker application in your identity provider is automatically provisioned and
-added to your Docker organization. When a user is removed from the Docker
-application in your identity provider, SCIM deactivates and removes them from
-your Docker organization.
-@z
-
-@x
-In addition to provisioning and removal, SCIM also syncs profile updates like
-name changes made in your identity provider. You can use SCIM alongside Docker's
-default Just-in-Time (JIT) provisioning or on its own with JIT disabled.
-@y
-In addition to provisioning and removal, SCIM also syncs profile updates like
-name changes made in your identity provider. You can use SCIM alongside Docker's
-default Just-in-Time (JIT) provisioning or on its own with JIT disabled.
-@z
-
-@x
-SCIM automates:
-@y
-SCIM automates:
-@z
-
-@x
-- Creating users
-- Updating user profiles
-- Removing and deactivating users
-- Re-activating users
-- Group mapping
-@y
-- Creating users
-- Updating user profiles
-- Removing and deactivating users
-- Re-activating users
-- Group mapping
-@z
-
-@x
-> [!NOTE]
->
-> SCIM only manages users provisioned through your identity provider after
-> SCIM is enabled. It cannot remove users who were manually added to your Docker
-> organization before SCIM was set up.
->
-> To remove those users, delete them manually from your Docker organization.
-> For more information, see
-> [Manage organization members](/manuals/admin/organization/members.md).
-@y
-> [!NOTE]
->
-> SCIM only manages users provisioned through your identity provider after
-> SCIM is enabled. It cannot remove users who were manually added to your Docker
-> organization before SCIM was set up.
->
-> To remove those users, delete them manually from your Docker organization.
-> For more information, see
-> [Manage organization members](manuals/admin/organization/members.md).
 @z
 
 @x
@@ -180,10 +64,10 @@ Docker supports the following SCIM attributes:
 
 @x
 For additional details about supported attributes and SCIM, see
-[Docker Hub API SCIM reference](/reference/api/hub/latest/#tag/scim).
+[Docker Hub API SCIM reference](/reference/api/hub/latest.md#tag/scim).
 @y
 For additional details about supported attributes and SCIM, see
-[Docker Hub API SCIM reference](__SUBDIR__/reference/api/hub/latest/#tag/scim).
+[Docker Hub API SCIM reference](reference/api/hub/latest.md#tag/scim).
 @z
 
 @x
@@ -195,7 +79,7 @@ For additional details about supported attributes and SCIM, see
 > your SCIM values.
 >
 > Alternatively, you can disable JIT provisioning to rely solely on SCIM.
-> For details, see [Just-in-Time](just-in-time.md).
+> For details, see [Just-in-Time](/manuals/enterprise/security/provisioning/just-in-time.md).
 @y
 > [!IMPORTANT]
 >
@@ -205,7 +89,7 @@ For additional details about supported attributes and SCIM, see
 > your SCIM values.
 >
 > Alternatively, you can disable JIT provisioning to rely solely on SCIM.
-> For details, see [Just-in-Time](just-in-time.md).
+> For details, see [Just-in-Time](manuals/enterprise/security/provisioning/just-in-time.md).
 @z
 
 @x
@@ -485,11 +369,11 @@ Next, [set up role mapping](#set-up-role-mapping).
 @z
 
 @x
-You can assign [Docker roles](../roles-and-permissions.md) to
+You can assign [Docker roles](/manuals/enterprise/security/roles-and-permissions/_index.md) to
 users by adding optional SCIM attributes in your IdP. These attributes override
 default role and team values set in your SSO configuration.
 @y
-You can assign [Docker roles](../roles-and-permissions.md) to
+You can assign [Docker roles](manuals/enterprise/security/roles-and-permissions/_index.md) to
 users by adding optional SCIM attributes in your IdP. These attributes override
 default role and team values set in your SSO configuration.
 @z
@@ -517,13 +401,13 @@ The following table lists the supported optional user-level attributes:
 @x
 | Attribute    | Possible values                          | Notes                                                                                                                                                                                                                                                            |
 | ------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dockerRole` | `member`, `editor`, or `owner`           | If not set, the user defaults to the `member` role. Setting this attribute overrides the default.<br><br>For role definitions, see [Roles and permissions](../roles-and-permissions.md).                                                                         |
+| `dockerRole` | `member`, `editor`, or `owner`           | If not set, the user defaults to the `member` role. Setting this attribute overrides the default.<br><br>For role definitions, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).                                        |
 | `dockerOrg`  | Docker `organizationName` (e.g., `moby`) | Overrides the default organization configured in your SSO connection.<br><br>If unset, the user is provisioned to the default organization. If `dockerOrg` and `dockerTeam` are both set, the user is provisioned to the team within the specified organization. |
 | `dockerTeam` | Docker `teamName` (e.g., `developers`)   | Provisions the user to the specified team in the default or specified organization. If the team doesn't exist, it is automatically created.<br><br>You can still use [group mapping](group-mapping.md) to assign users to multiple teams across organizations.   |
 @y
 | Attribute    | Possible values                          | Notes                                                                                                                                                                                                                                                            |
 | ------------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dockerRole` | `member`, `editor`, or `owner`           | If not set, the user defaults to the `member` role. Setting this attribute overrides the default.<br><br>For role definitions, see [Roles and permissions](../roles-and-permissions.md).                                                                         |
+| `dockerRole` | `member`, `editor`, or `owner`           | If not set, the user defaults to the `member` role. Setting this attribute overrides the default.<br><br>For role definitions, see [Roles and permissions](manuals/enterprise/security/roles-and-permissions/_index.md).                                        |
 | `dockerOrg`  | Docker `organizationName` (e.g., `moby`) | Overrides the default organization configured in your SSO connection.<br><br>If unset, the user is provisioned to the default organization. If `dockerOrg` and `dockerTeam` are both set, the user is provisioned to the team within the specified organization. |
 | `dockerTeam` | Docker `teamName` (e.g., `developers`)   | Provisions the user to the specified team in the default or specified organization. If the team doesn't exist, it is automatically created.<br><br>You can still use [group mapping](group-mapping.md) to assign users to multiple teams across organizations.   |
 @z
@@ -551,7 +435,7 @@ This value is required in your identity provider when creating custom SCIM attri
 @z
 
 @x
-1. Setup [SSO](../single-sign-on/connect.md) and SCIM first.
+1. Setup [SSO](/manuals/enterprise/security/single-sign-on/connect.md) and SCIM first.
 1. In the Okta admin portal, go to **Directory**, select **Profile Editor**,
    and then **User (Default)**.
 1. Select **Add Attribute** and configure the values for the role, organization,
@@ -573,7 +457,7 @@ This value is required in your identity provider when creating custom SCIM attri
 1. Select **Step 2** and configure the mapping from the user attribute to the
    Docker variables.
 @y
-1. Setup [SSO](../single-sign-on/connect.md) and SCIM first.
+1. Setup [SSO](manuals/enterprise/security/single-sign-on/connect.md) and SCIM first.
 1. In the Okta admin portal, go to **Directory**, select **Profile Editor**,
    and then **User (Default)**.
 1. Select **Add Attribute** and configure the values for the role, organization,
@@ -653,7 +537,7 @@ group will inherit these attributes upon provisioning.
 @z
 
 @x
-1. Complete the [SCIM provisioning setup](#enable-scim-in-docker).
+1. Complete the [SCIM provisioning setup](/manuals/enterprise/security/provisioning/scim/provision-scim.md#enable-scim-in-docker).
 1. In the Azure Portal, open **Microsoft Entra ID** >
    **Enterprise Applications**, and select your SCIM application.
 1. Go to **Provisioning** > **Mappings** >
@@ -662,14 +546,14 @@ group will inherit these attributes upon provisioning.
    - `userPrincipalName` -> `userName`
    - `mail` -> `emails.value`
    - Optional. Map `dockerRole`, `dockerOrg`, or `dockerTeam` using one of the
-     [mapping methods](#step-two-choose-a-role-mapping-method).
+     [mapping methods](/manuals/enterprise/security/provisioning/scim/provision-scim.md#set-up-role-mapping).
 1. Remove any unsupported attributes to prevent sync errors.
 1. Optional. Go to **Mappings** > **Provision Azure Active Directory Groups**:
    - If group provisioning causes errors, set **Enabled** to **No**.
    - If enabling, test group mappings carefully.
 1. Select **Save** to apply mappings.
 @y
-1. Complete the [SCIM provisioning setup](#enable-scim-in-docker).
+1. Complete the [SCIM provisioning setup](manuals/enterprise/security/provisioning/scim/provision-scim.md#enable-scim-in-docker).
 1. In the Azure Portal, open **Microsoft Entra ID** >
    **Enterprise Applications**, and select your SCIM application.
 1. Go to **Provisioning** > **Mappings** >
@@ -678,7 +562,7 @@ group will inherit these attributes upon provisioning.
    - `userPrincipalName` -> `userName`
    - `mail` -> `emails.value`
    - Optional. Map `dockerRole`, `dockerOrg`, or `dockerTeam` using one of the
-     [mapping methods](#step-two-choose-a-role-mapping-method).
+     [mapping methods](manuals/enterprise/security/provisioning/scim/provision-scim.md#set-up-role-mapping).
 1. Remove any unsupported attributes to prevent sync errors.
 1. Optional. Go to **Mappings** > **Provision Azure Active Directory Groups**:
    - If group provisioning causes errors, set **Enabled** to **No**.
@@ -850,7 +734,7 @@ If you're using direct mapping:
 1. Use Microsoft Graph API to assign attribute values. Example PATCH request:
 @z
 
-% snip code...
+% snip command...
 
 @x
 > [!NOTE]
@@ -957,440 +841,6 @@ After completing role mapping, you can test the configuration manually.
 @z
 
 @x
-## Migrate existing JIT users to SCIM
-@y
-## Migrate existing JIT users to SCIM
-@z
-
-@x
-If you already have users provisioned through Just-in-Time (JIT) and want to
-enable full SCIM lifecycle management, you need to migrate them. Users
-originally created by JIT cannot be automatically de-provisioned through SCIM,
-even after SCIM is enabled.
-@y
-If you already have users provisioned through Just-in-Time (JIT) and want to
-enable full SCIM lifecycle management, you need to migrate them. Users
-originally created by JIT cannot be automatically de-provisioned through SCIM,
-even after SCIM is enabled.
-@z
-
-@x
-### Why migrate
-@y
-### Why migrate
-@z
-
-@x
-Organizations using JIT provisioning may encounter limitations with user
-lifecycle management, particularly around de-provisioning. Migrating to SCIM
-provides:
-@y
-Organizations using JIT provisioning may encounter limitations with user
-lifecycle management, particularly around de-provisioning. Migrating to SCIM
-provides:
-@z
-
-@x
-- Automatic user de-provisioning when users leave your organization. This is
-  the primary benefit for large organizations that need full automation.
-- Continuous synchronization of user attributes
-- Centralized user management through your identity provider
-- Enhanced security through automated access control
-@y
-- Automatic user de-provisioning when users leave your organization. This is
-  the primary benefit for large organizations that need full automation.
-- Continuous synchronization of user attributes
-- Centralized user management through your identity provider
-- Enhanced security through automated access control
-@z
-
-@x
-> [!IMPORTANT]
->
-> Users originally created through JIT provisioning cannot be automatically
-> de-provisioned by SCIM, even after SCIM is enabled. To enable full lifecycle
-> management including automatic de-provisioning through your identity provider,
-> you must manually remove these users so SCIM can re-create them with proper
-> lifecycle management capabilities.
-@y
-> [!IMPORTANT]
->
-> Users originally created through JIT provisioning cannot be automatically
-> de-provisioned by SCIM, even after SCIM is enabled. To enable full lifecycle
-> management including automatic de-provisioning through your identity provider,
-> you must manually remove these users so SCIM can re-create them with proper
-> lifecycle management capabilities.
-@z
-
-@x
-This migration is most critical for larger organizations that require fully
-automated user de-provisioning when employees leave the company.
-@y
-This migration is most critical for larger organizations that require fully
-automated user de-provisioning when employees leave the company.
-@z
-
-@x
-### Prerequisites for migration
-@y
-### Prerequisites for migration
-@z
-
-@x
-Before migrating, ensure you have:
-@y
-Before migrating, ensure you have:
-@z
-
-@x
-- SCIM configured and tested in your organization
-- A maintenance window for the migration
-@y
-- SCIM configured and tested in your organization
-- A maintenance window for the migration
-@z
-
-@x
-> [!WARNING]
->
-> This migration temporarily disrupts user access. Plan to perform this
-> migration during a low-usage window and communicate the timeline to affected
-> users.
-@y
-> [!WARNING]
->
-> This migration temporarily disrupts user access. Plan to perform this
-> migration during a low-usage window and communicate the timeline to affected
-> users.
-@z
-
-@x
-### Prepare for migration
-@y
-### Prepare for migration
-@z
-
-@x
-#### Transfer ownership
-@y
-#### Transfer ownership
-@z
-
-@x
-Before removing users, ensure that any repositories, teams, or organization
-resources they own are transferred to another administrator or service account.
-When a user is removed from the organization, any resources they own may
-become inaccessible.
-@y
-Before removing users, ensure that any repositories, teams, or organization
-resources they own are transferred to another administrator or service account.
-When a user is removed from the organization, any resources they own may
-become inaccessible.
-@z
-
-@x
-1. Review repositories, organization resources, and team ownership for affected
-   users.
-2. Transfer ownership to another administrator.
-@y
-1. Review repositories, organization resources, and team ownership for affected
-   users.
-2. Transfer ownership to another administrator.
-@z
-
-@x
-> [!WARNING]
->
-> If ownership is not transferred, repositories owned by removed users may
-> become inaccessible when the user is removed. Ensure all critical resources
-> are transferred before proceeding.
-@y
-> [!WARNING]
->
-> If ownership is not transferred, repositories owned by removed users may
-> become inaccessible when the user is removed. Ensure all critical resources
-> are transferred before proceeding.
-@z
-
-@x
-#### Verify identity provider configuration
-@y
-#### Verify identity provider configuration
-@z
-
-@x
-1. Confirm all JIT-provisioned users are assigned to the Docker application in
-   your identity provider.
-2. Verify identity provider group to Docker team mappings are configured and
-   tested.
-@y
-1. Confirm all JIT-provisioned users are assigned to the Docker application in
-   your identity provider.
-2. Verify identity provider group to Docker team mappings are configured and
-   tested.
-@z
-
-@x
-Users not assigned to the Docker application in your identity provider are not
-re-created by SCIM after removal.
-@y
-Users not assigned to the Docker application in your identity provider are not
-re-created by SCIM after removal.
-@z
-
-@x
-#### Export user records
-@y
-#### Export user records
-@z
-
-@x
-Export a list of JIT-provisioned users from Docker Admin Console:
-@y
-Export a list of JIT-provisioned users from Docker Admin Console:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select your
-   organization.
-2. Select **Admin Console**, then **Members**.
-3. Select **Export members** to download the member list as CSV for backup and
-   reference.
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select your
-   organization.
-2. Select **Admin Console**, then **Members**.
-3. Select **Export members** to download the member list as CSV for backup and
-   reference.
-@z
-
-@x
-Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
-@y
-Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
-@z
-
-@x
-### Complete the migration
-@y
-### Complete the migration
-@z
-
-@x
-#### Disable JIT provisioning
-@y
-#### Disable JIT provisioning
-@z
-
-@x
-> [!IMPORTANT]
->
-> Before disabling JIT, ensure SCIM is fully configured and tested in your
-> organization. Do not disable JIT until you have verified SCIM is working
-> correctly.
-@y
-> [!IMPORTANT]
->
-> Before disabling JIT, ensure SCIM is fully configured and tested in your
-> organization. Do not disable JIT until you have verified SCIM is working
-> correctly.
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **SSO and SCIM**.
-3. In the SSO connections table, select the **Actions** menu for your connection.
-4. Select **Disable JIT provisioning**.
-5. Select **Disable** to confirm.
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **SSO and SCIM**.
-3. In the SSO connections table, select the **Actions** menu for your connection.
-4. Select **Disable JIT provisioning**.
-5. Select **Disable** to confirm.
-@z
-
-@x
-Disabling JIT prevents new users from being automatically added through SSO
-during the migration.
-@y
-Disabling JIT prevents new users from being automatically added through SSO
-during the migration.
-@z
-
-@x
-#### Remove JIT-origin users
-@y
-#### Remove JIT-origin users
-@z
-
-@x
-> [!IMPORTANT]
->
-> Users originally created through JIT provisioning cannot be automatically
-> de-provisioned by SCIM, even after SCIM is enabled. To enable full lifecycle
-> management including automatic de-provisioning through your identity provider,
-> you must manually remove these users so SCIM can re-create them with proper
-> lifecycle management capabilities.
-@y
-> [!IMPORTANT]
->
-> Users originally created through JIT provisioning cannot be automatically
-> de-provisioned by SCIM, even after SCIM is enabled. To enable full lifecycle
-> management including automatic de-provisioning through your identity provider,
-> you must manually remove these users so SCIM can re-create them with proper
-> lifecycle management capabilities.
-@z
-
-@x
-This step is most critical for large organizations that require fully automated
-user de-provisioning when employees leave the company.
-@y
-This step is most critical for large organizations that require fully automated
-user de-provisioning when employees leave the company.
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Members**.
-3. Identify and remove JIT-provisioned users in manageable batches.
-4. Monitor for any errors during removal.
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Members**.
-3. Identify and remove JIT-provisioned users in manageable batches.
-4. Monitor for any errors during removal.
-@z
-
-@x
-> [!TIP]
->
-> To efficiently identify JIT users, compare the member list exported before
-> SCIM was enabled with the current member list. Users who existed before SCIM
-> was enabled were likely provisioned via JIT.
-@y
-> [!TIP]
->
-> To efficiently identify JIT users, compare the member list exported before
-> SCIM was enabled with the current member list. Users who existed before SCIM
-> was enabled were likely provisioned via JIT.
-@z
-
-@x
-#### Verify SCIM re-provisioning
-@y
-#### Verify SCIM re-provisioning
-@z
-
-@x
-After removing JIT users, SCIM automatically re-creates user accounts:
-@y
-After removing JIT users, SCIM automatically re-creates user accounts:
-@z
-
-@x
-1. In your identity provider system log, confirm "create app user" events for
-   Docker.
-2. In Docker Admin Console, confirm users reappear with SCIM provisioning.
-3. Verify users are added to the correct teams via group mapping.
-@y
-1. In your identity provider system log, confirm "create app user" events for
-   Docker.
-2. In Docker Admin Console, confirm users reappear with SCIM provisioning.
-3. Verify users are added to the correct teams via group mapping.
-@z
-
-@x
-#### Validate user access
-@y
-#### Validate user access
-@z
-
-@x
-Perform post-migration validation:
-@y
-Perform post-migration validation:
-@z
-
-@x
-1. Select a subset of migrated users to test sign-in and access.
-2. Verify team membership matches identity provider group assignments.
-3. Confirm repository access is restored.
-4. Test that de-provisioning works correctly by removing a test user from your
-   identity provider.
-@y
-1. Select a subset of migrated users to test sign-in and access.
-2. Verify team membership matches identity provider group assignments.
-3. Confirm repository access is restored.
-4. Test that de-provisioning works correctly by removing a test user from your
-   identity provider.
-@z
-
-@x
-Keep audit exports and logs for compliance purposes.
-@y
-Keep audit exports and logs for compliance purposes.
-@z
-
-@x
-### Migration results
-@y
-### Migration results
-@z
-
-@x
-After completing the migration:
-@y
-After completing the migration:
-@z
-
-@x
-- All users in your organization are SCIM-provisioned
-- User de-provisioning works reliably through your identity provider
-- No new JIT users are created
-- Consistent identity lifecycle management is maintained
-@y
-- All users in your organization are SCIM-provisioned
-- User de-provisioning works reliably through your identity provider
-- No new JIT users are created
-- Consistent identity lifecycle management is maintained
-@z
-
-@x
-### Troubleshoot migration issues
-@y
-### Troubleshoot migration issues
-@z
-
-@x
-If a user fails to reappear after removal:
-@y
-If a user fails to reappear after removal:
-@z
-
-@x
-1. Check that the user is assigned to the Docker application in your identity
-   provider.
-2. Verify SCIM is enabled in both Docker and your identity provider.
-3. Trigger a manual SCIM sync in your identity provider.
-4. Check provisioning logs in your identity provider for errors.
-@y
-1. Check that the user is assigned to the Docker application in your identity
-   provider.
-2. Verify SCIM is enabled in both Docker and your identity provider.
-3. Trigger a manual SCIM sync in your identity provider.
-4. Check provisioning logs in your identity provider for errors.
-@z
-
-@x
-For more troubleshooting guidance, see
-[Troubleshoot provisioning](/manuals/enterprise/troubleshoot/troubleshoot-provisioning.md).
-@y
-For more troubleshooting guidance, see
-[Troubleshoot provisioning](manuals/enterprise/troubleshoot/troubleshoot-provisioning.md).
-@z
-
-@x
 ## Disable SCIM
 @y
 ## Disable SCIM
@@ -1433,9 +883,9 @@ To disable SCIM:
 @z
 
 @x
-- Set up [Group mapping](/manuals/enterprise/security/provisioning/group-mapping.md).
-- [Troubleshoot provisioning](/manuals/enterprise/troubleshoot/troubleshoot-provisioning.md).
+- Set up [Group mapping](/manuals/enterprise/security/provisioning/scim/group-mapping.md).
+- [Troubleshoot provisioning](/manuals/enterprise/security/provisioning/troubleshoot-provisioning.md).
 @y
-- Set up [Group mapping](manuals/enterprise/security/provisioning/group-mapping.md).
-- [Troubleshoot provisioning](manuals/enterprise/troubleshoot/troubleshoot-provisioning.md).
+- Set up [Group mapping](manuals/enterprise/security/provisioning/scim/group-mapping.md).
+- [Troubleshoot provisioning](manuals/enterprise/security/provisioning/troubleshoot-provisioning.md).
 @z

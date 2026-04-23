@@ -274,9 +274,9 @@ comparison](https://www.docker.com/products/hardened-images/#compare).
 @z
 
 @x
-### SLA-backed security {tier="DHI Select & DHI Enterprise"}
+### SLA-backed security {tier="DHI Select or DHI Enterprise"}
 @y
-### SLA-backed security {tier="DHI Select & DHI Enterprise"}
+### SLA-backed security {tier="DHI Select or DHI Enterprise"}
 @z
 
 @x
@@ -296,9 +296,9 @@ For complete details, see the [Support Service Level Agreement](https://docs.doc
 @z
 
 @x
-### Compliance variants {tier="DHI Select & DHI Enterprise"}
+### Compliance variants {tier="DHI Select or DHI Enterprise"}
 @y
-### Compliance variants {tier="DHI Select & DHI Enterprise"}
+### Compliance variants {tier="DHI Select or DHI Enterprise"}
 @z
 
 @x
@@ -310,9 +310,9 @@ For complete details, see the [Support Service Level Agreement](https://docs.doc
 @z
 
 @x
-### Customization and control {tier="DHI Select & DHI Enterprise"}
+### Customization and control {tier="DHI Select or DHI Enterprise"}
 @y
-### Customization and control {tier="DHI Select & DHI Enterprise"}
+### Customization and control {tier="DHI Select or DHI Enterprise"}
 @z
 
 @x

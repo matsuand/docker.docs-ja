@@ -1,14 +1,14 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Set up single sign-on
-linkTitle: Set up
+linkTitle: Setup
 @y
 title: Set up single sign-on
-linkTitle: Set up
+linkTitle: Setup
 @z
 
 @x
@@ -28,17 +28,17 @@ keywords: configure sso, set up sso, docker sso setup, docker identity provider,
 @x
 To set up a single sign-on (SSO), you need to establish a connection between Docker
 and your identity provider (IdP). While this guide
-uses Okta and Microsoft Entra ID as a working example, the general process remains the same for other IdPs. 
+uses Okta and Microsoft Entra ID as a working example, the general process remains the same for other IdPs.
 @y
 To set up a single sign-on (SSO), you need to establish a connection between Docker
 and your identity provider (IdP). While this guide
-uses Okta and Microsoft Entra ID as a working example, the general process remains the same for other IdPs. 
+uses Okta and Microsoft Entra ID as a working example, the general process remains the same for other IdPs.
 @z
 
 @x
-If you're unfamiliar with the SSO process, first review [SSO overview](/enterprise/security/single-sign-on/) to learn about how SSO works. 
+If you're unfamiliar with the SSO process, first review [SSO overview](/manuals/enterprise/security/single-sign-on/_index.md) to learn about how SSO works.
 @y
-If you're unfamiliar with the SSO process, first review [SSO overview](__SUBDIR__/enterprise/security/single-sign-on/) to learn about how SSO works. 
+If you're unfamiliar with the SSO process, first review [SSO overview](manuals/enterprise/security/single-sign-on/_index.md) to learn about how SSO works.
 @z
 
 @x
@@ -56,27 +56,27 @@ Docker supports any SAML 2.0 or OIDC-compatible identity provider. Before you be
 @x
 - Notify your company about the upcoming SSO sign-in process.
 - Confirm that each Docker user has a valid IdP account using the same
-email address as their Unique Primary Identifier (UPN).
+  email address as their Unique Primary Identifier (UPN).
 - Ensure CI/CD pipelines use PATs or OATs instead of passwords.
 @y
 - Notify your company about the upcoming SSO sign-in process.
 - Confirm that each Docker user has a valid IdP account using the same
-email address as their Unique Primary Identifier (UPN).
+  email address as their Unique Primary Identifier (UPN).
 - Ensure CI/CD pipelines use PATs or OATs instead of passwords.
 @z
 
 @x
-## Set up an SSO connection 
+## Set up an SSO connection
 @y
-## Set up an SSO connection 
+## Set up an SSO connection
 @z
 
 @x
 > [!TIP]
-> These procedures have you copy and paste values between Docker and your IdP. Complete this guide in one session with separate browser windows open for Docker and your IdP. 
+> These procedures have you copy and paste values between Docker and your IdP. Complete this guide in one session with separate browser windows open for Docker and your IdP.
 @y
 > [!TIP]
-> These procedures have you copy and paste values between Docker and your IdP. Complete this guide in one session with separate browser windows open for Docker and your IdP. 
+> These procedures have you copy and paste values between Docker and your IdP. Complete this guide in one session with separate browser windows open for Docker and your IdP.
 @z
 
 @x
@@ -93,16 +93,16 @@ To add a domain:
 
 @x
 1. Sign in to [app.docker.com](https://app.docker.com), then choose your
-organization. If your organization is part of a company, then select the company to manage
-the domain at the company level.
+   organization. If your organization is part of a company, then select the company to manage
+   the domain at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain in the text box and select **Add domain**.
 1. In the modal, copy the **TXT Record Value** provided for domain verification.
 @y
 1. Sign in to [app.docker.com](https://app.docker.com), then choose your
-organization. If your organization is part of a company, then select the company to manage
-the domain at the company level.
+   organization. If your organization is part of a company, then select the company to manage
+   the domain at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain in the text box and select **Add domain**.
@@ -225,22 +225,22 @@ host using the TXT Record Value from Docker. DNS propagation can take up to
 
 @x
 1. From [app.docker.com](https://app.docker.com), choose your
-organization. Select **Admin Console**. 
-1. Choose **SSO and SCIM** from the **Security** section. 
+   organization. Select **Admin Console**.
+1. Choose **SSO and SCIM** from the **Security** section.
 1. Select **Create Connection**. Name the connection, then choose **SAML 2.0**.
 1. Keep this window open. You need to copy and paste these values in your Okta window:
-    - **Entity ID**
-    - **ACS URL**
-    - **Connection ID**
+   - **Entity ID**
+   - **ACS URL**
+   - **Connection ID**
 @y
 1. From [app.docker.com](https://app.docker.com), choose your
-organization. Select **Admin Console**. 
-1. Choose **SSO and SCIM** from the **Security** section. 
+   organization. Select **Admin Console**.
+1. Choose **SSO and SCIM** from the **Security** section.
 1. Select **Create Connection**. Name the connection, then choose **SAML 2.0**.
 1. Keep this window open. You need to copy and paste these values in your Okta window:
-    - **Entity ID**
-    - **ACS URL**
-    - **Connection ID**
+   - **Entity ID**
+   - **ACS URL**
+   - **Connection ID**
 @z
 
 @x
@@ -270,43 +270,43 @@ Use the following tabs based on your IdP provider.
 @z
 
 @x
-You need [super admin permissions](https://help.okta.com/en-us/content/topics/security/administrators-super-admin.htm) for the Okta org. 
+You need [super admin permissions](https://help.okta.com/en-us/content/topics/security/administrators-super-admin.htm) for the Okta org.
 @y
-You need [super admin permissions](https://help.okta.com/en-us/content/topics/security/administrators-super-admin.htm) for the Okta org. 
+You need [super admin permissions](https://help.okta.com/en-us/content/topics/security/administrators-super-admin.htm) for the Okta org.
 @z
 
 @x
-1. Sign in to your Okta Admin account. From the top nav, select the **Admin** button to go to Okta's Admin Console. 
+1. Sign in to your Okta Admin account. From the top nav, select the **Admin** button to go to Okta's Admin Console.
 1. From the **Applications** section in the left nav, choose **Applications**. Select **Create App Integration**.
-1. Choose SAML 2.0 to match your selection from Docker's Admin Console.    
-1. For **General Settings**, name your app "Docker." Uploading a logo is optional. 
-1. For **Configure SAML**, input the following values: 
-    - For the **Single Sign On URL** value, paste the Docker ACS URL. 
-    - For the **Audience URI (SP Entity ID)** value, paste the Docker Entity ID. 
-    - For **Name ID format**, choose `EmailAddress`
-    - For **Application username**, choose `Email`
-    - For **Update application username on**, choose `Create and update`
-    - Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org. 
-1. For **Feedback**, choose **This is an internal app that we have created** checkbox before finishing. 
+1. Choose SAML 2.0 to match your selection from Docker's Admin Console.
+1. For **General Settings**, name your app "Docker." Uploading a logo is optional.
+1. For **Configure SAML**, input the following values:
+   - For the **Single Sign On URL** value, paste the Docker ACS URL.
+   - For the **Audience URI (SP Entity ID)** value, paste the Docker Entity ID.
+   - For **Name ID format**, choose `EmailAddress`
+   - For **Application username**, choose `Email`
+   - For **Update application username on**, choose `Create and update`
+   - Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
+1. For **Feedback**, choose **This is an internal app that we have created** checkbox before finishing.
 @y
-1. Sign in to your Okta Admin account. From the top nav, select the **Admin** button to go to Okta's Admin Console. 
+1. Sign in to your Okta Admin account. From the top nav, select the **Admin** button to go to Okta's Admin Console.
 1. From the **Applications** section in the left nav, choose **Applications**. Select **Create App Integration**.
-1. Choose SAML 2.0 to match your selection from Docker's Admin Console.    
-1. For **General Settings**, name your app "Docker." Uploading a logo is optional. 
-1. For **Configure SAML**, input the following values: 
-    - For the **Single Sign On URL** value, paste the Docker ACS URL. 
-    - For the **Audience URI (SP Entity ID)** value, paste the Docker Entity ID. 
-    - For **Name ID format**, choose `EmailAddress`
-    - For **Application username**, choose `Email`
-    - For **Update application username on**, choose `Create and update`
-    - Optional. Add [SAML attributes](manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org. 
-1. For **Feedback**, choose **This is an internal app that we have created** checkbox before finishing. 
+1. Choose SAML 2.0 to match your selection from Docker's Admin Console.
+1. For **General Settings**, name your app "Docker." Uploading a logo is optional.
+1. For **Configure SAML**, input the following values:
+   - For the **Single Sign On URL** value, paste the Docker ACS URL.
+   - For the **Audience URI (SP Entity ID)** value, paste the Docker Entity ID.
+   - For **Name ID format**, choose `EmailAddress`
+   - For **Application username**, choose `Email`
+   - For **Update application username on**, choose `Create and update`
+   - Optional. Add [SAML attributes](manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
+1. For **Feedback**, choose **This is an internal app that we have created** checkbox before finishing.
 @z
 
 @x
-Keep your Okta window open for the next step. 
+Keep your Okta window open for the next step.
 @y
-Keep your Okta window open for the next step. 
+Keep your Okta window open for the next step.
 @z
 
 @x
@@ -318,28 +318,28 @@ Keep your Okta window open for the next step.
 @z
 
 @x
-To enable SSO with Microsoft Entra, you need [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) permissions. 
+To enable SSO with Microsoft Entra, you need [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) permissions.
 @y
-To enable SSO with Microsoft Entra, you need [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) permissions. 
+To enable SSO with Microsoft Entra, you need [Cloud Application Administrator](https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference#cloud-application-administrator) permissions.
 @z
 
 @x
-1. From Microsoft Entra admin center, select **Entra ID**, then go to **Enterprise apps**. Select **All applications**.  
+1. From Microsoft Entra admin center, select **Entra ID**, then go to **Enterprise apps**. Select **All applications**.
 1. Choose **Create your own application** and name your app "Docker". Select **Non-gallery**.
 1. After creating your app, go to **Single Sign-On** and select **SAML**.
 1. Select **Edit** on the **Basic SAML configuration** section. From **Basic SAML configuration**, choose **Edit** and paste the values you copied from creating an SSO connection in Docker:
-    - For the **Identifier** value, paste the Docker Entity ID.
-    - For the **Reply URL** value, paste Docker ACS URL. 
-1. Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org. 
+   - For the **Identifier** value, paste the Docker Entity ID.
+   - For the **Reply URL** value, paste Docker ACS URL.
+1. Optional. Add [SAML attributes](/manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
 1. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
 @y
-1. From Microsoft Entra admin center, select **Entra ID**, then go to **Enterprise apps**. Select **All applications**.  
+1. From Microsoft Entra admin center, select **Entra ID**, then go to **Enterprise apps**. Select **All applications**.
 1. Choose **Create your own application** and name your app "Docker". Select **Non-gallery**.
 1. After creating your app, go to **Single Sign-On** and select **SAML**.
 1. Select **Edit** on the **Basic SAML configuration** section. From **Basic SAML configuration**, choose **Edit** and paste the values you copied from creating an SSO connection in Docker:
-    - For the **Identifier** value, paste the Docker Entity ID.
-    - For the **Reply URL** value, paste Docker ACS URL. 
-1. Optional. Add [SAML attributes](manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org. 
+   - For the **Identifier** value, paste the Docker Entity ID.
+   - For the **Reply URL** value, paste Docker ACS URL.
+1. Optional. Add [SAML attributes](manuals/enterprise/security/provisioning/_index.md#sso-attributes), if required by your org.
 1. From the **SAML Signing Certificate** section, download your **Certificate (Base64)**.
 @z
 
@@ -431,11 +431,11 @@ Complete the integration by pasting your IdP values into Docker.
 
 @x
 > [!IMPORTANT]
-> When prompted to copy a certificate, copy the entire certificate starting with 
+> When prompted to copy a certificate, copy the entire certificate starting with
 > `----BEGIN CERTIFICATE----` and including the `----END CERTIFICATE----` lines.
 @y
 > [!IMPORTANT]
-> When prompted to copy a certificate, copy the entire certificate starting with 
+> When prompted to copy a certificate, copy the entire certificate starting with
 > `----BEGIN CERTIFICATE----` and including the `----END CERTIFICATE----` lines.
 @z
 
@@ -449,13 +449,13 @@ Complete the integration by pasting your IdP values into Docker.
 
 @x
 1. Go to **Applications** and choose **Applications**. Choose your app from the **ACTIVE** table.
-1. From **Sign on**, go to **View SAML setup instructions**. This page contains the **SAML Sign-in URL** and **x509 Certificate**. Keep this page open. 
+1. From **Sign on**, go to **View SAML setup instructions**. This page contains the **SAML Sign-in URL** and **x509 Certificate**. Keep this page open.
 1. Return to your opened Docker window for the **Create single sign-on connection** step. Paste in the **SAML Sign-in URL** and **x509 Certificate** values.
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @y
 1. Go to **Applications** and choose **Applications**. Choose your app from the **ACTIVE** table.
-1. From **Sign on**, go to **View SAML setup instructions**. This page contains the **SAML Sign-in URL** and **x509 Certificate**. Keep this page open. 
+1. From **Sign on**, go to **View SAML setup instructions**. This page contains the **SAML Sign-in URL** and **x509 Certificate**. Keep this page open.
 1. Return to your opened Docker window for the **Create single sign-on connection** step. Paste in the **SAML Sign-in URL** and **x509 Certificate** values.
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
@@ -472,19 +472,19 @@ Complete the integration by pasting your IdP values into Docker.
 @x
 1. Open your downloaded **Certificate (Base64)** in a text editor.
 1. Copy the following values:
-    - From Azure AD: **Login URL**
-    - **Certificate (Base64)** contents
+   - From Azure AD: **Login URL**
+   - **Certificate (Base64)** contents
 1. Return to the Docker Admin Console, then paste the **Login URL** and **Certificate (Base64)** values.
-1. Choose your domain from the dropdown. 
+1. Choose your domain from the drop-down.
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @y
 1. Open your downloaded **Certificate (Base64)** in a text editor.
 1. Copy the following values:
-    - From Azure AD: **Login URL**
-    - **Certificate (Base64)** contents
+   - From Azure AD: **Login URL**
+   - **Certificate (Base64)** contents
 1. Return to the Docker Admin Console, then paste the **Login URL** and **Certificate (Base64)** values.
-1. Choose your domain from the dropdown. 
+1. Choose your domain from the drop-down.
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @z
@@ -500,17 +500,17 @@ Complete the integration by pasting your IdP values into Docker.
 @x
 1. Return to the Docker Admin Console.
 1. Paste the following values:
-    - **Client ID**
-    - **Client Secret**
-    - **Azure AD Domain**
+   - **Client ID**
+   - **Client Secret**
+   - **Azure AD Domain**
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @y
 1. Return to the Docker Admin Console.
 1. Paste the following values:
-    - **Client ID**
-    - **Client Secret**
-    - **Azure AD Domain**
+   - **Client ID**
+   - **Client Secret**
+   - **Azure AD Domain**
 1. Optional. Select a default team, if required by your org.
 1. Review and select **Create connection**.
 @z
@@ -536,17 +536,17 @@ IdPs like Microsoft Entra and Okta may require that you assign a user to an appl
 @z
 
 @x
-After assigning yourself to an app: 
+After assigning yourself to an app:
 @y
-After assigning yourself to an app: 
+After assigning yourself to an app:
 @z
 
 @x
 1. Open an incognito browser window and sign in to the Admin Console using your domain email address.
-1. When redirected to your IdP's sign in page, authenticate with your domain email instead of using your Docker ID. 
+1. When redirected to your IdP's sign in page, authenticate with your domain email instead of using your Docker ID.
 @y
 1. Open an incognito browser window and sign in to the Admin Console using your domain email address.
-1. When redirected to your IdP's sign in page, authenticate with your domain email instead of using your Docker ID. 
+1. When redirected to your IdP's sign in page, authenticate with your domain email instead of using your Docker ID.
 @z
 
 @x
@@ -562,9 +562,9 @@ If you have multiple IdPs, choose the sign-in option **Continue with SSO**. If y
 @z
 
 @x
-Docker supports multiple identity provider (IdP) configurations by letting you associate one domain with more than one IdP. Each connection must use the same domain, which lets users choose their IdP when they select **Continue with SSO** at login. 
+Docker supports multiple identity provider (IdP) configurations by letting you associate one domain with more than one IdP. Each connection must use the same domain, which lets users choose their IdP when they select **Continue with SSO** at sign in.
 @y
-Docker supports multiple identity provider (IdP) configurations by letting you associate one domain with more than one IdP. Each connection must use the same domain, which lets users choose their IdP when they select **Continue with SSO** at login. 
+Docker supports multiple identity provider (IdP) configurations by letting you associate one domain with more than one IdP. Each connection must use the same domain, which lets users choose their IdP when they select **Continue with SSO** at sign in.
 @z
 
 @x
@@ -574,17 +574,17 @@ To add multiple IdPs:
 @z
 
 @x
-1. Use the same domain for each connection. 
-1. Repeat steps 3-6 from the [Set up an SSO connection](/enterprise/security/single-sign-on/connect/#set-up-an-sso-connection) procedures on this page. Repeat these steps for each IdP your organization intends to use.
+1. Use the same domain for each connection.
+1. Repeat steps 3-6 from the [Set up an SSO connection](/manuals/enterprise/security/single-sign-on/connect.md#set-up-an-sso-connection) procedures on this page. Repeat these steps for each IdP your organization intends to use.
 @y
-1. Use the same domain for each connection. 
-1. Repeat steps 3-6 from the [Set up an SSO connection](__SUBDIR__/enterprise/security/single-sign-on/connect/#set-up-an-sso-connection) procedures on this page. Repeat these steps for each IdP your organization intends to use.
+1. Use the same domain for each connection.
+1. Repeat steps 3-6 from the [Set up an SSO connection](manuals/enterprise/security/single-sign-on/connect.md#set-up-an-sso-connection) procedures on this page. Repeat these steps for each IdP your organization intends to use.
 @z
 
 @x
-Because you must use the same domain for each IdP, you won't need to repeat steps to add and verify your domains. 
+Because you must use the same domain for each IdP, you won't need to repeat steps to add and verify your domains.
 @y
-Because you must use the same domain for each IdP, you won't need to repeat steps to add and verify your domains. 
+Because you must use the same domain for each IdP, you won't need to repeat steps to add and verify your domains.
 @z
 
 @x
@@ -600,21 +600,21 @@ If SSO is not enforced, users can still sign in using Docker usernames and passw
 @z
 
 @x
-Before enforcing SSO, users accessing Docker through the CLI must [create a personal access token (PAT)](/docker-hub/access-tokens/). The PAT replaces their username and password for authentication.
+Before enforcing SSO, users accessing Docker through the CLI must [create a personal access token (PAT)](/manuals/security/access-tokens.md). The PAT replaces their username and password for authentication.
 @y
-Before enforcing SSO, users accessing Docker through the CLI must [create a personal access token (PAT)](__SUBDIR__/docker-hub/access-tokens/). The PAT replaces their username and password for authentication.
+Before enforcing SSO, users accessing Docker through the CLI must [create a personal access token (PAT)](manuals/security/access-tokens.md). The PAT replaces their username and password for authentication.
 @z
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-your organization or company.
+   your organization or company.
 1. Select **Admin Console**, then **SSO and SCIM**.
 1. In the SSO connections table, select the **Action** menu, then **Enable enforcement**.
 1. Follow the on-screen instructions.
 1. Select **Turn on enforcement**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-your organization or company.
+   your organization or company.
 1. Select **Admin Console**, then **SSO and SCIM**.
 1. In the SSO connections table, select the **Action** menu, then **Enable enforcement**.
 1. Follow the on-screen instructions.
@@ -640,11 +640,11 @@ Docker Hub. If you want to use 2FA, you must enable 2FA through your IdP.
 @x
 - [Provision users](/manuals/enterprise/security/provisioning/_index.md).
 - [Enforce sign-in](../enforce-sign-in/_index.md).
-- [Create personal access tokens](/manuals/enterprise/security/access-tokens.md).
-- [Troubleshoot SSO](/manuals/enterprise/troubleshoot/troubleshoot-sso.md) issues.
+- [Create personal access tokens](/manuals/security/access-tokens.md).
+- [Troubleshoot SSO](/manuals/enterprise/security/single-sign-on/troubleshoot-sso.md) issues.
 @y
 - [Provision users](manuals/enterprise/security/provisioning/_index.md).
 - [Enforce sign-in](../enforce-sign-in/_index.md).
-- [Create personal access tokens](manuals/enterprise/security/access-tokens.md).
-- [Troubleshoot SSO](manuals/enterprise/troubleshoot/troubleshoot-sso.md) issues.
+- [Create personal access tokens](manuals/security/access-tokens.md).
+- [Troubleshoot SSO](manuals/enterprise/security/single-sign-on/troubleshoot-sso.md) issues.
 @z

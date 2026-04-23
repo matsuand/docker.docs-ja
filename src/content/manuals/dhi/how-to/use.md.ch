@@ -242,6 +242,128 @@ Attestations](manuals/build/metadata/attestations.md).
 @z
 
 @x
+### Discover attestations with ORAS
+@y
+### Discover attestations with ORAS
+@z
+
+@x
+You can use [ORAS](https://oras.land/) to discover and inspect the attestations
+attached to Docker Hardened Images. This is particularly useful in CI/CD
+pipelines for supply chain security validation and compliance checks.
+@y
+You can use [ORAS](https://oras.land/) to discover and inspect the attestations
+attached to Docker Hardened Images. This is particularly useful in CI/CD
+pipelines for supply chain security validation and compliance checks.
+@z
+
+@x
+For automated workflows, authenticate using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). OATs are owned by the
+organization rather than an individual user, making them better suited for CI/CD
+pipelines.
+@y
+For automated workflows, authenticate using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). OATs are owned by the
+organization rather than an individual user, making them better suited for CI/CD
+pipelines.
+@z
+
+@x
+To discover attestations with ORAS:
+@y
+To discover attestations with ORAS:
+@z
+
+@x
+1. [Generate an organization access
+   token](../../enterprise/security/access-tokens.md) with **Read public
+   repositories** scope.
+@y
+1. [Generate an organization access
+   token](../../enterprise/security/access-tokens.md) with **Read public
+   repositories** scope.
+@z
+
+@x
+   The following example shows how to discover attestations on DHI community
+   images from `dhi.io`. If you're discovering attestations on images mirrored to
+   your organization, generate an OAT scoped to read from your mirrored repository
+   instead of **Read public repositories**.
+@y
+   The following example shows how to discover attestations on DHI community
+   images from `dhi.io`. If you're discovering attestations on images mirrored to
+   your organization, generate an OAT scoped to read from your mirrored repository
+   instead of **Read public repositories**.
+@z
+
+@x
+2. Sign in to `dhi.io` using your organization name as the username and the OAT
+   as the password.
+@y
+2. Sign in to `dhi.io` using your organization name as the username and the OAT
+   as the password.
+@z
+
+@x
+   > [!WARNING]
+   >
+   > The following examples export credentials directly on the command line for
+   > demonstration purposes. This exposes sensitive tokens in your shell history
+   > and process list. In production environments, use secure methods such as
+   > reading from files with restricted permissions, environment files loaded
+   > at runtime, or secret management tools.
+@y
+   > [!WARNING]
+   >
+   > The following examples export credentials directly on the command line for
+   > demonstration purposes. This exposes sensitive tokens in your shell history
+   > and process list. In production environments, use secure methods such as
+   > reading from files with restricted permissions, environment files loaded
+   > at runtime, or secret management tools.
+@z
+
+% snip command...
+
+@x
+   Or non-interactively in a CI/CD pipeline, set your organization name and token:
+@y
+   Or non-interactively in a CI/CD pipeline, set your organization name and token:
+@z
+
+% snip command...
+
+@x
+3. Discover attestations on a DHI image:
+@y
+3. Discover attestations on a DHI image:
+@z
+
+% snip command...
+
+@x
+   > [!NOTE]
+   >
+   > The `--platform` flag is required. Without it, `oras discover` resolves to
+   > the multi-arch image index, which returns only an index-level signature
+   > rather than the full set of per-platform attestations.
+@y
+   > [!NOTE]
+   >
+   > The `--platform` flag is required. Without it, `oras discover` resolves to
+   > the multi-arch image index, which returns only an index-level signature
+   > rather than the full set of per-platform attestations.
+@z
+
+@x
+   A successful response lists the attestations attached to the image,
+   including SBOMs, provenance, vulnerability reports, and changelog metadata.
+@y
+   A successful response lists the attestations attached to the image,
+   including SBOMs, provenance, vulnerability reports, and changelog metadata.
+@z
+
+@x
 ## Use a static image for compiled executables
 @y
 ## Use a static image for compiled executables
@@ -346,9 +468,9 @@ migration examples:
 @z
 
 @x
-## Use compliance and ELS variants {tier="DHI Select & Enterprise"}
+## Use compliance and ELS variants
 @y
-## Use compliance and ELS variants {tier="DHI Select & Enterprise"}
+## Use compliance and ELS variants
 @z
 
 @x

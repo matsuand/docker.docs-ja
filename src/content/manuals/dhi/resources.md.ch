@@ -42,6 +42,8 @@ features, and announcements:
 @x
 | Date published | Title |
 |------|-------|
+| April 14, 2026 | [Why We Chose the Harder Path: Docker Hardened Images, One Year Later](https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/) |
+| April 8, 2026 | [Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io](https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/) |
 | March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
 | January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
 | January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
@@ -56,6 +58,8 @@ features, and announcements:
 @y
 | 公開日付 | タイトル |
 |------|-------|
+| April 14, 2026 | [Why We Chose the Harder Path: Docker Hardened Images, One Year Later](https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/) |
+| April 8, 2026 | [Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io](https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/) |
 | March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
 | January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
 | January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
@@ -132,6 +136,9 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   digest) for Docker Hardened Images
 - [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
   interface for managing and interacting with Docker Hardened Images
+- [Terraform Provider](https://github.com/docker-hardened-images/terraform-provider-dhi):
+  Terraform provider for managing DHI resources
+  ([Terraform Registry](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs))
 - [Discussions](https://github.com/orgs/docker-hardened-images/discussions):
   Community forum and product discussions
 @y
@@ -145,6 +152,9 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   digest) for Docker Hardened Images
 - [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
   interface for managing and interacting with Docker Hardened Images
+- [Terraform Provider](https://github.com/docker-hardened-images/terraform-provider-dhi):
+  Terraform provider for managing DHI resources
+  ([Terraform Registry](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs))
 - [ディスカッション](https://github.com/orgs/docker-hardened-images/discussions):
   Community forum and product discussions
 @z

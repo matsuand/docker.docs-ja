@@ -1,0 +1,52 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker model context
+short: Manage Docker Model Runner contexts
+long: Manage Docker Model Runner contexts
+pname: docker model
+plink: docker_model.yaml
+cname:
+    - docker model context create
+    - docker model context inspect
+    - docker model context ls
+    - docker model context rm
+    - docker model context use
+clink:
+    - docker_model_context_create.yaml
+    - docker_model_context_inspect.yaml
+    - docker_model_context_ls.yaml
+    - docker_model_context_rm.yaml
+    - docker_model_context_use.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker model context
+short: Manage Docker Model Runner contexts
+long: Manage Docker Model Runner contexts
+pname: docker model
+plink: docker_model.yaml
+cname:
+    - docker model context create
+    - docker model context inspect
+    - docker model context ls
+    - docker model context rm
+    - docker model context use
+clink:
+    - docker_model_context_create.yaml
+    - docker_model_context_inspect.yaml
+    - docker_model_context_ls.yaml
+    - docker_model_context_rm.yaml
+    - docker_model_context_use.yaml
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z

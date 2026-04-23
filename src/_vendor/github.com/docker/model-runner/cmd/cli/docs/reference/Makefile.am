@@ -11,7 +11,14 @@ bases = \
 	docker_model_compose_up.yaml       \
 	docker_model_configure.yaml        \
 	docker_model_configure_show.yaml   \
+	docker_model_context.yaml          \
+	docker_model_context_create.yaml   \
+	docker_model_context_inspect.yaml  \
+	docker_model_context_ls.yaml       \
+	docker_model_context_rm.yaml       \
+	docker_model_context_use.yaml      \
 	docker_model_df.yaml               \
+	docker_model_gateway.yaml          \
 	docker_model_inspect.yaml          \
 	docker_model_install-runner.yaml   \
 	docker_model_launch.yaml           \
@@ -40,7 +47,14 @@ bases = \
 	model.md                           \
 	model_bench.md                     \
 	model_configure.md                 \
+	model_context.md                   \
+	model_context_create.md            \
+	model_context_inspect.md           \
+	model_context_ls.md                \
+	model_context_rm.md                \
+	model_context_use.md               \
 	model_df.md                        \
+	model_gateway.md                   \
 	model_inspect.md                   \
 	model_install-runner.md            \
 	model_launch.md                    \

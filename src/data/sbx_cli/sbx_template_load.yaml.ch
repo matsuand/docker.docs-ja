@@ -1,0 +1,64 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx template load
+synopsis: Load an image from a tar file into the sandbox runtime
+description: |-
+    Load an image from a tar file into the sandbox runtime's image store.
+@y
+name: sbx template load
+synopsis: Load an image from a tar file into the sandbox runtime
+description: |-
+    Load an image from a tar file into the sandbox runtime's image store.
+@z
+
+@x
+    The loaded image can be used as a template for new sandboxes.
+    Tar files are typically created with: sbx template save SANDBOX TAG --output FILE
+usage: sbx template load FILE [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for load
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Load an image from a tar file
+      sbx template load /tmp/myimage.tar              # Linux/macOS
+      sbx template load C:\Users\me\myimage.tar       # Windows
+@y
+    The loaded image can be used as a template for new sandboxes.
+    Tar files are typically created with: sbx template save SANDBOX TAG --output FILE
+usage: sbx template load FILE [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for load
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Load an image from a tar file
+      sbx template load /tmp/myimage.tar              # Linux/macOS
+      sbx template load C:\Users\me\myimage.tar       # Windows
+@z
+
+@x
+      # Use the loaded image as a template
+      sbx run -t myimage:v1.0 claude
+see_also:
+    - sbx template - Manage sandbox templates
+@y
+      # Use the loaded image as a template
+      sbx run -t myimage:v1.0 claude
+see_also:
+    - sbx template - Manage sandbox templates
+@z

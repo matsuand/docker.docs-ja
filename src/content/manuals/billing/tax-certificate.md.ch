@@ -23,11 +23,11 @@ can submit a valid tax exemption certificate to Docker Support.
 
 @x
 If you're a global customer subject to VAT, make sure to include your
-[VAT number](/billing/history/#include-your-vat-number-on-your-invoice)
+[VAT number](/manuals/billing/history.md#include-your-vat-number-on-your-invoice)
 along with your country prefix when you update your billing profile.
 @y
 If you're a global customer subject to VAT, make sure to include your
-[VAT number](__SUBDIR__/billing/history/#include-your-vat-number-on-your-invoice)
+[VAT number](manuals/billing/history.md#include-your-vat-number-on-your-invoice)
 along with your country prefix when you update your billing profile.
 @z
 
@@ -46,17 +46,17 @@ Before submitting your certificate:
 @x
 - The customer name must match the name on the certificate.
 - The certificate must list Docker Inc. as the Seller or Vendor, with all
-relevant fields completed.
+  relevant fields completed.
 - The certificate must be signed, dated, and not expired.
 - You must include the Docker ID or namespace(s) for all accounts to
-apply the certificate to.
+  apply the certificate to.
 @y
 - The customer name must match the name on the certificate.
 - The certificate must list Docker Inc. as the Seller or Vendor, with all
-relevant fields completed.
+  relevant fields completed.
 - The certificate must be signed, dated, and not expired.
 - You must include the Docker ID or namespace(s) for all accounts to
-apply the certificate to.
+  apply the certificate to.
 @z
 
 @x
@@ -106,7 +106,7 @@ Palo Alto, CA 94306
 1. Instructions will populate on how to submit a tax certificate.
 1. Fill out all required fields on the support form.
 1. In the file upload section, add the tax certificate by dragging and dropping
-the file, or selecting **Browse files**.
+   the file, or selecting **Browse files**.
 1. Select **Submit**.
 @y
 1. [Submit a Docker Support ticket](https://hub.docker.com/support/contact?topic=Billing&subtopic=Tax%20information) to initiate the process to register a tax certificate.
@@ -115,7 +115,7 @@ the file, or selecting **Browse files**.
 1. Instructions will populate on how to submit a tax certificate.
 1. Fill out all required fields on the support form.
 1. In the file upload section, add the tax certificate by dragging and dropping
-the file, or selecting **Browse files**.
+   the file, or selecting **Browse files**.
 1. Select **Submit**.
 @z
 

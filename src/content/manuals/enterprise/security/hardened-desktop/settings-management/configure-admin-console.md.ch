@@ -75,28 +75,28 @@ To create a new settings policy:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-your organization.
+   your organization.
 1. Select **Admin Console**, then **Desktop Settings Management**.
 1. Select **Create a settings policy**.
 1. Provide a name and optional description.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
-your organization.
+   your organization.
 1. Select **Admin Console**, then **Desktop Settings Management**.
 1. Select **Create a settings policy**.
 1. Provide a name and optional description.
 @z
 
 @x
-      > [!TIP]
-      >
-      > You can upload an existing `admin-settings.json` file to pre-fill the form.
-      Admin Console policies override local `admin-settings.json` files.
+   > [!TIP]
+   >
+   > You can upload an existing `admin-settings.json` file to pre-fill the form.
+   > Admin Console policies override local `admin-settings.json` files.
 @y
-      > [!TIP]
-      >
-      > You can upload an existing `admin-settings.json` file to pre-fill the form.
-      Admin Console policies override local `admin-settings.json` files.
+   > [!TIP]
+   >
+   > You can upload an existing `admin-settings.json` file to pre-fill the form.
+   > Admin Console policies override local `admin-settings.json` files.
 @z
 
 @x
@@ -110,13 +110,13 @@ your organization.
 @z
 
 @x
-      > [!NOTE]
-      >
-      > User-specific policies override global default policies. Test your policy with a small group before applying it organization-wide.
+     > [!NOTE]
+     >
+     > User-specific policies override global default policies. Test your policy with a small group before applying it organization-wide.
 @y
-      > [!NOTE]
-      >
-      > User-specific policies override global default policies. Test your policy with a small group before applying it organization-wide.
+     > [!NOTE]
+     >
+     > User-specific policies override global default policies. Test your policy with a small group before applying it organization-wide.
 @z
 
 @x
@@ -136,13 +136,13 @@ your organization.
 @z
 
 @x
-      > [!TIP]
-      >
-      > For a complete list of configurable settings, supported platforms, and configuration methods, see the [Settings reference](settings-reference.md).
+     > [!TIP]
+     >
+     > For a complete list of configurable settings, supported platforms, and configuration methods, see the [Settings reference](settings-reference.md).
 @y
-      > [!TIP]
-      >
-      > For a complete list of configurable settings, supported platforms, and configuration methods, see the [Settings reference](settings-reference.md).
+     > [!TIP]
+     >
+     > For a complete list of configurable settings, supported platforms, and configuration methods, see the [Settings reference](settings-reference.md).
 @z
 
 @x
@@ -222,15 +222,15 @@ After you apply policies:
 @x
 - Docker Desktop displays most settings as greyed out
 - Some settings, particularly Enhanced Container Isolation configurations,
-may not appear in the GUI
+  may not appear in the GUI
 - You can verify all applied settings by checking the [`settings-store.json`
-file](/manuals/desktop/settings-and-maintenance/settings.md) on your system
+  file](/manuals/desktop/settings-and-maintenance/settings.md) on your system
 @y
 - Docker Desktop displays most settings as greyed out
 - Some settings, particularly Enhanced Container Isolation configurations,
-may not appear in the GUI
+  may not appear in the GUI
 - You can verify all applied settings by checking the [`settings-store.json`
-file](manuals/desktop/settings-and-maintenance/settings.md) on your system
+  file](manuals/desktop/settings-and-maintenance/settings.md) on your system
 @z
 
 @x

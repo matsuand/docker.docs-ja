@@ -7,13 +7,13 @@
 @x
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, or Wiz.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, or Mend.io.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, vex attestation
 @y
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, or Wiz.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, or Mend.io.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, vex attestation
 @z
 
 @x
@@ -48,11 +48,15 @@ read and apply the VEX statements included with Docker Hardened Images:
 - [Grype](#grype): Supports VEX via the `--vex` flag
 - [Wiz](#wiz): Automatically applies VEX statements with
   zero configuration
+- [Mend.io](#mendio): Automatically applies VEX statements with
+  zero configuration
 @y
 - [Docker Scout](#docker-scout): Automatically applies VEX statements with zero configuration
 - [Trivy](#trivy): Supports VEX through VEX Hub or local VEX files
 - [Grype](#grype): Supports VEX via the `--vex` flag
 - [Wiz](#wiz): Automatically applies VEX statements with
+  zero configuration
+- [Mend.io](#mendio): Automatically applies VEX statements with
   zero configuration
 @z
 
@@ -515,6 +519,68 @@ Docker Hardened Image by pulling the image and running the scan command:
 @z
 
 % snip command...
+
+@x
+## Mend.io
+@y
+## Mend.io
+@z
+
+@x
+[Mend.io](https://www.mend.io/) is an application security platform that
+includes container image scanning with support for DHI VEX attestations.
+Mend Container automatically retrieves and applies VEX statements from Docker
+Hardened Images and combines them with Mend's reachability analysis for
+comprehensive vulnerability assessment.
+@y
+[Mend.io](https://www.mend.io/) is an application security platform that
+includes container image scanning with support for DHI VEX attestations.
+Mend Container automatically retrieves and applies VEX statements from Docker
+Hardened Images and combines them with Mend's reachability analysis for
+comprehensive vulnerability assessment.
+@z
+
+@x
+### Scan a DHI using Mend.io
+@y
+### Scan a DHI using Mend.io
+@z
+
+@x
+After acquiring a Mend.io subscription and configuring
+[Mend Container](https://docs.mend.io/container/latest/), Mend automatically
+detects Docker Hardened Images and applies their VEX data without requiring any
+additional configuration. When you scan a Docker Hardened Image through the Mend
+AppSec Platform, VEX statements are automatically retrieved and attached as risk
+factors to each finding.
+@y
+After acquiring a Mend.io subscription and configuring
+[Mend Container](https://docs.mend.io/container/latest/), Mend automatically
+detects Docker Hardened Images and applies their VEX data without requiring any
+additional configuration. When you scan a Docker Hardened Image through the Mend
+AppSec Platform, VEX statements are automatically retrieved and attached as risk
+factors to each finding.
+@z
+
+@x
+You can view and filter DHI-specific findings in the Mend AppSec Platform under
+**Security > Containers > Packages**, where a Docker badge identifies hardened
+image packages. Use the **Risk Factors** column to filter by VEX statuses such
+as Not Affected, Fixed, or Under Investigation.
+@y
+You can view and filter DHI-specific findings in the Mend AppSec Platform under
+**Security > Containers > Packages**, where a Docker badge identifies hardened
+image packages. Use the **Risk Factors** column to filter by VEX statuses such
+as Not Affected, Fixed, or Under Investigation.
+@z
+
+@x
+For more information, see the [Mend.io Docker Hardened Images
+documentation](https://docs.mend.io/platform/latest/docker-hardened-images).
+@y
+For more information, see the [Mend.io Docker Hardened Images
+documentation](https://docs.mend.io/platform/latest/docker-hardened-images).
+@z
 
 @x
 ## Export VEX attestations

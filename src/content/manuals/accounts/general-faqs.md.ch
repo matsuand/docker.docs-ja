@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: FAQs on Docker accounts
@@ -52,9 +52,9 @@ numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
-For more information, see [Create a Docker ID](/accounts/create-account/).
+For more information, see [Create a Docker ID](/manuals/accounts/create-account.md).
 @y
-For more information, see [Create a Docker ID](__SUBDIR__/accounts/create-account/).
+For more information, see [Create a Docker ID](manuals/accounts/create-account.md).
 @z
 
 @x

@@ -42,17 +42,19 @@ paths, and dev variants.
 @x
 > [!IMPORTANT]
 >
-> You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull base images and build tools. Use your Docker ID credentials (the same
-> username and password you use for Docker Hub) when signing in.
+> The DHI build system pulls base images and build tools from `dhi.io`, so you
+> must authenticate to that registry before building a definition file. Use your
+> Docker ID credentials (the same username and password you use for Docker Hub)
+> when signing in.
 >
 > Run `docker login dhi.io` to authenticate.
 @y
 > [!IMPORTANT]
 >
-> You must authenticate to the Docker Hardened Images registry (`dhi.io`) to
-> pull base images and build tools. Use your Docker ID credentials (the same
-> username and password you use for Docker Hub) when signing in.
+> The DHI build system pulls base images and build tools from `dhi.io`, so you
+> must authenticate to that registry before building a definition file. Use your
+> Docker ID credentials (the same username and password you use for Docker Hub)
+> when signing in.
 >
 > Run `docker login dhi.io` to authenticate.
 @z

@@ -20,75 +20,75 @@ keywords: admin, administration, company, organization, Admin Console, user acco
 % grid:
 
 @x
-- title: Company administration
-  description: Explore how to manage a company.
-  icon: apartment
-  link: /admin/company/
+  - title: Company administration
+    description: Explore how to manage a company.
+    icon: apartment
+    link: /admin/company/
 @y
-- title: Company administration
-  description: Explore how to manage a company.
-  icon: apartment
-  link: __SUBDIR__/admin/company/
+  - title: Company administration
+    description: Explore how to manage a company.
+    icon: apartment
+    link: __SUBDIR__/admin/company/
 @z
 
 @x
-- title: Organization administration
-  description: Learn about organization administration.
-  icon: store
-  link: /admin/organization/
+  - title: Organization administration
+    description: Learn about organization administration.
+    icon: store
+    link: /admin/organization/
 @y
-- title: Organization administration
-  description: Learn about organization administration.
-  icon: store
-  link: __SUBDIR__/admin/organization/
+  - title: Organization administration
+    description: Learn about organization administration.
+    icon: store
+    link: __SUBDIR__/admin/organization/
 @z
 
 @x
-- title: Onboard your organization
-  description: Learn how to onboard and secure your organization.
-  icon: explore
-  link: /admin/organization/onboard
+  - title: Onboard your organization
+    description: Learn how to onboard and secure your organization.
+    icon: explore
+    link: /admin/organization/onboard
 @y
-- title: Onboard your organization
-  description: Learn how to onboard and secure your organization.
-  icon: explore
-  link: __SUBDIR__/admin/organization/onboard
+  - title: Onboard your organization
+    description: Learn how to onboard and secure your organization.
+    icon: explore
+    link: __SUBDIR__/admin/organization/onboard
 @z
 
 @x
-- title: Company FAQ
-  description: Discover common questions and answers about companies.
-  icon: help
-  link: /faq/admin/company-faqs/
+  - title: Company FAQ
+    description: Discover common questions and answers about companies.
+    icon: help
+    link: /faq/admin/company-faqs/
 @y
-- title: Company FAQ
-  description: Discover common questions and answers about companies.
-  icon: help
-  link: __SUBDIR__/faq/admin/company-faqs/
+  - title: Company FAQ
+    description: Discover common questions and answers about companies.
+    icon: help
+    link: __SUBDIR__/faq/admin/company-faqs/
 @z
 
 @x
-- title: Organization FAQ
-  description: Explore popular FAQ topics about organizations.
-  icon: help
-  link: /faq/admin/organization-faqs/
+  - title: Organization FAQ
+    description: Explore popular FAQ topics about organizations.
+    icon: help
+    link: /faq/admin/organization-faqs/
 @y
-- title: Organization FAQ
-  description: Explore popular FAQ topics about organizations.
-  icon: help
-  link: __SUBDIR__/faq/admin/organization-faqs/
+  - title: Organization FAQ
+    description: Explore popular FAQ topics about organizations.
+    icon: help
+    link: __SUBDIR__/faq/admin/organization-faqs/
 @z
 
 @x
-- title: Security
-  description: Explore security features for administrators.
-  icon: shield_locked
-  link: /security/
+  - title: Security
+    description: Explore security features for administrators.
+    icon: shield_locked
+    link: /security/
 @y
-- title: Security
-  description: Explore security features for administrators.
-  icon: shield_locked
-  link: __SUBDIR__/security/
+  - title: Security
+    description: Explore security features for administrators.
+    icon: shield_locked
+    link: __SUBDIR__/security/
 @z
 
 @x
@@ -162,16 +162,16 @@ Companies are only available for Docker Business subscribers.
 @z
 
 @x
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/admin/faqs/organization-faqs/#what-is-the-difference-between-user-invitee-seat-and-member). 
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/manuals/admin/faqs/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @y
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](__SUBDIR__/admin/faqs/organization-faqs/#what-is-the-difference-between-user-invitee-seat-and-member). 
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](manuals/admin/faqs/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @z
 
 @x
-- An organization contains teams and repositories. 
+- An organization contains teams and repositories.
 - All Docker Team and Business subscribers must have at least one organization.
 @y
-- An organization contains teams and repositories. 
+- An organization contains teams and repositories.
 - All Docker Team and Business subscribers must have at least one organization.
 @z
 
@@ -230,13 +230,13 @@ Docker's [Admin Console](https://app.docker.com/admin) allows you to:
 - Assign roles and permissions to members
 - Group members into teams to manage access by project or role
 - Set company-wide policies, including SCIM provisioning and security
-enforcement
+  enforcement
 @y
 - Create and manage companies and organizations
 - Assign roles and permissions to members
 - Group members into teams to manage access by project or role
 - Set company-wide policies, including SCIM provisioning and security
-enforcement
+  enforcement
 @z
 
 @x

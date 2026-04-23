@@ -3,12 +3,12 @@
 
 @x
 title: Troubleshoot provisioning
-linkTitle: Troubleshoot provisioning
+linkTitle: Troubleshoot
 description: Troubleshoot common user provisioning issues with SCIM and Just-in-Time provisioning
 keywords: SCIM troubleshooting, user provisioning, JIT provisioning, group mapping, attribute conflicts
 @y
 title: Troubleshoot provisioning
-linkTitle: Troubleshoot provisioning
+linkTitle: Troubleshoot
 description: Troubleshoot common user provisioning issues with SCIM and Just-in-Time provisioning
 keywords: SCIM troubleshooting, user provisioning, JIT provisioning, group mapping, attribute conflicts
 @z
@@ -47,16 +47,16 @@ IdP. This issue usually surfaces as incorrect role or team assignment.
 
 @x
 - JIT provisioning is enabled, and Docker is using values from your IdP's
-SSO login flow to provision the user, which overrides
-SCIM-provided attributes.
+  SSO sign in flow to provision the user, which overrides
+  SCIM-provided attributes.
 - SCIM was enabled after the user was already provisioned via JIT, so SCIM
-updates don't take effect.
+  updates don't take effect.
 @y
 - JIT provisioning is enabled, and Docker is using values from your IdP's
-SSO login flow to provision the user, which overrides
-SCIM-provided attributes.
+  SSO sign in flow to provision the user, which overrides
+  SCIM-provided attributes.
 - SCIM was enabled after the user was already provisioned via JIT, so SCIM
-updates don't take effect.
+  updates don't take effect.
 @z
 
 @x
@@ -84,13 +84,13 @@ updates don't take effect.
 1. Sign in to Docker as a user via SSO.
 1. Enable SCIM and set role/team attributes for that user.
 1. SCIM attempts to update the user's attributes, but the role or team
-assignment does not reflect changes.
+   assignment does not reflect changes.
 @y
 1. Enable JIT and SSO for your Docker organization.
 1. Sign in to Docker as a user via SSO.
 1. Enable SCIM and set role/team attributes for that user.
 1. SCIM attempts to update the user's attributes, but the role or team
-assignment does not reflect changes.
+   assignment does not reflect changes.
 @z
 
 @x
@@ -143,11 +143,11 @@ If you prefer to keep JIT enabled:
 
 @x
 - Make sure your IdP's SSO attribute mappings match the values being sent
-by SCIM.
+  by SCIM.
 - Avoid configuring SCIM to override attributes already set via JIT.
 @y
 - Make sure your IdP's SSO attribute mappings match the values being sent
-by SCIM.
+  by SCIM.
 - Avoid configuring SCIM to override attributes already set via JIT.
 @z
 
@@ -207,10 +207,10 @@ existing user:
 > [!WARNING]
 >
 > Deleting a user removes their resource ownership (e.g., repositories).
-Transfer ownership before removing the user.
+> Transfer ownership before removing the user.
 @y
 > [!WARNING]
 >
 > Deleting a user removes their resource ownership (e.g., repositories).
-Transfer ownership before removing the user.
+> Transfer ownership before removing the user.
 @z

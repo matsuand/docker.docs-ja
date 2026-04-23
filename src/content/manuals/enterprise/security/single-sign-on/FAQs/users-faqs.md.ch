@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: SSO user management FAQs
@@ -100,15 +100,15 @@ Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provis
 @z
 
 @x
-[SCIM](/manuals/enterprise/security/provisioning/scim.md) provides full synchronization with users and groups. When using SCIM, the recommended configuration is to turn off JIT so all auto-provisioning is handled by SCIM.
+[SCIM](/manuals/enterprise/security/provisioning/scim/_index.md) provides full synchronization with users and groups. When using SCIM, the recommended configuration is to turn off JIT so all auto-provisioning is handled by SCIM.
 @y
-[SCIM](manuals/enterprise/security/provisioning/scim.md) provides full synchronization with users and groups. When using SCIM, the recommended configuration is to turn off JIT so all auto-provisioning is handled by SCIM.
+[SCIM](manuals/enterprise/security/provisioning/scim/_index.md) provides full synchronization with users and groups. When using SCIM, the recommended configuration is to turn off JIT so all auto-provisioning is handled by SCIM.
 @z
 
 @x
-Additionally, you can use the [Docker Hub API](/reference/api/hub/latest/) to complete this process.
+Additionally, you can use the [Docker Hub API](/reference/api/hub/latest.md) to complete this process.
 @y
-Additionally, you can use the [Docker Hub API](__SUBDIR__/reference/api/hub/latest/) to complete this process.
+Additionally, you can use the [Docker Hub API](reference/api/hub/latest.md) to complete this process.
 @z
 
 @x

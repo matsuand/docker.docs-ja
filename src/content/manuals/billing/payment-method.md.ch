@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Add or update a payment method
@@ -67,11 +67,11 @@ Certain payment methods require additional steps before selecting them as a paym
 
 @x
 - You must [verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account) before choosing a bank account.
-- You must have a Docker Business or Docker Team plan to [pay by invoice](/billing/payment-method/#enable-and-disable-pay-by-invoice).
+- You must have a Docker Business or Docker Team plan to [pay by invoice](/manuals/billing/payment-method.md#enable-and-disable-pay-by-invoice).
 - You must be an existing Stripe Link customer, or fill out the card information form to use Link payments.
 @y
 - You must [verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account) before choosing a bank account.
-- You must have a Docker Business or Docker Team plan to [pay by invoice](__SUBDIR__/billing/payment-method/#enable-and-disable-pay-by-invoice).
+- You must have a Docker Business or Docker Team plan to [pay by invoice](manuals/billing/payment-method.md#enable-and-disable-pay-by-invoice).
 - You must be an existing Stripe Link customer, or fill out the card information form to use Link payments.
 @z
 
@@ -170,9 +170,9 @@ To remove a single payment method:
 @z
 
 @x
-To remove your default payment method, first set a different payment method as default, or [downgrade to a free subscription](/subscription/change).
+To remove your default payment method, first set a different payment method as default, or [downgrade to a free subscription](/manuals/subscription/change.md).
 @y
-To remove your default payment method, first set a different payment method as default, or [downgrade to a free subscription](__SUBDIR__/subscription/change).
+To remove your default payment method, first set a different payment method as default, or [downgrade to a free subscription](manuals/subscription/change.md).
 @z
 
 @x

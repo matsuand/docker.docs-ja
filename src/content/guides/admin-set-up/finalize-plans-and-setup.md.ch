@@ -88,10 +88,10 @@ Business subscription. For more information, see the
 @z
 
 @x
-You can also enable [SCIM](/manuals/enterprise/security/provisioning/scim.md)
+You can also enable [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md)
 for further automation of provisioning and deprovisioning of users.
 @y
-You can also enable [SCIM](manuals/enterprise/security/provisioning/scim.md)
+You can also enable [SCIM](manuals/enterprise/security/provisioning/scim/_index.md)
 for further automation of provisioning and deprovisioning of users.
 @z
 

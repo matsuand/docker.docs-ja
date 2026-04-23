@@ -90,9 +90,15 @@ You can add hardened packages to your own images in the following two ways.
 @z
 
 @x
-### Add packages through image customization {tier="DHI Select & DHI Enterprise"}
+### Add packages through image customization
 @y
-### Add packages through image customization {tier="DHI Select & DHI Enterprise"}
+### Add packages through image customization
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -256,9 +262,15 @@ source by Docker and include full provenance.
 @z
 
 @x
-#### Enterprise repository {tier="DHI Enterprise"}
+#### Enterprise repository
 @y
-#### Enterprise repository {tier="DHI Enterprise"}
+#### Enterprise repository
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images Enterprise" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images Enterprise" >}}
 @z
 
 @x

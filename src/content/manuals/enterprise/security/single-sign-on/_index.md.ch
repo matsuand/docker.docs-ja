@@ -109,14 +109,14 @@ assigned to an organization, and added to a team.
 > [!IMPORTANT]
 >
 > Docker plans to deprecate CLI password-based sign-in in future releases.
-Using a PAT ensures continued CLI access. For more information, see the
-[security announcement](/manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced).
+> Using a PAT ensures continued CLI access. For more information, see the
+> [security announcement](/manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced).
 @y
 > [!IMPORTANT]
 >
 > Docker plans to deprecate CLI password-based sign-in in future releases.
-Using a PAT ensures continued CLI access. For more information, see the
-[security announcement](manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced).
+> Using a PAT ensures continued CLI access. For more information, see the
+> [security announcement](manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced).
 @z
 
 @x
@@ -127,10 +127,10 @@ Using a PAT ensures continued CLI access. For more information, see the
 
 @x
 - Start [configuring SSO](connect.md).
-- Read the [FAQs](/manuals/enterprise/security/single-sign-on/faqs/general.md).
-- [Troubleshoot](/manuals/enterprise/troubleshoot/troubleshoot-sso.md) SSO issues.
+- Read the [FAQs](/manuals/enterprise/security/single-sign-on/FAQs/general.md).
+- [Troubleshoot](/manuals/enterprise/security/single-sign-on/troubleshoot-sso.md) SSO issues.
 @y
 - Start [configuring SSO](connect.md).
-- Read the [FAQs](manuals/enterprise/security/single-sign-on/faqs/general.md).
-- [Troubleshoot](manuals/enterprise/troubleshoot/troubleshoot-sso.md) SSO issues.
+- Read the [FAQs](manuals/enterprise/security/single-sign-on/FAQs/general.md).
+- [Troubleshoot](manuals/enterprise/security/single-sign-on/troubleshoot-sso.md) SSO issues.
 @z

@@ -198,9 +198,9 @@ For example, you might find tags like the following in a DHI repository:
 @z
 
 @x
-## FIPs and STIG variants {tier="DHI Select & Enterprise"}
+## FIPs and STIG variants
 @y
-## FIPs and STIG variants {tier="DHI Select & Enterprise"}
+## FIPs and STIG variants
 @z
 
 @x

@@ -10,7 +10,6 @@ bases = \
 	explore.md           \
 	hardened-packages.md \
 	helm.md              \
-	manage.md            \
 	mirror.md            \
 	policies.md          \
 	scan.md              \

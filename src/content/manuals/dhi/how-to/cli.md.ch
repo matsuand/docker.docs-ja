@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応
 
 @x
 title: Use the DHI CLI
@@ -93,17 +94,7 @@ Every command has built-in help accessible with the `--help` flag:
 Every command has built-in help accessible with the `--help` flag:
 @z
 
-@x
-```bash
-docker dhi --help
-docker dhi catalog list --help
-```
-@y
-```bash
-docker dhi --help
-docker dhi catalog list --help
-```
-@z
+% snip command...
 
 @x
 ### Browse the DHI catalog
@@ -117,15 +108,7 @@ List all available DHI images:
 List all available DHI images:
 @z
 
-@x
-```bash
-docker dhi catalog list
-```
-@y
-```bash
-docker dhi catalog list
-```
-@z
+% snip command...
 
 @x
 Filter by type, name, or compliance:
@@ -133,21 +116,7 @@ Filter by type, name, or compliance:
 Filter by type, name, or compliance:
 @z
 
-@x
-```bash
-docker dhi catalog list --type image
-docker dhi catalog list --filter golang
-docker dhi catalog list --fips
-docker dhi catalog list --stig
-```
-@y
-```bash
-docker dhi catalog list --type image
-docker dhi catalog list --filter golang
-docker dhi catalog list --fips
-docker dhi catalog list --stig
-```
-@z
+% snip command...
 
 @x
 Get details of a specific image, including available tags and CVE counts:
@@ -155,20 +124,12 @@ Get details of a specific image, including available tags and CVE counts:
 Get details of a specific image, including available tags and CVE counts:
 @z
 
-@x
-```bash
-docker dhi catalog get <image-name>
-```
-@y
-```bash
-docker dhi catalog get <image-name>
-```
-@z
+% snip command...
 
 @x
-### Mirror DHI images {tier="DHI Select & DHI Enterprise"}
+### Mirror DHI images
 @y
-### Mirror DHI images {tier="DHI Select & DHI Enterprise"}
+### Mirror DHI images
 @z
 
 @x
@@ -177,21 +138,7 @@ Start mirroring one or more DHI images to your Docker Hub organization:
 Start mirroring one or more DHI images to your Docker Hub organization:
 @z
 
-@x
-```bash
-docker dhi mirror start --org my-org \
-  -r dhi/golang,my-org/dhi-golang \
-  -r dhi/nginx,my-org/dhi-nginx \
-  -r dhi/prometheus-chart,my-org/dhi-prometheus-chart
-```
-@y
-```bash
-docker dhi mirror start --org my-org \
-  -r dhi/golang,my-org/dhi-golang \
-  -r dhi/nginx,my-org/dhi-nginx \
-  -r dhi/prometheus-chart,my-org/dhi-prometheus-chart
-```
-@z
+% snip command...
 
 @x
 Mirror with dependencies:
@@ -199,15 +146,7 @@ Mirror with dependencies:
 Mirror with dependencies:
 @z
 
-@x
-```bash
-docker dhi mirror start --org my-org -r golang --dependencies
-```
-@y
-```bash
-docker dhi mirror start --org my-org -r golang --dependencies
-```
-@z
+% snip command...
 
 @x
 List mirrored images in your organization:
@@ -215,15 +154,7 @@ List mirrored images in your organization:
 List mirrored images in your organization:
 @z
 
-@x
-```bash
-docker dhi mirror list --org my-org
-```
-@y
-```bash
-docker dhi mirror list --org my-org
-```
-@z
+% snip command...
 
 @x
 Filter mirrored images by name or type:
@@ -231,19 +162,7 @@ Filter mirrored images by name or type:
 Filter mirrored images by name or type:
 @z
 
-@x
-```bash
-docker dhi mirror list --org my-org --filter python
-docker dhi mirror list --org my-org --type image
-docker dhi mirror list --org my-org --type helm-chart
-```
-@y
-```bash
-docker dhi mirror list --org my-org --filter python
-docker dhi mirror list --org my-org --type image
-docker dhi mirror list --org my-org --type helm-chart
-```
-@z
+% snip command...
 
 @x
 Stop mirroring one or more images:
@@ -251,17 +170,7 @@ Stop mirroring one or more images:
 Stop mirroring one or more images:
 @z
 
-@x
-```bash
-docker dhi mirror stop dhi-golang --org my-org
-docker dhi mirror stop dhi-python dhi-golang --org my-org
-```
-@y
-```bash
-docker dhi mirror stop dhi-golang --org my-org
-docker dhi mirror stop dhi-python dhi-golang --org my-org
-```
-@z
+% snip command...
 
 @x
 Stop mirroring and delete the repositories:
@@ -269,22 +178,18 @@ Stop mirroring and delete the repositories:
 Stop mirroring and delete the repositories:
 @z
 
+% snip command...
+
 @x
-```bash
-docker dhi mirror stop dhi-golang --org my-org --delete
-docker dhi mirror stop dhi-golang --org my-org --delete --force
-```
+### Customize DHI images
 @y
-```bash
-docker dhi mirror stop dhi-golang --org my-org --delete
-docker dhi mirror stop dhi-golang --org my-org --delete --force
-```
+### Customize DHI images
 @z
 
 @x
-### Customize DHI images {tier="DHI Select & DHI Enterprise"}
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @y
-### Customize DHI images {tier="DHI Select & DHI Enterprise"}
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x
@@ -388,9 +293,9 @@ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
 @z
 
 @x
-### Enterprise package authentication {tier="DHI Enterprise"}
+### Enterprise package authentication
 @y
-### Enterprise package authentication {tier="DHI Enterprise"}
+### Enterprise package authentication
 @z
 
 @x
@@ -418,9 +323,15 @@ docker dhi auth apk
 @z
 
 @x
-### Monitor customization builds {tier="DHI Select & DHI Enterprise"}
+### Monitor customization builds
 @y
-### Monitor customization builds {tier="DHI Select & DHI Enterprise"}
+### Monitor customization builds
+@z
+
+@x
+{{< summary-bar feature_name="Docker Hardened Images" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images" >}}
 @z
 
 @x

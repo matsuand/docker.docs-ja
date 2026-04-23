@@ -43,6 +43,112 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.70.0
+@y
+## 4.70.0
+@z
+
+@x
+{{< release-date date="2026-04-20" >}}
+@y
+{{< release-date date="2026-04-20" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.70.0" build_path="/224270/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.70.0" build_path="/224270/" >}}
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Added a CLI hint that surfaces the **Logs** view when running `logs`, `compose logs`, `compose attach`, or `compose up` commands, giving you quick access to logs across all running containers. Available with the **Logs** (Beta) feature enabled.
+@y
+- Added a CLI hint that surfaces the **Logs** view when running `logs`, `compose logs`, `compose attach`, or `compose up` commands, giving you quick access to logs across all running containers. Available with the **Logs** (Beta) feature enabled.
+@z
+
+@x
+### Updates
+@y
+### Updates
+@z
+
+@x
+- [Docker Compose v5.1.2](https://github.com/docker/compose/releases/tag/v5.1.2)
+- [Docker Engine v29.4.0](/manuals/engine/release-notes/29.md#2940)
+- [Docker Agent v1.43.0](https://github.com/docker/docker-agent/releases/tag/v1.43.0)
+- [Docker Model Runner v1.1.33](https://github.com/docker/model-runner/releases/tag/v1.1.33)
+- [Docker Scout CLI v1.20.4](https://github.com/docker/scout-cli/releases/tag/v1.20.4)
+@y
+- [Docker Compose v5.1.2](https://github.com/docker/compose/releases/tag/v5.1.2)
+- [Docker Engine v29.4.0](/manuals/engine/release-notes/29.md#2940)
+- [Docker Agent v1.43.0](https://github.com/docker/docker-agent/releases/tag/v1.43.0)
+- [Docker Model Runner v1.1.33](https://github.com/docker/model-runner/releases/tag/v1.1.33)
+- [Docker Scout CLI v1.20.4](https://github.com/docker/scout-cli/releases/tag/v1.20.4)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+#### For all platforms
+@y
+#### For all platforms
+@z
+
+@x
+- Fixed a bug where `docker login` could fail silently in CI environments due to slow Docker Hub responses causing credential store update timeouts.
+- Fixed an issue where disabling Beta features also disabled Docker Model Runner.
+- Fixed `docker desktop start` causing the Docker AI agent API daemon to fail due to an inherited CLI plugin environment variable.
+@y
+- Fixed a bug where `docker login` could fail silently in CI environments due to slow Docker Hub responses causing credential store update timeouts.
+- Fixed an issue where disabling Beta features also disabled Docker Model Runner.
+- Fixed `docker desktop start` causing the Docker AI agent API daemon to fail due to an inherited CLI plugin environment variable.
+@z
+
+@x
+#### For Mac
+@y
+#### For Mac
+@z
+
+@x
+- Fixed a crash loop where Docker Desktop repeatedly failed to start with exit status `42` after an update due to a corrupted `DockerAppLaunchPath` setting.
+- Fixed an issue where a failed update could leave Docker Desktop in a broken state. The installer now automatically reverts to the previous version and shows a clear error message.
+- Fixed a bug where stopping one container could disrupt active Unix socket forwards belonging to other running containers.
+@y
+- Fixed a crash loop where Docker Desktop repeatedly failed to start with exit status `42` after an update due to a corrupted `DockerAppLaunchPath` setting.
+- Fixed an issue where a failed update could leave Docker Desktop in a broken state. The installer now automatically reverts to the previous version and shows a clear error message.
+- Fixed a bug where stopping one container could disrupt active Unix socket forwards belonging to other running containers.
+@z
+
+@x
+#### For Windows
+@y
+#### For Windows
+@z
+
+@x
+- Fixed an issue where a failed update could leave Docker Desktop in a broken state. The installer now automatically reverts to the previous version and shows a clear error message.
+- Fixed a bug where a failed switch to Windows containers could leave Docker Desktop in a broken state, requiring a restart.
+- Fixed an issue where Docker Desktop failed to launch for users with `DEVHOME` set in their environment.
+- Temporarily rolled back process hardening that caused Electron crashes on Windows. Fixes [docker/desktop-feedback#245](https://github.com/docker/desktop-feedback/issues/245).
+@y
+- Fixed an issue where a failed update could leave Docker Desktop in a broken state. The installer now automatically reverts to the previous version and shows a clear error message.
+- Fixed a bug where a failed switch to Windows containers could leave Docker Desktop in a broken state, requiring a restart.
+- Fixed an issue where Docker Desktop failed to launch for users with `DEVHOME` set in their environment.
+- Temporarily rolled back process hardening that caused Electron crashes on Windows. Fixes [docker/desktop-feedback#245](https://github.com/docker/desktop-feedback/issues/245).
+@z
+
+@x
 ## 4.69.0
 @y
 ## 4.69.0
@@ -68,12 +174,12 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 @x
 - [Docker Agent v1.42.0](https://github.com/docker/docker-agent/releases/tag/v1.42.0)
-- [Docker Model v1.1.29](https://github.com/docker/model-cli/releases/tag/v1.1.29)
+- [Docker Model v1.1.29](https://github.com/docker/model-runner/releases/tag/v1.1.29)
 - [containerd v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2)
 - [Docker Buildx v0.33.0](https://github.com/docker/buildx/releases/tag/v0.33.0)
 @y
 - [Docker Agent v1.42.0](https://github.com/docker/docker-agent/releases/tag/v1.42.0)
-- [Docker Model v1.1.29](https://github.com/docker/model-cli/releases/tag/v1.1.29)
+- [Docker Model v1.1.29](https://github.com/docker/model-runner/releases/tag/v1.1.29)
 - [containerd v2.2.2](https://github.com/containerd/containerd/releases/tag/v2.2.2)
 - [Docker Buildx v0.33.0](https://github.com/docker/buildx/releases/tag/v0.33.0)
 @z
@@ -178,10 +284,12 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 
 @x
 - [Docker Agent v1.39.0](https://github.com/docker/docker-agent/releases/tag/v1.39.0)
-- [Docker Model v1.1.28](https://github.com/docker/model-cli/releases/tag/v1.1.28)
+- [Docker Model v1.1.28](https://github.com/docker/model-runner/releases/tag/v1.1.28)
+- [Docker Offload v0.5.81](https://github.com/docker/cloud/releases/tag/v0.5.81)
 @y
 - [Docker Agent v1.39.0](https://github.com/docker/docker-agent/releases/tag/v1.39.0)
-- [Docker Model v1.1.28](https://github.com/docker/model-cli/releases/tag/v1.1.28)
+- [Docker Model v1.1.28](https://github.com/docker/model-runner/releases/tag/v1.1.28)
+- [Docker Offload v0.5.81](https://github.com/docker/cloud/releases/tag/v0.5.81)
 @z
 
 @x
@@ -296,12 +404,12 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 - [Docker Compose v5.1.1](https://github.com/docker/compose/releases/tag/v5.1.1)
 - [Docker Agent v1.34.0](https://github.com/docker/docker-agent/releases/tag/v1.34.0)
 - [Docker Scout CLI v1.20.3](https://github.com/docker/scout-cli/releases/tag/v1.20.3)
-- [Docker Model v1.1.25](https://github.com/docker/model-cli/releases/tag/v1.1.25)
+- [Docker Model v1.1.25](https://github.com/docker/model-runner/releases/tag/v1.1.25)
 @y
 - [Docker Compose v5.1.1](https://github.com/docker/compose/releases/tag/v5.1.1)
 - [Docker Agent v1.34.0](https://github.com/docker/docker-agent/releases/tag/v1.34.0)
 - [Docker Scout CLI v1.20.3](https://github.com/docker/scout-cli/releases/tag/v1.20.3)
-- [Docker Model v1.1.25](https://github.com/docker/model-cli/releases/tag/v1.1.25)
+- [Docker Model v1.1.25](https://github.com/docker/model-runner/releases/tag/v1.1.25)
 @z
 
 @x

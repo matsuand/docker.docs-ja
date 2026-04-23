@@ -22,11 +22,11 @@ description: What a sandbox permits and blocks before you change any settings.
 @z
 
 @x
-A sandbox created with `sbx run` and no additional flags or blueprints has
-the following security posture.
+A sandbox created with `sbx run` and no additional flags has the following
+security posture.
 @y
-A sandbox created with `sbx run` and no additional flags or blueprints has
-the following security posture.
+A sandbox created with `sbx run` and no additional flags has the following
+security posture.
 @z
 
 @x

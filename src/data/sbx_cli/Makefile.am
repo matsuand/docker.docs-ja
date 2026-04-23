@@ -18,6 +18,7 @@ bases = \
 	sbx_create_kiro.yaml           \
 	sbx_create_opencode.yaml       \
 	sbx_create_shell.yaml          \
+	sbx_diagnose.yaml              \
 	sbx_exec.yaml                  \
 	sbx_login.yaml                 \
 	sbx_logout.yaml                \
@@ -37,12 +38,16 @@ bases = \
 	sbx_reset.yaml                 \
 	sbx_rm.yaml                    \
 	sbx_run.yaml                   \
-	sbx_save.yaml                  \
 	sbx_secret.yaml                \
 	sbx_secret_ls.yaml             \
 	sbx_secret_rm.yaml             \
 	sbx_secret_set.yaml            \
 	sbx_stop.yaml                  \
+	sbx_template.yaml              \
+	sbx_template_load.yaml         \
+	sbx_template_ls.yaml           \
+	sbx_template_rm.yaml           \
+	sbx_template_save.yaml         \
 	sbx_version.yaml
 
 include $(top_srcdir)/build-aux/common.mk

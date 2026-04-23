@@ -6,15 +6,13 @@
 @x
 description: Understand how Settings Management works, who it's for, and the benefits it provides
 keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-@y
-description: Understand how Settings Management works, who it's for, and the benefits it provides
-keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-@z
-
-@x
+tags: [admin]
 title: Settings Management
 linkTitle: Settings Management
 @y
+description: Understand how Settings Management works, who it's for, and the benefits it provides
+keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
+tags: [admin]
 title: Settings Management
 linkTitle: Settings Management
 @z
@@ -67,18 +65,18 @@ Administrators can define settings using one of these methods:
 
 @x
 - [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
-Docker Admin Console. This provides a web-based interface for managing settings
-across your organization.
+  Docker Admin Console. This provides a web-based interface for managing settings
+  across your organization.
 - [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
-user's machine to enforce settings. This method works well for automated
-deployments and scripted installations.
+  user's machine to enforce settings. This method works well for automated
+  deployments and scripted installations.
 @y
 - [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
-Docker Admin Console. This provides a web-based interface for managing settings
-across your organization.
+  Docker Admin Console. This provides a web-based interface for managing settings
+  across your organization.
 - [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
-user's machine to enforce settings. This method works well for automated
-deployments and scripted installations.
+  user's machine to enforce settings. This method works well for automated
+  deployments and scripted installations.
 @z
 
 @x
@@ -162,19 +160,19 @@ You can create settings management policies at any time, but your organization n
 @x
 1. Check that you have [added and verified](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
 2. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to
-ensure all developers authenticate with your organization.
+   ensure all developers authenticate with your organization.
 3. Choose a configuration method:
-    - Use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
-    - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
-    - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
+   - Use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
+   - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
+   - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
 @y
 1. Check that you have [added and verified](manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
 2. [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to
-ensure all developers authenticate with your organization.
+   ensure all developers authenticate with your organization.
 3. Choose a configuration method:
-    - Use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
-    - Manually create and configure the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
-    - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
+   - Use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
+   - Manually create and configure the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
+   - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
 @z
 
 @x
@@ -258,13 +256,13 @@ applied settings:
 @z
 
 @x
-  - Mac: `~/Library/Application Support/Docker/settings-store.json`
-  - Windows: `%APPDATA%\Docker\settings-store.json`
-  - Linux: `~/.docker/desktop/settings-store.json`
+- Mac: `~/Library/Application Support/Docker/settings-store.json`
+- Windows: `%APPDATA%\Docker\settings-store.json`
+- Linux: `~/.docker/desktop/settings-store.json`
 @y
-  - Mac: `~/Library/Application Support/Docker/settings-store.json`
-  - Windows: `%APPDATA%\Docker\settings-store.json`
-  - Linux: `~/.docker/desktop/settings-store.json`
+- Mac: `~/Library/Application Support/Docker/settings-store.json`
+- Windows: `%APPDATA%\Docker\settings-store.json`
+- Linux: `~/.docker/desktop/settings-store.json`
 @z
 
 @x

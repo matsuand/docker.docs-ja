@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Billing FAQs
@@ -108,19 +108,19 @@ Docker collects sales tax and/or VAT from the following:
 @x
 To ensure that tax assessments are correct, make sure that your billing
 information and VAT/Tax ID, if applicable, are updated. See
-[Update the billing information](/billing/details/).
+[Update the billing information](/manuals/billing/details.md).
 @y
 To ensure that tax assessments are correct, make sure that your billing
 information and VAT/Tax ID, if applicable, are updated. See
-[Update the billing information](__SUBDIR__/billing/details/).
+[Update the billing information](manuals/billing/details.md).
 @z
 
 @x
 If you're exempt from sales tax, see
-[Register a tax certificate](/billing/tax-certificate/).
+[Register a tax certificate](/manuals/billing/tax-certificate.md).
 @y
 If you're exempt from sales tax, see
-[Register a tax certificate](__SUBDIR__/billing/tax-certificate/).
+[Register a tax certificate](manuals/billing/tax-certificate.md).
 @z
 
 @x

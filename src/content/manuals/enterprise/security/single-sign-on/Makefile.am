@@ -6,7 +6,8 @@ SUBDIRS = FAQs images
 bases = \
 	_index.md  \
 	connect.md \
-	manage.md
+	manage.md  \
+	troubleshoot-sso.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

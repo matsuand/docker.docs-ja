@@ -247,11 +247,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/enterprise/security/hardened-desktop/settings-management/Makefile
 	src/content/manuals/enterprise/security/images/Makefile
 	src/content/manuals/enterprise/security/provisioning/Makefile
+	src/content/manuals/enterprise/security/provisioning/scim/Makefile
 	src/content/manuals/enterprise/security/roles-and-permissions/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/FAQs/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/images/Makefile
-	src/content/manuals/enterprise/troubleshoot/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile

@@ -4,11 +4,11 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Manage domains
+title: Add and manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
 keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
 @y
-title: Manage domains
+title: Add and manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
 keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
 @z
@@ -51,16 +51,16 @@ Adding a domain requires verification to confirm ownership. The verification pro
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
+   your organization. If your organization is part of a company, select the company
+   and configure the domain for the organization at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain and select **Add domain**.
 1. In the pop-up modal, copy the **TXT Record Value** to verify your domain.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
+   your organization. If your organization is part of a company, select the company
+   and configure the domain for the organization at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain and select **Add domain**.
@@ -109,14 +109,14 @@ your provider isn't listed, use the steps for "Other providers":
 1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @y
 1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @z
 
 @x
@@ -131,14 +131,14 @@ your domain name.
 1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @y
 1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @z
 
 @x
@@ -153,14 +153,14 @@ your domain name.
 1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @y
 1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @z
 
 @x
@@ -176,15 +176,15 @@ your domain name.
 1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker.
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @y
 1. Sign in to your domain host.
 1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker.
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-[Admin Console](https://app.docker.com/admin) and select **Verify** next to
-your domain name.
+   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   your domain name.
 @z
 
 @x
@@ -196,133 +196,9 @@ your domain name.
 @z
 
 @x
-## Configure auto-provisioning
-@y
-## Configure auto-provisioning
-@z
-
-@x
-Auto-provisioning automatically adds users to your organization when they sign in with email addresses that match your verified domains. You must verify a domain before enabling auto-provisioning.
-@y
-Auto-provisioning automatically adds users to your organization when they sign in with email addresses that match your verified domains. You must verify a domain before enabling auto-provisioning.
-@z
-
-@x
-> [!IMPORTANT]
->
-> For domains that are part of an SSO connection, Just-in-Time (JIT) provisioning takes precedence over auto-provisioning when adding users to an organization.
-@y
-> [!IMPORTANT]
->
-> For domains that are part of an SSO connection, Just-in-Time (JIT) provisioning takes precedence over auto-provisioning when adding users to an organization.
-@z
-
-@x
-### How auto-provisioning works
-@y
-### How auto-provisioning works
-@z
-
-@x
-When auto-provisioning is enabled for a verified domain:
-@y
-When auto-provisioning is enabled for a verified domain:
-@z
-
-@x
-- Users who sign in to Docker with matching email addresses are automatically added to your organization.
-- Auto-provisioning only adds existing Docker users to your organization, it doesn't create new accounts.
-- Users experience no changes to their sign-in process.
-- Company and organization owners receive email notifications when new users are added.
-- You may need to [manage seats](/manuals/subscription/manage-seats.md) to accommodate new users.
-@y
-- Users who sign in to Docker with matching email addresses are automatically added to your organization.
-- Auto-provisioning only adds existing Docker users to your organization, it doesn't create new accounts.
-- Users experience no changes to their sign-in process.
-- Company and organization owners receive email notifications when new users are added.
-- You may need to [manage seats](manuals/subscription/manage-seats.md) to accommodate new users.
-@z
-
-@x
-### Enable auto-provisioning
-@y
-### Enable auto-provisioning
-@z
-
-@x
-Auto-provisioning is configured per domain. To enable it:
-@y
-Auto-provisioning is configured per domain. To enable it:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select
-your company or organization.
-1. Select **Admin Console**, then **Domain management**.
-1. Select the **Actions menu** next to the domain you want to enable
-auto-provisioning for.
-1. Select **Enable auto-provisioning**.
-1. Optional. If enabling auto-provisioning at the company level, select an
-organization.
-1. Select **Enable** to confirm.
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select
-your company or organization.
-1. Select **Admin Console**, then **Domain management**.
-1. Select the **Actions menu** next to the domain you want to enable
-auto-provisioning for.
-1. Select **Enable auto-provisioning**.
-1. Optional. If enabling auto-provisioning at the company level, select an
-organization.
-1. Select **Enable** to confirm.
-@z
-
-@x
-The **Auto-provisioning** column will update to **Enabled** for the domain.
-@y
-The **Auto-provisioning** column will update to **Enabled** for the domain.
-@z
-
-@x
-### Disable auto-provisioning
-@y
-### Disable auto-provisioning
-@z
-
-@x
-To disable auto-provisioning for a user:
-@y
-To disable auto-provisioning for a user:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
-1. Select the **Actions menu** next to your domain.
-1. Select **Disable auto-provisioning**.
-1. Select **Disable** to confirm.
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
-1. Select the **Actions menu** next to your domain.
-1. Select **Disable auto-provisioning**.
-1. Select **Disable** to confirm.
-@z
-
-@x
 ## Audit domains for uncaptured users
 @y
 ## Audit domains for uncaptured users
-@z
-
-@x
-{{< summary-bar feature_name="Domain audit" >}}
-@y
-{{< summary-bar feature_name="Domain audit" >}}
 @z
 
 @x
@@ -346,11 +222,11 @@ Domain audit can't identify:
 @x
 - Users who access Docker Desktop without authenticating
 - Users who authenticate using an account that doesn't have an
-email address associated with one of your verified domains
+  email address associated with one of your verified domains
 @y
 - Users who access Docker Desktop without authenticating
 - Users who authenticate using an account that doesn't have an
-email address associated with one of your verified domains
+  email address associated with one of your verified domains
 @z
 
 @x
@@ -367,25 +243,29 @@ To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in]
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and choose your
-company.
+   company.
 1. Select **Admin Console**, then **Domain management**.
 1. In **Domain audit**, select **Export Users** to export a CSV file
-of uncaptured users.
+   of uncaptured users.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and choose your
-company.
+   company.
 1. Select **Admin Console**, then **Domain management**.
 1. In **Domain audit**, select **Export Users** to export a CSV file
-of uncaptured users.
+   of uncaptured users.
 @z
 
 @x
 The CSV file contains the following columns:
+@y
+The CSV file contains the following columns:
+@z
+
+@x
 - Name: Docker user's display name
 - Username: Docker ID of the user
 - Email: Email address of the user
 @y
-The CSV file contains the following columns:
 - Name: Docker user's display name
 - Username: Docker ID of the user
 - Email: Email address of the user
@@ -408,6 +288,26 @@ CSV file. For more information on bulk inviting users, see
 @z
 
 @x
+## Auto-provisioning
+@y
+## Auto-provisioning
+@z
+
+@x
+[Auto-provisioning](/manuals/enterprise/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
+@y
+[Auto-provisioning](manuals/enterprise/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
+@z
+
+@x
+- [Just-in-Time (JIT)](/manuals/enterprise/security/provisioning/just-in-time.md) provisioning
+- [System for Cross-domain Identity Management (SCIM)](/manuals/enterprise/security/provisioning/scim/_index.md)
+@y
+- [Just-in-Time (JIT)](manuals/enterprise/security/provisioning/just-in-time.md) provisioning
+- [System for Cross-domain Identity Management (SCIM)](manuals/enterprise/security/provisioning/scim/_index.md)
+@z
+
+@x
 ## Delete a domain
 @y
 ## Delete a domain
@@ -420,11 +320,11 @@ Deleting a domain removes its TXT record value and disables any associated auto-
 @z
 
 @x
->[!WARNING]
+> [!WARNING]
 >
 > Deleting a domain will disable auto-provisioning for that domain and remove verification. This action cannot be undone.
 @y
->[!WARNING]
+> [!WARNING]
 >
 > Deleting a domain will disable auto-provisioning for that domain and remove verification. This action cannot be undone.
 @z
@@ -437,18 +337,18 @@ To delete a domain:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
+   your organization. If your organization is part of a company, select the company
+   and configure the domain for the organization at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. For the domain you want to delete, select the **Actions** menu, then
-**Delete domain**.
+   **Delete domain**.
 1. To confirm, select **Delete domain** in the pop-up modal.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select
-your organization. If your organization is part of a company, select the company
-and configure the domain for the organization at the company level.
+   your organization. If your organization is part of a company, select the company
+   and configure the domain for the organization at the company level.
 1. Select **Admin Console**, then **Domain management**.
 1. For the domain you want to delete, select the **Actions** menu, then
-**Delete domain**.
+   **Delete domain**.
 1. To confirm, select **Delete domain** in the pop-up modal.
 @z

@@ -28,6 +28,7 @@ options:
 see_also:
     - sbx completion - Generate the autocompletion script for the specified shell
     - sbx create - Create a sandbox for an agent
+    - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox
     - sbx login - Sign in to Docker
     - sbx logout - Sign out of Docker
@@ -37,9 +38,9 @@ see_also:
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes
     - sbx run - Run an agent in a sandbox
-    - sbx save - Save a snapshot of the sandbox as a template
     - sbx secret - Manage stored secrets
     - sbx stop - Stop one or more sandboxes without removing them
+    - sbx template - Manage sandbox templates
     - sbx version - Show Docker Sandboxes version information
 @y
     Run without a command to launch interactive mode, or pass a command for CLI usage.
@@ -56,6 +57,7 @@ options:
 see_also:
     - sbx completion - Generate the autocompletion script for the specified shell
     - sbx create - Create a sandbox for an agent
+    - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox
     - sbx login - Sign in to Docker
     - sbx logout - Sign out of Docker
@@ -65,8 +67,8 @@ see_also:
     - sbx reset - Reset all sandboxes and clean up state
     - sbx rm - Remove one or more sandboxes
     - sbx run - Run an agent in a sandbox
-    - sbx save - Save a snapshot of the sandbox as a template
     - sbx secret - Manage stored secrets
     - sbx stop - Stop one or more sandboxes without removing them
+    - sbx template - Manage sandbox templates
     - sbx version - Show Docker Sandboxes version information
 @z

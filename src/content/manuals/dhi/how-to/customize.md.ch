@@ -13,10 +13,10 @@ linkTitle: Customize an image or chart
 @z
 
 @x
-keywords: hardened images, DHI, customize, certificate, artifact, helm chart
+keywords: hardened images, DHI, customize, certificate, artifact, helm chart, terraform, infrastructure as code
 description: Learn how to customize Docker Hardened Images (DHI) and charts.
 @y
-keywords: hardened images, DHI, customize, certificate, artifact, helm chart
+keywords: hardened images, DHI, customize, certificate, artifact, helm chart, terraform, infrastructure as code
 description: Learn how to customize Docker Hardened Images (DHI) and charts.
 @z
 
@@ -83,61 +83,11 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-### Customize using the DHI CLI
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @y
-### Customize using the DHI CLI
-@z
-
-@x
-The DHI CLI provides a command-line interface for managing Docker Hardened Image
-customizations. For installation instructions and usage details, see [Use
-the DHI CLI](./cli.md#customize-dhi-images).
-@y
-The DHI CLI provides a command-line interface for managing Docker Hardened Image
-customizations. For installation instructions and usage details, see [Use
-the DHI CLI](./cli.md#customize-dhi-images).
-@z
-
-@x
-#### Monitor customization builds
-@y
-#### Monitor customization builds
-@z
-
-@x
-List builds for a customization:
-@y
-List builds for a customization:
-@z
-
-% snip command...
-
-@x
-Get details of a specific build:
-@y
-Get details of a specific build:
-@z
-
-% snip command...
-
-@x
-View build logs:
-@y
-View build logs:
-@z
-
-% snip command...
-
-@x
-### Customize using the Docker Hub web interface
-@y
-### Customize using the Docker Hub web interface
-@z
-
-@x
-To customize a Docker Hardened Image using the web interface, follow these steps:
-@y
-To customize a Docker Hardened Image using the web interface, follow these steps:
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x
@@ -215,31 +165,35 @@ To customize a Docker Hardened Image using the web interface, follow these steps
 @x
       The OCI artifacts are images that you have previously
       built and pushed to a repository in the same namespace as the mirrored
-      DHI. For example, you can add a custom root CA certificate or a another
+      DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
       image. For more details on how to create an OCI artifact image, see
       [Create an OCI artifact image](#create-an-oci-artifact-image-for-image-customization).
 @y
       The OCI artifacts are images that you have previously
       built and pushed to a repository in the same namespace as the mirrored
-      DHI. For example, you can add a custom root CA certificate or a another
+      DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
       image. For more details on how to create an OCI artifact image, see
       [Create an OCI artifact image](#create-an-oci-artifact-image-for-image-customization).
 @z
 
 @x
-      When combining images that contain directories and files with the same
-      path, images later in the list will overwrite files from earlier images.
-      To manage this, you must select paths to include and optionally exclude
-      from each OCI artifact image. This allows you to control which files are
-      included in the final customized image.
+      You can add multiple OCI artifact images to a single customization. When
+      you add more than one, they're applied in the order you add them in the
+      **OCI artifacts** drop-down. If multiple images contain directories or
+      files with the same path, images added later overwrite files from images
+      added earlier. To manage this, you must select paths to include and
+      optionally exclude from each OCI artifact image. This allows you to
+      control which files are included in the final customized image.
 @y
-      When combining images that contain directories and files with the same
-      path, images later in the list will overwrite files from earlier images.
-      To manage this, you must select paths to include and optionally exclude
-      from each OCI artifact image. This allows you to control which files are
-      included in the final customized image.
+      You can add multiple OCI artifact images to a single customization. When
+      you add more than one, they're applied in the order you add them in the
+      **OCI artifacts** drop-down. If multiple images contain directories or
+      files with the same path, images added later overwrite files from images
+      added earlier. To manage this, you must select paths to include and
+      optionally exclude from each OCI artifact image. This allows you to
+      control which files are included in the final customized image.
 @z
 
 @x
@@ -368,6 +322,223 @@ To customize a Docker Hardened Image using the web interface, follow these steps
    A summary of the customization appears. It may take some time for the image
    to build. Once built, it will appear in the **Tags** tab of the repository,
    and your team members can pull it like any other image.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+@y
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+@z
+
+@x
+Use the [`docker dhi customization`](/reference/cli/docker/dhi/customization/) command:
+@y
+Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customization/) command:
+@z
+
+@x within code
+# Prepare a customization scaffold
+@y
+# Prepare a customization scaffold
+@z
+@x
+# Create a customization
+@y
+# Create a customization
+@z
+@x
+# List customizations
+@y
+# List customizations
+@z
+@x
+# Filter customizations by name, repository, or source
+@y
+# Filter customizations by name, repository, or source
+@z
+@x
+# Get a customization
+@y
+# Get a customization
+@z
+@x
+# Update a customization
+@y
+# Update a customization
+@z
+@x
+# Delete a customization
+@y
+# Delete a customization
+@z
+@x
+# Delete without confirmation prompt
+@y
+# Delete without confirmation prompt
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+@y
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+@z
+
+@x
+You can manage DHI customizations as infrastructure-as-code using the [DHI
+Terraform
+provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
+If you haven't configured the provider yet, see the Terraform tab in [Mirror a
+repository](./mirror.md) for setup instructions.
+@y
+You can manage DHI customizations as infrastructure-as-code using the [DHI
+Terraform
+provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
+If you haven't configured the provider yet, see the Terraform tab in [Mirror a
+repository](./mirror.md) for setup instructions.
+@z
+
+@x
+Define a `dhi_customization` resource for each customization:
+@y
+Define a `dhi_customization` resource for each customization:
+@z
+
+% snip code...
+
+@x
+The `dhi_customization` resource also supports optional configuration blocks
+for `accounts`, `files`, `labels`, `annotations`, `environment`, `entrypoint`,
+`cmd`, `user`, `workdir`, and `stop_signal`.
+@y
+The `dhi_customization` resource also supports optional configuration blocks
+for `accounts`, `files`, `labels`, `annotations`, `environment`, `entrypoint`,
+`cmd`, `user`, `workdir`, and `stop_signal`.
+@z
+
+@x
+Run `terraform apply` to create the customization.
+@y
+Run `terraform apply` to create the customization.
+@z
+
+@x
+To edit a customization, update the resource configuration and run `terraform
+apply`. To delete a customization, remove the resource and run `terraform apply`.
+@y
+To edit a customization, update the resource configuration and run `terraform
+apply`. To delete a customization, remove the resource and run `terraform apply`.
+@z
+
+@x
+For the full list of resource attributes, see the [Terraform Registry
+documentation](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs/resources/customization).
+@y
+For the full list of resource attributes, see the [Terraform Registry
+documentation](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs/resources/customization).
+@z
+
+@x
+> [!NOTE]
+>
+> Monitoring customization builds is not available through the Terraform
+> provider. Use the Docker Hub web interface or the DHI CLI to monitor builds.
+@y
+> [!NOTE]
+>
+> Monitoring customization builds is not available through the Terraform
+> provider. Use the Docker Hub web interface or the DHI CLI to monitor builds.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+### Monitor customization builds
+@y
+### Monitor customization builds
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Customizations** tab.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Customizations** tab.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+List builds for a customization:
+@y
+List builds for a customization:
+@z
+
+% snip code...
+
+@x
+Get details of a specific build:
+@y
+Get details of a specific build:
+@z
+
+% snip code...
+
+@x
+View build logs:
+@y
+View build logs:
+@z
+
+% snip code...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x

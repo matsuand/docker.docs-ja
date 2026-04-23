@@ -1,18 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: SSO enforcement FAQs
 linkTitle: Enforcement
 description: Frequently asked questions about Docker single sign-on enforcement and its effects on users
 keywords: SSO enforcement, single sign-on, personal access tokens, CLI authentication, guest users
+tags: [FAQ]
 @y
 title: SSO enforcement FAQs
 linkTitle: Enforcement
 description: Frequently asked questions about Docker single sign-on enforcement and its effects on users
 keywords: SSO enforcement, single sign-on, personal access tokens, CLI authentication, guest users
+tags: [FAQ]
 @z
 
 @x
@@ -22,15 +24,15 @@ keywords: SSO enforcement, single sign-on, personal access tokens, CLI authentic
 @z
 
 @x
-When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You must use a personal access token (PAT) for CLI authentication instead.
+When SSO is enforced, [passwords are prevented from accessing the Docker CLI](/manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced). You must use a personal access token (PAT) for CLI authentication instead.
 @y
-When SSO is enforced, [passwords are prevented from accessing the Docker CLI](__SUBDIR__/security/security-announcements/#deprecation-of-password-logins-on-cli-when-sso-enforced). You must use a personal access token (PAT) for CLI authentication instead.
+When SSO is enforced, [passwords are prevented from accessing the Docker CLI](manuals/security/security-announcements.md#deprecation-of-password-logins-on-cli-when-sso-enforced). You must use a personal access token (PAT) for CLI authentication instead.
 @z
 
 @x
-Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage personal access tokens](/security/access-tokens/). Users who already used a PAT before SSO enforcement can continue using that PAT.
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage personal access tokens](/manuals/security/access-tokens.md). Users who already used a PAT before SSO enforcement can continue using that PAT.
 @y
-Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage personal access tokens](__SUBDIR__/security/access-tokens/). Users who already used a PAT before SSO enforcement can continue using that PAT.
+Each user must create a PAT to access the CLI. To learn how to create a PAT, see [Manage personal access tokens](manuals/security/access-tokens.md). Users who already used a PAT before SSO enforcement can continue using that PAT.
 @z
 
 @x
@@ -40,9 +42,9 @@ Each user must create a PAT to access the CLI. To learn how to create a PAT, see
 @z
 
 @x
-Before enforcing SSO, you must [create personal access tokens](/security/access-tokens/) to replace passwords in automation systems and CI/CD pipelines.
+Before enforcing SSO, you must [create personal access tokens](/manuals/security/access-tokens.md) to replace passwords in automation systems and CI/CD pipelines.
 @y
-Before enforcing SSO, you must [create personal access tokens](__SUBDIR__/security/access-tokens/) to replace passwords in automation systems and CI/CD pipelines.
+Before enforcing SSO, you must [create personal access tokens](manuals/security/access-tokens.md) to replace passwords in automation systems and CI/CD pipelines.
 @z
 
 @x

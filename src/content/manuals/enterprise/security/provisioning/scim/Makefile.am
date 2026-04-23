@@ -3,9 +3,10 @@
 ##
 
 bases = \
-	_index.md                    \
-	troubleshoot-provisioning.md \
-	troubleshoot-sso.md
+	_index.md         \
+	group-mapping.md  \
+	migrate-scim.md   \
+	provision-scim.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

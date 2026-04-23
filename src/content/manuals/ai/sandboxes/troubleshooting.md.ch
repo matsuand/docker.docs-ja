@@ -22,6 +22,48 @@ description: Resolve common issues when using Docker Sandboxes.
 @z
 
 @x
+## Run diagnostics
+@y
+## Run diagnostics
+@z
+
+@x
+Before digging into a specific issue, run
+[`sbx diagnose`](/reference/cli/sbx/diagnose/) to check for common problems
+with your installation, such as a missing CLI binary, an unresponsive daemon,
+a CLI/daemon version mismatch, missing storage directories, or broken
+authentication.
+@y
+Before digging into a specific issue, run
+[`sbx diagnose`](__SUBDIR__/reference/cli/sbx/diagnose/) to check for common problems
+with your installation, such as a missing CLI binary, an unresponsive daemon,
+a CLI/daemon version mismatch, missing storage directories, or broken
+authentication.
+@z
+
+@x
+```console
+$ sbx diagnose
+```
+@y
+```console
+$ sbx diagnose
+```
+@z
+
+@x
+The command prints a summary of checks that passed, warned, or failed, along
+with suggested fixes. Use `--output json` to get machine-readable output, or
+`--output github-issue` to generate a Markdown snippet suitable for pasting
+into a GitHub issue.
+@y
+The command prints a summary of checks that passed, warned, or failed, along
+with suggested fixes. Use `--output json` to get machine-readable output, or
+`--output github-issue` to generate a Markdown snippet suitable for pasting
+into a GitHub issue.
+@z
+
+@x
 ## Resetting sandboxes
 @y
 ## Resetting sandboxes
@@ -96,6 +138,68 @@ $ sbx policy allow network "**"
 @z
 
 @x
+## SSH and other non-HTTP connections fail
+@y
+## SSH and other non-HTTP connections fail
+@z
+
+@x
+Non-HTTP TCP connections like SSH can be allowed by adding a policy rule for
+the destination IP address and port. For example, to allow SSH to a specific
+host:
+@y
+Non-HTTP TCP connections like SSH can be allowed by adding a policy rule for
+the destination IP address and port. For example, to allow SSH to a specific
+host:
+@z
+
+@x
+```console
+$ sbx policy allow network "10.1.2.3:22"
+```
+@y
+```console
+$ sbx policy allow network "10.1.2.3:22"
+```
+@z
+
+@x
+Hostname-based rules (for example, `myhost:22`) don't work for non-HTTP
+connections because the proxy can't resolve the hostname to an IP address in
+this context. Use the IP address directly.
+@y
+Hostname-based rules (for example, `myhost:22`) don't work for non-HTTP
+connections because the proxy can't resolve the hostname to an IP address in
+this context. Use the IP address directly.
+@z
+
+@x
+UDP and ICMP traffic is blocked at the network layer and can't be unblocked
+with policy rules.
+@y
+UDP and ICMP traffic is blocked at the network layer and can't be unblocked
+with policy rules.
+@z
+
+@x
+For Git operations over SSH, you can either add an allow rule for the Git
+server's IP address or use HTTPS URLs instead:
+@y
+For Git operations over SSH, you can either add an allow rule for the Git
+server's IP address or use HTTPS URLs instead:
+@z
+
+@x
+```console
+$ git clone https://github.com/owner/repo.git
+```
+@y
+```console
+$ git clone https://github.com/owner/repo.git
+```
+@z
+
+@x
 ## Can't reach a service running on the host
 @y
 ## Can't reach a service running on the host
@@ -368,9 +472,11 @@ cached images. Stop all running sandboxes first with `sbx reset`.
 @z
 
 @x
-macOS:
+{{< tabs >}}
+{{< tab name="macOS" >}}
 @y
-macOS:
+{{< tabs >}}
+{{< tab name="macOS" >}}
 @z
 
 @x
@@ -384,9 +490,11 @@ $ rm -rf ~/Library/Application\ Support/com.docker.sandboxes/
 @z
 
 @x
-Windows:
+{{< /tab >}}
+{{< tab name="Windows" >}}
 @y
-Windows:
+{{< /tab >}}
+{{< tab name="Windows" >}}
 @z
 
 @x
@@ -397,6 +505,54 @@ Windows:
 ```powershell
 > Remove-Item -Recurse -Force "$env:LOCALAPPDATA\DockerSandboxes"
 ```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@y
+{{< /tab >}}
+{{< tab name="Linux" >}}
+@z
+
+@x
+Sandbox state on Linux follows the XDG Base Directory specification and is
+spread across three directories:
+@y
+Sandbox state on Linux follows the XDG Base Directory specification and is
+spread across three directories:
+@z
+
+@x
+```console
+$ rm -rf ~/.local/state/sandboxes/
+$ rm -rf ~/.cache/sandboxes/
+$ rm -rf ~/.config/sandboxes/
+```
+@y
+```console
+$ rm -rf ~/.local/state/sandboxes/
+$ rm -rf ~/.cache/sandboxes/
+$ rm -rf ~/.config/sandboxes/
+```
+@z
+
+@x
+If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
+`XDG_CONFIG_HOME` environment variables, replace `~/.local/state`,
+`~/.cache`, and `~/.config` with the corresponding values.
+@y
+If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
+`XDG_CONFIG_HOME` environment variables, replace `~/.local/state`,
+`~/.cache`, and `~/.config` with the corresponding values.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z
 
 @x
@@ -411,4 +567,34 @@ issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-r
 @y
 If you've exhausted the steps above and the problem persists, file a GitHub
 issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
+@z
+
+@x
+To help the Docker team investigate, generate a diagnostics bundle and share
+it when reporting the issue:
+@y
+To help the Docker team investigate, generate a diagnostics bundle and share
+it when reporting the issue:
+@z
+
+@x
+```console
+$ sbx diagnose --upload
+```
+@y
+```console
+$ sbx diagnose --upload
+```
+@z
+
+@x
+The bundle contains daemon logs, diagnostic check results, and basic system
+information. When `--upload` is confirmed, the bundle is uploaded to Docker
+support and the command prints a diagnostics ID. Include this ID in your
+issue so the team can correlate it with the uploaded bundle.
+@y
+The bundle contains daemon logs, diagnostic check results, and basic system
+information. When `--upload` is confirmed, the bundle is uploaded to Docker
+support and the command prints a diagnostics ID. Include this ID in your
+issue so the team can correlate it with the uploaded bundle.
 @z

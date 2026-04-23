@@ -180,9 +180,9 @@ the support window that use that package.
 @z
 
 @x
-### Customization changes {tier="DHI Select and Enterprise"}
+### Customization changes
 @y
-### Customization changes {tier="DHI Select and Enterprise"}
+### Customization changes
 @z
 
 @x
@@ -368,9 +368,9 @@ The following diagram shows the base image build flow:
 @z
 
 @x
-### Customized image pipeline {tier="DHI Select and Enterprise"}
+### Customized image pipeline
 @y
-### Customized image pipeline {tier="DHI Select and Enterprise"}
+### Customized image pipeline
 @z
 
 @x

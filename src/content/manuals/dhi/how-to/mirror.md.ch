@@ -15,9 +15,9 @@ description: Learn how to mirror an image into your organization's namespace and
 @z
 
 @x
-keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry
+keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
 @y
-keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry
+keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
 @z
 
 @x
@@ -29,11 +29,13 @@ keywords: mirror docker image, private container registry, docker hub automation
 @x
 Mirroring requires a DHI Select or Enterprise subscription. Without a
 subscription, you can pull Docker Hardened Images directly from `dhi.io` without
-mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
+mirroring. With a DHI Select or Enterprise subscription, you must mirror to your
+organization to get:
 @y
 Mirroring requires a DHI Select or Enterprise subscription. Without a
 subscription, you can pull Docker Hardened Images directly from `dhi.io` without
-mirroring. With a DHI Select or Enterprise subscription, you must mirror to get:
+mirroring. With a DHI Select or Enterprise subscription, you must mirror to your
+organization to get:
 @z
 
 @x
@@ -65,17 +67,11 @@ repositories:
 @z
 
 @x
-- [Mirror to Docker Hub](#mirror-a-dhi-repository-to-docker-hub): Mirror a DHI
-  repository to your organization's namespace on Docker Hub. This requires a DHI
-  Enterprise subscription and is used to [customize an image or
-  chart](./customize.md) and access compliance variants and ELS variants
-  (requires add-on). This must be done through the Docker Hub web interface.
+- [Mirror to your organization](#mirror-a-dhi-repository-to-your-organization):
+  Mirror a DHI repository to your organization's namespace on Docker Hub.
 @y
-- [Mirror to Docker Hub](#mirror-a-dhi-repository-to-docker-hub): Mirror a DHI
-  repository to your organization's namespace on Docker Hub. This requires a DHI
-  Enterprise subscription and is used to [customize an image or
-  chart](./customize.md) and access compliance variants and ELS variants
-  (requires add-on). This must be done through the Docker Hub web interface.
+- [Mirror to your organization](#mirror-a-dhi-repository-to-your-organization):
+  Mirror a DHI repository to your organization's namespace on Docker Hub.
 @z
 
 @x
@@ -91,19 +87,15 @@ repositories:
 @z
 
 @x
-## Mirror a DHI repository to Docker Hub
+## Mirror a DHI repository to your organization
 @y
-## Mirror a DHI repository to Docker Hub
+## Mirror a DHI repository to your organization
 @z
 
 @x
-Mirroring a repository to Docker Hub requires a DHI Enterprise subscription and
-enables access to compliance variants, Extended Lifecycle Support (ELS) variants
-(requires add-on), and customization capabilities:
+You must be an organization owner or editor to mirror repositories.
 @y
-Mirroring a repository to Docker Hub requires a DHI Enterprise subscription and
-enables access to compliance variants, Extended Lifecycle Support (ELS) variants
-(requires add-on), and customization capabilities:
+You must be an organization owner or editor to mirror repositories.
 @z
 
 @x
@@ -133,127 +125,435 @@ enables access to compliance variants, Extended Lifecycle Support (ELS) variants
 @z
 
 @x
-Only organization owners can perform mirroring. Once mirrored, the repository
-becomes available in your organization's namespace, and you can customize it as
-needed.
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @y
-Only organization owners can perform mirroring. Once mirrored, the repository
-becomes available in your organization's namespace, and you can customize it as
-needed.
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x
-You can mirror repositories using either the Docker Hub web interface or the DHI CLI.
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Catalog**.
+5. Select a DHI repository to view its details.
+6. Mirror the repository:
+    - To mirror an image repository, select **Use this image** > **Mirror
+      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
+      select **Enable support for end-of-life versions**.
+    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
 @y
-You can mirror repositories using either the Docker Hub web interface or the DHI CLI.
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Catalog**.
+5. Select a DHI repository to view its details.
+6. Mirror the repository:
+    - To mirror an image repository, select **Use this image** > **Mirror
+      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
+      select **Enable support for end-of-life versions**.
+    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
 @z
 
 @x
-### Mirror using the DHI CLI
+It may take a few minutes for all the tags to finish mirroring.
 @y
-### Mirror using the DHI CLI
+It may take a few minutes for all the tags to finish mirroring.
 @z
 
 @x
-The DHI CLI provides a command-line interface for managing Docker Hardened
-Images, including mirroring operations. For installation instructions and usage
-details, see [Use the DHI CLI](./cli.md#mirror-dhi-images).
+{{< /tab >}}
+{{< tab name="CLI" >}}
 @y
-The DHI CLI provides a command-line interface for managing Docker Hardened
-Images, including mirroring operations. For installation instructions and usage
-details, see [Use the DHI CLI](./cli.md#mirror-dhi-images).
+{{< /tab >}}
+{{< tab name="CLI" >}}
 @z
 
 @x
-### Stop mirroring with the CLI
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
 @y
-### Stop mirroring with the CLI
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+@z
+
+@x
+Use the [`docker dhi mirror`](/reference/cli/docker/dhi/mirror/) command:
+@y
+Use the [`docker dhi mirror`](__SUBDIR__/reference/cli/docker/dhi/mirror/) command:
 @z
 
 % snip command...
 
 @x
-After stopping mirroring, the repository remains but will no longer receive updates.
+Mirror with dependencies:
 @y
-After stopping mirroring, the repository remains but will no longer receive updates.
+Mirror with dependencies:
+@z
+
+% snip command...
+
+@x
+List mirrored images in your organization:
+@y
+List mirrored images in your organization:
+@z
+
+% snip command...
+
+@x
+Filter mirrored images by name or type:
+@y
+Filter mirrored images by name or type:
+@z
+
+% snip command...
+
+@x
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+@y
+{{< /tab >}}
+{{< tab name="Terraform" >}}
 @z
 
 @x
-### Mirror using the Docker Hub web interface
+You can manage DHI mirrors as infrastructure-as-code using the [DHI Terraform
+provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
 @y
-### Mirror using the Docker Hub web interface
+You can manage DHI mirrors as infrastructure-as-code using the [DHI Terraform
+provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
 @z
 
 @x
-To mirror a Docker Hardened Image repository using the web interface:
+First, install and configure the provider:
 @y
-To mirror a Docker Hardened Image repository using the web interface:
+First, install and configure the provider:
 @z
 
 @x
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Catalog**.
-5. Select a DHI repository to view its details.
-6. Mirror the repository:
-    - To mirror an image repository, select **Use this image** > **Mirror
-      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
-      select **Enable support for end-of-life versions**.
-    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
+```hcl
+terraform {
+  required_providers {
+    dhi = {
+      source = "docker-hardened-images/dhi"
+    }
+  }
+}
 @y
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Catalog**.
-5. Select a DHI repository to view its details.
-6. Mirror the repository:
-    - To mirror an image repository, select **Use this image** > **Mirror
-      repository**, and then follow the on-screen instructions. If you have the ELS add-on, you can also
-      select **Enable support for end-of-life versions**.
-    - To mirror a Helm chart repository, select **Get Helm chart**, and then follow the on-screen instructions.
+```hcl
+terraform {
+  required_providers {
+    dhi = {
+      source = "docker-hardened-images/dhi"
+    }
+  }
+}
 @z
 
 @x
-It may take a few minutes for all the tags to finish mirroring.
+provider "dhi" {
+  docker_hub_username = var.docker_username
+  docker_hub_password = var.docker_password
+  organization        = var.org_name
+}
+```
 @y
-It may take a few minutes for all the tags to finish mirroring.
+provider "dhi" {
+  docker_hub_username = var.docker_username
+  docker_hub_password = var.docker_password
+  organization        = var.org_name
+}
+```
 @z
 
 @x
-After mirroring a repository, the repository appears in your organization's
-repository list, prefixed by `dhi-`. It will continue to receive updated images.
+> [!NOTE]
+>
+> Instead of specifying credentials in the provider block, you can set the
+> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables.
 @y
-After mirroring a repository, the repository appears in your organization's
-repository list, prefixed by `dhi-`. It will continue to receive updated images.
+> [!NOTE]
+>
+> Instead of specifying credentials in the provider block, you can set the
+> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables.
 @z
 
 @x
-Once mirrored, the repository is a standard Docker Hub repository in your
-organization's namespace. It behaves exactly like any other Hub repository,
-which means you can manage access and permissions, configure webhooks, and use
-other standard Hub features. See [Docker Hub
+Then, define a `dhi_mirror` resource for each repository you want to mirror:
+@y
+Then, define a `dhi_mirror` resource for each repository you want to mirror:
+@z
+
+@x
+```hcl
+resource "dhi_mirror" "golang" {
+  source_namespace = "dhi"
+  source_name      = "golang"
+  destination_name = "dhi-golang"
+}
+@y
+```hcl
+resource "dhi_mirror" "golang" {
+  source_namespace = "dhi"
+  source_name      = "golang"
+  destination_name = "dhi-golang"
+}
+@z
+
+@x
+resource "dhi_mirror" "nginx" {
+  source_namespace = "dhi"
+  source_name      = "nginx"
+  destination_name = "dhi-nginx"
+}
+```
+@y
+resource "dhi_mirror" "nginx" {
+  source_namespace = "dhi"
+  source_name      = "nginx"
+  destination_name = "dhi-nginx"
+}
+```
+@z
+
+@x
+To enable Extended Lifecycle Support (ELS) variants, set the `els` attribute:
+@y
+To enable Extended Lifecycle Support (ELS) variants, set the `els` attribute:
+@z
+
+@x
+```hcl
+resource "dhi_mirror" "golang" {
+  source_namespace = "dhi"
+  source_name      = "golang"
+  destination_name = "dhi-golang"
+  els              = true
+}
+```
+@y
+```hcl
+resource "dhi_mirror" "golang" {
+  source_namespace = "dhi"
+  source_name      = "golang"
+  destination_name = "dhi-golang"
+  els              = true
+}
+```
+@z
+
+@x
+Run `terraform apply` to create the mirrors.
+@y
+Run `terraform apply` to create the mirrors.
+@z
+
+@x
+For the full list of resource attributes, see the [Terraform Registry
+documentation](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs/resources/mirror).
+@y
+For the full list of resource attributes, see the [Terraform Registry
+documentation](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs/resources/mirror).
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+After mirroring, the repository appears in your organization's repository list,
+prefixed by `dhi-`, and continues to receive updated images. It behaves like any
+other Docker Hub repository, so you can manage access and permissions, configure
+webhooks, and use other standard Hub features. See [Docker Hub
 repositories](/manuals/docker-hub/repos/_index.md) for details.
 @y
-Once mirrored, the repository is a standard Docker Hub repository in your
-organization's namespace. It behaves exactly like any other Hub repository,
-which means you can manage access and permissions, configure webhooks, and use
-other standard Hub features. See [Docker Hub
+After mirroring, the repository appears in your organization's repository list,
+prefixed by `dhi-`, and continues to receive updated images. It behaves like any
+other Docker Hub repository, so you can manage access and permissions, configure
+webhooks, and use other standard Hub features. See [Docker Hub
 repositories](manuals/docker-hub/repos/_index.md) for details.
 @z
 
 @x
-Additionally, mirrored DHI repositories let you customize images and charts. To
-learn more, see [Customize a Docker Hardened Image or chart](./customize.md).
+### Stop mirroring a repository
 @y
-Additionally, mirrored DHI repositories let you customize images and charts. To
-learn more, see [Customize a Docker Hardened Image or chart](./customize.md).
+### Stop mirroring a repository
 @z
 
 @x
-### Webhook integration for syncing and alerts
+After you stop mirroring, the repository remains, but it no longer receives
+updates. You can still use the last images or charts that were mirrored.
 @y
-### Webhook integration for syncing and alerts
+After you stop mirroring, the repository remains, but it no longer receives
+updates. You can still use the last images or charts that were mirrored.
+@z
+
+@x
+> [!NOTE]
+>
+> If you only want to stop mirroring ELS versions, you can clear the ELS
+> option in the mirrored repository's **Settings** tab.
+@y
+> [!NOTE]
+>
+> If you only want to stop mirroring ELS versions, you can clear the ELS
+> option in the mirrored repository's **Settings** tab.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization that has access to DHI.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
+6. In the far right column of the repository you want to stop mirroring, select the menu icon.
+7. Select **Stop mirroring**.
+@y
+1. Go to [Docker Hub](https://hub.docker.com) and sign in.
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization that has access to DHI.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
+6. In the far right column of the repository you want to stop mirroring, select the menu icon.
+7. Select **Stop mirroring**.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+@y
+Authenticate with `docker login` using your Docker credentials or a [personal
+access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+permissions. [Organization access tokens
+(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+@z
+
+@x
+Use the [`docker dhi mirror`](/reference/cli/docker/dhi/mirror/) command:
+@y
+Use the [`docker dhi mirror`](__SUBDIR__/reference/cli/docker/dhi/mirror/) command:
+@z
+
+@x
+```console
+$ docker dhi mirror stop --org my-org dhi-golang
+```
+@y
+```console
+$ docker dhi mirror stop --org my-org dhi-golang
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+@y
+{{< /tab >}}
+{{< tab name="Terraform" >}}
+@z
+
+@x
+To stop mirroring, remove the `dhi_mirror` resource from your Terraform
+configuration and run `terraform apply`. The repository remains in your
+organization but no longer receives updates.
+@y
+To stop mirroring, remove the `dhi_mirror` resource from your Terraform
+configuration and run `terraform apply`. The repository remains in your
+organization but no longer receives updates.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Mirror a DHI repository to a third-party registry
+@y
+## Mirror a DHI repository to a third-party registry
+@z
+
+@x
+After mirroring a DHI repository to your organization on Docker Hub, you can
+optionally mirror it to another container registry, such as Amazon ECR, Google
+Artifact Registry, GitHub Container Registry, or a private Harbor instance.
+@y
+After mirroring a DHI repository to your organization on Docker Hub, you can
+optionally mirror it to another container registry, such as Amazon ECR, Google
+Artifact Registry, GitHub Container Registry, or a private Harbor instance.
+@z
+
+@x
+You can use any standard workflow to mirror the image, such as the
+[Docker CLI](/reference/cli/docker/), [Docker Hub Registry
+API](/reference/api/registry/latest/), third-party registry tools, or CI/CD
+automation.
+@y
+You can use any standard workflow to mirror the image, such as the
+[Docker CLI](__SUBDIR__/reference/cli/docker/), [Docker Hub Registry
+API](__SUBDIR__/reference/api/registry/latest/), third-party registry tools, or CI/CD
+automation.
+@z
+
+@x
+However, to preserve the full security context, including attestations, you must
+also mirror its associated OCI artifacts. DHI repositories store the image
+layers on `dhi.io` (or `docker.io` for customized images) and the signed
+attestations in a separate registry (`registry.scout.docker.com`).
+@y
+However, to preserve the full security context, including attestations, you must
+also mirror its associated OCI artifacts. DHI repositories store the image
+layers on `dhi.io` (or `docker.io` for customized images) and the signed
+attestations in a separate registry (`registry.scout.docker.com`).
+@z
+
+@x
+To copy both, you can use [`regctl`](https://regclient.org/cli/regctl/), an
+OCI-aware CLI that supports mirroring images along with attached artifacts such
+as SBOMs, vulnerability reports, and SLSA provenance. For ongoing synchronization,
+you can use [`regsync`](https://regclient.org/cli/regsync/).
+@y
+To copy both, you can use [`regctl`](https://regclient.org/cli/regctl/), an
+OCI-aware CLI that supports mirroring images along with attached artifacts such
+as SBOMs, vulnerability reports, and SLSA provenance. For ongoing synchronization,
+you can use [`regsync`](https://regclient.org/cli/regsync/).
+@z
+
+@x
+### Automate syncing with webhooks
+@y
+### Automate syncing with webhooks
 @z
 
 @x
@@ -312,214 +612,46 @@ When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 @z
 
-% snip code...
-
 @x
-### Stop mirroring a repository
+```json{collapse=true}
+{
+  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
+  "push_data": {
+    "pushed_at": 1712345678,
+    "pusher": "trustedbuilder",
+    "tag": "3.13-alpine3.21"
+  },
+  "repository": {
+    "name": "dhi-python",
+    "namespace": "exampleorg",
+    "repo_name": "exampleorg/dhi-python",
+    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
+    "is_private": true,
+    "status": "Active",
+    ...
+  }
+}
+```
 @y
-### Stop mirroring a repository
-@z
-
-@x
-Only organization owners can stop mirroring a repository. After you stop
-mirroring, the repository remains, but it will
-no longer receive updates. You can still use the last images or charts that were mirrored,
-but the repository will not receive new tags or updates from the original
-repository.
-@y
-Only organization owners can stop mirroring a repository. After you stop
-mirroring, the repository remains, but it will
-no longer receive updates. You can still use the last images or charts that were mirrored,
-but the repository will not receive new tags or updates from the original
-repository.
-@z
-
-@x
-> [!NOTE]
->
-> If you only want to stop mirroring ELS versions, clear the **Mirror
-> end-of-life images** option in the mirrored repository's **Settings** tab.
-@y
-> [!NOTE]
->
-> If you only want to stop mirroring ELS versions, clear the **Mirror
-> end-of-life images** option in the mirrored repository's **Settings** tab.
-@z
-
-@x
- To stop mirroring a repository:
-@y
- To stop mirroring a repository:
-@z
-
-@x
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has access to DHI.
-4. Select **Hardened Images** > **Manage**.
-5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
-6. In the far right column of the repository you want to stop mirroring, select the menu icon.
-7. Select **Stop mirroring**.
-@y
-1. Go to [Docker Hub](https://hub.docker.com) and sign in.
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization that has access to DHI.
-4. Select **Hardened Images** > **Manage**.
-5. Select the **Mirrored Images** or **Mirrored Helm charts** tab.
-6. In the far right column of the repository you want to stop mirroring, select the menu icon.
-7. Select **Stop mirroring**.
-@z
-
-@x
-## Mirror a DHI repository to a third-party registry
-@y
-## Mirror a DHI repository to a third-party registry
-@z
-
-@x
-You can optionally mirror a DHI repository to another container registry, such as Amazon
-ECR, Google Artifact Registry, GitHub Container Registry, or a private Harbor
-instance.
-@y
-You can optionally mirror a DHI repository to another container registry, such as Amazon
-ECR, Google Artifact Registry, GitHub Container Registry, or a private Harbor
-instance.
-@z
-
-@x
-You can use any standard workflow to mirror the image, such as the
-[Docker CLI](/reference/cli/docker/), [Docker Hub Registry
-API](/reference/api/registry/latest/), third-party registry tools, or CI/CD
-automation.
-@y
-You can use any standard workflow to mirror the image, such as the
-[Docker CLI](__SUBDIR__/reference/cli/docker/), [Docker Hub Registry
-API](__SUBDIR__/reference/api/registry/latest/), third-party registry tools, or CI/CD
-automation.
-@z
-
-@x
-However, to preserve the full security context, including attestations, you must
-also mirror its associated OCI artifacts. DHI repositories store the image
-layers on `dhi.io` (or `docker.io` for customized images) and the signed
-attestations in a separate registry (`registry.scout.docker.com`).
-@y
-However, to preserve the full security context, including attestations, you must
-also mirror its associated OCI artifacts. DHI repositories store the image
-layers on `dhi.io` (or `docker.io` for customized images) and the signed
-attestations in a separate registry (`registry.scout.docker.com`).
-@z
-
-@x
-To copy both, you can use [`regctl`](https://regclient.org/cli/regctl/), an
-OCI-aware CLI that supports mirroring images along with attached artifacts such
-as SBOMs, vulnerability reports, and SLSA provenance. For ongoing synchronization,
-you can use [`regsync`](https://regclient.org/cli/regsync/).
-@y
-To copy both, you can use [`regctl`](https://regclient.org/cli/regctl/), an
-OCI-aware CLI that supports mirroring images along with attached artifacts such
-as SBOMs, vulnerability reports, and SLSA provenance. For ongoing synchronization,
-you can use [`regsync`](https://regclient.org/cli/regsync/).
-@z
-
-@x
-### Authenticate to `dhi.io` with an organization access token
-@y
-### Authenticate to `dhi.io` with an organization access token
-@z
-
-@x
-You can authenticate to `dhi.io` using an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md) instead of a personal access
-token (PAT). OATs are owned by the organization rather than an individual user,
-which makes them better suited for CI/CD pipelines and automated workflows.
-@y
-You can authenticate to `dhi.io` using an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md) instead of a personal access
-token (PAT). OATs are owned by the organization rather than an individual user,
-which makes them better suited for CI/CD pipelines and automated workflows.
-@z
-
-@x
-> [!NOTE]
->
-> When using an OAT, use your organization name as the username, not your
-> personal Docker ID. OATs are org-scoped and will return a `401 Unauthorized`
-> error if presented under an individual user's username.
-@y
-> [!NOTE]
->
-> When using an OAT, use your organization name as the username, not your
-> personal Docker ID. OATs are org-scoped and will return a `401 Unauthorized`
-> error if presented under an individual user's username.
-@z
-
-@x
-To authenticate using an OAT:
-@y
-To authenticate using an OAT:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Access tokens**.
-3. Select **Generate access token**.
-4. Give the token a descriptive name, for example `dhi-pull-automation`.
-5. Expand the **Repository** drop-down and select **Read public repositories**.
-6. Select **Generate token**, then copy and save the token. You won't be able
-   to retrieve it after closing the screen.
-7. Sign in to `dhi.io` using your organization name as the username and the OAT
-   as the password:
-@y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Access tokens**.
-3. Select **Generate access token**.
-4. Give the token a descriptive name, for example `dhi-pull-automation`.
-5. Expand the **Repository** drop-down and select **Read public repositories**.
-6. Select **Generate token**, then copy and save the token. You won't be able
-   to retrieve it after closing the screen.
-7. Sign in to `dhi.io` using your organization name as the username and the OAT
-   as the password:
-@z
-
-% snip command...
-
-@x
-   Or non-interactively in a CI/CD pipeline:
-@y
-   Or non-interactively in a CI/CD pipeline:
-@z
-
-% snip command...
-
-@x
-8. Verify access by discovering attestations on a DHI image:
-@y
-8. Verify access by discovering attestations on a DHI image:
-@z
-
-% snip command...
-
-@x
-   > [!NOTE]
-   >
-   > The `--platform` flag is required. Without it, `oras discover` resolves to
-   > the multi-arch image index, which returns only an index-level signature
-   > rather than the full set of per-platform attestations.
-@y
-   > [!NOTE]
-   >
-   > The `--platform` flag is required. Without it, `oras discover` resolves to
-   > the multi-arch image index, which returns only an index-level signature
-   > rather than the full set of per-platform attestations.
-@z
-
-@x
-   A successful response lists the attestations attached to the image,
-   including SBOMs, provenance, vulnerability reports, and changelog metadata.
-@y
-   A successful response lists the attestations attached to the image,
-   including SBOMs, provenance, vulnerability reports, and changelog metadata.
+```json{collapse=true}
+{
+  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
+  "push_data": {
+    "pushed_at": 1712345678,
+    "pusher": "trustedbuilder",
+    "tag": "3.13-alpine3.21"
+  },
+  "repository": {
+    "name": "dhi-python",
+    "namespace": "exampleorg",
+    "repo_name": "exampleorg/dhi-python",
+    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
+    "is_private": true,
+    "status": "Active",
+    ...
+  }
+}
+```
 @z
 
 @x
@@ -582,7 +714,51 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    token (PAT) for that step.
 @z
 
-% snip command...
+@x
+   > [!WARNING]
+   >
+   > The following examples export credentials directly on the command line for
+   > demonstration purposes. This exposes sensitive tokens in your shell history
+   > and process list. In production environments, use secure methods such as
+   > reading from files with restricted permissions, environment files loaded
+   > at runtime, or secret management tools.
+@y
+   > [!WARNING]
+   >
+   > The following examples export credentials directly on the command line for
+   > demonstration purposes. This exposes sensitive tokens in your shell history
+   > and process list. In production environments, use secure methods such as
+   > reading from files with restricted permissions, environment files loaded
+   > at runtime, or secret management tools.
+@z
+
+@x
+   ```console
+   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
+   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
+   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
+   $ export DEST_REG="registry.example.com"
+   $ export DEST_REPO="mirror/dhi-python"
+   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
+   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
+   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
+   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
+   $ export TAG="3.13-alpine3.21"
+   ```
+@y
+   ```console
+   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
+   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
+   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
+   $ export DEST_REG="registry.example.com"
+   $ export DEST_REPO="mirror/dhi-python"
+   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
+   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
+   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
+   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
+   $ export TAG="3.13-alpine3.21"
+   ```
+@z
 
 @x
 2. Sign in via `regctl` to Docker Hub, the Scout registry that contains
@@ -592,7 +768,19 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    the attestations, and your destination registry.
 @z
 
-% snip command...
+@x
+   ```console
+   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
+   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
+   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
+   ```
+@y
+   ```console
+   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
+   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
+   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
+   ```
+@z
 
 @x
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
@@ -600,7 +788,27 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
 @z
 
-% snip command...
+@x
+   ```console
+   $ regctl image copy \
+        "${SRC_REPO}:${TAG}" \
+        "${DEST_REG}/${DEST_REPO}:${TAG}" \
+        --referrers \
+        --referrers-src "${SRC_ATT_REPO}" \
+        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
+        --force-recursive
+   ```
+@y
+   ```console
+   $ regctl image copy \
+        "${SRC_REPO}:${TAG}" \
+        "${DEST_REG}/${DEST_REPO}:${TAG}" \
+        --referrers \
+        --referrers-src "${SRC_ATT_REPO}" \
+        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
+        --force-recursive
+   ```
+@z
 
 @x
 4. Verify that artifacts were preserved.
@@ -614,7 +822,15 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    First, get a digest for a specific tag and platform. For example, `linux/amd64`.
 @z
 
-% snip command...
+@x
+   ```console
+   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
+   ```
+@y
+   ```console
+   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
+   ```
+@z
 
 @x
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
@@ -622,7 +838,15 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
 @z
 
-% snip command...
+@x
+   ```console
+   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
+   ```
+@y
+   ```console
+   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
+   ```
+@z
 
 @x
    Or, list attached artifacts with `docker scout`.
@@ -630,7 +854,15 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    Or, list attached artifacts with `docker scout`.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
+   ```
+@y
+   ```console
+   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
+   ```
+@z
 
 @x
 ### Example ongoing mirroring with `regsync`
@@ -657,7 +889,7 @@ The following example uses a `regsync.yaml` file that syncs Node 24 and Python
 @z
 
 @x
-```yaml{title="regsync.yaml"}
+```yaml{title="regsync.yaml",collapse=true}
 version: 1
 # Optional: inline creds if not relying on prior CLI logins
 # creds:
@@ -671,7 +903,7 @@ version: 1
 #     user: <service-user>
 #     pass: "{{file \"/run/secrets/dest_token\"}}"
 @y
-```yaml{title="regsync.yaml"}
+```yaml{title="regsync.yaml",collapse=true}
 version: 1
 # Optional: inline creds if not relying on prior CLI logins
 # creds:
@@ -746,7 +978,15 @@ To do a dry run with the configuration file, you can run the following command.
 You must [install `regsync`](https://github.com/regclient/regclient) first.
 @z
 
-% snip command...
+@x
+```console
+$ regsync check -c regsync.yaml
+```
+@y
+```console
+$ regsync check -c regsync.yaml
+```
+@z
 
 @x
 To run the sync with the configuration file:
@@ -754,7 +994,15 @@ To run the sync with the configuration file:
 To run the sync with the configuration file:
 @z
 
-% snip command...
+@x
+```console
+$ regsync once -c regsync.yaml
+```
+@y
+```console
+$ regsync once -c regsync.yaml
+```
+@z
 
 @x
 ## What next

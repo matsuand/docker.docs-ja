@@ -16,6 +16,18 @@ Unload running models
 @z
 
 @x
+### Aliases
+@y
+### Aliases
+@z
+
+@x
+`docker model unload`, `docker model stop`
+@y
+`docker model unload`, `docker model stop`
+@z
+
+@x
 ### Options
 @y
 ### オプション {#options}
