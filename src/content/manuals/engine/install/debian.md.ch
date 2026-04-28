@@ -332,22 +332,19 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @x
     > [!NOTE]
     >
-    > The Docker service starts automatically after installation. To verify that
-    > Docker is running, use:
+    > After installation, verify that Docker is running:
 @y
     > [!NOTE]
     >
-    > インストール後は Docker サービスが自動起動します。
-    > Docker が動作しているかどうかは、以下により確認します。
+    > インストール後は Docker が起動していることを確認します。
 @z
 
 % snip command...
 
 @x
-    > Some systems may have this behavior disabled and will require a manual start:
+    > If Docker is not running, start it manually:
 @y
-    > システムの中にはこの自動起動という動作を無効にするものがあります。
-    > その場合は手動により以下を実行します。
+    > Docker が起動していない場合は、手動で起動します。
 @z
 
 % snip command...
@@ -463,22 +460,19 @@ Docker Engine のアップグレード時には、その都度、新しいファ
 @x
     > [!NOTE]
     >
-    > The Docker service starts automatically after installation. To verify that
-    > Docker is running, use:
+    > After installation, verify that Docker is running:
 @y
     > [!NOTE]
     >
-    > インストール後は Docker サービスが自動起動します。
-    > Docker が動作しているかどうかは、以下により確認します。
+    > インストール後は Docker が起動していることを確認します。
 @z
 
 % snip command...
 
 @x
-    > Some systems may have this behavior disabled and will require a manual start:
+    > If Docker is not running, start it manually:
 @y
-    > システムの中にはこの自動起動という動作を無効にするものがあります。
-    > その場合は手動により以下を実行します。
+    > Docker が起動していない場合は、手動で起動します。
 @z
 
 % snip command...

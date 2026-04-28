@@ -5,8 +5,10 @@
 
 @x
 title: Onboard your organization
+linkTitle: Onboard
 @y
 title: Onboard your organization
+linkTitle: Onboard
 @z
 
 @x
@@ -83,22 +85,22 @@ Before you start onboarding your organization, ensure you:
   > When purchasing a self-serve subscription, the on-screen instructions
   > guide you through creating an organization. If you have purchased a
   > subscription through Docker Sales and you have not yet created an
-  > organization, see [Create an organization](/manuals/admin/organization/orgs.md).
+  > organization, see [Create an organization](/manuals/admin/organization/setup/orgs.md).
 @y
   > [!NOTE]
   >
   > When purchasing a self-serve subscription, the on-screen instructions
   > guide you through creating an organization. If you have purchased a
   > subscription through Docker Sales and you have not yet created an
-  > organization, see [Create an organization](manuals/admin/organization/orgs.md).
+  > organization, see [Create an organization](manuals/admin/organization/setup/orgs.md).
 @z
 
 @x
 - Familiarize yourself with Docker concepts and terminology in
-  the [administration overview](../_index.md).
+  the [administration overview](../../_index.md).
 @y
 - Familiarize yourself with Docker concepts and terminology in
-  the [administration overview](../_index.md).
+  the [administration overview](../../_index.md).
 @z
 
 @x
@@ -111,12 +113,12 @@ Before you start onboarding your organization, ensure you:
 The Admin Console has a guided setup to help you
 onboard your organization. The guided setup's steps consist of basic onboarding
 tasks. If you want to onboard outside of the guided setup,
-see [Recommended onboarding steps](/manuals/admin/organization/onboard.md#recommended-onboarding-steps).
+see [Recommended onboarding steps](/manuals/admin/organization/setup/onboard.md#recommended-onboarding-steps).
 @y
 The Admin Console has a guided setup to help you
 onboard your organization. The guided setup's steps consist of basic onboarding
 tasks. If you want to onboard outside of the guided setup,
-see [Recommended onboarding steps](manuals/admin/organization/onboard.md#recommended-onboarding-steps).
+see [Recommended onboarding steps](manuals/admin/organization/setup/onboard.md#recommended-onboarding-steps).
 @z
 
 @x
@@ -243,11 +245,11 @@ add additional owners.
 
 @x
 To add an owner, invite a user and assign them the owner role. For more
-details, see [Invite members](/manuals/admin/organization/members.md) and
+details, see [Invite members](/manuals/admin/organization/manage/members.md) and
 [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
 To add an owner, invite a user and assign them the owner role. For more
-details, see [Invite members](manuals/admin/organization/members.md) and
+details, see [Invite members](manuals/admin/organization/manage/members.md) and
 [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
@@ -271,11 +273,11 @@ they are signed in.
 
 @x
 To add a member, invite a user and assign them the member role.
-For more details, see [Invite members](/manuals/admin/organization/members.md) and
+For more details, see [Invite members](/manuals/admin/organization/manage/members.md) and
 [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
 @y
 To add a member, invite a user and assign them the member role.
-For more details, see [Invite members](manuals/admin/organization/members.md) and
+For more details, see [Invite members](manuals/admin/organization/manage/members.md) and
 [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
 @z
 
@@ -412,11 +414,11 @@ security posture:
 @z
 
 @x
-- [Manage Docker products](./manage-products.md) to configure access and view usage.
+- [Manage Docker products](../manage/manage-products.md) to configure access and view usage.
 - Configure [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md) to improve your organization’s security posture for containerized development.
 - [Manage your domains](/manuals/enterprise/security/domain-management.md) to ensure that all Docker users in your domain are part of your organization.
 @y
-- [Manage Docker products](./manage-products.md) to configure access and view usage.
+- [Manage Docker products](../manage/manage-products.md) to configure access and view usage.
 - Configure [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md) to improve your organization’s security posture for containerized development.
 - [Manage your domains](manuals/enterprise/security/domain-management.md) to ensure that all Docker users in your domain are part of your organization.
 @z

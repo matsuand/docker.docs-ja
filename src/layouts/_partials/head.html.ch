@@ -2,9 +2,9 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+<link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
 @y
-<link href="__SUBDIR__/pagefind/pagefind-component-ui.css" rel="stylesheet">
+<link href="__SUBDIR__/pagefind/pagefind-component-ui.css" rel="stylesheet" />
 @z
 
 @x L.4: コメントアウト

@@ -4,9 +4,11 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Organization information
+title: Change general organization information
+linkTitle: Change information
 @y
-title: Organization information
+title: Change general organization information
+linkTitle: Change information
 @z
 
 @x

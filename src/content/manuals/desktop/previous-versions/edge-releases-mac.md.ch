@@ -14,9 +14,9 @@ title: Docker Desktop for Mac Edge release notes
 @z
 
 @x
-This page contains information about Docker Desktop Edge releases. Edge releases give you early access to our newest features. Note that some of the features may be experimental, and some of them may not ever reach the Stable release. 
+This page contains information about Docker Desktop Edge releases. Edge releases give you early access to our newest features. Note that some of the features may be experimental, and some of them may not ever reach the Stable release.
 @y
-This page contains information about Docker Desktop Edge releases. Edge releases give you early access to our newest features. Note that some of the features may be experimental, and some of them may not ever reach the Stable release. 
+This page contains information about Docker Desktop Edge releases. Edge releases give you early access to our newest features. Note that some of the features may be experimental, and some of them may not ever reach the Stable release.
 @z
 
 @x
@@ -29,9 +29,13 @@ For Docker Desktop system requirements, see
 
 @x
 ## Docker Desktop Community 2.5.4
-2020-12-07
 @y
 ## Docker Desktop Community 2.5.4
+@z
+
+@x
+2020-12-07
+@y
 2020-12-07
 @z
 
@@ -59,21 +63,25 @@ For Docker Desktop system requirements, see
 - Changed the «Update and quit» menu entry to «Update and restart».
 - Fixed the check for updates dialog reporting the build number instead of the version number of a new version.
 - Downgraded the kernel to [4.19.121](https://hub.docker.com/layers/docker/for-desktop-kernel/4.19.121-2a1dbedf3f998dac347c499808d7c7e029fbc4d3-amd64/images/sha256-4e7d94522be4f25f1fbb626d5a0142cbb6e785f37e437f6fd4285e64a199883a?context=repo) to reduce the CPU usage of hyperkit. Fixes [docker/for-mac#5044](https://github.com/docker/for-mac/issues/5044)
--  Fixed a bug that DNS would return `NXDOMAIN` when a name exists but the type of record was not found. Fixes [docker/for-mac#5020](https://github.com/docker/for-mac/issues/5020). Related to https://gitlab.alpinelinux.org/alpine/aports/-/issues/11879
+- Fixed a bug that DNS would return `NXDOMAIN` when a name exists but the type of record was not found. Fixes [docker/for-mac#5020](https://github.com/docker/for-mac/issues/5020). Related to https://gitlab.alpinelinux.org/alpine/aports/-/issues/11879
 - Avoid caching bad file sizes and modes when using `osxfs`. Fixes [docker/for-mac#5045](https://github.com/docker/for-mac/issues/5045).
 @y
 - Changed the «Update and quit» menu entry to «Update and restart».
 - Fixed the check for updates dialog reporting the build number instead of the version number of a new version.
 - Downgraded the kernel to [4.19.121](https://hub.docker.com/layers/docker/for-desktop-kernel/4.19.121-2a1dbedf3f998dac347c499808d7c7e029fbc4d3-amd64/images/sha256-4e7d94522be4f25f1fbb626d5a0142cbb6e785f37e437f6fd4285e64a199883a?context=repo) to reduce the CPU usage of hyperkit. Fixes [docker/for-mac#5044](https://github.com/docker/for-mac/issues/5044)
--  Fixed a bug that DNS would return `NXDOMAIN` when a name exists but the type of record was not found. Fixes [docker/for-mac#5020](https://github.com/docker/for-mac/issues/5020). Related to https://gitlab.alpinelinux.org/alpine/aports/-/issues/11879
+- Fixed a bug that DNS would return `NXDOMAIN` when a name exists but the type of record was not found. Fixes [docker/for-mac#5020](https://github.com/docker/for-mac/issues/5020). Related to https://gitlab.alpinelinux.org/alpine/aports/-/issues/11879
 - Avoid caching bad file sizes and modes when using `osxfs`. Fixes [docker/for-mac#5045](https://github.com/docker/for-mac/issues/5045).
 @z
 
 @x
 ## Docker Desktop Community 2.5.3
-2020-11-30
 @y
 ## Docker Desktop Community 2.5.3
+@z
+
+@x
+2020-11-30
+@y
 2020-11-30
 @z
 
@@ -105,9 +113,13 @@ For Docker Desktop system requirements, see
 
 @x
 ## Docker Desktop Community 2.5.2
-2020-11-26
 @y
 ## Docker Desktop Community 2.5.2
+@z
+
+@x
+2020-11-26
+@y
 2020-11-26
 @z
 
@@ -143,9 +155,13 @@ For Docker Desktop system requirements, see
 
 @x
 ## Docker Desktop Community 2.5.1.0
-2020-11-18
 @y
 ## Docker Desktop Community 2.5.1.0
+@z
+
+@x
+2020-11-18
+@y
 2020-11-18
 @z
 
@@ -197,9 +213,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.4.2.0
-2020-10-19
 @y
 ## Docker Desktop Community 2.4.2.0
+@z
+
+@x
+2020-10-19
+@y
 2020-10-19
 @z
 
@@ -267,9 +287,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.4.1.0
-2020-10-01
 @y
 ## Docker Desktop Community 2.4.1.0
+@z
+
+@x
+2020-10-01
+@y
 2020-10-01
 @z
 
@@ -309,9 +333,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.3.7.0
-2020-09-17
 @y
 ## Docker Desktop Community 2.3.7.0
+@z
+
+@x
+2020-09-17
+@y
 2020-09-17
 @z
 
@@ -373,19 +401,23 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 - The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS`
-in i386 images. To work around this issue, disable `seccomp` by using 
-the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
+  in i386 images. To work around this issue, disable `seccomp` by using
+  the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
 @y
 - The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS`
-in i386 images. To work around this issue, disable `seccomp` by using 
-the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
+  in i386 images. To work around this issue, disable `seccomp` by using
+  the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
 @z
 
 @x
 ## Docker Desktop Community 2.3.6.1
-2020-09-08
 @y
 ## Docker Desktop Community 2.3.6.1
+@z
+
+@x
+2020-09-08
+@y
 2020-09-08
 @z
 
@@ -408,16 +440,20 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 @z
 
 @x
--  Docker Desktop now correctly displays the state of "Use gRPC FUSE for file sharing" in the UI. Fixes [docker/for-mac#4864](https://github.com/docker/for-mac/issues/4864).
+- Docker Desktop now correctly displays the state of "Use gRPC FUSE for file sharing" in the UI. Fixes [docker/for-mac#4864](https://github.com/docker/for-mac/issues/4864).
 @y
--  Docker Desktop now correctly displays the state of "Use gRPC FUSE for file sharing" in the UI. Fixes [docker/for-mac#4864](https://github.com/docker/for-mac/issues/4864).
+- Docker Desktop now correctly displays the state of "Use gRPC FUSE for file sharing" in the UI. Fixes [docker/for-mac#4864](https://github.com/docker/for-mac/issues/4864).
 @z
 
 @x
 ## Docker Desktop Community 2.3.6.0
+@y
+## Docker Desktop Community 2.3.6.0
+@z
+
+@x
 2020-09-01
 @y
-## Docker Desktop Community 2.3.6.0
 2020-09-01
 @z
 
@@ -476,16 +512,20 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 @z
 
 @x
-- Fixed a Mac CPU usage bug by removing the serial console from `hyperkit`, see [docker/roadmap#12]( https://github.com/docker/roadmap/issues/12#issuecomment-663163280). To open a shell in the VM use either `nc -U ~/Library/Containers/com.docker.docker/Data/debug-shell.sock` (on Mac) or `putty -serial \\.\pipe\dockerDebugShell` (on Windows).
+- Fixed a Mac CPU usage bug by removing the serial console from `hyperkit`, see [docker/roadmap#12](https://github.com/docker/roadmap/issues/12#issuecomment-663163280). To open a shell in the VM use either `nc -U ~/Library/Containers/com.docker.docker/Data/debug-shell.sock` (on Mac) or `putty -serial \\.\pipe\dockerDebugShell` (on Windows).
 @y
-- Fixed a Mac CPU usage bug by removing the serial console from `hyperkit`, see [docker/roadmap#12]( https://github.com/docker/roadmap/issues/12#issuecomment-663163280). To open a shell in the VM use either `nc -U ~/Library/Containers/com.docker.docker/Data/debug-shell.sock` (on Mac) or `putty -serial \\.\pipe\dockerDebugShell` (on Windows).
+- Fixed a Mac CPU usage bug by removing the serial console from `hyperkit`, see [docker/roadmap#12](https://github.com/docker/roadmap/issues/12#issuecomment-663163280). To open a shell in the VM use either `nc -U ~/Library/Containers/com.docker.docker/Data/debug-shell.sock` (on Mac) or `putty -serial \\.\pipe\dockerDebugShell` (on Windows).
 @z
 
 @x
 ## Docker Desktop Community 2.3.5.0
+@y
+## Docker Desktop Community 2.3.5.0
+@z
+
+@x
 2020-08-21
 @y
-## Docker Desktop Community 2.3.5.0
 2020-08-21
 @z
 
@@ -561,9 +601,13 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 
 @x
 ## Docker Desktop Community 2.3.4.0
+@y
+## Docker Desktop Community 2.3.4.0
+@z
+
+@x
 2020-07-28
 @y
-## Docker Desktop Community 2.3.4.0
 2020-07-28
 @z
 
@@ -615,9 +659,13 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 
 @x
 ## Docker Desktop Community 2.3.3.2
+@y
+## Docker Desktop Community 2.3.3.2
+@z
+
+@x
 2020-07-21
 @y
-## Docker Desktop Community 2.3.3.2
 2020-07-21
 @z
 
@@ -651,9 +699,13 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 
 @x
 ## Docker Desktop Community 2.3.3.0
+@y
+## Docker Desktop Community 2.3.3.0
+@z
+
+@x
 2020-07-09
 @y
-## Docker Desktop Community 2.3.3.0
 2020-07-09
 @z
 
@@ -693,9 +745,13 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 
 @x
 ## Docker Desktop Community 2.3.2.0
+@y
+## Docker Desktop Community 2.3.2.0
+@z
+
+@x
 2020-06-25
 @y
-## Docker Desktop Community 2.3.2.0
 2020-06-25
 @z
 
@@ -745,9 +801,13 @@ the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for
 
 @x
 ## Docker Desktop Community 2.3.1.0
-2020-05-20
 @y
 ## Docker Desktop Community 2.3.1.0
+@z
+
+@x
+2020-05-20
+@y
 2020-05-20
 @z
 
@@ -799,9 +859,13 @@ We appreciate you trying out an early version of the Mutagen file sync feature. 
 
 @x
 ## Docker Desktop Community 2.3.0.1
-2020-04-28
 @y
 ## Docker Desktop Community 2.3.0.1
+@z
+
+@x
+2020-04-28
+@y
 2020-04-28
 @z
 
@@ -819,9 +883,13 @@ We appreciate you trying out an early version of the Mutagen file sync feature. 
 
 @x
 ## Docker Desktop Community 2.3.0.0
-2020-04-20
 @y
 ## Docker Desktop Community 2.3.0.0
+@z
+
+@x
+2020-04-20
+@y
 2020-04-20
 @z
 
@@ -873,9 +941,13 @@ We appreciate you trying out an early version of the Mutagen file sync feature. 
 
 @x
 ## Docker Desktop Community 2.2.3.0
-2020-04-02
 @y
 ## Docker Desktop Community 2.2.3.0
+@z
+
+@x
+2020-04-02
+@y
 2020-04-02
 @z
 
@@ -953,9 +1025,13 @@ We appreciate you trying out an early version of the Mutagen file sync feature. 
 
 @x
 ## Docker Desktop Community 2.2.2.0
-2020-03-02
 @y
 ## Docker Desktop Community 2.2.2.0
+@z
+
+@x
+2020-03-02
+@y
 2020-03-02
 @z
 
@@ -995,9 +1071,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.2.1.0
-2020-02-12
 @y
 ## Docker Desktop Community 2.2.1.0
+@z
+
+@x
+2020-02-12
+@y
 2020-02-12
 @z
 
@@ -1017,18 +1097,22 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.1.7.0
-2019-12-11
 @y
 ## Docker Desktop Community 2.1.7.0
+@z
+
+@x
+2019-12-11
+@y
 2019-12-11
 @z
 
 @x
-> [!NOTE] 
+> [!NOTE]
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-mac](https://github.com/docker/for-mac/issues) GitHub repository.
 @y
-> [!NOTE] 
+> [!NOTE]
 >
 > Docker Desktop Edge 2.1.7.0 is the release candidate for the upcoming major Stable release. Please help us test this version before the wider release and report any issues in the [docker/for-mac](https://github.com/docker/for-mac/issues) GitHub repository.
 @z
@@ -1073,9 +1157,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 ## Docker Desktop Community 2.1.6.0
+@y
+## Docker Desktop Community 2.1.6.0
+@z
+
+@x
 2019-11-18
 @y
-## Docker Desktop Community 2.1.6.0
 2019-11-18
 @z
 
@@ -1121,9 +1209,13 @@ Added the ability to start and stop Compose-based applications and view combined
 
 @x
 ## Docker Desktop Community 2.1.5.0
+@y
+## Docker Desktop Community 2.1.5.0
+@z
+
+@x
 2019-11-04
 @y
-## Docker Desktop Community 2.1.5.0
 2019-11-04
 @z
 
@@ -1199,9 +1291,13 @@ Fixed an issue that caused VMs running on older hardware with macOS Catalina to 
 
 @x
 ## Docker Desktop Community 2.1.4.0
-2019-10-15
 @y
 ## Docker Desktop Community 2.1.4.0
+@z
+
+@x
+2019-10-15
+@y
 2019-10-15
 @z
 
@@ -1243,9 +1339,13 @@ Fixed an issue that caused VMs running on older hardware with macOS Catalina to 
 
 @x
 ## Docker Desktop Community 2.1.3.0
-2019-09-16
 @y
 ## Docker Desktop Community 2.1.3.0
+@z
+
+@x
+2019-09-16
+@y
 2019-09-16
 @z
 
@@ -1269,9 +1369,13 @@ Fixed an issue that caused VMs running on older hardware with macOS Catalina to 
 
 @x
 ## Docker Desktop Community 2.1.2.0
-2019-09-09
 @y
 ## Docker Desktop Community 2.1.2.0
+@z
+
+@x
+2019-09-09
+@y
 2019-09-09
 @z
 
@@ -1313,9 +1417,13 @@ Fixed an issue that caused VMs running on older hardware with macOS Catalina to 
 
 @x
 ## Docker Desktop Community 2.1.1.0
-2019-08-12
 @y
 ## Docker Desktop Community 2.1.1.0
+@z
+
+@x
+2019-08-12
+@y
 2019-08-12
 @z
 
@@ -1352,10 +1460,14 @@ Fixed an issue that caused VMs running on older hardware with macOS Catalina to 
 @z
 
 @x
-## Docker Desktop Community 2.1.0.0 
+## Docker Desktop Community 2.1.0.0
+@y
+## Docker Desktop Community 2.1.0.0
+@z
+
+@x
 2019-07-26
 @y
-## Docker Desktop Community 2.1.0.0 
 2019-07-26
 @z
 
@@ -1372,17 +1484,17 @@ This release contains Kubernetes security improvements. Note that your local Kub
 @z
 
 @x
- - [Docker 19.03.1](https://github.com/docker/docker-ce/releases/tag/v19.03.1)
- - [Docker Compose 1.24.1](https://github.com/docker/compose/releases/tag/1.24.1)
- - [Alpine 3.10](https://alpinelinux.org/posts/Alpine-3.10.0-released.html)
- - Linux Kernel 4.9.184
- - [Docker Credential Helpers 0.6.3](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.3)
+- [Docker 19.03.1](https://github.com/docker/docker-ce/releases/tag/v19.03.1)
+- [Docker Compose 1.24.1](https://github.com/docker/compose/releases/tag/1.24.1)
+- [Alpine 3.10](https://alpinelinux.org/posts/Alpine-3.10.0-released.html)
+- Linux Kernel 4.9.184
+- [Docker Credential Helpers 0.6.3](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.3)
 @y
- - [Docker 19.03.1](https://github.com/docker/docker-ce/releases/tag/v19.03.1)
- - [Docker Compose 1.24.1](https://github.com/docker/compose/releases/tag/1.24.1)
- - [Alpine 3.10](https://alpinelinux.org/posts/Alpine-3.10.0-released.html)
- - Linux Kernel 4.9.184
- - [Docker Credential Helpers 0.6.3](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.3)
+- [Docker 19.03.1](https://github.com/docker/docker-ce/releases/tag/v19.03.1)
+- [Docker Compose 1.24.1](https://github.com/docker/compose/releases/tag/1.24.1)
+- [Alpine 3.10](https://alpinelinux.org/posts/Alpine-3.10.0-released.html)
+- Linux Kernel 4.9.184
+- [Docker Credential Helpers 0.6.3](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.3)
 @z
 
 @x
@@ -1392,11 +1504,11 @@ This release contains Kubernetes security improvements. Note that your local Kub
 @z
 
 @x
- - Introduced a new user interface for the Docker Desktop **Preferences** menu.
- - The **Restart**, **Reset**, and **Uninstall** options are now available on the **Troubleshoot** menu.
+- Introduced a new user interface for the Docker Desktop **Preferences** menu.
+- The **Restart**, **Reset**, and **Uninstall** options are now available on the **Troubleshoot** menu.
 @y
- - Introduced a new user interface for the Docker Desktop **Preferences** menu.
- - The **Restart**, **Reset**, and **Uninstall** options are now available on the **Troubleshoot** menu.
+- Introduced a new user interface for the Docker Desktop **Preferences** menu.
+- The **Restart**, **Reset**, and **Uninstall** options are now available on the **Troubleshoot** menu.
 @z
 
 @x
@@ -1440,14 +1552,14 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 19.03.0-rc2](https://github.com/docker/docker-ce/releases/tag/v19.03.0-rc2)
   - [Kubernetes 1.14.3](https://github.com/kubernetes/kubernetes/releases/tag/v1.14.3)
   - [Compose on Kubernetes 0.4.23](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.23)
   - [linuxkit v0.7](https://github.com/linuxkit/linuxkit/releases/tag/v0.7)
   - [Qemu 4.0.0](https://github.com/docker/binfmt) for cross compiling for ARM
 @y
-* Upgrades
+- Upgrades
   - [Docker 19.03.0-rc2](https://github.com/docker/docker-ce/releases/tag/v19.03.0-rc2)
   - [Kubernetes 1.14.3](https://github.com/kubernetes/kubernetes/releases/tag/v1.14.3)
   - [Compose on Kubernetes 0.4.23](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.23)
@@ -1456,29 +1568,29 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* New
+- New
   - Docker Desktop includes the `buildx` plugin (currently experimental).
-  - Selecting the `Experimental features` checkbox on the Docker Desktop Preferences Daemon page enables experimental features in the  Docker daemon and the Docker CLI.
+  - Selecting the `Experimental features` checkbox on the Docker Desktop Preferences Daemon page enables experimental features in the Docker daemon and the Docker CLI.
   - Docker Desktop has improved the reliability of `com.docker.osxfs trace` performance profiling command.
   - Users can now run the `com.docker.osxfs trace --summary` option to get a high-level summary of operations, instead of receiving a trace of all operations.
   - Docker Desktop now supports large lists of DNS resource records on Mac. Fixes [docker/for-mac#2160](https://github.com/docker/for-mac/issues/2160#issuecomment-431571031)
 @y
-* New
+- New
   - Docker Desktop includes the `buildx` plugin (currently experimental).
-  - Selecting the `Experimental features` checkbox on the Docker Desktop Preferences Daemon page enables experimental features in the  Docker daemon and the Docker CLI.
+  - Selecting the `Experimental features` checkbox on the Docker Desktop Preferences Daemon page enables experimental features in the Docker daemon and the Docker CLI.
   - Docker Desktop has improved the reliability of `com.docker.osxfs trace` performance profiling command.
   - Users can now run the `com.docker.osxfs trace --summary` option to get a high-level summary of operations, instead of receiving a trace of all operations.
   - Docker Desktop now supports large lists of DNS resource records on Mac. Fixes [docker/for-mac#2160](https://github.com/docker/for-mac/issues/2160#issuecomment-431571031)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Docker Desktop does not send DNS queries for `docker-desktop.<domain>` every 10s. It now relies on the host's DNS domain search order rather than trying to replicate it inside the VM.
   - Docker Desktop has removed the ability to log in using email address as a username as the Docker command line does not support this.
   - Docker Desktop now allows running a Docker registry inside a container. Fixes [docker/for-mac#3611](https://github.com/docker/for-mac/issues/3611)
   - Fixed a stability issue with the DNS resolver.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Docker Desktop does not send DNS queries for `docker-desktop.<domain>` every 10s. It now relies on the host's DNS domain search order rather than trying to replicate it inside the VM.
   - Docker Desktop has removed the ability to log in using email address as a username as the Docker command line does not support this.
   - Docker Desktop now allows running a Docker registry inside a container. Fixes [docker/for-mac#3611](https://github.com/docker/for-mac/issues/3611)
@@ -1492,10 +1604,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Upgrade QEMU from 2.8.0 to 3.1.0 to fix an emulation issue when building and running Java applications on Arm64 devices.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Upgrade QEMU from 2.8.0 to 3.1.0 to fix an emulation issue when building and running Java applications on Arm64 devices.
 @z
 
@@ -1506,13 +1618,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 19.03.0-beta3](https://github.com/docker/docker-ce/releases/tag/v19.03.0-beta3)
   - [Docker Compose 1.24.0](https://github.com/docker/compose/releases/tag/1.24.0)
   - [Compose on Kubernetes 0.4.22](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.22)
   - [Kubernetes 1.14.1](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.14.md#changelog-since-v1141)
 @y
-* Upgrades
+- Upgrades
   - [Docker 19.03.0-beta3](https://github.com/docker/docker-ce/releases/tag/v19.03.0-beta3)
   - [Docker Compose 1.24.0](https://github.com/docker/compose/releases/tag/1.24.0)
   - [Compose on Kubernetes 0.4.22](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.22)
@@ -1520,14 +1632,8 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* New
+- New
   - App: Docker CLI plugin to configure, share, and install applications
-@y
-* New
-  - App: Docker CLI plugin to configure, share, and install applications
-@z
-
-@x
     - Extend Compose files with metadata and parameters
     - Reuse the same application across multiple environments (Development/QA/Staging/Production)
     - Multi-orchestrator installation (Swarm or Kubernetes)
@@ -1535,6 +1641,8 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
     - Fully CNAB compliant
     - Full support for Docker Contexts
 @y
+- New
+  - App: Docker CLI plugin to configure, share, and install applications
     - Extend Compose files with metadata and parameters
     - Reuse the same application across multiple environments (Development/QA/Staging/Production)
     - Multi-orchestrator installation (Swarm or Kubernetes)
@@ -1545,18 +1653,14 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
   - Buildx (Tech Preview): Docker CLI plugin for extended build capabilities with BuildKit
+    - Familiar UI from docker build
+    - Full BuildKit capabilities with container driver
+    - Multiple builder instance support
+    - Multi-node builds for cross-platform images (out-of-the-box support for linux/arm/v7 and linux/arm64)
+    - Concurrent building of Compose files
+    - High-level build constructs with `bake`
 @y
   - Buildx (Tech Preview): Docker CLI plugin for extended build capabilities with BuildKit
-@z
-
-@x
-    - Familiar UI from docker build
-    - Full BuildKit capabilities with container driver
-    - Multiple builder instance support
-    - Multi-node builds for cross-platform images (out-of-the-box support for linux/arm/v7 and linux/arm64)
-    - Concurrent building of Compose files
-    - High-level build constructs with `bake`
-@y
     - Familiar UI from docker build
     - Full BuildKit capabilities with container driver
     - Multiple builder instance support
@@ -1566,10 +1670,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Truncate UDP DNS responses which are over 512 bytes in size
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Truncate UDP DNS responses which are over 512 bytes in size
 @z
 
@@ -1580,19 +1684,19 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.09.3](https://github.com/docker/docker-ce/releases/tag/v18.09.3)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.09.3](https://github.com/docker/docker-ce/releases/tag/v18.09.3)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fixed port 8080 that was used on localhost when starting Kubernetes. Fixes [docker/for-mac#3522](https://github.com/docker/for-mac/issues/3522)
   - Error message improvements, do not propose to run diagnostics / reset to factory default when not appropriate.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fixed port 8080 that was used on localhost when starting Kubernetes. Fixes [docker/for-mac#3522](https://github.com/docker/for-mac/issues/3522)
   - Error message improvements, do not propose to run diagnostics / reset to factory default when not appropriate.
 @z
@@ -1604,10 +1708,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.09.2](https://github.com/docker/docker-ce/releases/tag/v18.09.2), fixes [CVE-2019-5736](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5736)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.09.2](https://github.com/docker/docker-ce/releases/tag/v18.09.2), fixes [CVE-2019-5736](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-5736)
 @z
 
@@ -1618,32 +1722,32 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker Compose 1.24.0-rc1](https://github.com/docker/compose/releases/tag/1.24.0-rc1)
   - [Docker Machine 0.16.1](https://github.com/docker/machine/releases/tag/v0.16.1)
   - [Compose on Kubernetes 0.4.18](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.18)
 @y
-* Upgrades
+- Upgrades
   - [Docker Compose 1.24.0-rc1](https://github.com/docker/compose/releases/tag/1.24.0-rc1)
   - [Docker Machine 0.16.1](https://github.com/docker/machine/releases/tag/v0.16.1)
   - [Compose on Kubernetes 0.4.18](https://github.com/docker/compose-on-kubernetes/releases/tag/v0.4.18)
 @z
 
 @x
-* New
+- New
   - Rebranded UI
 @y
-* New
+- New
   - Rebranded UI
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Kubernetes: use default maximum number of pods for kubelet. [docker/for-mac#3453](https://github.com/docker/for-mac/issues/3453)
   - Fix DockerHelper crash. [docker/for-mac#3470](https://github.com/docker/for-mac/issues/3470)
   - Fix binding of privileged ports with specified IP. [docker/for-mac#3464](https://github.com/docker/for-mac/issues/3464)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Kubernetes: use default maximum number of pods for kubelet. [docker/for-mac#3453](https://github.com/docker/for-mac/issues/3453)
   - Fix DockerHelper crash. [docker/for-mac#3470](https://github.com/docker/for-mac/issues/3470)
   - Fix binding of privileged ports with specified IP. [docker/for-mac#3464](https://github.com/docker/for-mac/issues/3464)
@@ -1656,13 +1760,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.09.1](https://github.com/docker/docker-ce/releases/tag/v18.09.1)
   - [Kubernetes 1.13.0](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#v1130)
   - [Kitematic 0.17.6](https://github.com/docker/kitematic/releases/tag/v0.17.6)
   - Golang 1.10.6, fixes CVEs: [CVE-2018-16875](https://www.cvedetails.com/cve/CVE-2018-16875), [CVE-2018-16873](https://www.cvedetails.com/cve/CVE-2018-16873) and [CVE-2018-16874](https://www.cvedetails.com/cve/CVE-2018-16874)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.09.1](https://github.com/docker/docker-ce/releases/tag/v18.09.1)
   - [Kubernetes 1.13.0](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.13.md#v1130)
   - [Kitematic 0.17.6](https://github.com/docker/kitematic/releases/tag/v0.17.6)
@@ -1676,7 +1780,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix service log collection in diagnostics
   - Gather /etc/hosts to help diagnostics
   - Ensure localhost resolves to 127.0.0.1. Related to [docker/for-mac#2990](https://github.com/docker/for-mac/issues/2990#issuecomment-443097942), [docker/for-mac#3383](https://github.com/docker/for-mac/issues/3383)
@@ -1684,7 +1788,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Rename Docker for Mac to Docker Desktop
   - Partially open services ports if possible. [docker/for-mac#3438](https://github.com/docker/for-mac/issues/3438)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix service log collection in diagnostics
   - Gather /etc/hosts to help diagnostics
   - Ensure localhost resolves to 127.0.0.1. Related to [docker/for-mac#2990](https://github.com/docker/for-mac/issues/2990#issuecomment-443097942), [docker/for-mac#3383](https://github.com/docker/for-mac/issues/3383)
@@ -1706,11 +1810,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker compose 1.23.2](https://github.com/docker/compose/releases/tag/1.23.2)
   - [Docker Machine 0.16.0](https://github.com/docker/machine/releases/tag/v0.16.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker compose 1.23.2](https://github.com/docker/compose/releases/tag/1.23.2)
   - [Docker Machine 0.16.0](https://github.com/docker/machine/releases/tag/v0.16.0)
 @z
@@ -1722,25 +1826,25 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.09.0](https://github.com/docker/docker-ce-packaging/releases/tag/v18.09.0)
   - [Docker compose 1.23.1](https://github.com/docker/compose/releases/tag/1.23.1)
   - [Kitematic 0.17.5](https://github.com/docker/kitematic/releases/tag/v0.17.5)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.09.0](https://github.com/docker/docker-ce-packaging/releases/tag/v18.09.0)
   - [Docker compose 1.23.1](https://github.com/docker/compose/releases/tag/1.23.1)
   - [Kitematic 0.17.5](https://github.com/docker/kitematic/releases/tag/v0.17.5)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix appearance in dark mode for OS X 10.14 (Mojave)
   - VPNKit: Improved scalability of port forwarding. Related to [docker/for-mac#2841](https://github.com/docker/for-mac/issues/2841)
   - VPNKit: Limit the size of the UDP NAT table. This ensures port forwarding and regular TCP traffic continue even when running very chatty UDP protocols.
   - Ensure Kubernetes can be installed when using a non-default internal IP subnet.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix appearance in dark mode for OS X 10.14 (Mojave)
   - VPNKit: Improved scalability of port forwarding. Related to [docker/for-mac#2841](https://github.com/docker/for-mac/issues/2841)
   - VPNKit: Limit the size of the UDP NAT table. This ensures port forwarding and regular TCP traffic continue even when running very chatty UDP protocols.
@@ -1754,38 +1858,38 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.09.0-ce-beta1](https://github.com/docker/docker-ce/releases/tag/v18.09.0-ce-beta1)
   - Linux Kernel 4.9.125
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.09.0-ce-beta1](https://github.com/docker/docker-ce/releases/tag/v18.09.0-ce-beta1)
   - Linux Kernel 4.9.125
 @z
 
 @x
-* New
+- New
   - New version scheme
 @y
-* New
+- New
   - New version scheme
 @z
 
 @x
-* Deprecation
+- Deprecation
   - Removed support of AUFS
   - Removed support of OS X 10.11
 @y
-* Deprecation
+- Deprecation
   - Removed support of AUFS
   - Removed support of OS X 10.11
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix panic in diagnose
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix panic in diagnose
 @z
 
@@ -1796,18 +1900,18 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.06.1-ce](https://github.com/docker/docker-ce/releases/tag/v18.06.1-ce)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.06.1-ce](https://github.com/docker/docker-ce/releases/tag/v18.06.1-ce)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix local DNS failing to resolve inside containers.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix local DNS failing to resolve inside containers.
 @z
 
@@ -1818,19 +1922,19 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.06.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.06.0-ce)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.06.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.06.0-ce)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix bug in experimental SOCKS server. See [docker/for-mac#2670](https://github.com/docker/for-mac/issues/2670)
   - Fix bug in docker login when "Securely store Docker logins in macOS keychain" is unchecked. Fixed [docker/for-mac#3104](https://github.com/docker/for-mac/issues/3104)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix bug in experimental SOCKS server. See [docker/for-mac#2670](https://github.com/docker/for-mac/issues/2670)
   - Fix bug in docker login when "Securely store Docker logins in macOS keychain" is unchecked. Fixed [docker/for-mac#3104](https://github.com/docker/for-mac/issues/3104)
 @z
@@ -1842,27 +1946,27 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.06.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v18.06.0-ce-rc3)
   - [Docker Machine 0.15.0](https://github.com/docker/machine/releases/tag/v0.15.0)
   - [Docker compose 1.22.0](https://github.com/docker/compose/releases/tag/1.22.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.06.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v18.06.0-ce-rc3)
   - [Docker Machine 0.15.0](https://github.com/docker/machine/releases/tag/v0.15.0)
   - [Docker compose 1.22.0](https://github.com/docker/compose/releases/tag/1.22.0)
 @z
 
 @x
-* New
+- New
   - Add an experimental SOCKS server to allow access to container networks, see [docker/for-mac#2670](https://github.com/docker/for-mac/issues/2670#issuecomment-372365274). Also see [docker/for-mac#2721](https://github.com/docker/for-mac/issues/2721)
 @y
-* New
+- New
   - Add an experimental SOCKS server to allow access to container networks, see [docker/for-mac#2670](https://github.com/docker/for-mac/issues/2670#issuecomment-372365274). Also see [docker/for-mac#2721](https://github.com/docker/for-mac/issues/2721)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Preferences > Reset menu) before updating to the next major update. You can check documentation to [save images](/reference/cli/docker/image/save/#examples) and [back up volumes](/manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes)
   - Fix startup issue with AUFS [docker/for-mac#2804](https://github.com/docker/for-mac/issues/2804)
   - Fix status bug which could prevent the Kubernetes cluster from starting. Fixes [docker/for-mac#2990](https://github.com/docker/for-mac/issues/2990)
@@ -1870,7 +1974,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Fix network connection leak triggered by haproxy TCP health-checks [docker/for-mac#1132](https://github.com/docker/for-mac/issues/1132)
   - Better message to reset vmnetd when it's disabled. See [docker/for-mac#3035](https://github.com/docker/for-mac/issues/3035)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - AUFS storage driver is deprecated in Docker Desktop and AUFS support will be removed in the next major release. You can continue with AUFS in Docker Desktop 18.06.x, but you will need to reset disk image (in Preferences > Reset menu) before updating to the next major update. You can check documentation to [save images](__SUBDIR__/reference/cli/docker/image/save/#examples) and [back up volumes](manuals/engine/storage/volumes.md#back-up-restore-or-migrate-data-volumes)
   - Fix startup issue with AUFS [docker/for-mac#2804](https://github.com/docker/for-mac/issues/2804)
   - Fix status bug which could prevent the Kubernetes cluster from starting. Fixes [docker/for-mac#2990](https://github.com/docker/for-mac/issues/2990)
@@ -1886,30 +1990,30 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [LinuxKit v0.4](https://github.com/linuxkit/linuxkit/releases/tag/v0.4)
   - Linux Kernel 4.9.93 with CEPH, DRBD, RBD, MPLS_ROUTING and MPLS_IPTUNNEL enabled
   - [Kubernetes 1.10.3](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.10.md#v1103). If Kubernetes is enabled, the upgrade will be performed automatically when starting Docker Desktop for Mac.
 @y
-* Upgrades
+- Upgrades
   - [LinuxKit v0.4](https://github.com/linuxkit/linuxkit/releases/tag/v0.4)
   - Linux Kernel 4.9.93 with CEPH, DRBD, RBD, MPLS_ROUTING and MPLS_IPTUNNEL enabled
   - [Kubernetes 1.10.3](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.10.md#v1103). If Kubernetes is enabled, the upgrade will be performed automatically when starting Docker Desktop for Mac.
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix VPNKit memory leak. Fixes [moby/vpnkit#371](https://github.com/moby/vpnkit/issues/371)
   - Fix com.docker.supervisor using 100% CPU. Fixes [docker/for-mac#2967](https://github.com/docker/for-mac/issues/2967), [docker/for-mac#2923](https://github.com/docker/for-mac/issues/2923)
   - Do not override existing kubectl binary in /usr/local/bin (installed with brew or otherwise). Fixes [docker/for-mac#2368](https://github.com/docker/for-mac/issues/2368), [docker/for-mac#2890](https://github.com/docker/for-mac/issues/2890)
-  - Detect Vmnetd install error. Fixes [docker/for-mac#2934](https://github.com/docker/for-mac/issues/2934), [docker/for-mac#2687](https://github.com/docker/for-mac/issues/2687) 
+  - Detect Vmnetd install error. Fixes [docker/for-mac#2934](https://github.com/docker/for-mac/issues/2934), [docker/for-mac#2687](https://github.com/docker/for-mac/issues/2687)
   - Virtual machine default disk path is stored relative to $HOME. Fixes [docker/for-mac#2928](https://github.com/docker/for-mac/issues/2928), [docker/for-mac#1209](https://github.com/docker/for-mac/issues/1209)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix VPNKit memory leak. Fixes [moby/vpnkit#371](https://github.com/moby/vpnkit/issues/371)
   - Fix com.docker.supervisor using 100% CPU. Fixes [docker/for-mac#2967](https://github.com/docker/for-mac/issues/2967), [docker/for-mac#2923](https://github.com/docker/for-mac/issues/2923)
   - Do not override existing kubectl binary in /usr/local/bin (installed with brew or otherwise). Fixes [docker/for-mac#2368](https://github.com/docker/for-mac/issues/2368), [docker/for-mac#2890](https://github.com/docker/for-mac/issues/2890)
-  - Detect Vmnetd install error. Fixes [docker/for-mac#2934](https://github.com/docker/for-mac/issues/2934), [docker/for-mac#2687](https://github.com/docker/for-mac/issues/2687) 
+  - Detect Vmnetd install error. Fixes [docker/for-mac#2934](https://github.com/docker/for-mac/issues/2934), [docker/for-mac#2687](https://github.com/docker/for-mac/issues/2687)
   - Virtual machine default disk path is stored relative to $HOME. Fixes [docker/for-mac#2928](https://github.com/docker/for-mac/issues/2928), [docker/for-mac#1209](https://github.com/docker/for-mac/issues/1209)
 @z
 
@@ -1920,25 +2024,25 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.05.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.05.0-ce)
   - [Docker compose 1.21.2](https://github.com/docker/compose/releases/tag/1.21.2)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.05.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.05.0-ce)
   - [Docker compose 1.21.2](https://github.com/docker/compose/releases/tag/1.21.2)
 @z
 
 @x
-* New 
+- New
   - Allow orchestrator selection from the UI in the "Kubernetes" pane, to allow "docker stack" commands to deploy to Swarm clusters, even if Kubernetes is enabled in Docker for Mac.
 @y
-* New 
+- New
   - Allow orchestrator selection from the UI in the "Kubernetes" pane, to allow "docker stack" commands to deploy to Swarm clusters, even if Kubernetes is enabled in Docker for Mac.
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Use Simple NTP to minimize clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
   - Fix filesystem event notifications for Swarm services and those using the new-style --mount option. Fixes [docker/for-mac#2216](https://github.com/docker/for-mac/issues/2216), [docker/for-mac#2375](https://github.com/docker/for-mac/issues/2375)
   - Fix filesystem event delivery to Kubernetes pods when the path to the bind mount is a symlink.
@@ -1947,7 +2051,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Fix button order in reset dialog windows. Fixes [docker/for-mac#2827](https://github.com/docker/for-mac/issues/2827)
   - Diagnostics are run when diagnostics window is displayed; user is prompted to upload them when available.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Use Simple NTP to minimize clock drift between the virtual machine and the host. Fixes [docker/for-mac#2076](https://github.com/docker/for-mac/issues/2076)
   - Fix filesystem event notifications for Swarm services and those using the new-style --mount option. Fixes [docker/for-mac#2216](https://github.com/docker/for-mac/issues/2216), [docker/for-mac#2375](https://github.com/docker/for-mac/issues/2375)
   - Fix filesystem event delivery to Kubernetes pods when the path to the bind mount is a symlink.
@@ -1964,28 +2068,28 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.05.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.05.0-ce-rc1)
   - [Notary 0.6.1](https://github.com/docker/notary/releases/tag/v0.6.1)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.05.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.05.0-ce-rc1)
   - [Notary 0.6.1](https://github.com/docker/notary/releases/tag/v0.6.1)
 @z
 
 @x
-* New 
+- New
   - Re-enable raw as the default disk format for users running macOS 10.13.4 and higher. Note this change only takes effect after a "reset to factory defaults" or "remove all data" (from the Whale menu > Preferences > Reset). Related to [docker/for-mac#2625](https://github.com/docker/for-mac/issues/2625)
 @y
-* New 
+- New
   - Re-enable raw as the default disk format for users running macOS 10.13.4 and higher. Note this change only takes effect after a "reset to factory defaults" or "remove all data" (from the Whale menu > Preferences > Reset). Related to [docker/for-mac#2625](https://github.com/docker/for-mac/issues/2625)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker for Mac not starting due to socket file paths being too long (typically HOME folder path being too long). Fixes [docker/for-mac#2727](https://github.com/docker/for-mac/issues/2727), [docker/for-mac#2731](https://github.com/docker/for-mac/issues/2731).
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker for Mac not starting due to socket file paths being too long (typically HOME folder path being too long). Fixes [docker/for-mac#2727](https://github.com/docker/for-mac/issues/2727), [docker/for-mac#2731](https://github.com/docker/for-mac/issues/2731).
 @z
 
@@ -1996,11 +2100,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.04.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.04.0-ce)
   - [Docker compose 1.21.0](https://github.com/docker/compose/releases/tag/1.21.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.04.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.04.0-ce)
   - [Docker compose 1.21.0](https://github.com/docker/compose/releases/tag/1.21.0)
 @z
@@ -2012,28 +2116,28 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.04.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v18.04.0-ce-rc2)
   - [Kubernetes 1.9.6](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md#v196). If Kubernetes is enabled, the upgrade will be performed automatically when starting Docker for Mac.
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.04.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v18.04.0-ce-rc2)
   - [Kubernetes 1.9.6](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md#v196). If Kubernetes is enabled, the upgrade will be performed automatically when starting Docker for Mac.
 @z
 
 @x
-* New 
+- New
   - Enable ceph & rbd modules in LinuxKit virtual machine.
 @y
-* New 
+- New
   - Enable ceph & rbd modules in LinuxKit virtual machine.
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix upgrade straight from pre-17.12 versions where Docker for Mac cannot restart once the upgrade has been performed. Fixes [docker/for-mac#2739](https://github.com/docker/for-mac/issues/2739)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix upgrade straight from pre-17.12 versions where Docker for Mac cannot restart once the upgrade has been performed. Fixes [docker/for-mac#2739](https://github.com/docker/for-mac/issues/2739)
 @z
 
@@ -2044,11 +2148,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce)
   - [Docker compose 1.20.1](https://github.com/docker/compose/releases/tag/1.20.1)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce)
   - [Docker compose 1.20.1](https://github.com/docker/compose/releases/tag/1.20.1)
 @z
@@ -2060,21 +2164,21 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc4)
   - AUFS 20180312
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc4)
   - AUFS 20180312
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix support for AUFS. Fixes [docker/for-win#1831](https://github.com/docker/for-win/issues/1831)
   - Fix synchronization between CLI `docker login` and GUI login.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix support for AUFS. Fixes [docker/for-win#1831](https://github.com/docker/for-win/issues/1831)
   - Fix synchronization between CLI `docker login` and GUI login.
 @z
@@ -2086,14 +2190,14 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc3)
   - [Docker Machine 0.14.0](https://github.com/docker/machine/releases/tag/v0.14.0)
   - [Docker compose 1.20.0-rc2](https://github.com/docker/compose/releases/tag/1.20.0-rc2)
   - [Notary 0.6.0](https://github.com/docker/notary/releases/tag/v0.6.0)
   - Linux Kernel 4.9.87
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc3)
   - [Docker Machine 0.14.0](https://github.com/docker/machine/releases/tag/v0.14.0)
   - [Docker compose 1.20.0-rc2](https://github.com/docker/compose/releases/tag/1.20.0-rc2)
@@ -2102,11 +2206,11 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix for the HTTP/S transparent proxy when using "localhost" names (for example "host.docker.internal", "docker.for.mac.host.internal", "docker.for.mac.localhost").
   - Fix daemon not starting properly when setting TLS-related options. Fixes [docker/for-mac#2663](https://github.com/docker/for-mac/issues/2663)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix for the HTTP/S transparent proxy when using "localhost" names (for example "host.docker.internal", "docker.for.mac.host.internal", "docker.for.mac.localhost").
   - Fix daemon not starting properly when setting TLS-related options. Fixes [docker/for-mac#2663](https://github.com/docker/for-mac/issues/2663)
 @z
@@ -2118,32 +2222,32 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc1)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.03.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.03.0-ce-rc1)
 @z
 
 @x
-* New
+- New
   - Virtual machine Swap size can be changed in settings. See [docker/for-mac#2566](https://github.com/docker/for-mac/issues/2566), [docker/for-mac#2389](https://github.com/docker/for-mac/issues/2389)
   - Support NFS Volume sharing. Also works in Kubernetes.
 @y
-* New
+- New
   - Virtual machine Swap size can be changed in settings. See [docker/for-mac#2566](https://github.com/docker/for-mac/issues/2566), [docker/for-mac#2389](https://github.com/docker/for-mac/issues/2389)
   - Support NFS Volume sharing. Also works in Kubernetes.
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Revert the default disk format to qcow2 for users running macOS 10.13 (High Sierra). There are confirmed reports of file corruption using the raw format which uses sparse files on APFS. This change only takes effect after a reset to factory defaults (from the Whale menu -> Preferences -> Reset). Related to [docker/for-mac#2625](https://github.com/docker/for-mac/issues/2625)
   - DNS name `host.docker.internal` should be used for host resolution from containers. Older aliases (still valid) are deprecated in favor of this one. (See https://tools.ietf.org/html/draft-west-let-localhost-be-localhost-06).
   - Kubernetes Load balanced services are no longer marked as `Pending`.
   - Fix hostPath mounts in Kubernetes.
   - Update Compose on Kubernetes to v0.3.0 rc4. Existing Kubernetes stacks will be removed during migration and need to be re-deployed on the cluster.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Revert the default disk format to qcow2 for users running macOS 10.13 (High Sierra). There are confirmed reports of file corruption using the raw format which uses sparse files on APFS. This change only takes effect after a reset to factory defaults (from the Whale menu -> Preferences -> Reset). Related to [docker/for-mac#2625](https://github.com/docker/for-mac/issues/2625)
   - DNS name `host.docker.internal` should be used for host resolution from containers. Older aliases (still valid) are deprecated in favor of this one. (See https://tools.ietf.org/html/draft-west-let-localhost-be-localhost-06).
   - Kubernetes Load balanced services are no longer marked as `Pending`.
@@ -2158,22 +2262,22 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce)
   - [Docker compose 1.19.0](https://github.com/docker/compose/releases/tag/1.19.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce)
   - [Docker compose 1.19.0](https://github.com/docker/compose/releases/tag/1.19.0)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix update startup failure in some cases.
   - Fix empty registry added by mistake in some cases in the Preference Daemon Pane. Fixes [docker/for-mac#2537](https://github.com/docker/for-mac/issues/2537)
   - Clearer error message when incompatible hardware is detected. Diagnostics are not proposed in the error popup in this case.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix update startup failure in some cases.
   - Fix empty registry added by mistake in some cases in the Preference Daemon Pane. Fixes [docker/for-mac#2537](https://github.com/docker/for-mac/issues/2537)
   - Clearer error message when incompatible hardware is detected. Diagnostics are not proposed in the error popup in this case.
@@ -2186,24 +2290,24 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce-rc2)
   - [Docker compose 1.19.0-rc2](https://github.com/docker/compose/releases/tag/1.19.0-rc2)
   - [Kubernetes 1.9.2](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md#v192). If you have Kubernetes enabled, the upgrade will be performed automatically when starting Docker for Mac.
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce-rc2)
   - [Docker compose 1.19.0-rc2](https://github.com/docker/compose/releases/tag/1.19.0-rc2)
   - [Kubernetes 1.9.2](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.9.md#v192). If you have Kubernetes enabled, the upgrade will be performed automatically when starting Docker for Mac.
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Kubernetes-compose integration update that was causing startup failure. Fixes [docker/for-mac#2536](https://github.com/docker/for-mac/issues/2536)
   - Fix some cases where selecting "Reset" after an error did not reset properly.
   - Fix incorrect NTP config. Fixes [docker/for-mac#2529](https://github.com/docker/for-mac/issues/2529)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Kubernetes-compose integration update that was causing startup failure. Fixes [docker/for-mac#2536](https://github.com/docker/for-mac/issues/2536)
   - Fix some cases where selecting "Reset" after an error did not reset properly.
   - Fix incorrect NTP config. Fixes [docker/for-mac#2529](https://github.com/docker/for-mac/issues/2529)
@@ -2216,20 +2320,20 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce-rc1)
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.02.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v18.02.0-ce-rc1)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Added "Restart" menu item. See [docker/for-mac#2407](https://github.com/docker/for-mac/issues/2407)
   - Keep any existing kubectl binary when activating Kubernetes in Docker for Mac, and restore it when disabling Kubernetes. Fixes [docker/for-mac#2508](https://github.com/docker/for-mac/issues/2508), [docker/for-mac#2368](https://github.com/docker/for-mac/issues/2368)
   - Fix Kubernetes context selector. Fixes [docker/for-mac#2495](https://github.com/docker/for-mac/issues/2495)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Added "Restart" menu item. See [docker/for-mac#2407](https://github.com/docker/for-mac/issues/2407)
   - Keep any existing kubectl binary when activating Kubernetes in Docker for Mac, and restore it when disabling Kubernetes. Fixes [docker/for-mac#2508](https://github.com/docker/for-mac/issues/2508), [docker/for-mac#2368](https://github.com/docker/for-mac/issues/2368)
   - Fix Kubernetes context selector. Fixes [docker/for-mac#2495](https://github.com/docker/for-mac/issues/2495)
@@ -2242,45 +2346,45 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 18.01.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.01.0-ce)
   - Linux Kernel 4.9.75
 @y
-* Upgrades
+- Upgrades
   - [Docker 18.01.0-ce](https://github.com/docker/docker-ce/releases/tag/v18.01.0-ce)
   - Linux Kernel 4.9.75
 @z
 
 @x
-* New
+- New
   - The directory holding the disk images was renamed (from `~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux` to ~/Library/Containers/com.docker.docker/Data/vms/0`).
 @y
-* New
+- New
   - The directory holding the disk images was renamed (from `~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux` to ~/Library/Containers/com.docker.docker/Data/vms/0`).
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix error during resize/create Docker.raw disk image in some cases. Fixes [docker/for-mac#2383](https://github.com/docker/for-mac/issues/2383), [docker/for-mac#2447](https://github.com/docker/for-mac/issues/2447), [docker/for-mac#2453], (https://github.com/docker/for-mac/issues/2453), [docker/for-mac#2420](https://github.com/docker/for-mac/issues/2420)
   - Fix additional allocated disk space not available in containers. Fixes [docker/for-mac#2449](https://github.com/docker/for-mac/issues/2449)
   - VPNkit port max idle time default restored to 300s. Fixes [docker/for-mac#2442](https://github.com/docker/for-mac/issues/2442)
   - Fix using an HTTP proxy with authentication. Fixes [docker/for-mac#2386](https://github.com/docker/for-mac/issues/2386)
-  - Allow HTTP proxy excludes to be written as .docker.com as well as *.docker.com
+  - Allow HTTP proxy excludes to be written as .docker.com as well as \*.docker.com
   - Allow individual IP addresses to be added to HTTP proxy excludes.
-  - Avoid hitting DNS timeouts when querying docker.for.mac.* when the upstream DNS servers are slow or missing.
+  - Avoid hitting DNS timeouts when querying docker.for.mac.\* when the upstream DNS servers are slow or missing.
   - Fix for `docker push` to an insecure registry. Fixes [docker/for-mac#2392](https://github.com/docker/for-mac/issues/2392)
   - Separate internal ports used to proxy HTTP and HTTPS content.
   - If kubectl was already installed before Docker For Mac, restore the existing kubectl when switching Kubernetes off in Docker for Mac.
   - Migration of Docker Toolbox images is not proposed anymore in Docker For Mac installer (still possible to migrate Toolbox images manually).
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix error during resize/create Docker.raw disk image in some cases. Fixes [docker/for-mac#2383](https://github.com/docker/for-mac/issues/2383), [docker/for-mac#2447](https://github.com/docker/for-mac/issues/2447), [docker/for-mac#2453], (https://github.com/docker/for-mac/issues/2453), [docker/for-mac#2420](https://github.com/docker/for-mac/issues/2420)
   - Fix additional allocated disk space not available in containers. Fixes [docker/for-mac#2449](https://github.com/docker/for-mac/issues/2449)
   - VPNkit port max idle time default restored to 300s. Fixes [docker/for-mac#2442](https://github.com/docker/for-mac/issues/2442)
   - Fix using an HTTP proxy with authentication. Fixes [docker/for-mac#2386](https://github.com/docker/for-mac/issues/2386)
-  - Allow HTTP proxy excludes to be written as .docker.com as well as *.docker.com
+  - Allow HTTP proxy excludes to be written as .docker.com as well as \*.docker.com
   - Allow individual IP addresses to be added to HTTP proxy excludes.
-  - Avoid hitting DNS timeouts when querying docker.for.mac.* when the upstream DNS servers are slow or missing.
+  - Avoid hitting DNS timeouts when querying docker.for.mac.\* when the upstream DNS servers are slow or missing.
   - Fix for `docker push` to an insecure registry. Fixes [docker/for-mac#2392](https://github.com/docker/for-mac/issues/2392)
   - Separate internal ports used to proxy HTTP and HTTPS content.
   - If kubectl was already installed before Docker For Mac, restore the existing kubectl when switching Kubernetes off in Docker for Mac.
@@ -2294,28 +2398,28 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce)
 @z
 
 @x
-* New
+- New
   - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker For Mac Preferences and use kubectl commands as well as docker commands. See [the Kubernetes section](/manuals/desktop/use-desktop/kubernetes.md)
   - DNS name `docker.for.mac.host.internal` should be used instead of `docker.for.mac.localhost` (still valid) for host resolution from containers, since since there is an RFC banning the use of subdomains of localhost (See https://tools.ietf.org/html/draft-west-let-localhost-be-localhost-06).
 @y
-* New
+- New
   - Experimental Kubernetes Support. You can now run a single-node Kubernetes cluster from the "Kubernetes" Pane in Docker For Mac Preferences and use kubectl commands as well as docker commands. See [the Kubernetes section](manuals/desktop/use-desktop/kubernetes.md)
   - DNS name `docker.for.mac.host.internal` should be used instead of `docker.for.mac.localhost` (still valid) for host resolution from containers, since since there is an RFC banning the use of subdomains of localhost (See https://tools.ietf.org/html/draft-west-let-localhost-be-localhost-06).
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - The docker engine is configured to use VPNKit as an HTTP proxy, fixing 'docker pull' in environments with no DNS. Fixes [docker/for-mac#2320](https://github.com/docker/for-mac/issues/2320)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - The docker engine is configured to use VPNKit as an HTTP proxy, fixing 'docker pull' in environments with no DNS. Fixes [docker/for-mac#2320](https://github.com/docker/for-mac/issues/2320)
 @z
 
@@ -2332,21 +2436,21 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc4)
   - [Docker compose 1.18.0](https://github.com/docker/compose/releases/tag/1.18.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc4)
   - [Docker compose 1.18.0](https://github.com/docker/compose/releases/tag/1.18.0)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Display actual size used by the virtual machine disk, especially useful for disks using raw format. See [docker/for-mac#2297](https://github.com/docker/for-mac/issues/2297).
   - Fix more specific edge cases in filesharing settings migration.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Display actual size used by the virtual machine disk, especially useful for disks using raw format. See [docker/for-mac#2297](https://github.com/docker/for-mac/issues/2297).
   - Fix more specific edge cases in filesharing settings migration.
 @z
@@ -2358,18 +2462,18 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc3)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc3)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix filesharing migration issue ([docker/for-mac#2317](https://github.com/docker/for-mac/issues/2317))
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix filesharing migration issue ([docker/for-mac#2317](https://github.com/docker/for-mac/issues/2317))
 @z
 
@@ -2380,25 +2484,25 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc2)
   - [Docker compose 1.18.0-rc2](https://github.com/docker/compose/releases/tag/1.18.0-rc2)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.12.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.12.0-ce-rc2)
   - [Docker compose 1.18.0-rc2](https://github.com/docker/compose/releases/tag/1.18.0-rc2)
 @z
 
 @x
-* New
+- New
   - Virtual machine disk size can be changed in settings. (See [docker/for-mac#1037](https://github.com/docker/for-mac/issues/1037)).
 @y
-* New
+- New
   - Virtual machine disk size can be changed in settings. (See [docker/for-mac#1037](https://github.com/docker/for-mac/issues/1037)).
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Avoid virtual machine reboot when changing host proxy settings.
   - Don't break HTTP traffic between containers by forwarding them through the external proxy [docker/for-mac#981](https://github.com/docker/for-mac/issues/981)
   - Filesharing settings are now stored in settings.json
@@ -2406,7 +2510,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - Display various component versions in About box
   - Better virtual machine state handling and error messages in case of virtual machine crashes
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Avoid virtual machine reboot when changing host proxy settings.
   - Don't break HTTP traffic between containers by forwarding them through the external proxy [docker/for-mac#981](https://github.com/docker/for-mac/issues/981)
   - Filesharing settings are now stored in settings.json
@@ -2422,10 +2526,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce)
 @z
 
@@ -2436,41 +2540,41 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc4)
   - [Docker compose 1.17.1](https://github.com/docker/compose/releases/tag/1.17.1)
   - Linux kernel 4.9.60
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc4](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc4)
   - [Docker compose 1.17.1](https://github.com/docker/compose/releases/tag/1.17.1)
   - Linux kernel 4.9.60
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix login into private repository with certificate issue. [docker/for-mac#2201](https://github.com/docker/for-mac/issues/2201)
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix login into private repository with certificate issue. [docker/for-mac#2201](https://github.com/docker/for-mac/issues/2201)
 @z
 
 @x
-* New
+- New
   - For systems running APFS on SSD on High Sierra, use `raw` format virtual machine disks by default. This increases disk throughput (from 320MiB/sec to 600MiB/sec in `dd` on a 2015 MacBook Pro) and disk space handling.
-  Existing disks are kept in qcow format, if you want to switch to raw format you need to "Reset to factory defaults". To query the space usage of the file, use a command like:
-  `$ cd ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/`
-  `$ ls -ls Docker.raw`
-  `3944768 -rw-r--r--@ 1 user  staff  68719476736 Nov 16 11:19 Docker.raw`
-  The first number (`3944768`) is the allocated space in blocks; the larger number `68719476736` is the maximum total amount of space the file may consume in future in bytes.
+    Existing disks are kept in qcow format, if you want to switch to raw format you need to "Reset to factory defaults". To query the space usage of the file, use a command like:
+    `$ cd ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/`
+    `$ ls -ls Docker.raw`
+    `3944768 -rw-r--r--@ 1 user  staff  68719476736 Nov 16 11:19 Docker.raw`
+    The first number (`3944768`) is the allocated space in blocks; the larger number `68719476736` is the maximum total amount of space the file may consume in future in bytes.
 @y
-* New
+- New
   - For systems running APFS on SSD on High Sierra, use `raw` format virtual machine disks by default. This increases disk throughput (from 320MiB/sec to 600MiB/sec in `dd` on a 2015 MacBook Pro) and disk space handling.
-  Existing disks are kept in qcow format, if you want to switch to raw format you need to "Reset to factory defaults". To query the space usage of the file, use a command like:
-  `$ cd ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/`
-  `$ ls -ls Docker.raw`
-  `3944768 -rw-r--r--@ 1 user  staff  68719476736 Nov 16 11:19 Docker.raw`
-  The first number (`3944768`) is the allocated space in blocks; the larger number `68719476736` is the maximum total amount of space the file may consume in future in bytes.
+    Existing disks are kept in qcow format, if you want to switch to raw format you need to "Reset to factory defaults". To query the space usage of the file, use a command like:
+    `$ cd ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/`
+    `$ ls -ls Docker.raw`
+    `3944768 -rw-r--r--@ 1 user  staff  68719476736 Nov 16 11:19 Docker.raw`
+    The first number (`3944768`) is the allocated space in blocks; the larger number `68719476736` is the maximum total amount of space the file may consume in future in bytes.
 @z
 
 @x
@@ -2480,18 +2584,18 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc3)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc3)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker build exits successfully but fails to build image [moby/#35413](https://github.com/moby/moby/issues/35413).
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker build exits successfully but fails to build image [moby/#35413](https://github.com/moby/moby/issues/35413).
 @z
 
@@ -2502,22 +2606,22 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc2)
   - [Docker compose 1.17.0](https://github.com/docker/compose/releases/tag/1.17.0)
   - Linuxkit blueprint updated to [linuxkit/linuxkit#2633](https://github.com/linuxkit/linuxkit/pull/2633), fixes CVE-2017-15650
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.11.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.11.0-ce-rc2)
   - [Docker compose 1.17.0](https://github.com/docker/compose/releases/tag/1.17.0)
   - Linuxkit blueprint updated to [linuxkit/linuxkit#2633](https://github.com/linuxkit/linuxkit/pull/2633), fixes CVE-2017-15650
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix centos:5 & centos:6 images not starting properly with LinuxKit virtual machine (fixes [docker/for-mac#2169](https://github.com/docker/for-mac/issues/2169)).
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix centos:5 & centos:6 images not starting properly with LinuxKit virtual machine (fixes [docker/for-mac#2169](https://github.com/docker/for-mac/issues/2169)).
 @z
 
@@ -2528,22 +2632,22 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.10.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.10.0-ce)
   - [Docker Machine 0.13.0](https://github.com/docker/machine/releases/tag/v0.13.0)
   - [Docker compose 1.17.0-rc1](https://github.com/docker/compose/releases/tag/1.17.0-rc1)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.10.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.10.0-ce)
   - [Docker Machine 0.13.0](https://github.com/docker/machine/releases/tag/v0.13.0)
   - [Docker compose 1.17.0-rc1](https://github.com/docker/compose/releases/tag/1.17.0-rc1)
 @z
 
 @x
-* New
+- New
   - Virtual machine entirely built with Linuxkit
 @y
-* New
+- New
   - Virtual machine entirely built with Linuxkit
 @z
 
@@ -2554,10 +2658,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker For Mac unable to start in some cases : removed use of libgmp sometimes causing the vpnkit process to die.
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix Docker For Mac unable to start in some cases : removed use of libgmp sometimes causing the vpnkit process to die.
 @z
 
@@ -2568,20 +2672,20 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)
   - DataKit update (fix instability on High Sierra)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce)
   - DataKit update (fix instability on High Sierra)
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix password encoding/decoding. May require to re-login to docker cloud after this version is installed. (Fixes:docker/for-mac#2008, docker/for-mac#2016, docker/for-mac#1919, docker/for-mac#712, docker/for-mac#1220).
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Fix password encoding/decoding. May require to re-login to docker cloud after this version is installed. (Fixes:docker/for-mac#2008, docker/for-mac#2016, docker/for-mac#1919, docker/for-mac#712, docker/for-mac#1220).
 @z
 
@@ -2592,10 +2696,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc3)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc3](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc3)
 @z
 
@@ -2606,23 +2710,23 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc2)
   - Linux Kernel 4.9.49
   - AUFS 20170911
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc2](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc2)
   - Linux Kernel 4.9.49
   - AUFS 20170911
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Kernel: Enable TASK_XACCT and TASK_IO_ACCOUNTING [docker/for-mac#1608](https://github.com/docker/for-mac/issues/1608)
   - Rotate logs in the virtual machine more often
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - Kernel: Enable TASK_XACCT and TASK_IO_ACCOUNTING [docker/for-mac#1608](https://github.com/docker/for-mac/issues/1608)
   - Rotate logs in the virtual machine more often
 @z
@@ -2634,22 +2738,22 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc1)
   - [Docker compose 1.16.1](https://github.com/docker/compose/releases/tag/1.16.1)
   - Linux Kernel 4.9.46
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.09.0-ce-rc1](https://github.com/docker/docker-ce/releases/tag/v17.09.0-ce-rc1)
   - [Docker compose 1.16.1](https://github.com/docker/compose/releases/tag/1.16.1)
   - Linux Kernel 4.9.46
 @z
 
 @x
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - VPNKit: change protocol to support error messages reported back from the server
 @y
-* Bug fixes and minor changes
+- Bug fixes and minor changes
   - VPNKit: change protocol to support error messages reported back from the server
 @z
 
@@ -2660,12 +2764,12 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* Upgrades
+- Upgrades
   - [Docker 17.07.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.07.0-ce)
   - [Docker compose 1.16.0](https://github.com/docker/compose/releases/tag/1.16.0)
   - [Docker Credential Helpers 0.6.0](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.0)
 @y
-* Upgrades
+- Upgrades
   - [Docker 17.07.0-ce](https://github.com/docker/docker-ce/releases/tag/v17.07.0-ce)
   - [Docker compose 1.16.0](https://github.com/docker/compose/releases/tag/1.16.0)
   - [Docker Credential Helpers 0.6.0](https://github.com/docker/docker-credential-helpers/releases/tag/v0.6.0)
@@ -2700,13 +2804,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @x
 - Fixed string validation in daemon options (related to [docker/for-mac#1971](https://github.com/docker/for-mac/issues/1971))
 - VPNKit: Fixed a bug which causes a socket to leak if the corresponding
-TCP connection is idle for more than five minutes (related to
-[docker/for-mac#1374](https://github.com/docker/for-mac/issues/1374))
+  TCP connection is idle for more than five minutes (related to
+  [docker/for-mac#1374](https://github.com/docker/for-mac/issues/1374))
 @y
 - Fixed string validation in daemon options (related to [docker/for-mac#1971](https://github.com/docker/for-mac/issues/1971))
 - VPNKit: Fixed a bug which causes a socket to leak if the corresponding
-TCP connection is idle for more than five minutes (related to
-[docker/for-mac#1374](https://github.com/docker/for-mac/issues/1374))
+  TCP connection is idle for more than five minutes (related to
+  [docker/for-mac#1374](https://github.com/docker/for-mac/issues/1374))
 @z
 
 @x
@@ -2826,11 +2930,11 @@ TCP connection is idle for more than five minutes (related to
 @x
 - Add daemon options validation
 - Diagnose can be cancelled & Improved help information. Fixes [docker/for-mac#1134](https://github.com/docker/for-mac/issues/1134), [docker/for-mac#1474](https://github.com/docker/for-mac/issues/1474)
-- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
+- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/setup/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
 @y
 - Add daemon options validation
 - Diagnose can be cancelled & Improved help information. Fixes [docker/for-mac#1134](https://github.com/docker/for-mac/issues/1134), [docker/for-mac#1474](https://github.com/docker/for-mac/issues/1474)
-- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
+- Support paging of Docker Cloud [repositories](../../docker-hub/repos/_index.md) and [organizations](../../admin/organization/setup/orgs.md). Fixes [docker/for-mac#1538](https://github.com/docker/for-mac/issues/1538)
 @z
 
 @x
@@ -4217,7 +4321,7 @@ TCP connection is idle for more than five minutes (related to
 - Fixed application of system or custom proxy settings over container restart
 - Increased default ulimit for memlock (fixes [docker/for-mac#801](https://github.com/docker/for-mac/issues/801) )
 - Fixed an issue where the Docker status would continue to be
-      yellow/animated after the VM had started correctly
+  yellow/animated after the VM had started correctly
 - osxfs: fixed the prohibition of chown on read-only or mode 0 files (fixes [docker/for-mac#117](https://github.com/docker/for-mac/issues/117), [docker/for-mac#263](https://github.com/docker/for-mac/issues/263), [docker/for-mac#633](https://github.com/docker/for-mac/issues/633) )
 @y
 - Fixed an issue where the whale animation during setting change was inconsistent
@@ -4225,7 +4329,7 @@ TCP connection is idle for more than five minutes (related to
 - Fixed application of system or custom proxy settings over container restart
 - Increased default ulimit for memlock (fixes [docker/for-mac#801](https://github.com/docker/for-mac/issues/801) )
 - Fixed an issue where the Docker status would continue to be
-      yellow/animated after the VM had started correctly
+  yellow/animated after the VM had started correctly
 - osxfs: fixed the prohibition of chown on read-only or mode 0 files (fixes [docker/for-mac#117](https://github.com/docker/for-mac/issues/117), [docker/for-mac#263](https://github.com/docker/for-mac/issues/263), [docker/for-mac#633](https://github.com/docker/for-mac/issues/633) )
 @z
 
@@ -4282,19 +4386,19 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* Docker 1.12.2-rc1
-* Docker Machine 0.8.2
-* Docker compose 1.8.1
-* Kernel vsock driver v7
-* Kernel 4.4.21
-* AUFS 20160912
+- Docker 1.12.2-rc1
+- Docker Machine 0.8.2
+- Docker compose 1.8.1
+- Kernel vsock driver v7
+- Kernel 4.4.21
+- AUFS 20160912
 @y
-* Docker 1.12.2-rc1
-* Docker Machine 0.8.2
-* Docker compose 1.8.1
-* Kernel vsock driver v7
-* Kernel 4.4.21
-* AUFS 20160912
+- Docker 1.12.2-rc1
+- Docker Machine 0.8.2
+- Docker compose 1.8.1
+- Kernel vsock driver v7
+- Kernel 4.4.21
+- AUFS 20160912
 @z
 
 @x
@@ -4304,25 +4408,25 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* Fixed an issue where some windows did not claim focus correctly
-* Added UI when switching channel to prevent user losing containers and settings
-* Check disk capacity before Toolbox import
-* Import certificates in `etc/ssl/certs/ca-certificates.crt`
-* DNS: reduce the number of UDP sockets consumed on the host
-* VPNkit: improve the connection-limiting code to avoid running out of sockets on the host
-* UDP: handle diagrams bigger than 2035, up to the configured macOS kernel limit
-* UDP: made the forwarding more robust; now, drop packets and continue rather than stopping
-* disk: made the "flush" behaviour configurable for database-like workloads. This works around a performance regression in `v1.12.1`.
+- Fixed an issue where some windows did not claim focus correctly
+- Added UI when switching channel to prevent user losing containers and settings
+- Check disk capacity before Toolbox import
+- Import certificates in `etc/ssl/certs/ca-certificates.crt`
+- DNS: reduce the number of UDP sockets consumed on the host
+- VPNkit: improve the connection-limiting code to avoid running out of sockets on the host
+- UDP: handle diagrams bigger than 2035, up to the configured macOS kernel limit
+- UDP: made the forwarding more robust; now, drop packets and continue rather than stopping
+- disk: made the "flush" behaviour configurable for database-like workloads. This works around a performance regression in `v1.12.1`.
 @y
-* Fixed an issue where some windows did not claim focus correctly
-* Added UI when switching channel to prevent user losing containers and settings
-* Check disk capacity before Toolbox import
-* Import certificates in `etc/ssl/certs/ca-certificates.crt`
-* DNS: reduce the number of UDP sockets consumed on the host
-* VPNkit: improve the connection-limiting code to avoid running out of sockets on the host
-* UDP: handle diagrams bigger than 2035, up to the configured macOS kernel limit
-* UDP: made the forwarding more robust; now, drop packets and continue rather than stopping
-* disk: made the "flush" behaviour configurable for database-like workloads. This works around a performance regression in `v1.12.1`.
+- Fixed an issue where some windows did not claim focus correctly
+- Added UI when switching channel to prevent user losing containers and settings
+- Check disk capacity before Toolbox import
+- Import certificates in `etc/ssl/certs/ca-certificates.crt`
+- DNS: reduce the number of UDP sockets consumed on the host
+- VPNkit: improve the connection-limiting code to avoid running out of sockets on the host
+- UDP: handle diagrams bigger than 2035, up to the configured macOS kernel limit
+- UDP: made the forwarding more robust; now, drop packets and continue rather than stopping
+- disk: made the "flush" behaviour configurable for database-like workloads. This works around a performance regression in `v1.12.1`.
 @z
 
 @x
@@ -4338,9 +4442,9 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* Improved support for macOS 10.12 Sierra
+- Improved support for macOS 10.12 Sierra
 @y
-* Improved support for macOS 10.12 Sierra
+- Improved support for macOS 10.12 Sierra
 @z
 
 @x
@@ -4350,11 +4454,11 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* Linux kernel 4.4.20
-* AUFS 20160905
+- Linux kernel 4.4.20
+- AUFS 20160905
 @y
-* Linux kernel 4.4.20
-* AUFS 20160905
+- Linux kernel 4.4.20
+- AUFS 20160905
 @z
 
 @x
@@ -4364,51 +4468,51 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* Fixed communications glitch when UI talks to `com.docker.vmnetd`. Fixes [docker/for-mac#90](https://github.com/docker/for-mac/issues/90)
+- Fixed communications glitch when UI talks to `com.docker.vmnetd`. Fixes [docker/for-mac#90](https://github.com/docker/for-mac/issues/90)
 @y
-* Fixed communications glitch when UI talks to `com.docker.vmnetd`. Fixes [docker/for-mac#90](https://github.com/docker/for-mac/issues/90)
+- Fixed communications glitch when UI talks to `com.docker.vmnetd`. Fixes [docker/for-mac#90](https://github.com/docker/for-mac/issues/90)
 @z
 
 @x
-* UI fix for macOs 10.12
+- UI fix for macOs 10.12
 @y
-* UI fix for macOs 10.12
+- UI fix for macOs 10.12
 @z
 
 @x
-* Windows open on top of full screen app are available in all spaces
+- Windows open on top of full screen app are available in all spaces
 @y
-* Windows open on top of full screen app are available in all spaces
+- Windows open on top of full screen app are available in all spaces
 @z
 
 @x
-* Reporting a bug, while not previously logged into GitHub now works
+- Reporting a bug, while not previously logged into GitHub now works
 @y
-* Reporting a bug, while not previously logged into GitHub now works
+- Reporting a bug, while not previously logged into GitHub now works
 @z
 
 @x
-* When a diagnostic upload fails, the error is properly reported
+- When a diagnostic upload fails, the error is properly reported
 @y
-* When a diagnostic upload fails, the error is properly reported
+- When a diagnostic upload fails, the error is properly reported
 @z
 
 @x
-* `docker-diagnose` displays and records the time the diagnosis was captured
+- `docker-diagnose` displays and records the time the diagnosis was captured
 @y
-* `docker-diagnose` displays and records the time the diagnosis was captured
+- `docker-diagnose` displays and records the time the diagnosis was captured
 @z
 
 @x
-* Ports are allowed to bind to host addresses other than `0.0.0.0` and `127.0.0.1`. Fixes issue reported in [docker/for-mac#68](https://github.com/docker/for-mac/issues/68).
+- Ports are allowed to bind to host addresses other than `0.0.0.0` and `127.0.0.1`. Fixes issue reported in [docker/for-mac#68](https://github.com/docker/for-mac/issues/68).
 @y
-* Ports are allowed to bind to host addresses other than `0.0.0.0` and `127.0.0.1`. Fixes issue reported in [docker/for-mac#68](https://github.com/docker/for-mac/issues/68).
+- Ports are allowed to bind to host addresses other than `0.0.0.0` and `127.0.0.1`. Fixes issue reported in [docker/for-mac#68](https://github.com/docker/for-mac/issues/68).
 @z
 
 @x
-* We no longer compute the container folder in `com.docker.vmnetd`. Fixes [docker/for-mac#47](https://github.com/docker/for-mac/issues/47).
+- We no longer compute the container folder in `com.docker.vmnetd`. Fixes [docker/for-mac#47](https://github.com/docker/for-mac/issues/47).
 @y
-* We no longer compute the container folder in `com.docker.vmnetd`. Fixes [docker/for-mac#47](https://github.com/docker/for-mac/issues/47).
+- We no longer compute the container folder in `com.docker.vmnetd`. Fixes [docker/for-mac#47](https://github.com/docker/for-mac/issues/47).
 @z
 
 @x
@@ -4418,31 +4522,31 @@ TCP connection is idle for more than five minutes (related to
 @z
 
 @x
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The
-issue is being investigated. The workaround is to restart Docker.app.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The
+  issue is being investigated. The workaround is to restart Docker.app.
 @y
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The
-issue is being investigated. The workaround is to restart Docker.app.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The
+  issue is being investigated. The workaround is to restart Docker.app.
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
-traversals of large directories are currently slow. Additionally, containers
-that perform large numbers of directory operations, such as repeated scans of
-large directory trees, may suffer from poor performance. More information is
-available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
+  traversals of large directories are currently slow. Additionally, containers
+  that perform large numbers of directory operations, such as repeated scans of
+  large directory trees, may suffer from poor performance. More information is
+  available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
-traversals of large directories are currently slow. Additionally, containers
-that perform large numbers of directory operations, such as repeated scans of
-large directory trees, may suffer from poor performance. More information is
-available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
+  traversals of large directories are currently slow. Additionally, containers
+  that perform large numbers of directory operations, such as repeated scans of
+  large directory trees, may suffer from poor performance. More information is
+  available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
 @z
 
 @x
@@ -4458,9 +4562,9 @@ available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoo
 @z
 
 @x
-* Experimental support for macOS 10.12 Sierra (beta)
+- Experimental support for macOS 10.12 Sierra (beta)
 @y
-* Experimental support for macOS 10.12 Sierra (beta)
+- Experimental support for macOS 10.12 Sierra (beta)
 @z
 
 @x
@@ -4470,13 +4574,13 @@ available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoo
 @z
 
 @x
-* VPNKit supports search domains
-* Entries from `/etc/hosts` should now resolve from within containers
-* osxfs: fix thread leak
+- VPNKit supports search domains
+- Entries from `/etc/hosts` should now resolve from within containers
+- osxfs: fix thread leak
 @y
-* VPNKit supports search domains
-* Entries from `/etc/hosts` should now resolve from within containers
-* osxfs: fix thread leak
+- VPNKit supports search domains
+- Entries from `/etc/hosts` should now resolve from within containers
+- osxfs: fix thread leak
 @z
 
 @x
@@ -4486,43 +4590,43 @@ available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoo
 @z
 
 @x
-* Several problems have been reported on macOS 10.12 Sierra and are being
-investigated. This includes failure to launch the app and being unable to
-upgrade to a new version.
+- Several problems have been reported on macOS 10.12 Sierra and are being
+  investigated. This includes failure to launch the app and being unable to
+  upgrade to a new version.
 @y
-* Several problems have been reported on macOS 10.12 Sierra and are being
-investigated. This includes failure to launch the app and being unable to
-upgrade to a new version.
+- Several problems have been reported on macOS 10.12 Sierra and are being
+  investigated. This includes failure to launch the app and being unable to
+  upgrade to a new version.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The
-issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The
+  issue is being investigated. The workaround is to restart Docker.app
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The
-issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The
+  issue is being investigated. The workaround is to restart Docker.app
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted
-with `osxfs`. In particular, writes of small blocks and traversals of large
-directories are currently slow. Additionally, containers that perform large
-numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. More information is available in
-[Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted
+  with `osxfs`. In particular, writes of small blocks and traversals of large
+  directories are currently slow. Additionally, containers that perform large
+  numbers of directory operations, such as repeated scans of large directory
+  trees, may suffer from poor performance. More information is available in
+  [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
-* There are a number of issues with the performance of directories bind-mounted
-with `osxfs`. In particular, writes of small blocks and traversals of large
-directories are currently slow. Additionally, containers that perform large
-numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. More information is available in
-[Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted
+  with `osxfs`. In particular, writes of small blocks and traversals of large
+  directories are currently slow. Additionally, containers that perform large
+  numbers of directory operations, such as repeated scans of large directory
+  trees, may suffer from poor performance. More information is available in
+  [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app.
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app.
 @z
 
 @x
@@ -4538,15 +4642,15 @@ trees, may suffer from poor performance. More information is available in
 @z
 
 @x
-* Docker 1.12.1
-* Docker Machine 0.8.1
-* Linux kernel 4.4.19
-* AUFS 20160822
+- Docker 1.12.1
+- Docker Machine 0.8.1
+- Linux kernel 4.4.19
+- AUFS 20160822
 @y
-* Docker 1.12.1
-* Docker Machine 0.8.1
-* Linux kernel 4.4.19
-* AUFS 20160822
+- Docker 1.12.1
+- Docker Machine 0.8.1
+- Linux kernel 4.4.19
+- AUFS 20160822
 @z
 
 @x
@@ -4556,33 +4660,33 @@ trees, may suffer from poor performance. More information is available in
 @z
 
 @x
-* osxfs: fixed a malfunction of new directories that have the same name as an old directory that is still open
+- osxfs: fixed a malfunction of new directories that have the same name as an old directory that is still open
 @y
-* osxfs: fixed a malfunction of new directories that have the same name as an old directory that is still open
+- osxfs: fixed a malfunction of new directories that have the same name as an old directory that is still open
 @z
 
 @x
-* osxfs: rename events now trigger DELETE and/or MODIFY `inotify` events (saving with TextEdit works now)
+- osxfs: rename events now trigger DELETE and/or MODIFY `inotify` events (saving with TextEdit works now)
 @y
-* osxfs: rename events now trigger DELETE and/or MODIFY `inotify` events (saving with TextEdit works now)
+- osxfs: rename events now trigger DELETE and/or MODIFY `inotify` events (saving with TextEdit works now)
 @z
 
 @x
-* slirp: support up to 8 external DNS servers
+- slirp: support up to 8 external DNS servers
 @y
-* slirp: support up to 8 external DNS servers
+- slirp: support up to 8 external DNS servers
 @z
 
 @x
-* slirp: reduce the number of sockets used by UDP NAT, reduce the probability that NAT rules will time out earlier than expected
+- slirp: reduce the number of sockets used by UDP NAT, reduce the probability that NAT rules will time out earlier than expected
 @y
-* slirp: reduce the number of sockets used by UDP NAT, reduce the probability that NAT rules will time out earlier than expected
+- slirp: reduce the number of sockets used by UDP NAT, reduce the probability that NAT rules will time out earlier than expected
 @z
 
 @x
-* The app warns user if BlueStacks is installed (potential kernel panic)
+- The app warns user if BlueStacks is installed (potential kernel panic)
 @y
-* The app warns user if BlueStacks is installed (potential kernel panic)
+- The app warns user if BlueStacks is installed (potential kernel panic)
 @z
 
 @x
@@ -4592,33 +4696,33 @@ trees, may suffer from poor performance. More information is available in
 @z
 
 @x
-* Several problems have been reported on macOS 10.12 Sierra and are being investigated. This includes failure to launch the app and being unable to upgrade to a new version.
+- Several problems have been reported on macOS 10.12 Sierra and are being investigated. This includes failure to launch the app and being unable to upgrade to a new version.
 @y
-* Several problems have been reported on macOS 10.12 Sierra and are being investigated. This includes failure to launch the app and being unable to upgrade to a new version.
+- Several problems have been reported on macOS 10.12 Sierra and are being investigated. This includes failure to launch the app and being unable to upgrade to a new version.
 @z
 
 @x
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.  The issue is being investigated. The workaround is to restart `Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`.
 @y
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.  The issue is being investigated. The workaround is to restart `Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`.
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
-directories are currently slow. Additionally, containers that perform large
-numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
+  directories are currently slow. Additionally, containers that perform large
+  numbers of directory operations, such as repeated scans of large directory
+  trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
-directories are currently slow. Additionally, containers that perform large
-numbers of directory operations, such as repeated scans of large directory
-trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
+  directories are currently slow. Additionally, containers that perform large
+  numbers of directory operations, such as repeated scans of large directory
+  trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart `Docker.app`.
 @z
 
 @x
@@ -4634,13 +4738,13 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* Docker 1.12.1-rc1
-* Linux kernel 4.4.17
-* AUFS 20160808
+- Docker 1.12.1-rc1
+- Linux kernel 4.4.17
+- AUFS 20160808
 @y
-* Docker 1.12.1-rc1
-* Linux kernel 4.4.17
-* AUFS 20160808
+- Docker 1.12.1-rc1
+- Linux kernel 4.4.17
+- AUFS 20160808
 @z
 
 @x
@@ -4650,17 +4754,17 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* Moby: use default sysfs settings, transparent huge pages disabled
-* Moby: cgroup mount to support systemd in containers
-* osxfs: fixed an issue that caused `inotify` failure and crashes
-* osxfs: fixed a directory fd leak
-* Zsh completions
+- Moby: use default sysfs settings, transparent huge pages disabled
+- Moby: cgroup mount to support systemd in containers
+- osxfs: fixed an issue that caused `inotify` failure and crashes
+- osxfs: fixed a directory fd leak
+- Zsh completions
 @y
-* Moby: use default sysfs settings, transparent huge pages disabled
-* Moby: cgroup mount to support systemd in containers
-* osxfs: fixed an issue that caused `inotify` failure and crashes
-* osxfs: fixed a directory fd leak
-* Zsh completions
+- Moby: use default sysfs settings, transparent huge pages disabled
+- Moby: cgroup mount to support systemd in containers
+- osxfs: fixed an issue that caused `inotify` failure and crashes
+- osxfs: fixed a directory fd leak
+- Zsh completions
 @z
 
 @x
@@ -4670,27 +4774,27 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-*  Docker for Mac is not supported on macOS 10.12 Sierra
+- Docker for Mac is not supported on macOS 10.12 Sierra
 @y
-*  Docker for Mac is not supported on macOS 10.12 Sierra
+- Docker for Mac is not supported on macOS 10.12 Sierra
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @z
 
 @x
@@ -4706,9 +4810,9 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-*  Linux kernel to 4.4.16
+- Linux kernel to 4.4.16
 @y
-*  Linux kernel to 4.4.16
+- Linux kernel to 4.4.16
 @z
 
 @x
@@ -4718,19 +4822,19 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* Increase Moby fs.file-max to 524288
-* Use Mac System Configuration database to detect DNS
-* HyperKit updated with dtrace support and lock fixes
-* Fix Moby Diagnostics and Update Kernel
-* UI Fixes
-* osxfs: fix socket chowns
+- Increase Moby fs.file-max to 524288
+- Use Mac System Configuration database to detect DNS
+- HyperKit updated with dtrace support and lock fixes
+- Fix Moby Diagnostics and Update Kernel
+- UI Fixes
+- osxfs: fix socket chowns
 @y
-* Increase Moby fs.file-max to 524288
-* Use Mac System Configuration database to detect DNS
-* HyperKit updated with dtrace support and lock fixes
-* Fix Moby Diagnostics and Update Kernel
-* UI Fixes
-* osxfs: fix socket chowns
+- Increase Moby fs.file-max to 524288
+- Use Mac System Configuration database to detect DNS
+- HyperKit updated with dtrace support and lock fixes
+- Fix Moby Diagnostics and Update Kernel
+- UI Fixes
+- osxfs: fix socket chowns
 @z
 
 @x
@@ -4740,21 +4844,21 @@ trees, may suffer from poor performance. For more information and workarounds, s
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @z
 
 @x
@@ -4780,27 +4884,27 @@ events or unexpected unmounts.
 @z
 
 @x
-* osxfs: fixed an issue causing access to children of renamed directories to fail (symptoms: npm failures, apt-get failures)
+- osxfs: fixed an issue causing access to children of renamed directories to fail (symptoms: npm failures, apt-get failures)
 @y
-* osxfs: fixed an issue causing access to children of renamed directories to fail (symptoms: npm failures, apt-get failures)
+- osxfs: fixed an issue causing access to children of renamed directories to fail (symptoms: npm failures, apt-get failures)
 @z
 
 @x
-* osxfs: fixed an issue causing some ATTRIB and CREATE `inotify` events to fail delivery and other `inotify` events to stop
+- osxfs: fixed an issue causing some ATTRIB and CREATE `inotify` events to fail delivery and other `inotify` events to stop
 @y
-* osxfs: fixed an issue causing some ATTRIB and CREATE `inotify` events to fail delivery and other `inotify` events to stop
+- osxfs: fixed an issue causing some ATTRIB and CREATE `inotify` events to fail delivery and other `inotify` events to stop
 @z
 
 @x
-* osxfs: fixed an issue causing all `inotify` events to stop when an ancestor directory of a mounted directory was mounted
+- osxfs: fixed an issue causing all `inotify` events to stop when an ancestor directory of a mounted directory was mounted
 @y
-* osxfs: fixed an issue causing all `inotify` events to stop when an ancestor directory of a mounted directory was mounted
+- osxfs: fixed an issue causing all `inotify` events to stop when an ancestor directory of a mounted directory was mounted
 @z
 
 @x
-* osxfs: fixed an issue causing volumes mounted under other mounts to spontaneously unmount (docker/docker#24503)
+- osxfs: fixed an issue causing volumes mounted under other mounts to spontaneously unmount (docker/docker#24503)
 @y
-* osxfs: fixed an issue causing volumes mounted under other mounts to spontaneously unmount (docker/docker#24503)
+- osxfs: fixed an issue causing volumes mounted under other mounts to spontaneously unmount (docker/docker#24503)
 @z
 
 @x
@@ -4816,9 +4920,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](/manuals/desktop/setup/install/mac-install.md).
+- Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](/manuals/desktop/setup/install/mac-install.md).
 @y
-* Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](manuals/desktop/setup/install/mac-install.md).
+- Docker for Mac is now available from 2 channels: **stable** and **beta**. New features and bug fixes will go out first in auto-updates to users in the beta channel. Updates to the stable channel are much less frequent and happen in sync with major and minor releases of the Docker Engine. Only features that are well-tested and ready for production are added to the stable channel releases. For downloads of both and more information, see the [installation guide](manuals/desktop/setup/install/mac-install.md).
 @z
 
 @x
@@ -4828,13 +4932,13 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.12.0 with experimental features
-* Docker Machine 0.8.0
-* Docker Compose 1.8.0
+- Docker 1.12.0 with experimental features
+- Docker Machine 0.8.0
+- Docker Compose 1.8.0
 @y
-* Docker 1.12.0 with experimental features
-* Docker Machine 0.8.0
-* Docker Compose 1.8.0
+- Docker 1.12.0 with experimental features
+- Docker Machine 0.8.0
+- Docker Compose 1.8.0
 @z
 
 @x
@@ -4844,23 +4948,23 @@ events or unexpected unmounts.
 @z
 
 @x
-* Check for updates, auto-update and diagnose can be run by non-admin users
-* osxfs: fixed an issue causing occasional incorrect short reads
-* osxfs: fixed an issue causing occasional EIO errors
-* osxfs: fixed an issue causing `inotify` creation events to fail
-* osxfs: increased the `fs.inotify.max_user_watches` limit in Moby to 524288
-* The UI shows documentation link for sharing volumes
-* Clearer error message when running with outdated VirtualBox version
-* Added link to sources for qemu-img
+- Check for updates, auto-update and diagnose can be run by non-admin users
+- osxfs: fixed an issue causing occasional incorrect short reads
+- osxfs: fixed an issue causing occasional EIO errors
+- osxfs: fixed an issue causing `inotify` creation events to fail
+- osxfs: increased the `fs.inotify.max_user_watches` limit in Moby to 524288
+- The UI shows documentation link for sharing volumes
+- Clearer error message when running with outdated VirtualBox version
+- Added link to sources for qemu-img
 @y
-* Check for updates, auto-update and diagnose can be run by non-admin users
-* osxfs: fixed an issue causing occasional incorrect short reads
-* osxfs: fixed an issue causing occasional EIO errors
-* osxfs: fixed an issue causing `inotify` creation events to fail
-* osxfs: increased the `fs.inotify.max_user_watches` limit in Moby to 524288
-* The UI shows documentation link for sharing volumes
-* Clearer error message when running with outdated VirtualBox version
-* Added link to sources for qemu-img
+- Check for updates, auto-update and diagnose can be run by non-admin users
+- osxfs: fixed an issue causing occasional incorrect short reads
+- osxfs: fixed an issue causing occasional EIO errors
+- osxfs: fixed an issue causing `inotify` creation events to fail
+- osxfs: increased the `fs.inotify.max_user_watches` limit in Moby to 524288
+- The UI shows documentation link for sharing volumes
+- Clearer error message when running with outdated VirtualBox version
+- Added link to sources for qemu-img
 @z
 
 @x
@@ -4870,21 +4974,21 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @z
 
 @x
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @y
-* There are a number of issues with the performance of directories bind-mounted with `osxfs`.  In particular, writes of small blocks, and traversals of large directories are currently slow.  Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
 @z
 
 @x
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @y
-* Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
+- Under some unhandled error conditions, `inotify` event delivery can fail and become permanently disabled. The workaround is to restart Docker.app
 @z
 
 @x
@@ -4900,19 +5004,19 @@ events or unexpected unmounts.
 @z
 
 @x
-* Fixed `docker.sock` permission issues
-* Don't check for update when the settings panel opens
-* Removed obsolete DNS workaround
-* Use the secondary DNS server in more circumstances
-* Limit the number of concurrent port forwards to avoid running out of resources
-* Store the database as a "bare" git repo to avoid corruption problems
+- Fixed `docker.sock` permission issues
+- Don't check for update when the settings panel opens
+- Removed obsolete DNS workaround
+- Use the secondary DNS server in more circumstances
+- Limit the number of concurrent port forwards to avoid running out of resources
+- Store the database as a "bare" git repo to avoid corruption problems
 @y
-* Fixed `docker.sock` permission issues
-* Don't check for update when the settings panel opens
-* Removed obsolete DNS workaround
-* Use the secondary DNS server in more circumstances
-* Limit the number of concurrent port forwards to avoid running out of resources
-* Store the database as a "bare" git repo to avoid corruption problems
+- Fixed `docker.sock` permission issues
+- Don't check for update when the settings panel opens
+- Removed obsolete DNS workaround
+- Use the secondary DNS server in more circumstances
+- Limit the number of concurrent port forwards to avoid running out of resources
+- Store the database as a "bare" git repo to avoid corruption problems
 @z
 
 @x
@@ -4922,9 +5026,9 @@ events or unexpected unmounts.
 @z
 
 @x
-*  `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker for Mac (`Docker.app`).
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker for Mac (`Docker.app`).
 @y
-*  `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker for Mac (`Docker.app`).
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker for Mac (`Docker.app`).
 @z
 
 @x
@@ -4940,11 +5044,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* Added privacy tab in settings
-* Allow the definition of HTTP proxy overrides in the UI
+- Added privacy tab in settings
+- Allow the definition of HTTP proxy overrides in the UI
 @y
-* Added privacy tab in settings
-* Allow the definition of HTTP proxy overrides in the UI
+- Added privacy tab in settings
+- Allow the definition of HTTP proxy overrides in the UI
 @z
 
 @x
@@ -4954,15 +5058,15 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.12.0 RC4
-* Docker Compose 1.8.0 RC2
-* Docker Machine 0.8.0 RC2
-* Linux kernel 4.4.15
+- Docker 1.12.0 RC4
+- Docker Compose 1.8.0 RC2
+- Docker Machine 0.8.0 RC2
+- Linux kernel 4.4.15
 @y
-* Docker 1.12.0 RC4
-* Docker Compose 1.8.0 RC2
-* Docker Machine 0.8.0 RC2
-* Linux kernel 4.4.15
+- Docker 1.12.0 RC4
+- Docker Compose 1.8.0 RC2
+- Docker Machine 0.8.0 RC2
+- Linux kernel 4.4.15
 @z
 
 @x
@@ -4972,19 +5076,19 @@ events or unexpected unmounts.
 @z
 
 @x
-* Filesystem sharing permissions can only be configured in the UI (no more `/Mac` in moby)
-* `com.docker.osx.xhyve.hyperkit`: increased max number of fds to 10240
-* Improved Moby syslog facilities
-* Improved file-sharing tab
-* `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
-* `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
+- Filesystem sharing permissions can only be configured in the UI (no more `/Mac` in moby)
+- `com.docker.osx.xhyve.hyperkit`: increased max number of fds to 10240
+- Improved Moby syslog facilities
+- Improved file-sharing tab
+- `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
+- `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
 @y
-* Filesystem sharing permissions can only be configured in the UI (no more `/Mac` in moby)
-* `com.docker.osx.xhyve.hyperkit`: increased max number of fds to 10240
-* Improved Moby syslog facilities
-* Improved file-sharing tab
-* `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
-* `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
+- Filesystem sharing permissions can only be configured in the UI (no more `/Mac` in moby)
+- `com.docker.osx.xhyve.hyperkit`: increased max number of fds to 10240
+- Improved Moby syslog facilities
+- Improved file-sharing tab
+- `com.docker.slirp`: included the DNS TCP fallback fix, required when UDP responses are truncated
+- `docker build/events/logs/stats...` won't leak when interrupted with Ctrl-C
 @z
 
 @x
@@ -4994,9 +5098,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5022,9 +5126,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Fixed issue resulting in error "Hijack is incompatible with use of CloseNotifier", reverts previous fix for `Ctrl-C` during build.
+- Fixed issue resulting in error "Hijack is incompatible with use of CloseNotifier", reverts previous fix for `Ctrl-C` during build.
 @y
-* Fixed issue resulting in error "Hijack is incompatible with use of CloseNotifier", reverts previous fix for `Ctrl-C` during build.
+- Fixed issue resulting in error "Hijack is incompatible with use of CloseNotifier", reverts previous fix for `Ctrl-C` during build.
 @z
 
 @x
@@ -5034,11 +5138,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* New host/container file sharing UI
-* `/Mac` bind mount prefix is deprecated and will be removed soon
+- New host/container file sharing UI
+- `/Mac` bind mount prefix is deprecated and will be removed soon
 @y
-* New host/container file sharing UI
-* `/Mac` bind mount prefix is deprecated and will be removed soon
+- New host/container file sharing UI
+- `/Mac` bind mount prefix is deprecated and will be removed soon
 @z
 
 @x
@@ -5048,9 +5152,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.12.0 RC3
+- Docker 1.12.0 RC3
 @y
-* Docker 1.12.0 RC3
+- Docker 1.12.0 RC3
 @z
 
 @x
@@ -5060,11 +5164,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* VPNKit: Improved scalability as number of network connections increases
-* The docker API proxy was failing to deal with some 1.12 features, such as health check.
+- VPNKit: Improved scalability as number of network connections increases
+- The docker API proxy was failing to deal with some 1.12 features, such as health check.
 @y
-* VPNKit: Improved scalability as number of network connections increases
-* The docker API proxy was failing to deal with some 1.12 features, such as health check.
+- VPNKit: Improved scalability as number of network connections increases
+- The docker API proxy was failing to deal with some 1.12 features, such as health check.
 @z
 
 @x
@@ -5074,9 +5178,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5092,11 +5196,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* New host/container file sharing UI
-* `/Mac` bind mount prefix is deprecated and will be removed soon
+- New host/container file sharing UI
+- `/Mac` bind mount prefix is deprecated and will be removed soon
 @y
-* New host/container file sharing UI
-* `/Mac` bind mount prefix is deprecated and will be removed soon
+- New host/container file sharing UI
+- `/Mac` bind mount prefix is deprecated and will be removed soon
 @z
 
 @x
@@ -5106,9 +5210,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.12.0 RC3
+- Docker 1.12.0 RC3
 @y
-* Docker 1.12.0 RC3
+- Docker 1.12.0 RC3
 @z
 
 @x
@@ -5118,13 +5222,13 @@ events or unexpected unmounts.
 @z
 
 @x
-* VPNKit: Improved scalability as number of network connections increases
-* Interrupting a `docker build` with Ctrl-C will actually stop the build
-* The docker API proxy was failing to deal with some 1.12 features, such as health check.
+- VPNKit: Improved scalability as number of network connections increases
+- Interrupting a `docker build` with Ctrl-C will actually stop the build
+- The docker API proxy was failing to deal with some 1.12 features, such as health check.
 @y
-* VPNKit: Improved scalability as number of network connections increases
-* Interrupting a `docker build` with Ctrl-C will actually stop the build
-* The docker API proxy was failing to deal with some 1.12 features, such as health check.
+- VPNKit: Improved scalability as number of network connections increases
+- Interrupting a `docker build` with Ctrl-C will actually stop the build
+- The docker API proxy was failing to deal with some 1.12 features, such as health check.
 @z
 
 @x
@@ -5134,9 +5238,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5152,9 +5256,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Linux kernel 4.4.14, AUFS 20160627
+- Linux kernel 4.4.14, AUFS 20160627
 @y
-* Linux kernel 4.4.14, AUFS 20160627
+- Linux kernel 4.4.14, AUFS 20160627
 @z
 
 @x
@@ -5164,19 +5268,19 @@ events or unexpected unmounts.
 @z
 
 @x
-* Documentation moved to [/desktop/mac/](../_index.md)
-* Allow non-admin users to launch the app for the first time (using admin creds)
-* Prompt non-admin users for admin password when needed in Preferences
-* Fixed download links, documentation links
-* Fixed "failure: No error" message in diagnostic panel
-* Improved diagnostics for networking and logs for the service port openers
+- Documentation moved to [/desktop/mac/](../_index.md)
+- Allow non-admin users to launch the app for the first time (using admin creds)
+- Prompt non-admin users for admin password when needed in Preferences
+- Fixed download links, documentation links
+- Fixed "failure: No error" message in diagnostic panel
+- Improved diagnostics for networking and logs for the service port openers
 @y
-* Documentation moved to [/desktop/mac/](../_index.md)
-* Allow non-admin users to launch the app for the first time (using admin creds)
-* Prompt non-admin users for admin password when needed in Preferences
-* Fixed download links, documentation links
-* Fixed "failure: No error" message in diagnostic panel
-* Improved diagnostics for networking and logs for the service port openers
+- Documentation moved to [/desktop/mac/](../_index.md)
+- Allow non-admin users to launch the app for the first time (using admin creds)
+- Prompt non-admin users for admin password when needed in Preferences
+- Fixed download links, documentation links
+- Fixed "failure: No error" message in diagnostic panel
+- Improved diagnostics for networking and logs for the service port openers
 @z
 
 @x
@@ -5186,9 +5290,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5204,17 +5308,17 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.12.0 RC2
-* docker-compose 1.8.0 RC1
-* docker-machine 0.8.0 RC1
-* notary 0.3
-* Alpine 3.4
+- Docker 1.12.0 RC2
+- docker-compose 1.8.0 RC1
+- docker-machine 0.8.0 RC1
+- notary 0.3
+- Alpine 3.4
 @y
-* Docker 1.12.0 RC2
-* docker-compose 1.8.0 RC1
-* docker-machine 0.8.0 RC1
-* notary 0.3
-* Alpine 3.4
+- Docker 1.12.0 RC2
+- docker-compose 1.8.0 RC1
+- docker-machine 0.8.0 RC1
+- notary 0.3
+- Alpine 3.4
 @z
 
 @x
@@ -5224,15 +5328,15 @@ events or unexpected unmounts.
 @z
 
 @x
-* VPNKit: Fixed a regressed error message when a port is in use
-* Fixed UI crashing with `NSInternalInconsistencyException` / fixed leak
-* HyperKit API: Improved error reporting
-* osxfs: fix sporadic EBADF due to fd access/release races (#3683)
+- VPNKit: Fixed a regressed error message when a port is in use
+- Fixed UI crashing with `NSInternalInconsistencyException` / fixed leak
+- HyperKit API: Improved error reporting
+- osxfs: fix sporadic EBADF due to fd access/release races (#3683)
 @y
-* VPNKit: Fixed a regressed error message when a port is in use
-* Fixed UI crashing with `NSInternalInconsistencyException` / fixed leak
-* HyperKit API: Improved error reporting
-* osxfs: fix sporadic EBADF due to fd access/release races (#3683)
+- VPNKit: Fixed a regressed error message when a port is in use
+- Fixed UI crashing with `NSInternalInconsistencyException` / fixed leak
+- HyperKit API: Improved error reporting
+- osxfs: fix sporadic EBADF due to fd access/release races (#3683)
 @z
 
 @x
@@ -5242,9 +5346,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5260,13 +5364,13 @@ events or unexpected unmounts.
 @z
 
 @x
-* Registry mirror and insecure registries can now be configured from Preferences
-* Virtual machine can now be restarted from Preferences
-* `sysctl.conf` can be edited from Preferences
+- Registry mirror and insecure registries can now be configured from Preferences
+- Virtual machine can now be restarted from Preferences
+- `sysctl.conf` can be edited from Preferences
 @y
-* Registry mirror and insecure registries can now be configured from Preferences
-* Virtual machine can now be restarted from Preferences
-* `sysctl.conf` can be edited from Preferences
+- Registry mirror and insecure registries can now be configured from Preferences
+- Virtual machine can now be restarted from Preferences
+- `sysctl.conf` can be edited from Preferences
 @z
 
 @x
@@ -5276,11 +5380,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker 1.11.2
-* Linux 4.4.12, `aufs` 20160530
+- Docker 1.11.2
+- Linux 4.4.12, `aufs` 20160530
 @y
-* Docker 1.11.2
-* Linux 4.4.12, `aufs` 20160530
+- Docker 1.11.2
+- Linux 4.4.12, `aufs` 20160530
 @z
 
 @x
@@ -5290,15 +5394,15 @@ events or unexpected unmounts.
 @z
 
 @x
-* Timekeeping in Moby VM improved
-* Number of concurrent TCP/UDP connections increased in VPNKit
-* Hyperkit: `vsock` stability improvements
-* Fixed crash when user is admin
+- Timekeeping in Moby VM improved
+- Number of concurrent TCP/UDP connections increased in VPNKit
+- Hyperkit: `vsock` stability improvements
+- Fixed crash when user is admin
 @y
-* Timekeeping in Moby VM improved
-* Number of concurrent TCP/UDP connections increased in VPNKit
-* Hyperkit: `vsock` stability improvements
-* Fixed crash when user is admin
+- Timekeeping in Moby VM improved
+- Number of concurrent TCP/UDP connections increased in VPNKit
+- Hyperkit: `vsock` stability improvements
+- Fixed crash when user is admin
 @z
 
 @x
@@ -5308,9 +5412,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @y
-* See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5326,9 +5430,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* New settings menu item, **Diagnose & Feedback**, is available to run diagnostics and upload logs to Docker.
+- New settings menu item, **Diagnose & Feedback**, is available to run diagnostics and upload logs to Docker.
 @y
-* New settings menu item, **Diagnose & Feedback**, is available to run diagnostics and upload logs to Docker.
+- New settings menu item, **Diagnose & Feedback**, is available to run diagnostics and upload logs to Docker.
 @z
 
 @x
@@ -5338,9 +5442,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode with macOS 10.10. The issue is being investigated. The workaround is to restart `Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode with macOS 10.10. The issue is being investigated. The workaround is to restart `Docker.app`.
 @y
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode with macOS 10.10. The issue is being investigated. The workaround is to restart `Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode with macOS 10.10. The issue is being investigated. The workaround is to restart `Docker.app`.
 @z
 
 @x
@@ -5350,15 +5454,15 @@ events or unexpected unmounts.
 @z
 
 @x
-* `osxfs`: now support `statfs`
-* **Preferences**: updated toolbar icons
-* Fall back to secondary DNS server if primary fails.
-* Added a link to the documentation from menu.
+- `osxfs`: now support `statfs`
+- **Preferences**: updated toolbar icons
+- Fall back to secondary DNS server if primary fails.
+- Added a link to the documentation from menu.
 @y
-* `osxfs`: now support `statfs`
-* **Preferences**: updated toolbar icons
-* Fall back to secondary DNS server if primary fails.
-* Added a link to the documentation from menu.
+- `osxfs`: now support `statfs`
+- **Preferences**: updated toolbar icons
+- Fall back to secondary DNS server if primary fails.
+- Added a link to the documentation from menu.
 @z
 
 @x
@@ -5374,17 +5478,17 @@ events or unexpected unmounts.
 @z
 
 @x
-* `osxfs`:
+- `osxfs`:
   - Fixed sporadic EBADF errors and End_of_file crashes due to a race corrupting node table invariants
   - Fixed a crash after accessing a sibling of a file moved to another directory caused by a node table invariant violation
-* Fixed issue where Proxy settings were applied on network change, causing docker daemon to restart too often
-* Fixed issue where log file sizes doubled on docker daemon restart
+- Fixed issue where Proxy settings were applied on network change, causing docker daemon to restart too often
+- Fixed issue where log file sizes doubled on docker daemon restart
 @y
-* `osxfs`:
+- `osxfs`:
   - Fixed sporadic EBADF errors and End_of_file crashes due to a race corrupting node table invariants
   - Fixed a crash after accessing a sibling of a file moved to another directory caused by a node table invariant violation
-* Fixed issue where Proxy settings were applied on network change, causing docker daemon to restart too often
-* Fixed issue where log file sizes doubled on docker daemon restart
+- Fixed issue where Proxy settings were applied on network change, causing docker daemon to restart too often
+- Fixed issue where log file sizes doubled on docker daemon restart
 @z
 
 @x
@@ -5400,21 +5504,21 @@ events or unexpected unmounts.
 @z
 
 @x
-* `osxfs`: Enabled 10ms dcache for 3x speedup on a `go list ./...` test against docker/machine. Workloads heavy in file system path resolution (common among dynamic languages and build systems) will have those resolutions performed in amortized constant time rather than time linear in the depth of the path so speedups of 2-10x will be common.
+- `osxfs`: Enabled 10ms dcache for 3x speedup on a `go list ./...` test against docker/machine. Workloads heavy in file system path resolution (common among dynamic languages and build systems) will have those resolutions performed in amortized constant time rather than time linear in the depth of the path so speedups of 2-10x will be common.
 @y
-* `osxfs`: Enabled 10ms dcache for 3x speedup on a `go list ./...` test against docker/machine. Workloads heavy in file system path resolution (common among dynamic languages and build systems) will have those resolutions performed in amortized constant time rather than time linear in the depth of the path so speedups of 2-10x will be common.
+- `osxfs`: Enabled 10ms dcache for 3x speedup on a `go list ./...` test against docker/machine. Workloads heavy in file system path resolution (common among dynamic languages and build systems) will have those resolutions performed in amortized constant time rather than time linear in the depth of the path so speedups of 2-10x will be common.
 @z
 
 @x
-* Support multiple users on the same machine, non-admin users can use the app as long as `vmnetd` has been installed. Currently, only one user can be logged in at the same time.
+- Support multiple users on the same machine, non-admin users can use the app as long as `vmnetd` has been installed. Currently, only one user can be logged in at the same time.
 @y
-* Support multiple users on the same machine, non-admin users can use the app as long as `vmnetd` has been installed. Currently, only one user can be logged in at the same time.
+- Support multiple users on the same machine, non-admin users can use the app as long as `vmnetd` has been installed. Currently, only one user can be logged in at the same time.
 @z
 
 @x
-* Basic support for using system HTTP/HTTPS proxy in docker daemon
+- Basic support for using system HTTP/HTTPS proxy in docker daemon
 @y
-* Basic support for using system HTTP/HTTPS proxy in docker daemon
+- Basic support for using system HTTP/HTTPS proxy in docker daemon
 @z
 
 @x
@@ -5424,9 +5528,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @z
 
 @x
@@ -5436,19 +5540,19 @@ events or unexpected unmounts.
 @z
 
 @x
-* `osxfs`:
+- `osxfs`:
   - setting `atime` and `mtime` of nodes is now supported
   - Fixed major regression in Beta 12 with ENOENT, ENOTEMPY, and other spurious errors after a directory rename. This manifested as `npm install` failure and other directory traversal issues.
   - Fixed temporary file ENOENT errors
   - Fixed in-place editing file truncation error, such as when running `perl -i`
-* improved time synchronisation after sleep
+- improved time synchronisation after sleep
 @y
-* `osxfs`:
+- `osxfs`:
   - setting `atime` and `mtime` of nodes is now supported
   - Fixed major regression in Beta 12 with ENOENT, ENOTEMPY, and other spurious errors after a directory rename. This manifested as `npm install` failure and other directory traversal issues.
   - Fixed temporary file ENOENT errors
   - Fixed in-place editing file truncation error, such as when running `perl -i`
-* improved time synchronisation after sleep
+- improved time synchronisation after sleep
 @z
 
 @x
@@ -5464,9 +5568,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* FUSE 7.23 for osxfs
+- FUSE 7.23 for osxfs
 @y
-* FUSE 7.23 for osxfs
+- FUSE 7.23 for osxfs
 @z
 
 @x
@@ -5476,9 +5580,9 @@ events or unexpected unmounts.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @z
 
 @x
@@ -5488,11 +5592,11 @@ events or unexpected unmounts.
 @z
 
 @x
-* UI improvements
-* Fixed a problem in osxfs where`mkdir` returned EBUSY but directory was created.
+- UI improvements
+- Fixed a problem in osxfs where`mkdir` returned EBUSY but directory was created.
 @y
-* UI improvements
-* Fixed a problem in osxfs where`mkdir` returned EBUSY but directory was created.
+- UI improvements
+- Fixed a problem in osxfs where`mkdir` returned EBUSY but directory was created.
 @z
 
 @x
@@ -5520,11 +5624,11 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
-* Linux kernel 4.4.9
+- docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
+- Linux kernel 4.4.9
 @y
-* docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
-* Linux kernel 4.4.9
+- docker-compose 1.7.1 (see [changelog](https://github.com/docker/compose/releases/tag/1.7.1))
+- Linux kernel 4.4.9
 @z
 
 @x
@@ -5534,22 +5638,22 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Desktop notifications after successful update
-* No "update available" popup during install process
-* Fixed repeated bind of privileged ports
-* `osxfs`: Fixed the block count reported by stat
-* Moby (Backend) fixes:
+- Desktop notifications after successful update
+- No "update available" popup during install process
+- Fixed repeated bind of privileged ports
+- `osxfs`: Fixed the block count reported by stat
+- Moby (Backend) fixes:
   - Fixed `vsock` half closed issue
   - Added NFS support
   - Hostname is now Moby, not Docker
   - Fixes to disk formatting scripts
   - Linux kernel upgrade to 4.4.9
 @y
-* Desktop notifications after successful update
-* No "update available" popup during install process
-* Fixed repeated bind of privileged ports
-* `osxfs`: Fixed the block count reported by stat
-* Moby (Backend) fixes:
+- Desktop notifications after successful update
+- No "update available" popup during install process
+- Fixed repeated bind of privileged ports
+- `osxfs`: Fixed the block count reported by stat
+- Moby (Backend) fixes:
   - Fixed `vsock` half closed issue
   - Added NFS support
   - Hostname is now Moby, not Docker
@@ -5570,9 +5674,9 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Token validation is now done over an actual SSL tunnel (HTTPS). (This should fix issues with antivirus applications.)
+- Token validation is now done over an actual SSL tunnel (HTTPS). (This should fix issues with antivirus applications.)
 @y
-* Token validation is now done over an actual SSL tunnel (HTTPS). (This should fix issues with antivirus applications.)
+- Token validation is now done over an actual SSL tunnel (HTTPS). (This should fix issues with antivirus applications.)
 @z
 
 @x
@@ -5582,9 +5686,9 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docker 1.11.1
+- Docker 1.11.1
 @y
-* Docker 1.11.1
+- Docker 1.11.1
 @z
 
 @x
@@ -5594,21 +5698,21 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* UCP now starts again
-* Include debugging symbols in HyperKit
-* vsock stability improvements
-* Addressed glitches in **Preferences** panel
-* Fixed issues impacting the “whale menu”
-* Fixed uninstall process
-* HyperKit vcpu state machine improvements, may improve suspend/resume
+- UCP now starts again
+- Include debugging symbols in HyperKit
+- vsock stability improvements
+- Addressed glitches in **Preferences** panel
+- Fixed issues impacting the “whale menu”
+- Fixed uninstall process
+- HyperKit vcpu state machine improvements, may improve suspend/resume
 @y
-* UCP now starts again
-* Include debugging symbols in HyperKit
-* vsock stability improvements
-* Addressed glitches in **Preferences** panel
-* Fixed issues impacting the “whale menu”
-* Fixed uninstall process
-* HyperKit vcpu state machine improvements, may improve suspend/resume
+- UCP now starts again
+- Include debugging symbols in HyperKit
+- vsock stability improvements
+- Addressed glitches in **Preferences** panel
+- Fixed issues impacting the “whale menu”
+- Fixed uninstall process
+- HyperKit vcpu state machine improvements, may improve suspend/resume
 @z
 
 @x
@@ -5624,11 +5728,11 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* New Preferences window - memory and vCPUs now adjustable
-* `localhost` is now used for port forwarding by default.`docker.local` will no longer work as of Beta 9.
+- New Preferences window - memory and vCPUs now adjustable
+- `localhost` is now used for port forwarding by default.`docker.local` will no longer work as of Beta 9.
 @y
-* New Preferences window - memory and vCPUs now adjustable
-* `localhost` is now used for port forwarding by default.`docker.local` will no longer work as of Beta 9.
+- New Preferences window - memory and vCPUs now adjustable
+- `localhost` is now used for port forwarding by default.`docker.local` will no longer work as of Beta 9.
 @z
 
 @x
@@ -5638,9 +5742,9 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app.
 @z
 
 @x
@@ -5650,35 +5754,35 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Fix loopback device naming
-* Improved docker socket download and osxfs sequential write by 20%
-* `com.docker.osxfs`
+- Fix loopback device naming
+- Improved docker socket download and osxfs sequential write by 20%
+- `com.docker.osxfs`
   - improved sequential read throughput by up to 20%
   - improved `readdir` performance by up to 6x
   - log all fatal exceptions
-* More reliable DNS forwarding over UDP and TCP
-* UDP ports can be proxied over vsock
-* Fixed EADDRINUSE (manifesting as errno 526) when ports are re-used
-* Send ICMP when asked to not fragment and we can't guarantee it
-* Fixed parsing of UDP datagrams with IP socket options
-* Drop abnormally large ethernet frames
-* Improved HyperKit logging
-* Record virtual machine start and stop events
+- More reliable DNS forwarding over UDP and TCP
+- UDP ports can be proxied over vsock
+- Fixed EADDRINUSE (manifesting as errno 526) when ports are re-used
+- Send ICMP when asked to not fragment and we can't guarantee it
+- Fixed parsing of UDP datagrams with IP socket options
+- Drop abnormally large ethernet frames
+- Improved HyperKit logging
+- Record virtual machine start and stop events
 @y
-* Fix loopback device naming
-* Improved docker socket download and osxfs sequential write by 20%
-* `com.docker.osxfs`
+- Fix loopback device naming
+- Improved docker socket download and osxfs sequential write by 20%
+- `com.docker.osxfs`
   - improved sequential read throughput by up to 20%
   - improved `readdir` performance by up to 6x
   - log all fatal exceptions
-* More reliable DNS forwarding over UDP and TCP
-* UDP ports can be proxied over vsock
-* Fixed EADDRINUSE (manifesting as errno 526) when ports are re-used
-* Send ICMP when asked to not fragment and we can't guarantee it
-* Fixed parsing of UDP datagrams with IP socket options
-* Drop abnormally large ethernet frames
-* Improved HyperKit logging
-* Record virtual machine start and stop events
+- More reliable DNS forwarding over UDP and TCP
+- UDP ports can be proxied over vsock
+- Fixed EADDRINUSE (manifesting as errno 526) when ports are re-used
+- Send ICMP when asked to not fragment and we can't guarantee it
+- Fixed parsing of UDP datagrams with IP socket options
+- Drop abnormally large ethernet frames
+- Improved HyperKit logging
+- Record virtual machine start and stop events
 @z
 
 @x
@@ -5694,23 +5798,27 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Networking mode switched to VPN compatible by default, and as part of this change the overall experience has been improved:
- - `docker.local` now works in VPN compatibility mode
- - exposing ports on the Mac is available in both networking modes
- - port forwarding of privileged ports now works in both networking modes
- - traffic to external DNS servers is no longer dropped in VPN mode
+- Networking mode switched to VPN compatible by default, and as part of this change the overall experience has been improved:
 @y
-* Networking mode switched to VPN compatible by default, and as part of this change the overall experience has been improved:
- - `docker.local` now works in VPN compatibility mode
- - exposing ports on the Mac is available in both networking modes
- - port forwarding of privileged ports now works in both networking modes
- - traffic to external DNS servers is no longer dropped in VPN mode
+- Networking mode switched to VPN compatible by default, and as part of this change the overall experience has been improved:
 @z
 
 @x
-* `osxfs` now uses `AF_VSOCK` for transport giving ~1.8x speedup for large sequential read/write workloads but increasing latency by ~1.3x. `osxfs` performance engineering work continues.
+* `docker.local` now works in VPN compatibility mode
+* exposing ports on the Mac is available in both networking modes
+* port forwarding of privileged ports now works in both networking modes
+* traffic to external DNS servers is no longer dropped in VPN mode
 @y
-* `osxfs` now uses `AF_VSOCK` for transport giving ~1.8x speedup for large sequential read/write workloads but increasing latency by ~1.3x. `osxfs` performance engineering work continues.
+* `docker.local` now works in VPN compatibility mode
+* exposing ports on the Mac is available in both networking modes
+* port forwarding of privileged ports now works in both networking modes
+* traffic to external DNS servers is no longer dropped in VPN mode
+@z
+
+@x
+- `osxfs` now uses `AF_VSOCK` for transport giving ~1.8x speedup for large sequential read/write workloads but increasing latency by ~1.3x. `osxfs` performance engineering work continues.
+@y
+- `osxfs` now uses `AF_VSOCK` for transport giving ~1.8x speedup for large sequential read/write workloads but increasing latency by ~1.3x. `osxfs` performance engineering work continues.
 @z
 
 @x
@@ -5720,9 +5828,9 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart `Docker.app`
 @z
 
 @x
@@ -5732,21 +5840,21 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Apple System Log now used for most logs instead of direct filesystem logging
-* `docker_proxy` fixes
-* Merged HyperKit upstream patches
-* Improved error reporting in `nat` network mode
-* `osxfs` `transfused` client now logs over `AF_VSOCK`
-* Fixed a `com.docker.osx.HyperKit.linux` supervisor deadlock if processes exit during a controlled shutdown
-* Fixed VPN mode malformed DNS query bug preventing some resolutions
+- Apple System Log now used for most logs instead of direct filesystem logging
+- `docker_proxy` fixes
+- Merged HyperKit upstream patches
+- Improved error reporting in `nat` network mode
+- `osxfs` `transfused` client now logs over `AF_VSOCK`
+- Fixed a `com.docker.osx.HyperKit.linux` supervisor deadlock if processes exit during a controlled shutdown
+- Fixed VPN mode malformed DNS query bug preventing some resolutions
 @y
-* Apple System Log now used for most logs instead of direct filesystem logging
-* `docker_proxy` fixes
-* Merged HyperKit upstream patches
-* Improved error reporting in `nat` network mode
-* `osxfs` `transfused` client now logs over `AF_VSOCK`
-* Fixed a `com.docker.osx.HyperKit.linux` supervisor deadlock if processes exit during a controlled shutdown
-* Fixed VPN mode malformed DNS query bug preventing some resolutions
+- Apple System Log now used for most logs instead of direct filesystem logging
+- `docker_proxy` fixes
+- Merged HyperKit upstream patches
+- Improved error reporting in `nat` network mode
+- `osxfs` `transfused` client now logs over `AF_VSOCK`
+- Fixed a `com.docker.osx.HyperKit.linux` supervisor deadlock if processes exit during a controlled shutdown
+- Fixed VPN mode malformed DNS query bug preventing some resolutions
 @z
 
 @x
@@ -5762,11 +5870,11 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docs are updated per the Beta 7 release
-* Use AF_VSOCK for docker socket transport
+- Docs are updated per the Beta 7 release
+- Use AF_VSOCK for docker socket transport
 @y
-* Docs are updated per the Beta 7 release
-* Use AF_VSOCK for docker socket transport
+- Docs are updated per the Beta 7 release
+- Use AF_VSOCK for docker socket transport
 @z
 
 @x
@@ -5776,13 +5884,13 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* docker 1.11.0-rc5
-* docker-machine 0.7.0-rc3
-* docker-compose 1.7.0rc2
+- docker 1.11.0-rc5
+- docker-machine 0.7.0-rc3
+- docker-compose 1.7.0rc2
 @y
-* docker 1.11.0-rc5
-* docker-machine 0.7.0-rc3
-* docker-compose 1.7.0rc2
+- docker 1.11.0-rc5
+- docker-machine 0.7.0-rc3
+- docker-compose 1.7.0rc2
 @z
 
 @x
@@ -5792,15 +5900,15 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @y
-* Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
+- Docker.app sometimes uses 200% CPU after macOS wakes up from sleep mode. The issue is being investigated. The workaround is to restart Docker.app
 @z
 
 @x
-* If VPN mode is enabled and then disabled and then re-enabled again, `docker ps` will block for 90s
+- If VPN mode is enabled and then disabled and then re-enabled again, `docker ps` will block for 90s
 @y
-* If VPN mode is enabled and then disabled and then re-enabled again, `docker ps` will block for 90s
+- If VPN mode is enabled and then disabled and then re-enabled again, `docker ps` will block for 90s
 @z
 
 @x
@@ -5810,11 +5918,11 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Logging improvements
-* Improve process management
+- Logging improvements
+- Improve process management
 @y
-* Logging improvements
-* Improve process management
+- Logging improvements
+- Improve process management
 @z
 
 @x
@@ -5830,11 +5938,11 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* Docs are updated per the Beta 6 release
-* Added uninstall option in user interface
+- Docs are updated per the Beta 6 release
+- Added uninstall option in user interface
 @y
-* Docs are updated per the Beta 6 release
-* Added uninstall option in user interface
+- Docs are updated per the Beta 6 release
+- Added uninstall option in user interface
 @z
 
 @x
@@ -5844,13 +5952,13 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* docker 1.11.0-rc5
-* docker-machine 0.7.0-rc3
-* docker-compose 1.7.0rc2
+- docker 1.11.0-rc5
+- docker-machine 0.7.0-rc3
+- docker-compose 1.7.0rc2
 @y
-* docker 1.11.0-rc5
-* docker-machine 0.7.0-rc3
-* docker-compose 1.7.0rc2
+- docker 1.11.0-rc5
+- docker-machine 0.7.0-rc3
+- docker-compose 1.7.0rc2
 @z
 
 @x
@@ -5860,21 +5968,21 @@ The `osxfs` file system now persists ownership changes in an extended attribute.
 @z
 
 @x
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.
-The issue is being investigated. The workaround is to restart
-`Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.
+  The issue is being investigated. The workaround is to restart
+  `Docker.app`.
 @y
-* `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.
-The issue is being investigated. The workaround is to restart
-`Docker.app`.
+- `Docker.app` sometimes uses 200% CPU after macOS wakes up from sleep mode.
+  The issue is being investigated. The workaround is to restart
+  `Docker.app`.
 @z
 
 @x
-* If VPN mode is enabled, then disabled and re-enabled again,
-`docker ps` will block for 90 seconds.
+- If VPN mode is enabled, then disabled and re-enabled again,
+  `docker ps` will block for 90 seconds.
 @y
-* If VPN mode is enabled, then disabled and re-enabled again,
-`docker ps` will block for 90 seconds.
+- If VPN mode is enabled, then disabled and re-enabled again,
+  `docker ps` will block for 90 seconds.
 @z
 
 @x
@@ -5884,39 +5992,39 @@ The issue is being investigated. The workaround is to restart
 @z
 
 @x
-* Fixed osxfs multiple same directory bind mounts stopping inotify
-* Fixed osxfs `setattr` on mode 0 files (`sed` failures)
-* Fixed osxfs blocking all operations during `readdir`
-* Fixed osxfs mishandled errors which crashed the file system and VM
-* Removed outdated `lofs`/`9p` support
-* Added more debugging info to logs uploaded by `pinata diagnose`
-* Improved diagnostics from within the virtual machine
-* VirtualBox version check now also works without VBoxManage in path
-* VPN mode now uses same IP range as NAT mode
-* Tokens are now verified on port 443
-* Removed outdated uninstall scripts
-* Increased default ulimits
-* Port forwarding with `-p` and `-P` should work in VPN mode
-* Fixed a memory leak in `com.docker.db`
-* Fixed a race condition on startup between Docker and networking which can
-lead to `Docker.app` not starting on reboot
+- Fixed osxfs multiple same directory bind mounts stopping inotify
+- Fixed osxfs `setattr` on mode 0 files (`sed` failures)
+- Fixed osxfs blocking all operations during `readdir`
+- Fixed osxfs mishandled errors which crashed the file system and VM
+- Removed outdated `lofs`/`9p` support
+- Added more debugging info to logs uploaded by `pinata diagnose`
+- Improved diagnostics from within the virtual machine
+- VirtualBox version check now also works without VBoxManage in path
+- VPN mode now uses same IP range as NAT mode
+- Tokens are now verified on port 443
+- Removed outdated uninstall scripts
+- Increased default ulimits
+- Port forwarding with `-p` and `-P` should work in VPN mode
+- Fixed a memory leak in `com.docker.db`
+- Fixed a race condition on startup between Docker and networking which can
+  lead to `Docker.app` not starting on reboot
 @y
-* Fixed osxfs multiple same directory bind mounts stopping inotify
-* Fixed osxfs `setattr` on mode 0 files (`sed` failures)
-* Fixed osxfs blocking all operations during `readdir`
-* Fixed osxfs mishandled errors which crashed the file system and VM
-* Removed outdated `lofs`/`9p` support
-* Added more debugging info to logs uploaded by `pinata diagnose`
-* Improved diagnostics from within the virtual machine
-* VirtualBox version check now also works without VBoxManage in path
-* VPN mode now uses same IP range as NAT mode
-* Tokens are now verified on port 443
-* Removed outdated uninstall scripts
-* Increased default ulimits
-* Port forwarding with `-p` and `-P` should work in VPN mode
-* Fixed a memory leak in `com.docker.db`
-* Fixed a race condition on startup between Docker and networking which can
-lead to `Docker.app` not starting on reboot
+- Fixed osxfs multiple same directory bind mounts stopping inotify
+- Fixed osxfs `setattr` on mode 0 files (`sed` failures)
+- Fixed osxfs blocking all operations during `readdir`
+- Fixed osxfs mishandled errors which crashed the file system and VM
+- Removed outdated `lofs`/`9p` support
+- Added more debugging info to logs uploaded by `pinata diagnose`
+- Improved diagnostics from within the virtual machine
+- VirtualBox version check now also works without VBoxManage in path
+- VPN mode now uses same IP range as NAT mode
+- Tokens are now verified on port 443
+- Removed outdated uninstall scripts
+- Increased default ulimits
+- Port forwarding with `-p` and `-P` should work in VPN mode
+- Fixed a memory leak in `com.docker.db`
+- Fixed a race condition on startup between Docker and networking which can
+  lead to `Docker.app` not starting on reboot
 @z
 
 @x
@@ -6041,12 +6149,12 @@ lead to `Docker.app` not starting on reboot
 
 @x
 - VPN/Hostnet: In VPN mode, the `-p` option needs to be explicitly of the form
-`-p <host port>:<container port>`. `-p <port>` and `-P` will not
-work yet.
+  `-p <host port>:<container port>`. `-p <port>` and `-P` will not
+  work yet.
 @y
 - VPN/Hostnet: In VPN mode, the `-p` option needs to be explicitly of the form
-`-p <host port>:<container port>`. `-p <port>` and `-P` will not
-work yet.
+  `-p <host port>:<container port>`. `-p <port>` and `-P` will not
+  work yet.
 @z
 
 @x
@@ -6351,15 +6459,11 @@ work yet.
 
 @x
 - Hostnet
-@y
-- Hostnet
-@z
-
-@x
   - Fixed port forwarding issue
   - Stability fixes
   - Fixed setting hostname
 @y
+- Hostnet
   - Fixed port forwarding issue
   - Stability fixes
   - Fixed setting hostname

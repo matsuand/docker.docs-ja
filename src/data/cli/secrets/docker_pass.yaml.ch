@@ -4,157 +4,74 @@
 @x
 command: docker pass
 short: Manage your local OS keychain secrets.
-long: |-
-  Docker Pass is a helper that allows you to store secrets securely in your
-  local OS keychain and inject them into containers later.
+long: "Docker Pass is a helper for securely storing secrets in your local OS keychain and injecting them into containers when needed. \nIt uses platform-specific credential storage:\n\n  - Windows: Windows Credential Manager API\n  - macOS:   Keychain services API\n  - Linux:   org.freedesktop.secrets API (requires DBus + gnome-keyring or kdewallet)\n\nSecrets can be injected into running containers at runtime using the se:// URI scheme."
+usage: docker pass set|get|ls|rm
 @y
 command: docker pass
 short: Manage your local OS keychain secrets.
-long: |-
-  Docker Pass is a helper that allows you to store secrets securely in your
-  local OS keychain and inject them into containers later.
-@z
-
-@x
-  On Windows: Uses the Windows Credential Manager API.
-@y
-  On Windows: Uses the Windows Credential Manager API.
-@z
-
-@x
-  On macOS: Uses macOS Keychain services API.
-@y
-  On macOS: Uses macOS Keychain services API.
-@z
-
-@x
-  On Linux: `org.freedesktop.secrets` API (requires DBus and `gnome-keyring` or
-  `kdewallet` to be installed).
+long: "Docker Pass is a helper for securely storing secrets in your local OS keychain and injecting them into containers when needed. \nIt uses platform-specific credential storage:\n\n  - Windows: Windows Credential Manager API\n  - macOS:   Keychain services API\n  - Linux:   org.freedesktop.secrets API (requires DBus + gnome-keyring or kdewallet)\n\nSecrets can be injected into running containers at runtime using the se:// URI scheme."
 usage: docker pass set|get|ls|rm
-pname: docker
-plink: docker.yaml
-cname:
-  - docker pass set
-  - docker pass get
-  - docker pass ls
-  - docker pass rm
-clink:
-  - docker_pass_set.yaml
-  - docker_pass_get.yaml
-  - docker_pass_ls.yaml
-  - docker_pass_rm.yaml
-deprecated: false
-experimental: true
-experimentalcli: true
-kubernetes: false
-swarm: false
+@z
+
+@x
 examples: |-
-  ### Using keychain secrets in containers
+    ### Using keychain secrets in containers
 @y
-  On Linux: `org.freedesktop.secrets` API (requires DBus and `gnome-keyring` or
-  `kdewallet` to be installed).
-usage: docker pass set|get|ls|rm
-pname: docker
-plink: docker.yaml
-cname:
-  - docker pass set
-  - docker pass get
-  - docker pass ls
-  - docker pass rm
-clink:
-  - docker_pass_set.yaml
-  - docker_pass_get.yaml
-  - docker_pass_ls.yaml
-  - docker_pass_rm.yaml
-deprecated: false
-experimental: true
-experimentalcli: true
-kubernetes: false
-swarm: false
 examples: |-
-  ### Using keychain secrets in containers
+    ### Using keychain secrets in containers
 @z
 
 @x
-  Create a secret:
+    Create a secret:
 @y
-  Create a secret:
+    Create a secret:
+@z
+
+% snip command...
+
+@x
+    Create a secret from STDIN:
+@y
+    Create a secret from STDIN:
+@z
+
+% snip command...
+
+@x
+    Run a container that uses the secret:
+@y
+    Run a container that uses the secret:
+@z
+
+% snip command...
+
+@x
+    Inspect the secret from inside the container:
+@y
+    Inspect the secret from inside the container:
+@z
+
+% snip command...
+
+@x
+    Explicitly assign a secret to a different environment variable:
+@y
+    Explicitly assign a secret to a different environment variable:
+@z
+
+% snip command...
+
+@x
+    ### Using keychain secrets in Compose
+@y
+    ### Using keychain secrets in Compose
 @z
 
 @x
-  ```console
-  $ docker pass set GH_TOKEN=123456789
-  ```
+    Store the secrets:
 @y
-  ```console
-  $ docker pass set GH_TOKEN=123456789
-  ```
+    Store the secrets:
 @z
 
-@x
-  Creating a secret from STDIN:
-@y
-  Creating a secret from STDIN:
-@z
-
-@x
-  ```console
-  echo 123456789 > token.txt
-  cat token.txt | docker pass set GH_TOKEN
-  ```
-@y
-  ```console
-  echo 123456789 > token.txt
-  cat token.txt | docker pass set GH_TOKEN
-  ```
-@z
-
-@x
-  Run a container that uses the secret:
-@y
-  Run a container that uses the secret:
-@z
-
-@x
-  ```console
-  $ docker run -e GH_TOKEN= -dt --name demo busybox
-  ```
-@y
-  ```console
-  $ docker run -e GH_TOKEN= -dt --name demo busybox
-  ```
-@z
-
-@x
-  Inspect your secret from inside the container
-@y
-  Inspect your secret from inside the container
-@z
-
-@x
-  ```console
-  $ docker exec demo sh -c 'echo $GH_TOKEN'
-  123456789
-  ```
-@y
-  ```console
-  $ docker exec demo sh -c 'echo $GH_TOKEN'
-  123456789
-  ```
-@z
-
-@x
-  Explicitly assigning a secret to another environment variable:
-@y
-  Explicitly assigning a secret to another environment variable:
-@z
-
-@x
-  ```console
-  $ docker run -e GITHUB_TOKEN=se://GH_TOKEN -dt --name demo busybox
-  ```
-@y
-  ```console
-  $ docker run -e GITHUB_TOKEN=se://GH_TOKEN -dt --name demo busybox
-  ```
-@z
+% snip command...
+% snip code...

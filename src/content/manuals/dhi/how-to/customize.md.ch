@@ -119,10 +119,40 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-1. Select the image version you want to customize.
+1. Select one or more images or Helm charts and versions you want to customize.
+@y
+1. Select one or more images or Helm charts and versions you want to customize.
+@z
+
+@x
+   When selecting multiple images and versions, all selections must share the
+   same distribution and distribution version. For example, you can select
+   `dhi-node:22_alpine3.23` and `dhi-python:3.13_alpine3.23` together (both
+   Alpine 3.23), but you cannot mix `dhi-node:22_debian` with Alpine images, or
+   mix different Alpine versions like `alpine3.23` and `alpine3.22`.
+@y
+   When selecting multiple images and versions, all selections must share the
+   same distribution and distribution version. For example, you can select
+   `dhi-node:22_alpine3.23` and `dhi-python:3.13_alpine3.23` together (both
+   Alpine 3.23), but you cannot mix `dhi-node:22_debian` with Alpine images, or
+   mix different Alpine versions like `alpine3.23` and `alpine3.22`.
+@z
+
+@x
+   Alternatively, you can select multiple Helm chart versions to apply the same
+   customization to all of them. You cannot mix images and Helm charts in the
+   same customization.
+@y
+   Alternatively, you can select multiple Helm chart versions to apply the same
+   customization to all of them. You cannot mix images and Helm charts in the
+   same customization.
+@z
+
+@x
+1. Select **Next**.
 1. Optional. Add packages.
 @y
-1. Select the image version you want to customize.
+1. Select **Next**.
 1. Optional. Add packages.
 @z
 
@@ -258,6 +288,18 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 1. Select **Next: Configure** to configure the following image settings:
 @y
 1. Select **Next: Configure** to configure the following image settings:
+@z
+
+@x
+   > [!NOTE]
+   >
+   > When customizing multiple images at once, many of these configuration
+   > options are limited by default and may not be available.
+@y
+   > [!NOTE]
+   >
+   > When customizing multiple images at once, many of these configuration
+   > options are limited by default and may not be available.
 @z
 
 @x
@@ -278,6 +320,11 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       customized image's tag. For example, if you specify `custom` when
       customizing the `dhi-python:3.13` image, the customized image will be
       tagged as `dhi-python:3.13_custom`.
+   1. Select the compression format for the image layers. You can choose between
+      **ZSTD** (default) or **GZIP** compression. **ZSTD** typically provides
+      faster image pulls and better compression ratios, but may have
+      compatibility issues with older software. If you need compatibility with
+      older Docker versions, use **GZIP**.
    1. Select the platforms you want to build the image for. You must select at
       least one platform.
 @y
@@ -298,6 +345,11 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       customized image's tag. For example, if you specify `custom` when
       customizing the `dhi-python:3.13` image, the customized image will be
       tagged as `dhi-python:3.13_custom`.
+   1. Select the compression format for the image layers. You can choose between
+      **ZSTD** (default) or **GZIP** compression. **ZSTD** typically provides
+      faster image pulls and better compression ratios, but may have
+      compatibility issues with older software. If you need compatibility with
+      older Docker versions, use **GZIP**.
    1. Select the platforms you want to build the image for. You must select at
       least one platform.
 @z

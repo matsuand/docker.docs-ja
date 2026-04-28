@@ -10,7 +10,6 @@ bases = \
 	linux-postinstall.md \
 	raspberry-pi-os.md   \
 	rhel.md              \
-	sles.md              \
 	ubuntu.md
 
 include $(top_srcdir)/build-aux/common.mk

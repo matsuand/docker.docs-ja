@@ -70,9 +70,9 @@ Members are granted controlled access to resources and enjoy enhanced organizati
 @z
 
 @x
-For detailed information, see [Manage organization members](/manuals/admin/organization/members.md).
+For detailed information, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 @y
-For detailed information, see [Manage organization members](manuals/admin/organization/members.md).
+For detailed information, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 @z
 
 @x

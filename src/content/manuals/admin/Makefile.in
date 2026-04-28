@@ -295,9 +295,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = company faqs images organization
+SUBDIRS = company images organization
 bases = \
-	_index.md
+	_index.md        \
+	activity-logs.md \
+	insights.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

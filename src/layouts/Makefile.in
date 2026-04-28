@@ -320,6 +320,7 @@ commitdate = `(cd @abs_origdir@ && git log -1 --pretty=format:"%ad" --date=short
 commithash = `(cd @abs_origdir@ && git log -1 --pretty=format:"%h") | sed "s|\-|/|g"`
 copyfiles = \
 	home.llms.txt       \
+	home.llmsfull.txt   \
 	home.metadata.json  \
 	home.redirects.json \
 	home.robots.txt     \

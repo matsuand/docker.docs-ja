@@ -294,10 +294,10 @@ Close the database connection and exit the container shell by running `exit`.
 @z
 
 @x
-Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple web application with the text `Student name is Whale Moby`.
+Open a browser and view the application at [http://localhost:8080](http://localhost:8080). You should see a simple web application with the text `Student name is Moby Whale`.
 @y
 ブラウザーを開いて [http://localhost:8080](http://localhost:8080) にアクセスしてアプリケーションを確認します。
-単純なウェブアプリケーションが起動し、`Student name is Whale Moby` という文字列が表示されたはずです。
+単純なウェブアプリケーションが起動し、`Student name is Moby Whale` という文字列が表示されたはずです。
 @z
 
 @x

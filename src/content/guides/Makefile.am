@@ -32,6 +32,7 @@ bases = \
 	dhi-nodejs-example.md                  \
 	dhi-openshift.md                       \
 	dhi-python-example.md                  \
+	django.md                              \
 	gha.md                                 \
 	jupyter.md                             \
 	kafka.md                               \

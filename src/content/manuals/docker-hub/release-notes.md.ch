@@ -12,11 +12,13 @@ linkTitle: Release notes
 @z
 
 @x
-description: Learn about the new features, bug fixes, and breaking changes for Docker
+description:
+  Learn about the new features, bug fixes, and breaking changes for Docker
   Hub
 keywords: docker hub, whats new, release notes
 @y
-description: Learn about the new features, bug fixes, and breaking changes for Docker
+description:
+  Learn about the new features, bug fixes, and breaking changes for Docker
   Hub
 keywords: docker hub, whats new, release notes
 @z
@@ -100,9 +102,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
- - You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
+- You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
 @y
- - You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
+- You can tag Docker Hub repositories with [categories](./repos/manage/information.md#repository-categories).
 @z
 
 @x
@@ -202,9 +204,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
--  You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](group-mapping.md) for SSO and SCIM provisioning.
+- You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](group-mapping.md) for SSO and SCIM provisioning.
 @y
--  You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](group-mapping.md) for SSO and SCIM provisioning.
+- You can now automatically sync user updates with your Docker organizations and teams with [Group Mapping](group-mapping.md) for SSO and SCIM provisioning.
 @z
 
 @x
@@ -274,9 +276,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- You can now [export a CSV file of members](../admin/organization//members.md#export-members) from organizations that you own.
+- You can now [export a CSV file of members](../admin/organization/manage/members.md#export-members-csv-file) from organizations that you own.
 @y
-- You can now [export a CSV file of members](../admin/organization//members.md#export-members) from organizations that you own.
+- You can now [export a CSV file of members](../admin/organization/manage/members.md#export-members-csv-file) from organizations that you own.
 @z
 
 @x
@@ -428,9 +430,9 @@ The updated [Docker Subscription Service Agreement](https://www.docker.com/legal
 @z
 
 @x
-    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
+  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
 @y
-    To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
+  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
 @z
 
 @x
@@ -548,9 +550,9 @@ Docker introduces Audit logs, a new feature that allows team owners to view a li
 @z
 
 @x
-For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/organization/activity-logs.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/activity-logs.md).
 @y
-For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/organization/activity-logs.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/activity-logs.md).
 @z
 
 @x
@@ -602,15 +604,15 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
+- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
 @y
-* Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
+- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
 @z
 
 @x
-* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](/manuals/docker-hub/usage/_index.md).
+- Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](/manuals/docker-hub/usage/_index.md).
 @y
-* Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](manuals/docker-hub/usage/_index.md).
+- Docker has enabled download rate limits for downloads and pull requests on Docker Hub. This caps the number of objects that users can download within a specified timeframe. For more information, see [Usage and limits](manuals/docker-hub/usage/_index.md).
 @z
 
 @x
@@ -626,13 +628,13 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-* The [repositories page](repos/_index.md) and all
-related settings and tabs have been updated and moved from `cloud.docker.com`
-to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
+- The [repositories page](repos/_index.md) and all
+  related settings and tabs have been updated and moved from `cloud.docker.com`
+  to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
 @y
-* The [repositories page](repos/_index.md) and all
-related settings and tabs have been updated and moved from `cloud.docker.com`
-to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
+- The [repositories page](repos/_index.md) and all
+  related settings and tabs have been updated and moved from `cloud.docker.com`
+  to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker.com/repositories](https://hub.docker.com/repositories).
 @z
 
 @x
@@ -642,9 +644,9 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z
 
 @x
@@ -660,17 +662,17 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @z
 
 @x
-* **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
+- **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
 @y
-* **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
+- **Beta:** Docker Hub now supports two-factor authentication (2FA). Enable it in your account settings, under the **[Security](https://hub.docker.com/settings/security)** section.
 @z
 
 @x
-    > If you lose both your 2FA authentication device and recovery code, you may
-    > not be able to recover your account.
+  > If you lose both your 2FA authentication device and recovery code, you may
+  > not be able to recover your account.
 @y
-    > If you lose both your 2FA authentication device and recovery code, you may
-    > not be able to recover your account.
+  > If you lose both your 2FA authentication device and recovery code, you may
+  > not be able to recover your account.
 @z
 
 @x
@@ -680,9 +682,9 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @z
 
 @x
-* As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
+- As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
 @y
-* As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
+- As a security measure, when two-factor authentication is enabled, the Docker CLI requires a personal access token instead of a password to log in.
 @z
 
 @x
@@ -692,9 +694,9 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z
 
 @x
@@ -710,29 +712,29 @@ to `hub.docker.com`. You can access the page at its new URL: [https://hub.docker
 @z
 
 @x
-* You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
-Each organization page now breaks down into these tabs:
-  * **New:** Members - manage your members directly from this page (delete,
-  add, or open their teams)
-  * **New:** Teams - search by team or username, and open up any team page to
-  manage the team
-  * **New:** Invitees (conditional tab, only if an invite exists) - resend or
-  remove invitations from this tab
-  * Repositories
-  * Settings
-  * Billing
+- You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
+  Each organization page now breaks down into these tabs:
+  - **New:** Members - manage your members directly from this page (delete,
+    add, or open their teams)
+  - **New:** Teams - search by team or username, and open up any team page to
+    manage the team
+  - **New:** Invitees (conditional tab, only if an invite exists) - resend or
+    remove invitations from this tab
+  - Repositories
+  - Settings
+  - Billing
 @y
-* You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
-Each organization page now breaks down into these tabs:
-  * **New:** Members - manage your members directly from this page (delete,
-  add, or open their teams)
-  * **New:** Teams - search by team or username, and open up any team page to
-  manage the team
-  * **New:** Invitees (conditional tab, only if an invite exists) - resend or
-  remove invitations from this tab
-  * Repositories
-  * Settings
-  * Billing
+- You can now manage teams and members straight from your [organization page](https://hub.docker.com/orgs).
+  Each organization page now breaks down into these tabs:
+  - **New:** Members - manage your members directly from this page (delete,
+    add, or open their teams)
+  - **New:** Teams - search by team or username, and open up any team page to
+    manage the team
+  - **New:** Invitees (conditional tab, only if an invite exists) - resend or
+    remove invitations from this tab
+  - Repositories
+  - Settings
+  - Billing
 @z
 
 @x
@@ -742,9 +744,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* Fixed an issue where Kinematic could not connect and log in to Docker Hub.
+- Fixed an issue where Kinematic could not connect and log in to Docker Hub.
 @y
-* Fixed an issue where Kinematic could not connect and log in to Docker Hub.
+- Fixed an issue where Kinematic could not connect and log in to Docker Hub.
 @z
 
 @x
@@ -754,9 +756,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z
 
 @x
@@ -772,9 +774,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* You can now [create personal access tokens](/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+- You can now [create personal access tokens](/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @y
-* You can now [create personal access tokens](__SUBDIR__/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+- You can now [create personal access tokens](__SUBDIR__/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @z
 
 @x
@@ -784,9 +786,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z
 
 @x
@@ -802,9 +804,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @y
-* The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @z
 
 @x
@@ -814,9 +816,9 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z
 
 @x
@@ -832,19 +834,19 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* The `Tags` tab on an image page now provides additional information for each tag:
-  * A list of digests associated with the tag
-  * The architecture it was built on
-  * The OS
-  * The user who most recently updated an image for a specific tag
-* The security scan summary for Docker Official Images has been updated.
+- The `Tags` tab on an image page now provides additional information for each tag:
+  - A list of digests associated with the tag
+  - The architecture it was built on
+  - The OS
+  - The user who most recently updated an image for a specific tag
+- The security scan summary for Docker Official Images has been updated.
 @y
-* The `Tags` tab on an image page now provides additional information for each tag:
-  * A list of digests associated with the tag
-  * The architecture it was built on
-  * The OS
-  * The user who most recently updated an image for a specific tag
-* The security scan summary for Docker Official Images has been updated.
+- The `Tags` tab on an image page now provides additional information for each tag:
+  - A list of digests associated with the tag
+  - The architecture it was built on
+  - The OS
+  - The user who most recently updated an image for a specific tag
+- The security scan summary for Docker Official Images has been updated.
 @z
 
 @x
@@ -854,7 +856,7 @@ Each organization page now breaks down into these tabs:
 @z
 
 @x
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @y
-* Scan results don't appear for some official images.
+- Scan results don't appear for some official images.
 @z

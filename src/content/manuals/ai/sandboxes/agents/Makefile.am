@@ -9,6 +9,7 @@ bases = \
 	copilot.md             \
 	custom-environments.md \
 	docker-agent.md        \
+	droid.md               \
 	gemini.md              \
 	kiro.md                \
 	opencode.md

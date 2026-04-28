@@ -5,10 +5,12 @@
 
 @x
 title: Deactivate an organization
+linkTitle: Deactivate
 description: Learn how to deactivate a Docker organization and required prerequisite steps.
 keywords: delete, deactivate organization, account, organization management, Admin Console, cancel subscription
 @y
 title: Deactivate an organization
+linkTitle: Deactivate
 description: Learn how to deactivate a Docker organization and required prerequisite steps.
 keywords: delete, deactivate organization, account, organization management, Admin Console, cancel subscription
 @z

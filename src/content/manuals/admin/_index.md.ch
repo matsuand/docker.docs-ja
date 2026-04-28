@@ -47,12 +47,12 @@ keywords: admin, administration, company, organization, Admin Console, user acco
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: /admin/organization/onboard
+    link: /admin/organization/setup/onboard
 @y
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: __SUBDIR__/admin/organization/onboard
+    link: __SUBDIR__/admin/organization/setup/onboard
 @z
 
 @x
@@ -142,11 +142,11 @@ The company owner:
 @x
 - Can view and manage all organizations within the company
 - Has full access to company-wide settings and inherits the same permissions as organization owners
-- Do not occupy a seat
+- Does not occupy a seat
 @y
 - Can view and manage all organizations within the company
 - Has full access to company-wide settings and inherits the same permissions as organization owners
-- Do not occupy a seat
+- Does not occupy a seat
 @z
 
 @x
@@ -162,9 +162,9 @@ Companies are only available for Docker Business subscribers.
 @z
 
 @x
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/manuals/admin/faqs/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @y
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](manuals/admin/faqs/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
+Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @z
 
 @x

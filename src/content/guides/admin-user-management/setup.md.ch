@@ -32,9 +32,9 @@ Before setting up roles and permissions, it's important to have a clear understa
 @z
 
 @x
-For steps on how you can do this, see [step 1 of onboarding your organization](/manuals/admin/organization/onboard.md).
+For steps on how you can do this, see [step 1 of onboarding your organization](/manuals/admin/organization/setup/onboard.md).
 @y
-For steps on how you can do this, see [step 1 of onboarding your organization](manuals/admin/organization/onboard.md).
+For steps on how you can do this, see [step 1 of onboarding your organization](manuals/admin/organization/setup/onboard.md).
 @z
 
 @x
@@ -94,9 +94,9 @@ Teams in Docker provide a structured way to manage member access and they provid
 @z
 
 @x
-For more information, see [Create and manage a team](/manuals/admin/organization/manage-a-team.md).
+For more information, see [Create and manage a team](/manuals/admin/organization/manage/manage-a-team.md).
 @y
-For more information, see [Create and manage a team](manuals/admin/organization/manage-a-team.md).
+For more information, see [Create and manage a team](manuals/admin/organization/manage/manage-a-team.md).
 @z
 
 @x

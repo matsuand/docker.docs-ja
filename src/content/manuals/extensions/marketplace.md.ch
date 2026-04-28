@@ -37,6 +37,16 @@ Self-published extensions are autonomously published by extension developers and
 @z
 
 @x
+> [!IMPORTANT]
+>
+> Marketplace extensions are reviewed by Docker, but are not subject to a full security audit. Extensions run with host-level privileges. They can install binaries, access Docker Engine, invoke commands, and access files on your machine. Only install extensions from publishers you trust.
+@y
+> [!IMPORTANT]
+>
+> Marketplace extensions are reviewed by Docker, but are not subject to a full security audit. Extensions run with host-level privileges. They can install binaries, access Docker Engine, invoke commands, and access files on your machine. Only install extensions from publishers you trust.
+@z
+
+@x
 ## Install an extension
 @y
 ## Extension のインストール {#install-an-extension}

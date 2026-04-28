@@ -1,10 +1,12 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
+
 bases = \
-	_index.md       \
-	company-faqs.md \
-	organization-faqs.md
+	_index.md          \
+	manage-a-team.md   \
+	manage-products.md \
+	members.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

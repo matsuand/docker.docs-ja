@@ -15,9 +15,11 @@ linkTitle: Secrets
 @x
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
+tags: [Secrets]
 @y
 description: Manage credentials and other secrets securely
 keywords: build, secrets, credentials, passwords, tokens, ssh, git, auth, http
+tags: [Secrets]
 @z
 
 @x
@@ -321,13 +323,13 @@ building with remote, private Git repositories, including:
 @z
 
 @x
-For example, say you have a private GitLab project at
-`https://gitlab.com/example/todo-app.git`, and you want to run a build using
+For example, say you have a private GitHub repository at
+`https://github.com/example/todo-app.git`, and you want to run a build using
 that repository as the build context. An unauthenticated `docker build` command
 fails because the builder isn't authorized to pull the repository:
 @y
-For example, say you have a private GitLab project at
-`https://gitlab.com/example/todo-app.git`, and you want to run a build using
+For example, say you have a private GitHub repository at
+`https://github.com/example/todo-app.git`, and you want to run a build using
 that repository as the build context. An unauthenticated `docker build` command
 fails because the builder isn't authorized to pull the repository:
 @z
@@ -335,12 +337,12 @@ fails because the builder isn't authorized to pull the repository:
 % snip command...
 
 @x
-To authenticate the builder to the Git server, set the `GIT_AUTH_TOKEN`
-environment variable to contain a valid GitLab access token, and pass it as a
+To authenticate the builder to GitHub, set the `GIT_AUTH_TOKEN`
+environment variable to contain a valid GitHub access token, and pass it as a
 secret to the build:
 @y
-To authenticate the builder to the Git server, set the `GIT_AUTH_TOKEN`
-environment variable to contain a valid GitLab access token, and pass it as a
+To authenticate the builder to GitHub, set the `GIT_AUTH_TOKEN`
+environment variable to contain a valid GitHub access token, and pass it as a
 secret to the build:
 @z
 
@@ -363,28 +365,62 @@ part of your build:
 @z
 
 @x
-By default, Git authentication over HTTP uses the Bearer authentication scheme:
+BuildKit supports two Git authentication secrets:
 @y
-By default, Git authentication over HTTP uses the Bearer authentication scheme:
+BuildKit supports two Git authentication secrets:
+@z
+
+@x
+- **`GIT_AUTH_TOKEN`**: Uses Basic authentication with a fixed username of `x-access-token` (the GitHub-style default)
+- **`GIT_AUTH_HEADER`**: Uses the raw authorization header value you provide (works with any Git provider)
+@y
+- **`GIT_AUTH_TOKEN`**: Uses Basic authentication with a fixed username of `x-access-token` (the GitHub-style default)
+- **`GIT_AUTH_HEADER`**: Uses the raw authorization header value you provide (works with any Git provider)
+@z
+
+@x
+#### Using GIT_AUTH_TOKEN (for example, GitHub)
+@y
+#### Using GIT_AUTH_TOKEN (for example, GitHub)
+@z
+
+@x
+When you use `GIT_AUTH_TOKEN`, BuildKit constructs a Basic authentication header using `x-access-token` as the user:
+@y
+When you use `GIT_AUTH_TOKEN`, BuildKit constructs a Basic authentication header using `x-access-token` as the user:
 @z
 
 % snip code...
 
 @x
-If you need to use a Basic scheme, with a username and password, you can set
-the `GIT_AUTH_HEADER` build secret:
+This method works for providers that accept the `x-access-token` Basic auth pattern, such as GitHub. Example usage:
 @y
-If you need to use a Basic scheme, with a username and password, you can set
-the `GIT_AUTH_HEADER` build secret:
+This method works for providers that accept the `x-access-token` Basic auth pattern, such as GitHub. Example usage:
 @z
 
 % snip command...
 
 @x
-BuildKit currently only supports the Bearer and Basic schemes.
+#### Using GIT_AUTH_HEADER (custom authorization header)
 @y
-BuildKit currently only supports the Bearer and Basic schemes.
+#### Using GIT_AUTH_HEADER (custom authorization header)
 @z
+
+@x
+When you use `GIT_AUTH_HEADER`, BuildKit uses the exact value you provide as the `Authorization` header:
+@y
+When you use `GIT_AUTH_HEADER`, BuildKit uses the exact value you provide as the `Authorization` header:
+@z
+
+% snip code...
+
+@x
+Example usage with GitLab CI/CD token:
+@y
+Example usage with GitLab CI/CD token:
+@z
+
+% snip command...
 
 @x
 ### Multiple hosts

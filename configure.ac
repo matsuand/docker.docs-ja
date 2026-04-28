@@ -149,9 +149,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/accounts/Makefile
 	src/content/manuals/admin/Makefile
 	src/content/manuals/admin/company/Makefile
-	src/content/manuals/admin/faqs/Makefile
+	src/content/manuals/admin/company/manage/Makefile
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
+	src/content/manuals/admin/organization/manage/Makefile
+	src/content/manuals/admin/organization/setup/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/compose/Makefile
 	src/content/manuals/ai/docker-agent/Makefile

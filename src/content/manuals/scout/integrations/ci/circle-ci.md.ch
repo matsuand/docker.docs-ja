@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How to integrate Docker Scout with Circle CI
 keywords: supply chain, security, ci, continuous integration, circle ci
 title: Integrate Docker Scout with Circle CI
 linkTitle: Circle CI
----
 @y
----
 description: How to integrate Docker Scout with Circle CI
 keywords: supply chain, security, ci, continuous integration, circle ci
 title: Integrate Docker Scout with Circle CI
 linkTitle: Circle CI
----
 @z
 
 @x
@@ -136,14 +132,14 @@ steps:
   - run:
       name: Scan image for CVEs
       command: |
-        docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high
+        docker scout cves $IMAGE_TAG --exit-code --only-severity critical,high
 ```
 @y
   # Run Docker Scout          
   - run:
       name: Scan image for CVEs
       command: |
-        docker-scout cves $IMAGE_TAG --exit-code --only-severity critical,high
+        docker scout cves $IMAGE_TAG --exit-code --only-severity critical,high
 ```
 @z
 

@@ -152,13 +152,13 @@ You can change your password by initiating a password reset via email. To change
 1. Select your avatar in the top-right corner and select **Account settings**.
 1. Select **Password**, then **Reset password**.
 1. Docker will send you a password reset email with instructions to reset
-your password.
+   your password.
 @y
 1. Sign in to your [Docker account](https://app.docker.com/login).
 1. Select your avatar in the top-right corner and select **Account settings**.
 1. Select **Password**, then **Reset password**.
 1. Docker will send you a password reset email with instructions to reset
-your password.
+   your password.
 @z
 
 @x
@@ -269,10 +269,10 @@ or GitHub. See Google or GitHub's documentation for more information:
 
 @x
 For information on converting your account into an organization, see
-[Convert an account into an organization](../admin/organization/convert-account.md).
+[Convert an account into an organization](../admin/organization/setup/convert-account.md).
 @y
 For information on converting your account into an organization, see
-[Convert an account into an organization](../admin/organization/convert-account.md).
+[Convert an account into an organization](../admin/organization/setup/convert-account.md).
 @z
 
 @x

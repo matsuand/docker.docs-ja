@@ -8,7 +8,7 @@
 @z
 
 @x
-  {{ $specURL := urls.Parse (printf "/%s%s.yaml" .File.Dir .File.ContentBaseName) }}
+    {{ $specURL := urls.Parse (printf "/%s%s.yaml" .File.Dir .File.ContentBaseName) }}
 @y
-  {{ $specURL := urls.Parse (printf "__SUBDIR__/%s%s.yaml" .File.Dir .File.ContentBaseName) }}
+    {{ $specURL := urls.Parse (printf "__SUBDIR__/%s%s.yaml" .File.Dir .File.ContentBaseName) }}
 @z

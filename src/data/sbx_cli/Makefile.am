@@ -14,6 +14,7 @@ bases = \
 	sbx_create_codex.yaml          \
 	sbx_create_copilot.yaml        \
 	sbx_create_docker-agent.yaml   \
+	sbx_create_droid.yaml          \
 	sbx_create_gemini.yaml         \
 	sbx_create_kiro.yaml           \
 	sbx_create_opencode.yaml       \

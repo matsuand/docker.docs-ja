@@ -104,7 +104,7 @@ cleaning up.
 @z
 
 @x
-- Ubuntu 22.04 or later
+- Ubuntu 24.04 or later
 - 64-bit Intel or AMD (x86_64)
 - KVM hardware virtualization supported and enabled by the CPU. If you're
   running inside a VM, nested virtualization must be turned on. Verify that KVM
@@ -121,7 +121,7 @@ cleaning up.
   ```
   Log out and back in (or run `newgrp kvm`) for the group change to take effect.
 @y
-- Ubuntu 22.04 or later
+- Ubuntu 24.04 or later
 - 64-bit Intel or AMD (x86_64)
 - KVM hardware virtualization supported and enabled by the CPU. If you're
   running inside a VM, nested virtualization must be turned on. Verify that KVM

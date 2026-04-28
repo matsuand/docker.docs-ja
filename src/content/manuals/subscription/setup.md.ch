@@ -55,11 +55,11 @@ You can subscribe a new or existing organization to Docker Team or Business subs
 
 @x
 1. [Create your Docker ID](../accounts/create-account.md) if you don't already have one.
-1. [Create your organization](../admin/organization/orgs.md) or use an existing organization you own.
+1. [Create your organization](../admin/organization/setup/orgs.md) or use an existing organization you own.
 1. Choose and purchase a Docker Team or Business subscription for the organization.
 @y
 1. [Create your Docker ID](../accounts/create-account.md) if you don't already have one.
-1. [Create your organization](../admin/organization/orgs.md) or use an existing organization you own.
+1. [Create your organization](../admin/organization/setup/orgs.md) or use an existing organization you own.
 1. Choose and purchase a Docker Team or Business subscription for the organization.
 @z
 

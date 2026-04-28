@@ -2,11 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Create a company
+title: Create new company
+linkTitle: Create
+@y
+title: Create new company
+linkTitle: Create
+@z
+
+@x
 description: Learn how to create a company to centrally manage multiple organizations.
 keywords: company, hub, organization, company owner, Admin Console, company management, Docker Business, create company, Docker Admin Console
 @y
-title: Create a company
 description: Learn how to create a company to centrally manage multiple organizations.
 keywords: company, hub, organization, company owner, Admin Console, company management, Docker Business, create company, Docker Admin Console
 @z
@@ -59,28 +65,28 @@ To create a new company:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Admin Console**, then **Company management**.
 1. Select **Create a company**.
 1. Enter a unique name for your company, then select **Continue**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
-organization.
+   organization.
 1. Select **Admin Console**, then **Company management**.
 1. Select **Create a company**.
 1. Enter a unique name for your company, then select **Continue**.
 @z
 
 @x
-    > [!TIP]
-    >
-    > The name for your company can't be the same as an existing user,
-    organization, or company namespace.
+   > [!TIP]
+   >
+   > The name for your company can't be the same as an existing user,
+   > organization, or company namespace.
 @y
-    > [!TIP]
-    >
-    > The name for your company can't be the same as an existing user,
-    organization, or company namespace.
+   > [!TIP]
+   >
+   > The name for your company can't be the same as an existing user,
+   > organization, or company namespace.
 @z
 
 @x
@@ -91,10 +97,10 @@ organization.
 
 @x
 For more information on how you can add organizations to your company,
-see [Add organizations to a company](./organizations.md#add-organizations-to-a-company).
+see [Add organizations to a company](./manage/organizations.md#add-organizations-to-a-company).
 @y
 For more information on how you can add organizations to your company,
-see [Add organizations to a company](./organizations.md#add-organizations-to-a-company).
+see [Add organizations to a company](./manage/organizations.md#add-organizations-to-a-company).
 @z
 
 @x
@@ -104,13 +110,13 @@ see [Add organizations to a company](./organizations.md#add-organizations-to-a-c
 @z
 
 @x
-- [Manage organizations](./organizations.md)
-- [Manage company members](./users.md)
-- [Manage company owners](./owners.md)
+- [Manage organizations](./manage/organizations.md)
+- [Manage company members](./manage/users.md)
+- [Manage company owners](./manage/owners.md)
 @y
-- [Manage organizations](./organizations.md)
-- [Manage company members](./users.md)
-- [Manage company owners](./owners.md)
+- [Manage organizations](./manage/organizations.md)
+- [Manage company members](./manage/users.md)
+- [Manage company owners](./manage/owners.md)
 @z
 
 @x

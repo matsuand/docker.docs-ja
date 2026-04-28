@@ -126,7 +126,7 @@ SCIM automates:
 >
 > To remove those users, delete them manually from your Docker organization.
 > For more information, see
-> [Manage organization members](/manuals/admin/organization/members.md).
+> [Manage organization members](/manuals/admin/organization/manage/members.md).
 @y
 > [!NOTE]
 >
@@ -136,7 +136,7 @@ SCIM automates:
 >
 > To remove those users, delete them manually from your Docker organization.
 > For more information, see
-> [Manage organization members](manuals/admin/organization/members.md).
+> [Manage organization members](manuals/admin/organization/manage/members.md).
 @z
 
 @x

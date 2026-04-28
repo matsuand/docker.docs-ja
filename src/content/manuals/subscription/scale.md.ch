@@ -28,9 +28,9 @@ You can scale consumption for:
 @z
 
 @x
-To understand your usage patterns, [view your consumption](../admin/organization/manage-products.md#view-docker-product-usage) at any time.
+To understand your usage patterns, [view your consumption](../admin/organization/manage/manage-products.md#monitor-product-usage-for-your-organization) at any time.
 @y
-To understand your usage patterns, [view your consumption](../admin/organization/manage-products.md#view-docker-product-usage) at any time.
+To understand your usage patterns, [view your consumption](../admin/organization/manage/manage-products.md#monitor-product-usage-for-your-organization) at any time.
 @z
 
 @x

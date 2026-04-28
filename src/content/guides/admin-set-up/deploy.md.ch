@@ -82,11 +82,11 @@ To continue optimizing your Docker environment:
 @z
 
 @x
-- Review your [organization's usage data](/manuals/admin/organization/insights.md) to track adoption
+- Review your [organization's usage data](/manuals/admin/insights.md) to track adoption
 - Monitor [Docker Scout findings](/manuals/scout/explore/analysis.md) for security insights
 - Explore [additional security features](/manuals/enterprise/security/_index.md) to enhance your configuration
 @y
-- Review your [organization's usage data](manuals/admin/organization/insights.md) to track adoption
+- Review your [organization's usage data](manuals/admin/insights.md) to track adoption
 - Monitor [Docker Scout findings](manuals/scout/explore/analysis.md) for security insights
 - Explore [additional security features](manuals/enterprise/security/_index.md) to enhance your configuration
 @z

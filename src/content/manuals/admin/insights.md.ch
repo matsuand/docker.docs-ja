@@ -5,10 +5,14 @@
 
 @x
 title: Insights
+@y
+title: Insights
+@z
+
+@x
 description: Gain insights about your organization's users and their Docker usage.
 keywords: organization, insights, Docker Desktop analytics, user usage statistics, Docker Business, track Docker activity
 @y
-title: Insights
 description: Gain insights about your organization's users and their Docker usage.
 keywords: organization, insights, Docker Desktop analytics, user usage statistics, Docker Business, track Docker activity
 @z
@@ -88,23 +92,21 @@ To use Insights, you must meet the following requirements:
 @z
 
 @x
-To access Insights, contact your Account Executive to have the
-feature turned on. Once the feature is turned on, access Insights using the
+To access Insights, contact your Account Executive to turn on the feature. Once enabled, access Insights using the
 following steps:
 @y
-To access Insights, contact your Account Executive to have the
-feature turned on. Once the feature is turned on, access Insights using the
+To access Insights, contact your Account Executive to turn on the feature. Once enabled, access Insights using the
 following steps:
 @z
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and choose
    your organization.
-1. Select **Insights**. then select the period of time for the data.
+2. Select **Insights**, then select a time period for the data you want to view.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and choose
    your organization.
-1. Select **Insights**. then select the period of time for the data.
+2. Select **Insights**, then select a time period for the data you want to view.
 @z
 
 @x
@@ -119,28 +121,6 @@ following steps:
 > Insights data is not real-time and is updated daily. At the top-right of the
 > Insights page, view the **Last updated** date to understand when the data was
 > last updated.
-@z
-
-@x
-Insights data is displayed in the following charts:
-@y
-Insights data is displayed in the following charts:
-@z
-
-@x
-- [Docker Desktop users](#docker-desktop-users)
-- [Builds](#builds)
-- [Containers](#containers)
-- [Docker Desktop usage](#docker-desktop-usage)
-- [Docker Hub images](#docker-hub-images)
-- [Extensions](#extensions)
-@y
-- [Docker Desktop users](#docker-desktop-users)
-- [Builds](#builds)
-- [Containers](#containers)
-- [Docker Desktop usage](#docker-desktop-usage)
-- [Docker Hub images](#docker-hub-images)
-- [Extensions](#extensions)
 @z
 
 @x

@@ -58,13 +58,25 @@ You can explore the list of available extensions in [Docker Hub](https://hub.doc
 @z
 
 @x
-To find out more about Docker Extensions, we recommend the video walkthrough from DockerCon 2022:
+## Security and trust
 @y
-Docker Extensions に関するより詳細については、DockerCon 2022 におけるビデオウォークスルーをお勧めします。
+## Security and trust
 @z
 
 @x
-<iframe width="750" height="315" src="https://www.youtube.com/embed/3rAGXS8pszQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Docker Extensions run with elevated privileges on your host machine. They have direct access to the Docker Engine, can read and write files on your filesystem, and can install and run native binaries.
 @y
-<iframe width="750" height="315" src="https://www.youtube.com/embed/3rAGXS8pszQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Docker Extensions run with elevated privileges on your host machine. They have direct access to the Docker Engine, can read and write files on your filesystem, and can install and run native binaries.
+@z
+
+@x
+Docker reviews extensions submitted to the Marketplace, but does not guarantee the security of any extension. Extensions installed outside the Marketplace have not been reviewed at all. Only install extensions from publishers you trust.
+@y
+Docker reviews extensions submitted to the Marketplace, but does not guarantee the security of any extension. Extensions installed outside the Marketplace have not been reviewed at all. Only install extensions from publishers you trust.
+@z
+
+@x
+If you're an organization admin, see [Configure a private marketplace](private-marketplace.md) to control which extensions your team can install.
+@y
+If you're an organization admin, see [Configure a private marketplace](private-marketplace.md) to control which extensions your team can install.
 @z

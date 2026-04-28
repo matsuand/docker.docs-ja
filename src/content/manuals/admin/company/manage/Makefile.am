@@ -2,12 +2,11 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = company images organization
-
 bases = \
 	_index.md        \
-	activity-logs.md \
-	insights.md
+	organizations.md \
+	owners.md        \
+	users.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

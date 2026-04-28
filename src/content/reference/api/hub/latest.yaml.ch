@@ -302,7 +302,7 @@ tags:
 @z
 
 @x
-      For more information, see [Audit Logs](https://docs.docker.com/admin/organization/activity-logs/).
+      For more information, see [Audit Logs](https://docs.docker.com/admin/activity-logs/).
   - name: org-settings
     x-displayName: Org Settings
     description: |
@@ -317,7 +317,7 @@ tags:
     description: |
       The organization endpoints allow you to interact with and manage your organizations.
 @y
-      For more information, see [Audit Logs](https://docs.docker.com/admin/organization/activity-logs/).
+      For more information, see [Audit Logs](https://docs.docker.com/admin/activity-logs/).
   - name: org-settings
     x-displayName: Org Settings
     description: |
@@ -350,14 +350,14 @@ tags:
 @z
 
 @x
-      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
+      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage/manage-a-team/).
   - name: invites
     x-displayName: Invites
     x-audience: public
     description: |
       The invites endpoints allow you to manage invites for users to join your Docker organization.
 @y
-      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage-a-team/).
+      For more information, see [Create and manage a team](https://docs.docker.com/admin/organization/manage/manage-a-team/).
   - name: invites
     x-displayName: Invites
     x-audience: public
@@ -366,14 +366,14 @@ tags:
 @z
 
 @x
-      For more information, see [Invite members](https://docs.docker.com/admin/organization/members/#invite-members).
+      For more information, see [Invite members](https://docs.docker.com/admin/organization/manage/members/#invite-members).
   - name: scim
     x-displayName: SCIM
     x-audience: public
     description: |
       SCIM is a provisioning system that lets you manage users within your identity provider (IdP).
 @y
-      For more information, see [Invite members](https://docs.docker.com/admin/organization/members/#invite-members).
+      For more information, see [Invite members](https://docs.docker.com/admin/organization/manage/members/#invite-members).
   - name: scim
     x-displayName: SCIM
     x-audience: public
@@ -3184,9 +3184,9 @@ paths:
 @z
 
 @x
-        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
 @y
-        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+        To make visible, please see [View Insights for organization users](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
 @z
 
 @x
@@ -6011,20 +6011,20 @@ components:
           format: date-time
           description: |
             Last time the user logged in. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: "2021-01-05T21:06:53.506400Z"
         last_seen_at:
           type: string
           format: date-time
           description: |
             Last time the user was seen. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: "2021-01-05T21:06:53.506400Z"
         last_desktop_version:
           type: string
           description: |
             Last desktop version the user used. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: 4.29.0
 @y
         - `eq` equal
@@ -7446,20 +7446,20 @@ components:
           format: date-time
           description: |
             Last time the user logged in. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: "2021-01-05T21:06:53.506400Z"
         last_seen_at:
           type: string
           format: date-time
           description: |
             Last time the user was seen. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: "2021-01-05T21:06:53.506400Z"
         last_desktop_version:
           type: string
           description: |
             Last desktop version the user used. To access this field, you must have insights visible for your organization. See 
-            [Insights](https://docs.docker.com/admin/organization/insights/#view-insights-for-organization-users).
+            [Insights](https://docs.docker.com/admin/insights/#view-insights-for-organization-users).
           example: 4.29.0
 @z
 

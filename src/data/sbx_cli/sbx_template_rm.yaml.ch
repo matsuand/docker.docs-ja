@@ -4,43 +4,69 @@
 @x
 name: sbx template rm
 synopsis: Remove a template image
-description: |
+description: |-
     Remove a template image from the sandbox runtime's image store.
-usage: sbx template rm TAG [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Remove a template image
-      sbx template rm myimage:v1.0
-see_also:
-    - sbx template - Manage sandbox templates
 @y
 name: sbx template rm
 synopsis: Remove a template image
-description: |
+description: |-
     Remove a template image from the sandbox runtime's image store.
-usage: sbx template rm TAG [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+@x
+    The image can be identified by tag (e.g. "myimage:v1.0") or by image ID
+    (full or prefix, e.g. "abc123"). Use "sbx template ls" to see available
+    images and their IDs.
+@y
+    The image can be identified by tag (e.g. "myimage:v1.0") or by image ID
+    (full or prefix, e.g. "abc123"). Use "sbx template ls" to see available
+    images and their IDs.
+@z
+
+@x
+usage: sbx template rm TAG|ID [flags]
+@y
+usage: sbx template rm TAG|ID [flags]
+@z
+
+%options:
+
+@x help
       usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for rm
+@z
+
+%inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
-      # Remove a template image
+      # Remove by tag
       sbx template rm myimage:v1.0
-see_also:
+@y
+example: |4-
+      # Remove by tag
+      sbx template rm myimage:v1.0
+@z
+
+@x
+      # Remove by image ID (prefix)
+      sbx template rm abc123
+@y
+      # Remove by image ID (prefix)
+      sbx template rm abc123
+@z
+
+%see_also:
+
+@x
+    - sbx template - Manage sandbox templates
+@y
     - sbx template - Manage sandbox templates
 @z

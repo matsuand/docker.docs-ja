@@ -125,6 +125,7 @@ example: |4-
     - sbx create codex - Create a sandbox for codex
     - sbx create copilot - Create a sandbox for copilot
     - sbx create docker-agent - Create a sandbox for docker-agent
+    - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini
     - sbx create kiro - Create a sandbox for kiro
     - sbx create opencode - Create a sandbox for opencode
@@ -135,6 +136,7 @@ example: |4-
     - sbx create codex - Create a sandbox for codex
     - sbx create copilot - Create a sandbox for copilot
     - sbx create docker-agent - Create a sandbox for docker-agent
+    - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini
     - sbx create kiro - Create a sandbox for kiro
     - sbx create opencode - Create a sandbox for opencode

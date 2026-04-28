@@ -226,9 +226,9 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Administrators can now view [organization Insights](/manuals/admin/organization/insights.md).
+- Administrators can now view [organization Insights](/manuals/admin/insights.md).
 @y
-- Administrators can now view [organization Insights](manuals/admin/organization/insights.md).
+- Administrators can now view [organization Insights](manuals/admin/insights.md).
 @z
 
 @x

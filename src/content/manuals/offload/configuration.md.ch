@@ -46,12 +46,12 @@ settings when allowed by their organization.
 @x
 For organization owners, you can manage Docker Offload settings for all users in
 your organization. For more details, see [Manage Docker
-products](../admin/organization/manage-products.md). To view usage for Docker
+products](../admin/organization/manage/manage-products.md). To view usage for Docker
 Offload, see [Docker Offload usage](/offload/usage/).
 @y
 For organization owners, you can manage Docker Offload settings for all users in
 your organization. For more details, see [Manage Docker
-products](../admin/organization/manage-products.md). To view usage for Docker
+products](../admin/organization/manage/manage-products.md). To view usage for Docker
 Offload, see [Docker Offload usage](__SUBDIR__/offload/usage/).
 @z
 

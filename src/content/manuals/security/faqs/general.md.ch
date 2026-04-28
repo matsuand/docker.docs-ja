@@ -108,9 +108,9 @@ Docker activity logs are available for 90 days. You're responsible for exporting
 @z
 
 @x
-Yes, use the [Export Members](../../admin/organization/members.md#export-members) feature to export a CSV file containing your organization's users with role and team information.
+Yes, use the [Export Members](../../admin/organization/manage/members.md#export-members-csv-file) feature to export a CSV file containing your organization's users with role and team information.
 @y
-Yes, use the [Export Members](../../admin/organization/members.md#export-members) feature to export a CSV file containing your organization's users with role and team information.
+Yes, use the [Export Members](../../admin/organization/manage/members.md#export-members-csv-file) feature to export a CSV file containing your organization's users with role and team information.
 @z
 
 @x
@@ -148,9 +148,9 @@ If SCIM isn't turned on, you must manually remove users from the organization. S
 @z
 
 @x
-For more information, see [Manage organization members](/manuals/admin/organization/members.md).
+For more information, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 @y
-For more information, see [Manage organization members](manuals/admin/organization/members.md).
+For more information, see [Manage organization members](manuals/admin/organization/manage/members.md).
 @z
 
 @x

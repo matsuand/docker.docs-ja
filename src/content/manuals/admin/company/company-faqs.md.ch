@@ -4,19 +4,21 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: FAQs on companies
-linkTitle: Company
+title: Company FAQs
+linkTitle: FAQs
 @y
-title: FAQs on companies
-linkTitle: Company
+title: Company FAQs
+linkTitle: FAQs
 @z
 
 @x
 description: Company FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, company, administration, company management
+tags: [FAQ]
 @y
 description: Company FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, company, administration, company management
+tags: [FAQ]
 @z
 
 @x
@@ -92,11 +94,11 @@ you remain an organization owner.
 @z
 
 @x
-To avoid occupying a seat, [assign another user as the organization owner](/manuals/admin/organization/members.md#update-a-member-role) and remove yourself from the organization.
+To avoid occupying a seat, [assign another user as the organization owner](/manuals/admin/organization/manage/members.md#update-a-member-role) and remove yourself from the organization.
 You'll retain full administrative access as a company owner without using a
 subscription seat.
 @y
-To avoid occupying a seat, [assign another user as the organization owner](manuals/admin/organization/members.md#update-a-member-role) and remove yourself from the organization.
+To avoid occupying a seat, [assign another user as the organization owner](manuals/admin/organization/manage/members.md#update-a-member-role) and remove yourself from the organization.
 You'll retain full administrative access as a company owner without using a
 subscription seat.
 @z

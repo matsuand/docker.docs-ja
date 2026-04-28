@@ -971,12 +971,10 @@ SOCKS5 proxy support:
 SSO:
   subscription: [Business]
   for: Administrators
-  requires: Docker Desktop
 @y
 SSO:
   subscription: [Business]
   for: 管理者
-  requires: Docker Desktop
 @z
 
 @x

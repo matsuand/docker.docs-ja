@@ -38,9 +38,9 @@ organizations.
 @z
 
 @x
-If you are linking a source code provider to create autobuilds for a team, follow the instructions to [create a service account](index.md#service-users-for-team-autobuilds) for the team before linking the account as described below.
+If you are linking a source code provider to create autobuilds for a team, follow the instructions to [create a service account](setup.md#service-users-for-team-autobuilds) for the team before linking the account as described below.
 @y
-If you are linking a source code provider to create autobuilds for a team, follow the instructions to [create a service account](index.md#service-users-for-team-autobuilds) for the team before linking the account as described below.
+If you are linking a source code provider to create autobuilds for a team, follow the instructions to [create a service account](setup.md#service-users-for-team-autobuilds) for the team before linking the account as described below.
 @z
 
 @x

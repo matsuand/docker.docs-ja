@@ -4,9 +4,9 @@
 % __SUBDIR__ 対応
 
 @x
-title: Company administration overview
+title: Company overview
 @y
-title: Company administration overview
+title: Company overview
 @z
 
 @x
@@ -37,26 +37,38 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
       Learn how to add and manage organizations as well as seats within your
       company.
     icon: store
-    link: /admin/company/organizations/
+    link: /admin/company/manage/organizations/
 @y
   - title: Manage organizations
     description:
       Learn how to add and manage organizations as well as seats within your
       company.
     icon: store
-    link: __SUBDIR__/admin/company/organizations/
+    link: __SUBDIR__/admin/company/manage/organizations/
+@z
+
+@x
+  - title: Manage company owners
+    description: Find out more about company owners and how to manage them.
+    icon: supervised_user_circle
+    link: /admin/company/manage/owners/
+@y
+  - title: Manage company owners
+    description: Find out more about company owners and how to manage them.
+    icon: supervised_user_circle
+    link: __SUBDIR__/admin/company/manage/owners/
 @z
 
 @x
   - title: Manage users
     description: Explore how to manage users in all organizations.
     icon: group_add
-    link: /admin/company/users/
+    link: /admin/company/manage/users/
 @y
   - title: Manage users
     description: Explore how to manage users in all organizations.
     icon: group_add
-    link: __SUBDIR__/admin/company/users/
+    link: __SUBDIR__/admin/company/manage/users/
 @z
 
 @x

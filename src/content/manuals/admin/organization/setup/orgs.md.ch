@@ -5,8 +5,10 @@
 
 @x
 title: Create your organization
+linkTitle: Create
 @y
 title: Create your organization
+linkTitle: Create
 @z
 
 @x
@@ -54,11 +56,11 @@ These procedures walk you through creating an organization from the Admin Consol
 @x
 - Before you create an organization, you need a [Docker ID](/manuals/accounts/create-account.md).
 - For prerequisites and detailed instructions on converting an existing user account to an organization, see
-  [Convert an account into an organization](/manuals/admin/organization/convert-account.md).
+  [Convert an account into an organization](/manuals/admin/organization/setup/convert-account.md).
 @y
 - Before you create an organization, you need a [Docker ID](manuals/accounts/create-account.md).
 - For prerequisites and detailed instructions on converting an existing user account to an organization, see
-  [Convert an account into an organization](manuals/admin/organization/convert-account.md).
+  [Convert an account into an organization](manuals/admin/organization/setup/convert-account.md).
 @z
 
 @x
@@ -84,7 +86,7 @@ These procedures walk you through creating an organization from the Admin Consol
    your organization in Docker Hub.
    - It's not possible to change the name of the organization after you've created it.
    - Your Docker ID and organization can't share the same name.
-   - If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/convert-account.md).
+   - If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](/manuals/admin/organization/setup/convert-account.md).
 1. Enter your **Company name**. This is the full name of your company.
    - Docker displays the company name on your organization page and in the details of any
      public images you publish.
@@ -100,7 +102,7 @@ These procedures walk you through creating an organization from the Admin Consol
    your organization in Docker Hub.
    - It's not possible to change the name of the organization after you've created it.
    - Your Docker ID and organization can't share the same name.
-   - If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/convert-account.md).
+   - If you want to use your Docker ID as the organization name, then you must first [convert your account into an organization](manuals/admin/organization/setup/convert-account.md).
 1. Enter your **Company name**. This is the full name of your company.
    - Docker displays the company name on your organization page and in the details of any
      public images you publish.
@@ -176,15 +178,15 @@ the following steps:
 @z
 
 @x
-1. Based on the number of seats from the secondary organization, [purchase additional seats](../../subscription/manage-seats.md) for the primary organization account that you want to keep.
+1. Based on the number of seats from the secondary organization, [purchase additional seats](../../../subscription/manage-seats.md) for the primary organization account that you want to keep.
 1. Manually add users to the primary organization and remove existing users from the secondary organization.
 1. Manually move over your data, including all repositories.
-1. Once you're done moving all of your users and data, [downgrade](../../subscription/change.md) the secondary account to a free subscription. Note that Docker does not offer refunds for downgrading organizations mid-billing cycle.
+1. Once you're done moving all of your users and data, [downgrade](../../../subscription/change.md) the secondary account to a free subscription. Note that Docker does not offer refunds for downgrading organizations mid-billing cycle.
 @y
-1. Based on the number of seats from the secondary organization, [purchase additional seats](../../subscription/manage-seats.md) for the primary organization account that you want to keep.
+1. Based on the number of seats from the secondary organization, [purchase additional seats](../../../subscription/manage-seats.md) for the primary organization account that you want to keep.
 1. Manually add users to the primary organization and remove existing users from the secondary organization.
 1. Manually move over your data, including all repositories.
-1. Once you're done moving all of your users and data, [downgrade](../../subscription/change.md) the secondary account to a free subscription. Note that Docker does not offer refunds for downgrading organizations mid-billing cycle.
+1. Once you're done moving all of your users and data, [downgrade](../../../subscription/change.md) the secondary account to a free subscription. Note that Docker does not offer refunds for downgrading organizations mid-billing cycle.
 @z
 
 @x

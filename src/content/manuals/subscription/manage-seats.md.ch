@@ -66,9 +66,9 @@ To add seats:
 @z
 
 @x
-You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/members.md).
+You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
 @y
-You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/members.md).
+You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
 @z
 
 @x

@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Account and admin FAQ
+title: Manage
 @y
-title: Account and admin FAQ
+title: 管理
 @z

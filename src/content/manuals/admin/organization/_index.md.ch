@@ -4,11 +4,11 @@
 % __SUBDIR__ 対応 /  .md リンクへの (no slash) 対応
 
 @x
-title: Organization administration overview
-linkTitle: Organization administration
+title: Organization overview
+linkTitle: Organization
 @y
-title: Organization administration overview
-linkTitle: Organization administration
+title: Organization overview
+linkTitle: Organization
 @z
 
 @x
@@ -25,36 +25,36 @@ keywords: organizations, admin, overview, manage teams, roles
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: /admin/organization/onboard
+    link: /admin/organization/setup/onboard
 @y
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
     icon: explore
-    link: __SUBDIR__/admin/organization/onboard
+    link: __SUBDIR__/admin/organization/setup/onboard
 @z
 
 @x
   - title: Manage members
     description: Explore how to manage members.
     icon: group_add
-    link: /admin/organization/members/
+    link: /admin/organization/manage/members/
 @y
   - title: Manage members
     description: Explore how to manage members.
     icon: group_add
-    link: __SUBDIR__/admin/organization/members/
+    link: __SUBDIR__/admin/organization/manage/members/
 @z
 
 @x
   - title: Activity logs
     description: Learn how to audit the activities of your members.
     icon: text_snippet
-    link: /admin/organization/activity-logs/
+    link: /admin/activity-logs/
 @y
   - title: Activity logs
     description: Learn how to audit the activities of your members.
     icon: text_snippet
-    link: __SUBDIR__/admin/organization/activity-logs/
+    link: __SUBDIR__/admin/activity-logs/
 @z
 
 @x
@@ -85,12 +85,12 @@ keywords: organizations, admin, overview, manage teams, roles
   - title: Organization settings
     description: Configure information for your organization and manage settings.
     icon: settings
-    link: /admin/organization/general-settings/
+    link: /admin/organization/setup/general-settings/
 @y
   - title: Organization settings
     description: Configure information for your organization and manage settings.
     icon: settings
-    link: __SUBDIR__/admin/organization/general-settings/
+    link: __SUBDIR__/admin/organization/setup/general-settings/
 @z
 
 @x

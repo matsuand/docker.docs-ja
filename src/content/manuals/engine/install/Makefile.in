@@ -246,7 +246,6 @@ bases = \
 	linux-postinstall.md \
 	raspberry-pi-os.md   \
 	rhel.md              \
-	sles.md              \
 	ubuntu.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

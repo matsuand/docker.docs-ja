@@ -381,9 +381,9 @@ each repository. In [Docker Hub](https://hub.docker.com), select **My Hub** > **
 @z
 
 @x
-You can configure your automated builds so that pushes to specific branches or tags triggers a build.
+You can configure your automated builds so that pushes to specific branches or tags trigger a build.
 @y
-You can configure your automated builds so that pushes to specific branches or tags triggers a build.
+You can configure your automated builds so that pushes to specific branches or tags trigger a build.
 @z
 
 @x
@@ -420,12 +420,12 @@ You can configure your automated builds so that pushes to specific branches or t
     > [!NOTE]
     >
     > You can enter a name, or use a regex to match which source branch or tag
-    > names to build. To learn more, see [regexes](index.md#regexes-and-automated-builds).
+    > names to build. To learn more, see [regexes](#regexes-and-automated-builds).
 @y
     > [!NOTE]
     >
     > You can enter a name, or use a regex to match which source branch or tag
-    > names to build. To learn more, see [regexes](index.md#regexes-and-automated-builds).
+    > names to build. To learn more, see [regexes](#regexes-and-automated-builds).
 @z
 
 @x
@@ -439,13 +439,13 @@ You can configure your automated builds so that pushes to specific branches or t
    >
    > If you configured a regex to select the source, you can reference the
    > capture groups and use its result as part of the tag. To learn more, see
-   > [regexes](index.md#regexes-and-automated-builds).
+   > [regexes](#regexes-and-automated-builds).
 @y
    > [!NOTE]
    >
    > If you configured a regex to select the source, you can reference the
    > capture groups and use its result as part of the tag. To learn more, see
-   > [regexes](index.md#regexes-and-automated-builds).
+   > [regexes](#regexes-and-automated-builds).
 @z
 
 @x

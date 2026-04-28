@@ -4,19 +4,21 @@
 % .md リンクへの (no slash) 対応
 
 @x
-description: Organization FAQs
-linkTitle: Organization
+title: Organization FAQs
+linkTitle: FAQs
 @y
-description: Organization FAQs
-linkTitle: Organization
+title: Organization FAQs
+linkTitle: FAQs
 @z
 
 @x
+description: Organization FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
-title: FAQs on organizations
+tags: [FAQ]
 @y
+description: Organization FAQs
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
-title: FAQs on organizations
+tags: [FAQ]
 @z
 
 @x
@@ -38,9 +40,9 @@ to find out who is using Docker Desktop.
 @z
 
 @x
-For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-one-identify-your-docker-users).
+For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/setup/onboard.md#step-one-identify-your-docker-users).
 @y
-For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/onboard.md#step-one-identify-your-docker-users).
+For more information, see [Identify your Docker users and their Docker accounts](../../admin/organization/setup/onboard.md#step-one-identify-your-docker-users).
 @z
 
 @x
@@ -83,7 +85,7 @@ Some benefits of enforcing sign-in are:
 - Ensures you gain insights into users' activity.
 @y
 - Ensures users receive the benefits of your subscription.
-- Ensures security features like [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) are applied.
+- Ensures security features like [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md) and [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md) are applied.
 - Ensures you gain insights into users' activity.
 @z
 
@@ -126,9 +128,9 @@ seats, even if that user hasn’t accepted their invitation yet.
 @z
 
 @x
-To manage invites, see [Manage organization members](/manuals/admin/organization/members.md).
+To manage invites, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 @y
-To manage invites, see [Manage organization members](manuals/admin/organization/members.md).
+To manage invites, see [Manage organization members](manuals/admin/organization/manage/members.md).
 @z
 
 @x

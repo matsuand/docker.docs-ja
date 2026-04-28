@@ -37,6 +37,7 @@ home.html: $(abs_origdir)/home.html $(srcdir)/home.html.ch
 
 copyfiles = \
 	home.llms.txt       \
+	home.llmsfull.txt   \
 	home.metadata.json  \
 	home.redirects.json \
 	home.robots.txt     \

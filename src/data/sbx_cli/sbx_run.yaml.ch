@@ -28,68 +28,76 @@ description: |-
 @z
 
 @x
-    Available agents: claude, codex, copilot, docker-agent, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, docker-agent, droid, gemini, kiro, opencode, shell
+@y
+    Available agents: claude, codex, copilot, docker-agent, droid, gemini, kiro, opencode, shell
+@z
+
+@x
 usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
-options:
-    - name: branch
+@y
+usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
+@z
+
+%options:
+
+@x branch
       usage: |
         Create a Git worktree on the given branch (use --branch auto to auto-generate)
-    - name: cpus
-      default_value: "0"
+@y
+      usage: |
+        Create a Git worktree on the given branch (use --branch auto to auto-generate)
+@z
+
+@x cpus
       usage: |
         Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: |
+        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
+@z
+
+@x help
       usage: help for run
-    - name: memory
-      shorthand: m
+@y
+      usage: help for run
+@z
+
+@x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
-    - name: name
+@y
+      usage: |
+        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
+@z
+
+@x name
       usage: 'Name for the sandbox (default: <agent>-<workdir>)'
-    - name: template
-      shorthand: t
+@y
+      usage: 'Name for the sandbox (default: <agent>-<workdir>)'
+@z
+
+@x template
       usage: |
         Container image to use for the sandbox (default: agent-specific image)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: |
+        Container image to use for the sandbox (default: agent-specific image)
+@z
+
+%inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
       # Create and run a sandbox with claude in current directory
       sbx run claude
 @y
-    Available agents: claude, codex, copilot, docker-agent, gemini, kiro, opencode, shell
-usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
-options:
-    - name: branch
-      usage: |
-        Create a Git worktree on the given branch (use --branch auto to auto-generate)
-    - name: cpus
-      default_value: "0"
-      usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for run
-    - name: memory
-      shorthand: m
-      usage: |
-        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
-    - name: name
-      usage: 'Name for the sandbox (default: <agent>-<workdir>)'
-    - name: template
-      shorthand: t
-      usage: |
-        Container image to use for the sandbox (default: agent-specific image)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
 example: |4-
       # Create and run a sandbox with claude in current directory
       sbx run claude
@@ -114,11 +122,15 @@ example: |4-
 @x
       # Run a sandbox with agent arguments
       sbx run claude -- --continue
-see_also:
+@y
+      # Run a sandbox with agent arguments
+      sbx run claude -- --continue
+@z
+
+% see_also:
+
+@x
     - sbx - Manage AI coding agent sandboxes.
 @y
-      # Run a sandbox with agent arguments
-      sbx run claude -- --continue
-see_also:
     - sbx - Manage AI coding agent sandboxes.
 @z

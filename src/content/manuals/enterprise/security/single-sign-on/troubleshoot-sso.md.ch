@@ -273,10 +273,10 @@ to re-enable it:
 
 @x
 When JIT is disabled, users are not automatically added to your organization when they authenticate through SSO.
-To manually invite users, see [Invite members](/manuals/admin/organization/members.md#invite-members).
+To manually invite users, see [Invite members](/manuals/admin/organization/manage/members.md#invite-members).
 @y
 When JIT is disabled, users are not automatically added to your organization when they authenticate through SSO.
-To manually invite users, see [Invite members](manuals/admin/organization/members.md#invite-members).
+To manually invite users, see [Invite members](manuals/admin/organization/manage/members.md#invite-members).
 @z
 
 @x
@@ -446,9 +446,9 @@ Purchase additional Docker Business subscription seats. For details, see [Manage
 @z
 
 @x
-Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](/manuals/admin/organization/members.md).
+Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](/manuals/admin/organization/manage/members.md).
 @y
-Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](manuals/admin/organization/members.md).
+Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](manuals/admin/organization/manage/members.md).
 @z
 
 @x

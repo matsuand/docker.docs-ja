@@ -44,9 +44,9 @@ To get started on your UI, follow the steps below.
 @z
 
 @x
-Docker Desktop's UI is written in React and [MUI](https://mui.com/) (using Material UI to specific). This is the only officially supported framework for building extensions, and the one that our `init` command automatically configures for you. Using it brings significant benefits to authors:
+Docker Desktop's UI is written in React and [MUI](https://mui.com/) (using Material UI specifically). This is the only officially supported framework for building extensions, and the one that the `init` command automatically configures for you. Using it brings significant benefits to authors:
 @y
-Docker Desktop's UI is written in React and [MUI](https://mui.com/) (using Material UI to specific). This is the only officially supported framework for building extensions, and the one that our `init` command automatically configures for you. Using it brings significant benefits to authors:
+Docker Desktop's UI is written in React and [MUI](https://mui.com/) (using Material UI specifically). This is the only officially supported framework for building extensions, and the one that the `init` command automatically configures for you. Using it brings significant benefits to authors:
 @z
 
 @x

@@ -68,9 +68,9 @@ Activity logs are available for Docker Team or Docker Business plans, with data 
 @z
 
 @x
-For more information, see [Activity logs](/manuals/admin/organization/activity-logs.md).
+For more information, see [Activity logs](/manuals/admin/activity-logs.md).
 @y
-For more information, see [Activity logs](manuals/admin/organization/activity-logs.md).
+For more information, see [Activity logs](manuals/admin/activity-logs.md).
 @z
 
 @x
@@ -118,9 +118,9 @@ Insights provide data-driven views of Docker usage to improve team productivity 
 @z
 
 @x
-For more information, see [Insights](/manuals/admin/organization/insights.md).
+For more information, see [Insights](/manuals/admin/insights.md).
 @y
-For more information, see [Insights](manuals/admin/organization/insights.md).
+For more information, see [Insights](manuals/admin/insights.md).
 @z
 
 @x
@@ -136,13 +136,13 @@ Now that you've mastered user and access management in Docker, you can:
 @z
 
 @x
-- Review your [activity logs](/manuals/admin/organization/activity-logs.md) regularly to maintain security awareness
-- Check your [Insights dashboard](/manuals/admin/organization/insights.md) to identify opportunities for optimization
+- Review your [activity logs](/manuals/admin/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](/manuals/admin/insights.md) to identify opportunities for optimization
 - Explore [advanced security features](/manuals/enterprise/security/_index.md) to further enhance your Docker environment
 - Share best practices with your team to ensure consistent adoption of security policies
 @y
-- Review your [activity logs](manuals/admin/organization/activity-logs.md) regularly to maintain security awareness
-- Check your [Insights dashboard](manuals/admin/organization/insights.md) to identify opportunities for optimization
+- Review your [activity logs](manuals/admin/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](manuals/admin/insights.md) to identify opportunities for optimization
 - Explore [advanced security features](manuals/enterprise/security/_index.md) to further enhance your Docker environment
 - Share best practices with your team to ensure consistent adoption of security policies
 @z
