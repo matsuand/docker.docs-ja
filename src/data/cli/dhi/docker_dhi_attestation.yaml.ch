@@ -1,0 +1,68 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+command: docker dhi attestation
+aliases: docker dhi attestation, docker dhi attest, docker dhi a
+short: View attestations for Docker Hardened Images
+long: |
+    Commands to list and inspect attestations attached to Docker Hardened Images
+pname: docker dhi
+plink: docker_dhi.yaml
+cname:
+    - docker dhi attestation get
+    - docker dhi attestation list
+    - docker dhi attestation sbom
+clink:
+    - docker_dhi_attestation_get.yaml
+    - docker_dhi_attestation_list.yaml
+    - docker_dhi_attestation_sbom.yaml
+options:
+    - option: org
+      value_type: string
+      description: Docker Hub organization (overrides config)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@y
+command: docker dhi attestation
+aliases: docker dhi attestation, docker dhi attest, docker dhi a
+short: View attestations for Docker Hardened Images
+long: |
+    Commands to list and inspect attestations attached to Docker Hardened Images
+pname: docker dhi
+plink: docker_dhi.yaml
+cname:
+    - docker dhi attestation get
+    - docker dhi attestation list
+    - docker dhi attestation sbom
+clink:
+    - docker_dhi_attestation_get.yaml
+    - docker_dhi_attestation_list.yaml
+    - docker_dhi_attestation_sbom.yaml
+options:
+    - option: org
+      value_type: string
+      description: Docker Hub organization (overrides config)
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+@z
