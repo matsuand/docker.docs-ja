@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = agents images security
+SUBDIRS = agents customize images security
 
 bases = \
 	_index.md          \

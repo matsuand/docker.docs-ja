@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Docker Agent
-weight: 70
-description: |
-  Use Docker Agent in Docker Sandboxes with multi-provider authentication
-  supporting OpenAI, Anthropic, and more.
----
 @y
----
 title: Docker Agent
-weight: 70
+@z
+
+@x
 description: |
   Use Docker Agent in Docker Sandboxes with multi-provider authentication
   supporting OpenAI, Anthropic, and more.
----
+keywords: docker sandboxes, docker agent, openai, anthropic, sbx
+@y
+description: |
+  Use Docker Agent in Docker Sandboxes with multi-provider authentication
+  supporting OpenAI, Anthropic, and more.
+keywords: docker sandboxes, docker agent, openai, anthropic, sbx
 @z
 
 @x
@@ -178,11 +178,11 @@ $ sbx run docker-agent -- agent.yml
 @x
 The sandbox uses `docker/sandbox-templates:docker-agent` and launches Docker
 Agent without approval prompts by default. See
-[Custom environments](custom-environments.md) to build your own image on top of
+[Templates](../customize/templates.md) to build your own image on top of
 this base.
 @y
 The sandbox uses `docker/sandbox-templates:docker-agent` and launches Docker
 Agent without approval prompts by default. See
-[Custom environments](custom-environments.md) to build your own image on top of
+[Templates](../customize/templates.md) to build your own image on top of
 this base.
 @z

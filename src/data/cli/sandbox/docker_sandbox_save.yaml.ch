@@ -4,19 +4,35 @@
 @x
 command: docker sandbox save
 short: Save a snapshot of the sandbox as a template
-long: |-
-    Save a snapshot of the sandbox as a template.
 @y
 command: docker sandbox save
 short: Save a snapshot of the sandbox as a template
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Save a snapshot of the sandbox as a template.
-@z
 
-@x
     By default, the image is loaded into the host's Docker daemon (requires Docker to be running).
     Use --output to save the image to a tar file instead.
 @y
+    Save a snapshot of the sandbox as a template.
+
     By default, the image is loaded into the host's Docker daemon (requires Docker to be running).
     Use --output to save the image to a tar file instead.
 @z
@@ -45,8 +61,6 @@ usage: docker sandbox save SANDBOX TAG
 usage: docker sandbox save SANDBOX TAG
 @z
 
-% pname
-% plink
 % options
 
 @x output

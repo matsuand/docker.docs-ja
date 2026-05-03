@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Copilot
-weight: 30
-description: |
-  Use GitHub Copilot in Docker Sandboxes with GitHub token authentication and
-  trusted folder configuration.
----
 @y
----
 title: Copilot
-weight: 30
+@z
+
+@x
 description: |
   Use GitHub Copilot in Docker Sandboxes with GitHub token authentication and
   trusted folder configuration.
----
+keywords: docker sandboxes, github copilot, ai agent, github token, sbx
+@y
+description: |
+  Use GitHub Copilot in Docker Sandboxes with GitHub token authentication and
+  trusted folder configuration.
+keywords: docker sandboxes, github copilot, ai agent, github token, sbx
 @z
 
 @x
@@ -182,9 +182,9 @@ Preconfigured to trust the workspace directory and run without approval prompts.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

@@ -4,7 +4,28 @@
 @x
 command: docker sandbox create claude
 short: Create a sandbox for claude
+@y
+command: docker sandbox create claude
+short: Create a sandbox for claude
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Create a sandbox with access to a host workspace for claude.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -12,9 +33,6 @@ long: |-
 
     Use 'docker sandbox run SANDBOX' to start claude after creation.
 @y
-command: docker sandbox create claude
-short: Create a sandbox for claude
-long: |-
     Create a sandbox with access to a host workspace for claude.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -29,8 +47,6 @@ usage: docker sandbox create claude WORKSPACE [EXTRA_WORKSPACE...]
 usage: docker sandbox create claude WORKSPACE [EXTRA_WORKSPACE...]
 @z
 
-% pname
-% plink
 % options:
 
 @x patch-settings

@@ -44,141 +44,99 @@ vulnerabilities that do not affect their specific product configurations.
 @z
 
 @x
-## Why is VEX important?
+For how VEX affects vulnerability counts and scanner selection, see [Scanner
+integrations](/manuals/dhi/explore/scanner-integrations.md). To scan a DHI with
+VEX support, see [Scan Docker Hardened Images](/manuals/dhi/how-to/scan.md).
 @y
-## Why is VEX important?
+For how VEX affects vulnerability counts and scanner selection, see [Scanner
+integrations](manuals/dhi/explore/scanner-integrations.md). To scan a DHI with
+VEX support, see [Scan Docker Hardened Images](manuals/dhi/how-to/scan.md).
 @z
 
 @x
-VEX enhances traditional vulnerability management by:
+## VEX status reference
 @y
-VEX enhances traditional vulnerability management by:
+## VEX status reference
 @z
 
 @x
-- Suppressing non-applicable vulnerabilities: By providing product-level
-  exploitability assertions from the supplier, VEX helps filter out
-  vulnerabilities that do not affect the product as shipped.
+Each VEX statement includes a `status` field that records Docker's
+exploitability assessment for a given CVE and image. DHI uses three of the four
+OpenVEX status values.
 @y
-- Suppressing non-applicable vulnerabilities: By providing product-level
-  exploitability assertions from the supplier, VEX helps filter out
-  vulnerabilities that do not affect the product as shipped.
+Each VEX statement includes a `status` field that records Docker's
+exploitability assessment for a given CVE and image. DHI uses three of the four
+OpenVEX status values.
 @z
 
 @x
-- Prioritizing remediation: Organizations can focus resources on addressing
-  vulnerabilities that the producer has confirmed are exploitable in the
-  product, improving efficiency in vulnerability management.
+| Status | Meaning |
+|---|---|
+| `not_affected` | The CVE was reported against a package in the image, but Docker has assessed it is not exploitable as shipped |
+| `under_investigation` | Docker is aware of the CVE and is actively evaluating whether it affects the image |
+| `affected` | Docker has confirmed the CVE is exploitable in the image and a fix is not yet available |
 @y
-- Prioritizing remediation: Organizations can focus resources on addressing
-  vulnerabilities that the producer has confirmed are exploitable in the
-  product, improving efficiency in vulnerability management.
+| Status | Meaning |
+|---|---|
+| `not_affected` | The CVE was reported against a package in the image, but Docker has assessed it is not exploitable as shipped |
+| `under_investigation` | Docker is aware of the CVE and is actively evaluating whether it affects the image |
+| `affected` | Docker has confirmed the CVE is exploitable in the image and a fix is not yet available |
 @z
 
 @x
-- Supporting vulnerability documentation: VEX statements can support audit
-  discussions and help document why certain vulnerabilities do not require
-  remediation.
+You can view the VEX statements for any DHI using Docker Scout. See [Scan Docker
+Hardened Images](/manuals/dhi/how-to/scan.md).
 @y
-- Supporting vulnerability documentation: VEX statements can support audit
-  discussions and help document why certain vulnerabilities do not require
-  remediation.
+You can view the VEX statements for any DHI using Docker Scout. See [Scan Docker
+Hardened Images](manuals/dhi/how-to/scan.md).
 @z
 
 @x
-This approach is particularly beneficial when working with complex software
-components where not all reported CVEs apply to the specific product
-configuration.
+### `not_affected` justification codes
 @y
-This approach is particularly beneficial when working with complex software
-components where not all reported CVEs apply to the specific product
-configuration.
+### `not_affected` justification codes
 @z
 
 @x
-## How Docker Hardened Images integrate VEX
+`not_affected` statements include a machine-readable `justification` field
+explaining why the vulnerability does not apply:
 @y
-## How Docker Hardened Images integrate VEX
+`not_affected` statements include a machine-readable `justification` field
+explaining why the vulnerability does not apply:
 @z
 
 @x
-To enhance vulnerability management, Docker Hardened Images (DHI) incorporate
-VEX reports, providing context-specific assessments of known vulnerabilities.
+| Justification | Meaning |
+|---|---|
+| `component_not_present` | The vulnerable component is not present in this image; the CVE matched by name against a different package |
+| `vulnerable_code_not_present` | The vulnerable code path was not compiled into this build |
+| `vulnerable_code_not_in_execute_path` | The vulnerable code exists in the package but is not called in this image's runtime configuration |
+| `vulnerable_code_cannot_be_controlled_by_adversary` | The vulnerable code exists but an attacker cannot trigger it in this configuration |
+| `inline_mitigations_already_exist` | Docker has applied a backport or patch that addresses the CVE |
 @y
-To enhance vulnerability management, Docker Hardened Images (DHI) incorporate
-VEX reports, providing context-specific assessments of known vulnerabilities.
+| Justification | Meaning |
+|---|---|
+| `component_not_present` | The vulnerable component is not present in this image; the CVE matched by name against a different package |
+| `vulnerable_code_not_present` | The vulnerable code path was not compiled into this build |
+| `vulnerable_code_not_in_execute_path` | The vulnerable code exists in the package but is not called in this image's runtime configuration |
+| `vulnerable_code_cannot_be_controlled_by_adversary` | The vulnerable code exists but an attacker cannot trigger it in this configuration |
+| `inline_mitigations_already_exist` | Docker has applied a backport or patch that addresses the CVE |
 @z
 
 @x
-This integration allows you to:
+### Why DHI does not use `fixed`
 @y
-This integration allows you to:
+### Why DHI does not use `fixed`
 @z
 
 @x
-- Consume producer assertions: Review Docker's assertions about whether known
-  vulnerabilities in the image's components are exploitable in the product as
-  shipped.
+DHI does not use `fixed`. VEX-enabled scanners may not handle `fixed`
+consistently, so when Docker backports an upstream patch where the version
+number alone would not reflect the fix, it uses `not_affected` with
+`inline_mitigations_already_exist` justification instead.
 @y
-- Consume producer assertions: Review Docker's assertions about whether known
-  vulnerabilities in the image's components are exploitable in the product as
-  shipped.
-@z
-
-@x
-- Prioritize actions: Focus remediation efforts on vulnerabilities that Docker
-  has confirmed are exploitable in the image, optimizing resource allocation.
-@y
-- Prioritize actions: Focus remediation efforts on vulnerabilities that Docker
-  has confirmed are exploitable in the image, optimizing resource allocation.
-@z
-
-@x
-- Support audit documentation: Use VEX statements to document why certain
-  reported vulnerabilities do not require immediate action.
-@y
-- Support audit documentation: Use VEX statements to document why certain
-  reported vulnerabilities do not require immediate action.
-@z
-
-@x
-By combining the security features of DHI with VEX's product-level
-exploitability assertions, organizations can achieve a more effective and
-efficient approach to vulnerability management.
-@y
-By combining the security features of DHI with VEX's product-level
-exploitability assertions, organizations can achieve a more effective and
-efficient approach to vulnerability management.
-@z
-
-@x
-> [!TIP]
->
-> To understand which scanners support VEX and why it matters for your security
-> workflow, see [Scanner integrations](/manuals/dhi/explore/scanner-integrations.md).
-@y
-> [!TIP]
->
-> To understand which scanners support VEX and why it matters for your security
-> workflow, see [Scanner integrations](manuals/dhi/explore/scanner-integrations.md).
-@z
-
-@x
-## Use VEX to suppress non-applicable CVEs
-@y
-## Use VEX to suppress non-applicable CVEs
-@z
-
-@x
-Docker Hardened Images include VEX attestations that can be consumed by
-vulnerability scanners to suppress non-applicable CVEs. For detailed
-instructions on scanning with VEX support across different tools including
-Docker Scout, Trivy, and Grype, see [Scan Docker Hardened
-Images](/manuals/dhi/how-to/scan.md).
-@y
-Docker Hardened Images include VEX attestations that can be consumed by
-vulnerability scanners to suppress non-applicable CVEs. For detailed
-instructions on scanning with VEX support across different tools including
-Docker Scout, Trivy, and Grype, see [Scan Docker Hardened
-Images](manuals/dhi/how-to/scan.md).
+DHI does not use `fixed`. VEX-enabled scanners may not handle `fixed`
+consistently, so when Docker backports an upstream patch where the version
+number alone would not reflect the fix, it uses `not_affected` with
+`inline_mitigations_already_exist` justification instead.
 @z

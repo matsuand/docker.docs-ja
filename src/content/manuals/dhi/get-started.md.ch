@@ -186,20 +186,20 @@ DHI イメージではセキュリティを改善させています。
 @z
 
 @x
-Run the following command to see a summary comparison between the Docker
-Hardened Image for Python and the non-hardened Docker Official Image for Python
-from Docker Hub:
+Run the following command to compare the Docker Hardened Image for Python with
+the non-hardened Docker Official Image for Python from Docker Hub. Look for the
+`## Overview` section in the output for a summary comparison.
 @y
 以下のコマンドを実行すると Docker Hardened イメージと、そうではない Docker イメージを比較することができます。
-どちらも Docker Hub から取得できるものであり、Python 向けとして作られているものです。
+その比較結果については概要の節における出力例を参照してください。
 @z
 
 % snip command...
 
 @x
-Example output:
+The `## Overview` section of the output looks similar to the following:
 @y
-出力結果は以下となります。
+以下の出力結果は概要の節に示した出力結果と同様になります。
 @z
 
 % snip output...

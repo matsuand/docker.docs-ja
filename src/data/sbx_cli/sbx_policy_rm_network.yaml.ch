@@ -15,42 +15,58 @@ description: |-
 
 @x
     Use "sbx policy ls" to see active policies and their IDs/resources.
+@y
+    Use "sbx policy ls" to see active policies and their IDs/resources.
+@z
+
+@x
 usage: sbx policy rm network [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy rm network [flags]
+@z
+
+%options:
+
+@x help
       usage: help for network
-    - name: id
+@y
+      usage: help for network
+@z
+
+@x id
       usage: Remove by rule ID
-    - name: resource
+@y
+      usage: Remove by rule ID
+@z
+
+@x resource
       usage: Remove by resource value(s), comma-separated
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Remove by resource value(s), comma-separated
+@z
+
+%inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
+      # List policies to find the ID or resource to remove
+      sbx policy ls
+@y
+example: |4-
+      # List policies to find the ID or resource to remove
+      sbx policy ls
+@z
+
+@x
       # Remove a rule by resource
       sbx policy rm network --resource api.example.com
 @y
-    Use "sbx policy ls" to see active policies and their IDs/resources.
-usage: sbx policy rm network [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for network
-    - name: id
-      usage: Remove by rule ID
-    - name: resource
-      usage: Remove by resource value(s), comma-separated
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
       # Remove a rule by resource
       sbx policy rm network --resource api.example.com
 @z

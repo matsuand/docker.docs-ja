@@ -4,7 +4,28 @@
 @x
 command: docker sandbox create gemini
 short: Create a sandbox for gemini
+@y
+command: docker sandbox create gemini
+short: Create a sandbox for gemini
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Create a sandbox with access to a host workspace for gemini.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -12,9 +33,6 @@ long: |-
 
     Use 'docker sandbox run SANDBOX' to start gemini after creation.
 @y
-command: docker sandbox create gemini
-short: Create a sandbox for gemini
-long: |-
     Create a sandbox with access to a host workspace for gemini.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -28,9 +46,6 @@ usage: docker sandbox create gemini WORKSPACE [EXTRA_WORKSPACE...]
 @y
 usage: docker sandbox create gemini WORKSPACE [EXTRA_WORKSPACE...]
 @z
-
-% pname
-% plink
 
 % inherited_options:
 

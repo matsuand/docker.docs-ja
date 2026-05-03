@@ -11,10 +11,12 @@ title: Codex
 description: |
   Use OpenAI Codex in Docker Sandboxes with API key authentication and YOLO
   mode configuration.
+keywords: docker sandboxes, codex, openai, ai agent, sbx
 @y
 description: |
   Use OpenAI Codex in Docker Sandboxes with API key authentication and YOLO
   mode configuration.
+keywords: docker sandboxes, codex, openai, ai agent, sbx
 @z
 
 @x
@@ -206,9 +208,9 @@ Preconfigured to run without approval prompts.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

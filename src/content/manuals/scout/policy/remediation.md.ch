@@ -204,40 +204,6 @@ your image doesn't have provenance attestations, compliance is undeterminable.
 @z
 
 @x
-<!--
-  TODO(dvdksn): no support for the following, yet
-@y
-<!--
-  TODO(dvdksn): no support for the following, yet
-@z
-
-@x
-  When provenance attestations are unavailable, Docker Scout provides generic,
-  best-effort recommendations in the remediation side panel. These
-  recommendations estimate your base using information from image analysis
-  results. The base image version is unknown, but you can manually select the
-  version you use in the remediation side panel. This lets Docker Scout evaluate
-  whether the base image detected in the image analysis is up-to-date with the
-  version you selected.
-@y
-  When provenance attestations are unavailable, Docker Scout provides generic,
-  best-effort recommendations in the remediation side panel. These
-  recommendations estimate your base using information from image analysis
-  results. The base image version is unknown, but you can manually select the
-  version you use in the remediation side panel. This lets Docker Scout evaluate
-  whether the base image detected in the image analysis is up-to-date with the
-  version you selected.
-@z
-
-@x
-  https://github.com/docker/docs/pull/18961#discussion_r1447186845
--->
-@y
-  https://github.com/docker/docs/pull/18961#discussion_r1447186845
--->
-@z
-
-@x
 ### Provenance attestations available
 @y
 ### Provenance attestations available

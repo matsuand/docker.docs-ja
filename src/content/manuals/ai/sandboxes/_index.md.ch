@@ -12,9 +12,9 @@ description: Run AI coding agents in isolated environments
 @z
 
 @x
-      text: Experimental
+      text: Early Access
 @y
-      text: Experimental
+      text: 早期アクセス
 @z
 
 @x
@@ -155,8 +155,8 @@ the [usage guide](usage.md) for common patterns.
 
 @x
 - [Agents](agents/) — supported agents and per-agent configuration
-- [Custom environments](agents/custom-environments.md) — build reusable sandbox
-  images with pre-installed tools
+- [Customize](customize/) — reusable templates and declarative kits for
+  extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
   networking
 - [Security](security/) — isolation model, credential handling, network
@@ -166,8 +166,8 @@ the [usage guide](usage.md) for common patterns.
 - [FAQ](faq.md) — login requirements, telemetry, etc
 @y
 - [Agents](agents/) — supported agents and per-agent configuration
-- [Custom environments](agents/custom-environments.md) — build reusable sandbox
-  images with pre-installed tools
+- [Customize](customize/) — reusable templates and declarative kits for
+  extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
   networking
 - [Security](security/) — isolation model, credential handling, network
@@ -184,29 +184,11 @@ the [usage guide](usage.md) for common patterns.
 @z
 
 @x
-Docker Sandboxes is experimental and under active development. Your feedback
-shapes what gets built next. If you run into a bug, hit a missing feature, or
-have a suggestion, open an issue at
+Your feedback shapes what gets built next. If you run into a bug, hit a
+missing feature, or have a suggestion, open an issue at
 [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
 @y
-Docker Sandboxes is experimental and under active development. Your feedback
-shapes what gets built next. If you run into a bug, hit a missing feature, or
-have a suggestion, open an issue at
+Your feedback shapes what gets built next. If you run into a bug, hit a
+missing feature, or have a suggestion, open an issue at
 [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-releases/issues).
-@z
-
-@x
-## Docker Desktop integration
-@y
-## Docker Desktop integration
-@z
-
-@x
-Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
-(`docker sandbox`) with a subset of features. The `sbx` CLI is recommended for
-most use cases.
-@y
-Docker Desktop also includes a [built-in sandbox command](docker-desktop.md)
-(`docker sandbox`) with a subset of features. The `sbx` CLI is recommended for
-most use cases.
 @z

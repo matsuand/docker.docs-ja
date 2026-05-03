@@ -3,11 +3,13 @@
 
 @x
 command: docker dhi customization
+aliases: docker dhi customization, docker dhi c, docker dhi custo
 short: Manage Docker Hardened Images customizations
 long: |
     Commands to list, create, edit, and delete Docker Hardened Images customizations
 @y
 command: docker dhi customization
+aliases: docker dhi customization, docker dhi c, docker dhi custo
 short: Manage Docker Hardened Images customizations
 long: |
     Commands to list, create, edit, and delete Docker Hardened Images customizations

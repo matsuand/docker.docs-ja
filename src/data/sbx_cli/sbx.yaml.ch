@@ -15,18 +15,35 @@ description: |-
 
 @x
     Run without a command to launch interactive mode, or pass a command for CLI usage.
+@y
+    Run without a command to launch interactive mode, or pass a command for CLI usage.
+@z
+
+@x
 usage: sbx
-options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+usage: sbx
+@z
+
+%options:
+
+@x debug
       usage: Enable debug logging
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Enable debug logging
+@z
+
+@x help
       usage: help for sbx
-see_also:
+@y
+      usage: help for sbx
+@z
+
+%see_also:
+
+@x
     - sbx completion - Generate the autocompletion script for the specified shell
+    - sbx cp - Copy files or directories between a sandbox and the host
     - sbx create - Create a sandbox for an agent
     - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox
@@ -43,19 +60,8 @@ see_also:
     - sbx template - Manage sandbox templates
     - sbx version - Show Docker Sandboxes version information
 @y
-    Run without a command to launch interactive mode, or pass a command for CLI usage.
-usage: sbx
-options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for sbx
-see_also:
     - sbx completion - Generate the autocompletion script for the specified shell
+    - sbx cp - Copy files or directories between a sandbox and the host
     - sbx create - Create a sandbox for an agent
     - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox

@@ -11,8 +11,10 @@ title: Troubleshooting
 
 @x
 description: Resolve common issues when using Docker Sandboxes.
+keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network policy, git, ssh
 @y
 description: Resolve common issues when using Docker Sandboxes.
+keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network policy, git, ssh
 @z
 
 @x
@@ -207,11 +209,11 @@ $ git clone https://github.com/owner/repo.git
 
 @x
 If a request to `127.0.0.1` or a local network IP returns "connection refused"
-from inside a sandbox, the address is not routable from within the sandbox VM.
+from inside a sandbox, the address is not reachable from within the sandbox VM.
 See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
 @y
 If a request to `127.0.0.1` or a local network IP returns "connection refused"
-from inside a sandbox, the address is not routable from within the sandbox VM.
+from inside a sandbox, the address is not reachable from within the sandbox VM.
 See [Accessing host services from a sandbox](usage.md#accessing-host-services-from-a-sandbox).
 @z
 
@@ -278,9 +280,9 @@ for details.
 @z
 
 @x
-## Docker build export fails with "lchown: operation not permitted"
+## Docker build export fails with an ownership error
 @y
-## Docker build export fails with "lchown: operation not permitted"
+## Docker build export fails with an ownership error
 @z
 
 @x
@@ -350,43 +352,107 @@ $ git branch -D <branch-name>
 @z
 
 @x
-## Signed Git commits
+## Sandbox commits aren't signed
 @y
-## Signed Git commits
+## Sandbox commits aren't signed
 @z
 
 @x
-Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
-aren't available in the sandbox environment. Commits created by an agent are
-unsigned.
+Docker Sandboxes can sign Git commits with SSH keys from your host agent.
+For setup steps, see [Signed commits](usage.md#signed-commits).
 @y
-Agents inside a sandbox can't sign commits because signing keys (GPG, SSH)
-aren't available in the sandbox environment. Commits created by an agent are
-unsigned.
+Docker Sandboxes can sign Git commits with SSH keys from your host agent.
+For setup steps, see [Signed commits](usage.md#signed-commits).
 @z
 
 @x
-If your repository or organization requires signed commits, use one of these
-workarounds:
+If `ssh-add -L` prints `The agent has no identities.`, the sandbox can reach
+the forwarded agent, but the host agent doesn't have a loaded key. Load the
+signing key into your host SSH agent:
 @y
-If your repository or organization requires signed commits, use one of these
-workarounds:
+If `ssh-add -L` prints `The agent has no identities.`, the sandbox can reach
+the forwarded agent, but the host agent doesn't have a loaded key. Load the
+signing key into your host SSH agent:
 @z
 
 @x
-- **Commit outside the sandbox.** Let the agent make changes without
-  committing, then commit and sign from your host terminal.
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
 @y
-- **Commit outside the sandbox.** Let the agent make changes without
-  committing, then commit and sign from your host terminal.
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
 @z
 
 @x
-- **Sign after the fact.** Let the agent commit inside the sandbox, then
-  re-sign the commits on your host:
+If commit signing works on the host but fails in a sandbox, check whether Git
+is configured to sign with a host file path such as
+`/Users/me/.ssh/id_ed25519.pub`. The sandbox uses the forwarded SSH agent, not
+the host key file path. Use the inline public key form instead:
 @y
-- **Sign after the fact.** Let the agent commit inside the sandbox, then
-  re-sign the commits on your host:
+If commit signing works on the host but fails in a sandbox, check whether Git
+is configured to sign with a host file path such as
+`/Users/me/.ssh/id_ed25519.pub`. The sandbox uses the forwarded SSH agent, not
+the host key file path. Use the inline public key form instead:
+@z
+
+@x
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+@y
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+@z
+
+@x
+If Git reports that `ssh-keygen` is missing, use a sandbox template that
+includes OpenSSH client tools.
+@y
+If Git reports that `ssh-keygen` is missing, use a sandbox template that
+includes OpenSSH client tools.
+@z
+
+@x
+If `git log --show-signature` reports that `gpg.ssh.allowedSignersFile` needs
+to be configured, Git can't verify the SSH signature locally. This verification
+config isn't required to create signed commits. GitHub uses the SSH signing
+keys configured in your GitHub account to verify commits.
+@y
+If `git log --show-signature` reports that `gpg.ssh.allowedSignersFile` needs
+to be configured, Git can't verify the SSH signature locally. This verification
+config isn't required to create signed commits. GitHub uses the SSH signing
+keys configured in your GitHub account to verify commits.
+@z
+
+@x
+GPG and S/MIME signing keys aren't available inside the sandbox. If your
+repository or organization requires GPG or S/MIME signatures, or if SSH signing
+isn't configured, use one of these workarounds:
+@y
+GPG and S/MIME signing keys aren't available inside the sandbox. If your
+repository or organization requires GPG or S/MIME signatures, or if SSH signing
+isn't configured, use one of these workarounds:
+@z
+
+@x
+- Commit outside the sandbox. Let the agent make changes without committing,
+  then commit and sign from your host terminal.
+@y
+- Commit outside the sandbox. Let the agent make changes without committing,
+  then commit and sign from your host terminal.
+@z
+
+@x
+- Sign after the fact. Let the agent commit inside the sandbox, then re-sign
+  the commits on your host:
+@y
+- Sign after the fact. Let the agent commit inside the sandbox, then re-sign
+  the commits on your host:
 @z
 
 @x
@@ -570,11 +636,11 @@ issue at [github.com/docker/sbx-releases/issues](https://github.com/docker/sbx-r
 @z
 
 @x
-To help the Docker team investigate, generate a diagnostics bundle and share
-it when reporting the issue:
+To help Docker investigate, generate a diagnostics bundle and share it when
+reporting the issue:
 @y
-To help the Docker team investigate, generate a diagnostics bundle and share
-it when reporting the issue:
+To help Docker investigate, generate a diagnostics bundle and share it when
+reporting the issue:
 @z
 
 @x

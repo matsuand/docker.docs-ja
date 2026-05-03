@@ -14,9 +14,9 @@ description: |-
 @z
 
 @x
-    Available services: anthropic, aws, droid, github, google, groq, mistral, nebius, openai, xai
+    Available services: anthropic, aws, cursor, droid, github, google, groq, mistral, nebius, openai, xai
 @y
-    Available services: anthropic, aws, droid, github, google, groq, mistral, nebius, openai, xai
+    Available services: anthropic, aws, cursor, droid, github, google, groq, mistral, nebius, openai, xai
 @z
 
 @x

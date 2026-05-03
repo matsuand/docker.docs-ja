@@ -11,8 +11,10 @@ title: FAQ
 
 @x
 description: Frequently asked questions about Docker Sandboxes.
+keywords: docker sandboxes, sbx, faq, sign in, telemetry
 @y
 description: Frequently asked questions about Docker Sandboxes.
+keywords: docker sandboxes, sbx, faq, sign in, telemetry
 @z
 
 @x
@@ -74,12 +76,12 @@ The `sbx` CLI collects basic usage data about CLI invocations:
 @z
 
 @x
-- Which subcommand you ran
+- Which command you ran
 - Whether it succeeded or failed
 - How long it took
 - If you're signed in, your Docker username is included
 @y
-- Which subcommand you ran
+- Which command you ran
 - Whether it succeeded or failed
 - How long it took
 - If you're signed in, your Docker username is included
@@ -172,6 +174,32 @@ sandbox instead of on your host.
 @z
 
 @x
+Variables in `/etc/sandbox-persistent.sh` are sourced automatically when
+bash runs inside the sandbox, including interactive sessions and agents
+started with `sbx run`. If you run a command directly with
+`sbx exec <name> <command>`, the command runs without a shell, so the
+persistent environment file is not sourced. Wrap the command in `bash -c`
+to load the environment:
+@y
+Variables in `/etc/sandbox-persistent.sh` are sourced automatically when
+bash runs inside the sandbox, including interactive sessions and agents
+started with `sbx run`. If you run a command directly with
+`sbx exec <name> <command>`, the command runs without a shell, so the
+persistent environment file is not sourced. Wrap the command in `bash -c`
+to load the environment:
+@z
+
+@x
+```console
+$ sbx exec <sandbox-name> bash -c "your-command"
+```
+@y
+```console
+$ sbx exec <sandbox-name> bash -c "your-command"
+```
+@z
+
+@x
 To verify the variable is set, open a shell in the sandbox:
 @y
 To verify the variable is set, open a shell in the sandbox:
@@ -187,6 +215,40 @@ $ echo $BRAVE_API_KEY
 $ sbx exec -it <sandbox-name> bash
 $ echo $BRAVE_API_KEY
 ```
+@z
+
+@x
+## Why do agents run without approval prompts?
+@y
+## Why do agents run without approval prompts?
+@z
+
+@x
+The sandbox itself is the safety boundary. Because agents run inside an
+isolated microVM with [network policies](security/policy.md),
+[credential isolation](security/credentials.md), and no access to your host
+system outside the workspace, the usual reasons for approval prompts (preventing
+destructive commands, network access, file modifications) are handled by the
+sandbox isolation layers instead.
+@y
+The sandbox itself is the safety boundary. Because agents run inside an
+isolated microVM with [network policies](security/policy.md),
+[credential isolation](security/credentials.md), and no access to your host
+system outside the workspace, the usual reasons for approval prompts (preventing
+destructive commands, network access, file modifications) are handled by the
+sandbox isolation layers instead.
+@z
+
+@x
+If you prefer to re-enable approval prompts, change the permission mode
+inside the session. Most agents let you switch permission modes after
+startup. In Claude Code, use the `/permissions` command to change the mode
+interactively.
+@y
+If you prefer to re-enable approval prompts, change the permission mode
+inside the session. Most agents let you switch permission modes after
+startup. In Claude Code, use the `/permissions` command to change the mode
+interactively.
 @z
 
 @x

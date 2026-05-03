@@ -11,6 +11,21 @@ short: Reset all VM sandboxes and clean up state
 
 @x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Reset all VM sandboxes and permanently delete all VM data.
 
     This command will:
@@ -20,7 +35,19 @@ long: |-
     - Clear all internal registries
 
     The daemon will continue running with fresh state after reset.
+@y
+    Reset all VM sandboxes and permanently delete all VM data.
 
+    This command will:
+    - Stop all running VMs gracefully (30s timeout)
+    - Delete all VM state directories in ~/.docker/sandboxes/vm/
+    - Clear image cache in ~/.docker/sandboxes/image-cache/
+    - Clear all internal registries
+
+    The daemon will continue running with fresh state after reset.
+@z
+
+@x
     ⚠️  WARNING: This is a destructive operation that cannot be undone!
     All running agents will be forcefully terminated and their work will be lost.
     Cached image tars will be deleted and will need to be recreated on next use.
@@ -28,17 +55,6 @@ long: |-
     By default, you will be prompted to confirm (y/N).
     Use --force to skip the confirmation prompt.
 @y
-long: |-
-    Reset all VM sandboxes and permanently delete all VM data.
-
-    This command will:
-    - Stop all running VMs gracefully (30s timeout)
-    - Delete all VM state directories in ~/.docker/sandboxes/vm/
-    - Clear image cache in ~/.docker/sandboxes/image-cache/
-    - Clear all internal registries
-
-    The daemon will continue running with fresh state after reset.
-
     ⚠️  WARNING: This is a destructive operation that cannot be undone!
     All running agents will be forcefully terminated and their work will be lost.
     Cached image tars will be deleted and will need to be recreated on next use.
@@ -53,8 +69,6 @@ usage: docker sandbox reset [OPTIONS]
 usage: docker sandbox reset [OPTIONS]
 @z
 
-% pname
-% plink
 % options
 
 @x force

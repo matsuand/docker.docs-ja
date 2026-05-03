@@ -45,6 +45,14 @@ usage: sbx create [flags] AGENT PATH [PATH...]
       usage: help for create
 @z
 
+@x kit
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@y
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@z
+
 @x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
@@ -124,6 +132,7 @@ example: |4-
     - sbx create claude - Create a sandbox for claude
     - sbx create codex - Create a sandbox for codex
     - sbx create copilot - Create a sandbox for copilot
+    - sbx create cursor - Create a sandbox for cursor
     - sbx create docker-agent - Create a sandbox for docker-agent
     - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini
@@ -135,6 +144,7 @@ example: |4-
     - sbx create claude - Create a sandbox for claude
     - sbx create codex - Create a sandbox for codex
     - sbx create copilot - Create a sandbox for copilot
+    - sbx create cursor - Create a sandbox for cursor
     - sbx create docker-agent - Create a sandbox for docker-agent
     - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini

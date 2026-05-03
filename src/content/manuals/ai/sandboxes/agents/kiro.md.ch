@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Kiro
-weight: 50
-description: |
-  Use Kiro in Docker Sandboxes with device flow authentication for interactive
-  AI-assisted development.
----
 @y
----
 title: Kiro
-weight: 50
+@z
+
+@x
 description: |
   Use Kiro in Docker Sandboxes with device flow authentication for interactive
   AI-assisted development.
----
+keywords: docker sandboxes, kiro, ai agent, authentication, sbx
+@y
+description: |
+  Use Kiro in Docker Sandboxes with device flow authentication for interactive
+  AI-assisted development.
+keywords: docker sandboxes, kiro, ai agent, authentication, sbx
 @z
 
 @x
@@ -256,9 +256,9 @@ persisted across sandbox restarts.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

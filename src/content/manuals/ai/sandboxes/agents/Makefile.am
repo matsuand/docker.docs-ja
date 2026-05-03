@@ -3,16 +3,16 @@
 ##
 
 bases = \
-	_index.md              \
-	claude-code.md         \
-	codex.md               \
-	copilot.md             \
-	custom-environments.md \
-	docker-agent.md        \
-	droid.md               \
-	gemini.md              \
-	kiro.md                \
-	opencode.md
+	_index.md       \
+	claude-code.md  \
+	codex.md        \
+	copilot.md      \
+	docker-agent.md \
+	droid.md        \
+	gemini.md       \
+	kiro.md         \
+	opencode.md     \
+	shell.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

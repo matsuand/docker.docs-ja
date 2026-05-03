@@ -15,6 +15,12 @@ usage: docker dhi customization list
 
 % options
 
+@x bulk-id
+      description: Filter by bulk customization ID (exact match)
+@y
+      description: Filter by bulk customization ID (exact match)
+@z
+
 @x filter
       description: Filter by customization name (case-insensitive substring match)
 @y

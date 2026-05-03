@@ -4,17 +4,37 @@
 @x
 command: docker sandbox network log
 short: Show network logs
-long: Show network logs
-usage: docker sandbox network log
 @y
 command: docker sandbox network log
 short: Show network logs
-long: Show network logs
+@z
+
+@x
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Show network logs
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Show network logs
+@z
+
+@x
+usage: docker sandbox network log
+@y
 usage: docker sandbox network log
 @z
 
-% pname
-% plink
 % options
 
 @x json

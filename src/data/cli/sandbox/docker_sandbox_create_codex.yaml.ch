@@ -4,7 +4,28 @@
 @x
 command: docker sandbox create codex
 short: Create a sandbox for codex
+@y
+command: docker sandbox create codex
+short: Create a sandbox for codex
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Create a sandbox with access to a host workspace for codex.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -12,9 +33,6 @@ long: |-
 
     Use 'docker sandbox run SANDBOX' to start codex after creation.
 @y
-command: docker sandbox create codex
-short: Create a sandbox for codex
-long: |-
     Create a sandbox with access to a host workspace for codex.
 
     The workspace path is required and will be exposed inside the sandbox at the same path as on the host.
@@ -29,8 +47,6 @@ usage: docker sandbox create codex WORKSPACE [EXTRA_WORKSPACE...]
 usage: docker sandbox create codex WORKSPACE [EXTRA_WORKSPACE...]
 @z
 
-% pname
-% plink
 % inherited_options:
 
 @x debug

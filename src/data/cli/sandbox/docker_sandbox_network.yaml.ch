@@ -4,19 +4,37 @@
 @x
 command: docker sandbox network
 short: Manage sandbox networking
-long: Manage sandbox networking
-usage: docker sandbox network
 @y
 command: docker sandbox network
 short: Manage sandbox networking
-long: Manage sandbox networking
+@z
+
+@x
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Manage sandbox networking
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Manage sandbox networking
+@z
+
+@x
+usage: docker sandbox network
+@y
 usage: docker sandbox network
 @z
 
-% pname
-% plink
-% cname
-% clink
 % inherited_options:
 
 @x debug

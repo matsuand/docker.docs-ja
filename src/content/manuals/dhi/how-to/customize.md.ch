@@ -307,7 +307,8 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       values that the image will contain.
    1. Add [labels](/reference/dockerfile/#label) to the image.
    1. Add [annotations](/build/metadata/annotations/) to the image.
-   1. Specify the users to add to the image.
+   1. Specify the users to add to the image. When you add a user, a home
+      directory is automatically created for that user with 0755 permissions.
    1. Specify the user groups to add to the image.
    1. Select which [user](/reference/dockerfile/#user) to run the images as.
    1. Add [`ENTRYPOINT`](/reference/dockerfile/#entrypoint) arguments to the
@@ -332,7 +333,8 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       values that the image will contain.
    1. Add [labels](__SUBDIR__/reference/dockerfile/#label) to the image.
    1. Add [annotations](__SUBDIR__/build/metadata/annotations/) to the image.
-   1. Specify the users to add to the image.
+   1. Specify the users to add to the image. When you add a user, a home
+      directory is automatically created for that user with 0755 permissions.
    1. Specify the user groups to add to the image.
    1. Select which [user](__SUBDIR__/reference/dockerfile/#user) to run the images as.
    1. Add [`ENTRYPOINT`](__SUBDIR__/reference/dockerfile/#entrypoint) arguments to the
@@ -385,15 +387,33 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+available operations depend on the token's permission scope:
 @y
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+available operations depend on the token's permission scope:
+@z
+
+@x
+- To list or get customizations, or to view build logs, the OAT must have read
+  (pull) access to the destination repository. Results are scoped to
+  repositories the OAT can access.
+- To create, update, or delete a customization, the OAT must have push access to
+  the destination repository. Bulk operations require push access to every
+  referenced destination repository.
+@y
+- To list or get customizations, or to view build logs, the OAT must have read
+  (pull) access to the destination repository. Results are scoped to
+  repositories the OAT can access.
+- To create, update, or delete a customization, the OAT must have push access to
+  the destination repository. Bulk operations require push access to every
+  referenced destination repository.
 @z
 
 @x

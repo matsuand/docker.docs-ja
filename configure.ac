@@ -170,6 +170,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/ai/sandboxes/Makefile
 	src/content/manuals/ai/sandboxes/agents/Makefile
+	src/content/manuals/ai/sandboxes/customize/Makefile
 	src/content/manuals/ai/sandboxes/images/Makefile
 	src/content/manuals/ai/sandboxes/security/Makefile
 	src/content/manuals/billing/Makefile

@@ -4,15 +4,33 @@
 @x
 command: docker sandbox run
 short: Run an agent in a sandbox
-long: |-
-    Run an agent in a sandbox. Create the sandbox if it does not exist.
-
-    Pass agent arguments after the "--" separator.
-    Additional workspaces can be provided as extra arguments. Append ":ro" to mount them read-only.
 @y
 command: docker sandbox run
 short: Run an agent in a sandbox
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
+    Run an agent in a sandbox. Create the sandbox if it does not exist.
+
+    Pass agent arguments after the "--" separator.
+    Additional workspaces can be provided as extra arguments. Append ":ro" to mount them read-only.
+@y
     Run an agent in a sandbox. Create the sandbox if it does not exist.
 
     Pass agent arguments after the "--" separator.
@@ -59,8 +77,6 @@ usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT [WORKSPACE] [EXTRA_
 usage: docker sandbox run SANDBOX [-- AGENT_ARGS...] | AGENT [WORKSPACE] [EXTRA_WORKSPACE...] [-- AGENT_ARGS...]
 @z
 
-% pname
-% plink
 % options
 
 @x detached

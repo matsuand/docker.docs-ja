@@ -22,58 +22,66 @@ subsystem used:
 @z
 
 @x
-| Operating system                   | Location                                                                                                                                 |
-| :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| Linux                              | Use the command `journalctl -xu docker.service` (or read `/var/log/syslog` or `/var/log/messages`, depending on your Linux Distribution) |
-| macOS (`dockerd` logs)             | `~/Library/Containers/com.docker.docker/Data/log/vm/dockerd.log`                                                                         |
-| macOS (`containerd` logs)          | `~/Library/Containers/com.docker.docker/Data/log/vm/containerd.log`                                                                      |
-| Windows (WSL2) (`dockerd` logs)    | `%LOCALAPPDATA%\Docker\log\vm\dockerd.log`                                                                                               |
-| Windows (WSL2) (`containerd` logs) | `%LOCALAPPDATA%\Docker\log\vm\containerd.log`                                                                                            |
-| Windows (Windows containers)       | Logs are in the Windows Event Log                                                                                                        |
+| Operating system             | Location                                                                                                                                 |
+| :--------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Linux                        | Use the command `journalctl -xu docker.service` (or read `/var/log/syslog` or `/var/log/messages`, depending on your Linux Distribution) |
+| macOS (Docker Desktop)       | `~/Library/Containers/com.docker.docker/Data/log/vm/init.log`                                                                            |
+| Windows (WSL2)               | `%LOCALAPPDATA%\Docker\log\vm\init.log`                                                                                                  |
+| Windows (Windows containers) | Logs are in the Windows Event Log                                                                                                        |
 @y
-| Operating system                   | Location                                                                                                                                 |
-| :--------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| Linux                              | Use the command `journalctl -xu docker.service` (or read `/var/log/syslog` or `/var/log/messages`, depending on your Linux Distribution) |
-| macOS (`dockerd` logs)             | `~/Library/Containers/com.docker.docker/Data/log/vm/dockerd.log`                                                                         |
-| macOS (`containerd` logs)          | `~/Library/Containers/com.docker.docker/Data/log/vm/containerd.log`                                                                      |
-| Windows (WSL2) (`dockerd` logs)    | `%LOCALAPPDATA%\Docker\log\vm\dockerd.log`                                                                                               |
-| Windows (WSL2) (`containerd` logs) | `%LOCALAPPDATA%\Docker\log\vm\containerd.log`                                                                                            |
-| Windows (Windows containers)       | Logs are in the Windows Event Log                                                                                                        |
+| Operating system             | Location                                                                                                                                 |
+| :--------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| Linux                        | Use the command `journalctl -xu docker.service` (or read `/var/log/syslog` or `/var/log/messages`, depending on your Linux Distribution) |
+| macOS (Docker Desktop)       | `~/Library/Containers/com.docker.docker/Data/log/vm/init.log`                                                                            |
+| Windows (WSL2)               | `%LOCALAPPDATA%\Docker\log\vm\init.log`                                                                                                  |
+| Windows (Windows containers) | Logs are in the Windows Event Log                                                                                                        |
 @z
 
 @x
-To view the `dockerd` logs on macOS, open a terminal Window, and use the `tail`
-command with the `-f` flag to "follow" the logs. Logs will be printed until you
-terminate the command using `CTRL+c`:
+On macOS and Windows (WSL2), Docker Desktop writes daemon logs (`dockerd`,
+`containerd`, and other VM services) to a single multiplexed `init.log` file
+in JSON format. Each line contains a `"component"` field identifying the
+service. To follow the logs, open a terminal and use the `tail` command with
+the `-f` flag. Logs print until you terminate the command using `CTRL+c`:
 @y
-To view the `dockerd` logs on macOS, open a terminal Window, and use the `tail`
-command with the `-f` flag to "follow" the logs. Logs will be printed until you
-terminate the command using `CTRL+c`:
+On macOS and Windows (WSL2), Docker Desktop writes daemon logs (`dockerd`,
+`containerd`, and other VM services) to a single multiplexed `init.log` file
+in JSON format. Each line contains a `"component"` field identifying the
+service. To follow the logs, open a terminal and use the `tail` command with
+the `-f` flag. Logs print until you terminate the command using `CTRL+c`:
 @z
 
 @x
 ```console
-$ tail -f ~/Library/Containers/com.docker.docker/Data/log/vm/dockerd.log
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.497642089Z" level=debug msg="attach: stdout: begin"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.497714291Z" level=debug msg="attach: stderr: begin"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.499798390Z" level=debug msg="Calling POST /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/wait?condition=removed"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.518403686Z" level=debug msg="Calling GET /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/json"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.527074928Z" level=debug msg="Calling POST /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/start"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.528203579Z" level=debug msg="container mounted via layerStore: &{/var/lib/docker/overlay2/6e76ffecede030507fcaa576404e141e5f87fc4d7e1760e9ce5b52acb24
+$ tail -f ~/Library/Containers/com.docker.docker/Data/log/vm/init.log
+{"component":"dockerd","level":"debug","msg":"attach: stdout: begin","time":"2021-07-28T10:21:21.497642089Z"}
+{"component":"dockerd","level":"debug","msg":"attach: stderr: begin","time":"2021-07-28T10:21:21.497714291Z"}
 ...
 ^C
 ```
 @y
 ```console
-$ tail -f ~/Library/Containers/com.docker.docker/Data/log/vm/dockerd.log
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.497642089Z" level=debug msg="attach: stdout: begin"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.497714291Z" level=debug msg="attach: stderr: begin"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.499798390Z" level=debug msg="Calling POST /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/wait?condition=removed"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.518403686Z" level=debug msg="Calling GET /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/json"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.527074928Z" level=debug msg="Calling POST /v1.41/containers/35fc5ec0ffe1ad492d0a4fbf51fd6286a087b89d4dd66367fa3b7aec70b46a40/start"
-2021-07-28T10:21:21Z dockerd time="2021-07-28T10:21:21.528203579Z" level=debug msg="container mounted via layerStore: &{/var/lib/docker/overlay2/6e76ffecede030507fcaa576404e141e5f87fc4d7e1760e9ce5b52acb24
+$ tail -f ~/Library/Containers/com.docker.docker/Data/log/vm/init.log
+{"component":"dockerd","level":"debug","msg":"attach: stdout: begin","time":"2021-07-28T10:21:21.497642089Z"}
+{"component":"dockerd","level":"debug","msg":"attach: stderr: begin","time":"2021-07-28T10:21:21.497714291Z"}
 ...
 ^C
+```
+@z
+
+@x
+To filter for `dockerd` output only:
+@y
+To filter for `dockerd` output only:
+@z
+
+@x
+```console
+$ grep '"component":"dockerd"' ~/Library/Containers/com.docker.docker/Data/log/vm/init.log
+```
+@y
+```console
+$ grep '"component":"dockerd"' ~/Library/Containers/com.docker.docker/Data/log/vm/init.log
 ```
 @z
 

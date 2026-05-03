@@ -93,9 +93,13 @@ repositories:
 @z
 
 @x
-You must be an organization owner or editor to mirror repositories.
+To mirror repositories, you must be an organization owner or editor, or use a
+personal access token (PAT) or organization access token (OAT). See the CLI and
+Terraform tabs in the following sections for required permission scopes.
 @y
-You must be an organization owner or editor to mirror repositories.
+To mirror repositories, you must be an organization owner or editor, or use a
+personal access token (PAT) or organization access token (OAT). See the CLI and
+Terraform tabs in the following sections for required permission scopes.
 @z
 
 @x
@@ -171,15 +175,41 @@ It may take a few minutes for all the tags to finish mirroring.
 @z
 
 @x
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+available operations depend on the token's permission scope:
 @y
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+available operations depend on the token's permission scope:
+@z
+
+@x
+- To list mirrored repositories, the OAT must have read (pull) access to the
+  relevant repositories. Results are scoped to repositories the OAT can access.
+- To create a mirror to an existing destination repository, the OAT must have
+  push access to that repository. To create a mirror to a new destination
+  repository that doesn't yet exist, the OAT must have org-wide repository
+  access (for example, `<org>/*` with pull or push). Repository-scoped access to
+  the future repository name is not sufficient.
+- To stop mirroring, the OAT must have push access to the relevant repository.
+- OATs with public repository read-only access cannot list or manage mirrored
+  repositories.
+@y
+- To list mirrored repositories, the OAT must have read (pull) access to the
+  relevant repositories. Results are scoped to repositories the OAT can access.
+- To create a mirror to an existing destination repository, the OAT must have
+  push access to that repository. To create a mirror to a new destination
+  repository that doesn't yet exist, the OAT must have org-wide repository
+  access (for example, `<org>/*` with pull or push). Repository-scoped access to
+  the future repository name is not sufficient.
+- To stop mirroring, the OAT must have push access to the relevant repository.
+- OATs with public repository read-only access cannot list or manage mirrored
+  repositories.
 @z
 
 @x
@@ -236,52 +266,28 @@ First, install and configure the provider:
 First, install and configure the provider:
 @z
 
-@x
-```hcl
-terraform {
-  required_providers {
-    dhi = {
-      source = "docker-hardened-images/dhi"
-    }
-  }
-}
-@y
-```hcl
-terraform {
-  required_providers {
-    dhi = {
-      source = "docker-hardened-images/dhi"
-    }
-  }
-}
-@z
-
-@x
-provider "dhi" {
-  docker_hub_username = var.docker_username
-  docker_hub_password = var.docker_password
-  organization        = var.org_name
-}
-```
-@y
-provider "dhi" {
-  docker_hub_username = var.docker_username
-  docker_hub_password = var.docker_password
-  organization        = var.org_name
-}
-```
-@z
+% snip code...
 
 @x
 > [!NOTE]
 >
 > Instead of specifying credentials in the provider block, you can set the
-> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables.
+> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables. You
+> can also authenticate using an organization access token (OAT) in place of a
+> password. Set `DOCKER_USERNAME` to your organization namespace and
+> `DOCKER_PASSWORD` to the OAT. When using an OAT, the same permission scopes
+> apply as with the CLI: read (pull) access is required to list mirrors, and
+> push access is required to create or delete them.
 @y
 > [!NOTE]
 >
 > Instead of specifying credentials in the provider block, you can set the
-> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables.
+> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables. You
+> can also authenticate using an organization access token (OAT) in place of a
+> password. Set `DOCKER_USERNAME` to your organization namespace and
+> `DOCKER_PASSWORD` to the OAT. When using an OAT, the same permission scopes
+> apply as with the CLI: read (pull) access is required to list mirrors, and
+> push access is required to create or delete them.
 @z
 
 @x
@@ -290,37 +296,7 @@ Then, define a `dhi_mirror` resource for each repository you want to mirror:
 Then, define a `dhi_mirror` resource for each repository you want to mirror:
 @z
 
-@x
-```hcl
-resource "dhi_mirror" "golang" {
-  source_namespace = "dhi"
-  source_name      = "golang"
-  destination_name = "dhi-golang"
-}
-@y
-```hcl
-resource "dhi_mirror" "golang" {
-  source_namespace = "dhi"
-  source_name      = "golang"
-  destination_name = "dhi-golang"
-}
-@z
-
-@x
-resource "dhi_mirror" "nginx" {
-  source_namespace = "dhi"
-  source_name      = "nginx"
-  destination_name = "dhi-nginx"
-}
-```
-@y
-resource "dhi_mirror" "nginx" {
-  source_namespace = "dhi"
-  source_name      = "nginx"
-  destination_name = "dhi-nginx"
-}
-```
-@z
+% snip code...
 
 @x
 To enable Extended Lifecycle Support (ELS) variants, set the `els` attribute:
@@ -328,25 +304,7 @@ To enable Extended Lifecycle Support (ELS) variants, set the `els` attribute:
 To enable Extended Lifecycle Support (ELS) variants, set the `els` attribute:
 @z
 
-@x
-```hcl
-resource "dhi_mirror" "golang" {
-  source_namespace = "dhi"
-  source_name      = "golang"
-  destination_name = "dhi-golang"
-  els              = true
-}
-```
-@y
-```hcl
-resource "dhi_mirror" "golang" {
-  source_namespace = "dhi"
-  source_name      = "golang"
-  destination_name = "dhi-golang"
-  els              = true
-}
-```
-@z
+% snip code...
 
 @x
 Run `terraform apply` to create the mirrors.
@@ -445,15 +403,17 @@ updates. You can still use the last images or charts that were mirrored.
 @z
 
 @x
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md) with push access to the
+relevant repository.
 @y
-Authenticate with `docker login` using your Docker credentials or a [personal
+Authenticate with `docker login` using your Docker credentials, a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
-permissions. [Organization access tokens
-(OATs)](../../enterprise/security/access-tokens.md) are not supported.
+permissions, or an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md) with push access to the
+relevant repository.
 @z
 
 @x
@@ -462,15 +422,7 @@ Use the [`docker dhi mirror`](/reference/cli/docker/dhi/mirror/) command:
 Use the [`docker dhi mirror`](__SUBDIR__/reference/cli/docker/dhi/mirror/) command:
 @z
 
-@x
-```console
-$ docker dhi mirror stop --org my-org dhi-golang
-```
-@y
-```console
-$ docker dhi mirror stop --org my-org dhi-golang
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -612,47 +564,7 @@ When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 When a webhook is triggered, Docker Hub sends a JSON payload like the following:
 @z
 
-@x
-```json{collapse=true}
-{
-  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
-  "push_data": {
-    "pushed_at": 1712345678,
-    "pusher": "trustedbuilder",
-    "tag": "3.13-alpine3.21"
-  },
-  "repository": {
-    "name": "dhi-python",
-    "namespace": "exampleorg",
-    "repo_name": "exampleorg/dhi-python",
-    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
-    "is_private": true,
-    "status": "Active",
-    ...
-  }
-}
-```
-@y
-```json{collapse=true}
-{
-  "callback_url": "https://registry.hub.docker.com/u/exampleorg/dhi-python/hook/abc123/",
-  "push_data": {
-    "pushed_at": 1712345678,
-    "pusher": "trustedbuilder",
-    "tag": "3.13-alpine3.21"
-  },
-  "repository": {
-    "name": "dhi-python",
-    "namespace": "exampleorg",
-    "repo_name": "exampleorg/dhi-python",
-    "repo_url": "https://hub.docker.com/r/exampleorg/dhi-python",
-    "is_private": true,
-    "status": "Active",
-    ...
-  }
-}
-```
-@z
+% snip code...
 
 @x
 ### Example mirroring with `regctl`
@@ -732,33 +644,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    > at runtime, or secret management tools.
 @z
 
-@x
-   ```console
-   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
-   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
-   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
-   $ export DEST_REG="registry.example.com"
-   $ export DEST_REPO="mirror/dhi-python"
-   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
-   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
-   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
-   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
-   $ export TAG="3.13-alpine3.21"
-   ```
-@y
-   ```console
-   $ export DOCKER_USERNAME="YOUR_DOCKER_USERNAME"
-   $ export DOCKER_PAT="YOUR_DOCKER_PAT"
-   $ export DOCKER_ORG="YOUR_DOCKER_ORG"
-   $ export DEST_REG="registry.example.com"
-   $ export DEST_REPO="mirror/dhi-python"
-   $ export DEST_REG_USERNAME="YOUR_DESTINATION_REGISTRY_USERNAME"
-   $ export DEST_REG_TOKEN="YOUR_DESTINATION_REGISTRY_TOKEN"
-   $ export SRC_REPO="docker.io/${DOCKER_ORG}/dhi-python"
-   $ export SRC_ATT_REPO="registry.scout.docker.com/${DOCKER_ORG}/dhi-python"
-   $ export TAG="3.13-alpine3.21"
-   ```
-@z
+% snip command...
 
 @x
 2. Sign in via `regctl` to Docker Hub, the Scout registry that contains
@@ -768,19 +654,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    the attestations, and your destination registry.
 @z
 
-@x
-   ```console
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
-   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
-   ```
-@y
-   ```console
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin docker.io
-   $ echo $DOCKER_PAT | regctl registry login -u "$DOCKER_USERNAME" --pass-stdin registry.scout.docker.com
-   $ echo $DEST_REG_TOKEN | regctl registry login -u "$DEST_REG_USERNAME" --pass-stdin "$DEST_REG"
-   ```
-@z
+% snip command...
 
 @x
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
@@ -788,27 +662,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 3. Mirror the image and attestations using `--referrers` and referrer endpoints:
 @z
 
-@x
-   ```console
-   $ regctl image copy \
-        "${SRC_REPO}:${TAG}" \
-        "${DEST_REG}/${DEST_REPO}:${TAG}" \
-        --referrers \
-        --referrers-src "${SRC_ATT_REPO}" \
-        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
-        --force-recursive
-   ```
-@y
-   ```console
-   $ regctl image copy \
-        "${SRC_REPO}:${TAG}" \
-        "${DEST_REG}/${DEST_REPO}:${TAG}" \
-        --referrers \
-        --referrers-src "${SRC_ATT_REPO}" \
-        --referrers-tgt "${DEST_REG}/${DEST_REPO}" \
-        --force-recursive
-   ```
-@z
+% snip command...
 
 @x
 4. Verify that artifacts were preserved.
@@ -822,15 +676,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    First, get a digest for a specific tag and platform. For example, `linux/amd64`.
 @z
 
-@x
-   ```console
-   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
-   ```
-@y
-   ```console
-   DIGEST="$(regctl manifest head "${DEST_REG}/${DEST_REPO}:${TAG}" --platform linux/amd64)"
-   ```
-@z
+% snip command...
 
 @x
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
@@ -838,15 +684,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    List attached artifacts (SBOM, provenance, VEX, vulnerability reports).
 @z
 
-@x
-   ```console
-   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@y
-   ```console
-   $ regctl artifact list "${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@z
+% snip command...
 
 @x
    Or, list attached artifacts with `docker scout`.
@@ -854,15 +692,7 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
    Or, list attached artifacts with `docker scout`.
 @z
 
-@x
-   ```console
-   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@y
-   ```console
-   $ docker scout attest list "registry://${DEST_REG}/${DEST_REPO}@${DIGEST}"
-   ```
-@z
+% snip command...
 
 @x
 ### Example ongoing mirroring with `regsync`
@@ -888,87 +718,7 @@ The following example uses a `regsync.yaml` file that syncs Node 24 and Python
 3.12 Debian 13 variants, excluding Alpine and Debian 12.
 @z
 
-@x
-```yaml{title="regsync.yaml",collapse=true}
-version: 1
-# Optional: inline creds if not relying on prior CLI logins
-# creds:
-#   - registry: docker.io
-#     user: <your-docker-username>
-#     pass: "{{file \"/run/secrets/docker_token\"}}"
-#   - registry: registry.scout.docker.com
-#     user: <your-docker-username>
-#     pass: "{{file \"/run/secrets/docker_token\"}}"
-#   - registry: registry.example.com
-#     user: <service-user>
-#     pass: "{{file \"/run/secrets/dest_token\"}}"
-@y
-```yaml{title="regsync.yaml",collapse=true}
-version: 1
-# Optional: inline creds if not relying on prior CLI logins
-# creds:
-#   - registry: docker.io
-#     user: <your-docker-username>
-#     pass: "{{file \"/run/secrets/docker_token\"}}"
-#   - registry: registry.scout.docker.com
-#     user: <your-docker-username>
-#     pass: "{{file \"/run/secrets/docker_token\"}}"
-#   - registry: registry.example.com
-#     user: <service-user>
-#     pass: "{{file \"/run/secrets/dest_token\"}}"
-@z
-
-@x
-sync:
-  - source: docker.io/<your-org>/dhi-node
-    target: registry.example.com/mirror/dhi-node
-    type: repository
-    fastCopy: true
-    referrers: true
-    referrerSource: registry.scout.docker.com/<your-org>/dhi-node
-    referrerTarget: registry.example.com/mirror/dhi-node
-    tags:
-      allow: [ "24.*" ]
-      deny: [ ".*alpine.*", ".*debian12.*" ]
-@y
-sync:
-  - source: docker.io/<your-org>/dhi-node
-    target: registry.example.com/mirror/dhi-node
-    type: repository
-    fastCopy: true
-    referrers: true
-    referrerSource: registry.scout.docker.com/<your-org>/dhi-node
-    referrerTarget: registry.example.com/mirror/dhi-node
-    tags:
-      allow: [ "24.*" ]
-      deny: [ ".*alpine.*", ".*debian12.*" ]
-@z
-
-@x
-  - source: docker.io/<your-org>/dhi-python
-    target: registry.example.com/mirror/dhi-python
-    type: repository
-    fastCopy: true
-    referrers: true
-    referrerSource: registry.scout.docker.com/<your-org>/dhi-python
-    referrerTarget: registry.example.com/mirror/dhi-python
-    tags:
-      allow: [ "3.12.*" ]
-      deny: [ ".*alpine.*", ".*debian12.*" ]
-```
-@y
-  - source: docker.io/<your-org>/dhi-python
-    target: registry.example.com/mirror/dhi-python
-    type: repository
-    fastCopy: true
-    referrers: true
-    referrerSource: registry.scout.docker.com/<your-org>/dhi-python
-    referrerTarget: registry.example.com/mirror/dhi-python
-    tags:
-      allow: [ "3.12.*" ]
-      deny: [ ".*alpine.*", ".*debian12.*" ]
-```
-@z
+% snip code...
 
 @x
 To do a dry run with the configuration file, you can run the following command.
@@ -978,15 +728,7 @@ To do a dry run with the configuration file, you can run the following command.
 You must [install `regsync`](https://github.com/regclient/regclient) first.
 @z
 
-@x
-```console
-$ regsync check -c regsync.yaml
-```
-@y
-```console
-$ regsync check -c regsync.yaml
-```
-@z
+% snip command...
 
 @x
 To run the sync with the configuration file:
@@ -994,15 +736,7 @@ To run the sync with the configuration file:
 To run the sync with the configuration file:
 @z
 
-@x
-```console
-$ regsync once -c regsync.yaml
-```
-@y
-```console
-$ regsync once -c regsync.yaml
-```
-@z
+% snip command...
 
 @x
 ## What next

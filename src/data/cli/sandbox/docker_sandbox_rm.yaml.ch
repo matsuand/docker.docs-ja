@@ -5,17 +5,35 @@
 command: docker sandbox rm
 aliases: docker sandbox rm, docker sandbox remove
 short: Remove one or more sandboxes
+@y
+command: docker sandbox rm
+aliases: docker sandbox rm, docker sandbox remove
+short: Remove one or more sandboxes
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Remove one or more sandboxes and all their associated resources.
 
     This command will:
     - Check if the sandbox exists
     - Remove the sandbox and clean up its associated resources
 @y
-command: docker sandbox rm
-aliases: docker sandbox rm, docker sandbox remove
-short: Remove one or more sandboxes
-long: |-
     Remove one or more sandboxes and all their associated resources.
 
     This command will:

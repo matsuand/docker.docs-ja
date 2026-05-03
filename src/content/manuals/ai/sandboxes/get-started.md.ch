@@ -460,9 +460,9 @@ agents, open shells, and manage network rules from one place. See
 @z
 
 @x
-![The sbx interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
+![The interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
 @y
-![The sbx interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
+![The interactive dashboard showing sandbox status, resource usage, and network governance controls.](images/sbx-dashboard.png)
 @z
 
 @x
@@ -669,8 +669,8 @@ working tree are unaffected.
 - [Usage guide](usage.md) — sandbox management, reconnecting, multiple
   workspaces, port forwarding, and more
 - [Agents](agents/) — supported agents and configuration
-- [Custom environments](agents/custom-environments.md) — build your own sandbox
-  images
+- [Customize](customize/) — build reusable templates or declare capabilities
+  with kits
 - [Credentials](security/credentials.md) — credential storage and management
 - [Workspace trust](security/workspace.md) — review agent changes safely
 - [Policies](security/policy.md) — control outbound access
@@ -678,8 +678,8 @@ working tree are unaffected.
 - [Usage guide](usage.md) — sandbox management, reconnecting, multiple
   workspaces, port forwarding, and more
 - [Agents](agents/) — supported agents and configuration
-- [Custom environments](agents/custom-environments.md) — build your own sandbox
-  images
+- [Customize](customize/) — build reusable templates or declare capabilities
+  with kits
 - [Credentials](security/credentials.md) — credential storage and management
 - [Workspace trust](security/workspace.md) — review agent changes safely
 - [Policies](security/policy.md) — control outbound access

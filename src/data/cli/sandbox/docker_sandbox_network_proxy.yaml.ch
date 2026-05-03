@@ -4,17 +4,37 @@
 @x
 command: docker sandbox network proxy
 short: Manage proxy configuration for a sandbox
-long: Manage proxy configuration for a sandbox
-usage: docker sandbox network proxy <sandbox> [OPTIONS]
 @y
 command: docker sandbox network proxy
 short: Manage proxy configuration for a sandbox
-long: Manage proxy configuration for a sandbox
+@z
+
+@x
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Manage proxy configuration for a sandbox
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+
+    Manage proxy configuration for a sandbox
+@z
+
+@x
+usage: docker sandbox network proxy <sandbox> [OPTIONS]
+@y
 usage: docker sandbox network proxy <sandbox> [OPTIONS]
 @z
 
-% pname
-% plink
 % options
 
 @x allow-cidr

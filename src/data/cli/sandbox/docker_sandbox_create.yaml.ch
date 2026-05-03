@@ -4,17 +4,25 @@
 @x
 command: docker sandbox create
 short: Create a sandbox for an agent
-long: |-
-    Create a sandbox with access to a host workspace for an agent.
-
-    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
 @y
 command: docker sandbox create
 short: Create a sandbox for an agent
-long: |-
-    Create a sandbox with access to a host workspace for an agent.
+@z
 
-    Available agents are provided as subcommands. Use "create AGENT --help" for agent-specific options.
+@x
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
 @z
 
 @x
@@ -23,10 +31,6 @@ usage: docker sandbox create [OPTIONS] AGENT WORKSPACE
 usage: docker sandbox create [OPTIONS] AGENT WORKSPACE
 @z
 
-% pname
-% plink
-% cname
-% clink
 % options
 
 @x name

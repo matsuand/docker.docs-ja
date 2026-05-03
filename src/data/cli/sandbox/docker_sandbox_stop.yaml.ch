@@ -4,19 +4,39 @@
 @x
 command: docker sandbox stop
 short: Stop one or more sandboxes without removing them
-long: |
-    Stop one or more sandboxes without removing them. The sandboxes can be restarted later.
-usage: docker sandbox stop SANDBOX [SANDBOX...]
 @y
 command: docker sandbox stop
 short: Stop one or more sandboxes without removing them
+@z
+
+@x
 long: |
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Stop one or more sandboxes without removing them. The sandboxes can be restarted later.
+@y
+    Stop one or more sandboxes without removing them. The sandboxes can be restarted later.
+@z
+
+@x
+usage: docker sandbox stop SANDBOX [SANDBOX...]
+@y
 usage: docker sandbox stop SANDBOX [SANDBOX...]
 @z
 
-% pname
-% plink
 % inherited_options
 
 @x debug

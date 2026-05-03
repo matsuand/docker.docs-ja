@@ -28,9 +28,9 @@ description: |-
 @z
 
 @x
-    Available agents: claude, codex, copilot, docker-agent, droid, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, cursor, docker-agent, droid, gemini, kiro, opencode, shell
 @y
-    Available agents: claude, codex, copilot, docker-agent, droid, gemini, kiro, opencode, shell
+    Available agents: claude, codex, copilot, cursor, docker-agent, droid, gemini, kiro, opencode, shell
 @z
 
 @x
@@ -61,6 +61,14 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
       usage: help for run
 @y
       usage: help for run
+@z
+
+@x kit
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@y
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
 @z
 
 @x memory

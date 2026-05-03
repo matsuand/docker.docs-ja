@@ -1,46 +1,54 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Docker Desktop sandboxes
+title: Docker Desktop sandboxes (deprecated)
 linkTitle: Docker Desktop
 description: Run sandboxed AI coding agents using Docker Desktop and the docker sandbox CLI.
+keywords: docker desktop, docker sandbox, ai agents, sandboxes, deprecated
 @y
-title: Docker Desktop sandboxes
+title: Docker Desktop sandboxes (deprecated)
 linkTitle: Docker Desktop
 description: Run sandboxed AI coding agents using Docker Desktop and the docker sandbox CLI.
+keywords: docker desktop, docker sandbox, ai agents, sandboxes, deprecated
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+> [!WARNING]
+>
+> The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+> replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md). This
+> deprecation applies only to the Docker Desktop integration, not to Docker
+> Sandboxes.
 @y
-{{< summary-bar feature_name="Docker Sandboxes" >}}
+> [!WARNING]
+>
+> The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+> replaced by the standalone [`sbx` CLI](manuals/ai/sandboxes/_index.md). This
+> deprecation applies only to the Docker Desktop integration, not to Docker
+> Sandboxes.
 @z
 
 @x
-Docker Desktop includes a built-in sandbox feature for running AI coding
-agents in isolated microVMs using the `docker sandbox` command. This is a
-convenience integration. For full functionality, use the standalone `sbx`
-CLI instead.
+This page covers the Docker Desktop-integrated `docker sandbox` command for
+running AI coding agents in isolated microVMs. This integration is superseded
+by the standalone `sbx` CLI, which provides the full Docker Sandboxes workflow
+and doesn't require Docker Desktop.
 @y
-Docker Desktop includes a built-in sandbox feature for running AI coding
-agents in isolated microVMs using the `docker sandbox` command. This is a
-convenience integration. For full functionality, use the standalone `sbx`
-CLI instead.
+This page covers the Docker Desktop-integrated `docker sandbox` command for
+running AI coding agents in isolated microVMs. This integration is superseded
+by the standalone `sbx` CLI, which provides the full Docker Sandboxes workflow
+and doesn't require Docker Desktop.
 @z
 
 @x
 > [!NOTE]
-> The standalone `sbx` CLI provides more features, more flexibility, and doesn't
-> require Docker Desktop. If you're setting up sandboxed agents for the first
-> time, consider using the standalone CLI instead.
+> Use the standalone `sbx` CLI for sandboxed AI agent workflows.
 @y
 > [!NOTE]
-> The standalone `sbx` CLI provides more features, more flexibility, and doesn't
-> require Docker Desktop. If you're setting up sandboxed agents for the first
-> time, consider using the standalone CLI instead.
+> Use the standalone `sbx` CLI for sandboxed AI agent workflows.
 @z
 
 @x
@@ -150,11 +158,9 @@ Replace `claude` with a different [agent](#supported-agents) if needed.
 @z
 
 @x
-All agents are experimental. The agent type is specified when creating a
-sandbox and can't be changed later.
+The agent type is specified when creating a sandbox and can't be changed later.
 @y
-All agents are experimental. The agent type is specified when creating a
-sandbox and can't be changed later.
+The agent type is specified when creating a sandbox and can't be changed later.
 @z
 
 @x

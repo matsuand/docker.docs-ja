@@ -11,8 +11,10 @@ title: Usage
 
 @x
 description: Common patterns for working with sandboxes.
+keywords: docker sandboxes, sbx, usage, run, policy, secrets, branches, git, workspaces, ssh
 @y
 description: Common patterns for working with sandboxes.
+keywords: docker sandboxes, sbx, usage, run, policy, secrets, branches, git, workspaces, ssh
 @z
 
 @x
@@ -384,6 +386,100 @@ reviewing agent changes.
 @z
 
 @x
+### Signed commits
+@y
+### Signed commits
+@z
+
+@x
+Sandboxes can sign Git commits with SSH keys from your host agent. The private
+key stays on your host.
+@y
+Sandboxes can sign Git commits with SSH keys from your host agent. The private
+key stays on your host.
+@z
+
+@x
+On the host, load the key into your SSH agent:
+@y
+On the host, load the key into your SSH agent:
+@z
+
+@x
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
+@y
+```console
+$ ssh-add ~/.ssh/id_ed25519
+```
+@z
+
+@x
+Inside the sandbox, check that the forwarded agent exposes the key:
+@y
+Inside the sandbox, check that the forwarded agent exposes the key:
+@z
+
+@x
+```console
+$ ssh-add -L
+```
+@y
+```console
+$ ssh-add -L
+```
+@z
+
+@x
+Configure Git globally inside the sandbox to use SSH commit signing. This
+writes to the sandbox user's Git config, not your repository's `.git/config`.
+Use an inline public key instead of a key file path, because host paths such as
+`~/.ssh/id_ed25519.pub` might not exist in the sandbox:
+@y
+Configure Git globally inside the sandbox to use SSH commit signing. This
+writes to the sandbox user's Git config, not your repository's `.git/config`.
+Use an inline public key instead of a key file path, because host paths such as
+`~/.ssh/id_ed25519.pub` might not exist in the sandbox:
+@z
+
+@x
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+@y
+```console
+$ git config --global gpg.format ssh
+$ git config --global user.signingkey "key::$(ssh-add -L | head -n 1)"
+```
+@z
+
+@x
+Then commit as usual:
+@y
+Then commit as usual:
+@z
+
+@x
+```console
+$ git commit -S
+```
+@y
+```console
+$ git commit -S
+```
+@z
+
+@x
+For common signing failures, see
+[Sandbox commits aren't signed](troubleshooting.md#sandbox-commits-arent-signed).
+@y
+For common signing failures, see
+[Sandbox commits aren't signed](troubleshooting.md#sandbox-commits-arent-signed).
+@z
+
+@x
 #### Cleanup
 @y
 #### Cleanup
@@ -604,6 +700,44 @@ $ sbx rm <sandbox-name>       # when finished
 @z
 
 @x
+## Copying files between host and sandbox
+@y
+## Copying files between host and sandbox
+@z
+
+@x
+Use [`sbx cp`](/reference/cli/sbx/cp/) to copy files or directories between
+your host and a sandbox. This is useful for one-off files that aren't part of a
+mounted workspace, such as generated output, logs, or setup files.
+@y
+Use [`sbx cp`](__SUBDIR__/reference/cli/sbx/cp/) to copy files or directories between
+your host and a sandbox. This is useful for one-off files that aren't part of a
+mounted workspace, such as generated output, logs, or setup files.
+@z
+
+@x
+```console
+$ sbx cp ./config.json my-sandbox:/home/user/
+$ sbx cp my-sandbox:/home/user/output.log ./
+$ sbx cp ./src/ my-sandbox:/home/user/src
+```
+@y
+```console
+$ sbx cp ./config.json my-sandbox:/home/user/
+$ sbx cp my-sandbox:/home/user/output.log ./
+$ sbx cp ./src/ my-sandbox:/home/user/src
+```
+@z
+
+@x
+One side of the copy must use `SANDBOX:PATH`. Copying directly between two
+sandboxes isn't supported.
+@y
+One side of the copy must use `SANDBOX:PATH`. Copying directly between two
+sandboxes isn't supported.
+@z
+
+@x
 ## Installing dependencies and using Docker
 @y
 ## Installing dependencies and using Docker
@@ -612,13 +746,11 @@ $ sbx rm <sandbox-name>       # when finished
 @x
 Ask the agent to install what's needed — it has sudo access, and installed
 packages persist for the sandbox's lifetime. For teams or repeated setups,
-[custom templates](agents/custom-environments.md) let you pre-install tools
-into a reusable image.
+see [Customize](customize/) for reusable templates and declarative kits.
 @y
 Ask the agent to install what's needed — it has sudo access, and installed
 packages persist for the sandbox's lifetime. For teams or repeated setups,
-[custom templates](agents/custom-environments.md) let you pre-install tools
-into a reusable image.
+see [Customize](customize/) for reusable templates and declarative kits.
 @z
 
 @x
@@ -764,6 +896,62 @@ A few things to keep in mind:
 @z
 
 @x
+## Accessing host services from a sandbox
+@y
+## Accessing host services from a sandbox
+@z
+
+@x
+Services running on your host are reachable from inside a sandbox using the
+hostname `host.docker.internal`.
+Use this instead of `127.0.0.1` or your machine's local network IP address,
+which are not reachable from inside the sandbox.
+@y
+Services running on your host are reachable from inside a sandbox using the
+hostname `host.docker.internal`.
+Use this instead of `127.0.0.1` or your machine's local network IP address,
+which are not reachable from inside the sandbox.
+@z
+
+@x
+The sandbox proxy translates `host.docker.internal` to `localhost` before
+forwarding the request, so you must add the `localhost` address with the
+specific port to your network policy allowlist:
+@y
+The sandbox proxy translates `host.docker.internal` to `localhost` before
+forwarding the request, so you must add the `localhost` address with the
+specific port to your network policy allowlist:
+@z
+
+@x
+```console
+$ sbx policy allow network localhost:11434
+```
+@y
+```console
+$ sbx policy allow network localhost:11434
+```
+@z
+
+@x
+Then use `host.docker.internal` in any configuration or request that points at
+the host service. For example, to verify connectivity from a sandbox shell:
+@y
+Then use `host.docker.internal` in any configuration or request that points at
+the host service. For example, to verify connectivity from a sandbox shell:
+@z
+
+@x
+```console
+$ curl http://host.docker.internal:11434
+```
+@y
+```console
+$ curl http://host.docker.internal:11434
+```
+@z
+
+@x
 ## What persists
 @y
 ## What persists
@@ -774,11 +962,11 @@ While a sandbox exists, installed packages, Docker images, configuration
 changes, and command history all persist across stops and restarts. When you
 remove a sandbox, everything inside is deleted — only your workspace files
 remain on your host. To preserve a configured environment, create a
-[custom template](agents/custom-environments.md).
+[custom template](customize/templates.md).
 @y
 While a sandbox exists, installed packages, Docker images, configuration
 changes, and command history all persist across stops and restarts. When you
 remove a sandbox, everything inside is deleted — only your workspace files
 remain on your host. To preserve a configured environment, create a
-[custom template](agents/custom-environments.md).
+[custom template](customize/templates.md).
 @z

@@ -4,14 +4,32 @@
 @x
 command: docker sandbox exec
 short: Execute a command inside a sandbox
+@y
+command: docker sandbox exec
+short: Execute a command inside a sandbox
+@z
+
+@x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Execute a command in a sandbox that was previously created with 'docker sandbox create'.
 
     The command and any additional arguments are executed inside the sandbox container.
 @y
-command: docker sandbox exec
-short: Execute a command inside a sandbox
-long: |-
     Execute a command in a sandbox that was previously created with 'docker sandbox create'.
 
     The command and any additional arguments are executed inside the sandbox container.
@@ -23,8 +41,6 @@ usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
 usage: docker sandbox exec [OPTIONS] SANDBOX COMMAND [ARG...]
 @z
 
-% pname
-% plink
 % options:
 
 @x detach

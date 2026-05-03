@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Gemini
-weight: 40
-description: |
-  Use Google Gemini in Docker Sandboxes with proxy-managed authentication and
-  API key configuration.
----
 @y
----
 title: Gemini
-weight: 40
+@z
+
+@x
 description: |
   Use Google Gemini in Docker Sandboxes with proxy-managed authentication and
   API key configuration.
----
+keywords: docker sandboxes, gemini, google, ai agent, sbx
+@y
+description: |
+  Use Google Gemini in Docker Sandboxes with proxy-managed authentication and
+  API key configuration.
+keywords: docker sandboxes, gemini, google, ai agent, sbx
 @z
 
 @x
@@ -192,9 +192,9 @@ approval prompts.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

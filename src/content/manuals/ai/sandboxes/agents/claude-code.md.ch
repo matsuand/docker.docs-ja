@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Claude Code
-weight: 10
-description: |
-  Use Claude Code in Docker Sandboxes with authentication, configuration, and
-  YOLO mode for AI-assisted development.
----
 @y
----
 title: Claude Code
-weight: 10
+@z
+
+@x
 description: |
   Use Claude Code in Docker Sandboxes with authentication, configuration, and
   YOLO mode for AI-assisted development.
----
+keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
+@y
+description: |
+  Use Claude Code in Docker Sandboxes with authentication, configuration, and
+  YOLO mode for AI-assisted development.
+keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
 @z
 
 @x
@@ -182,11 +182,11 @@ for available options.
 @x
 The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
 with `--dangerously-skip-permissions` by default. See
-[Custom environments](custom-environments.md) to build your own image on
-top of this base.
+[Templates](../customize/templates.md) to build your own image on top of
+this base.
 @y
 The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
 with `--dangerously-skip-permissions` by default. See
-[Custom environments](custom-environments.md) to build your own image on
-top of this base.
+[Templates](../customize/templates.md) to build your own image on top of
+this base.
 @z

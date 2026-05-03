@@ -5,22 +5,14 @@
 command: docker dhi customization get
 short: Get details of a specific customization
 long: |
-    Get detailed information about a Docker Hardened Images customization by repository and name. Outputs YAML to stdout by default, or to file if --output is specified.
-usage: docker dhi customization get <repository> <name>
+    Get detailed information about a Docker Hardened Images customization by its ID.
+usage: docker dhi customization get <id>
 @y
 command: docker dhi customization get
 short: Get details of a specific customization
 long: |
-    Get detailed information about a Docker Hardened Images customization by repository and name. Outputs YAML to stdout by default, or to file if --output is specified.
-usage: docker dhi customization get <repository> <name>
-@z
-
-% options
-
-@x output
-      description: Output file path (if not specified, outputs to stdout)
-@y
-      description: Output file path (if not specified, outputs to stdout)
+    Get detailed information about a Docker Hardened Images customization by its ID.
+usage: docker dhi customization get <id>
 @z
 
 % inherited_options

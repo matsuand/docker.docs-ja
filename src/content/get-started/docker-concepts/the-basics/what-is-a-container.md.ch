@@ -242,7 +242,7 @@ This container runs a web server that displays a simple website. When working wi
 @z
 
 @x
-When you launched the container, you exposed one of the container's ports onto your machine. Think of this as creating configuration to let you to connect through the isolated environment of the container. 
+When you launched the container, you exposed one of the container's ports onto your machine. Think of this as creating configuration to let you connect through the isolated environment of the container.
 @y
 コンテナーを起動した際に、コンテナー内のポートをホストマシンに向けて公開していました。
 それができるということは、つまり独立したコンテナー環境に対して接続を行う設定ができるということです。

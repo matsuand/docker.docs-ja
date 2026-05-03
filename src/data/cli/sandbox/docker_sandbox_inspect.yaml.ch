@@ -11,12 +11,26 @@ short: Display detailed information on one or more sandboxes
 
 @x
 long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@y
+long: |-
+    > [!WARNING]
+    > The Docker Desktop-integrated `docker sandbox` commands are deprecated and
+    > replaced by the standalone [`sbx` CLI](/manuals/ai/sandboxes/_index.md).
+    > This deprecation applies only to the Docker Desktop integration, not to Docker
+    > Sandboxes.
+@z
+
+@x
     Display detailed information on one or more sandboxes.
 
     This command retrieves and displays detailed information about the specified
     sandboxes using the Docker API. Each sandbox is identified by its unique ID or name.
 @y
-long: |-
     Display detailed information on one or more sandboxes.
 
     This command retrieves and displays detailed information about the specified

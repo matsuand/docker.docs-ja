@@ -198,12 +198,12 @@ Steps:
 @x
    ```console
    $ helm package demo
-   Successfully packaged chart and saved it to: /Users/hubuser/demo-0.1.0.tgz
+   Successfully packaged chart and saved it to: demo-0.1.0.tgz
    ```
 @y
    ```console
    $ helm package demo
-   Successfully packaged chart and saved it to: /Users/hubuser/demo-0.1.0.tgz
+   Successfully packaged chart and saved it to: demo-0.1.0.tgz
    ```
 @z
 
@@ -215,11 +215,11 @@ Steps:
 
 @x
    ```console
-   $ helm registry login registry-1.docker.io -u hubuser
+   $ helm registry login registry-1.docker.io -u <YOUR_DOCKER_USERNAME>
    ```
 @y
    ```console
-   $ helm registry login registry-1.docker.io -u hubuser
+   $ helm registry login registry-1.docker.io -u <YOUR_DOCKER_USERNAME>
    ```
 @z
 
@@ -231,20 +231,22 @@ Steps:
 
 @x
    ```console
-   $ helm push demo-0.1.0.tgz oci://registry-1.docker.io/docker
+   $ helm push demo-0.1.0.tgz oci://registry-1.docker.io/<YOUR_DOCKER_USERNAME>
    ```
 @y
    ```console
-   $ helm push demo-0.1.0.tgz oci://registry-1.docker.io/docker
+   $ helm push demo-0.1.0.tgz oci://registry-1.docker.io/<YOUR_DOCKER_USERNAME>
    ```
 @z
 
 @x
-   This uploads the Helm chart tarball to a `demo` repository in the `docker`
-   namespace.
+   This uploads the Helm chart tarball to a `demo` repository in the `<YOUR_DOCKER_USERNAME>`
+   namespace. Running this command creates a `<YOUR_DOCKER_USERNAME>/demo` repository
+   if one does not already exist.
 @y
-   This uploads the Helm chart tarball to a `demo` repository in the `docker`
-   namespace.
+   This uploads the Helm chart tarball to a `demo` repository in the `<YOUR_DOCKER_USERNAME>`
+   namespace. Running this command creates a `<YOUR_DOCKER_USERNAME>/demo` repository
+   if one does not already exist.
 @z
 
 @x
@@ -335,11 +337,11 @@ Steps:
 
 @x
    ```console
-   $ oras login -u hubuser registry-1.docker.io
+   $ oras login -u <YOUR_DOCKER_USERNAME> registry-1.docker.io
    ```
 @y
    ```console
-   $ oras login -u hubuser registry-1.docker.io
+   $ oras login -u <YOUR_DOCKER_USERNAME> registry-1.docker.io
    ```
 @z
 
@@ -351,24 +353,24 @@ Steps:
 
 @x
    ```console
-   $ oras push registry-1.docker.io/docker/demo:0.0.1 \
+   $ oras push registry-1.docker.io/<YOUR_DOCKER_USERNAME>/demo:0.0.1 \
      --artifact-type=application/vnd.docker.volume.v1+tar.gz \
      myvolume.txt:text/plain
    ```
 @y
    ```console
-   $ oras push registry-1.docker.io/docker/demo:0.0.1 \
+   $ oras push registry-1.docker.io/<YOUR_DOCKER_USERNAME>/demo:0.0.1 \
      --artifact-type=application/vnd.docker.volume.v1+tar.gz \
      myvolume.txt:text/plain
    ```
 @z
 
 @x
-   This uploads the volume to a `demo` repository in the `docker` namespace. The
+   This uploads the volume to a `demo` repository in the `<YOUR_DOCKER_USERNAME>` namespace. The
    `--artifact-type` flag specifies a special media type that makes Docker Hub
    recognize the artifact as a container volume.
 @y
-   This uploads the volume to a `demo` repository in the `docker` namespace. The
+   This uploads the volume to a `demo` repository in the `<YOUR_DOCKER_USERNAME>` namespace. The
    `--artifact-type` flag specifies a special media type that makes Docker Hub
    recognize the artifact as a container volume.
 @z
@@ -441,11 +443,11 @@ Steps:
 
 @x
    ```console
-   $ oras login -u hubuser registry-1.docker.io
+   $ oras login -u <YOUR_DOCKER_USERNAME> registry-1.docker.io
    ```
 @y
    ```console
-   $ oras login -u hubuser registry-1.docker.io
+   $ oras login -u <YOUR_DOCKER_USERNAME> registry-1.docker.io
    ```
 @z
 
@@ -457,11 +459,11 @@ Steps:
 
 @x
    ```console
-   $ oras push registry-1.docker.io/docker/demo:0.0.1 myartifact.txt:text/plain
+   $ oras push registry-1.docker.io/<YOUR_DOCKER_USERNAME>/demo:0.0.1 myartifact.txt:text/plain
    ```
 @y
    ```console
-   $ oras push registry-1.docker.io/docker/demo:0.0.1 myartifact.txt:text/plain
+   $ oras push registry-1.docker.io/<YOUR_DOCKER_USERNAME>/demo:0.0.1 myartifact.txt:text/plain
    ```
 @z
 

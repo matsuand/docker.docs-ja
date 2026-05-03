@@ -63,6 +63,14 @@ usage: sbx create codex PATH [PATH...] [flags]
       usage: Enable debug logging
 @z
 
+@x kit
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@y
+      usage: |
+        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@z
+
 @x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB

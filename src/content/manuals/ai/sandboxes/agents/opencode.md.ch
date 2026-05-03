@@ -13,10 +13,12 @@ title: OpenCode
 description: |
   Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
   interface for AI development.
+keywords: docker sandboxes, opencode, ai agent, authentication, sbx
 @y
 description: |
   Use OpenCode in Docker Sandboxes with multi-provider authentication and TUI
   interface for AI development.
+keywords: docker sandboxes, opencode, ai agent, authentication, sbx
 @z
 
 @x
@@ -206,9 +208,9 @@ through the sandbox proxy.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

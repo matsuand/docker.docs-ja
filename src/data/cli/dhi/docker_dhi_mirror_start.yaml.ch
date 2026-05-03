@@ -14,20 +14,20 @@ long: |-
 @z
 
 @x
-    Repository mappings are specified using the -r flag. The following formats are supported:
+    Repository mappings are specified as arguments. The following formats are supported:
 @y
-    Repository mappings are specified using the -r flag. The following formats are supported:
+    Repository mappings are specified as arguments. The following formats are supported:
 @z
 
 @x
       source                  Only the source repository; destination is auto-generated as
                               <org>/dhi-<source-name>
-      source,destination      Source and destination; namespaces are filled from config if omitted
+      source,destination      Source and destination; the destination namespace is filled from config if omitted
       ns/source,ns/dest       Fully qualified source and destination
 @y
       source                  Only the source repository; destination is auto-generated as
                               <org>/dhi-<source-name>
-      source,destination      Source and destination; namespaces are filled from config if omitted
+      source,destination      Source and destination; the destination namespace is filled from config if omitted
       ns/source,ns/dest       Fully qualified source and destination
 @z
 
@@ -41,24 +41,14 @@ long: |-
 
 @x
     Examples:
-      # These are all equivalent (assuming --org myorg):
-      docker dhi mirror start --org myorg -r dhi/golang,myorg/dhi-golang
-      docker dhi mirror start --org myorg -r golang,dhi-golang
-      docker dhi mirror start --org myorg -r golang
+      docker dhi mirror start --org myorg dhi/golang,myorg/dhi-golang dhi/node,myorg/dhi-node
+      docker dhi mirror start --org myorg golang,dhi-golang node,dhi-node
+      docker dhi mirror start --org myorg golang node
 @y
     Examples:
-      # These are all equivalent (assuming --org myorg):
-      docker dhi mirror start --org myorg -r dhi/golang,myorg/dhi-golang
-      docker dhi mirror start --org myorg -r golang,dhi-golang
-      docker dhi mirror start --org myorg -r golang
-@z
-
-@x
-      # Mirror multiple repositories
-      docker dhi mirror start --org myorg -r golang -r python
-@y
-      # Mirror multiple repositories
-      docker dhi mirror start --org myorg -r golang -r python
+      docker dhi mirror start --org myorg dhi/golang,myorg/dhi-golang dhi/node,myorg/dhi-node
+      docker dhi mirror start --org myorg golang,dhi-golang node,dhi-node
+      docker dhi mirror start --org myorg golang node
 @z
 
 @x
@@ -67,7 +57,7 @@ usage: docker dhi mirror start
 usage: docker dhi mirror start
 @z
 
-% options
+%options:
 
 @x dependencies
       description: Mirrors any existing dependencies
@@ -81,15 +71,7 @@ usage: docker dhi mirror start
       description: Output in JSON format
 @z
 
-@x repo
-      description: |
-        Repository mapping in format source,destination (can be specified multiple times)
-@y
-      description: |
-        Repository mapping in format source,destination (can be specified multiple times)
-@z
-
-% inherited_options:
+%inherited_options:
 
 @x org
       description: Docker Hub organization (overrides config)

@@ -130,6 +130,8 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   files and catalog metadata
 - [Advisories](https://github.com/docker-hardened-images/advisories): CVE
   advisories for OSS packages distributed with DHIs
+  - [Scanner vendor integration guide](https://github.com/docker-hardened-images/advisories/tree/main/integration):
+    Reference for scanner vendors integrating DHI VEX support
 - [Keyring](https://github.com/docker-hardened-images/keyring): Public signing
   keys and verification tools
 - [Log](https://github.com/docker-hardened-images/log): Log of references (tag >
@@ -146,6 +148,8 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   files and catalog metadata
 - [アドバイザリー](https://github.com/docker-hardened-images/advisories): CVE
   advisories for OSS packages distributed with DHIs
+  - [Scanner vendor integration guide](https://github.com/docker-hardened-images/advisories/tree/main/integration):
+    Reference for scanner vendors integrating DHI VEX support
 - [キーリング](https://github.com/docker-hardened-images/keyring): Public signing
   keys and verification tools
 - [ログ](https://github.com/docker-hardened-images/log): Log of references (tag >

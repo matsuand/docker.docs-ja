@@ -10,9 +10,11 @@ title: Droid
 @x
 description: |
   Use Droid in Docker Sandboxes with API key or OAuth authentication.
+keywords: docker sandboxes, droid, factory, ai agent, sbx
 @y
 description: |
   Use Droid in Docker Sandboxes with API key or OAuth authentication.
+keywords: docker sandboxes, droid, factory, ai agent, sbx
 @z
 
 @x
@@ -190,9 +192,9 @@ persisted across sandbox restarts.
 @z
 
 @x
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @y
-See [Custom environments](custom-environments.md) to pre-install tools or
-customize this environment.
+See [Customize](../customize/) to pre-install tools or customize this
+environment.
 @z

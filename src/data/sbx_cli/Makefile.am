@@ -9,10 +9,12 @@ bases = \
 	sbx_completion_fish.yaml       \
 	sbx_completion_powershell.yaml \
 	sbx_completion_zsh.yaml        \
+	sbx_cp.yaml                    \
 	sbx_create.yaml                \
 	sbx_create_claude.yaml         \
 	sbx_create_codex.yaml          \
 	sbx_create_copilot.yaml        \
+	sbx_create_cursor.yaml         \
 	sbx_create_docker-agent.yaml   \
 	sbx_create_droid.yaml          \
 	sbx_create_gemini.yaml         \
