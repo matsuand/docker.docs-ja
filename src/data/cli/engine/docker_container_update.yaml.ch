@@ -24,18 +24,6 @@ long: |-
 @z
 
 @x
-    With the exception of the `--kernel-memory` option, you can specify these
-    options on a running or a stopped container. On kernel version older than
-    4.6, you can only update `--kernel-memory` on a stopped container or on
-    a running container with kernel memory initialized.
-@y
-    With the exception of the `--kernel-memory` option, you can specify these
-    options on a running or a stopped container. On kernel version older than
-    4.6, you can only update `--kernel-memory` on a stopped container or on
-    a running container with kernel memory initialized.
-@z
-
-@x
     > [!WARNING]
     > The `docker update` and `docker container update` commands are not supported
     > for Windows containers.
@@ -210,100 +198,6 @@ examples: |-
 @z
 
 @x
-    ### Update a container's kernel memory constraints (--kernel-memory) {#kernel-memory}
-@y
-    ### Update a container's kernel memory constraints (--kernel-memory) {#kernel-memory}
-@z
-
-@x
-    You can update a container's kernel memory limit using the `--kernel-memory`
-    option. On kernel version older than 4.6, this option can be updated on a
-    running container only if the container was started with `--kernel-memory`.
-    If the container was started without `--kernel-memory` you need to stop
-    the container before updating kernel memory.
-@y
-    You can update a container's kernel memory limit using the `--kernel-memory`
-    option. On kernel version older than 4.6, this option can be updated on a
-    running container only if the container was started with `--kernel-memory`.
-    If the container was started without `--kernel-memory` you need to stop
-    the container before updating kernel memory.
-@z
-
-@x
-    > [!NOTE]
-    > The `--kernel-memory` option has been deprecated since Docker 20.10.
-@y
-    > [!NOTE]
-    > The `--kernel-memory` option has been deprecated since Docker 20.10.
-@z
-
-@x
-    For example, if you started a container with this command:
-@y
-    For example, if you started a container with this command:
-@z
-
-@x
-    ```console
-    $ docker run -dit --name test --kernel-memory 50M ubuntu bash
-    ```
-@y
-    ```console
-    $ docker run -dit --name test --kernel-memory 50M ubuntu bash
-    ```
-@z
-
-@x
-    You can update kernel memory while the container is running:
-@y
-    You can update kernel memory while the container is running:
-@z
-
-@x
-    ```console
-    $ docker update --kernel-memory 80M test
-    ```
-@y
-    ```console
-    $ docker update --kernel-memory 80M test
-    ```
-@z
-
-@x
-    If you started a container without kernel memory initialized:
-@y
-    If you started a container without kernel memory initialized:
-@z
-
-@x
-    ```console
-    $ docker run -dit --name test2 --memory 300M ubuntu bash
-    ```
-@y
-    ```console
-    $ docker run -dit --name test2 --memory 300M ubuntu bash
-    ```
-@z
-
-@x
-    Update kernel memory of running container `test2` will fail. You need to stop
-    the container before updating the `--kernel-memory` setting. The next time you
-    start it, the container uses the new value.
-@y
-    Update kernel memory of running container `test2` will fail. You need to stop
-    the container before updating the `--kernel-memory` setting. The next time you
-    start it, the container uses the new value.
-@z
-
-@x
-    Kernel version newer than (include) 4.6 does not have this limitation, you
-    can use `--kernel-memory` the same way as other options.
-@y
-    Kernel version newer than (include) 4.6 does not have this limitation, you
-    can use `--kernel-memory` the same way as other options.
-@z
-
-@x
     ### Update a container's restart policy (--restart) {#restart}
 @y
     ### Update a container's restart policy (--restart) {#restart}
@@ -339,20 +233,10 @@ examples: |-
     Note that if the container is started with `--rm` flag, you cannot update the restart
     policy for it. The `AutoRemove` and `RestartPolicy` are mutually exclusive for the
     container.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
     Note that if the container is started with `--rm` flag, you cannot update the restart
     policy for it. The `AutoRemove` and `RestartPolicy` are mutually exclusive for the
     container.
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @z
+
+% snip directives...

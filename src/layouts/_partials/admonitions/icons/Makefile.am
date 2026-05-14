@@ -3,7 +3,6 @@
 ##
 
 copyfiles = \
-	error.svg     \
 	important.svg \
 	info.svg      \
 	lightbulb.svg \

@@ -41,11 +41,21 @@ Users must [uninstall](/manuals/desktop/uninstall.md) older `.exe` installations
 
 @x
 ```powershell
+# For all-user installations
 & 'C:\Program Files\Docker\Docker\Docker Desktop Installer.exe' uninstall -keep-data
+
+# For per-user installations
+& '%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe' uninstall -keep-data
+
 ```
 @y
 ```powershell
+# For all-user installations
 & 'C:\Program Files\Docker\Docker\Docker Desktop Installer.exe' uninstall -keep-data
+
+# For per-user installations
+& '%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe' uninstall -keep-data
+
 ```
 @z
 

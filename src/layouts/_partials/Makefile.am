@@ -27,7 +27,6 @@ copyfiles = \
 	meta.html            \
 	pagemeta.html        \
 	pagefind-meta.html   \
-	pagination.html      \
 	schema.html          \
 	tooltip.html         \
 	youtube-script.html

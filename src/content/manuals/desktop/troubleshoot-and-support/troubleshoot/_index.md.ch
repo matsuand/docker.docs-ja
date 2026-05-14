@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰ž
+% .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
 
 @x
 description:
@@ -113,30 +113,22 @@ If you are a Mac or Linux user, you also have the option to **Uninstall** Docker
 
 @x
 1. From **Troubleshoot**, select **Get support**. This opens the in-app Support page and starts collecting the diagnostics.
+   > [!NOTE]
+   >
+   > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
+2. When the diagnostics collection process is complete, select **Upload to get a Diagnostic ID**.
+3. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
+4. Use your diagnostics ID to get help:
+   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
+     > [!NOTE]
+     >
+     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/support/_index.md).
+   - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
 @y
 1. From **Troubleshoot**, select **Get support**. This opens the in-app Support page and starts collecting the diagnostics.
-@z
-
-@x
    > [!NOTE]
    >
    > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
-@y
-   > [!NOTE]
-   >
-   > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
-@z
-
-@x
-2. When the diagnostics collection process is complete, select **Upload to get a Diagnostic ID**.
-3. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
-4. Use your diagnostics ID to get help:
-   - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
-     > [!NOTE]
-     >
-     > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/support/_index.md).
-   - If you don't have a paid Docker subscription, select **Report a Bug** to open a new Docker Desktop issue on GitHub. Complete the information required and ensure you add the diagnostic ID you copied in step three.
-@y
 2. When the diagnostics collection process is complete, select **Upload to get a Diagnostic ID**.
 3. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 4. Use your diagnostics ID to get help:
@@ -155,21 +147,9 @@ If you are a Mac or Linux user, you also have the option to **Uninstall** Docker
 
 @x
 1. When an error message appears, select **Gather diagnostics**.
-@y
-1. When an error message appears, select **Gather diagnostics**.
-@z
-
-@x
    > [!NOTE]
    >
    > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
-@y
-   > [!NOTE]
-   >
-   > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
-@z
-
-@x
 2. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 3. Use your diagnostics ID to get help:
    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
@@ -178,6 +158,10 @@ If you are a Mac or Linux user, you also have the option to **Uninstall** Docker
      > You must be signed in to Docker Desktop to access the support form. For information on what's covered as part of Docker Desktop support, see [Support](/manuals/support/_index.md).
    - If you don't have a paid Docker subscription, you can open a new [Docker Desktop issue on GitHub](https://github.com/docker/desktop-feedback). Complete the information required and ensure you add the diagnostic ID printed in step two.
 @y
+1. When an error message appears, select **Gather diagnostics**.
+   > [!NOTE]
+   >
+   > Gathering diagnostics may take several minutes. Don't close Docker Desktop while the diagnostics are being collected.
 2. When the diagnostics are uploaded, Docker Desktop prints a diagnostic ID. Copy this ID.
 3. Use your diagnostics ID to get help:
    - If you have a paid Docker subscription, select **Contact support**. This opens the Docker Desktop support form. Fill in the information required and add the ID you copied in step three to the **Diagnostics ID field**. Then, select **Submit ticket** to request Docker Desktop support.
@@ -227,11 +211,21 @@ Docker Desktop cannot start.
 
 @x
    ```console
+   # For all-user installations
    $ C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe
-   ```
 @y
    ```console
+   # For all-user installations
    $ C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe
+@z
+
+@x
+   # For per-user installations
+   $ %LOCALAPPDATA%\Programs\DockerDesktop\resources\com.docker.diagnose.exe
+   ```
+@y
+   # For per-user installations
+   $ %LOCALAPPDATA%\Programs\DockerDesktop\resources\com.docker.diagnose.exe
    ```
 @z
 
@@ -243,11 +237,21 @@ Docker Desktop cannot start.
 
 @x
    ```console
+   # For all-user installations
    $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
-   ```
 @y
    ```console
+   # For all-user installations
    $ & "C:\Program Files\Docker\Docker\resources\com.docker.diagnose.exe" gather -upload
+@z
+
+@x
+   # For per-user installations
+   $ & %LOCALAPPDATA%\Programs\DockerDesktop\resources\com.docker.diagnose.exe" gather -upload
+   ```
+@y
+   # For per-user installations
+   $ & %LOCALAPPDATA%\Programs\DockerDesktop\resources\com.docker.diagnose.exe" gather -upload
    ```
 @z
 
@@ -364,7 +368,7 @@ After the diagnostics have finished, the terminal displays your diagnostics ID a
 @y
 > [!TIP]
 >
-> You can also use the [`docker desktop diagnose` command](/manuals/desktop/features/desktop-cli.md) to diagnose Docker Desktop and upload the diagnostics ID.
+> You can also use the [`docker desktop diagnose` command](manuals/desktop/features/desktop-cli.md) to diagnose Docker Desktop and upload the diagnostics ID.
 @z
 
 @x

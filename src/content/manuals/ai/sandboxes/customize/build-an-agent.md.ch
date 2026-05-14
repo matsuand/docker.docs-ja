@@ -52,6 +52,16 @@ focuses on the journey.
 @z
 
 @x
+The finished kit is also published as a runnable sample at
+[docker/sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib/tree/main/amp) —
+useful as a reference while you follow along.
+@y
+The finished kit is also published as a runnable sample at
+[docker/sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib/tree/main/amp) —
+useful as a reference while you follow along.
+@z
+
+@x
 ## Choose a base image
 @y
 ## Choose a base image
@@ -165,39 +175,7 @@ The `agent:` block tells the sandbox how to launch Amp when the user
 attaches.
 @z
 
-@x
-```yaml {title="amp/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: amp
-displayName: Amp
-description: The frontier coding agent.
-@y
-```yaml {title="amp/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: amp
-displayName: Amp
-description: The frontier coding agent.
-@z
-
-@x
-agent:
-  image: "docker/sandbox-templates:shell-docker"
-  aiFilename: AGENTS.md
-  persistence: persistent
-  entrypoint:
-    run: [amp, --dangerously-allow-all]
-```
-@y
-agent:
-  image: "docker/sandbox-templates:shell-docker"
-  aiFilename: AGENTS.md
-  persistence: persistent
-  entrypoint:
-    run: [amp, --dangerously-allow-all]
-```
-@z
+% snip code...
 
 @x
 - `aiFilename: AGENTS.md` tells the sandbox to create `AGENTS.md` at launch
@@ -231,23 +209,7 @@ Amp installs via a curl-to-bash script:
 Amp installs via a curl-to-bash script:
 @z
 
-@x
-```yaml
-commands:
-  install:
-    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
-      user: "1000"
-      description: Install Amp
-```
-@y
-```yaml
-commands:
-  install:
-    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
-      user: "1000"
-      description: Install Amp
-```
-@z
+% snip code...
 
 @x
 Note `user: "1000"`. That's the agent user. Install commands run as root
@@ -279,33 +241,7 @@ the auth flow from [Plan authentication](#plan-authentication)
 (`serviceDomains` + `serviceAuth`).
 @z
 
-@x
-```yaml
-network:
-  serviceDomains:
-    ampcode.com: amp
-  serviceAuth:
-    amp:
-      headerName: Authorization
-      valueFormat: "Bearer %s"
-  allowedDomains:
-    - "ampcode.com:443"
-    - "*.ampcode.com:443"
-```
-@y
-```yaml
-network:
-  serviceDomains:
-    ampcode.com: amp
-  serviceAuth:
-    amp:
-      headerName: Authorization
-      valueFormat: "Bearer %s"
-  allowedDomains:
-    - "ampcode.com:443"
-    - "*.ampcode.com:443"
-```
-@z
+% snip code...
 
 @x
 `allowedDomains` here covers the apex (`ampcode.com`) and the
@@ -369,28 +305,10 @@ Use it to tell Amp about the sandbox environment so it knows the
 conventions when it starts.
 @z
 
-@x
-```yaml
-memory: |
+@x within code
   ## Sandbox environment
 @y
-```yaml
-memory: |
   ## Sandbox environment
-@z
-
-@x
-  You are running inside a Docker sandbox. The workspace is mounted at
-  its absolute host path. `sudo` is passwordless; use it for package
-  installs. Docker is available inside the sandbox; containers you start
-  are isolated in the microVM.
-```
-@y
-  You are running inside a Docker sandbox. The workspace is mounted at
-  its absolute host path. `sudo` is passwordless; use it for package
-  installs. Docker is available inside the sandbox; containers you start
-  are isolated in the microVM.
-```
 @z
 
 @x
@@ -413,94 +331,10 @@ Putting it all together:
 Putting it all together:
 @z
 
-@x
-```yaml {title="amp/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: amp
-displayName: Amp
-description: The frontier coding agent.
-@y
-```yaml {title="amp/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: amp
-displayName: Amp
-description: The frontier coding agent.
-@z
-
-@x
-agent:
-  image: "docker/sandbox-templates:shell-docker"
-  aiFilename: AGENTS.md
-  persistence: persistent
-  entrypoint:
-    run: [amp, --dangerously-allow-all]
-@y
-agent:
-  image: "docker/sandbox-templates:shell-docker"
-  aiFilename: AGENTS.md
-  persistence: persistent
-  entrypoint:
-    run: [amp, --dangerously-allow-all]
-@z
-
-@x
-network:
-  serviceDomains:
-    ampcode.com: amp
-  serviceAuth:
-    amp:
-      headerName: Authorization
-      valueFormat: "Bearer %s"
-  allowedDomains:
-    - "ampcode.com:443"
-    - "*.ampcode.com:443"
-@y
-network:
-  serviceDomains:
-    ampcode.com: amp
-  serviceAuth:
-    amp:
-      headerName: Authorization
-      valueFormat: "Bearer %s"
-  allowedDomains:
-    - "ampcode.com:443"
-    - "*.ampcode.com:443"
-@z
-
-@x
-commands:
-  install:
-    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
-      user: "1000"
-      description: Install Amp
-@y
-commands:
-  install:
-    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
-      user: "1000"
-      description: Install Amp
-@z
-
-@x
-memory: |
+@x within code
   ## Sandbox environment
 @y
-memory: |
   ## Sandbox environment
-@z
-
-@x
-  You are running inside a Docker sandbox. The workspace is mounted at
-  its absolute host path. `sudo` is passwordless; use it for package
-  installs.
-```
-@y
-  You are running inside a Docker sandbox. The workspace is mounted at
-  its absolute host path. `sudo` is passwordless; use it for package
-  installs.
-```
 @z
 
 @x
@@ -529,23 +363,7 @@ to look like a real Amp key. Pick a placeholder shape that matches Amp's
 expected format:
 @z
 
-@x
-```console
-$ sbx secret set-custom -g \
-    --host ampcode.com \
-    --env AMP_API_KEY \
-    --placeholder "sgamp-{rand}" \
-    --value "$AMP_API_KEY"
-```
-@y
-```console
-$ sbx secret set-custom -g \
-    --host ampcode.com \
-    --env AMP_API_KEY \
-    --placeholder "sgamp-{rand}" \
-    --value "$AMP_API_KEY"
-```
-@z
+% snip command...
 
 @x
 `{rand}` expands to a random suffix at registration time. Inside the
@@ -603,15 +421,7 @@ Validate the spec:
 Validate the spec:
 @z
 
-@x
-```console
-$ sbx kit validate ./amp/
-```
-@y
-```console
-$ sbx kit validate ./amp/
-```
-@z
+% snip command...
 
 @x
 Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
@@ -621,15 +431,17 @@ Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
 agent argument:
 @z
 
+% snip command...
+
 @x
-```console
-$ sbx run --kit ./amp/ amp
-```
+The published copy of this kit also runs directly from the contrib
+repository:
 @y
-```console
-$ sbx run --kit ./amp/ amp
-```
+The published copy of this kit also runs directly from the contrib
+repository:
 @z
+
+% snip command...
 
 @x
 ## Iterate
@@ -747,15 +559,7 @@ To remove the entry created earlier with `sbx secret set-custom`, pass
 the host to `sbx secret rm`:
 @z
 
-@x
-```console
-$ sbx secret rm -g --host ampcode.com
-```
-@y
-```console
-$ sbx secret rm -g --host ampcode.com
-```
-@z
+% snip command...
 
 @x
 The `--host` flag on `sbx secret rm` isn't listed in

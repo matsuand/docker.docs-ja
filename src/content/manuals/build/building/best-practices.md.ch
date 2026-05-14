@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 title: Building best practices
@@ -1715,54 +1716,12 @@ For example, the [Postgres Official Image](https://hub.docker.com/_/postgres/)
 uses the following script as its `ENTRYPOINT`:
 @z
 
-@x
-```bash
-#!/bin/bash
-set -e
-@y
-```bash
-#!/bin/bash
-set -e
-@z
+% snip code...
 
 @x
-if [ "$1" = 'postgres' ]; then
-    chown -R postgres "$PGDATA"
+This script uses [the `exec` builtin](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](/reference/dockerfile.md#entrypoint).
 @y
-if [ "$1" = 'postgres' ]; then
-    chown -R postgres "$PGDATA"
-@z
-
-@x
-    if [ -z "$(ls -A "$PGDATA")" ]; then
-        gosu postgres initdb
-    fi
-@y
-    if [ -z "$(ls -A "$PGDATA")" ]; then
-        gosu postgres initdb
-    fi
-@z
-
-@x
-    exec gosu postgres "$@"
-fi
-@y
-    exec gosu postgres "$@"
-fi
-@z
-
-@x
-exec "$@"
-```
-@y
-exec "$@"
-```
-@z
-
-@x
-This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](/reference/dockerfile.md#entrypoint).
-@y
-This script uses [the `exec` Bash command](https://wiki.bash-hackers.org/commands/builtin/exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](reference/dockerfile.md#entrypoint).
+This script uses [the `exec` builtin](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#exec) so that the final running application becomes the container's PID 1. This allows the application to receive any Unix signals sent to the container. For more information, see the [`ENTRYPOINT` reference](reference/dockerfile.md#entrypoint).
 @z
 
 @x

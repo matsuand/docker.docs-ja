@@ -258,22 +258,22 @@ Docker Engine を初めてマシン上にインストールするには、Docker
 @x
    > [!NOTE]
    >
-   > If you use a derivative distribution, such as Kali Linux,
+   > If you use Debian testing or a derivative distribution such as Kali Linux,
    > you may need to substitute the part of this command that's expected to
    > print the version codename:
 @y
    > [!NOTE]
    >
-   > Kali Linux のような派生ディストリビューションを利用している場合は、以下のコマンドにてバージョンコード名を適切に出力されるように、適切に修正する必要があるかもしれません。
+   > Debian testing や Debian 派生の Kali Linux のようなディストリビューションを利用している場合は、以下のコマンドにてバージョンコード名を適切に出力されるように、適切に修正する必要があるかもしれません。
 @z
 
 % snip command...
 
 @x
    > Replace this part with the codename of the corresponding Debian release,
-   > such as `bookworm`.
+   > such as `trixie`.
 @y
-   > Debian リリースを表すコード名は `bookworm` などのように適切に書き換えてください。
+   > Debian リリースを表すコード名は `trixie` などのように適切に書き換えてください。
 @z
 
 @x

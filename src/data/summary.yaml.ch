@@ -81,9 +81,11 @@ Gordon DHI migration:
 
 @x
 Automated builds:
+  availability: Deprecated
   subscription: [Pro, Team, Business]
 @y
 Automated builds:
+  availability: Deprecated
   subscription: [Pro, Team, Business]
 @z
 
@@ -625,6 +627,14 @@ Docker Desktop Archlinux:
 @y
 Docker Desktop Archlinux:
   availability: 試験的
+@z
+
+@x
+Desktop logs:
+  requires: Docker Desktop [4.65](/manuals/desktop/release-notes.md#4650) or later
+@y
+Desktop logs:
+  requires: Docker Desktop [4.65](/manuals/desktop/release-notes.md#4650) or later
 @z
 
 @x

@@ -62,7 +62,11 @@ linkTitle: Uninstall
 @x
 1. Locate the installer:
    ```console
+   # all-user installation
    $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
+
+   # per-user installation (Beta)
+   $ %LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe
    ```
 2. Uninstall Docker Desktop. 
  - In PowerShell, run:
@@ -76,7 +80,11 @@ linkTitle: Uninstall
 @y
 1. Locate the installer:
    ```console
+   # all-user installation
    $ C:\Program Files\Docker\Docker\Docker Desktop Installer.exe
+
+   # per-user installation (Beta)
+   $ %LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe
    ```
 2. Uninstall Docker Desktop. 
  - In PowerShell, run:

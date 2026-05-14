@@ -54,6 +54,46 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 @z
 
 @x
+## Installation modes
+@y
+## Installation modes
+@z
+
+@x
+Docker Desktop supports two installation modes. Per-user installation (Beta) is recommended for most users. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
+@y
+Docker Desktop supports two installation modes. Per-user installation (Beta) is recommended for most users. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
+@z
+
+@x
+| | Per-user (recommended) | All users |
+|---|---|---|
+| Install location | `%LOCALAPPDATA%\Programs\DockerDesktop` | `C:\Program Files\Docker\Docker` |
+| Registry keys | Current User (HKCU) | Local Machine (HKLM) |
+| Admin rights to install | Not required | Required |
+| Admin rights to update | Not required | Required |
+| Linux containers backend | WSL 2 only | WSL 2 or Hyper-V |
+| Windows containers | Not supported | Supported |
+| Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
+@y
+| | Per-user (recommended) | All users |
+|---|---|---|
+| Install location | `%LOCALAPPDATA%\Programs\DockerDesktop` | `C:\Program Files\Docker\Docker` |
+| Registry keys | Current User (HKCU) | Local Machine (HKLM) |
+| Admin rights to install | Not required | Required |
+| Admin rights to update | Not required | Required |
+| Linux containers backend | WSL 2 only | WSL 2 or Hyper-V |
+| Windows containers | Not supported | Supported |
+| Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
+@z
+
+@x
+For more information, see [Understand permission requirements for Windows](windows-install.md).
+@y
+For more information, see [Understand permission requirements for Windows](windows-install.md).
+@z
+
+@x
 ## System requirements
 @y
 ## システム要件 {#system-requirements}
@@ -64,7 +104,7 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 >
 > **Should I use Hyper-V or WSL?**
 >
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific setup and your planned use case. 
+> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific setup and your planned use case. Note that Hyper-V is only available with all-users installation. If you install Docker Desktop in per-user mode, WSL 2 is the only supported backend.
 @y
 > [!TIP]
 >
@@ -72,6 +112,8 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 >
 > Docker Desktop は WSL 上でも Hyper-V 上でも、アーキテクチャーに関係なく同様に機能します。
 > Hyper-V と WSL にはそれぞれに利点と欠点があり、それは設定内容や利用形態により変化します。
+> なお Hyper-V は全ユーザー向けのインストールを行った場合にのみ利用可能である点に注意してください。
+> Docker Desktop を個別ユーザーモードでインストールした場合は、サポートされるバックエンドは WSL 2 のみとなります。
 @z
 
 @x
@@ -287,10 +329,22 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-2. Double-click `Docker Desktop Installer.exe` to run the installer. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+2. Double-click `Docker Desktop Installer.exe` to run the installer. The installer will ask which installation mode you prefer. Choosing per-user installs to `%LOCALAPPDATA%\Programs\DockerDesktop` and requires no administrator privileges. Choosing all users will prompt for elevation.
 @y
 2. `Docker Desktop Installer.exe` をダブルクリックしてインストーラーを起動します。
-   デフォルトで Docker は `C:\Program Files\Docker\Docker` にインストールされます。
+   インストールにおいては、どのインストールモードを選ぶかが問われます。
+   個別ユーザー向けのインストールを選ぶと `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールされるので、管理者権限を必要としません。
+   全ユーザー向けを選んだ場合は、管理者権限となるための画面が表示されます。
+@z
+
+@x
+   > [!NOTE]
+   >
+   >If you want to switch installation mode at a later date, you need to uninstall and reinstall Docker Desktop.
+@y
+   > [!NOTE]
+   >
+   > 後々インストールモードを切り替えたいと思った場合は、Docker Desktop を一度アンインストールしてから再インストールする必要があります。
 @z
 
 @x
@@ -324,41 +378,36 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-If your administrator account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers:
-@y
-利用しているユーザーアカウントが管理アカウントではない場合、**docker-users** グループにユーザーを追加する必要があります。
-これによって Hyper-V VM の生成管理といった、より高権限を必要とする機能にアクセスできます。
-これを行わない場合には Windows コンテナーを利用することになります。
-@z
-
-@x
-1. Run **Computer Management** as an **administrator**.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**. 
-3. Right-click to add the user to the group.
-4. Sign out and sign back in for the changes to take effect.
-@y
-1. **administrator** (管理者) 権限により **Computer Management** (コンピューター管理) を開きます。
-2. **Local Users and Groups** > **Groups** > **docker-users** を順に開きます。
-3. 右クリックによってユーザーをそのグループに追加します。
-4. 設定変更を有効にするため、いったんサインアウトした上で再度サインインします。
-@z
-
-@x
 ### Install from the command line
 @y
 ### コマンドラインからのインストール {#install-from-the-command-line}
 @z
 
 @x
-After downloading `Docker Desktop Installer.exe`, run the following command in a terminal to install Docker Desktop:
+After downloading `Docker Desktop Installer.exe`, run the following command in a terminal to install Docker Desktop to `%LOCALAPPDATA%\Programs\DockerDesktop`.
 @y
-`Docker Desktop Installer.exe` をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop をインストールします。
+`Docker Desktop Installer.exe` をダウンロードしたら、端末から以下のコマンドを実行して Docker Desktop を `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールします。
+@z
+
+@x
+For per-user installation, run:
+@y
+個別ユーザー向けのインストールは以下のようにします。
 @z
 
 % snip command...
 
 @x
-If you’re using PowerShell you should run it as:
+To install for all users on the machine (requires administrator privileges):
+@y
+全ユーザー向けのインストールは以下のようにします (管理者権限が必要です)。
+To install for all users on the machine (requires administrator privileges):
+@z
+
+% snip command...
+
+@x
+If you're using PowerShell you should run it as:
 @y
 PowerShell を利用している場合は以下を実行します。
 @z
@@ -374,17 +423,10 @@ Windows コマンドプロンプトの利用時は以下を実行します。
 % snip command...
 
 @x
-By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`.
+If using all-users installation and your administrator account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers:
 @y
-デフォルトで Docker Desktop は `C:\Program Files\Docker\Docker` にインストールされます。
-@z
-
-@x
-If your administrator account is different to your user account, you must add the user to the **docker-users** group to access features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
-@y
-利用しているユーザーアカウントが管理アカウントではない場合、**docker-users** グループにユーザーを追加する必要があります。
-これによって Hyper-V VM の生成管理といった、より高権限を必要とする機能にアクセスできます。
-これを行わない場合には Windows コンテナーを利用することになります。
+全ユーザー向けインストールにあたって、管理者ユーザーアカウントと操作ユーザーアカウントが異なる場合は、その操作ユーザーを **docker-users** グループに追加する必要があります。
+そうすることによって、より厳しい権限を必要とする、たとえば Hyper-VM の生成管理や Windows コンテナーの生成などを行うことができるようになります。
 @z
 
 % snip command...
@@ -393,6 +435,16 @@ If your administrator account is different to your user account, you must add th
 See the [Installer flags](#installer-flags) section to see what flags the `install` command accepts.
 @y
 `install` コマンドがどのようなフラグを受け付けるかについては [インストーラーのフラグ](#installer-flags) の節を参照してください。
+@z
+
+@x
+> [!NOTE]
+>
+>If you want to switch installation mode at a later date, you need to uninstall and reinstall Docker Desktop.
+@y
+> [!NOTE]
+>
+> 後々インストールモードを切り替えたいと思った場合は、Docker Desktop を一度アンインストールしてから再インストールする必要があります。
 @z
 
 @x
@@ -570,12 +622,14 @@ If Microsoft Store access is blocked due to security policies:
 @z
 
 @x
+- `--user`: Installs Docker Desktop in per-user mode, to `%LOCALAPPDATA%\Programs\DockerDesktop`. No administrator privileges are required. This is the recommended mode for most users. See [Installation modes](#installation-modes).
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
 - `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
 - `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
+- `--user`: Docker Desktop を個別ユーザーモードで `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールします。この場合は管理者権限を必要としません。たいていはこのモードが推奨されます。詳しくは [インストールモード](#installation-modes) を参照してください。
 - `--quiet`: インストーラーの起動時に情報出力を省略します。
 - `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
 - `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
@@ -678,9 +732,15 @@ If Microsoft Store access is blocked due to security policies:
 @z
 
 @x
-Installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
+In per-user mode, Docker Desktop can be installed and updated without administrator privileges. Some settings still require elevation and are marked **Requires password** in the Settings UI. Enabling WSL 2 for the first time also requires administrator privileges, but this is a one-time, per-machine operation.
 @y
-Installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
+In per-user mode, Docker Desktop can be installed and updated without administrator privileges. Some settings still require elevation and are marked **Requires password** in the Settings UI. Enabling WSL 2 for the first time also requires administrator privileges, but this is a one-time, per-machine operation.
+@z
+
+@x
+In all-users mode, installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
+@y
+In all-users mode, installing Docker Desktop requires administrator privileges. However, once installed, it can be used without administrative access. Some actions, though, still need elevated permissions. See [Understand permission requirements for Windows](./windows-permission-requirements.md) for more detail.
 @z
 
 @x
@@ -696,9 +756,20 @@ If you're an IT admin and your users do not have administrator rights and plan t
 @z
 
 @x
-### Windows containers 
+### Windows containers
 @y
-### Windows containers 
+### Windows containers
+@z
+
+@x
+> [!NOTE]
+>
+> Windows containers are only supported in all-users installation mode. They are not available when Docker Desktop is installed per-user.
+@y
+> [!NOTE]
+>
+> Windows コンテナーは全ユーザー向けインストールモードにおいてのみサポートされます。
+> Docker Desktop を個別ユーザー向けにインストールしている場合は利用することはできません。
 @z
 
 @x

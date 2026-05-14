@@ -156,23 +156,23 @@ ECI protection varies by container type and Docker Desktop version:
 @x
 - Containers created with `docker run` and `docker create`
 - Containers using the `docker-container` build driver
+- Kubernetes with the Kind provisioner
 @y
 - Containers created with `docker run` and `docker create`
 - Containers using the `docker-container` build driver
+- Kubernetes with the Kind provisioner
 @z
 
 @x
-### Version dependent
+### Platform dependent
 @y
-### Version dependent
+### Platform dependent
 @z
 
 @x
-- Docker Build: Protected in Docker Desktop 4.30+ (except WSL 2)
-- Kubernetes: Protected in Docker Desktop 4.38+ when using the kind provisioner
+- Docker Build: Protected in Docker Desktop for Mac, Linux, and Windows with Hyper-V backend
 @y
-- Docker Build: Protected in Docker Desktop 4.30+ (except WSL 2)
-- Kubernetes: Protected in Docker Desktop 4.38+ when using the kind provisioner
+- Docker Build: Protected in Docker Desktop for Mac, Linux, and Windows with Hyper-V backend
 @z
 
 @x

@@ -124,7 +124,10 @@ Deploy the registry key across your organization using Group Policy:
 @z
 
 @x
-1. Create a registry script with the required key structure.
+1. Create a registry script with the following structure:
+   - Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop`
+   - Value name: `allowedOrgs` (multi-string)
+   - Value data: Your organization names, one per line, in lowercase only
 1. In Group Policy Management, create or edit a GPO.
 1. Navigate to **Computer Configuration** > **Preferences** > **Windows Settings** > **Registry**.
 1. Right-click **Registry** > **New** > **Registry Item**.
@@ -137,7 +140,10 @@ Deploy the registry key across your organization using Group Policy:
 1. Test on a small group using `gpupdate/force`.
 1. Deploy organization-wide after verification.
 @y
-1. Create a registry script with the required key structure.
+1. Create a registry script with the following structure:
+   - Path: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Docker\Docker Desktop`
+   - Value name: `allowedOrgs` (multi-string)
+   - Value data: Your organization names, one per line, in lowercase only
 1. In Group Policy Management, create or edit a GPO.
 1. Navigate to **Computer Configuration** > **Preferences** > **Windows Settings** > **Registry**.
 1. Right-click **Registry** > **New** > **Registry Item**.

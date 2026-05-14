@@ -36,6 +36,251 @@ For more information about:
 @z
 
 @x
+## 29.4.3
+@y
+## 29.4.3
+@z
+
+@x
+{{< release-date date="2026-05-06" >}}
+@y
+{{< release-date date="2026-05-06" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.4.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.3)
+- [moby/moby, 29.4.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.3)
+@y
+- [docker/cli, 29.4.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.3)
+- [moby/moby, 29.4.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.3)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+- **CVE-2026-31431**: Replace the socketcall(2) seccomp deny that broke 32-bit programs with targeted AppArmor (deny network alg) and SELinux (alg_socket) rules that block AF_ALG at the LSM layer, covering both socket(2) and socketcall(2) paths without disrupting legitimate 32-bit workloads. [moby/moby#52537](https://github.com/moby/moby/pull/52537)
+@y
+- **CVE-2026-31431**: Replace the socketcall(2) seccomp deny that broke 32-bit programs with targeted AppArmor (deny network alg) and SELinux (alg_socket) rules that block AF_ALG at the LSM layer, covering both socket(2) and socketcall(2) paths without disrupting legitimate 32-bit workloads. [moby/moby#52537](https://github.com/moby/moby/pull/52537)
+@z
+
+@x
+  On SELinux-based systems, the SELinux mitigation requires the daemon to be configured with `selinux-enabled: true` (via `daemon.json` or the `--selinux-enabled` CLI flag). This option is not enabled by default.
+@y
+  On SELinux-based systems, the SELinux mitigation requires the daemon to be configured with `selinux-enabled: true` (via `daemon.json` or the `--selinux-enabled` CLI flag). This option is not enabled by default.
+@z
+
+@x
+- Fix the default AppArmor profile not being updated on daemon restart, requiring a system reboot to pick up profile changes from daemon upgrades. [moby/moby#52537](https://github.com/moby/moby/pull/52537)
+@y
+- Fix the default AppArmor profile not being updated on daemon restart, requiring a system reboot to pick up profile changes from daemon upgrades. [moby/moby#52537](https://github.com/moby/moby/pull/52537)
+@z
+
+@x
+## 29.4.2
+@y
+## 29.4.2
+@z
+
+@x
+{{< release-date date="2026-05-01" >}}
+@y
+{{< release-date date="2026-05-01" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.4.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.2)
+- [moby/moby, 29.4.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.2)
+@y
+- [docker/cli, 29.4.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.2)
+- [moby/moby, 29.4.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes hardening for **CVE-2026-31431**.
+@y
+This release includes hardening for **CVE-2026-31431**.
+@z
+
+@x
+- Block `AF_ALG` sockets and the `socketcall(2)` multiplexer in the default seccomp profile to prevent in-container privilege escalation via the kernel crypto API ("Copy Fail"). [moby/moby#52501](https://github.com/moby/moby/pull/52501)
+@y
+- Block `AF_ALG` sockets and the `socketcall(2)` multiplexer in the default seccomp profile to prevent in-container privilege escalation via the kernel crypto API ("Copy Fail"). [moby/moby#52501](https://github.com/moby/moby/pull/52501)
+@z
+
+@x
+### Known issues
+@y
+### Known issues
+@z
+
+@x
+The hardening can break 32-bit programs and i386 images, including SteamCMD and some Wine-based workloads. [moby/moby#52506](https://github.com/moby/moby/issues/52506)
+@y
+The hardening can break 32-bit programs and i386 images, including SteamCMD and some Wine-based workloads. [moby/moby#52506](https://github.com/moby/moby/issues/52506)
+@z
+
+@x
+#### Workaround
+@y
+#### Workaround
+@z
+
+@x
+> [!WARNING]
+> Don't use `--security-opt seccomp=unconfined` to work around this issue.  
+> Don't use the `seccomp/v0.2.0` profile.
+@y
+> [!WARNING]
+> Don't use `--security-opt seccomp=unconfined` to work around this issue.  
+> Don't use the `seccomp/v0.2.0` profile.
+@z
+
+@x
+If you need a workaround, use the `seccomp/v0.2.1` profile from `moby/profiles`.
+Make sure you use a kernel that includes the fix for CVE-2026-31431.
+@y
+If you need a workaround, use the `seccomp/v0.2.1` profile from `moby/profiles`.
+Make sure you use a kernel that includes the fix for CVE-2026-31431.
+@z
+
+@x
+This profile unblocks `socketcall` while keeping `AF_ALG` blocked for `socket`.
+@y
+This profile unblocks `socketcall` while keeping `AF_ALG` blocked for `socket`.
+@z
+
+@x
+> [!IMPORTANT]
+> Use this workaround only for containers that require it.  
+> Containers that use this profile can still exploit CVE-2026-31431 through the `socketcall` syscall.
+@y
+> [!IMPORTANT]
+> Use this workaround only for containers that require it.  
+> Containers that use this profile can still exploit CVE-2026-31431 through the `socketcall` syscall.
+@z
+
+@x
+Download the `seccomp/v0.2.1` profile:
+@y
+Download the `seccomp/v0.2.1` profile:
+@z
+
+% snip command...
+
+@x
+Use one of these options. You don't need both.
+@y
+Use one of these options. You don't need both.
+@z
+
+@x
+1. To use the profile for a specific container when you control the `docker run` command, use `--security-opt`:
+@y
+1. To use the profile for a specific container when you control the `docker run` command, use `--security-opt`:
+@z
+
+% snip command...
+
+@x
+2. To use the profile as the default for containers created by the daemon, add `seccomp-profile` to your `daemon.json`:
+@y
+2. To use the profile as the default for containers created by the daemon, add `seccomp-profile` to your `daemon.json`:
+@z
+
+% snip code...
+
+@x
+## 29.4.1
+@y
+## 29.4.1
+@z
+
+@x
+{{< release-date date="2026-04-20" >}}
+@y
+{{< release-date date="2026-04-20" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.4.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.1)
+- [moby/moby, 29.4.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.1)
+@y
+- [docker/cli, 29.4.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.4.1)
+- [moby/moby, 29.4.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.4.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Fix `docker image prune --filter label!=key=value` incorrectly skipping images that don't have the specified label. [moby/moby#52338](https://github.com/moby/moby/pull/52338)
+- Fix `--log-opt "tag={{.ImageID}}"` not stripping the digest's algorithm. [moby/moby#52343](https://github.com/moby/moby/pull/52343)
+- Fix intermittent container start failures (`EBUSY` on secrets/configs remount) on busy Swarm nodes by retrying the read-only remount. [moby/moby#52235](https://github.com/moby/moby/pull/52235)
+@y
+- containerd image store: Fix `docker image prune --filter label!=key=value` incorrectly skipping images that don't have the specified label. [moby/moby#52338](https://github.com/moby/moby/pull/52338)
+- Fix `--log-opt "tag={{.ImageID}}"` not stripping the digest's algorithm. [moby/moby#52343](https://github.com/moby/moby/pull/52343)
+- Fix intermittent container start failures (`EBUSY` on secrets/configs remount) on busy Swarm nodes by retrying the read-only remount. [moby/moby#52235](https://github.com/moby/moby/pull/52235)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries only) to [v2.2.3](https://github.com/containerd/containerd/releases/tag/v2.2.3). [moby/moby#52360](https://github.com/moby/moby/pull/52360)
+- Update Go runtime to [1.26.2](https://go.dev/doc/devel/release#go1.26.2). [docker/cli#6920](https://github.com/docker/cli/pull/6920), [moby/moby#52329](https://github.com/moby/moby/pull/52329)
+@y
+- Update containerd (static binaries only) to [v2.2.3](https://github.com/containerd/containerd/releases/tag/v2.2.3). [moby/moby#52360](https://github.com/moby/moby/pull/52360)
+- Update Go runtime to [1.26.2](https://go.dev/doc/devel/release#go1.26.2). [docker/cli#6920](https://github.com/docker/cli/pull/6920), [moby/moby#52329](https://github.com/moby/moby/pull/52329)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- if a container has an IPv4-only or an IPv6-only endpoint with higher "gateway priority" than a dual stack endpoint, the single stack endpoint will now be used as the default gateway for its address family. [moby/moby#52328](https://github.com/moby/moby/pull/52328)
+@y
+- if a container has an IPv4-only or an IPv6-only endpoint with higher "gateway priority" than a dual stack endpoint, the single stack endpoint will now be used as the default gateway for its address family. [moby/moby#52328](https://github.com/moby/moby/pull/52328)
+@z
+
+
+@x
 ## 29.4.0
 @y
 ## 29.4.0

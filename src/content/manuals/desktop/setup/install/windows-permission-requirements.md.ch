@@ -22,9 +22,9 @@ This page contains information about the permission requirements for running and
 @z
 
 @x
-It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of the Windows Docker engine and Windows containers.
+It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of Docker Engine and Windows containers.
 @y
-It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of the Windows Docker engine and Windows containers.
+It also provides clarity on running containers as `root` as opposed to having `Administrator` access on the host and the privileges of Docker Engine and Windows containers.
 @z
 
 @x
@@ -40,23 +40,71 @@ Docker Desktop on Windows is designed with security in mind. Administrative righ
 @z
 
 @x
-While Docker Desktop on Windows can be run without having `Administrator` privileges, it does require them during installation. On installation you receive a UAC prompt which allows a privileged helper service to be installed. After that, Docker Desktop can be run without administrator privileges. 
+The permissions required to install and run Docker Desktop depend on which [installation mode](/manuals/desktop/setup/install/windows-install.md#installation-modes) you use.
 @y
-While Docker Desktop on Windows can be run without having `Administrator` privileges, it does require them during installation. On installation you receive a UAC prompt which allows a privileged helper service to be installed. After that, Docker Desktop can be run without administrator privileges. 
+The permissions required to install and run Docker Desktop depend on which [installation mode](manuals/desktop/setup/install/windows-install.md#installation-modes) you use.
 @z
 
 @x
-Running Docker Desktop on Windows without the privileged helper does not require users to have `docker-users` group membership. However,
-some features that require privileged operations will have this requirement. 
+### Per-user installation (Beta)
 @y
-Running Docker Desktop on Windows without the privileged helper does not require users to have `docker-users` group membership. However,
-some features that require privileged operations will have this requirement. 
+### Per-user installation (Beta)
 @z
 
 @x
-If you performed the installation, you are automatically added to this group, but other users must be added manually. This allows the administrator to control who has access to features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
+In per-user mode, Docker Desktop installs to `%LOCALAPPDATA%\Programs\DockerDesktop` and writes only to current-user registry keys (`HKCU`). This means:
 @y
-If you performed the installation, you are automatically added to this group, but other users must be added manually. This allows the administrator to control who has access to features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
+In per-user mode, Docker Desktop installs to `%LOCALAPPDATA%\Programs\DockerDesktop` and writes only to current-user registry keys (`HKCU`). This means:
+@z
+
+@x
+- No administrator privileges are required to install or update Docker Desktop.
+- After installation, Docker Desktop can be run without administrator privileges.
+- Some settings marked **Requires password** in **Settings** still require elevation. When you change one of these settings and select **Apply**, Docker Desktop opens a UAC prompt for administrator access.
+@y
+- No administrator privileges are required to install or update Docker Desktop.
+- After installation, Docker Desktop can be run without administrator privileges.
+- Some settings marked **Requires password** in **Settings** still require elevation. When you change one of these settings and select **Apply**, Docker Desktop opens a UAC prompt for administrator access.
+@z
+
+@x
+Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. For most users this is not a limitation, as the WSL 2 backend covers the majority of use cases.
+@y
+Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. For most users this is not a limitation, as the WSL 2 backend covers the majority of use cases.
+@z
+
+@x
+### All-users installation
+@y
+### All-users installation
+@z
+
+@x
+In all-users mode, Docker Desktop installs to `C:\Program Files\Docker\Docker` and writes to Local Machine registry keys (`HKLM`). Both locations require administrator privileges to modify, so:
+@y
+In all-users mode, Docker Desktop installs to `C:\Program Files\Docker\Docker` and writes to Local Machine registry keys (`HKLM`). Both locations require administrator privileges to modify, so:
+@z
+
+@x
+- Administrator privileges are required to install and update Docker Desktop.
+- On installation you receive a UAC prompt which allows the privileged helper service `com.docker.service` to be installed.
+- After installation, Docker Desktop can be run without administrator privileges.
+@y
+- Administrator privileges are required to install and update Docker Desktop.
+- On installation you receive a UAC prompt which allows the privileged helper service `com.docker.service` to be installed.
+- After installation, Docker Desktop can be run without administrator privileges.
+@z
+
+@x
+Running Docker Desktop without the privileged helper does not require users to have `docker-users` group membership. However, some features that require privileged operations will have this requirement.
+@y
+Running Docker Desktop without the privileged helper does not require users to have `docker-users` group membership. However, some features that require privileged operations will have this requirement.
+@z
+
+@x
+If you performed the installation, you are automatically added to the `docker-users` group, but other users must be added manually. This allows the administrator to control who has access to features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
+@y
+If you performed the installation, you are automatically added to the `docker-users` group, but other users must be added manually. This allows the administrator to control who has access to features that require higher privileges, such as creating and managing the Hyper-V VM, or using Windows containers.
 @z
 
 @x
@@ -72,6 +120,26 @@ When Docker Desktop launches, all non-privileged named pipes are created so that
 @z
 
 @x
+### Operations that always require elevation
+@y
+### Operations that always require elevation
+@z
+
+@x
+The following require administrator privileges regardless of installation mode.
+@y
+The following require administrator privileges regardless of installation mode.
+@z
+
+@x
+- Enabling WSL 2 for the first time: WSL 2 must be enabled on the machine before Docker Desktop can run. This is a one-time, per-machine operation. Once WSL 2 is enabled, it does not need to be enabled again for subsequent Docker Desktop installs or updates.
+- Settings marked **Requires password**: Certain Docker Desktop settings affect system-level configuration and require administrator credentials to apply. These are clearly marked **Requires password**. When you change one of these settings and select **Apply**, Docker Desktop prompts for administrator credentials.
+@y
+- Enabling WSL 2 for the first time: WSL 2 must be enabled on the machine before Docker Desktop can run. This is a one-time, per-machine operation. Once WSL 2 is enabled, it does not need to be enabled again for subsequent Docker Desktop installs or updates.
+- Settings marked **Requires password**: Certain Docker Desktop settings affect system-level configuration and require administrator credentials to apply. These are clearly marked **Requires password**. When you change one of these settings and select **Apply**, Docker Desktop prompts for administrator credentials.
+@z
+
+@x
 ## Privileged helper
 @y
 ## Privileged helper
@@ -81,6 +149,16 @@ When Docker Desktop launches, all non-privileged named pipes are created so that
 Docker Desktop needs to perform a limited set of privileged operations which are conducted by the privileged helper process `com.docker.service`. This approach allows, following the principle of least privilege, `Administrator` access to be used only for the operations for which it is absolutely necessary, while still being able to use Docker Desktop as an unprivileged user.
 @y
 Docker Desktop needs to perform a limited set of privileged operations which are conducted by the privileged helper process `com.docker.service`. This approach allows, following the principle of least privilege, `Administrator` access to be used only for the operations for which it is absolutely necessary, while still being able to use Docker Desktop as an unprivileged user.
+@z
+
+@x
+> [!NOTE]
+>
+> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which instead relies solely on the WSL 2 backend and does not support Hyper-V or Windows containers.
+@y
+> [!NOTE]
+>
+> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which instead relies solely on the WSL 2 backend and does not support Hyper-V or Windows containers.
 @z
 
 @x
@@ -199,6 +277,16 @@ isolated from the Docker daemon and other services running inside the VM.
 > [!WARNING]
 >
 > Enabling Windows containers has important security implications.
+@z
+
+@x
+> [!NOTE]
+>
+> Windows containers are only supported in all-users installation mode. They are not available when Docker Desktop is installed per-user. See [Installation modes](/manuals/desktop/setup/install/windows-install.md#installation-modes).
+@y
+> [!NOTE]
+>
+> Windows containers are only supported in all-users installation mode. They are not available when Docker Desktop is installed per-user. See [Installation modes](manuals/desktop/setup/install/windows-install.md#installation-modes).
 @z
 
 @x

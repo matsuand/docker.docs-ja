@@ -2,10 +2,10 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-{{- $data := index site.Data.cli .Params.datafolder .Params.datafile -}}
+{{- $data := index hugo.Data.cli .Params.datafolder .Params.datafile -}}
 # {{ .Title }}
 @y
-{{- $data := index site.Data.cli .Params.datafolder .Params.datafile -}}
+{{- $data := index hugo.Data.cli .Params.datafolder .Params.datafile -}}
 # {{ .Title }}
 @z
 
@@ -120,13 +120,13 @@
 @x
 | Command | Description |
 |---------|-------------|
-{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index site.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
+{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index hugo.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
 {{ end }}{{ end }}
 {{ end }}
 @y
 | Command | Description |
 |---------|-------------|
-{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index site.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
+{{ range .Pages }}{{ if and .Params.datafolder .Params.datafile }}{{ $subdata := index hugo.Data.cli .Params.datafolder .Params.datafile }}| [`{{ .Title }}`]({{ .Permalink }}) | {{ $subdata.short }} |
 {{ end }}{{ end }}
 {{ end }}
 @z

@@ -21,17 +21,17 @@ ignoreFiles:
   - Makefile\.sub$
   - copyfiles\.sub$
 defaultContentLanguage: ja
-languageCode: ja
+locale: 'ja-JP'
 @z
 
 @x
 languages:
   en:
-    languageName: English
+    label: English
 @y
 languages:
   ja:
-    languageName: 日本語
+    label: 日本語
 @z
 
 @x

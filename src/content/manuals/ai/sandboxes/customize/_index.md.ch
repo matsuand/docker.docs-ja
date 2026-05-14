@@ -56,6 +56,56 @@ evolves. Share feedback and bug reports in the
 @z
 
 @x
+## Templates and kits, side by side
+@y
+## Templates and kits, side by side
+@z
+
+@x
+A template is a Docker image that the sandbox runs. It's built ahead
+of time with a Dockerfile (or saved from a running sandbox), pushed to a
+registry, and pulled when a sandbox is created. Use templates for things
+that belong in an image: system packages, language toolchains, large
+dependencies — anything you'd rather not reinstall on every sandbox start.
+@y
+A template is a Docker image that the sandbox runs. It's built ahead
+of time with a Dockerfile (or saved from a running sandbox), pushed to a
+registry, and pulled when a sandbox is created. Use templates for things
+that belong in an image: system packages, language toolchains, large
+dependencies — anything you'd rather not reinstall on every sandbox start.
+@z
+
+@x
+A kit is a YAML artifact applied at sandbox creation. The kit can run
+install commands, drop files into the sandbox, declare network and
+credential rules, and (for agent kits) define which template image the
+agent runs in. Use kits for things that vary per agent or per team:
+shared linter config, project-specific install steps, credential
+injection for a service the agent talks to.
+@y
+A kit is a YAML artifact applied at sandbox creation. The kit can run
+install commands, drop files into the sandbox, declare network and
+credential rules, and (for agent kits) define which template image the
+agent runs in. Use kits for things that vary per agent or per team:
+shared linter config, project-specific install steps, credential
+injection for a service the agent talks to.
+@z
+
+@x
+Templates and kits work together. An agent kit's `agent.image` field
+points at a template: the template provides the base environment, the
+kit layers config, secrets, and runtime behavior on top. A team can ship
+one heavy template and several thin kits without rebuilding the image
+each time something changes.
+@y
+Templates and kits work together. An agent kit's `agent.image` field
+points at a template: the template provides the base environment, the
+kit layers config, secrets, and runtime behavior on top. A team can ship
+one heavy template and several thin kits without rebuilding the image
+each time something changes.
+@z
+
+@x
 ## When to use which
 @y
 ## When to use which

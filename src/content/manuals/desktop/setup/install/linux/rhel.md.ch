@@ -52,10 +52,10 @@ To install Docker Desktop successfully, you must:
 
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of either RHEL 8, RHEL 9, or RHEL 10.
+- Have a 64-bit version of either RHEL 9 or RHEL 10.
 @y
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of either RHEL 8, RHEL 9, or RHEL 10.
+- Have a 64-bit version of either RHEL 9 or RHEL 10.
 @z
 
 @x
@@ -80,13 +80,6 @@ To install Docker Desktop successfully, you must:
 @z
 
 % snip {{< tab name="RHEL 9" >}} except comment...
-@x
-   $ # enable EPEL as described above
-@y
-   $ # 上述どおり EPEL を有効に
-@z
-
-% snip {{< tab name="RHEL 8" >}} except comment...
 @x
    $ # enable EPEL as described above
 @y

@@ -48,9 +48,9 @@ This page explains how group mapping works, and how to set up group mapping.
 @z
 
 @x
-Before you being, you must have:
+Before you begin, you must have:
 @y
-Before you being, you must have:
+Before you begin, you must have:
 @z
 
 @x

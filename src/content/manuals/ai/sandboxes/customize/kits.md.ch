@@ -241,14 +241,10 @@ See [`initFiles`](#initfiles) in the spec reference for all fields.
 
 @x
 Environment variables set by the kit are available to the agent at
-runtime. Sensitive values can be marked proxy-managed, so the real
-credential is substituted only when the proxy forwards a request. The
-secret itself never enters the VM:
+runtime:
 @y
 Environment variables set by the kit are available to the agent at
-runtime. Sensitive values can be marked proxy-managed, so the real
-credential is substituted only when the proxy forwards a request. The
-secret itself never enters the VM:
+runtime:
 @z
 
 @x
@@ -256,17 +252,25 @@ secret itself never enters the VM:
 environment:
   variables:
     MY_TOOL_WORKSPACE: /home/agent/my-tool
-  proxyManaged:
-    - MY_TOOL_API_KEY
 ```
 @y
 ```yaml
 environment:
   variables:
     MY_TOOL_WORKSPACE: /home/agent/my-tool
-  proxyManaged:
-    - MY_TOOL_API_KEY
 ```
+@z
+
+@x
+For credentials, see
+[Authenticate to external services](#authenticate-to-external-services).
+Don't put secret values directly in `environment.variables` — they'd
+be visible inside the sandbox VM.
+@y
+For credentials, see
+[Authenticate to external services](#authenticate-to-external-services).
+Don't put secret values directly in `environment.variables` — they'd
+be visible inside the sandbox VM.
 @z
 
 @x
@@ -276,13 +280,59 @@ environment:
 @z
 
 @x
-Network rules define which domains the sandbox can reach. For
-authenticated services, a domain can be mapped to a service identifier,
-and the proxy injects the auth header on forwarded requests:
+Network rules define which domains the sandbox can reach:
 @y
-Network rules define which domains the sandbox can reach. For
-authenticated services, a domain can be mapped to a service identifier,
-and the proxy injects the auth header on forwarded requests:
+Network rules define which domains the sandbox can reach:
+@z
+
+@x
+```yaml
+network:
+  allowedDomains:
+    - api.example.com
+    - "*.cdn.example.com"
+```
+@y
+```yaml
+network:
+  allowedDomains:
+    - api.example.com
+    - "*.cdn.example.com"
+```
+@z
+
+@x
+For authenticated services, see
+[Authenticate to external services](#authenticate-to-external-services).
+@y
+For authenticated services, see
+[Authenticate to external services](#authenticate-to-external-services).
+@z
+
+@x
+### Authenticate to external services
+@y
+### Authenticate to external services
+@z
+
+@x
+A kit can attach credentials to outbound requests through the
+host-side proxy. The agent inside the VM works with a sentinel value;
+the proxy reads the real credential on the host and overwrites the
+auth header before the request leaves the sandbox.
+@y
+A kit can attach credentials to outbound requests through the
+host-side proxy. The agent inside the VM works with a sentinel value;
+the proxy reads the real credential on the host and overwrites the
+auth header before the request leaves the sandbox.
+@z
+
+@x
+The standard pattern uses four blocks tied to a service identifier
+you choose (here, `my-service`):
+@y
+The standard pattern uses four blocks tied to a service identifier
+you choose (here, `my-service`):
 @z
 
 @x
@@ -291,58 +341,70 @@ network:
   allowedDomains:
     - api.example.com
   serviceDomains:
-    api.example.com: my-service
+    api.example.com: my-service # Tag traffic to this domain
   serviceAuth:
     my-service:
-      headerName: Authorization
+      headerName: Authorization # Overwrite this header
       valueFormat: "Bearer %s"
-```
 @y
 ```yaml
 network:
   allowedDomains:
     - api.example.com
   serviceDomains:
-    api.example.com: my-service
+    api.example.com: my-service # Tag traffic to this domain
   serviceAuth:
     my-service:
-      headerName: Authorization
+      headerName: Authorization # Overwrite this header
       valueFormat: "Bearer %s"
-```
 @z
 
 @x
-### Declare credential sources
-@y
-### Declare credential sources
-@z
-
-@x
-Credential sources tell the proxy where to find secrets on the host. The
-sandbox never sees the value itself. The proxy reads it and injects it
-into outbound requests:
-@y
-Credential sources tell the proxy where to find secrets on the host. The
-sandbox never sees the value itself. The proxy reads it and injects it
-into outbound requests:
-@z
-
-@x
-```yaml
 credentials:
   sources:
     my-service:
       env:
-        - MY_SERVICE_API_KEY
-```
+        - MY_SERVICE_API_KEY # Host-side credential lookup
 @y
-```yaml
 credentials:
   sources:
     my-service:
       env:
-        - MY_SERVICE_API_KEY
+        - MY_SERVICE_API_KEY # Host-side credential lookup
+@z
+
+@x
+environment:
+  proxyManaged:
+    - MY_SERVICE_API_KEY # Set the in-VM env var to "proxy-managed"
 ```
+@y
+environment:
+  proxyManaged:
+    - MY_SERVICE_API_KEY # Set the in-VM env var to "proxy-managed"
+```
+@z
+
+@x
+The agent boots with `MY_SERVICE_API_KEY=proxy-managed`, sends a
+request with that value in `Authorization`, and the proxy overwrites
+the header with the real credential before forwarding. The real
+secret never enters the VM.
+@y
+The agent boots with `MY_SERVICE_API_KEY=proxy-managed`, sends a
+request with that value in `Authorization`, and the proxy overwrites
+the header with the real credential before forwarding. The real
+secret never enters the VM.
+@z
+
+@x
+See [Credentials](../security/credentials.md) for how to provide the
+credential value on your host, other approaches for cases the example
+above doesn't fit, and what the proxy does at request time.
+@y
+See [Credentials](../security/credentials.md) for how to provide the
+credential value on your host, other approaches for cases the example
+above doesn't fit, and what the proxy does at request time.
 @z
 
 @x
@@ -512,9 +574,9 @@ select = ["E", "F", "I"]
 @z
 
 @x
-To run an agent with this mixin:
+To start a new sandbox with this mixin:
 @y
-To run an agent with this mixin:
+To start a new sandbox with this mixin:
 @z
 
 @x
@@ -525,6 +587,16 @@ $ sbx run claude --kit /path/to/ruff-lint/
 ```console
 $ sbx run claude --kit /path/to/ruff-lint/
 ```
+@z
+
+@x
+To apply the mixin to a sandbox that's already running, use
+[`sbx kit add`](#local) instead. The `--kit` flag only takes effect when a
+sandbox is created.
+@y
+To apply the mixin to a sandbox that's already running, use
+[`sbx kit add`](#local) instead. The `--kit` flag only takes effect when a
+sandbox is created.
 @z
 
 @x
@@ -757,11 +829,11 @@ removed from a running sandbox — remove and recreate it to start clean.
 
 @x
 ```console
-$ sbx run claude --kit "git+https://github.com/<owner>/<repo>.git#ref=v0.1.0&dir=code-server"
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=code-server"
 ```
 @y
 ```console
-$ sbx run claude --kit "git+https://github.com/<owner>/<repo>.git#ref=v0.1.0&dir=code-server"
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=code-server"
 ```
 @z
 
@@ -803,6 +875,20 @@ For Docker Hub, include the full `docker.io` prefix. See
 @y
 For Docker Hub, include the full `docker.io` prefix. See
 [Packaging and distribution](#packaging-and-distribution) for publishing.
+@z
+
+@x
+> [!IMPORTANT]
+> Private kits are only supported on Docker Hub. `sbx` reuses your
+> `sbx login` session to pull private artifacts from Docker Hub. Other
+> registries are pulled anonymously, so private kits hosted on
+> registries other than Docker Hub fail to pull.
+@y
+> [!IMPORTANT]
+> Private kits are only supported on Docker Hub. `sbx` reuses your
+> `sbx login` session to pull private artifacts from Docker Hub. Other
+> registries are pulled anonymously, so private kits hosted on
+> registries other than Docker Hub fail to pull.
 @z
 
 @x

@@ -127,10 +127,14 @@ For more information on roles, see
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization.
 1. Select **Teams**.
+1. Select **Create team**.
+1. Provide the team's information, then select **Create**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization.
 1. Select **Teams**.
+1. Select **Create team**.
+1. Provide the team's information, then select **Create**.
 @z
 
 @x

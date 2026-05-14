@@ -119,7 +119,7 @@ $ export SBX_NO_TELEMETRY=1
 
 @x
 The [`sbx secret`](/reference/cli/sbx/secret/) command only supports a fixed set
-of [services](security/credentials.md#supported-services) (Anthropic, OpenAI,
+of [services](security/credentials.md#built-in-services) (Anthropic, OpenAI,
 GitHub, and others). If your agent needs an environment variable that isn't
 tied to a supported service, such as `BRAVE_API_KEY` or a custom internal
 token, write it to `/etc/sandbox-persistent.sh` inside the sandbox. This
@@ -127,7 +127,7 @@ file is sourced on every shell login, so the variable persists across agent
 sessions for the sandbox's lifetime.
 @y
 The [`sbx secret`](__SUBDIR__/reference/cli/sbx/secret/) command only supports a fixed set
-of [services](security/credentials.md#supported-services) (Anthropic, OpenAI,
+of [services](security/credentials.md#built-in-services) (Anthropic, OpenAI,
 GitHub, and others). If your agent needs an environment variable that isn't
 tied to a supported service, such as `BRAVE_API_KEY` or a custom internal
 token, write it to `/etc/sandbox-persistent.sh` inside the sandbox. This
@@ -249,6 +249,28 @@ If you prefer to re-enable approval prompts, change the permission mode
 inside the session. Most agents let you switch permission modes after
 startup. In Claude Code, use the `/permissions` command to change the mode
 interactively.
+@z
+
+@x
+To make approval prompts the default for every session, define a custom
+agent kit that overrides the agent's entrypoint to drop the
+permission-skipping flag. For example, a kit that launches Claude Code
+without `--dangerously-skip-permissions`:
+@y
+To make approval prompts the default for every session, define a custom
+agent kit that overrides the agent's entrypoint to drop the
+permission-skipping flag. For example, a kit that launches Claude Code
+without `--dangerously-skip-permissions`:
+@z
+
+% snip code...
+
+@x
+Run it with `sbx run claude-safe --kit ./claude-safe/`. See
+[Agent kits](customize/kits.md#agent-kits) for the full pattern.
+@y
+Run it with `sbx run claude-safe --kit ./claude-safe/`. See
+[Agent kits](customize/kits.md#agent-kits) for the full pattern.
 @z
 
 @x

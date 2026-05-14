@@ -100,29 +100,25 @@ To refine the log stream further, select the **Filter** icon in the toolbar to o
 @z
 
 @x
-## Display options
+## Display settings
 @y
-## Display options
+## Display settings
 @z
 
 @x
-Select the **Display options** icon in the toolbar to toggle the following:
+Select the **Display settings** icon in the toolbar to toggle the following:
 @y
-Select the **Display options** icon in the toolbar to toggle the following:
+Select the **Display settings** icon in the toolbar to toggle the following:
 @z
 
 @x
 - **View build logs**: Include or exclude build-related log output in the stream
-- **Table view**: Switch between a structured table layout and a plain log stream
+- **Wrap lines**
+- **Show timestamps**
 @y
 - **View build logs**: Include or exclude build-related log output in the stream
-- **Table view**: Switch between a structured table layout and a plain log stream
-@z
-
-@x
-The table view is useful when you need to correlate events across multiple containers because each row clearly shows which container emitted a given message and when.
-@y
-The table view is useful when you need to correlate events across multiple containers because each row clearly shows which container emitted a given message and when.
+- **Wrap lines**
+- **Show timestamps**
 @z
 
 @x

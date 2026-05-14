@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応 (一部)
+
 @x
 title: Templates
 @y
@@ -285,6 +287,44 @@ $ docker build -t my-org/my-template:v1 --push .
 > The Docker daemon used by Docker Sandboxes pulls templates from a
 > registry directly; it doesn't share the image store of your local Docker
 > daemon on the host.
+@z
+
+@x
+> [!IMPORTANT]
+> Private templates are only supported on Docker Hub. `sbx` reuses your
+> `sbx login` session to pull private images from Docker Hub. Other
+> registries (such as GitHub Container Registry, ECR, or a self-hosted
+> registry like Nexus) are pulled anonymously, so private images on those
+> registries fail to pull.
+@y
+> [!IMPORTANT]
+> Private templates are only supported on Docker Hub. `sbx` reuses your
+> `sbx login` session to pull private images from Docker Hub. Other
+> registries (such as GitHub Container Registry, ECR, or a self-hosted
+> registry like Nexus) are pulled anonymously, so private images on those
+> registries fail to pull.
+@z
+
+@x
+For locally-built images or private images on registries that `sbx`
+can't authenticate against, save the image to a tar and load it
+directly into the sandbox runtime instead of pulling from a registry:
+@y
+For locally-built images or private images on registries that `sbx`
+can't authenticate against, save the image to a tar and load it
+directly into the sandbox runtime instead of pulling from a registry:
+@z
+
+% snip command...
+
+@x
+`sbx template load` imports the tar into the sandbox runtime's image
+store, so the image doesn't need to be reachable from a registry at
+sandbox creation time.
+@y
+`sbx template load` imports the tar into the sandbox runtime's image
+store, so the image doesn't need to be reachable from a registry at
+sandbox creation time.
 @z
 
 @x

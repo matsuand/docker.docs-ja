@@ -22,8 +22,6 @@ copyfiles = \
 	button.markdown.md             \
 	card.html                      \
 	card.markdown.md               \
-	cta.html                       \
-	cta.markdown.md                \
 	desktop-install-v2.markdown.md \
 	experimental.markdown.md       \
 	grid.html                      \
@@ -33,7 +31,6 @@ copyfiles = \
 	inline-image.markdown.md       \
 	release-date.html              \
 	restricted.markdown.md         \
-	rss-button.markdown.md         \
 	sectionlinks.html              \
 	summary-bar.markdown.md        \
 	tab.html                       \

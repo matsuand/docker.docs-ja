@@ -308,6 +308,20 @@ on a runtime value. Use a static file otherwise.
 @z
 
 @x
+> [!TIP]
+> This snippet is lifted from the
+> [code-server kit](https://github.com/docker/sbx-kits-contrib/tree/main/code-server)
+> in the contrib repository, which is also a runnable sample that demonstrates
+> the full pattern.
+@y
+> [!TIP]
+> This snippet is lifted from the
+> [code-server kit](https://github.com/docker/sbx-kits-contrib/tree/main/code-server)
+> in the contrib repository, which is also a runnable sample that demonstrates
+> the full pattern.
+@z
+
+@x
 ## Ship a Claude Code skill
 @y
 ## Ship a Claude Code skill
@@ -529,4 +543,32 @@ scratch, see [Build an agent](build-an-agent.md).
 @y
 For a step-by-step walkthrough of building a new agent kit from
 scratch, see [Build an agent](build-an-agent.md).
+@z
+
+@x
+## More examples
+@y
+## More examples
+@z
+
+@x
+These patterns are all drawn from working kits in the
+[sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib)
+repository, which contains each example as a complete, loadable kit.
+Use it to study the full shape of a kit, or load one directly:
+@y
+These patterns are all drawn from working kits in the
+[sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib)
+repository, which contains each example as a complete, loadable kit.
+Use it to study the full shape of a kit, or load one directly:
+@z
+
+@x
+```console
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
+```
+@y
+```console
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
+```
 @z

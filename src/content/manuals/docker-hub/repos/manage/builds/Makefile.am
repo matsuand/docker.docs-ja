@@ -9,6 +9,7 @@ bases = \
 	automated-testing.md \
 	link-source.md       \
 	manage-builds.md     \
+	migrate.md           \
 	setup.md             \
 	troubleshoot.md
 
