@@ -20,12 +20,6 @@ keywords: sandbox, sbx, get started, install, credentials, branch mode, network 
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
 sandbox gets its own Docker daemon, filesystem, and network — the agent can
 build containers, install packages, and modify files without touching your host
@@ -62,10 +56,10 @@ cleaning up.
 @z
 
 @x
-- macOS Tahoe (26) or later
+- macOS Sonoma (version 14) or later
 - Apple silicon
 @y
-- macOS Tahoe (26) or later
+- macOS Sonoma (version 14) or later
 - Apple silicon
 @z
 
@@ -507,13 +501,13 @@ When the session ends, review what the agent did from the worktree:
 
 @x
 ```console
-$ cd .sbx/<sandbox-name>-worktrees/my-feature
+$ cd .sbx/claude-my-project-worktrees/my-feature
 $ git log
 $ git diff main
 ```
 @y
 ```console
-$ cd .sbx/<sandbox-name>-worktrees/my-feature
+$ cd .sbx/claude-my-project-worktrees/my-feature
 $ git log
 $ git diff main
 ```
@@ -587,11 +581,11 @@ To allow a specific host:
 
 @x
 ```console
-$ sbx policy allow network registry.npmjs.org
+$ sbx policy allow network -g registry.npmjs.org
 ```
 @y
 ```console
-$ sbx policy allow network registry.npmjs.org
+$ sbx policy allow network -g registry.npmjs.org
 ```
 @z
 
@@ -621,12 +615,22 @@ Sandboxes persist after the agent exits. To stop a sandbox without deleting it:
 
 @x
 ```console
-$ sbx stop my-sandbox
+$ sbx stop claude-my-project
 ```
 @y
 ```console
-$ sbx stop my-sandbox
+$ sbx stop claude-my-project
 ```
+@z
+
+@x
+The sandbox name comes from the agent and workspace directory — see
+[Reconnecting and naming](usage.md#reconnecting-and-naming) for details, or run
+`sbx ls` to see the names of your existing sandboxes.
+@y
+The sandbox name comes from the agent and workspace directory — see
+[Reconnecting and naming](usage.md#reconnecting-and-naming) for details, or run
+`sbx ls` to see the names of your existing sandboxes.
 @z
 
 @x
@@ -641,11 +645,11 @@ space:
 
 @x
 ```console
-$ sbx rm my-sandbox
+$ sbx rm claude-my-project
 ```
 @y
 ```console
-$ sbx rm my-sandbox
+$ sbx rm claude-my-project
 ```
 @z
 
@@ -672,7 +676,8 @@ working tree are unaffected.
 - [Customize](customize/) — build reusable templates or declare capabilities
   with kits
 - [Credentials](security/credentials.md) — credential storage and management
-- [Workspace trust](security/workspace.md) — review agent changes safely
+- [Workspace isolation](security/isolation.md#workspace-isolation) — what
+  the agent can affect on your host, and how to review changes
 - [Policies](security/policy.md) — control outbound access
 @y
 - [Usage guide](usage.md) — sandbox management, reconnecting, multiple
@@ -681,6 +686,7 @@ working tree are unaffected.
 - [Customize](customize/) — build reusable templates or declare capabilities
   with kits
 - [Credentials](security/credentials.md) — credential storage and management
-- [Workspace trust](security/workspace.md) — review agent changes safely
+- [Workspace isolation](security/isolation.md#workspace-isolation) — what
+  the agent can affect on your host, and how to review changes
 - [Policies](security/policy.md) — control outbound access
 @z

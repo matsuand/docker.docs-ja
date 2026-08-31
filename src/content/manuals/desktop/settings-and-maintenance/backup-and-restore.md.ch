@@ -164,9 +164,9 @@ To restore volume data, refer to [backup, restore, or migrate data volumes](manu
 @z
 
 @x
-## If Docker Desktop fails to start 
+## If Docker Desktop fails to start or you want to back up the whole Docker Desktop VM
 @y
-## If Docker Desktop fails to start 
+## If Docker Desktop fails to start or you want to back up the whole Docker Desktop VM
 @z
 
 @x
@@ -269,6 +269,16 @@ If Docker Desktop cannot launch and must be reinstalled, you can back up its VM 
    Copy it to a safe location. 
 @y
    Copy it to a safe location. 
+@z
+
+@x
+   > [!TIP]
+   >
+   > To include Docker Desktop data in Time Machine backups, make sure the `~/Library/Containers/com.docker.docker` directory is not excluded from your Time Machine backup configuration.
+@y
+   > [!TIP]
+   >
+   > To include Docker Desktop data in Time Machine backups, make sure the `~/Library/Containers/com.docker.docker` directory is not excluded from your Time Machine backup configuration.
 @z
 
 @x

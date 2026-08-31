@@ -10,6 +10,7 @@ bases = \
 	docker_dhi_attestation_sbom.yaml         \
 	docker_dhi_auth.yaml                     \
 	docker_dhi_auth_apk.yaml                 \
+	docker_dhi_auth_deb.yaml                 \
 	docker_dhi_catalog.yaml                  \
 	docker_dhi_catalog_get.yaml              \
 	docker_dhi_catalog_list.yaml             \

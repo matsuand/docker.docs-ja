@@ -13,17 +13,9 @@ description: Docker Agent lets you build, orchestrate, and share AI agents that 
 @z
 
 @x
-      text: Experimental
 keywords: [ai, agent, docker agent, cagent]
 @y
-      text: 試験的
 keywords: [ai, agent, docker agent, cagent]
-@z
-
-@x
-{{< summary-bar feature_name="Docker Agent" >}}
-@y
-{{< summary-bar feature_name="Docker Agent" >}}
 @z
 
 @x

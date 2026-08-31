@@ -64,12 +64,6 @@ This setup ensures your Vue.js components are tested in an environment that mirr
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Run tests during development
 @y
 ## Run tests during development
@@ -95,12 +89,6 @@ $ src/components/__tests__/HelloWorld.spec.ts
 This test uses Vitest and Vue Test Utils to verify the behavior of the HelloWorld component.
 @y
 This test uses Vitest and Vue Test Utils to verify the behavior of the HelloWorld component.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -198,8 +186,7 @@ After completing the previous steps, your project directory should contain the f
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @y
 ```text
@@ -208,8 +195,7 @@ After completing the previous steps, your project directory should contain the f
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @z
 
@@ -280,12 +266,6 @@ Duration:   718ms
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -309,12 +289,6 @@ What you accomplished:
 - Reused the development `Dockerfile.dev` to ensure consistency between dev and test environments.
 - Ran tests inside the container using `docker compose run --rm vuejs-test`.
 - Ensured reliable, repeatable testing across environments without depending on your local machine setup.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -334,13 +308,11 @@ Explore official references and best practices to sharpen your Docker testing wo
 - [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.
 - [Compose file reference](/compose/compose-file/) – Learn the full syntax and options available for configuring services in `compose.yaml`.  
 - [`docker compose run` CLI reference](/reference/cli/docker/compose/run/) – Run one-off commands in a service container.
----
 @y
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/) – Understand all Dockerfile instructions and syntax.
 - [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.
 - [Compose file reference](__SUBDIR__/compose/compose-file/) – Learn the full syntax and options available for configuring services in `compose.yaml`.  
 - [`docker compose run` CLI reference](__SUBDIR__/reference/cli/docker/compose/run/) – Run one-off commands in a service container.
----
 @z
 
 @x

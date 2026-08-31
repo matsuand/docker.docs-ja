@@ -28,36 +28,36 @@ description:
   - title: Quickstart
     link: /scout/quickstart/
     description: Learn what Docker Scout can do, and how to get started.
-    icon: explore
+    icon: magnifying-glass-plus
 @y
   - title: クイックスタート
     link: __SUBDIR__/scout/quickstart/
     description: Docker Scout では何ができるか、どのように始めたら良いかを学びます。
-    icon: explore
+    icon: magnifying-glass-plus
 @z
 
 @x
   - title: Image analysis
     link: /scout/image-analysis/
     description: Reveal and dig into the composition of your images.
-    icon: radar
+    icon: signal
 @y
   - title: イメージ分析
     link: __SUBDIR__/scout/image-analysis/
     description: Reveal and dig into the composition of your images.
-    icon: radar
+    icon: signal
 @z
 
 @x
   - title: Advisory database
     link: /scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
-    icon: database
+    icon: circle-stack
 @y
   - title: Advisory database
     link: __SUBDIR__/scout/advisory-db-sources/
     description: Learn about the information sources that Docker Scout uses.
-    icon: database
+    icon: circle-stack
 @z
 
 @x
@@ -65,13 +65,13 @@ description:
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
     link: /scout/integrations/
-    icon: multiple_stop
+    icon: arrows-right-left
 @y
   - title: Integrations
     description: |
       Connect Docker Scout with your CI, registries, and other third-party services.
     link: __SUBDIR__/scout/integrations/
-    icon: multiple_stop
+    icon: arrows-right-left
 @z
 
 @x
@@ -79,13 +79,13 @@ description:
     link: /scout/dashboard/
     description: |
       The web interface for Docker Scout.
-    icon: dashboard
+    icon: squares-2x2
 @y
   - title: ダッシュボード
     link: __SUBDIR__/scout/dashboard/
     description: |
       Docker Scout のウェブインターフェースです。
-    icon: dashboard
+    icon: squares-2x2
 @z
 
 @x
@@ -93,13 +93,13 @@ description:
     link: /scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
-    icon: policy
+    icon: shield-check
 @y
   - title: ポリシー
     link: __SUBDIR__/scout/policy/
     description: |
       Ensure that your artifacts align with supply chain best practices.
-    icon: policy
+    icon: shield-check
 @z
 
 @x
@@ -107,13 +107,13 @@ description:
     link: /subscription/change/
     description: |
       A Personal subscription includes up to 1 repository. Upgrade for more.
-    icon: upgrade
+    icon: arrow-up-circle
 @y
   - title: アップグレード
     link: __SUBDIR__/subscription/change/
     description: |
       パーソナルサブスクリプションは 1 リポジトリまで。アップグレードによりさらに増やせます。
-    icon: upgrade
+    icon: arrow-up-circle
 @z
 
 @x
@@ -136,11 +136,11 @@ The SBOM is matched against a continuously updated vulnerability database to pin
 
 @x
 Docker Scout is a standalone service and platform that you can interact with
-using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
+using Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
 Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 @y
 Docker Scout is a standalone service and platform that you can interact with
-using Docker Desktop, Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
+using Docker Hub, the Docker CLI, and the Docker Scout Dashboard.
 Docker Scout also facilitates integrations with third-party systems, such as container registries and CI platforms.
 @z
 

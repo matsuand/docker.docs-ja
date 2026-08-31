@@ -18,24 +18,24 @@ title: Docker Hub
 @x
 - title: Quickstart
   description: Step-by-step instructions on getting started on Docker Hub.
-  icon: explore
+  icon: magnifying-glass-plus
   link: /docker-hub/quickstart
 @y
 - title: クィックスタート
   description: Docker Hub をつかった手順を一つひとつ説明します。
-  icon: explore
+  icon: magnifying-glass-plus
   link: __SUBDIR__/docker-hub/quickstart
 @z
 
 @x
 - title: Library
   description: Explore the content library, featuring millions of images for operating systems, frameworks, databases, and more.
-  icon: book
+  icon: book-open
   link: /docker-hub/image-library/
 @y
 - title: Library
   description: Explore the content library, featuring millions of images for operating systems, frameworks, databases, and more.
-  icon: book
+  icon: book-open
   link: __SUBDIR__/docker-hub/image-library/
 @z
 
@@ -53,38 +53,50 @@ title: Docker Hub
 @z
 
 @x
+- title: Settings
+  description: Learn about settings in Docker Hub.
+  icon: cog-6-tooth
+  link: /docker-hub/settings
+@y
+- title: Settings
+  description: Learn about settings in Docker Hub.
+  icon: cog-6-tooth
+  link: __SUBDIR__/docker-hub/settings
+@z
+
+@x
 - title: Organizations
   description: Learn about organization administration.
-  icon: store
+  icon: building-storefront
   link: /admin/
 @y
 - title: 組織
   description: 組織管理について学びます。
-  icon: store
+  icon: building-storefront
   link: __SUBDIR__/admin/
 @z
 
 @x
 - title: Usage and limits
   description: Explore usage limits and how to better utilize Docker Hub.
-  icon: leaderboard
+  icon: chart-bar
   link: /docker-hub/usage/
 @y
 - title: 利用方法と制限
   description: Docker Hub の利用制約とより良い利用方法について見ていきます。
-  icon: leaderboard
+  icon: chart-bar
   link: __SUBDIR__/docker-hub/usage/
 @z
 
 @x
 - title: Release notes
   description: Find out about new features, improvements, and bug fixes.
-  icon: note_add
+  icon: document-plus
   link: /docker-hub/release-notes
 @y
 - title: リリースノート
   description: 新機能、改善、バグフィックスを確認します。
-  icon: note_add
+  icon: document-plus
   link: __SUBDIR__/docker-hub/release-notes
 @z
 

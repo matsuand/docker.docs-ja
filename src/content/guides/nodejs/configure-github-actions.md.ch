@@ -6,10 +6,10 @@
 
 @x
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @y
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @z
 
 @x
@@ -53,9 +53,9 @@ You must also have:
 @z
 
 @x
-In this section, you'll set up a **CI/CD pipeline** using [GitHub Actions](https://docs.github.com/en/actions) to automatically:
+In this section, you'll set up a CI/CD pipeline using [GitHub Actions](https://docs.github.com/en/actions) to automatically:
 @y
-In this section, you'll set up a **CI/CD pipeline** using [GitHub Actions](https://docs.github.com/en/actions) to automatically:
+In this section, you'll set up a CI/CD pipeline using [GitHub Actions](https://docs.github.com/en/actions) to automatically:
 @z
 
 @x
@@ -381,11 +381,11 @@ After adding your workflow file, trigger the CI/CD process.
 @x
 2. Monitor the workflow execution
    1. From your GitHub repository, go to the **Actions** tab.
-   2. Select the workflow run to follow each step: **test**, **build**, **security**, and (if successful) **push** and **deploy**.
+   2. Select the workflow run to follow each step: `test`, `build`, `security`, and (if successful) `push` and `deploy`.
 @y
 2. Monitor the workflow execution
    1. From your GitHub repository, go to the **Actions** tab.
-   2. Select the workflow run to follow each step: **test**, **build**, **security**, and (if successful) **push** and **deploy**.
+   2. Select the workflow run to follow each step: `test`, `build`, `security`, and (if successful) `push` and `deploy`.
 @z
 
 @x

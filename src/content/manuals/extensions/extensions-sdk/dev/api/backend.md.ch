@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Extension Backend
 description: Docker extension API
@@ -50,9 +52,9 @@ ddClient.extension.vm.service
 @z
 
 @x
-See [Service API Reference](/reference/api/extensions-sdk/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
+See [Service API Reference](/reference/api/extensions-sdk/HttpService.md) for other HTTP methods.
 @y
-See [Service API Reference](reference/api/extensions-sdk/HttpService.md) for other methods such as POST, UPDATE, and DELETE.
+See [Service API Reference](reference/api/extensions-sdk/HttpService.md) for other HTTP methods.
 @z
 
 @x

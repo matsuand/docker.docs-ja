@@ -45,16 +45,18 @@
 @z
 
 @x
-**This command is experimental.**
-
-Experimental features are intended for testing and feedback as their
-functionality or design may change between releases without warning or
-can be removed entirely in a future release.
+        <p><strong>This command is experimental.</strong></p>
 @y
-**このコマンドは試験的なものです。**
+        <p><strong>このコマンドは試験的なものです。</strong></p>
+@z
 
-試験的機能はテスト向けに意図されたものであり、その機能に関してのフィードバックを得る目的があります。
-この機能はリリース時に予告なく変更される場合があり、また今後のリリースに向けて削除されることがあります。
+@x
+          Experimental features are intended for testing and feedback as their
+          functionality or design may change between releases without warning or
+          can be removed entirely in a future release.
+@y
+          試験的機能はテスト向けに意図されたものであり、その機能に関してのフィードバックを得る目的があります。
+          この機能はリリース時に予告なく変更される場合があり、また今後のリリースに向けて削除されることがあります。
 @z
 
 @x

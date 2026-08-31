@@ -63,18 +63,18 @@ choice between image output and local output.
 
 @x
 Inside the reusable workflow, the first phase prepares the build. It validates
-the incoming inputs, resolves the appropriate runner, and expands a
-multi-platform request into one job per platform. The execution model is
-easiest to picture as a matrix where `linux/amd64` runs on `ubuntu-24.04` and
-`linux/arm64` runs on `ubuntu-24.04-arm`. Each platform job builds independently,
-then the workflow finalizes the result into one caller-facing output contract.
+the incoming inputs, resolves the runner config, and expands a multi-platform
+request into one job per platform. The execution model is easiest to picture as
+a matrix where `linux/amd64` runs on `ubuntu-24.04` and `linux/arm64` runs on
+`ubuntu-24.04-arm`. Each platform job builds independently, then the workflow
+finalizes the result into one caller-facing output contract.
 @y
 Inside the reusable workflow, the first phase prepares the build. It validates
-the incoming inputs, resolves the appropriate runner, and expands a
-multi-platform request into one job per platform. The execution model is
-easiest to picture as a matrix where `linux/amd64` runs on `ubuntu-24.04` and
-`linux/arm64` runs on `ubuntu-24.04-arm`. Each platform job builds independently,
-then the workflow finalizes the result into one caller-facing output contract.
+the incoming inputs, resolves the runner config, and expands a multi-platform
+request into one job per platform. The execution model is easiest to picture as
+a matrix where `linux/amd64` runs on `ubuntu-24.04` and `linux/arm64` runs on
+`ubuntu-24.04-arm`. Each platform job builds independently, then the workflow
+finalizes the result into one caller-facing output contract.
 @z
 
 @x
@@ -97,6 +97,106 @@ conceptual platform jobs:
   linux/amd64 -> ubuntu-24.04
   linux/arm64 -> ubuntu-24.04-arm
 ```
+@z
+
+@x
+### Runner selection
+@y
+### Runner selection
+@z
+
+@x
+The `runner` input accepts either a single GitHub-hosted Linux runner label or a
+newline-delimited platform mapping.
+@y
+The `runner` input accepts either a single GitHub-hosted Linux runner label or a
+newline-delimited platform mapping.
+@z
+
+@x
+The default value is a platform mapping that uses GitHub-hosted Ubuntu runners:
+@y
+The default value is a platform mapping that uses GitHub-hosted Ubuntu runners:
+@z
+
+@x
+```yaml
+runner: |
+  default=ubuntu-24.04
+  linux/arm=ubuntu-24.04-arm
+  linux/arm64=ubuntu-24.04-arm
+```
+@y
+```yaml
+runner: |
+  default=ubuntu-24.04
+  linux/arm=ubuntu-24.04-arm
+  linux/arm64=ubuntu-24.04-arm
+```
+@z
+
+@x
+In the platform job, the runner label resolves to a single value:
+@y
+In the platform job, the runner label resolves to a single value:
+@z
+
+@x
+```yaml
+runner: ubuntu-24.04
+```
+@y
+```yaml
+runner: ubuntu-24.04
+```
+@z
+
+@x
+A mapping must define a `default` runner. Other keys are platform prefixes, and
+the most specific matching prefix wins. For example, `linux/arm` matches
+variants such as `linux/arm/v7`, while `linux/arm64` is a separate prefix:
+@y
+A mapping must define a `default` runner. Other keys are platform prefixes, and
+the most specific matching prefix wins. For example, `linux/arm` matches
+variants such as `linux/arm/v7`, while `linux/arm64` is a separate prefix:
+@z
+
+@x
+In the following example, `linux` matches Linux platforms that do not match a
+longer prefix. The `default` key is still required because it is the fallback
+when no platform prefix matches.
+@y
+In the following example, `linux` matches Linux platforms that do not match a
+longer prefix. The `default` key is still required because it is the fallback
+when no platform prefix matches.
+@z
+
+@x
+```yaml
+runner: |
+  default=ubuntu-24.04
+  linux=ubuntu-24.04
+  linux/arm=ubuntu-24.04-arm
+  linux/arm64=ubuntu-24.04-arm
+```
+@y
+```yaml
+runner: |
+  default=ubuntu-24.04
+  linux=ubuntu-24.04
+  linux/arm=ubuntu-24.04-arm
+  linux/arm64=ubuntu-24.04-arm
+```
+@z
+
+@x
+The reusable workflows require GitHub-hosted Linux runners. The legacy `auto`,
+`amd64`, and `arm64` values are still accepted for compatibility, but emit
+deprecation warnings. Use an explicit runner label or platform mapping instead.
+@y
+The reusable workflows require GitHub-hosted Linux runners. The legacy `auto`,
+`amd64`, and `arm64` values are still accepted for compatibility, but emit
+deprecation warnings. Use an explicit runner label or platform mapping instead.
 @z
 
 @x

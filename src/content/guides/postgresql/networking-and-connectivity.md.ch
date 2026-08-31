@@ -6,13 +6,9 @@
 @x
 title: Networking and connectivity
 description: This module shows how to connect to PostgreSQL in Docker in two common ways; from another container (internal network) and from your host machine (external access).
-keywords:
-  - Networking PostgreSQL Docker
 @y
 title: Networking and connectivity
 description: This module shows how to connect to PostgreSQL in Docker in two common ways; from another container (internal network) and from your host machine (external access).
-keywords:
-  - Networking PostgreSQL Docker
 @z
 
 @x
@@ -22,17 +18,17 @@ This guide covers two common ways to connect to PostgreSQL running in Docker:
 @z
 
 @x
-- **Container-to-container**: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.
-- **Host-to-container**: Connect from your laptop or development machine using `localhost` and a published port.
+- Container-to-container: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.
+- Host-to-container: Connect from your laptop or development machine using `localhost` and a published port.
 @y
-- **Container-to-container**: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.
-- **Host-to-container**: Connect from your laptop or development machine using `localhost` and a published port.
+- Container-to-container: Connect from your application container to PostgreSQL over a private Docker network. No ports need to be exposed to the host.
+- Host-to-container: Connect from your laptop or development machine using `localhost` and a published port.
 @z
 
 @x
-**Prerequisite**: This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
+Prerequisite: This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
 @y
-**Prerequisite**: This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](__SUBDIR__/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
+Prerequisite: This guide assumes you have PostgreSQL running with persistent storage. If you don't, follow the [Immediate Setup & Data Persistence](__SUBDIR__/guides/postgresql/immediate-setup-and-data-persistence/) guide first.
 @z
 
 @x
@@ -48,9 +44,11 @@ When your application runs in another container, connecting to PostgreSQL throug
 @z
 
 @x
-> **Why not use the default bridge network?** While containers on the default bridge network can communicate, they can only do so by IP address. Since container IP addresses change when containers restart, this would require updating your PostgreSQL connection strings each time. User-defined bridge networks solve this by providing automatic DNS resolution, ensuring your PostgreSQL connection strings remain stable even if containers restart and receive new IP addresses.
+> [!NOTE]
+> Why not use the default bridge network? While containers on the default bridge network can communicate, they can only do so by IP address. Since container IP addresses change when containers restart, this would require updating your PostgreSQL connection strings each time. User-defined bridge networks solve this by providing automatic DNS resolution, ensuring your PostgreSQL connection strings remain stable even if containers restart and receive new IP addresses.
 @y
-> **Why not use the default bridge network?** While containers on the default bridge network can communicate, they can only do so by IP address. Since container IP addresses change when containers restart, this would require updating your PostgreSQL connection strings each time. User-defined bridge networks solve this by providing automatic DNS resolution, ensuring your PostgreSQL connection strings remain stable even if containers restart and receive new IP addresses.
+> [!NOTE]
+> Why not use the default bridge network? While containers on the default bridge network can communicate, they can only do so by IP address. Since container IP addresses change when containers restart, this would require updating your PostgreSQL connection strings each time. User-defined bridge networks solve this by providing automatic DNS resolution, ensuring your PostgreSQL connection strings remain stable even if containers restart and receive new IP addresses.
 @z
 
 @x
@@ -236,9 +234,9 @@ docker run --rm -it \
 @z
 
 @x
-**Key point**: `-h postgres-dev` works because Docker DNS resolves the container name on a user-defined network. The container name acts as the hostname.
+Key point: `-h postgres-dev` works because Docker DNS resolves the container name on a user-defined network. The container name acts as the hostname.
 @y
-**Key point**: `-h postgres-dev` works because Docker DNS resolves the container name on a user-defined network. The container name acts as the hostname.
+Key point: `-h postgres-dev` works because Docker DNS resolves the container name on a user-defined network. The container name acts as the hostname.
 @z
 
 @x
@@ -254,10 +252,10 @@ When connecting from your application container, use these PostgreSQL connection
 @z
 
 @x
-- **PostgreSQL URI format**:
+- PostgreSQL URI format:
   This is the standard PostgreSQL connection URI format that combines all connection parameters into a single string, widely supported by PostgreSQL clients and libraries.
 @y
-- **PostgreSQL URI format**:
+- PostgreSQL URI format:
   This is the standard PostgreSQL connection URI format that combines all connection parameters into a single string, widely supported by PostgreSQL clients and libraries.
 @z
 
@@ -298,7 +296,7 @@ When connecting from your application container, use these PostgreSQL connection
 @z
 
 @x
-- **PostgreSQL connection parameters**:
+- PostgreSQL connection parameters:
   This format uses key-value pairs separated by spaces, which many PostgreSQL client libraries accept as an alternative to URI format.
   ```bash
   host=postgres-dev
@@ -308,7 +306,7 @@ When connecting from your application container, use these PostgreSQL connection
   dbname=postgres
   ```
 @y
-- **PostgreSQL connection parameters**:
+- PostgreSQL connection parameters:
   This format uses key-value pairs separated by spaces, which many PostgreSQL client libraries accept as an alternative to URI format.
   ```bash
   host=postgres-dev
@@ -344,14 +342,14 @@ When connecting from your application container, use these PostgreSQL connection
 @z
 
 @x
-- **Connecting to a specific database**:
+- Connecting to a specific database:
   Replace the database name in the connection string to connect to a specific database instead of the default `postgres` database.
   If you created a custom database (e.g., `testdb`), use:
   ```bash
   postgresql://postgres:mysecretpassword@postgres-dev:5432/testdb
   ```
 @y
-- **Connecting to a specific database**:
+- Connecting to a specific database:
   Replace the database name in the connection string to connect to a specific database instead of the default `postgres` database.
   If you created a custom database (e.g., `testdb`), use:
   ```bash
@@ -384,9 +382,9 @@ When connecting from your application container, use these PostgreSQL connection
 @z
 
 @x
-## Connecting from the Host (external access)
+## Connecting from the host (external access)
 @y
-## Connecting from the Host (external access)
+## Connecting from the host (external access)
 @z
 
 @x
@@ -432,11 +430,11 @@ Now connect from your host:
 @z
 
 @x
-- **Host**: `localhost` or `127.0.0.1`
-- **Port**: `5432`
+- Host: `localhost` or `127.0.0.1`
+- Port: `5432`
 @y
-- **Host**: `localhost` or `127.0.0.1`
-- **Port**: `5432`
+- Host: `localhost` or `127.0.0.1`
+- Port: `5432`
 @z
 
 @x
@@ -476,13 +474,13 @@ Popular PostgreSQL GUI tools can connect using these common connection details: 
 @z
 
 @x
-- **pgAdmin**: A web-based PostgreSQL administration and development platform
-- **DBeaver**: A universal database tool that supports PostgreSQL and many other databases. Select PostgreSQL as the connection type
-- **TablePlus**: A modern, native database management tool for macOS and Windows with a clean interface
+- pgAdmin: A web-based PostgreSQL administration and development platform
+- DBeaver: A universal database tool that supports PostgreSQL and many other databases. Select PostgreSQL as the connection type
+- TablePlus: A modern, native database management tool for macOS and Windows with a clean interface
 @y
-- **pgAdmin**: A web-based PostgreSQL administration and development platform
-- **DBeaver**: A universal database tool that supports PostgreSQL and many other databases. Select PostgreSQL as the connection type
-- **TablePlus**: A modern, native database management tool for macOS and Windows with a clean interface
+- pgAdmin: A web-based PostgreSQL administration and development platform
+- DBeaver: A universal database tool that supports PostgreSQL and many other databases. Select PostgreSQL as the connection type
+- TablePlus: A modern, native database management tool for macOS and Windows with a clean interface
 @z
 
 @x
@@ -544,17 +542,17 @@ When exposing PostgreSQL to external access, follow these PostgreSQL-specific se
 @z
 
 @x
-- **Avoid using the `postgres` superuser**: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs.
-- **Use strong passwords**: PostgreSQL passwords should be complex. Consider using environment variables or secrets management instead of `hardcoding` passwords.
-- **Limit network exposure**: Binding to `127.0.0.1` (localhost only) is safer than exposing to all interfaces (`0.0.0.0`).
-- **Consider SSL/TLS**: For production, configure PostgreSQL to require SSL connections. The [Advanced Configuration and Initialization](/guides/postgresql/advanced-configuration-and-initialization/) guide shows how to configure PostgreSQL settings.
-- **Create application-specific users**: Use initialization scripts to create users with limited privileges. For example, a read-only user for reporting or a user that can only access specific databases.
+- Avoid using the `postgres` superuser: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs.
+- Use strong passwords: PostgreSQL passwords should be complex. Consider using environment variables or secrets management instead of `hardcoding` passwords.
+- Limit network exposure: Binding to `127.0.0.1` (localhost only) is safer than exposing to all interfaces (`0.0.0.0`).
+- Consider SSL/TLS: For production, configure PostgreSQL to require SSL connections. The [Advanced Configuration and Initialization](/guides/postgresql/advanced-configuration-and-initialization/) guide shows how to configure PostgreSQL settings.
+- Create application-specific users: Use initialization scripts to create users with limited privileges. For example, a read-only user for reporting or a user that can only access specific databases.
 @y
-- **Avoid using the `postgres` superuser**: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs.
-- **Use strong passwords**: PostgreSQL passwords should be complex. Consider using environment variables or secrets management instead of `hardcoding` passwords.
-- **Limit network exposure**: Binding to `127.0.0.1` (localhost only) is safer than exposing to all interfaces (`0.0.0.0`).
-- **Consider SSL/TLS**: For production, configure PostgreSQL to require SSL connections. The [Advanced Configuration and Initialization](__SUBDIR__/guides/postgresql/advanced-configuration-and-initialization/) guide shows how to configure PostgreSQL settings.
-- **Create application-specific users**: Use initialization scripts to create users with limited privileges. For example, a read-only user for reporting or a user that can only access specific databases.
+- Avoid using the `postgres` superuser: The default `postgres` user has full database privileges. Create dedicated users with only the permissions your application needs.
+- Use strong passwords: PostgreSQL passwords should be complex. Consider using environment variables or secrets management instead of `hardcoding` passwords.
+- Limit network exposure: Binding to `127.0.0.1` (localhost only) is safer than exposing to all interfaces (`0.0.0.0`).
+- Consider SSL/TLS: For production, configure PostgreSQL to require SSL connections. The [Advanced Configuration and Initialization](__SUBDIR__/guides/postgresql/advanced-configuration-and-initialization/) guide shows how to configure PostgreSQL settings.
+- Create application-specific users: Use initialization scripts to create users with limited privileges. For example, a read-only user for reporting or a user that can only access specific databases.
 @z
 
 @x
@@ -720,11 +718,11 @@ This section covers common PostgreSQL connection issues and their solutions when
 @z
 
 @x
-- **PostgreSQL may still be initializing**: PostgreSQL takes a few seconds to start and initialize the database cluster. Wait 5-10 seconds after container start and retry.
-- **Check if the PostgreSQL container is running**:
+- PostgreSQL may still be initializing: PostgreSQL takes a few seconds to start and initialize the database cluster. Wait 5-10 seconds after container start and retry.
+- Check if the PostgreSQL container is running:
 @y
-- **PostgreSQL may still be initializing**: PostgreSQL takes a few seconds to start and initialize the database cluster. Wait 5-10 seconds after container start and retry.
-- **Check if the PostgreSQL container is running**:
+- PostgreSQL may still be initializing: PostgreSQL takes a few seconds to start and initialize the database cluster. Wait 5-10 seconds after container start and retry.
+- Check if the PostgreSQL container is running:
 @z
 
 @x
@@ -738,9 +736,9 @@ This section covers common PostgreSQL connection issues and their solutions when
 @z
 
 @x
-- **Check PostgreSQL logs for initialization or connection errors**:
+- Check PostgreSQL logs for initialization or connection errors:
 @y
-- **Check PostgreSQL logs for initialization or connection errors**:
+- Check PostgreSQL logs for initialization or connection errors:
 @z
 
 @x
@@ -760,9 +758,9 @@ This section covers common PostgreSQL connection issues and their solutions when
 @z
 
 @x
-- **Verify the port mapping is correct**:
+- Verify the port mapping is correct:
 @y
-- **Verify the port mapping is correct**:
+- Verify the port mapping is correct:
 @z
 
 @x
@@ -782,9 +780,9 @@ This section covers common PostgreSQL connection issues and their solutions when
 @z
 
 @x
-- **Test PostgreSQL connectivity from inside the container**:
+- Test PostgreSQL connectivity from inside the container:
 @y
-- **Test PostgreSQL connectivity from inside the container**:
+- Test PostgreSQL connectivity from inside the container:
 @z
 
 @x
@@ -810,23 +808,23 @@ This section covers common PostgreSQL connection issues and their solutions when
 @z
 
 @x
-- **Confirm the password**: Verify you're using the same password set in `POSTGRES_PASSWORD` when you started the container.
-- **Existing volume with old credentials**: If you reused an existing volume, the password from the original initialization is still in effect. The `POSTGRES_PASSWORD` environment variable only sets the password during the first database initialization. To reset:
+- Confirm the password: Verify you're using the same password set in `POSTGRES_PASSWORD` when you started the container.
+- Existing volume with old credentials: If you reused an existing volume, the password from the original initialization is still in effect. The `POSTGRES_PASSWORD` environment variable only sets the password during the first database initialization. To reset:
   - Remove the volume: `docker volume rm postgres_data`
   - Or connect with the old password
   - Or change the password after connecting: `ALTER USER postgres WITH PASSWORD 'newpassword';`
-- **Try connecting with password prompt**: `psql -h localhost -U postgres -W` (the `-W` flag forces a password prompt)
-- **Use PGPASSWORD environment variable**: `PGPASSWORD=mysecretpassword psql -h localhost -U postgres`
-- **Check PostgreSQL authentication configuration**: If you've customized `pg_hba.conf`, verify the authentication method allows password authentication
+- Try connecting with password prompt: `psql -h localhost -U postgres -W` (the `-W` flag forces a password prompt)
+- Use PGPASSWORD environment variable: `PGPASSWORD=mysecretpassword psql -h localhost -U postgres`
+- Check PostgreSQL authentication configuration: If you've customized `pg_hba.conf`, verify the authentication method allows password authentication
 @y
-- **Confirm the password**: Verify you're using the same password set in `POSTGRES_PASSWORD` when you started the container.
-- **Existing volume with old credentials**: If you reused an existing volume, the password from the original initialization is still in effect. The `POSTGRES_PASSWORD` environment variable only sets the password during the first database initialization. To reset:
+- Confirm the password: Verify you're using the same password set in `POSTGRES_PASSWORD` when you started the container.
+- Existing volume with old credentials: If you reused an existing volume, the password from the original initialization is still in effect. The `POSTGRES_PASSWORD` environment variable only sets the password during the first database initialization. To reset:
   - Remove the volume: `docker volume rm postgres_data`
   - Or connect with the old password
   - Or change the password after connecting: `ALTER USER postgres WITH PASSWORD 'newpassword';`
-- **Try connecting with password prompt**: `psql -h localhost -U postgres -W` (the `-W` flag forces a password prompt)
-- **Use PGPASSWORD environment variable**: `PGPASSWORD=mysecretpassword psql -h localhost -U postgres`
-- **Check PostgreSQL authentication configuration**: If you've customized `pg_hba.conf`, verify the authentication method allows password authentication
+- Try connecting with password prompt: `psql -h localhost -U postgres -W` (the `-W` flag forces a password prompt)
+- Use PGPASSWORD environment variable: `PGPASSWORD=mysecretpassword psql -h localhost -U postgres`
+- Check PostgreSQL authentication configuration: If you've customized `pg_hba.conf`, verify the authentication method allows password authentication
 @z
 
 @x

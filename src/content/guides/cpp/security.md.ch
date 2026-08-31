@@ -38,15 +38,6 @@ description: C++ Docker イメージから SBOM を抽出する方法につい�
 @z
 
 @x
-  - You have the [Docker SBOM CLI plugin](https://github.com/docker/sbom-cli-plugin) installed. To install it on Docker Engine, use the following command:
-@y
-  - [Docker SBOM CLI プラグイン](https://github.com/docker/sbom-cli-plugin) がインストール済であること。
-    Docker Engine に対してこれをインストールするには以下のコマンドを実行します。
-@z
-
-% snip command...
-
-@x
   - You have the [Docker Scout CLI plugin](https://docs.docker.com/scout/install/) installed. To install it on Docker Engine, use the following command:
 @y
   - [Docker Scout CLI プラグイン](__SUBDIR__/scout/install/) がインストール済であること。
@@ -68,9 +59,9 @@ description: C++ Docker イメージから SBOM を抽出する方法につい�
 @z
 
 @x
-This section walks you through extracting Software Bill of Materials (SBOMs) from a C++ Docker image using the Docker SBOM CLI plugin. SBOMs provide a detailed list of all the components in a software package, including their versions and licenses. You can use SBOMs to track the provenance of your software and ensure that it complies with your organization's security and licensing policies.
+This section walks you through extracting Software Bill of Materials (SBOMs) from a C++ Docker image using Docker Scout. SBOMs provide a detailed list of all the components in a software package, including their versions and licenses. You can use SBOMs to track the provenance of your software and ensure that it complies with your organization's security and licensing policies.
 @y
-本節では Docker SBOM CLI プラグインを利用して C++ Docker イメージから SBOM (Software Bill of Materials; ソフトウエア部品表) の抽出方法を示します。
+本節では Docker Scout を利用して C++ Docker イメージから SBOM (Software Bill of Materials; ソフトウエア部品表) の抽出方法を示します。
 SBOM はソフトウェアパッケージ内にあるコンポーネントすべてを一覧表示するものです。
 そこにはバージョン情報やライセンスなどが含まれます。
 SBOM を利用することで、利用するソフトウェアの出どころを追跡することができ、所属する組織のセキュリティやライセンス規則に準拠しているかどうかを確認することができます。
@@ -96,19 +87,9 @@ The image is named `hello`. To generate an SBOM for the `hello` image, run the f
 
 @x
 The command will say "No packages discovered". This is because the final image is a scratch image and doesn't have any packages.
-Let's try again with Docker Scout:
 @y
 コマンドを実行すると "No packages discovered" (パッケージが見つかりません) と出力されます。
 最終イメージがスクラッチイメージなので、パッケージを何も持っていないからです。
-Docker Scout を使ってもう一度以下を実行します。
-@z
-
-% snip command...
-
-@x
-This command will tell you the same thing.
-@y
-このコマンドの出力も同様となるはずです。
 @z
 
 @x
@@ -148,9 +129,9 @@ SBOM がアタッチされたことを確認するため、以下のコマンド
 % snip command...
 
 @x
-Note that the normal `docker sbom` command will not load the SBOM attestation.
+Docker Scout reads the SBOM attestation when one is available, so this command reports packages from the build-stage metadata instead of indexing only the final scratch image filesystem.
 @y
-なお単純な `docker sbom` コマンド実行では、SBOM 証明書はロードされません。
+Docker Scout reads the SBOM attestation when one is available, so this command reports packages from the build-stage metadata instead of indexing only the final scratch image filesystem.
 @z
 
 @x
@@ -161,8 +142,10 @@ Note that the normal `docker sbom` command will not load the SBOM attestation.
 
 @x
 In this section, you learned how to generate SBOM attestation for a C++ Docker image during the build process.
-The normal image scanners will not be able to generate SBOMs from scratch images.
+Image scanners that inspect only the final filesystem may not identify packages in scratch images.
+Use SBOM attestations to preserve package metadata from the build.
 @y
 本節では C++ Docker イメージのビルドプロセスにおいて SBOM 証明書を生成する方法について学びました。
-普通のイメージスキャンを行うだけでは、スクラッチイメージから SBOM を生成することはできません。
+Image scanners that inspect only the final filesystem may not identify packages in scratch images.
+Use SBOM attestations to preserve package metadata from the build.
 @z

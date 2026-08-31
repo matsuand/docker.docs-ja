@@ -6,10 +6,10 @@
 
 @x
 title: Connecting services with Docker Compose
-linkTitle: Connecting services with Docker Compose
+linkTitle: Connect with Compose
 @y
 title: Connecting services with Docker Compose
-linkTitle: Connecting services with Docker Compose
+linkTitle: Connect with Compose
 @z
 
 @x

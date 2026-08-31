@@ -8,25 +8,23 @@ title: Isolation layers
 @z
 
 @x
-description: How Docker Sandboxes isolate AI agents using hypervisor, network, Docker Engine, and credential boundaries.
+description: How Docker Sandboxes isolate AI agents using hypervisor, network, Docker Engine, workspace, and credential boundaries.
+keywords: docker sandboxes, isolation, hypervisor, network, credentials, workspace, git
 @y
-description: How Docker Sandboxes isolate AI agents using hypervisor, network, Docker Engine, and credential boundaries.
-@z
-
-@x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
+description: How Docker Sandboxes isolate AI agents using hypervisor, network, Docker Engine, workspace, and credential boundaries.
+keywords: docker sandboxes, isolation, hypervisor, network, credentials, workspace, git
 @z
 
 @x
 AI coding agents need to execute code, install packages, and run tools on
-your behalf. Docker Sandboxes run each agent in its own microVM with four
-isolation layers: hypervisor, network, Docker Engine, and credential proxy.
+your behalf. Docker Sandboxes run each agent in its own microVM. Five
+isolation layers protect your host: hypervisor, network, Docker Engine,
+workspace, and credential proxy.
 @y
 AI coding agents need to execute code, install packages, and run tools on
-your behalf. Docker Sandboxes run each agent in its own microVM with four
-isolation layers: hypervisor, network, Docker Engine, and credential proxy.
+your behalf. Docker Sandboxes run each agent in its own microVM. Five
+isolation layers protect your host: hypervisor, network, Docker Engine,
+workspace, and credential proxy.
 @z
 
 @x
@@ -154,29 +152,305 @@ daemon.
 @z
 
 @x
-```plaintext
-Host system
-  ├── Host Docker daemon
-  │   └── Your containers and images
-  │
-  └── Sandbox Docker engine (isolated from host)
-      ├── [VM] Agent container — sandbox 1
-      │    └── [VM] Containers created by agent
-      └── [VM] Agent container — sandbox 2
-           └── [VM] Containers created by agent
+Each sandbox VM runs its own Docker Engine. The agent runs inside the VM,
+alongside that engine, and drives it to create containers, all within the
+VM:
+@y
+Each sandbox VM runs its own Docker Engine. The agent runs inside the VM,
+alongside that engine, and drives it to create containers, all within the
+VM:
+@z
+
+@x
+```mermaid
+flowchart TB
+  subgraph host["Host system"]
+    subgraph hostd["Host Docker daemon"]
+      hc["Your containers and images"]
+    end
+    subgraph vm["Sandbox (microVM)"]
+      a["Agent"]
+      subgraph e["Sandbox Docker engine"]
+        c["Containers created by agent"]
+      end
+      a -->|"docker build / compose up"| e
+    end
+  end
+  style host fill:#3b82f622,stroke:#3b82f6
 ```
 @y
-```plaintext
-Host system
-  ├── Host Docker daemon
-  │   └── Your containers and images
-  │
-  └── Sandbox Docker engine (isolated from host)
-      ├── [VM] Agent container — sandbox 1
-      │    └── [VM] Containers created by agent
-      └── [VM] Agent container — sandbox 2
-           └── [VM] Containers created by agent
+```mermaid
+flowchart TB
+  subgraph host["Host system"]
+    subgraph hostd["Host Docker daemon"]
+      hc["Your containers and images"]
+    end
+    subgraph vm["Sandbox (microVM)"]
+      a["Agent"]
+      subgraph e["Sandbox Docker engine"]
+        c["Containers created by agent"]
+      end
+      a -->|"docker build / compose up"| e
+    end
+  end
+  style host fill:#3b82f622,stroke:#3b82f6
 ```
+@z
+
+@x
+## Workspace isolation
+@y
+## Workspace isolation
+@z
+
+@x
+When you create a sandbox, you choose one of two ways to share your
+workspace with it:
+@y
+When you create a sandbox, you choose one of two ways to share your
+workspace with it:
+@z
+
+@x
+- **Direct mount** (the default): the agent has read-write access to
+  your working tree. There is no boundary between the agent's edits and
+  your host filesystem.
+- **Clone mode** (`--clone`): your repository is mounted read-only into
+  the VM and the agent works on a private clone inside the VM. The
+  agent's edits never reach your host until you fetch them.
+@y
+- **Direct mount** (the default): the agent has read-write access to
+  your working tree. There is no boundary between the agent's edits and
+  your host filesystem.
+- **Clone mode** (`--clone`): your repository is mounted read-only into
+  the VM and the agent works on a private clone inside the VM. The
+  agent's edits never reach your host until you fetch them.
+@z
+
+@x
+See [Git workflow](../usage.md#git-workflow) for the workflow side of
+each.
+@y
+See [Git workflow](../usage.md#git-workflow) for the workflow side of
+each.
+@z
+
+@x
+### Direct mount (default)
+@y
+### Direct mount (default)
+@z
+
+@x
+By default, your workspace is shared into the VM as a read-write mount.
+The agent and the host see the same files, and changes the agent makes
+appear on your host as soon as they're written.
+@y
+By default, your workspace is shared into the VM as a read-write mount.
+The agent and the host see the same files, and changes the agent makes
+appear on your host as soon as they're written.
+@z
+
+@x
+There is no isolation between the agent and your workspace in this mode.
+The agent can create, modify, or delete any file in the workspace,
+including:
+@y
+There is no isolation between the agent and your workspace in this mode.
+The agent can create, modify, or delete any file in the workspace,
+including:
+@z
+
+@x
+- Source code and configuration files
+- Build files (`Makefile`, `package.json`, `Cargo.toml`)
+- Git hooks (`.git/hooks/`)
+- CI configuration (`.github/workflows/`, `.gitlab-ci.yml`)
+- IDE configuration (`.vscode/tasks.json`, `.idea/` run configurations)
+- Hidden files, shell scripts, and executables
+@y
+- Source code and configuration files
+- Build files (`Makefile`, `package.json`, `Cargo.toml`)
+- Git hooks (`.git/hooks/`)
+- CI configuration (`.github/workflows/`, `.gitlab-ci.yml`)
+- IDE configuration (`.vscode/tasks.json`, `.idea/` run configurations)
+- Hidden files, shell scripts, and executables
+@z
+
+@x
+Some of these files execute code when you trigger normal development
+actions — committing, pushing, building, or opening the project in an IDE.
+Review them after any agent session before performing those actions:
+@y
+Some of these files execute code when you trigger normal development
+actions — committing, pushing, building, or opening the project in an IDE.
+Review them after any agent session before performing those actions:
+@z
+
+@x
+- Git hooks (`.git/hooks/`) run on commit, push, and other Git actions.
+  These are inside `.git/` and don't appear in `git diff` output —
+  check them separately with `ls -la .git/hooks/`.
+- CI configuration (`.github/workflows/`, `.gitlab-ci.yml`) runs on
+  push.
+- Build files (`Makefile`, `package.json` scripts, `Cargo.toml`) run
+  during build or install steps.
+- IDE configuration (`.vscode/tasks.json`, `.idea/`) can run tasks
+  when you open the project.
+@y
+- Git hooks (`.git/hooks/`) run on commit, push, and other Git actions.
+  These are inside `.git/` and don't appear in `git diff` output —
+  check them separately with `ls -la .git/hooks/`.
+- CI configuration (`.github/workflows/`, `.gitlab-ci.yml`) runs on
+  push.
+- Build files (`Makefile`, `package.json` scripts, `Cargo.toml`) run
+  during build or install steps.
+- IDE configuration (`.vscode/tasks.json`, `.idea/`) can run tasks
+  when you open the project.
+@z
+
+@x
+> [!WARNING]
+> Treat sandbox-modified workspace files the same way you would treat a pull
+> request from an untrusted contributor: review before you trust them on
+> your host.
+@y
+> [!WARNING]
+> Treat sandbox-modified workspace files the same way you would treat a pull
+> request from an untrusted contributor: review before you trust them on
+> your host.
+@z
+
+@x
+### Clone mode
+@y
+### Clone mode
+@z
+
+@x
+When you start a sandbox with [`--clone`](../usage.md#clone-mode), the agent
+never works directly against your host repository. Even with full root
+inside the VM, it cannot modify your `.git` directory, your working tree,
+or any tracked file on your host.
+@y
+When you start a sandbox with [`--clone`](../usage.md#clone-mode), the agent
+never works directly against your host repository. Even with full root
+inside the VM, it cannot modify your `.git` directory, your working tree,
+or any tracked file on your host.
+@z
+
+@x
+```mermaid
+flowchart LR
+  subgraph host["Host repository (untouched)"]
+    direction TB
+    repo[".git/ + working tree"]
+    remote["remote sandbox-&lt;name&gt;"]
+  end
+  subgraph vm["Sandbox VM"]
+    direction TB
+    mount["/run/sandbox/source<br/>(read-only bind mount)"]
+    clone["private clone (RW)<br/>agent edits here"]
+    daemon["git-daemon"]
+  end
+  repo -->|"read-only bind mount"| mount
+  mount -->|"git clone"| clone
+  clone --> daemon
+  daemon -->|"git fetch"| remote
+```
+@y
+```mermaid
+flowchart LR
+  subgraph host["Host repository (untouched)"]
+    direction TB
+    repo[".git/ + working tree"]
+    remote["remote sandbox-&lt;name&gt;"]
+  end
+  subgraph vm["Sandbox VM"]
+    direction TB
+    mount["/run/sandbox/source<br/>(read-only bind mount)"]
+    clone["private clone (RW)<br/>agent edits here"]
+    daemon["git-daemon"]
+  end
+  repo -->|"read-only bind mount"| mount
+  mount -->|"git clone"| clone
+  clone --> daemon
+  daemon -->|"git fetch"| remote
+```
+@z
+
+@x
+How the boundary is enforced:
+@y
+How the boundary is enforced:
+@z
+
+@x
+- Your repository's Git root is mounted at `/run/sandbox/source` as
+  read-only. Nothing the agent does inside the VM can write back through
+  that mount.
+- The agent works on a private clone that lives inside the sandbox. The
+  clone has its own index, its own refs, and its own working tree. Writes
+  to the clone never reach your host.
+- The sandbox publishes the clone over a Git daemon bound to localhost on
+  the host. The CLI wires it up as a `sandbox-<sandbox-name>` Git remote on
+  your host repository. Fetching from that remote uses the same trust
+  model as fetching from any third-party remote — nothing is integrated
+  until you explicitly merge or check out the fetched refs.
+@y
+- Your repository's Git root is mounted at `/run/sandbox/source` as
+  read-only. Nothing the agent does inside the VM can write back through
+  that mount.
+- The agent works on a private clone that lives inside the sandbox. The
+  clone has its own index, its own refs, and its own working tree. Writes
+  to the clone never reach your host.
+- The sandbox publishes the clone over a Git daemon bound to localhost on
+  the host. The CLI wires it up as a `sandbox-<sandbox-name>` Git remote on
+  your host repository. Fetching from that remote uses the same trust
+  model as fetching from any third-party remote — nothing is integrated
+  until you explicitly merge or check out the fetched refs.
+@z
+
+@x
+The practical guarantees:
+@y
+The practical guarantees:
+@z
+
+@x
+- The agent cannot modify any tracked file or any byte under `.git/` on
+  your host. A compromised or buggy agent cannot drop a
+  `.git/hooks/pre-commit`, alter `.github/workflows/`, or sneak changes
+  into your working tree.
+- Concurrent `git` commands on the host and inside the sandbox cannot
+  race on a shared `.git/index` or shared refs — there is no shared
+  writable state.
+- Credentials, signing keys, and any settings in your repository's
+  `.git/config` stay on the host. The agent's clone has its own
+  independent configuration.
+@y
+- The agent cannot modify any tracked file or any byte under `.git/` on
+  your host. A compromised or buggy agent cannot drop a
+  `.git/hooks/pre-commit`, alter `.github/workflows/`, or sneak changes
+  into your working tree.
+- Concurrent `git` commands on the host and inside the sandbox cannot
+  race on a shared `.git/index` or shared refs — there is no shared
+  writable state.
+- Credentials, signing keys, and any settings in your repository's
+  `.git/config` stay on the host. The agent's clone has its own
+  independent configuration.
+@z
+
+@x
+Use clone mode whenever you want a strong boundary between the agent's
+Git activity and your host repository — for example when running an
+unfamiliar agent, running multiple agents on the same repository at once,
+or keeping your working tree clean while the agent works.
+@y
+Use clone mode whenever you want a strong boundary between the agent's
+Git activity and your host repository — for example when running an
+unfamiliar agent, running multiple agents on the same repository at once,
+or keeping your working tree clean while the agent works.
 @z
 
 @x

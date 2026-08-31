@@ -20,12 +20,6 @@ keywords: docker sandboxes, docker agent, openai, anthropic, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 Official documentation: [Docker Agent](https://docs.docker.com/ai/docker-agent/)
 @y
 Official documentation: [Docker Agent](https://docs.docker.com/ai/docker-agent/)
@@ -136,36 +130,42 @@ for workarounds.
 @z
 
 @x
-The sandbox runs Docker Agent without approval prompts by default. Pass
-additional CLI options after `--`:
+### Default startup command
 @y
-The sandbox runs Docker Agent without approval prompts by default. Pass
-additional CLI options after `--`:
+### Default startup command
+@z
+
+@x
+Without extra args, the sandbox runs:
+@y
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+docker-agent run --yolo
+```
+@y
+```text
+docker-agent run --yolo
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. To keep
+`run --yolo`, include them yourself:
+@y
+Args after `--` replace these defaults rather than being appended. To keep
+`run --yolo`, include them yourself:
 @z
 
 @x
 ```console
-$ sbx run docker-agent --name my-sandbox -- <options>
+$ sbx run docker-agent -- run --yolo agent.yml
 ```
 @y
 ```console
-$ sbx run docker-agent --name my-sandbox -- <options>
-```
-@z
-
-@x
-For example, to specify a custom `agent.yml` configuration file:
-@y
-For example, to specify a custom `agent.yml` configuration file:
-@z
-
-@x
-```console
-$ sbx run docker-agent -- agent.yml
-```
-@y
-```console
-$ sbx run docker-agent -- agent.yml
+$ sbx run docker-agent -- run --yolo agent.yml
 ```
 @z
 
@@ -176,13 +176,11 @@ $ sbx run docker-agent -- agent.yml
 @z
 
 @x
-The sandbox uses `docker/sandbox-templates:docker-agent` and launches Docker
-Agent without approval prompts by default. See
+The sandbox uses `docker/sandbox-templates:docker-agent`. See
 [Templates](../customize/templates.md) to build your own image on top of
 this base.
 @y
-The sandbox uses `docker/sandbox-templates:docker-agent` and launches Docker
-Agent without approval prompts by default. See
+The sandbox uses `docker/sandbox-templates:docker-agent`. See
 [Templates](../customize/templates.md) to build your own image on top of
 this base.
 @z

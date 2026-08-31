@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 title: Manage subscription seats
 linkTitle: Manage seats
@@ -24,11 +22,11 @@ You can add or remove seats from your Docker Team or Business subscription at an
 @x
 > [!IMPORTANT]
 > If you have a sales-assisted Docker Business subscription,
-> contact your account manager to add seats to your subscription.
+> contact your account manager to add or remove seats from your subscription.
 @y
 > [!IMPORTANT]
 > If you have a sales-assisted Docker Business subscription,
-> contact your account manager to add seats to your subscription.
+> contact your account manager to add or remove seats from your subscription.
 @z
 
 @x
@@ -47,28 +45,24 @@ To add seats:
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
    organization.
 1. Select **Billing**.
-   - If you choose to pay using a US bank account, you must verify the account.
-   - For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
-1. Select **Add seats** and follow the on-screen instructions to complete
-   adding seats.
+1. Select the action menu from the **Active Plans** tile, then choose **Add seats**.
+1. Follow the on-screen instructions to complete adding seats.
    - You can't use pay by invoice for purchasing additional seats.
    - You must use a card or US bank account.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
    organization.
 1. Select **Billing**.
-   - If you choose to pay using a US bank account, you must verify the account.
-   - For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-1. Select **Add seats** and follow the on-screen instructions to complete
-   adding seats.
+1. Select the action menu from the **Active Plans** tile, then choose **Add seats**.
+1. Follow the on-screen instructions to complete adding seats.
    - You can't use pay by invoice for purchasing additional seats.
    - You must use a card or US bank account.
 @z
 
 @x
-You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
+You can add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
 @y
-You can now add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
+You can add more members to your organization. For more information, see [Manage organization members](../admin/organization/manage/members.md).
 @z
 
 @x
@@ -90,9 +84,29 @@ Docker offers volume pricing for Docker Business subscriptions starting at 25 se
 @z
 
 @x
-You can remove seats from your Team or Business subscription at any time. Changes apply to your next billing cycle, and unused portions aren't refundable.
+You can remove seats from your Team or Business subscription at any time. To remove seats:
 @y
-You can remove seats from your Team or Business subscription at any time. Changes apply to your next billing cycle, and unused portions aren't refundable.
+You can remove seats from your Team or Business subscription at any time. To remove seats:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization.
+1. Select **Billing**.
+1. Select the action menu, then choose **Remove seats**.
+1. Follow the on-screen instructions to complete removing seats.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization.
+1. Select **Billing**.
+1. Select the action menu, then choose **Remove seats**.
+1. Follow the on-screen instructions to complete removing seats.
+@z
+
+@x
+Changes apply to your next billing cycle, and unused portions aren't refundable.
+@y
+Changes apply to your next billing cycle, and unused portions aren't refundable.
 @z
 
 @x
@@ -102,27 +116,9 @@ For example, if you're billed on the 8th of every month for 10 seats and remove 
 @z
 
 @x
-If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats:
+> [!TIP]
+> You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change**.
 @y
-If you have a sales-assisted Docker Business subscription, contact your account manager to remove seats from your subscription. To remove seats:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Billing**.
-1. In the **Seats** row, select the action icon, then **Remove seats**.
-1. Follow the on-screen instructions to complete removing seats.
-@y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Billing**.
-1. In the **Seats** row, select the action icon, then **Remove seats**.
-1. Follow the on-screen instructions to complete removing seats.
-@z
-
-@x
-You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change**.
-@y
-You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change**.
+> [!TIP]
+> You can cancel the removal of seats before your next billing cycle. To do so, select **Cancel change**.
 @z

@@ -238,12 +238,11 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
-	delete.webp                      \
 	gordon_advanced_tool_config.avif \
 	gordon_gui.avif                  \
-	gordon_tui.avif                  \
-	perm_settings.avif               \
-	permissions.avif
+	gordon_permission_settings.avif  \
+	gordon_permissions_prompt.avif   \
+	gordon_tui.avif
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

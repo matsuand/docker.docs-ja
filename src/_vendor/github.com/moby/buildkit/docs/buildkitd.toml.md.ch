@@ -35,10 +35,6 @@ Note that some configuration options are only useful in edge cases.
 
 @x
 ```toml
-# debug enables additional debug logging
-debug = true
-# trace enables additional trace logging (very verbose, with potential performance impacts)
-trace = true
 # root is where all buildkit state is stored.
 root = "/var/lib/buildkit"
 # insecure-entitlements allows insecure entitlements, disabled by default.
@@ -50,10 +46,6 @@ insecure-entitlements = [ "network.host", "security.insecure", "device" ]
 provenanceEnvDir = "/etc/buildkit/provenance.d"
 @y
 ```toml
-# debug enables additional debug logging
-debug = true
-# trace enables additional trace logging (very verbose, with potential performance impacts)
-trace = true
 # root is where all buildkit state is stored.
 root = "/var/lib/buildkit"
 # insecure-entitlements allows insecure entitlements, disabled by default.
@@ -73,6 +65,14 @@ provenanceEnvDir = "/etc/buildkit/provenance.d"
 [log]
   # log formatter: json or text
   format = "text"
+@z
+
+@x
+  # log level (error/warn/info/debug/trace)
+  level = "info"
+@y
+  # log level (error/warn/info/debug/trace)
+  level = "info"
 @z
 
 @x

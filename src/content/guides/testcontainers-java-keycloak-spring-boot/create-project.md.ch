@@ -5,10 +5,12 @@
 title: Create the Spring Boot project
 linkTitle: Create the project
 description: Set up a Spring Boot OAuth 2.0 Resource Server with Keycloak, PostgreSQL, and Testcontainers.
+keywords: testcontainers, java, spring boot, keycloak, oauth2, postgresql, project setup
 @y
 title: Create the Spring Boot project
 linkTitle: Create the project
 description: Set up a Spring Boot OAuth 2.0 Resource Server with Keycloak, PostgreSQL, and Testcontainers.
+keywords: testcontainers, java, spring boot, keycloak, oauth2, postgresql, project setup
 @z
 
 @x
@@ -677,7 +679,7 @@ Then set up the realm:
 2. Under the `keycloaktcdemo` realm, create a client with the following
    settings:
    - **Client ID**: `product-service`
-   - **Client Authentication**: **On**
+   - **Client Authentication**: `On`
    - **Authentication flow**: select only **Service accounts roles**
 3. On the **Client details** screen, go to the **Credentials** tab and copy the
    **Client secret** value.
@@ -687,7 +689,7 @@ Then set up the realm:
 2. Under the `keycloaktcdemo` realm, create a client with the following
    settings:
    - **Client ID**: `product-service`
-   - **Client Authentication**: **On**
+   - **Client Authentication**: `On`
    - **Authentication flow**: select only **Service accounts roles**
 3. On the **Client details** screen, go to the **Credentials** tab and copy the
    **Client secret** value.

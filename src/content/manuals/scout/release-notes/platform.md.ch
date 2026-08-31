@@ -52,9 +52,9 @@ New features and enhancements released in the fourth quarter of 2024.
 @z
 
 @x
-Policy Evaluation has graduated form Early Access to General Availability.
+Policy Evaluation has graduated from Early Access to General Availability.
 @y
-Policy Evaluation has graduated form Early Access to General Availability.
+Policy Evaluation has graduated from Early Access to General Availability.
 @z
 
 @x
@@ -110,9 +110,9 @@ implemented based on these types.
 @z
 
 @x
-For more information, refer to [policy types](/manuals/scout/policy/_index.md#policy-types).
+For more information, refer to [policy types](../policy/_index.md#policy-types).
 @y
-For more information, refer to [policy types](manuals/scout/policy/_index.md#policy-types).
+For more information, refer to [policy types](../policy/_index.md#policy-types).
 @z
 
 @x
@@ -340,11 +340,11 @@ making the now-removed **All critical vulnerabilities** policy redundant.
 @x
 **Azure Container Registry** integration graduated from
 [Early Access](../../release-lifecycle.md#early-access-ea) to
-[General Availability](../../release-lifecycle.md#genera-availability-ga).
+[General Availability](../../release-lifecycle.md#general-availability-ga).
 @y
 **Azure Container Registry** integration graduated from
 [Early Access](../../release-lifecycle.md#early-access-ea) to
-[General Availability](../../release-lifecycle.md#genera-availability-ga).
+[General Availability](../../release-lifecycle.md#general-availability-ga).
 @z
 
 @x

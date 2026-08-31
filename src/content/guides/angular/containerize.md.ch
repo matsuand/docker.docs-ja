@@ -35,7 +35,7 @@ Before you begin, make sure the following tools are installed and available on y
 - You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
 - You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @y
-- You have installed the latest version of [Docker Desktop](get-started/get-docker.md).
+- You have installed the latest version of [Docker Desktop](/get-started/get-docker.md).
 - You have a [git client](https://git-scm.com/downloads). The examples in this section use a command-line based git client, but you can use any client.
 @z
 
@@ -48,12 +48,6 @@ Before you begin, make sure the following tools are installed and available on y
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Overview
 @y
 ## Overview
@@ -86,12 +80,6 @@ By the end of this guide, you will:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Get the sample application
 @y
 ## Get the sample application
@@ -118,189 +106,31 @@ $ git clone https://github.com/kristiyan-velkov/docker-angular-sample
 @z
 
 @x
-## Generate a Dockerfile
-@y
-## Generate a Dockerfile
-@z
-
-@x
-Docker provides an interactive CLI tool called `docker init` that helps scaffold the necessary configuration files for containerizing your application. This includes generating a `Dockerfile`, `.dockerignore`, `compose.yaml`, and `README.Docker.md`.
-@y
-Docker provides an interactive CLI tool called `docker init` that helps scaffold the necessary configuration files for containerizing your application. This includes generating a `Dockerfile`, `.dockerignore`, `compose.yaml`, and `README.Docker.md`.
-@z
-
-@x
-To begin, navigate to the root of your project directory:
-@y
-To begin, navigate to the root of your project directory:
-@z
-
-@x
-```console
-$ cd docker-angular-sample
-```
-@y
-```console
-$ cd docker-angular-sample
-```
-@z
-
-@x
-Then run the following command:
-@y
-Then run the following command:
-@z
-
-@x
-```console
-$ docker init
-```
-You’ll see output similar to:
-@y
-```console
-$ docker init
-```
-You’ll see output similar to:
-@z
-
-@x
-```text
-Welcome to the Docker Init CLI!
-@y
-```text
-Welcome to the Docker Init CLI!
-@z
-
-@x
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@y
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@z
-
-@x
-Let's get started!
-```
-@y
-Let's get started!
-```
-@z
-
-@x
-The CLI will prompt you with a few questions about your app setup.
-For consistency, please use the same responses shown in the example below when prompted:
-@y
-The CLI will prompt you with a few questions about your app setup.
-For consistency, please use the same responses shown in the example below when prompted:
-@z
-
-@x
-| Question                                                   | Answer          |
-|------------------------------------------------------------|-----------------|
-| What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 24.12.0-alpine  |
-| Which package manager do you want to use?                  | npm             |
-| Do you want to run "npm run build" before starting server? | yes             |
-| What directory is your build output to?                    | dist            |
-| What command do you want to use to start the app?          | npm run start   |
-| What port does your server listen on?                      | 8080            |
-@y
-| Question                                                   | Answer          |
-|------------------------------------------------------------|-----------------|
-| What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 24.12.0-alpine  |
-| Which package manager do you want to use?                  | npm             |
-| Do you want to run "npm run build" before starting server? | yes             |
-| What directory is your build output to?                    | dist            |
-| What command do you want to use to start the app?          | npm run start   |
-| What port does your server listen on?                      | 8080            |
-@z
-
-@x
-After completion, your project directory will contain the following new files:
-@y
-After completion, your project directory will contain the following new files:
-@z
-
-@x
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@z
-
-@x
 ## Build the Docker image
 @y
 ## Build the Docker image
 @z
 
 @x
-The default Dockerfile generated by `docker init` serves as a solid starting point for general Node.js applications. However, Angular is a front-end framework that compiles into static assets, so we need to tailor the Dockerfile to optimize for how Angular applications are built and served in a production environment.
+Angular is a front-end framework that compiles into static assets, so the Dockerfile uses a multi-stage build: one stage compiles the app with Node.js, and a second minimal stage serves the static output with Nginx.
 @y
-The default Dockerfile generated by `docker init` serves as a solid starting point for general Node.js applications. However, Angular is a front-end framework that compiles into static assets, so we need to tailor the Dockerfile to optimize for how Angular applications are built and served in a production environment.
+Angular is a front-end framework that compiles into static assets, so the Dockerfile uses a multi-stage build: one stage compiles the app with Node.js, and a second minimal stage serves the static output with Nginx.
 @z
 
 @x
-### Step 1: Improve the generated Dockerfile and configuration
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @y
-### Step 1: Improve the generated Dockerfile and configuration
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x
-In this step, you’ll improve the Dockerfile and configuration files by following best practices:
+### Step 1: Create the Dockerfile
 @y
-In this step, you’ll improve the Dockerfile and configuration files by following best practices:
-@z
-
-@x
-- Use multi-stage builds to keep the final image clean and small  
-- Serve the app using Nginx, a fast and secure web server  
-- Improve performance and security by only including what’s needed  
-@y
-- Use multi-stage builds to keep the final image clean and small  
-- Serve the app using Nginx, a fast and secure web server  
-- Improve performance and security by only including what’s needed  
-@z
-
-@x
-These updates help ensure your app is easy to deploy, fast to load, and production-ready.
-@y
-These updates help ensure your app is easy to deploy, fast to load, and production-ready.
-@z
-
-@x
-> [!NOTE]
-> A `Dockerfile` is a plain text file that contains step-by-step instructions to build a Docker image. It automates packaging your application along with its dependencies and runtime environment.  
-> For full details, see the [Dockerfile reference](/reference/dockerfile/).
-@y
-> [!NOTE]
-> A `Dockerfile` is a plain text file that contains step-by-step instructions to build a Docker image. It automates packaging your application along with its dependencies and runtime environment.  
-> For full details, see the [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
-@z
-
-@x
-### Step 2: Configure the Dockerfile
-@y
-### Step 2: Configure the Dockerfile
+### Step 1: Create the Dockerfile
 @z
 
 @x
@@ -498,9 +328,9 @@ CMD ["-g", "daemon off;"]
 @z
 
 @x
-Now you need to create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following optimized configuration:
+Create a file named `Dockerfile` with the following contents:
 @y
-Now you need to create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following optimized configuration:
+Create a file named `Dockerfile` with the following contents:
 @z
 
 @x
@@ -654,9 +484,41 @@ CMD ["-g", "daemon off;"]
 @z
 
 @x
-### Step 3: Configure the .dockerignore file
+### Step 2: Create the compose.yaml file
 @y
-### Step 3: Configure the .dockerignore file
+### Step 2: Create the compose.yaml file
+@z
+
+@x
+Create a file named `compose.yaml` with the following contents:
+@y
+Create a file named `compose.yaml` with the following contents:
+@z
+
+@x
+```yaml {collapse=true,title=compose.yaml}
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+```
+@y
+```yaml {collapse=true,title=compose.yaml}
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+```
+@z
+
+@x
+### Step 3: Create the .dockerignore file
+@y
+### Step 3: Create the .dockerignore file
 @z
 
 @x
@@ -684,9 +546,9 @@ The `.dockerignore` file tells Docker which files and folders to exclude when bu
 @z
 
 @x
-Copy and replace the contents of your existing `.dockerignore` with the configuration below:
+Create a file named `.dockerignore` with the following contents:
 @y
-Copy and replace the contents of your existing `.dockerignore` with the configuration below:
+Create a file named `.dockerignore` with the following contents:
 @z
 
 @x
@@ -1077,8 +939,7 @@ After completing the previous steps, your project directory should now contain t
 │ ├── Dockerfile
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @y
 ```text
@@ -1086,8 +947,7 @@ After completing the previous steps, your project directory should now contain t
 │ ├── Dockerfile
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @z
 
@@ -1134,9 +994,9 @@ What this command does:
 @z
 
 @x
-#### Step 6:  View local images
+### Step 6: View local images
 @y
-#### Step 6:  View local images
+### Step 6: View local images
 @z
 
 @x
@@ -1203,12 +1063,6 @@ This output provides key details about your images:
 If the build was successful, you should see `docker-angular-sample` image listed. 
 @y
 If the build was successful, you should see `docker-angular-sample` image listed. 
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -1352,12 +1206,6 @@ $ docker compose down
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -1371,18 +1219,16 @@ In this guide, you learned how to containerize, build, and run an Angular applic
 
 @x
 What you accomplished:
-- Initialized your project using `docker init` to scaffold essential Docker configuration files.
-- Replaced the default `Dockerfile` with a multi-stage build that compiles the Angular application and serves the static files using Nginx.
-- Replaced the default `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
+- Created a multi-stage `Dockerfile` that compiles the Angular application and serves the static files using Nginx.
+- Created a `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
 - Built your Docker image using `docker build`.
 - Ran the container using `docker compose up`, both in the foreground and in detached mode.
 - Verified that the app was running by visiting [http://localhost:8080](http://localhost:8080).
 - Learned how to stop the containerized application using `docker compose down`.
 @y
 What you accomplished:
-- Initialized your project using `docker init` to scaffold essential Docker configuration files.
-- Replaced the default `Dockerfile` with a multi-stage build that compiles the Angular application and serves the static files using Nginx.
-- Replaced the default `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
+- Created a multi-stage `Dockerfile` that compiles the Angular application and serves the static files using Nginx.
+- Created a `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
 - Built your Docker image using `docker build`.
 - Ran the container using `docker compose up`, both in the foreground and in detached mode.
 - Verified that the app was running by visiting [http://localhost:8080](http://localhost:8080).
@@ -1393,12 +1239,6 @@ What you accomplished:
 You now have a fully containerized Angular application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
 @y
 You now have a fully containerized Angular application, running in a Docker container, and ready for deployment across any environment with confidence and consistency.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -1417,7 +1257,6 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [Multi-stage builds](/build/building/multi-stage/) – Learn how to separate build and runtime stages.
 - [Best practices for writing Dockerfiles](/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
 - [Build context in Docker](/build/concepts/context/) – Learn how context affects image builds.  
-- [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
 - [`docker build` CLI reference](/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
 - [`docker images` CLI reference](/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
 - [`docker compose up` CLI reference](/reference/cli/docker/compose/up/) – Start and run multi-container applications.
@@ -1426,17 +1265,10 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [Multi-stage builds](__SUBDIR__/build/building/multi-stage/) – Learn how to separate build and runtime stages.
 - [Best practices for writing Dockerfiles](__SUBDIR__/develop/develop-images/dockerfile_best-practices/) – Write efficient, maintainable, and secure Dockerfiles.  
 - [Build context in Docker](__SUBDIR__/build/concepts/context/) – Learn how context affects image builds.  
-- [`docker init` CLI reference](__SUBDIR__/reference/cli/docker/init/) – Scaffold Docker assets automatically.
 - [`docker build` CLI reference](__SUBDIR__/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
 - [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
 - [`docker compose up` CLI reference](__SUBDIR__/reference/cli/docker/compose/up/) – Start and run multi-container applications.
 - [`docker compose down` CLI reference](__SUBDIR__/reference/cli/docker/compose/down/) – Stop and remove containers, networks, and volumes.
-@z
-
-@x
----
-@y
----
 @z
 
 @x

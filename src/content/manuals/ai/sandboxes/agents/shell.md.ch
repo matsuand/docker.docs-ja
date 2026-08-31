@@ -16,12 +16,6 @@ keywords: sandboxes, sbx, shell, agent, manual setup, testing
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 `sbx run shell` drops you into a Bash login shell inside a sandbox with no
 pre-installed agent binary. It's useful for installing and configuring
 agents manually, testing custom implementations, or inspecting a running

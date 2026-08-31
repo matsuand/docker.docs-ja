@@ -22,6 +22,7 @@ bases = \
 	_index.md                              \
 	agentic-ai.md                          \
 	claude-code-model-runner.md            \
+	claude-code-sandbox-model-runner.md    \
 	container-supported-development.md     \
 	databases.md                           \
 	dex.md                                 \
@@ -34,6 +35,7 @@ bases = \
 	dhi-python-example.md                  \
 	django.md                              \
 	gha.md                                 \
+	grafana-mcp-server-gemini.md           \
 	jupyter.md                             \
 	kafka.md                               \
 	kube-deploy.md                         \

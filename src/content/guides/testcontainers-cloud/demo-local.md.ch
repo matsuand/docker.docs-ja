@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Setting up Testcontainers Cloud by Docker
 description: Set up Testcontainers Cloud by Docker in a local development environment.
-weight: 20
----
+keywords: testcontainers cloud, local development, testcontainers desktop, integration testing, setup
 @y
----
 title: Setting up Testcontainers Cloud by Docker
 description: Set up Testcontainers Cloud by Docker in a local development environment.
-weight: 20
----
+keywords: testcontainers cloud, local development, testcontainers desktop, integration testing, setup
 @z
 
 @x

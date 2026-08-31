@@ -106,7 +106,7 @@ Configure startup behavior, UI appearance, terminal preferences, and feature def
 | **Expose daemon on tcp://localhost:2375 without TLS** | Allow legacy clients to connect to the Docker daemon. Use with caution as exposing the daemon without TLS can result in remote code execution attacks. | Disabled                  | Windows (Hyper-V backend only) | |
 | **Use the WSL 2 based engine** | WSL 2 provides better performance than the Hyper-V backend. For more information, see [Docker Desktop WSL 2 backend](manuals/desktop/features/wsl/_index.md). | Disabled | Windows | |
 | **Add \*.docker.internal to host file**                | Adds internal DNS entries.                                  | Enabled                   | Windows                        | Helps resolve Docker-internal domains |
-| **Choose Virtual Machine Manager (VMM)**              | Choose the VMM for creating and managing the Docker Desktop Linux VM. For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md). | | Mac | Select **Docker VMM** for the latest and most performant Hypervisor/Virtual Machine Manager. This option is available only on Apple Silicon Macs and is in Beta.|
+| **Choose Virtual Machine Manager (VMM)**              | Choose the VMM for creating and managing the Docker Desktop Linux VM. For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md). | | Mac | Select **Docker VMM** for the latest and most performant Hypervisor/Virtual Machine Manager. This option is available only on Apple Silicon Macs and is in Beta.|
 | **Choose file sharing implementation for your containers** | Choose whether you want to share files using **VirtioFS**, **gRPC FUSE**, or **osxfs (Legacy)** | **VirtioFS** | Mac | Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206). It is the only file sharing implementation supported by Docker VMM. |
 |**Use Rosetta for x86_64/amd64 emulation on Apple Silicon** | Accelerate x86/AMD64 binary emulation on Apple Silicon. This option is only available if you have selected **Apple Virtualization framework** as the Virtual Machine Manager. | Disabled | Mac | |
 | **Send usage statistics** | Send diagnostics, crash reports, and usage data to Docker to improve and troubleshoot the application. Docker may periodically prompt you for more information. | Enabled | All | |
@@ -630,6 +630,26 @@ You can only start and stop builders using the `docker-container` driver.
 @z
 
 @x
+## AI
+@y
+## AI
+@z
+
+@x
+From the AI tab, you can configure settings for:
+@y
+From the AI tab, you can configure settings for:
+@z
+
+@x
+- [Gordon](/manuals/ai/gordon/_index.md), the AI-powered assistant that takes action on your Docker workflows.
+- [Docker Model Runner](/manuals/ai/model-runner/_index.md), which makes it easy to manage, run, and deploy AI models using Docker.
+@y
+- [Gordon](manuals/ai/gordon/_index.md), the AI-powered assistant that takes action on your Docker workflows.
+- [Docker Model Runner](manuals/ai/model-runner/_index.md), which makes it easy to manage, run, and deploy AI models using Docker.
+@z
+
+@x
 ## Kubernetes
 @y
 ## Kubernetes
@@ -716,13 +736,13 @@ Enable Docker Extensions and control which extensions are available to install a
 @x
 | Setting             | Description                               |
 | ------------------- | ----------------------------------------- |
-| **Enable Docker Extensions** | Turn Docker Extensions on or off. |
+| **Enable Docker Extensions** | Turn Docker Extensions on or off. Turned off by default. |
 | **Allow only extensions distributed through the Docker Marketplace** | Restrict extensions to Marketplace-approved sources only. |
 | **Show Docker Extensions system containers** | Show containers used by Docker Extensions. |
 @y
 | Setting             | Description                               |
 | ------------------- | ----------------------------------------- |
-| **Enable Docker Extensions** | Turn Docker Extensions on or off. |
+| **Enable Docker Extensions** | Turn Docker Extensions on or off. Turned off by default. |
 | **Allow only extensions distributed through the Docker Marketplace** | Restrict extensions to Marketplace-approved sources only. |
 | **Show Docker Extensions system containers** | Show containers used by Docker Extensions. |
 @z

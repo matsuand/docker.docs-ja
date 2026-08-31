@@ -45,10 +45,12 @@ usage: sbx create kiro PATH [PATH...] [flags]
 
 %inherited_options:
 
-@x branch
-      usage: Create a Git worktree on the given branch
+@x clone
+      usage: |
+        Run the agent on a private in-container clone of the host Git repository (mounted read-only) instead of bind-mounting the workspace; the agent's commits are accessible via the sandbox-<name> git remote on the host
 @y
-      usage: Create a Git worktree on the given branch
+      usage: |
+        Run the agent on a private in-container clone of the host Git repository (mounted read-only) instead of bind-mounting the workspace; the agent's commits are accessible via the sandbox-<name> git remote on the host
 @z
 
 @x cpus
@@ -71,6 +73,14 @@ usage: sbx create kiro PATH [PATH...] [flags]
 @y
       usage: |
         Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+@z
+
+@x mcp
+      usage: |
+        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
+@y
+      usage: |
+        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
 @z
 
 @x memory

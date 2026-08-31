@@ -57,9 +57,9 @@ You’ll learn how to:
 @z
 
 @x
-## Automatically update services (Development Mode)
+## Automatically update services (development mode)
 @y
-## Automatically update services (Development Mode)
+## Automatically update services (development mode)
 @z
 
 @x

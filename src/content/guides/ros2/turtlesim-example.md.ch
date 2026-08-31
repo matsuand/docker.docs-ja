@@ -30,6 +30,12 @@ Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concep
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Configure display forwarding
 @y
 ## Configure display forwarding
@@ -164,9 +170,9 @@ $ docker compose exec ros2 /bin/bash
 @z
 
 @x
-## Install and Run Turtlesim
+## Install and run Turtlesim
 @y
-## Install and Run Turtlesim
+## Install and run Turtlesim
 @z
 
 @x

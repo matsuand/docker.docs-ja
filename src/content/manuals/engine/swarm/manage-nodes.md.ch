@@ -615,6 +615,6 @@ $ docker node rm node-2
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @y
 * [Swarm administration guide](admin_guide.md)
-* [Docker Engine command line reference](reference/cli/docker/)
+* [Docker Engine command line reference](__SUBDIR__/reference/cli/docker/)
 * [Swarm mode tutorial](swarm-tutorial/_index.md)
 @z

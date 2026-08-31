@@ -26,24 +26,24 @@ keywords:
 @x
   - title: What is Testcontainers?
     description: Learn about what Testcontainers does and its key benefits
-    icon: feature_search
+    icon: magnifying-glass
     link: https://testcontainers.com/getting-started/#what-is-testcontainers
 @y
   - title: What is Testcontainers?
     description: Learn about what Testcontainers does and its key benefits
-    icon: feature_search
+    icon: magnifying-glass
     link: https://testcontainers.com/getting-started/#what-is-testcontainers
 @z
 
 @x
   - title: The Testcontainers workflow
     description: Understand the Testcontainers workflow
-    icon: explore
+    icon: magnifying-glass-plus
     link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @y
   - title: The Testcontainers workflow
     description: Understand the Testcontainers workflow
-    icon: explore
+    icon: magnifying-glass-plus
     link: https://testcontainers.com/getting-started/#testcontainers-workflow
 @z
 

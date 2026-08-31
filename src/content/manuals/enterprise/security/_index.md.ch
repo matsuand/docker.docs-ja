@@ -18,60 +18,60 @@ keywords: docker, docker hub, docker desktop, security, enterprises, scale
 @x
   - title: Settings Management
     description: Learn how Settings Management can secure your developers' workflows.
-    icon: shield_locked
+    icon: shield-check
     link: /enterprise/security/hardened-desktop/settings-management/
 @y
   - title: Settings Management
     description: Learn how Settings Management can secure your developers' workflows.
-    icon: shield_locked
+    icon: shield-check
     link: __SUBDIR__/enterprise/security/hardened-desktop/settings-management/
 @z
 
 @x
   - title: Enhanced Container Isolation
     description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: security
+    icon: shield-check
     link: /enterprise/security/hardened-desktop/enhanced-container-isolation/
 @y
   - title: Enhanced Container Isolation
     description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: security
+    icon: shield-check
     link: __SUBDIR__/enterprise/security/hardened-desktop/enhanced-container-isolation/
 @z
 
 @x
   - title: Registry Access Management
     description: Control the registries developers can access while using Docker Desktop.
-    icon: home_storage
+    icon: server
     link: /enterprise/security/hardened-desktop/registry-access-management/
 @y
   - title: Registry Access Management
     description: Control the registries developers can access while using Docker Desktop.
-    icon: home_storage
+    icon: server
     link: __SUBDIR__/enterprise/security/hardened-desktop/registry-access-management/
 @z
 
 @x
   - title: Image Access Management
     description: Control the images developers can pull from Docker Hub.
-    icon: photo_library
+    icon: photo
     link: /enterprise/security/hardened-desktop/image-access-management/
 @y
   - title: Image Access Management
     description: Control the images developers can pull from Docker Hub.
-    icon: photo_library
+    icon: photo
     link: __SUBDIR__/enterprise/security/hardened-desktop/image-access-management/
 @z
 
 @x
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: "vpn_lock"
+    icon: lock-closed
     link: /enterprise/security/hardened-desktop/air-gapped-containers/
 @y
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: "vpn_lock"
+    icon: lock-closed
     link: __SUBDIR__/enterprise/security/hardened-desktop/air-gapped-containers/
 @z
 
@@ -79,35 +79,35 @@ keywords: docker, docker hub, docker desktop, security, enterprises, scale
   - title: Enforce sign-in
     description: Configure sign-in for members of your teams and organizations.
     link: /enterprise/security/enforce-sign-in/
-    icon: passkey
+    icon: finger-print
 @y
   - title: Enforce sign-in
     description: Configure sign-in for members of your teams and organizations.
     link: __SUBDIR__/enterprise/security/enforce-sign-in/
-    icon: passkey
+    icon: finger-print
 @z
 
 @x
   - title: Domain management
     description: Identify uncaptured users in your organization.
     link: /enterprise/security/domain-management/
-    icon: person_search
+    icon: magnifying-glass
 @y
   - title: Domain management
     description: Identify uncaptured users in your organization.
     link: __SUBDIR__/enterprise/security/domain-management/
-    icon: person_search
+    icon: magnifying-glass
 @z
 
 @x
   - title: Docker Scout
     description: Explore how Docker Scout can help you create a more secure software supply chain.
-    icon: query_stats
+    icon: chart-bar
     link: /scout/
 @y
   - title: Docker Scout
     description: Explore how Docker Scout can help you create a more secure software supply chain.
-    icon: query_stats
+    icon: chart-bar
     link: __SUBDIR__/scout/
 @z
 
@@ -126,49 +126,49 @@ keywords: docker, docker hub, docker desktop, security, enterprises, scale
 @x
   - title: SCIM
     description: Set up SCIM to automatically provision and deprovision users.
-    icon: checklist
+    icon: clipboard-document-check
     link: /enterprise/security/provisioning/scim/
 @y
   - title: SCIM
     description: Set up SCIM to automatically provision and deprovision users.
-    icon: checklist
+    icon: clipboard-document-check
     link: __SUBDIR__/enterprise/security/provisioning/scim/
 @z
 
 @x
   - title: Roles and permissions
     description: Assign roles to individuals giving them different permissions within an organization.
-    icon: badge
+    icon: identification
     link: /enterprise/security/roles-and-permissions/
 @y
   - title: Roles and permissions
     description: Assign roles to individuals giving them different permissions within an organization.
-    icon: badge
+    icon: identification
     link: __SUBDIR__/enterprise/security/roles-and-permissions/
 @z
 
 @x
   - title: Private marketplace for Extensions (Beta)
     description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
-    icon: storefront
-    link: /desktop/extensions/private-marketplace/
+    icon: building-storefront
+    link: /extensions/private-marketplace/
 @y
   - title: Private marketplace for Extensions (Beta)
     description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
-    icon: storefront
-    link: __SUBDIR__/desktop/extensions/private-marketplace/
+    icon: building-storefront
+    link: __SUBDIR__/extensions/private-marketplace/
 @z
 
 @x
   - title: Organization access tokens
     description: Create organization access tokens as an alternative to a password.
     link: /enterprise/security/access-tokens/
-    icon: password
+    icon: lock-closed
 @y
   - title: Organization access tokens
     description: Create organization access tokens as an alternative to a password.
     link: __SUBDIR__/enterprise/security/access-tokens/
-    icon: password
+    icon: lock-closed
 @z
 
 @x

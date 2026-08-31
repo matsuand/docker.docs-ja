@@ -5,6 +5,7 @@
 copyfiles = \
 	alpine.js           \
 	dockerfile-links.js \
+	marlin.js           \
 	toc.js              \
 	tooltip.js          \
 	vars.js

@@ -7,6 +7,7 @@ bases = \
 	claude-code.md  \
 	codex.md        \
 	copilot.md      \
+	cursor.md       \
 	docker-agent.md \
 	droid.md        \
 	gemini.md       \

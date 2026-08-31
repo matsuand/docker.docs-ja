@@ -18,12 +18,6 @@ keywords: docker sandboxes, droid, factory, ai agent, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of Droid, an AI
 coding agent by Factory, in a sandboxed environment.
 @y
@@ -154,20 +148,26 @@ for workarounds.
 @z
 
 @x
-The sandbox runs Droid without approval prompts by default. Pass additional
-`droid` CLI options after `--`:
+### Default startup command
 @y
-The sandbox runs Droid without approval prompts by default. Pass additional
-`droid` CLI options after `--`:
+### Default startup command
+@z
+
+@x
+The sandbox runs `droid` with no implicit flags. Args after `--` are passed
+straight through:
+@y
+The sandbox runs `droid` with no implicit flags. Args after `--` are passed
+straight through:
 @z
 
 @x
 ```console
-$ sbx run droid --name <sandbox-name> -- <droid-options>
+$ sbx run droid -- exec "fix the build"
 ```
 @y
 ```console
-$ sbx run droid --name <sandbox-name> -- <droid-options>
+$ sbx run droid -- exec "fix the build"
 ```
 @z
 

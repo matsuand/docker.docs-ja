@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応 (一部)
 
 @x
 title: Use containers for Next.js development
@@ -68,9 +69,9 @@ You'll learn how to:
 @z
 
 @x
-## Automatically update services (Development Mode)
+## Automatically update services (development mode)
 @y
-## Automatically update services (Development Mode)
+## Automatically update services (development mode)
 @z
 
 @x
@@ -349,27 +350,7 @@ After completing the previous steps, your project directory should now contain t
 After completing the previous steps, your project directory should now contain the following files:
 @z
 
-@x
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── next.config.ts
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── next.config.ts
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 ### Step 4: Start Compose Watch

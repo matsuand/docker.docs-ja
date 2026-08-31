@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Why Docker Scout?
 description: Learn how Docker Scout can help you secure your supply chain.
-weight: 10
----
+keywords: docker scout, supply chain security, vulnerability detection, sbom, container security
 @y
----
 title: Why Docker Scout?
 description: Learn how Docker Scout can help you secure your supply chain.
-weight: 10
----
+keywords: docker scout, supply chain security, vulnerability detection, sbom, container security
 @z
 
 @x

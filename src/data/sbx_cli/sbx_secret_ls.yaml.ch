@@ -4,46 +4,46 @@
 @x
 name: sbx secret ls
 synopsis: List stored secrets
-usage: sbx secret ls [sandbox] [OPTIONS] [flags]
-options:
-    - name: global
-      shorthand: g
-      default_value: "false"
-      usage: Only list global secrets
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for ls
-    - name: service
-      usage: Filter by secret service name
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # List all secrets
-      sbx secret ls
+usage: sbx secret ls [SANDBOX] [flags]
 @y
 name: sbx secret ls
 synopsis: List stored secrets
-usage: sbx secret ls [sandbox] [OPTIONS] [flags]
-options:
-    - name: global
-      shorthand: g
-      default_value: "false"
+usage: sbx secret ls [SANDBOX] [flags]
+@z
+
+% options:
+
+@x global
       usage: Only list global secrets
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Only list global secrets
+@z
+
+@x help
       usage: help for ls
-    - name: service
+@y
+      usage: help for ls
+@z
+
+@x service
       usage: Filter by secret service name
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Filter by secret service name
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # List all secrets
+      sbx secret ls
+@y
 example: |4-
       # List all secrets
       sbx secret ls
@@ -68,11 +68,15 @@ example: |4-
 @x
       # Filter by service
       sbx secret ls --service github
-see_also:
-    - sbx secret - Manage stored secrets
 @y
       # Filter by service
       sbx secret ls --service github
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx secret - Manage stored secrets
+@y
     - sbx secret - Manage stored secrets
 @z

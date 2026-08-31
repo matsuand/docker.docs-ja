@@ -462,9 +462,9 @@ Now, it's time to address the random naming issue. Standard practice is to name 
 @z
 
 @x
-To name a container, you just need to pass the `--name` flag to the `docker run` command.
+To name a container, pass the `--name` flag to the `docker run` command.
 @y
-To name a container, you just need to pass the `--name` flag to the `docker run` command.
+To name a container, pass the `--name` flag to the `docker run` command.
 @z
 
 @x
@@ -486,9 +486,9 @@ CONTAINER ID   IMAGE                   COMMAND                  CREATED         
 @z
 
 @x
-That’s better! You can now easily identify your container based on the name.
+Now you can identify your container based on the name.
 @y
-That’s better! You can now easily identify your container based on the name.
+Now you can identify your container based on the name.
 @z
 
 @x
@@ -498,9 +498,9 @@ That’s better! You can now easily identify your container based on the name.
 @z
 
 @x
-In this section, you took a look at running containers. You also took a look at managing containers by starting, stopping, and restarting them. And finally, you looked at naming your containers so they are more easily identifiable.
+In this section, you took a look at running containers. You also took a look at managing containers by starting, stopping, and restarting them. And finally, you looked at naming your containers so they are more identifiable.
 @y
-In this section, you took a look at running containers. You also took a look at managing containers by starting, stopping, and restarting them. And finally, you looked at naming your containers so they are more easily identifiable.
+In this section, you took a look at running containers. You also took a look at managing containers by starting, stopping, and restarting them. And finally, you looked at naming your containers so they are more identifiable.
 @z
 
 @x

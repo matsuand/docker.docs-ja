@@ -6,10 +6,10 @@
 
 @x
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @y
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @z
 
 @x
@@ -77,9 +77,9 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
 @z
 
 @x
-### Step 1: Generate Docker Hub Credentials and Set GitHub Secrets"
+### Step 1: Generate Docker Hub credentials and set GitHub secrets
 @y
-### Step 1: Generate Docker Hub Credentials and Set GitHub Secrets"
+### Step 1: Generate Docker Hub credentials and set GitHub secrets
 @z
 
 @x

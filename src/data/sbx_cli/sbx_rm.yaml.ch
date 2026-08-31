@@ -22,49 +22,51 @@ description: |-
 @z
 
 @x
-    Use --all to remove every sandbox (requires confirmation).
-    Use --force to skip confirmation prompts (for non-interactive scripts).
+    Removal requires confirmation; use --force to skip confirmation prompts
+    (for non-interactive scripts). Use --all to remove every sandbox.
+@y
+    Removal requires confirmation; use --force to skip confirmation prompts
+    (for non-interactive scripts). Use --all to remove every sandbox.
+@z
+
+@x
 usage: sbx rm [SANDBOX...] [flags]
-options:
-    - name: all
-      default_value: "false"
+@y
+usage: sbx rm [SANDBOX...] [flags]
+@z
+
+% options:
+
+@x all
       usage: Remove all sandboxes
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+      usage: Remove all sandboxes
+@z
+
+@x force
       usage: Skip confirmation prompts
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Skip confirmation prompts
+@z
+
+@x help
       usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for rm
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
     - sbx - Manage AI coding agent sandboxes.
 @y
-    Use --all to remove every sandbox (requires confirmation).
-    Use --force to skip confirmation prompts (for non-interactive scripts).
-usage: sbx rm [SANDBOX...] [flags]
-options:
-    - name: all
-      default_value: "false"
-      usage: Remove all sandboxes
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Skip confirmation prompts
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
     - sbx - Manage AI coding agent sandboxes.
 @z

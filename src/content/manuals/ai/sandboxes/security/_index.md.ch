@@ -18,12 +18,6 @@ keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 Docker Sandboxes run AI agents in microVMs so they can execute code, install
 packages, and use tools without accessing your host system. Multiple isolation
 layers protect your host system.
@@ -56,17 +50,19 @@ What crosses the boundary into the VM:
 @z
 
 @x
-- **Workspace directory:** mounted into the VM with read-write access. With
-  the default direct mount, changes the agent makes appear on your host
-  immediately.
+- **Workspace directory:** mounted into the VM. The default direct mount is
+  read-write — the agent edits your working tree in place. With
+  [`--clone`](../usage.md#clone-mode), your repository is mounted read-only
+  and the agent works on a private clone.
 - **Credentials:** the host-side proxy injects authentication headers into
   outbound HTTP requests. The raw credential values never enter the VM.
 - **Network access:** HTTP and HTTPS requests to
   [allowed domains](defaults/) are proxied through the host.
 @y
-- **Workspace directory:** mounted into the VM with read-write access. With
-  the default direct mount, changes the agent makes appear on your host
-  immediately.
+- **Workspace directory:** mounted into the VM. The default direct mount is
+  read-write — the agent edits your working tree in place. With
+  [`--clone`](../usage.md#clone-mode), your repository is mounted read-only
+  and the agent works on a private clone.
 - **Credentials:** the host-side proxy injects authentication headers into
   outbound HTTP requests. The raw credential values never enter the VM.
 - **Network access:** HTTP and HTTPS requests to
@@ -114,10 +110,10 @@ and ICMP are blocked at the network layer.
 @z
 
 @x
-The sandbox security model has four layers. See
+The sandbox security model has five layers. See
 [Isolation layers](isolation/) for technical details on each.
 @y
-The sandbox security model has four layers. See
+The sandbox security model has five layers. See
 [Isolation layers](isolation/) for technical details on each.
 @z
 
@@ -128,6 +124,10 @@ The sandbox security model has four layers. See
   [Deny-by-default policy](defaults/). Non-HTTP protocols blocked entirely.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
+- **Workspace isolation** (opt-in via `--clone`): the agent works on a
+  private in-VM clone and your repository is mounted read-only. The default
+  direct mode applies no workspace boundary — the agent edits your working
+  tree in place.
 - **Credential isolation:** API keys are injected into HTTP headers by the
   host-side proxy. Credential values never enter the VM.
 @y
@@ -137,6 +137,10 @@ The sandbox security model has four layers. See
   [Deny-by-default policy](defaults/). Non-HTTP protocols blocked entirely.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
+- **Workspace isolation** (opt-in via `--clone`): the agent works on a
+  private in-VM clone and your repository is mounted read-only. The default
+  direct mode applies no workspace boundary — the agent edits your working
+  tree in place.
 - **Credential isolation:** API keys are injected into HTTP headers by the
   host-side proxy. Credential values never enter the VM.
 @z
@@ -176,33 +180,67 @@ can still affect you through the shared workspace and allowed network channels.
 @z
 
 @x
-**Workspace changes are live on your host.** The agent edits the same files you
-see on your host. This includes files that execute implicitly during normal
-development: Git hooks, CI configuration, IDE task configs, `Makefile`,
-`package.json` scripts, and similar build files. Review changes before running
-any modified code. Note that Git hooks live inside `.git/` and do not appear in
-`git diff` output. Check them separately.
-See [Workspace trust](workspace/).
+In direct mode, workspace changes are live on your host. With the default
+direct mount, the agent edits the same files you see on your host. This
+includes files that execute implicitly during normal development: Git hooks,
+CI configuration, IDE task configs, `Makefile`, `package.json` scripts, and
+similar build files. Review changes before running any modified code. Note
+that Git hooks live inside `.git/` and do not appear in `git diff` output —
+check them separately. See
+[Workspace isolation](isolation/#workspace-isolation) for the full list and
+for the alternative clone-mode boundary.
 @y
-**Workspace changes are live on your host.** The agent edits the same files you
-see on your host. This includes files that execute implicitly during normal
-development: Git hooks, CI configuration, IDE task configs, `Makefile`,
-`package.json` scripts, and similar build files. Review changes before running
-any modified code. Note that Git hooks live inside `.git/` and do not appear in
-`git diff` output. Check them separately.
-See [Workspace trust](workspace/).
+In direct mode, workspace changes are live on your host. With the default
+direct mount, the agent edits the same files you see on your host. This
+includes files that execute implicitly during normal development: Git hooks,
+CI configuration, IDE task configs, `Makefile`, `package.json` scripts, and
+similar build files. Review changes before running any modified code. Note
+that Git hooks live inside `.git/` and do not appear in `git diff` output —
+check them separately. See
+[Workspace isolation](isolation/#workspace-isolation) for the full list and
+for the alternative clone-mode boundary.
 @z
 
 @x
-**Default allowed domains include broad wildcards.** Some defaults like
+The default allowed domains include broad wildcards. Some defaults like
 `*.googleapis.com` cover many services beyond AI APIs. Run `sbx policy ls` to
 see the full list of active rules, and remove entries you don't need. See
 [Default security posture](defaults/).
 @y
-**Default allowed domains include broad wildcards.** Some defaults like
+The default allowed domains include broad wildcards. Some defaults like
 `*.googleapis.com` cover many services beyond AI APIs. Run `sbx policy ls` to
 see the full list of active rules, and remove entries you don't need. See
 [Default security posture](defaults/).
+@z
+
+@x
+## Organization-wide control
+@y
+## Organization-wide control
+@z
+
+@x
+On a single developer's machine, network and filesystem policies are
+configured locally with `sbx policy`. Admins can also centrally define those
+policies in the Docker Admin Console. When organization governance is active,
+the centrally defined rules apply uniformly across every sandbox in the
+organization and take precedence over local rules. Admins can optionally
+delegate specific rule types back to local control so developers can add
+additional allow rules.
+@y
+On a single developer's machine, network and filesystem policies are
+configured locally with `sbx policy`. Admins can also centrally define those
+policies in the Docker Admin Console. When organization governance is active,
+the centrally defined rules apply uniformly across every sandbox in the
+organization and take precedence over local rules. Admins can optionally
+delegate specific rule types back to local control so developers can add
+additional allow rules.
+@z
+
+@x
+See [Organization governance](governance/) for details.
+@y
+See [Organization governance](governance/) for details.
 @z
 
 @x
@@ -212,19 +250,21 @@ see the full list of active rules, and remove entries you don't need. See
 @z
 
 @x
-- [Isolation layers](isolation/): how hypervisor, network, Docker, and
-  credential isolation work
+- [Isolation layers](isolation/): how hypervisor, network, Docker,
+  workspace, and credential isolation work
 - [Default security posture](defaults/): what a fresh sandbox permits and
   blocks
 - [Credentials](credentials/): how to provide and manage API keys
 - [Policies](policy/): how to customize network access rules
-- [Workspace trust](workspace/): what to review after an agent session
+- [Organization governance](governance/): centrally manage policies across
+  an organization
 @y
-- [Isolation layers](isolation/): how hypervisor, network, Docker, and
-  credential isolation work
+- [Isolation layers](isolation/): how hypervisor, network, Docker,
+  workspace, and credential isolation work
 - [Default security posture](defaults/): what a fresh sandbox permits and
   blocks
 - [Credentials](credentials/): how to provide and manage API keys
 - [Policies](policy/): how to customize network access rules
-- [Workspace trust](workspace/): what to review after an agent session
+- [Organization governance](governance/): centrally manage policies across
+  an organization
 @z

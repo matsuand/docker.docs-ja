@@ -1,4 +1,4 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = css icons images js theme
+SUBDIRS = css icons images js

@@ -5,7 +5,6 @@
 copyfiles = \
 	build-ui-jaeger-screenshot.png \
 	console.png                    \
-	dashboard.webp                 \
 	hyperv-enabled.png             \
 	resource-saver-settings.webp   \
 	virtualization-enabled.png     \

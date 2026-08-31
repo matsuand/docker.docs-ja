@@ -24,24 +24,24 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @x
   - title: Get started with MCP Toolkit
     description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
-    icon: explore
+    icon: magnifying-glass-plus
     link: /ai/mcp-catalog-and-toolkit/get-started/
 @y
   - title: Get started with MCP Toolkit
     description: Learn how to quickly install and use the MCP Toolkit to set up servers and clients.
-    icon: explore
+    icon: magnifying-glass-plus
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/get-started/
 @z
 
 @x
   - title: MCP Catalog
     description: Browse Docker's curated collection of verified MCP servers
-    icon: hub
+    icon: globe-alt
     link: /ai/mcp-catalog-and-toolkit/catalog/
 @y
   - title: MCP Catalog
     description: Browse Docker's curated collection of verified MCP servers
-    icon: hub
+    icon: globe-alt
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/catalog/
 @z
 
@@ -72,48 +72,48 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @x
   - title: MCP Gateway
     description: Use the CLI and Gateway to run MCP servers with custom configurations
-    icon: developer_board
+    icon: cpu-chip
     link: /ai/mcp-catalog-and-toolkit/mcp-gateway/
 @y
   - title: MCP Gateway
     description: Use the CLI and Gateway to run MCP servers with custom configurations
-    icon: developer_board
+    icon: cpu-chip
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/mcp-gateway/
 @z
 
 @x
   - title: Dynamic MCP
     description: Discover and add MCP servers on-demand using natural language
-    icon: search
+    icon: magnifying-glass
     link: /ai/mcp-catalog-and-toolkit/dynamic-mcp/
 @y
   - title: Dynamic MCP
     description: Discover and add MCP servers on-demand using natural language
-    icon: search
+    icon: magnifying-glass
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/dynamic-mcp/
 @z
 
 @x
   - title: Docker Hub MCP server
     description: Use the Docker Hub MCP server to search images and manage repositories
-    icon: device_hub
+    icon: server-stack
     link: /ai/mcp-catalog-and-toolkit/hub-mcp/
 @y
   - title: Docker Hub MCP server
     description: Use the Docker Hub MCP server to search images and manage repositories
-    icon: device_hub
+    icon: server-stack
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/hub-mcp/
 @z
 
 @x
   - title: Security FAQs
     description: Common questions about MCP security, credentials, and server verification
-    icon: security
+    icon: shield-check
     link: /ai/mcp-catalog-and-toolkit/faqs/
 @y
   - title: Security FAQs
     description: Common questions about MCP security, credentials, and server verification
-    icon: security
+    icon: shield-check
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/faqs/
 @z
 

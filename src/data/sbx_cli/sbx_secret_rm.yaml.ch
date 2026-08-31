@@ -4,50 +4,52 @@
 @x
 name: sbx secret rm
 synopsis: Remove a secret
-usage: sbx secret rm [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Delete without confirmation prompt
-    - name: global
-      shorthand: g
-      default_value: "false"
-      usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Remove a global secret
-      sbx secret rm -g github
+usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
 @y
 name: sbx secret rm
 synopsis: Remove a secret
-usage: sbx secret rm [-g | sandbox] [service] [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
+usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
+@z
+
+% options:
+
+@x force
       usage: Delete without confirmation prompt
-    - name: global
-      shorthand: g
-      default_value: "false"
+@y
+      usage: Delete without confirmation prompt
+@z
+
+@x global
       usage: Use global secret scope
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Use global secret scope
+@z
+
+@x help
       usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for rm
+@z
+
+@x registry
+      usage: Registry hostname to remove pull credentials for
+@y
+      usage: Registry hostname to remove pull credentials for
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Remove a global secret
+      sbx secret rm -g github
+@y
 example: |4-
       # Remove a global secret
       sbx secret rm -g github
@@ -73,12 +75,32 @@ example: |4-
       # Remove OpenAI or Anthropic credential(s) from global scope (OAuth and/or API key)
       sbx secret rm -g openai
       sbx secret rm -g anthropic
-see_also:
-    - sbx secret - Manage stored secrets
 @y
       # Remove OpenAI or Anthropic credential(s) from global scope (OAuth and/or API key)
       sbx secret rm -g openai
       sbx secret rm -g anthropic
-see_also:
+@z
+
+@x
+      # Remove registry pull credentials (removes host-only and global entries)
+      sbx secret rm --registry ghcr.io -f
+@y
+      # Remove registry pull credentials (removes host-only and global entries)
+      sbx secret rm --registry ghcr.io -f
+@z
+
+@x
+      # Remove only the global (all-sandboxes) registry credential
+      sbx secret rm -g --registry ghcr.io -f
+@y
+      # Remove only the global (all-sandboxes) registry credential
+      sbx secret rm -g --registry ghcr.io -f
+@z
+
+% see_also:
+
+@x
+    - sbx secret - Manage stored secrets
+@y
     - sbx secret - Manage stored secrets
 @z

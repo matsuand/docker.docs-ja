@@ -194,12 +194,18 @@ Engine image store. You can push them to a container registry directly with
 
 @x
 If you're using Docker Engine standalone and you need to build multi-platform
-images using emulation, you also need to install QEMU, see [Install QEMU
-manually](#install-qemu-manually).
+images using emulation, official BuildKit releases bundle QEMU user-mode
+emulators, so in most cases you don't need to install QEMU manually. See
+[Install QEMU manually](#install-qemu-manually) if emulation fails, for
+example with a third-party BuildKit package that doesn't ship the bundled
+emulators.
 @y
 If you're using Docker Engine standalone and you need to build multi-platform
-images using emulation, you also need to install QEMU, see [Install QEMU
-manually](#install-qemu-manually).
+images using emulation, official BuildKit releases bundle QEMU user-mode
+emulators, so in most cases you don't need to install QEMU manually. See
+[Install QEMU manually](#install-qemu-manually) if emulation fails, for
+example with a third-party BuildKit package that doesn't ship the bundled
+emulators.
 @z
 
 @x
@@ -295,15 +301,15 @@ QEMU that's bundled within the Docker Desktop VM.
 @z
 
 @x
-If you're using a builder outside of Docker Desktop, such as if you're using
-Docker Engine on Linux, or a custom remote builder, you need to install QEMU
-and register the executable types on the host OS. The prerequisites for
-installing QEMU are:
+If the QEMU emulators bundled with BuildKit don't work for your build, for
+example with a third-party BuildKit package that doesn't ship them, you can
+install QEMU and register the executable types on the host OS. The
+prerequisites for installing QEMU are:
 @y
-If you're using a builder outside of Docker Desktop, such as if you're using
-Docker Engine on Linux, or a custom remote builder, you need to install QEMU
-and register the executable types on the host OS. The prerequisites for
-installing QEMU are:
+If the QEMU emulators bundled with BuildKit don't work for your build, for
+example with a third-party BuildKit package that doesn't ship them, you can
+install QEMU and register the executable types on the host OS. The
+prerequisites for installing QEMU are:
 @z
 
 @x

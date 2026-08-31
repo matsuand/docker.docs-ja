@@ -52,25 +52,25 @@ In this guide, you will:
 @z
 
 @x
-## Understanding RAG 
+## Understanding RAG
 @y
-## Understanding RAG 
+## Understanding RAG
 @z
 
 @x
-RAG is a hybrid framework that enhances the capabilities of large language models by integrating information retrieval. It combines three core components:  
+RAG is a hybrid framework that enhances the capabilities of large language models by integrating information retrieval. It combines three core components:
 @y
-RAG is a hybrid framework that enhances the capabilities of large language models by integrating information retrieval. It combines three core components:  
+RAG is a hybrid framework that enhances the capabilities of large language models by integrating information retrieval. It combines three core components:
 @z
 
 @x
-- **Information retrieval** from an external knowledge base  
-- **Large Language Model (LLM)** for generating responses  
-- **Vector embeddings** to enable semantic search  
+- **Information retrieval** from an external knowledge base
+- **Large Language Model (LLM)** for generating responses
+- **Vector embeddings** to enable semantic search
 @y
-- **Information retrieval** from an external knowledge base  
-- **Large Language Model (LLM)** for generating responses  
-- **Vector embeddings** to enable semantic search  
+- **Information retrieval** from an external knowledge base
+- **Large Language Model (LLM)** for generating responses
+- **Vector embeddings** to enable semantic search
 @z
 
 @x
@@ -92,15 +92,15 @@ The system operates as follows:
 @z
 
 @x
-To hold this vector information in an efficient manner, we need a special type of database.
+To hold this vector information in an efficient manner, you need a special type of database.
 @y
-To hold this vector information in an efficient manner, we need a special type of database.
+To hold this vector information in an efficient manner, you need a special type of database.
 @z
 
 @x
-## Introduction to Graph databases 
+## Introduction to Graph databases
 @y
-## Introduction to Graph databases 
+## Introduction to Graph databases
 @z
 
 @x
@@ -168,9 +168,9 @@ I'm happy to help! Unfortunately, I'm a large language model, I don't have acces
 @z
 
 @x
-## Setting up GenAI stack with GPU acceleration on Linux 
+## Setting up GenAI stack with GPU acceleration on Linux
 @y
-## Setting up GenAI stack with GPU acceleration on Linux 
+## Setting up GenAI stack with GPU acceleration on Linux
 @z
 
 @x
@@ -204,15 +204,19 @@ In the `.env` file, make sure following lines are commented out. Set your own cr
 @z
 
 @x
+  ```txt
     NEO4J_URI=neo4j://database:7687
     NEO4J_USERNAME=neo4j
     NEO4J_PASSWORD=password
     OLLAMA_BASE_URL=http://llm-gpu:11434
+  ```
 @y
+  ```txt
     NEO4J_URI=neo4j://database:7687
     NEO4J_USERNAME=neo4j
     NEO4J_PASSWORD=password
     OLLAMA_BASE_URL=http://llm-gpu:11434
+  ```
 @z
 
 @x
@@ -240,27 +244,31 @@ In the `.env` file, make sure following lines are commented out. Set your own cr
 @z
 
 @x
+  ```txt
     NEO4J_URI=neo4j://database:7687
     NEO4J_USERNAME=neo4j
     NEO4J_PASSWORD=password
     OLLAMA_BASE_URL=http://llm:11434
+  ```
 @y
+  ```txt
     NEO4J_URI=neo4j://database:7687
     NEO4J_USERNAME=neo4j
     NEO4J_PASSWORD=password
     OLLAMA_BASE_URL=http://llm:11434
+  ```
 @z
 
 @x
-### Setting up on other platforms 
+### Setting up on other platforms
 @y
-### Setting up on other platforms 
+### Setting up on other platforms
 @z
 
 @x
-For instructions on how to set up the stack on other platforms, refer to [this page](https://github.com/docker/genai-stack). 
+For instructions on how to set up the stack on other platforms, refer to [this page](https://github.com/docker/genai-stack).
 @y
-For instructions on how to set up the stack on other platforms, refer to [this page](https://github.com/docker/genai-stack). 
+For instructions on how to set up the stack on other platforms, refer to [this page](https://github.com/docker/genai-stack).
 @z
 
 @x
@@ -282,9 +290,9 @@ The first startup may take some time because the system needs to download a larg
 @z
 
 @x
-We can monitor the download and initialization progress by viewing the logs. Run the following command to view the logs:
+You can monitor the download and initialization progress by viewing the logs. Run the following command to view the logs:
 @y
-We can monitor the download and initialization progress by viewing the logs. Run the following command to view the logs:
+You can monitor the download and initialization progress by viewing the logs. Run the following command to view the logs:
 @z
 
 @x
@@ -304,17 +312,21 @@ Wait for specific lines in the logs indicating that the download is complete and
 @z
 
 @x
+  ```text
     pull-model-1 exited with code 0
     database-1    | 2024-12-29 09:35:53.269+0000 INFO  Started.
     pdf_bot-1     |   You can now view your Streamlit app in your browser.
     loader-1      |   You can now view your Streamlit app in your browser.
     bot-1         |   You can now view your Streamlit app in your browser.
+  ```
 @y
+  ```text
     pull-model-1 exited with code 0
     database-1    | 2024-12-29 09:35:53.269+0000 INFO  Started.
     pdf_bot-1     |   You can now view your Streamlit app in your browser.
     loader-1      |   You can now view your Streamlit app in your browser.
     bot-1         |   You can now view your Streamlit app in your browser.
+  ```
 @z
 
 @x
@@ -324,45 +336,45 @@ You can now access the interface at [http://localhost:8501/](http://localhost:85
 @z
 
 @x
-When we see those lines in the logs, web apps are ready to be used.
+When those lines appear in the logs, the web apps are ready to use.
 @y
-When we see those lines in the logs, web apps are ready to be used.
+When those lines appear in the logs, the web apps are ready to use.
 @z
 
 @x
-Since our goal is to teach AI about things it does not yet know, we begin by asking it a simple question about Nifi at 
+Since the goal is to teach AI about things it does not yet know, begin by asking it a simple question about NiFi at
 [http://localhost:8501/](http://localhost:8501/).
 ![alt text](image.png)
 @y
-Since our goal is to teach AI about things it does not yet know, we begin by asking it a simple question about Nifi at 
+Since the goal is to teach AI about things it does not yet know, begin by asking it a simple question about NiFi at
 [http://localhost:8501/](http://localhost:8501/).
 ![alt text](image.png)
 @z
 
 @x
 ```text
-Question: What is Apache Nifi? 
+Question: What is Apache Nifi?
 RAG: Disabled
 Hello! I'm here to help you with your question about Apache NiFi. Unfortunately, I don't know the answer to that question. I'm just an AI and my knowledge cutoff is December 2022, so I may not be familiar with the latest technologies or software. Can you please provide more context or details about Apache NiFi? Maybe there's something I can help you with related to it.
 ```
 @y
 ```text
-Question: What is Apache Nifi? 
+Question: What is Apache Nifi?
 RAG: Disabled
 Hello! I'm here to help you with your question about Apache NiFi. Unfortunately, I don't know the answer to that question. I'm just an AI and my knowledge cutoff is December 2022, so I may not be familiar with the latest technologies or software. Can you please provide more context or details about Apache NiFi? Maybe there's something I can help you with related to it.
 ```
 @z
 
 @x
-As we can see, AI does not know anything about this subject because it did not exist during the time of its training, also known as the information cutoff point.
+As shown, the AI does not know anything about this subject because it did not exist during the time of its training, also known as the information cutoff point.
 @y
-As we can see, AI does not know anything about this subject because it did not exist during the time of its training, also known as the information cutoff point.
+As shown, the AI does not know anything about this subject because it did not exist during the time of its training, also known as the information cutoff point.
 @z
 
 @x
-Now it's time to teach the AI some new tricks. First, connect to [http://localhost:8502/](http://localhost:8502/). Instead of using the "neo4j" tag, change it to the "apache-nifi" tag, then select the **Import** button. 
+Now it's time to teach the AI some new tricks. First, connect to [http://localhost:8502/](http://localhost:8502/). Instead of using the "neo4j" tag, change it to the "apache-nifi" tag, then select the **Import** button.
 @y
-Now it's time to teach the AI some new tricks. First, connect to [http://localhost:8502/](http://localhost:8502/). Instead of using the "neo4j" tag, change it to the "apache-nifi" tag, then select the **Import** button. 
+Now it's time to teach the AI some new tricks. First, connect to [http://localhost:8502/](http://localhost:8502/). Instead of using the "neo4j" tag, change it to the "apache-nifi" tag, then select the **Import** button.
 @z
 
 @x
@@ -372,9 +384,9 @@ Now it's time to teach the AI some new tricks. First, connect to [http://localho
 @z
 
 @x
-After the import is successful, we can access Neo4j to verify the data. 
+After the import is successful, you can access Neo4j to verify the data.
 @y
-After the import is successful, we can access Neo4j to verify the data. 
+After the import is successful, you can access Neo4j to verify the data.
 @z
 
 @x
@@ -416,9 +428,9 @@ To execute this query, write in the box on the top and select the blue run butto
 @z
 
 @x
-Results will appear below. What we are seeing here is the information system downloaded from Stack Overflow and saved in the graph database. RAG will utilize this information to enhance its responses.
+Results will appear below. The information shown is downloaded from Stack Overflow and saved in the graph database. RAG will utilize this information to enhance its responses.
 @y
-Results will appear below. What we are seeing here is the information system downloaded from Stack Overflow and saved in the graph database. RAG will utilize this information to enhance its responses.
+Results will appear below. The information shown is downloaded from Stack Overflow and saved in the graph database. RAG will utilize this information to enhance its responses.
 @z
 
 @x
@@ -454,9 +466,9 @@ CALL db.relationshipTypes()
 @z
 
 @x
-Now, we are ready to enable our LLM to use this information. Go back to [http://localhost:8501/](http://localhost:8501/), enable the **RAG** checkbox, and ask the same question again. The LLM will now provide a more detailed answer.
+You're ready to enable the LLM to use this information. Go back to [http://localhost:8501/](http://localhost:8501/), enable the **RAG** checkbox, and ask the same question again. The LLM will provide a more detailed answer.
 @y
-Now, we are ready to enable our LLM to use this information. Go back to [http://localhost:8501/](http://localhost:8501/), enable the **RAG** checkbox, and ask the same question again. The LLM will now provide a more detailed answer.
+You're ready to enable the LLM to use this information. Go back to [http://localhost:8501/](http://localhost:8501/), enable the **RAG** checkbox, and ask the same question again. The LLM will provide a more detailed answer.
 @z
 
 @x
@@ -468,12 +480,12 @@ Now, we are ready to enable our LLM to use this information. Go back to [http://
 @x
 The system delivers comprehensive, accurate information by pulling from current technical documentation.
 ```text
-Question: What is Apache Nifi? 
+Question: What is Apache Nifi?
 RAG: Enabled
 @y
 The system delivers comprehensive, accurate information by pulling from current technical documentation.
 ```text
-Question: What is Apache Nifi? 
+Question: What is Apache Nifi?
 RAG: Enabled
 @z
 
@@ -540,9 +552,9 @@ For optimal results, choose a tag that the LLM is not familiar with.
 @z
 
 @x
-Retrieval-Augmented Generation (RAG) is particularly effective in scenarios where standard Large Language Models (LLMs) fall short. The three key areas where RAG excels are knowledge limitations, business requirements, and cost efficiency. Below, we explore these aspects in more detail.
+Retrieval-Augmented Generation (RAG) is particularly effective in scenarios where standard Large Language Models (LLMs) fall short. The three key areas where RAG excels are knowledge limitations, business requirements, and cost efficiency. The following sections explore these aspects in more detail.
 @y
-Retrieval-Augmented Generation (RAG) is particularly effective in scenarios where standard Large Language Models (LLMs) fall short. The three key areas where RAG excels are knowledge limitations, business requirements, and cost efficiency. Below, we explore these aspects in more detail.
+Retrieval-Augmented Generation (RAG) is particularly effective in scenarios where standard Large Language Models (LLMs) fall short. The three key areas where RAG excels are knowledge limitations, business requirements, and cost efficiency. The following sections explore these aspects in more detail.
 @z
 
 @x

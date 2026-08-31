@@ -61,12 +61,10 @@ Amazon S3 cache:
 
 @x
 Gordon:
-  availability: Beta
-  requires: Docker Desktop [4.61.0](/manuals/desktop/release-notes.md#4610) or later
+  requires: Docker Desktop [4.74.0](/manuals/desktop/release-notes.md#4740) or later
 @y
 Gordon:
-  availability: ベータ
-  requires: Docker Desktop [4.61.0](manuals/desktop/release-notes.md#4610) およびそれ以降
+  requires: Docker Desktop [4.74.0](manuals/desktop/release-notes.md#4740) およびそれ以降
 @z
 
 @x
@@ -272,14 +270,6 @@ Cache backend API:
   availability: Experimental
 @y
 Cache backend API:
-  availability: 試験的
-@z
-
-@x
-Docker Agent:
-  availability: Experimental
-@y
-Docker Agent:
   availability: 試験的
 @z
 

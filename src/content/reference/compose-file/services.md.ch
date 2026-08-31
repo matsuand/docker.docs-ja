@@ -1406,6 +1406,12 @@ defined with a required `service` and an optional `file` key.
 @z
 
 @x
+`extends` is not supported when deploying with `docker stack deploy`.
+@y
+`extends` is not supported when deploying with `docker stack deploy`.
+@z
+
+@x
 #### Restrictions
 @y
 #### 制約 {#restrictions}
@@ -3256,21 +3262,19 @@ the service's containers.
 @z
 
 @x
-Note that support for `uid`, `gid`, and `mode` attributes are not implemented in Docker Compose when the source of the secret is a [`file`](secrets.md). This is because bind-mounts used under the hood don't allow uid remapping.
+Note that support for `uid`, `gid`, and `mode` attributes are only implemented in Docker Compose when the source of the secret is [`environment`](secrets.md). When the source is a [`file`](secrets.md), Compose uses a bind-mount under the hood which doesn't allow `uid` remapping, and these attributes are silently ignored.
 @y
-Note that support for `uid`, `gid`, and `mode` attributes are not implemented in Docker Compose when the source of the secret is a [`file`](secrets.md). This is because bind-mounts used under the hood don't allow uid remapping.
+Note that support for `uid`, `gid`, and `mode` attributes are only implemented in Docker Compose when the source of the secret is [`environment`](secrets.md). When the source is a [`file`](secrets.md), Compose uses a bind-mount under the hood which doesn't allow `uid` remapping, and these attributes are silently ignored.
 @z
 
 @x
-The following example sets the name of the `server-certificate` secret file to `server.cert`
-within the container, sets the mode to `0440` (group-readable), and sets the user and group
-to `103`. The value of `server-certificate` is set
-to the contents of the file `./server.cert`.
+The following example sets the name of the `my-token` secret file within the container,
+sets the mode to `0440` (group-readable), and sets the user and group to `103`.
+The value of `my-token` is read from the `MY_TOKEN` environment variable.
 @y
-The following example sets the name of the `server-certificate` secret file to `server.cert`
-within the container, sets the mode to `0440` (group-readable), and sets the user and group
-to `103`. The value of `server-certificate` is set
-to the contents of the file `./server.cert`.
+The following example sets the name of the `my-token` secret file within the container,
+sets the mode to `0440` (group-readable), and sets the user and group to `103`.
+The value of `my-token` is read from the `MY_TOKEN` environment variable.
 @z
 
 % snip code...

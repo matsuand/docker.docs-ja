@@ -82,28 +82,274 @@ The sample application is a basic hello world application and an application tha
 @z
 
 @x
-## Initialize Docker assets
+## Create Docker assets
 @y
-## Docker アセットの初期化 {#initialize-docker-assets}
+## Docker アセットの生成 {#create-docker-assets}
 @z
 
 @x
-Now that you have an application, you can use `docker init` to create the
-necessary Docker assets to containerize your application. Inside the
-`docker-php-sample` directory, run the `docker init` command in a terminal.
-`docker init` provides some default configuration, but you'll need to answer a
-few questions about your application. For example, this application uses PHP
-version 8.2. Refer to the following `docker init` example and use the same
-answers for your prompts.
+Now that you have an application, you can create the necessary Docker assets to
+containerize it.
 @y
-アプリケーションを入手できたので、アプリケーションのコンテナー化に向けて `docker init` を実行し、必要な Docker アセットを生成します。
-端末上から `docker-php-sample` ディレクトリに移動して `docker init` コマンドを実行します。
-`docker init` はデフォルトの設定を生成していくものであり、アプリケーションに対する質問が出されるのでこれに答えていきます。
-たとえばこのアプリケーションは PHP バージョン 8.2 を使っています。
-以下の例における `docker init` への回答プロンプトを参考にして、同様の回答を行ってください。
+Now that you have an application, you can create the necessary Docker assets to
+containerize it.
 @z
 
-% snip command...
+@x
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
+@y
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
+@z
+
+@x
+Create the following files in your `docker-php-sample` directory.
+@y
+Create the following files in your `docker-php-sample` directory.
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Dockerfile reference guide at
+# https://docs.docker.com/go/dockerfile-reference/
+@z
+@x
+# Create a stage for installing app dependencies defined in Composer.
+@y
+# Create a stage for installing app dependencies defined in Composer.
+@z
+@x
+# If your composer.json file defines scripts that run during dependency installation and
+# reference your application source files, uncomment the line below to copy all the files
+# into this layer.
+# COPY . .
+@y
+# If your composer.json file defines scripts that run during dependency installation and
+# reference your application source files, uncomment the line below to copy all the files
+# into this layer.
+# COPY . .
+@z
+@x
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a bind mounts to composer.json and composer.lock to avoid having to copy them
+# into this layer.
+# Leverage a cache mount to /tmp/cache so that subsequent builds don't have to re-download packages.
+@y
+# Download dependencies as a separate step to take advantage of Docker's caching.
+# Leverage a bind mounts to composer.json and composer.lock to avoid having to copy them
+# into this layer.
+# Leverage a cache mount to /tmp/cache so that subsequent builds don't have to re-download packages.
+@z
+@x
+# Create a new stage for running the application that contains the minimal
+# runtime dependencies for the application. This often uses a different base
+# image from the install or build stage where the necessary files are copied
+# from the install stage.
+#
+# The example below uses the PHP Apache image as the foundation for running the app.
+# By specifying the "8.2-apache" tag, it will also use whatever happens to be the
+# most recent version of that tag when you build your Dockerfile.
+# If reproducibility is important, consider using a specific digest SHA, like
+# php@sha256:99cede493dfd88720b610eb8077c8688d3cca50003d76d1d539b0efc8cca72b4.
+@y
+# Create a new stage for running the application that contains the minimal
+# runtime dependencies for the application. This often uses a different base
+# image from the install or build stage where the necessary files are copied
+# from the install stage.
+#
+# The example below uses the PHP Apache image as the foundation for running the app.
+# By specifying the "8.2-apache" tag, it will also use whatever happens to be the
+# most recent version of that tag when you build your Dockerfile.
+# If reproducibility is important, consider using a specific digest SHA, like
+# php@sha256:99cede493dfd88720b610eb8077c8688d3cca50003d76d1d539b0efc8cca72b4.
+@z
+
+@x
+# Your PHP application may require additional PHP extensions to be installed
+# manually. For detailed instructions for installing extensions can be found, see
+# https://github.com/docker-library/docs/tree/master/php#how-to-install-more-php-extensions
+# The following code blocks provide examples that you can edit and use.
+#
+# Add core PHP extensions, see
+# https://github.com/docker-library/docs/tree/master/php#php-core-extensions
+# This example adds the apt packages for the 'gd' extension's dependencies and then
+# installs the 'gd' extension. For additional tips on running apt-get, see
+# https://docs.docker.com/go/dockerfile-aptget-best-practices/
+# RUN apt-get update && apt-get install -y \
+#     libfreetype-dev \
+#     libjpeg62-turbo-dev \
+#     libpng-dev \
+# && rm -rf /var/lib/apt/lists/* \
+#     && docker-php-ext-configure gd --with-freetype --with-jpeg \
+#     && docker-php-ext-install -j$(nproc) gd
+#
+# Add PECL extensions, see
+# https://github.com/docker-library/docs/tree/master/php#pecl-extensions
+# This example adds the 'redis' and 'xdebug' extensions.
+# RUN pecl install redis-5.3.7 \
+#    && pecl install xdebug-3.2.1 \
+#    && docker-php-ext-enable redis xdebug
+@y
+# Your PHP application may require additional PHP extensions to be installed
+# manually. For detailed instructions for installing extensions can be found, see
+# https://github.com/docker-library/docs/tree/master/php#how-to-install-more-php-extensions
+# The following code blocks provide examples that you can edit and use.
+#
+# Add core PHP extensions, see
+# https://github.com/docker-library/docs/tree/master/php#php-core-extensions
+# This example adds the apt packages for the 'gd' extension's dependencies and then
+# installs the 'gd' extension. For additional tips on running apt-get, see
+# https://docs.docker.com/go/dockerfile-aptget-best-practices/
+# RUN apt-get update && apt-get install -y \
+#     libfreetype-dev \
+#     libjpeg62-turbo-dev \
+#     libpng-dev \
+# && rm -rf /var/lib/apt/lists/* \
+#     && docker-php-ext-configure gd --with-freetype --with-jpeg \
+#     && docker-php-ext-install -j$(nproc) gd
+#
+# Add PECL extensions, see
+# https://github.com/docker-library/docs/tree/master/php#pecl-extensions
+# This example adds the 'redis' and 'xdebug' extensions.
+# RUN pecl install redis-5.3.7 \
+#    && pecl install xdebug-3.2.1 \
+#    && docker-php-ext-enable redis xdebug
+@z
+@x
+# Use the default production configuration for PHP runtime arguments, see
+# https://github.com/docker-library/docs/tree/master/php#configuration
+@y
+# Use the default production configuration for PHP runtime arguments, see
+# https://github.com/docker-library/docs/tree/master/php#configuration
+@z
+@x
+# Copy the app dependencies from the previous install stage.
+@y
+# Copy the app dependencies from the previous install stage.
+@z
+@x
+# Copy the app files from the app directory.
+@y
+# Copy the app files from the app directory.
+@z
+@x
+# Switch to a non-privileged user (defined in the base image) that the app will run under.
+# See https://docs.docker.com/go/dockerfile-user-best-practices/
+@y
+# Switch to a non-privileged user (defined in the base image) that the app will run under.
+# See https://docs.docker.com/go/dockerfile-user-best-practices/
+@z
+
+@x within code
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+@y
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+@z
+@x
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@y
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+@z
+@x
+# The commented out section below is an example of how to define a PostgreSQL
+# database that your application can use. `depends_on` tells Docker Compose to
+# start the database before your application. The `db-data` volume persists the
+# database data between container restarts. The `db-password` secret is used
+# to set the database password. You must create `db/password.txt` and add
+# a password of your choosing to it before running `docker compose up`.
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#   db:
+#     image: postgres
+#     restart: always
+#     user: postgres
+#     secrets:
+#       - db-password
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_DB=example
+#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+#     expose:
+#       - 5432
+#     healthcheck:
+#       test: [ "CMD", "pg_isready" ]
+#       interval: 10s
+#       timeout: 5s
+#       retries: 5
+# volumes:
+#   db-data:
+# secrets:
+#   db-password:
+#     file: db/password.txt
+@y
+# The commented out section below is an example of how to define a PostgreSQL
+# database that your application can use. `depends_on` tells Docker Compose to
+# start the database before your application. The `db-data` volume persists the
+# database data between container restarts. The `db-password` secret is used
+# to set the database password. You must create `db/password.txt` and add
+# a password of your choosing to it before running `docker compose up`.
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#   db:
+#     image: postgres
+#     restart: always
+#     user: postgres
+#     secrets:
+#       - db-password
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_DB=example
+#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+#     expose:
+#       - 5432
+#     healthcheck:
+#       test: [ "CMD", "pg_isready" ]
+#       interval: 10s
+#       timeout: 5s
+#       retries: 5
+# volumes:
+#   db-data:
+# secrets:
+#   db-password:
+#     file: db/password.txt
+@z
+
+@x within code
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/go/build-context-dockerignore/
+@y
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/go/build-context-dockerignore/
+@z
 
 @x
 You should now have the following contents in your `docker-php-sample`
@@ -115,9 +361,9 @@ directory.
 % snip text...
 
 @x
-To learn more about the files that `docker init` added, see the following:
+To learn more about these files, see the following:
 @y
-`docker init` が追加した各ファイルについての詳細は以下を参照してください。
+各ファイルについての詳細は以下を参照してください。
 @z
 
 @x
@@ -209,18 +455,6 @@ In this section, you learned how you can containerize and run a simple PHP
 application using Docker.
 @y
 本節では Docker を使って、単純な PHP アプリケーションをコンテナー化して実行する方法について学びました。
-@z
-
-@x
-Related information:
-@y
-関連情報
-@z
-
-@x
-- [docker init reference](/reference/cli/docker/init/)
-@y
-- [docker init リファレンス](__SUBDIR__/reference/cli/docker/init/)
 @z
 
 @x

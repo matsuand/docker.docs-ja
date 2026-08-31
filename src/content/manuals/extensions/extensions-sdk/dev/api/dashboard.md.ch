@@ -226,11 +226,11 @@ For more details about method parameters and the return types available, see [De
 @z
 
 @x
-> Deprecated user notifications
+> Deprecated external URL opening
 >
 > This method is deprecated and will be removed in a future version. Use the methods specified above.
 @y
-> Deprecated user notifications
+> Deprecated external URL opening
 >
 > This method is deprecated and will be removed in a future version. Use the methods specified above.
 @z

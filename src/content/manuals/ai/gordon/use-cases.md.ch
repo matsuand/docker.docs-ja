@@ -18,58 +18,194 @@ description: Example prompts for common Docker workflows
 @z
 
 @x
-Gordon handles Docker workflows through natural conversation. This page shows
-example prompts for the most common use cases.
+Gordon handles Docker workflows through natural conversation. In Docker
+Desktop, Gordon is available from the sidebar for open-ended sessions and from
+contextual entry points in views like Containers, Images, Builds, and Volumes.
+Selecting Gordon from one of these views opens a conversation pre-loaded with
+context about the item you're looking at. You can ask the same questions from
+the CLI with `docker ai`.
 @y
-Gordon handles Docker workflows through natural conversation. This page shows
-example prompts for the most common use cases.
+Gordon handles Docker workflows through natural conversation. In Docker
+Desktop, Gordon is available from the sidebar for open-ended sessions and from
+contextual entry points in views like Containers, Images, Builds, and Volumes.
+Selecting Gordon from one of these views opens a conversation pre-loaded with
+context about the item you're looking at. You can ask the same questions from
+the CLI with `docker ai`.
 @z
 
 @x
-## Debug and troubleshoot
+## Debug a failing container
 @y
-## Debug and troubleshoot
+## Debug a failing container
 @z
 
 @x
-Fix broken containers, diagnose build failures, and resolve issues.
+You're in the Containers view and a container has crashed or behaves
+unexpectedly. Open Gordon from the container row to ask about that container's
+state and configuration:
 @y
-Fix broken containers, diagnose build failures, and resolve issues.
+You're in the Containers view and a container has crashed or behaves
+unexpectedly. Open Gordon from the container row to ask about that container's
+state and configuration:
+@z
+
+@x
+- "Why did this container exit?"
+- "What environment variables are set in this container?"
+- "How long did this container run?"
+- "What security settings are applied to this container?"
+@y
+- "Why did this container exit?"
+- "What environment variables are set in this container?"
+- "How long did this container run?"
+- "What security settings are applied to this container?"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
 @z
 
 @x
 ```console
-# Diagnose container crashes
-$ docker ai "why did my postgres container crash?"
-@y
-```console
-# Diagnose container crashes
-$ docker ai "why did my postgres container crash?"
-@z
-
-@x
-# Debug build failures
-$ docker ai "my build is failing at the pip install step, what's wrong?"
-@y
-# Debug build failures
-$ docker ai "my build is failing at the pip install step, what's wrong?"
-@z
-
-@x
-# Fix networking issues
-$ docker ai "my web container can't reach my database container"
-@y
-# Fix networking issues
-$ docker ai "my web container can't reach my database container"
-@z
-
-@x
-# Investigate performance problems
-$ docker ai "my container is using too much memory, help me investigate"
+$ docker ai "why is my postgres container crashing on startup?"
 ```
 @y
-# Investigate performance problems
-$ docker ai "my container is using too much memory, help me investigate"
+```console
+$ docker ai "why is my postgres container crashing on startup?"
+```
+@z
+
+@x
+## Debug a failed build
+@y
+## Debug a failed build
+@z
+
+@x
+You're in the Builds view looking at a build that failed or is slower than
+expected. Open Gordon from the build to inspect the Dockerfile, build
+arguments, and cache behavior:
+@y
+You're in the Builds view looking at a build that failed or is slower than
+expected. Open Gordon from the build to inspect the Dockerfile, build
+arguments, and cache behavior:
+@z
+
+@x
+- "Why did this build fail?"
+- "How can I improve cache usage for this build?"
+- "What Dockerfile instructions were used?"
+- "What build arguments were used?"
+@y
+- "Why did this build fail?"
+- "How can I improve cache usage for this build?"
+- "What Dockerfile instructions were used?"
+- "What build arguments were used?"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
+@z
+
+@x
+```console
+$ docker ai "my build is failing at the pip install step, what's wrong?"
+```
+@y
+```console
+$ docker ai "my build is failing at the pip install step, what's wrong?"
+```
+@z
+
+@x
+## Inspect an image
+@y
+## Inspect an image
+@z
+
+@x
+You're in the Images view and want to understand what's in an image before
+running it, or you want to size up a base image:
+@y
+You're in the Images view and want to understand what's in an image before
+running it, or you want to size up a base image:
+@z
+
+@x
+- "How do I run this image in the CLI?"
+- "What environment variables are configured?"
+- "What entrypoint is configured?"
+- "What's the base architecture of this image?"
+- "Is there a lighter version of this image?"
+@y
+- "How do I run this image in the CLI?"
+- "What environment variables are configured?"
+- "What entrypoint is configured?"
+- "What's the base architecture of this image?"
+- "Is there a lighter version of this image?"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
+@z
+
+@x
+```console
+$ docker ai "compare my python:3.12 image to python:3.12-slim"
+```
+@y
+```console
+$ docker ai "compare my python:3.12 image to python:3.12-slim"
+```
+@z
+
+@x
+## Manage volumes and resources
+@y
+## Manage volumes and resources
+@z
+
+@x
+From the Volumes view, ask Gordon about what's stored, which containers use a
+volume, or how to clean up. From any view, use the Gordon sidebar to inspect
+your wider environment:
+@y
+From the Volumes view, ask Gordon about what's stored, which containers use a
+volume, or how to clean up. From any view, use the Gordon sidebar to inspect
+your wider environment:
+@z
+
+@x
+- "Which containers are using this volume?"
+- "Show me all my containers and their status"
+- "How much disk space is Docker using?"
+- "List my images sorted by size"
+@y
+- "Which containers are using this volume?"
+- "Show me all my containers and their status"
+- "How much disk space is Docker using?"
+- "List my images sorted by size"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
+@z
+
+@x
+```console
+$ docker ai "clean up all unused Docker resources"
+```
+@y
+```console
+$ docker ai "clean up all unused Docker resources"
 ```
 @z
 
@@ -80,76 +216,40 @@ $ docker ai "my container is using too much memory, help me investigate"
 @z
 
 @x
-Create Docker assets for applications and migrate to hardened images.
+For new projects, start a conversation in the Gordon sidebar or via `docker
+ai` from your project directory. Gordon reads your working directory and
+proposes the right files:
 @y
-Create Docker assets for applications and migrate to hardened images.
+For new projects, start a conversation in the Gordon sidebar or via `docker
+ai` from your project directory. Gordon reads your working directory and
+proposes the right files:
+@z
+
+@x
+- "Containerize my Node.js app"
+- "Create a docker-compose for my stack"
+- "Set up a dev environment with Postgres and Redis"
+@y
+- "Containerize my Node.js app"
+- "Create a docker-compose for my stack"
+- "Set up a dev environment with Postgres and Redis"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
 @z
 
 @x
 ```console
-# Create Dockerfile from scratch
-$ docker ai "create a Dockerfile for my Node.js application"
-@y
-```console
-# Create Dockerfile from scratch
-$ docker ai "create a Dockerfile for my Node.js application"
-@z
-
-@x
-# Generate compose file
-$ docker ai "create a docker-compose.yml for my application stack"
-@y
-# Generate compose file
-$ docker ai "create a docker-compose.yml for my application stack"
-@z
-
-@x
-# Migrate to Docker Hardened Images
-$ docker ai "migrate my Dockerfile to use Docker Hardened Images"
+$ cd ~/my-project
+$ docker ai "create a Dockerfile for this application"
 ```
 @y
-# Migrate to Docker Hardened Images
-$ docker ai "migrate my Dockerfile to use Docker Hardened Images"
-```
-@z
-
-@x
-## Execute operations
-@y
-## Execute operations
-@z
-
-@x
-Run Docker commands to manage containers, images, and resources.
-@y
-Run Docker commands to manage containers, images, and resources.
-@z
-
-@x
 ```console
-# Start containers with configuration
-$ docker ai "run a redis container with persistence"
-@y
-```console
-# Start containers with configuration
-$ docker ai "run a redis container with persistence"
-@z
-
-@x
-# Build and tag images
-$ docker ai "build my Dockerfile and tag it for production"
-@y
-# Build and tag images
-$ docker ai "build my Dockerfile and tag it for production"
-@z
-
-@x
-# Clean up resources
-$ docker ai "clean up all unused Docker resources"
-```
-@y
-# Clean up resources
-$ docker ai "clean up all unused Docker resources"
+$ cd ~/my-project
+$ docker ai "create a Dockerfile for this application"
 ```
 @z
 
@@ -160,76 +260,38 @@ $ docker ai "clean up all unused Docker resources"
 @z
 
 @x
-Improve Dockerfiles and configure secure, efficient development environments.
+Ask Gordon to review and improve existing Dockerfiles or service definitions.
+You can start from the Images view (for an image you've already built) or from
+the Gordon sidebar with your project context:
 @y
-Improve Dockerfiles and configure secure, efficient development environments.
+Ask Gordon to review and improve existing Dockerfiles or service definitions.
+You can start from the Images view (for an image you've already built) or from
+the Gordon sidebar with your project context:
+@z
+
+@x
+- "Optimize this Dockerfile"
+- "Add a health check to my service"
+- "Make my Dockerfile more secure"
+@y
+- "Optimize this Dockerfile"
+- "Add a health check to my service"
+- "Make my Dockerfile more secure"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
 @z
 
 @x
 ```console
-# Optimize existing Dockerfile
 $ docker ai "rate my Dockerfile and suggest improvements"
+```
 @y
 ```console
-# Optimize existing Dockerfile
 $ docker ai "rate my Dockerfile and suggest improvements"
-@z
-
-@x
-# Add security improvements
-$ docker ai "make my Dockerfile more secure"
-@y
-# Add security improvements
-$ docker ai "make my Dockerfile more secure"
-@z
-
-@x
-# Configure development workflow
-$ docker ai "set up my container for development with hot reload"
-```
-@y
-# Configure development workflow
-$ docker ai "set up my container for development with hot reload"
-```
-@z
-
-@x
-## Manage resources
-@y
-## Manage resources
-@z
-
-@x
-Inspect containers, images, and resource usage.
-@y
-Inspect containers, images, and resource usage.
-@z
-
-@x
-```console
-# Check container status
-$ docker ai "show me all my containers and their status"
-@y
-```console
-# Check container status
-$ docker ai "show me all my containers and their status"
-@z
-
-@x
-# Analyze disk usage
-$ docker ai "how much disk space is Docker using?"
-@y
-# Analyze disk usage
-$ docker ai "how much disk space is Docker using?"
-@z
-
-@x
-# Review image details
-$ docker ai "list my images sorted by size"
-```
-@y
-# Review image details
-$ docker ai "list my images sorted by size"
 ```
 @z
 
@@ -240,36 +302,36 @@ $ docker ai "list my images sorted by size"
 @z
 
 @x
-Understand concepts and commands in the context of your projects.
+For conceptual questions, use the Gordon sidebar or CLI. Gordon explains
+concepts grounded in your environment, not generic answers:
 @y
-Understand concepts and commands in the context of your projects.
+For conceptual questions, use the Gordon sidebar or CLI. Gordon explains
+concepts grounded in your environment, not generic answers:
+@z
+
+@x
+- "What is a Docker volume?"
+- "Explain multi-stage builds"
+- "How does networking work in Docker?"
+@y
+- "What is a Docker volume?"
+- "Explain multi-stage builds"
+- "How does networking work in Docker?"
+@z
+
+@x
+From the CLI:
+@y
+From the CLI:
 @z
 
 @x
 ```console
-# Explain Docker concepts
-$ docker ai "explain how Docker networking works"
-@y
-```console
-# Explain Docker concepts
-$ docker ai "explain how Docker networking works"
-@z
-
-@x
-# Understand commands
-$ docker ai "what's the difference between COPY and ADD in Dockerfile?"
-@y
-# Understand commands
-$ docker ai "what's the difference between COPY and ADD in Dockerfile?"
-@z
-
-@x
-# Get troubleshooting guidance
-$ docker ai "how do I debug a container that exits immediately?"
+$ docker ai "what's the difference between COPY and ADD in a Dockerfile?"
 ```
 @y
-# Get troubleshooting guidance
-$ docker ai "how do I debug a container that exits immediately?"
+```console
+$ docker ai "what's the difference between COPY and ADD in a Dockerfile?"
 ```
 @z
 
@@ -281,22 +343,28 @@ $ docker ai "how do I debug a container that exits immediately?"
 
 @x
 Be specific:
+@y
+Be specific:
+@z
+
+@x
 - Include relevant context: "my postgres container" not "the database"
 - State your goal: "make my build faster" not "optimize"
 - Include error messages when debugging
 @y
-Be specific:
 - Include relevant context: "my postgres container" not "the database"
 - State your goal: "make my build faster" not "optimize"
 - Include error messages when debugging
 @z
 
 @x
-Gordon works best when you describe what you want to achieve rather than how to
-do it.
+Gordon works best when you describe what you want to achieve rather than how
+to do it. Gordon maintains context across a conversation, so you can follow up
+with clarifications or ask related questions without repeating yourself.
 @y
-Gordon works best when you describe what you want to achieve rather than how to
-do it.
+Gordon works best when you describe what you want to achieve rather than how
+to do it. Gordon maintains context across a conversation, so you can follow up
+with clarifications or ask related questions without repeating yourself.
 @z
 
 @x

@@ -5,6 +5,30 @@
 bases = \
 	CHANGELOG.md \
 	README.md    \
+	v1.0.md      \
+	v1.1.md      \
+	v1.2.md      \
+	v1.3.md      \
+	v1.4.md      \
+	v1.5.md      \
+	v1.6.md      \
+	v1.7.md      \
+	v1.8.md      \
+	v1.9.md      \
+	v1.10.md     \
+	v1.11.md     \
+	v1.12.md     \
+	v1.13.md     \
+	v1.14.md     \
+	v1.15.md     \
+	v1.16.md     \
+	v1.17.md     \
+	v1.18.md     \
+	v1.19.md     \
+	v1.20.md     \
+	v1.21.md     \
+	v1.22.md     \
+	v1.23.md     \
 	v1.24.md     \
 	v1.25.yaml   \
 	v1.26.yaml   \

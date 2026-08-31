@@ -41,16 +41,18 @@ A kit packages a set of capabilities a sandbox can use, such as:
 - Tools to install
 - Environment variables to set
 - Credentials to inject
-- Domains to allow
+- Network rules to allow or deny domains
 - Files to drop in
 - Startup commands to run
+- Memory instructions to give the agent
 @y
 - Tools to install
 - Environment variables to set
 - Credentials to inject
-- Domains to allow
+- Network rules to allow or deny domains
 - Files to drop in
 - Startup commands to run
+- Memory instructions to give the agent
 @z
 
 @x
@@ -58,13 +60,13 @@ You declare these in a single `spec.yaml` file, point the CLI at the
 directory (or a ZIP, OCI artifact, or Git URL), and the sandbox applies
 and enforces them at runtime. Credentials stay on the host and go through
 a proxy instead of entering the VM, and outbound traffic is restricted to
-the domains the kit allows.
+the domains permitted by the kit's network rules.
 @y
 You declare these in a single `spec.yaml` file, point the CLI at the
 directory (or a ZIP, OCI artifact, or Git URL), and the sandbox applies
 and enforces them at runtime. Credentials stay on the host and go through
 a proxy instead of entering the VM, and outbound traffic is restricted to
-the domains the kit allows.
+the domains permitted by the kit's network rules.
 @z
 
 @x
@@ -131,10 +133,12 @@ commands:
 
 @x
 Startup commands cover things like launching background services,
-warming caches, or refreshing config on each start:
+warming caches, or refreshing config on each start. They must be
+idempotent — see the [`startup`](#startup) spec reference:
 @y
 Startup commands cover things like launching background services,
-warming caches, or refreshing config on each start:
+warming caches, or refreshing config on each start. They must be
+idempotent — see the [`startup`](#startup) spec reference:
 @z
 
 @x
@@ -234,6 +238,30 @@ See [`initFiles`](#initfiles) in the spec reference for all fields.
 @z
 
 @x
+Sandboxes seed settings files for some built-in agents during setup.
+For example, the sandbox writes `/home/agent/.claude/settings.json`
+for the `claude` agent. This happens after the kit's static files and
+`initFiles`, so kit-injected files at those paths get overwritten.
+Workspace files (such as `<workspace>/.claude/settings.local.json`)
+aren't affected, and you can ship them under `files/workspace/` as
+usual. To override a path the sandbox writes to, use a
+[`commands.startup`](#startup) script instead. See
+[Override agent settings](kit-examples.md#override-agent-settings) for
+an example.
+@y
+Sandboxes seed settings files for some built-in agents during setup.
+For example, the sandbox writes `/home/agent/.claude/settings.json`
+for the `claude` agent. This happens after the kit's static files and
+`initFiles`, so kit-injected files at those paths get overwritten.
+Workspace files (such as `<workspace>/.claude/settings.local.json`)
+aren't affected, and you can ship them under `files/workspace/` as
+usual. To override a path the sandbox writes to, use a
+[`commands.startup`](#startup) script instead. See
+[Override agent settings](kit-examples.md#override-agent-settings) for
+an example.
+@z
+
+@x
 ### Set environment variables
 @y
 ### Set environment variables
@@ -280,9 +308,11 @@ be visible inside the sandbox VM.
 @z
 
 @x
-Network rules define which domains the sandbox can reach:
+Network rules define which domains the sandbox can reach or block. Kit
+network rules apply only to sandboxes that use the kit:
 @y
-Network rules define which domains the sandbox can reach:
+Network rules define which domains the sandbox can reach or block. Kit
+network rules apply only to sandboxes that use the kit:
 @z
 
 @x
@@ -291,6 +321,8 @@ network:
   allowedDomains:
     - api.example.com
     - "*.cdn.example.com"
+  deniedDomains:
+    - telemetry.example.com
 ```
 @y
 ```yaml
@@ -298,7 +330,21 @@ network:
   allowedDomains:
     - api.example.com
     - "*.cdn.example.com"
+  deniedDomains:
+    - telemetry.example.com
 ```
+@z
+
+@x
+Use `allowedDomains` for hosts the agent needs, such as package
+registries, install endpoints, or external APIs. Use `deniedDomains` for
+hosts the agent should not reach, such as telemetry endpoints. If a domain
+matches both an allow rule and a deny rule, the deny rule wins.
+@y
+Use `allowedDomains` for hosts the agent needs, such as package
+registries, install endpoints, or external APIs. Use `deniedDomains` for
+hosts the agent should not reach, such as telemetry endpoints. If a domain
+matches both an allow rule and a deny rule, the deny rule wins.
 @z
 
 @x
@@ -405,6 +451,88 @@ above doesn't fit, and what the proxy does at request time.
 See [Credentials](../security/credentials.md) for how to provide the
 credential value on your host, other approaches for cases the example
 above doesn't fit, and what the proxy does at request time.
+@z
+
+@x
+### Inject agent memory
+@y
+### Inject agent memory
+@z
+
+@x
+A kit can append content to the agent's memory file, such as `CLAUDE.md`
+or `AGENTS.md`. The agent reads this file at startup. Use it to give
+the agent project conventions, usage tips for a tool the kit installs,
+or other guidance that should be in scope when the sandbox runs.
+@y
+A kit can append content to the agent's memory file, such as `CLAUDE.md`
+or `AGENTS.md`. The agent reads this file at startup. Use it to give
+the agent project conventions, usage tips for a tool the kit installs,
+or other guidance that should be in scope when the sandbox runs.
+@z
+
+@x
+```yaml
+memory: |
+  Ruff is installed. Run `ruff check` before committing.
+  Shared config lives at `/workspace/ruff.toml`.
+```
+@y
+```yaml
+memory: |
+  Ruff is installed. Run `ruff check` before committing.
+  Shared config lives at `/workspace/ruff.toml`.
+```
+@z
+
+@x
+Both mixin and agent kits can declare `memory:`. The content is written
+only when the active agent kit sets [`agent.aiFilename`](#agent-block),
+which determines the memory file's name.
+@y
+Both mixin and agent kits can declare `memory:`. The content is written
+only when the active agent kit sets [`agent.aiFilename`](#agent-block),
+which determines the memory file's name.
+@z
+
+@x
+When more than one loaded kit declares a `memory:` block, each kit's
+content is written to its own `<kit-name>.md` file under a sibling
+`kits-memory/` directory. The main memory file gets a `## Kits` section
+that points to each kit file:
+@y
+When more than one loaded kit declares a `memory:` block, each kit's
+content is written to its own `<kit-name>.md` file under a sibling
+`kits-memory/` directory. The main memory file gets a `## Kits` section
+that points to each kit file:
+@z
+
+@x
+```text
+/Users/you/
+├── myproject/         # workspace
+├── AGENTS.md          # main memory file with a "## Kits" index
+└── kits-memory/
+    ├── ruff-lint.md
+    ├── vale.md
+    └── git-ssh-sign.md
+```
+@y
+```text
+/Users/you/
+├── myproject/         # workspace
+├── AGENTS.md          # main memory file with a "## Kits" index
+└── kits-memory/
+    ├── ruff-lint.md
+    ├── vale.md
+    └── git-ssh-sign.md
+```
+@z
+
+@x
+See [`memory`](#memory) in the spec reference for the full field schema.
+@y
+See [`memory`](#memory) in the spec reference for the full field schema.
 @z
 
 @x
@@ -879,16 +1007,30 @@ For Docker Hub, include the full `docker.io` prefix. See
 
 @x
 > [!IMPORTANT]
-> Private kits are only supported on Docker Hub. `sbx` reuses your
-> `sbx login` session to pull private artifacts from Docker Hub. Other
-> registries are pulled anonymously, so private kits hosted on
-> registries other than Docker Hub fail to pull.
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> kits. For other registries, store pull credentials with
+> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> before running the sandbox:
+>
+> ```console
+> $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+> ```
+>
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private kits fail to pull.
 @y
 > [!IMPORTANT]
-> Private kits are only supported on Docker Hub. `sbx` reuses your
-> `sbx login` session to pull private artifacts from Docker Hub. Other
-> registries are pulled anonymously, so private kits hosted on
-> registries other than Docker Hub fail to pull.
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> kits. For other registries, store pull credentials with
+> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> before running the sandbox:
+>
+> ```console
+> $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+> ```
+>
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private kits fail to pull.
 @z
 
 @x
@@ -933,6 +1075,20 @@ automatically.
 @y
 For Docker Hub, include the full `docker.io` prefix — `sbx` doesn't add it
 automatically.
+@z
+
+@x
+`sbx kit pull` prefers credentials stored with
+[`sbx secret set --registry`](../security/credentials.md#registry-credentials),
+falling back to the Docker credential store. `sbx kit push` only uses the
+Docker credential store, so pushing to a private registry requires a prior
+`docker login`.
+@y
+`sbx kit pull` prefers credentials stored with
+[`sbx secret set --registry`](../security/credentials.md#registry-credentials),
+falling back to the Docker credential store. `sbx kit push` only uses the
+Docker credential store, so pushing to a private registry requires a prior
+`docker login`.
 @z
 
 @x
@@ -1079,6 +1235,7 @@ Service identifiers link credentials to [network rules](#network).
 ```yaml
 network:
   allowedDomains: [<domain>, ...]
+  deniedDomains: [<domain>, ...]
   serviceDomains:
     <domain>: <service-id>
   serviceAuth:
@@ -1090,6 +1247,7 @@ network:
 ```yaml
 network:
   allowedDomains: [<domain>, ...]
+  deniedDomains: [<domain>, ...]
   serviceDomains:
     <domain>: <service-id>
   serviceAuth:
@@ -1103,6 +1261,7 @@ network:
 | Field                     | Description                                                      |
 | ------------------------- | ---------------------------------------------------------------- |
 | `allowedDomains`          | Domains the sandbox can reach. Wildcards supported.              |
+| `deniedDomains`           | Domains the sandbox can't reach. Deny rules take precedence.     |
 | `serviceDomains`          | Map of domain to service identifier from `credentials.sources`.  |
 | `serviceAuth.headerName`  | HTTP header the proxy sets (for example, `Authorization`).       |
 | `serviceAuth.valueFormat` | Format string for the header value (for example, `"Bearer %s"`). |
@@ -1110,6 +1269,7 @@ network:
 | Field                     | Description                                                      |
 | ------------------------- | ---------------------------------------------------------------- |
 | `allowedDomains`          | Domains the sandbox can reach. Wildcards supported.              |
+| `deniedDomains`           | Domains the sandbox can't reach. Deny rules take precedence.     |
 | `serviceDomains`          | Map of domain to service identifier from `credentials.sources`.  |
 | `serviceAuth.headerName`  | HTTP header the proxy sets (for example, `Authorization`).       |
 | `serviceAuth.valueFormat` | Format string for the header value (for example, `"Bearer %s"`). |
@@ -1276,6 +1436,22 @@ needs to land on disk before the agent runs.
 @z
 
 @x
+Startup commands must be idempotent. They run on every sandbox start
+and replay on container restarts, so a command that fails or
+misbehaves on a second invocation breaks the restart path. Guard
+work with existence checks, use upserts instead of inserts, and
+prefer commands that converge to the same end state regardless of
+how many times they run.
+@y
+Startup commands must be idempotent. They run on every sandbox start
+and replay on container restarts, so a command that fails or
+misbehaves on a second invocation breaks the restart path. Guard
+work with existence checks, use upserts instead of inserts, and
+prefer commands that converge to the same end state regardless of
+how many times they run.
+@z
+
+@x
 #### `initFiles`
 @y
 #### `initFiles`
@@ -1343,6 +1519,76 @@ rejected.
 Parent directories are created automatically. Existing files are
 overwritten. Absolute paths and path-traversal sequences (`../../`) are
 rejected.
+@z
+
+@x
+### Memory
+@y
+### Memory
+@z
+
+@x
+```yaml
+memory: |
+  <markdown>
+```
+@y
+```yaml
+memory: |
+  <markdown>
+```
+@z
+
+@x
+Top-level field. Available in both mixin and agent kits. Markdown
+appended to the agent's memory file at sandbox creation. The agent reads
+this content at startup. Write it as instructions or notes the agent
+should follow when working in the sandbox. Applied only when the active
+agent kit sets [`agent.aiFilename`](#agent-block).
+@y
+Top-level field. Available in both mixin and agent kits. Markdown
+appended to the agent's memory file at sandbox creation. The agent reads
+this content at startup. Write it as instructions or notes the agent
+should follow when working in the sandbox. Applied only when the active
+agent kit sets [`agent.aiFilename`](#agent-block).
+@z
+
+@x
+The file is written to the parent of the workspace path inside the
+sandbox, not to the workspace itself. For a workspace mounted at
+`/Users/you/myproject`, the memory file lands at
+`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
+only inside the sandbox. Nothing is written to the host.
+@y
+The file is written to the parent of the workspace path inside the
+sandbox, not to the workspace itself. For a workspace mounted at
+`/Users/you/myproject`, the memory file lands at
+`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
+only inside the sandbox. Nothing is written to the host.
+@z
+
+@x
+When several loaded kits declare `memory:` blocks, the content is split
+across files instead of being concatenated into the main one:
+@y
+When several loaded kits declare `memory:` blocks, the content is split
+across files instead of being concatenated into the main one:
+@z
+
+@x
+- Each kit's memory is written to `<kit-name>.md` in a sibling
+  `kits-memory/` directory next to the main memory file.
+- The main memory file gets a `## Kits` section listing every kit with
+  a pointer to its file. The section is delimited by
+  `<!-- sbx:kits-section start -->` and `<!-- sbx:kits-section end -->`
+  markers so it can be regenerated when kits are added or removed.
+@y
+- Each kit's memory is written to `<kit-name>.md` in a sibling
+  `kits-memory/` directory next to the main memory file.
+- The main memory file gets a `## Kits` section listing every kit with
+  a pointer to its file. The section is delimited by
+  `<!-- sbx:kits-section start -->` and `<!-- sbx:kits-section end -->`
+  markers so it can be regenerated when kits are added or removed.
 @z
 
 @x
@@ -1431,50 +1677,6 @@ free.
 @y
 Build on top of `docker/sandbox-templates:shell-docker` to get these for
 free.
-@z
-
-@x
-#### Memory
-@y
-#### Memory
-@z
-
-@x
-```yaml
-memory: |
-  <markdown>
-```
-@y
-```yaml
-memory: |
-  <markdown>
-```
-@z
-
-@x
-Top-level field. Markdown appended to the agent's memory file at sandbox
-creation. The agent reads this content at startup, so write it as
-instructions or notes the agent should follow when working in the
-sandbox. Applied only when `agent.aiFilename` is set.
-@y
-Top-level field. Markdown appended to the agent's memory file at sandbox
-creation. The agent reads this content at startup, so write it as
-instructions or notes the agent should follow when working in the
-sandbox. Applied only when `agent.aiFilename` is set.
-@z
-
-@x
-The file is written to the parent of the workspace path inside the
-sandbox, not to the workspace itself. For a workspace mounted at
-`/Users/you/myproject`, the memory file lands at
-`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
-only inside the sandbox — nothing is written to the host.
-@y
-The file is written to the parent of the workspace path inside the
-sandbox, not to the workspace itself. For a workspace mounted at
-`/Users/you/myproject`, the memory file lands at
-`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
-only inside the sandbox — nothing is written to the host.
 @z
 
 @x

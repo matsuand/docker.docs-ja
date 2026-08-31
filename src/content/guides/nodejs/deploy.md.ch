@@ -196,9 +196,9 @@ Before deploying, you need to customize the deployment file for your environment
 @z
 
 @x
-1. **Image reference**: Replace `your-username` with your GitHub username or Docker Hub username:
+1. Image reference: Replace `your-username` with your GitHub username or Docker Hub username:
 @y
-1. **Image reference**: Replace `your-username` with your GitHub username or Docker Hub username:
+1. Image reference: Replace `your-username` with your GitHub username or Docker Hub username:
 @z
 
 @x
@@ -212,9 +212,9 @@ Before deploying, you need to customize the deployment file for your environment
 @z
 
 @x
-2. **Domain name**: Replace `yourdomain.com` with your actual domain in two places:
+2. Domain name: Replace `yourdomain.com` with your actual domain in two places:
 @y
-2. **Domain name**: Replace `yourdomain.com` with your actual domain in two places:
+2. Domain name: Replace `yourdomain.com` with your actual domain in two places:
 @z
 
 @x
@@ -238,9 +238,9 @@ Before deploying, you need to customize the deployment file for your environment
 @z
 
 @x
-3. **Database password** (optional): The default password is already base64 encoded. To change it:
+3. Database password (optional): The default password is already base64 encoded. To change it:
 @y
-3. **Database password** (optional): The default password is already base64 encoded. To change it:
+3. Database password (optional): The default password is already base64 encoded. To change it:
 @z
 
 @x
@@ -272,9 +272,9 @@ Before deploying, you need to customize the deployment file for your environment
 @z
 
 @x
-4. **Storage class**: Adjust based on your cluster (current: `standard`)
+4. Storage class: Adjust based on your cluster (current: `standard`)
 @y
-4. **Storage class**: Adjust based on your cluster (current: `standard`)
+4. Storage class: Adjust based on your cluster (current: `standard`)
 @z
 
 @x
@@ -302,15 +302,15 @@ The deployment includes:
 @z
 
 @x
-- **Node.js application**: Runs 3 replicas of your containerized Todo app
-- **PostgreSQL database**: Single instance with 10Gi of persistent storage
-- **Services**: Kubernetes services handle load balancing across application replicas
-- **Ingress**: External access through an ingress controller with SSL/TLS support
+- Node.js application: Runs 3 replicas of your containerized Todo app
+- PostgreSQL database: Single instance with 10Gi of persistent storage
+- Services: Kubernetes services handle load balancing across application replicas
+- Ingress: External access through an ingress controller with SSL/TLS support
 @y
-- **Node.js application**: Runs 3 replicas of your containerized Todo app
-- **PostgreSQL database**: Single instance with 10Gi of persistent storage
-- **Services**: Kubernetes services handle load balancing across application replicas
-- **Ingress**: External access through an ingress controller with SSL/TLS support
+- Node.js application: Runs 3 replicas of your containerized Todo app
+- PostgreSQL database: Single instance with 10Gi of persistent storage
+- Services: Kubernetes services handle load balancing across application replicas
+- Ingress: External access through an ingress controller with SSL/TLS support
 @z
 
 @x
@@ -624,11 +624,11 @@ Test that your application is working correctly:
 @z
 
 @x
-1. **Add some todos** through the web interface
-2. **Check application pods**:
+1. Add some todos through the web interface
+2. Check application pods:
 @y
-1. **Add some todos** through the web interface
-2. **Check application pods**:
+1. Add some todos through the web interface
+2. Check application pods:
 @z
 
 @x
@@ -642,9 +642,9 @@ Test that your application is working correctly:
 @z
 
 @x
-3. **View application logs**:
+3. View application logs:
 @y
-3. **View application logs**:
+3. View application logs:
 @z
 
 @x
@@ -658,9 +658,9 @@ Test that your application is working correctly:
 @z
 
 @x
-4. **Check database connectivity**:
+4. Check database connectivity:
 @y
-4. **Check database connectivity**:
+4. Check database connectivity:
 @z
 
 @x
@@ -674,12 +674,12 @@ Test that your application is working correctly:
 @z
 
 @x
-5. **Monitor auto-scaling**:
+5. Monitor auto-scaling:
    ```console
    $ kubectl describe hpa todoapp-hpa -n todoapp
    ```
 @y
-5. **Monitor auto-scaling**:
+5. Monitor auto-scaling:
    ```console
    $ kubectl describe hpa todoapp-hpa -n todoapp
    ```

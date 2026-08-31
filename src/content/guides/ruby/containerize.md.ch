@@ -54,15 +54,25 @@ Starting from Rails 7.1 [Docker is supported out of the box](https://guides.ruby
 @z
 
 @x
-If you have an existing Rails application, you will need to create the Docker assets manually. Unfortunately `docker init` command does not yet support Rails. This means that if you are working with Rails, you'll need to copy Dockerfile and other related configurations manually from the examples below.
+If you have an existing Rails application, you will need to create the Docker assets manually from the examples below.
 @y
-If you have an existing Rails application, you will need to create the Docker assets manually. Unfortunately `docker init` command does not yet support Rails. This means that if you are working with Rails, you'll need to copy Dockerfile and other related configurations manually from the examples below.
+If you have an existing Rails application, you will need to create the Docker assets manually from the examples below.
 @z
 
 @x
-## 1. Initialize Docker assets
+## 1. Create Docker assets
 @y
-## 1. Docker アセットの初期化 {#1-initialize-docker-assets}
+## 1. Docker アセットの生成 {#1-create-docker-assets}
+@z
+
+@x
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
+@y
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x

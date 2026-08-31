@@ -67,8 +67,6 @@ AC_CONFIG_FILES([
 	src/assets/images/learning-paths/Makefile
 	src/assets/js/Makefile
 	src/assets/js/src/Makefile
-	src/assets/theme/Makefile
-	src/assets/theme/icons/Makefile
 	src/content/Makefile
 	src/content/get-started/Makefile
 	src/content/get-started/docker-concepts/Makefile
@@ -332,8 +330,6 @@ AC_CONFIG_FILES([
 	src/content/reference/cli/sbx/Makefile
 	src/content/reference/compose-file/Makefile
 	src/content/reference/samples/Makefile
-	src/content/tags/Makefile
-	src/content/tags/labs/Makefile
 	src/data/Makefile
 	src/data/cli/Makefile
 	src/data/cli/buildx/Makefile

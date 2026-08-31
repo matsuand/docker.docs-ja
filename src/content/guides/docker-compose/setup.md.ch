@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: "Demo: set up and use Docker Compose"
 description: Learn how to get started with Docker Compose.
-weight: 20
----
+keywords: docker compose, getting started, multi-container, demo, orchestration
 @y
----
 title: "Demo: set up and use Docker Compose"
 description: Learn how to get started with Docker Compose.
-weight: 20
----
+keywords: docker compose, getting started, multi-container, demo, orchestration
 @z
 
 @x

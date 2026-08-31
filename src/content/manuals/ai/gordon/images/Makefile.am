@@ -3,12 +3,11 @@
 ##
 
 copyfiles = \
-	delete.webp                      \
 	gordon_advanced_tool_config.avif \
 	gordon_gui.avif                  \
-	gordon_tui.avif                  \
-	perm_settings.avif               \
-	permissions.avif
+	gordon_permission_settings.avif  \
+	gordon_permissions_prompt.avif   \
+	gordon_tui.avif
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

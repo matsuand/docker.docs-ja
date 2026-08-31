@@ -21,60 +21,60 @@ keywords: billing, invoice, payment, subscription, Docker billing, update paymen
 - title: Add or update a payment method
   description: Learn how to add or update a payment method for your personal account or organization.
   link: /billing/payment-method/
-  icon: credit_score
+  icon: credit-card
 @y
 - title: Add or update a payment method
   description: Learn how to add or update a payment method for your personal account or organization.
   link: __SUBDIR__/billing/payment-method/
-  icon: credit_score
+  icon: credit-card
 @z
 
 @x
 - title: Update billing information
   description: Discover how to update the billing information for your personal account or organization.
   link: /billing/details/
-  icon: contract_edit
+  icon: pencil-square
 @y
 - title: Update billing information
   description: Discover how to update the billing information for your personal account or organization.
   link: __SUBDIR__/billing/details/
-  icon: contract_edit
+  icon: pencil-square
 @z
 
 @x
 - title: View billing history
   description: Learn how to view billing history and download past invoices.
   link: /billing/history/
-  icon: payments
+  icon: credit-card
 @y
 - title: View billing history
   description: Learn how to view billing history and download past invoices.
   link: __SUBDIR__/billing/history/
-  icon: payments
+  icon: credit-card
 @z
 
 @x
 - title: Billing FAQs
   description: Find the answers you need and explore common questions.
   link: /billing/faqs/
-  icon: help
+  icon: question-mark-circle
 @y
 - title: Billing FAQs
   description: Find the answers you need and explore common questions.
   link: __SUBDIR__/billing/faqs/
-  icon: help
+  icon: question-mark-circle
 @z
 
 @x
 - title: Register a tax certificate
   description: Learn how to register a tax exemption certificate.
   link: /billing/tax-certificate/
-  icon: developer_guide
+  icon: book-open
 @y
 - title: Register a tax certificate
   description: Learn how to register a tax exemption certificate.
   link: __SUBDIR__/billing/tax-certificate/
-  icon: developer_guide
+  icon: book-open
 @z
 
 @x

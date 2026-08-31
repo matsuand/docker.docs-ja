@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応 (一部)
+% snip 対応
 
 @x
 title: Templates
@@ -165,15 +165,7 @@ To override the volume size, set the `DOCKER_SANDBOXES_DOCKER_SIZE`
 environment variable to a size string before starting the sandbox:
 @z
 
-@x
-```console
-$ DOCKER_SANDBOXES_DOCKER_SIZE=10g sbx run claude
-```
-@y
-```console
-$ DOCKER_SANDBOXES_DOCKER_SIZE=10g sbx run claude
-```
-@z
+% snip command...
 
 @x
 Use the non-Docker variant if you don't need to build or run containers
@@ -185,15 +177,7 @@ inside the sandbox and want a lighter, non-privileged environment. Specify
 it explicitly with `--template`:
 @z
 
-@x
-```console
-$ sbx run claude --template docker.io/docker/sandbox-templates:claude-code
-```
-@y
-```console
-$ sbx run claude --template docker.io/docker/sandbox-templates:claude-code
-```
-@z
+% snip command...
 
 @x
 ### Build a custom template
@@ -229,23 +213,7 @@ The following example creates a Claude Code template with Rust and
 protocol buffer tools pre-installed:
 @z
 
-@x
-```dockerfile
-FROM docker/sandbox-templates:claude-code
-USER root
-RUN apt-get update && apt-get install -y protobuf-compiler
-USER agent
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-```
-@y
-```dockerfile
-FROM docker/sandbox-templates:claude-code
-USER root
-RUN apt-get update && apt-get install -y protobuf-compiler
-USER agent
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-```
-@z
+% snip code...
 
 @x
 Use `root` for system-level package installations (`apt-get`), and switch
@@ -267,15 +235,7 @@ Build the image and push it to an OCI registry, such as Docker Hub:
 Build the image and push it to an OCI registry, such as Docker Hub:
 @z
 
-@x
-```console
-$ docker build -t my-org/my-template:v1 --push .
-```
-@y
-```console
-$ docker build -t my-org/my-template:v1 --push .
-```
-@z
+% snip command...
 
 @x
 > [!NOTE]
@@ -291,28 +251,36 @@ $ docker build -t my-org/my-template:v1 --push .
 
 @x
 > [!IMPORTANT]
-> Private templates are only supported on Docker Hub. `sbx` reuses your
-> `sbx login` session to pull private images from Docker Hub. Other
-> registries (such as GitHub Container Registry, ECR, or a self-hosted
-> registry like Nexus) are pulled anonymously, so private images on those
-> registries fail to pull.
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> images. For other registries (GitHub Container Registry, ECR, ACR, a
+> self-hosted Nexus, and so on), store pull credentials with
+> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> before running the sandbox:
 @y
 > [!IMPORTANT]
-> Private templates are only supported on Docker Hub. `sbx` reuses your
-> `sbx login` session to pull private images from Docker Hub. Other
-> registries (such as GitHub Container Registry, ECR, or a self-hosted
-> registry like Nexus) are pulled anonymously, so private images on those
-> registries fail to pull.
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> images. For other registries (GitHub Container Registry, ECR, ACR, a
+> self-hosted Nexus, and so on), store pull credentials with
+> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> before running the sandbox:
+@z
+
+% snip command...
+
+@x
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private images fail to pull.
+@y
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private images fail to pull.
 @z
 
 @x
-For locally-built images or private images on registries that `sbx`
-can't authenticate against, save the image to a tar and load it
-directly into the sandbox runtime instead of pulling from a registry:
+For locally-built images, save the image to a tar and load it directly
+into the sandbox runtime instead of pulling from a registry:
 @y
-For locally-built images or private images on registries that `sbx`
-can't authenticate against, save the image to a tar and load it
-directly into the sandbox runtime instead of pulling from a registry:
+For locally-built images, save the image to a tar and load it directly
+into the sandbox runtime instead of pulling from a registry:
 @z
 
 % snip command...
@@ -335,15 +303,7 @@ Unless you use the permissive `allow-all` network policy, you may also need
 to allow-list any domains that your custom tools depend on:
 @z
 
-@x
-```console
-$ sbx policy allow network "*.example.com:443,example.com:443"
-```
-@y
-```console
-$ sbx policy allow network "*.example.com:443,example.com:443"
-```
-@z
+% snip command...
 
 @x
 Then run a sandbox with your template. The agent you specify must match
@@ -353,15 +313,7 @@ Then run a sandbox with your template. The agent you specify must match
 the base image variant your template extends:
 @z
 
-@x
-```console
-$ sbx run --template docker.io/my-org/my-template:v1 claude
-```
-@y
-```console
-$ sbx run --template docker.io/my-org/my-template:v1 claude
-```
-@z
+% snip command...
 
 @x
 Because this template extends the `claude-code` base image, you run it
@@ -431,15 +383,7 @@ Stop the sandbox (or let the CLI prompt you), then save it with a name and
 tag:
 @z
 
-@x
-```console
-$ sbx template save my-sandbox my-template:v1
-```
-@y
-```console
-$ sbx template save my-sandbox my-template:v1
-```
-@z
+% snip command...
 
 @x
 The image is stored in the sandbox runtime's local image store. Create a
@@ -449,15 +393,7 @@ The image is stored in the sandbox runtime's local image store. Create a
 new sandbox from it with the `-t` flag:
 @z
 
-@x
-```console
-$ sbx run -t my-template:v1 claude
-```
-@y
-```console
-$ sbx run -t my-template:v1 claude
-```
-@z
+% snip command...
 
 @x
 ### List and remove templates
@@ -471,15 +407,7 @@ List all saved templates:
 List all saved templates:
 @z
 
-@x
-```console
-$ sbx template ls
-```
-@y
-```console
-$ sbx template ls
-```
-@z
+% snip command...
 
 @x
 Remove a template you no longer need:
@@ -487,15 +415,7 @@ Remove a template you no longer need:
 Remove a template you no longer need:
 @z
 
-@x
-```console
-$ sbx template rm my-template:v1
-```
-@y
-```console
-$ sbx template rm my-template:v1
-```
-@z
+% snip command...
 
 @x
 ### Export and import
@@ -511,15 +431,7 @@ To share a saved template or move it to another machine, export it as a
 tar file:
 @z
 
-@x
-```console
-$ sbx template save my-sandbox my-template:v1 --output my-template.tar
-```
-@y
-```console
-$ sbx template save my-sandbox my-template:v1 --output my-template.tar
-```
-@z
+% snip command...
 
 @x
 On the other machine, load the tar file and use it:
@@ -527,17 +439,7 @@ On the other machine, load the tar file and use it:
 On the other machine, load the tar file and use it:
 @z
 
-@x
-```console
-$ sbx template load my-template.tar
-$ sbx run -t my-template:v1 claude
-```
-@y
-```console
-$ sbx template load my-template.tar
-$ sbx run -t my-template:v1 claude
-```
-@z
+% snip command...
 
 @x
 ### Limitations
@@ -567,14 +469,4 @@ specify in `sbx run`, you get a warning. For example, saving a Claude
 sandbox and running it with `codex` produces:
 @z
 
-@x
-```text
-⚠ WARNING: template "my-template:v1" was built for the "claude" agent but you are using "codex".
-  The sandbox may not work correctly. Consider using: sbx run -t my-template:v1 claude
-```
-@y
-```text
-⚠ WARNING: template "my-template:v1" was built for the "claude" agent but you are using "codex".
-  The sandbox may not work correctly. Consider using: sbx run -t my-template:v1 claude
-```
-@z
+% snip output...

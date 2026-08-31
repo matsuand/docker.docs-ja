@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% snip 対応 (一部)
 
 @x
 title: Run Angular tests in a container
@@ -57,12 +58,6 @@ Testing is a critical part of the development process. In this section, you'll l
 The `docker-angular-sample` project comes pre-configured with Jasmine, so you can get started quickly without extra setup.
 @y
 The `docker-angular-sample` project comes pre-configured with Jasmine, so you can get started quickly without extra setup.
-@z
-
-@x
----
-@y
----
 @z
 
 @x
@@ -185,27 +180,7 @@ After completing the previous steps, your project directory should contain the f
 After completing the previous steps, your project directory should contain the following files:
 @z
 
-@x
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-angular-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 ### Step 2: Run the tests

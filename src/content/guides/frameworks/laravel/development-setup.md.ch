@@ -4,9 +4,11 @@
 @x
 title: Laravel Development Setup with Docker Compose
 description: Set up a Laravel development environment using Docker Compose.
+keywords: laravel, php, docker compose, development, xdebug, php-fpm, nginx
 @y
 title: Laravel Development Setup with Docker Compose
 description: Set up a Laravel development environment using Docker Compose.
+keywords: laravel, php, docker compose, development, xdebug, php-fpm, nginx
 @z
 
 @x
@@ -347,9 +349,9 @@ A workspace container provides a dedicated shell for asset compilation, Artisan/
 @z
 
 @x
-## Create a Docker Compose Configuration for development
+## Create a Docker Compose configuration for development
 @y
-## Create a Docker Compose Configuration for development
+## Create a Docker Compose configuration for development
 @z
 
 @x

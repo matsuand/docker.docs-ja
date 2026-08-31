@@ -133,10 +133,16 @@ handling, and manifest creation are scoped to a single target.
 
 @x
 The workflow validates the definition before the build starts and resolves
-the target from the files you pass in `files`.
+the target from the files you pass in `files`. Runner selection uses the same
+`runner` input as the Build workflow. Set a single GitHub-hosted Linux runner
+label or a platform mapping when the default mapping is not enough. For details,
+see [runner selection](architecture.md#runner-selection).
 @y
 The workflow validates the definition before the build starts and resolves
-the target from the files you pass in `files`.
+the target from the files you pass in `files`. Runner selection uses the same
+`runner` input as the Build workflow. Set a single GitHub-hosted Linux runner
+label or a platform mapping when the default mapping is not enough. For details,
+see [runner selection](architecture.md#runner-selection).
 @z
 
 @x

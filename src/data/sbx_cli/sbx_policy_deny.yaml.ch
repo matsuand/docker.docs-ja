@@ -3,48 +3,52 @@
 
 @x
 name: sbx policy deny
-synopsis: Add a deny policy for sandboxes
+synopsis: Add a deny rule for sandboxes
 description: |-
-    Add a policy that blocks sandboxes from accessing specified resources.
+    Add a rule that blocks sandboxes from accessing specified resources.
 @y
 name: sbx policy deny
-synopsis: Add a deny policy for sandboxes
+synopsis: Add a deny rule for sandboxes
 description: |-
-    Add a policy that blocks sandboxes from accessing specified resources.
+    Add a rule that blocks sandboxes from accessing specified resources.
 @z
 
 @x
     Deny rules always take precedence over allow rules. If a resource matches
     both an allow and a deny rule, the request is blocked.
-usage: sbx policy deny COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for deny
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx policy - Manage sandbox policies
-    - sbx policy deny network - Deny network access to specified hosts
 @y
     Deny rules always take precedence over allow rules. If a resource matches
     both an allow and a deny rule, the request is blocked.
+@z
+
+@x
 usage: sbx policy deny COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy deny COMMAND
+@z
+
+% options:
+
+@x help
       usage: help for deny
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for deny
+@z
+
+% inherited_options:
+
+@x
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx policy - Manage sandbox policies
+    - sbx policy deny network - Deny network access to specified hosts
+@y
     - sbx policy - Manage sandbox policies
     - sbx policy deny network - Deny network access to specified hosts
 @z

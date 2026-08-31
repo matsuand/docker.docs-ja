@@ -24,60 +24,70 @@ description: |-
 @x
     Port spec format: [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
     If HOST_PORT is omitted, an ephemeral port is allocated automatically.
-    HOST_IP defaults to 127.0.0.1, PROTOCOL defaults to tcp.
+    If HOST_IP is omitted, the port is bound on loopback, expanded based on
+    PROTOCOL and the sandbox's address families: tcp/udp binds both 127.0.0.1
+    and ::1 (or only 127.0.0.1 if the sandbox is IPv4-only); tcp4/udp4 binds
+    only 127.0.0.1; tcp6/udp6 binds only ::1. PROTOCOL defaults to tcp.
     Supported protocols: tcp, tcp4, tcp6, udp, udp4, udp6.
-usage: sbx ports SANDBOX [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for ports
-    - name: json
-      default_value: "false"
-      usage: Output in JSON format (for port listing)
-    - name: publish
-      default_value: '[]'
-      usage: |
-        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
-    - name: unpublish
-      default_value: '[]'
-      usage: |
-        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL]
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # List published ports
-      sbx ports my-sandbox
 @y
     Port spec format: [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
     If HOST_PORT is omitted, an ephemeral port is allocated automatically.
-    HOST_IP defaults to 127.0.0.1, PROTOCOL defaults to tcp.
+    If HOST_IP is omitted, the port is bound on loopback, expanded based on
+    PROTOCOL and the sandbox's address families: tcp/udp binds both 127.0.0.1
+    and ::1 (or only 127.0.0.1 if the sandbox is IPv4-only); tcp4/udp4 binds
+    only 127.0.0.1; tcp6/udp6 binds only ::1. PROTOCOL defaults to tcp.
     Supported protocols: tcp, tcp4, tcp6, udp, udp4, udp6.
+@z
+
+@x
 usage: sbx ports SANDBOX [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx ports SANDBOX [flags]
+@z
+
+% options:
+
+@x help
       usage: help for ports
-    - name: json
-      default_value: "false"
+@y
+      usage: help for ports
+@z
+
+@x json
       usage: Output in JSON format (for port listing)
-    - name: publish
-      default_value: '[]'
+@y
+      usage: Output in JSON format (for port listing)
+@z
+
+@x publish
       usage: |
         Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
-    - name: unpublish
-      default_value: '[]'
+@y
+      usage: |
+        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
+@z
+
+@x unpublish
       usage: |
         Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL]
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: |
+        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL]
+@z
+
+% inherited_options:
+
+@x
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # List published ports
+      sbx ports my-sandbox
+@y
 example: |4-
       # List published ports
       sbx ports my-sandbox
@@ -102,11 +112,15 @@ example: |4-
 @x
       # Unpublish a port
       sbx ports my-sandbox --unpublish 3000:8080
-see_also:
-    - sbx - Manage AI coding agent sandboxes.
 @y
       # Unpublish a port
       sbx ports my-sandbox --unpublish 3000:8080
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx - Manage AI coding agent sandboxes.
+@y
     - sbx - Manage AI coding agent sandboxes.
 @z

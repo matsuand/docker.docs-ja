@@ -204,7 +204,7 @@ Use the `docker login` command to authenticate from the command line. For
 details, see [`docker login`](/reference/cli/docker/login/).
 @y
 Use the `docker login` command to authenticate from the command line. For
-details, see [`docker login`](reference/cli/docker/login/).
+details, see [`docker login`](__SUBDIR__/reference/cli/docker/login/).
 @z
 
 @x

@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS =  explore core-concepts how-to migration
+SUBDIRS =  core-concepts explore how-to migration
 
 bases = \
 	_index.md       \

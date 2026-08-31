@@ -151,7 +151,7 @@ The following are the notable parts of the command:
 @x
 For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
 @y
-For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](__SUBDIR__/reference/cli/docker/container/run/).
+For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
 @z
 
 @x
@@ -900,6 +900,6 @@ Related information:
 @y
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 - [Compose file reference](__SUBDIR__/reference/compose-file/)
-- [Docker CLI reference](reference/cli/docker/)
+- [Docker CLI reference](__SUBDIR__/reference/cli/docker/)
 - [Jupyter Docker Stacks docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 @z

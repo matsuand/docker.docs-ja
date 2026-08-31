@@ -78,25 +78,45 @@ the execution of the container's `entrypoint`.
 @z
 
 @x
-In the example provided:
+Because there is no ordering guarantee between the hook and the container's entrypoint,
+post-start hooks are best suited for tasks that do not need to complete before the
+application begins running, such as registering the container with an external system.
 @y
-In the example provided:
+Because there is no ordering guarantee between the hook and the container's entrypoint,
+post-start hooks are best suited for tasks that do not need to complete before the
+application begins running, such as registering the container with an external system.
 @z
 
 @x
-- The hook is used to change the ownership of a volume to a non-root user (because volumes 
-are created with root ownership by default).
-- After the container starts, the `chown` command changes the ownership of the `/data` directory to user `1001`.
+In the following example, after the container starts, a root-level hook registers the
+service with an internal service registry. The application does not depend on registration
+being complete before it starts serving requests.
 @y
-- The hook is used to change the ownership of a volume to a non-root user (because volumes 
-are created with root ownership by default).
-- After the container starts, the `chown` command changes the ownership of the `/data` directory to user `1001`.
+In the following example, after the container starts, a root-level hook registers the
+service with an internal service registry. The application does not depend on registration
+being complete before it starts serving requests.
 @z
 
-@x witiin code
-  data: {} # a Docker volume is created with root ownership
+@x
+```yaml
+services:
+  app:
+    image: backend
+    user: 1001
+    post_start:
+      - command: /opt/scripts/register-service.sh
+        user: root
+```
 @y
-  data: {} # a Docker volume is created with root ownership
+```yaml
+services:
+  app:
+    image: backend
+    user: 1001
+    post_start:
+      - command: /opt/scripts/register-service.sh
+        user: root
+```
 @z
 
 @x
@@ -116,14 +136,48 @@ These hooks won't run if the container stops by itself or gets killed suddenly.
 @z
 
 @x
-In the following example, before the container stops, the `./data_flush.sh` script is 
-run to perform any necessary cleanup.
+Because the pre-stop hook runs before the stop signal is sent to the container, it is
+suited for actions that must complete while the application is still fully running.
 @y
-In the following example, before the container stops, the `./data_flush.sh` script is 
-run to perform any necessary cleanup.
+Because the pre-stop hook runs before the stop signal is sent to the container, it is
+suited for actions that must complete while the application is still fully running.
 @z
 
-% snip code...
+@x
+In the following example, the hook backs up a data file before the container receives the stop signal.
+@y
+In the following example, the hook backs up a data file before the container receives the stop signal.
+@z
+
+@x
+```yaml
+services:
+  app:
+    image: backend
+    volumes:
+      - data:/data
+    pre_stop:
+      - command: cp /data/app.db /data/app.db.bak
+@y
+```yaml
+services:
+  app:
+    image: backend
+    volumes:
+      - data:/data
+    pre_stop:
+      - command: cp /data/app.db /data/app.db.bak
+@z
+
+@x
+volumes:
+  data: {} # a Docker volume is created with root ownership
+```
+@y
+volumes:
+  data: {} # a Docker volume is created with root ownership
+```
+@z
 
 @x
 ## Reference information

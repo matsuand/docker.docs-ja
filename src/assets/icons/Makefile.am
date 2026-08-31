@@ -25,9 +25,8 @@ copyfiles = \
 	models.svg           \
 	moon.svg             \
 	openai.svg           \
-	search.svg           \
-	sparkle.svg          \
 	sun.svg              \
+	system.svg           \
 	toolkit.svg          \
 	twitter.svg          \
 	youtube.svg

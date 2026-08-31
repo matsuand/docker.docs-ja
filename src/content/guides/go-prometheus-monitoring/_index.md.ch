@@ -9,14 +9,14 @@ keywords: golang, prometheus, grafana, monitoring, containerize
 title: Monitor a Golang application with Prometheus and Grafana
 summary: |
   Learn how to containerize a Golang application and monitor it with Prometheus and Grafana.
-linkTitle: Monitor with Prometheus and Grafana
+linkTitle: Prometheus and Grafana
 @y
 description: Containerize a Golang application and monitor it with Prometheus and Grafana.
 keywords: golang, prometheus, grafana, monitoring, containerize
 title: Monitor a Golang application with Prometheus and Grafana
 summary: |
   Learn how to containerize a Golang application and monitor it with Prometheus and Grafana.
-linkTitle: Monitor with Prometheus and Grafana
+linkTitle: Prometheus and Grafana
 @z
 
 @x

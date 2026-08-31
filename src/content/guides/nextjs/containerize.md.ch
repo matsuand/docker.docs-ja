@@ -20,6 +20,12 @@ description: Learn how to containerize a Next.js application with Docker by crea
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Prerequisites
 @y
 ## Prerequisites
@@ -40,11 +46,11 @@ Before you begin, make sure the following tools are installed and available on y
 @z
 
 @x
-> **New to Docker?**  
-> Start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide to get familiar with key concepts like images, containers, and Dockerfiles.
+> [!NOTE]
+> New to Docker? Start with the [Docker basics](/get-started/docker-concepts/the-basics/what-is-a-container.md) guide to get familiar with key concepts like images, containers, and Dockerfiles.
 @y
-> **New to Docker?**  
-> Start with the [Docker basics](get-started/docker-concepts/the-basics/what-is-a-container.md) guide to get familiar with key concepts like images, containers, and Dockerfiles.
+> [!NOTE]
+> New to Docker? Start with the [Docker basics](get-started/docker-concepts/the-basics/what-is-a-container.md) guide to get familiar with key concepts like images, containers, and Dockerfiles.
 @z
 
 @x
@@ -126,191 +132,31 @@ $ git clone https://github.com/kristiyan-velkov/docker-nextjs-sample
 @z
 
 @x
-## Generate a Dockerfile
-@y
-## Generate a Dockerfile
-@z
-
-@x
-Docker provides an interactive CLI tool called `docker init` that helps scaffold the necessary configuration files for containerizing your application. This includes generating a `Dockerfile`, `.dockerignore`, `compose.yaml`, and `README.Docker.md`.
-@y
-Docker provides an interactive CLI tool called `docker init` that helps scaffold the necessary configuration files for containerizing your application. This includes generating a `Dockerfile`, `.dockerignore`, `compose.yaml`, and `README.Docker.md`.
-@z
-
-@x
-To begin, navigate to the project directory:
-@y
-To begin, navigate to the project directory:
-@z
-
-@x
-```console
-$ cd docker-nextjs-sample
-```
-@y
-```console
-$ cd docker-nextjs-sample
-```
-@z
-
-@x
-Then run the following command:
-@y
-Then run the following command:
-@z
-
-@x
-```console
-$ docker init
-```
-You'll see output similar to:
-@y
-```console
-$ docker init
-```
-You'll see output similar to:
-@z
-
-@x
-```text
-Welcome to the Docker Init CLI!
-@y
-```text
-Welcome to the Docker Init CLI!
-@z
-
-@x
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@y
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@z
-
-@x
-Let's get started!
-```
-@y
-Let's get started!
-```
-@z
-
-@x
-The CLI will prompt you with a few questions about your app setup.
-For consistency, please use the same responses shown in the example below when prompted:
-| Question                                                   | Answer          |
-|------------------------------------------------------------|-----------------|
-| What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 24.14.0-alpine  |
-| Which package manager do you want to use?                  | npm             |
-| Do you want to run "npm run build" before starting server? | yes             |
-| What directory is your build output to?                    | .next           |
-| What command do you want to use to start the app?          | npm run start   |
-| What port does your server listen on?                      | 3000            |
-@y
-The CLI will prompt you with a few questions about your app setup.
-For consistency, please use the same responses shown in the example below when prompted:
-| Question                                                   | Answer          |
-|------------------------------------------------------------|-----------------|
-| What application platform does your project use?           | Node            |
-| What version of Node do you want to use?                   | 24.14.0-alpine  |
-| Which package manager do you want to use?                  | npm             |
-| Do you want to run "npm run build" before starting server? | yes             |
-| What directory is your build output to?                    | .next           |
-| What command do you want to use to start the app?          | npm run start   |
-| What port does your server listen on?                      | 3000            |
-@z
-
-@x
-After completion, your project directory will contain the following new files:
-@y
-After completion, your project directory will contain the following new files:
-@z
-
-@x
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ └── README.Docker.md
-```
-@z
-
-@x
----
-@y
----
-@z
-
-@x
 ## Build the Docker image
 @y
 ## Build the Docker image
 @z
 
 @x
-The default Dockerfile generated by `docker init` serves as a solid starting point for general Node.js applications. However, Next.js has specific requirements for production deployments. This guide shows two approaches: **standalone** output (Node.js server) and **export** output (static files with NGINX).
+Next.js has specific requirements for production deployments. This guide shows two approaches: `standalone` output (Node.js server) and `export` output (static files with Nginx).
 @y
-The default Dockerfile generated by `docker init` serves as a solid starting point for general Node.js applications. However, Next.js has specific requirements for production deployments. This guide shows two approaches: **standalone** output (Node.js server) and **export** output (static files with NGINX).
+Next.js has specific requirements for production deployments. This guide shows two approaches: `standalone` output (Node.js server) and `export` output (static files with Nginx).
 @z
 
 @x
-### Step 1: Review the generated files
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @y
-### Step 1: Review the generated files
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x
-In this step, you'll add a Dockerfile and configuration files by following best practices:
+### Step 1: Configure Next.js and create the Dockerfile
 @y
-In this step, you'll add a Dockerfile and configuration files by following best practices:
-@z
-
-@x
-- Use multi-stage builds to keep the final image clean and small  
-- **Standalone**: Node.js runs the Next.js server; **Export**: NGINX serves static files from the export  
-- Improve performance and security by only including what's needed  
-@y
-- Use multi-stage builds to keep the final image clean and small  
-- **Standalone**: Node.js runs the Next.js server; **Export**: NGINX serves static files from the export  
-- Improve performance and security by only including what's needed  
-@z
-
-@x
-These updates help ensure your app is easy to deploy, fast to load, and production-ready.
-@y
-These updates help ensure your app is easy to deploy, fast to load, and production-ready.
-@z
-
-@x
-> [!NOTE]
-> A `Dockerfile` is a plain text file that contains step-by-step instructions to build a Docker image. It automates packaging your application along with its dependencies and runtime environment.  
-> For full details, see the [Dockerfile reference](/reference/dockerfile/).
-@y
-> [!NOTE]
-> A `Dockerfile` is a plain text file that contains step-by-step instructions to build a Docker image. It automates packaging your application along with its dependencies and runtime environment.  
-> For full details, see the [Dockerfile reference](__SUBDIR__/reference/dockerfile/).
-@z
-
-@x
-### Step 2: Configure Next.js output and Dockerfile
-@y
-### Step 2: Configure Next.js output and Dockerfile
+### Step 1: Configure Next.js and create the Dockerfile
 @z
 
 @x
@@ -334,27 +180,27 @@ Before creating a Dockerfile, choose a base image: the [Node.js Official Image](
 @z
 
 @x
-#### 2.1 Next.js with standalone output
+#### 1.1 Next.js with standalone output
 @y
-#### 2.1 Next.js with standalone output
+#### 1.1 Next.js with standalone output
 @z
 
 @x
-**Standalone output** (`output: "standalone"`) makes Next.js build a self-contained output that includes only the files and dependencies needed to run the application. A single `node server.js` can serve the app, which is ideal for Docker and supports server-side rendering, API routes, and incremental static regeneration. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) (including the "standalone" option).
+Standalone output (`output: "standalone"`) makes Next.js build a self-contained output that includes only the files and dependencies needed to run the application. A single `node server.js` can serve the app, which is ideal for Docker and supports server-side rendering, API routes, and incremental static regeneration. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) (including the "standalone" option).
 @y
-**Standalone output** (`output: "standalone"`) makes Next.js build a self-contained output that includes only the files and dependencies needed to run the application. A single `node server.js` can serve the app, which is ideal for Docker and supports server-side rendering, API routes, and incremental static regeneration. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) (including the "standalone" option).
+Standalone output (`output: "standalone"`) makes Next.js build a self-contained output that includes only the files and dependencies needed to run the application. A single `node server.js` can serve the app, which is ideal for Docker and supports server-side rendering, API routes, and incremental static regeneration. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) (including the "standalone" option).
 @z
 
 @x
-The container runs the Next.js server with Node.js on **port 3000**.
+The container runs the Next.js server with Node.js on port 3000.
 @y
-The container runs the Next.js server with Node.js on **port 3000**.
+The container runs the Next.js server with Node.js on port 3000.
 @z
 
 @x
-**Configure Next.js** — Open or create `next.config.ts` in your project root:
+Configure Next.js — Open or create `next.config.ts` in your project root:
 @y
-**Configure Next.js** — Open or create `next.config.ts` in your project root:
+Configure Next.js — Open or create `next.config.ts` in your project root:
 @z
 
 @x
@@ -384,9 +230,9 @@ export default nextConfig;
 @z
 
 @x
-Choose either a Docker Hardened Image or the Docker Official Image, then create or replace your `Dockerfile` with the content from the selected tab below.
+Choose either a Docker Hardened Image or the Docker Official Image, then create a `Dockerfile` using the content from the selected tab below.
 @y
-Choose either a Docker Hardened Image or the Docker Official Image, then create or replace your `Dockerfile` with the content from the selected tab below.
+Choose either a Docker Hardened Image or the Docker Official Image, then create a `Dockerfile` using the content from the selected tab below.
 @z
 
 @x
@@ -428,9 +274,9 @@ Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened 
 @z
 
 @x
-3. Replace the generated Dockerfile with the following. The `FROM` instructions use `dhi.io/node:24-alpine3.22-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
+3. Create a file named `Dockerfile` with the following contents. The `FROM` instructions use `dhi.io/node:24-alpine3.22-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
 @y
-3. Replace the generated Dockerfile with the following. The `FROM` instructions use `dhi.io/node:24-alpine3.22-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
+3. Create a file named `Dockerfile` with the following contents. The `FROM` instructions use `dhi.io/node:24-alpine3.22-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
 @z
 
 @x
@@ -720,9 +566,9 @@ Docker Hardened Images (DHIs) are available for Node.js in the [Docker Hardened 
 @z
 
 @x
-Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following (uses `node`):
+Create a file named `Dockerfile` with the following contents (uses `node`):
 @y
-Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following (uses `node`):
+Create a file named `Dockerfile` with the following contents (uses `node`):
 @z
 
 @x
@@ -1003,10 +849,10 @@ Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfi
 
 @x
 > [!NOTE]
-> This Dockerfile uses three stages: **dependencies**, **builder**, and **runner**. The final image runs `node server.js` and listens on port 3000.
+> This Dockerfile uses three stages: `dependencies`, `builder`, and `runner`. The final image runs `node server.js` and listens on port 3000.
 @y
 > [!NOTE]
-> This Dockerfile uses three stages: **dependencies**, **builder**, and **runner**. The final image runs `node server.js` and listens on port 3000.
+> This Dockerfile uses three stages: `dependencies`, `builder`, and `runner`. The final image runs `node server.js` and listens on port 3000.
 @z
 
 @x
@@ -1024,21 +870,21 @@ Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfi
 @z
 
 @x
-#### 2.2 Next.js with export output
+#### 1.2 Next.js with export output
 @y
-#### 2.2 Next.js with export output
+#### 1.2 Next.js with export output
 @z
 
 @x
-**Output export** (`output: "export"`) makes Next.js build a fully static site at build time. It generates HTML, CSS, and JavaScript into an `out` directory that can be served by any static host or CDN—no Node.js server at runtime. Use this when you don't need server-side rendering or API routes. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
+Output export (`output: "export"`) makes Next.js build a fully static site at build time. It generates HTML, CSS, and JavaScript into an `out` directory that can be served by any static host or CDN—no Node.js server at runtime. Use this when you don't need server-side rendering or API routes. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
 @y
-**Output export** (`output: "export"`) makes Next.js build a fully static site at build time. It generates HTML, CSS, and JavaScript into an `out` directory that can be served by any static host or CDN—no Node.js server at runtime. Use this when you don't need server-side rendering or API routes. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
+Output export (`output: "export"`) makes Next.js build a fully static site at build time. It generates HTML, CSS, and JavaScript into an `out` directory that can be served by any static host or CDN—no Node.js server at runtime. Use this when you don't need server-side rendering or API routes. For details, see the [Next.js output configuration documentation](https://nextjs.org/docs/app/api-reference/config/next-config-js/output).
 @z
 
 @x
-**Configure Next.js** — Open  `next.config.ts` in your project root and add the following code:
+Configure Next.js — Open  `next.config.ts` in your project root and add the following code:
 @y
-**Configure Next.js** — Open  `next.config.ts` in your project root and add the following code:
+Configure Next.js — Open  `next.config.ts` in your project root and add the following code:
 @z
 
 @x
@@ -1076,9 +922,9 @@ export default nextConfig;
 @z
 
 @x
-Choose either a Docker Hardened Image or the Docker Official Image, then replace your `Dockerfile` with the content from the selected tab below.
+Choose either a Docker Hardened Image or the Docker Official Image, then create a `Dockerfile` using the content from the selected tab below.
 @y
-Choose either a Docker Hardened Image or the Docker Official Image, then replace your `Dockerfile` with the content from the selected tab below.
+Choose either a Docker Hardened Image or the Docker Official Image, then create a `Dockerfile` using the content from the selected tab below.
 @z
 
 @x
@@ -1090,9 +936,9 @@ Choose either a Docker Hardened Image or the Docker Official Image, then replace
 @z
 
 @x
-Docker Hardened Images (DHIs) are available for Node.js and NGINX in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog). For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+Docker Hardened Images (DHIs) are available for Node.js and Nginx in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog). For more information, see the [DHI quickstart](/dhi/get-started/) guide.
 @y
-Docker Hardened Images (DHIs) are available for Node.js and NGINX in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog). For more information, see the [DHI quickstart](__SUBDIR__/dhi/get-started/) guide.
+Docker Hardened Images (DHIs) are available for Node.js and Nginx in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog). For more information, see the [DHI quickstart](__SUBDIR__/dhi/get-started/) guide.
 @z
 
 @x
@@ -1132,9 +978,9 @@ Docker Hardened Images (DHIs) are available for Node.js and NGINX in the [Docker
 @z
 
 @x
-4. Replace the generated Dockerfile with the following. The `FROM` instructions use Docker Hardened Images: `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
+4. Create a file named `Dockerfile` with the following contents. The `FROM` instructions use Docker Hardened Images: `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
 @y
-4. Replace the generated Dockerfile with the following. The `FROM` instructions use Docker Hardened Images: `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
+4. Create a file named `Dockerfile` with the following contents. The `FROM` instructions use Docker Hardened Images: `dhi.io/node:24-alpine3.22-dev` and `dhi.io/nginx:1.28.0-alpine3.21-dev`. Check the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog) for the latest versions and update the image tags as needed for security and compatibility.
 @z
 
 @x
@@ -1382,9 +1228,9 @@ Docker Hardened Images (DHIs) are available for Node.js and NGINX in the [Docker
 @z
 
 @x
-Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following (uses `node` and `nginxinc/nginx-unprivileged`):
+Create a file named `Dockerfile` with the following contents (uses `node` and `nginxinc/nginx-unprivileged`):
 @y
-Create a production-ready multi-stage Dockerfile. Replace the generated Dockerfile with the following (uses `node` and `nginxinc/nginx-unprivileged`):
+Create a file named `Dockerfile` with the following contents (uses `node` and `nginxinc/nginx-unprivileged`):
 @z
 
 @x
@@ -1625,10 +1471,10 @@ CMD ["-g", "daemon off;"]
 
 @x
 > [!NOTE]
-> We use [nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged) instead of the standard NGINX image to run as a non-root user, following security best practices.
+> This guide uses [nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged) instead of the standard Nginx image to run as a non-root user, following security best practices.
 @y
 > [!NOTE]
-> We use [nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged) instead of the standard NGINX image to run as a non-root user, following security best practices.
+> This guide uses [nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged) instead of the standard Nginx image to run as a non-root user, following security best practices.
 @z
 
 @x
@@ -1640,9 +1486,9 @@ CMD ["-g", "daemon off;"]
 @z
 
 @x
-1. **Create `nginx.conf`** (required for export output only) — Create a file named `nginx.conf` in the root of your project:
+1. Create `nginx.conf` (required for export output only) — Create a file named `nginx.conf` in the root of your project:
 @y
-1. **Create `nginx.conf`** (required for export output only) — Create a file named `nginx.conf` in the root of your project:
+1. Create `nginx.conf` (required for export output only) — Create a file named `nginx.conf` in the root of your project:
 @z
 
 @x
@@ -1807,16 +1653,56 @@ CMD ["-g", "daemon off;"]
 
 @x
       > [!NOTE]
-      > Export uses **port 8080**. For more details, see the [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) and [NGINX documentation](https://nginx.org/en/docs/).
+      > Export uses port 8080. For more details, see the [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) and [Nginx documentation](https://nginx.org/en/docs/).
 @y
       > [!NOTE]
-      > Export uses **port 8080**. For more details, see the [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) and [NGINX documentation](https://nginx.org/en/docs/).
+      > Export uses port 8080. For more details, see the [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) and [Nginx documentation](https://nginx.org/en/docs/).
 @z
 
 @x
-### Step 3: Configure the .dockerignore file
+### Step 2: Create the compose.yaml file
 @y
-### Step 3: Configure the .dockerignore file
+### Step 2: Create the compose.yaml file
+@z
+
+@x
+Create a file named `compose.yaml` with the following contents:
+@y
+Create a file named `compose.yaml` with the following contents:
+@z
+
+@x
+```yaml {collapse=true,title=compose.yaml}
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+```
+@y
+```yaml {collapse=true,title=compose.yaml}
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+```
+@z
+
+@x
+> [!NOTE]
+> If using export output (Nginx), change the port mapping to `8080:8080`.
+@y
+> [!NOTE]
+> If using export output (Nginx), change the port mapping to `8080:8080`.
+@z
+
+@x
+### Step 3: Create the .dockerignore file
+@y
+### Step 3: Create the .dockerignore file
 @z
 
 @x
@@ -1844,9 +1730,9 @@ The `.dockerignore` file tells Docker which files and folders to exclude when bu
 @z
 
 @x
-Copy and replace the contents of your existing `.dockerignore` with the configuration below:
+Create a file named `.dockerignore` with the following contents:
 @y
-Copy and replace the contents of your existing `.dockerignore` with the configuration below:
+Create a file named `.dockerignore` with the following contents:
 @z
 
 @x
@@ -2092,9 +1978,9 @@ Desktop.ini
 @z
 
 @x
-With your custom configuration in place, you're now ready to build the Docker image. Use the Dockerfile you chose in Step 3 (standalone or export).
+With your custom configuration in place, you're now ready to build the Docker image. Use the Dockerfile you created in Step 1 (standalone or export).
 @y
-With your custom configuration in place, you're now ready to build the Docker image. Use the Dockerfile you chose in Step 3 (standalone or export).
+With your custom configuration in place, you're now ready to build the Docker image. Use the Dockerfile you created in Step 1 (standalone or export).
 @z
 
 @x
@@ -2105,12 +1991,12 @@ The setup includes:
 
 @x
 - Multi-stage builds for optimized image size  
-- Standalone: Node.js server on port 3000; Export: NGINX serving static files on port 8080  
+- Standalone: Node.js server on port 3000; Export: Nginx serving static files on port 8080  
 - Non-root user for enhanced security  
 - Proper file permissions and ownership  
 @y
 - Multi-stage builds for optimized image size  
-- Standalone: Node.js server on port 3000; Export: NGINX serving static files on port 8080  
+- Standalone: Node.js server on port 3000; Export: Nginx serving static files on port 8080  
 - Non-root user for enhanced security  
 - Proper file permissions and ownership  
 @z
@@ -2127,8 +2013,7 @@ After completing the previous steps, your project directory should contain at le
 │ ├── Dockerfile
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── next.config.ts
-│ └── README.Docker.md
+│ └── next.config.ts
 ```
 @y
 ```text
@@ -2136,8 +2021,7 @@ After completing the previous steps, your project directory should contain at le
 │ ├── Dockerfile
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── next.config.ts
-│ └── README.Docker.md
+│ └── next.config.ts
 ```
 @z
 
@@ -2236,17 +2120,17 @@ This output provides key details about your images:
 @z
 
 @x
-- **Repository** – The name assigned to the image.
-- **Tag** – A version label that helps identify different builds (e.g., latest).
-- **Image ID** – A unique identifier for the image.
-- **Created** – The timestamp indicating when the image was built.
-- **Size** – The total disk space used by the image.
+- Repository – The name assigned to the image.
+- Tag – A version label that helps identify different builds (e.g., latest).
+- Image ID – A unique identifier for the image.
+- Created – The timestamp indicating when the image was built.
+- Size – The total disk space used by the image.
 @y
-- **Repository** – The name assigned to the image.
-- **Tag** – A version label that helps identify different builds (e.g., latest).
-- **Image ID** – A unique identifier for the image.
-- **Created** – The timestamp indicating when the image was built.
-- **Size** – The total disk space used by the image.
+- Repository – The name assigned to the image.
+- Tag – A version label that helps identify different builds (e.g., latest).
+- Image ID – A unique identifier for the image.
+- Created – The timestamp indicating when the image was built.
+- Size – The total disk space used by the image.
 @z
 
 @x
@@ -2274,9 +2158,9 @@ In the previous step, you created a Dockerfile for your Next.js application and 
 @z
 
 @x
-Run the following command in a terminal. Use the port that matches your setup: **standalone** uses port 3000, **export** uses port 8080.
+Run the following command in a terminal. Use the port that matches your setup: standalone uses port 3000, export uses port 8080.
 @y
-Run the following command in a terminal. Use the port that matches your setup: **standalone** uses port 3000, **export** uses port 8080.
+Run the following command in a terminal. Use the port that matches your setup: standalone uses port 3000, export uses port 8080.
 @z
 
 @x
@@ -2290,9 +2174,9 @@ $ docker run -p 3000:3000 nextjs-sample
 @z
 
 @x
-For **export** output, use port 8080 instead:
+For export output, use port 8080 instead:
 @y
-For **export** output, use port 8080 instead:
+For export output, use port 8080 instead:
 @z
 
 @x
@@ -2306,9 +2190,9 @@ $ docker run -p 8080:8080 nextjs-sample
 @z
 
 @x
-Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for **standalone** or [http://localhost:8080](http://localhost:8080) for **export**. You should see your Next.js web application.
+Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for standalone or [http://localhost:8080](http://localhost:8080) for export. You should see your Next.js web application.
 @y
-Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for **standalone** or [http://localhost:8080](http://localhost:8080) for **export**. You should see your Next.js web application.
+Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for standalone or [http://localhost:8080](http://localhost:8080) for export. You should see your Next.js web application.
 @z
 
 @x
@@ -2340,9 +2224,9 @@ $ docker run -d -p 3000:3000 --name nextjs-app nextjs-sample
 @z
 
 @x
-For **export** output, use port 8080:
+For export output, use port 8080:
 @y
-For **export** output, use port 8080:
+For export output, use port 8080:
 @z
 
 @x
@@ -2356,9 +2240,9 @@ $ docker run -d -p 8080:8080 --name nextjs-app nextjs-sample
 @z
 
 @x
-Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for **standalone** or [http://localhost:8080](http://localhost:8080) for **export**. You should see your web application.
+Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for standalone or [http://localhost:8080](http://localhost:8080) for export. You should see your web application.
 @y
-Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for **standalone** or [http://localhost:8080](http://localhost:8080) for **export**. You should see your web application.
+Open a browser and view the application: [http://localhost:3000](http://localhost:3000) for standalone or [http://localhost:8080](http://localhost:8080) for export. You should see your web application.
 @z
 
 @x
@@ -2445,20 +2329,18 @@ In this guide, you learned how to containerize, build, and run a Next.js applica
 
 @x
 What you accomplished:
-- Initialized your project using `docker init` to scaffold essential Docker configuration files.
-- Configured Next.js for either standalone output (Node.js server) or export output (static files with NGINX).
+- Configured Next.js for either standalone output (Node.js server) or export output (static files with Nginx).
 - Added a multi-stage Dockerfile for your chosen approach: standalone (port 3000) or export (port 8080, with `nginx.conf`).
-- Replaced the default `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
+- Created a `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
 - Built your Docker image using `docker build`.
 - Ran the container using `docker run` with the image name `nextjs-sample`, both in the foreground and in detached mode.
 - Verified that the app was running by visiting [http://localhost:3000](http://localhost:3000) (standalone) or [http://localhost:8080](http://localhost:8080) (export).
 - Learned how to stop the containerized application using `docker stop nextjs-app`.
 @y
 What you accomplished:
-- Initialized your project using `docker init` to scaffold essential Docker configuration files.
-- Configured Next.js for either standalone output (Node.js server) or export output (static files with NGINX).
+- Configured Next.js for either standalone output (Node.js server) or export output (static files with Nginx).
 - Added a multi-stage Dockerfile for your chosen approach: standalone (port 3000) or export (port 8080, with `nginx.conf`).
-- Replaced the default `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
+- Created a `.dockerignore` file to exclude unnecessary files and keep the image clean and efficient.
 - Built your Docker image using `docker build`.
 - Ran the container using `docker run` with the image name `nextjs-sample`, both in the foreground and in detached mode.
 - Verified that the app was running by visiting [http://localhost:3000](http://localhost:3000) (standalone) or [http://localhost:8080](http://localhost:8080) (export).
@@ -2496,7 +2378,6 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) – Learn about Next.js production optimization (standalone and export).
 - [Next.js with Docker (standalone)](https://github.com/vercel/next.js/tree/canary/examples/with-docker) – Official Next.js example: standalone output with Node.js.
 - [Next.js with Docker (export)](https://github.com/vercel/next.js/tree/canary/examples/with-docker-export-output) – Official Next.js example: static export with Nginx or serve.
-- [`docker init` CLI reference](/reference/cli/docker/init/) – Scaffold Docker assets automatically.
 - [`docker build` CLI reference](/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
 - [`docker images` CLI reference](/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
 - [`docker run` CLI reference](/reference/cli/docker/container/run/) – Run a command in a new container.
@@ -2508,7 +2389,6 @@ Explore official references and best practices to sharpen your Docker workflow:
 - [Next.js output configuration](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) – Learn about Next.js production optimization (standalone and export).
 - [Next.js with Docker (standalone)](https://github.com/vercel/next.js/tree/canary/examples/with-docker) – Official Next.js example: standalone output with Node.js.
 - [Next.js with Docker (export)](https://github.com/vercel/next.js/tree/canary/examples/with-docker-export-output) – Official Next.js example: static export with Nginx or serve.
-- [`docker init` CLI reference](__SUBDIR__/reference/cli/docker/init/) – Scaffold Docker assets automatically.
 - [`docker build` CLI reference](__SUBDIR__/reference/cli/docker/image/build/) – Build Docker images from a Dockerfile.
 - [`docker images` CLI reference](__SUBDIR__/reference/cli/docker/image/ls/) – Manage and inspect local Docker images.
 - [`docker run` CLI reference](__SUBDIR__/reference/cli/docker/container/run/) – Run a command in a new container.

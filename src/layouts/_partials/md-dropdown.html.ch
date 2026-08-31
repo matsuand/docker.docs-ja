@@ -2,25 +2,19 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-      <span>Copy as Markdown</span>
+      <span>Ask Gordon</span>
 @y
-      <span>マークダウンとしてコピー</span>
+      <span>Gordon に聞く</span>
 @z
 
 @x
-      <span>Open Markdown</span>
+      <span>Copy Markdown</span>
 @y
-      <span>マークダウンを開く</span>
+      <span>マークダウンコピー</span>
 @z
 
 @x
-      <span>Ask Docs AI</span>
+      <span>View Markdown</span>
 @y
-      <span>Docs AI に聞く</span>
-@z
-
-@x
-      <span>Open in Claude</span>
-@y
-      <span>Claude で開く</span>
+      <span>マークダウン参照</span>
 @z

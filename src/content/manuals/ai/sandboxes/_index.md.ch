@@ -6,21 +6,11 @@
 @x
 title: Docker Sandboxes
 description: Run AI coding agents in isolated environments
+keywords: docker sandboxes, sbx, ai agents, sandboxed agents, microVM
 @y
 title: Docker Sandboxes
 description: Run AI coding agents in isolated environments
-@z
-
-@x
-      text: Early Access
-@y
-      text: 早期アクセス
-@z
-
-@x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
+keywords: docker sandboxes, sbx, ai agents, sandboxed agents, microVM
 @z
 
 @x
@@ -36,9 +26,29 @@ system.
 @z
 
 @x
+Organization admins can
+[centrally manage sandbox network and filesystem policies](security/governance.md)
+from the Docker Admin Console, so the same rules apply uniformly across every
+developer's machine. Available on a separate paid subscription.
+@y
+Organization admins can
+[centrally manage sandbox network and filesystem policies](security/governance.md)
+from the Docker Admin Console, so the same rules apply uniformly across every
+developer's machine. Available on a separate paid subscription.
+@z
+
+@x
 ## Get started
 @y
 ## Get started
+@z
+
+@x
+For complete system requirements, see the
+[get started prerequisites](get-started.md#prerequisites).
+@y
+For complete system requirements, see the
+[get started prerequisites](get-started.md#prerequisites).
 @z
 
 @x
@@ -159,8 +169,8 @@ the [usage guide](usage.md) for common patterns.
   extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
   networking
-- [Security](security/) — isolation model, credential handling, network
-  policies, workspace trust
+- [Security](security/) — isolation model, credential handling, and
+  network policies
 - [CLI reference](/reference/cli/sbx/) — full list of `sbx` commands and options
 - [Troubleshooting](troubleshooting.md) — common issues and fixes
 - [FAQ](faq.md) — login requirements, telemetry, etc
@@ -170,8 +180,8 @@ the [usage guide](usage.md) for common patterns.
   extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
   networking
-- [Security](security/) — isolation model, credential handling, network
-  policies, workspace trust
+- [Security](security/) — isolation model, credential handling, and
+  network policies
 - [CLI reference](__SUBDIR__/reference/cli/sbx/) — full list of `sbx` commands and options
 - [Troubleshooting](troubleshooting.md) — common issues and fixes
 - [FAQ](faq.md) — login requirements, telemetry, etc

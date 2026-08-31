@@ -141,135 +141,34 @@ For the sample application, you'll use a variation of the backend from the react
 % snip command...
 
 @x
-2. In the cloned repository's directory, run `docker init` to create the necessary Docker files. Refer to the following example to answer the prompts from `docker init`.
+2. In the cloned repository's directory, create a `Dockerfile`. This application includes a `migrations` directory (in addition to `src`) to initialize the database, so the Dockerfile includes a bind mount for that directory in the build stage.
 @y
-2. In the cloned repository's directory, run `docker init` to create the necessary Docker files. Refer to the following example to answer the prompts from `docker init`.
+2. In the cloned repository's directory, create a `Dockerfile`. This application includes a `migrations` directory (in addition to `src`) to initialize the database, so the Dockerfile includes a bind mount for that directory in the build stage.
 @z
 
 % snip command...
 
 @x
-3. In the cloned repository's directory, open the `Dockerfile` in an IDE or text editor to update it.
+3. In the cloned repository's directory, run `docker build` to build the image.
 @y
-3. In the cloned repository's directory, open the `Dockerfile` in an IDE or text editor to update it.
+3. In the cloned repository's directory, run `docker build` to build the image.
 @z
 
 @x
-   `docker init` handled creating most of the instructions in the Dockerfile, but you'll need to update it for your unique application. In addition to a `src` directory, this application includes a `migrations` directory to initialize the database. Add a bind mount for the `migrations` directory to the build stage in the Dockerfile. The following is the updated Dockerfile.
+4. Run `docker run` with the following options to run the image as a container on the same network as the database.
 @y
-   `docker init` handled creating most of the instructions in the Dockerfile, but you'll need to update it for your unique application. In addition to a `src` directory, this application includes a `migrations` directory to initialize the database. Add a bind mount for the `migrations` directory to the build stage in the Dockerfile. The following is the updated Dockerfile.
-@z
-
-@x
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Dockerfile reference guide at
-   # https://docs.docker.com/reference/dockerfile/
-@y
-   # Comments are provided throughout this file to help you get started.
-   # If you need more help, visit the Dockerfile reference guide at
-   # https://docs.docker.com/reference/dockerfile/
-@z
-@x
-   # Create a stage for building the application.
-@y
-   # Create a stage for building the application.
-@z
-@x
-   # Build the application.
-   # Leverage a cache mount to /usr/local/cargo/registry/
-   # for downloaded dependencies and a cache mount to /app/target/ for 
-   # compiled dependencies which will speed up subsequent builds.
-   # Leverage a bind mount to the src directory to avoid having to copy the
-   # source code into the container. Once built, copy the executable to an
-   # output directory before the cache mounted /app/target is unmounted.
-@y
-   # Build the application.
-   # Leverage a cache mount to /usr/local/cargo/registry/
-   # for downloaded dependencies and a cache mount to /app/target/ for 
-   # compiled dependencies which will speed up subsequent builds.
-   # Leverage a bind mount to the src directory to avoid having to copy the
-   # source code into the container. Once built, copy the executable to an
-   # output directory before the cache mounted /app/target is unmounted.
-@z
-
-@x
-   # Create a new stage for running the application that contains the minimal
-   # runtime dependencies for the application. This often uses a different base
-   # image from the build stage where the necessary files are copied from the build
-   # stage.
-@y
-   # Create a new stage for running the application that contains the minimal
-   # runtime dependencies for the application. This often uses a different base
-   # image from the build stage where the necessary files are copied from the build
-   # stage.
-@z
-@x
-   # The example below uses the debian bullseye image as the foundation for    running the app.
-   # By specifying the "bullseye-slim" tag, it will also use whatever happens to    be the
-   # most recent version of that tag when you build your Dockerfile. If
-   # reproducibility is important, consider using a digest
-   # (e.g.,    debian@sha256:ac707220fbd7b67fc19b112cee8170b41a9e97f703f588b2cdbbcdcecdd8af57).
-@y
-   # The example below uses the debian bullseye image as the foundation for    running the app.
-   # By specifying the "bullseye-slim" tag, it will also use whatever happens to    be the
-   # most recent version of that tag when you build your Dockerfile. If
-   # reproducibility is important, consider using a digest
-   # (e.g.,    debian@sha256:ac707220fbd7b67fc19b112cee8170b41a9e97f703f588b2cdbbcdcecdd8af57).
-@z
-@x
-   # Create a non-privileged user that the app will run under.
-   # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/   #user
-@y
-   # Create a non-privileged user that the app will run under.
-   # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/   #user
-@z
-@x
-   # Copy the executable from the "build" stage.
-@y
-   # Copy the executable from the "build" stage.
-@z
-@x
-   # Expose the port that the application listens on.
-@y
-   # Expose the port that the application listens on.
-@z
-@x
-   # What the container should run when it is started.
-@y
-   # What the container should run when it is started.
-@z
-
-@x
-4. In the cloned repository's directory, run `docker build` to build the image.
-@y
-4. In the cloned repository's directory, run `docker build` to build the image.
+4. Run `docker run` with the following options to run the image as a container on the same network as the database.
 @z
 
 % snip command...
 
 @x
-5. Run `docker run` with the following options to run the image as a container on the same network as the database.
+5. Curl the application to verify that it connects to the database.
 @y
-5. Run `docker run` with the following options to run the image as a container on the same network as the database.
+5. Curl the application to verify that it connects to the database.
 @z
 
 % snip command...
-
-@x
-6. Curl the application to verify that it connects to the database.
-@y
-6. Curl the application to verify that it connects to the database.
-@z
-
-% snip command...
-
-@x
-   You should get a response like the following.
-@y
-   You should get a response like the following.
-@z
-
-% snip output...
 
 @x
 ## Use Compose to develop locally
@@ -278,21 +177,9 @@ For the sample application, you'll use a variation of the backend from the react
 @z
 
 @x
-When you run `docker init`, in addition to a `Dockerfile`, it also creates a `compose.yaml` file.
+In the cloned repository's directory, create a `compose.yaml` file. Using Compose, you don't have to type all the parameters to pass to the `docker run` command — you can declare them in the file instead.
 @y
-When you run `docker init`, in addition to a `Dockerfile`, it also creates a `compose.yaml` file.
-@z
-
-@x
-This Compose file is super convenient as you don't have to type all the parameters to pass to the `docker run` command. You can declaratively do that using a Compose file.
-@y
-This Compose file is super convenient as you don't have to type all the parameters to pass to the `docker run` command. You can declaratively do that using a Compose file.
-@z
-
-@x
-In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. `docker init` handled creating most of the instructions, but you'll need to update it for your unique application.
-@y
-In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. `docker init` handled creating most of the instructions, but you'll need to update it for your unique application.
+In the cloned repository's directory, create a `compose.yaml` file. Using Compose, you don't have to type all the parameters to pass to the `docker run` command — you can declare them in the file instead.
 @z
 
 @x

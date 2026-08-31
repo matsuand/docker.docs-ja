@@ -11,8 +11,9 @@ include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
 
 copyfiles = \
-	render-heading.html \
-	render-link.html    \
+	render-codeblock-mermaid.html \
+	render-heading.html           \
+	render-link.html              \
 	render-table.html
 
 include $(top_srcdir)/build-aux/copy.mk

@@ -6,11 +6,11 @@
 @x
 title: Scanner integrations
 description: Learn which vulnerability scanners work with Docker Hardened Images and how to choose the right scanner for accurate vulnerability assessment.
-keywords: scanner integration, vulnerability scanning, docker scout, trivy, grype, mend.io, container security scanners
+keywords: scanner integration, vulnerability scanning, docker scout, trivy, grype, mend.io, black duck, container security scanners
 @y
 title: Scanner integrations
 description: Learn which vulnerability scanners work with Docker Hardened Images and how to choose the right scanner for accurate vulnerability assessment.
-keywords: scanner integration, vulnerability scanning, docker scout, trivy, grype, mend.io, container security scanners
+keywords: scanner integration, vulnerability scanning, docker scout, trivy, grype, mend.io, black duck, container security scanners
 @z
 
 @x
@@ -51,6 +51,8 @@ Hardened Images to deliver more accurate vulnerability assessments:
 - [Mend.io](https://www.mend.io/): Automatically retrieves and applies VEX
   statements with zero configuration. Combines VEX data with reachability
   analysis.
+- [Black Duck](https://www.blackduck.com/): Identifies Docker Hardened Images
+  and applies VEX statements with zero configuration.
 @y
 - [Docker Scout](__SUBDIR__/scout/): Automatically applies VEX statements with
   zero configuration. Integrated directly into Docker Desktop and the Docker CLI.
@@ -63,6 +65,8 @@ Hardened Images to deliver more accurate vulnerability assessments:
 - [Mend.io](https://www.mend.io/): Automatically retrieves and applies VEX
   statements with zero configuration. Combines VEX data with reachability
   analysis.
+- [Black Duck](https://www.blackduck.com/): Identifies Docker Hardened Images
+  and applies VEX statements with zero configuration.
 @z
 
 @x
@@ -153,8 +157,8 @@ from Docker Hardened Images offer the following benefits:
   aren't flagged; security teams and compliance officers can review the reasoning
   rather than trusting a vendor's black box.
 - Scanner flexibility: Switch between any VEX-enabled scanner (Docker Scout,
-  Trivy, Grype, Wiz, Mend.io, etc.) without losing vulnerability context or
-  rebuilding exclusion lists.
+  Trivy, Grype, Wiz, Mend.io, Black Duck, etc.) without losing vulnerability
+  context or rebuilding exclusion lists.
 - Consistent results: VEX-enabled scanners interpret the same data the
   same way, eliminating discrepancies between tools.
 - Faster workflows: Focus on real risks rather than researching why reported
@@ -167,8 +171,8 @@ from Docker Hardened Images offer the following benefits:
   aren't flagged; security teams and compliance officers can review the reasoning
   rather than trusting a vendor's black box.
 - Scanner flexibility: Switch between any VEX-enabled scanner (Docker Scout,
-  Trivy, Grype, Wiz, Mend.io, etc.) without losing vulnerability context or
-  rebuilding exclusion lists.
+  Trivy, Grype, Wiz, Mend.io, Black Duck, etc.) without losing vulnerability
+  context or rebuilding exclusion lists.
 - Consistent results: VEX-enabled scanners interpret the same data the
   same way, eliminating discrepancies between tools.
 - Faster workflows: Focus on real risks rather than researching why reported
@@ -241,7 +245,7 @@ apply and why. Any VEX-enabled scanner can read these attestations, giving you:
 
 @x
 - Tool flexibility: Use any scanner that supports OpenVEX (Docker Scout,
-  Trivy, Grype, Wiz, Mend.io, etc.)
+  Trivy, Grype, Wiz, Mend.io, Black Duck, etc.)
 - Complete transparency: Review the exact reasoning for each vulnerability
   assessment
 - Full auditability: Security teams and compliance officers can independently
@@ -250,7 +254,7 @@ apply and why. Any VEX-enabled scanner can read these attestations, giving you:
   always check vulnerability status, even for older versions
 @y
 - Tool flexibility: Use any scanner that supports OpenVEX (Docker Scout,
-  Trivy, Grype, Wiz, Mend.io, etc.)
+  Trivy, Grype, Wiz, Mend.io, Black Duck, etc.)
 - Complete transparency: Review the exact reasoning for each vulnerability
   assessment
 - Full auditability: Security teams and compliance officers can independently

@@ -5,32 +5,44 @@
 name: sbx login
 synopsis: Sign in to Docker
 usage: sbx login [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for login
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx - Manage AI coding agent sandboxes.
 @y
 name: sbx login
 synopsis: Sign in to Docker
 usage: sbx login [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+% options:
+
+@x help
       usage: help for login
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for login
+@z
+
+@x password-stdin
+      usage: Read password or access token from stdin
+@y
+      usage: Read password or access token from stdin
+@z
+
+@x username
+      usage: Docker username for non-interactive login
+@y
+      usage: Docker username for non-interactive login
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx - Manage AI coding agent sandboxes.
+@y
     - sbx - Manage AI coding agent sandboxes.
 @z

@@ -3,10 +3,10 @@
 
 @x
 title: Create a multi-stage build for your C++ application
-linkTitle: Containerize your app using a multi-stage build
+linkTitle: Multi-stage build
 @y
 title: C++ アプリケーションに対してのマルチステージビルドの生成
-linkTitle: マルチステージビルドを使ったアプリのコンテナー化
+linkTitle: マルチステージビルド
 @z
 
 @x

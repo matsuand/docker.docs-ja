@@ -13,42 +13,104 @@ description: Learn how to install, set up, configure, and use Docker products wi
 keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
-% open-source:
+% ai-and-agents:
 
 @x
-  - title: Docker Build
-    description: Build and ship any application anywhere.
-    icon: build
-    link: /build/
+  - title: Docker Sandboxes
+    description: Run AI coding agents in isolated environments.
+    icon: command-line
+    link: /ai/sandboxes/
 @y
-  - title: Docker Build
-    description: どんなアプリもどこでもビルドし公開します。
-    icon: build
-    link: __SUBDIR__/build/
+  - title: Docker Sandboxes
+    description: Run AI coding agents in isolated environments.
+    icon: command-line
+    link: __SUBDIR__/ai/sandboxes/
 @z
 
 @x
-  - title: Docker Engine
-    description: The industry-leading container runtime.
-    icon: developer_board
-    link: /engine/
+  - title: MCP Catalog and Toolkit
+    description: Augment your AI workflow with MCP servers.
+    icon: /icons/toolkit.svg
+    link: /ai/mcp-catalog-and-toolkit/
 @y
-  - title: Docker Engine
-    description: 業界をリードするコンテナー実行モジュールです。
-    icon: developer_board
-    link: __SUBDIR__/engine/
+  - title: MCP Catalog and Toolkit
+    description: Augment your AI workflow with MCP servers.
+    icon: icons/toolkit.svg
+    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/
 @z
 
 @x
-  - title: Docker Compose
-    description: Define and run multi-container applications.
-    icon: /icons/Compose.svg
-    link: /compose/
+  - title: Gordon
+    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
+    icon: document-plus
+    link: /ai/gordon/
 @y
-  - title: Docker Compose
-    description: マルチコンテナーアプリケーションを定義して実行します。
-    icon: icons/Compose.svg
-    link: __SUBDIR__/compose/
+  - title: Gordon
+    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
+    icon: document-plus
+    link: __SUBDIR__/ai/gordon/
+@z
+
+@x
+  - title: Docker Model Runner
+    description: View and manage your local models.
+    icon: /icons/models.svg
+    link: /ai/model-runner/
+@y
+  - title: Docker Model Runner
+    description: View and manage your local models.
+    icon: /icons/models.svg
+    link: __SUBDIR__/ai/model-runner/
+@z
+
+@x
+  - title: Docker Agent
+    description: The open-source multi-agent solution to assist you in your tasks.
+    icon: /icons/cagent.svg
+    link: /ai/docker-agent
+@y
+  - title: Docker Agent
+    description: タスクの実現をサポートするオープンソースのマルチエージェントソリューションです。
+    icon: icons/cagent.svg
+    link: __SUBDIR__/ai/docker-agent
+@z
+
+% application-development:
+
+@x
+  - title: Docker Desktop
+    description: Your command center for container development.
+    icon: /icons/Whale.svg
+    link: /desktop/
+@y
+  - title: Docker Desktop
+    description: コンテナー開発を行うための中心的な存在です。
+    icon: icons/Whale.svg
+    link: __SUBDIR__/desktop/
+@z
+
+@x
+  - title: Docker Offload
+    description: Build and run containers in the cloud.
+    icon: cloud
+    link: /offload/
+@y
+  - title: Docker Offload
+    description: Build and run containers in the cloud.
+    icon: cloud
+    link: __SUBDIR__/offload/
+@z
+
+@x
+  - title: Docker Build Cloud
+    description: Build your images faster in the cloud.
+    icon: /icons/logo-build-cloud.svg
+    link: /build-cloud/
+@y
+  - title: Docker Build Cloud
+    description: Build your images faster in the cloud.
+    icon: icons/logo-build-cloud.svg
+    link: __SUBDIR__/build-cloud/
 @z
 
 @x
@@ -64,67 +126,53 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Docker Agent
-    description: The open-source multi-agent solution to assist you in your tasks.
-    icon: /icons/cagent.svg
-    link: /ai/docker-agent
+  - title: Docker Build
+    description: Build and ship any application anywhere.
+    icon: wrench-screwdriver
+    link: /build/
 @y
-  - title: Docker Agent
-    description: タスクの実現をサポートするオープンソースのマルチエージェントソリューションです。
-    icon: icons/cagent.svg
-    link: __SUBDIR__/ai/docker-agent
-@z
-
-% ai:
-
-@x
-  - title: Gordon
-    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
-    icon: note_add
-    link: /ai/gordon/
-@y
-  - title: Gordon
-    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
-    icon: note_add
-    link: __SUBDIR__/ai/gordon/
+  - title: Docker Build
+    description: どんなアプリもどこでもビルドし公開します。
+    icon: wrench-screwdriver
+    link: __SUBDIR__/build/
 @z
 
 @x
-  - title: Docker Model Runner
-    description: View and manage your local models.
-    icon: /icons/models.svg
-    link: /ai/model-runner/
+  - title: Docker Engine
+    description: The industry-leading container runtime.
+    icon: cpu-chip
+    link: /engine/
 @y
-  - title: Docker Model Runner
-    description: View and manage your local models.
-    icon: icons/models.svg
-    link: __SUBDIR__/ai/model-runner/
+  - title: Docker Engine
+    description: 業界をリードするコンテナー実行モジュールです。
+    icon: cpu-chip
+    link: __SUBDIR__/engine/
 @z
 
 @x
-  - title: MCP Catalog and Toolkit
-    description: Augment your AI workflow with MCP servers.
-    icon: /icons/toolkit.svg
-    link: /ai/mcp-catalog-and-toolkit/
+  - title: Docker Compose
+    description: Define and run multi-container applications.
+    icon: /icons/Compose.svg
+    link: /compose/
 @y
-  - title: MCP Catalog and Toolkit
-    description: Augment your AI workflow with MCP servers.
-    icon: icons/toolkit.svg
-    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/
+  - title: Docker Compose
+    description: マルチコンテナーアプリケーションを定義して実行します。
+    icon: icons/Compose.svg
+    link: __SUBDIR__/compose/
 @z
 
-% products:
+% supply-chain-security:
 
 @x
-  - title: Docker Desktop
-    description: Your command center for container development.
-    icon: /icons/Whale.svg
-    link: /desktop/
+  - title: Docker Hub
+    description: Discover, share, and integrate container images.
+    icon: globe-alt
+    link: /docker-hub/
 @y
-  - title: Docker Desktop
-    description: コンテナー開発を行うための中心的な存在です。
-    icon: icons/Whale.svg
-    link: __SUBDIR__/desktop/
+  - title: Docker Hub
+    description: コンテナーイメージの検索、共有、統合を行います。
+    icon: globe-alt
+    link: __SUBDIR__/docker-hub/
 @z
 
 @x
@@ -140,42 +188,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Docker Offload
-    description: Build and run containers in the cloud.
-    icon: cloud
-    link: /offload/
-@y
-  - title: Docker Offload
-    description: クラウド上でコンテナーをビルドし実行します。
-    icon: cloud
-    link: __SUBDIR__/offload/
-@z
-
-@x
-  - title: Build Cloud
-    description: Build your images faster in the cloud.
-    icon: /icons/logo-build-cloud.svg
-    link: /build-cloud/
-@y
-  - title: Build Cloud
-    description: クラウド上で迅速にイメージビルドを行います。
-    icon: icons/logo-build-cloud.svg
-    link: __SUBDIR__/build-cloud/
-@z
-
-@x
-  - title: Docker Hub
-    description: Discover, share, and integrate container images.
-    icon: hub
-    link: /docker-hub/
-@y
-  - title: Docker Hub
-    description: コンテナーイメージの検索、共有、統合を行います。
-    icon: hub
-    link: __SUBDIR__/docker-hub/
-@z
-
-@x
   - title: Docker Scout
     description: Image analysis and policy evaluation.
     icon: /icons/Scout.svg
@@ -187,89 +199,65 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: __SUBDIR__/scout/
 @z
 
-@x
-  - title: Docker Extensions
-    description: Customize your Docker Desktop workflow.
-    icon: extension
-    link: /extensions/
-@y
-  - title: Docker Extensions
-    description: Docker Desktop ワークフローをカスタマイズします。
-    icon: extension
-    link: __SUBDIR__/extensions/
-@z
-
-@x
-  - title: Testcontainers Cloud
-    description: Run integration tests, with real dependencies, in the cloud.
-    icon: package_2
-    link: https://testcontainers.com/cloud/docs/
-@y
-  - title: Testcontainers Cloud
-    description: Run integration tests, with real dependencies, in the cloud.
-    icon: package_2
-    link: https://testcontainers.com/cloud/docs/
-@z
-
 % platform:
 
 @x
   - title: Administration
     description: Centralized observability for companies and organizations.
-    icon: admin_panel_settings
+    icon: shield-check
     link: /admin/
 @y
   - title: 管理
     description: Centralized observability for companies and organizations.
-    icon: admin_panel_settings
+    icon: shield-check
     link: __SUBDIR__/admin/
 @z
 
 @x
   - title: Billing
     description: Manage billing and payment methods.
-    icon: payments
+    icon: credit-card
     link: /billing/
 @y
   - title: 支払い
     description: 請求方法や支払い方法について管理します。
-    icon: payments
+    icon: credit-card
     link: __SUBDIR__/billing/
 @z
 
 @x
   - title: Accounts
     description: Manage your Docker account.
-    icon: account_circle
+    icon: user-circle
     link: /accounts/
 @y
   - title: Accounts
     description: Docker アカウントを管理します。
-    icon: account_circle
+    icon: user-circle
     link: __SUBDIR__/accounts/
 @z
 
 @x
   - title: Security
     description: Security guardrails for both administrators and developers.
-    icon: lock
+    icon: lock-closed
     link: /security/
 @y
   - title: セキュリティ
     description: Security guardrails for both administrators and developers.
-    icon: lock
+    icon: lock-closed
     link: __SUBDIR__/security/
 @z
 
 @x
   - title: Subscription
     description: Commercial use licenses for Docker products.
-    icon: card_membership
+    icon: credit-card
     link: /subscription/
 @y
   - title: サブスクリプション
     description: Docker 製品に対する商用利用ライセンスです。
-    icon: card_membership
+    icon: credit-card
     link: __SUBDIR__/subscription/
 @z
 
@@ -281,23 +269,9 @@ Docker products.
 @z
 
 @x
-## Open source
+## AI and agents
 @y
-## オープンソース {#open-source}
-@z
-
-@x
-Open source development and containerization technologies.
-@y
-以下はオープンソフトウェア開発とコンテナー化技術です。
-@z
-
-% grid items=open-source
-
-@x
-## AI
-@y
-## AI
+## AI and agents
 @z
 
 @x
@@ -307,9 +281,9 @@ All the Docker AI tools in one easy-to-access location.
 @z
 
 @x
-## Products
+## Application development
 @y
-## 製品 {#products}
+## Application development
 @z
 
 @x
@@ -318,12 +292,22 @@ End-to-end developer solutions for innovative teams.
 End-to-end developer solutions for innovative teams.
 @z
 
-% grid items=products
+@x
+## Supply chain security
+@y
+## Supply chain security
+@z
+
+@x
+Security guardrails and image analysis for your software supply chain.
+@y
+Security guardrails and image analysis for your software supply chain.
+@z
 
 @x
 ## Platform
 @y
-## プラットフォーム {#platform}
+## Platform
 @z
 
 @x
@@ -333,5 +317,3 @@ subscription management.
 Docker プラットフォームに関連するドキュメントです。
 機能管理、サブスク管理などがあります。
 @z
-
-% grid items=platform

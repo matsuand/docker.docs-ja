@@ -10,6 +10,7 @@ description: >
   Learn how to manage simple and complex build configurations with Buildx Bake.
 summary: >
   Learn to automate Docker builds and testing with declarative configurations using Buildx Bake.
+keywords: bake, buildx, multi-platform, build configuration, hcl, automation
 @y
 title: Mastering multi-platform builds, testing, and more with Docker Buildx Bake
 linkTitle: Mastering Docker Buildx Bake
@@ -17,21 +18,15 @@ description: >
   Learn how to manage simple and complex build configurations with Buildx Bake.
 summary: >
   Learn to automate Docker builds and testing with declarative configurations using Buildx Bake.
+keywords: bake, buildx, multi-platform, build configuration, hcl, automation
 @z
 
-@x
-tags: [devops]
-languages: [go]
-@y
-tags: [devops]
-languages: [go]
-@z
-
-% params:
 @x
   time: 30 minutes
+  image: /images/guides/bake.webp
 @y
   time: 30 分
+  image: /images/guides/bake.webp
 @z
 
 @x
@@ -219,10 +214,10 @@ line. Here's a quick summary of the options for the `default` target:
 @z
 
 @x
-To execute this build, simply run the following command in the root of the
+To execute this build, run the following command in the root of the
 repository:
 @y
-To execute this build, simply run the following command in the root of the
+To execute this build, run the following command in the root of the
 repository:
 @z
 
@@ -452,13 +447,13 @@ And in the Dockerfile, add the build stage. This stage will use the official
 > [!TIP]
 > Because this stage relies on executing an external dependency, it's generally
 > a good idea to define the version you want to use as a build argument. This
-> lets you more easily manage version upgrades in the future by collocating
+> lets you manage version upgrades in the future by collocating
 > dependency versions to the beginning of the Dockerfile.
 @y
 > [!TIP]
 > Because this stage relies on executing an external dependency, it's generally
 > a good idea to define the version you want to use as a build argument. This
-> lets you more easily manage version upgrades in the future by collocating
+> lets you manage version upgrades in the future by collocating
 > dependency versions to the beginning of the Dockerfile.
 @z
 
@@ -652,12 +647,12 @@ matrix variable.
 
 @x
 You'll also want to change how the image tags are assigned to these builds.
-Currently, both matrix paths would generate the same image tag names, and
+As written, both matrix paths would generate the same image tag names, and
 overwrite each other. Update the `tags` attribute use a conditional operator to
 set the tag depending on the matrix variable value.
 @y
 You'll also want to change how the image tags are assigned to these builds.
-Currently, both matrix paths would generate the same image tag names, and
+As written, both matrix paths would generate the same image tag names, and
 overwrite each other. Update the `tags` attribute use a conditional operator to
 set the tag depending on the matrix variable value.
 @z
@@ -1178,12 +1173,12 @@ build/
 Docker Buildx Bake streamlines complex build workflows, enabling efficient
 multi-platform builds, testing, and artifact export. By integrating Buildx Bake
 into your projects, you can simplify your Docker builds, make your build
-configuration portable, and wrangle complex configurations more easily.
+configuration portable, and wrangle complex configurations.
 @y
 Docker Buildx Bake streamlines complex build workflows, enabling efficient
 multi-platform builds, testing, and artifact export. By integrating Buildx Bake
 into your projects, you can simplify your Docker builds, make your build
-configuration portable, and wrangle complex configurations more easily.
+configuration portable, and wrangle complex configurations.
 @z
 
 @x

@@ -39,15 +39,15 @@
 @z
 
 @x
-              (dict "url" "/get-started/" "icon" "rocket" "title" "Get started" "description" "Learn Docker basics.")
-              (dict "url" "/guides/" "icon" "menu_book" "title" "Guides" "description" "Optimize your development workflows with Docker.")
-              (dict "url" "/manuals/" "icon" "description" "title" "Manuals" "description" "Install, set up, configure, and use Docker products.")
-              (dict "url" "/reference/" "icon" "terminal" "title" "Reference" "description" "Browse the CLI and API documentation.")
+              (dict "url" "/get-started/" "icon" "rocket-launch" "title" "Get started" "description" "Learn Docker basics.")
+              (dict "url" "/guides/" "icon" "book-open" "title" "Guides" "description" "Optimize your development workflows with Docker.")
+              (dict "url" "/manuals/" "icon" "document-text" "title" "Manuals" "description" "Install, set up, configure, and use Docker products.")
+              (dict "url" "/reference/" "icon" "command-line" "title" "Reference" "description" "Browse the CLI and API documentation.")
 @y
-              (dict "url" "get-started/" "icon" "rocket" "title" "はじめよう" "description" "Docker の基本を学びます。")
-              (dict "url" "guides/" "icon" "menu_book" "title" "ガイド" "description" "Docker を使って開発ワークフローを最適化します。")
-              (dict "url" "manuals/" "icon" "description" "title" "マニュアル" "description" "Docker 製品のインストール、設定、利用方法を示します。")
-              (dict "url" "reference/" "icon" "terminal" "title" "リファレンス" "description" "CLI と API のドキュメントを参照します。")
+              (dict "url" "get-started/" "icon" "rocket-launch" "title" "はじめよう" "description" "Docker の基本を学びます。")
+              (dict "url" "guides/" "icon" "book-open" "title" "ガイド" "description" "Docker を使って開発ワークフローを最適化します。")
+              (dict "url" "manuals/" "icon" "document-text" "title" "マニュアル" "description" "Docker 製品のインストール、設定、利用方法を示します。")
+              (dict "url" "reference/" "icon" "command-line" "title" "リファレンス" "description" "CLI と API のドキュメントを参照します。")
 @z
 
 @x

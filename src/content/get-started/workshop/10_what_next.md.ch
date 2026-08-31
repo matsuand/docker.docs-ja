@@ -110,11 +110,11 @@ summary: |
 @x
 - title: Use AI models in Compose
   description: Define AI model dependencies in your Docker Compose applications.
-  link: /compose/how-tos/model-runner/
+  link: /ai/compose/models-and-compose/
 @y
 - title: Use AI models in Compose
   description: Define AI model dependencies in your Docker Compose applications.
-  link: __SUBDIR__/compose/how-tos/model-runner/
+  link: __SUBDIR__/ai/compose/models-and-compose/
 @z
 
 %language-guides:

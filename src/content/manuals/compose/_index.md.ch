@@ -24,36 +24,36 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
 @x
 - title: Why use Compose?
   description: Understand Docker Compose's key benefits
-  icon: feature_search
+  icon: magnifying-glass
   link: /compose/intro/features-uses/
 @y
 - title: Compose 利用はなぜ？
   description: Docker Compose の主要機能の特性を理解します。
-  icon: feature_search
+  icon: magnifying-glass
   link: __SUBDIR__/compose/intro/features-uses/
 @z
 
 @x
 - title: How Compose works 
   description: Understand how Compose works
-  icon: category
+  icon: squares-2x2
   link: /compose/intro/compose-application-model/
 @y
 - title: Compose はどう動くのか
   description: Compose はどのようにして動作するのかを理解します。
-  icon: category
+  icon: squares-2x2
   link: __SUBDIR__/compose/intro/compose-application-model/
 @z
 
 @x
 - title: Install Compose
   description: Follow the instructions on how to install Docker Compose.
-  icon: download
+  icon: arrow-down-tray
   link: /compose/install
 @y
 - title: Compose のインストール
   description: Docker Compose のインストール手順を説明していきます。
-  icon: download
+  icon: arrow-down-tray
   link: __SUBDIR__/compose/install
 @z
 
@@ -61,24 +61,24 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
 - title: Quickstart
   description: Learn the key concepts of Docker Compose whilst building a simple Python
     web application.
-  icon: explore
+  icon: magnifying-glass-plus
   link: /compose/gettingstarted
 @y
 - title: クィックスタート
   description: 簡単な Pytyhon ウェブアプリケーションをビルドしながら Docker Compose の特徴的な考え方について学んでいきます。
-  icon: explore
+  icon: magnifying-glass-plus
   link: __SUBDIR__/compose/gettingstarted
 @z
 
 @x
 - title: View the release notes
   description: Find out about the latest enhancements and bug fixes.
-  icon: note_add
+  icon: document-plus
   link: "https://github.com/docker/compose/releases"
 @y
 - title: リリースノートの確認
   description: 最新の機能拡張やバグフィックスを確認します。
-  icon: note_add
+  icon: document-plus
   link: "https://github.com/docker/compose/releases"
 @z
 
@@ -86,37 +86,37 @@ keywords: docker compose, docker-compose, compose.yaml, docker compose command, 
 - title: Explore the Compose file reference
   description: Find information on defining services, networks, and volumes for a
     Docker application.
-  icon: polyline
+  icon: arrows-right-left
   link: /reference/compose-file
 @y
 - title: Compose ファイルリファレンスの確認
   description: Find information on defining services, networks, and volumes for a
     Docker application.
-  icon: polyline
+  icon: arrows-right-left
   link: __SUBDIR__/reference/compose-file
 @z
 
 @x
 - title: Use Compose Bridge
   description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
-  icon: move_down
+  icon: arrow-down
   link: /compose/bridge
 @y
 - title: Compose Bridge の利用
   description: Transform your Compose configuration file into configuration files for different platforms, such as Kubernetes.
-  icon: move_down
+  icon: arrow-down
   link: __SUBDIR__/compose/bridge
 @z
 
 @x
 - title: Browse common FAQs
   description: Explore general FAQs and find out how to give feedback.
-  icon: help
+  icon: question-mark-circle
   link: /compose/faq
 @y
 - title: 一般的な FAQ の確認
   description: Explore general FAQs and find out how to give feedback.
-  icon: help
+  icon: question-mark-circle
   link: __SUBDIR__/compose/faq
 @z
 

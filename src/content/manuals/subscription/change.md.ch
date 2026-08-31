@@ -5,10 +5,12 @@
 
 @x
 title: Change your subscription
+linkTitle: Upgrade or change
 description: Upgrade or downgrade your Docker subscription and understand billing changes
 keywords: upgrade subscription, downgrade subscription, docker pricing, subscription changes
 @y
 title: Change your subscription
+linkTitle: Upgrade or change
 description: Upgrade or downgrade your Docker subscription and understand billing changes
 keywords: upgrade subscription, downgrade subscription, docker pricing, subscription changes
 @z
@@ -32,9 +34,13 @@ When you upgrade your Docker subscription, you immediately get access to all fea
 @z
 
 @x
-For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
+> [!TIP]
+> If you're upgrading from a Personal subscription to a Team subscription
+> and want to keep your username, [convert your user account into an organization](../admin/organization/setup/convert-account.md).
 @y
-For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
+> [!TIP]
+> If you're upgrading from a Personal subscription to a Team subscription
+> and want to keep your username, [convert your user account into an organization](../admin/organization/setup/convert-account.md).
 @z
 
 @x
@@ -46,35 +52,35 @@ To upgrade your subscription:
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select the organization
    you want to upgrade.
-1. Select **Billing**.
-1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/setup/convert-account.md).
-1. Select **Upgrade**.
-1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
+1. Select **Billing** to view your current plans.
+1. Select **Browse products**.
+1. Choose **View plans** from the Docker product tile on the products catalog page.
+1. Choose a Docker Team or Docker Business plan for the organization.
+1. Follow the on-screen instructions to complete your upgrade.
+   - If you choose to pay using a US bank account, you must verify the account.
+   - For more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select the organization
    you want to upgrade.
-1. Select **Billing**.
-1. Optional. If you're upgrading from a free Personal subscription to a Team subscription and want to keep your username, [convert your user account into an organization](../admin/organization/setup/convert-account.md).
-1. Select **Upgrade**.
-1. Follow the on-screen instructions to complete your upgrade. If you choose to pay using a US bank account, you must verify the account. For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
+1. Select **Billing** to view your current plans.
+1. Select **Browse products**.
+1. Choose **View plans** from the Docker product tile on the products catalog page.
+1. Choose a Docker Team or Docker Business plan for the organization.
+1. Follow the on-screen instructions to complete your upgrade.
+   - If you choose to pay using a US bank account, you must verify the account.
+   - For more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
 @z
 
 @x
-## Downgrade your subscription
+For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @y
-## Downgrade your subscription
+For detailed feature information, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @z
 
 @x
-You can downgrade your Docker subscription at any time before the renewal date. The unused portion isn't refundable, but you retain access to paid features until the next billing cycle.
+## Downgrade considerations
 @y
-You can downgrade your Docker subscription at any time before the renewal date. The unused portion isn't refundable, but you retain access to paid features until the next billing cycle.
-@z
-
-@x
-### Downgrade considerations
-@y
-### Downgrade considerations
+## Downgrade considerations
 @z
 
 @x
@@ -97,6 +103,18 @@ Consider the following before downgrading:
 For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
 @y
 For feature limits in each tier, see [Docker Pricing](https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionChange).
+@z
+
+@x
+## Downgrade your subscription
+@y
+## Downgrade your subscription
+@z
+
+@x
+You can downgrade your Docker subscription at any time before the renewal date. The unused portion isn't refundable, but you retain access to paid features until the end of the current billing cycle.
+@y
+You can downgrade your Docker subscription at any time before the renewal date. The unused portion isn't refundable, but you retain access to paid features until the end of the current billing cycle.
 @z
 
 @x
@@ -109,13 +127,13 @@ To downgrade your subscription:
 1. Sign in to [Docker Home](https://app.docker.com/) and select
    the organization you want to downgrade.
 1. Select **Billing**.
-1. Select the action icon and then **Cancel subscription**.
+1. Select the action menu, then **Cancel subscription**.
 1. Fill out the feedback survey to continue with cancellation.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select
    the organization you want to downgrade.
 1. Select **Billing**.
-1. Select the action icon and then **Cancel subscription**.
+1. Select the action menu, then **Cancel subscription**.
 1. Fill out the feedback survey to continue with cancellation.
 @z
 

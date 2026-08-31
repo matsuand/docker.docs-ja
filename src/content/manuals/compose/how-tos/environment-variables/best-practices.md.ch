@@ -2,29 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Best practices for working with environment variables in Docker Compose
 linkTitle: Best practices
 description: Explainer on the best ways to set, use, and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file, environment variables
-tags: [Best practices]
-weight: 50
-aliases:
-- /compose/environment-variables/best-practices/
----
 @y
----
 title: Best practices for working with environment variables in Docker Compose
 linkTitle: Best practices
 description: Explainer on the best ways to set, use, and manage environment variables in
   Compose
 keywords: compose, orchestration, environment, env file, environment variables
-tags: [Best practices]
-weight: 50
-aliases:
-- /compose/environment-variables/best-practices/
----
 @z
 
 @x

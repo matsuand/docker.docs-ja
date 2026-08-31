@@ -28,72 +28,72 @@ title: Compose ファイルリファレンス
 @x
   - title: Version and name top-level element
     description: Understand version and name attributes for Compose.
-    icon: text_snippet
+    icon: document-text
     link: /reference/compose-file/version-and-name/
 @y
   - title: トップレベル要素 version と name
     description: Compose の version および name 属性を理解します。
-    icon: text_snippet
+    icon: document-text
     link: __SUBDIR__/reference/compose-file/version-and-name/
 @z
 
 @x
   - title: Services top-level element
     description: Explore all services attributes for Compose.
-    icon: construction
+    icon: wrench-screwdriver
     link: /reference/compose-file/services/
 @y
   - title: トップレベル要素 services
     description: Compose の services 属性を確認します。
-    icon: construction
+    icon: wrench-screwdriver
     link: __SUBDIR__/reference/compose-file/services/
 @z
 
 @x
   - title: Networks top-level element
     description: Find all networks attributes for Compose.
-    icon: lan
+    icon: server-stack
     link: /reference/compose-file/networks/
 @y
   - title: トップレベル要素 networks
     description: Compose の networks 属性すべてを調べます。
-    icon: lan
+    icon: server-stack
     link: __SUBDIR__/reference/compose-file/networks/
 @z
 
 @x
   - title: Volumes top-level element
     description: Explore all volumes attributes for Compose.
-    icon: database
+    icon: circle-stack
     link: /reference/compose-file/volumes/
 @y
   - title: トップレベル要素 volumes
     description: Compose の volumes 属性すべてを確認します。
-    icon: database
+    icon: circle-stack
     link: __SUBDIR__/reference/compose-file/volumes/
 @z
 
 @x
   - title: Configs top-level element
     description: Find out about configs in Compose.
-    icon: settings
+    icon: cog-6-tooth
     link: /reference/compose-file/configs/
 @y
   - title: トップレベル要素 configs
     description: Compose の configs について調べます。
-    icon: settings
+    icon: cog-6-tooth
     link: __SUBDIR__/reference/compose-file/configs/
 @z
 
 @x
   - title: Secrets top-level element
     description: Learn about secrets in Compose.
-    icon: lock
+    icon: lock-closed
     link: /reference/compose-file/secrets/
 @y
   - title: トップレベル要素 secrets
     description: Compose の secrets について学びます。
-    icon: lock
+    icon: lock-closed
     link: __SUBDIR__/reference/compose-file/secrets/
 @z
 

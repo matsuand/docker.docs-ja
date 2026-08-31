@@ -149,11 +149,39 @@ This command shows all available attestations, including SBOMs, provenance, vuln
 @z
 
 @x
-First, authenticate to both registries. Prepare a [personal access token
-(PAT)](../../security/access-tokens.md) for your user with `read only` access:
+First, authenticate to both registries. This example authenticates as your
+Docker organization using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). The OAT must have at least
+pull access to the DHI repositories you want to verify. Only repositories in
+the token's scope are accessible. Alternatively, you can authenticate as a
+Docker Hub user with a [personal access token
+(PAT)](../../security/access-tokens.md) that has `read only` access.
 @y
-First, authenticate to both registries. Prepare a [personal access token
-(PAT)](../../security/access-tokens.md) for your user with `read only` access:
+First, authenticate to both registries. This example authenticates as your
+Docker organization using an [organization access token
+(OAT)](../../enterprise/security/access-tokens.md). The OAT must have at least
+pull access to the DHI repositories you want to verify. Only repositories in
+the token's scope are accessible. Alternatively, you can authenticate as a
+Docker Hub user with a [personal access token
+(PAT)](../../security/access-tokens.md) that has `read only` access.
+@z
+
+@x
+> [!WARNING]
+>
+> The following examples export credentials directly on the command line for
+> demonstration purposes. This exposes sensitive tokens in your shell history
+> and process list. In production environments, use secure methods such as
+> reading from files with restricted permissions, environment files loaded
+> at runtime, or secret management tools.
+@y
+> [!WARNING]
+>
+> The following examples export credentials directly on the command line for
+> demonstration purposes. This exposes sensitive tokens in your shell history
+> and process list. In production environments, use secure methods such as
+> reading from files with restricted permissions, environment files loaded
+> at runtime, or secret management tools.
 @z
 
 % snip command...

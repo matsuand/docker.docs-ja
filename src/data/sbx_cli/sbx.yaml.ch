@@ -47,8 +47,9 @@ usage: sbx
     - sbx create - Create a sandbox for an agent
     - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox
+    - sbx kit - Manage kit artifacts
     - sbx login - Sign in to Docker
-    - sbx logout - Sign out of Docker
+    - sbx logout - Stop all running sandboxes and sign out of Docker
     - sbx ls - List sandboxes
     - sbx policy - Manage sandbox policies
     - sbx ports - Manage sandbox port publishing
@@ -65,8 +66,9 @@ usage: sbx
     - sbx create - Create a sandbox for an agent
     - sbx diagnose - Diagnose common issues with your sbx installation
     - sbx exec - Execute a command inside a sandbox
+    - sbx kit - Manage kit artifacts
     - sbx login - Sign in to Docker
-    - sbx logout - Sign out of Docker
+    - sbx logout - Stop all running sandboxes and sign out of Docker
     - sbx ls - List sandboxes
     - sbx policy - Manage sandbox policies
     - sbx ports - Manage sandbox port publishing

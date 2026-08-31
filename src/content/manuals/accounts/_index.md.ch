@@ -22,36 +22,36 @@ keywords: accounts, docker ID, account management, account settings, docker acco
 @x
 - title: Create a Docker ID
   description: Get started with Docker and create an account.
-  icon: fingerprint
+  icon: finger-print
   link: /accounts/create-account/
 @y
 - title: Docker ID の生成
   description: Get started with Docker and create an account.
-  icon: fingerprint
+  icon: finger-print
   link: __SUBDIR__/accounts/create-account/
 @z
 
 @x
 - title: Manage account
   description: Learn how to manage the settings for your account.
-  icon: manage_accounts
+  icon: cog
   link: /accounts/manage-account/
 @y
 - title: アカウント管理
   description: Learn how to manage the settings for your account.
-  icon: manage_accounts
+  icon: cog
   link: __SUBDIR__/accounts/manage-account/
 @z
 
 @x
 - title: Personal access tokens
   description: Learn how to create and manage access tokens for your account.
-  icon: password
+  icon: lock-closed
   link: /security/access-tokens/
 @y
 - title: パーソナルアクセストークン
   description: Learn how to create and manage access tokens for your account.
-  icon: password
+  icon: lock-closed
   link: __SUBDIR__/security/access-tokens/
 @z
 
@@ -59,35 +59,35 @@ keywords: accounts, docker ID, account management, account settings, docker acco
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/2fa/
-  icon: mobile_lock_portrait
+  icon: device-phone-mobile
 @y
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: __SUBDIR__/security/2fa/
-  icon: mobile_lock_portrait
+  icon: device-phone-mobile
 @z
 
 @x
 - title: Deactivate an account
   description: Learn how to deactivate a Docker user account.
   link: /accounts/deactivate-user-account/
-  icon: disabled_by_default
+  icon: no-symbol
 @y
 - title: Deactivate an account
   description: Learn how to deactivate a Docker user account.
   link: __SUBDIR__/accounts/deactivate-user-account/
-  icon: disabled_by_default
+  icon: no-symbol
 @z
 
 @x
 - title: Account FAQ
   description: Explore frequently asked questions about Docker accounts.
-  icon: help
+  icon: question-mark-circle
   link: /accounts/general-faqs/
 @y
 - title: アカウント FAQ
   description: Explore frequently asked questions about Docker accounts.
-  icon: help
+  icon: question-mark-circle
   link: __SUBDIR__/accounts/general-faqs/
 @z
 

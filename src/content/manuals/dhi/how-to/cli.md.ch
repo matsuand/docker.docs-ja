@@ -23,6 +23,7 @@ description: Learn how to install and use docker dhi, the command-line interface
 @x
 The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hardened Images:
 - Browse the catalog of available DHI images and their metadata
+- View attestations for DHI images, including SBOMs and provenance
 - Mirror DHI images to your Docker Hub organization
 - Create and manage customizations of DHI images
 - Generate authentication for enterprise package repositories
@@ -30,6 +31,7 @@ The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hard
 @y
 The `docker dhi` command-line interface (CLI) is a tool for managing Docker Hardened Images:
 - Browse the catalog of available DHI images and their metadata
+- View attestations for DHI images, including SBOMs and provenance
 - Mirror DHI images to your Docker Hub organization
 - Create and manage customizations of DHI images
 - Generate authentication for enterprise package repositories
@@ -212,84 +214,57 @@ options and flags, see the
 [CLI reference](__SUBDIR__/reference/cli/docker/dhi/).
 @z
 
-@x
-```bash
-# Prepare a customization scaffold
-docker dhi customization prepare golang 1.25 \
-  --org my-org \
-  --destination my-org/dhi-golang \
-  --name "golang with git" \
-  --output my-customization.yaml
+@x within command...
+# Prepare a single customization scaffold
 @y
-```bash
-# Prepare a customization scaffold
-docker dhi customization prepare golang 1.25 \
-  --org my-org \
-  --destination my-org/dhi-golang \
-  --name "golang with git" \
-  --output my-customization.yaml
+# Prepare a single customization scaffold
 @z
-
+@x
+# Prepare a bulk customization scaffold (pipe JSON array via stdin)
+@y
+# Prepare a bulk customization scaffold (pipe JSON array via stdin)
+@z
 @x
 # Create a customization
-docker dhi customization create my-customization.yaml --org my-org
 @y
 # Create a customization
-docker dhi customization create my-customization.yaml --org my-org
 @z
-
 @x
 # List customizations
-docker dhi customization list --org my-org
 @y
 # List customizations
-docker dhi customization list --org my-org
 @z
-
 @x
 # Filter customizations by name, repository, or source
-docker dhi customization list --org my-org --filter git
-docker dhi customization list --org my-org --repo dhi-golang
-docker dhi customization list --org my-org --source golang
 @y
 # Filter customizations by name, repository, or source
-docker dhi customization list --org my-org --filter git
-docker dhi customization list --org my-org --repo dhi-golang
-docker dhi customization list --org my-org --source golang
 @z
-
 @x
-# Get a customization
-docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --output my-customization.yaml
+# Get a customization by ID
 @y
-# Get a customization
-docker dhi customization get my-org/dhi-golang "golang with git" --org my-org --output my-customization.yaml
+# Get a customization by ID
 @z
-
 @x
+# Update a customization
 # The YAML file must include the 'id' field to identify the customization to update
-docker dhi customization edit my-customization.yaml --org my-org
 @y
+# Update a customization
 # The YAML file must include the 'id' field to identify the customization to update
-docker dhi customization edit my-customization.yaml --org my-org
 @z
-
 @x
-# Delete a customization
-docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
+# Delete a customization by ID
 @y
-# Delete a customization
-docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
+# Delete a customization by ID
 @z
-
+@x
+# Delete multiple customizations
+@y
+# Delete multiple customizations
+@z
 @x
 # Delete without confirmation prompt
-docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
-```
 @y
 # Delete without confirmation prompt
-docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org --yes
-```
 @z
 
 @x
@@ -299,28 +274,36 @@ docker dhi customization delete my-org/dhi-golang "golang with git" --org my-org
 @z
 
 @x
+{{< summary-bar feature_name="Docker Hardened Images Enterprise" >}}
+@y
+{{< summary-bar feature_name="Docker Hardened Images Enterprise" >}}
+@z
+
+@x
 Generate authentication credentials for accessing the enterprise hardened
-package repository. This is used when configuring your package manager to
-install compliance-specific packages in your own images. For detailed
+package repository. These credentials are used when configuring your package
+manager to install compliance and security-patched packages in your own images. For detailed
 instructions, see [Enterprise
 repository](./hardened-packages.md#enterprise-repository).
 @y
 Generate authentication credentials for accessing the enterprise hardened
-package repository. This is used when configuring your package manager to
-install compliance-specific packages in your own images. For detailed
+package repository. These credentials are used when configuring your package
+manager to install compliance and security-patched packages in your own images. For detailed
 instructions, see [Enterprise
 repository](./hardened-packages.md#enterprise-repository).
 @z
 
 @x
-```bash
-docker dhi auth apk
-```
+For Alpine-based images:
 @y
-```bash
-docker dhi auth apk
-```
+For Alpine-based images:
 @z
+
+% snip command...
+
+For Debian-based images:
+
+% snip command...
 
 @x
 ### Monitor customization builds
@@ -340,17 +323,7 @@ List builds for a customization:
 List builds for a customization:
 @z
 
-@x
-```bash
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
-```
-@y
-```bash
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
-```
-@z
+% snip command...
 
 @x
 Get details of a specific build:
@@ -358,17 +331,7 @@ Get details of a specific build:
 Get details of a specific build:
 @z
 
-@x
-```bash
-docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org
-docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org --json
-```
-@y
-```bash
-docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org
-docker dhi customization build get my-org/dhi-golang "golang with git" <build-id> --org my-org --json
-```
-@z
+% snip command...
 
 @x
 View build logs:
@@ -376,17 +339,7 @@ View build logs:
 View build logs:
 @z
 
-@x
-```bash
-docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org
-docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org --json
-```
-@y
-```bash
-docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org
-docker dhi customization build logs my-org/dhi-golang "golang with git" <build-id> --org my-org --json
-```
-@z
+% snip command...
 
 @x
 ### JSON output
@@ -400,25 +353,7 @@ Most list and get commands support a `--json` flag for machine-readable output:
 Most list and get commands support a `--json` flag for machine-readable output:
 @z
 
-@x
-```bash
-docker dhi catalog list --json
-docker dhi catalog get golang --json
-docker dhi mirror list --org my-org --json
-docker dhi mirror start --org my-org -r golang --json
-docker dhi customization list --org my-org --json
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
-```
-@y
-```bash
-docker dhi catalog list --json
-docker dhi catalog get golang --json
-docker dhi mirror list --org my-org --json
-docker dhi mirror start --org my-org -r golang --json
-docker dhi customization list --org my-org --json
-docker dhi customization build list my-org/dhi-golang "golang with git" --org my-org --json
-```
-@z
+% snip command...
 
 @x
 ## Configuration

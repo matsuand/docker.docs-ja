@@ -150,11 +150,11 @@ file
 @x
 Usually, the backend is made of one container that runs within the Docker Desktop VM. Internally, Docker Desktop creates
 a Docker Compose project, creates the container from the `image` option of the `vm` section of the `metadata.json`, and
-attaches it to the Compose project. See the [ui metadata section](metadata.md#vm-section) for more details.
+attaches it to the Compose project. See the [`vm` metadata section](metadata.md#vm-section) for more details.
 @y
 Usually, the backend is made of one container that runs within the Docker Desktop VM. Internally, Docker Desktop creates
 a Docker Compose project, creates the container from the `image` option of the `vm` section of the `metadata.json`, and
-attaches it to the Compose project. See the [ui metadata section](metadata.md#vm-section) for more details.
+attaches it to the Compose project. See the [`vm` metadata section](metadata.md#vm-section) for more details.
 @z
 
 @x
@@ -241,10 +241,10 @@ the users' machine.
 
 @x
 When Docker Desktop installs the extension, it copies the executables on the host as defined by the `host` section in
-the `metadata.json`. See the [ui metadata section](metadata.md#host-section) for more details.
+the `metadata.json`. See the [`host` metadata section](metadata.md#host-section) for more details.
 @y
 When Docker Desktop installs the extension, it copies the executables on the host as defined by the `host` section in
-the `metadata.json`. See the [ui metadata section](metadata.md#host-section) for more details.
+the `metadata.json`. See the [`host` metadata section](metadata.md#host-section) for more details.
 @z
 
 @x

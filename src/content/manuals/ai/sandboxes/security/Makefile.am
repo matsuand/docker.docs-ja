@@ -6,9 +6,9 @@ bases = \
 	_index.md      \
 	credentials.md \
 	defaults.md    \
+	governance.md  \
 	isolation.md   \
-	policy.md      \
-	workspace.md
+	policy.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -20,12 +20,6 @@ keywords: docker sandboxes, codex, openai, ai agent, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of Codex in a
 sandboxed environment.
 @y
@@ -172,20 +166,42 @@ for workarounds.
 @z
 
 @x
-The sandbox runs Codex without approval prompts by default. Pass additional
-Codex CLI options after `--`:
+### Default startup command
 @y
-The sandbox runs Codex without approval prompts by default. Pass additional
-Codex CLI options after `--`:
+### Default startup command
+@z
+
+@x
+Without extra args, the sandbox runs:
+@y
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+codex --dangerously-bypass-approvals-and-sandbox
+```
+@y
+```text
+codex --dangerously-bypass-approvals-and-sandbox
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. To keep
+the flag, include it yourself:
+@y
+Args after `--` replace these defaults rather than being appended. To keep
+the flag, include it yourself:
 @z
 
 @x
 ```console
-$ sbx run codex --name <sandbox-name> -- <codex-options>
+$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
 ```
 @y
 ```console
-$ sbx run codex --name <sandbox-name> -- <codex-options>
+$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
 ```
 @z
 
@@ -199,12 +215,6 @@ $ sbx run codex --name <sandbox-name> -- <codex-options>
 Template: `docker/sandbox-templates:codex`
 @y
 Template: `docker/sandbox-templates:codex`
-@z
-
-@x
-Preconfigured to run without approval prompts.
-@y
-Preconfigured to run without approval prompts.
 @z
 
 @x

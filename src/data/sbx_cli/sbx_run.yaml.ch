@@ -39,14 +39,14 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
 usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
 @z
 
-%options:
+% options:
 
-@x branch
+@x clone
       usage: |
-        Create a Git worktree on the given branch (use --branch auto to auto-generate)
+        Run the agent on a private in-container clone of the host Git repository; must be set at sandbox creation time (no-op when re-attaching to an existing clone-mode sandbox)
 @y
       usage: |
-        Create a Git worktree on the given branch (use --branch auto to auto-generate)
+        Run the agent on a private in-container clone of the host Git repository; must be set at sandbox creation time (no-op when re-attaching to an existing clone-mode sandbox)
 @z
 
 @x cpus
@@ -71,6 +71,14 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
         Kit reference (directory, ZIP, or OCI). Can be specified multiple times
 @z
 
+@x mcp
+      usage: |
+        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
+@y
+      usage: |
+        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
+@z
+
 @x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
@@ -93,9 +101,9 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
         Container image to use for the sandbox (default: agent-specific image)
 @z
 
-%inherited_options:
+% inherited_options:
 
-@x debug
+@x
       usage: Enable debug logging
 @y
       usage: Enable debug logging

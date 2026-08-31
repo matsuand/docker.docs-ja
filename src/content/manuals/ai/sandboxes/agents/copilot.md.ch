@@ -20,12 +20,6 @@ keywords: docker sandboxes, github copilot, ai agent, github token, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of GitHub Copilot
 in a sandboxed environment.
 @y
@@ -142,24 +136,42 @@ operates without repeated confirmations for workspace files.
 @z
 
 @x
-### Pass options at runtime
+### Default startup command
 @y
-### Pass options at runtime
+### Default startup command
 @z
 
 @x
-Pass Copilot CLI options after `--`:
+Without extra args, the sandbox runs:
 @y
-Pass Copilot CLI options after `--`:
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+copilot --yolo
+```
+@y
+```text
+copilot --yolo
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. To keep
+`--yolo`, include it yourself:
+@y
+Args after `--` replace these defaults rather than being appended. To keep
+`--yolo`, include it yourself:
 @z
 
 @x
 ```console
-$ sbx run copilot --name <sandbox-name> -- <copilot-options>
+$ sbx run copilot -- --yolo -p "review this PR"
 ```
 @y
 ```console
-$ sbx run copilot --name <sandbox-name> -- <copilot-options>
+$ sbx run copilot -- --yolo -p "review this PR"
 ```
 @z
 
@@ -176,9 +188,9 @@ Template: `docker/sandbox-templates:copilot`
 @z
 
 @x
-Preconfigured to trust the workspace directory and run without approval prompts.
+Preconfigured to trust the workspace directory.
 @y
-Preconfigured to trust the workspace directory and run without approval prompts.
+Preconfigured to trust the workspace directory.
 @z
 
 @x

@@ -18,12 +18,6 @@ keywords: docker sandboxes, sbx, faq, sign in, telemetry
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 ## Why do I need to sign in?
 @y
 ## Why do I need to sign in?
@@ -41,18 +35,20 @@ Signing in gives each sandbox a verified identity, which lets Docker:
 - **Tie sandboxes to a real person.** Governance matters when agents can build
   containers, install packages, and push code. Your Docker identity is the
   anchor.
-- **Enable team features down the road.** Shared environments, org-level
-  policies, audit logs. These all need a concept of "who," and building that in
-  later would be worse for everyone.
+- **Enable team features.** Team-scale features like
+  [organization governance](security/governance.md), shared environments, and
+  audit logs need a concept of "who," and adding that later would be worse for
+  everyone.
 - **Authenticate against Docker infrastructure.** Sandboxes pull images, run
   daemons, and talk to Docker services. A Docker account makes that seamless.
 @y
 - **Tie sandboxes to a real person.** Governance matters when agents can build
   containers, install packages, and push code. Your Docker identity is the
   anchor.
-- **Enable team features down the road.** Shared environments, org-level
-  policies, audit logs. These all need a concept of "who," and building that in
-  later would be worse for everyone.
+- **Enable team features.** Team-scale features like
+  [organization governance](security/governance.md), shared environments, and
+  audit logs need a concept of "who," and adding that later would be worse for
+  everyone.
 - **Authenticate against Docker infrastructure.** Sandboxes pull images, run
   daemons, and talk to Docker services. A Docker account makes that seamless.
 @z
@@ -61,6 +57,38 @@ Signing in gives each sandbox a verified identity, which lets Docker:
 Your Docker account email is only used for authentication, not marketing.
 @y
 Your Docker account email is only used for authentication, not marketing.
+@z
+
+@x
+## Can I enforce sandbox policies across my organization?
+@y
+## Can I enforce sandbox policies across my organization?
+@z
+
+@x
+Yes. Admins can centrally manage network and filesystem policies from the
+Docker Admin Console. Rules defined there apply to every sandbox in the
+organization and take precedence over local rules set with `sbx policy`.
+Admins can optionally delegate specific rule types back to local control so
+developers can add additional allow rules.
+@y
+Yes. Admins can centrally manage network and filesystem policies from the
+Docker Admin Console. Rules defined there apply to every sandbox in the
+organization and take precedence over local rules set with `sbx policy`.
+Admins can optionally delegate specific rule types back to local control so
+developers can add additional allow rules.
+@z
+
+@x
+See [Organization governance](security/governance.md). This feature requires
+a separate paid subscription —
+[contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
+to get started.
+@y
+See [Organization governance](security/governance.md). This feature requires
+a separate paid subscription —
+[contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
+to get started.
 @z
 
 @x
@@ -263,7 +291,27 @@ permission-skipping flag. For example, a kit that launches Claude Code
 without `--dangerously-skip-permissions`:
 @z
 
-% snip code...
+@x
+```yaml {title="claude-safe/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: claude-safe
+agent:
+  image: "docker/sandbox-templates:claude-code-docker"
+  entrypoint:
+    run: [claude]
+```
+@y
+```yaml {title="claude-safe/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: claude-safe
+agent:
+  image: "docker/sandbox-templates:claude-code-docker"
+  entrypoint:
+    run: [claude]
+```
+@z
 
 @x
 Run it with `sbx run claude-safe --kit ./claude-safe/`. See

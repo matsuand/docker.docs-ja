@@ -2,27 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Install Docker Desktop from the Microsoft Store on Windows
 linkTitle: MS Store
 description: Install Docker Desktop for Windows through the Microsoft Store. Understand its update behavior and limitations. 
 keywords: microsoft store, windows, docker desktop, install, deploy, configure, admin, mdm, intune, winget
-tags: [admin]
-weight: 30
-aliases: 
- - /desktop/setup/install/enterprise-deployment/ms-store/
----
 @y
----
 title: Install Docker Desktop from the Microsoft Store on Windows
 linkTitle: MS Store
 description: Install Docker Desktop for Windows through the Microsoft Store. Understand its update behavior and limitations. 
 keywords: microsoft store, windows, docker desktop, install, deploy, configure, admin, mdm, intune, winget
-tags: [admin]
-weight: 30
-aliases: 
- - /desktop/setup/install/enterprise-deployment/ms-store/
----
 @z
 
 @x

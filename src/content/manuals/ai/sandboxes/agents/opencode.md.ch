@@ -22,12 +22,6 @@ keywords: docker sandboxes, opencode, ai agent, authentication, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of OpenCode in a
 sandboxed environment.
 @y
@@ -136,23 +130,17 @@ switch providers during a session.
 @z
 
 @x
-### Pass options at runtime
+### Default startup command
 @y
-### Pass options at runtime
+### Default startup command
 @z
 
 @x
-Pass OpenCode CLI options after `--`:
+The sandbox runs `opencode` with no implicit flags. Args after `--` are passed
+straight through. For example, to resume an existing session:
 @y
-Pass OpenCode CLI options after `--`:
-@z
-
-% snip command...
-
-@x
-For example, to resume an existing session in a named sandbox:
-@y
-For example, to resume an existing session in a named sandbox:
+The sandbox runs `opencode` with no implicit flags. Args after `--` are passed
+straight through. For example, to resume an existing session:
 @z
 
 % snip command...

@@ -22,72 +22,72 @@ description: Secure, minimal, and production-ready base images
 @x
     - title: Quickstart
       description: Follow a step-by-step guide to explore and run a Docker Hardened Image.
-      icon: rocket_launch
+      icon: rocket-launch
       link: /dhi/get-started/
 @y
     - title: クィックスタート
       description: ガイドを通じて Docker Hardened イメージを実行し確認します。
-      icon: rocket_launch
+      icon: rocket-launch
       link: __SUBDIR__/dhi/get-started/
 @z
 
 @x
     - title: Explore
       description: Learn what Docker Hardened Images are, how they're built, and what sets them apart from typical base images.
-      icon: info
+      icon: information-circle
       link: /dhi/explore/
 @y
     - title: Explore
       description: Docker Hardened イメージとは何か、どのようにしてビルドされているか、他のベースイメージjとはどのように違うのかについて学びます。
-      icon: info
+      icon: information-circle
       link: __SUBDIR__/dhi/explore/
 @z
 
 @x
     - title: Features
       description: Discover the security, compliance, and enterprise-readiness features built into Docker Hardened Images.
-      icon: lock
+      icon: lock-closed
       link: /dhi/features/
 @y
     - title: 機能
       description: Docker Hardened イメージ内にビルドされているセキュリティ、コンプライアンス、エンタープライズ向けといった各機能について探っていきます。
-      icon: lock
+      icon: lock-closed
       link: __SUBDIR__/dhi/features/
 @z
 
 @x
     - title: How-tos
       description: Step-by-step guides for using, verifying, scanning, and migrating to Docker Hardened Images.
-      icon: play_arrow
+      icon: play
       link: /dhi/how-to/
 @y
     - title: ハウツー
       description: Docker Hardened イメージの利用、検証、スキャン、移行といった手順を一つずつガイド説明していきます。
-      icon: play_arrow
+      icon: play
       link: __SUBDIR__/dhi/how-to/
 @z
 
 @x
     - title: Core concepts
       description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
-      icon: fact_check
+      icon: clipboard-document-check
       link: /dhi/core-concepts/
 @y
     - title: 基本となる考え方
       description: Docker Hardened イメージが運用環境向けとして即時の利用を可能とする、セキュアサプライチェーンの考え方について学びます。
-      icon: fact_check
+      icon: clipboard-document-check
       link: __SUBDIR__/dhi/core-concepts/
 @z
 
 @x
     - title: Troubleshoot
       description: Resolve common issues with building, running, or debugging Docker Hardened Images.
-      icon: help_center
+      icon: question-mark-circle
       link: /dhi/troubleshoot/
 @y
     - title: トラブルシューティング
       description: Docker Hardened イメージのビルド、実行、デバッグに関する一般的な問題を解決します。
-      icon: help_center
+      icon: question-mark-circle
       link: __SUBDIR__/dhi/troubleshoot/
 @z
 
@@ -134,10 +134,10 @@ DHI は以下の 3 つのサブスクリプションから選ぶことができ�
 | Upstream cadence for Docker-released patches | ✅ | ✅ | ✅ |
 | FIPS/STIG variants | ❌ | ✅ | ✅ |
 | Critical CVE fixes < 7 days with SLA-backed continuous patching | ❌ | ✅ | ✅ |
-| Customizations | ❌ | Up to 5 | Unlimited |
+| Customizations | ❌ | ✅ Up to 5 | ✅ Unlimited |
 | Access to Hardened System Packages repository | ❌ | ❌ | ✅ |
 | Full catalog access available | ❌ | ❌ | ✅ |
-| Extended Lifecycle Support add-on available | ❌ | ❌ | ✅<br><br>Includes:<br>✅ +5 years of hardened updates<br>✅ Maintains security updates after upstream EOL<br>✅ SBOMs & provenance<br>✅ Protects long-lived workloads |
+| Extended Lifecycle Support add-on available | ❌ | ❌ | ✅ +5 years of hardened updates |
 @y
 | Feature | Community | Select | Enterprise |
 |---|---|---|---|
@@ -151,10 +151,10 @@ DHI は以下の 3 つのサブスクリプションから選ぶことができ�
 | Upstream cadence for Docker-released patches | ✅ | ✅ | ✅ |
 | FIPS/STIG variants | ❌ | ✅ | ✅ |
 | Critical CVE fixes < 7 days with SLA-backed continuous patching | ❌ | ✅ | ✅ |
-| Customizations | ❌ | Up to 5 | Unlimited |
+| Customizations | ❌ | ✅ Up to 5 | ✅ Unlimited |
 | Access to Hardened System Packages repository | ❌ | ❌ | ✅ |
 | Full catalog access available | ❌ | ❌ | ✅ |
-| Extended Lifecycle Support add-on available | ❌ | ❌ | ✅<br><br>Includes:<br>✅ +5 years of hardened updates<br>✅ Maintains security updates after upstream EOL<br>✅ SBOMs & provenance<br>✅ Protects long-lived workloads |
+| Extended Lifecycle Support add-on available | ❌ | ❌ | ✅ +5 years of hardened updates |
 @z
 
 @x

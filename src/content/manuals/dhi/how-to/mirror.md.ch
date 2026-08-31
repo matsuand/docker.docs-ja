@@ -605,25 +605,21 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 @z
 
 @x
-   In this example, you use a Docker username to represent a member of the Docker
-   Hub organization that the DHI repositories are mirrored in. Prepare a
-   [personal access token (PAT)](../../security/access-tokens.md) for the user
-   with `read only` access. Alternatively, you can use your organization name and
-   an [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md) to authenticate with `docker.io`.
-   Note that OATs are not supported for `registry.scout.docker.com`. If your
-   workflow requires authenticating to the Scout registry, use a personal access
-   token (PAT) for that step.
+   In this example, you authenticate as your Docker organization using an
+   [organization access token
+   (OAT)](../../enterprise/security/access-tokens.md). The OAT must have at
+   least pull access to every DHI repository you want to mirror. Only
+   repositories in the token's scope are accessible. Alternatively, you can
+   authenticate as a Docker Hub user with a [personal access token
+   (PAT)](../../security/access-tokens.md) that has `read only` access.
 @y
-   In this example, you use a Docker username to represent a member of the Docker
-   Hub organization that the DHI repositories are mirrored in. Prepare a
-   [personal access token (PAT)](../../security/access-tokens.md) for the user
-   with `read only` access. Alternatively, you can use your organization name and
-   an [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md) to authenticate with `docker.io`.
-   Note that OATs are not supported for `registry.scout.docker.com`. If your
-   workflow requires authenticating to the Scout registry, use a personal access
-   token (PAT) for that step.
+   In this example, you authenticate as your Docker organization using an
+   [organization access token
+   (OAT)](../../enterprise/security/access-tokens.md). The OAT must have at
+   least pull access to every DHI repository you want to mirror. Only
+   repositories in the token's scope are accessible. Alternatively, you can
+   authenticate as a Docker Hub user with a [personal access token
+   (PAT)](../../security/access-tokens.md) that has `read only` access.
 @z
 
 @x

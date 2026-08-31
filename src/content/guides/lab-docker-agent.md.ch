@@ -3,7 +3,7 @@
 
 @x
 title: "Lab: Getting Started with Docker Agent"
-linkTitle: "Lab: Getting Started with Docker Agent"
+linkTitle: "Lab: Docker Agent"
 description: |
   Build intelligent multi-agent teams with Docker Agent and Docker in this hands-on
   interactive lab.
@@ -13,7 +13,7 @@ summary: |
 keywords: AI, Docker, docker agent, agents, multi-agent, MCP Toolkit, lab, labspace
 @y
 title: "Lab: Getting Started with Docker Agent"
-linkTitle: "Lab: Getting Started with Docker Agent"
+linkTitle: "Lab: Docker Agent"
 description: |
   Build intelligent multi-agent teams with Docker Agent and Docker in this hands-on
   interactive lab.

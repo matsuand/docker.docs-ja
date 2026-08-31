@@ -418,6 +418,6 @@ In this guide, you learned how easy it is to use Docker Compose to start and sto
 * [`docker container run` CLI reference](reference/cli/docker/container/run/)
 * [What is Docker Compose](/get-started/docker-concepts/the-basics/what-is-docker-compose/)
 @y
-* [`docker container run` CLI reference](reference/cli/docker/container/run/)
+* [`docker container run` CLI reference](__SUBDIR__/reference/cli/docker/container/run/)
 * [What is Docker Compose](__SUBDIR__/get-started/docker-concepts/the-basics/what-is-docker-compose/)
 @z

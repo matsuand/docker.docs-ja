@@ -241,9 +241,9 @@ bases = \
 	_index.md      \
 	credentials.md \
 	defaults.md    \
+	governance.md  \
 	isolation.md   \
-	policy.md      \
-	workspace.md
+	policy.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

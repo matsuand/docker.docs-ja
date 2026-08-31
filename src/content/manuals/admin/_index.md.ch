@@ -22,72 +22,72 @@ keywords: admin, administration, company, organization, Admin Console, user acco
 @x
   - title: Company administration
     description: Explore how to manage a company.
-    icon: apartment
+    icon: building-office-2
     link: /admin/company/
 @y
   - title: Company administration
     description: Explore how to manage a company.
-    icon: apartment
+    icon: building-office-2
     link: __SUBDIR__/admin/company/
 @z
 
 @x
   - title: Organization administration
     description: Learn about organization administration.
-    icon: store
+    icon: building-storefront
     link: /admin/organization/
 @y
   - title: Organization administration
     description: Learn about organization administration.
-    icon: store
+    icon: building-storefront
     link: __SUBDIR__/admin/organization/
 @z
 
 @x
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
-    icon: explore
+    icon: magnifying-glass-plus
     link: /admin/organization/setup/onboard
 @y
   - title: Onboard your organization
     description: Learn how to onboard and secure your organization.
-    icon: explore
+    icon: magnifying-glass-plus
     link: __SUBDIR__/admin/organization/setup/onboard
 @z
 
 @x
   - title: Company FAQ
     description: Discover common questions and answers about companies.
-    icon: help
+    icon: question-mark-circle
     link: /faq/admin/company-faqs/
 @y
   - title: Company FAQ
     description: Discover common questions and answers about companies.
-    icon: help
+    icon: question-mark-circle
     link: __SUBDIR__/faq/admin/company-faqs/
 @z
 
 @x
   - title: Organization FAQ
     description: Explore popular FAQ topics about organizations.
-    icon: help
+    icon: question-mark-circle
     link: /faq/admin/organization-faqs/
 @y
-  - title: Organization FAQ
+  - title: 組織に関する FAQ
     description: Explore popular FAQ topics about organizations.
-    icon: help
+    icon: question-mark-circle
     link: __SUBDIR__/faq/admin/organization-faqs/
 @z
 
 @x
   - title: Security
     description: Explore security features for administrators.
-    icon: shield_locked
+    icon: shield-check
     link: /security/
 @y
   - title: Security
     description: Explore security features for administrators.
-    icon: shield_locked
+    icon: shield-check
     link: __SUBDIR__/security/
 @z
 

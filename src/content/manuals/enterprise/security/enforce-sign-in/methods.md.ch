@@ -98,7 +98,7 @@ To configure the registry key method manually:
    - Add each organization on a separate line
    - Do not use spaces or commas as separators
 1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+1. Verify the **Sign in required!** prompt appears in Docker Desktop.
 @y
 1. Create a multi-string value name `allowedOrgs`.
 1. Use your organization names as string data. You can add multiple organizations:
@@ -106,7 +106,7 @@ To configure the registry key method manually:
    - Add each organization on a separate line
    - Do not use spaces or commas as separators
 1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+1. Verify the **Sign in required!** prompt appears in Docker Desktop.
 @z
 
 @x
@@ -184,14 +184,14 @@ The payload is a dictionary of key-values. Docker Desktop supports the following
 @z
 
 @x
-- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is separated by a semi-colon.
+- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is in lowercase only and is separated by a semi-colon. 
 - `overrideProxyHTTP`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.
 - `overrideProxyHTTPS`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.
 - `overrideProxyExclude`: Bypasses proxy settings for the specified hosts and domains. Uses a comma-separated list.
 - `overrideProxyPAC`: Sets the file path where the PAC file is located. It has precedence over the remote PAC file on the selected proxy.
 - `overrideProxyEmbeddedPAC`: Sets the content of an in-memory PAC file. It has precedence over `overrideProxyPAC`.
 @y
-- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is separated by a semi-colon.
+- `allowedOrgs`: Sets a list of organizations in one single string, where each organization is in lowercase only and is separated by a semi-colon. 
 - `overrideProxyHTTP`: Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.
 - `overrideProxyHTTPS`: Sets the URL of the HTTP proxy that must be used for outgoing HTTPS requests.
 - `overrideProxyExclude`: Bypasses proxy settings for the specified hosts and domains. Uses a comma-separated list.
@@ -216,7 +216,7 @@ Overriding at least one of the proxy settings via Configuration profiles will au
 @x
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
-   - Replace `Your Company Name` with your organization name
+   - Replace `Your company name` with your organization name making sure it is all lowercase
    - Replace `PayloadUUID` with a randomly generated UUID
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
    - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
@@ -225,7 +225,7 @@ Overriding at least one of the proxy settings via Configuration profiles will au
 @y
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
-   - Replace `Your Company Name` with your organization name
+   - Replace `Your company name` with your organization name making sure it is all lowercase
    - Replace `PayloadUUID` with a randomly generated UUID
    - Update the `allowedOrgs` value with your organization names (separated by semicolons)
    - Replace `company.proxy:port` with http/https proxy server host(or IP address) and port
@@ -257,10 +257,10 @@ Some MDM solutions let you specify the payload as a plain dictionary of key-valu
 
 @x
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
-1. Add this content, replacing `myorg1` and `myorg2` with your organization names:
+1. Add this content, replacing `myorg1` and `myorg2` with your organization names and making sure they have lowercase letters only:
 @y
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
-1. Add this content, replacing `myorg1` and `myorg2` with your organization names:
+1. Add this content, replacing `myorg1` and `myorg2` with your organization names and making sure they have lowercase letters only:
 @z
 
 % snip code...
@@ -394,24 +394,20 @@ Create the `registry.json` file (UTF-8 without BOM) at the appropriate location:
 @x
 1. Ensure users are members of your Docker organization.
 1. Create the `registry.json` file at the appropriate location for your platform.
-1. Add this content, replacing organization names with your own:
-      ```json
-      {
-         "allowedOrgs": ["myorg1", "myorg2"]
-      }
-      ```
-1. Set file permissions to prevent user editing.
-1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+1. Add this content, replacing organization names with your own and making sure they have lowercase letters only:
 @y
 1. Ensure users are members of your Docker organization.
 1. Create the `registry.json` file at the appropriate location for your platform.
-1. Add this content, replacing organization names with your own:
-      ```json
-      {
-         "allowedOrgs": ["myorg1", "myorg2"]
-      }
-      ```
+1. Add this content, replacing organization names with your own and making sure they have lowercase letters only:
+@z
+
+% snip code...
+
+@x
+1. Set file permissions to prevent user editing.
+1. Restart Docker Desktop.
+1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+@y
 1. Set file permissions to prevent user editing.
 1. Restart Docker Desktop.
 1. Verify the `Sign in required!` prompt appears in Docker Desktop.
@@ -521,11 +517,11 @@ Start-Process '.\Docker Desktop Installer.exe' -Wait 'install --allowed-org=myor
 
 @x
 # Command Prompt
-"Docker Desktop Installer.exe" install --allowed-org=myorg
+"Docker Desktop Installer.exe" install --allowed-org=myorg1
 ```
 @y
 # Command Prompt
-"Docker Desktop Installer.exe" install --allowed-org=myorg
+"Docker Desktop Installer.exe" install --allowed-org=myorg1
 ```
 @z
 

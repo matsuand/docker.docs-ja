@@ -95,10 +95,14 @@ that was installed directly inside a WSL Linux distribution. Running both can ca
 @z
 
 @x
-    If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default.
+    If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default and the setting is not visible. 
+@y
+    If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default and the setting is not visible. 
+@z
+
+@x
 6. Select **Apply**.
 @y
-    If you have installed Docker Desktop on a system that supports WSL 2, this option is turned on by default.
 6. Select **Apply**.
 @z
 

@@ -116,9 +116,9 @@ command, or using the Docker Desktop settings GUI.
 @z
 
 @x
-2. Add the cloud builder endpoint.
+2. Connect Buildx to your cloud builder.
 @y
-2. Add the cloud builder endpoint.
+2. Connect Buildx to your cloud builder.
 @z
 
 @x
@@ -138,15 +138,30 @@ command, or using the Docker Desktop settings GUI.
 @z
 
 @x
-   This creates a local instance of the cloud builder named `cloud-ORG-BUILDER_NAME`.
+   This registers a local endpoint for the cloud builder named `cloud-ORG-BUILDER_NAME`.
 @y
-   This creates a local instance of the cloud builder named `cloud-ORG-BUILDER_NAME`.
+   This registers a local endpoint for the cloud builder named `cloud-ORG-BUILDER_NAME`.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > This command connects Buildx to an existing Docker Build Cloud builder. It
+   > does not create a new cloud builder. To add a new builder, use the
+   > [Docker Build Cloud Dashboard](https://app.docker.com/build/).
+@y
+   > [!NOTE]
+   >
+   > This command connects Buildx to an existing Docker Build Cloud builder. It
+   > does not create a new cloud builder. To add a new builder, use the
+   > [Docker Build Cloud Dashboard](https://app.docker.com/build/).
 @z
 
 @x
    > [!NOTE]
    >
    > If your organization is `acme` and you named your builder `default`, use:
+   >
    > ```console
    > $ docker buildx create --driver cloud acme/default
    > ```
@@ -154,6 +169,7 @@ command, or using the Docker Desktop settings GUI.
    > [!NOTE]
    >
    > If your organization is `acme` and you named your builder `default`, use:
+   >
    > ```console
    > $ docker buildx create --driver cloud acme/default
    > ```

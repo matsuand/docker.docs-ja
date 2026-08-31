@@ -27,7 +27,7 @@ description: レジストリとは何か？ Docker の考え方ではレジス�
 @z
 
 @x
-Now that you know what a container image is and how it works, you might wonder - where do you store these images? 
+Now that you know what a container image is and how it works, you might wonder - where do you store these images?
 @y
 ここまでにコンテナーイメージが何であって、どのように動作するのかを理解しました。
 そこで疑問に思うかもしれません。
@@ -43,7 +43,7 @@ Well, you can store your container images on your computer system, but what if y
 @z
 
 @x
-An image registry is a centralized location for storing and sharing your container images. It can be either public or private. [Docker Hub](https://hub.docker.com) is a public registry that anyone can use and is the default registry. 
+An image registry is a centralized location for storing and sharing your container images. It can be either public or private. [Docker Hub](https://hub.docker.com) is a public registry that anyone can use and is the default registry.
 @y
 イメージレジストリは、コンテナーイメージを保存し共有するための場所です。
 それをパブリックにもプライベートにもできます。
@@ -87,16 +87,46 @@ The following diagram shows the relationship between a registry, repositories, a
 以下の図は、レジストリ、リポジトリ、イメージの関係を示すものです。
 @z
 
-% snip text...
+@x
+```mermaid
+flowchart TB
+  subgraph Registry
+    subgraph A["Repository A"]
+      A1["project-a:v1.0"]
+      A2["project-a:v2.0"]
+    end
+    subgraph B["Repository B"]
+      B1["project-b:v1.0"]
+      B2["project-b:v1.1"]
+      B3["project-b:v2.0"]
+    end
+  end
+```
+@y
+```mermaid
+flowchart TB
+  subgraph Registry
+    subgraph A["Repository A"]
+      A1["project-a:v1.0"]
+      A2["project-a:v2.0"]
+    end
+    subgraph B["Repository B"]
+      B1["project-b:v1.0"]
+      B2["project-b:v1.1"]
+      B3["project-b:v2.0"]
+    end
+  end
+```
+@z
 
 @x
 > [!TIP]
 >
->A Docker Personal plan gives you one private repository and unlimited public repositories. To get unlimited private repositories, upgrade to the [Docker Team plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry).
+> A Docker Personal plan gives you one private repository and unlimited public repositories. To get unlimited private repositories, upgrade to the [Docker Team plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry).
 @y
 > [!TIP]
 >
->Docker Personal プランでは 1 つのプライベートリポジトリと無制限のパブリックリポジトリが提供されます。プライベートリポジトリ数を無制限にするには [Docker Team プラン](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry) にアップグレードする必要があります。
+> Docker Personal プランでは 1 つのプライベートリポジトリと無制限のパブリックリポジトリが提供されます。プライベートリポジトリ数を無制限にするには [Docker Team プラン](https://www.docker.com/pricing?ref=Docs&refAction=DocsConceptsRegistry) にアップグレードする必要があります。
 @z
 
 @x
@@ -125,15 +155,15 @@ In this hands-on, you will learn how to build and push a Docker image to the Doc
 @z
 
 @x
-    ![Screenshot of the official Docker Hub page showing the Sign up page](images/dockerhub-signup.webp?border)
+   ![Screenshot of the official Docker Hub page showing the Sign up page](images/dockerhub-signup.webp?border)
 @y
-    ![公式 Docker Hub でのサインアップページのスクリーンショット](./images/dockerhub-signup.webp?border)
+   ![公式 Docker Hub でのサインアップページのスクリーンショット](./images/dockerhub-signup.webp?border)
 @z
 
 @x
-    You can use your Google or GitHub account to authenticate.
+   You can use your Google or GitHub account to authenticate.
 @y
-    認証にあたっては Google アカウントや GitHub アカウントを利用することもできます。
+   認証にあたっては Google アカウントや GitHub アカウントを利用することもできます。
 @z
 
 @x
@@ -153,13 +183,13 @@ In this hands-on, you will learn how to build and push a Docker image to the Doc
 @z
 
 @x
-    ![Screenshot of the Docker Hub page that shows how to create a public repository](images/create-hub-repository.webp?border)
+   ![Screenshot of the Docker Hub page that shows how to create a public repository](images/create-hub-repository.webp?border)
 @y
-    ![公式 Docker Hub での新規パブリックリポジトリの生成方法を示すスクリーンショット](images/create-hub-repository.webp?border)
+   ![公式 Docker Hub での新規パブリックリポジトリの生成方法を示すスクリーンショット](images/create-hub-repository.webp?border)
 @z
 
 @x
-4. Set the visibility to **Public**. 
+4. Set the visibility to **Public**.
 5. Select the **Create** button to create the repository.
 @y
 4. visibility (可視性) を **Public** (パブリック) に設定します。
@@ -241,14 +271,14 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 % snip command...
 
 @x
-    > [!NOTE]
-    >
-    > Make sure you include the dot (.) at the end of the `docker build` command. This tells Docker where to find the Dockerfile.
+   > [!NOTE]
+   >
+   > Make sure you include the dot (.) at the end of the `docker build` command. This tells Docker where to find the Dockerfile.
 @y
-    > [!NOTE]
-    >
-    > `docker build` コマンドの最後にドット (.) があることを忘れないでください。
-    > これは Docker に対して Dockerfile を探し出す場所を指定するものです。
+   > [!NOTE]
+   >
+   > `docker build` コマンドの最後にドット (.) があることを忘れないでください。
+   > これは Docker に対して Dockerfile を探し出す場所を指定するものです。
 @z
 
 @x
@@ -260,9 +290,9 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 % snip command...
 
 @x
-    You will see output like the following:
+   You will see output like the following:
 @y
-    以下のような出力が得られるはずです。
+   以下のような出力が得られるはずです。
 @z
 
 % snip output...
@@ -277,13 +307,13 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 % snip command...
 
 @x
-    You can verify if the container is working by visiting [http://localhost:8080](http://localhost:8080) with your browser.
+   You can verify if the container is working by visiting [http://localhost:8080](http://localhost:8080) with your browser.
 @y
-    コンテナーが動作しているかどうかを確認するには、ブラウザーを開いて [http://localhost:8080](http://localhost:8080) にアクセスします。
+   コンテナーが動作しているかどうかを確認するには、ブラウザーを開いて [http://localhost:8080](http://localhost:8080) にアクセスします。
 @z
 
 @x
-6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images. 
+6. Use the [`docker tag`](/reference/cli/docker/image/tag/) command to tag the Docker image. Docker tags allow you to label and version your images.
 @y
 6. [`docker tag`](__SUBDIR__/reference/cli/docker/image/tag/) コマンドを使って Docker イメージにタグづけを行います。
    Docker タグは、イメージに対してラベルやバージョンをつけるものです。
@@ -307,9 +337,9 @@ Don't worry about the specifics of the Dockerfile, as you'll learn about that in
 @z
 
 @x
-    ![Screenshot of the Docker Hub page that displays the newly added image tag](images/dockerhub-tags.webp?border=true) 
+   ![Screenshot of the Docker Hub page that displays the newly added image tag](images/dockerhub-tags.webp?border=true)
 @y
-    ![公式 Docker Hub にて新規追加したイメージタグが表示されたスクリーンショット](images/dockerhub-tags.webp?border=true) 
+   ![公式 Docker Hub にて新規追加したイメージタグが表示されたスクリーンショット](images/dockerhub-tags.webp?border=true) 
 @z
 
 @x

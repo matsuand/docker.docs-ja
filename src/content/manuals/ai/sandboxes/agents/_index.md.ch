@@ -18,12 +18,6 @@ keywords: docker sandboxes, ai agents, claude code, codex, cursor, gemini
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 Docker Sandboxes runs the following agents out of the box:
 @y
 Docker Sandboxes runs the following agents out of the box:

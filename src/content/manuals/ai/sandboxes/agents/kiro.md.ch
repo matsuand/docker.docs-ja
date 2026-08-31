@@ -20,12 +20,6 @@ keywords: docker sandboxes, kiro, ai agent, authentication, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of Kiro in a
 sandboxed environment.
 @y
@@ -205,33 +199,53 @@ for workarounds.
 
 @x
 Kiro requires minimal configuration. The agent runs with trust-all-tools mode
-by default, which lets it execute commands without repeated approval
-prompts.
+by default, which lets it execute commands without repeated approval prompts.
 @y
 Kiro requires minimal configuration. The agent runs with trust-all-tools mode
-by default, which lets it execute commands without repeated approval
-prompts.
+by default, which lets it execute commands without repeated approval prompts.
 @z
 
 @x
-### Pass options at runtime
+### Default startup command
 @y
-### Pass options at runtime
+### Default startup command
 @z
 
 @x
-Pass Kiro CLI options after `--`:
+Without extra args, the sandbox runs:
 @y
-Pass Kiro CLI options after `--`:
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+kiro chat --trust-all-tools
+```
+@y
+```text
+kiro chat --trust-all-tools
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. This is
+why `sbx run kiro -- login --use-device-flow` works for the login subcommand.
+To keep `chat --trust-all-tools` alongside your own args, include them
+yourself:
+@y
+Args after `--` replace these defaults rather than being appended. This is
+why `sbx run kiro -- login --use-device-flow` works for the login subcommand.
+To keep `chat --trust-all-tools` alongside your own args, include them
+yourself:
 @z
 
 @x
 ```console
-$ sbx run kiro --name <sandbox-name> -- <kiro-options>
+$ sbx run kiro -- chat --trust-all-tools --resume
 ```
 @y
 ```console
-$ sbx run kiro --name <sandbox-name> -- <kiro-options>
+$ sbx run kiro -- chat --trust-all-tools --resume
 ```
 @z
 
@@ -248,11 +262,9 @@ Template: `docker/sandbox-templates:kiro`
 @z
 
 @x
-Preconfigured to run without approval prompts. Authentication state is
-persisted across sandbox restarts.
+Authentication state is persisted across sandbox restarts.
 @y
-Preconfigured to run without approval prompts. Authentication state is
-persisted across sandbox restarts.
+Authentication state is persisted across sandbox restarts.
 @z
 
 @x

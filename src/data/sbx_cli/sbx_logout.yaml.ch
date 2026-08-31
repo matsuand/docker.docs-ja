@@ -3,34 +3,40 @@
 
 @x
 name: sbx logout
-synopsis: Sign out of Docker
+synopsis: Stop all running sandboxes and sign out of Docker
 usage: sbx logout [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for logout
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx - Manage AI coding agent sandboxes.
 @y
 name: sbx logout
-synopsis: Sign out of Docker
+synopsis: Stop all running sandboxes and sign out of Docker
 usage: sbx logout [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+% options:
+
+@x help
       usage: help for logout
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for logout
+@z
+
+@x "yes"
+      usage: Skip confirmation prompt
+@y
+      usage: Skip confirmation prompt
+@z
+
+% inherited_options:
+
+@x
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx - Manage AI coding agent sandboxes.
+@y
     - sbx - Manage AI coding agent sandboxes.
 @z

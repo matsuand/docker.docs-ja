@@ -22,12 +22,6 @@ Docker Desktop を開くと Docker Desktop Dashboard が表示されます。
 @z
 
 @x
-![Docker Desktop Dashboard on Containers view](../images/dashboard.webp)
-@y
-![Docker Desktop Dashboard on Containers view](../images/dashboard.webp)
-@z
-
-@x
 It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), [Kubernetes resources](kubernetes.md), and [logs](logs.md).
 @y
 It provides a centralized interface to manage your [containers](container.md), [images](images.md), [volumes](volumes.md), [builds](builds.md), [Kubernetes resources](kubernetes.md), and [logs](logs.md).
@@ -57,14 +51,12 @@ In addition, the Docker Desktop Dashboard lets you:
   For a more detailed guide about getting started, see [Get started](/get-started/introduction/_index.md).
 - Access [Docker Hub](/manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
   of images.
-- Get to the [Docker Scout](../../scout/_index.md) dashboard.
-- Navigate to [Docker Extensions](/manuals/extensions/_index.md).
+- Navigate to [Docker Extensions](/manuals/extensions/_index.md) if you have enabled it.
 @y
   For a more detailed guide about getting started, see [Get started](get-started/introduction/_index.md).
 - Access [Docker Hub](manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
   of images.
-- Get to the [Docker Scout](../../scout/_index.md) dashboard.
-- Navigate to [Docker Extensions](manuals/extensions/_index.md).
+- Navigate to [Docker Extensions](manuals/extensions/_index.md) if you have enabled it.
 @z
 
 @x

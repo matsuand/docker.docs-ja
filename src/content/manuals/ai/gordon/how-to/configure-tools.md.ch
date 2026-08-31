@@ -70,9 +70,9 @@ To configure Gordon's tools:
 @z
 
 @x
-   ![Session settings icon](../images/perm_settings.avif?border=true)
+   ![Session settings icon](../images/gordon_permission_settings.avif)
 @y
-   ![Session settings icon](../images/perm_settings.avif?border=true)
+   ![Session settings icon](../images/gordon_permission_settings.avif)
 @z
 
 @x
@@ -166,9 +166,9 @@ To configure:
 @z
 
 @x
-![Advanced tool configuration](../images/gordon_advanced_tool_config.avif?w=500px&border=true)
+![Advanced tool configuration](../images/gordon_advanced_tool_config.avif)
 @y
-![Advanced tool configuration](../images/gordon_advanced_tool_config.avif?w=500px&border=true)
+![Advanced tool configuration](../images/gordon_advanced_tool_config.avif)
 @z
 
 @x

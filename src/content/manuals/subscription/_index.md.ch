@@ -23,84 +23,84 @@ keywords: docker subscription, pricing, billing, pro, team, business, subscripti
 - title: Compare Docker subscriptions
   description: Visit the pricing page to see what's included in different Docker subscriptions.
   link: "https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscription"
-  icon: feature_search
+  icon: magnifying-glass
 @y
 - title: Compare Docker subscriptions
   description: Visit the pricing page to see what's included in different Docker subscriptions.
   link: "https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscription"
-  icon: feature_search
+  icon: magnifying-glass
 @z
 
 @x
 - title: Set up your subscription
   description: Get started setting up a personal or organization subscription.
   link: /subscription/setup/
-  icon: shopping_cart
+  icon: shopping-cart
 @y
 - title: Set up your subscription
   description: Get started setting up a personal or organization subscription.
   link: __SUBDIR__/subscription/setup/
-  icon: shopping_cart
+  icon: shopping-cart
 @z
 
 @x
 - title: Scale your subscription
   description: Scale your subscription to fit your needs.
   link: /subscription/scale/
-  icon: leaderboard
+  icon: chart-bar
 @y
 - title: Scale your subscription
   description: Scale your subscription to fit your needs.
   link: __SUBDIR__/subscription/scale/
-  icon: leaderboard
+  icon: chart-bar
 @z
 
 @x
 - title: Change your subscription
   description: Learn how to upgrade or downgrade your subscription.
   link: /subscription/change/
-  icon: upgrade
+  icon: arrow-up-circle
 @y
 - title: Change your subscription
   description: Learn how to upgrade or downgrade your subscription.
   link: __SUBDIR__/subscription/change/
-  icon: upgrade
+  icon: arrow-up-circle
 @z
 
 @x
 - title: Manage seats
   description: Learn how to add or remove seats from your subscription.
   link: /subscription/manage-seats/
-  icon: group_add
+  icon: user-plus
 @y
 - title: Manage seats
   description: Learn how to add or remove seats from your subscription.
   link: __SUBDIR__/subscription/manage-seats/
-  icon: group_add
+  icon: user-plus
 @z
 
 @x
 - title: Docker Desktop license agreement
   description: Review the terms of the Docker Subscription Service Agreement.
   link: /subscription/desktop-license/
-  icon: license
+  icon: document-text
 @y
 - title: Docker Desktop license agreement
   description: Review the terms of the Docker Subscription Service Agreement.
   link: __SUBDIR__/subscription/desktop-license/
-  icon: license
+  icon: document-text
 @z
 
 @x
 - title: Subscription FAQs
   description: Find the answers you need and explore common questions.
   link: /subscription/faq/
-  icon: help
+  icon: question-mark-circle
 @y
 - title: Subscription FAQs
   description: Find the answers you need and explore common questions.
   link: __SUBDIR__/subscription/faq/
-  icon: help
+  icon: question-mark-circle
 @z
 
 @x

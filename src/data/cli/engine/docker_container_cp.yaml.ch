@@ -172,7 +172,7 @@ usage: |-
 @z
 
 @x follow-link
-      description: Always follow symbol link in SRC_PATH
+      description: Always follow symlinks in SRC_PATH
 @y
       description: SRC_PATH 内のシンボリックリンクをすべてたどります。
 @z

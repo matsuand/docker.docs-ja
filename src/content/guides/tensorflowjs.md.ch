@@ -109,9 +109,9 @@ ML tasks accessible to web developers without deep ML expertise.
 @z
 
 @x
-## Why Use TensorFlow.js and Docker together?
+## Why use TensorFlow.js and Docker together?
 @y
-## Why Use TensorFlow.js and Docker together?
+## Why use TensorFlow.js and Docker together?
 @z
 
 @x

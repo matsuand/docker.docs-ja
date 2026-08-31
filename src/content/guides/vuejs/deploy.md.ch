@@ -44,12 +44,6 @@ Before you begin, make sure you’ve completed the following:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Overview
 @y
 ## Overview
@@ -62,12 +56,6 @@ This section guides you through deploying your containerized Vue.js application 
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Create a Kubernetes YAML file
 @y
 ## Create a Kubernetes YAML file
@@ -228,12 +216,6 @@ This manifest defines two key Kubernetes resources, separated by `---`:
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Deploy and check your application
 @y
 ## Deploy and check your application
@@ -292,9 +274,9 @@ This confirms that both the Deployment and the Service were successfully created
 @z
 
 @x
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @y
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @z
 
 @x
@@ -338,9 +320,9 @@ This confirms that your pod is up and running with one replica available.
 @z
 
 @x
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @y
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @z
 
 @x
@@ -448,12 +430,6 @@ This ensures your cluster stays clean and ready for the next deployment.
 @z
 
 @x
----
-@y
----
-@z
-
-@x
 ## Summary
 @y
 ## Summary
@@ -481,12 +457,6 @@ What you accomplished:
 - Used `kubectl apply` to deploy the application locally  
 - Verified the app was running and accessible at `http://localhost:30001`  
 - Cleaned up your Kubernetes resources after testing
-@z
-
-@x
----
-@y
----
 @z
 
 @x

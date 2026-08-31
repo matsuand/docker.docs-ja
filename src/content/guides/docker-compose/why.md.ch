@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Why Docker Compose?
 description: Learn how Docker Compose can help you simplify app development.
-weight: 10
----
+keywords: docker compose, multi-container, yaml, services, orchestration, application
 @y
----
 title: Why Docker Compose?
 description: Learn how Docker Compose can help you simplify app development.
-weight: 10
----
+keywords: docker compose, multi-container, yaml, services, orchestration, application
 @z
 
 @x

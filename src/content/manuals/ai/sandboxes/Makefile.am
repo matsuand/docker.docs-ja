@@ -10,6 +10,7 @@ bases = \
 	docker-desktop.md  \
 	faq.md             \
 	get-started.md     \
+	release-notes.md   \
 	troubleshooting.md \
 	usage.md
 

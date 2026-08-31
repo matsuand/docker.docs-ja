@@ -20,12 +20,6 @@ keywords: docker sandboxes, gemini, google, ai agent, sbx
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 This guide covers authentication, configuration, and usage of Google Gemini in
 a sandboxed environment.
 @y
@@ -150,22 +144,50 @@ for workarounds.
 @z
 
 @x
-The sandbox runs Gemini without approval prompts by default and disables
-Gemini's built-in sandbox tool (since the sandbox itself provides isolation).
-Pass additional Gemini CLI options after `--`:
+The sandbox disables Gemini's built-in sandbox tool (since the sandbox itself
+provides isolation).
 @y
-The sandbox runs Gemini without approval prompts by default and disables
-Gemini's built-in sandbox tool (since the sandbox itself provides isolation).
-Pass additional Gemini CLI options after `--`:
+The sandbox disables Gemini's built-in sandbox tool (since the sandbox itself
+provides isolation).
+@z
+
+@x
+### Default startup command
+@y
+### Default startup command
+@z
+
+@x
+Without extra args, the sandbox runs:
+@y
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+gemini --yolo
+```
+@y
+```text
+gemini --yolo
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. To keep
+`--yolo`, include it yourself:
+@y
+Args after `--` replace these defaults rather than being appended. To keep
+`--yolo`, include it yourself:
 @z
 
 @x
 ```console
-$ sbx run gemini --name <sandbox-name> -- <gemini-options>
+$ sbx run gemini -- --yolo -p "explain this"
 ```
 @y
 ```console
-$ sbx run gemini --name <sandbox-name> -- <gemini-options>
+$ sbx run gemini -- --yolo -p "explain this"
 ```
 @z
 
@@ -183,12 +205,10 @@ Template: `docker/sandbox-templates:gemini`
 
 @x
 Gemini is configured to disable its built-in OAuth flow. Authentication is
-managed through the proxy with API keys. Preconfigured to run without
-approval prompts.
+managed through the proxy with API keys.
 @y
 Gemini is configured to disable its built-in OAuth flow. Authentication is
-managed through the proxy with API keys. Preconfigured to run without
-approval prompts.
+managed through the proxy with API keys.
 @z
 
 @x

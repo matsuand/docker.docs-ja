@@ -22,108 +22,108 @@ keywords: Engine
 @x
 - title: Install Docker Engine
   description: Learn how to install the open source Docker Engine for your distribution.
-  icon: download
+  icon: arrow-down-tray
   link: /engine/install
 @y
 - title: Docker Engine のインストール
   description: 手元のディストリビューションにオープンソースの Docker Engine をインストールする方法について学びます。
-  icon: download
+  icon: arrow-down-tray
   link: __SUBDIR__/engine/install
 @z
 
 @x
 - title: Storage
   description: Use persistent data with Docker containers.
-  icon: database
+  icon: circle-stack
   link: /storage
 @y
 - title: ストレージ
   description: Docker コンテナーにおけるデータを保存します。
-  icon: database
+  icon: circle-stack
   link: __SUBDIR__/storage
 @z
 
 @x
 - title: Networking
   description: Manage network connections between containers.
-  icon: network_node
+  icon: server-stack
   link: /network
 @y
 - title: ネットワーク
   description: コンテナー間でのネットワーク接続を管理します。
-  icon: network_node
+  icon: server-stack
   link: __SUBDIR__/network
 @z
 
 @x
 - title: Container logs
   description: Learn how to view and read container logs.
-  icon: text_snippet
+  icon: document-text
   link: /config/containers/logging/
 @y
 - title: コンテナーのログ
   description: コンテナーのログを参照し読む方法について学びます。
-  icon: text_snippet
+  icon: document-text
   link: __SUBDIR__/config/containers/logging/
 @z
 
 @x
 - title: Prune
   description: Tidy up unused resources.
-  icon: content_cut
+  icon: scissors
   link: /config/pruning
 @y
 - title: prune （取り除き）
   description: 未使用のリソースを取り除きます。
-  icon: content_cut
+  icon: scissors
   link: __SUBDIR__/config/pruning
 @z
 
 @x
 - title: Configure the daemon
   description: Delve into the configuration options of the Docker daemon.
-  icon: tune
+  icon: adjustments-horizontal
   link: /config/daemon
 @y
 - title: デーモンを設定します。
   description: Docker デーモンの設定オプションについて学びます。
-  icon: tune
+  icon: adjustments-horizontal
   link: __SUBDIR__/config/daemon
 @z
 
 @x
 - title: Rootless mode
   description: Run Docker without root privileges.
-  icon: security
+  icon: shield-check
   link: /engine/security/rootless
 @y
 - title: rootless モード
   description: root 権限なしに Docker を実行します。
-  icon: security
+  icon: shield-check
   link: __SUBDIR__/engine/security/rootless
 @z
 
 @x
 - title: Deprecated features
   description: Find out what features of Docker Engine you should stop using.
-  icon: folder_delete
+  icon: folder-minus
   link: /engine/deprecated/
 @y
 - title: 非推奨の機能
   description: Docker Engine における機能のうち、利用を中止すべきものについて検索します。
-  icon: folder_delete
+  icon: folder-minus
   link: __SUBDIR__/engine/deprecated/
 @z
 
 @x
 - title: Release notes
   description: Read the release notes for the latest version.
-  icon: note_add
+  icon: document-plus
   link: /engine/release-notes
 @y
 - title: リリースノート
   description: 最新版に対するリリースノートを確認します。
-  icon: note_add
+  icon: document-plus
   link: __SUBDIR__/engine/release-notes
 @z
 

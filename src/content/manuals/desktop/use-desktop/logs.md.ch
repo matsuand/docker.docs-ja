@@ -20,9 +20,9 @@ linkTitle: Logs
 @z
 
 @x
-The **Logs** view provides a unified, real-time log stream from all running containers and Kubernetes nodes in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output across your entire environment from a single interface.
+The **Logs** view provides a unified, real-time log stream from all containers and recent builds in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output (up to a maximum of 100 000 entries) across your entire environment from a single interface. 
 @y
-The **Logs** view provides a unified, real-time log stream from all running containers and Kubernetes nodes in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output across your entire environment from a single interface.
+The **Logs** view provides a unified, real-time log stream from all containers and recent builds in Docker Desktop. Unlike the logs accessible from the [**Containers** view](container.md), the **Logs** view lets you monitor and search log output (up to a maximum of 100 000 entries) across your entire environment from a single interface. 
 @z
 
 @x
@@ -41,20 +41,20 @@ Each log entry in the table view shows:
 | Column        | Description                                                                    |
 | ------------- | ------------------------------------------------------------------------------ |
 | **Timestamp** | The date and time the log line was emitted, for example `2026-02-26 11:18:53`. |
-| **Object**    | The container or node that produced the log line.                              |
+| **Object**    | The container or build that produced the log line.                             |
 | **Message**   | The full log message, including any status codes such as `[ OK ]`.             |
 @y
 | Column        | Description                                                                    |
 | ------------- | ------------------------------------------------------------------------------ |
 | **Timestamp** | The date and time the log line was emitted, for example `2026-02-26 11:18:53`. |
-| **Object**    | The container or node that produced the log line.                              |
+| **Object**    | The container or build that produced the log line.                             |
 | **Message**   | The full log message, including any status codes such as `[ OK ]`.             |
 @z
 
 @x
-Selecting the expand arrow to the left of a row reveals the full message for that entry.
+Selecting the expand arrow to the right of a row reveals the full message for that entry.
 @y
-Selecting the expand arrow to the left of a row reveals the full message for that entry.
+Selecting the expand arrow to the right of a row reveals the full message for that entry.
 @z
 
 @x

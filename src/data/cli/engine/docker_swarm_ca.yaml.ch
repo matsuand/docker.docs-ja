@@ -160,10 +160,10 @@ examples: |-
 @z
 
 @x
-    Once the rotation os finished (all the progress bars have completed) the now-current
+    Once the rotation is finished (all the progress bars have completed) the now-current
     CA certificate will be printed:
 @y
-    Once the rotation os finished (all the progress bars have completed) the now-current
+    Once the rotation is finished (all the progress bars have completed) the now-current
     CA certificate will be printed:
 @z
 

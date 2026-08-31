@@ -14,15 +14,15 @@ keywords: unassociated machines, insights, manage users, enforce sign-in
 @z
 
 @x
-{{% restricted title="About unassociated machines" %}}
+{{< restricted title="About unassociated machines" >}}
 Unassociated machines is a private feature that may not be available to all
 accounts.
-{{% /restricted %}}
+{{< /restricted >}}
 @y
-{{% restricted title="About unassociated machines" %}}
+{{< restricted title="About unassociated machines" >}}
 Unassociated machines is a private feature that may not be available to all
 accounts.
-{{% /restricted %}}
+{{< /restricted >}}
 @z
 
 @x

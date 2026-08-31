@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Extension UI API
 description: Docker extension development overview
@@ -84,7 +86,7 @@ The `ddClient` object gives access to various APIs:
 @z
 
 @x
-See also the [Extensions API reference](reference/api/extensions-sdk/_index.md).
+See also the [Extensions API reference](/reference/api/extensions-sdk/_index.md).
 @y
 See also the [Extensions API reference](reference/api/extensions-sdk/_index.md).
 @z

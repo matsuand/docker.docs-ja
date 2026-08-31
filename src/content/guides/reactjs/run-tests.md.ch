@@ -1,8 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-% snip 対応
+% __SUBDIR__ 対応
 
 @x
 title: Run React.js tests in a container
@@ -18,6 +17,12 @@ description: Learn how to run your React.js tests in a container.
 @y
 keywords: react.js, react, test, vitest
 description: Learn how to run your React.js tests in a container.
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -56,6 +61,12 @@ Testing is a critical part of the development process. In this section, you'll l
 You’ll use [Vitest](https://vitest.dev) — a blazing fast test runner designed for Vite — along with [Testing Library](https://testing-library.com/) for assertions.
 @y
 You’ll use [Vitest](https://vitest.dev) — a blazing fast test runner designed for Vite — along with [Testing Library](https://testing-library.com/) for assertions.
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -114,7 +125,25 @@ Then, update the scripts section of your `package.json` file to include the foll
 Then, update the scripts section of your `package.json` file to include the following:
 @z
 
-% snip code...
+@x
+```json
+"scripts": {
+  "test": "vitest run"
+}
+```
+@y
+```json
+"scripts": {
+  "test": "vitest run"
+}
+```
+@z
+
+@x
+---
+@y
+---
+@z
 
 @x
 ### Step 2: Configure Vitest
@@ -295,8 +324,7 @@ After completing the previous steps, your project directory should contain the f
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @y
 ```text
@@ -305,8 +333,7 @@ After completing the previous steps, your project directory should contain the f
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @z
 
@@ -355,6 +382,12 @@ This command will:
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Summary
 @y
 ## Summary
@@ -380,6 +413,12 @@ What you accomplished:
 - Reused the development `Dockerfile.dev` to ensure consistency between dev and test environments.
 - Ran tests inside the container using `docker compose run --rm react-test`.
 - Ensured reliable, repeatable testing across environments without relying on local machine setup.
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x

@@ -280,9 +280,9 @@ This example displays the image repository name, truncating it to the first 15 c
 @z
 
 @x
-## println
+## `println`
 @y
-## println
+## `println`
 @z
 
 @x

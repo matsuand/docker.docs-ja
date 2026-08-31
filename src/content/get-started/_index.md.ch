@@ -19,24 +19,24 @@ description: Docker を使ってはじめよう
   - title: Get Docker
     description: Choose the best installation path for your setup.
     link: /get-started/get-docker/
-    icon: download
+    icon: arrow-down-tray
 @y
   - title: Docker の入手
     description: 環境に合わせて適切なインストールを行ないます。
     link: __SUBDIR__/get-started/get-docker/
-    icon: download
+    icon: arrow-down-tray
 @z
 
 @x
   - title: What is Docker?
     description: Learn about the Docker platform.
     link: /get-started/docker-overview/
-    icon: summarize
+    icon: document-text
 @y
   - title: Docker って何？
     description: Docker プラットフォームについて学びます。
     link: __SUBDIR__/get-started/docker-overview/
-    icon: summarize
+    icon: document-text
 @z
 
 % get-started2:
@@ -45,36 +45,36 @@ description: Docker を使ってはじめよう
   - title: Introduction
     description: Get started with the basics and the benefits of containerizing your applications.
     link: /get-started/introduction/
-    icon: rocket
+    icon: rocket-launch
 @y
   - title: はじめに
     description: アプリケーションのコンテナー化の基本と利点について学んでいきます。
     link: __SUBDIR__/get-started/introduction/
-    icon: rocket
+    icon: rocket-launch
 @z
 
 @x
   - title: Docker concepts
     description: Gain a better understanding of foundational Docker concepts.
     link: /get-started/docker-concepts/the-basics/what-is-a-container/
-    icon: foundation
+    icon: home
 @y
   - title: Docker の考え方
     description: 基本的な Docker の考え方について、より深く理解していきます。
     link: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
-    icon: foundation
+    icon: home
 @z
 
 @x
   - title: Docker workshop
     description: Get guided through a 45-minute workshop to learn about Docker.
     link: /get-started/workshop/
-    icon: desk
+    icon: computer-desktop
 @y
   - title: Docker ワークショップ
     description: 45 分間のワークショップガイドを通じて Docker を学んでいきます。
     link: __SUBDIR__/get-started/workshop/
-    icon: desk
+    icon: computer-desktop
 @z
 
 @x

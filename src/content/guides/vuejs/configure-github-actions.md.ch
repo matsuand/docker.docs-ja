@@ -6,10 +6,10 @@
 
 @x
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @y
 title: Automate your builds with GitHub Actions
-linkTitle: Automate your builds with GitHub Actions
+linkTitle: GitHub Actions CI
 @z
 
 @x
@@ -18,6 +18,12 @@ description: Learn how to configure CI/CD using GitHub Actions for your Vue.js a
 @y
 keywords: CI/CD, GitHub( Actions), Vue.js
 description: Learn how to configure CI/CD using GitHub Actions for your Vue.js application.
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -89,9 +95,9 @@ To enable GitHub Actions to build and push Docker images, you’ll securely stor
 @z
 
 @x
-### Step 1: Generate Docker Hub Credentials and Set GitHub Secrets"
+### Step 1: Generate Docker Hub credentials and set GitHub secrets
 @y
-### Step 1: Generate Docker Hub Credentials and Set GitHub Secrets"
+### Step 1: Generate Docker Hub credentials and set GitHub secrets
 @z
 
 @x
@@ -371,7 +377,6 @@ Now you'll create a GitHub Actions workflow that builds your Docker image, runs 
 @y
       # 7. Run unit tests inside container
 @z
-
 @x
       # 8. Log in to Docker Hub
 @y

@@ -7,13 +7,13 @@
 @x
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, or Mend.io.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, Mend.io, or Black Duck.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, black duck, vex attestation
 @y
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, or Mend.io.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, Mend.io, or Black Duck.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, black duck, vex attestation
 @z
 
 @x

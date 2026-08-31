@@ -544,9 +544,9 @@ Follow the steps to setup a non-containerized Node application:
 @z
 
 @x
-## Use a Live API in production to fetch real-time weather data from AccuWeather
+## Use a live API in production to fetch real-time weather data from AccuWeather
 @y
-## Use a Live API in production to fetch real-time weather data from AccuWeather
+## Use a live API in production to fetch real-time weather data from AccuWeather
 @z
 
 @x

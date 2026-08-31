@@ -21,59 +21,59 @@ keywords: docker, docker hub, docker desktop, security, developer security, 2FA,
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: /security/2fa/
-  icon: mobile_lock_portrait
+  icon: device-phone-mobile
 @y
 - title: Set up two-factor authentication
   description: Add an extra layer of authentication to your Docker account.
   link: __SUBDIR__/security/2fa/
-  icon: mobile_lock_portrait
+  icon: device-phone-mobile
 @z
 
 @x
 - title: Manage access tokens
   description: Create personal access tokens as an alternative to your password.
-  icon: password
+  icon: lock-closed
   link: /security/access-tokens/
 @y
 - title: Manage access tokens
   description: Create personal access tokens as an alternative to your password.
-  icon: password
+  icon: lock-closed
   link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
 - title: Static vulnerability scanning
   description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
-  icon: image_search
+  icon: magnifying-glass
   link: /docker-hub/repos/manage/vulnerability-scanning/
 @y
 - title: Static vulnerability scanning
   description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
-  icon: image_search
+  icon: magnifying-glass
   link: __SUBDIR__/docker-hub/repos/manage/vulnerability-scanning/
 @z
 
 @x
 - title: Docker Engine security
   description: Understand how to keep Docker Engine secure.
-  icon: security
+  icon: shield-check
   link: /engine/security/
 @y
 - title: Docker Engine security
   description: Understand how to keep Docker Engine secure.
-  icon: security
+  icon: shield-check
   link: __SUBDIR__/engine/security/
 @z
 
 @x
 - title: Secrets in Docker Compose
   description: Learn how to use secrets in Docker Compose.
-  icon: privacy_tip
+  icon: shield-exclamation
   link: /compose/how-tos/use-secrets/
 @y
 - title: Secrets in Docker Compose
   description: Learn how to use secrets in Docker Compose.
-  icon: privacy_tip
+  icon: shield-exclamation
   link: __SUBDIR__/compose/how-tos/use-secrets/
 @z
 
@@ -82,48 +82,48 @@ keywords: docker, docker hub, docker desktop, security, developer security, 2FA,
 @x
 - title: Security FAQs
   description: Explore common security FAQs.
-  icon: help
+  icon: question-mark-circle
   link: /faq/security/general/
 @y
 - title: Security FAQs
   description: Explore common security FAQs.
-  icon: help
+  icon: question-mark-circle
   link: __SUBDIR__/faq/security/general/
 @z
 
 @x
 - title: Security best practices
   description: Understand the steps you can take to improve the security of your container.
-  icon: category
+  icon: squares-2x2
   link: /develop/security-best-practices/
 @y
 - title: Security best practices
   description: Understand the steps you can take to improve the security of your container.
-  icon: category
+  icon: squares-2x2
   link: __SUBDIR__/develop/security-best-practices/
 @z
 
 @x
 - title: Suppress CVEs with VEX
   description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
-  icon: query_stats
+  icon: chart-bar
   link: /scout/guides/vex/
 @y
 - title: Suppress CVEs with VEX
   description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
-  icon: query_stats
+  icon: chart-bar
   link: __SUBDIR__/scout/guides/vex/
 @z
 
 @x
 - title: Docker Hardened Images
   description: Learn how to use Docker Hardened Images to enhance your software supply security.
-  icon: encrypted_add_circle
+  icon: lock-closed
   link: /dhi/
 @y
 - title: Docker Hardened Images
   description: Learn how to use Docker Hardened Images to enhance your software supply security.
-  icon: encrypted_add_circle
+  icon: lock-closed
   link: __SUBDIR__/dhi/
 @z
 

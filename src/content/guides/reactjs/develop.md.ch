@@ -20,6 +20,12 @@ description: Learn how to develop your React.js application locally using contai
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Prerequisites
 @y
 ## Prerequisites
@@ -29,6 +35,12 @@ description: Learn how to develop your React.js application locally using contai
 Complete [Containerize React.js application](containerize.md).
 @y
 Complete [Containerize React.js application](containerize.md).
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -56,9 +68,15 @@ You’ll learn how to:
 @z
 
 @x
-## Automatically update services (Development Mode)
+---
 @y
-## Automatically update services (Development Mode)
+---
+@z
+
+@x
+## Automatically update services (development mode)
+@y
+## Automatically update services (development mode)
 @z
 
 @x
@@ -332,8 +350,7 @@ After completing the previous steps, your project directory should now contain t
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @y
 ```text
@@ -342,8 +359,7 @@ After completing the previous steps, your project directory should now contain t
 │ ├── Dockerfile.dev
 │ ├── .dockerignore
 │ ├── compose.yaml
-│ ├── nginx.conf
-│ └── README.Docker.md
+│ └── nginx.conf
 ```
 @z
 
@@ -438,6 +454,12 @@ You should see the updated text appear instantly, without needing to rebuild the
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Summary
 @y
 ## Summary
@@ -467,6 +489,12 @@ Here's what you achieved:
 With this setup, you're now equipped to build, run, and iterate on your React.js app entirely within containers—efficiently and consistently across environments.
 @y
 With this setup, you're now equipped to build, run, and iterate on your React.js app entirely within containers—efficiently and consistently across environments.
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x

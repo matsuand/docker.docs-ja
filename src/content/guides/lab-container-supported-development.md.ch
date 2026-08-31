@@ -5,7 +5,7 @@
 
 @x
 title: "Lab: Container-Supported Development"
-linkTitle: "Lab: Container-Supported Development"
+linkTitle: "Lab: Container-supported dev"
 description: |
   Learn to use containers for local development by running a PostgreSQL
   database, defining a Compose file, and adding a pgAdmin dev tool — no local
@@ -17,7 +17,7 @@ summary: |
 keywords: Docker, Compose, local development, PostgreSQL, pgAdmin, containers, lab, labspace
 @y
 title: "Lab: Container-Supported Development"
-linkTitle: "Lab: Container-Supported Development"
+linkTitle: "Lab: Container-supported dev"
 description: |
   Learn to use containers for local development by running a PostgreSQL
   database, defining a Compose file, and adding a pgAdmin dev tool — no local

@@ -20,24 +20,24 @@ keywords: roles, permissions, custom roles, core roles, access control, organiza
 @x
   - title: "Core roles"
     description: Learn about Docker's built-in Member, Editor, and Owner roles with predefined permissions.
-    icon: "admin_panel_settings"
+    icon: shield-check
     link: /enterprise/security/roles-and-permissions/core-roles/
 @y
   - title: "Core roles"
     description: Learn about Docker's built-in Member, Editor, and Owner roles with predefined permissions.
-    icon: "admin_panel_settings"
+    icon: shield-check
     link: __SUBDIR__/enterprise/security/roles-and-permissions/core-roles/
 @z
 
 @x
   - title: "Custom roles"
     description: Create tailored permission sets that match your organization's specific needs.
-    icon: "tune"
+    icon: adjustments-horizontal
     link: /enterprise/security/roles-and-permissions/custom-roles/
 @y
   - title: "Custom roles"
     description: Create tailored permission sets that match your organization's specific needs.
-    icon: "tune"
+    icon: adjustments-horizontal
     link: __SUBDIR__/enterprise/security/roles-and-permissions/custom-roles/
 @z
 

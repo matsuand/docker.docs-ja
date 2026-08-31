@@ -6,10 +6,10 @@
 
 @x
 title: Containerize a C++ application
-linkTitle: Build and run a C++ application using Docker Compose
+linkTitle: Containerize
 @y
 title: C++ アプリケーションのコンテナー化
-linkTitle: Docker Compose を使った C++ アプリケーションのビルドと実行
+linkTitle: コンテナー化
 @z
 
 @x

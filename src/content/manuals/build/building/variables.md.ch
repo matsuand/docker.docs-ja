@@ -1282,7 +1282,7 @@ included in the metadata file:
 * `disabled`, `false` or `0` does not set any provenance.
 @y
 By default, Buildx includes minimal provenance information in the metadata file
-through [`--metadata-file` flag](reference/cli/docker/buildx/build/#metadata-file).
+through [`--metadata-file` flag](__SUBDIR__/reference/cli/docker/buildx/build/#metadata-file).
 This environment variable allows you to customize the provenance information
 included in the metadata file:
 * `min` sets minimal provenance (default).
@@ -1308,7 +1308,7 @@ By default, Buildx does not include build warnings in the metadata file through
 You can set this environment variable to `1` or `true` to include them.
 @y
 By default, Buildx does not include build warnings in the metadata file through
-[`--metadata-file` flag](reference/cli/docker/buildx/build/#metadata-file).
+[`--metadata-file` flag](__SUBDIR__/reference/cli/docker/buildx/build/#metadata-file).
 You can set this environment variable to `1` or `true` to include them.
 @z
 

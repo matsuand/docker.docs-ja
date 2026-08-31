@@ -241,12 +241,14 @@ to provide full compatibility, some functionality may not be available.
 @z
 
 @x
+| 29.5           | [1.54](/reference/api/engine/version/v1.54/) | [1.40](/reference/api/engine/version/v1.40/) | [changes](/reference/api/engine/version-history/#v154-api-changes) |
 | 29.4           | [1.54](/reference/api/engine/version/v1.54/) | [1.40](/reference/api/engine/version/v1.40/) | [changes](/reference/api/engine/version-history/#v154-api-changes) |
 | 29.3           | [1.54](/reference/api/engine/version/v1.54/) | [1.40](/reference/api/engine/version/v1.40/) | [changes](/reference/api/engine/version-history/#v154-api-changes) |
 | 29.2           | [1.53](/reference/api/engine/version/v1.53/) | [1.44](/reference/api/engine/version/v1.44/) | [changes](/reference/api/engine/version-history/#v153-api-changes) |
 | 29.1           | [1.52](/reference/api/engine/version/v1.52/) | [1.44](/reference/api/engine/version/v1.44/) | [changes](/reference/api/engine/version-history/#v152-api-changes) |
 | 29.0           | [1.52](/reference/api/engine/version/v1.52/) | [1.44](/reference/api/engine/version/v1.44/) | [changes](/reference/api/engine/version-history/#v152-api-changes) |
 @y
+| 29.5           | [1.54](__SUBDIR__/reference/api/engine/version/v1.54/) | [1.40](__SUBDIR__/reference/api/engine/version/v1.40/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v154-api-changes) |
 | 29.4           | [1.54](__SUBDIR__/reference/api/engine/version/v1.54/) | [1.40](__SUBDIR__/reference/api/engine/version/v1.40/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v154-api-changes) |
 | 29.3           | [1.54](__SUBDIR__/reference/api/engine/version/v1.54/) | [1.40](__SUBDIR__/reference/api/engine/version/v1.40/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v154-api-changes) |
 | 29.2           | [1.53](__SUBDIR__/reference/api/engine/version/v1.53/) | [1.44](__SUBDIR__/reference/api/engine/version/v1.44/) | [changes](__SUBDIR__/reference/api/engine/version-history/#v153-api-changes) |
@@ -313,21 +315,11 @@ to provide full compatibility, some functionality may not be available.
 @x
 API versions before v1.40 are deprecated and no longer supported by current
 versions of the Docker Engine and CLI. You can find archived documentation
-for deprecated versions of the API in the code repository on GitHub:
+for deprecated versions of the API [in the code repository on GitHub](https://github.com/moby/moby/tree/docker-v{{% param "docker_ce_version" %}}/api/docs):
 @y
 API versions before v1.40 are deprecated and no longer supported by current
 versions of the Docker Engine and CLI. You can find archived documentation
-for deprecated versions of the API in the code repository on GitHub:
-@z
-
-@x
-- [Documentation for API versions 1.24–1.43](https://github.com/moby/moby/tree/28.x/docs/api).
-- [Documentation for API versions 1.18–1.23](https://github.com/moby/moby/tree/v25.0.0/docs/api).
-- [Documentation for API versions 1.17 and before](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api).
-@y
-- [Documentation for API versions 1.24–1.43](https://github.com/moby/moby/tree/28.x/docs/api).
-- [Documentation for API versions 1.18–1.23](https://github.com/moby/moby/tree/v25.0.0/docs/api).
-- [Documentation for API versions 1.17 and before](https://github.com/moby/moby/tree/v1.9.1/docs/reference/api).
+for deprecated versions of the API [in the code repository on GitHub](https://github.com/moby/moby/tree/docker-v{{% param "docker_ce_version" %}}/api/docs):
 @z
 
 @x

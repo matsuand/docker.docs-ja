@@ -3,38 +3,38 @@
 
 @x
 name: sbx policy rm
-synopsis: Remove a policy
-description: Remove a previously added allow or deny policy.
+synopsis: Remove a policy rule
+description: Remove a previously added allow or deny rule.
 usage: sbx policy rm COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx policy - Manage sandbox policies
-    - sbx policy rm network - Remove a network policy
 @y
 name: sbx policy rm
-synopsis: Remove a policy
-description: Remove a previously added allow or deny policy.
+synopsis: Remove a policy rule
+description: Remove a previously added allow or deny rule.
 usage: sbx policy rm COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+% options:
+
+@x help
       usage: help for rm
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for rm
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
     - sbx policy - Manage sandbox policies
-    - sbx policy rm network - Remove a network policy
+    - sbx policy rm network - Remove a network rule
+@y
+    - sbx policy - Manage sandbox policies
+    - sbx policy rm network - Remove a network rule
 @z

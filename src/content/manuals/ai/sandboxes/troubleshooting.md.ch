@@ -18,12 +18,6 @@ keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network po
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 ## Run diagnostics
 @y
 ## Run diagnostics
@@ -115,11 +109,11 @@ Then allow the domains your workflow needs:
 
 @x
 ```console
-$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
+$ sbx policy allow network -g "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
 ```
 @y
 ```console
-$ sbx policy allow network "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
+$ sbx policy allow network -g "*.npmjs.org,*.pypi.org,files.pythonhosted.org"
 ```
 @z
 
@@ -131,12 +125,22 @@ To allow all outbound traffic instead:
 
 @x
 ```console
-$ sbx policy allow network "**"
+$ sbx policy allow network -g "**"
 ```
 @y
 ```console
-$ sbx policy allow network "**"
+$ sbx policy allow network -g "**"
 ```
+@z
+
+@x
+If `sbx policy allow` doesn't unblock the request, your organization may
+manage sandbox policies centrally and take precedence over local rules. See
+[Organization governance](security/governance.md).
+@y
+If `sbx policy allow` doesn't unblock the request, your organization may
+manage sandbox policies centrally and take precedence over local rules. See
+[Organization governance](security/governance.md).
 @z
 
 @x
@@ -157,11 +161,11 @@ host:
 
 @x
 ```console
-$ sbx policy allow network "10.1.2.3:22"
+$ sbx policy allow network -g "10.1.2.3:22"
 ```
 @y
 ```console
-$ sbx policy allow network "10.1.2.3:22"
+$ sbx policy allow network -g "10.1.2.3:22"
 ```
 @z
 
@@ -474,51 +478,59 @@ isn't configured, use one of these workarounds:
 @z
 
 @x
-## Clock drift after sleep/wake
+## Daemon fails to start after downgrading
 @y
-## Clock drift after sleep/wake
+## Daemon fails to start after downgrading
 @z
 
 @x
-If your laptop sleeps and wakes while a sandbox is running, the VM clock can
-fall behind the host clock. This causes problems such as:
+If you downgrade `sbx` to a version older than the one that last managed your
+local state, the daemon may fail to start with a database version mismatch:
 @y
-If your laptop sleeps and wakes while a sandbox is running, the VM clock can
-fall behind the host clock. This causes problems such as:
+If you downgrade `sbx` to a version older than the one that last managed your
+local state, the daemon may fail to start with a database version mismatch:
 @z
 
 @x
-- External API calls failing because of timestamp validation.
-- Git commits with incorrect timestamps.
-- TLS certificate errors due to time mismatches.
-@y
-- External API calls failing because of timestamp validation.
-- Git commits with incorrect timestamps.
-- TLS certificate errors due to time mismatches.
-@z
-
-@x
-To fix the issue, stop and restart the sandbox:
-@y
-To fix the issue, stop and restart the sandbox:
-@z
-
-@x
-```console
-$ sbx stop <sandbox-name>
-$ sbx run <sandbox-name>
+```text
+ERROR: failed to start backend in-process: start backend: creating containerd
+server: ... database is at major version 6, but this binary only supports up
+to major version 1
 ```
 @y
-```console
-$ sbx stop <sandbox-name>
-$ sbx run <sandbox-name>
+```text
+ERROR: failed to start backend in-process: start backend: creating containerd
+server: ... database is at major version 6, but this binary only supports up
+to major version 1
 ```
 @z
 
 @x
-Restarting the sandbox re-syncs the VM clock with the host.
+A newer version of `sbx` upgraded the local database to a schema that older
+binaries don't understand. To recover, reset all sandbox state:
 @y
-Restarting the sandbox re-syncs the VM clock with the host.
+A newer version of `sbx` upgraded the local database to a schema that older
+binaries don't understand. To recover, reset all sandbox state:
+@z
+
+@x
+```console
+$ sbx reset --preserve-secrets
+```
+@y
+```console
+$ sbx reset --preserve-secrets
+```
+@z
+
+@x
+This stops all VMs and deletes all sandbox data. You'll need to create new
+sandboxes afterwards. The `--preserve-secrets` flag keeps any secrets you've
+set so you don't have to reconfigure them.
+@y
+This stops all VMs and deletes all sandbox data. You'll need to create new
+sandboxes afterwards. The `--preserve-secrets` flag keeps any secrets you've
+set so you don't have to reconfigure them.
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Build your Go image
 linkTitle: Build images
@@ -254,10 +256,10 @@ To build a container image with Docker, a `Dockerfile` with build instructions i
 @z
 
 @x
-Begin your `Dockerfile` with the (optional) parser directive line that instructs BuildKit to 
+Begin your `Dockerfile` with the (optional) parser directive line that instructs BuildKit to
 interpret your file according to the grammar rules for the specified version of the syntax.
 @y
-Begin your `Dockerfile` with the (optional) parser directive line that instructs BuildKit to 
+Begin your `Dockerfile` with the (optional) parser directive line that instructs BuildKit to
 interpret your file according to the grammar rules for the specified version of the syntax.
 @z
 
@@ -460,11 +462,11 @@ COPY *.go ./
 @x
 This `COPY` command uses a wildcard to copy all files with `.go` extension
 located in the current directory on the host (the directory where the `Dockerfile`
-is located) into the current directory inside the image. 
+is located) into the current directory inside the image.
 @y
 This `COPY` command uses a wildcard to copy all files with `.go` extension
 located in the current directory on the host (the directory where the `Dockerfile`
-is located) into the current directory inside the image. 
+is located) into the current directory inside the image.
 @z
 
 @x
@@ -488,14 +490,14 @@ This should be familiar. The result of that command will be a static application
 binary named `docker-gs-ping` and located in the root of the filesystem of the
 image that you are building. You could have put the binary into any other place
 you desire inside that image, the root directory has no special meaning in this
-regard. It's just convenient to use it to keep the file paths short for improved
+regard. It's convenient to use it to keep the file paths short for improved
 readability.
 @y
 This should be familiar. The result of that command will be a static application
 binary named `docker-gs-ping` and located in the root of the filesystem of the
 image that you are building. You could have put the binary into any other place
 you desire inside that image, the root directory has no special meaning in this
-regard. It's just convenient to use it to keep the file paths short for improved
+regard. It's convenient to use it to keep the file paths short for improved
 readability.
 @z
 
@@ -696,11 +698,11 @@ $ docker build --tag docker-gs-ping .
 @z
 
 @x
-The build process will print some diagnostic messages as it goes through the build steps. 
-The following is just an example of what these messages may look like.
+The build process will print some diagnostic messages as it goes through the build steps.
+The following is an example of what these messages may look like.
 @y
-The build process will print some diagnostic messages as it goes through the build steps. 
-The following is just an example of what these messages may look like.
+The build process will print some diagnostic messages as it goes through the build steps.
+The following is an example of what these messages may look like.
 @z
 
 @x
@@ -774,12 +776,12 @@ successfully built your image named `docker-gs-ping`.
 @x
 To see the list of images you have on your local machine, you have two options.
 One is to use the CLI and the other is to use [Docker
-Desktop](/manuals/desktop/_index.md). Since you're currently working in the
+Desktop](/manuals/desktop/_index.md). Since you're working in the
 terminal, take a look at listing images with the CLI.
 @y
 To see the list of images you have on your local machine, you have two options.
 One is to use the CLI and the other is to use [Docker
-Desktop](manuals/desktop/_index.md). Since you're currently working in the
+Desktop](manuals/desktop/_index.md). Since you're working in the
 terminal, take a look at listing images with the CLI.
 @z
 
@@ -875,11 +877,11 @@ $ docker image tag docker-gs-ping:latest docker-gs-ping:v1.0
 
 @x
 The Docker `tag` command creates a new tag for the image. It doesn't create a
-new image. The tag points to the same image and is just another way to reference
+new image. The tag points to the same image and is another way to reference
 the image.
 @y
 The Docker `tag` command creates a new tag for the image. It doesn't create a
-new image. The tag points to the same image and is just another way to reference
+new image. The tag points to the same image and is another way to reference
 the image.
 @z
 
@@ -1018,11 +1020,11 @@ after you had built your image.
 @z
 
 @x
-The answer is that the full toolchain is still there, in the container image. 
+The answer is that the full toolchain is still there, in the container image.
 Not only this is inconvenient because of the large file size, but it may also
 present a security risk when the container is deployed.
 @y
-The answer is that the full toolchain is still there, in the container image. 
+The answer is that the full toolchain is still there, in the container image.
 Not only this is inconvenient because of the large file size, but it may also
 present a security risk when the container is deployed.
 @z
@@ -1157,12 +1159,12 @@ ENTRYPOINT ["/docker-gs-ping"]
 Since you have two Dockerfiles now, you have to tell Docker what Dockerfile
 you'd like to use to build the image. Tag the new image with `multistage`. This
 tag (like any other, apart from `latest`) has no special meaning for Docker,
-it's just something you chose.
+it's something you chose.
 @y
 Since you have two Dockerfiles now, you have to tell Docker what Dockerfile
 you'd like to use to build the image. Tag the new image with `multistage`. This
 tag (like any other, apart from `latest`) has no special meaning for Docker,
-it's just something you chose.
+it's something you chose.
 @z
 
 @x
@@ -1200,18 +1202,18 @@ docker-gs-ping   latest       336a3f164d0f   About an hour ago    1.11GB
 @z
 
 @x
-This is so because the ["distroless"](https://github.com/GoogleContainerTools/distroless) 
+This is so because the ["distroless"](https://github.com/GoogleContainerTools/distroless)
 base image that you have used in the second stage of the build is very barebones and is designed for lean deployments of static binaries.
 @y
-This is so because the ["distroless"](https://github.com/GoogleContainerTools/distroless) 
+This is so because the ["distroless"](https://github.com/GoogleContainerTools/distroless)
 base image that you have used in the second stage of the build is very barebones and is designed for lean deployments of static binaries.
 @z
 
 @x
-There's much more to multi-stage builds, including the possibility of multi-architecture builds, 
+There's much more to multi-stage builds, including the possibility of multi-architecture builds,
 so feel free to check out [multi-stage builds](/manuals/build/building/multi-stage.md). This is, however, not essential for your progress here.
 @y
-There's much more to multi-stage builds, including the possibility of multi-architecture builds, 
+There's much more to multi-stage builds, including the possibility of multi-architecture builds,
 so feel free to check out [multi-stage builds](manuals/build/building/multi-stage.md). This is, however, not essential for your progress here.
 @z
 

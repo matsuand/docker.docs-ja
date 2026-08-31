@@ -2,17 +2,13 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Why Testcontainers Cloud?
 description: Learn how Testcontainers Cloud by Docker can help you optimize integration testing.
-weight: 10
----
+keywords: testcontainers cloud, integration testing, scalable testing, ci/cd, cloud testing
 @y
----
 title: Why Testcontainers Cloud?
 description: Learn how Testcontainers Cloud by Docker can help you optimize integration testing.
-weight: 10
----
+keywords: testcontainers cloud, integration testing, scalable testing, ci/cd, cloud testing
 @z
 
 @x

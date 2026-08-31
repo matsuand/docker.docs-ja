@@ -175,7 +175,39 @@ The `agent:` block tells the sandbox how to launch Amp when the user
 attaches.
 @z
 
-% snip code...
+@x
+```yaml {title="amp/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: amp
+displayName: Amp
+description: The frontier coding agent.
+@y
+```yaml {title="amp/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: amp
+displayName: Amp
+description: The frontier coding agent.
+@z
+
+@x
+agent:
+  image: "docker/sandbox-templates:shell-docker"
+  aiFilename: AGENTS.md
+  persistence: persistent
+  entrypoint:
+    run: [amp, --dangerously-allow-all]
+```
+@y
+agent:
+  image: "docker/sandbox-templates:shell-docker"
+  aiFilename: AGENTS.md
+  persistence: persistent
+  entrypoint:
+    run: [amp, --dangerously-allow-all]
+```
+@z
 
 @x
 - `aiFilename: AGENTS.md` tells the sandbox to create `AGENTS.md` at launch
@@ -209,7 +241,23 @@ Amp installs via a curl-to-bash script:
 Amp installs via a curl-to-bash script:
 @z
 
-% snip code...
+@x
+```yaml
+commands:
+  install:
+    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
+      user: "1000"
+      description: Install Amp
+```
+@y
+```yaml
+commands:
+  install:
+    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
+      user: "1000"
+      description: Install Amp
+```
+@z
 
 @x
 Note `user: "1000"`. That's the agent user. Install commands run as root
@@ -230,18 +278,44 @@ agent can't reach it.
 @z
 
 @x
-The network block does two things: it lists the hosts the sandbox is
-allowed to reach (`allowedDomains`), and it wires the kit-side half of
-the auth flow from [Plan authentication](#plan-authentication)
-(`serviceDomains` + `serviceAuth`).
+The network block does two things: it lists the hosts the sandbox can
+reach (`allowedDomains`), and it wires the kit-side half of the auth flow
+from [Plan authentication](#plan-authentication) with `serviceDomains` and
+`serviceAuth`.
 @y
-The network block does two things: it lists the hosts the sandbox is
-allowed to reach (`allowedDomains`), and it wires the kit-side half of
-the auth flow from [Plan authentication](#plan-authentication)
-(`serviceDomains` + `serviceAuth`).
+The network block does two things: it lists the hosts the sandbox can
+reach (`allowedDomains`), and it wires the kit-side half of the auth flow
+from [Plan authentication](#plan-authentication) with `serviceDomains` and
+`serviceAuth`.
 @z
 
-% snip code...
+@x
+```yaml
+network:
+  serviceDomains:
+    ampcode.com: amp
+  serviceAuth:
+    amp:
+      headerName: Authorization
+      valueFormat: "Bearer %s"
+  allowedDomains:
+    - "ampcode.com:443"
+    - "*.ampcode.com:443"
+```
+@y
+```yaml
+network:
+  serviceDomains:
+    ampcode.com: amp
+  serviceAuth:
+    amp:
+      headerName: Authorization
+      valueFormat: "Bearer %s"
+  allowedDomains:
+    - "ampcode.com:443"
+    - "*.ampcode.com:443"
+```
+@z
 
 @x
 `allowedDomains` here covers the apex (`ampcode.com`) and the
@@ -253,6 +327,16 @@ you'll discover by watching `sbx policy log` while testing.
 install/CDN subdomains (`*.ampcode.com`). Treat it as a starting point;
 Amp may reach other domains (model providers, analytics, updates) that
 you'll discover by watching `sbx policy log` while testing.
+@z
+
+@x
+Kits can also declare `deniedDomains` for hosts the sandbox should not
+reach, such as telemetry endpoints. Deny rules take precedence over
+allow rules and apply only to sandboxes that use the kit.
+@y
+Kits can also declare `deniedDomains` for hosts the sandbox should not
+reach, such as telemetry endpoints. Deny rules take precedence over
+allow rules and apply only to sandboxes that use the kit.
 @z
 
 @x
@@ -305,10 +389,28 @@ Use it to tell Amp about the sandbox environment so it knows the
 conventions when it starts.
 @z
 
-@x within code
+@x
+```yaml
+memory: |
   ## Sandbox environment
 @y
+```yaml
+memory: |
   ## Sandbox environment
+@z
+
+@x
+  You are running inside a Docker sandbox. The workspace is mounted at
+  its absolute host path. `sudo` is passwordless; use it for package
+  installs. Docker is available inside the sandbox; containers you start
+  are isolated in the microVM.
+```
+@y
+  You are running inside a Docker sandbox. The workspace is mounted at
+  its absolute host path. `sudo` is passwordless; use it for package
+  installs. Docker is available inside the sandbox; containers you start
+  are isolated in the microVM.
+```
 @z
 
 @x
@@ -331,10 +433,94 @@ Putting it all together:
 Putting it all together:
 @z
 
-@x within code
+@x
+```yaml {title="amp/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: amp
+displayName: Amp
+description: The frontier coding agent.
+@y
+```yaml {title="amp/spec.yaml"}
+schemaVersion: "1"
+kind: agent
+name: amp
+displayName: Amp
+description: The frontier coding agent.
+@z
+
+@x
+agent:
+  image: "docker/sandbox-templates:shell-docker"
+  aiFilename: AGENTS.md
+  persistence: persistent
+  entrypoint:
+    run: [amp, --dangerously-allow-all]
+@y
+agent:
+  image: "docker/sandbox-templates:shell-docker"
+  aiFilename: AGENTS.md
+  persistence: persistent
+  entrypoint:
+    run: [amp, --dangerously-allow-all]
+@z
+
+@x
+network:
+  serviceDomains:
+    ampcode.com: amp
+  serviceAuth:
+    amp:
+      headerName: Authorization
+      valueFormat: "Bearer %s"
+  allowedDomains:
+    - "ampcode.com:443"
+    - "*.ampcode.com:443"
+@y
+network:
+  serviceDomains:
+    ampcode.com: amp
+  serviceAuth:
+    amp:
+      headerName: Authorization
+      valueFormat: "Bearer %s"
+  allowedDomains:
+    - "ampcode.com:443"
+    - "*.ampcode.com:443"
+@z
+
+@x
+commands:
+  install:
+    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
+      user: "1000"
+      description: Install Amp
+@y
+commands:
+  install:
+    - command: "curl -fsSL https://ampcode.com/install.sh | bash"
+      user: "1000"
+      description: Install Amp
+@z
+
+@x
+memory: |
   ## Sandbox environment
 @y
+memory: |
   ## Sandbox environment
+@z
+
+@x
+  You are running inside a Docker sandbox. The workspace is mounted at
+  its absolute host path. `sudo` is passwordless; use it for package
+  installs.
+```
+@y
+  You are running inside a Docker sandbox. The workspace is mounted at
+  its absolute host path. `sudo` is passwordless; use it for package
+  installs.
+```
 @z
 
 @x
@@ -363,7 +549,23 @@ to look like a real Amp key. Pick a placeholder shape that matches Amp's
 expected format:
 @z
 
-% snip command...
+@x
+```console
+$ sbx secret set-custom -g \
+    --host ampcode.com \
+    --env AMP_API_KEY \
+    --placeholder "sgamp-{rand}" \
+    --value "$AMP_API_KEY"
+```
+@y
+```console
+$ sbx secret set-custom -g \
+    --host ampcode.com \
+    --env AMP_API_KEY \
+    --placeholder "sgamp-{rand}" \
+    --value "$AMP_API_KEY"
+```
+@z
 
 @x
 `{rand}` expands to a random suffix at registration time. Inside the
@@ -421,7 +623,15 @@ Validate the spec:
 Validate the spec:
 @z
 
-% snip command...
+@x
+```console
+$ sbx kit validate ./amp/
+```
+@y
+```console
+$ sbx kit validate ./amp/
+```
+@z
 
 @x
 Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
@@ -431,7 +641,15 @@ Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
 agent argument:
 @z
 
-% snip command...
+@x
+```console
+$ sbx run --kit ./amp/ amp
+```
+@y
+```console
+$ sbx run --kit ./amp/ amp
+```
+@z
 
 @x
 The published copy of this kit also runs directly from the contrib
@@ -441,7 +659,15 @@ The published copy of this kit also runs directly from the contrib
 repository:
 @z
 
-% snip command...
+@x
+```console
+$ sbx run --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp" amp
+```
+@y
+```console
+$ sbx run --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp" amp
+```
+@z
 
 @x
 ## Iterate
@@ -460,11 +686,15 @@ Two loops help:
 @x
 - Watch the network policy log (`sbx policy log`) to catch blocked
   requests, then add their domains to `allowedDomains`.
+- Add domains to `deniedDomains` when the agent should stay blocked from
+  a host even if another policy permits it.
 - Edit the spec and re-run `sbx run --kit ./amp/ amp` to pick up changes.
   Remove the sandbox first (`sbx rm <name>`) for a clean start.
 @y
 - Watch the network policy log (`sbx policy log`) to catch blocked
   requests, then add their domains to `allowedDomains`.
+- Add domains to `deniedDomains` when the agent should stay blocked from
+  a host even if another policy permits it.
 - Edit the spec and re-run `sbx run --kit ./amp/ amp` to pick up changes.
   Remove the sandbox first (`sbx rm <name>`) for a clean start.
 @z
@@ -517,7 +747,8 @@ the same decisions for your agent:
   into a custom image. Pick install if it's a one-line script; bake if
   the install is slow or you need a pinned version.
 - **Network mapping**: list only the API host in `serviceDomains`, not
-  a wildcard. Keep install/CDN paths out of TLS-intercepting mode.
+  a wildcard. Keep install/CDN paths out of TLS-intercepting mode. Use
+  `deniedDomains` for hosts the agent should not reach.
 - **Credential injection**: if the agent validates the API key's format
   locally, register with `sbx secret set-custom` and pick a matching
   placeholder. If it accepts the env var as-is, declare
@@ -530,7 +761,8 @@ the same decisions for your agent:
   into a custom image. Pick install if it's a one-line script; bake if
   the install is slow or you need a pinned version.
 - **Network mapping**: list only the API host in `serviceDomains`, not
-  a wildcard. Keep install/CDN paths out of TLS-intercepting mode.
+  a wildcard. Keep install/CDN paths out of TLS-intercepting mode. Use
+  `deniedDomains` for hosts the agent should not reach.
 - **Credential injection**: if the agent validates the API key's format
   locally, register with `sbx secret set-custom` and pick a matching
   placeholder. If it accepts the env var as-is, declare
@@ -559,7 +791,15 @@ To remove the entry created earlier with `sbx secret set-custom`, pass
 the host to `sbx secret rm`:
 @z
 
-% snip command...
+@x
+```console
+$ sbx secret rm -g --host ampcode.com
+```
+@y
+```console
+$ sbx secret rm -g --host ampcode.com
+```
+@z
 
 @x
 The `--host` flag on `sbx secret rm` isn't listed in

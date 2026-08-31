@@ -74,9 +74,9 @@ You'll need to clone a new repository to get a sample application that includes 
 % snip command...
 
 @x
-2. In the cloned repository's directory, manually create the Docker assets or run `docker init` to create the necessary Docker assets.
+2. In the cloned repository's directory, create the necessary Docker assets.
 @y
-2. In the cloned repository's directory, manually create the Docker assets or run `docker init` to create the necessary Docker assets.
+2. In the cloned repository's directory, create the necessary Docker assets.
 @z
 
 % snip command...
@@ -95,9 +95,9 @@ You can use containers to set up local services, like a database. In this sectio
 @z
 
 @x
-In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. `docker init` handled creating most of the instructions, but you'll need to update it for your unique application.
+In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor and update it for your unique application.
 @y
-In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor. `docker init` handled creating most of the instructions, but you'll need to update it for your unique application.
+In the cloned repository's directory, open the `compose.yaml` file in an IDE or text editor and update it for your unique application.
 @z
 
 @x

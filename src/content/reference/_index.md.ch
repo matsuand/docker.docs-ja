@@ -22,24 +22,24 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 @x
   - title: Dockerfile
     description: Defines the contents and startup behavior of a single container.
-    icon: edit_document
+    icon: pencil-square
     link: /reference/dockerfile/
 @y
   - title: Dockerfile
     description: 1 つのコンテナーの内容と起動方法を定義します。
-    icon: edit_document
+    icon: pencil-square
     link: __SUBDIR__/reference/dockerfile/
 @z
 
 @x
   - title: Compose file
     description: Defines a multi-container application.
-    icon: polyline
+    icon: rectangle-stack
     link: /reference/compose-file/
 @y
   - title: Compose ファイル
     description: マルチコンテナーアプリケーションを定義します。
-    icon: polyline
+    icon: rectangle-stack
     link: __SUBDIR__/reference/compose-file/
 @z
 
@@ -48,12 +48,12 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 @x
   - title: Docker CLI
     description: The main Docker CLI, includes all `docker` commands.
-    icon: terminal
+    icon: command-line
     link: /reference/cli/docker/
 @y
   - title: Docker CLI
     description: "`docker` コマンドをはじめとする主要な Docker CLI です。"
-    icon: terminal
+    icon: command-line
     link: __SUBDIR__/reference/cli/docker/
 @z
 
@@ -61,25 +61,24 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
   - title: Compose CLI
     description: The CLI for Docker Compose, for building and running multi-container
       applications.
-    icon: subtitles
+    icon: server-stack
     link: /reference/cli/docker/compose/
 @y
   - title: Compose CLI
     description: Docker Compose 向けの CLI であり、マルチコンテナーをビルドし実行します。
-      applications.
-    icon: subtitles
+    icon: server-stack
     link: __SUBDIR__/reference/cli/docker/compose/
 @z
 
 @x
   - title: Daemon CLI (dockerd)
     description: Persistent process that manages containers.
-    icon: developer_board
+    icon: cpu-chip
     link: /reference/cli/dockerd/
 @y
   - title: Daemon CLI (dockerd)
     description: コンテナーを管理する常駐プロセスです。
-    icon: developer_board
+    icon: cpu-chip
     link: __SUBDIR__/reference/cli/dockerd/
 @z
 
@@ -88,48 +87,48 @@ description: Docker プラットフォームの API、CLI、ドライバー仕�
 @x
   - title: Engine API
     description: The main API for Docker, provides programmatic access to a daemon.
-    icon: api
+    icon: code-bracket
     link: /reference/api/engine/
 @y
   - title: Engine API
     description: Docker のメイン API であり、デーモンへのプログラム的なアクセスを実現します。
-    icon: api
+    icon: code-bracket
     link: __SUBDIR__/reference/api/engine/
 @z
 
 @x
   - title: Docker Hub API
     description: API to interact with Docker Hub.
-    icon: communities
+    icon: cloud
     link: /reference/api/hub/latest/
 @y
   - title: Docker Hub API
     description: Docker Hub との対話を行う API です。
-    icon: communities
+    icon: cloud
     link: __SUBDIR__/reference/api/hub/latest/
 @z
 
 @x
   - title: DVP Data API
     description: API for Docker Verified Publishers to fetch analytics data.
-    icon: area_chart
+    icon: chart-bar
     link: /reference/api/dvp/latest/
 @y
   - title: DVP Data API
     description: Docker 認定公開者 (Docker Verified Publishers) が分析データを取得するための API です。
-    icon: area_chart
+    icon: chart-bar
     link: __SUBDIR__/reference/api/dvp/latest/
 @z
 
 @x
   - title: Registry API
     description: API for Docker Registry.
-    icon: database
+    icon: circle-stack
     link: /reference/api/registry/latest/
 @y
   - title: Registry API
     description: Docker Registry の API です。
-    icon: database
+    icon: circle-stack
     link: __SUBDIR__/reference/api/registry/latest/
 @z
 

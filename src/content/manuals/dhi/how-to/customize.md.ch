@@ -198,14 +198,14 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
       image. For more details on how to create an OCI artifact image, see
-      [Create an OCI artifact image](#create-an-oci-artifact-image-for-image-customization).
+      [Create an OCI artifact image](#create-an-oci-artifact-image).
 @y
       The OCI artifacts are images that you have previously
       built and pushed to a repository in the same namespace as the mirrored
       DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
       image. For more details on how to create an OCI artifact image, see
-      [Create an OCI artifact image](#create-an-oci-artifact-image-for-image-customization).
+      [Create an OCI artifact image](#create-an-oci-artifact-image).
 @z
 
 @x
@@ -387,13 +387,13 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 @z
 
 @x
-Authenticate with `docker login` using your Docker credentials, a [personal
+Authenticate with `docker login` using your Docker credentials or a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
 (OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
 available operations depend on the token's permission scope:
 @y
-Authenticate with `docker login` using your Docker credentials, a [personal
+Authenticate with `docker login` using your Docker credentials or a [personal
 access token (PAT)](../../security/access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
 (OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
@@ -423,9 +423,14 @@ Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customi
 @z
 
 @x within code
-# Prepare a customization scaffold
+# Prepare a single customization scaffold
 @y
-# Prepare a customization scaffold
+# Prepare a single customization scaffold
+@z
+@x
+# Prepare a bulk customization scaffold (pipe JSON array via stdin)
+@y
+# Prepare a bulk customization scaffold (pipe JSON array via stdin)
 @z
 @x
 # Create a customization
@@ -443,9 +448,9 @@ Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customi
 # Filter customizations by name, repository, or source
 @z
 @x
-# Get a customization
+# Get a customization by ID
 @y
-# Get a customization
+# Get a customization by ID
 @z
 @x
 # Update a customization
@@ -453,9 +458,9 @@ Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customi
 # Update a customization
 @z
 @x
-# Delete a customization
+# Delete a customization by ID
 @y
-# Delete a customization
+# Delete a customization by ID
 @z
 @x
 # Delete without confirmation prompt
@@ -546,77 +551,365 @@ documentation](https://registry.terraform.io/providers/docker-hardened-images/dh
 @z
 
 @x
-### Monitor customization builds
+### Image customization YAML file
 @y
-### Monitor customization builds
+### Image customization YAML file
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
+When using the CLI, customizations are defined in a YAML file. Use
+`docker dhi customization prepare` to generate a scaffold with all available
+fields and commented-out examples. Edit the file to describe what you want,
+then pass it to `docker dhi customization create`.
 @y
-{{< tabs >}}
-{{< tab name="Docker Hub" >}}
+When using the CLI, customizations are defined in a YAML file. Use
+`docker dhi customization prepare` to generate a scaffold with all available
+fields and commented-out examples. Edit the file to describe what you want,
+then pass it to `docker dhi customization create`.
 @z
 
 @x
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Manage**.
-5. Select the **Customizations** tab.
+The file has two parts: a preamble that identifies the customization and
+its targets, and a configuration section that specifies what to change.
 @y
-1. Sign in to [Docker Hub](https://hub.docker.com).
-2. Select **My Hub**.
-3. In the namespace drop-down, select your organization.
-4. Select **Hardened Images** > **Manage**.
-5. Select the **Customizations** tab.
+The file has two parts: a preamble that identifies the customization and
+its targets, and a configuration section that specifies what to change.
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="CLI" >}}
+#### About the `id` field
 @y
-{{< /tab >}}
-{{< tab name="CLI" >}}
+#### About the `id` field
 @z
 
 @x
-List builds for a customization:
+The `id` field is assigned automatically by Docker Hub when you run
+`docker dhi customization create`. When creating a new customization, omit
+`id` entirely. It is read-only.
 @y
-List builds for a customization:
+The `id` field is assigned automatically by Docker Hub when you run
+`docker dhi customization create`. When creating a new customization, omit
+`id` entirely. It is read-only.
+@z
+
+@x
+To find the ID of an existing customization, run:
+@y
+To find the ID of an existing customization, run:
+@z
+
+% snip command...
+
+@x
+The `id` appears in the output and in files retrieved with
+`docker dhi customization get <id> --org my-org`. It lets
+`docker dhi customization edit` identify which customization to update.
+Scaffolds from `docker dhi customization prepare` do not include `id`, and
+that is expected.
+@y
+The `id` appears in the output and in files retrieved with
+`docker dhi customization get <id> --org my-org`. It lets
+`docker dhi customization edit` identify which customization to update.
+Scaffolds from `docker dhi customization prepare` do not include `id`, and
+that is expected.
+@z
+
+@x
+#### Set targets
+@y
+#### Set targets
+@z
+
+@x
+The `name` and `targets` fields are required in every customization file. The
+`targets` array specifies which image versions the customization applies to.
+Use a single entry for a single-image customization, or multiple entries for a
+bulk customization that applies the same configuration to several images at
+once.
+@y
+The `name` and `targets` fields are required in every customization file. The
+`targets` array specifies which image versions the customization applies to.
+Use a single entry for a single-image customization, or multiple entries for a
+bulk customization that applies the same configuration to several images at
+once.
 @z
 
 % snip code...
 
 @x
-Get details of a specific build:
+| Field | Description |
+|:---|:---|
+| `name` | Human-readable name. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. |
+| `targets[].destination` | Destination repository in Docker Hub, such as `my-org/dhi-golang`. |
+| `targets[].tag_definition_id` | Tag definition to customize, such as `golang/alpine-3.23/1.25`. Use `docker dhi customization prepare` with tab completion to find valid values. |
 @y
-Get details of a specific build:
+| Field | Description |
+|:---|:---|
+| `name` | Human-readable name. Converted to lowercase and hyphenated, it becomes the image tag suffix. For example, `golang with git` produces tags ending in `_golang-with-git`. |
+| `targets[].destination` | Destination repository in Docker Hub, such as `my-org/dhi-golang`. |
+| `targets[].tag_definition_id` | Tag definition to customize, such as `golang/alpine-3.23/1.25`. Use `docker dhi customization prepare` with tab completion to find valid values. |
+@z
+
+@x
+> [!NOTE]
+>
+> When `targets` has more than one entry, the fields `accounts`, `entrypoint`,
+> and `cmd` are not supported. Including them causes `docker dhi customization
+> create` to return an error.
+@y
+> [!NOTE]
+>
+> When `targets` has more than one entry, the fields `accounts`, `entrypoint`,
+> and `cmd` are not supported. Including them causes `docker dhi customization
+> create` to return an error.
+@z
+
+@x
+#### Add packages
+@y
+#### Add packages
+@z
+
+@x
+To install additional OS packages in your customized image, list them under
+`contents.packages`. Available packages depend on the base image variant.
+@y
+To install additional OS packages in your customized image, list them under
+`contents.packages`. Available packages depend on the base image variant.
 @z
 
 % snip code...
 
 @x
-View build logs:
+#### Add OCI artifacts
 @y
-View build logs:
+#### Add OCI artifacts
+@z
+
+@x
+To layer additional files into your customized image, such as custom
+certificates, internal tools, or configuration files, list OCI artifact
+images under `contents.artifacts`.
+@y
+To layer additional files into your customized image, such as custom
+certificates, internal tools, or configuration files, list OCI artifact
+images under `contents.artifacts`.
 @z
 
 % snip code...
 
 @x
-{{< /tab >}}
-{{< /tabs >}}
+| Field | Description |
+|:---|:---|
+| `name` | Image reference of the OCI artifact. Must be in the same Docker Hub namespace as the mirrored DHI. |
+| `includes` | Paths to copy from the artifact. No files are included by default. You must list at least one path. |
+| `excludes` | Paths to exclude after applying `includes`. |
 @y
-{{< /tab >}}
-{{< /tabs >}}
+| Field | Description |
+|:---|:---|
+| `name` | Image reference of the OCI artifact. Must be in the same Docker Hub namespace as the mirrored DHI. |
+| `includes` | Paths to copy from the artifact. No files are included by default. You must list at least one path. |
+| `excludes` | Paths to exclude after applying `includes`. |
 @z
 
 @x
-### Create an OCI artifact image for image customization
+For instructions on building an OCI artifact image, see
+[Create an OCI artifact image](#create-an-oci-artifact-image).
 @y
-### Create an OCI artifact image for image customization
+For instructions on building an OCI artifact image, see
+[Create an OCI artifact image](#create-an-oci-artifact-image).
+@z
+
+@x
+#### Inject files into the image
+@y
+#### Inject files into the image
+@z
+
+@x
+To add static files at build time, such as configuration files or startup
+scripts, use the `paths` field. Files are added as static content and are not
+executed during the build.
+@y
+To add static files at build time, such as configuration files or startup
+scripts, use the `paths` field. Files are added as static content and are not
+executed during the build.
+@z
+
+% snip code...
+
+@x
+| Field | Description |
+|:---|:---|
+| `path` | Absolute path where the file will be placed in the image. |
+| `contents` | File content. Use a YAML block scalar (`\|`) for multi-line content. |
+| `mode` | Octal file permissions, such as `"0644"`. Quote the value to prevent YAML from treating the leading zero as octal notation. |
+| `uid` | User ID of the file owner. |
+| `gid` | Group ID of the file owner. |
+@y
+| Field | Description |
+|:---|:---|
+| `path` | Absolute path where the file will be placed in the image. |
+| `contents` | File content. Use a YAML block scalar (`\|`) for multi-line content. |
+| `mode` | Octal file permissions, such as `"0644"`. Quote the value to prevent YAML from treating the leading zero as octal notation. |
+| `uid` | User ID of the file owner. |
+| `gid` | Group ID of the file owner. |
+@z
+
+@x
+#### Configure user accounts
+@y
+#### Configure user accounts
+@z
+
+@x
+To add users or groups to the image, or to change which user the container
+runs as, use the `accounts` field.
+@y
+To add users or groups to the image, or to change which user the container
+runs as, use the `accounts` field.
+@z
+
+@x
+> [!NOTE]
+>
+> Not supported for bulk customizations (multiple `targets`).
+@y
+> [!NOTE]
+>
+> Not supported for bulk customizations (multiple `targets`).
+@z
+
+% snip code...
+
+@x
+| Field | Description |
+|:---|:---|
+| `root` | Whether to enable the root user. Default is `false`. Required if `runs-as` is set to `root`. |
+| `runs-as` | The default user the container runs as. |
+| `users[].name` | Username. |
+| `users[].uid` | User ID. |
+| `users[].gid` | Primary group ID. Optional. |
+| `groups[].name` | Group name. |
+| `groups[].gid` | Group ID. |
+| `groups[].members` | Usernames to add to this group. Optional. |
+@y
+| Field | Description |
+|:---|:---|
+| `root` | Whether to enable the root user. Default is `false`. Required if `runs-as` is set to `root`. |
+| `runs-as` | The default user the container runs as. |
+| `users[].name` | Username. |
+| `users[].uid` | User ID. |
+| `users[].gid` | Primary group ID. Optional. |
+| `groups[].name` | Group name. |
+| `groups[].gid` | Group ID. |
+| `groups[].members` | Usernames to add to this group. Optional. |
+@z
+
+@x
+#### Set environment variables
+@y
+#### Set environment variables
+@z
+
+@x
+To add or override environment variables in the image, use the `environment`
+field. These are merged with the base image's existing environment and do not
+replace it.
+@y
+To add or override environment variables in the image, use the `environment`
+field. These are merged with the base image's existing environment and do not
+replace it.
+@z
+
+% snip code...
+
+@x
+Quote values that a YAML parser would interpret as non-string types, for
+example `"false"`, `"0"`, and `"null"`.
+@y
+Quote values that a YAML parser would interpret as non-string types, for
+example `"false"`, `"0"`, and `"null"`.
+@z
+
+@x
+#### Set labels and annotations
+@y
+#### Set labels and annotations
+@z
+
+@x
+To add OCI metadata to the image, use `labels` and `annotations`. Labels are
+stored in the image config; annotations are stored in the image manifest. Use
+[OCI standard keys](https://specs.opencontainers.org/image-spec/annotations/)
+where applicable.
+@y
+To add OCI metadata to the image, use `labels` and `annotations`. Labels are
+stored in the image config; annotations are stored in the image manifest. Use
+[OCI standard keys](https://specs.opencontainers.org/image-spec/annotations/)
+where applicable.
+@z
+
+% snip code...
+
+@x
+#### Override entrypoint and command
+@y
+#### Override entrypoint and command
+@z
+
+@x
+To change how the container starts, use `entrypoint` and `cmd`. These arguments
+are appended to the base image's existing entrypoint and command.
+@y
+To change how the container starts, use `entrypoint` and `cmd`. These arguments
+are appended to the base image's existing entrypoint and command.
+@z
+
+@x
+> [!NOTE]
+>
+> Not supported for bulk customizations (multiple `targets`).
+@y
+> [!NOTE]
+>
+> Not supported for bulk customizations (multiple `targets`).
+@z
+
+% snip code...
+
+@x
+#### Set platforms and compression
+@y
+#### Set platforms and compression
+@z
+
+@x
+To build for multiple architectures, list them under `platforms`. At least one
+platform is required.
+@y
+To build for multiple architectures, list them under `platforms`. At least one
+platform is required.
+@z
+
+% snip code...
+
+@x
+To control layer compression, set `compression`. `ZSTD` (the default) offers
+better compression and faster pulls. Use `GZIP` for compatibility with older
+tooling.
+@y
+To control layer compression, set `compression`. `ZSTD` (the default) offers
+better compression and faster pulls. Use `GZIP` for compatibility with older
+tooling.
+@z
+
+% snip code...
+
+@x
+### Create an OCI artifact image
+@y
+### Create an OCI artifact image
 @z
 
 @x
@@ -884,15 +1177,131 @@ To customize a Docker Hardened Image Helm chart after it has been mirrored:
 @z
 
 @x
+### Helm chart customization YAML file
+@y
+### Helm chart customization YAML file
+@z
+
+@x
+When using the CLI, Helm chart customizations use the same `prepare` / `create`
+workflow as image customizations, but the configuration section uses
+`reference_mappings` instead of image fields.
+@y
+When using the CLI, Helm chart customizations use the same `prepare` / `create`
+workflow as image customizations, but the configuration section uses
+`reference_mappings` instead of image fields.
+@z
+
+@x
+Use `reference_mappings` to substitute image references within the chart, for
+example to point a chart's image references at your mirrored DHIs.
+@y
+Use `reference_mappings` to substitute image references within the chart, for
+example to point a chart's image references at your mirrored DHIs.
+@z
+
+% snip code...
+
+@x
+| Field | Description |
+|:---|:---|
+| `reference_mappings[].from` | The image reference in the chart to replace. |
+| `reference_mappings[].to` | The replacement image reference, typically a mirrored DHI in your organization. |
+@y
+| Field | Description |
+|:---|:---|
+| `reference_mappings[].from` | The image reference in the chart to replace. |
+| `reference_mappings[].to` | The replacement image reference, typically a mirrored DHI in your organization. |
+@z
+
+@x
+## Monitor customization builds
+@y
+## Monitor customization builds
+@z
+
+@x
+After creating a customization, you can track build status and view logs
+through Docker Hub or the DHI CLI.
+@y
+After creating a customization, you can track build status and view logs
+through Docker Hub or the DHI CLI.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@y
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Customizations** tab.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com).
+2. Select **My Hub**.
+3. In the namespace drop-down, select your organization.
+4. Select **Hardened Images** > **Manage**.
+5. Select the **Customizations** tab.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+List builds for a customization:
+@y
+List builds for a customization:
+@z
+
+% snip command...
+
+@x
+Get details of a specific build:
+@y
+Get details of a specific build:
+@z
+
+% snip command...
+
+@x
+View build logs:
+@y
+View build logs:
+@z
+
+% snip command...
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
 ## Edit or delete a customization
 @y
 ## Edit or delete a customization
 @z
 
 @x
-To edit or delete a DHI or chart customization, follow these steps:
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @y
-To edit or delete a DHI or chart customization, follow these steps:
+{{< tabs >}}
+{{< tab name="Docker Hub" >}}
 @z
 
 @x
@@ -931,4 +1340,50 @@ To edit or delete a DHI or chart customization, follow these steps:
 7. Follow the on-screen instructions to complete the edit or deletion.
 @y
 7. Follow the on-screen instructions to complete the edit or deletion.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@y
+{{< /tab >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+To edit a customization, update your YAML file and run:
+@y
+To edit a customization, update your YAML file and run:
+@z
+
+% snip command...
+
+@x
+The YAML file must include the `id` field to identify which customization to
+update. To find the ID, run `docker dhi customization list --org my-org`.
+@y
+The YAML file must include the `id` field to identify which customization to
+update. To find the ID, run `docker dhi customization list --org my-org`.
+@z
+
+@x
+To delete a customization by ID:
+@y
+To delete a customization by ID:
+@z
+
+% snip command...
+
+@x
+The `--force` flag skips the confirmation prompt.
+@y
+The `--force` flag skips the confirmation prompt.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
 @z

@@ -88,9 +88,9 @@ To change the default permission settings for Gordon:
 @z
 
 @x
-   ![Session settings icon](../images/perm_settings.avif)
+   ![Session settings icon](../images/gordon_permission_settings.avif)
 @y
-   ![Session settings icon](../images/perm_settings.avif)
+   ![Session settings icon](../images/gordon_permission_settings.avif)
 @z
 
 @x

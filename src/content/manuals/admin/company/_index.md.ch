@@ -22,12 +22,12 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
 @x
   - title: Create a company
     description: Get started by learning how to create a company.
-    icon: apartment
+    icon: building-office-2
     link: /admin/company/new-company/
 @y
   - title: Create a company
     description: Get started by learning how to create a company.
-    icon: apartment
+    icon: building-office-2
     link: __SUBDIR__/admin/company/new-company/
 @z
 
@@ -36,38 +36,38 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
     description:
       Learn how to add and manage organizations as well as seats within your
       company.
-    icon: store
+    icon: building-storefront
     link: /admin/company/manage/organizations/
 @y
   - title: Manage organizations
     description:
       Learn how to add and manage organizations as well as seats within your
       company.
-    icon: store
+    icon: building-storefront
     link: __SUBDIR__/admin/company/manage/organizations/
 @z
 
 @x
   - title: Manage company owners
     description: Find out more about company owners and how to manage them.
-    icon: supervised_user_circle
+    icon: user-group
     link: /admin/company/manage/owners/
 @y
   - title: Manage company owners
     description: Find out more about company owners and how to manage them.
-    icon: supervised_user_circle
+    icon: user-group
     link: __SUBDIR__/admin/company/manage/owners/
 @z
 
 @x
   - title: Manage users
     description: Explore how to manage users in all organizations.
-    icon: group_add
+    icon: user-plus
     link: /admin/company/manage/users/
 @y
   - title: Manage users
     description: Explore how to manage users in all organizations.
-    icon: group_add
+    icon: user-plus
     link: __SUBDIR__/admin/company/manage/users/
 @z
 
@@ -88,26 +88,26 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
     description:
       Set up SCIM to automatically provision and deprovision users in your
       company.
-    icon: checklist
+    icon: clipboard-document-check
     link: /enterprise/security/provisioning/scim/
 @y
   - title: Set up SCIM
     description:
       Set up SCIM to automatically provision and deprovision users in your
       company.
-    icon: checklist
+    icon: clipboard-document-check
     link: __SUBDIR__/enterprise/security/provisioning/scim/
 @z
 
 @x
   - title: Domain management
     description: Add and verify your company's domains.
-    icon: domain_verification
+    icon: check-badge
     link: /enterprise/security/domain-management/
 @y
   - title: Domain management
     description: Add and verify your company's domains.
-    icon: domain_verification
+    icon: check-badge
     link: __SUBDIR__/enterprise/security/domain-management/
 @z
 
@@ -115,12 +115,12 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
   - title: FAQs
     description: Explore frequently asked questions about companies.
     link: /faq/admin/company-faqs/
-    icon: help
+    icon: question-mark-circle
 @y
   - title: FAQs
     description: Explore frequently asked questions about companies.
     link: __SUBDIR__/faq/admin/company-faqs/
-    icon: help
+    icon: question-mark-circle
 @z
 
 @x

@@ -9,14 +9,10 @@ title: Architecture
 
 @x
 description: Technical architecture of Docker Sandboxes; workspace mounting, storage, networking, and sandbox lifecycle.
+keywords: docker sandboxes, architecture, microVM, workspace mounting, sandbox lifecycle
 @y
 description: Technical architecture of Docker Sandboxes; workspace mounting, storage, networking, and sandbox lifecycle.
-@z
-
-@x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
+keywords: docker sandboxes, architecture, microVM, workspace mounting, sandbox lifecycle
 @z
 
 @x
@@ -53,6 +49,20 @@ Your workspace is mounted at the same absolute path as on your host. Preserving
 absolute paths means error messages, configuration files, and build outputs all
 reference paths you can find on your host. The agent sees exactly the directory
 structure you see, which reduces confusion when debugging or reviewing changes.
+@z
+
+@x
+> [!WARNING]
+> Avoid mounting network-attached or remote storage (network drives, SMB/NFS
+> shares, or cloud-synced folders) as a workspace. The sandbox accesses
+> workspaces through a filesystem passthrough, so every file read and write
+> goes over the network. This adds latency and slows agent performance.
+@y
+> [!WARNING]
+> Avoid mounting network-attached or remote storage (network drives, SMB/NFS
+> shares, or cloud-synced folders) as a workspace. The sandbox accesses
+> workspaces through a filesystem passthrough, so every file read and write
+> goes over the network. This adds latency and slows agent performance.
 @z
 
 @x

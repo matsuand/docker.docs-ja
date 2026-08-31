@@ -18,95 +18,95 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @x
     - title: What are hardened images and why use them?
       description: Learn what a hardened image is, how Docker Hardened Images are built, what sets them apart from typical base and application images, and why you should use them.
-      icon: info
+      icon: information-circle
       link: /dhi/explore/what/
 @y
     - title: hardened イメージとは？ なぜ利用するのか？
       description: Learn what a hardened image is, how Docker Hardened Images are built, what sets them apart from typical base and application images, and why you should use them.
-      icon: info
+      icon: information-circle
       link: __SUBDIR__/dhi/explore/what/
 @z
 
 @x
     - title: Build process
       description: Learn how Docker builds, tests, and maintains Docker Hardened Images through an automated, security-focused pipeline.
-      icon: build
+      icon: wrench-screwdriver
       link: /dhi/explore/build-process/
 @y
     - title: ビルド作業
       description: Learn how Docker builds, tests, and maintains Docker Hardened Images through an automated, security-focused pipeline.
-      icon: build
+      icon: wrench-screwdriver
       link: __SUBDIR__/dhi/explore/build-process/
 @z
 
 @x
     - title: Image types
       description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
-      icon: view_module
+      icon: squares-2x2
       link: /dhi/explore/available/
 @y
     - title: イメージのタイプ
       description: Learn about the different image types, distributions, and variants offered in the Docker Hardened Images catalog.
-      icon: view_module
+      icon: squares-2x2
       link: __SUBDIR__/dhi/explore/available/
 @z
 
 @x
     - title: Scanner integrations
       description: Discover which vulnerability scanners integrate with Docker Hardened Images and support open standards like OpenVEX.
-      icon: security
+      icon: shield-check
       link: /dhi/explore/scanner-integrations/
 @y
     - title: Scanner integrations
       description: Discover which vulnerability scanners integrate with Docker Hardened Images and support open standards like OpenVEX.
-      icon: security
+      icon: shield-check
       link: __SUBDIR__/dhi/explore/scanner-integrations/
 @z
 
 @x
     - title: Image testing
       description: See how Docker Hardened Images are automatically tested for standards compliance, functionality, and security.
-      icon: science
+      icon: beaker
       link: /dhi/explore/test/
 @y
     - title: イメージのテスト
       description: See how Docker Hardened Images are automatically tested for standards compliance, functionality, and security.
-      icon: science
+      icon: beaker
       link: __SUBDIR__/dhi/explore/test/
 @z
 
 @x
     - title: Malware scanning
       description: Learn how Docker scans Docker Hardened Images for viruses and malware, and how to view and verify the scan attestation.
-      icon: bug_report
+      icon: bug-ant
       link: /dhi/explore/malware-scanning/
 @y
     - title: Malware scanning
       description: Learn how Docker scans Docker Hardened Images for viruses and malware, and how to view and verify the scan attestation.
-      icon: bug_report
+      icon: bug-ant
       link: __SUBDIR__/dhi/explore/malware-scanning/
 @z
 
 @x
     - title: Responsibility overview
       description: Understand Docker's role and your responsibilities when using Docker Hardened Images as part of your secure software supply chain.
-      icon: group
+      icon: user-group
       link: /dhi/explore/responsibility/
 @y
     - title: Responsibility overview
       description: Understand Docker's role and your responsibilities when using Docker Hardened Images as part of your secure software supply chain.
-      icon: group
+      icon: user-group
       link: __SUBDIR__/dhi/explore/responsibility/
 @z
 
 @x
     - title: Give feedback
-      icon: question_exchange
+      icon: question-mark-circle
       description: Docker welcomes all contributions and feedback.
       link: /dhi/explore/feedback
 @y
     - title: フィードバック
-      icon: question_exchange
+      icon: question-mark-circle
       description: Docker welcomes all contributions and feedback.
       link: __SUBDIR__/dhi/explore/feedback
 @z

@@ -241,8 +241,7 @@ copyfiles = \
 	css.html          \
 	description.html  \
 	keywords.html     \
-	markdown-url.html \
-	svg.html
+	markdown-url.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

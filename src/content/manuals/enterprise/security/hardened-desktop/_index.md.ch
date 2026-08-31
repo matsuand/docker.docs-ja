@@ -20,72 +20,72 @@ keywords: security, hardened desktop, enhanced container isolation, registry acc
 @x
   - title: "Settings Management"
     description: Learn how Settings Management can secure your developers' workflows.
-    icon: shield_locked
+    icon: shield-check
     link: /enterprise/security/hardened-desktop/settings-management/
 @y
   - title: "Settings Management"
     description: Learn how Settings Management can secure your developers' workflows.
-    icon: shield_locked
+    icon: shield-check
     link: __SUBDIR__/enterprise/security/hardened-desktop/settings-management/
 @z
 
 @x
   - title: "Enhanced Container Isolation"
     description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: "security"
+    icon: shield-check
     link: /enterprise/security/hardened-desktop/enhanced-container-isolation/
 @y
   - title: "Enhanced Container Isolation"
     description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: "security"
+    icon: shield-check
     link: __SUBDIR__/enterprise/security/hardened-desktop/enhanced-container-isolation/
 @z
 
 @x
   - title: "Registry Access Management"
     description: Control the registries developers can access while using Docker Desktop.
-    icon: "home_storage"
+    icon: server
     link: /enterprise/security/hardened-desktop/registry-access-management/
 @y
   - title: "Registry Access Management"
     description: Control the registries developers can access while using Docker Desktop.
-    icon: "home_storage"
+    icon: server
     link: __SUBDIR__/enterprise/security/hardened-desktop/registry-access-management/
 @z
 
 @x
   - title: "Image Access Management"
     description: Control the images developers can pull from Docker Hub.
-    icon: "photo_library"
+    icon: photo
     link: /enterprise/security/hardened-desktop/image-access-management/
 @y
   - title: "Image Access Management"
     description: Control the images developers can pull from Docker Hub.
-    icon: "photo_library"
+    icon: photo
     link: __SUBDIR__/enterprise/security/hardened-desktop/image-access-management/
 @z
 
 @x
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: "vpn_lock"
+    icon: lock-closed
     link: /enterprise/security/hardened-desktop/air-gapped-containers/
 @y
   - title: "Air-Gapped Containers"
     description: Restrict containers from accessing unwanted network resources.
-    icon: "vpn_lock"
+    icon: lock-closed
     link: __SUBDIR__/enterprise/security/hardened-desktop/air-gapped-containers/
 @z
 
 @x
   - title: "Namespace access"
     description: Control whether organization members can push content to their personal namespaces.
-    icon: "folder_managed"
+    icon: folder-open
     link: /enterprise/security/hardened-desktop/namespace-access/
 @y
   - title: "Namespace access"
     description: Control whether organization members can push content to their personal namespaces.
-    icon: "folder_managed"
+    icon: folder-open
     link: __SUBDIR__/enterprise/security/hardened-desktop/namespace-access/
 @z
 

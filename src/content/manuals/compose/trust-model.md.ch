@@ -40,9 +40,9 @@ how containers interact with your host. The security boundary is not where the f
 @z
 
 @x
-Evaluating trust means asking: do you know who authored this file, can you verify it hasn't changed since you last reviewed it, and do you understand every privilege it requests?
+Evaluating trust means asking: Who authored this file? Has it changed since you last reviewed it? Do you understand every privilege it requests?
 @y
-Evaluating trust means asking: do you know who authored this file, can you verify it hasn't changed since you last reviewed it, and do you understand every privilege it requests?
+Evaluating trust means asking: Who authored this file? Has it changed since you last reviewed it? Do you understand every privilege it requests?
 @z
 
 @x
@@ -254,9 +254,9 @@ access to credentials, cloud provider tokens, or Docker sockets.
 @z
 
 @x
-Tags are mutable meaning anyone with push access to a registry can overwrite a tag silently, so a reference you reviewed last week may point to different content today.
+Tags are mutable, meaning anyone with push access to a registry can overwrite a tag silently, so a reference you reviewed last week may point to different content today.
 @y
-Tags are mutable meaning anyone with push access to a registry can overwrite a tag silently, so a reference you reviewed last week may point to different content today.
+Tags are mutable, meaning anyone with push access to a registry can overwrite a tag silently, so a reference you reviewed last week may point to different content today.
 @z
 
 @x

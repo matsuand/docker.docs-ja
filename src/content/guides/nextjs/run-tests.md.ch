@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% snip 対応 (一部)
 
 @x
 title: Run Next.js tests in a container
@@ -473,31 +474,7 @@ After completing the previous steps, your project directory should contain:
 After completing the previous steps, your project directory should contain:
 @z
 
-@x
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── vitest.config.ts
-│ ├── vitest.setup.ts
-│ ├── next.config.ts
-│ └── README.Docker.md
-```
-@y
-```text
-├── docker-nextjs-sample/
-│ ├── Dockerfile
-│ ├── Dockerfile.dev
-│ ├── .dockerignore
-│ ├── compose.yaml
-│ ├── vitest.config.ts
-│ ├── vitest.setup.ts
-│ ├── next.config.ts
-│ └── README.Docker.md
-```
-@z
+% snip text...
 
 @x
 ### Step 4: Run the tests

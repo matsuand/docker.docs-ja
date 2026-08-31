@@ -36,10 +36,10 @@ application. The source of the secret is either `file` or `environment`.
 
 @x
 - `file`: The secret is created with the contents of the file at the specified path.
-- `environment`: The secret is created with the value of an environment variable on the host.
+- `environment`: The secret is created with the value of an environment variable on the host. This is only supported by Docker Compose. It is not supported when deploying with [`docker stack deploy`](/manuals/engine/swarm/stack-deploy.md).
 @y
 - `file`: The secret is created with the contents of the file at the specified path.
-- `environment`: The secret is created with the value of an environment variable on the host.
+- `environment`: The secret is created with the value of an environment variable on the host. This is only supported by Docker Compose. It is not supported when deploying with [`docker stack deploy`](/manuals/engine/swarm/stack-deploy.md).
 @z
 
 @x

@@ -515,19 +515,19 @@ Key features of the development configuration:
 @z
 
 @x
-- **Multi-port exposure**: API server (3000), Vite dev server (5173), and debugger (9229)
-- **Comprehensive bind mounts**: Source code, configuration files, and package files for hot reloading
-- **Environment variables**: Configurable through `.env` file or defaults
-- **PostgreSQL database**: Production-ready database with persistent storage
-- **Docker Compose watch**: Automatic file synchronization and container rebuilds
-- **Health checks**: Database health monitoring with automatic dependency management
+- Multi-port exposure: API server (3000), Vite dev server (5173), and debugger (9229)
+- Comprehensive bind mounts: Source code, configuration files, and package files for hot reloading
+- Environment variables: Configurable through `.env` file or defaults
+- PostgreSQL database: Production-ready database with persistent storage
+- Docker Compose watch: Automatic file synchronization and container rebuilds
+- Health checks: Database health monitoring with automatic dependency management
 @y
-- **Multi-port exposure**: API server (3000), Vite dev server (5173), and debugger (9229)
-- **Comprehensive bind mounts**: Source code, configuration files, and package files for hot reloading
-- **Environment variables**: Configurable through `.env` file or defaults
-- **PostgreSQL database**: Production-ready database with persistent storage
-- **Docker Compose watch**: Automatic file synchronization and container rebuilds
-- **Health checks**: Database health monitoring with automatic dependency management
+- Multi-port exposure: API server (3000), Vite dev server (5173), and debugger (9229)
+- Comprehensive bind mounts: Source code, configuration files, and package files for hot reloading
+- Environment variables: Configurable through `.env` file or defaults
+- PostgreSQL database: Production-ready database with persistent storage
+- Docker Compose watch: Automatic file synchronization and container rebuilds
+- Health checks: Database health monitoring with automatic dependency management
 @z
 
 @x
@@ -603,9 +603,9 @@ $ npm run dev         # Start both server and client
 @z
 
 @x
-### Using Task Runner (alternative)
+### Using Task runner (alternative)
 @y
-### Using Task Runner (alternative)
+### Using Task runner (alternative)
 @z
 
 @x
@@ -685,13 +685,13 @@ The application will start with both the Express API server and Vite development
 @z
 
 @x
-- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
-- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
-- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
+- API Server: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
+- Frontend: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
+- Health Check: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
 @y
-- **API Server**: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
-- **Frontend**: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
-- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
+- API Server: [http://localhost:3000](http://localhost:3000) - Express.js backend with REST API
+- Frontend: [http://localhost:5173](http://localhost:5173) - Vite dev server with hot module replacement
+- Health Check: [http://localhost:3000/health](http://localhost:3000/health) - Application health status
 @z
 
 @x
@@ -741,9 +741,9 @@ Try making a change to test hot reloading:
 @z
 
 @x
-**Debugging support:**
+Debugging support:
 @y
-**Debugging support:**
+Debugging support:
 @z
 
 @x
@@ -905,13 +905,13 @@ The debugger configuration:
 @z
 
 @x
-- **Container port**: 9230 (internal debugger port)
-- **Host port**: 9229 (mapped external port)
-- **Script**: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
+- Container port: 9230 (internal debugger port)
+- Host port: 9229 (mapped external port)
+- Script: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
 @y
-- **Container port**: 9230 (internal debugger port)
-- **Host port**: 9229 (mapped external port)
-- **Script**: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
+- Container port: 9230 (internal debugger port)
+- Host port: 9229 (mapped external port)
+- Script: `tsx watch --inspect=0.0.0.0:9230 src/server/index.ts`
 @z
 
 @x

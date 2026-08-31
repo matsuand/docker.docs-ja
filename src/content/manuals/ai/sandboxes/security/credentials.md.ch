@@ -16,12 +16,6 @@ keywords: docker sandboxes, credentials, api keys, authentication, proxy, ssh ag
 @z
 
 @x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@z
-
-@x
 Most agents need an API key for their model provider. An HTTP/HTTPS proxy on
 your host intercepts outbound requests from the sandbox, looks up the matching
 credential on the host, and overwrites the auth header before forwarding. The
@@ -111,6 +105,18 @@ There are two host-side stores, plus a host shell fallback:
   secrets are preferred because shell environment variables are plaintext
   and visible to other processes running as your user. See
   [Environment variables](#environment-variables).
+@z
+
+@x
+Registry credentials are a separate store with a different purpose. They
+authenticate the `sbx` CLI (and optionally the sandbox itself) to private
+OCI registries for template and kit pulls, and are not used by the
+credential-injection proxy. See [Registry credentials](#registry-credentials).
+@y
+Registry credentials are a separate store with a different purpose. They
+authenticate the `sbx` CLI (and optionally the sandbox itself) to private
+OCI registries for template and kit pulls, and are not used by the
+credential-injection proxy. See [Registry credentials](#registry-credentials).
 @z
 
 @x
@@ -314,14 +320,14 @@ List all stored secrets:
 @x
 ```console
 $ sbx secret ls
-SCOPE      SERVICE   SECRET
-(global)   github    gho_GCaw4o****...****43qy
+SCOPE      TYPE      NAME      SECRET
+(global)   service   github    gho_GCaw4o****...****43qy
 ```
 @y
 ```console
 $ sbx secret ls
-SCOPE      SERVICE   SECRET
-(global)   github    gho_GCaw4o****...****43qy
+SCOPE      TYPE      NAME      SECRET
+(global)   service   github    gho_GCaw4o****...****43qy
 ```
 @z
 
@@ -501,6 +507,194 @@ the kit handles the wiring; you only provide the value.
 @y
 Prefer the [service-based flow](#stored-secrets) whenever it's an option —
 the kit handles the wiring; you only provide the value.
+@z
+
+@x
+## Registry credentials
+@y
+## Registry credentials
+@z
+
+@x
+Registry credentials authenticate to private OCI registries when pulling
+[templates](../customize/templates.md) or [kits](../customize/kits.md). Use
+`sbx secret set --registry <host>` to store them. They are independent from
+service secrets: the proxy doesn't touch them, and they're used directly by
+the `sbx` CLI when resolving image references.
+@y
+Registry credentials authenticate to private OCI registries when pulling
+[templates](../customize/templates.md) or [kits](../customize/kits.md). Use
+`sbx secret set --registry <host>` to store them. They are independent from
+service secrets: the proxy doesn't touch them, and they're used directly by
+the `sbx` CLI when resolving image references.
+@z
+
+@x
+For Docker Hub, `sbx` reuses your `sbx login` session — no registry secret
+needed. For other registries (GitHub Container Registry, ECR, ACR,
+self-hosted Nexus, and so on), store credentials with `sbx secret set
+--registry`.
+@y
+For Docker Hub, `sbx` reuses your `sbx login` session — no registry secret
+needed. For other registries (GitHub Container Registry, ECR, ACR,
+self-hosted Nexus, and so on), store credentials with `sbx secret set
+--registry`.
+@z
+
+@x
+### Store registry credentials
+@y
+### Store registry credentials
+@z
+
+@x
+Pipe a token from stdin and target the registry hostname:
+@y
+Pipe a token from stdin and target the registry hostname:
+@z
+
+@x
+```console
+$ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+```
+@y
+```console
+$ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+```
+@z
+
+@x
+For registries that require a username (for example, ACR with an admin
+account), add `--username`:
+@y
+For registries that require a username (for example, ACR with an admin
+account), add `--username`:
+@z
+
+@x
+```console
+$ echo "$ACR_PASSWORD" | sbx secret set \
+    --registry myregistry.azurecr.io \
+    --username myuser \
+    --password-stdin
+```
+@y
+```console
+$ echo "$ACR_PASSWORD" | sbx secret set \
+    --registry myregistry.azurecr.io \
+    --username myuser \
+    --password-stdin
+```
+@z
+
+@x
+Three scopes control where the credential is used:
+@y
+Three scopes control where the credential is used:
+@z
+
+@x
+- Host-only (no `-g`, no sandbox name): the `sbx` CLI uses it to pull
+  templates and kits when creating a sandbox. The credential is not
+  injected into the sandbox itself, so processes inside the sandbox can't
+  use it.
+- Global (`-g`): same as host-only, plus written into `~/.docker/config.json`
+  in every new sandbox. Use this when agents need to pull or push from
+  inside the sandbox — for example, when an agent builds and publishes
+  container images.
+- Sandbox-scoped (positional `SANDBOX` argument): credential applies only
+  to that named sandbox. Useful when only one sandbox needs access to a
+  private registry.
+@y
+- Host-only (no `-g`, no sandbox name): the `sbx` CLI uses it to pull
+  templates and kits when creating a sandbox. The credential is not
+  injected into the sandbox itself, so processes inside the sandbox can't
+  use it.
+- Global (`-g`): same as host-only, plus written into `~/.docker/config.json`
+  in every new sandbox. Use this when agents need to pull or push from
+  inside the sandbox — for example, when an agent builds and publishes
+  container images.
+- Sandbox-scoped (positional `SANDBOX` argument): credential applies only
+  to that named sandbox. Useful when only one sandbox needs access to a
+  private registry.
+@z
+
+@x
+```console
+$ gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+$ gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
+```
+@y
+```console
+$ gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+$ gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
+```
+@z
+
+@x
+`sbx kit pull` also uses these credentials, with the Docker credential
+store as a fallback. `sbx kit push` uses only the Docker credential store —
+push targets still require a prior `docker login`.
+@y
+`sbx kit pull` also uses these credentials, with the Docker credential
+store as a fallback. `sbx kit push` uses only the Docker credential store —
+push targets still require a prior `docker login`.
+@z
+
+@x
+### Remove registry credentials
+@y
+### Remove registry credentials
+@z
+
+@x
+Remove both the host-only and global entries for a registry:
+@y
+Remove both the host-only and global entries for a registry:
+@z
+
+@x
+```console
+$ sbx secret rm --registry ghcr.io -f
+```
+@y
+```console
+$ sbx secret rm --registry ghcr.io -f
+```
+@z
+
+@x
+To remove only the global (sandbox-injected) entry and leave the
+host-only credential in place, pass `-g`:
+@y
+To remove only the global (sandbox-injected) entry and leave the
+host-only credential in place, pass `-g`:
+@z
+
+@x
+```console
+$ sbx secret rm -g --registry ghcr.io -f
+```
+@y
+```console
+$ sbx secret rm -g --registry ghcr.io -f
+```
+@z
+
+@x
+To remove a sandbox-scoped credential, pass the sandbox name:
+@y
+To remove a sandbox-scoped credential, pass the sandbox name:
+@z
+
+@x
+```console
+$ sbx secret rm my-sandbox --registry ghcr.io -f
+```
+@y
+```console
+$ sbx secret rm my-sandbox --registry ghcr.io -f
+```
 @z
 
 @x

@@ -59,11 +59,11 @@ Docker Desktop のインストールを正常に行うためには以下が必�
 
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have an x86-64 system with Ubuntu 26.04 or the latest non-LTS version.
+- Have an x86-64 system with Ubuntu 26.04 LTS or 24.04 LTS.
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
 - [一般的なシステム要件](_index.md#general-system-requirements) を満たしていること。
-- Have an x86-64 system with Ubuntu 26.04 or the latest non-LTS version.
+- Have an x86-64 system with Ubuntu 26.04 LTS or 24.04 LTS.
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
 

@@ -80,6 +80,36 @@ to change it during a conversation:
 @z
 
 @x
+## Contextual help
+@y
+## Contextual help
+@z
+
+@x
+The Gordon icon appears throughout Docker Desktop. Selecting it opens Gordon
+pre-loaded with context about the item you are working with, such as container
+logs or build output.
+@y
+The Gordon icon appears throughout Docker Desktop. Selecting it opens Gordon
+pre-loaded with context about the item you are working with, such as container
+logs or build output.
+@z
+
+@x
+## Usage indicator
+@y
+## Usage indicator
+@z
+
+@x
+Docker Desktop shows a usage indicator so you can see how close you are to
+your tier limit. See [Usage limits and tiers](../usage-limits.md) for details.
+@y
+Docker Desktop shows a usage indicator so you can see how close you are to
+your tier limit. See [Usage limits and tiers](../usage-limits.md) for details.
+@z
+
+@x
 ## Disabling Gordon
 @y
 ## Disabling Gordon
@@ -93,12 +123,12 @@ To disable Gordon:
 
 @x
 1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
+2. Navigate to the **AI** section.
 3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @y
 1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
+2. Navigate to the **AI** section.
 3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @z

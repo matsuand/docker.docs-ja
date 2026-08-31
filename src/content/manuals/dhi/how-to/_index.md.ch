@@ -16,86 +16,98 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
-      icon: travel_explore
+      icon: globe-alt
       link: /dhi/how-to/explore/
 @y
     - title: Search and evaluate Docker Hardened Images
       description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
-      icon: travel_explore
+      icon: globe-alt
       link: __SUBDIR__/dhi/how-to/explore/
 @z
 
 % grid_adopt:
 
 @x
+    - title: Get started with DHI Select and Enterprise
+      description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
+      icon: rocket-launch
+      link: /dhi/how-to/select-enterprise/
+@y
+    - title: Get started with DHI Select and Enterprise
+      description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
+      icon: rocket-launch
+      link: __SUBDIR__/dhi/how-to/select-enterprise/
+@z
+
+@x
     - title: Use the DHI CLI
       description: Use the dhictl command-line tool to manage and interact with Docker Hardened Images.
-      icon: terminal
+      icon: command-line
       link: /dhi/how-to/cli/
 @y
     - title: Use the DHI CLI
       description: Use the dhictl command-line tool to manage and interact with Docker Hardened Images.
-      icon: terminal
+      icon: command-line
       link: __SUBDIR__/dhi/how-to/cli/
 @z
 
 @x
     - title: Mirror a Docker Hardened Image repository
       description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
-      icon: compare_arrows
+      icon: arrows-right-left
       link: /dhi/how-to/mirror/
 @y
     - title: Mirror a Docker Hardened Image repository
       description: Learn how to mirror an image into your organization's namespace and optionally push it to another private registry.
-      icon: compare_arrows
+      icon: arrows-right-left
       link: __SUBDIR__/dhi/how-to/mirror/
 @z
 
 @x
     - title: Customize a Docker Hardened Image or chart
       description: Learn how to customize Docker Hardened Images and charts.
-      icon: settings
+      icon: cog-6-tooth
       link: /dhi/how-to/customize/
 @y
     - title: Customize a Docker Hardened Image or chart
       description: Learn how to customize Docker Hardened Images and charts.
-      icon: settings
+      icon: cog-6-tooth
       link: __SUBDIR__/dhi/how-to/customize/
 @z
 
 @x
     - title: Use hardened system packages
       description: Learn how to use Docker's hardened system packages in your images.
-      icon: inventory_2
+      icon: archive-box
       link: /dhi/how-to/hardened-packages/
 @y
     - title: Use hardened system packages
       description: Learn how to use Docker's hardened system packages in your images.
-      icon: inventory_2
+      icon: archive-box
       link: __SUBDIR__/dhi/how-to/hardened-packages/
 @z
 
 @x
     - title: Use a Docker Hardened Image
       description: Learn how to pull, run, and reference Docker Hardened Images in Dockerfiles, CI pipelines, and standard development workflows.
-      icon: play_arrow
+      icon: play
       link: /dhi/how-to/use/
 @y
     - title: Use a Docker Hardened Image
       description: Learn how to pull, run, and reference Docker Hardened Images in Dockerfiles, CI pipelines, and standard development workflows.
-      icon: play_arrow
+      icon: play
       link: __SUBDIR__/dhi/how-to/use/
 @z
 
 @x
     - title: Use a Docker Hardened Image chart
       description: Learn how to use a Docker Hardened Image chart.
-      icon: leaderboard
+      icon: chart-bar
       link: /dhi/how-to/helm/
 @y
     - title: Use a Docker Hardened Image chart
       description: Learn how to use a Docker Hardened Image chart.
-      icon: leaderboard
+      icon: chart-bar
       link: __SUBDIR__/dhi/how-to/helm/
 @z
 
@@ -104,24 +116,24 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
-      icon: check_circle
+      icon: check-circle
       link: /dhi/how-to/verify/
 @y
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
-      icon: check_circle
+      icon: check-circle
       link: __SUBDIR__/dhi/how-to/verify/
 @z
 
 @x
     - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
-      icon: bug_report
+      icon: bug-ant
       link: /dhi/how-to/scan/
 @y
     - title: Scan Docker Hardened Images
       description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
-      icon: bug_report
+      icon: bug-ant
       link: __SUBDIR__/dhi/how-to/scan/
 @z
 
@@ -130,12 +142,12 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
 @x
     - title: Enforce Docker Hardened Image usage with policies
       description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
-      icon: policy
+      icon: shield-check
       link: /dhi/how-to/policies/
 @y
     - title: Enforce Docker Hardened Image usage with policies
       description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
-      icon: policy
+      icon: shield-check
       link: __SUBDIR__/dhi/how-to/policies/
 @z
 

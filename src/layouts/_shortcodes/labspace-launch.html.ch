@@ -19,11 +19,11 @@
 
 @x
 {{ if eq $modelDownload "true" }}
-  {{ $step1 = printf "%s\n\n   > [!NOTE]\n   >\n   > The lab may take a few minutes to launch, as this lab requires an AI model that will need to be downloaded." $step1 }}
+  {{ $step1 = printf "%s\n\n   > [!NOTE]\n   >\n   > This lab uses an AI model, which requires [the Docker Model Runner to be enabled](https://docs.docker.com/ai/model-runner/get-started/). The model may take some time to download." $step1 }}
 {{ end }}
 @y
 {{ if eq $modelDownload "true" }}
-  {{ $step1 = printf "%s\n\n   > [!NOTE]\n   >\n   > The lab may take a few minutes to launch, as this lab requires an AI model that will need to be downloaded." $step1 }}
+  {{ $step1 = printf "%s\n\n   > [!NOTE]\n   >\n   > This lab uses an AI model, which requires [the Docker Model Runner to be enabled](https://docs.docker.com/ai/model-runner/get-started/). The model may take some time to download." $step1 }}
 {{ end }}
 @z
 

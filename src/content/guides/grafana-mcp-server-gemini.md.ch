@@ -1,0 +1,318 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+description: Integrate Gemini CLI with Grafana via Docker MCP Toolkit for natural language observability.
+keywords: mcp, grafana, docker, gemini, devops
+title: Connect Gemini to Grafana via MCP
+summary: |
+  Learn how to leverage the Model Context Protocol (MCP) to interact with Grafana dashboards and datasources directly from your terminal.
+@y
+description: Integrate Gemini CLI with Grafana via Docker MCP Toolkit for natural language observability.
+keywords: mcp, grafana, docker, gemini, devops
+title: Connect Gemini to Grafana via MCP
+summary: |
+  Learn how to leverage the Model Context Protocol (MCP) to interact with Grafana dashboards and datasources directly from your terminal.
+@z
+
+@x
+  time: 15 minutes
+@y
+  time: 15 分
+@z
+
+@x
+This guide shows how to connect Gemini CLI to a Grafana instance using the **Docker MCP Toolkit**.
+@y
+This guide shows how to connect Gemini CLI to a Grafana instance using the **Docker MCP Toolkit**.
+@z
+
+@x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+- **Gemini CLI** installed and authenticated.
+- **Docker Desktop** with the **MCP Toolkit** extension enabled.
+- An active **Grafana** instance.
+@y
+- **Gemini CLI** installed and authenticated.
+- **Docker Desktop** with the **MCP Toolkit** extension enabled.
+- An active **Grafana** instance.
+@z
+
+@x
+## Step 1: Provision Grafana access
+@y
+## Step 1: Provision Grafana access
+@z
+
+@x
+The MCP server requires a **Service Account Token** to interact with the Grafana API. Service Account Tokens are preferred over personal API keys because they can be revoked independently without affecting user access, and permissions can be scoped more narrowly.
+@y
+The MCP server requires a **Service Account Token** to interact with the Grafana API. Service Account Tokens are preferred over personal API keys because they can be revoked independently without affecting user access, and permissions can be scoped more narrowly.
+@z
+
+@x
+1. Navigate to **Administration > Users and access > Service accounts** in your Grafana dashboard.
+2. Create a new Service Account (e.g., `gemini-mcp-connector`).
+3. Assign the **Viewer** role (or **Editor** if you require alert management capabilities).
+4. Generate a new token. Copy the token immediately — you won't be able to view it again.
+@y
+1. Navigate to **Administration > Users and access > Service accounts** in your Grafana dashboard.
+2. Create a new Service Account (e.g., `gemini-mcp-connector`).
+3. Assign the **Viewer** role (or **Editor** if you require alert management capabilities).
+4. Generate a new token. Copy the token immediately — you won't be able to view it again.
+@z
+
+@x
+## Step 2: Configure the MCP server
+@y
+## Step 2: Configure the MCP server
+@z
+
+@x
+The Docker MCP Toolkit provides a pre-configured Grafana catalog item. This connects the LLM to the Grafana API.
+@y
+The Docker MCP Toolkit provides a pre-configured Grafana catalog item. This connects the LLM to the Grafana API.
+@z
+
+@x
+1. Open the **MCP Toolkit** in Docker Desktop.
+2. Locate **Grafana** in the Catalog and add it to your active servers.
+3. In the **Configuration** view, define the following:
+@y
+1. Open the **MCP Toolkit** in Docker Desktop.
+2. Locate **Grafana** in the Catalog and add it to your active servers.
+3. In the **Configuration** view, define the following:
+@z
+
+@x
+- **Grafana URL:** The endpoint or URL of your instance.
+- **Service Account Token:** The token generated in the previous step.
+@y
+- **Grafana URL:** The endpoint or URL of your instance.
+- **Service Account Token:** The token generated in the previous step.
+@z
+
+@x
+## Step 3: Integrate Gemini CLI
+@y
+## Step 3: Integrate Gemini CLI
+@z
+
+@x
+To register the Docker MCP gateway within Gemini, update your global configuration file located at `~/.gemini/settings.json`.
+@y
+To register the Docker MCP gateway within Gemini, update your global configuration file located at `~/.gemini/settings.json`.
+@z
+
+@x
+Ensure the `mcpServers` object includes the following entry:
+@y
+Ensure the `mcpServers` object includes the following entry:
+@z
+
+@x
+```json
+{
+  "mcpServers": {
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": ["mcp", "gateway", "run"]
+    }
+  }
+}
+```
+@y
+```json
+{
+  "mcpServers": {
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": ["mcp", "gateway", "run"]
+    }
+  }
+}
+```
+@z
+
+@x
+## Step 4: Validate the setup
+@y
+## Step 4: Validate the setup
+@z
+
+@x
+Restart your Gemini CLI session to load the new configuration. Verify the status of the MCP tools by running:
+@y
+Restart your Gemini CLI session to load the new configuration. Verify the status of the MCP tools by running:
+@z
+
+@x
+```bash
+> /mcp list
+@y
+```bash
+> /mcp list
+@z
+
+@x
+```
+@y
+```
+@z
+
+@x
+A successful connection will show `MCP_DOCKER` as **Ready**, exposing dozens tools for data fetching, dashboard searching, and alert inspection.
+@y
+A successful connection will show `MCP_DOCKER` as **Ready**, exposing dozens tools for data fetching, dashboard searching, and alert inspection.
+@z
+
+@x
+## Use Cases
+@y
+## Use Cases
+@z
+
+@x
+### Data source Discovery
+@y
+### Data source Discovery
+@z
+
+@x
+_List all Prometheus and Loki data sources._
+@y
+_List all Prometheus and Loki data sources._
+@z
+
+@x
+![List data sources; permission prompt](images/gemini-grafana-list-datasources.webp)
+@y
+![List data sources; permission prompt](images/gemini-grafana-list-datasources.webp)
+@z
+
+@x
+![List data sources; result](images/list-datasources-result.webp)
+@y
+![List data sources; result](images/list-datasources-result.webp)
+@z
+
+@x
+### Logs Inspection
+@y
+### Logs Inspection
+@z
+
+@x
+Gemini performs intent parsing and translates the user's request into a precise LogQL query: `{device_name="edge-device-01"} |= "nginx"`. Once the system identifies Loki as the active datasource, the AI autonomously constructs this command to bridge the gap between human intent and complex syntax. This query targets specific Kubernetes pod logs, extracting raw OpenTelemetry (OTel) data—including pod UIDs, container metadata, and system labels—which Gemini then uses to identify the root cause of the issue within the containerized environment.
+@y
+Gemini performs intent parsing and translates the user's request into a precise LogQL query: `{device_name="edge-device-01"} |= "nginx"`. Once the system identifies Loki as the active datasource, the AI autonomously constructs this command to bridge the gap between human intent and complex syntax. This query targets specific Kubernetes pod logs, extracting raw OpenTelemetry (OTel) data—including pod UIDs, container metadata, and system labels—which Gemini then uses to identify the root cause of the issue within the containerized environment.
+@z
+
+@x
+![Filter logs based on loki labels](images/mcp-docker-grafana-loki-1.webp)
+@y
+![Filter logs based on loki labels](images/mcp-docker-grafana-loki-1.webp)
+@z
+
+@x
+![Gemini gets the Grafana's logs from MCP docker](images/mcp-docker-grafana-loki-2.webp)
+@y
+![Gemini gets the Grafana's logs from MCP docker](images/mcp-docker-grafana-loki-2.webp)
+@z
+
+@x
+In the final step, Gemini performs reasoning over the raw telemetry. After filtering through hundreds of lines to confirm the existence of Nginx logs, Gemini extracts a specific node_filesystem_device_error buried within the stream. By surfacing this critical event, it alerts the DevOps engineer to a volume mounting issue on the edge node, transforming raw data into an actionable incident report.
+@y
+In the final step, Gemini performs reasoning over the raw telemetry. After filtering through hundreds of lines to confirm the existence of Nginx logs, Gemini extracts a specific node_filesystem_device_error buried within the stream. By surfacing this critical event, it alerts the DevOps engineer to a volume mounting issue on the edge node, transforming raw data into an actionable incident report.
+@z
+
+@x
+![Gemini gives an overall about the findings](images/mcp-docker-grafana-loki-3.webp)
+@y
+![Gemini gives an overall about the findings](images/mcp-docker-grafana-loki-3.webp)
+@z
+
+@x
+### Dashboard Navigation
+@y
+### Dashboard Navigation
+@z
+
+@x
+_How many dashboards do we have?_
+@y
+_How many dashboards do we have?_
+@z
+
+@x
+![How many dashboards do we have?](images/mcp-grafana-dashboards.webp)
+@y
+![How many dashboards do we have?](images/mcp-grafana-dashboards.webp)
+@z
+
+@x
+_Tell me the summary of X dashboard_
+@y
+_Tell me the summary of X dashboard_
+@z
+
+@x
+![Summary of X dashboard](images/mcp-grafana-summary-dashboard.webp)
+@y
+![Summary of X dashboard](images/mcp-grafana-summary-dashboard.webp)
+@z
+
+@x
+### Other scenarios
+@y
+### Other scenarios
+@z
+
+@x
+Imagine you get a page that an application is slow. You could:
+@y
+Imagine you get a page that an application is slow. You could:
+@z
+
+@x
+1.  Use `list_alert_rules` to see which alert is firing.
+2.  Use `search_dashboards` to find the relevant application dashboard.
+3.  Use `get_panel_image` on a key panel to see the performance spike visually.
+4.  Use `query_loki_logs` to search for "error" or "timeout" messages during the time of the spike.
+5.  If you find the root cause, use create_incident to start the formal response and `add_activity_to_incident` to log your findings.
+@y
+1.  Use `list_alert_rules` to see which alert is firing.
+2.  Use `search_dashboards` to find the relevant application dashboard.
+3.  Use `get_panel_image` on a key panel to see the performance spike visually.
+4.  Use `query_loki_logs` to search for "error" or "timeout" messages during the time of the spike.
+5.  If you find the root cause, use create_incident to start the formal response and `add_activity_to_incident` to log your findings.
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- Learn about [Advanced LogQL queries](https://grafana.com/docs/loki/latest/query/log_queries/)
+- Set up [Team-wide MCP configurations](https://modelcontextprotocol.io/docs/develop/connect-local-servers)
+- Explore [Grafana alerting with MCP](https://github.com/grafana/mcp-grafana)
+- Get help in the [Docker Community Forums](https://forums.docker.com)
+@y
+- Learn about [Advanced LogQL queries](https://grafana.com/docs/loki/latest/query/log_queries/)
+- Set up [Team-wide MCP configurations](https://modelcontextprotocol.io/docs/develop/connect-local-servers)
+- Explore [Grafana alerting with MCP](https://github.com/grafana/mcp-grafana)
+- Get help in the [Docker Community Forums](https://forums.docker.com)
+@z
+
+@x
+Need help setting up your Docker MCP environment or customizing your Gemini prompts? Visit the [Docker Community Forums](https://forums.docker.com) or see the [Get Started Guide](https://docs.docker.com/ai/mcp-catalog-and-toolkit/get-started/).
+@y
+Need help setting up your Docker MCP environment or customizing your Gemini prompts? Visit the [Docker Community Forums](https://forums.docker.com) or see the [Get Started Guide](https://docs.docker.com/ai/mcp-catalog-and-toolkit/get-started/).
+@z

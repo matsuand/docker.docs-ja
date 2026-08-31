@@ -269,22 +269,6 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-> **Containerize new projects quickly with `docker init`**
->
-> The `docker init` command will analyze your project and quickly create 
-> a Dockerfile, a `compose.yaml`, and a `.dockerignore`, helping you get
-> up and going. Since you're learning about Dockerfiles specifically here, 
-> you won't use it now. But, [learn more about it here](/reference/cli/docker/init/).
-@y
-> **Containerize new projects quickly with `docker init`**
->
-> The `docker init` command will analyze your project and quickly create 
-> a Dockerfile, a `compose.yaml`, and a `.dockerignore`, helping you get
-> up and going. Since you're learning about Dockerfiles specifically here, 
-> you won't use it now. But, [learn more about it here](__SUBDIR__/reference/cli/docker/init/).
-@z
-
-@x
 ## Additional resources
 @y
 ## Additional resources
@@ -300,12 +284,12 @@ To learn more about writing a Dockerfile, visit the following resources:
 * [Dockerfile reference](/reference/dockerfile/)
 * [Dockerfile best practices](/develop/develop-images/dockerfile_best-practices/)
 * [Base images](/build/building/base-images/)
-* [Getting started with Docker Init](/reference/cli/docker/init/)
+* [Gordon](/ai/gordon/) — Docker's AI assistant can generate a Dockerfile for your project. Ask Gordon to analyze your code and suggest a Dockerfile optimized for your language and framework.
 @y
 * [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 * [Dockerfile best practices](__SUBDIR__/develop/develop-images/dockerfile_best-practices/)
 * [Base images](__SUBDIR__/build/building/base-images/)
-* [Getting started with Docker Init](__SUBDIR__/reference/cli/docker/init/)
+* [Gordon](__SUBDIR__/ai/gordon/) — Docker's AI assistant can generate a Dockerfile for your project. Ask Gordon to analyze your code and suggest a Dockerfile optimized for your language and framework.
 @z
 
 @x

@@ -14,51 +14,55 @@ description: |-
 @z
 
 @x
-    Policies are rules stored locally that control what sandboxes can access.
-    They apply globally across all sandboxes and persist across restarts.
-    Use subcommands to allow, deny, list, or remove policies.
+    Policies contain rules that control what sandboxes can access. Local rules
+    can apply globally across all sandboxes or be scoped to one sandbox. Use
+    subcommands to allow, deny, list, or remove rules.
+@y
+    Policies contain rules that control what sandboxes can access. Local rules
+    can apply globally across all sandboxes or be scoped to one sandbox. Use
+    subcommands to allow, deny, list, or remove rules.
+@z
+
+@x
 usage: sbx policy COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy COMMAND
+@z
+
+% options:
+
+@x help
       usage: help for policy
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for policy
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
     - sbx - Manage AI coding agent sandboxes.
-    - sbx policy allow - Add an allow policy for sandboxes
-    - sbx policy deny - Add a deny policy for sandboxes
+    - sbx policy allow - Add an allow rule for sandboxes
+    - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy log - Show sandbox policy logs
-    - sbx policy ls - List sandbox policies
+    - sbx policy ls - List sandbox policy rules
     - sbx policy reset - Reset policies to defaults
-    - sbx policy rm - Remove a policy
+    - sbx policy rm - Remove a policy rule
     - sbx policy set-default - Set the default network policy
 @y
-    Policies are rules stored locally that control what sandboxes can access.
-    They apply globally across all sandboxes and persist across restarts.
-    Use subcommands to allow, deny, list, or remove policies.
-usage: sbx policy COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for policy
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
     - sbx - Manage AI coding agent sandboxes.
-    - sbx policy allow - Add an allow policy for sandboxes
-    - sbx policy deny - Add a deny policy for sandboxes
+    - sbx policy allow - Add an allow rule for sandboxes
+    - sbx policy deny - Add a deny rule for sandboxes
     - sbx policy log - Show sandbox policy logs
-    - sbx policy ls - List sandbox policies
+    - sbx policy ls - List sandbox policy rules
     - sbx policy reset - Reset policies to defaults
-    - sbx policy rm - Remove a policy
+    - sbx policy rm - Remove a policy rule
     - sbx policy set-default - Set the default network policy
 @z

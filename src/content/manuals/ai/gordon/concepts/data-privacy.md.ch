@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ å¯¾å¿œ
+% __SUBDIR__ ‘Î‰ž
 
 @x
 title: Data privacy and Gordon
@@ -140,11 +140,11 @@ processed are not stored.
 @z
 
 @x
-Conversation threads are stored for 30 days to improve the service. Individual
-queries and responses are retained as part of your conversation history.
+Anonymized conversation threads are stored for 30 days to improve the service.
+Individual queries and responses are retained as part of your conversation history.
 @y
-Conversation threads are stored for 30 days to improve the service. Individual
-queries and responses are retained as part of your conversation history.
+Anonymized conversation threads are stored for 30 days to improve the service.
+Individual queries and responses are retained as part of your conversation history.
 @z
 
 @x
@@ -231,12 +231,12 @@ Individual users:
 
 @x
 1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
+2. Navigate to the **AI** section.
 3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @y
 1. Open Docker Desktop Settings.
-2. Navigate to the **Beta features** section.
+2. Navigate to the **AI** section.
 3. Clear the **Enable Gordon** option.
 4. Select **Apply**.
 @z

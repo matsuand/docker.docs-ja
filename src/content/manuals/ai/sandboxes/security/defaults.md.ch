@@ -11,14 +11,10 @@ linkTitle: Defaults
 
 @x
 description: What a sandbox permits and blocks before you change any settings.
+keywords: docker sandboxes, security defaults, network policy, credentials, sbx
 @y
 description: What a sandbox permits and blocks before you change any settings.
-@z
-
-@x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
+keywords: docker sandboxes, security defaults, network policy, credentials, sbx
 @z
 
 @x
@@ -48,11 +44,15 @@ addresses, and link-local addresses is also blocked.
 @z
 
 @x
-Run `sbx policy ls` to see the active allow rules for your installation. To
-customize network access, see [Policies](policy.md).
+Run `sbx policy ls` to see the active network rules for your installation. To
+customize network access, see [Policies](policy.md). If your organization
+manages sandbox policies centrally, those rules apply on top of the defaults
+described here. See [Organization governance](governance.md).
 @y
-Run `sbx policy ls` to see the active allow rules for your installation. To
-customize network access, see [Policies](policy.md).
+Run `sbx policy ls` to see the active network rules for your installation. To
+customize network access, see [Policies](policy.md). If your organization
+manages sandbox policies centrally, those rules apply on top of the defaults
+described here. See [Organization governance](governance.md).
 @z
 
 @x
@@ -72,11 +72,13 @@ working tree directly, and changes appear on your host immediately.
 @x
 The agent can read, write, and delete any file within the workspace directory,
 including hidden files, configuration files, build scripts, and Git hooks.
-See [Workspace trust](workspace.md) for what to review after an agent session.
+See [Workspace isolation](isolation.md#workspace-isolation) for what to
+review after an agent session.
 @y
 The agent can read, write, and delete any file within the workspace directory,
 including hidden files, configuration files, build scripts, and Git hooks.
-See [Workspace trust](workspace.md) for what to review after an agent session.
+See [Workspace isolation](isolation.md#workspace-isolation) for what to
+review after an agent session.
 @z
 
 @x

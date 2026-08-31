@@ -29,85 +29,23 @@ long: |-
     > manager node. To learn about managers and workers, refer to the
     > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker secret ls [OPTIONS]
-pname: docker secret
-plink: docker_secret.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
-      description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
-      description: |-
-        Format output using a custom template:
-        'table':            Print output in table format with column headers (default)
-        'table TEMPLATE':   Print output in table format using the given Go template
-        'json':             Print in JSON format
-        'TEMPLATE':         Print output using the given Go template.
-        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
-      description: Only display IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
-      description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-examples: |-
-    ```console
-    $ docker secret ls
 @y
     > [!NOTE]
     > This is a cluster management command, and must be executed on a swarm
     > manager node. To learn about managers and workers, refer to the
-    > [Swarm mode section](__SUBDIR__/engine/swarm/) in the
+    > [Swarm mode section](/engine/swarm/) in the
     > documentation.
-usage: docker secret ls [OPTIONS]
-pname: docker secret
-plink: docker_secret.yaml
-options:
-    - option: filter
-      shorthand: f
-      value_type: filter
+@z
+
+% options:
+
+@x filter
       description: Filter output based on conditions provided
-      details_url: '#filter'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: format
-      value_type: string
+@y
+      description: Filter output based on conditions provided
+@z
+
+@x format
       description: |-
         Format output using a custom template:
         'table':            Print output in table format with column headers (default)
@@ -115,53 +53,37 @@ options:
         'json':             Print in JSON format
         'TEMPLATE':         Print output using the given Go template.
         Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
-      details_url: '#format'
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: quiet
-      shorthand: q
-      value_type: bool
-      default_value: "false"
+@y
+      description: |-
+        Format output using a custom template:
+        'table':            Print output in table format with column headers (default)
+        'table TEMPLATE':   Print output in table format using the given Go template
+        'json':             Print in JSON format
+        'TEMPLATE':         Print output using the given Go template.
+        Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates
+@z
+
+@x quiet
       description: Only display IDs
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: help
-      value_type: bool
-      default_value: "false"
+@y
+      description: Only display IDs
+@z
+
+% inherited_options:
+
+@x help
       description: Print usage
-      deprecated: false
-      hidden: true
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
+@y
+      description: Print usage
+@z
+
+@x
 examples: |-
-    ```console
-    $ docker secret ls
+@y
+examples: |-
 @z
 
-@x
-    ID                          NAME                        CREATED             UPDATED
-    6697bflskwj1998km1gnnjr38   q5s5570vtvnimefos1fyeo2u2   6 weeks ago         6 weeks ago
-    9u9hk4br2ej0wgngkga6rp4hq   my_secret                   5 weeks ago         5 weeks ago
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 3 seconds ago       3 seconds ago
-    ```
-@y
-    ID                          NAME                        CREATED             UPDATED
-    6697bflskwj1998km1gnnjr38   q5s5570vtvnimefos1fyeo2u2   6 weeks ago         6 weeks ago
-    9u9hk4br2ej0wgngkga6rp4hq   my_secret                   5 weeks ago         5 weeks ago
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 3 seconds ago       3 seconds ago
-    ```
-@z
+% snip command...
 
 @x
     ### Filtering (--filter) {#filter}
@@ -205,23 +127,7 @@ examples: |-
     The `id` filter matches all or prefix of a secret's id.
 @z
 
-@x
-    ```console
-    $ docker secret ls -f "id=6697bflskwj1998km1gnnjr38"
-@y
-    ```console
-    $ docker secret ls -f "id=6697bflskwj1998km1gnnjr38"
-@z
-
-@x
-    ID                          NAME                        CREATED             UPDATED
-    6697bflskwj1998km1gnnjr38   q5s5570vtvnimefos1fyeo2u2   6 weeks ago         6 weeks ago
-    ```
-@y
-    ID                          NAME                        CREATED             UPDATED
-    6697bflskwj1998km1gnnjr38   q5s5570vtvnimefos1fyeo2u2   6 weeks ago         6 weeks ago
-    ```
-@z
+% snip command...
 
 @x
     #### label
@@ -245,23 +151,7 @@ examples: |-
     its value:
 @z
 
-@x
-    ```console
-    $ docker secret ls --filter label=project
-@y
-    ```console
-    $ docker secret ls --filter label=project
-@z
-
-@x
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@y
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@z
+% snip command...
 
 @x
     The following filter matches only services with the `project` label with the
@@ -271,23 +161,7 @@ examples: |-
     `project-a` value.
 @z
 
-@x
-    ```console
-    $ docker service ls --filter label=project=test
-@y
-    ```console
-    $ docker service ls --filter label=project=test
-@z
-
-@x
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@y
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@z
+% snip command...
 
 @x
     #### name
@@ -307,23 +181,7 @@ examples: |-
     The following filter matches secret with a name containing a prefix of `test`.
 @z
 
-@x
-    ```console
-    $ docker secret ls --filter name=test_secret
-@y
-    ```console
-    $ docker secret ls --filter name=test_secret
-@z
-
-@x
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@y
-    ID                          NAME                        CREATED             UPDATED
-    mem02h8n73mybpgqjf0kfi1n0   test_secret                 About an hour ago   About an hour ago
-    ```
-@z
+% snip command...
 
 @x
     ### Format the output (--format) {#format}
@@ -383,25 +241,7 @@ examples: |-
     `ID` and `Name` entries separated by a colon (`:`) for all images:
 @z
 
-@x
-    ```console
-    $ docker secret ls --format "{{.ID}}: {{.Name}}"
-@y
-    ```console
-    $ docker secret ls --format "{{.ID}}: {{.Name}}"
-@z
-
-@x
-    77af4d6b9913: secret-1
-    b6fa739cedf5: secret-2
-    78a85c484f71: secret-3
-    ```
-@y
-    77af4d6b9913: secret-1
-    b6fa739cedf5: secret-2
-    78a85c484f71: secret-3
-    ```
-@z
+% snip command...
 
 @x
     To list all secrets with their name and created date in a table format you
@@ -411,52 +251,13 @@ examples: |-
     can use:
 @z
 
-@x
-    ```console
-    $ docker secret ls --format "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}"
-@y
-    ```console
-    $ docker secret ls --format "table {{.ID}}\t{{.Name}}\t{{.CreatedAt}}"
-@z
-
-@x
-    ID                  NAME                      CREATED
-    77af4d6b9913        secret-1                  5 minutes ago
-    b6fa739cedf5        secret-2                  3 hours ago
-    78a85c484f71        secret-3                  10 days ago
-    ```
-@y
-    ID                  NAME                      CREATED
-    77af4d6b9913        secret-1                  5 minutes ago
-    b6fa739cedf5        secret-2                  3 hours ago
-    78a85c484f71        secret-3                  10 days ago
-    ```
-@z
+% snip command...
 
 @x
     To list all secrets in JSON format, use the `json` directive:
-    ```console
-    $ docker secret ls --format json
-    {"CreatedAt":"28 seconds ago","Driver":"","ID":"4y7hvwrt1u8e9uxh5ygqj7mzc","Labels":"","Name":"mysecret","UpdatedAt":"28 seconds ago"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @y
     To list all secrets in JSON format, use the `json` directive:
-    ```console
-    $ docker secret ls --format json
-    {"CreatedAt":"28 seconds ago","Driver":"","ID":"4y7hvwrt1u8e9uxh5ygqj7mzc","Labels":"","Name":"mysecret","UpdatedAt":"28 seconds ago"}
-    ```
-deprecated: false
-hidden: false
-min_api_version: "1.25"
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: true
 @z
+
+% snip command...
+% snip directives...

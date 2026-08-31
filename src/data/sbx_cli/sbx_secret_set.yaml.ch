@@ -5,18 +5,18 @@
 name: sbx secret set
 synopsis: Create or update a secret
 description: |-
-    Create or update a secret for a service.
+    Create or update a secret for a service or registry.
 @y
 name: sbx secret set
 synopsis: Create or update a secret
 description: |-
-    Create or update a secret for a service.
+    Create or update a secret for a service or registry.
 @z
 
 @x
-    Available services: anthropic, aws, cursor, droid, github, google, groq, mistral, nebius, openai, xai
+    Available services: anthropic, aws, bedrock, cursor, droid, github, google, groq, mistral, nebius, openai, xai
 @y
-    Available services: anthropic, aws, cursor, droid, github, google, groq, mistral, nebius, openai, xai
+    Available services: anthropic, aws, bedrock, cursor, droid, github, google, groq, mistral, nebius, openai, xai
 @z
 
 @x
@@ -28,9 +28,21 @@ description: |-
 @z
 
 @x
-usage: sbx secret set [-g | sandbox] [service] [flags]
+    Use --registry to store pull credentials for a container registry:
+      Without -g: host-only — used for template/kit pulls, not injected into sandboxes.
+      With -g:    global   — host pulls AND written as ~/.docker/config.json in every new sandbox.
+      With SANDBOX as the first argument: scoped to that specific sandbox only.
 @y
-usage: sbx secret set [-g | sandbox] [service] [flags]
+    Use --registry to store pull credentials for a container registry:
+      Without -g: host-only — used for template/kit pulls, not injected into sandboxes.
+      With -g:    global   — host pulls AND written as ~/.docker/config.json in every new sandbox.
+      With SANDBOX as the first argument: scoped to that specific sandbox only.
+@z
+
+@x
+usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
+@y
+usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
 @z
 
 % options:
@@ -59,10 +71,32 @@ usage: sbx secret set [-g | sandbox] [service] [flags]
       usage: Start OAuth flow and store OAuth tokens (openai/global only)
 @z
 
+@x password-stdin
+      usage: |
+        Read registry password or token from stdin (use with --registry)
+@y
+      usage: |
+        Read registry password or token from stdin (use with --registry)
+@z
+
+@x registry
+      usage: Registry hostname for pull credentials (e.g. ghcr.io)
+@y
+      usage: Registry hostname for pull credentials (e.g. ghcr.io)
+@z
+
 @x token
       usage: 'Secret value (less secure: visible in shell history)'
 @y
       usage: 'Secret value (less secure: visible in shell history)'
+@z
+
+@x username
+      usage: |
+        Registry username (use with --registry; omit for token-only auth)
+@y
+      usage: |
+        Registry username (use with --registry; omit for token-only auth)
 @z
 
 % inherited_options:
@@ -105,6 +139,30 @@ example: |4-
 @y
       # Start OpenAI OAuth flow and store global OAuth tokens
       sbx secret set -g openai --oauth
+@z
+
+@x
+      # Registry: host-only (template/kit pulls, not injected into sandboxes)
+      gh auth token | sbx secret set --registry ghcr.io --password-stdin
+@y
+      # Registry: host-only (template/kit pulls, not injected into sandboxes)
+      gh auth token | sbx secret set --registry ghcr.io --password-stdin
+@z
+
+@x
+      # Registry: global (host pulls + injected into every new sandbox)
+      gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+@y
+      # Registry: global (host pulls + injected into every new sandbox)
+      gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+@z
+
+@x
+      # Registry: specific sandbox only
+      gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
+@y
+      # Registry: specific sandbox only
+      gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
 @z
 
 % see_also:

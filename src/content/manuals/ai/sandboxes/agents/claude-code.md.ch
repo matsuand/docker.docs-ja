@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Claude Code
 @y
@@ -17,12 +19,6 @@ description: |
   Use Claude Code in Docker Sandboxes with authentication, configuration, and
   YOLO mode for AI-assisted development.
 keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
-@z
-
-@x
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
-@y
-{{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @z
 
 @x
@@ -150,18 +146,42 @@ for workarounds.
 @z
 
 @x
-Any Claude Code CLI options can be passed after the `--` separator:
+### Default startup command
 @y
-Any Claude Code CLI options can be passed after the `--` separator:
+### Default startup command
+@z
+
+@x
+Without extra args, the sandbox runs:
+@y
+Without extra args, the sandbox runs:
+@z
+
+@x
+```text
+claude --dangerously-skip-permissions
+```
+@y
+```text
+claude --dangerously-skip-permissions
+```
+@z
+
+@x
+Args after `--` replace these defaults rather than being appended. To keep
+`--dangerously-skip-permissions`, include it yourself:
+@y
+Args after `--` replace these defaults rather than being appended. To keep
+`--dangerously-skip-permissions`, include it yourself:
 @z
 
 @x
 ```console
-$ sbx run claude --name my-sandbox -- --continue
+$ sbx run claude -- --dangerously-skip-permissions -c
 ```
 @y
 ```console
-$ sbx run claude --name my-sandbox -- --continue
+$ sbx run claude -- --dangerously-skip-permissions -c
 ```
 @z
 
@@ -174,19 +194,119 @@ for available options.
 @z
 
 @x
+## Agents view
+@y
+## Agents view
+@z
+
+@x
+Claude Code's [agents view](https://code.claude.com/docs/en/agent-view)
+dispatches tasks to subagents that work in parallel, each in its own
+Git worktree. Pair it with [clone mode](../usage.md#clone-mode) for an
+isolated multi-agent workflow:
+@y
+Claude Code's [agents view](https://code.claude.com/docs/en/agent-view)
+dispatches tasks to subagents that work in parallel, each in its own
+Git worktree. Pair it with [clone mode](../usage.md#clone-mode) for an
+isolated multi-agent workflow:
+@z
+
+@x
+```console
+$ sbx run --clone claude -- agents
+```
+@y
+```console
+$ sbx run --clone claude -- agents
+```
+@z
+
+@x
+This invocation replaces the
+[default startup command](#default-startup-command), so it doesn't
+include `--dangerously-skip-permissions` and you can't switch to
+bypass-permissions mode inside the sandbox. To work around this, either
+use Claude Code's auto mode or pass the flag explicitly:
+@y
+This invocation replaces the
+[default startup command](#default-startup-command), so it doesn't
+include `--dangerously-skip-permissions` and you can't switch to
+bypass-permissions mode inside the sandbox. To work around this, either
+use Claude Code's auto mode or pass the flag explicitly:
+@z
+
+@x
+```console
+$ sbx run --clone claude -- --dangerously-skip-permissions agents
+```
+@y
+```console
+$ sbx run --clone claude -- --dangerously-skip-permissions agents
+```
+@z
+
+@x
+The subagents' worktrees live inside the sandbox's private clone — none
+of them touches your host repository. Each subagent commits to its own
+branch, and you review the work from the host by fetching the
+`sandbox-<sandbox-name>` remote:
+@y
+The subagents' worktrees live inside the sandbox's private clone — none
+of them touches your host repository. Each subagent commits to its own
+branch, and you review the work from the host by fetching the
+`sandbox-<sandbox-name>` remote:
+@z
+
+@x
+```console
+$ git fetch sandbox-<sandbox-name>
+$ git diff main..sandbox-<sandbox-name>/<branch>
+```
+@y
+```console
+$ git fetch sandbox-<sandbox-name>
+$ git diff main..sandbox-<sandbox-name>/<branch>
+```
+@z
+
+@x
+See [Git workflow](../usage.md#git-workflow) for clone-mode details.
+@y
+See [Git workflow](../usage.md#git-workflow) for clone-mode details.
+@z
+
+@x
 ## Base image
 @y
 ## Base image
 @z
 
 @x
-The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
-with `--dangerously-skip-permissions` by default. See
+The sandbox uses `docker/sandbox-templates:claude-code`. See
 [Templates](../customize/templates.md) to build your own image on top of
 this base.
 @y
-The sandbox uses `docker/sandbox-templates:claude-code` and launches Claude Code
-with `--dangerously-skip-permissions` by default. See
+The sandbox uses `docker/sandbox-templates:claude-code`. See
 [Templates](../customize/templates.md) to build your own image on top of
 this base.
+@z
+
+@x
+## Use a local model
+@y
+## Use a local model
+@z
+
+@x
+To run Claude Code in a sandbox against a local model on your host through
+Docker Model Runner, see
+[Run Claude Code in a Docker Sandbox with Docker Model Runner](/guides/claude-code-sandbox-model-runner/).
+For the host-only version without a sandbox, see
+[Use Claude Code with Docker Model Runner](/guides/claude-code-model-runner/).
+@y
+To run Claude Code in a sandbox against a local model on your host through
+Docker Model Runner, see
+[Run Claude Code in a Docker Sandbox with Docker Model Runner](__SUBDIR__/guides/claude-code-sandbox-model-runner/).
+For the host-only version without a sandbox, see
+[Use Claude Code with Docker Model Runner](__SUBDIR__/guides/claude-code-model-runner/).
 @z

@@ -24,46 +24,50 @@ description: |-
 @x
     Available policies:
       allow-all   All outbound network traffic is allowed
-      balanced    Common dev traffic allowed (AI services, package registries, etc.)
+      balanced    Typical development traffic is allowed (AI services, package registries, etc.)
       deny-all    All outbound network traffic is blocked
 @y
     Available policies:
       allow-all   All outbound network traffic is allowed
-      balanced    Common dev traffic allowed (AI services, package registries, etc.)
+      balanced    Typical development traffic is allowed (AI services, package registries, etc.)
       deny-all    All outbound network traffic is blocked
 @z
 
 @x
     After setting defaults, use "sbx policy allow/deny" to add custom rules.
     Use "sbx policy reset" to clear all policies and start over.
-usage: sbx policy set-default <allow-all|balanced|deny-all> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for set-default
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Set balanced defaults (recommended)
-      sbx policy set-default balanced
 @y
     After setting defaults, use "sbx policy allow/deny" to add custom rules.
     Use "sbx policy reset" to clear all policies and start over.
+@z
+
+@x
 usage: sbx policy set-default <allow-all|balanced|deny-all> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy set-default <allow-all|balanced|deny-all> [flags]
+@z
+
+% options:
+
+@x help
       usage: help for set-default
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for set-default
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Set balanced defaults (recommended)
+      sbx policy set-default balanced
+@y
 example: |4-
       # Set balanced defaults (recommended)
       sbx policy set-default balanced
@@ -80,13 +84,17 @@ example: |4-
 @x
       # Block everything, then allow specific sites
       sbx policy set-default deny-all
-      sbx policy allow network api.example.com:443
-see_also:
-    - sbx policy - Manage sandbox policies
+      sbx policy allow network -g api.example.com:443
 @y
       # Block everything, then allow specific sites
       sbx policy set-default deny-all
-      sbx policy allow network api.example.com:443
-see_also:
+      sbx policy allow network -g api.example.com:443
+@z
+
+% see_also:
+
+@x
+    - sbx policy - Manage sandbox policies
+@y
     - sbx policy - Manage sandbox policies
 @z

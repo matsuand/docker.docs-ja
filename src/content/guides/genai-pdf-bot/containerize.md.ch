@@ -139,64 +139,33 @@ You should now have the following files in your `docker-genai-sample` directory.
 @z
 
 @x
-## Initialize Docker assets
+## Create Docker assets
 @y
-## Docker アセットの初期化 {#initialize-docker-assets}
+## Docker アセットの生成 {#create-docker-assets}
 @z
 
 @x
-Now that you have an application, you can use `docker init` to create the necessary Docker assets to containerize your application. Inside the `docker-genai-sample` directory, run the `docker init` command. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. For example, this application uses Streamlit to run. Refer to the following `docker init` example and use the same answers for your prompts.
+Now that you have an application, you can create the necessary Docker assets to
+containerize it.
 @y
 アプリケーションの入手はできました。
-次に `docker init` を実行して、アプリケーションのコンテナー化に必要となる Docker アセットを生成します。
-端末画面内の `docker-genai-sample` ディレクトリにおいて `docker init` コマンドを実行します。
-`docker init` はデフォルトの設定をいくつか行いますが、アプリケーション内容についていくつか質問が行われるので、それに答えます。
-たとえばこのアプリケーションを実行するにあたっては Streamlit を利用しています。
-以下の `docker init` の例を参考にして、同様の入力を行ってください。
+次にアプリケーションのコンテナー化に必要となる Docker アセットを生成します。
 @z
 
 @x
-```console
-$ docker init
-Welcome to the Docker Init CLI!
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @y
-```console
-$ docker init
-Welcome to the Docker Init CLI!
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
+Create the following files in your `docker-genai-sample` directory.
 @y
-This utility will walk you through creating the following files with sensible defaults for your project:
-  - .dockerignore
-  - Dockerfile
-  - compose.yaml
-  - README.Docker.md
-@z
-
-@x
-Let's get started!
-@y
-Let's get started!
-@z
-
-@x
-? What application platform does your project use? Python
-? What version of Python do you want to use? 3.11.4
-? What port do you want your app to listen on? 8000
-? What is the command to run your app? streamlit run app.py --server.address=0.0.0.0 --server.port=8000
-```
-@y
-? What application platform does your project use? Python
-? What version of Python do you want to use? 3.11.4
-? What port do you want your app to listen on? 8000
-? What is the command to run your app? streamlit run app.py --server.address=0.0.0.0 --server.port=8000
-```
+`docker-genai-sample` ディレクトリ内に以下のファイルを生成します。
 @z
 
 @x
@@ -206,44 +175,12 @@ directory.
 上により `docker-genai-sample` ディレクトリ内は以下の構成となるはずです。
 @z
 
-@x
-```text
-├── docker-genai-sample/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── app.py
-│ ├── chains.py
-│ ├── compose.yaml
-│ ├── env.example
-│ ├── requirements.txt
-│ ├── util.py
-│ ├── Dockerfile
-│ ├── LICENSE
-│ ├── README.Docker.md
-│ └── README.md
-```
-@y
-```text
-├── docker-genai-sample/
-│ ├── .dockerignore
-│ ├── .gitignore
-│ ├── app.py
-│ ├── chains.py
-│ ├── compose.yaml
-│ ├── env.example
-│ ├── requirements.txt
-│ ├── util.py
-│ ├── Dockerfile
-│ ├── LICENSE
-│ ├── README.Docker.md
-│ └── README.md
-```
-@z
+% snip text...
 
 @x
-To learn more about the files that `docker init` added, see the following:
+To learn more about these files, see the following:
 @y
-`docker init` が追加したファイルについての詳細は、以下を参照してください。
+これらファイルの詳細は、以下を参照してください。
 @z
 
 @x
@@ -341,18 +278,6 @@ In this section, you learned how you can containerize and run your GenAI
 application using Docker.
 @y
 本節においては Docker を使って、既存の GenAI アプリケーションをコンテナー化して実行する方法について学びました。
-@z
-
-@x
-Related information:
-@y
-関連情報
-@z
-
-@x
-- [docker init CLI reference](/reference/cli/docker/init/)
-@y
-- [docker init CLI reference](__SUBDIR__/reference/cli/docker/init/)
 @z
 
 @x

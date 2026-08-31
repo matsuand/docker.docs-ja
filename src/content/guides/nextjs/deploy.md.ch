@@ -288,9 +288,9 @@ This output means that both the Deployment and the Service were successfully cre
 @z
 
 @x
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @y
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @z
 
 @x
@@ -334,9 +334,9 @@ This confirms that your pod is up and running with one replica available.
 @z
 
 @x
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @y
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @z
 
 @x

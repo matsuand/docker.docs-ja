@@ -20,6 +20,12 @@ description: Learn how to deploy locally to test and debug your Kubernetes deplo
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Prerequisites
 @y
 ## Prerequisites
@@ -44,6 +50,12 @@ Before you begin, make sure you’ve completed the following:
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Overview
 @y
 ## Overview
@@ -56,6 +68,12 @@ This section guides you through deploying your containerized React.js applicatio
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Create a Kubernetes YAML file
 @y
 ## Create a Kubernetes YAML file
@@ -85,7 +103,83 @@ Follow these steps to define your deployment configuration:
 3. Add the following configuration, and be sure to replace `{DOCKER_USERNAME}` and `{DOCKERHUB_PROJECT_NAME}` with your actual Docker Hub username and repository name from the previous [Automate your builds with GitHub Actions](configure-github-actions.md).
 @z
 
-% snip code...
+@x
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-sample
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reactjs-sample
+  template:
+    metadata:
+      labels:
+        app: reactjs-sample
+    spec:
+      containers:
+        - name: reactjs-container
+          image: {DOCKER_USERNAME}/{DOCKERHUB_PROJECT_NAME}:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  reactjs-sample-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app:  reactjs-sample
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30001
+```
+@y
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reactjs-sample
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reactjs-sample
+  template:
+    metadata:
+      labels:
+        app: reactjs-sample
+    spec:
+      containers:
+        - name: reactjs-container
+          image: {DOCKER_USERNAME}/{DOCKERHUB_PROJECT_NAME}:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  reactjs-sample-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app:  reactjs-sample
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30001
+```
+@z
 
 @x
 This manifest defines two key Kubernetes resources, separated by `---`:
@@ -123,6 +217,12 @@ This manifest defines two key Kubernetes resources, separated by `---`:
 @y
 > [!NOTE]
 > To learn more about Kubernetes objects, see the [Kubernetes documentation](https://kubernetes.io/docs/home/).
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -184,9 +284,9 @@ This output means that both the Deployment and the Service were successfully cre
 @z
 
 @x
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @y
-### Step 2. Check the Deployment status
+### Step 2. Check the deployment status
 @z
 
 @x
@@ -230,9 +330,9 @@ This confirms that your pod is up and running with one replica available.
 @z
 
 @x
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @y
-### Step 3. Verify the Service exposure
+### Step 3. Verify the service exposure
 @z
 
 @x
@@ -340,6 +440,12 @@ This ensures your cluster stays clean and ready for the next deployment.
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ## Summary
 @y
 ## Summary
@@ -367,6 +473,12 @@ What you accomplished:
 - Used `kubectl apply` to deploy the application locally  
 - Verified the app was running and accessible at `http://localhost:30001`  
 - Cleaned up your Kubernetes resources after testing
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x

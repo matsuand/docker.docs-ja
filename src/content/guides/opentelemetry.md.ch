@@ -88,9 +88,9 @@ Basic knowledge of Node.js and Docker.
 @z
 
 @x
-## Project Structure
+## Project structure
 @y
-## Project Structure
+## Project structure
 @z
 
 @x
@@ -130,9 +130,9 @@ otel-js-app/
 @z
 
 @x
-## Create a Simple Node.js App
+## Create a simple Node.js app
 @y
-## Create a Simple Node.js App
+## Create a simple Node.js app
 @z
 
 @x
@@ -208,9 +208,9 @@ app.listen(PORT, () => {
 @z
 
 @x
-## Configure OpenTelemetry Tracing
+## Configure OpenTelemetry tracing
 @y
-## Configure OpenTelemetry Tracing
+## Configure OpenTelemetry tracing
 @z
 
 @x
@@ -320,9 +320,9 @@ service:
 @z
 
 @x
-## Add Docker Compose Configuration
+## Add Docker Compose configuration
 @y
-## Add Docker Compose Configuration
+## Add Docker Compose configuration
 @z
 
 @x
@@ -430,9 +430,9 @@ CMD ["node", "app.js"]
 @z
 
 @x
-## Start the Stack
+## Start the stack
 @y
-## Start the Stack
+## Start the stack
 @z
 
 @x
@@ -470,9 +470,9 @@ View traces at [http://localhost:16686](http://localhost:16686) in the Jaeger UI
 @z
 
 @x
-## Verify Traces in Jaeger
+## Verify traces in Jaeger
 @y
-## Verify Traces in Jaeger
+## Verify traces in Jaeger
 @z
 
 @x

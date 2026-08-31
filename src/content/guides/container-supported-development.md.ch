@@ -5,18 +5,20 @@
 
 @x
 title: "Faster development and testing with container-supported development"
-linkTitle: Container-supported development
+linkTitle: Container-supported dev
 summary: |
   Containers don't have to be just for your app. Learn how to run your app's dependent services and other debugging tools to enhance your development environment.
 description: |
   Use containers in your local development loop to develop and test faster… even if your main app isn't running in containers.
+keywords: containers, local development, dependent services, testing, debugging, development environment
 @y
 title: "Faster development and testing with container-supported development"
-linkTitle: Container-supported development
+linkTitle: Container-supported dev
 summary: |
   Containers don't have to be just for your app. Learn how to run your app's dependent services and other debugging tools to enhance your development environment.
 description: |
   Use containers in your local development loop to develop and test faster… even if your main app isn't running in containers.
+keywords: containers, local development, dependent services, testing, debugging, development environment
 @z
 
 @x

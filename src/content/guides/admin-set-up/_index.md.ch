@@ -6,12 +6,14 @@ title: Set up your company for success with Docker
 linkTitle: Admin set up
 summary: Get the most out of Docker by streamlining workflows, standardizing development environments, and ensuring smooth deployments across your company.
 description: Learn how to onboard your company and take advantage of all of the Docker products and features. 
+keywords: admin, onboarding, deployment, organization setup, docker business, rollout
 tags: [admin]
 @y
 title: 企業における Docker 利用を成功させるための設定
 linkTitle: 管理設定
 summary: 企業内においてGet the most out of Docker by streamlining workflows, standardizing development environments, and ensuring smooth deployments across your company.
 description: Learn how to onboard your company and take advantage of all of the Docker products and features. 
+keywords: admin, onboarding, deployment, organization setup, docker business, rollout
 tags: [admin]
 @z
 

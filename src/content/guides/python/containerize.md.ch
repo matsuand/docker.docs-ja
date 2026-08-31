@@ -70,48 +70,34 @@ Clone the sample application to use with this guide. Open a terminal, change dir
 % snip command...
 
 @x
-## Initialize Docker assets
+## Create Docker assets
 @y
-## Docker アセットの初期化 {#initialize-docker-assets}
+## Docker アセットの生成 {#create-docker-assets}
 @z
 
 @x
 Now that you have an application, you can create the necessary Docker assets to
-containerize your application. You can use Docker Desktop's built-in Docker Init
-feature to help streamline the process, or you can manually create the assets.
+containerize your application.
 @y
 アプリケーションの入手はできました。
 次はアプリケーションのコンテナー化に必要となる Docker アセットを生成します。
-Docker Desktop にはビルトインの Docker Init 機能があるので、効率的に作業を進められます。
-あるいは手動でアセットを生成することもできます。
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="Use Docker Init" >}}
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @y
-{{< tabs >}}
-{{< tab name="Docker Init の利用" >}}
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x
-Inside the `python-docker-example` directory, run the `docker init` command. `docker
-init` provides some default configuration, but you'll need to answer a few
-questions about your application. For example, this application uses FastAPI to
-run. Refer to the following example to answer the prompts from `docker init` and
-use the same answers for your prompts.
-@y
-端末画面内の `python-docker-example` ディレクトリにおいて `docker init` コマンドを実行します。
-`docker init` はデフォルトの設定をいくつか行いますが、アプリケーション内容についていくつか質問が行われるので、それに答えます。
-たとえばこのアプリケーション実行のために FastAPI を利用することなどです。
-以下の利用例において `docker init` の質問への答えを示しているので、これを参考に同様の入力を行ってください。
-@z
-
-@x
-Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
+Before creating your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
 or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
 @y
-Before editing your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
+Before creating your Dockerfile, you need to choose a base image. You can use the [Python Docker Official Image](https://hub.docker.com/_/python),
 or a [Docker Hardened Image (DHI)](https://hub.docker.com/hardened-images/catalog/dhi/python).
 @z
 
@@ -120,64 +106,21 @@ Docker Hardened Images (DHIs) are minimal, secure, and production-ready base ima
 They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
 @y
 Docker Hardened Images (DHIs) are minimal, secure, and production-ready base images maintained by Docker.
-They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](/dhi/).
-@z
-
-% snip command...
-
-@x
-Create a file named `.gitignore` with the following contents.
-@y
-`.gitignore` という名前のファイルを生成して、その内容を以下のようにします。
-@z
-
-@x within codoe
-# Byte-compiled / optimized / DLL files
-@y
-# Byte-compiled / optimized / DLL files
-@z
-@x
-# C extensions
-@y
-# C extensions
-@z
-@x
-# Distribution / packaging
-@y
-# ディストリビューション / パッケージ
-@z
-@x
-# Unit test / coverage reports
-@y
-# ユニットテスト / カバレッジリポート
+They help reduce vulnerabilities and simplify compliance. For more details, see [Docker Hardened Images](__SUBDIR__/dhi/).
 @z
 
 @x
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-@y
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-@z
-
-@x
-# Environments
-@y
-# 環境
-@z
-
-@x
-{{< /tab >}}
+{{< tabs >}}
 {{< tab name="Using the official Docker image" >}}
 @y
-{{< /tab >}}
-{{< tab name="公式 Docker イメージの利用" >}}
+{{< tabs >}}
+{{< tab name="Docker 公式イメージの利用" >}}
 @z
 
 @x
-If you don't have Docker Desktop installed or prefer creating the assets
-manually, you can create the following files in your project directory.
+Create the following files in your project directory.
 @y
-If you don't have Docker Desktop installed or prefer creating the assets
-manually, you can create the following files in your project directory.
+Create the following files in your project directory.
 @z
 
 @x
@@ -186,7 +129,15 @@ Create a file named `Dockerfile` with the following contents.
 Create a file named `Dockerfile` with the following contents.
 @z
 
-@x within code...
+@x
+```dockerfile {collapse=true,title=Dockerfile}
+# syntax=docker/dockerfile:1
+@y
+```dockerfile {collapse=true,title=Dockerfile}
+# syntax=docker/dockerfile:1
+@z
+
+@x
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
@@ -195,29 +146,65 @@ Create a file named `Dockerfile` with the following contents.
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 @z
+
 @x
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+# This Dockerfile uses Python Docker Official Image
+ARG PYTHON_VERSION=3.12
+FROM python:${PYTHON_VERSION}-slim
 @y
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
+# This Dockerfile uses Python Docker Official Image
+ARG PYTHON_VERSION=3.12
+FROM python:${PYTHON_VERSION}-slim
 @z
+
 @x
 # Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 @y
 # Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 @z
+
 @x
 # Keeps Python from buffering stdout and stderr to avoid situations where
 # the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 @y
 # Keeps Python from buffering stdout and stderr to avoid situations where
 # the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 @z
+
+@x
+WORKDIR /app
+@y
+WORKDIR /app
+@z
+
 @x
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 @y
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 @z
 
 @x
@@ -225,31 +212,51 @@ Create a file named `Dockerfile` with the following contents.
 # Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
 # Leverage a bind mount to requirements.txt to avoid having to copy them into
 # into this layer.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 @y
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
 # Leverage a bind mount to requirements.txt to avoid having to copy them into
 # into this layer.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 @z
+
 @x
 # Switch to the non-privileged user to run the application.
+USER appuser
 @y
 # Switch to the non-privileged user to run the application.
+USER appuser
 @z
+
 @x
 # Copy the source code into the container.
+COPY . .
 @y
 # Copy the source code into the container.
+COPY . .
 @z
+
 @x
 # Expose the port that the application listens on.
+EXPOSE 8000
 @y
 # Expose the port that the application listens on.
+EXPOSE 8000
 @z
+
 @x
 # Run the application.
+CMD ["python3", "-m", "uvicorn", "app:app", "--host=0.0.0.0", "--port=8000"]
+```
 @y
 # Run the application.
+CMD ["python3", "-m", "uvicorn", "app:app", "--host=0.0.0.0", "--port=8000"]
+```
 @z
 
 @x
@@ -258,27 +265,44 @@ Create a file named `compose.yaml` with the following contents.
 Create a file named `compose.yaml` with the following contents.
 @z
 
-@x within code...
+@x
+```yaml {collapse=true,title=compose.yaml}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 @y
+```yaml {collapse=true,title=compose.yaml}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 @z
+
 @x
 # Here the instructions define your application as a service called "server".
 # This service is built from the Dockerfile in the current directory.
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+```
 @y
 # Here the instructions define your application as a service called "server".
 # This service is built from the Dockerfile in the current directory.
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+```
 @z
 
 @x
@@ -287,13 +311,15 @@ Create a file named `.dockerignore` with the following contents.
 Create a file named `.dockerignore` with the following contents.
 @z
 
-@x within code...
+@x
+```text {collapse=true,title=".dockerignore"}
 # Include any files or directories that you don't want to be copied to your
 # container here (e.g., local build artifacts, temporary files, etc.).
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/go/build-context-dockerignore/
 @y
+```text {collapse=true,title=".dockerignore"}
 # Include any files or directories that you don't want to be copied to your
 # container here (e.g., local build artifacts, temporary files, etc.).
 #
@@ -302,40 +328,197 @@ Create a file named `.dockerignore` with the following contents.
 @z
 
 @x
+**/.DS_Store
+**/__pycache__
+**/.venv
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose.y*ml
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+```
+@y
+**/.DS_Store
+**/__pycache__
+**/.venv
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose.y*ml
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+```
+@z
+
+@x
 Create a file named `.gitignore` with the following contents.
 @y
 Create a file named `.gitignore` with the following contents.
 @z
 
-@x within code...
+@x
+```text {collapse=true,title=".gitignore"}
 # Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 @y
+```text {collapse=true,title=".gitignore"}
 # Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 @z
+
 @x
 # C extensions
+*.so
 @y
 # C extensions
+*.so
 @z
+
 @x
 # Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 @y
-# ディストリビューション / パッケージ
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 @z
+
 @x
 # Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 @y
-# ユニットテスト / カバレッジリポート
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 @z
+
 @x
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
 @y
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
 @z
+
 @x
 # Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+```
 @y
-# 環境
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+```
 @z
 
 @x
@@ -349,7 +532,7 @@ Create a file named `.gitignore` with the following contents.
 @x
 Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/python). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
 @y
-Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/python). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](/dhi/get-started/) guide.
+Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened Images catalog](https://hub.docker.com/hardened-images/catalog/dhi/python). Docker Hardened Images are freely available to everyone with no subscription required. You can pull and use them like any other Docker image after signing in to the DHI registry. For more information, see the [DHI quickstart](__SUBDIR__/dhi/get-started/) guide.
 @z
 
 @x
@@ -358,7 +541,15 @@ Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened I
 1. Sign in to the DHI registry:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker login dhi.io
+   ```
+@y
+   ```console
+   $ docker login dhi.io
+   ```
+@z
 
 @x
 2. Pull the Python DHI (check the catalog for available versions):
@@ -366,7 +557,15 @@ Docker Hardened Images (DHIs) are available for Python in the [Docker Hardened I
 2. Pull the Python DHI (check the catalog for available versions):
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker pull dhi.io/python:3.12.12-debian13-fips-dev
+   ```
+@y
+   ```console
+   $ docker pull dhi.io/python:3.12.12-debian13-fips-dev
+   ```
+@z
 
 @x
 Create a file named `Dockerfile` with the following contents.
@@ -374,7 +573,15 @@ Create a file named `Dockerfile` with the following contents.
 Create a file named `Dockerfile` with the following contents.
 @z
 
-@x within code
+@x
+```dockerfile {collapse=true,title=Dockerfile}
+# syntax=docker/dockerfile:1
+@y
+```dockerfile {collapse=true,title=Dockerfile}
+# syntax=docker/dockerfile:1
+@z
+
+@x
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
@@ -383,72 +590,127 @@ Create a file named `Dockerfile` with the following contents.
 # If you need more help, visit the Dockerfile reference guide at
 # https://docs.docker.com/go/dockerfile-reference/
 @z
-@x
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
-@y
-# Want to help us make this template better? Share your feedback here: https://forms.gle/ybq9Krt8jtBL3iCk7
-@z
+
 @x
 # This Dockerfile uses Docker Hardened Images (DHI) for enhanced security.
 # For more information, see https://docs.docker.com/dhi/
+ARG PYTHON_VERSION=3.12.12-debian13-fips-dev
+FROM dhi.io/python:${PYTHON_VERSION}
 @y
 # This Dockerfile uses Docker Hardened Images (DHI) for enhanced security.
 # For more information, see https://docs.docker.com/dhi/
+ARG PYTHON_VERSION=3.12.12-debian13-fips-dev
+FROM dhi.io/python:${PYTHON_VERSION}
 @z
+
 @x
 # Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 @y
 # Prevents Python from writing pyc files.
+ENV PYTHONDONTWRITEBYTECODE=1
 @z
+
 @x
 # Keeps Python from buffering stdout and stderr to avoid situations where
 # the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 @y
 # Keeps Python from buffering stdout and stderr to avoid situations where
 # the application crashes without emitting any logs due to buffering.
+ENV PYTHONUNBUFFERED=1
 @z
+
 @x
 #Add dependencies for adduser
+RUN apt update -y && apt install adduser -y
 @y
 #Add dependencies for adduser
+RUN apt update -y && apt install adduser -y
 @z
+
+@x
+WORKDIR /app
+@y
+WORKDIR /app
+@z
+
 @x
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 @y
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
+ARG UID=10001
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    appuser
 @z
+
 @x
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
 # Leverage a bind mount to requirements.txt to avoid having to copy them into
 # into this layer.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 @y
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.cache/pip to speed up subsequent builds.
 # Leverage a bind mount to requirements.txt to avoid having to copy them into
 # into this layer.
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    python -m pip install -r requirements.txt
 @z
+
 @x
 # Switch to the non-privileged user to run the application.
+USER appuser
 @y
 # Switch to the non-privileged user to run the application.
+USER appuser
 @z
+
 @x
 # Copy the source code into the container.
+COPY . .
 @y
 # Copy the source code into the container.
+COPY . .
 @z
+
 @x
 # Expose the port that the application listens on.
+EXPOSE 8000
 @y
 # Expose the port that the application listens on.
+EXPOSE 8000
 @z
+
 @x
 # Run the application.
+CMD ["python3", "-m", "uvicorn", "app:app", "--host=0.0.0.0", "--port=8000"]
+```
 @y
 # Run the application.
+CMD ["python3", "-m", "uvicorn", "app:app", "--host=0.0.0.0", "--port=8000"]
+```
 @z
 
 @x
@@ -457,27 +719,44 @@ Create a file named `compose.yaml` with the following contents.
 Create a file named `compose.yaml` with the following contents.
 @z
 
-@x within code
+@x
+```yaml {collapse=true,title=compose.yaml}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 @y
+```yaml {collapse=true,title=compose.yaml}
 # Comments are provided throughout this file to help you get started.
 # If you need more help, visit the Docker Compose reference guide at
 # https://docs.docker.com/go/compose-spec-reference/
 @z
+
 @x
 # Here the instructions define your application as a service called "server".
 # This service is built from the Dockerfile in the current directory.
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+```
 @y
 # Here the instructions define your application as a service called "server".
 # This service is built from the Dockerfile in the current directory.
 # You can add other services your application may depend on here, such as a
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+```
 @z
 
 @x
@@ -486,13 +765,15 @@ Create a file named `.dockerignore` with the following contents.
 Create a file named `.dockerignore` with the following contents.
 @z
 
-@x within code
+@x
+```text {collapse=true,title=".dockerignore"}
 # Include any files or directories that you don't want to be copied to your
 # container here (e.g., local build artifacts, temporary files, etc.).
 #
 # For more help, visit the .dockerignore file reference guide at
 # https://docs.docker.com/go/build-context-dockerignore/
 @y
+```text {collapse=true,title=".dockerignore"}
 # Include any files or directories that you don't want to be copied to your
 # container here (e.g., local build artifacts, temporary files, etc.).
 #
@@ -501,35 +782,197 @@ Create a file named `.dockerignore` with the following contents.
 @z
 
 @x
+**/.DS_Store
+**/__pycache__
+**/.venv
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose.y*ml
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+```
+@y
+**/.DS_Store
+**/__pycache__
+**/.venv
+**/.classpath
+**/.dockerignore
+**/.env
+**/.git
+**/.gitignore
+**/.project
+**/.settings
+**/.toolstarget
+**/.vs
+**/.vscode
+**/*.*proj.user
+**/*.dbmdl
+**/*.jfm
+**/bin
+**/charts
+**/docker-compose*
+**/compose.y*ml
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/obj
+**/secrets.dev.yaml
+**/values.dev.yaml
+LICENSE
+README.md
+```
+@z
+
+@x
 Create a file named `.gitignore` with the following contents.
 @y
 Create a file named `.gitignore` with the following contents.
 @z
 
-@x within code
+@x
+```text {collapse=true,title=".gitignore"}
 # Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 @y
+```text {collapse=true,title=".gitignore"}
 # Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 @z
+
 @x
 # C extensions
+*.so
 @y
 # C extensions
+*.so
 @z
+
 @x
 # Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 @y
 # Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 @z
+
 @x
 # Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 @y
 # Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
 @z
+
 @x
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
 @y
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+@z
+
+@x
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+```
+@y
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+```
 @z
 
 @x
@@ -544,15 +987,38 @@ Create a file named `.gitignore` with the following contents.
 You should now have the following contents in your `python-docker-example`
 directory.
 @y
-上により `python-docker-example` ディレクトリ内は、最低でも以下の構成となるはずです。
+You should now have the following contents in your `python-docker-example`
+directory.
 @z
 
-% snip text...
+@x
+```text
+├── python-docker-example/
+│ ├── app.py
+│ ├── requirements.txt
+│ ├── .dockerignore
+│ ├── .gitignore
+│ ├── compose.yaml
+│ ├── Dockerfile
+│ └── README.md
+```
+@y
+```text
+├── python-docker-example/
+│ ├── app.py
+│ ├── requirements.txt
+│ ├── .dockerignore
+│ ├── .gitignore
+│ ├── compose.yaml
+│ ├── Dockerfile
+│ └── README.md
+```
+@z
 
 @x
 To learn more about the files, see the following:
 @y
-各ファイルについての詳細は以下を参照してください。
+To learn more about the files, see the following:
 @z
 
 @x
@@ -570,35 +1036,43 @@ To learn more about the files, see the following:
 @x
 ## Run the application
 @y
-## アプリケーションの実行 {#run-the-application}
+## Run the application
 @z
 
 @x
 Inside the `python-docker-example` directory, run the following command in a
 terminal.
 @y
-端末画面内の `python-docker-example` ディレクトリから以下のコマンドを実行します。
+Inside the `python-docker-example` directory, run the following command in a
+terminal.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose up --build
+```
+@y
+```console
+$ docker compose up --build
+```
+@z
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000). You should see a simple FastAPI application.
 @y
-ブラウザーを開いて [http://localhost:8000](http://localhost:8000) にアクセスし、アプリケーションを確認します。
-シンプルな FastAPI アプリケーションが表示されたはずです。
+Open a browser and view the application at [http://localhost:8000](http://localhost:8000). You should see a simple FastAPI application.
 @z
 
 @x
 In the terminal, press `ctrl`+`c` to stop the application.
 @y
-端末画面から `ctrl`+`c` を押下してアプリケーションを停止します。
+In the terminal, press `ctrl`+`c` to stop the application.
 @z
 
 @x
 ### Run the application in the background
 @y
-### バックグラウンドでのアプリケーション実行 {#run-the-application-in-the-background}
+### Run the application in the background
 @z
 
 @x
@@ -606,79 +1080,97 @@ You can run the application detached from the terminal by adding the `-d`
 option. Inside the `python-docker-example` directory, run the following command
 in a terminal.
 @y
-アプリケーションは端末から切り離して実行することができます。
-それには `-d` オプションをつけます。
-端末画面内の `python-docker-example` ディレクトリから以下のコマンドを実行します。
+You can run the application detached from the terminal by adding the `-d`
+option. Inside the `python-docker-example` directory, run the following command
+in a terminal.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose up --build -d
+```
+@y
+```console
+$ docker compose up --build -d
+```
+@z
 
 @x
 Open a browser and view the application at [http://localhost:8000](http://localhost:8000).
 @y
-ブラウザーを開いて [http://localhost:8000](http://localhost:8000) にアクセスし、アプリケーションを確認します。
+Open a browser and view the application at [http://localhost:8000](http://localhost:8000).
 @z
 
 @x
 To see the OpenAPI docs you can go to [http://localhost:8000/docs](http://localhost:8000/docs).
 @y
-OpenAPI ドキュメントを確認する場合は [http://localhost:8000/docs](http://localhost:8000/docs) にアクセスします。
+To see the OpenAPI docs you can go to [http://localhost:8000/docs](http://localhost:8000/docs).
 @z
 
 @x
 You should see a simple FastAPI application.
 @y
-シンプルな FastAPI アプリケーションが表示されたはずです。
+You should see a simple FastAPI application.
 @z
 
 @x
 In the terminal, run the following command to stop the application.
 @y
-端末画面から以下のコマンドを実行してアプリケーションを停止します。
+In the terminal, run the following command to stop the application.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose down
+```
+@y
+```console
+$ docker compose down
+```
+@z
 
 @x
 For more information about Compose commands, see the [Compose CLI
 reference](/reference/cli/docker/compose/).
 @y
-Compose コマンドの詳細は [Compose CLI リファレンス](__SUBDIR__/reference/cli/docker/compose/) を参照してください。
+For more information about Compose commands, see the [Compose CLI
+reference](__SUBDIR__/reference/cli/docker/compose/).
 @z
 
 @x
 ## Summary
 @y
-## まとめ {#summary}
+## Summary
 @z
 
 @x
 In this section, you learned how you can containerize and run your Python
 application using Docker.
 @y
-本節では Docker を使って Python アプリケーションをコンテナー化して実行する方法について学びました。
+In this section, you learned how you can containerize and run your Python
+application using Docker.
 @z
 
 @x
 Related information:
 @y
-関連情報
+Related information:
 @z
 
 @x
 - [Docker Compose overview](/manuals/compose/_index.md)
 @y
-- [Docker Compose 概要](manuals/compose/_index.md)
+- [Docker Compose overview](manuals/compose/_index.md)
 @z
 
 @x
 ## Next steps
 @y
-## 次のステップ {#next-steps}
+## Next steps
 @z
 
 @x
 In the next section, you'll take a look at how to set up a local development environment using Docker containers.
 @y
-次の節では、Docker コンテナーを使ったローカル開発環境の構築方法について見ていきます。
+In the next section, you'll take a look at how to set up a local development environment using Docker containers.
 @z

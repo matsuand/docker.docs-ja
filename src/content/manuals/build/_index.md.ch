@@ -23,25 +23,25 @@ keywords: build, buildx, buildkit
 - title: Packaging your software
   description: 'Build and package your application to run it anywhere: locally or
     in the cloud.'
-  icon: inventory_2
+  icon: archive-box
   link: /build/concepts/overview/
 @y
 - title: ソフトウェアのパッケージング
   description: 'Build and package your application to run it anywhere: locally or
     in the cloud.'
-  icon: inventory_2
+  icon: archive-box
   link: __SUBDIR__/build/concepts/overview/
 @z
 
 @x
 - title: Multi-stage builds
   description: Keep your images small and secure with minimal dependencies.
-  icon: stairs
+  icon: arrow-trending-up
   link: /build/building/multi-stage/
 @y
 - title: マルチステージビルド
   description: Keep your images small and secure with minimal dependencies.
-  icon: stairs
+  icon: arrow-trending-up
   link: __SUBDIR__/build/building/multi-stage/
 @z
 
@@ -49,49 +49,49 @@ keywords: build, buildx, buildkit
 - title: Multi-platform images
   description: Build, push, pull, and run images seamlessly on different computer
     architectures.
-  icon: content_copy
+  icon: document-duplicate
   link: /build/building/multi-platform/
 @y
 - title: マルチプラットフォームイメージ
   description: Build, push, pull, and run images seamlessly on different computer
     architectures.
-  icon: content_copy
+  icon: document-duplicate
   link: __SUBDIR__/build/building/multi-platform/
 @z
 
 @x
 - title: BuildKit
   description: Explore BuildKit, the open source build engine.
-  icon: construction
+  icon: wrench-screwdriver
   link: /build/buildkit/
 @y
 - title: BuildKit
   description: Explore BuildKit, the open source build engine.
-  icon: construction
+  icon: wrench-screwdriver
   link: __SUBDIR__/build/buildkit/
 @z
 
 @x
 - title: Build drivers
   description: Configure where and how you run your builds.
-  icon: engineering
+  icon: wrench-screwdriver
   link: /build/builders/drivers/
 @y
 - title: Build ドライバー
   description: ビルド実行をどこでどのように行うのかを設定します。
-  icon: engineering
+  icon: wrench-screwdriver
   link: __SUBDIR__/build/builders/drivers/
 @z
 
 @x
 - title: Exporters
   description: Export any artifact you like, not just Docker images.
-  icon: output
+  icon: arrow-up-on-square
   link: /build/exporters/
 @y
 - title: Exporters
   description: Docker イメージだけではなく、お望みの成果をエクスポートします。
-  icon: output
+  icon: arrow-up-on-square
   link: __SUBDIR__/build/exporters/
 @z
 
@@ -99,12 +99,12 @@ keywords: build, buildx, buildkit
 - title: Build caching
   description: Avoid unnecessary repetitions of costly operations, such as package
     installs.
-  icon: cycle
+  icon: arrow-path
   link: /build/cache/
 @y
 - title: Build キャッシュ処理
   description: パッケージインストールなどコストを要する不要な繰り返し操作をなくします。
-  icon: cycle
+  icon: arrow-path
   link: __SUBDIR__/build/cache/
 @z
 

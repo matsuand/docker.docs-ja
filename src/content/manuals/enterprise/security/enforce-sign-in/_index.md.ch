@@ -70,24 +70,24 @@ When Docker Desktop detects a registry key, `.plist` file, or
 @z
 
 @x
-- A `Sign in required!` prompt appears, requiring users to sign
+- A **Sign in required!** prompt appears, requiring users to sign
   in as organization members to use Docker Desktop.
 - If users sign in with accounts that aren't organization members, they're
   automatically signed out and can't use Docker Desktop. They can select **Sign in**
   to try again with a different account.
 - When users sign in with organization member accounts, they can use Docker
   Desktop normally.
-- When users sign out, the `Sign in required!` prompt reappears and they can
+- When users sign out, the **Sign in required!** prompt reappears and they can
   no longer use Docker Desktop unless they sign back in.
 @y
-- A `Sign in required!` prompt appears, requiring users to sign
+- A **Sign in required!** prompt appears, requiring users to sign
   in as organization members to use Docker Desktop.
 - If users sign in with accounts that aren't organization members, they're
   automatically signed out and can't use Docker Desktop. They can select **Sign in**
   to try again with a different account.
 - When users sign in with organization member accounts, they can use Docker
   Desktop normally.
-- When users sign out, the `Sign in required!` prompt reappears and they can
+- When users sign out, the **Sign in required!** prompt reappears and they can
   no longer use Docker Desktop unless they sign back in.
 @z
 

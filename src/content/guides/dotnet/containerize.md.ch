@@ -79,9 +79,9 @@ run the following command to clone the repository.
 % snip command...
 
 @x
-## Initialize Docker assets
+## Create Docker assets
 @y
-## Docker アセットの初期化 {#initialize-docker-assets}
+## Docker アセットの生成 {#create-docker-assets}
 @z
 
 @x
@@ -89,6 +89,16 @@ Now that you have an application, you can create the necessary Docker assets to 
 @y
 アプリケーションを入手できたので、必要な Docker アセットを生成してコンテナー化を行います。
 方法として 公式 .NET イメージと Docker Hardened イメージ (DHI) のいずれかを用います。
+@z
+
+@x
+> [!TIP]
+>
+> [Gordon](/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
+@y
+> [!TIP]
+>
+> [Gordon](__SUBDIR__/ai/gordon/), Docker's AI assistant, can generate Docker assets for your project. Ask Gordon to create a Dockerfile, Compose file, and `.dockerignore` tailored to your application.
 @z
 
 @x
@@ -136,17 +146,9 @@ Docker Hardened Images (DHIs) for .NET are available in the [Docker Hardened Ima
 % snip command...
 
 @x
-You can use `docker init` to generate Docker assets, then modify the Dockerfile to use DHI images:
+Create the following files in your `docker-dotnet-sample` directory.
 @y
-You can use `docker init` to generate Docker assets, then modify the Dockerfile to use DHI images:
-@z
-
-% snip command...
-
-@x
-In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` and `dhi.io/aspnetcore:10` as the base images.
-@y
-In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` and `dhi.io/aspnetcore:10` as the base images.
+`docker-dotnet-sample` ディレクトリ内に以下のファイルを生成します。
 @z
 
 % snip code...
@@ -161,6 +163,8 @@ In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` 
 > DHI runtime images already run as a non-root user (`nonroot`, UID 65532), so there's no need to create a user or specify `USER` in your Dockerfile. This reduces the attack surface and simplifies your configuration.
 @z
 
+% snip code...
+
 @x
 {{< /tab >}}
 {{< tab name="Using the official .NET 10 image" >}}
@@ -170,17 +174,9 @@ In the following Dockerfile, the `FROM` instructions use `dhi.io/dotnet:10-sdk` 
 @z
 
 @x
-You can use `docker init` to create the necessary Docker assets. Inside the `docker-dotnet-sample` directory, run the `docker init` command in a terminal. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. Refer to the following example to answer the prompts from `docker init` and use the same answers for your prompts.
+Create the following files in your `docker-dotnet-sample` directory.
 @y
-You can use `docker init` to create the necessary Docker assets. Inside the `docker-dotnet-sample` directory, run the `docker init` command in a terminal. `docker init` provides some default configuration, but you'll need to answer a few questions about your application. Refer to the following example to answer the prompts from `docker init` and use the same answers for your prompts.
-@z
-
-% snip command...
-
-@x
-This generates a Dockerfile using the official .NET 10 images from Microsoft Container Registry:
-@y
-This generates a Dockerfile using the official .NET 10 images from Microsoft Container Registry:
+`docker-dotnet-sample` ディレクトリ内に以下のファイルを生成します。
 @z
 
 % snip code...

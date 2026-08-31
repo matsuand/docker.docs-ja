@@ -17054,8 +17054,6 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
-    additionalProperties:
-      type: "string"
 @y
   Topology:
     description: |
@@ -17063,8 +17061,6 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
-    additionalProperties:
-      type: "string"
 @z
 
 @x

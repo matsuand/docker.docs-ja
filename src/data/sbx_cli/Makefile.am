@@ -23,6 +23,13 @@ bases = \
 	sbx_create_shell.yaml          \
 	sbx_diagnose.yaml              \
 	sbx_exec.yaml                  \
+	sbx_kit.yaml                   \
+	sbx_kit_add.yaml               \
+	sbx_kit_inspect.yaml           \
+	sbx_kit_pack.yaml              \
+	sbx_kit_pull.yaml              \
+	sbx_kit_push.yaml              \
+	sbx_kit_validate.yaml          \
 	sbx_login.yaml                 \
 	sbx_logout.yaml                \
 	sbx_ls.yaml                    \

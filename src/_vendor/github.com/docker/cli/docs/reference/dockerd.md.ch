@@ -2345,12 +2345,8 @@ the `--cgroup-parent` option on the daemon.
 
 @x
 The `--metrics-addr` option takes a TCP address to serve the metrics API.
-This feature is still experimental, therefore, the daemon must be running in experimental
-mode for this feature to work.
 @y
 The `--metrics-addr` option takes a TCP address to serve the metrics API.
-This feature is still experimental, therefore, the daemon must be running in experimental
-mode for this feature to work.
 @z
 
 @x

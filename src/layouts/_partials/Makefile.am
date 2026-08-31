@@ -24,6 +24,7 @@ copyfiles = \
 	guide-languages.html \
 	guide-tags.html      \
 	icon.html            \
+	mermaid-script.html  \
 	meta.html            \
 	pagemeta.html        \
 	pagefind-meta.html   \

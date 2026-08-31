@@ -6,8 +6,7 @@ copyfiles = \
 	css.html          \
 	description.html  \
 	keywords.html     \
-	markdown-url.html \
-	svg.html
+	markdown-url.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

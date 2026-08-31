@@ -5,7 +5,7 @@
 
 @x
 title: "Lab: Container Image Attestations"
-linkTitle: "Lab: Container Image Attestations"
+linkTitle: "Lab: Image attestations"
 description: |
   Learn to attach SBOMs, build provenance, image signatures, and VEX
   statements to container images for a verifiable software supply chain.
@@ -16,7 +16,7 @@ summary: |
 keywords: Docker, supply chain, SBOM, provenance, SLSA, Cosign, VEX, attestations, security, lab, labspace
 @y
 title: "Lab: Container Image Attestations"
-linkTitle: "Lab: Container Image Attestations"
+linkTitle: "Lab: Image attestations"
 description: |
   Learn to attach SBOMs, build provenance, image signatures, and VEX
   statements to container images for a verifiable software supply chain.
