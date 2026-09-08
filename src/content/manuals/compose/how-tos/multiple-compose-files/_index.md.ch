@@ -2,27 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: General overview for the different ways you can work with multiple compose
   files in Docker Compose
 keywords: compose, compose file, merge, extends, include, docker compose, -f flag
 linkTitle: Use multiple Compose files
 title: Use multiple Compose files
-weight: 80
-aliases:
-- /compose/multiple-compose-files/
----
 @y
----
 description: General overview for the different ways you can work with multiple compose
   files in Docker Compose
 keywords: compose, compose file, merge, extends, include, docker compose, -f flag
 linkTitle: Use multiple Compose files
 title: Use multiple Compose files
-weight: 80
-aliases:
-- /compose/multiple-compose-files/
----
 @z
 
 @x
@@ -38,9 +28,15 @@ Using multiple Compose files lets you customize a Compose application for differ
 @z
 
 @x
-The quickest way to work with multiple Compose files is to [merge](merge.md) Compose files using the `-f` flag in the command line to list out your desired Compose files. However, [merging rules](merge.md#merging-rules) means this can soon get quite complicated.
+The simplest way to work with multiple Compose files is to [merge](merge.md) them using
+the `-f` flag. This works well for straightforward overrides, but the
+[merging rules](merge.md#merging-rules) can make it complex to manage as your
+configuration grows.
 @y
-The quickest way to work with multiple Compose files is to [merge](merge.md) Compose files using the `-f` flag in the command line to list out your desired Compose files. However, [merging rules](merge.md#merging-rules) means this can soon get quite complicated.
+The simplest way to work with multiple Compose files is to [merge](merge.md) them using
+the `-f` flag. This works well for straightforward overrides, but the
+[merging rules](merge.md#merging-rules) can make it complex to manage as your
+configuration grows.
 @z
 
 @x

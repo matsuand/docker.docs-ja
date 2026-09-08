@@ -30,22 +30,6 @@ keywords: AI, Docker, Model Runner, MCP Gateway, agentic apps, lab, labspace
 @z
 
 @x
-    - title: Docker Model Runner docs
-      url: /ai/model-runner/
-    - title: Docker MCP Gateway docs
-      url: /ai/mcp-gateway/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-agentic-apps-with-docker
-@y
-    - title: Docker Model Runner docs
-      url: __SUBDIR__/ai/model-runner/
-    - title: Docker MCP Gateway docs
-      url: __SUBDIR__/ai/mcp-gateway/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-agentic-apps-with-docker
-@z
-
-@x
 Get up and running with building agentic applications using Compose, Docker
 Model Runner, and the Docker MCP Gateway. This hands-on lab takes you from
 understanding AI models to building complete agentic applications.

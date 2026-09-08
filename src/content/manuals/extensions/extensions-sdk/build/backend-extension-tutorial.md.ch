@@ -85,7 +85,31 @@ Here is the extension folder structure with a backend:
 Here is the extension folder structure with a backend:
 @z
 
-% snip text...
+@x
+```bash
+.
+├── Dockerfile # (1)
+├── Makefile
+├── metadata.json
+├── ui
+    └── index.html
+└── vm # (2)
+    ├── go.mod
+    └── main.go
+```
+@y
+```bash
+.
+├── Dockerfile # (1)
+├── Makefile
+├── metadata.json
+├── ui
+    └── index.html
+└── vm # (2)
+    ├── go.mod
+    └── main.go
+```
+@z
 
 @x
 1. Contains everything required to build the backend and copy it in the extension's container filesystem.
@@ -121,7 +145,15 @@ In this tutorial, the backend service simply exposes one route that returns a JS
 In this tutorial, the backend service simply exposes one route that returns a JSON payload that says "Hello".
 @z
 
-% snip code...
+@x
+```json
+{ "Message": "Hello" }
+```
+@y
+```json
+{ "Message": "Hello" }
+```
+@z
 
 @x
 > [!IMPORTANT]
@@ -149,7 +181,133 @@ In this tutorial, the backend service simply exposes one route that returns a JS
 {{< tab name="Go" >}}
 @z
 
-% snip code...
+@x
+```go
+package main
+@y
+```go
+package main
+@z
+
+@x
+import (
+	"flag"
+	"log"
+	"net"
+	"net/http"
+	"os"
+@y
+import (
+	"flag"
+	"log"
+	"net"
+	"net/http"
+	"os"
+@z
+
+@x
+	"github.com/labstack/echo"
+	"github.com/sirupsen/logrus"
+)
+@y
+	"github.com/labstack/echo"
+	"github.com/sirupsen/logrus"
+)
+@z
+
+@x
+func main() {
+	var socketPath string
+	flag.StringVar(&socketPath, "socket", "/run/guest/volumes-service.sock", "Unix domain socket to listen on")
+	flag.Parse()
+@y
+func main() {
+	var socketPath string
+	flag.StringVar(&socketPath, "socket", "/run/guest/volumes-service.sock", "Unix domain socket to listen on")
+	flag.Parse()
+@z
+
+@x
+	os.RemoveAll(socketPath)
+@y
+	os.RemoveAll(socketPath)
+@z
+
+@x
+	logrus.New().Infof("Starting listening on %s\n", socketPath)
+	router := echo.New()
+	router.HideBanner = true
+@y
+	logrus.New().Infof("Starting listening on %s\n", socketPath)
+	router := echo.New()
+	router.HideBanner = true
+@z
+
+@x
+	startURL := ""
+@y
+	startURL := ""
+@z
+
+@x
+	ln, err := listen(socketPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	router.Listener = ln
+@y
+	ln, err := listen(socketPath)
+	if err != nil {
+		log.Fatal(err)
+	}
+	router.Listener = ln
+@z
+
+@x
+	router.GET("/hello", hello)
+@y
+	router.GET("/hello", hello)
+@z
+
+@x
+	log.Fatal(router.Start(startURL))
+}
+@y
+	log.Fatal(router.Start(startURL))
+}
+@z
+
+@x
+func listen(path string) (net.Listener, error) {
+	return net.Listen("unix", path)
+}
+@y
+func listen(path string) (net.Listener, error) {
+	return net.Listen("unix", path)
+}
+@z
+
+@x
+func hello(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, HTTPMessageBody{Message: "hello world"})
+}
+@y
+func hello(ctx echo.Context) error {
+	return ctx.JSON(http.StatusOK, HTTPMessageBody{Message: "hello world"})
+}
+@z
+
+@x
+type HTTPMessageBody struct {
+	Message string
+}
+```
+@y
+type HTTPMessageBody struct {
+	Message string
+}
+```
+@z
 
 @x
 {{< /tab >}}
@@ -287,20 +445,54 @@ backend service, and package the extension.
 backend service, and package the extension.
 @z
 
-@x within code
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM node:17.7-alpine3.14 AS client-builder
 # ... build frontend application
 @y
+```dockerfile
+# syntax=docker/dockerfile:1
+FROM node:17.7-alpine3.14 AS client-builder
 # ... build frontend application
 @z
+
 @x
 # Build the Go backend
+FROM golang:1.17-alpine AS builder
+ENV CGO_ENABLED=0
+WORKDIR /backend
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    --mount=type=bind,source=vm/.,target=. \
+    go build -trimpath -ldflags="-s -w" -o bin/service
 @y
 # Build the Go backend
+FROM golang:1.17-alpine AS builder
+ENV CGO_ENABLED=0
+WORKDIR /backend
+RUN --mount=type=cache,target=/go/pkg/mod \
+    --mount=type=cache,target=/root/.cache/go-build \
+    --mount=type=bind,source=vm/.,target=. \
+    go build -trimpath -ldflags="-s -w" -o bin/service
 @z
+
 @x
+FROM alpine:3.15
 # ... add labels and copy the frontend application
 @y
+FROM alpine:3.15
 # ... add labels and copy the frontend application
+@z
+
+@x
+COPY --from=builder /backend/bin/service /
+CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
+```
+@y
+COPY --from=builder /backend/bin/service /
+CMD /service -socket /run/guest-services/extension-allthethings-extension.sock
+```
 @z
 
 @x
@@ -405,7 +597,31 @@ To start the backend service of your extension inside the VM of Docker Desktop, 
 in the `vm` section of the `metadata.json` file.
 @z
 
-% snip code...
+@x
+```json
+{
+  "vm": {
+    "image": "${DESKTOP_PLUGIN_IMAGE}"
+  },
+  "icon": "docker.svg",
+  "ui": {
+    ...
+  }
+}
+```
+@y
+```json
+{
+  "vm": {
+    "image": "${DESKTOP_PLUGIN_IMAGE}"
+  },
+  "icon": "docker.svg",
+  "ui": {
+    ...
+  }
+}
+```
+@z
 
 @x
 For more information on the `vm` section of the `metadata.json`, see [Metadata](../architecture/metadata.md).
@@ -465,11 +681,11 @@ Replace the `ui/src/App.tsx` file with the following code:
 
 @x
 // ui/src/App.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createDockerDesktopClient } from "@docker/extension-api-client";
 @y
 // ui/src/App.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createDockerDesktopClient } from "@docker/extension-api-client";
 @z
 
@@ -483,11 +699,9 @@ const ddClient = createDockerDesktopClient();
 
 @x
 export function App() {
-  const ddClient = createDockerDesktopClient();
   const [hello, setHello] = useState<string>();
 @y
 export function App() {
-  const ddClient = createDockerDesktopClient();
   const [hello, setHello] = useState<string>();
 @z
 

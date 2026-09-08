@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Container Image Attestations"
 linkTitle: "Lab: Image attestations"
@@ -30,27 +28,7 @@ keywords: Docker, supply chain, SBOM, provenance, SLSA, Cosign, VEX, attestation
 @x
   time: 45 minutes
 @y
-  time: 45 分
-@z
-
-@x
-    - title: Build attestations
-      url: /build/metadata/attestations/
-    - title: SBOM attestations
-      url: /build/metadata/attestations/sbom/
-    - title: Provenance attestations
-      url: /build/metadata/attestations/slsa-provenance/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-attestation-basics
-@y
-    - title: Build attestations
-      url: __SUBDIR__/build/metadata/attestations/
-    - title: SBOM attestations
-      url: __SUBDIR__/build/metadata/attestations/sbom/
-    - title: Provenance attestations
-      url: __SUBDIR__/build/metadata/attestations/slsa-provenance/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-attestation-basics
+  time: 45 minutes
 @z
 
 @x

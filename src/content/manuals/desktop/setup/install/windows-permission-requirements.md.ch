@@ -46,9 +46,9 @@ The permissions required to install and run Docker Desktop depend on which [inst
 @z
 
 @x
-### Per-user installation (Beta)
+### Per-user installation
 @y
-### Per-user installation (Beta)
+### Per-user installation
 @z
 
 @x
@@ -68,9 +68,9 @@ In per-user mode, Docker Desktop installs to `%LOCALAPPDATA%\Programs\DockerDesk
 @z
 
 @x
-Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. For most users this is not a limitation, as the WSL 2 backend covers the majority of use cases.
+Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. Docker VMM (Beta) is available in per-user mode and does not require the privileged helper. For most users, the WSL 2 or Docker VMM backend covers the majority of use cases.
 @y
-Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. For most users this is not a limitation, as the WSL 2 backend covers the majority of use cases.
+Per-user installation does not install the privileged helper service `com.docker.service` automatically. As a result, features that depend on it, such as the Hyper-V backend and Windows containers, are not available. Docker VMM (Beta) is available in per-user mode and does not require the privileged helper. For most users, the WSL 2 or Docker VMM backend covers the majority of use cases.
 @z
 
 @x
@@ -154,11 +154,11 @@ Docker Desktop needs to perform a limited set of privileged operations which are
 @x
 > [!NOTE]
 >
-> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which instead relies solely on the WSL 2 backend and does not support Hyper-V or Windows containers.
+> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which relies on the WSL 2 or Docker VMM backend and does not support Hyper-V or Windows containers.
 @y
 > [!NOTE]
 >
-> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which instead relies solely on the WSL 2 backend and does not support Hyper-V or Windows containers.
+> `com.docker.service` is only installed in all-users installation mode. It is not used in per-user installation, which relies on the WSL 2 or Docker VMM backend and does not support Hyper-V or Windows containers.
 @z
 
 @x

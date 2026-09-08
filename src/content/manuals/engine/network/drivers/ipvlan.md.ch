@@ -8,13 +8,13 @@ title: IPvlan network driver
 description:
   All about using IPvlan to make your containers appear like physical machines
   on the network
-keywords: network, ipvlan, l2, l3, standalone
+keywords: network, ipvlan, l2, l3, standalone, ipv6, slaac
 @y
 title: IPvlan network driver
 description:
   All about using IPvlan to make your containers appear like physical machines
   on the network
-keywords: network, ipvlan, l2, l3, standalone
+keywords: network, ipvlan, l2, l3, standalone, ipv6, slaac
 @z
 
 @x
@@ -1191,6 +1191,52 @@ $ docker run --net=ipvlan140 --ip=192.168.140.10 -it --rm alpine /bin/sh
 > one another. That requires a router to proxy-arp the requests with a secondary
 > subnet. However, IPvlan `L3` will route the unicast traffic between disparate
 > subnets as long as they share the same `-o parent` parent link.
+@z
+
+@x
+### Use router-assigned IPv6 addresses
+@y
+### Use router-assigned IPv6 addresses
+@z
+
+@x
+The previous examples assign IPv6 addresses from a subnet managed by Docker's
+IPAM. On an `ipvlan` network, you can instead let containers receive IPv6
+addresses directly from a router on the parent network, using stateless
+address autoconfiguration (SLAAC).
+@y
+The previous examples assign IPv6 addresses from a subnet managed by Docker's
+IPAM. On an `ipvlan` network, you can instead let containers receive IPv6
+addresses directly from a router on the parent network, using stateless
+address autoconfiguration (SLAAC).
+@z
+
+@x
+When an `ipvlan` network has no IPv6 subnet, Docker disables IPv6 on the
+container's interface, so it can't accept the router advertisements that SLAAC
+relies on. To re-enable IPv6 on the interface, set its `disable_ipv6` sysctl
+to `0` when you connect the container to the network:
+@y
+When an `ipvlan` network has no IPv6 subnet, Docker disables IPv6 on the
+container's interface, so it can't accept the router advertisements that SLAAC
+relies on. To re-enable IPv6 on the interface, set its `disable_ipv6` sysctl
+to `0` when you connect the container to the network:
+@z
+
+% snip command...
+
+@x
+Use the literal string `IFNAME` in the sysctl name. Docker replaces it with
+the name of the container's interface on this network. `disable_ipv6` is a
+per-interface sysctl, so it must be set with the `endpoint.sysctls`
+driver option rather than `docker run --sysctl`. For more details, see
+[`docker network connect`](/reference/cli/docker/network/connect/#sysctl).
+@y
+Use the literal string `IFNAME` in the sysctl name. Docker replaces it with
+the name of the container's interface on this network. `disable_ipv6` is a
+per-interface sysctl, so it must be set with the `endpoint.sysctls`
+driver option rather than `docker run --sysctl`. For more details, see
+[`docker network connect`](/reference/cli/docker/network/connect/#sysctl).
 @z
 
 @x

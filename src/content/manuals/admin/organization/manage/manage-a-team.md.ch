@@ -28,10 +28,10 @@ keywords: docker, registry, teams, organizations, plans, Dockerfile, Docker
 @z
 
 @x
-You can create teams for your organization in the Admin Console or Docker Hub,
+You can create teams for your organization in Docker Home or Docker Hub,
 and configure team repository access in Docker Hub.
 @y
-You can create teams for your organization in the Admin Console or Docker Hub,
+You can create teams for your organization in Docker Home or Docker Hub,
 and configure team repository access in Docker Hub.
 @z
 

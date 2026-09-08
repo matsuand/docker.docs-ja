@@ -4,22 +4,28 @@
 % __SUBDIR__ 対応 /  .md リンクへの (no slash) 対応
 
 @x
-title: Organization overview
+title: Docker organization overview
 linkTitle: Organization
 @y
-title: Organization overview
+title: Docker organization overview
 linkTitle: Organization
 @z
 
 @x
-description: Learn how to manage your Docker organization, including teams, members, permissions, and settings.
-keywords: organizations, admin, overview, manage teams, roles
+description: >
+  Learn how Docker organization accounts relate to individual accounts, and how
+  to manage teams, members, permissions, and settings.
+keywords: organizations, admin, overview, manage teams, roles, members,
+  permissions, organization settings, organization account, individual account,
+  Docker ID, account types, owners, teams
 @y
-description: Learn how to manage your Docker organization, including teams, members, permissions, and settings.
-keywords: organizations, admin, overview, manage teams, roles
+description: >
+  Learn how Docker organization accounts relate to individual accounts, and how
+  to manage teams, members, permissions, and settings.
+keywords: organizations, admin, overview, manage teams, roles, members,
+  permissions, organization settings, organization account, individual account,
+  Docker ID, account types, owners, teams
 @z
-
-% grid:
 
 @x
   - title: Onboard your organization
@@ -35,12 +41,12 @@ keywords: organizations, admin, overview, manage teams, roles
 
 @x
   - title: Manage members
-    description: Explore how to manage members.
+    description: Learn how to manage members.
     icon: user-plus
     link: /admin/organization/manage/members/
 @y
-  - title: メンバー管理
-    description: Explore how to manage members.
+  - title: Manage members
+    description: Learn how to manage members.
     icon: user-plus
     link: __SUBDIR__/admin/organization/manage/members/
 @z
@@ -51,94 +57,36 @@ keywords: organizations, admin, overview, manage teams, roles
     icon: document-text
     link: /admin/activity-logs/
 @y
-  - title: アクティビティログ
+  - title: Activity logs
     description: Learn how to audit the activities of your members.
     icon: document-text
     link: __SUBDIR__/admin/activity-logs/
 @z
 
 @x
-  - title: Image Access Management
-    description: Control which types of images your developers can pull.
-    icon: photo
-    link: /admin/organization/image-access/
-@y
-  - title: イメージアクセス管理
-    description: Control which types of images your developers can pull.
-    icon: photo
-    link: __SUBDIR__/admin/organization/image-access/
-@z
-
-@x
-  - title: Registry Access Management
-    description: Define which registries your developers can access.
-    icon: server
-    link: /admin/organization/registry-access/
-@y
-  - title: レジストリアクセス管理
-    description: Define which registries your developers can access.
-    icon: server
-    link: __SUBDIR__/admin/organization/registry-access/
-@z
-
-@x
-  - title: Organization settings
-    description: Configure information for your organization and manage settings.
-    icon: cog-6-tooth
-    link: /admin/organization/setup/general-settings/
-@y
-  - title: 組織設定
-    description: Configure information for your organization and manage settings.
-    icon: cog-6-tooth
-    link: __SUBDIR__/admin/organization/setup/general-settings/
-@z
-
-@x
-  - title: SSO and SCIM
+  - title: Security
     description:
-      "Set up [Single Sign-On](/manuals/enterprise/security/single-sign-on/_index.md)
-      and [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md) for your organization."
-    icon: key
+      Start here to manage security and access for your organization, including
+      single sign-on, provisioning, and image and registry access management.
+    icon: shield-check
+    link: /enterprise/security/
 @y
-  - title: SSO と SCIM
+  - title: Security
     description:
-      "Set up [Single Sign-On](manuals/enterprise/security/single-sign-on/_index.md)
-      and [SCIM](manuals/enterprise/security/provisioning/scim/_index.md) for your organization."
-    icon: key
+      Start here to manage security and access for your organization, including
+      single sign-on, provisioning, and image and registry access management.
+    icon: shield-check
+    link: __SUBDIR__/enterprise/security/
 @z
 
 @x
-  - title: Domain management
-    description: Add, verify, and audit your domains.
-    link: /enterprise/security/domain-management/
-    icon: check-badge
+A Docker organization is a collection of teams and repositories under
+centralized management. Organization administrators group members and
+assign repository access at scale.
 @y
-  - title: ドメイン管理
-    description: Add, verify, and audit your domains.
-    link: __SUBDIR__/enterprise/security/domain-management/
-    icon: check-badge
-@z
-
-@x
-  - title: FAQs
-    description: Explore common organization FAQs.
-    link: /faq/admin/organization-faqs/
-    icon: question-mark-circle
-@y
-  - title: FAQ
-    description: Explore common organization FAQs.
-    link: __SUBDIR__/faq/admin/organization-faqs/
-    icon: question-mark-circle
-@z
-
-@x
-A Docker organization is a collection of teams and repositories with centralized
-management. It helps administrators group members and assign access in a
-streamlined, scalable way.
-@y
-A Docker organization is a collection of teams and repositories with centralized
-management. It helps administrators group members and assign access in a
-streamlined, scalable way.
+A Docker organization is a collection of teams and repositories under
+centralized management. Organization administrators group members and
+assign repository access at scale.
 @z
 
 @x
@@ -154,37 +102,91 @@ The following diagram shows how organizations relate to teams and members.
 @z
 
 @x
-![Diagram showing how teams and members relate within a Docker organization](/admin/images/org-structure.webp)
+![Diagram showing how teams and members relate within a Docker
+organization](/admin/images/org-structure.webp)
 @y
-![Diagram showing how teams and members relate within a Docker organization](admin/images/org-structure.webp)
+![Diagram showing how teams and members relate within a Docker
+organization](admin/images/org-structure.webp)
 @z
 
 @x
-## Organization members
+For how organizations fit into the broader company hierarchy, see
+[Administration
+overview](/manuals/admin/_index.md#company-and-organization-hierarchy).
 @y
-## Organization members
+For how organizations fit into the broader company hierarchy, see
+[Administration
+overview](manuals/admin/_index.md#company-and-organization-hierarchy).
 @z
 
 @x
-Organization owners have full administrator access to manage members, roles,
-and teams across the organization.
+## Individual and organization accounts
 @y
-Organization owners have full administrator access to manage members, roles,
-and teams across the organization.
+## Individual and organization accounts
 @z
 
 @x
-An organization includes members and optional teams. Teams help group members
-and simplify permission management.
+Docker has two primary account types:
 @y
-An organization includes members and optional teams. Teams help group members
-and simplify permission management.
+Docker has two primary account types:
 @z
 
 @x
-## Create and manage your organization
+- Individual accounts that are identified by a Docker ID.
+- Organization accounts that are shared workspaces for teams and
+  repositories.
 @y
-## Create and manage your organization
+- Individual accounts that are identified by a Docker ID.
+- Organization accounts that are shared workspaces for teams and
+  repositories.
+@z
+
+@x
+Every organization is created and administered by one or more individual
+accounts. You always sign in with your individual account, then work in the
+organizations you own or belong to. Organization owners and members are
+individual accounts that hold a role in that organization. For individual
+accounts, see [Accounts](/manuals/accounts/_index.md).
+@y
+Every organization is created and administered by one or more individual
+accounts. You always sign in with your individual account, then work in the
+organizations you own or belong to. Organization owners and members are
+individual accounts that hold a role in that organization. For individual
+accounts, see [Accounts](manuals/accounts/_index.md).
+@z
+
+@x
+## Organization roles
+@y
+## Organization roles
+@z
+
+@x
+An organization includes owners, members, and optional teams. Organization
+owners have full administrator access to manage members, roles, and teams. A
+team is an optional grouping of members that share the same repository
+permissions.
+@y
+An organization includes owners, members, and optional teams. Organization
+owners have full administrator access to manage members, roles, and teams. A
+team is an optional grouping of members that share the same repository
+permissions.
+@z
+
+@x
+For details about each role and its permissions, see
+[Roles and
+permissions](/manuals/enterprise/security/roles-and-permissions/_index.md).
+@y
+For details about each role and its permissions, see
+[Roles and
+permissions](manuals/enterprise/security/roles-and-permissions/_index.md).
+@z
+
+@x
+## Next steps
+@y
+## Next steps
 @z
 
 @x

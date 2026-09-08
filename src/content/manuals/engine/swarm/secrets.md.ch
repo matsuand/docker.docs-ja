@@ -294,6 +294,40 @@ Use these links to read about specific commands, or continue to the
 @z
 
 @x
+## Defining and using secrets in Compose files
+@y
+## Defining and using secrets in Compose files
+@z
+
+@x
+Using secrets in a Compose file alongside Docker Swarm is as simple as defining a secret
+using `docker secret create`.
+@y
+Using secrets in a Compose file alongside Docker Swarm is as simple as defining a secret
+using `docker secret create`.
+@z
+
+% snip command...
+
+@x
+In the `compose.yml` file you can declare the secret as `external` in the top-level `secrets` attribute.
+@y
+In the `compose.yml` file you can declare the secret as `external` in the top-level `secrets` attribute.
+@z
+
+% snip code...
+
+@x
+Both the `docker compose` and `docker stack` commands support defining secrets
+in a Compose file. See
+[the Compose file reference](/reference/compose-file/secrets.md) for details.
+@y
+Both the `docker compose` and `docker stack` commands support defining secrets
+in a Compose file. See
+[the Compose file reference](/reference/compose-file/secrets.md) for details.
+@z
+
+@x
 ## Examples
 @y
 ## Examples
@@ -325,22 +359,6 @@ a similar way, see
 > These examples use a single-Engine swarm and unscaled services for
 > simplicity. The examples use Linux containers, but Windows containers also
 > support secrets. See [Windows support](#windows-support).
-@z
-
-@x
-### Defining and using secrets in compose files
-@y
-### Defining and using secrets in compose files
-@z
-
-@x
-Both the `docker-compose` and `docker stack` commands support defining secrets
-in a compose file. See
-[the Compose file reference](/reference/compose-file/legacy-versions.md) for details.
-@y
-Both the `docker-compose` and `docker stack` commands support defining secrets
-in a compose file. See
-[the Compose file reference](reference/compose-file/legacy-versions.md) for details.
 @z
 
 @x

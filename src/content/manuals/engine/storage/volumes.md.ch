@@ -685,15 +685,13 @@ the containers and volumes. Note volume removal is a separate step.
 @z
 
 @x
-For some development applications, the container needs to write into the bind
-mount so that changes are propagated back to the Docker host. At other times,
-the container only needs read access to the data. Multiple
+For some applications, the container needs to write to the volume. At other
+times, the container only needs read access to the data. Multiple
 containers can mount the same volume. You can simultaneously mount a
 single volume as `read-write` for some containers and as `read-only` for others.
 @y
-For some development applications, the container needs to write into the bind
-mount so that changes are propagated back to the Docker host. At other times,
-the container only needs read access to the data. Multiple
+For some applications, the container needs to write to the volume. At other
+times, the container only needs read access to the data. Multiple
 containers can mount the same volume. You can simultaneously mount a
 single volume as `read-write` for some containers and as `read-only` for others.
 @z
@@ -1369,11 +1367,13 @@ To remove all unused volumes and free up space:
 @x
 - Learn about [bind mounts](bind-mounts.md).
 - Learn about [tmpfs mounts](tmpfs.md).
+- Learn about [image mounts](image-mounts.md).
 - Learn about [storage drivers](/engine/storage/drivers/).
 - Learn about [third-party volume driver plugins](/engine/extend/legacy_plugins/).
 @y
 - Learn about [bind mounts](bind-mounts.md).
 - Learn about [tmpfs mounts](tmpfs.md).
+- Learn about [image mounts](image-mounts.md).
 - Learn about [storage drivers](__SUBDIR__/engine/storage/drivers/).
 - Learn about [third-party volume driver plugins](__SUBDIR__/engine/extend/legacy_plugins/).
 @z

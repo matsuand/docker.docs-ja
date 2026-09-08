@@ -167,7 +167,16 @@ title: Troubleshooting
   - Exposing SCTP ports
 - To use the `ping` command, see [Routing ping packets](./tips.md#routing-ping-packets).
 - To expose privileged TCP/UDP ports (< 1024), see [Exposing privileged ports](./tips.md#exposing-privileged-ports).
+- `IPAddress` shown in `docker inspect` is namespaced inside RootlessKit's network namespace.
+  This means the IP address is not reachable from the host without `nsenter`-ing into the network namespace.
+- Port forwarding with `docker run -p` does not propagate source IP addresses by default.
+  See [`docker run -p` does not propagate source IP addresses](#docker-run--p-does-not-propagate-source-ip-addresses) to enable source IP propagation.
 - NFS mounts as the docker "data-root" is not supported. This limitation is not specific to rootless mode.
+- Capabilities added with `--cap-add` apply only to resources governed by the
+  container's user namespace. They don't grant privileges over host or other
+  global resources. As a result, operations that require capabilities in the
+  [initial user namespace](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)
+  can still fail.
 @y
 - Only the following storage drivers are supported:
   - `overlay2` (only if running with kernel 5.11 or later)
@@ -182,7 +191,16 @@ title: Troubleshooting
   - Exposing SCTP ports
 - To use the `ping` command, see [Routing ping packets](./tips.md#routing-ping-packets).
 - To expose privileged TCP/UDP ports (< 1024), see [Exposing privileged ports](./tips.md#exposing-privileged-ports).
+- `IPAddress` shown in `docker inspect` is namespaced inside RootlessKit's network namespace.
+  This means the IP address is not reachable from the host without `nsenter`-ing into the network namespace.
+- Port forwarding with `docker run -p` does not propagate source IP addresses by default.
+  See [`docker run -p` does not propagate source IP addresses](#docker-run--p-does-not-propagate-source-ip-addresses) to enable source IP propagation.
 - NFS mounts as the docker "data-root" is not supported. This limitation is not specific to rootless mode.
+- Capabilities added with `--cap-add` apply only to resources governed by the
+  container's user namespace. They don't grant privileges over host or other
+  global resources. As a result, operations that require capabilities in the
+  [initial user namespace](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)
+  can still fail.
 @z
 
 @x
@@ -198,13 +216,11 @@ title: Troubleshooting
 @z
 
 @x
-- `IPAddress` shown in `docker inspect` is namespaced inside RootlessKit's network namespace.
-  This means the IP address is not reachable from the host without `nsenter`-ing into the network namespace.
-- Host network (`docker run --net=host`) is also namespaced inside RootlessKit.
+- Host network (`docker run --net=host`) was namespaced inside RootlessKit.
+  This meant that ports listened by containers with `--net=host` were not reachable from the real host network namespace.
 @y
-- `IPAddress` shown in `docker inspect` is namespaced inside RootlessKit's network namespace.
-  This means the IP address is not reachable from the host without `nsenter`-ing into the network namespace.
-- Host network (`docker run --net=host`) is also namespaced inside RootlessKit.
+- Host network (`docker run --net=host`) was namespaced inside RootlessKit.
+  This meant that ports listened by containers with `--net=host` were not reachable from the real host network namespace.
 @z
 
 @x
@@ -714,11 +730,11 @@ For details, see [Routing ping packets](./tips.md#routing-ping-packets).
 @z
 
 @x
-This was an expected behavior until Docker Engine v29.5, as the daemon was namespaced inside RootlessKit's
-network namespace. Use `docker run -p` instead, or upgrade to Docker Engine v29.5 or later.
+This is an expected behavior, as the daemon is namespaced inside RootlessKit's
+network namespace. Use `docker run -p` instead.
 @y
-This was an expected behavior until Docker Engine v29.5, as the daemon was namespaced inside RootlessKit's
-network namespace. Use `docker run -p` instead, or upgrade to Docker Engine v29.5 or later.
+This is an expected behavior, as the daemon is namespaced inside RootlessKit's
+network namespace. Use `docker run -p` instead.
 @z
 
 @x

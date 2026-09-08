@@ -11,14 +11,14 @@ title: Claude Code
 
 @x
 description: |
-  Use Claude Code in Docker Sandboxes with authentication, configuration, and
-  YOLO mode for AI-assisted development.
-keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
+  Use Claude Code in Docker Sandboxes with authentication, local models,
+  configuration, and YOLO mode for AI-assisted development.
+keywords: docker sandboxes, claude code, anthropic, ai agent, sbx, local models, llmman, ollama
 @y
 description: |
-  Use Claude Code in Docker Sandboxes with authentication, configuration, and
-  YOLO mode for AI-assisted development.
-keywords: docker sandboxes, claude code, anthropic, ai agent, sbx
+  Use Claude Code in Docker Sandboxes with authentication, local models,
+  configuration, and YOLO mode for AI-assisted development.
+keywords: docker sandboxes, claude code, anthropic, ai agent, sbx, local models, llmman, ollama
 @z
 
 @x
@@ -89,40 +89,28 @@ Claude Code requires either an Anthropic API key or a Claude subscription.
 
 @x
 **API key**: Store your key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
 **API key**: Store your key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ sbx secret set -g anthropic
+$ sbx secret set anthropic
 ```
 @y
 ```console
-$ sbx secret set -g anthropic
+$ sbx secret set anthropic
 ```
 @z
 
 @x
-Alternatively, export the `ANTHROPIC_API_KEY` environment variable in your
-shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
+**Claude subscription**: If no API key is set, use the `/login` command inside
+Claude Code to authenticate via OAuth.
 @y
-Alternatively, export the `ANTHROPIC_API_KEY` environment variable in your
-shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
-@z
-
-@x
-**Claude subscription**: If no API key is set, Claude Code prompts you to
-authenticate interactively using OAuth. The proxy handles the OAuth flow, so
-credentials aren't stored inside the sandbox.
-@y
-**Claude subscription**: If no API key is set, Claude Code prompts you to
-authenticate interactively using OAuth. The proxy handles the OAuth flow, so
-credentials aren't stored inside the sandbox.
+**Claude subscription**: If no API key is set, use the `/login` command inside
+Claude Code to authenticate via OAuth.
 @z
 
 @x
@@ -143,6 +131,30 @@ Sandboxes don't pick up user-level configuration from your host, such as
 available inside the sandbox. See
 [Why doesn't the sandbox use my user-level agent configuration?](../faq.md#why-doesnt-the-sandbox-use-my-user-level-agent-configuration)
 for workarounds.
+@z
+
+@x
+### Remote control
+@y
+### Remote control
+@z
+
+@x
+To use Claude Code's `/remote-control` command inside a sandbox, turn on remote
+control:
+@y
+To use Claude Code's `/remote-control` command inside a sandbox, turn on remote
+control:
+@z
+
+@x
+```console
+$ sbx settings set claude.remoteControl true
+```
+@y
+```console
+$ sbx settings set claude.remoteControl true
+```
 @z
 
 @x
@@ -168,21 +180,31 @@ claude --dangerously-skip-permissions
 @z
 
 @x
-Args after `--` replace these defaults rather than being appended. To keep
-`--dangerously-skip-permissions`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--dangerously-skip-permissions` is
+preserved:
 @y
-Args after `--` replace these defaults rather than being appended. To keep
-`--dangerously-skip-permissions`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--dangerously-skip-permissions` is
+preserved:
 @z
 
 @x
 ```console
-$ sbx run claude -- --dangerously-skip-permissions -c
+$ sbx run claude -- -c   # runs claude --dangerously-skip-permissions -c
 ```
 @y
 ```console
-$ sbx run claude -- --dangerously-skip-permissions -c
+$ sbx run claude -- -c   # runs claude --dangerously-skip-permissions -c
 ```
+@z
+
+@x
+When the first argument is a bare word, such as the `agents` subcommand, it
+replaces the defaults instead.
+@y
+When the first argument is a bare word, such as the `agents` subcommand, it
+replaces the defaults instead.
 @z
 
 @x
@@ -201,14 +223,14 @@ for available options.
 
 @x
 Claude Code's [agents view](https://code.claude.com/docs/en/agent-view)
-dispatches tasks to subagents that work in parallel, each in its own
-Git worktree. Pair it with [clone mode](../usage.md#clone-mode) for an
-isolated multi-agent workflow:
+starts background sessions that run tasks in parallel. Pair it with
+[clone mode](../workflows/git.md#clone-mode) to keep their changes inside the
+sandbox:
 @y
 Claude Code's [agents view](https://code.claude.com/docs/en/agent-view)
-dispatches tasks to subagents that work in parallel, each in its own
-Git worktree. Pair it with [clone mode](../usage.md#clone-mode) for an
-isolated multi-agent workflow:
+starts background sessions that run tasks in parallel. Pair it with
+[clone mode](../workflows/git.md#clone-mode) to keep their changes inside the
+sandbox:
 @z
 
 @x
@@ -246,15 +268,25 @@ $ sbx run --clone claude -- --dangerously-skip-permissions agents
 @z
 
 @x
-The subagents' worktrees live inside the sandbox's private clone — none
-of them touches your host repository. Each subagent commits to its own
-branch, and you review the work from the host by fetching the
-`sandbox-<sandbox-name>` remote:
+Claude Code may use branches or worktrees to keep changes from its background
+sessions separate. This depends on the task, Claude Code configuration, and
+project instructions. The `--clone` flag doesn't control this behavior. Claude
+Code creates any branches and worktrees inside the sandbox, not in your host
+checkout.
 @y
-The subagents' worktrees live inside the sandbox's private clone — none
-of them touches your host repository. Each subagent commits to its own
-branch, and you review the work from the host by fetching the
-`sandbox-<sandbox-name>` remote:
+Claude Code may use branches or worktrees to keep changes from its background
+sessions separate. This depends on the task, Claude Code configuration, and
+project instructions. The `--clone` flag doesn't control this behavior. Claude
+Code creates any branches and worktrees inside the sandbox, not in your host
+checkout.
+@z
+
+@x
+To review a branch created by a session, fetch the
+`sandbox-<sandbox-name>` remote from the host:
+@y
+To review a branch created by a session, fetch the
+`sandbox-<sandbox-name>` remote from the host:
 @z
 
 @x
@@ -270,9 +302,9 @@ $ git diff main..sandbox-<sandbox-name>/<branch>
 @z
 
 @x
-See [Git workflow](../usage.md#git-workflow) for clone-mode details.
+See [Git workflows](../workflows/git.md) for clone-mode details.
 @y
-See [Git workflow](../usage.md#git-workflow) for clone-mode details.
+See [Git workflows](../workflows/git.md) for clone-mode details.
 @z
 
 @x
@@ -298,15 +330,111 @@ this base.
 @z
 
 @x
-To run Claude Code in a sandbox against a local model on your host through
-Docker Model Runner, see
+The `--model` flag routes Claude Code's Anthropic API requests to a model
+served on your host. This feature is experimental and isn't supported on
+Windows.
+@y
+The `--model` flag routes Claude Code's Anthropic API requests to a model
+served on your host. This feature is experimental and isn't supported on
+Windows.
+@z
+
+@x
+Enable the feature:
+@y
+Enable the feature:
+@z
+
+@x
+```console
+$ sbx settings set platform.allowExperimentalFeatures true
+$ sbx settings set feature.model true
+```
+@y
+```console
+$ sbx settings set platform.allowExperimentalFeatures true
+$ sbx settings set feature.model true
+```
+@z
+
+@x
+To use the bundled `llmman` model server, pass a GGUF model reference or short
+name:
+@y
+To use the bundled `llmman` model server, pass a GGUF model reference or short
+name:
+@z
+
+@x
+```console
+$ sbx run --model gemma4 claude
+```
+@y
+```console
+$ sbx run --model gemma4 claude
+```
+@z
+
+@x
+On first use, `sbx` starts `llmman`, pulls the model, and leaves the server
+running on your host. Later sandboxes reuse the server and its model store.
+@y
+On first use, `sbx` starts `llmman`, pulls the model, and leaves the server
+running on your host. Later sandboxes reuse the server and its model store.
+@z
+
+@x
+To use an existing Ollama installation instead, set the provider to `ollama`:
+@y
+To use an existing Ollama installation instead, set the provider to `ollama`:
+@z
+
+@x
+```console
+$ sbx run --model gemma4 --provider ollama claude
+```
+@y
+```console
+$ sbx run --model gemma4 --provider ollama claude
+```
+@z
+
+@x
+Ollama must already be installed and running. `sbx` connects to it but doesn't
+start or manage the Ollama process.
+@y
+Ollama must already be installed and running. `sbx` connects to it but doesn't
+start or manage the Ollama process.
+@z
+
+@x
+You can also change the model for an existing sandbox:
+@y
+You can also change the model for an existing sandbox:
+@z
+
+@x
+```console
+$ sbx run --name <sandbox-name> --model <model-name>
+```
+@y
+```console
+$ sbx run --name <sandbox-name> --model <model-name>
+```
+@z
+
+@x
+Changing the model recreates the sandbox container. The workspace and
+kit-owned volumes persist.
+@y
+Changing the model recreates the sandbox container. The workspace and
+kit-owned volumes persist.
+@z
+
+@x
+To use Docker Model Runner instead, see
 [Run Claude Code in a Docker Sandbox with Docker Model Runner](/guides/claude-code-sandbox-model-runner/).
-For the host-only version without a sandbox, see
-[Use Claude Code with Docker Model Runner](/guides/claude-code-model-runner/).
 @y
-To run Claude Code in a sandbox against a local model on your host through
-Docker Model Runner, see
+To use Docker Model Runner instead, see
 [Run Claude Code in a Docker Sandbox with Docker Model Runner](__SUBDIR__/guides/claude-code-sandbox-model-runner/).
-For the host-only version without a sandbox, see
-[Use Claude Code with Docker Model Runner](__SUBDIR__/guides/claude-code-model-runner/).
 @z

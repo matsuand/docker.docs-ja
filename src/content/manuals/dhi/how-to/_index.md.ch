@@ -7,25 +7,21 @@
 title: How-tos
 description: Step-by-step guidance for working with Docker Hardened Images, from discovery to governance.
 @y
-title: ハウツー
+title: How-tos
 description: Step-by-step guidance for working with Docker Hardened Images, from discovery to governance.
 @z
 
-% grid_discover:
-
 @x
     - title: Search and evaluate Docker Hardened Images
-      description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
+      description: Learn how to find and compare image repositories, variants, and metadata in the DHI catalog.
       icon: globe-alt
-      link: /dhi/how-to/explore/
+      link: /dhi/how-to/search-evaluate/
 @y
     - title: Search and evaluate Docker Hardened Images
-      description: Learn how to find and evaluate image repositories, variants, metadata, and attestations in the DHI catalog on Docker Hub.
+      description: Learn how to find and compare image repositories, variants, and metadata in the DHI catalog.
       icon: globe-alt
-      link: __SUBDIR__/dhi/how-to/explore/
+      link: __SUBDIR__/dhi/how-to/search-evaluate/
 @z
-
-% grid_adopt:
 
 @x
     - title: Get started with DHI Select and Enterprise
@@ -37,18 +33,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       description: Learn how to mirror repositories, customize images, and access compliance variants with DHI Select and Enterprise subscriptions.
       icon: rocket-launch
       link: __SUBDIR__/dhi/how-to/select-enterprise/
-@z
-
-@x
-    - title: Use the DHI CLI
-      description: Use the dhictl command-line tool to manage and interact with Docker Hardened Images.
-      icon: command-line
-      link: /dhi/how-to/cli/
-@y
-    - title: Use the DHI CLI
-      description: Use the dhictl command-line tool to manage and interact with Docker Hardened Images.
-      icon: command-line
-      link: __SUBDIR__/dhi/how-to/cli/
 @z
 
 @x
@@ -111,8 +95,6 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/helm/
 @z
 
-% grid_verify:
-
 @x
     - title: Verify a Docker Hardened Image or chart
       description: Use Docker Scout or cosign to verify signed attestations like SBOMs, provenance, and vulnerability data for Docker Hardened Images and charts.
@@ -137,21 +119,43 @@ description: Step-by-step guidance for working with Docker Hardened Images, from
       link: __SUBDIR__/dhi/how-to/scan/
 @z
 
-% grid_govern:
+@x
+    - title: Query VEX for a Docker Hardened Image
+      description: Use the DHI GraphQL API to fetch VEX statements and suppressed CVEs for a Docker Hardened Image by digest, at scale.
+      icon: bug-ant
+      link: /dhi/how-to/vex-api/
+@y
+    - title: Query VEX for a Docker Hardened Image
+      description: Use the DHI GraphQL API to fetch VEX statements and suppressed CVEs for a Docker Hardened Image by digest, at scale.
+      icon: bug-ant
+      link: __SUBDIR__/dhi/how-to/vex-api/
+@z
 
 @x
-    - title: Enforce Docker Hardened Image usage with policies
-      description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
+    - title: Apply Docker Hardened Image policies to your images
+      description: Learn how to hold your own images to Docker Hardened Image security and compliance standards using the Docker Scout CLI.
       icon: shield-check
       link: /dhi/how-to/policies/
 @y
-    - title: Enforce Docker Hardened Image usage with policies
-      description: Learn how to use image policies with Docker Scout for Docker Hardened Images.
+    - title: Apply Docker Hardened Image policies to your images
+      description: Learn how to hold your own images to Docker Hardened Image security and compliance standards using the Docker Scout CLI.
       icon: shield-check
       link: __SUBDIR__/dhi/how-to/policies/
 @z
 
 @x
+    - title: Troubleshoot
+      description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
+      icon: question-mark-circle
+      link: /dhi/how-to/troubleshoot/
+@y
+    - title: Troubleshoot
+      description: Resolve common issues when building, running, or debugging Docker Hardened Images, such as non-root behavior, missing shells, and port access.
+      icon: question-mark-circle
+      link: __SUBDIR__/dhi/how-to/troubleshoot/
+@z
+
+@x
 This section provides practical, task-based guidance for working with Docker
 Hardened Images (DHIs). Whether you're evaluating DHIs for the first time or
 integrating them into a production CI/CD pipeline, these topics cover the key
@@ -262,5 +266,21 @@ Enforce policies to maintain security and compliance.
 @y
 {{< grid
   items="grid_govern"
+>}}
+@z
+
+@x
+## Troubleshoot
+@y
+## Troubleshoot
+@z
+
+@x
+{{< grid
+  items="grid_troubleshoot"
+>}}
+@y
+{{< grid
+  items="grid_troubleshoot"
 >}}
 @z

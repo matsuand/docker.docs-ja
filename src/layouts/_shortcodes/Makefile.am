@@ -6,9 +6,11 @@ bases = \
 	desktop-install.html    \
 	desktop-install-v2.html \
 	experimental.html       \
+	files.markdown.md       \
 	labspace-launch.html    \
 	restricted.html         \
-	summary-bar.html
+	summary-bar.html        \
+	whats-new.markdown.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -24,6 +26,8 @@ copyfiles = \
 	card.markdown.md               \
 	desktop-install-v2.markdown.md \
 	experimental.markdown.md       \
+	file.html                      \
+	files.html                     \
 	grid.html                      \
 	grid.markdown.md               \
 	include.html                   \

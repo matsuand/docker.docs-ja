@@ -2,41 +2,57 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-    <p>Filter guides by tag or programming language.</p>
+        Guides
 @y
-    <p>検索フィルターによりタグまたはプログラミング言語を絞り込みます<p>
+        ガイド
 @z
 
 @x
-      <div class="pl-2"><strong>Tags</strong></div>
+        placeholder="Filter guides by name, topic, or tag…"
 @y
-      <div class="pl-2"><strong>タグ</strong></div>
+        placeholder="キーワード、トピック、タグによるガイド検索…"
 @z
 
 @x
-      <div class="pl-2"><strong>Languages</strong></div>
+          Browse
 @y
-      <div class="pl-2"><strong>プログラミング言語</strong></div>
+          ブラウズ
 @z
 
 @x
-          <h2>Featured guides</h2>
+            <span>All guides</span>
 @y
-          <h2>注目の話題</h2>
+            <span>全ガイド</span>
 @z
 
 @x
-          All guides
+              Featured
 @y
-          全ガイド
+              注目ガイド
 @z
 
 @x
-              Filtered results: showing
-              <span x-text="total - hidden.length"></span> out of
-              <span x-text="total"></span> guides.
+            <span class="font-semibold text-gray-900 dark:text-gray-100" x-text="resultCount()"></span>
+            of {{ len .RegularPagesRecursive }} guides
 @y
-              フィルター結果:
-              <span x-text="total"></span> 件中
-              <span x-text="total - hidden.length"></span> 件のガイドを表示
+            {{ len .RegularPagesRecursive }} 件のガイド中
+            <span class="font-semibold text-gray-900 dark:text-gray-100" x-text="resultCount()"></span>
+@z
+
+@x
+            Clear filter
+@y
+            フィルタークリア
+@z
+
+@x
+            No guides match “<span class="font-medium text-gray-700 dark:text-gray-200" x-text="query"></span>”.
+@y
+            合致しませんでした “<span class="font-medium text-gray-700 dark:text-gray-200" x-text="query"></span>”.
+@z
+
+@x
+            Clear filter
+@y
+            フィルタークリア
 @z

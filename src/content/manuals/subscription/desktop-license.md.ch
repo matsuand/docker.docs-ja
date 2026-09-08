@@ -24,29 +24,29 @@ The Docker Subscription Service Agreement states:
 @z
 
 @x
- - Docker Desktop is free for:
-    - Small businesses (fewer than 250 employees AND less than $10 million in annual revenue)
-    - Personal use
-    - Education
-    - Non-commercial open source projects
+- Docker Desktop is free for:
+  - Small businesses (fewer than 250 employees AND less than $10 million in annual revenue)
+  - Personal use
+  - Education
+  - Non-commercial open source projects
 - Docker Desktop requires a paid subscription for:
-    - Professional use in larger organizations
-    - Government entities
-    - Commercial use beyond the free tier limits
+  - Professional use in larger organizations
+  - Government entities
+  - Commercial use beyond the free tier limits
 - Paid subscriptions that include Docker Desktop:
-    - Docker Pro, Team, and Business subscriptions
+  - Docker Pro, Team, and Business subscriptions
 @y
- - Docker Desktop is free for:
-    - Small businesses (fewer than 250 employees AND less than $10 million in annual revenue)
-    - Personal use
-    - Education
-    - Non-commercial open source projects
+- Docker Desktop is free for:
+  - Small businesses (fewer than 250 employees AND less than $10 million in annual revenue)
+  - Personal use
+  - Education
+  - Non-commercial open source projects
 - Docker Desktop requires a paid subscription for:
-    - Professional use in larger organizations
-    - Government entities
-    - Commercial use beyond the free tier limits
+  - Professional use in larger organizations
+  - Government entities
+  - Commercial use beyond the free tier limits
 - Paid subscriptions that include Docker Desktop:
-    - Docker Pro, Team, and Business subscriptions
+  - Docker Pro, Team, and Business subscriptions
 @z
 
 @x

@@ -26,15 +26,25 @@ system.
 @z
 
 @x
+> [!NOTE]
+> The `sbx` CLI is free to use, including for commercial work. Only
+> [organization governance](governance/) requires a separate paid subscription.
+@y
+> [!NOTE]
+> The `sbx` CLI is free to use, including for commercial work. Only
+> [organization governance](governance/) requires a separate paid subscription.
+@z
+
+@x
 Organization admins can
-[centrally manage sandbox network and filesystem policies](security/governance.md)
-from the Docker Admin Console, so the same rules apply uniformly across every
-developer's machine. Available on a separate paid subscription.
+[centrally manage sandbox network, filesystem, and MCP policies](governance/access-controls/organization.md),
+so the same controls apply uniformly across every developer's machine.
+Available on a separate paid subscription.
 @y
 Organization admins can
-[centrally manage sandbox network and filesystem policies](security/governance.md)
-from the Docker Admin Console, so the same rules apply uniformly across every
-developer's machine. Available on a separate paid subscription.
+[centrally manage sandbox network, filesystem, and MCP policies](governance/access-controls/organization.md),
+so the same controls apply uniformly across every developer's machine.
+Available on a separate paid subscription.
 @z
 
 @x
@@ -44,91 +54,11 @@ developer's machine. Available on a separate paid subscription.
 @z
 
 @x
-For complete system requirements, see the
-[get started prerequisites](get-started.md#prerequisites).
+Follow the [installation guide](install.md) to check the system requirements,
+install the `sbx` CLI, and sign in.
 @y
-For complete system requirements, see the
-[get started prerequisites](get-started.md#prerequisites).
-@z
-
-@x
-Install the `sbx` CLI and sign in:
-@y
-Install the `sbx` CLI and sign in:
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="macOS" >}}
-@y
-{{< tabs >}}
-{{< tab name="macOS" >}}
-@z
-
-@x
-```console
-$ brew install docker/tap/sbx
-$ sbx login
-```
-@y
-```console
-$ brew install docker/tap/sbx
-$ sbx login
-```
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Windows" >}}
-@y
-{{< /tab >}}
-{{< tab name="Windows" >}}
-@z
-
-@x
-```powershell
-> winget install -h Docker.sbx
-> sbx login
-```
-@y
-```powershell
-> winget install -h Docker.sbx
-> sbx login
-```
-@z
-
-@x
-{{< /tab >}}
-{{< tab name="Linux (Ubuntu)" >}}
-@y
-{{< /tab >}}
-{{< tab name="Linux (Ubuntu)" >}}
-@z
-
-@x
-```console
-$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
-$ sudo apt-get install docker-sbx
-$ sudo usermod -aG kvm $USER
-$ newgrp kvm
-$ sbx login
-```
-@y
-```console
-$ curl -fsSL https://get.docker.com | sudo REPO_ONLY=1 sh
-$ sudo apt-get install docker-sbx
-$ sudo usermod -aG kvm $USER
-$ newgrp kvm
-$ sbx login
-```
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
+Follow the [installation guide](install.md) to check the system requirements,
+install the `sbx` CLI, and sign in.
 @z
 
 @x
@@ -150,11 +80,11 @@ $ sbx run claude
 @z
 
 @x
-See the [get started guide](get-started.md) for a full walkthrough, or jump to
-the [usage guide](usage.md) for common patterns.
+See the [get started guide](get-started.md) for a first-session walkthrough, or
+jump to the [usage guide](usage.md) for basic commands.
 @y
-See the [get started guide](get-started.md) for a full walkthrough, or jump to
-the [usage guide](usage.md) for common patterns.
+See the [get started guide](get-started.md) for a first-session walkthrough, or
+jump to the [usage guide](usage.md) for basic commands.
 @z
 
 @x
@@ -165,6 +95,14 @@ the [usage guide](usage.md) for common patterns.
 
 @x
 - [Agents](agents/) — supported agents and per-agent configuration
+- [Workflows](workflows/) — patterns for Git, local development,
+  authentication, agent skills, and automation
+- [Configuration](configuration/) — manage credentials, declare project
+  environments, turn on GPU passthrough, and configure an upstream proxy
+- [Integrations](integrations/) — connect editors and apps like VS Code and
+  Cursor to a sandbox over SSH
+- [MCP gateway](mcp-gateway.md) — register MCP servers and connect them to
+  sandboxed agents
 - [Customize](customize/) — reusable templates and declarative kits for
   extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,
@@ -176,6 +114,14 @@ the [usage guide](usage.md) for common patterns.
 - [FAQ](faq.md) — login requirements, telemetry, etc
 @y
 - [Agents](agents/) — supported agents and per-agent configuration
+- [Workflows](workflows/) — patterns for Git, local development,
+  authentication, agent skills, and automation
+- [Configuration](configuration/) — manage credentials, declare project
+  environments, turn on GPU passthrough, and configure an upstream proxy
+- [Integrations](integrations/) — connect editors and apps like VS Code and
+  Cursor to a sandbox over SSH
+- [MCP gateway](mcp-gateway.md) — register MCP servers and connect them to
+  sandboxed agents
 - [Customize](customize/) — reusable templates and declarative kits for
   extending or tailoring sandboxes
 - [Architecture](architecture.md) — microVM isolation, workspace mounting,

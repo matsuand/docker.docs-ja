@@ -238,9 +238,13 @@ which you can also use to build Ubuntu images.
 @z
 
 @x
-For example, to create an Ubuntu base image:
+For example, to create an Ubuntu base image using the `noble` codename for
+Ubuntu 24.04, run the following commands. Replace `noble` with the codename
+for the Ubuntu release you want to import:
 @y
-For example, to create an Ubuntu base image:
+For example, to create an Ubuntu base image using the `noble` codename for
+Ubuntu 24.04, run the following commands. Replace `noble` with the codename
+for the Ubuntu release you want to import:
 @z
 
 @x

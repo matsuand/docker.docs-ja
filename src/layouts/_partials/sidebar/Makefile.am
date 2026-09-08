@@ -3,7 +3,6 @@
 ##
 
 bases = \
-	guides.html   \
 	sections.html
 
 include $(top_srcdir)/build-aux/common.mk

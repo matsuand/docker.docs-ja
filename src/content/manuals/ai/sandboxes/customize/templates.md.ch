@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -71,14 +72,14 @@ ask the agent to install what's needed.
 > create new agent runtimes. The agent that launches inside the sandbox is
 > determined by the base image variant you extend and the agent you specify
 > in the `sbx run` command, not by binaries installed in the template. To
-> define a new agent from scratch, see [Kits](kits.md#defining-an-agent).
+> define a new agent from scratch, see [Kits](kits.md#define-an-agent).
 @y
 > [!NOTE]
 > Custom templates customize an existing agent's environment — they don't
 > create new agent runtimes. The agent that launches inside the sandbox is
 > determined by the base image variant you extend and the agent you specify
 > in the `sbx run` command, not by binaries installed in the template. To
-> define a new agent from scratch, see [Kits](kits.md#defining-an-agent).
+> define a new agent from scratch, see [Kits](kits.md#define-an-agent).
 @z
 
 @x
@@ -187,10 +188,10 @@ it explicitly with `--template`:
 
 @x
 Building a custom template requires
-[Docker Desktop](https://docs.docker.com/desktop/).
+[Docker Desktop](/manuals/desktop/_index.md).
 @y
 Building a custom template requires
-[Docker Desktop](https://docs.docker.com/desktop/).
+[Docker Desktop](manuals/desktop/_index.md).
 @z
 
 @x
@@ -254,14 +255,14 @@ Build the image and push it to an OCI registry, such as Docker Hub:
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > images. For other registries (GitHub Container Registry, ECR, ACR, a
 > self-hosted Nexus, and so on), store pull credentials with
-> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
 > before running the sandbox:
 @y
 > [!IMPORTANT]
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > images. For other registries (GitHub Container Registry, ECR, ACR, a
 > self-hosted Nexus, and so on), store pull credentials with
-> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
 > before running the sandbox:
 @z
 
@@ -367,6 +368,26 @@ Instead of writing a Dockerfile, you can save a running sandbox's state as
 a template. This captures installed packages, configuration changes, and
 files into a reusable image — useful when you've set up an environment
 interactively and want to preserve it.
+@z
+
+@x
+> [!WARNING]
+> Saving a sandbox captures its entire filesystem, including any secrets
+> stored on it. If you manually added API keys, tokens, or other
+> credentials to the sandbox, they're embedded in the saved template and
+> shared with anyone you distribute it to. To keep credentials out of
+> templates, manage them with `sbx secret set` instead — the proxy injects
+> them at runtime so they're never written to the filesystem. For more
+> information, see [Manage credentials](../configuration/credentials.md).
+@y
+> [!WARNING]
+> Saving a sandbox captures its entire filesystem, including any secrets
+> stored on it. If you manually added API keys, tokens, or other
+> credentials to the sandbox, they're embedded in the saved template and
+> shared with anyone you distribute it to. To keep credentials out of
+> templates, manage them with `sbx secret set` instead — the proxy injects
+> them at runtime so they're never written to the filesystem. For more
+> information, see [Manage credentials](../configuration/credentials.md).
 @z
 
 @x

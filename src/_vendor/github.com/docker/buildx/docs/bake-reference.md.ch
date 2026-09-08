@@ -101,7 +101,7 @@ The following attributes are overridden by the last occurrence:
 - `target.cache-to`
 - `target.dockerfile-inline`
 - `target.dockerfile`
-- `target.outputs`
+- `target.output`
 - `target.platforms`
 - `target.pull`
 - `target.tags`
@@ -110,7 +110,7 @@ The following attributes are overridden by the last occurrence:
 - `target.cache-to`
 - `target.dockerfile-inline`
 - `target.dockerfile`
-- `target.outputs`
+- `target.output`
 - `target.platforms`
 - `target.pull`
 - `target.tags`
@@ -311,12 +311,14 @@ The following table shows the complete list of attributes that you can assign to
 | [`policy`](#targetpolicy)                       | List    | Policies to validate build sources and metadata                      |
 | [`platforms`](#targetplatforms)                 | List    | Target platforms                                                     |
 | [`pull`](#targetpull)                           | Boolean | Always pull images                                                   |
+| [`resources`](#targetresources)                 | Map     | Resource limits for build containers                                 |
 | [`secret`](#targetsecret)                       | List    | Secrets to expose to the build                                       |
 | [`shm-size`](#targetshm-size)                   | List    | Size of `/dev/shm`                                                   |
 @y
 | [`policy`](#targetpolicy)                       | List    | Policies to validate build sources and metadata                      |
 | [`platforms`](#targetplatforms)                 | List    | Target platforms                                                     |
 | [`pull`](#targetpull)                           | Boolean | Always pull images                                                   |
+| [`resources`](#targetresources)                 | Map     | Resource limits for build containers                                 |
 | [`secret`](#targetsecret)                       | List    | Secrets to expose to the build                                       |
 | [`shm-size`](#targetshm-size)                   | List    | Size of `/dev/shm`                                                   |
 @z

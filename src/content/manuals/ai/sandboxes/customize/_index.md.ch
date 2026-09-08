@@ -4,16 +4,22 @@
 @x
 title: Customizing sandboxes
 linkTitle: Customize
-description: Build reusable sandbox images, extend agents with tools and credentials, and define custom agents using templates and kits.
+description: Build reusable sandbox images and extend or define agents using templates and kits.
 keywords: sandboxes, sbx, customize, templates, kits, mixins, custom agents
 @y
 title: Customizing sandboxes
 linkTitle: Customize
-description: Build reusable sandbox images, extend agents with tools and credentials, and define custom agents using templates and kits.
+description: Build reusable sandbox images and extend or define agents using templates and kits.
 keywords: sandboxes, sbx, customize, templates, kits, mixins, custom agents
 @z
 
 @x
+      text: Early Access
+@y
+      text: 早期アクセス
+@z
+
+@x
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
 @y
 {{< summary-bar feature_name="Docker Sandboxes sbx" >}}
@@ -78,27 +84,27 @@ dependencies — anything you'd rather not reinstall on every sandbox start.
 @x
 A kit is a YAML artifact applied at sandbox creation. The kit can run
 install commands, drop files into the sandbox, declare network and
-credential rules, and (for agent kits) define which template image the
+credential rules, and (for sandbox kits) define which template image the
 agent runs in. Use kits for things that vary per agent or per team:
 shared linter config, project-specific install steps, credential
 injection for a service the agent talks to.
 @y
 A kit is a YAML artifact applied at sandbox creation. The kit can run
 install commands, drop files into the sandbox, declare network and
-credential rules, and (for agent kits) define which template image the
+credential rules, and (for sandbox kits) define which template image the
 agent runs in. Use kits for things that vary per agent or per team:
 shared linter config, project-specific install steps, credential
 injection for a service the agent talks to.
 @z
 
 @x
-Templates and kits work together. An agent kit's `agent.image` field
+Templates and kits work together. A sandbox kit's `sandbox.image` field
 points at a template: the template provides the base environment, the
 kit layers config, secrets, and runtime behavior on top. A team can ship
 one heavy template and several thin kits without rebuilding the image
 each time something changes.
 @y
-Templates and kits work together. An agent kit's `agent.image` field
+Templates and kits work together. A sandbox kit's `sandbox.image` field
 points at a template: the template provides the base environment, the
 kit layers config, secrets, and runtime behavior on top. A team can ship
 one heavy template and several thin kits without rebuilding the image
@@ -117,14 +123,14 @@ each time something changes.
 | Pre-install tools and packages into a reusable base image | [Template](templates.md)                                      |
 | Capture a configured running sandbox for reuse            | [Saved template](templates.md#saving-a-sandbox-as-a-template) |
 | Add a tool, credential, or config to agent runs via YAML  | [Kit (mixin)](kits.md)                                        |
-| Define a new agent from scratch                           | [Kit (agent)](kits.md#defining-an-agent)                      |
+| Define a new agent from scratch                           | [Kit (sandbox)](kits.md#define-an-agent)                      |
 @y
 | Goal                                                      | Option                                                        |
 | --------------------------------------------------------- | ------------------------------------------------------------- |
 | Pre-install tools and packages into a reusable base image | [Template](templates.md)                                      |
 | Capture a configured running sandbox for reuse            | [Saved template](templates.md#saving-a-sandbox-as-a-template) |
 | Add a tool, credential, or config to agent runs via YAML  | [Kit (mixin)](kits.md)                                        |
-| Define a new agent from scratch                           | [Kit (agent)](kits.md#defining-an-agent)                      |
+| Define a new agent from scratch                           | [Kit (sandbox)](kits.md#define-an-agent)                      |
 @z
 
 @x
@@ -145,8 +151,8 @@ credentials, config, or extra capabilities.
 
 @x
 - [Build your own agent kit](build-an-agent.md) — step-by-step walkthrough
-  for packaging [Amp](https://ampcode.com/) as an agent kit.
+  for packaging [Amp](https://ampcode.com/) as a sandbox kit.
 @y
 - [Build your own agent kit](build-an-agent.md) — step-by-step walkthrough
-  for packaging [Amp](https://ampcode.com/) as an agent kit.
+  for packaging [Amp](https://ampcode.com/) as a sandbox kit.
 @z

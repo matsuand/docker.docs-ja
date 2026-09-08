@@ -332,9 +332,9 @@ usage: docker login [OPTIONS] [SERVER]
 % options:
 
 @x password
-      description: Password or Personal Access Token (PAT)
+      description: Password or Personal Access Token (PAT), or `-` to read from stdin
 @y
-      description: Password or Personal Access Token (PAT)
+      description: Password or Personal Access Token (PAT), or `-` to read from stdin
 @z
 
 @x password-stdin
@@ -481,6 +481,16 @@ examples: |-
 @y
     The following example reads a password from a file, and passes it to the
     `docker login` command using `STDIN`:
+@z
+
+% snip command...
+
+@x
+    You can also pass `-` as the value for `--password` or `-p` to read the
+    password from `STDIN`.
+@y
+    You can also pass `-` as the value for `--password` or `-p` to read the
+    password from `STDIN`.
 @z
 
 % snip command...

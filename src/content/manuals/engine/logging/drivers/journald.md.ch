@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Learn how to use the Journald logging driver with Docker Engine
@@ -83,19 +84,7 @@ The following example sets the log driver to `journald`:
 The following example sets the log driver to `journald`:
 @z
 
-@x
-```json
-{
-  "log-driver": "journald"
-}
-```
-@y
-```json
-{
-  "log-driver": "journald"
-}
-```
-@z
+% snip code...
 
 @x
 Restart Docker for the changes to take effect.
@@ -111,15 +100,7 @@ To configure the logging driver for a specific container, use the `--log-driver`
 flag on the `docker run` command.
 @z
 
-@x
-```console
-$ docker run --log-driver=journald ...
-```
-@y
-```console
-$ docker run --log-driver=journald ...
-```
-@z
+% snip command...
 
 @x
 ## Options
@@ -169,27 +150,7 @@ The following is an example of the logging options required to log to journald.
 The following is an example of the logging options required to log to journald.
 @z
 
-@x
-```console
-$ docker run \
-    --log-driver=journald \
-    --log-opt labels=location \
-    --log-opt env=TEST \
-    --env "TEST=false" \
-    --label location=west \
-    your/application
-```
-@y
-```console
-$ docker run \
-    --log-driver=journald \
-    --log-opt labels=location \
-    --log-opt env=TEST \
-    --env "TEST=false" \
-    --label location=west \
-    your/application
-```
-@z
+% snip command...
 
 @x
 This configuration also directs the driver to include in the payload the label
@@ -237,15 +198,7 @@ expressions to limit the retrieved messages to those associated with a specific
 container:
 @z
 
-@x
-```console
-$ sudo journalctl CONTAINER_NAME=webserver
-```
-@y
-```console
-$ sudo journalctl CONTAINER_NAME=webserver
-```
-@z
+% snip command...
 
 @x
 You can use additional filters to further limit the messages retrieved. The `-b`
@@ -255,15 +208,7 @@ You can use additional filters to further limit the messages retrieved. The `-b`
 flag only retrieves messages generated since the last system boot:
 @z
 
-@x
-```console
-$ sudo journalctl -b CONTAINER_NAME=webserver
-```
-@y
-```console
-$ sudo journalctl -b CONTAINER_NAME=webserver
-```
-@z
+% snip command...
 
 @x
 The `-o` flag specifies the format for the retrieved log messages. Use `-o json`
@@ -273,15 +218,7 @@ The `-o` flag specifies the format for the retrieved log messages. Use `-o json`
 to return the log messages in JSON format.
 @z
 
-@x
-```console
-$ sudo journalctl -o json CONTAINER_NAME=webserver
-```
-@y
-```console
-$ sudo journalctl -o json CONTAINER_NAME=webserver
-```
-@z
+% snip command...
 
 @x
 ### View logs for a container with a TTY enabled
@@ -301,15 +238,7 @@ The reason for that is that `\r` is appended to the end of the line and
 `journalctl` doesn't strip it automatically unless `--all` is set:
 @z
 
-@x
-```console
-$ sudo journalctl -b CONTAINER_NAME=webserver --all
-```
-@y
-```console
-$ sudo journalctl -b CONTAINER_NAME=webserver --all
-```
-@z
+% snip command...
 
 @x
 ## Retrieve log messages with the `journal` API
@@ -325,28 +254,4 @@ This example uses the `systemd` Python module to retrieve container
 logs:
 @z
 
-@x
-```python
-import systemd.journal
-@y
-```python
-import systemd.journal
-@z
-
-@x
-reader = systemd.journal.Reader()
-reader.add_match('CONTAINER_NAME=web')
-@y
-reader = systemd.journal.Reader()
-reader.add_match('CONTAINER_NAME=web')
-@z
-
-@x
-for msg in reader:
-    print '{CONTAINER_ID_FULL}: {MESSAGE}'.format(**msg)
-```
-@y
-for msg in reader:
-    print '{CONTAINER_ID_FULL}: {MESSAGE}'.format(**msg)
-```
-@z
+% snip code...

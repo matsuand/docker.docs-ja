@@ -295,13 +295,11 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = core-concepts explore how-to migration
+SUBDIRS = explore how-to migration release-notes tools
 bases = \
-	_index.md       \
-	features.md     \
-	get-started.md  \
-	resources.md    \
-	troubleshoot.md
+	_index.md      \
+	get-started.md \
+	resources.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

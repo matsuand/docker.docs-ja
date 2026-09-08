@@ -13,10 +13,10 @@ linkTitle: Manage connections
 
 @x
 description: Learn how to manage Single Sign-On for your organization or company.
-keywords: manage, single sign-on, SSO, sign-on, admin console, admin, security, domains, connections, users, provisioning
+keywords: manage, single sign-on, SSO, sign-on, docker home, admin, security, domains, connections, users, provisioning
 @y
 description: Learn how to manage Single Sign-On for your organization or company.
-keywords: manage, single sign-on, SSO, sign-on, admin console, admin, security, domains, connections, users, provisioning
+keywords: manage, single sign-on, SSO, sign-on, docker home, admin, security, domains, connections, users, provisioning
 @z
 
 @x
@@ -56,7 +56,7 @@ To add a domain to an existing SSO connection:
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or
 organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the SSO connections table, select the **Actions** menu for your
 connection, then select **Edit connection**.
 1. Select **Next** to navigate to the domains section.
@@ -69,7 +69,7 @@ team provisioning selections.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or
 organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the SSO connections table, select the **Actions** menu for your
 connection, then select **Edit connection**.
 1. Select **Next** to navigate to the domains section.
@@ -99,7 +99,7 @@ team provisioning selections.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Edit connection**.
 1. Select **Next** to navigate to the domains section.
@@ -111,7 +111,7 @@ team provisioning selections.
 1. Review the connection details and select **Update connection**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Edit connection**.
 1. Select **Next** to navigate to the domains section.
@@ -153,11 +153,11 @@ To view all configured SSO connections:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. View all configured connections in the **SSO connections** table.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. View all configured connections in the **SSO connections** table.
 @z
 
@@ -175,13 +175,13 @@ To modify an existing SSO connection:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Edit connection**.
 1. Follow the on-screen instructions to modify your connection settings.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Edit connection**.
 1. Follow the on-screen instructions to modify your connection settings.
@@ -201,13 +201,13 @@ To remove an SSO connection:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Delete connection**.
 1. Follow the on-screen instructions to confirm the deletion.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company or organization from the top-left account drop-down.
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** menu for your connection, then
 **Delete connection**.
 1. Follow the on-screen instructions to confirm the deletion.

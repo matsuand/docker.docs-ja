@@ -123,11 +123,11 @@ This creates 2 files:
 @x
 > [!IMPORTANT]
 >
-> If your org is using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will not need the `admins-settings.json` file. Delete the generated file and keep only the `extensions.txt` file.
+> If your org is using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will not need the `admin-settings.json` file. Delete the generated file and keep only the `extensions.txt` file.
 @y
 > [!IMPORTANT]
 >
-> If your org is using [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will not need the `admins-settings.json` file. Delete the generated file and keep only the `extensions.txt` file.
+> If your org is using [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will not need the `admin-settings.json` file. Delete the generated file and keep only the `extensions.txt` file.
 @z
 
 @x
@@ -145,11 +145,11 @@ The generated `admin-settings.json` file includes various settings you can modif
 @x
 > [!IMPORTANT]
 >
-> If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will define the same settings in the Admin Console instead of the `admin-settings.json` file.
+> If your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will define the same settings in Docker Home instead of the `admin-settings.json` file.
 @y
 > [!IMPORTANT]
 >
-> If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will define the same settings in the Admin Console instead of the `admin-settings.json` file.
+> If your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), you will define the same settings in Docker Home instead of the `admin-settings.json` file.
 @z
 
 @x
@@ -375,11 +375,11 @@ It's recommended that you try the private marketplace on your Docker Desktop ins
 @x
 > [!IMPORTANT]
 >
-> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary.
+> > If your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary. 
 @y
 > [!IMPORTANT]
 >
-> > If your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary.
+> > If your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md), in Docker Desktop 4.59 and earlier, you must manually delete the `admin-settings.json` file created in the target folder by the `apply` command before step 2. In Docker Desktop 4.60 and later, this step is no longer necessary. 
 @z
 
 @x
@@ -407,12 +407,12 @@ Once you’ve confirmed that the private marketplace configuration works, the fi
 @z
 
 @x
-The files to distribute are: 
-* `admin-settings.json` (except if your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md))
+The files to distribute are:
+* `admin-settings.json` (except if your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md))
 * the entire `extension-marketplace` folder and its subfolders
 @y
-The files to distribute are: 
-* `admin-settings.json` (except if your org is managing settings via the [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md))
+The files to distribute are:
+* `admin-settings.json` (except if your org is managing settings via [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console/_index.md))
 * the entire `extension-marketplace` folder and its subfolders
 @z
 

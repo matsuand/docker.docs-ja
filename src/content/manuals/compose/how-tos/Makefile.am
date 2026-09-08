@@ -9,6 +9,7 @@ bases = \
 	dependent-images.md  \
 	file-watch.md        \
 	gpu-support.md       \
+	init-containers.md   \
 	lifecycle.md         \
 	networking.md        \
 	oci-artifact.md      \

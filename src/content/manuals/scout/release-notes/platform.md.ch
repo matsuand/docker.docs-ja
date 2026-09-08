@@ -34,6 +34,112 @@ Docker Scout platform, including the Dashboard. For CLI release notes, refer to
 @z
 
 @x
+## Q2 2026
+@y
+## Q2 2026
+@z
+
+@x
+### 2026-07-01
+@y
+### 2026-07-01
+@z
+
+@x
+The following Docker Scout features were retired:
+@y
+The following Docker Scout features were retired:
+@z
+
+@x
+- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
+  display health scores or the always-on Scout experience. Use
+  `docker scout quickview` for a quick vulnerability and policy summary. This is
+  unrelated to the health score reported locally by `docker scout policy`,
+  `docker scout quickview`, and `docker scout compare`. See
+  [Health score](../policy/local.md#health-score).
+- Sysdig integration: The Sysdig runtime environment integration has been removed.
+- GitHub source code management integration: Migrate to GitHub Dependabot for
+  base-image updates and build with `--provenance=mode=max` for
+  image-to-source linkage. See
+  [GitHub integration](../integrations/source-code-management/github.md)
+  for a migration guide.
+@y
+- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
+  display health scores or the always-on Scout experience. Use
+  `docker scout quickview` for a quick vulnerability and policy summary. This is
+  unrelated to the health score reported locally by `docker scout policy`,
+  `docker scout quickview`, and `docker scout compare`. See
+  [Health score](../policy/local.md#health-score).
+- Sysdig integration: The Sysdig runtime environment integration has been removed.
+- GitHub source code management integration: Migrate to GitHub Dependabot for
+  base-image updates and build with `--provenance=mode=max` for
+  image-to-source linkage. See
+  [GitHub integration](../integrations/source-code-management/github.md)
+  for a migration guide.
+@z
+
+@x
+The following is deprecated and will be retired on July 30, 2026:
+@y
+The following is deprecated and will be retired on July 30, 2026:
+@z
+
+@x
+- Slack integration: Vulnerability and policy compliance notifications to Slack
+  channels. Integrate `docker scout cves` or `docker scout policy` into your CI
+  pipeline as an alternative. See
+  [Slack integration](../integrations/team-collaboration/slack.md).
+@y
+- Slack integration: Vulnerability and policy compliance notifications to Slack
+  channels. Integrate `docker scout cves` or `docker scout policy` into your CI
+  pipeline as an alternative. See
+  [Slack integration](../integrations/team-collaboration/slack.md).
+@z
+
+@x
+The following are deprecated and will be retired on September 1, 2026:
+@y
+The following are deprecated and will be retired on September 1, 2026:
+@z
+
+@x
+- Notifications: In-product and email notifications about newly disclosed CVEs.
+  Integrate `docker scout cves` or `docker scout policy` into your CI pipeline
+  to surface vulnerability and policy results without push notifications.
+@y
+- Notifications: In-product and email notifications about newly disclosed CVEs.
+  Integrate `docker scout cves` or `docker scout policy` into your CI pipeline
+  to surface vulnerability and policy results without push notifications.
+@z
+
+@x
+- Amazon ECR integration: Migrate to
+  [`docker scout watch`](/reference/cli/docker/scout/watch/) for continuous
+  polling or integrate Scout into your CI pipeline. See
+  [ECR integration](../integrations/registry/ecr.md) for a migration guide.
+- Azure Container Registry integration: Same migration options as ECR. See
+  [ACR integration](../integrations/registry/acr.md) for a migration guide.
+- Policies page in the Dashboard: The `docker scout policy`
+  command replaces this with more options for evaluating policies. You can run
+  evaluations locally, in CI, against custom Rego policies, or using OCI
+  bundles. See [Evaluate policies](../policy/local.md).
+- SonarQube integration.
+@y
+- Amazon ECR integration: Migrate to
+  [`docker scout watch`](__SUBDIR__/reference/cli/docker/scout/watch/) for continuous
+  polling or integrate Scout into your CI pipeline. See
+  [ECR integration](../integrations/registry/ecr.md) for a migration guide.
+- Azure Container Registry integration: Same migration options as ECR. See
+  [ACR integration](../integrations/registry/acr.md) for a migration guide.
+- Policies page in the Dashboard: The `docker scout policy`
+  command replaces this with more options for evaluating policies. You can run
+  evaluations locally, in CI, against custom Rego policies, or using OCI
+  bundles. See [Evaluate policies](../policy/local.md).
+- SonarQube integration.
+@z
+
+@x
 ## Q4 2024
 @y
 ## Q4 2024
@@ -122,11 +228,11 @@ For more information, refer to [policy types](../policy/_index.md#policy-types).
 @z
 
 @x
-This release changes how [health scores](/manuals/scout/policy/scores.md) are
+This release changes how health scores are
 calculated in Docker Scout. The health score calculation now considers optional
 and custom policies that you have configured for your organization.
 @y
-This release changes how [health scores](manuals/scout/policy/scores.md) are
+This release changes how health scores are
 calculated in Docker Scout. The health score calculation now considers optional
 and custom policies that you have configured for your organization.
 @z
@@ -157,10 +263,10 @@ calculation will be based on the out-of-the-box policies.
 
 @x
 This release changes the out-of-the-box policies to align with the policy
-configurations used to evaluate Docker Scout [health scores](/manuals/scout/policy/scores.md).
+configurations used to evaluate Docker Scout health scores.
 @y
 This release changes the out-of-the-box policies to align with the policy
-configurations used to evaluate Docker Scout [health scores](manuals/scout/policy/scores.md).
+configurations used to evaluate Docker Scout health scores.
 @z
 
 @x
@@ -432,11 +538,11 @@ more precise recommendations.
 @x
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Remediation](../policy/remediation.md).
+[Use the Dashboard](../policy/dashboard.md).
 @y
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Remediation](../policy/remediation.md).
+[Use the Dashboard](../policy/dashboard.md).
 @z
 
 @x
@@ -560,9 +666,9 @@ policies for your organization include:
 @z
 
 @x
-For more information, see [Configurable policies](../policy/configure.md).
+For more information, see [Configurable policies](../policy/dashboard.md).
 @y
-For more information, see [Configurable policies](../policy/configure.md).
+For more information, see [Configurable policies](../policy/dashboard.md).
 @z
 
 @x
@@ -748,11 +854,9 @@ into memory, using VEX documents.
 @z
 
 @x
-For more information and getting started, see [Sysdig integration
-documentation](../integrations/environment/sysdig.md).
+For more information, see the [Scout platform release notes](#2026-07-01).
 @y
-For more information and getting started, see [Sysdig integration
-documentation](../integrations/environment/sysdig.md).
+For more information, see the [Scout platform release notes](#2026-07-01).
 @z
 
 @x

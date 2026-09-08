@@ -135,6 +135,24 @@ cgroup v2 is used by default on the following distributions:
 @z
 
 @x
+> [!IMPORTANT]
+>
+> The detailed metrics examples later in this page describe the cgroup v1 file
+> layout. On cgroup v2 hosts, use this page to find the container's cgroup
+> directory and then inspect the controller files in that directory (for
+> example, `memory.*`, `cpu.*`, and `io.*`). For controller semantics, refer to
+> the [cgroup v2 kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
+@y
+> [!IMPORTANT]
+>
+> The detailed metrics examples later in this page describe the cgroup v1 file
+> layout. On cgroup v2 hosts, use this page to find the container's cgroup
+> directory and then inspect the controller files in that directory (for
+> example, `memory.*`, `cpu.*`, and `io.*`). For controller semantics, refer to
+> the [cgroup v2 kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
+@z
+
+@x
 #### cgroup v1
 @y
 #### cgroup v1
@@ -307,21 +325,25 @@ container, take a look at the following paths:
 @z
 
 @x
-### Metrics from cgroups: memory, CPU, block I/O
+### Metrics from cgroups: memory, CPU, block I/O (cgroup v1)
 @y
-### Metrics from cgroups: memory, CPU, block I/O
+### Metrics from cgroups: memory, CPU, block I/O (cgroup v1)
 @z
 
 @x
 > [!NOTE]
 >
-> This section isn't yet updated for cgroup v2.
-> For further information about cgroup v2, refer to [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
+> This section documents the cgroup v1 metric files and formats.
+> For cgroup v2, inspect the relevant controller files in the container's
+> cgroup directory and refer to
+> [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
 @y
 > [!NOTE]
 >
-> This section isn't yet updated for cgroup v2.
-> For further information about cgroup v2, refer to [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
+> This section documents the cgroup v1 metric files and formats.
+> For cgroup v2, inspect the relevant controller files in the container's
+> cgroup directory and refer to
+> [the kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html).
 @z
 
 @x

@@ -1,23 +1,17 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Administration
+description: Overview of administration features and roles in Docker Home
+keywords: admin, administration, company, organization, Docker Home, user accounts, account management
 @y
 title: Administration
+description: Overview of administration features and roles in Docker Home
+keywords: admin, administration, company, organization, Docker Home, user accounts, account management
 @z
-
-@x
-description: Overview of administration features and roles in the Docker Admin Console
-keywords: admin, administration, company, organization, Admin Console, user accounts, account management
-@y
-description: Overview of administration features and roles in the Docker Admin Console
-keywords: admin, administration, company, organization, Admin Console, user accounts, account management
-@z
-
-% grid:
 
 @x
   - title: Company administration
@@ -56,51 +50,47 @@ keywords: admin, administration, company, organization, Admin Console, user acco
 @z
 
 @x
-  - title: Company FAQ
-    description: Discover common questions and answers about companies.
-    icon: question-mark-circle
-    link: /faq/admin/company-faqs/
-@y
-  - title: Company FAQ
-    description: Discover common questions and answers about companies.
-    icon: question-mark-circle
-    link: __SUBDIR__/faq/admin/company-faqs/
-@z
-
-@x
-  - title: Organization FAQ
-    description: Explore popular FAQ topics about organizations.
-    icon: question-mark-circle
-    link: /faq/admin/organization-faqs/
-@y
-  - title: 組織に関する FAQ
-    description: Explore popular FAQ topics about organizations.
-    icon: question-mark-circle
-    link: __SUBDIR__/faq/admin/organization-faqs/
-@z
-
-@x
   - title: Security
     description: Explore security features for administrators.
     icon: shield-check
-    link: /security/
+    link: /enterprise/security/
 @y
   - title: Security
     description: Explore security features for administrators.
     icon: shield-check
-    link: __SUBDIR__/security/
+    link: __SUBDIR__/enterprise/security/
 @z
 
 @x
-Administrators can manage companies and organizations using the
-[Docker Admin Console](https://app.docker.com/admin). The Admin Console
-provides centralized observability, access management, and security controls
-across Docker environments.
+Organization and company owners can manage members, control access, and enforce
+security across their Docker environments. You perform these tasks in Docker
+Home, which provides centralized observability, access management, and security
+controls.
 @y
-Administrators can manage companies and organizations using the
-[Docker Admin Console](https://app.docker.com/admin). The Admin Console
-provides centralized observability, access management, and security controls
-across Docker environments.
+Organization and company owners can manage members, control access, and enforce
+security across their Docker environments. You perform these tasks in Docker
+Home, which provides centralized observability, access management, and security
+controls.
+@z
+
+@x
+As an organization or company owner, you can:
+@y
+As an organization or company owner, you can:
+@z
+
+@x
+- Create and manage companies and organizations
+- Assign roles and permissions to members
+- Group members into teams to manage access by project or role
+- Set company-wide policies, including SCIM provisioning and security
+  enforcement
+@y
+- Create and manage companies and organizations
+- Assign roles and permissions to members
+- Group members into teams to manage access by project or role
+- Set company-wide policies, including SCIM provisioning and security
+  enforcement
 @z
 
 @x
@@ -110,9 +100,11 @@ across Docker environments.
 @z
 
 @x
-The [Docker Admin Console](https://app.docker.com/admin) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+To provide centralized administration, Docker organizes companies and
+organizations into the following hierarchy and roles.
 @y
-The [Docker Admin Console](https://app.docker.com/admin) provides administrators with centralized observability, access management, and controls for their company and organizations. To provide these features, Docker uses the following hierarchy and roles.
+To provide centralized administration, Docker organizes companies and
+organizations into the following hierarchy and roles.
 @z
 
 @x
@@ -128,25 +120,17 @@ The [Docker Admin Console](https://app.docker.com/admin) provides administrators
 @z
 
 @x
-A company groups multiple Docker organizations for centralized configuration. Companies have the company owner administrator role available. 
+A company groups multiple Docker organizations for centralized configuration. A
+company owner can view and manage every organization in the company and its
+company-wide settings, with the same access rights as an organization owner. For
+the company owner role and how it affects seats, see
+[Company roles](/manuals/admin/company/_index.md#company-roles).
 @y
-A company groups multiple Docker organizations for centralized configuration. Companies have the company owner administrator role available. 
-@z
-
-@x
-The company owner: 
-@y
-The company owner: 
-@z
-
-@x
-- Can view and manage all organizations within the company
-- Has full access to company-wide settings and inherits the same permissions as organization owners
-- Does not occupy a seat
-@y
-- Can view and manage all organizations within the company
-- Has full access to company-wide settings and inherits the same permissions as organization owners
-- Does not occupy a seat
+A company groups multiple Docker organizations for centralized configuration. A
+company owner can view and manage every organization in the company and its
+company-wide settings, with the same access rights as an organization owner. For
+the company owner role and how it affects seats, see
+[Company roles](manuals/admin/company/_index.md#company-roles).
 @z
 
 @x
@@ -162,25 +146,31 @@ Companies are only available for Docker Business subscribers.
 @z
 
 @x
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](/manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
+An organization sits below the company and is where you group teams and
+members and assign access to repositories. Every Docker Team and Business
+subscriber has at least one organization.
 @y
-Organization owners have the organization owner administrator role available. They can manage organization settings, users, and access controls, but occupy a [seat](manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
+An organization sits below the company and is where you group teams and
+members and assign access to repositories. Every Docker Team and Business
+subscriber has at least one organization.
 @z
 
 @x
-- An organization contains teams and repositories.
-- All Docker Team and Business subscribers must have at least one organization.
+Organization owners hold the organization owner administrator role and manage
+organization settings, users, and access controls. Each owner occupies a
+[seat](/manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @y
-- An organization contains teams and repositories.
-- All Docker Team and Business subscribers must have at least one organization.
+Organization owners hold the organization owner administrator role and manage
+organization settings, users, and access controls. Each owner occupies a
+[seat](manuals/admin/organization/organization-faqs.md#what-is-the-difference-between-user-invitee-seat-and-member).
 @z
 
 @x
-> [!TIP]
-> [Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin) grants you the company owner role so you can manage multiple organizations.
+[Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin)
+grants you the company owner role so you can manage multiple organizations.
 @y
-> [!TIP]
-> [Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin) grants you the company owner role so you can manage multiple organizations.
+[Upgrading to a Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdmin)
+grants you the company owner role so you can manage multiple organizations.
 @z
 
 @x
@@ -214,35 +204,9 @@ owners can assign roles to members to define their level of access.
 @z
 
 @x
-## Admin Console features
+## Next steps
 @y
-## Admin Console features
-@z
-
-@x
-Docker's [Admin Console](https://app.docker.com/admin) allows you to:
-@y
-Docker's [Admin Console](https://app.docker.com/admin) allows you to:
-@z
-
-@x
-- Create and manage companies and organizations
-- Assign roles and permissions to members
-- Group members into teams to manage access by project or role
-- Set company-wide policies, including SCIM provisioning and security
-  enforcement
-@y
-- Create and manage companies and organizations
-- Assign roles and permissions to members
-- Group members into teams to manage access by project or role
-- Set company-wide policies, including SCIM provisioning and security
-  enforcement
-@z
-
-@x
-## Manage companies and organizations
-@y
-## Manage companies and organizations
+## Next steps
 @z
 
 @x

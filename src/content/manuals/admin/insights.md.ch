@@ -377,15 +377,13 @@ You can export Docker Desktop user data as a CSV file:
 
 @x
 1. Open [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Select **Admin Console** in the left-hand navigation menu.
-1. Select **Desktop insights**.
+1. Select **Docker Desktop**, then **Desktop insights**.
 1. Choose a timeframe for your insights data: **1 Week**, **1 Month**, or
    **3 Months**.
 1. Select **Export** and choose **Docker Desktop users** from the drop-down.
 @y
 1. Open [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Select **Admin Console** in the left-hand navigation menu.
-1. Select **Desktop insights**.
+1. Select **Docker Desktop**, then **Desktop insights**.
 1. Choose a timeframe for your insights data: **1 Week**, **1 Month**, or
    **3 Months**.
 1. Select **Export** and choose **Docker Desktop users** from the drop-down.

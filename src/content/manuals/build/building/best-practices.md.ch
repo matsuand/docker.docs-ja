@@ -206,19 +206,7 @@ Over time, that tag may resolve to a different underlying version of the
 patches and updated libraries.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:24.04
-RUN apt-get -y update && apt-get install -y --no-install-recommends python3
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM ubuntu:24.04
-RUN apt-get -y update && apt-get install -y --no-install-recommends python3
-```
-@z
+% snip code...
 
 @x
 To get the latest version of the base image, use the `--pull` flag:
@@ -226,15 +214,7 @@ To get the latest version of the base image, use the `--pull` flag:
 To get the latest version of the base image, use the `--pull` flag:
 @z
 
-@x
-```console
-$ docker build --pull -t my-image:my-tag .
-```
-@y
-```console
-$ docker build --pull -t my-image:my-tag .
-```
-@z
+% snip command...
 
 @x
 The `--pull` flag forces Docker to check for and download a newer
@@ -258,37 +238,27 @@ The `--no-cache` flag disables the build cache, forcing Docker to
 rebuild all layers from scratch:
 @z
 
-@x
-```console
-$ docker build --no-cache -t my-image:my-tag .
-```
-@y
-```console
-$ docker build --no-cache -t my-image:my-tag .
-```
-@z
+% snip command...
 
 @x
 This gets the latest available versions of dependencies from package
-managers like `apt-get` or `npm`. However, `--no-cache` doesn't pull a
-fresh base image - it only prevents reusing cached layers. For a
-completely fresh build with the latest base image, combine both flags:
+managers like `apt-get` or `npm`. It does not pull a fresh base image —
+for that, use `--pull`.
 @y
 This gets the latest available versions of dependencies from package
-managers like `apt-get` or `npm`. However, `--no-cache` doesn't pull a
-fresh base image - it only prevents reusing cached layers. For a
-completely fresh build with the latest base image, combine both flags:
+managers like `apt-get` or `npm`. It does not pull a fresh base image —
+for that, use `--pull`.
 @z
 
 @x
-```console
-$ docker build --pull --no-cache -t my-image:my-tag .
-```
+The two flags serve distinct purposes and can be combined. Use both
+together to get a fresh base image and re-execute all build steps:
 @y
-```console
-$ docker build --pull --no-cache -t my-image:my-tag .
-```
+The two flags serve distinct purposes and can be combined. Use both
+together to get a fresh base image and re-execute all build steps:
 @z
+
+% snip command...
 
 @x
 Also consider [pinning base image versions](#pin-base-image-versions).
@@ -318,15 +288,7 @@ For example, to exclude all files with the `.md` extension:
 For example, to exclude all files with the `.md` extension:
 @z
 
-@x
-```plaintext
-*.md
-```
-@y
-```plaintext
-*.md
-```
-@z
+% snip text...
 
 @x
 For information on creating one, see
@@ -454,27 +416,7 @@ Here’s an example from the [buildpack-deps image](https://github.com/docker-li
 Here’s an example from the [buildpack-deps image](https://github.com/docker-library/buildpack-deps):
 @z
 
-@x
-```dockerfile
-RUN apt-get update && apt-get install -y --no-install-recommends \
-  bzr \
-  cvs \
-  git \
-  mercurial \
-  subversion \
-  && rm -rf /var/lib/apt/lists/*
-```
-@y
-```dockerfile
-RUN apt-get update && apt-get install -y --no-install-recommends \
-  bzr \
-  cvs \
-  git \
-  mercurial \
-  subversion \
-  && rm -rf /var/lib/apt/lists/*
-```
-@z
+% snip code...
 
 @x
 ## Leverage build cache
@@ -530,17 +472,7 @@ For example, if you specify `FROM alpine:3.21` in your Dockerfile, `3.21`
 resolves to the latest patch version for `3.21`.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:3.21
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:3.21
-```
-@z
+% snip code...
 
 @x
 At one point in time, the `3.21` tag might point to version 3.21.1 of the
@@ -578,17 +510,7 @@ new image. For example, the following Dockerfile pins the Alpine image to the
 same tag as earlier, `3.21`, but this time with a digest reference as well.
 @z
 
-@x
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:3.21@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
-```
-@y
-```dockerfile
-# syntax=docker/dockerfile:1
-FROM alpine:3.21@sha256:a8560b36e8b8210634f77d9f7f9efd7ffa463e380b75e2e74aff4511df3ef88c
-```
-@z
+% snip code...
 
 @x
 With this Dockerfile, even if the publisher updates the `3.21` tag, your builds
@@ -646,10 +568,10 @@ audit trail of when and how the change occurred.
 
 @x
 For more information about automatically updating your base images with Docker
-Scout, see [Remediation](/manuals/scout/policy/remediation.md).
+Scout, see [Remediation](/manuals/scout/policy/dashboard.md).
 @y
 For more information about automatically updating your base images with Docker
-Scout, see [Remediation](manuals/scout/policy/remediation.md).
+Scout, see [Remediation](/manuals/scout/policy/dashboard.md).
 @z
 
 @x
@@ -744,24 +666,10 @@ Strings with spaces must be quoted or the spaces must be escaped. Inner
 quote characters (`"`), must also be escaped. For example:
 @z
 
-@x
-```dockerfile
+@x within code
 # Set one or more individual labels
-LABEL com.example.version="0.0.1-beta"
-LABEL vendor1="ACME Incorporated"
-LABEL vendor2=ZENITH\ Incorporated
-LABEL com.example.release-date="2015-02-12"
-LABEL com.example.version.is-production=""
-```
 @y
-```dockerfile
 # Set one or more individual labels
-LABEL com.example.version="0.0.1-beta"
-LABEL vendor1="ACME Incorporated"
-LABEL vendor2=ZENITH\ Incorporated
-LABEL com.example.release-date="2015-02-12"
-LABEL com.example.version.is-production=""
-```
 @z
 
 @x
@@ -776,16 +684,10 @@ from being created. This is no longer necessary, but combining labels is still
 supported. For example:
 @z
 
-@x
-```dockerfile
+@x within code
 # Set multiple labels on one line
-LABEL com.example.version="0.0.1-beta" com.example.release-date="2015-02-12"
-```
 @y
-```dockerfile
 # Set multiple labels on one line
-LABEL com.example.version="0.0.1-beta" com.example.release-date="2015-02-12"
-```
 @z
 
 @x

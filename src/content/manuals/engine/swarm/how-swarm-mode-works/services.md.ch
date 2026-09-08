@@ -78,9 +78,9 @@ Each of the three instances of the listener is a task in the swarm.
 @z
 
 @x
-![ HTTP listener service with three replicas](../images/services-diagram.webp?w=550)
+![HTTP listener service with three replicas](../images/services-diagram.webp?w=550)
 @y
-![ HTTP listener service with three replicas](../images/services-diagram.webp?w=550)
+![HTTP listener service with three replicas](../images/services-diagram.webp?w=550)
 @z
 
 @x

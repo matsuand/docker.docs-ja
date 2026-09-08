@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Container-Supported Development"
 linkTitle: "Lab: Container-supported dev"
@@ -33,22 +31,6 @@ keywords: Docker, Compose, local development, PostgreSQL, pgAdmin, containers, l
   time: 30 minutes
 @y
   time: 30 分
-@z
-
-@x
-    - title: Docker Compose docs
-      url: /compose/
-    - title: Bind mounts
-      url: /engine/storage/bind-mounts/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-container-supported-development
-@y
-    - title: Docker Compose docs
-      url: __SUBDIR__/compose/
-    - title: Bind mounts
-      url: __SUBDIR__/engine/storage/bind-mounts/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-container-supported-development
 @z
 
 @x

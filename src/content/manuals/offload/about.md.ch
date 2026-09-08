@@ -165,12 +165,10 @@ and the CLI.
 
 @x
 Docker Offload uses cloud hosts with 4 vCPUs and 8 GiB of memory. If you have
-different requirements, [contact
-Docker](https://www.docker.com/pricing/contact-sales/) to explore options.
+different requirements, <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_offload_about" class="link" rel="noopener">contact Docker</a> to explore options.
 @y
 Docker Offload uses cloud hosts with 4 vCPUs and 8 GiB of memory. If you have
-different requirements, [contact
-Docker](https://www.docker.com/pricing/contact-sales/) to explore options.
+different requirements, <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_offload_about" class="link" rel="noopener">contact Docker</a> to explore options.
 @z
 
 @x

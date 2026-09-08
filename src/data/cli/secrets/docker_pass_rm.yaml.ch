@@ -5,50 +5,96 @@
 command: docker pass rm
 short: Remove secrets from local keychain.
 long: |-
-    Removes one or more named secrets from the local OS keychain.
-    Use --all to remove every stored secret at once.
+    Removes one or more named secrets from the local OS keychain. Use `--all` to remove every stored secret at once.
 usage: docker pass rm name1 name2 ... [flags]
+pname: docker pass
+plink: docker_pass.yaml
+options:
+    - option: all
+      value_type: bool
+      default_value: "false"
+      description: Remove all secrets
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+examples: |-
+    ### Remove a specific secret:
 @y
 command: docker pass rm
 short: Remove secrets from local keychain.
 long: |-
-    Removes one or more named secrets from the local OS keychain.
-    Use --all to remove every stored secret at once.
+    Removes one or more named secrets from the local OS keychain. Use `--all` to remove every stored secret at once.
 usage: docker pass rm name1 name2 ... [flags]
-@z
-
-%options:
-
-@x all
+pname: docker pass
+plink: docker_pass.yaml
+options:
+    - option: all
+      value_type: bool
+      default_value: "false"
       description: Remove all secrets
-@y
-      description: Remove all secrets
+      deprecated: false
+      hidden: false
+      experimental: false
+      experimentalcli: false
+      kubernetes: false
+      swarm: false
+deprecated: false
+hidden: false
+experimental: false
+experimentalcli: false
+kubernetes: false
+swarm: false
+examples: |-
+    ### Remove a specific secret:
 @z
-
-% snip directives...
 
 @x
-examples: |-
-    ### Remove a specific secret:
-    docker pass rm GH_TOKEN
+    ```console
+    $ docker pass rm GH_TOKEN
+    ```
 @y
-examples: |-
-    ### Remove a specific secret:
-    docker pass rm GH_TOKEN
+    ```console
+    $ docker pass rm GH_TOKEN
+    ```
 @z
 
 @x
     ### Remove multiple secrets:
-    docker pass rm GH_TOKEN NPM_TOKEN
 @y
     ### Remove multiple secrets:
-    docker pass rm GH_TOKEN NPM_TOKEN
+@z
+
+@x
+    ```console
+    $ docker pass rm GH_TOKEN NPM_TOKEN
+    ```
+@y
+    ```console
+    $ docker pass rm GH_TOKEN NPM_TOKEN
+    ```
 @z
 
 @x
     ### Remove all secrets:
-    docker pass rm --all
 @y
     ### Remove all secrets:
-    docker pass rm --all
+@z
+
+@x
+    ```console
+    $ docker pass rm --all
+    ```
+@y
+    ```console
+    $ docker pass rm --all
+    ```
 @z

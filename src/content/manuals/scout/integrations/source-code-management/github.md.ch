@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Integrate Docker Scout with GitHub
@@ -16,127 +16,123 @@ keywords: scout, github, integration, image analysis, supply chain, remediation,
 @z
 
 @x
-{{< summary-bar feature_name="Docker Scout GitHub" >}}
+> [!IMPORTANT]
+>
+> The Docker Scout GitHub integration was retired on July 1, 2026. For base-image updates, use
+> GitHub Dependabot with `package-ecosystem: "docker"`. For image-to-source
+> linkage, build with `--provenance=mode=max`.
 @y
-{{< summary-bar feature_name="Docker Scout GitHub" >}}
+> [!IMPORTANT]
+>
+> The Docker Scout GitHub integration was retired on July 1, 2026. For base-image updates, use
+> GitHub Dependabot with `package-ecosystem: "docker"`. For image-to-source
+> linkage, build with `--provenance=mode=max`.
 @z
 
 @x
-The GitHub app integration for Docker Scout grants Docker Scout access to your
-source code repository on GitHub. This improved visibility into how your image
-gets created means Docker Scout can give you automated and contextual
-remediation advice.
+> [!NOTE]
+>
+> This retirement applies only to the Docker Scout GitHub App integration.
+> The [`docker/scout-action`](https://github.com/docker/scout-action) GitHub
+> Action for CI pipelines is not affected and continues to work.
 @y
-The GitHub app integration for Docker Scout grants Docker Scout access to your
-source code repository on GitHub. This improved visibility into how your image
-gets created means Docker Scout can give you automated and contextual
-remediation advice.
+> [!NOTE]
+>
+> This retirement applies only to the Docker Scout GitHub App integration.
+> The [`docker/scout-action`](https://github.com/docker/scout-action) GitHub
+> Action for CI pipelines is not affected and continues to work.
 @z
 
 @x
-## How it works
+## Migrate from the GitHub integration
 @y
-## How it works
+## Migrate from the GitHub integration
 @z
 
 @x
-When you enable the GitHub integration, Docker Scout can make a direct link
-between the image analysis results and the source.
+The integration provided two capabilities, each with an alternative.
 @y
-When you enable the GitHub integration, Docker Scout can make a direct link
-between the image analysis results and the source.
+The integration provided two capabilities, each with an alternative.
 @z
 
 @x
-When analyzing your image, Docker Scout checks for [provenance
-attestations](/manuals/build/metadata/attestations/slsa-provenance.md) to detect the
-location of the source code repository for the image. If the source location is
-found, and you've enabled the GitHub app, Docker Scout parses the Dockerfile
-used to create the image.
+### Base-image digest repinning
 @y
-When analyzing your image, Docker Scout checks for [provenance
-attestations](manuals/build/metadata/attestations/slsa-provenance.md) to detect the
-location of the source code repository for the image. If the source location is
-found, and you've enabled the GitHub app, Docker Scout parses the Dockerfile
-used to create the image.
+### Base-image digest repinning
 @z
 
 @x
-Parsing the Dockerfile reveals the base image tag used to build the image. By
-knowing the base image tags used, Docker Scout can detect whether the tag is
-outdated, meaning it's been changed to a different image digest. For example,
-say you're using `alpine:3.18` as your base image, and at a later point in
-time, the image maintainers release a patch version for version `3.18`,
-containing security fixes. The `alpine:3.18` tag you've been using becomes
-out-of-date; the `alpine:3.18` you're using is no longer the latest.
+Use GitHub Dependabot with `package-ecosystem: "docker"`. Dependabot opens
+PRs to update base image tags and digests on a schedule. When you pin as
+`FROM image:tag@sha256:...`, both the tag and digest are updated. The Scout
+integration updated only the digest.
 @y
-Parsing the Dockerfile reveals the base image tag used to build the image. By
-knowing the base image tags used, Docker Scout can detect whether the tag is
-outdated, meaning it's been changed to a different image digest. For example,
-say you're using `alpine:3.18` as your base image, and at a later point in
-time, the image maintainers release a patch version for version `3.18`,
-containing security fixes. The `alpine:3.18` tag you've been using becomes
-out-of-date; the `alpine:3.18` you're using is no longer the latest.
+Use GitHub Dependabot with `package-ecosystem: "docker"`. Dependabot opens
+PRs to update base image tags and digests on a schedule. When you pin as
+`FROM image:tag@sha256:...`, both the tag and digest are updated. The Scout
+integration updated only the digest.
 @z
 
 @x
-When this happens, Docker Scout detects the discrepancy and surfaces it through
-the [Up-to-Date Base Images policy](/manuals/scout/policy/_index.md#up-to-date-base-images-policy).
-When the GitHub integration's enabled, you'll also get automated suggestions on
-how to update your base image. For more information about how Docker Scout can
-help you automatically improve your supply chain conduct and security posture,
-see [Remediation](../../policy/remediation.md).
+Minimal `.github/dependabot.yml`:
 @y
-When this happens, Docker Scout detects the discrepancy and surfaces it through
-the [Up-to-Date Base Images policy](manuals/scout/policy/_index.md#up-to-date-base-images-policy).
-When the GitHub integration's enabled, you'll also get automated suggestions on
-how to update your base image. For more information about how Docker Scout can
-help you automatically improve your supply chain conduct and security posture,
-see [Remediation](../../policy/remediation.md).
+Minimal `.github/dependabot.yml`:
 @z
 
 @x
-## Setup
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
 @y
-## Setup
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
 @z
 
 @x
-To integrate Docker Scout with your GitHub organization:
+See [Configuring Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates).
 @y
-To integrate Docker Scout with your GitHub organization:
+See [Configuring Dependabot version updates](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates).
 @z
 
 @x
-1. Go to [GitHub integration](https://scout.docker.com/settings/integrations/github/)
-   on the Docker Scout Dashboard.
-2. Select the **Integrate GitHub app** button to open GitHub.
-3. Select the organization that you want to integrate.
-4. Select whether you want to integrate all repositories in the GitHub
-   organization or a manual selection of repositories.
-5. Select **Install & Authorize** to add the Docker Scout app to the
-   organization.
+### Image-to-source linkage
 @y
-1. Go to [GitHub integration](https://scout.docker.com/settings/integrations/github/)
-   on the Docker Scout Dashboard.
-2. Select the **Integrate GitHub app** button to open GitHub.
-3. Select the organization that you want to integrate.
-4. Select whether you want to integrate all repositories in the GitHub
-   organization or a manual selection of repositories.
-5. Select **Install & Authorize** to add the Docker Scout app to the
-   organization.
+### Image-to-source linkage
 @z
 
 @x
-   This redirects you back to the Docker Scout Dashboard, which lists your
-   active GitHub integrations.
+Build with `--provenance=mode=max`. Docker Scout reads the resulting provenance
+attestation to link an image back to its source repository without requiring
+the GitHub app.
 @y
-   This redirects you back to the Docker Scout Dashboard, which lists your
-   active GitHub integrations.
+Build with `--provenance=mode=max`. Docker Scout reads the resulting provenance
+attestation to link an image back to its source repository without requiring
+the GitHub app.
 @z
 
 @x
-The GitHub integration is now active.
+```console
+$ docker build --provenance=mode=max -t myimage:tag .
+```
 @y
-The GitHub integration is now active.
+```console
+$ docker build --provenance=mode=max -t myimage:tag .
+```
+@z
+
+@x
+See [SLSA provenance attestations](/manuals/build/metadata/attestations/slsa-provenance.md).
+@y
+See [SLSA provenance attestations](manuals/build/metadata/attestations/slsa-provenance.md).
 @z

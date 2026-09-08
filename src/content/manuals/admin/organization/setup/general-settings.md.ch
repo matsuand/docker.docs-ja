@@ -12,17 +12,17 @@ linkTitle: Change information
 @z
 
 @x
-description: Learn how to manage settings for organizations using Docker Admin Console.
-keywords: organization, settings, Admin Console, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
+description: Learn how to manage settings for organizations.
+keywords: organization, settings, Docker Home, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
 @y
-description: Learn how to manage settings for organizations using Docker Admin Console.
-keywords: organization, settings, Admin Console, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
+description: Learn how to manage settings for organizations.
+keywords: organization, settings, Docker Home, manage, Docker organization, Gravatar, SCIM, SSO setup, domain management, organization settings
 @z
 
 @x
-Learn how to update your organization information using the Admin Console.
+Learn how to update your organization information.
 @y
-Learn how to update your organization information using the Admin Console.
+Learn how to update your organization information.
 @z
 
 @x
@@ -32,9 +32,9 @@ Learn how to update your organization information using the Admin Console.
 @z
 
 @x
-General organization information appears on your organization landing page in the Admin Console.
+General organization information appears on your organization landing page.
 @y
-General organization information appears on your organization landing page in the Admin Console.
+General organization information appears on your organization landing page.
 @z
 
 @x
@@ -64,12 +64,14 @@ To edit this information:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-   select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com) and select your
+   organization from the top-left account drop-down.
+1. Select **Organization settings**.
 1. Enter or update your organization’s details, then select **Save**.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and
-   select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com) and select your
+   organization from the top-left account drop-down.
+1. Select **Organization settings**.
 1. Enter or update your organization’s details, then select **Save**.
 @z
 

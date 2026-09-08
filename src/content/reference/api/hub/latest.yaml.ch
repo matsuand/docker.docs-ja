@@ -388,17 +388,6 @@ tags:
     x-audience: public
     description: |
       The organization access token endpoints allow you to manage organization access tokens (OATs). See [Organization access tokens](https://docs.docker.com/security/for-admins/access-tokens/) for more information.
-paths:
-  /v2/users/login:
-    post:
-      tags:
-        - authentication-api
-      summary: Create an authentication token
-      operationId: PostUsersLogin
-      security: []
-      deprecated: true
-      description: |
-        Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.
 @y
       For more information, see [System for Cross-domain Identity management](https://docs.docker.com/security/for-admins/provisioning/scim/).
   - name: org-access-tokens
@@ -406,6 +395,33 @@ paths:
     x-audience: public
     description: |
       The organization access token endpoints allow you to manage organization access tokens (OATs). See [Organization access tokens](https://docs.docker.com/security/for-admins/access-tokens/) for more information.
+@z
+
+@x
+      OATs only authenticate requests to the modern namespace-scoped routes under `/v2/namespaces/{namespace}/repositories/`. Legacy repository paths are OAT unsupported, regardless of the token's scopes, and reject every OAT with `403 token issued from organization access token is not allowed`:
+@y
+      OATs only authenticate requests to the modern namespace-scoped routes under `/v2/namespaces/{namespace}/repositories/`. Legacy repository paths are OAT unsupported, regardless of the token's scopes, and reject every OAT with `403 token issued from organization access token is not allowed`:
+@z
+
+@x
+      - `GET /v2/repositories/{namespace}/{repository}` — use [Get repository](#tag/repositories/operation/GetRepository) instead.
+      - `GET /v2/repositories/{namespace}` — use [List repositories](#tag/repositories/operation/listNamespaceRepositories) instead.
+      - `GET /v2/users/{username}/repositories` — use [List repositories](#tag/repositories/operation/listNamespaceRepositories) instead.
+paths:
+  /v2/users/login:
+    post:
+      tags:
+        - authentication-api
+      summary: Create an authentication token
+      operationId: PostUsersLogin
+      security: []
+      deprecated: true
+      description: |
+        Creates and returns a bearer token in JWT format that you can use to authenticate with Docker Hub APIs.
+@y
+      - `GET /v2/repositories/{namespace}/{repository}` — use [Get repository](#tag/repositories/operation/GetRepository) instead.
+      - `GET /v2/repositories/{namespace}` — use [List repositories](#tag/repositories/operation/listNamespaceRepositories) instead.
+      - `GET /v2/users/{username}/repositories` — use [List repositories](#tag/repositories/operation/listNamespaceRepositories) instead.
 paths:
   /v2/users/login:
     post:
@@ -1529,6 +1545,19 @@ paths:
                         timestamp: "2021-02-19T01:34:35Z"
                         action_description: |
                           pushed the tag latest with the digest sha256:c1ae9c435032a to the repository docker/example
+                      - account: docker
+                        action: offload.lease.end
+                        name: docker
+                        actor: docker
+                        data:
+                          lease_id: l_3EgPuRCjtUqT279CFPOQWcO8zOf
+                          resource_type: run_4cpu_8mem
+                          started_at: "2026-06-04T18:24:21Z"
+                          updated_at: "2026-06-04T18:36:43Z"
+                          org_id: b908ca6e-b9a9-4a53-a9a5-6bec96f72432
+                          user_id: ecae6747-e42c-43cb-925d-cfce1ab32b02
+                        timestamp: "2026-06-04T18:36:43Z"
+                        action_description: "offload lease 'l_3EgPuRCjtUqT279CFPOQWcO8zOf' ended, ran for '12m22s'"
         "429":
           description: ""
           content:
@@ -1669,6 +1698,19 @@ paths:
                         timestamp: "2021-02-19T01:34:35Z"
                         action_description: |
                           pushed the tag latest with the digest sha256:c1ae9c435032a to the repository docker/example
+                      - account: docker
+                        action: offload.lease.end
+                        name: docker
+                        actor: docker
+                        data:
+                          lease_id: l_3EgPuRCjtUqT279CFPOQWcO8zOf
+                          resource_type: run_4cpu_8mem
+                          started_at: "2026-06-04T18:24:21Z"
+                          updated_at: "2026-06-04T18:36:43Z"
+                          org_id: b908ca6e-b9a9-4a53-a9a5-6bec96f72432
+                          user_id: ecae6747-e42c-43cb-925d-cfce1ab32b02
+                        timestamp: "2026-06-04T18:36:43Z"
+                        action_description: "offload lease 'l_3EgPuRCjtUqT279CFPOQWcO8zOf' ended, ran for '12m22s'"
         "429":
           description: ""
           content:
@@ -2072,84 +2114,8 @@ paths:
     get:
       operationId: ListRepositoryTags
       summary: List repository tags
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      parameters:
-        - in: query
-          name: page
-          required: false
-          schema:
-            type: integer
-          description: Page number to get. Defaults to 1.
-        - in: query
-          name: page_size
-          required: false
-          schema:
-            type: integer
-          description: Number of items to get per page. Defaults to 10. Max of 100.
-      responses:
-        "200":
-          $ref: "#/components/responses/list_tags"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-    head:
-      summary: Check repository tags
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      responses:
-        "200":
-          description: Repository contains tags
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
-    parameters:
-      - $ref: "#/components/parameters/namespace"
-      - $ref: "#/components/parameters/repository"
-      - $ref: "#/components/parameters/tag"
-    get:
-      operationId: GetRepositoryTag
-      summary: Read repository tag
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      responses:
-        "200":
-          $ref: "#/components/responses/get_tag"
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-    head:
-      summary: Check repository tag
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      responses:
-        "200":
-          description: Repository tag exists
-        "403":
-          $ref: "#/components/responses/Forbidden"
-        "404":
-          $ref: "#/components/responses/NotFound"
-  /v2/namespaces/{namespace}/repositories/{repository}/immutabletags:
-    parameters:
-      - $ref: "#/components/parameters/namespace"
-      - $ref: "#/components/parameters/repository"
-    patch:
-      operationId: UpdateRepositoryImmutableTags
-      summary: "Update repository immutable tags"
       description: |
-        Updates the immutable tags configuration for this repository.
+        Returns the list of tags for the specified repository.
 @y
   /v2/orgs/{org_name}/access-tokens/{access_token_id}:
     parameters:
@@ -2233,6 +2199,12 @@ paths:
     get:
       operationId: ListRepositoryTags
       summary: List repository tags
+      description: |
+        Returns the list of tags for the specified repository.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2259,6 +2231,42 @@ paths:
           $ref: "#/components/responses/NotFound"
     head:
       summary: Check repository tags
+      description: |
+        Checks whether the repository has any tags.
+@y
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          required: false
+          schema:
+            type: integer
+          description: Page number to get. Defaults to 1.
+        - in: query
+          name: page_size
+          required: false
+          schema:
+            type: integer
+          description: Number of items to get per page. Defaults to 10. Max of 100.
+      responses:
+        "200":
+          $ref: "#/components/responses/list_tags"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    head:
+      summary: Check repository tags
+      description: |
+        Checks whether the repository has any tags.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2278,6 +2286,35 @@ paths:
     get:
       operationId: GetRepositoryTag
       summary: Read repository tag
+      description: |
+        Returns details for a specific tag in the specified repository.
+@y
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Repository contains tags
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+      - $ref: "#/components/parameters/tag"
+    get:
+      operationId: GetRepositoryTag
+      summary: Read repository tag
+      description: |
+        Returns details for a specific tag in the specified repository.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2291,6 +2328,51 @@ paths:
           $ref: "#/components/responses/NotFound"
     head:
       summary: Check repository tag
+      description: |
+        Checks whether the specified tag exists in the repository.
+@y
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          $ref: "#/components/responses/get_tag"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+    head:
+      summary: Check repository tag
+      description: |
+        Checks whether the specified tag exists in the repository.
+@z
+
+@x
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Repository tag exists
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "404":
+          $ref: "#/components/responses/NotFound"
+  /v2/namespaces/{namespace}/repositories/{repository}/immutabletags:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    patch:
+      operationId: UpdateRepositoryImmutableTags
+      summary: "Update repository immutable tags"
+      description: |
+        Updates the immutable tags configuration for this repository.
+@y
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2315,34 +2397,12 @@ paths:
 
 @x
         **Only users with administrative privileges for the repository can modify these settings.**
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      requestBody:
-        $ref: "#/components/requestBodies/update_repository_immutable_tags_request"
-      responses:
-        200:
-          $ref: "#/components/responses/update_repository_immutable_tags_response"
-        400:
-          $ref: "#/components/responses/bad_request"
-        401:
-          $ref: "#/components/responses/unauthorized"
-        403:
-          $ref: "#/components/responses/forbidden"
-        404:
-          $ref: "#/components/responses/not_found"
-  /v2/namespaces/{namespace}/repositories/{repository}/immutabletags/verify:
-    parameters:
-      - $ref: "#/components/parameters/namespace"
-      - $ref: "#/components/parameters/repository"
-    post:
-      operationId: VerifyRepositoryImmutableTags
-      summary: "Verify repository immutable tags"
-      description: |
-        Validates  the immutable tags regex pass in parameter and returns a list of tags matching it in this repository.
 @y
         **Only users with administrative privileges for the repository can modify these settings.**
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2368,11 +2428,45 @@ paths:
       operationId: VerifyRepositoryImmutableTags
       summary: "Verify repository immutable tags"
       description: |
-        Validates  the immutable tags regex pass in parameter and returns a list of tags matching it in this repository.
+        Validates the immutable tags regex passed in the request body and returns a list of tags matching it in this repository.
+@y
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: "#/components/requestBodies/update_repository_immutable_tags_request"
+      responses:
+        200:
+          $ref: "#/components/responses/update_repository_immutable_tags_response"
+        400:
+          $ref: "#/components/responses/bad_request"
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+  /v2/namespaces/{namespace}/repositories/{repository}/immutabletags/verify:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    post:
+      operationId: VerifyRepositoryImmutableTags
+      summary: "Verify repository immutable tags"
+      description: |
+        Validates the immutable tags regex passed in the request body and returns a list of tags matching it in this repository.
 @z
 
 @x
-        **Only users with administrative privileges for the repository call this endpoint.**
+        **Only users with administrative privileges for the repository can call this endpoint.**
+@y
+        **Only users with administrative privileges for the repository can call this endpoint.**
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2396,6 +2490,39 @@ paths:
       - $ref: "#/components/parameters/repository"
     post:
       summary: Assign a group (Team) to a repository for access
+      description: |
+        Assigns an organization group (team) to a repository with a specified permission level.
+@y
+        <span class="oat"></span>
+      tags:
+        - repositories
+      security:
+        - bearerAuth: []
+      requestBody:
+        $ref: "#/components/requestBodies/immutable_tags_verify_request"
+      responses:
+        200:
+          $ref: "#/components/responses/immutable_tags_verify_response"
+        400:
+          $ref: "#/components/responses/bad_request"
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+  /v2/repositories/{namespace}/{repository}/groups:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    post:
+      summary: Assign a group (Team) to a repository for access
+      description: |
+        Assigns an organization group (team) to a repository with a specified permission level.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       operationId: CreateRepositoryGroup
@@ -2442,30 +2569,7 @@ paths:
       description: |
         Returns a list of repositories within the specified namespace (organization or user).
 @y
-        **Only users with administrative privileges for the repository call this endpoint.**
-      tags:
-        - repositories
-      security:
-        - bearerAuth: []
-      requestBody:
-        $ref: "#/components/requestBodies/immutable_tags_verify_request"
-      responses:
-        200:
-          $ref: "#/components/responses/immutable_tags_verify_response"
-        400:
-          $ref: "#/components/responses/bad_request"
-        401:
-          $ref: "#/components/responses/unauthorized"
-        403:
-          $ref: "#/components/responses/forbidden"
-        404:
-          $ref: "#/components/responses/not_found"
-  /v2/repositories/{namespace}/{repository}/groups:
-    parameters:
-      - $ref: "#/components/parameters/namespace"
-      - $ref: "#/components/parameters/repository"
-    post:
-      summary: Assign a group (Team) to a repository for access
+        <span class="oat"></span>
       tags:
         - repositories
       operationId: CreateRepositoryGroup
@@ -2515,6 +2619,18 @@ paths:
 
 @x
         Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@y
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@z
+
+@x
+        <span class="oat"></span>
+@y
+        <span class="oat"></span>
+@z
+
+@x
+        **OAT listing behavior**: an OAT with the `scope-repository-list` scope sees all repositories including private ones. An OAT without that scope only sees public repositories. This filtering is silent: the response is a normal `200` with no indication that private repositories were withheld.
       tags:
         - repositories
       security:
@@ -2658,77 +2774,8 @@ paths:
       description: |
         Creates a new repository within the specified namespace. The repository will be created
         with the provided metadata including name, description, and privacy settings.
-      operationId: CreateRepository
-      tags:
-        - repositories
-      security:
-        - BearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/repo_creation_request"
-            example:
-              name: "my-app"
-              namespace: "myorganization"
-              description: "A sample application repository"
-              full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-              registry: "docker.io"
-              is_private: false
-      responses:
-        201:
-          description: Repository created successfully
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/repository_info"
-              example:
-                name: "my-app"
-                namespace: "myorganization"
-                repository_type: "image"
-                status: 1
-                status_description: "Active"
-                description: "A sample application repository"
-                is_private: false
-                is_automated: false
-                star_count: 0
-                pull_count: 0
-                last_updated: "2025-01-20T10:30:00Z"
-                date_registered: "2025-01-20T10:30:00Z"
-                collaborator_count: 0
-                hub_user: "myorganization"
-                has_starred: false
-                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
-                media_types: []
-                content_types: []
-                categories: []
-                immutable_tags_settings:
-                  enabled: false
-                  rules: []
-                storage_size: null
-                source: null
-        400:
-          $ref: "#/components/responses/bad_request"
-        401:
-          $ref: "#/components/responses/unauthorized"
-        403:
-          $ref: "#/components/responses/forbidden"
-        404:
-          $ref: "#/components/responses/not_found"
-        500:
-          $ref: "#/components/responses/internal_error"
-  /v2/namespaces/{namespace}/repositories/{repository}:
-    parameters:
-      - $ref: "#/components/parameters/namespace"
-      - $ref: "#/components/parameters/repository"
-    get:
-      operationId: GetRepository
-      summary: Get repository in a namespace
-      description: |
-        Returns a repository within the specified namespace (organization or user).
 @y
-        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+        **OAT listing behavior**: an OAT with the `scope-repository-list` scope sees all repositories including private ones. An OAT without that scope only sees public repositories. This filtering is silent: the response is a normal `200` with no indication that private repositories were withheld.
       tags:
         - repositories
       security:
@@ -2872,6 +2919,81 @@ paths:
       description: |
         Creates a new repository within the specified namespace. The repository will be created
         with the provided metadata including name, description, and privacy settings.
+@z
+
+@x
+        <span class="oat"></span>
+      operationId: CreateRepository
+      tags:
+        - repositories
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/repo_creation_request"
+            example:
+              name: "my-app"
+              namespace: "myorganization"
+              description: "A sample application repository"
+              full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+              registry: "docker.io"
+              is_private: false
+      responses:
+        201:
+          description: Repository created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/repository_info"
+              example:
+                name: "my-app"
+                namespace: "myorganization"
+                repository_type: "image"
+                status: 1
+                status_description: "Active"
+                description: "A sample application repository"
+                is_private: false
+                is_automated: false
+                star_count: 0
+                pull_count: 0
+                last_updated: "2025-01-20T10:30:00Z"
+                date_registered: "2025-01-20T10:30:00Z"
+                collaborator_count: 0
+                hub_user: "myorganization"
+                has_starred: false
+                full_description: "This is a comprehensive description of my application repository that contains additional details about the project."
+                media_types: []
+                content_types: []
+                categories: []
+                immutable_tags_settings:
+                  enabled: false
+                  rules: []
+                storage_size: null
+                source: null
+        400:
+          $ref: "#/components/responses/bad_request"
+        401:
+          $ref: "#/components/responses/unauthorized"
+        403:
+          $ref: "#/components/responses/forbidden"
+        404:
+          $ref: "#/components/responses/not_found"
+        500:
+          $ref: "#/components/responses/internal_error"
+  /v2/namespaces/{namespace}/repositories/{repository}:
+    parameters:
+      - $ref: "#/components/parameters/namespace"
+      - $ref: "#/components/parameters/repository"
+    get:
+      operationId: GetRepository
+      summary: Get repository in a namespace
+      description: |
+        Returns a repository within the specified namespace (organization or user).
+@y
+        <span class="oat"></span>
       operationId: CreateRepository
       tags:
         - repositories
@@ -2945,6 +3067,12 @@ paths:
 
 @x
         Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@y
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -2995,7 +3123,7 @@ paths:
       description: |
         Check a repository within the specified namespace (organization or user).
 @y
-        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -3049,6 +3177,12 @@ paths:
 
 @x
         Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@y
+        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+@z
+
+@x
+        <span class="oat"></span>
       tags:
         - repositories
       security:
@@ -3107,7 +3241,7 @@ paths:
       description: |
         Returns a list of members for an organization.
 @y
-        Public repositories are accessible to everyone, while private repositories require appropriate authentication and permissions.
+        <span class="oat"></span>
       tags:
         - repositories
       security:

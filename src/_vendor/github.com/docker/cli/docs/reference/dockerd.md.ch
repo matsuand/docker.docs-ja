@@ -2144,7 +2144,7 @@ You can view the configured CDI specification directories using the `docker info
 @x
 The feature in enabled by default. To disable it, use the `cdi` options in the `daemon.json` file:
 @y
-The feature in enabled by default. To disable it, use the `cdi` options in the `deamon.json` file:
+The feature in enabled by default. To disable it, use the `cdi` options in the `daemon.json` file:
 @z
 
 @x
@@ -2592,13 +2592,13 @@ $ echo $?
 @z
 
 @x
-The default location of the configuration file on Linux is
-`/etc/docker/daemon.json`. Use the `--config-file` flag to specify a
-non-default location.
+The default location of the configuration file on Linux is `/etc/docker/daemon.json`.
+If the file does not exist, you need to create it first. Use the `--config-file`
+flag to specify a non-default location.
 @y
-The default location of the configuration file on Linux is
-`/etc/docker/daemon.json`. Use the `--config-file` flag to specify a
-non-default location.
+The default location of the configuration file on Linux is `/etc/docker/daemon.json`.
+If the file does not exist, you need to create it first. Use the `--config-file`
+flag to specify a non-default location.
 @z
 
 @x
@@ -2903,12 +2903,14 @@ The following is a full example of the allowed configuration options on Linux:
 
 @x
 The default location of the configuration file on Windows is
-`%programdata%\docker\config\daemon.json`. Use the `--config-file` flag
-to specify a non-default location.
+`%programdata%\docker\config\daemon.json`. If the file does not exist, you need
+to create it first. Use the `--config-file` flag to specify a non-default
+location.
 @y
 The default location of the configuration file on Windows is
-`%programdata%\docker\config\daemon.json`. Use the `--config-file` flag
-to specify a non-default location.
+`%programdata%\docker\config\daemon.json`. If the file does not exist, you need
+to create it first. Use the `--config-file` flag to specify a non-default
+location.
 @z
 
 @x

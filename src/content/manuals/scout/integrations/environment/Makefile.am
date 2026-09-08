@@ -3,8 +3,7 @@
 ##
 bases = \
 	_index.md \
-	cli.md    \
-	sysdig.md
+	cli.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

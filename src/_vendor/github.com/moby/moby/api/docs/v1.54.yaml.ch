@@ -3868,13 +3868,6 @@ definitions:
           compatibility.
         x-nullable: true
         $ref: "#/definitions/OCIDescriptor"
-      Identity:
-        description: |-
-          Identity holds information about the identity and origin of the image.
-          This is trusted information verified by the daemon and cannot be modified
-          by tagging an image to a different name.
-        x-nullable: true
-        $ref: "#/definitions/Identity"
       Manifests:
         description: |
           Manifests is a list of image manifests available in this image. It
@@ -3885,13 +3878,6 @@ definitions:
           compatibility.
         x-nullable: true
         $ref: "#/definitions/OCIDescriptor"
-      Identity:
-        description: |-
-          Identity holds information about the identity and origin of the image.
-          This is trusted information verified by the daemon and cannot be modified
-          by tagging an image to a different name.
-        x-nullable: true
-        $ref: "#/definitions/Identity"
       Manifests:
         description: |
           Manifests is a list of image manifests available in this image. It
@@ -3914,6 +3900,13 @@ definitions:
         x-nullable: true
         items:
           $ref: "#/definitions/ImageManifestSummary"
+      Identity:
+        description: |-
+          Identity holds information about the identity and origin of the image.
+          This is trusted information verified by the daemon and cannot be modified
+          by tagging an image to a different name.
+        x-nullable: true
+        $ref: "#/definitions/Identity"
       RepoTags:
         description: |
           List of image names/tags in the local image cache that reference this
@@ -3925,6 +3918,13 @@ definitions:
         x-nullable: true
         items:
           $ref: "#/definitions/ImageManifestSummary"
+      Identity:
+        description: |-
+          Identity holds information about the identity and origin of the image.
+          This is trusted information verified by the daemon and cannot be modified
+          by tagging an image to a different name.
+        x-nullable: true
+        $ref: "#/definitions/Identity"
       RepoTags:
         description: |
           List of image names/tags in the local image cache that reference this
@@ -17054,6 +17054,11 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
+    properties:
+      Segments:
+        type: "object"
+        additionalProperties:
+          type: "string"
 @y
   Topology:
     description: |
@@ -17061,6 +17066,11 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
+    properties:
+      Segments:
+        type: "object"
+        additionalProperties:
+          type: "string"
 @z
 
 @x
@@ -26100,7 +26110,9 @@ paths:
                 description: |
                   Listen address used for inter-manager communication if the node
                   gets promoted to manager, as well as determining the networking
-                  interface used for the VXLAN Tunnel Endpoint (VTEP).
+                  interface used for the VXLAN Tunnel Endpoint (VTEP). This is
+                  required for joining a swarm. If the port number is omitted,
+                  the default swarm listening port is used.
                 type: "string"
               AdvertiseAddr:
                 description: |
@@ -26196,7 +26208,9 @@ paths:
                 description: |
                   Listen address used for inter-manager communication if the node
                   gets promoted to manager, as well as determining the networking
-                  interface used for the VXLAN Tunnel Endpoint (VTEP).
+                  interface used for the VXLAN Tunnel Endpoint (VTEP). This is
+                  required for joining a swarm. If the port number is omitted,
+                  the default swarm listening port is used.
                 type: "string"
               AdvertiseAddr:
                 description: |
@@ -26240,6 +26254,7 @@ paths:
               JoinToken:
                 description: "Secret token for joining this swarm."
                 type: "string"
+            required: [ListenAddr, RemoteAddrs, JoinToken]
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
@@ -26418,6 +26433,7 @@ paths:
               JoinToken:
                 description: "Secret token for joining this swarm."
                 type: "string"
+            required: [ListenAddr, RemoteAddrs, JoinToken]
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"

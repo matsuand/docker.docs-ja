@@ -56,13 +56,27 @@ To create exceptions using OpenVEX documents, you need:
 @x
 - The latest version of Docker Desktop or the Docker Scout CLI plugin
 - The [`vexctl`](https://github.com/openvex/vexctl) command line tool.
-- The [containerd image store](/manuals/desktop/features/containerd.md) must be enabled
-- Write permissions to the registry repository where the image is stored
 @y
 - The latest version of Docker Desktop or the Docker Scout CLI plugin
 - The [`vexctl`](https://github.com/openvex/vexctl) command line tool.
-- The [containerd image store](manuals/desktop/features/containerd.md) must be enabled
+@z
+
+@x
+Additional requirements depend on how you attach the VEX document:
+@y
+Additional requirements depend on how you attach the VEX document:
+@z
+
+@x
+- The [containerd image store](/manuals/desktop/features/containerd.md)
+  must be enabled to attach the document as an attestation.
 - Write permissions to the registry repository where the image is stored
+  are required to attach the document as an attestation.
+@y
+- The [containerd image store](manuals/desktop/features/containerd.md)
+  must be enabled to attach the document as an attestation.
+- Write permissions to the registry repository where the image is stored
+  are required to attach the document as an attestation.
 @z
 
 @x
@@ -592,11 +606,15 @@ change the VEX document.
 @x
 To attach VEX documents as an attestation, you can use the `docker scout
 attestation add` CLI command. Using attestations is the recommended option for
-attaching exceptions to images when using VEX.
+attaching exceptions to images when using VEX. This method requires the
+[containerd image store](/manuals/desktop/features/containerd.md) and write
+access to the registry repository where the image is stored.
 @y
 To attach VEX documents as an attestation, you can use the `docker scout
 attestation add` CLI command. Using attestations is the recommended option for
-attaching exceptions to images when using VEX.
+attaching exceptions to images when using VEX. This method requires the
+[containerd image store](manuals/desktop/features/containerd.md) and write
+access to the registry repository where the image is stored.
 @z
 
 @x
@@ -679,10 +697,14 @@ To attach an attestation to an image:
 Embedding VEX documents directly on the image filesystem is a good option if
 you know the exceptions ahead of time, before you build the image. And it's
 relatively easy; just `COPY` the VEX document to the image in your Dockerfile.
+Unlike attestations, this method doesn't require the containerd image store or
+write access to a registry before the image is pushed.
 @y
 Embedding VEX documents directly on the image filesystem is a good option if
 you know the exceptions ahead of time, before you build the image. And it's
 relatively easy; just `COPY` the VEX document to the image in your Dockerfile.
+Unlike attestations, this method doesn't require the containerd image store or
+write access to a registry before the image is pushed.
 @z
 
 @x

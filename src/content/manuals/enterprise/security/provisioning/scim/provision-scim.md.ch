@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -106,14 +106,14 @@ To enable SCIM:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com).
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** icon for your
    connection, then select **Setup SCIM**.
 1. Copy the **SCIM Base URL** and **API Token** and paste the values into your
    IdP.
 @y
 1. Sign in to [Docker Home](https://app.docker.com).
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** icon for your
    connection, then select **Setup SCIM**.
 1. Copy the **SCIM Base URL** and **API Token** and paste the values into your
@@ -734,7 +734,7 @@ If you're using direct mapping:
 1. Use Microsoft Graph API to assign attribute values. Example PATCH request:
 @z
 
-% snip command...
+% snip code...
 
 @x
 > [!NOTE]
@@ -793,7 +793,7 @@ After completing role mapping, you can test the configuration manually.
 1. Select a user you've assigned to your SCIM application.
 1. Select **Provision User**.
 1. Wait a few seconds, then check the Docker
-   [Admin Console](https://app.docker.com/admin) under **Members**.
+   **Members** in [Docker Home](https://app.docker.com).
 1. If the user doesn't appear, review logs in **Reports > System Log** and
    confirm SCIM settings in the app.
 @y
@@ -801,7 +801,7 @@ After completing role mapping, you can test the configuration manually.
 1. Select a user you've assigned to your SCIM application.
 1. Select **Provision User**.
 1. Wait a few seconds, then check the Docker
-   [Admin Console](https://app.docker.com/admin) under **Members**.
+   **Members** in [Docker Home](https://app.docker.com).
 1. If the user doesn't appear, review logs in **Reports > System Log** and
    confirm SCIM settings in the app.
 @z
@@ -820,7 +820,7 @@ After completing role mapping, you can test the configuration manually.
 1. Go to **Provisioning** > **Provision on demand**.
 1. Select a user or group and choose **Provision**.
 1. Confirm that the user appears in the Docker
-   [Admin Console](https://app.docker.com/admin) under **Members**.
+   **Members** in [Docker Home](https://app.docker.com).
 1. If needed, check **Provisioning logs** for errors.
 @y
 1. In the Azure Portal, go to **Microsoft Entra ID** > **Enterprise Applications**,
@@ -828,7 +828,7 @@ After completing role mapping, you can test the configuration manually.
 1. Go to **Provisioning** > **Provision on demand**.
 1. Select a user or group and choose **Provision**.
 1. Confirm that the user appears in the Docker
-   [Admin Console](https://app.docker.com/admin) under **Members**.
+   **Members** in [Docker Home](https://app.docker.com).
 1. If needed, check **Provisioning logs** for errors.
 @z
 
@@ -866,12 +866,12 @@ To disable SCIM:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com).
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** icon.
 1. Select **Disable SCIM**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com).
-1. Select **Admin Console**, then **SSO and SCIM**.
+1. Select **Identity & auth**, then **SSO and SCIM**.
 1. In the **SSO connections** table, select the **Actions** icon.
 1. Select **Disable SCIM**.
 @z

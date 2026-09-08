@@ -28,15 +28,23 @@ description: |-
 @x
     REGISTRY SECRETS (e.g. "ghcr.io", "myregistry.azurecr.io")
       Used to pull private template images and kit artifacts before sandbox
-      creation. Host-only secrets (no -g) are not injected into sandboxes;
-      global secrets (-g) are written as ~/.docker/config.json in every new sandbox.
+      creation. Unlike service secrets, registry credentials are host-only by
+      default. They are not injected into sandboxes unless --all-sandboxes or
+      --sandbox is set (the credential never enters the sandbox filesystem).
       Use "sbx secret set --registry <host> --password-stdin" to store them.
 @y
     REGISTRY SECRETS (e.g. "ghcr.io", "myregistry.azurecr.io")
       Used to pull private template images and kit artifacts before sandbox
-      creation. Host-only secrets (no -g) are not injected into sandboxes;
-      global secrets (-g) are written as ~/.docker/config.json in every new sandbox.
+      creation. Unlike service secrets, registry credentials are host-only by
+      default. They are not injected into sandboxes unless --all-sandboxes or
+      --sandbox is set (the credential never enters the sandbox filesystem).
       Use "sbx secret set --registry <host> --password-stdin" to store them.
+@z
+
+@x
+usage: sbx secret COMMAND
+@y
+usage: sbx secret COMMAND
 @z
 
 % options:
@@ -59,12 +67,16 @@ description: |-
 
 @x
     - sbx - Manage AI coding agent sandboxes.
+    - sbx secret import - Import secrets detected in host environment variables
     - sbx secret ls - List stored secrets
     - sbx secret rm - Remove a secret
     - sbx secret set - Create or update a secret
+    - sbx secret set-custom - (Experimental) Create or update a custom secret
 @y
     - sbx - Manage AI coding agent sandboxes.
+    - sbx secret import - Import secrets detected in host environment variables
     - sbx secret ls - List stored secrets
     - sbx secret rm - Remove a secret
     - sbx secret set - Create or update a secret
+    - sbx secret set-custom - (Experimental) Create or update a custom secret
 @z

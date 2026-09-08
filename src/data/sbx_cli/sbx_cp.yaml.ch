@@ -34,11 +34,9 @@ usage: sbx cp [flags] SRC DST
 %options:
 
 @x follow-link
-      usage: |
-        Follow symbolic links in the source path when copying from host to sandbox
+      usage: Follow symbolic links in the source path
 @y
-      usage: |
-        Follow symbolic links in the source path when copying from host to sandbox
+      usage: Follow symbolic links in the source path
 @z
 
 @x help

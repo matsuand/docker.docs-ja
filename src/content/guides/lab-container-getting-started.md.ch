@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Getting Started with Docker"
 linkTitle: "Lab: Docker basics"
@@ -29,22 +27,6 @@ keywords: Docker, containers, Dockerfile, images, getting started, lab, labspace
   time: 30 minutes
 @y
   time: 30 分
-@z
-
-@x
-    - title: Docker overview
-      url: /get-started/docker-overview/
-    - title: Dockerfile reference
-      url: /reference/dockerfile/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-container-getting-started
-@y
-    - title: Docker overview
-      url: __SUBDIR__/get-started/docker-overview/
-    - title: Dockerfile reference
-      url: __SUBDIR__/reference/dockerfile/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-container-getting-started
 @z
 
 @x

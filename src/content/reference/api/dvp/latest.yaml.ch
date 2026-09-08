@@ -1438,9 +1438,9 @@ components:
 @z
 
 @x
-        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/#tag/authentication)
+        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#tag/authentication)
       x-displayName: Docker Hub Authentication
 @y
-        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/#tag/authentication)
+        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#tag/authentication)
       x-displayName: Docker Hub Authentication
 @z

@@ -6,13 +6,13 @@ command: docker dhi customization build get
 short: Get details of a build
 long: |
     Get detailed information about a Docker Hardened Images customization build
-usage: docker dhi customization build get <repository> <name> <build-id>
+usage: docker dhi customization build get <customization-id> <build-id>
 @y
 command: docker dhi customization build get
 short: Get details of a build
 long: |
     Get detailed information about a Docker Hardened Images customization build
-usage: docker dhi customization build get <repository> <name> <build-id>
+usage: docker dhi customization build get <customization-id> <build-id>
 @z
 
 % options

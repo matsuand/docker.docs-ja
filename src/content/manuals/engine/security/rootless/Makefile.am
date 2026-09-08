@@ -3,9 +3,10 @@
 ##
 
 bases = \
-	_index.md       \
-	tips.md         \
-	troubleshoot.md
+	_index.md          \
+	tips.md            \
+	troubleshoot.md    \
+	uid-gid-mapping.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

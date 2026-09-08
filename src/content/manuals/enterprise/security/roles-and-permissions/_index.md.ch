@@ -4,187 +4,155 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Roles and permissions
+title: Docker organization roles and permissions
 linkTitle: Roles and permissions
-description: Control access to content, registry, and organization management with Docker's role system
-keywords: roles, permissions, custom roles, core roles, access control, organization management, docker hub, admin console, security
+description: >-
+  Choose core or custom roles to control access to repositories, teams, and
+  organization settings
+keywords: >-
+  Docker organization roles, permissions, core roles, custom roles, Member,
+  Editor, Owner, access control, least privilege, Docker Business, security
 @y
-title: Roles and permissions
+title: Docker organization roles and permissions
 linkTitle: Roles and permissions
-description: Control access to content, registry, and organization management with Docker's role system
-keywords: roles, permissions, custom roles, core roles, access control, organization management, docker hub, admin console, security
+description: >-
+  Choose core or custom roles to control access to repositories, teams, and
+  organization settings
+keywords: >-
+  Docker organization roles, permissions, core roles, custom roles, Member,
+  Editor, Owner, access control, least privilege, Docker Business, security
 @z
 
-% grid:
-
 @x
-  - title: "Core roles"
-    description: Learn about Docker's built-in Member, Editor, and Owner roles with predefined permissions.
+  - title: Core roles
+    description: >-
+      Compare permissions for the built-in Member, Editor, and Owner roles.
     icon: shield-check
     link: /enterprise/security/roles-and-permissions/core-roles/
 @y
-  - title: "Core roles"
-    description: Learn about Docker's built-in Member, Editor, and Owner roles with predefined permissions.
+  - title: Core roles
+    description: >-
+      Compare permissions for the built-in Member, Editor, and Owner roles.
     icon: shield-check
     link: __SUBDIR__/enterprise/security/roles-and-permissions/core-roles/
 @z
 
 @x
-  - title: "Custom roles"
-    description: Create tailored permission sets that match your organization's specific needs.
+  - title: Custom roles
+    description: >-
+      Build permission sets that match your organization's access control needs.
     icon: adjustments-horizontal
     link: /enterprise/security/roles-and-permissions/custom-roles/
 @y
-  - title: "Custom roles"
-    description: Create tailored permission sets that match your organization's specific needs.
+  - title: Custom roles
+    description: >-
+      Build permission sets that match your organization's access control needs.
     icon: adjustments-horizontal
     link: __SUBDIR__/enterprise/security/roles-and-permissions/custom-roles/
 @z
 
 @x
+  - title: Custom roles permissions
+    description: >-
+      Review every permission you can assign to a custom role.
+    icon: list-bullet
+    link: /enterprise/security/roles-and-permissions/custom-roles/permissions-reference/
+@y
+  - title: Custom roles permissions
+    description: >-
+      Review every permission you can assign to a custom role.
+    icon: list-bullet
+    link: __SUBDIR__/enterprise/security/roles-and-permissions/custom-roles/permissions-reference/
+@z
+
+@x
 {{< summary-bar feature_name="General admin" >}}
 @y
 {{< summary-bar feature_name="General admin" >}}
 @z
 
 @x
-Roles control what users can do in your Docker organization. When you invite users or create teams, you assign them roles that determine their permissions for repositories, teams, and organization settings.
+Roles determine what members can do in your Docker organization. When you
+invite a user or create a team, you assign a role that grants permissions
+for repositories, teams, and organization settings.
 @y
-Roles control what users can do in your Docker organization. When you invite users or create teams, you assign them roles that determine their permissions for repositories, teams, and organization settings.
+Roles determine what members can do in your Docker organization. When you
+invite a user or create a team, you assign a role that grants permissions
+for repositories, teams, and organization settings.
 @z
 
 @x
-Docker provides two types of roles to meet different organizational needs:
+Docker provides two role types. Users and teams get either a core role or a
+custom role, but not both.
 @y
-Docker provides two types of roles to meet different organizational needs:
+Docker provides two role types. Users and teams get either a core role or a
+custom role, but not both.
 @z
 
 @x
-- [Core roles](/manuals/enterprise/security/roles-and-permissions/core-roles.md) with predefined permissions
-- [Custom roles](/manuals/enterprise/security/roles-and-permissions/custom-roles.md) that you can tailor to your specific requirements
+## Core roles
 @y
-- [Core roles](manuals/enterprise/security/roles-and-permissions/core-roles.md) with predefined permissions
-- [Custom roles](manuals/enterprise/security/roles-and-permissions/custom-roles.md) that you can tailor to your specific requirements
+## Core roles
 @z
 
 @x
-## Docker roles
+Core roles are Docker's built-in Member, Editor, and Owner roles. Their
+permissions are predefined. Use core roles when Docker's permission sets match
+your organization's needs.
 @y
-## Docker roles
+Core roles are Docker's built-in Member, Editor, and Owner roles. Their
+permissions are predefined. Use core roles when Docker's permission sets match
+your organization's needs.
 @z
 
 @x
-### Core roles
+## Custom roles
 @y
-### Core roles
+## Custom roles
 @z
 
 @x
-Core roles are Docker's built-in roles with predefined permission sets:
+Custom roles are permission sets you build by selecting individual
+permissions, such as billing or team management. Use custom roles when you
+need a combination that core roles don't offer. For example, you may create a custom role for a billing
+administrator or a security auditor, or when you want to grant
+least-privilege access.
 @y
-Core roles are Docker's built-in roles with predefined permission sets:
+Custom roles are permission sets you build by selecting individual
+permissions, such as billing or team management. Use custom roles when you
+need a combination that core roles don't offer. For example, you may create a custom role for a billing
+administrator or a security auditor, or when you want to grant
+least-privilege access.
 @z
 
 @x
-- **Member**: Non-administrative role with basic access. Members can view other organization members and pull images from repositories they have access to.
-- **Editor**: Partial administrative access. Editors can create, edit, and delete repositories, and manage team permissions for repositories.
-- **Owner**: Full administrative access. Owners can manage all organization settings, including repositories, teams, members, billing, and security features.
+Custom roles require a Docker Business subscription.
 @y
-- **Member**: Non-administrative role with basic access. Members can view other organization members and pull images from repositories they have access to.
-- **Editor**: Partial administrative access. Editors can create, edit, and delete repositories, and manage team permissions for repositories.
-- **Owner**: Full administrative access. Owners can manage all organization settings, including repositories, teams, members, billing, and security features.
+Custom roles require a Docker Business subscription.
 @z
 
 @x
-### Custom roles
+## Roles and team permissions
 @y
-### Custom roles
+## Roles and team permissions
 @z
 
 @x
-Custom roles allow you to create tailored permission sets by selecting specific permissions from categories like user management, team management, billing, and Hub permissions. Use custom roles when Docker's core roles don't fit your needs.
+Roles apply organization-wide. Team permissions apply to specific
+repositories. The two systems work together: a user's role sets their
+organization-wide access and team membership can extend their access to
+individual repositories.
 @y
-Custom roles allow you to create tailored permission sets by selecting specific permissions from categories like user management, team management, billing, and Hub permissions. Use custom roles when Docker's core roles don't fit your needs.
-@z
-
-@x
-## When to use each role
-@y
-## When to use each role
-@z
-
-@x
-Use core roles when:
-@y
-Use core roles when:
-@z
-
-@x
-- Docker's predefined permission sets match your organizational structure
-- You want simple, straightforward role assignments
-- You're getting started with Docker organization management
-- Your access control needs are standard and don't require fine-grained permissions
-@y
-- Docker's predefined permission sets match your organizational structure
-- You want simple, straightforward role assignments
-- You're getting started with Docker organization management
-- Your access control needs are standard and don't require fine-grained permissions
-@z
-
-@x
-Use custom roles when:
-@y
-Use custom roles when:
-@z
-
-@x
-- You need specific permission combinations not available in core roles
-- You want to create specialized roles like billing administrators, security auditors, or repository managers
-- You need department-specific access control
-- You want to implement the principle of least privilege with precise permission grants
-@y
-- You need specific permission combinations not available in core roles
-- You want to create specialized roles like billing administrators, security auditors, or repository managers
-- You need department-specific access control
-- You want to implement the principle of least privilege with precise permission grants
-@z
-
-@x
-## How roles work together
-@y
-## How roles work together
-@z
-
-@x
-You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
-@y
-You can assign users and teams either a core role or a custom role, but not both. However, roles work in combination with team permissions:
-@z
-
-@x
-1. **Role permissions**: Applied organization-wide (core or custom role). Custom roles can grant permissions to both organization-wide settings and repository access.
-2. **Team permissions**: Additional repository-specific permissions when users are added to teams. This is a separate permission system from role-based permissions.
-@y
-1. **Role permissions**: Applied organization-wide (core or custom role). Custom roles can grant permissions to both organization-wide settings and repository access.
-2. **Team permissions**: Additional repository-specific permissions when users are added to teams. This is a separate permission system from role-based permissions.
-@z
-
-@x
-This layered approach gives you flexibility to provide broad organizational access through roles and specific repository access through team memberships.
-@y
-This layered approach gives you flexibility to provide broad organizational access through roles and specific repository access through team memberships.
+Roles apply organization-wide. Team permissions apply to specific
+repositories. The two systems work together: a user's role sets their
+organization-wide access and team membership can extend their access to
+individual repositories.
 @z
 
 @x
 ## Next steps
 @y
 ## Next steps
-@z
-
-@x
-Choose the role type that best fits your organization's needs:
-@y
-Choose the role type that best fits your organization's needs:
 @z
 
 @x

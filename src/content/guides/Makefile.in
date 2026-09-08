@@ -295,72 +295,103 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = admin-set-up admin-user-management angular bake bun compose-bake \
-	cpp deno docker-build-cloud docker-compose docker-scout dotnet     \
-	frameworks genai-leveraging-rag genai-pdf-bot genai-video-bot      \
-	github-sonarqube-sandbox golang go-prometheus-monitoring images    \
-	java nextjs nodejs php postgresql python r rag-ollama reactjs ros2 \
-	ruby rust testcontainers-cloud testcontainers-dotnet-aspnet-core   \
-	testcontainers-dotnet-getting-started testcontainers-go-getting-started  \
-	testcontainers-java-aws-localstack testcontainers-java-getting-started   \
-	testcontainers-java-jooq-flyway testcontainers-java-keycloak-spring-boot \
-	testcontainers-java-lifecycle testcontainers-java-micronaut-kafka        \
-	testcontainers-java-micronaut-wiremock testcontainers-java-mockserver    \
-	testcontainers-java-quarkus testcontainers-java-replace-h2               \
-	testcontainers-java-service-configuration testcontainers-java-spring-boot-kafka \
-	testcontainers-java-spring-boot-rest-api testcontainers-java-wiremock    \
-	testcontainers-nodejs-getting-started testcontainers-python-getting-started \
-	vuejs zscaler
-
+SUBDIRS = images
 bases = \
-	_index.md                              \
-	agentic-ai.md                          \
-	claude-code-model-runner.md            \
-	claude-code-sandbox-model-runner.md    \
-	container-supported-development.md     \
-	databases.md                           \
-	dex.md                                 \
-	dhi-backstage.md                       \
-	dhi-from-doi.md                        \
-	dhi-from-wolfi.md                      \
-	dhi-go-example.md                      \
-	dhi-nodejs-example.md                  \
-	dhi-openshift.md                       \
-	dhi-python-example.md                  \
-	django.md                              \
-	gha.md                                 \
-	grafana-mcp-server-gemini.md           \
-	jupyter.md                             \
-	kafka.md                               \
-	kube-deploy.md                         \
-	lab-agentic-apps.md                    \
-	lab-ai-fundamentals.md                 \
-	lab-attestation-basics.md              \
-	lab-building-images.md                 \
-	lab-compose-quickstart.md              \
-	lab-container-getting-started.md       \
-	lab-container-supported-development.md \
-	lab-containerized-sdlc.md              \
-	lab-creating-ai-product-reviewer.md    \
-	lab-dhi-node.md                        \
-	lab-docker-agent.md                    \
-	lab-docker-for-ai-redirect.md          \
-	lab-mcp-gateway.md                     \
-	language-translation.md                \
-	localstack.md                          \
-	named-entity-recognition.md            \
-	opencode-model-runner.md               \
-	opentelemetry.md                       \
-	orchestration.md                       \
-	pgadmin.md                             \
-	pre-seeding.md                         \
-	sentiment-analysis.md                  \
-	swarm-deploy.md                        \
-	tensorflowjs.md                        \
-	text-classification.md                 \
-	text-summarization.md                  \
-	traefik.md                             \
-	wiremock.md
+	_index.md                                    \
+	admin-set-up.md                              \
+	admin-user-management.md                     \
+	agentic-ai.md                                \
+	angular.md                                   \
+	azure-pipelines.md                           \
+	bake.md                                      \
+	bun.md                                       \
+	claude-code-model-runner.md                  \
+	claude-code-sandbox-model-runner.md          \
+	compose-bake.md                              \
+	container-supported-development.md           \
+	cpp.md                                       \
+	databases.md                                 \
+	deno.md                                      \
+	dex.md                                       \
+	dhi-backstage.md                             \
+	dhi-openshift.md                             \
+	dhi-vex-walkthrough.md                       \
+	django.md                                    \
+	docker-build-cloud.md                        \
+	docker-compose.md                            \
+	docker-scout.md                              \
+	dotnet.md                                    \
+	genai-claude-code-mcp.md                     \
+	genai-leveraging-rag.md                      \
+	genai-pdf-bot.md                             \
+	genai-video-bot.md                           \
+	gha.md                                       \
+	github-sonarqube-sandbox.md                  \
+	go-prometheus-monitoring.md                  \
+	golang.md                                    \
+	grafana-mcp-server-gemini.md                 \
+	java.md                                      \
+	jupyter.md                                   \
+	kafka.md                                     \
+	lab-agentic-apps.md                          \
+	lab-ai-fundamentals.md                       \
+	lab-attestation-basics.md                    \
+	lab-building-images.md                       \
+	lab-compose-quickstart.md                    \
+	lab-container-getting-started.md             \
+	lab-container-supported-development.md       \
+	lab-containerized-sdlc.md                    \
+	lab-creating-ai-product-reviewer.md          \
+	lab-dhi-node.md                              \
+	lab-docker-agent.md                          \
+	lab-mcp-gateway.md                           \
+	language-translation.md                      \
+	laravel.md                                   \
+	localstack.md                                \
+	named-entity-recognition.md                  \
+	nextjs.md                                    \
+	nodejs.md                                    \
+	opencode-model-runner.md                     \
+	opentelemetry.md                             \
+	pgadmin.md                                   \
+	php.md                                       \
+	postgresql.md                                \
+	pre-seeding.md                               \
+	python.md                                    \
+	r.md                                         \
+	rag-ollama.md                                \
+	reactjs.md                                   \
+	ros2.md                                      \
+	ruby.md                                      \
+	rust.md                                      \
+	sentiment-analysis.md                        \
+	tensorflowjs.md                              \
+	testcontainers-cloud.md                      \
+	testcontainers-dotnet-aspnet-core.md         \
+	testcontainers-dotnet-getting-started.md     \
+	testcontainers-go-getting-started.md         \
+	testcontainers-java-aws-localstack.md        \
+	testcontainers-java-getting-started.md       \
+	testcontainers-java-jooq-flyway.md           \
+	testcontainers-java-keycloak-spring-boot.md  \
+	testcontainers-java-lifecycle.md             \
+	testcontainers-java-micronaut-kafka.md       \
+	testcontainers-java-micronaut-wiremock.md    \
+	testcontainers-java-mockserver.md            \
+	testcontainers-java-quarkus.md               \
+	testcontainers-java-replace-h2.md            \
+	testcontainers-java-service-configuration.md \
+	testcontainers-java-spring-boot-kafka.md     \
+	testcontainers-java-spring-boot-rest-api.md  \
+	testcontainers-java-wiremock.md              \
+	testcontainers-nodejs-getting-started.md     \
+	testcontainers-python-getting-started.md     \
+	text-classification.md                       \
+	text-summarization.md                        \
+	traefik.md                                   \
+	vuejs.md                                     \
+	wiremock.md                                  \
+	zscaler.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

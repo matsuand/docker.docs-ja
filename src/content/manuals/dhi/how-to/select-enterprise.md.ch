@@ -50,7 +50,7 @@ To use this workflow, you need:
 - One of the following:
   - A DHI Select or Enterprise subscription. [Contact Docker
     sales](https://www.docker.com/products/hardened-images/#compare) to purchase DHI Enterprise
-    or [learn more about DHI Select](../../subscription/setup.md#set-up-docker-hardened-images-select-for-an-organization).
+    or [learn more about DHI plans](../../subscription/plans/dhi.md).
   - An active DHI trial. [Start a free DHI
     trial](https://hub.docker.com/hardened-images/start-free-trial).
 - [Docker Desktop](../../desktop/release-notes.md) 4.65 or later to use the
@@ -60,7 +60,7 @@ To use this workflow, you need:
 - One of the following:
   - A DHI Select or Enterprise subscription. [Contact Docker
     sales](https://www.docker.com/products/hardened-images/#compare) to purchase DHI Enterprise
-    or [learn more about DHI Select](../../subscription/setup.md#set-up-docker-hardened-images-select-for-an-organization).
+    or [learn more about DHI plans](../../subscription/plans/dhi.md).
   - An active DHI trial. [Start a free DHI
     trial](https://hub.docker.com/hardened-images/start-free-trial).
 - [Docker Desktop](../../desktop/release-notes.md) 4.65 or later to use the
@@ -189,10 +189,10 @@ can use either interface.
 
 @x
 Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Search and evaluate Docker Hardened Images](explore.md).
+images see [Search and evaluate Docker Hardened Images](search-evaluate.md).
 @y
 Continue to the next step to mirror the image. To dive deeper into exploring
-images see [Search and evaluate Docker Hardened Images](explore.md).
+images see [Search and evaluate Docker Hardened Images](search-evaluate.md).
 @z
 
 @x
@@ -250,11 +250,11 @@ can mirror repositories.
 @x
 To use the following commands, you must authenticate or configure DHI CLI
 authentication using your Docker token. For details, see [Use the DHI
-CLI](cli.md#configuration).
+CLI](../tools/cli.md#configuration).
 @y
 To use the following commands, you must authenticate or configure DHI CLI
 authentication using your Docker token. For details, see [Use the DHI
-CLI](cli.md#configuration).
+CLI](../tools/cli.md#configuration).
 @z
 
 @x
@@ -390,11 +390,11 @@ column to monitor the build status.
 @x
 To use the following commands, you must authenticate or configure DHI CLI
 authentication using your Docker token. For details, see [Use the DHI
-CLI](cli.md#configuration).
+CLI](../tools/cli.md#configuration).
 @y
 To use the following commands, you must authenticate or configure DHI CLI
 authentication using your Docker token. For details, see [Use the DHI
-CLI](cli.md#configuration).
+CLI](../tools/cli.md#configuration).
 @z
 
 @x

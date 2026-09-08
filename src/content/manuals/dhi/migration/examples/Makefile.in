@@ -239,7 +239,9 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
 	_index.md \
+	dotnet.md \
 	go.md     \
+	java.md   \
 	node.md   \
 	python.md
 

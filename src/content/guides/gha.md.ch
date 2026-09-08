@@ -16,7 +16,6 @@ summary: |
   Learn how to automate image build and push with GitHub Actions.
 @z
 
-%params:
 @x
   time: 10 minutes
 @y
@@ -411,10 +410,12 @@ additional features based on your project's needs, such as
 
 @x
 - Learn more about advanced configurations and examples in the [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md) section.
-- For more complex build setups, you may want to consider [Bake](/manuals/build/bake/_index.md). (See also the [Mastering Buildx Bake guide](/guides/bake/index.md).)
+- For more complex build setups, you may want to consider [Bake](/manuals/build/bake/_index.md). (See also the [Mastering Buildx Bake guide](/guides/bake/).)
+
 - Learn about Docker's managed build service, designed for faster, multi-platform builds, see [Docker Build Cloud](/guides/docker-build-cloud/_index.md).
 @y
-- Learn more about advanced configurations and examples in the [Docker Build GitHub Actions](manuals/build/ci/github-actions/_index.md) section.
-- For more complex build setups, you may want to consider [Bake](manuals/build/bake/_index.md). (See also the [Mastering Buildx Bake guide](guides/bake/index.md).)
-- Learn about Docker's managed build service, designed for faster, multi-platform builds, see [Docker Build Cloud](guides/docker-build-cloud/_index.md).
+- Learn more about advanced configurations and examples in the [Docker Build GitHub Actions](/manuals/build/ci/github-actions/_index.md) section.
+- For more complex build setups, you may want to consider [Bake](/manuals/build/bake/_index.md). (See also the [Mastering Buildx Bake guide](/guides/bake/).)
+
+- Learn about Docker's managed build service, designed for faster, multi-platform builds, see [Docker Build Cloud](/guides/docker-build-cloud/_index.md).
 @z

@@ -60,9 +60,9 @@ _For checksums, see [Release notes](/manuals/desktop/release-notes.md)_
 @z
 
 @x
-Docker Desktop supports two installation modes. Per-user installation (Beta) is recommended for most users. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
+Docker Desktop supports two installation modes. Per-user installation is recommended for most users and is selected by default in the installer. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
 @y
-Docker Desktop supports two installation modes. Per-user installation (Beta) is recommended for most users. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
+Docker Desktop supports two installation modes. Per-user installation is recommended for most users and is selected by default in the installer. It does not require administrator privileges to install or update, and the WSL 2 backend it uses covers the needs of the vast majority of Docker Desktop users.
 @z
 
 @x
@@ -72,7 +72,7 @@ Docker Desktop supports two installation modes. Per-user installation (Beta) is 
 | Registry keys | Current User (HKCU) | Local Machine (HKLM) |
 | Admin rights to install | Not required | Required |
 | Admin rights to update | Not required | Required |
-| Linux containers backend | WSL 2 only | WSL 2 or Hyper-V |
+| Linux containers backend | WSL 2 or Docker VMM | WSL 2, Hyper-V, or Docker VMM |
 | Windows containers | Not supported | Supported |
 | Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
 @y
@@ -82,15 +82,15 @@ Docker Desktop supports two installation modes. Per-user installation (Beta) is 
 | Registry keys | Current User (HKCU) | Local Machine (HKLM) |
 | Admin rights to install | Not required | Required |
 | Admin rights to update | Not required | Required |
-| Linux containers backend | WSL 2 only | WSL 2 or Hyper-V |
+| Linux containers backend | WSL 2 or Docker VMM | WSL 2, Hyper-V, or Docker VMM |
 | Windows containers | Not supported | Supported |
 | Security | Smaller attack surface; no privileged system service installed | Requires privileged system service; broader access to host resources |
 @z
 
 @x
-For more information, see [Understand permission requirements for Windows](windows-install.md).
+For more information, see [Understand permission requirements for Windows](./windows-permission-requirements.md).
 @y
-For more information, see [Understand permission requirements for Windows](windows-install.md).
+For more information, see [Understand permission requirements for Windows](./windows-permission-requirements.md).
 @z
 
 @x
@@ -102,18 +102,15 @@ For more information, see [Understand permission requirements for Windows](windo
 @x
 > [!TIP]
 >
-> **Should I use Hyper-V or WSL?**
+> **Which backend should I use?**
 >
-> Docker Desktop's functionality remains consistent on both WSL and Hyper-V, without a preference for either architecture. Hyper-V and WSL have their own advantages and disadvantages, depending on your specific setup and your planned use case. Note that Hyper-V is only available with all-users installation. If you install Docker Desktop in per-user mode, WSL 2 is the only supported backend.
+> Docker Desktop for Windows supports three backends: WSL 2, Hyper-V, and Docker VMM (Beta). WSL 2 is the default and works for most users without administrator privileges. Hyper-V is only available with all-users installation. Docker VMM is a container-optimized hypervisor that reclaims idle memory and improves file I/O. For more information, see [Virtual Machine Manager](/manuals/desktop/features/vmm.md).
 @y
 > [!TIP]
 >
-> **Hyper-V または WSL を使うべきか？**
+> **どちらのバックエンドを使うべきか？**
 >
-> Docker Desktop は WSL 上でも Hyper-V 上でも、アーキテクチャーに関係なく同様に機能します。
-> Hyper-V と WSL にはそれぞれに利点と欠点があり、それは設定内容や利用形態により変化します。
-> なお Hyper-V は全ユーザー向けのインストールを行った場合にのみ利用可能である点に注意してください。
-> Docker Desktop を個別ユーザーモードでインストールした場合は、サポートされるバックエンドは WSL 2 のみとなります。
+> Docker Desktop for Windows supports three backends: WSL 2, Hyper-V, and Docker VMM (Beta). WSL 2 is the default and works for most users without administrator privileges. Hyper-V is only available with all-users installation. Docker VMM is a container-optimized hypervisor that reclaims idle memory and improves file I/O. For more information, see [Virtual Machine Manager](manuals/desktop/features/vmm.md).
 @z
 
 @x
@@ -362,9 +359,9 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-3. When prompted, ensure the **Use WSL 2 instead of Hyper-V** option on the Configuration page is selected or not depending on your choice of backend.
+3. When prompted, select your backend on the Configuration page: **Use WSL 2 instead of Hyper-V** for WSL 2, or leave it unselected for Hyper-V. You can switch to Docker VMM after installation from **Settings** > **General**.
 @y
-3. プロンプト画面が表示されたら、バックエンドでの選択状況に従って Configuration ページにおける **Use WSL 2 instead of Hyper-V** オプションのオンオフが設定されていることを確認してください。
+3. プロンプト画面が表示されたら、Configuration ページから目的とするバックエンドを選んでください。WSL 2 を選ぶ場合は **Use WSL 2 instead of Hyper-V** (Hyper-V の代わりに WSL 2 を利用) を選んでください。Hyper-V を選ぶ場合は、何も選択せずそのままにしておいてください。インストール後であっても Docker VMM を切り替えたい場合は、**Settings** > **General** から行うことができます。
 @z
 
 @x

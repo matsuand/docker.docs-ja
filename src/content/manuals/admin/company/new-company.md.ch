@@ -3,18 +3,18 @@
 
 @x
 title: Create new company
-linkTitle: Create
+linkTitle: Setup
 @y
 title: Create new company
-linkTitle: Create
+linkTitle: Setup
 @z
 
 @x
 description: Learn how to create a company to centrally manage multiple organizations.
-keywords: company, hub, organization, company owner, Admin Console, company management, Docker Business, create company, Docker Admin Console
+keywords: company, hub, organization, company owner, Docker Home, company management, Docker Business, create company
 @y
 description: Learn how to create a company to centrally manage multiple organizations.
-keywords: company, hub, organization, company owner, Admin Console, company management, Docker Business, create company, Docker Admin Console
+keywords: company, hub, organization, company owner, Docker Home, company management, Docker Business, create company
 @z
 
 @x
@@ -24,10 +24,10 @@ keywords: company, hub, organization, company owner, Admin Console, company mana
 @z
 
 @x
-Learn how to create a new company in the Docker Admin Console, a centralized
+Learn how to create a new company in Docker Home, a centralized
 dashboard for managing organizations.
 @y
-Learn how to create a new company in the Docker Admin Console, a centralized
+Learn how to create a new company in Docker Home, a centralized
 dashboard for managing organizations.
 @z
 
@@ -64,15 +64,15 @@ To create a new company:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Admin Console**, then **Company management**.
+1. Sign in to [Docker Home](https://app.docker.com/) and select the
+   organization you want to add to your company.
+1. Select **Organization settings**.
 1. Select **Create a company**.
 1. Enter a unique name for your company, then select **Continue**.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Admin Console**, then **Company management**.
+1. Sign in to [Docker Home](https://app.docker.com/) and select the
+   organization you want to add to your company.
+1. Select **Organization settings**.
 1. Select **Create a company**.
 1. Enter a unique name for your company, then select **Continue**.
 @z
@@ -96,11 +96,19 @@ To create a new company:
 @z
 
 @x
-For more information on how you can add organizations to your company,
-see [Add organizations to a company](./manage/organizations.md#add-organizations-to-a-company).
+When you create the company, the organization you selected is automatically
+migrated to the new company.
 @y
-For more information on how you can add organizations to your company,
-see [Add organizations to a company](./manage/organizations.md#add-organizations-to-a-company).
+When you create the company, the organization you selected is automatically
+migrated to the new company.
+@z
+
+@x
+For more information on how you can add more organizations to your company,
+see [Add more organizations](./manage.md#add-more-organizations).
+@y
+For more information on how you can add more organizations to your company,
+see [Add more organizations](./manage.md#add-more-organizations).
 @z
 
 @x
@@ -110,13 +118,13 @@ see [Add organizations to a company](./manage/organizations.md#add-organizations
 @z
 
 @x
-- [Manage organizations](./manage/organizations.md)
-- [Manage company members](./manage/users.md)
-- [Manage company owners](./manage/owners.md)
+- [Add organizations](./manage.md#add-more-organizations)
+- [Invite company members](./manage.md#company-invitations)
+- [Manage company owners](./manage.md#company-owners)
 @y
-- [Manage organizations](./manage/organizations.md)
-- [Manage company members](./manage/users.md)
-- [Manage company owners](./manage/owners.md)
+- [Add organizations](./manage.md#add-more-organizations)
+- [Invite company members](./manage.md#company-invitations)
+- [Manage company owners](./manage.md#company-owners)
 @z
 
 @x

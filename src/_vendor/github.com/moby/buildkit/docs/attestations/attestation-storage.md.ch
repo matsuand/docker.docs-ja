@@ -20,21 +20,21 @@ including, but not limited to: [SBOMs](https://en.wikipedia.org/wiki/Software_su
 @z
 
 @x
-This document describes the current custom format used to store attestations,
-which is designed to be compatible with current registry implementations today.
-In the future, we may support exporting attestations in additional formats.
+This document describes the formats used to store attestations. BuildKit stores
+attestations as OCI artifacts when OCI media types are enabled. Set the image
+exporter option `oci-artifact=false` to use the legacy attestation image
+manifest format.
 @y
-This document describes the current custom format used to store attestations,
-which is designed to be compatible with current registry implementations today.
-In the future, we may support exporting attestations in additional formats.
+This document describes the formats used to store attestations. BuildKit stores
+attestations as OCI artifacts when OCI media types are enabled. Set the image
+exporter option `oci-artifact=false` to use the legacy attestation image
+manifest format.
 @z
 
 @x
-Attestations are stored as manifest objects in the image index, similar in
-style to OCI artifacts.
+Attestations are stored as manifest objects in the image index.
 @y
-Attestations are stored as manifest objects in the image index, similar in
-style to OCI artifacts.
+Attestations are stored as manifest objects in the image index.
 @z
 
 @x
@@ -53,25 +53,39 @@ style to OCI artifacts.
 Attestation manifests are attached to the root image index object, under a
 separate [OCI image manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
 Each attestation manifest can contain multiple [attestation blobs](#attestation-blob),
-with all the of the attestations in a manifest applying to a single platform
+with all of the attestations in a manifest applying to a single platform
 manifest. All properties of standard OCI and Docker manifests continue to
 apply.
 @y
 Attestation manifests are attached to the root image index object, under a
 separate [OCI image manifest](https://github.com/opencontainers/image-spec/blob/main/manifest.md).
 Each attestation manifest can contain multiple [attestation blobs](#attestation-blob),
-with all the of the attestations in a manifest applying to a single platform
+with all of the attestations in a manifest applying to a single platform
 manifest. All properties of standard OCI and Docker manifests continue to
 apply.
 @z
 
 @x
-The image `config` descriptor will point to a valid [image config](https://github.com/opencontainers/image-spec/blob/main/config.md),
-however, it will not contain attestation-specific details, and should be
+When OCI artifact storage is enabled, the manifest `artifactType` is set to
+`application/vnd.docker.attestation.manifest.v1+json`, the `subject` descriptor
+points to the target image manifest, and the `config` descriptor uses the OCI
+empty JSON descriptor.
+@y
+When OCI artifact storage is enabled, the manifest `artifactType` is set to
+`application/vnd.docker.attestation.manifest.v1+json`, the `subject` descriptor
+points to the target image manifest, and the `config` descriptor uses the OCI
+empty JSON descriptor.
+@z
+
+@x
+When `oci-artifact=false` is set, the image `config` descriptor will point to a
+valid [image config](https://github.com/opencontainers/image-spec/blob/main/config.md).
+The image config will not contain attestation-specific details, and should be
 ignored as it is only included for compatibility purposes.
 @y
-The image `config` descriptor will point to a valid [image config](https://github.com/opencontainers/image-spec/blob/main/config.md),
-however, it will not contain attestation-specific details, and should be
+When `oci-artifact=false` is set, the image `config` descriptor will point to a
+valid [image config](https://github.com/opencontainers/image-spec/blob/main/config.md).
+The image config will not contain attestation-specific details, and should be
 ignored as it is only included for compatibility purposes.
 @z
 
@@ -164,7 +178,7 @@ The contents of each layer will be a blob dependent on its `mediaType`.
 @x
   ```json
   {
-    "_type": "https://in-toto.io/Statement/v0.1",
+    "_type": "https://in-toto.io/Statement/v1",
     "subject": [
       {
         "name": "<NAME>",
@@ -179,7 +193,7 @@ The contents of each layer will be a blob dependent on its `mediaType`.
 @y
   ```json
   {
-    "_type": "https://in-toto.io/Statement/v0.1",
+    "_type": "https://in-toto.io/Statement/v1",
     "subject": [
       {
         "name": "<NAME>",
@@ -396,10 +410,12 @@ This attestation manifest contains one attestation that is an in-toto attestatio
 {
   "mediaType": "application/vnd.oci.image.manifest.v1+json",
   "schemaVersion": 2,
+  "artifactType": "application/vnd.docker.attestation.manifest.v1+json",
   "config": {
-    "mediaType": "application/vnd.oci.image.config.v1+json",
-    "digest": "sha256:a781560066f20ec9c28f2115a95a886e5e71c7c7aa9d8fd680678498b82f3ea3",
-    "size": 123
+    "mediaType": "application/vnd.oci.empty.v1+json",
+    "digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "size": 2,
+    "data": "e30="
   },
   "layers": [
     {
@@ -410,7 +426,12 @@ This attestation manifest contains one attestation that is an in-toto attestatio
         "in-toto.io/predicate-type": "https://spdx.dev/Document"
       }
     }
-  ]
+  ],
+  "subject": {
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "digest": "sha256:23678f31b3b3586c4fb318aecfe64a96a1f0916ba8faf9b2be2abee63fa9e827",
+    "size": 1234
+  }
 }
 ```
 @y
@@ -418,10 +439,12 @@ This attestation manifest contains one attestation that is an in-toto attestatio
 {
   "mediaType": "application/vnd.oci.image.manifest.v1+json",
   "schemaVersion": 2,
+  "artifactType": "application/vnd.docker.attestation.manifest.v1+json",
   "config": {
-    "mediaType": "application/vnd.oci.image.config.v1+json",
-    "digest": "sha256:a781560066f20ec9c28f2115a95a886e5e71c7c7aa9d8fd680678498b82f3ea3",
-    "size": 123
+    "mediaType": "application/vnd.oci.empty.v1+json",
+    "digest": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "size": 2,
+    "data": "e30="
   },
   "layers": [
     {
@@ -432,42 +455,11 @@ This attestation manifest contains one attestation that is an in-toto attestatio
         "in-toto.io/predicate-type": "https://spdx.dev/Document"
       }
     }
-  ]
-}
-```
-@z
-
-@x
-#### Image config (`sha256:a781560066f20ec9c28f2115a95a886e5e71c7c7aa9d8fd680678498b82f3ea3`):
-@y
-#### Image config (`sha256:a781560066f20ec9c28f2115a95a886e5e71c7c7aa9d8fd680678498b82f3ea3`):
-@z
-
-@x
-```json
-{
-  "architecture": "unknown",
-  "os": "unknown",
-  "config": {},
-  "rootfs": {
-    "type": "layers",
-    "diff_ids": [
-      "sha256:133ae3f9bcc385295b66c2d83b28c25a9f294ce20954d5cf922dda860429734a"
-    ]
-  }
-}
-```
-@y
-```json
-{
-  "architecture": "unknown",
-  "os": "unknown",
-  "config": {},
-  "rootfs": {
-    "type": "layers",
-    "diff_ids": [
-      "sha256:133ae3f9bcc385295b66c2d83b28c25a9f294ce20954d5cf922dda860429734a"
-    ]
+  ],
+  "subject": {
+    "mediaType": "application/vnd.oci.image.manifest.v1+json",
+    "digest": "sha256:23678f31b3b3586c4fb318aecfe64a96a1f0916ba8faf9b2be2abee63fa9e827",
+    "size": 1234
   }
 }
 ```
@@ -488,7 +480,7 @@ Attestation body containing the SBOM data listing the packages used during the b
 @x
 ```json
 {
-  "_type": "https://in-toto.io/Statement/v0.1",
+  "_type": "https://in-toto.io/Statement/v1",
   "predicateType": "https://spdx.dev/Document",
   "subject": [
     {
@@ -506,7 +498,7 @@ Attestation body containing the SBOM data listing the packages used during the b
 @y
 ```json
 {
-  "_type": "https://in-toto.io/Statement/v0.1",
+  "_type": "https://in-toto.io/Statement/v1",
   "predicateType": "https://spdx.dev/Document",
   "subject": [
     {

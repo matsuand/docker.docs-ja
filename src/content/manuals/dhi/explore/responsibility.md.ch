@@ -110,7 +110,7 @@ securely.
   and is responsible for validating core features.
 - Docker: Validates that DHIs start, run, and behave consistently with
   upstream expectations. Docker also runs security scans and includes a [testing
-  attestation](../core-concepts/attestations.md) with each image.
+  attestation](security-concepts/attestations.md) with each image.
 - You: Test your application on top of DHIs and validate that any changes or
   customizations function as expected in your environment.
 @y
@@ -118,7 +118,7 @@ securely.
   and is responsible for validating core features.
 - Docker: Validates that DHIs start, run, and behave consistently with
   upstream expectations. Docker also runs security scans and includes a [testing
-  attestation](../core-concepts/attestations.md) with each image.
+  attestation](security-concepts/attestations.md) with each image.
 - You: Test your application on top of DHIs and validate that any changes or
   customizations function as expected in your environment.
 @z

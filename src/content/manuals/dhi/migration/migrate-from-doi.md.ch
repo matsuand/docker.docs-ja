@@ -133,25 +133,7 @@ replaced by the new hardened image.
 > Run `docker login dhi.io` to authenticate.
 @z
 
-@x
-```diff
-- ## Original base image
-- FROM golang:1.25
-@y
-```diff
-- ## Original base image
-- FROM golang:1.25
-@z
-
-@x
-+ ## Updated to use hardened base image
-+ FROM dhi.io/golang:1.25-debian12-dev
-```
-@y
-+ ## Updated to use hardened base image
-+ FROM dhi.io/golang:1.25-debian12-dev
-```
-@z
+% snip code...
 
 @x
 Note that DHI does not have a `latest` tag in order to promote best practices
@@ -217,45 +199,24 @@ The following example shows a multi-stage Dockerfile with a build stage and runt
 The following example shows a multi-stage Dockerfile with a build stage and runtime stage:
 @z
 
-@x
-```dockerfile
+@x within code
 # Build stage
-FROM dhi.io/golang:1.25-debian12-dev AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o myapp
 @y
-```dockerfile
 # Build stage
-FROM dhi.io/golang:1.25-debian12-dev AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o myapp
 @z
-
 @x
 # Runtime stage
-FROM dhi.io/golang:1.25-debian12
-WORKDIR /app
-COPY --from=builder /app/myapp .
-ENTRYPOINT ["/app/myapp"]
-```
 @y
 # Runtime stage
-FROM dhi.io/golang:1.25-debian12
-WORKDIR /app
-COPY --from=builder /app/myapp .
-ENTRYPOINT ["/app/myapp"]
-```
 @z
 
 @x
 After updating your Dockerfile, build and test your application. If you encounter
-issues, see the [Troubleshoot](/manuals/dhi/troubleshoot.md) guide for common
+issues, see the [Troubleshoot](/manuals/dhi/how-to/troubleshoot.md) guide for common
 problems and solutions.
 @y
 After updating your Dockerfile, build and test your application. If you encounter
-issues, see the [Troubleshoot](manuals/dhi/troubleshoot.md) guide for common
+issues, see the [Troubleshoot](manuals/dhi/how-to/troubleshoot.md) guide for common
 problems and solutions.
 @z
 

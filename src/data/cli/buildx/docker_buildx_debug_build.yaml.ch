@@ -27,10 +27,10 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
 
 @x allow
       description: |
-        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`)
+        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`, `buildx.local.delete`)
 @y
       description: |
-        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`)
+        Allow extra privileged entitlement (e.g., `network.host`, `security.insecure`, `device`, `buildx.local.delete`)
 @z
 
 @x annotation
@@ -245,6 +245,14 @@ usage: docker buildx debug build [OPTIONS] PATH | URL | -
       description: Suppress the build output and print image ID on success
 @y
       description: Suppress the build output and print image ID on success
+@z
+
+@x resource
+      description: |
+        Resource limits for build containers (format: `memory=2g`, `cpu-quota=50000`)
+@y
+      description: |
+        Resource limits for build containers (format: `memory=2g`, `cpu-quota=50000`)
 @z
 
 @x rm

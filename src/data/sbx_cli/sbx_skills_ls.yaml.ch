@@ -1,0 +1,42 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx skills ls
+synopsis: List imported skills
+experimental: true
+description: |
+    List the skill folders in the central agent-skills store shared by sandboxes.
+usage: sbx skills ls [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for ls
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx skills - (Experimental) Manage skills shared across sandboxes
+@y
+name: sbx skills ls
+synopsis: List imported skills
+experimental: true
+description: |
+    List the skill folders in the central agent-skills store shared by sandboxes.
+usage: sbx skills ls [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for ls
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx skills - (Experimental) Manage skills shared across sandboxes
+@z

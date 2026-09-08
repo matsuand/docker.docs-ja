@@ -7,12 +7,10 @@
 title: Image Access Management
 description: Control which Docker Hub images developers can access with Image Access Management for enhanced supply chain security
 keywords: image access management, docker official images, verified publisher, supply chain security, docker business, allow list, image restrictions, pull restrictions
-tags: [admin]
 @y
 title: Image Access Management
 description: Control which Docker Hub images developers can access with Image Access Management for enhanced supply chain security
 keywords: image access management, docker official images, verified publisher, supply chain security, docker business, allow list, image restrictions, pull restrictions
-tags: [admin]
 @z
 
 @x
@@ -143,7 +141,7 @@ To configure Image Access Management:
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Select **Admin Console**, then **Image access**.
+1. Select **Docker Desktop**, then **Image Access**.
 1. Use the **toggle** to enable image access.
 1. Select which image types to allow:
     - **Organization images**: Images from your organization (always allowed by default). These can be public or private images created by members within your organization.
@@ -160,7 +158,7 @@ To configure Image Access Management:
       the trashcan icon next to it.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Select **Admin Console**, then **Image access**.
+1. Select **Docker Desktop**, then **Image Access**.
 1. Use the **toggle** to enable image access.
 1. Select which image types to allow:
     - **Organization images**: Images from your organization (always allowed by default). These can be public or private images created by members within your organization.

@@ -21,15 +21,6 @@ summary: |
 @z
 
 @x
-tags: [ai]
-languages: [python]
-@y
-tags: [ai]
-languages: [python]
-@z
-
-% params:
-@x
   time: 20 minutes
 @y
   time: 20 分
@@ -85,7 +76,15 @@ The application processes input text to identify and print named entities, like 
    following command.
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone https://github.com/harsh4870/Docker-NLP.git
+   ```
+@y
+   ```console
+   $ git clone https://github.com/harsh4870/Docker-NLP.git
+   ```
+@z
 
 @x
 2. Verify that you cloned the repository.
@@ -99,7 +98,31 @@ The application processes input text to identify and print named entities, like 
    You should see the following files in your `Docker-NLP` directory.
 @z
 
-% snip code...
+@x
+   ```text
+   01_sentiment_analysis.py
+   02_name_entity_recognition.py
+   03_text_classification.py
+   04_text_summarization.py
+   05_language_translation.py
+   entrypoint.sh
+   requirements.txt
+   Dockerfile
+   README.md
+   ```
+@y
+   ```text
+   01_sentiment_analysis.py
+   02_name_entity_recognition.py
+   03_text_classification.py
+   04_text_summarization.py
+   05_language_translation.py
+   entrypoint.sh
+   requirements.txt
+   Dockerfile
+   README.md
+   ```
+@z
 
 @x
 ## Explore the application code
@@ -119,7 +142,15 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 1. Import the required libraries.
 @z
 
-% snip code...
+@x
+   ```python
+   import spacy
+   ```
+@y
+   ```python
+   import spacy
+   ```
+@z
 
 @x
    This line imports the `spaCy` library. `spaCy` is a popular library in Python
@@ -135,7 +166,15 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 2. Load the language model.
 @z
 
-% snip code...
+@x
+   ```python
+   nlp = spacy.load("en_core_web_sm")
+   ```
+@y
+   ```python
+   nlp = spacy.load("en_core_web_sm")
+   ```
+@z
 
 @x
    Here, the `spacy.load` function loads a language model. The `en_core_web_sm`
@@ -155,7 +194,15 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 3. Specify the main execution block.
 @z
 
-% snip code...
+@x
+   ```python
+   if __name__ == "__main__":
+   ```
+@y
+   ```python
+   if __name__ == "__main__":
+   ```
+@z
 
 @x
    This Python idiom ensures that the following code block runs only if this
@@ -173,7 +220,15 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 4. Create an infinite loop for continuous input.
 @z
 
-% snip code...
+@x
+   ```python
+      while True:
+   ```
+@y
+   ```python
+      while True:
+   ```
+@z
 
 @x
    This while loop runs indefinitely until it's explicitly broken. It lets
@@ -191,7 +246,15 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 5. Get user input.
 @z
 
-% snip code...
+@x
+   ```python
+   input_text = input("Enter the text for entity recognition (type 'exit' to end): ")
+   ```
+@y
+   ```python
+   input_text = input("Enter the text for entity recognition (type 'exit' to end): ")
+   ```
+@z
 
 @x
    This line prompts the user to enter text. The program will then perform entity recognition on this text.
@@ -205,7 +268,19 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 6. Define an exit condition.
 @z
 
-% snip code...
+@x
+   ```python
+   if input_text.lower() == 'exit':
+      print("Exiting...")
+      break
+   ```
+@y
+   ```python
+   if input_text.lower() == 'exit':
+      print("Exiting...")
+      break
+   ```
+@z
 
 @x
    If the user types something, the program converts the input to lowercase and
@@ -223,7 +298,23 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
 7. Perform named entity recognition.
 @z
 
-% snip code...
+@x
+   ```python
+   doc = nlp(input_text)
+@y
+   ```python
+   doc = nlp(input_text)
+@z
+
+@x
+   for ent in doc.ents:
+      print(f"Entity: {ent.text}, Type: {ent.label_}")
+   ```
+@y
+   for ent in doc.ents:
+      print(f"Entity: {ent.text}, Type: {ent.label_}")
+   ```
+@z
 
 @x
    - `doc = nlp(input_text)`: Here, the nlp model processes the user-input text. This creates a Doc object which contains various NLP attributes, including identified entities.
@@ -247,7 +338,23 @@ The source code for the name recognition application is in the `Docker-NLP/02_na
    The sample application already contains the `requirements.txt` file to specify the necessary packages that the application imports. Open `requirements.txt` in a code or text editor to explore its contents.
 @z
 
-% snip code...
+@x
+   ```text
+   # 02 named_entity_recognition
+   spacy==3.7.2
+@y
+   ```text
+   # 02 named_entity_recognition
+   spacy==3.7.2
+@z
+
+@x
+   ...
+   ```
+@y
+   ...
+   ```
+@z
 
 @x
    Only the `spacy` package is required for the named recognition application.
@@ -303,7 +410,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 1. Specify the base image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   FROM python:3.8-slim
+   ```
+@y
+   ```dockerfile
+   FROM python:3.8-slim
+   ```
+@z
 
 @x
    This command sets the foundation for the build. `python:3.8-slim` is a
@@ -327,7 +442,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 2. Set the working directory.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   WORKDIR /app
+   ```
+@y
+   ```dockerfile
+   WORKDIR /app
+   ```
+@z
 
 @x
    `WORKDIR` sets the current working directory within the Docker image. By
@@ -349,7 +472,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 3. Copy the requirements file into the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   COPY requirements.txt /app
+   ```
+@y
+   ```dockerfile
+   COPY requirements.txt /app
+   ```
+@z
 
 @x
    The `COPY` command transfers the `requirements.txt` file from
@@ -371,7 +502,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 4. Install the Python dependencies in the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN pip install --no-cache-dir -r requirements.txt
+   ```
+@y
+   ```dockerfile
+   RUN pip install --no-cache-dir -r requirements.txt
+   ```
+@z
 
 @x
    This line uses `pip`, Python's package installer, to install the packages
@@ -391,7 +530,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 5. Run additional commands.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN python -m spacy download en_core_web_sm
+   ```
+@y
+   ```dockerfile
+   RUN python -m spacy download en_core_web_sm
+   ```
+@z
 
 @x
    This step is specific to NLP applications that require the spaCy library. It downloads the `en_core_web_sm` model, which is a small English language model for spaCy.
@@ -405,7 +552,17 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 6. Copy the application code into the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   COPY *.py /app
+   COPY entrypoint.sh /app
+   ```
+@y
+   ```dockerfile
+   COPY *.py /app
+   COPY entrypoint.sh /app
+   ```
+@z
 
 @x
    These commands copy your Python scripts and the `entrypoint.sh` script into
@@ -427,7 +584,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 7. Set permissions for the `entrypoint.sh` script.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN chmod +x /app/entrypoint.sh
+   ```
+@y
+   ```dockerfile
+   RUN chmod +x /app/entrypoint.sh
+   ```
+@z
 
 @x
    This command modifies the file permissions of `entrypoint.sh`, making it
@@ -445,7 +610,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 8. Set the entry point.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   ENTRYPOINT ["/app/entrypoint.sh"]
+   ```
+@y
+   ```dockerfile
+   ENTRYPOINT ["/app/entrypoint.sh"]
+   ```
+@z
 
 @x
    The `ENTRYPOINT` instruction configures the container to run `entrypoint.sh`
@@ -491,7 +664,15 @@ To run the application using Docker:
    In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
 @z
 
-% snip code...
+@x
+   ```console
+   $ docker build -t basic-nlp .
+   ```
+@y
+   ```console
+   $ docker build -t basic-nlp .
+   ```
+@z
 
 @x
    The following is a break down of the command:
@@ -559,7 +740,15 @@ To run the application using Docker:
    In a terminal, run the following command.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -it basic-nlp 02_name_entity_recognition.py
+   ```
+@y
+   ```console
+   $ docker run -it basic-nlp 02_name_entity_recognition.py
+   ```
+@z
 
 @x
    The following is a break down of the command:
@@ -627,7 +816,15 @@ To run the application using Docker:
    You will see the following in your console after the container starts.
 @z
 
-% snip output...
+@x
+   ```console
+   Enter the text for entity recognition (type 'exit' to end):
+   ```
+@y
+   ```console
+   Enter the text for entity recognition (type 'exit' to end):
+   ```
+@z
 
 @x
 3. Test the application.
@@ -641,7 +838,27 @@ To run the application using Docker:
    Enter some information to get the named entity recognition.
 @z
 
-% snip output...
+@x
+   ```console
+   Enter the text for entity recognition (type 'exit' to end): Apple Inc. is planning to open a new store in San Francisco. Tim Cook is the CEO of Apple.
+@y
+   ```console
+   Enter the text for entity recognition (type 'exit' to end): Apple Inc. is planning to open a new store in San Francisco. Tim Cook is the CEO of Apple.
+@z
+
+@x
+   Entity: Apple Inc., Type: ORG
+   Entity: San Francisco, Type: GPE
+   Entity: Tim Cook, Type: PERSON
+   Entity: Apple, Type: ORG
+   ```
+@y
+   Entity: Apple Inc., Type: ORG
+   Entity: San Francisco, Type: GPE
+   Entity: Tim Cook, Type: PERSON
+   Entity: Apple, Type: ORG
+   ```
+@z
 
 @x
 ## Summary

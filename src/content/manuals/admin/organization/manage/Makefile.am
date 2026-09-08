@@ -5,7 +5,9 @@
 bases = \
 	_index.md          \
 	manage-a-team.md   \
+	manage-licenses.md \
 	manage-products.md \
+	manage-seats.md    \
 	members.md
 
 include $(top_srcdir)/build-aux/common.mk

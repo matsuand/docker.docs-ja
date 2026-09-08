@@ -438,27 +438,13 @@ Close the **Recommended fixes for base image** modal. In the policy listing, sel
 @z
 
 @x
-In this case, the recommended action is to enable
-[Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
-which helps keep your base images up-to-date automatically.
+In this case, the recommended action is to update the base image to a newer
+version. You can use GitHub Dependabot with `package-ecosystem: "docker"` to
+automate base image updates.
 @y
-In this case, the recommended action is to enable
-[Docker Scout's GitHub integration](./integrations/source-code-management/github.md),
-which helps keep your base images up-to-date automatically.
-@z
-
-@x
-> [!TIP]
->
-> You can't enable this integration for the demo app used in this guide.
-> Feel free to push the code to a GitHub repository that you own,
-> and try out the integration there!
-@y
-> [!TIP]
->
-> You can't enable this integration for the demo app used in this guide.
-> Feel free to push the code to a GitHub repository that you own,
-> and try out the integration there!
+In this case, the recommended action is to update the base image to a newer
+version. You can use GitHub Dependabot with `package-ecosystem: "docker"` to
+automate base image updates.
 @z
 
 @x

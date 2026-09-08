@@ -125,14 +125,14 @@ to get access to Docker Build Cloud:
 
 @x
 - Users with a free Personal account can opt-in to a 7-day free trial, with the option
-to subscribe for access. To start your free trial, sign in to [Docker Build Cloud Dashboard](https://app.docker.com/build/) and follow the on-screen instructions.
+  to subscribe for access. To start your free trial, sign in to [Docker Build Cloud Dashboard](https://app.docker.com/build/) and follow the on-screen instructions.
 - All users with a paid Docker subscription have access to Docker Build Cloud included
-with their Docker suite of products. See [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsBuildCloud) for more information.
+  with their Docker suite of products. See [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsBuildCloud) for more information.
 @y
 - Users with a free Personal account can opt-in to a 7-day free trial, with the option
-to subscribe for access. To start your free trial, sign in to [Docker Build Cloud Dashboard](https://app.docker.com/build/) and follow the on-screen instructions.
+  to subscribe for access. To start your free trial, sign in to [Docker Build Cloud Dashboard](https://app.docker.com/build/) and follow the on-screen instructions.
 - All users with a paid Docker subscription have access to Docker Build Cloud included
-with their Docker suite of products. See [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsBuildCloud) for more information.
+  with their Docker suite of products. See [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsBuildCloud) for more information.
 @z
 
 @x
@@ -145,8 +145,8 @@ Once you've signed up and created a builder, continue by
 
 @x
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](/manuals/enterprise/security/roles-and-permissions.md#docker-build-cloud-permissions).
+[Roles and Permissions](/manuals/enterprise/security/roles-and-permissions/core-roles.md#docker-build-cloud).
 @y
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](manuals/enterprise/security/roles-and-permissions.md#docker-build-cloud-permissions).
+[Roles and Permissions](manuals/enterprise/security/roles-and-permissions/core-roles.md#docker-build-cloud).
 @z

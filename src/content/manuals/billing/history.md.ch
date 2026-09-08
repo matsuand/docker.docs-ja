@@ -4,267 +4,29 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Invoices and billing history
+title: Billing and invoice history
+linkTitle: Invoice history
 @y
-title: Invoices and billing history
+title: Billing and invoice history
+linkTitle: Invoice history
 @z
 
 @x
-description: Learn how to view invoices and your billing history
-keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, pay invoice
+description: Learn how to view your Docker billing history, understand what's on an invoice, and pay by invoice.
+keywords: payments, billing, subscription, invoices, renewals, billing history, pay by invoice
 @y
-description: Learn how to view invoices and your billing history
-keywords: payments, billing, subscription, invoices, renewals, invoice management, billing administration, pay invoice
+description: Learn how to view your Docker billing history, understand what's on an invoice, and pay by invoice.
+keywords: payments, billing, subscription, invoices, renewals, billing history, pay by invoice
 @z
 
 @x
-Learn how to view and pay invoices, view your billing history, and verify
-your billing renewal date. All monthly and annual subscriptions are
-automatically renewed at the end of the subscription term using your default
-payment method.
+Docker issues an invoice each time a subscription to a Docker plan renews or changes. You can track invoices issued to your account so you can review the plans you've
+subscribed to over time, check payment status, and download records as
+needed.
 @y
-Learn how to view and pay invoices, view your billing history, and verify
-your billing renewal date. All monthly and annual subscriptions are
-automatically renewed at the end of the subscription term using your default
-payment method.
-@z
-
-@x
-## View an invoice
-@y
-## View an invoice
-@z
-
-@x
-Your invoice includes the following:
-@y
-Your invoice includes the following:
-@z
-
-@x
-- Invoice number
-- Date of issue
-- Due date
-- Your "Bill to" information
-- Amount due (in USD)
-- Pay online: Select this link to pay your invoice online
-- Description of your order, quantity if applicable, unit price, and
-  amount (in USD)
-- Subtotal, discount (if applicable), and total
-@y
-- Invoice number
-- Date of issue
-- Due date
-- Your "Bill to" information
-- Amount due (in USD)
-- Pay online: Select this link to pay your invoice online
-- Description of your order, quantity if applicable, unit price, and
-  amount (in USD)
-- Subtotal, discount (if applicable), and total
-@z
-
-@x
-The information listed in the "Bill to" section of your invoice is based on
-your billing information. Not all fields are required. The billing information
-includes the following:
-@y
-The information listed in the "Bill to" section of your invoice is based on
-your billing information. Not all fields are required. The billing information
-includes the following:
-@z
-
-@x
-- Name (required): The name of the administrator or company
-- Address (required)
-- Email address (required): The email address that receives all billing-related
-  emails for the account
-- Phone number
-- Tax ID or VAT
-@y
-- Name (required): The name of the administrator or company
-- Address (required)
-- Email address (required): The email address that receives all billing-related
-  emails for the account
-- Phone number
-- Tax ID or VAT
-@z
-
-@x
-You can’t make changes to a paid or unpaid billing invoice. When you update
-your billing information, this change won't update an existing invoice.
-@y
-You can’t make changes to a paid or unpaid billing invoice. When you update
-your billing information, this change won't update an existing invoice.
-@z
-
-@x
-If you need
-to update your billing information, make sure you do so before your
-subscription renewal date when your invoice is finalized.
-@y
-If you need
-to update your billing information, make sure you do so before your
-subscription renewal date when your invoice is finalized.
-@z
-
-@x
-For more information, see [Update billing information](details.md).
-@y
-For more information, see [Update billing information](details.md).
-@z
-
-@x
-## Pay an invoice
-@y
-## Pay an invoice
-@z
-
-@x
-> [!NOTE]
->
-> Pay by invoice is only available for subscribers on an annual billing cycle.
-> To change your billing cycle, see [Change your billing cycle](/manuals/billing/cycle.md).
-@y
-> [!NOTE]
->
-> Pay by invoice is only available for subscribers on an annual billing cycle.
-> To change your billing cycle, see [Change your billing cycle](manuals/billing/cycle.md).
-@z
-
-@x
-If you've selected pay by invoice for your subscription, you'll receive email
-reminders to pay your invoice at 10 days before the due date, on the due date,
-and 15 days after the due date.
-@y
-If you've selected pay by invoice for your subscription, you'll receive email
-reminders to pay your invoice at 10 days before the due date, on the due date,
-and 15 days after the due date.
-@z
-
-@x
-You can pay an invoice from the Docker Billing Console:
-@y
-You can pay an invoice from the Docker Billing Console:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your organization.
-1. Select **Billing**.
-1. Select **Invoices** and locate the invoice you want to pay.
-1. In the **Actions** column, select **Pay invoice**.
-1. Fill out your payment details and select **Pay**.
-@y
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your organization.
-1. Select **Billing**.
-1. Select **Invoices** and locate the invoice you want to pay.
-1. In the **Actions** column, select **Pay invoice**.
-1. Fill out your payment details and select **Pay**.
-@z
-
-@x
-When your payment has processed, the invoice's **Status** column will update to
-**Paid** and you will receive a confirmation email.
-@y
-When your payment has processed, the invoice's **Status** column will update to
-**Paid** and you will receive a confirmation email.
-@z
-
-@x
-If you choose to pay using a US bank account, you must verify the account. For
-more information, see [Verify a bank account](/manuals/billing/payment-method.md#verify-a-bank-account).
-@y
-If you choose to pay using a US bank account, you must verify the account. For
-more information, see [Verify a bank account](manuals/billing/payment-method.md#verify-a-bank-account).
-@z
-
-@x
-### View renewal date
-@y
-### View renewal date
-@z
-
-@x
-You receive your invoice when the subscription renews. To verify your renewal
-date:
-@y
-You receive your invoice when the subscription renews. To verify your renewal
-date:
-@z
-
-@x
-1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
-1. Find your renewal date and amount on your subscription plan card.
-@y
-1. Sign in to [Docker Home Billing](https://app.docker.com/billing).
-1. Find your renewal date and amount on your subscription plan card.
-@z
-
-@x
-## Include your VAT number on your invoice
-@y
-## Include your VAT number on your invoice
-@z
-
-@x
-> [!NOTE]
->
-> If the VAT number field is not available, complete the
-> [Contact Support form](https://hub.docker.com/support/contact/). This field
-> may need to be manually added.
-@y
-> [!NOTE]
->
-> If the VAT number field is not available, complete the
-> [Contact Support form](https://hub.docker.com/support/contact/). This field
-> may need to be manually added.
-@z
-
-@x
-To add or update your VAT number:
-@y
-To add or update your VAT number:
-@z
-
-@x
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your
-   organization.
-1. Select **Billing**.
-1. Select **Billing information** from the left-hand menu.
-1. Select **Change** on your billing information card.
-1. Ensure the **I'm purchasing as a business** checkbox is checked.
-1. Enter your VAT number in the Tax ID section.
-@y
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your
-   organization.
-1. Select **Billing**.
-1. Select **Billing information** from the left-hand menu.
-1. Select **Change** on your billing information card.
-1. Ensure the **I'm purchasing as a business** checkbox is checked.
-1. Enter your VAT number in the Tax ID section.
-@z
-
-@x
-   > [!IMPORTANT]
-   >
-   > Your VAT number must include your country prefix. For example, if you are
-   > entering a VAT number for Germany, you would enter `DE123456789`.
-@y
-   > [!IMPORTANT]
-   >
-   > Your VAT number must include your country prefix. For example, if you are
-   > entering a VAT number for Germany, you would enter `DE123456789`.
-@z
-
-@x
-1. Select **Update**.
-@y
-1. Select **Update**.
-@z
-
-@x
-Your VAT number will be included on your next invoice.
-@y
-Your VAT number will be included on your next invoice.
+Docker issues an invoice each time a subscription to a Docker plan renews or changes. You can track invoices issued to your account so you can review the plans you've
+subscribed to over time, check payment status, and download records as
+needed.
 @z
 
 @x
@@ -274,71 +36,159 @@ Your VAT number will be included on your next invoice.
 @z
 
 @x
-You can view your billing history and download past invoices for a personal
-account or organization.
+Personal accounts and organization accounts use the same steps to view billing
+history. To view your billing history:
 @y
-You can view your billing history and download past invoices for a personal
-account or organization.
+Personal accounts and organization accounts use the same steps to view billing
+history. To view your billing history:
 @z
 
 @x
-### Personal account
+1. Sign in to [Docker Home](https://app.docker.com/) and select your personal
+   account or organization account.
+1. Select **Billing**, then **Invoices**.
+1. View an individual invoice by selecting:
+   - **Invoice number** to open invoice details in your browser
+   - **Download** to download a copy of your invoice.
 @y
-### Personal account
+1. Sign in to [Docker Home](https://app.docker.com/) and select your personal
+   account or organization account.
+1. Select **Billing**, then **Invoices**.
+1. View an individual invoice by selecting:
+   - **Invoice number** to open invoice details in your browser
+   - **Download** to download a copy of your invoice.
 @z
 
 @x
-To view billing history:
+> [!NOTE]
+>
+> If you want to view your organization account's
+> billing history, you must be an organization owner.
 @y
-To view billing history:
+> [!NOTE]
+>
+> If you want to view your organization account's
+> billing history, you must be an organization owner.
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **Invoice number** to open invoice details.
-1. Optional. Select the **Download** button to download an invoice.
+## Understand your invoice
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and choose your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **Invoice number** to open invoice details.
-1. Optional. Select the **Download** button to download an invoice.
+## Understand your invoice
 @z
 
 @x
-### Organization
+Your invoice includes the following information:
 @y
-### Organization
+Your invoice includes the following information:
 @z
 
 @x
-You must be an owner of the organization to view the billing history.
+| Invoice field  | Description                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| Invoice number | A unique identifier for the invoice                                                           |
+| Date of issue  | The date Docker generated the invoice                                                         |
+| Due date       | The date your payment is due                                                                  |
+| Bill to        | Your billing name, address, and contact information                                           |
+| Line items     | The description, quantity (if applicable), unit price, and amount for each item on your order |
+| Subtotal       | The total amount before any discounts                                                         |
+| Total          | The subtotal after any discounts, matching the amount due                                     |
+| Amount due     | The total amount you owe, in USD                                                              |
+| Pay online     | A link to pay an unpaid invoice online                                                        |
 @y
-You must be an owner of the organization to view the billing history.
+| Invoice field  | Description                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------- |
+| Invoice number | A unique identifier for the invoice                                                           |
+| Date of issue  | The date Docker generated the invoice                                                         |
+| Due date       | The date your payment is due                                                                  |
+| Bill to        | Your billing name, address, and contact information                                           |
+| Line items     | The description, quantity (if applicable), unit price, and amount for each item on your order |
+| Subtotal       | The total amount before any discounts                                                         |
+| Total          | The subtotal after any discounts, matching the amount due                                     |
+| Amount due     | The total amount you owe, in USD                                                              |
+| Pay online     | A link to pay an unpaid invoice online                                                        |
 @z
 
 @x
-To view billing history:
+The information in the **Bill to** section comes from your billing
+information.
 @y
-To view billing history:
+The information in the **Bill to** section comes from your billing
+information.
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **invoice number** to open invoice details.
-1. Optional. Select the **download** button to download an invoice.
+- Not all fields are required.
+- You can't change a paid or unpaid invoice.
+- Updating your billing information
+  doesn't update an existing invoice.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your
-   organization.
-1. Select **Billing**.
-1. Select **Invoices** from the left-hand menu.
-1. Optional. Select the **invoice number** to open invoice details.
-1. Optional. Select the **download** button to download an invoice.
+- Not all fields are required.
+- You can't change a paid or unpaid invoice.
+- Updating your billing information
+  doesn't update an existing invoice.
+@z
+
+@x
+If you want different billing information reflected in your invoice, update your billing information before your renewal date, when
+Docker finalizes your invoice. For more information, see [Update billing information](details.md).
+@y
+If you want different billing information reflected in your invoice, update your billing information before your renewal date, when
+Docker finalizes your invoice. For more information, see [Update billing information](details.md).
+@z
+
+@x
+## View renewal date
+@y
+## View renewal date
+@z
+
+@x
+Renewal dates are set on a per-plan basis, so check each plan individually if you subscribe to more than one. Depending on the product, your billing cycle can be monthly, annual, or another cadence. For plan-specific renewal and billing cycle details, see [Plans](/manuals/subscription/plans/_index.md).
+@y
+Renewal dates are set on a per-plan basis, so check each plan individually if you subscribe to more than one. Depending on the product, your billing cycle can be monthly, annual, or another cadence. For plan-specific renewal and billing cycle details, see [Plans](manuals/subscription/plans/_index.md).
+@z
+
+@x
+## Pay by invoice
+@y
+## Pay by invoice
+@z
+
+@x
+> [!TIP]
+>
+> To pay by invoice,
+> [upgrade to a Docker Team or Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsBillingPaymentMethod)
+> and choose an annual subscription.
+@y
+> [!TIP]
+>
+> To pay by invoice,
+> [upgrade to a Docker Team or Docker Business plan](https://www.docker.com/pricing?ref=Docs&refAction=DocsBillingPaymentMethod)
+> and choose an annual subscription.
+@z
+
+@x
+Pay by invoice requires upfront payment for your first subscription period
+using a payment card or ACH bank transfer. At renewal, Docker emails you an
+invoice to pay manually instead of charging your default payment method.
+@y
+Pay by invoice requires upfront payment for your first subscription period
+using a payment card or ACH bank transfer. At renewal, Docker emails you an
+invoice to pay manually instead of charging your default payment method.
+@z
+
+@x
+- To add pay by invoice as a payment method, contact your Docker sales
+  representative.
+- You can only pay by invoice by choosing it as a payment method when
+  subscribing to Docker Team or Docker Business plans.
+- Pay by invoice isn't available for subscription upgrades or changes.
+@y
+- To add pay by invoice as a payment method, contact your Docker sales
+  representative.
+- You can only pay by invoice by choosing it as a payment method when
+  subscribing to Docker Team or Docker Business plans.
+- Pay by invoice isn't available for subscription upgrades or changes.
 @z

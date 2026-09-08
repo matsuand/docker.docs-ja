@@ -91,30 +91,20 @@ your Factory account.
 
 @x
 **API key**: Store your Factory API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
 **API key**: Store your Factory API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ sbx secret set -g droid
+$ sbx secret set droid
 ```
 @y
 ```console
-$ sbx secret set -g droid
+$ sbx secret set droid
 ```
-@z
-
-@x
-Alternatively, export the `FACTORY_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
-@y
-Alternatively, export the `FACTORY_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x

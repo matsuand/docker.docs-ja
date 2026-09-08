@@ -25,12 +25,6 @@ usage: docker offload start
     description: Request an engine with a gpu
 @z
 
-@x idle-timeout
-    description: How long before the engine idles
-@y
-    description: How long before the engine idles
-@z
-
 @x timeout
     description: How long to wait for the engine to be ready
 @y

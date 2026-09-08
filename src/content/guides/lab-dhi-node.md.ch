@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Migrating a Node App to Docker Hardened Images"
 linkTitle: "Lab: Migrating to DHI (Node)"
@@ -33,26 +31,6 @@ keywords: Docker, Hardened Images, DHI, Node.js, Docker Scout, CVE, security, SB
   time: 30 minutes
 @y
   time: 30 分
-@z
-
-@x
-    - title: Docker Hardened Images
-      url: /dhi/
-    - title: Docker Scout docs
-      url: /scout/
-    - title: Build attestations
-      url: /build/metadata/attestations/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-dhi-node
-@y
-    - title: Docker Hardened Images
-      url: __SUBDIR__/dhi/
-    - title: Docker Scout docs
-      url: __SUBDIR__/scout/
-    - title: Build attestations
-      url: __SUBDIR__/build/metadata/attestations/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-dhi-node
 @z
 
 @x

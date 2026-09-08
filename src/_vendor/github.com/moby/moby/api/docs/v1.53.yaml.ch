@@ -17054,6 +17054,11 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
+    properties:
+      Segments:
+        type: "object"
+        additionalProperties:
+          type: "string"
 @y
   Topology:
     description: |
@@ -17061,6 +17066,11 @@ definitions:
       details, see documentation for the Topology object in the CSI
       specification.
     type: "object"
+    properties:
+      Segments:
+        type: "object"
+        additionalProperties:
+          type: "string"
 @z
 
 @x
@@ -26076,7 +26086,9 @@ paths:
                 description: |
                   Listen address used for inter-manager communication if the node
                   gets promoted to manager, as well as determining the networking
-                  interface used for the VXLAN Tunnel Endpoint (VTEP).
+                  interface used for the VXLAN Tunnel Endpoint (VTEP). This is
+                  required for joining a swarm. If the port number is omitted,
+                  the default swarm listening port is used.
                 type: "string"
               AdvertiseAddr:
                 description: |
@@ -26172,7 +26184,9 @@ paths:
                 description: |
                   Listen address used for inter-manager communication if the node
                   gets promoted to manager, as well as determining the networking
-                  interface used for the VXLAN Tunnel Endpoint (VTEP).
+                  interface used for the VXLAN Tunnel Endpoint (VTEP). This is
+                  required for joining a swarm. If the port number is omitted,
+                  the default swarm listening port is used.
                 type: "string"
               AdvertiseAddr:
                 description: |
@@ -26216,6 +26230,7 @@ paths:
               JoinToken:
                 description: "Secret token for joining this swarm."
                 type: "string"
+            required: [ListenAddr, RemoteAddrs, JoinToken]
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"
@@ -26394,6 +26409,7 @@ paths:
               JoinToken:
                 description: "Secret token for joining this swarm."
                 type: "string"
+            required: [ListenAddr, RemoteAddrs, JoinToken]
             example:
               ListenAddr: "0.0.0.0:2377"
               AdvertiseAddr: "192.168.1.1:2377"

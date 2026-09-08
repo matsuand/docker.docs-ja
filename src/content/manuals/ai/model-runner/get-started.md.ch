@@ -183,14 +183,12 @@ docker model uninstall-runner --images && docker model install-runner
 
 @x
 > [!NOTE]
-> With the above command, local models are preserved.
-> To delete the models during the upgrade, add the `--models` option to the
-> `uninstall-runner` command.
+> With the above command, local models are preserved and only the Docker Model Runner images are removed.
+> To also delete the local models during the upgrade, add the `--models` option to the `uninstall-runner` command.
 @y
 > [!NOTE]
-> With the above command, local models are preserved.
-> To delete the models during the upgrade, add the `--models` option to the
-> `uninstall-runner` command.
+> With the above command, local models are preserved and only the Docker Model Runner images are removed.
+> To also delete the local models during the upgrade, add the `--models` option to the `uninstall-runner` command.
 @z
 
 @x

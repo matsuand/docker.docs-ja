@@ -21,15 +21,6 @@ summary: |
 @z
 
 @x
-tags: [ai]
-languages: [python]
-@y
-tags: [ai]
-languages: [python]
-@z
-
-% params:
-@x
   time: 20 minutes
 @y
   time: 20 分

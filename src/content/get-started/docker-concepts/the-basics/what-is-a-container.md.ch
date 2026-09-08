@@ -161,7 +161,7 @@ Use the following instructions to run a container.
 @z
 
 @x
-    ![A screenshot of the Docker Desktop Dashboard showing the search result for welcome-to-docker Docker image ](images/search-the-docker-image.webp?border=true&w=1000&h=700)
+    ![A screenshot of the Docker Desktop Dashboard showing the search result for welcome-to-docker Docker image](images/search-the-docker-image.webp?border=true&w=1000&h=700)
 @y
     ![Docker Desktop Dashboard のスクリーンショット、Docker イメージ welcome-to-docker の検索結果](images/search-the-docker-image.webp?border=true&w=1000&h=700)
 @z

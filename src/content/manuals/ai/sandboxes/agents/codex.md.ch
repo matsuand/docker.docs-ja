@@ -80,52 +80,34 @@ $ sbx run codex
 @z
 
 @x
-Codex supports two authentication methods: an API key or OAuth.
+If you haven't stored an OpenAI credential, `sbx run codex` prompts you to
+authenticate on your host before launching the sandbox. The flow runs on the
+host, so credentials are never exposed inside the sandbox.
 @y
-Codex supports two authentication methods: an API key or OAuth.
+If you haven't stored an OpenAI credential, `sbx run codex` prompts you to
+authenticate on your host before launching the sandbox. The flow runs on the
+host, so credentials are never exposed inside the sandbox.
 @z
 
 @x
-**API key**: Store your OpenAI API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+To set up authentication ahead of time, choose one of the following methods.
 @y
-**API key**: Store your OpenAI API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+To set up authentication ahead of time, choose one of the following methods.
+@z
+
+@x
+**OAuth**: Start the OAuth flow on your host with:
+@y
+**OAuth**: Start the OAuth flow on your host with:
 @z
 
 @x
 ```console
-$ sbx secret set -g openai
+$ sbx secret set openai --oauth
 ```
 @y
 ```console
-$ sbx secret set -g openai
-```
-@z
-
-@x
-Alternatively, export the `OPENAI_API_KEY` environment variable in your shell
-before running the sandbox.
-@y
-Alternatively, export the `OPENAI_API_KEY` environment variable in your shell
-before running the sandbox.
-@z
-
-@x
-**OAuth**: If you prefer not to use an API key, start the OAuth flow on your
-host with:
-@y
-**OAuth**: If you prefer not to use an API key, start the OAuth flow on your
-host with:
-@z
-
-@x
-```console
-$ sbx secret set -g openai --oauth
-```
-@y
-```console
-$ sbx secret set -g openai --oauth
+$ sbx secret set openai --oauth
 ```
 @z
 
@@ -140,9 +122,27 @@ so browser-based authentication works without any extra setup.
 @z
 
 @x
-See [Credentials](../security/credentials.md) for more details.
+**API key**: Store your OpenAI API key using
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
-See [Credentials](../security/credentials.md) for more details.
+**API key**: Store your OpenAI API key using
+[stored secrets](../configuration/credentials.md#stored-secrets):
+@z
+
+@x
+```console
+$ sbx secret set openai
+```
+@y
+```console
+$ sbx secret set openai
+```
+@z
+
+@x
+See [Credentials](../configuration/credentials.md) for more details.
+@y
+See [Credentials](../configuration/credentials.md) for more details.
 @z
 
 @x
@@ -188,11 +188,13 @@ codex --dangerously-bypass-approvals-and-sandbox
 @z
 
 @x
-Args after `--` replace these defaults rather than being appended. To keep
-the flag, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`). A bare word — such as a prompt — replaces the
+defaults instead, so lead with the flag to keep bypass mode:
 @y
-Args after `--` replace these defaults rather than being appended. To keep
-the flag, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`). A bare word — such as a prompt — replaces the
+defaults instead, so lead with the flag to keep bypass mode:
 @z
 
 @x

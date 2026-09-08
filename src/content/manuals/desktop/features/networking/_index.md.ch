@@ -47,19 +47,19 @@ The backend acts as:
 
 @x
 - Network proxy: Translates traffic between the host and Linux VM.
-   - On Windows and Mac, this is handled by the `com.docker.backend` process.
-   - On Linux, the `qemu` process performs this function.
+  - On Windows and Mac, this is handled by the `com.docker.backend` process.
+  - On Linux, the `qemu` process performs this function.
 - File server: Handles file access from containers to the host filesystem.
-   - When using gRPC FUSE, the backend performs the file sharing.
-   - When using `virtiofs`, `osxfs`, or `krun`, file access is handled by those respective daemons rather than the backend process.
+  - When using gRPC FUSE, the backend performs the file sharing.
+  - When using `virtiofs`, or `krun`, file access is handled by those respective daemons rather than the backend process.
 - Control plane: Manages Docker API calls, port forwarding, and proxy configuration.
 @y
 - Network proxy: Translates traffic between the host and Linux VM.
-   - On Windows and Mac, this is handled by the `com.docker.backend` process.
-   - On Linux, the `qemu` process performs this function.
+  - On Windows and Mac, this is handled by the `com.docker.backend` process.
+  - On Linux, the `qemu` process performs this function.
 - File server: Handles file access from containers to the host filesystem.
-   - When using gRPC FUSE, the backend performs the file sharing.
-   - When using `virtiofs`, `osxfs`, or `krun`, file access is handled by those respective daemons rather than the backend process.
+  - When using gRPC FUSE, the backend performs the file sharing.
+  - When using `virtiofs`, or `krun`, file access is handled by those respective daemons rather than the backend process.
 - Control plane: Manages Docker API calls, port forwarding, and proxy configuration.
 @z
 
@@ -70,25 +70,23 @@ The following table summarizes typical setups in more detail:
 @z
 
 @x
-| Platform        | Setup                                | Networking handled by    | File sharing handled by                | Notes                                                     |
-| --------------- | ------------------------------------ | ------------------------ | -------------------------------------- | --------------------------------------------------------- |
-| Windows         | Hyper-V                              | `com.docker.backend.exe` | `com.docker.backend.exe`               | Simplest setup with full visibility to EDR/firewall tools |
-| Windows (WSL 2) | WSL 2                                | `com.docker.backend.exe` | WSL 2 kernel (no visibility from host) | Recommended only when WSL 2 integration is needed         |
-| Mac             | Virtualization framework + gRPC FUSE | `com.docker.backend`     | `com.docker.backend`                   | Recommended for performance and visibility                |
-| Mac             | Virtualization framework + `virtiofs`| `com.docker.backend`     | Apple's Virtualization framework       | Higher performance but no file access visibility from host|
-| Mac             | Virtualization framework + `osxfs`   | `com.docker.backend`     | `osxfs`                                | Legacy setup, not recommended                             |
-| Mac             | DockerVMM + `virtiofs`               | `com.docker.backend`     | `krun`                                 | Currently in Beta                                         |
-| Linux           | Native Linux VM                      | `qemu`                   | `virtiofsd`                            | No `com.docker.backend` process on Linux                  |
+| Platform        | Setup                                 | Networking handled by    | File sharing handled by                | Notes                                                      |
+| --------------- | ------------------------------------- | ------------------------ | -------------------------------------- | ---------------------------------------------------------- |
+| Windows         | Hyper-V                               | `com.docker.backend.exe` | `com.docker.backend.exe`               | Simplest setup with full visibility to EDR/firewall tools  |
+| Windows (WSL 2) | WSL 2                                 | `com.docker.backend.exe` | WSL 2 kernel (no visibility from host) | Recommended only when WSL 2 integration is needed          |
+| Mac             | Virtualization framework + gRPC FUSE  | `com.docker.backend`     | `com.docker.backend`                   | Recommended for performance and visibility                 |
+| Mac             | Virtualization framework + `virtiofs` | `com.docker.backend`     | Apple's Virtualization framework       | Higher performance but no file access visibility from host |
+| Mac             | DockerVMM + `virtiofs`                | `com.docker.backend`     | `krun`                                 | Currently in Beta                                          |
+| Linux           | Native Linux VM                       | `qemu`                   | `virtiofsd`                            | No `com.docker.backend` process on Linux                   |
 @y
-| Platform        | Setup                                | Networking handled by    | File sharing handled by                | Notes                                                     |
-| --------------- | ------------------------------------ | ------------------------ | -------------------------------------- | --------------------------------------------------------- |
-| Windows         | Hyper-V                              | `com.docker.backend.exe` | `com.docker.backend.exe`               | Simplest setup with full visibility to EDR/firewall tools |
-| Windows (WSL 2) | WSL 2                                | `com.docker.backend.exe` | WSL 2 kernel (no visibility from host) | Recommended only when WSL 2 integration is needed         |
-| Mac             | Virtualization framework + gRPC FUSE | `com.docker.backend`     | `com.docker.backend`                   | Recommended for performance and visibility                |
-| Mac             | Virtualization framework + `virtiofs`| `com.docker.backend`     | Apple's Virtualization framework       | Higher performance but no file access visibility from host|
-| Mac             | Virtualization framework + `osxfs`   | `com.docker.backend`     | `osxfs`                                | Legacy setup, not recommended                             |
-| Mac             | DockerVMM + `virtiofs`               | `com.docker.backend`     | `krun`                                 | Currently in Beta                                         |
-| Linux           | Native Linux VM                      | `qemu`                   | `virtiofsd`                            | No `com.docker.backend` process on Linux                  |
+| Platform        | Setup                                 | Networking handled by    | File sharing handled by                | Notes                                                      |
+| --------------- | ------------------------------------- | ------------------------ | -------------------------------------- | ---------------------------------------------------------- |
+| Windows         | Hyper-V                               | `com.docker.backend.exe` | `com.docker.backend.exe`               | Simplest setup with full visibility to EDR/firewall tools  |
+| Windows (WSL 2) | WSL 2                                 | `com.docker.backend.exe` | WSL 2 kernel (no visibility from host) | Recommended only when WSL 2 integration is needed          |
+| Mac             | Virtualization framework + gRPC FUSE  | `com.docker.backend`     | `com.docker.backend`                   | Recommended for performance and visibility                 |
+| Mac             | Virtualization framework + `virtiofs` | `com.docker.backend`     | Apple's Virtualization framework       | Higher performance but no file access visibility from host |
+| Mac             | DockerVMM + `virtiofs`                | `com.docker.backend`     | `krun`                                 | Currently in Beta                                          |
+| Linux           | Native Linux VM                       | `qemu`                   | `virtiofsd`                            | No `com.docker.backend` process on Linux                   |
 @z
 
 @x
@@ -122,9 +120,9 @@ When a container initiates a network request, for example with `apt-get update` 
 @z
 
 @x
-All outbound container network traffic originates from the `com.docker.backend` process. Firewalls, VPNs, and security tools, like Crowdstrike, see traffic coming from this process — not from a VM or unknown source so firewall and endpoint security software can apply rules directly to `com.docker.backend`.
+All outbound container network traffic originates from the `com.docker.backend` process. Firewalls, VPNs, and security tools, like CrowdStrike, see traffic coming from this process — not from a VM or unknown source so firewall and endpoint security software can apply rules directly to `com.docker.backend`.
 @y
-All outbound container network traffic originates from the `com.docker.backend` process. Firewalls, VPNs, and security tools, like Crowdstrike, see traffic coming from this process — not from a VM or unknown source so firewall and endpoint security software can apply rules directly to `com.docker.backend`.
+All outbound container network traffic originates from the `com.docker.backend` process. Firewalls, VPNs, and security tools, like CrowdStrike, see traffic coming from this process — not from a VM or unknown source so firewall and endpoint security software can apply rules directly to `com.docker.backend`.
 @z
 
 @x
@@ -160,7 +158,7 @@ For example, with `docker run -p 80:80 nginx`:
 @x
 By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (`localhost`) or a particular network adapter. This behavior can be modified to bind to `localhost` by default in [Docker Desktop's network settings](/manuals/desktop/settings-and-maintenance/settings.md#network)
 @y
-By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (`localhost`) or a particular network adapter. This behavior can be modified to bind to `localhost` by default in [Docker Desktop's network settings](/manuals/desktop/settings-and-maintenance/settings.md#network)
+By default, `docker run -p` listens on all network interfaces (`0.0.0.0`), but you can restrict it to a specific address, such as `127.0.0.1` (`localhost`) or a particular network adapter. This behavior can be modified to bind to `localhost` by default in [Docker Desktop's network settings](manuals/desktop/settings-and-maintenance/settings.md#network)
 @z
 
 @x
@@ -176,35 +174,29 @@ Host firewalls can permit or deny inbound connections by filtering on `com.docke
 @z
 
 @x
-Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop's proxy setting](/manuals/desktop/settings-and-maintenance/settings.md#proxies). All proxy traffic passes through `com.docker.backend.exe`.
+Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop’s proxy setting](/manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @y
-Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop's proxy setting](manuals/desktop/settings-and-maintenance/settings.md#proxies). All proxy traffic passes through `com.docker.backend.exe`.
+Docker Desktop can use your system’s default proxy settings or custom settings that you configure with [Docker Desktop’s proxy setting](manuals/desktop/settings-and-maintenance/settings.md#proxies).
 @z
 
 @x
-When a proxy is enabled:
+Docker Desktop routes traffic through two separate proxies. The Containers proxy governs all `docker image pull` operations, as well as running container traffic when air-gapped container enforcement is enabled. The Docker Desktop proxy governs host-level traffic - the Desktop application, Docker CLI, and extensions — and is a fallback for image pulls only when the Containers proxy is not explicitly configured.
 @y
-When a proxy is enabled:
-@z
-
-@x
-- The backend process forwards the network requests, for example `docker pull`, through an internal proxy at `http.docker.internal:3128`. 
-- The internal proxy then connects either directly to the internet or through your upstream proxy, depending on your configuration and adding authentication if necessary. 
-- Docker Desktop then downloads the requested images or data through the proxy as usual.
-@y
-- The backend process forwards the network requests, for example `docker pull`, through an internal proxy at `http.docker.internal:3128`. 
-- The internal proxy then connects either directly to the internet or through your upstream proxy, depending on your configuration and adding authentication if necessary. 
-- Docker Desktop then downloads the requested images or data through the proxy as usual.
+Docker Desktop routes traffic through two separate proxies. The Containers proxy governs all `docker image pull` operations, as well as running container traffic when air-gapped container enforcement is enabled. The Docker Desktop proxy governs host-level traffic - the Desktop application, Docker CLI, and extensions — and is a fallback for image pulls only when the Containers proxy is not explicitly configured.
 @z
 
 @x
 Note that: 
+@y
+Note that: 
+@z
+
+@x
 - The proxy honors system or manual proxy configuration.
 - On Windows, Basic, NTLM, and Kerberos authentication is supported.
 - For Mac, NTLM/Kerberos is not supported natively. Run a local proxy on `localhost` as a workaround.
 - CLI plugins and other tools that use the Docker API directly must be configured separately with the `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables.
 @y
-Note that: 
 - The proxy honors system or manual proxy configuration.
 - On Windows, Basic, NTLM, and Kerberos authentication is supported.
 - For Mac, NTLM/Kerberos is not supported natively. Run a local proxy on `localhost` as a workaround.
@@ -230,21 +222,21 @@ Use Windows Defender Firewall or enterprise endpoint firewalls for control. This
 @z
 
 @x
-Crowdstrike and similar tools can observe all traffic and file access that passes through the backend process. 
+CrowdStrike and similar tools can observe all traffic and file access that passes through the backend process.
 @y
-Crowdstrike and similar tools can observe all traffic and file access that passes through the backend process. 
+CrowdStrike and similar tools can observe all traffic and file access that passes through the backend process.
 @z
 
 @x
-| Action | Visible to host EDR? | Reason | 
-|---------|----------------------|---------| 
-| Container reads host files | Yes | Access handled by `com.docker.backend` | 
-| Container writes host files | Yes | Same process performs the write | 
-| Container accesses its own filesystem layers | No | Exists only inside the VM |
+| Action                                       | Visible to host EDR? | Reason                                 |
+| -------------------------------------------- | -------------------- | -------------------------------------- |
+| Container reads host files                   | Yes                  | Access handled by `com.docker.backend` |
+| Container writes host files                  | Yes                  | Same process performs the write        |
+| Container accesses its own filesystem layers | No                   | Exists only inside the VM              |
 @y
-| Action | Visible to host EDR? | Reason | 
-|---------|----------------------|---------| 
-| Container reads host files | Yes | Access handled by `com.docker.backend` | 
-| Container writes host files | Yes | Same process performs the write | 
-| Container accesses its own filesystem layers | No | Exists only inside the VM |
+| Action                                       | Visible to host EDR? | Reason                                 |
+| -------------------------------------------- | -------------------- | -------------------------------------- |
+| Container reads host files                   | Yes                  | Access handled by `com.docker.backend` |
+| Container writes host files                  | Yes                  | Same process performs the write        |
+| Container accesses its own filesystem layers | No                   | Exists only inside the VM              |
 @z

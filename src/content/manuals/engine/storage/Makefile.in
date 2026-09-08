@@ -297,10 +297,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = drivers images
 bases = \
-	_index.md      \
-	bind-mounts.md \
-	containerd.md  \
-	tmpfs.md       \
+	_index.md       \
+	bind-mounts.md  \
+	containerd.md   \
+	image-mounts.md \
+	tmpfs.md        \
 	volumes.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

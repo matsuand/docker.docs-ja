@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = dvp engine extensions-sdk hub registry
+SUBDIRS = ai-governance dvp engine extensions-sdk hub registry
 
 bases = \
 	_index.md

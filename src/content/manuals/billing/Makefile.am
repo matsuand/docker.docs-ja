@@ -5,7 +5,6 @@
 bases = \
 	_index.md          \
 	3d-secure.md       \
-	cycle.md           \
 	details.md         \
 	faqs.md            \
 	history.md         \

@@ -1,18 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Use 3D Secure authentication for Docker billing
-linkTitle: 3D Secure authentication
-description: Docker billing supports 3D Secure (3DS) for secure payment authentication. Learn how 3DS works with Docker subscriptions.
-keywords: billing, renewal, payments, subscriptions, 3DS, credit card verification, secure payments, Docker billing security
+linkTitle: 3D Secure
+description: Learn how 3D Secure authentication works for Docker subscription payments and how to troubleshoot verification issues.
+keywords: billing, payments, subscriptions, 3D Secure, 3DS, credit card verification, payment authentication
 @y
 title: Use 3D Secure authentication for Docker billing
-linkTitle: 3D Secure authentication
-description: Docker billing supports 3D Secure (3DS) for secure payment authentication. Learn how 3DS works with Docker subscriptions.
-keywords: billing, renewal, payments, subscriptions, 3DS, credit card verification, secure payments, Docker billing security
+linkTitle: 3D Secure
+description: Learn how 3D Secure authentication works for Docker subscription payments and how to troubleshoot verification issues.
+keywords: billing, payments, subscriptions, 3D Secure, 3DS, credit card verification, payment authentication
 @z
 
 @x
@@ -72,15 +72,17 @@ actions:
 @z
 
 @x
-- Starting a [paid subscription](../subscription/setup.md)
-- Changing your [billing cycle](/manuals/billing/cycle.md) from monthly to annual
-- [Upgrading your subscription](../subscription/change.md)
-- [Adding seats](../subscription/manage-seats.md) to an existing subscription
+- Starting a [paid subscription](../subscription/manage.md)
+- Changing your [billing cycle](/manuals/billing/details.md#billing-cycle) from monthly to annual
+- [Upgrading your subscription](../subscription/manage.md#upgrade-plans)
+- [Adding seats](../admin/organization/manage/manage-seats.md) to an existing
+  subscription
 @y
-- Starting a [paid subscription](../subscription/setup.md)
-- Changing your [billing cycle](manuals/billing/cycle.md) from monthly to annual
-- [Upgrading your subscription](../subscription/change.md)
-- [Adding seats](../subscription/manage-seats.md) to an existing subscription
+- Starting a [paid subscription](../subscription/manage.md)
+- Changing your [billing cycle](manuals/billing/details.md#billing-cycle) from monthly to annual
+- [Upgrading your subscription](../subscription/manage.md#upgrade-plans)
+- [Adding seats](../admin/organization/manage/manage-seats.md) to an existing
+  subscription
 @z
 
 @x
@@ -106,16 +108,14 @@ If you're unable to complete your payment due to 3DS:
 @x
 1. Retry your transaction. Make sure you're completing the verification
    prompt in the same browser tab.
-1. Use a different payment method. Some cards may not support 3DS properly
-   or be blocked.
-1. Contact your bank. Your bank may be blocking the payment or the 3DS
+1. Use a different payment method.
+1. Contact your bank to confirm whether it's blocking the payment or the 3DS
    verification attempt.
 @y
 1. Retry your transaction. Make sure you're completing the verification
    prompt in the same browser tab.
-1. Use a different payment method. Some cards may not support 3DS properly
-   or be blocked.
-1. Contact your bank. Your bank may be blocking the payment or the 3DS
+1. Use a different payment method.
+1. Contact your bank to confirm whether it's blocking the payment or the 3DS
    verification attempt.
 @z
 

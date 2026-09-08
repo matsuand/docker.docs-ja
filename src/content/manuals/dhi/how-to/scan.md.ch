@@ -7,13 +7,13 @@
 @x
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, Mend.io, or Black Duck.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, black duck, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, vex attestation
 @y
 title: Scan Docker Hardened Images
 linktitle: Scan an image
-description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, Trivy, Wiz, Mend.io, or Black Duck.
-keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, mend.io, black duck, vex attestation
+description: Learn how to scan Docker Hardened Images for known vulnerabilities using Docker Scout, Grype, or Trivy.
+keywords: scan container image, docker scout cves, grype scanner, trivy container scanner, vex attestation
 @z
 
 @x
@@ -34,11 +34,11 @@ vulnerability management process.
 
 @x
 To get accurate vulnerability assessments, use scanners that support
-[VEX](/manuals/dhi/core-concepts/vex.md) attestations. The following scanners can
+[VEX](/manuals/dhi/explore/security-concepts/vex.md) attestations. The following scanners can
 read and apply the VEX statements included with Docker Hardened Images:
 @y
 To get accurate vulnerability assessments, use scanners that support
-[VEX](manuals/dhi/core-concepts/vex.md) attestations. The following scanners can
+[VEX](manuals/dhi/explore/security-concepts/vex.md) attestations. The following scanners can
 read and apply the VEX statements included with Docker Hardened Images:
 @z
 
@@ -46,28 +46,16 @@ read and apply the VEX statements included with Docker Hardened Images:
 - [Docker Scout](#docker-scout): Automatically applies VEX statements with zero configuration
 - [Trivy](#trivy): Supports VEX through VEX Hub or local VEX files
 - [Grype](#grype): Supports VEX via the `--vex` flag
-- [Wiz](#wiz): Automatically applies VEX statements with
-  zero configuration
-- [Mend.io](#mendio): Automatically applies VEX statements with
-  zero configuration
 @y
 - [Docker Scout](#docker-scout): Automatically applies VEX statements with zero configuration
 - [Trivy](#trivy): Supports VEX through VEX Hub or local VEX files
 - [Grype](#grype): Supports VEX via the `--vex` flag
-- [Wiz](#wiz): Automatically applies VEX statements with
-  zero configuration
-- [Mend.io](#mendio): Automatically applies VEX statements with
-  zero configuration
 @z
 
 @x
-For guidance on choosing the right scanner and understanding the differences
-between VEX-enabled and non-VEX scanners, see [Scanner
-integrations](/manuals/dhi/explore/scanner-integrations.md).
+For a full list of supported scanners, see [Scanner integrations](/manuals/dhi/explore/scanner-integrations.md).
 @y
-For guidance on choosing the right scanner and understanding the differences
-between VEX-enabled and non-VEX scanners, see [Scanner
-integrations](manuals/dhi/explore/scanner-integrations.md).
+For a full list of supported scanners, see [Scanner integrations](manuals/dhi/explore/scanner-integrations.md).
 @z
 
 @x
@@ -208,7 +196,7 @@ For example, if you add a `requests` layer to a DHI Python base image and attach
 For example, if you add a `requests` layer to a DHI Python base image and attach a VEX statement suppressing `CVE-2024-47081`, Scout applies both VEX attestations independently and attributes each to its respective author:
 @z
 
-% snip text...
+% snip output...
 
 @x
 Scout suppresses CVEs from the DHI base VEX and CVEs from your child VEX in the same scan - no aggregate VEX document is required.
@@ -286,7 +274,7 @@ insecure images.
 > VEX statements. Enabling the containerd image store via
 > `docker/setup-docker-action` allows BuildKit to store attestations locally
 > without pushing to a registry first. Without the containerd image store,
-> Docker Engine rejects the build with: `Attestation is not supported for the docker driver.
+> Docker Engine rejects the build with: `Attestation is not supported for the docker driver. 
 > Switch to a different driver, or turn on the containerd image store, and try again.`
 > The `Push image` step runs only if the scan passes, using `if: success()`
 > to ensure images are only pushed to the registry when they are free of
@@ -299,7 +287,7 @@ insecure images.
 > VEX statements. Enabling the containerd image store via
 > `docker/setup-docker-action` allows BuildKit to store attestations locally
 > without pushing to a registry first. Without the containerd image store,
-> Docker Engine rejects the build with: `Attestation is not supported for the docker driver.
+> Docker Engine rejects the build with: `Attestation is not supported for the docker driver. 
 > Switch to a different driver, or turn on the containerd image store, and try again.`
 > The `Push image` step runs only if the scan passes, using `if: success()`
 > to ensure images are only pushed to the registry when they are free of
@@ -487,102 +475,6 @@ Then scan the image with the local VEX file:
 % snip command...
 
 @x
-## Wiz
-@y
-## Wiz
-@z
-
-@x
-[Wiz](https://www.wiz.io/) is a cloud security platform that includes container
-image scanning capabilities with support for DHI VEX attestations. Wiz CLI
-automatically consumes VEX statements from Docker Hardened Images to provide
-accurate vulnerability assessments.
-@y
-[Wiz](https://www.wiz.io/) is a cloud security platform that includes container
-image scanning capabilities with support for DHI VEX attestations. Wiz CLI
-automatically consumes VEX statements from Docker Hardened Images to provide
-accurate vulnerability assessments.
-@z
-
-@x
-### Scan a DHI using Wiz CLI
-@y
-### Scan a DHI using Wiz CLI
-@z
-
-@x
-After acquiring a Wiz subscription and installing the Wiz CLI, you can scan a
-Docker Hardened Image by pulling the image and running the scan command:
-@y
-After acquiring a Wiz subscription and installing the Wiz CLI, you can scan a
-Docker Hardened Image by pulling the image and running the scan command:
-@z
-
-% snip command...
-
-@x
-## Mend.io
-@y
-## Mend.io
-@z
-
-@x
-[Mend.io](https://www.mend.io/) is an application security platform that
-includes container image scanning with support for DHI VEX attestations.
-Mend Container automatically retrieves and applies VEX statements from Docker
-Hardened Images and combines them with Mend's reachability analysis for
-comprehensive vulnerability assessment.
-@y
-[Mend.io](https://www.mend.io/) is an application security platform that
-includes container image scanning with support for DHI VEX attestations.
-Mend Container automatically retrieves and applies VEX statements from Docker
-Hardened Images and combines them with Mend's reachability analysis for
-comprehensive vulnerability assessment.
-@z
-
-@x
-### Scan a DHI using Mend.io
-@y
-### Scan a DHI using Mend.io
-@z
-
-@x
-After acquiring a Mend.io subscription and configuring
-[Mend Container](https://docs.mend.io/container/latest/), Mend automatically
-detects Docker Hardened Images and applies their VEX data without requiring any
-additional configuration. When you scan a Docker Hardened Image through the Mend
-AppSec Platform, VEX statements are automatically retrieved and attached as risk
-factors to each finding.
-@y
-After acquiring a Mend.io subscription and configuring
-[Mend Container](https://docs.mend.io/container/latest/), Mend automatically
-detects Docker Hardened Images and applies their VEX data without requiring any
-additional configuration. When you scan a Docker Hardened Image through the Mend
-AppSec Platform, VEX statements are automatically retrieved and attached as risk
-factors to each finding.
-@z
-
-@x
-You can view and filter DHI-specific findings in the Mend AppSec Platform under
-**Security > Containers > Packages**, where a Docker badge identifies hardened
-image packages. Use the **Risk Factors** column to filter by VEX statuses such
-as Not Affected, Fixed, or Under Investigation.
-@y
-You can view and filter DHI-specific findings in the Mend AppSec Platform under
-**Security > Containers > Packages**, where a Docker badge identifies hardened
-image packages. Use the **Risk Factors** column to filter by VEX statuses such
-as Not Affected, Fixed, or Under Investigation.
-@z
-
-@x
-For more information, see the [Mend.io Docker Hardened Images
-documentation](https://docs.mend.io/platform/latest/docker-hardened-images).
-@y
-For more information, see the [Mend.io Docker Hardened Images
-documentation](https://docs.mend.io/platform/latest/docker-hardened-images).
-@z
-
-@x
 ## Export VEX attestations
 @y
 ## Export VEX attestations
@@ -634,4 +526,24 @@ Export VEX attestations to a JSON file:
 >
 > If the image exists locally on your device, you must prefix the image name with `registry://`. For example, use
 > `registry://docs/dhi-python:3.13` instead of `docs/dhi-python:3.13`.
+@z
+
+@x
+## Explore the VEX file
+@y
+## Explore the VEX file
+@z
+
+@x
+After exporting the VEX attestation, you can inspect its contents to
+understand what each statement means and filter by status. For a guided
+walkthrough of the VEX document structure, status values, and `jq` filtering
+commands, see [Explore VEX statements in Docker Hardened
+Images](/guides/dhi-vex-walkthrough/).
+@y
+After exporting the VEX attestation, you can inspect its contents to
+understand what each statement means and filter by status. For a guided
+walkthrough of the VEX document structure, status values, and `jq` filtering
+commands, see [Explore VEX statements in Docker Hardened
+Images](__SUBDIR__/guides/dhi-vex-walkthrough/).
 @z

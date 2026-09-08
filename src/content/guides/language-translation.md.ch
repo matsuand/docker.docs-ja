@@ -8,31 +8,18 @@ title: Build a language translation app
 linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
+summary: |
+  This guide demonstrates how to use Docker to deploy language translation
+  models for NLP tasks.
 @y
 title: 言語翻訳アプリのビルド
 linkTitle: Language translation
 keywords: nlp, natural language processing, text summarization, python, language translation, googletrans
 description: Learn how to build and run a language translation application using Python, Googletrans, and Docker.
-@z
-
-@x
-summary: |
-  This guide demonstrates how to use Docker to deploy language translation
-  models for NLP tasks.
-@y
 summary: |
   このガイドでは Docker を使って自然言語処理 (NLP) タスクの言語翻訳モデルをデプロイする方法について説明します。
 @z
 
-@x
-tags: [ai]
-languages: [python]
-@y
-tags: [ai]
-languages: [python]
-@z
-
-% params:
 @x
   time: 20 minutes
 @y
@@ -97,7 +84,15 @@ methods as detect and translate.
    following command.
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone https://github.com/harsh4870/Docker-NLP.git
+   ```
+@y
+   ```console
+   $ git clone https://github.com/harsh4870/Docker-NLP.git
+   ```
+@z
 
 @x
 2. Verify that you cloned the repository.
@@ -111,7 +106,31 @@ methods as detect and translate.
    You should see the following files in your `Docker-NLP` directory.
 @z
 
-% snip text...
+@x
+   ```text
+   01_sentiment_analysis.py
+   02_name_entity_recognition.py
+   03_text_classification.py
+   04_text_summarization.py
+   05_language_translation.py
+   entrypoint.sh
+   requirements.txt
+   Dockerfile
+   README.md
+   ```
+@y
+   ```text
+   01_sentiment_analysis.py
+   02_name_entity_recognition.py
+   03_text_classification.py
+   04_text_summarization.py
+   05_language_translation.py
+   entrypoint.sh
+   requirements.txt
+   Dockerfile
+   README.md
+   ```
+@z
 
 @x
 ## Explore the application code
@@ -135,7 +154,15 @@ in a text or code editor to explore its contents in the following steps.
 1. Import the required libraries.
 @z
 
-% snip code...
+@x
+   ```python
+   from googletrans import Translator
+   ```
+@y
+   ```python
+   from googletrans import Translator
+   ```
+@z
 
 @x
    This line imports the `Translator` class from `googletrans`.
@@ -153,7 +180,15 @@ in a text or code editor to explore its contents in the following steps.
 2. Specify the main execution block.
 @z
 
-% snip code...
+@x
+   ```python
+   if __name__ == "__main__":
+   ```
+@y
+   ```python
+   if __name__ == "__main__":
+   ```
+@z
 
 @x
    This Python idiom ensures that the following code block runs only if this
@@ -171,7 +206,27 @@ in a text or code editor to explore its contents in the following steps.
 3. Create an infinite loop for continuous input.
 @z
 
-% snip code...
+@x
+   ```python
+      while True:
+         input_text = input("Enter the text for translation (type 'exit' to end): ")
+@y
+   ```python
+      while True:
+         input_text = input("Enter the text for translation (type 'exit' to end): ")
+@z
+
+@x
+         if input_text.lower() == 'exit':
+            print("Exiting...")
+            break
+   ```
+@y
+         if input_text.lower() == 'exit':
+            print("Exiting...")
+            break
+   ```
+@z
 
 @x
    An infinite loop is established here to continuously prompt you for text
@@ -189,7 +244,15 @@ in a text or code editor to explore its contents in the following steps.
 4. Create an instance of Translator.
 @z
 
-% snip code...
+@x
+   ```python
+         translator = Translator()
+   ```
+@y
+   ```python
+         translator = Translator()
+   ```
+@z
 
 @x
    This creates an instance of the Translator class, which
@@ -205,19 +268,27 @@ in a text or code editor to explore its contents in the following steps.
 5. Translate text.
 @z
 
-% snip code...
+@x
+   ```python
+         translated_text = translator.translate(input_text, dest='fr').text
+   ```
+@y
+   ```python
+         translated_text = translator.translate(input_text, dest='fr').text
+   ```
+@z
 
 @x
    Here, the `translator.translate` method is called with the user input. The
    `dest='fr'` argument specifies that the destination language for translation
    is French. The `.text` attribute gets the translated string. For more details
-   about the available language codes, see the 
+   about the available language codes, see the
    [Googletrans docs](https://py-googletrans.readthedocs.io/en/latest/).
 @y
    Here, the `translator.translate` method is called with the user input. The
    `dest='fr'` argument specifies that the destination language for translation
    is French. The `.text` attribute gets the translated string. For more details
-   about the available language codes, see the 
+   about the available language codes, see the
    [Googletrans docs](https://py-googletrans.readthedocs.io/en/latest/).
 @z
 
@@ -227,7 +298,17 @@ in a text or code editor to explore its contents in the following steps.
 6. Print the original and translated text.
 @z
 
-% snip code...
+@x
+   ```python
+         print(f"Original Text: {input_text}")
+         print(f"Translated Text: {translated_text}")
+   ```
+@y
+   ```python
+         print(f"Original Text: {input_text}")
+         print(f"Translated Text: {translated_text}")
+   ```
+@z
 
 @x
    These two lines print the original text entered by the user and the
@@ -249,7 +330,23 @@ in a text or code editor to explore its contents in the following steps.
    explore its contents.
 @z
 
-% snip text...
+@x
+   ```text
+   ...
+@y
+   ```text
+   ...
+@z
+
+@x
+   # 05 language_translation
+   googletrans==4.0.0-rc1
+   ```
+@y
+   # 05 language_translation
+   googletrans==4.0.0-rc1
+   ```
+@z
 
 @x
    Only `googletrans` is required for the language translation application.
@@ -305,7 +402,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 1. Specify the base image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   FROM python:3.8-slim
+   ```
+@y
+   ```dockerfile
+   FROM python:3.8-slim
+   ```
+@z
 
 @x
    This command sets the foundation for the build. `python:3.8-slim` is a
@@ -329,7 +434,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 2. Set the working directory.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   WORKDIR /app
+   ```
+@y
+   ```dockerfile
+   WORKDIR /app
+   ```
+@z
 
 @x
    `WORKDIR` sets the current working directory within the Docker image. By
@@ -353,7 +466,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 3. Copy the requirements file into the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   COPY requirements.txt /app
+   ```
+@y
+   ```dockerfile
+   COPY requirements.txt /app
+   ```
+@z
 
 @x
    The `COPY` command transfers the `requirements.txt` file from
@@ -375,7 +496,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 4. Install the Python dependencies in the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN pip install --no-cache-dir -r requirements.txt
+   ```
+@y
+   ```dockerfile
+   RUN pip install --no-cache-dir -r requirements.txt
+   ```
+@z
 
 @x
    This line uses `pip`, Python's package installer, to install the packages
@@ -395,7 +524,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 5. Run additional commands.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN python -m spacy download en_core_web_sm
+   ```
+@y
+   ```dockerfile
+   RUN python -m spacy download en_core_web_sm
+   ```
+@z
 
 @x
    This step is specific to NLP applications that require the spaCy library. It downloads the `en_core_web_sm` model, which is a small English language model for spaCy. While not needed for this app, it's included for compatibility with other NLP applications that might use this Dockerfile.
@@ -409,7 +546,17 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 6. Copy the application code into the image.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   COPY *.py /app
+   COPY entrypoint.sh /app
+   ```
+@y
+   ```dockerfile
+   COPY *.py /app
+   COPY entrypoint.sh /app
+   ```
+@z
 
 @x
    These commands copy your Python scripts and the `entrypoint.sh` script into the image's `/app` directory. This is crucial because the container needs these scripts to run the application. The `entrypoint.sh` script is particularly important as it dictates how the application starts inside the container.
@@ -423,7 +570,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 7. Set permissions for the `entrypoint.sh` script.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   RUN chmod +x /app/entrypoint.sh
+   ```
+@y
+   ```dockerfile
+   RUN chmod +x /app/entrypoint.sh
+   ```
+@z
 
 @x
    This command modifies the file permissions of `entrypoint.sh`, making it
@@ -441,7 +596,15 @@ The following steps explain each part of the `Dockerfile`. For more details, see
 8. Set the entry point.
 @z
 
-% snip code...
+@x
+   ```dockerfile
+   ENTRYPOINT ["/app/entrypoint.sh"]
+   ```
+@y
+   ```dockerfile
+   ENTRYPOINT ["/app/entrypoint.sh"]
+   ```
+@z
 
 @x
    The `ENTRYPOINT` instruction configures the container to run `entrypoint.sh`
@@ -487,7 +650,15 @@ To run the application using Docker:
    In a terminal, run the following command inside the directory of where the `Dockerfile` is located.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker build -t basic-nlp .
+   ```
+@y
+   ```console
+   $ docker build -t basic-nlp .
+   ```
+@z
 
 @x
    The following is a break down of the command:
@@ -555,7 +726,15 @@ To run the application using Docker:
    In a terminal, run the following command.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -it basic-nlp 05_language_translation.py
+   ```
+@y
+   ```console
+   $ docker run -it basic-nlp 05_language_translation.py
+   ```
+@z
 
 @x
    The following is a break down of the command:
@@ -623,7 +802,15 @@ To run the application using Docker:
    You will see the following in your console after the container starts.
 @z
 
-% snip output...
+@x
+   ```console
+   Enter the text for translation (type 'exit' to end):
+   ```
+@y
+   ```console
+   Enter the text for translation (type 'exit' to end):
+   ```
+@z
 
 @x
 3. Test the application.
@@ -637,7 +824,19 @@ To run the application using Docker:
    Enter some text to get the text summarization.
 @z
 
-% snip output...
+@x
+   ```console
+   Enter the text for translation (type 'exit' to end): Hello, how are you doing?
+   Original Text: Hello, how are you doing?
+   Translated Text: Bonjour comment allez-vous?
+   ```
+@y
+   ```console
+   Enter the text for translation (type 'exit' to end): Hello, how are you doing?
+   Original Text: Hello, how are you doing?
+   Translated Text: Bonjour comment allez-vous?
+   ```
+@z
 
 @x
 ## Summary

@@ -66,18 +66,22 @@ To turn on SSO in Docker, you need the following from your IdP:
 @z
 
 @x
-Contact your identity provider to retrieve a new X.509 certificate. Update with the new certificate in [SSO configuration settings](/manuals/enterprise/security/single-sign-on/manage.md#manage-sso-connections) from Docker Admin Console.
+Contact your identity provider to retrieve a new X.509 certificate. Update with the new certificate in [SSO configuration settings](/manuals/enterprise/security/single-sign-on/manage.md#manage-sso-connections) from Docker Home.
+@y
+Contact your identity provider to retrieve a new X.509 certificate. Update with the new certificate in [SSO configuration settings](manuals/enterprise/security/single-sign-on/manage.md#manage-sso-connections) from Docker Home.
+@z
 
+@x
 - If your organization enforces SSO, username and password credentials won't work.
 - If your organization doesn't enforce SSO, users can sign in with their username and password credentials.
+@y
+- If your organization enforces SSO, username and password credentials won't work.
+- If your organization doesn't enforce SSO, users can sign in with their username and password credentials.
+@z
 
+@x
 If you need additional help, contact [Docker support](https://app.docker.com/support/contact).
 @y
-Contact your identity provider to retrieve a new X.509 certificate. Update with the new certificate in [SSO configuration settings](manuals/enterprise/security/single-sign-on/manage.md#manage-sso-connections) from Docker Admin Console.
-
-- If your organization enforces SSO, username and password credentials won't work.
-- If your organization doesn't enforce SSO, users can sign in with their username and password credentials.
-
 If you need additional help, contact [Docker support](https://app.docker.com/support/contact).
 @z
 
@@ -118,9 +122,9 @@ Yes, bot accounts need seats like regular users, requiring a non-aliased domain 
 @z
 
 @x
-The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally turn off JIT in the Admin Console if you turn on auto-provisioning using SCIM. See [Just-in-Time provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
+The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally turn off JIT in Docker Home if you turn on auto-provisioning using SCIM. See [Just-in-Time provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
 @y
-The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally turn off JIT in the Admin Console if you turn on auto-provisioning using SCIM. See [Just-in-Time provisioning](manuals/enterprise/security/provisioning/just-in-time.md).
+The SSO implementation uses Just-in-Time (JIT) provisioning by default. You can optionally turn off JIT in Docker Home if you turn on auto-provisioning using SCIM. See [Just-in-Time provisioning](manuals/enterprise/security/provisioning/just-in-time.md).
 @z
 
 @x

@@ -87,30 +87,20 @@ Gemini requires either a Google API key or a Google account with Gemini access.
 
 @x
 **API key**: Store your key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
 **API key**: Store your key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ sbx secret set -g google
+$ sbx secret set google
 ```
 @y
 ```console
-$ sbx secret set -g google
+$ sbx secret set google
 ```
-@z
-
-@x
-Alternatively, export the `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment
-variable in your shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
-@y
-Alternatively, export the `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment
-variable in your shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x
@@ -174,21 +164,29 @@ gemini --yolo
 @z
 
 @x
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @y
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @z
 
 @x
 ```console
-$ sbx run gemini -- --yolo -p "explain this"
+$ sbx run gemini -- -p "explain this"   # runs gemini --yolo -p "explain this"
 ```
 @y
 ```console
-$ sbx run gemini -- --yolo -p "explain this"
+$ sbx run gemini -- -p "explain this"   # runs gemini --yolo -p "explain this"
 ```
+@z
+
+@x
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
+@y
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
 @z
 
 @x

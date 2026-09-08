@@ -30,27 +30,35 @@ tag or by digest, geolocation, cloud provider, client, and more.
 @z
 
 @x
-> [!NOTE]
->
-> The Legacy DVP program applies to existing customers who have not yet renewed
-> to DVP Core. The DVP Legacy program is deprecated and will be retired. Contact
-> your Docker sales representative or
-> [Docker](https://www.docker.com/partners/programs/) for more information.
+- [DVP program](#dvp-program): Usage analytics for Docker Verified Publisher
+  organizations, including tiered reports and report configuration.
+- [DSOS & Legacy DVP programs](#dsos--legacy-dvp-programs): Usage analytics for
+  Docker-Sponsored Open Source publishers, and for existing customers on the
+  deprecated Legacy DVP program.
 @y
-> [!NOTE]
->
-> The Legacy DVP program applies to existing customers who have not yet renewed
-> to DVP Core. The DVP Legacy program is deprecated and will be retired. Contact
-> your Docker sales representative or
-> [Docker](https://www.docker.com/partners/programs/) for more information.
+- [DVP program](#dvp-program): Usage analytics for Docker Verified Publisher
+  organizations, including tiered reports and report configuration.
+- [DSOS & Legacy DVP programs](#dsos--legacy-dvp-programs): Usage analytics for
+  Docker-Sponsored Open Source publishers, and for existing customers on the
+  deprecated Legacy DVP program.
 @z
 
 @x
-{{< tabs >}}
-{{< tab name="DVP program" >}}
+The Legacy DVP program applies to existing customers who have not yet renewed
+to DVP Core. The DVP Legacy program is deprecated and will be retired. Contact
+your Docker sales representative or
+[Docker](https://www.docker.com/partners/programs/) for more information.
 @y
-{{< tabs >}}
-{{< tab name="DVP program" >}}
+The Legacy DVP program applies to existing customers who have not yet renewed
+to DVP Core. The DVP Legacy program is deprecated and will be retired. Contact
+your Docker sales representative or
+[Docker](https://www.docker.com/partners/programs/) for more information.
+@z
+
+@x
+## DVP program
+@y
+## DVP program
 @z
 
 @x
@@ -62,87 +70,69 @@ access analytics data in the [Docker Hub](https://hub.docker.com/) web interface
 @z
 
 @x
-## Available reports
+### Available reports
 @y
-## Available reports
+### Available reports
 @z
 
 @x
-The following reports may be available for download as CSV files:
+The following reports are available for download as CSV files, based on your
+organization's DVP subscription tier:
 @y
-The following reports may be available for download as CSV files:
+The following reports are available for download as CSV files, based on your
+organization's DVP subscription tier:
 @z
 
 @x
-- [Summary](#summary-report)
-- [Trends](#trends-report)
-- [Technographic](#technographic-report)
-- [Technographic companies](#technographic-companies-report)
-- [Tracked companies](#tracked-companies-report)
+- Starter tier
+  - [Summary](#summary-report)
+- Growth tier
+  - [Summary](#summary-report)
+  - [Trends](#trends-report)
+  - [Domain-level reports](#domain-level-reports)
+  - [Benchmark](#benchmark-report)
 @y
-- [Summary](#summary-report)
-- [Trends](#trends-report)
-- [Technographic](#technographic-report)
-- [Technographic companies](#technographic-companies-report)
-- [Tracked companies](#tracked-companies-report)
+- Starter tier
+  - [Summary](#summary-report)
+- Growth tier
+  - [Summary](#summary-report)
+  - [Trends](#trends-report)
+  - [Domain-level reports](#domain-level-reports)
+  - [Benchmark](#benchmark-report)
 @z
 
 @x
-The reports available for download may vary based on your organization's
-subscription. Contact your Docker sales representative or
-[Docker](https://www.docker.com/partners/programs/) for more information.
+The Domain-level reports and Benchmark report each provide a different slice
+of reporting on consuming domains:
 @y
-The reports available for download may vary based on your organization's
-subscription. Contact your Docker sales representative or
-[Docker](https://www.docker.com/partners/programs/) for more information.
+The Domain-level reports and Benchmark report each provide a different slice
+of reporting on consuming domains:
 @z
 
 @x
-## Configure DVP analytics settings
+- Domain-level reports show how those domains use your own images, and which
+  other images they use alongside yours.
+- Benchmark shows how those domains use the specific images you've configured to
+  benchmark against, such as a single repository.
 @y
-## Configure DVP analytics settings
+- Domain-level reports show how those domains use your own images, and which
+  other images they use alongside yours.
+- Benchmark shows how those domains use the specific images you've configured to
+  benchmark against, such as a single repository.
 @z
 
 @x
-Organization owners and editors can configure DVP analytics settings through the
-Admin Console to control tracked companies and benchmark report allocations for
-your verified publisher namespaces.
+After your organization is provisioned for DVP analytics, it takes up to one
+week for the first reports to become available.
 @y
-Organization owners and editors can configure DVP analytics settings through the
-Admin Console to control tracked companies and benchmark report allocations for
-your verified publisher namespaces.
+After your organization is provisioned for DVP analytics, it takes up to one
+week for the first reports to become available.
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console** > **Verified Publisher**.
-3. Configure the settings:
-   - **Tracked companies**: Set the number of companies to track for reporting
-     purposes. This setting determines how many company domains appear in your
-     [Tracked companies report](#tracked-companies-report). You can only set
-     this number up to the maximum included in your DVP subscription.
-   - **Benchmark report allocations**: If your organization has benchmark
-     reports enabled, enter the number of companies to include in the benchmark
-     report for each namespace listed.
-4. Select **Save** to apply your changes.
+#### Summary report
 @y
-1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console** > **Verified Publisher**.
-3. Configure the settings:
-   - **Tracked companies**: Set the number of companies to track for reporting
-     purposes. This setting determines how many company domains appear in your
-     [Tracked companies report](#tracked-companies-report). You can only set
-     this number up to the maximum included in your DVP subscription.
-   - **Benchmark report allocations**: If your organization has benchmark
-     reports enabled, enter the number of companies to include in the benchmark
-     report for each namespace listed.
-4. Select **Save** to apply your changes.
-@z
-
-@x
-### Summary report
-@y
-### Summary report
+#### Summary report
 @z
 
 @x
@@ -240,9 +230,9 @@ The summary report is a CSV file that contains the following data points:
 @z
 
 @x
-### Trends report
+#### Trends report
 @y
-### Trends report
+#### Trends report
 @z
 
 @x
@@ -338,151 +328,39 @@ The trends report is a CSV file that contains the following data points:
 @z
 
 @x
-### Technographic report
+#### Domain-level reports
 @y
-### Technographic report
+#### Domain-level reports
 @z
 
 @x
-The technographic report provides insights into how your Docker Verified
-Publisher (DVP) images are used alongside other container images in real-world
-technology stacks. This report helps you understand the technical ecosystem
-where your images operate and identify co-usage patterns with other images.
+Domain-level reports provide detailed insights into how specific consuming
+domains use your Docker Verified Publisher (DVP) images, both on their own and
+alongside other container images. These reports help you understand usage
+patterns, deployment environments, adoption trends, and technology stack
+combinations across your customer base and potential prospects.
 @y
-The technographic report provides insights into how your Docker Verified
-Publisher (DVP) images are used alongside other container images in real-world
-technology stacks. This report helps you understand the technical ecosystem
-where your images operate and identify co-usage patterns with other images.
+Domain-level reports provide detailed insights into how specific consuming
+domains use your Docker Verified Publisher (DVP) images, both on their own and
+alongside other container images. These reports help you understand usage
+patterns, deployment environments, adoption trends, and technology stack
+combinations across your customer base and potential prospects.
 @z
 
 @x
-You can use this report to answer questions like:
+You can use these reports to answer questions like:
 @y
-You can use this report to answer questions like:
+You can use these reports to answer questions like:
 @z
 
 @x
-- Which other images are commonly used together with your images?
-- What percentage of your user base also uses specific complementary
-  technologies?
-- How many companies in your ecosystem use both your image and other popular
-  images?
-- What technology stacks are most popular among your users?
-@y
-- Which other images are commonly used together with your images?
-- What percentage of your user base also uses specific complementary
-  technologies?
-- How many companies in your ecosystem use both your image and other popular
-  images?
-- What technology stacks are most popular among your users?
-@z
-
-@x
-To access the report:
-@y
-To access the report:
-@z
-
-@x
-1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub** in the top navigation.
-3. Select your organization in the left navigation.
-4. Select **Analytics** > **Technographic** in the left navigation.
-5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
-6. Select **Download report** for the desired week or month.
-@y
-1. Sign in to [Docker Hub](https://hub.docker.com/).
-2. Select **My Hub** in the top navigation.
-3. Select your organization in the left navigation.
-4. Select **Analytics** > **Technographic** in the left navigation.
-5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
-6. Select **Download report** for the desired week or month.
-@z
-
-@x
-The technographic report is a CSV file that contains the following data points:
-@y
-The technographic report is a CSV file that contains the following data points:
-@z
-
-@x
-| Field              | Description                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                                 |
-| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                                  |
-| `PUBLISHER_ID`     | The unique identifier for the publisher organization.                                                      |
-| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                                 |
-| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                                      |
-| `PAIRED_IMAGE`     | The other image repository that is commonly used together with your DVP image.                             |
-| `USERS`            | The number of unique users who pulled both your DVP image and the paired image within the time period.     |
-| `TOTAL_PULLERS`    | The total number of unique users who pulled your DVP image during the time period.                         |
-| `PCT_USERS`        | The percentage of your image's users who also use the paired image (users/total_pullers).                  |
-| `DOMAINS`          | The number of unique company domains that pulled both your DVP image and the paired image.                 |
-| `TOTAL_DOMAINS`    | The total number of unique company domains that pulled your DVP image.                                     |
-| `PCT_DOMAINS`      | The percentage of company domains using your image that also use the paired image (domains/total_domains). |
-@y
-| Field              | Description                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                                 |
-| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                                  |
-| `PUBLISHER_ID`     | The unique identifier for the publisher organization.                                                      |
-| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                                 |
-| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                                      |
-| `PAIRED_IMAGE`     | The other image repository that is commonly used together with your DVP image.                             |
-| `USERS`            | The number of unique users who pulled both your DVP image and the paired image within the time period.     |
-| `TOTAL_PULLERS`    | The total number of unique users who pulled your DVP image during the time period.                         |
-| `PCT_USERS`        | The percentage of your image's users who also use the paired image (users/total_pullers).                  |
-| `DOMAINS`          | The number of unique company domains that pulled both your DVP image and the paired image.                 |
-| `TOTAL_DOMAINS`    | The total number of unique company domains that pulled your DVP image.                                     |
-| `PCT_DOMAINS`      | The percentage of company domains using your image that also use the paired image (domains/total_domains). |
-@z
-
-@x
-> [!NOTE]
->
-> To protect user privacy and ensure statistical significance, the technographic
-> report only includes image pairings that have at least 10 unique users.
-> Personal, disposable, and university email domains are excluded from the
-> company domain analysis.
-@y
-> [!NOTE]
->
-> To protect user privacy and ensure statistical significance, the technographic
-> report only includes image pairings that have at least 10 unique users.
-> Personal, disposable, and university email domains are excluded from the
-> company domain analysis.
-@z
-
-@x
-### Technographic companies report
-@y
-### Technographic companies report
-@z
-
-@x
-The technographic companies report provides a detailed view of which specific
-companies (identified by their domains) are using your Docker Verified Publisher
-(DVP) images together with other container images. This report gives you
-visibility into the actual organizations adopting your technology stack
-combinations, enabling targeted business development and partnership
-opportunities.
-@y
-The technographic companies report provides a detailed view of which specific
-companies (identified by their domains) are using your Docker Verified Publisher
-(DVP) images together with other container images. This report gives you
-visibility into the actual organizations adopting your technology stack
-combinations, enabling targeted business development and partnership
-opportunities.
-@z
-
-@x
-You can use this report to answer questions like:
-@y
-You can use this report to answer questions like:
-@z
-
-@x
-- Which companies are using my image alongside specific complementary
+- How are specific consuming domains using my images across different
+  environments?
+- What deployment patterns do I see across local development, CI/CD, and
+  production?
+- Which consuming domains are heavy users of my images?
+- How does usage vary by geography and cloud providers for consuming domains?
+- Which consuming domains are using my image alongside specific complementary
   technologies?
 - What technology stacks are adopted by enterprise customers in my target
   market?
@@ -490,7 +368,13 @@ You can use this report to answer questions like:
 - How can I identify potential customers who are already using related
   technologies?
 @y
-- Which companies are using my image alongside specific complementary
+- How are specific consuming domains using my images across different
+  environments?
+- What deployment patterns do I see across local development, CI/CD, and
+  production?
+- Which consuming domains are heavy users of my images?
+- How does usage vary by geography and cloud providers for consuming domains?
+- Which consuming domains are using my image alongside specific complementary
   technologies?
 - What technology stacks are adopted by enterprise customers in my target
   market?
@@ -500,6 +384,26 @@ You can use this report to answer questions like:
 @z
 
 @x
+##### Technographic report
+@y
+##### Technographic report
+@z
+
+@x
+The technographic report provides a detailed view of which specific consuming
+domains are using your DVP images together with other container images. This
+report gives you visibility into the actual organizations adopting your
+technology stack combinations, enabling targeted business development and
+partnership opportunities.
+@y
+The technographic report provides a detailed view of which specific consuming
+domains are using your DVP images together with other container images. This
+report gives you visibility into the actual organizations adopting your
+technology stack combinations, enabling targeted business development and
+partnership opportunities.
+@z
+
+@x
 To access the report:
 @y
 To access the report:
@@ -522,39 +426,41 @@ To access the report:
 @z
 
 @x
-The technographic companies report is a CSV file that contains the following
+The technographic report is a CSV file that contains the following
 data points:
 @y
-The technographic companies report is a CSV file that contains the following
+The technographic report is a CSV file that contains the following
 data points:
 @z
 
 @x
-| Field              | Description                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                     |
-| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                      |
-| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                     |
-| `DOMAIN`           | The company domain that pulled both your DVP image and the paired image (e.g., `example.com`). |
-| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                          |
-| `PAIRED_IMAGE`     | The other image repository that was used together with your DVP image by this company.         |
+| Field              | Description                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                         |
+| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                          |
+| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                         |
+| `DOMAIN`           | The consuming domain that pulled both your DVP image and the paired image (e.g., `example.com`). |
+| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                              |
+| `PAIRED_IMAGE`     | The other image repository that was used together with your DVP image by this domain.              |
 @y
-| Field              | Description                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                     |
-| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                      |
-| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                     |
-| `DOMAIN`           | The company domain that pulled both your DVP image and the paired image (e.g., `example.com`). |
-| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                          |
-| `PAIRED_IMAGE`     | The other image repository that was used together with your DVP image by this company.         |
+| Field              | Description                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| `DATE_GRANULARITY` | Weekly or monthly granularity of the data.                                                         |
+| `DATE_REFERENCE`   | The start date of the week or month in YYYY-MM-DD format.                                          |
+| `PUBLISHER_NAME`   | The name of the organization that owns the DVP repository.                                         |
+| `DOMAIN`           | The consuming domain that pulled both your DVP image and the paired image (e.g., `example.com`). |
+| `DVPP_IMAGE`       | Your Docker Verified Publisher image repository name.                                              |
+| `PAIRED_IMAGE`     | The other image repository that was used together with your DVP image by this domain.              |
 @z
 
 @x
-Each row represents a unique combination of a company domain, your DVP image,
-and another image that were used together during the specified time period.
+Each row represents a unique combination of a consuming domain, your DVP
+image, and another image that were used together during the specified time
+period.
 @y
-Each row represents a unique combination of a company domain, your DVP image,
-and another image that were used together during the specified time period.
+Each row represents a unique combination of a consuming domain, your DVP
+image, and another image that were used together during the specified time
+period.
 @z
 
 @x
@@ -572,41 +478,21 @@ and another image that were used together during the specified time period.
 @z
 
 @x
-### Tracked companies report
+##### Consuming domains report
 @y
-### Tracked companies report
+##### Consuming domains report
 @z
 
 @x
-The tracked companies report provides detailed insights into how specific
-companies are using your Docker Verified Publisher (DVP) images. This report
-helps you understand usage patterns, deployment environments, and adoption
-trends across your customer base and potential prospects.
+The consuming domains report provides detailed insights into how specific
+consuming domains use your Docker Verified Publisher (DVP) images. This
+report helps you understand usage patterns, deployment environments, and
+adoption trends across your customer base and potential prospects.
 @y
-The tracked companies report provides detailed insights into how specific
-companies are using your Docker Verified Publisher (DVP) images. This report
-helps you understand usage patterns, deployment environments, and adoption
-trends across your customer base and potential prospects.
-@z
-
-@x
-You can use this report to answer questions like:
-@y
-You can use this report to answer questions like:
-@z
-
-@x
-- How are specific companies using my images across different environments?
-- What deployment patterns do I see across local development, CI/CD, and
-  production?
-- Which companies are heavy users of my images?
-- How does usage vary by geography and cloud providers for tracked companies?
-@y
-- How are specific companies using my images across different environments?
-- What deployment patterns do I see across local development, CI/CD, and
-  production?
-- Which companies are heavy users of my images?
-- How does usage vary by geography and cloud providers for tracked companies?
+The consuming domains report provides detailed insights into how specific
+consuming domains use your Docker Verified Publisher (DVP) images. This
+report helps you understand usage patterns, deployment environments, and
+adoption trends across your customer base and potential prospects.
 @z
 
 @x
@@ -619,23 +505,23 @@ To access the report:
 1. Sign in to [Docker Hub](https://hub.docker.com/).
 2. Select **My Hub** in the top navigation.
 3. Select your organization in the left navigation.
-4. Select **Analytics** > **Tracked Companies** in the left navigation.
+4. Select **Analytics** > **Consuming Domains** in the left navigation.
 5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
 6. Select **Download report** for the desired week or month.
 @y
 1. Sign in to [Docker Hub](https://hub.docker.com/).
 2. Select **My Hub** in the top navigation.
 3. Select your organization in the left navigation.
-4. Select **Analytics** > **Tracked Companies** in the left navigation.
+4. Select **Analytics** > **Consuming Domains** in the left navigation.
 5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
 6. Select **Download report** for the desired week or month.
 @z
 
 @x
-The tracked companies report is a CSV file that contains the following data
+The consuming domains report is a CSV file that contains the following data
 points:
 @y
-The tracked companies report is a CSV file that contains the following data
+The consuming domains report is a CSV file that contains the following data
 points:
 @z
 
@@ -645,7 +531,7 @@ points:
 | `DATE_GRANULARITY`           | Weekly or monthly granularity of the data.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `DATE_REFERENCE`             | The start date of the week or month in YYYY-MM-DD format.                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `PUBLISHER_NAME`             | The name of the organization that owns the DVP repository.                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `DOMAIN`                     | The company domain (e.g., `docker.com`) associated with the image pulls.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `DOMAIN`                     | The consuming domain (e.g., `docker.com`) associated with the image pulls.                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `IP_COUNTRY`                 | The country code (ISO 3166-1 alpha-2) where the pull request originated from.                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `CLOUD_SERVICE_PROVIDER`     | The cloud service provider used for the pull request or `no csp` for non-cloud providers.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `USER_AGENT`                 | The client application or tool used to pull the image.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -661,7 +547,7 @@ points:
 | `DATE_GRANULARITY`           | Weekly or monthly granularity of the data.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `DATE_REFERENCE`             | The start date of the week or month in YYYY-MM-DD format.                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `PUBLISHER_NAME`             | The name of the organization that owns the DVP repository.                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| `DOMAIN`                     | The company domain (e.g., `docker.com`) associated with the image pulls.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `DOMAIN`                     | The consuming domain (e.g., `docker.com`) associated with the image pulls.                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `IP_COUNTRY`                 | The country code (ISO 3166-1 alpha-2) where the pull request originated from.                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `CLOUD_SERVICE_PROVIDER`     | The cloud service provider used for the pull request or `no csp` for non-cloud providers.                                                                                                                                                                                                                                                                                                                                                                                               |
 | `USER_AGENT`                 | The client application or tool used to pull the image.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -690,11 +576,147 @@ points:
 @z
 
 @x
-{{< /tab >}}
-{{< tab name="DSOS & Legacy DVP programs" >}}
+#### Benchmark report
 @y
-{{< /tab >}}
-{{< tab name="DSOS & Legacy DVP programs" >}}
+#### Benchmark report
+@z
+
+@x
+The benchmark report shows how consuming domains interact with the specific
+images you've configured to benchmark against, such as a single repository.
+The report is generated per repository, so each benchmark repository
+you configure produces its own report.
+@y
+The benchmark report shows how consuming domains interact with the specific
+images you've configured to benchmark against, such as a single repository.
+The report is generated per repository, so each benchmark repository
+you configure produces its own report.
+@z
+
+@x
+To access the report:
+@y
+To access the report:
+@z
+
+@x
+1. Sign in to [Docker Hub](https://hub.docker.com/).
+2. Select **My Hub** in the top navigation.
+3. Select your organization in the left navigation.
+4. Select **Analytics** > **Benchmark** in the left navigation.
+5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
+6. Select **Download report** for the desired week or month.
+@y
+1. Sign in to [Docker Hub](https://hub.docker.com/).
+2. Select **My Hub** in the top navigation.
+3. Select your organization in the left navigation.
+4. Select **Analytics** > **Benchmark** in the left navigation.
+5. Select **DATA BY WEEK** or **DATA BY MONTH** to choose the data granularity.
+6. Select **Download report** for the desired week or month.
+@z
+
+@x
+The benchmark report is a CSV file that contains the following data points:
+@y
+The benchmark report is a CSV file that contains the following data points:
+@z
+
+@x
+| Field                         | Description                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------- |
+| `DATE_GRANULARITY`            | Weekly or monthly granularity of the data.                                                   |
+| `DATE_REFERENCE`              | The start date of the week or month in YYYY-MM-DD format.                                    |
+| `PUBLISHER_NAME`              | The name of the organization that owns the DVP repository.                                   |
+| `DOMAIN`                      | The consuming domain associated with the pulls.                                              |
+| `IP_COUNTRY`                  | The country code (ISO 3166-1 alpha-2) where the pull request originated from.                |
+| `CLOUD_SERVICE_PROVIDER`      | The cloud service provider used for the pull request, or `no csp` for non-cloud providers.    |
+| `USER_AGENT`                  | The client application or tool used to pull the image.                                       |
+| `INFERRED_USE_CASE`           | The inferred deployment environment, using the same rules as the [consuming domains report](#consuming-domains-report). |
+| `IMAGE_REPOSITORY`            | The benchmark-configured image repository that was pulled.                                   |
+| `DATA_DOWNLOADS`              | The number of actual image layer downloads for this combination.                             |
+| `VERSION_CHECKS`              | The number of version checks (HEAD requests) performed without downloading the full image.    |
+| `PULLS`                       | The total number of pull requests (data downloads + version checks).                         |
+| `UNIQUE_AUTHENTICATED_USERS`  | The number of unique authenticated users from this domain who performed pulls.               |
+@y
+| Field                         | Description                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------- |
+| `DATE_GRANULARITY`            | Weekly or monthly granularity of the data.                                                   |
+| `DATE_REFERENCE`              | The start date of the week or month in YYYY-MM-DD format.                                    |
+| `PUBLISHER_NAME`              | The name of the organization that owns the DVP repository.                                   |
+| `DOMAIN`                      | The consuming domain associated with the pulls.                                              |
+| `IP_COUNTRY`                  | The country code (ISO 3166-1 alpha-2) where the pull request originated from.                |
+| `CLOUD_SERVICE_PROVIDER`      | The cloud service provider used for the pull request, or `no csp` for non-cloud providers.    |
+| `USER_AGENT`                  | The client application or tool used to pull the image.                                       |
+| `INFERRED_USE_CASE`           | The inferred deployment environment, using the same rules as the [consuming domains report](#consuming-domains-report). |
+| `IMAGE_REPOSITORY`            | The benchmark-configured image repository that was pulled.                                   |
+| `DATA_DOWNLOADS`              | The number of actual image layer downloads for this combination.                             |
+| `VERSION_CHECKS`              | The number of version checks (HEAD requests) performed without downloading the full image.    |
+| `PULLS`                       | The total number of pull requests (data downloads + version checks).                         |
+| `UNIQUE_AUTHENTICATED_USERS`  | The number of unique authenticated users from this domain who performed pulls.               |
+@z
+
+@x
+To configure which repositories are benchmarked, see [Configure DVP analytics
+settings](#configure-dvp-analytics-settings).
+@y
+To configure which repositories are benchmarked, see [Configure DVP analytics
+settings](#configure-dvp-analytics-settings).
+@z
+
+@x
+### Configure DVP analytics settings
+@y
+### Configure DVP analytics settings
+@z
+
+@x
+Organization owners and editors can configure DVP analytics settings through the
+Admin Console to control consuming domain and benchmark report allocations for
+your verified publisher namespaces.
+@y
+Organization owners and editors can configure DVP analytics settings through the
+Admin Console to control consuming domain and benchmark report allocations for
+your verified publisher namespaces.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console** > **Verified Publisher**.
+3. Configure the settings:
+   - **Consuming domains**: Set the number of consuming domains to track for
+     reporting purposes. This setting determines how many domains appear in
+     your [Domain-level reports](#domain-level-reports). You can only set this
+     number up to the maximum included in your DVP subscription.
+   - **Benchmark report allocations**: If your organization has benchmark
+     reports enabled, enter the number of consuming domains to include in the
+     benchmark report for each namespace listed.
+4. Select **Save** to apply your changes.
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+2. Select **Admin Console** > **Verified Publisher**.
+3. Configure the settings:
+   - **Consuming domains**: Set the number of consuming domains to track for
+     reporting purposes. This setting determines how many domains appear in
+     your [Domain-level reports](#domain-level-reports). You can only set this
+     number up to the maximum included in your DVP subscription.
+   - **Benchmark report allocations**: If your organization has benchmark
+     reports enabled, enter the number of consuming domains to include in the
+     benchmark report for each namespace listed.
+4. Select **Save** to apply your changes.
+@z
+
+@x
+Changes to your report configuration take effect at the next reporting
+cadence, either the next weekly or monthly report.
+@y
+Changes to your report configuration take effect at the next reporting
+cadence, either the next weekly or monthly report.
+@z
+
+@x
+## DSOS & Legacy DVP programs
+@y
+## DSOS & Legacy DVP programs
 @z
 
 @x
@@ -714,9 +736,9 @@ points:
 @z
 
 @x
-## View the image's analytics data
+### View the image's analytics data
 @y
-## View the image's analytics data
+### View the image's analytics data
 @z
 
 @x
@@ -768,9 +790,9 @@ To view data in the chart:
 @z
 
 @x
-### Share analytics data
+#### Share analytics data
 @y
-### Share analytics data
+#### Share analytics data
 @z
 
 @x
@@ -802,9 +824,9 @@ configuration as you had set up when creating the link.
 @z
 
 @x
-## Extension analytics data
+### Extension analytics data
 @y
-## Extension analytics data
+### Extension analytics data
 @z
 
 @x
@@ -826,9 +848,9 @@ namespace contains extensions known in the marketplace, you will see an
 @z
 
 @x
-## Exporting analytics data
+### Exporting analytics data
 @y
-## Exporting analytics data
+### Exporting analytics data
 @z
 
 @x
@@ -854,9 +876,9 @@ can analyze it manually as a spreadsheet.
 @z
 
 @x
-### Export data
+#### Export data
 @y
-### Export data
+#### Export data
 @z
 
 @x
@@ -900,9 +922,9 @@ following these steps:
 @z
 
 @x
-### Export data using the API
+#### Export data using the API
 @y
-### Export data using the API
+#### Export data using the API
 @z
 
 @x
@@ -916,9 +938,9 @@ using the API in the [DVP Data API documentation](reference/api/dvp/latest.md).
 @z
 
 @x
-## Data points
+### Data points
 @y
-## Data points
+### Data points
 @z
 
 @x
@@ -938,9 +960,9 @@ The following sections describe the available data points for each format. The
 @z
 
 @x
-### Image pulls raw data
+#### Image pulls raw data
 @y
-### Image pulls raw data
+#### Image pulls raw data
 @z
 
 @x
@@ -1004,9 +1026,9 @@ represents an image pull.
 @z
 
 @x
-### Image pulls summary data
+#### Image pulls summary data
 @y
-### Image pulls summary data
+#### Image pulls summary data
 @z
 
 @x
@@ -1052,9 +1074,9 @@ span:
 @z
 
 @x
-### Image pulls action classification rules
+#### Image pulls action classification rules
 @y
-### Image pulls action classification rules
+#### Image pulls action classification rules
 @z
 
 @x
@@ -1128,9 +1150,9 @@ pulls. To provide feedback or ask questions about these rules,
 @z
 
 @x
-### Extension Summary data
+#### Extension Summary data
 @y
-### Extension Summary data
+#### Extension Summary data
 @z
 
 @x
@@ -1210,9 +1232,9 @@ span:
 @z
 
 @x
-## Changes in data over time
+### Changes in data over time
 @y
-## Changes in data over time
+### Changes in data over time
 @z
 
 @x
@@ -1239,14 +1261,6 @@ date a given data point is available.
 @y
 Refer to the tables in the [Data points](#data-points) section to see from which
 date a given data point is available.
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
 @z
 
 @x

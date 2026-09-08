@@ -78,10 +78,10 @@ Docker account, pull and run an image, and compare it with a Docker Official Ima
 
 @x
 Continue to the next step to pull and run the image. To dive deeper into searching
-and evaluating images, see [Search and evaluate Docker Hardened Images](./how-to/explore.md).
+and evaluating images, see [Search and evaluate Docker Hardened Images](./how-to/search-evaluate.md).
 @y
 次の手順に進み、イメージをプルして実行します。
-イメージを検索して評価したい場合は [Docker Hardened イメージの確認](./how-to/explore.md) を参照してください。
+イメージを検索して評価したい場合は [Docker Hardened イメージの確認](./how-to/search-evaluate.md) を参照してください。
 @z
 
 @x
@@ -220,11 +220,11 @@ The `## Overview` section of the output looks similar to the following:
 Docker maintains near-zero CVEs in Docker Hardened Images. For DHI Select and
 Enterprise subscriptions, when new CVEs are discovered, the CVEs are remediated
 within the industry-leading SLA time frame. Learn more about the [SLA-backed
-security features](./features.md#sla-backed-security).
+security features](./_index.md#sla-backed-security).
 @y
 Docker では Docker Hardened イメージにおける CVE をほぼゼロにするように保守を行っています。
 DHI Select と Enterprise サブスクリプションでは、新たな CVE が検出されると、業界最短の SLA 期間内で修復を行います。
-詳細については [SLA ベースのセキュリティ機能](./features.md#sla-backed-security) を参照してください。
+詳細については [SLA ベースのセキュリティ機能](./_index.md#sla-backed-security) を参照してください。
 @z
 
 @x
@@ -244,9 +244,9 @@ This comparison shows that the Docker Hardened Image:
 @z
 
 @x
-To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/explore.md#compare-and-evaluate-images).
+To dive deeper into comparing images see [Search and evaluate Docker Hardened Images](./how-to/search-evaluate.md#compare-and-evaluate-images).
 @y
-イメージ比較に関しての詳細は [Docker Hardened イメージの検索と評価](./how-to/explore.md#compare-and-evaluate-images) を参照してください。
+イメージ比較に関しての詳細は [Docker Hardened イメージの検索と評価](./how-to/search-evaluate.md#compare-and-evaluate-images) を参照してください。
 @z
 
 @x

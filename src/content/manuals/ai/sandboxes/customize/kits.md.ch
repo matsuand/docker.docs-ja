@@ -70,20 +70,20 @@ the domains permitted by the kit's network rules.
 @z
 
 @x
-A kit is either a mixin or an agent:
+A kit is either a mixin or a sandbox:
 @y
-A kit is either a mixin or an agent:
+A kit is either a mixin or a sandbox:
 @z
 
 @x
 - Mixin kits (`kind: mixin`) extend an existing agent with extra
   capabilities. Stack several on the same sandbox.
-- Agent kits (`kind: agent`) define a full agent from scratch: its image,
+- Sandbox kits (`kind: sandbox`) define a full agent from scratch: its image,
   entrypoint, network policies, and everything else the agent needs.
 @y
 - Mixin kits (`kind: mixin`) extend an existing agent with extra
   capabilities. Stack several on the same sandbox.
-- Agent kits (`kind: agent`) define a full agent from scratch: its image,
+- Sandbox kits (`kind: sandbox`) define a full agent from scratch: its image,
   entrypoint, network policies, and everything else the agent needs.
 @z
 
@@ -119,39 +119,41 @@ image, via `apt`, `pip`, `npm`, `curl | bash`, or whatever fits:
 
 @x
 ```yaml
-commands:
+setup:
   install:
     - command: "apt-get update && apt-get install -y jq"
 ```
 @y
 ```yaml
-commands:
+setup:
   install:
     - command: "apt-get update && apt-get install -y jq"
 ```
 @z
 
 @x
-Startup commands cover things like launching background services,
-warming caches, or refreshing config on each start. They must be
-idempotent — see the [`startup`](#startup) spec reference:
+Startup commands are for work that can run alongside the agent, such as a
+background service. They must be idempotent — see the
+[`startup`](kit-reference.md#startup) spec reference:
 @y
-Startup commands cover things like launching background services,
-warming caches, or refreshing config on each start. They must be
-idempotent — see the [`startup`](#startup) spec reference:
+Startup commands are for work that can run alongside the agent, such as a
+background service. They must be idempotent — see the
+[`startup`](kit-reference.md#startup) spec reference:
 @z
 
 @x
 ```yaml
-commands:
+setup:
   startup:
-    - command: ["sh", "-c", "my-daemon &"]
+    - command: ["my-daemon"]
+      background: true
 ```
 @y
 ```yaml
-commands:
+setup:
   startup:
-    - command: ["sh", "-c", "my-daemon &"]
+    - command: ["my-daemon"]
+      background: true
 ```
 @z
 
@@ -163,11 +165,11 @@ commands:
 
 @x
 Kits can inject files into the sandbox in two ways: **static files** bundled
-with the kit, and **`initFiles`** written at startup with runtime values
+with the kit, and **`setup.files`** written at startup with runtime values
 substituted in.
 @y
 Kits can inject files into the sandbox in two ways: **static files** bundled
-with the kit, and **`initFiles`** written at startup with runtime values
+with the kit, and **`setup.files`** written at startup with runtime values
 substituted in.
 @z
 
@@ -204,27 +206,27 @@ my-kit/
 @z
 
 @x
-`initFiles` cover content that depends on runtime values, such as an
+`setup.files` cover content that depends on runtime values, such as an
 absolute workspace path that a tool needs to bake into its config file
 at startup:
 @y
-`initFiles` cover content that depends on runtime values, such as an
+`setup.files` cover content that depends on runtime values, such as an
 absolute workspace path that a tool needs to bake into its config file
 at startup:
 @z
 
 @x
 ```yaml
-commands:
-  initFiles:
+setup:
+  files:
     - path: /home/agent/.my-tool/config.json
       content: '{"workspace": "${WORKDIR}"}'
       onlyIfMissing: true
 ```
 @y
 ```yaml
-commands:
-  initFiles:
+setup:
+  files:
     - path: /home/agent/.my-tool/config.json
       content: '{"workspace": "${WORKDIR}"}'
       onlyIfMissing: true
@@ -232,33 +234,69 @@ commands:
 @z
 
 @x
-See [`initFiles`](#initfiles) in the spec reference for all fields.
+See [`setup.files`](kit-reference.md#files) in the spec reference for all
+fields.
 @y
-See [`initFiles`](#initfiles) in the spec reference for all fields.
+See [`setup.files`](kit-reference.md#files) in the spec reference for all
+fields.
 @z
 
 @x
-Sandboxes seed settings files for some built-in agents during setup.
-For example, the sandbox writes `/home/agent/.claude/settings.json`
-for the `claude` agent. This happens after the kit's static files and
-`initFiles`, so kit-injected files at those paths get overwritten.
-Workspace files (such as `<workspace>/.claude/settings.local.json`)
-aren't affected, and you can ship them under `files/workspace/` as
-usual. To override a path the sandbox writes to, use a
-[`commands.startup`](#startup) script instead. See
-[Override agent settings](kit-examples.md#override-agent-settings) for
-an example.
+#### Sandbox-managed agent configuration
 @y
-Sandboxes seed settings files for some built-in agents during setup.
-For example, the sandbox writes `/home/agent/.claude/settings.json`
-for the `claude` agent. This happens after the kit's static files and
-`initFiles`, so kit-injected files at those paths get overwritten.
-Workspace files (such as `<workspace>/.claude/settings.local.json`)
-aren't affected, and you can ship them under `files/workspace/` as
-usual. To override a path the sandbox writes to, use a
-[`commands.startup`](#startup) script instead. See
-[Override agent settings](kit-examples.md#override-agent-settings) for
-an example.
+#### Sandbox-managed agent configuration
+@z
+
+@x
+Built-in agent kits reserve the following paths for sandbox setup. Treat these
+paths as sandbox-managed, even if a file is only needed for a particular
+feature. Don't target them with static files, `setup.files`, or install
+commands. Later setup can replace your content or depend on settings that your
+file removes. In this table, `~` is `/home/agent`.
+@y
+Built-in agent kits reserve the following paths for sandbox setup. Treat these
+paths as sandbox-managed, even if a file is only needed for a particular
+feature. Don't target them with static files, `setup.files`, or install
+commands. Later setup can replace your content or depend on settings that your
+file removes. In this table, `~` is `/home/agent`.
+@z
+
+@x
+| Built-in agent kit | Managed configuration paths |
+| ------------------ | --------------------------- |
+| `claude` | `~/.claude.json`, `~/.claude/settings.json`, `~/.claude/.config.json` |
+| `codex` | `~/.codex/config.toml` |
+| `copilot` | `~/.copilot/config.json` |
+| `cursor` | `~/.cursor/cli-config.json` |
+| `gemini` | `~/.gemini/settings.json` |
+| `kiro` | `~/.kiro/settings/mcp.json` |
+| `opencode` | `~/.config/opencode/opencode.json` |
+@y
+| Built-in agent kit | Managed configuration paths |
+| ------------------ | --------------------------- |
+| `claude` | `~/.claude.json`, `~/.claude/settings.json`, `~/.claude/.config.json` |
+| `codex` | `~/.codex/config.toml` |
+| `copilot` | `~/.copilot/config.json` |
+| `cursor` | `~/.cursor/cli-config.json` |
+| `gemini` | `~/.gemini/settings.json` |
+| `kiro` | `~/.kiro/settings/mcp.json` |
+| `opencode` | `~/.config/opencode/opencode.json` |
+@z
+
+@x
+Use a separate settings layer when the agent supports one. For example, Claude
+Code can load an additional settings file with `--settings`, and OpenCode can
+load one from the path in `OPENCODE_CONFIG`. See
+[Customize agent settings](kit-examples.md#customize-agent-settings) for
+examples. Don't use `setup.startup` for settings the agent must read during
+initialization because startup commands don't gate the agent entrypoint.
+@y
+Use a separate settings layer when the agent supports one. For example, Claude
+Code can load an additional settings file with `--settings`, and OpenCode can
+load one from the path in `OPENCODE_CONFIG`. See
+[Customize agent settings](kit-examples.md#customize-agent-settings) for
+examples. Don't use `setup.startup` for settings the agent must read during
+initialization because startup commands don't gate the agent entrypoint.
 @z
 
 @x
@@ -302,6 +340,30 @@ be visible inside the sandbox VM.
 @z
 
 @x
+> [!IMPORTANT]
+> The sandbox manages proxy settings for you. It sets `HTTP_PROXY`,
+> `HTTPS_PROXY`, `NO_PROXY`, and their lowercase equivalents automatically so
+> that traffic flows through its built-in forward proxy, which enforces
+> network policy and injects credentials. Leave these variables to the
+> sandbox — setting them in a kit points traffic away from the forward proxy,
+> so it can no longer apply network policy or inject credentials, and those
+> requests typically fail to connect. To send sandbox traffic through an
+> upstream corporate proxy, configure it on the host. See
+> [Upstream proxy](../architecture.md#upstream-proxy).
+@y
+> [!IMPORTANT]
+> The sandbox manages proxy settings for you. It sets `HTTP_PROXY`,
+> `HTTPS_PROXY`, `NO_PROXY`, and their lowercase equivalents automatically so
+> that traffic flows through its built-in forward proxy, which enforces
+> network policy and injects credentials. Leave these variables to the
+> sandbox — setting them in a kit points traffic away from the forward proxy,
+> so it can no longer apply network policy or inject credentials, and those
+> requests typically fail to connect. To send sandbox traffic through an
+> upstream corporate proxy, configure it on the host. See
+> [Upstream proxy](../architecture.md#upstream-proxy).
+@z
+
+@x
 ### Control network access
 @y
 ### Control network access
@@ -317,34 +379,52 @@ network rules apply only to sandboxes that use the kit:
 
 @x
 ```yaml
-network:
-  allowedDomains:
-    - api.example.com
-    - "*.cdn.example.com"
-  deniedDomains:
-    - telemetry.example.com
+permissions:
+  network:
+    allow:
+      - api.example.com
+      - "*.cdn.example.com"
+    deny:
+      - telemetry.example.com
 ```
 @y
 ```yaml
-network:
-  allowedDomains:
-    - api.example.com
-    - "*.cdn.example.com"
-  deniedDomains:
-    - telemetry.example.com
+permissions:
+  network:
+    allow:
+      - api.example.com
+      - "*.cdn.example.com"
+    deny:
+      - telemetry.example.com
 ```
 @z
 
 @x
-Use `allowedDomains` for hosts the agent needs, such as package
-registries, install endpoints, or external APIs. Use `deniedDomains` for
+Use `allow` for hosts the agent needs, such as package
+registries, install endpoints, or external APIs. Use `deny` for
 hosts the agent should not reach, such as telemetry endpoints. If a domain
 matches both an allow rule and a deny rule, the deny rule wins.
 @y
-Use `allowedDomains` for hosts the agent needs, such as package
-registries, install endpoints, or external APIs. Use `deniedDomains` for
+Use `allow` for hosts the agent needs, such as package
+registries, install endpoints, or external APIs. Use `deny` for
 hosts the agent should not reach, such as telemetry endpoints. If a domain
 matches both an allow rule and a deny rule, the deny rule wins.
+@z
+
+@x
+> [!IMPORTANT]
+> When organization governance is active, only organization allow rules grant
+> access, so kit-defined `allow` rules are ignored — including any domains a kit
+> allows for the agent to reach. Kit-defined `deny` rules still apply, because a
+> deny can only restrict access further. For details, see
+> [Policy precedence](../governance/concepts.md#precedence).
+@y
+> [!IMPORTANT]
+> When organization governance is active, only organization allow rules grant
+> access, so kit-defined `allow` rules are ignored — including any domains a kit
+> allows for the agent to reach. Kit-defined `deny` rules still apply, because a
+> deny can only restrict access further. For details, see
+> [Policy precedence](../governance/concepts.md#precedence).
 @z
 
 @x
@@ -374,83 +454,79 @@ auth header before the request leaves the sandbox.
 @z
 
 @x
-The standard pattern uses four blocks tied to a service identifier
-you choose (here, `my-service`):
+A kit declares the service, the in-container environment variable, and how
+to inject the credential. It doesn't declare a host discovery source. The user
+provides the value through the secret store or first-run prompt, and a
+[credential binding](../configuration/credentials.md) authorizes its use:
 @y
-The standard pattern uses four blocks tied to a service identifier
-you choose (here, `my-service`):
+A kit declares the service, the in-container environment variable, and how
+to inject the credential. It doesn't declare a host discovery source. The user
+provides the value through the secret store or first-run prompt, and a
+[credential binding](../configuration/credentials.md) authorizes its use:
 @z
 
 @x
 ```yaml
-network:
-  allowedDomains:
-    - api.example.com
-  serviceDomains:
-    api.example.com: my-service # Tag traffic to this domain
-  serviceAuth:
-    my-service:
-      headerName: Authorization # Overwrite this header
-      valueFormat: "Bearer %s"
+credentials:
+  - service: my-service
+    apiKey:
+      name: MY_SERVICE_API_KEY # in-VM env var, set to a sentinel
+      proxyManaged: true
+      inject:
+        - domain: api.example.com # inject on requests to this domain
+          header: Authorization # overwrite this header
+          format: "Bearer %s"
 @y
 ```yaml
-network:
-  allowedDomains:
-    - api.example.com
-  serviceDomains:
-    api.example.com: my-service # Tag traffic to this domain
-  serviceAuth:
-    my-service:
-      headerName: Authorization # Overwrite this header
-      valueFormat: "Bearer %s"
+credentials:
+  - service: my-service
+    apiKey:
+      name: MY_SERVICE_API_KEY # in-VM env var, set to a sentinel
+      proxyManaged: true
+      inject:
+        - domain: api.example.com # inject on requests to this domain
+          header: Authorization # overwrite this header
+          format: "Bearer %s"
 @z
 
 @x
-credentials:
-  sources:
-    my-service:
-      env:
-        - MY_SERVICE_API_KEY # Host-side credential lookup
-@y
-credentials:
-  sources:
-    my-service:
-      env:
-        - MY_SERVICE_API_KEY # Host-side credential lookup
-@z
-
-@x
-environment:
-  proxyManaged:
-    - MY_SERVICE_API_KEY # Set the in-VM env var to "proxy-managed"
+permissions:
+  network:
+    allow:
+      - api.example.com # the domain must also be reachable
 ```
 @y
-environment:
-  proxyManaged:
-    - MY_SERVICE_API_KEY # Set the in-VM env var to "proxy-managed"
+permissions:
+  network:
+    allow:
+      - api.example.com # the domain must also be reachable
 ```
 @z
 
 @x
 The agent boots with `MY_SERVICE_API_KEY=proxy-managed`, sends a
-request with that value in `Authorization`, and the proxy overwrites
+request with that sentinel in `Authorization`, and the proxy overwrites
 the header with the real credential before forwarding. The real
 secret never enters the VM.
 @y
 The agent boots with `MY_SERVICE_API_KEY=proxy-managed`, sends a
-request with that value in `Authorization`, and the proxy overwrites
+request with that sentinel in `Authorization`, and the proxy overwrites
 the header with the real credential before forwarding. The real
 secret never enters the VM.
 @z
 
 @x
-See [Credentials](../security/credentials.md) for how to provide the
+See [Credentials](../configuration/credentials.md) for how to provide the
 credential value on your host, other approaches for cases the example
-above doesn't fit, and what the proxy does at request time.
+above doesn't fit, and what the proxy does at request time. See
+[Credential bindings](../configuration/credentials.md) to approve the mechanisms
+and domains declared by a third-party v2 kit.
 @y
-See [Credentials](../security/credentials.md) for how to provide the
+See [Credentials](../configuration/credentials.md) for how to provide the
 credential value on your host, other approaches for cases the example
-above doesn't fit, and what the proxy does at request time.
+above doesn't fit, and what the proxy does at request time. See
+[Credential bindings](../configuration/credentials.md) to approve the mechanisms
+and domains declared by a third-party v2 kit.
 @z
 
 @x
@@ -473,45 +549,41 @@ or other guidance that should be in scope when the sandbox runs.
 
 @x
 ```yaml
-memory: |
-  Ruff is installed. Run `ruff check` before committing.
-  Shared config lives at `/workspace/ruff.toml`.
+agentInstructions:
+  content: |
+    Ruff is installed. Run `ruff check` before committing.
+    Shared config lives at `/workspace/ruff.toml`.
 ```
 @y
 ```yaml
-memory: |
-  Ruff is installed. Run `ruff check` before committing.
-  Shared config lives at `/workspace/ruff.toml`.
+agentInstructions:
+  content: |
+    Ruff is installed. Run `ruff check` before committing.
+    Shared config lives at `/workspace/ruff.toml`.
 ```
 @z
 
 @x
-Both mixin and agent kits can declare `memory:`. The content is written
-only when the active agent kit sets [`agent.aiFilename`](#agent-block),
-which determines the memory file's name.
+Both mixin and sandbox kits can declare `agentInstructions.content`. The active
+sandbox kit sets `agentInstructions.filename`, which determines the memory
+file's name. The sandbox kit's content is written inline in that file. Each
+mixin's content is written to its own `<kit-name>.md` file under a sibling
+`kits-memory/` directory, and the main memory file gets a `## Kits` section that
+points to each mixin file:
 @y
-Both mixin and agent kits can declare `memory:`. The content is written
-only when the active agent kit sets [`agent.aiFilename`](#agent-block),
-which determines the memory file's name.
-@z
-
-@x
-When more than one loaded kit declares a `memory:` block, each kit's
-content is written to its own `<kit-name>.md` file under a sibling
-`kits-memory/` directory. The main memory file gets a `## Kits` section
-that points to each kit file:
-@y
-When more than one loaded kit declares a `memory:` block, each kit's
-content is written to its own `<kit-name>.md` file under a sibling
-`kits-memory/` directory. The main memory file gets a `## Kits` section
-that points to each kit file:
+Both mixin and sandbox kits can declare `agentInstructions.content`. The active
+sandbox kit sets `agentInstructions.filename`, which determines the memory
+file's name. The sandbox kit's content is written inline in that file. Each
+mixin's content is written to its own `<kit-name>.md` file under a sibling
+`kits-memory/` directory, and the main memory file gets a `## Kits` section that
+points to each mixin file:
 @z
 
 @x
 ```text
 /Users/you/
-├── myproject/         # workspace
-├── AGENTS.md          # main memory file with a "## Kits" index
+├── myproject/              # workspace
+├── AGENTS.md               # main memory file with a "## Kits" index
 └── kits-memory/
     ├── ruff-lint.md
     ├── vale.md
@@ -520,8 +592,8 @@ that points to each kit file:
 @y
 ```text
 /Users/you/
-├── myproject/         # workspace
-├── AGENTS.md          # main memory file with a "## Kits" index
+├── myproject/              # workspace
+├── AGENTS.md               # main memory file with a "## Kits" index
 └── kits-memory/
     ├── ruff-lint.md
     ├── vale.md
@@ -530,9 +602,11 @@ that points to each kit file:
 @z
 
 @x
-See [`memory`](#memory) in the spec reference for the full field schema.
+See [`agentInstructions`](kit-reference.md#agent-instructions) in the spec
+reference for the full field schema.
 @y
-See [`memory`](#memory) in the spec reference for the full field schema.
+See [`agentInstructions`](kit-reference.md#agent-instructions) in the spec
+reference for the full field schema.
 @z
 
 @x
@@ -542,33 +616,31 @@ See [`memory`](#memory) in the spec reference for the full field schema.
 @z
 
 @x
-Agent kits declare an `agent:` block with the image the agent runs in and
+Sandbox kits declare a `sandbox:` block with the image the agent runs in and
 the command the user attaches to when they launch the sandbox:
 @y
-Agent kits declare an `agent:` block with the image the agent runs in and
+Sandbox kits declare a `sandbox:` block with the image the agent runs in and
 the command the user attaches to when they launch the sandbox:
 @z
 
 @x
 ```yaml
-agent:
+sandbox:
   image: "my-registry/my-agent:latest"
-  entrypoint:
-    run: [my-agent, "--yolo"]
+  entrypoint: [my-agent, "--yolo"]
 ```
 @y
 ```yaml
-agent:
+sandbox:
   image: "my-registry/my-agent:latest"
-  entrypoint:
-    run: [my-agent, "--yolo"]
+  entrypoint: [my-agent, "--yolo"]
 ```
 @z
 
 @x
-See [Agent kits](#agent-kits) for use cases and an example.
+See [Sandbox kits](#sandbox-kits) for use cases and an example.
 @y
-See [Agent kits](#agent-kits) for use cases and an example.
+See [Sandbox kits](#sandbox-kits) for use cases and an example.
 @z
 
 @x
@@ -598,146 +670,26 @@ cases:
 @z
 
 @x
-### Example: Python linting kit
+See [Drop a shared config file](kit-examples.md#drop-a-shared-config-file) and
+[Install a tool at sandbox creation](kit-examples.md#install-a-tool-at-sandbox-creation)
+for complete mixin examples.
 @y
-### Example: Python linting kit
+See [Drop a shared config file](kit-examples.md#drop-a-shared-config-file) and
+[Install a tool at sandbox creation](kit-examples.md#install-a-tool-at-sandbox-creation)
+for complete mixin examples.
 @z
 
 @x
-This kit installs [Ruff](https://docs.astral.sh/ruff/) and injects a shared
-configuration file, so every sandbox starts with the same linting setup.
+## Sandbox kits
 @y
-This kit installs [Ruff](https://docs.astral.sh/ruff/) and injects a shared
-configuration file, so every sandbox starts with the same linting setup.
+## Sandbox kits
 @z
 
 @x
-```text
-ruff-lint/
-├── spec.yaml
-└── files/
-    └── workspace/
-        └── ruff.toml
-```
-@y
-```text
-ruff-lint/
-├── spec.yaml
-└── files/
-    └── workspace/
-        └── ruff.toml
-```
-@z
-
-@x
-```yaml {title="ruff-lint/spec.yaml"}
-schemaVersion: "1"
-kind: mixin
-name: ruff-lint
-displayName: Ruff Linter
-description: Python linting with shared team config
-@y
-```yaml {title="ruff-lint/spec.yaml"}
-schemaVersion: "1"
-kind: mixin
-name: ruff-lint
-displayName: Ruff Linter
-description: Python linting with shared team config
-@z
-
-@x
-network:
-  allowedDomains:
-    - pypi.org
-    - files.pythonhosted.org
-@y
-network:
-  allowedDomains:
-    - pypi.org
-    - files.pythonhosted.org
-@z
-
-@x
-commands:
-  install:
-    - command: "uv tool install ruff@latest"
-      user: "1000"
-      description: Install Ruff
-```
-@y
-commands:
-  install:
-    - command: "uv tool install ruff@latest"
-      user: "1000"
-      description: Install Ruff
-```
-@z
-
-@x
-```toml {title="ruff-lint/files/workspace/ruff.toml"}
-line-length = 100
-@y
-```toml {title="ruff-lint/files/workspace/ruff.toml"}
-line-length = 100
-@z
-
-@x
-[lint]
-select = ["E", "F", "I"]
-```
-@y
-[lint]
-select = ["E", "F", "I"]
-```
-@z
-
-@x
-> [!TIP]
-> The templates for the built-in agents (`claude`, `codex`, etc) already
-> includes `uv`, so this mixin can use it without installing it separately.
-@y
-> [!TIP]
-> The templates for the built-in agents (`claude`, `codex`, etc) already
-> includes `uv`, so this mixin can use it without installing it separately.
-@z
-
-@x
-To start a new sandbox with this mixin:
-@y
-To start a new sandbox with this mixin:
-@z
-
-@x
-```console
-$ sbx run claude --kit /path/to/ruff-lint/
-```
-@y
-```console
-$ sbx run claude --kit /path/to/ruff-lint/
-```
-@z
-
-@x
-To apply the mixin to a sandbox that's already running, use
-[`sbx kit add`](#local) instead. The `--kit` flag only takes effect when a
-sandbox is created.
-@y
-To apply the mixin to a sandbox that's already running, use
-[`sbx kit add`](#local) instead. The `--kit` flag only takes effect when a
-sandbox is created.
-@z
-
-@x
-## Agent kits
-@y
-## Agent kits
-@z
-
-@x
-An agent kit defines a full agent from scratch — image, entrypoint, and
+A sandbox kit defines a full agent from scratch — image, entrypoint, and
 everything the agent needs. Common use cases:
 @y
-An agent kit defines a full agent from scratch — image, entrypoint, and
+A sandbox kit defines a full agent from scratch — image, entrypoint, and
 everything the agent needs. Common use cases:
 @z
 
@@ -754,119 +706,39 @@ everything the agent needs. Common use cases:
 @z
 
 @x
-Agent kits declare everything a mixin kit can, plus an
-[`agent:` block](#agent-block) that tells the sandbox how to launch the
+Sandbox kits declare everything a mixin kit can, plus an
+[`sandbox:` block](kit-reference.md#sandbox-block) that tells the sandbox how to launch the
 agent. For a step-by-step walkthrough, see
 [Build your own agent kit](build-an-agent.md).
 @y
-Agent kits declare everything a mixin kit can, plus an
-[`agent:` block](#agent-block) that tells the sandbox how to launch the
+Sandbox kits declare everything a mixin kit can, plus an
+[`sandbox:` block](kit-reference.md#sandbox-block) that tells the sandbox how to launch the
 agent. For a step-by-step walkthrough, see
 [Build your own agent kit](build-an-agent.md).
 @z
 
 @x
-### Example: the built-in `claude` agent
+### Extend a built-in agent
 @y
-### Example: the built-in `claude` agent
+### Extend a built-in agent
 @z
 
 @x
-The `claude` agent you get from `sbx run claude` is defined as a kit. Here
-is an abbreviated version of its spec, showing how the agent block combines
-with network, credentials, environment, and commands:
+Use `extends:` to create a variant of a built-in agent without reproducing its
+configuration. The child kit inherits the parent's image, credentials, network
+permissions, persistent volumes, settings, MCP integration, and agent
+instructions. Use `extends:` for a single parent agent; use a mixin to add an
+independent capability that can work with one or more agents. See
+[Fork an existing agent](kit-examples.md#fork-an-existing-agent) for an example
+that changes Claude Code's permission mode.
 @y
-The `claude` agent you get from `sbx run claude` is defined as a kit. Here
-is an abbreviated version of its spec, showing how the agent block combines
-with network, credentials, environment, and commands:
-@z
-
-@x
-```yaml {title="claude/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: claude
-agent:
-  image: "docker/sandbox-templates:claude-code-docker"
-  aiFilename: CLAUDE.md
-  persistence: persistent
-  entrypoint:
-    run: [claude, "--dangerously-skip-permissions"]
-@y
-```yaml {title="claude/spec.yaml"}
-schemaVersion: "1"
-kind: agent
-name: claude
-agent:
-  image: "docker/sandbox-templates:claude-code-docker"
-  aiFilename: CLAUDE.md
-  persistence: persistent
-  entrypoint:
-    run: [claude, "--dangerously-skip-permissions"]
-@z
-
-@x
-network:
-  serviceDomains:
-    api.anthropic.com: anthropic
-    console.anthropic.com: anthropic
-  serviceAuth:
-    anthropic:
-      headerName: x-api-key
-      valueFormat: "%s"
-  allowedDomains:
-    - "claude.com:443"
-@y
-network:
-  serviceDomains:
-    api.anthropic.com: anthropic
-    console.anthropic.com: anthropic
-  serviceAuth:
-    anthropic:
-      headerName: x-api-key
-      valueFormat: "%s"
-  allowedDomains:
-    - "claude.com:443"
-@z
-
-@x
-credentials:
-  sources:
-    anthropic:
-      env:
-        - ANTHROPIC_API_KEY
-@y
-credentials:
-  sources:
-    anthropic:
-      env:
-        - ANTHROPIC_API_KEY
-@z
-
-@x
-environment:
-  variables:
-    IS_SANDBOX: "1"
-@y
-environment:
-  variables:
-    IS_SANDBOX: "1"
-@z
-
-@x
-commands:
-  install:
-    - command: "curl -fsSL https://claude.ai/install.sh | bash"
-      user: "1000"
-      description: Install Claude Code
-```
-@y
-commands:
-  install:
-    - command: "curl -fsSL https://claude.ai/install.sh | bash"
-      user: "1000"
-      description: Install Claude Code
-```
+Use `extends:` to create a variant of a built-in agent without reproducing its
+configuration. The child kit inherits the parent's image, credentials, network
+permissions, persistent volumes, settings, MCP integration, and agent
+instructions. Use `extends:` for a single parent agent; use a mixin to add an
+independent capability that can work with one or more agents. See
+[Fork an existing agent](kit-examples.md#fork-an-existing-agent) for an example
+that changes Claude Code's permission mode.
 @z
 
 @x
@@ -887,16 +759,26 @@ several kits on the same sandbox.
 
 @x
 > [!IMPORTANT]
-> `--kit` only takes effect when a sandbox is created. Passing it
-> against an existing sandbox name fails with
-> `--kit can only be used when creating a new sandbox`. To extend a
-> running sandbox with a kit, use [`sbx kit add`](#local) instead.
+> `--kit` only takes effect when a sandbox is created. Passing it against an
+> existing sandbox name fails with
+> `--kit can only be used when creating a new sandbox`. To add a supported
+> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
+> `sbx kit add` restarts the sandbox to apply the updated kit set.
+> VM state — installed packages, Docker images, volumes, and agent history
+> — is preserved across the restart. It supports mixin kits limited to
+> `environment.variables`, `setup.install`, and `permissions.network.allow`.
+> To use other fields, recreate the sandbox with `--kit`.
 @y
 > [!IMPORTANT]
-> `--kit` only takes effect when a sandbox is created. Passing it
-> against an existing sandbox name fails with
-> `--kit can only be used when creating a new sandbox`. To extend a
-> running sandbox with a kit, use [`sbx kit add`](#local) instead.
+> `--kit` only takes effect when a sandbox is created. Passing it against an
+> existing sandbox name fails with
+> `--kit can only be used when creating a new sandbox`. To add a supported
+> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
+> `sbx kit add` restarts the sandbox to apply the updated kit set.
+> VM state — installed packages, Docker images, volumes, and agent history
+> — is preserved across the restart. It supports mixin kits limited to
+> `environment.variables`, `setup.install`, and `permissions.network.allow`.
+> To use other fields, recreate the sandbox with `--kit`.
 @z
 
 @x
@@ -924,11 +806,11 @@ $ sbx run claude --kit ./my-kit-1.0.zip
 @z
 
 @x
-While iterating on a kit, apply changes to a running sandbox with
-`sbx kit add` instead of recreating it:
+While iterating on a supported mixin kit, apply changes to a running sandbox
+with `sbx kit add`:
 @y
-While iterating on a kit, apply changes to a running sandbox with
-`sbx kit add` instead of recreating it:
+While iterating on a supported mixin kit, apply changes to a running sandbox
+with `sbx kit add`:
 @z
 
 @x
@@ -942,11 +824,15 @@ $ sbx kit add my-sandbox ./my-kit/
 @z
 
 @x
-`kit add` re-runs install commands and re-copies files. Kits can't be
-removed from a running sandbox — remove and recreate it to start clean.
+`sbx kit add` restarts the sandbox to apply the updated kit set.
+VM state — installed packages, Docker images, volumes, and agent history — is
+preserved across the restart. Kits can't be removed from a running sandbox —
+remove and recreate it to start clean.
 @y
-`kit add` re-runs install commands and re-copies files. Kits can't be
-removed from a running sandbox — remove and recreate it to start clean.
+`sbx kit add` restarts the sandbox to apply the updated kit set.
+VM state — installed packages, Docker images, volumes, and agent history — is
+preserved across the restart. Kits can't be removed from a running sandbox —
+remove and recreate it to start clean.
 @z
 
 @x
@@ -1009,7 +895,7 @@ For Docker Hub, include the full `docker.io` prefix. See
 > [!IMPORTANT]
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > kits. For other registries, store pull credentials with
-> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
 > before running the sandbox:
 >
 > ```console
@@ -1022,7 +908,7 @@ For Docker Hub, include the full `docker.io` prefix. See
 > [!IMPORTANT]
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > kits. For other registries, store pull credentials with
-> [`sbx secret set --registry`](../security/credentials.md#registry-credentials)
+> [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
 > before running the sandbox:
 >
 > ```console
@@ -1034,6 +920,252 @@ For Docker Hub, include the full `docker.io` prefix. See
 @z
 
 @x
+### Restrict kit sources
+@y
+### Restrict kit sources
+@z
+
+@x
+`sbx` restricts which sources a kit can install from. A kit's install
+commands run with root privileges inside the sandbox, so limiting where kits
+come from reduces supply-chain risk. By default, only kits hosted on Docker
+Hub (`docker.io/`) are allowed. Loading a kit from any other source fails:
+@y
+`sbx` restricts which sources a kit can install from. A kit's install
+commands run with root privileges inside the sandbox, so limiting where kits
+come from reduces supply-chain risk. By default, only kits hosted on Docker
+Hub (`docker.io/`) are allowed. Loading a kit from any other source fails:
+@z
+
+@x
+```console
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale"
+ERROR: resolve kits: kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale" cannot be installed — its source is not in your allowlist.
+```
+@y
+```console
+$ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale"
+ERROR: resolve kits: kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=vale" cannot be installed — its source is not in your allowlist.
+```
+@z
+
+@x
+To allow another publisher, add its host or host/path prefix to the
+`kit.allowedSources` setting. The setting replaces the whole list, so include
+the entries you want to keep:
+@y
+To allow another publisher, add its host or host/path prefix to the
+`kit.allowedSources` setting. The setting replaces the whole list, so include
+the entries you want to keep:
+@z
+
+@x
+```console
+$ sbx settings set kit.allowedSources '["docker.io/","github.com/docker/"]'
+```
+@y
+```console
+$ sbx settings set kit.allowedSources '["docker.io/","github.com/docker/"]'
+```
+@z
+
+@x
+Entries match as prefixes on a path-segment boundary, so `github.com/docker/`
+allows `github.com/docker/sbx-kits-contrib` but not `github.com/docker-evil/kit`.
+To remove the restriction and allow any remote source, set the list to
+`["*"]`. This isn't recommended.
+@y
+Entries match as prefixes on a path-segment boundary, so `github.com/docker/`
+allows `github.com/docker/sbx-kits-contrib` but not `github.com/docker-evil/kit`.
+To remove the restriction and allow any remote source, set the list to
+`["*"]`. This isn't recommended.
+@z
+
+@x
+Installing from a local directory or ZIP file is governed separately by the
+`kit.allowLocalKits` setting, which defaults to `true`. Set it to `false` to
+require a remote source:
+@y
+Installing from a local directory or ZIP file is governed separately by the
+`kit.allowLocalKits` setting, which defaults to `true`. Set it to `false` to
+require a remote source:
+@z
+
+@x
+```console
+$ sbx settings set kit.allowLocalKits false
+```
+@y
+```console
+$ sbx settings set kit.allowLocalKits false
+```
+@z
+
+@x
+For non-interactive use, both settings have environment-variable equivalents:
+`DOCKER_SANDBOXES_KIT_ALLOWED_SOURCES` and `DOCKER_SANDBOXES_KIT_ALLOW_LOCAL`.
+@y
+For non-interactive use, both settings have environment-variable equivalents:
+`DOCKER_SANDBOXES_KIT_ALLOWED_SOURCES` and `DOCKER_SANDBOXES_KIT_ALLOW_LOCAL`.
+@z
+
+@x
+## Sign and verify kits
+@y
+## Sign and verify kits
+@z
+
+@x
+Use cosign-compatible Sigstore signatures to verify who approved a kit and
+that its signed content hasn't changed. Signing is keyless by default. Verify a
+keyless signature with the certificate identity and OpenID Connect (OIDC)
+issuer:
+@y
+Use cosign-compatible Sigstore signatures to verify who approved a kit and
+that its signed content hasn't changed. Signing is keyless by default. Verify a
+keyless signature with the certificate identity and OpenID Connect (OIDC)
+issuer:
+@z
+
+@x
+```console
+$ sbx kit sign ./my-kit/
+$ sbx kit verify \
+    --certificate-identity user@example.com \
+    --certificate-oidc-issuer https://accounts.google.com \
+    ./my-kit/
+```
+@y
+```console
+$ sbx kit sign ./my-kit/
+$ sbx kit verify \
+    --certificate-identity user@example.com \
+    --certificate-oidc-issuer https://accounts.google.com \
+    ./my-kit/
+```
+@z
+
+@x
+For key-based signing, use an ECDSA P-256 key pair:
+@y
+For key-based signing, use an ECDSA P-256 key pair:
+@z
+
+@x
+```console
+$ sbx kit sign --key cosign.key ./my-kit/
+$ sbx kit verify --key cosign.pub ./my-kit/
+```
+@y
+```console
+$ sbx kit sign --key cosign.key ./my-kit/
+$ sbx kit verify --key cosign.pub ./my-kit/
+```
+@z
+
+@x
+For a local directory, `sbx kit sign` writes a `kit.sig.bundle` file next to
+`spec.yaml`. Commit this file so consumers can verify a kit loaded from the Git
+repository. For an OCI kit, the signature is stored as an OCI referrer. You can
+sign an OCI kit after pushing it, or push and sign it in one step:
+@y
+For a local directory, `sbx kit sign` writes a `kit.sig.bundle` file next to
+`spec.yaml`. Commit this file so consumers can verify a kit loaded from the Git
+repository. For an OCI kit, the signature is stored as an OCI referrer. You can
+sign an OCI kit after pushing it, or push and sign it in one step:
+@z
+
+@x
+```console
+$ sbx kit push ./my-kit/ ghcr.io/myorg/my-kit:1.0 --sign
+```
+@y
+```console
+$ sbx kit push ./my-kit/ ghcr.io/myorg/my-kit:1.0 --sign
+```
+@z
+
+@x
+ZIP kits can't carry verifiable signatures.
+@y
+ZIP kits can't carry verifiable signatures.
+@z
+
+@x
+### Require signed kits
+@y
+### Require signed kits
+@z
+
+@x
+Set a trusted signer policy for the identities or keys you trust before
+requiring signatures. Otherwise, `sbx` uses the default policy, which trusts
+Docker employee identities attested by Google's OpenID Connect issuer. A
+keyless policy must specify both the certificate identity and its OpenID
+Connect issuer:
+@y
+Set a trusted signer policy for the identities or keys you trust before
+requiring signatures. Otherwise, `sbx` uses the default policy, which trusts
+Docker employee identities attested by Google's OpenID Connect issuer. A
+keyless policy must specify both the certificate identity and its OpenID
+Connect issuer:
+@z
+
+@x
+```console
+$ sbx settings set kit.trustedSigners \
+    '[{"identity":"release-bot@example.com","issuer":"https://accounts.google.com"}]'
+$ sbx settings set kit.requireSignature true
+```
+@y
+```console
+$ sbx settings set kit.trustedSigners \
+    '[{"identity":"release-bot@example.com","issuer":"https://accounts.google.com"}]'
+$ sbx settings set kit.requireSignature true
+```
+@z
+
+@x
+To trust a key-based signature, set the policy to the public key path:
+@y
+To trust a key-based signature, set the policy to the public key path:
+@z
+
+@x
+```console
+$ sbx settings set kit.trustedSigners '[{"key":"/path/to/cosign.pub"}]'
+$ sbx settings set kit.requireSignature true
+```
+@y
+```console
+$ sbx settings set kit.trustedSigners '[{"key":"/path/to/cosign.pub"}]'
+$ sbx settings set kit.requireSignature true
+```
+@z
+
+@x
+When `kit.requireSignature` is `true`, `sbx` rejects unsigned kits, signatures
+that don't match `kit.trustedSigners`, and ZIP kits. This policy applies when a
+kit is loaded from a local directory, Git repository, or OCI registry.
+@y
+When `kit.requireSignature` is `true`, `sbx` rejects unsigned kits, signatures
+that don't match `kit.trustedSigners`, and ZIP kits. This policy applies when a
+kit is loaded from a local directory, Git repository, or OCI registry.
+@z
+
+@x
+The signature covers `spec.yaml` and the kit's `files/` content, but not mutable
+dependencies such as image tags or content downloaded by install and startup
+commands. Pin those dependencies by digest or checksum when they must remain
+immutable.
+@y
+The signature covers `spec.yaml` and the kit's `files/` content, but not mutable
+dependencies such as image tags or content downloaded by install and startup
+commands. Pin those dependencies by digest or checksum when they must remain
+immutable.
+@z
+
+@x
 ## Packaging and distribution
 @y
 ## Packaging and distribution
@@ -1079,13 +1211,13 @@ automatically.
 
 @x
 `sbx kit pull` prefers credentials stored with
-[`sbx secret set --registry`](../security/credentials.md#registry-credentials),
+[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials),
 falling back to the Docker credential store. `sbx kit push` only uses the
 Docker credential store, so pushing to a private registry requires a prior
 `docker login`.
 @y
 `sbx kit pull` prefers credentials stored with
-[`sbx secret set --registry`](../security/credentials.md#registry-credentials),
+[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials),
 falling back to the Docker credential store. `sbx kit push` only uses the
 Docker credential store, so pushing to a private registry requires a prior
 `docker login`.
@@ -1098,585 +1230,13 @@ Docker credential store, so pushing to a private registry requires a prior
 @z
 
 @x
-A kit directory has a required `spec.yaml` and an optional `files/` tree:
+For a field-by-field reference of every `spec.yaml` block — top-level
+fields, credentials, network, environment, setup, static files,
+agent instructions, and the sandbox block — see [Kit spec reference](kit-reference.md).
 @y
-A kit directory has a required `spec.yaml` and an optional `files/` tree:
-@z
-
-@x
-```text
-my-kit/
-├── spec.yaml       # required
-└── files/          # optional — static files to inject
-    ├── home/
-    └── workspace/
-```
-@y
-```text
-my-kit/
-├── spec.yaml       # required
-└── files/          # optional — static files to inject
-    ├── home/
-    └── workspace/
-```
-@z
-
-@x
-### Top-level fields
-@y
-### Top-level fields
-@z
-
-@x
-```yaml
-schemaVersion: "1"
-kind: <mixin | agent>
-name: <name>
-displayName: <name>
-description: <text>
-```
-@y
-```yaml
-schemaVersion: "1"
-kind: <mixin | agent>
-name: <name>
-displayName: <name>
-description: <text>
-```
-@z
-
-@x
-| Field           | Required | Description                                                              |
-| --------------- | -------- | ------------------------------------------------------------------------ |
-| `schemaVersion` | Yes      | Spec schema version. Set to `"1"`.                                       |
-| `kind`          | Yes      | `mixin` for kits that extend an agent; `agent` for kits that define one. |
-| `name`          | Yes      | Unique identifier. Lowercase, alphanumeric, hyphens.                     |
-| `displayName`   | No       | Human-readable name.                                                     |
-| `description`   | No       | Short description.                                                       |
-@y
-| Field           | Required | Description                                                              |
-| --------------- | -------- | ------------------------------------------------------------------------ |
-| `schemaVersion` | Yes      | Spec schema version. Set to `"1"`.                                       |
-| `kind`          | Yes      | `mixin` for kits that extend an agent; `agent` for kits that define one. |
-| `name`          | Yes      | Unique identifier. Lowercase, alphanumeric, hyphens.                     |
-| `displayName`   | No       | Human-readable name.                                                     |
-| `description`   | No       | Short description.                                                       |
-@z
-
-@x
-The sections below apply to both kinds. Agent kits also declare an
-[`agent:` block](#agent-block).
-@y
-The sections below apply to both kinds. Agent kits also declare an
-[`agent:` block](#agent-block).
-@z
-
-@x
-### Credentials
-@y
-### Credentials
-@z
-
-@x
-```yaml
-credentials:
-  sources:
-    <service-id>:
-      env: [<env-var>, ...]
-      file:
-        path: <path>
-        parser: <parser>
-      priority: <env-first | file-first>
-```
-@y
-```yaml
-credentials:
-  sources:
-    <service-id>:
-      env: [<env-var>, ...]
-      file:
-        path: <path>
-        parser: <parser>
-      priority: <env-first | file-first>
-```
-@z
-
-@x
-| Field                      | Description                                                   |
-| -------------------------- | ------------------------------------------------------------- |
-| `sources`                  | Map of service identifier to credential source.               |
-| `sources.<id>.env`         | Environment variables to read on the host, in priority order. |
-| `sources.<id>.file.path`   | Path on host. `~` expands to home.                            |
-| `sources.<id>.file.parser` | How to extract the value (for example, `"json:apiKey"`).      |
-| `sources.<id>.priority`    | `env-first` (default) or `file-first`.                        |
-@y
-| Field                      | Description                                                   |
-| -------------------------- | ------------------------------------------------------------- |
-| `sources`                  | Map of service identifier to credential source.               |
-| `sources.<id>.env`         | Environment variables to read on the host, in priority order. |
-| `sources.<id>.file.path`   | Path on host. `~` expands to home.                            |
-| `sources.<id>.file.parser` | How to extract the value (for example, `"json:apiKey"`).      |
-| `sources.<id>.priority`    | `env-first` (default) or `file-first`.                        |
-@z
-
-@x
-Service identifiers link credentials to [network rules](#network).
-@y
-Service identifiers link credentials to [network rules](#network).
-@z
-
-@x
-### Network
-@y
-### Network
-@z
-
-@x
-```yaml
-network:
-  allowedDomains: [<domain>, ...]
-  deniedDomains: [<domain>, ...]
-  serviceDomains:
-    <domain>: <service-id>
-  serviceAuth:
-    <service-id>:
-      headerName: <header>
-      valueFormat: <format>
-```
-@y
-```yaml
-network:
-  allowedDomains: [<domain>, ...]
-  deniedDomains: [<domain>, ...]
-  serviceDomains:
-    <domain>: <service-id>
-  serviceAuth:
-    <service-id>:
-      headerName: <header>
-      valueFormat: <format>
-```
-@z
-
-@x
-| Field                     | Description                                                      |
-| ------------------------- | ---------------------------------------------------------------- |
-| `allowedDomains`          | Domains the sandbox can reach. Wildcards supported.              |
-| `deniedDomains`           | Domains the sandbox can't reach. Deny rules take precedence.     |
-| `serviceDomains`          | Map of domain to service identifier from `credentials.sources`.  |
-| `serviceAuth.headerName`  | HTTP header the proxy sets (for example, `Authorization`).       |
-| `serviceAuth.valueFormat` | Format string for the header value (for example, `"Bearer %s"`). |
-@y
-| Field                     | Description                                                      |
-| ------------------------- | ---------------------------------------------------------------- |
-| `allowedDomains`          | Domains the sandbox can reach. Wildcards supported.              |
-| `deniedDomains`           | Domains the sandbox can't reach. Deny rules take precedence.     |
-| `serviceDomains`          | Map of domain to service identifier from `credentials.sources`.  |
-| `serviceAuth.headerName`  | HTTP header the proxy sets (for example, `Authorization`).       |
-| `serviceAuth.valueFormat` | Format string for the header value (for example, `"Bearer %s"`). |
-@z
-
-@x
-### Environment
-@y
-### Environment
-@z
-
-@x
-```yaml
-environment:
-  variables:
-    <NAME>: <value>
-  proxyManaged: [<NAME>, ...]
-```
-@y
-```yaml
-environment:
-  variables:
-    <NAME>: <value>
-  proxyManaged: [<NAME>, ...]
-```
-@z
-
-@x
-| Field          | Description                                                                                                         |
-| -------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `variables`    | Key-value pairs set directly in the container.                                                                      |
-| `proxyManaged` | Environment variable names populated by the proxy at request time. Pair with [`credentials.sources`](#credentials). |
-@y
-| Field          | Description                                                                                                         |
-| -------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `variables`    | Key-value pairs set directly in the container.                                                                      |
-| `proxyManaged` | Environment variable names populated by the proxy at request time. Pair with [`credentials.sources`](#credentials). |
-@z
-
-@x
-Variable names must be valid shell identifiers (`[A-Za-z_][A-Za-z0-9_]*`).
-@y
-Variable names must be valid shell identifiers (`[A-Za-z_][A-Za-z0-9_]*`).
-@z
-
-@x
-### Commands
-@y
-### Commands
-@z
-
-@x
-```yaml
-commands:
-  install:
-    - command: <shell-string>
-      user: <uid>
-      description: <text>
-  startup:
-    - command: [<argv>, ...]
-      user: <uid>
-      background: <true | false>
-      description: <text>
-  initFiles:
-    - path: <path>
-      content: <text>
-      mode: <octal>
-      onlyIfMissing: <true | false>
-      description: <text>
-```
-@y
-```yaml
-commands:
-  install:
-    - command: <shell-string>
-      user: <uid>
-      description: <text>
-  startup:
-    - command: [<argv>, ...]
-      user: <uid>
-      background: <true | false>
-      description: <text>
-  initFiles:
-    - path: <path>
-      content: <text>
-      mode: <octal>
-      onlyIfMissing: <true | false>
-      description: <text>
-```
-@z
-
-@x
-#### `install`
-@y
-#### `install`
-@z
-
-@x
-Runs once during sandbox creation. Shell strings passed to `sh -c`.
-@y
-Runs once during sandbox creation. Shell strings passed to `sh -c`.
-@z
-
-@x
-| Field         | Default | Description                   |
-| ------------- | ------- | ----------------------------- |
-| `command`     | —       | Shell command string.         |
-| `user`        | `"0"`   | User to run as. `"0"` = root. |
-| `description` | —       | Human-readable description.   |
-@y
-| Field         | Default | Description                   |
-| ------------- | ------- | ----------------------------- |
-| `command`     | —       | Shell command string.         |
-| `user`        | `"0"`   | User to run as. `"0"` = root. |
-| `description` | —       | Human-readable description.   |
-@z
-
-@x
-#### `startup`
-@y
-#### `startup`
-@z
-
-@x
-Runs at every sandbox start. String array, not interpreted by a shell.
-@y
-Runs at every sandbox start. String array, not interpreted by a shell.
-@z
-
-@x
-| Field         | Default  | Description                         |
-| ------------- | -------- | ----------------------------------- |
-| `command`     | —        | Command and args as a string array. |
-| `user`        | `"1000"` | User to run as. `"1000"` = agent.   |
-| `background`  | `false`  | Run in background.                  |
-| `description` | —        | Human-readable description.         |
-@y
-| Field         | Default  | Description                         |
-| ------------- | -------- | ----------------------------------- |
-| `command`     | —        | Command and args as a string array. |
-| `user`        | `"1000"` | User to run as. `"1000"` = agent.   |
-| `background`  | `false`  | Run in background.                  |
-| `description` | —        | Human-readable description.         |
-@z
-
-@x
-Startup commands are non-interactive. They run before the agent
-attaches, with no terminal connected, so they can't prompt the user
-(for example, an interactive `aws login` will hang or fail). They also
-don't gate the agent's entrypoint: the agent launches once startup
-commands have been dispatched, regardless of `background`. Use them
-for non-interactive prep — launching daemons, warming caches,
-refreshing config — and use `commands.initFiles` for any value that
-needs to land on disk before the agent runs.
-@y
-Startup commands are non-interactive. They run before the agent
-attaches, with no terminal connected, so they can't prompt the user
-(for example, an interactive `aws login` will hang or fail). They also
-don't gate the agent's entrypoint: the agent launches once startup
-commands have been dispatched, regardless of `background`. Use them
-for non-interactive prep — launching daemons, warming caches,
-refreshing config — and use `commands.initFiles` for any value that
-needs to land on disk before the agent runs.
-@z
-
-@x
-Startup commands must be idempotent. They run on every sandbox start
-and replay on container restarts, so a command that fails or
-misbehaves on a second invocation breaks the restart path. Guard
-work with existence checks, use upserts instead of inserts, and
-prefer commands that converge to the same end state regardless of
-how many times they run.
-@y
-Startup commands must be idempotent. They run on every sandbox start
-and replay on container restarts, so a command that fails or
-misbehaves on a second invocation breaks the restart path. Guard
-work with existence checks, use upserts instead of inserts, and
-prefer commands that converge to the same end state regardless of
-how many times they run.
-@z
-
-@x
-#### `initFiles`
-@y
-#### `initFiles`
-@z
-
-@x
-Files written at sandbox start, with runtime substitution.
-@y
-Files written at sandbox start, with runtime substitution.
-@z
-
-@x
-| Field           | Default  | Description                                               |
-| --------------- | -------- | --------------------------------------------------------- |
-| `path`          | —        | Absolute container path.                                  |
-| `content`       | —        | File content. `${WORKDIR}` expands to the workspace path. |
-| `mode`          | `"0644"` | File permissions in octal.                                |
-| `onlyIfMissing` | `false`  | Skip if the file already exists.                          |
-@y
-| Field           | Default  | Description                                               |
-| --------------- | -------- | --------------------------------------------------------- |
-| `path`          | —        | Absolute container path.                                  |
-| `content`       | —        | File content. `${WORKDIR}` expands to the workspace path. |
-| `mode`          | `"0644"` | File permissions in octal.                                |
-| `onlyIfMissing` | `false`  | Skip if the file already exists.                          |
-@z
-
-@x
-### Static files
-@y
-### Static files
-@z
-
-@x
-```text
-my-kit/files/
-├── home/       → /home/agent/
-└── workspace/  → primary workspace path
-```
-@y
-```text
-my-kit/files/
-├── home/       → /home/agent/
-└── workspace/  → primary workspace path
-```
-@z
-
-@x
-| Kit path           | Container destination                   |
-| ------------------ | --------------------------------------- |
-| `files/home/`      | `/home/agent/` (config files, dotfiles) |
-| `files/workspace/` | The primary workspace path              |
-@y
-| Kit path           | Container destination                   |
-| ------------------ | --------------------------------------- |
-| `files/home/`      | `/home/agent/` (config files, dotfiles) |
-| `files/workspace/` | The primary workspace path              |
-@z
-
-@x
-Parent directories are created automatically. Existing files are
-overwritten. Absolute paths and path-traversal sequences (`../../`) are
-rejected.
-@y
-Parent directories are created automatically. Existing files are
-overwritten. Absolute paths and path-traversal sequences (`../../`) are
-rejected.
-@z
-
-@x
-### Memory
-@y
-### Memory
-@z
-
-@x
-```yaml
-memory: |
-  <markdown>
-```
-@y
-```yaml
-memory: |
-  <markdown>
-```
-@z
-
-@x
-Top-level field. Available in both mixin and agent kits. Markdown
-appended to the agent's memory file at sandbox creation. The agent reads
-this content at startup. Write it as instructions or notes the agent
-should follow when working in the sandbox. Applied only when the active
-agent kit sets [`agent.aiFilename`](#agent-block).
-@y
-Top-level field. Available in both mixin and agent kits. Markdown
-appended to the agent's memory file at sandbox creation. The agent reads
-this content at startup. Write it as instructions or notes the agent
-should follow when working in the sandbox. Applied only when the active
-agent kit sets [`agent.aiFilename`](#agent-block).
-@z
-
-@x
-The file is written to the parent of the workspace path inside the
-sandbox, not to the workspace itself. For a workspace mounted at
-`/Users/you/myproject`, the memory file lands at
-`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
-only inside the sandbox. Nothing is written to the host.
-@y
-The file is written to the parent of the workspace path inside the
-sandbox, not to the workspace itself. For a workspace mounted at
-`/Users/you/myproject`, the memory file lands at
-`/Users/you/AGENTS.md` (or whatever `aiFilename` is set to). It exists
-only inside the sandbox. Nothing is written to the host.
-@z
-
-@x
-When several loaded kits declare `memory:` blocks, the content is split
-across files instead of being concatenated into the main one:
-@y
-When several loaded kits declare `memory:` blocks, the content is split
-across files instead of being concatenated into the main one:
-@z
-
-@x
-- Each kit's memory is written to `<kit-name>.md` in a sibling
-  `kits-memory/` directory next to the main memory file.
-- The main memory file gets a `## Kits` section listing every kit with
-  a pointer to its file. The section is delimited by
-  `<!-- sbx:kits-section start -->` and `<!-- sbx:kits-section end -->`
-  markers so it can be regenerated when kits are added or removed.
-@y
-- Each kit's memory is written to `<kit-name>.md` in a sibling
-  `kits-memory/` directory next to the main memory file.
-- The main memory file gets a `## Kits` section listing every kit with
-  a pointer to its file. The section is delimited by
-  `<!-- sbx:kits-section start -->` and `<!-- sbx:kits-section end -->`
-  markers so it can be regenerated when kits are added or removed.
-@z
-
-@x
-### Agent block
-@y
-### Agent block
-@z
-
-@x
-Required for `kind: agent`.
-@y
-Required for `kind: agent`.
-@z
-
-@x
-```yaml
-agent:
-  image: <image-ref>
-  aiFilename: <filename>
-  persistence: <persistent | ephemeral>
-  entrypoint:
-    run: [<argv>, ...]
-    args: [<arg>, ...]
-```
-@y
-```yaml
-agent:
-  image: <image-ref>
-  aiFilename: <filename>
-  persistence: <persistent | ephemeral>
-  entrypoint:
-    run: [<argv>, ...]
-    args: [<arg>, ...]
-```
-@z
-
-@x
-| Field                   | Required | Description                                                                                    |
-| ----------------------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `agent.image`           | Yes      | Docker image reference. See [Base image requirements](#base-image-requirements).               |
-| `agent.aiFilename`      | No       | Memory filename (for example, `AGENTS.md`). Appends top-level [`memory`](#memory) at creation. |
-| `agent.persistence`     | No       | `persistent` (named volume across restarts) or `ephemeral` (default).                          |
-| `agent.entrypoint.run`  | No       | Command and args as a string array. Replaces the image's entrypoint.                           |
-| `agent.entrypoint.args` | No       | Args appended to the image's existing entrypoint.                                              |
-@y
-| Field                   | Required | Description                                                                                    |
-| ----------------------- | -------- | ---------------------------------------------------------------------------------------------- |
-| `agent.image`           | Yes      | Docker image reference. See [Base image requirements](#base-image-requirements).               |
-| `agent.aiFilename`      | No       | Memory filename (for example, `AGENTS.md`). Appends top-level [`memory`](#memory) at creation. |
-| `agent.persistence`     | No       | `persistent` (named volume across restarts) or `ephemeral` (default).                          |
-| `agent.entrypoint.run`  | No       | Command and args as a string array. Replaces the image's entrypoint.                           |
-| `agent.entrypoint.args` | No       | Args appended to the image's existing entrypoint.                                              |
-@z
-
-@x
-#### Base image requirements
-@y
-#### Base image requirements
-@z
-
-@x
-The agent's container image must provide:
-@y
-The agent's container image must provide:
-@z
-
-@x
-- A non-root `agent` user at UID 1000 with passwordless sudo.
-- A `/home/agent/` home directory owned by `agent`.
-- HTTP proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`,
-  `NO_PROXY`) preserved across sudo.
-- The agent binary (baked in, or installed via
-  [`commands.install`](#commands)).
-@y
-- A non-root `agent` user at UID 1000 with passwordless sudo.
-- A `/home/agent/` home directory owned by `agent`.
-- HTTP proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`,
-  `NO_PROXY`) preserved across sudo.
-- The agent binary (baked in, or installed via
-  [`commands.install`](#commands)).
-@z
-
-@x
-Build on top of `docker/sandbox-templates:shell-docker` to get these for
-free.
-@y
-Build on top of `docker/sandbox-templates:shell-docker` to get these for
-free.
+For a field-by-field reference of every `spec.yaml` block — top-level
+fields, credentials, network, environment, setup, static files,
+agent instructions, and the sandbox block — see [Kit spec reference](kit-reference.md).
 @z
 
 @x
@@ -1699,9 +1259,9 @@ and direct inspection inside the sandbox:
   value, such as `forward`, `forward-bypass`, `transparent`, or
   `browser-open`. Use it to diagnose install-time download failures,
   blocked domains, and unexpected TLS interception. If downloads fail or
-  arrive corrupted after you add `serviceDomains`, check whether the
-  service mapping is too broad. Map only the hosts that need credential
-  injection.
+  arrive corrupted after you add a credential's `apiKey.inject`, check
+  whether an injection domain is too broad. Inject only on the hosts that
+  need credentials.
 - `sbx exec <sandbox> -- <cmd>` runs an arbitrary command inside an
   existing sandbox. Useful for inspecting post-install state without
   recreating: `which mytool`, `ls /home/agent/.local/bin/`,
@@ -1712,9 +1272,9 @@ and direct inspection inside the sandbox:
   value, such as `forward`, `forward-bypass`, `transparent`, or
   `browser-open`. Use it to diagnose install-time download failures,
   blocked domains, and unexpected TLS interception. If downloads fail or
-  arrive corrupted after you add `serviceDomains`, check whether the
-  service mapping is too broad. Map only the hosts that need credential
-  injection.
+  arrive corrupted after you add a credential's `apiKey.inject`, check
+  whether an injection domain is too broad. Inject only on the hosts that
+  need credentials.
 - `sbx exec <sandbox> -- <cmd>` runs an arbitrary command inside an
   existing sandbox. Useful for inspecting post-install state without
   recreating: `which mytool`, `ls /home/agent/.local/bin/`,

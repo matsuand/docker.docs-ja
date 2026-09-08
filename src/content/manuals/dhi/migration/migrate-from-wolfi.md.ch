@@ -29,13 +29,13 @@ Alpine-like and DHI provides an Alpine-based hardened image.
 
 @x
 Like other hardened images, DHI provides comprehensive
-[attestations](/dhi/core-concepts/attestations/) including SBOMs and provenance,
+[attestations](/dhi/explore/security-concepts/attestations/) including SBOMs and provenance,
 allowing you to [verify](/manuals/dhi/how-to/verify.md) image signatures and
 [scan](/manuals/dhi/how-to/scan.md) for vulnerabilities to ensure the security
 and integrity of your images.
 @y
 Like other hardened images, DHI provides comprehensive
-[attestations](__SUBDIR__/dhi/core-concepts/attestations/) including SBOMs and provenance,
+[attestations](__SUBDIR__/dhi/explore/security-concepts/attestations/) including SBOMs and provenance,
 allowing you to [verify](manuals/dhi/how-to/verify.md) image signatures and
 [scan](manuals/dhi/how-to/scan.md) for vulnerabilities to ensure the security
 and integrity of your images.
@@ -99,25 +99,7 @@ replaced by the new hardened image.
 > Run `docker login dhi.io` to authenticate.
 @z
 
-@x
-```diff
-- ## Original base image
-- FROM cgr.dev/chainguard/go:latest-dev
-@y
-```diff
-- ## Original base image
-- FROM cgr.dev/chainguard/go:latest-dev
-@z
-
-@x
-+ ## Updated to use hardened base image
-+ FROM dhi.io/golang:1.25-alpine3.22-dev
-```
-@y
-+ ## Updated to use hardened base image
-+ FROM dhi.io/golang:1.25-alpine3.22-dev
-```
-@z
+% snip code...
 
 @x
 Note that DHI does not have a `latest` tag in order to promote best practices
@@ -175,45 +157,24 @@ The following example shows a multi-stage Dockerfile with a build stage and runt
 The following example shows a multi-stage Dockerfile with a build stage and runtime stage:
 @z
 
-@x
-```dockerfile
+@x within code
 # Build stage
-FROM dhi.io/golang:1.25-alpine3.22-dev AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o myapp
 @y
-```dockerfile
 # Build stage
-FROM dhi.io/golang:1.25-alpine3.22-dev AS builder
-WORKDIR /app
-COPY . .
-RUN go build -o myapp
 @z
-
 @x
 # Runtime stage
-FROM dhi.io/golang:1.25-alpine3.22
-WORKDIR /app
-COPY --from=builder /app/myapp .
-ENTRYPOINT ["/app/myapp"]
-```
 @y
 # Runtime stage
-FROM dhi.io/golang:1.25-alpine3.22
-WORKDIR /app
-COPY --from=builder /app/myapp .
-ENTRYPOINT ["/app/myapp"]
-```
 @z
 
 @x
 After updating your Dockerfile, build and test your application. If you encounter
-issues, see the [Troubleshoot](/manuals/dhi/troubleshoot.md) guide for common
+issues, see the [Troubleshoot](/manuals/dhi/how-to/troubleshoot.md) guide for common
 problems and solutions.
 @y
 After updating your Dockerfile, build and test your application. If you encounter
-issues, see the [Troubleshoot](manuals/dhi/troubleshoot.md) guide for common
+issues, see the [Troubleshoot](manuals/dhi/how-to/troubleshoot.md) guide for common
 problems and solutions.
 @z
 

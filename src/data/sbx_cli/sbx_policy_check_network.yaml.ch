@@ -1,0 +1,88 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx policy check network
+synopsis: Check network access to a host
+description: |-
+    Check whether current policy allows network access to TARGET.
+@y
+name: sbx policy check network
+synopsis: Check network access to a host
+description: |-
+    Check whether current policy allows network access to TARGET.
+@z
+
+@x
+    TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
+    literals are evaluated with port 443. HTTP(S) URLs use their default ports;
+    other URL schemes must include an explicit port.
+usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for network
+    - name: json
+      default_value: "false"
+      usage: Output in JSON format
+    - name: sandbox
+      usage: Evaluate in a specific sandbox policy context
+    - name: verbose
+      default_value: "false"
+      usage: Show the exact policy request fields
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Check global network policy
+      sbx policy check network api.example.com
+@y
+    TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
+    literals are evaluated with port 443. HTTP(S) URLs use their default ports;
+    other URL schemes must include an explicit port.
+usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for network
+    - name: json
+      default_value: "false"
+      usage: Output in JSON format
+    - name: sandbox
+      usage: Evaluate in a specific sandbox policy context
+    - name: verbose
+      default_value: "false"
+      usage: Show the exact policy request fields
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Check global network policy
+      sbx policy check network api.example.com
+@z
+
+@x
+      # Check policy in a sandbox context
+      sbx policy check network --sandbox my-sandbox api.example.com:443
+@y
+      # Check policy in a sandbox context
+      sbx policy check network --sandbox my-sandbox api.example.com:443
+@z
+
+@x
+      # Check a pasted URL and output JSON
+      sbx policy check network --json https://api.example.com/v1
+see_also:
+    - sbx policy check - Check whether policy allows an access request
+@y
+      # Check a pasted URL and output JSON
+      sbx policy check network --json https://api.example.com/v1
+see_also:
+    - sbx policy check - Check whether policy allows an access request
+@z

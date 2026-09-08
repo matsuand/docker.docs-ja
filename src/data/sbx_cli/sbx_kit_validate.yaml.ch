@@ -46,7 +46,7 @@ usage: sbx kit validate REFERENCE [flags]
 % see_also:
 
 @x
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @y
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @z

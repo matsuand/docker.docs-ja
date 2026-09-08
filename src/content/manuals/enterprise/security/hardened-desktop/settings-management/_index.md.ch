@@ -6,13 +6,15 @@
 @x
 description: Understand how Settings Management works, who it's for, and the benefits it provides
 keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-tags: [admin]
-title: Settings Management
-linkTitle: Settings Management
 @y
 description: Understand how Settings Management works, who it's for, and the benefits it provides
 keywords: Settings Management, rootless, docker desktop, hardened desktop, admin control, enterprise
-tags: [admin]
+@z
+
+@x
+title: Settings Management
+linkTitle: Settings Management
+@y
 title: Settings Management
 linkTitle: Settings Management
 @z
@@ -64,15 +66,13 @@ Administrators can define settings using one of these methods:
 @z
 
 @x
-- [Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
-  Docker Admin Console. This provides a web-based interface for managing settings
+- [Docker Home](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies via Docker Home. This provides a web-based interface for managing settings
   across your organization.
 - [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
   user's machine to enforce settings. This method works well for automated
   deployments and scripted installations.
 @y
-- [Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies through the
-  Docker Admin Console. This provides a web-based interface for managing settings
+- [Docker Home](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md): Create and assign settings policies via Docker Home. This provides a web-based interface for managing settings
   across your organization.
 - [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md): Place a configuration file on the
   user's machine to enforce settings. This method works well for automated
@@ -136,13 +136,13 @@ When multiple policies exist, Docker Desktop applies them in this order:
 @x
 1. User-specific policies: Highest priority
 1. Organization default policy: Applied when no user-specific policy exists
-1. Local `admin-settings.json` file: Lowest priority, overridden by Admin Console policies
+1. Local `admin-settings.json` file: Lowest priority, overridden by Docker Home policies
 1. [Configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) when used to control proxy settings
 @y
 1. User-specific policies: Highest priority
 1. Organization default policy: Applied when no user-specific policy exists
-1. Local `admin-settings.json` file: Lowest priority, overridden by Admin Console policies
-1. [Configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) when used to control proxy settings
+1. Local `admin-settings.json` file: Lowest priority, overridden by Docker Home policies
+1. [Configuration profiles](manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) when used to control proxy settings
 @z
 
 @x
@@ -164,7 +164,7 @@ You can create settings management policies at any time, but your organization n
 3. Choose a configuration method:
    - Use the `--admin-settings` installer flag on [macOS](/manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](/manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
    - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
-   - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
+   - Create a settings policy in the [Docker Home](configure-admin-console.md).
 @y
 1. Check that you have [added and verified](manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
 2. [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to
@@ -172,7 +172,7 @@ You can create settings management policies at any time, but your organization n
 3. Choose a configuration method:
    - Use the `--admin-settings` installer flag on [macOS](manuals/desktop/setup/install/mac-install.md#install-from-the-command-line) or [Windows](manuals/desktop/setup/install/windows-install.md#install-from-the-command-line) to automatically create the `admin-settings.json`.
    - Manually create and configure the [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
-   - Create a settings policy in the [Docker Admin Console](configure-admin-console.md).
+   - Create a settings policy in the [Docker Home](configure-admin-console.md).
 @z
 
 @x
@@ -240,11 +240,11 @@ When administrators apply Settings Management policies, Docker Desktop greys out
 @x
 The Docker Desktop GUI doesn't currently display all centralized settings,
 particularly Enhanced Container Isolation (ECI) settings that administrators
-apply via the Admin Console.
+apply via Docker Home.
 @y
 The Docker Desktop GUI doesn't currently display all centralized settings,
 particularly Enhanced Container Isolation (ECI) settings that administrators
-apply via the Admin Console.
+apply via Docker Home.
 @z
 
 @x
@@ -307,8 +307,8 @@ Get started with Settings Management:
 
 @x
 - [Configure Settings Management with the `admin-settings.json` file](configure-json-file.md)
-- [Configure Settings Management with the Docker Admin Console](configure-admin-console.md)
+- [Configure Settings Management with Docker Home](configure-admin-console.md)
 @y
 - [Configure Settings Management with the `admin-settings.json` file](configure-json-file.md)
-- [Configure Settings Management with the Docker Admin Console](configure-admin-console.md)
+- [Configure Settings Management with Docker Home](configure-admin-console.md)
 @z

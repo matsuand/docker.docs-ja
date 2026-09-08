@@ -1,0 +1,104 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx policy init
+synopsis: Initialize the global network policy
+description: |-
+    Initialize the global network policy that applies to all sandboxes.
+@y
+name: sbx policy init
+synopsis: Initialize the global network policy
+description: |-
+    Initialize the global network policy that applies to all sandboxes.
+@z
+
+@x
+    This sets the initial global network policy and must be run before adding
+    custom allow/deny rules or starting a sandbox for the first time. It is a
+    one-time setup: once initialized, use "sbx policy reset" to start over.
+@y
+    This sets the initial global network policy and must be run before adding
+    custom allow/deny rules or starting a sandbox for the first time. It is a
+    one-time setup: once initialized, use "sbx policy reset" to start over.
+@z
+
+@x
+    This is the initial global policy, not a per-sandbox default; you can change
+    it later. Per-sandbox rules, including those added by kits such as the
+    built-in agent kits, apply on top for individual sandboxes.
+@y
+    This is the initial global policy, not a per-sandbox default; you can change
+    it later. Per-sandbox rules, including those added by kits such as the
+    built-in agent kits, apply on top for individual sandboxes.
+@z
+
+@x
+    Available policies:
+      allow-all   All outbound network traffic is allowed
+      balanced    Typical development traffic is allowed, such as AI services and package registries
+      deny-all    All outbound network traffic is blocked
+@y
+    Available policies:
+      allow-all   All outbound network traffic is allowed
+      balanced    Typical development traffic is allowed, such as AI services and package registries
+      deny-all    All outbound network traffic is blocked
+@z
+
+@x
+    After initializing, use "sbx policy allow/deny/rm" to change the global policy.
+    Use "sbx policy reset" to clear all policies and start over.
+usage: sbx policy init <allow-all|balanced|deny-all> [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for init
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Initialize with the balanced policy — recommended
+      sbx policy init balanced
+@y
+    After initializing, use "sbx policy allow/deny/rm" to change the global policy.
+    Use "sbx policy reset" to clear all policies and start over.
+usage: sbx policy init <allow-all|balanced|deny-all> [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for init
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: |4-
+      # Initialize with the balanced policy — recommended
+      sbx policy init balanced
+@z
+
+@x
+      # Allow all traffic
+      sbx policy init allow-all
+@y
+      # Allow all traffic
+      sbx policy init allow-all
+@z
+
+@x
+      # Block everything, then allow specific sites
+      sbx policy init deny-all
+      sbx policy allow network api.example.com:443
+see_also:
+    - sbx policy - Manage sandbox policies
+@y
+      # Block everything, then allow specific sites
+      sbx policy init deny-all
+      sbx policy allow network api.example.com:443
+see_also:
+    - sbx policy - Manage sandbox policies
+@z

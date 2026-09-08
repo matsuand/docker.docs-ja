@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Enabling content trust in Docker
@@ -62,25 +62,17 @@ chains signing content as part of their release process.
 @z
 
 @x
-> [!NOTE]
+> [!WARNING]
 >
-> Docker is retiring DCT for Docker Official Images
-> (DOI). You should start planning to transition to a different image signing
-> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
-> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
-> complete deprecation of DCT are being finalized and will be published soon.
->
-> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+> Docker Content Trust (DCT) is being retired. The Notary v1 service at
+> `notary.docker.io` will shut down on December 8, 2026. For more information, see
+> [Docker Content Trust (DCT)](/manuals/retired.md#docker-content-trust-dct).
 @y
-> [!NOTE]
+> [!WARNING]
 >
-> Docker is retiring DCT for Docker Official Images
-> (DOI). You should start planning to transition to a different image signing
-> and verification solution (like [Sigstore](https://www.sigstore.dev/) or
-> [Notation](https://github.com/notaryproject/notation#readme)). Timelines for the
-> complete deprecation of DCT are being finalized and will be published soon.
->
-> For more information, see [Retiring Docker Content Trust](https://www.docker.com/blog/retiring-docker-content-trust/).
+> Docker Content Trust (DCT) is being retired. The Notary v1 service at
+> `notary.docker.io` will shut down on December 8, 2026. For more information, see
+> [Docker Content Trust (DCT)](manuals/retired.md#docker-content-trust-dct).
 @z
 
 @x

@@ -16,12 +16,6 @@ linkTitle: Generic (CLI)
 @z
 
 @x
-{{% include "scout-early-access.md" %}}
-@y
-{{% include "scout-early-access.md" %}}
-@z
-
-@x
 You can create a generic environment integration by running the Docker Scout
 CLI client in your CI workflows. The CLI client is available as a binary on
 GitHub and as a container image on Docker Hub. Use the client to invoke the
@@ -92,12 +86,12 @@ jobs:
     steps:
       - run: |
           if [[ -z "$CIRCLE_TAG" ]]; then
+            tag="$CIRCLE_BRANCH"
+            echo "Running on branch '$CIRCLE_BRANCH'"
+          else
             tag="$CIRCLE_TAG"
             echo "Running tag '$CIRCLE_TAG'"
-          else
-            tag="$CIRCLE_BRANCH"
-            echo "Running on branch '$CI_COMMIT_BRANCH'"
-          fi    
+          fi
           echo "tag = $tag"
       - run: docker run -it \
           -e DOCKER_SCOUT_HUB_USER=$DOCKER_SCOUT_HUB_USER \
@@ -115,12 +109,12 @@ jobs:
     steps:
       - run: |
           if [[ -z "$CIRCLE_TAG" ]]; then
+            tag="$CIRCLE_BRANCH"
+            echo "Running on branch '$CIRCLE_BRANCH'"
+          else
             tag="$CIRCLE_TAG"
             echo "Running tag '$CIRCLE_TAG'"
-          else
-            tag="$CIRCLE_BRANCH"
-            echo "Running on branch '$CI_COMMIT_BRANCH'"
-          fi    
+          fi
           echo "tag = $tag"
       - run: docker run -it \
           -e DOCKER_SCOUT_HUB_USER=$DOCKER_SCOUT_HUB_USER \
@@ -161,12 +155,12 @@ record_environment:
   script:
     - |
       if [[ -z "$CI_COMMIT_TAG" ]]; then
-        tag="latest"
-        echo "Running tag '$CI_COMMIT_TAG'"
-      else
         tag="$CI_COMMIT_REF_SLUG"
         echo "Running on branch '$CI_COMMIT_BRANCH'"
-      fi    
+      else
+        tag="$CI_COMMIT_TAG"
+        echo "Running tag '$CI_COMMIT_TAG'"
+      fi
       echo "tag = $tag"
     - environment --org <MY_DOCKER_ORG> "PRODUCTION" ${image}:${tag}
 ```
@@ -176,12 +170,12 @@ record_environment:
   script:
     - |
       if [[ -z "$CI_COMMIT_TAG" ]]; then
-        tag="latest"
-        echo "Running tag '$CI_COMMIT_TAG'"
-      else
         tag="$CI_COMMIT_REF_SLUG"
         echo "Running on branch '$CI_COMMIT_BRANCH'"
-      fi    
+      else
+        tag="$CI_COMMIT_TAG"
+        echo "Running tag '$CI_COMMIT_TAG'"
+      fi
       echo "tag = $tag"
     - environment --org <MY_DOCKER_ORG> "PRODUCTION" ${image}:${tag}
 ```
@@ -233,7 +227,6 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
-          - task: Docker@2
           - script: docker run -it \
               -e DOCKER_SCOUT_HUB_USER=$DOCKER_SCOUT_HUB_USER \
               -e DOCKER_SCOUT_HUB_PASSWORD=$DOCKER_SCOUT_HUB_PASSWORD \
@@ -251,7 +244,6 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
-          - task: Docker@2
           - script: docker run -it \
               -e DOCKER_SCOUT_HUB_USER=$DOCKER_SCOUT_HUB_USER \
               -e DOCKER_SCOUT_HUB_PASSWORD=$DOCKER_SCOUT_HUB_PASSWORD \
@@ -271,13 +263,13 @@ stages:
 
 @x
 ```groovy
-stage('Analyze image') {
+stage('Record environment') {
     steps {
         // Install Docker Scout
         sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
 @y
 ```groovy
-stage('Analyze image') {
+stage('Record environment') {
     steps {
         // Install Docker Scout
         sh 'curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin'
@@ -292,14 +284,14 @@ stage('Analyze image') {
 @z
 
 @x
-        // Analyze and fail on critical or high vulnerabilities
-        sh 'docker-scout environment --org "<MY_DOCKER_ORG>" "<ENVIRONMENT>" $IMAGE_TAG
+        // Record image to environment
+        sh 'docker-scout environment --org "<MY_DOCKER_ORG>" "<ENVIRONMENT>" $IMAGE_TAG'
     }
 }
 ```
 @y
-        // Analyze and fail on critical or high vulnerabilities
-        sh 'docker-scout environment --org "<MY_DOCKER_ORG>" "<ENVIRONMENT>" $IMAGE_TAG
+        // Record image to environment
+        sh 'docker-scout environment --org "<MY_DOCKER_ORG>" "<ENVIRONMENT>" $IMAGE_TAG'
     }
 }
 ```

@@ -60,6 +60,7 @@ The following table describes the available CSV parameters that you can pass to
 |---------------------|--------------|-------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
 | `src`               | `cache-from` | String                  |         | Path of the local directory where cache gets imported from.                                                                     |
 | `digest`            | `cache-from` | String                  |         | Digest of manifest to import, see [cache versioning][4].                                                                        |
+| `tag`               | `cache-to`,`cache-from` | String                  | `latest` | Tag of the cache manifest, see [cache versioning][4].                                                                          |
 | `dest`              | `cache-to`   | String                  |         | Path of the local directory where cache gets exported to.                                                                       |
 | `mode`              | `cache-to`   | `min`,`max`             | `min`   | Cache layers to export, see [cache mode][1].                                                                                    |
 | `oci-mediatypes`    | `cache-to`   | `true`,`false`          | `true`  | Use OCI media types in exported manifests, see [OCI media types][2].                                                            |
@@ -68,11 +69,13 @@ The following table describes the available CSV parameters that you can pass to
 | `compression-level` | `cache-to`   | `0..22`                 |         | Compression level, see [cache compression][3].                                                                                  |
 | `force-compression` | `cache-to`   | `true`,`false`          | `false` | Forcibly apply compression, see [cache compression][3].                                                                         |
 | `ignore-error`      | `cache-to`   | Boolean                 | `false` | Ignore errors caused by failed cache exports.                                                                                   |
+| `reset`             | `cache-to`   | `true`,`false`          | `false` | Delete blobs that no tag references, see [cache versioning][4].                                                                 |
 @y
 | Name                | Option       | Type                    | Default | Description                                                                                                                     |
 |---------------------|--------------|-------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------|
 | `src`               | `cache-from` | String                  |         | Path of the local directory where cache gets imported from.                                                                     |
 | `digest`            | `cache-from` | String                  |         | Digest of manifest to import, see [cache versioning][4].                                                                        |
+| `tag`               | `cache-to`,`cache-from` | String                  | `latest` | Tag of the cache manifest, see [cache versioning][4].                                                                          |
 | `dest`              | `cache-to`   | String                  |         | Path of the local directory where cache gets exported to.                                                                       |
 | `mode`              | `cache-to`   | `min`,`max`             | `min`   | Cache layers to export, see [cache mode][1].                                                                                    |
 | `oci-mediatypes`    | `cache-to`   | `true`,`false`          | `true`  | Use OCI media types in exported manifests, see [OCI media types][2].                                                            |
@@ -81,6 +84,7 @@ The following table describes the available CSV parameters that you can pass to
 | `compression-level` | `cache-to`   | `0..22`                 |         | Compression level, see [cache compression][3].                                                                                  |
 | `force-compression` | `cache-to`   | `true`,`false`          | `false` | Forcibly apply compression, see [cache compression][3].                                                                         |
 | `ignore-error`      | `cache-to`   | Boolean                 | `false` | Ignore errors caused by failed cache exports.                                                                                   |
+| `reset`             | `cache-to`   | `true`,`false`          | `false` | Delete blobs that no tag references, see [cache versioning][4].                                                                 |
 @z
 
 @x
@@ -110,103 +114,121 @@ build continues.
 @z
 
 @x
-<!-- FIXME: update once https://github.com/moby/buildkit/pull/3111 is released -->
+A local cache directory uses an OCI image layout. Its `index.json` file
+associates tags with cache manifests, while the `blobs` directory stores the
+manifest and cache data.
 @y
-<!-- FIXME: update once https://github.com/moby/buildkit/pull/3111 is released -->
+A local cache directory uses an OCI image layout. Its `index.json` file
+associates tags with cache manifests, while the `blobs` directory stores the
+manifest and cache data.
 @z
 
 @x
-This section describes how versioning works for caches on a local filesystem,
-and how you can use the `digest` parameter to use older versions of cache.
+By default, BuildKit exports and imports the cache tagged `latest`. Use
+different tags to keep multiple caches in the same directory:
 @y
-This section describes how versioning works for caches on a local filesystem,
-and how you can use the `digest` parameter to use older versions of cache.
-@z
-
-@x
-If you inspect the cache directory manually, you can see the resulting OCI image
-layout:
-@y
-If you inspect the cache directory manually, you can see the resulting OCI image
-layout:
+By default, BuildKit exports and imports the cache tagged `latest`. Use
+different tags to keep multiple caches in the same directory:
 @z
 
 @x
 ```console
-$ ls cache
-blobs  index.json  ingest
-$ cat cache/index.json | jq
-{
-  "schemaVersion": 2,
-  "manifests": [
-    {
-      "mediaType": "application/vnd.oci.image.index.v1+json",
-      "digest": "sha256:6982c70595cb91769f61cd1e064cf5f41d5357387bab6b18c0164c5f98c1f707",
-      "size": 1560,
-      "annotations": {
-        "org.opencontainers.image.ref.name": "latest"
-      }
-    }
-  ]
-}
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,tag=v1 .
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,tag=v2 .
 ```
 @y
 ```console
-$ ls cache
-blobs  index.json  ingest
-$ cat cache/index.json | jq
-{
-  "schemaVersion": 2,
-  "manifests": [
-    {
-      "mediaType": "application/vnd.oci.image.index.v1+json",
-      "digest": "sha256:6982c70595cb91769f61cd1e064cf5f41d5357387bab6b18c0164c5f98c1f707",
-      "size": 1560,
-      "annotations": {
-        "org.opencontainers.image.ref.name": "latest"
-      }
-    }
-  ]
-}
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,tag=v1 .
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,tag=v2 .
 ```
 @z
 
 @x
-Like other cache types, local cache gets replaced on export, by replacing the
-contents of the `index.json` file. However, previous caches will still be
-available in the `blobs` directory. These old caches are addressable by digest,
-and kept indefinitely. Therefore, the size of the local cache will continue to
-grow (see [`moby/buildkit#1896`](https://github.com/moby/buildkit/issues/1896)
-for more information).
+Exporting another cache with the same tag updates that tag to reference the new
+manifest. Manifests referenced by other tags remain unchanged.
 @y
-Like other cache types, local cache gets replaced on export, by replacing the
-contents of the `index.json` file. However, previous caches will still be
-available in the `blobs` directory. These old caches are addressable by digest,
-and kept indefinitely. Therefore, the size of the local cache will continue to
-grow (see [`moby/buildkit#1896`](https://github.com/moby/buildkit/issues/1896)
-for more information).
+Exporting another cache with the same tag updates that tag to reference the new
+manifest. Manifests referenced by other tags remain unchanged.
 @z
 
 @x
-When importing cache using `--cache-from`, you can specify the `digest` parameter
-to force loading an older version of the cache, for example:
+Import a cache by specifying its tag:
 @y
-When importing cache using `--cache-from`, you can specify the `digest` parameter
-to force loading an older version of the cache, for example:
+Import a cache by specifying its tag:
 @z
 
 @x
 ```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=local,dest=path/to/local/dir \
-  --cache-from type=local,ref=path/to/local/dir,digest=sha256:6982c70595cb91769f61cd1e064cf5f41d5357387bab6b18c0164c5f98c1f707 .
+$ docker buildx build --cache-from type=local,src=path/to/local/dir,tag=v1 .
 ```
 @y
 ```console
-$ docker buildx build --push -t <registry>/<image> \
-  --cache-to type=local,dest=path/to/local/dir \
-  --cache-from type=local,ref=path/to/local/dir,digest=sha256:6982c70595cb91769f61cd1e064cf5f41d5357387bab6b18c0164c5f98c1f707 .
+$ docker buildx build --cache-from type=local,src=path/to/local/dir,tag=v1 .
 ```
+@z
+
+@x
+A digest identifies an exact cache manifest. BuildKit reports the digest of
+each exported manifest in the build output. Use `digest` instead of `tag` when
+you need a specific manifest:
+@y
+A digest identifies an exact cache manifest. BuildKit reports the digest of
+each exported manifest in the build output. Use `digest` instead of `tag` when
+you need a specific manifest:
+@z
+
+@x
+```console
+$ docker buildx build \
+  --cache-from type=local,src=path/to/local/dir,digest=sha256:<DIGEST> .
+```
+@y
+```console
+$ docker buildx build \
+  --cache-from type=local,src=path/to/local/dir,digest=sha256:<DIGEST> .
+```
+@z
+
+@x
+If you specify both `digest` and `tag`, BuildKit uses `digest`.
+@y
+If you specify both `digest` and `tag`, BuildKit uses `digest`.
+@z
+
+@x
+By default, updating a tag doesn't delete the blobs used by its previous
+manifest. The previous manifest remains available by digest, so the local cache
+directory grows over time.
+@y
+By default, updating a tag doesn't delete the blobs used by its previous
+manifest. The previous manifest remains available by digest, so the local cache
+directory grows over time.
+@z
+
+@x
+Buildx version 0.35.0 and later supports `reset=true` on export, which deletes
+blobs that no tag references:
+@y
+Buildx version 0.35.0 and later supports `reset=true` on export, which deletes
+blobs that no tag references:
+@z
+
+@x
+```console
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,reset=true .
+```
+@y
+```console
+$ docker buildx build --cache-to type=local,dest=path/to/local/dir,reset=true .
+```
+@z
+
+@x
+Blobs that other tags reference are kept. Manifests that no tag references are
+deleted, so you can no longer import them by digest.
+@y
+Blobs that other tags reference are kept. Manifests that no tag references are
+deleted, so you can no longer import them by digest.
 @z
 
 @x

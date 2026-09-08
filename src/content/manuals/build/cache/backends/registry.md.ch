@@ -42,12 +42,14 @@ everything that the inline cache can do, and more:
 @z
 
 @x
-This cache storage backend is not supported with the default `docker` driver.
-To use this feature, create a new builder using a different driver. See
+This cache storage backend works with the default `docker` driver only when the
+[containerd image store](/manuals/desktop/features/containerd.md) is enabled. If
+the containerd image store isn't enabled, use a different driver. See
 [Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
 @y
-This cache storage backend is not supported with the default `docker` driver.
-To use this feature, create a new builder using a different driver. See
+This cache storage backend works with the default `docker` driver only when the
+[containerd image store](manuals/desktop/features/containerd.md) is enabled. If
+the containerd image store isn't enabled, use a different driver. See
 [Build drivers](manuals/build/builders/drivers/_index.md) for more information.
 @z
 

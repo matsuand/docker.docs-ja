@@ -15,12 +15,6 @@ description: Learn how to mirror an image into your organization's namespace and
 @z
 
 @x
-keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
-@y
-keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
-@z
-
-@x
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 @y
 {{< summary-bar feature_name="Docker Hardened Images" >}}
@@ -93,13 +87,45 @@ repositories:
 @z
 
 @x
-To mirror repositories, you must be an organization owner or editor, or use a
-personal access token (PAT) or organization access token (OAT). See the CLI and
-Terraform tabs in the following sections for required permission scopes.
+Organization owners, editors, and members with a [custom role](../../enterprise/security/roles-and-permissions/custom-roles/_index.md)
+that includes the DHI mirroring permission can create, view, and manage mirrors.
+When using the CLI or Terraform, you can also mirror using an [organization
+access token (OAT)](../../enterprise/security/access-tokens.md) with the
+appropriate permission scopes, without requiring role-based access.
 @y
-To mirror repositories, you must be an organization owner or editor, or use a
-personal access token (PAT) or organization access token (OAT). See the CLI and
-Terraform tabs in the following sections for required permission scopes.
+Organization owners, editors, and members with a [custom role](../../enterprise/security/roles-and-permissions/custom-roles/_index.md)
+that includes the DHI mirroring permission can create, view, and manage mirrors.
+When using the CLI or Terraform, you can also mirror using an [organization
+access token (OAT)](../../enterprise/security/access-tokens.md) with the
+appropriate permission scopes, without requiring role-based access.
+@z
+
+@x
+When a member with a custom role that includes the DHI mirroring permission
+creates a mirror, Docker automatically creates and manages the
+`dhi-mirroring-admins` team in your organization, adds that member to it, and
+grants the team access to the new mirror. This lets the member manage mirrors
+they create without organization owner or editor access. Mirrors created by
+organization owners or editors don't use this team. Removing members from this
+team may affect their ability to view and manage mirrors.
+@y
+When a member with a custom role that includes the DHI mirroring permission
+creates a mirror, Docker automatically creates and manages the
+`dhi-mirroring-admins` team in your organization, adds that member to it, and
+grants the team access to the new mirror. This lets the member manage mirrors
+they create without organization owner or editor access. Mirrors created by
+organization owners or editors don't use this team. Removing members from this
+team may affect their ability to view and manage mirrors.
+@z
+
+@x
+You can mirror image and chart repositories to your organization's namespace on
+Docker Hub. Mirroring makes the repositories available within your organization
+and lets you customize them for your environment:
+@y
+You can mirror image and chart repositories to your organization's namespace on
+Docker Hub. Mirroring makes the repositories available within your organization
+and lets you customize them for your environment:
 @z
 
 @x
@@ -254,46 +280,16 @@ Filter mirrored images by name or type:
 
 @x
 You can manage DHI mirrors as infrastructure-as-code using the [DHI Terraform
-provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
+provider](/dhi/tools/terraform/).
 @y
 You can manage DHI mirrors as infrastructure-as-code using the [DHI Terraform
-provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
+provider](__SUBDIR__/dhi/tools/terraform/).
 @z
 
 @x
-First, install and configure the provider:
+Define a `dhi_mirror` resource for each repository you want to mirror:
 @y
-First, install and configure the provider:
-@z
-
-% snip code...
-
-@x
-> [!NOTE]
->
-> Instead of specifying credentials in the provider block, you can set the
-> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables. You
-> can also authenticate using an organization access token (OAT) in place of a
-> password. Set `DOCKER_USERNAME` to your organization namespace and
-> `DOCKER_PASSWORD` to the OAT. When using an OAT, the same permission scopes
-> apply as with the CLI: read (pull) access is required to list mirrors, and
-> push access is required to create or delete them.
-@y
-> [!NOTE]
->
-> Instead of specifying credentials in the provider block, you can set the
-> `DOCKER_USERNAME`, `DOCKER_PASSWORD`, and `DHI_ORG` environment variables. You
-> can also authenticate using an organization access token (OAT) in place of a
-> password. Set `DOCKER_USERNAME` to your organization namespace and
-> `DOCKER_PASSWORD` to the OAT. When using an OAT, the same permission scopes
-> apply as with the CLI: read (pull) access is required to list mirrors, and
-> push access is required to create or delete them.
-@z
-
-@x
-Then, define a `dhi_mirror` resource for each repository you want to mirror:
-@y
-Then, define a `dhi_mirror` resource for each repository you want to mirror:
+Define a `dhi_mirror` resource for each repository you want to mirror:
 @z
 
 % snip code...

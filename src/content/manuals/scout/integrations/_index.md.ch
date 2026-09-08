@@ -2,12 +2,12 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-description: How to setup Docker Scout with other systems.
+description: How to set up Docker Scout with other systems.
 keywords: supply chain, security, integrations, registries, ci, environments
 title: Integrating Docker Scout with other systems
 linkTitle: Integrations
 @y
-description: How to setup Docker Scout with other systems.
+description: How to set up Docker Scout with other systems.
 keywords: supply chain, security, integrations, registries, ci, environments
 title: Integrating Docker Scout with other systems
 linkTitle: Integrations
@@ -64,11 +64,13 @@ The following container registry integrations are available:
 @z
 
 @x
-- [Amazon Elastic Container Registry](./registry/ecr.md)
-- [Azure Container Registry](./registry/acr.md)
+- [Amazon Elastic Container Registry](./registry/ecr.md) (deprecated, retiring September 1, 2026)
+- [Azure Container Registry](./registry/acr.md) (deprecated, retiring September 1, 2026)
+- [JFrog Artifactory](./registry/artifactory.md)
 @y
-- [Amazon Elastic Container Registry](./registry/ecr.md)
-- [Azure Container Registry](./registry/acr.md)
+- [Amazon Elastic Container Registry](./registry/ecr.md) (deprecated, retiring September 1, 2026)
+- [Azure Container Registry](./registry/acr.md) (deprecated, retiring September 1, 2026)
+- [JFrog Artifactory](./registry/artifactory.md)
 @z
 
 @x
@@ -132,15 +134,15 @@ versions, in your image repositories or in your other environments.
 @z
 
 @x
-The following environment monitoring integrations are available
+The following environment monitoring integrations are available:
 @y
-The following environment monitoring integrations are available
+The following environment monitoring integrations are available:
 @z
 
 @x
-- [Sysdig](./environment/sysdig.md)
+- [Generic CLI integration](./environment/cli.md)
 @y
-- [Sysdig](./environment/sysdig.md)
+- [Generic CLI integration](./environment/cli.md)
 @z
 
 @x
@@ -188,9 +190,9 @@ The following code quality integrations are available:
 @z
 
 @x
-- [SonarQube](sonarqube.md)
+- [SonarQube](./code-quality/sonarqube.md) (deprecated, retiring September 1, 2026)
 @y
-- [SonarQube](sonarqube.md)
+- [SonarQube](./code-quality/sonarqube.md) (deprecated, retiring September 1, 2026)
 @z
 
 @x
@@ -216,9 +218,9 @@ The following source code management integrations are available:
 @z
 
 @x
-- [GitHub](source-code-management/github.md) {{< badge color=blue text=Beta >}}
+- [GitHub](source-code-management/github.md) (retired)
 @y
-- [GitHub](source-code-management/github.md) {{< badge color=blue text=Beta >}}
+- [GitHub](source-code-management/github.md) (retired)
 @z
 
 @x
@@ -244,7 +246,7 @@ The following team collaboration integrations are available:
 @z
 
 @x
-- [Slack](./team-collaboration/slack.md)
+- [Slack](./team-collaboration/slack.md) (deprecated, retiring September 1, 2026)
 @y
-- [Slack](./team-collaboration/slack.md)
+- [Slack](./team-collaboration/slack.md) (deprecated, retiring September 1, 2026)
 @z

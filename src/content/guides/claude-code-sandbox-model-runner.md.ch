@@ -126,11 +126,11 @@ Before you start, make sure you have:
 @x
 - [Docker Desktop](../get-started/get-docker.md) or Docker Engine installed
 - [Docker Model Runner enabled](../manuals/ai/model-runner/get-started.md#enable-docker-model-runner)
-- [Docker Sandboxes (`sbx`) installed and signed in](../manuals/ai/sandboxes/get-started.md#install-and-sign-in)
+- [Docker Sandboxes (`sbx`) version 0.39.0 or later installed and signed in](../manuals/ai/sandboxes/install.md)
 @y
 - [Docker Desktop](../get-started/get-docker.md) or Docker Engine installed
 - [Docker Model Runner enabled](../manuals/ai/model-runner/get-started.md#enable-docker-model-runner)
-- [Docker Sandboxes (`sbx`) installed and signed in](../manuals/ai/sandboxes/get-started.md#install-and-sign-in)
+- [Docker Sandboxes (`sbx`) version 0.39.0 or later installed and signed in](../manuals/ai/sandboxes/install.md)
 @z
 
 @x
@@ -221,10 +221,10 @@ $ sbx policy allow network localhost:12434
 
 @x
 For background on host access from sandboxes, see
-[Accessing host services from a sandbox](../manuals/ai/sandboxes/usage.md#accessing-host-services-from-a-sandbox).
+[Accessing host services from a sandbox](../manuals/ai/sandboxes/workflows/development.md#accessing-host-services-from-a-sandbox).
 @y
 For background on host access from sandboxes, see
-[Accessing host services from a sandbox](../manuals/ai/sandboxes/usage.md#accessing-host-services-from-a-sandbox).
+[Accessing host services from a sandbox](../manuals/ai/sandboxes/workflows/development.md#accessing-host-services-from-a-sandbox).
 @z
 
 @x
@@ -234,34 +234,38 @@ For background on host access from sandboxes, see
 @z
 
 @x
-From your project directory, create a sandbox without launching the agent:
+From your project directory, create a sandbox without launching the agent. Set
+`ANTHROPIC_BASE_URL` so Claude Code uses Docker Model Runner whenever the
+sandbox starts:
 @y
-From your project directory, create a sandbox without launching the agent:
+From your project directory, create a sandbox without launching the agent. Set
+`ANTHROPIC_BASE_URL` so Claude Code uses Docker Model Runner whenever the
+sandbox starts:
 @z
 
 @x
 ```console
 $ cd ~/my-project
-$ sbx create claude --name claude-dmr .
+$ sbx create --name claude-dmr \
+  -e ANTHROPIC_BASE_URL=http://host.docker.internal:12434 \
+  claude .
 ```
 @y
 ```console
 $ cd ~/my-project
-$ sbx create claude --name claude-dmr .
+$ sbx create --name claude-dmr \
+  -e ANTHROPIC_BASE_URL=http://host.docker.internal:12434 \
+  claude .
 ```
 @z
 
 @x
-`sbx run` would also work, but it launches Claude Code immediately. Without
-`ANTHROPIC_BASE_URL` set, Claude Code points at `api.anthropic.com` and
-either prompts for OAuth or errors out before you can fix the endpoint.
-Creating the sandbox first lets you write the local endpoint into it before
+`sbx run` would also work, but it launches Claude Code immediately. Creating
+the sandbox first lets you confirm the variable and test connectivity before
 the agent starts.
 @y
-`sbx run` would also work, but it launches Claude Code immediately. Without
-`ANTHROPIC_BASE_URL` set, Claude Code points at `api.anthropic.com` and
-either prompts for OAuth or errors out before you can fix the endpoint.
-Creating the sandbox first lets you write the local endpoint into it before
+`sbx run` would also work, but it launches Claude Code immediately. Creating
+the sandbox first lets you confirm the variable and test connectivity before
 the agent starts.
 @z
 
@@ -270,49 +274,17 @@ You don't need to set an Anthropic API key or run `sbx secret set
 anthropic`. Docker Model Runner doesn't authenticate the local endpoint,
 and the sandbox proxy only injects credentials for requests bound for
 `api.anthropic.com`. See
-[Credentials](../manuals/ai/sandboxes/security/credentials.md) for the full
-list of services the proxy authenticates.
+[Credentials](../manuals/ai/sandboxes/configuration/credentials.md) for the full
+list of services the proxy authenticates. For more ways to set variables, see
+[Set environment variables](../manuals/ai/sandboxes/usage.md#set-environment-variables).
 @y
 You don't need to set an Anthropic API key or run `sbx secret set
 anthropic`. Docker Model Runner doesn't authenticate the local endpoint,
 and the sandbox proxy only injects credentials for requests bound for
 `api.anthropic.com`. See
-[Credentials](../manuals/ai/sandboxes/security/credentials.md) for the full
-list of services the proxy authenticates.
-@z
-
-@x
-## Step 4: Set the local endpoint inside the sandbox
-@y
-## Step 4: Set the local endpoint inside the sandbox
-@z
-
-@x
-Append `ANTHROPIC_BASE_URL` to the sandbox's persistent environment file so
-Claude Code reads it on every launch:
-@y
-Append `ANTHROPIC_BASE_URL` to the sandbox's persistent environment file so
-Claude Code reads it on every launch:
-@z
-
-@x
-```console
-$ sbx exec -d claude-dmr bash -c "echo 'export ANTHROPIC_BASE_URL=http://host.docker.internal:12434' >> /etc/sandbox-persistent.sh"
-```
-@y
-```console
-$ sbx exec -d claude-dmr bash -c "echo 'export ANTHROPIC_BASE_URL=http://host.docker.internal:12434' >> /etc/sandbox-persistent.sh"
-```
-@z
-
-@x
-The `bash -c` wrapper ensures the `>>` redirect runs inside the sandbox, not
-on your host. For details on this approach, see
-[How do I set custom environment variables inside a sandbox?](../manuals/ai/sandboxes/faq.md#how-do-i-set-custom-environment-variables-inside-a-sandbox).
-@y
-The `bash -c` wrapper ensures the `>>` redirect runs inside the sandbox, not
-on your host. For details on this approach, see
-[How do I set custom environment variables inside a sandbox?](../manuals/ai/sandboxes/faq.md#how-do-i-set-custom-environment-variables-inside-a-sandbox).
+[Credentials](../manuals/ai/sandboxes/configuration/credentials.md) for the full
+list of services the proxy authenticates. For more ways to set variables, see
+[Set environment variables](../manuals/ai/sandboxes/usage.md#set-environment-variables).
 @z
 
 @x
@@ -336,9 +308,9 @@ http://host.docker.internal:12434
 @z
 
 @x
-## Step 5: Verify connectivity to Docker Model Runner
+## Step 4: Verify connectivity to Docker Model Runner
 @y
-## Step 5: Verify connectivity to Docker Model Runner
+## Step 4: Verify connectivity to Docker Model Runner
 @z
 
 @x
@@ -382,9 +354,9 @@ see the
 @z
 
 @x
-## Step 6: Launch Claude Code with the local model
+## Step 5: Launch Claude Code with the local model
 @y
-## Step 6: Launch Claude Code with the local model
+## Step 5: Launch Claude Code with the local model
 @z
 
 @x
@@ -404,21 +376,21 @@ $ sbx run claude-dmr -- --model ai/devstral-small-2
 @z
 
 @x
-Everything after `--` is forwarded to the Claude Code CLI. Because
-`ANTHROPIC_BASE_URL` is set in the sandbox's persistent environment, Claude
-Code routes requests to Docker Model Runner on your host instead of
+Everything after `--` is forwarded to the Claude Code CLI.
+`ANTHROPIC_BASE_URL` is stored with the sandbox and available to every session,
+so Claude Code routes requests to Docker Model Runner on your host instead of
 `api.anthropic.com`.
 @y
-Everything after `--` is forwarded to the Claude Code CLI. Because
-`ANTHROPIC_BASE_URL` is set in the sandbox's persistent environment, Claude
-Code routes requests to Docker Model Runner on your host instead of
+Everything after `--` is forwarded to the Claude Code CLI.
+`ANTHROPIC_BASE_URL` is stored with the sandbox and available to every session,
+so Claude Code routes requests to Docker Model Runner on your host instead of
 `api.anthropic.com`.
 @z
 
 @x
-## Step 7: Inspect Claude Code requests
+## Step 6: Inspect Claude Code requests
 @y
-## Step 7: Inspect Claude Code requests
+## Step 6: Inspect Claude Code requests
 @z
 
 @x
@@ -446,9 +418,9 @@ without attaching to the sandbox.
 @z
 
 @x
-## Step 8: Package `gpt-oss` with a larger context window
+## Step 7: Package `gpt-oss` with a larger context window
 @y
-## Step 8: Package `gpt-oss` with a larger context window
+## Step 7: Package `gpt-oss` with a larger context window
 @z
 
 @x
@@ -516,11 +488,9 @@ $ sbx stop claude-dmr
 @z
 
 @x
-To remove the sandbox and everything inside, including the persistent
-environment file:
+To remove the sandbox and everything inside:
 @y
-To remove the sandbox and everything inside, including the persistent
-environment file:
+To remove the sandbox and everything inside:
 @z
 
 @x

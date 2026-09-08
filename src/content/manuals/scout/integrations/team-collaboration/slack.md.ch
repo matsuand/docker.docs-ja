@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リン クへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Integrate Docker Scout with Slack
@@ -17,6 +17,26 @@ description: |
   Integrate Docker Scout with Slack to receive real-time updates
   about vulnerabilities and policy compliance in Slack channels
 keywords: scout, team collaboration, slack, notifications, updates
+@z
+
+@x
+> [!IMPORTANT]
+>
+> The Docker Scout Slack integration is deprecated and will be retired on
+> July 30, 2026. To surface CVE and policy results without push notifications,
+> integrate `docker scout cves` or `docker scout policy` into your CI pipeline.
+> See [CI integrations](/manuals/scout/integrations/_index.md#continuous-integration).
+> For details, see the
+> [Scout platform release notes](/manuals/scout/release-notes/platform.md).
+@y
+> [!IMPORTANT]
+>
+> The Docker Scout Slack integration is deprecated and will be retired on
+> July 30, 2026. To surface CVE and policy results without push notifications,
+> integrate `docker scout cves` or `docker scout policy` into your CI pipeline.
+> See [CI integrations](manuals/scout/integrations/_index.md#continuous-integration).
+> For details, see the
+> [Scout platform release notes](manuals/scout/release-notes/platform.md).
 @z
 
 @x
@@ -59,22 +79,22 @@ to the Slack channels associated with the webhook.
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
 > pushed to the registry and analyzed by Docker Scout. If the last pushed image
-> is not by a newly disclosed CVE, then no notification will be triggered.
+> is not affected by a newly disclosed CVE, then no notification will be triggered.
 @y
 > [!NOTE]
 >
 > Notifications are only triggered for the *last pushed* image tags for each
 > repository. "Last pushed" refers to the image tag that was most recently
 > pushed to the registry and analyzed by Docker Scout. If the last pushed image
-> is not by a newly disclosed CVE, then no notification will be triggered.
+> is not affected by a newly disclosed CVE, then no notification will be triggered.
 @z
 
 @x
 For more information about Docker Scout notifications,
-see [Notification settings](/manuals/scout/explore/dashboard.md#notification-settings)
+see [Notification settings](/manuals/scout/explore/dashboard.md#notification-settings).
 @y
 For more information about Docker Scout notifications,
-see [Notification settings](manuals/scout/explore/dashboard.md#notification-settings)
+see [Notification settings](manuals/scout/explore/dashboard.md#notification-settings).
 @z
 
 @x
@@ -126,10 +146,10 @@ To add a Slack integration:
 @z
 
 @x
-After creating the webhook, Docker Scout begins to send notifications updates
+After creating the webhook, Docker Scout begins to send notification updates
 to the Slack channels associated with the webhook.
 @y
-After creating the webhook, Docker Scout begins to send notifications updates
+After creating the webhook, Docker Scout begins to send notification updates
 to the Slack channels associated with the webhook.
 @z
 

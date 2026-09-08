@@ -5,17 +5,18 @@
 bases = \
 	_index.md            \
 	build.md             \
-	cli.md               \
 	customize.md         \
-	explore.md           \
 	hardened-packages.md \
 	helm.md              \
 	mirror.md            \
 	policies.md          \
 	scan.md              \
+	search-evaluate.md   \
 	select-enterprise.md \
+	troubleshoot.md      \
 	use.md               \
-	verify.md
+	verify.md            \
+	vex-api.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

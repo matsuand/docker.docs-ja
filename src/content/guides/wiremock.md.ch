@@ -6,11 +6,13 @@ title: Mocking API services in development and testing with WireMock
 description: &desc Mocking API services in development and testing with WireMock
 keywords: WireMock, container-supported development
 linktitle: Mocking API services with WireMock
+summary: *desc
 @y
 title: Mocking API services in development and testing with WireMock
 description: &desc Mocking API services in development and testing with WireMock
 keywords: WireMock, container-supported development
 linktitle: Mocking API services with WireMock
+summary: *desc
 @z
 
 @x
@@ -156,9 +158,9 @@ Launch a quick demo of WireMock by using the following steps:
 @z
 
 @x
-    ![Diagram showing the WireMock container running on Docker Desktop ](./images/wiremock-using-docker.webp)
+    ![Diagram showing the WireMock container running on Docker Desktop](./images/wiremock-using-docker.webp)
 @y
-    ![Diagram showing the WireMock container running on Docker Desktop ](./images/wiremock-using-docker.webp)
+    ![Diagram showing the WireMock container running on Docker Desktop](./images/wiremock-using-docker.webp)
 @z
 
 @x
@@ -168,9 +170,9 @@ Launch a quick demo of WireMock by using the following steps:
 @z
 
 @x
-    ![Diagram showing the logs of WireMock container running on Docker Desktop ](./images/wiremock-logs-docker-desktop.webp)
+    ![Diagram showing the logs of WireMock container running on Docker Desktop](./images/wiremock-logs-docker-desktop.webp)
 @y
-    ![Diagram showing the logs of WireMock container running on Docker Desktop ](./images/wiremock-logs-docker-desktop.webp)
+    ![Diagram showing the logs of WireMock container running on Docker Desktop](./images/wiremock-logs-docker-desktop.webp)
 @z
 
 @x
@@ -248,9 +250,9 @@ Now that you have tried WireMock, let’s use it in development and testing. In 
 @z
 
 @x
-  ![Diagram showing the architecture of WireMock in development ](./images/wiremock-arch.webp)
+  ![Diagram showing the architecture of WireMock in development](./images/wiremock-arch.webp)
 @y
-  ![Diagram showing the architecture of WireMock in development ](./images/wiremock-arch.webp)
+  ![Diagram showing the architecture of WireMock in development](./images/wiremock-arch.webp)
 @z
 
 @x

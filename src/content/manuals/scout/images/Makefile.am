@@ -14,20 +14,10 @@ copyfiles = \
 	dd-image-view.png                \
 	gha-output.webp                  \
 	gha-policy-eval.webp             \
-	policy-detailed-results.webp     \
-	policy-image-list.webp           \
-	policy-overview.webp             \
-	policy-tag-view.webp             \
-	remediation.png                  \
-	score-a-shiny.png                \
-	score-badges-dd.png              \
-	score-badges-repolist.png        \
 	scout-metrics-grafana-policy.png \
 	scout-metrics-grafana-vulns.png  \
 	scout-metrics-prom-target.png    \
-	scout-policy-eval-ci.webp        \
 	scout-slack-notification.png     \
-	scout-sq-commit-sha.webp         \
 	suppressed-cve-cli.png
 
 include $(top_srcdir)/build-aux/common.mk

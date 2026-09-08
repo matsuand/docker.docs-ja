@@ -1,23 +1,23 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Company overview
+linkTitle: Company
 @y
 title: Company overview
+linkTitle: Company
 @z
 
 @x
 description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
-keywords: company, multiple organizations, manage companies, admin console, Docker Business settings
+keywords: company, multiple organizations, manage companies, Docker Home, Docker Business settings
 @y
 description: Learn how to manage multiple organizations using companies, including managing users, owners, and security.
-keywords: company, multiple organizations, manage companies, admin console, Docker Business settings
+keywords: company, multiple organizations, manage companies, Docker Home, Docker Business settings
 @z
-
-% grid:
 
 @x
   - title: Create a company
@@ -32,71 +32,27 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
 @z
 
 @x
-  - title: Manage organizations
-    description:
-      Learn how to add and manage organizations as well as seats within your
-      company.
+  - title: Manage your company
+    description: Add organizations, manage company owners, and invite members.
     icon: building-storefront
-    link: /admin/company/manage/organizations/
+    link: /admin/company/manage/
 @y
-  - title: Manage organizations
-    description:
-      Learn how to add and manage organizations as well as seats within your
-      company.
+  - title: Manage your company
+    description: Add organizations, manage company owners, and invite members.
     icon: building-storefront
-    link: __SUBDIR__/admin/company/manage/organizations/
+    link: __SUBDIR__/admin/company/manage/
 @z
 
 @x
-  - title: Manage company owners
-    description: Find out more about company owners and how to manage them.
-    icon: user-group
-    link: /admin/company/manage/owners/
-@y
-  - title: Manage company owners
-    description: Find out more about company owners and how to manage them.
-    icon: user-group
-    link: __SUBDIR__/admin/company/manage/owners/
-@z
-
-@x
-  - title: Manage users
-    description: Explore how to manage users in all organizations.
-    icon: user-plus
-    link: /admin/company/manage/users/
-@y
-  - title: Manage users
-    description: Explore how to manage users in all organizations.
-    icon: user-plus
-    link: __SUBDIR__/admin/company/manage/users/
-@z
-
-@x
-  - title: Configure single sign-on
-    description: Discover how to configure SSO for your entire company.
+  - title: Configure SSO and SCIM
+    description: Set up single sign-on and SCIM provisioning for your company.
     icon: key
     link: /enterprise/security/single-sign-on/
 @y
-  - title: Configure single sign-on
-    description: Discover how to configure SSO for your entire company.
+  - title: Configure SSO and SCIM
+    description: Set up single sign-on and SCIM provisioning for your company.
     icon: key
     link: __SUBDIR__/enterprise/security/single-sign-on/
-@z
-
-@x
-  - title: Set up SCIM
-    description:
-      Set up SCIM to automatically provision and deprovision users in your
-      company.
-    icon: clipboard-document-check
-    link: /enterprise/security/provisioning/scim/
-@y
-  - title: Set up SCIM
-    description:
-      Set up SCIM to automatically provision and deprovision users in your
-      company.
-    icon: clipboard-document-check
-    link: __SUBDIR__/enterprise/security/provisioning/scim/
 @z
 
 @x
@@ -130,19 +86,21 @@ keywords: company, multiple organizations, manage companies, admin console, Dock
 @z
 
 @x
-A company provides a single point of visibility across multiple organizations,
-simplifying organization and settings management.
+A company provides a single point of visibility across multiple
+organizations, for centralized organization and settings management.
+Organization owners with a Docker Business subscription can create a company
+and manage it through Docker Home.
 @y
-A company provides a single point of visibility across multiple organizations,
-simplifying organization and settings management.
+A company provides a single point of visibility across multiple
+organizations, for centralized organization and settings management.
+Organization owners with a Docker Business subscription can create a company
+and manage it through Docker Home.
 @z
 
 @x
-Organization owners with a Docker Business subscription can create a company
-and manage it through the [Docker Admin Console](https://app.docker.com/admin).
+## Company structure
 @y
-Organization owners with a Docker Business subscription can create a company
-and manage it through the [Docker Admin Console](https://app.docker.com/admin).
+## Company structure
 @z
 
 @x
@@ -156,41 +114,65 @@ organizations.
 @x
 ![Diagram showing how companies relate to Docker organizations](/admin/images/docker-admin-structure.webp)
 @y
-![Diagram showing how companies relate to Docker organizations](__SUBDIR__/admin/images/docker-admin-structure.webp)
+![Diagram showing how companies relate to Docker organizations](admin/images/docker-admin-structure.webp)
 @z
 
 @x
-## Key features
+For the full administration hierarchy, see the
+[administration overview](/manuals/admin/_index.md#company-and-organization-hierarchy).
 @y
-## Key features
+For the full administration hierarchy, see the
+[administration overview](manuals/admin/_index.md#company-and-organization-hierarchy).
 @z
 
 @x
-With a company, administrators can:
+## Company roles
 @y
-With a company, administrators can:
+## Company roles
 @z
 
 @x
-- View and manage all nested organizations
-- Configure company and organization settings centrally
-- Control access to the company
-- Have up to ten unique users assigned to the company owner role
-- Configure SSO and SCIM for all nested organizations
-- Enforce SSO for all users in the company
+A company includes one or more company owners. The creator of a company
+becomes both a company owner and an organization owner, and occupies a seat
+as organization owner. After creation, a company can have multiple owners,
+and each owner has visibility across the entire company. They can manage
+settings for every organization under it and have the same access rights as
+organization owners.
 @y
-- View and manage all nested organizations
-- Configure company and organization settings centrally
-- Control access to the company
-- Have up to ten unique users assigned to the company owner role
-- Configure SSO and SCIM for all nested organizations
-- Enforce SSO for all users in the company
+A company includes one or more company owners. The creator of a company
+becomes both a company owner and an organization owner, and occupies a seat
+as organization owner. After creation, a company can have multiple owners,
+and each owner has visibility across the entire company. They can manage
+settings for every organization under it and have the same access rights as
+organization owners.
 @z
 
 @x
-## Create and manage your company
+- A company can have up to ten unique company owners.
+- Company owners don't occupy a seat unless one of the following applies:
+  - They're added as a member of an organization under the company.
+  - SSO is enabled and the company owner signs in through SSO, which
+    automatically adds them as an organization member.
 @y
-## Create and manage your company
+- A company can have up to ten unique company owners.
+- Company owners don't occupy a seat unless one of the following applies:
+  - They're added as a member of an organization under the company.
+  - SSO is enabled and the company owner signs in through SSO, which
+    automatically adds them as an organization member.
+@z
+
+@x
+To add or remove company owners, see
+[Manage your company](/manuals/admin/company/manage.md#company-owners).
+@y
+To add or remove company owners, see
+[Manage your company](manuals/admin/company/manage.md#company-owners).
+@z
+
+@x
+## Next steps
+@y
+## Next steps
 @z
 
 @x

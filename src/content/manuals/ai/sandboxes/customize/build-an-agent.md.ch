@@ -44,11 +44,11 @@ behind a part of the spec, so you can apply the same reasoning to other agents.
 @z
 
 @x
-For reference on every field, see the [Kits](kits.md) page. This tutorial
-focuses on the journey.
+For reference on every field, see the [Kit spec reference](kit-reference.md).
+This tutorial focuses on the journey.
 @y
-For reference on every field, see the [Kits](kits.md) page. This tutorial
-focuses on the journey.
+For reference on every field, see the [Kit spec reference](kit-reference.md).
+This tutorial focuses on the journey.
 @z
 
 @x
@@ -69,12 +69,12 @@ useful as a reference while you follow along.
 
 @x
 An agent kit needs a container image that satisfies the
-[base image requirements](kits.md#base-image-requirements): non-root
+[base image requirements](kit-reference.md#base-image-requirements): non-root
 `agent` user at UID 1000, passwordless sudo, `/home/agent/` home, and HTTP
 proxy environment variable forwarding.
 @y
 An agent kit needs a container image that satisfies the
-[base image requirements](kits.md#base-image-requirements): non-root
+[base image requirements](kit-reference.md#base-image-requirements): non-root
 `agent` user at UID 1000, passwordless sudo, `/home/agent/` home, and HTTP
 proxy environment variable forwarding.
 @z
@@ -162,48 +162,46 @@ specific command for storing the key.
 @z
 
 @x
-## Write the agent block
+## Write the sandbox block
 @y
-## Write the agent block
+## Write the sandbox block
 @z
 
 @x
-The `agent:` block tells the sandbox how to launch Amp when the user
+The `sandbox:` block tells the sandbox how to launch Amp when the user
 attaches.
 @y
-The `agent:` block tells the sandbox how to launch Amp when the user
+The `sandbox:` block tells the sandbox how to launch Amp when the user
 attaches.
 @z
 
 @x
 ```yaml {title="amp/spec.yaml"}
 schemaVersion: "1"
-kind: agent
+kind: sandbox
 name: amp
 displayName: Amp
 description: The frontier coding agent.
 @y
 ```yaml {title="amp/spec.yaml"}
 schemaVersion: "1"
-kind: agent
+kind: sandbox
 name: amp
 displayName: Amp
 description: The frontier coding agent.
 @z
 
 @x
-agent:
+sandbox:
   image: "docker/sandbox-templates:shell-docker"
   aiFilename: AGENTS.md
-  persistence: persistent
   entrypoint:
     run: [amp, --dangerously-allow-all]
 ```
 @y
-agent:
+sandbox:
   image: "docker/sandbox-templates:shell-docker"
   aiFilename: AGENTS.md
-  persistence: persistent
   entrypoint:
     run: [amp, --dangerously-allow-all]
 ```
@@ -211,20 +209,14 @@ agent:
 
 @x
 - `aiFilename: AGENTS.md` tells the sandbox to create `AGENTS.md` at launch
-  and append the [`memory`](#prime-amp-with-memory) block to it. Amp reads
+  and append the [`agentContext`](#prime-amp-with-memory) block to it. Amp reads
   this file for instructions.
-- `persistence: persistent` keeps Amp's state (auth tokens, history) in a
-  named volume across sandbox restarts. Without it, you re-authenticate
-  every time.
 - `entrypoint.run` runs `amp` in "YOLO-mode" when the sandbox starts. Adjust if
   you want to pass different args on startup.
 @y
 - `aiFilename: AGENTS.md` tells the sandbox to create `AGENTS.md` at launch
-  and append the [`memory`](#prime-amp-with-memory) block to it. Amp reads
+  and append the [`agentContext`](#prime-amp-with-memory) block to it. Amp reads
   this file for instructions.
-- `persistence: persistent` keeps Amp's state (auth tokens, history) in a
-  named volume across sandbox restarts. Without it, you re-authenticate
-  every time.
 - `entrypoint.run` runs `amp` in "YOLO-mode" when the sandbox starts. Adjust if
   you want to pass different args on startup.
 @z
@@ -380,22 +372,22 @@ pick any name.
 @z
 
 @x
-The `memory` field appends markdown to `AGENTS.md` at sandbox creation.
+The `agentContext` field appends markdown to `AGENTS.md` at sandbox creation.
 Use it to tell Amp about the sandbox environment so it knows the
 conventions when it starts.
 @y
-The `memory` field appends markdown to `AGENTS.md` at sandbox creation.
+The `agentContext` field appends markdown to `AGENTS.md` at sandbox creation.
 Use it to tell Amp about the sandbox environment so it knows the
 conventions when it starts.
 @z
 
 @x
 ```yaml
-memory: |
+agentContext: |
   ## Sandbox environment
 @y
 ```yaml
-memory: |
+agentContext: |
   ## Sandbox environment
 @z
 
@@ -436,31 +428,29 @@ Putting it all together:
 @x
 ```yaml {title="amp/spec.yaml"}
 schemaVersion: "1"
-kind: agent
+kind: sandbox
 name: amp
 displayName: Amp
 description: The frontier coding agent.
 @y
 ```yaml {title="amp/spec.yaml"}
 schemaVersion: "1"
-kind: agent
+kind: sandbox
 name: amp
 displayName: Amp
 description: The frontier coding agent.
 @z
 
 @x
-agent:
+sandbox:
   image: "docker/sandbox-templates:shell-docker"
   aiFilename: AGENTS.md
-  persistence: persistent
   entrypoint:
     run: [amp, --dangerously-allow-all]
 @y
-agent:
+sandbox:
   image: "docker/sandbox-templates:shell-docker"
   aiFilename: AGENTS.md
-  persistence: persistent
   entrypoint:
     run: [amp, --dangerously-allow-all]
 @z
@@ -504,10 +494,10 @@ commands:
 @z
 
 @x
-memory: |
+agentContext: |
   ## Sandbox environment
 @y
-memory: |
+agentContext: |
   ## Sandbox environment
 @z
 
@@ -551,7 +541,7 @@ expected format:
 
 @x
 ```console
-$ sbx secret set-custom -g \
+$ sbx secret set-custom \
     --host ampcode.com \
     --env AMP_API_KEY \
     --placeholder "sgamp-{rand}" \
@@ -559,7 +549,7 @@ $ sbx secret set-custom -g \
 ```
 @y
 ```console
-$ sbx secret set-custom -g \
+$ sbx secret set-custom \
     --host ampcode.com \
     --env AMP_API_KEY \
     --placeholder "sgamp-{rand}" \
@@ -599,14 +589,12 @@ outbound requests to `ampcode.com`.
 
 @x
 > [!NOTE]
-> `sbx secret set-custom` is an experimental command and isn't listed
-> in `sbx secret --help`. It works today but may change in future
+> `sbx secret set-custom` is experimental and may change in future
 > releases. This tutorial surfaces it because there's no other path to
 > register a custom-format placeholder.
 @y
 > [!NOTE]
-> `sbx secret set-custom` is an experimental command and isn't listed
-> in `sbx secret --help`. It works today but may change in future
+> `sbx secret set-custom` is experimental and may change in future
 > releases. This tutorial surfaces it because there's no other path to
 > register a custom-format placeholder.
 @z
@@ -700,10 +688,10 @@ Two loops help:
 @z
 
 @x
-Flesh out the `memory` block as you refine how Amp should behave in the
+Flesh out the `agentContext` block as you refine how Amp should behave in the
 sandbox.
 @y
-Flesh out the `memory` block as you refine how Amp should behave in the
+Flesh out the `agentContext` block as you refine how Amp should behave in the
 sandbox.
 @z
 
@@ -770,10 +758,10 @@ the same decisions for your agent:
 @z
 
 @x
-The rest — memory block, network-policy iteration, packaging — is the
+The rest — agent-context block, network-policy iteration, packaging — is the
 same regardless of agent.
 @y
-The rest — memory block, network-policy iteration, packaging — is the
+The rest — agent-context block, network-policy iteration, packaging — is the
 same regardless of agent.
 @z
 
@@ -793,22 +781,16 @@ the host to `sbx secret rm`:
 
 @x
 ```console
-$ sbx secret rm -g --host ampcode.com
+$ sbx secret rm --host ampcode.com
 ```
 @y
 ```console
-$ sbx secret rm -g --host ampcode.com
+$ sbx secret rm --host ampcode.com
 ```
 @z
 
 @x
-The `--host` flag on `sbx secret rm` isn't listed in
-`sbx secret rm --help`, but it's the only way to remove entries
-created with `set-custom`. Like `set-custom` itself, it's experimental
-and may change.
+The `--host` flag is part of the experimental `set-custom` surface and doesn't appear in `sbx secret rm --help`.
 @y
-The `--host` flag on `sbx secret rm` isn't listed in
-`sbx secret rm --help`, but it's the only way to remove entries
-created with `set-custom`. Like `set-custom` itself, it's experimental
-and may change.
+The `--host` flag is part of the experimental `set-custom` surface and doesn't appear in `sbx secret rm --help`.
 @z

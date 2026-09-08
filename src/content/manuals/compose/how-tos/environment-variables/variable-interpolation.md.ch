@@ -149,12 +149,20 @@ Note that when the same variable is declared by multiple sources, precedence app
 
 @x
 1. Variables from your shell environment
-2. If `--env-file` is not set, variables set by an `.env` file in local working directory (`PWD`)
-3. Variables from a file set by `--env-file` or an `.env` file in project directory
+2. Variables from a file set by `--env-file`
+3. If `--env-file` is not set, variables from an `.env` file in the project directory,
+   where the project directory is:
+   - `--project-directory` if set
+   - otherwise, the directory of the first Compose file specified with `-f`/`--file`
+   - otherwise, your shell's current directory (`PWD`)
 @y
 1. Variables from your shell environment
-2. If `--env-file` is not set, variables set by an `.env` file in local working directory (`PWD`)
-3. Variables from a file set by `--env-file` or an `.env` file in project directory
+2. Variables from a file set by `--env-file`
+3. If `--env-file` is not set, variables from an `.env` file in the project directory,
+   where the project directory is:
+   - `--project-directory` if set
+   - otherwise, the directory of the first Compose file specified with `-f`/`--file`
+   - otherwise, your shell's current directory (`PWD`)
 @z
 
 @x
@@ -532,13 +540,21 @@ An `.env` file can also be used to declare [pre-defined environment variables](e
 @z
 
 @x
-When executed without an explicit `--env-file` flag, Compose searches for an `.env` file in your working directory ([PWD](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-PWD)) and loads values 
-both for self-configuration and interpolation. If the values in this file define the `COMPOSE_FILE` pre-defined variable, which results in a project directory being set to another folder, 
-Compose will load a second `.env` file, if present. This second `.env` file has a lower precedence. 
+When executed without an explicit `--env-file` flag, Compose searches for an `.env` file
+in the project directory and loads values both for self-configuration and interpolation.
+The project directory is determined by `--project-directory` if set, otherwise by the
+directory of the first Compose file specified with `-f`/`--file`, otherwise `PWD`.
+If the values in this file define the `COMPOSE_FILE` pre-defined variable, which results
+in a project directory being set to another folder, Compose loads a second `.env` file,
+if present. This second `.env` file has a lower precedence. 
 @y
-When executed without an explicit `--env-file` flag, Compose searches for an `.env` file in your working directory ([PWD](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-PWD)) and loads values 
-both for self-configuration and interpolation. If the values in this file define the `COMPOSE_FILE` pre-defined variable, which results in a project directory being set to another folder, 
-Compose will load a second `.env` file, if present. This second `.env` file has a lower precedence. 
+When executed without an explicit `--env-file` flag, Compose searches for an `.env` file
+in the project directory and loads values both for self-configuration and interpolation.
+The project directory is determined by `--project-directory` if set, otherwise by the
+directory of the first Compose file specified with `-f`/`--file`, otherwise `PWD`.
+If the values in this file define the `COMPOSE_FILE` pre-defined variable, which results
+in a project directory being set to another folder, Compose loads a second `.env` file,
+if present. This second `.env` file has a lower precedence. 
 @z
 
 @x

@@ -23,10 +23,12 @@ description: |-
 
 @x
     Removal requires confirmation; use --force to skip confirmation prompts
-    (for non-interactive scripts). Use --all to remove every sandbox.
+    (for non-interactive scripts) and to delete a sandbox that is in use
+    (e.g. an open SSH connection). Use --all to remove every sandbox.
 @y
     Removal requires confirmation; use --force to skip confirmation prompts
-    (for non-interactive scripts). Use --all to remove every sandbox.
+    (for non-interactive scripts) and to delete a sandbox that is in use
+    (e.g. an open SSH connection). Use --all to remove every sandbox.
 @z
 
 @x
@@ -44,9 +46,11 @@ usage: sbx rm [SANDBOX...] [flags]
 @z
 
 @x force
-      usage: Skip confirmation prompts
+      usage: |
+        Skip confirmation prompts and delete even if in use (e.g. an open SSH connection)
 @y
-      usage: Skip confirmation prompts
+      usage: |
+        Skip confirmation prompts and delete even if in use (e.g. an open SSH connection)
 @z
 
 @x help

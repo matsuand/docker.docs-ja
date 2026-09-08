@@ -257,8 +257,8 @@ options:
 @z
 
 @x
-- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at [Get started with Docker](/get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
 @y
-- [Docker ワークショップ](get-started/workshop/_index.md) を確認してみてください。
+- [Docker を使ってはじめよう](get-started/introduction/_index.md) を確認してみてください。
   そこではイメージのビルド方法や、コンテナー化アプリケーションとしてそれを実行する方法について説明しています。
 @z

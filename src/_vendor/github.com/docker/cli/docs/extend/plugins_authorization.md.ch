@@ -179,20 +179,28 @@ The sequence diagrams below depict an allow and deny authorization flow:
 Each request sent to the plugin includes the authenticated user, the HTTP
 headers, and the request/response body. Only the user name and the
 authentication method used are passed to the plugin. Most importantly, no user
-credentials or tokens are passed. Finally, not all request/response bodies
-are sent to the authorization plugin. Only request/response bodies where
-the `Content-Type` is `application/json` are sent to the authorization plugin;
-bodies of any other `Content-Type` are not visible to the plugin and cannot
-be used for enforcement, even though the daemon may still act on this data.
+credentials or tokens are passed.
 @y
 Each request sent to the plugin includes the authenticated user, the HTTP
 headers, and the request/response body. Only the user name and the
 authentication method used are passed to the plugin. Most importantly, no user
-credentials or tokens are passed. Finally, not all request/response bodies
-are sent to the authorization plugin. Only request/response bodies where
-the `Content-Type` is `application/json` are sent to the authorization plugin;
-bodies of any other `Content-Type` are not visible to the plugin and cannot
-be used for enforcement, even though the daemon may still act on this data.
+credentials or tokens are passed.
+@z
+
+@x
+> [!NOTE]
+> Authorization plugins enforce requests to the Docker daemon's HTTP API only. gRPC method
+> calls, whether dispatched natively or upgraded through `POST /grpc`, are not subject to authorization.
+> Furthermore, HTTP request/response bodies where the `Content-Type` is `application/json` are forwarded;
+> bodies of any other type are not visible to the plugin and cannot be used for enforcement,
+> even though the daemon acts on this data.
+@y
+> [!NOTE]
+> Authorization plugins enforce requests to the Docker daemon's HTTP API only. gRPC method
+> calls, whether dispatched natively or upgraded through `POST /grpc`, are not subject to authorization.
+> Furthermore, HTTP request/response bodies where the `Content-Type` is `application/json` are forwarded;
+> bodies of any other type are not visible to the plugin and cannot be used for enforcement,
+> even though the daemon acts on this data.
 @z
 
 @x
@@ -211,6 +219,42 @@ not applied to the rest of the flow. Specifically, the streaming data is not
 passed to the authorization plugins. For commands that return chunked HTTP
 response, such as `logs` and `events`, only the HTTP request is sent to the
 authorization plugins.
+@z
+
+@x
+The Engine's authorization middleware fails closed: when a plugin returns an error or returns `Allow: false`,
+the request is denied and the error is surfaced to the client. Plugins should also fail closed: if the plugin
+cannot confidently evaluate a request, it should return an error or `Allow: false`.
+@y
+The Engine's authorization middleware fails closed: when a plugin returns an error or returns `Allow: false`,
+the request is denied and the error is surfaced to the client. Plugins should also fail closed: if the plugin
+cannot confidently evaluate a request, it should return an error or `Allow: false`.
+@z
+
+@x
+> [!WARNING]
+> Because the plugin receives the [**raw** request body](#authzpluginauthzreq) from the daemon, it must
+> apply the same decoding semantics as the daemon to be sure it evaluates the request the daemon will
+> act on. The daemon decodes JSON with Go's [`encoding/json.Unmarshal`](https://pkg.go.dev/encoding/json#Unmarshal).
+>
+> The same requirement applies to the response body. Plugins that depend on `ResponseBody`
+> inspection for redaction or content-filtering should restrict their policies to endpoints
+> whose response is produced as a single write (typical of REST-style API responses). For
+> commands whose responses are streamed or are likely to exceed the [buffer](#response-body-size-and-partial-buffering) through multiple
+> writes, do not rely on `ResponseBody` for security-relevant decisions; perform the filtering
+> in a separate layer in front of the daemon.
+@y
+> [!WARNING]
+> Because the plugin receives the [**raw** request body](#authzpluginauthzreq) from the daemon, it must
+> apply the same decoding semantics as the daemon to be sure it evaluates the request the daemon will
+> act on. The daemon decodes JSON with Go's [`encoding/json.Unmarshal`](https://pkg.go.dev/encoding/json#Unmarshal).
+>
+> The same requirement applies to the response body. Plugins that depend on `ResponseBody`
+> inspection for redaction or content-filtering should restrict their policies to endpoints
+> whose response is produced as a single write (typical of REST-style API responses). For
+> commands whose responses are streamed or are likely to exceed the [buffer](#response-body-size-and-partial-buffering) through multiple
+> writes, do not rely on `ResponseBody` for security-relevant decisions; perform the filtering
+> in a separate layer in front of the daemon.
 @z
 
 @x
@@ -249,26 +293,6 @@ is the practical effect of this 64 KiB threshold combined with the
 `io.WriteFlusher` write pattern used by streaming handlers, where each write
 is immediately drained to the client and is therefore no longer available
 for plugin inspection by the time the handler returns.
-@z
-
-@x
-> [!NOTE]
-> Plugins that depend on `ResponseBody` inspection for redaction or
-> content-filtering should restrict their policies to endpoints whose
-> response is produced as a single write (typical of REST-style API
-> responses). For commands whose responses are streamed or are likely to
-> exceed the buffer through multiple writes, do not rely on `ResponseBody`
-> for security-relevant decisions; perform the filtering in a separate
-> layer in front of the daemon.
-@y
-> [!NOTE]
-> Plugins that depend on `ResponseBody` inspection for redaction or
-> content-filtering should restrict their policies to endpoints whose
-> response is produced as a single write (typical of REST-style API
-> responses). For commands whose responses are streamed or are likely to
-> exceed the buffer through multiple writes, do not rely on `ResponseBody`
-> for security-relevant decisions; perform the filtering in a separate
-> layer in front of the daemon.
 @z
 
 @x
@@ -573,7 +597,7 @@ Name                   | Type              | Description
 User                   | string            | The user identification
 Authentication method  | string            | The authentication method used
 Request method         | enum              | The HTTP method (GET/DELETE/POST)
-Request URI            | string            | The HTTP request URI including API version (e.g., v.1.17/containers/json)
+Request URI            | string            | The HTTP request URI including API version, as sent by the client (e.g., v.1.17/containers/json)
 Request headers        | map[string]string | Request headers as key value pairs (without the authorization header)
 Request body           | []byte            | Raw request body
 @y
@@ -582,7 +606,7 @@ Name                   | Type              | Description
 User                   | string            | The user identification
 Authentication method  | string            | The authentication method used
 Request method         | enum              | The HTTP method (GET/DELETE/POST)
-Request URI            | string            | The HTTP request URI including API version (e.g., v.1.17/containers/json)
+Request URI            | string            | The HTTP request URI including API version, as sent by the client (e.g., v.1.17/containers/json)
 Request headers        | map[string]string | Request headers as key value pairs (without the authorization header)
 Request body           | []byte            | Raw request body
 @z
@@ -631,7 +655,7 @@ Name                    | Type              | Description
 User                    | string            | The user identification
 Authentication method   | string            | The authentication method used
 Request method          | string            | The HTTP method (GET/DELETE/POST)
-Request URI             | string            | The HTTP request URI including API version (e.g., v.1.17/containers/json)
+Request URI             | string            | The HTTP request URI including API version, as sent by the client (e.g., v.1.17/containers/json)
 Request headers         | map[string]string | Request headers as key value pairs (without the authorization header)
 Request body            | []byte            | Raw request body
 Response status code    | int               | Status code from the Docker daemon
@@ -643,7 +667,7 @@ Name                    | Type              | Description
 User                    | string            | The user identification
 Authentication method   | string            | The authentication method used
 Request method          | string            | The HTTP method (GET/DELETE/POST)
-Request URI             | string            | The HTTP request URI including API version (e.g., v.1.17/containers/json)
+Request URI             | string            | The HTTP request URI including API version, as sent by the client (e.g., v.1.17/containers/json)
 Request headers         | map[string]string | Request headers as key value pairs (without the authorization header)
 Request body            | []byte            | Raw request body
 Response status code    | int               | Status code from the Docker daemon

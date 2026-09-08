@@ -14,6 +14,16 @@ description: |-
 @z
 
 @x
+    The first positional argument is the agent to run. To re-attach to an existing
+    sandbox by name, use --name; the agent positional is optional when the named
+    sandbox already exists and is read from its spec.
+@y
+    The first positional argument is the agent to run. To re-attach to an existing
+    sandbox by name, use --name; the agent positional is optional when the named
+    sandbox already exists and is read from its spec.
+@z
+
+@x
     Pass agent arguments after the "--" separator. Additional workspaces can be
     provided as extra arguments. Append ":ro" to mount them read-only.
 @y
@@ -22,9 +32,13 @@ description: |-
 @z
 
 @x
-    To create a sandbox without attaching, use "sbx create" instead.
+    To create a sandbox without attaching, use "sbx create" instead, or
+    pass --detached (-d) to print the sandbox ID and exit without opening an
+    interactive session.
 @y
-    To create a sandbox without attaching, use "sbx create" instead.
+    To create a sandbox without attaching, use "sbx create" instead, or
+    pass --detached (-d) to print the sandbox ID and exit without opening an
+    interactive session.
 @z
 
 @x
@@ -34,9 +48,9 @@ description: |-
 @z
 
 @x
-usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
+usage: sbx run [flags] [AGENT] [PATH...] [-- AGENT_ARGS...]
 @y
-usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
+usage: sbx run [flags] [AGENT] [PATH...] [-- AGENT_ARGS...]
 @z
 
 % options:
@@ -51,10 +65,34 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
 
 @x cpus
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
 @y
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
+@z
+
+@x deny-network
+      usage: |
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+@y
+      usage: |
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+@z
+
+@x env
+      usage: |
+        Set an environment variable in the sandbox (can be repeated): KEY=VALUE, or a bare KEY to take the value from the current environment. Applies to the agent session, so it takes effect on a re-attach too; also baked into the sandbox when this run creates it
+@y
+      usage: |
+        Set an environment variable in the sandbox (can be repeated): KEY=VALUE, or a bare KEY to take the value from the current environment. Applies to the agent session, so it takes effect on a re-attach too; also baked into the sandbox when this run creates it
+@z
+
+@x env-file
+      usage: |
+        Read environment variables from a file (can be repeated). --env wins over any file; a later file wins over an earlier one. Applies to the agent session, so it takes effect on a re-attach too; also baked into the sandbox when this run creates it
+@y
+      usage: |
+        Read environment variables from a file (can be repeated). --env wins over any file; a later file wins over an earlier one. Applies to the agent session, so it takes effect on a re-attach too; also baked into the sandbox when this run creates it
 @z
 
 @x help
@@ -71,14 +109,6 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
         Kit reference (directory, ZIP, or OCI). Can be specified multiple times
 @z
 
-@x mcp
-      usage: |
-        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
-@y
-      usage: |
-        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
-@z
-
 @x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
@@ -91,6 +121,14 @@ usage: sbx run [flags] SANDBOX | AGENT [PATH...] [-- AGENT_ARGS...]
       usage: 'Name for the sandbox (default: <agent>-<workdir>)'
 @y
       usage: 'Name for the sandbox (default: <agent>-<workdir>)'
+@z
+
+@x publish
+      usage: |
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx ports")
+@y
+      usage: |
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx ports")
 @z
 
 @x template
@@ -128,11 +166,19 @@ example: |4-
 @z
 
 @x
-      # Run an existing sandbox
-      sbx run existing-sandbox
+      # Re-attach to an existing sandbox by name (agent read from its spec)
+      sbx run --name existing-sandbox
 @y
-      # Run an existing sandbox
-      sbx run existing-sandbox
+      # Re-attach to an existing sandbox by name (agent read from its spec)
+      sbx run --name existing-sandbox
+@z
+
+@x
+      # Re-attach to an existing sandbox by name and verify the expected agent
+      sbx run claude --name existing-sandbox
+@y
+      # Re-attach to an existing sandbox by name and verify the expected agent
+      sbx run claude --name existing-sandbox
 @z
 
 @x

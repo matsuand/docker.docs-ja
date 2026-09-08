@@ -3,12 +3,9 @@
 ##
 
 bases = \
-	_index.md      \
-	credentials.md \
-	defaults.md    \
-	governance.md  \
-	isolation.md   \
-	policy.md
+	_index.md    \
+	defaults.md  \
+	isolation.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

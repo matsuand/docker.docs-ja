@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: The Containerized SDLC"
 linkTitle: "Lab: The Containerized SDLC"
@@ -33,22 +31,6 @@ keywords: Docker, Compose, Testcontainers, Kubernetes, CI/CD, SDLC, lab, labspac
   time: 60 minutes
 @y
   time: 60 分
-@z
-
-@x
-    - title: Docker Compose docs
-      url: /compose/
-    - title: Testcontainers docs
-      url: https://testcontainers.com/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-containerized-sdlc
-@y
-    - title: Docker Compose docs
-      url: __SUBDIR__/compose/
-    - title: Testcontainers docs
-      url: https://testcontainers.com/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-containerized-sdlc
 @z
 
 @x

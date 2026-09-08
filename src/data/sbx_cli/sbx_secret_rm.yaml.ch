@@ -4,25 +4,27 @@
 @x
 name: sbx secret rm
 synopsis: Remove a secret
-usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
+usage: sbx secret rm [SERVICE] [flags]
 @y
 name: sbx secret rm
 synopsis: Remove a secret
-usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
+usage: sbx secret rm [SERVICE] [flags]
 @z
 
 % options:
+
+@x all-sandboxes
+      usage: |
+        Remove registry credentials injected into every sandbox (requires --registry)
+@y
+      usage: |
+        Remove registry credentials injected into every sandbox (requires --registry)
+@z
 
 @x force
       usage: Delete without confirmation prompt
 @y
       usage: Delete without confirmation prompt
-@z
-
-@x global
-      usage: Use global secret scope
-@y
-      usage: Use global secret scope
 @z
 
 @x help
@@ -37,6 +39,12 @@ usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
       usage: Registry hostname to remove pull credentials for
 @z
 
+@x sandbox
+      usage: 'Scope the removal to one sandbox (default: global)'
+@y
+      usage: 'Scope the removal to one sandbox (default: global)'
+@z
+
 % inherited_options:
 
 @x debug
@@ -48,37 +56,45 @@ usage: sbx secret rm [-g | SANDBOX] [SERVICE] [flags]
 @x
 example: |4-
       # Remove a global secret
-      sbx secret rm -g github
+      sbx secret rm github
 @y
 example: |4-
       # Remove a global secret
-      sbx secret rm -g github
+      sbx secret rm github
 @z
 
 @x
       # Remove a sandbox-scoped secret
-      sbx secret rm my-sandbox openai
+      sbx secret rm openai --sandbox my-sandbox
 @y
       # Remove a sandbox-scoped secret
-      sbx secret rm my-sandbox openai
+      sbx secret rm openai --sandbox my-sandbox
 @z
 
 @x
       # Remove without confirmation prompt
-      sbx secret rm -g github -f
+      sbx secret rm github -f
 @y
       # Remove without confirmation prompt
-      sbx secret rm -g github -f
+      sbx secret rm github -f
 @z
 
 @x
       # Remove OpenAI or Anthropic credential(s) from global scope (OAuth and/or API key)
-      sbx secret rm -g openai
-      sbx secret rm -g anthropic
+      sbx secret rm openai
+      sbx secret rm anthropic
 @y
       # Remove OpenAI or Anthropic credential(s) from global scope (OAuth and/or API key)
-      sbx secret rm -g openai
-      sbx secret rm -g anthropic
+      sbx secret rm openai
+      sbx secret rm anthropic
+@z
+
+@x
+      # Remove custom secret by specifying the placeholder value
+      sbx secret rm --placeholder docker-placeholder-value
+@y
+      # Remove custom secret by specifying the placeholder value
+      sbx secret rm --placeholder docker-placeholder-value
 @z
 
 @x
@@ -91,10 +107,10 @@ example: |4-
 
 @x
       # Remove only the global (all-sandboxes) registry credential
-      sbx secret rm -g --registry ghcr.io -f
+      sbx secret rm --all-sandboxes --registry ghcr.io -f
 @y
       # Remove only the global (all-sandboxes) registry credential
-      sbx secret rm -g --registry ghcr.io -f
+      sbx secret rm --all-sandboxes --registry ghcr.io -f
 @z
 
 % see_also:

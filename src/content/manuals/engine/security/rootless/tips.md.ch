@@ -396,30 +396,28 @@ memory pids
 @z
 
 @x
-To allow delegation of all controllers, you need to change the systemd configuration as follows:
+To allow delegation of all controllers, change the systemd configuration:
 @y
-To allow delegation of all controllers, you need to change the systemd configuration as follows:
+To allow delegation of all controllers, change the systemd configuration:
 @z
 
+% snip command...
+
 @x
-```console
-# mkdir -p /etc/systemd/system/user@.service.d
-# cat > /etc/systemd/system/user@.service.d/delegate.conf << EOF
-[Service]
-Delegate=cpu cpuset io memory pids
-EOF
-# systemctl daemon-reload
-```
+Create `/etc/systemd/system/user@.service.d/delegate.conf`:
 @y
-```console
-# mkdir -p /etc/systemd/system/user@.service.d
-# cat > /etc/systemd/system/user@.service.d/delegate.conf << EOF
-[Service]
-Delegate=cpu cpuset io memory pids
-EOF
-# systemctl daemon-reload
-```
+Create `/etc/systemd/system/user@.service.d/delegate.conf`:
 @z
+
+% snip code...
+
+@x
+Then reload systemd:
+@y
+Then reload systemd:
+@z
+
+% snip command...
 
 @x
 > [!NOTE]

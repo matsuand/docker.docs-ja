@@ -87,30 +87,20 @@ Cursor supports two authentication methods: an API key or OAuth.
 
 @x
 **API key**: Store your Cursor API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
 **API key**: Store your Cursor API key using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ sbx secret set -g cursor
+$ sbx secret set cursor
 ```
 @y
 ```console
-$ sbx secret set -g cursor
+$ sbx secret set cursor
 ```
-@z
-
-@x
-Alternatively, export the `CURSOR_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
-@y
-Alternatively, export the `CURSOR_API_KEY` environment variable in your shell
-before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x
@@ -174,21 +164,29 @@ cursor-agent --yolo
 @z
 
 @x
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @y
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @z
 
 @x
 ```console
-$ sbx run cursor -- --yolo -p "refactor this"
+$ sbx run cursor -- -p "refactor this"   # runs cursor-agent --yolo -p "refactor this"
 ```
 @y
 ```console
-$ sbx run cursor -- --yolo -p "refactor this"
+$ sbx run cursor -- -p "refactor this"   # runs cursor-agent --yolo -p "refactor this"
 ```
+@z
+
+@x
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
+@y
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
 @z
 
 @x

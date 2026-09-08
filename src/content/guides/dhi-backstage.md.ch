@@ -8,13 +8,11 @@ title: Secure a Backstage application with Docker Hardened Images
 description: Secure a Backstage developer portal using Docker Hardened Images, covering native module compilation, Socket Firewall protection, and distroless runtime images.
 summary: Learn how to secure a Backstage developer portal using Docker Hardened Images (DHI), handle native module compilation with better-sqlite3, add Socket Firewall protection during dependency installation, and produce a distroless runtime image using DHI customizations.
 keywords: docker hardened images, dhi, backstage, CNCF, developer portal, node.js, native modules, sqlite, better-sqlite3, distroless, socket firewall, dhictl, multi-stage build
-tags: ["Docker Hardened Images", "dhi"]
 @y
 title: Secure a Backstage application with Docker Hardened Images
 description: Secure a Backstage developer portal using Docker Hardened Images, covering native module compilation, Socket Firewall protection, and distroless runtime images.
 summary: Learn how to secure a Backstage developer portal using Docker Hardened Images (DHI), handle native module compilation with better-sqlite3, add Socket Firewall protection during dependency installation, and produce a distroless runtime image using DHI customizations.
 keywords: docker hardened images, dhi, backstage, CNCF, developer portal, node.js, native modules, sqlite, better-sqlite3, distroless, socket firewall, dhictl, multi-stage build
-tags: ["Docker Hardened Images", "dhi"]
 @z
 
 @x
@@ -886,18 +884,36 @@ dhictl customization create --org YOUR_ORG node-backstage.yaml
 @z
 
 @x
-Monitor the build progress:
+Monitor the build progress using the customization ID from the create output.
+To look up the ID, run:
 @y
-Monitor the build progress:
+Monitor the build progress using the customization ID from the create output.
+To look up the ID, run:
 @z
 
 @x
 ```console
-dhictl customization build list --org YOUR_ORG YOUR_ORG/dhi-node "backstage"
+dhictl customization list --org YOUR_ORG
 ```
 @y
 ```console
-dhictl customization build list --org YOUR_ORG YOUR_ORG/dhi-node "backstage"
+dhictl customization list --org YOUR_ORG
+```
+@z
+
+@x
+Then monitor the build:
+@y
+Then monitor the build:
+@z
+
+@x
+```console
+dhictl customization build list <customization-id> --org YOUR_ORG
+```
+@y
+```console
+dhictl customization build list <customization-id> --org YOUR_ORG
 ```
 @z
 
@@ -1028,9 +1044,9 @@ OCI runtime exec failed: exec failed: unable to start container process: ...
 @z
 
 @x
-Use [Docker Debug](/dhi/troubleshoot/#general-debugging) if you need to troubleshoot a running distroless container.
+Use [Docker Debug](/dhi/how-to/troubleshoot/#general-debugging) if you need to troubleshoot a running distroless container.
 @y
-Use [Docker Debug](__SUBDIR__/dhi/troubleshoot/#general-debugging) if you need to troubleshoot a running distroless container.
+Use [Docker Debug](__SUBDIR__/dhi/how-to/troubleshoot/#general-debugging) if you need to troubleshoot a running distroless container.
 @z
 
 @x
@@ -1146,13 +1162,13 @@ Different scanners detect different issues. Running all three gives you the most
 - [Create and build a DHI](/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
-- [Docker Debug](/dhi/troubleshoot/#general-debugging) — troubleshoot distroless containers that have no shell.
+- [Compare images](/dhi/how-to/search-evaluate/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
+- [Docker Debug](/dhi/how-to/troubleshoot/#general-debugging) — troubleshoot distroless containers that have no shell.
 @y
 - [Customize an image](__SUBDIR__/dhi/how-to/customize/) — complete reference on the Enterprise customization UI.
 - [Create and build a DHI](__SUBDIR__/dhi/how-to/build/) — learn how to write a DHI definition file, build images locally.
 - [Use the DHI CLI](__SUBDIR__/dhi/how-to/cli/) — manage DHI images, mirrors, and customizations from the command line.
 - [Migrate to DHI](__SUBDIR__/dhi/migration/) — for applications that work with standard DHI images without additional packages.
-- [Compare images](__SUBDIR__/dhi/how-to/explore/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
-- [Docker Debug](__SUBDIR__/dhi/troubleshoot/#general-debugging) — troubleshoot distroless containers that have no shell.
+- [Compare images](__SUBDIR__/dhi/how-to/search-evaluate/#compare-and-evaluate-images) — evaluate security improvements between your original and hardened images.
+- [Docker Debug](__SUBDIR__/dhi/how-to/troubleshoot/#general-debugging) — troubleshoot distroless containers that have no shell.
 @z

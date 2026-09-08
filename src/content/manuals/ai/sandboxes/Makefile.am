@@ -2,16 +2,18 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = agents customize images security
+SUBDIRS = agents configuration customize governance images integrations \
+	security workflows
 
 bases = \
-	_index.md          \
-	architecture.md    \
-	docker-desktop.md  \
-	faq.md             \
-	get-started.md     \
-	release-notes.md   \
-	troubleshooting.md \
+	_index.md               \
+	architecture.md         \
+	faq.md                  \
+	get-started.md          \
+	install.md              \
+	mcp-gateway.md          \
+	release-notes.md        \
+	troubleshooting.md      \
 	usage.md
 
 include $(top_srcdir)/build-aux/common.mk

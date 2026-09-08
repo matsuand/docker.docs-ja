@@ -3,10 +3,12 @@
 
 @x
 admin:
-  title: Administration
+  title: Admin
+  description: Manage Docker organizations, users, and access controls.
 @y
 admin:
-  title: Administration
+  title: 管理
+  description: Manage Docker organizations, users, and access controls.
 @z
 
 @x
@@ -18,35 +20,13 @@ ai:
 @z
 
 @x
-app-dev:
-  title: App development
+cicd:
+  title: CI/CD
+  description: Automate builds, tests, and deployments in your pipelines.
 @y
-app-dev:
-  title: App development
-@z
-
-@x
-best-practices:
-  title: Best practices
-@y
-best-practices:
-  title: Best practices
-@z
-
-@x
-cloud-services:
-  title: Cloud services
-@y
-cloud-services:
-  title: Cloud services
-@z
-
-@x
-data-science:
-  title: Data science
-@y
-data-science:
-  title: Data science
+cicd:
+  title: CI/CD
+  description: Automate builds, tests, and deployments in your pipelines.
 @z
 
 @x
@@ -54,109 +34,55 @@ databases:
   title: Databases
 @y
 databases:
-  title: Databases
+  title: データベース
 @z
 
 @x
-deploy:
+deployment:
   title: Deployment
+  description: Deploy containerized apps to Kubernetes and other platforms.
 @y
-deploy:
-  title: Deployment
-@z
-
-@x
-devops:
-  title: DevOps
-@y
-devops:
-  title: DevOps
-@z
-
-@x
-dhi:
-  title: Docker Hardened Images
-@y
-dhi:
-  title: Docker Hardened Images
-@z
-
-@x
-distributed-systems:
-  title: Distributed systems
-@y
-distributed-systems:
-  title: Distributed systems
-@z
-
-@x
-faq:
-  title: FAQ
-@y
-faq:
-  title: FAQ
-@z
-
-@x
-frameworks:
-  title: Frameworks
-@y
-frameworks:
-  title: Frameworks
+deployment:
+  title: デプロイ
+  description: Deploy containerized apps to Kubernetes and other platforms.
 @z
 
 @x
 labs:
-  title: Labs
+  title: Hands-on labs
+  description: Interactive, guided labs you can run directly in your browser.
 @y
 labs:
-  title: Labs
+  title: ハンズオン ラボ
+  description: Interactive, guided labs you can run directly in your browser.
 @z
 
 @x
-networking:
-  title: Networking
+languages:
+  title: Languages & frameworks
+  description: Containerize and develop apps in your language of choice.
 @y
-networking:
-  title: Networking
+languages:
+  title: 言語とフレームワーク
+  description: Containerize and develop apps in your language of choice.
 @z
 
 @x
-observability:
-  title: Observability
+security:
+  title: Security
+  description: Harden images, scan vulnerabilities, and secure your supply chain.
 @y
-observability:
-  title: Observability
+security:
+  title: セキュリティ
+  description: Harden images, scan vulnerabilities, and secure your supply chain.
 @z
 
 @x
-product-demo:
-  title: Product demo
+testing:
+  title: Testing
+  description: Integration testing with real databases and services.
 @y
-product-demo:
-  title: Product demo
-@z
-
-@x
-release-notes:
-  title: Release notes
-@y
-release-notes:
-  title: Release notes
-@z
-
-@x
-secrets:
-  title: Secrets
-@y
-secrets:
-  title: Secrets
-@z
-
-@x
-troubleshooting:
-  title: Troubleshooting
-@y
-troubleshooting:
-  title: Troubleshooting
+testing:
+  title: テスト
+  description: Integration testing with real databases and services.
 @z

@@ -6,11 +6,11 @@
 @x
 title: Add and manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
-keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
+keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Docker Home
 @y
 title: Add and manage domains
 description: Add, verify, and manage domains to control user access and enable auto-provisioning in Docker organizations
-keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Admin Console
+keywords: domain management, domain verification, auto-provisioning, user management, DNS, TXT record, Docker Home
 @z
 
 @x
@@ -53,7 +53,7 @@ Adding a domain requires verification to confirm ownership. The verification pro
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your organization. If your organization is part of a company, select the company
    and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain and select **Add domain**.
 1. In the pop-up modal, copy the **TXT Record Value** to verify your domain.
@@ -61,7 +61,7 @@ Adding a domain requires verification to confirm ownership. The verification pro
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your organization. If your organization is part of a company, select the company
    and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. Select **Add a domain**.
 1. Enter your domain and select **Add domain**.
 1. In the pop-up modal, copy the **TXT Record Value** to verify your domain.
@@ -109,13 +109,13 @@ your provider isn't listed, use the steps for "Other providers":
 1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
 1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @z
 
@@ -131,13 +131,13 @@ your provider isn't listed, use the steps for "Other providers":
 1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
 1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @z
 
@@ -153,13 +153,13 @@ your provider isn't listed, use the steps for "Other providers":
 1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
 1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @z
 
@@ -176,14 +176,14 @@ your provider isn't listed, use the steps for "Other providers":
 1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker.
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
 1. Sign in to your domain host.
 1. Add a TXT record to your DNS settings using the **TXT Record Value** from Docker.
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
-   [Admin Console](https://app.docker.com/admin) and select **Verify** next to
+   **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @z
 
@@ -244,13 +244,13 @@ To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in]
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and choose your
    company.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. In **Domain audit**, select **Export Users** to export a CSV file
    of uncaptured users.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and choose your
    company.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. In **Domain audit**, select **Export Users** to export a CSV file
    of uncaptured users.
 @z
@@ -339,7 +339,7 @@ To delete a domain:
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your organization. If your organization is part of a company, select the company
    and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. For the domain you want to delete, select the **Actions** menu, then
    **Delete domain**.
 1. To confirm, select **Delete domain** in the pop-up modal.
@@ -347,7 +347,7 @@ To delete a domain:
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your organization. If your organization is part of a company, select the company
    and configure the domain for the organization at the company level.
-1. Select **Admin Console**, then **Domain management**.
+1. Select **Identity & auth**, then **Domain management**.
 1. For the domain you want to delete, select the **Actions** menu, then
    **Delete domain**.
 1. To confirm, select **Delete domain** in the pop-up modal.

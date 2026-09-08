@@ -1,37 +1,22 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
-
 @x
 description: Developing event-driven applications with Kafka and Docker
 keywords: kafka, container-supported development
 title: Developing event-driven applications with Kafka and Docker
 linktitle: Event-driven apps with Kafka
+summary: |
+  This guide explains how to run Apache Kafka in Docker containers.
 @y
 description: Kafka と Docker を使ったイベント駆動アプリケーションの開発
 keywords: kafka, container-supported development
 title: Kafka と Docker を使ったイベント駆動アプリケーションの開発
 linktitle: Event-driven apps with Kafka
-@z
-
-@x
-summary: |
-  This guide explains how to run Apache Kafka in Docker containers.
-@y
 summary: |
   このガイドでは Docker コンテナー内にて Apache Kafka を起動させる方法について説明します。
 @z
 
-@x
-tags: [distributed-systems]
-languages: [js]
-@y
-tags: [distributed-systems]
-languages: [js]
-@z
-
-%params:
 @x
   time: 20 minutes
 @y
@@ -130,7 +115,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
 1. Start a Kafka container by running the following command:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -d --name=kafka -p 9092:9092 apache/kafka
+   ```
+@y
+   ```console
+   $ docker run -d --name=kafka -p 9092:9092 apache/kafka
+   ```
+@z
 
 @x
 2. Once the image pulls, you’ll have a Kafka instance up and running within a second or two.
@@ -144,7 +137,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
 3. The apache/kafka image ships with several helpful scripts in the `/opt/kafka/bin` directory. Run the following command to verify the cluster is up and running and get its cluster ID:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-cluster.sh cluster-id --bootstrap-server :9092
+   ```
+@y
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-cluster.sh cluster-id --bootstrap-server :9092
+   ```
+@z
 
 @x
    Doing so will produce output similar to the following:
@@ -152,7 +153,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
    Doing so will produce output similar to the following:
 @z
 
-% snip output...
+@x
+   ```plaintext
+   Cluster ID: 5L6g3nShT-eMCtK--X86sw
+   ```
+@y
+   ```plaintext
+   Cluster ID: 5L6g3nShT-eMCtK--X86sw
+   ```
+@z
 
 @x
 4. Create a sample topic and produce (or publish) a few messages by running the following command:
@@ -160,7 +169,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
 4. Create a sample topic and produce (or publish) a few messages by running the following command:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server :9092 --topic demo
+   ```
+@y
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server :9092 --topic demo
+   ```
+@z
 
 @x
    After running, you can enter a message per line. For example, enter a few messages, one per line. A few examples might be:
@@ -168,7 +185,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
    After running, you can enter a message per line. For example, enter a few messages, one per line. A few examples might be:
 @z
 
-% snip output...
+@x
+   ```plaintext
+   First message
+   ```
+@y
+   ```plaintext
+   First message
+   ```
+@z
 
 @x
    And
@@ -176,7 +201,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
    And
 @z
 
-% snip output...
+@x
+   ```plaintext
+   Second message
+   ```
+@y
+   ```plaintext
+   Second message
+   ```
+@z
 
 @x
    Press `enter` to send the last message and then press ctrl+c when you’re done. The messages will be published to Kafka.
@@ -190,7 +223,15 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
 5. Confirm the messages were published into the cluster by consuming the messages:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server :9092 --topic demo --from-beginning
+   ```
+@y
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server :9092 --topic demo --from-beginning
+   ```
+@z
 
 @x
    You should then see your messages in the output:
@@ -198,7 +239,17 @@ Start a basic Kafka cluster by doing the following steps. This example will laun
    You should then see your messages in the output:
 @z
 
-% snip output...
+@x
+   ```plaintext
+   First message
+   Second message
+   ```
+@y
+   ```plaintext
+   First message
+   Second message
+   ```
+@z
 
 @x
    If you want, you can open another terminal and publish more messages and see them appear in the consumer.
@@ -242,7 +293,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 1. If you don’t have the Kafka cluster running from the previous step, run the following command to start a Kafka instance:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run -d --name=kafka -p 9092:9092 apache/kafka
+   ```
+@y
+   ```console
+   $ docker run -d --name=kafka -p 9092:9092 apache/kafka
+   ```
+@z
 
 @x
 2. Clone the [GitHub repository](https://github.com/dockersamples/kafka-development-node) locally.
@@ -250,7 +309,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 2. Clone the [GitHub repository](https://github.com/dockersamples/kafka-development-node) locally.
 @z
 
-% snip command...
+@x
+   ```console
+   $ git clone https://github.com/dockersamples/kafka-development-node.git
+   ```
+@y
+   ```console
+   $ git clone https://github.com/dockersamples/kafka-development-node.git
+   ```
+@z
 
 @x
 3. Navigate into the project.
@@ -258,7 +325,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 3. Navigate into the project.
 @z
 
-% snip command...
+@x
+   ```console
+   cd kafka-development-node/app
+   ```
+@y
+   ```console
+   cd kafka-development-node/app
+   ```
+@z
 
 @x
 4. Install the dependencies using yarn.
@@ -266,7 +341,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 4. Install the dependencies using yarn.
 @z
 
-% snip command...
+@x
+   ```console
+   $ yarn install
+   ```
+@y
+   ```console
+   $ yarn install
+   ```
+@z
 
 @x
 5. Start the application using `yarn dev`. This will set the `NODE_ENV` environment variable to `development` and use `nodemon` to watch for file changes.
@@ -274,7 +357,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 5. Start the application using `yarn dev`. This will set the `NODE_ENV` environment variable to `development` and use `nodemon` to watch for file changes.
 @z
 
-% snip command...
+@x
+   ```console
+   $ yarn dev
+   ```
+@y
+   ```console
+   $ yarn dev
+   ```
+@z
 
 @x
 6. With the application now running, it will log received messages to the console. In a new terminal, publish a few messages using the following command:
@@ -282,7 +373,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
 6. With the application now running, it will log received messages to the console. In a new terminal, publish a few messages using the following command:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server :9092 --topic demo
+   ```
+@y
+   ```console
+   $ docker exec -ti kafka /opt/kafka/bin/kafka-console-producer.sh --bootstrap-server :9092 --topic demo
+   ```
+@z
 
 @x
    And then send a message to the cluster:
@@ -290,7 +389,15 @@ Since the cluster is running locally and is exposed at port 9092, the app can co
    And then send a message to the cluster:
 @z
 
-% snip output...
+@x
+   ```plaintext
+   Test message
+   ```
+@y
+   ```plaintext
+   Test message
+   ```
+@z
 
 @x
    Remember to press `ctrl+c` when you’re done to stop producing messages.
@@ -372,25 +479,62 @@ In order to set this up, the `compose.yaml` for Kafka needs some additional conf
 In order to set this up, the `compose.yaml` for Kafka needs some additional configuration. Once you start overriding some of the defaults, you also need to specify a few other options in order for KRaft mode to work.
 @z
 
-@x within code
+@x
+```yaml
+services:
+  kafka:
+    image: apache/kafka-native
+    ports:
+      - "9092:9092"
+    environment:
       # Configure listeners for both docker and host communication
+      KAFKA_LISTENERS: CONTROLLER://localhost:9091,HOST://0.0.0.0:9092,DOCKER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: HOST://localhost:9092,DOCKER://kafka:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,DOCKER:PLAINTEXT,HOST:PLAINTEXT
 @y
+```yaml
+services:
+  kafka:
+    image: apache/kafka-native
+    ports:
+      - "9092:9092"
+    environment:
       # Configure listeners for both docker and host communication
+      KAFKA_LISTENERS: CONTROLLER://localhost:9091,HOST://0.0.0.0:9092,DOCKER://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: HOST://localhost:9092,DOCKER://kafka:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,DOCKER:PLAINTEXT,HOST:PLAINTEXT
 @z
+
 @x
       # Settings required for KRaft mode
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9091
 @y
       # Settings required for KRaft mode
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9091
 @z
+
 @x
       # Listener to use for broker-to-broker communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
 @y
       # Listener to use for broker-to-broker communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: DOCKER
 @z
+
 @x
       # Required for a single node cluster
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+```
 @y
       # Required for a single node cluster
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+```
 @z
 
 @x
@@ -411,7 +555,15 @@ Give it a try using the steps below.
 2. If you have the Kafka cluster running from the previous section, go ahead and stop that container using the following command:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker rm -f kafka
+   ```
+@y
+   ```console
+   $ docker rm -f kafka
+   ```
+@z
 
 @x
 3. Start the Compose stack by running the following command at the root of the cloned project directory:
@@ -419,7 +571,15 @@ Give it a try using the steps below.
 3. Start the Compose stack by running the following command at the root of the cloned project directory:
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker compose up
+   ```
+@y
+   ```console
+   $ docker compose up
+   ```
+@z
 
 @x
    After a moment, the application will be up and running.
@@ -457,7 +617,35 @@ To add it to your own project (it’s already in the demo application), you only
 To add it to your own project (it’s already in the demo application), you only need to add the following configuration to your Compose file:
 @z
 
-% snip code...
+@x
+```yaml
+services:
+  kafka-ui:
+    image: kafbat/kafka-ui:main
+    ports:
+      - 8080:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: "true"
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
+    depends_on:
+      - kafka
+```
+@y
+```yaml
+services:
+  kafka-ui:
+    image: kafbat/kafka-ui:main
+    ports:
+      - 8080:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: "true"
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
+    depends_on:
+      - kafka
+```
+@z
 
 @x
 Then, once the Compose stack starts, you can open your browser to [http://localhost:8080](http://localhost:8080) and navigate around to view additional details about the cluster, check on consumers, publish test messages, and more.

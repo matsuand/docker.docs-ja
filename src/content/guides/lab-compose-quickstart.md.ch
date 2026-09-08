@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Docker Compose Quickstart"
 linkTitle: "Lab: Docker Compose Quickstart"
@@ -33,22 +31,6 @@ keywords: Docker, Compose, multi-container, Flask, Redis, watch mode, volumes, l
   time: 45 minutes
 @y
   time: 45 分
-@z
-
-@x
-    - title: Docker Compose docs
-      url: /compose/
-    - title: Compose watch mode
-      url: /compose/how-tos/file-watch/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-compose-quickstart
-@y
-    - title: Docker Compose docs
-      url: __SUBDIR__/compose/
-    - title: Compose watch mode
-      url: __SUBDIR__/compose/how-tos/file-watch/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-compose-quickstart
 @z
 
 @x

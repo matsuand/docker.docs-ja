@@ -2,21 +2,17 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 title: Deprecated Docker Engine features
 linkTitle: Deprecated features
 aliases: ["/engine/misc/deprecated/"]
 description: "Deprecated Features."
 keywords: "docker, documentation, about, technology, deprecate"
----
 @y
----
 title: Deprecated Docker Engine features
 linkTitle: Deprecated features
 aliases: ["/engine/misc/deprecated/"]
 description: "Deprecated Features."
 keywords: "docker, documentation, about, technology, deprecate"
----
 @z
 
 @x
@@ -194,6 +190,7 @@ The following table provides an overview of the current status of deprecated fea
 | Deprecated | [`-h` shorthand for `--help`](#-h-shorthand-for---help)                                                                            | v1.12      | v17.09 |
 | Removed    | [`-e` and `--email` flags on `docker login`](#-e-and---email-flags-on-docker-login)                                                | v1.11      | v17.06 |
 | Deprecated | [Separator (`:`) of `--security-opt` flag on `docker run`](#separator--of---security-opt-flag-on-docker-run)                       | v1.11      | v17.06 |
+| Deprecated | [Links on the default bridge network](#links-on-the-default-bridge-network)                                                        | v1.10      | -      |
 | Deprecated | [Ambiguous event fields in API](#ambiguous-event-fields-in-api)                                                                    | v1.10      | -      |
 | Removed    | [`-f` flag on `docker tag`](#-f-flag-on-docker-tag)                                                                                | v1.10      | v1.12  |
 | Removed    | [HostConfig at API container start](#hostconfig-at-api-container-start)                                                            | v1.10      | v1.12  |
@@ -269,6 +266,7 @@ The following table provides an overview of the current status of deprecated fea
 | Deprecated | [`-h` shorthand for `--help`](#-h-shorthand-for---help)                                                                            | v1.12      | v17.09 |
 | Removed    | [`-e` and `--email` flags on `docker login`](#-e-and---email-flags-on-docker-login)                                                | v1.11      | v17.06 |
 | Deprecated | [Separator (`:`) of `--security-opt` flag on `docker run`](#separator--of---security-opt-flag-on-docker-run)                       | v1.11      | v17.06 |
+| Deprecated | [Links on the default bridge network](#links-on-the-default-bridge-network)                                                        | v1.10      | -      |
 | Deprecated | [Ambiguous event fields in API](#ambiguous-event-fields-in-api)                                                                    | v1.10      | -      |
 | Removed    | [`-f` flag on `docker tag`](#-f-flag-on-docker-tag)                                                                                | v1.10      | v1.12  |
 | Removed    | [HostConfig at API container start](#hostconfig-at-api-container-start)                                                            | v1.10      | v1.12  |
@@ -3101,6 +3099,40 @@ The `docker login` no longer automatically registers an account with the target 
 The flag `--security-opt` doesn't use the colon separator (`:`) anymore to divide keys and values, it uses the equal symbol (`=`) for consistency with other similar flags, like `--storage-opt`.
 @y
 The flag `--security-opt` doesn't use the colon separator (`:`) anymore to divide keys and values, it uses the equal symbol (`=`) for consistency with other similar flags, like `--storage-opt`.
+@z
+
+@x
+### Links on the default bridge network
+@y
+### Links on the default bridge network
+@z
+
+@x
+**Deprecated in release: v1.10**
+**Target for removal in release: v30.0**
+@y
+**Deprecated in release: v1.10**
+**Target for removal in release: v30.0**
+@z
+
+@x
+The `--link` option on `docker create` and `docker run`, when used with no
+`--network` specified, was deprecated in v1.10 and will be removed in a future
+release. Custom networks should be used instead. Docker 29.6 added a deprecation
+warning when this option is used for the default bridge network.
+@y
+The `--link` option on `docker create` and `docker run`, when used with no
+`--network` specified, was deprecated in v1.10 and will be removed in a future
+release. Custom networks should be used instead. Docker 29.6 added a deprecation
+warning when this option is used for the default bridge network.
+@z
+
+@x
+Note that the `--link` option is still supported when a non-default network
+is used.
+@y
+Note that the `--link` option is still supported when a non-default network
+is used.
 @z
 
 @x

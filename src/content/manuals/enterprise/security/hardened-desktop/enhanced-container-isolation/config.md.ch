@@ -71,22 +71,22 @@ Configure Docker socket exceptions using Settings Management:
 
 @x
 {{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< tab name="Docker Home" >}}
 @y
 {{< tabs >}}
-{{< tab name="Admin Console" >}}
+{{< tab name="Docker Home" >}}
 @z
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Go to **Admin Console** > **Desktop Settings Management**.
+1. Select **Docker Desktop**, then **Settings Management**.
 1. [Create or edit a setting policy](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md).
 1. Find **Enhanced Container Isolation** settings.
 1. Configure **Docker socket access control** with your trusted images and
 command restrictions.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization from the top-left account drop-down.
-1. Go to **Admin Console** > **Desktop Settings Management**.
+1. Select **Docker Desktop**, then **Settings Management**.
 1. [Create or edit a setting policy](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md).
 1. Find **Enhanced Container Isolation** settings.
 1. Configure **Docker socket access control** with your trusted images and
@@ -107,7 +107,55 @@ Create an [`admin-settings.json` file](/manuals/enterprise/security/hardened-des
 Create an [`admin-settings.json` file](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md) and add:
 @z
 
-% snip code...
+@x
+```json
+{
+  "configurationFileVersion": 2,
+  "enhancedContainerIsolation": {
+    "locked": true,
+    "value": true,
+    "dockerSocketMount": {
+      "imageList": {
+        "images": [
+          "docker.io/localstack/localstack:*",
+          "docker.io/testcontainers/ryuk:*",
+          "docker:cli"
+        ],
+        "allowDerivedImages": true
+      },
+      "commandList": {
+        "type": "deny",
+        "commands": ["push", "build"]
+      }
+    }
+  }
+}
+```
+@y
+```json
+{
+  "configurationFileVersion": 2,
+  "enhancedContainerIsolation": {
+    "locked": true,
+    "value": true,
+    "dockerSocketMount": {
+      "imageList": {
+        "images": [
+          "docker.io/localstack/localstack:*",
+          "docker.io/testcontainers/ryuk:*",
+          "docker:cli"
+        ],
+        "allowDerivedImages": true
+      },
+      "commandList": {
+        "type": "deny",
+        "commands": ["push", "build"]
+      }
+    }
+  }
+}
+```
+@z
 
 @x
 {{< /tab >}}
@@ -159,7 +207,27 @@ Basic allowlist for testing tools:
 Basic allowlist for testing tools:
 @z
 
-% snip code...
+@x
+```json
+"imageList": {
+  "images": [
+    "docker.io/testcontainers/ryuk:*",
+    "docker:cli",
+    "alpine:latest"
+  ]
+}
+```
+@y
+```json
+"imageList": {
+  "images": [
+    "docker.io/testcontainers/ryuk:*",
+    "docker:cli",
+    "alpine:latest"
+  ]
+}
+```
+@z
 
 @x
 Wildcard allowlist (Docker Desktop 4.36 and later):
@@ -167,7 +235,19 @@ Wildcard allowlist (Docker Desktop 4.36 and later):
 Wildcard allowlist (Docker Desktop 4.36 and later):
 @z
 
-% snip code...
+@x
+```json
+"imageList": {
+  "images": ["*"]
+}
+```
+@y
+```json
+"imageList": {
+  "images": ["*"]
+}
+```
+@z
 
 @x
 > [!WARNING]
@@ -207,7 +287,19 @@ This prevents bypassing restrictions by re-tagging unauthorized images:
 This prevents bypassing restrictions by re-tagging unauthorized images:
 @z
 
-% snip command...
+@x
+```console
+$ docker tag malicious-image docker:cli
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock docker:cli
+# This fails because the digest doesn't match the real docker:cli image
+```
+@y
+```console
+$ docker tag malicious-image docker:cli
+$ docker run -v /var/run/docker.sock:/var/run/docker.sock docker:cli
+# This fails because the digest doesn't match the real docker:cli image
+```
+@z
 
 @x
 ## Derived images support
@@ -229,7 +321,25 @@ allow images derived from trusted base images.
 ### Enable derived images
 @z
 
-% snip code...
+@x
+```json
+"imageList": {
+  "images": [
+    "paketobuildpacks/builder:base"
+  ],
+  "allowDerivedImages": true
+}
+```
+@y
+```json
+"imageList": {
+  "images": [
+    "paketobuildpacks/builder:base"
+  ],
+  "allowDerivedImages": true
+}
+```
+@z
 
 @x
 When `allowDerivedImages` is true, local images built from allowed base images (using `FROM` in Dockerfile) also gain Docker socket access.
@@ -273,7 +383,21 @@ Blocks specified commands while allowing all others:
 Blocks specified commands while allowing all others:
 @z
 
-% snip code...
+@x
+```json
+"commandList": {
+  "type": "deny",
+  "commands": ["push", "build", "image*"]
+}
+```
+@y
+```json
+"commandList": {
+  "type": "deny",
+  "commands": ["push", "build", "image*"]
+}
+```
+@z
 
 @x
 ### Allow list
@@ -287,7 +411,21 @@ Only allows specified commands while blocking all others:
 Only allows specified commands while blocking all others:
 @z
 
-% snip code...
+@x
+```json
+"commandList": {
+  "type": "allow",
+  "commands": ["ps", "container*", "volume*"]
+}
+```
+@y
+```json
+"commandList": {
+  "type": "allow",
+  "commands": ["ps", "container*", "volume*"]
+}
+```
+@z
 
 @x
 ### Command wildcards
@@ -327,7 +465,17 @@ When a blocked command is executed:
 When a blocked command is executed:
 @z
 
-% snip command...
+@x
+```console
+/ # docker push myimage
+Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings.
+```
+@y
+```console
+/ # docker push myimage
+Error response from daemon: enhanced container isolation: docker command "/v1.43/images/myimage/push?tag=latest" is blocked; if you wish to allow it, configure the docker socket command list in the Docker Desktop settings.
+```
+@z
 
 @x
 ## Common configuration examples
@@ -347,7 +495,37 @@ For Java/Python testing with Testcontainers:
 For Java/Python testing with Testcontainers:
 @z
 
-% snip code...
+@x
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker.io/testcontainers/ryuk:*",
+      "testcontainers/*:*"
+    ]
+  },
+  "commandList": {
+    "type": "deny",
+    "commands": ["push", "build"]
+  }
+}
+```
+@y
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker.io/testcontainers/ryuk:*",
+      "testcontainers/*:*"
+    ]
+  },
+  "commandList": {
+    "type": "deny",
+    "commands": ["push", "build"]
+  }
+}
+```
+@z
 
 @x
 ### CI/CD pipeline tools
@@ -361,7 +539,37 @@ For controlled CI/CD container management:
 For controlled CI/CD container management:
 @z
 
-% snip code...
+@x
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker:cli",
+      "your-registry.com/ci-tools/*:*"
+    ]
+  },
+  "commandList": {
+    "type": "allow",
+    "commands": ["ps", "container*", "image*"]
+  }
+}
+```
+@y
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker:cli",
+      "your-registry.com/ci-tools/*:*"
+    ]
+  },
+  "commandList": {
+    "type": "allow",
+    "commands": ["ps", "container*", "image*"]
+  }
+}
+```
+@z
 
 @x
 ### Development environments
@@ -375,7 +583,37 @@ For local development with Docker-in-Docker:
 For local development with Docker-in-Docker:
 @z
 
-% snip code...
+@x
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker:dind",
+      "docker:cli"
+    ]
+  },
+  "commandList": {
+    "type": "deny",
+    "commands": ["system*"]
+  }
+}
+```
+@y
+```json
+"dockerSocketMount": {
+  "imageList": {
+    "images": [
+      "docker:dind",
+      "docker:cli"
+    ]
+  },
+  "commandList": {
+    "type": "deny",
+    "commands": ["system*"]
+  }
+}
+```
+@z
 
 @x
 ## Security recommendations
@@ -426,12 +664,18 @@ For local development with Docker-in-Docker:
 @x
 - Regular validation: Test your configuration after Docker Desktop updates, as image digests may change.
 - Handle digest mismatches: If allowed images are unexpectedly blocked:
+    ```console
+    $ docker image rm <image>
+    $ docker pull <image>
+    ```
 @y
 - Regular validation: Test your configuration after Docker Desktop updates, as image digests may change.
 - Handle digest mismatches: If allowed images are unexpectedly blocked:
+    ```console
+    $ docker image rm <image>
+    $ docker pull <image>
+    ```
 @z
-
-% snip command...
 
 @x
 This resolves digest mismatches when upstream images are updated.

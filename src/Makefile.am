@@ -19,7 +19,6 @@ copydirs = \
 copyfiles = \
 	.dockerignore      \
 	.htmltest.yml      \
-	.markdownlint.json \
 	.prettierrc        \
 	.vale.ini          \
 	AGENTS.md          \

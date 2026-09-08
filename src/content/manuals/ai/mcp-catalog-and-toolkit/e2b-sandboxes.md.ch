@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
-% snip 対応
+% snip 対応 (一部)
 
 @x
 title: E2B sandboxes
@@ -15,15 +15,15 @@ keywords: E2B, cloud sandboxes, MCP Gateway, AI agents, MCP Catalog
 @z
 
 @x
-Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. E2B sandboxes include direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
+[E2B](https://e2b.dev/) provides secure cloud sandboxes for AI agents with direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
 @y
-Docker has partnered with [E2B](https://e2b.dev/), a provider of secure cloud sandboxes for AI agents. E2B sandboxes include direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
+[E2B](https://e2b.dev/) provides secure cloud sandboxes for AI agents with direct access to Docker's [MCP Catalog](https://hub.docker.com/mcp), a collection of 200+ tools from publishers including GitHub, Notion, and Stripe.
 @z
 
 @x
-When you create a sandbox, you specify which MCP tools it should access. E2B launches these tools and provides access through the Docker MCP Gateway.
+When you create an E2B sandbox, you specify which MCP tools it should access. E2B launches these tools and provides access through the Docker MCP Gateway.
 @y
-When you create a sandbox, you specify which MCP tools it should access. E2B launches these tools and provides access through the Docker MCP Gateway.
+When you create an E2B sandbox, you specify which MCP tools it should access. E2B launches these tools and provides access through the Docker MCP Gateway.
 @z
 
 @x
@@ -206,15 +206,7 @@ Run the script:
 Run the script:
 @z
 
-@x
-```console
-$ python index.py
-```
-@y
-```console
-$ python index.py
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}
@@ -230,37 +222,7 @@ You should see:
 You should see:
 @z
 
-@x
-```console
-Creating E2B sandbox with Notion and GitHub MCP servers...
-@y
-```console
-Creating E2B sandbox with Notion and GitHub MCP servers...
-@z
-
-@x
-Sandbox created successfully!
-MCP Gateway URL: https://50005-xxxxx.e2b.app/mcp
-@y
-Sandbox created successfully!
-MCP Gateway URL: https://50005-xxxxx.e2b.app/mcp
-@z
-
-@x
-Connecting Claude to MCP gateway...
-Added HTTP MCP server e2b-mcp-gateway with URL: https://50005-xxxxx.e2b.app/mcp
-@y
-Connecting Claude to MCP gateway...
-Added HTTP MCP server e2b-mcp-gateway with URL: https://50005-xxxxx.e2b.app/mcp
-@z
-
-@x
-Connection successful! Cleaning up...
-```
-@y
-Connection successful! Cleaning up...
-```
-@z
+% snip output...
 
 @x
 ### Test with example workflow
@@ -300,7 +262,7 @@ Update `index.ts` with the following example:
 Update `index.ts` with the following example:
 @z
 
-@x within code...
+@x within code
   // Wait for MCP servers to initialize
 @y
   // Wait for MCP servers to initialize
@@ -340,15 +302,188 @@ Update `index.py` with this example:
 > name (for example, `yourname/test-repo`).
 @z
 
-@x within code
+@x
+```python
+import os
+import asyncio
+import shlex
+from dotenv import load_dotenv
+from e2b import Sandbox
+@y
+```python
+import os
+import asyncio
+import shlex
+from dotenv import load_dotenv
+from e2b import Sandbox
+@z
+
+@x
+load_dotenv()
+@y
+load_dotenv()
+@z
+
+@x
+async def example_workflow():
+    print("Creating sandbox...\n")
+@y
+async def example_workflow():
+    print("Creating sandbox...\n")
+@z
+
+@x
+    sbx = await Sandbox.beta_create(
+        envs={
+            "ANTHROPIC_API_KEY": os.getenv("ANTHROPIC_API_KEY"),
+        },
+        mcp={
+            "notion": {
+                "internalIntegrationToken": os.getenv("NOTION_INTEGRATION_TOKEN"),
+            },
+            "githubOfficial": {
+                "githubPersonalAccessToken": os.getenv("GITHUB_TOKEN"),
+            },
+        },
+    )
+@y
+    sbx = await Sandbox.beta_create(
+        envs={
+            "ANTHROPIC_API_KEY": os.getenv("ANTHROPIC_API_KEY"),
+        },
+        mcp={
+            "notion": {
+                "internalIntegrationToken": os.getenv("NOTION_INTEGRATION_TOKEN"),
+            },
+            "githubOfficial": {
+                "githubPersonalAccessToken": os.getenv("GITHUB_TOKEN"),
+            },
+        },
+    )
+@z
+
+@x
+    mcp_url = sbx.beta_get_mcp_url()
+    mcp_token = await sbx.beta_get_mcp_token()
+@y
+    mcp_url = sbx.beta_get_mcp_url()
+    mcp_token = await sbx.beta_get_mcp_token()
+@z
+
+@x
+    print("Sandbox created successfully\n")
+@y
+    print("Sandbox created successfully\n")
+@z
+
+@x
     # Wait for MCP servers to initialize
+    await asyncio.sleep(3)
 @y
     # Wait for MCP servers to initialize
+    await asyncio.sleep(3)
 @z
+
+@x
+    print("Connecting Claude to MCP gateway...\n")
+@y
+    print("Connecting Claude to MCP gateway...\n")
+@z
+
+@x
+    def on_stdout(output):
+        print(output, end='')
+@y
+    def on_stdout(output):
+        print(output, end='')
+@z
+
+@x
+    def on_stderr(output):
+        print(output, end='')
+@y
+    def on_stderr(output):
+        print(output, end='')
+@z
+
+@x
+    await sbx.commands.run(
+        f'claude mcp add --transport http e2b-mcp-gateway {mcp_url} --header "Authorization: Bearer {mcp_token}"',
+        timeout_ms=0,
+        on_stdout=on_stdout,
+        on_stderr=on_stderr
+    )
+@y
+    await sbx.commands.run(
+        f'claude mcp add --transport http e2b-mcp-gateway {mcp_url} --header "Authorization: Bearer {mcp_token}"',
+        timeout_ms=0,
+        on_stdout=on_stdout,
+        on_stderr=on_stderr
+    )
+@z
+
+@x
+    print("\nRunning example: Search Notion and create GitHub issue...\n")
+@y
+    print("\nRunning example: Search Notion and create GitHub issue...\n")
+@z
+
+@x
+    prompt = """Using Notion and GitHub MCP tools:
+1. Search my Notion workspace for databases
+2. Create a test issue in owner/repo titled "MCP Toolkit Test" with description "Testing E2B + Docker MCP integration"
+3. Confirm both operations completed successfully"""
+@y
+    prompt = """Using Notion and GitHub MCP tools:
+1. Search my Notion workspace for databases
+2. Create a test issue in owner/repo titled "MCP Toolkit Test" with description "Testing E2B + Docker MCP integration"
+3. Confirm both operations completed successfully"""
+@z
+
 @x
     # Escape single quotes for shell
+    escaped_prompt = prompt.replace("'", "'\\''")
 @y
     # Escape single quotes for shell
+    escaped_prompt = prompt.replace("'", "'\\''")
+@z
+
+@x
+    await sbx.commands.run(
+        f"echo '{escaped_prompt}' | claude -p --dangerously-skip-permissions",
+        timeout_ms=0,
+        on_stdout=on_stdout,
+        on_stderr=on_stderr
+    )
+@y
+    await sbx.commands.run(
+        f"echo '{escaped_prompt}' | claude -p --dangerously-skip-permissions",
+        timeout_ms=0,
+        on_stdout=on_stdout,
+        on_stderr=on_stderr
+    )
+@z
+
+@x
+    await sbx.kill()
+@y
+    await sbx.kill()
+@z
+
+@x
+if __name__ == "__main__":
+    try:
+        asyncio.run(example_workflow())
+    except Exception as e:
+        print(f"Error: {e}")
+```
+@y
+if __name__ == "__main__":
+    try:
+        asyncio.run(example_workflow())
+    except Exception as e:
+        print(f"Error: {e}")
+```
 @z
 
 @x

@@ -661,6 +661,7 @@ They're used to configure the Buildx client, or the BuildKit daemon.
 | [BUILDX_METADATA_PROVENANCE](#buildx_metadata_provenance)                   | String \| Boolean | Customize provenance information included in the metadata file.  |
 | [BUILDX_METADATA_WARNINGS](#buildx_metadata_warnings)                       | String            | Include build warnings in the metadata file.                     |
 | [BUILDX_NO_DEFAULT_ATTESTATIONS](#buildx_no_default_attestations)           | Boolean           | Turn off default provenance attestations.                        |
+| [BUILDX_NO_DEFAULT_OCI_ARTIFACT](#buildx_no_default_oci_artifact)           | Boolean           | Turn off OCI artifact storage for attestations by default.       |
 | [BUILDX_NO_DEFAULT_LOAD](#buildx_no_default_load)                           | Boolean           | Turn off loading images to image store by default.               |
 | [EXPERIMENTAL_BUILDKIT_SOURCE_POLICY](#experimental_buildkit_source_policy) | String            | Specify a BuildKit source policy file.                           |
 @y
@@ -686,6 +687,7 @@ They're used to configure the Buildx client, or the BuildKit daemon.
 | [BUILDX_METADATA_PROVENANCE](#buildx_metadata_provenance)                   | String \| Boolean | Customize provenance information included in the metadata file.  |
 | [BUILDX_METADATA_WARNINGS](#buildx_metadata_warnings)                       | String            | Include build warnings in the metadata file.                     |
 | [BUILDX_NO_DEFAULT_ATTESTATIONS](#buildx_no_default_attestations)           | Boolean           | Turn off default provenance attestations.                        |
+| [BUILDX_NO_DEFAULT_OCI_ARTIFACT](#buildx_no_default_oci_artifact)           | Boolean           | Turn off OCI artifact storage for attestations by default.       |
 | [BUILDX_NO_DEFAULT_LOAD](#buildx_no_default_load)                           | Boolean           | Turn off loading images to image store by default.               |
 | [EXPERIMENTAL_BUILDKIT_SOURCE_POLICY](#experimental_buildkit_source_policy) | String            | Specify a BuildKit source policy file.                           |
 @z
@@ -1349,6 +1351,48 @@ $ export BUILDX_NO_DEFAULT_ATTESTATIONS=1
 @y
 ```console
 $ export BUILDX_NO_DEFAULT_ATTESTATIONS=1
+```
+@z
+
+@x
+### BUILDX_NO_DEFAULT_OCI_ARTIFACT
+@y
+### BUILDX_NO_DEFAULT_OCI_ARTIFACT
+@z
+
+@x
+{{< summary-bar feature_name="Buildx no default OCI artifact" >}}
+@y
+{{< summary-bar feature_name="Buildx no default OCI artifact" >}}
+@z
+
+@x
+Starting with BuildKit v0.32.0, BuildKit stores attestations as OCI artifacts
+when OCI media types are enabled. Set `BUILDX_NO_DEFAULT_OCI_ARTIFACT=1` to
+make Buildx set `oci-artifact=false` when the build uses an exporter that
+supports attestations and you haven't explicitly set the `oci-artifact`
+exporter attribute.
+@y
+Starting with BuildKit v0.32.0, BuildKit stores attestations as OCI artifacts
+when OCI media types are enabled. Set `BUILDX_NO_DEFAULT_OCI_ARTIFACT=1` to
+make Buildx set `oci-artifact=false` when the build uses an exporter that
+supports attestations and you haven't explicitly set the `oci-artifact`
+exporter attribute.
+@z
+
+@x
+Usage:
+@y
+Usage:
+@z
+
+@x
+```console
+$ export BUILDX_NO_DEFAULT_OCI_ARTIFACT=1
+```
+@y
+```console
+$ export BUILDX_NO_DEFAULT_OCI_ARTIFACT=1
 ```
 @z
 

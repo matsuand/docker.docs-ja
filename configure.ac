@@ -43,6 +43,123 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/docker/compose/v5/Makefile
 	src/_vendor/github.com/docker/compose/v5/docs/Makefile
 	src/_vendor/github.com/docker/compose/v5/docs/reference/Makefile
+	src/_vendor/github.com/docker/docker-agent/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/community/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/community/contributing/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/community/opentelemetry/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/community/telemetry/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/community/troubleshooting/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/agents/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/distribution/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/models/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/multi-agent/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/concepts/tools/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/agents/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/agentsignore/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/budget/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/commands/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/flavors/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/hcl/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/hooks/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/models/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/overview/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/permissions/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/routing/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/sandbox/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/structured-output/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/tools/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/configuration/user-settings/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/a2a/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/acp/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/api-server/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/board/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/chat-server/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/cli/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/code-mode/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/evaluation/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/harnesses/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/mcp-mode/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/remote-mcp/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/sessions/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/skills/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/snapshots/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/features/tui/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/getting-started/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/getting-started/installation/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/getting-started/introduction/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/getting-started/quickstart/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/getting-started/set-up-a-model/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/compaction/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/go-sdk/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/headless/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/secrets/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/thinking/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/guides/tips/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/anthropic/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/baseten/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/bedrock/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/cerebras/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/chatgpt/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/cloudflare-ai-gateway/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/cloudflare-workers-ai/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/custom/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/deepseek/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/dmr/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/fireworks/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/github-copilot/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/google/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/groq/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/huggingface/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/local/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/minimax/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/mistral/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/moonshot/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/nebius/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/nvidia/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/openai/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/opencode-go/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/opencode-zen/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/openrouter/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/overview/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/ovhcloud/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/together/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/vercel/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/providers/xai/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/a2a/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/api/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/background-agents/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/background-jobs/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/fetch/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/filesystem/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/git/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/handoff/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/lsp/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/mcp/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/mcp-catalog/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/memory/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/model-picker/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/open-url/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/openapi/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/plan/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/rag/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/scheduler/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/script/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/session_context/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/session_plan/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/shell/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/tasks/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/think/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/todo/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/transfer-task/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/user-prompt/Makefile
+	src/_vendor/github.com/docker/docker-agent/docs/tools/webhook/Makefile
 	src/_vendor/github.com/docker/model-runner/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/Makefile
 	src/_vendor/github.com/docker/model-runner/cmd/cli/Makefile
@@ -79,85 +196,22 @@ AC_CONFIG_FILES([
 	src/content/get-started/images/Makefile
 	src/content/get-started/introduction/Makefile
 	src/content/get-started/introduction/images/Makefile
-	src/content/get-started/workshop/Makefile
-	src/content/get-started/workshop/images/Makefile
 	src/content/guides/Makefile
-	src/content/guides/admin-set-up/Makefile
-	src/content/guides/admin-user-management/Makefile
-	src/content/guides/angular/Makefile
-	src/content/guides/bake/Makefile
-	src/content/guides/bun/Makefile
-	src/content/guides/compose-bake/Makefile
-	src/content/guides/cpp/Makefile
-	src/content/guides/deno/Makefile
-	src/content/guides/docker-build-cloud/Makefile
-	src/content/guides/docker-compose/Makefile
-	src/content/guides/docker-scout/Makefile
-	src/content/guides/dotnet/Makefile
-	src/content/guides/frameworks/Makefile
-	src/content/guides/frameworks/laravel/Makefile
-	src/content/guides/genai-claude-code-mcp/Makefile
-	src/content/guides/genai-claude-code-mcp/Images/Makefile
-	src/content/guides/genai-leveraging-rag/Makefile
-	src/content/guides/genai-pdf-bot/Makefile
-	src/content/guides/genai-video-bot/Makefile
-	src/content/guides/genai-video-bot/images/Makefile
-	src/content/guides/github-sonarqube-sandbox/Makefile
-	src/content/guides/golang/Makefile
-	src/content/guides/go-prometheus-monitoring/Makefile
 	src/content/guides/images/Makefile
-	src/content/guides/java/Makefile
-	src/content/guides/java/images/Makefile
-	src/content/guides/nextjs/Makefile
-	src/content/guides/nodejs/Makefile
-	src/content/guides/php/Makefile
-	src/content/guides/postgresql/Makefile
-	src/content/guides/python/Makefile
-	src/content/guides/r/Makefile
-	src/content/guides/rag-ollama/Makefile
-	src/content/guides/reactjs/Makefile
-	src/content/guides/ros2/Makefile
-	src/content/guides/ruby/Makefile
-	src/content/guides/rust/Makefile
-	src/content/guides/testcontainers-cloud/Makefile
-	src/content/guides/testcontainers-dotnet-aspnet-core/Makefile
-	src/content/guides/testcontainers-dotnet-getting-started/Makefile
-	src/content/guides/testcontainers-go-getting-started/Makefile
-	src/content/guides/testcontainers-java-aws-localstack/Makefile
-	src/content/guides/testcontainers-java-getting-started/Makefile
-	src/content/guides/testcontainers-java-jooq-flyway/Makefile
-	src/content/guides/testcontainers-java-keycloak-spring-boot/Makefile
-	src/content/guides/testcontainers-java-lifecycle/Makefile
-	src/content/guides/testcontainers-java-micronaut-kafka/Makefile
-	src/content/guides/testcontainers-java-micronaut-wiremock/Makefile
-	src/content/guides/testcontainers-java-mockserver/Makefile
-	src/content/guides/testcontainers-java-quarkus/Makefile
-	src/content/guides/testcontainers-java-replace-h2/Makefile
-	src/content/guides/testcontainers-java-service-configuration/Makefile
-	src/content/guides/testcontainers-java-spring-boot-kafka/Makefile
-	src/content/guides/testcontainers-java-spring-boot-rest-api/Makefile
-	src/content/guides/testcontainers-java-wiremock/Makefile
-	src/content/guides/testcontainers-nodejs-getting-started/Makefile
-	src/content/guides/testcontainers-python-getting-started/Makefile
-	src/content/guides/vuejs/Makefile
-	src/content/guides/zscaler/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/manuals/Makefile
 	src/content/manuals/accounts/Makefile
 	src/content/manuals/admin/Makefile
 	src/content/manuals/admin/company/Makefile
-	src/content/manuals/admin/company/manage/Makefile
 	src/content/manuals/admin/images/Makefile
 	src/content/manuals/admin/organization/Makefile
 	src/content/manuals/admin/organization/manage/Makefile
 	src/content/manuals/admin/organization/setup/Makefile
+	src/content/manuals/agentic-platform/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/compose/Makefile
 	src/content/manuals/ai/docker-agent/Makefile
-	src/content/manuals/ai/docker-agent/images/Makefile
-	src/content/manuals/ai/docker-agent/integrations/Makefile
-	src/content/manuals/ai/docker-agent/reference/Makefile
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/concepts/Makefile
 	src/content/manuals/ai/gordon/images/Makefile
@@ -168,9 +222,17 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/ai/sandboxes/Makefile
 	src/content/manuals/ai/sandboxes/agents/Makefile
+	src/content/manuals/ai/sandboxes/configuration/Makefile
 	src/content/manuals/ai/sandboxes/customize/Makefile
+	src/content/manuals/ai/sandboxes/governance/Makefile
+	src/content/manuals/ai/sandboxes/governance/access-controls/Makefile
+	src/content/manuals/ai/sandboxes/governance/audit/Makefile
+	src/content/manuals/ai/sandboxes/governance/monitor-and-enforce/Makefile
+	src/content/manuals/ai/sandboxes/governance/reference/Makefile
 	src/content/manuals/ai/sandboxes/images/Makefile
+	src/content/manuals/ai/sandboxes/integrations/Makefile
 	src/content/manuals/ai/sandboxes/security/Makefile
+	src/content/manuals/ai/sandboxes/workflows/Makefile
 	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
@@ -220,11 +282,13 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/troubleshoot-and-support/troubleshoot/Makefile
 	src/content/manuals/desktop/use-desktop/Makefile
 	src/content/manuals/dhi/Makefile
-	src/content/manuals/dhi/core-concepts/Makefile
 	src/content/manuals/dhi/explore/Makefile
+	src/content/manuals/dhi/explore/security-concepts/Makefile
 	src/content/manuals/dhi/how-to/Makefile
 	src/content/manuals/dhi/migration/Makefile
 	src/content/manuals/dhi/migration/examples/Makefile
+	src/content/manuals/dhi/release-notes/Makefile
+	src/content/manuals/dhi/tools/Makefile
 	src/content/manuals/docker-hub/Makefile
 	src/content/manuals/docker-hub/images/Makefile
 	src/content/manuals/docker-hub/image-library/Makefile
@@ -247,9 +311,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/Makefile
 	src/content/manuals/enterprise/security/hardened-desktop/settings-management/Makefile
 	src/content/manuals/enterprise/security/images/Makefile
+	src/content/manuals/enterprise/security/oidc-connections/Makefile
 	src/content/manuals/enterprise/security/provisioning/Makefile
 	src/content/manuals/enterprise/security/provisioning/scim/Makefile
 	src/content/manuals/enterprise/security/roles-and-permissions/Makefile
+	src/content/manuals/enterprise/security/roles-and-permissions/custom-roles/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/FAQs/Makefile
 	src/content/manuals/enterprise/security/single-sign-on/images/Makefile
@@ -314,10 +380,12 @@ AC_CONFIG_FILES([
 	src/content/manuals/security/2fa/Makefile
 	src/content/manuals/security/faqs/Makefile
 	src/content/manuals/subscription/Makefile
+	src/content/manuals/subscription/plans/Makefile
 	src/content/manuals/support/Makefile
 	src/content/manuals/unassociated-machines/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
+	src/content/reference/api/ai-governance/Makefile
 	src/content/reference/api/dvp/Makefile
 	src/content/reference/api/engine/Makefile
 	src/content/reference/api/engine/sdk/Makefile
@@ -340,7 +408,6 @@ AC_CONFIG_FILES([
 	src/data/cli/init/Makefile
 	src/data/cli/mcp/Makefile
 	src/data/cli/offload/Makefile
-	src/data/cli/sandbox/Makefile
 	src/data/cli/secrets/Makefile
 	src/data/cli/scout/Makefile
 	src/data/docsarchive/Makefile
@@ -351,12 +418,12 @@ AC_CONFIG_FILES([
 	src/layouts/_partials/Makefile
 	src/layouts/_partials/admonitions/Makefile
 	src/layouts/_partials/admonitions/icons/Makefile
+	src/layouts/_partials/api-ref/Makefile
 	src/layouts/_partials/components/Makefile
 	src/layouts/_partials/sidebar/Makefile
 	src/layouts/_partials/utils/Makefile
 	src/layouts/_shortcodes/Makefile
 	src/layouts/guides/Makefile
-	src/layouts/redirect/Makefile
 	src/layouts/samples/Makefile
 	src/static/Makefile
 ])

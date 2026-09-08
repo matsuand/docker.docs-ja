@@ -294,9 +294,9 @@ Using a bind mount, you can map the configuration file on your host computer to 
 @z
 
 @x
-   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the container](images/mounted-files.webp?border=true)
 @y
-   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the a container](images/mounted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the mounted files inside the container](images/mounted-files.webp?border=true)
 @z
 
 @x
@@ -306,9 +306,9 @@ Using a bind mount, you can map the configuration file on your host computer to 
 @z
 
 @x
-   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the container](images/deleted-files.webp?border=true)
 @y
-   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the a container](images/deleted-files.webp?border=true)
+   ![A screenshot of Docker Desktop Dashboard showing the deleted files inside the container](images/deleted-files.webp?border=true)
 @z
 
 @x

@@ -7,14 +7,14 @@ synopsis: Create a sandbox for an agent
 description: |-
     Create a sandbox with access to a host workspace for an agent.
 
-    Use "sbx run SANDBOX" to attach to the agent after creation.
+    Use "sbx run --name SANDBOX" to attach to the agent after creation.
 @y
 name: sbx create
 synopsis: Create a sandbox for an agent
 description: |-
     Create a sandbox with access to a host workspace for an agent.
 
-    Use "sbx run SANDBOX" to attach to the agent after creation.
+    Use "sbx run --name SANDBOX" to attach to the agent after creation.
 @z
 
 @x
@@ -35,10 +35,38 @@ usage: sbx create [flags] AGENT PATH [PATH...]
 
 @x cpus
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
 @y
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: N-1 host CPUs, min 1)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
+@z
+
+@x
+    - name: deny-network
+      default_value: '[]'
+      usage: |
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+@y
+    - name: deny-network
+      default_value: '[]'
+      usage: |
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+@z
+
+@x env
+      usage: |
+        Set an environment variable in the sandbox (can be repeated): KEY=VALUE, or a bare KEY to take the value from the current environment
+@y
+      usage: |
+        Set an environment variable in the sandbox (can be repeated): KEY=VALUE, or a bare KEY to take the value from the current environment
+@z
+
+@x env-file
+      usage: |
+        Read environment variables from a file (can be repeated). --env wins over any file; a later file wins over an earlier one
+@y
+      usage: |
+        Read environment variables from a file (can be repeated). --env wins over any file; a later file wins over an earlier one
 @z
 
 @x help
@@ -55,14 +83,6 @@ usage: sbx create [flags] AGENT PATH [PATH...]
         Kit reference (directory, ZIP, or OCI). Can be specified multiple times
 @z
 
-@x mcp
-      usage: |
-        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
-@y
-      usage: |
-        MCP server name to enable (use 'all' for all registered servers). Can be specified multiple times
-@z
-
 @x memory
       usage: |
         Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
@@ -73,10 +93,24 @@ usage: sbx create [flags] AGENT PATH [PATH...]
 
 @x name
       usage: |
-        Name for the sandbox (default: <agent>-<workdir>, letters, numbers, hyphens, periods, plus signs and minus signs only)
+        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods; 'default' is reserved)
 @y
       usage: |
-        Name for the sandbox (default: <agent>-<workdir>, letters, numbers, hyphens, periods, plus signs and minus signs only)
+        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods; 'default' is reserved)
+@z
+
+@x
+    - name: publish
+      shorthand: p
+      default_value: '[]'
+      usage: |
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
+@y
+    - name: publish
+      shorthand: p
+      default_value: '[]'
+      usage: |
+        Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
 @z
 
 @x quiet

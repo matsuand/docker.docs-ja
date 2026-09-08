@@ -8,7 +8,6 @@ summary: |
   Connect Claude Code to Docker Model Runner with the Anthropic-compatible API,
   package `gpt-oss` with a larger context window, and inspect requests.
 keywords: ai, claude code, docker model runner, anthropic, local models, coding assistant
-tags: [ai]
 @y
 title: Use Claude Code with Docker Model Runner
 description: Configure Claude Code to use Docker Model Runner so you can code with local models.
@@ -16,7 +15,6 @@ summary: |
   Connect Claude Code to Docker Model Runner with the Anthropic-compatible API,
   package `gpt-oss` with a larger context window, and inspect requests.
 keywords: ai, claude code, docker model runner, anthropic, local models, coding assistant
-tags: [ai]
 @z
 
 @x

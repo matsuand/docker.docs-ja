@@ -30,22 +30,6 @@ keywords: AI, Docker, MCP, MCP Gateway, MCP servers, lab, labspace
 @z
 
 @x
-    - title: Docker MCP Gateway docs
-      url: /ai/mcp-gateway/
-    - title: MCP Gateway GitHub
-      url: https://github.com/docker/mcp-gateway
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-mcp-gateway
-@y
-    - title: Docker MCP Gateway docs
-      url: __SUBDIR__/ai/mcp-gateway/
-    - title: MCP Gateway GitHub
-      url: https://github.com/docker/mcp-gateway
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-mcp-gateway
-@z
-
-@x
 This lab provides a comprehensive, hands-on overview of the Docker MCP Gateway,
 which lets you run containerized MCP servers safely and securely. Learn
 how to configure, secure, and connect MCP servers to your agentic applications.

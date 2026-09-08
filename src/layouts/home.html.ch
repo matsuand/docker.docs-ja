@@ -49,25 +49,3 @@
               (dict "url" "manuals/" "icon" "document-text" "title" "マニュアル" "description" "Docker 製品のインストール、設定、利用方法を示します。")
               (dict "url" "reference/" "icon" "command-line" "title" "リファレンス" "description" "CLI と API のドキュメントを参照します。")
 @z
-
-@x
-            Featured topics
-@y
-            注目のトピック
-@z
-
-@x
-              (dict "url" "/dhi/" "title" "Docker Hardened Images")
-              (dict "url" "/ai/sandboxes/get-started/" "title" "Get started with Docker Sandboxes")
-              (dict "url" "/desktop/" "title" "Docker Desktop overview")
-              (dict "url" "/engine/install/" "title" "Install Docker Engine")
-              (dict "url" "/reference/dockerfile/" "title" "Dockerfile reference")
-              (dict "url" "/build/" "title" "Docker Build overview")
-@y
-              (dict "url" "dhi/" "title" "Docker Hardened イメージ")
-              (dict "url" "ai/sandboxes/get-started/" "title" "Docker Sandbox をはじめよう")
-              (dict "url" "desktop/" "title" "Docker Desktop 概要")
-              (dict "url" "engine/install/" "title" "Docker Engine インストール")
-              (dict "url" "reference/dockerfile/" "title" "Dockerfile リファレンス")
-              (dict "url" "build/" "title" "Docker Build 概要")
-@z

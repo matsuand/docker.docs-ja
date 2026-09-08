@@ -78,41 +78,23 @@ participating hosts:
 @z
 
 @x
-- `2377/tcp`: Swarm control plane (configurable)
-- `4789/udp`: Overlay traffic (configurable)
-- `7946/tcp` and `7946/udp`: Node communication (not configurable)
-@y
-- `2377/tcp`: Swarm control plane (configurable)
-- `4789/udp`: Overlay traffic (configurable)
-- `7946/tcp` and `7946/udp`: Node communication (not configurable)
-@z
-
-@x
-## Create an overlay network
-@y
-## Create an overlay network
-@z
-
-@x
-The following table lists the ports that need to be open to each host
-participating in an overlay network:
-@y
-The following table lists the ports that need to be open to each host
-participating in an overlay network:
-@z
-
-@x
 | Ports                  | Description                                                                                                                                             |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](/reference/cli/docker/swarm/join/#listen-addr) |
-| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](/reference/cli/docker/swarm/init/#data-path-port)          |
+| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-port`](/reference/cli/docker/swarm/init/#data-path-port)          |
 | `7946/tcp`, `7946/udp` | Used for communication among nodes, not configurable                                                                                                    |
 @y
 | Ports                  | Description                                                                                                                                             |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `2377/tcp`             | The default Swarm control plane port, is configurable with [`docker swarm join --listen-addr`](__SUBDIR__/reference/cli/docker/swarm/join/#listen-addr) |
-| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-addr`](__SUBDIR__/reference/cli/docker/swarm/init/#data-path-port)          |
+| `4789/udp`             | The default overlay traffic port, configurable with [`docker swarm init --data-path-port`](/reference/cli/docker/swarm/init/#data-path-port)          |
 | `7946/tcp`, `7946/udp` | Used for communication among nodes, not configurable                                                                                                    |
+@z
+
+@x
+## Create an overlay network
+@y
+## Create an overlay network
 @z
 
 @x

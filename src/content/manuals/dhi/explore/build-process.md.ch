@@ -82,11 +82,11 @@ contents, build pipeline steps, security configurations, and runtime settings.
 @x
 Every Docker Hardened Image includes a SLSA Build Level 3 attestation that
 provides verifiable build provenance. For details on SLSA attestations and how to
-verify them, see [SLSA](../core-concepts/slsa.md).
+verify them, see [SLSA](security-concepts/slsa.md).
 @y
 Every Docker Hardened Image includes a SLSA Build Level 3 attestation that
 provides verifiable build provenance. For details on SLSA attestations and how to
-verify them, see [SLSA](../core-concepts/slsa.md).
+verify them, see [SLSA](security-concepts/slsa.md).
 @z
 
 @x

@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Building an AI Product Reviewer"
 linkTitle: "Lab: AI product reviewer"
@@ -33,18 +31,6 @@ keywords: AI, Docker, Model Runner, sentiment analysis, embeddings, RAG, lab, la
   time: 60 minutes
 @y
   time: 60 分
-@z
-
-@x
-    - title: Docker Model Runner docs
-      url: /ai/model-runner/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-creating-ai-product-reviewer
-@y
-    - title: Docker Model Runner docs
-      url: __SUBDIR__/ai/model-runner/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-creating-ai-product-reviewer
 @z
 
 @x

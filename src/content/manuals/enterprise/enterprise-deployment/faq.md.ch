@@ -36,26 +36,30 @@ Common questions about installing Docker Desktop using the MSI installer.
 @x
 Users must [uninstall](/manuals/desktop/uninstall.md) older `.exe` installations before using the new MSI version. The `.exe` installer includes a `-keep-data` flag that removes Docker Desktop while preserving underlying resources such as the container VMs:
 @y
-Users must [uninstall](/manuals/desktop/uninstall.md) older `.exe` installations before using the new MSI version. The `.exe` installer includes a `-keep-data` flag that removes Docker Desktop while preserving underlying resources such as the container VMs:
+Users must [uninstall](manuals/desktop/uninstall.md) older `.exe` installations before using the new MSI version. The `.exe` installer includes a `-keep-data` flag that removes Docker Desktop while preserving underlying resources such as the container VMs:
 @z
 
 @x
 ```powershell
 # For all-user installations
 & 'C:\Program Files\Docker\Docker\Docker Desktop Installer.exe' uninstall -keep-data
-
-# For per-user installations
-& '%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe' uninstall -keep-data
-
-```
 @y
 ```powershell
 # For all-user installations
 & 'C:\Program Files\Docker\Docker\Docker Desktop Installer.exe' uninstall -keep-data
+@z
 
+@x
 # For per-user installations
 & '%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe' uninstall -keep-data
+@y
+# For per-user installations
+& '%LOCALAPPDATA%\Programs\DockerDesktop\Docker Desktop Installer.exe' uninstall -keep-data
+@z
 
+@x
+```
+@y
 ```
 @z
 
@@ -170,21 +174,31 @@ The installation should complete successfully, but the `docker-users` group won'
 @z
 
 @x
-As a workaround, you can create a script that runs in the context of the user account. 
+As a workaround, you can create a script that runs in the context of the user account.
 @y
-As a workaround, you can create a script that runs in the context of the user account. 
+As a workaround, you can create a script that runs in the context of the user account.
 @z
 
 @x
-The script would be responsible for creating the `docker-users` group and populating it with the correct user.
+The script would be responsible for ensuring the `docker-users` group exists and populating it with the correct user.
 @y
-The script would be responsible for creating the `docker-users` group and populating it with the correct user.
+The script would be responsible for ensuring the `docker-users` group exists and populating it with the correct user.
 @z
 
 @x
-Here's an example script that creates the `docker-users` group and adds the current user to it (requirements may vary depending on environment):
+> [!WARNING]
+>
+> Membership in `docker-users` grants access to the Docker daemon socket, which is equivalent to granting administrative privileges on the host. Only add users who require access to Windows containers or Hyper-V VM management. For Linux containers using the WSL 2 backend, this group membership is not required. See [Protect the Docker daemon socket](/manuals/engine/security/protect-access.md) for further information.
 @y
-Here's an example script that creates the `docker-users` group and adds the current user to it (requirements may vary depending on environment):
+> [!WARNING]
+>
+> Membership in `docker-users` grants access to the Docker daemon socket, which is equivalent to granting administrative privileges on the host. Only add users who require access to Windows containers or Hyper-V VM management. For Linux containers using the WSL 2 backend, this group membership is not required. See [Protect the Docker daemon socket](manuals/engine/security/protect-access.md) for further information.
+@z
+
+@x
+Here's an example script that creates the `docker-users` group if needed and adds the current user to it (requirements may vary depending on environment):
+@y
+Here's an example script that creates the `docker-users` group if needed and adds the current user to it (requirements may vary depending on environment):
 @z
 
 @x
@@ -198,11 +212,15 @@ $CurrentUser = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 @z
 
 @x
-# Create the group
-New-LocalGroup -Name $Group
+# Create the group if it doesn't exist
+if (-not (Get-LocalGroup -Name $Group -ErrorAction SilentlyContinue)) {
+    New-LocalGroup -Name $Group
+}
 @y
-# Create the group
-New-LocalGroup -Name $Group
+# Create the group if it doesn't exist
+if (-not (Get-LocalGroup -Name $Group -ErrorAction SilentlyContinue)) {
+    New-LocalGroup -Name $Group
+}
 @z
 
 @x

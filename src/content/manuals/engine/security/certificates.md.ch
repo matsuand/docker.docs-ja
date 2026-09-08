@@ -2,25 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How to set up and use certificates with a registry to verify access
 keywords: Usage, registry, repository, client, root, certificate, docker, apache,
   ssl, tls, documentation, examples, articles, tutorials
 title: Verify repository client with certificates
-aliases:
-- /articles/certificates/
-- /engine/articles/certificates/
----
 @y
----
 description: How to set up and use certificates with a registry to verify access
 keywords: Usage, registry, repository, client, root, certificate, docker, apache,
   ssl, tls, documentation, examples, articles, tutorials
 title: Verify repository client with certificates
-aliases:
-- /articles/certificates/
-- /engine/articles/certificates/
----
 @z
 
 @x
@@ -58,13 +48,49 @@ for the registry and how to set the client TLS certificate for verification.
 @z
 
 @x
-A custom certificate is configured by creating a directory under
-`/etc/docker/certs.d` using the same name as the registry's hostname, such as
+A custom certificate is configured by creating a directory under the daemon's
+certificate root using the same name as the registry's hostname, such as
 `localhost`. All `*.crt` files are added to this directory as CA roots.
 @y
-A custom certificate is configured by creating a directory under
-`/etc/docker/certs.d` using the same name as the registry's hostname, such as
+A custom certificate is configured by creating a directory under the daemon's
+certificate root using the same name as the registry's hostname, such as
 `localhost`. All `*.crt` files are added to this directory as CA roots.
+@z
+
+@x
+Where that certificate root lives depends on the platform:
+@y
+Where that certificate root lives depends on the platform:
+@z
+
+@x
+- Native Linux Engine: `/etc/docker/certs.d/`
+- Rootless Linux: `$XDG_CONFIG_HOME/docker/certs.d` (defaults to
+  `~/.config/docker/certs.d`), not `/etc/docker/certs.d`
+- Native Windows Engine (Windows containers):
+  `%PROGRAMDATA%\docker\certs.d` (normally `C:\ProgramData\docker\certs.d`).
+  If the registry address includes a port, strip the colon from the directory
+  name because Windows filenames cannot contain `:`. For example,
+  `registry.example.com:5000` becomes `registry.example.com5000`.
+- Docker Desktop with Linux containers: put client certificates in
+  `~/.docker/certs.d` on the host. Docker Desktop copies them into the VM;
+  don't configure `/etc/docker/certs.d` inside the VM yourself. Trusted CAs
+  can also come from the host certificate store (on Windows, the Windows
+  certificate store).
+@y
+- Native Linux Engine: `/etc/docker/certs.d/`
+- Rootless Linux: `$XDG_CONFIG_HOME/docker/certs.d` (defaults to
+  `~/.config/docker/certs.d`), not `/etc/docker/certs.d`
+- Native Windows Engine (Windows containers):
+  `%PROGRAMDATA%\docker\certs.d` (normally `C:\ProgramData\docker\certs.d`).
+  If the registry address includes a port, strip the colon from the directory
+  name because Windows filenames cannot contain `:`. For example,
+  `registry.example.com:5000` becomes `registry.example.com5000`.
+- Docker Desktop with Linux containers: put client certificates in
+  `~/.docker/certs.d` on the host. Docker Desktop copies them into the VM;
+  don't configure `/etc/docker/certs.d` inside the VM yourself. Trusted CAs
+  can also come from the host certificate store (on Windows, the Windows
+  certificate store).
 @z
 
 @x

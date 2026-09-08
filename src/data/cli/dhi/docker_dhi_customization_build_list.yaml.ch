@@ -4,15 +4,13 @@
 @x
 command: docker dhi customization build list
 short: List builds of a customization
-long: |
-    List all builds of a Docker Hardened Images customization by repository and name
-usage: docker dhi customization build list <repository> <name>
+long: List all builds of a Docker Hardened Images customization by its ID
+usage: docker dhi customization build list <customization-id>
 @y
 command: docker dhi customization build list
 short: List builds of a customization
-long: |
-    List all builds of a Docker Hardened Images customization by repository and name
-usage: docker dhi customization build list <repository> <name>
+long: List all builds of a Docker Hardened Images customization by its ID
+usage: docker dhi customization build list <customization-id>
 @z
 
 % options

@@ -5,6 +5,7 @@ SUBDIRS = images image-library repos usage
 
 bases = \
 	_index.md           \
+	mcp-server.md       \
 	quickstart.md       \
 	release-notes.md    \
 	settings.md         \

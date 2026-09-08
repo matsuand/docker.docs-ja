@@ -171,12 +171,6 @@ usage: docker compose run [OPTIONS] SERVICE [COMMAND] [ARGS...]
       description: 'Disable pseudo-TTY allocation (default: auto-detected)'
 @z
 
-@x no-deps
-      description: Don't start linked services
-@y
-      description: Don't start linked services
-@z
-
 @x publish
       description: Publish a container's port(s) to the host
 @y

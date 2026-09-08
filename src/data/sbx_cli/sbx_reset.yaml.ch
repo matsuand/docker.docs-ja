@@ -20,6 +20,8 @@ description: |-
     - Clear all internal registries
     - Delete all sandbox state
     - Remove all policies
+    - Remove the managed SSH configuration
+    - Clear the Gordon assistant's sessions and history
     - Delete all stored secrets
     - Sign out of Docker Sandboxes
     - Stop the daemon
@@ -31,6 +33,8 @@ description: |-
     - Clear all internal registries
     - Delete all sandbox state
     - Remove all policies
+    - Remove the managed SSH configuration
+    - Clear the Gordon assistant's sessions and history
     - Delete all stored secrets
     - Sign out of Docker Sandboxes
     - Stop the daemon
@@ -53,48 +57,50 @@ description: |-
     Use --preserve-secrets to keep stored secrets.
     By default, you will be prompted to confirm (y/N).
     Use --force to skip the confirmation prompt.
-usage: sbx reset [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Skip confirmation prompt
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for reset
-    - name: preserve-secrets
-      default_value: "false"
-      usage: Keep stored secrets
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx - Manage AI coding agent sandboxes.
 @y
     Use --preserve-secrets to keep stored secrets.
     By default, you will be prompted to confirm (y/N).
     Use --force to skip the confirmation prompt.
+@z
+
+@x
 usage: sbx reset [flags]
-options:
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+usage: sbx reset [flags]
+@z
+
+% options:
+
+@x force
       usage: Skip confirmation prompt
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Skip confirmation prompt
+@z
+
+@x help
       usage: help for reset
-    - name: preserve-secrets
-      default_value: "false"
+@y
+      usage: help for reset
+@z
+
+@x preserve-secrets
       usage: Keep stored secrets
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Keep stored secrets
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx - Manage AI coding agent sandboxes.
+@y
     - sbx - Manage AI coding agent sandboxes.
 @z

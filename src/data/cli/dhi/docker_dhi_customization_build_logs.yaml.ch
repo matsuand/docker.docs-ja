@@ -5,12 +5,12 @@
 command: docker dhi customization build logs
 short: Get logs of a build
 long: Get the logs of a Docker Hardened Images customization build
-usage: docker dhi customization build logs <repository> <name> <build-id>
+usage: docker dhi customization build logs <customization-id> <build-id>
 @y
 command: docker dhi customization build logs
 short: Get logs of a build
 long: Get the logs of a Docker Hardened Images customization build
-usage: docker dhi customization build logs <repository> <name> <build-id>
+usage: docker dhi customization build logs <customization-id> <build-id>
 @z
 
 % options

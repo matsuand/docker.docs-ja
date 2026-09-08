@@ -1,0 +1,52 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx mcp
+synopsis: Manage MCP servers
+description: |
+    Register and manage MCP servers for use with sandbox sessions.
+usage: sbx mcp COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for mcp
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx mcp add - Register an MCP server
+    - sbx mcp auth - Authorize MCP servers
+    - sbx mcp inspect - Show MCP server details
+    - sbx mcp load - Load an already-registered MCP server into a running sandbox
+    - sbx mcp ls - List MCP servers, grouped by the gateway that serves them
+    - sbx mcp rm - Remove a registered MCP server
+@y
+name: sbx mcp
+synopsis: Manage MCP servers
+description: |
+    Register and manage MCP servers for use with sandbox sessions.
+usage: sbx mcp COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for mcp
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx - Manage AI coding agent sandboxes.
+    - sbx mcp add - Register an MCP server
+    - sbx mcp auth - Authorize MCP servers
+    - sbx mcp inspect - Show MCP server details
+    - sbx mcp load - Load an already-registered MCP server into a running sandbox
+    - sbx mcp ls - List MCP servers, grouped by the gateway that serves them
+    - sbx mcp rm - Remove a registered MCP server
+@z

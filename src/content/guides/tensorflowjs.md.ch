@@ -18,15 +18,6 @@ summary: |
 @z
 
 @x
-tags: [ai]
-languages: [js]
-@y
-tags: [ai]
-languages: [js]
-@z
-
-% params:
-@x
   time: 20 minutes
 @y
   time: 20 分

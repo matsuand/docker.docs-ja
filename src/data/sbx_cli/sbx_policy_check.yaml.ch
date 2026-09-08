@@ -1,0 +1,50 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx policy check
+synopsis: Check whether policy allows an access request
+description: |-
+    Check whether the current sandbox policy would authorize an access request.
+@y
+name: sbx policy check
+synopsis: Check whether policy allows an access request
+description: |-
+    Check whether the current sandbox policy would authorize an access request.
+@z
+
+@x
+    The check is read-only and evaluates the same daemon-side policy authorizer
+    used by sandbox network enforcement.
+usage: sbx policy check COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for check
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx policy - Manage sandbox policies
+    - sbx policy check network - Check network access to a host
+@y
+    The check is read-only and evaluates the same daemon-side policy authorizer
+    used by sandbox network enforcement.
+usage: sbx policy check COMMAND
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for check
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+see_also:
+    - sbx policy - Manage sandbox policies
+    - sbx policy check network - Check network access to a host
+@z

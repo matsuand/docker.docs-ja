@@ -17,61 +17,65 @@ description: |-
     Displays which hosts were allowed or blocked by the proxy, along with the
     matching rule, proxy type, and request count. Useful for debugging connectivity
     issues or auditing network activity.
-usage: sbx policy log [SANDBOX] [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for log
-    - name: json
-      default_value: "false"
-      usage: Output in JSON format
-    - name: limit
-      default_value: "0"
-      usage: Maximum number of log entries to show
-    - name: quiet
-      shorthand: q
-      default_value: "false"
-      usage: Only display log entries
-    - name: type
-      default_value: all
-      usage: 'Filter logs by type: "all" or "network" (default "all")'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Show all policy logs
-      sbx policy log
 @y
     Displays which hosts were allowed or blocked by the proxy, along with the
     matching rule, proxy type, and request count. Useful for debugging connectivity
     issues or auditing network activity.
+@z
+
+@x
 usage: sbx policy log [SANDBOX] [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy log [SANDBOX] [flags]
+@z
+
+% options:
+
+@x help
       usage: help for log
-    - name: json
-      default_value: "false"
+@y
+      usage: help for log
+@z
+
+@x json
       usage: Output in JSON format
-    - name: limit
-      default_value: "0"
+@y
+      usage: Output in JSON format
+@z
+
+@x limit
       usage: Maximum number of log entries to show
-    - name: quiet
-      shorthand: q
-      default_value: "false"
+@y
+      usage: Maximum number of log entries to show
+@z
+
+@x quiet
       usage: Only display log entries
-    - name: type
-      default_value: all
-      usage: 'Filter logs by type: "all" or "network" (default "all")'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Only display log entries
+@z
+
+@x type
+      usage: |
+        Filter logs by type: "all", "network", or "filesystem" (filesystem logs are not supported yet; default "all")
+@y
+      usage: |
+        Filter logs by type: "all", "network", or "filesystem" (filesystem logs are not supported yet; default "all")
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Show all policy logs
+      sbx policy log
+@y
 example: |4-
       # Show all policy logs
       sbx policy log
@@ -96,11 +100,15 @@ example: |4-
 @x
       # Show the last 20 entries
       sbx policy log --limit 20
-see_also:
-    - sbx policy - Manage sandbox policies
 @y
       # Show the last 20 entries
       sbx policy log --limit 20
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx policy - Manage sandbox policies
+@y
     - sbx policy - Manage sandbox policies
 @z

@@ -2,18 +2,20 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = _markup _partials _shortcodes guides redirect samples
+SUBDIRS = _markup _partials _shortcodes guides samples
 
 bases = \
-	404.html         \
-	api.html         \
-	api.markdown.md  \
-	baseof.html      \
-	cli.html         \
-	cli.markdown.md  \
-	glossary.html    \
-	list.markdown.md \
-	sbx-cli.html     \
+	404.html                  \
+	api.html                  \
+	api.markdown.md           \
+	api-reference.html        \
+	api-reference.markdown.md \
+	baseof.html               \
+	cli.html                  \
+	cli.markdown.md           \
+	glossary.html             \
+	list.markdown.md          \
+	sbx-cli.html              \
 	security-announcements.rss.xml \
 	series.html
 

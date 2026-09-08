@@ -22,33 +22,33 @@ description: |-
 @z
 
 @x
-    Use -g/--global to apply the rule globally to all sandboxes, or provide
-    SANDBOX before RESOURCES to add the rule to policy "local" scoped to that
-    sandbox.
+    The rule applies globally to all sandboxes by default. Use --sandbox to add
+    the rule to policy "local" scoped to a single sandbox instead.
 @y
-    Use -g/--global to apply the rule globally to all sandboxes, or provide
-    SANDBOX before RESOURCES to add the rule to policy "local" scoped to that
-    sandbox.
+    The rule applies globally to all sandboxes by default. Use --sandbox to add
+    the rule to policy "local" scoped to a single sandbox instead.
 @z
 
 @x
-usage: sbx policy deny network [-g | SANDBOX] RESOURCES [flags]
+usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
 @y
-usage: sbx policy deny network [-g | SANDBOX] RESOURCES [flags]
+usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
 @z
 
 % options:
-
-@x global
-      usage: Apply the rule globally to all sandboxes
-@y
-      usage: Apply the rule globally to all sandboxes
-@z
 
 @x help
       usage: help for network
 @y
       usage: help for network
+@z
+
+@x sandbox
+      usage: |
+        Scope the rule to a specific sandbox (default: all sandboxes)
+@y
+      usage: |
+        Scope the rule to a specific sandbox (default: all sandboxes)
 @z
 
 % inherited_options:
@@ -61,28 +61,28 @@ usage: sbx policy deny network [-g | SANDBOX] RESOURCES [flags]
 
 @x
 example: |4-
-      # Block access to a host globally
-      sbx policy deny network -g ads.example.com
+      # Block access to a host (all sandboxes)
+      sbx policy deny network ads.example.com
 @y
 example: |4-
-      # Block access to a host globally
-      sbx policy deny network -g ads.example.com
+      # Block access to a host (all sandboxes)
+      sbx policy deny network ads.example.com
 @z
 
 @x
       # Block a host only for a specific sandbox
-      sbx policy deny network my-sandbox ads.example.com
+      sbx policy deny network --sandbox my-sandbox ads.example.com
 @y
       # Block a host only for a specific sandbox
-      sbx policy deny network my-sandbox ads.example.com
+      sbx policy deny network --sandbox my-sandbox ads.example.com
 @z
 
 @x
-      # Block all outbound traffic globally
-      sbx policy deny network -g "**"
+      # Block all outbound traffic
+      sbx policy deny network "**"
 @y
-      # Block all outbound traffic globally
-      sbx policy deny network -g "**"
+      # Block all outbound traffic
+      sbx policy deny network "**"
 @z
 
 % see_also:

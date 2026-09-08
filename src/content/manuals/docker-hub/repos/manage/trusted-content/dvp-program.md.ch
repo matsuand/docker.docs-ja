@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Learn what the Docker Verified Publisher Program is and how it works
@@ -13,12 +13,14 @@ title: Docker Verified Publisher Program
 
 @x
 [The Docker Verified Publisher
-Program](https://hub.docker.com/search?badges=verified_publisher) provides
-high-quality images from commercial publishers verified by Docker.
+Program](https://hub.docker.com/search?badges=verified_publisher) is a paid
+subscription program that provides high-quality images from commercial
+publishers verified by Docker.
 @y
 [The Docker Verified Publisher
-Program](https://hub.docker.com/search?badges=verified_publisher) provides
-high-quality images from commercial publishers verified by Docker.
+Program](https://hub.docker.com/search?badges=verified_publisher) is a paid
+subscription program that provides high-quality images from commercial
+publishers verified by Docker.
 @z
 
 @x
@@ -39,12 +41,12 @@ money later.
 
 @x
 Any independent software vendor who distributes software on Docker Hub can join
-the Verified Publisher Program. Find out more by heading to the [Docker Verified
-Publisher Program](https://www.docker.com/partners/programs) page.
+the Verified Publisher Program. To apply, see the [Verified Publisher Program
+application](https://hub.docker.com/publisher-program/apply).
 @y
 Any independent software vendor who distributes software on Docker Hub can join
-the Verified Publisher Program. Find out more by heading to the [Docker Verified
-Publisher Program](https://www.docker.com/partners/programs) page.
+the Verified Publisher Program. To apply, see the [Verified Publisher Program
+application](https://hub.docker.com/publisher-program/apply).
 @z
 
 @x
@@ -90,8 +92,6 @@ on participation tier:
   with Docker Scout
 - [Priority search ranking](#priority-search-ranking): Enhanced discoverability
   in Docker Hub search results
-- [Co-marketing opportunities](#co-marketing-opportunities): Joint promotional
-  activities with Docker
 @y
 - [Enterprise-grade infrastructure](#enterprise-grade-infrastructure): High
   availability hosting with 99.9% uptime
@@ -105,8 +105,6 @@ on participation tier:
   with Docker Scout
 - [Priority search ranking](#priority-search-ranking): Enhanced discoverability
   in Docker Hub search results
-- [Co-marketing opportunities](#co-marketing-opportunities): Joint promotional
-  activities with Docker
 @z
 
 @x
@@ -260,24 +258,6 @@ community.
 @z
 
 @x
-### Co-marketing opportunities
-@y
-### Co-marketing opportunities
-@z
-
-@x
-Docker collaborates with verified publishers on joint marketing initiatives,
-including blog posts, case studies, webinars, and conference presentations.
-These opportunities help amplify your brand visibility within the Docker
-ecosystem.
-@y
-Docker collaborates with verified publishers on joint marketing initiatives,
-including blog posts, case studies, webinars, and conference presentations.
-These opportunities help amplify your brand visibility within the Docker
-ecosystem.
-@z
-
-@x
 ### Insights and analytics
 @y
 ### Insights and analytics
@@ -305,6 +285,24 @@ geolocation, cloud provider, client, and more.
 @y
 The usage metrics show the number of image pulls by tag or by digest,
 geolocation, cloud provider, client, and more.
+@z
+
+@x
+## Support
+@y
+## Support
+@z
+
+@x
+The program doesn't change support for your organization. Support follows your
+organization's Docker subscription, or your program tier if you don't have a paid
+Docker subscription. For details, see [support response
+times](/manuals/support/_index.md#support-response-times).
+@y
+The program doesn't change support for your organization. Support follows your
+organization's Docker subscription, or your program tier if you don't have a paid
+Docker subscription. For details, see [support response
+times](manuals/support/_index.md#support-response-times).
 @z
 
 @x

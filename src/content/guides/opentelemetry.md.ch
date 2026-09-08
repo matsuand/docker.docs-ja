@@ -8,11 +8,13 @@ title: Instrumenting a JavaScript App with OpenTelemetry
 description: &desc Learn how to instrument a JavaScript application using OpenTelemetry in a Dockerized environment.
 keywords: OpenTelemetry, observability, tracing
 linktitle: Instrumenting JS Apps with OpenTelemetry
+summary: *desc
 @y
 title: Instrumenting a JavaScript App with OpenTelemetry
 description: &desc Learn how to instrument a JavaScript application using OpenTelemetry in a Dockerized environment.
 keywords: OpenTelemetry, observability, tracing
 linktitle: Instrumenting JS Apps with OpenTelemetry
+summary: *desc
 @z
 
 @x
@@ -333,13 +335,6 @@ Create the `docker-compose.yaml` file:
 
 @x
 ```yaml
-version: '3.9'
-@y
-```yaml
-version: '3.9'
-@z
-
-@x
 services:
   app:
     build: ./app
@@ -350,6 +345,7 @@ services:
     depends_on:
       - collector
 @y
+```yaml
 services:
   app:
     build: ./app

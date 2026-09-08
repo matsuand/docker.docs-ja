@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How to integrate Docker Scout with GitLab CI
 keywords: supply chain, security, ci, continuous integration, gitlab
 title: Integrate Docker Scout with GitLab CI/CD
 linkTitle: GitLab CI/CD
----
 @y
----
 description: How to integrate Docker Scout with GitLab CI
 keywords: supply chain, security, ci, continuous integration, gitlab
 title: Integrate Docker Scout with GitLab CI/CD
 linkTitle: GitLab CI/CD
----
 @z
 
 @x

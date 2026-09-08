@@ -60,7 +60,7 @@ The following table describes the available parameters that you can pass to
 @x
 | Parameter              | Type                                   | Default | Description                                                                                                                                                                                                                         |
 | ---------------------- | -------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                 | String                                 |         | Specify image name(s)                                                                                                                                                                                                               |
+| `name`                 | String                                 |         | Image name. To specify multiple names, use a comma-separated list.                                                                                                                                    |
 | `push`                 | `true`,`false`                         | `false` | Push after creating the image.                                                                                                                                                                                                      |
 | `push-by-digest`       | `true`,`false`                         | `false` | Push image without name.                                                                                                                                                                                                            |
 | `registry.insecure`    | `true`,`false`                         | `false` | Allow pushing to insecure registry.                                                                                                                                                                                                 |
@@ -78,7 +78,7 @@ The following table describes the available parameters that you can pass to
 @y
 | Parameter              | Type                                   | Default | Description                                                                                                                                                                                                                         |
 | ---------------------- | -------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`                 | String                                 |         | Specify image name(s)                                                                                                                                                                                                               |
+| `name`                 | String                                 |         | Image name. To specify multiple names, use a comma-separated list.                                                                                                                                    |
 | `push`                 | `true`,`false`                         | `false` | Push after creating the image.                                                                                                                                                                                                      |
 | `push-by-digest`       | `true`,`false`                         | `false` | Push image without name.                                                                                                                                                                                                            |
 | `registry.insecure`    | `true`,`false`                         | `false` | Allow pushing to insecure registry.                                                                                                                                                                                                 |
@@ -100,11 +100,31 @@ The following table describes the available parameters that you can pass to
 [2]: _index.md#oci-media-types
 [3]: #annotations
 [4]: https://github.com/moby/buildkit/blob/master/docs/build-repro.md
+[5]: /manuals/build/metadata/attestations/_index.md#attestations-as-oci-artifacts
 @y
 [1]: _index.md#compression
 [2]: _index.md#oci-media-types
 [3]: #annotations
 [4]: https://github.com/moby/buildkit/blob/master/docs/build-repro.md
+[5]: /manuals/build/metadata/attestations/_index.md#attestations-as-oci-artifacts
+@z
+
+@x
+The `name` parameter is a CSV value inside the `--output` value. To specify
+multiple image names, quote the complete `name` field:
+@y
+The `name` parameter is a CSV value inside the `--output` value. To specify
+multiple image names, quote the complete `name` field:
+@z
+
+% snip command...
+
+@x
+To assign multiple names with CLI flags instead, repeat the
+[`--tag` flag](/reference/cli/docker/buildx/build/#tag).
+@y
+To assign multiple names with CLI flags instead, repeat the
+[`--tag` flag](/reference/cli/docker/buildx/build/#tag).
 @z
 
 @x

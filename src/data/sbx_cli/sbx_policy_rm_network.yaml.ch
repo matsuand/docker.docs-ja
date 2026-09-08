@@ -14,32 +14,40 @@ description: |-
 @z
 
 @x
-    Use -g/--global to remove from the global policy, or provide SANDBOX to
-    remove from policy "local" scoped to that sandbox.
+    --id takes the RULE_ID value shown by "sbx policy ls --wide" and
+    "sbx policy inspect" — the rule's identifier, not its name. Passing a rule
+    name fails with an error that names the actual rule ID and, for removable
+    rules, the exact corrected command.
 @y
-    Use -g/--global to remove from the global policy, or provide SANDBOX to
-    remove from policy "local" scoped to that sandbox.
+    --id takes the RULE_ID value shown by "sbx policy ls --wide" and
+    "sbx policy inspect" — the rule's identifier, not its name. Passing a rule
+    name fails with an error that names the actual rule ID and, for removable
+    rules, the exact corrected command.
 @z
 
 @x
-    Use "sbx policy ls" to see active policies and their IDs/resources.
+    The rule is removed from the global policy by default. Use --sandbox to
+    remove from policy "local" scoped to a single sandbox instead.
 @y
-    Use "sbx policy ls" to see active policies and their IDs/resources.
+    The rule is removed from the global policy by default. Use --sandbox to
+    remove from policy "local" scoped to a single sandbox instead.
 @z
 
 @x
-usage: sbx policy rm network [-g | SANDBOX] [flags]
+    Use "sbx policy ls --wide" to see active rule IDs and resources, or
+    "sbx policy ls --json" for the raw filtered daemon response.
 @y
-usage: sbx policy rm network [-g | SANDBOX] [flags]
+    Use "sbx policy ls --wide" to see active rule IDs and resources, or
+    "sbx policy ls --json" for the raw filtered daemon response.
+@z
+
+@x
+usage: sbx policy rm network [--sandbox SANDBOX] [flags]
+@y
+usage: sbx policy rm network [--sandbox SANDBOX] [flags]
 @z
 
 % options:
-
-@x global
-      usage: Remove from the global policy
-@y
-      usage: Remove from the global policy
-@z
 
 @x help
       usage: help for network
@@ -59,6 +67,14 @@ usage: sbx policy rm network [-g | SANDBOX] [flags]
       usage: Remove by resource value(s), comma-separated
 @z
 
+@x sandbox
+      usage: |
+        Scope the removal to a specific sandbox (default: global policy)
+@y
+      usage: |
+        Scope the removal to a specific sandbox (default: global policy)
+@z
+
 % inherited_options:
 
 @x debug
@@ -69,36 +85,36 @@ usage: sbx policy rm network [-g | SANDBOX] [flags]
 
 @x
 example: |4-
-      # List policies to find the ID or resource to remove
-      sbx policy ls
+      # List rules to find the ID or resource to remove
+      sbx policy ls --wide
 @y
 example: |4-
-      # List policies to find the ID or resource to remove
-      sbx policy ls
+      # List rules to find the ID or resource to remove
+      sbx policy ls --wide
 @z
 
 @x
       # Remove a global rule by resource
-      sbx policy rm network -g --resource api.example.com
+      sbx policy rm network --resource api.example.com
 @y
       # Remove a global rule by resource
-      sbx policy rm network -g --resource api.example.com
+      sbx policy rm network --resource api.example.com
 @z
 
 @x
       # Remove a global rule by ID
-      sbx policy rm network -g --id 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
+      sbx policy rm network --id 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
 @y
       # Remove a global rule by ID
-      sbx policy rm network -g --id 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
+      sbx policy rm network --id 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
 @z
 
 @x
       # Remove a sandbox-scoped rule by resource
-      sbx policy rm network my-sandbox --resource api.example.com
+      sbx policy rm network --sandbox my-sandbox --resource api.example.com
 @y
       # Remove a sandbox-scoped rule by resource
-      sbx policy rm network my-sandbox --resource api.example.com
+      sbx policy rm network --sandbox my-sandbox --resource api.example.com
 @z
 
 % see_also:

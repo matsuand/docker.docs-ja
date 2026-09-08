@@ -13,7 +13,6 @@ summary: |
   You'll scaffold the project with uv, create a production-ready Dockerfile
   using a Docker Hardened Image, then add a development stage and Compose Watch
   for fast iteration.
-languages: [python]
 @y
 title: Containerize a Django application
 linkTitle: Django
@@ -24,7 +23,6 @@ summary: |
   You'll scaffold the project with uv, create a production-ready Dockerfile
   using a Docker Hardened Image, then add a development stage and Compose Watch
   for fast iteration.
-languages: [python]
 @z
 
 @x

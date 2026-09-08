@@ -82,13 +82,17 @@ agent state and history, and workspace changes.
 @z
 
 @x
-Sandboxes are isolated from each other. Each one maintains its own Docker
-daemon state, image cache, and package installations. Multiple sandboxes don't
-share images or layers.
+Each sandbox maintains its own Docker daemon state, image cache, and package
+installations. Multiple sandboxes don't share images or layers. The
+[shared agent skills store](workflows/agent-skills.md) is an exception:
+supported agents mount the same host-side store read-write unless you opt out
+when creating the sandbox.
 @y
-Sandboxes are isolated from each other. Each one maintains its own Docker
-daemon state, image cache, and package installations. Multiple sandboxes don't
-share images or layers.
+Each sandbox maintains its own Docker daemon state, image cache, and package
+installations. Multiple sandboxes don't share images or layers. The
+[shared agent skills store](workflows/agent-skills.md) is an exception:
+supported agents mount the same host-side store read-write unless you opt out
+when creating the sandbox.
 @z
 
 @x
@@ -100,27 +104,139 @@ layers, and volumes, and this grows as you build images and install packages.
 @z
 
 @x
+Virtiofs caching is enabled by default on all operating systems. File reads
+from the sandbox VM are cached on the host side, reducing round-trips through
+the filesystem passthrough and improving performance for read-heavy workloads
+such as `git status` or directory scans. To opt out, set
+`DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0` when creating the sandbox:
+@y
+Virtiofs caching is enabled by default on all operating systems. File reads
+from the sandbox VM are cached on the host side, reducing round-trips through
+the filesystem passthrough and improving performance for read-heavy workloads
+such as `git status` or directory scans. To opt out, set
+`DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0` when creating the sandbox:
+@z
+
+@x
+```console
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+```
+@y
+```console
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+```
+@z
+
+@x
 ## Networking
 @y
 ## Networking
 @z
 
 @x
-All outbound traffic from the sandbox routes through an HTTP/HTTPS proxy on
-your host. Agents are configured to use the proxy automatically. The proxy
-enforces [network access policies](security/policy.md) and handles
-[credential injection](security/credentials.md). See
+All outbound TCP traffic from the sandbox routes through a proxy on your host.
+Agents use a forward proxy for HTTP and HTTPS; other TCP traffic is forwarded
+transparently. Both paths enforce
+[network access policies](governance/access-controls/network.md). The forward
+proxy also handles [credential injection](configuration/credentials.md). See
 [Network isolation](security/isolation.md#network-isolation) for how this
 works and [Default security posture](security/defaults.md) for what is
 allowed out of the box.
 @y
-All outbound traffic from the sandbox routes through an HTTP/HTTPS proxy on
-your host. Agents are configured to use the proxy automatically. The proxy
-enforces [network access policies](security/policy.md) and handles
-[credential injection](security/credentials.md). See
+All outbound TCP traffic from the sandbox routes through a proxy on your host.
+Agents use a forward proxy for HTTP and HTTPS; other TCP traffic is forwarded
+transparently. Both paths enforce
+[network access policies](governance/access-controls/network.md). The forward
+proxy also handles [credential injection](configuration/credentials.md). See
 [Network isolation](security/isolation.md#network-isolation) for how this
 works and [Default security posture](security/defaults.md) for what is
 allowed out of the box.
+@z
+
+@x
+### Upstream proxy
+@y
+### Upstream proxy
+@z
+
+@x
+The host-side proxy makes its outbound connections using your host's network
+configuration and routing. When a destination is reachable through a direct
+route, traffic follows that route. When reaching a destination requires an
+upstream proxy, the host-side proxy forwards the request to it. Chaining to an
+upstream proxy means sandbox traffic respects the same egress controls as other
+applications on your host.
+@y
+The host-side proxy makes its outbound connections using your host's network
+configuration and routing. When a destination is reachable through a direct
+route, traffic follows that route. When reaching a destination requires an
+upstream proxy, the host-side proxy forwards the request to it. Chaining to an
+upstream proxy means sandbox traffic respects the same egress controls as other
+applications on your host.
+@z
+
+@x
+By default, both sandbox traffic and the daemon's own traffic follow your OS
+system proxy, so this usually works without any configuration. To set a proxy
+explicitly — with a proxy URL, a PAC file, a SOCKS5 proxy, or separate settings
+for sandbox and daemon traffic — see
+[Configure an upstream proxy](configuration/upstream-proxy.md). Upstream proxy support is
+experimental and subject to change.
+@y
+By default, both sandbox traffic and the daemon's own traffic follow your OS
+system proxy, so this usually works without any configuration. To set a proxy
+explicitly — with a proxy URL, a PAC file, a SOCKS5 proxy, or separate settings
+for sandbox and daemon traffic — see
+[Configure an upstream proxy](configuration/upstream-proxy.md). Upstream proxy support is
+experimental and subject to change.
+@z
+
+@x
+Only HTTP and HTTPS traffic can be forwarded to an upstream proxy. Other TCP
+traffic can't be redirected to a proxy.
+@y
+Only HTTP and HTTPS traffic can be forwarded to an upstream proxy. Other TCP
+traffic can't be redirected to a proxy.
+@z
+
+@x
+## MCP gateway
+@y
+## MCP gateway
+@z
+
+@x
+Supported agents connect to a single MCP gateway endpoint for the sandbox. The
+gateway runs on the host side of the sandbox boundary and brokers access to
+registered MCP servers.
+@y
+Supported agents connect to a single MCP gateway endpoint for the sandbox. The
+gateway runs on the host side of the sandbox boundary and brokers access to
+registered MCP servers.
+@z
+
+@x
+Registered MCP servers can be remote endpoints, or they can be local stdio
+servers launched on the host. Local stdio servers don't run inside the sandbox
+VM. If a local stdio server is packaged as an OCI image, or if you register an
+explicit `docker` command, it uses Docker on the host.
+@y
+Registered MCP servers can be remote endpoints, or they can be local stdio
+servers launched on the host. Local stdio servers don't run inside the sandbox
+VM. If a local stdio server is packaged as an OCI image, or if you register an
+explicit `docker` command, it uses Docker on the host.
+@z
+
+@x
+When MCP policies apply, enforcement happens on the MCP gateway path, separate
+from the HTTP/HTTPS network proxy. Server registration is checked before the
+server is stored, and governed MCP requests are checked by the gateway before
+tool calls, resource reads, prompt retrieval, or gateway meta-tool execution.
+@y
+When MCP policies apply, enforcement happens on the MCP gateway path, separate
+from the HTTP/HTTPS network proxy. Server registration is checked before the
+server is stored, and governed MCP requests are checked by the gateway before
+tool calls, resource reads, prompt retrieval, or gateway meta-tool execution.
 @z
 
 @x
@@ -143,12 +259,14 @@ installed packages and Docker images.
 Sandboxes persist until explicitly removed. Stopping an agent doesn't delete
 the VM; environment setup carries over between runs. Use `sbx rm` to delete
 the sandbox, its VM, and all of its contents. If the sandbox used
-`--branch`, the worktree directories and their branches are also removed.
+[`--clone`](usage.md#clone-mode), the `sandbox-<name>` Git remote is also
+removed from your host repository.
 @y
 Sandboxes persist until explicitly removed. Stopping an agent doesn't delete
 the VM; environment setup carries over between runs. Use `sbx rm` to delete
 the sandbox, its VM, and all of its contents. If the sandbox used
-`--branch`, the worktree directories and their branches are also removed.
+[`--clone`](usage.md#clone-mode), the `sandbox-<name>` Git remote is also
+removed from your host repository.
 @z
 
 @x

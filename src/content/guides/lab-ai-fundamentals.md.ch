@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: AI Fundamentals for Developers"
 linkTitle: "Lab: AI Fundamentals"
@@ -31,18 +29,6 @@ keywords: AI, Docker, Model Runner, prompt engineering, RAG, tool calling, lab, 
   time: 45 minutes
 @y
   time: 45 分
-@z
-
-@x
-    - title: Docker Model Runner docs
-      url: /ai/model-runner/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-ai-fundamentals
-@y
-    - title: Docker Model Runner docs
-      url: __SUBDIR__/ai/model-runner/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-ai-fundamentals
 @z
 
 @x

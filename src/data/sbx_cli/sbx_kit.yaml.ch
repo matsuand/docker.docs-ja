@@ -49,18 +49,24 @@ usage: sbx kit COMMAND
 
 @x
     - sbx - Manage AI coding agent sandboxes.
-    - sbx kit add - Add a kit to a running sandbox
+    - sbx kit add - Add a kit to a sandbox
     - sbx kit inspect - Display details about a kit artifact
     - sbx kit pack - Package a directory as a kit artifact
+    - sbx kit provenance - Show the SLSA provenance attached to a kit
     - sbx kit pull - Pull a kit artifact from an OCI registry
     - sbx kit push - Push a kit artifact to an OCI registry
+    - sbx kit sign - Sign a kit artifact
     - sbx kit validate - Validate a kit artifact
+    - sbx kit verify - Verify a kit artifact's signature
 @y
     - sbx - Manage AI coding agent sandboxes.
-    - sbx kit add - Add a kit to a running sandbox
+    - sbx kit add - Add a kit to a sandbox
     - sbx kit inspect - Display details about a kit artifact
     - sbx kit pack - Package a directory as a kit artifact
+    - sbx kit provenance - Show the SLSA provenance attached to a kit
     - sbx kit pull - Pull a kit artifact from an OCI registry
     - sbx kit push - Push a kit artifact to an OCI registry
+    - sbx kit sign - Sign a kit artifact
     - sbx kit validate - Validate a kit artifact
+    - sbx kit verify - Verify a kit artifact's signature
 @z

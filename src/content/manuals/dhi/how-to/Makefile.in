@@ -240,17 +240,18 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md            \
 	build.md             \
-	cli.md               \
 	customize.md         \
-	explore.md           \
 	hardened-packages.md \
 	helm.md              \
 	mirror.md            \
 	policies.md          \
 	scan.md              \
+	search-evaluate.md   \
 	select-enterprise.md \
+	troubleshoot.md      \
 	use.md               \
-	verify.md
+	verify.md            \
+	vex-api.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

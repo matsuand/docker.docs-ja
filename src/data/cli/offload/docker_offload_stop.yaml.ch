@@ -13,10 +13,10 @@ usage: docker offload stop [OPTIONS]
 
 % options:
 
-@x force
-    description: Don't prompt for confirmation
+@x terminate
+    description: Terminate the remote lease
 @y
-    description: Don't prompt for confirmation
+    description: Terminate the remote lease
 @z
 
 % snip directives...

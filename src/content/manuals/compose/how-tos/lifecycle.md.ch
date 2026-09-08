@@ -12,11 +12,11 @@ linkTitle: Use lifecycle hooks
 @z
 
 @x
-description: Learn how to use Docker Compose lifecycle hooks like post_start and pre_stop to customize container behavior.
-keywords: docker compose lifecycle hooks, post_start, pre_stop, docker compose entrypoint, docker container stop hooks, compose hook commands
+description: Learn how to use Docker Compose lifecycle hooks like pre_start, post_start, and pre_stop to customize container behavior.
+keywords: docker compose lifecycle hooks, post_start, pre_stop, pre_start, docker compose entrypoint, docker container stop hooks, compose hook commands
 @y
-description: Learn how to use Docker Compose lifecycle hooks like post_start and pre_stop to customize container behavior.
-keywords: docker compose lifecycle hooks, post_start, pre_stop, docker compose entrypoint, docker container stop hooks, compose hook commands
+description: Learn how to use Docker Compose lifecycle hooks like pre_start, post_start, and pre_stop to customize container behavior.
+keywords: docker compose lifecycle hooks, post_start, pre_stop, pre_start, docker compose entrypoint, docker container stop hooks, compose hook commands
 @z
 
 @x

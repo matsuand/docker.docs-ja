@@ -100,15 +100,15 @@ description: Learn about Docker Hardened Images, their purpose, how they are bui
 @z
 
 @x
-    - title: Give feedback
-      icon: question-mark-circle
-      description: Docker welcomes all contributions and feedback.
-      link: /dhi/explore/feedback
+    - title: Security concepts
+      description: Learn the core concepts behind Docker Hardened Images — signed attestations, immutable digests, SLSA, VEX, and more.
+      icon: clipboard-document-check
+      link: /dhi/explore/security-concepts/
 @y
-    - title: フィードバック
-      icon: question-mark-circle
-      description: Docker welcomes all contributions and feedback.
-      link: __SUBDIR__/dhi/explore/feedback
+    - title: Security concepts
+      description: Learn the core concepts behind Docker Hardened Images — signed attestations, immutable digests, SLSA, VEX, and more.
+      icon: clipboard-document-check
+      link: __SUBDIR__/dhi/explore/security-concepts/
 @z
 
 @x
@@ -126,13 +126,11 @@ existing Docker-based workflows with little to no retooling required.
 @x
 This section helps you understand what Docker Hardened Images are, how they're
 built and tested, the different types available, and how responsibility is
-shared between Docker and you as a user. For a complete list of DHI features and
-capabilities, see [Features](/dhi/features/).
+shared between Docker and you as a user.
 @y
 This section helps you understand what Docker Hardened Images are, how they're
 built and tested, the different types available, and how responsibility is
-shared between Docker and you as a user. For a complete list of DHI features and
-capabilities, see [Features](__SUBDIR__/dhi/features/).
+shared between Docker and you as a user.
 @z
 
 @x

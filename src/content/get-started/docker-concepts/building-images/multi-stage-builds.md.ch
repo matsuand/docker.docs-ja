@@ -361,9 +361,9 @@ Now that you have the project, you’re ready to create the `Dockerfile`.
 @z
 
 @x
-    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
+    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.8_9-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
 @y
-    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.2_13-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
+    - The second stage is a new stage named `final`. It uses a slimmer `eclipse-temurin:21.0.8_9-jre-jammy` image, containing just the Java Runtime Environment (JRE) needed to run the application. This image provides a Java Runtime Environment (JRE) which is enough for running the compiled application (JAR file). 
 @z
 
 @x

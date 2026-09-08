@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ ‘Î‰ž
+% __SUBDIR__ å¯¾å¿œ
 
 @x
 title: Data privacy and Gordon
@@ -118,19 +118,21 @@ Gordon's data retention differs based on your subscription tier:
 @z
 
 @x
-### Paid subscriptions (Pro, Team, Business)
+### Paid subscriptions
 @y
-### Paid subscriptions (Pro, Team, Business)
+### Paid subscriptions
 @z
 
 @x
 Docker and its AI providers do not retain any inputs or outputs from your
 Gordon sessions. Your queries, Gordon's responses, and any code or files
-processed are not stored.
+processed are not stored. This applies to all paid subscriptions: Docker
+Desktop plans (Pro, Team, Business) and Gordon plans (Plus, Max, Ultra).
 @y
 Docker and its AI providers do not retain any inputs or outputs from your
 Gordon sessions. Your queries, Gordon's responses, and any code or files
-processed are not stored.
+processed are not stored. This applies to all paid subscriptions: Docker
+Desktop plans (Pro, Team, Business) and Gordon plans (Plus, Max, Ultra).
 @z
 
 @x
@@ -140,11 +142,13 @@ processed are not stored.
 @z
 
 @x
-Anonymized conversation threads are stored for 30 days to improve the service.
-Individual queries and responses are retained as part of your conversation history.
+Anonymized conversation threads are stored for 5 days to help guarantee
+quality of service and fight abuse. Individual queries and responses are
+retained as part of your conversation history.
 @y
-Anonymized conversation threads are stored for 30 days to improve the service.
-Individual queries and responses are retained as part of your conversation history.
+Anonymized conversation threads are stored for 5 days to help guarantee
+quality of service and fight abuse. Individual queries and responses are
+retained as part of your conversation history.
 @z
 
 @x
@@ -155,10 +159,54 @@ Individual queries and responses are retained as part of your conversation histo
 
 @x
 Data is never used for training AI models or shared with third parties. All
-data transferred to Gordon's backend is encrypted in transit.
+data transferred to Gordon's backend is encrypted in transit. Docker's
+third-party AI providers process requests under zero-data-retention
+agreements: they don't store your prompts or Gordon's responses.
 @y
 Data is never used for training AI models or shared with third parties. All
-data transferred to Gordon's backend is encrypted in transit.
+data transferred to Gordon's backend is encrypted in transit. Docker's
+third-party AI providers process requests under zero-data-retention
+agreements: they don't store your prompts or Gordon's responses.
+@z
+
+@x
+## Sensitive data protection
+@y
+## Sensitive data protection
+@z
+
+@x
+Gordon automatically detects and redacts secrets and other sensitive material
+from your requests using [portcullis](https://github.com/docker/portcullis),
+Docker's open source redaction library. Around 240 patterns are covered,
+including:
+@y
+Gordon automatically detects and redacts secrets and other sensitive material
+from your requests using [portcullis](https://github.com/docker/portcullis),
+Docker's open source redaction library. Around 240 patterns are covered,
+including:
+@z
+
+@x
+- Cloud provider credentials (AWS, GCP, Azure, and others)
+- API tokens (GitHub, GitLab, Docker Hub, Slack, OpenAI, Stripe, and more)
+- PEM private keys and JWTs
+- Database connection-string passwords
+- Payment card numbers, IBANs, and US Social Security numbers
+@y
+- Cloud provider credentials (AWS, GCP, Azure, and others)
+- API tokens (GitHub, GitLab, Docker Hub, Slack, OpenAI, Stripe, and more)
+- PEM private keys and JWTs
+- Database connection-string passwords
+- Payment card numbers, IBANs, and US Social Security numbers
+@z
+
+@x
+Detected values are replaced with `[REDACTED]` before your request is
+processed.
+@y
+Detected values are replaced with `[REDACTED]` before your request is
+processed.
 @z
 
 @x

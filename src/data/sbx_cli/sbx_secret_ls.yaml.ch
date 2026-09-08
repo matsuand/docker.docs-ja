@@ -4,12 +4,26 @@
 @x
 name: sbx secret ls
 synopsis: List stored secrets
-usage: sbx secret ls [SANDBOX] [flags]
+description: |-
+    List stored secrets across global and sandbox scopes.
+
+    With no scope flag, all stored secrets are shown. Use --global to show only
+    global secrets, or --sandbox to show only secrets scoped to one sandbox.
 @y
 name: sbx secret ls
 synopsis: List stored secrets
-usage: sbx secret ls [SANDBOX] [flags]
+description: |-
+    List stored secrets across global and sandbox scopes.
+
+    With no scope flag, all stored secrets are shown. Use --global to show only
+    global secrets, or --sandbox to show only secrets scoped to one sandbox.
 @z
+
+@x
+usage: sbx secret ls [flags]
+@y
+usage: sbx secret ls [flags]
+@zs	
 
 % options:
 
@@ -23,6 +37,12 @@ usage: sbx secret ls [SANDBOX] [flags]
       usage: help for ls
 @y
       usage: help for ls
+@z
+
+@x sandbox
+      usage: Only list secrets for one sandbox
+@y
+      usage: Only list secrets for one sandbox
 @z
 
 @x service
@@ -59,10 +79,10 @@ example: |4-
 
 @x
       # List secrets for a specific sandbox
-      sbx secret ls my-sandbox
+      sbx secret ls --sandbox my-sandbox
 @y
       # List secrets for a specific sandbox
-      sbx secret ls my-sandbox
+      sbx secret ls --sandbox my-sandbox
 @z
 
 @x

@@ -56,24 +56,56 @@ $ sbx run shell -- -c "echo 'Hello from sandbox'"
 @z
 
 @x
-Set your API keys as environment variables so the sandbox proxy can inject
-them into API requests automatically. Credentials are never stored inside
-the VM:
+## Default startup command
 @y
-Set your API keys as environment variables so the sandbox proxy can inject
-them into API requests automatically. Credentials are never stored inside
-the VM:
+## Default startup command
+@z
+
+@x
+Without extra args, the sandbox runs `bash -l`. When the first argument after
+`--` is a flag (begins with `-`), it's added after `-l`, so login-shell
+behavior is preserved:
+@y
+Without extra args, the sandbox runs `bash -l`. When the first argument after
+`--` is a flag (begins with `-`), it's added after `-l`, so login-shell
+behavior is preserved:
 @z
 
 @x
 ```console
-$ export ANTHROPIC_API_KEY=sk-ant-xxxxx
-$ export OPENAI_API_KEY=sk-xxxxx
+$ sbx run shell -- -c "echo hi"   # runs bash -l -c "echo hi"
 ```
 @y
 ```console
-$ export ANTHROPIC_API_KEY=sk-ant-xxxxx
-$ export OPENAI_API_KEY=sk-xxxxx
+$ sbx run shell -- -c "echo hi"   # runs bash -l -c "echo hi"
+```
+@z
+
+@x
+When the first argument is a bare word, it replaces `-l` instead.
+@y
+When the first argument is a bare word, it replaces `-l` instead.
+@z
+
+@x
+Store credentials using [stored secrets](../configuration/credentials.md#stored-secrets)
+before running the sandbox. The proxy injects them into outbound API requests;
+credentials are never stored inside the VM:
+@y
+Store credentials using [stored secrets](../configuration/credentials.md#stored-secrets)
+before running the sandbox. The proxy injects them into outbound API requests;
+credentials are never stored inside the VM:
+@z
+
+@x
+```console
+$ sbx secret set anthropic
+$ sbx secret set openai
+```
+@y
+```console
+$ sbx secret set anthropic
+$ sbx secret set openai
 ```
 @z
 

@@ -187,10 +187,10 @@ For multi-stage builds:
 
 @x
 To learn how to search for available variants, see [Search and evaluate
-images](./explore.md).
+images](./search-evaluate.md).
 @y
 To learn how to search for available variants, see [Search and evaluate
-images](./explore.md).
+images](./search-evaluate.md).
 @z
 
 @x
@@ -211,12 +211,12 @@ run containers based on them during builds and tests.
 
 @x
 Unlike typical container images, DHIs also include signed
-[attestations](../core-concepts/attestations.md) such as SBOMs and provenance
+[attestations](../explore/security-concepts/attestations.md) such as SBOMs and provenance
 metadata. You can incorporate these into your pipeline to support supply chain
 security, policy checks, or audit requirements if your tooling supports it.
 @y
 Unlike typical container images, DHIs also include signed
-[attestations](../core-concepts/attestations.md) such as SBOMs and provenance
+[attestations](../explore/security-concepts/attestations.md) such as SBOMs and provenance
 metadata. You can incorporate these into your pipeline to support supply chain
 security, policy checks, or audit requirements if your tooling supports it.
 @z
@@ -323,7 +323,15 @@ To discover attestations with ORAS:
    > at runtime, or secret management tools.
 @z
 
-% snip command...
+@x
+    ```console
+    $ oras login dhi.io -u <YOUR_ORGANIZATION_NAME>
+    ```
+@y
+    ```console
+    $ oras login dhi.io -u <YOUR_ORGANIZATION_NAME>
+    ```
+@z
 
 @x
    Or non-interactively in a CI/CD pipeline, set your organization name and token:
@@ -331,7 +339,19 @@ To discover attestations with ORAS:
    Or non-interactively in a CI/CD pipeline, set your organization name and token:
 @z
 
-% snip command...
+@x
+   ```console
+   $ export DOCKER_ORG="YOUR_ORGANIZATION_NAME"
+   $ export OAT="YOUR_ORGANIZATION_ACCESS_TOKEN"
+   $ echo $OAT | oras login dhi.io -u "$DOCKER_ORG" --password-stdin
+   ```
+@y
+   ```console
+   $ export DOCKER_ORG="YOUR_ORGANIZATION_NAME"
+   $ export OAT="YOUR_ORGANIZATION_ACCESS_TOKEN"
+   $ echo $OAT | oras login dhi.io -u "$DOCKER_ORG" --password-stdin
+   ```
+@z
 
 @x
 3. Discover attestations on a DHI image:
@@ -339,7 +359,15 @@ To discover attestations with ORAS:
 3. Discover attestations on a DHI image:
 @z
 
-% snip command...
+@x
+   ```console
+   $ oras discover dhi.io/node:24-dev --platform linux/amd64
+   ```
+@y
+   ```console
+   $ oras discover dhi.io/node:24-dev --platform linux/amd64
+   ```
+@z
 
 @x
    > [!NOTE]
@@ -465,6 +493,72 @@ migration examples:
 - [Go](../migration/examples/go.md)
 - [Python](../migration/examples/python.md)
 - [Node.js](../migration/examples/node.md)
+@z
+
+@x
+## Use Socket Firewall variants to monitor package installations
+@y
+## Use Socket Firewall variants to monitor package installations
+@z
+
+@x
+If you want supply chain protection during dependency installation, use a Socket
+Firewall variant in place of the standard `-dev` variant in your build stage.
+These variants come with [Socket](https://socket.dev/) preinstalled to monitor
+package manager activity and block malicious packages before they reach your
+image.
+@y
+If you want supply chain protection during dependency installation, use a Socket
+Firewall variant in place of the standard `-dev` variant in your build stage.
+These variants come with [Socket](https://socket.dev/) preinstalled to monitor
+package manager activity and block malicious packages before they reach your
+image.
+@z
+
+@x
+Two tiers are available. Use `-sfw-dev` for Socket Firewall Free, or
+`-sfw-ent-dev` for Socket Firewall Enterprise (requires an API key from Socket).
+The runtime stage stays the same regardless of which build stage variant you
+use.
+@y
+Two tiers are available. Use `-sfw-dev` for Socket Firewall Free, or
+`-sfw-ent-dev` for Socket Firewall Enterprise (requires an API key from Socket).
+The runtime stage stays the same regardless of which build stage variant you
+use.
+@z
+
+@x
+```dockerfile
+FROM dhi.io/python:3.13-alpine3.23-sfw-dev AS build
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+@y
+```dockerfile
+FROM dhi.io/python:3.13-alpine3.23-sfw-dev AS build
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+@z
+
+@x
+FROM dhi.io/python:3.13-alpine3.23
+COPY --from=build /app /app
+CMD ["python", "app.py"]
+```
+@y
+FROM dhi.io/python:3.13-alpine3.23
+COPY --from=build /app /app
+CMD ["python", "app.py"]
+```
+@z
+
+@x
+For more information on Socket Firewall variants, see [Available image
+types](../explore/available.md).
+@y
+For more information on Socket Firewall variants, see [Available image
+types](../explore/available.md).
 @z
 
 @x

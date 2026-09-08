@@ -1,17 +1,17 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admonitions components sidebar utils
+SUBDIRS = admonitions api-ref components sidebar utils
 
 bases = \
-	footer.html         \
-	github-links.html   \
-	guides-stepper.html \
-	head.html           \
-	header.html         \
-	heading.html        \
-	md-dropdown.html    \
-	search-bar.html
+	footer.html       \
+	github-links.html \
+	head.html         \
+	header.html       \
+	heading.html      \
+	md-dropdown.html  \
+	search-bar.html   \
+	whats-new.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
@@ -21,8 +21,6 @@ copyfiles = \
 	breadcrumbs.html     \
 	content-default.html \
 	gordon-chat.html     \
-	guide-languages.html \
-	guide-tags.html      \
 	icon.html            \
 	mermaid-script.html  \
 	meta.html            \

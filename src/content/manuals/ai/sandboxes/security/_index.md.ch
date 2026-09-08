@@ -2,19 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+---
 title: Security model
 linkTitle: Security model
+weight: 110
+description: Trust boundaries, isolation layers, and security properties of Docker Sandboxes.
+keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
+---
 @y
+---
 title: Security model
 linkTitle: Security model
-@z
-
-@x
+weight: 110
 description: Trust boundaries, isolation layers, and security properties of Docker Sandboxes.
 keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
-@y
-description: Trust boundaries, isolation layers, and security properties of Docker Sandboxes.
-keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
+---
 @z
 
 @x
@@ -56,8 +58,13 @@ What crosses the boundary into the VM:
   and the agent works on a private clone.
 - **Credentials:** the host-side proxy injects authentication headers into
   outbound HTTP requests. The raw credential values never enter the VM.
-- **Network access:** HTTP and HTTPS requests to
-  [allowed domains](defaults/) are proxied through the host.
+- **Network access:** outbound TCP connections to destinations allowed by
+  [network policy](defaults/) are proxied through the host.
+- **Shared agent skills:** a persistent host-side store is mounted read-write
+  at the agent's skills directory unless you opt out when creating the
+  sandbox. Supported agents in other sandboxes mount the same store.
+- **MCP gateway traffic:** supported agents connect to a host-side MCP gateway
+  endpoint. The gateway brokers access to registered MCP servers.
 @y
 - **Workspace directory:** mounted into the VM. The default direct mount is
   read-write — the agent edits your working tree in place. With
@@ -65,8 +72,13 @@ What crosses the boundary into the VM:
   and the agent works on a private clone.
 - **Credentials:** the host-side proxy injects authentication headers into
   outbound HTTP requests. The raw credential values never enter the VM.
-- **Network access:** HTTP and HTTPS requests to
-  [allowed domains](defaults/) are proxied through the host.
+- **Network access:** outbound TCP connections to destinations allowed by
+  [network policy](defaults/) are proxied through the host.
+- **Shared agent skills:** a persistent host-side store is mounted read-write
+  at the agent's skills directory unless you opt out when creating the
+  sandbox. Supported agents in other sandboxes mount the same store.
+- **MCP gateway traffic:** supported agents connect to a host-side MCP gateway
+  endpoint. The gateway brokers access to registered MCP servers.
 @z
 
 @x
@@ -78,23 +90,45 @@ What crosses the boundary back to the host:
 @x
 - **Workspace file changes:** visible on your host in real time with the
   default direct mount.
-- **HTTP/HTTPS requests:** sent to allowed domains through the host proxy.
+- **Outbound TCP connections:** sent to allowed destinations through the host
+  proxy.
+- **Shared skill changes:** written to the host-side store and visible to other
+  sandboxes that share it.
 @y
 - **Workspace file changes:** visible on your host in real time with the
   default direct mount.
-- **HTTP/HTTPS requests:** sent to allowed domains through the host proxy.
+- **Outbound TCP connections:** sent to allowed destinations through the host
+  proxy.
+- **Shared skill changes:** written to the host-side store and visible to other
+  sandboxes that share it.
 @z
 
 @x
-Everything else is blocked. The agent cannot access your host filesystem
-(outside the workspace), your host Docker daemon, your host network or
-localhost, other sandboxes, or any domain not in the allow list. Raw TCP, UDP,
-and ICMP are blocked at the network layer.
+Outside the workspace and shared skills store, the agent cannot access your
+host filesystem. It also cannot access your host Docker daemon, your host
+network directly, or any destination not allowed by network policy. Sandboxes
+cannot communicate directly over the network. Direct external UDP and ICMP are
+blocked at the network layer.
 @y
-Everything else is blocked. The agent cannot access your host filesystem
-(outside the workspace), your host Docker daemon, your host network or
-localhost, other sandboxes, or any domain not in the allow list. Raw TCP, UDP,
-and ICMP are blocked at the network layer.
+Outside the workspace and shared skills store, the agent cannot access your
+host filesystem. It also cannot access your host Docker daemon, your host
+network directly, or any destination not allowed by network policy. Sandboxes
+cannot communicate directly over the network. Direct external UDP and ICMP are
+blocked at the network layer.
+@z
+
+@x
+MCP servers are an explicit integration point. Remote MCP servers run outside
+Docker Sandboxes, and local stdio MCP servers run on the host, not inside the
+sandbox VM. An agent can invoke the tools those servers expose through the MCP
+gateway, subject to MCP policies when organization governance is active. Treat
+local MCP servers as trusted host integrations.
+@y
+MCP servers are an explicit integration point. Remote MCP servers run outside
+Docker Sandboxes, and local stdio MCP servers run on the host, not inside the
+sandbox VM. An agent can invoke the tools those servers expose through the MCP
+gateway, subject to MCP policies when organization governance is active. Treat
+local MCP servers as trusted host integrations.
 @z
 
 @x
@@ -120,8 +154,9 @@ The sandbox security model has five layers. See
 @x
 - **Hypervisor isolation:** separate kernel per sandbox. No shared memory or
   processes with the host.
-- **Network isolation:** all HTTP/HTTPS traffic proxied through the host.
-  [Deny-by-default policy](defaults/). Non-HTTP protocols blocked entirely.
+- **Network isolation:** outbound TCP traffic is proxied through the host and
+  governed by a [deny-by-default policy](defaults/). Direct external UDP and
+  ICMP are blocked.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
 - **Workspace isolation** (opt-in via `--clone`): the agent works on a
@@ -133,8 +168,9 @@ The sandbox security model has five layers. See
 @y
 - **Hypervisor isolation:** separate kernel per sandbox. No shared memory or
   processes with the host.
-- **Network isolation:** all HTTP/HTTPS traffic proxied through the host.
-  [Deny-by-default policy](defaults/). Non-HTTP protocols blocked entirely.
+- **Network isolation:** outbound TCP traffic is proxied through the host and
+  governed by a [deny-by-default policy](defaults/). Direct external UDP and
+  ICMP are blocked.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
 - **Workspace isolation** (opt-in via `--clone`): the agent works on a
@@ -183,20 +219,20 @@ can still affect you through the shared workspace and allowed network channels.
 In direct mode, workspace changes are live on your host. With the default
 direct mount, the agent edits the same files you see on your host. This
 includes files that execute implicitly during normal development: Git hooks,
-CI configuration, IDE task configs, `Makefile`, `package.json` scripts, and
-similar build files. Review changes before running any modified code. Note
-that Git hooks live inside `.git/` and do not appear in `git diff` output —
-check them separately. See
+CI configuration, IDE task configs, AI project configuration and settings,
+`Makefile`, `package.json` scripts, and similar build files. Review changes
+before running any modified code. Note that Git hooks live inside `.git/`
+and do not appear in `git diff` output — check them separately. See
 [Workspace isolation](isolation/#workspace-isolation) for the full list and
 for the alternative clone-mode boundary.
 @y
 In direct mode, workspace changes are live on your host. With the default
 direct mount, the agent edits the same files you see on your host. This
 includes files that execute implicitly during normal development: Git hooks,
-CI configuration, IDE task configs, `Makefile`, `package.json` scripts, and
-similar build files. Review changes before running any modified code. Note
-that Git hooks live inside `.git/` and do not appear in `git diff` output —
-check them separately. See
+CI configuration, IDE task configs, AI project configuration and settings,
+`Makefile`, `package.json` scripts, and similar build files. Review changes
+before running any modified code. Note that Git hooks live inside `.git/`
+and do not appear in `git diff` output — check them separately. See
 [Workspace isolation](isolation/#workspace-isolation) for the full list and
 for the alternative clone-mode boundary.
 @z
@@ -214,33 +250,73 @@ see the full list of active rules, and remove entries you don't need. See
 @z
 
 @x
+Kits run install commands with root privileges inside the sandbox. To limit
+supply-chain risk, `sbx` restricts kit installs to an allowlist of sources
+that defaults to Docker Hub only. See
+[Restrict kit sources](../customize/kits.md#restrict-kit-sources).
+@y
+Kits run install commands with root privileges inside the sandbox. To limit
+supply-chain risk, `sbx` restricts kit installs to an allowlist of sources
+that defaults to Docker Hub only. See
+[Restrict kit sources](../customize/kits.md#restrict-kit-sources).
+@z
+
+@x
+Shared agent skills create a narrow exception to cross-sandbox isolation. The
+store is mounted read-write, so one sandbox can modify instructions or scripts
+that an agent later uses in another sandbox. This doesn't expose the rest of
+the host filesystem or create a direct network path between sandboxes, but it
+does put participating sandboxes in the same trust boundary. See
+[Share agent skills](../workflows/agent-skills.md) for details and the
+per-sandbox opt-out.
+@y
+Shared agent skills create a narrow exception to cross-sandbox isolation. The
+store is mounted read-write, so one sandbox can modify instructions or scripts
+that an agent later uses in another sandbox. This doesn't expose the rest of
+the host filesystem or create a direct network path between sandboxes, but it
+does put participating sandboxes in the same trust boundary. See
+[Share agent skills](../workflows/agent-skills.md) for details and the
+per-sandbox opt-out.
+@z
+
+@x
+Local stdio MCP servers run outside the sandbox VM. If you register a local MCP
+server that starts a host process or host Docker container, that process or
+container uses host permissions and host isolation, not sandbox isolation. See
+[MCP gateway](../mcp-gateway.md).
+@y
+Local stdio MCP servers run outside the sandbox VM. If you register a local MCP
+server that starts a host process or host Docker container, that process or
+container uses host permissions and host isolation, not sandbox isolation. See
+[MCP gateway](../mcp-gateway.md).
+@z
+
+@x
 ## Organization-wide control
 @y
 ## Organization-wide control
 @z
 
 @x
-On a single developer's machine, network and filesystem policies are
-configured locally with `sbx policy`. Admins can also centrally define those
-policies in the Docker Admin Console. When organization governance is active,
-the centrally defined rules apply uniformly across every sandbox in the
-organization and take precedence over local rules. Admins can optionally
-delegate specific rule types back to local control so developers can add
-additional allow rules.
+On a single developer's machine, security and policy are configured locally —
+for example, network and filesystem rules set with `sbx policy`. Admins can
+move these controls to the organization level so that security, policy, and
+access apply consistently across every developer's sandboxes, rather than
+depending on local configuration.
 @y
-On a single developer's machine, network and filesystem policies are
-configured locally with `sbx policy`. Admins can also centrally define those
-policies in the Docker Admin Console. When organization governance is active,
-the centrally defined rules apply uniformly across every sandbox in the
-organization and take precedence over local rules. Admins can optionally
-delegate specific rule types back to local control so developers can add
-additional allow rules.
+On a single developer's machine, security and policy are configured locally —
+for example, network and filesystem rules set with `sbx policy`. Admins can
+move these controls to the organization level so that security, policy, and
+access apply consistently across every developer's sandboxes, rather than
+depending on local configuration.
 @z
 
 @x
-See [Organization governance](governance/) for details.
+See [Governance](../governance/) for the controls available to organization
+admins.
 @y
-See [Organization governance](governance/) for details.
+See [Governance](../governance/) for the controls available to organization
+admins.
 @z
 
 @x
@@ -254,17 +330,17 @@ See [Organization governance](governance/) for details.
   workspace, and credential isolation work
 - [Default security posture](defaults/): what a fresh sandbox permits and
   blocks
-- [Credentials](credentials/): how to provide and manage API keys
-- [Policies](policy/): how to customize network access rules
-- [Organization governance](governance/): centrally manage policies across
-  an organization
+- [Manage credentials](../configuration/credentials.md): provide and manage API
+  keys while keeping their values outside the sandbox
+- [Governance](../governance/): configure network, filesystem, and MCP access
+  controls locally or across your organization
 @y
 - [Isolation layers](isolation/): how hypervisor, network, Docker,
   workspace, and credential isolation work
 - [Default security posture](defaults/): what a fresh sandbox permits and
   blocks
-- [Credentials](credentials/): how to provide and manage API keys
-- [Policies](policy/): how to customize network access rules
-- [Organization governance](governance/): centrally manage policies across
-  an organization
+- [Manage credentials](../configuration/credentials.md): provide and manage API
+  keys while keeping their values outside the sandbox
+- [Governance](../governance/): configure network, filesystem, and MCP access
+  controls locally or across your organization
 @z

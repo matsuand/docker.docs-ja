@@ -4,10 +4,11 @@
 SUBDIRS = drivers images
 
 bases = \
-	_index.md      \
-	bind-mounts.md \
-	containerd.md  \
-	tmpfs.md       \
+	_index.md       \
+	bind-mounts.md  \
+	containerd.md   \
+	image-mounts.md \
+	tmpfs.md        \
 	volumes.md
 
 include $(top_srcdir)/build-aux/common.mk

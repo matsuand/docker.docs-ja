@@ -11,10 +11,10 @@ linkTitle: Defaults
 
 @x
 description: What a sandbox permits and blocks before you change any settings.
-keywords: docker sandboxes, security defaults, network policy, credentials, sbx
+keywords: docker sandboxes, security defaults, network policy, credentials, shared skills, sbx
 @y
 description: What a sandbox permits and blocks before you change any settings.
-keywords: docker sandboxes, security defaults, network policy, credentials, sbx
+keywords: docker sandboxes, security defaults, network policy, credentials, shared skills, sbx
 @z
 
 @x
@@ -32,27 +32,29 @@ security posture.
 @z
 
 @x
-All outbound HTTP and HTTPS traffic is blocked unless an explicit rule allows
-it (deny-by-default). All non-HTTP protocols (raw TCP, UDP including DNS, and
-ICMP) are blocked at the network layer. Traffic to private IP ranges, loopback
-addresses, and link-local addresses is also blocked.
+All outbound TCP traffic, including HTTP, HTTPS, and SSH, is blocked unless an
+explicit rule allows the destination. Direct external UDP and ICMP traffic is
+blocked at the network layer. DNS queries use the sandbox's internal resolver,
+which enforces network policy.
 @y
-All outbound HTTP and HTTPS traffic is blocked unless an explicit rule allows
-it (deny-by-default). All non-HTTP protocols (raw TCP, UDP including DNS, and
-ICMP) are blocked at the network layer. Traffic to private IP ranges, loopback
-addresses, and link-local addresses is also blocked.
+All outbound TCP traffic, including HTTP, HTTPS, and SSH, is blocked unless an
+explicit rule allows the destination. Direct external UDP and ICMP traffic is
+blocked at the network layer. DNS queries use the sandbox's internal resolver,
+which enforces network policy.
 @z
 
 @x
-Run `sbx policy ls` to see the active network rules for your installation. To
-customize network access, see [Policies](policy.md). If your organization
-manages sandbox policies centrally, those rules apply on top of the defaults
-described here. See [Organization governance](governance.md).
+Run `sbx policy ls` to see the active network rules for your installation.
+Rules can be customized per machine with the `sbx policy` CLI, or managed
+centrally across your organization. Org-level rules take precedence over local
+rules. See
+[Network access policies](../governance/access-controls/network.md).
 @y
-Run `sbx policy ls` to see the active network rules for your installation. To
-customize network access, see [Policies](policy.md). If your organization
-manages sandbox policies centrally, those rules apply on top of the defaults
-described here. See [Organization governance](governance.md).
+Run `sbx policy ls` to see the active network rules for your installation.
+Rules can be customized per machine with the `sbx policy` CLI, or managed
+centrally across your organization. Org-level rules take precedence over local
+rules. See
+[Network access policies](../governance/access-controls/network.md).
 @z
 
 @x
@@ -82,6 +84,26 @@ review after an agent session.
 @z
 
 @x
+## Shared skills defaults
+@y
+## Shared skills defaults
+@z
+
+@x
+Sandboxes for supported agents mount a persistent shared skills store
+read-write by default. Every sandbox that uses the store can change skills that
+other participating sandboxes may load. Use `--no-share-skills` when creating a
+sandbox to keep it outside this shared trust boundary. See
+[Share agent skills](../workflows/agent-skills.md).
+@y
+Sandboxes for supported agents mount a persistent shared skills store
+read-write by default. Every sandbox that uses the store can change skills that
+other participating sandboxes may load. Use `--no-share-skills` when creating a
+sandbox to keep it outside this shared trust boundary. See
+[Share agent skills](../workflows/agent-skills.md).
+@z
+
+@x
 ## Credential defaults
 @y
 ## Credential defaults
@@ -100,9 +122,9 @@ read the raw credential values.
 @z
 
 @x
-See [Credentials](credentials.md) for setup instructions.
+See [Credentials](../configuration/credentials.md) for setup instructions.
 @y
-See [Credentials](credentials.md) for setup instructions.
+See [Credentials](../configuration/credentials.md) for setup instructions.
 @z
 
 @x
@@ -133,12 +155,12 @@ The agent runs with full control inside the sandbox VM:
 Everything the agent installs or creates inside the VM, including packages,
 Docker images, and configuration changes, persists across stop and restart
 cycles. When you remove the sandbox with `sbx rm`, the VM and its contents
-are deleted. Only workspace files remain on the host.
+are deleted. Workspace files and the shared skills store remain on the host.
 @y
 Everything the agent installs or creates inside the VM, including packages,
 Docker images, and configuration changes, persists across stop and restart
 cycles. When you remove the sandbox with `sbx rm`, the VM and its contents
-are deleted. Only workspace files remain on the host.
+are deleted. Workspace files and the shared skills store remain on the host.
 @z
 
 @x
@@ -156,25 +178,23 @@ policy configuration:
 @z
 
 @x
-- Host filesystem access outside the workspace directory
+- Host filesystem access outside explicitly mounted workspaces and the shared
+  skills store
 - Host Docker daemon
-- Host network and localhost
-- Communication between sandboxes
-- Raw TCP, UDP, and ICMP connections
-- Traffic to private IP ranges and link-local addresses
+- Direct network communication between sandboxes
+- Direct external UDP and ICMP connections
 @y
-- Host filesystem access outside the workspace directory
+- Host filesystem access outside explicitly mounted workspaces and the shared
+  skills store
 - Host Docker daemon
-- Host network and localhost
-- Communication between sandboxes
-- Raw TCP, UDP, and ICMP connections
-- Traffic to private IP ranges and link-local addresses
+- Direct network communication between sandboxes
+- Direct external UDP and ICMP connections
 @z
 
 @x
-Outbound HTTP/HTTPS to domains not in the allow list is also blocked by
-default, but you can add allow rules with `sbx policy allow`.
+Outbound TCP to destinations not in the allow list is also blocked by default,
+but you can add allow rules with `sbx policy allow`.
 @y
-Outbound HTTP/HTTPS to domains not in the allow list is also blocked by
-default, but you can add allow rules with `sbx policy allow`.
+Outbound TCP to destinations not in the allow list is also blocked by default,
+but you can add allow rules with `sbx policy allow`.
 @z

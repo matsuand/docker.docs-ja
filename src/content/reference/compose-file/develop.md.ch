@@ -24,9 +24,9 @@ keywords: compose, compose specification, compose file reference, compose develo
 @z
 
 @x
-{{% include "compose/develop.md" %}}
+{{% include "compose/services-develop.md" %}}
 @y
-{{% include "compose/develop.md" %}}
+{{% include "compose/services-develop.md" %}}
 @z
 
 @x
@@ -158,9 +158,9 @@ Compose to monitor source code for changes. For more information, see [Use Compo
 @z
 
 @x
-`exec` is only relevant when `action` is set to `sync+exec`. Like [service hooks](services.md#post_start), `exec` is used to define the command to be run inside the container once it has started. 
+`exec` is only relevant when `action` is set to `sync+exec`. Like [service hooks](services.md#post_start), `exec` is used to define the command to be run inside the container once it has started.
 @y
-`exec` is only relevant when `action` is set to `sync+exec`. Like [service hooks](services.md#post_start), `exec` is used to define the command to be run inside the container once it has started. 
+`exec` is only relevant when `action` is set to `sync+exec`. Like [service hooks](services.md#post_start), `exec` is used to define the command to be run inside the container once it has started.
 @z
 
 @x
@@ -241,6 +241,82 @@ for the `ignores` file, and values set in the Compose model are appended.
 @y
 If the build context includes a `.dockerignore` file, the patterns in this file is loaded as implicit content
 for the `ignores` file, and values set in the Compose model are appended.
+@z
+
+@x
+#### `include`
+@y
+#### `include`
+@z
+
+@x
+It is sometimes easier to select files to be watched instead of declaring those that shouldn't be watched with `ignore`.
+@y
+It is sometimes easier to select files to be watched instead of declaring those that shouldn't be watched with `ignore`.
+@z
+
+@x
+The `include` attribute is used to define a pattern, or a list of patterns, for paths to be considered for watching.
+Only files that match these patterns will be considered when applying a watch rule. The syntax is the same as `ignore`.
+@y
+The `include` attribute is used to define a pattern, or a list of patterns, for paths to be considered for watching.
+Only files that match these patterns will be considered when applying a watch rule. The syntax is the same as `ignore`.
+@z
+
+@x
+```yaml
+services:
+  backend:
+    image: example/backend
+    develop:
+      watch: 
+        # rebuild image and recreate service
+        - path: ./src
+          include: "*.go"  
+          action: rebuild
+```
+@y
+```yaml
+services:
+  backend:
+    image: example/backend
+    develop:
+      watch: 
+        # rebuild image and recreate service
+        - path: ./src
+          include: "*.go"  
+          action: rebuild
+```
+@z
+
+@x
+> [!NOTE]
+> 
+> In many cases `include` patterns start with a wildcard (`*`) character. This has special meaning in YAML syntax
+> to define an [alias node](https://yaml.org/spec/1.2.2/#alias-nodes) so you have to wrap pattern expression with quotes.
+@y
+> [!NOTE]
+> 
+> In many cases `include` patterns start with a wildcard (`*`) character. This has special meaning in YAML syntax
+> to define an [alias node](https://yaml.org/spec/1.2.2/#alias-nodes) so you have to wrap pattern expression with quotes.
+@z
+
+@x
+#### `initial_sync`
+@y
+#### `initial_sync`
+@z
+
+@x
+When using `sync+x` actions, it can be useful to ensure that files inside containers are up to date at the start of a new watch session.
+@y
+When using `sync+x` actions, it can be useful to ensure that files inside containers are up to date at the start of a new watch session.
+@z
+
+@x
+The `initial_sync` attribute instructs the Compose runtime, if containers for the service already exist, to check that the files from the path attribute are in sync within the service containers.
+@y
+The `initial_sync` attribute instructs the Compose runtime, if containers for the service already exist, to check that the files from the path attribute are in sync within the service containers.
 @z
 
 @x

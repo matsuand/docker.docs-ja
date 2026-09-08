@@ -29,9 +29,9 @@ Compose handles networking for you by default, but gives you fine-grained contro
 @z
 
 @x
-By default, Compose sets up a single [network](/reference/cli/docker/network/create/) for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by its service name. This network uses the `bridge` driver. To understand when you'd use a different driver, see [Network drivers: bridge vs host](#change-the-network-mode).
+By default, Compose sets up a single [network](/reference/cli/docker/network/create/) for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by its service name. This network uses the `bridge` driver. To attach services to a different Compose network or an external one, see [Specify custom networks](#specify-custom-networks). To change how a service uses the host network stack (`network_mode: host`), see [Change the network mode](#change-the-network-mode).
 @y
-By default, Compose sets up a single [network](__SUBDIR__/reference/cli/docker/network/create/) for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by its service name. This network uses the `bridge` driver. To understand when you'd use a different driver, see [Network drivers: bridge vs host](#change-the-network-mode).
+By default, Compose sets up a single [network](__SUBDIR__/reference/cli/docker/network/create/) for your app. Each container for a service joins the default network and is both reachable by other containers on that network, and discoverable by its service name. This network uses the `bridge` driver. To attach services to a different Compose network or an external one, see [Specify custom networks](#specify-custom-networks). To change how a service uses the host network stack (`network_mode: host`), see [Change the network mode](#change-the-network-mode).
 @z
 
 @x

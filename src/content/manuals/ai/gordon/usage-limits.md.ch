@@ -12,9 +12,9 @@ description: Gordon subscription tiers and usage limits for Docker Desktop and t
 @z
 
 @x
-keywords: [gordon, usage, limits, tiers, base, plus, max, subscription]
+keywords: [gordon, usage, limits, tiers, base, plus, max, ultra, subscription]
 @y
-keywords: [gordon, usage, limits, tiers, base, plus, max, subscription]
+keywords: [gordon, usage, limits, tiers, base, plus, max, ultra, subscription]
 @z
 
 @x
@@ -38,17 +38,19 @@ plans unlock higher usage limits.
 @z
 
 @x
-| Tier | Usage allocation                 |
-| ---- | -------------------------------- |
-| Base | Included with any Docker account |
-| Plus | 2× Base                          |
-| Max  | 5× Base                          |
+| Tier  | Usage allocation                 |
+| ----- | -------------------------------- |
+| Base  | Included with any Docker account |
+| Plus  | 2× Base                          |
+| Max   | 5× Base                          |
+| Ultra | 10× Base                         |
 @y
-| Tier | Usage allocation                 |
-| ---- | -------------------------------- |
-| Base | Included with any Docker account |
-| Plus | 2× Base                          |
-| Max  | 5× Base                          |
+| Tier  | Usage allocation                 |
+| ----- | -------------------------------- |
+| Base  | Included with any Docker account |
+| Plus  | 2× Base                          |
+| Max   | 5× Base                          |
+| Ultra | 10× Base                         |
 @z
 
 @x
@@ -76,17 +78,19 @@ count more toward your limit.
 @z
 
 @x
-| Tier | Per 4 hours | Per day | Per month |
-| ---- | ----------- | ------- | --------- |
-| Base | ~40         | ~100    | ~180      |
-| Plus | ~80         | ~200    | ~360      |
-| Max  | ~200        | ~500    | ~900      |
+| Tier  | Per 4 hours | Per day | Per month |
+| ----- | ----------- | ------- | --------- |
+| Base  | ~40         | ~100    | ~180      |
+| Plus  | ~80         | ~200    | ~360      |
+| Max   | ~200        | ~500    | ~900      |
+| Ultra | ~400        | ~1000   | ~1800     |
 @y
-| Tier | Per 4 hours | Per day | Per month |
-| ---- | ----------- | ------- | --------- |
-| Base | ~40         | ~100    | ~180      |
-| Plus | ~80         | ~200    | ~360      |
-| Max  | ~200        | ~500    | ~900      |
+| Tier  | Per 4 hours | Per day | Per month |
+| ----- | ----------- | ------- | --------- |
+| Base  | ~40         | ~100    | ~180      |
+| Plus  | ~80         | ~200    | ~360      |
+| Max   | ~200        | ~500    | ~900      |
+| Ultra | ~400        | ~1000   | ~1800     |
 @z
 
 @x

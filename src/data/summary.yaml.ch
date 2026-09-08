@@ -4,6 +4,16 @@
 % .md リンクへの (no slash) 対応
 
 @x
+AI Governance Audit Logs:
+  subscription: [AI Governance]
+  requires: Docker Sandboxes [0.39.0](/manuals/ai/sandboxes/release-notes.md) or later
+@y
+AI Governance Audit Logs:
+  subscription: [AI Governance]
+  requires: Docker Sandboxes [0.39.0](manuals/ai/sandboxes/release-notes.md) またはそれ以降
+@z
+
+@x
 Activity logs:
   subscription: [Team, Business]
   for: Administrators
@@ -64,7 +74,7 @@ Gordon:
   requires: Docker Desktop [4.74.0](/manuals/desktop/release-notes.md#4740) or later
 @y
 Gordon:
-  requires: Docker Desktop [4.74.0](manuals/desktop/release-notes.md#4740) およびそれ以降
+  requires: Docker Desktop [4.74.0](manuals/desktop/release-notes.md#4740) またはそれ以降
 @z
 
 @x
@@ -74,7 +84,7 @@ Gordon DHI migration:
 @y
 Gordon DHI migration:
   availability: 試験的
-  requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) およびそれ以降
+  requires: Docker Desktop [4.38.0](manuals/desktop/release-notes.md#4380) またはそれ以降
 @z
 
 @x
@@ -100,7 +110,7 @@ Build additional contexts:
   requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
 @y
 Build additional contexts:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) およびそれ以降
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) またはそれ以降
 @z
 
 @x
@@ -110,7 +120,7 @@ Build checks:
 @y
 Build checks:
   availability: ベータ
-  requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) およびそれ以降
+  requires: Docker Buildx [0.15.0](https://github.com/docker/buildx/releases/tag/v0.15.0) またはそれ以降
 @z
 
 @x
@@ -118,7 +128,7 @@ Build dockerfile inline:
   requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) and later
 @y
 Build dockerfile inline:
-  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) およびそれ以降
+  requires: Docker Compose [2.17.0](https://github.com/docker/compose/releases/tag/v2.17.0) またはそれ以降
 @z
 
 @x
@@ -126,7 +136,7 @@ Build entitlements:
   requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) and later
 @y
 Build entitlements:
-  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) およびそれ以降
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) またはそれ以降
 @z
 
 @x
@@ -134,7 +144,7 @@ Build multiple exporters:
   requires: Docker Buildx [0.13.0](https://github.com/docker/buildx/releases/tag/v0.13.0) and later
 @y
 Build multiple exporters:
-  requires: Docker Buildx [0.13.0](https://github.com/docker/buildx/releases/tag/v0.13.0) およびそれ以降
+  requires: Docker Buildx [0.13.0](https://github.com/docker/buildx/releases/tag/v0.13.0) またはそれ以降
 @z
 
 @x
@@ -150,7 +160,7 @@ Buildkit host:
   requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) and later
 @y
 Buildkit host:
-  requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) およびそれ以降
+  requires: Docker Buildx [0.9.0](https://github.com/docker/buildx/releases/tag/v0.9.0) またはそれ以降
 @z
 
 @x
@@ -158,7 +168,7 @@ Build privileged:
   requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) and later
 @y
 Build privileged:
-  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) およびそれ以降
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) またはそれ以降
 @z
 
 @x
@@ -166,7 +176,7 @@ Build ulimits:
   requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) and later
 @y
 Build ulimits:
-  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) およびそれ以降
+  requires: Docker Compose [2.23.1](https://github.com/docker/compose/releases/tag/v2.23.1) またはそれ以降
 @z
 
 @x
@@ -174,7 +184,7 @@ Buildx bake file:
   requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) and later
 @y
 Buildx bake file:
-  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) およびそれ以降
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) またはそれ以降
 @z
 
 @x
@@ -182,7 +192,7 @@ Buildx bake file separator:
   requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) and later
 @y
 Buildx bake file separator:
-  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) およびそれ以降
+  requires: Docker Buildx [0.26.0](https://github.com/docker/buildx/releases/tag/v0.26.0) またはそれ以降
 @z
 
 @x
@@ -190,7 +200,7 @@ Buildx bake Git auth token:
   requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx bake Git auth token:
-  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) またはそれ以降
 @z
 
 @x
@@ -198,7 +208,7 @@ Buildx bake Git SSH:
   requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx bake Git SSH:
-  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) またはそれ以降
 @z
 
 @x
@@ -206,7 +216,7 @@ Buildx CPU profile:
   requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) and later
 @y
 Buildx CPU profile:
-  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) およびそれ以降
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) またはそれ以降
 @z
 
 @x
@@ -214,7 +224,7 @@ Buildx Git check dirty:
   requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) and later
 @y
 Buildx Git check dirty:
-  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) およびそれ以降
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) またはそれ以降
 @z
 
 @x
@@ -222,7 +232,7 @@ Buildx Git info:
   requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) and later
 @y
 Buildx Git info:
-  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) およびそれ以降
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) またはそれ以降
 @z
 
 @x
@@ -230,7 +240,7 @@ Buildx Git labels:
   requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) and later
 @y
 Buildx Git labels:
-  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) およびそれ以降
+  requires: Docker Buildx [0.10.0](https://github.com/docker/buildx/releases/tag/v0.10.0) またはそれ以降
 @z
 
 @x
@@ -238,7 +248,7 @@ Buildx mem profile:
   requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) and later
 @y
 Buildx mem profile:
-  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) およびそれ以降
+  requires: Docker Buildx [0.18.0](https://github.com/docker/buildx/releases/tag/v0.18.0) またはそれ以降
 @z
 
 @x
@@ -246,7 +256,7 @@ Buildx metadata provenance:
   requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Buildx metadata provenance:
-  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) またはそれ以降
 @z
 
 @x
@@ -254,7 +264,7 @@ Buildx metadata warnings:
   requires: Docker Buildx [0.16.0](https://github.com/docker/buildx/releases/tag/v0.16.0) and later
 @y
 Buildx metadata warnings:
-  requires: Docker Buildx [0.16.0](https://github.com/docker/buildx/releases/tag/v0.16.0) およびそれ以降
+  requires: Docker Buildx [0.16.0](https://github.com/docker/buildx/releases/tag/v0.16.0) またはそれ以降
 @z
 
 @x
@@ -262,7 +272,15 @@ Buildx no default:
   requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) and later
 @y
 Buildx no default:
-  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) およびそれ以降
+  requires: Docker Buildx [0.10.4](https://github.com/docker/buildx/releases/tag/v0.10.4) またはそれ以降
+@z
+
+@x
+Buildx no default OCI artifact:
+  requires: Docker Buildx [0.36.1](https://github.com/docker/buildx/releases/tag/v0.36.1) and later
+@y
+Buildx no default OCI artifact:
+  requires: Docker Buildx [0.36.1](https://github.com/docker/buildx/releases/tag/v0.36.1) またはそれ以降
 @z
 
 @x
@@ -293,7 +311,7 @@ Compliance reporting:
 Compliance reporting:
   subscription: [Business]
   for: 管理者
-  requires: Docker Desktop 4.40 およびそれ以降
+  requires: Docker Desktop 4.40 またはそれ以降
   availability: 早期アクセス
 @z
 
@@ -302,7 +320,7 @@ Compose attach:
   requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) and later
 @y
 Compose attach:
-  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) およびそれ以降
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) またはそれ以降
 @z
 
 @x
@@ -310,7 +328,7 @@ Compose bridge:
   requires: Docker Desktop 4.43.0 and later
 @y
 Compose bridge:
-  requires: Docker Desktop 4.43.0 およびそれ以降
+  requires: Docker Desktop 4.43.0 またはそれ以降
 @z
 
 @x
@@ -318,7 +336,7 @@ Compose dependent images:
   requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose dependent images:
-  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) またはそれ以降
 @z
 
 @x
@@ -326,7 +344,7 @@ Compose cgroup:
   requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) and later
 @y
 Compose cgroup:
-  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) およびそれ以降
+  requires: Docker Compose [2.15.0](https://github.com/docker/compose/releases/tag/v2.15.0) またはそれ以降
 @z
 
 @x
@@ -334,7 +352,7 @@ Compose develop:
   requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose develop:
-  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) またはそれ以降
 @z
 
 @x
@@ -342,7 +360,7 @@ Compose driver opts:
   requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) and later
 @y
 Compose driver opts:
-  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) およびそれ以降
+  requires: Docker Compose [2.27.1](https://github.com/docker/compose/releases/tag/v2.27.1) またはそれ以降
 @z
 
 @x
@@ -350,7 +368,7 @@ Compose exec:
   requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) and later
 @y
 Compose exec:
-  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) およびそれ以降
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) またはそれ以降
 @z
 
 @x
@@ -358,7 +376,7 @@ Compose experimental:
   requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) and later
 @y
 Compose experimental:
-  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) およびそれ以降
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) またはそれ以降
 @z
 
 @x
@@ -366,7 +384,7 @@ Compose enable ipv4:
   requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) and later
 @y
 Compose enable ipv4:
-  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) およびそれ以降
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) またはそれ以降
 @z
 
 @x
@@ -374,7 +392,7 @@ Compose file watch:
   requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) and later
 @y
 Compose file watch:
-  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) およびそれ以降
+  requires: Docker Compose [2.22.0](https://github.com/docker/compose/releases/tag/v2.22.0) またはそれ以降
 @z
 
 @x
@@ -382,7 +400,7 @@ Compose format:
   requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose format:
-  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) またはそれ以降
 @z
 
 @x
@@ -390,7 +408,7 @@ Compose gpus:
   requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose gpus:
-  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) またはそれ以降
 @z
 
 @x
@@ -398,7 +416,7 @@ Compose gw priority:
   requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) and later
 @y
 Compose gw priority:
-  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) およびそれ以降
+  requires: Docker Compose [2.33.1](https://github.com/docker/compose/releases/tag/v2.33.1) またはそれ以降
 @z
 
 @x
@@ -406,7 +424,7 @@ Compose include:
   requires: Docker Compose [2.20.3](https://github.com/docker/compose/releases/tag/v2.20.3) and later
 @y
 Compose include:
-  requires: Docker Compose [2.20.3](https://github.com/docker/compose/releases/tag/v2.20.3) およびそれ以降
+  requires: Docker Compose [2.20.3](https://github.com/docker/compose/releases/tag/v2.20.3) またはそれ以降
 @z
 
 @x
@@ -414,7 +432,7 @@ Compose interface-name:
   requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose interface-name:
-  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) またはそれ以降
 @z
 
 @x
@@ -422,7 +440,7 @@ Compose label file:
   requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) and later
 @y
 Compose label file:
-  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) およびそれ以降
+  requires: Docker Compose [2.32.2](https://github.com/docker/compose/releases/tag/v2.32.2) またはそれ以降
 @z
 
 @x
@@ -430,7 +448,7 @@ Compose lifecycle hooks:
   requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose lifecycle hooks:
-  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) またはそれ以降
 @z
 
 @x
@@ -438,7 +456,7 @@ Compose mac address:
   requires: Docker Compose [2.23.2](https://github.com/docker/compose/releases/tag/v2.23.2) and later
 @y
 Compose mac address:
-  requires: Docker Compose [2.23.2](https://github.com/docker/compose/releases/tag/v2.23.2) およびそれ以降
+  requires: Docker Compose [2.23.2](https://github.com/docker/compose/releases/tag/v2.23.2) またはそれ以降
 @z
 
 @x
@@ -446,7 +464,7 @@ Compose menu:
   requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) and later
 @y
 Compose menu:
-  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) およびそれ以降
+  requires: Docker Compose [2.26.0](https://github.com/docker/compose/releases/tag/v2.26.0) またはそれ以降
 @z
 
 @x
@@ -454,7 +472,7 @@ Compose models:
   requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later
 @y
 Compose models:
-  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) およびそれ以降
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) またはそれ以降
 @z
 
 @x
@@ -462,7 +480,7 @@ Compose model runner:
   requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) and later, and Docker Desktop 4.43 and later
 @y
 Compose model runner:
-  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) およびそれ以降、Docker Desktop 4.43 およびそれ以降
+  requires: Docker Compose [2.38.0](https://github.com/docker/compose/releases/tag/v2.38.0) またはそれ以降、Docker Desktop 4.43 またはそれ以降
 @z
 
 @x
@@ -470,7 +488,7 @@ Compose OCI artifact:
   requires: Docker Compose [2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0) and later
 @y
 Compose OCI artifact:
-  requires: Docker Compose [2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0) およびそれ以降
+  requires: Docker Compose [2.34.0](https://github.com/docker/compose/releases/tag/v2.34.0) またはそれ以降
 @z
 
 @x
@@ -478,7 +496,7 @@ Compose provider services:
   requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose provider services:
-  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) またはそれ以降
 @z
 
 @x
@@ -486,7 +504,7 @@ Compose progress:
   requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) and later
 @y
 Compose progress:
-  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) およびそれ以降
+  requires: Docker Compose [2.36.0](https://github.com/docker/compose/releases/tag/v2.36.0) またはそれ以降
 @z
 
 @x
@@ -494,7 +512,7 @@ Compose replace file:
   requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) and later
 @y
 Compose replace file:
-  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) およびそれ以降
+  requires: Docker Compose [2.24.4](https://github.com/docker/compose/releases/tag/v2.24.4) またはそれ以降
 @z
 
 @x
@@ -502,7 +520,7 @@ Compose required:
   requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) and later
 @y
 Compose required:
-  requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) およびそれ以降
+  requires: Docker Compose [2.24.0](https://github.com/docker/compose/releases/tag/v2.24.0) またはそれ以降
 @z
 
 @x
@@ -510,7 +528,7 @@ Compose post start:
   requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose post start:
-  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) またはそれ以降
 @z
 
 @x
@@ -518,7 +536,7 @@ Compose pre stop:
   requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) and later
 @y
 Compose pre stop:
-  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) およびそれ以降
+  requires: Docker Compose [2.30.0](https://github.com/docker/compose/releases/tag/v2.30.0) またはそれ以降
 @z
 
 @x
@@ -526,7 +544,7 @@ Compose provenance:
   requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
 @y
 Compose provenance:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) およびそれ以降
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) またはそれ以降
 @z
 
 @x
@@ -534,7 +552,7 @@ Compose uts:
   requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) and later
 @y
 Compose uts:
-  requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) およびそれ以降
+  requires: Docker Compose [2.15.1](https://github.com/docker/compose/releases/tag/v2.15.1) またはそれ以降
 @z
 
 @x
@@ -542,7 +560,7 @@ Composefile include:
   requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) and later
 @y
 Composefile include:
-  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) およびそれ以降
+  requires: Docker Compose [2.20.0](https://github.com/docker/compose/releases/tag/v2.20.0) またはそれ以降
 @z
 
 @x
@@ -550,7 +568,7 @@ Compose sbom:
   requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) and later
 @y
 Compose sbom:
-  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) およびそれ以降
+  requires: Docker Compose [2.39.0](https://github.com/docker/compose/releases/tag/v2.39.0) またはそれ以降
 @z
 
 @x
@@ -558,7 +576,17 @@ Compose SDK:
   requires: Docker Compose [5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0) and later
 @y
 Compose SDK:
-  requires: Docker Compose [5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0) およびそれ以降
+  requires: Docker Compose [5.0.0](https://github.com/docker/compose/releases/tag/v5.0.0) またはそれ以降
+@z
+
+@x
+Custom roles:
+  subscription: [Business]
+  for: Administrators
+@y
+Custom roles:
+  subscription: [Business]
+  for: 管理者
 @z
 
 @x
@@ -582,7 +610,7 @@ Docker CLI OpenTelemetry:
   requires: Docker Engine [26.1.0](/manuals/engine/release-notes/26.1.md#2610) and later
 @y
 Docker CLI OpenTelemetry:
-  requires: Docker Engine [26.1.0](manuals/engine/release-notes/26.1.md#2610) およびそれ以降
+  requires: Docker Engine [26.1.0](manuals/engine/release-notes/26.1.md#2610) またはそれ以降
 @z
 
 @x
@@ -592,7 +620,7 @@ Docker Offload:
 @y
 Docker Offload:
   subscription: [Docker Offload]
-  requires: Docker Desktop 4.69 およびそれ以降
+  requires: Docker Desktop 4.69 またはそれ以降
 @z
 
 @x
@@ -608,7 +636,7 @@ Docker Debug:
   requires: Docker Desktop 4.49 and later. For Docker Desktop versions 4.48.0 and earlier, you must have a Pro, Team, or Business subscription
 @y
 Docker Debug:
-  requires: Docker Desktop 4.49 およびそれ以降。For Docker Desktop versions 4.48.0 and earlier, you must have a Pro, Team, or Business subscription
+  requires: Docker Desktop 4.49 またはそれ以降。For Docker Desktop versions 4.48.0 and earlier, you must have a Pro, Team, or Business subscription
 @z
 
 @x
@@ -640,7 +668,7 @@ Docker Init:
   requires: Docker Desktop [4.27](/manuals/desktop/release-notes.md#4270) and later
 @y
 Docker Init:
-  requires: Docker Desktop [4.27](manuals/desktop/release-notes.md#4270) およびそれ以降
+  requires: Docker Desktop [4.27](manuals/desktop/release-notes.md#4270) またはそれ以降
 @z
 
 @x
@@ -684,7 +712,7 @@ MCP Profiles:
 @y
 MCP Profiles:
   availability: 早期アクセス
-  requires: Docker Desktop 4.63 およびそれ以降
+  requires: Docker Desktop 4.63 またはそれ以降
 @z
 
 @x
@@ -694,7 +722,7 @@ Docker Pass:
 @y
 Docker Pass:
   requires: Docker Desktop 4.54 and later
-  availability: Beta
+  availability: ベータ
 @z
 
 @x
@@ -706,13 +734,31 @@ Docker Projects:
 @z
 
 @x
+Docker Sandboxes sbx:
+  availability: Early Access
+@y
+Docker Sandboxes sbx:
+  availability: 早期アクセス
+@z
+
+@x
+Docker Sandboxes SSH:
+  availability: GA
+  requires: Docker Sandboxes 0.37.0 or later
+@y
+Docker Sandboxes SSH:
+  availability: GA
+  requires: Docker Sandboxes 0.37.0 またはそれ以降
+@z
+
+@x
 Docker Sandboxes:
   availability: Experimental
   requires: Docker Desktop [4.58](/manuals/desktop/release-notes.md#4580) or later
 @y
 Docker Sandboxes:
   availability: 試験的
-  requires: Docker Desktop [4.58](manuals/desktop/release-notes.md#4580) およびそれ以降
+  requires: Docker Desktop [4.58](manuals/desktop/release-notes.md#4580) またはそれ以降
 @z
 
 @x
@@ -722,7 +768,7 @@ Docker Sandboxes v0.12:
 @y
 Docker Sandboxes v0.12:
   availability: 試験的
-  requires: Docker Desktop [4.61](/manuals/desktop/release-notes.md#4610) およびそれ以降
+  requires: Docker Desktop [4.61](/manuals/desktop/release-notes.md#4610) またはそれ以降
 @z
 
 @x
@@ -732,7 +778,7 @@ Docker Scout exceptions:
 @y
 Docker Scout exceptions:
   availability: 試験的
-  requires: Docker Scout CLI [1.15.0](manuals/scout/release-notes/cli.md#1150) およびそれ以降
+  requires: Docker Scout CLI [1.15.0](manuals/scout/release-notes/cli.md#1150) またはそれ以降
 @z
 
 @x
@@ -758,7 +804,7 @@ Docker Scout Mount Permissions:
   requires: Docker Desktop [4.34.0](/manuals/desktop/release-notes.md#4340) and later
 @y
 Docker Scout Mount Permissions:
-  requires: Docker Desktop [4.34.0](manuals/desktop/release-notes.md#4340) およびそれ以降
+  requires: Docker Desktop [4.34.0](manuals/desktop/release-notes.md#4340) またはそれ以降
 @z
 
 @x
@@ -892,7 +938,7 @@ Load by default:
   requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) and later
 @y
 Load by default:
-  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) およびそれ以降
+  requires: Docker Buildx [0.14.0](https://github.com/docker/buildx/releases/tag/v0.14.0) またはそれ以降
 @z
 
 @x
@@ -995,10 +1041,12 @@ USB/IP support:
 
 @x
 VMM:
-  for: Docker Desktop on Mac with Apple Silicon
+  availability: Beta
+  requires: "Docker Desktop 4.86 or later"
 @y
 VMM:
-  for: Docker Desktop on Mac with Apple Silicon
+  availability: ベータ
+  requires: "Docker Desktop 4.86 またはそれ以降"
 @z
 
 @x

@@ -6,6 +6,7 @@ bases = \
 	_index.md         \
 	build-an-agent.md \
 	kit-examples.md   \
+	kit-reference.md  \
 	kits.md           \
 	templates.md
 

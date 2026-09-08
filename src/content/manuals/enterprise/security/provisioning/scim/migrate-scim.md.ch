@@ -196,21 +196,21 @@ re-created by SCIM after removal.
 @z
 
 @x
-Export a list of JIT-provisioned users from Docker Admin Console:
+Export a list of JIT-provisioned users from Docker Home:
 @y
-Export a list of JIT-provisioned users from Docker Admin Console:
+Export a list of JIT-provisioned users from Docker Home:
 @z
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization.
-2. Select **Admin Console**, then **Members**.
+2. Select **Members**.
 3. Select **Export members** to download the member list as CSV for backup and
    reference.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization.
-2. Select **Admin Console**, then **Members**.
+2. Select **Members**.
 3. Select **Export members** to download the member list as CSV for backup and
    reference.
 @z
@@ -249,13 +249,13 @@ Keep this CSV list of JIT-provisioned users as a rollback reference if needed.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **SSO and SCIM**.
+2. Select **Identity & auth**, then **SSO and SCIM**.
 3. In the SSO connections table, select the **Actions** menu for your connection.
 4. Select **Disable JIT provisioning**.
 5. Select **Disable** to confirm.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **SSO and SCIM**.
+2. Select **Identity & auth**, then **SSO and SCIM**.
 3. In the SSO connections table, select the **Actions** menu for your connection.
 4. Select **Disable JIT provisioning**.
 5. Select **Disable** to confirm.
@@ -303,12 +303,12 @@ user de-provisioning when employees leave the company.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Members**.
+2. Select **Members**.
 3. Identify and remove JIT-provisioned users in manageable batches.
 4. Monitor for any errors during removal.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
-2. Select **Admin Console**, then **Members**.
+2. Select **Members**.
 3. Identify and remove JIT-provisioned users in manageable batches.
 4. Monitor for any errors during removal.
 @z
@@ -342,12 +342,12 @@ After removing JIT users, SCIM automatically re-creates user accounts:
 @x
 1. In your identity provider system log, confirm "create app user" events for
    Docker.
-2. In Docker Admin Console, confirm users reappear with SCIM provisioning.
+2. In Docker Home under **Members**, confirm users reappear with SCIM provisioning.
 3. Verify users are added to the correct teams via group mapping.
 @y
 1. In your identity provider system log, confirm "create app user" events for
    Docker.
-2. In Docker Admin Console, confirm users reappear with SCIM provisioning.
+2. In Docker Home under **Members**, confirm users reappear with SCIM provisioning.
 3. Verify users are added to the correct teams via group mapping.
 @z
 

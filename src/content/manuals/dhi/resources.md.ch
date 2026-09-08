@@ -1,92 +1,40 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
-title: Docker Hardened Images resources
-linktitle: Additional resources
-description: Additional resources including product information, blog posts, and GitHub repositories for Docker Hardened Images
+title: Resources and feedback
+linktitle: Resources and feedback
+description: Additional resources, community links, GitHub repositories, and how to give feedback for Docker Hardened Images.
+keywords: docker hardened images resources, dhi feedback, dhi github, dhi community, report issue, dhi support
 @y
-title: Docker Hardened イメージのリソース
-linktitle: その他のリソース
-description: Additional resources including product information, blog posts, and GitHub repositories for Docker Hardened Images
+title: Resources and feedback
+linktitle: Resources and feedback
+description: Additional resources, community links, GitHub repositories, and how to give feedback for Docker Hardened Images.
+keywords: docker hardened images resources, dhi feedback, dhi github, dhi community, report issue, dhi support
 @z
 
 @x
-This page provides links to additional resources related to Docker Hardened
-Images (DHI), including blog posts, guides, Docker Hub resources, and GitHub
-repositories.
+This page provides links to additional resources, community channels, and ways
+to give feedback on Docker Hardened Images (DHI).
 @y
-本ページでは Docker Hardened イメージ (DHI) のその他のリソースとして、ブログ投稿、ガイド、Docker Hub リソース、GitHub へのリンクを示すものです。
+This page provides links to additional resources, community channels, and ways
+to give feedback on Docker Hardened Images (DHI).
 @z
 
 @x
 For product information and feature comparison, visit the [Docker Hardened
 Images product page](https://www.docker.com/products/hardened-images/).
 @y
-製品情報や機能比較については [Docker Hardened イメージの製品情報](https://www.docker.com/products/hardened-images/) を参照してください。
-@z
-
-@x
-## Blog posts
-@y
-## ブログ投稿 {#blog-posts}
-@z
-
-@x
-The following blog posts provide insights into Docker Hardened Images, security
-features, and announcements:
-@y
-以下に示すブログ投稿では、Docker Hardened イメージについてのセキュリティ機能やお知らせなどを示しています。
-@z
-
-@x
-| Date published | Title |
-|------|-------|
-@y
-| 公開日付 | タイトル |
-|------|-------|
-@z
-
-@x
-| May 5, 2026 | [Precision Container Security with Docker and Black Duck](https://www.docker.com/blog/precision-container-security-with-docker-and-black-duck/) |
-| April 14, 2026 | [Why We Chose the Harder Path: Docker Hardened Images, One Year Later](https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/) |
-| April 8, 2026 | [Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io](https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/) |
-| March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
-| January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
-| January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
-@y
-| May 5, 2026 | [Precision Container Security with Docker and Black Duck](https://www.docker.com/blog/precision-container-security-with-docker-and-black-duck/) |
-| April 14, 2026 | [Why We Chose the Harder Path: Docker Hardened Images, One Year Later](https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/) |
-| April 8, 2026 | [Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io](https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/) |
-| March 3, 2026 | [Announcing Docker Hardened System Packages](https://www.docker.com/blog/announcing-docker-hardened-system-packages/) |
-| January 25, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 3](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/) |
-| January 24, 2026 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 2](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/) |
-@z
-
-@x
-| December 19, 2025 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
-| December 17, 2025 | [A Safer Container Ecosystem with Docker: Free Docker Hardened Images](https://www.docker.com/blog/docker-hardened-images-for-every-developer/) |
-| November 14, 2025 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 1](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-trial-part-1/) |
-| October 15, 2025 | [Docker Hardened Images: Crafted by Humans, Protected by AI](https://www.docker.com/blog/docker-hardened-images-crafted-by-humans-protected-by-ai/) |
-| September 29, 2025 | [Expanding Docker Hardened Images: Secure Helm Charts for Deployments](https://www.docker.com/blog/docker-hardened-images-helm-charts-beta/) |
-| August 6, 2025 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
-| August 6, 2025 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
-| May 19, 2025 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
-@y
-| December 19, 2025 | [Docker Hardened Images: Security Independently Validated by SRLabs](https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/) |
-| December 17, 2025 | [A Safer Container Ecosystem with Docker: Free Docker Hardened Images](https://www.docker.com/blog/docker-hardened-images-for-every-developer/) |
-| November 14, 2025 | [Making the Most of Your Docker Hardened Images Enterprise Trial - Part 1](https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-trial-part-1/) |
-| October 15, 2025 | [Docker Hardened Images: Crafted by Humans, Protected by AI](https://www.docker.com/blog/docker-hardened-images-crafted-by-humans-protected-by-ai/) |
-| September 29, 2025 | [Expanding Docker Hardened Images: Secure Helm Charts for Deployments](https://www.docker.com/blog/docker-hardened-images-helm-charts-beta/) |
-| August 6, 2025 | [The Next Evolution of Docker Hardened Images: Customizable, FedRAMP Ready, AI Migration Agent, and Deeper Integrations](https://www.docker.com/blog/the-next-evolution-of-docker-hardened-images/) |
-| August 6, 2025 | [Accelerating FedRAMP Compliance with Docker Hardened Images](https://www.docker.com/blog/fedramp-compliance-with-hardened-images/) |
-| May 19, 2025 | [Introducing Docker Hardened Images: Secure, Minimal, and Ready for Production](https://www.docker.com/blog/introducing-docker-hardened-images/) |
+For product information and feature comparison, visit the [Docker Hardened
+Images product page](https://www.docker.com/products/hardened-images/).
 @z
 
 @x
 ## Guides
 @y
-## ガイド {#guides}
+## Guides
 @z
 
 @x
@@ -106,7 +54,7 @@ scenarios, see the [guides section filtered by DHI](__SUBDIR__/guides/?tags=dhi)
 @x
 Docker Hardened Images are available on Docker Hub:
 @y
-Docker Hardened イメージは Docker Hub から入手できます。
+Docker Hardened Images are available on Docker Hub:
 @z
 
 @x
@@ -116,15 +64,17 @@ Docker Hardened イメージは Docker Hub から入手できます。
   MCP server to list Docker Hardened Images (DHIs) available in your
   organizations
 @y
-- [Docker Hardened イメージカタログ](https://dhi.io): Docker Hardened イメージの公式カタログから、イメージを確認してプルします。
-- [Docker Hub MCP サーバー](https://hub.docker.com/mcp/server/dockerhub/overview):
-  自組織内において MCP サーバーを用いて Docker Hardened イメージ (DHI) を入手可能にします。
+- [Docker Hardened Images Catalog](https://dhi.io): Browse and pull Docker
+  Hardened Images from the official catalog
+- [Docker Hub MCP Server](https://hub.docker.com/mcp/server/dockerhub/overview):
+  MCP server to list Docker Hardened Images (DHIs) available in your
+  organizations
 @z
 
 @x
 ## GitHub repositories and resources
 @y
-## GitHub リポジトリとリソース {#github-repositories-and-resources}
+## GitHub repositories and resources
 @z
 
 @x
@@ -132,7 +82,9 @@ Docker Hardened Images repositories are available in the
 [docker-hardened-images](https://github.com/docker-hardened-images) GitHub
 organization:
 @y
-Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-images](https://github.com/docker-hardened-images) から入手可能です。
+Docker Hardened Images repositories are available in the
+[docker-hardened-images](https://github.com/docker-hardened-images) GitHub
+organization:
 @z
 
 @x
@@ -146,37 +98,39 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   keys and verification tools
 - [Log](https://github.com/docker-hardened-images/log): Log of references (tag >
   digest) for Docker Hardened Images
+- [Policies](https://github.com/docker-hardened-images/policies): Rego source
+  for the Docker Scout policies used to enforce DHI security and compliance
+  standards
 - [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
   interface for managing and interacting with Docker Hardened Images
 - [Terraform Provider](https://github.com/docker-hardened-images/terraform-provider-dhi):
   Terraform provider for managing DHI resources
   ([Terraform Registry](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs))
-- [Discussions](https://github.com/orgs/docker-hardened-images/discussions):
-  Community forum and product discussions
 @y
-- [カタログ](https://github.com/docker-hardened-images/catalog): DHI definition
+- [Catalog](https://github.com/docker-hardened-images/catalog): DHI definition
   files and catalog metadata
-- [アドバイザリー](https://github.com/docker-hardened-images/advisories): CVE
+- [Advisories](https://github.com/docker-hardened-images/advisories): CVE
   advisories for OSS packages distributed with DHIs
   - [Scanner vendor integration guide](https://github.com/docker-hardened-images/advisories/tree/main/integration):
     Reference for scanner vendors integrating DHI VEX support
-- [キーリング](https://github.com/docker-hardened-images/keyring): Public signing
+- [Keyring](https://github.com/docker-hardened-images/keyring): Public signing
   keys and verification tools
-- [ログ](https://github.com/docker-hardened-images/log): Log of references (tag >
+- [Log](https://github.com/docker-hardened-images/log): Log of references (tag >
   digest) for Docker Hardened Images
+- [Policies](https://github.com/docker-hardened-images/policies): Rego source
+  for the Docker Scout policies used to enforce DHI security and compliance
+  standards
 - [dhictl](https://github.com/docker-hardened-images/dhictl): Command-line
   interface for managing and interacting with Docker Hardened Images
 - [Terraform Provider](https://github.com/docker-hardened-images/terraform-provider-dhi):
   Terraform provider for managing DHI resources
   ([Terraform Registry](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs))
-- [ディスカッション](https://github.com/orgs/docker-hardened-images/discussions):
-  Community forum and product discussions
 @z
 
 @x
 ## Additional resources
 @y
-## その他のリソース {#additional-resources}
+## Additional resources
 @z
 
 @x
@@ -189,7 +143,11 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   personalized demo and information about DHI Select and Enterprise subscriptions
 - [Request an image](https://github.com/docker-hardened-images/catalog/issues):
   Submit a request for a specific Docker Hardened Image
-- [Contact Sales](https://www.docker.com/pricing/contact-sales/): Connect with
+- [Debian package index](https://dhi.io/deb/debian/main/index.html):
+  Browse hardened Debian packages in Docker's public repository
+- [Alpine package index](https://dhi.io/apk/alpine/v3.24/main/index.html):
+  Browse hardened Alpine packages in Docker's public repository
+- <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_dhi_resources" class="link" rel="noopener">Contact Sales</a>: Connect with
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
   for DHI Select and Enterprise customers
@@ -203,8 +161,56 @@ Docker Hardened イメージリポジトリは、GitHub 内の [docker-hardened-
   personalized demo and information about DHI Select and Enterprise subscriptions
 - [Request an image](https://github.com/docker-hardened-images/catalog/issues):
   Submit a request for a specific Docker Hardened Image
-- [Contact Sales](https://www.docker.com/pricing/contact-sales/): Connect with
+- [Debian package index](https://dhi.io/deb/debian/main/index.html):
+  Browse hardened Debian packages in Docker's public repository
+- [Alpine package index](https://dhi.io/apk/alpine/v3.24/main/index.html):
+  Browse hardened Alpine packages in Docker's public repository
+- <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_dhi_resources" class="link" rel="noopener">Contact Sales</a>: Connect with
   Docker sales team for enterprise inquiries
 - [Docker Support](https://www.docker.com/support/): Access support resources
   for DHI Select and Enterprise customers
+@z
+
+@x
+## Feedback and community
+@y
+## Feedback and community
+@z
+
+@x
+Use the [GitHub Discussions board](https://github.com/orgs/docker-hardened-images/discussions)
+to engage with the DHI team for general questions, best practices, security
+tips, and community announcements.
+@y
+Use the [GitHub Discussions board](https://github.com/orgs/docker-hardened-images/discussions)
+to engage with the DHI team for general questions, best practices, security
+tips, and community announcements.
+@z
+
+@x
+To report a bug, request a feature, or suggest a documentation improvement,
+[open an issue](https://github.com/docker-hardened-images/catalog/issues) in
+the catalog repository.
+@y
+To report a bug, request a feature, or suggest a documentation improvement,
+[open an issue](https://github.com/docker-hardened-images/catalog/issues) in
+the catalog repository.
+@z
+
+@x
+## Security disclosure
+@y
+## Security disclosure
+@z
+
+@x
+Do not post details of vulnerabilities before coordinated disclosure and
+resolution. If you discover a security vulnerability, report it responsibly
+by following Docker's [security disclosure
+policy](https://www.docker.com/trust/vulnerability-disclosure-policy/).
+@y
+Do not post details of vulnerabilities before coordinated disclosure and
+resolution. If you discover a security vulnerability, report it responsibly
+by following Docker's [security disclosure
+policy](https://www.docker.com/trust/vulnerability-disclosure-policy/).
 @z

@@ -12,7 +12,6 @@ bases = \
 	e2b-sandboxes.md \
 	faqs.md          \
 	get-started.md   \
-	hub-mcp.md       \
 	mcp-gateway.md   \
 	profiles.md      \
 	toolkit.md

@@ -80,11 +80,11 @@ To view activity logs in Docker Home:
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your
 organization.
-1. Select **Admin Console**, then **Activity logs**.
+1. Select **Activity**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your
 organization.
-1. Select **Admin Console**, then **Activity logs**.
+1. Select **Activity**.
 @z
 
 @x
@@ -345,4 +345,32 @@ Refer to the following section for a list of events and their descriptions:
 | Billing Cycle Change Requested | Occurs when a user in your organization requests a change in the billing cycle. |
 | Plan Downgrade Cancellation Requested | Occurs when a user in your organization requests a cancellation of a scheduled plan downgrade. |
 | Seat Removal Cancellation Requested | Occurs when a user in your organization requests a cancellation of a scheduled seat removal. |
+@z
+
+@x
+### Offload events
+@y
+### Offload events
+@z
+
+@x
+> [!NOTE]
+>
+> Event descriptions show the Docker username of the actor and details about the lease.
+@y
+> [!NOTE]
+>
+> Event descriptions show the Docker username of the actor and details about the lease.
+@z
+
+@x
+| Event                                                          | Description                                   |
+|:------------------------------------------------------------------|:------------------------------------------------|
+| Offload Lease Start | Occurs when an Offload lease is started in your organization. |
+| Offload Lease End | Occurs when an Offload lease is ended in your organization. |
+@y
+| Event                                                          | Description                                   |
+|:------------------------------------------------------------------|:------------------------------------------------|
+| Offload Lease Start | Occurs when an Offload lease is started in your organization. |
+| Offload Lease End | Occurs when an Offload lease is ended in your organization. |
 @z

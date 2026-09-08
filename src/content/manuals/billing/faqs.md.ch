@@ -6,29 +6,29 @@
 @x
 title: Billing FAQs
 linkTitle: FAQs
-description: Frequently asked questions related to billing
-keywords: billing, renewal, payments, faq
+description: Find answers to common questions about Docker billing, failed payments, taxes, and pay by invoice.
+keywords: billing, renewal, failed payments, sales tax, VAT, academic pricing, pay by invoice
 @y
 title: Billing FAQs
 linkTitle: FAQs
-description: Frequently asked questions related to billing
-keywords: billing, renewal, payments, faq
+description: Find answers to common questions about Docker billing, failed payments, taxes, and pay by invoice.
+keywords: billing, renewal, failed payments, sales tax, VAT, academic pricing, pay by invoice
 @z
 
 @x
-### What happens if my subscription payment fails?
+## What happens if my subscription payment fails?
 @y
-### What happens if my subscription payment fails?
+## What happens if my subscription payment fails?
 @z
 
 @x
 If your subscription payment fails, there is a grace period of 15 days,
-including the due date. Docker retries to collect the payment 3 times using the
-following schedule:
+including the due date. Docker attempts to collect the payment three times using
+the following schedule:
 @y
 If your subscription payment fails, there is a grace period of 15 days,
-including the due date. Docker retries to collect the payment 3 times using the
-following schedule:
+including the due date. Docker attempts to collect the payment three times using
+the following schedule:
 @z
 
 @x
@@ -52,81 +52,79 @@ after each failed payment attempt.
 @z
 
 @x
-Once the grace period is over and the invoice is still not paid, the
+If the invoice remains unpaid after the grace period, the
 subscription downgrades to a free subscription and all paid features are
 disabled.
 @y
-Once the grace period is over and the invoice is still not paid, the
+If the invoice remains unpaid after the grace period, the
 subscription downgrades to a free subscription and all paid features are
 disabled.
 @z
 
 @x
-### Can I manually retry a failed payment?
+## Can I manually retry a failed payment?
 @y
-### Can I manually retry a failed payment?
+## Can I manually retry a failed payment?
 @z
 
 @x
-No. Docker retries failed payments on a [retry schedule](/manuals/billing/faqs.md#what-happens-if-my-subscription-payment-fails).
+Yes. If your payment fails, select **Pay now** to retry the payment through
+Stripe.
 @y
-No. Docker retries failed payments on a [retry schedule](manuals/billing/faqs.md#what-happens-if-my-subscription-payment-fails).
+Yes. If your payment fails, select **Pay now** to retry the payment through
+Stripe.
 @z
 
 @x
-To ensure a retired payment is successful, verify your default payment is
-updated. If you need to update your default payment method, see
-[Manage payment method](/manuals/billing/payment-method.md#manage-payment-method).
+Before retrying, verify that your default payment method is up to date. For
+instructions, see
+[Manage a payment method](/manuals/billing/payment-method.md#manage-payment-method).
 @y
-To ensure a retired payment is successful, verify your default payment is
-updated. If you need to update your default payment method, see
-[Manage payment method](manuals/billing/payment-method.md#manage-payment-method).
+Before retrying, verify that your default payment method is up to date. For
+instructions, see
+[Manage a payment method](manuals/billing/payment-method.md#manage-payment-method).
 @z
 
 @x
-### Does Docker collect sales tax and/or VAT?
+## Does Docker collect sales tax and VAT?
 @y
-### Does Docker collect sales tax and/or VAT?
+## Does Docker collect sales tax and VAT?
 @z
 
 @x
-Docker collects sales tax and/or VAT from the following:
+Docker collects sales tax or VAT from the following customers:
 @y
-Docker collects sales tax and/or VAT from the following:
+Docker collects sales tax or VAT from the following customers:
 @z
 
 @x
-- For United States customers, Docker began collecting sales tax on July 1, 2024.
+- For United States customers, Docker began collecting sales tax on
+  July 1, 2024.
 - For European customers, Docker began collecting VAT on March 1, 2025.
 - For United Kingdom customers, Docker began collecting VAT on May 1, 2025.
 @y
-- For United States customers, Docker began collecting sales tax on July 1, 2024.
+- For United States customers, Docker began collecting sales tax on
+  July 1, 2024.
 - For European customers, Docker began collecting VAT on March 1, 2025.
 - For United Kingdom customers, Docker began collecting VAT on May 1, 2025.
 @z
 
 @x
-To ensure that tax assessments are correct, make sure that your billing
-information and VAT/Tax ID, if applicable, are updated. See
-[Update the billing information](/manuals/billing/details.md).
+To help ensure correct tax assessments, keep your
+[billing information](/manuals/billing/details.md) up to date. For details on
+adding a VAT number or submitting a US tax exemption certificate, see
+[Taxes](/manuals/billing/tax-certificate.md).
 @y
-To ensure that tax assessments are correct, make sure that your billing
-information and VAT/Tax ID, if applicable, are updated. See
-[Update the billing information](manuals/billing/details.md).
+To help ensure correct tax assessments, keep your
+[billing information](manuals/billing/details.md) up to date. For details on
+adding a VAT number or submitting a US tax exemption certificate, see
+[Taxes](manuals/billing/tax-certificate.md).
 @z
 
 @x
-If you're exempt from sales tax, see
-[Register a tax certificate](/manuals/billing/tax-certificate.md).
+## Does Docker offer academic pricing?
 @y
-If you're exempt from sales tax, see
-[Register a tax certificate](manuals/billing/tax-certificate.md).
-@z
-
-@x
-### Does Docker offer academic pricing?
-@y
-### Does Docker offer academic pricing?
+## Does Docker offer academic pricing?
 @z
 
 @x
@@ -138,9 +136,9 @@ For academic pricing, contact the
 @z
 
 @x
-### Can I use pay by invoice for upgrades or additional seats?
+## Can I use pay by invoice for upgrades or additional seats?
 @y
-### Can I use pay by invoice for upgrades or additional seats?
+## Can I use pay by invoice for upgrades or additional seats?
 @z
 
 @x
@@ -158,5 +156,5 @@ For a list of supported payment methods, see
 [Add or update a payment method](/manuals/billing/payment-method.md).
 @y
 For a list of supported payment methods, see
-[Add or update a payment method](/manuals/billing/payment-method.md).
+[Add or update a payment method](manuals/billing/payment-method.md).
 @z

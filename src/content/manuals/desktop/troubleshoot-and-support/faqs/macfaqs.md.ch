@@ -22,17 +22,21 @@ linkTitle: Mac
 @z
 
 @x
-HyperKit is a hypervisor built on top of the Hypervisor.framework in macOS. It runs entirely in userspace and has no other dependencies.
+HyperKit is a legacy hypervisor built on top of Hypervisor.framework in macOS.
+Previous versions of Docker Desktop for Mac used HyperKit to run the Linux VM.
 @y
-HyperKit is a hypervisor built on top of the Hypervisor.framework in macOS. It runs entirely in userspace and has no other dependencies.
+HyperKit is a legacy hypervisor built on top of Hypervisor.framework in macOS.
+Previous versions of Docker Desktop for Mac used HyperKit to run the Linux VM.
 @z
 
 @x
-Docker uses HyperKit to eliminate the need for other VM products, such as Oracle
-VirtualBox or VMware Fusion.
+Current versions of Docker Desktop use the Apple Virtualization framework by
+default. HyperKit is retained here as historical context for older
+configurations.
 @y
-Docker uses HyperKit to eliminate the need for other VM products, such as Oracle
-VirtualBox or VMware Fusion.
+Current versions of Docker Desktop use the Apple Virtualization framework by
+default. HyperKit is retained here as historical context for older
+configurations.
 @z
 
 @x
@@ -42,9 +46,13 @@ VirtualBox or VMware Fusion.
 @z
 
 @x
-HyperKit is thinner than VirtualBox and VMware fusion, and the version included is customized for Docker workloads on Mac.
+When HyperKit was the default hypervisor, it provided a lightweight
+virtualization layer customized for Docker workloads and eliminated the need
+for third-party VM products such as Oracle VirtualBox or VMware Fusion.
 @y
-HyperKit is thinner than VirtualBox and VMware fusion, and the version included is customized for Docker workloads on Mac.
+When HyperKit was the default hypervisor, it provided a lightweight
+virtualization layer customized for Docker workloads and eliminated the need
+for third-party VM products such as Oracle VirtualBox or VMware Fusion.
 @z
 
 @x

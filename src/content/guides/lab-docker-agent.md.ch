@@ -30,22 +30,6 @@ keywords: AI, Docker, docker agent, agents, multi-agent, MCP Toolkit, lab, labsp
 @z
 
 @x
-    - title: Docker Agent documentation
-      url: https://github.com/docker/docker-agent
-    - title: Docker MCP Toolkit
-      url: https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/
-    - title: Labspace repository
-      url: https://github.com/ajeetraina/labspace-cagent
-@y
-    - title: Docker Agent documentation
-      url: https://github.com/docker/docker-agent
-    - title: Docker MCP Toolkit
-      url: https://docs.docker.com/ai/mcp-catalog-and-toolkit/toolkit/
-    - title: Labspace repository
-      url: https://github.com/ajeetraina/labspace-cagent
-@z
-
-@x
 This lab walks you through building intelligent agents with Docker Agent. You'll learn beginner
 agent concepts, then build sophisticated multi-agent teams that handle complex
 real-world tasks. Learn how to create, share, and orchestrate AI agents with

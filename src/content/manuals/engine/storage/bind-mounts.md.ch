@@ -218,11 +218,15 @@ flag is more explicit and supports all the available options.
 @x
 If you use `--volume` to bind-mount a file or directory that does not yet
 exist on the Docker host, Docker automatically creates the directory on the
-host for you. It's always created as a directory.
+host for you. It's always created as a directory. If the Docker daemon doesn't
+have permission to create the source directory, create it before starting the
+container.
 @y
 If you use `--volume` to bind-mount a file or directory that does not yet
 exist on the Docker host, Docker automatically creates the directory on the
-host for you. It's always created as a directory.
+host for you. It's always created as a directory. If the Docker daemon doesn't
+have permission to create the source directory, create it before starting the
+container.
 @z
 
 @x
@@ -296,16 +300,16 @@ Valid options for `--mount type=bind` include:
 @z
 
 @x
-| Option                         | Description                                                                                                                                                          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                         | Description                                                                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                                                                        |
 | `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                                                                         |
 | `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).                                                     |
 | `bind-propagation`             | If present, changes the [bind propagation](#configure-bind-propagation).                                                                                            |
 | `bind-create-src`              | Automatically creates the source directory on the host if it doesn't exist. By default, `--mount` produces an error if the source path doesn't exist on the daemon. |
 @y
-| Option                         | Description                                                                                                                                                          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                         | Description                                                                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `source`, `src`                | The location of the file or directory on the host. This can be an absolute or relative path.                                                                        |
 | `destination`, `dst`, `target` | The path where the file or directory is mounted in the container. Must be an absolute path.                                                                         |
 | `readonly`, `ro`               | If present, causes the bind mount to be [mounted into the container as read-only](#use-a-read-only-bind-mount).                                                     |
@@ -1198,9 +1202,11 @@ and
 @x
 - Learn about [volumes](./volumes.md).
 - Learn about [tmpfs mounts](./tmpfs.md).
+- Learn about [image mounts](./image-mounts.md).
 - Learn about [storage drivers](/engine/storage/drivers/).
 @y
 - Learn about [volumes](./volumes.md).
 - Learn about [tmpfs mounts](./tmpfs.md).
+- Learn about [image mounts](./image-mounts.md).
 - Learn about [storage drivers](__SUBDIR__/engine/storage/drivers/).
 @z

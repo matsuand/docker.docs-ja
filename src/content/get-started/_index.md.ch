@@ -66,18 +66,6 @@ description: Docker を使ってはじめよう
 @z
 
 @x
-  - title: Docker workshop
-    description: Get guided through a 45-minute workshop to learn about Docker.
-    link: /get-started/workshop/
-    icon: computer-desktop
-@y
-  - title: Docker ワークショップ
-    description: 45 分間のワークショップガイドを通じて Docker を学んでいきます。
-    link: __SUBDIR__/get-started/workshop/
-    icon: computer-desktop
-@z
-
-@x
 If you're new to Docker, this section guides you through the essential resources to get started.
 @y
 Docker 初心者であれば、本節から重要な情報を取得して理解を進めていくことができます。

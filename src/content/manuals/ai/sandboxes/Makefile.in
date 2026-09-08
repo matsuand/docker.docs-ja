@@ -295,15 +295,18 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = agents customize images security
+SUBDIRS = agents configuration customize governance images integrations \
+	security workflows
+
 bases = \
-	_index.md          \
-	architecture.md    \
-	docker-desktop.md  \
-	faq.md             \
-	get-started.md     \
-	release-notes.md   \
-	troubleshooting.md \
+	_index.md               \
+	architecture.md         \
+	faq.md                  \
+	get-started.md          \
+	install.md              \
+	mcp-gateway.md          \
+	release-notes.md        \
+	troubleshooting.md      \
 	usage.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

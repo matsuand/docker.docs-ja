@@ -12,14 +12,6 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
-      text: New
-@y
-      text: New
-@z
-
-% grid_sections:
-
-@x
     - title: Quickstart
       description: Follow a step-by-step guide to explore and run a Docker Hardened Image.
       icon: rocket-launch
@@ -44,18 +36,6 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
-    - title: Features
-      description: Discover the security, compliance, and enterprise-readiness features built into Docker Hardened Images.
-      icon: lock-closed
-      link: /dhi/features/
-@y
-    - title: 機能
-      description: Docker Hardened イメージ内にビルドされているセキュリティ、コンプライアンス、エンタープライズ向けといった各機能について探っていきます。
-      icon: lock-closed
-      link: __SUBDIR__/dhi/features/
-@z
-
-@x
     - title: How-tos
       description: Step-by-step guides for using, verifying, scanning, and migrating to Docker Hardened Images.
       icon: play
@@ -68,39 +48,51 @@ description: Secure, minimal, and production-ready base images
 @z
 
 @x
-    - title: Core concepts
+    - title: Security concepts
       description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
       icon: clipboard-document-check
-      link: /dhi/core-concepts/
+      link: /dhi/explore/security-concepts/
 @y
-    - title: 基本となる考え方
-      description: Docker Hardened イメージが運用環境向けとして即時の利用を可能とする、セキュアサプライチェーンの考え方について学びます。
+    - title: Security concepts
+      description: Understand the secure supply chain principles that make Docker Hardened Images production-ready.
       icon: clipboard-document-check
-      link: __SUBDIR__/dhi/core-concepts/
+      link: __SUBDIR__/dhi/explore/security-concepts/
 @z
 
 @x
-    - title: Troubleshoot
-      description: Resolve common issues with building, running, or debugging Docker Hardened Images.
-      icon: question-mark-circle
-      link: /dhi/troubleshoot/
+    - title: Tools
+      description: Browse and manage Docker Hardened Images using Docker Hub, the CLI, MCP server, or Terraform.
+      icon: wrench-screwdriver
+      link: /dhi/tools/
 @y
-    - title: トラブルシューティング
-      description: Docker Hardened イメージのビルド、実行、デバッグに関する一般的な問題を解決します。
-      icon: question-mark-circle
-      link: __SUBDIR__/dhi/troubleshoot/
+    - title: Tools
+      description: Browse and manage Docker Hardened Images using Docker Hub, the CLI, MCP server, or Terraform.
+      icon: wrench-screwdriver
+      link: __SUBDIR__/dhi/tools/
 @z
 
 @x
-    - title: Additional resources
-      description: Guides, blog posts, Docker Hub catalog, GitHub repositories, and more.
+    - title: Resources and feedback
+      description: Guides, GitHub repositories, community channels, and how to give feedback.
       icon: link
       link: /dhi/resources/
 @y
-    - title: その他のリソース
-      description: ガイド、ブログ投稿、Docker Hub カタログ、GitHub リポジトリなどを示しています。
+    - title: Resources and feedback
+      description: Guides, GitHub repositories, community channels, and how to give feedback.
       icon: link
       link: __SUBDIR__/dhi/resources/
+@z
+
+@x
+    - title: Release notes
+      description: New features, improvements, and changes in Docker Hardened Images.
+      icon: newspaper
+      link: /dhi/release-notes/platform/
+@y
+    - title: Release notes
+      description: New features, improvements, and changes in Docker Hardened Images.
+      icon: newspaper
+      link: __SUBDIR__/dhi/release-notes/platform/
 @z
 
 @x
@@ -170,14 +162,4 @@ them into your workflow, and learn what makes them secure and enterprise-ready.
 @y
 以下の項目を参照して Docker Hardened イメージ利用をはじめてみてください。
 ワークフローに統合することで、いかにセキュアでエンタープライズ用途に適しているかを学んでください。
-@z
-
-@x
-{{< grid
-  items="grid_sections"
->}}
-@y
-{{< grid
-  items="grid_sections"
->}}
 @z

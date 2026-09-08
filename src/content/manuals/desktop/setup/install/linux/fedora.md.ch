@@ -48,12 +48,12 @@ To install Docker Desktop successfully, you must:
 
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of Fedora 42 or Fedora 43.
+- Have a 64-bit version of Fedora 43 or later.
 - For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
 - Meet the [general system requirements](_index.md#general-system-requirements).
-- Have a 64-bit version of Fedora 42 or Fedora 43.
+- Have a 64-bit version of Fedora 43 or later.
 - For a GNOME desktop environment you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
@@ -158,7 +158,7 @@ You need to first remove the previous version and then download the new package 
 
 @x
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopFedoraInstall) to see what Docker can offer you.
-- Take a look at the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at [Get started with Docker](/get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.
@@ -167,7 +167,7 @@ You need to first remove the previous version and then download the new package 
   on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopFedoraInstall) to see what Docker can offer you.
-- Take a look at the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at [Get started with Docker](get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.

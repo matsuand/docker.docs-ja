@@ -22,6 +22,7 @@ bases = \
 	docker_scout_integration_delete.yaml    \
 	docker_scout_integration_list.yaml      \
 	docker_scout_policy.yaml                \
+	docker_scout_policy_publish.yaml        \
 	docker_scout_push.yaml                  \
 	docker_scout_quickview.yaml             \
 	docker_scout_recommendations.yaml       \

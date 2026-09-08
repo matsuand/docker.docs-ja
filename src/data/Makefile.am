@@ -6,7 +6,6 @@ SUBDIRS = cli docsarchive sbx_cli
 bases = \
 	desktop_release.yaml \
 	frontmatter.yaml     \
-	languages.yaml       \
 	redirects.yml        \
 	samples.yaml         \
 	summary.yaml         \
@@ -14,3 +13,8 @@ bases = \
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
+
+copyfiles = \
+	whats-new.json
+
+include $(top_srcdir)/build-aux/copy.mk

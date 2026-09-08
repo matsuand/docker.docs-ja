@@ -15,24 +15,24 @@ title: Storage drivers
 
 @x
 > [!NOTE]
-> Docker Engine 29.0 and later uses the
-> [containerd image store](../containerd.md) by default for fresh installations.
-> The containerd image store uses snapshotters instead of the classic storage
-> drivers described on this page. If you're running a fresh installation of
-> Docker Engine 29.0 or later, or if you've migrated to the containerd image
-> store, this page provides background on how image layers work but the
-> implementation details differ. For information about the containerd image
-> store, see [containerd image store](../containerd.md).
+> This page describes the classic storage drivers, such as `overlay2`. Docker
+> Engine 29.0 and later uses the [containerd image store](../containerd.md) by
+> default for fresh installations, which uses snapshotters instead of classic
+> storage drivers. If you're running a fresh installation of Docker Engine 29.0
+> or later, or if you've migrated to the containerd image store, the concepts on
+> this page still explain how image layers work, but the commands and examples
+> won't reflect how your system stores images. For operational guidance, see
+> [containerd image store](../containerd.md).
 @y
 > [!NOTE]
-> Docker Engine 29.0 and later uses the
-> [containerd image store](../containerd.md) by default for fresh installations.
-> The containerd image store uses snapshotters instead of the classic storage
-> drivers described on this page. If you're running a fresh installation of
-> Docker Engine 29.0 or later, or if you've migrated to the containerd image
-> store, this page provides background on how image layers work but the
-> implementation details differ. For information about the containerd image
-> store, see [containerd image store](../containerd.md).
+> This page describes the classic storage drivers, such as `overlay2`. Docker
+> Engine 29.0 and later uses the [containerd image store](../containerd.md) by
+> default for fresh installations, which uses snapshotters instead of classic
+> storage drivers. If you're running a fresh installation of Docker Engine 29.0
+> or later, or if you've migrated to the containerd image store, the concepts on
+> this page still explain how image layers work, but the commands and examples
+> won't reflect how your system stores images. For operational guidance, see
+> [containerd image store](../containerd.md).
 @z
 
 @x
@@ -416,12 +416,12 @@ docker.io/library/ubuntu:22.04
 @x
 Each of these layers is stored in its own directory inside the Docker host's
 local storage area. To examine the layers on the filesystem, list the contents
-of `/var/lib/docker/<storage-driver>`. This example uses the `overlay2` 
+of `/var/lib/docker/<storage-driver>`. This example uses the `overlay2`
 storage driver:
 @y
 Each of these layers is stored in its own directory inside the Docker host's
 local storage area. To examine the layers on the filesystem, list the contents
-of `/var/lib/docker/<storage-driver>`. This example uses the `overlay2` 
+of `/var/lib/docker/<storage-driver>`. This example uses the `overlay2`
 storage driver:
 @z
 
@@ -873,7 +873,7 @@ layers are the same.
    > [!TIP]
    >
    > Format output of Docker commands with the `--format` option.
-   > 
+   >
    > The examples above use the `docker image inspect` command with the `--format`
    > option to view the layer IDs, formatted as a JSON array. The `--format`
    > option on Docker commands can be a powerful feature that allows you to
@@ -887,7 +887,7 @@ layers are the same.
    > [!TIP]
    >
    > Format output of Docker commands with the `--format` option.
-   > 
+   >
    > The examples above use the `docker image inspect` command with the `--format`
    > option to view the layer IDs, formatted as a JSON array. The `--format`
    > option on Docker commands can be a powerful feature that allows you to
@@ -920,31 +920,31 @@ layer. This means that the writable layer is as small as possible.
 @x
 When an existing file in a container is modified, the storage driver performs a
 copy-on-write operation. The specific steps involved depend on the specific
-storage driver. For the `overlay2` driver, the  copy-on-write operation follows
+storage driver. For the `overlay2` driver, the copy-on-write operation follows
 this rough sequence:
 @y
 When an existing file in a container is modified, the storage driver performs a
 copy-on-write operation. The specific steps involved depend on the specific
-storage driver. For the `overlay2` driver, the  copy-on-write operation follows
+storage driver. For the `overlay2` driver, the copy-on-write operation follows
 this rough sequence:
 @z
 
 @x
-*  Search through the image layers for the file to update. The process starts
-   at the newest layer and works down to the base layer one layer at a time.
-   When results are found, they're added to a cache to speed future operations.
-*  Perform a `copy_up` operation on the first copy of the file that's found, to
-   copy the file to the container's writable layer.
-*  Any modifications are made to this copy of the file, and the container can't
-   see the read-only copy of the file that exists in the lower layer.
+- Search through the image layers for the file to update. The process starts
+  at the newest layer and works down to the base layer one layer at a time.
+  When results are found, they're added to a cache to speed future operations.
+- Perform a `copy_up` operation on the first copy of the file that's found, to
+  copy the file to the container's writable layer.
+- Any modifications are made to this copy of the file, and the container can't
+  see the read-only copy of the file that exists in the lower layer.
 @y
-*  Search through the image layers for the file to update. The process starts
-   at the newest layer and works down to the base layer one layer at a time.
-   When results are found, they're added to a cache to speed future operations.
-*  Perform a `copy_up` operation on the first copy of the file that's found, to
-   copy the file to the container's writable layer.
-*  Any modifications are made to this copy of the file, and the container can't
-   see the read-only copy of the file that exists in the lower layer.
+- Search through the image layers for the file to update. The process starts
+  at the newest layer and works down to the base layer one layer at a time.
+  When results are found, they're added to a cache to speed future operations.
+- Perform a `copy_up` operation on the first copy of the file that's found, to
+  copy the file to the container's writable layer.
+- Any modifications are made to this copy of the file, and the container can't
+  see the read-only copy of the file that exists in the lower layer.
 @z
 
 @x
@@ -980,7 +980,7 @@ in a `copy_up` operation, therefore duplicating the file to the writable layer.
 > applications, for example write-intensive databases, are known to be
 > problematic particularly when pre-existing data exists in the read-only
 > layer.
-> 
+>
 > Instead, use Docker volumes, which are independent of the running container,
 > and designed to be efficient for I/O. In addition, volumes can be shared
 > among containers and don't increase the size of your container's writable
@@ -995,7 +995,7 @@ in a `copy_up` operation, therefore duplicating the file to the writable layer.
 > applications, for example write-intensive databases, are known to be
 > problematic particularly when pre-existing data exists in the read-only
 > layer.
-> 
+>
 > Instead, use Docker volumes, which are independent of the running container,
 > and designed to be efficient for I/O. In addition, volumes can be shared
 > among containers and don't increase the size of your container's writable
@@ -1284,9 +1284,9 @@ driver, a full copy of the image's data is created for each container.
 @z
 
 @x
-* [Volumes](../volumes.md)
-* [Select a storage driver](select-storage-driver.md)
+- [Volumes](../volumes.md)
+- [Select a storage driver](select-storage-driver.md)
 @y
-* [Volumes](../volumes.md)
-* [Select a storage driver](select-storage-driver.md)
+- [Volumes](../volumes.md)
+- [Select a storage driver](select-storage-driver.md)
 @z

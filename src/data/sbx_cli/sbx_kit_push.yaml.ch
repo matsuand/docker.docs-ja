@@ -24,6 +24,46 @@ description: |-
 @z
 
 @x
+    The OCI artifact format is selected from the kit's spec.yaml:
+      schemaVersion: "1"  → legacy ZIP-based artifact
+      schemaVersion: "2"  → v2 tar+gzip layer with the spec in the manifest
+                            config blob and standard OCI annotations (so
+                            distribution tooling can read kit metadata
+                            without pulling layers)
+@y
+    The OCI artifact format is selected from the kit's spec.yaml:
+      schemaVersion: "1"  → legacy ZIP-based artifact
+      schemaVersion: "2"  → v2 tar+gzip layer with the spec in the manifest
+                            config blob and standard OCI annotations (so
+                            distribution tooling can read kit metadata
+                            without pulling layers)
+@z
+
+@x
+    With --sign, the pushed manifest is signed and the Sigstore bundle is
+    attached to the kit as an OCI referrer. Signing is keyless (Fulcio +
+    Rekor) unless --key is given for key-based signing.
+@y
+    With --sign, the pushed manifest is signed and the Sigstore bundle is
+    attached to the kit as an OCI referrer. Signing is keyless (Fulcio +
+    Rekor) unless --key is given for key-based signing.
+@z
+
+@x
+    Every push also attaches a SLSA provenance attestation as an OCI
+    referrer, recording the kit's content digests, the declared sandbox
+    image, and the source git commit when the directory is a working tree.
+    The provenance is unsigned unless --sign is given, in which case it is
+    signed as a DSSE in-toto attestation with the same identity or key.
+@y
+    Every push also attaches a SLSA provenance attestation as an OCI
+    referrer, recording the kit's content digests, the declared sandbox
+    image, and the source git commit when the directory is a working tree.
+    The provenance is unsigned unless --sign is given, in which case it is
+    signed as a DSSE in-toto attestation with the same identity or key.
+@z
+
+@x
     Authentication uses the Docker credential store.
 @y
     Authentication uses the Docker credential store.
@@ -43,6 +83,46 @@ usage: sbx kit push DIRECTORY REFERENCE [flags]
       usage: help for push
 @z
 
+@x identity-token
+      usage: |
+        OIDC identity token for keyless signing; defaults to the ambient CI provider, then an interactive browser login
+@y
+      usage: |
+        OIDC identity token for keyless signing; defaults to the ambient CI provider, then an interactive browser login
+@z
+
+@x identity-token-file
+      usage: |
+        File holding the OIDC identity token; keeps it out of the process arguments
+@y
+      usage: |
+        File holding the OIDC identity token; keeps it out of the process arguments
+@z
+
+@x key
+      usage: |
+        Private key for key-based signing (PEM); omit for keyless signing
+@y
+      usage: |
+        Private key for key-based signing (PEM); omit for keyless signing
+@z
+
+@x sign
+      usage: |
+        Sign the pushed kit and attach the signature as an OCI referrer
+@y
+      usage: |
+        Sign the pushed kit and attach the signature as an OCI referrer
+@z
+
+@x tlog-upload
+      usage: |
+        Upload the keyless signature to the Rekor transparency log; set false for private kits
+@y
+      usage: |
+        Upload the keyless signature to the Rekor transparency log; set false for private kits
+@z
+
 % inherited_options:
 
 @x debug
@@ -54,7 +134,7 @@ usage: sbx kit push DIRECTORY REFERENCE [flags]
 % see_also:
 
 @x
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @y
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @z

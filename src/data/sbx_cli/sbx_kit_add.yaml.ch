@@ -3,32 +3,46 @@
 
 @x
 name: sbx kit add
-synopsis: Add a kit to a running sandbox
+synopsis: Add a kit to a sandbox
 experimental: true
 description: |-
-    Inject a kit artifact into an already-running sandbox.
+    Add a kit artifact to an existing sandbox.
 @y
 name: sbx kit add
-synopsis: Add a kit to a running sandbox
+synopsis: Add a kit to a sandbox
 experimental: true
 description: |-
-    Inject a kit artifact into an already-running sandbox.
+    Add a kit artifact to an existing sandbox.
 @z
 
 @x
-    The kit's files, init files, and startup commands are applied to the
-    running container. This allows extending a sandbox without recreating it.
+    The sandbox's container is recreated with the new kit appended to its
+    original kit list, preserving kit-owned volumes (e.g. agent session
+    state) across the swap. Workspace data is unaffected: bind-mounted
+    sandboxes keep their host-side mount; --clone sandboxes keep their
+    in-container working tree via a named workspace volume that
+    reattaches to the swap container.
 @y
-    The kit's files, init files, and startup commands are applied to the
-    running container. This allows extending a sandbox without recreating it.
+    The sandbox's container is recreated with the new kit appended to its
+    original kit list, preserving kit-owned volumes (e.g. agent session
+    state) across the swap. Workspace data is unaffected: bind-mounted
+    sandboxes keep their host-side mount; --clone sandboxes keep their
+    in-container working tree via a named workspace volume that
+    reattaches to the swap container.
 @z
 
 @x
-    The sandbox must already exist (created or running). The reference can be a local directory,
-    ZIP file path, OCI registry reference, or git repository.
+    The sandbox must already exist and must have been created with the
+    recreate-aware label set (sandboxes created before the kit-add recreate
+    feature shipped will be refused with a clear error). The reference can be
+    a local directory, ZIP file path, OCI registry reference, or git
+    repository.
 @y
-    The sandbox must already exist (created or running). The reference can be a local directory,
-    ZIP file path, OCI registry reference, or git repository.
+    The sandbox must already exist and must have been created with the
+    recreate-aware label set (sandboxes created before the kit-add recreate
+    feature shipped will be refused with a clear error). The reference can be
+    a local directory, ZIP file path, OCI registry reference, or git
+    repository.
 @z
 
 @x
@@ -90,7 +104,7 @@ example: |4-
 % see_also:
 
 @x
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @y
-    - sbx kit - Manage kit artifacts
+    - sbx kit - (Experimental) Manage kit artifacts
 @z

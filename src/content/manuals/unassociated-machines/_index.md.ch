@@ -5,11 +5,11 @@
 
 @x
 title: Manage unassociated machines
-description: Learn how to manage unassociated machines using the Docker Admin Console
+description: Learn how to manage unassociated machines in Docker Home
 keywords: unassociated machines, insights, manage users, enforce sign-in
 @y
 title: Manage unassociated machines
-description: Learn how to manage unassociated machines using the Docker Admin Console
+description: Learn how to manage unassociated machines in Docker Home
 keywords: unassociated machines, insights, manage users, enforce sign-in
 @z
 
@@ -110,13 +110,11 @@ To see detailed information about unassociated machines:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 @z
 
 @x
@@ -242,15 +240,13 @@ To enable sign-in enforcement for all unassociated machines:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Turn on the **Enforce sign-in** toggle.
 1. In the pop-up modal, select **Require sign-in** to confirm.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Turn on the **Enforce sign-in** toggle.
 1. In the pop-up modal, select **Require sign-in** to confirm.
 @z
@@ -296,16 +292,14 @@ To enable sign-in enforcement for individual unassociated machines:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to enable sign-in enforcement for.
 1. Select the **Actions** menu and choose **Turn on sign-in enforcement**.
 1. In the pop-up modal, select **Require sign-in** to confirm.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to enable sign-in enforcement for.
 1. Select the **Actions** menu and choose **Turn on sign-in enforcement**.
 1. In the pop-up modal, select **Require sign-in** to confirm.
@@ -434,16 +428,14 @@ organization in two ways:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to add to your organization.
 1. Select the **Actions** menu and choose **Add to organization**.
 1. In the pop-up modal, select **Add user**.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to add to your organization.
 1. Select the **Actions** menu and choose **Add to organization**.
 1. In the pop-up modal, select **Add user**.
@@ -456,17 +448,15 @@ organization in two ways:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Use the **checkboxes** to select the machines you want to add to your
    organizations.
 1. Select the **Add to organization** button.
 1. In the pop-up modal, select **Add users** to confirm.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Use the **checkboxes** to select the machines you want to add to your
    organizations.
 1. Select the **Add to organization** button.
@@ -486,15 +476,13 @@ organization in two ways:
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Turn off the **Enforce sign-in** toggle.
 1. In the pop-up modal, select **Turn off sign-in requirement** to confirm.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Turn off the **Enforce sign-in** toggle.
 1. In the pop-up modal, select **Turn off sign-in requirement** to confirm.
 @z
@@ -514,16 +502,14 @@ The **Sign-in required** status will update for all unassociated machines to
 @z
 
 @x
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to disable sign-in enforcement for.
 1. Select the **Actions** menu and choose **Turn off sign-in enforcement**.
 1. In the pop-up modal, select **Turn off sign-in requirement** to confirm.
 @y
-1. Sign in to the [Admin Console](https://app.docker.com/admin) and select
-   your organization.
-1. In **User management**, select **Unassociated**.
+1. Sign in to [Docker Home](https://app.docker.com) and select your organization.
+1. Select **Docker Desktop**, then **Unassociated**.
 1. Locate the machine you want to disable sign-in enforcement for.
 1. Select the **Actions** menu and choose **Turn off sign-in enforcement**.
 1. In the pop-up modal, select **Turn off sign-in requirement** to confirm.

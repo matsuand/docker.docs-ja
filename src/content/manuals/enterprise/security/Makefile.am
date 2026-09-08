@@ -1,8 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = enforce-sign-in hardened-desktop images provisioning \
-	roles-and-permissions single-sign-on
+SUBDIRS = enforce-sign-in hardened-desktop images oidc-connections \
+	provisioning roles-and-permissions single-sign-on
 
 bases = \
 	_index.md            \

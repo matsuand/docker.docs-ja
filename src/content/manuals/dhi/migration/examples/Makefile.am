@@ -4,7 +4,9 @@
 
 bases = \
 	_index.md \
+	dotnet.md \
 	go.md     \
+	java.md   \
 	node.md   \
 	python.md
 

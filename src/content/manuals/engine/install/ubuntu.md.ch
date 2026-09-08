@@ -85,11 +85,11 @@ Docker Engine をインストールするには、以下に示す 64 ビット U
 @z
 
 @x
-- Ubuntu Questing 25.10
+- Ubuntu Resolute 26.04 (LTS)
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
 @y
-- Ubuntu Questing 25.10
+- Ubuntu Resolute 26.04 (LTS)
 - Ubuntu Noble 24.04 (LTS)
 - Ubuntu Jammy 22.04 (LTS)
 @z
@@ -145,12 +145,14 @@ The unofficial packages to uninstall are:
 - `docker-compose`
 - `docker-compose-v2`
 - `docker-doc`
+- `docker-buildx`
 - `podman-docker`
 @y
 - `docker.io`
 - `docker-compose`
 - `docker-compose-v2`
 - `docker-doc`
+- `docker-buildx`
 - `podman-docker`
 @z
 

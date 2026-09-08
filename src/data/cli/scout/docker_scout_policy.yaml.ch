@@ -4,7 +4,7 @@
 @x
 command: docker scout policy
 short: |
-    Evaluate policies against an image and display the policy evaluation results (experimental)
+    Evaluate local Rego policies against an image and display the results (experimental)
 long: |-
     The `docker scout policy` command evaluates policies against an image.
     The image analysis is uploaded to Docker Scout where policies get evaluated.
@@ -13,7 +13,7 @@ long: |-
 @y
 command: docker scout policy
 short: |
-    Evaluate policies against an image and display the policy evaluation results (experimental)
+    Evaluate local Rego policies against an image and display the results (experimental)
 long: |-
     The `docker scout policy` command evaluates policies against an image.
     The image analysis is uploaded to Docker Scout where policies get evaluated.
@@ -28,12 +28,6 @@ usage: docker scout policy [IMAGE | REPO]
 @z
 
 % options:
-
-@x env
-      description: Name of the environment to compare to
-@y
-      description: Name of the environment to compare to
-@z
 
 @x exit-code
       description: Return exit code '2' if policies are not met, '0' otherwise
@@ -60,21 +54,43 @@ usage: docker scout policy [IMAGE | REPO]
 @z
 
 @x platform
-      description: Platform of image to pull policy results from
+      description: Platform of image to evaluate policies against
 @y
-      description: Platform of image to pull policy results from
+      description: Platform of image to evaluate policies against
 @z
 
-@x to-env
-      description: Name of the environment to compare to
+@x policy-bundle
+      description: OCI reference of a policy bundle to evaluate (repeatable)
 @y
-      description: Name of the environment to compare to
+      description: OCI reference of a policy bundle to evaluate (repeatable)
 @z
 
-@x to-latest
-      description: Latest image processed to compare to
+@x policy-config
+      description: |
+        Path or http(s) URL to a JSON file configuring policy enablement and inputs
 @y
-      description: Latest image processed to compare to
+      description: |
+        Path or http(s) URL to a JSON file configuring policy enablement and inputs
+@z
+
+@x policy-dir
+      description: Path to a directory of local .rego policy files (repeatable)
+@y
+      description: Path to a directory of local .rego policy files (repeatable)
+@z
+
+@x policy-file
+      description: Path or http(s) URL to a .rego policy file (repeatable)
+@y
+      description: Path or http(s) URL to a .rego policy file (repeatable)
+@z
+
+@x result-file
+      description: |
+        Write the full Rego evaluation result (pass, violations, query bindings and OPA metrics) of each evaluated policy to a JSON file (useful when iterating on local --policy-file policies)
+@y
+      description: |
+        Write the full Rego evaluation result (pass, violations, query bindings and OPA metrics) of each evaluated policy to a JSON file (useful when iterating on local --policy-file policies)
 @z
 
 % inherited_options:

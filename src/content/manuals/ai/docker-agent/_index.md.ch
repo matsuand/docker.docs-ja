@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-% snip 対応
+% snip 対応 (一部)
 
 @x
 title: Docker Agent
@@ -188,19 +188,7 @@ Try the bug analyzer team:
 1. Set your API key for the model provider you want to use:
 @z
 
-@x
-   ```console
-   $ export ANTHROPIC_API_KEY=<your_key>  # For Claude models
-   $ export OPENAI_API_KEY=<your_key>     # For OpenAI models
-   $ export GOOGLE_API_KEY=<your_key>     # For Gemini models
-   ```
-@y
-   ```console
-   $ export ANTHROPIC_API_KEY=<your_key>  # For Claude models
-   $ export OPENAI_API_KEY=<your_key>     # For OpenAI models
-   $ export GOOGLE_API_KEY=<your_key>     # For Gemini models
-   ```
-@z
+% snip command...
 
 @x
 2. Save the [example configuration](#why-agent-teams) as `debugger.yaml`.
@@ -214,15 +202,7 @@ Try the bug analyzer team:
 3. Run your agent team:
 @z
 
-@x
-   ```console
-   $ docker agent run debugger.yaml
-   ```
-@y
-   ```console
-   $ docker agent run debugger.yaml
-   ```
-@z
+% snip command...
 
 @x
 You'll see a prompt where you can describe bugs or paste error messages. The
@@ -321,12 +301,12 @@ agents:
 @x
 You can also configure model settings (like context limits), tools (including
 MCP servers), and more. See the [configuration
-reference](./reference/config.md)
+reference](./configuration/overview/index.md)
 for complete details.
 @y
 You can also configure model settings (like context limits), tools (including
 MCP servers), and more. See the [configuration
-reference](./reference/config.md)
+reference](./configuration/overview/index.md)
 for complete details.
 @z
 
@@ -361,31 +341,23 @@ it doesn't exist yet.
 @z
 
 @x
-- Follow the [tutorial](./tutorial.md) to build your first coding agent
-- Learn [best practices](./best-practices.md) for building effective agents
-- Integrate Docker Agent with your [editor](./integrations/acp.md) or use agents as
-  [tools in MCP clients](./integrations/mcp.md)
+- Follow the [quickstart](./getting-started/quickstart/index.md) to build your first agent
+- Learn [best practices](./guides/tips/index.md) for building effective agents
+- Integrate Docker Agent with your [editor](./features/acp/index.md) or use agents as
+  [tools in MCP clients](./tools/mcp/index.md)
 - Browse example agent configurations in the [Docker Agent
   repository](https://github.com/docker/docker-agent/tree/main/examples)
-- Use `docker agent new` to generate agent teams with AI <!-- TODO: link to some page
-  where we explain this, probably a CLI reference? -->
 - Connect agents to external tools via the [Docker MCP
   Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
-- Read the full [configuration
-  reference](https://github.com/docker/docker-agent?tab=readme-ov-file#-configuration-reference)
-  <!-- TODO: move to this site/repo -->
+- Read the full [configuration reference](./configuration/overview/index.md)
 @y
-- Follow the [tutorial](./tutorial.md) to build your first coding agent
-- Learn [best practices](./best-practices.md) for building effective agents
-- Integrate Docker Agent with your [editor](./integrations/acp.md) or use agents as
-  [tools in MCP clients](./integrations/mcp.md)
+- Follow the [quickstart](./getting-started/quickstart/index.md) to build your first agent
+- Learn [best practices](./guides/tips/index.md) for building effective agents
+- Integrate Docker Agent with your [editor](./features/acp/index.md) or use agents as
+  [tools in MCP clients](./tools/mcp/index.md)
 - Browse example agent configurations in the [Docker Agent
   repository](https://github.com/docker/docker-agent/tree/main/examples)
-- Use `docker agent new` to generate agent teams with AI <!-- TODO: link to some page
-  where we explain this, probably a CLI reference? -->
 - Connect agents to external tools via the [Docker MCP
   Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
-- Read the full [configuration
-  reference](https://github.com/docker/docker-agent?tab=readme-ov-file#-configuration-reference)
-  <!-- TODO: move to this site/repo -->
+- Read the full [configuration reference](./configuration/overview/index.md)
 @z

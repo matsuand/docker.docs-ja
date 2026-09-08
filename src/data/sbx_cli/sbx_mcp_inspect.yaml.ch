@@ -1,0 +1,38 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+@x
+name: sbx mcp inspect
+synopsis: Show MCP server details
+usage: sbx mcp inspect <name> [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for inspect
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: '  sbx mcp inspect notion'
+see_also:
+    - sbx mcp - Manage MCP servers
+@y
+name: sbx mcp inspect
+synopsis: Show MCP server details
+usage: sbx mcp inspect <name> [flags]
+options:
+    - name: help
+      shorthand: h
+      default_value: "false"
+      usage: help for inspect
+inherited_options:
+    - name: debug
+      shorthand: D
+      default_value: "false"
+      usage: Enable debug logging
+example: '  sbx mcp inspect notion'
+see_also:
+    - sbx mcp - Manage MCP servers
+@z

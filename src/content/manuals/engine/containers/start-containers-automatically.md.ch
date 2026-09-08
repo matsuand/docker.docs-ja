@@ -16,19 +16,18 @@ title: コンテナーの自動起動
 @x
 Docker provides [restart policies](/reference/cli/docker/container/run/#restart)
 to control whether your containers start automatically when they exit, or when
-Docker restarts. Restart policies start linked containers in the correct order.
+Docker restarts.
 Docker recommends that you use restart policies, and avoid using process
 managers to start containers.
 @y
 Docker では [リスタートポリシー](__SUBDIR__/reference/cli/docker/container/run/#restart) というものを提供しています。
 これはコンテナーが終了した際、あるいは Docker そのものが再起動した際に、自動的にコンテナーをリスタート (再起動) するかどうかを制御します。
-リスタートポリシーはリンクづいているコンテナーを適切な順に再起動します。
 Docker ではリスタートポリシーの利用を推奨しているため、プロセスマネージャーなどを用いてコンテナーを起動させることはやめてください。
 @z
 
 @x
 Restart policies are different from the `--live-restore` flag of the `dockerd`
-command. Using `--live-restore` lets you to keep your containers running during
+command. Using `--live-restore` lets you keep your containers running during
 a Docker upgrade, though networking and user input are interrupted.
 @y
 リスタートポリシーは、`dockerd` コマンドの `--live-restore` フラグとは異なります。
@@ -67,11 +66,13 @@ any of the following:
 @z
 
 @x
-The following command starts a Redis container and configures it to always
-restart, unless the container is explicitly stopped, or the daemon restarts.
+The following command starts a Redis container with the `unless-stopped`
+restart policy. Docker restarts the container if it exits or if the daemon
+restarts, but not if you stopped the container yourself.
 @y
-以下のコマンドは Redis コンテナーを起動するものであり、常にリスタートするように設定しています。
-ただしコンテナーが明示的に停止された場合やデーモンが再起動された場合は除きます。
+以下のコマンドは Redis コンテナーを起動するものであり、リスタートポリシーとして `unless-stopped` が設定されています。
+Docker がコンテナーを再起動するのは、それが稼働している時かデーモンが再起動された時です。
+明示的にコンテナーを停止した場合は再起動しません。
 @z
 
 % snip command...

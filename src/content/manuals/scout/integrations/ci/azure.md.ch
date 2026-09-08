@@ -2,19 +2,15 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
----
 description: How to integrate Docker Scout with Microsoft Azure DevOps Pipelines
 keywords: supply chain, security, ci, continuous integration, azure, devops
 title: Integrate Docker Scout with Microsoft Azure DevOps Pipelines
 linkTitle: Azure DevOps Pipelines
----
 @y
----
 description: How to integrate Docker Scout with Microsoft Azure DevOps Pipelines
 keywords: supply chain, security, ci, continuous integration, azure, devops
 title: Integrate Docker Scout with Microsoft Azure DevOps Pipelines
 linkTitle: Azure DevOps Pipelines
----
 @z
 
 @x

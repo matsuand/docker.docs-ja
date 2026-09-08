@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: "Lab: Building Container Images"
 linkTitle: "Lab: Building Container Images"
@@ -33,26 +31,6 @@ keywords: Docker, Dockerfile, images, multi-stage builds, layer caching, build s
   time: 45 minutes
 @y
   time: 45 分
-@z
-
-@x
-    - title: Dockerfile reference
-      url: /reference/dockerfile/
-    - title: Multi-stage builds
-      url: /build/building/multi-stage/
-    - title: Build secrets
-      url: /build/building/secrets/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-building-images
-@y
-    - title: Dockerfile reference
-      url: __SUBDIR__/reference/dockerfile/
-    - title: Multi-stage builds
-      url: __SUBDIR__/build/building/multi-stage/
-    - title: Build secrets
-      url: __SUBDIR__/build/building/secrets/
-    - title: Labspace repository
-      url: https://github.com/dockersamples/labspace-building-images
 @z
 
 @x

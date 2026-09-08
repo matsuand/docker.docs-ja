@@ -32,6 +32,104 @@ known issues for each Docker Hub release.
 @z
 
 @x
+## 2026-08-20
+@y
+## 2026-08-20
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- The [Docker Verified Publisher Program](./repos/manage/trusted-content/dvp-program.md)
+  is now available via self-serve. Apply directly on the [DVP application
+  page](https://hub.docker.com/publisher-program/apply).
+@y
+- The [Docker Verified Publisher Program](./repos/manage/trusted-content/dvp-program.md)
+  is now available via self-serve. Apply directly on the [DVP application
+  page](https://hub.docker.com/publisher-program/apply).
+@z
+
+@x
+## 2026-06-29
+@y
+## 2026-06-29
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Docker Hub integrates with Cloudsmith, letting it handle authentication
+  for Docker Hub and Docker Hardened Images (DHI) upstreams using a managed
+  token. This removes the need to supply your own credentials during setup.
+  See Cloudsmith's announcement, [Set up Docker Hub and DHI upstreams with
+  Cloudsmith-managed
+  authentication](https://cloudsmith.com/changelog/set-up-docker-hub-and-dhi-upstreams-with-cloudsmith-managed-authentication),
+  for details.
+@y
+- Docker Hub integrates with Cloudsmith, letting it handle authentication
+  for Docker Hub and Docker Hardened Images (DHI) upstreams using a managed
+  token. This removes the need to supply your own credentials during setup.
+  See Cloudsmith's announcement, [Set up Docker Hub and DHI upstreams with
+  Cloudsmith-managed
+  authentication](https://cloudsmith.com/changelog/set-up-docker-hub-and-dhi-upstreams-with-cloudsmith-managed-authentication),
+  for details.
+@z
+
+@x
+## 2026-05-20
+@y
+## 2026-05-20
+@z
+
+@x
+### Infrastructure updates
+@y
+### Infrastructure updates
+@z
+
+@x
+- Docker Hub has added Amazon CloudFront as a CDN for image pushes and pulls,
+  improving reliability. You may see a new domain,
+  `production.cloudfront.docker.com`, in your network logs. TLS certificates for
+  this domain are issued by Amazon Trust Services.
+@y
+- Docker Hub has added Amazon CloudFront as a CDN for image pushes and pulls,
+  improving reliability. You may see a new domain,
+  `production.cloudfront.docker.com`, in your network logs. TLS certificates for
+  this domain are issued by Amazon Trust Services.
+@z
+
+@x
+  Most users are unaffected. You may need to take action if your environment
+  uses an egress firewall with a domain allowlist, a TLS inspection proxy, or a
+  managed CA trust store. See the [Docker Desktop
+  allowlist](/manuals/desktop/setup/allow-list.md) for updated domain
+  requirements. If you see TLS errors, ensure your trust store includes the
+  [Amazon Trust Services Root CAs](https://www.amazontrust.com/repository/). If
+  you're a paid subscriber, you can [contact Docker
+  Support](https://hub.docker.com/support/contact/) if you need updated TLS
+  certificate details or the issue persists.
+@y
+  Most users are unaffected. You may need to take action if your environment
+  uses an egress firewall with a domain allowlist, a TLS inspection proxy, or a
+  managed CA trust store. See the [Docker Desktop
+  allowlist](manuals/desktop/setup/allow-list.md) for updated domain
+  requirements. If you see TLS errors, ensure your trust store includes the
+  [Amazon Trust Services Root CAs](https://www.amazontrust.com/repository/). If
+  you're a paid subscriber, you can [contact Docker
+  Support](https://hub.docker.com/support/contact/) if you need updated TLS
+  certificate details or the issue persists.
+@z
+
+@x
 ## 2026-05-06
 @y
 ## 2026-05-06
@@ -49,9 +147,9 @@ known issues for each Docker Hub release.
   See [migration options](./repos/manage/builds/migrate/)
   for guides on migrating to GitHub Actions or Bitbucket Pipelines.
 @y
-- [Docker Hub Automated Builds](__SUBDIR__/docker-hub/repos/manage/builds/) 
+- [Docker Hub Automated Builds](./repos/manage/builds/) 
   is being deprecated. Existing accounts will have access until April 1, 2027. 
-  See [migration options](__SUBDIR__/docker-hub/repos/manage/builds/migrate/)
+  See [migration options](./repos/manage/builds/migrate/)
   for guides on migrating to GitHub Actions or Bitbucket Pipelines.
 @z
 
@@ -408,9 +506,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription//change.md).
+- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription/plans/docker.md).
 @y
-- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription//change.md).
+- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription/plans/docker.md).
 @z
 
 @x
@@ -828,9 +926,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-- The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @y
-- The [billing page](../subscription/change.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @z
 
 @x

@@ -1,0 +1,1230 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+% .md リンクへの (no slash) 対応
+
+@x
+title: Introduction to ROS 2 Development with Docker
+linkTitle: ROS 2
+description: Learn how to containerize and develop ROS 2 applications using Docker.
+keywords: ros2, robotics, devcontainers, python, cpp, Dockerfile, rviz
+summary: |
+  This guide details how to containerize ROS 2 applications using Docker.
+@y
+title: Introduction to ROS 2 Development with Docker
+linkTitle: ROS 2
+description: Learn how to containerize and develop ROS 2 applications using Docker.
+keywords: ros2, robotics, devcontainers, python, cpp, Dockerfile, rviz
+summary: |
+  This guide details how to containerize ROS 2 applications using Docker.
+@z
+
+@x
+  time: 30 minutes
+  image: /images/guides/ros2.jpg
+@y
+  time: 30 分
+  image: /images/guides/ros2.jpg
+@z
+
+@x
+> **Acknowledgment**
+>
+> This guide is a community contribution. Docker would like to thank
+> [Shakirth Anisha](https://www.linkedin.com/in/shakirth-anisha/) for her contribution
+> to this guide.
+@y
+> **Acknowledgment**
+>
+> This guide is a community contribution. Docker would like to thank
+> [Shakirth Anisha](https://www.linkedin.com/in/shakirth-anisha/) for her contribution
+> to this guide.
+@z
+
+@x
+[ROS 2](https://www.ros.org/) is a set of software libraries and tools for building robot applications. It uses Data Distribution Service (DDS) for real-time, secure communication between distributed nodes, making it ideal for robotics and autonomous systems.
+@y
+[ROS 2](https://www.ros.org/) is a set of software libraries and tools for building robot applications. It uses Data Distribution Service (DDS) for real-time, secure communication between distributed nodes, making it ideal for robotics and autonomous systems.
+@z
+
+@x
+---
+@y
+---
+@z
+
+@x
+## What will you learn?
+@y
+## What will you learn?
+@z
+
+@x
+In this guide, you'll learn how to:
+@y
+In this guide, you'll learn how to:
+@z
+
+@x
+- Use official ROS 2 base images from Docker Hub
+- Run ROS 2 in an Ubuntu container
+- Install ROS 2 packages and dependencies
+- Set up a development container for local development
+- Run a complete end-to-end example with Turtlesim
+@y
+- Use official ROS 2 base images from Docker Hub
+- Run ROS 2 in an Ubuntu container
+- Install ROS 2 packages and dependencies
+- Set up a development container for local development
+- Run a complete end-to-end example with Turtlesim
+@z
+
+@x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+Before you begin, make sure you're familiar with the following:
+@y
+Before you begin, make sure you're familiar with the following:
+@z
+
+@x
+- [Docker Desktop](https://docs.docker.com/desktop/): You must have Docker Desktop installed and running.
+- [Docker concepts](/get-started/docker-concepts/the-basics/what-is-a-container.md): You must understand core Docker concepts, such as images and containers.
+- [ROS 2 concepts](https://www.ros.org): Basic understanding of concepts like nodes, packages, topics, and services.
+@y
+- [Docker Desktop](https://docs.docker.com/desktop/): You must have Docker Desktop installed and running.
+- [Docker concepts](get-started/docker-concepts/the-basics/what-is-a-container.md): You must understand core Docker concepts, such as images and containers.
+- [ROS 2 concepts](https://www.ros.org): Basic understanding of concepts like nodes, packages, topics, and services.
+@z
+
+@x
+## What's next?
+@y
+## What's next?
+@z
+
+@x
+Start by setting up your ROS 2 development environment using Docker and dev containers.
+@y
+Start by setting up your ROS 2 development environment using Docker and dev containers.
+@z
+
+@x
+## Run ROS 2 in a container
+@y
+## Run ROS 2 in a container
+@z
+
+@x
+### Overview
+@y
+### Overview
+@z
+
+@x
+In this section, you will run ROS 2 in an isolated Docker container using official ROS 2 images, verify that ROS 2 is working, and install additional ROS 2 packages for development and testing.
+@y
+In this section, you will run ROS 2 in an isolated Docker container using official ROS 2 images, verify that ROS 2 is working, and install additional ROS 2 packages for development and testing.
+@z
+
+@x
+---
+@y
+---
+@z
+
+@x
+### Run ROS 2 in a container
+@y
+### Run ROS 2 in a container
+@z
+
+@x
+The fastest way to get started with ROS 2 is to use the [official Docker image](https://hub.docker.com/_/ros/). To pull an image, start a container, and open an interactive bash shell:
+@y
+The fastest way to get started with ROS 2 is to use the [official Docker image](https://hub.docker.com/_/ros/). To pull an image, start a container, and open an interactive bash shell:
+@z
+
+@x
+1. Pull and run the official ROS 2 Docker image:
+@y
+1. Pull and run the official ROS 2 Docker image:
+@z
+
+@x
+   ```console
+   $ docker run -it ros:humble
+   ```
+@y
+   ```console
+   $ docker run -it ros:humble
+   ```
+@z
+
+@x
+   This guide uses the Humble distribution. You can replace `humble` with another supported distribution such as `rolling`, `jazzy`, or `iron`.
+@y
+   This guide uses the Humble distribution. You can replace `humble` with another supported distribution such as `rolling`, `jazzy`, or `iron`.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > This environment is temporary and does not maintain persistence.
+   > Any files you create or packages you install will be deleted once the container is stopped or removed.
+@y
+   > [!NOTE]
+   >
+   > This environment is temporary and does not maintain persistence.
+   > Any files you create or packages you install will be deleted once the container is stopped or removed.
+@z
+
+@x
+2. Verify ROS 2 is working:
+@y
+2. Verify ROS 2 is working:
+@z
+
+@x
+   ```console
+   $ echo $ROS_DISTRO
+   ```
+@y
+   ```console
+   $ echo $ROS_DISTRO
+   ```
+@z
+
+@x
+   You should see output similar to:
+@y
+   You should see output similar to:
+@z
+
+@x
+   ```text
+   humble
+   ```
+@y
+   ```text
+   humble
+   ```
+@z
+
+@x
+### Install ROS 2 packages
+@y
+### Install ROS 2 packages
+@z
+
+@x
+The official ROS 2 images include core packages. To install additional packages, use the `apt` package manager:
+@y
+The official ROS 2 images include core packages. To install additional packages, use the `apt` package manager:
+@z
+
+@x
+1. Update the package manager:
+@y
+1. Update the package manager:
+@z
+
+@x
+   ```console
+   $ sudo apt update
+   ```
+@y
+   ```console
+   $ sudo apt update
+   ```
+@z
+
+@x
+2. Install the desired package:
+@y
+2. Install the desired package:
+@z
+
+@x
+   ```console
+   $ sudo apt install $PACKAGE_NAME
+   ```
+@y
+   ```console
+   $ sudo apt install $PACKAGE_NAME
+   ```
+@z
+
+@x
+Replace `$PACKAGE_NAME` with any package you want to install.
+@y
+Replace `$PACKAGE_NAME` with any package you want to install.
+@z
+
+@x
+Some commonly used packages include:
+@y
+Some commonly used packages include:
+@z
+
+@x
+- `ros-humble-turtlesim` - Visualization and simulation tool
+- `ros-humble-rviz2` - 3D visualization tool
+- `ros-humble-rqt` - Qt-based ROS graphical tools
+- `ros-humble-demo-nodes-cpp` - C++ demo nodes
+- `ros-humble-demo-nodes-py` - Python demo nodes
+- `ros-humble-colcon-common-extensions` - Build system extensions
+@y
+- `ros-humble-turtlesim` - Visualization and simulation tool
+- `ros-humble-rviz2` - 3D visualization tool
+- `ros-humble-rqt` - Qt-based ROS graphical tools
+- `ros-humble-demo-nodes-cpp` - C++ demo nodes
+- `ros-humble-demo-nodes-py` - Python demo nodes
+- `ros-humble-colcon-common-extensions` - Build system extensions
+@z
+
+@x
+### Summary
+@y
+### Summary
+@z
+
+@x
+In this section, you pulled an official ROS 2 Docker image, launched an interactive session, and extended the container's capabilities by installing additional ROS 2 packages using apt.
+@y
+In this section, you pulled an official ROS 2 Docker image, launched an interactive session, and extended the container's capabilities by installing additional ROS 2 packages using apt.
+@z
+
+@x
+### Next steps
+@y
+### Next steps
+@z
+
+@x
+In the next section, you will configure a persistent workspace to ensure your code and modifications are saved across sessions.
+@y
+In the next section, you will configure a persistent workspace to ensure your code and modifications are saved across sessions.
+@z
+
+@x
+## Build and develop a ROS 2 workspace
+@y
+## Build and develop a ROS 2 workspace
+@z
+
+@x
+### Overview
+@y
+### Overview
+@z
+
+@x
+In this section, you will set up a ROS 2 workspace using Docker and development containers, review the workspace layout, open the workspace in Visual Studio Code, and edit and build ROS 2 projects inside the container.
+@y
+In this section, you will set up a ROS 2 workspace using Docker and development containers, review the workspace layout, open the workspace in Visual Studio Code, and edit and build ROS 2 projects inside the container.
+@z
+
+@x
+---
+@y
+---
+@z
+
+@x
+### Get the sample ROS 2 workspace
+@y
+### Get the sample ROS 2 workspace
+@z
+
+@x
+A consistent workspace simplifies managing ROS 2 projects and build artifacts across different distributions.
+@y
+A consistent workspace simplifies managing ROS 2 projects and build artifacts across different distributions.
+@z
+
+@x
+1. Open a terminal and clone the sample workspace repository:
+@y
+1. Open a terminal and clone the sample workspace repository:
+@z
+
+@x
+   ```console
+   $ git clone https://github.com/shakirth-anisha/docker-ros2-workspace.git
+   $ cd docker-ros2-workspace
+@y
+   ```console
+   $ git clone https://github.com/shakirth-anisha/docker-ros2-workspace.git
+   $ cd docker-ros2-workspace
+@z
+
+@x
+   ```
+@y
+   ```
+@z
+
+@x
+   Moving forward, Linux users can use the `ws_linux` folder, and macOS users can use `ws_mac`.
+@y
+   Moving forward, Linux users can use the `ws_linux` folder, and macOS users can use `ws_mac`.
+@z
+
+@x
+2. Verify the workspace structure:
+@y
+2. Verify the workspace structure:
+@z
+
+@x
+   ```text
+   ws_linux/
+   ├── compose.yml
+   ├── Dockerfile
+   └── src/
+       ├── package1/
+       └── package2/
+@y
+   ```text
+   ws_linux/
+   ├── compose.yml
+   ├── Dockerfile
+   └── src/
+       ├── package1/
+       └── package2/
+@z
+
+@x
+   ws_mac/
+   ├── compose.yml
+   ├── Dockerfile
+   └── src/
+       ├── package1/
+       └── package2/
+@y
+   ws_mac/
+   ├── compose.yml
+   ├── Dockerfile
+   └── src/
+       ├── package1/
+       └── package2/
+@z
+
+@x
+   ```
+@y
+   ```
+@z
+
+@x
+3. Explore the workspace layout
+@y
+3. Explore the workspace layout
+@z
+
+@x
+- `compose.yml` : Defines how Docker Compose builds and runs the ROS 2 container, including mounts, environment variables, and networking settings.
+- `Dockerfile` : Builds the ROS 2 development image. It uses an official ROS 2 base image, creates a non-root development user, and installs required system and ROS 2 dependencies.
+- `src` : Contains all ROS 2 packages. This directory is mounted into the container as the active workspace.
+@y
+- `compose.yml` : Defines how Docker Compose builds and runs the ROS 2 container, including mounts, environment variables, and networking settings.
+- `Dockerfile` : Builds the ROS 2 development image. It uses an official ROS 2 base image, creates a non-root development user, and installs required system and ROS 2 dependencies.
+- `src` : Contains all ROS 2 packages. This directory is mounted into the container as the active workspace.
+@z
+
+@x
+### Open and build the container
+@y
+### Open and build the container
+@z
+
+@x
+1. Execute the following commands to build and start the container:
+@y
+1. Execute the following commands to build and start the container:
+@z
+
+@x
+   For Linux:
+@y
+   For Linux:
+@z
+
+@x
+   ```console
+   $ cd ws_linux
+   $ docker compose up -d
+   $ docker compose exec ros2 /bin/bash
+   ```
+@y
+   ```console
+   $ cd ws_linux
+   $ docker compose up -d
+   $ docker compose exec ros2 /bin/bash
+   ```
+@z
+
+@x
+   For macOS:
+@y
+   For macOS:
+@z
+
+@x
+   ```console
+   $ cd ws_mac
+   $ docker compose up -d
+   $ docker compose exec ros2 /bin/bash
+   ```
+@y
+   ```console
+   $ cd ws_mac
+   $ docker compose up -d
+   $ docker compose exec ros2 /bin/bash
+   ```
+@z
+
+@x
+   This command builds the Docker image defined in your `Dockerfile` and starts the container in the background.
+@y
+   This command builds the Docker image defined in your `Dockerfile` and starts the container in the background.
+@z
+
+@x
+   > [!NOTE]
+   >
+   > Building the image may take several minutes during the first run
+   > as the CLI pulls the base ROS 2 image and installs required dependencies.
+   > Subsequent starts will be significantly faster.
+@y
+   > [!NOTE]
+   >
+   > Building the image may take several minutes during the first run
+   > as the CLI pulls the base ROS 2 image and installs required dependencies.
+   > Subsequent starts will be significantly faster.
+@z
+
+@x
+2. Once the container is running, execute commands inside it using `exec`:
+@y
+2. Once the container is running, execute commands inside it using `exec`:
+@z
+
+@x
+   ```console
+   $ docker compose exec ros2 /bin/bash
+   ```
+@y
+   ```console
+   $ docker compose exec ros2 /bin/bash
+   ```
+@z
+
+@x
+3. Inside the container terminal, verify the environment:
+@y
+3. Inside the container terminal, verify the environment:
+@z
+
+@x
+```console
+$ echo $ROS_VERSION
+$ which colcon
+```
+@y
+```console
+$ echo $ROS_VERSION
+$ which colcon
+```
+@z
+
+@x
+All commands should execute successfully inside the container.
+@y
+All commands should execute successfully inside the container.
+@z
+
+@x
+### Switch ROS 2 distributions
+@y
+### Switch ROS 2 distributions
+@z
+
+@x
+Update the base image in your `Dockerfile`, changing from `humble` to another distribution like `rolling`, `jazzy`, or `iron`.
+@y
+Update the base image in your `Dockerfile`, changing from `humble` to another distribution like `rolling`, `jazzy`, or `iron`.
+@z
+
+@x
+### Summary
+@y
+### Summary
+@z
+
+@x
+In this section, you learned how to create a structured workspace, write a Dockerfile with development tools, and configure a Docker Compose setup. Your ROS 2 development environment is now ready with a consistent, reproducible setup across any machine.
+@y
+In this section, you learned how to create a structured workspace, write a Dockerfile with development tools, and configure a Docker Compose setup. Your ROS 2 development environment is now ready with a consistent, reproducible setup across any machine.
+@z
+
+@x
+### Next steps
+@y
+### Next steps
+@z
+
+@x
+In the next section, you'll run a complete end-to-end example with Turtlesim.
+@y
+In the next section, you'll run a complete end-to-end example with Turtlesim.
+@z
+
+@x
+## Run a complete example with Turtlesim
+@y
+## Run a complete example with Turtlesim
+@z
+
+@x
+### Overview
+@y
+### Overview
+@z
+
+@x
+Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concepts such as nodes, topics, and services. In this section, you'll run a complete example with Turtlesim, control the turtle, monitor topics, and visualize the system with rqt.
+@y
+Turtlesim is a simple simulation tool that demonstrates fundamental ROS 2 concepts such as nodes, topics, and services. In this section, you'll run a complete example with Turtlesim, control the turtle, monitor topics, and visualize the system with rqt.
+@z
+
+@x
+---
+@y
+---
+@z
+
+@x
+### Configure display forwarding
+@y
+### Configure display forwarding
+@z
+
+@x
+#### Linux
+@y
+#### Linux
+@z
+
+@x
+Allow Docker access to your X server:
+@y
+Allow Docker access to your X server:
+@z
+
+@x
+```console
+$ xhost +local:docker
+```
+@y
+```console
+$ xhost +local:docker
+```
+@z
+
+@x
+#### macOS
+@y
+#### macOS
+@z
+
+@x
+On macOS, use XQuartz to provide X11 support. Install XQuartz using Homebrew:
+@y
+On macOS, use XQuartz to provide X11 support. Install XQuartz using Homebrew:
+@z
+
+@x
+1. Install XQuartz using Homebrew:
+@y
+1. Install XQuartz using Homebrew:
+@z
+
+@x
+   ```console
+   $ brew install --cask xquartz
+   ```
+@y
+   ```console
+   $ brew install --cask xquartz
+   ```
+@z
+
+@x
+2. Open XQuartz from Applications, then navigate to `Preferences > Security` and enable `Allow connections from network clients`. Restart your computer to ensure the changes take effect.
+@y
+2. Open XQuartz from Applications, then navigate to `Preferences > Security` and enable `Allow connections from network clients`. Restart your computer to ensure the changes take effect.
+@z
+
+@x
+3. After rebooting, open a terminal and allow local connections:
+@y
+3. After rebooting, open a terminal and allow local connections:
+@z
+
+@x
+   ```console
+   $ defaults write org.xquartz.X11 nolisten_tcp -bool false
+   $ xhost +localhost
+   $ xhost + 127.0.0.1
+   ```
+@y
+   ```console
+   $ defaults write org.xquartz.X11 nolisten_tcp -bool false
+   $ xhost +localhost
+   $ xhost + 127.0.0.1
+   ```
+@z
+
+@x
+### Start the container
+@y
+### Start the container
+@z
+
+@x
+Start the container using the same Docker Compose setup from the workspace section.
+@y
+Start the container using the same Docker Compose setup from the workspace section.
+@z
+
+@x
+For Linux:
+@y
+For Linux:
+@z
+
+@x
+```console
+$ cd ws_linux
+$ docker compose up -d
+$ docker compose exec ros2 /bin/bash
+```
+@y
+```console
+$ cd ws_linux
+$ docker compose up -d
+$ docker compose exec ros2 /bin/bash
+```
+@z
+
+@x
+For macOS:
+@y
+For macOS:
+@z
+
+@x
+```console
+$ cd ws_mac
+$ docker compose up -d
+$ docker compose exec ros2 /bin/bash
+```
+@y
+```console
+$ cd ws_mac
+$ docker compose up -d
+$ docker compose exec ros2 /bin/bash
+```
+@z
+
+@x
+### Install and run Turtlesim
+@y
+### Install and run Turtlesim
+@z
+
+@x
+Inside the container, install the Turtlesim package:
+@y
+Inside the container, install the Turtlesim package:
+@z
+
+@x
+1. Update the package manager:
+@y
+1. Update the package manager:
+@z
+
+@x
+   ```console
+   $ sudo apt update
+   ```
+@y
+   ```console
+   $ sudo apt update
+   ```
+@z
+
+@x
+2. Install the Turtlesim package:
+@y
+2. Install the Turtlesim package:
+@z
+
+@x
+   ```console
+   $ sudo apt install -y ros-humble-turtlesim
+   ```
+@y
+   ```console
+   $ sudo apt install -y ros-humble-turtlesim
+   ```
+@z
+
+@x
+3. Run the Turtlesim node:
+@y
+3. Run the Turtlesim node:
+@z
+
+@x
+   ```console
+   $ ros2 run turtlesim turtlesim_node
+   ```
+@y
+   ```console
+   $ ros2 run turtlesim turtlesim_node
+   ```
+@z
+
+@x
+A window should appear on your desktop showing a turtle in a grid.
+@y
+A window should appear on your desktop showing a turtle in a grid.
+@z
+
+@x
+### Control the turtle
+@y
+### Control the turtle
+@z
+
+@x
+1. Open a new terminal and connect to the same container, then start the keyboard teleop node:
+@y
+1. Open a new terminal and connect to the same container, then start the keyboard teleop node:
+@z
+
+@x
+   ```console
+   $ ros2 run turtlesim turtle_teleop_key
+   ```
+@y
+   ```console
+   $ ros2 run turtlesim turtle_teleop_key
+   ```
+@z
+
+@x
+   This node allows you to control the turtle using your keyboard. Use the arrow keys to move the turtle forward, backward, left, and right. Press `Ctrl+C` to stop the teleop node.
+@y
+   This node allows you to control the turtle using your keyboard. Use the arrow keys to move the turtle forward, backward, left, and right. Press `Ctrl+C` to stop the teleop node.
+@z
+
+@x
+2. Move the turtle around the window. You should see it draw a path as it moves.
+@y
+2. Move the turtle around the window. You should see it draw a path as it moves.
+@z
+
+@x
+### Monitor topics
+@y
+### Monitor topics
+@z
+
+@x
+1. Open another terminal and connect to the same container, then list all active topics:
+@y
+1. Open another terminal and connect to the same container, then list all active topics:
+@z
+
+@x
+   ```console
+   $ ros2 topic list
+   ```
+@y
+   ```console
+   $ ros2 topic list
+   ```
+@z
+
+@x
+   You should see output similar to the following:
+@y
+   You should see output similar to the following:
+@z
+
+@x
+   ```text
+   /parameter_events
+   /rosout
+   /turtle1/cmd_vel
+   /turtle1/color_sensor
+   /turtle1/pose
+   ```
+@y
+   ```text
+   /parameter_events
+   /rosout
+   /turtle1/cmd_vel
+   /turtle1/color_sensor
+   /turtle1/pose
+   ```
+@z
+
+@x
+2. Get information about a specific topic:
+@y
+2. Get information about a specific topic:
+@z
+
+@x
+   ```console
+   $ ros2 topic info /turtle1/pose
+   ```
+@y
+   ```console
+   $ ros2 topic info /turtle1/pose
+   ```
+@z
+
+@x
+   You'll see the topic type and which nodes publish and subscribe to it.
+@y
+   You'll see the topic type and which nodes publish and subscribe to it.
+@z
+
+@x
+### Visualize the system with rqt
+@y
+### Visualize the system with rqt
+@z
+
+@x
+1. Open another terminal and connect to the same container, then update the package manager:
+@y
+1. Open another terminal and connect to the same container, then update the package manager:
+@z
+
+@x
+   ```console
+   $ sudo apt update
+   ```
+@y
+   ```console
+   $ sudo apt update
+   ```
+@z
+
+@x
+2. Install rqt:
+@y
+2. Install rqt:
+@z
+
+@x
+   ```console
+   $ sudo apt install -y 'ros-humble-rqt*'
+   ```
+@y
+   ```console
+   $ sudo apt install -y 'ros-humble-rqt*'
+   ```
+@z
+
+@x
+3. Start rqt:
+@y
+3. Start rqt:
+@z
+
+@x
+   ```console
+   $ ros2 run rqt_gui rqt_gui
+   ```
+@y
+   ```console
+   $ ros2 run rqt_gui rqt_gui
+   ```
+@z
+
+@x
+An rqt window should appear. rqt provides several useful plugins for visualizing and monitoring ROS 2 systems.
+@y
+An rqt window should appear. rqt provides several useful plugins for visualizing and monitoring ROS 2 systems.
+@z
+
+@x
+#### Node Graph
+@y
+#### Node Graph
+@z
+
+@x
+You can explore the node graph by navigating to **Plugins > Introspection > Node Graph**. A new tab opens showing nodes and topics with connections illustrated as lines. This visualization demonstrates how the teleop node sends velocity commands to the Turtlesim node, and how the Turtlesim node publishes position data back through topics.
+@y
+You can explore the node graph by navigating to **Plugins > Introspection > Node Graph**. A new tab opens showing nodes and topics with connections illustrated as lines. This visualization demonstrates how the teleop node sends velocity commands to the Turtlesim node, and how the Turtlesim node publishes position data back through topics.
+@z
+
+@x
+#### Topic Monitor
+@y
+#### Topic Monitor
+@z
+
+@x
+You can monitor active topics by navigating to **Plugins > Topics > Topic Monitor**. A new tab opens displaying all active topics and their current values. Select the eye icon next to `/turtle1/pose` to monitor it. As you move the turtle, watch the pose values update in real time, showing the position of the turtle and orientation changing based on your commands.
+@y
+You can monitor active topics by navigating to **Plugins > Topics > Topic Monitor**. A new tab opens displaying all active topics and their current values. Select the eye icon next to `/turtle1/pose` to monitor it. As you move the turtle, watch the pose values update in real time, showing the position of the turtle and orientation changing based on your commands.
+@z
+
+@x
+#### Service Caller
+@y
+#### Service Caller
+@z
+
+@x
+You can call services from rqt using **Plugins > Services > Service Caller**. Select a service such as `/turtle1/teleport_absolute`, enter values for the request fields, and select **Call** to send the request.
+@y
+You can call services from rqt using **Plugins > Services > Service Caller**. Select a service such as `/turtle1/teleport_absolute`, enter values for the request fields, and select **Call** to send the request.
+@z
+
+@x
+#### Plots
+@y
+#### Plots
+@z
+
+@x
+To plot topic data over time navigate to **Plugins > Visualization > Plot**. For example, in the Plot window, type `/turtle1/pose/x` in the Topic field and press Enter. Move the turtle and watch the X position displayed as a graph over time.
+@y
+To plot topic data over time navigate to **Plugins > Visualization > Plot**. For example, in the Plot window, type `/turtle1/pose/x` in the Topic field and press Enter. Move the turtle and watch the X position displayed as a graph over time.
+@z
+
+@x
+### Call ROS 2 services
+@y
+### Call ROS 2 services
+@z
+
+@x
+Turtlesim provides services for actions such as repositioning the turtle and clearing the path.
+@y
+Turtlesim provides services for actions such as repositioning the turtle and clearing the path.
+@z
+
+@x
+1. List available services:
+@y
+1. List available services:
+@z
+
+@x
+   ```console
+   $ ros2 service list
+   ```
+@y
+   ```console
+   $ ros2 service list
+   ```
+@z
+
+@x
+   You should see services such as `/turtle1/set_pen` (to change pen color and width), `/turtle1/teleport_absolute` (to move the turtle to a specific position), and `/turtle1/teleport_relative` (to move the turtle relative to its current position).
+@y
+   You should see services such as `/turtle1/set_pen` (to change pen color and width), `/turtle1/teleport_absolute` (to move the turtle to a specific position), and `/turtle1/teleport_relative` (to move the turtle relative to its current position).
+@z
+
+@x
+2. Teleport the turtle to a new position:
+@y
+2. Teleport the turtle to a new position:
+@z
+
+@x
+   ```console
+   $ ros2 service call /turtle1/teleport_absolute turtlesim/srv/TeleportAbsolute "
+   x: 1.0
+   y: 3.0
+   theta: 0.0
+   "
+   ```
+@y
+   ```console
+   $ ros2 service call /turtle1/teleport_absolute turtlesim/srv/TeleportAbsolute "
+   x: 1.0
+   y: 3.0
+   theta: 0.0
+   "
+   ```
+@z
+
+@x
+   The turtle should instantly move to the specified position (1.0, 3.0).
+@y
+   The turtle should instantly move to the specified position (1.0, 3.0).
+@z
+
+@x
+### Create a simple publisher
+@y
+### Create a simple publisher
+@z
+
+@x
+1. Create a Python script that publishes velocity commands to control the turtle programmatically. In a new terminal, create a file called `move_turtle.py`:
+@y
+1. Create a Python script that publishes velocity commands to control the turtle programmatically. In a new terminal, create a file called `move_turtle.py`:
+@z
+
+@x
+   ```python
+   import rclpy
+   from geometry_msgs.msg import Twist
+   import time
+@y
+   ```python
+   import rclpy
+   from geometry_msgs.msg import Twist
+   import time
+@z
+
+@x
+   def main():
+       rclpy.init()
+       node = rclpy.create_node('turtle_mover')
+       publisher = node.create_publisher(Twist, 'turtle1/cmd_vel', 10)
+@y
+   def main():
+       rclpy.init()
+       node = rclpy.create_node('turtle_mover')
+       publisher = node.create_publisher(Twist, 'turtle1/cmd_vel', 10)
+@z
+
+@x
+       # Create a twist message
+       msg = Twist()
+       msg.linear.x = 2.0  # Move forward at 2 m/s
+       msg.angular.z = 1.0  # Rotate at 1 rad/s
+@y
+       # Create a twist message
+       msg = Twist()
+       msg.linear.x = 2.0  # Move forward at 2 m/s
+       msg.angular.z = 1.0  # Rotate at 1 rad/s
+@z
+
+@x
+       # Publish the message
+       for i in range(50):
+           publisher.publish(msg)
+           time.sleep(0.1)
+@y
+       # Publish the message
+       for i in range(50):
+           publisher.publish(msg)
+           time.sleep(0.1)
+@z
+
+@x
+       # Stop the turtle
+       msg.linear.x = 0.0
+       msg.angular.z = 0.0
+       publisher.publish(msg)
+@y
+       # Stop the turtle
+       msg.linear.x = 0.0
+       msg.angular.z = 0.0
+       publisher.publish(msg)
+@z
+
+@x
+       node.destroy_node()
+       rclpy.shutdown()
+@y
+       node.destroy_node()
+       rclpy.shutdown()
+@z
+
+@x
+   if __name__ == '__main__':
+       main()
+   ```
+@y
+   if __name__ == '__main__':
+       main()
+   ```
+@z
+
+@x
+2. Run the script:
+@y
+2. Run the script:
+@z
+
+@x
+   ```console
+   $ python3 move_turtle.py
+   ```
+@y
+   ```console
+   $ python3 move_turtle.py
+   ```
+@z
+
+@x
+   The turtle should move in a circular motion for 5 seconds and then stop.
+@y
+   The turtle should move in a circular motion for 5 seconds and then stop.
+@z
+
+@x
+### Summary
+@y
+### Summary
+@z
+
+@x
+In this section, you configured display forwarding, used the Turtlesim nodes, inspected nodes and topics, and visualized the system using rqt. Finally, you interacted with ROS 2 services and created a simple publisher to move the turtle programmatically.
+@y
+In this section, you configured display forwarding, used the Turtlesim nodes, inspected nodes and topics, and visualized the system using rqt. Finally, you interacted with ROS 2 services and created a simple publisher to move the turtle programmatically.
+@z
+
+@x
+These fundamental concepts apply directly to real-world robotics applications with actual sensors and actuators.
+@y
+These fundamental concepts apply directly to real-world robotics applications with actual sensors and actuators.
+@z
+
+@x
+### Related resources
+@y
+### Related resources
+@z
+
+@x
+- [ROS 2 Turtlesim tutorials](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)
+- [ROS 2 Concepts](https://docs.ros.org/en/humble/Concepts.html)
+- [Geometry Messages](https://github.com/ros2/geometry2/tree/humble/geometry_msgs)
+@y
+- [ROS 2 Turtlesim tutorials](https://docs.ros.org/en/humble/Tutorials/Beginner-CLI-Tools/Understanding-ROS2-Topics/Understanding-ROS2-Topics.html)
+- [ROS 2 Concepts](https://docs.ros.org/en/humble/Concepts.html)
+- [Geometry Messages](https://github.com/ros2/geometry2/tree/humble/geometry_msgs)
+@z

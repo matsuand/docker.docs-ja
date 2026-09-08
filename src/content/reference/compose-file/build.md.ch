@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Compose Build Specification
 description: Learn about the Compose Build Specification
@@ -880,9 +882,19 @@ build:
 @z
 
 @x
-Set the network containers connect to for the `RUN` instructions during build.
+Set the networking mode for `RUN` instructions during the build. This is
+the same as [`docker build --network`](/reference/cli/docker/buildx/build/#network).
+It is not a Compose network from the top-level [`networks`](networks.md) key.
 @y
-Set the network containers connect to for the `RUN` instructions during build.
+Set the networking mode for `RUN` instructions during the build. This is
+the same as [`docker build --network`](__SUBDIR__/reference/cli/docker/buildx/build/#network).
+It is not a Compose network from the top-level [`networks`](networks.md) key.
+@z
+
+@x
+The value is a mode (`default`, `none`, or `host`), not a network name:
+@y
+The value is a mode (`default`, `none`, or `host`), not a network name:
 @z
 
 @x
@@ -900,23 +912,9 @@ build:
 @z
 
 @x
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
+Use `none` to disable networking during the build:
 @y
-```yaml
-build:
-  context: .
-  network: custom_network_1
-```
-@z
-
-@x
-Use `none` to disable networking during build:
-@y
-Use `none` to disable networking during build:
+Use `none` to disable networking during the build:
 @z
 
 @x

@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-
 @x
 description: Learn how to run, connect to, and persist data in a local containerized database.
 keywords: database, mysql
@@ -17,13 +15,6 @@ summary: |
   データベースをコンテナーとして効果的に実行および管理する手法について学びます。
 @z
 
-@x
-tags: [databases]
-@y
-tags: [databases]
-@z
-
-% params:
 @x
   time: 20 minutes
 @y
@@ -396,9 +387,332 @@ guide. To stop and remove a container, either:
 @z
 
 @x
+Next, you can use either the Docker Desktop GUI or CLI to run the container with
+the port mapped.
+@y
+そこで Docker Desktop GUI または CUI を使って、マッピングされたポートを使ったコンテナーを起動します。
+@z
+
+@x
+{{< tabs group="ui" >}}
+{{< tab name="CLI" >}}
+@y
+{{< tabs group="ui" >}}
+{{< tab name="CLI" >}}
+@z
+
+@x
+Run the following command in a terminal.
+@y
+Run the following command in a terminal.
+@z
+
+% snip command...
+
+@x
+In this command, `-p 3307:3306` maps port 3307 on the host to port 3306 in the container.
+@y
+In this command, `-p 3307:3306` maps port 3307 on the host to port 3306 in the container.
+@z
+
+@x
+To verify the port is mapped, run the following command.
+@y
+To verify the port is mapped, run the following command.
+@z
+
+@x
+```console
+$ docker ps
+```
+@y
+```console
+$ docker ps
+```
+@z
+
+@x
+You should see output like the following.
+@y
+You should see output like the following.
+@z
+
+@x
+```console
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                               NAMES
+6eb776cfd73c   mysql:latest   "docker-entrypoint.s…"   17 minutes ago   Up 17 minutes   33060/tcp, 0.0.0.0:3307->3306/tcp   my-mysql
+```
+@y
+```console
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                               NAMES
+6eb776cfd73c   mysql:latest   "docker-entrypoint.s…"   17 minutes ago   Up 17 minutes   33060/tcp, 0.0.0.0:3307->3306/tcp   my-mysql
+```
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="GUI" >}}
+@y
+{{< /tab >}}
+{{< tab name="GUI" >}}
+@z
+
+@x
+To run a container using the GUI:
+@y
+To run a container using the GUI:
+@z
+
+@x
+1. In the Docker Desktop Dashboard, select the global search at the top of the window.
+2. Specify `mysql` in the search box, and select the `Images` tab if not already
+   selected.
+3. Hover over the `mysql` image and select `Run`.
+   The **Run a new container** modal appears.
+4. Expand **Optional settings**.
+5. In the optional settings, specify the following:
+@y
+1. In the Docker Desktop Dashboard, select the global search at the top of the window.
+2. Specify `mysql` in the search box, and select the `Images` tab if not already
+   selected.
+3. Hover over the `mysql` image and select `Run`.
+   The **Run a new container** modal appears.
+4. Expand **Optional settings**.
+5. In the optional settings, specify the following:
+@z
+
+@x
+   - **Container name**: `my-mysql`
+   - **Host port** for the **3306/tcp** port: `3307`
+   - **Environment variables**:
+     - `MYSQL_ROOT_PASSWORD`:`my-secret-pw`
+     - `MYSQL_DATABASE`:`mydb`
+@y
+   - **Container name**: `my-mysql`
+   - **Host port** for the **3306/tcp** port: `3307`
+   - **Environment variables**:
+     - `MYSQL_ROOT_PASSWORD`:`my-secret-pw`
+     - `MYSQL_DATABASE`:`mydb`
+@z
+
+@x
+   ![The optional settings screen with the options specified.](images/databases-2.webp)
+@y
+   ![The optional settings screen with the options specified.](images/databases-2.webp)
+@z
+
+@x
+6. Select `Run`.
+7. In the **Containers** view, verify that the port is mapped under the
+   **Port(s)** column. You should see `3307:3306` for the `my-mysql`
+   container.
+@y
+6. Select `Run`.
+7. In the **Containers** view, verify that the port is mapped under the
+   **Port(s)** column. You should see `3307:3306` for the `my-mysql`
+   container.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+At this point, any application running on your host can access the MySQL service in the container at `localhost:3307`.
+@y
+At this point, any application running on your host can access the MySQL service in the container at `localhost:3307`.
+@z
+
+@x
+## Connect to a containerized database from another container
+@y
+## Connect to a containerized database from another container
+@z
+
+@x
+Connecting to a containerized database from another container is a common
+scenario in microservices architecture and during development processes.
+Docker's networking capabilities make it easy to establish this connection
+without having to expose the database to the host network. This is achieved by
+placing both the database container and the container that needs to access it on
+the same Docker network.
+@y
+Connecting to a containerized database from another container is a common
+scenario in microservices architecture and during development processes.
+Docker's networking capabilities make it easy to establish this connection
+without having to expose the database to the host network. This is achieved by
+placing both the database container and the container that needs to access it on
+the same Docker network.
+@z
+
+@x
+Before you begin, you must remove any containers you previously ran for this
+guide. To stop and remove a container, either:
+@y
+Before you begin, you must remove any containers you previously ran for this
+guide. To stop and remove a container, either:
+@z
+
+@x
+- In a terminal, run `docker rm --force my-mysql` to remove the container
+  named `my-mysql`.
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
+  container in the **Containers** view.
+@y
+- In a terminal, run `docker rm --force my-mysql` to remove the container
+  named `my-mysql`.
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
+  container in the **Containers** view.
+@z
+
+@x
+To create a network and run containers on it:
+@y
+To create a network and run containers on it:
+@z
+
+@x
+1. Run the following command to create a Docker network named my-network.
+@y
+1. Run the following command to create a Docker network named my-network.
+@z
+
+@x
+   ```console
+   $ docker network create my-network
+   ```
+@y
+   ```console
+   $ docker network create my-network
+   ```
+@z
+
+@x
+2. Run your database container and specify the network using the `--network`
+   option. This runs the container on the my-network network.
+@y
+2. Run your database container and specify the network using the `--network`
+   option. This runs the container on the my-network network.
+@z
+
+@x
+   ```console
+   $ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb --network my-network -d mysql:latest
+   ```
+@y
+   ```console
+   $ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb --network my-network -d mysql:latest
+   ```
+@z
+
+@x
+3. Run your other containers and specify the network using the `--network`
+   option. For this example, you'll run a phpMyAdmin container that can connect
+   to your database.
+@y
+3. Run your other containers and specify the network using the `--network`
+   option. For this example, you'll run a phpMyAdmin container that can connect
+   to your database.
+@z
+
+@x
+   1. Run a phpMyAdmin container. Use the `--network` option to specify the
+      network, the `-p` option to let you access the container from your host
+      machine, and the `-e` option to specify a required environment variable
+      for this image.
+@y
+   1. Run a phpMyAdmin container. Use the `--network` option to specify the
+      network, the `-p` option to let you access the container from your host
+      machine, and the `-e` option to specify a required environment variable
+      for this image.
+@z
+
+@x
+      ```console
+      $ docker run --name my-phpmyadmin -d --network my-network -p 8080:80 -e PMA_HOST=my-mysql phpmyadmin
+      ```
+@y
+      ```console
+      $ docker run --name my-phpmyadmin -d --network my-network -p 8080:80 -e PMA_HOST=my-mysql phpmyadmin
+      ```
+@z
+
+@x
+4. Verify that the containers can communicate. For this example, you'll access
+   phpMyAdmin and verify that it connects to the database.
+@y
+4. Verify that the containers can communicate. For this example, you'll access
+   phpMyAdmin and verify that it connects to the database.
+@z
+
+@x
+   1. Open [http://localhost:8080](http://localhost:8080) to access your phpMyAdmin container.
+   2. Log in using `root` as the username and `my-secret-pw` as the password.
+      You should connect to the MySQL server and see your database listed.
+@y
+   1. Open [http://localhost:8080](http://localhost:8080) to access your phpMyAdmin container.
+   2. Log in using `root` as the username and `my-secret-pw` as the password.
+      You should connect to the MySQL server and see your database listed.
+@z
+
+@x
+At this point, any application running on your `my-network` container network
+can access the MySQL service in the container at `my-mysql:3306`.
+@y
+At this point, any application running on your `my-network` container network
+can access the MySQL service in the container at `my-mysql:3306`.
+@z
+
+@x
+## Persist database data in a volume
+@y
+## Persist database data in a volume
+@z
+
+@x
+Persisting database data in a Docker volume is necessary for ensuring that your
+data survives container restarts and removals. A Docker volume lets you store
+database files outside the container's writable layer, making it possible to
+upgrade the container, switch bases, and share data without losing it. Here’s
+how you can attach a volume to your database container using either the Docker
+CLI or the Docker Desktop GUI.
+@y
+Persisting database data in a Docker volume is necessary for ensuring that your
+data survives container restarts and removals. A Docker volume lets you store
+database files outside the container's writable layer, making it possible to
+upgrade the container, switch bases, and share data without losing it. Here’s
+how you can attach a volume to your database container using either the Docker
+CLI or the Docker Desktop GUI.
+@z
+
+@x
+Before you begin, you must remove any containers you previously ran for this
+guide. To stop and remove a container, either:
+@y
+Before you begin, you must remove any containers you previously ran for this
+guide. To stop and remove a container, either:
+@z
+
+@x
+- In a terminal, run `docker rm --force my-mysql` to remove the container
+  named `my-mysql`.
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
+  container in the **Containers** view.
+@y
+- In a terminal, run `docker rm --force my-mysql` to remove the container
+  named `my-mysql`.
+- Or, in the Docker Desktop Dashboard, select the **Delete** icon next to your
+  container in the **Containers** view.
+@z
+
+@x
 Next, you can use either the Docker Desktop GUI or CLI to run the container with a volume.
 @y
-そこで Docker Desktop GUI または CUI を使って、ボリュームを使ったコンテナーを起動します。
+Next, you can use either the Docker Desktop GUI or CLI to run the container with a volume.
 @z
 
 @x
@@ -435,7 +749,15 @@ data persists:
 1. Run the container and attach the volume.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb -v my-db-volume:/var/lib/mysql -d mysql:latest
+   ```
+@y
+   ```console
+   $ docker run --name my-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -e MYSQL_DATABASE=mydb -v my-db-volume:/var/lib/mysql -d mysql:latest
+   ```
+@z
 
 @x
    This command mounts the volume named `my-db-volume` to the `/var/lib/mysql` directory in the container.
@@ -451,7 +773,15 @@ data persists:
    `mysql` inside the container and create a table.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec my-mysql mysql -u root -pmy-secret-pw -e "CREATE TABLE IF NOT EXISTS mydb.mytable (column_name VARCHAR(255)); INSERT INTO mydb.mytable (column_name) VALUES ('value');"
+   ```
+@y
+   ```console
+   $ docker exec my-mysql mysql -u root -pmy-secret-pw -e "CREATE TABLE IF NOT EXISTS mydb.mytable (column_name VARCHAR(255)); INSERT INTO mydb.mytable (column_name) VALUES ('value');"
+   ```
+@z
 
 @x
    This command uses the `mysql` tool in the container to create a table named
@@ -471,7 +801,15 @@ data persists:
    be lost when removing the container.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker rm --force my-mysql
+   ```
+@y
+   ```console
+   $ docker rm --force my-mysql
+   ```
+@z
 
 @x
 4. Start a new container with the volume attached. This time, you don't need to
@@ -483,7 +821,15 @@ data persists:
    volume.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run --name my-mysql -v my-db-volume:/var/lib/mysql -d mysql:latest
+   ```
+@y
+   ```console
+   $ docker run --name my-mysql -v my-db-volume:/var/lib/mysql -d mysql:latest
+   ```
+@z
 
 @x
 5. Verify that the table you created still exists. Use the `docker exec` command
@@ -493,7 +839,15 @@ data persists:
    again to run `mysql` inside the container.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker exec my-mysql mysql -u root -pmy-secret-pw -e "SELECT * FROM mydb.mytable;"
+   ```
+@y
+   ```console
+   $ docker exec my-mysql mysql -u root -pmy-secret-pw -e "SELECT * FROM mydb.mytable;"
+   ```
+@z
 
 @x
    This command uses the `mysql` tool in the container to select all the
@@ -571,6 +925,14 @@ data persists:
       ![The optional settings screen with the options specified.](images/databases-3.webp)
 @y
       ![オプション設定画面にてオプションを設定](images/databases-3.webp)
+@z
+
+@x
+      Here, the name of the volume is `my-db-volume` and it is mounted in the
+      container at `/var/lib/mysql`.
+@y
+      Here, the name of the volume is `my-db-volume` and it is mounted in the
+      container at `/var/lib/mysql`.
 @z
 
 @x
@@ -683,7 +1045,15 @@ data persists:
       you created still exists.
 @z
 
-% snip command...
+@x
+      ```console
+      # mysql -u root -pmy-secret-pw -e "SELECT * FROM mydb.mytable;"
+      ```
+@y
+      ```console
+      # mysql -u root -pmy-secret-pw -e "SELECT * FROM mydb.mytable;"
+      ```
+@z
 
 @x
       This command uses the `mysql` tool in the container to select all the
@@ -699,7 +1069,17 @@ data persists:
       You should see output like the following.
 @z
 
-% snip command...
+@x
+      ```console
+      column_name
+      value
+      ```
+@y
+      ```console
+      column_name
+      value
+      ```
+@z
 
 @x
 {{< /tab >}}
@@ -1263,5 +1643,6 @@ Related information:
 - [Docker Hub database images](https://hub.docker.com/search?q=database&type=image)
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 - [Compose file reference](__SUBDIR__/reference/compose-file/)
+- [CLI reference](__SUBDIR__/reference/cli/docker/)
 - [Database samples](../../reference/samples/_index.md#databases)
 @z

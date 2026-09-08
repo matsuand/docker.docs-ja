@@ -2,11 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = security-concepts
+
 bases = \
 	_index.md               \
 	available.md            \
 	build-process.md        \
-	feedback.md             \
 	malware-scanning.md     \
 	responsibility.md       \
 	scanner-integrations.md \

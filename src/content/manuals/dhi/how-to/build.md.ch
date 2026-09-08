@@ -106,6 +106,7 @@ The frontend version corresponds to the base distribution:
 |---------------------|----------------------------------------|
 | Alpine 3.22         | `# syntax=dhi.io/build:2-alpine3.22`  |
 | Alpine 3.23         | `# syntax=dhi.io/build:2-alpine3.23`  |
+| Alpine 3.24         | `# syntax=dhi.io/build:2-alpine3.24`  |
 | Debian 12 (Bookworm)| `# syntax=dhi.io/build:2-debian12`    |
 | Debian 13 (Trixie)  | `# syntax=dhi.io/build:2-debian13`    |
 @y
@@ -113,6 +114,7 @@ The frontend version corresponds to the base distribution:
 |---------------------|----------------------------------------|
 | Alpine 3.22         | `# syntax=dhi.io/build:2-alpine3.22`  |
 | Alpine 3.23         | `# syntax=dhi.io/build:2-alpine3.23`  |
+| Alpine 3.24         | `# syntax=dhi.io/build:2-alpine3.24`  |
 | Debian 12 (Bookworm)| `# syntax=dhi.io/build:2-debian12`    |
 | Debian 13 (Trixie)  | `# syntax=dhi.io/build:2-debian13`    |
 @z

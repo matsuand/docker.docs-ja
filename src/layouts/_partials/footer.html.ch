@@ -26,7 +26,7 @@
 @z
 
 @x
-      >Terms of Service</a
+      >Terms of Use</a
 @y
       >利用規約</a
 @z

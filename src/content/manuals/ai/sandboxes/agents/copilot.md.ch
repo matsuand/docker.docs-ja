@@ -81,30 +81,20 @@ $ sbx run copilot
 
 @x
 Copilot requires a GitHub token with Copilot access. Store your token using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @y
 Copilot requires a GitHub token with Copilot access. Store your token using
-[stored secrets](../security/credentials.md#stored-secrets):
+[stored secrets](../configuration/credentials.md#stored-secrets):
 @z
 
 @x
 ```console
-$ echo "$(gh auth token)" | sbx secret set -g github
+$ sbx secret set github --command 'gh auth token'
 ```
 @y
 ```console
-$ echo "$(gh auth token)" | sbx secret set -g github
+$ sbx secret set github --command 'gh auth token'
 ```
-@z
-
-@x
-Alternatively, export the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in
-your shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
-@y
-Alternatively, export the `GH_TOKEN` or `GITHUB_TOKEN` environment variable in
-your shell before running the sandbox. See
-[Credentials](../security/credentials.md) for details on both methods.
 @z
 
 @x
@@ -158,21 +148,29 @@ copilot --yolo
 @z
 
 @x
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @y
-Args after `--` replace these defaults rather than being appended. To keep
-`--yolo`, include it yourself:
+Arguments after `--` are added after the default flags when the first one is
+itself a flag (begins with `-`), so `--yolo` is preserved:
 @z
 
 @x
 ```console
-$ sbx run copilot -- --yolo -p "review this PR"
+$ sbx run copilot -- -p "review this PR"   # runs copilot --yolo -p "review this PR"
 ```
 @y
 ```console
-$ sbx run copilot -- --yolo -p "review this PR"
+$ sbx run copilot -- -p "review this PR"   # runs copilot --yolo -p "review this PR"
 ```
+@z
+
+@x
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
+@y
+When the first argument is a bare word — a subcommand or prompt — it replaces
+the defaults instead.
 @z
 
 @x

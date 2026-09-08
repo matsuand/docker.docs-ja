@@ -139,18 +139,18 @@
 
 @x "試験的"
                     {{ with .experimental }}
-                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (daemon)") "exp" }}
+                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "experimental (daemon)") "exp" }}
 @y
                     {{ with .experimental }}
-                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (デーモン)") "exp" }}
+                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "試験的 (デーモン)") "exp" }}
 @z
 
 @x "試験的"
                     {{ with .experimentalcli }}
-                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "experimental (CLI)") "exp-cli" }}
+                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "experimental (CLI)") "exp-cli" }}
 @y
                     {{ with .experimentalcli }}
-                      {{ partialCached "components/badge.html" (dict "color" "amber" "content" "試験的 (CLI)") "exp-cli" }}
+                      {{ partialCached "components/badge.html" (dict "color" "violet" "content" "試験的 (CLI)") "exp-cli" }}
 @z
 
 @x (T "Examples") ／dict 第三引数追加

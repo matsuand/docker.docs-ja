@@ -13,12 +13,10 @@ linkTitle: FAQs
 
 @x
 description: Organization FAQs
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
-tags: [FAQ]
+keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Docker Home, members, organization management, manage orgs
 @y
 description: Organization FAQs
-keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Admin Console, members, organization management, manage orgs
-tags: [FAQ]
+keywords: Docker, Docker Hub, SSO FAQs, single sign-on, organizations, administration, Docker Home, members, organization management, manage orgs
 @z
 
 @x
@@ -107,10 +105,10 @@ revert it to a personal user account.
 
 @x
 For prerequisites and instructions, see
-[Convert an account into an organization](convert-account.md).
+[Convert an account into an organization](setup/convert-account.md).
 @y
 For prerequisites and instructions, see
-[Convert an account into an organization](convert-account.md).
+[Convert an account into an organization](setup/convert-account.md).
 @z
 
 @x

@@ -28,22 +28,22 @@ Docker Sandboxes runs the following agents out of the box:
 - [Codex](codex/)
 - [Copilot](copilot/)
 - [Cursor](cursor/)
+- [Docker Agent](docker-agent/)
 - [Droid](droid/)
 - [Gemini](gemini/)
 - [Kiro](kiro/)
 - [OpenCode](opencode/)
-- [Docker Agent](docker-agent/)
 - [Shell](shell/) — agent-less sandbox for manual setup or testing
 @y
 - [Claude Code](claude-code/)
 - [Codex](codex/)
 - [Copilot](copilot/)
 - [Cursor](cursor/)
+- [Docker Agent](docker-agent/)
 - [Droid](droid/)
 - [Gemini](gemini/)
 - [Kiro](kiro/)
 - [OpenCode](opencode/)
-- [Docker Agent](docker-agent/)
 - [Shell](shell/) — agent-less sandbox for manual setup or testing
 @z
 

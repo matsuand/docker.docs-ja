@@ -72,14 +72,14 @@ Your subscription includes the following Build cache space:
 
 @x
 | Subscription | Build cache space |
-|--------------|-------------------|
+| ------------ | ----------------- |
 | Personal     | N/A               |
 | Pro          | 50GB              |
 | Team         | 100GB             |
 | Business     | 200GB             |
 @y
 | Subscription | Build cache space |
-|--------------|-------------------|
+| ------------ | ----------------- |
 | Personal     | N/A               |
 | Pro          | 50GB              |
 | Team         | 100GB             |
@@ -114,12 +114,12 @@ two builders:
 > [!IMPORTANT]
 >
 > If you only build for one architecture, be aware that your effective cache
-space is half of your subscription's total allocation.
+> space is half of your subscription's total allocation.
 @y
 > [!IMPORTANT]
 >
 > If you only build for one architecture, be aware that your effective cache
-space is half of your subscription's total allocation.
+> space is half of your subscription's total allocation.
 @z
 
 @x
@@ -129,21 +129,21 @@ space is half of your subscription's total allocation.
 @z
 
 @x
-To get more Build cache space, [upgrade your subscription](/manuals/subscription/scale.md).
+To get more Build cache space, [upgrade your subscription](/manuals/subscription/manage.md#upgrade-plans).
 @y
-To get more Build cache space, [upgrade your subscription](manuals/subscription/scale.md).
+To get more Build cache space, [upgrade your subscription](manuals/subscription/manage.md#upgrade-plans).
 @z
 
 @x
 > [!TIP]
 >
 > If you build large images, consider allocating less storage for caching to
-leave more space for active builds.
+> leave more space for active builds.
 @y
 > [!TIP]
 >
 > If you build large images, consider allocating less storage for caching to
-leave more space for active builds.
+> leave more space for active builds.
 @z
 
 @x

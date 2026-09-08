@@ -60,10 +60,12 @@ Docker Desktop のインストールを正常に行うためには以下が必�
 @x
 - Meet the [general system requirements](_index.md#general-system-requirements).
 - Have an x86-64 system with Ubuntu 26.04 LTS or 24.04 LTS.
+- For a GNOME desktop environment, you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @y
 - [一般的なシステム要件](_index.md#general-system-requirements) を満たしていること。
 - Have an x86-64 system with Ubuntu 26.04 LTS or 24.04 LTS.
+- For a GNOME desktop environment, you must install AppIndicator and KStatusNotifierItem [GNOME extensions](https://extensions.gnome.org/extension/615/appindicator-support/).
 - If you're not using GNOME, you must install `gnome-terminal` to enable terminal access from Docker Desktop:
 @z
 
@@ -189,7 +191,7 @@ You need to download the new package each time you want to upgrade Docker Deskto
 
 @x
 - Review [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopUbuntuInstall) to see what Docker can offer you.
-- Follow the [Docker workshop](/get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Follow [Get started with Docker](/get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](/manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.
@@ -198,7 +200,7 @@ You need to download the new package each time you want to upgrade Docker Deskto
   on backing up and restoring data related to Docker.
 @y
 - Review [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopUbuntuInstall) to see what Docker can offer you.
-- Follow the [Docker workshop](get-started/workshop/_index.md) to learn how to build an image and run it as a containerized application.
+- Follow [Get started with Docker](get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, how to run and submit diagnostics, and submit issues.
 - [FAQs](manuals/desktop/troubleshoot-and-support/faqs/general.md) provide answers to frequently asked questions.

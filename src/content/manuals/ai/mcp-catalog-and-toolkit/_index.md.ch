@@ -83,26 +83,14 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 
 @x
   - title: Dynamic MCP
-    description: Discover and add MCP servers on-demand using natural language
+    description: Discover and add MCP servers on-demand using natural language. This feature is experimental.
     icon: magnifying-glass
     link: /ai/mcp-catalog-and-toolkit/dynamic-mcp/
 @y
   - title: Dynamic MCP
-    description: Discover and add MCP servers on-demand using natural language
+    description: Discover and add MCP servers on-demand using natural language. This feature is experimental.
     icon: magnifying-glass
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/dynamic-mcp/
-@z
-
-@x
-  - title: Docker Hub MCP server
-    description: Use the Docker Hub MCP server to search images and manage repositories
-    icon: server-stack
-    link: /ai/mcp-catalog-and-toolkit/hub-mcp/
-@y
-  - title: Docker Hub MCP server
-    description: Use the Docker Hub MCP server to search images and manage repositories
-    icon: server-stack
-    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/hub-mcp/
 @z
 
 @x
@@ -229,6 +217,14 @@ to the right server and handles authentication and lifecycle management.
 Clients are the AI applications that connect to your profiles. Claude Code,
 Cursor, Zed, and others connect through the MCP Gateway, which routes requests
 to the right server and handles authentication and lifecycle management.
+@z
+
+@x
+> [!NOTE]
+> MCP Gateway as part of Docker AI Governance is an invite-only feature. [Contact Docker Sales](https://www.docker.com/pricing/contact-sales/) to learn more.
+@y
+> [!NOTE]
+> MCP Gateway as part of Docker AI Governance is an invite-only feature. [Contact Docker Sales](https://www.docker.com/pricing/contact-sales/) to learn more.
 @z
 
 @x

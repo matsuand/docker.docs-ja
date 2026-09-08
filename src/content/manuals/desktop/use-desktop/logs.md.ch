@@ -58,9 +58,9 @@ Selecting the expand arrow to the right of a row reveals the full message for th
 @z
 
 @x
-## Search and filter logs
+## Search, filter, and export logs
 @y
-## Search and filter logs
+## Search, filter, and export logs
 @z
 
 @x
@@ -78,9 +78,9 @@ Use the **Search** field at the top of the Logs view to find specific entries. T
 @z
 
 @x
-You can save your search terms for easy-access later.
+You can save your current filters as a preset for easy access later. Presets capture your container selection, build log visibility, and case sensitivity settings, as well as any active search terms. If no containers are selected, the preset is named all; otherwise it is named after the first selected container.
 @y
-You can save your search terms for easy-access later.
+You can save your current filters as a preset for easy access later. Presets capture your container selection, build log visibility, and case sensitivity settings, as well as any active search terms. If no containers are selected, the preset is named all; otherwise it is named after the first selected container.
 @z
 
 @x
@@ -92,11 +92,19 @@ To refine the log stream further, select the **Filter** icon in the toolbar to o
 @x
 - Check individual containers to show only their output
 - Check Compose stacks to show or hide entire groups
-- Use **Select all** or **Clear all** to quickly toggle every container at once
+- Toggle off **View build logs** to exclude build-related log output in the stream
+- Use **Select all** or **Clear container filters** to quickly toggle every container at once
 @y
 - Check individual containers to show only their output
 - Check Compose stacks to show or hide entire groups
-- Use **Select all** or **Clear all** to quickly toggle every container at once
+- Toggle off **View build logs** to exclude build-related log output in the stream
+- Use **Select all** or **Clear container filters** to quickly toggle every container at once
+@z
+
+@x
+Use the **Export** button in the top-right corner (available with Docker Desktop version 4.77 and later) to export all logs or only the logs that match your filters.
+@y
+Use the **Export** button in the top-right corner (available with Docker Desktop version 4.77 and later) to export all logs or only the logs that match your filters.
 @z
 
 @x
@@ -107,18 +115,32 @@ To refine the log stream further, select the **Filter** icon in the toolbar to o
 
 @x
 Select the **Display settings** icon in the toolbar to toggle the following:
+- **Wrap lines**
+- **Show timestamps**
 @y
 Select the **Display settings** icon in the toolbar to toggle the following:
+- **Wrap lines**
+- **Show timestamps**
 @z
 
 @x
-- **View build logs**: Include or exclude build-related log output in the stream
-- **Wrap lines**
-- **Show timestamps**
+You can also choose **Clear logs** to remove log entries from the view (available with Docker Desktop 4.79 and later). A dialog lets you choose between two options:
 @y
-- **View build logs**: Include or exclude build-related log output in the stream
-- **Wrap lines**
-- **Show timestamps**
+You can also choose **Clear logs** to remove log entries from the view (available with Docker Desktop 4.79 and later). A dialog lets you choose between two options:
+@z
+
+@x
+- **Clear all logs**: Immediately hides all current log entries.
+- **Clear logs before**: Activates a date and time picker. Only entries at or before the selected timestamp are hidden.
+@y
+- **Clear all logs**: Immediately hides all current log entries.
+- **Clear logs before**: Activates a date and time picker. Only entries at or before the selected timestamp are hidden.
+@z
+
+@x
+The cleared state persists across Docker Desktop restarts. Once entries are cleared, they cannot be restored.
+@y
+The cleared state persists across Docker Desktop restarts. Once entries are cleared, they cannot be restored.
 @z
 
 @x

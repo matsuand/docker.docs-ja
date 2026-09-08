@@ -131,11 +131,13 @@ The unofficial packages to uninstall are:
 - `docker.io`
 - `docker-compose`
 - `docker-doc`
+- `docker-buildx`
 - `podman-docker`
 @y
 - `docker.io`
 - `docker-compose`
 - `docker-doc`
+- `docker-buildx`
 - `podman-docker`
 @z
 

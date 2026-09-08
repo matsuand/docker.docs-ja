@@ -21,43 +21,80 @@ bases = \
 	sbx_create_kiro.yaml           \
 	sbx_create_opencode.yaml       \
 	sbx_create_shell.yaml          \
+	sbx_daemon.yaml                \
+	sbx_daemon_log-level.yaml      \
+	sbx_daemon_log-level_set.yaml  \
+	sbx_daemon_start.yaml          \
+	sbx_daemon_status.yaml         \
+	sbx_daemon_stop.yaml           \
+	sbx_daemon_restart.yaml        \
 	sbx_diagnose.yaml              \
+	sbx_env.yaml                   \
+	sbx_env_create.yaml            \
+	sbx_env_exec.yaml              \
+	sbx_env_rm.yaml                \
+	sbx_env_run.yaml               \
 	sbx_exec.yaml                  \
 	sbx_kit.yaml                   \
 	sbx_kit_add.yaml               \
 	sbx_kit_inspect.yaml           \
 	sbx_kit_pack.yaml              \
+	sbx_kit_provenance.yaml        \
 	sbx_kit_pull.yaml              \
 	sbx_kit_push.yaml              \
+	sbx_kit_sign.yaml              \
 	sbx_kit_validate.yaml          \
+	sbx_kit_verify.yaml            \
 	sbx_login.yaml                 \
 	sbx_logout.yaml                \
 	sbx_ls.yaml                    \
+	sbx_mcp.yaml                   \
+	sbx_mcp_add.yaml               \
+	sbx_mcp_auth.yaml              \
+	sbx_mcp_auth_rm.yaml           \
+	sbx_mcp_auth_status.yaml       \
+	sbx_mcp_inspect.yaml           \
+	sbx_mcp_load.yaml              \
+	sbx_mcp_ls.yaml                \
+	sbx_mcp_rm.yaml                \
 	sbx_policy.yaml                \
 	sbx_policy_allow.yaml          \
 	sbx_policy_allow_network.yaml  \
+	sbx_policy_check.yaml          \
+	sbx_policy_check_network.yaml  \
 	sbx_policy_deny.yaml           \
 	sbx_policy_deny_network.yaml   \
+	sbx_policy_init.yaml           \
+	sbx_policy_inspect.yaml        \
 	sbx_policy_log.yaml            \
 	sbx_policy_ls.yaml             \
 	sbx_policy_reset.yaml          \
 	sbx_policy_rm.yaml             \
 	sbx_policy_rm_network.yaml     \
-	sbx_policy_set-default.yaml    \
 	sbx_ports.yaml                 \
+	sbx_prune.yaml                 \
 	sbx_reset.yaml                 \
 	sbx_rm.yaml                    \
 	sbx_run.yaml                   \
 	sbx_secret.yaml                \
+	sbx_secret_import.yaml         \
 	sbx_secret_ls.yaml             \
 	sbx_secret_rm.yaml             \
 	sbx_secret_set.yaml            \
+	sbx_secret_set-custom.yaml     \
+	sbx_setup.yaml                 \
+	sbx_setup_ssh.yaml             \
+	sbx_setup_ssh_remove.yaml      \
+	sbx_skills.yaml                \
+	sbx_skills_import.yaml         \
+	sbx_skills_ls.yaml             \
 	sbx_stop.yaml                  \
 	sbx_template.yaml              \
 	sbx_template_load.yaml         \
 	sbx_template_ls.yaml           \
 	sbx_template_rm.yaml           \
 	sbx_template_save.yaml         \
+	sbx_tui.yaml                   \
 	sbx_version.yaml
 
 include $(top_srcdir)/build-aux/common.mk

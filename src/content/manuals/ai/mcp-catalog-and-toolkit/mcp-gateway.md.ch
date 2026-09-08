@@ -16,6 +16,14 @@ keywords: MCP Gateway
 @z
 
 @x
+> [!NOTE]
+> MCP Gateway as part of Docker AI Governance is an invite-only feature. [Contact Docker Sales](https://www.docker.com/pricing/contact-sales/) to learn more.
+@y
+> [!NOTE]
+> MCP Gateway as part of Docker AI Governance is an invite-only feature. [Contact Docker Sales](https://www.docker.com/pricing/contact-sales/) to learn more.
+@z
+
+@x
 The MCP Gateway is Docker's open source solution for orchestrating Model
 Context Protocol (MCP) servers. It acts as a centralized proxy between clients
 and servers, managing configuration, credentials, and access control.
@@ -40,29 +48,25 @@ server lifecycle, routing, and authentication across all servers in your
 @z
 
 @x
-> [!NOTE]
-> If you use Docker Desktop with MCP Toolkit enabled, the Gateway runs
-> automatically in the background. You don't need to start or configure it
-> manually. This documentation is for users who want to understand how the
-> Gateway works or run it directly for advanced use cases.
+If you use Docker Desktop with MCP Toolkit enabled, the Gateway runs
+automatically in the background. You don't need to start or configure it
+manually. This documentation is for users who want to understand how the Gateway works or run it directly for advanced use cases.
 @y
-> [!NOTE]
-> If you use Docker Desktop with MCP Toolkit enabled, the Gateway runs
-> automatically in the background. You don't need to start or configure it
-> manually. This documentation is for users who want to understand how the
-> Gateway works or run it directly for advanced use cases.
+If you use Docker Desktop with MCP Toolkit enabled, the Gateway runs
+automatically in the background. You don't need to start or configure it
+manually. This documentation is for users who want to understand how the Gateway works or run it directly for advanced use cases.
 @z
 
 @x
 > [!TIP]
 > E2B sandboxes now include direct access to the Docker MCP Catalog, giving developers
 > access to over 200 tools and services to seamlessly build and run AI agents. For
-> more information, see [E2B Sandboxes](sandboxes.md).
+> more information, see [E2B Sandboxes](e2b-sandboxes.md).
 @y
 > [!TIP]
 > E2B sandboxes now include direct access to the Docker MCP Catalog, giving developers
 > access to over 200 tools and services to seamlessly build and run AI agents. For
-> more information, see [E2B Sandboxes](sandboxes.md).
+> more information, see [E2B Sandboxes](e2b-sandboxes.md).
 @z
 
 @x

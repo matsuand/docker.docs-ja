@@ -6,13 +6,11 @@ title: Namespace access control
 linkTitle: Namespace access
 description: Control whether organization members can push content to their personal namespaces on Docker Hub
 keywords: namespace access, docker hub, personal namespace, organization security, docker business
-tags: [admin]
 @y
 title: Namespace access control
 linkTitle: Namespace access
 description: Control whether organization members can push content to their personal namespaces on Docker Hub
 keywords: namespace access, docker hub, personal namespace, organization security, docker business
-tags: [admin]
 @z
 
 @x
@@ -74,13 +72,13 @@ To configure namespace access control:
 @x
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
    organization from the top-left account drop-down.
-2. Select **Admin Console**, then **Namespace access**.
+2. Select **Docker Desktop**, then **Namespace access**.
 3. Use the toggle to enable or disable namespace access control.
 4. Select **Save changes**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com/) and select your
    organization from the top-left account drop-down.
-2. Select **Admin Console**, then **Namespace access**.
+2. Select **Docker Desktop**, then **Namespace access**.
 3. Use the toggle to enable or disable namespace access control.
 4. Select **Save changes**.
 @z

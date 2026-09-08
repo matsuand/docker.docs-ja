@@ -2,21 +2,21 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-title: Subscription FAQs
+title: Plan FAQs
 linkTitle: FAQs
 description: Frequently asked questions about Docker subscriptions and billing
 keywords: subscription faqs, docker billing, subscription transfer, academic pricing, docker programs
 @y
-title: Subscription FAQs
+title: Plan FAQs
 linkTitle: FAQs
 description: Frequently asked questions about Docker subscriptions and billing
 keywords: subscription faqs, docker billing, subscription transfer, academic pricing, docker programs
 @z
 
 @x
-For more information on Docker subscriptions, see [Docker subscription overview](_index.md).
+For more information on Docker subscriptions, see [Docker subscription overview](_index.md).  
 @y
-For more information on Docker subscriptions, see [Docker subscription overview](_index.md).
+For more information on Docker subscriptions, see [Docker subscription overview](_index.md).  
 @z
 
 @x
@@ -83,10 +83,10 @@ You can also join the [Developer Preview Program](https://www.docker.com/communi
 
 @x
 > [!TIP]
->
+> 
 > Need to upgrade? <a href="https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionFaq" id="pricing-link" class="link" rel="noopener">Compare Docker Team and Docker Business</a> to choose the plan that best fits your team's needs.
 @y
 > [!TIP]
->
+> 
 > Need to upgrade? <a href="https://www.docker.com/pricing?ref=Docs&refAction=DocsSubscriptionFaq" id="pricing-link" class="link" rel="noopener">Compare Docker Team and Docker Business</a> to choose the plan that best fits your team's needs.
 @z

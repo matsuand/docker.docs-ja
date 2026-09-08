@@ -24,33 +24,33 @@ description: |-
 @z
 
 @x
-    Use -g/--global to apply the rule globally to all sandboxes, or provide
-    SANDBOX before RESOURCES to add the rule to policy "local" scoped to that
-    sandbox.
+    The rule applies globally to all sandboxes by default. Use --sandbox to add
+    the rule to policy "local" scoped to a single sandbox instead.
 @y
-    Use -g/--global to apply the rule globally to all sandboxes, or provide
-    SANDBOX before RESOURCES to add the rule to policy "local" scoped to that
-    sandbox.
+    The rule applies globally to all sandboxes by default. Use --sandbox to add
+    the rule to policy "local" scoped to a single sandbox instead.
 @z
 
 @x
-usage: sbx policy allow network [-g | SANDBOX] RESOURCES [flags]
+usage: sbx policy allow network [--sandbox SANDBOX] RESOURCES [flags]
 @y
-usage: sbx policy allow network [-g | SANDBOX] RESOURCES [flags]
+usage: sbx policy allow network [--sandbox SANDBOX] RESOURCES [flags]
 @z
 
 % options:
-
-@x global
-      usage: Apply the rule globally to all sandboxes
-@y
-      usage: Apply the rule globally to all sandboxes
-@z
 
 @x help
       usage: help for network
 @y
       usage: help for network
+@z
+
+@x sandbox
+      usage: |
+        Scope the rule to a specific sandbox (default: all sandboxes)
+@y
+      usage: |
+        Scope the rule to a specific sandbox (default: all sandboxes)
 @z
 
 % inherited_options:
@@ -63,44 +63,44 @@ usage: sbx policy allow network [-g | SANDBOX] RESOURCES [flags]
 
 @x
 example: |4-
-      # Allow access to a single host globally
-      sbx policy allow network -g api.example.com
+      # Allow access to a single host (all sandboxes)
+      sbx policy allow network api.example.com
 @y
 example: |4-
-      # Allow access to a single host globally
-      sbx policy allow network -g api.example.com
+      # Allow access to a single host (all sandboxes)
+      sbx policy allow network api.example.com
 @z
 
 @x
-      # Allow access to multiple hosts globally
-      sbx policy allow network -g "api.example.com,cdn.example.com"
+      # Allow access to multiple hosts
+      sbx policy allow network "api.example.com,cdn.example.com"
 @y
-      # Allow access to multiple hosts globally
-      sbx policy allow network -g "api.example.com,cdn.example.com"
+      # Allow access to multiple hosts
+      sbx policy allow network "api.example.com,cdn.example.com"
 @z
 
 @x
       # Allow a host only for a specific sandbox
-      sbx policy allow network my-sandbox api.example.com
+      sbx policy allow network --sandbox my-sandbox api.example.com
 @y
       # Allow a host only for a specific sandbox
-      sbx policy allow network my-sandbox api.example.com
+      sbx policy allow network --sandbox my-sandbox api.example.com
 @z
 
 @x
       # Allow all subdomains of a host
-      sbx policy allow network -g "*.npmjs.org"
+      sbx policy allow network "*.npmjs.org"
 @y
       # Allow all subdomains of a host
-      sbx policy allow network -g "*.npmjs.org"
+      sbx policy allow network "*.npmjs.org"
 @z
 
 @x
-      # Allow all outbound traffic globally
-      sbx policy allow network -g "**"
+      # Allow all outbound traffic
+      sbx policy allow network "**"
 @y
-      # Allow all outbound traffic globally
-      sbx policy allow network -g "**"
+      # Allow all outbound traffic
+      sbx policy allow network "**"
 @z
 
 % see_also:

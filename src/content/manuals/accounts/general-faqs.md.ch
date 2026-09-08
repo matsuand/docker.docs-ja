@@ -1,28 +1,34 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
-title: FAQs on Docker accounts
-linkTitle: Accounts
+title: Docker account FAQs
+linkTitle: FAQs
 @y
-title: FAQs on Docker accounts
-linkTitle: Accounts
+title: Docker アカウント FAQ
+linkTitle: FAQ
 @z
 
 @x
-description: Frequently asked questions about Docker accounts
-keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
+description: FAQs about Docker IDs, account creation, and organization names
+keywords:
+  docker ID, docker account FAQ, change docker ID, username taken, trademark,
+  organization name, organization namespace, create account, Google, GitHub,
+  deactivate docker ID
 @y
-description: Frequently asked questions about Docker accounts
-keywords: onboarding, docker, teams, orgs, user accounts, organization accounts
+description: FAQs about Docker IDs, account creation, and organization names
+keywords:
+  docker ID, docker account FAQ, change docker ID, username taken, trademark,
+  organization name, organization namespace, create account, Google, GitHub,
+  deactivate docker ID
 @z
 
 @x
-### What is a Docker ID?
+## What is a Docker ID?
 @y
-### What is a Docker ID?
+## What is a Docker ID?
 @z
 
 @x
@@ -35,11 +41,11 @@ products. To create a Docker ID you need one of the following:
 
 @x
 - An email address
-- A social account
+- A Google account
 - A GitHub account
 @y
 - An email address
-- A social account
+- A Google account
 - A GitHub account
 @z
 
@@ -52,15 +58,17 @@ numbers and lowercase letters. You can't use any special characters or spaces.
 @z
 
 @x
-For more information, see [Create a Docker ID](/manuals/accounts/create-account.md).
+For more information, see
+[Create a Docker account](/manuals/accounts/create-account.md).
 @y
-For more information, see [Create a Docker ID](manuals/accounts/create-account.md).
+For more information, see
+[Create a Docker account](manuals/accounts/create-account.md).
 @z
 
 @x
-### Can I change my Docker ID?
+## Can I change my Docker ID?
 @y
-### Can I change my Docker ID?
+## Can I change my Docker ID?
 @z
 
 @x
@@ -78,9 +86,9 @@ Docker IDs can't be reused after deactivation.
 @z
 
 @x
-### What if my Docker ID is taken?
+## What if my Docker ID is taken?
 @y
-### What if my Docker ID is taken?
+## What if my Docker ID is taken?
 @z
 
 @x
@@ -92,19 +100,19 @@ U.S. Trademark on a username.
 @z
 
 @x
-If you have a trademark for your namespace,
+If you have a trademark for your Docker ID,
 [Docker Support](https://hub.docker.com/support/contact/) can retrieve the
 Docker ID for you.
 @y
-If you have a trademark for your namespace,
+If you have a trademark for your Docker ID,
 [Docker Support](https://hub.docker.com/support/contact/) can retrieve the
 Docker ID for you.
 @z
 
 @x
-### What's an organization name or namespace?
+## What's an organization name or namespace?
 @y
-### What's an organization name or namespace?
+## What's an organization name or namespace?
 @z
 
 @x
@@ -115,4 +123,28 @@ organization name can't be the same as an existing Docker ID.
 The organization name, sometimes referred to as the organization namespace or
 the organization ID, is the unique identifier of a Docker organization. The
 organization name can't be the same as an existing Docker ID.
+@z
+
+@x
+For more information, see
+[Docker organization overview](/manuals/admin/organization/_index.md).
+@y
+For more information, see
+[Docker organization overview](manuals/admin/organization/_index.md).
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- [Create a Docker account](/manuals/accounts/create-account.md)
+- [Manage a Docker account](/manuals/accounts/manage-account.md)
+- [Docker organization overview](/manuals/admin/organization/_index.md)
+@y
+- [Create a Docker account](manuals/accounts/create-account.md)
+- [Manage a Docker account](manuals/accounts/manage-account.md)
+- [Docker organization overview](manuals/admin/organization/_index.md)
 @z

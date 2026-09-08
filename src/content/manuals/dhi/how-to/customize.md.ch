@@ -166,15 +166,15 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 
 @x
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For version 3.23 Alpine-based images, these are
-      hardened packages that have been built from source by Docker with
+      selected image variant. For version 3.23 and later Alpine-based images,
+      these are hardened packages that have been built from source by Docker with
       cryptographic signatures and full supply chain security. For version 3.22
       Alpine-based images and Debian-based images, these are standard system
       packages.
 @y
       The packages available in the drop-down are OS system packages for the
-      selected image variant. For version 3.23 Alpine-based images, these are
-      hardened packages that have been built from source by Docker with
+      selected image variant. For version 3.23 and later Alpine-based images,
+      these are hardened packages that have been built from source by Docker with
       cryptographic signatures and full supply chain security. For version 3.22
       Alpine-based images and Debian-based images, these are standard system
       packages.
@@ -197,15 +197,13 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       built and pushed to a repository in the same namespace as the mirrored
       DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
-      image. For more details on how to create an OCI artifact image, see
-      [Create an OCI artifact image](#create-an-oci-artifact-image).
+      image.
 @y
       The OCI artifacts are images that you have previously
       built and pushed to a repository in the same namespace as the mirrored
       DHI. For example, you can add a custom root CA certificate or another
       image that contains a tool you need, like adding Python to a Node.js
-      image. For more details on how to create an OCI artifact image, see
-      [Create an OCI artifact image](#create-an-oci-artifact-image).
+      image.
 @z
 
 @x
@@ -248,6 +246,12 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
       > When files necessary for runtime are overwritten by OCI artifacts, the
       > image build still succeeds, but you may have issues when running the
       > image.
+@z
+
+@x
+      For more details, see [OCI artifacts](#oci-artifacts).
+@y
+      For more details, see [OCI artifacts](#oci-artifacts).
 @z
 
 @x
@@ -342,7 +346,7 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
    1. Add [`CMD`](__SUBDIR__/reference/dockerfile/#cmd) arguments to the image. These
       arguments are appended to the base image's command.
    1. Override the default (`/`) [working
-      directory](/reference/dockerfile/#workdir) for the image.
+      directory](__SUBDIR__/reference/dockerfile/#workdir) for the image.
    1. Specify a suffix for the customization name that is appended to the
       customized image's tag. For example, if you specify `custom` when
       customizing the `dhi-python:3.13` image, the customized image will be
@@ -469,6 +473,14 @@ Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customi
 @z
 
 @x
+For a complete reference of all YAML fields, see
+[Image customization YAML file](#image-customization-yaml-file).
+@y
+For a complete reference of all YAML fields, see
+[Image customization YAML file](#image-customization-yaml-file).
+@z
+
+@x
 {{< /tab >}}
 {{< tab name="Terraform" >}}
 @y
@@ -478,16 +490,14 @@ Use the [`docker dhi customization`](__SUBDIR__/reference/cli/docker/dhi/customi
 
 @x
 You can manage DHI customizations as infrastructure-as-code using the [DHI
-Terraform
-provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
-If you haven't configured the provider yet, see the Terraform tab in [Mirror a
-repository](./mirror.md) for setup instructions.
+Terraform provider](/dhi/tools/terraform/). If you haven't configured the
+provider yet, see [DHI Terraform provider](/dhi/tools/terraform/) for setup
+instructions.
 @y
 You can manage DHI customizations as infrastructure-as-code using the [DHI
-Terraform
-provider](https://registry.terraform.io/providers/docker-hardened-images/dhi/latest/docs).
-If you haven't configured the provider yet, see the Terraform tab in [Mirror a
-repository](./mirror.md) for setup instructions.
+Terraform provider](__SUBDIR__/dhi/tools/terraform/). If you haven't configured the
+provider yet, see [DHI Terraform provider](__SUBDIR__/dhi/tools/terraform/) for setup
+instructions.
 @z
 
 @x
@@ -496,7 +506,7 @@ Define a `dhi_customization` resource for each customization:
 Define a `dhi_customization` resource for each customization:
 @z
 
-% snip code...
+% snip command...
 
 @x
 The `dhi_customization` resource also supports optional configuration blocks
@@ -713,11 +723,13 @@ images under `contents.artifacts`.
 @z
 
 @x
-For instructions on building an OCI artifact image, see
-[Create an OCI artifact image](#create-an-oci-artifact-image).
+To learn more about OCI artifacts, including how to create them, best
+practices, and how environment variables behave, see
+[OCI artifacts](#oci-artifacts).
 @y
-For instructions on building an OCI artifact image, see
-[Create an OCI artifact image](#create-an-oci-artifact-image).
+To learn more about OCI artifacts, including how to create them, best
+practices, and how environment variables behave, see
+[OCI artifacts](#oci-artifacts).
 @z
 
 @x
@@ -907,27 +919,33 @@ tooling.
 % snip code...
 
 @x
+## OCI artifacts
+@y
+## OCI artifacts
+@z
+
+@x
+In DHI customization, OCI artifacts are Docker images containing files you
+want to layer into your image, such as custom certificates, internal tools, or
+configuration files.
+@y
+In DHI customization, OCI artifacts are Docker images containing files you
+want to layer into your image, such as custom certificates, internal tools, or
+configuration files.
+@z
+
+@x
 ### Create an OCI artifact image
 @y
 ### Create an OCI artifact image
 @z
 
 @x
-An OCI artifact image is a Docker image that contains files or directories that
-you want to include in your customized Docker Hardened Image (DHI). This can
-include additional tools, libraries, or configuration files.
+Keep artifact images as minimal as possible and include only the necessary
+files.
 @y
-An OCI artifact image is a Docker image that contains files or directories that
-you want to include in your customized Docker Hardened Image (DHI). This can
-include additional tools, libraries, or configuration files.
-@z
-
-@x
-When creating an image to use as an OCI artifact, it should ideally be as
-minimal as possible and contain only the necessary files.
-@y
-When creating an image to use as an OCI artifact, it should ideally be as
-minimal as possible and contain only the necessary files.
+Keep artifact images as minimal as possible and include only the necessary
+files.
 @z
 
 @x
@@ -1015,9 +1033,51 @@ artifacts to add to your customized Docker Hardened Image.
 @z
 
 @x
-#### Best practices for OCI artifacts
+### Environment variables
 @y
-#### Best practices for OCI artifacts
+### Environment variables
+@z
+
+@x
+When you include OCI artifacts in a customization, the environment variables
+defined in those artifacts are merged into the final image. The merge follows
+these rules:
+@y
+When you include OCI artifacts in a customization, the environment variables
+defined in those artifacts are merged into the final image. The merge follows
+these rules:
+@z
+
+@x
+- Your customization's environment settings take precedence. An artifact's
+  variable is only applied if the corresponding key is absent or empty in your
+  customization.
+- `PATH` is an exception. Artifact `PATH` entries are added to the front of
+  the existing `PATH`, giving them runtime precedence.
+@y
+- Your customization's environment settings take precedence. An artifact's
+  variable is only applied if the corresponding key is absent or empty in your
+  customization.
+- `PATH` is an exception. Artifact `PATH` entries are added to the front of
+  the existing `PATH`, giving them runtime precedence.
+@z
+
+@x
+This differs from `COPY --from` in a Dockerfile, which copies files without
+inheriting environment variables from the source image. To avoid inheriting
+environment variables, build the artifact using a `FROM scratch` final stage.
+See [Create an OCI artifact image](#create-an-oci-artifact-image).
+@y
+This differs from `COPY --from` in a Dockerfile, which copies files without
+inheriting environment variables from the source image. To avoid inheriting
+environment variables, build the artifact using a `FROM scratch` final stage.
+See [Create an OCI artifact image](#create-an-oci-artifact-image).
+@z
+
+@x
+### Best practices
+@y
+### Best practices
 @z
 
 @x
@@ -1029,11 +1089,13 @@ Follow these best practices when creating OCI artifacts for DHI customizations:
 @x
 - Use multi-stage builds: Build or install dependencies in a builder stage,
   then copy only the necessary files to a `FROM scratch` final stage. This keeps
-  the OCI artifact minimal and free of unnecessary build tools.
+  the OCI artifact minimal and avoids inheriting environment variables from the
+  builder image into your customization.
 @y
 - Use multi-stage builds: Build or install dependencies in a builder stage,
   then copy only the necessary files to a `FROM scratch` final stage. This keeps
-  the OCI artifact minimal and free of unnecessary build tools.
+  the OCI artifact minimal and avoids inheriting environment variables from the
+  builder image into your customization.
 @z
 
 @x

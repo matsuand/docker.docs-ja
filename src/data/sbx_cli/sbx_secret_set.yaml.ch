@@ -5,58 +5,116 @@
 name: sbx secret set
 synopsis: Create or update a secret
 description: |-
-    Create or update a secret for a service or registry.
+    Create or update a service secret or registry credential.
 @y
 name: sbx secret set
 synopsis: Create or update a secret
 description: |-
-    Create or update a secret for a service or registry.
+    Create or update a service secret or registry credential.
 @z
 
 @x
-    Available services: anthropic, aws, bedrock, cursor, droid, github, google, groq, mistral, nebius, openai, xai
+    ### Service secrets
 @y
-    Available services: anthropic, aws, bedrock, cursor, droid, github, google, groq, mistral, nebius, openai, xai
+    ### Service secrets
 @z
 
 @x
-    When no arguments are provided, an interactive prompt guides you through
-    scope and service selection.
+    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
 @y
-    When no arguments are provided, an interactive prompt guides you through
-    scope and service selection.
+    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
 @z
 
 @x
-    Use --registry to store pull credentials for a container registry:
-      Without -g: host-only — used for template/kit pulls, not injected into sandboxes.
-      With -g:    global   — host pulls AND written as ~/.docker/config.json in every new sandbox.
-      With SANDBOX as the first argument: scoped to that specific sandbox only.
+    Service secrets apply globally by default. Use --sandbox to scope a secret to
+    one sandbox. When SERVICE is omitted, an interactive prompt selects it.
 @y
-    Use --registry to store pull credentials for a container registry:
-      Without -g: host-only — used for template/kit pulls, not injected into sandboxes.
-      With -g:    global   — host pulls AND written as ~/.docker/config.json in every new sandbox.
-      With SANDBOX as the first argument: scoped to that specific sandbox only.
+    Service secrets apply globally by default. Use --sandbox to scope a secret to
+    one sandbox. When SERVICE is omitted, an interactive prompt selects it.
 @z
 
 @x
-usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
+    ### Dynamic secrets
 @y
-usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
+    ### Dynamic secrets
+@z
+
+@x
+    Use --ref or --command to store a secret source instead of the secret value.
+    sbx resolves the source on the host when needed and caches the value according
+    to the --refresh policy.
+@y
+    Use --ref or --command to store a secret source instead of the secret value.
+    sbx resolves the source on the host when needed and caches the value according
+    to the --refresh policy.
+@z
+
+@x
+    --ref supports 1Password op:// references and AWS Secrets Manager ARNs. The
+    corresponding op or aws CLI must be installed and authenticated. --command
+    runs a shell command and uses its standard output as the secret value.
+@y
+    --ref supports 1Password op:// references and AWS Secrets Manager ARNs. The
+    corresponding op or aws CLI must be installed and authenticated. --command
+    runs a shell command and uses its standard output as the secret value.
+@z
+
+@x
+    ### Registry credentials
+@y
+    ### Registry credentials
+@z
+
+@x
+    Use --registry to store pull credentials for a container registry. Unlike
+    service secrets, registry credentials are host-only by default:
+@y
+    Use --registry to store pull credentials for a container registry. Unlike
+    service secrets, registry credentials are host-only by default:
+@z
+
+@x
+    - By default, credentials are used for template and kit pulls on the host.
+      They are never injected into a sandbox.
+    - With --all-sandboxes, credentials are used for host pulls and injected by
+      the proxy into every new sandbox's registry login. The credentials never
+      enter the sandbox.
+    - With --sandbox, credentials are injected into the specified sandbox only.
+@y
+    - By default, credentials are used for template and kit pulls on the host.
+      They are never injected into a sandbox.
+    - With --all-sandboxes, credentials are used for host pulls and injected by
+      the proxy into every new sandbox's registry login. The credentials never
+      enter the sandbox.
+    - With --sandbox, credentials are injected into the specified sandbox only.
+@z
+
+@x
+usage: sbx secret set [SERVICE] [flags]
+@y
+usage: sbx secret set [SERVICE] [flags]
 @z
 
 % options:
+
+@x all-sandboxes
+      usage: |
+        Inject registry credentials into every sandbox (requires --registry)
+@y
+      usage: |
+        Inject registry credentials into every sandbox (requires --registry)
+@z
+
+@x command
+      usage: Use a command's standard output as the secret value
+@y
+      usage: Use a command's standard output as the secret value
+@z
 
 @x force
       usage: Overwrite an existing secret when --token is used
 @y
       usage: Overwrite an existing secret when --token is used
-@z
-
-@x global
-      usage: Use global secret scope
-@y
-      usage: Use global secret scope
 @z
 
 @x help
@@ -85,6 +143,12 @@ usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
       usage: Registry hostname for pull credentials (e.g. ghcr.io)
 @z
 
+@x sandbox
+      usage: Scope the secret to one sandbox instead of its default scope
+@y
+      usage: Scope the secret to one sandbox instead of its default scope
+@z
+
 @x token
       usage: 'Secret value (less secure: visible in shell history)'
 @y
@@ -110,35 +174,59 @@ usage: sbx secret set [-g | SANDBOX] [SERVICE] [flags]
 @x
 example: |4-
       # Store a GitHub token globally (available to all sandboxes)
-      sbx secret set -g github
+      sbx secret set github
 @y
 example: |4-
       # Store a GitHub token globally (available to all sandboxes)
-      sbx secret set -g github
+      sbx secret set github
 @z
 
 @x
       # Store an OpenAI key for a specific sandbox
-      sbx secret set my-sandbox openai
+      sbx secret set openai --sandbox my-sandbox
 @y
       # Store an OpenAI key for a specific sandbox
-      sbx secret set my-sandbox openai
+      sbx secret set openai --sandbox my-sandbox
 @z
 
 @x
       # Non-interactive via stdin (e.g., from a secret manager or env var)
-      echo "$ANTHROPIC_API_KEY" | sbx secret set -g anthropic
+      echo "$ANTHROPIC_API_KEY" | sbx secret set anthropic
 @y
       # Non-interactive via stdin (e.g., from a secret manager or env var)
-      echo "$ANTHROPIC_API_KEY" | sbx secret set -g anthropic
+      echo "$ANTHROPIC_API_KEY" | sbx secret set anthropic
 @z
 
 @x
       # Start OpenAI OAuth flow and store global OAuth tokens
-      sbx secret set -g openai --oauth
+      sbx secret set openai --oauth
 @y
       # Start OpenAI OAuth flow and store global OAuth tokens
-      sbx secret set -g openai --oauth
+      sbx secret set openai --oauth
+@z
+
+@x
+      # Resolve a 1Password reference at use time (requires an authenticated op CLI)
+      sbx secret set anthropic --ref 'op://Private/Anthropic/api-key'
+@y
+      # Resolve a 1Password reference at use time (requires an authenticated op CLI)
+      sbx secret set anthropic --ref 'op://Private/Anthropic/api-key'
+@z
+
+@x
+      # Resolve an AWS Secrets Manager ARN at use time (requires an authenticated aws CLI)
+      sbx secret set anthropic --ref 'arn:aws:secretsmanager:us-west-2:123456789012:secret:anthropic-api-key'
+@y
+      # Resolve an AWS Secrets Manager ARN at use time (requires an authenticated aws CLI)
+      sbx secret set anthropic --ref 'arn:aws:secretsmanager:us-west-2:123456789012:secret:anthropic-api-key'
+@z
+
+@x
+      # Resolve a secret using an arbitrary command
+      sbx secret set github --command 'gh auth token'
+@y
+      # Resolve a secret using an arbitrary command
+      sbx secret set github --command 'gh auth token'
 @z
 
 @x
@@ -150,19 +238,19 @@ example: |4-
 @z
 
 @x
-      # Registry: global (host pulls + injected into every new sandbox)
-      gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+      # Registry: host pulls + injected into every new sandbox
+      gh auth token | sbx secret set --all-sandboxes --registry ghcr.io --password-stdin
 @y
-      # Registry: global (host pulls + injected into every new sandbox)
-      gh auth token | sbx secret set -g --registry ghcr.io --password-stdin
+      # Registry: host pulls + injected into every new sandbox
+      gh auth token | sbx secret set --all-sandboxes --registry ghcr.io --password-stdin
 @z
 
 @x
       # Registry: specific sandbox only
-      gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
+      gh auth token | sbx secret set --sandbox my-sandbox --registry ghcr.io --password-stdin
 @y
       # Registry: specific sandbox only
-      gh auth token | sbx secret set my-sandbox --registry ghcr.io --password-stdin
+      gh auth token | sbx secret set --sandbox my-sandbox --registry ghcr.io --password-stdin
 @z
 
 % see_also:

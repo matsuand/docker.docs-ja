@@ -2,7 +2,6 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
-
 @x
 description: Run, develop, and share data science projects using JupyterLab and Docker
 keywords: getting started, jupyter, notebook, python, jupyterlab, data science
@@ -10,7 +9,7 @@ title: Data science with JupyterLab
 @y
 description: Run, develop, and share data science projects using JupyterLab and Docker
 keywords: getting started, jupyter, notebook, python, jupyterlab, data science
-title: JupyterLab を使ったデータサイエンス
+title: Data science with JupyterLab
 @z
 
 @x
@@ -18,18 +17,9 @@ summary: |
   Use Docker to run Jupyter notebooks.
 @y
 summary: |
-  Docker を使って Jupyter ノートブックを実行します。
+  Use Docker to run Jupyter notebooks.
 @z
 
-@x
-tags: [data-science]
-languages: [python]
-@y
-tags: [data-science]
-languages: [python]
-@z
-
-% params:
 @x
   time: 20 minutes
 @y
@@ -130,7 +120,15 @@ In a terminal, run the following command to run your JupyterLab container.
 In a terminal, run the following command to run your JupyterLab container.
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 The following are the notable parts of the command:
@@ -151,7 +149,7 @@ The following are the notable parts of the command:
 @x
 For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
 @y
-For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](/reference/cli/docker/container/run/).
+For more details, see the [Jupyter Server Options](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html#jupyter-server-options) and the [docker run CLI reference](__SUBDIR__/reference/cli/docker/container/run/).
 @z
 
 @x
@@ -200,7 +198,15 @@ run the following command based on your operating system.
 {{< tab name="Mac / Linux" >}}
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 -v "$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 -v "$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 {{< /tab >}}
@@ -210,7 +216,15 @@ run the following command based on your operating system.
 {{< tab name="Windows (Command Prompt)" >}}
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 -v "%cd%":/home/jovyan/work quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 -v "%cd%":/home/jovyan/work quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 {{< /tab >}}
@@ -220,7 +234,15 @@ run the following command based on your operating system.
 {{< tab name="Windows (PowerShell)" >}}
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 -v "$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 -v "$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 {{< /tab >}}
@@ -230,7 +252,15 @@ run the following command based on your operating system.
 {{< tab name="Windows (Git Bash)" >}}
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 -v "/$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 -v "/$(pwd):/home/jovyan/work" quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 {{< /tab >}}
@@ -302,7 +332,15 @@ To start the container with a volume, open a terminal and run the following comm
 To start the container with a volume, open a terminal and run the following command
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 -v jupyter-data:/home/jovyan/work quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 -v jupyter-data:/home/jovyan/work quay.io/jupyter/base-notebook start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 The `-v` option tells Docker to create a volume named `jupyter-data` and mount it in the container at `/home/jovyan/work`.
@@ -352,7 +390,15 @@ For this example, you'll use the [Iris Dataset](https://scikit-learn.org/stable/
 3. In the notebook, specify the following to install the necessary packages.
 @z
 
-% snip command...
+@x
+   ```console
+   !pip install matplotlib scikit-learn
+   ```
+@y
+   ```console
+   !pip install matplotlib scikit-learn
+   ```
+@z
 
 @x
 4. Select the play button to run the code.
@@ -366,7 +412,39 @@ For this example, you'll use the [Iris Dataset](https://scikit-learn.org/stable/
 5. In the notebook, specify the following code.
 @z
 
-% snip code...
+@x
+   ```python
+   from sklearn import datasets
+@y
+   ```python
+   from sklearn import datasets
+@z
+
+@x
+   iris = datasets.load_iris()
+   import matplotlib.pyplot as plt
+@y
+   iris = datasets.load_iris()
+   import matplotlib.pyplot as plt
+@z
+
+@x
+   _, ax = plt.subplots()
+   scatter = ax.scatter(iris.data[:, 0], iris.data[:, 1], c=iris.target)
+   ax.set(xlabel=iris.feature_names[0], ylabel=iris.feature_names[1])
+   _ = ax.legend(
+      scatter.legend_elements()[0], iris.target_names, loc="lower right", title="Classes"
+   )
+   ```
+@y
+   _, ax = plt.subplots()
+   scatter = ax.scatter(iris.data[:, 0], iris.data[:, 1], c=iris.target)
+   ax.set(xlabel=iris.feature_names[0], ylabel=iris.feature_names[1])
+   _ = ax.legend(
+      scatter.legend_elements()[0], iris.target_names, loc="lower right", title="Classes"
+   )
+   ```
+@z
 
 @x
 6. Select the play button to run the code. You should see a scatter plot of the
@@ -494,7 +572,23 @@ In a directory of your choice, create a new text file named `Dockerfile`. Open t
 In a directory of your choice, create a new text file named `Dockerfile`. Open the `Dockerfile` in an IDE or text editor and then add the following contents.
 @z
 
-% snip code...
+@x
+```dockerfile
+# syntax=docker/dockerfile:1
+@y
+```dockerfile
+# syntax=docker/dockerfile:1
+@z
+
+@x
+FROM quay.io/jupyter/base-notebook
+RUN pip install --no-cache-dir matplotlib scikit-learn
+```
+@y
+FROM quay.io/jupyter/base-notebook
+RUN pip install --no-cache-dir matplotlib scikit-learn
+```
+@z
 
 @x
 This Dockerfile uses the `quay.io/jupyter/base-notebook` image as the base, and then runs `pip` to install the dependencies. For more details about the instructions in the Dockerfile, see the [Dockerfile reference](/reference/dockerfile/).
@@ -530,7 +624,15 @@ Open a terminal, change directory to the directory where your `Dockerfile` is
 located, and then run the following command.
 @z
 
-% snip command...
+@x
+```console
+$ docker build -t my-jupyter-image .
+```
+@y
+```console
+$ docker build -t my-jupyter-image .
+```
+@z
 
 @x
 The command builds a Docker image from your `Dockerfile` and a context. The
@@ -566,7 +668,15 @@ To run your image as a container, you use the `docker run` command. In the
 `docker run` command, you'll specify your own image name.
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 To access the container, in a web browser navigate to
@@ -594,7 +704,39 @@ You can now use the packages without having to install them in your notebook.
 2. In the notebook, specify the following code.
 @z
 
-% snip code...
+@x
+   ```python
+   from sklearn import datasets
+@y
+   ```python
+   from sklearn import datasets
+@z
+
+@x
+   iris = datasets.load_iris()
+   import matplotlib.pyplot as plt
+@y
+   iris = datasets.load_iris()
+   import matplotlib.pyplot as plt
+@z
+
+@x
+   _, ax = plt.subplots()
+   scatter = ax.scatter(iris.data[:, 0], iris.data[:, 1], c=iris.target)
+   ax.set(xlabel=iris.feature_names[0], ylabel=iris.feature_names[1])
+   _ = ax.legend(
+      scatter.legend_elements()[0], iris.target_names, loc="lower right", title="Classes"
+   )
+   ```
+@y
+   _, ax = plt.subplots()
+   scatter = ax.scatter(iris.data[:, 0], iris.data[:, 1], c=iris.target)
+   ax.set(xlabel=iris.feature_names[0], ylabel=iris.feature_names[1])
+   _ = ax.legend(
+      scatter.legend_elements()[0], iris.target_names, loc="lower right", title="Classes"
+   )
+   ```
+@z
 
 @x
 3. Select the play button to run the code. You should see a scatter plot of the Iris dataset.
@@ -648,7 +790,41 @@ Open the `compose.yaml` file in an IDE or text editor and add the following
 contents.
 @z
 
-% snip code...
+@x
+```yaml
+services:
+  jupyter:
+    build:
+      context: .
+    ports:
+      - 8889:8888
+    volumes:
+      - jupyter-data:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token='my-token'
+@y
+```yaml
+services:
+  jupyter:
+    build:
+      context: .
+    ports:
+      - 8889:8888
+    volumes:
+      - jupyter-data:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token='my-token'
+@z
+
+@x
+volumes:
+  jupyter-data:
+    name: jupyter-data
+```
+@y
+volumes:
+  jupyter-data:
+    name: jupyter-data
+```
+@z
 
 @x
 This Compose file specifies all the options you used in the `docker run` command. For more details about the Compose instructions, see the
@@ -676,7 +852,15 @@ Open a terminal, change directory to where your `compose.yaml` file is located, 
 Open a terminal, change directory to where your `compose.yaml` file is located, and then run the following command.
 @z
 
-% snip command...
+@x
+```console
+$ docker compose up --build
+```
+@y
+```console
+$ docker compose up --build
+```
+@z
 
 @x
 This command builds your image and runs it as a container using the instructions
@@ -750,7 +934,15 @@ To share your image and data, you'll use [Docker Hub](https://hub.docker.com/). 
    with your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker tag my-jupyter-image YOUR-USER-NAME/my-jupyter-image
+   ```
+@y
+   ```console
+   $ docker tag my-jupyter-image YOUR-USER-NAME/my-jupyter-image
+   ```
+@z
 
 @x
 3. Run the following `docker push` command to push the image to Docker Hub.
@@ -760,7 +952,15 @@ To share your image and data, you'll use [Docker Hub](https://hub.docker.com/). 
    Replace `YOUR-USER-NAME` with your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker push YOUR-USER-NAME/my-jupyter-image
+   ```
+@y
+   ```console
+   $ docker push YOUR-USER-NAME/my-jupyter-image
+   ```
+@z
 
 @x
 4. Verify that you pushed the image to Docker Hub.
@@ -780,7 +980,15 @@ Other users can now download and run your image using the `docker run` command. 
 Other users can now download and run your image using the `docker run` command. They need to replace `YOUR-USER-NAME` with your Docker ID.
 @z
 
-% snip command...
+@x
+```console
+$ docker run --rm -p 8889:8888 YOUR-USER-NAME/my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+```
+@y
+```console
+$ docker run --rm -p 8889:8888 YOUR-USER-NAME/my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+```
+@z
 
 @x
 ### Share your volume
@@ -864,7 +1072,15 @@ Other users can now download and import your volume. To import the volume and th
    Replace `YOUR-USER-NAME` with your Docker ID.
 @z
 
-% snip command...
+@x
+   ```console
+   $ docker run --rm -p 8889:8888 -v jupyter-data-2:/home/jovyan/work YOUR-USER-NAME/my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+   ```
+@y
+   ```console
+   $ docker run --rm -p 8889:8888 -v jupyter-data-2:/home/jovyan/work YOUR-USER-NAME/my-jupyter-image start-notebook.py --NotebookApp.token='my-token'
+   ```
+@z
 
 @x
 ## Summary
@@ -900,6 +1116,6 @@ Related information:
 @y
 - [Dockerfile reference](__SUBDIR__/reference/dockerfile/)
 - [Compose file reference](__SUBDIR__/reference/compose-file/)
-- [Docker CLI reference](__SUBDIR__/reference/cli/docker/)
+- [Docker CLI reference](reference/cli/docker/)
 - [Jupyter Docker Stacks docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/)
 @z

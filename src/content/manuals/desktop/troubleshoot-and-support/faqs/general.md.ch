@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応
 
 @x
 description: Frequently asked Docker Desktop questions for all platforms
@@ -67,15 +68,7 @@ For example:
 For example:
 @z
 
-@x
-```console
-$ export DOCKER_HOST=unix:///var/run/docker.sock
-```
-@y
-```console
-$ export DOCKER_HOST=unix:///var/run/docker.sock
-```
-@z
+% snip command...
 
 @x
 Docker Desktop Windows users can connect to the Docker Engine through a **named pipe**: `npipe:////./pipe/docker_engine`, or **TCP socket** at this URL:
@@ -149,17 +142,7 @@ The following shows a few examples of what you can expect to see:
 - Docker Desktop using app level settings (proxy mode manual) for proxy:
 @z
 
-@x
-   ```console
-   host will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
-   Linux will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
-   ```
-@y
-   ```console
-   host will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
-   Linux will use proxy: app settings http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128
-   ```
-@z
+% snip command...
 
 @x
 - Docker Desktop using system level settings (proxy mode system) for proxy:
@@ -167,17 +150,7 @@ The following shows a few examples of what you can expect to see:
 - Docker Desktop using system level settings (proxy mode system) for proxy:
 @z
 
-@x
-   ```console
-   host will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
-   Linux will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
-   ```
-@y
-   ```console
-   host will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
-   Linux will use proxy: static system http_proxy=http://172.211.16.3:3128 https_proxy=http://172.211.16.3:3128 no_proxy=
-   ```
-@z
+% snip command...
 
 @x
 - Docker Desktop is not configured to use a proxy server:
@@ -185,17 +158,7 @@ The following shows a few examples of what you can expect to see:
 - Docker Desktop is not configured to use a proxy server:
 @z
 
-@x
-   ```console
-   host will use proxy: disabled
-   Linux will use proxy: disabled
-   ```
-@y
-   ```console
-   host will use proxy: disabled
-   Linux will use proxy: disabled
-   ```
-@z
+% snip command...
 
 @x
 - Docker Desktop is configured to use app level settings (proxy mode manual) and using a PAC file:
@@ -203,19 +166,7 @@ The following shows a few examples of what you can expect to see:
 - Docker Desktop is configured to use app level settings (proxy mode manual) and using a PAC file:
 @z
 
-@x
-   ```console
-   using a proxy PAC file: http://127.0.0.1:8081/proxy.pac
-   host will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
-   Linux will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
-   ```
-@y
-   ```console
-   using a proxy PAC file: http://127.0.0.1:8081/proxy.pac
-   host will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
-   Linux will use proxy: app settings from PAC file http://127.0.0.1:8081/proxy.pac
-   ```
-@z
+% snip command...
 
 @x
 - Connect request using the configured proxy server:
@@ -223,15 +174,7 @@ The following shows a few examples of what you can expect to see:
 - Connect request using the configured proxy server:
 @z
 
-@x
-   ```console
-   CONNECT desktop.docker.com:443: host connecting via static system HTTPS proxy http://172.211.16.3:3128
-   ```
-@y
-   ```console
-   CONNECT desktop.docker.com:443: host connecting via static system HTTPS proxy http://172.211.16.3:3128
-   ```
-@z
+% snip command...
 
 @x
 ### How do I run Docker Desktop without administrator privileges?
@@ -254,20 +197,12 @@ Docker Desktop requires administrator privileges only for installation. Once ins
 @z
 
 @x
-To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `—user=<userid>` installer flag:
+To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `--user=<userid>` installer flag:
 @y
-To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `—user=<userid>` installer flag:
+To run Docker Desktop on Mac without requiring administrator privileges, install via the command line and pass the `--user=<userid>` installer flag:
 @z
 
-@x
-```console
-$ /Applications/Docker.app/Contents/MacOS/install --user=<userid>
-```
-@y
-```console
-$ /Applications/Docker.app/Contents/MacOS/install --user=<userid>
-```
-@z
+% snip command...
 
 @x
 You can then sign in to your machine with the user ID specified, and launch Docker Desktop. 
@@ -304,20 +239,12 @@ You can then sign in to your machine with the user ID specified, and launch Dock
 @z
 
 @x
-To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `—always-run-service` installer flag.
+To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `--always-run-service` installer flag.
 @y
-To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `—always-run-service` installer flag.
+To run Docker Desktop on Windows without requiring administrator privileges, install via the command line and pass the `--always-run-service` installer flag.
 @z
 
-@x
-```console
-$ "Docker Desktop Installer.exe" install —always-run-service
-```
-@y
-```console
-$ "Docker Desktop Installer.exe" install —always-run-service
-```
-@z
+% snip command...
 
 @x
 {{< /tab >}}

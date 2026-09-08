@@ -525,7 +525,7 @@ usage: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
 @z
 
 @x pull
-      description: Pull image before creating (`always`, `|missing`, `never`)
+      description: Pull image before creating (`always`, `missing`, `never`)
 @y
       description: イメージ生成前にプルを行います（`always`, `missing`, `never`）。
 @z
