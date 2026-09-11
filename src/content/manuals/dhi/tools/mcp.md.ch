@@ -357,11 +357,11 @@ based on what you ask:
 
 @x
 The mirror tools require a Docker Hub username and [personal access token
-(PAT)](/security/access-tokens/) with owner access to the target organization,
+(PAT)](/security/access-tokens/personal-access-tokens/) with owner access to the target organization,
 passed as an HTTP Basic auth header. Generate the value with:
 @y
 The mirror tools require a Docker Hub username and [personal access token
-(PAT)](__SUBDIR__/security/access-tokens/) with owner access to the target organization,
+(PAT)](__SUBDIR__/security/access-tokens/personal-access-tokens/) with owner access to the target organization,
 passed as an HTTP Basic auth header. Generate the value with:
 @z
 

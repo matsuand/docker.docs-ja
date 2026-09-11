@@ -23,12 +23,12 @@ keywords: docker agentic platform, faq, sandboxes, agents, docker sandboxes, usa
 
 @x
 Docker Agentic Platform provides predefined sandbox types for Claude Code,
-Codex, OpenCode, Copilot, and Gemini CLI. Each runs in an isolated, Docker-hosted
-sandbox with a live terminal.
+Codex, OpenCode, Copilot, Gemini CLI, and Shell. Each type runs in an isolated,
+Docker-hosted sandbox with a live terminal.
 @y
 Docker Agentic Platform provides predefined sandbox types for Claude Code,
-Codex, OpenCode, Copilot, and Gemini CLI. Each runs in an isolated, Docker-hosted
-sandbox with a live terminal.
+Codex, OpenCode, Copilot, Gemini CLI, and Shell. Each type runs in an isolated,
+Docker-hosted sandbox with a live terminal.
 @z
 
 @x
@@ -83,6 +83,16 @@ and collaborative ownership are not part of the initial release.
 ## How does a sandbox access external services?
 @y
 ## How does a sandbox access external services?
+@z
+
+@x
+By default, every new sandbox uses the **Open** user policy, regardless of
+sandbox type. **Open** allows access to all outbound destinations. To restrict
+egress, replace **Open** with **Balanced**, a custom policy, or no user policy.
+@y
+By default, every new sandbox uses the **Open** user policy, regardless of
+sandbox type. **Open** allows access to all outbound destinations. To restrict
+egress, replace **Open** with **Balanced**, a custom policy, or no user policy.
 @z
 
 @x
@@ -120,12 +130,12 @@ also shows the equivalent hourly rate.
 @x
 Model inference is billed separately. The sandbox uses your credential for an
 external model provider, which meters and bills inference under that provider
-account. See [Docker Billing](/billing/) for account, usage, and payment
+account. See [Docker Billing](/subscription-billing/) for account, usage, and payment
 information.
 @y
 Model inference is billed separately. The sandbox uses your credential for an
 external model provider, which meters and bills inference under that provider
-account. See [Docker Billing](__SUBDIR__/billing/) for account, usage, and payment
+account. See [Docker Billing](__SUBDIR__/subscription-billing/) for account, usage, and payment
 information.
 @z
 

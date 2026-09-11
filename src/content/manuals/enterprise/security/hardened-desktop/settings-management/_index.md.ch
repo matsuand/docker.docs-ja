@@ -158,7 +158,7 @@ You can create settings management policies at any time, but your organization n
 @z
 
 @x
-1. Check that you have [added and verified](/manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
+1. Check that you have [added and verified](/manuals/security/provisioning/domain-management.md#add-and-verify-a-domain) your organization's domain.
 2. [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) to
    ensure all developers authenticate with your organization.
 3. Choose a configuration method:
@@ -166,7 +166,7 @@ You can create settings management policies at any time, but your organization n
    - Manually create and configure the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md).
    - Create a settings policy in the [Docker Home](configure-admin-console.md).
 @y
-1. Check that you have [added and verified](manuals/enterprise/security/domain-management.md#add-and-verify-a-domain) your organization's domain.
+1. Check that you have [added and verified](manuals/security/provisioning/domain-management.md#add-and-verify-a-domain) your organization's domain.
 2. [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) to
    ensure all developers authenticate with your organization.
 3. Choose a configuration method:

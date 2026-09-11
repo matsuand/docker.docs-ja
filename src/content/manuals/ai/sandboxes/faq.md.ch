@@ -320,10 +320,10 @@ sandbox:
 @z
 
 @x
-Run it with `sbx run claude-safe --kit ./claude-safe/`. See
+Run it with `sbx run ./claude-safe/`. See
 [Sandbox kits](customize/kits.md#sandbox-kits) for the full pattern.
 @y
-Run it with `sbx run claude-safe --kit ./claude-safe/`. See
+Run it with `sbx run ./claude-safe/`. See
 [Sandbox kits](customize/kits.md#sandbox-kits) for the full pattern.
 @z
 
@@ -372,15 +372,19 @@ inside the sandbox.
 @z
 
 @x
-Shared agent skills are the exception. Run `sbx skills import` to copy skills
-from supported host directories into a persistent store shared with
-sandboxes. See [Share agent skills](workflows/agent-skills.md) for the
-supported directories, mount behavior, and per-sandbox opt-out.
+Shared agent skills are the exception. Use `sbx skills add` to install skills
+from a Git repository, or run `sbx skills import` to copy skills from supported
+host directories. `sbx` keeps the skills in a persistent store shared with
+sandboxes. See [Share agent skills](workflows/agent-skills.md) for repository
+management, supported host directories, mount behavior, and per-sandbox
+opt-out.
 @y
-Shared agent skills are the exception. Run `sbx skills import` to copy skills
-from supported host directories into a persistent store shared with
-sandboxes. See [Share agent skills](workflows/agent-skills.md) for the
-supported directories, mount behavior, and per-sandbox opt-out.
+Shared agent skills are the exception. Use `sbx skills add` to install skills
+from a Git repository, or run `sbx skills import` to copy skills from supported
+host directories. `sbx` keeps the skills in a persistent store shared with
+sandboxes. See [Share agent skills](workflows/agent-skills.md) for repository
+management, supported host directories, mount behavior, and per-sandbox
+opt-out.
 @z
 
 @x

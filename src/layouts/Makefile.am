@@ -13,6 +13,7 @@ bases = \
 	baseof.html               \
 	cli.html                  \
 	cli.markdown.md           \
+	get-started.html          \
 	glossary.html             \
 	list.markdown.md          \
 	sbx-cli.html              \

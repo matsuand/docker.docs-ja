@@ -38,13 +38,13 @@ This page provides download links, system requirements, and step-by-step install
 @z
 
 @x
-{{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" >}}
+{{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" marlin_label="download_exe_click" >}}
 {{< button text="Docker Desktop for Windows - x86_64 on the Microsoft Store" url="https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB" >}}
-{{< button text="Docker Desktop for Windows - Arm (Early Access)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
+{{< button text="Docker Desktop for Windows - Arm (Early Access)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" marlin_label="download_exe_click" >}}
 @y
-{{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" >}}
+{{< button text="Docker Desktop for Windows - x86_64" url="https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-amd64" marlin_label="download_exe_click" >}}
 {{< button text="Microsoft Store 上の Docker Desktop for Windows - x86_64" url="https://apps.microsoft.com/detail/xp8cbj40xlbwkx?hl=en-GB&gl=GB" >}}
-{{< button text="Docker Desktop for Windows - Arm (早期アクセス)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" >}}
+{{< button text="Docker Desktop for Windows - Arm (早期アクセス)" url="https://desktop.docker.com/win/main/arm64/Docker%20Desktop%20Installer.exe?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-win-arm64" marlin_label="download_exe_click" >}}
 @z
 
 @x
@@ -867,7 +867,7 @@ again when you switch back.
 
 @x
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall) to see what Docker can offer you.
-- [Get started with Docker](/get-started/introduction/_index.md).
+- [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
 - [Explore Docker Desktop](/manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and
   how to get support.
@@ -876,7 +876,7 @@ again when you switch back.
 - [Back up and restore data](/manuals/desktop/settings-and-maintenance/backup-and-restore.md) provides instructions on backing up and restoring data related to Docker.
 @y
 - Explore [Docker's subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopWindowsInstall) to see what Docker can offer you.
-- [Get started with Docker](get-started/introduction/_index.md).
+- [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
 - [Explore Docker Desktop](manuals/desktop/use-desktop/_index.md) and all its features.
 - [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md) describes common problems, workarounds, and
   how to get support.

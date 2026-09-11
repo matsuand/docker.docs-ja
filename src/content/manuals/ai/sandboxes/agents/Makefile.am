@@ -8,6 +8,7 @@ bases = \
 	codex.md        \
 	copilot.md      \
 	cursor.md       \
+	devin.md        \
 	docker-agent.md \
 	droid.md        \
 	gemini.md       \

@@ -295,13 +295,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = enforce-sign-in hardened-desktop images oidc-connections \
-	provisioning roles-and-permissions single-sign-on
-
+SUBDIRS = enforce-sign-in hardened-desktop
 bases = \
-	_index.md            \
-	access-tokens.md     \
-	domain-management.md
+	_index.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

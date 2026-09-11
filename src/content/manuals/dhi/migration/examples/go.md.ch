@@ -52,7 +52,7 @@ Hardened Images. Each example includes five variations:
 > You must authenticate to `dhi.io` before you can pull Docker Hardened Images.
 > Use your Docker ID credentials (the same username and password you use for
 > Docker Hub). If you don't have a Docker account, [create
-> one](../../../accounts/create-account.md) for free.
+> one](../../../accounts/individual/create-account.md) for free.
 >
 > Run `docker login dhi.io` to authenticate.
 @y
@@ -63,7 +63,7 @@ Hardened Images. Each example includes five variations:
 >
 > Docker Hardened イメージをプルするにあたっては、あらかじめ `dhi.io` への認証を行っておく必要があります。
 > その際には Docker ID 情報 (Docker Hub 用として用いるユーザー名、パスワードと同じ）を用います。
-> Docker アカウントを持っていない場合は、それを [生成](../../../accounts/create-account.md) してください。
+> Docker アカウントを持っていない場合は、それを [生成](../../../accounts/individual/create-account.md) してください。
 >
 > 認証をするには `docker login dhi.io` を実行します。
 @z

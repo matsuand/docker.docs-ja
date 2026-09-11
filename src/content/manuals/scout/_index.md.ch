@@ -104,13 +104,13 @@ description:
 
 @x
   - title: Upgrade
-    link: /subscription/change/
+    link: /subscription-billing/manage/plans/
     description: |
       A Personal subscription includes up to 1 repository. Upgrade for more.
     icon: arrow-up-circle
 @y
   - title: アップグレード
-    link: __SUBDIR__/subscription/change/
+    link: __SUBDIR__/subscription-billing/manage/plans/
     description: |
       パーソナルサブスクリプションは 1 リポジトリまで。アップグレードによりさらに増やせます。
     icon: arrow-up-circle

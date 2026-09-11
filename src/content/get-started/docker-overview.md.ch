@@ -477,8 +477,8 @@ in a separate namespace and its access is limited to that namespace.
 
 @x
 - [Install Docker](/get-started/get-docker.md)
-- [Get started with Docker](/get-started/introduction/_index.md)
+- [Build and share a containerized application](/get-started/tutorials/run-an-app.md)
 @y
 - [Docker のインストール](get-started/get-docker.md)
-- [Docker をはじめよう](get-started/introduction/_index.md)
+- [コンテナー化アプリケーションのビルドと共有](get-started/tutorials/run-an-app.md)
 @z

@@ -295,11 +295,10 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = ci code-quality environment registry source-code-management \
-	team-collaboration
-
+SUBDIRS = ci environment
 bases = \
-	_index.md
+	_index.md   \
+	registry.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

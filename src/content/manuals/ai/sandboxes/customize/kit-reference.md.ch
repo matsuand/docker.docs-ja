@@ -4,12 +4,12 @@
 @x
 title: Kit spec reference
 linkTitle: Spec reference
-description: Field-by-field reference for a kit's spec.yaml, including credentials, network rules, environment, setup, files, agent instructions, and the sandbox block.
+description: Field-by-field reference for a kit's spec.yaml, including arguments, credentials, network rules, environment, setup, files, agent instructions, and the sandbox block.
 keywords: sandboxes, sbx, kits, spec.yaml, reference, schema, fields
 @y
 title: Kit spec reference
 linkTitle: Spec reference
-description: Field-by-field reference for a kit's spec.yaml, including credentials, network rules, environment, setup, files, agent instructions, and the sandbox block.
+description: Field-by-field reference for a kit's spec.yaml, including arguments, credentials, network rules, environment, setup, files, agent instructions, and the sandbox block.
 keywords: sandboxes, sbx, kits, spec.yaml, reference, schema, fields
 @z
 
@@ -192,6 +192,10 @@ locked:
   - sandbox.image
 security:
   privileged: false
+args:
+  channel:
+    default: stable
+    enum: [stable, beta]
 ```
 @y
 ```yaml
@@ -208,6 +212,10 @@ locked:
   - sandbox.image
 security:
   privileged: false
+args:
+  channel:
+    default: stable
+    enum: [stable, beta]
 ```
 @z
 
@@ -224,6 +232,7 @@ security:
 | `licenses`      | No       | SPDX license identifiers.                                                                       |
 | `locked`        | No       | Dotted paths child kits may not override.                                                       |
 | `security`      | No       | Container security settings. `security.privileged: true` runs the container in privileged mode. |
+| `args`          | No       | Arguments supplied when the kit is loaded. Schema v2 only.                                      |
 @y
 | Field           | Required | Description                                                                                     |
 | --------------- | -------- | ----------------------------------------------------------------------------------------------- |
@@ -237,6 +246,7 @@ security:
 | `licenses`      | No       | SPDX license identifiers.                                                                       |
 | `locked`        | No       | Dotted paths child kits may not override.                                                       |
 | `security`      | No       | Container security settings. `security.privileged: true` runs the container in privileged mode. |
+| `args`          | No       | Arguments supplied when the kit is loaded. Schema v2 only.                                      |
 @z
 
 @x
@@ -245,6 +255,124 @@ A kit also declares behavior blocks such as `agentInstructions`,
 @y
 A kit also declares behavior blocks such as `agentInstructions`,
 `permissions`, `ports`, `credentials`, `environment`, `setup`, and `volumes`.
+@z
+
+@x
+## Arguments
+@y
+## Arguments
+@z
+
+@x
+A schema v2 kit can declare arguments and reference them anywhere in
+`spec.yaml` or under `files/` as `${{ kit.args.<name> }}`. Substitution happens
+before the spec is decoded.
+@y
+A schema v2 kit can declare arguments and reference them anywhere in
+`spec.yaml` or under `files/` as `${{ kit.args.<name> }}`. Substitution happens
+before the spec is decoded.
+@z
+
+@x
+```yaml
+args:
+  version:
+    default: latest
+    description: Tool version to install
+    pattern: '^(latest|[0-9]+\.[0-9]+\.[0-9]+)$'
+  channel:
+    default: stable
+    enum: [stable, beta, nightly]
+  target:
+    required: true
+    description: Build target
+@y
+```yaml
+args:
+  version:
+    default: latest
+    description: Tool version to install
+    pattern: '^(latest|[0-9]+\.[0-9]+\.[0-9]+)$'
+  channel:
+    default: stable
+    enum: [stable, beta, nightly]
+  target:
+    required: true
+    description: Build target
+@z
+
+@x
+environment:
+  variables:
+    TOOL_VERSION: "${{ kit.args.version }}"
+```
+@y
+environment:
+  variables:
+    TOOL_VERSION: "${{ kit.args.version }}"
+```
+@z
+
+@x
+Don't use kit arguments for API tokens, passwords, or other secrets. Use
+[Credentials](../configuration/credentials.md) to provide sensitive values to
+a sandbox.
+@y
+Don't use kit arguments for API tokens, passwords, or other secrets. Use
+[Credentials](../configuration/credentials.md) to provide sensitive values to
+a sandbox.
+@z
+
+@x
+| Field         | Description                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| Argument name | Starts with a letter or underscore and contains only letters, digits, underscores, and hyphens.             |
+| `default`     | String to use when the caller supplies no value. Mutually exclusive with `required: true`.                   |
+| `required`    | Set to `true` when the caller must supply a value. Mutually exclusive with `default`.                        |
+| `description` | Optional help text shown when a required value is missing.                                                   |
+| `enum`        | Optional list of accepted values. Mutually exclusive with `pattern`.                                         |
+| `pattern`     | Optional Go RE2 regular expression matched against the complete value. Mutually exclusive with `enum`.       |
+@y
+| Field         | Description                                                                                                  |
+| ------------- | ------------------------------------------------------------------------------------------------------------ |
+| Argument name | Starts with a letter or underscore and contains only letters, digits, underscores, and hyphens.             |
+| `default`     | String to use when the caller supplies no value. Mutually exclusive with `required: true`.                   |
+| `required`    | Set to `true` when the caller must supply a value. Mutually exclusive with `default`.                        |
+| `description` | Optional help text shown when a required value is missing.                                                   |
+| `enum`        | Optional list of accepted values. Mutually exclusive with `pattern`.                                         |
+| `pattern`     | Optional Go RE2 regular expression matched against the complete value. Mutually exclusive with `enum`.       |
+@z
+
+@x
+Each argument must declare either `default`, including an empty-string
+default, or `required: true`. A declared default must satisfy its own `enum` or
+`pattern`. Every `${{ kit.args.<name> }}` reference must have a matching
+declaration.
+@y
+Each argument must declare either `default`, including an empty-string
+default, or `required: true`. A declared default must satisfy its own `enum` or
+`pattern`. Every `${{ kit.args.<name> }}` reference must have a matching
+declaration.
+@z
+
+@x
+Argument values are strings, but substitution happens before YAML decoding.
+Quote a placeholder in a string-valued field so a value such as `1.20` isn't
+decoded as a number.
+@y
+Argument values are strings, but substitution happens before YAML decoding.
+Quote a placeholder in a string-valued field so a value such as `1.20` isn't
+decoded as a number.
+@z
+
+@x
+Supply values with `--kit-arg` or `--kit-args-file` when loading the kit. See
+[Pass arguments to kits](kits.md#pass-arguments-to-kits) for scoping,
+precedence, and validation behavior.
+@y
+Supply values with `--kit-arg` or `--kit-args-file` when loading the kit. See
+[Pass arguments to kits](kits.md#pass-arguments-to-kits) for scoping,
+precedence, and validation behavior.
 @z
 
 @x
@@ -811,14 +939,12 @@ Use `ports` to expose sandbox services to the host:
 ```yaml
 ports:
   - container: 8080
-    protocol: tcp
     name: web
 ```
 @y
 ```yaml
 ports:
   - container: 8080
-    protocol: tcp
     name: web
 ```
 @z
@@ -827,22 +953,30 @@ ports:
 | Field       | Description                                                         |
 | ----------- | ------------------------------------------------------------------- |
 | `container` | Container port, 1 to 65535.                                         |
-| `protocol`  | `tcp` or `udp`. Empty means `tcp`.                                  |
+| `protocol`  | `tcp` or `udp`. Empty publishes one family; see below.              |
 | `name`      | Optional label surfaced by tools that list published port bindings. |
 @y
 | Field       | Description                                                         |
 | ----------- | ------------------------------------------------------------------- |
 | `container` | Container port, 1 to 65535.                                         |
-| `protocol`  | `tcp` or `udp`. Empty means `tcp`.                                  |
+| `protocol`  | `tcp` or `udp`. Empty publishes one family; see below.              |
 | `name`      | Optional label surfaced by tools that list published port bindings. |
 @z
 
 @x
-Host ports are allocated ephemerally on `127.0.0.1`. Users can pin host ports
-with `sbx ports --publish <host>:<container>`.
+Host ports are allocated ephemerally. Leave `protocol` empty unless the service
+listens on IPv6: an empty value publishes IPv4 only (`127.0.0.1`), which is what
+a service bound to `0.0.0.0` needs, while `tcp` publishes both `127.0.0.1` and
+`::1` — and a client arriving over `::1` is accepted and then reset if nothing
+in the sandbox is listening there. Users can pin host ports with
+`sbx ports --publish <host>:<container>`.
 @y
-Host ports are allocated ephemerally on `127.0.0.1`. Users can pin host ports
-with `sbx ports --publish <host>:<container>`.
+Host ports are allocated ephemerally. Leave `protocol` empty unless the service
+listens on IPv6: an empty value publishes IPv4 only (`127.0.0.1`), which is what
+a service bound to `0.0.0.0` needs, while `tcp` publishes both `127.0.0.1` and
+`::1` — and a client arriving over `::1` is accepted and then reset if nothing
+in the sandbox is listening there. Users can pin host ports with
+`sbx ports --publish <host>:<container>`.
 @z
 
 @x
@@ -1005,6 +1139,20 @@ through `sbx kit add`. Shell strings are passed to `sh -c`.
 @y
 Runs synchronously when a kit is applied, either during sandbox creation or
 through `sbx kit add`. Shell strings are passed to `sh -c`.
+@z
+
+@x
+Kit install commands start in the template image's configured `WORKDIR`.
+Docker-provided templates use `/home/agent/workspace`, which isn't necessarily
+the primary workspace in a direct-mounted or clone-mode sandbox. Don't rely on
+the current directory to locate workspace files. Use absolute paths for bundled
+assets from `files/home/`.
+@y
+Kit install commands start in the template image's configured `WORKDIR`.
+Docker-provided templates use `/home/agent/workspace`, which isn't necessarily
+the primary workspace in a direct-mounted or clone-mode sandbox. Don't rely on
+the current directory to locate workspace files. Use absolute paths for bundled
+assets from `files/home/`.
 @z
 
 @x

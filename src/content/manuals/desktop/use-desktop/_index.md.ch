@@ -48,12 +48,14 @@ In addition, the Docker Desktop Dashboard lets you:
 @z
 
 @x
-  For a more detailed guide about getting started, see [Get started](/get-started/introduction/_index.md).
+  For a guided introduction, see
+  [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
 - Access [Docker Hub](/manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
   of images.
 - Navigate to [Docker Extensions](/manuals/extensions/_index.md) if you have enabled it.
 @y
-  For a more detailed guide about getting started, see [Get started](get-started/introduction/_index.md).
+  For a guided introduction, see
+  [Build and share a containerized application](/get-started/tutorials/run-an-app.md).
 - Access [Docker Hub](manuals/docker-hub/_index.md) to search, browse, pull, run, or view details
   of images.
 - Navigate to [Docker Extensions](manuals/extensions/_index.md) if you have enabled it.

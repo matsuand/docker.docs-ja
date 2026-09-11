@@ -75,14 +75,14 @@ The basic workflow is [`run`](__SUBDIR__/reference/cli/sbx/run/) to start,
 
 @x
 ```console
-$ sbx run claude                    # start an agent
+$ sbx run claude                    # start an agent in the current directory
 $ sbx ls                            # see what's running
 $ sbx stop my-sandbox               # pause it
 $ sbx rm my-sandbox                 # delete it entirely
 ```
 @y
 ```console
-$ sbx run claude                    # start an agent
+$ sbx run claude                    # start an agent in the current directory
 $ sbx ls                            # see what's running
 $ sbx stop my-sandbox               # pause it
 $ sbx rm my-sandbox                 # delete it entirely
@@ -156,6 +156,82 @@ Run `sbx prune` without flags to confirm and remove all stopped sandboxes.
 @z
 
 @x
+## Choose a workspace
+@y
+## Choose a workspace
+@z
+
+@x
+`sbx run` mounts the current directory when you don't pass a workspace path.
+Pass a path to mount another directory instead:
+@y
+`sbx run` mounts the current directory when you don't pass a workspace path.
+Pass a path to mount another directory instead:
+@z
+
+@x
+```console
+$ sbx run claude
+$ sbx run claude ~/my-project
+```
+@y
+```console
+$ sbx run claude
+$ sbx run claude ~/my-project
+```
+@z
+
+@x
+The first workspace path is the primary workspace. The agent starts there, and
+`sbx exec` uses it as the default working directory. The host directory is
+mounted at the same absolute path inside the sandbox. When you don't pass a
+path to `sbx run`, the current directory is the primary workspace.
+@y
+The first workspace path is the primary workspace. The agent starts there, and
+`sbx exec` uses it as the default working directory. The host directory is
+mounted at the same absolute path inside the sandbox. When you don't pass a
+path to `sbx run`, the current directory is the primary workspace.
+@z
+
+@x
+Starting with `sbx` version 0.42.0, workspace paths are optional for
+`sbx create`. Omit them to create a mountless sandbox without a host workspace
+bind mount, then attach to the sandbox by name:
+@y
+Starting with `sbx` version 0.42.0, workspace paths are optional for
+`sbx create`. Omit them to create a mountless sandbox without a host workspace
+bind mount, then attach to the sandbox by name:
+@z
+
+@x
+```console
+$ sbx create --name scratch claude
+$ sbx run --name scratch
+```
+@y
+```console
+$ sbx create --name scratch claude
+$ sbx run --name scratch
+```
+@z
+
+@x
+In a mountless sandbox, the agent starts in the template image's working
+directory. Docker-provided templates use `/home/agent/workspace`. Files there
+persist across stops and restarts but are deleted when you remove the sandbox.
+Assign the sandbox a name so you can reconnect to it, and use
+[`sbx cp`](#copy-files-between-host-and-sandbox) to transfer files between the
+sandbox and the host.
+@y
+In a mountless sandbox, the agent starts in the template image's working
+directory. Docker-provided templates use `/home/agent/workspace`. Files there
+persist across stops and restarts but are deleted when you remove the sandbox.
+Assign the sandbox a name so you can reconnect to it, and use
+[`sbx cp`](#copy-files-between-host-and-sandbox) to transfer files between the
+sandbox and the host.
+@z
+
+@x
 ## Reconnect and name sandboxes
 @y
 ## Reconnect and name sandboxes
@@ -189,20 +265,20 @@ Use `--name` to give a sandbox an explicit identity:
 
 @x
 ```console
-$ sbx run claude --name my-project
+$ sbx run --name my-project claude
 ```
 @y
 ```console
-$ sbx run claude --name my-project
+$ sbx run --name my-project claude
 ```
 @z
 
 @x
-Once a named sandbox exists, use `--name` to re-attach to it from any working
-directory, with or without the agent positional:
+Once a named sandbox exists, reattach from any working directory with
+`sbx run --name`. You can omit the agent name when reattaching:
 @y
-Once a named sandbox exists, use `--name` to re-attach to it from any working
-directory, with or without the agent positional:
+Once a named sandbox exists, reattach from any working directory with
+`sbx run --name`. You can omit the agent name when reattaching:
 @z
 
 @x
@@ -245,10 +321,12 @@ $ sbx run claude --name spike ~/my-project
 
 @x
 [`sbx run`](/reference/cli/sbx/run/) creates the sandbox and attaches you to the
-agent. To create a sandbox in the background without attaching:
+agent. To create a sandbox with the current directory mounted in the background
+without attaching:
 @y
 [`sbx run`](__SUBDIR__/reference/cli/sbx/run/) creates the sandbox and attaches you to the
-agent. To create a sandbox in the background without attaching:
+agent. To create a sandbox with the current directory mounted in the background
+without attaching:
 @z
 
 @x
@@ -262,20 +340,22 @@ $ sbx create --name my-project claude .
 @z
 
 @x
-Unlike `run`, `create` requires an explicit workspace path. Attach later with
+Omit the path to create a mountless sandbox instead. Attach later with
 `sbx run --name`:
 @y
-Unlike `run`, `create` requires an explicit workspace path. Attach later with
+Omit the path to create a mountless sandbox instead. Attach later with
 `sbx run --name`:
 @z
 
 @x
 ```console
-$ sbx run --name my-project
+$ sbx create --name scratch claude
+$ sbx run --name scratch
 ```
 @y
 ```console
-$ sbx run --name my-project
+$ sbx create --name scratch claude
+$ sbx run --name scratch
 ```
 @z
 
@@ -456,6 +536,14 @@ $ sbx exec -it <sandbox-name> bash
 @z
 
 @x
+Without `--workdir`, the command starts in the sandbox's primary workspace. In
+a mountless sandbox, it starts in the container image's working directory.
+@y
+Without `--workdir`, the command starts in the sandbox's primary workspace. In
+a mountless sandbox, it starts in the container image's working directory.
+@z
+
+@x
 ## Interactive mode
 @y
 ## Interactive mode
@@ -532,15 +620,17 @@ it when you create the sandbox:
 @z
 
 @x
-- Direct mode is the default. The agent has read-write access to your working
-  tree, and changes appear on your host immediately.
+- Direct mode is the default for `sbx run`. It also applies when you pass a
+  workspace path to `sbx create`. The agent has read-write access to your
+  working tree, and changes appear on your host immediately.
 - [Clone mode](#clone-mode) uses `--clone`. The agent edits a separate Git clone
   inside the sandbox. Its changes stay there until you fetch them or the agent
   pushes them. Your host repository is also available at
   `/run/sandbox/source`, but only with read access.
 @y
-- Direct mode is the default. The agent has read-write access to your working
-  tree, and changes appear on your host immediately.
+- Direct mode is the default for `sbx run`. It also applies when you pass a
+  workspace path to `sbx create`. The agent has read-write access to your
+  working tree, and changes appear on your host immediately.
 - [Clone mode](#clone-mode) uses `--clone`. The agent edits a separate Git clone
   inside the sandbox. Its changes stay there until you fetch them or the agent
   pushes them. Your host repository is also available at
@@ -573,11 +663,11 @@ To create a clone-mode sandbox, pass `--clone` when you run or create it:
 
 @x
 ```console
-$ sbx run --clone claude
+$ sbx run --clone claude .
 ```
 @y
 ```console
-$ sbx run --clone claude
+$ sbx run --clone claude .
 ```
 @z
 
@@ -614,7 +704,7 @@ Clone mode has a few create-time constraints:
   workspaces.
 - Clone mode is rejected from inside a Git worktree other than the main one. The
   read-only bind mount can't resolve the worktree's `.git` pointer file. Run
-  `sbx create --clone` from the main repository checkout instead.
+  `sbx create --clone <agent> .` from the main repository checkout instead.
 - Removing a clone-mode sandbox drops the in-sandbox clone. Fetch or push any
   commits you want to keep before you remove it.
 @y
@@ -626,7 +716,7 @@ Clone mode has a few create-time constraints:
   workspaces.
 - Clone mode is rejected from inside a Git worktree other than the main one. The
   read-only bind mount can't resolve the worktree's `.git` pointer file. Run
-  `sbx create --clone` from the main repository checkout instead.
+  `sbx create --clone <agent> .` from the main repository checkout instead.
 - Removing a clone-mode sandbox drops the in-sandbox clone. Fetch or push any
   commits you want to keep before you remove it.
 @z
@@ -650,13 +740,13 @@ use `--clone`. Extra workspaces are always mounted directly.
 @z
 
 @x
-All workspaces appear inside the sandbox at their absolute host paths. Append
-`:ro` to mount an extra workspace read-only — useful for reference material or
-shared libraries the agent shouldn't modify:
+Each workspace path appears inside the sandbox at the same absolute path as on
+the host. Append `:ro` to mount an extra workspace read-only — useful for
+reference material or shared libraries the agent shouldn't modify:
 @y
-All workspaces appear inside the sandbox at their absolute host paths. Append
-`:ro` to mount an extra workspace read-only — useful for reference material or
-shared libraries the agent shouldn't modify:
+Each workspace path appears inside the sandbox at the same absolute path as on
+the host. Append `:ro` to mount an extra workspace read-only — useful for
+reference material or shared libraries the agent shouldn't modify:
 @z
 
 @x
@@ -692,32 +782,44 @@ $ sbx rm <sandbox-name>       # when finished
 @z
 
 @x
-## Copying files between host and sandbox
+## Copy files between host and sandbox
 @y
-## Copying files between host and sandbox
+## Copy files between host and sandbox
 @z
 
 @x
 Use [`sbx cp`](/reference/cli/sbx/cp/) to copy files or directories between
 your host and a sandbox. This is useful for one-off files that aren't part of a
-mounted workspace, such as generated output, logs, or setup files.
+mounted workspace, such as generated output, logs, or setup files. The sandbox
+path must be absolute. `sbx cp` doesn't resolve relative paths such as `.`
+against the sandbox's default working directory.
 @y
 Use [`sbx cp`](__SUBDIR__/reference/cli/sbx/cp/) to copy files or directories between
 your host and a sandbox. This is useful for one-off files that aren't part of a
-mounted workspace, such as generated output, logs, or setup files.
+mounted workspace, such as generated output, logs, or setup files. The sandbox
+path must be absolute. `sbx cp` doesn't resolve relative paths such as `.`
+against the sandbox's default working directory.
+@z
+
+@x
+For example, copy files to or from the default working directory used by a
+Docker-provided agent template:
+@y
+For example, copy files to or from the default working directory used by a
+Docker-provided agent template:
 @z
 
 @x
 ```console
-$ sbx cp ./config.json my-sandbox:/home/user/
-$ sbx cp my-sandbox:/home/user/output.log ./
-$ sbx cp ./src/ my-sandbox:/home/user/src
+$ sbx cp ./config.json my-sandbox:/home/agent/workspace/
+$ sbx cp my-sandbox:/home/agent/workspace/output.log ./
+$ sbx cp ./src/ my-sandbox:/home/agent/workspace/src
 ```
 @y
 ```console
-$ sbx cp ./config.json my-sandbox:/home/user/
-$ sbx cp my-sandbox:/home/user/output.log ./
-$ sbx cp ./src/ my-sandbox:/home/user/src
+$ sbx cp ./config.json my-sandbox:/home/agent/workspace/
+$ sbx cp my-sandbox:/home/agent/workspace/output.log ./
+$ sbx cp ./src/ my-sandbox:/home/agent/workspace/src
 ```
 @z
 
@@ -763,10 +865,12 @@ $ sbx run --publish 8080:3000 --name my-sandbox claude
 
 @x
 For an existing sandbox, use [`sbx ports`](/reference/cli/sbx/ports/) to
-forward traffic from your host:
+forward traffic from your host. Publishing a port on a stopped local sandbox
+starts it first:
 @y
 For an existing sandbox, use [`sbx ports`](__SUBDIR__/reference/cli/sbx/ports/) to
-forward traffic from your host:
+forward traffic from your host. Publishing a port on a stopped local sandbox
+starts it first:
 @z
 
 @x
@@ -815,13 +919,13 @@ them in detail.
 ```console
 $ sbx ls
 SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp /home/user/proj
+my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
 ```
 @y
 ```console
 $ sbx ls
 SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp /home/user/proj
+my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
 ```
 @z
 
@@ -861,16 +965,18 @@ recipes, see
 
 @x
 While a sandbox exists, installed packages, Docker images, configuration
-changes, and command history all persist across stops and restarts. When you
-remove a sandbox, everything inside is deleted. Your workspace files and the
-[shared agent skills store](workflows/agent-skills.md) remain on your
-host. To preserve a configured environment, create a [custom
+changes, command history, and mountless workspace files all persist across
+stops and restarts. When you remove a sandbox, everything inside is deleted.
+Host workspace files, including repositories used as clone sources, and the
+[shared agent skills store](workflows/agent-skills.md) remain on your host. To
+preserve a configured environment, create a [custom
 template](customize/templates.md) or use a [kit](customize/kits.md).
 @y
 While a sandbox exists, installed packages, Docker images, configuration
-changes, and command history all persist across stops and restarts. When you
-remove a sandbox, everything inside is deleted. Your workspace files and the
-[shared agent skills store](workflows/agent-skills.md) remain on your
-host. To preserve a configured environment, create a [custom
+changes, command history, and mountless workspace files all persist across
+stops and restarts. When you remove a sandbox, everything inside is deleted.
+Host workspace files, including repositories used as clone sources, and the
+[shared agent skills store](workflows/agent-skills.md) remain on your host. To
+preserve a configured environment, create a [custom
 template](customize/templates.md) or use a [kit](customize/kits.md).
 @z

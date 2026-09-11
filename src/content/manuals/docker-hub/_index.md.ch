@@ -68,12 +68,12 @@ title: Docker Hub
 - title: Organizations
   description: Learn about organization administration.
   icon: building-storefront
-  link: /admin/
+  link: /accounts/organization/
 @y
 - title: 組織
   description: 組織管理について学びます。
   icon: building-storefront
-  link: __SUBDIR__/admin/
+  link: __SUBDIR__/accounts/organization/
 @z
 
 @x

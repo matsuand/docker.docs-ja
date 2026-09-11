@@ -43,10 +43,10 @@ This page provides details on new features, enhancements, known issues, and bug 
 @y
 - Administrators can now control whether organization members can push content
   to their personal namespaces on Docker Hub with [namespace access
-  control](/manuals/enterprise/security/hardened-desktop/namespace-access.md).
+  control](manuals/enterprise/security/hardened-desktop/namespace-access.md).
 - Administrators can now prevent creating public repositories within
   organization namespaces using the [Disable public
-  repositories](/manuals/docker-hub/settings.md#disable-creation-of-public-repos) setting.
+  repositories](manuals/docker-hub/settings.md#disable-creation-of-public-repos) setting.
 @z
 
 @x
@@ -67,7 +67,7 @@ This page provides details on new features, enhancements, known issues, and bug 
   to approve specific repositories that bypass image access controls.
 @y
 - Administrators can now use an allow list with [Image Access
-  Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+  Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
   to approve specific repositories that bypass image access controls.
 @z
 
@@ -170,9 +170,9 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- [Personal access tokens](/security/access-tokens/) (PATs) now support expiration dates.
+- [Personal access tokens](/security/access-tokens/personal-access-tokens/) (PATs) now support expiration dates.
 @y
-- [Personal access tokens](__SUBDIR__/security/access-tokens/) (PATs) now support expiration dates.
+- [Personal access tokens](__SUBDIR__/security/access-tokens/personal-access-tokens/) (PATs) now support expiration dates.
 @z
 
 @x
@@ -226,9 +226,9 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Administrators can now view [organization Insights](/manuals/admin/insights.md).
+- Administrators can now view [organization Insights](/manuals/accounts/organization/insights.md).
 @y
-- Administrators can now view [organization Insights](manuals/admin/insights.md).
+- Administrators can now view [organization Insights](manuals/accounts/organization/insights.md).
 @z
 
 @x

@@ -96,10 +96,10 @@ Then, create a Personal Access Token (PAT) - a secret token that allows the expo
 
 @x
 The PAT does not require any specific permissions, but it must be created by a user who is an owner of the Docker organization.
-To create a PAT, follow the steps in [Create an access token](/manuals/security/access-tokens.md).
+To create a PAT, follow the steps in [Create an access token](/manuals/security/access-tokens/personal-access-tokens.md).
 @y
 The PAT does not require any specific permissions, but it must be created by a user who is an owner of the Docker organization.
-To create a PAT, follow the steps in [Create an access token](manuals/security/access-tokens.md).
+To create a PAT, follow the steps in [Create an access token](manuals/security/access-tokens/personal-access-tokens.md).
 @z
 
 @x
@@ -273,10 +273,10 @@ alongside Grafana with a pre-configured dashboard to visualize the vulnerability
 @z
 
 @x
-2. [Create a Docker access token](/manuals/security/access-tokens.md)
+2. [Create a Docker access token](/manuals/security/access-tokens/personal-access-tokens.md)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @y
-2. [Create a Docker access token](manuals/security/access-tokens.md)
+2. [Create a Docker access token](manuals/security/access-tokens/personal-access-tokens.md)
    and store it in a plain text file at `/prometheus/prometheus/token` under the template directory.
 @z
 
@@ -571,10 +571,10 @@ and a Datadog site.
 @z
 
 @x
-2. [Create a Docker access token](/manuals/security/access-tokens.md)
+2. [Create a Docker access token](/manuals/security/access-tokens/personal-access-tokens.md)
    and store it in a plain text file at `/datadog/token` under the template directory.
 @y
-2. [Create a Docker access token](manuals/security/access-tokens.md)
+2. [Create a Docker access token](manuals/security/access-tokens/personal-access-tokens.md)
    and store it in a plain text file at `/datadog/token` under the template directory.
 @z
 
@@ -832,10 +832,10 @@ To change the scrape interval:
 
 @x
 If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
-To revoke a PAT, follow the steps in the [Create and manage access tokens](/manuals/security/access-tokens.md).
+To revoke a PAT, follow the steps in the [Create and manage access tokens](/manuals/security/access-tokens/personal-access-tokens.md).
 @y
 If you suspect that your PAT has been compromised or is no longer needed, you can revoke it at any time.
-To revoke a PAT, follow the steps in the [Create and manage access tokens](manuals/security/access-tokens.md).
+To revoke a PAT, follow the steps in the [Create and manage access tokens](manuals/security/access-tokens/personal-access-tokens.md).
 @z
 
 @x

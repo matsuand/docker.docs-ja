@@ -18,7 +18,7 @@ keywords: admin, user management, roles, permissions, sso, provisioning, access 
 @x
   time: 20 minutes
 @y
-  time: 20 分
+  time: 20 minutes
 @z
 
 @x
@@ -108,9 +108,9 @@ Before setting up roles and permissions, it's important to have a clear understa
 @z
 
 @x
-For steps on how you can do this, see [step 1 of onboarding your organization](/manuals/admin/organization/setup/onboard.md).
+For steps on how you can do this, see [step 1 of onboarding your organization](/manuals/accounts/organization/setup/onboard.md).
 @y
-For steps on how you can do this, see [step 1 of onboarding your organization](manuals/admin/organization/setup/onboard.md).
+For steps on how you can do this, see [step 1 of onboarding your organization](manuals/accounts/organization/setup/onboard.md).
 @z
 
 @x
@@ -142,9 +142,9 @@ Docker's predefined roles offer flexibility for various organizational needs. As
 @z
 
 @x
-For more information, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+For more information, see [Roles and permissions](/manuals/security/roles-and-permissions.md).
 @y
-For more information, see [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
+For more information, see [Roles and permissions](manuals/security/roles-and-permissions.md).
 @z
 
 @x
@@ -170,9 +170,9 @@ Teams in Docker provide a structured way to manage member access and they provid
 @z
 
 @x
-For more information, see [Create and manage a team](/manuals/admin/organization/manage/manage-a-team.md).
+For more information, see [Create and manage a team](/manuals/accounts/organization/manage/manage-a-team.md).
 @y
-For more information, see [Create and manage a team](manuals/admin/organization/manage/manage-a-team.md).
+For more information, see [Create and manage a team](manuals/accounts/organization/manage/manage-a-team.md).
 @z
 
 @x
@@ -230,9 +230,9 @@ When you create a Docker organization, you automatically become its sole owner. 
 @z
 
 @x
-For detailed information on owners, see [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md).
+For detailed information on owners, see [Roles and permissions](/manuals/security/roles-and-permissions.md).
 @y
-For detailed information on owners, see [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md).
+For detailed information on owners, see [Roles and permissions](manuals/security/roles-and-permissions.md).
 @z
 
 @x
@@ -268,9 +268,9 @@ Members are granted controlled access to resources and enjoy enhanced organizati
 @z
 
 @x
-For detailed information, see [Manage organization members](/manuals/admin/organization/manage/members.md).
+For detailed information, see [Manage organization members](/manuals/accounts/organization/manage/members.md).
 @y
-For detailed information, see [Manage organization members](manuals/admin/organization/manage/members.md).
+For detailed information, see [Manage organization members](manuals/accounts/organization/manage/members.md).
 @z
 
 @x
@@ -314,9 +314,9 @@ SSO:
 @z
 
 @x
-For more information, see the [SSO documentation](/manuals/enterprise/security/single-sign-on/_index.md).
+For more information, see the [SSO documentation](/manuals/security/authentication/single-sign-on/_index.md).
 @y
-For more information, see the [SSO documentation](manuals/enterprise/security/single-sign-on/_index.md).
+For more information, see the [SSO documentation](manuals/security/authentication/single-sign-on/_index.md).
 @z
 
 @x
@@ -326,9 +326,9 @@ For more information, see the [SSO documentation](manuals/enterprise/security/si
 @z
 
 @x
-Streamline user provisioning and role management with [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md) and [Just-in-Time (JIT) provisioning](/manuals/enterprise/security/provisioning/just-in-time.md).
+Streamline user provisioning and role management with [SCIM](/manuals/security/provisioning/scim/_index.md) and [Just-in-Time (JIT) provisioning](/manuals/security/provisioning/just-in-time.md).
 @y
-Streamline user provisioning and role management with [SCIM](manuals/enterprise/security/provisioning/scim/_index.md) and [Just-in-Time (JIT) provisioning](manuals/enterprise/security/provisioning/just-in-time.md).
+Streamline user provisioning and role management with [SCIM](manuals/security/provisioning/scim/_index.md) and [Just-in-Time (JIT) provisioning](manuals/security/provisioning/just-in-time.md).
 @z
 
 @x
@@ -388,9 +388,9 @@ It also:
 @z
 
 @x
-For more information on how it works, see [Group mapping](/manuals/enterprise/security/provisioning/scim/group-mapping.md).
+For more information on how it works, see [Group mapping](/manuals/security/provisioning/scim/group-mapping.md).
 @y
-For more information on how it works, see [Group mapping](manuals/enterprise/security/provisioning/scim/group-mapping.md).
+For more information on how it works, see [Group mapping](manuals/security/provisioning/scim/group-mapping.md).
 @z
 
 @x
@@ -454,9 +454,9 @@ Activity logs are available for Docker Team or Docker Business plans, with data 
 @z
 
 @x
-For more information, see [Activity logs](/manuals/admin/activity-logs.md).
+For more information, see [Activity logs](/manuals/accounts/organization/activity-logs.md).
 @y
-For more information, see [Activity logs](manuals/admin/activity-logs.md).
+For more information, see [Activity logs](manuals/accounts/organization/activity-logs.md).
 @z
 
 @x
@@ -504,9 +504,9 @@ Insights provide data-driven views of Docker usage to improve team productivity 
 @z
 
 @x
-For more information, see [Insights](/manuals/admin/insights.md).
+For more information, see [Insights](/manuals/accounts/organization/insights.md).
 @y
-For more information, see [Insights](manuals/admin/insights.md).
+For more information, see [Insights](manuals/accounts/organization/insights.md).
 @z
 
 @x
@@ -522,13 +522,13 @@ Now that you've mastered user and access management in Docker, you can:
 @z
 
 @x
-- Review your [activity logs](/manuals/admin/activity-logs.md) regularly to maintain security awareness
-- Check your [Insights dashboard](/manuals/admin/insights.md) to identify opportunities for optimization
-- Explore [advanced security features](/manuals/enterprise/security/_index.md) to further enhance your Docker environment
+- Review your [activity logs](/manuals/accounts/organization/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](/manuals/accounts/organization/insights.md) to identify opportunities for optimization
+- Explore [advanced security features](/manuals/enterprise/security/hardened-desktop/_index.md) to further enhance your Docker environment
 - Share best practices with your team to ensure consistent adoption of security policies
 @y
-- Review your [activity logs](manuals/admin/activity-logs.md) regularly to maintain security awareness
-- Check your [Insights dashboard](manuals/admin/insights.md) to identify opportunities for optimization
-- Explore [advanced security features](manuals/enterprise/security/_index.md) to further enhance your Docker environment
+- Review your [activity logs](manuals/accounts/organization/activity-logs.md) regularly to maintain security awareness
+- Check your [Insights dashboard](manuals/accounts/organization/insights.md) to identify opportunities for optimization
+- Explore [advanced security features](manuals/enterprise/security/hardened-desktop/_index.md) to further enhance your Docker environment
 - Share best practices with your team to ensure consistent adoption of security policies
 @z

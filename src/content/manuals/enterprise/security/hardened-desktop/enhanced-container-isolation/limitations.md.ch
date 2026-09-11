@@ -200,9 +200,9 @@ The integrated Kubernetes feature, when used with the legacy Kubeadm provisioner
 @z
 
 @x
-Use the newer Docker Desktop Kubernetes "KinD" provisioner (see [Cluster provisioning method](/manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The KinD provisioner is also faster and allows for multi-node Kubernetes clusters.
+Use the Docker Desktop Kubernetes `kind` provisioner (see [Cluster provisioning method](/manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The `kind` provisioner is also faster and allows for multi-node Kubernetes clusters.
 @y
-Use the newer Docker Desktop Kubernetes "KinD" provisioner (see [Cluster provisioning method](manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The KinD provisioner is also faster and allows for multi-node Kubernetes clusters.
+Use the Docker Desktop Kubernetes `kind` provisioner (see [Cluster provisioning method](manuals/desktop/use-desktop/kubernetes.md#cluster-provisioning-method)). In this mode, and with ECI turned on, each Kubernetes node runs in an ECI-protected container, providing stronger isolation from the Docker Desktop VM. The `kind` provisioner is also faster and allows for multi-node Kubernetes clusters.
 @z
 
 @x

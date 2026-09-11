@@ -10,23 +10,23 @@ linkTitle: Agent skills
 @z
 
 @x
-description: Import skills from supported host agents into a persistent store shared with Docker Sandboxes.
-keywords: docker sandboxes, sbx, agent skills, shared skills, claude code, codex, copilot, cursor, droid
+description: Add skills from Git repositories or import them from supported host agents into a store shared with Docker Sandboxes.
+keywords: docker sandboxes, sbx, agent skills, shared skills, git repository, claude code, codex, copilot, cursor, devin, droid
 @y
-description: Import skills from supported host agents into a persistent store shared with Docker Sandboxes.
-keywords: docker sandboxes, sbx, agent skills, shared skills, claude code, codex, copilot, cursor, droid
+description: Add skills from Git repositories or import them from supported host agents into a store shared with Docker Sandboxes.
+keywords: docker sandboxes, sbx, agent skills, shared skills, git repository, claude code, codex, copilot, cursor, devin, droid
 @z
 
 @x
-Shared agent skills make skills from supported agents on your host available
-inside your sandboxes. Importing copies the skills into a persistent store that
-survives sandbox deletion and is shared by default with new sandboxes that run
-a supported agent.
+Shared agent skills let you install skills from Git repositories or import
+skills from supported agents on your host. `sbx` keeps installed skills in a
+persistent store that survives sandbox deletion and is shared by default with
+new sandboxes that run a supported agent.
 @y
-Shared agent skills make skills from supported agents on your host available
-inside your sandboxes. Importing copies the skills into a persistent store that
-survives sandbox deletion and is shared by default with new sandboxes that run
-a supported agent.
+Shared agent skills let you install skills from Git repositories or import
+skills from supported agents on your host. `sbx` keeps installed skills in a
+persistent store that survives sandbox deletion and is shared by default with
+new sandboxes that run a supported agent.
 @z
 
 @x
@@ -35,6 +35,156 @@ a supported agent.
 @y
 > [!NOTE]
 > Shared agent skills are experimental.
+@z
+
+@x
+## Add skills from a repository
+@y
+## Add skills from a repository
+@z
+
+@x
+Add every skill from a Git repository:
+@y
+Add every skill from a Git repository:
+@z
+
+@x
+```console
+$ sbx skills add anthropics/skills
+```
+@y
+```console
+$ sbx skills add anthropics/skills
+```
+@z
+
+@x
+The repository must contain one or more valid `SKILL.md` files. You can use
+GitHub `owner/repository` shorthand or a Git URL, including HTTPS and SSH URLs.
+@y
+The repository must contain one or more valid `SKILL.md` files. You can use
+GitHub `owner/repository` shorthand or a Git URL, including HTTPS and SSH URLs.
+@z
+
+@x
+To add specific skills, use `--skill` with each name or pass a comma-separated
+list:
+@y
+To add specific skills, use `--skill` with each name or pass a comma-separated
+list:
+@z
+
+@x
+```console
+$ sbx skills add https://github.com/anthropics/skills --skill frontend-design --skill pdf
+```
+@y
+```console
+$ sbx skills add https://github.com/anthropics/skills --skill frontend-design --skill pdf
+```
+@z
+
+@x
+When a skill with the same name is already installed, `sbx` prompts before
+replacing it. Use `--force` to replace existing skills without prompts.
+@y
+When a skill with the same name is already installed, `sbx` prompts before
+replacing it. Use `--force` to replace existing skills without prompts.
+@z
+
+@x
+## Manage installed skills
+@y
+## Manage installed skills
+@z
+
+@x
+List the skills in the shared store:
+@y
+List the skills in the shared store:
+@z
+
+@x
+```console
+$ sbx skills ls
+```
+@y
+```console
+$ sbx skills ls
+```
+@z
+
+@x
+Update every skill installed from a repository:
+@y
+Update every skill installed from a repository:
+@z
+
+@x
+```console
+$ sbx skills update
+```
+@y
+```console
+$ sbx skills update
+```
+@z
+
+@x
+To update specific skills, pass one or more names:
+@y
+To update specific skills, pass one or more names:
+@z
+
+@x
+```console
+$ sbx skills update frontend-design pdf
+```
+@y
+```console
+$ sbx skills update frontend-design pdf
+```
+@z
+
+@x
+`sbx skills update` only refreshes skills installed with `sbx skills add`. To
+refresh a skill imported from the host, run `sbx skills import` again. To manage
+it with `sbx skills update`, install it from a repository instead.
+@y
+`sbx skills update` only refreshes skills installed with `sbx skills add`. To
+refresh a skill imported from the host, run `sbx skills import` again. To manage
+it with `sbx skills update`, install it from a repository instead.
+@z
+
+@x
+Remove one or more installed skills:
+@y
+Remove one or more installed skills:
+@z
+
+@x
+```console
+$ sbx skills rm frontend-design pdf
+```
+@y
+```console
+$ sbx skills rm frontend-design pdf
+```
+@z
+
+@x
+`sbx` asks for confirmation before removing skills that running agents may be
+using. Use `--force` to skip confirmation in scripts.
+@y
+`sbx` asks for confirmation before removing skills that running agents may be
+using. Use `--force` to skip confirmation in scripts.
+@z
+
+@x
+## Import skills from the host
+@y
+## Import skills from the host
 @z
 
 @x
@@ -67,7 +217,7 @@ store at the path the agent reads inside the sandbox.
 | Agent       | Host source         | Sandbox mount target          |
 | ----------- | ------------------- | ----------------------------- |
 | Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
-| Codex       | `~/.agents/skills`  | `/home/agent/.agents/skills`  |
+| Codex and Devin | `~/.agents/skills` | `/home/agent/.agents/skills` |
 | Copilot     | `~/.copilot/skills` | `/home/agent/.copilot/skills` |
 | Cursor      | `~/.cursor/skills`  | `/home/agent/.cursor/skills`  |
 | Droid       | `~/.factory/skills` | `/home/agent/.factory/skills` |
@@ -75,7 +225,7 @@ store at the path the agent reads inside the sandbox.
 | Agent       | Host source         | Sandbox mount target          |
 | ----------- | ------------------- | ----------------------------- |
 | Claude Code | `~/.claude/skills`  | `/home/agent/.claude/skills`  |
-| Codex       | `~/.agents/skills`  | `/home/agent/.agents/skills`  |
+| Codex and Devin | `~/.agents/skills` | `/home/agent/.agents/skills` |
 | Copilot     | `~/.copilot/skills` | `/home/agent/.copilot/skills` |
 | Cursor      | `~/.cursor/skills`  | `/home/agent/.cursor/skills`  |
 | Droid       | `~/.factory/skills` | `/home/agent/.factory/skills` |
@@ -139,26 +289,40 @@ On Linux, `sbx` uses `$XDG_STATE_HOME/sandboxes/sandboxes/agent-skills` when
 When a skill already exists in the store, `sbx` prompts before replacing it.
 Use `--force` to replace existing skills without prompts. Importing replaces
 the complete skill directory rather than merging files. Run the import command
-again when you want to copy updates from the host. Running `sbx reset` clears
-the shared store.
+again when you want to copy updates from the host. If an import replaces a
+repository-installed skill, `sbx` no longer associates that skill with its
+repository, so `sbx skills update` won't refresh it.
 @y
 When a skill already exists in the store, `sbx` prompts before replacing it.
 Use `--force` to replace existing skills without prompts. Importing replaces
 the complete skill directory rather than merging files. Run the import command
-again when you want to copy updates from the host. Running `sbx reset` clears
-the shared store.
+again when you want to copy updates from the host. If an import replaces a
+repository-installed skill, `sbx` no longer associates that skill with its
+repository, so `sbx skills update` won't refresh it.
+@z
+
+@x
+## Shared store behavior
+@y
+## Shared store behavior
+@z
+
+@x
+Running `sbx reset` clears the shared store.
+@y
+Running `sbx reset` clears the shared store.
 @z
 
 @x
 Sandboxes created with `sbx` version 0.37.0 or later for a supported agent are
 configured to mount the store read-write by default. These sandboxes mount the
-current contents of the store each time they start, so you can import skills
+current contents of the store each time they start, so you can install skills
 before or after creating them. To create a sandbox without the shared store,
 use `--no-share-skills`:
 @y
 Sandboxes created with `sbx` version 0.37.0 or later for a supported agent are
 configured to mount the store read-write by default. These sandboxes mount the
-current contents of the store each time they start, so you can import skills
+current contents of the store each time they start, so you can install skills
 before or after creating them. To create a sandbox without the shared store,
 use `--no-share-skills`:
 @z
@@ -206,9 +370,9 @@ the option.
 @z
 
 @x
-Some agents scan for skills when a session starts. If imported skills don't
+Some agents scan for skills when a session starts. If installed skills don't
 appear in an existing session, start another agent session.
 @y
-Some agents scan for skills when a session starts. If imported skills don't
+Some agents scan for skills when a session starts. If installed skills don't
 appear in an existing session, start another agent session.
 @z

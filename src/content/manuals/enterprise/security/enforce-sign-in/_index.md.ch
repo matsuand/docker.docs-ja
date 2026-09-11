@@ -62,10 +62,10 @@ This page provides an overview of how sign-in enforcement works.
 @z
 
 @x
-When Docker Desktop detects a registry key, `.plist` file, or
+When Docker Desktop detects a registry key, configuration profile, `.plist` file, or
 `registry.json` file:
 @y
-When Docker Desktop detects a registry key, `.plist` file, or
+When Docker Desktop detects a registry key, configuration profile, `.plist` file, or
 `registry.json` file:
 @z
 
@@ -108,9 +108,9 @@ When Docker Desktop detects a registry key, `.plist` file, or
 @z
 
 @x
-Enforcing Docker Desktop sign-in and [enforcing SSO](/manuals/enterprise/security/single-sign-on/connect.md#optional-enforce-sso) are different features that serve different purposes:
+Enforcing Docker Desktop sign-in and [enforcing SSO](/manuals/security/authentication/single-sign-on/connect.md#enforce-sso) are different features that serve different purposes:
 @y
-Enforcing Docker Desktop sign-in and [enforcing SSO](manuals/enterprise/security/single-sign-on/connect.md#optional-enforce-sso) are different features that serve different purposes:
+Enforcing Docker Desktop sign-in and [enforcing SSO](manuals/security/authentication/single-sign-on/connect.md#enforce-sso) are different features that serve different purposes:
 @z
 
 @x
@@ -137,8 +137,8 @@ Enforcing Docker Desktop sign-in and [enforcing SSO](manuals/enterprise/security
 
 @x
 - To set up sign-in enforcement, see [Configure sign-in enforcement](/manuals/enterprise/security/enforce-sign-in/methods.md).
-- To configure SSO enforcement, see [Enforce SSO](/manuals/enterprise/security/single-sign-on/connect.md).
+- To configure SSO enforcement, see [Enforce SSO](/manuals/security/authentication/single-sign-on/connect.md).
 @y
 - To set up sign-in enforcement, see [Configure sign-in enforcement](manuals/enterprise/security/enforce-sign-in/methods.md).
-- To configure SSO enforcement, see [Enforce SSO](manuals/enterprise/security/single-sign-on/connect.md).
+- To configure SSO enforcement, see [Enforce SSO](manuals/security/authentication/single-sign-on/connect.md).
 @z

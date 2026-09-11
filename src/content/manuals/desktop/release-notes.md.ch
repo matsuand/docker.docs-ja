@@ -2397,12 +2397,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.67.0" build_path="/222858/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.67.0" build_path="/222858/" >}}
-@z
-
-@x
 ### New
 @y
 ### 新機能 {#new}
@@ -2517,12 +2511,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.66.1" build_path="/222799/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.66.1" build_path="/222799/" >}}
-@z
-
-@x
 ### Updates
 @y
 ### 機能更新 {#updates}
@@ -2544,12 +2532,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-03-23" >}}
 @y
 {{< release-date date="2026-03-23" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.66.0" build_path="/222299/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.66.0" build_path="/222299/" >}}
 @z
 
 @x
@@ -2616,12 +2598,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-03-16" >}}
 @y
 {{< release-date date="2026-03-16" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.65.0" build_path="/221669/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.65.0" build_path="/221669/" >}}
 @z
 
 @x
@@ -2715,12 +2691,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.64.0" build_path="/221278/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.64.0" build_path="/221278/" >}}
-@z
-
-@x
 ### Updates
 @y
 ### 機能更新 {#updates}
@@ -2809,12 +2779,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.63.0" build_path="/220185/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.63.0" build_path="/220185/" >}}
-@z
-
-@x
 ### New
 @y
 ### 新機能 {#new}
@@ -2898,12 +2862,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-02-23" >}}
 @y
 {{< release-date date="2026-02-23" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.62.0" build_path="/219486/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.62.0" build_path="/219486/" >}}
 @z
 
 @x
@@ -2996,12 +2954,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-02-18" >}}
 @y
 {{< release-date date="2026-02-18" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.61.0" build_path="/219004/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.61.0" build_path="/219004/" >}}
 @z
 
 @x
@@ -3125,12 +3077,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.60.0" build_path="/218231/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.60.0" build_path="/218231/" >}}
-@z
-
-@x
 ### New
 @y
 ### 新機能 {#new}
@@ -3199,12 +3145,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 mac=true version="4.59.1" build_path="/217750/" >}}
-@y
-{{< desktop-install-v2 mac=true version="4.59.1" build_path="/217750/" >}}
-@z
-
-@x
 ### Bug fixes and enhancements
 @y
 ### バグフィックスと拡張 {#bug-fixes-and-enhancements}
@@ -3232,12 +3172,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-02-02" >}}
 @y
 {{< release-date date="2026-02-02" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.59.0" build_path="/217644/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.59.0" build_path="/217644/" >}}
 @z
 
 @x
@@ -3362,12 +3296,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-01-26" >}}
 @y
 {{< release-date date="2026-01-26" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.58.0" build_path="/216728/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.58.0" build_path="/216728/" >}}
 @z
 
 @x
@@ -3494,12 +3422,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.57.0" build_path="/215387/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.57.0" build_path="/215387/" >}}
-@z
-
-@x
 ### Security
 @y
 ### Security
@@ -3568,12 +3490,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2026-01-12" >}}
 @y
 {{< release-date date="2026-01-12" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.56.0" build_path="/214940/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.56.0" build_path="/214940/" >}}
 @z
 
 @x
@@ -3679,12 +3595,6 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 {{< release-date date="2025-12-16" >}}
 @y
 {{< release-date date="2025-12-16" >}}
-@z
-
-@x
-{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.55.0" build_path="/213807/" >}}
-@y
-{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.55.0" build_path="/213807/" >}}
 @z
 
 @x
@@ -13218,11 +13128,11 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 
 @x
 - Easy, Secure sign in with Auth0 and Single Sign-on
-  - Single Sign-on: Users with a Docker Business subscription can now configure SSO to authenticate using their identity providers (IdPs) to access Docker. For more information, see [Single Sign-on](/manuals/enterprise/security/single-sign-on/_index.md).
+  - Single Sign-on: Users with a Docker Business subscription can now configure SSO to authenticate using their identity providers (IdPs) to access Docker. For more information, see [Single Sign-on](/manuals/security/authentication/single-sign-on/_index.md).
   - Signing in to Docker Desktop now takes you through the browser so that you get all the benefits of auto-filling from password managers.
 @y
 - Easy, Secure sign in with Auth0 and Single Sign-on
-  - Single Sign-on: Users with a Docker Business subscription can now configure SSO to authenticate using their identity providers (IdPs) to access Docker. For more information, see [Single Sign-on](manuals/enterprise/security/single-sign-on/_index.md).
+  - Single Sign-on: Users with a Docker Business subscription can now configure SSO to authenticate using their identity providers (IdPs) to access Docker. For more information, see [Single Sign-on](manuals/security/authentication/single-sign-on/_index.md).
   - Signing in to Docker Desktop now takes you through the browser so that you get all the benefits of auto-filling from password managers.
 @z
 
@@ -13251,9 +13161,9 @@ Installing Docker Desktop 4.5.0 from scratch has a bug which defaults Docker Des
 @z
 
 @x
-- Fixed [CVE-2021-45449](../security/_index.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
+- Fixed [CVE-2021-45449](../security/security-announcements.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
 @y
-- Fixed [CVE-2021-45449](../security/_index.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
+- Fixed [CVE-2021-45449](../security/security-announcements.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
 @z
 
 @x
@@ -13365,9 +13275,9 @@ This only affects users if they are on Docker Desktop 4.3.0, 4.3.1 and the user 
 @z
 
 @x
-- Fixed [CVE-2021-45449](../security/_index.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
+- Fixed [CVE-2021-45449](../security/security-announcements.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
 @y
-- Fixed [CVE-2021-45449](../security/_index.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
+- Fixed [CVE-2021-45449](../security/security-announcements.md#cve-2021-45449) that affects users currently on Docker Desktop version 4.3.0 or 4.3.1.
 @z
 
 @x
@@ -13980,10 +13890,10 @@ The updated [Docker Subscription Service Agreement](https://www.docker.com/legal
 
 @x
 To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq).
-For more information, see [Docker subscription overview](../subscription/_index.md).
+For more information, see [Docker subscription overview](../subscription-billing/_index.md).
 @y
 To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq).
-For more information, see [Docker subscription overview](../subscription/_index.md).
+For more information, see [Docker subscription overview](../subscription-billing/_index.md).
 @z
 
 @x

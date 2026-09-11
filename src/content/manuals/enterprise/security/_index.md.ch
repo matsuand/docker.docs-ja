@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+
 @x
 linkTitle: Security
 title: Security for enterprises
@@ -13,192 +15,44 @@ description: Learn about enterprise level security features Docker has to offer 
 keywords: docker, docker hub, docker desktop, security, enterprises, scale
 @z
 
-% grid_admins:
-
 @x
-  - title: Settings Management
-    description: Learn how Settings Management can secure your developers' workflows.
+  - title: Hardened Docker Desktop
+    description: Security features that strengthen developer environments.
     icon: shield-check
-    link: /enterprise/security/hardened-desktop/settings-management/
+    link: /enterprise/security/hardened-desktop/
 @y
-  - title: Settings Management
-    description: Learn how Settings Management can secure your developers' workflows.
+  - title: Hardened Docker Desktop
+    description: Security features that strengthen developer environments.
     icon: shield-check
-    link: __SUBDIR__/enterprise/security/hardened-desktop/settings-management/
-@z
-
-@x
-  - title: Enhanced Container Isolation
-    description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: shield-check
-    link: /enterprise/security/hardened-desktop/enhanced-container-isolation/
-@y
-  - title: Enhanced Container Isolation
-    description: Understand how Enhanced Container Isolation can prevent container attacks.
-    icon: shield-check
-    link: __SUBDIR__/enterprise/security/hardened-desktop/enhanced-container-isolation/
-@z
-
-@x
-  - title: Registry Access Management
-    description: Control the registries developers can access while using Docker Desktop.
-    icon: server
-    link: /enterprise/security/hardened-desktop/registry-access-management/
-@y
-  - title: Registry Access Management
-    description: Control the registries developers can access while using Docker Desktop.
-    icon: server
-    link: __SUBDIR__/enterprise/security/hardened-desktop/registry-access-management/
-@z
-
-@x
-  - title: Image Access Management
-    description: Control the images developers can pull from Docker Hub.
-    icon: photo
-    link: /enterprise/security/hardened-desktop/image-access-management/
-@y
-  - title: Image Access Management
-    description: Control the images developers can pull from Docker Hub.
-    icon: photo
-    link: __SUBDIR__/enterprise/security/hardened-desktop/image-access-management/
-@z
-
-@x
-  - title: "Air-Gapped Containers"
-    description: Restrict containers from accessing unwanted network resources.
-    icon: lock-closed
-    link: /enterprise/security/hardened-desktop/air-gapped-containers/
-@y
-  - title: "Air-Gapped Containers"
-    description: Restrict containers from accessing unwanted network resources.
-    icon: lock-closed
-    link: __SUBDIR__/enterprise/security/hardened-desktop/air-gapped-containers/
+    link: __SUBDIR__/enterprise/security/hardened-desktop/
 @z
 
 @x
   - title: Enforce sign-in
     description: Configure sign-in for members of your teams and organizations.
+    icon: finger-print
     link: /enterprise/security/enforce-sign-in/
-    icon: finger-print
 @y
   - title: Enforce sign-in
     description: Configure sign-in for members of your teams and organizations.
-    link: __SUBDIR__/enterprise/security/enforce-sign-in/
     icon: finger-print
+    link: __SUBDIR__/enterprise/security/enforce-sign-in/
 @z
 
 @x
-  - title: Domain management
-    description: Identify uncaptured users in your organization.
-    link: /enterprise/security/domain-management/
-    icon: magnifying-glass
+[Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
+provides security features that help organizations secure developer
+environments, including Settings Management, Enhanced Container Isolation,
+Registry Access Management, and related controls.
 @y
-  - title: Domain management
-    description: Identify uncaptured users in your organization.
-    link: __SUBDIR__/enterprise/security/domain-management/
-    icon: magnifying-glass
+[Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md)
+provides security features that help organizations secure developer
+environments, including Settings Management, Enhanced Container Isolation,
+Registry Access Management, and related controls.
 @z
 
 @x
-  - title: Docker Scout
-    description: Explore how Docker Scout can help you create a more secure software supply chain.
-    icon: chart-bar
-    link: /scout/
+{{< grid >}}
 @y
-  - title: Docker Scout
-    description: Explore how Docker Scout can help you create a more secure software supply chain.
-    icon: chart-bar
-    link: __SUBDIR__/scout/
-@z
-
-@x
-  - title: SSO
-    description: Learn how to configure SSO for your company or organization.
-    icon: key
-    link: /enterprise/security/single-sign-on/
-@y
-  - title: SSO
-    description: Learn how to configure SSO for your company or organization.
-    icon: key
-    link: __SUBDIR__/enterprise/security/single-sign-on/
-@z
-
-@x
-  - title: SCIM
-    description: Set up SCIM to automatically provision and deprovision users.
-    icon: clipboard-document-check
-    link: /enterprise/security/provisioning/scim/
-@y
-  - title: SCIM
-    description: Set up SCIM to automatically provision and deprovision users.
-    icon: clipboard-document-check
-    link: __SUBDIR__/enterprise/security/provisioning/scim/
-@z
-
-@x
-  - title: Roles and permissions
-    description: Assign roles to individuals giving them different permissions within an organization.
-    icon: identification
-    link: /enterprise/security/roles-and-permissions/
-@y
-  - title: Roles and permissions
-    description: Assign roles to individuals giving them different permissions within an organization.
-    icon: identification
-    link: __SUBDIR__/enterprise/security/roles-and-permissions/
-@z
-
-@x
-  - title: Private marketplace for Extensions (Beta)
-    description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
-    icon: building-storefront
-    link: /extensions/private-marketplace/
-@y
-  - title: Private marketplace for Extensions (Beta)
-    description: Learn how to configure and set up a private marketplace with a curated list of extensions for your Docker Desktop users.
-    icon: building-storefront
-    link: __SUBDIR__/extensions/private-marketplace/
-@z
-
-@x
-  - title: Organization access tokens
-    description: Create organization access tokens as an alternative to a password.
-    link: /enterprise/security/access-tokens/
-    icon: lock-closed
-@y
-  - title: Organization access tokens
-    description: Create organization access tokens as an alternative to a password.
-    link: __SUBDIR__/enterprise/security/access-tokens/
-    icon: lock-closed
-@z
-
-@x
-Docker provides security guardrails for both administrators and developers.
-@y
-Docker provides security guardrails for both administrators and developers.
-@z
-
-@x
-If you're an administrator, you can enforce sign-in across Docker products for your developers, and
-scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management.
-@y
-If you're an administrator, you can enforce sign-in across Docker products for your developers, and
-scale, manage, and secure your instances of Docker Desktop with DevOps security controls like Enhanced Container Isolation and Registry Access Management.
-@z
-
-@x
-## For administrators
-@y
-## For administrators
-@z
-
-@x
-Explore the security features Docker offers to satisfy your company's security policies.
-@y
-Explore the security features Docker offers to satisfy your company's security policies.
-@z
-
-@x
-{{< grid items="grid_admins" >}}
-@y
-{{< grid items="grid_admins" >}}
+{{< grid >}}
 @z

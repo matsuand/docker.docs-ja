@@ -268,6 +268,7 @@ file removes. In this table, `~` is `/home/agent`.
 | `codex` | `~/.codex/config.toml` |
 | `copilot` | `~/.copilot/config.json` |
 | `cursor` | `~/.cursor/cli-config.json` |
+| `devin` | `~/.config/devin/config.json`, `~/.config/devin/mcp_config.json` |
 | `gemini` | `~/.gemini/settings.json` |
 | `kiro` | `~/.kiro/settings/mcp.json` |
 | `opencode` | `~/.config/opencode/opencode.json` |
@@ -278,6 +279,7 @@ file removes. In this table, `~` is `/home/agent`.
 | `codex` | `~/.codex/config.toml` |
 | `copilot` | `~/.copilot/config.json` |
 | `cursor` | `~/.cursor/cli-config.json` |
+| `devin` | `~/.config/devin/config.json`, `~/.config/devin/mcp_config.json` |
 | `gemini` | `~/.gemini/settings.json` |
 | `kiro` | `~/.kiro/settings/mcp.json` |
 | `opencode` | `~/.config/opencode/opencode.json` |
@@ -727,16 +729,22 @@ agent. For a step-by-step walkthrough, see
 Use `extends:` to create a variant of a built-in agent without reproducing its
 configuration. The child kit inherits the parent's image, credentials, network
 permissions, persistent volumes, settings, MCP integration, and agent
-instructions. Use `extends:` for a single parent agent; use a mixin to add an
-independent capability that can work with one or more agents. See
+instructions. It also inherits the parent's environment variables and all
+`setup.install`, `setup.startup`, and `setup.files` entries. Parent setup entries
+run before child entries. If both kits set the same environment variable, the
+child's value wins. Use `extends:` for a single parent agent; use a mixin to add
+an independent capability that can work with one or more agents. See
 [Fork an existing agent](kit-examples.md#fork-an-existing-agent) for an example
 that changes Claude Code's permission mode.
 @y
 Use `extends:` to create a variant of a built-in agent without reproducing its
 configuration. The child kit inherits the parent's image, credentials, network
 permissions, persistent volumes, settings, MCP integration, and agent
-instructions. Use `extends:` for a single parent agent; use a mixin to add an
-independent capability that can work with one or more agents. See
+instructions. It also inherits the parent's environment variables and all
+`setup.install`, `setup.startup`, and `setup.files` entries. Parent setup entries
+run before child entries. If both kits set the same environment variable, the
+child's value wins. Use `extends:` for a single parent agent; use a mixin to add
+an independent capability that can work with one or more agents. See
 [Fork an existing agent](kit-examples.md#fork-an-existing-agent) for an example
 that changes Claude Code's permission mode.
 @z
@@ -749,59 +757,245 @@ that changes Claude Code's permission mode.
 
 @x
 Kits can be loaded from a local path (a directory or ZIP file), a Git
-repository, or an OCI registry. Pass `--kit` more than once to stack
-several kits on the same sandbox.
+repository, or an OCI registry. To launch a sandbox kit, pass its reference in
+place of a built-in agent name to `sbx run` or `sbx create`. Use `--kit` for
+mixins, and repeat the flag to apply multiple mixins to the same sandbox.
 @y
 Kits can be loaded from a local path (a directory or ZIP file), a Git
-repository, or an OCI registry. Pass `--kit` more than once to stack
-several kits on the same sandbox.
+repository, or an OCI registry. To launch a sandbox kit, pass its reference in
+place of a built-in agent name to `sbx run` or `sbx create`. Use `--kit` for
+mixins, and repeat the flag to apply multiple mixins to the same sandbox.
 @z
 
 @x
-> [!IMPORTANT]
-> `--kit` only takes effect when a sandbox is created. Passing it against an
-> existing sandbox name fails with
-> `--kit can only be used when creating a new sandbox`. To add a supported
-> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
-> `sbx kit add` restarts the sandbox to apply the updated kit set.
-> VM state — installed packages, Docker images, volumes, and agent history
-> — is preserved across the restart. It supports mixin kits limited to
-> `environment.variables`, `setup.install`, and `permissions.network.allow`.
-> To use other fields, recreate the sandbox with `--kit`.
+Starting with Docker Sandboxes version 0.42.0, pass the sandbox kit reference
+as the first argument:
 @y
-> [!IMPORTANT]
-> `--kit` only takes effect when a sandbox is created. Passing it against an
-> existing sandbox name fails with
-> `--kit can only be used when creating a new sandbox`. To add a supported
-> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
-> `sbx kit add` restarts the sandbox to apply the updated kit set.
-> VM state — installed packages, Docker images, volumes, and agent history
-> — is preserved across the restart. It supports mixin kits limited to
-> `environment.variables`, `setup.install`, and `permissions.network.allow`.
-> To use other fields, recreate the sandbox with `--kit`.
-@z
-
-@x
-### Local
-@y
-### Local
-@z
-
-@x
-Point `--kit` at a directory or ZIP file on disk:
-@y
-Point `--kit` at a directory or ZIP file on disk:
+Starting with Docker Sandboxes version 0.42.0, pass the sandbox kit reference
+as the first argument:
 @z
 
 @x
 ```console
-$ sbx run claude --kit ./my-kit/
-$ sbx run claude --kit ./my-kit-1.0.zip
+$ sbx run <sandbox-kit-ref> [PATH...]
+$ sbx create <sandbox-kit-ref> [PATH...]
 ```
 @y
 ```console
-$ sbx run claude --kit ./my-kit/
-$ sbx run claude --kit ./my-kit-1.0.zip
+$ sbx run <sandbox-kit-ref> [PATH...]
+$ sbx create <sandbox-kit-ref> [PATH...]
+```
+@z
+
+@x
+The previous form, `sbx run <sandbox-kit-name> --kit <sandbox-kit-ref>`, is
+deprecated.
+@y
+The previous form, `sbx run <sandbox-kit-name> --kit <sandbox-kit-ref>`, is
+deprecated.
+@z
+
+@x
+> [!IMPORTANT]
+> A mixin passed with `--kit` only takes effect when a sandbox is created.
+> Passing it against an
+> existing sandbox name fails with
+> `--kit can only be used when creating a new sandbox`. To add a supported
+> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
+> `sbx kit add` restarts the sandbox to apply the updated kit set.
+> VM state — installed packages, Docker images, volumes, and agent history
+> — is preserved across the restart. It supports mixin kits limited to
+> `environment.variables`, `setup.install`, and `permissions.network.allow`.
+> To use other fields, recreate the sandbox with the mixin.
+@y
+> [!IMPORTANT]
+> A mixin passed with `--kit` only takes effect when a sandbox is created.
+> Passing it against an
+> existing sandbox name fails with
+> `--kit can only be used when creating a new sandbox`. To add a supported
+> mixin kit to a running sandbox, use [`sbx kit add`](#local) instead.
+> `sbx kit add` restarts the sandbox to apply the updated kit set.
+> VM state — installed packages, Docker images, volumes, and agent history
+> — is preserved across the restart. It supports mixin kits limited to
+> `environment.variables`, `setup.install`, and `permissions.network.allow`.
+> To use other fields, recreate the sandbox with the mixin.
+@z
+
+@x
+### Pass arguments to kits
+@y
+### Pass arguments to kits
+@z
+
+@x
+A schema v2 kit can declare inputs in a top-level `args:` block and reference
+them in `spec.yaml` or static files with `${{ kit.args.<name> }}`. Supply a
+value with `--kit-arg name=value`:
+@y
+A schema v2 kit can declare inputs in a top-level `args:` block and reference
+them in `spec.yaml` or static files with `${{ kit.args.<name> }}`. Supply a
+value with `--kit-arg name=value`:
+@z
+
+@x
+```console
+$ sbx run ./my-agent/ --kit-arg channel=beta
+```
+@y
+```console
+$ sbx run ./my-agent/ --kit-arg channel=beta
+```
+@z
+
+@x
+Kit argument values are plain text. Values supplied with `--kit-arg` can remain
+in your shell history, and argument files store their values unencrypted. Don't
+use kit arguments for secrets. Use [Credentials](../configuration/credentials.md)
+instead.
+@y
+Kit argument values are plain text. Values supplied with `--kit-arg` can remain
+in your shell history, and argument files store their values unencrypted. Don't
+use kit arguments for secrets. Use [Credentials](../configuration/credentials.md)
+instead.
+@z
+
+@x
+An argument without a kit name prefix applies to every kit that declares it.
+To target one kit, prefix the argument with the value of that kit's `name`
+field and a period:
+@y
+An argument without a kit name prefix applies to every kit that declares it.
+To target one kit, prefix the argument with the value of that kit's `name`
+field and a period:
+@z
+
+@x
+```console
+$ sbx run ./my-agent/ \
+    --kit ./my-mixin/ \
+    --kit-arg version=1.2.3 \
+    --kit-arg my-mixin.version=2.0.0
+```
+@y
+```console
+$ sbx run ./my-agent/ \
+    --kit ./my-mixin/ \
+    --kit-arg version=1.2.3 \
+    --kit-arg my-mixin.version=2.0.0
+```
+@z
+
+@x
+The kit-specific value takes precedence over the shared value for `my-mixin`.
+@y
+The kit-specific value takes precedence over the shared value for `my-mixin`.
+@z
+
+@x
+Use `--kit-args-file` for a reusable set of `name=value` entries. Blank lines
+and lines that start with `#` are ignored:
+@y
+Use `--kit-args-file` for a reusable set of `name=value` entries. Blank lines
+and lines that start with `#` are ignored:
+@z
+
+@x
+```text {title="kit.args"}
+version=1.2.3
+my-mixin.channel=beta
+```
+@y
+```text {title="kit.args"}
+version=1.2.3
+my-mixin.channel=beta
+```
+@z
+
+@x
+```console
+$ sbx create ./my-agent/ . \
+    --kit ./my-mixin/ \
+    --kit-args-file ./kit.args \
+    --kit-arg my-mixin.channel=stable
+```
+@y
+```console
+$ sbx create ./my-agent/ . \
+    --kit ./my-mixin/ \
+    --kit-args-file ./kit.args \
+    --kit-arg my-mixin.channel=stable
+```
+@z
+
+@x
+When you pass multiple argument files, a value in a later file overrides the
+same key in an earlier file. Values passed with `--kit-arg` override every
+file. For repeated `--kit-arg` entries with the same key, the last value wins.
+@y
+When you pass multiple argument files, a value in a later file overrides the
+same key in an earlier file. Values passed with `--kit-arg` override every
+file. For repeated `--kit-arg` entries with the same key, the last value wins.
+@z
+
+@x
+Argument validation happens before the sandbox is created. `sbx` rejects a
+missing required value, a value outside its declared `enum` or `pattern`, a
+placeholder without a declaration, and a supplied argument that no resolved
+kit declares. Pass the same argument flags to `sbx kit validate` or
+`sbx kit inspect` when the kit requires values. See
+[Kit arguments](kit-reference.md#arguments) for the declaration fields.
+@y
+Argument validation happens before the sandbox is created. `sbx` rejects a
+missing required value, a value outside its declared `enum` or `pattern`, a
+placeholder without a declaration, and a supplied argument that no resolved
+kit declares. Pass the same argument flags to `sbx kit validate` or
+`sbx kit inspect` when the kit requires values. See
+[Kit arguments](kit-reference.md#arguments) for the declaration fields.
+@z
+
+@x
+### Local
+@y
+### Local
+@z
+
+@x
+Launch a local sandbox kit by passing its directory or ZIP file in place of the
+agent name. Relative paths must start with `./` or `../` so `sbx` can
+distinguish them from agent and sandbox names:
+@y
+Launch a local sandbox kit by passing its directory or ZIP file in place of the
+agent name. Relative paths must start with `./` or `../` so `sbx` can
+distinguish them from agent and sandbox names:
+@z
+
+@x
+```console
+$ sbx run ./my-agent/
+$ sbx create ../my-agent-1.0.zip .
+```
+@y
+```console
+$ sbx run ./my-agent/
+$ sbx create ../my-agent-1.0.zip .
+```
+@z
+
+@x
+Pass a local mixin with `--kit`:
+@y
+Pass a local mixin with `--kit`:
+@z
+
+@x
+```console
+$ sbx run claude --kit ./my-mixin/
+$ sbx run claude --kit ../my-mixin-1.0.zip
+```
+@y
+```console
+$ sbx run claude --kit ./my-mixin/
+$ sbx run claude --kit ../my-mixin-1.0.zip
 ```
 @z
 
@@ -842,6 +1036,28 @@ remove and recreate it to start clean.
 @z
 
 @x
+Launch a sandbox kit from a Git repository:
+@y
+Launch a sandbox kit from a Git repository:
+@z
+
+@x
+```console
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=amp"
+```
+@y
+```console
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=amp"
+```
+@z
+
+@x
+Pass a Git-hosted mixin with `--kit`:
+@y
+Pass a Git-hosted mixin with `--kit`:
+@z
+
+@x
 ```console
 $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v0.1.0&dir=code-server"
 ```
@@ -874,6 +1090,28 @@ $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#ref=v
 @z
 
 @x
+Launch a sandbox kit from an OCI registry:
+@y
+Launch a sandbox kit from an OCI registry:
+@z
+
+@x
+```console
+$ sbx run docker.io/sbx/droid-kit:latest
+```
+@y
+```console
+$ sbx run docker.io/sbx/droid-kit:latest
+```
+@z
+
+@x
+Pass an OCI-hosted mixin with `--kit`:
+@y
+Pass an OCI-hosted mixin with `--kit`:
+@z
+
+@x
 ```console
 $ sbx run claude --kit ghcr.io/myorg/my-kit:1.0
 ```
@@ -896,27 +1134,29 @@ For Docker Hub, include the full `docker.io` prefix. See
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > kits. For other registries, store pull credentials with
 > [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
-> before running the sandbox:
+> before running the sandbox. These credentials take priority over credentials
+> in the Docker credential store:
 >
 > ```console
 > $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
 > ```
 >
-> Without stored credentials, pulls from non-Docker Hub registries are
-> anonymous and private kits fail to pull.
+> Without credentials from either store, pulls from non-Docker Hub registries
+> are anonymous and private kits fail to pull.
 @y
 > [!IMPORTANT]
 > For Docker Hub, `sbx` reuses your `sbx login` session to pull private
 > kits. For other registries, store pull credentials with
 > [`sbx secret set --registry`](../configuration/credentials.md#registry-credentials)
-> before running the sandbox:
+> before running the sandbox. These credentials take priority over credentials
+> in the Docker credential store:
 >
 > ```console
 > $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
 > ```
 >
-> Without stored credentials, pulls from non-Docker Hub registries are
-> anonymous and private kits fail to pull.
+> Without credentials from either store, pulls from non-Docker Hub registries
+> are anonymous and private kits fail to pull.
 @z
 
 @x
@@ -1210,17 +1450,17 @@ automatically.
 @z
 
 @x
-`sbx kit pull` prefers credentials stored with
-[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials),
-falling back to the Docker credential store. `sbx kit push` only uses the
-Docker credential store, so pushing to a private registry requires a prior
-`docker login`.
+For Docker Hub, `sbx kit pull` and `sbx kit push` use the session from
+`sbx login`. For other registries, they prefer credentials stored with
+[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials).
+Both commands fall back to the Docker credential store, so credentials from
+`docker login` also work.
 @y
-`sbx kit pull` prefers credentials stored with
-[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials),
-falling back to the Docker credential store. `sbx kit push` only uses the
-Docker credential store, so pushing to a private registry requires a prior
-`docker login`.
+For Docker Hub, `sbx kit pull` and `sbx kit push` use the session from
+`sbx login`. For other registries, they prefer credentials stored with
+[`sbx secret set --registry`](../configuration/credentials.md#registry-credentials).
+Both commands fall back to the Docker credential store, so credentials from
+`docker login` also work.
 @z
 
 @x
@@ -1231,11 +1471,11 @@ Docker credential store, so pushing to a private registry requires a prior
 
 @x
 For a field-by-field reference of every `spec.yaml` block — top-level
-fields, credentials, network, environment, setup, static files,
+fields, arguments, credentials, network, environment, setup, static files,
 agent instructions, and the sandbox block — see [Kit spec reference](kit-reference.md).
 @y
 For a field-by-field reference of every `spec.yaml` block — top-level
-fields, credentials, network, environment, setup, static files,
+fields, arguments, credentials, network, environment, setup, static files,
 agent instructions, and the sandbox block — see [Kit spec reference](kit-reference.md).
 @z
 

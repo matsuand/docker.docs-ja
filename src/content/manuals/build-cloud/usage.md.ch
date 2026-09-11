@@ -96,7 +96,7 @@ $ docker buildx use cloud-<ORG>-<BUILDER_NAME> --global
 @x
    ![Selecting the cloud builder as default using the Docker Desktop GUI](/build/images/set-default-builder-gui.webp)
 @y
-   ![Selecting the cloud builder as default using the Docker Desktop GUI](__SUBDIR__/build/images/set-default-builder-gui.webp)
+   ![Selecting the cloud builder as default using the Docker Desktop GUI](build/images/set-default-builder-gui.webp)
 @z
 
 @x
@@ -119,14 +119,14 @@ uses the `default` builder, unless you specify the `--builder` flag explicitly.
 
 @x
 If you use build scripts, such as `make`, that use the `docker build` command,
-we recommend updating your build commands to `docker buildx build`. Alternatively,
-you can set the [`BUILDX_BUILDER` environment
+update your build commands to `docker buildx build`. Alternatively, you can set
+the [`BUILDX_BUILDER` environment
 variable](/manuals/build/building/variables.md#buildx_builder) to specify which
 builder `docker build` should use.
 @y
 If you use build scripts, such as `make`, that use the `docker build` command,
-we recommend updating your build commands to `docker buildx build`. Alternatively,
-you can set the [`BUILDX_BUILDER` environment
+update your build commands to `docker buildx build`. Alternatively, you can set
+the [`BUILDX_BUILDER` environment
 variable](manuals/build/building/variables.md#buildx_builder) to specify which
 builder `docker build` should use.
 @z
@@ -148,12 +148,12 @@ cloud builder as your selected builder, then run your build.
 @x
 > [!NOTE]
 >
-> Make sure you're using a supported version of Docker Compose, see
+> Make sure Buildx version 0.37.0 or later is installed. See
 > [Prerequisites](setup.md#prerequisites).
 @y
 > [!NOTE]
 >
-> Make sure you're using a supported version of Docker Compose, see
+> Make sure Buildx version 0.37.0 or later is installed. See
 > [Prerequisites](setup.md#prerequisites).
 @z
 
@@ -186,23 +186,31 @@ variable](manuals/build/building/variables.md#buildx_builder) to select the clou
 @z
 
 @x
-Building with `--tag` loads the build result to the local image store
-automatically when the build finishes. To build without a tag and load the
-result, you must pass the `--load` flag.
+When you don't specify an output, Buildx leaves an untagged build result in the
+cloud build cache and doesn't load it into Docker Engine. If you use `--tag`,
+Buildx automatically loads the image when the build targets a single platform
+and runs on one cloud node. Use `--load` to request loading explicitly.
 @y
-Building with `--tag` loads the build result to the local image store
-automatically when the build finishes. To build without a tag and load the
-result, you must pass the `--load` flag.
+When you don't specify an output, Buildx leaves an untagged build result in the
+cloud build cache and doesn't load it into Docker Engine. If you use `--tag`,
+Buildx automatically loads the image when the build targets a single platform
+and runs on one cloud node. Use `--load` to request loading explicitly.
 @z
 
 @x
-Loading the build result for multi-platform images is not supported. Use the
-`docker buildx build --push` flag when building multi-platform images to push
-the output to a registry.
+The target Docker context determines which Docker Engine image store receives
+the result. For details about loading behavior and other output configurations,
+see [Load results from Docker Build Cloud](/manuals/build/exporters/_index.md#load-results-from-docker-build-cloud).
 @y
-Loading the build result for multi-platform images is not supported. Use the
-`docker buildx build --push` flag when building multi-platform images to push
-the output to a registry.
+The target Docker context determines which Docker Engine image store receives
+the result. For details about loading behavior and other output configurations,
+see [Load results from Docker Build Cloud](manuals/build/exporters/_index.md#load-results-from-docker-build-cloud).
+@z
+
+@x
+To push a multi-platform image to a registry instead of loading it:
+@y
+To push a multi-platform image to a registry instead of loading it:
 @z
 
 @x
@@ -222,11 +230,11 @@ $ docker buildx build --builder cloud-<ORG>-<BUILDER_NAME> \
 @z
 
 @x
-If you want to build with a tag, but you don't want to load the results to your
-local image store, you can export the build results to the build cache only:
+To keep a tagged result in the build cache instead of loading it into Docker
+Engine, use the `cacheonly` exporter:
 @y
-If you want to build with a tag, but you don't want to load the results to your
-local image store, you can export the build results to the build cache only:
+To keep a tagged result in the build cache instead of loading it into Docker
+Engine, use the `cacheonly` exporter:
 @z
 
 @x

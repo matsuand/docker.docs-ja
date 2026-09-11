@@ -56,9 +56,9 @@ $ sbx run codex ~/my-project
 @z
 
 @x
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @y
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @z
 
 @x
@@ -71,6 +71,14 @@ $ sbx run codex
 $ cd ~/my-project
 $ sbx run codex
 ```
+@z
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
 @z
 
 @x
@@ -199,11 +207,11 @@ defaults instead, so lead with the flag to keep bypass mode:
 
 @x
 ```console
-$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
+$ sbx run --name <sandbox-name> -- --dangerously-bypass-approvals-and-sandbox "fix the build"
 ```
 @y
 ```console
-$ sbx run codex -- --dangerously-bypass-approvals-and-sandbox "fix the build"
+$ sbx run --name <sandbox-name> -- --dangerously-bypass-approvals-and-sandbox "fix the build"
 ```
 @z
 

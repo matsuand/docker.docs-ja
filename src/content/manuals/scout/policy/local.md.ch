@@ -70,45 +70,9 @@ Policies come from three sources, which can be combined:
 @z
 
 @x
-## Migrate from Policy Evaluation in the Dashboard
+## Use in CI
 @y
-## Migrate from Policy Evaluation in the Dashboard
-@z
-
-@x
-If you used the Policies page in the Docker Scout Dashboard, `docker scout
-policy` provides the same capability from the CLI. The built-in policies are
-the same set. To evaluate an image:
-@y
-If you used the Policies page in the Docker Scout Dashboard, `docker scout
-policy` provides the same capability from the CLI. The built-in policies are
-the same set. To evaluate an image:
-@z
-
-@x
-```console
-$ docker scout policy <image>
-```
-@y
-```console
-$ docker scout policy <image>
-```
-@z
-
-@x
-If you had customized policies in the dashboard, such as adjusted severity
-thresholds or disabled policies, you can replicate those settings with a
-`--policy-config` file. See [Configure built-in policies](#configure-built-in-policies).
-@y
-If you had customized policies in the dashboard, such as adjusted severity
-thresholds or disabled policies, you can replicate those settings with a
-`--policy-config` file. See [Configure built-in policies](#configure-built-in-policies).
-@z
-
-@x
-### Use in CI
-@y
-### Use in CI
+## Use in CI
 @z
 
 @x
@@ -150,46 +114,14 @@ For other CI platforms, install the
 @z
 
 @x
-### Migrate the GitHub Action from dashboard-based policy evaluation
+To gate a build on policy compliance compared to an environment, use the
+`compare` command with a policy configuration:
 @y
-### Migrate the GitHub Action from dashboard-based policy evaluation
+To gate a build on policy compliance compared to an environment, use the
+`compare` command with a policy configuration:
 @z
 
-@x
-The Docker Scout GitHub Action now supports the same local policy configuration
-flags as `docker scout policy`. If you used `compare --exit-on policy` with
-dashboard-managed policy settings, replicate those settings locally with
-`--policy-config`:
-@y
-The Docker Scout GitHub Action now supports the same local policy configuration
-flags as `docker scout policy`. If you used `compare --exit-on policy` with
-dashboard-managed policy settings, replicate those settings locally with
-`--policy-config`:
-@z
-
-@x
-```yaml
-- uses: docker/scout-action@v1.23.0
-  with:
-    command: compare
-    image: ${{ env.IMAGE_NAME }}
-    to-env: production
-    exit-on: policy
-    policy-config: policies.json
-    organization: <ORG>
-```
-@y
-```yaml
-- uses: docker/scout-action@v1.23.0
-  with:
-    command: compare
-    image: ${{ env.IMAGE_NAME }}
-    to-env: production
-    exit-on: policy
-    policy-config: policies.json
-    organization: <ORG>
-```
-@z
+% snip code...
 
 @x
 See [Configure built-in policies](#configure-built-in-policies) for the
@@ -439,29 +371,7 @@ To change a policy's contribution to the score, set `custom.weight` in the
 policy's Rego metadata, or override it per policy in the policy-config file:
 @z
 
-@x
-```json
-{
-  "policies": [
-    {
-      "name": "no-copyleft-licenses",
-      "weight": 0
-    }
-  ]
-}
-```
-@y
-```json
-{
-  "policies": [
-    {
-      "name": "no-copyleft-licenses",
-      "weight": 0
-    }
-  ]
-}
-```
-@z
+% snip code...
 
 @x
 ## Built-in policies

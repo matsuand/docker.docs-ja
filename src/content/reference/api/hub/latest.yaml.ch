@@ -256,13 +256,13 @@ tags:
   - name: access-tokens
     x-displayName: Personal Access Tokens
     description: |
-      The Personal Access Token endpoints lets you manage personal access tokens. For more information, see [Access Tokens](https://docs.docker.com/security/access-tokens/).
+      The Personal Access Token endpoints lets you manage personal access tokens. For more information, see [Access Tokens](https://docs.docker.com/security/access-tokens/personal-access-tokens/).
 @y
       For more information, see [Authentication](#tag/authentication).
   - name: access-tokens
     x-displayName: Personal Access Tokens
     description: |
-      The Personal Access Token endpoints lets you manage personal access tokens. For more information, see [Access Tokens](https://docs.docker.com/security/access-tokens/).
+      The Personal Access Token endpoints lets you manage personal access tokens. For more information, see [Access Tokens](https://docs.docker.com/security/access-tokens/personal-access-tokens/).
 @z
 
 @x
@@ -3553,11 +3553,12 @@ paths:
               properties:
                 role:
                   type: string
-                  description: Role of the member
-                  enum:
-                    - owner
-                    - editor
-                    - member
+                  description: |
+                    Role of the member. Valid values are the core roles
+                    `owner`, `editor`, and `member`, or the name of an
+                    existing [custom role](https://docs.docker.com/enterprise/security/roles-and-permissions/custom-roles/manage/).
+                    Use the custom role's name identifier, not its label or UUID.
+                  example: owner
       responses:
         "200":
           description: Member role updated
@@ -3593,11 +3594,12 @@ paths:
               properties:
                 role:
                   type: string
-                  description: Role of the member
-                  enum:
-                    - owner
-                    - editor
-                    - member
+                  description: |
+                    Role of the member. Valid values are the core roles
+                    `owner`, `editor`, and `member`, or the name of an
+                    existing [custom role](https://docs.docker.com/enterprise/security/roles-and-permissions/custom-roles/manage/).
+                    Use the custom role's name identifier, not its label or UUID.
+                  example: owner
       responses:
         "200":
           description: Member role updated
@@ -3936,6 +3938,13 @@ paths:
                   type: string
                 description:
                   type: string
+                role:
+                  type: string
+                  description: |
+                    Role assigned to the team. Valid values are the core roles
+                    `owner`, `editor`, and `member`, or the name of an
+                    existing [custom role](https://docs.docker.com/enterprise/security/roles-and-permissions/custom-roles/manage/).
+                    Use the custom role's name identifier, not its label or UUID.
       responses:
         "200":
           description: ""
@@ -4090,6 +4099,13 @@ paths:
                   type: string
                 description:
                   type: string
+                role:
+                  type: string
+                  description: |
+                    Role assigned to the team. Valid values are the core roles
+                    `owner`, `editor`, and `member`, or the name of an
+                    existing [custom role](https://docs.docker.com/enterprise/security/roles-and-permissions/custom-roles/manage/).
+                    Use the custom role's name identifier, not its label or UUID.
       responses:
         "200":
           description: ""
@@ -6117,9 +6133,12 @@ components:
           example: example@docker.com
         role:
           type: string
-          description: User's role in the Organization
+          description: |
+            The member's role in the organization (`Owner`, `Editor`,
+            `Member`, or `Invitee` for pending invites).
           enum:
             - Owner
+            - Editor
             - Member
             - Invitee
           example: Owner
@@ -7552,9 +7571,12 @@ components:
           example: example@docker.com
         role:
           type: string
-          description: User's role in the Organization
+          description: |
+            The member's role in the organization (`Owner`, `Editor`,
+            `Member`, or `Invitee` for pending invites).
           enum:
             - Owner
+            - Editor
             - Member
             - Invitee
           example: Owner
@@ -7640,6 +7662,11 @@ components:
           type: number
           example: 10
           description: Member count of the group
+        role:
+          type: string
+          description: |
+            Role assigned to the team. A core role (`owner`, `editor`, or `member`)
+            or the name of a custom role (not the label or UUID).
     group_member:
       type: object
       properties:
@@ -8002,6 +8029,11 @@ components:
           type: number
           example: 10
           description: Member count of the group
+        role:
+          type: string
+          description: |
+            Role assigned to the team. A core role (`owner`, `editor`, or `member`)
+            or the name of a custom role (not the label or UUID).
     group_member:
       type: object
       properties:

@@ -2,9 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = accounts admin agentic-platform ai billing build build-cloud \
-	compose desktop dhi docker-hub engine enterprise extensions    \
-	offload scout security subscription support                    \
+SUBDIRS = accounts agentic-platform ai build build-cloud \
+	compose desktop dhi docker-hub engine enterprise extensions \
+	faqs offload scout security subscription-billing support    \
 	unassociated-machines
 
 bases = \

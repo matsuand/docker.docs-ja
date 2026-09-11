@@ -80,16 +80,16 @@ Docker Scout includes the following built-in policy types:
 
 @x
 - [Severity-Based Vulnerability](#severity-based-vulnerability)
-- [Compliant Licenses](#compliant-licenses)
-- [Up-to-Date Base Images](#up-to-date-base-images)
+- [No copyleft licenses](#no-copyleft-licenses)
+- [No outdated base images](#no-outdated-base-images)
 - [High-Profile Vulnerabilities](#high-profile-vulnerabilities)
 - [Supply Chain Attestations](#supply-chain-attestations)
 - [Default Non-Root User](#default-non-root-user)
 - [Approved Base Images](#approved-base-images)
 @y
 - [Severity-Based Vulnerability](#severity-based-vulnerability)
-- [Compliant Licenses](#compliant-licenses)
-- [Up-to-Date Base Images](#up-to-date-base-images)
+- [No copyleft licenses](#no-copyleft-licenses)
+- [No outdated base images](#no-outdated-base-images)
 - [High-Profile Vulnerabilities](#high-profile-vulnerabilities)
 - [Supply Chain Attestations](#supply-chain-attestations)
 - [Default Non-Root User](#default-non-root-user)
@@ -135,33 +135,33 @@ disclosed CVEs, fixable-only filtering, and package type filtering.
 @z
 
 @x
-### Compliant Licenses
+### No copyleft licenses
 @y
-### Compliant Licenses
+### No copyleft licenses
 @z
 
 @x
-The **Compliant Licenses** policy type checks whether your images contain
+The **No copyleft licenses** policy type checks whether your images contain
 packages distributed under an inappropriate license. You can configure the
 list of licenses to flag and add package-level exceptions.
 @y
-The **Compliant Licenses** policy type checks whether your images contain
+The **No copyleft licenses** policy type checks whether your images contain
 packages distributed under an inappropriate license. You can configure the
 list of licenses to flag and add package-level exceptions.
 @z
 
 @x
-### Up-to-Date Base Images
+### No outdated base images
 @y
-### Up-to-Date Base Images
+### No outdated base images
 @z
 
 @x
-The **Up-to-Date Base Images** policy type checks whether the base images you
+The **No outdated base images** policy type checks whether the base images you
 use are current. Images are non-compliant if the tag you built from points to
 a different digest than what you're using.
 @y
-The **Up-to-Date Base Images** policy type checks whether the base images you
+The **No outdated base images** policy type checks whether the base images you
 use are current. Images are non-compliant if the tag you built from points to
 a different digest than what you're using.
 @z
@@ -283,11 +283,11 @@ successfully. For more information, see [No base image data](#no-base-image-data
 @z
 
 @x
-The **Up-to-Date Base Images** and **Approved Base Images** policies require
+The **No outdated base images** and **Approved Base Images** policies require
 provenance attestations to determine the base image used in your build. Without
 them, these policies report **No data**.
 @y
-The **Up-to-Date Base Images** and **Approved Base Images** policies require
+The **No outdated base images** and **Approved Base Images** policies require
 provenance attestations to determine the base image used in your build. Without
 them, these policies report **No data**.
 @z
@@ -301,37 +301,3 @@ attestations at build time:
 @z
 
 % snip command...
-
-@x
-## Policies page in the Dashboard
-@y
-## Policies page in the Dashboard
-@z
-
-@x
-> [!IMPORTANT]
->
-> The `docker scout policy` command brings policy evaluation directly to your
-> CLI so you can evaluate any image locally, in CI, or with custom policies
-> without needing the Dashboard. The Policies page in the Dashboard is
-> deprecated and will be retired on September 1, 2026. See
-> [Evaluate policies](./local.md).
-@y
-> [!IMPORTANT]
->
-> The `docker scout policy` command brings policy evaluation directly to your
-> CLI so you can evaluate any image locally, in CI, or with custom policies
-> without needing the Dashboard. The Policies page in the Dashboard is
-> deprecated and will be retired on September 1, 2026. See
-> [Evaluate policies](./local.md).
-@z
-
-@x
-The Docker Scout Dashboard previously provided a visual interface for tracking
-policy compliance across your organization's images. See
-[Use the Policies page in the Dashboard](./dashboard.md).
-@y
-The Docker Scout Dashboard previously provided a visual interface for tracking
-policy compliance across your organization's images. See
-[Use the Policies page in the Dashboard](./dashboard.md).
-@z

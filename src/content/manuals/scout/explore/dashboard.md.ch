@@ -207,10 +207,8 @@ The settings menu in the Docker Scout Dashboard contains:
 
 @x
 - [**Repository settings**](#repository-settings) for enabling and disabling repositories.
-- [**Notifications**](#notification-settings) for managing your notification preferences.
 @y
 - [**Repository settings**](#repository-settings) for enabling and disabling repositories.
-- [**Notifications**](#notification-settings) for managing your notification preferences.
 @z
 
 @x
@@ -222,95 +220,11 @@ The settings menu in the Docker Scout Dashboard contains:
 @x
 When you enable Docker Scout for a repository,
 Docker Scout analyzes new tags automatically when you push to that repository.
-To enable repositories in Amazon ECR, Azure ACR, or other third-party registries,
-you first need to integrate them.
-See [Container registry integrations](/manuals/scout/integrations/_index.md#container-registries)
+To enable repositories in third-party registries, you first need to integrate
+them. See [Container registry integrations](/manuals/scout/integrations/_index.md#container-registries)
 @y
 When you enable Docker Scout for a repository,
 Docker Scout analyzes new tags automatically when you push to that repository.
-To enable repositories in Amazon ECR, Azure ACR, or other third-party registries,
-you first need to integrate them.
-See [Container registry integrations](manuals/scout/integrations/_index.md#container-registries)
-@z
-
-@x
-### Notification settings
-@y
-### Notification settings
-@z
-
-@x
-> [!IMPORTANT]
->
-> Docker Scout notifications are deprecated and will be retired on
-> July 30, 2026. To surface CVE and policy results without push notifications,
-> integrate `docker scout cves` or `docker scout policy` into your CI pipeline.
-> See [CI integrations](/manuals/scout/integrations/_index.md#continuous-integration).
-> For details, see the
-> [Scout platform release notes](/manuals/scout/release-notes/platform.md).
-@y
-> [!IMPORTANT]
->
-> Docker Scout notifications are deprecated and will be retired on
-> July 30, 2026. To surface CVE and policy results without push notifications,
-> integrate `docker scout cves` or `docker scout policy` into your CI pipeline.
-> See [CI integrations](manuals/scout/integrations/_index.md#continuous-integration).
-> For details, see the
-> [Scout platform release notes](manuals/scout/release-notes/platform.md).
-@z
-
-@x
-The [Notification settings](https://scout.docker.com/settings/notifications)
-page is where you can change the preferences for receiving notifications from
-Docker Scout. Notification settings are personal, and changing notification
-settings only affects your personal account, not the entire organization.
-@y
-The [Notification settings](https://scout.docker.com/settings/notifications)
-page is where you can change the preferences for receiving notifications from
-Docker Scout. Notification settings are personal, and changing notification
-settings only affects your personal account, not the entire organization.
-@z
-
-@x
-Docker Scout notifies you when a new vulnerability is disclosed in a security
-advisory and it affects one or more of your images. Notifications are only
-triggered for the _last pushed_ image tags for each repository.
-@y
-Docker Scout notifies you when a new vulnerability is disclosed in a security
-advisory and it affects one or more of your images. Notifications are only
-triggered for the _last pushed_ image tags for each repository.
-@z
-
-@x
-The available notification settings are:
-@y
-The available notification settings are:
-@z
-
-@x
-- **Repository scope**: select whether you want notifications for all
-  repositories or only specific ones.
-- **Delivery preferences**: choose between in-product notification pop-ups
-  and OS-level browser notifications.
-@y
-- **Repository scope**: select whether you want notifications for all
-  repositories or only specific ones.
-- **Delivery preferences**: choose between in-product notification pop-ups
-  and OS-level browser notifications.
-@z
-
-@x
-You can also configure your notification settings in Docker Desktop by going
-to **Settings** > **Notifications**.
-@y
-You can also configure your notification settings in Docker Desktop by going
-to **Settings** > **Notifications**.
-@z
-
-@x
-From this page, you can also go to the settings for
-[Team collaboration integrations](/manuals/scout/integrations/team-collaboration/slack.md).
-@y
-From this page, you can also go to the settings for
-[Team collaboration integrations](manuals/scout/integrations/team-collaboration/slack.md).
+To enable repositories in third-party registries, you first need to integrate
+them. See [Container registry integrations](manuals/scout/integrations/_index.md#container-registries)
 @z

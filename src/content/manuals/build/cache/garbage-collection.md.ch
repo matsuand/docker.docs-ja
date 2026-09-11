@@ -115,11 +115,13 @@ you have 11GB worth of build cache, where:
 @z
 
 @x
-A GC sweep would delete 5GB of stale cache as part of the 1st policy, with a
-remainder of 6GB, meaning the 2nd policy does not need to clear any more cache.
+A GC sweep would delete 2GB of stale cache as part of the 1st policy, leaving
+9GB of cache in total, meaning the 2nd policy does not need to clear any more
+cache.
 @y
-A GC sweep would delete 5GB of stale cache as part of the 1st policy, with a
-remainder of 6GB, meaning the 2nd policy does not need to clear any more cache.
+A GC sweep would delete 2GB of stale cache as part of the 1st policy, leaving
+9GB of cache in total, meaning the 2nd policy does not need to clear any more
+cache.
 @z
 
 @x

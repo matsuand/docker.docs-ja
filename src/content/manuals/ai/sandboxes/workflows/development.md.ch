@@ -119,10 +119,12 @@ $ sbx run --publish 8080:3000 --name my-sandbox claude
 
 @x
 For an existing sandbox, use [`sbx ports`](/reference/cli/sbx/ports/) to
-forward traffic from your host.
+forward traffic from your host. Publishing a port on a stopped local sandbox
+starts it first.
 @y
 For an existing sandbox, use [`sbx ports`](__SUBDIR__/reference/cli/sbx/ports/) to
-forward traffic from your host.
+forward traffic from your host. Publishing a port on a stopped local sandbox
+starts it first.
 @z
 
 @x
@@ -179,13 +181,13 @@ lists them in detail:
 ```console
 $ sbx ls
 SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp /home/user/proj
+my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
 ```
 @y
 ```console
 $ sbx ls
 SANDBOX         AGENT   STATUS   PORTS                    WORKSPACE
-my-sandbox      claude  running  127.0.0.1:8080->3000/tcp /home/user/proj
+my-sandbox      claude  running  127.0.0.1:8080->3000/tcp4 /home/user/proj
 ```
 @z
 
@@ -209,22 +211,32 @@ $ sbx ports my-sandbox --unpublish 8080:3000
 For a service to be reachable, it must listen on all interfaces inside the
 sandbox, not only `127.0.0.1`. Bind it to `0.0.0.0` for IPv4 or `[::]` for both
 IPv4 and IPv6. Most dev servers need a flag like `--host 0.0.0.0` to do this.
-On the host, `--publish` listens on both `127.0.0.1` and `::1`, so a client
-resolving `localhost` might pick IPv6 and fail with "connection reset by peer"
-if the sandboxed service only listens on IPv4, even when
-`http://127.0.0.1:<port>/` works. To fix that, bind the service to `[::]`, or
-pin the published port to one family with `--publish 8080:3000/tcp4` or
-`/tcp6`.
 @y
 For a service to be reachable, it must listen on all interfaces inside the
 sandbox, not only `127.0.0.1`. Bind it to `0.0.0.0` for IPv4 or `[::]` for both
 IPv4 and IPv6. Most dev servers need a flag like `--host 0.0.0.0` to do this.
-On the host, `--publish` listens on both `127.0.0.1` and `::1`, so a client
-resolving `localhost` might pick IPv6 and fail with "connection reset by peer"
-if the sandboxed service only listens on IPv4, even when
-`http://127.0.0.1:<port>/` works. To fix that, bind the service to `[::]`, or
-pin the published port to one family with `--publish 8080:3000/tcp4` or
-`/tcp6`.
+@z
+
+@x
+On the host, a published port binds IPv4 (`127.0.0.1`) unless you name another
+protocol, so `http://localhost:<port>/` reaches a service listening on IPv4
+whichever address your resolver picks for `localhost`. Naming an explicit IPv6
+host address, such as `--publish [::1]:8080:3000`, defaults the protocol to
+`tcp6` instead. To publish on both families use `--publish 8080:3000/tcp`, and
+for IPv6 alone `/tcp6`. Both of
+those require the sandboxed service to listen on IPv6 as well — bind it to
+`[::]` — or a client arriving over `::1` has its connection accepted and then
+reset.
+@y
+On the host, a published port binds IPv4 (`127.0.0.1`) unless you name another
+protocol, so `http://localhost:<port>/` reaches a service listening on IPv4
+whichever address your resolver picks for `localhost`. Naming an explicit IPv6
+host address, such as `--publish [::1]:8080:3000`, defaults the protocol to
+`tcp6` instead. To publish on both families use `--publish 8080:3000/tcp`, and
+for IPv6 alone `/tcp6`. Both of
+those require the sandboxed service to listen on IPv6 as well — bind it to
+`[::]` — or a client arriving over `::1` has its connection accepted and then
+reset.
 @z
 
 @x

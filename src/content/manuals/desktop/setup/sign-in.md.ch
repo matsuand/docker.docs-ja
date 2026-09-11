@@ -84,11 +84,11 @@ In large enterprises where admin access is restricted, administrators can [enfor
 
 @x
 Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
-Before signing in to Docker Desktop with your [Docker ID](/accounts/create-account/), you must initialize `pass`.
+Before signing in to Docker Desktop with your [Docker ID](/accounts/individual/create-account/), you must initialize `pass`.
 Docker Desktop displays a warning if `pass` is not configured.
 @y
 Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
-Before signing in to Docker Desktop with your [Docker ID](__SUBDIR__/accounts/create-account/), you must initialize `pass`.
+Before signing in to Docker Desktop with your [Docker ID](__SUBDIR__/accounts/individual/create-account/), you must initialize `pass`.
 Docker Desktop displays a warning if `pass` is not configured.
 @z
 

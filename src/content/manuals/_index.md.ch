@@ -59,7 +59,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @y
   - title: Docker Model Runner
     description: View and manage your local models.
-    icon: /icons/models.svg
+    icon: icons/models.svg
     link: __SUBDIR__/ai/model-runner/
 @z
 
@@ -202,39 +202,27 @@ keywords: docker, docs, manuals, products, user guides, how-to
 % platform:
 
 @x
-  - title: Administration
-    description: Centralized observability for companies and organizations.
-    icon: shield-check
-    link: /admin/
-@y
-  - title: 管理
-    description: Centralized observability for companies and organizations.
-    icon: shield-check
-    link: __SUBDIR__/admin/
-@z
-
-@x
-  - title: Billing
-    description: Manage billing and payment methods.
-    icon: credit-card
-    link: /billing/
-@y
-  - title: 支払い
-    description: 請求方法や支払い方法について管理します。
-    icon: credit-card
-    link: __SUBDIR__/billing/
-@z
-
-@x
   - title: Accounts
-    description: Manage your Docker account.
+    description: Manage Docker individual and organization accounts.
     icon: user-circle
     link: /accounts/
 @y
-  - title: Accounts
-    description: Docker アカウントを管理します。
+  - title: アカウント
+    description: Manage Docker individual and organization accounts.
     icon: user-circle
     link: __SUBDIR__/accounts/
+@z
+
+@x
+  - title: Subscription and billing
+    description: Manage Docker subscriptions, plans, billing, and payments.
+    icon: credit-card
+    link: /subscription-billing/
+@y
+  - title: サブスクリプションと支払い
+    description: Manage Docker subscriptions, plans, billing, and payments.
+    icon: credit-card
+    link: __SUBDIR__/subscription-billing/
 @z
 
 @x
@@ -250,22 +238,73 @@ keywords: docker, docs, manuals, products, user guides, how-to
 @z
 
 @x
-  - title: Subscription
-    description: Commercial use licenses for Docker products.
-    icon: credit-card
-    link: /subscription/
+  - title: FAQs
+    description: Frequently asked questions about Docker accounts, organizations, companies, subscriptions, billing, and security.
+    icon: question-mark-circle
+    link: /faqs/
 @y
-  - title: サブスクリプション
-    description: Docker 製品に対する商用利用ライセンスです。
-    icon: credit-card
-    link: __SUBDIR__/subscription/
+  - title: FAQ
+    description: Frequently asked questions about Docker accounts, organizations, companies, subscriptions, billing, and security.
+    icon: question-mark-circle
+    link: __SUBDIR__/faqs/
+@z
+
+@x
+  - title: Support
+    description: Support options for paid subscriptions and community resources.
+    icon: chat-bubble-left
+    link: /support/
+@y
+  - title: サポート
+    description: Support options for paid subscriptions and community resources.
+    icon: chat-bubble-left
+    link: __SUBDIR__/support/
+@z
+
+@x
+  - title: Release notes
+    description: Features, bug fixes, and breaking changes for Docker Home, billing, security, and subscriptions.
+    icon: document-plus
+    link: /platform-release-notes/
+@y
+  - title: リリースノート
+    description: Features, bug fixes, and breaking changes for Docker Home, billing, security, and subscriptions.
+    icon: document-plus
+    link: __SUBDIR__/platform-release-notes/
+@z
+
+% enterprise:
+
+@x
+  - title: Deploy Docker Desktop
+    description: Deploy Docker Desktop at scale within your company
+    icon: arrow-down-tray
+    link: /enterprise/enterprise-deployment/
+@y
+  - title: Deploy Docker Desktop
+    description: Deploy Docker Desktop at scale within your company
+    icon: arrow-down-tray
+    link: __SUBDIR__/enterprise/enterprise-deployment/
+@z
+
+@x
+  - title: Hardened Docker Desktop
+    description: Security features that strengthen developer environments.
+    icon: shield-check
+    link: /enterprise/security/hardened-desktop/
+@y
+  - title: Hardened Docker Desktop
+    description: Security features that strengthen developer environments.
+    icon: shield-check
+    link: __SUBDIR__/enterprise/security/hardened-desktop/
 @z
 
 @x
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 @y
-この節に示すユーザーガイドでは、Docker 製品のインストール、セットアップ、設定、利用方法について説明しています。
+This section contains user guides on how to install, set up, configure, and use
+Docker products.
 @z
 
 @x
@@ -281,6 +320,12 @@ All the Docker AI tools in one easy-to-access location.
 @z
 
 @x
+{{< grid items=ai-and-agents >}}
+@y
+{{< grid items=ai-and-agents >}}
+@z
+
+@x
 ## Application development
 @y
 ## Application development
@@ -290,6 +335,12 @@ All the Docker AI tools in one easy-to-access location.
 End-to-end developer solutions for innovative teams.
 @y
 End-to-end developer solutions for innovative teams.
+@z
+
+@x
+{{< grid items=application-development >}}
+@y
+{{< grid items=application-development >}}
 @z
 
 @x
@@ -305,15 +356,43 @@ Security guardrails and image analysis for your software supply chain.
 @z
 
 @x
-## Platform
+{{< grid items=supply-chain-security >}}
 @y
-## Platform
+{{< grid items=supply-chain-security >}}
 @z
 
 @x
-Documentation related to the Docker platform, such as administration and
-subscription management.
+## Accounts and admin
 @y
-Docker プラットフォームに関連するドキュメントです。
-機能管理、サブスク管理などがあります。
+## Accounts and admin
+@z
+
+@x
+Manage Docker accounts, administration, subscriptions, billing, and security.
+@y
+Manage Docker accounts, administration, subscriptions, billing, and security.
+@z
+
+@x
+{{< grid items=platform >}}
+@y
+{{< grid items=platform >}}
+@z
+
+@x
+## Enterprise
+@y
+## Enterprise
+@z
+
+@x
+Targeted at IT administrators with help on deploying Docker Desktop at scale with configuration guidance on security related features.
+@y
+Targeted at IT administrators with help on deploying Docker Desktop at scale with configuration guidance on security related features.
+@z
+
+@x
+{{< grid items=enterprise >}}
+@y
+{{< grid items=enterprise >}}
 @z

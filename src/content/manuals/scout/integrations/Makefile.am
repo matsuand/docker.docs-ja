@@ -1,11 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = ci code-quality environment registry source-code-management \
-	team-collaboration
+SUBDIRS = ci environment
 
 bases = \
-	_index.md
+	_index.md   \
+	registry.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

@@ -3,13 +3,15 @@
 ##
 
 bases = \
-	desktop-install.html    \
-	desktop-install-v2.html \
-	experimental.html       \
-	files.markdown.md       \
-	labspace-launch.html    \
-	restricted.html         \
-	summary-bar.html        \
+	desktop-install.html     \
+	desktop-install-v2.html  \
+	experimental.html        \
+	files.markdown.md        \
+	labspace-launch.html     \
+	restricted.html          \
+	sandbox-auth.html        \
+	sandbox-auth.markdown.md \
+	summary-bar.html         \
 	whats-new.markdown.md
 
 include $(top_srcdir)/build-aux/common.mk

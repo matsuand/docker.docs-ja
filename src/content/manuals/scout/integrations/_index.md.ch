@@ -58,19 +58,13 @@ aren't hosted on Docker Hub.
 @z
 
 @x
-The following container registry integrations are available:
+Docker Scout integrates with any Docker/OCI-compliant registry using
+[`docker scout watch`](./registry.md), including Amazon ECR, Azure
+Container Registry, JFrog Artifactory, Harbor, and Sonatype Nexus.
 @y
-The following container registry integrations are available:
-@z
-
-@x
-- [Amazon Elastic Container Registry](./registry/ecr.md) (deprecated, retiring September 1, 2026)
-- [Azure Container Registry](./registry/acr.md) (deprecated, retiring September 1, 2026)
-- [JFrog Artifactory](./registry/artifactory.md)
-@y
-- [Amazon Elastic Container Registry](./registry/ecr.md) (deprecated, retiring September 1, 2026)
-- [Azure Container Registry](./registry/acr.md) (deprecated, retiring September 1, 2026)
-- [JFrog Artifactory](./registry/artifactory.md)
+Docker Scout integrates with any Docker/OCI-compliant registry using
+[`docker scout watch`](./registry.md), including Amazon ECR, Azure
+Container Registry, JFrog Artifactory, Harbor, and Sonatype Nexus.
 @z
 
 @x
@@ -151,102 +145,4 @@ For more information about environment integrations, see
 @y
 For more information about environment integrations, see
 [Environments](./environment/_index.md).
-@z
-
-@x
-### Code quality
-@y
-### Code quality
-@z
-
-@x
-Integrating Docker Scout with code analysis tools enables quality checks
-directly on source code, helping you keep track of bugs, security issues, test
-coverage, and more. In addition to image analysis and environment monitoring,
-code quality gates let you shift left your supply chain management with Docker
-Scout.
-@y
-Integrating Docker Scout with code analysis tools enables quality checks
-directly on source code, helping you keep track of bugs, security issues, test
-coverage, and more. In addition to image analysis and environment monitoring,
-code quality gates let you shift left your supply chain management with Docker
-Scout.
-@z
-
-@x
-Once you enable a code quality integration, Docker Scout includes the code
-quality assessments as policy evaluation results for the repositories where
-you've enabled the integration.
-@y
-Once you enable a code quality integration, Docker Scout includes the code
-quality assessments as policy evaluation results for the repositories where
-you've enabled the integration.
-@z
-
-@x
-The following code quality integrations are available:
-@y
-The following code quality integrations are available:
-@z
-
-@x
-- [SonarQube](./code-quality/sonarqube.md) (deprecated, retiring September 1, 2026)
-@y
-- [SonarQube](./code-quality/sonarqube.md) (deprecated, retiring September 1, 2026)
-@z
-
-@x
-### Source code management
-@y
-### Source code management
-@z
-
-@x
-Integrate Docker Scout with your version control system to get guided
-remediation advice on how to address issues detected by Docker Scout image
-analysis, directly in your repositories.
-@y
-Integrate Docker Scout with your version control system to get guided
-remediation advice on how to address issues detected by Docker Scout image
-analysis, directly in your repositories.
-@z
-
-@x
-The following source code management integrations are available:
-@y
-The following source code management integrations are available:
-@z
-
-@x
-- [GitHub](source-code-management/github.md) (retired)
-@y
-- [GitHub](source-code-management/github.md) (retired)
-@z
-
-@x
-### Team collaboration
-@y
-### Team collaboration
-@z
-
-@x
-Integrations in this category let you integrate Docker Scout with collaboration
-platforms for broadcasting notifications about your software supply chain in
-real-time to team communication platforms.
-@y
-Integrations in this category let you integrate Docker Scout with collaboration
-platforms for broadcasting notifications about your software supply chain in
-real-time to team communication platforms.
-@z
-
-@x
-The following team collaboration integrations are available:
-@y
-The following team collaboration integrations are available:
-@z
-
-@x
-- [Slack](./team-collaboration/slack.md) (deprecated, retiring September 1, 2026)
-@y
-- [Slack](./team-collaboration/slack.md) (deprecated, retiring September 1, 2026)
 @z

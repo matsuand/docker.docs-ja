@@ -622,20 +622,20 @@ $ sbx kit validate ./amp/
 @z
 
 @x
-Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
-agent argument:
+Launch the sandbox by passing the kit directory in place of a built-in agent
+name:
 @y
-Launch a sandbox with the kit, passing the kit's `name:` (`amp`) as the
-agent argument:
+Launch the sandbox by passing the kit directory in place of a built-in agent
+name:
 @z
 
 @x
 ```console
-$ sbx run --kit ./amp/ amp
+$ sbx run ./amp/
 ```
 @y
 ```console
-$ sbx run --kit ./amp/ amp
+$ sbx run ./amp/
 ```
 @z
 
@@ -649,11 +649,11 @@ repository:
 
 @x
 ```console
-$ sbx run --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp" amp
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp"
 ```
 @y
 ```console
-$ sbx run --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp" amp
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#dir=amp"
 ```
 @z
 
@@ -676,14 +676,14 @@ Two loops help:
   requests, then add their domains to `allowedDomains`.
 - Add domains to `deniedDomains` when the agent should stay blocked from
   a host even if another policy permits it.
-- Edit the spec and re-run `sbx run --kit ./amp/ amp` to pick up changes.
+- Edit the spec and re-run `sbx run ./amp/` to pick up changes.
   Remove the sandbox first (`sbx rm <name>`) for a clean start.
 @y
 - Watch the network policy log (`sbx policy log`) to catch blocked
   requests, then add their domains to `allowedDomains`.
 - Add domains to `deniedDomains` when the agent should stay blocked from
   a host even if another policy permits it.
-- Edit the spec and re-run `sbx run --kit ./amp/ amp` to pick up changes.
+- Edit the spec and re-run `sbx run ./amp/` to pick up changes.
   Remove the sandbox first (`sbx rm <name>`) for a clean start.
 @z
 

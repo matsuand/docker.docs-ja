@@ -1859,9 +1859,11 @@ definitions:
         type: "string"
         default: "SIGTERM"
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
+        x-nullable: true
       Shell:
         description: "Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell."
         type: "array"
@@ -1895,9 +1897,11 @@ definitions:
         type: "string"
         default: "SIGTERM"
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
+        x-nullable: true
       Shell:
         description: "Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell."
         type: "array"
@@ -4114,7 +4118,7 @@ definitions:
             description: "Amount of time to wait for the container to terminate before forcefully killing it."
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -4286,7 +4290,7 @@ definitions:
             description: "Amount of time to wait for the container to terminate before forcefully killing it."
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -4463,511 +4467,6 @@ definitions:
       - "shutdown"
       - "failed"
       - "rejected"
-  Task:
-    type: "object"
-    properties:
-      ID:
-        description: "The ID of the task."
-        type: "string"
-      Version:
-        $ref: "#/definitions/ObjectVersion"
-      CreatedAt:
-        type: "string"
-        format: "dateTime"
-      UpdatedAt:
-        type: "string"
-        format: "dateTime"
-      Name:
-        description: "Name of the task."
-        type: "string"
-      Labels:
-        description: "User-defined key/value metadata."
-        type: "object"
-        additionalProperties:
-          type: "string"
-      Spec:
-        $ref: "#/definitions/TaskSpec"
-      ServiceID:
-        description: "The ID of the service this task is part of."
-        type: "string"
-      Slot:
-        type: "integer"
-      NodeID:
-        description: "The ID of the node that this task is on."
-        type: "string"
-      Status:
-        type: "object"
-        properties:
-          Timestamp:
-            type: "string"
-            format: "dateTime"
-          State:
-            $ref: "#/definitions/TaskState"
-          Message:
-            type: "string"
-          Err:
-            type: "string"
-          ContainerStatus:
-            type: "object"
-            properties:
-              ContainerID:
-                type: "string"
-              PID:
-                type: "integer"
-              ExitCode:
-                type: "integer"
-      DesiredState:
-        $ref: "#/definitions/TaskState"
-    example:
-      ID: "0kzzo1i0y4jz6027t0k7aezc7"
-      Version:
-        Index: 71
-      CreatedAt: "2016-06-07T21:07:31.171892745Z"
-      UpdatedAt: "2016-06-07T21:07:31.376370513Z"
-      Spec:
-        ContainerSpec:
-          Image: "redis"
-        Resources:
-          Limits: {}
-          Reservations: {}
-        RestartPolicy:
-          Condition: "any"
-          MaxAttempts: 0
-        Placement: {}
-      ServiceID: "9mnpnzenvg8p8tdbtq4wvbkcz"
-      Slot: 1
-      NodeID: "60gvrl6tm78dmak4yl7srz94v"
-      Status:
-        Timestamp: "2016-06-07T21:07:31.290032978Z"
-        State: "running"
-        Message: "started"
-        ContainerStatus:
-          ContainerID: "e5d62702a1b48d01c3e02ca1e0212a250801fa8d67caca0b6f35919ebc12f035"
-          PID: 677
-      DesiredState: "running"
-      NetworksAttachments:
-        - Network:
-            ID: "4qvuz4ko70xaltuqbt8956gd1"
-            Version:
-              Index: 18
-            CreatedAt: "2016-06-07T20:31:11.912919752Z"
-            UpdatedAt: "2016-06-07T21:07:29.955277358Z"
-            Spec:
-              Name: "ingress"
-              Labels:
-                com.docker.swarm.internal: "true"
-              DriverConfiguration: {}
-              IPAMOptions:
-                Driver: {}
-                Configs:
-                  - Subnet: "10.255.0.0/16"
-                    Gateway: "10.255.0.1"
-            DriverState:
-              Name: "overlay"
-              Options:
-                com.docker.network.driver.overlay.vxlanid_list: "256"
-            IPAMOptions:
-              Driver:
-                Name: "default"
-              Configs:
-                - Subnet: "10.255.0.0/16"
-                  Gateway: "10.255.0.1"
-          Addresses:
-            - "10.255.0.10/16"
-  ServiceSpec:
-    description: "User modifiable configuration for a service."
-    type: object
-    properties:
-      Name:
-        description: "Name of the service."
-        type: "string"
-      Labels:
-        description: "User-defined key/value metadata."
-        type: "object"
-        additionalProperties:
-          type: "string"
-      TaskTemplate:
-        $ref: "#/definitions/TaskSpec"
-      Mode:
-        description: "Scheduling mode for the service."
-        type: "object"
-        properties:
-          Replicated:
-            type: "object"
-            properties:
-              Replicas:
-                type: "integer"
-                format: "int64"
-          Global:
-            type: "object"
-      UpdateConfig:
-        description: "Specification for the update strategy of the service."
-        type: "object"
-        properties:
-          Parallelism:
-            description: "Maximum number of tasks to be updated in one iteration (0 means unlimited parallelism)."
-            type: "integer"
-            format: "int64"
-          Delay:
-            description: "Amount of time between updates, in nanoseconds."
-            type: "integer"
-            format: "int64"
-          FailureAction:
-            description: "Action to take if an updated task fails to run, or stops running during the update."
-            type: "string"
-            enum:
-              - "continue"
-              - "pause"
-              - "rollback"
-          Monitor:
-            description: "Amount of time to monitor each updated task for failures, in nanoseconds."
-            type: "integer"
-            format: "int64"
-          MaxFailureRatio:
-            description: "The fraction of tasks that may fail during an update before the failure action is invoked, specified as a floating point number between 0 and 1."
-            type: "number"
-            default: 0
-          Order:
-            description: "The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down."
-            type: "string"
-            enum:
-              - "stop-first"
-              - "start-first"
-      RollbackConfig:
-        description: "Specification for the rollback strategy of the service."
-        type: "object"
-        properties:
-          Parallelism:
-            description: "Maximum number of tasks to be rolled back in one iteration (0 means unlimited parallelism)."
-            type: "integer"
-            format: "int64"
-          Delay:
-            description: "Amount of time between rollback iterations, in nanoseconds."
-            type: "integer"
-            format: "int64"
-          FailureAction:
-            description: "Action to take if an rolled back task fails to run, or stops running during the rollback."
-            type: "string"
-            enum:
-              - "continue"
-              - "pause"
-          Monitor:
-            description: "Amount of time to monitor each rolled back task for failures, in nanoseconds."
-            type: "integer"
-            format: "int64"
-          MaxFailureRatio:
-            description: "The fraction of tasks that may fail during a rollback before the failure action is invoked, specified as a floating point number between 0 and 1."
-            type: "number"
-            default: 0
-          Order:
-            description: "The order of operations when rolling back a task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down."
-            type: "string"
-            enum:
-              - "stop-first"
-              - "start-first"
-      Networks:
-        description: "Array of network names or IDs to attach the service to."
-        type: "array"
-        items:
-          type: "object"
-          properties:
-            Target:
-              type: "string"
-            Aliases:
-              type: "array"
-              items:
-                type: "string"
-      EndpointSpec:
-        $ref: "#/definitions/EndpointSpec"
-  EndpointPortConfig:
-    type: "object"
-    properties:
-      Name:
-        type: "string"
-      Protocol:
-        type: "string"
-        enum:
-          - "tcp"
-          - "udp"
-      TargetPort:
-        description: "The port inside the container."
-        type: "integer"
-      PublishedPort:
-        description: "The port on the swarm hosts."
-        type: "integer"
-  EndpointSpec:
-    description: "Properties that can be configured to access and load balance a service."
-    type: "object"
-    properties:
-      Mode:
-        description: "The mode of resolution to use for internal load balancing
-      between tasks."
-        type: "string"
-        enum:
-          - "vip"
-          - "dnsrr"
-        default: "vip"
-      Ports:
-        description: "List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used."
-        type: "array"
-        items:
-          $ref: "#/definitions/EndpointPortConfig"
-  Service:
-    type: "object"
-    properties:
-      ID:
-        type: "string"
-      Version:
-        $ref: "#/definitions/ObjectVersion"
-      CreatedAt:
-        type: "string"
-        format: "dateTime"
-      UpdatedAt:
-        type: "string"
-        format: "dateTime"
-      Spec:
-        $ref: "#/definitions/ServiceSpec"
-      Endpoint:
-        type: "object"
-        properties:
-          Spec:
-            $ref: "#/definitions/EndpointSpec"
-          Ports:
-            type: "array"
-            items:
-              $ref: "#/definitions/EndpointPortConfig"
-          VirtualIPs:
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                NetworkID:
-                  type: "string"
-                Addr:
-                  type: "string"
-      UpdateStatus:
-        description: "The status of a service update."
-        type: "object"
-        properties:
-          State:
-            type: "string"
-            enum:
-              - "updating"
-              - "paused"
-              - "completed"
-          StartedAt:
-            type: "string"
-            format: "dateTime"
-          CompletedAt:
-            type: "string"
-            format: "dateTime"
-          Message:
-            type: "string"
-    example:
-      ID: "9mnpnzenvg8p8tdbtq4wvbkcz"
-      Version:
-        Index: 19
-      CreatedAt: "2016-06-07T21:05:51.880065305Z"
-      UpdatedAt: "2016-06-07T21:07:29.962229872Z"
-      Spec:
-        Name: "hopeful_cori"
-        TaskTemplate:
-          ContainerSpec:
-            Image: "redis"
-          Resources:
-            Limits: {}
-            Reservations: {}
-          RestartPolicy:
-            Condition: "any"
-            MaxAttempts: 0
-          Placement: {}
-          ForceUpdate: 0
-        Mode:
-          Replicated:
-            Replicas: 1
-        UpdateConfig:
-          Parallelism: 1
-          Delay: 1000000000
-          FailureAction: "pause"
-          Monitor: 15000000000
-          MaxFailureRatio: 0.15
-        RollbackConfig:
-          Parallelism: 1
-          Delay: 1000000000
-          FailureAction: "pause"
-          Monitor: 15000000000
-          MaxFailureRatio: 0.15
-        EndpointSpec:
-          Mode: "vip"
-          Ports:
-            -
-              Protocol: "tcp"
-              TargetPort: 6379
-              PublishedPort: 30001
-      Endpoint:
-        Spec:
-          Mode: "vip"
-          Ports:
-            -
-              Protocol: "tcp"
-              TargetPort: 6379
-              PublishedPort: 30001
-        Ports:
-          -
-            Protocol: "tcp"
-            TargetPort: 6379
-            PublishedPort: 30001
-        VirtualIPs:
-          -
-            NetworkID: "4qvuz4ko70xaltuqbt8956gd1"
-            Addr: "10.255.0.2/16"
-          -
-            NetworkID: "4qvuz4ko70xaltuqbt8956gd1"
-            Addr: "10.255.0.3/16"
-  ImageDeleteResponseItem:
-    type: "object"
-    properties:
-      Untagged:
-        description: "The image ID of an image that was untagged"
-        type: "string"
-      Deleted:
-        description: "The image ID of an image that was deleted"
-        type: "string"
-  ServiceUpdateResponse:
-    type: "object"
-    properties:
-      Warnings:
-        description: "Optional warning messages"
-        type: "array"
-        items:
-          type: "string"
-    example:
-      Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
-  ContainerSummary:
-    type: "array"
-    items:
-      type: "object"
-      properties:
-        Id:
-          description: "The ID of this container"
-          type: "string"
-          x-go-name: "ID"
-        Names:
-          description: "The names that this container has been given"
-          type: "array"
-          items:
-            type: "string"
-        Image:
-          description: "The name of the image used when creating this container"
-          type: "string"
-        ImageID:
-          description: "The ID of the image that this container was created from"
-          type: "string"
-        Command:
-          description: "Command to run when starting the container"
-          type: "string"
-        Created:
-          description: "When the container was created"
-          type: "integer"
-          format: "int64"
-        Ports:
-          description: "The ports exposed by this container"
-          type: "array"
-          items:
-            $ref: "#/definitions/Port"
-        SizeRw:
-          description: "The size of files that have been created or changed by this container"
-          type: "integer"
-          format: "int64"
-        SizeRootFs:
-          description: "The total size of all the files in this container"
-          type: "integer"
-          format: "int64"
-        Labels:
-          description: "User-defined key/value metadata."
-          type: "object"
-          additionalProperties:
-            type: "string"
-        State:
-          description: "The state of this container (e.g. `Exited`)"
-          type: "string"
-        Status:
-          description: "Additional human-readable status of this container (e.g. `Exit 0`)"
-          type: "string"
-        HostConfig:
-          type: "object"
-          properties:
-            NetworkMode:
-              type: "string"
-        NetworkSettings:
-          description: "A summary of the container's network settings"
-          type: "object"
-          properties:
-            Networks:
-              type: "object"
-              additionalProperties:
-                $ref: "#/definitions/EndpointSettings"
-        Mounts:
-          type: "array"
-          items:
-            $ref: "#/definitions/MountPoint"
-  SecretSpec:
-    type: "object"
-    properties:
-      Name:
-        description: "User-defined name of the secret."
-        type: "string"
-      Labels:
-        description: "User-defined key/value metadata."
-        type: "object"
-        additionalProperties:
-          type: "string"
-      Data:
-        description: "Base64-url-safe-encoded secret data"
-        type: "array"
-        items:
-          type: "string"
-  Secret:
-    type: "object"
-    properties:
-      ID:
-        type: "string"
-      Version:
-        $ref: "#/definitions/ObjectVersion"
-      CreatedAt:
-        type: "string"
-        format: "dateTime"
-      UpdatedAt:
-        type: "string"
-        format: "dateTime"
-      Spec:
-        $ref: "#/definitions/ServiceSpec"
-paths:
-  /containers/json:
-    get:
-      summary: "List containers"
-      operationId: "ContainerList"
-      produces:
-        - "application/json"
-      parameters:
-        - name: "all"
-          in: "query"
-          description: "Return all containers. By default, only running containers are shown"
-          type: "boolean"
-          default: false
-        - name: "limit"
-          in: "query"
-          description: "Return this number of most recently created containers, including non-running ones."
-          type: "integer"
-        - name: "size"
-          in: "query"
-          description: "Return the size of container as fields `SizeRw` and `SizeRootFs`."
-          type: "boolean"
-          default: false
-        - name: "filters"
-          in: "query"
-          description: |
-            Filters to process on the container list, encoded as JSON (a `map[string][]string`). For example, `{"status": ["paused"]}` will only return paused containers. Available filters:
 @y
       Resources:
         description: "Resource requirements which apply to each individual container created as part of the service."
@@ -5082,6 +4581,57 @@ paths:
       - "shutdown"
       - "failed"
       - "rejected"
+@z
+
+@x
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
+@y
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
+@z
+
+@x
   Task:
     type: "object"
     properties:
@@ -5137,6 +4687,13 @@ paths:
                 type: "integer"
       DesiredState:
         $ref: "#/definitions/TaskState"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
     example:
       ID: "0kzzo1i0y4jz6027t0k7aezc7"
       Version:
@@ -5560,7 +5117,520 @@ paths:
         type: "string"
         format: "dateTime"
       Spec:
+        $ref: "#/definitions/SecretSpec"
+paths:
+  /containers/json:
+    get:
+      summary: "List containers"
+      operationId: "ContainerList"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "all"
+          in: "query"
+          description: "Return all containers. By default, only running containers are shown"
+          type: "boolean"
+          default: false
+        - name: "limit"
+          in: "query"
+          description: "Return this number of most recently created containers, including non-running ones."
+          type: "integer"
+        - name: "size"
+          in: "query"
+          description: "Return the size of container as fields `SizeRw` and `SizeRootFs`."
+          type: "boolean"
+          default: false
+        - name: "filters"
+          in: "query"
+          description: |
+            Filters to process on the container list, encoded as JSON (a `map[string][]string`). For example, `{"status": ["paused"]}` will only return paused containers. Available filters:
+@y
+  Task:
+    type: "object"
+    properties:
+      ID:
+        description: "The ID of the task."
+        type: "string"
+      Version:
+        $ref: "#/definitions/ObjectVersion"
+      CreatedAt:
+        type: "string"
+        format: "dateTime"
+      UpdatedAt:
+        type: "string"
+        format: "dateTime"
+      Name:
+        description: "Name of the task."
+        type: "string"
+      Labels:
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+      Spec:
+        $ref: "#/definitions/TaskSpec"
+      ServiceID:
+        description: "The ID of the service this task is part of."
+        type: "string"
+      Slot:
+        type: "integer"
+      NodeID:
+        description: "The ID of the node that this task is on."
+        type: "string"
+      Status:
+        type: "object"
+        properties:
+          Timestamp:
+            type: "string"
+            format: "dateTime"
+          State:
+            $ref: "#/definitions/TaskState"
+          Message:
+            type: "string"
+          Err:
+            type: "string"
+          ContainerStatus:
+            type: "object"
+            properties:
+              ContainerID:
+                type: "string"
+              PID:
+                type: "integer"
+              ExitCode:
+                type: "integer"
+      DesiredState:
+        $ref: "#/definitions/TaskState"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
+    example:
+      ID: "0kzzo1i0y4jz6027t0k7aezc7"
+      Version:
+        Index: 71
+      CreatedAt: "2016-06-07T21:07:31.171892745Z"
+      UpdatedAt: "2016-06-07T21:07:31.376370513Z"
+      Spec:
+        ContainerSpec:
+          Image: "redis"
+        Resources:
+          Limits: {}
+          Reservations: {}
+        RestartPolicy:
+          Condition: "any"
+          MaxAttempts: 0
+        Placement: {}
+      ServiceID: "9mnpnzenvg8p8tdbtq4wvbkcz"
+      Slot: 1
+      NodeID: "60gvrl6tm78dmak4yl7srz94v"
+      Status:
+        Timestamp: "2016-06-07T21:07:31.290032978Z"
+        State: "running"
+        Message: "started"
+        ContainerStatus:
+          ContainerID: "e5d62702a1b48d01c3e02ca1e0212a250801fa8d67caca0b6f35919ebc12f035"
+          PID: 677
+      DesiredState: "running"
+      NetworksAttachments:
+        - Network:
+            ID: "4qvuz4ko70xaltuqbt8956gd1"
+            Version:
+              Index: 18
+            CreatedAt: "2016-06-07T20:31:11.912919752Z"
+            UpdatedAt: "2016-06-07T21:07:29.955277358Z"
+            Spec:
+              Name: "ingress"
+              Labels:
+                com.docker.swarm.internal: "true"
+              DriverConfiguration: {}
+              IPAMOptions:
+                Driver: {}
+                Configs:
+                  - Subnet: "10.255.0.0/16"
+                    Gateway: "10.255.0.1"
+            DriverState:
+              Name: "overlay"
+              Options:
+                com.docker.network.driver.overlay.vxlanid_list: "256"
+            IPAMOptions:
+              Driver:
+                Name: "default"
+              Configs:
+                - Subnet: "10.255.0.0/16"
+                  Gateway: "10.255.0.1"
+          Addresses:
+            - "10.255.0.10/16"
+  ServiceSpec:
+    description: "User modifiable configuration for a service."
+    type: object
+    properties:
+      Name:
+        description: "Name of the service."
+        type: "string"
+      Labels:
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+      TaskTemplate:
+        $ref: "#/definitions/TaskSpec"
+      Mode:
+        description: "Scheduling mode for the service."
+        type: "object"
+        properties:
+          Replicated:
+            type: "object"
+            properties:
+              Replicas:
+                type: "integer"
+                format: "int64"
+          Global:
+            type: "object"
+      UpdateConfig:
+        description: "Specification for the update strategy of the service."
+        type: "object"
+        properties:
+          Parallelism:
+            description: "Maximum number of tasks to be updated in one iteration (0 means unlimited parallelism)."
+            type: "integer"
+            format: "int64"
+          Delay:
+            description: "Amount of time between updates, in nanoseconds."
+            type: "integer"
+            format: "int64"
+          FailureAction:
+            description: "Action to take if an updated task fails to run, or stops running during the update."
+            type: "string"
+            enum:
+              - "continue"
+              - "pause"
+              - "rollback"
+          Monitor:
+            description: "Amount of time to monitor each updated task for failures, in nanoseconds."
+            type: "integer"
+            format: "int64"
+          MaxFailureRatio:
+            description: "The fraction of tasks that may fail during an update before the failure action is invoked, specified as a floating point number between 0 and 1."
+            type: "number"
+            default: 0
+          Order:
+            description: "The order of operations when rolling out an updated task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down."
+            type: "string"
+            enum:
+              - "stop-first"
+              - "start-first"
+      RollbackConfig:
+        description: "Specification for the rollback strategy of the service."
+        type: "object"
+        properties:
+          Parallelism:
+            description: "Maximum number of tasks to be rolled back in one iteration (0 means unlimited parallelism)."
+            type: "integer"
+            format: "int64"
+          Delay:
+            description: "Amount of time between rollback iterations, in nanoseconds."
+            type: "integer"
+            format: "int64"
+          FailureAction:
+            description: "Action to take if an rolled back task fails to run, or stops running during the rollback."
+            type: "string"
+            enum:
+              - "continue"
+              - "pause"
+          Monitor:
+            description: "Amount of time to monitor each rolled back task for failures, in nanoseconds."
+            type: "integer"
+            format: "int64"
+          MaxFailureRatio:
+            description: "The fraction of tasks that may fail during a rollback before the failure action is invoked, specified as a floating point number between 0 and 1."
+            type: "number"
+            default: 0
+          Order:
+            description: "The order of operations when rolling back a task. Either the old task is shut down before the new task is started, or the new task is started before the old task is shut down."
+            type: "string"
+            enum:
+              - "stop-first"
+              - "start-first"
+      Networks:
+        description: "Array of network names or IDs to attach the service to."
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            Target:
+              type: "string"
+            Aliases:
+              type: "array"
+              items:
+                type: "string"
+      EndpointSpec:
+        $ref: "#/definitions/EndpointSpec"
+  EndpointPortConfig:
+    type: "object"
+    properties:
+      Name:
+        type: "string"
+      Protocol:
+        type: "string"
+        enum:
+          - "tcp"
+          - "udp"
+      TargetPort:
+        description: "The port inside the container."
+        type: "integer"
+      PublishedPort:
+        description: "The port on the swarm hosts."
+        type: "integer"
+  EndpointSpec:
+    description: "Properties that can be configured to access and load balance a service."
+    type: "object"
+    properties:
+      Mode:
+        description: "The mode of resolution to use for internal load balancing
+      between tasks."
+        type: "string"
+        enum:
+          - "vip"
+          - "dnsrr"
+        default: "vip"
+      Ports:
+        description: "List of exposed ports that this service is accessible on from the outside. Ports can only be provided if `vip` resolution mode is used."
+        type: "array"
+        items:
+          $ref: "#/definitions/EndpointPortConfig"
+  Service:
+    type: "object"
+    properties:
+      ID:
+        type: "string"
+      Version:
+        $ref: "#/definitions/ObjectVersion"
+      CreatedAt:
+        type: "string"
+        format: "dateTime"
+      UpdatedAt:
+        type: "string"
+        format: "dateTime"
+      Spec:
         $ref: "#/definitions/ServiceSpec"
+      Endpoint:
+        type: "object"
+        properties:
+          Spec:
+            $ref: "#/definitions/EndpointSpec"
+          Ports:
+            type: "array"
+            items:
+              $ref: "#/definitions/EndpointPortConfig"
+          VirtualIPs:
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                NetworkID:
+                  type: "string"
+                Addr:
+                  type: "string"
+      UpdateStatus:
+        description: "The status of a service update."
+        type: "object"
+        properties:
+          State:
+            type: "string"
+            enum:
+              - "updating"
+              - "paused"
+              - "completed"
+          StartedAt:
+            type: "string"
+            format: "dateTime"
+          CompletedAt:
+            type: "string"
+            format: "dateTime"
+          Message:
+            type: "string"
+    example:
+      ID: "9mnpnzenvg8p8tdbtq4wvbkcz"
+      Version:
+        Index: 19
+      CreatedAt: "2016-06-07T21:05:51.880065305Z"
+      UpdatedAt: "2016-06-07T21:07:29.962229872Z"
+      Spec:
+        Name: "hopeful_cori"
+        TaskTemplate:
+          ContainerSpec:
+            Image: "redis"
+          Resources:
+            Limits: {}
+            Reservations: {}
+          RestartPolicy:
+            Condition: "any"
+            MaxAttempts: 0
+          Placement: {}
+          ForceUpdate: 0
+        Mode:
+          Replicated:
+            Replicas: 1
+        UpdateConfig:
+          Parallelism: 1
+          Delay: 1000000000
+          FailureAction: "pause"
+          Monitor: 15000000000
+          MaxFailureRatio: 0.15
+        RollbackConfig:
+          Parallelism: 1
+          Delay: 1000000000
+          FailureAction: "pause"
+          Monitor: 15000000000
+          MaxFailureRatio: 0.15
+        EndpointSpec:
+          Mode: "vip"
+          Ports:
+            -
+              Protocol: "tcp"
+              TargetPort: 6379
+              PublishedPort: 30001
+      Endpoint:
+        Spec:
+          Mode: "vip"
+          Ports:
+            -
+              Protocol: "tcp"
+              TargetPort: 6379
+              PublishedPort: 30001
+        Ports:
+          -
+            Protocol: "tcp"
+            TargetPort: 6379
+            PublishedPort: 30001
+        VirtualIPs:
+          -
+            NetworkID: "4qvuz4ko70xaltuqbt8956gd1"
+            Addr: "10.255.0.2/16"
+          -
+            NetworkID: "4qvuz4ko70xaltuqbt8956gd1"
+            Addr: "10.255.0.3/16"
+  ImageDeleteResponseItem:
+    type: "object"
+    properties:
+      Untagged:
+        description: "The image ID of an image that was untagged"
+        type: "string"
+      Deleted:
+        description: "The image ID of an image that was deleted"
+        type: "string"
+  ServiceUpdateResponse:
+    type: "object"
+    properties:
+      Warnings:
+        description: "Optional warning messages"
+        type: "array"
+        items:
+          type: "string"
+    example:
+      Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
+  ContainerSummary:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        Id:
+          description: "The ID of this container"
+          type: "string"
+          x-go-name: "ID"
+        Names:
+          description: "The names that this container has been given"
+          type: "array"
+          items:
+            type: "string"
+        Image:
+          description: "The name of the image used when creating this container"
+          type: "string"
+        ImageID:
+          description: "The ID of the image that this container was created from"
+          type: "string"
+        Command:
+          description: "Command to run when starting the container"
+          type: "string"
+        Created:
+          description: "When the container was created"
+          type: "integer"
+          format: "int64"
+        Ports:
+          description: "The ports exposed by this container"
+          type: "array"
+          items:
+            $ref: "#/definitions/Port"
+        SizeRw:
+          description: "The size of files that have been created or changed by this container"
+          type: "integer"
+          format: "int64"
+        SizeRootFs:
+          description: "The total size of all the files in this container"
+          type: "integer"
+          format: "int64"
+        Labels:
+          description: "User-defined key/value metadata."
+          type: "object"
+          additionalProperties:
+            type: "string"
+        State:
+          description: "The state of this container (e.g. `Exited`)"
+          type: "string"
+        Status:
+          description: "Additional human-readable status of this container (e.g. `Exit 0`)"
+          type: "string"
+        HostConfig:
+          type: "object"
+          properties:
+            NetworkMode:
+              type: "string"
+        NetworkSettings:
+          description: "A summary of the container's network settings"
+          type: "object"
+          properties:
+            Networks:
+              type: "object"
+              additionalProperties:
+                $ref: "#/definitions/EndpointSettings"
+        Mounts:
+          type: "array"
+          items:
+            $ref: "#/definitions/MountPoint"
+  SecretSpec:
+    type: "object"
+    properties:
+      Name:
+        description: "User-defined name of the secret."
+        type: "string"
+      Labels:
+        description: "User-defined key/value metadata."
+        type: "object"
+        additionalProperties:
+          type: "string"
+      Data:
+        description: "Base64-url-safe-encoded secret data"
+        type: "array"
+        items:
+          type: "string"
+  Secret:
+    type: "object"
+    properties:
+      ID:
+        type: "string"
+      Version:
+        $ref: "#/definitions/ObjectVersion"
+      CreatedAt:
+        type: "string"
+        format: "dateTime"
+      UpdatedAt:
+        type: "string"
+        format: "dateTime"
+      Spec:
+        $ref: "#/definitions/SecretSpec"
 paths:
   /containers/json:
     get:
@@ -7518,6 +7588,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -7909,6 +7983,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -9396,14 +9474,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -9412,10 +9493,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: "JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values. [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg)"
@@ -9424,6 +9507,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"
@@ -9512,14 +9596,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -9528,10 +9615,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: "JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values. [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg)"
@@ -9540,6 +9629,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"

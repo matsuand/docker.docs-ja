@@ -8,58 +8,6 @@ short: |
 long: |
     Convert compose files to Kubernetes manifests, Helm charts, or another model
 usage: docker compose bridge convert
-pname: docker compose bridge
-plink: docker_compose_bridge.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      default_value: out
-      description: The output directory for the Kubernetes resources
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: templates
-      value_type: string
-      description: Directory containing transformation templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: transformation
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
-      description: |
-        Transformation to apply to compose model (default: docker/compose-bridge-kubernetes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
 @y
 command: docker compose bridge convert
 short: |
@@ -67,56 +15,42 @@ short: |
 long: |
     Convert compose files to Kubernetes manifests, Helm charts, or another model
 usage: docker compose bridge convert
-pname: docker compose bridge
-plink: docker_compose_bridge.yaml
-options:
-    - option: output
-      shorthand: o
-      value_type: string
-      default_value: out
+@z
+
+% options:
+
+@x output
       description: The output directory for the Kubernetes resources
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: templates
-      value_type: string
+@y
+      description: The output directory for the Kubernetes resources
+@z
+
+@x templates
       description: Directory containing transformation templates
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: transformation
-      shorthand: t
-      value_type: stringArray
-      default_value: '[]'
+@y
+      description: Directory containing transformation templates
+@z
+
+@x transformation
       description: |
         Transformation to apply to compose model (default: docker/compose-bridge-kubernetes)
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: |
+        Transformation to apply to compose model (default: docker/compose-bridge-kubernetes)
+@z
+
+@x "yes"
+      description: |
+        Assume "yes" to the output directory overwrite prompt. For scripts/CI, where no interactive confirmation is possible
+@y
+      description: |
+        Assume "yes" to the output directory overwrite prompt. For scripts/CI, where no interactive confirmation is possible
+@z
+
+% inherited_options:
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: Execute command in dry run mode
 @z

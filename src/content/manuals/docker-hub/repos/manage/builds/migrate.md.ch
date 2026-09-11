@@ -51,24 +51,24 @@ Docker Hub, you first need to create access tokens:
 
 @x
 - For a personal repository: Create a [Personal
-  Access Token](../../../../security/access-tokens.md) with **Read & Write**
+  Access Token](../../../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
   permissions.
 @y
 - For a personal repository: Create a [Personal
-  Access Token](../../../../security/access-tokens.md) with **Read & Write**
+  Access Token](../../../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
   permissions.
 @z
 
 @x
 - For an organization repository: Create an [Organization Access
-  Token](../../../../enterprise/security/access-tokens.md) with the following
+  Token](../../../../security/access-tokens/organization-access-tokens.md) with the following
   permissions:
   - **Read public repositories**
   - **Image Pull** on any private repositories that the build needs to pull from
   - **Image Push** on the repository that the built image will be pushed to
 @y
 - For an organization repository: Create an [Organization Access
-  Token](../../../../enterprise/security/access-tokens.md) with the following
+  Token](../../../../security/access-tokens/organization-access-tokens.md) with the following
   permissions:
   - **Read public repositories**
   - **Image Pull** on any private repositories that the build needs to pull from

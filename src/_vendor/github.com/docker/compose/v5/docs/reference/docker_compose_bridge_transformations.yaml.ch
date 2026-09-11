@@ -5,58 +5,18 @@
 command: docker compose bridge transformations
 short: Manage transformation images
 long: Manage transformation images
-pname: docker compose bridge
-plink: docker_compose_bridge.yaml
-cname:
-    - docker compose bridge transformations create
-    - docker compose bridge transformations list
-clink:
-    - docker_compose_bridge_transformations_create.yaml
-    - docker_compose_bridge_transformations_list.yaml
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+usage: docker compose bridge transformations CMD [OPTIONS]
 @y
 command: docker compose bridge transformations
 short: Manage transformation images
 long: Manage transformation images
-pname: docker compose bridge
-plink: docker_compose_bridge.yaml
-cname:
-    - docker compose bridge transformations create
-    - docker compose bridge transformations list
-clink:
-    - docker_compose_bridge_transformations_create.yaml
-    - docker_compose_bridge_transformations_list.yaml
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+usage: docker compose bridge transformations CMD [OPTIONS]
+@z
+
+% inherited_options:
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: Execute command in dry run mode
 @z

@@ -254,7 +254,7 @@ Docker では公開で感謝の意を表わすものとします。
 
 @x
 After setting up Docker, you can learn the basics with
-[Getting started with Docker](/get-started/introduction/_index.md).
+[Build and share a containerized application](/get-started/tutorials/run-an-app.md).
 @y
-Docker の設定を終えたら [Docker を使ってはじめよう](get-started/introduction/_index.md) を通じてその基本を学んでいきます。
+Docker の設定を終えたら [コンテナー化アプリケーションのビルドと共有](get-started/tutorials/run-an-app.md) を通じてその基本を学んでいきます。
 @z

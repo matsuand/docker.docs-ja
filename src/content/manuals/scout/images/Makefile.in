@@ -297,7 +297,6 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = release-notes
 copyfiles = \
-	Scout-ECR.png                    \
 	change-base-image.png            \
 	dashboard-images.webp            \
 	dashboard-overview.webp          \
@@ -310,7 +309,6 @@ copyfiles = \
 	scout-metrics-grafana-policy.png \
 	scout-metrics-grafana-vulns.png  \
 	scout-metrics-prom-target.png    \
-	scout-slack-notification.png     \
 	suppressed-cve-cli.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

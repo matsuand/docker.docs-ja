@@ -1,6 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
 % snip 対応
 
 @x
@@ -68,12 +69,12 @@ Before you begin, ensure you have:
 @z
 
 @x
-[Create a personal access token](/security/access-tokens/) from
+[Create a personal access token](/security/access-tokens/personal-access-tokens/) from
 a user account that has access to the organization's repositories. When creating
 the token, select at minimum **Read-only** access permissions to list
 repositories.
 @y
-[Create a personal access token](/security/access-tokens/) from
+[Create a personal access token](__SUBDIR__/security/access-tokens/personal-access-tokens/) from
 a user account that has access to the organization's repositories. When creating
 the token, select at minimum **Read-only** access permissions to list
 repositories.

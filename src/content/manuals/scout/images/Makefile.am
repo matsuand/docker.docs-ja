@@ -4,7 +4,6 @@
 SUBDIRS = release-notes
 
 copyfiles = \
-	Scout-ECR.png                    \
 	change-base-image.png            \
 	dashboard-images.webp            \
 	dashboard-overview.webp          \
@@ -17,7 +16,6 @@ copyfiles = \
 	scout-metrics-grafana-policy.png \
 	scout-metrics-grafana-vulns.png  \
 	scout-metrics-prom-target.png    \
-	scout-slack-notification.png     \
 	suppressed-cve-cli.png
 
 include $(top_srcdir)/build-aux/common.mk

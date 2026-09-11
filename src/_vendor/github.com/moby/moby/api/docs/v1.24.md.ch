@@ -2478,11 +2478,13 @@ Start the container `id`
 @x
 -   **204** – no error
 -   **304** – container already started
+-   **400** – bad parameter, including an invalid checkpoint ID
 -   **404** – no such container
 -   **500** – server error
 @y
 -   **204** – no error
 -   **304** – container already started
+-   **400** – bad parameter, including an invalid checkpoint ID
 -   **404** – no such container
 -   **500** – server error
 @z

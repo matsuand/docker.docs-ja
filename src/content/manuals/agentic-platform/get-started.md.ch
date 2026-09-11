@@ -6,21 +6,21 @@
 @x
 title: Get started with Docker Agentic Platform
 linkTitle: Get started
-description: Choose an agent environment and start a Docker Agentic Platform sandbox.
+description: Choose an environment and start a Docker Agentic Platform sandbox.
 keywords: docker agentic platform, get started, agents, sandbox, live terminal
 @y
 title: Get started with Docker Agentic Platform
 linkTitle: Get started
-description: Choose an agent environment and start a Docker Agentic Platform sandbox.
+description: Choose an environment and start a Docker Agentic Platform sandbox.
 keywords: docker agentic platform, get started, agents, sandbox, live terminal
 @z
 
 @x
 The Docker Agentic Platform launcher collects the configuration needed to start
-an agent in an isolated sandbox.
+an isolated sandbox.
 @y
 The Docker Agentic Platform launcher collects the configuration needed to start
-an agent in an isolated sandbox.
+an isolated sandbox.
 @z
 
 @x
@@ -30,22 +30,24 @@ an agent in an isolated sandbox.
 @z
 
 @x
-You need a Docker account, access to Docker Agentic Platform, and an API key for
-the model provider you want to use. You can add the key under **Secrets** before
-creating the sandbox or provide it in the launcher when prompted.
+You need a Docker account and access to Docker Agentic Platform. The launcher
+prompts for a model provider API key when needed. You can add the key under
+**Secrets** before creating the sandbox or provide it in the launcher when
+prompted.
 @y
-You need a Docker account, access to Docker Agentic Platform, and an API key for
-the model provider you want to use. You can add the key under **Secrets** before
-creating the sandbox or provide it in the launcher when prompted.
+You need a Docker account and access to Docker Agentic Platform. The launcher
+prompts for a model provider API key when needed. You can add the key under
+**Secrets** before creating the sandbox or provide it in the launcher when
+prompted.
 @z
 
 @x
-The available sandbox types are Claude Code, Codex, OpenCode, Copilot, and
-Gemini CLI. The supported model provider credentials are Anthropic, OpenAI,
+The available sandbox types are Claude Code, Codex, OpenCode, Copilot, Gemini
+CLI, and Shell. The supported model provider credentials are Anthropic, OpenAI,
 GitHub Copilot, Google, Groq, and xAI.
 @y
-The available sandbox types are Claude Code, Codex, OpenCode, Copilot, and
-Gemini CLI. The supported model provider credentials are Anthropic, OpenAI,
+The available sandbox types are Claude Code, Codex, OpenCode, Copilot, Gemini
+CLI, and Shell. The supported model provider credentials are Anthropic, OpenAI,
 GitHub Copilot, Google, Groq, and xAI.
 @z
 
@@ -58,9 +60,9 @@ GitHub Copilot, Google, Groq, and xAI.
 @x
 1. Open [Docker Agentic Platform](https://agentic-platform.docker.com/) and
    select **New**.
-2. Choose a sandbox type and select or add its required model credential.
-   Copilot uses `GITHUB_TOKEN`; add the same GitHub secret to any other sandbox
-   type that needs private repository access.
+2. Choose a sandbox type and add any requested model credential. Copilot uses
+   `GITHUB_TOKEN`; add the same GitHub secret to any other sandbox type that
+   needs private repository access.
 3. Configure the sandbox. The initial settings are **open access**, **no tools
    added**, and **medium compute**.
 4. Choose whether Docker stops or deletes the sandbox when its timer expires,
@@ -69,9 +71,9 @@ GitHub Copilot, Google, Groq, and xAI.
 @y
 1. Open [Docker Agentic Platform](https://agentic-platform.docker.com/) and
    select **New**.
-2. Choose a sandbox type and select or add its required model credential.
-   Copilot uses `GITHUB_TOKEN`; add the same GitHub secret to any other sandbox
-   type that needs private repository access.
+2. Choose a sandbox type and add any requested model credential. Copilot uses
+   `GITHUB_TOKEN`; add the same GitHub secret to any other sandbox type that
+   needs private repository access.
 3. Configure the sandbox. The initial settings are **open access**, **no tools
    added**, and **medium compute**.
 4. Choose whether Docker stops or deletes the sandbox when its timer expires,
@@ -90,9 +92,9 @@ its terminal.
 @z
 
 @x
-Use the terminal to interact with the selected agent or tool.
+Use the terminal to interact with the sandbox.
 @y
-Use the terminal to interact with the selected agent or tool.
+Use the terminal to interact with the sandbox.
 @z
 
 @x

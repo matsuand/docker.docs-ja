@@ -1104,14 +1104,14 @@ The available `[OPTIONS]` for the `RUN` instruction are:
 @x
 | Option                          | Minimum Dockerfile version |
 |---------------------------------|----------------------------|
-| [`--device`](#run---device)     | 1.14-labs                  |
+| [`--device`](#run---device)     | 1.27                       |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
 | [`--security`](#run---security) | 1.20                       |
 @y
 | Option                          | Minimum Dockerfile version |
 |---------------------------------|----------------------------|
-| [`--device`](#run---device)     | 1.14-labs                  |
+| [`--device`](#run---device)     | 1.27                       |
 | [`--mount`](#run---mount)       | 1.2                        |
 | [`--network`](#run---network)   | 1.3                        |
 | [`--security`](#run---security) | 1.20                       |
@@ -1152,6 +1152,116 @@ The cache for `RUN` instructions can be invalidated by [`ADD`](#add) and [`COPY`
 @z
 
 @x
+### RUN --device
+@y
+### RUN --device
+@z
+
+@x
+> [!NOTE]
+> This option needs BuildKit 0.20.0 or later.
+@y
+> [!NOTE]
+> This option needs BuildKit 0.20.0 or later.
+@z
+
+% snip code...
+
+@x
+`RUN --device` allows build to request [CDI devices](https://github.com/moby/buildkit/blob/master/docs/cdi.md)
+to be available to the build step.
+@y
+`RUN --device` allows build to request [CDI devices](https://github.com/moby/buildkit/blob/master/docs/cdi.md)
+to be available to the build step.
+@z
+
+@x
+> [!WARNING]
+> The use of `--device` is protected by the `device` entitlement, which needs
+> to be enabled when starting the buildkitd daemon with
+> `--allow-insecure-entitlement device` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
+> and for a build request with [`--allow device` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
+@y
+> [!WARNING]
+> The use of `--device` is protected by the `device` entitlement, which needs
+> to be enabled when starting the buildkitd daemon with
+> `--allow-insecure-entitlement device` flag or in [buildkitd config](https://github.com/moby/buildkit/blob/master/docs/buildkitd.toml.md),
+> and for a build request with [`--allow device` flag](https://docs.docker.com/engine/reference/commandline/buildx_build/#allow).
+@z
+
+@x
+The device `name` is provided by the CDI specification registered in BuildKit.
+@y
+The device `name` is provided by the CDI specification registered in BuildKit.
+@z
+
+@x
+In the following example, multiple devices are registered in the CDI
+specification for the `vendor1.com/device` vendor.
+@y
+In the following example, multiple devices are registered in the CDI
+specification for the `vendor1.com/device` vendor.
+@z
+
+% snip code...
+
+@x
+The device name format is flexible and accepts various patterns to support
+multiple device configurations:
+@y
+The device name format is flexible and accepts various patterns to support
+multiple device configurations:
+@z
+
+@x
+* `vendor1.com/device`: request the first device found for this vendor
+* `vendor1.com/device=foo`: request a specific device
+* `vendor1.com/device=*`: request all devices for this vendor
+* `class1`: request devices by `org.mobyproject.buildkit.device.class` annotation
+@y
+* `vendor1.com/device`: request the first device found for this vendor
+* `vendor1.com/device=foo`: request a specific device
+* `vendor1.com/device=*`: request all devices for this vendor
+* `class1`: request devices by `org.mobyproject.buildkit.device.class` annotation
+@z
+
+@x
+> [!NOTE]
+> Annotations are supported by the CDI specification since 0.6.0.
+@y
+> [!NOTE]
+> Annotations are supported by the CDI specification since 0.6.0.
+@z
+
+@x
+> [!NOTE]
+> To automatically allow all devices registered in the CDI specification, you
+> can set the `org.mobyproject.buildkit.device.autoallow` annotation. You can
+> also set this annotation for a specific device.
+@y
+> [!NOTE]
+> To automatically allow all devices registered in the CDI specification, you
+> can set the `org.mobyproject.buildkit.device.autoallow` annotation. You can
+> also set this annotation for a specific device.
+@z
+
+@x
+#### Example: CUDA-Powered LLaMA Inference
+@y
+#### Example: CUDA-Powered LLaMA Inference
+@z
+
+@x
+In this example we use the `--device` flag to run `llama.cpp` inference using
+an NVIDIA GPU device through CDI:
+@y
+In this example we use the `--device` flag to run `llama.cpp` inference using
+an NVIDIA GPU device through CDI:
+@z
+
+% snip code...
+
+@x
 ### RUN --mount
 @y
 ### RUN --mount
@@ -1383,6 +1493,42 @@ an environment variable by setting the `env` option.
 | `mode`                         | File mode for secret file in octal. Default `0400`.                                                             |
 | `uid`                          | User ID for secret file. Default `0`.                                                                           |
 | `gid`                          | Group ID for secret file. Default `0`.                                                                          |
+@z
+
+@x
+> [!NOTE]
+> On Windows containers, the secret is delivered as a single-file, read-only
+> bind mount (there is no `tmpfs`). An explicit `target` is required because
+> there is no default `/run/secrets/` location, e.g.
+> `--mount=type=secret,id=mysecret,target=C:/path/to/secret`. Use forward
+> slashes in the target: the Dockerfile escape character (default `\`) otherwise
+> consumes the backslashes during parsing. The `mode`, `uid`, and `gid` options
+> are not supported on Windows and are ignored. The secret is written to a
+> temporary file restricted (via an explicit ACL) to SYSTEM, the Administrators
+> group, and the BuildKit daemon account, then removed after the step; it is
+> written in clear text, so consider BitLocker for at-rest encryption. Because
+> the file is not granted to the container's default user, the `RUN` step must
+> execute as an administrator (e.g. `USER ContainerAdministrator`) to read the
+> secret. The secret value is not persisted in the image; however, an empty
+> placeholder directory may remain at the `target` path in the resulting
+> layer, which is an inherent property of Windows bind mounts.
+@y
+> [!NOTE]
+> On Windows containers, the secret is delivered as a single-file, read-only
+> bind mount (there is no `tmpfs`). An explicit `target` is required because
+> there is no default `/run/secrets/` location, e.g.
+> `--mount=type=secret,id=mysecret,target=C:/path/to/secret`. Use forward
+> slashes in the target: the Dockerfile escape character (default `\`) otherwise
+> consumes the backslashes during parsing. The `mode`, `uid`, and `gid` options
+> are not supported on Windows and are ignored. The secret is written to a
+> temporary file restricted (via an explicit ACL) to SYSTEM, the Administrators
+> group, and the BuildKit daemon account, then removed after the step; it is
+> written in clear text, so consider BitLocker for at-rest encryption. Because
+> the file is not granted to the container's default user, the `RUN` step must
+> execute as an administrator (e.g. `USER ContainerAdministrator`) to read the
+> secret. The secret value is not persisted in the image; however, an empty
+> placeholder directory may remain at the `target` path in the resulting
+> layer, which is an inherent property of Windows bind mounts.
 @z
 
 @x
@@ -2457,14 +2603,14 @@ ADD arr[[]0].txt /dest/
 
 @x
 When using a local tar archive as the source for `ADD`, and the archive is in a
-recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
-archive is decompressed and extracted into the specified destination. Local tar
-archives are extracted by default, see the [`ADD --unpack` flag].
+recognized compression format (`gzip`, `bzip2`, `xz` or `zstd`, or
+uncompressed), the archive is decompressed and extracted into the specified
+destination. Local tar archives are extracted by default, see the [`ADD --unpack` flag].
 @y
 When using a local tar archive as the source for `ADD`, and the archive is in a
-recognized compression format (`gzip`, `bzip2` or `xz`, or uncompressed), the
-archive is decompressed and extracted into the specified destination. Local tar
-archives are extracted by default, see the [`ADD --unpack` flag].
+recognized compression format (`gzip`, `bzip2`, `xz` or `zstd`, or
+uncompressed), the archive is decompressed and extracted into the specified
+destination. Local tar archives are extracted by default, see the [`ADD --unpack` flag].
 @z
 
 @x
@@ -2883,14 +3029,16 @@ ADD [--unpack=<bool>] <src> ... <dir>
 
 @x
 The `--unpack` flag controls whether or not to automatically unpack tar
-archives (including compressed formats like `gzip` or `bzip2`) when adding them
-to the image. Local tar archives are unpacked by default, whereas remote tar
-archives (where `src` is a URL) are downloaded without unpacking.
+archives (including compressed formats like `gzip`, `bzip2`, `xz` or `zstd`)
+when adding them to the image. Local tar archives are unpacked by default,
+whereas remote tar archives (where `src` is a URL) are downloaded without
+unpacking.
 @y
 The `--unpack` flag controls whether or not to automatically unpack tar
-archives (including compressed formats like `gzip` or `bzip2`) when adding them
-to the image. Local tar archives are unpacked by default, whereas remote tar
-archives (where `src` is a URL) are downloaded without unpacking.
+archives (including compressed formats like `gzip`, `bzip2`, `xz` or `zstd`)
+when adding them to the image. Local tar archives are unpacked by default,
+whereas remote tar archives (where `src` is a URL) are downloaded without
+unpacking.
 @z
 
 @x
@@ -5559,6 +5707,7 @@ RUN echo "I'm building for $TARGETPLATFORM"
 | `BUILDKIT_BUILD_NAME`           | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
 | `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                                 |
 | `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_GIT_ADVICE`           | Bool   | Show Git advice messages from BuildKit-managed Git operations. Defaults to `false`.                                                                                                                              |
 | `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
 | `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
 | `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |
@@ -5570,6 +5719,7 @@ RUN echo "I'm building for $TARGETPLATFORM"
 | `BUILDKIT_BUILD_NAME`           | String | Override the build name shown in [`buildx history` command](https://docs.docker.com/reference/cli/docker/buildx/history/) and [Docker Desktop Builds view](https://docs.docker.com/desktop/use-desktop/builds/). |
 | `BUILDKIT_CACHE_MOUNT_NS`       | String | Set optional cache ID namespace.                                                                                                                                                                                 |
 | `BUILDKIT_CONTEXT_KEEP_GIT_DIR` | Bool   | Trigger Git context to keep the `.git` directory.                                                                                                                                                                |
+| `BUILDKIT_GIT_ADVICE`           | Bool   | Show Git advice messages from BuildKit-managed Git operations. Defaults to `false`.                                                                                                                              |
 | `BUILDKIT_INLINE_CACHE`[^2]     | Bool   | Inline cache metadata to image config or not.                                                                                                                                                                    |
 | `BUILDKIT_MULTI_PLATFORM`       | Bool   | Opt into deterministic output regardless of multi-platform output or not.                                                                                                                                        |
 | `BUILDKIT_SANDBOX_HOSTNAME`     | String | Set the hostname (default `buildkitsandbox`)                                                                                                                                                                     |

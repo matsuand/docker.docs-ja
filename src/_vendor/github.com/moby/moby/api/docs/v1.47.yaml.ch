@@ -2956,9 +2956,10 @@ definitions:
         example: "SIGTERM"
         x-nullable: true
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
         x-nullable: true
       Shell:
         description: |
@@ -2995,9 +2996,10 @@ definitions:
         example: "SIGTERM"
         x-nullable: true
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
         x-nullable: true
       Shell:
         description: |
@@ -8579,7 +8581,7 @@ definitions:
               forcefully killing it.
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -8614,7 +8616,7 @@ definitions:
               forcefully killing it.
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -9463,6 +9465,54 @@ definitions:
         $ref: "#/definitions/ContainerStatus"
       PortStatus:
         $ref: "#/definitions/PortStatus"
+@z
+
+@x
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
+@y
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
 @z
 
 @x
@@ -9510,6 +9560,13 @@ definitions:
           the JobIteration of the Service this Task was created for. Absent if
           the Task was created for a Replicated or Global Service.
         $ref: "#/definitions/ObjectVersion"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
     example:
       ID: "0kzzo1i0y4jz6027t0k7aezc7"
       Version:
@@ -9621,6 +9678,13 @@ definitions:
           the JobIteration of the Service this Task was created for. Absent if
           the Task was created for a Replicated or Global Service.
         $ref: "#/definitions/ObjectVersion"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
     example:
       ID: "0kzzo1i0y4jz6027t0k7aezc7"
       Version:
@@ -16396,6 +16460,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         404:
           description: "no such container"
           schema:
@@ -16826,6 +16894,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
         404:
           description: "no such container"
           schema:
@@ -18470,14 +18542,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -18486,10 +18561,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: >
@@ -18560,14 +18637,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -18576,10 +18656,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: >
@@ -18604,6 +18686,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"
@@ -18637,6 +18720,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"
@@ -26451,7 +26535,6 @@ paths:
             - `id=<config id>`
             - `label=<key> or label=<key>=value`
             - `name=<config name>`
-            - `names=<config name>`
       tags: ["Config"]
   /configs/create:
     post:
@@ -26644,7 +26727,6 @@ paths:
             - `id=<config id>`
             - `label=<key> or label=<key>=value`
             - `name=<config name>`
-            - `names=<config name>`
       tags: ["Config"]
   /configs/create:
     post:

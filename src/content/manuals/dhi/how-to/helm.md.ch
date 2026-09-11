@@ -112,16 +112,16 @@ authentication.
 
 @x
 1. For `dhi.io` or Docker Hub, create a [personal access token
-   (PAT)](/security/access-tokens/) using your Docker account or an
-   [organization access token (OAT)](/enterprise/security/access-tokens/).
+   (PAT)](/security/access-tokens/personal-access-tokens/) using your Docker account or an
+   [organization access token (OAT)](/security/access-tokens/organization-access-tokens/).
    Ensure the token has at least read-only access to the Docker Hardened Image
    repositories.
 2. Create a secret in Kubernetes using the following command. Replace `<your-secret-name>`, `<your-username>`,
    `<your-personal-access-token>`, and `<your-email>` with your own values.
 @y
 1. For `dhi.io` or Docker Hub, create a [personal access token
-   (PAT)](__SUBDIR__/security/access-tokens/) using your Docker account or an
-   [organization access token (OAT)](__SUBDIR__/enterprise/security/access-tokens/).
+   (PAT)](__SUBDIR__/security/access-tokens/personal-access-tokens/) using your Docker account or an
+   [organization access token (OAT)](__SUBDIR__/security/access-tokens/organization-access-tokens/).
    Ensure the token has at least read-only access to the Docker Hardened Image
    repositories.
 2. Create a secret in Kubernetes using the following command. Replace `<your-secret-name>`, `<your-username>`,

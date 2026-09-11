@@ -16,13 +16,13 @@ keywords: docker sandboxes, sbx, ai agents, sandboxed agents, microVM
 @x
 Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
 sandbox gets its own Docker daemon, filesystem, and network — the agent can
-build containers, install packages, and modify files without touching your host
-system.
+build containers, install packages, and modify files without accessing host
+resources beyond those you share.
 @y
 Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
 sandbox gets its own Docker daemon, filesystem, and network — the agent can
-build containers, install packages, and modify files without touching your host
-system.
+build containers, install packages, and modify files without accessing host
+resources beyond those you share.
 @z
 
 @x

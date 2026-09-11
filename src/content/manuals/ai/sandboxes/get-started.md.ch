@@ -22,13 +22,13 @@ keywords: sandbox, sbx, get started, credentials, clone mode, network policy
 @x
 Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
 sandbox gets its own Docker daemon, filesystem, and network — the agent can
-build containers, install packages, and modify files without touching your host
-system.
+build containers, install packages, and modify files without accessing host
+resources beyond those you share.
 @y
 Docker Sandboxes run AI coding agents in isolated microVM sandboxes. Each
 sandbox gets its own Docker daemon, filesystem, and network — the agent can
-build containers, install packages, and modify files without touching your host
-system.
+build containers, install packages, and modify files without accessing host
+resources beyond those you share.
 @z
 
 @x
@@ -256,12 +256,14 @@ one part of your machine the agent can see.
 @z
 
 @x
-By default, the workspace is shared read-write, so the agent and your host see
+When you run `sbx run` from a project directory without passing a workspace
+path, the current directory is mounted read-write. The agent and your host see
 the same files. Edits the agent makes to your project appear in your working
 tree as it writes them, and you review them as an ordinary Git diff before
 committing.
 @y
-By default, the workspace is shared read-write, so the agent and your host see
+When you run `sbx run` from a project directory without passing a workspace
+path, the current directory is mounted read-write. The agent and your host see
 the same files. Edits the agent makes to your project appear in your working
 tree as it writes them, and you review them as an ordinary Git diff before
 committing.
@@ -453,8 +455,7 @@ Then explore:
 - [Workflow patterns](workflows/) — Git strategies, local services, CI, and
   authenticated tools.
 - [Sandbox environment files](configuration/environment-files.md) — declare and share
-  repeatable local sandbox configurations with `.sbxenv.yaml`. Requires `sbx`
-  0.39.0 or later.
+  repeatable local sandbox configurations with `sbxenv.yaml`.
 - [Customize with kits](customize/) — package an agent, its tools, and its
   network rules into a reusable definition you launch with a single flag.
 - [Agents](agents/) — the full list of supported agents and how to configure
@@ -467,8 +468,7 @@ Then explore:
 - [Workflow patterns](workflows/) — Git strategies, local services, CI, and
   authenticated tools.
 - [Sandbox environment files](configuration/environment-files.md) — declare and share
-  repeatable local sandbox configurations with `.sbxenv.yaml`. Requires `sbx`
-  0.39.0 or later.
+  repeatable local sandbox configurations with `sbxenv.yaml`.
 - [Customize with kits](customize/) — package an agent, its tools, and its
   network rules into a reusable definition you launch with a single flag.
 - [Agents](agents/) — the full list of supported agents and how to configure

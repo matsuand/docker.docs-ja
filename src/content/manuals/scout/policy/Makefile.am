@@ -2,8 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 bases = \
-	_index.md      \
-	dashboard.md   \
+	_index.md \
 	local.md
 
 include $(top_srcdir)/build-aux/common.mk

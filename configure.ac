@@ -194,20 +194,19 @@ AC_CONFIG_FILES([
 	src/content/get-started/docker-concepts/the-basics/Makefile
 	src/content/get-started/docker-concepts/the-basics/images/Makefile
 	src/content/get-started/images/Makefile
-	src/content/get-started/introduction/Makefile
-	src/content/get-started/introduction/images/Makefile
+	src/content/get-started/tutorials/Makefile
 	src/content/guides/Makefile
 	src/content/guides/images/Makefile
 	src/content/includes/Makefile
 	src/content/includes/compose/Makefile
 	src/content/manuals/Makefile
 	src/content/manuals/accounts/Makefile
-	src/content/manuals/admin/Makefile
-	src/content/manuals/admin/company/Makefile
-	src/content/manuals/admin/images/Makefile
-	src/content/manuals/admin/organization/Makefile
-	src/content/manuals/admin/organization/manage/Makefile
-	src/content/manuals/admin/organization/setup/Makefile
+	src/content/manuals/accounts/company/Makefile
+	src/content/manuals/accounts/individual/Makefile
+	src/content/manuals/accounts/organization/Makefile
+	src/content/manuals/accounts/organization/images/Makefile
+	src/content/manuals/accounts/organization/manage/Makefile
+	src/content/manuals/accounts/organization/setup/Makefile
 	src/content/manuals/agentic-platform/Makefile
 	src/content/manuals/ai/Makefile
 	src/content/manuals/ai/compose/Makefile
@@ -233,7 +232,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/sandboxes/integrations/Makefile
 	src/content/manuals/ai/sandboxes/security/Makefile
 	src/content/manuals/ai/sandboxes/workflows/Makefile
-	src/content/manuals/billing/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
 	src/content/manuals/build/builders/Makefile
@@ -310,15 +308,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/enterprise/security/hardened-desktop/Makefile
 	src/content/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/Makefile
 	src/content/manuals/enterprise/security/hardened-desktop/settings-management/Makefile
-	src/content/manuals/enterprise/security/images/Makefile
-	src/content/manuals/enterprise/security/oidc-connections/Makefile
-	src/content/manuals/enterprise/security/provisioning/Makefile
-	src/content/manuals/enterprise/security/provisioning/scim/Makefile
-	src/content/manuals/enterprise/security/roles-and-permissions/Makefile
-	src/content/manuals/enterprise/security/roles-and-permissions/custom-roles/Makefile
-	src/content/manuals/enterprise/security/single-sign-on/Makefile
-	src/content/manuals/enterprise/security/single-sign-on/FAQs/Makefile
-	src/content/manuals/enterprise/security/single-sign-on/images/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile
@@ -359,6 +348,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/extensions/extensions-sdk/extensions/images/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/Makefile
 	src/content/manuals/extensions/extensions-sdk/guides/images/Makefile
+	src/content/manuals/faqs/Makefile
 	src/content/manuals/offload/Makefile
 	src/content/manuals/offload/images/Makefile
 	src/content/manuals/scout/Makefile
@@ -369,18 +359,24 @@ AC_CONFIG_FILES([
 	src/content/manuals/scout/images/release-notes/Makefile
 	src/content/manuals/scout/integrations/Makefile
 	src/content/manuals/scout/integrations/ci/Makefile
-	src/content/manuals/scout/integrations/code-quality/Makefile
 	src/content/manuals/scout/integrations/environment/Makefile
-	src/content/manuals/scout/integrations/registry/Makefile
-	src/content/manuals/scout/integrations/source-code-management/Makefile
-	src/content/manuals/scout/integrations/team-collaboration/Makefile
 	src/content/manuals/scout/policy/Makefile
 	src/content/manuals/scout/release-notes/Makefile
 	src/content/manuals/security/Makefile
-	src/content/manuals/security/2fa/Makefile
-	src/content/manuals/security/faqs/Makefile
-	src/content/manuals/subscription/Makefile
-	src/content/manuals/subscription/plans/Makefile
+	src/content/manuals/security/access-tokens/Makefile
+	src/content/manuals/security/authentication/Makefile
+	src/content/manuals/security/authentication/2fa/Makefile
+	src/content/manuals/security/authentication/oidc-connections/Makefile
+	src/content/manuals/security/authentication/single-sign-on/Makefile
+	src/content/manuals/security/authentication/single-sign-on/images/Makefile
+	src/content/manuals/security/images/Makefile
+	src/content/manuals/security/provisioning/Makefile
+	src/content/manuals/security/provisioning/scim/Makefile
+	src/content/manuals/security/roles-and-permissions/Makefile
+	src/content/manuals/security/roles-and-permissions/custom-roles/Makefile
+	src/content/manuals/subscription-billing/Makefile
+	src/content/manuals/subscription-billing/manage/Makefile
+	src/content/manuals/subscription-billing/plans/Makefile
 	src/content/manuals/support/Makefile
 	src/content/manuals/unassociated-machines/Makefile
 	src/content/reference/Makefile

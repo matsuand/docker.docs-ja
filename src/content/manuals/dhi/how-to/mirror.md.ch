@@ -15,6 +15,12 @@ description: Learn how to mirror an image into your organization's namespace and
 @z
 
 @x
+keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
+@y
+keywords: mirror docker image, private container registry, docker hub automation, webhook image sync, secure image distribution, internal registry, jfrog artifactory, harbor registry, amazon ecr, google artifact registry, github container registry, terraform, infrastructure as code
+@z
+
+@x
 {{< summary-bar feature_name="Docker Hardened Images" >}}
 @y
 {{< summary-bar feature_name="Docker Hardened Images" >}}
@@ -87,16 +93,16 @@ repositories:
 @z
 
 @x
-Organization owners, editors, and members with a [custom role](../../enterprise/security/roles-and-permissions/custom-roles/_index.md)
+Organization owners, editors, and members with a [custom role](../../security/roles-and-permissions/custom-roles/_index.md)
 that includes the DHI mirroring permission can create, view, and manage mirrors.
 When using the CLI or Terraform, you can also mirror using an [organization
-access token (OAT)](../../enterprise/security/access-tokens.md) with the
+access token (OAT)](../../security/access-tokens/organization-access-tokens.md) with the
 appropriate permission scopes, without requiring role-based access.
 @y
-Organization owners, editors, and members with a [custom role](../../enterprise/security/roles-and-permissions/custom-roles/_index.md)
+Organization owners, editors, and members with a [custom role](../../security/roles-and-permissions/custom-roles/_index.md)
 that includes the DHI mirroring permission can create, view, and manage mirrors.
 When using the CLI or Terraform, you can also mirror using an [organization
-access token (OAT)](../../enterprise/security/access-tokens.md) with the
+access token (OAT)](../../security/access-tokens/organization-access-tokens.md) with the
 appropriate permission scopes, without requiring role-based access.
 @z
 
@@ -202,15 +208,15 @@ It may take a few minutes for all the tags to finish mirroring.
 
 @x
 Authenticate with `docker login` using your Docker credentials, a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+(OAT)](../../security/access-tokens/organization-access-tokens.md). When using an OAT, the
 available operations depend on the token's permission scope:
 @y
 Authenticate with `docker login` using your Docker credentials, a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+(OAT)](../../security/access-tokens/organization-access-tokens.md). When using an OAT, the
 available operations depend on the token's permission scope:
 @z
 
@@ -400,15 +406,15 @@ updates. You can still use the last images or charts that were mirrored.
 
 @x
 Authenticate with `docker login` using your Docker credentials, a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md) with push access to the
+(OAT)](../../security/access-tokens/organization-access-tokens.md) with push access to the
 relevant repository.
 @y
 Authenticate with `docker login` using your Docker credentials, a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md) with push access to the
+(OAT)](../../security/access-tokens/organization-access-tokens.md) with push access to the
 relevant repository.
 @z
 
@@ -603,19 +609,19 @@ same steps to a non-mirrored image by updating the `SRC_ATT_REPO` and
 @x
    In this example, you authenticate as your Docker organization using an
    [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md). The OAT must have at
+   (OAT)](../../security/access-tokens/organization-access-tokens.md). The OAT must have at
    least pull access to every DHI repository you want to mirror. Only
    repositories in the token's scope are accessible. Alternatively, you can
    authenticate as a Docker Hub user with a [personal access token
-   (PAT)](../../security/access-tokens.md) that has `read only` access.
+   (PAT)](../../security/access-tokens/personal-access-tokens.md) that has `read only` access.
 @y
    In this example, you authenticate as your Docker organization using an
    [organization access token
-   (OAT)](../../enterprise/security/access-tokens.md). The OAT must have at
+   (OAT)](../../security/access-tokens/organization-access-tokens.md). The OAT must have at
    least pull access to every DHI repository you want to mirror. Only
    repositories in the token's scope are accessible. Alternatively, you can
    authenticate as a Docker Hub user with a [personal access token
-   (PAT)](../../security/access-tokens.md) that has `read only` access.
+   (PAT)](../../security/access-tokens/personal-access-tokens.md) that has `read only` access.
 @z
 
 @x
@@ -710,7 +716,31 @@ The following example uses a `regsync.yaml` file that syncs Node 24 and Python
 3.12 Debian 13 variants, excluding Alpine and Debian 12.
 @z
 
-% snip code...
+@x within code
+# Optional: inline creds if not relying on prior CLI logins
+# creds:
+#   - registry: docker.io
+#     user: <your-docker-org>
+#     pass: "{{file \"/run/secrets/docker_oat\"}}"
+#   - registry: registry.scout.docker.com
+#     user: <your-docker-org>
+#     pass: "{{file \"/run/secrets/docker_oat\"}}"
+#   - registry: registry.example.com
+#     user: <service-user>
+#     pass: "{{file \"/run/secrets/dest_token\"}}"
+@y
+# Optional: inline creds if not relying on prior CLI logins
+# creds:
+#   - registry: docker.io
+#     user: <your-docker-org>
+#     pass: "{{file \"/run/secrets/docker_oat\"}}"
+#   - registry: registry.scout.docker.com
+#     user: <your-docker-org>
+#     pass: "{{file \"/run/secrets/docker_oat\"}}"
+#   - registry: registry.example.com
+#     user: <service-user>
+#     pass: "{{file \"/run/secrets/dest_token\"}}"
+@z
 
 @x
 To do a dry run with the configuration file, you can run the following command.

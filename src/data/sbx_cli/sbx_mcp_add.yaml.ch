@@ -387,10 +387,10 @@ example: |4-
 
 @x
       # Private-network endpoint (host resolves to a private address) — opt out of the SSRF guard
-      sbx mcp add internal --url https://maas.prd.astra.example.com/mcp --skip-ssrf-check
+      sbx mcp add internal --url https://private.example.com/mcp --skip-ssrf-check
 @y
       # Private-network endpoint (host resolves to a private address) — opt out of the SSRF guard
-      sbx mcp add internal --url https://maas.prd.astra.example.com/mcp --skip-ssrf-check
+      sbx mcp add internal --url https://private.example.com/mcp --skip-ssrf-check
 @z
 
 @x

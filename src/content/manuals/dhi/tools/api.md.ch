@@ -108,11 +108,11 @@ Every query takes a `Context` argument (conventionally named `ctx` in the
 @z
 
 @x
-An [organization access token](/manuals/enterprise/security/access-tokens.md)
+An [organization access token](/manuals/security/access-tokens/organization-access-tokens.md)
 (OAT) or personal access token (PAT) isn't used directly as the bearer
 token. Exchange it first for an access token:
 @y
-An [organization access token](manuals/enterprise/security/access-tokens.md)
+An [organization access token](manuals/security/access-tokens/organization-access-tokens.md)
 (OAT) or personal access token (PAT) isn't used directly as the bearer
 token. Exchange it first for an access token:
 @z

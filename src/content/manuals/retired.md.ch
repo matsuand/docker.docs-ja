@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Deprecated and retired Docker products and features
@@ -9,12 +9,14 @@ linkTitle: Deprecated products and features
 description: |
   Explore deprecated and retired Docker features, products, and open source
   projects, including details on transitioned tools and archived initiatives.
+keywords: deprecated, retired, docker products, docker features, legacy
 @y
 title: Deprecated and retired Docker products and features
 linkTitle: Deprecated products and features
 description: |
   Explore deprecated and retired Docker features, products, and open source
   projects, including details on transitioned tools and archived initiatives.
+keywords: deprecated, retired, docker products, docker features, legacy
 @z
 
 @x
@@ -204,6 +206,104 @@ project requirements.
 @z
 
 @x
+### Docker Desktop sandboxes
+@y
+### Docker Desktop sandboxes
+@z
+
+@x
+Docker Desktop sandboxes let users run AI coding agents in isolated microVMs
+through the `docker sandbox` command. The `docker sandbox` plugin was removed
+in Docker Desktop 4.80.0. Use the standalone
+[`sbx` CLI](/manuals/ai/sandboxes/_index.md) instead.
+@y
+Docker Desktop sandboxes let users run AI coding agents in isolated microVMs
+through the `docker sandbox` command. The `docker sandbox` plugin was removed
+in Docker Desktop 4.80.0. Use the standalone
+[`sbx` CLI](manuals/ai/sandboxes/_index.md) instead.
+@z
+
+@x
+### Docker Scout features
+@y
+### Docker Scout features
+@z
+
+@x
+The following Docker Scout features have been retired or deprecated. For
+details, see the [Scout platform release notes](/manuals/scout/release-notes/platform.md).
+@y
+The following Docker Scout features have been retired or deprecated. For
+details, see the [Scout platform release notes](manuals/scout/release-notes/platform.md).
+@z
+
+@x
+- Health scores and Scout Everywhere: graded Docker Hub images from A to F
+  based on policy compliance, surfaced across Docker Hub. Retired July 1, 2026.
+- Sysdig integration: detected images running in your cluster via the Sysdig API.
+  Retired July 1, 2026.
+- GitHub source code management integration: linked images to their source
+  repository and automated base-image updates via PRs. Retired July 1, 2026.
+  For base-image updates, use
+  [GitHub Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates)
+  with `package-ecosystem: "docker"`. For image-to-source linkage, build with
+  `--provenance=mode=max`. This retirement doesn't affect the
+  [`docker/scout-action`](https://github.com/docker/scout-action) GitHub Action
+  for CI pipelines.
+- Slack integration: sent vulnerability and policy compliance notifications to
+  Slack channels. Retired July 30, 2026.
+- Notifications: alerted users to newly disclosed CVEs in-product and by
+  email. Retired September 1, 2026. To surface CVE and policy results without
+  push notifications, integrate `docker scout cves` or `docker scout policy`
+  into your CI pipeline.
+- Native Amazon ECR integration: automatically analyzed images pushed to ECR
+  registries using a CloudFormation stack. Retired September 1, 2026. Docker
+  Scout still supports ECR through
+  [`docker scout watch`](/manuals/scout/integrations/registry.md).
+- Native Azure Container Registry integration: automatically analyzed images
+  pushed to ACR registries using an ARM template. Retired September 1, 2026.
+  Docker Scout still supports ACR through
+  [`docker scout watch`](/manuals/scout/integrations/registry.md).
+- Policies page in the Dashboard: the `docker scout policy`
+  CLI continues to work. Retired September 1, 2026. See
+  [Evaluate policies](/manuals/scout/policy/local.md).
+- SonarQube integration: surfaced SonarQube quality gate results as a Docker
+  Scout policy. Retired September 1, 2026.
+@y
+- Health scores and Scout Everywhere: graded Docker Hub images from A to F
+  based on policy compliance, surfaced across Docker Hub. Retired July 1, 2026.
+- Sysdig integration: detected images running in your cluster via the Sysdig API.
+  Retired July 1, 2026.
+- GitHub source code management integration: linked images to their source
+  repository and automated base-image updates via PRs. Retired July 1, 2026.
+  For base-image updates, use
+  [GitHub Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates)
+  with `package-ecosystem: "docker"`. For image-to-source linkage, build with
+  `--provenance=mode=max`. This retirement doesn't affect the
+  [`docker/scout-action`](https://github.com/docker/scout-action) GitHub Action
+  for CI pipelines.
+- Slack integration: sent vulnerability and policy compliance notifications to
+  Slack channels. Retired July 30, 2026.
+- Notifications: alerted users to newly disclosed CVEs in-product and by
+  email. Retired September 1, 2026. To surface CVE and policy results without
+  push notifications, integrate `docker scout cves` or `docker scout policy`
+  into your CI pipeline.
+- Native Amazon ECR integration: automatically analyzed images pushed to ECR
+  registries using a CloudFormation stack. Retired September 1, 2026. Docker
+  Scout still supports ECR through
+  [`docker scout watch`](manuals/scout/integrations/registry.md).
+- Native Azure Container Registry integration: automatically analyzed images
+  pushed to ACR registries using an ARM template. Retired September 1, 2026.
+  Docker Scout still supports ACR through
+  [`docker scout watch`](manuals/scout/integrations/registry.md).
+- Policies page in the Dashboard: the `docker scout policy`
+  CLI continues to work. Retired September 1, 2026. See
+  [Evaluate policies](manuals/scout/policy/local.md).
+- SonarQube integration: surfaced SonarQube quality gate results as a Docker
+  Scout policy. Retired September 1, 2026.
+@z
+
+@x
 ### GitHub Copilot extension
 @y
 ### GitHub Copilot extension
@@ -245,14 +345,14 @@ workflows and service accounts accessing Docker Hub.
 
 @x
 Docker recommends transitioning to [Organization Access Tokens
-(OATs)](/manuals/enterprise/security/access-tokens.md), which provide secure,
+(OATs)](/manuals/security/access-tokens/organization-access-tokens.md), which provide secure,
 programmatic access to Docker Hub with granular repository permissions, token
 expiration, and better security auditing. OATs are included with Docker Team
 and Business subscriptions and offer similar functionality without requiring
 separate add-on purchases.
 @y
 Docker recommends transitioning to [Organization Access Tokens
-(OATs)](manuals/enterprise/security/access-tokens.md), which provide secure,
+(OATs)](manuals/security/access-tokens/organization-access-tokens.md), which provide secure,
 programmatic access to Docker Hub with granular repository permissions, token
 expiration, and better security auditing. OATs are included with Docker Team
 and Business subscriptions and offer similar functionality without requiring
@@ -275,6 +375,30 @@ Docker Hub Automated Builds was a feature of Docker Hub that allowed building
 Docker images from source code in an external repository and automatically pushing
 the built image to your Docker repositories. This feature has been deprecated and
 will be removed on April 1, 2027.
+@z
+
+@x
+### Docker Content Trust (DCT)
+@y
+### Docker Content Trust (DCT)
+@z
+
+@x
+Docker Content Trust (DCT) and the Notary v1 service at `notary.docker.io` are
+being fully retired. If you've never set `DOCKER_CONTENT_TRUST=1` or used
+`docker trust` commands, this change doesn't affect you. The service shuts down
+completely on December 8, 2026, following brownout windows in July and August.
+For the timeline, migration guidance, and modern alternatives such as
+Sigstore/Cosign and Notation, see the [Docker Content Trust retirement and
+migration blog post](https://www.docker.com/blog/docker-content-trust-retirement-and-migration-guidance/).
+@y
+Docker Content Trust (DCT) and the Notary v1 service at `notary.docker.io` are
+being fully retired. If you've never set `DOCKER_CONTENT_TRUST=1` or used
+`docker trust` commands, this change doesn't affect you. The service shuts down
+completely on December 8, 2026, following brownout windows in July and August.
+For the timeline, migration guidance, and modern alternatives such as
+Sigstore/Cosign and Notation, see the [Docker Content Trust retirement and
+migration blog post](https://www.docker.com/blog/docker-content-trust-retirement-and-migration-guidance/).
 @z
 
 @x
@@ -337,6 +461,30 @@ v1 is no longer maintained, and users should migrate to Compose v2.
 [Compose v2 Documentation](/manuals/compose/_index.md)
 @y
 [Compose v2 Documentation](manuals/compose/_index.md)
+@z
+
+@x
+### Docker SBOM CLI plugin
+@y
+### Docker SBOM CLI plugin
+@z
+
+@x
+The Docker SBOM CLI plugin provided the `docker sbom` command for generating
+and viewing software bill of materials (SBOMs) for container images. The plugin
+is discontinued. Use [`docker scout sbom`](/reference/cli/docker/scout/sbom/)
+for SBOM generation and inspection.
+@y
+The Docker SBOM CLI plugin provided the `docker sbom` command for generating
+and viewing software bill of materials (SBOMs) for container images. The plugin
+is discontinued. Use [`docker scout sbom`](__SUBDIR__/reference/cli/docker/scout/sbom/)
+for SBOM generation and inspection.
+@z
+
+@x
+[See Docker SBOM CLI plugin release notes for migration guidance](https://github.com/docker/sbom-cli-plugin/releases/tag/v0.7.0)
+@y
+[See Docker SBOM CLI plugin release notes for migration guidance](https://github.com/docker/sbom-cli-plugin/releases/tag/v0.7.0)
 @z
 
 @x

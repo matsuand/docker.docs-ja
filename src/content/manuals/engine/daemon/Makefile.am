@@ -6,6 +6,7 @@ SUBDIRS = images
 bases = \
 	_index.md               \
 	alternative-runtimes.md \
+	embedded-containerd.md  \
 	ipv6.md                 \
 	live-restore.md         \
 	logs.md                 \

@@ -28,9 +28,13 @@ Docker and the broader community of Docker experts have put together many differ
 @z
 
 @x
-Learn Docker and containerization fundamentals through self-paced, [hands-on training courses](/get-started/introduction) created by Docker experts.
+Start with the [containerization tutorial](/get-started/tutorials/run-an-app.md)
+for a guided introduction to running, building, and sharing containerized
+applications.
 @y
-Learn Docker and containerization fundamentals through self-paced, [hands-on training courses](__SUBDIR__/get-started/introduction) created by Docker experts.
+Start with the [containerization tutorial](get-started/tutorials/run-an-app.md)
+for a guided introduction to running, building, and sharing containerized
+applications.
 @z
 
 @x

@@ -40,9 +40,9 @@ Docker Scout platform, including the Dashboard. For CLI release notes, refer to
 @z
 
 @x
-### 2026-07-01
+### 2026-09-01
 @y
-### 2026-07-01
+### 2026-09-01
 @z
 
 @x
@@ -52,90 +52,130 @@ The following Docker Scout features were retired:
 @z
 
 @x
-- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
-  display health scores or the always-on Scout experience. Use
-  `docker scout quickview` for a quick vulnerability and policy summary. This is
-  unrelated to the health score reported locally by `docker scout policy`,
-  `docker scout quickview`, and `docker scout compare`. See
-  [Health score](../policy/local.md#health-score).
-- Sysdig integration: The Sysdig runtime environment integration has been removed.
-- GitHub source code management integration: Migrate to GitHub Dependabot for
-  base-image updates and build with `--provenance=mode=max` for
-  image-to-source linkage. See
-  [GitHub integration](../integrations/source-code-management/github.md)
-  for a migration guide.
-@y
-- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
-  display health scores or the always-on Scout experience. Use
-  `docker scout quickview` for a quick vulnerability and policy summary. This is
-  unrelated to the health score reported locally by `docker scout policy`,
-  `docker scout quickview`, and `docker scout compare`. See
-  [Health score](../policy/local.md#health-score).
-- Sysdig integration: The Sysdig runtime environment integration has been removed.
-- GitHub source code management integration: Migrate to GitHub Dependabot for
-  base-image updates and build with `--provenance=mode=max` for
-  image-to-source linkage. See
-  [GitHub integration](../integrations/source-code-management/github.md)
-  for a migration guide.
-@z
-
-@x
-The following is deprecated and will be retired on July 30, 2026:
-@y
-The following is deprecated and will be retired on July 30, 2026:
-@z
-
-@x
-- Slack integration: Vulnerability and policy compliance notifications to Slack
-  channels. Integrate `docker scout cves` or `docker scout policy` into your CI
-  pipeline as an alternative. See
-  [Slack integration](../integrations/team-collaboration/slack.md).
-@y
-- Slack integration: Vulnerability and policy compliance notifications to Slack
-  channels. Integrate `docker scout cves` or `docker scout policy` into your CI
-  pipeline as an alternative. See
-  [Slack integration](../integrations/team-collaboration/slack.md).
-@z
-
-@x
-The following are deprecated and will be retired on September 1, 2026:
-@y
-The following are deprecated and will be retired on September 1, 2026:
-@z
-
-@x
 - Notifications: In-product and email notifications about newly disclosed CVEs.
   Integrate `docker scout cves` or `docker scout policy` into your CI pipeline
   to surface vulnerability and policy results without push notifications.
-@y
-- Notifications: In-product and email notifications about newly disclosed CVEs.
-  Integrate `docker scout cves` or `docker scout policy` into your CI pipeline
-  to surface vulnerability and policy results without push notifications.
-@z
-
-@x
-- Amazon ECR integration: Migrate to
-  [`docker scout watch`](/reference/cli/docker/scout/watch/) for continuous
-  polling or integrate Scout into your CI pipeline. See
-  [ECR integration](../integrations/registry/ecr.md) for a migration guide.
-- Azure Container Registry integration: Same migration options as ECR. See
-  [ACR integration](../integrations/registry/acr.md) for a migration guide.
+- Native Amazon ECR integration: ECR is still supported using
+  [`docker scout watch`](../integrations/registry.md) for continuous
+  polling, or by integrating Scout into your CI pipeline.
+- Native Azure Container Registry integration: ACR is still supported using
+  the same options as ECR.
 - Policies page in the Dashboard: The `docker scout policy`
   command replaces this with more options for evaluating policies. You can run
   evaluations locally, in CI, against custom Rego policies, or using OCI
   bundles. See [Evaluate policies](../policy/local.md).
 - SonarQube integration.
 @y
-- Amazon ECR integration: Migrate to
-  [`docker scout watch`](__SUBDIR__/reference/cli/docker/scout/watch/) for continuous
-  polling or integrate Scout into your CI pipeline. See
-  [ECR integration](../integrations/registry/ecr.md) for a migration guide.
-- Azure Container Registry integration: Same migration options as ECR. See
-  [ACR integration](../integrations/registry/acr.md) for a migration guide.
+- Notifications: In-product and email notifications about newly disclosed CVEs.
+  Integrate `docker scout cves` or `docker scout policy` into your CI pipeline
+  to surface vulnerability and policy results without push notifications.
+- Native Amazon ECR integration: ECR is still supported using
+  [`docker scout watch`](../integrations/registry.md) for continuous
+  polling, or by integrating Scout into your CI pipeline.
+- Native Azure Container Registry integration: ACR is still supported using
+  the same options as ECR.
 - Policies page in the Dashboard: The `docker scout policy`
   command replaces this with more options for evaluating policies. You can run
   evaluations locally, in CI, against custom Rego policies, or using OCI
   bundles. See [Evaluate policies](../policy/local.md).
+- SonarQube integration.
+@z
+
+@x
+### 2026-07-30
+@y
+### 2026-07-30
+@z
+
+@x
+The following Docker Scout feature was retired:
+@y
+The following Docker Scout feature was retired:
+@z
+
+@x
+- Slack integration: Integrate `docker scout cves` or `docker scout policy`
+  into your CI pipeline to surface vulnerability and policy results without
+  push notifications.
+@y
+- Slack integration: Integrate `docker scout cves` or `docker scout policy`
+  into your CI pipeline to surface vulnerability and policy results without
+  push notifications.
+@z
+
+@x
+### 2026-07-01
+@y
+### 2026-07-01
+@z
+
+@x
+The following Docker Scout features were retired:
+@y
+The following Docker Scout features were retired:
+@z
+
+@x
+- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
+  display health scores or the always-on Scout experience. Use
+  `docker scout quickview` for a quick vulnerability and policy summary. This is
+  unrelated to the health score reported locally by `docker scout policy`,
+  `docker scout quickview`, and `docker scout compare`. See
+  [Health score](../policy/local.md#health-score).
+- Sysdig integration: The Sysdig runtime environment integration has been removed.
+- GitHub source code management integration: Migrate to GitHub Dependabot for
+  base-image updates and build with `--provenance=mode=max` for
+  image-to-source linkage.
+@y
+- Health scores and Scout Everywhere: Docker Hub and Docker Desktop no longer
+  display health scores or the always-on Scout experience. Use
+  `docker scout quickview` for a quick vulnerability and policy summary. This is
+  unrelated to the health score reported locally by `docker scout policy`,
+  `docker scout quickview`, and `docker scout compare`. See
+  [Health score](../policy/local.md#health-score).
+- Sysdig integration: The Sysdig runtime environment integration has been removed.
+- GitHub source code management integration: Migrate to GitHub Dependabot for
+  base-image updates and build with `--provenance=mode=max` for
+  image-to-source linkage.
+@z
+
+@x
+The following is deprecated and will be retired on July 30, 2026:
+@y
+The following is deprecated and will be retired on July 30, 2026:
+@z
+
+@x
+- Slack integration: Vulnerability and policy compliance notifications to Slack
+  channels.
+@y
+- Slack integration: Vulnerability and policy compliance notifications to Slack
+  channels.
+@z
+
+@x
+The following are deprecated and will be retired on September 1, 2026:
+@y
+The following are deprecated and will be retired on September 1, 2026:
+@z
+
+@x
+- Notifications: In-product and email notifications about newly disclosed CVEs.
+- Amazon ECR integration: Automatically analyzed images pushed to ECR
+  registries.
+- Azure Container Registry integration: Automatically analyzed images pushed
+  to ACR registries.
+- Policies page in the Dashboard: Provided a visual interface in the Docker
+  Scout Dashboard for tracking policy compliance.
+- SonarQube integration.
+@y
+- Notifications: In-product and email notifications about newly disclosed CVEs.
+- Amazon ECR integration: Automatically analyzed images pushed to ECR
+  registries.
+- Azure Container Registry integration: Automatically analyzed images pushed
+  to ACR registries.
+- Policies page in the Dashboard: Provided a visual interface in the Docker
+  Scout Dashboard for tracking policy compliance.
 - SonarQube integration.
 @z
 
@@ -455,10 +495,10 @@ making the now-removed **All critical vulnerabilities** policy redundant.
 
 @x
 For more information and setup instructions, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @y
 For more information and setup instructions, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @z
 
 @x
@@ -538,21 +578,19 @@ more precise recommendations.
 @x
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Use the Dashboard](../policy/dashboard.md).
+Use the Dashboard.
 @y
 For more information about the types of recommendations that Docker Scout can
 provide to help you improve policy compliance, see
-[Use the Dashboard](../policy/dashboard.md).
+Use the Dashboard.
 @z
 
 @x
 For more information about how to authorize the Docker Scout GitHub app on your
-source repositories, see
-[Integrate Docker Scout with GitHub](../integrations/source-code-management/github.md).
+source repositories, see Integrate Docker Scout with GitHub.
 @y
 For more information about how to authorize the Docker Scout GitHub app on your
-source repositories, see
-[Integrate Docker Scout with GitHub](../integrations/source-code-management/github.md).
+source repositories, see Integrate Docker Scout with GitHub.
 @z
 
 @x
@@ -585,10 +623,10 @@ New features and enhancements released in the fourth quarter of 2023.
 
 @x
 For more information and setup instructions, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @y
 For more information and setup instructions, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @z
 
 @x
@@ -631,10 +669,10 @@ in ACR repositories automatically.
 
 @x
 To learn more about the integration and how to get started, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @y
 To learn more about the integration and how to get started, see
-[Integrate Azure Container Registry](../integrations/registry/acr.md).
+Integrate Azure Container Registry.
 @z
 
 @x
@@ -666,9 +704,9 @@ policies for your organization include:
 @z
 
 @x
-For more information, see [Configurable policies](../policy/dashboard.md).
+For more information, see Configurable policies.
 @y
-For more information, see [Configurable policies](../policy/dashboard.md).
+For more information, see Configurable policies.
 @z
 
 @x
@@ -818,13 +856,13 @@ metadata about the image contents, and not the container images themselves.
 @x
 The integration offers a straightforward process for adding additional
 repositories, activating Docker Scout for specific repositories, and removing
-the integration if needed. To learn more, refer to the [Amazon ECR integration
-documentation](../integrations/registry/ecr.md).
+the integration if needed. To learn more, refer to the Amazon ECR integration
+documentation.
 @y
 The integration offers a straightforward process for adding additional
 repositories, activating Docker Scout for specific repositories, and removing
-the integration if needed. To learn more, refer to the [Amazon ECR integration
-documentation](../integrations/registry/ecr.md).
+the integration if needed. To learn more, refer to the Amazon ECR integration
+documentation.
 @z
 
 @x

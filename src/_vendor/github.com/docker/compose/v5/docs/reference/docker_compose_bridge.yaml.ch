@@ -5,58 +5,18 @@
 command: docker compose bridge
 short: Convert compose files into another model
 long: Convert compose files into another model
-pname: docker compose
-plink: docker_compose.yaml
-cname:
-    - docker compose bridge convert
-    - docker compose bridge transformations
-clink:
-    - docker_compose_bridge_convert.yaml
-    - docker_compose_bridge_transformations.yaml
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+usage: docker compose bridge CMD [OPTIONS]
 @y
 command: docker compose bridge
 short: Convert compose files into another model
 long: Convert compose files into another model
-pname: docker compose
-plink: docker_compose.yaml
-cname:
-    - docker compose bridge convert
-    - docker compose bridge transformations
-clink:
-    - docker_compose_bridge_convert.yaml
-    - docker_compose_bridge_transformations.yaml
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+usage: docker compose bridge CMD [OPTIONS]
+@z
+
+% inherited_options:
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: Execute command in dry run mode
 @z

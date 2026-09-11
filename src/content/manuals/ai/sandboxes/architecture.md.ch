@@ -24,31 +24,67 @@ properties of the architecture, see [Sandbox isolation](security/isolation.md).
 @z
 
 @x
-## Workspace mounting
+## Workspace storage
 @y
-## Workspace mounting
+## Workspace storage
 @z
 
 @x
-Your workspace is mounted directly into the sandbox through a filesystem
-passthrough. The sandbox sees your actual host files, so changes in either
-direction are instant with no sync process involved.
+Starting with `sbx` version 0.42.0, workspace paths are optional for
+`sbx create`. When you omit them, the sandbox has no host workspace bind mount.
+The sandbox uses the template image's configured `WORKDIR` as its default
+working directory. Docker-provided agent templates set `WORKDIR` to
+`/home/agent/workspace`. A custom template can set another absolute path. If
+the daemon can't resolve a usable absolute `WORKDIR` from the image config, it
+falls back to `/home/agent/workspace`. Files created there stay inside the
+sandbox and persist across stops and restarts.
 @y
-Your workspace is mounted directly into the sandbox through a filesystem
-passthrough. The sandbox sees your actual host files, so changes in either
-direction are instant with no sync process involved.
+Starting with `sbx` version 0.42.0, workspace paths are optional for
+`sbx create`. When you omit them, the sandbox has no host workspace bind mount.
+The sandbox uses the template image's configured `WORKDIR` as its default
+working directory. Docker-provided agent templates set `WORKDIR` to
+`/home/agent/workspace`. A custom template can set another absolute path. If
+the daemon can't resolve a usable absolute `WORKDIR` from the image config, it
+falls back to `/home/agent/workspace`. Files created there stay inside the
+sandbox and persist across stops and restarts.
 @z
 
 @x
-Your workspace is mounted at the same absolute path as on your host. Preserving
-absolute paths means error messages, configuration files, and build outputs all
-reference paths you can find on your host. The agent sees exactly the directory
-structure you see, which reduces confusion when debugging or reviewing changes.
+When you pass a workspace path to `sbx create` or `sbx run`, the directory is
+mounted into the sandbox through a filesystem passthrough. `sbx run` uses the
+current directory when you don't pass a path. The sandbox sees your actual
+host files, so changes in either direction are instant with no sync process
+involved.
 @y
-Your workspace is mounted at the same absolute path as on your host. Preserving
-absolute paths means error messages, configuration files, and build outputs all
-reference paths you can find on your host. The agent sees exactly the directory
-structure you see, which reduces confusion when debugging or reviewing changes.
+When you pass a workspace path to `sbx create` or `sbx run`, the directory is
+mounted into the sandbox through a filesystem passthrough. `sbx run` uses the
+current directory when you don't pass a path. The sandbox sees your actual
+host files, so changes in either direction are instant with no sync process
+involved.
+@z
+
+@x
+A directly mounted workspace appears at the same absolute path as on your
+host. Preserving absolute paths means error messages, configuration files, and
+build outputs all reference paths you can find on your host. The agent sees the
+same directory structure, which reduces confusion when debugging or reviewing
+changes.
+@y
+A directly mounted workspace appears at the same absolute path as on your
+host. Preserving absolute paths means error messages, configuration files, and
+build outputs all reference paths you can find on your host. The agent sees the
+same directory structure, which reduces confusion when debugging or reviewing
+changes.
+@z
+
+@x
+Clone mode uses a third storage layout. The host repository is mounted
+read-only at `/run/sandbox/source`, and the agent works in a private clone
+inside the sandbox. See [Clone mode](usage.md#clone-mode).
+@y
+Clone mode uses a third storage layout. The host repository is mounted
+read-only at `/run/sandbox/source`, and the agent works in a private clone
+inside the sandbox. See [Clone mode](usage.md#clone-mode).
 @z
 
 @x
@@ -74,11 +110,13 @@ structure you see, which reduces confusion when debugging or reviewing changes.
 @x
 When you create a sandbox, everything inside it persists until you remove it:
 Docker images and containers built or pulled by the agent, installed packages,
-agent state and history, and workspace changes.
+agent state and history, and files in mountless or cloned workspaces. Files in
+a directly mounted workspace live on the host instead.
 @y
 When you create a sandbox, everything inside it persists until you remove it:
 Docker images and containers built or pulled by the agent, installed packages,
-agent state and history, and workspace changes.
+agent state and history, and files in mountless or cloned workspaces. Files in
+a directly mounted workspace live on the host instead.
 @z
 
 @x
@@ -104,26 +142,28 @@ layers, and volumes, and this grows as you build images and install packages.
 @z
 
 @x
-Virtiofs caching is enabled by default on all operating systems. File reads
-from the sandbox VM are cached on the host side, reducing round-trips through
-the filesystem passthrough and improving performance for read-heavy workloads
-such as `git status` or directory scans. To opt out, set
+Virtiofs caching is enabled by default for directly mounted workspaces on all
+operating systems. File reads from the sandbox VM are cached on the host side,
+reducing round-trips through the filesystem passthrough and improving
+performance for read-heavy workloads such as `git status` or directory scans.
+To opt out, set
 `DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0` when creating the sandbox:
 @y
-Virtiofs caching is enabled by default on all operating systems. File reads
-from the sandbox VM are cached on the host side, reducing round-trips through
-the filesystem passthrough and improving performance for read-heavy workloads
-such as `git status` or directory scans. To opt out, set
+Virtiofs caching is enabled by default for directly mounted workspaces on all
+operating systems. File reads from the sandbox VM are cached on the host side,
+reducing round-trips through the filesystem passthrough and improving
+performance for read-heavy workloads such as `git status` or directory scans.
+To opt out, set
 `DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0` when creating the sandbox:
 @z
 
 @x
 ```console
-$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <agent>
 ```
 @y
 ```console
-$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <agent>
 ```
 @z
 
@@ -246,13 +286,13 @@ tool calls, resource reads, prompt retrieval, or gateway meta-tool execution.
 @z
 
 @x
-`sbx run` initializes a VM with a workspace for a specified agent and starts
-the agent. You can stop and restart without recreating the VM, preserving
-installed packages and Docker images.
+`sbx run` initializes a VM for a specified agent and starts the agent. You can
+stop and restart without recreating the VM, preserving installed packages,
+Docker images, and in-sandbox files.
 @y
-`sbx run` initializes a VM with a workspace for a specified agent and starts
-the agent. You can stop and restart without recreating the VM, preserving
-installed packages and Docker images.
+`sbx run` initializes a VM for a specified agent and starts the agent. You can
+stop and restart without recreating the VM, preserving installed packages,
+Docker images, and in-sandbox files.
 @z
 
 @x

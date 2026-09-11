@@ -109,11 +109,11 @@ Before configuring Image Access Management, you must:
 
 @x
 - [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). Image Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
-- Use [personal access tokens (PATs)](/manuals/security/access-tokens.md) for authentication (Organization access tokens aren't supported)
+- Use [personal access tokens (PATs)](/manuals/security/access-tokens/personal-access-tokens.md) for authentication (Organization access tokens aren't supported)
 - Have a Docker Business subscription
 @y
 - [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md). Image Access Management only takes effect when users are signed in to Docker Desktop with organization credentials.
-- Use [personal access tokens (PATs)](manuals/security/access-tokens.md) for authentication (Organization access tokens aren't supported)
+- Use [personal access tokens (PATs)](manuals/security/access-tokens/personal-access-tokens.md) for authentication (Organization access tokens aren't supported)
 - Have a Docker Business subscription
 @z
 

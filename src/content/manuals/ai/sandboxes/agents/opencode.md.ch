@@ -50,12 +50,20 @@ Create a sandbox and run OpenCode for a project directory:
 % snip command...
 
 @x
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @y
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @z
 
 % snip command...
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@z
 
 @x
 OpenCode launches a TUI (text user interface) where you can select your

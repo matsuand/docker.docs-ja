@@ -18,11 +18,11 @@ keywords: docker sandboxes, security defaults, network policy, credentials, shar
 @z
 
 @x
-A sandbox created with `sbx run` and no additional flags has the following
-security posture.
+A sandbox created with `sbx run claude` and no additional flags has the
+following security posture.
 @y
-A sandbox created with `sbx run` and no additional flags has the following
-security posture.
+A sandbox created with `sbx run claude` and no additional flags has the
+following security posture.
 @z
 
 @x
@@ -64,23 +64,33 @@ rules. See
 @z
 
 @x
-Sandboxes use a direct mount by default. The agent sees and modifies your
-working tree directly, and changes appear on your host immediately.
+`sbx run` mounts the current directory when you don't pass a workspace path.
+The agent can read, write, and delete any file within that directory, including
+hidden files, configuration files, build scripts, and Git hooks.
 @y
-Sandboxes use a direct mount by default. The agent sees and modifies your
-working tree directly, and changes appear on your host immediately.
+`sbx run` mounts the current directory when you don't pass a workspace path.
+The agent can read, write, and delete any file within that directory, including
+hidden files, configuration files, build scripts, and Git hooks.
 @z
 
 @x
-The agent can read, write, and delete any file within the workspace directory,
-including hidden files, configuration files, build scripts, and Git hooks.
-See [Workspace isolation](isolation.md#workspace-isolation) for what to
-review after an agent session.
+When you omit the workspace path from `sbx create`, the sandbox doesn't mount a
+host workspace. The agent uses the sandbox template's default working
+directory. Docker-provided agent templates use `/home/agent/workspace`. If the
+template doesn't define a usable absolute working directory, the daemon uses
+that path. Files in this directory persist across stops and restarts and are
+deleted when you remove the sandbox. See
+[Workspace isolation](isolation.md#workspace-isolation) for the available
+workspace modes and what to review after a direct-mount session.
 @y
-The agent can read, write, and delete any file within the workspace directory,
-including hidden files, configuration files, build scripts, and Git hooks.
-See [Workspace isolation](isolation.md#workspace-isolation) for what to
-review after an agent session.
+When you omit the workspace path from `sbx create`, the sandbox doesn't mount a
+host workspace. The agent uses the sandbox template's default working
+directory. Docker-provided agent templates use `/home/agent/workspace`. If the
+template doesn't define a usable absolute working directory, the daemon uses
+that path. Files in this directory persist across stops and restarts and are
+deleted when you remove the sandbox. See
+[Workspace isolation](isolation.md#workspace-isolation) for the available
+workspace modes and what to review after a direct-mount session.
 @z
 
 @x
@@ -153,14 +163,16 @@ The agent runs with full control inside the sandbox VM:
 
 @x
 Everything the agent installs or creates inside the VM, including packages,
-Docker images, and configuration changes, persists across stop and restart
-cycles. When you remove the sandbox with `sbx rm`, the VM and its contents
-are deleted. Workspace files and the shared skills store remain on the host.
+Docker images, mountless workspace files, and configuration changes, persists
+across stop and restart cycles. When you remove the sandbox with `sbx rm`, the
+VM and its contents are deleted. Direct-mounted workspace files and the shared
+skills store remain on the host, as do repositories used as clone sources.
 @y
 Everything the agent installs or creates inside the VM, including packages,
-Docker images, and configuration changes, persists across stop and restart
-cycles. When you remove the sandbox with `sbx rm`, the VM and its contents
-are deleted. Workspace files and the shared skills store remain on the host.
+Docker images, mountless workspace files, and configuration changes, persists
+across stop and restart cycles. When you remove the sandbox with `sbx rm`, the
+VM and its contents are deleted. Direct-mounted workspace files and the shared
+skills store remain on the host, as do repositories used as clone sources.
 @z
 
 @x

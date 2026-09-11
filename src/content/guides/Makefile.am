@@ -55,6 +55,7 @@ bases = \
 	language-translation.md                      \
 	laravel.md                                   \
 	localstack.md                                \
+	mistral-vibe-sandbox.md                      \
 	named-entity-recognition.md                  \
 	nextjs.md                                    \
 	nodejs.md                                    \

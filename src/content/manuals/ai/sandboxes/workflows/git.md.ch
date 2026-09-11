@@ -233,11 +233,11 @@ It's only reachable while the sandbox is running:
 
 @x
    ```console
-   $ sbx run --clone claude
+   $ sbx run --clone claude .
    ```
 @y
    ```console
-   $ sbx run --clone claude
+   $ sbx run --clone claude .
    ```
 @z
 
@@ -319,11 +319,11 @@ It's only reachable while the sandbox is running:
 
 @x
    ```console
-   $ sbx run --clone claude
+   $ sbx run --clone claude .
    ```
 @y
    ```console
-   $ sbx run --clone claude
+   $ sbx run --clone claude .
    ```
 @z
 
@@ -466,19 +466,23 @@ yourself after reviewing the changes.
 @z
 
 @x
-Sandboxes forward your host SSH agent into the sandbox, so the agent can
-sign commits with your SSH key without the private key ever leaving your
-host.
+SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+sandboxes forward your host SSH agent into the sandbox, so the agent can sign
+commits with your SSH key without the private key ever leaving your host. If
+you turned off forwarding or use a fixed SSH agent socket, see
+[SSH agent configuration](../configuration/credentials.md#ssh-agent).
 @y
-Sandboxes forward your host SSH agent into the sandbox, so the agent can
-sign commits with your SSH key without the private key ever leaving your
-host.
+SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+sandboxes forward your host SSH agent into the sandbox, so the agent can sign
+commits with your SSH key without the private key ever leaving your host. If
+you turned off forwarding or use a fixed SSH agent socket, see
+[SSH agent configuration](../configuration/credentials.md#ssh-agent).
 @z
 
 @x
-1. On your host, make sure the signing key is loaded in your SSH agent:
+1. Make sure the signing key is loaded in your host SSH agent:
 @y
-1. On your host, make sure the signing key is loaded in your SSH agent:
+1. Make sure the signing key is loaded in your host SSH agent:
 @z
 
 @x

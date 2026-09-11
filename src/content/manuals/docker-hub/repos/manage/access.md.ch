@@ -240,11 +240,11 @@ repository from that repository's **Settings** page.
 @x
 Organizations can use roles for individuals, giving them different
 permissions in the organization. For more details, see [Roles and
-permissions](/manuals/enterprise/security/roles-and-permissions.md).
+permissions](/manuals/security/roles-and-permissions.md).
 @y
 Organizations can use roles for individuals, giving them different
 permissions in the organization. For more details, see [Roles and
-permissions](manuals/enterprise/security/roles-and-permissions.md).
+permissions](manuals/security/roles-and-permissions.md).
 @z
 
 @x
@@ -270,11 +270,11 @@ access.
 @x
 You must create a team before you are able to configure repository permissions.
 For more details, see [Create and manage a
-team](/manuals/admin/organization/manage/manage-a-team.md).
+team](/manuals/accounts/organization/manage/manage-a-team.md).
 @y
 You must create a team before you are able to configure repository permissions.
 For more details, see [Create and manage a
-team](manuals/admin/organization/manage/manage-a-team.md).
+team](manuals/accounts/organization/manage/manage-a-team.md).
 @z
 
 @x
@@ -344,11 +344,11 @@ To configure team repository permissions:
 @x
 Organizations can use OATs. OATs let you assign fine-grained repository access
 permissions to tokens. For more details, see [Organization access
-tokens](/manuals/enterprise/security/access-tokens.md).
+tokens](/manuals/security/access-tokens/organization-access-tokens.md).
 @y
 Organizations can use OATs. OATs let you assign fine-grained repository access
 permissions to tokens. For more details, see [Organization access
-tokens](manuals/enterprise/security/access-tokens.md).
+tokens](manuals/security/access-tokens/organization-access-tokens.md).
 @z
 
 @x
@@ -419,10 +419,10 @@ If you are interested in Gated Distribution contact the <a href="https://www.doc
 
 @x
 > [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](/manuals/enterprise/security/roles-and-permissions.md) for details about the access permissions for each role.
+> When you invite members, you assign them a role. See [Roles and permissions](/manuals/security/roles-and-permissions.md) for details about the access permissions for each role.
 @y
 > [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](manuals/enterprise/security/roles-and-permissions.md) for details about the access permissions for each role.
+> When you invite members, you assign them a role. See [Roles and permissions](manuals/security/roles-and-permissions.md) for details about the access permissions for each role.
 @z
 
 @x

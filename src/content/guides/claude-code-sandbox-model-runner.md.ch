@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% snip 対応
+
 @x
 title: Run Claude Code in a Docker Sandbox with Docker Model Runner
 description: Run Claude Code inside an isolated Docker Sandbox and route requests to Docker Model Runner so the agent uses local models on your host.
@@ -141,15 +143,7 @@ If you use Docker Desktop, turn on TCP access in **Settings** > **AI**, or
 run:
 @z
 
-@x
-```console
-$ docker desktop enable model-runner --tcp 12434
-```
-@y
-```console
-$ docker desktop enable model-runner --tcp 12434
-```
-@z
+% snip command...
 
 @x
 ## Step 1: Pull a coding model
@@ -163,15 +157,7 @@ Pull a model on your host before you create the sandbox:
 Pull a model on your host before you create the sandbox:
 @z
 
-@x
-```console
-$ docker model pull ai/devstral-small-2
-```
-@y
-```console
-$ docker model pull ai/devstral-small-2
-```
-@z
+% snip command...
 
 @x
 You can also use `ai/qwen3-coder` if you want another coding-focused model
@@ -209,15 +195,7 @@ hostname the sandbox uses. Because the proxy rewrites
 in its requests:
 @z
 
-@x
-```console
-$ sbx policy allow network localhost:12434
-```
-@y
-```console
-$ sbx policy allow network localhost:12434
-```
-@z
+% snip command...
 
 @x
 For background on host access from sandboxes, see
@@ -243,21 +221,7 @@ From your project directory, create a sandbox without launching the agent. Set
 sandbox starts:
 @z
 
-@x
-```console
-$ cd ~/my-project
-$ sbx create --name claude-dmr \
-  -e ANTHROPIC_BASE_URL=http://host.docker.internal:12434 \
-  claude .
-```
-@y
-```console
-$ cd ~/my-project
-$ sbx create --name claude-dmr \
-  -e ANTHROPIC_BASE_URL=http://host.docker.internal:12434 \
-  claude .
-```
-@z
+% snip command...
 
 @x
 `sbx run` would also work, but it launches Claude Code immediately. Creating
@@ -293,19 +257,7 @@ To confirm the variable is set, open a shell in the sandbox:
 To confirm the variable is set, open a shell in the sandbox:
 @z
 
-@x
-```console
-$ sbx exec -it claude-dmr bash
-$ echo $ANTHROPIC_BASE_URL
-http://host.docker.internal:12434
-```
-@y
-```console
-$ sbx exec -it claude-dmr bash
-$ echo $ANTHROPIC_BASE_URL
-http://host.docker.internal:12434
-```
-@z
+% snip command...
 
 @x
 ## Step 4: Verify connectivity to Docker Model Runner
@@ -319,27 +271,7 @@ Still inside the sandbox shell, send a test request to the host endpoint:
 Still inside the sandbox shell, send a test request to the host endpoint:
 @z
 
-@x
-```console
-$ curl http://host.docker.internal:12434/v1/messages \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "ai/devstral-small-2",
-    "max_tokens": 32,
-    "messages": [{"role": "user", "content": "Say hello"}]
-  }'
-```
-@y
-```console
-$ curl http://host.docker.internal:12434/v1/messages \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "ai/devstral-small-2",
-    "max_tokens": 32,
-    "messages": [{"role": "user", "content": "Say hello"}]
-  }'
-```
-@z
+% snip command...
 
 @x
 A successful response confirms the policy rule and base URL are correct.
@@ -365,15 +297,7 @@ Run Claude Code in the sandbox and pass the model flag through to the agent:
 Run Claude Code in the sandbox and pass the model flag through to the agent:
 @z
 
-@x
-```console
-$ sbx run claude-dmr -- --model ai/devstral-small-2
-```
-@y
-```console
-$ sbx run claude-dmr -- --model ai/devstral-small-2
-```
-@z
+% snip command...
 
 @x
 Everything after `--` is forwarded to the Claude Code CLI.
@@ -399,15 +323,7 @@ To inspect the requests Claude Code sends, run on your host:
 To inspect the requests Claude Code sends, run on your host:
 @z
 
-@x
-```console
-$ docker model requests --model ai/devstral-small-2 | jq .
-```
-@y
-```console
-$ docker model requests --model ai/devstral-small-2 | jq .
-```
-@z
+% snip command...
 
 @x
 This helps you debug prompts, context usage, and compatibility issues
@@ -433,17 +349,7 @@ models. To use it for repository-scale prompts, package a larger variant on
 the host:
 @z
 
-@x
-```console
-$ docker model pull ai/gpt-oss
-$ docker model package --from ai/gpt-oss --context-size 32000 gpt-oss:32k
-```
-@y
-```console
-$ docker model pull ai/gpt-oss
-$ docker model package --from ai/gpt-oss --context-size 32000 gpt-oss:32k
-```
-@z
+% snip command...
 
 @x
 Then point Claude Code at the packaged model the next time you run the
@@ -453,15 +359,7 @@ Then point Claude Code at the packaged model the next time you run the
 sandbox:
 @z
 
-@x
-```console
-$ sbx run claude-dmr -- --model gpt-oss:32k
-```
-@y
-```console
-$ sbx run claude-dmr -- --model gpt-oss:32k
-```
-@z
+% snip command...
 
 @x
 ## Clean up
@@ -477,15 +375,7 @@ Sandboxes persist after Claude Code exits. To stop the sandbox without
 deleting it:
 @z
 
-@x
-```console
-$ sbx stop claude-dmr
-```
-@y
-```console
-$ sbx stop claude-dmr
-```
-@z
+% snip command...
 
 @x
 To remove the sandbox and everything inside:
@@ -493,15 +383,7 @@ To remove the sandbox and everything inside:
 To remove the sandbox and everything inside:
 @z
 
-@x
-```console
-$ sbx rm claude-dmr
-```
-@y
-```console
-$ sbx rm claude-dmr
-```
-@z
+% snip command...
 
 @x
 Files in your workspace are unaffected.

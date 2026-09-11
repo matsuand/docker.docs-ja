@@ -124,7 +124,7 @@ to specific teams:
 @z
 
 @x
-Teams are the same [teams](/manuals/admin/organization/manage/manage-a-team.md)
+Teams are the same [teams](/manuals/accounts/organization/manage/manage-a-team.md)
 you manage for your organization; Docker matches a policy's teams against each
 user's team membership. Because an organization can mix org-wide and team-scoped
 policies, a single user is often subject to several at once. The policies that
@@ -132,7 +132,7 @@ apply to a given user are their _effective policies_: every org-wide policy,
 plus every team-scoped policy for a team they belong to. See
 [Rule evaluation](#rule-evaluation) for how a user's effective policies combine.
 @y
-Teams are the same [teams](manuals/admin/organization/manage/manage-a-team.md)
+Teams are the same [teams](manuals/accounts/organization/manage/manage-a-team.md)
 you manage for your organization; Docker matches a policy's teams against each
 user's team membership. Because an organization can mix org-wide and team-scoped
 policies, a single user is often subject to several at once. The policies that

@@ -678,17 +678,69 @@ interact with GitHub APIs on your behalf.
 @z
 
 @x
-If your host has an SSH agent and `SSH_AUTH_SOCK` is set, Docker Sandboxes
-forwards the agent into the sandbox and sets `SSH_AUTH_SOCK` there. The
-private keys stay on your host. Processes inside the sandbox can request
-signatures from the forwarded agent, but they can't read or copy the private
-key.
+SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+Docker Sandboxes uses the value from the client that creates, starts, or joins
+each sandbox. It forwards that agent into the sandbox and sets `SSH_AUTH_SOCK`
+there.
 @y
-If your host has an SSH agent and `SSH_AUTH_SOCK` is set, Docker Sandboxes
-forwards the agent into the sandbox and sets `SSH_AUTH_SOCK` there. The
-private keys stay on your host. Processes inside the sandbox can request
-signatures from the forwarded agent, but they can't read or copy the private
-key.
+SSH agent forwarding is enabled by default. When `SSH_AUTH_SOCK` is set,
+Docker Sandboxes uses the value from the client that creates, starts, or joins
+each sandbox. It forwards that agent into the sandbox and sets `SSH_AUTH_SOCK`
+there.
+@z
+
+@x
+If your agent exposes a stable socket path, such as the 1Password SSH agent,
+configure that path for every sandbox:
+@y
+If your agent exposes a stable socket path, such as the 1Password SSH agent,
+configure that path for every sandbox:
+@z
+
+@x
+```console
+$ sbx settings set ssh.agentSocketPath "$SSH_AUTH_SOCK"
+```
+@y
+```console
+$ sbx settings set ssh.agentSocketPath "$SSH_AUTH_SOCK"
+```
+@z
+
+@x
+An empty `ssh.agentSocketPath`, which is the default, uses each client's
+current `SSH_AUTH_SOCK` instead. The `ssh.agentForwardingEnabled` setting is a
+boolean that turns forwarding on or off.
+@y
+An empty `ssh.agentSocketPath`, which is the default, uses each client's
+current `SSH_AUTH_SOCK` instead. The `ssh.agentForwardingEnabled` setting is a
+boolean that turns forwarding on or off.
+@z
+
+@x
+After changing forwarding or the socket selection, restart the daemon so
+existing sandboxes use the new configuration:
+@y
+After changing forwarding or the socket selection, restart the daemon so
+existing sandboxes use the new configuration:
+@z
+
+@x
+```console
+$ sbx daemon restart
+```
+@y
+```console
+$ sbx daemon restart
+```
+@z
+
+@x
+The private keys stay on your host. Processes inside the sandbox can request
+signatures from the forwarded agent, but they can't read or copy a private key.
+@y
+The private keys stay on your host. Processes inside the sandbox can request
+signatures from the forwarded agent, but they can't read or copy a private key.
 @z
 
 @x
@@ -1038,22 +1090,6 @@ credentials without a binding.
 @z
 
 @x
-> [!WARNING]
-> Proxy-managed OAuth isn't supported for third-party sandbox agents, including
-> kits that extend a built-in agent. Repeating the parent's OAuth declaration in
-> the child kit doesn't activate OAuth interception. Use a stored API key when
-> the service supports one. Otherwise, an OAuth login performed inside the
-> sandbox stores the real token there.
-@y
-> [!WARNING]
-> Proxy-managed OAuth isn't supported for third-party sandbox agents, including
-> kits that extend a built-in agent. Repeating the parent's OAuth declaration in
-> the child kit doesn't activate OAuth interception. Use a stored API key when
-> the service supports one. Otherwise, an OAuth login performed inside the
-> sandbox stores the real token there.
-@z
-
-@x
 ## Registry credentials
 @y
 ## Registry credentials
@@ -1210,13 +1246,15 @@ $ gh auth token | sbx secret set --sandbox my-app --registry ghcr.io --password-
 @z
 
 @x
-`sbx kit pull` also uses these credentials, with the Docker credential
-store as a fallback. `sbx kit push` uses only the Docker credential store —
-push targets still require a prior `docker login`.
+For Docker Hub, `sbx kit pull` and `sbx kit push` use the session from
+`sbx login`. For other registries, both commands use these credentials. Both
+commands fall back to the Docker credential store, so credentials from
+`docker login` also work.
 @y
-`sbx kit pull` also uses these credentials, with the Docker credential
-store as a fallback. `sbx kit push` uses only the Docker credential store —
-push targets still require a prior `docker login`.
+For Docker Hub, `sbx kit pull` and `sbx kit push` use the session from
+`sbx login`. For other registries, both commands use these credentials. Both
+commands fall back to the Docker credential store, so credentials from
+`docker login` also work.
 @z
 
 @x

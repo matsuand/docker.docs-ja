@@ -20,11 +20,11 @@ keywords: docker sandboxes, audit delivery, AI Governance, audit logs, retention
 @z
 
 @x
-Organization owners and users with a [custom role](/manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure where Docker writes audit events.
+Organization owners and users with a [custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure where Docker writes audit events.
 Two delivery destinations are available and can be used independently or
 together:
 @y
-Organization owners and users with a [custom role](manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure where Docker writes audit events.
+Organization owners and users with a [custom role](manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure where Docker writes audit events.
 Two delivery destinations are available and can be used independently or
 together:
 @z
@@ -54,13 +54,13 @@ Your organization needs:
 @z
 
 @x
-- A Docker [AI Governance plan](/manuals/subscription/plans/ai-governance.md)
+- A Docker [AI Governance plan](/manuals/subscription-billing/plans/ai-governance.md)
 - An enforced organization governance policy
-- Organization owner access, or a [custom role](/manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) with AI Governance audit permissions
+- Organization owner access, or a [custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md) with AI Governance audit permissions
 @y
-- A Docker [AI Governance plan](manuals/subscription/plans/ai-governance.md)
+- A Docker [AI Governance plan](manuals/subscription-billing/plans/ai-governance.md)
 - An enforced organization governance policy
-- Organization owner access, or a [custom role](manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) with AI Governance audit permissions
+- Organization owner access, or a [custom role](manuals/security/roles-and-permissions/custom-roles/_index.md) with AI Governance audit permissions
 @z
 
 @x

@@ -239,13 +239,15 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 bases = \
-	desktop-install.html    \
-	desktop-install-v2.html \
-	experimental.html       \
-	files.markdown.md       \
-	labspace-launch.html    \
-	restricted.html         \
-	summary-bar.html        \
+	desktop-install.html     \
+	desktop-install-v2.html  \
+	experimental.html        \
+	files.markdown.md        \
+	labspace-launch.html     \
+	restricted.html          \
+	sandbox-auth.html        \
+	sandbox-auth.markdown.md \
+	summary-bar.html         \
 	whats-new.markdown.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

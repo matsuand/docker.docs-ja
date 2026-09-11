@@ -392,15 +392,15 @@ You can create customizations using either the DHI CLI or the Docker Hub web int
 
 @x
 Authenticate with `docker login` using your Docker credentials or a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+(OAT)](../../security/access-tokens/organization-access-tokens.md). When using an OAT, the
 available operations depend on the token's permission scope:
 @y
 Authenticate with `docker login` using your Docker credentials or a [personal
-access token (PAT)](../../security/access-tokens.md) with **Read & Write**
+access token (PAT)](../../security/access-tokens/personal-access-tokens.md) with **Read & Write**
 permissions, or an [organization access token
-(OAT)](../../enterprise/security/access-tokens.md). When using an OAT, the
+(OAT)](../../security/access-tokens/organization-access-tokens.md). When using an OAT, the
 available operations depend on the token's permission scope:
 @z
 

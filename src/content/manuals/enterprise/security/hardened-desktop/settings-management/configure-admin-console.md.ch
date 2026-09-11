@@ -41,12 +41,12 @@ Before you begin, make sure you have:
 
 @x
 - [Docker Desktop](/manuals/desktop/release-notes.md) installed
-- [A verified domain](/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
+- [A verified domain](/security/authentication/single-sign-on/connect/#step-1-add-a-domain)
 - [Enforced sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 @y
 - [Docker Desktop](manuals/desktop/release-notes.md) installed
-- [A verified domain](__SUBDIR__/enterprise/security/single-sign-on/connect/#step-1-add-a-domain)
+- [A verified domain](__SUBDIR__/security/authentication/single-sign-on/connect/#step-1-add-a-domain)
 - [Enforced sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) for your organization
 - A Docker Business subscription
 @z

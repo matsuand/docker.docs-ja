@@ -71,10 +71,10 @@ usage: docker buildx create [OPTIONS] [CONTEXT|ENDPOINT]
 
 @x driver
       description: |
-        Driver to use (available: `docker-container`, `kubernetes`, `remote`)
+        Driver to use (available: `cloud`, `docker-container`, `kubernetes`, `remote`)
 @y
       description: |
-        Driver to use (available: `docker-container`, `kubernetes`, `remote`)
+        Driver to use (available: `cloud`, `docker-container`, `kubernetes`, `remote`)
 @z
 
 @x driver-opt
@@ -253,11 +253,13 @@ examples: |-
 
 @x
     * `docker` (default)
+    * `cloud`
     * `docker-container`
     * `kubernetes`
     * `remote`
 @y
     * `docker` (default)
+    * `cloud`
     * `docker-container`
     * `kubernetes`
     * `remote`
@@ -285,6 +287,64 @@ examples: |-
     the [`--load`](__SUBDIR__/reference/cli/docker/buildx/build/#load) flag is implied by default on
     `buildx build`. However, building multi-platform images or exporting cache is
     not currently supported.
+@z
+
+@x
+    #### `cloud` driver
+@y
+    #### `cloud` driver
+@z
+
+@x
+    Uses Docker Build Cloud builders. For Docker Build Cloud access and setup, see
+    [Docker Build Cloud setup](/build-cloud/setup/). For
+    build examples, see [Building with Docker Build Cloud](/build-cloud/usage/).
+@y
+    Uses Docker Build Cloud builders. For Docker Build Cloud access and setup, see
+    [Docker Build Cloud setup](__SUBDIR__/build-cloud/setup/). For
+    build examples, see [Building with Docker Build Cloud](__SUBDIR__/build-cloud/usage/).
+@z
+
+@x
+    Connect Buildx to an existing cloud builder with `--driver cloud` and the
+    builder name in the form `<account>/<builder>` or
+    `cloud://<account>/<builder>`. You must be signed in with `docker login` and
+    have access to the builder.
+@y
+    Connect Buildx to an existing cloud builder with `--driver cloud` and the
+    builder name in the form `<account>/<builder>` or
+    `cloud://<account>/<builder>`. You must be signed in with `docker login` and
+    have access to the builder.
+@z
+
+% snip command...
+
+@x
+    When you don't specify an output, an untagged result remains in the cloud build
+    cache. If you use `--tag`, Buildx automatically loads the image when the build
+    targets a single platform and runs on one cloud node. For details about loading
+    behavior, Docker contexts, and other output configurations, see
+    [Load results from Docker Build Cloud](/build/exporters/).
+@y
+    When you don't specify an output, an untagged result remains in the cloud build
+    cache. If you use `--tag`, Buildx automatically loads the image when the build
+    targets a single platform and runs on one cloud node. For details about loading
+    behavior, Docker contexts, and other output configurations, see
+    [Load results from Docker Build Cloud](__SUBDIR__/build/exporters/).
+@z
+
+@x
+    When `buildx create` resolves a Build Cloud builder group, each service instance
+    becomes a Buildx node. `--append` requires the resolved instance names to be
+    unique in the Buildx builder. Resolved cloud nodes are a create-time snapshot;
+    recreate the Buildx builder to refresh topology after Build Cloud membership or
+    placement changes.
+@y
+    When `buildx create` resolves a Build Cloud builder group, each service instance
+    becomes a Buildx node. `--append` requires the resolved instance names to be
+    unique in the Buildx builder. Resolved cloud nodes are a create-time snapshot;
+    recreate the Buildx builder to refresh topology after Build Cloud membership or
+    placement changes.
 @z
 
 @x

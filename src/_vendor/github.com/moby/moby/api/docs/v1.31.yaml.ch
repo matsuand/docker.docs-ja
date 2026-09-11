@@ -1881,9 +1881,11 @@ definitions:
         type: "string"
         default: "SIGTERM"
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
+        x-nullable: true
       Shell:
         description: "Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell."
         type: "array"
@@ -1917,9 +1919,11 @@ definitions:
         type: "string"
         default: "SIGTERM"
       StopTimeout:
-        description: "Timeout to stop a container in seconds."
+        description: |
+          Timeout to stop a container in seconds. If omitted, the daemon-wide
+          default is used.
         type: "integer"
-        default: 10
+        x-nullable: true
       Shell:
         description: "Shell for when `RUN`, `CMD`, and `ENTRYPOINT` uses a shell."
         type: "array"
@@ -4525,7 +4529,7 @@ definitions:
             description: "Amount of time to wait for the container to terminate before forcefully killing it."
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -4659,7 +4663,7 @@ definitions:
             description: "Amount of time to wait for the container to terminate before forcefully killing it."
             type: "integer"
             format: "int64"
-          HealthCheck:
+          Healthcheck:
             $ref: "#/definitions/HealthConfig"
           Hosts:
             type: "array"
@@ -4880,6 +4884,184 @@ definitions:
       - "shutdown"
       - "failed"
       - "rejected"
+@y
+      Resources:
+        description: "Resource requirements which apply to each individual container created as part of the service."
+        type: "object"
+        properties:
+          Limits:
+            description: "Define resources limits."
+            type: "object"
+            properties:
+              NanoCPUs:
+                description: "CPU limit in units of 10<sup>-9</sup> CPU shares."
+                type: "integer"
+                format: "int64"
+              MemoryBytes:
+                description: "Memory limit in Bytes."
+                type: "integer"
+                format: "int64"
+          Reservations:
+            description: "Define resources reservation."
+            properties:
+              NanoCPUs:
+                description: "CPU reservation in units of 10<sup>-9</sup> CPU shares."
+                type: "integer"
+                format: "int64"
+              MemoryBytes:
+                description: "Memory reservation in Bytes."
+                type: "integer"
+                format: "int64"
+      RestartPolicy:
+        description: "Specification for the restart policy which applies to containers created as part of this service."
+        type: "object"
+        properties:
+          Condition:
+            description: "Condition for restart."
+            type: "string"
+            enum:
+              - "none"
+              - "on-failure"
+              - "any"
+          Delay:
+            description: "Delay between restart attempts."
+            type: "integer"
+            format: "int64"
+          MaxAttempts:
+            description: "Maximum attempts to restart a given container before giving up (default value is 0, which is ignored)."
+            type: "integer"
+            format: "int64"
+            default: 0
+          Window:
+            description: "Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded)."
+            type: "integer"
+            format: "int64"
+            default: 0
+      Placement:
+        type: "object"
+        properties:
+          Constraints:
+            description: "An array of constraints."
+            type: "array"
+            items:
+              type: "string"
+          Preferences:
+            description: "Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence."
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                Spread:
+                  type: "object"
+                  properties:
+                    SpreadDescriptor:
+                      description: "label descriptor, such as engine.labels.az"
+                      type: "string"
+          Platforms:
+            description: "An array of supported platforms."
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                Architecture:
+                  type: "string"
+                OS:
+                  type: "string"
+      ForceUpdate:
+        description: "A counter that triggers an update even if no relevant parameters have been changed."
+        type: "integer"
+        format: "uint64"
+      Runtime:
+        description: "Runtime is the type of runtime specified for the task executor."
+        type: "string"
+      Networks:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            Target:
+              type: "string"
+            Aliases:
+              type: "array"
+              items:
+                type: "string"
+      LogDriver:
+        description: "Specifies the log driver to use for tasks created from this spec. If not present, the default one for the swarm will be used, finally falling back to the engine default if not specified."
+        type: "object"
+        properties:
+          Name:
+            type: "string"
+          Options:
+            type: "object"
+            additionalProperties:
+              type: "string"
+  TaskState:
+    type: "string"
+    enum:
+      - "new"
+      - "allocated"
+      - "pending"
+      - "assigned"
+      - "accepted"
+      - "preparing"
+      - "ready"
+      - "starting"
+      - "running"
+      - "complete"
+      - "shutdown"
+      - "failed"
+      - "rejected"
+@z
+
+@x
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
+@y
+  NetworkAttachment:
+    description: |
+      Specifies how a task is attached to a network, and the addresses the
+      task was assigned on that network.
+    type: "object"
+    properties:
+      Network:
+        $ref: "#/definitions/Network"
+      Addresses:
+        description: |
+          The IP addresses (in CIDR notation) assigned to the task on this
+          network. To maintain backward compatibility this field accepts CIDR
+          notation, but only the IP address is used.
+        type: "array"
+        items:
+          type: "string"
+          format: "cidr"
+    example:
+      Network:
+        ID: "4qvuz4ko70xaltuqbt8956gd1"
+      Addresses:
+        - "10.255.0.10/16"
+@z
+
+@x
   Task:
     type: "object"
     properties:
@@ -4935,6 +5117,13 @@ definitions:
                 type: "integer"
       DesiredState:
         $ref: "#/definitions/TaskState"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
     example:
       ID: "0kzzo1i0y4jz6027t0k7aezc7"
       Version:
@@ -5329,132 +5518,6 @@ definitions:
           items:
             $ref: "#/definitions/MountPoint"
 @y
-      Resources:
-        description: "Resource requirements which apply to each individual container created as part of the service."
-        type: "object"
-        properties:
-          Limits:
-            description: "Define resources limits."
-            type: "object"
-            properties:
-              NanoCPUs:
-                description: "CPU limit in units of 10<sup>-9</sup> CPU shares."
-                type: "integer"
-                format: "int64"
-              MemoryBytes:
-                description: "Memory limit in Bytes."
-                type: "integer"
-                format: "int64"
-          Reservations:
-            description: "Define resources reservation."
-            properties:
-              NanoCPUs:
-                description: "CPU reservation in units of 10<sup>-9</sup> CPU shares."
-                type: "integer"
-                format: "int64"
-              MemoryBytes:
-                description: "Memory reservation in Bytes."
-                type: "integer"
-                format: "int64"
-      RestartPolicy:
-        description: "Specification for the restart policy which applies to containers created as part of this service."
-        type: "object"
-        properties:
-          Condition:
-            description: "Condition for restart."
-            type: "string"
-            enum:
-              - "none"
-              - "on-failure"
-              - "any"
-          Delay:
-            description: "Delay between restart attempts."
-            type: "integer"
-            format: "int64"
-          MaxAttempts:
-            description: "Maximum attempts to restart a given container before giving up (default value is 0, which is ignored)."
-            type: "integer"
-            format: "int64"
-            default: 0
-          Window:
-            description: "Windows is the time window used to evaluate the restart policy (default value is 0, which is unbounded)."
-            type: "integer"
-            format: "int64"
-            default: 0
-      Placement:
-        type: "object"
-        properties:
-          Constraints:
-            description: "An array of constraints."
-            type: "array"
-            items:
-              type: "string"
-          Preferences:
-            description: "Preferences provide a way to make the scheduler aware of factors such as topology. They are provided in order from highest to lowest precedence."
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                Spread:
-                  type: "object"
-                  properties:
-                    SpreadDescriptor:
-                      description: "label descriptor, such as engine.labels.az"
-                      type: "string"
-          Platforms:
-            description: "An array of supported platforms."
-            type: "array"
-            items:
-              type: "object"
-              properties:
-                Architecture:
-                  type: "string"
-                OS:
-                  type: "string"
-      ForceUpdate:
-        description: "A counter that triggers an update even if no relevant parameters have been changed."
-        type: "integer"
-        format: "uint64"
-      Runtime:
-        description: "Runtime is the type of runtime specified for the task executor."
-        type: "string"
-      Networks:
-        type: "array"
-        items:
-          type: "object"
-          properties:
-            Target:
-              type: "string"
-            Aliases:
-              type: "array"
-              items:
-                type: "string"
-      LogDriver:
-        description: "Specifies the log driver to use for tasks created from this spec. If not present, the default one for the swarm will be used, finally falling back to the engine default if not specified."
-        type: "object"
-        properties:
-          Name:
-            type: "string"
-          Options:
-            type: "object"
-            additionalProperties:
-              type: "string"
-  TaskState:
-    type: "string"
-    enum:
-      - "new"
-      - "allocated"
-      - "pending"
-      - "assigned"
-      - "accepted"
-      - "preparing"
-      - "ready"
-      - "starting"
-      - "running"
-      - "complete"
-      - "shutdown"
-      - "failed"
-      - "rejected"
   Task:
     type: "object"
     properties:
@@ -5510,6 +5573,13 @@ definitions:
                 type: "integer"
       DesiredState:
         $ref: "#/definitions/TaskState"
+      NetworksAttachments:
+        description: |
+          The networks that this task is attached to, and the addresses the
+          task was assigned on each of them.
+        type: "array"
+        items:
+          $ref: "#/definitions/NetworkAttachment"
     example:
       ID: "0kzzo1i0y4jz6027t0k7aezc7"
       Version:
@@ -8144,6 +8214,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -8536,6 +8610,10 @@ paths:
           description: "no error"
         304:
           description: "container already started"
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+        400:
+          description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
         404:
@@ -10060,14 +10138,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -10076,10 +10157,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: "JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values. [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg)"
@@ -10088,6 +10171,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"
@@ -10176,14 +10260,17 @@ paths:
           in: "query"
           description: "Set memory limit for build."
           type: "integer"
+          format: "int64"
         - name: "memswap"
           in: "query"
           description: "Total memory (memory + swap). Set as `-1` to disable swap."
           type: "integer"
+          format: "int64"
         - name: "cpushares"
           in: "query"
           description: "CPU shares (relative weight)."
           type: "integer"
+          format: "int64"
         - name: "cpusetcpus"
           in: "query"
           description: "CPUs in which to allow execution (e.g., `0-3`, `0,1`)."
@@ -10192,10 +10279,12 @@ paths:
           in: "query"
           description: "The length of a CPU period in microseconds."
           type: "integer"
+          format: "int64"
         - name: "cpuquota"
           in: "query"
           description: "Microseconds of CPU time that the container can get in a CPU period."
           type: "integer"
+          format: "int64"
         - name: "buildargs"
           in: "query"
           description: "JSON map of string pairs for build-time variables. Users pass these values at build-time. Docker uses the buildargs as the environment context for commands run via the `Dockerfile` RUN instruction, or for variable expansion in other `Dockerfile` instructions. This is not meant for passing secret values. [Read more about the buildargs instruction.](https://docs.docker.com/engine/reference/builder/#arg)"
@@ -10204,6 +10293,7 @@ paths:
           in: "query"
           description: "Size of `/dev/shm` in bytes. The size must be greater than 0. If omitted the system uses 64MB."
           type: "integer"
+          format: "int64"
         - name: "squash"
           in: "query"
           description: "Squash the resulting images layers into a single layer. *(Experimental release only.)*"
@@ -17937,7 +18027,6 @@ paths:
             - `id=<config id>`
             - `label=<key> or label=<key>=value`
             - `name=<config name>`
-            - `names=<config name>`
       tags: ["Config"]
   /configs/create:
     post:
@@ -18186,7 +18275,6 @@ paths:
             - `id=<config id>`
             - `label=<key> or label=<key>=value`
             - `name=<config name>`
-            - `names=<config name>`
       tags: ["Config"]
   /configs/create:
     post:

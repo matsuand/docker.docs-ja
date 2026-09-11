@@ -590,17 +590,17 @@ control over your image's security.
 @z
 
 @x
-Docker Scout's [remediation feature](/manuals/scout/policy/dashboard.md)
-helps you address supply chain and security issues by offering tailored
-recommendations based on policy evaluations. These recommendations guide you in
-improving policy compliance or enhancing image metadata, allowing Docker Scout
-to perform more accurate evaluations in the future.
+Docker Scout's remediation feature helps you address supply chain and
+security issues by offering tailored recommendations based on policy
+evaluations. These recommendations guide you in improving policy compliance
+or enhancing image metadata, allowing Docker Scout to perform more accurate
+evaluations in the future.
 @y
-Docker Scout's [remediation feature](manuals/scout/policy/dashboard.md)
-helps you address supply chain and security issues by offering tailored
-recommendations based on policy evaluations. These recommendations guide you in
-improving policy compliance or enhancing image metadata, allowing Docker Scout
-to perform more accurate evaluations in the future.
+Docker Scout's remediation feature helps you address supply chain and
+security issues by offering tailored recommendations based on policy
+evaluations. These recommendations guide you in improving policy compliance
+or enhancing image metadata, allowing Docker Scout to perform more accurate
+evaluations in the future.
 @z
 
 @x
@@ -618,15 +618,15 @@ compliance, Docker Scout suggests actions to help resolve the issue.
 @z
 
 @x
-In the Docker Scout Dashboard, you can view and act on these recommendations by
-reviewing violations or compliance uncertainties. With integrations like
-GitHub, you can even automate updates, directly fixing issues from the
-dashboard.
+You can view and act on these recommendations in Docker Desktop or Docker Hub,
+see [Remediation recommendations](/manuals/scout/explore/image-details-view.md#remediation-recommendations),
+or from the CLI with
+[`docker scout recommendations`](/reference/cli/docker/scout/recommendations/).
 @y
-In the Docker Scout Dashboard, you can view and act on these recommendations by
-reviewing violations or compliance uncertainties. With integrations like
-GitHub, you can even automate updates, directly fixing issues from the
-dashboard.
+You can view and act on these recommendations in Docker Desktop or Docker Hub,
+see [Remediation recommendations](manuals/scout/explore/image-details-view.md#remediation-recommendations),
+or from the CLI with
+[`docker scout recommendations`](__SUBDIR__/reference/cli/docker/scout/recommendations/).
 @z
 
 @x

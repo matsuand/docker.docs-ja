@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = docker-concepts images introduction
+SUBDIRS = docker-concepts images tutorials
 
 bases = \
 	_index.md          \

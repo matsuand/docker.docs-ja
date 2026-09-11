@@ -81,13 +81,13 @@ You can use one of the following solutions:
 
 @x
 - [Authenticate](./usage/pulls.md#authentication) or
-  [upgrade](../subscription/manage.md#upgrade-plans) your Docker
+  [upgrade](../subscription-billing/manage/plans.md#upgrade-plans) your Docker
   account.
 - [View your pull rate limit](./usage/pulls.md#view-hourly-pull-rate-and-limit),
   wait until your pull rate limit decreases, and then try again.
 @y
 - [Authenticate](./usage/pulls.md#authentication) or
-  [upgrade](../subscription/manage.md#upgrade-plans) your Docker
+  [upgrade](../subscription-billing/manage/plans.md#upgrade-plans) your Docker
   account.
 - [View your pull rate limit](./usage/pulls.md#view-hourly-pull-rate-and-limit),
   wait until your pull rate limit decreases, and then try again.

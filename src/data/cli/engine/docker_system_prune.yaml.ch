@@ -6,14 +6,32 @@ command: docker system prune
 short: Remove unused data
 long: |-
     Remove all unused containers, networks, images (both dangling and unused),
-    and optionally, volumes.
-usage: docker system prune [OPTIONS]
+    unused [build cache](/build/cache/), and optionally,
+    volumes.
 @y
 command: docker system prune
 short: Remove unused data
 long: |-
     Remove all unused containers, networks, images (both dangling and unused),
-    and optionally, volumes.
+    unused [build cache](/build/cache/), and optionally,
+    volumes.
+@z
+
+@x
+    Build cache is always eligible for pruning with this command (including BuildKit
+    cache mounts created with `RUN --mount=type=cache`). Use
+    [`docker builder prune`](/reference/cli/docker/builder/prune/) if you only want to reclaim build
+    cache without removing containers, networks, or images.
+@y
+    Build cache is always eligible for pruning with this command (including BuildKit
+    cache mounts created with `RUN --mount=type=cache`). Use
+    [`docker builder prune`](/reference/cli/docker/builder/prune/) if you only want to reclaim build
+    cache without removing containers, networks, or images.
+@z
+
+@x
+usage: docker system prune [OPTIONS]
+@y
 usage: docker system prune [OPTIONS]
 @z
 

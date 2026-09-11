@@ -6,11 +6,11 @@
 @x
 title: Build drivers
 description: Build drivers are configurations for how and where the BuildKit backend runs.
-keywords: build, buildx, driver, builder, docker-container, kubernetes, remote
+keywords: build, buildx, driver, builder, cloud, docker-container, kubernetes, remote
 @y
 title: Build drivers
 description: Build drivers are configurations for how and where the BuildKit backend runs.
-keywords: build, buildx, driver, builder, docker-container, kubernetes, remote
+keywords: build, buildx, driver, builder, cloud, docker-container, kubernetes, remote
 @z
 
 @x
@@ -26,11 +26,13 @@ Buildx supports the following drivers:
 @x
 - `docker`: uses the BuildKit library bundled into the Docker daemon.
 - `docker-container`: creates a dedicated BuildKit container using Docker.
+- `cloud`: connects to a managed builder in Docker Build Cloud.
 - `kubernetes`: creates BuildKit pods in a Kubernetes cluster.
 - `remote`: connects directly to a manually managed BuildKit daemon.
 @y
 - `docker`: uses the BuildKit library bundled into the Docker daemon.
 - `docker-container`: creates a dedicated BuildKit container using Docker.
+- `cloud`: connects to a managed builder in Docker Build Cloud.
 - `kubernetes`: creates BuildKit pods in a Kubernetes cluster.
 - `remote`: connects directly to a manually managed BuildKit daemon.
 @z
@@ -54,21 +56,21 @@ The following table outlines some differences between drivers.
 @z
 
 @x
-| Feature                      |  `docker`   | `docker-container` | `kubernetes` |      `remote`      |
-| :--------------------------- | :---------: | :----------------: | :----------: | :----------------: |
-| **Automatically load image** |     ✅      |                    |              |                    |
-| **Cache export**             |     ✅\*     |         ✅         |      ✅      |         ✅         |
-| **Tarball output**           |             |         ✅         |      ✅      |         ✅         |
-| **Multi-arch images**        |             |         ✅         |      ✅      |         ✅         |
-| **BuildKit configuration**   |             |         ✅         |      ✅      | Managed externally |
+| Feature                      |  `docker`   | `docker-container` |     `cloud`      | `kubernetes` |      `remote`      |
+| :--------------------------- | :---------: | :----------------: | :--------------: | :----------: | :----------------: |
+| **Automatically load image** |     ✅      |                    |   Conditional    |              |                    |
+| **Cache export**             |     ✅\*     |         ✅         |        ✅        |      ✅      |         ✅         |
+| **Tarball output**           |             |         ✅         |        ✅        |      ✅      |         ✅         |
+| **Multi-arch images**        |             |         ✅         |        ✅        |      ✅      |         ✅         |
+| **BuildKit configuration**   |             |         ✅         | Managed by Docker |      ✅      | Managed externally |
 @y
-| Feature                      |  `docker`   | `docker-container` | `kubernetes` |      `remote`      |
-| :--------------------------- | :---------: | :----------------: | :----------: | :----------------: |
-| **Automatically load image** |     ✅      |                    |              |                    |
-| **Cache export**             |     ✅\*     |         ✅         |      ✅      |         ✅         |
-| **Tarball output**           |             |         ✅         |      ✅      |         ✅         |
-| **Multi-arch images**        |             |         ✅         |      ✅      |         ✅         |
-| **BuildKit configuration**   |             |         ✅         |      ✅      | Managed externally |
+| Feature                      |  `docker`   | `docker-container` |     `cloud`      | `kubernetes` |      `remote`      |
+| :--------------------------- | :---------: | :----------------: | :--------------: | :----------: | :----------------: |
+| **Automatically load image** |     ✅      |                    |   Conditional    |              |                    |
+| **Cache export**             |     ✅\*     |         ✅         |        ✅        |      ✅      |         ✅         |
+| **Tarball output**           |             |         ✅         |        ✅        |      ✅      |         ✅         |
+| **Multi-arch images**        |             |         ✅         |        ✅        |      ✅      |         ✅         |
+| **BuildKit configuration**   |             |         ✅         | Managed by Docker |      ✅      | Managed externally |
 @z
 
 @x
@@ -86,21 +88,27 @@ See [Cache storage backends](manuals/build/cache/backends/_index.md) for more in
 @z
 
 @x
-Unlike when using the default `docker` driver, images built using other drivers
-aren't automatically loaded into the local image store. If you don't specify an
-output, the build result is exported to the build cache only.
+The `docker` driver automatically loads images into the local image store.
+With Docker Build Cloud, an untagged result remains in the cloud build cache
+when you don't specify an output. Using `--tag` instead automatically loads the
+image when the build targets a single platform and runs on one cloud node. With
+other drivers, the build result remains in the build cache if you don't specify
+an output.
 @y
-Unlike when using the default `docker` driver, images built using other drivers
-aren't automatically loaded into the local image store. If you don't specify an
-output, the build result is exported to the build cache only.
+The `docker` driver automatically loads images into the local image store.
+With Docker Build Cloud, an untagged result remains in the cloud build cache
+when you don't specify an output. Using `--tag` instead automatically loads the
+image when the build targets a single platform and runs on one cloud node. With
+other drivers, the build result remains in the build cache if you don't specify
+an output.
 @z
 
 @x
-To build an image using a non-default driver and load it to the image store,
-   use the `--load` flag with the build command:
+To build an image using a driver that doesn't load results automatically, use
+the `--load` flag with the build command:
 @y
-To build an image using a non-default driver and load it to the image store,
-   use the `--load` flag with the build command:
+To build an image using a driver that doesn't load results automatically, use
+the `--load` flag with the build command:
 @z
 
 @x
@@ -204,13 +212,15 @@ Read about each driver:
 @z
 
 @x
-  - [Docker driver](./docker.md)
-  - [Docker container driver](./docker-container.md)
-  - [Kubernetes driver](./kubernetes.md)
+- [Docker driver](./docker.md)
+- [Docker container driver](./docker-container.md)
+- [Cloud driver](./cloud.md)
+- [Kubernetes driver](./kubernetes.md)
 - [Remote driver](./remote.md)
 @y
-  - [Docker driver](./docker.md)
-  - [Docker container driver](./docker-container.md)
-  - [Kubernetes driver](./kubernetes.md)
+- [Docker driver](./docker.md)
+- [Docker container driver](./docker-container.md)
+- [Cloud driver](./cloud.md)
+- [Kubernetes driver](./kubernetes.md)
 - [Remote driver](./remote.md)
 @z

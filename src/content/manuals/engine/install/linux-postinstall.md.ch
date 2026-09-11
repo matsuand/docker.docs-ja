@@ -46,17 +46,27 @@ Docker デーモンは常に `root` ユーザーが起動しています。
 @z
 
 @x
-If you don't want to preface the `docker` command with `sudo`, create a Unix
-group called `docker` and add users to it. When the Docker daemon starts, it
-creates a Unix socket accessible by members of the `docker` group. On some Linux
-distributions, the system automatically creates this group when installing
-Docker Engine using a package manager. In that case, there is no need for you to
-manually create the group.
+When the Docker daemon starts, it creates a Unix socket accessible by members of the `docker` group.
+On some Linux distributions, the system automatically creates this group when installing Docker Engine using a package manager.
+In that case, you don't need to create the group manually.
 @y
-`docker` コマンドの実行にあたって `sudo` を用いたくない場合は、`docker` という Unix グループを生成してユーザーをそのグループに加えます。
-Docker デーモンが起動したときに生成される Unix ソケットは、`docker` グループに所属するユーザーであればアクセスすることが可能です。
-Linux ディストリビューションの中には、パッケージマネージャーを通じて Docker Engine をインストールする際に、そのグループを自動的に生成するものがあります。
-その場合は、手動でこのグループを生成する必要はありません。
+When the Docker daemon starts, it creates a Unix socket accessible by members of the `docker` group.
+On some Linux distributions, the system automatically creates this group when installing Docker Engine using a package manager.
+In that case, you don't need to create the group manually.
+@z
+
+@x
+There are two ways to run `docker` commands without `sudo` while the Docker daemon runs as `root`:
+@y
+There are two ways to run `docker` commands without `sudo` while the Docker daemon runs as `root`:
+@z
+
+@x
+- [Add your user to the `docker` group](#add-your-user-to-the-docker-group) for access throughout your login session.
+- [Access the `docker` group on demand](#access-the-docker-group-on-demand) by entering a password-protected, Docker-enabled shell.
+@y
+- [Add your user to the `docker` group](#add-your-user-to-the-docker-group) for access throughout your login session.
+- [Access the `docker` group on demand](#access-the-docker-group-on-demand) by entering a password-protected, Docker-enabled shell.
 @z
 
 @x
@@ -81,6 +91,12 @@ Linux ディストリビューションの中には、パッケージマネー�
 > [!NOTE]
 >
 > ルート権限なしに Docker をインストールする場合は [非ルートユーザーとして Docker デーモンを起動する (rootless モード)](../security/rootless.md) を参照してください。
+@z
+
+@x
+### Add your user to the `docker` group
+@y
+### Add your user to the `docker` group
 @z
 
 @x
@@ -173,6 +189,236 @@ To create the `docker` group and add your user:
 % snip command...
 
 @x
+### Access the `docker` group on demand
+@y
+### Access the `docker` group on demand
+@z
+
+@x
+Group passwords are a legacy Unix access-control mechanism, but they can be useful for gating Docker access on a single-user workstation.
+Like `sudo`, this method adds an explicit password step before privileged access.
+Unlike running `sudo docker`, `newgrp` keeps the Docker CLI running under your user ID and grants access through the shell's primary group, so the CLI doesn't access its configuration as `root`.
+@y
+Group passwords are a legacy Unix access-control mechanism, but they can be useful for gating Docker access on a single-user workstation.
+Like `sudo`, this method adds an explicit password step before privileged access.
+Unlike running `sudo docker`, `newgrp` keeps the Docker CLI running under your user ID and grants access through the shell's primary group, so the CLI doesn't access its configuration as `root`.
+@z
+
+@x
+Permanent membership in the `docker` group gives every process in your login session access to the Docker socket.
+The Docker-enabled shell and its descendants inherit access to the Docker socket.
+This reduces ambient access from applications running elsewhere in your login session.
+To configure this access, keep your user out of the group, set a group password, and use `newgrp` to start a Docker-enabled shell.
+@y
+Permanent membership in the `docker` group gives every process in your login session access to the Docker socket.
+The Docker-enabled shell and its descendants inherit access to the Docker socket.
+This reduces ambient access from applications running elsewhere in your login session.
+To configure this access, keep your user out of the group, set a group password, and use `newgrp` to start a Docker-enabled shell.
+@z
+
+@x
+> [!WARNING]
+>
+> A group password reduces ambient access to the Docker socket, but it doesn't reduce the root-level privileges granted after access is authorized.
+> Group passwords are also shared secrets and don't provide per-user accountability.
+> This method isn't a security boundary against malicious code running as your user.
+> Such code can modify user-writable shell configuration, commands, or scripts that you later use from the Docker-enabled shell and gain Docker access after you authenticate.
+> Don't rely on a group password to contain untrusted code or protect a compromised login session.
+> This configuration is most suitable for a single-user workstation.
+> For stronger isolation, use [Rootless mode](../security/rootless.md) or run Docker in a virtual machine.
+@y
+> [!WARNING]
+>
+> A group password reduces ambient access to the Docker socket, but it doesn't reduce the root-level privileges granted after access is authorized.
+> Group passwords are also shared secrets and don't provide per-user accountability.
+> This method isn't a security boundary against malicious code running as your user.
+> Such code can modify user-writable shell configuration, commands, or scripts that you later use from the Docker-enabled shell and gain Docker access after you authenticate.
+> Don't rely on a group password to contain untrusted code or protect a compromised login session.
+> This configuration is most suitable for a single-user workstation.
+> For stronger isolation, use [Rootless mode](../security/rootless.md) or run Docker in a virtual machine.
+@z
+
+@x
+This procedure requires `gpasswd` and `newgrp`.
+The package names for these commands vary by Linux distribution.
+Verify that both commands are available:
+@y
+This procedure requires `gpasswd` and `newgrp`.
+The package names for these commands vary by Linux distribution.
+Verify that both commands are available:
+@z
+
+% snip command...
+
+@x
+To require a password for Docker access:
+@y
+To require a password for Docker access:
+@z
+
+@x
+1. Create the `docker` group if it doesn't exist:
+@y
+1. Create the `docker` group if it doesn't exist:
+@z
+
+% snip command...
+
+@x
+   The `--force` option makes the command succeed when the group already exists.
+@y
+   The `--force` option makes the command succeed when the group already exists.
+@z
+
+@x
+2. If your user is a member of the `docker` group, remove the membership:
+@y
+2. If your user is a member of the `docker` group, remove the membership:
+@z
+
+% snip command...
+
+@x
+   Sign out of the desktop or SSH session completely, then sign back in.
+   Group membership remains in the credentials of existing processes, so opening a new terminal isn't sufficient.
+@y
+   Sign out of the desktop or SSH session completely, then sign back in.
+   Group membership remains in the credentials of existing processes, so opening a new terminal isn't sufficient.
+@z
+
+@x
+   Verify that `docker` is absent from the group list before continuing:
+@y
+   Verify that `docker` is absent from the group list before continuing:
+@z
+
+% snip command...
+
+@x
+   Your group list varies by system, but it must not include `docker`.
+@y
+   Your group list varies by system, but it must not include `docker`.
+@z
+
+@x
+3. Set a dedicated password for the `docker` group:
+@y
+3. Set a dedicated password for the `docker` group:
+@z
+
+% snip command...
+
+@x
+   Don't add your user back to the group.
+   Users configured as group members can use `newgrp` without entering the group password.
+@y
+   Don't add your user back to the group.
+   Users configured as group members can use `newgrp` without entering the group password.
+@z
+
+@x
+4. Start a child shell with `docker` as its primary group:
+@y
+4. Start a child shell with `docker` as its primary group:
+@z
+
+% snip command...
+
+@x
+   Verify that the shell still uses your user ID and has `docker` as its primary group, then test Docker access:
+@y
+   Verify that the shell still uses your user ID and has `docker` as its primary group, then test Docker access:
+@z
+
+% snip command...
+
+@x
+   Commands and applications started from this shell inherit access to the Docker socket.
+   Applications that were already running outside the shell don't gain access.
+@y
+   Commands and applications started from this shell inherit access to the Docker socket.
+   Applications that were already running outside the shell don't gain access.
+@z
+
+@x
+   > [!CAUTION]
+   >
+   > Files and directories created from this shell normally have `docker` as their group owner.
+   > Use this shell only for Docker-related commands, or verify the group ownership of files you create.
+@y
+   > [!CAUTION]
+   >
+   > Files and directories created from this shell normally have `docker` as their group owner.
+   > Use this shell only for Docker-related commands, or verify the group ownership of files you create.
+@z
+
+@x
+5. Exit the Docker-enabled shell when you finish:
+@y
+5. Exit the Docker-enabled shell when you finish:
+@z
+
+% snip command...
+
+@x
+   Verify that `docker` is no longer in the original shell's group list:
+@y
+   Verify that `docker` is no longer in the original shell's group list:
+@z
+
+% snip command...
+
+@x
+> [!CAUTION]
+>
+> Exiting the shell doesn't revoke access from background, detached, or daemonized processes started inside it.
+> Those processes retain the `docker` group until they exit.
+@y
+> [!CAUTION]
+>
+> Exiting the shell doesn't revoke access from background, detached, or daemonized processes started inside it.
+> Those processes retain the `docker` group until they exit.
+@z
+
+@x
+To change the group password, run `sudo gpasswd docker` again.
+@y
+To change the group password, run `sudo gpasswd docker` again.
+@z
+
+@x
+#### Disable password-based entry
+@y
+#### Disable password-based entry
+@z
+
+@x
+To stop using the shared password and require configured group membership, run:
+@y
+To stop using the shared password and require configured group membership, run:
+@z
+
+% snip command...
+
+@x
+This reverses the password-gated setup.
+Afterward, only users configured as members of the `docker` group can enter it.
+The change affects new authorization attempts; it doesn't terminate existing Docker-enabled shells or their descendant processes.
+@y
+This reverses the password-gated setup.
+Afterward, only users configured as members of the `docker` group can enter it.
+The change affects new authorization attempts; it doesn't terminate existing Docker-enabled shells or their descendant processes.
+@z
+
+@x
+`gpasswd` manages local `/etc/group` and `/etc/gshadow` files.
+Systems using LDAP, NIS, or another identity service require that service's group-management mechanism.
+@y
+`gpasswd` manages local `/etc/group` and `/etc/gshadow` files.
+Systems using LDAP, NIS, or another identity service require that service's group-management mechanism.
+@z
+
+@x
 ## Configure Docker to start on boot with systemd
 @y
 ## ブート時の Docker 起動設定 {#configure-docker-to-start-on-boot-with-systemd}
@@ -257,8 +503,8 @@ options:
 @z
 
 @x
-- Take a look at [Get started with Docker](/get-started/introduction/_index.md) to learn how to build an image and run it as a containerized application.
+- Take a look at [Get started with Docker](/get-started/tutorials/run-an-app.md) to learn how to build an image and run it as a containerized application.
 @y
-- [Docker を使ってはじめよう](get-started/introduction/_index.md) を確認してみてください。
+- [Docker を使ってはじめよう](get-started/tutorials/run-an-app.md) を確認してみてください。
   そこではイメージのビルド方法や、コンテナー化アプリケーションとしてそれを実行する方法について説明しています。
 @z

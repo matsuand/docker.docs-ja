@@ -7,6 +7,7 @@ bases = \
 	credentials.md       \
 	environment-files.md \
 	gpu-passthrough.md   \
+	registry-mirror.md   \
 	upstream-proxy.md
 
 include $(top_srcdir)/build-aux/common.mk

@@ -836,42 +836,22 @@ sandbox:
 @x
 Claude Code merges the additional file with the sandbox-managed user settings.
 Because the file is under `files/home/`, it stays inside the sandbox instead of
-being written into a directly mounted host workspace. Launch the sandbox with
-the child kit's name:
+being written into a directly mounted host workspace. Launch the sandbox by
+passing the child kit directory in place of a built-in agent name:
 @y
 Claude Code merges the additional file with the sandbox-managed user settings.
 Because the file is under `files/home/`, it stays inside the sandbox instead of
-being written into a directly mounted host workspace. Launch the sandbox with
-the child kit's name:
+being written into a directly mounted host workspace. Launch the sandbox by
+passing the child kit directory in place of a built-in agent name:
 @z
 
 @x
 ```console
-$ sbx run claude-sonnet --kit ./claude-sonnet
+$ sbx run ./claude-sonnet
 ```
 @y
 ```console
-$ sbx run claude-sonnet --kit ./claude-sonnet
-```
-@z
-
-@x
-Proxy-managed OAuth isn't supported for a third-party kit that extends the
-built-in `claude` agent. Store an Anthropic API key on the host before the first
-launch:
-@y
-Proxy-managed OAuth isn't supported for a third-party kit that extends the
-built-in `claude` agent. Store an Anthropic API key on the host before the first
-launch:
-@z
-
-@x
-```console
-$ sbx secret set anthropic
-```
-@y
-```console
-$ sbx secret set anthropic
+$ sbx run ./claude-sonnet
 ```
 @z
 
@@ -879,28 +859,12 @@ $ sbx secret set anthropic
 When you launch the kit for the first time, `sbx` prompts you to approve its
 inherited Anthropic credentials. Because this is a third-party schema v2 kit,
 `sbx` records your approval as a
-[credential binding](../configuration/credentials.md#credential-bindings). The
-sandbox receives a sentinel value, and the proxy injects the real API key into
-requests to the domains declared by the kit.
+[credential binding](../configuration/credentials.md#credential-bindings).
 @y
 When you launch the kit for the first time, `sbx` prompts you to approve its
 inherited Anthropic credentials. Because this is a third-party schema v2 kit,
 `sbx` records your approval as a
-[credential binding](../configuration/credentials.md#credential-bindings). The
-sandbox receives a sentinel value, and the proxy injects the real API key into
-requests to the domains declared by the kit.
-@z
-
-@x
-> [!WARNING]
-> The approval prompt also lists OAuth, but OAuth doesn't work for the extended
-> agent. If you use Claude Code's `/login` command, Claude Code stores the real
-> OAuth tokens inside the sandbox.
-@y
-> [!WARNING]
-> The approval prompt also lists OAuth, but OAuth doesn't work for the extended
-> agent. If you use Claude Code's `/login` command, Claude Code stores the real
-> OAuth tokens inside the sandbox.
+[credential binding](../configuration/credentials.md#credential-bindings).
 @z
 
 @x
@@ -1059,31 +1023,29 @@ sandbox:
 
 @x
 The child inherits the built-in image, credentials, network permissions,
-persistent volumes, settings, MCP integration, and agent instructions. Its
-`sandbox.entrypoint` replaces the inherited entrypoint. Proxy-managed OAuth
-isn't supported for the extended agent, so follow the
-[Anthropic API-key setup](#customize-agent-settings) before launching it.
+persistent volumes, settings, MCP integration, agent instructions, setup
+entries, and environment variables. Its `sandbox.entrypoint` replaces the
+inherited entrypoint.
 @y
 The child inherits the built-in image, credentials, network permissions,
-persistent volumes, settings, MCP integration, and agent instructions. Its
-`sandbox.entrypoint` replaces the inherited entrypoint. Proxy-managed OAuth
-isn't supported for the extended agent, so follow the
-[Anthropic API-key setup](#customize-agent-settings) before launching it.
+persistent volumes, settings, MCP integration, agent instructions, setup
+entries, and environment variables. Its `sandbox.entrypoint` replaces the
+inherited entrypoint.
 @z
 
 @x
-Launch with the kit's `name:` as the agent argument to `sbx run`:
+Launch by passing the sandbox kit in place of a built-in agent name:
 @y
-Launch with the kit's `name:` as the agent argument to `sbx run`:
+Launch by passing the sandbox kit in place of a built-in agent name:
 @z
 
 @x
 ```console
-$ sbx run claude-safe --kit ./claude-safe
+$ sbx run ./claude-safe
 ```
 @y
 ```console
-$ sbx run claude-safe --kit ./claude-safe
+$ sbx run ./claude-safe
 ```
 @z
 
@@ -1105,12 +1067,12 @@ scratch, see [Build an agent](build-an-agent.md).
 These patterns are all drawn from working kits in the
 [sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib)
 repository, which contains each example as a complete, loadable kit.
-Use it to study the full shape of a kit, or load one directly:
+Use it to study the full shape of a kit. Load a mixin with `--kit`:
 @y
 These patterns are all drawn from working kits in the
 [sbx-kits-contrib](https://github.com/docker/sbx-kits-contrib)
 repository, which contains each example as a complete, loadable kit.
-Use it to study the full shape of a kit, or load one directly:
+Use it to study the full shape of a kit. Load a mixin with `--kit`:
 @z
 
 @x
@@ -1120,5 +1082,21 @@ $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=<
 @y
 ```console
 $ sbx run claude --kit "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
+```
+@z
+
+@x
+For a `kind: sandbox` kit, pass the reference in place of the agent name:
+@y
+For a `kind: sandbox` kit, pass the reference in place of the agent name:
+@z
+
+@x
+```console
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
+```
+@y
+```console
+$ sbx run "git+https://github.com/docker/sbx-kits-contrib.git#dir=<kit>"
 ```
 @z

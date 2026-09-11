@@ -295,9 +295,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = accounts admin agentic-platform ai billing build build-cloud \
-	compose desktop dhi docker-hub engine enterprise extensions    \
-	offload scout security subscription support                    \
+SUBDIRS = accounts agentic-platform ai build build-cloud \
+	compose desktop dhi docker-hub engine enterprise extensions \
+	faqs offload scout security subscription-billing support    \
 	unassociated-machines
 
 bases = \

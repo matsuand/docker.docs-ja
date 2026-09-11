@@ -530,12 +530,12 @@ jobs:
 @x
 The `docker/login-action` step authenticates with Docker Hub so the runner can
 pull the DHI base image and the `dhi/policies` bundle. Store your Docker Hub
-username and a [personal access token](/manuals/security/access-tokens.md) as the
+username and a [personal access token](/manuals/security/access-tokens/personal-access-tokens.md) as the
 `DOCKER_USER` and `DOCKER_PAT` repository secrets.
 @y
 The `docker/login-action` step authenticates with Docker Hub so the runner can
 pull the DHI base image and the `dhi/policies` bundle. Store your Docker Hub
-username and a [personal access token](manuals/security/access-tokens.md) as the
+username and a [personal access token](manuals/security/access-tokens/personal-access-tokens.md) as the
 `DOCKER_USER` and `DOCKER_PAT` repository secrets.
 @z
 

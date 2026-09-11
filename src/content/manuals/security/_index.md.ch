@@ -1,178 +1,166 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
-title: Security for developers
+title: Security
 linkTitle: Security
-description: Learn about developer-level security features like 2FA and access tokens
-keywords: docker, docker hub, docker desktop, security, developer security, 2FA, access tokens
+description: >
+  Secure Docker accounts, manage access, and control membership for
+  individuals and organizations in Docker Home.
+keywords: docker, docker hub, security, 2FA, access tokens, SSO, OIDC,
+  provisioning, roles, Docker Home
 @y
-title: Security for developers
+title: Security
 linkTitle: Security
-description: Learn about developer-level security features like 2FA and access tokens
-keywords: docker, docker hub, docker desktop, security, developer security, 2FA, access tokens
-@z
-
-% grid_developers:
-
-@x
-- title: Set up two-factor authentication
-  description: Add an extra layer of authentication to your Docker account.
-  link: /security/2fa/
-  icon: device-phone-mobile
-@y
-- title: Set up two-factor authentication
-  description: Add an extra layer of authentication to your Docker account.
-  link: __SUBDIR__/security/2fa/
-  icon: device-phone-mobile
+description: >
+  Secure Docker accounts, manage access, and control membership for
+  individuals and organizations in Docker Home.
+keywords: docker, docker hub, security, 2FA, access tokens, SSO, OIDC,
+  provisioning, roles, Docker Home
 @z
 
 @x
-- title: Manage access tokens
-  description: Create personal access tokens as an alternative to your password.
-  icon: lock-closed
-  link: /security/access-tokens/
+  - title: Authentication
+    description: Two-factor authentication, single sign-on, and OIDC connections.
+    icon: key
+    link: /security/authentication/
 @y
-- title: Manage access tokens
-  description: Create personal access tokens as an alternative to your password.
-  icon: lock-closed
-  link: __SUBDIR__/security/access-tokens/
+  - title: Authentication
+    description: Two-factor authentication, single sign-on, and OIDC connections.
+    icon: key
+    link: __SUBDIR__/security/authentication/
 @z
 
 @x
-- title: Static vulnerability scanning
-  description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
-  icon: magnifying-glass
-  link: /docker-hub/repos/manage/vulnerability-scanning/
+  - title: Access tokens
+    description: Personal and organization access tokens for the Docker CLI and automation.
+    icon: lock-closed
+    link: /security/access-tokens/
 @y
-- title: Static vulnerability scanning
-  description: Automatically run a point-in-time scan on your Docker images for vulnerabilities.
-  icon: magnifying-glass
-  link: __SUBDIR__/docker-hub/repos/manage/vulnerability-scanning/
+  - title: Access tokens
+    description: Personal and organization access tokens for the Docker CLI and automation.
+    icon: lock-closed
+    link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
-- title: Docker Engine security
-  description: Understand how to keep Docker Engine secure.
-  icon: shield-check
-  link: /engine/security/
+  - title: Provisioning
+    description: Add users with SCIM, JIT, auto-provisioning, and domain management.
+    icon: arrow-path
+    link: /security/provisioning/
 @y
-- title: Docker Engine security
-  description: Understand how to keep Docker Engine secure.
-  icon: shield-check
-  link: __SUBDIR__/engine/security/
+  - title: Provisioning
+    description: Add users with SCIM, JIT, auto-provisioning, and domain management.
+    icon: arrow-path
+    link: __SUBDIR__/security/provisioning/
 @z
 
 @x
-- title: Secrets in Docker Compose
-  description: Learn how to use secrets in Docker Compose.
-  icon: shield-exclamation
-  link: /compose/how-tos/use-secrets/
+  - title: Roles and permissions
+    description: Assign core or custom roles to control access in your organization.
+    icon: shield-check
+    link: /security/roles-and-permissions/
 @y
-- title: Secrets in Docker Compose
-  description: Learn how to use secrets in Docker Compose.
-  icon: shield-exclamation
-  link: __SUBDIR__/compose/how-tos/use-secrets/
-@z
-
-% grid_resources:
-
-@x
-- title: Security FAQs
-  description: Explore common security FAQs.
-  icon: question-mark-circle
-  link: /faq/security/general/
-@y
-- title: Security FAQs
-  description: Explore common security FAQs.
-  icon: question-mark-circle
-  link: __SUBDIR__/faq/security/general/
+  - title: Roles and permissions
+    description: Assign core or custom roles to control access in your organization.
+    icon: shield-check
+    link: __SUBDIR__/security/roles-and-permissions/
 @z
 
 @x
-- title: Security best practices
-  description: Understand the steps you can take to improve the security of your container.
-  icon: squares-2x2
-  link: /develop/security-best-practices/
+Security helps individual users and organization owners secure their
+accounts, manage access, and control membership. You configure these
+settings in [Docker Home](https://app.docker.com/).
 @y
-- title: Security best practices
-  description: Understand the steps you can take to improve the security of your container.
-  icon: squares-2x2
-  link: __SUBDIR__/develop/security-best-practices/
+Security helps individual users and organization owners secure their
+accounts, manage access, and control membership. You configure these
+settings in [Docker Home](https://app.docker.com/).
 @z
 
 @x
-- title: Suppress CVEs with VEX
-  description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
-  icon: chart-bar
-  link: /scout/guides/vex/
+## Individual accounts
 @y
-- title: Suppress CVEs with VEX
-  description: Learn how to suppress non-applicable or fixed vulnerabilities found in your images.
-  icon: chart-bar
-  link: __SUBDIR__/scout/guides/vex/
+## Individual accounts
 @z
 
 @x
-- title: Docker Hardened Images
-  description: Learn how to use Docker Hardened Images to enhance your software supply security.
-  icon: lock-closed
-  link: /dhi/
+You sign in with your individual account.
 @y
-- title: Docker Hardened Images
-  description: Learn how to use Docker Hardened Images to enhance your software supply security.
-  icon: lock-closed
-  link: __SUBDIR__/dhi/
+You sign in with your individual account.
 @z
 
 @x
-Docker helps you protect your local environments, infrastructure, and networks
-with its developer-level security features.
+- [Two-factor authentication](/manuals/security/authentication/2fa/_index.md)
+(2FA) adds a time-based one-time password (TOTP) from an authenticator
+app to your password.
+- A [personal access token](/manuals/security/access-tokens/personal-access-tokens.md)
+(PAT) authenticates the Docker CLI and tools without your password, and
+is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
+enforced.
 @y
-Docker helps you protect your local environments, infrastructure, and networks
-with its developer-level security features.
+- [Two-factor authentication](manuals/security/authentication/2fa/_index.md)
+(2FA) adds a time-based one-time password (TOTP) from an authenticator
+app to your password.
+- A [personal access token](manuals/security/access-tokens/personal-access-tokens.md)
+(PAT) authenticates the Docker CLI and tools without your password, and
+is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
+enforced.
 @z
 
 @x
-Use tools like two-factor authentication (2FA), personal access tokens, and
-Docker Scout to manage access and detect vulnerabilities early in your workflow.
-You can also integrate secrets securely into your development stack using Docker Compose,
-or enhance your software supply security with Docker Hardened Images.
+## Organization accounts
 @y
-Use tools like two-factor authentication (2FA), personal access tokens, and
-Docker Scout to manage access and detect vulnerabilities early in your workflow.
-You can also integrate secrets securely into your development stack using Docker Compose,
-or enhance your software supply security with Docker Hardened Images.
+## Organization accounts
 @z
 
 @x
-Explore the following sections to learn more.
+Organization and company owners set up how members sign in, add them to
+the organization, configure automation, and control what members can do.
 @y
-Explore the following sections to learn more.
+Organization and company owners set up how members sign in, add them to
+the organization, configure automation, and control what members can do.
 @z
 
 @x
-## For developers
+- [Single sign-on](/manuals/security/authentication/single-sign-on/_index.md)
+(SSO) federates sign-in through your identity provider, which can cover
+one organization or every organization in a company.
+- [Provisioning](/manuals/security/provisioning/_index.md) adds users with
+System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
+provisioning, auto-provisioning, or domain matching.
+- An [organization access token](/manuals/security/access-tokens/organization-access-tokens.md)
+(OAT) stays with the organization when membership changes.
+- [OIDC connections](/manuals/security/authentication/oidc-connections/_index.md)
+use OpenID Connect to authenticate GitHub Actions with short-lived
+tokens, as an alternative to a long-lived OAT.
+- [Roles and permissions](/manuals/security/roles-and-permissions/_index.md)
+control what members can do after they join.
 @y
-## For developers
+- [Single sign-on](manuals/security/authentication/single-sign-on/_index.md)
+(SSO) federates sign-in through your identity provider, which can cover
+one organization or every organization in a company.
+- [Provisioning](manuals/security/provisioning/_index.md) adds users with
+System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
+provisioning, auto-provisioning, or domain matching.
+- An [organization access token](manuals/security/access-tokens/organization-access-tokens.md)
+(OAT) stays with the organization when membership changes.
+- [OIDC connections](manuals/security/authentication/oidc-connections/_index.md)
+use OpenID Connect to authenticate GitHub Actions with short-lived
+tokens, as an alternative to a long-lived OAT.
+- [Roles and permissions](manuals/security/roles-and-permissions/_index.md)
+control what members can do after they join.
 @z
 
 @x
-{{< grid items="grid_developers" >}}
+## Next steps
 @y
-{{< grid items="grid_developers" >}}
+## Next steps
 @z
 
 @x
-## More resources
+{{< grid >}}
 @y
-## More resources
-@z
-
-@x
-{{< grid items="grid_resources" >}}
-@y
-{{< grid items="grid_resources" >}}
+{{< grid >}}
 @z

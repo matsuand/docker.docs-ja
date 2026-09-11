@@ -3,11 +3,11 @@
 
 @x
 title: Local cache
-description: Manage build cache with Amazon S3 buckets
+description: Manage build cache with a local directory
 keywords: build, buildx, cache, backend, local
 @y
 title: Local cache
-description: Manage build cache with Amazon S3 buckets
+description: Manage build cache with a local directory
 keywords: build, buildx, cache, backend, local
 @z
 

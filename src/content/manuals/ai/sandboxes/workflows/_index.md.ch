@@ -85,24 +85,26 @@ and external secret-provider workflows.
 
 @x
 Sandbox environment files work like Compose files for sandboxes: they capture
-project configuration in a versioned YAML file. Use `.sbxenv.yaml` to define
+project configuration in a versioned YAML file. Use `sbxenv.yaml` to define
 the agent, workspaces, tools, resources, credentials, and ports so contributors
 can start a consistent environment without reproducing CLI flags and setup
 steps. See [Sandbox environment files](../configuration/environment-files.md).
 @y
 Sandbox environment files work like Compose files for sandboxes: they capture
-project configuration in a versioned YAML file. Use `.sbxenv.yaml` to define
+project configuration in a versioned YAML file. Use `sbxenv.yaml` to define
 the agent, workspaces, tools, resources, credentials, and ports so contributors
 can start a consistent environment without reproducing CLI flags and setup
 steps. See [Sandbox environment files](../configuration/environment-files.md).
 @z
 
 @x
-You can also import skills from supported host agents into a persistent store
-shared with new sandboxes. See [Share agent skills](agent-skills.md).
+You can also add skills from Git repositories or import them from supported
+host agents into a persistent store shared with new sandboxes. See
+[Share agent skills](agent-skills.md).
 @y
-You can also import skills from supported host agents into a persistent store
-shared with new sandboxes. See [Share agent skills](agent-skills.md).
+You can also add skills from Git repositories or import them from supported
+host agents into a persistent store shared with new sandboxes. See
+[Share agent skills](agent-skills.md).
 @z
 
 @x

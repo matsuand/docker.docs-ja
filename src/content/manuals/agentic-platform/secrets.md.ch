@@ -50,13 +50,13 @@ Docker Agentic Platform supports the following credentials:
 @x
 Provider-specific credentials are applied only to matching requests from
 compatible sandbox types. For example, an Anthropic credential is not applied
-to requests from a Codex sandbox. OpenCode can use any configured provider that
-it supports.
+to requests from a Codex sandbox. OpenCode supports all the listed model
+providers.
 @y
 Provider-specific credentials are applied only to matching requests from
 compatible sandbox types. For example, an Anthropic credential is not applied
-to requests from a Codex sandbox. OpenCode can use any configured provider that
-it supports.
+to requests from a Codex sandbox. OpenCode supports all the listed model
+providers.
 @z
 
 @x
@@ -100,11 +100,9 @@ To configure a credential before launching a sandbox:
 @z
 
 @x
-You can also provide a required credential from **New** when you launch a
-sandbox.
+You can also select or add credentials from **New** when you launch a sandbox.
 @y
-You can also provide a required credential from **New** when you launch a
-sandbox.
+You can also select or add credentials from **New** when you launch a sandbox.
 @z
 
 @x

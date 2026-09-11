@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 % snip 対応
 
 @x
@@ -171,6 +171,74 @@ the `docker images` command.
 @z
 
 @x
+#### Load results from Docker Build Cloud
+@y
+#### Load results from Docker Build Cloud
+@z
+
+@x
+Builds that use the [cloud driver](/manuals/build/builders/drivers/cloud.md) run
+on remote Docker Build Cloud workers. You can still load an image into Docker
+Engine so that it's available to `docker run` and `docker images` without first
+pushing it to a registry.
+@y
+Builds that use the [cloud driver](manuals/build/builders/drivers/cloud.md) run
+on remote Docker Build Cloud workers. You can still load an image into Docker
+Engine so that it's available to `docker run` and `docker images` without first
+pushing it to a registry.
+@z
+
+@x
+The [target Docker context](/manuals/engine/manage-resources/contexts.md)
+determines which Docker Engine image store receives the image. A local context
+loads it into a local image store. A remote context loads it into the remote
+Docker daemon's image store.
+@y
+The [target Docker context](manuals/engine/manage-resources/contexts.md)
+determines which Docker Engine image store receives the image. A local context
+loads it into a local image store. A remote context loads it into the remote
+Docker daemon's image store.
+@z
+
+@x
+When you don't specify an output, Buildx leaves an untagged build result in the
+cloud build cache and doesn't load it into Docker Engine. If you use `--tag`,
+Buildx automatically loads the image when the build targets a single platform
+and runs on one cloud node. Use `--load` to request loading explicitly. The
+`--load` flag is shorthand for `--output type=docker`.
+@y
+When you don't specify an output, Buildx leaves an untagged build result in the
+cloud build cache and doesn't load it into Docker Engine. If you use `--tag`,
+Buildx automatically loads the image when the build targets a single platform
+and runs on one cloud node. Use `--load` to request loading explicitly. The
+`--load` flag is shorthand for `--output type=docker`.
+@z
+
+@x
+To leave a tagged result in the build cache, use `--output type=cacheonly`.
+Setting `default-load=false` doesn't turn off automatic loading for a tagged
+cloud build with no explicit output.
+@y
+To leave a tagged result in the build cache, use `--output type=cacheonly`.
+Setting `default-load=false` doesn't turn off automatic loading for a tagged
+cloud build with no explicit output.
+@z
+
+@x
+Buildx uses the standard exporter path when direct loading isn't available.
+This includes multi-node or multi-platform builds, requests for more than one
+distinct image output, outputs targeting different Docker contexts, and
+outputs written to a file, standard output, or a directory. The standard path
+also applies if the target context doesn't support direct loading.
+@y
+Buildx uses the standard exporter path when direct loading isn't available.
+This includes multi-node or multi-platform builds, requests for more than one
+distinct image output, outputs targeting different Docker contexts, and
+outputs written to a file, standard output, or a directory. The standard path
+also applies if the target context doesn't support direct loading.
+@z
+
+@x
 ### Push to registry
 @y
 ### Push to registry
@@ -343,11 +411,11 @@ different exporters:
 @x
 - The `registry` exporter to push the image to a registry
 - The `local` exporter to extract the build results to the local filesystem
-- The `--load` flag (a shorthand for the `image` exporter) to load the results to the local image store.
+- The `--load` flag (a shorthand for the `docker` exporter) to load the results to the local image store.
 @y
 - The `registry` exporter to push the image to a registry
 - The `local` exporter to extract the build results to the local filesystem
-- The `--load` flag (a shorthand for the `image` exporter) to load the results to the local image store.
+- The `--load` flag (a shorthand for the `docker` exporter) to load the results to the local image store.
 @z
 
 % snip command...
@@ -464,6 +532,46 @@ the previous compression algorithm.
 >
 > The `gzip` and `estargz` compression methods use the [`compress/gzip` package](https://pkg.go.dev/compress/gzip),
 > while `zstd` uses the [`github.com/klauspost/compress/zstd` package](https://github.com/klauspost/compress/tree/master/zstd).
+@z
+
+@x
+#### zstd compression levels
+@y
+#### zstd compression levels
+@z
+
+@x
+When you specify `compression=zstd`, the `compression-level` parameter accepts
+values from 0 to 22. BuildKit maps these values to four internal compression
+levels:
+@y
+When you specify `compression=zstd`, the `compression-level` parameter accepts
+values from 0 to 22. BuildKit maps these values to four internal compression
+levels:
+@z
+
+@x
+| compression-level | Internal level | Approximate zstd level | Description                           |
+| ----------------- | -------------- | ---------------------- | ------------------------------------- |
+| 0-2               | Fastest        | ~1                     | Fastest compression, larger file size |
+| 3-6 (default)     | Default        | ~3                     | Balanced compression and speed        |
+| 7-8               | Better         | ~7                     | Better compression, slower            |
+| 9-22              | Best           | ~11                    | Best compression, slowest             |
+@y
+| compression-level | Internal level | Approximate zstd level | Description                           |
+| ----------------- | -------------- | ---------------------- | ------------------------------------- |
+| 0-2               | Fastest        | ~1                     | Fastest compression, larger file size |
+| 3-6 (default)     | Default        | ~3                     | Balanced compression and speed        |
+| 7-8               | Better         | ~7                     | Better compression, slower            |
+| 9-22              | Best           | ~11                    | Best compression, slowest             |
+@z
+
+@x
+For example, setting `compression-level=5` and `compression-level=6` produces
+the same compression output, since both map to the "Default" internal level.
+@y
+For example, setting `compression-level=5` and `compression-level=6` produces
+the same compression output, since both map to the "Default" internal level.
 @z
 
 @x

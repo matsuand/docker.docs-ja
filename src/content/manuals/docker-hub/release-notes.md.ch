@@ -290,9 +290,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- Organizations can assign the [editor role](/manuals/enterprise/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
+- Organizations can assign the [editor role](/manuals/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
 @y
-- Organizations can assign the [editor role](manuals/enterprise/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
+- Organizations can assign the [editor role](manuals/security/roles-and-permissions/_index.md) to members to grant additional permissions without full administrative access.
 @z
 
 @x
@@ -398,9 +398,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- You can now [export a CSV file of members](../admin/organization/manage/members.md#export-members-csv-file) from organizations that you own.
+- You can now [export a CSV file of members](../accounts/organization/manage/members.md#export-members-csv-file) from organizations that you own.
 @y
-- You can now [export a CSV file of members](../admin/organization/manage/members.md#export-members-csv-file) from organizations that you own.
+- You can now [export a CSV file of members](../accounts/organization/manage/members.md#export-members-csv-file) from organizations that you own.
 @z
 
 @x
@@ -506,9 +506,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription/plans/docker.md).
+- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription-billing/plans/docker.md).
 @y
-- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription/plans/docker.md).
+- You can now purchase or upgrade to a Docker Business subscription using a credit card. To learn more, see [Upgrade your subscription](../subscription-billing/plans/docker.md).
 @z
 
 @x
@@ -552,9 +552,9 @@ The updated [Docker Subscription Service Agreement](https://www.docker.com/legal
 @z
 
 @x
-  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
+  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription-billing/_index.md).
 @y
-  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription/_index.md).
+  To understand how these changes affect you, read the [FAQs](https://www.docker.com/pricing/faq). For more information, see [Docker subscription overview](../subscription-billing/_index.md).
 @z
 
 @x
@@ -624,9 +624,9 @@ To change the email address receiving billing-related emails, log into Docker Hu
 @z
 
 @x
-For details on how to update your billing information, see [Update billing information](../billing/_index.md).
+For details on how to update your billing information, see [Update billing information](../subscription-billing/_index.md).
 @y
-For details on how to update your billing information, see [Update billing information](../billing/_index.md).
+For details on how to update your billing information, see [Update billing information](../subscription-billing/_index.md).
 @z
 
 @x
@@ -672,9 +672,9 @@ Docker introduces Audit logs, a new feature that allows team owners to view a li
 @z
 
 @x
-For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/activity-logs.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../accounts/organization/activity-logs.md).
 @y
-For more information about this feature and for instructions on how to use it, see [Activity logs](../admin/activity-logs.md).
+For more information about this feature and for instructions on how to use it, see [Activity logs](../accounts/organization/activity-logs.md).
 @z
 
 @x
@@ -726,9 +726,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
+- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription-billing/_index.md).
 @y
-- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription/_index.md).
+- Docker has announced a new, per-seat pricing model to accelerate developer workflows for cloud-native development. The previous private repository/concurrent autobuild-based plans have been replaced with new **Pro** and **Team** plans that include unlimited private repositories. For more information, see [Docker subscription](../subscription-billing/_index.md).
 @z
 
 @x
@@ -896,9 +896,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-- You can now [create personal access tokens](/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+- You can now [create personal access tokens](/security/access-tokens/personal-access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @y
-- You can now [create personal access tokens](__SUBDIR__/security/access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
+- You can now [create personal access tokens](__SUBDIR__/security/access-tokens/personal-access-tokens/) in Docker Hub and use them to authenticate from the Docker CLI. Find them in your account settings, under the new **[Security](https://hub.docker.com/settings/security)** section.
 @z
 
 @x
@@ -926,9 +926,9 @@ Docker introduces Hub Vulnerability Scanning which enables you to automatically 
 @z
 
 @x
-- The [billing page](../subscription/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription-billing/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @y
-- The [billing page](../subscription/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
+- The [billing page](../subscription-billing/plans/docker.md) for personal accounts has been updated. You can access the page at its new URL: [https://hub.docker.com/billing/plan](https://hub.docker.com/billing/plan).
 @z
 
 @x

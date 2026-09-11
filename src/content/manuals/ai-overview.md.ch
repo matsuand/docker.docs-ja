@@ -80,12 +80,12 @@ not specific to Docker tasks.
 @x
 **Docker Sandboxes** provides isolated microVM environments for running coding
 agents. It supports multiple agents including Claude Code, Codex, Copilot,
-Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
+Devin, Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
 themselves are separate tools.
 @y
 **Docker Sandboxes** provides isolated microVM environments for running coding
 agents. It supports multiple agents including Claude Code, Codex, Copilot,
-Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
+Devin, Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
 themselves are separate tools.
 @z
 

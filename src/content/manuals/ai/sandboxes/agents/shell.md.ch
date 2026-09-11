@@ -38,10 +38,10 @@ $ sbx run shell ~/my-project
 @z
 
 @x
-The workspace path defaults to the current directory. To run a one-off
+`sbx run` defaults the workspace to the current directory. To run a one-off
 command instead of an interactive shell, pass it after `--`:
 @y
-The workspace path defaults to the current directory. To run a one-off
+`sbx run` defaults the workspace to the current directory. To run a one-off
 command instead of an interactive shell, pass it after `--`:
 @z
 
@@ -52,6 +52,26 @@ $ sbx run shell -- -c "echo 'Hello from sandbox'"
 @y
 ```console
 $ sbx run shell -- -c "echo 'Hello from sandbox'"
+```
+@z
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name:
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name:
+@z
+
+@x
+```console
+$ sbx create --name scratch shell
+$ sbx run --name scratch
+```
+@y
+```console
+$ sbx create --name scratch shell
+$ sbx run --name scratch
 ```
 @z
 

@@ -110,6 +110,86 @@ data. Create fresh sandboxes afterwards.
 @z
 
 @x
+## Sandbox doesn't contain my project files
+@y
+## Sandbox doesn't contain my project files
+@z
+
+@x
+Starting with `sbx` version 0.42.0, the workspace path is optional for
+`sbx create`. When you omit it, the command creates a mountless sandbox. For
+example, these commands create and attach to a sandbox without mounting your
+host project files:
+@y
+Starting with `sbx` version 0.42.0, the workspace path is optional for
+`sbx create`. When you omit it, the command creates a mountless sandbox. For
+example, these commands create and attach to a sandbox without mounting your
+host project files:
+@z
+
+@x
+```console
+$ sbx create --name <sandbox-name> <agent>
+$ sbx run --name <sandbox-name>
+```
+@y
+```console
+$ sbx create --name <sandbox-name> <agent>
+$ sbx run --name <sandbox-name>
+```
+@z
+
+@x
+By contrast, `sbx run` mounts the current directory when you don't pass a
+workspace path:
+@y
+By contrast, `sbx run` mounts the current directory when you don't pass a
+workspace path:
+@z
+
+@x
+```console
+$ sbx run <agent>
+```
+@y
+```console
+$ sbx run <agent>
+```
+@z
+
+@x
+A sandbox's workspace configuration is fixed when the sandbox is created. To
+reuse the name of an existing mountless sandbox, first
+[copy out any files you want to keep](usage.md#copy-files-between-host-and-sandbox),
+then remove and recreate it with a workspace path:
+@y
+A sandbox's workspace configuration is fixed when the sandbox is created. To
+reuse the name of an existing mountless sandbox, first
+[copy out any files you want to keep](usage.md#copy-files-between-host-and-sandbox),
+then remove and recreate it with a workspace path:
+@z
+
+@x
+```console
+$ sbx rm <sandbox-name>
+$ sbx run --name <sandbox-name> <agent>
+```
+@y
+```console
+$ sbx rm <sandbox-name>
+$ sbx run --name <sandbox-name> <agent>
+```
+@z
+
+@x
+See [Choose a workspace](usage.md#choose-a-workspace) for mountless, direct,
+and clone-mode behavior.
+@y
+See [Choose a workspace](usage.md#choose-a-workspace) for mountless, direct,
+and clone-mode behavior.
+@z
+
+@x
 ## Agent can't install packages or reach an API
 @y
 ## Agent can't install packages or reach an API
@@ -520,11 +600,11 @@ the egress path in the **PROXY** column:
 @z
 
 @x
-The sandbox root (`/`) filesystem defaults to 20 GB. To increase it, set `DOCKER_SANDBOXES_ROOT_SIZE`
-before creating the sandbox:
+The sandbox root (`/`) filesystem defaults to 20 GB. To increase it, set
+`DOCKER_SANDBOXES_ROOT_SIZE` before creating the sandbox:
 @y
-The sandbox root (`/`) filesystem defaults to 20 GB. To increase it, set `DOCKER_SANDBOXES_ROOT_SIZE`
-before creating the sandbox:
+The sandbox root (`/`) filesystem defaults to 20 GB. To increase it, set
+`DOCKER_SANDBOXES_ROOT_SIZE` before creating the sandbox:
 @z
 
 @x
@@ -538,11 +618,33 @@ $ DOCKER_SANDBOXES_ROOT_SIZE=40g sbx run claude
 @z
 
 @x
-`DOCKER_SANDBOXES_ROOT_SIZE` controls the root filesystem size. `DOCKER_SANDBOXES_DOCKER_SIZE`
-controls the Docker data disk (`/var/lib/docker`) size. The two are independent — set both if needed.
+`DOCKER_SANDBOXES_ROOT_SIZE` controls the root filesystem size. The Docker data
+disk at `/var/lib/docker` is independent and defaults to 10 GB. To change the
+Docker data disk size for a sandbox, set `DOCKER_SANDBOXES_DOCKER_SIZE` when you
+create it:
 @y
-`DOCKER_SANDBOXES_ROOT_SIZE` controls the root filesystem size. `DOCKER_SANDBOXES_DOCKER_SIZE`
-controls the Docker data disk (`/var/lib/docker`) size. The two are independent — set both if needed.
+`DOCKER_SANDBOXES_ROOT_SIZE` controls the root filesystem size. The Docker data
+disk at `/var/lib/docker` is independent and defaults to 10 GB. To change the
+Docker data disk size for a sandbox, set `DOCKER_SANDBOXES_DOCKER_SIZE` when you
+create it:
+@z
+
+@x
+```console
+$ DOCKER_SANDBOXES_DOCKER_SIZE=20g sbx run claude
+```
+@y
+```console
+$ DOCKER_SANDBOXES_DOCKER_SIZE=20g sbx run claude
+```
+@z
+
+@x
+The Docker data disk must be at least 512 MiB. The environment variable doesn't
+resize existing volumes.
+@y
+The Docker data disk must be at least 512 MiB. The environment variable doesn't
+resize existing volumes.
 @z
 
 @x
@@ -559,11 +661,11 @@ human-readable size strings such as `100g`:
 
 @x
 ```console
-$ DOCKER_SANDBOXES_CLONED_WORKSPACE_SIZE=100g sbx run --clone claude
+$ DOCKER_SANDBOXES_CLONED_WORKSPACE_SIZE=100g sbx run --clone claude .
 ```
 @y
 ```console
-$ DOCKER_SANDBOXES_CLONED_WORKSPACE_SIZE=100g sbx run --clone claude
+$ DOCKER_SANDBOXES_CLONED_WORKSPACE_SIZE=100g sbx run --clone claude .
 ```
 @z
 
@@ -575,16 +677,14 @@ $ DOCKER_SANDBOXES_CLONED_WORKSPACE_SIZE=100g sbx run --clone claude
 
 @x
 Filesystem operations such as `git status`, `git log`, or directory scans can
-be noticeably slow when the sandbox workspace is mounted in direct mode (the
-default for workspaces without `--clone`). Virtiofs caching speeds up these
-workloads. Clone-mode sandboxes always enable it, so this tuning applies only
-to direct mode.
+be noticeably slow when you pass a workspace path and use direct mode.
+Virtiofs caching speeds up these workloads. Clone-mode sandboxes always enable
+it, so this tuning applies only to direct mode.
 @y
 Filesystem operations such as `git status`, `git log`, or directory scans can
-be noticeably slow when the sandbox workspace is mounted in direct mode (the
-default for workspaces without `--clone`). Virtiofs caching speeds up these
-workloads. Clone-mode sandboxes always enable it, so this tuning applies only
-to direct mode.
+be noticeably slow when you pass a workspace path and use direct mode.
+Virtiofs caching speeds up these workloads. Clone-mode sandboxes always enable
+it, so this tuning applies only to direct mode.
 @z
 
 @x
@@ -599,11 +699,11 @@ with the kill switch and recreate the sandbox:
 
 @x
 ```console
-$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <agent>
 ```
 @y
 ```console
-$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <template>
+$ DOCKER_SANDBOXES_ENABLE_VIRTIOFS_CACHE=0 sbx run <agent>
 ```
 @z
 
@@ -691,6 +791,38 @@ For setup steps, see [Commit signing](workflows/git.md#commit-signing).
 @y
 Docker Sandboxes can sign Git commits with SSH keys from your host agent.
 For setup steps, see [Commit signing](workflows/git.md#commit-signing).
+@z
+
+@x
+Forwarding is enabled by default. Confirm that it hasn't been disabled and
+check whether a fixed socket path is configured:
+@y
+Forwarding is enabled by default. Confirm that it hasn't been disabled and
+check whether a fixed socket path is configured:
+@z
+
+@x
+```console
+$ sbx settings get ssh.agentForwardingEnabled
+$ sbx settings get ssh.agentSocketPath
+```
+@y
+```console
+$ sbx settings get ssh.agentForwardingEnabled
+$ sbx settings get ssh.agentSocketPath
+```
+@z
+
+@x
+If you use each client's current `SSH_AUTH_SOCK`, reconnect from a shell where
+it points to the intended agent. If `ssh.agentSocketPath` returns a path,
+confirm that it points to an active host agent. After changing forwarding or
+the socket selection, run `sbx daemon restart`.
+@y
+If you use each client's current `SSH_AUTH_SOCK`, reconnect from a shell where
+it points to the intended agent. If `ssh.agentSocketPath` returns a path,
+confirm that it points to an active host agent. After changing forwarding or
+the socket selection, run `sbx daemon restart`.
 @z
 
 @x
@@ -955,6 +1087,40 @@ If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
 @y
 {{< /tab >}}
 {{< /tabs >}}
+@z
+
+@x
+## Enable automatic diagnostics uploads
+@y
+## Enable automatic diagnostics uploads
+@z
+
+@x
+To opt in to automatic diagnostics uploads after certain daemon errors, run:
+@y
+To opt in to automatic diagnostics uploads after certain daemon errors, run:
+@z
+
+@x
+```console
+$ sbx settings set diagnostics.autoUpload yes
+```
+@y
+```console
+$ sbx settings set diagnostics.autoUpload yes
+```
+@z
+
+@x
+Automatic bundles include basic system information and client, daemon, crash,
+and MCP logs. Docker Sandboxes redacts recognized identity values and
+credential patterns, but collected logs can still contain user content. Failed
+uploads remain in a local queue for a later retry.
+@y
+Automatic bundles include basic system information and client, daemon, crash,
+and MCP logs. Docker Sandboxes redacts recognized identity values and
+credential patterns, but collected logs can still contain user content. Failed
+uploads remain in a local queue for a later retry.
 @z
 
 @x

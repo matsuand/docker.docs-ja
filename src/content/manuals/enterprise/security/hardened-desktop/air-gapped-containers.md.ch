@@ -345,21 +345,13 @@ function FindProxyForURL(url, host) {
 
 @x
  - `FindProxyForURL` function URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
- - If you have an internal container trying to access `https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the url value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
+ - If you have an internal container trying to access `https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the URL value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
 @y
  - `FindProxyForURL` function URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
- - If you have an internal container trying to access `https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the url value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
+ - If you have an internal container trying to access `https://docs.docker.com/enterprise/security/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the URL value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
 @z
 
-@x
-   ```console
-   if(shExpMatch(url, "https://docs.docker.com:443/enterprise/security/*")) return "DIRECT";
-   ```
-@y
-   ```console
-   if(shExpMatch(url, "https://docs.docker.com:443/enterprise/security/*")) return "DIRECT";
-   ```
-@z
+% snip code...
 
 @x
    `shExpMatch` function will fail, instead use:
@@ -367,15 +359,7 @@ function FindProxyForURL(url, host) {
    `shExpMatch` function will fail, instead use:
 @z
 
-@x
-   ```console
-   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
-   ```
-@y
-   ```console
-   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
-   ```
-@z
+% snip code...
 
 @x
 ### PAC file return values

@@ -4,6 +4,7 @@
 
 bases = \
 	_index.md           \
+	cloud.md            \
 	docker-container.md \
 	docker.md           \
 	kubernetes.md       \

@@ -50,20 +50,18 @@ $ sbx run claude ~/my-project
 @z
 
 @x
-The workspace parameter defaults to the current directory, so `sbx run claude`
-from inside your project works too. To start Claude with a specific prompt:
+To start Claude with a specific prompt in the current directory:
 @y
-The workspace parameter defaults to the current directory, so `sbx run claude`
-from inside your project works too. To start Claude with a specific prompt:
+To start Claude with a specific prompt in the current directory:
 @z
 
 @x
 ```console
-$ sbx run claude --name my-sandbox -- "Add error handling to the login function"
+$ sbx run --name my-sandbox claude -- "Add error handling to the login function"
 ```
 @y
 ```console
-$ sbx run claude --name my-sandbox -- "Add error handling to the login function"
+$ sbx run --name my-sandbox claude -- "Add error handling to the login function"
 ```
 @z
 
@@ -73,6 +71,14 @@ prompt from a file with `-- "$(cat prompt.txt)"`.
 @y
 Everything after `--` is passed directly to Claude Code. You can also pipe in a
 prompt from a file with `-- "$(cat prompt.txt)"`.
+@z
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
 @z
 
 @x
@@ -191,11 +197,11 @@ preserved:
 
 @x
 ```console
-$ sbx run claude -- -c   # runs claude --dangerously-skip-permissions -c
+$ sbx run --name <sandbox-name> -- -c   # runs claude --dangerously-skip-permissions -c
 ```
 @y
 ```console
-$ sbx run claude -- -c   # runs claude --dangerously-skip-permissions -c
+$ sbx run --name <sandbox-name> -- -c   # runs claude --dangerously-skip-permissions -c
 ```
 @z
 
@@ -235,11 +241,11 @@ sandbox:
 
 @x
 ```console
-$ sbx run --clone claude -- agents
+$ sbx run --clone claude . -- agents
 ```
 @y
 ```console
-$ sbx run --clone claude -- agents
+$ sbx run --clone claude . -- agents
 ```
 @z
 
@@ -259,11 +265,11 @@ use Claude Code's auto mode or pass the flag explicitly:
 
 @x
 ```console
-$ sbx run --clone claude -- --dangerously-skip-permissions agents
+$ sbx run --clone claude . -- --dangerously-skip-permissions agents
 ```
 @y
 ```console
-$ sbx run --clone claude -- --dangerously-skip-permissions agents
+$ sbx run --clone claude . -- --dangerously-skip-permissions agents
 ```
 @z
 
@@ -436,5 +442,5 @@ To use Docker Model Runner instead, see
 [Run Claude Code in a Docker Sandbox with Docker Model Runner](/guides/claude-code-sandbox-model-runner/).
 @y
 To use Docker Model Runner instead, see
-[Run Claude Code in a Docker Sandbox with Docker Model Runner](__SUBDIR__/guides/claude-code-sandbox-model-runner/).
+[Run Claude Code in a Docker Sandbox with Docker Model Runner](guides/claude-code-sandbox-model-runner/).
 @z

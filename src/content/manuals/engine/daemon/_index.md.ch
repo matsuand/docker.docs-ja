@@ -263,12 +263,14 @@ documentation. Some places to go next include:
 
 @x
 - [Automatically start containers](/manuals/engine/containers/start-containers-automatically.md)
+- [Run containerd in the Docker daemon](/manuals/engine/daemon/embedded-containerd.md)
 - [Limit a container's resources](/manuals/engine/containers/resource_constraints.md)
 - [Configure storage drivers](/manuals/engine/storage/drivers/select-storage-driver.md)
 - [Container security](/manuals/engine/security/_index.md)
 - [Configure the Docker daemon to use a proxy](./proxy.md)
 @y
 - [Automatically start containers](manuals/engine/containers/start-containers-automatically.md)
+- [Run containerd in the Docker daemon](manuals/engine/daemon/embedded-containerd.md)
 - [Limit a container's resources](manuals/engine/containers/resource_constraints.md)
 - [Configure storage drivers](manuals/engine/storage/drivers/select-storage-driver.md)
 - [Container security](manuals/engine/security/_index.md)

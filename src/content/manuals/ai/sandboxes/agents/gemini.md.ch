@@ -56,9 +56,9 @@ $ sbx run gemini ~/my-project
 @z
 
 @x
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @y
-The workspace parameter is optional and defaults to the current directory:
+`sbx run` defaults the workspace to the current directory:
 @z
 
 @x
@@ -71,6 +71,14 @@ $ sbx run gemini
 $ cd ~/my-project
 $ sbx run gemini
 ```
+@z
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
 @z
 
 @x
@@ -173,11 +181,11 @@ itself a flag (begins with `-`), so `--yolo` is preserved:
 
 @x
 ```console
-$ sbx run gemini -- -p "explain this"   # runs gemini --yolo -p "explain this"
+$ sbx run --name <sandbox-name> -- -p "explain this"   # runs gemini --yolo -p "explain this"
 ```
 @y
 ```console
-$ sbx run gemini -- -p "explain this"   # runs gemini --yolo -p "explain this"
+$ sbx run --name <sandbox-name> -- -p "explain this"   # runs gemini --yolo -p "explain this"
 ```
 @z
 

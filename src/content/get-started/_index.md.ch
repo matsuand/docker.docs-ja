@@ -5,102 +5,74 @@
 
 @x
 title: Get started
-keywords: Docker, get started
-description: Get started with Docker
+keywords: Docker, get started, containers, AI agents, sandboxes, administration
+description: Choose a tutorial to build and run an application, work with an AI agent safely, or set up Docker for your organization.
 @y
 title: はじめよう
-keywords: Docker, get started
-description: Docker を使ってはじめよう
+keywords: Docker, get started, containers, AI agents, sandboxes, administration
+description: チュートリアルを選んでアプリケーションをビルドし実行しましょう。また AI エージェントを安全に動作させたり、組織向けの Docker を設定しましょう。
 @z
 
-% get-started:
+% installs:
 
 @x
-  - title: Get Docker
-    description: Choose the best installation path for your setup.
-    link: /get-started/get-docker/
-    icon: arrow-down-tray
+    - eyebrow: Docker
+      title: Install Docker
+      description: Get Docker Desktop or Docker Engine for your operating system.
+      link: /get-started/get-docker/
 @y
-  - title: Docker の入手
-    description: 環境に合わせて適切なインストールを行ないます。
-    link: __SUBDIR__/get-started/get-docker/
-    icon: arrow-down-tray
-@z
-
-@x
-  - title: What is Docker?
-    description: Learn about the Docker platform.
-    link: /get-started/docker-overview/
-    icon: document-text
-@y
-  - title: Docker って何？
-    description: Docker プラットフォームについて学びます。
-    link: __SUBDIR__/get-started/docker-overview/
-    icon: document-text
-@z
-
-% get-started2:
-
-@x
-  - title: Introduction
-    description: Get started with the basics and the benefits of containerizing your applications.
-    link: /get-started/introduction/
-    icon: rocket-launch
-@y
-  - title: はじめに
-    description: アプリケーションのコンテナー化の基本と利点について学んでいきます。
-    link: __SUBDIR__/get-started/introduction/
-    icon: rocket-launch
+    - eyebrow: Docker
+      title: Docker のインストール
+      description: OS 向けの Docker Desktop や Docker Engine を入手します。
+      link: __SUBDIR__/get-started/get-docker/
 @z
 
 @x
-  - title: Docker concepts
-    description: Gain a better understanding of foundational Docker concepts.
-    link: /get-started/docker-concepts/the-basics/what-is-a-container/
-    icon: home
+    - eyebrow: Docker Sandboxes
+      title: Install Docker Sandboxes
+      description: Install the sbx command to run coding agents in isolated environments.
+      link: /ai/sandboxes/install/
 @y
-  - title: Docker の考え方
-    description: 基本的な Docker の考え方について、より深く理解していきます。
-    link: __SUBDIR__/get-started/docker-concepts/the-basics/what-is-a-container/
-    icon: home
+    - eyebrow: Docker サンドボックス
+      title: Docker Sandbox のインストール
+      description: sbx コマンドをインストールして、隔離された環境内でコーディングエージェントを実行しましょう。
+      link: __SUBDIR__/ai/sandboxes/install/
+@z
+
+% tutorials:
+
+@x
+    - audience: New to Docker
+      title: Build and share a containerized application
+      description: Run a container and an application stack, build an image, and share it through Docker Hub.
+      link: /get-started/tutorials/run-an-app/
+@y
+    - audience: Docker 入門
+      title: コンテナー化アプリケーションのビルドと共有
+      description: コンテナーとアプリケーションスタックの実行、イメージのビルドと共有、これらを Docker Hub を通じて行います。
+      link: __SUBDIR__/get-started/tutorials/run-an-app/
 @z
 
 @x
-If you're new to Docker, this section guides you through the essential resources to get started.
+    - audience: AI developers
+      title: Run your coding agent in a sandbox
+      description: Move your existing full-autonomy coding-agent workflow into a disposable Docker Sandbox.
+      link: /get-started/tutorials/run-an-agent/
 @y
-Docker 初心者であれば、本節から重要な情報を取得して理解を進めていくことができます。
+    - audience: AI 開発者
+      title: サンドボックス上でのコーディングエージェントの実行
+      description: 完全自立型に組み上げた既存のコーディングエージェントワークフローを、使い捨て可能な Docker Sandobox に移行します。
+      link: __SUBDIR__/get-started/tutorials/run-an-agent/
 @z
 
 @x
-Follow the guides to help you get started and learn how Docker can optimize your development workflows. 
+    - audience: Administrators
+      title: Roll out Docker to a pilot group
+      description: Invite a pilot user, apply a Docker Desktop policy, and verify the managed experience.
+      link: /get-started/tutorials/admin-set-up/
 @y
-本ガイドに従っていけば Docker をはじめていき、開発ワークフローを適正化できるようになります。
+    - audience: 管理者
+      title: パイロットグループへの移行
+      description: パイロットユーザーの招待、Docker Desktop ポリシーの適用を通じて、管理作業を実践します。
+      link: __SUBDIR__/get-started/tutorials/admin-set-up/
 @z
-
-@x
-For more advanced concepts and scenarios in Docker, see [Guides](/guides/).
-@y
-Docker のより詳しい考え方や手法については [ガイド](__SUBDIR__/guides/) を参照してください。
-@z
-
-@x
-## Foundations of Docker
-@y
-## Docker の基本 {#foundations-of-docker}
-@z
-
-@x
-Install Docker and jump into discovering what Docker is. 
-@y
-Docker をインストールして Docker がどのようなものかを学んでいきます。
-@z
-
-% snip grid...
-
-@x
-Learn the foundational concepts and workflows of Docker.
-@y
-Docker の基本的な考え方やワークフローについて学んでいきます。
-@z
-
-% snip grid...

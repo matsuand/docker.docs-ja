@@ -1,11 +1,11 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = 2fa faqs
+SUBDIRS = access-tokens authentication images provisioning \
+	roles-and-permissions
 
 bases = \
-	_index.md                 \
-	access-tokens.md          \
+	_index.md \
 	security-announcements.md
 
 include $(top_srcdir)/build-aux/common.mk

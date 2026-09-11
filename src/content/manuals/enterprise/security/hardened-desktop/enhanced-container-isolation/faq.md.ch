@@ -156,11 +156,11 @@ ECI protection varies by container type and Docker Desktop version:
 @x
 - Containers created with `docker run` and `docker create`
 - Containers using the `docker-container` build driver
-- Kubernetes with the Kind provisioner
+- Kubernetes with the `kind` provisioner
 @y
 - Containers created with `docker run` and `docker create`
 - Containers using the `docker-container` build driver
-- Kubernetes with the Kind provisioner
+- Kubernetes with the `kind` provisioner
 @z
 
 @x
@@ -184,11 +184,11 @@ ECI protection varies by container type and Docker Desktop version:
 @x
 - Docker Extensions
 - Docker Debug containers
-- Kubernetes with Kubeadm provisioner
+- Kubernetes with `kubeadm` provisioner
 @y
 - Docker Extensions
 - Docker Debug containers
-- Kubernetes with Kubeadm provisioner
+- Kubernetes with `kubeadm` provisioner
 @z
 
 @x

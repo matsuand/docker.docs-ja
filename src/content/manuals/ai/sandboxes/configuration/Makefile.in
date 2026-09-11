@@ -242,6 +242,7 @@ bases = \
 	credentials.md       \
 	environment-files.md \
 	gpu-passthrough.md   \
+	registry-mirror.md   \
 	upstream-proxy.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

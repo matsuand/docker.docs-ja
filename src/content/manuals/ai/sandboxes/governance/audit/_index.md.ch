@@ -78,15 +78,15 @@ To use AI Governance Audit Logs, your organization needs:
 @z
 
 @x
-- A Docker [AI Governance plan](/manuals/subscription/plans/ai-governance.md)
+- A Docker [AI Governance plan](/manuals/subscription-billing/plans/ai-governance.md)
 - An enforced organization governance policy
 - A Docker organization account
-- An organization owner, or a user with a [custom role](/manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions, to configure delivery and view hosted events
+- An organization owner, or a user with a [custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions, to configure delivery and view hosted events
 @y
-- A Docker [AI Governance plan](manuals/subscription/plans/ai-governance.md)
+- A Docker [AI Governance plan](manuals/subscription-billing/plans/ai-governance.md)
 - An enforced organization governance policy
 - A Docker organization account
-- An organization owner, or a user with a [custom role](manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions, to configure delivery and view hosted events
+- An organization owner, or a user with a [custom role](manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions, to configure delivery and view hosted events
 @z
 
 @x
@@ -150,9 +150,9 @@ Docker supports two delivery modes for audit records:
 @z
 
 @x
-Organization owners and users with a [custom role](/manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure local disk, Docker Cloud, or both.
+Organization owners and users with a [custom role](/manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure local disk, Docker Cloud, or both.
 @y
-Organization owners and users with a [custom role](manuals/enterprise/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure local disk, Docker Cloud, or both.
+Organization owners and users with a [custom role](manuals/security/roles-and-permissions/custom-roles/_index.md) that includes AI Governance audit permissions can configure local disk, Docker Cloud, or both.
 @z
 
 @x

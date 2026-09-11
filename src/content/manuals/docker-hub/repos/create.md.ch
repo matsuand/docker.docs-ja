@@ -90,7 +90,7 @@ linkTitle: Create
      is only accessible to you and collaborators. In addition, if you selected
      an organization's namespace, then the repository is accessible to those
      with applicable roles or permissions. For more details, see [Roles and
-     permissions](/manuals/enterprise/security/roles-and-permissions.md).
+     permissions](/manuals/security/roles-and-permissions.md).
 @y
    - **Public**: The repository appears in Docker Hub search results and can be
      pulled by everyone.
@@ -98,6 +98,7 @@ linkTitle: Create
      is only accessible to you and collaborators. In addition, if you selected
      an organization's namespace, then the repository is accessible to those
      with applicable roles or permissions. For more details, see [Roles and
+     permissions](manuals/security/roles-and-permissions.md).
 @z
 
 @x

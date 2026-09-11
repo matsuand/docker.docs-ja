@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % .md リンクへの (no slash) 対応
+% snip 対応 (一部)
 
 @x
 title: Docker Agent
@@ -50,11 +51,19 @@ $ sbx run docker-agent ~/my-project
 @z
 
 @x
-The workspace parameter defaults to the current directory, so
-`sbx run docker-agent` from inside your project works too.
+`sbx run docker-agent` defaults the workspace to the current directory, so you
+can run it from inside your project.
 @y
-The workspace parameter defaults to the current directory, so
-`sbx run docker-agent` from inside your project works too.
+`sbx run docker-agent` defaults the workspace to the current directory, so you
+can run it from inside your project.
+@z
+
+@x
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
+@y
+To create a [mountless sandbox](../usage.md#choose-a-workspace), use
+`sbx create` without a workspace path, then attach by name.
 @z
 
 @x
@@ -155,15 +164,7 @@ as the `run` subcommand or a config file — it replaces the defaults, so includ
 `run --yolo` yourself:
 @z
 
-@x
-```console
-$ sbx run docker-agent -- run --yolo agent.yml
-```
-@y
-```console
-$ sbx run docker-agent -- run --yolo agent.yml
-```
-@z
+% snip command...
 
 @x
 ## Base image

@@ -108,6 +108,7 @@ CLI, and common development tools like Node.js, Python, Go, and Java.
 | `codex`               | [OpenAI Codex](https://github.com/openai/codex)                      |
 | `copilot`             | [GitHub Copilot](https://github.com/github/copilot-cli)              |
 | `cursor-agent`        | [Cursor](https://cursor.com/cli)                                     |
+| `devin`               | [Devin CLI](https://docs.devin.ai/work-with-devin/devin-cli)         |
 | `docker-agent`        | [Docker Agent](https://github.com/docker/docker-agent)               |
 | `droid`               | [Droid](https://www.factory.ai)                                      |
 | `gemini`              | [Gemini CLI](https://github.com/google-gemini/gemini-cli)            |
@@ -122,6 +123,7 @@ CLI, and common development tools like Node.js, Python, Go, and Java.
 | `codex`               | [OpenAI Codex](https://github.com/openai/codex)                      |
 | `copilot`             | [GitHub Copilot](https://github.com/github/copilot-cli)              |
 | `cursor-agent`        | [Cursor](https://cursor.com/cli)                                     |
+| `devin`               | [Devin CLI](https://docs.devin.ai/work-with-devin/devin-cli)         |
 | `docker-agent`        | [Docker Agent](https://github.com/docker/docker-agent)               |
 | `droid`               | [Droid](https://www.factory.ai)                                      |
 | `gemini`              | [Gemini CLI](https://github.com/google-gemini/gemini-cli)            |
@@ -148,25 +150,33 @@ default.
 The agent containers created from the `-docker` templates run in privileged
 mode inside the microVM (not on your host), with a dedicated block volume at
 `/var/lib/docker`, and `dockerd` starts automatically inside the sandbox. The
-block volume defaults to 50 GB and uses a sparse file, so it only consumes
+block volume defaults to 10 GB and uses a sparse file, so it only consumes
 disk space as Docker writes to it.
 @y
 The agent containers created from the `-docker` templates run in privileged
 mode inside the microVM (not on your host), with a dedicated block volume at
 `/var/lib/docker`, and `dockerd` starts automatically inside the sandbox. The
-block volume defaults to 50 GB and uses a sparse file, so it only consumes
+block volume defaults to 10 GB and uses a sparse file, so it only consumes
 disk space as Docker writes to it.
 @z
 
 @x
-To override the volume size, set the `DOCKER_SANDBOXES_DOCKER_SIZE`
-environment variable to a size string before starting the sandbox:
+To change the volume size for a sandbox, set
+`DOCKER_SANDBOXES_DOCKER_SIZE` when you create it:
 @y
-To override the volume size, set the `DOCKER_SANDBOXES_DOCKER_SIZE`
-environment variable to a size string before starting the sandbox:
+To change the volume size for a sandbox, set
+`DOCKER_SANDBOXES_DOCKER_SIZE` when you create it:
 @z
 
 % snip command...
+
+@x
+The volume size must be at least 512 MiB. The environment variable doesn't
+resize existing volumes.
+@y
+The volume size must be at least 512 MiB. The environment variable doesn't
+resize existing volumes.
+@z
 
 @x
 Use the non-Docker variant if you don't need to build or run containers
@@ -242,12 +252,16 @@ Build the image and push it to an OCI registry, such as Docker Hub:
 > [!NOTE]
 > The Docker daemon used by Docker Sandboxes pulls templates from a
 > registry directly; it doesn't share the image store of your local Docker
-> daemon on the host.
+> daemon on the host. To route Docker Hub image pulls through your
+> organization's registry infrastructure, configure a
+> [registry mirror](../configuration/registry-mirror.md).
 @y
 > [!NOTE]
 > The Docker daemon used by Docker Sandboxes pulls templates from a
 > registry directly; it doesn't share the image store of your local Docker
-> daemon on the host.
+> daemon on the host. To route Docker Hub image pulls through your
+> organization's registry infrastructure, configure a
+> [registry mirror](../configuration/registry-mirror.md).
 @z
 
 @x

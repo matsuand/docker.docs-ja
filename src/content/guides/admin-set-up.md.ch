@@ -110,50 +110,38 @@ This guide covers the following Docker features:
 @z
 
 @x
-- [Organizations](/manuals/admin/organization/_index.md): The core structure
+- [Organizations](/manuals/accounts/organization/_index.md): The core structure
   for managing your Docker environment, grouping users, teams, and image
   repositories. Your organization was created with your subscription and is
   managed by one or more owners. Users signed into the organization are
   assigned seats based on the purchased subscription.
-@y
-- [Organizations](manuals/admin/organization/_index.md): The core structure
-  for managing your Docker environment, grouping users, teams, and image
-  repositories. Your organization was created with your subscription and is
-  managed by one or more owners. Users signed into the organization are
-  assigned seats based on the purchased subscription.
-@z
-
-@x
 - [Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md):
   By default, Docker Desktop doesn't require sign-in. You can configure
   settings to enforce this and ensure your developers sign in to your
   Docker organization.
+- [SSO](/manuals/security/authentication/single-sign-on/_index.md): Without SSO,
+  user management in a Docker organization is manual. Setting
+  up an SSO connection between your identity provider and Docker ensures
+  compliance with your security policy and automates user provisioning. Adding
+  SCIM further automates user provisioning and de-provisioning.
+- General and security settings: Configuring key settings ensures smooth
+  onboarding and usage of Docker products within your environment. You can also
+  enable security features based on your company's specific security needs.
 @y
+- [Organizations](manuals/accounts/organization/_index.md): The core structure
+  for managing your Docker environment, grouping users, teams, and image
+  repositories. Your organization was created with your subscription and is
+  managed by one or more owners. Users signed into the organization are
+  assigned seats based on the purchased subscription.
 - [Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md):
   By default, Docker Desktop doesn't require sign-in. You can configure
   settings to enforce this and ensure your developers sign in to your
   Docker organization.
-@z
-
-@x
-- [SSO](/manuals/enterprise/security/single-sign-on/_index.md): Without SSO,
+- [SSO](manuals/security/authentication/single-sign-on/_index.md): Without SSO,
   user management in a Docker organization is manual. Setting
   up an SSO connection between your identity provider and Docker ensures
   compliance with your security policy and automates user provisioning. Adding
   SCIM further automates user provisioning and de-provisioning.
-@y
-- [SSO](manuals/enterprise/security/single-sign-on/_index.md): Without SSO,
-  user management in a Docker organization is manual. Setting
-  up an SSO connection between your identity provider and Docker ensures
-  compliance with your security policy and automates user provisioning. Adding
-  SCIM further automates user provisioning and de-provisioning.
-@z
-
-@x
-- General and security settings: Configuring key settings ensures smooth
-  onboarding and usage of Docker products within your environment. You can also
-  enable security features based on your company's specific security needs.
-@y
 - General and security settings: Configuring key settings ensures smooth
   onboarding and usage of Docker products within your environment. You can also
   enable security features based on your company's specific security needs.
@@ -317,12 +305,12 @@ files to be distributed to developer machines. Use MDM tools to deploy these con
 
 @x
 Some companies may have more than one
-[Docker organization](/manuals/admin/organization/_index.md) created. These
+[Docker organization](/manuals/accounts/organization/_index.md) created. These
 organizations may have been created for specific purposes, or may not be
 needed anymore.
 @y
 Some companies may have more than one
-[Docker organization](manuals/admin/organization/_index.md) created. These
+[Docker organization](manuals/accounts/organization/_index.md) created. These
 organizations may have been created for specific purposes, or may not be
 needed anymore.
 @z
@@ -465,13 +453,13 @@ settings, along with your chosen method for [enforcing sign-in](manuals/enterpri
 
 @x
 If you have more than one organization, consider either [consolidating them
-into one organization](/manuals/admin/organization/setup/orgs.md) or creating a
-[Docker company](/manuals/admin/company/_index.md) to manage multiple
+into one organization](/manuals/accounts/organization/setup/orgs.md) or creating a
+[Docker company](/manuals/accounts/company/_index.md) to manage multiple
 organizations.
 @y
 If you have more than one organization, consider either [consolidating them
-into one organization](manuals/admin/organization/setup/orgs.md) or creating a
-[Docker company](manuals/admin/company/_index.md) to manage multiple
+into one organization](manuals/accounts/organization/setup/orgs.md) or creating a
+[Docker company](manuals/accounts/company/_index.md) to manage multiple
 organizations.
 @z
 
@@ -491,19 +479,19 @@ organizations.
 Single sign-on (SSO) lets developers authenticate using their identity
 providers (IdPs) to access Docker. SSO is available for a whole company and all associated organizations, or an individual organization that has a Docker
 Business subscription. For more information, see the
-[documentation](/manuals/enterprise/security/single-sign-on/_index.md).
+[documentation](/manuals/security/authentication/single-sign-on/_index.md).
 @y
 Single sign-on (SSO) lets developers authenticate using their identity
 providers (IdPs) to access Docker. SSO is available for a whole company and all associated organizations, or an individual organization that has a Docker
 Business subscription. For more information, see the
-[documentation](manuals/enterprise/security/single-sign-on/_index.md).
+[documentation](manuals/security/authentication/single-sign-on/_index.md).
 @z
 
 @x
-You can also enable [SCIM](/manuals/enterprise/security/provisioning/scim/_index.md)
+You can also enable [SCIM](/manuals/security/provisioning/scim/_index.md)
 for further automation of provisioning and deprovisioning of users.
 @y
-You can also enable [SCIM](manuals/enterprise/security/provisioning/scim/_index.md)
+You can also enable [SCIM](manuals/security/provisioning/scim/_index.md)
 for further automation of provisioning and deprovisioning of users.
 @z
 
@@ -631,12 +619,12 @@ SSO and SCIM setup.
 > [!IMPORTANT]
 >
 > Some users may need CLI based logins to Docker Hub, and for this they will
-> need a [personal access token (PAT)](/manuals/security/access-tokens.md).
+> need a [personal access token (PAT)](/manuals/security/access-tokens/personal-access-tokens.md).
 @y
 > [!IMPORTANT]
 >
 > Some users may need CLI based logins to Docker Hub, and for this they will
-> need a [personal access token (PAT)](manuals/security/access-tokens.md).
+> need a [personal access token (PAT)](manuals/security/access-tokens/personal-access-tokens.md).
 @z
 
 @x
@@ -792,9 +780,9 @@ the developer groups that you want to have access to the Docker subscription.
 @z
 
 @x
-For instructions on how to enforce SSO, see [Enforce SSO](/manuals/enterprise/security/single-sign-on/connect.md).
+For instructions on how to enforce SSO, see [Enforce SSO](/manuals/security/authentication/single-sign-on/connect.md).
 @y
-For instructions on how to enforce SSO, see [Enforce SSO](manuals/enterprise/security/single-sign-on/connect.md).
+For instructions on how to enforce SSO, see [Enforce SSO](manuals/security/authentication/single-sign-on/connect.md).
 @z
 
 @x
@@ -830,11 +818,11 @@ To continue optimizing your Docker environment:
 @z
 
 @x
-- Review your [organization's usage data](/manuals/admin/insights.md) to track adoption
+- Review your [organization's usage data](/manuals/accounts/organization/insights.md) to track adoption
 - Monitor [Docker Scout findings](/manuals/scout/explore/analysis.md) for security insights
-- Explore [additional security features](/manuals/enterprise/security/_index.md) to enhance your configuration
+- Explore [additional security features](/manuals/enterprise/security/hardened-desktop/_index.md) to enhance your configuration
 @y
-- Review your [organization's usage data](manuals/admin/insights.md) to track adoption
+- Review your [organization's usage data](manuals/accounts/organization/insights.md) to track adoption
 - Monitor [Docker Scout findings](manuals/scout/explore/analysis.md) for security insights
-- Explore [additional security features](manuals/enterprise/security/_index.md) to enhance your configuration
+- Explore [additional security features](manuals/enterprise/security/hardened-desktop/_index.md) to enhance your configuration
 @z

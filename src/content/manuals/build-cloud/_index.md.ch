@@ -115,11 +115,11 @@ data between cloud builders.
 
 @x
 To get started with Docker Build Cloud,
-[create a Docker account](/accounts/create-account/). There are two options
+[create a Docker account](/accounts/individual/create-account/). There are two options
 to get access to Docker Build Cloud:
 @y
 To get started with Docker Build Cloud,
-[create a Docker account](__SUBDIR__/accounts/create-account/). There are two options
+[create a Docker account](__SUBDIR__/accounts/individual/create-account/). There are two options
 to get access to Docker Build Cloud:
 @z
 
@@ -145,8 +145,8 @@ Once you've signed up and created a builder, continue by
 
 @x
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](/manuals/enterprise/security/roles-and-permissions/core-roles.md#docker-build-cloud).
+[Roles and Permissions](/manuals/security/roles-and-permissions/core-roles.md#docker-build-cloud).
 @y
 For information about roles and permissions related to Docker Build Cloud, see
-[Roles and Permissions](manuals/enterprise/security/roles-and-permissions/core-roles.md#docker-build-cloud).
+[Roles and Permissions](manuals/security/roles-and-permissions/core-roles.md#docker-build-cloud).
 @z
