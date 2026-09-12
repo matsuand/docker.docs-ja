@@ -23,48 +23,72 @@ description: |-
     No SSH client key is needed — authentication is handled by the daemon's Unix
     socket (OS user boundary) combined with an active Docker login. Sign in first
     (sbx login).
-usage: sbx setup ssh [flags]
-options:
-    - name: alias
-      default_value: '*.sbx'
-      usage: ssh_config Host pattern to write
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for ssh
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      sbx setup ssh
-      ssh my-sandbox.sbx -- echo hello
-see_also:
-    - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
-    - sbx setup ssh remove - Remove SSH client config for the current local app instance
 @y
     No SSH client key is needed — authentication is handled by the daemon's Unix
     socket (OS user boundary) combined with an active Docker login. Sign in first
     (sbx login).
+@z
+
+@x
 usage: sbx setup ssh [flags]
-options:
-    - name: alias
-      default_value: '*.sbx'
+@y
+usage: sbx setup ssh [flags]
+@z
+
+% options:
+
+@x alias
       usage: ssh_config Host pattern to write
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: ssh_config Host pattern to write
+@z
+
+@x help
       usage: help for ssh
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for ssh
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
       sbx setup ssh
       ssh my-sandbox.sbx -- echo hello
-see_also:
+@y
+example: |4-
+      sbx setup ssh
+      ssh my-sandbox.sbx -- echo hello
+@z
+
+% see_also:
+
+@x
+    - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
+    - sbx setup ssh remove - Remove SSH client config for the current local app instance
+@y
     - sbx setup - (Experimental) Detect host configuration and prepare Docker Sandboxes
     - sbx setup ssh remove - Remove SSH client config for the current local app instance
 @z

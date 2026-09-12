@@ -38,9 +38,11 @@ description: |-
 @z
 
 @x
-    Use --dry-run to list what would be removed without removing anything.
+    Use --dry-run to list what would be removed without removing anything, and
+    --json with it for machine-readable output.
 @y
-    Use --dry-run to list what would be removed without removing anything.
+    Use --dry-run to list what would be removed without removing anything, and
+    --json with it for machine-readable output.
 @z
 
 @x
@@ -51,62 +53,92 @@ description: |-
     Pruning requires confirmation; use --force to skip the confirmation prompt
     (for non-interactive scripts) and to remove a sandbox that is in use (e.g. an
     open SSH connection). This action cannot be undone.
+@z
+
+@x
+    Secrets scoped to each successfully pruned sandbox are also deleted.
+@y
+    Secrets scoped to each successfully pruned sandbox are also deleted.
 @z
 
 @x
     Local-only: cloud sandboxes expire via their TTL.
+@y
+    Local-only: cloud sandboxes expire via their TTL.
+@z
+
+@x
 usage: sbx prune [flags]
-options:
-    - name: dry-run
-      default_value: "false"
+@y
+usage: sbx prune [flags]
+@z
+
+% options:
+
+@x dry-run
       usage: |
         List the sandboxes that would be removed without removing them
-    - name: filter
-      default_value: '[]'
+@y
+      usage: |
+        List the sandboxes that would be removed without removing them
+@z
+
+@x filter
       usage: |
         Filter candidates (supported: since=DURATION — stopped for longer than DURATION)
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+      usage: |
+        Filter candidates (supported: since=DURATION — stopped for longer than DURATION)
+@z
+
+@x force
       usage: |
         Skip confirmation prompts and remove even if in use (e.g. an open SSH connection)
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: |
+        Skip confirmation prompts and remove even if in use (e.g. an open SSH connection)
+@z
+
+@x help
       usage: help for prune
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for prune
+@z
+
+@x json
+      usage: Output the --dry-run listing in JSON format
+@y
+      usage: Output the --dry-run listing in JSON format
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
     - sbx - Manage AI coding agent sandboxes.
 @y
-    Local-only: cloud sandboxes expire via their TTL.
-usage: sbx prune [flags]
-options:
-    - name: dry-run
-      default_value: "false"
-      usage: |
-        List the sandboxes that would be removed without removing them
-    - name: filter
-      default_value: '[]'
-      usage: |
-        Filter candidates (supported: since=DURATION — stopped for longer than DURATION)
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: |
-        Skip confirmation prompts and remove even if in use (e.g. an open SSH connection)
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for prune
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
     - sbx - Manage AI coding agent sandboxes.
 @z

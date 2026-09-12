@@ -71,38 +71,42 @@ description: |
 
 @x
     You will need to start a new shell for this setup to take effect.
-usage: sbx completion zsh [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for zsh
-    - name: no-descriptions
-      default_value: "false"
-      usage: disable completion descriptions
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx completion - Generate the autocompletion script for the specified shell
 @y
     You will need to start a new shell for this setup to take effect.
+@z
+
+@x
 usage: sbx completion zsh [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx completion zsh [flags]
+@z
+
+% options:
+
+@x help
       usage: help for zsh
-    - name: no-descriptions
-      default_value: "false"
+@y
+      usage: help for zsh
+@z
+
+@x no-descriptions
       usage: disable completion descriptions
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: disable completion descriptions
+@z
+
+% inherited_options:
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx completion - Generate the autocompletion script for the specified shell
+@y
     - sbx completion - Generate the autocompletion script for the specified shell
 @z

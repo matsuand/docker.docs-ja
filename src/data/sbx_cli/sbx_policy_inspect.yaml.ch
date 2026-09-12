@@ -22,20 +22,6 @@ description: |-
     identifier accepted by "sbx policy rm network --id" (local rules only). Use
     "sbx policy ls" to find policy names and "sbx policy ls --wide" to find rule
     IDs and resource values.
-usage: sbx policy inspect <policy-or-rule> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for inspect
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Inspect a policy by name
-      sbx policy inspect "Developer access"
 @y
     The selector may be a policy ID, policy name, rule ID, or rule name.
     Selecting a policy lists every resource with its decision, rule, and status,
@@ -45,17 +31,57 @@ example: |4-
     identifier accepted by "sbx policy rm network --id" (local rules only). Use
     "sbx policy ls" to find policy names and "sbx policy ls --wide" to find rule
     IDs and resource values.
+@z
+
+@x
 usage: sbx policy inspect <policy-or-rule> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy inspect <policy-or-rule> [flags]
+@z
+
+% options:
+
+@x help
       usage: help for inspect
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for inspect
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Inspect a policy by name
+      sbx policy inspect "Developer access"
+@y
 example: |4-
       # Inspect a policy by name
       sbx policy inspect "Developer access"
@@ -64,11 +90,23 @@ example: |4-
 @x
       # Inspect a rule by ID
       sbx policy inspect 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
-see_also:
-    - sbx policy - Manage sandbox policies
 @y
       # Inspect a rule by ID
       sbx policy inspect 2d3c1f0e-4a73-4e05-bc9d-f2f9a4b50d67
-see_also:
+@z
+
+@x
+      # Machine-readable output for scripting
+      sbx policy inspect "Developer access" --json
+@y
+      # Machine-readable output for scripting
+      sbx policy inspect "Developer access" --json
+@z
+
+% see_also:
+
+@x
+    - sbx policy - Manage sandbox policies
+@y
     - sbx policy - Manage sandbox policies
 @z

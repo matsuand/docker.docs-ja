@@ -4,6 +4,7 @@
 
 bases = \
 	sbx.yaml                       \
+	sbx_attach.yaml                \
 	sbx_completion.yaml            \
 	sbx_completion_bash.yaml       \
 	sbx_completion_fish.yaml       \
@@ -15,6 +16,7 @@ bases = \
 	sbx_create_codex.yaml          \
 	sbx_create_copilot.yaml        \
 	sbx_create_cursor.yaml         \
+	sbx_create_devin.yaml          \
 	sbx_create_docker-agent.yaml   \
 	sbx_create_droid.yaml          \
 	sbx_create_gemini.yaml         \
@@ -24,14 +26,15 @@ bases = \
 	sbx_daemon.yaml                \
 	sbx_daemon_log-level.yaml      \
 	sbx_daemon_log-level_set.yaml  \
+	sbx_daemon_restart.yaml        \
 	sbx_daemon_start.yaml          \
 	sbx_daemon_status.yaml         \
 	sbx_daemon_stop.yaml           \
-	sbx_daemon_restart.yaml        \
 	sbx_diagnose.yaml              \
 	sbx_env.yaml                   \
 	sbx_env_create.yaml            \
 	sbx_env_exec.yaml              \
+	sbx_env_plan.yaml              \
 	sbx_env_rm.yaml                \
 	sbx_env_run.yaml               \
 	sbx_exec.yaml                  \
@@ -86,16 +89,26 @@ bases = \
 	sbx_setup_ssh.yaml             \
 	sbx_setup_ssh_remove.yaml      \
 	sbx_skills.yaml                \
+	sbx_skills_add.yaml            \
 	sbx_skills_import.yaml         \
 	sbx_skills_ls.yaml             \
+	sbx_skills_rm.yaml             \
+	sbx_skills_update.yaml         \
 	sbx_stop.yaml                  \
 	sbx_template.yaml              \
+	sbx_template_inspect.yaml      \
 	sbx_template_load.yaml         \
 	sbx_template_ls.yaml           \
 	sbx_template_rm.yaml           \
 	sbx_template_save.yaml         \
+	sbx_ttl.yaml                   \
 	sbx_tui.yaml                   \
-	sbx_version.yaml
+	sbx_version.yaml               \
+	sbx_volume.yaml                \
+	sbx_volume_create.yaml         \
+	sbx_volume_inspect.yaml        \
+	sbx_volume_ls.yaml             \
+	sbx_volume_rm.yaml
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

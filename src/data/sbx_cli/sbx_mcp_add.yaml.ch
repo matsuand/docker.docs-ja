@@ -63,26 +63,28 @@ description: |-
 
 @x
     SSRF guard and --skip-ssrf-check:
-      A --url whose host resolves to a private/RFC1918, loopback, link-local,
-      or cloud-metadata address is rejected by the SSRF guard (this protects
-      against manifest URLs that reach internal services, cloud metadata, or
-      DNS-rebinding targets). Some legitimate servers live on private networks
-      (split-horizon DNS, internal load balancers, VPN-only endpoints,
-      PrivateLink), so their public hostname resolves to a private address.
-      Pass --skip-ssrf-check to opt out of the guard for a single add when you
-      trust the host. This also disables DNS-rebinding/redirect re-checks, so
-      use it only for URLs you control.
+      A --url whose host resolves to a private/RFC1918, loopback, link-local, or
+      cloud-metadata address is fetched anyway, but flagged: the add proceeds and
+      a warning naming the resolved address is printed (this protects against
+      manifest URLs that reach internal services, cloud metadata, or
+      DNS-rebinding targets by making them visible, not by blocking them). Some
+      legitimate servers live on private networks (split-horizon DNS, internal
+      load balancers, VPN-only endpoints, PrivateLink), so their public hostname
+      resolves to a private address and the warning is expected noise for them.
+      Pass --skip-ssrf-check to silence the check entirely for a single add when
+      you trust the host; use it only for URLs you control.
 @y
     SSRF guard and --skip-ssrf-check:
-      A --url whose host resolves to a private/RFC1918, loopback, link-local,
-      or cloud-metadata address is rejected by the SSRF guard (this protects
-      against manifest URLs that reach internal services, cloud metadata, or
-      DNS-rebinding targets). Some legitimate servers live on private networks
-      (split-horizon DNS, internal load balancers, VPN-only endpoints,
-      PrivateLink), so their public hostname resolves to a private address.
-      Pass --skip-ssrf-check to opt out of the guard for a single add when you
-      trust the host. This also disables DNS-rebinding/redirect re-checks, so
-      use it only for URLs you control.
+      A --url whose host resolves to a private/RFC1918, loopback, link-local, or
+      cloud-metadata address is fetched anyway, but flagged: the add proceeds and
+      a warning naming the resolved address is printed (this protects against
+      manifest URLs that reach internal services, cloud metadata, or
+      DNS-rebinding targets by making them visible, not by blocking them). Some
+      legitimate servers live on private networks (split-horizon DNS, internal
+      load balancers, VPN-only endpoints, PrivateLink), so their public hostname
+      resolves to a private address and the warning is expected noise for them.
+      Pass --skip-ssrf-check to silence the check entirely for a single add when
+      you trust the host; use it only for URLs you control.
 @z
 
 @x
@@ -100,15 +102,19 @@ description: |-
       metadata for a server that publishes no well-known RFC 9728/8414 metadata
       (e.g. Gmail). It is a local file path or an http(s) URL to a JSON document
       conforming to the RFC 8414 oauth-authorization-server shape
-      (authorization_endpoint and token_endpoint are required). In this CLI it
-      must be accompanied by --client-id.
+      (authorization_endpoint and token_endpoint are required). --client-id is
+      required alongside it UNLESS the metadata document itself advertises a
+      registration_endpoint, in which case a client is registered dynamically
+      (RFC 7591) and --client-id may be omitted.
 @y
       --oauth-authorization-server hand-supplies the authorization-server
       metadata for a server that publishes no well-known RFC 9728/8414 metadata
       (e.g. Gmail). It is a local file path or an http(s) URL to a JSON document
       conforming to the RFC 8414 oauth-authorization-server shape
-      (authorization_endpoint and token_endpoint are required). In this CLI it
-      must be accompanied by --client-id.
+      (authorization_endpoint and token_endpoint are required). --client-id is
+      required alongside it UNLESS the metadata document itself advertises a
+      registration_endpoint, in which case a client is registered dynamically
+      (RFC 7591) and --client-id may be omitted.
 @z
 
 @x
@@ -216,27 +222,71 @@ description: |-
 @z
 
 @x
-    Default OAuth scopes (--scope):
+    Default OAuth scopes (--scope / --no-scope):
       --scope records the DEFAULT set of scopes to request at consent time for a
-      remote --url OAuth server (repeatable). These are requested by 'sbx mcp auth'
-      when it is run with no --scope of its own. Scopes are validated only when the
-      authorization server advertises a supported set (RFC 8414 scopes_supported):
-      then every scope must be a member or the add fails naming the offending
-      scope(s). If the server advertises no supported set (the field is optional in
-      RFC 8414), the requested scopes are accepted as given. --scope applies both to
-      a hand-supplied override and to a plain --url server whose OAuth metadata is
-      discovered.
+      remote --url OAuth server (repeatable). Precedence at authorization time is
+      --no-scope > an explicit 'sbx mcp auth --scope' > the set recorded here > the
+      scope set the RESOURCE itself says it requires (from its RFC 9728
+      protected-resource metadata or its WWW-Authenticate challenge) > nothing, and
+      "nothing" means the 'scope' parameter is OMITTED so the authorization server
+      applies its own default grant (RFC 6749 §3.3). The server's advertised set is
+      never requested wholesale.
 @y
-    Default OAuth scopes (--scope):
+    Default OAuth scopes (--scope / --no-scope):
       --scope records the DEFAULT set of scopes to request at consent time for a
-      remote --url OAuth server (repeatable). These are requested by 'sbx mcp auth'
-      when it is run with no --scope of its own. Scopes are validated only when the
-      authorization server advertises a supported set (RFC 8414 scopes_supported):
-      then every scope must be a member or the add fails naming the offending
-      scope(s). If the server advertises no supported set (the field is optional in
-      RFC 8414), the requested scopes are accepted as given. --scope applies both to
-      a hand-supplied override and to a plain --url server whose OAuth metadata is
-      discovered.
+      remote --url OAuth server (repeatable). Precedence at authorization time is
+      --no-scope > an explicit 'sbx mcp auth --scope' > the set recorded here > the
+      scope set the RESOURCE itself says it requires (from its RFC 9728
+      protected-resource metadata or its WWW-Authenticate challenge) > nothing, and
+      "nothing" means the 'scope' parameter is OMITTED so the authorization server
+      applies its own default grant (RFC 6749 §3.3). The server's advertised set is
+      never requested wholesale.
+@z
+
+@x
+      A resource that publishes a required set therefore gets it requested with no
+      flag at all, and the consent block marks that set as derived rather than
+      chosen. --no-scope suppresses it and takes the server's default grant.
+@y
+      A resource that publishes a required set therefore gets it requested with no
+      flag at all, and the consent block marks that set as derived rather than
+      chosen. --no-scope suppresses it and takes the server's default grant.
+@z
+
+@x
+      Scopes you name are validated only when the authorization server advertises a
+      supported set (RFC 8414 scopes_supported): then every scope must be a member or
+      the add fails naming the offending scope(s). If the server advertises no
+      supported set (the field is optional in RFC 8414), the requested scopes are
+      accepted as given. A set derived from the resource's own required list is never
+      validated — it is the server's statement about itself, and scopes_supported is
+      allowed to be non-exhaustive. Validation is a spelling check, not a promise: scopes_supported is what
+      the server SUPPORTS, not what it will grant this client, so a scope it
+      advertises can still be refused at consent time.
+@y
+      Scopes you name are validated only when the authorization server advertises a
+      supported set (RFC 8414 scopes_supported): then every scope must be a member or
+      the add fails naming the offending scope(s). If the server advertises no
+      supported set (the field is optional in RFC 8414), the requested scopes are
+      accepted as given. A set derived from the resource's own required list is never
+      validated — it is the server's statement about itself, and scopes_supported is
+      allowed to be non-exhaustive. Validation is a spelling check, not a promise: scopes_supported is what
+      the server SUPPORTS, not what it will grant this client, so a scope it
+      advertises can still be refused at consent time.
+@z
+
+@x
+      Scope values may be URN-shaped (urn:ietf:params:oauth:scope:mail) or
+      URL-shaped (https://www.fastmail.com/dev/mcp). Neither needs quoting — a scope
+      token cannot contain a space or a quote — and both are percent-encoded
+      normally on the wire. --scope applies both to a hand-supplied override and to
+      a plain --url server whose OAuth metadata is discovered.
+@y
+      Scope values may be URN-shaped (urn:ietf:params:oauth:scope:mail) or
+      URL-shaped (https://www.fastmail.com/dev/mcp). Neither needs quoting — a scope
+      token cannot contain a space or a quote — and both are percent-encoded
+      normally on the wire. --scope applies both to a hand-supplied override and to
+      a plain --url server whose OAuth metadata is discovered.
 @z
 
 @x
@@ -253,100 +303,138 @@ description: |-
       process runs with your host user's full permissions — it can read
       your filesystem, access your network, and call any API your user
       can. Do not use --command with untrusted executables.
+@y
+      WARNING: Local servers are for ad-hoc development only. They have
+      no identity, no verifiable supply chain, and no sandboxing. The
+      process runs with your host user's full permissions — it can read
+      your filesystem, access your network, and call any API your user
+      can. Do not use --command with untrusted executables.
+@z
+
+@x
 usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
-options:
-    - name: args
-      default_value: '[]'
+@y
+usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
+@z
+
+% options:
+
+@x args
       usage: Command-line arguments for the command
-    - name: client-id
+@y
+      usage: Command-line arguments for the command
+@z
+
+@x client-id
       usage: |
         OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>.client_secret'
-    - name: command
+@y
+      usage: |
+        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>.client_secret'
+@z
+
+@x command
       usage: Executable to run for a local stdio server
-    - name: dir
+@y
+      usage: Executable to run for a local stdio server
+@z
+
+@x dir
       usage: Working directory (cwd) for a --command host server
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Working directory (cwd) for a --command host server
+@z
+
+@x help
       usage: help for add
-    - name: local
-      default_value: "false"
+@y
+      usage: help for add
+@z
+
+@x local
       usage: Run registry OCI server locally via docker run
-    - name: oauth-authorization-server
+@y
+      usage: Run registry OCI server locally via docker run
+@z
+
+@x no-scope
+      usage: |
+        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses the resource's required set; cannot be combined with --scope. Applies to --url remote OAuth servers.
+@y
+      usage: |
+        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses the resource's required set; cannot be combined with --scope. Applies to --url remote OAuth servers.
+@z
+
+@x oauth-authorization-server
       usage: |
         Path or http(s) URL to an RFC 8414 oauth-authorization-server metadata JSON document
-    - name: scope
-      default_value: '[]'
+@y
       usage: |
-        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata). Applies to --url remote OAuth servers.
-    - name: skip-ssrf-check
-      default_value: "false"
+        Path or http(s) URL to an RFC 8414 oauth-authorization-server metadata JSON document
+@z
+
+@x scope
       usage: |
-        Disable the SSRF guard for this add: allow a --url whose host resolves to a private/metadata address (operator asserts the host is trusted)
-    - name: skip_auth
-      default_value: "false"
+        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata, which does not promise the server will grant it). With no --scope, the scope set the resource itself requires is requested; with neither, no scopes are requested and the authorization server applies its own default grant. Applies to --url remote OAuth servers.
+@y
+      usage: |
+        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata, which does not promise the server will grant it). With no --scope, the scope set the resource itself requires is requested; with neither, no scopes are requested and the authorization server applies its own default grant. Applies to --url remote OAuth servers.
+@z
+
+@x skip-auth
       usage: |
         Register an OAuth server without starting the hosted OAuth flow
-    - name: url
+@y
+      usage: |
+        Register an OAuth server without starting the hosted OAuth flow
+@z
+
+@x skip-ssrf-check
+      usage: |
+        Silence the SSRF check for this add: a --url whose host resolves to a private/metadata address is registered either way, but with this flag no warning is printed (operator asserts the host is trusted)
+@y
+      usage: |
+        Silence the SSRF check for this add: a --url whose host resolves to a private/metadata address is registered either way, but with this flag no warning is printed (operator asserts the host is trusted)
+@z
+
+@x url
       usage: |
         MCP server manifest URL, remote endpoint URL, or dhi.io image ref
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: |
+        MCP server manifest URL, remote endpoint URL, or dhi.io image ref
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
       # Remote MCP endpoint (OAuth auto-detected)
       sbx mcp add notion --url https://mcp.notion.com/mcp
       sbx mcp add linear --url https://mcp.linear.app/mcp
 @y
-      WARNING: Local servers are for ad-hoc development only. They have
-      no identity, no verifiable supply chain, and no sandboxing. The
-      process runs with your host user's full permissions — it can read
-      your filesystem, access your network, and call any API your user
-      can. Do not use --command with untrusted executables.
-usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
-options:
-    - name: args
-      default_value: '[]'
-      usage: Command-line arguments for the command
-    - name: client-id
-      usage: |
-        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>.client_secret'
-    - name: command
-      usage: Executable to run for a local stdio server
-    - name: dir
-      usage: Working directory (cwd) for a --command host server
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for add
-    - name: local
-      default_value: "false"
-      usage: Run registry OCI server locally via docker run
-    - name: oauth-authorization-server
-      usage: |
-        Path or http(s) URL to an RFC 8414 oauth-authorization-server metadata JSON document
-    - name: scope
-      default_value: '[]'
-      usage: |
-        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata). Applies to --url remote OAuth servers.
-    - name: skip-ssrf-check
-      default_value: "false"
-      usage: |
-        Disable the SSRF guard for this add: allow a --url whose host resolves to a private/metadata address (operator asserts the host is trusted)
-    - name: skip_auth
-      default_value: "false"
-      usage: |
-        Register an OAuth server without starting the hosted OAuth flow
-    - name: url
-      usage: |
-        MCP server manifest URL, remote endpoint URL, or dhi.io image ref
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
 example: |4-
       # Remote MCP endpoint (OAuth auto-detected)
       sbx mcp add notion --url https://mcp.notion.com/mcp
@@ -435,6 +523,14 @@ example: |4-
       # Record default OAuth scopes to request at consent time (must be advertised
       # by the server's authorization metadata; repeat --scope for each one)
       sbx mcp add acme --url https://mcp.acme.com/mcp --scope read --scope write
+@z
+
+@x
+      # URN- and URL-shaped scope values are ordinary scopes and need no quoting
+      sbx mcp add fastmail --url https://api.fastmail.com/mcp --scope https://www.fastmail.com/dev/mcp --scope offline_access
+@y
+      # URN- and URL-shaped scope values are ordinary scopes and need no quoting
+      sbx mcp add fastmail --url https://api.fastmail.com/mcp --scope https://www.fastmail.com/dev/mcp --scope offline_access
 @z
 
 @x
@@ -450,11 +546,15 @@ example: |4-
 @x
       # Local stdio command with a working directory (cwd) for the host process
       sbx mcp add local-fs --command node --args server.js --dir /srv/data
-see_also:
+@y
+      # Local stdio command with a working directory (cwd) for the host process
+      sbx mcp add local-fs --command node --args server.js --dir /srv/data
+@z
+
+% see_also:
+
+@x
     - sbx mcp - Manage MCP servers
 @y
-      # Local stdio command with a working directory (cwd) for the host process
-      sbx mcp add local-fs --command node --args server.js --dir /srv/data
-see_also:
     - sbx mcp - Manage MCP servers
 @z

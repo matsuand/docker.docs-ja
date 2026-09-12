@@ -5,30 +5,42 @@
 name: sbx rm
 synopsis: Remove one or more sandboxes
 description: |-
-    Remove one or more sandboxes and all associated resources.
+    Remove one or more sandboxes and all associated resources. Or — with --cloud — the cloud sandbox
+    ID (sbx_*) or name from "sbx --cloud ls".
 @y
 name: sbx rm
 synopsis: Remove one or more sandboxes
 description: |-
-    Remove one or more sandboxes and all associated resources.
+    Remove one or more sandboxes and all associated resources. Or — with --cloud — the cloud sandbox
+    ID (sbx_*) or name from "sbx --cloud ls".
 @z
 
 @x
-    Stops running sandboxes, removes their containers, cleans up any Git
-    worktrees, and deletes sandbox state. This action cannot be undone.
+    For local sandboxes, stops them, removes their containers, cleans up any Git
+    worktrees, deletes sandbox state, and deletes secrets scoped to each removed
+    sandbox. This action cannot be undone. With --cloud, deletes
+    the sandbox in Docker Sandboxes Cloud. This action cannot be undone.
 @y
-    Stops running sandboxes, removes their containers, cleans up any Git
-    worktrees, and deletes sandbox state. This action cannot be undone.
+    For local sandboxes, stops them, removes their containers, cleans up any Git
+    worktrees, deletes sandbox state, and deletes secrets scoped to each removed
+    sandbox. This action cannot be undone. With --cloud, deletes
+    the sandbox in Docker Sandboxes Cloud. This action cannot be undone.
 @z
 
 @x
     Removal requires confirmation; use --force to skip confirmation prompts
     (for non-interactive scripts) and to delete a sandbox that is in use
-    (e.g. an open SSH connection). Use --all to remove every sandbox.
+    (e.g. an open SSH connection). Use --all to remove every sandbox. With --cloud, --all is
+    intentionally disabled as a safety gate — the blast radius covers every
+    sandbox the credential can see, which may include shared or production
+    workloads. Pass IDs explicitly in --cloud mode.
 @y
     Removal requires confirmation; use --force to skip confirmation prompts
     (for non-interactive scripts) and to delete a sandbox that is in use
-    (e.g. an open SSH connection). Use --all to remove every sandbox.
+    (e.g. an open SSH connection). Use --all to remove every sandbox. With --cloud, --all is
+    intentionally disabled as a safety gate — the blast radius covers every
+    sandbox the credential can see, which may include shared or production
+    workloads. Pass IDs explicitly in --cloud mode.
 @z
 
 @x
@@ -60,6 +72,22 @@ usage: sbx rm [SANDBOX...] [flags]
 @z
 
 % inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x debug
       usage: Enable debug logging

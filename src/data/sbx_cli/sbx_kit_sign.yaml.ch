@@ -56,33 +56,6 @@ description: |-
     the signing config to provide a timestamp authority so the signature stays
     verifiable after the short-lived certificate expires. For fully offline,
     private signing, prefer key-based signing with --key.
-usage: sbx kit sign REFERENCE [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for sign
-    - name: identity-token
-      usage: |
-        OIDC identity token for keyless signing; defaults to the ambient CI provider, then an interactive browser login
-    - name: identity-token-file
-      usage: |
-        File holding the OIDC identity token; keeps it out of the process arguments
-    - name: key
-      usage: |
-        Private key for key-based signing (PEM); omit for keyless signing
-    - name: tlog-upload
-      default_value: "true"
-      usage: |
-        Upload the keyless signature to the Rekor transparency log; set false for private kits
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Keyless-sign a local kit directory
-      sbx kit sign ./my-kit/
 @y
     For private kits whose signing event must not leak to a public log, pass
     --tlog-upload=false to skip the Rekor transparency log. This only affects
@@ -90,30 +63,83 @@ example: |4-
     the signing config to provide a timestamp authority so the signature stays
     verifiable after the short-lived certificate expires. For fully offline,
     private signing, prefer key-based signing with --key.
+@z
+
+@x
 usage: sbx kit sign REFERENCE [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx kit sign REFERENCE [flags]
+@z
+
+% options:
+
+@x help
       usage: help for sign
-    - name: identity-token
+@y
+      usage: help for sign
+@z
+
+@x identity-token
       usage: |
         OIDC identity token for keyless signing; defaults to the ambient CI provider, then an interactive browser login
-    - name: identity-token-file
+@y
+      usage: |
+        OIDC identity token for keyless signing; defaults to the ambient CI provider, then an interactive browser login
+@z
+
+@x identity-token-file
       usage: |
         File holding the OIDC identity token; keeps it out of the process arguments
-    - name: key
+@y
+      usage: |
+        File holding the OIDC identity token; keeps it out of the process arguments
+@z
+
+@x key
       usage: |
         Private key for key-based signing (PEM); omit for keyless signing
-    - name: tlog-upload
-      default_value: "true"
+@y
+      usage: |
+        Private key for key-based signing (PEM); omit for keyless signing
+@z
+
+@x tlog-upload
       usage: |
         Upload the keyless signature to the Rekor transparency log; set false for private kits
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: |
+        Upload the keyless signature to the Rekor transparency log; set false for private kits
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Keyless-sign a local kit directory
+      sbx kit sign ./my-kit/
+@y
 example: |4-
       # Keyless-sign a local kit directory
       sbx kit sign ./my-kit/
@@ -130,11 +156,15 @@ example: |4-
 @x
       # Keyless-sign without uploading to the public transparency log
       sbx kit sign --tlog-upload=false ghcr.io/org/private-kit:1.0
-see_also:
-    - sbx kit - (Experimental) Manage kit artifacts
 @y
       # Keyless-sign without uploading to the public transparency log
       sbx kit sign --tlog-upload=false ghcr.io/org/private-kit:1.0
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx kit - (Experimental) Manage kit artifacts
+@y
     - sbx kit - (Experimental) Manage kit artifacts
 @z

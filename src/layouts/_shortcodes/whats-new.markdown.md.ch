@@ -12,7 +12,7 @@
 @x
 ## What's new
 @y
-## 最新情報 {#whats-new}
+## 更新情報 {#whats-new}
 @z
 
 @x

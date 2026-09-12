@@ -9,12 +9,8 @@ bases = \
 	redirects.yml        \
 	samples.yaml         \
 	summary.yaml         \
-	tags.yaml
+	tags.yaml            \
+	whats-new.json
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk
-
-copyfiles = \
-	whats-new.json
-
-include $(top_srcdir)/build-aux/copy.mk

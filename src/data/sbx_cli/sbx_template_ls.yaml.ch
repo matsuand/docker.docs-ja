@@ -6,42 +6,62 @@ name: sbx template ls
 synopsis: List template images
 description: |
     List all template images stored in the sandbox runtime's image store.
-usage: sbx template ls [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for ls
-    - name: json
-      default_value: "false"
-      usage: Output in JSON format
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # List all template images
-      sbx template ls
 @y
 name: sbx template ls
 synopsis: List template images
 description: |
     List all template images stored in the sandbox runtime's image store.
+@z
+
+@x
 usage: sbx template ls [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx template ls [flags]
+@z
+
+% options:
+
+@x help
       usage: help for ls
-    - name: json
-      default_value: "false"
+@y
+      usage: help for ls
+@z
+
+@x json
       usage: Output in JSON format
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Output in JSON format
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # List all template images
+      sbx template ls
+@y
 example: |4-
       # List all template images
       sbx template ls
@@ -50,11 +70,15 @@ example: |4-
 @x
       # Output in JSON format
       sbx template ls --json
-see_also:
-    - sbx template - Manage sandbox templates
 @y
       # Output in JSON format
       sbx template ls --json
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx template - Manage sandbox templates
+@y
     - sbx template - Manage sandbox templates
 @z

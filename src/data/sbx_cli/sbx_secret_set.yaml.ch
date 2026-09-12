@@ -20,9 +20,9 @@ description: |-
 @z
 
 @x
-    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
+    Available services: anthropic, copilot, cursor, devin, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
 @y
-    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
+    Available services: anthropic, copilot, cursor, devin, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
 @z
 
 @x
@@ -124,9 +124,11 @@ usage: sbx secret set [SERVICE] [flags]
 @z
 
 @x oauth
-      usage: Start OAuth flow and store OAuth tokens (openai/global only)
+      usage: |
+        Start OAuth flow and store OAuth tokens (openai/global only) With --cloud: openai or anthropic, stored only in the cloud (never the local secrets-engine)
 @y
-      usage: Start OAuth flow and store OAuth tokens (openai/global only)
+      usage: |
+        Start OAuth flow and store OAuth tokens (openai/global only) With --cloud: openai or anthropic, stored only in the cloud (never the local secrets-engine)
 @z
 
 @x password-stdin
@@ -164,6 +166,22 @@ usage: sbx secret set [SERVICE] [flags]
 @z
 
 % inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x debug
       usage: Enable debug logging

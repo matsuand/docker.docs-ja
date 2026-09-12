@@ -14,8 +14,8 @@ keywords:
   domains, publisher analytics, organization subscription, apply
   for dvp, auto-renewal, billing portal, docker hub
 @y
-title: Docker Verified Publisher plans
-linkTitle: Docker Verified Publisher
+title: Docker 検証済みパブリッシャープラン
+linkTitle: Docker 検証済みパブリッシャー
 description:
   Manage DVP Starter and DVP Growth for organization accounts,
   including how to apply, add consuming domains, and handle billing.

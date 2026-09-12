@@ -56,54 +56,72 @@ description: |-
 @z
 
 @x
-    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
+    Available services: anthropic, copilot, cursor, devin, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
+@y
+    Available services: anthropic, copilot, cursor, devin, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
+@z
+
+@x
 usage: sbx secret import [SERVICE] [flags]
-options:
-    - name: all
-      default_value: "false"
+@y
+usage: sbx secret import [SERVICE] [flags]
+@z
+
+% options:
+
+@x all
       usage: Import every detected env var without prompting
-    - name: dry-run
-      default_value: "false"
+@y
+      usage: Import every detected env var without prompting
+@z
+
+@x dry-run
       usage: Show what would be imported without writing
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+      usage: Show what would be imported without writing
+@z
+
+@x force
       usage: Overwrite an existing stored entry without confirmation
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Overwrite an existing stored entry without confirmation
+@z
+
+@x help
       usage: help for import
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for import
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
       # Walk every detected env var, prompting before each import
       sbx secret import
 @y
-    Available services: anthropic, cursor, droid, github, google, groq, mistral, nebius, openai, openrouter, xai
-usage: sbx secret import [SERVICE] [flags]
-options:
-    - name: all
-      default_value: "false"
-      usage: Import every detected env var without prompting
-    - name: dry-run
-      default_value: "false"
-      usage: Show what would be imported without writing
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Overwrite an existing stored entry without confirmation
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for import
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
 example: |4-
       # Walk every detected env var, prompting before each import
       sbx secret import
@@ -136,11 +154,15 @@ example: |4-
 @x
       # Preview what would be imported without writing
       sbx secret import --dry-run
-see_also:
+@y
+      # Preview what would be imported without writing
+      sbx secret import --dry-run
+@z
+
+% see_also:
+
+@x
     - sbx secret - Manage stored secrets
 @y
-      # Preview what would be imported without writing
-      sbx secret import --dry-run
-see_also:
     - sbx secret - Manage stored secrets
 @z

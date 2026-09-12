@@ -24,6 +24,17 @@ defaultContentLanguage: ja
 locale: 'ja-JP'
 @z
 
+@x permalinks:
+    manuals: /:sections[1:]/:slugorcontentbasename/
+@y
+    manuals: __SUBDIR__/:sections[1:]/:slugorcontentbasename/
+@z
+@x
+    manuals: /:sections[1:]/
+@y
+    manuals: __SUBDIR__/:sections[1:]/
+@z
+
 @x
 languages:
   en:

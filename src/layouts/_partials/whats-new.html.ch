@@ -14,6 +14,12 @@
 @z
 
 @x
+              href="{{ .url }}"
+@y
+              href="{{ add "__SUBDIR__" .url }} "
+@z
+
+@x
                   >{{ .published | time.Format "Jan 2" }}</time
 @y
                   >{{ .published | time.Format "01/02" }}</time
@@ -22,5 +28,5 @@
 @x
           <span x-text="expanded ? 'Show less' : 'Show more'">Show more</span>
 @y
-          <span x-text="expanded ? 'Show less' : 'Show more'">詳細</span>
+          <span x-text="expanded ? '一部を表示' : 'すべてを表示'">すべてを表示</span>
 @z

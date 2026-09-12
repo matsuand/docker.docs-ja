@@ -33,34 +33,6 @@ description: |-
     together with --certificate-oidc-issuer (or its regexp form) for a keyless
     one; only attestations that verify and whose subject matches the kit's own
     digest are reported as VERIFIED.
-usage: sbx kit provenance REFERENCE [flags]
-options:
-    - name: certificate-identity
-      usage: Exact keyless signer identity (certificate SAN)
-    - name: certificate-identity-regexp
-      usage: Keyless signer identity regexp (certificate SAN)
-    - name: certificate-oidc-issuer
-      usage: Exact keyless OIDC issuer
-    - name: certificate-oidc-issuer-regexp
-      usage: Keyless OIDC issuer regexp
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for provenance
-    - name: insecure-ignore-tlog
-      default_value: "false"
-      usage: |
-        Do not require a Rekor transparency-log entry (for private keyless signatures)
-    - name: key
-      usage: Public key for key-based verification (PEM)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Show provenance (unsigned attestations are printed as-is)
-      sbx kit provenance ghcr.io/org/my-kit:1.0
 @y
     Provenance pushed without --sign is unsigned: it is printed but marked
     UNSIGNED, because anyone with push access to the repository could have
@@ -69,31 +41,95 @@ example: |4-
     together with --certificate-oidc-issuer (or its regexp form) for a keyless
     one; only attestations that verify and whose subject matches the kit's own
     digest are reported as VERIFIED.
+@z
+
+@x
 usage: sbx kit provenance REFERENCE [flags]
-options:
-    - name: certificate-identity
+@y
+usage: sbx kit provenance REFERENCE [flags]
+@z
+
+% options:
+
+@x certificate-identity
       usage: Exact keyless signer identity (certificate SAN)
-    - name: certificate-identity-regexp
+@y
+      usage: Exact keyless signer identity (certificate SAN)
+@z
+
+@x certificate-identity-regexp
       usage: Keyless signer identity regexp (certificate SAN)
-    - name: certificate-oidc-issuer
+@y
+      usage: Keyless signer identity regexp (certificate SAN)
+@z
+
+@x certificate-oidc-issuer
       usage: Exact keyless OIDC issuer
-    - name: certificate-oidc-issuer-regexp
+@y
+      usage: Exact keyless OIDC issuer
+@z
+
+@x certificate-oidc-issuer-regexp
       usage: Keyless OIDC issuer regexp
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Keyless OIDC issuer regexp
+@z
+
+@x help
       usage: help for provenance
-    - name: insecure-ignore-tlog
-      default_value: "false"
+@y
+      usage: help for provenance
+@z
+
+@x insecure-ignore-tlog
       usage: |
         Do not require a Rekor transparency-log entry (for private keyless signatures)
-    - name: key
+@y
+      usage: |
+        Do not require a Rekor transparency-log entry (for private keyless signatures)
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
+@z
+
+@x key
       usage: Public key for key-based verification (PEM)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Public key for key-based verification (PEM)
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Show provenance (unsigned attestations are printed as-is)
+      sbx kit provenance ghcr.io/org/my-kit:1.0
+@y
 example: |4-
       # Show provenance (unsigned attestations are printed as-is)
       sbx kit provenance ghcr.io/org/my-kit:1.0
@@ -105,14 +141,18 @@ example: |4-
         --certificate-identity user@example.com \
         --certificate-oidc-issuer https://accounts.google.com \
         ghcr.io/org/my-kit:1.0
-see_also:
-    - sbx kit - (Experimental) Manage kit artifacts
 @y
       # Verify a signed attestation before printing it
       sbx kit provenance \
         --certificate-identity user@example.com \
         --certificate-oidc-issuer https://accounts.google.com \
         ghcr.io/org/my-kit:1.0
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx kit - (Experimental) Manage kit artifacts
+@y
     - sbx kit - (Experimental) Manage kit artifacts
 @z

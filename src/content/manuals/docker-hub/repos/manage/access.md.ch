@@ -364,51 +364,89 @@ tokens](manuals/security/access-tokens/organization-access-tokens.md).
 @z
 
 @x
-Gated distribution allows publishers to securely share private container images with external customers or partners, without giving them full organization access or visibility into your teams, collaborators, or other repositories.
+Gated distribution allows publishers to securely share private container images
+with external customers or partners, without giving them full organization
+access or visibility into your teams, collaborators, or other repositories.
+Content stays in private repositories, and external users can pull from them
+without being added to your internal organization.
 @y
-Gated distribution allows publishers to securely share private container images with external customers or partners, without giving them full organization access or visibility into your teams, collaborators, or other repositories.
+Gated distribution allows publishers to securely share private container images
+with external customers or partners, without giving them full organization
+access or visibility into your teams, collaborators, or other repositories.
+Content stays in private repositories, and external users can pull from them
+without being added to your internal organization.
 @z
 
 @x
-This feature is ideal for commercial software publishers who want to control who can pull specific images while preserving a clean separation between internal users and external consumers.
+This feature is ideal for commercial software publishers who want to control who
+can pull specific images while preserving a clean separation between internal
+users and external consumers.
 @y
-This feature is ideal for commercial software publishers who want to control who can pull specific images while preserving a clean separation between internal users and external consumers.
+This feature is ideal for commercial software publishers who want to control who
+can pull specific images while preserving a clean separation between internal
+users and external consumers.
 @z
 
 @x
-If you are interested in Gated Distribution contact the <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_hub_gated_distribution" class="link" rel="noopener">Docker Sales Team</a> for more information.
+If you are interested in Gated Distribution contact the <a
+href="https://www.docker.com/pricing/contact-sales/"
+id="dkr_docs_cs_hub_gated_distribution" class="link" rel="noopener">Docker Sales
+Team</a> for more information.
 @y
-If you are interested in Gated Distribution contact the <a href="https://www.docker.com/pricing/contact-sales/" id="dkr_docs_cs_hub_gated_distribution" class="link" rel="noopener">Docker Sales Team</a> for more information.
+If you are interested in Gated Distribution contact the <a
+href="https://www.docker.com/pricing/contact-sales/"
+id="dkr_docs_cs_hub_gated_distribution" class="link" rel="noopener">Docker Sales
+Team</a> for more information.
 @z
 
 @x
-### Key features
+### Distributor members
 @y
-### Key features
+### Distributor members
 @z
 
 @x
-- **Private repository distribution**: Content is stored in private repositories and only accessible to explicitly invited users.
+When you invite users to an organization entitled with gated distribution, you
+assign them a role that determines their level of access. For gated
+distribution, external users are invited as **distributor members** within a
+specific team that you create. This role grants pull-only access to the
+repositories assigned to that team, and nothing else in your organization. See
+[Roles and permissions](/manuals/security/roles-and-permissions.md)
+for details about the access permissions for other roles.
 @y
-- **Private repository distribution**: Content is stored in private repositories and only accessible to explicitly invited users.
+When you invite users to an organization entitled with gated distribution, you
+assign them a role that determines their level of access. For gated
+distribution, external users are invited as **distributor members** within a
+specific team that you create. This role grants pull-only access to the
+repositories assigned to that team, and nothing else in your organization. See
+[Roles and permissions](manuals/security/roles-and-permissions.md)
+for details about the access permissions for other roles.
 @z
 
 @x
-- **External access without organization membership**: External users don't need to be added to your internal organization to pull images.
+Distributor members can't see other members in their team or organization, and
+they can't see any repositories other than the ones their team has been granted
+access to. This isolation is what makes the role suitable for distributing gated
+images to external users, partners, or customers without exposing internal
+collaborators, teams, or repositories.
 @y
-- **External access without organization membership**: External users don't need to be added to your internal organization to pull images.
+Distributor members can't see other members in their team or organization, and
+they can't see any repositories other than the ones their team has been granted
+access to. This isolation is what makes the role suitable for distributing gated
+images to external users, partners, or customers without exposing internal
+collaborators, teams, or repositories.
 @z
 
 @x
-- **Pull-only permissions**: External users receive pull-only access and cannot push or modify repository content.
+Because distributor members consume licenses allocated for that role, consider
+provisioning a separate organization for gated distribution rather than adding
+distributor members to your main organization. This keeps regular members from
+inadvertently consuming the licenses set aside for external distribution.
 @y
-- **Pull-only permissions**: External users receive pull-only access and cannot push or modify repository content.
-@z
-
-@x
-- **Invite-only access**: Access is granted through authenticated email invites, managed via API.
-@y
-- **Invite-only access**: Access is granted through authenticated email invites, managed via API.
+Because distributor members consume licenses allocated for that role, consider
+provisioning a separate organization for gated distribution rather than adding
+distributor members to your main organization. This keeps regular members from
+inadvertently consuming the licenses set aside for external distribution.
 @z
 
 @x
@@ -418,17 +456,11 @@ If you are interested in Gated Distribution contact the <a href="https://www.doc
 @z
 
 @x
-> [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](/manuals/security/roles-and-permissions.md) for details about the access permissions for each role.
+Distributor members can only be invited using the Docker Hub API. UI-based
+invitations are not supported for this role.
 @y
-> [!NOTE]
-> When you invite members, you assign them a role. See [Roles and permissions](manuals/security/roles-and-permissions.md) for details about the access permissions for each role.
-@z
-
-@x
-Distributor members (used for gated distribution) can only be invited using the Docker Hub API. UI-based invitations are not currently supported for this role. To invite distributor members, use the Bulk create invites API endpoint.
-@y
-Distributor members (used for gated distribution) can only be invited using the Docker Hub API. UI-based invitations are not currently supported for this role. To invite distributor members, use the Bulk create invites API endpoint.
+Distributor members can only be invited using the Docker Hub API. UI-based
+invitations are not supported for this role.
 @z
 
 @x
@@ -438,35 +470,255 @@ To invite distributor members:
 @z
 
 @x
-1. Use the [Authentication API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken) to generate a bearer token for your Docker Hub account.
+1. Use the [authentication
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+   to generate a bearer token for your Docker Hub account. This token authorizes
+   the API requests you use to send invites. Replace `myusername` and
+   `dckr_pat_...` with your Docker ID and a [personal access
+   token](/manuals/security/access-tokens.md):
 @y
-1. Use the [Authentication API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken) to generate a bearer token for your Docker Hub account.
+1. Use the [authentication
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+   to generate a bearer token for your Docker Hub account. This token authorizes
+   the API requests you use to send invites. Replace `myusername` and
+   `dckr_pat_...` with your Docker ID and a [personal access
+   token](manuals/security/access-tokens.md):
 @z
 
 @x
-2. Create a team in the Hub UI or use the [Teams API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post).
+   ```console
+   $ TOKEN=$(curl -s -X POST "https://hub.docker.com/v2/auth/token" \
+       -H "Content-Type: application/json" \
+       -d '{"identifier": "myusername", "secret": "dckr_pat_..."}' \
+       | jq -r .access_token)
+   ```
 @y
-2. Create a team in the Hub UI or use the [Teams API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post).
+   ```console
+   $ TOKEN=$(curl -s -X POST "https://hub.docker.com/v2/auth/token" \
+       -H "Content-Type: application/json" \
+       -d '{"identifier": "myusername", "secret": "dckr_pat_..."}' \
+       | jq -r .access_token)
+   ```
 @z
 
 @x
-3. Grant repository access to the team:
-   - In the Hub UI: Navigate to your repository settings and add the team with "Read-only" permissions
-   - Using the [Repository Teams API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/paths/~1v2~1repositories~1%7Bnamespace%7D~1%7Brepository%7D~1groups/post): Assign the team to your repositories with "read-only" access level
+2. Create a team to group the distributor members and assign them a shared set
+   of repository permissions.
 @y
-3. Grant repository access to the team:
-   - In the Hub UI: Navigate to your repository settings and add the team with "Read-only" permissions
-   - Using the [Repository Teams API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/paths/~1v2~1repositories~1%7Bnamespace%7D~1%7Brepository%7D~1groups/post): Assign the team to your repositories with "read-only" access level
+2. Create a team to group the distributor members and assign them a shared set
+   of repository permissions.
 @z
 
 @x
-4. Use the [Bulk create invites endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) to send email invites with the distributor member role. In the request body, set the "role" field to "distributor_member".
+   {{< tabs >}}
+   {{< tab name="Hub" >}}
 @y
-4. Use the [Bulk create invites endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post) to send email invites with the distributor member role. In the request body, set the "role" field to "distributor_member".
+   {{< tabs >}}
+   {{< tab name="Hub" >}}
 @z
 
 @x
-5. The invited user will receive an email with a link to accept the invite. After signing in with their Docker ID, they'll be granted pull-only access to the specified private repository as a distributor member.
+   1. Sign in to [Docker Home](https://app.docker.com) and select your
+      organization.
+   2. Select **Teams**.
+   3. Select **Create team**.
+   4. Provide the team's information, then select **Create**.
 @y
-5. The invited user will receive an email with a link to accept the invite. After signing in with their Docker ID, they'll be granted pull-only access to the specified private repository as a distributor member.
+   1. Sign in to [Docker Home](https://app.docker.com) and select your
+      organization.
+   2. Select **Teams**.
+   3. Select **Create team**.
+   4. Provide the team's information, then select **Create**.
+@z
+
+@x
+   For more details, see [Create and manage a
+   team](/manuals/accounts/organization/manage/manage-a-team.md).
+@y
+   For more details, see [Create and manage a
+   team](manuals/accounts/organization/manage/manage-a-team.md).
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="API" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="API" >}}
+@z
+
+@x
+   Use the [teams
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post):
+@y
+   Use the [teams
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post):
+@z
+
+@x
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/orgs/example-org/groups" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d '{"name": "customer-team", "description": "External distributor members"}'
+   ```
+@y
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/orgs/example-org/groups" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d '{"name": "customer-team", "description": "External distributor members"}'
+   ```
+@z
+
+@x
+   The response includes the new team's `id`. Save it for the next step, for
+   example `GROUP_ID=12345`.
+@y
+   The response includes the new team's `id`. Save it for the next step, for
+   example `GROUP_ID=12345`.
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
+@z
+
+@x
+3. Grant the team read-only access to the repositories you want distributor
+   members to access.
+@y
+3. Grant the team read-only access to the repositories you want distributor
+   members to access.
+@z
+
+@x
+   {{< tabs >}}
+   {{< tab name="Hub" >}}
+@y
+   {{< tabs >}}
+   {{< tab name="Hub" >}}
+@z
+
+@x
+   1. Sign in to [Docker Hub](https://hub.docker.com).
+   2. Select **My Hub** > **Repositories**.
+   3. Select the repository.
+   4. Select the **Permissions** tab.
+   5. Specify the **Team**, select **Read-only** as the **Permission**, and
+      then select **Add**.
+@y
+   1. Sign in to [Docker Hub](https://hub.docker.com).
+   2. Select **My Hub** > **Repositories**.
+   3. Select the repository.
+   4. Select the **Permissions** tab.
+   5. Specify the **Team**, select **Read-only** as the **Permission**, and
+      then select **Add**.
+@z
+
+@x
+   {{< /tab >}}
+   {{< tab name="API" >}}
+@y
+   {{< /tab >}}
+   {{< tab name="API" >}}
+@z
+
+@x
+   Use the [repository teams
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/operation/CreateRepositoryGroup),
+   passing the team's `id` from the previous step as `group_id`:
+@y
+   Use the [repository teams
+   API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/operation/CreateRepositoryGroup),
+   passing the team's `id` from the previous step as `group_id`:
+@z
+
+@x
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/repositories/example-org/example-repo/groups" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d "{\"group_id\": $GROUP_ID, \"permission\": \"read\"}"
+   ```
+@y
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/repositories/example-org/example-repo/groups" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d "{\"group_id\": $GROUP_ID, \"permission\": \"read\"}"
+   ```
+@z
+
+@x
+   {{< /tab >}}
+   {{< /tabs >}}
+@y
+   {{< /tab >}}
+   {{< /tabs >}}
+@z
+
+@x
+4. Use the [bulk create invites
+   endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post)
+   to send email invites. In the request body, set `role` to
+   `distributor_member`, specify the `team`, and list the invitees' email
+   addresses:
+@y
+4. Use the [bulk create invites
+   endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post)
+   to send email invites. In the request body, set `role` to
+   `distributor_member`, specify the `team`, and list the invitees' email
+   addresses:
+@z
+
+@x
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/invites/bulk" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d '{
+             "org": "example-org",
+             "team": "customer-team",
+             "role": "distributor_member",
+             "invitees": ["user@example.com"]
+           }'
+   ```
+@y
+   ```console
+   $ curl -s -X POST "https://hub.docker.com/v2/invites/bulk" \
+       -H "Authorization: Bearer $TOKEN" \
+       -H "Content-Type: application/json" \
+       -d '{
+             "org": "example-org",
+             "team": "customer-team",
+             "role": "distributor_member",
+             "invitees": ["user@example.com"]
+           }'
+   ```
+@z
+
+@x
+   This sends email invitations to the specified users and automatically assigns
+   them to the team.
+@y
+   This sends email invitations to the specified users and automatically assigns
+   them to the team.
+@z
+
+@x
+5. The invited user receives an email invitation from Docker Hub. When they
+   select the link in the email, they sign in with their Docker ID (or create
+   one if needed) to accept the invite. Once accepted, they're added to the
+   organization as a distributor member with pull-only access to the
+   repositories assigned to their team.
+@y
+5. The invited user receives an email invitation from Docker Hub. When they
+   select the link in the email, they sign in with their Docker ID (or create
+   one if needed) to accept the invite. Once accepted, they're added to the
+   organization as a distributor member with pull-only access to the
+   repositories assigned to their team.
 @z

@@ -3,16 +3,16 @@
 
 @x
 name: sbx kit add
-synopsis: Add a kit to a sandbox
+synopsis: Add a mixin to a sandbox
 experimental: true
 description: |-
-    Add a kit artifact to an existing sandbox.
+    Add a mixin artifact to an existing sandbox.
 @y
 name: sbx kit add
-synopsis: Add a kit to a sandbox
+synopsis: Add a mixin to a sandbox
 experimental: true
 description: |-
-    Add a kit artifact to an existing sandbox.
+    Add a mixin artifact to an existing sandbox.
 @z
 
 @x
@@ -59,7 +59,39 @@ usage: sbx kit add SANDBOX REFERENCE [flags]
       usage: help for add
 @z
 
+@x kit-arg
+      usage: |
+        Value for an argument the kit declares, as name=value for every kit or kit.name=value for one (can be repeated)
+@y
+      usage: |
+        Value for an argument the kit declares, as name=value for every kit or kit.name=value for one (can be repeated)
+@z
+
+@x kit-args-file
+      usage: |
+        File of name=value kit arguments, one per line (can be repeated); --kit-arg overrides
+@y
+      usage: |
+        File of name=value kit arguments, one per line (can be repeated); --kit-arg overrides
+@z
+
 % inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x debug
       usage: Enable debug logging
@@ -69,11 +101,11 @@ usage: sbx kit add SANDBOX REFERENCE [flags]
 
 @x
 example: |4-
-      # Add a local kit directory to a sandbox
+      # Add a local mixin directory to a sandbox
       sbx kit add my-sandbox ./mcp-postgres/
 @y
 example: |4-
-      # Add a local kit directory to a sandbox
+      # Add a local mixin directory to a sandbox
       sbx kit add my-sandbox ./mcp-postgres/
 @z
 
@@ -99,6 +131,14 @@ example: |4-
 @y
       # Add a kit from a git repository
       sbx kit add my-sandbox git+https://github.com/org/kits.git#dir=mcp-postgres
+@z
+
+@x
+      # Add a parameterized kit
+      sbx kit add my-sandbox ./mcp-postgres/ --kit-arg host=db.internal
+@y
+      # Add a parameterized kit
+      sbx kit add my-sandbox ./mcp-postgres/ --kit-arg host=db.internal
 @z
 
 % see_also:

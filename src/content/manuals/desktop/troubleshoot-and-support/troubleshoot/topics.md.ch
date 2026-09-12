@@ -439,10 +439,10 @@ To upgrade Docker Desktop:
 
 @x
 - Ask an administrator to install the newer version over the existing one.
-- Use the []`--user` install flag](/manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
+- Use the [`--user` install flag](/manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
 @y
 - Ask an administrator to install the newer version over the existing one.
-- Use the []`--user` install flag](manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
+- Use the [`--user` install flag](manuals/desktop/setup/install/mac-install.md#security-and-access) if appropriate for your setup.
 @z
 
 @x

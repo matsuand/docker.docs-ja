@@ -6,51 +6,51 @@ name: sbx skills import
 synopsis: Import skills from supported agent directories
 experimental: true
 description: |-
-    Copy skills from supported agent directories on the host into the
-    persistent store shared by sandboxes.
+    Import skills already installed for supported coding agents on this
+    machine.
 @y
 name: sbx skills import
 synopsis: Import skills from supported agent directories
 experimental: true
 description: |-
-    Copy skills from supported agent directories on the host into the
-    persistent store shared by sandboxes.
+    Import skills already installed for supported coding agents on this
+    machine.
 @z
 
 @x
-    Sources are scanned in this order (alphabetical; first wins on conflict):
+    The following directories are checked in order:
       ~/.agents/skills
       ~/.claude/skills
+      ~/.config/opencode/skills
       ~/.copilot/skills
       ~/.cursor/skills
       ~/.factory/skills
 @y
-    Sources are scanned in this order (alphabetical; first wins on conflict):
+    The following directories are checked in order:
       ~/.agents/skills
       ~/.claude/skills
+      ~/.config/opencode/skills
       ~/.copilot/skills
       ~/.cursor/skills
       ~/.factory/skills
 @z
 
 @x
-    If two sources contain a skill with the same name, the later source is skipped
-    with a warning — the first source's version is kept.
+    When the same skill appears in more than one directory, the first copy is used
+    and the others are skipped with a warning.
 @y
-    If two sources contain a skill with the same name, the later source is skipped
-    with a warning — the first source's version is kept.
+    When the same skill appears in more than one directory, the first copy is used
+    and the others are skipped with a warning.
 @z
 
 @x
-    Each imported skill folder replaces any store folder of the same name (the
-    existing folder is backed up first, then the new copy is installed) so stale
-    files from a previous version cannot linger. You will be prompted before any
-    existing skill is overwritten; use --force to skip all prompts.
+    Importing a skill that is already installed replaces it completely, including
+    removing files that are no longer present. You will be prompted before a skill
+    is replaced; use --force to skip all prompts.
 @y
-    Each imported skill folder replaces any store folder of the same name (the
-    existing folder is backed up first, then the new copy is installed) so stale
-    files from a previous version cannot linger. You will be prompted before any
-    existing skill is overwritten; use --force to skip all prompts.
+    Importing a skill that is already installed replaces it completely, including
+    removing files that are no longer present. You will be prompted before a skill
+    is replaced; use --force to skip all prompts.
 @z
 
 @x
@@ -62,51 +62,69 @@ description: |-
 @z
 
 @x
-    The store lives under the sandbox state directory and is cleared by
-    'sbx reset'. Supported by Claude, Codex, Copilot, Cursor, and Droid agents.
-usage: sbx skills import [flags]
-options:
-    - name: dry-run
-      default_value: "false"
-      usage: |
-        Preview which skills would be imported without copying anything
-    - name: force
-      shorthand: f
-      default_value: "false"
-      usage: Overwrite existing skills without prompting
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for import
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx skills - (Experimental) Manage skills shared across sandboxes
+    Imported skills are available to Claude, Codex, Copilot, Cursor, Droid, and
+    OpenCode.
 @y
-    The store lives under the sandbox state directory and is cleared by
-    'sbx reset'. Supported by Claude, Codex, Copilot, Cursor, and Droid agents.
+    Imported skills are available to Claude, Codex, Copilot, Cursor, Droid, and
+    OpenCode.
+@z
+
+@x
 usage: sbx skills import [flags]
-options:
-    - name: dry-run
-      default_value: "false"
+@y
+usage: sbx skills import [flags]
+@z
+
+% options:
+
+@x dry-run
       usage: |
         Preview which skills would be imported without copying anything
-    - name: force
-      shorthand: f
-      default_value: "false"
+@y
+      usage: |
+        Preview which skills would be imported without copying anything
+@z
+
+@x force
       usage: Overwrite existing skills without prompting
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Overwrite existing skills without prompting
+@z
+
+@x help
       usage: help for import
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for import
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-see_also:
-    - sbx skills - (Experimental) Manage skills shared across sandboxes
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx skills - (Experimental) Manage skills available in sandboxes
+@y
+    - sbx skills - (Experimental) Manage skills available in sandboxes
 @z

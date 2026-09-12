@@ -5,32 +5,48 @@
 name: sbx daemon log-level set
 synopsis: 'Set a category''s log level (target: proxy, general, or all)'
 usage: sbx daemon log-level set <target> <level> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for set
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
 @y
 name: sbx daemon log-level set
 synopsis: 'Set a category''s log level (target: proxy, general, or all)'
 usage: sbx daemon log-level set <target> <level> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+% options:
+
+@x help
       usage: help for set
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for set
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
+@y
     - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
 @z

@@ -48,34 +48,60 @@ description: |-
 @x
     After initializing, use "sbx policy allow/deny/rm" to change the global policy.
     Use "sbx policy reset" to clear all policies and start over.
-usage: sbx policy init <allow-all|balanced|deny-all> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for init
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Initialize with the balanced policy — recommended
-      sbx policy init balanced
 @y
     After initializing, use "sbx policy allow/deny/rm" to change the global policy.
     Use "sbx policy reset" to clear all policies and start over.
+@z
+
+@x
 usage: sbx policy init <allow-all|balanced|deny-all> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy init <allow-all|balanced|deny-all> [flags]
+@z
+
+% options:
+
+@x help
       usage: help for init
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for init
+@z
+
+@x sandbox
+      usage: Target a single cloud sandbox's policy (cloud only)
+@y
+      usage: Target a single cloud sandbox's policy (cloud only)
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Initialize with the balanced policy — recommended
+      sbx policy init balanced
+@y
 example: |4-
       # Initialize with the balanced policy — recommended
       sbx policy init balanced
@@ -93,12 +119,16 @@ example: |4-
       # Block everything, then allow specific sites
       sbx policy init deny-all
       sbx policy allow network api.example.com:443
-see_also:
-    - sbx policy - Manage sandbox policies
 @y
       # Block everything, then allow specific sites
       sbx policy init deny-all
       sbx policy allow network api.example.com:443
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx policy - Manage sandbox policies
+@y
     - sbx policy - Manage sandbox policies
 @z

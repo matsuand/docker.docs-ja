@@ -5,34 +5,70 @@
 name: sbx mcp inspect
 synopsis: Show MCP server details
 usage: sbx mcp inspect <name> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for inspect
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: '  sbx mcp inspect notion'
-see_also:
-    - sbx mcp - Manage MCP servers
 @y
 name: sbx mcp inspect
 synopsis: Show MCP server details
 usage: sbx mcp inspect <name> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@z
+
+% options:
+
+@x help
       usage: help for inspect
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for inspect
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-example: '  sbx mcp inspect notion'
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      sbx mcp inspect notion
+@y
+example: |4-
+      sbx mcp inspect notion
+@z
+
+@x
+      # Machine-readable output for scripting
+      sbx mcp inspect notion --json
+@y
+      # Machine-readable output for scripting
+      sbx mcp inspect notion --json
+@z
+
+% see_also:
+
+@x
+    - sbx mcp - Manage MCP servers
+@y
     - sbx mcp - Manage MCP servers
 @z

@@ -6,13 +6,17 @@ name: sbx cp
 synopsis: Copy files or directories between a sandbox and the host
 description: |-
     Either SRC or DST must be a sandbox path, written as SANDBOX:PATH.
-    The other must be a local path. Copying between two sandboxes is not supported.
+    The other must be a local path. Copying between two sandboxes is not supported. Or — with --cloud — the cloud sandbox
+    ID (sbx_*) or name from "sbx --cloud ls". Cloud transfers go through the Docker
+    Sandboxes Cloud file API instead of the local sandboxd.
 @y
 name: sbx cp
 synopsis: Copy files or directories between a sandbox and the host
 description: |-
     Either SRC or DST must be a sandbox path, written as SANDBOX:PATH.
-    The other must be a local path. Copying between two sandboxes is not supported.
+    The other must be a local path. Copying between two sandboxes is not supported. Or — with --cloud — the cloud sandbox
+    ID (sbx_*) or name from "sbx --cloud ls". Cloud transfers go through the Docker
+    Sandboxes Cloud file API instead of the local sandboxd.
 @z
 
 @x
@@ -31,7 +35,7 @@ usage: sbx cp [flags] SRC DST
 usage: sbx cp [flags] SRC DST
 @z
 
-%options:
+% options:
 
 @x follow-link
       usage: Follow symbolic links in the source path
@@ -45,7 +49,23 @@ usage: sbx cp [flags] SRC DST
       usage: help for cp
 @z
 
-%inherited_options:
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x debug
       usage: Enable debug logging
@@ -79,7 +99,17 @@ example: |4-
       sbx cp ./src/ my-sandbox:/home/user/src
 @z
 
-%see_also:
+@x
+      # Copy to/from a cloud sandbox
+      sbx --cloud cp ./config.json sbx_abc:/workspace/config.json
+      sbx --cloud cp sbx_abc:/workspace/out.log ./
+@y
+      # Copy to/from a cloud sandbox
+      sbx --cloud cp ./config.json sbx_abc:/workspace/config.json
+      sbx --cloud cp sbx_abc:/workspace/out.log ./
+@z
+
+% see_also:
 
 @x
     - sbx - Manage AI coding agent sandboxes.

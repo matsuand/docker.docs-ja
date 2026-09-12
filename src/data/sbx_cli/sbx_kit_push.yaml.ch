@@ -64,9 +64,13 @@ description: |-
 @z
 
 @x
-    Authentication uses the Docker credential store.
+    Authentication: the Docker Hub session from sbx login and sbx registry
+    secrets (sbx secret set --registry) take priority, falling back to the
+    Docker credential store.
 @y
-    Authentication uses the Docker credential store.
+    Authentication: the Docker Hub session from sbx login and sbx registry
+    secrets (sbx secret set --registry) take priority, falling back to the
+    Docker credential store.
 @z
 
 @x
@@ -124,6 +128,22 @@ usage: sbx kit push DIRECTORY REFERENCE [flags]
 @z
 
 % inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x debug
       usage: Enable debug logging

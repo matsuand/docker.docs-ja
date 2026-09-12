@@ -25,6 +25,12 @@
 @z
 
 @x
+                placeholder="Ask anything about Docker and get instant answers…"
+@y
+                placeholder="Docker について検索してください…"
+@z
+
+@x
               "How do I get started with Docker?"
               "Can I run my AI agent in a sandbox?"
               "How do I containerize an application?"

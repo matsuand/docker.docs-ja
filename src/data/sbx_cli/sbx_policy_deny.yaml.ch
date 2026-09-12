@@ -14,11 +14,11 @@ description: |-
 @z
 
 @x
-    Deny rules always take precedence over allow rules. If a resource matches
-    both an allow and a deny rule, the request is blocked.
+    Deny rules take precedence over allow rules for the same hostname or CIDR. An
+    allowed hostname isn't checked against CIDR rules for its resolved IP address.
 @y
-    Deny rules always take precedence over allow rules. If a resource matches
-    both an allow and a deny rule, the request is blocked.
+    Deny rules take precedence over allow rules for the same hostname or CIDR. An
+    allowed hostname isn't checked against CIDR rules for its resolved IP address.
 @z
 
 @x
@@ -36,6 +36,22 @@ usage: sbx policy deny COMMAND
 @z
 
 % inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
 
 @x
       usage: Enable debug logging

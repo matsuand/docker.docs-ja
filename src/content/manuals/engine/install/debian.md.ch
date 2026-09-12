@@ -85,11 +85,9 @@ Docker Engine をインストールするには、以下に示す Debian バー�
 @x
 - Debian Trixie 13 (stable)
 - Debian Bookworm 12 (oldstable)
-- Debian Bullseye 11 (oldoldstable)
 @y
 - Debian Trixie 13 (stable)
 - Debian Bookworm 12 (oldstable)
-- Debian Bullseye 11 (oldoldstable)
 @z
 
 @x

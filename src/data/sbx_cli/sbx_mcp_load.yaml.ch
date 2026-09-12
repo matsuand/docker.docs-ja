@@ -20,39 +20,61 @@ description: |-
 @x
     The server must already exist in the local MCP store (register first with
     'sbx mcp add'). Both remote/hosted and local-stdio servers are supported.
+@y
+    The server must already exist in the local MCP store (register first with
+    'sbx mcp add'). Both remote/hosted and local-stdio servers are supported.
+@z
+
+@x
 usage: sbx mcp load <name> --sandbox <sandbox> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx mcp load <name> --sandbox <sandbox> [flags]
+@z
+
+% options:
+
+@x help
       usage: help for load
-    - name: sandbox
+@y
+      usage: help for load
+@z
+
+@x sandbox
       usage: Target sandbox name (required)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Target sandbox name (required)
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
 example: |4-
       # Register, then load into the running sandbox 'my-sbx'.
       sbx mcp add notion --url https://mcp.notion.com/mcp
       sbx mcp load notion --sandbox my-sbx
 @y
-    The server must already exist in the local MCP store (register first with
-    'sbx mcp add'). Both remote/hosted and local-stdio servers are supported.
-usage: sbx mcp load <name> --sandbox <sandbox> [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for load
-    - name: sandbox
-      usage: Target sandbox name (required)
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
 example: |4-
       # Register, then load into the running sandbox 'my-sbx'.
       sbx mcp add notion --url https://mcp.notion.com/mcp
@@ -63,12 +85,16 @@ example: |4-
       # Local stdio server.
       sbx mcp add github --command npx --args @modelcontextprotocol/server-github
       sbx mcp load github --sandbox my-sbx
-see_also:
-    - sbx mcp - Manage MCP servers
 @y
       # Local stdio server.
       sbx mcp add github --command npx --args @modelcontextprotocol/server-github
       sbx mcp load github --sandbox my-sbx
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx mcp - Manage MCP servers
+@y
     - sbx mcp - Manage MCP servers
 @z

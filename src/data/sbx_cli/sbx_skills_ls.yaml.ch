@@ -3,40 +3,64 @@
 
 @x
 name: sbx skills ls
-synopsis: List imported skills
+synopsis: List installed skills
 experimental: true
-description: |
-    List the skill folders in the central agent-skills store shared by sandboxes.
-usage: sbx skills ls [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for ls
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
-    - sbx skills - (Experimental) Manage skills shared across sandboxes
+description: List skills available to agents in Docker Sandboxes.
 @y
 name: sbx skills ls
-synopsis: List imported skills
+synopsis: List installed skills
 experimental: true
-description: |
-    List the skill folders in the central agent-skills store shared by sandboxes.
+description: List skills available to agents in Docker Sandboxes.
+@z
+
+@x
 usage: sbx skills ls [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx skills ls [flags]
+@z
+
+% options:
+
+@x help
       usage: help for ls
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for ls
+@z
+
+@x json
+      usage: Output in JSON format
+@y
+      usage: Output in JSON format
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-see_also:
-    - sbx skills - (Experimental) Manage skills shared across sandboxes
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
+    - sbx skills - (Experimental) Manage skills available in sandboxes
+@y
+    - sbx skills - (Experimental) Manage skills available in sandboxes
 @z

@@ -14,13 +14,23 @@ description: |-
 @z
 
 @x
-    The workspace path is required and will be mounted inside the sandbox at the
-    same path as on the host. Additional workspaces can be provided as extra
-    arguments. Append ":ro" to mount them read-only.
+    The workspace path is mounted inside the sandbox at the same path as on the
+    host. Additional workspaces can be provided as extra arguments. Append ":ro" to
+    mount them read-only; a read-only argument may name a single file, which holds
+    that one path out of reach inside a workspace the sandbox can otherwise write.
 @y
-    The workspace path is required and will be mounted inside the sandbox at the
-    same path as on the host. Additional workspaces can be provided as extra
-    arguments. Append ":ro" to mount them read-only.
+    The workspace path is mounted inside the sandbox at the same path as on the
+    host. Additional workspaces can be provided as extra arguments. Append ":ro" to
+    mount them read-only; a read-only argument may name a single file, which holds
+    that one path out of reach inside a workspace the sandbox can otherwise write.
+@z
+
+@x
+    Omit the path to create a sandbox without a workspace bind mount: the agent
+    then works in the container's own filesystem instead of on your files.
+@y
+    Omit the path to create a sandbox without a workspace bind mount: the agent
+    then works in the container's own filesystem instead of on your files.
 @z
 
 @x
@@ -30,12 +40,18 @@ description: |-
 @z
 
 @x
-usage: sbx create cursor PATH [PATH...] [flags]
+    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
 @y
-usage: sbx create cursor PATH [PATH...] [flags]
+    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
 @z
 
-%options:
+@x
+usage: sbx create cursor [PATH...] [flags]
+@y
+usage: sbx create cursor [PATH...] [flags]
+@z
+
+% options:
 
 @x help
       usage: help for cursor
@@ -43,7 +59,15 @@ usage: sbx create cursor PATH [PATH...] [flags]
       usage: help for cursor
 @z
 
-%inherited_options:
+% inherited_options:
+
+@x allow-network
+      usage: |
+        Network pattern to allow for cloud sandbox egress (cloud only; can be specified multiple times)
+@y
+      usage: |
+        Network pattern to allow for cloud sandbox egress (cloud only; can be specified multiple times)
+@z
 
 @x clone
       usage: |
@@ -51,6 +75,22 @@ usage: sbx create cursor PATH [PATH...] [flags]
 @y
       usage: |
         Run the agent on a private in-container clone of the host Git repository (mounted read-only) instead of bind-mounting the workspace; the agent's commits are accessible via the sandbox-<name> git remote on the host
+@z
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x cpus
@@ -91,12 +131,36 @@ usage: sbx create cursor PATH [PATH...] [flags]
         Read environment variables from a file (can be repeated). --env wins over any file; a later file wins over an earlier one
 @z
 
-@x kit
+@x image-ref
       usage: |
-        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+        OCI image reference for inline-mode cloud create (mutually exclusive with --template; requires --cpus and --memory)
 @y
       usage: |
-        Kit reference (directory, ZIP, or OCI). Can be specified multiple times
+        OCI image reference for inline-mode cloud create (mutually exclusive with --template; requires --cpus and --memory)
+@z
+
+@x kit
+      usage: |
+        Additional kit reference (must be a mixin; directory, ZIP, git, or OCI). Can be specified multiple times
+@y
+      usage: |
+        Additional kit reference (must be a mixin; directory, ZIP, git, or OCI). Can be specified multiple times
+@z
+
+@x kit-arg
+      usage: |
+        Value for an argument the kit declares, as name=value for every kit or kit.name=value for one (can be repeated)
+@y
+      usage: |
+        Value for an argument the kit declares, as name=value for every kit or kit.name=value for one (can be repeated)
+@z
+
+@x kit-args-file
+      usage: |
+        File of name=value kit arguments, one per line (can be repeated); --kit-arg overrides
+@y
+      usage: |
+        File of name=value kit arguments, one per line (can be repeated); --kit-arg overrides
 @z
 
 @x memory
@@ -113,6 +177,14 @@ usage: sbx create cursor PATH [PATH...] [flags]
 @y
       usage: |
         Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods; 'default' is reserved)
+@z
+
+@x on-timeout
+      usage: |
+        What happens when --ttl lapses: 'delete' (default) tombstones the sandbox, or 'stop' stops it in place so it can be started again later (cloud only; 'stop' requires your account to be entitled to it).
+@y
+      usage: |
+        What happens when --ttl lapses: 'delete' (default) tombstones the sandbox, or 'stop' stops it in place so it can be started again later (cloud only; 'stop' requires your account to be entitled to it).
 @z
 
 @x publish
@@ -137,6 +209,22 @@ usage: sbx create cursor PATH [PATH...] [flags]
         Container image to use for the sandbox (default: agent-specific image)
 @z
 
+@x ttl
+      usage: |
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+@y
+      usage: |
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+@z
+
+@x volume
+      usage: |
+        Attach an existing persistent volume, NAME:MOUNTPATH (cloud only, experimental; repeatable)
+@y
+      usage: |
+        Attach an existing persistent volume, NAME:MOUNTPATH (cloud only, experimental; repeatable)
+@z
+
 @x
 example: |4-
       # Create in the current directory
@@ -163,7 +251,15 @@ example: |4-
       sbx create cursor . /path/to/docs:ro
 @z
 
-%see_also:
+@x
+      # Create without a workspace bind mount
+      sbx create cursor
+@y
+      # Create without a workspace bind mount
+      sbx create cursor
+@z
+
+% see_also:
 
 @x
     - sbx create - Create a sandbox for an agent

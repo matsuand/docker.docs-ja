@@ -5,17 +5,47 @@
 name: sbx daemon
 synopsis: Manage sandboxd daemon
 usage: sbx daemon COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+name: sbx daemon
+synopsis: Manage sandboxd daemon
+usage: sbx daemon COMMAND
+@z
+
+% options:
+
+@x help
       usage: help for daemon
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: help for daemon
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
-see_also:
+@y
+      usage: Enable debug logging
+@z
+
+% see_also:
+
+@x
     - sbx - Manage AI coding agent sandboxes.
     - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
     - sbx daemon restart - Restart the sandboxd daemon
@@ -23,20 +53,6 @@ see_also:
     - sbx daemon status - Check sandboxd daemon status
     - sbx daemon stop - Stop the sandboxd daemon
 @y
-name: sbx daemon
-synopsis: Manage sandboxd daemon
-usage: sbx daemon COMMAND
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for daemon
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-see_also:
     - sbx - Manage AI coding agent sandboxes.
     - sbx daemon log-level - Inspect or change sandboxd's per-category log levels
     - sbx daemon restart - Restart the sandboxd daemon

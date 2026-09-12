@@ -17,51 +17,73 @@ description: |-
     TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
     literals are evaluated with port 443. HTTP(S) URLs use their default ports;
     other URL schemes must include an explicit port.
-usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for network
-    - name: json
-      default_value: "false"
-      usage: Output in JSON format
-    - name: sandbox
-      usage: Evaluate in a specific sandbox policy context
-    - name: verbose
-      default_value: "false"
-      usage: Show the exact policy request fields
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Check global network policy
-      sbx policy check network api.example.com
 @y
     TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
     literals are evaluated with port 443. HTTP(S) URLs use their default ports;
     other URL schemes must include an explicit port.
+@z
+
+@x
 usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
-options:
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
+@z
+
+% options:
+
+@x help
       usage: help for network
-    - name: json
-      default_value: "false"
+@y
+      usage: help for network
+@z
+
+@x json
       usage: Output in JSON format
-    - name: sandbox
+@y
+      usage: Output in JSON format
+@z
+
+@x sandbox
       usage: Evaluate in a specific sandbox policy context
-    - name: verbose
-      default_value: "false"
+@y
+      usage: Evaluate in a specific sandbox policy context
+@z
+
+@x verbose
       usage: Show the exact policy request fields
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@y
+      usage: Show the exact policy request fields
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Check global network policy
+      sbx policy check network api.example.com
+@y
 example: |4-
       # Check global network policy
       sbx policy check network api.example.com
@@ -78,11 +100,15 @@ example: |4-
 @x
       # Check a pasted URL and output JSON
       sbx policy check network --json https://api.example.com/v1
-see_also:
-    - sbx policy check - Check whether policy allows an access request
 @y
       # Check a pasted URL and output JSON
       sbx policy check network --json https://api.example.com/v1
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx policy check - Check whether policy allows an access request
+@y
     - sbx policy check - Check whether policy allows an access request
 @z

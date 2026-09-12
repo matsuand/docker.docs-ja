@@ -42,98 +42,134 @@ description: |-
 @x
     Custom secrets apply globally by default. Use --sandbox to scope one to a
     specific sandbox.
-usage: sbx secret set-custom [flags]
-options:
-    - name: command
-      usage: Use a command's standard output as the secret value
-    - name: env
-      usage: Set this env var in the sandbox to the placeholder value
-    - name: help
-      shorthand: h
-      default_value: "false"
-      usage: help for set-custom
-    - name: host
-      default_value: '[]'
-      usage: |
-        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable
-    - name: no-verify
-      default_value: "false"
-      usage: Skip checking the --ref or --command source when storing it
-    - name: placeholder
-      usage: |
-        Placeholder value; use {rand} for a random suffix (e.g. sk-{rand})
-    - name: ref
-      usage: |
-        Use a 1Password op:// reference or AWS Secrets Manager ARN as the secret source
-    - name: refresh
-      usage: |
-        Secret refresh policy: on-demand (default) or after a duration
-    - name: sandbox
-      usage: 'Scope the secret to one sandbox (default: all sandboxes)'
-    - name: show-error
-      default_value: "false"
-      usage: |
-        Show resolver standard error if the initial check fails (may contain secrets)
-    - name: token
-      shorthand: t
-      usage: 'Secret value (less secure: visible in shell history)'
-    - name: value
-      usage: 'Secret value (less secure: visible in shell history)'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
-      usage: Enable debug logging
-example: |4-
-      # Create a global custom secret. A unique placeholder is generated automatically.
-      # The sandbox env var API_KEY is set to the placeholder value; outbound requests
-      # to the host have the placeholder replaced with the real secret.
-      sbx secret set-custom --host api.example.com --env API_KEY --value secret123
 @y
     Custom secrets apply globally by default. Use --sandbox to scope one to a
     specific sandbox.
+@z
+
+@x
 usage: sbx secret set-custom [flags]
-options:
-    - name: command
+@y
+usage: sbx secret set-custom [flags]
+@z
+
+% options:
+
+@x command
       usage: Use a command's standard output as the secret value
-    - name: env
+@y
+      usage: Use a command's standard output as the secret value
+@z
+
+@x env
       usage: Set this env var in the sandbox to the placeholder value
-    - name: help
-      shorthand: h
-      default_value: "false"
+@y
+      usage: Set this env var in the sandbox to the placeholder value
+@z
+
+@x help
       usage: help for set-custom
-    - name: host
-      default_value: '[]'
+@y
+      usage: help for set-custom
+@z
+
+@x host
       usage: |
         Host, IP, or wildcard pattern (e.g. *.example.com); repeatable
-    - name: no-verify
-      default_value: "false"
+@y
+      usage: |
+        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable
+@z
+
+@x no-verify
       usage: Skip checking the --ref or --command source when storing it
-    - name: placeholder
+@y
+      usage: Skip checking the --ref or --command source when storing it
+@z
+
+@x placeholder
       usage: |
         Placeholder value; use {rand} for a random suffix (e.g. sk-{rand})
-    - name: ref
+@y
+      usage: |
+        Placeholder value; use {rand} for a random suffix (e.g. sk-{rand})
+@z
+
+@x ref
       usage: |
         Use a 1Password op:// reference or AWS Secrets Manager ARN as the secret source
-    - name: refresh
+@y
+      usage: |
+        Use a 1Password op:// reference or AWS Secrets Manager ARN as the secret source
+@z
+
+@x refresh
       usage: |
         Secret refresh policy: on-demand (default) or after a duration
-    - name: sandbox
+@y
+      usage: |
+        Secret refresh policy: on-demand (default) or after a duration
+@z
+
+@x sandbox
       usage: 'Scope the secret to one sandbox (default: all sandboxes)'
-    - name: show-error
-      default_value: "false"
+@y
+      usage: 'Scope the secret to one sandbox (default: all sandboxes)'
+@z
+
+@x show-error
       usage: |
         Show resolver standard error if the initial check fails (may contain secrets)
-    - name: token
+@y
+      usage: |
+        Show resolver standard error if the initial check fails (may contain secrets)
+@z
+
+@x token
       shorthand: t
       usage: 'Secret value (less secure: visible in shell history)'
-    - name: value
+@y
+      shorthand: t
       usage: 'Secret value (less secure: visible in shell history)'
-inherited_options:
-    - name: debug
-      shorthand: D
-      default_value: "false"
+@z
+
+@x value
+      usage: 'Secret value (less secure: visible in shell history)'
+@y
+      usage: 'Secret value (less secure: visible in shell history)'
+@z
+
+% inherited_options:
+
+@x cloud
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@y
+      usage: |
+        Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
+@z
+
+@x cloud-api-url
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@y
+      usage: |
+        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
+@z
+
+@x debug
       usage: Enable debug logging
+@y
+      usage: Enable debug logging
+@z
+
+@x
+example: |4-
+      # Create a global custom secret. A unique placeholder is generated automatically.
+      # The sandbox env var API_KEY is set to the placeholder value; outbound requests
+      # to the host have the placeholder replaced with the real secret.
+      sbx secret set-custom --host api.example.com --env API_KEY --value secret123
+@y
 example: |4-
       # Create a global custom secret. A unique placeholder is generated automatically.
       # The sandbox env var API_KEY is set to the placeholder value; outbound requests
@@ -168,11 +204,15 @@ example: |4-
 @x
       # Custom placeholder with {rand} suffix; the CLI prints the generated value.
       sbx secret set-custom --host api.example.com --placeholder sk-{rand} --value secret123
-see_also:
-    - sbx secret - Manage stored secrets
 @y
       # Custom placeholder with {rand} suffix; the CLI prints the generated value.
       sbx secret set-custom --host api.example.com --placeholder sk-{rand} --value secret123
-see_also:
+@z
+
+% see_also:
+
+@x
+    - sbx secret - Manage stored secrets
+@y
     - sbx secret - Manage stored secrets
 @z
