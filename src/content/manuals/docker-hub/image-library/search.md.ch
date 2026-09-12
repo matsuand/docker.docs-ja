@@ -62,6 +62,7 @@ specific needs of developers and organizations. These products include:
 @x
 - Images
 - Extensions
+- Sandbox kits
 - Helm charts
 - Compose files
 - AI models
@@ -69,6 +70,7 @@ specific needs of developers and organizations. These products include:
 @y
 - Images
 - Extensions
+- Sandbox kits
 - Helm charts
 - Compose files
 - AI models
@@ -173,6 +175,42 @@ Extensions](/manuals/extensions/_index.md).
 @y
 To learn more about extensions, see [Docker
 Extensions](manuals/extensions/_index.md).
+@z
+
+@x
+#### Sandbox kits
+@y
+#### Sandbox kits
+@z
+
+@x
+Docker Hub hosts kits for [Docker Sandboxes](/manuals/ai/sandboxes/_index.md),
+which run AI coding agents in isolated microVM sandboxes. A kit packages what
+an agent needs to run in a sandbox, such as its image, tools, credentials,
+network rules, and startup commands. Sandbox kits come in two kinds:
+@y
+Docker Hub hosts kits for [Docker Sandboxes](manuals/ai/sandboxes/_index.md),
+which run AI coding agents in isolated microVM sandboxes. A kit packages what
+an agent needs to run in a sandbox, such as its image, tools, credentials,
+network rules, and startup commands. Sandbox kits come in two kinds:
+@z
+
+@x
+- Sandbox: Defines a full agent from scratch, including its image and
+  entrypoint.
+- Mixin: Layers tools, credentials, or configuration onto an existing agent.
+@y
+- Sandbox: Defines a full agent from scratch, including its image and
+  entrypoint.
+- Mixin: Layers tools, credentials, or configuration onto an existing agent.
+@z
+
+@x
+To learn more about building and running kits, see
+[Kits](/manuals/ai/sandboxes/customize/kits.md).
+@y
+To learn more about building and running kits, see
+[Kits](manuals/ai/sandboxes/customize/kits.md).
 @z
 
 @x
@@ -589,4 +627,38 @@ extension has been reviewed by Docker for quality and reliability.
 >
 > The **Reviewed by Docker** filter is only available for extensions. To make
 > the filter available, you must select only the **Extensions** filter in **Products**.
+@z
+
+@x
+### Sandbox Kit type
+@y
+### Sandbox Kit type
+@z
+
+@x
+The **Sandbox Kit type** filter lets you narrow sandbox kit results by kind.
+@y
+The **Sandbox Kit type** filter lets you narrow sandbox kit results by kind.
+@z
+
+@x
+- **Sandbox**: Kits that define a full agent from scratch.
+- **Mixin**: Kits that layer onto an existing agent's sandbox.
+@y
+- **Sandbox**: Kits that define a full agent from scratch.
+- **Mixin**: Kits that layer onto an existing agent's sandbox.
+@z
+
+@x
+> [!NOTE]
+>
+> The **Sandbox Kit type** filter is only available for sandbox kits. To make
+> the filter available, you must select only the **Sandbox kits** filter in
+> **Products**.
+@y
+> [!NOTE]
+>
+> The **Sandbox Kit type** filter is only available for sandbox kits. To make
+> the filter available, you must select only the **Sandbox kits** filter in
+> **Products**.
 @z

@@ -172,19 +172,19 @@ rules have no effect.
 @z
 
 @x
-| Pattern               | Example           | Matches                                            |
-| --------------------- | ----------------- | -------------------------------------------------- |
-| Exact hostname        | `example.com`     | `example.com` only, not subdomains                 |
-| Single-level wildcard | `*.example.com`   | One subdomain level: `api.example.com`             |
-| Multi-level wildcard  | `**.example.com`  | Any depth: `api.example.com`, `v2.api.example.com` |
-| Hostname with port    | `example.com:443` | `example.com` on port 443 only                     |
+| Pattern               | Example           | Matches                                                      |
+| --------------------- | ----------------- | ------------------------------------------------------------- |
+| Exact hostname        | `example.com`     | `example.com` on any port, not subdomains                     |
+| Single-level wildcard | `*.example.com`   | One subdomain level, any port: `api.example.com`              |
+| Multi-level wildcard  | `**.example.com`  | Any depth, any port: `api.example.com`, `v2.api.example.com`  |
+| Hostname with port    | `example.com:443` | `example.com` on port 443 only                                |
 @y
-| Pattern               | Example           | Matches                                            |
-| --------------------- | ----------------- | -------------------------------------------------- |
-| Exact hostname        | `example.com`     | `example.com` only, not subdomains                 |
-| Single-level wildcard | `*.example.com`   | One subdomain level: `api.example.com`             |
-| Multi-level wildcard  | `**.example.com`  | Any depth: `api.example.com`, `v2.api.example.com` |
-| Hostname with port    | `example.com:443` | `example.com` on port 443 only                     |
+| Pattern               | Example           | Matches                                                      |
+| --------------------- | ----------------- | ------------------------------------------------------------- |
+| Exact hostname        | `example.com`     | `example.com` on any port, not subdomains                     |
+| Single-level wildcard | `*.example.com`   | One subdomain level, any port: `api.example.com`              |
+| Multi-level wildcard  | `**.example.com`  | Any depth, any port: `api.example.com`, `v2.api.example.com`  |
+| Hostname with port    | `example.com:443` | `example.com` on port 443 only                                |
 @z
 
 @x

@@ -161,6 +161,18 @@ default branch is accessible by a workflow.
 @z
 
 @x
+Cache writes also depend on the workflow's cache access. Some events receive
+read-only access in the default-branch context. See
+[Cache write restrictions](../../ci/github-actions/cache.md#cache-write-restrictions)
+for affected triggers and how to configure cache imports and exports.
+@y
+Cache writes also depend on the workflow's cache access. Some events receive
+read-only access in the default-branch context. See
+[Cache write restrictions](../../ci/github-actions/cache.md#cache-write-restrictions)
+for affected triggers and how to configure cache imports and exports.
+@z
+
+@x
 ### Using `docker/build-push-action`
 @y
 ### Using `docker/build-push-action`
