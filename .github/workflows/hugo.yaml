@@ -64,6 +64,10 @@ jobs:
           sed -i -e "/baseURL:/s@docs.docker.com@matsuand.github.io/docker.docs-ja@g" \
                  -e "s@repo: https://github.com/docker/docs@repo: https://github.com/matsuand/docker.docs-ja@g" \
             hugo.yaml
+      - name: Generate API docs
+        run: |
+          cd build/src
+          hack/api-docs/run.sh test && hack/api-docs/run.sh generate
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
