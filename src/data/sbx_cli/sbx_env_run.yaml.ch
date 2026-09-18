@@ -26,13 +26,15 @@ description: |-
     path to the environment file itself. Passing more than one PATH deep-merges them
     in order (docker-compose `-f` semantics): later files override earlier ones.
     Values may reference the arguments the file declares with ${{ env.args.NAME }},
-    supplied by --env-arg. Nothing else is expanded, so a "$" is literal text.
+    supplied by --env-arg, plus ${{ env.projectDir }} and ${{ env.fileDir }}.
+    Nothing else is expanded, so a "$" is literal text.
 @y
     Each PATH may be a directory (the file is <PATH>/sbxenv.yaml) or the
     path to the environment file itself. Passing more than one PATH deep-merges them
     in order (docker-compose `-f` semantics): later files override earlier ones.
     Values may reference the arguments the file declares with ${{ env.args.NAME }},
-    supplied by --env-arg. Nothing else is expanded, so a "$" is literal text.
+    supplied by --env-arg, plus ${{ env.projectDir }} and ${{ env.fileDir }}.
+    Nothing else is expanded, so a "$" is literal text.
 @z
 
 @x
@@ -50,17 +52,23 @@ description: |-
 @x
     With no PATH, an existing .sbxenv.yaml in your home directory is merged
     underneath as a base layer for defaults shared across projects; naming any
-    PATH skips the layer. It may not set "name:" or "workspace:", each of which
-    identifies a single project. Changing its "agent:" changes the derived
-    <agent>-<directory-basename> sandbox name, leaving sandboxes created under
-    the previous name for "sbx env rm" to miss.
+    PATH skips the layer. It may not set "name:", which identifies a single
+    project, and its "workspace:" must be rooted at ${{ env.projectDir }} — for
+    the base that is always the directory the invocation runs from, since naming
+    any PATH skips it — so the base mounts each project's own directory rather
+    than one directory under all of them. Changing its "agent:"
+    changes the derived <agent>-<directory-basename> sandbox name, leaving
+    sandboxes created under the previous name for "sbx env rm" to miss.
 @y
     With no PATH, an existing .sbxenv.yaml in your home directory is merged
     underneath as a base layer for defaults shared across projects; naming any
-    PATH skips the layer. It may not set "name:" or "workspace:", each of which
-    identifies a single project. Changing its "agent:" changes the derived
-    <agent>-<directory-basename> sandbox name, leaving sandboxes created under
-    the previous name for "sbx env rm" to miss.
+    PATH skips the layer. It may not set "name:", which identifies a single
+    project, and its "workspace:" must be rooted at ${{ env.projectDir }} — for
+    the base that is always the directory the invocation runs from, since naming
+    any PATH skips it — so the base mounts each project's own directory rather
+    than one directory under all of them. Changing its "agent:"
+    changes the derived <agent>-<directory-basename> sandbox name, leaving
+    sandboxes created under the previous name for "sbx env rm" to miss.
 @z
 
 @x
@@ -135,6 +143,14 @@ usage: sbx env run [PATH...] [flags]
 @y
       usage: |
         File of name=value kit arguments, one per line (can be repeated); --kit-arg overrides
+@z
+
+@x name
+      usage: |
+        Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
+@y
+      usage: |
+        Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
 @z
 
 @x skip-host-commands

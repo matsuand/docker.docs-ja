@@ -365,12 +365,6 @@ Prometheus UI at <http://localhost:9090/targets>.
 @z
 
 @x
-![Docker Scout metrics exporter Prometheus target](../images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
-@y
-![Docker Scout metrics exporter Prometheus target](../images/scout-metrics-prom-target.png "Docker Scout metrics exporter Prometheus target")
-@z
-
-@x
 ### Viewing the metrics in Grafana
 @y
 ### Viewing the metrics in Grafana
@@ -382,18 +376,6 @@ and sign in using the credentials defined in the Docker Compose file (username: 
 @y
 To view the Grafana dashboards, go to <http://localhost:3000/dashboards>,
 and sign in using the credentials defined in the Docker Compose file (username: `admin`, password: `grafana`).
-@z
-
-@x
-![Vulnerability dashboard in Grafana](../images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
-@y
-![Vulnerability dashboard in Grafana](../images/scout-metrics-grafana-vulns.png "Vulnerability dashboard in Grafana")
-@z
-
-@x
-![Policy dashboard in Grafana](../images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
-@y
-![Policy dashboard in Grafana](../images/scout-metrics-grafana-policy.png "Policy dashboard in Grafana")
 @z
 
 @x

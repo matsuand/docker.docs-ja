@@ -210,15 +210,23 @@ If a `--url` hostname resolves to a private, loopback, link-local, or cloud
 metadata address, `sbx` registers the server but warns you about the resolved
 address. Register only URLs you trust. Fetching a manifest from an untrusted
 URL can expose internal services or cloud metadata, and DNS rebinding can
-redirect a hostname after it has been checked. For a trusted internal server,
-pass `--skip-ssrf-check` to suppress the check and warning.
+redirect a hostname after it has been checked. OAuth metadata discovery also
+blocks private and other disallowed addresses, including redirect destinations.
+For a trusted internal server, pass `--skip-ssrf-check` to skip both the MCP
+URL check and the OAuth metadata discovery checks. This permits private OAuth
+metadata endpoints and redirects. Use the flag only when you trust the MCP
+host, OAuth provider, and all metadata redirect destinations.
 @y
 If a `--url` hostname resolves to a private, loopback, link-local, or cloud
 metadata address, `sbx` registers the server but warns you about the resolved
 address. Register only URLs you trust. Fetching a manifest from an untrusted
 URL can expose internal services or cloud metadata, and DNS rebinding can
-redirect a hostname after it has been checked. For a trusted internal server,
-pass `--skip-ssrf-check` to suppress the check and warning.
+redirect a hostname after it has been checked. OAuth metadata discovery also
+blocks private and other disallowed addresses, including redirect destinations.
+For a trusted internal server, pass `--skip-ssrf-check` to skip both the MCP
+URL check and the OAuth metadata discovery checks. This permits private OAuth
+metadata endpoints and redirects. Use the flag only when you trust the MCP
+host, OAuth provider, and all metadata redirect destinations.
 @z
 
 @x
@@ -242,6 +250,166 @@ $ sbx mcp add linear --url https://mcp.linear.app/mcp
 ```console
 $ sbx mcp add notion --url https://mcp.notion.com/mcp
 $ sbx mcp add linear --url https://mcp.linear.app/mcp
+```
+@z
+
+@x
+#### Custom request headers
+@y
+#### Custom request headers
+@z
+
+@x
+Use `--header 'Name: value'` to send custom HTTP headers to a remote MCP
+endpoint, for example to authenticate with an API key. Repeat the flag for
+each header, using each header name once:
+@y
+Use `--header 'Name: value'` to send custom HTTP headers to a remote MCP
+endpoint, for example to authenticate with an API key. Repeat the flag for
+each header, using each header name once:
+@z
+
+@x
+```console
+$ sbx mcp add acme --url https://mcp.acme.com/mcp \
+  --header 'Authorization: Bearer ${api-key}' \
+  --header 'Accept: application/json, text/event-stream'
+$ sbx secret set mcp:acme:api-key
+```
+@y
+```console
+$ sbx mcp add acme --url https://mcp.acme.com/mcp \
+  --header 'Authorization: Bearer ${api-key}' \
+  --header 'Accept: application/json, text/event-stream'
+$ sbx secret set mcp:acme:api-key
+```
+@z
+
+@x
+Replace the example URL with your MCP endpoint. The `sbx secret set` command
+prompts for the API key and stores it in the
+[host credential store](configuration/credentials.md#where-secrets-are-stored).
+The `${api-key}` placeholder stays in the registration. When a sandbox
+connects, the gateway reads the secret and substitutes its value in the header.
+Use single quotes around header values so your shell preserves placeholders.
+Placeholders name stored secrets, not environment variables: `${api-key}`
+reads `mcp:acme:api-key`, regardless of your shell environment.
+@y
+Replace the example URL with your MCP endpoint. The `sbx secret set` command
+prompts for the API key and stores it in the
+[host credential store](configuration/credentials.md#where-secrets-are-stored).
+The `${api-key}` placeholder stays in the registration. When a sandbox
+connects, the gateway reads the secret and substitutes its value in the header.
+Use single quotes around header values so your shell preserves placeholders.
+Placeholders name stored secrets, not environment variables: `${api-key}`
+reads `mcp:acme:api-key`, regardless of your shell environment.
+@z
+
+@x
+Store each placeholder with `sbx secret set mcp:<server>:<placeholder>`.
+Credential headers such as `Authorization` must use a secret placeholder.
+An explicit `Authorization` header takes precedence over an OAuth access token.
+@y
+Store each placeholder with `sbx secret set mcp:<server>:<placeholder>`.
+Credential headers such as `Authorization` must use a secret placeholder.
+An explicit `Authorization` header takes precedence over an OAuth access token.
+@z
+
+@x
+After storing the secret, expose the server to a sandbox:
+@y
+After storing the secret, expose the server to a sandbox:
+@z
+
+@x
+```console
+$ sbx run claude --name acme-demo --static-mcp acme
+```
+@y
+```console
+$ sbx run claude --name acme-demo --static-mcp acme
+```
+@z
+
+@x
+Custom headers require a remote HTTP endpoint and can't be used with
+`--command` or `--local`. They also require the host to connect to the server.
+The hosted gateway rejects these registrations unless you supply
+`--oauth-authorization-server`, which routes the connection through the host.
+@y
+Custom headers require a remote HTTP endpoint and can't be used with
+`--command` or `--local`. They also require the host to connect to the server.
+The hosted gateway rejects these registrations unless you supply
+`--oauth-authorization-server`, which routes the connection through the host.
+@z
+
+@x
+#### Manage header secrets
+@y
+#### Manage header secrets
+@z
+
+@x
+Header secrets use the global scope on the host. Set them with
+`sbx secret set mcp:<server>:<placeholder>` without `--sandbox`.
+Header secrets require a stored value and don't support `--ref` or `--command`
+dynamic sources.
+To check the header templates and whether their secrets are set, run
+`sbx mcp inspect acme`. The command doesn't display resolved secret values.
+@y
+Header secrets use the global scope on the host. Set them with
+`sbx secret set mcp:<server>:<placeholder>` without `--sandbox`.
+Header secrets require a stored value and don't support `--ref` or `--command`
+dynamic sources.
+To check the header templates and whether their secrets are set, run
+`sbx mcp inspect acme`. The command doesn't display resolved secret values.
+@z
+
+@x
+The secret store also contains an automatically managed `:endpoint` record,
+such as `mcp:acme:api-key:endpoint`. This metadata binds the secret to the
+registered server's URLs so the gateway can detect an endpoint change before
+sending the secret. You don't need to set this record yourself. If you change
+the server's endpoint, follow the CLI guidance to set the secret again for
+that endpoint.
+@y
+The secret store also contains an automatically managed `:endpoint` record,
+such as `mcp:acme:api-key:endpoint`. This metadata binds the secret to the
+registered server's URLs so the gateway can detect an endpoint change before
+sending the secret. You don't need to set this record yourself. If you change
+the server's endpoint, follow the CLI guidance to set the secret again for
+that endpoint.
+@z
+
+@x
+To rotate a header secret, run `sbx secret set` with the same name. After
+setting, changing, or removing a header secret, stop and restart the sandbox
+or restart `sandboxd` to apply the change to an existing gateway. An existing
+connection keeps its previous value, and a server skipped because its secret
+was missing isn't retried automatically.
+@y
+To rotate a header secret, run `sbx secret set` with the same name. After
+setting, changing, or removing a header secret, stop and restart the sandbox
+or restart `sandboxd` to apply the change to an existing gateway. An existing
+connection keeps its previous value, and a server skipped because its secret
+was missing isn't retried automatically.
+@z
+
+@x
+Removing a registration with `sbx mcp rm` keeps its header secrets and prints
+commands to remove them. To remove the example secret:
+@y
+Removing a registration with `sbx mcp rm` keeps its header secrets and prints
+commands to remove them. To remove the example secret:
+@z
+
+@x
+```console
+$ sbx secret rm mcp:acme:api-key
+```
+@y
+```console
+$ sbx secret rm mcp:acme:api-key
 ```
 @z
 
@@ -533,28 +701,42 @@ the server. There is no `--client-secret` flag:
 
 @x
 ```console
-$ sbx secret set mcp:slack.client_secret
+$ sbx secret set mcp:slack:client_secret
 $ sbx mcp add slack --url https://slack.example.com/mcp \
   --client-id <CLIENT_ID>
 ```
 @y
 ```console
-$ sbx secret set mcp:slack.client_secret
+$ sbx secret set mcp:slack:client_secret
 $ sbx mcp add slack --url https://slack.example.com/mcp \
   --client-id <CLIENT_ID>
 ```
 @z
 
 @x
-The client secret stays in the encrypted host credential store and isn't
+The client secret stays in the host credential store and isn't
 written to the MCP registration. If the server requires a confidential client
 and no secret is stored, registration succeeds but authorization is skipped.
 Store the secret, then run `sbx mcp auth <server>`.
 @y
-The client secret stays in the encrypted host credential store and isn't
+The client secret stays in the host credential store and isn't
 written to the MCP registration. If the server requires a confidential client
 and no secret is stored, registration succeeds but authorization is skipped.
 Store the secret, then run `sbx mcp auth <server>`.
+@z
+
+@x
+MCP OAuth client secrets use the name `mcp:<server>:client_secret`. The store
+also maintains a `mcp:<server>:client_secret:identity` record that binds the
+secret to the OAuth client. For secrets stored by a version that used
+`mcp:<server>.client_secret`, set the secret again using the colon-separated
+name.
+@y
+MCP OAuth client secrets use the name `mcp:<server>:client_secret`. The store
+also maintains a `mcp:<server>:client_secret:identity` record that binds the
+secret to the OAuth client. For secrets stored by a version that used
+`mcp:<server>.client_secret`, set the secret again using the colon-separated
+name.
 @z
 
 @x
@@ -613,28 +795,34 @@ the following order:
 1. Scopes passed to `sbx mcp auth --scope`
 2. Default scopes recorded by `sbx mcp add --scope`
 3. Scopes that the protected resource says it requires
+4. Whichever of `openid`, `email`, `profile`, and `offline_access` the
+   authorization server advertises
 @y
 1. Scopes passed to `sbx mcp auth --scope`
 2. Default scopes recorded by `sbx mcp add --scope`
 3. Scopes that the protected resource says it requires
+4. Whichever of `openid`, `email`, `profile`, and `offline_access` the
+   authorization server advertises
 @z
 
 @x
 If none of these provide a scope set, `sbx` omits the OAuth `scope` parameter so
-the authorization server applies its default grant. The authorization server's
-full advertised scope set is never requested automatically.
+the authorization server applies its default grant. Other advertised scopes
+aren't included in the fallback.
 @y
 If none of these provide a scope set, `sbx` omits the OAuth `scope` parameter so
-the authorization server applies its default grant. The authorization server's
-full advertised scope set is never requested automatically.
+the authorization server applies its default grant. Other advertised scopes
+aren't included in the fallback.
 @z
 
 @x
-Pass `--no-scope` to suppress both the recorded defaults and the resource's
-required scopes for one authorization:
+Pass `--no-scope` to suppress the recorded defaults, resource-required scopes,
+and advertised scope fallback for one authorization, without changing the
+stored defaults:
 @y
-Pass `--no-scope` to suppress both the recorded defaults and the resource's
-required scopes for one authorization:
+Pass `--no-scope` to suppress the recorded defaults, resource-required scopes,
+and advertised scope fallback for one authorization, without changing the
+stored defaults:
 @z
 
 @x
@@ -648,17 +836,21 @@ $ sbx mcp auth serverx --no-scope
 @z
 
 @x
-You can't combine `--no-scope` with `--scope`. If the authorization server
-advertises supported scopes, each scope you choose must be in that set. The
-authorization server can still refuse an advertised scope for a particular
+You can't combine `--no-scope` with `--scope`. Scopes you choose are checked
+against the authorization server's advertised scopes and the resource's
+required scopes. If either source publishes scopes, a scope present in neither
+produces a warning but is still requested. The authorization server can still
+refuse an advertised scope for a particular
 client. For a local authorization flow, `sbx` lists the requested, advertised,
 and refused scopes and suggests a retry command. If the server identifies the
 refused scopes, the command removes them. Otherwise, it uses `--no-scope`.
 `sbx` never retries automatically.
 @y
-You can't combine `--no-scope` with `--scope`. If the authorization server
-advertises supported scopes, each scope you choose must be in that set. The
-authorization server can still refuse an advertised scope for a particular
+You can't combine `--no-scope` with `--scope`. Scopes you choose are checked
+against the authorization server's advertised scopes and the resource's
+required scopes. If either source publishes scopes, a scope present in neither
+produces a warning but is still requested. The authorization server can still
+refuse an advertised scope for a particular
 client. For a local authorization flow, `sbx` lists the requested, advertised,
 and refused scopes and suggests a retry command. If the server identifies the
 refused scopes, the command removes them. Otherwise, it uses `--no-scope`.

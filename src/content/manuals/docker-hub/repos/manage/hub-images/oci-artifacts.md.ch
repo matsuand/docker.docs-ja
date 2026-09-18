@@ -258,12 +258,6 @@ Steps:
 @z
 
 @x
-   ![List of repository tags](./images/oci-helm.png)
-@y
-   ![List of repository tags](./images/oci-helm.png)
-@z
-
-@x
 6. Select the tag name to go to the page for that tag.
 @y
 6. Select the tag name to go to the page for that tag.
@@ -273,12 +267,6 @@ Steps:
    The page lists a few useful commands for working with Helm charts.
 @y
    The page lists a few useful commands for working with Helm charts.
-@z
-
-@x
-   ![Tag page of a Helm chart artifact](./images/oci-helm-tagview.png)
-@y
-   ![Tag page of a Helm chart artifact](./images/oci-helm-tagview.png)
 @z
 
 @x
@@ -384,12 +372,6 @@ Steps:
 @z
 
 @x
-   ![Repository page showing a volume in the tag list](./images/oci-volume.png)
-@y
-   ![Repository page showing a volume in the tag list](./images/oci-volume.png)
-@z
-
-@x
 ### Push a generic artifact file
 @y
 ### Push a generic artifact file
@@ -473,10 +455,4 @@ Steps:
 @y
 4. Go to the repository page on Docker Hub. The **Tags** section on that page
    shows the artifact tag.
-@z
-
-@x
-   ![Repository page showing an artifact in the tag list](./images/oci-artifact.png)
-@y
-   ![Repository page showing an artifact in the tag list](./images/oci-artifact.png)
 @z

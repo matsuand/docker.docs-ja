@@ -320,10 +320,10 @@ $ docker run -it --rm --userns=host alpine
 @z
 
 @x
-Docker build operations using `--network-host` and Docker buildx entitlements (`network.host`,
+Docker build operations using `--network-host` and Docker Buildx entitlements (`network.host`,
 `security.insecure`) are also blocked.
 @y
-Docker build operations using `--network-host` and Docker buildx entitlements (`network.host`,
+Docker build operations using `--network-host` and Docker Buildx entitlements (`network.host`,
 `security.insecure`) are also blocked.
 @z
 

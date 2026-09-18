@@ -174,12 +174,12 @@ Note that, if the Compose file defines many services, the SDK can only contact t
 @x
 > [!NOTE]
 >
-> In some cases, it is useful to also interact with the Docker engine from the backend.
+> In some cases, it is useful to also interact with Docker Engine from the backend.
 > See [How to use the Docker socket](../guides/use-docker-socket-from-backend.md) from the backend.
 @y
 > [!NOTE]
 >
-> In some cases, it is useful to also interact with the Docker engine from the backend.
+> In some cases, it is useful to also interact with Docker Engine from the backend.
 > See [How to use the Docker socket](../guides/use-docker-socket-from-backend.md) from the backend.
 @z
 

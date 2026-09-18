@@ -576,9 +576,9 @@ When managing the content of your repositories, you can now filter the results b
 @z
 
 @x
-For Docker Hub API documentation, see [Docker Hub API Reference](/reference/api/hub/latest.md#operation/GetNamespacesRepositoriesImages).
+For Docker Hub API documentation, see [Docker Hub API Reference](/reference/api/hub/latest/).
 @y
-For Docker Hub API documentation, see [Docker Hub API Reference](reference/api/hub/latest.md#operation/GetNamespacesRepositoriesImages).
+For Docker Hub API documentation, see [Docker Hub API Reference](__SUBDIR__/reference/api/hub/latest/).
 @z
 
 @x

@@ -114,12 +114,12 @@ This creates workflow steps to:
 @z
 
 @x
-1. Set up Docker buildx.
+1. Set up Docker Buildx.
 2. Authenticate to the registry.
 3. Extract metadata from Git reference and GitHub events.
 4. Build and push the Docker image to the registry.
 @y
-1. Set up Docker buildx.
+1. Set up Docker Buildx.
 2. Authenticate to the registry.
 3. Extract metadata from Git reference and GitHub events.
 4. Build and push the Docker image to the registry.
@@ -195,12 +195,6 @@ default.
 @z
 
 @x
-![A screenshot showing the results of Docker Scout output in a GitHub Action](../../images/gha-output.webp)
-@y
-![A screenshot showing the results of Docker Scout output in a GitHub Action](../../images/gha-output.webp)
-@z
-
-@x
 Expand the **Policies** section to view the difference in policy compliance
 between the two images. Note that while the new image in this example isn't
 fully compliant, the output shows that the standing for the new image has
@@ -210,10 +204,4 @@ Expand the **Policies** section to view the difference in policy compliance
 between the two images. Note that while the new image in this example isn't
 fully compliant, the output shows that the standing for the new image has
 improved compared to the baseline.
-@z
-
-@x
-![GHA policy evaluation output](../../images/gha-policy-eval.webp)
-@y
-![GHA policy evaluation output](../../images/gha-policy-eval.webp)
 @z

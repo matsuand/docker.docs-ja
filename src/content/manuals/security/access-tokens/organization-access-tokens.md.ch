@@ -471,18 +471,18 @@ endpoints instead:
 
 @x
 - `GET /v2/repositories/{namespace}/{repository}` — use
-  [Get repository](/reference/api/hub/latest/#tag/repositories/operation/GetRepository).
+  [Get repository](/reference/api/hub/latest/operations/GetRepository/).
 - `GET /v2/repositories/{namespace}` — use
-  [List repositories](/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+  [List repositories](/reference/api/hub/latest/operations/listNamespaceRepositories/).
 - `GET /v2/users/{username}/repositories` — use
-  [List repositories](/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+  [List repositories](/reference/api/hub/latest/operations/listNamespaceRepositories/).
 @y
 - `GET /v2/repositories/{namespace}/{repository}` — use
-  [Get repository](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/GetRepository).
+  [Get repository](__SUBDIR__/reference/api/hub/latest/operations/GetRepository/).
 - `GET /v2/repositories/{namespace}` — use
-  [List repositories](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+  [List repositories](__SUBDIR__/reference/api/hub/latest/operations/listNamespaceRepositories/).
 - `GET /v2/users/{username}/repositories` — use
-  [List repositories](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+  [List repositories](__SUBDIR__/reference/api/hub/latest/operations/listNamespaceRepositories/).
 @z
 
 @x

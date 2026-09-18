@@ -14,7 +14,8 @@ include $(top_srcdir)/build-aux/main.mk
 
 copydirs = \
 	_vale      \
-	archetypes
+	archetypes \
+	hack
 
 copyfiles = \
 	.dockerignore      \

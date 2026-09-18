@@ -357,13 +357,45 @@ use `shell` (which drops you into a Bash shell with no agent).
 @z
 
 @x
-Template images are cached locally. The first use pulls from the registry;
-subsequent sandboxes reuse the cache. Cached images persist across sandbox
-creation and deletion, and are cleared when you run `sbx reset`.
+When creating a sandbox, `sbx` checks the registry for the template image by
+default and downloads missing or updated layers. If the pull fails and the
+image is cached locally, it can use the cached image. Cached images persist
+across sandbox creation and deletion, and are cleared when you run `sbx reset`.
 @y
-Template images are cached locally. The first use pulls from the registry;
-subsequent sandboxes reuse the cache. Cached images persist across sandbox
-creation and deletion, and are cleared when you run `sbx reset`.
+When creating a sandbox, `sbx` checks the registry for the template image by
+default and downloads missing or updated layers. If the pull fails and the
+image is cached locally, it can use the cached image. Cached images persist
+across sandbox creation and deletion, and are cleared when you run `sbx reset`.
+@z
+
+@x
+### Updating agents
+@y
+### Updating agents
+@z
+
+@x
+Agent templates include an agent version, which can differ from the agent's
+latest release. Updating the `sbx` CLI or pulling an updated template doesn't
+update agents inside existing sandboxes.
+@y
+Agent templates include an agent version, which can differ from the agent's
+latest release. Updating the `sbx` CLI or pulling an updated template doesn't
+update agents inside existing sandboxes.
+@z
+
+@x
+To update an installed agent, run its documented update command inside the
+sandbox, either from a sandbox shell or with `sbx exec`. Restart the agent
+session to use the updated version. The update persists across sandbox stops
+and starts, but is deleted when you remove the sandbox. To reuse the updated
+agent in other sandboxes, [save a template](#saving-a-sandbox-as-a-template).
+@y
+To update an installed agent, run its documented update command inside the
+sandbox, either from a sandbox shell or with `sbx exec`. Restart the agent
+session to use the updated version. The update persists across sandbox stops
+and starts, but is deleted when you remove the sandbox. To reuse the updated
+agent in other sandboxes, [save a template](#saving-a-sandbox-as-a-template).
 @z
 
 @x

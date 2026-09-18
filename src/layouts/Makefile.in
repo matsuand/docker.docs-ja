@@ -301,6 +301,8 @@ bases = \
 	404.html                  \
 	api.html                  \
 	api.markdown.md           \
+	api-docs.html             \
+	api-docs.markdown.md      \
 	api-reference.html        \
 	api-reference.markdown.md \
 	baseof.html               \

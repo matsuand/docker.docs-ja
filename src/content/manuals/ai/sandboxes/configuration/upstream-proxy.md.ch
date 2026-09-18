@@ -53,12 +53,14 @@ independently:
 
 @x
 - Sandbox traffic — network access from inside your sandboxes.
-- Daemon traffic — the `sbx` daemon's own access: image pulls, telemetry,
-  sign-in, and feature flags.
+- Daemon traffic — the `sbx` daemon's own access, including image pulls,
+  telemetry, and feature flags. CLI requests for `sbx login` and
+  `sbx diagnose --upload` also use this scope.
 @y
 - Sandbox traffic — network access from inside your sandboxes.
-- Daemon traffic — the `sbx` daemon's own access: image pulls, telemetry,
-  sign-in, and feature flags.
+- Daemon traffic — the `sbx` daemon's own access, including image pulls,
+  telemetry, and feature flags. CLI requests for `sbx login` and
+  `sbx diagnose --upload` also use this scope.
 @z
 
 @x
@@ -203,10 +205,12 @@ environment variables, so existing setups keep working without migration:
 
 @x
 The daemon reads these variables when it starts, so set them before your first
-`sbx` command, or restart the daemon for a change to take effect.
+`sbx` command, or restart the daemon for a change to affect daemon and sandbox
+traffic. Supported CLI clients read their environment on each invocation.
 @y
 The daemon reads these variables when it starts, so set them before your first
-`sbx` command, or restart the daemon for a change to take effect.
+`sbx` command, or restart the daemon for a change to affect daemon and sandbox
+traffic. Supported CLI clients read their environment on each invocation.
 @z
 
 @x
@@ -268,27 +272,35 @@ over the OS system proxy.
 @z
 
 @x
-The two kinds of traffic are resolved at different times:
+Proxy settings take effect at different times depending on the consumer:
 @y
-The two kinds of traffic are resolved at different times:
+Proxy settings take effect at different times depending on the consumer:
 @z
 
 @x
 - Sandbox scope (`proxy.sandbox`, `no_proxy.sandbox`, and the sandbox side of
-  `proxy` and `no_proxy`) is re-resolved every time a sandbox is created or
-  restarted. A change takes effect on the next sandbox you create or restart;
-  already-running sandboxes keep the proxy they were created with.
+  `proxy` and `no_proxy`) is resolved when a sandbox network proxy is created.
+  Sandboxes you create after a change use the updated settings. Existing
+  sandboxes retain their selected upstream proxy until `sbx daemon restart`
+  rebuilds their network proxies. Restarting a sandbox alone is insufficient.
 - Daemon scope (`proxy.daemon`, `no_proxy.daemon`, and the daemon side of
-  `proxy` and `no_proxy`) is resolved once when the daemon starts. A change
-  requires a daemon restart.
+  `proxy` and `no_proxy`) is resolved once when the daemon starts. Changes to
+  the daemon's own traffic require `sbx daemon restart`.
+- Supported CLI clients read daemon-scoped settings on each invocation,
+  including `sbx login` and `sbx diagnose --upload`. Changes apply on the next
+  invocation without a daemon restart.
 @y
 - Sandbox scope (`proxy.sandbox`, `no_proxy.sandbox`, and the sandbox side of
-  `proxy` and `no_proxy`) is re-resolved every time a sandbox is created or
-  restarted. A change takes effect on the next sandbox you create or restart;
-  already-running sandboxes keep the proxy they were created with.
+  `proxy` and `no_proxy`) is resolved when a sandbox network proxy is created.
+  Sandboxes you create after a change use the updated settings. Existing
+  sandboxes retain their selected upstream proxy until `sbx daemon restart`
+  rebuilds their network proxies. Restarting a sandbox alone is insufficient.
 - Daemon scope (`proxy.daemon`, `no_proxy.daemon`, and the daemon side of
-  `proxy` and `no_proxy`) is resolved once when the daemon starts. A change
-  requires a daemon restart.
+  `proxy` and `no_proxy`) is resolved once when the daemon starts. Changes to
+  the daemon's own traffic require `sbx daemon restart`.
+- Supported CLI clients read daemon-scoped settings on each invocation,
+  including `sbx login` and `sbx diagnose --upload`. Changes apply on the next
+  invocation without a daemon restart.
 @z
 
 @x
@@ -296,13 +308,15 @@ The `DOCKER_SANDBOXES_*` environment variables are a separate case. They control
 sandbox traffic only, as described in
 [Environment variables](#environment-variables), but `sbx` reads them from the
 daemon's environment as the daemon starts, so changing one also requires a
-daemon restart.
+daemon restart. If one of these variables overrides a stored setting, unset
+the variable and restart the daemon for the stored setting to take effect.
 @y
 The `DOCKER_SANDBOXES_*` environment variables are a separate case. They control
 sandbox traffic only, as described in
 [Environment variables](#environment-variables), but `sbx` reads them from the
 daemon's environment as the daemon starts, so changing one also requires a
-daemon restart.
+daemon restart. If one of these variables overrides a stored setting, unset
+the variable and restart the daemon for the stored setting to take effect.
 @z
 
 @x
@@ -372,15 +386,17 @@ $ sbx settings set proxy.integratedAuth true
 @x
 The setting isn't scoped: it applies to both sandbox and daemon traffic. If the
 proxy offers several schemes, the strongest one is used, preferring Negotiate
-over NTLM. A change takes effect on the same schedule as the other proxy
-settings: on the next sandbox you create or restart for sandbox traffic, and
-after `sbx daemon restart` for daemon traffic.
+over NTLM. Changes follow the same
+[schedule as other proxy settings](#when-changes-take-effect): on the next
+invocation for supported CLI clients, when you create a sandbox, and after
+`sbx daemon restart` for daemon traffic and existing sandbox proxies.
 @y
 The setting isn't scoped: it applies to both sandbox and daemon traffic. If the
 proxy offers several schemes, the strongest one is used, preferring Negotiate
-over NTLM. A change takes effect on the same schedule as the other proxy
-settings: on the next sandbox you create or restart for sandbox traffic, and
-after `sbx daemon restart` for daemon traffic.
+over NTLM. Changes follow the same
+[schedule as other proxy settings](#when-changes-take-effect): on the next
+invocation for supported CLI clients, when you create a sandbox, and after
+`sbx daemon restart` for daemon traffic and existing sandbox proxies.
 @z
 
 @x

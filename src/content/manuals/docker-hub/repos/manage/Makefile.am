@@ -1,7 +1,7 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = builds hub-images images trusted-content
+SUBDIRS = builds hub-images trusted-content
 
 bases = \
 	_index.md                 \

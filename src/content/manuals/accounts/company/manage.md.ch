@@ -1,22 +1,20 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
-title: Manage your company
+title: Manage company organizations, owners, and members
 linkTitle: Manage
 @y
-title: Manage your company
+title: Manage company organizations, owners, and members
 linkTitle: Manage
 @z
 
 @x
-description: Learn how to manage your company, including its organizations, owners, and members, using Docker Home.
-keywords: company, manage company, multiple organizations, company owners, company members, Docker Home, add organization, resend invites
+description: Manage your Docker company in Docker Home. Add organizations, invite members, manage owners, resend invitations, export a member CSV, and add subscription seats.
+keywords: company, manage company, Docker Home, company owners, add organization, invite members, resend invitations, export members CSV, company members, manage seats
 @y
-description: Learn how to manage your company, including its organizations, owners, and members, using Docker Home.
-keywords: company, manage company, multiple organizations, company owners, company members, Docker Home, add organization, resend invites
+description: Manage your Docker company in Docker Home. Add organizations, invite members, manage owners, resend invitations, export a member CSV, and add subscription seats.
+keywords: company, manage company, Docker Home, company owners, add organization, invite members, resend invitations, export members CSV, company members, manage seats
 @z
 
 @x
@@ -26,15 +24,15 @@ keywords: company, manage company, multiple organizations, company owners, compa
 @z
 
 @x
-After creating a company, you can manage multiple organizations from Docker
-Home. Company owners can use the company portal to invite users to specific
-organizations, view seat availability across organizations, and add new
-company owners.
+After creating a company, you can manage multiple organizations from
+Docker Home. Company owners can use the company portal to invite members to
+specific organizations, view seat availability across organizations, and
+add new company owners.
 @y
-After creating a company, you can manage multiple organizations from Docker
-Home. Company owners can use the company portal to invite users to specific
-organizations, view seat availability across organizations, and add new
-company owners.
+After creating a company, you can manage multiple organizations from
+Docker Home. Company owners can use the company portal to invite members to
+specific organizations, view seat availability across organizations, and
+add new company owners.
 @z
 
 @x
@@ -44,15 +42,15 @@ company owners.
 @z
 
 @x
-Company owners can add Docker organizations with a Docker Business plan to
-their company, so long as they're also the organization owners for that
-organization. There's no limit to the number of organizations you add to a
-company.
+Company owners can add Docker organizations with a Docker Business plan
+to their company, so long as they're also the organization owners for
+that organization. There's no limit to the number of organizations you
+add to a company.
 @y
-Company owners can add Docker organizations with a Docker Business plan to
-their company, so long as they're also the organization owners for that
-organization. There's no limit to the number of organizations you add to a
-company.
+Company owners can add Docker organizations with a Docker Business plan
+to their company, so long as they're also the organization owners for
+that organization. There's no limit to the number of organizations you
+add to a company.
 @z
 
 @x
@@ -71,22 +69,26 @@ company.
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your company.
 1. Select **Managed organizations**.
-1. Select **Add organization**, then choose an organization from the dropdown.
+1. Select **Add organization**, then select an organization from the
+   drop-down list.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select
    your company.
 1. Select **Managed organizations**.
-1. Select **Add organization**, then choose an organization from the dropdown.
+1. Select **Add organization**, then select an organization from the
+   drop-down list.
 @z
 
 @x
-A nested organization must keep its Docker Business subscription to stay managed
-by the company. If an organization downgrades from Docker Business, you can no
-longer manage it through the company, and its owner must manage it separately.
+A nested organization must keep its Docker Business subscription to stay
+managed by the company. If an organization downgrades from Docker
+Business, you can no longer manage it through the company, and its owner
+must manage it separately.
 @y
-A nested organization must keep its Docker Business subscription to stay managed
-by the company. If an organization downgrades from Docker Business, you can no
-longer manage it through the company, and its owner must manage it separately.
+A nested organization must keep its Docker Business subscription to stay
+managed by the company. If an organization downgrades from Docker
+Business, you can no longer manage it through the company, and its owner
+must manage it separately.
 @z
 
 @x
@@ -113,12 +115,12 @@ seats, see [Company roles](manuals/accounts/company/_index.md#company-roles).
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
-1. Select **Company owners**, then choose **Add owner**.
-1. Specify the user's Docker ID, then finish by selecting **Add company owner**.
+1. Select **Company owners**, then select **Add owner**.
+1. Specify the member's Docker ID, then select **Add company owner**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
-1. Select **Company owners**, then choose **Add owner**.
-1. Specify the user's Docker ID, then finish by selecting **Add company owner**.
+1. Select **Company owners**, then select **Add owner**.
+1. Specify the member's Docker ID, then select **Add company owner**.
 @z
 
 @x
@@ -130,13 +132,13 @@ seats, see [Company roles](manuals/accounts/company/_index.md#company-roles).
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
 1. Select **Company owners**.
-1. Find the company owner you want to remove and select the **Actions** menu,
-   then choose **Remove as company owner**.
+1. Find the company owner you want to remove and select the **Actions**
+   menu, then select **Remove as company owner**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
 1. Select **Company owners**.
-1. Find the company owner you want to remove and select the **Actions** menu,
-   then choose **Remove as company owner**.
+1. Find the company owner you want to remove and select the **Actions**
+   menu, then select **Remove as company owner**.
 @z
 
 @x
@@ -146,23 +148,25 @@ seats, see [Company roles](manuals/accounts/company/_index.md#company-roles).
 @z
 
 @x
-You add a user to your company by inviting them to an organization within the
-company. Company owners can invite members to any organization in the company
-using a Docker ID, email address, or in bulk with a CSV file of email addresses.
+You add a member to your company by inviting them to an organization within
+the company. Company owners can invite members to any organization in the
+company using a Docker ID, email address, or in bulk with a CSV file of
+email addresses.
 @y
-You add a user to your company by inviting them to an organization within the
-company. Company owners can invite members to any organization in the company
-using a Docker ID, email address, or in bulk with a CSV file of email addresses.
+You add a member to your company by inviting them to an organization within
+the company. Company owners can invite members to any organization in the
+company using a Docker ID, email address, or in bulk with a CSV file of
+email addresses.
 @z
 
 @x
-Members and invitations belong to individual organizations, not to the company
-itself. A pending invitation occupies a seat in the organization the user is
-invited to.
+Members and invitations belong to individual organizations, not to the
+company itself. A pending invitation occupies a seat until the invitee
+accepts.
 @y
-Members and invitations belong to individual organizations, not to the company
-itself. A pending invitation occupies a seat in the organization the user is
-invited to.
+Members and invitations belong to individual organizations, not to the
+company itself. A pending invitation occupies a seat until the invitee
+accepts.
 @z
 
 @x
@@ -173,28 +177,64 @@ invited to.
 
 @x
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
-1. Select **Users**, then choose **Invite**.
-1. Choose how you want to invite members:
-   - To invite individual users, select **Emails or usernames**.
-   - To invite groups of users, select **CSV upload**.
-1. Add user(s) to an organization by choosing **Select an organization**.
+1. Select **Users**, then select **Invite**.
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your company.
-1. Select **Users**, then choose **Invite**.
-1. Choose how you want to invite members:
-   - To invite individual users, select **Emails or usernames**.
-   - To invite groups of users, select **CSV upload**.
-1. Add user(s) to an organization by choosing **Select an organization**.
+1. Select **Users**, then select **Invite**.
 @z
 
 @x
-Users receive invitations in their email with instructions to accept the
-invitation. After accepting the invitation, new members appear on the
-**Users** page. The table specifies how many organizations they're members of.
+{{< tabs >}}
+{{< tab name="Email or username" >}}
 @y
-Users receive invitations in their email with instructions to accept the
-invitation. After accepting the invitation, new members appear on the
-**Users** page. The table specifies how many organizations they're members of.
+{{< tabs >}}
+{{< tab name="Email or username" >}}
+@z
+
+@x
+1. Select **Emails or usernames**.
+1. Enter the Docker IDs or email addresses of the invitees.
+1. Select an organization for each invitee.
+@y
+1. Select **Emails or usernames**.
+1. Enter the Docker IDs or email addresses of the invitees.
+1. Select an organization for each invitee.
+@z
+
+@x
+{{< /tab >}}
+{{< tab name="CSV upload" >}}
+@y
+{{< /tab >}}
+{{< tab name="CSV upload" >}}
+@z
+
+@x
+1. Select **CSV upload**.
+1. Upload a CSV file of email addresses.
+1. Select an organization for the invitees.
+@y
+1. Select **CSV upload**.
+1. Upload a CSV file of email addresses.
+1. Select an organization for the invitees.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+Invitees receive an email with instructions to accept. After they accept,
+new members appear on the **Users** page. The table shows how many
+organizations each member belongs to.
+@y
+Invitees receive an email with instructions to accept. After they accept,
+new members appear on the **Users** page. The table shows how many
+organizations each member belongs to.
 @z
 
 @x
@@ -204,47 +244,119 @@ invitation. After accepting the invitation, new members appear on the
 @z
 
 @x
-Company owners can resend invitations from the company-level **Users** page.
-To resend individual invitations:
+Company owners can resend invitations from the company-level **Users**
+page.
 @y
-Company owners can resend invitations from the company-level **Users** page.
-To resend individual invitations:
+Company owners can resend invitations from the company-level **Users**
+page.
+@z
+
+@x
+{{< tabs >}}
+{{< tab name="Individual" >}}
+@y
+{{< tabs >}}
+{{< tab name="Individual" >}}
 @z
 
 @x
 1. Select your company from [Docker Home](https://app.docker.com/).
-1. Select **Users**, then locate the invitee from the users table.
-1. Select the **Actions** menu, then choose **Resend**.
-   - Before resending, confirm you are resending the invitation to the correct
-     invitee.
-   - The resend invitation modal displays the date you originally invited the
-     invitee.
-1. Choose **Invite** to confirm.
+1. Select **Users**, then locate the invitee from the table.
+1. Select the **Actions** menu, then select **Resend**.
+   - Before resending, confirm you selected the correct invitee.
+   - The resend invitation modal displays the date you originally invited
+     the invitee.
+1. Select **Invite** to confirm.
 @y
 1. Select your company from [Docker Home](https://app.docker.com/).
-1. Select **Users**, then locate the invitee from the users table.
-1. Select the **Actions** menu, then choose **Resend**.
-   - Before resending, confirm you are resending the invitation to the correct
-     invitee.
-   - The resend invitation modal displays the date you originally invited the
-     invitee.
-1. Choose **Invite** to confirm.
+1. Select **Users**, then locate the invitee from the table.
+1. Select the **Actions** menu, then select **Resend**.
+   - Before resending, confirm you selected the correct invitee.
+   - The resend invitation modal displays the date you originally invited
+     the invitee.
+1. Select **Invite** to confirm.
 @z
 
 @x
-To bulk resend invitations:
+{{< /tab >}}
+{{< tab name="Bulk" >}}
 @y
-To bulk resend invitations:
+{{< /tab >}}
+{{< tab name="Bulk" >}}
 @z
 
 @x
-1. From the users table, use the multi-select checkboxes next to the invitees
-   you want to invite.
-1. Select **Resend invites**, then choose **Resend** to confirm.
+1. Select your company from [Docker Home](https://app.docker.com/).
+1. Select **Users**.
+1. From the table, use the multi-select checkboxes next to the invitees
+   you want to resend to.
+1. Select **Resend invites**, then select **Resend** to confirm.
 @y
-1. From the users table, use the multi-select checkboxes next to the invitees
-   you want to invite.
-1. Select **Resend invites**, then choose **Resend** to confirm.
+1. Select your company from [Docker Home](https://app.docker.com/).
+1. Select **Users**.
+1. From the table, use the multi-select checkboxes next to the invitees
+   you want to resend to.
+1. Select **Resend invites**, then select **Resend** to confirm.
+@z
+
+@x
+{{< /tab >}}
+{{< /tabs >}}
+@y
+{{< /tab >}}
+{{< /tabs >}}
+@z
+
+@x
+## Export a member list CSV
+@y
+## Export a member list CSV
+@z
+
+@x
+Company owners can export a CSV file of members across organizations in the
+company.
+@y
+Company owners can export a CSV file of members across organizations in the
+company.
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com/) and select your company.
+1. Select **Users**.
+1. Select the **Download** icon. The CSV file downloads in your browser.
+@y
+1. Sign in to [Docker Home](https://app.docker.com/) and select your company.
+1. Select **Users**.
+1. Select the **Download** icon. The CSV file downloads in your browser.
+@z
+
+@x
+   {{< accordion title="CSV fields" >}}
+   - Name: The member's name
+   - Username: The member's Docker ID
+   - Email: The member's email address
+   - Member of Organizations: Organizations the member belongs to within the
+     company
+   - Invited to Organizations: Organizations where the invitee has a
+     pending invitation
+   - Account created: The time and date when the account was created
+@y
+   {{< accordion title="CSV fields" >}}
+   - Name: The member's name
+   - Username: The member's Docker ID
+   - Email: The member's email address
+   - Member of Organizations: Organizations the member belongs to within the
+     company
+   - Invited to Organizations: Organizations where the invitee has a
+     pending invitation
+   - Account created: The time and date when the account was created
+@z
+
+@x
+   {{< /accordion >}}
+@y
+   {{< /accordion >}}
 @z
 
 @x
@@ -254,21 +366,23 @@ To bulk resend invitations:
 @z
 
 @x
-If you have a self-serve subscription that has no pending subscription changes,
-you can add seats using Docker Home. For more information about adding seats,
-see [Manage seats](/manuals/accounts/organization/manage/manage-seats.md#add-seats-to-your-subscription).
+If you have a self-serve subscription that has no pending subscription
+changes, you can add seats using Docker Home. For more information about
+adding seats, see
+[Manage seats](/manuals/accounts/organization/manage/manage-seats.md#add-seats-to-your-subscription).
 @y
-If you have a self-serve subscription that has no pending subscription changes,
-you can add seats using Docker Home. For more information about adding seats,
-see [Manage seats](manuals/accounts/organization/manage/manage-seats.md#add-seats-to-your-subscription).
+If you have a self-serve subscription that has no pending subscription
+changes, you can add seats using Docker Home. For more information about
+adding seats, see
+[Manage seats](manuals/accounts/organization/manage/manage-seats.md#add-seats-to-your-subscription).
 @z
 
 @x
-If you have a sales-assisted subscription, you must contact Docker support or
-sales to add seats.
+If you have a sales-assisted subscription, you must contact Docker support
+or sales to add seats.
 @y
-If you have a sales-assisted subscription, you must contact Docker support or
-sales to add seats.
+If you have a sales-assisted subscription, you must contact Docker support
+or sales to add seats.
 @z
 
 @x
@@ -279,12 +393,30 @@ sales to add seats.
 
 @x
 Teams exist at the organization level, not the company level. After inviting
-members to an organization, you can add them to teams within that organization.
-For more details, see
+members to an organization, you can add them to teams within that
+organization. For more details, see
 [Manage members on a team](/manuals/accounts/organization/manage/members.md#manage-members-on-a-team).
 @y
 Teams exist at the organization level, not the company level. After inviting
-members to an organization, you can add them to teams within that organization.
-For more details, see
+members to an organization, you can add them to teams within that
+organization. For more details, see
 [Manage members on a team](manuals/accounts/organization/manage/members.md#manage-members-on-a-team).
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- [Company overview](/manuals/accounts/company/_index.md)
+- [Manage organization members](/manuals/accounts/organization/manage/members.md)
+- [Manage seats](/manuals/accounts/organization/manage/manage-seats.md)
+- [Roles and permissions](/manuals/security/roles-and-permissions/_index.md)
+@y
+- [Company overview](manuals/accounts/company/_index.md)
+- [Manage organization members](manuals/accounts/organization/manage/members.md)
+- [Manage seats](manuals/accounts/organization/manage/manage-seats.md)
+- [Roles and permissions](manuals/security/roles-and-permissions/_index.md)
 @z

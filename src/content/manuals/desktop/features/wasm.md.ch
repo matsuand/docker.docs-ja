@@ -16,12 +16,6 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
-      text: Beta
-@y
-      text: ベータ
-@z
-
-@x
 {{< summary-bar feature_name="Wasm workloads" >}}
 @y
 {{< summary-bar feature_name="Wasm workloads" >}}
@@ -30,11 +24,11 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @x
 > [!IMPORTANT]
 >
-> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained.
+> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained. 
 @y
 > [!IMPORTANT]
 >
-> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained.
+> Wasm workloads are deprecated and will be removed in a future Docker Desktop release. This feature is no longer actively maintained. 
 @z
 
 @x
@@ -166,7 +160,7 @@ Note the `--runtime` and `--platform` flags used in this command:
 @z
 
 @x
-- `--runtime=io.containerd.wasmedge.v1`: Informs the Docker engine that you want
+- `--runtime=io.containerd.wasmedge.v1`: Informs Docker Engine that you want
   to use the Wasm containerd shim instead of the standard Linux container
   runtime
 - `--platform=wasi/wasm`: Specifies the architecture of the image you want to
@@ -174,7 +168,7 @@ Note the `--runtime` and `--platform` flags used in this command:
   images for the different machine architectures. The Wasm runtime takes care of
   the final step of converting the Wasm binary to machine instructions.
 @y
-- `--runtime=io.containerd.wasmedge.v1`: Informs the Docker engine that you want
+- `--runtime=io.containerd.wasmedge.v1`: Informs Docker Engine that you want
   to use the Wasm containerd shim instead of the standard Linux container
   runtime
 - `--platform=wasi/wasm`: Specifies the architecture of the image you want to

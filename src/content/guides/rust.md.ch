@@ -1473,15 +1473,7 @@ For the sample application, you'll use a variation of the backend from the react
 2. In the cloned repository's directory, create a `Dockerfile`. This application includes a `migrations` directory (in addition to `src`) to initialize the database, so the Dockerfile includes a bind mount for that directory in the build stage.
 @z
 
-@x
-   ```dockerfile {hl_lines="28"}
-   # syntax=docker/dockerfile:1
-@y
-   ```dockerfile {hl_lines="28"}
-   # syntax=docker/dockerfile:1
-@z
-
-@x
+@x within code
    # Comments are provided throughout this file to help you get started.
    # If you need more help, visit the Dockerfile reference guide at
    # https://docs.docker.com/reference/dockerfile/
@@ -1490,29 +1482,11 @@ For the sample application, you'll use a variation of the backend from the react
    # If you need more help, visit the Dockerfile reference guide at
    # https://docs.docker.com/reference/dockerfile/
 @z
-
 @x
-   ################################################################################
    # Create a stage for building the application.
 @y
-   ################################################################################
    # Create a stage for building the application.
 @z
-
-@x
-   ARG RUST_VERSION=1.70.0
-   ARG APP_NAME=react-rust-postgres
-   FROM rust:${RUST_VERSION}-slim-bullseye AS build
-   ARG APP_NAME
-   WORKDIR /app
-@y
-   ARG RUST_VERSION=1.70.0
-   ARG APP_NAME=react-rust-postgres
-   FROM rust:${RUST_VERSION}-slim-bullseye AS build
-   ARG APP_NAME
-   WORKDIR /app
-@z
-
 @x
    # Build the application.
    # Leverage a cache mount to /var/cache/cargo for downloaded dependencies
@@ -1521,17 +1495,6 @@ For the sample application, you'll use a variation of the backend from the react
    # Leverage a bind mount to the src directory to avoid having to copy the
    # source code into the container. Once built, copy the executable to an
    # output directory before the cache mounted /app/target is unmounted.
-   RUN --mount=type=bind,source=src,target=src \
-       --mount=type=bind,source=Cargo.toml,target=Cargo.toml \
-       --mount=type=bind,source=Cargo.lock,target=Cargo.lock \
-       --mount=type=cache,target=/app/target/ \
-       --mount=type=cache,target=/var/cache/cargo \
-       --mount=type=bind,source=migrations,target=migrations \
-       <<EOF
-   set -e
-   CARGO_HOME=/var/cache/cargo cargo build --locked --release
-   cp ./target/release/$APP_NAME /bin/server
-   EOF
 @y
    # Build the application.
    # Leverage a cache mount to /var/cache/cargo for downloaded dependencies
@@ -1540,99 +1503,52 @@ For the sample application, you'll use a variation of the backend from the react
    # Leverage a bind mount to the src directory to avoid having to copy the
    # source code into the container. Once built, copy the executable to an
    # output directory before the cache mounted /app/target is unmounted.
-   RUN --mount=type=bind,source=src,target=src \
-       --mount=type=bind,source=Cargo.toml,target=Cargo.toml \
-       --mount=type=bind,source=Cargo.lock,target=Cargo.lock \
-       --mount=type=cache,target=/app/target/ \
-       --mount=type=cache,target=/var/cache/cargo \
-       --mount=type=bind,source=migrations,target=migrations \
-       <<EOF
-   set -e
-   CARGO_HOME=/var/cache/cargo cargo build --locked --release
-   cp ./target/release/$APP_NAME /bin/server
-   EOF
 @z
-
 @x
-   ################################################################################
    # Create a new stage for running the application that contains the minimal
    # runtime dependencies for the application. This often uses a different base
    # image from the build stage where the necessary files are copied from the build
    # stage.
-   #
-   # The example below uses the debian bullseye image as the foundation for    running the app.
-   # By specifying the "bullseye-slim" tag, it will also use whatever happens to    be the
-   # most recent version of that tag when you build your Dockerfile. If
-   # reproducibility is important, consider using a digest
-   # (e.g.,    debian@sha256:ac707220fbd7b67fc19b112cee8170b41a9e97f703f588b2cdbbcdcecdd8af57).
-   FROM debian:bullseye-slim AS final
 @y
-   ################################################################################
    # Create a new stage for running the application that contains the minimal
    # runtime dependencies for the application. This often uses a different base
    # image from the build stage where the necessary files are copied from the build
    # stage.
-   #
-   # The example below uses the debian bullseye image as the foundation for    running the app.
-   # By specifying the "bullseye-slim" tag, it will also use whatever happens to    be the
+@z
+@x
+   # The example below uses the Debian Bookworm image as the foundation for    running the app.
+   # By specifying the "bookworm-slim" tag, it will also use whatever happens to    be the
    # most recent version of that tag when you build your Dockerfile. If
    # reproducibility is important, consider using a digest
-   # (e.g.,    debian@sha256:ac707220fbd7b67fc19b112cee8170b41a9e97f703f588b2cdbbcdcecdd8af57).
-   FROM debian:bullseye-slim AS final
+   # (e.g.,    debian@sha256:88200866dfff7ea7f5cbcb6ec7c8a701889efe6fe859fe64d6990e4b07ea4171).
+@y
+   # The example below uses the Debian Bookworm image as the foundation for    running the app.
+   # By specifying the "bookworm-slim" tag, it will also use whatever happens to    be the
+   # most recent version of that tag when you build your Dockerfile. If
+   # reproducibility is important, consider using a digest
+   # (e.g.,    debian@sha256:88200866dfff7ea7f5cbcb6ec7c8a701889efe6fe859fe64d6990e4b07ea4171).
 @z
-
 @x
    # Create a non-privileged user that the app will run under.
    # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/   #user
-   ARG UID=10001
-   RUN adduser \
-       --disabled-password \
-       --gecos "" \
-       --home "/nonexistent" \
-       --shell "/sbin/nologin" \
-       --no-create-home \
-       --uid "${UID}" \
-       appuser
-   USER appuser
 @y
    # Create a non-privileged user that the app will run under.
    # See https://docs.docker.com/develop/develop-images/dockerfile_best-practices/   #user
-   ARG UID=10001
-   RUN adduser \
-       --disabled-password \
-       --gecos "" \
-       --home "/nonexistent" \
-       --shell "/sbin/nologin" \
-       --no-create-home \
-       --uid "${UID}" \
-       appuser
-   USER appuser
 @z
-
 @x
    # Copy the executable from the "build" stage.
-   COPY --from=build /bin/server /bin/
 @y
    # Copy the executable from the "build" stage.
-   COPY --from=build /bin/server /bin/
 @z
-
 @x
    # Expose the port that the application listens on.
-   EXPOSE 8000
 @y
    # Expose the port that the application listens on.
-   EXPOSE 8000
 @z
-
 @x
    # What the container should run when it is started.
-   CMD ["/bin/server"]
-   ```
 @y
    # What the container should run when it is started.
-   CMD ["/bin/server"]
-   ```
 @z
 
 @x

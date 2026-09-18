@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 description: Deprecated Docker Hub API endpoints
 keywords: deprecated
@@ -62,6 +64,12 @@ The endpoint may be removed, disabled, or change behavior in a future release.
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 | Status     | Feature                                                                                              | Date       |
 |------------|------------------------------------------------------------------------------------------------------|------------|
 | Deprecated | [Deprecate undocumented create/get repository](#deprecate-legacy-createrepository-and-getrepository) | 2025-09-19 |
@@ -78,6 +86,12 @@ The endpoint may be removed, disabled, or change behavior in a future release.
 @z
 
 @x
+---
+@y
+---
+@z
+
+@x
 ### Deprecate legacy CreateRepository and GetRepository
 @y
 ### Deprecate legacy CreateRepository and GetRepository
@@ -85,14 +99,20 @@ The endpoint may be removed, disabled, or change behavior in a future release.
 
 @x
 Deprecate undocumented endpoints :
-- `POST /v2/repositories` and `POST /v2/repositories/{namespace}` replaced by [Create repository](/reference/api/hub/latest/#tag/repositories/operation/CreateRepository).
-- `GET /v2/repositories/{namespace}/{repository}` replaced by [Get repository](/reference/api/hub/latest/#tag/repositories/operation/GetRepository).
-- `HEAD /v2/repositories/{namespace}/{repository}` replaced by [Check repository](/reference/api/hub/latest/#tag/repositories/operation/CheckRepository).
+- `POST /v2/repositories` and `POST /v2/repositories/{namespace}` replaced by [Create repository](/reference/api/hub/latest/operations/CreateRepository/).
+- `GET /v2/repositories/{namespace}/{repository}` replaced by [Get repository](/reference/api/hub/latest/operations/GetRepository/).
+- `HEAD /v2/repositories/{namespace}/{repository}` replaced by [Check repository](/reference/api/hub/latest/operations/CheckRepository/).
 @y
 Deprecate undocumented endpoints :
-- `POST /v2/repositories` and `POST /v2/repositories/{namespace}` replaced by [Create repository](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/CreateRepository).
-- `GET /v2/repositories/{namespace}/{repository}` replaced by [Get repository](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/GetRepository).
-- `HEAD /v2/repositories/{namespace}/{repository}` replaced by [Check repository](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/CheckRepository).
+- `POST /v2/repositories` and `POST /v2/repositories/{namespace}` replaced by [Create repository](__SUBDIR__/reference/api/hub/latest/operations/CreateRepository/).
+- `GET /v2/repositories/{namespace}/{repository}` replaced by [Get repository](__SUBDIR__/reference/api/hub/latest/operations/GetRepository/).
+- `HEAD /v2/repositories/{namespace}/{repository}` replaced by [Check repository](__SUBDIR__/reference/api/hub/latest/operations/CheckRepository/).
+@z
+
+@x
+---
+@y
+---
 @z
 
 @x
@@ -102,9 +122,9 @@ Deprecate undocumented endpoints :
 @z
 
 @x
-Deprecate undocumented endpoint `GET /v2/repositories/{namespace}` replaced by [List repositories](/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+Deprecate undocumented endpoint `GET /v2/repositories/{namespace}` replaced by [List repositories](/reference/api/hub/latest/operations/listNamespaceRepositories/).
 @y
-Deprecate undocumented endpoint `GET /v2/repositories/{namespace}` replaced by [List repositories](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/listNamespaceRepositories).
+Deprecate undocumented endpoint `GET /v2/repositories/{namespace}` replaced by [List repositories](__SUBDIR__/reference/api/hub/latest/operations/listNamespaceRepositories/).
 @z
 
 @x
@@ -170,17 +190,17 @@ If you want to continue using the Docker Hub API in your current applications, u
 @x
 | **OLD**                                                                                                                                                              | **NEW**                                                                                                                                   |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [/v1/repositories/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                                     | [/v2/namespaces/{namespace}/repositories/{repository}/tags](/reference/api/hub/latest/#tag/repositories/operation/ListRepositoryTags)     |
-| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                         | [/v2/namespaces/{namespace}/repositories/{repository}/tags](/reference/api/hub/latest.md/#tag/repositories/operation/ListRepositoryTags)  |
-| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag)            | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](/reference/api/hub/latest/#tag/repositories/operation/GetRepositoryTag) |
-| [/v1/repositories/{namespace}/{name}/tags/{tag_name}](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag) | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](/reference/api/hub/latest/#tag/repositories/operation/GetRepositoryTag) |
+| [/v1/repositories/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                                     | [/v2/namespaces/{namespace}/repositories/{repository}/tags](/reference/api/hub/latest/operations/ListRepositoryTags/)     |
+| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                         | [/v2/namespaces/{namespace}/repositories/{repository}/tags](/reference/api/hub/latest/operations/ListRepositoryTags/)  |
+| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag)            | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](/reference/api/hub/latest/operations/GetRepositoryTag/) |
+| [/v1/repositories/{namespace}/{name}/tags/{tag_name}](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag) | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](/reference/api/hub/latest/operations/GetRepositoryTag/) |
 @y
 | **OLD**                                                                                                                                                              | **NEW**                                                                                                                                   |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [/v1/repositories/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                                     | [/v2/namespaces/{namespace}/repositories/{repository}/tags](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/ListRepositoryTags)     |
-| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                         | [/v2/namespaces/{namespace}/repositories/{repository}/tags](reference/api/hub/latest.md/#tag/repositories/operation/ListRepositoryTags)  |
-| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag)            | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/GetRepositoryTag) |
-| [/v1/repositories/{namespace}/{name}/tags/{tag_name}](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag) | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](__SUBDIR__/reference/api/hub/latest/#tag/repositories/operation/GetRepositoryTag) |
+| [/v1/repositories/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                                     | [/v2/namespaces/{namespace}/repositories/{repository}/tags](__SUBDIR__/reference/api/hub/latest/operations/ListRepositoryTags/)     |
+| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#list-repository-tags)                         | [/v2/namespaces/{namespace}/repositories/{repository}/tags](__SUBDIR__/reference/api/hub/latest/operations/ListRepositoryTags/)  |
+| [/v1/repositories/{namespace}/{name}/tags](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag)            | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](__SUBDIR__/reference/api/hub/latest/operations/GetRepositoryTag/) |
+| [/v1/repositories/{namespace}/{name}/tags/{tag_name}](https://github.com/moby/moby/blob/v1.8.3/docs/reference/api/registry_api.md#get-image-id-for-a-particular-tag) | [/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}](__SUBDIR__/reference/api/hub/latest/operations/GetRepositoryTag/) |
 @z
 
 @x

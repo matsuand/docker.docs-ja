@@ -788,12 +788,6 @@ with four out-of-the-box policies, enabled by default for all organizations.
 @z
 
 @x
-![Policy overview in Dashboard](../images/release-notes/policy-ea.webp)
-@y
-![Policy overview in Dashboard](../images/release-notes/policy-ea.webp)
-@z
-
-@x
 - **Base images not up-to-date** evaluates whether the base images are out of
   date, and require updating. Up-to-date base images help you ensure that your
   environments are reliable and secure.

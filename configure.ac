@@ -177,6 +177,7 @@ AC_CONFIG_FILES([
 	src/_vendor/github.com/moby/moby/api/Makefile
 	src/_vendor/github.com/moby/moby/api/docs//Makefile
 	src/assets/Makefile
+	src/assets/api-reference/Makefile
 	src/assets/css/Makefile
 	src/assets/icons/Makefile
 	src/assets/images/Makefile
@@ -299,7 +300,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/repos/manage/hub-images/images/Makefile
 	src/content/manuals/docker-hub/repos/manage/trusted-content/Makefile
 	src/content/manuals/docker-hub/repos/manage/trusted-content/images/Makefile
-	src/content/manuals/docker-hub/repos/manage/images/Makefile
 	src/content/manuals/docker-hub/usage/Makefile
 	src/content/manuals/enterprise/Makefile
 	src/content/manuals/enterprise/enterprise-deployment/Makefile
@@ -356,7 +356,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/scout/explore/Makefile
 	src/content/manuals/scout/how-tos/Makefile
 	src/content/manuals/scout/images/Makefile
-	src/content/manuals/scout/images/release-notes/Makefile
 	src/content/manuals/scout/integrations/Makefile
 	src/content/manuals/scout/integrations/ci/Makefile
 	src/content/manuals/scout/integrations/environment/Makefile
@@ -415,6 +414,7 @@ AC_CONFIG_FILES([
 	src/layouts/_partials/admonitions/Makefile
 	src/layouts/_partials/admonitions/icons/Makefile
 	src/layouts/_partials/api-ref/Makefile
+	src/layouts/_partials/api-reference/Makefile
 	src/layouts/_partials/components/Makefile
 	src/layouts/_partials/sidebar/Makefile
 	src/layouts/_partials/utils/Makefile

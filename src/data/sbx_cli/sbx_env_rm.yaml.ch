@@ -50,17 +50,23 @@ description: |-
 @x
     With no PATH, an existing .sbxenv.yaml in your home directory is merged
     underneath as a base layer for defaults shared across projects; naming any
-    PATH skips the layer. It may not set "name:" or "workspace:", each of which
-    identifies a single project. Changing its "agent:" changes the derived
-    <agent>-<directory-basename> sandbox name, leaving sandboxes created under
-    the previous name for "sbx env rm" to miss.
+    PATH skips the layer. It may not set "name:", which identifies a single
+    project, and its "workspace:" must be rooted at ${{ env.projectDir }} — for
+    the base that is always the directory the invocation runs from, since naming
+    any PATH skips it — so the base mounts each project's own directory rather
+    than one directory under all of them. Changing its "agent:"
+    changes the derived <agent>-<directory-basename> sandbox name, leaving
+    sandboxes created under the previous name for "sbx env rm" to miss.
 @y
     With no PATH, an existing .sbxenv.yaml in your home directory is merged
     underneath as a base layer for defaults shared across projects; naming any
-    PATH skips the layer. It may not set "name:" or "workspace:", each of which
-    identifies a single project. Changing its "agent:" changes the derived
-    <agent>-<directory-basename> sandbox name, leaving sandboxes created under
-    the previous name for "sbx env rm" to miss.
+    PATH skips the layer. It may not set "name:", which identifies a single
+    project, and its "workspace:" must be rooted at ${{ env.projectDir }} — for
+    the base that is always the directory the invocation runs from, since naming
+    any PATH skips it — so the base mounts each project's own directory rather
+    than one directory under all of them. Changing its "agent:"
+    changes the derived <agent>-<directory-basename> sandbox name, leaving
+    sandboxes created under the previous name for "sbx env rm" to miss.
 @z
 
 @x
@@ -107,6 +113,14 @@ usage: sbx env rm [PATH...] [flags]
       usage: help for rm
 @y
       usage: help for rm
+@z
+
+@x name
+      usage: |
+        Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
+@y
+      usage: |
+        Name for the sandbox, overriding 'name:' in sbxenv.yaml and the derived <agent>-<directory> (every 'sbx env' command addressing this environment needs the same value)
 @z
 
 @x prune-bindings

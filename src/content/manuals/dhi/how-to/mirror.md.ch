@@ -555,15 +555,187 @@ Other common webhook use cases include:
 @z
 
 @x
-#### Example webhook payload
+When a webhook fires, Docker Hub sends the standard [webhook
+payload](/docker-hub/repos/manage/webhooks/#example-webhook-payload). For a
+mirrored DHI repository, the payload also includes an additional
+`dhi_metadata` object. This object describes what changed between the newly
+pushed build and the previous build of the same tag, including vulnerability
+fixes, package changes, and configuration changes.
 @y
-#### Example webhook payload
+When a webhook fires, Docker Hub sends the standard [webhook
+payload](/docker-hub/repos/manage/webhooks/#example-webhook-payload). For a
+mirrored DHI repository, the payload also includes an additional
+`dhi_metadata` object. This object describes what changed between the newly
+pushed build and the previous build of the same tag, including vulnerability
+fixes, package changes, and configuration changes.
 @z
 
 @x
-When a webhook is triggered, Docker Hub sends a JSON payload like the following:
+> [!NOTE]
+>
+> Docker Hub adds `dhi_metadata` only to pushes on mirrored DHI repositories.
+> Webhooks on other repositories deliver the standard payload.
 @y
-When a webhook is triggered, Docker Hub sends a JSON payload like the following:
+> [!NOTE]
+>
+> Docker Hub adds `dhi_metadata` only to pushes on mirrored DHI repositories.
+> Webhooks on other repositories deliver the standard payload.
+@z
+
+@x
+Each DHI build produces a signed changelog attestation. At webhook delivery
+time, Docker Hub retrieves the changelog for the pushed image and embeds it in
+the payload as `dhi_metadata`.
+@y
+Each DHI build produces a signed changelog attestation. At webhook delivery
+time, Docker Hub retrieves the changelog for the pushed image and embeds it in
+the payload as `dhi_metadata`.
+@z
+
+@x
+DHI changelogs are generated per architecture, so `dhi_metadata` is a map
+keyed by the architecture-specific manifest digest. A multi-platform image
+push contains an entry for each platform that has a changelog. Match the
+digest key against the platform you care about instead of assuming a single
+entry.
+@y
+DHI changelogs are generated per architecture, so `dhi_metadata` is a map
+keyed by the architecture-specific manifest digest. A multi-platform image
+push contains an entry for each platform that has a changelog. Match the
+digest key against the platform you care about instead of assuming a single
+entry.
+@z
+
+@x
+#### `dhi_metadata` fields
+@y
+#### `dhi_metadata` fields
+@z
+
+@x
+Each platform entry contains the following fields.
+@y
+Each platform entry contains the following fields.
+@z
+
+@x
+| Field | Type | Description |
+| :---- | :---- | :---- |
+| `schema_version` | integer | Version of the `dhi_metadata` schema. |
+| `change_categories` | array of strings | High-level summary of what changed in this build. See [Change categories](#change-categories). |
+| `previous_version` | object | The prior build this one is compared against. Contains `tag` and `digest`. |
+| `changes` | object | Detailed diff versus the previous version. See the following table. |
+@y
+| Field | Type | Description |
+| :---- | :---- | :---- |
+| `schema_version` | integer | Version of the `dhi_metadata` schema. |
+| `change_categories` | array of strings | High-level summary of what changed in this build. See [Change categories](#change-categories). |
+| `previous_version` | object | The prior build this one is compared against. Contains `tag` and `digest`. |
+| `changes` | object | Detailed diff versus the previous version. See the following table. |
+@z
+
+@x
+The `changes` object contains:
+@y
+The `changes` object contains:
+@z
+
+@x
+| Field | Type | Description |
+| :---- | :---- | :---- |
+| `vulnerabilities_fixed` | array | CVEs resolved in this build. Each entry has `cve_id`, `severity`, `package`, and `fixed_in_version`. |
+| `packages_updated` | array | Packages whose version changed. Each entry has `name`, `type`, `old_version`, and `new_version`. |
+| `packages_added` | array | Packages added in this build. Each entry has `name`, `type`, and `version`. |
+| `packages_removed` | array | Packages removed in this build. Each entry has `name`, `type`, and `version`. |
+| `environment_variables_changed` | array | Changes to environment variables. Each entry has `change`, `key`, and `from_value` or `to_value` as applicable. |
+| `labels_changed` | array | Changes to image labels, in the same shape as environment variable changes. |
+| `configuration_changed` | array | Changes to other image configuration. For example, the entrypoint. |
+@y
+| Field | Type | Description |
+| :---- | :---- | :---- |
+| `vulnerabilities_fixed` | array | CVEs resolved in this build. Each entry has `cve_id`, `severity`, `package`, and `fixed_in_version`. |
+| `packages_updated` | array | Packages whose version changed. Each entry has `name`, `type`, `old_version`, and `new_version`. |
+| `packages_added` | array | Packages added in this build. Each entry has `name`, `type`, and `version`. |
+| `packages_removed` | array | Packages removed in this build. Each entry has `name`, `type`, and `version`. |
+| `environment_variables_changed` | array | Changes to environment variables. Each entry has `change`, `key`, and `from_value` or `to_value` as applicable. |
+| `labels_changed` | array | Changes to image labels, in the same shape as environment variable changes. |
+| `configuration_changed` | array | Changes to other image configuration. For example, the entrypoint. |
+@z
+
+@x
+When a change type has no entries, its array is present but empty, shown as `[]`.
+@y
+When a change type has no entries, its array is present but empty, shown as `[]`.
+@z
+
+@x
+#### Change categories
+@y
+#### Change categories
+@z
+
+@x
+`change_categories` gives a quick, machine-readable summary of the build.
+@y
+`change_categories` gives a quick, machine-readable summary of the build.
+@z
+
+@x
+| Value | Meaning |
+| :---- | :---- |
+| `vulnerability_fix` | The build resolves one or more CVEs. See `changes.vulnerabilities_fixed`. |
+| `version_upgrade` | One or more packages changed version. See `changes.packages_updated`. |
+| `other` | The build has package, environment variable, label, or configuration changes that don't fall into either category above. |
+@y
+| Value | Meaning |
+| :---- | :---- |
+| `vulnerability_fix` | The build resolves one or more CVEs. See `changes.vulnerabilities_fixed`. |
+| `version_upgrade` | One or more packages changed version. See `changes.packages_updated`. |
+| `other` | The build has package, environment variable, label, or configuration changes that don't fall into either category above. |
+@z
+
+@x
+A build can have more than one category. For example, a build that fixes a CVE
+and also bumps a package version returns both `vulnerability_fix` and
+`version_upgrade`. A build with no changes at all returns an empty array.
+@y
+A build can have more than one category. For example, a build that fixes a CVE
+and also bumps a package version returns both `vulnerability_fix` and
+`version_upgrade`. A build with no changes at all returns an empty array.
+@z
+
+@x
+#### Example: vulnerability fix and version upgrade
+@y
+#### Example: vulnerability fix and version upgrade
+@z
+
+@x
+The following excerpt shows the `dhi_metadata` object from a webhook payload
+for a push to a mirrored DHI repository. The example is trimmed to a single
+platform and a subset of changes for readability. A real payload contains one
+`dhi_metadata` entry per architecture.
+@y
+The following excerpt shows the `dhi_metadata` object from a webhook payload
+for a push to a mirrored DHI repository. The example is trimmed to a single
+platform and a subset of changes for readability. A real payload contains one
+`dhi_metadata` entry per architecture.
+@z
+
+% snip code...
+
+@x
+#### Example: version bump with no CVEs
+@y
+#### Example: version bump with no CVEs
+@z
+
+@x
+When a build only bumps package versions, `change_categories` contains
+`version_upgrade` and `vulnerabilities_fixed` is empty.
+@y
+When a build only bumps package versions, `change_categories` contains
+`version_upgrade` and `vulnerabilities_fixed` is empty.
 @z
 
 % snip code...

@@ -48,12 +48,6 @@ display for the build.
 @z
 
 @x
-![List of builds showing the cancel icon](images/build-cancelicon.png)
-@y
-![List of builds showing the cancel icon](images/build-cancelicon.png)
-@z
-
-@x
 ## Check your active builds
 @y
 ## Check your active builds
@@ -74,12 +68,6 @@ repository.
 @z
 
 @x
-![Active builds](images/index-active.png)
-@y
-![Active builds](images/index-active.png)
-@z
-
-@x
 From either location, you can select a build job to view its build report. The
 build report shows information about the build job. This includes the source
 repository and branch, or tag, the build logs, the build duration, creation time and location, and the user account the build occurred in.
@@ -97,12 +85,6 @@ repository and branch, or tag, the build logs, the build duration, creation time
 > [!NOTE]
 >
 > You can now view the progress of your builds every 30 seconds when you refresh the **Builds** page. With the in-progress build logs, you can debug your builds before they're finished.
-@z
-
-@x
-![Build report](./images/index-report.png)
-@y
-![Build report](./images/index-report.png)
 @z
 
 @x

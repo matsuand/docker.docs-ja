@@ -1,7 +1,8 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = admonitions api-ref components sidebar utils
+
+SUBDIRS = admonitions api-ref api-reference components sidebar utils
 
 bases = \
 	footer.html       \

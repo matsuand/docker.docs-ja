@@ -242,7 +242,6 @@ bases = \
 	changelog.md  \
 	deprecated.md \
 	dvp.yaml      \
-	latest.md     \
 	latest.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

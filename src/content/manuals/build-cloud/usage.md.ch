@@ -94,12 +94,6 @@ $ docker buildx use cloud-<ORG>-<BUILDER_NAME> --global
 @z
 
 @x
-   ![Selecting the cloud builder as default using the Docker Desktop GUI](/build/images/set-default-builder-gui.webp)
-@y
-   ![Selecting the cloud builder as default using the Docker Desktop GUI](build/images/set-default-builder-gui.webp)
-@z
-
-@x
 {{< /tab >}}
 {{< /tabs >}}
 @y

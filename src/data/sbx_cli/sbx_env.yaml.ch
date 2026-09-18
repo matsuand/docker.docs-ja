@@ -78,25 +78,29 @@ description: |-
 @z
 
 @x
-    A `workspace:` names the directory mounted read/write into the sandbox,
-    resolved against the project directory: the one holding the first PATH, or the
-    current directory when none is named. `workspace: .` mounts the project from
-    whichever file declares it. Declaring none mounts nothing — as omitting PATH
-    does for `sbx create` — and the agent works in the container's own filesystem
-    instead of on your files. Unless the file sets `name:`, the sandbox is named
-    after the mounted directory, or after the project directory when nothing is
-    mounted, so an environment that mounts nothing is still the same sandbox every
-    time.
+    A `workspace:` names the directory mounted read/write into the sandbox. A
+    relative path resolves against the directory of the file that declares it — as
+    a relative kit source does — so `workspace: .` mounts the directory the file
+    sits in. ${{ env.projectDir }} names the project directory (the one holding the
+    first PATH, or the current directory when none is named) and ${{ env.fileDir }}
+    the declaring file's own, for a value that spells its anchor out. Declaring
+    none mounts nothing — as omitting PATH does for `sbx create` — and the agent
+    works in the container's own filesystem instead of on your files. Unless the file sets `name:` or --name overrides it,
+    the sandbox is named after the mounted directory, or after the project directory
+    when nothing is mounted, so an environment that mounts nothing is still the same
+    sandbox every time.
 @y
-    A `workspace:` names the directory mounted read/write into the sandbox,
-    resolved against the project directory: the one holding the first PATH, or the
-    current directory when none is named. `workspace: .` mounts the project from
-    whichever file declares it. Declaring none mounts nothing — as omitting PATH
-    does for `sbx create` — and the agent works in the container's own filesystem
-    instead of on your files. Unless the file sets `name:`, the sandbox is named
-    after the mounted directory, or after the project directory when nothing is
-    mounted, so an environment that mounts nothing is still the same sandbox every
-    time.
+    A `workspace:` names the directory mounted read/write into the sandbox. A
+    relative path resolves against the directory of the file that declares it — as
+    a relative kit source does — so `workspace: .` mounts the directory the file
+    sits in. ${{ env.projectDir }} names the project directory (the one holding the
+    first PATH, or the current directory when none is named) and ${{ env.fileDir }}
+    the declaring file's own, for a value that spells its anchor out. Declaring
+    none mounts nothing — as omitting PATH does for `sbx create` — and the agent
+    works in the container's own filesystem instead of on your files. Unless the file sets `name:` or --name overrides it,
+    the sandbox is named after the mounted directory, or after the project directory
+    when nothing is mounted, so an environment that mounts nothing is still the same
+    sandbox every time.
 @z
 
 @x
@@ -127,14 +131,16 @@ description: |-
 
 @x
     Each runs through your shell from the project directory — the one holding the
-    first PATH, which is also what a relative "workspace:" resolves against, and is
-    shared by commands merged in from a file elsewhere. Change it per command with
-    `workdir:`, and cap a command's runtime with `timeout:`.
+    first PATH, or the current directory when none is named; ${{ env.projectDir }}
+    names the same place, and commands merged in from a file elsewhere share it.
+    Change it per command with `workdir:`, and cap a command's runtime with
+    `timeout:`.
 @y
     Each runs through your shell from the project directory — the one holding the
-    first PATH, which is also what a relative "workspace:" resolves against, and is
-    shared by commands merged in from a file elsewhere. Change it per command with
-    `workdir:`, and cap a command's runtime with `timeout:`.
+    first PATH, or the current directory when none is named; ${{ env.projectDir }}
+    names the same place, and commands merged in from a file elsewhere share it.
+    Change it per command with `workdir:`, and cap a command's runtime with
+    `timeout:`.
 @z
 
 @x

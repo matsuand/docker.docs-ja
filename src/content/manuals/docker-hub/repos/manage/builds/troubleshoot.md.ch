@@ -52,12 +52,6 @@ If a build fails, a **Retry** icon appears next to the build report line on the
 @z
 
 @x
-![Timeline view showing the retry build button](images/retry-build.png)
-@y
-![Timeline view showing the retry build button](images/retry-build.png)
-@z
-
-@x
 > [!NOTE]
 >
 > If you are viewing the build details for a repository that belongs to an

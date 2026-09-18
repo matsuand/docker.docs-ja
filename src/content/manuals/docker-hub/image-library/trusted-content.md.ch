@@ -342,11 +342,11 @@ codename for Ubuntu 24.04 is "Noble Numbat".
 @x
 Linux distribution indicators are helpful because many Docker Official Images
 provide variants built upon multiple underlying distribution versions (for
-example, `postgres:bookworm` and `postgres:bullseye`).
+example, `postgres:bookworm` and `postgres:trixie`).
 @y
 Linux distribution indicators are helpful because many Docker Official Images
 provide variants built upon multiple underlying distribution versions (for
-example, `postgres:bookworm` and `postgres:bullseye`).
+example, `postgres:bookworm` and `postgres:trixie`).
 @z
 
 @x

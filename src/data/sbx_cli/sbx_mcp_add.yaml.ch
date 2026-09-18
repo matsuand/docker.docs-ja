@@ -71,8 +71,10 @@ description: |-
       legitimate servers live on private networks (split-horizon DNS, internal
       load balancers, VPN-only endpoints, PrivateLink), so their public hostname
       resolves to a private address and the warning is expected noise for them.
-      Pass --skip-ssrf-check to silence the check entirely for a single add when
-      you trust the host; use it only for URLs you control.
+      OAuth authorization-server metadata has a separate SSRF guard that blocks
+      disallowed addresses. Pass --skip-ssrf-check to disable both checks for this
+      add, including OAuth metadata redirects, when you trust the provider and
+      its discovery destinations; use it only for URLs you control.
 @y
     SSRF guard and --skip-ssrf-check:
       A --url whose host resolves to a private/RFC1918, loopback, link-local, or
@@ -83,8 +85,10 @@ description: |-
       legitimate servers live on private networks (split-horizon DNS, internal
       load balancers, VPN-only endpoints, PrivateLink), so their public hostname
       resolves to a private address and the warning is expected noise for them.
-      Pass --skip-ssrf-check to silence the check entirely for a single add when
-      you trust the host; use it only for URLs you control.
+      OAuth authorization-server metadata has a separate SSRF guard that blocks
+      disallowed addresses. Pass --skip-ssrf-check to disable both checks for this
+      add, including OAuth metadata redirects, when you trust the provider and
+      its discovery destinations; use it only for URLs you control.
 @z
 
 @x
@@ -137,30 +141,30 @@ description: |-
       Client secrets (confidential clients):
         There is no --client-secret flag. The secret for a confidential client
         lives in the secret store in the global scope under the
-        service name "mcp:<server>.client_secret", and is read from there
+        service name "mcp:<server>:client_secret", and is read from there
         whenever the server is used:
 @y
       Client secrets (confidential clients):
         There is no --client-secret flag. The secret for a confidential client
         lives in the secret store in the global scope under the
-        service name "mcp:<server>.client_secret", and is read from there
+        service name "mcp:<server>:client_secret", and is read from there
         whenever the server is used:
 @z
 
 @x
-          sbx secret set mcp:<server>.client_secret
+          sbx secret set mcp:<server>:client_secret
 @y
-          sbx secret set mcp:<server>.client_secret
+          sbx secret set mcp:<server>:client_secret
 @z
 
 @x
         Run it with no -t so the value is read from stdin instead of landing in
         your shell history. The secret is never written to the MCP registration
-        on disk. Remove it later with 'sbx secret rm mcp:<server>.client_secret'.
+        on disk. Remove it later with 'sbx secret rm mcp:<server>:client_secret'.
 @y
         Run it with no -t so the value is read from stdin instead of landing in
         your shell history. The secret is never written to the MCP registration
-        on disk. Remove it later with 'sbx secret rm mcp:<server>.client_secret'.
+        on disk. Remove it later with 'sbx secret rm mcp:<server>:client_secret'.
 @z
 
 @x
@@ -169,14 +173,14 @@ description: |-
         against a different client or authorization server therefore does NOT
         reuse it — store the secret again for the new client. To let a new
         identity claim the existing secret, drop the recorded binding with
-        'sbx secret rm mcp:<server>.client_secret.identity'.
+        'sbx secret rm mcp:<server>:client_secret:identity'.
 @y
         The stored secret is bound to the OAuth identity (client id, issuer and
         token endpoint) that first used it. Re-registering the same server name
         against a different client or authorization server therefore does NOT
         reuse it — store the secret again for the new client. To let a new
         identity claim the existing secret, drop the recorded binding with
-        'sbx secret rm mcp:<server>.client_secret.identity'.
+        'sbx secret rm mcp:<server>:client_secret:identity'.
 @z
 
 @x
@@ -227,52 +231,56 @@ description: |-
       remote --url OAuth server (repeatable). Precedence at authorization time is
       --no-scope > an explicit 'sbx mcp auth --scope' > the set recorded here > the
       scope set the RESOURCE itself says it requires (from its RFC 9728
-      protected-resource metadata or its WWW-Authenticate challenge) > nothing, and
-      "nothing" means the 'scope' parameter is OMITTED so the authorization server
-      applies its own default grant (RFC 6749 §3.3). The server's advertised set is
-      never requested wholesale.
+      protected-resource metadata or its WWW-Authenticate challenge) > whichever of
+      openid, email, profile, and offline_access are advertised. Other advertised
+      scopes are excluded from this fallback. If no scopes are selected, the scope
+      parameter is omitted so the authorization server can apply its own default
+      grant (RFC 6749 §3.3).
 @y
     Default OAuth scopes (--scope / --no-scope):
       --scope records the DEFAULT set of scopes to request at consent time for a
       remote --url OAuth server (repeatable). Precedence at authorization time is
       --no-scope > an explicit 'sbx mcp auth --scope' > the set recorded here > the
       scope set the RESOURCE itself says it requires (from its RFC 9728
-      protected-resource metadata or its WWW-Authenticate challenge) > nothing, and
-      "nothing" means the 'scope' parameter is OMITTED so the authorization server
-      applies its own default grant (RFC 6749 §3.3). The server's advertised set is
-      never requested wholesale.
+      protected-resource metadata or its WWW-Authenticate challenge) > whichever of
+      openid, email, profile, and offline_access are advertised. Other advertised
+      scopes are excluded from this fallback. If no scopes are selected, the scope
+      parameter is omitted so the authorization server can apply its own default
+      grant (RFC 6749 §3.3).
 @z
 
 @x
       A resource that publishes a required set therefore gets it requested with no
       flag at all, and the consent block marks that set as derived rather than
-      chosen. --no-scope suppresses it and takes the server's default grant.
+      chosen. --no-scope suppresses all scope fallbacks and requests the server's
+      default grant.
 @y
       A resource that publishes a required set therefore gets it requested with no
       flag at all, and the consent block marks that set as derived rather than
-      chosen. --no-scope suppresses it and takes the server's default grant.
+      chosen. --no-scope suppresses all scope fallbacks and requests the server's
+      default grant.
 @z
 
 @x
-      Scopes you name are validated only when the authorization server advertises a
-      supported set (RFC 8414 scopes_supported): then every scope must be a member or
-      the add fails naming the offending scope(s). If the server advertises no
-      supported set (the field is optional in RFC 8414), the requested scopes are
-      accepted as given. A set derived from the resource's own required list is never
-      validated — it is the server's statement about itself, and scopes_supported is
-      allowed to be non-exhaustive. Validation is a spelling check, not a promise: scopes_supported is what
-      the server SUPPORTS, not what it will grant this client, so a scope it
-      advertises can still be refused at consent time.
+      Scopes you name are checked against the union of two documents a server can
+      publish: the authorization server's RFC 8414 scopes_supported and the
+      resource's own RFC 9728 protected-resource metadata (some servers, e.g.
+      GitHub, document their real scopes on the resource and advertise almost
+      nothing over RFC 8414). A scope in neither prints a warning naming the
+      offender but is still requested — a mismatch is often the server's own
+      documentation gap, not a typo, and either document is allowed to be
+      non-exhaustive. This is a recognition check, not a promise: a recognized
+      scope can still be refused at consent time.
 @y
-      Scopes you name are validated only when the authorization server advertises a
-      supported set (RFC 8414 scopes_supported): then every scope must be a member or
-      the add fails naming the offending scope(s). If the server advertises no
-      supported set (the field is optional in RFC 8414), the requested scopes are
-      accepted as given. A set derived from the resource's own required list is never
-      validated — it is the server's statement about itself, and scopes_supported is
-      allowed to be non-exhaustive. Validation is a spelling check, not a promise: scopes_supported is what
-      the server SUPPORTS, not what it will grant this client, so a scope it
-      advertises can still be refused at consent time.
+      Scopes you name are checked against the union of two documents a server can
+      publish: the authorization server's RFC 8414 scopes_supported and the
+      resource's own RFC 9728 protected-resource metadata (some servers, e.g.
+      GitHub, document their real scopes on the resource and advertise almost
+      nothing over RFC 8414). A scope in neither prints a warning naming the
+      offender but is still requested — a mismatch is often the server's own
+      documentation gap, not a typo, and either document is allowed to be
+      non-exhaustive. This is a recognition check, not a promise: a recognized
+      scope can still be refused at consent time.
 @z
 
 @x
@@ -287,6 +295,184 @@ description: |-
       token cannot contain a space or a quote — and both are percent-encoded
       normally on the wire. --scope applies both to a hand-supplied override and to
       a plain --url server whose OAuth metadata is discovered.
+@z
+
+@x
+    RFC 8707 resource indicator (--resource):
+      Every authorization request, code exchange and token refresh names the server
+      the token is for, in the 'resource' parameter the MCP authorization
+      specification requires (RFC 8707). That value is normally DERIVED, and you do
+      not need this flag: it comes from the server's own RFC 9728 protected-resource
+      metadata when it publishes some, and otherwise from the --url endpoint
+      (lowercased scheme/host, path kept, fragment dropped).
+@y
+    RFC 8707 resource indicator (--resource):
+      Every authorization request, code exchange and token refresh names the server
+      the token is for, in the 'resource' parameter the MCP authorization
+      specification requires (RFC 8707). That value is normally DERIVED, and you do
+      not need this flag: it comes from the server's own RFC 9728 protected-resource
+      metadata when it publishes some, and otherwise from the --url endpoint
+      (lowercased scheme/host, path kept, fragment dropped).
+@z
+
+@x
+      --resource replaces that derivation with a value you supply. Use it when the
+      derived one is wrong — most often a server whose published identifier is its
+      bare origin (https://api.example.com) while its endpoint has a path
+      (https://api.example.com/mcp), which is indistinguishable from publishing
+      nothing, so the endpoint URL is what gets sent. An authorization server
+      entitled to reject an unknown target answers 'invalid_target'.
+@y
+      --resource replaces that derivation with a value you supply. Use it when the
+      derived one is wrong — most often a server whose published identifier is its
+      bare origin (https://api.example.com) while its endpoint has a path
+      (https://api.example.com/mcp), which is indistinguishable from publishing
+      nothing, so the endpoint URL is what gets sent. An authorization server
+      entitled to reject an unknown target answers 'invalid_target'.
+@z
+
+@x
+      The value must be an absolute URI with a scheme and a host, and RFC 8707 §2
+      forbids a fragment; a bad value fails the add rather than being repaired or
+      dropped later. It is sent VERBATIM — nothing is lowercased and no path or
+      trailing slash is adjusted, because the string names a server and changing it
+      could name a different one. Only one value is accepted: a gateway backend
+      connects to exactly one MCP endpoint.
+@y
+      The value must be an absolute URI with a scheme and a host, and RFC 8707 §2
+      forbids a fragment; a bad value fails the add rather than being repaired or
+      dropped later. It is sent VERBATIM — nothing is lowercased and no path or
+      trailing slash is adjusted, because the string names a server and changing it
+      could name a different one. Only one value is accepted: a gateway backend
+      connects to exactly one MCP endpoint.
+@z
+
+@x
+      It outranks both the published value and the URL derivation, and also an
+      authorization server advertising resource_indicators_supported=false (the add
+      says so when that happens). It is recorded on the registration, so there is no
+      'sbx mcp auth --resource': one value is used by the add-time authorization,
+      every later 'sbx mcp auth', and every token refresh — a resource that differed
+      between them is the audience mismatch this parameter exists to prevent. To
+      change it, 'sbx mcp rm' the server and add it again; the existing token was
+      minted for the old resource anyway.
+@y
+      It outranks both the published value and the URL derivation, and also an
+      authorization server advertising resource_indicators_supported=false (the add
+      says so when that happens). It is recorded on the registration, so there is no
+      'sbx mcp auth --resource': one value is used by the add-time authorization,
+      every later 'sbx mcp auth', and every token refresh — a resource that differed
+      between them is the audience mismatch this parameter exists to prevent. To
+      change it, 'sbx mcp rm' the server and add it again; the existing token was
+      minted for the old resource anyway.
+@z
+
+@x
+      Not 'audience': RFC 8707 'resource' is what the MCP specification requires, and
+      an 'audience' parameter on an authorization-code request is an Auth0/Okta
+      vendor extension that sbx does not send. See 'sbx mcp inspect <name>' for the
+      effective value and where it came from.
+@y
+      Not 'audience': RFC 8707 'resource' is what the MCP specification requires, and
+      an 'audience' parameter on an authorization-code request is an Auth0/Okta
+      vendor extension that sbx does not send. See 'sbx mcp inspect <name>' for the
+      effective value and where it came from.
+@z
+
+@x
+      Scope limit: this governs the OAuth flow sbx itself runs — a local data plane
+      (SBX_MCP_URL=none), and any server registered with
+      --oauth-authorization-server/--client-id. For a plain remote in hosted mode the
+      control-plane gateway is the OAuth client and does not carry the field yet, so
+      the value is recorded and the add warns that it is not sent for that server.
+@y
+      Scope limit: this governs the OAuth flow sbx itself runs — a local data plane
+      (SBX_MCP_URL=none), and any server registered with
+      --oauth-authorization-server/--client-id. For a plain remote in hosted mode the
+      control-plane gateway is the OAuth client and does not carry the field yet, so
+      the value is recorded and the add warns that it is not sent for that server.
+@z
+
+@x
+    Custom request headers for remote endpoints (--header):
+      --header adds an HTTP header to every request sent to a remote --url
+      endpoint, written in the curl convention 'Header-Name: header value'.
+      Repeat the flag for more headers; each header name may be given once.
+      Headers the transport owns (Host, Content-Length, Connection, Proxy-*, …)
+      are rejected.
+@y
+    Custom request headers for remote endpoints (--header):
+      --header adds an HTTP header to every request sent to a remote --url
+      endpoint, written in the curl convention 'Header-Name: header value'.
+      Repeat the flag for more headers; each header name may be given once.
+      Headers the transport owns (Host, Content-Length, Connection, Proxy-*, …)
+      are rejected.
+@z
+
+@x
+      Only a remote endpoint can carry them: --header is refused with --command
+      and --local, and an add whose --url resolves to a stdio server (a registry
+      or manifest URL naming an OCI image) fails rather than dropping them.
+@y
+      Only a remote endpoint can carry them: --header is refused with --command
+      and --local, and an add whose --url resolves to a stdio server (a registry
+      or manifest URL naming an OCI image) fails rather than dropping them.
+@z
+
+@x
+      A header value may reference a secret with ${placeholder}. The placeholder is
+      stored in the registration exactly as typed and the secret itself never is;
+      the value is read from the encrypted secret store and substituted when a
+      sandbox connects to the server. Store it with:
+@y
+      A header value may reference a secret with ${placeholder}. The placeholder is
+      stored in the registration exactly as typed and the secret itself never is;
+      the value is read from the encrypted secret store and substituted when a
+      sandbox connects to the server. Store it with:
+@z
+
+@x
+        sbx secret set mcp:<server>:<placeholder>
+@y
+        sbx secret set mcp:<server>:<placeholder>
+@z
+
+@x
+      For example:
+@y
+      For example:
+@z
+
+@x
+        sbx mcp add acme --url https://mcp.acme.com/mcp --header 'Authorization: Bearer ${api-key}'
+        sbx secret set mcp:acme:api-key
+@y
+        sbx mcp add acme --url https://mcp.acme.com/mcp --header 'Authorization: Bearer ${api-key}'
+        sbx secret set mcp:acme:api-key
+@z
+
+@x
+      On an OAuth-protected server an explicit Authorization header takes
+      precedence over the OAuth access token.
+@y
+      On an OAuth-protected server an explicit Authorization header takes
+      precedence over the OAuth access token.
+@z
+
+@x
+      Header secrets are read from the LOCAL secret store, so a header-bearing
+      server only works where this host connects it. Adding one while your MCP
+      gateway is the hosted (SaaS) one is rejected rather than registered with
+      headers that would be silently dropped — unless the server carries a
+      hand-supplied OAuth override (--oauth-authorization-server), which this
+      host connects directly in every gateway mode.
+@y
+      Header secrets are read from the LOCAL secret store, so a header-bearing
+      server only works where this host connects it. Adding one while your MCP
+      gateway is the hosted (SaaS) one is rejected rather than registered with
+      headers that would be silently dropped — unless the server carries a
+      hand-supplied OAuth override (--oauth-authorization-server), which this
+      host connects directly in every gateway mode.
 @z
 
 @x
@@ -325,12 +511,20 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
       usage: Command-line arguments for the command
 @z
 
-@x client-id
+@x callback-port
       usage: |
-        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>.client_secret'
+        Local port to bind the OAuth callback listener to during add-time authorization (default: OS-assigned ephemeral port). Useful when the port must be pre-registered in an OAuth app's allowed redirect URIs. Applies to --url remote OAuth servers; ignored with a warning if the server turns out not to need OAuth.
 @y
       usage: |
-        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>.client_secret'
+        Local port to bind the OAuth callback listener to during add-time authorization (default: OS-assigned ephemeral port). Useful when the port must be pre-registered in an OAuth app's allowed redirect URIs. Applies to --url remote OAuth servers; ignored with a warning if the server turns out not to need OAuth.
+@z
+
+@x client-id
+      usage: |
+        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>:client_secret'
+@y
+      usage: |
+        OAuth client id for a pre-registered client (with --url; may be used with or without --oauth-authorization-server). A confidential client's secret comes from 'sbx secret set mcp:<server>:client_secret'
 @z
 
 @x command
@@ -343,6 +537,14 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
       usage: Working directory (cwd) for a --command host server
 @y
       usage: Working directory (cwd) for a --command host server
+@z
+
+@x header
+      usage: |
+        Custom HTTP header to send to a remote --url endpoint, in curl form 'Name: value' (repeatable). A ${placeholder} in the value is substituted at connect time from 'sbx secret set mcp:<server>:<placeholder>'
+@y
+      usage: |
+        Custom HTTP header to send to a remote --url endpoint, in curl form 'Name: value' (repeatable). A ${placeholder} in the value is substituted at connect time from 'sbx secret set mcp:<server>:<placeholder>'
 @z
 
 @x help
@@ -359,10 +561,10 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
 
 @x no-scope
       usage: |
-        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses the resource's required set; cannot be combined with --scope. Applies to --url remote OAuth servers.
+        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses required and OIDC fallback scopes; cannot be combined with --scope. Applies to --url remote OAuth servers.
 @y
       usage: |
-        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses the resource's required set; cannot be combined with --scope. Applies to --url remote OAuth servers.
+        Request no scopes during add-time authorization, so the authorization server applies its own default grant. Suppresses required and OIDC fallback scopes; cannot be combined with --scope. Applies to --url remote OAuth servers.
 @z
 
 @x oauth-authorization-server
@@ -373,12 +575,20 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
         Path or http(s) URL to an RFC 8414 oauth-authorization-server metadata JSON document
 @z
 
-@x scope
+@x resource
       usage: |
-        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata, which does not promise the server will grant it). With no --scope, the scope set the resource itself requires is requested; with neither, no scopes are requested and the authorization server applies its own default grant. Applies to --url remote OAuth servers.
+        RFC 8707 resource indicator to send during OAuth: an absolute URI (scheme and host, no fragment) naming the server the token is for. Overrides the value the server publishes in its RFC 9728 metadata and the one derived from --url; set it only when that derived value is wrong. Not honoured by the hosted gateway for a plain remote yet. Applies to --url remote OAuth servers.
 @y
       usage: |
-        Default OAuth scope to request at consent time (repeatable; must be advertised by the server's authorization metadata, which does not promise the server will grant it). With no --scope, the scope set the resource itself requires is requested; with neither, no scopes are requested and the authorization server applies its own default grant. Applies to --url remote OAuth servers.
+        RFC 8707 resource indicator to send during OAuth: an absolute URI (scheme and host, no fragment) naming the server the token is for. Overrides the value the server publishes in its RFC 9728 metadata and the one derived from --url; set it only when that derived value is wrong. Not honoured by the hosted gateway for a plain remote yet. Applies to --url remote OAuth servers.
+@z
+
+@x scope
+      usage: |
+        Default OAuth scope to request at consent time (repeatable; a scope the server's advertised metadata does not recognize prints a warning but is still requested, since advertising a scope never promised the server would grant it either). With no --scope, the scope set the resource itself requires is requested; with neither, whichever of openid, email, profile, and offline_access are advertised are requested; other advertised scopes are excluded from this fallback. Applies to --url remote OAuth servers.
+@y
+      usage: |
+        Default OAuth scope to request at consent time (repeatable; a scope the server's advertised metadata does not recognize prints a warning but is still requested, since advertising a scope never promised the server would grant it either). With no --scope, the scope set the resource itself requires is requested; with neither, whichever of openid, email, profile, and offline_access are advertised are requested; other advertised scopes are excluded from this fallback. Applies to --url remote OAuth servers.
 @z
 
 @x skip-auth
@@ -391,10 +601,10 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
 
 @x skip-ssrf-check
       usage: |
-        Silence the SSRF check for this add: a --url whose host resolves to a private/metadata address is registered either way, but with this flag no warning is printed (operator asserts the host is trusted)
+        Skip SSRF checks for this add, including OAuth authorization-server metadata and redirects (operator asserts the provider is trusted)
 @y
       usage: |
-        Silence the SSRF check for this add: a --url whose host resolves to a private/metadata address is registered either way, but with this flag no warning is printed (operator asserts the host is trusted)
+        Skip SSRF checks for this add, including OAuth authorization-server metadata and redirects (operator asserts the provider is trusted)
 @z
 
 @x url
@@ -506,22 +716,24 @@ example: |4-
 @x
       # Confidential client — store the secret first (prompted, never in argv or
       # shell history), then register; the secret is read from the secret store
-      sbx secret set mcp:slack.client_secret
+      sbx secret set mcp:slack:client_secret
       sbx mcp add slack --url https://slack.example.com/mcp --client-id my-preregistered-client
 @y
       # Confidential client — store the secret first (prompted, never in argv or
       # shell history), then register; the secret is read from the secret store
-      sbx secret set mcp:slack.client_secret
+      sbx secret set mcp:slack:client_secret
       sbx mcp add slack --url https://slack.example.com/mcp --client-id my-preregistered-client
 @z
 
 @x
-      # Record default OAuth scopes to request at consent time (must be advertised
-      # by the server's authorization metadata; repeat --scope for each one)
+      # Record default OAuth scopes to request at consent time (a scope the
+      # server's authorization metadata does not advertise warns but is still
+      # requested; repeat --scope for each one)
       sbx mcp add acme --url https://mcp.acme.com/mcp --scope read --scope write
 @y
-      # Record default OAuth scopes to request at consent time (must be advertised
-      # by the server's authorization metadata; repeat --scope for each one)
+      # Record default OAuth scopes to request at consent time (a scope the
+      # server's authorization metadata does not advertise warns but is still
+      # requested; repeat --scope for each one)
       sbx mcp add acme --url https://mcp.acme.com/mcp --scope read --scope write
 @z
 
@@ -531,6 +743,28 @@ example: |4-
 @y
       # URN- and URL-shaped scope values are ordinary scopes and need no quoting
       sbx mcp add fastmail --url https://api.fastmail.com/mcp --scope https://www.fastmail.com/dev/mcp --scope offline_access
+@z
+
+@x
+      # Correct the RFC 8707 'resource' indicator when the derived one is wrong (a
+      # server whose published identifier is not its endpoint URL)
+      sbx mcp add acme --url https://mcp.acme.com/mcp --resource https://api.acme.com/mcp
+@y
+      # Correct the RFC 8707 'resource' indicator when the derived one is wrong (a
+      # server whose published identifier is not its endpoint URL)
+      sbx mcp add acme --url https://mcp.acme.com/mcp --resource https://api.acme.com/mcp
+@z
+
+@x
+      # Remote endpoint with custom headers (curl convention; repeatable). The
+      # ${api-key} value is read from the secret store when a sandbox connects
+      sbx mcp add acme --url https://mcp.acme.com/mcp --header 'Authorization: Bearer ${api-key}' --header 'Accept: application/json, text/event-stream'
+      sbx secret set mcp:acme:api-key
+@y
+      # Remote endpoint with custom headers (curl convention; repeatable). The
+      # ${api-key} value is read from the secret store when a sandbox connects
+      sbx mcp add acme --url https://mcp.acme.com/mcp --header 'Authorization: Bearer ${api-key}' --header 'Accept: application/json, text/event-stream'
+      sbx secret set mcp:acme:api-key
 @z
 
 @x

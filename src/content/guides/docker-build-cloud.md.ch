@@ -337,10 +337,10 @@ Build Cloud.
 
 @x
 Docker Compose works out of the box with Docker Build Cloud. Install the Docker
-Build Cloud-compatible client (buildx) and it works with both commands.
+Build Cloud-compatible client (Buildx) and it works with both commands.
 @y
 Docker Compose works out of the box with Docker Build Cloud. Install the Docker
-Build Cloud-compatible client (buildx) and it works with both commands.
+Build Cloud-compatible client (Buildx) and it works with both commands.
 @z
 
 @x

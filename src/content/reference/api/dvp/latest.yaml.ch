@@ -2,7 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: DVP Data API
   version: 1.0.0
@@ -10,9 +10,9 @@ info:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
   description: |
-     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
+    The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
 @y
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   title: DVP Data API
   version: 1.0.0
@@ -20,168 +20,118 @@ info:
     url: https://docs.docker.com/assets/images/logo-docker-main.png
     href: /reference
   description: |
-     The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
+    The Docker DVP Data API allows [Docker Verified Publishers](https://docs.docker.com/docker-hub/publish/) to view image pull analytics data for their namespaces. Analytics data can be retrieved in a CSV as raw data, or in a summary format.
 @z
 
 @x
-     #### Summary data
+    #### Summary data
 @y
-     #### Summary data
+    #### Summary data
 @z
 
 @x
-     In your summary data CSV, you will have access to the data points listed below. You can request summary data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). 
+    In your summary data CSV, you will have access to the data points listed below. You can request summary data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). 
 @y
-     In your summary data CSV, you will have access to the data points listed below. You can request summary data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). 
+    In your summary data CSV, you will have access to the data points listed below. You can request summary data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). 
 @z
 
 @x
-     There are two levels of summary data:
+    There are two levels of summary data:
 @y
-     There are two levels of summary data:
+    There are two levels of summary data:
 @z
 
 @x
-     - Repository-level, a summary of every namespace and repository
-     - Tag- or digest-level, a summary of every namespace, repository, and reference
-       (tag or digest)
+    - Repository-level, a summary of every namespace and repository
+    - Tag- or digest-level, a summary of every namespace, repository, and reference
+      (tag or digest)
 @y
-     - Repository-level, a summary of every namespace and repository
-     - Tag- or digest-level, a summary of every namespace, repository, and reference
-       (tag or digest)
+    - Repository-level, a summary of every namespace and repository
+    - Tag- or digest-level, a summary of every namespace, repository, and reference
+      (tag or digest)
 @z
 
 @x
-     The summary data formats contain the following data points:
+    The summary data formats contain the following data points:
 @y
-     The summary data formats contain the following data points:
+    The summary data formats contain the following data points:
 @z
 
 @x
-     - Unique IP address count
-     - Pulls by tag count
-     - Pulls by digest count
-     - Version check count
+    - Unique IP address count
+    - Pulls by tag count
+    - Pulls by digest count
+    - Version check count
 @y
-     - Unique IP address count
-     - Pulls by tag count
-     - Pulls by digest count
-     - Version check count
+    - Unique IP address count
+    - Pulls by tag count
+    - Pulls by digest count
+    - Version check count
 @z
 
 @x
-     #### Raw data
+    #### Raw data
 @y
-     #### Raw data
+    #### Raw data
 @z
 
 @x
-     In your raw data CSV you will have access to the data points listed below. You can request raw data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). **Note:** each action is represented as a single row.
+    In your raw data CSV you will have access to the data points listed below. You can request raw data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). **Note:** each action is represented as a single row.
 @y
-     In your raw data CSV you will have access to the data points listed below. You can request raw data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). **Note:** each action is represented as a single row.
+    In your raw data CSV you will have access to the data points listed below. You can request raw data for a complete week (Monday through Sunday) or for a complete month (available on the first day of the following month). **Note:** each action is represented as a single row.
 @z
 
 @x
-     - Type (industry)
-     - Host (cloud provider)
-     - Country (geolocation)
-     - Timestamp
-     - Namespace
-     - Repository
-     - Reference (digest is always included, tag is provided when available)
-     - HTTP request method
-     - Action, one of the following:
-       - Pull by tag
-       - Pull by digest
-       - Version check
-     - User-Agent
-@y
-     - Type (industry)
-     - Host (cloud provider)
-     - Country (geolocation)
-     - Timestamp
-     - Namespace
-     - Repository
-     - Reference (digest is always included, tag is provided when available)
-     - HTTP request method
-     - Action, one of the following:
-       - Pull by tag
-       - Pull by digest
-       - Version check
-     - User-Agent
-@z
-
-@x
+    - Type (industry)
+    - Host (cloud provider)
+    - Country (geolocation)
+    - Timestamp
+    - Namespace
+    - Repository
+    - Reference (digest is always included, tag is provided when available)
+    - HTTP request method
+    - Action, one of the following:
+      - Pull by tag
+      - Pull by digest
+      - Version check
+    - User-Agent
 servers:
   - url: https://hub.docker.com/api/publisher/analytics/v1
 security:
   - HubAuth: []
-@y
-servers:
-  - url: https://hub.docker.com/api/publisher/analytics/v1
-security:
-  - HubAuth: []
-@z
-
-@x
-features.openapi:
-  schemaDefinitionsTagName: Schemas
-@y
-features.openapi:
-  schemaDefinitionsTagName: Schemas
-@z
-
-@x
 tags:
   - name: authentication
-    x-displayName: Authentication Endpoints
+    summary: Authentication Endpoints
+    kind: nav
+    description: Authentication Endpoints reference.
   - name: namespaces
-    x-displayName: Namespace data
+    summary: Namespace data
+    kind: nav
+    description: Namespace data reference.
   - name: discovery
-    x-displayName: Discovery
+    summary: Discovery
+    kind: nav
+    description: Discovery reference.
   - name: responseDataFile
-    x-displayName: ResponseDataFile
     description: |
-      <SchemaDefinition schemaRef="#/components/schemas/ResponseDataFile" />
+      [ResponseDataFile](#schema-ResponseDataFile)
+    summary: ResponseDataFile
+    kind: info
   - name: yearModel
-    x-displayName: Year Data Model
     description: |
-      <SchemaDefinition schemaRef="#/components/schemas/YearModel" />
+      [YearModel](#schema-YearModel)
+    summary: Year Data Model
+    kind: info
   - name: monthModel
-    x-displayName: Month Data Model
     description: |
-      <SchemaDefinition schemaRef="#/components/schemas/MonthModel" />
+      [MonthModel](#schema-MonthModel)
+    summary: Month Data Model
+    kind: info
   - name: weekModel
-    x-displayName: Week Data Model
     description: |
-      <SchemaDefinition schemaRef="#/components/schemas/WeekModel" />
-@y
-tags:
-  - name: authentication
-    x-displayName: Authentication Endpoints
-  - name: namespaces
-    x-displayName: Namespace data
-  - name: discovery
-    x-displayName: Discovery
-  - name: responseDataFile
-    x-displayName: ResponseDataFile
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/ResponseDataFile" />
-  - name: yearModel
-    x-displayName: Year Data Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/YearModel" />
-  - name: monthModel
-    x-displayName: Month Data Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/MonthModel" />
-  - name: weekModel
-    x-displayName: Week Data Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/WeekModel" />
-@z
-
-@x
+      [WeekModel](#schema-WeekModel)
+    summary: Week Data Model
+    kind: info
 x-tagGroups:
   - name: API
     tags:
@@ -194,25 +144,8 @@ x-tagGroups:
       - yearModel
       - monthModel
       - weekModel
-@y
-x-tagGroups:
-  - name: API
-    tags:
-      - authentication
-      - discovery
-      - namespaces
-  - name: Models
-    tags:
-      - responseDataFile
-      - yearModel
-      - monthModel
-      - weekModel
-@z
-
-@x
 paths:
   /v2/users/login:
-    security: []
     servers:
       - url: https://hub.docker.com
     post:
@@ -225,9 +158,70 @@ paths:
         Creates and returns a bearer token in JWT format that you can use to
         authenticate with Docker Hub APIs.
 @y
+    - Type (industry)
+    - Host (cloud provider)
+    - Country (geolocation)
+    - Timestamp
+    - Namespace
+    - Repository
+    - Reference (digest is always included, tag is provided when available)
+    - HTTP request method
+    - Action, one of the following:
+      - Pull by tag
+      - Pull by digest
+      - Version check
+    - User-Agent
+servers:
+  - url: https://hub.docker.com/api/publisher/analytics/v1
+security:
+  - HubAuth: []
+tags:
+  - name: authentication
+    summary: Authentication Endpoints
+    kind: nav
+    description: Authentication Endpoints reference.
+  - name: namespaces
+    summary: Namespace data
+    kind: nav
+    description: Namespace data reference.
+  - name: discovery
+    summary: Discovery
+    kind: nav
+    description: Discovery reference.
+  - name: responseDataFile
+    description: |
+      [ResponseDataFile](#schema-ResponseDataFile)
+    summary: ResponseDataFile
+    kind: info
+  - name: yearModel
+    description: |
+      [YearModel](#schema-YearModel)
+    summary: Year Data Model
+    kind: info
+  - name: monthModel
+    description: |
+      [MonthModel](#schema-MonthModel)
+    summary: Month Data Model
+    kind: info
+  - name: weekModel
+    description: |
+      [WeekModel](#schema-WeekModel)
+    summary: Week Data Model
+    kind: info
+x-tagGroups:
+  - name: API
+    tags:
+      - authentication
+      - discovery
+      - namespaces
+  - name: Models
+    tags:
+      - responseDataFile
+      - yearModel
+      - monthModel
+      - weekModel
 paths:
   /v2/users/login:
-    security: []
     servers:
       - url: https://hub.docker.com
     post:
@@ -257,20 +251,19 @@ paths:
         description: Login details.
         required: true
       responses:
-        200:
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
-        401:
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginErrorResponse"
   /v2/users/2fa-login:
-    security: []
     servers:
       - url: https://hub.docker.com
     post:
@@ -292,20 +285,19 @@ paths:
         description: Login details.
         required: true
       responses:
-        200:
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
-        401:
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginErrorResponse"
   /v2/users/2fa-login:
-    security: []
     servers:
       - url: https://hub.docker.com
     post:
@@ -341,18 +333,396 @@ paths:
         description: Login details.
         required: true
       responses:
-        200:
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
-        401:
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsers2FALoginErrorResponse"
+  /:
+    get:
+      tags:
+        - discovery
+      summary: Get namespaces and repos
+      description: Gets a list of your namespaces and repos which have data available.
+      operationId: getNamespaces
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NamespaceData"
+  /namespaces:
+    get:
+      tags:
+        - discovery
+      summary: Get user's namespaces
+      description: Get metadata associated with the namespaces the user has access to, including extra repos associated with the namespaces.
+      operationId: getUserNamespaces
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/NamespaceMetadata"
+              examples:
+                publishers:
+                  summary: Namespace metadata
+                  value:
+                    - datasets:
+                        - name: pulls
+                          timespans:
+                            - months
+                            - weeks
+                          views:
+                            - raw
+                            - summary
+                            - repo-summary
+                            - namespace-summary
+                            - geo-repo-summary
+                      extraRepos: null
+                      namespace: org1
+                      publisherType: DVP
+                      extensionPublisher: false
+        "401":
+          description: Authentication failed or second factor required
+  /namespaces/{namespace}:
+    get:
+      tags:
+        - discovery
+      summary: Get namespace
+      description: Gets metadata associated with specified namespace, including extra repos associated with the namespace.
+      operationId: getNamespace
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NamespaceMetadata"
+  /namespaces/{namespace}/pulls:
+    get:
+      tags:
+        - namespaces
+      summary: Get pull data
+      description: Gets pulls for the given namespace.
+      operationId: getNamespacePulls
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+        - in: query
+          name: timespan
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: false
+          description: Timespan type for fetching data
+        - in: query
+          name: period
+          schema:
+            $ref: "#/components/schemas/PeriodType"
+          required: false
+          description: Relative period of the period to fetch data
+        - in: query
+          name: group
+          schema:
+            $ref: "#/components/schemas/GroupType"
+          required: false
+          description: Field to group the data by
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PullData"
+        "404":
+          description: Not found - namespace doesn't exist or user does not have permission to access it
+  /namespaces/{namespace}/repos/{repo}/pulls:
+    get:
+      tags:
+        - namespaces
+      summary: Get pull data
+      description: Gets pulls for the given repo.
+      operationId: getRepoPulls
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+        - in: path
+          name: repo
+          schema:
+            type: string
+          required: true
+          description: Repository to fetch data for
+        - in: query
+          name: timespan
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: false
+          description: Timespan type for fetching data
+        - in: query
+          name: period
+          schema:
+            $ref: "#/components/schemas/PeriodType"
+          required: false
+          description: Relative period of the period to fetch data
+        - in: query
+          name: group
+          schema:
+            $ref: "#/components/schemas/GroupType"
+          required: false
+          description: Field to group the data by
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PullData"
+        "404":
+          description: Not found - repo doesn't exist or user does not have permission to access it
+  /namespaces/{namespace}/pulls/exports/years:
+    get:
+      tags:
+        - namespaces
+      summary: Get years with data
+      description: Gets a list of years that have data for the given namespace.
+      operationId: getNamespaceYears
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/YearData"
+  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}:
+    get:
+      tags:
+        - namespaces
+      summary: Get timespans with data
+      description: Gets a list of timespans of the given type that have data for the given namespace and year.
+      operationId: getNamespaceTimespans
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+        - in: path
+          name: year
+          schema:
+            type: integer
+          required: true
+          description: Year to fetch data for
+        - in: path
+          name: timespantype
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: true
+          description: Type of timespan to fetch data for
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimespanData"
+  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}:
+    get:
+      tags:
+        - namespaces
+      summary: Get namespace metadata for timespan
+      description: Gets info about data for the given namespace and timespan.
+      operationId: getNamespaceTimespanMetadata
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+        - in: path
+          name: year
+          schema:
+            type: integer
+          required: true
+          description: Year to fetch data for
+        - in: path
+          name: timespantype
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: true
+          description: Type of timespan to fetch data for
+        - in: path
+          name: timespan
+          schema:
+            type: integer
+          required: true
+          description: Timespan to fetch data for
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimespanModel"
+        "404":
+          description: Not Found
+  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}:
+    get:
+      tags:
+        - namespaces
+      summary: Get namespace data for timespan
+      description: Gets a list of URLs that can be used to download the pull data for the given namespace and timespan.
+      operationId: getNamespaceDataByTimespan
+      parameters:
+        - in: path
+          name: namespace
+          schema:
+            type: string
+          required: true
+          description: Namespace to fetch data for
+        - in: path
+          name: year
+          schema:
+            type: integer
+          required: true
+          description: Year to fetch data for
+        - in: path
+          name: timespantype
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: true
+          description: Type of timespan to fetch data for
+        - in: path
+          name: timespan
+          schema:
+            type: integer
+          required: true
+          description: Timespan to fetch data for
+        - in: path
+          name: dataview
+          schema:
+            $ref: "#/components/schemas/DataviewType"
+          required: true
+          description: Type of data to fetch
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ResponseData"
+              examples:
+                download:
+                  summary: Illustrative download location
+                  description: Use the signed URL returned by the API. The URL and file size in this example are illustrative.
+                  value:
+                    data:
+                      - url: https://example.invalid/exports/pulls.csv.gz?X-Amz-Expires=21600&X-Amz-Signature=EXAMPLE
+                        size: 1024
+  /repos/pulls:
+    get:
+      tags:
+        - namespaces
+      summary: Get pull data for multiple repos
+      description: Gets pull for the given repos.
+      operationId: getManyReposPulls
+      parameters:
+        - in: query
+          name: repos
+          schema:
+            type: array
+            items:
+              type: string
+          required: true
+          description: Repositories to fetch data for (maximum of 50 repositories per request).
+        - in: query
+          name: timespan
+          schema:
+            $ref: "#/components/schemas/TimespanType"
+          required: false
+          description: Timespan type for fetching data
+        - in: query
+          name: period
+          schema:
+            $ref: "#/components/schemas/PeriodType"
+          required: false
+          description: Relative period of the period to fetch data
+        - in: query
+          name: group
+          schema:
+            $ref: "#/components/schemas/GroupType"
+          required: false
+          description: Field to group the data by
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ReposPullData"
+components:
+  schemas:
+    UsersLoginRequest:
+      examples:
+        - username: myusername
+          password: hunter2
+      description: User login details
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          description: The username of the Docker Hub account to authenticate with.
+          type: string
+          example: myusername
+        password:
+          description: The password or personal access token (PAT) of the Docker Hub account to authenticate with.
+          type: string
+          example: hunter2
+    PostUsersLoginSuccessResponse:
+      examples:
+        - token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+      description: successful user login response
+      type: object
+      properties:
+        token:
+          description: |
+            Created authentication token.
 @y
         Most Docker Hub APIs require this token either to consume or to get detailed information. For example, to list images in a private repository.
       requestBody:
@@ -363,54 +733,73 @@ paths:
         description: Login details.
         required: true
       responses:
-        200:
+        "200":
           description: Authentication successful
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsersLoginSuccessResponse"
-        401:
+        "401":
           description: Authentication failed or second factor required
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsers2FALoginErrorResponse"
-@z
-
-@x
   /:
     get:
-      tags: [discovery]
+      tags:
+        - discovery
       summary: Get namespaces and repos
       description: Gets a list of your namespaces and repos which have data available.
       operationId: getNamespaces
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NamespaceData'
+                $ref: "#/components/schemas/NamespaceData"
   /namespaces:
     get:
-      tags: [discovery]
+      tags:
+        - discovery
       summary: Get user's namespaces
       description: Get metadata associated with the namespaces the user has access to, including extra repos associated with the namespaces.
       operationId: getUserNamespaces
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/NamespaceMetadata'
-        '401':
+                  $ref: "#/components/schemas/NamespaceMetadata"
+              examples:
+                publishers:
+                  summary: Namespace metadata
+                  value:
+                    - datasets:
+                        - name: pulls
+                          timespans:
+                            - months
+                            - weeks
+                          views:
+                            - raw
+                            - summary
+                            - repo-summary
+                            - namespace-summary
+                            - geo-repo-summary
+                      extraRepos: null
+                      namespace: org1
+                      publisherType: DVP
+                      extensionPublisher: false
+        "401":
           description: Authentication failed or second factor required
   /namespaces/{namespace}:
     get:
-      tags: [discovery]
+      tags:
+        - discovery
       summary: Get namespace
       description: Gets metadata associated with specified namespace, including extra repos associated with the namespace.
       operationId: getNamespace
@@ -422,15 +811,16 @@ paths:
           required: true
           description: Namespace to fetch data for
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NamespaceMetadata'
+                $ref: "#/components/schemas/NamespaceMetadata"
   /namespaces/{namespace}/pulls:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get pull data
       description: Gets pulls for the given namespace.
       operationId: getNamespacePulls
@@ -444,33 +834,34 @@ paths:
         - in: query
           name: timespan
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: false
           description: Timespan type for fetching data
         - in: query
           name: period
           schema:
-            $ref: '#/components/schemas/PeriodType'
+            $ref: "#/components/schemas/PeriodType"
           required: false
           description: Relative period of the period to fetch data
         - in: query
           name: group
           schema:
-            $ref: '#/components/schemas/GroupType'
+            $ref: "#/components/schemas/GroupType"
           required: false
           description: Field to group the data by
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PullData'
-        '404':
+                $ref: "#/components/schemas/PullData"
+        "404":
           description: Not found - namespace doesn't exist or user does not have permission to access it
   /namespaces/{namespace}/repos/{repo}/pulls:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get pull data
       description: Gets pulls for the given repo.
       operationId: getRepoPulls
@@ -490,33 +881,34 @@ paths:
         - in: query
           name: timespan
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: false
           description: Timespan type for fetching data
         - in: query
           name: period
           schema:
-            $ref: '#/components/schemas/PeriodType'
+            $ref: "#/components/schemas/PeriodType"
           required: false
           description: Relative period of the period to fetch data
         - in: query
           name: group
           schema:
-            $ref: '#/components/schemas/GroupType'
+            $ref: "#/components/schemas/GroupType"
           required: false
           description: Field to group the data by
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PullData'
-        '404':
+                $ref: "#/components/schemas/PullData"
+        "404":
           description: Not found - repo doesn't exist or user does not have permission to access it
   /namespaces/{namespace}/pulls/exports/years:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get years with data
       description: Gets a list of years that have data for the given namespace.
       operationId: getNamespaceYears
@@ -528,15 +920,16 @@ paths:
           required: true
           description: Namespace to fetch data for
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/YearData'
+                $ref: "#/components/schemas/YearData"
   /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get timespans with data
       description: Gets a list of timespans of the given type that have data for the given namespace and year.
       operationId: getNamespaceTimespans
@@ -556,19 +949,20 @@ paths:
         - in: path
           name: timespantype
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: true
           description: Type of timespan to fetch data for
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TimespanData'
+                $ref: "#/components/schemas/TimespanData"
   /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get namespace metadata for timespan
       description: Gets info about data for the given namespace and timespan.
       operationId: getNamespaceTimespanMetadata
@@ -588,7 +982,7 @@ paths:
         - in: path
           name: timespantype
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: true
           description: Type of timespan to fetch data for
         - in: path
@@ -598,17 +992,18 @@ paths:
           required: true
           description: Timespan to fetch data for
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TimespanModel'
-        '404':
+                $ref: "#/components/schemas/TimespanModel"
+        "404":
           description: Not Found
   /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get namespace data for timespan
       description: Gets a list of URLs that can be used to download the pull data for the given namespace and timespan.
       operationId: getNamespaceDataByTimespan
@@ -628,7 +1023,7 @@ paths:
         - in: path
           name: timespantype
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: true
           description: Type of timespan to fetch data for
         - in: path
@@ -640,19 +1035,28 @@ paths:
         - in: path
           name: dataview
           schema:
-            $ref: '#/components/schemas/DataviewType'
+            $ref: "#/components/schemas/DataviewType"
           required: true
           description: Type of data to fetch
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ResponseData'
+                $ref: "#/components/schemas/ResponseData"
+              examples:
+                download:
+                  summary: Illustrative download location
+                  description: Use the signed URL returned by the API. The URL and file size in this example are illustrative.
+                  value:
+                    data:
+                      - url: https://example.invalid/exports/pulls.csv.gz?X-Amz-Expires=21600&X-Amz-Signature=EXAMPLE
+                        size: 1024
   /repos/pulls:
     get:
-      tags: [namespaces]
+      tags:
+        - namespaces
       summary: Get pull data for multiple repos
       description: Gets pull for the given repos.
       operationId: getManyReposPulls
@@ -668,347 +1072,34 @@ paths:
         - in: query
           name: timespan
           schema:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
           required: false
           description: Timespan type for fetching data
         - in: query
           name: period
           schema:
-            $ref: '#/components/schemas/PeriodType'
+            $ref: "#/components/schemas/PeriodType"
           required: false
           description: Relative period of the period to fetch data
         - in: query
           name: group
           schema:
-            $ref: '#/components/schemas/GroupType'
+            $ref: "#/components/schemas/GroupType"
           required: false
           description: Field to group the data by
       responses:
-        '200':
+        "200":
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReposPullData'
-@y
-  /:
-    get:
-      tags: [discovery]
-      summary: Get namespaces and repos
-      description: Gets a list of your namespaces and repos which have data available.
-      operationId: getNamespaces
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NamespaceData'
-  /namespaces:
-    get:
-      tags: [discovery]
-      summary: Get user's namespaces
-      description: Get metadata associated with the namespaces the user has access to, including extra repos associated with the namespaces.
-      operationId: getUserNamespaces
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/NamespaceMetadata'
-        '401':
-          description: Authentication failed or second factor required
-  /namespaces/{namespace}:
-    get:
-      tags: [discovery]
-      summary: Get namespace
-      description: Gets metadata associated with specified namespace, including extra repos associated with the namespace.
-      operationId: getNamespace
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NamespaceMetadata'
-  /namespaces/{namespace}/pulls:
-    get:
-      tags: [namespaces]
-      summary: Get pull data
-      description: Gets pulls for the given namespace.
-      operationId: getNamespacePulls
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-        - in: query
-          name: timespan
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: false
-          description: Timespan type for fetching data
-        - in: query
-          name: period
-          schema:
-            $ref: '#/components/schemas/PeriodType'
-          required: false
-          description: Relative period of the period to fetch data
-        - in: query
-          name: group
-          schema:
-            $ref: '#/components/schemas/GroupType'
-          required: false
-          description: Field to group the data by
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PullData'
-        '404':
-          description: Not found - namespace doesn't exist or user does not have permission to access it
-  /namespaces/{namespace}/repos/{repo}/pulls:
-    get:
-      tags: [namespaces]
-      summary: Get pull data
-      description: Gets pulls for the given repo.
-      operationId: getRepoPulls
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-        - in: path
-          name: repo
-          schema:
-            type: string
-          required: true
-          description: Repository to fetch data for
-        - in: query
-          name: timespan
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: false
-          description: Timespan type for fetching data
-        - in: query
-          name: period
-          schema:
-            $ref: '#/components/schemas/PeriodType'
-          required: false
-          description: Relative period of the period to fetch data
-        - in: query
-          name: group
-          schema:
-            $ref: '#/components/schemas/GroupType'
-          required: false
-          description: Field to group the data by
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/PullData'
-        '404':
-          description: Not found - repo doesn't exist or user does not have permission to access it
-  /namespaces/{namespace}/pulls/exports/years:
-    get:
-      tags: [namespaces]
-      summary: Get years with data
-      description: Gets a list of years that have data for the given namespace.
-      operationId: getNamespaceYears
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/YearData'
-  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}:
-    get:
-      tags: [namespaces]
-      summary: Get timespans with data
-      description: Gets a list of timespans of the given type that have data for the given namespace and year.
-      operationId: getNamespaceTimespans
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-        - in: path
-          name: year
-          schema:
-            type: integer
-          required: true
-          description: Year to fetch data for
-        - in: path
-          name: timespantype
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: true
-          description: Type of timespan to fetch data for
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TimespanData'
-  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}:
-    get:
-      tags: [namespaces]
-      summary: Get namespace metadata for timespan
-      description: Gets info about data for the given namespace and timespan.
-      operationId: getNamespaceTimespanMetadata
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-        - in: path
-          name: year
-          schema:
-            type: integer
-          required: true
-          description: Year to fetch data for
-        - in: path
-          name: timespantype
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: true
-          description: Type of timespan to fetch data for
-        - in: path
-          name: timespan
-          schema:
-            type: integer
-          required: true
-          description: Timespan to fetch data for
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TimespanModel'
-        '404':
-          description: Not Found
-  /namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}:
-    get:
-      tags: [namespaces]
-      summary: Get namespace data for timespan
-      description: Gets a list of URLs that can be used to download the pull data for the given namespace and timespan.
-      operationId: getNamespaceDataByTimespan
-      parameters:
-        - in: path
-          name: namespace
-          schema:
-            type: string
-          required: true
-          description: Namespace to fetch data for
-        - in: path
-          name: year
-          schema:
-            type: integer
-          required: true
-          description: Year to fetch data for
-        - in: path
-          name: timespantype
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: true
-          description: Type of timespan to fetch data for
-        - in: path
-          name: timespan
-          schema:
-            type: integer
-          required: true
-          description: Timespan to fetch data for
-        - in: path
-          name: dataview
-          schema:
-            $ref: '#/components/schemas/DataviewType'
-          required: true
-          description: Type of data to fetch
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResponseData'
-  /repos/pulls:
-    get:
-      tags: [namespaces]
-      summary: Get pull data for multiple repos
-      description: Gets pull for the given repos.
-      operationId: getManyReposPulls
-      parameters:
-        - in: query
-          name: repos
-          schema:
-            type: array
-            items:
-              type: string
-          required: true
-          description: Repositories to fetch data for (maximum of 50 repositories per request).
-        - in: query
-          name: timespan
-          schema:
-            $ref: '#/components/schemas/TimespanType'
-          required: false
-          description: Timespan type for fetching data
-        - in: query
-          name: period
-          schema:
-            $ref: '#/components/schemas/PeriodType'
-          required: false
-          description: Relative period of the period to fetch data
-        - in: query
-          name: group
-          schema:
-            $ref: '#/components/schemas/GroupType'
-          required: false
-          description: Field to group the data by
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ReposPullData'
-@z
-
-@x
+                $ref: "#/components/schemas/ReposPullData"
 components:
   schemas:
     UsersLoginRequest:
+      examples:
+        - username: myusername
+          password: hunter2
       description: User login details
       type: object
       required:
@@ -1020,39 +1111,12 @@ components:
           type: string
           example: myusername
         password:
-          description:
-            The password or personal access token (PAT) of the Docker Hub
-            account to authenticate with.
+          description: The password or personal access token (PAT) of the Docker Hub account to authenticate with.
           type: string
           example: hunter2
     PostUsersLoginSuccessResponse:
-      description: successful user login response
-      type: object
-      properties:
-        token:
-          description: |
-            Created authentication token.
-@y
-components:
-  schemas:
-    UsersLoginRequest:
-      description: User login details
-      type: object
-      required:
-        - username
-        - password
-      properties:
-        username:
-          description: The username of the Docker Hub account to authenticate with.
-          type: string
-          example: myusername
-        password:
-          description:
-            The password or personal access token (PAT) of the Docker Hub
-            account to authenticate with.
-          type: string
-          example: hunter2
-    PostUsersLoginSuccessResponse:
+      examples:
+        - token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
       description: successful user login response
       type: object
       properties:
@@ -1065,8 +1129,9 @@ components:
             This token can be used in the HTTP Authorization header as a JWT to authenticate with the Docker Hub APIs.
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: false
     PostUsersLoginErrorResponse:
+      examples:
+        - detail: Incorrect authentication credentials
       description: failed user login response or second factor required
       type: object
       required:
@@ -1076,16 +1141,16 @@ components:
           description: Description of the error.
           type: string
           example: Incorrect authentication credentials
-          nullable: false
         login_2fa_token:
-          description:
-            Short-lived token to be used on `/v2/users/2fa-login` to
-            complete the authentication. This field is present only if 2FA is
-            enabled.
-          type: string
+          description: Short-lived token to be used on `/v2/users/2fa-login` to complete the authentication. This field is present only if 2FA is enabled.
+          type:
+            - string
+            - "null"
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: true
     Users2FALoginRequest:
+      examples:
+        - login_2fa_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+          code: "123456"
       description: Second factor user login details
       type: object
       required:
@@ -1097,12 +1162,12 @@ components:
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
         code:
-          description:
-            The Time-based One-Time Password of the Docker Hub account to
-            authenticate with.
+          description: The Time-based One-Time Password of the Docker Hub account to authenticate with.
           type: string
-          example: 123456
+          example: "123456"
     PostUsers2FALoginErrorResponse:
+      examples:
+        - detail: Incorrect authentication credentials
       description: failed second factor login response.
       type: object
       properties:
@@ -1110,13 +1175,310 @@ components:
           description: Description of the error.
           type: string
           example: Incorrect authentication credentials
-          nullable: false
+    ResponseData:
+      properties:
+        data:
+          type: array
+          description: Download URLs and file sizes for the export.
+          items:
+            $ref: "#/components/schemas/ResponseDataFile"
+      type: object
+      description: Download locations for the selected export. Large exports can span multiple files.
+    ResponseDataFile:
+      properties:
+        url:
+          type: string
+          format: uri
+          description: Signed download URL. URLs expire six hours after generation.
+        size:
+          type: integer
+          format: int64
+          description: Size of the file in bytes.
+      type: object
+    NamespaceData:
+      examples:
+        - namespaces:
+            - myorganization
+      properties:
+        namespaces:
+          type: array
+          items:
+            type: string
+      type: object
+    NamespaceMetadata:
+      properties:
+        namespace:
+          type: string
+        extraRepos:
+          type:
+            - array
+            - "null"
+          items:
+            type: string
+          description: Additional repositories associated with the namespace. Null when none are configured.
+        datasets:
+          type: array
+          items:
+            $ref: "#/components/schemas/DatasetModel"
+        publisherType:
+          type: string
+          description: Publisher program associated with the namespace.
+        extensionPublisher:
+          type: boolean
+          description: Whether the namespace is an extension publisher.
+      type: object
+      examples:
+        - datasets:
+            - name: pulls
+              timespans:
+                - months
+                - weeks
+              views:
+                - raw
+                - summary
+                - repo-summary
+                - namespace-summary
+                - geo-repo-summary
+          extraRepos: null
+          namespace: org1
+          publisherType: DVP
+          extensionPublisher: false
+        - datasets:
+            - name: pulls
+              timespans:
+                - months
+                - weeks
+              views:
+                - repo-summary
+                - namespace-summary
+            - name: extensions
+              timespans:
+                - months
+                - weeks
+              views:
+                - ext-summary
+          extraRepos: null
+          namespace: org4
+          publisherType: DVP
+          extensionPublisher: true
+    DatasetModel:
+      properties:
+        name:
+          $ref: "#/components/schemas/DatasetType"
+        views:
+          type: array
+          items:
+            $ref: "#/components/schemas/DataviewType"
+        timespans:
+          type: array
+          items:
+            $ref: "#/components/schemas/TimespanType"
+      type: object
+      description: Datasets and views available to the publisher, based on its entitlements.
+    PullData:
+      properties:
+        pulls:
+          type:
+            - array
+            - "null"
+          items:
+            $ref: "#/components/schemas/PullModel"
+          description: Pull statistics for the selected interval. Null when no records are returned.
+      type: object
+      examples:
+        - pulls:
+            - end: "2022-08-07T00:00:00Z"
+              pullCount: 11
+              repo: neo4j-admin
+              start: "2022-08-01T00:00:00Z"
+              ipCount: 10
+            - end: "2022-08-14T00:00:00Z"
+              pullCount: 11
+              repo: neo4j-admin
+              start: "2022-08-08T00:00:00Z"
+              ipCount: 10
+        - pulls: null
+    ReposPullData:
+      properties:
+        repos:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/PullData"
+      type: object
+      examples:
+        - repos:
+            org2/neo4j-admin:
+              pulls:
+                - end: "2022-08-07T00:00:00Z"
+                  pullCount: 11
+                  repo: neo4j-admin
+                  start: "2022-08-01T00:00:00Z"
+                  ipCount: 10
+                - end: "2022-08-14T00:00:00Z"
+                  pullCount: 11
+                  repo: neo4j-admin
+                  start: "2022-08-08T00:00:00Z"
+                  ipCount: 10
+            org2/neo4j:
+              pulls:
+                - end: "2022-08-07T00:00:00Z"
+                  pullCount: 272407
+                  repo: neo4j
+                  start: "2022-08-01T00:00:00Z"
+                  ipCount: 41490
+                - end: "2022-08-14T00:00:00Z"
+                  pullCount: 272407
+                  repo: neo4j
+                  start: "2022-08-08T00:00:00Z"
+                  ipCount: 41490
+    PullModel:
+      properties:
+        start:
+          type: string
+          format: date-time
+          description: Start of the reporting interval in RFC 3339 format.
+        end:
+          type: string
+          format: date-time
+          description: End of the reporting interval in RFC 3339 format.
+        repo:
+          type: string
+          description: Repository name. Present for results grouped by repository.
+        namespace:
+          type: string
+          description: Namespace name. Present for results grouped by namespace.
+        pullCount:
+          type: integer
+        ipCount:
+          type: integer
+        country:
+          type: string
+          description: Country. Present for results grouped by geography and repository.
+      type: object
+    YearData:
+      examples:
+        - years:
+            - year: 2025
+      properties:
+        years:
+          type: array
+          items:
+            $ref: "#/components/schemas/YearModel"
+      type: object
+    YearModel:
+      properties:
+        year:
+          type: integer
+      type: object
+    MonthData:
+      properties:
+        months:
+          type: array
+          items:
+            $ref: "#/components/schemas/MonthModel"
+      type: object
+      required:
+        - months
+      examples:
+        - months:
+            - month: 5
+            - month: 7
+    MonthModel:
+      properties:
+        month:
+          type: integer
+      type: object
+      required:
+        - month
+      examples:
+        - month: 7
+    WeekData:
+      properties:
+        weeks:
+          type: array
+          items:
+            $ref: "#/components/schemas/WeekModel"
+      type: object
+      required:
+        - weeks
+      examples:
+        - weeks:
+            - week: 31
+            - week: 32
+    WeekModel:
+      properties:
+        week:
+          type: integer
+      type: object
+      required:
+        - week
+      examples:
+        - week: 31
+    TimespanType:
+      type: string
+      enum:
+        - months
+        - weeks
+    PeriodType:
+      type: string
+      enum:
+        - last-2-months
+        - last-3-months
+        - last-6-months
+        - last-12-months
+    DataviewType:
+      type: string
+      enum:
+        - raw
+        - summary
+        - repo-summary
+        - namespace-summary
+        - geo-repo-summary
+        - ext-summary
+        - ext-premium-summary
+        - ext-premium-geo
+    DatasetType:
+      type: string
+      enum:
+        - pulls
+        - extensions
+    TimespanModel:
+      oneOf:
+        - $ref: "#/components/schemas/MonthModel"
+        - $ref: "#/components/schemas/WeekModel"
+      examples:
+        - month: 7
+        - week: 31
+    TimespanData:
+      oneOf:
+        - $ref: "#/components/schemas/MonthData"
+        - $ref: "#/components/schemas/WeekData"
+      examples:
+        - months:
+            - month: 5
+            - month: 7
+        - weeks:
+            - week: 31
+            - week: 32
+    GroupType:
+      type: string
+      enum:
+        - repo
+        - namespace
+  securitySchemes:
+    HubAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        JWT Bearer Authentication is required to access the Docker DVP Data API.  
 @y
             This token can be used in the HTTP Authorization header as a JWT to authenticate with the Docker Hub APIs.
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: false
     PostUsersLoginErrorResponse:
+      examples:
+        - detail: Incorrect authentication credentials
       description: failed user login response or second factor required
       type: object
       required:
@@ -1126,16 +1488,16 @@ components:
           description: Description of the error.
           type: string
           example: Incorrect authentication credentials
-          nullable: false
         login_2fa_token:
-          description:
-            Short-lived token to be used on `/v2/users/2fa-login` to
-            complete the authentication. This field is present only if 2FA is
-            enabled.
-          type: string
+          description: Short-lived token to be used on `/v2/users/2fa-login` to complete the authentication. This field is present only if 2FA is enabled.
+          type:
+            - string
+            - "null"
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
-          nullable: true
     Users2FALoginRequest:
+      examples:
+        - login_2fa_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+          code: "123456"
       description: Second factor user login details
       type: object
       required:
@@ -1147,12 +1509,12 @@ components:
           type: string
           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
         code:
-          description:
-            The Time-based One-Time Password of the Docker Hub account to
-            authenticate with.
+          description: The Time-based One-Time Password of the Docker Hub account to authenticate with.
           type: string
-          example: 123456
+          example: "123456"
     PostUsers2FALoginErrorResponse:
+      examples:
+        - detail: Incorrect authentication credentials
       description: failed second factor login response.
       type: object
       properties:
@@ -1160,277 +1522,299 @@ components:
           description: Description of the error.
           type: string
           example: Incorrect authentication credentials
-          nullable: false
-@z
-
-@x
     ResponseData:
       properties:
         data:
           type: array
-          description: |
-            List of urls to download the data. When the data is large, the data will be split into multiple files.
-          items: 
-            $ref: '#/components/schemas/ResponseDataFile'
+          description: Download URLs and file sizes for the export.
+          items:
+            $ref: "#/components/schemas/ResponseDataFile"
+      type: object
+      description: Download locations for the selected export. Large exports can span multiple files.
     ResponseDataFile:
       properties:
         url:
           type: string
+          format: uri
+          description: Signed download URL. URLs expire six hours after generation.
         size:
           type: integer
           format: int64
+          description: Size of the file in bytes.
+      type: object
     NamespaceData:
+      examples:
+        - namespaces:
+            - myorganization
       properties:
         namespaces:
           type: array
           items:
             type: string
+      type: object
     NamespaceMetadata:
       properties:
         namespace:
           type: string
         extraRepos:
-          type: array
+          type:
+            - array
+            - "null"
           items:
             type: string
+          description: Additional repositories associated with the namespace. Null when none are configured.
         datasets:
           type: array
           items:
-            $ref: '#/components/schemas/DatasetModel'
+            $ref: "#/components/schemas/DatasetModel"
+        publisherType:
+          type: string
+          description: Publisher program associated with the namespace.
+        extensionPublisher:
+          type: boolean
+          description: Whether the namespace is an extension publisher.
+      type: object
+      examples:
+        - datasets:
+            - name: pulls
+              timespans:
+                - months
+                - weeks
+              views:
+                - raw
+                - summary
+                - repo-summary
+                - namespace-summary
+                - geo-repo-summary
+          extraRepos: null
+          namespace: org1
+          publisherType: DVP
+          extensionPublisher: false
+        - datasets:
+            - name: pulls
+              timespans:
+                - months
+                - weeks
+              views:
+                - repo-summary
+                - namespace-summary
+            - name: extensions
+              timespans:
+                - months
+                - weeks
+              views:
+                - ext-summary
+          extraRepos: null
+          namespace: org4
+          publisherType: DVP
+          extensionPublisher: true
     DatasetModel:
       properties:
         name:
-          $ref: '#/components/schemas/DatasetType'
+          $ref: "#/components/schemas/DatasetType"
         views:
           type: array
           items:
-            $ref: '#/components/schemas/DataviewType'
+            $ref: "#/components/schemas/DataviewType"
         timespans:
           type: array
           items:
-            $ref: '#/components/schemas/TimespanType'
+            $ref: "#/components/schemas/TimespanType"
+      type: object
+      description: Datasets and views available to the publisher, based on its entitlements.
     PullData:
       properties:
         pulls:
-          type: array
+          type:
+            - array
+            - "null"
           items:
-            $ref: '#/components/schemas/PullModel'
+            $ref: "#/components/schemas/PullModel"
+          description: Pull statistics for the selected interval. Null when no records are returned.
+      type: object
+      examples:
+        - pulls:
+            - end: "2022-08-07T00:00:00Z"
+              pullCount: 11
+              repo: neo4j-admin
+              start: "2022-08-01T00:00:00Z"
+              ipCount: 10
+            - end: "2022-08-14T00:00:00Z"
+              pullCount: 11
+              repo: neo4j-admin
+              start: "2022-08-08T00:00:00Z"
+              ipCount: 10
+        - pulls: null
     ReposPullData:
       properties:
         repos:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/PullData'
+            $ref: "#/components/schemas/PullData"
+      type: object
+      examples:
+        - repos:
+            org2/neo4j-admin:
+              pulls:
+                - end: "2022-08-07T00:00:00Z"
+                  pullCount: 11
+                  repo: neo4j-admin
+                  start: "2022-08-01T00:00:00Z"
+                  ipCount: 10
+                - end: "2022-08-14T00:00:00Z"
+                  pullCount: 11
+                  repo: neo4j-admin
+                  start: "2022-08-08T00:00:00Z"
+                  ipCount: 10
+            org2/neo4j:
+              pulls:
+                - end: "2022-08-07T00:00:00Z"
+                  pullCount: 272407
+                  repo: neo4j
+                  start: "2022-08-01T00:00:00Z"
+                  ipCount: 41490
+                - end: "2022-08-14T00:00:00Z"
+                  pullCount: 272407
+                  repo: neo4j
+                  start: "2022-08-08T00:00:00Z"
+                  ipCount: 41490
     PullModel:
       properties:
         start:
           type: string
+          format: date-time
+          description: Start of the reporting interval in RFC 3339 format.
         end:
           type: string
+          format: date-time
+          description: End of the reporting interval in RFC 3339 format.
         repo:
           type: string
+          description: Repository name. Present for results grouped by repository.
         namespace:
           type: string
+          description: Namespace name. Present for results grouped by namespace.
         pullCount:
           type: integer
         ipCount:
           type: integer
         country:
           type: string
-@y
-    ResponseData:
-      properties:
-        data:
-          type: array
-          description: |
-            List of urls to download the data. When the data is large, the data will be split into multiple files.
-          items: 
-            $ref: '#/components/schemas/ResponseDataFile'
-    ResponseDataFile:
-      properties:
-        url:
-          type: string
-        size:
-          type: integer
-          format: int64
-    NamespaceData:
-      properties:
-        namespaces:
-          type: array
-          items:
-            type: string
-    NamespaceMetadata:
-      properties:
-        namespace:
-          type: string
-        extraRepos:
-          type: array
-          items:
-            type: string
-        datasets:
-          type: array
-          items:
-            $ref: '#/components/schemas/DatasetModel'
-    DatasetModel:
-      properties:
-        name:
-          $ref: '#/components/schemas/DatasetType'
-        views:
-          type: array
-          items:
-            $ref: '#/components/schemas/DataviewType'
-        timespans:
-          type: array
-          items:
-            $ref: '#/components/schemas/TimespanType'
-    PullData:
-      properties:
-        pulls:
-          type: array
-          items:
-            $ref: '#/components/schemas/PullModel'
-    ReposPullData:
-      properties:
-        repos:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PullData'
-    PullModel:
-      properties:
-        start:
-          type: string
-        end:
-          type: string
-        repo:
-          type: string
-        namespace:
-          type: string
-        pullCount:
-          type: integer
-        ipCount:
-          type: integer
-        country:
-          type: string
-@z
-
-@x
+          description: Country. Present for results grouped by geography and repository.
+      type: object
     YearData:
+      examples:
+        - years:
+            - year: 2025
       properties:
         years:
           type: array
           items:
-            $ref: '#/components/schemas/YearModel'
+            $ref: "#/components/schemas/YearModel"
+      type: object
     YearModel:
       properties:
         year:
           type: integer
+      type: object
     MonthData:
       properties:
         months:
           type: array
           items:
-            $ref: '#/components/schemas/MonthModel'
+            $ref: "#/components/schemas/MonthModel"
+      type: object
+      required:
+        - months
+      examples:
+        - months:
+            - month: 5
+            - month: 7
     MonthModel:
       properties:
         month:
           type: integer
+      type: object
+      required:
+        - month
+      examples:
+        - month: 7
     WeekData:
       properties:
         weeks:
           type: array
           items:
-            $ref: '#/components/schemas/WeekModel'
+            $ref: "#/components/schemas/WeekModel"
+      type: object
+      required:
+        - weeks
+      examples:
+        - weeks:
+            - week: 31
+            - week: 32
     WeekModel:
       properties:
         week:
           type: integer
+      type: object
+      required:
+        - week
+      examples:
+        - week: 31
     TimespanType:
       type: string
-      enum: [months,weeks]
+      enum:
+        - months
+        - weeks
     PeriodType:
       type: string
-      enum: [last-2-months,last-3-months,last-6-months,last-12-months]
+      enum:
+        - last-2-months
+        - last-3-months
+        - last-6-months
+        - last-12-months
     DataviewType:
       type: string
-      enum: [raw,summary,repo-summary,namespace-summary]
+      enum:
+        - raw
+        - summary
+        - repo-summary
+        - namespace-summary
+        - geo-repo-summary
+        - ext-summary
+        - ext-premium-summary
+        - ext-premium-geo
     DatasetType:
       type: string
-      enum: [pulls]
+      enum:
+        - pulls
+        - extensions
     TimespanModel:
       oneOf:
-        - $ref: '#/components/schemas/MonthModel'
-        - $ref: '#/components/schemas/WeekModel'
+        - $ref: "#/components/schemas/MonthModel"
+        - $ref: "#/components/schemas/WeekModel"
+      examples:
+        - month: 7
+        - week: 31
     TimespanData:
       oneOf:
-        - $ref: '#/components/schemas/MonthData'
-        - $ref: '#/components/schemas/WeekData'
+        - $ref: "#/components/schemas/MonthData"
+        - $ref: "#/components/schemas/WeekData"
+      examples:
+        - months:
+            - month: 5
+            - month: 7
+        - weeks:
+            - week: 31
+            - week: 32
     GroupType:
       type: string
-      enum: [repo,namespace]
+      enum:
+        - repo
+        - namespace
   securitySchemes:
     HubAuth:
-      type: https
-      scheme: bearer
-      bearerFormat: JWT
-      description: |
-        JWT Bearer Authentication is required to access the Docker DVP Data API.  
-@y
-    YearData:
-      properties:
-        years:
-          type: array
-          items:
-            $ref: '#/components/schemas/YearModel'
-    YearModel:
-      properties:
-        year:
-          type: integer
-    MonthData:
-      properties:
-        months:
-          type: array
-          items:
-            $ref: '#/components/schemas/MonthModel'
-    MonthModel:
-      properties:
-        month:
-          type: integer
-    WeekData:
-      properties:
-        weeks:
-          type: array
-          items:
-            $ref: '#/components/schemas/WeekModel'
-    WeekModel:
-      properties:
-        week:
-          type: integer
-    TimespanType:
-      type: string
-      enum: [months,weeks]
-    PeriodType:
-      type: string
-      enum: [last-2-months,last-3-months,last-6-months,last-12-months]
-    DataviewType:
-      type: string
-      enum: [raw,summary,repo-summary,namespace-summary]
-    DatasetType:
-      type: string
-      enum: [pulls]
-    TimespanModel:
-      oneOf:
-        - $ref: '#/components/schemas/MonthModel'
-        - $ref: '#/components/schemas/WeekModel'
-    TimespanData:
-      oneOf:
-        - $ref: '#/components/schemas/MonthData'
-        - $ref: '#/components/schemas/WeekData'
-    GroupType:
-      type: string
-      enum: [repo,namespace]
-  securitySchemes:
-    HubAuth:
-      type: https
+      type: http
       scheme: bearer
       bearerFormat: JWT
       description: |
@@ -1438,9 +1822,15 @@ components:
 @z
 
 @x
-        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#tag/authentication)
+        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#authentication)
       x-displayName: Docker Hub Authentication
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
+x-features-openapi:
+  schemaDefinitionsTagName: Schemas
 @y
-        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#tag/authentication)
+        This authentication documentation is duplicated from the [Hub API Authentication docs](https://docs.docker.com/reference/api/hub/latest/#authentication)
       x-displayName: Docker Hub Authentication
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
+x-features-openapi:
+  schemaDefinitionsTagName: Schemas
 @z

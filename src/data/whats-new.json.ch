@@ -2,15 +2,71 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+      "product": "Docker Sandboxes",
+      "title": "Share agent skills read-only by default",
+      "description": "Sandboxes created with version 0.43.0 mount shared agent skills read-only by default. Choose read-only, read-write, or no access when creating a sandbox.",
+      "url": "/ai/sandboxes/workflows/agent-skills/#shared-store-behavior",
+      "published": "2026-09-15",
+@y
+      "product": "Docker Sandbox",
+      "title": "Share agent skills read-only by default",
+      "description": "Sandboxes created with version 0.43.0 mount shared agent skills read-only by default. Choose read-only, read-write, or no access when creating a sandbox.",
+      "url": "/ai/sandboxes/workflows/agent-skills/#shared-store-behavior",
+      "published": "2026-09-15",
+@z
+
+@x
+      "product": "Docker Sandboxes",
+      "title": "Run agents without mounting host files",
+      "description": "Create a sandbox without a host workspace mount. Keep agent files inside the sandbox across stops and restarts, and copy files between the sandbox and host when needed.",
+      "url": "/ai/sandboxes/usage/#choose-a-workspace",
+      "published": "2026-09-07",
+@y
+      "product": "Docker Sandbox",
+      "title": "Run agents without mounting host files",
+      "description": "Create a sandbox without a host workspace mount. Keep agent files inside the sandbox across stops and restarts, and copy files between the sandbox and host when needed.",
+      "url": "/ai/sandboxes/usage/#choose-a-workspace",
+      "published": "2026-09-07",
+@z
+
+@x
+      "product": "Docker Sandboxes",
+      "title": "Install and update shared skills from Git repositories",
+      "description": "Install agent skills from Git repositories into a persistent store shared across sandboxes, and update or remove them with sbx skills.",
+      "url": "/ai/sandboxes/workflows/agent-skills/",
+      "published": "2026-09-07",
+@y
+      "product": "Docker Sandbox",
+      "title": "Install and update shared skills from Git repositories",
+      "description": "Install agent skills from Git repositories into a persistent store shared across sandboxes, and update or remove them with sbx skills.",
+      "url": "/ai/sandboxes/workflows/agent-skills/",
+      "published": "2026-09-07",
+@z
+
+@x
+      "product": "Docker Build Cloud",
+      "title": "Use Docker Build Cloud with standard Buildx",
+      "description": "Buildx 0.37.0 includes the cloud driver, so you can connect to Docker Build Cloud from the standard Buildx CLI plugin without installing a separate client.",
+      "url": "/build/builders/drivers/cloud/",
+      "published": "2026-09-03",
+@y
+      "product": "Docker Build Cloud",
+      "title": "Use Docker Build Cloud with standard Buildx",
+      "description": "Buildx 0.37.0 includes the cloud driver, so you can connect to Docker Build Cloud from the standard Buildx CLI plugin without installing a separate client.",
+      "url": "/build/builders/drivers/cloud/",
+      "published": "2026-09-03",
+@z
+
+@x
       "product": "Docker Verified Publisher",
       "title": "Join Docker Verified Publisher through self-service plans",
-      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, tracked companies, and billing.",
+      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, consuming domains, and billing.",
       "url": "/subscription-billing/plans/docker-verified-publisher/",
       "published": "2026-08-20",
 @y
       "product": "Docker 検証済みパブリッシャー",
       "title": "セルフサービスプランを通じて Docker 検証済みパブリッシャーに参加する",
-      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, tracked companies, and billing.",
+      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, consuming domains, and billing.",
       "url": "/subscription-billing/plans/docker-verified-publisher/",
       "published": "2026-08-20",
 @z
@@ -32,13 +88,13 @@
 @x
       "product": "Docker Sandboxes",
       "title": "Define reproducible sandbox environments",
-      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable .sbxenv.yaml file and manage it with sbx env.",
+      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable sbxenv.yaml file and manage it with sbx env.",
       "url": "/ai/sandboxes/configuration/environment-files/",
       "published": "2026-08-19",
 @y
       "product": "Docker Sandbox",
       "title": "再生成可能なサンドボックス環境を定義する",
-      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable .sbxenv.yaml file and manage it with sbx env.",
+      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable sbxenv.yaml file and manage it with sbx env.",
       "url": "/ai/sandboxes/configuration/environment-files/",
       "published": "2026-08-19",
 @z
@@ -50,7 +106,7 @@
       "url": "/ai/sandboxes/configuration/credentials/#use-a-dynamic-secret-source",
       "published": "2026-08-19",
 @y
-      "product": "Docker Sandbox",
+      "product": "Docker Sandboxes",
       "title": "Resolve sandbox secrets from external sources",
       "description": "Keep references to 1Password, AWS Secrets Manager, or host commands in the secret store and resolve credentials on the host when the proxy needs them.",
       "url": "/ai/sandboxes/configuration/credentials/#use-a-dynamic-secret-source",
@@ -64,7 +120,7 @@
       "url": "/ai/sandboxes/configuration/gpu-passthrough/",
       "published": "2026-08-19",
 @y
-      "product": "Docker Sandbox",
+      "product": "Docker Sandboxes",
       "title": "Run GPU workloads in sandboxes",
       "description": "Pass an NVIDIA GPU through to a sandbox on supported Linux hosts for GPU-accelerated agent workloads.",
       "url": "/ai/sandboxes/configuration/gpu-passthrough/",
@@ -83,116 +139,4 @@
       "description": "Build automation or dashboards that query image packages, CVEs, VEX statements, and suppressed vulnerabilities by digest.",
       "url": "/dhi/tools/api/",
       "published": "2026-08-17",
-@z
-
-@x
-      "product": "Docker Desktop",
-      "title": "Use Docker VMM on Mac and Windows",
-      "description": "Run Docker Desktop with Docker's container-optimized hypervisor on supported Mac and Windows systems.",
-      "url": "/desktop/features/vmm/",
-      "published": "2026-08-10",
-@y
-      "product": "Docker Desktop",
-      "title": "Docker VMM を Mac や Windows で利用する",
-      "description": "Run Docker Desktop with Docker's container-optimized hypervisor on supported Mac and Windows systems.",
-      "url": "/desktop/features/vmm/",
-      "published": "2026-08-10",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Connect sandboxes through an MCP gateway",
-      "description": "Register local or remote MCP servers on the host, reuse them across sandboxes, and govern server and tool access with Cedar policies.",
-      "url": "/ai/sandboxes/mcp-gateway/",
-      "published": "2026-08-06",
-@y
-      "product": "Docker Sandbox",
-      "title": "MCP ゲートウェイを通じてサンドボックスに接続する",
-      "description": "Register local or remote MCP servers on the host, reuse them across sandboxes, and govern server and tool access with Cedar policies.",
-      "url": "/ai/sandboxes/mcp-gateway/",
-      "published": "2026-08-06",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Author version 2 sandbox kits",
-      "description": "Define kit setup, permissions, networking, and API key or OAuth credential requirements with the version 2 kit schema.",
-      "url": "/ai/sandboxes/customize/kit-reference/#schema-versions",
-      "published": "2026-08-06",
-@y
-      "product": "Docker Sandbox",
-      "title": "Author version 2 sandbox kits",
-      "description": "Define kit setup, permissions, networking, and API key or OAuth credential requirements with the version 2 kit schema.",
-      "url": "/ai/sandboxes/customize/kit-reference/#schema-versions",
-      "published": "2026-08-06",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Run Claude Code with local models",
-      "description": "Route Claude Code sandbox requests to the bundled local-model server or an existing Ollama installation.",
-      "url": "/ai/sandboxes/agents/claude-code/#use-a-local-model",
-      "published": "2026-08-06",
-@y
-      "product": "Docker Sandbox",
-      "title": "Run Claude Code with local models",
-      "description": "Route Claude Code sandbox requests to the bundled local-model server or an existing Ollama installation.",
-      "url": "/ai/sandboxes/agents/claude-code/#use-a-local-model",
-      "published": "2026-08-06",
-@z
-
-@x
-      "product": "Docker AI Governance",
-      "title": "Search and forward audit events",
-      "description": "Search and export policy decisions from Docker Cloud, or forward events to Splunk Cloud, Dynatrace, and Datadog.",
-      "url": "/ai/sandboxes/governance/audit/",
-      "published": "2026-08-03",
-@y
-      "product": "Docker AI Governance",
-      "title": "Search and forward audit events",
-      "description": "Search and export policy decisions from Docker Cloud, or forward events to Splunk Cloud, Dynatrace, and Datadog.",
-      "url": "/ai/sandboxes/governance/audit/",
-      "published": "2026-08-03",
-@z
-
-@x
-      "product": "Docker Desktop",
-      "title": "Install from the Microsoft Store without administrator privileges",
-      "description": "Fresh Microsoft Store installations on Windows use per-user mode by default.",
-      "url": "/desktop/release-notes/#4850",
-      "published": "2026-08-03",
-@y
-      "product": "Docker Desktop",
-      "title": "Install from the Microsoft Store without administrator privileges",
-      "description": "Fresh Microsoft Store installations on Windows use per-user mode by default.",
-      "url": "/desktop/release-notes/#4850",
-      "published": "2026-08-03",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Share agent skills across sandboxes",
-      "description": "Import skills from supported host agents into a persistent store that sandboxes can share.",
-      "url": "/ai/sandboxes/workflows/agent-skills/",
-      "published": "2026-07-24",
-@y
-      "product": "Docker Sandbox",
-      "title": "Share agent skills across sandboxes",
-      "description": "Import skills from supported host agents into a persistent store that sandboxes can share.",
-      "url": "/ai/sandboxes/workflows/agent-skills/",
-      "published": "2026-07-24",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Connect editors and desktop apps over SSH",
-      "description": "Use a sandbox from VS Code, Cursor, Claude Desktop, ChatGPT, or another SSH-capable tool.",
-      "url": "/ai/sandboxes/integrations/",
-      "published": "2026-07-24",
-@y
-      "product": "Docker Sandbox",
-      "title": "エディターとデスクトップアプリを SSH 経由で接続する",
-      "description": "Use a sandbox from VS Code, Cursor, Claude Desktop, ChatGPT, or another SSH-capable tool.",
-      "url": "/ai/sandboxes/integrations/",
-      "published": "2026-07-24",
 @z

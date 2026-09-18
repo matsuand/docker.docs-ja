@@ -16,11 +16,13 @@ description: |-
 @z
 
 @x
-    Skills are shared across sandboxes by default. Use --no-share-skills when
-    creating a sandbox to opt out.
+    Skills are shared across sandboxes by default, mounted read-only. Use
+    --skills=off when creating a sandbox to opt out, or --skills=readwrite to
+    mount the store read-write.
 @y
-    Skills are shared across sandboxes by default. Use --no-share-skills when
-    creating a sandbox to opt out.
+    Skills are shared across sandboxes by default, mounted read-only. Use
+    --skills=off when creating a sandbox to opt out, or --skills=readwrite to
+    mount the store read-write.
 @z
 
 @x

@@ -60,9 +60,10 @@ What crosses the boundary into the VM:
   outbound HTTP requests. The raw credential values never enter the VM.
 - **Network access:** outbound TCP connections to destinations allowed by
   [network policy](defaults/) are proxied through the host.
-- **Shared agent skills:** a persistent host-side store is mounted read-write
-  at the agent's skills directory unless you opt out when creating the
-  sandbox. Supported agents in other sandboxes mount the same store.
+- Shared agent skills: sandboxes created for supported agents mount a
+  persistent host-side store read-only by default at the agent's skills
+  directory. Use `--skills` or `skills.defaultMode` to choose another mode at
+  creation. Existing sandboxes retain their mounts until recreated.
 - **MCP gateway traffic:** supported agents connect to a host-side MCP gateway
   endpoint. The gateway brokers access to registered MCP servers.
 @y
@@ -76,9 +77,10 @@ What crosses the boundary into the VM:
   outbound HTTP requests. The raw credential values never enter the VM.
 - **Network access:** outbound TCP connections to destinations allowed by
   [network policy](defaults/) are proxied through the host.
-- **Shared agent skills:** a persistent host-side store is mounted read-write
-  at the agent's skills directory unless you opt out when creating the
-  sandbox. Supported agents in other sandboxes mount the same store.
+- Shared agent skills: sandboxes created for supported agents mount a
+  persistent host-side store read-only by default at the agent's skills
+  directory. Use `--skills` or `skills.defaultMode` to choose another mode at
+  creation. Existing sandboxes retain their mounts until recreated.
 - **MCP gateway traffic:** supported agents connect to a host-side MCP gateway
   endpoint. The gateway brokers access to registered MCP servers.
 @z
@@ -94,15 +96,15 @@ What crosses the boundary back to the host:
   direct mount.
 - **Outbound TCP connections:** sent to allowed destinations through the host
   proxy.
-- **Shared skill changes:** written to the host-side store and visible to other
-  sandboxes that share it.
+- Shared skill changes: sandboxes with `readwrite` access can write to the
+  host-side store. These changes are visible to other sandboxes that share it.
 @y
 - **Workspace file changes:** visible on your host in real time when you use a
   direct mount.
 - **Outbound TCP connections:** sent to allowed destinations through the host
   proxy.
-- **Shared skill changes:** written to the host-side store and visible to other
-  sandboxes that share it.
+- Shared skill changes: sandboxes with `readwrite` access can write to the
+  host-side store. These changes are visible to other sandboxes that share it.
 @z
 
 @x
@@ -273,16 +275,18 @@ that defaults to Docker Hub only. See
 
 @x
 Shared agent skills create a narrow exception to cross-sandbox isolation. The
-store is mounted read-write, so one sandbox can modify instructions or scripts
-that an agent later uses in another sandbox. This doesn't expose the rest of
+store can be mounted with `readwrite` access, so one sandbox can modify
+instructions or scripts that an agent later uses in another sandbox, including
+one with `readonly` access. This doesn't expose the rest of
 the host filesystem or create a direct network path between sandboxes, but it
 does put participating sandboxes in the same trust boundary. See
 [Share agent skills](../workflows/agent-skills.md) for details and the
 per-sandbox opt-out.
 @y
 Shared agent skills create a narrow exception to cross-sandbox isolation. The
-store is mounted read-write, so one sandbox can modify instructions or scripts
-that an agent later uses in another sandbox. This doesn't expose the rest of
+store can be mounted with `readwrite` access, so one sandbox can modify
+instructions or scripts that an agent later uses in another sandbox, including
+one with `readonly` access. This doesn't expose the rest of
 the host filesystem or create a direct network path between sandboxes, but it
 does put participating sandboxes in the same trust boundary. See
 [Share agent skills](../workflows/agent-skills.md) for details and the

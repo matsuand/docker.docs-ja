@@ -296,7 +296,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = admonitions api-ref components sidebar utils
+SUBDIRS = admonitions api-ref api-reference components sidebar utils
 bases = \
 	footer.html       \
 	github-links.html \

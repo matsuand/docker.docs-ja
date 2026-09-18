@@ -70,11 +70,11 @@ The following objects are shown in the diagram.
 @x
 Use the following steps to delete one or more items via the graphical user
 interface. To delete in bulk, see the [deletion API
-endpoint](/reference/api/registry/latest/#tag/delete).
+endpoint](/reference/api/registry/latest/#tag-delete).
 @y
 Use the following steps to delete one or more items via the graphical user
 interface. To delete in bulk, see the [deletion API
-endpoint](__SUBDIR__/reference/api/registry/latest/#tag/delete).
+endpoint](__SUBDIR__/reference/api/registry/latest/#tag-delete).
 @z
 
 @x

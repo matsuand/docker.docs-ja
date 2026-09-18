@@ -32,12 +32,6 @@ and vulnerabilities.
 @z
 
 @x
-![The image details view in Docker Desktop](../images/dd-image-view.png)
-@y
-![The image details view in Docker Desktop](../images/dd-image-view.png)
-@z
-
-@x
 Docker Desktop first analyzes images locally, where it generates a software bill of materials (SBOM).
 Docker Desktop, Docker Hub, and the Docker Scout Dashboard and CLI all use the [package URL (PURL) links](https://github.com/package-url/purl-spec)
 in this SBOM to query for matching Common Vulnerabilities and Exposures (CVEs) in [Docker Scout's advisory database](/manuals/scout/deep-dive/advisory-db-sources.md).
@@ -365,12 +359,6 @@ as a base image, it shows recommendations for newer and more secure versions
 of `debian` to use. By providing more than one alternative to choose from, you
 can see for yourself how the options compare with each other, and decide which
 one to use.
-@z
-
-@x
-![Base image recommendations](../images/change-base-image.png)
-@y
-![Base image recommendations](../images/change-base-image.png)
 @z
 
 @x

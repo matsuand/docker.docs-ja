@@ -165,10 +165,10 @@ usage: sbx create devin [PATH...] [flags]
 
 @x memory
       usage: |
-        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
 @y
       usage: |
-        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
 @z
 
 @x name
@@ -199,6 +199,14 @@ usage: sbx create devin [PATH...] [flags]
       usage: Suppress verbose output
 @y
       usage: Suppress verbose output
+@z
+
+@x skills
+      usage: |
+        Shared skills store mode: off, readonly, or readwrite (mounted at the agent's skills directory, e.g. ~/.claude/skills). Default: readonly, or the configured skills.defaultMode setting.
+@y
+      usage: |
+        Shared skills store mode: off, readonly, or readwrite (mounted at the agent's skills directory, e.g. ~/.claude/skills). Default: readonly, or the configured skills.defaultMode setting.
 @z
 
 @x template

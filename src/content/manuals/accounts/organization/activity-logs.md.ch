@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Activity logs
 @y
@@ -96,9 +98,9 @@ organization.
 @z
 
 @x
-To view activity logs using the Docker Hub API, use the [Audit logs endpoints](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+To view activity logs using the Docker Hub API, use the [Audit logs endpoints](/reference/api/hub/latest/#tag-audit-logs).
 @y
-To view activity logs using the Docker Hub API, use the [Audit logs endpoints](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+To view activity logs using the Docker Hub API, use the [Audit logs endpoints](__SUBDIR__/reference/api/hub/latest/#tag-audit-logs).
 @z
 
 @x
@@ -120,13 +122,13 @@ To view activity logs using the Docker Hub API, use the [Audit logs endpoints](h
 >
 > Docker Home retains activity logs for 30 days. To retrieve
 activities beyond 30 days, you must use the
-[Docker Hub API](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+[Docker Hub API](/reference/api/hub/latest/#tag-audit-logs).
 @y
 > [!IMPORTANT]
 >
 > Docker Home retains activity logs for 30 days. To retrieve
 activities beyond 30 days, you must use the
-[Docker Hub API](https://docs.docker.com/reference/api/hub/latest/#tag/audit-logs).
+[Docker Hub API](__SUBDIR__/reference/api/hub/latest/#tag-audit-logs).
 @z
 
 @x

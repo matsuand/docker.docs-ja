@@ -188,15 +188,3 @@ order, contact Support or your Account Manager at Docker.
 If your organization has a Docker Business subscription with a purchase
 order, contact Support or your Account Manager at Docker.
 @z
-
-@x
-## More resources
-@y
-## More resources
-@z
-
-@x
-- [Video: Docker Hub Organizations](https://www.youtube.com/watch?v=WKlT1O-4Du8)
-@y
-- [Video: Docker Hub Organizations](https://www.youtube.com/watch?v=WKlT1O-4Du8)
-@z

@@ -310,17 +310,3 @@ won't delete any resources.
 1. Select **Delete team**.
 1. Review the confirmation message, then select **Delete**.
 @z
-
-@x
-## More resources
-@y
-## More resources
-@z
-
-@x
-- [Video: Docker Teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
-- [Video: Roles, teams, and repositories](https://youtu.be/WKlT1O-4Du8?feature=shared&t=435)
-@y
-- [Video: Docker Teams](https://youtu.be/WKlT1O-4Du8?feature=shared&t=348)
-- [Video: Roles, teams, and repositories](https://youtu.be/WKlT1O-4Du8?feature=shared&t=435)
-@z

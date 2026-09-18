@@ -239,12 +239,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 copyfiles = \
 	authorize-builder.png \
-	bitbucket-revoke.png  \
-	build-cancelicon.png  \
-	index-active.png      \
-	index-dashboard.png   \
-	index-report.png      \
-	retry-build.png
+	bitbucket-revoke.png
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

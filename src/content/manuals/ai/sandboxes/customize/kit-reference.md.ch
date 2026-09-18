@@ -92,19 +92,11 @@ the legacy path.
 @z
 
 @x
-The loader forks on `schemaVersion`. A v2 spec uses the v2 grammar only. Legacy
-v1 fields in a `schemaVersion: "2"` spec are rejected during decode instead of
-being folded into the v2 model. Keep each `spec.yaml` on one grammar.
+When migrating to `schemaVersion: "2"`, replace v1 fields with their v2
+equivalents:
 @y
-The loader forks on `schemaVersion`. A v2 spec uses the v2 grammar only. Legacy
-v1 fields in a `schemaVersion: "2"` spec are rejected during decode instead of
-being folded into the v2 model. Keep each `spec.yaml` on one grammar.
-@z
-
-@x
-What changed in v2:
-@y
-What changed in v2:
+When migrating to `schemaVersion: "2"`, replace v1 fields with their v2
+equivalents:
 @z
 
 @x
@@ -345,14 +337,10 @@ a sandbox.
 
 @x
 Each argument must declare either `default`, including an empty-string
-default, or `required: true`. A declared default must satisfy its own `enum` or
-`pattern`. Every `${{ kit.args.<name> }}` reference must have a matching
-declaration.
+default, or `required: true`.
 @y
 Each argument must declare either `default`, including an empty-string
-default, or `required: true`. A declared default must satisfy its own `enum` or
-`pattern`. Every `${{ kit.args.<name> }}` reference must have a matching
-declaration.
+default, or `required: true`.
 @z
 
 @x
@@ -1007,12 +995,6 @@ environment:
 | Field       | Description                                    |
 | ----------- | ---------------------------------------------- |
 | `variables` | Key-value pairs set directly in the container. |
-@z
-
-@x
-Variable names must be valid shell identifiers (`[A-Za-z_][A-Za-z0-9_]*`).
-@y
-Variable names must be valid shell identifiers (`[A-Za-z_][A-Za-z0-9_]*`).
 @z
 
 @x

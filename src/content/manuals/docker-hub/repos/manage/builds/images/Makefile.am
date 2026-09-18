@@ -3,12 +3,7 @@
 ##
 copyfiles = \
 	authorize-builder.png \
-	bitbucket-revoke.png  \
-	build-cancelicon.png  \
-	index-active.png      \
-	index-dashboard.png   \
-	index-report.png      \
-	retry-build.png
+	bitbucket-revoke.png
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/copy.mk

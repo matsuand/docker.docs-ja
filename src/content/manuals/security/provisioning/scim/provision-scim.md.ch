@@ -64,10 +64,10 @@ Docker supports the following SCIM attributes:
 
 @x
 For additional details about supported attributes and SCIM, see
-[Docker Hub API SCIM reference](/reference/api/hub/latest.md#tag/scim).
+[Docker Hub API SCIM reference](/reference/api/hub/latest/#tag-scim).
 @y
 For additional details about supported attributes and SCIM, see
-[Docker Hub API SCIM reference](reference/api/hub/latest.md#tag/scim).
+[Docker Hub API SCIM reference](__SUBDIR__/reference/api/hub/latest/#tag-scim).
 @z
 
 @x

@@ -46,6 +46,12 @@ description: |-
 @z
 
 @x
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+@y
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+@z
+
+@x
 usage: sbx create [flags] AGENT|SANDBOX_KIT [PATH...]
 @y
 usage: sbx create [flags] AGENT|SANDBOX_KIT [PATH...]
@@ -141,10 +147,10 @@ usage: sbx create [flags] AGENT|SANDBOX_KIT [PATH...]
 
 @x memory
       usage: |
-        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
 @y
       usage: |
-        Memory limit in binary units (e.g., 1024m, 8g). Default: 50% of host memory, max 32 GiB
+        Memory limit in binary units (e.g., 512m, 8g). Minimum: 512 MiB. Default: 50% of host memory, clamped to 512 MiB–32 GiB. Maximum: max(75% of host memory, 512 MiB)
 @z
 
 @x name
@@ -175,6 +181,14 @@ usage: sbx create [flags] AGENT|SANDBOX_KIT [PATH...]
       usage: Suppress verbose output
 @y
       usage: Suppress verbose output
+@z
+
+@x skills
+      usage: |
+        Shared skills store mode: off, readonly, or readwrite (mounted at the agent's skills directory, e.g. ~/.claude/skills). Default: readonly, or the configured skills.defaultMode setting.
+@y
+      usage: |
+        Shared skills store mode: off, readonly, or readwrite (mounted at the agent's skills directory, e.g. ~/.claude/skills). Default: readonly, or the configured skills.defaultMode setting.
 @z
 
 @x template
@@ -289,26 +303,20 @@ example: |4-
     - sbx - Manage AI coding agent sandboxes.
     - sbx create claude - Create a sandbox for claude
     - sbx create codex - Create a sandbox for codex
-    - sbx create copilot - Create a sandbox for copilot
     - sbx create cursor - Create a sandbox for cursor
     - sbx create devin - Create a sandbox for devin
     - sbx create docker-agent - Create a sandbox for docker-agent
-    - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini
-    - sbx create kiro - Create a sandbox for kiro
     - sbx create opencode - Create a sandbox for opencode
     - sbx create shell - Create a sandbox for shell
 @y
     - sbx - Manage AI coding agent sandboxes.
     - sbx create claude - Create a sandbox for claude
     - sbx create codex - Create a sandbox for codex
-    - sbx create copilot - Create a sandbox for copilot
     - sbx create cursor - Create a sandbox for cursor
     - sbx create devin - Create a sandbox for devin
     - sbx create docker-agent - Create a sandbox for docker-agent
-    - sbx create droid - Create a sandbox for droid
     - sbx create gemini - Create a sandbox for gemini
-    - sbx create kiro - Create a sandbox for kiro
     - sbx create opencode - Create a sandbox for opencode
     - sbx create shell - Create a sandbox for shell
 @z

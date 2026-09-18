@@ -68,9 +68,9 @@ Btrfs Filesystem as Btrfs.
 @z
 
 @x
-- `btrfs` is only recommended with Docker CE on Ubuntu or Debian systems.
+- `btrfs` is only recommended with Docker Engine on Ubuntu or Debian systems.
 @y
-- `btrfs` is only recommended with Docker CE on Ubuntu or Debian systems.
+- `btrfs` is only recommended with Docker Engine on Ubuntu or Debian systems.
 @z
 
 @x

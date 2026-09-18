@@ -26,15 +26,17 @@ description: |-
 @z
 
 @x
-    Use --filter since=DURATION to narrow the set to sandboxes that have been
-    stopped for longer than DURATION (e.g. since=168h to keep anything stopped
-    within the last week). A sandbox whose stop time the daemon cannot report is
-    left alone, since how long it has been stopped cannot be established.
+    Use --filter until=TIMESTAMP to narrow the set to sandboxes that stopped before
+    TIMESTAMP. The value can be an RFC 3339 timestamp, Unix timestamp, or Go duration
+    relative to now (e.g. until=168h keeps anything stopped within the last week).
+    A sandbox whose stop time the daemon cannot report is left alone, since how long
+    it has been stopped cannot be established.
 @y
-    Use --filter since=DURATION to narrow the set to sandboxes that have been
-    stopped for longer than DURATION (e.g. since=168h to keep anything stopped
-    within the last week). A sandbox whose stop time the daemon cannot report is
-    left alone, since how long it has been stopped cannot be established.
+    Use --filter until=TIMESTAMP to narrow the set to sandboxes that stopped before
+    TIMESTAMP. The value can be an RFC 3339 timestamp, Unix timestamp, or Go duration
+    relative to now (e.g. until=168h keeps anything stopped within the last week).
+    A sandbox whose stop time the daemon cannot report is left alone, since how long
+    it has been stopped cannot be established.
 @z
 
 @x
@@ -85,10 +87,10 @@ usage: sbx prune [flags]
 
 @x filter
       usage: |
-        Filter candidates (supported: since=DURATION — stopped for longer than DURATION)
+        Filter candidates (supported: until=TIMESTAMP — stopped before TIMESTAMP)
 @y
       usage: |
-        Filter candidates (supported: since=DURATION — stopped for longer than DURATION)
+        Filter candidates (supported: until=TIMESTAMP — stopped before TIMESTAMP)
 @z
 
 @x force

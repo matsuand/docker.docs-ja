@@ -126,15 +126,3 @@ see [Add more organizations](./manage.md#add-more-organizations).
 - [Invite company members](./manage.md#company-invitations)
 - [Manage company owners](./manage.md#company-owners)
 @z
-
-@x
-## More resources
-@y
-## More resources
-@z
-
-@x
-- [Video: Create a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=359)
-@y
-- [Video: Create a company](https://youtu.be/XZ5_i6qiKho?feature=shared&t=359)
-@z

@@ -90,6 +90,14 @@ description: |-
 @z
 
 @x
+    For a registry whose Bearer authentication endpoint uses a different hostname,
+    use --registry-auth-endpoint to trust its exact HTTPS URL.
+@y
+    For a registry whose Bearer authentication endpoint uses a different hostname,
+    use --registry-auth-endpoint to trust its exact HTTPS URL.
+@z
+
+@x
 usage: sbx secret set [SERVICE] [flags]
 @y
 usage: sbx secret set [SERVICE] [flags]
@@ -143,6 +151,12 @@ usage: sbx secret set [SERVICE] [flags]
       usage: Registry hostname for pull credentials (e.g. ghcr.io)
 @y
       usage: Registry hostname for pull credentials (e.g. ghcr.io)
+@z
+
+@x registry-auth-endpoint
+      usage: Trusted HTTPS auth endpoint for a cross-host registry realm
+@y
+      usage: Trusted HTTPS auth endpoint for a cross-host registry realm
 @z
 
 @x sandbox
@@ -269,6 +283,20 @@ example: |4-
 @y
       # Registry: specific sandbox only
       gh auth token | sbx secret set --sandbox my-sandbox --registry ghcr.io --password-stdin
+@z
+
+@x
+      # Self-hosted registry with a cross-host authentication endpoint
+      echo "$GITLAB_PAT" | sbx secret set --all-sandboxes \
+        --registry registry.example.com --username "$GITLAB_USER" \
+        --registry-auth-endpoint https://gitlab.example.com/jwt/auth \
+        --password-stdin
+@y
+      # Self-hosted registry with a cross-host authentication endpoint
+      echo "$GITLAB_PAT" | sbx secret set --all-sandboxes \
+        --registry registry.example.com --username "$GITLAB_USER" \
+        --registry-auth-endpoint https://gitlab.example.com/jwt/auth \
+        --password-stdin
 @z
 
 % see_also:

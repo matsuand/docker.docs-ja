@@ -140,13 +140,23 @@ sandboxes stopped within the last week:
 @x
 ```console
 $ sbx prune --dry-run
-$ sbx prune --filter since=168h
+$ sbx prune --filter until=168h
 ```
 @y
 ```console
 $ sbx prune --dry-run
-$ sbx prune --filter since=168h
+$ sbx prune --filter until=168h
 ```
+@z
+
+@x
+The `until` filter uses the time the sandbox stopped. It accepts a duration
+such as `168h`, an RFC 3339 timestamp, or a Unix timestamp. The older
+`since=<duration>` filter remains supported.
+@y
+The `until` filter uses the time the sandbox stopped. It accepts a duration
+such as `168h`, an RFC 3339 timestamp, or a Unix timestamp. The older
+`since=<duration>` filter remains supported.
 @z
 
 @x
@@ -357,6 +367,16 @@ $ sbx run --name scratch
 $ sbx create --name scratch claude
 $ sbx run --name scratch
 ```
+@z
+
+@x
+After `sbx create` finishes, the local sandbox stops automatically when no
+sessions keep it running. Its files and configuration persist. Running
+`sbx run --name <sandbox-name>` starts it again and attaches you to the agent.
+@y
+After `sbx create` finishes, the local sandbox stops automatically when no
+sessions keep it running. Its files and configuration persist. Running
+`sbx run --name <sandbox-name>` starts it again and attaches you to the agent.
 @z
 
 @x

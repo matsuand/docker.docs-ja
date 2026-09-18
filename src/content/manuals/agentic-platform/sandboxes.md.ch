@@ -150,11 +150,13 @@ A sandbox can be running or paused:
 @x
 When you create a sandbox, set a lifecycle timer from 1 to 24 hours and choose
 what happens when it expires. **Stop** stops the sandbox, while **Delete**
-deletes the sandbox and its files.
+deletes the sandbox and its files. When a sandbox stops, all processes running
+inside it stop too, including background processes.
 @y
 When you create a sandbox, set a lifecycle timer from 1 to 24 hours and choose
 what happens when it expires. **Stop** stops the sandbox, while **Delete**
-deletes the sandbox and its files.
+deletes the sandbox and its files. When a sandbox stops, all processes running
+inside it stop too, including background processes.
 @z
 
 @x

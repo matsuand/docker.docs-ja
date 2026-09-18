@@ -299,7 +299,6 @@ SUBDIRS = images
 bases = \
 	_index.md  \
 	auth.md    \
-	latest.md  \
 	latest.yaml
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

@@ -32,12 +32,6 @@ keywords:
 @z
 
 @x
-      text: Experimental
-@y
-      text: 試験的
-@z
-
-@x
 A sandbox environment file captures the setup for a project in a
 `sbxenv.yaml` file. Share the file with project contributors so they use the
 same agent, tools, resources, and credentials without reproducing CLI flags and
@@ -208,21 +202,47 @@ for details.
 @z
 
 @x
-`PATH` can be a directory or a direct path to an environment file. A directory
-always resolves to `sbxenv.yaml`. To use another filename, pass the file path
-explicitly. With no path, `sbx` reads `sbxenv.yaml` from the working directory.
+To use an environment file, pass its path to `sbx env`. If you pass a
+directory, `sbx` looks for `sbxenv.yaml` inside it. If you don't pass a path,
+`sbx` looks in the directory you run the command from and loads your
+[user defaults](#set-user-defaults), if present.
 @y
-`PATH` can be a directory or a direct path to an environment file. A directory
-always resolves to `sbxenv.yaml`. To use another filename, pass the file path
-explicitly. With no path, `sbx` reads `sbxenv.yaml` from the working directory.
+To use an environment file, pass its path to `sbx env`. If you pass a
+directory, `sbx` looks for `sbxenv.yaml` inside it. If you don't pass a path,
+`sbx` looks in the directory you run the command from and loads your
+[user defaults](#set-user-defaults), if present.
 @z
 
 @x
-Pass the same set of paths to each `sbx env` command so they resolve the same
-sandbox.
+Every `sbx env` subcommand accepts `--name`. This flag sets the sandbox name
+for that command, overriding the `name` field in the file or the automatically
+generated name:
 @y
-Pass the same set of paths to each `sbx env` command so they resolve the same
-sandbox.
+Every `sbx env` subcommand accepts `--name`. This flag sets the sandbox name
+for that command, overriding the `name` field in the file or the automatically
+generated name:
+@z
+
+@x
+```console
+$ sbx env create --name web-app-test
+$ sbx env exec --name web-app-test -- npm test
+$ sbx env rm --name web-app-test
+```
+@y
+```console
+$ sbx env create --name web-app-test
+$ sbx env exec --name web-app-test -- npm test
+$ sbx env rm --name web-app-test
+```
+@z
+
+@x
+Use the same file paths for each command. If you set `--name`, use that same
+name for every command that manages the sandbox.
+@y
+Use the same file paths for each command. If you set `--name`, use that same
+name for every command that manages the sandbox.
 @z
 
 @x
@@ -232,23 +252,215 @@ sandbox.
 @z
 
 @x
-Create `~/.sbxenv.yaml` to define defaults shared across projects. When you run
-an `sbx env` command without a path, `sbx` merges this file beneath the
-project's `sbxenv.yaml`. Passing any path skips the user-level file.
+Create `~/.sbxenv.yaml` to share settings across your projects. For example,
+this file selects Claude as the agent and mounts the directory you run
+`sbx env` from:
 @y
-Create `~/.sbxenv.yaml` to define defaults shared across projects. When you run
-an `sbx env` command without a path, `sbx` merges this file beneath the
-project's `sbxenv.yaml`. Passing any path skips the user-level file.
+Create `~/.sbxenv.yaml` to share settings across your projects. For example,
+this file selects Claude as the agent and mounts the directory you run
+`sbx env` from:
 @z
 
 @x
-The user-level file must not set `name` or `workspace`, because those fields
-identify a project. Lists such as `ports` and `mcp.servers` concatenate across
-the user and project files.
+```yaml
+schemaVersion: "1"
+agent: claude
+workspace: ${{ env.projectDir }}
+```
 @y
-The user-level file must not set `name` or `workspace`, because those fields
-identify a project. Lists such as `ports` and `mcp.servers` concatenate across
-the user and project files.
+```yaml
+schemaVersion: "1"
+agent: claude
+workspace: ${{ env.projectDir }}
+```
+@z
+
+@x
+With this file saved in your home directory, run:
+@y
+With this file saved in your home directory, run:
+@z
+
+@x
+```console
+$ cd /projects/web-app
+$ sbx env run
+```
+@y
+```console
+$ cd /projects/web-app
+$ sbx env run
+```
+@z
+
+@x
+The sandbox mounts `/projects/web-app` as its workspace. Run the same command
+from `/projects/api`, and it mounts `/projects/api` instead. You don't need a
+separate `sbxenv.yaml` in either project.
+@y
+The sandbox mounts `/projects/web-app` as its workspace. Run the same command
+from `/projects/api`, and it mounts `/projects/api` instead. You don't need a
+separate `sbxenv.yaml` in either project.
+@z
+
+@x
+If the project has a `sbxenv.yaml`, `sbx` combines it with your user defaults.
+Project settings override individual default values. Lists such as `ports`
+and `mcp.servers` combine entries from both files. If you pass a file or
+directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
+@y
+If the project has a `sbxenv.yaml`, `sbx` combines it with your user defaults.
+Project settings override individual default values. Lists such as `ports`
+and `mcp.servers` combine entries from both files. If you pass a file or
+directory path to the command, `sbx` skips `~/.sbxenv.yaml`.
+@z
+
+@x
+In `~/.sbxenv.yaml`, you can set `workspace` to `${{ env.projectDir }}` or a
+subdirectory such as `${{ env.projectDir }}/src`. Other workspace paths
+aren't accepted in this file.
+@y
+In `~/.sbxenv.yaml`, you can set `workspace` to `${{ env.projectDir }}` or a
+subdirectory such as `${{ env.projectDir }}/src`. Other workspace paths
+aren't accepted in this file.
+@z
+
+@x
+The user defaults file cannot set `name`. Set the sandbox name in a project
+environment file or with `--name`.
+@y
+The user defaults file cannot set `name`. Set the sandbox name in a project
+environment file or with `--name`.
+@z
+
+@x
+### Reference directories
+@y
+### Reference directories
+@z
+
+@x
+You can use `${{ env.projectDir }}` and `${{ env.fileDir }}` in environment
+files to insert absolute directory paths. They refer to directories on the
+host.
+@y
+You can use `${{ env.projectDir }}` and `${{ env.fileDir }}` in environment
+files to insert absolute directory paths. They refer to directories on the
+host.
+@z
+
+@x
+#### Project directory
+@y
+#### Project directory
+@z
+
+@x
+`${{ env.projectDir }}` is the absolute path to your project directory.
+`sbx` chooses this directory from the command you run:
+@y
+`${{ env.projectDir }}` is the absolute path to your project directory.
+`sbx` chooses this directory from the command you run:
+@z
+
+@x
+- `sbx env run`: the directory you run the command from.
+- `sbx env run /projects/web-app`: `/projects/web-app`.
+- `sbx env run /projects/web-app/custom.yaml`: `/projects/web-app`, the
+  directory containing the file.
+@y
+- `sbx env run`: the directory you run the command from.
+- `sbx env run /projects/web-app`: `/projects/web-app`.
+- `sbx env run /projects/web-app/custom.yaml`: `/projects/web-app`, the
+  directory containing the file.
+@z
+
+@x
+If you pass several paths, the first one sets the project directory. Every
+file loaded by that command uses the same value for `env.projectDir`.
+@y
+If you pass several paths, the first one sets the project directory. Every
+file loaded by that command uses the same value for `env.projectDir`.
+@z
+
+@x
+Use this reference in shared settings that need to point to each project's
+files. For example, `workspace: ${{ env.projectDir }}/src` mounts the `src`
+directory in whichever project you select.
+@y
+Use this reference in shared settings that need to point to each project's
+files. For example, `workspace: ${{ env.projectDir }}/src` mounts the `src`
+directory in whichever project you select.
+@z
+
+@x
+#### File directory
+@y
+#### File directory
+@z
+
+@x
+`${{ env.fileDir }}` is the absolute path to the directory containing the
+environment file where you write the reference. For example, inside
+`/shared/environment.yaml`, its value is `/shared`.
+@y
+`${{ env.fileDir }}` is the absolute path to the directory containing the
+environment file where you write the reference. For example, inside
+`/shared/environment.yaml`, its value is `/shared`.
+@z
+
+@x
+Use this reference when an environment file needs to locate files stored
+alongside it. For example, suppose your setup script is
+`/shared/scripts/setup.sh`. Add this [lifecycle command](#lifecycle) to
+`/shared/environment.yaml` to run the script from `/shared`:
+@y
+Use this reference when an environment file needs to locate files stored
+alongside it. For example, suppose your setup script is
+`/shared/scripts/setup.sh`. Add this [lifecycle command](#lifecycle) to
+`/shared/environment.yaml` to run the script from `/shared`:
+@z
+
+@x
+```yaml
+lifecycle:
+  initialize:
+    - command: ./scripts/setup.sh
+      workdir: ${{ env.fileDir }}
+```
+@y
+```yaml
+lifecycle:
+  initialize:
+    - command: ./scripts/setup.sh
+      workdir: ${{ env.fileDir }}
+```
+@z
+
+@x
+The command runs from `/shared`, even if you use this environment file with
+a project in another directory.
+@y
+The command runs from `/shared`, even if you use this environment file with
+a project in another directory.
+@z
+
+@x
+Relative workspace paths already use the directory containing the environment
+file. For example, `workspace: ./src` in `/shared/environment.yaml` mounts
+`/shared/src`.
+@y
+Relative workspace paths already use the directory containing the environment
+file. For example, `workspace: ./src` in `/shared/environment.yaml` mounts
+`/shared/src`.
+@z
+
+@x
+Both directory references can appear in YAML values, but not in field names
+or inside the `args` block.
+@y
+Both directory references can appear in YAML values, but not in field names
+or inside the `args` block.
 @z
 
 @x
@@ -395,31 +607,29 @@ $ sbx env run --env-args-file production.args
 
 @x
 You can pass multiple argument files. Later files take precedence over earlier
-files, and `--env-arg` flags take precedence over every argument file. The
-command rejects undeclared arguments, missing required values, and values that
-don't satisfy an argument's `enum` or `pattern`. Values can contain `=`, and
-values in an argument file are read literally rather than expanded by a shell.
+files, and `--env-arg` flags take precedence over every argument file.
+Values can contain `=`, and values in an argument file are read literally
+rather than expanded by a shell.
 @y
 You can pass multiple argument files. Later files take precedence over earlier
-files, and `--env-arg` flags take precedence over every argument file. The
-command rejects undeclared arguments, missing required values, and values that
-don't satisfy an argument's `enum` or `pattern`. Values can contain `=`, and
-values in an argument file are read literally rather than expanded by a shell.
+files, and `--env-arg` flags take precedence over every argument file.
+Values can contain `=`, and values in an argument file are read literally
+rather than expanded by a shell.
 @z
 
 @x
-Argument references are the only variable expressions expanded in an
-environment file. Shell-style expressions such as `${VAR}` aren't expanded
-from the host environment. Other dollar signs remain literal, so a value such
-as `$PATH:/opt/bin` is passed unchanged. Use `$${{ env.args.NAME }}` to produce
-the literal text `${{ env.args.NAME }}`. Substituted values aren't expanded a
+Argument references and the two directory references are the only variable
+expressions expanded in an environment file. Shell-style expressions such as
+`${VAR}` aren't expanded from the host environment. Other dollar signs remain
+literal, so a value such as `$PATH:/opt/bin` is passed unchanged.
+Use `$${{ env.args.NAME }}` to produce the literal text `${{ env.args.NAME }}`. Substituted values aren't expanded a
 second time.
 @y
-Argument references are the only variable expressions expanded in an
-environment file. Shell-style expressions such as `${VAR}` aren't expanded
-from the host environment. Other dollar signs remain literal, so a value such
-as `$PATH:/opt/bin` is passed unchanged. Use `$${{ env.args.NAME }}` to produce
-the literal text `${{ env.args.NAME }}`. Substituted values aren't expanded a
+Argument references and the two directory references are the only variable
+expressions expanded in an environment file. Shell-style expressions such as
+`${VAR}` aren't expanded from the host environment. Other dollar signs remain
+literal, so a value such as `$PATH:/opt/bin` is passed unchanged.
+Use `$${{ env.args.NAME }}` to produce the literal text `${{ env.args.NAME }}`. Substituted values aren't expanded a
 second time.
 @z
 
@@ -534,13 +744,13 @@ $ sbx env run base.sbxenv.yaml local.sbxenv.yaml
 @x
 Nested mappings merge by key, lists concatenate, and values from later files
 replace earlier scalar values. In this example, the sandbox has four CPUs,
-12 GB of memory, and both environment variables. The first file controls the
-base directory for relative workspace paths and the default sandbox name.
+12 GB of memory, and both environment variables. Each relative workspace path
+resolves from the directory of the file that declares it.
 @y
 Nested mappings merge by key, lists concatenate, and values from later files
 replace earlier scalar values. In this example, the sandbox has four CPUs,
-12 GB of memory, and both environment variables. The first file controls the
-base directory for relative workspace paths and the default sandbox name.
+12 GB of memory, and both environment variables. Each relative workspace path
+resolves from the directory of the file that declares it.
 @z
 
 @x
@@ -594,15 +804,15 @@ additionalWorkspaces:
 @x
 The agent starts in `web-app`, can modify `shared-components`, and can read
 `architecture-docs` without changing it. The environment file stays outside all
-three workspaces. Relative paths resolve from the directory of the first
-environment file. Additional workspaces are mounted directly even when the
-primary workspace uses clone mode.
+three workspaces. Relative paths resolve from the directory of the
+environment file that declares them. Additional workspaces are mounted directly
+even when the primary workspace uses clone mode.
 @y
 The agent starts in `web-app`, can modify `shared-components`, and can read
 `architecture-docs` without changing it. The environment file stays outside all
-three workspaces. Relative paths resolve from the directory of the first
-environment file. Additional workspaces are mounted directly even when the
-primary workspace uses clone mode.
+three workspaces. Relative paths resolve from the directory of the
+environment file that declares them. Additional workspaces are mounted directly
+even when the primary workspace uses clone mode.
 @z
 
 @x
@@ -822,12 +1032,6 @@ remain after cleanup.
 @z
 
 @x
-The loader rejects unknown fields and unsupported schema versions.
-@y
-The loader rejects unknown fields and unsupported schema versions.
-@z
-
-@x
 ### Top-level fields
 @y
 ### Top-level fields
@@ -837,7 +1041,7 @@ The loader rejects unknown fields and unsupported schema versions.
 | Field                  | Type             | Required | Default                        | Description                                                                     |
 | ---------------------- | ---------------- | -------- | ------------------------------ | ------------------------------------------------------------------------------- |
 | `schemaVersion`        | string           | Yes      | None                           | Schema version. The supported value is `"1"`                                   |
-| `name`                 | string           | No       | `<agent>-<workspace-basename>` | Sandbox name                                                                    |
+| `name`                 | string           | No       | `<agent>-<workspace-basename>` | Sandbox name, overridden by `--name`                                                                    |
 | `agent`                | string           | Yes      | None                           | Built-in agent or the name of an agent kit                                      |
 | `args`                 | map              | No       | None                           | Environment arguments. See [`args`](#args)                                      |
 | `kits`                 | list             | No       | None                           | Kits to install at creation. See [`kits`](#kits)                                 |
@@ -855,7 +1059,7 @@ The loader rejects unknown fields and unsupported schema versions.
 | Field                  | Type             | Required | Default                        | Description                                                                     |
 | ---------------------- | ---------------- | -------- | ------------------------------ | ------------------------------------------------------------------------------- |
 | `schemaVersion`        | string           | Yes      | None                           | Schema version. The supported value is `"1"`                                   |
-| `name`                 | string           | No       | `<agent>-<workspace-basename>` | Sandbox name                                                                    |
+| `name`                 | string           | No       | `<agent>-<workspace-basename>` | Sandbox name, overridden by `--name`                                                                    |
 | `agent`                | string           | Yes      | None                           | Built-in agent or the name of an agent kit                                      |
 | `args`                 | map              | No       | None                           | Environment arguments. See [`args`](#args)                                      |
 | `kits`                 | list             | No       | None                           | Kits to install at creation. See [`kits`](#kits)                                 |
@@ -908,11 +1112,9 @@ true`.
 @z
 
 @x
-`enum` and `pattern` can't be used together. A default value must satisfy the
-declared `enum` or `pattern`.
+`enum` and `pattern` can't be used together.
 @y
-`enum` and `pattern` can't be used together. A default value must satisfy the
-declared `enum` or `pattern`.
+`enum` and `pattern` can't be used together.
 @z
 
 @x
@@ -1010,15 +1212,13 @@ parameter and OCI kits with an immutable tag or digest.
 @x
 When specified as a string, `workspace` is the path. Use the object form for
 clone mode. Omit `workspace` to create a sandbox without a host bind mount. Set
-`workspace: .` to mount the directory that contains the first environment
-file. If `workspace` is present, its path can't be empty or contain only
-whitespace.
+`workspace: .` to mount the directory that contains the environment file
+that declares it.
 @y
 When specified as a string, `workspace` is the path. Use the object form for
 clone mode. Omit `workspace` to create a sandbox without a host bind mount. Set
-`workspace: .` to mount the directory that contains the first environment
-file. If `workspace` is present, its path can't be empty or contain only
-whitespace.
+`workspace: .` to mount the directory that contains the environment file
+that declares it.
 @z
 
 @x
@@ -1032,12 +1232,12 @@ outside direct-mounted workspaces or directly in a workspace root.
 @x
 | Field   | Type    | Required | Default | Description                                                     |
 | ------- | ------- | -------- | ------- | --------------------------------------------------------------- |
-| `path`  | string  | Yes      | None    | Workspace directory. Relative paths resolve from the first file |
+| `path`  | string  | Yes      | None    | Workspace directory. Relative paths resolve from the declaring file's directory |
 | `clone` | boolean | No       | `false` | Use a private clone, equivalent to `sbx create --clone`          |
 @y
 | Field   | Type    | Required | Default | Description                                                     |
 | ------- | ------- | -------- | ------- | --------------------------------------------------------------- |
-| `path`  | string  | Yes      | None    | Workspace directory. Relative paths resolve from the first file |
+| `path`  | string  | Yes      | None    | Workspace directory. Relative paths resolve from the declaring file's directory |
 | `clone` | boolean | No       | `false` | Use a private clone, equivalent to `sbx create --clone`          |
 @z
 
@@ -1057,10 +1257,10 @@ You can override `workspace.clone` for one `create` or `run` invocation with
 
 @x
 Each additional workspace is mounted after the primary workspace. Relative
-paths resolve from the directory of the first environment file.
+paths resolve from the directory of the environment file that declares them.
 @y
 Each additional workspace is mounted after the primary workspace. Relative
-paths resolve from the directory of the first environment file.
+paths resolve from the directory of the environment file that declares them.
 @z
 
 @x
@@ -1089,7 +1289,7 @@ paths resolve from the directory of the first environment file.
 | `cpus`        | integer         | `0`      | Number of CPUs. `0` allocates all host CPUs            |
 | `pullPolicy`  | string          | `always` | Image pull policy: `always`, `missing`, or `never`     |
 | `profile`     | string          | None     | Governance profile name                               |
-| `shareSkills` | boolean         | `true`   | Mount the shared agent skills store                    |
+| `skills`      | string          | Daemon default | Shared agent skills store access: `off`, `readonly`, or `readwrite` |
 | `display`     | boolean         | `false`  | Provision a display socket for graphical applications |
 | `gpu`         | boolean         | `false`  | Pass the host GPU through to the sandbox               |
 | `usb`         | list of strings | None     | USB device selectors to pass through to the sandbox   |
@@ -1101,18 +1301,22 @@ paths resolve from the directory of the first environment file.
 | `cpus`        | integer         | `0`      | Number of CPUs. `0` allocates all host CPUs            |
 | `pullPolicy`  | string          | `always` | Image pull policy: `always`, `missing`, or `never`     |
 | `profile`     | string          | None     | Governance profile name                               |
-| `shareSkills` | boolean         | `true`   | Mount the shared agent skills store                    |
+| `skills`      | string          | Daemon default | Shared agent skills store access: `off`, `readonly`, or `readwrite` |
 | `display`     | boolean         | `false`  | Provision a display socket for graphical applications |
 | `gpu`         | boolean         | `false`  | Pass the host GPU through to the sandbox               |
 | `usb`         | list of strings | None     | USB device selectors to pass through to the sandbox   |
 @z
 
 @x
-Imported [agent skills](../workflows/agent-skills.md) are shared with the
-sandbox by default. Set `shareSkills: false` to opt out.
+`skills` controls access to the shared [agent skills](../workflows/agent-skills.md)
+store. Set it to `off` to omit the mount, `readonly` to mount the store read-only,
+or `readwrite` to let the sandbox modify shared skills. If omitted, it uses the
+daemon's default, which is `readonly` unless your organization overrides it.
 @y
-Imported [agent skills](../workflows/agent-skills.md) are shared with the
-sandbox by default. Set `shareSkills: false` to opt out.
+`skills` controls access to the shared [agent skills](../workflows/agent-skills.md)
+store. Set it to `off` to omit the mount, `readonly` to mount the store read-only,
+or `readwrite` to let the sandbox modify shared skills. If omitted, it uses the
+daemon's default, which is `readonly` unless your organization overrides it.
 @z
 
 @x

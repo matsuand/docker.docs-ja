@@ -3,10 +3,14 @@
 
 @x
 title: Registry authentication
+@y
+title: Registry authentication
+@z
+
+@x
 description: "Specifies the Docker Registry v2 authentication"
 keywords: registry, images, tags, repository, distribution, Bearer authentication, advanced
 @y
-title: Registry authentication
 description: "Specifies the Docker Registry v2 authentication"
 keywords: registry, images, tags, repository, distribution, Bearer authentication, advanced
 @z

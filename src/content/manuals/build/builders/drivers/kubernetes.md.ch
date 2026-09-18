@@ -862,10 +862,10 @@ Prerequisites:
 @z
 
 @x
-5. Use your new builder by including the `--builder` flag when running buildx
+5. Use your new builder by including the `--builder` flag when running Buildx
    commands. For example: :
 @y
-5. Use your new builder by including the `--builder` flag when running buildx
+5. Use your new builder by including the `--builder` flag when running Buildx
    commands. For example: :
 @z
 

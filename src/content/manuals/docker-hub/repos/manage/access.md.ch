@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 description: Discover how to manage access to repositories on Docker Hub.
@@ -471,14 +471,14 @@ To invite distributor members:
 
 @x
 1. Use the [authentication
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+   API](/reference/api/hub/latest/operations/AuthCreateAccessToken/)
    to generate a bearer token for your Docker Hub account. This token authorizes
    the API requests you use to send invites. Replace `myusername` and
    `dckr_pat_...` with your Docker ID and a [personal access
    token](/manuals/security/access-tokens.md):
 @y
 1. Use the [authentication
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+   API](__SUBDIR__/reference/api/hub/latest/operations/AuthCreateAccessToken/)
    to generate a bearer token for your Docker Hub account. This token authorizes
    the API requests you use to send invites. Replace `myusername` and
    `dckr_pat_...` with your Docker ID and a [personal access
@@ -549,10 +549,10 @@ To invite distributor members:
 
 @x
    Use the [teams
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post):
+   API](/reference/api/hub/latest/operations/postV2OrgsByOrgNameGroups/):
 @y
    Use the [teams
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/groups/paths/~1v2~1orgs~1%7Borg_name%7D~1groups/post):
+   API](__SUBDIR__/reference/api/hub/latest/operations/postV2OrgsByOrgNameGroups/):
 @z
 
 @x
@@ -629,11 +629,11 @@ To invite distributor members:
 
 @x
    Use the [repository teams
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/operation/CreateRepositoryGroup),
+   API](/reference/api/hub/latest/operations/CreateRepositoryGroup/),
    passing the team's `id` from the previous step as `group_id`:
 @y
    Use the [repository teams
-   API](https://docs.docker.com/reference/api/hub/latest/#tag/repositories/operation/CreateRepositoryGroup),
+   API](__SUBDIR__/reference/api/hub/latest/operations/CreateRepositoryGroup/),
    passing the team's `id` from the previous step as `group_id`:
 @z
 
@@ -663,13 +663,13 @@ To invite distributor members:
 
 @x
 4. Use the [bulk create invites
-   endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post)
+   endpoint](/reference/api/hub/latest/operations/postV2InvitesBulk/)
    to send email invites. In the request body, set `role` to
    `distributor_member`, specify the `team`, and list the invitees' email
    addresses:
 @y
 4. Use the [bulk create invites
-   endpoint](https://docs.docker.com/reference/api/hub/latest/#tag/invites/paths/~1v2~1invites~1bulk/post)
+   endpoint](__SUBDIR__/reference/api/hub/latest/operations/postV2InvitesBulk/)
    to send email invites. In the request body, set `role` to
    `distributor_member`, specify the `team`, and list the invitees' email
    addresses:

@@ -186,12 +186,6 @@ appears next to the CVE ID. Details about the exception are also displayed.
 @z
 
 @x
-![SUPPRESSED label in the CLI output](/scout/images/suppressed-cve-cli.png)
-@y
-![SUPPRESSED label in the CLI output](__SUBDIR__/scout/images/suppressed-cve-cli.png)
-@z
-
-@x
 > [!IMPORTANT]
 > In order to view exceptions in the CLI, you must configure the CLI to use
 > the same Docker organization that you used to create the exceptions.
