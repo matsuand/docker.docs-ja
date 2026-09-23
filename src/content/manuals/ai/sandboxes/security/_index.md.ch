@@ -136,15 +136,31 @@ local MCP servers as trusted host integrations.
 @z
 
 @x
-The following diagram shows a sandbox with a directly mounted workspace:
+### MicroVM isolation
 @y
-The following diagram shows a sandbox with a directly mounted workspace:
+### MicroVM isolation
 @z
 
 @x
-![Docker Sandbox security model](../images/sbx-security.png)
+This topology shows what is private to the microVM, what is explicitly mounted,
+and which host resources remain outside the agent's reach.
 @y
-![Docker Sandbox security model](../images/sbx-security.png)
+This topology shows what is private to the microVM, what is explicitly mounted,
+and which host resources remain outside the agent's reach.
+@z
+
+@x
+{{< interactive-diagram src="../diagrams/trust-boundary-topology.yaml" >}}
+@y
+{{< interactive-diagram src="../diagrams/trust-boundary-topology.yaml" >}}
+@z
+
+@x
+To follow an outbound request through network policy and credential injection,
+see [Architecture](../architecture.md#follow-an-authenticated-request).
+@y
+To follow an outbound request through network policy and credential injection,
+see [Architecture](../architecture.md#follow-an-authenticated-request).
 @z
 
 @x

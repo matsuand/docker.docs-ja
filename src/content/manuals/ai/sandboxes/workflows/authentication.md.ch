@@ -34,17 +34,11 @@ copying the value into the secret store.
 @z
 
 @x
-> [!NOTE]
-> Service secrets are global by default, so all future sandboxes can use them.
-> Sandboxes that already exist when you run `sbx secret set` do not
-> receive the updated value. To update a running sandbox, scope the secret to
-> it directly: `sbx secret set <service> --sandbox <sandbox-name>`.
+For secret scope and how changes apply to existing sandboxes, see
+[Store a secret](../configuration/credentials.md#store-a-secret).
 @y
-> [!NOTE]
-> Service secrets are global by default, so all future sandboxes can use them.
-> Sandboxes that already exist when you run `sbx secret set` do not
-> receive the updated value. To update a running sandbox, scope the secret to
-> it directly: `sbx secret set <service> --sandbox <sandbox-name>`.
+For secret scope and how changes apply to existing sandboxes, see
+[Store a secret](../configuration/credentials.md#store-a-secret).
 @z
 
 @x

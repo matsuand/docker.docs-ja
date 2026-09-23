@@ -25,15 +25,7 @@ For CI environments and scripts where a browser isn't available, authenticate
 with a Docker Personal Access Token (PAT):
 @z
 
-@x
-```console
-$ echo "$DOCKER_PAT" | sbx login --username <your-docker-id> --password-stdin
-```
-@y
-```console
-$ echo "$DOCKER_PAT" | sbx login --username <your-docker-id> --password-stdin
-```
-@z
+% snip command...
 
 @x
 Generate a PAT from your
@@ -46,30 +38,14 @@ with at least **Read** scope.
 @z
 
 @x
-From there, the rest of the `sbx` workflow is the same as interactive use.
 Create the sandbox in the background with `sbx create`, run agent tasks with
-`sbx exec`, and clean up with `sbx rm`:
+`sbx exec`, and remove the sandbox when finished:
 @y
-From there, the rest of the `sbx` workflow is the same as interactive use.
 Create the sandbox in the background with `sbx create`, run agent tasks with
-`sbx exec`, and clean up with `sbx rm`:
+`sbx exec`, and remove the sandbox when finished:
 @z
 
-@x
-```console
-$ sbx create --name ci-task --clone claude .
-$ sbx run --name ci-task  # attach and give instructions, or use sbx exec for one-off commands
-$ git fetch sandbox-ci-task
-$ sbx rm ci-task
-```
-@y
-```console
-$ sbx create --name ci-task --clone claude .
-$ sbx run --name ci-task  # attach and give instructions, or use sbx exec for one-off commands
-$ git fetch sandbox-ci-task
-$ sbx rm ci-task
-```
-@z
+% snip command...
 
 @x
 Agent credentials (API keys, GitHub token) can be preconfigured as global
@@ -85,15 +61,7 @@ relevant environment variables are already set in the CI environment (see the
 variables each service reads), import them all at once:
 @z
 
-@x
-```console
-$ sbx secret import --all
-```
-@y
-```console
-$ sbx secret import --all
-```
-@z
+% snip command...
 
 @x
 To overwrite an existing stored entry, add `--force`. To pass a value from your
@@ -103,12 +71,32 @@ To overwrite an existing stored entry, add `--force`. To pass a value from your
 CI provider's secret store, use `-t`. For example, in a GitHub Actions step:
 @z
 
+% snip code...
+
 @x
-```yaml
-- run: sbx secret set anthropic -t "${{ secrets.ANTHROPIC_API_KEY }}"
-```
+## Cleanup and exit codes
 @y
-```yaml
-- run: sbx secret set anthropic -t "${{ secrets.ANTHROPIC_API_KEY }}"
-```
+## Cleanup and exit codes
+@z
+
+@x
+Use `--force` to skip confirmation when removing resources in scripts.
+Declining a removal or required-restart prompt returns a non-zero exit code.
+Treat this as an incomplete operation when deciding whether to continue a
+script.
+@y
+Use `--force` to skip confirmation when removing resources in scripts.
+Declining a removal or required-restart prompt returns a non-zero exit code.
+Treat this as an incomplete operation when deciding whether to continue a
+script.
+@z
+
+@x
+For repeatable cleanup, check which resources exist before removing them. For
+example, use `sbx mcp ls` before `sbx mcp rm`, which fails for an unregistered
+server even with `--force`.
+@y
+For repeatable cleanup, check which resources exist before removing them. For
+example, use `sbx mcp ls` before `sbx mcp rm`, which fails for an unregistered
+server even with `--force`.
 @z

@@ -240,17 +240,13 @@ $ sbx secret set openai --sandbox my-sandbox
 @z
 
 @x
-> [!NOTE]
-> A sandbox-scoped secret takes effect immediately, even if the sandbox is
-> running. A global secret only applies when a sandbox is created. If
-> you set or change a global secret while a sandbox is running, recreate the
-> sandbox for the new value to take effect.
+Adding, updating, or removing a service secret takes effect in existing local
+sandboxes without a restart, including secrets configured with `--command` or
+`--ref`. Sandbox-scoped secrets take precedence over global secrets.
 @y
-> [!NOTE]
-> A sandbox-scoped secret takes effect immediately, even if the sandbox is
-> running. A global secret only applies when a sandbox is created. If
-> you set or change a global secret while a sandbox is running, recreate the
-> sandbox for the new value to take effect.
+Adding, updating, or removing a service secret takes effect in existing local
+sandboxes without a restart, including secrets configured with `--command` or
+`--ref`. Sandbox-scoped secrets take precedence over global secrets.
 @z
 
 @x
@@ -625,6 +621,30 @@ $ sbx secret rm github
 ```console
 $ sbx secret rm github
 ```
+@z
+
+@x
+To remove a sandbox-scoped secret, pass `--sandbox`:
+@y
+To remove a sandbox-scoped secret, pass `--sandbox`:
+@z
+
+@x
+```console
+$ sbx secret rm github --sandbox my-sandbox
+```
+@y
+```console
+$ sbx secret rm github --sandbox my-sandbox
+```
+@z
+
+@x
+Removing a sandbox-scoped secret restores the global secret for that service,
+if one is available.
+@y
+Removing a sandbox-scoped secret restores the global secret for that service,
+if one is available.
 @z
 
 @x

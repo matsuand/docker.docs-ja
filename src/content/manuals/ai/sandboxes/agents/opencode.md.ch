@@ -148,6 +148,28 @@ new environment variable is available inside the sandbox.
 @z
 
 @x
+## Model selection
+@y
+## Model selection
+@z
+
+@x
+To select a local model or inference endpoint with `sbx run --model`, see
+[Use local and hosted models](../configuration/models.md).
+@y
+To select a local model or inference endpoint with `sbx run --model`, see
+[Use local and hosted models](../configuration/models.md).
+@z
+
+@x
+When you use `--model`, the model's supported thinking levels are available
+as OpenCode variants. Press Ctrl+T to cycle through them.
+@y
+When you use `--model`, the model's supported thinking levels are available
+as OpenCode variants. Press Ctrl+T to cycle through them.
+@z
+
+@x
 ## Configuration
 @y
 ## Configuration

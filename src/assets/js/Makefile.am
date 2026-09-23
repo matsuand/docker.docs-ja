@@ -4,7 +4,8 @@
 SUBDIRS = src
 
 copyfiles = \
-	mermaid.js \
+	interactive-diagram.js \
+	mermaid.js             \
 	theme.js
 
 include $(top_srcdir)/build-aux/common.mk

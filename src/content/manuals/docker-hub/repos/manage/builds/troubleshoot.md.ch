@@ -138,9 +138,9 @@ system access to the repositories.
 @z
 
 @x
-1. Generate a SSH keypair that you use for builds only, and add the public key to your source code provider account.
+1. Generate an SSH keypair that you use for builds only, and add the public key to your source code provider account.
 @y
-1. Generate a SSH keypair that you use for builds only, and add the public key to your source code provider account.
+1. Generate an SSH keypair that you use for builds only, and add the public key to your source code provider account.
 @z
 
 @x

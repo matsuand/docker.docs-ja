@@ -387,16 +387,30 @@ Available configuration options:
 | Option      | Environment Variable | Description                                                                                                               |
 |-------------|----------------------|---------------------------------------------------------------------------------------------------------------------------|
 | `org`       | `DHI_ORG`            | Default Docker Hub organization for mirror and customization commands.                                                    |
-| `api_token` | `DHI_API_TOKEN`      | Docker token for authentication. You can generate a token in your [Docker Hub account settings](https://hub.docker.com/). |
+| `api_token` | `DHI_API_TOKEN`      | Access token for authentication, obtained by exchanging a personal access token (PAT) or organization access token (OAT) for an access token. |
 @y
 | Option      | Environment Variable | Description                                                                                                               |
 |-------------|----------------------|---------------------------------------------------------------------------------------------------------------------------|
 | `org`       | `DHI_ORG`            | Default Docker Hub organization for mirror and customization commands.                                                    |
-| `api_token` | `DHI_API_TOKEN`      | Docker token for authentication. You can generate a token in your [Docker Hub account settings](https://hub.docker.com/). |
+| `api_token` | `DHI_API_TOKEN`      | Access token for authentication, obtained by exchanging a personal access token (PAT) or organization access token (OAT) for an access token. |
 @z
 
 @x
-Environment variables take precedence over configuration file values.
+To get an access token, exchange a [personal access token
+(PAT)](/manuals/security/access-tokens/personal-access-tokens.md) or
+[organization access token
+(OAT)](/manuals/security/access-tokens/organization-access-tokens.md):
 @y
-Environment variables take precedence over configuration file values.
+To get an access token, exchange a [personal access token
+(PAT)](manuals/security/access-tokens/personal-access-tokens.md) or
+[organization access token
+(OAT)](manuals/security/access-tokens/organization-access-tokens.md):
+@z
+
+% snip command...
+
+@x
+Use your Docker Hub username as `identifier` for a PAT, or your organization name for an OAT.
+@y
+Use your Docker Hub username as `identifier` for a PAT, or your organization name for an OAT.
 @z

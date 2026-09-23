@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
-
 @x
 title: Claude Code
 @y
@@ -88,9 +86,13 @@ To create a [mountless sandbox](../usage.md#choose-a-workspace), use
 @z
 
 @x
-Claude Code requires either an Anthropic API key or a Claude subscription.
+For the default Anthropic models, Claude Code requires either an Anthropic
+API key or a Claude subscription. For other models, see
+[Use a local model](#use-a-local-model).
 @y
-Claude Code requires either an Anthropic API key or a Claude subscription.
+For the default Anthropic models, Claude Code requires either an Anthropic
+API key or a Claude subscription. For other models, see
+[Use a local model](#use-a-local-model).
 @z
 
 @x
@@ -336,111 +338,9 @@ this base.
 @z
 
 @x
-The `--model` flag routes Claude Code's Anthropic API requests to a model
-served on your host. This feature is experimental and isn't supported on
-Windows.
+For local models, hosted providers, and custom inference endpoints, see
+[Use local and hosted models](../configuration/models.md).
 @y
-The `--model` flag routes Claude Code's Anthropic API requests to a model
-served on your host. This feature is experimental and isn't supported on
-Windows.
-@z
-
-@x
-Enable the feature:
-@y
-Enable the feature:
-@z
-
-@x
-```console
-$ sbx settings set platform.allowExperimentalFeatures true
-$ sbx settings set feature.model true
-```
-@y
-```console
-$ sbx settings set platform.allowExperimentalFeatures true
-$ sbx settings set feature.model true
-```
-@z
-
-@x
-To use the bundled `llmman` model server, pass a GGUF model reference or short
-name:
-@y
-To use the bundled `llmman` model server, pass a GGUF model reference or short
-name:
-@z
-
-@x
-```console
-$ sbx run --model gemma4 claude
-```
-@y
-```console
-$ sbx run --model gemma4 claude
-```
-@z
-
-@x
-On first use, `sbx` starts `llmman`, pulls the model, and leaves the server
-running on your host. Later sandboxes reuse the server and its model store.
-@y
-On first use, `sbx` starts `llmman`, pulls the model, and leaves the server
-running on your host. Later sandboxes reuse the server and its model store.
-@z
-
-@x
-To use an existing Ollama installation instead, set the provider to `ollama`:
-@y
-To use an existing Ollama installation instead, set the provider to `ollama`:
-@z
-
-@x
-```console
-$ sbx run --model gemma4 --provider ollama claude
-```
-@y
-```console
-$ sbx run --model gemma4 --provider ollama claude
-```
-@z
-
-@x
-Ollama must already be installed and running. `sbx` connects to it but doesn't
-start or manage the Ollama process.
-@y
-Ollama must already be installed and running. `sbx` connects to it but doesn't
-start or manage the Ollama process.
-@z
-
-@x
-You can also change the model for an existing sandbox:
-@y
-You can also change the model for an existing sandbox:
-@z
-
-@x
-```console
-$ sbx run --name <sandbox-name> --model <model-name>
-```
-@y
-```console
-$ sbx run --name <sandbox-name> --model <model-name>
-```
-@z
-
-@x
-Changing the model recreates the sandbox container. The workspace and
-kit-owned volumes persist.
-@y
-Changing the model recreates the sandbox container. The workspace and
-kit-owned volumes persist.
-@z
-
-@x
-To use Docker Model Runner instead, see
-[Run Claude Code in a Docker Sandbox with Docker Model Runner](/guides/claude-code-sandbox-model-runner/).
-@y
-To use Docker Model Runner instead, see
-[Run Claude Code in a Docker Sandbox with Docker Model Runner](guides/claude-code-sandbox-model-runner/).
+For local models, hosted providers, and custom inference endpoints, see
+[Use local and hosted models](../configuration/models.md).
 @z

@@ -296,7 +296,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-SUBDIRS = admonitions api-ref api-reference components sidebar utils
+SUBDIRS = admonitions api-reference components sidebar utils
 bases = \
 	footer.html       \
 	github-links.html \
@@ -313,17 +313,18 @@ changes = $(bases:=.ch) # change files
 transes = $(bases)      # translated files
 EXTRA_DIST = $(changes)
 copyfiles = \
-	aside.html           \
-	breadcrumbs.html     \
-	content-default.html \
-	gordon-chat.html     \
-	icon.html            \
-	mermaid-script.html  \
-	meta.html            \
-	pagemeta.html        \
-	pagefind-meta.html   \
-	schema.html          \
-	tooltip.html         \
+	aside.html                      \
+	breadcrumbs.html                \
+	content-default.html            \
+	gordon-chat.html                \
+	icon.html                       \
+	interactive-diagram-script.html \
+	mermaid-script.html             \
+	meta.html                       \
+	pagemeta.html                   \
+	pagefind-meta.html              \
+	schema.html                     \
+	tooltip.html                    \
 	youtube-script.html
 
 all: all-recursive

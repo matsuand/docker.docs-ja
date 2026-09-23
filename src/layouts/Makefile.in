@@ -303,8 +303,6 @@ bases = \
 	api.markdown.md           \
 	api-docs.html             \
 	api-docs.markdown.md      \
-	api-reference.html        \
-	api-reference.markdown.md \
 	baseof.html               \
 	cli.html                  \
 	cli.markdown.md           \

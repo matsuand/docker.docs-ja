@@ -2,9 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
-openapi: "3.1.0"
+openapi: 3.2.0
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
 @y
-openapi: "3.1.0"
+openapi: 3.2.0
+jsonSchemaDialect: https://spec.openapis.org/oas/3.1/dialect/base
 @z
 
 @x
@@ -70,14 +72,14 @@ info:
 @z
 
 @x
-    See https://docs.docker.com/ai/sandboxes/governance/ for product
-    documentation.
+    See the [AI Governance documentation](https://docs.docker.com/ai/sandboxes/governance/)
+    for product documentation.
   contact:
     name: Docker
     url: https://www.docker.com/products/ai-governance/
 @y
-    See https://docs.docker.com/ai/sandboxes/governance/ for product
-    documentation.
+    See the [AI Governance documentation](https://docs.docker.com/ai/sandboxes/governance/)
+    for product documentation.
   contact:
     name: Docker
     url: https://www.docker.com/products/ai-governance/
@@ -86,14 +88,22 @@ info:
 @x
 tags:
   - name: policies
+    summary: Policies
+    kind: nav
     description: Policy lifecycle management
   - name: rules
+    summary: Rules
+    kind: nav
     description: Rule management within an allowlist policy
 @y
 tags:
   - name: policies
+    summary: Policies
+    kind: nav
     description: Policy lifecycle management
   - name: rules
+    summary: Rules
+    kind: nav
     description: Rule management within an allowlist policy
 @z
 
@@ -123,21 +133,65 @@ paths:
       tags: [policies]
       summary: List policies
       description: >
-        Returns a shallow summary of all policies for the org.
+        Returns a shallow summary of the organization's policies, one page at a time.
         The rule set is not included; use GetPolicy to fetch the full object.
+@y
+paths:
+  /orgs/{org_name}/governance/policies:
+    parameters:
+      - $ref: "#/components/parameters/OrgName"
+    get:
+      operationId: listPolicies
+      tags: [policies]
+      summary: List policies
+      description: >
+        Returns a shallow summary of the organization's policies, one page at a time.
+        The rule set is not included; use GetPolicy to fetch the full object.
+@z
+
+@x
+        Results are paginated with an opaque cursor. Pass `page_size` to bound
+        the page; if more policies remain, the response includes a non-null
+        `next_page_token` to pass as `page_token` on the next request. Iterate
+        until `next_page_token` is `null`. Treat the token as opaque; do not
+        parse or construct it.
+      parameters:
+        - name: page_size
+          in: query
+          required: false
+          description: >
+            Maximum number of policies to return. Defaults to 100 if omitted or
+            zero. The server caps values above 100 at 100.
+          schema:
+            type: integer
+            minimum: 0
+            default: 100
+        - name: page_token
+          in: query
+          required: false
+          description: >
+            Opaque cursor from a previous response's `next_page_token`. Omit to
+            fetch the first page.
+          schema:
+            type: string
       responses:
         "200":
-          description: Object wrapping an array of policy summaries under `data`. Rule sets are not included; use GetPolicy to fetch a full policy.
+          description: Object wrapping an array of policy summaries under `data` and a `next_page_token`, which is null on the last page. Rule sets are not included; use GetPolicy to fetch a full policy.
           content:
             application/json:
               schema:
                 type: object
-                required: [data]
+                required: [data, next_page_token]
                 properties:
                   data:
                     type: array
                     items:
                       $ref: "#/components/schemas/PolicySummary"
+                  next_page_token:
+                    type: [string, "null"]
+                    description: >
+                      The opaque cursor for the next page, or `null` on the last page.
+                    example: AQpteyJQSyI6Im15LW9yZyIsIlNLIjoicG9saWN5I3BvbF8ifQ
               examples:
                 default:
                   value:
@@ -150,6 +204,9 @@ paths:
                         created_at: "2026-04-22T00:00:00Z"
                         updated_at: "2026-04-22T00:00:00Z"
                         type: allowlist_v0
+                    next_page_token: AQpteyJQSyI6Im15LW9yZyIsIlNLIjoicG9saWN5I3BvbF8ifQ
+        "400":
+          $ref: "#/components/responses/InvalidArgument"
         "401":
           $ref: "#/components/responses/Unauthenticated"
         "403":
@@ -159,30 +216,48 @@ paths:
         "500":
           $ref: "#/components/responses/InternalError"
 @y
-paths:
-  /orgs/{org_name}/governance/policies:
-    parameters:
-      - $ref: "#/components/parameters/OrgName"
-    get:
-      operationId: listPolicies
-      tags: [policies]
-      summary: List policies
-      description: >
-        Returns a shallow summary of all policies for the org.
-        The rule set is not included; use GetPolicy to fetch the full object.
+        Results are paginated with an opaque cursor. Pass `page_size` to bound
+        the page; if more policies remain, the response includes a non-null
+        `next_page_token` to pass as `page_token` on the next request. Iterate
+        until `next_page_token` is `null`. Treat the token as opaque; do not
+        parse or construct it.
+      parameters:
+        - name: page_size
+          in: query
+          required: false
+          description: >
+            Maximum number of policies to return. Defaults to 100 if omitted or
+            zero. The server caps values above 100 at 100.
+          schema:
+            type: integer
+            minimum: 0
+            default: 100
+        - name: page_token
+          in: query
+          required: false
+          description: >
+            Opaque cursor from a previous response's `next_page_token`. Omit to
+            fetch the first page.
+          schema:
+            type: string
       responses:
         "200":
-          description: Object wrapping an array of policy summaries under `data`. Rule sets are not included; use GetPolicy to fetch a full policy.
+          description: Object wrapping an array of policy summaries under `data` and a `next_page_token`, which is null on the last page. Rule sets are not included; use GetPolicy to fetch a full policy.
           content:
             application/json:
               schema:
                 type: object
-                required: [data]
+                required: [data, next_page_token]
                 properties:
                   data:
                     type: array
                     items:
                       $ref: "#/components/schemas/PolicySummary"
+                  next_page_token:
+                    type: [string, "null"]
+                    description: >
+                      The opaque cursor for the next page, or `null` on the last page.
+                    example: AQpteyJQSyI6Im15LW9yZyIsIlNLIjoicG9saWN5I3BvbF8ifQ
               examples:
                 default:
                   value:
@@ -195,6 +270,9 @@ paths:
                         created_at: "2026-04-22T00:00:00Z"
                         updated_at: "2026-04-22T00:00:00Z"
                         type: allowlist_v0
+                    next_page_token: AQpteyJQSyI6Im15LW9yZyIsIlNLIjoicG9saWN5I3BvbF8ifQ
+        "400":
+          $ref: "#/components/responses/InvalidArgument"
         "401":
           $ref: "#/components/responses/Unauthenticated"
         "403":
@@ -416,7 +494,7 @@ paths:
 @z
 
 @x
-        The rule set is not modified here — use the rule endpoints for that.
+        The rule set is not modified here. Use the rule endpoints for that.
         At least one field must be present. Returns the policy in both its old
         and new states. Changes may take up to five minutes to reach developer
         machines.
@@ -534,7 +612,7 @@ paths:
         "500":
           $ref: "#/components/responses/InternalError"
 @y
-        The rule set is not modified here — use the rule endpoints for that.
+        The rule set is not modified here. Use the rule endpoints for that.
         At least one field must be present. Returns the policy in both its old
         and new states. Changes may take up to five minutes to reach developer
         machines.
@@ -1078,10 +1156,10 @@ components:
 @z
 
 @x
-        See [Docker Hub authentication](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+        See [Docker Hub authentication](https://docs.docker.com/reference/api/hub/latest/operations/AuthCreateAccessToken/)
         for full details.
 @y
-        See [Docker Hub authentication](https://docs.docker.com/reference/api/hub/latest/#tag/authentication-api/operation/AuthCreateAccessToken)
+        See [Docker Hub authentication](https://docs.docker.com/reference/api/hub/latest/operations/AuthCreateAccessToken/)
         for full details.
 @z
 
@@ -1194,8 +1272,9 @@ components:
         type:
           type: string
           description: >
-            Identifies the rule-set format. Always `allowlist_v0`, corresponding
-            to the `allowlist_v0` property on the full Policy object.
+            Identifies the policy type. `allowlist_v0` for network/filesystem
+            allowlist policies; `cedar_v1` for Cedar language policies.
+          enum: [allowlist_v0, cedar_v1]
           examples:
             - allowlist_v0
 @y
@@ -1233,8 +1312,9 @@ components:
         type:
           type: string
           description: >
-            Identifies the rule-set format. Always `allowlist_v0`, corresponding
-            to the `allowlist_v0` property on the full Policy object.
+            Identifies the policy type. `allowlist_v0` for network/filesystem
+            allowlist policies; `cedar_v1` for Cedar language policies.
+          enum: [allowlist_v0, cedar_v1]
           examples:
             - allowlist_v0
 @z
@@ -1242,7 +1322,9 @@ components:
 @x
     Policy:
       type: object
-      description: Full policy representation including the allowlist rule set.
+      description: >
+        Full policy representation. Exactly one of `allowlist_v0` or `cedar_v1`
+        is present, depending on the policy type.
       required: [id, name, org, scope, created_at, updated_at]
       properties:
         id:
@@ -1272,10 +1354,14 @@ components:
             - "2026-04-22T00:00:00Z"
         allowlist_v0:
           $ref: "#/components/schemas/AllowlistV0"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @y
     Policy:
       type: object
-      description: Full policy representation including the allowlist rule set.
+      description: >
+        Full policy representation. Exactly one of `allowlist_v0` or `cedar_v1`
+        is present, depending on the policy type.
       required: [id, name, org, scope, created_at, updated_at]
       properties:
         id:
@@ -1305,6 +1391,8 @@ components:
             - "2026-04-22T00:00:00Z"
         allowlist_v0:
           $ref: "#/components/schemas/AllowlistV0"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @z
 
 @x
@@ -1316,7 +1404,7 @@ components:
           type: array
           items:
             type: string
-          description: Team UUIDs the policy applies to. Each must be a valid team in the org.
+          description: Team IDs the policy applies to. Each must be a valid team in the organization.
           examples:
             - ["d290f1ee-6c54-4b01-90e6-d701748f0851"]
 @y
@@ -1328,7 +1416,7 @@ components:
           type: array
           items:
             type: string
-          description: Team UUIDs the policy applies to. Each must be a valid team in the org.
+          description: Team IDs the policy applies to. Each must be a valid team in the organization.
           examples:
             - ["d290f1ee-6c54-4b01-90e6-d701748f0851"]
 @z
@@ -1386,6 +1474,62 @@ components:
 @z
 
 @x
+    CedarV1Policy:
+      type: object
+      description: >
+        Cedar:V1 policy body. Present on `Policy` when `PolicySummary.type` is
+        `cedar_v1`. Cedar policies encode their rules directly in `text` rather
+        than in the rules sub-resource; the rules endpoints are not available for
+        Cedar policies.
+      required: [text, schema_url]
+      properties:
+        text:
+          type: string
+          description: >
+            One or more Cedar `permit` or `forbid` statements. Must be
+            syntactically valid Cedar and must not carry an `@id` annotation
+            (IDs are server-assigned).
+          examples:
+            - 'permit(principal, action == MCP::Action::"call_tool", resource is MCP::Tool);'
+        schema_url:
+          type: string
+          description: >
+            URL of the Cedar schema this policy was authored against. The
+            evaluator looks up the schema by this URL from its built-in
+            registry. Use `https://schemas.docker.com/policy/cedar/v1/mcp/v0`
+            for MCP policies.
+          examples:
+            - "https://schemas.docker.com/policy/cedar/v1/mcp/v0"
+@y
+    CedarV1Policy:
+      type: object
+      description: >
+        Cedar:V1 policy body. Present on `Policy` when `PolicySummary.type` is
+        `cedar_v1`. Cedar policies encode their rules directly in `text` rather
+        than in the rules sub-resource; the rules endpoints are not available for
+        Cedar policies.
+      required: [text, schema_url]
+      properties:
+        text:
+          type: string
+          description: >
+            One or more Cedar `permit` or `forbid` statements. Must be
+            syntactically valid Cedar and must not carry an `@id` annotation
+            (IDs are server-assigned).
+          examples:
+            - 'permit(principal, action == MCP::Action::"call_tool", resource is MCP::Tool);'
+        schema_url:
+          type: string
+          description: >
+            URL of the Cedar schema this policy was authored against. The
+            evaluator looks up the schema by this URL from its built-in
+            registry. Use `https://schemas.docker.com/policy/cedar/v1/mcp/v0`
+            for MCP policies.
+          examples:
+            - "https://schemas.docker.com/policy/cedar/v1/mcp/v0"
+@z
+
+@x
     Rule:
       type: object
       description: A single allow or deny rule within an allowlist policy.
@@ -1432,7 +1576,11 @@ components:
 @x
     CreatePolicyRequest:
       type: object
-      description: Fields required to create a new policy.
+      description: >
+        Fields required to create a new policy. Omitting `cedar_v1` creates an
+        `allowlist_v0` policy with an empty rule set. Supplying `cedar_v1` creates
+        a Cedar:V1 policy; rules are embedded in the Cedar text rather than managed
+        via the rules sub-resource.
       required: [name]
       properties:
         name:
@@ -1442,10 +1590,16 @@ components:
             - "Security Research — hardened"
         scope:
           $ref: "#/components/schemas/Scope"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @y
     CreatePolicyRequest:
       type: object
-      description: Fields required to create a new policy.
+      description: >
+        Fields required to create a new policy. Omitting `cedar_v1` creates an
+        `allowlist_v0` policy with an empty rule set. Supplying `cedar_v1` creates
+        a Cedar:V1 policy; rules are embedded in the Cedar text rather than managed
+        via the rules sub-resource.
       required: [name]
       properties:
         name:
@@ -1455,6 +1609,8 @@ components:
             - "Security Research — hardened"
         scope:
           $ref: "#/components/schemas/Scope"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @z
 
 @x
@@ -1571,9 +1727,10 @@ components:
     UpdatePolicyRequest:
       type: object
       description: >
-        Partial update of a policy's metadata. Only fields present in the body
-        are updated; the rule set is not modified here. At least one field must
-        be present.
+        Partial update of a policy. Only fields present in the body are updated;
+        absent fields are left unchanged. At least one field must be present.
+        For `cedar_v1` policies, supply `cedar_v1` to replace the policy text;
+        `name` and `scope` may be combined freely.
       properties:
         name:
           type: string
@@ -1583,13 +1740,16 @@ components:
             - Security Research
         scope:
           $ref: "#/components/schemas/ScopePatch"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @y
     UpdatePolicyRequest:
       type: object
       description: >
-        Partial update of a policy's metadata. Only fields present in the body
-        are updated; the rule set is not modified here. At least one field must
-        be present.
+        Partial update of a policy. Only fields present in the body are updated;
+        absent fields are left unchanged. At least one field must be present.
+        For `cedar_v1` policies, supply `cedar_v1` to replace the policy text;
+        `name` and `scope` may be combined freely.
       properties:
         name:
           type: string
@@ -1599,6 +1759,8 @@ components:
             - Security Research
         scope:
           $ref: "#/components/schemas/ScopePatch"
+        cedar_v1:
+          $ref: "#/components/schemas/CedarV1Policy"
 @z
 
 @x
@@ -1774,7 +1936,7 @@ components:
               description: >
                 Machine-readable error code. `not_found`: the requested resource
                 does not exist, the org does not exist, or the caller is not a
-                member of the org (the org's existence is not revealed to callers
+                member of the organization (the organization's existence is not revealed to callers
                 who cannot access it). `conflict`: a resource with the same name
                 already exists. `invalid_argument`: the request body is malformed
                 or fails validation. `unauthenticated`: missing or invalid
@@ -1813,7 +1975,7 @@ components:
               description: >
                 Machine-readable error code. `not_found`: the requested resource
                 does not exist, the org does not exist, or the caller is not a
-                member of the org (the org's existence is not revealed to callers
+                member of the organization (the organization's existence is not revealed to callers
                 who cannot access it). `conflict`: a resource with the same name
                 already exists. `invalid_argument`: the request body is malformed
                 or fails validation. `unauthenticated`: missing or invalid

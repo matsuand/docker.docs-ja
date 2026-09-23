@@ -11,7 +11,7 @@ enableInlineShortcodes: true
 @y
 title: Docker Docs
 baseURL: https://docs.docker.com
-canonicalURLs: true
+#canonicalURLs: true
 refLinksErrorLevel: ERROR
 enableGitInfo: false
 disablePathToLower: true
@@ -22,17 +22,6 @@ ignoreFiles:
   - copyfiles\.sub$
 defaultContentLanguage: ja
 locale: 'ja-JP'
-@z
-
-@x permalinks:
-    manuals: /:sections[1:]/:slugorcontentbasename/
-@y
-    manuals: __SUBDIR__/:sections[1:]/:slugorcontentbasename/
-@z
-@x
-    manuals: /:sections[1:]/
-@y
-    manuals: __SUBDIR__/:sections[1:]/
 @z
 
 @x

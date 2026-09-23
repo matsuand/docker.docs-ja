@@ -2,10 +2,9 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-copyfiles = \
-	curl.html    \
-	nav.html     \
-	resolve.html
+bases = \
+	credential-injection.yaml    \
+	trust-boundary-topology.yaml
 
 include $(top_srcdir)/build-aux/common.mk
-include $(top_srcdir)/build-aux/copy.mk
+include $(top_srcdir)/build-aux/main.mk

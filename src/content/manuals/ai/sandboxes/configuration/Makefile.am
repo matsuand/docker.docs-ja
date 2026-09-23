@@ -7,6 +7,7 @@ bases = \
 	credentials.md       \
 	environment-files.md \
 	gpu-passthrough.md   \
+	models.md            \
 	registry-mirror.md   \
 	upstream-proxy.md
 

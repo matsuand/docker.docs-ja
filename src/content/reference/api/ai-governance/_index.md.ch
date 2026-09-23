@@ -3,12 +3,10 @@
 
 @x
 title: Docker AI Governance API
-linkTitle: AI Governance
 description: HTTP API reference for managing Docker AI Governance policies and rules programmatically.
 keywords: docker sandboxes, governance API, policy API, organization policy, REST API, openapi
 @y
 title: Docker AI Governance API
-linkTitle: AI Governance
 description: HTTP API reference for managing Docker AI Governance policies and rules programmatically.
 keywords: docker sandboxes, governance API, policy API, organization policy, REST API, openapi
 @z

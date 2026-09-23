@@ -224,6 +224,7 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/sandboxes/agents/Makefile
 	src/content/manuals/ai/sandboxes/configuration/Makefile
 	src/content/manuals/ai/sandboxes/customize/Makefile
+	src/content/manuals/ai/sandboxes/diagrams/Makefile
 	src/content/manuals/ai/sandboxes/governance/Makefile
 	src/content/manuals/ai/sandboxes/governance/access-controls/Makefile
 	src/content/manuals/ai/sandboxes/governance/audit/Makefile
@@ -413,7 +414,6 @@ AC_CONFIG_FILES([
 	src/layouts/_partials/Makefile
 	src/layouts/_partials/admonitions/Makefile
 	src/layouts/_partials/admonitions/icons/Makefile
-	src/layouts/_partials/api-ref/Makefile
 	src/layouts/_partials/api-reference/Makefile
 	src/layouts/_partials/components/Makefile
 	src/layouts/_partials/sidebar/Makefile

@@ -90,11 +90,13 @@ $ sbx rm my-sandbox                 # delete it entirely
 @z
 
 @x
-If the sandbox has an active session — an open attach, SSH connection, or
-in-flight SFTP transfer — `sbx rm` refuses unless you pass `--force`:
+`sbx rm` asks for confirmation before deleting a sandbox. Use `--force` to
+skip the prompt. This flag also permits removal when the sandbox has an active
+session — an open attach, SSH connection, or in-flight SFTP transfer:
 @y
-If the sandbox has an active session — an open attach, SSH connection, or
-in-flight SFTP transfer — `sbx rm` refuses unless you pass `--force`:
+`sbx rm` asks for confirmation before deleting a sandbox. Use `--force` to
+skip the prompt. This flag also permits removal when the sandbox has an active
+session — an open attach, SSH connection, or in-flight SFTP transfer:
 @z
 
 @x
@@ -485,11 +487,11 @@ export to `/etc/sandbox-persistent.sh`:
 
 @x
 ```console
-$ sbx exec -d <sandbox-name> bash -c "echo 'export INTERNAL_API_URL=https://api.example.com' >> /etc/sandbox-persistent.sh"
+$ sbx exec <sandbox-name> bash -c "echo 'export INTERNAL_API_URL=https://api.example.com' >> /etc/sandbox-persistent.sh"
 ```
 @y
 ```console
-$ sbx exec -d <sandbox-name> bash -c "echo 'export INTERNAL_API_URL=https://api.example.com' >> /etc/sandbox-persistent.sh"
+$ sbx exec <sandbox-name> bash -c "echo 'export INTERNAL_API_URL=https://api.example.com' >> /etc/sandbox-persistent.sh"
 ```
 @z
 
@@ -561,6 +563,14 @@ a mountless sandbox, it starts in the container image's working directory.
 @y
 Without `--workdir`, the command starts in the sandbox's primary workspace. In
 a mountless sandbox, it starts in the container image's working directory.
+@z
+
+@x
+`sbx exec` runs commands in the foreground. Detached execution (`-d` or
+`--detach`) isn't supported.
+@y
+`sbx exec` runs commands in the foreground. Detached execution (`-d` or
+`--detach`) isn't supported.
 @z
 
 @x

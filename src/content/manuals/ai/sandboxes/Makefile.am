@@ -2,8 +2,8 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = agents configuration customize governance images integrations \
-	security workflows
+SUBDIRS = agents configuration customize diagrams governance images \
+	integrations security workflows
 
 bases = \
 	_index.md               \
