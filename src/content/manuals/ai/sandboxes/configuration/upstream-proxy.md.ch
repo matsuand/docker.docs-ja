@@ -90,9 +90,11 @@ your OS has no proxy configured, traffic goes direct.
 @z
 
 @x
-Use `sbx settings set` to override the default for one or both kinds of traffic:
+Use [`sbx settings set`](settings.md#change-a-setting) to override the default
+for one or both kinds of traffic:
 @y
-Use `sbx settings set` to override the default for one or both kinds of traffic:
+Use [`sbx settings set`](settings.md#change-a-setting) to override the default
+for one or both kinds of traffic:
 @z
 
 @x
@@ -204,13 +206,11 @@ environment variables, so existing setups keep working without migration:
 @z
 
 @x
-The daemon reads these variables when it starts, so set them before your first
-`sbx` command, or restart the daemon for a change to affect daemon and sandbox
-traffic. Supported CLI clients read their environment on each invocation.
+For how to apply environment variable changes to the CLI and daemon, see
+[Settings environment variables](settings.md#environment-variables).
 @y
-The daemon reads these variables when it starts, so set them before your first
-`sbx` command, or restart the daemon for a change to affect daemon and sandbox
-traffic. Supported CLI clients read their environment on each invocation.
+For how to apply environment variable changes to the CLI and daemon, see
+[Settings environment variables](settings.md#environment-variables).
 @z
 
 @x

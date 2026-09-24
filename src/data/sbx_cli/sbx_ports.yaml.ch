@@ -64,13 +64,29 @@ description: |-
 @z
 
 @x
-    In cloud mode (--cloud), the sandbox may be given by ID (sbx_*) or name, and
-    only the sandbox port number is accepted. The cloud control plane assigns a
-    publicly reachable URL for each exposed port.
+    With --cloud:
+    Manage the exposed ports of a cloud sandbox.
 @y
-    In cloud mode (--cloud), the sandbox may be given by ID (sbx_*) or name, and
-    only the sandbox port number is accepted. The cloud control plane assigns a
-    publicly reachable URL for each exposed port.
+    With --cloud:
+    Manage the exposed ports of a cloud sandbox.
+@z
+
+@x
+    List, publish, or unpublish ports on a cloud sandbox given by ID (sbx_*) or
+    name. Without --publish or --unpublish flags, lists the exposed ports.
+@y
+    List, publish, or unpublish ports on a cloud sandbox given by ID (sbx_*) or
+    name. Without --publish or --unpublish flags, lists the exposed ports.
+@z
+
+@x
+    A port is the sandbox port number alone or with a /tcp suffix; UDP and host
+    bindings are refused. The cloud control plane assigns a publicly reachable URL
+    for each exposed port.
+@y
+    A port is the sandbox port number alone or with a /tcp suffix; UDP and host
+    bindings are refused. The cloud control plane assigns a publicly reachable URL
+    for each exposed port.
 @z
 
 @x
@@ -95,18 +111,18 @@ usage: sbx ports SANDBOX [flags]
 
 @x publish
       usage: |
-        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT (cloud)
+        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @y
       usage: |
-        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT (cloud)
+        Publish a port (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @z
 
 @x unpublish
       usage: |
-        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT (cloud)
+        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @y
       usage: |
-        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT (cloud)
+        Unpublish a port (can be repeated): [HOST_IP:]HOST_PORT:SANDBOX_PORT[/PROTOCOL] (local) or SANDBOX_PORT[/tcp] (cloud)
 @z
 
 % inherited_options:
@@ -117,14 +133,6 @@ usage: sbx ports SANDBOX [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -169,18 +177,18 @@ example: |4-
 
 @x
       # Expose port 8080 on a cloud sandbox
-      sbx ports sbx_abc123 --cloud --publish 8080
+      sbx --cloud ports sbx_abc123 --publish 8080
 @y
       # Expose port 8080 on a cloud sandbox
-      sbx ports sbx_abc123 --cloud --publish 8080
+      sbx --cloud ports sbx_abc123 --publish 8080
 @z
 
 @x
       # Remove an exposed port from a cloud sandbox
-      sbx ports sbx_abc123 --cloud --unpublish 8080
+      sbx --cloud ports sbx_abc123 --unpublish 8080
 @y
       # Remove an exposed port from a cloud sandbox
-      sbx ports sbx_abc123 --cloud --unpublish 8080
+      sbx --cloud ports sbx_abc123 --unpublish 8080
 @z
 
 % see_also:

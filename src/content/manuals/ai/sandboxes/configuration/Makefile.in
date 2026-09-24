@@ -244,6 +244,7 @@ bases = \
 	gpu-passthrough.md   \
 	models.md            \
 	registry-mirror.md   \
+	settings.md          \
 	upstream-proxy.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}

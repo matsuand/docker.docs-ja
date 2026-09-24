@@ -14,13 +14,19 @@ description: |-
 @z
 
 @x
-    RESOURCES is a comma-separated list of hostnames, domains, or IP addresses.
-    Deny rules take precedence over allow rules for the same hostname or CIDR. An
-    allowed hostname isn't checked against CIDR rules for its resolved IP address.
+    RESOURCES takes the same forms as "sbx policy allow network": exact domains,
+    wildcard subdomains, IP addresses, and CIDR prefixes, with optional port
+    suffixes. Rules apply to TCP and UDP by default; use --protocol to restrict a
+    rule to one transport. Deny rules take precedence over allow rules for the
+    same hostname or CIDR. An allowed hostname isn't checked against CIDR rules
+    for its resolved IP address.
 @y
-    RESOURCES is a comma-separated list of hostnames, domains, or IP addresses.
-    Deny rules take precedence over allow rules for the same hostname or CIDR. An
-    allowed hostname isn't checked against CIDR rules for its resolved IP address.
+    RESOURCES takes the same forms as "sbx policy allow network": exact domains,
+    wildcard subdomains, IP addresses, and CIDR prefixes, with optional port
+    suffixes. Rules apply to TCP and UDP by default; use --protocol to restrict a
+    rule to one transport. Deny rules take precedence over allow rules for the
+    same hostname or CIDR. An allowed hostname isn't checked against CIDR rules
+    for its resolved IP address.
 @z
 
 @x
@@ -45,6 +51,12 @@ usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
       usage: help for network
 @z
 
+@x protocol
+        Restrict the rule to one protocol: tcp or udp (default tcp,udp)
+@y
+        Restrict the rule to one protocol: tcp or udp (default tcp,udp)
+@z
+
 @x sandbox
       usage: |
         Scope the rule to a specific sandbox (default: all sandboxes)
@@ -61,14 +73,6 @@ usage: sbx policy deny network [--sandbox SANDBOX] RESOURCES [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -96,11 +100,19 @@ example: |4-
 @z
 
 @x
-      # Block all outbound traffic
+      # Block all outbound traffic, TCP and UDP
       sbx policy deny network "**"
 @y
-      # Block all outbound traffic
+      # Block all outbound traffic, TCP and UDP
       sbx policy deny network "**"
+@z
+
+@x
+      # Block only UDP to a host
+      sbx policy deny network --protocol udp media.example.com
+@y
+      # Block only UDP to a host
+      sbx policy deny network --protocol udp media.example.com
 @z
 
 % see_also:

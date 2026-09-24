@@ -55,6 +55,14 @@ usage: sbx policy ls [SANDBOX] [flags]
 
 % options:
 
+@x created-via
+      usage: |
+        Filter policies by how they were created: "default", "added", "provisioned", or "approval"
+@y
+      usage: |
+        Filter policies by how they were created: "default", "added", "provisioned", or "approval"
+@z
+
 @x help
       usage: help for ls
 @y
@@ -73,6 +81,12 @@ usage: sbx policy ls [SANDBOX] [flags]
       usage: Output filtered policy rules as JSON
 @z
 
+@x protocol
+      usage: 'Filter network rules by protocol: tcp or udp'
+@y
+      usage: 'Filter network rules by protocol: tcp or udp'
+@z
+
 @x source
       usage: 'Filter policies by source: "local", "org", or "kit"'
 @y
@@ -81,10 +95,10 @@ usage: sbx policy ls [SANDBOX] [flags]
 
 @x type
       usage: |
-        Filter policies by type: "all", "network", or "filesystem" (default "all")
+        Filter policies by type: "all", "network", "filesystem" (default "all")
 @y
       usage: |
-        Filter policies by type: "all", "network", or "filesystem" (default "all")
+        Filter policies by type: "all", "network", "filesystem" (default "all")
 @z
 
 @x wide
@@ -149,6 +163,14 @@ example: |4-
 @y
       # List organization policies that deny access
       sbx policy ls --source org --decision deny
+@z
+
+@x
+      # List persistent rules created from approval prompts
+      sbx policy ls --wide --created-via approval
+@y
+      # List persistent rules created from approval prompts
+      sbx policy ls --wide --created-via approval
 @z
 
 @x

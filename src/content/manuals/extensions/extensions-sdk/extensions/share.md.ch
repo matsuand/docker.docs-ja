@@ -48,12 +48,6 @@ When people navigate to this URL, it opens Docker Desktop and displays a preview
 @z
 
 @x
-![Navigate to extension link](images/open-share.png)
-@y
-![Navigate to extension link](images/open-share.png)
-@z
-
-@x
 To generate this link you can either:
 @y
 To generate this link you can either:
@@ -79,12 +73,6 @@ To generate this link you can either:
 - Once you have installed your extension locally, navigate to the **Manage** tab and select **Share**.
 @y
 - Once you have installed your extension locally, navigate to the **Manage** tab and select **Share**.
-@z
-
-@x
-  ![Share button](images/list-preview.png)
-@y
-  ![Share button](images/list-preview.png)
 @z
 
 @x

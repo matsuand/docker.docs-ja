@@ -204,11 +204,11 @@ POST https://authorization-server.com/token
 @x
 > [!NOTE]
 >
-> The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as a HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
+> The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as an HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
 @y
 > [!NOTE]
 >
-> The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as a HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
+> The client's credentials are included in the `POST` query params in this example. OAuth authorization servers may require that the credentials are sent as an HTTP Basic Authentication header or might support different formats. See your OAuth provider docs for details.
 @z
 
 @x

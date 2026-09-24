@@ -128,15 +128,3 @@ Alternatively, get started with reading the "Part one: Build" section for more i
 @y
 Alternatively, get started with reading the "Part one: Build" section for more in-depth information about each step of the extension creation process.
 @z
-
-@x
-For an in-depth tutorial of the entire build process, we recommend the following video walkthrough from DockerCon 2022.
-@y
-For an in-depth tutorial of the entire build process, we recommend the following video walkthrough from DockerCon 2022.
-@z
-
-@x
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yv7OG-EGJsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-@y
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yv7OG-EGJsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-@z

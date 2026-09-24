@@ -12,6 +12,7 @@ bases = \
 	restricted.html          \
 	sandbox-auth.html        \
 	sandbox-auth.markdown.md \
+	setting-metadata.html    \
 	summary-bar.html         \
 	whats-new.markdown.md
 
@@ -40,6 +41,7 @@ copyfiles = \
 	release-date.html               \
 	restricted.markdown.md          \
 	sectionlinks.html               \
+	setting-metadata.markdown.md    \
 	summary-bar.markdown.md         \
 	tab.html                        \
 	tabs.html                       \

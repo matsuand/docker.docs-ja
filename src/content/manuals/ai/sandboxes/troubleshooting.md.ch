@@ -288,11 +288,13 @@ ERROR: resolve kits: kit "git+https://github.com/docker/sbx-kits-contrib.git#dir
 @x
 `sbx` restricts kit installs to an allowlist of sources, which defaults to
 Docker Hub (`docker.io/`) only. Add the kit's publisher to the
-`kit.allowedSources` setting, keeping the entries you want to retain:
+[`kit.allowedSources`](configuration/settings.md#kitallowedsources) setting,
+keeping the entries you want to retain:
 @y
 `sbx` restricts kit installs to an allowlist of sources, which defaults to
 Docker Hub (`docker.io/`) only. Add the kit's publisher to the
-`kit.allowedSources` setting, keeping the entries you want to retain:
+[`kit.allowedSources`](configuration/settings.md#kitallowedsources) setting,
+keeping the entries you want to retain:
 @z
 
 @x
@@ -794,11 +796,15 @@ For setup steps, see [Commit signing](workflows/git.md#commit-signing).
 @z
 
 @x
-Forwarding is enabled by default. Confirm that it hasn't been disabled and
-check whether a fixed socket path is configured:
+Forwarding is enabled by default. Check
+[`ssh.agentForwardingEnabled`](configuration/settings.md#sshagentforwardingenabled)
+and [`ssh.agentSocketPath`](configuration/settings.md#sshagentsocketpath) to
+confirm that forwarding is enabled and inspect the socket selection:
 @y
-Forwarding is enabled by default. Confirm that it hasn't been disabled and
-check whether a fixed socket path is configured:
+Forwarding is enabled by default. Check
+[`ssh.agentForwardingEnabled`](configuration/settings.md#sshagentforwardingenabled)
+and [`ssh.agentSocketPath`](configuration/settings.md#sshagentsocketpath) to
+confirm that forwarding is enabled and inspect the socket selection:
 @z
 
 @x
@@ -1096,9 +1102,13 @@ If you have set custom `XDG_STATE_HOME`, `XDG_CACHE_HOME`, or
 @z
 
 @x
-To opt in to automatic diagnostics uploads after certain daemon errors, run:
+To opt in to automatic diagnostics uploads after certain daemon errors, set
+[`diagnostics.autoUpload`](configuration/settings.md#diagnosticsautoupload) to
+`yes`:
 @y
-To opt in to automatic diagnostics uploads after certain daemon errors, run:
+To opt in to automatic diagnostics uploads after certain daemon errors, set
+[`diagnostics.autoUpload`](configuration/settings.md#diagnosticsautoupload) to
+`yes`:
 @z
 
 @x

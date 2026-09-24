@@ -40,9 +40,39 @@ description: |-
 @z
 
 @x
-    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
+    With --cloud:
+    Create a cloud sandbox for cursor.
 @y
-    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
+    With --cloud:
+    Create a cloud sandbox for cursor.
+@z
+
+@x
+    Cloud sandboxes have no host workspace, so no path follows the agent. Sizing
+    comes from --cpus and --memory and must land on a billable shape; without them
+    a cloud sandbox gets 2 CPUs and 4 GiB. A template named with -t / --template
+    must already exist in the cloud registry.
+@y
+    Cloud sandboxes have no host workspace, so no path follows the agent. Sizing
+    comes from --cpus and --memory and must land on a billable shape; without them
+    a cloud sandbox gets 2 CPUs and 4 GiB. A template named with -t / --template
+    must already exist in the cloud registry.
+@z
+
+@x
+    Cloud sandboxes use cloud network policies. Host network and HTTP policies
+    do not apply. Set cloud account defaults with
+    "sbx --cloud policy init <allow-all|balanced|deny-all>".
+@y
+    Cloud sandboxes use cloud network policies. Host network and HTTP policies
+    do not apply. Set cloud account defaults with
+    "sbx --cloud policy init <allow-all|balanced|deny-all>".
+@z
+
+@x
+    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
+@y
+    Use "sbx --cloud run --name SANDBOX" to attach to the agent after creation.
 @z
 
 @x
@@ -85,14 +115,6 @@ usage: sbx create cursor [PATH...] [flags]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x cpus
       usage: |
         Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
@@ -109,10 +131,10 @@ usage: sbx create cursor [PATH...] [flags]
 
 @x deny-network
       usage: |
-        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with 'sbx policy ls <NAME>' or 'sbx policy rm network --sandbox <NAME> --resource <HOST>'. Safe under centralized governance because a local deny can only narrow, never widen, egress.
 @y
       usage: |
-        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with 'sbx policy ls <NAME>' or 'sbx policy rm network --sandbox <NAME> --resource <HOST>'. Safe under centralized governance because a local deny can only narrow, never widen, egress.
 @z
 
 @x env
@@ -173,10 +195,10 @@ usage: sbx create cursor [PATH...] [flags]
 
 @x name
       usage: |
-        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods; 'default' is reserved)
+        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods (periods are rejected with --cloud); 'default' is reserved)
 @y
       usage: |
-        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods; 'default' is reserved)
+        Name for the sandbox (defaults to <agent>-<workdir>; at least two characters, starting with a letter or number, containing only letters, numbers, hyphens and periods (periods are rejected with --cloud); 'default' is reserved)
 @z
 
 @x on-timeout
@@ -193,6 +215,12 @@ usage: sbx create cursor [PATH...] [flags]
 @y
       usage: |
         Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]
+@z
+
+@x pull
+      usage: Image pull policy (always|missing|never)
+@y
+      usage: Image pull policy (always|missing|never)
 @z
 
 @x quiet
@@ -219,10 +247,10 @@ usage: sbx create cursor [PATH...] [flags]
 
 @x ttl
       usage: |
-        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side)
 @y
       usage: |
-        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side)
 @z
 
 @x volume
@@ -265,6 +293,30 @@ example: |4-
 @y
       # Create without a workspace bind mount
       sbx create cursor
+@z
+
+@x
+      # Create a cloud sandbox for cursor
+      sbx --cloud create cursor
+@y
+      # Create a cloud sandbox for cursor
+      sbx --cloud create cursor
+@z
+
+@x
+      # Create a named cloud sandbox with a mixin baked in
+      sbx --cloud create --name my-project cursor --kit ./my-mixin/
+@y
+      # Create a named cloud sandbox with a mixin baked in
+      sbx --cloud create --name my-project cursor --kit ./my-mixin/
+@z
+
+@x
+      # Create from a template that already exists in the cloud registry
+      sbx --cloud create -t TEMPLATE
+@y
+      # Create from a template that already exists in the cloud registry
+      sbx --cloud create -t TEMPLATE
 @z
 
 % see_also:

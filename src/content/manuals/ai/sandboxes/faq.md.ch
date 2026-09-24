@@ -416,9 +416,9 @@ unless you opt in.
 @z
 
 @x
-Turn it on with a local setting:
+Turn on [`clipboard.imagePaste`](configuration/settings.md#clipboardimagepaste):
 @y
-Turn it on with a local setting:
+Turn on [`clipboard.imagePaste`](configuration/settings.md#clipboardimagepaste):
 @z
 
 @x

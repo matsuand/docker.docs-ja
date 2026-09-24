@@ -54,6 +54,26 @@ description: |-
 @z
 
 @x
+    With --cloud:
+    Set the default network mode of the cloud policy.
+@y
+    With --cloud:
+    Set the default network mode of the cloud policy.
+@z
+
+@x
+    There is no one-time setup: init sets the default mode for the account, or for
+    one sandbox with --sandbox, keeps the existing allow and deny rules, and can be
+    run again. balanced is deny-all plus the balanced allow list added to the scope.
+    Use "sbx --cloud policy reset" to clear the rules first.
+@y
+    There is no one-time setup: init sets the default mode for the account, or for
+    one sandbox with --sandbox, keeps the existing allow and deny rules, and can be
+    run again. balanced is deny-all plus the balanced allow list added to the scope.
+    Use "sbx --cloud policy reset" to clear the rules first.
+@z
+
+@x
 usage: sbx policy init <allow-all|balanced|deny-all> [flags]
 @y
 usage: sbx policy init <allow-all|balanced|deny-all> [flags]
@@ -81,14 +101,6 @@ usage: sbx policy init <allow-all|balanced|deny-all> [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -123,6 +135,22 @@ example: |4-
       # Block everything, then allow specific sites
       sbx policy init deny-all
       sbx policy allow network api.example.com:443
+@z
+
+@x
+      # Set the account default to balanced
+      sbx --cloud policy init balanced
+@y
+      # Set the account default to balanced
+      sbx --cloud policy init balanced
+@z
+
+@x
+      # Block everything for one sandbox, keeping its allow rules
+      sbx --cloud policy init deny-all --sandbox my-sandbox
+@y
+      # Block everything for one sandbox, keeping its allow rules
+      sbx --cloud policy init deny-all --sandbox my-sandbox
 @z
 
 % see_also:

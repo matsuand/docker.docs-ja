@@ -25,22 +25,32 @@ description: |-
     With --cloud:
     The tar is uploaded to the cloud template registry as a new template.
     Takes two arguments (FILE, NAME). NAME must be unique per account.
-    --cpus and --memory-mib are required (the server enforces power-of-two
-    CPUs and memory:cpu ratio constraints). --capture-mode controls what
-    gets captured for the template: "disk" (default) is faster to load and
-    cold-boots from the filesystem; "all" captures memory + disk + microVM
-    checkpoint so subsequent runs resume in sub-second time at the cost of
-    a slower load.
+    --cpus and --memory-mib are required, and together must name one of the
+    billable sandbox shapes:
+      micro (1 vCPU / 2048 MiB)
+      small (2 vCPU / 4096 MiB)
+      medium (4 vCPU / 8192 MiB)
+      large (8 vCPU / 16384 MiB)
+      xl (16 vCPU / 32768 MiB)
+    --capture-mode controls what gets captured for the template: "disk" (default)
+    is faster to load and cold-boots from the filesystem; "all" captures memory +
+    disk + microVM checkpoint so subsequent runs resume in sub-second time at the
+    cost of a slower load.
 @y
     With --cloud:
     The tar is uploaded to the cloud template registry as a new template.
     Takes two arguments (FILE, NAME). NAME must be unique per account.
-    --cpus and --memory-mib are required (the server enforces power-of-two
-    CPUs and memory:cpu ratio constraints). --capture-mode controls what
-    gets captured for the template: "disk" (default) is faster to load and
-    cold-boots from the filesystem; "all" captures memory + disk + microVM
-    checkpoint so subsequent runs resume in sub-second time at the cost of
-    a slower load.
+    --cpus and --memory-mib are required, and together must name one of the
+    billable sandbox shapes:
+      micro (1 vCPU / 2048 MiB)
+      small (2 vCPU / 4096 MiB)
+      medium (4 vCPU / 8192 MiB)
+      large (8 vCPU / 16384 MiB)
+      xl (16 vCPU / 32768 MiB)
+    --capture-mode controls what gets captured for the template: "disk" (default)
+    is faster to load and cold-boots from the filesystem; "all" captures memory +
+    disk + microVM checkpoint so subsequent runs resume in sub-second time at the
+    cost of a slower load.
 @z
 
 @x
@@ -68,9 +78,11 @@ usage: sbx template load FILE [NAME] [flags]
 @z
 
 @x cpus
-      usage: Number of CPUs (1, 2, 4, 8, or 16; required with --cloud)
+      usage: |
+        vCPUs; with --memory-mib must name a billable shape (required with --cloud)
 @y
-      usage: Number of CPUs (1, 2, 4, 8, or 16; required with --cloud)
+      usage: |
+        vCPUs; with --memory-mib must name a billable shape (required with --cloud)
 @z
 
 @x description
@@ -87,10 +99,10 @@ usage: sbx template load FILE [NAME] [flags]
 
 @x memory-mib
       usage: |
-        Memory in MiB (512–32768, must satisfy 2:1/1:1/1:2 ratio with --cpus; required with --cloud)
+        Memory in MiB; --cpus/--memory-mib must name a billable shape: micro (1 vCPU / 2048 MiB), small (2 vCPU / 4096 MiB), medium (4 vCPU / 8192 MiB), large (8 vCPU / 16384 MiB), xl (16 vCPU / 32768 MiB) (required with --cloud)
 @y
       usage: |
-        Memory in MiB (512–32768, must satisfy 2:1/1:1/1:2 ratio with --cpus; required with --cloud)
+        Memory in MiB; --cpus/--memory-mib must name a billable shape: micro (1 vCPU / 2048 MiB), small (2 vCPU / 4096 MiB), medium (4 vCPU / 8192 MiB), large (8 vCPU / 16384 MiB), xl (16 vCPU / 32768 MiB) (required with --cloud)
 @z
 
 % inherited_options:
@@ -101,14 +113,6 @@ usage: sbx template load FILE [NAME] [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -131,34 +135,34 @@ example: |4-
 
 @x
       # Use the loaded image as a template
-      sbx run -t myimage:v1.0 claude
+      sbx run --pull never -t myimage:v1.0 claude
 @y
       # Use the loaded image as a template
-      sbx run -t myimage:v1.0 claude
+      sbx run --pull never -t myimage:v1.0 claude
 @z
 
 @x
       # Cloud: upload a tar as a cloud-managed template (disk capture, faster load)
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096
 @y
       # Cloud: upload a tar as a cloud-managed template (disk capture, faster load)
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096
 @z
 
 @x
       # Cloud: capture memory + disk + microVM checkpoint for sub-second resume
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048 --capture-mode all
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096 --capture-mode all
 @y
       # Cloud: capture memory + disk + microVM checkpoint for sub-second resume
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048 --capture-mode all
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096 --capture-mode all
 @z
 
 @x
       # Cloud: with a description
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048 --description "Nightly baseline"
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096 --description "Nightly baseline"
 @y
       # Cloud: with a description
-      sbx template load /tmp/myimage.tar my-template --cloud --cpus 2 --memory-mib 2048 --description "Nightly baseline"
+      sbx --cloud template load /tmp/myimage.tar my-template --cpus 2 --memory-mib 4096 --description "Nightly baseline"
 @z
 
 % see_also:

@@ -388,12 +388,6 @@ When you select the **Extensions** tab, you should see the private marketplace l
 When you select the **Extensions** tab, you should see the private marketplace listing only the extensions you have allowed in `extensions.txt`.
 @z
 
-@x __SUBDIR__ 対応
-![Extensions Private Marketplace](/assets/images/extensions-private-marketplace.webp)
-@y
-![Extensions Private Marketplace](assets/images/extensions-private-marketplace.webp)
-@z
-
 @x
 ## Step six: Distribute the private marketplace
 @y

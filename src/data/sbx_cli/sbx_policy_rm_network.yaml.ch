@@ -35,10 +35,32 @@ description: |-
 
 @x
     Use "sbx policy ls --wide" to see active rule IDs and resources, or
-    "sbx policy ls --json" for the raw filtered daemon response.
+    "sbx policy ls --json" for the filtered rules; network values are printed in
+    the form the CLI accepts back.
 @y
     Use "sbx policy ls --wide" to see active rule IDs and resources, or
-    "sbx policy ls --json" for the raw filtered daemon response.
+    "sbx policy ls --json" for the filtered rules; network values are printed in
+    the form the CLI accepts back.
+@z
+
+@x
+    With --cloud:
+    Remove a cloud network rule by pattern.
+@y
+    With --cloud:
+    Remove a cloud network rule by pattern.
+@z
+
+@x
+    Cloud rules have no IDs: --resource removes the pattern from both the allow
+    and deny lists, and the output names each list it was removed from. The rule
+    leaves the account policy by default; use --sandbox to scope the removal to one
+    sandbox. Use "sbx --cloud policy ls" to see the current rules.
+@y
+    Cloud rules have no IDs: --resource removes the pattern from both the allow
+    and deny lists, and the output names each list it was removed from. The rule
+    leaves the account policy by default; use --sandbox to scope the removal to one
+    sandbox. Use "sbx --cloud policy ls" to see the current rules.
 @z
 
 @x
@@ -48,6 +70,12 @@ usage: sbx policy rm network [--sandbox SANDBOX] [flags]
 @z
 
 % options:
+
+@x force
+      usage: Skip confirmation prompts
+@y
+      usage: Skip confirmation prompts
+@z
 
 @x help
       usage: help for network
@@ -115,6 +143,22 @@ example: |4-
 @y
       # Remove a sandbox-scoped rule by resource
       sbx policy rm network --sandbox my-sandbox --resource api.example.com
+@z
+
+@x
+      # Remove a cloud rule by pattern, from the allow or deny list it is in
+      sbx --cloud policy rm network --resource api.example.com
+@y
+      # Remove a cloud rule by pattern, from the allow or deny list it is in
+      sbx --cloud policy rm network --resource api.example.com
+@z
+
+@x
+      # Remove a pattern from one cloud sandbox's rules
+      sbx --cloud policy rm network --sandbox my-sandbox --resource api.example.com
+@y
+      # Remove a pattern from one cloud sandbox's rules
+      sbx --cloud policy rm network --sandbox my-sandbox --resource api.example.com
 @z
 
 % see_also:

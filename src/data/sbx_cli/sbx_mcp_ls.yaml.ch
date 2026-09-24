@@ -3,23 +3,23 @@
 
 @x
 name: sbx mcp ls
-synopsis: List MCP servers, grouped by the gateway that serves them
+synopsis: List MCP servers
 description: |-
     List registered MCP servers under the gateway that serves them.
 @y
 name: sbx mcp ls
-synopsis: List MCP servers, grouped by the gateway that serves them
+synopsis: List MCP servers
 description: |-
     List registered MCP servers under the gateway that serves them.
 @z
 
 @x
-    The gateway header reports where it runs, who controls it, and whether you are
-    signed in; each server row reports its transport and whether it is usable now.
+    The GATEWAY column reports where each server runs, who controls it, and the
+    signed-in identity; each row also reports its transport and whether it is usable now.
     Servers needing authorization carry the 'sbx mcp auth' next step.
 @y
-    The gateway header reports where it runs, who controls it, and whether you are
-    signed in; each server row reports its transport and whether it is usable now.
+    The GATEWAY column reports where each server runs, who controls it, and the
+    signed-in identity; each row also reports its transport and whether it is usable now.
     Servers needing authorization carry the 'sbx mcp auth' next step.
 @z
 
@@ -43,6 +43,28 @@ description: |-
 @y
     Auth status is read without starting an OAuth flow — from the local token store
     in local data-plane mode, otherwise from the hosted control plane.
+@z
+
+@x
+    With --cloud:
+    List MCP servers reported by existing cloud sandbox gateways, with the
+    sandboxes that reference each server. Servers skipped by a gateway are excluded.
+    This is not a complete inventory of configured servers: unused configurations
+    and gateways that do not report server names are absent, including with --quiet.
+@y
+    With --cloud:
+    List MCP servers reported by existing cloud sandbox gateways, with the
+    sandboxes that reference each server. Servers skipped by a gateway are excluded.
+    This is not a complete inventory of configured servers: unused configurations
+    and gateways that do not report server names are absent, including with --quiet.
+@z
+
+@x
+    Specify a sandbox to show its gateway state and host, requested servers, and
+    skipped servers.
+@y
+    Specify a sandbox to show its gateway state and host, requested servers, and
+    skipped servers.
 @z
 
 @x
@@ -65,6 +87,12 @@ usage: sbx mcp ls [flags]
       usage: Output in JSON format
 @z
 
+@x quiet
+      usage: Only display MCP server names
+@y
+      usage: Only display MCP server names
+@z
+
 % inherited_options:
 
 @x cloud
@@ -73,14 +101,6 @@ usage: sbx mcp ls [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -103,6 +123,22 @@ example: |4-
 @y
       # Machine-readable output for scripting
       sbx mcp ls --json
+@z
+
+@x
+      # Cloud: list servers reported across existing sandboxes
+      sbx --cloud mcp ls
+@y
+      # Cloud: list servers reported across existing sandboxes
+      sbx --cloud mcp ls
+@z
+
+@x
+      # Cloud: show a cloud sandbox's gateway by name or sbx_ ID
+      sbx --cloud mcp ls my-sbx
+@y
+      # Cloud: show a cloud sandbox's gateway by name or sbx_ ID
+      sbx --cloud mcp ls my-sbx
 @z
 
 % see_also:

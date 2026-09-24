@@ -57,14 +57,6 @@ usage: sbx template inspect NAME|ID [flags]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x debug
       usage: Enable debug logging
 @y
@@ -73,20 +65,20 @@ usage: sbx template inspect NAME|ID [flags]
 
 @x
 example: |4-
-      sbx template inspect my-template --cloud
-      sbx template inspect tmpl_abc123 --cloud
+      sbx --cloud template inspect my-template
+      sbx --cloud template inspect tmpl_abc123
 @y
 example: |4-
-      sbx template inspect my-template --cloud
-      sbx template inspect tmpl_abc123 --cloud
+      sbx --cloud template inspect my-template
+      sbx --cloud template inspect tmpl_abc123
 @z
 
 @x
       # Output in JSON format
-      sbx template inspect my-template --cloud --json
+      sbx --cloud template inspect my-template --json
 @y
       # Output in JSON format
-      sbx template inspect my-template --cloud --json
+      sbx --cloud template inspect my-template --json
 @z
 
 % see_also:

@@ -30,11 +30,11 @@ Docker Engine's requirements, Docker inside the sandbox uses it too.
 @z
 
 @x
-Set `platform.images.registryMirror` to the mirror host. Include a port when
-needed, but omit the URL scheme:
+Set [`platform.images.registryMirror`](settings.md#platformimagesregistrymirror)
+to the mirror host. Include a port when needed, but omit the URL scheme:
 @y
-Set `platform.images.registryMirror` to the mirror host. Include a port when
-needed, but omit the URL scheme:
+Set [`platform.images.registryMirror`](settings.md#platformimagesregistrymirror)
+to the mirror host. Include a port when needed, but omit the URL scheme:
 @z
 
 @x

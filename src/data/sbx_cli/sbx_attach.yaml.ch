@@ -3,14 +3,16 @@
 
 @x
 name: sbx attach
-synopsis: Attach to a running cloud sandbox
+synopsis: |
+    Attach to a cloud sandbox, starting it first if it is stopped
 description: |-
-    Attach an interactive terminal session to a running cloud sandbox.
+    Attach an interactive terminal session to a cloud sandbox.
 @y
 name: sbx attach
-synopsis: Attach to a running cloud sandbox
+synopsis: |
+    Attach to a cloud sandbox, starting it first if it is stopped
 description: |-
-    Attach an interactive terminal session to a running cloud sandbox.
+    Attach an interactive terminal session to a cloud sandbox.
 @z
 
 @x
@@ -21,12 +23,12 @@ description: |-
 
 @x
     Opens a PTY-backed exec session against the sandbox's agent process. The
-    sandbox must already exist and be in a running state; use `sbx --cloud run`
-    to create a sandbox and attach in one step.
+    sandbox must already exist; a stopped one is started first. Use
+    `sbx --cloud run` to create a sandbox and attach in one step.
 @y
     Opens a PTY-backed exec session against the sandbox's agent process. The
-    sandbox must already exist and be in a running state; use `sbx --cloud run`
-    to create a sandbox and attach in one step.
+    sandbox must already exist; a stopped one is started first. Use
+    `sbx --cloud run` to create a sandbox and attach in one step.
 @z
 
 @x
@@ -45,10 +47,10 @@ usage: sbx attach SANDBOX [flags]
 
 @x detach-keys
       usage: |
-        Override the detach gesture that leaves the agent running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
 @y
       usage: |
-        Override the detach gesture that leaves the agent running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
 @z
 
 @x help
@@ -67,14 +69,6 @@ usage: sbx attach SANDBOX [flags]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x debug
       usage: Enable debug logging
 @y
@@ -83,12 +77,12 @@ usage: sbx attach SANDBOX [flags]
 
 @x
 example: |4-
-      # Attach to a running sandbox by ID or name
+      # Attach to a sandbox by ID or name
       sbx --cloud attach sbx_abc123
       sbx --cloud attach claude/my-sandbox
 @y
 example: |4-
-      # Attach to a running sandbox by ID or name
+      # Attach to a sandbox by ID or name
       sbx --cloud attach sbx_abc123
       sbx --cloud attach claude/my-sandbox
 @z

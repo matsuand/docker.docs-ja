@@ -466,12 +466,6 @@ npm install @docker/extension-api-client-types --save-dev
 @z
 
 @x
-![Auto completion in an IDE](images/types-autocomplete.png)
-@y
-![Auto completion in an IDE](images/types-autocomplete.png)
-@z
-
-@x
 For example, you can use the `docker.cli.exec` function to get the list of all the containers via the `docker ps --all`
 command and display the result in a table.
 @y
@@ -659,12 +653,6 @@ export function App() {
 ```
 @y
 ```
-@z
-
-@x
-![Screenshot of the container list.](images/react-extension.png)
-@y
-![Screenshot of the container list.](images/react-extension.png)
 @z
 
 @x

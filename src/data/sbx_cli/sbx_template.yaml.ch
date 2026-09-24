@@ -15,18 +15,32 @@ description: |-
 
 @x
     Templates are saved snapshots of sandboxes that can be reused to create new
-    sandboxes with: sbx run -t TAG AGENT [WORKSPACE]
+    sandboxes with: sbx run --pull never -t TAG AGENT [WORKSPACE]
 @y
     Templates are saved snapshots of sandboxes that can be reused to create new
-    sandboxes with: sbx run -t TAG AGENT [WORKSPACE]
+    sandboxes with: sbx run --pull never -t TAG AGENT [WORKSPACE]
 @z
 
 @x
-    Cloud mode (--cloud) snapshots and loads typically produce multi-GB artifacts
-    and take several minutes. See https://docs.docker.com/ai/sandboxes/ for details.
+    With --cloud:
+    Manage cloud sandbox templates.
 @y
-    Cloud mode (--cloud) snapshots and loads typically produce multi-GB artifacts
-    and take several minutes. See https://docs.docker.com/ai/sandboxes/ for details.
+    With --cloud:
+    Manage cloud sandbox templates.
+@z
+
+@x
+    Reuse a saved template with: sbx --cloud run --template TEMPLATE
+@y
+    Reuse a saved template with: sbx --cloud run --template TEMPLATE
+@z
+
+@x
+    Cloud snapshots and loads typically produce multi-GB artifacts and take
+    several minutes. See https://docs.docker.com/ai/sandboxes/ for details.
+@y
+    Cloud snapshots and loads typically produce multi-GB artifacts and take
+    several minutes. See https://docs.docker.com/ai/sandboxes/ for details.
 @z
 
 @x
@@ -51,14 +65,6 @@ usage: sbx template COMMAND
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

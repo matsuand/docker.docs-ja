@@ -35,6 +35,12 @@ usage: sbx mcp auth rm [server-name] [flags]
       usage: Apply to all registered OAuth servers
 @z
 
+@x force
+      usage: Skip confirmation prompts
+@y
+      usage: Skip confirmation prompts
+@z
+
 @x format
       usage: 'Output format: "text" or "json"'
 @y
@@ -61,14 +67,6 @@ usage: sbx mcp auth rm [server-name] [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

@@ -6,14 +6,14 @@ name: sbx env
 synopsis: |
     Manage sandboxes declaratively from an sbxenv.yaml file
 experimental: true
-description: |-
+description: |
     Manage a sandbox environment declared in an sbxenv.yaml file.
 @y
 name: sbx env
 synopsis: |
     Manage sandboxes declaratively from an sbxenv.yaml file
 experimental: true
-description: |-
+description: |
     Manage a sandbox environment declared in an sbxenv.yaml file.
 @z
 
@@ -30,6 +30,30 @@ description: |-
 @z
 
 @x
+    A secret with `command` or `ref` can set `snapshot: true` to resolve on
+    the host after approval and store the result as a literal. This works locally
+    and with --cloud. Snapshots do not refresh; recreate the environment to rotate
+    them. A snapshot cannot set refresh or noVerify.
+@y
+    A secret with `command` or `ref` can set `snapshot: true` to resolve on
+    the host after approval and store the result as a literal. This works locally
+    and with --cloud. Snapshots do not refresh; recreate the environment to rotate
+    them. A snapshot cannot set refresh or noVerify.
+@z
+
+@x
+      secrets:
+        github:
+          command: gh auth token
+          snapshot: true
+@y
+      secrets:
+        github:
+          command: gh auth token
+          snapshot: true
+@z
+
+@x
     A file may declare its own inputs in an `args:` block, each with a default or
     `required: true` and an optional description, enum, or pattern. Reference one
     as `${{ env.args.NAME }}` anywhere a value appears and supply it with
@@ -355,6 +379,116 @@ description: |-
     environment's commands are your own and run many times a day,
     "sbx settings set env.rememberHostCommands true" asks about them only when
     they change.
+@z
+
+@x
+    With --cloud, create, run, exec, rm and plan manage a cloud sandbox from the same
+    file. Supported declarations are agents and kits, sandbox environment variables,
+    CPU and memory sizing, literal or snapshot secrets and bindings for supported providers, and
+    host lifecycle commands. Kits can publish TCP ports through cloud endpoints.
+    Stored cloud secrets are inherited as with cloud create/run; sandbox-scoped secrets
+    override account defaults, and secrets declared in the file override both. The plan
+    shows inherited credentials. Removal deletes only secrets provisioned by this environment.
+@y
+    With --cloud, create, run, exec, rm and plan manage a cloud sandbox from the same
+    file. Supported declarations are agents and kits, sandbox environment variables,
+    CPU and memory sizing, literal or snapshot secrets and bindings for supported providers, and
+    host lifecycle commands. Kits can publish TCP ports through cloud endpoints.
+    Stored cloud secrets are inherited as with cloud create/run; sandbox-scoped secrets
+    override account defaults, and secrets declared in the file override both. The plan
+    shows inherited credentials. Removal deletes only secrets provisioned by this environment.
+@z
+
+@x
+    Bindings merge into the same global credentials.yaml as local environments and
+    are retained on removal unless --prune-bindings is passed. Cloud must advertise
+    kit credential support. Third-party kit domains must be approved by the binding;
+    creation refuses implicit provider-default routing for a bound secret. Bindings
+    and secrets are provisioned at creation; editing them requires recreating the sandbox.
+@y
+    Bindings merge into the same global credentials.yaml as local environments and
+    are retained on removal unless --prune-bindings is passed. Cloud must advertise
+    kit credential support. Third-party kit domains must be approved by the binding;
+    creation refuses implicit provider-default routing for a bound secret. Bindings
+    and secrets are provisioned at creation; editing them requires recreating the sandbox.
+@z
+
+@x
+    Snapshot references use the host's supported CLI resolvers (such as op:// and AWS
+    Secrets Manager ARNs); the sdk backend is unsupported. An interrupted secret
+    upload reuses the saved value in the host credential store. If that value is
+    unavailable, resolution is not repeated: follow the recovery error before cleanup.
+@y
+    Snapshot references use the host's supported CLI resolvers (such as op:// and AWS
+    Secrets Manager ARNs); the sdk backend is unsupported. An interrupted secret
+    upload reuses the saved value in the host credential store. If that value is
+    unavailable, resolution is not repeated: follow the recovery error before cleanup.
+@z
+
+@x
+    workspace, additionalWorkspaces and clone name host directories, which a cloud
+    sandbox cannot mount; remove them and clone the project inside the sandbox from a
+    kit instead. Host port bindings, registry credentials, MCP definitions, custom
+    credential providers, local sandbox options and dynamic secret sources are also
+    rejected before host commands or provisioning. Initialize commands may prepare
+    local kit sources; kit validation follows initialization and precedes cloud baking.
+@y
+    workspace, additionalWorkspaces and clone name host directories, which a cloud
+    sandbox cannot mount; remove them and clone the project inside the sandbox from a
+    kit instead. Host port bindings, registry credentials, MCP definitions, custom
+    credential providers, local sandbox options and dynamic secret sources are also
+    rejected before host commands or provisioning. Initialize commands may prepare
+    local kit sources; kit validation follows initialization and precedes cloud baking.
+@z
+
+@x
+    State belongs to this machine, the selected cloud endpoint, Docker identity and
+    ordered environment files. Use the same target and files for subsequent commands.
+    DOCKER_ACCESS_TOKEN uses a token-specific state scope: changing the token starts
+    with separate state. Use sbx login for state that survives token refresh.
+@y
+    State belongs to this machine, the selected cloud endpoint, Docker identity and
+    ordered environment files. Use the same target and files for subsequent commands.
+    DOCKER_ACCESS_TOKEN uses a token-specific state scope: changing the token starts
+    with separate state. Use sbx login for state that survives token refresh.
+@z
+
+@x
+    If creation is interrupted, retry the same command and declaration within 23 hours.
+    Removal waits for unresolved writes to be recovered. Older unresolved attempts
+    retain their journal; the error names its path. Before deleting that journal,
+    confirm the original requests have finished and remove their sandbox and secrets
+    using ordinary cloud commands in the same account and endpoint. If the outcome
+    cannot be confirmed, retain the journal and contact support.
+@y
+    If creation is interrupted, retry the same command and declaration within 23 hours.
+    Removal waits for unresolved writes to be recovered. Older unresolved attempts
+    retain their journal; the error names its path. Before deleting that journal,
+    confirm the original requests have finished and remove their sandbox and secrets
+    using ordinary cloud commands in the same account and endpoint. If the outcome
+    cannot be confirmed, retain the journal and contact support.
+@z
+
+@x
+    Lifecycle commands inherit the cloud endpoint and expose SBX_SANDBOX_ID after
+    creation. Sandbox env values apply to new sessions; rejoining a live agent keeps
+    that process's existing environment.
+@y
+    Lifecycle commands inherit the cloud endpoint and expose SBX_SANDBOX_ID after
+    creation. Sandbox env values apply to new sessions; rejoining a live agent keeps
+    that process's existing environment.
+@z
+
+@x
+      sbx --cloud env plan ./sbxenv.yaml
+      sbx --cloud env run --auto-approve --detached ./sbxenv.yaml
+      sbx --cloud env exec ./sbxenv.yaml -- git status
+      sbx --cloud env rm --force ./sbxenv.yaml
+@y
+      sbx --cloud env plan ./sbxenv.yaml
+      sbx --cloud env run --auto-approve --detached ./sbxenv.yaml
+      sbx --cloud env exec ./sbxenv.yaml -- git status
+      sbx --cloud env rm --force ./sbxenv.yaml
 @z
 
 @x
@@ -379,14 +513,6 @@ usage: sbx env COMMAND
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

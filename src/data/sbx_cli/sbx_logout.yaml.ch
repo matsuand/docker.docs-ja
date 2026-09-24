@@ -3,11 +3,11 @@
 
 @x
 name: sbx logout
-synopsis: Stop all running sandboxes and sign out of Docker
+synopsis: Stop running local sandboxes and sign out of Docker
 usage: sbx logout [flags]
 @y
 name: sbx logout
-synopsis: Stop all running sandboxes and sign out of Docker
+synopsis: Stop running local sandboxes and sign out of Docker
 usage: sbx logout [flags]
 @z
 

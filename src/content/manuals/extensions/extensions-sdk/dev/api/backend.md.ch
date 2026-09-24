@@ -37,19 +37,7 @@ Performs an HTTP GET request to a backend service.
 Performs an HTTP GET request to a backend service.
 @z
 
-@x
-```typescript
-ddClient.extension.vm.service
- .get("/some/service")
- .then((value: any) => console.log(value)
-```
-@y
-```typescript
-ddClient.extension.vm.service
- .get("/some/service")
- .then((value: any) => console.log(value)
-```
-@z
+% snip code...
 
 @x
 See [Service API Reference](/reference/api/extensions-sdk/HttpService.md) for other HTTP methods.

@@ -358,10 +358,12 @@ $ sbx run --skills=off claude
 @z
 
 @x
-To change the default for future sandboxes, set `skills.defaultMode` to `off`,
+To change the default for future sandboxes, set
+[`skills.defaultMode`](../configuration/settings.md#skillsdefaultmode) to `off`,
 `readonly`, or `readwrite`:
 @y
-To change the default for future sandboxes, set `skills.defaultMode` to `off`,
+To change the default for future sandboxes, set
+[`skills.defaultMode`](../configuration/settings.md#skillsdefaultmode) to `off`,
 `readonly`, or `readwrite`:
 @z
 
@@ -373,14 +375,6 @@ $ sbx settings set skills.defaultMode readonly
 ```console
 $ sbx settings set skills.defaultMode readonly
 ```
-@z
-
-@x
-When no mode is specified, the daemon uses `skills.defaultMode`, whose built-in
-value is `readonly`. An explicit `--skills` value overrides that default.
-@y
-When no mode is specified, the daemon uses `skills.defaultMode`, whose built-in
-value is `readonly`. An explicit `--skills` value overrides that default.
 @z
 
 @x

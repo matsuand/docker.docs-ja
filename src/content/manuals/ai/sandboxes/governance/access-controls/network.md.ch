@@ -20,11 +20,15 @@ keywords: docker sandboxes, network access, network rules, governance, local pol
 @x
 Network access policies control outbound connections from sandboxes. Each
 policy contains one or more rules that allow the domains, IP ranges, and ports a
-workflow needs, or block destinations that should stay unavailable.
+workflow needs, or block destinations that should stay unavailable. A local
+policy rule can also match the HTTP method and path of a request, so it can
+allow part of an API without allowing all of it.
 @y
 Network access policies control outbound connections from sandboxes. Each
 policy contains one or more rules that allow the domains, IP ranges, and ports a
-workflow needs, or block destinations that should stay unavailable.
+workflow needs, or block destinations that should stay unavailable. A local
+policy rule can also match the HTTP method and path of a request, so it can
+allow part of an API without allowing all of it.
 @z
 
 @x
@@ -101,6 +105,46 @@ For exact wildcard behavior and CIDR support, see
 @y
 For exact wildcard behavior and CIDR support, see
 [Network rules](../concepts.md#network-rules).
+@z
+
+@x
+## HTTP method and path rules
+@y
+## HTTP method and path rules
+@z
+
+@x
+A network rule matches a destination, so it allows or blocks everything a
+sandbox sends there. An HTTP rule narrows the match to specific HTTP methods
+and URL paths on that destination, which lets a policy allow reads from an API
+without allowing writes to it.
+@y
+A network rule matches a destination, so it allows or blocks everything a
+sandbox sends there. An HTTP rule narrows the match to specific HTTP methods
+and URL paths on that destination, which lets a policy allow reads from an API
+without allowing writes to it.
+@z
+
+@x
+HTTP rules layer on top of network rules. A network allow is the baseline for
+a destination and HTTP rules carve into it, while a network deny blocks the
+destination outright and no HTTP allow can reopen it. For the pattern syntax
+and the full matching table, see
+[HTTP rules](../concepts.md#http-method-and-path).
+@y
+HTTP rules layer on top of network rules. A network allow is the baseline for
+a destination and HTTP rules carve into it, while a network deny blocks the
+destination outright and no HTTP allow can reopen it. For the pattern syntax
+and the full matching table, see
+[HTTP rules](../concepts.md#http-method-and-path).
+@z
+
+@x
+Add them to a local policy with `--method` and `--path` on `sbx policy`. See
+[HTTP method and path rules](local.md#http-method-and-path-rules).
+@y
+Add them to a local policy with `--method` and `--path` on `sbx policy`. See
+[HTTP method and path rules](local.md#http-method-and-path-rules).
 @z
 
 @x

@@ -39,6 +39,12 @@ usage: sbx secret ls [flags]
       usage: help for ls
 @z
 
+@x
+      usage: Only display secret names
+@y
+      usage: Only display secret names
+@z
+
 @x sandbox
       usage: Only list secrets for one sandbox
 @y

@@ -40,9 +40,11 @@ usage: sbx secret rm [SERVICE] [flags]
 @z
 
 @x sandbox
-      usage: 'Scope the removal to one sandbox (default: global)'
+      usage: |
+        Scope the removal to one sandbox (default: all scopes when choosing interactively, global with SERVICE)
 @y
-      usage: 'Scope the removal to one sandbox (default: global)'
+      usage: |
+        Scope the removal to one sandbox (default: all scopes when choosing interactively, global with SERVICE)
 @z
 
 % inherited_options:
@@ -55,10 +57,18 @@ usage: sbx secret rm [SERVICE] [flags]
 
 @x
 example: |4-
-      # Remove a global secret
-      sbx secret rm github
+      # Choose an existing secret to remove with the arrow keys
+      sbx secret rm
 @y
 example: |4-
+      # Choose an existing secret to remove with the arrow keys
+      sbx secret rm
+@z
+
+@x
+      # Remove a global secret
+      sbx secret rm github
+@y
       # Remove a global secret
       sbx secret rm github
 @z
@@ -111,6 +121,16 @@ example: |4-
 @y
       # Remove only the global (all-sandboxes) registry credential
       sbx secret rm --all-sandboxes --registry ghcr.io -f
+@z
+
+@x
+      # Remove a cloud custom secret by its name, or by a host it routes
+      sbx --cloud secret rm api-example-com
+      sbx --cloud secret rm --host api.example.com
+@y
+      # Remove a cloud custom secret by its name, or by a host it routes
+      sbx --cloud secret rm api-example-com
+      sbx --cloud secret rm --host api.example.com
 @z
 
 % see_also:

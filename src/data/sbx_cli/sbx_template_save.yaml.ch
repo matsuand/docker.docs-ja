@@ -15,10 +15,18 @@ description: |-
 
 @x
     The saved image is stored in the sandbox runtime's image store and can be
-    used as a template for new sandboxes with: sbx run -t TAG AGENT [WORKSPACE]
+    used as a template for new sandboxes with:
+      sbx run --pull never -t TAG AGENT [WORKSPACE]
 @y
     The saved image is stored in the sandbox runtime's image store and can be
-    used as a template for new sandboxes with: sbx run -t TAG AGENT [WORKSPACE]
+    used as a template for new sandboxes with:
+      sbx run --pull never -t TAG AGENT [WORKSPACE]
+@z
+
+@x
+    Use --pull never to use the saved image without trying to pull it from a registry.
+@y
+    Use --pull never to use the saved image without trying to pull it from a registry.
 @z
 
 @x
@@ -105,14 +113,6 @@ usage: sbx template save SANDBOX TAG [flags]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x debug
       usage: Enable debug logging
 @y
@@ -139,26 +139,26 @@ example: |4-
 
 @x
       # Cloud: snapshot a running cloud sandbox into a cloud-managed template
-      sbx template save sbx_abc123 my-snap --cloud
+      sbx --cloud template save sbx_abc123 my-snap
 @y
       # Cloud: snapshot a running cloud sandbox into a cloud-managed template
-      sbx template save sbx_abc123 my-snap --cloud
+      sbx --cloud template save sbx_abc123 my-snap
 @z
 
 @x
       # Cloud: attach a description to the saved template
-      sbx template save sbx_abc123 my-snap --cloud --description "nightly build"
+      sbx --cloud template save sbx_abc123 my-snap --description "nightly build"
 @y
       # Cloud: attach a description to the saved template
-      sbx template save sbx_abc123 my-snap --cloud --description "nightly build"
+      sbx --cloud template save sbx_abc123 my-snap --description "nightly build"
 @z
 
 @x
       # Cloud: capture memory + disk + microVM checkpoint for sub-second resume
-      sbx template save sbx_abc123 my-snap --cloud --capture-mode all
+      sbx --cloud template save sbx_abc123 my-snap --capture-mode all
 @y
       # Cloud: capture memory + disk + microVM checkpoint for sub-second resume
-      sbx template save sbx_abc123 my-snap --cloud --capture-mode all
+      sbx --cloud template save sbx_abc123 my-snap --capture-mode all
 @z
 
 % see_also:

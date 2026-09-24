@@ -26,17 +26,11 @@ description: |-
 @x
     Running 'sbx mcp auth <server>' authorizes or reauthorizes one server. If the
     stored credential is expired, sbx asks the control plane to refresh it first and
-    only falls back to interactive OAuth when refresh needs user consent. A name
-    with no local registration is resolved from the Docker MCP catalog and
-    authorized under its catalog name, so no 'sbx mcp add' is required for catalog
-    servers.
+    only falls back to interactive OAuth when refresh needs user consent.
 @y
     Running 'sbx mcp auth <server>' authorizes or reauthorizes one server. If the
     stored credential is expired, sbx asks the control plane to refresh it first and
-    only falls back to interactive OAuth when refresh needs user consent. A name
-    with no local registration is resolved from the Docker MCP catalog and
-    authorized under its catalog name, so no 'sbx mcp add' is required for catalog
-    servers.
+    only falls back to interactive OAuth when refresh needs user consent.
 @z
 
 @x
@@ -181,14 +175,6 @@ usage: sbx mcp auth [server-name] [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

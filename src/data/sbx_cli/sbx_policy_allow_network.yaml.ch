@@ -14,13 +14,27 @@ description: |-
 @z
 
 @x
-    RESOURCES is a comma-separated list of hostnames, domains, or IP addresses.
-    Supports exact domains (example.com), wildcard subdomains (*.example.com),
-    and optional port suffixes (example.com:443). Use "**" to allow all hosts.
+    RESOURCES is a comma-separated list of hostnames, domains, IP addresses, or
+    CIDR prefixes. Rules apply to TCP by default; use --protocol to select UDP or
+    both transports. Supports exact domains (example.com), wildcard subdomains
+    (*.example.com), multi-label wildcards (**.example.com), single-character
+    globs (api?.example.com), character classes (api[12].example.com,
+    api[!1].example.com), and optional port suffixes (example.com:443). An IPv6
+    address takes a port in brackets ([2001:db8::1]:443) or a CIDR prefix
+    (2001:db8::1/128); a bare one is refused. Use "**" to allow all hosts. A bare
+    "*", an escaped glob character such as "\*", and any other pattern outside
+    these forms are rejected rather than stored as a rule that matches nothing.
 @y
-    RESOURCES is a comma-separated list of hostnames, domains, or IP addresses.
-    Supports exact domains (example.com), wildcard subdomains (*.example.com),
-    and optional port suffixes (example.com:443). Use "**" to allow all hosts.
+    RESOURCES is a comma-separated list of hostnames, domains, IP addresses, or
+    CIDR prefixes. Rules apply to TCP by default; use --protocol to select UDP or
+    both transports. Supports exact domains (example.com), wildcard subdomains
+    (*.example.com), multi-label wildcards (**.example.com), single-character
+    globs (api?.example.com), character classes (api[12].example.com,
+    api[!1].example.com), and optional port suffixes (example.com:443). An IPv6
+    address takes a port in brackets ([2001:db8::1]:443) or a CIDR prefix
+    (2001:db8::1/128); a bare one is refused. Use "**" to allow all hosts. A bare
+    "*", an escaped glob character such as "\*", and any other pattern outside
+    these forms are rejected rather than stored as a rule that matches nothing.
 @z
 
 @x
@@ -43,6 +57,14 @@ usage: sbx policy allow network [--sandbox SANDBOX] RESOURCES [flags]
       usage: help for network
 @y
       usage: help for network
+@z
+
+@x protocol
+      usage: |
+        Network protocol: tcp or udp; repeat or comma-separate for both
+@y
+      usage: |
+        Network protocol: tcp or udp; repeat or comma-separate for both
 @z
 
 @x sandbox
@@ -96,11 +118,11 @@ example: |4-
 @z
 
 @x
-      # Allow all outbound traffic
-      sbx policy allow network "**"
+      # Allow all outbound traffic on both transports
+      sbx policy allow network --protocol tcp,udp "**"
 @y
-      # Allow all outbound traffic
-      sbx policy allow network "**"
+      # Allow all outbound traffic on both transports
+      sbx policy allow network --protocol tcp,udp "**"
 @z
 
 % see_also:

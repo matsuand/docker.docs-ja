@@ -728,13 +728,15 @@ $ sbx settings set ssh.agentSocketPath "$SSH_AUTH_SOCK"
 @z
 
 @x
-An empty `ssh.agentSocketPath`, which is the default, uses each client's
-current `SSH_AUTH_SOCK` instead. The `ssh.agentForwardingEnabled` setting is a
-boolean that turns forwarding on or off.
+An empty [`ssh.agentSocketPath`](settings.md#sshagentsocketpath), which is the
+default, uses each client's current `SSH_AUTH_SOCK` instead. Use
+[`ssh.agentForwardingEnabled`](settings.md#sshagentforwardingenabled) to turn
+forwarding on or off.
 @y
-An empty `ssh.agentSocketPath`, which is the default, uses each client's
-current `SSH_AUTH_SOCK` instead. The `ssh.agentForwardingEnabled` setting is a
-boolean that turns forwarding on or off.
+An empty [`ssh.agentSocketPath`](settings.md#sshagentsocketpath), which is the
+default, uses each client's current `SSH_AUTH_SOCK` instead. Use
+[`ssh.agentForwardingEnabled`](settings.md#sshagentforwardingenabled) to turn
+forwarding on or off.
 @z
 
 @x

@@ -9,6 +9,7 @@ bases = \
 	gpu-passthrough.md   \
 	models.md            \
 	registry-mirror.md   \
+	settings.md          \
 	upstream-proxy.md
 
 include $(top_srcdir)/build-aux/common.mk

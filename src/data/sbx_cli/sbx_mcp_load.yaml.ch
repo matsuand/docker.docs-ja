@@ -26,6 +26,24 @@ description: |-
 @z
 
 @x
+    With --cloud:
+    Load an MCP server into a running cloud sandbox's gateway.
+@y
+    With --cloud:
+    Load an MCP server into a running cloud sandbox's gateway.
+@z
+
+@x
+    There is no local registration: the cloud gateway resolves the server name
+    itself, and the sandbox may be given by name or sbx_ ID. Connected agents see
+    the new server's tools immediately.
+@y
+    There is no local registration: the cloud gateway resolves the server name
+    itself, and the sandbox may be given by name or sbx_ ID. Connected agents see
+    the new server's tools immediately.
+@z
+
+@x
 usage: sbx mcp load <name> --sandbox <sandbox> [flags]
 @y
 usage: sbx mcp load <name> --sandbox <sandbox> [flags]
@@ -55,14 +73,6 @@ usage: sbx mcp load <name> --sandbox <sandbox> [flags]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x debug
       usage: Enable debug logging
 @y
@@ -89,6 +99,14 @@ example: |4-
       # Local stdio server.
       sbx mcp add github --command npx --args @modelcontextprotocol/server-github
       sbx mcp load github --sandbox my-sbx
+@z
+
+@x
+      # Cloud: load a gateway-known server into a cloud sandbox by name or ID
+      sbx --cloud mcp load notion --sandbox my-sbx
+@y
+      # Cloud: load a gateway-known server into a cloud sandbox by name or ID
+      sbx --cloud mcp load notion --sandbox my-sbx
 @z
 
 % see_also:

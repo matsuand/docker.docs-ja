@@ -1173,12 +1173,12 @@ kits:
 
 @x
 Remote kit sources must match the
-[kit source allowlist](../customize/kits.md#restrict-kit-sources). Docker Hub is
+[`kit.allowedSources`](settings.md#kitallowedsources) setting. Docker Hub is
 allowed by default. To use Git kits from `docker/sbx-kits-contrib`, add its
 source:
 @y
 Remote kit sources must match the
-[kit source allowlist](../customize/kits.md#restrict-kit-sources). Docker Hub is
+[`kit.allowedSources`](settings.md#kitallowedsources) setting. Docker Hub is
 allowed by default. To use Git kits from `docker/sbx-kits-contrib`, add its
 source:
 @z
@@ -1461,12 +1461,16 @@ commands.
 Plans containing lifecycle commands or credential `command` sources require
 approval for every invocation by default, even when the command text hasn't
 changed. Approve one invocation with `--auto-approve`, skip lifecycle commands
-with `--skip-host-commands`, or remember approval until the commands change:
+with `--skip-host-commands`, or turn on
+[`env.rememberHostCommands`](settings.md#envrememberhostcommands) to remember
+approval until the commands change:
 @y
 Plans containing lifecycle commands or credential `command` sources require
 approval for every invocation by default, even when the command text hasn't
 changed. Approve one invocation with `--auto-approve`, skip lifecycle commands
-with `--skip-host-commands`, or remember approval until the commands change:
+with `--skip-host-commands`, or turn on
+[`env.rememberHostCommands`](settings.md#envrememberhostcommands) to remember
+approval until the commands change:
 @z
 
 @x

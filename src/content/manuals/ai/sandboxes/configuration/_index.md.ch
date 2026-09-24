@@ -10,11 +10,11 @@ linkTitle: Configuration
 @z
 
 @x
-description: Configure credentials, local and hosted models, project environments, GPU passthrough, registry mirrors, and upstream proxy settings for Docker Sandboxes.
-keywords: docker sandboxes, sbx, configuration, credentials, models, environment files, gpu passthrough, registry mirror, upstream proxy
+description: Configure Docker Sandboxes settings, credentials, models, project environments, GPU passthrough, registry mirrors, and upstream proxies.
+keywords: docker sandboxes, sbx, configuration, settings, credentials, models, environment files, gpu passthrough, registry mirror, upstream proxy
 @y
-description: Configure credentials, local and hosted models, project environments, GPU passthrough, registry mirrors, and upstream proxy settings for Docker Sandboxes.
-keywords: docker sandboxes, sbx, configuration, credentials, models, environment files, gpu passthrough, registry mirror, upstream proxy
+description: Configure Docker Sandboxes settings, credentials, models, project environments, GPU passthrough, registry mirrors, and upstream proxies.
+keywords: docker sandboxes, sbx, configuration, settings, credentials, models, environment files, gpu passthrough, registry mirror, upstream proxy
 @z
 
 @x
@@ -30,6 +30,8 @@ sandbox, see [Customize](../customize/).
 @z
 
 @x
+- [Settings](settings.md) lists host-level settings, environment variable
+  equivalents, and commands to inspect and change values.
 - [Credentials](credentials.md) configures API keys, authentication
   credentials, and registry access for sandboxed agents.
 - [Models](models.md) selects local models, hosted providers, or custom
@@ -43,6 +45,8 @@ sandbox, see [Customize](../customize/).
 - [Upstream proxy](upstream-proxy.md) routes sandbox and daemon traffic through
   an operating system or corporate proxy.
 @y
+- [Settings](settings.md) lists host-level settings, environment variable
+  equivalents, and commands to inspect and change values.
 - [Credentials](credentials.md) configures API keys, authentication
   credentials, and registry access for sandboxed agents.
 - [Models](models.md) selects local models, hosted providers, or custom

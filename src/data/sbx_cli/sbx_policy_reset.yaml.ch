@@ -32,6 +32,16 @@ description: |-
 @z
 
 @x
+    With --cloud, deletes the custom cloud network policy for your account and
+    leaves the local daemon alone. You will be prompted for confirmation unless
+    --force is used. Afterwards the default the server now stores is printed.
+@y
+    With --cloud, deletes the custom cloud network policy for your account and
+    leaves the local daemon alone. You will be prompted for confirmation unless
+    --force is used. Afterwards the default the server now stores is printed.
+@z
+
+@x
 usage: sbx policy reset [flags]
 @y
 usage: sbx policy reset [flags]

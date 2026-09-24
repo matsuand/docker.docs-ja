@@ -16,11 +16,13 @@ description: |-
 @z
 
 @x
-    Flags match the behavior of "docker exec". Some flags (-d, --user, --privileged)
+    Flags match the behavior of "docker exec", except detached exec (-d/--detach)
+    is not supported. Some flags (-d, --user, --privileged)
     are not supported with --cloud and are rejected rather than silently ignored.
     --detach-keys applies only to an interactive (-i/-t) cloud exec.
 @y
-    Flags match the behavior of "docker exec". Some flags (-d, --user, --privileged)
+    Flags match the behavior of "docker exec", except detached exec (-d/--detach)
+    is not supported. Some flags (-d, --user, --privileged)
     are not supported with --cloud and are rejected rather than silently ignored.
     --detach-keys applies only to an interactive (-i/-t) cloud exec.
 @z
@@ -34,9 +36,9 @@ usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
 % options:
 
 @x detach
-      usage: 'Detached mode: run command in the background'
+      usage: Detached mode (not supported)
 @y
-      usage: 'Detached mode: run command in the background'
+      usage: Detached mode (not supported)
 @z
 
 @x detach-keys
@@ -103,14 +105,6 @@ usage: sbx exec [flags] SANDBOX COMMAND [ARG...]
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
 @z
 
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@z
-
 @x debug
       usage: Enable debug logging
 @y
@@ -125,14 +119,6 @@ example: |4-
 example: |4-
       # Open a shell inside a sandbox
       sbx exec -it my-sandbox bash
-@z
-
-@x
-      # Run a command in the background
-      sbx exec -d my-sandbox npm start
-@y
-      # Run a command in the background
-      sbx exec -d my-sandbox npm start
 @z
 
 @x

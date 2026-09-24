@@ -16,11 +16,13 @@ description: |-
 @x
     TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
     literals are evaluated with port 443. HTTP(S) URLs use their default ports;
-    other URL schemes must include an explicit port.
+    other URL schemes must include an explicit port. URLs supply only their host
+    and port: this command evaluates network authorization, not HTTP method or path.
 @y
     TARGET may be a hostname, host:port, IP literal, or URL. Bare hosts and IP
     literals are evaluated with port 443. HTTP(S) URLs use their default ports;
-    other URL schemes must include an explicit port.
+    other URL schemes must include an explicit port. URLs supply only their host
+    and port: this command evaluates network authorization, not HTTP method or path.
 @z
 
 @x
@@ -43,6 +45,12 @@ usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
       usage: Output in JSON format
 @z
 
+@x protocol
+      usage: 'Network protocol to evaluate: tcp or udp'
+@y
+      usage: 'Network protocol to evaluate: tcp or udp'
+@z
+
 @x sandbox
       usage: Evaluate in a specific sandbox policy context
 @y
@@ -63,14 +71,6 @@ usage: sbx policy check network [--sandbox SANDBOX] TARGET [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

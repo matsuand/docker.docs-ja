@@ -148,11 +148,11 @@ for workarounds.
 @z
 
 @x
-To use Claude Code's `/remote-control` command inside a sandbox, turn on remote
-control:
+To use Claude Code's `/remote-control` command inside a sandbox, turn on
+[`claude.remoteControl`](../configuration/settings.md#clauderemotecontrol):
 @y
-To use Claude Code's `/remote-control` command inside a sandbox, turn on remote
-control:
+To use Claude Code's `/remote-control` command inside a sandbox, turn on
+[`claude.remoteControl`](../configuration/settings.md#clauderemotecontrol):
 @z
 
 @x

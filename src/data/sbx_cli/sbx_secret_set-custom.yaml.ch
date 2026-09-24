@@ -48,6 +48,16 @@ description: |-
 @z
 
 @x
+    With --cloud, --host takes exact DNS names only (no IP addresses or wildcards)
+    and the proxy sets --header on requests to those hosts instead of substituting
+    the placeholder.
+@y
+    With --cloud, --host takes exact DNS names only (no IP addresses or wildcards)
+    and the proxy sets --header on requests to those hosts instead of substituting
+    the placeholder.
+@z
+
+@x
 usage: sbx secret set-custom [flags]
 @y
 usage: sbx secret set-custom [flags]
@@ -67,6 +77,22 @@ usage: sbx secret set-custom [flags]
       usage: Set this env var in the sandbox to the placeholder value
 @z
 
+@x format
+      usage: |
+        How the value fills the header, with one %s; default "Bearer %s" when --header is omitted (with --cloud)
+@y
+      usage: |
+        How the value fills the header, with one %s; default "Bearer %s" when --header is omitted (with --cloud)
+@z
+
+@x header
+      usage: |
+        HTTP header the proxy sets to the secret on requests to --host; default Authorization (with --cloud)
+@y
+      usage: |
+        HTTP header the proxy sets to the secret on requests to --host; default Authorization (with --cloud)
+@z
+
 @x help
       usage: help for set-custom
 @y
@@ -75,10 +101,16 @@ usage: sbx secret set-custom [flags]
 
 @x host
       usage: |
-        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable
+        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable; with --cloud, exact DNS names only
 @y
       usage: |
-        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable
+        Host, IP, or wildcard pattern (e.g. *.example.com); repeatable; with --cloud, exact DNS names only
+@z
+
+@x name
+        Secret name; default derived from the first --host (with --cloud)
+@y
+        Secret name; default derived from the first --host (with --cloud)
 @z
 
 @x no-verify
@@ -147,14 +179,6 @@ usage: sbx secret set-custom [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

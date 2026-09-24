@@ -25,12 +25,14 @@ description: |-
     With two arguments — a duration prefixed with '+' followed by a sandbox
     ID or name — extends the TTL by that amount, subject to the server-enforced
     ceiling. The server cannot shorten an expiration, so DURATION must be
-    positive.
+    positive. Units are Go's duration units (h, m, s, ms, us, ns), in either
+    case (+2h, +2H, +1h30m).
 @y
     With two arguments — a duration prefixed with '+' followed by a sandbox
     ID or name — extends the TTL by that amount, subject to the server-enforced
     ceiling. The server cannot shorten an expiration, so DURATION must be
-    positive.
+    positive. Units are Go's duration units (h, m, s, ms, us, ns), in either
+    case (+2h, +2H, +1h30m).
 @z
 
 @x
@@ -73,14 +75,6 @@ usage: sbx ttl [+DURATION] SANDBOX
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

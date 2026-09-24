@@ -62,33 +62,65 @@ description: |-
 @z
 
 @x
-    With --cloud: the agent runs in the cloud sandbox image (started server-side).
-    Running an agent that has existing sandboxes (running or stopped) prompts you
-    to pick one to reuse or to create a new one. Pass --new to skip the prompt and
-    always create a fresh sandbox. --detached also skips the prompt and always
-    creates a new sandbox; a non-interactive run without --detached is refused.
-    Use --detached for non-interactive scripting (e.g.
-    sbx --cloud run -d claude && sbx --cloud exec ...).
-    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
-    Templates referenced via -t / --template must already exist in the cloud registry;
-    the CLI does not upload them automatically. See https://docs.docker.com/ai/sandboxes/ for the cloud sandbox model.
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
 @y
-    With --cloud: the agent runs in the cloud sandbox image (started server-side).
-    Running an agent that has existing sandboxes (running or stopped) prompts you
-    to pick one to reuse or to create a new one. Pass --new to skip the prompt and
-    always create a fresh sandbox. --detached also skips the prompt and always
-    creates a new sandbox; a non-interactive run without --detached is refused.
-    Use --detached for non-interactive scripting (e.g.
-    sbx --cloud run -d claude && sbx --cloud exec ...).
-    Without --cpus/--memory a cloud sandbox defaults to 2 CPUs and 4 GiB.
-    Templates referenced via -t / --template must already exist in the cloud registry;
-    the CLI does not upload them automatically. See https://docs.docker.com/ai/sandboxes/ for the cloud sandbox model.
+    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
 @z
 
 @x
-    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+    With --cloud:
+    Run an agent in a cloud sandbox, creating the sandbox if it does not already exist.
 @y
-    Available agents: claude, codex, copilot, cursor, devin, docker-agent, droid, gemini, kiro, opencode, shell
+    With --cloud:
+    Run an agent in a cloud sandbox, creating the sandbox if it does not already exist.
+@z
+
+@x
+    The first positional argument identifies the agent to run: a built-in agent
+    name or a sandbox kit reference (a local directory, ZIP file, git repository,
+    or OCI reference). Relative local references must be explicit paths such as
+    ./my-kit or ../my-kit.zip. Cloud sandboxes have no host workspace, so no path
+    follows the agent. Pass agent arguments after the "--" separator.
+@y
+    The first positional argument identifies the agent to run: a built-in agent
+    name or a sandbox kit reference (a local directory, ZIP file, git repository,
+    or OCI reference). Relative local references must be explicit paths such as
+    ./my-kit or ../my-kit.zip. Cloud sandboxes have no host workspace, so no path
+    follows the agent. Pass agent arguments after the "--" separator.
+@z
+
+@x
+    Running an agent that has existing sandboxes, running or stopped, prompts you
+    to pick one to reuse or to create a new one. Pass --new to skip the prompt and
+    always create a fresh sandbox. --name NAME reuses and restarts the sandbox of
+    that name when it exists and creates it otherwise. A launch that bakes a kit
+    template (a sandbox kit or a mixin with build content) always creates fresh.
+    --detached skips the prompt: with --name it restarts that sandbox when it
+    exists, otherwise it creates a new one. A non-interactive run without
+    --detached is refused, so scripts pass --detached (e.g.
+    sbx --cloud run -d claude && sbx --cloud exec ...).
+@y
+    Running an agent that has existing sandboxes, running or stopped, prompts you
+    to pick one to reuse or to create a new one. Pass --new to skip the prompt and
+    always create a fresh sandbox. --name NAME reuses and restarts the sandbox of
+    that name when it exists and creates it otherwise. A launch that bakes a kit
+    template (a sandbox kit or a mixin with build content) always creates fresh.
+    --detached skips the prompt: with --name it restarts that sandbox when it
+    exists, otherwise it creates a new one. A non-interactive run without
+    --detached is refused, so scripts pass --detached (e.g.
+    sbx --cloud run -d claude && sbx --cloud exec ...).
+@z
+
+@x
+    Sizing comes from --cpus and --memory and must land on a billable shape; without
+    them a cloud sandbox gets 2 CPUs and 4 GiB. A template named with -t / --template
+    must already exist in the cloud registry; the CLI does not upload it. See
+    https://docs.docker.com/ai/sandboxes/ for the cloud sandbox model.
+@y
+    Sizing comes from --cpus and --memory and must land on a billable shape; without
+    them a cloud sandbox gets 2 CPUs and 4 GiB. A template named with -t / --template
+    must already exist in the cloud registry; the CLI does not upload it. See
+    https://docs.docker.com/ai/sandboxes/ for the cloud sandbox model.
 @z
 
 @x
@@ -125,18 +157,26 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 
 @x deny-network
       usage: |
-        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with 'sbx policy ls <NAME>' or 'sbx policy rm network --sandbox <NAME> --resource <HOST>'. Safe under centralized governance because a local deny can only narrow, never widen, egress.
 @y
       usage: |
-        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with `sbx policy ls <NAME>` / `sbx policy rm network --sandbox <NAME> --resource <HOST>`. Safe under centralized governance because a local deny can only narrow, never widen, egress.
+        Add a per-sandbox network deny rule at creation time. Can be specified multiple times. The rule applies only to the new sandbox and can be listed or removed later with 'sbx policy ls <NAME>' or 'sbx policy rm network --sandbox <NAME> --resource <HOST>'. Safe under centralized governance because a local deny can only narrow, never widen, egress.
 @z
 
 @x detach-keys
       usage: |
-        Override the detach gesture that leaves the agent running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
 @y
       usage: |
-        Override the detach gesture that leaves the agent running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+        Override the detach gesture that leaves the session running (Docker-style, e.g. "ctrl-\", "ctrl-x,ctrl-d"). Default: Ctrl-\. Use this when the default collides with an agent's keymap (cloud only).
+@z
+
+@x detached
+      usage: |
+        Start the sandbox and print its ID without opening an agent session
+@y
+      usage: |
+        Start the sandbox and print its ID without opening an agent session
 @z
 
 @x env
@@ -231,6 +271,12 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
         Publish a sandbox port to the host (can be repeated): [[HOST_IP:]HOST_PORT:]SANDBOX_PORT[/PROTOCOL]. Applied when the sandbox is created; ignored when re-attaching (use "sbx ports")
 @z
 
+@x pull
+      usage: Image pull policy (always|missing|never)
+@y
+      usage: Image pull policy (always|missing|never)
+@z
+
 @x skills
       usage: |
         Shared skills store mode: off, readonly, or readwrite (mounted at the agent's skills directory, e.g. ~/.claude/skills). Default: readonly, or the configured skills.defaultMode setting. Can only be used when creating a new sandbox.
@@ -249,10 +295,10 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 
 @x ttl
       usage: |
-        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side)
 @y
       usage: |
-        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h; cloud only; default: server-side)
+        Cloud sandbox time-to-live before it times out (e.g. 30m, 2h, 1h30m; units are case-insensitive; cloud only; default: server-side)
 @z
 
 @x volume
@@ -271,14 +317,6 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -354,11 +392,35 @@ example: |4-
 @z
 
 @x
+      # Run claude in a new cloud sandbox
+      sbx --cloud run claude
+@y
+      # Run claude in a new cloud sandbox
+      sbx --cloud run claude
+@z
+
+@x
       # Create a cloud sandbox non-interactively and print its ID
       sbx --cloud run --detached claude
 @y
       # Create a cloud sandbox non-interactively and print its ID
       sbx --cloud run --detached claude
+@z
+
+@x
+      # Reuse the cloud sandbox of that name, creating it when it does not exist
+      sbx --cloud run --name my-project claude
+@y
+      # Reuse the cloud sandbox of that name, creating it when it does not exist
+      sbx --cloud run --name my-project claude
+@z
+
+@x
+      # Run with agent arguments
+      sbx --cloud run claude -- --continue
+@y
+      # Run with agent arguments
+      sbx --cloud run claude -- --continue
 @z
 
 % see_also:

@@ -26,11 +26,11 @@ description: |-
 @x
     With --cloud:
     The template can be identified by its tmpl_* ID or by its human name
-    (resolved via the server-side ?name= filter). Use "sbx template ls --cloud".
+    (resolved via the server-side ?name= filter). Use "sbx --cloud template ls".
 @y
     With --cloud:
     The template can be identified by its tmpl_* ID or by its human name
-    (resolved via the server-side ?name= filter). Use "sbx template ls --cloud".
+    (resolved via the server-side ?name= filter). Use "sbx --cloud template ls".
 @z
 
 @x
@@ -40,6 +40,12 @@ usage: sbx template rm TAG|ID|NAME [flags]
 @z
 
 %options:
+
+@x force
+      usage: Skip confirmation prompts
+@y
+      usage: Skip confirmation prompts
+@z
 
 @x help
       usage: help for rm
@@ -55,14 +61,6 @@ usage: sbx template rm TAG|ID|NAME [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
@@ -91,21 +89,21 @@ example: |4-
 
 @x
       # Cloud: remove by name
-      sbx template rm my-template --cloud
+      sbx --cloud template rm my-template
 @y
       # Cloud: remove by name
-      sbx template rm my-template --cloud
+      sbx --cloud template rm my-template
 @z
 
 @x
       # Cloud: remove by tmpl_* id
-      sbx template rm tmpl_abc123 --cloud
+      sbx --cloud template rm tmpl_abc123
 @y
       # Cloud: remove by tmpl_* id
-      sbx template rm tmpl_abc123 --cloud
+      sbx --cloud template rm tmpl_abc123
 @z
 
-%see_also:
+% see_also:
 
 @x
     - sbx template - Manage sandbox templates

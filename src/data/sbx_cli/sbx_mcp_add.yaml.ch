@@ -71,10 +71,11 @@ description: |-
       legitimate servers live on private networks (split-horizon DNS, internal
       load balancers, VPN-only endpoints, PrivateLink), so their public hostname
       resolves to a private address and the warning is expected noise for them.
-      OAuth authorization-server metadata has a separate SSRF guard that blocks
-      disallowed addresses. Pass --skip-ssrf-check to disable both checks for this
-      add, including OAuth metadata redirects, when you trust the provider and
-      its discovery destinations; use it only for URLs you control.
+      OAuth authorization-server metadata has a separate SSRF guard with the same
+      warn-and-proceed posture: a disallowed address is logged, not blocked. Pass
+      --skip-ssrf-check to disable both checks for this add, including OAuth
+      metadata redirects (silencing the warning too), when you trust the provider
+      and its discovery destinations; use it only for URLs you control.
 @y
     SSRF guard and --skip-ssrf-check:
       A --url whose host resolves to a private/RFC1918, loopback, link-local, or
@@ -85,10 +86,11 @@ description: |-
       legitimate servers live on private networks (split-horizon DNS, internal
       load balancers, VPN-only endpoints, PrivateLink), so their public hostname
       resolves to a private address and the warning is expected noise for them.
-      OAuth authorization-server metadata has a separate SSRF guard that blocks
-      disallowed addresses. Pass --skip-ssrf-check to disable both checks for this
-      add, including OAuth metadata redirects, when you trust the provider and
-      its discovery destinations; use it only for URLs you control.
+      OAuth authorization-server metadata has a separate SSRF guard with the same
+      warn-and-proceed posture: a disallowed address is logged, not blocked. Pass
+      --skip-ssrf-check to disable both checks for this add, including OAuth
+      metadata redirects (silencing the warning too), when you trust the provider
+      and its discovery destinations; use it only for URLs you control.
 @z
 
 @x
@@ -539,6 +541,14 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
       usage: Working directory (cwd) for a --command host server
 @z
 
+@x disable-http2
+      usage: |
+        Do not negotiate HTTP/2 for this remote server, leaving HTTP/1.1. Applies to --url servers.
+@y
+      usage: |
+        Do not negotiate HTTP/2 for this remote server, leaving HTTP/1.1. Applies to --url servers.
+@z
+
 @x header
       usage: |
         Custom HTTP header to send to a remote --url endpoint, in curl form 'Name: value' (repeatable). A ${placeholder} in the value is substituted at connect time from 'sbx secret set mcp:<server>:<placeholder>'
@@ -623,14 +633,6 @@ usage: sbx mcp add <name> (--url <url> | --command <cmd>) [flags]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug

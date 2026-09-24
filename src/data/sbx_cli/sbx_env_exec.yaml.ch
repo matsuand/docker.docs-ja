@@ -92,9 +92,9 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
 % options:
 
 @x detach
-      usage: 'Detached mode: run command in the background'
+      usage: Detached mode (not supported)
 @y
-      usage: 'Detached mode: run command in the background'
+      usage: Detached mode (not supported)
 @z
 
 @x detach-keys
@@ -183,14 +183,6 @@ usage: sbx env exec [flags] [PATH...] -- COMMAND [ARG...]
 @y
       usage: |
         Dispatch to Docker Cloud Sandboxes API instead of local sandboxd (supported by a growing set of verbs — run 'sbx --cloud --help' for the current list)
-@z
-
-@x cloud-api-url
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
-@y
-      usage: |
-        Cloud Sandboxes API base URL; only used with --cloud. Defaults to prod (https://api.sandboxes-cloud.docker.com). Set DOCKER_CLOUD_API_URL or pass this flag to override; a legacy value ending in /v1 is accepted.
 @z
 
 @x debug
