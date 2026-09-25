@@ -241,11 +241,13 @@ bases = \
 	_index.md        \
 	faq.md           \
 	get-started.md   \
+	kits.md          \
 	mcp.md           \
 	policies.md      \
 	release-notes.md \
 	sandboxes.md     \
-	secrets.md
+	secrets.md       \
+	signup.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

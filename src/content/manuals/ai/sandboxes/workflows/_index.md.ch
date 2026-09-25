@@ -19,11 +19,11 @@ keywords: docker sandboxes, sbx, workflows, agent skills, shared skills, clone m
 
 @x
 Choose a workflow based on how you want to develop, authenticate tools, or run
-sandboxes in automation. For command syntax and lifecycle basics, see
+local sandboxes in automation. For command syntax and lifecycle basics, see
 [Usage](../usage.md).
 @y
 Choose a workflow based on how you want to develop, authenticate tools, or run
-sandboxes in automation. For command syntax and lifecycle basics, see
+local sandboxes in automation. For command syntax and lifecycle basics, see
 [Usage](../usage.md).
 @z
 

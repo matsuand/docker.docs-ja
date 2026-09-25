@@ -18,6 +18,16 @@ keywords: docker sandboxes, policy concepts, rule syntax, network rules, filesys
 @z
 
 @x
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../cloud/network-policy.md) for cloud controls.
+@y
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../cloud/network-policy.md) for cloud controls.
+@z
+
+@x
 ## Resource model
 @y
 ## Resource model
@@ -154,15 +164,15 @@ plus every team-scoped policy for a team they belong to. See
 @z
 
 @x
-Network rules use the action `connect:tcp`. Resources are hostnames, CIDR
-ranges, or ports. The governance policy schema also accepts `connect:udp`, but
-Docker Sandboxes always blocks direct external UDP and ICMP. `connect:udp`
-rules have no effect.
+Network rules use `connect:tcp` for TCP and `connect:udp` for UDP. Resources are
+hostnames, CIDR ranges, or ports. UDP requires
+[experimental outbound UDP](access-controls/local.md#allow-outbound-udp).
+ICMP is blocked.
 @y
-Network rules use the action `connect:tcp`. Resources are hostnames, CIDR
-ranges, or ports. The governance policy schema also accepts `connect:udp`, but
-Docker Sandboxes always blocks direct external UDP and ICMP. `connect:udp`
-rules have no effect.
+Network rules use `connect:tcp` for TCP and `connect:udp` for UDP. Resources are
+hostnames, CIDR ranges, or ports. UDP requires
+[experimental outbound UDP](access-controls/local.md#allow-outbound-udp).
+ICMP is blocked.
 @z
 
 @x
@@ -446,8 +456,7 @@ What applies depends on whether your organization has governance enabled:
 @z
 
 @x
-- No organization governance: local rules and any
-  [kit-defined network rules](../customize/kits.md#control-network-access)
+- No organization governance: local rules and any kit-defined network rules
   determine what sandboxes can access.
 - Organization governance active: organization policy determines what access can
   be granted. Only organization allow rules grant access, so local and
@@ -455,14 +464,23 @@ What applies depends on whether your organization has governance enabled:
   permits. Deny rules apply from every source, so a local or kit-defined deny
   can still restrict access further.
 @y
-- No organization governance: local rules and any
-  [kit-defined network rules](../customize/kits.md#control-network-access)
+- No organization governance: local rules and any kit-defined network rules
   determine what sandboxes can access.
 - Organization governance active: organization policy determines what access can
   be granted. Only organization allow rules grant access, so local and
   kit-defined allow rules are inactive and can't expand what the organization
   permits. Deny rules apply from every source, so a local or kit-defined deny
   can still restrict access further.
+@z
+
+@x
+For kit-defined rules, see
+[Network policies](https://github.com/docker/sandbox-kit-spec/blob/main/docs/spec/capabilities/com.docker.sandbox/network-policy@1.md)
+in the kit specification.
+@y
+For kit-defined rules, see
+[Network policies](https://github.com/docker/sandbox-kit-spec/blob/main/docs/spec/capabilities/com.docker.sandbox/network-policy@1.md)
+in the kit specification.
 @z
 
 @x

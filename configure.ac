@@ -222,8 +222,10 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/ai/sandboxes/Makefile
 	src/content/manuals/ai/sandboxes/agents/Makefile
+	src/content/manuals/ai/sandboxes/cloud/Makefile
 	src/content/manuals/ai/sandboxes/configuration/Makefile
 	src/content/manuals/ai/sandboxes/customize/Makefile
+	src/content/manuals/ai/sandboxes/customize/author/Makefile
 	src/content/manuals/ai/sandboxes/diagrams/Makefile
 	src/content/manuals/ai/sandboxes/governance/Makefile
 	src/content/manuals/ai/sandboxes/governance/access-controls/Makefile
@@ -234,6 +236,9 @@ AC_CONFIG_FILES([
 	src/content/manuals/ai/sandboxes/integrations/Makefile
 	src/content/manuals/ai/sandboxes/security/Makefile
 	src/content/manuals/ai/sandboxes/workflows/Makefile
+	src/content/manuals/ai/sandboxes-api/Makefile
+	src/content/manuals/ai/sandboxes-api/cookbook/Makefile
+	src/content/manuals/ai/skills/Makefile
 	src/content/manuals/build/Makefile
 	src/content/manuals/build/bake/Makefile
 	src/content/manuals/build/builders/Makefile
@@ -390,6 +395,7 @@ AC_CONFIG_FILES([
 	src/content/reference/api/hub/Makefile
 	src/content/reference/api/registry/Makefile
 	src/content/reference/api/registry/images/Makefile
+	src/content/reference/api/sandboxes/Makefile
 	src/content/reference/cli/Makefile
 	src/content/reference/cli/sbx/Makefile
 	src/content/reference/compose-file/Makefile

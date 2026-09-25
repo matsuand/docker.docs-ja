@@ -18,9 +18,9 @@ keywords: docker sandboxes, ai agents, claude code, codex, cursor, devin, gemini
 @z
 
 @x
-Docker Sandboxes runs the following agents out of the box:
+Docker Sandboxes runs the following agents in local sandboxes:
 @y
-Docker Sandboxes runs the following agents out of the box:
+Docker Sandboxes runs the following agents in local sandboxes:
 @z
 
 @x

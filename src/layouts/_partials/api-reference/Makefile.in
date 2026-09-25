@@ -241,7 +241,8 @@ top_srcdir = @top_srcdir@
 bases = \
 	manual-link.html \
 	navigation.html  \
-	schema.html
+	schema.html      \
+	websocket.html
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@

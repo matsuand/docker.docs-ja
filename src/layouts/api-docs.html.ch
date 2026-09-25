@@ -180,14 +180,19 @@
                   <summary>Complete operation contract</summary>
 @z
 @x
-                  <h2>Example request</h2>
+                      Example request
 @y
-                  <h2>Example request</h2>
+                      Example request
 @z
 @x
-                  Replace placeholders and supply the required credentials or
-                  request body.
+                      WebSocket client
 @y
-                  Replace placeholders and supply the required credentials or
-                  request body.
+                      WebSocket client
+@z
+@x
+                    Replace placeholders and supply the required credentials or
+                    request body.
+@y
+                    Replace placeholders and supply the required credentials or
+                    request body.
 @z

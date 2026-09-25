@@ -23,6 +23,12 @@ keywords: docker sandboxes, docker agent, openai, anthropic, sbx
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 Official documentation: [Docker Agent](/manuals/ai/docker-agent/_index.md)
 @y
 Official documentation: [Docker Agent](manuals/ai/docker-agent/_index.md)
@@ -174,10 +180,10 @@ as the `run` subcommand or a config file — it replaces the defaults, so includ
 
 @x
 The sandbox uses `docker/sandbox-templates:docker-agent`. See
-[Templates](../customize/templates.md) to build your own image on top of
+[Base images](/manuals/ai/sandboxes/customize/author/base-images.md) to build your own image on top of
 this base.
 @y
 The sandbox uses `docker/sandbox-templates:docker-agent`. See
-[Templates](../customize/templates.md) to build your own image on top of
+[Base images](manuals/ai/sandboxes/customize/author/base-images.md) to build your own image on top of
 this base.
 @z

@@ -12,9 +12,9 @@ description: Docker's AI tools help you build, run, and manage AI-powered applic
 @z
 
 @x
-keywords: docker, ai, gordon, docker agent, sandboxes, model runner, mcp
+keywords: docker, ai, gordon, docker agent, sandboxes, agentic platform, model runner, mcp
 @y
-keywords: docker, ai, gordon, docker agent, sandboxes, model runner, mcp
+keywords: docker, ai, gordon, docker agent, sandboxes, agentic platform, model runner, mcp
 @z
 
 @x
@@ -32,21 +32,25 @@ Each tool serves a different purpose.
 @z
 
 @x
-| I want to...                                                    | Use                                                      | CLI command      |
+| I want to...                                                    | Use                                                      | Interface        |
 | --------------------------------------------------------------- | -------------------------------------------------------- | ---------------- |
+| Run coding agents in isolated environments                      | [Docker Sandboxes](./ai/sandboxes/)                      | `sbx`            |
+| Run agents in cloud sandboxes through a web Console | [Docker Agentic Platform](./agentic-platform/_index.md) (experimental) | Web Console |
 | Get AI help with Docker tasks (containers, images, Dockerfiles) | [Gordon](./ai/gordon/)                                   | `docker ai`      |
 | Run AI models locally with an OpenAI-compatible API             | [Model Runner](./ai/model-runner/)                       | `docker model`   |
 | Connect AI tools to external services via MCP                   | [MCP Catalog and Toolkit](./ai/mcp-catalog-and-toolkit/) | `docker mcp`     |
 | Build and orchestrate custom multi-agent teams                  | [Docker Agent](./ai/docker-agent/)                       | `docker agent`   |
-| Run coding agents in isolated environments                      | [Docker Sandboxes](./ai/sandboxes/)                      | `sbx`            |
+| Give my coding agent Docker best-practice guidance              | [Docker Skills](./ai/skills/)                            | None             |
 @y
-| I want to...                                                    | Use                                                      | CLI command      |
+| I want to...                                                    | Use                                                      | Interface        |
 | --------------------------------------------------------------- | -------------------------------------------------------- | ---------------- |
+| Run coding agents in isolated environments                      | [Docker Sandboxes](./ai/sandboxes/)                      | `sbx`            |
+| Run agents in cloud sandboxes through a web Console | [Docker Agentic Platform](./agentic-platform/_index.md) (experimental) | Web Console |
 | Get AI help with Docker tasks (containers, images, Dockerfiles) | [Gordon](./ai/gordon/)                                   | `docker ai`      |
 | Run AI models locally with an OpenAI-compatible API             | [Model Runner](./ai/model-runner/)                       | `docker model`   |
 | Connect AI tools to external services via MCP                   | [MCP Catalog and Toolkit](./ai/mcp-catalog-and-toolkit/) | `docker mcp`     |
 | Build and orchestrate custom multi-agent teams                  | [Docker Agent](./ai/docker-agent/)                       | `docker agent`   |
-| Run coding agents in isolated environments                      | [Docker Sandboxes](./ai/sandboxes/)                      | `sbx`            |
+| Give my coding agent Docker best-practice guidance              | [Docker Skills](./ai/skills/)                            | None             |
 @z
 
 @x
@@ -78,15 +82,45 @@ not specific to Docker tasks.
 @z
 
 @x
-**Docker Sandboxes** provides isolated microVM environments for running coding
-agents. It supports multiple agents including Claude Code, Codex, Copilot,
-Devin, Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
-themselves are separate tools.
+**Docker Skills** are Docker's official, open-source instructions for compatible
+coding agents working on Docker tasks. Install them through your agent's
+supported method; they can also be used by Docker Agent and agents running in
+Docker Sandboxes. Browse the [Docker Skills
+catalog](https://github.com/docker/skills#readme) for current guidance.
 @y
-**Docker Sandboxes** provides isolated microVM environments for running coding
-agents. It supports multiple agents including Claude Code, Codex, Copilot,
-Devin, Gemini, and Docker Agent. Sandboxes is the isolation layer — the agents
-themselves are separate tools.
+**Docker Skills** are Docker's official, open-source instructions for compatible
+coding agents working on Docker tasks. Install them through your agent's
+supported method; they can also be used by Docker Agent and agents running in
+Docker Sandboxes. Browse the [Docker Skills
+catalog](https://github.com/docker/skills#readme) for current guidance.
+@z
+
+@x
+Docker Sandboxes provides isolated environments for running coding agents
+[locally](./ai/sandboxes/get-started.md) or
+[in the cloud](./ai/sandboxes/cloud/_index.md). Sandboxes is the isolation layer;
+the agents themselves are separate tools. Agent configuration and supported
+features differ between local and cloud sandboxes.
+@y
+Docker Sandboxes provides isolated environments for running coding agents
+[locally](./ai/sandboxes/get-started.md) or
+[in the cloud](./ai/sandboxes/cloud/_index.md). Sandboxes is the isolation layer;
+the agents themselves are separate tools. Agent configuration and supported
+features differ between local and cloud sandboxes.
+@z
+
+@x
+Docker Agentic Platform is an experimental service for running agents in
+Docker-managed cloud sandboxes. Its web Console provides kit selection,
+credentials, network policies, MCP tools, and sandbox lifecycle controls.
+[Activate a subscription](./agentic-platform/signup.md) to use cloud compute,
+billed on a pay-as-you-go basis.
+@y
+Docker Agentic Platform is an experimental service for running agents in
+Docker-managed cloud sandboxes. Its web Console provides kit selection,
+credentials, network policies, MCP tools, and sandbox lifecycle controls.
+[Activate a subscription](./agentic-platform/signup.md) to use cloud compute,
+billed on a pay-as-you-go basis.
 @z
 
 @x

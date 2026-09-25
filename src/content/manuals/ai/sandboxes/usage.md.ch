@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Usage
@@ -11,10 +11,18 @@ title: Usage
 
 @x
 description: Basic sbx commands for creating, managing, and connecting to Docker Sandboxes.
-keywords: docker sandboxes, sbx, usage, run, create, stop, remove, ports, workspaces
+keywords: docker sandboxes, sbx, usage, run, create, stop, remove, ports, workspaces, templates, save, load
 @y
 description: Basic sbx commands for creating, managing, and connecting to Docker Sandboxes.
-keywords: docker sandboxes, sbx, usage, run, create, stop, remove, ports, workspaces
+keywords: docker sandboxes, sbx, usage, run, create, stop, remove, ports, workspaces, templates, save, load
+@z
+
+@x
+This page describes local sandboxes. For cloud commands, file transfers, ports,
+and expiration, see [Use cloud sandboxes](cloud/usage.md).
+@y
+This page describes local sandboxes. For cloud commands, file transfers, ports,
+and expiration, see [Use cloud sandboxes](cloud/usage.md).
 @z
 
 @x
@@ -999,14 +1007,386 @@ changes, command history, and mountless workspace files all persist across
 stops and restarts. When you remove a sandbox, everything inside is deleted.
 Host workspace files, including repositories used as clone sources, and the
 [shared agent skills store](workflows/agent-skills.md) remain on your host. To
-preserve a configured environment, create a [custom
-template](customize/templates.md) or use a [kit](customize/kits.md).
+capture changes in the container filesystem, [save a template](#saving-a-sandbox-as-a-template).
+For a reproducible environment defined in source,
+[author a kit](/manuals/ai/sandboxes/customize/author/_index.md).
 @y
 While a sandbox exists, installed packages, Docker images, configuration
 changes, command history, and mountless workspace files all persist across
 stops and restarts. When you remove a sandbox, everything inside is deleted.
 Host workspace files, including repositories used as clone sources, and the
 [shared agent skills store](workflows/agent-skills.md) remain on your host. To
-preserve a configured environment, create a [custom
-template](customize/templates.md) or use a [kit](customize/kits.md).
+capture changes in the container filesystem, [save a template](#saving-a-sandbox-as-a-template).
+For a reproducible environment defined in source,
+[author a kit](manuals/ai/sandboxes/customize/author/_index.md).
+@z
+
+@x
+## Saving a sandbox as a template
+@y
+## Saving a sandbox as a template
+@z
+
+@x
+Save a sandbox's container filesystem as a reusable template image after
+setting up tools or configuration interactively. A template contains image
+content; the agent kit still supplies runtime settings such as credentials
+and network rules. The examples here reuse templates with built-in agents.
+@y
+Save a sandbox's container filesystem as a reusable template image after
+setting up tools or configuration interactively. A template contains image
+content; the agent kit still supplies runtime settings such as credentials
+and network rules. The examples here reuse templates with built-in agents.
+@z
+
+@x
+A saved template isn't a backup of the whole sandbox. Mounted filesystems,
+including host workspaces and the Docker store at `/var/lib/docker`, aren't
+included. Save any data from those mounts separately.
+@y
+A saved template isn't a backup of the whole sandbox. Mounted filesystems,
+including host workspaces and the Docker store at `/var/lib/docker`, aren't
+included. Save any data from those mounts separately.
+@z
+
+@x
+> [!WARNING]
+> Saving a sandbox captures files in its container filesystem, including any
+> secrets stored there. If you manually added API keys, tokens, or other
+> credentials to the sandbox, they're embedded in the saved template and
+> shared with anyone you distribute it to. To keep credentials out of
+> templates, manage them with `sbx secret set` instead — the proxy injects
+> them at runtime so they're never written to the filesystem. For more
+> information, see [Manage credentials](configuration/credentials.md).
+@y
+> [!WARNING]
+> Saving a sandbox captures files in its container filesystem, including any
+> secrets stored there. If you manually added API keys, tokens, or other
+> credentials to the sandbox, they're embedded in the saved template and
+> shared with anyone you distribute it to. To keep credentials out of
+> templates, manage them with `sbx secret set` instead — the proxy injects
+> them at runtime so they're never written to the filesystem. For more
+> information, see [Manage credentials](configuration/credentials.md).
+@z
+
+@x
+### Save and reuse
+@y
+### Save and reuse
+@z
+
+@x
+Stop the sandbox (or let the CLI prompt you), then save it with a name and
+tag:
+@y
+Stop the sandbox (or let the CLI prompt you), then save it with a name and
+tag:
+@z
+
+@x
+```console
+$ sbx template save my-sandbox my-template:v1
+```
+@y
+```console
+$ sbx template save my-sandbox my-template:v1
+```
+@z
+
+@x
+The image is stored in the sandbox runtime's local image store. Create a
+new sandbox from it with the `-t` flag:
+@y
+The image is stored in the sandbox runtime's local image store. Create a
+new sandbox from it with the `-t` flag:
+@z
+
+@x
+```console
+$ sbx run -t my-template:v1 claude
+```
+@y
+```console
+$ sbx run -t my-template:v1 claude
+```
+@z
+
+@x
+### List and remove templates
+@y
+### List and remove templates
+@z
+
+@x
+List all saved templates:
+@y
+List all saved templates:
+@z
+
+@x
+```console
+$ sbx template ls
+```
+@y
+```console
+$ sbx template ls
+```
+@z
+
+@x
+Remove a template you no longer need:
+@y
+Remove a template you no longer need:
+@z
+
+@x
+```console
+$ sbx template rm my-template:v1
+```
+@y
+```console
+$ sbx template rm my-template:v1
+```
+@z
+
+@x
+### Export and import
+@y
+### Export and import
+@z
+
+@x
+To share a saved template or move it to another machine, export it as a
+tar file:
+@y
+To share a saved template or move it to another machine, export it as a
+tar file:
+@z
+
+@x
+```console
+$ sbx template save my-sandbox my-template:v1 --output my-template.tar
+```
+@y
+```console
+$ sbx template save my-sandbox my-template:v1 --output my-template.tar
+```
+@z
+
+@x
+On the other machine, load the tar file and use it:
+@y
+On the other machine, load the tar file and use it:
+@z
+
+@x
+```console
+$ sbx template load my-template.tar
+$ sbx run -t my-template:v1 claude
+```
+@y
+```console
+$ sbx template load my-template.tar
+$ sbx run -t my-template:v1 claude
+```
+@z
+
+@x
+### Limitations
+@y
+### Limitations
+@z
+
+@x
+Agent configuration files are always recreated when a sandbox is created.
+Changes to user-level agent configuration files, such as
+`/home/agent/.claude/settings.json` and `/home/agent/.claude.json`, do not
+persist in saved templates.
+@y
+Agent configuration files are always recreated when a sandbox is created.
+Changes to user-level agent configuration files, such as
+`/home/agent/.claude/settings.json` and `/home/agent/.claude.json`, do not
+persist in saved templates.
+@z
+
+@x
+If the saved template was built for a different agent than the one you
+specify in `sbx run`, you get a warning. For example, saving a Claude
+sandbox and running it with `codex` produces:
+@y
+If the saved template was built for a different agent than the one you
+specify in `sbx run`, you get a warning. For example, saving a Claude
+sandbox and running it with `codex` produces:
+@z
+
+@x
+```text
+⚠ WARNING: template "my-template:v1" was built for the "claude" agent but you are using "codex".
+  The sandbox may not work correctly. Consider using: sbx run -t my-template:v1 claude
+```
+@y
+```text
+⚠ WARNING: template "my-template:v1" was built for the "claude" agent but you are using "codex".
+  The sandbox may not work correctly. Consider using: sbx run -t my-template:v1 claude
+```
+@z
+
+@x
+## Load a template
+@y
+## Load a template
+@z
+
+@x
+To create a sandbox from a template image in a registry, pass its full image
+reference to `--template`. Use the agent the image was prepared for:
+@y
+To create a sandbox from a template image in a registry, pass its full image
+reference to `--template`. Use the agent the image was prepared for:
+@z
+
+@x
+```console
+$ sbx run --template docker.io/my-org/my-template:v1 claude
+```
+@y
+```console
+$ sbx run --template docker.io/my-org/my-template:v1 claude
+```
+@z
+
+@x
+Unlike Docker commands, `sbx` doesn't automatically add the Docker Hub domain
+(`docker.io`) to image references. For available images and the built-in agent
+workflow, see [Base images](/manuals/ai/sandboxes/customize/author/base-images.md).
+@y
+Unlike Docker commands, `sbx` doesn't automatically add the Docker Hub domain
+(`docker.io`) to image references. For available images and the built-in agent
+workflow, see [Base images](manuals/ai/sandboxes/customize/author/base-images.md).
+@z
+
+@x
+> [!NOTE]
+> The Docker daemon used by Docker Sandboxes pulls templates from a
+> registry directly; it doesn't share the image store of your local Docker
+> daemon on the host. To route Docker Hub image pulls through your
+> organization's registry infrastructure, configure a
+> [registry mirror](configuration/registry-mirror.md).
+@y
+> [!NOTE]
+> The Docker daemon used by Docker Sandboxes pulls templates from a
+> registry directly; it doesn't share the image store of your local Docker
+> daemon on the host. To route Docker Hub image pulls through your
+> organization's registry infrastructure, configure a
+> [registry mirror](configuration/registry-mirror.md).
+@z
+
+@x
+> [!IMPORTANT]
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> images. For other registries (GitHub Container Registry, ECR, ACR, a
+> self-hosted Nexus, and so on), store pull credentials with
+> [`sbx secret set --registry`](configuration/credentials.md#registry-credentials)
+> before running the sandbox:
+>
+> ```console
+> $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+> ```
+>
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private images fail to pull.
+@y
+> [!IMPORTANT]
+> For Docker Hub, `sbx` reuses your `sbx login` session to pull private
+> images. For other registries (GitHub Container Registry, ECR, ACR, a
+> self-hosted Nexus, and so on), store pull credentials with
+> [`sbx secret set --registry`](configuration/credentials.md#registry-credentials)
+> before running the sandbox:
+>
+> ```console
+> $ gh auth token | sbx secret set --registry ghcr.io --password-stdin
+> ```
+>
+> Without stored credentials, pulls from non-Docker Hub registries are
+> anonymous and private images fail to pull.
+@z
+
+@x
+For locally-built images, save the image to a tar and load it directly
+into the sandbox runtime instead of pulling from a registry:
+@y
+For locally-built images, save the image to a tar and load it directly
+into the sandbox runtime instead of pulling from a registry:
+@z
+
+@x
+```console
+$ docker image save my-org/my-template:v1 -o my-template.tar
+$ sbx template load my-template.tar
+$ sbx run --template my-org/my-template:v1 claude
+```
+@y
+```console
+$ docker image save my-org/my-template:v1 -o my-template.tar
+$ sbx template load my-template.tar
+$ sbx run --template my-org/my-template:v1 claude
+```
+@z
+
+@x
+`sbx template load` imports the tar into the sandbox runtime's image
+store, so the image doesn't need to be reachable from a registry at
+sandbox creation time.
+@y
+`sbx template load` imports the tar into the sandbox runtime's image
+store, so the image doesn't need to be reachable from a registry at
+sandbox creation time.
+@z
+
+@x
+### Template caching
+@y
+### Template caching
+@z
+
+@x
+When creating a sandbox, `sbx` checks the registry for the template image by
+default and downloads missing or updated layers. If the pull fails and the
+image is cached locally, it can use the cached image. Cached images persist
+across sandbox creation and deletion, and are cleared when you run `sbx reset`.
+@y
+When creating a sandbox, `sbx` checks the registry for the template image by
+default and downloads missing or updated layers. If the pull fails and the
+image is cached locally, it can use the cached image. Cached images persist
+across sandbox creation and deletion, and are cleared when you run `sbx reset`.
+@z
+
+@x
+### Updating agents
+@y
+### Updating agents
+@z
+
+@x
+Agent templates include an agent version, which can differ from the agent's
+latest release. Updating the `sbx` CLI or pulling an updated template doesn't
+update agents inside existing sandboxes.
+@y
+Agent templates include an agent version, which can differ from the agent's
+latest release. Updating the `sbx` CLI or pulling an updated template doesn't
+update agents inside existing sandboxes.
+@z
+
+@x
+To update an installed agent, run its documented update command inside the
+sandbox, either from a sandbox shell or with `sbx exec`. Restart the agent
+session to use the updated version. The update persists across sandbox stops
+and starts, but is deleted when you remove the sandbox. To reuse the updated
+agent in other sandboxes, [save a template](#saving-a-sandbox-as-a-template).
+@y
+To update an installed agent, run its documented update command inside the
+sandbox, either from a sandbox shell or with `sbx exec`. Restart the agent
+session to use the updated version. The update persists across sandbox stops
+and starts, but is deleted when you remove the sandbox. To reuse the updated
+agent in other sandboxes, [save a template](#saving-a-sandbox-as-a-template).
 @z

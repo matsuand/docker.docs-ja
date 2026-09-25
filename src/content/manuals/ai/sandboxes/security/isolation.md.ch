@@ -18,6 +18,12 @@ keywords: docker sandboxes, isolation, hypervisor, network, credentials, workspa
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 AI coding agents need to execute code, install packages, and run tools on
 your behalf. Docker Sandboxes run each agent in its own microVM. Five
 isolation layers protect your host: hypervisor, network, Docker Engine,
@@ -124,12 +130,16 @@ forward proxy [injects credentials](../configuration/credentials.md) for AI serv
 @z
 
 @x
-Direct external UDP and ICMP are blocked at the network layer. DNS queries use
-the sandbox's internal resolver, which enforces network policy. TCP connections
+Outbound UDP is disabled by default. When you turn on
+[experimental UDP egress](../governance/access-controls/local.md#allow-outbound-udp),
+network policy controls its destinations. ICMP is blocked. DNS queries use the
+sandbox's internal resolver, which enforces network policy. TCP connections
 are allowed only when a policy rule matches the destination.
 @y
-Direct external UDP and ICMP are blocked at the network layer. DNS queries use
-the sandbox's internal resolver, which enforces network policy. TCP connections
+Outbound UDP is disabled by default. When you turn on
+[experimental UDP egress](../governance/access-controls/local.md#allow-outbound-udp),
+network policy controls its destinations. ICMP is blocked. DNS queries use the
+sandbox's internal resolver, which enforces network policy. TCP connections
 are allowed only when a policy rule matches the destination.
 @z
 

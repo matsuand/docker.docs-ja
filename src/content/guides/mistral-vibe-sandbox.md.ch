@@ -68,6 +68,14 @@ In this guide, you'll learn how to:
 @z
 
 @x
+This guide uses the v2 format. For its reference and migration
+guidance, see [Kits v2](../manuals/ai/sandboxes/customize/kits-v2.md).
+@y
+This guide uses the v2 format. For its reference and migration
+guidance, see [Kits v2](../manuals/ai/sandboxes/customize/kits-v2.md).
+@z
+
+@x
 ## How isolation works
 @y
 ## How isolation works
@@ -409,7 +417,7 @@ Each field does the following:
 | Field                       | Purpose                                                                                                        |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `kind: sandbox`             | Declares a sandbox agent: a complete image plus its launch configuration.                                      |
-| `name`                      | The kit's identifier, reused in the `sbx run` command.                                                         |
+| `name`                      | The kit's identifier. Pass the kit directory to `sbx run`.                                                         |
 | `sandbox.image`             | The pinned image you published in Step 3. Its `CMD` launches Vibe, so the kit doesn't set an entrypoint.       |
 | `agentInstructions.filename`| The instructions file Vibe reads in the project.                                                               |
 | `agentInstructions.content` | Markdown appended to `AGENTS.md` at creation to prime the agent about its environment.                         |
@@ -421,7 +429,7 @@ Each field does the following:
 | Field                       | Purpose                                                                                                        |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | `kind: sandbox`             | Declares a sandbox agent: a complete image plus its launch configuration.                                      |
-| `name`                      | The kit's identifier, reused in the `sbx run` command.                                                         |
+| `name`                      | The kit's identifier. Pass the kit directory to `sbx run`.                                                         |
 | `sandbox.image`             | The pinned image you published in Step 3. Its `CMD` launches Vibe, so the kit doesn't set an entrypoint.       |
 | `agentInstructions.filename`| The instructions file Vibe reads in the project.                                                               |
 | `agentInstructions.content` | Markdown appended to `AGENTS.md` at creation to prime the agent about its environment.                         |
@@ -432,14 +440,6 @@ Each field does the following:
 @z
 
 @x
-For the full kit format, see
-[Kits](../manuals/ai/sandboxes/customize/kits.md).
-@y
-For the full kit format, see
-[Kits](../manuals/ai/sandboxes/customize/kits.md).
-@z
-
-@x
 > [!WARNING]
 > `--agent auto-approve` runs Vibe in a mode that approves every tool
 > execution without prompting. The sandbox isolates the agent from your host,
@@ -481,27 +481,19 @@ Then, from your project directory, launch the agent with the kit:
 Then, from your project directory, launch the agent with the kit:
 @z
 
-@x
-```console
-$ sbx run --kit ./mistral-vibe --name mistral-vibe mistral-vibe .
-```
-@y
-```console
-$ sbx run --kit ./mistral-vibe --name mistral-vibe mistral-vibe .
-```
-@z
+% snip command...
 
 @x
-- `--kit ./mistral-vibe` points to the folder that contains `spec.yaml`.
+- `./mistral-vibe` is the sandbox kit reference, pointing to the folder that
+  contains `spec.yaml`.
 - `--name mistral-vibe` names the sandbox. Without it, `sbx` derives a name
   from the agent and the working directory, and the commands below won't match.
-- `mistral-vibe` is the agent name from `spec.yaml`.
 - `.` is the project directory to mount in the sandbox.
 @y
-- `--kit ./mistral-vibe` points to the folder that contains `spec.yaml`.
+- `./mistral-vibe` is the sandbox kit reference, pointing to the folder that
+  contains `spec.yaml`.
 - `--name mistral-vibe` names the sandbox. Without it, `sbx` derives a name
   from the agent and the working directory, and the commands below won't match.
-- `mistral-vibe` is the agent name from `spec.yaml`.
 - `.` is the project directory to mount in the sandbox.
 @z
 
@@ -547,15 +539,7 @@ it. Use it to spot a host missing from `permissions.network.allow`. After you
 change `spec.yaml`, recreate the sandbox for a clean start:
 @z
 
-@x
-```console
-$ sbx rm mistral-vibe && sbx run --kit ./mistral-vibe --name mistral-vibe mistral-vibe .
-```
-@y
-```console
-$ sbx rm mistral-vibe && sbx run --kit ./mistral-vibe --name mistral-vibe mistral-vibe .
-```
-@z
+% snip command...
 
 @x
 ## Clean up
@@ -609,14 +593,14 @@ Files in your workspace are unaffected.
 
 @x
 - [Get started with Docker Sandboxes](../manuals/ai/sandboxes/get-started.md)
-- [Build your own agent kit](../manuals/ai/sandboxes/customize/build-an-agent.md)
-- [Customize sandboxes with kits](../manuals/ai/sandboxes/customize/kits.md)
+- [Build a v3 agent workload](/manuals/ai/sandboxes/customize/author/build-an-agent.md)
+- [Customize sandboxes with kits](/manuals/ai/sandboxes/customize/_index.md)
 - [Credentials and built-in services](../manuals/ai/sandboxes/configuration/credentials.md#built-in-services)
 - [Mistral Vibe](https://github.com/mistralai/mistral-vibe)
 @y
 - [Get started with Docker Sandboxes](../manuals/ai/sandboxes/get-started.md)
-- [Build your own agent kit](../manuals/ai/sandboxes/customize/build-an-agent.md)
-- [Customize sandboxes with kits](../manuals/ai/sandboxes/customize/kits.md)
+- [Build a v3 agent workload](/manuals/ai/sandboxes/customize/author/build-an-agent.md)
+- [Customize sandboxes with kits](/manuals/ai/sandboxes/customize/_index.md)
 - [Credentials and built-in services](../manuals/ai/sandboxes/configuration/credentials.md#built-in-services)
 - [Mistral Vibe](https://github.com/mistralai/mistral-vibe)
 @z

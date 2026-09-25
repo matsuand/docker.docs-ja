@@ -16,6 +16,12 @@ keywords: sandboxes, sbx, shell, agent, manual setup, testing
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 `sbx run shell` drops you into a Bash login shell inside a sandbox with no
 pre-installed agent binary. It's useful for installing and configuring
 agents manually, testing custom implementations, or inspecting a running
@@ -132,12 +138,12 @@ $ sbx secret set openai
 @x
 Once inside the shell, you can install agents using their standard methods,
 for example `npm install -g @continuedev/cli`. For complex setups, build a
-[custom template](../customize/templates.md) instead of installing
+[workload kit](/manuals/ai/sandboxes/customize/_index.md) instead of installing
 interactively each time.
 @y
 Once inside the shell, you can install agents using their standard methods,
 for example `npm install -g @continuedev/cli`. For complex setups, build a
-[custom template](../customize/templates.md) instead of installing
+[workload kit](manuals/ai/sandboxes/customize/_index.md) instead of installing
 interactively each time.
 @z
 

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Troubleshooting
@@ -15,6 +15,20 @@ keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network po
 @y
 description: Resolve common issues when using Docker Sandboxes.
 keywords: docker sandboxes, sbx, troubleshooting, diagnostics, reset, network policy, git, ssh
+@z
+
+@x
+The following diagnostics and recovery steps apply to local sandboxes. Use
+[`sbx --cloud diagnose`](cloud/usage.md#diagnose-cloud-access) to check cloud
+connectivity and account access. For cloud files, expiration, and network access, see
+[Cloud sandboxes](cloud/). Local daemon restarts and `sbx reset` do not repair
+cloud sandbox state.
+@y
+The following diagnostics and recovery steps apply to local sandboxes. Use
+[`sbx --cloud diagnose`](cloud/usage.md#diagnose-cloud-access) to check cloud
+connectivity and account access. For cloud files, expiration, and network access, see
+[Cloud sandboxes](cloud/). Local daemon restarts and `sbx reset` do not repair
+cloud sandbox state.
 @z
 
 @x
@@ -190,6 +204,46 @@ and clone-mode behavior.
 @z
 
 @x
+## Kiro, Copilot, or Droid shorthand fails
+@y
+## Kiro, Copilot, or Droid shorthand fails
+@z
+
+@x
+In Docker Sandboxes v0.42, `sbx run kiro`, `sbx run copilot`, and
+`sbx run droid` fail because these agents moved from built-in agents to
+public kits and their shorthand names aren't resolved in this release.
+@y
+In Docker Sandboxes v0.42, `sbx run kiro`, `sbx run copilot`, and
+`sbx run droid` fail because these agents moved from built-in agents to
+public kits and their shorthand names aren't resolved in this release.
+@z
+
+@x
+[Upgrade Docker Sandboxes](install.md) to v0.43.0 or later to launch
+these agents by name again. If you need to stay on v0.42, use the full kit
+reference for your agent:
+@y
+[Upgrade Docker Sandboxes](install.md) to v0.43.0 or later to launch
+these agents by name again. If you need to stay on v0.42, use the full kit
+reference for your agent:
+@z
+
+@x
+```console
+$ sbx run docker.io/sbx/kiro-kit:latest
+$ sbx run docker.io/sbx/copilot-kit:latest
+$ sbx run docker.io/sbx/droid-kit:latest
+```
+@y
+```console
+$ sbx run docker.io/sbx/kiro-kit:latest
+$ sbx run docker.io/sbx/copilot-kit:latest
+$ sbx run docker.io/sbx/droid-kit:latest
+```
+@z
+
+@x
 ## Agent can't install packages or reach an API
 @y
 ## Agent can't install packages or reach an API
@@ -309,10 +363,10 @@ $ sbx settings set kit.allowedSources '["docker.io/","github.com/docker/"]'
 
 @x
 Then run the command again. For details, including how to allow local kits or
-any remote source, see [Restrict kit sources](customize/kits.md#restrict-kit-sources).
+any remote source, see [Restrict kit sources](/manuals/ai/sandboxes/customize/use-kits.md#restrict-kit-sources).
 @y
 Then run the command again. For details, including how to allow local kits or
-any remote source, see [Restrict kit sources](customize/kits.md#restrict-kit-sources).
+any remote source, see [Restrict kit sources](manuals/ai/sandboxes/customize/use-kits.md#restrict-kit-sources).
 @z
 
 @x
@@ -362,11 +416,11 @@ $ sbx policy allow network "10.1.2.3:22"
 @z
 
 @x
-UDP and ICMP traffic is blocked at the network layer and can't be unblocked
-with policy rules.
+UDP requires [experimental UDP egress](governance/access-controls/local.md#allow-outbound-udp)
+and UDP allow rules. ICMP is blocked and can't be unblocked with policy rules.
 @y
-UDP and ICMP traffic is blocked at the network layer and can't be unblocked
-with policy rules.
+UDP requires [experimental UDP egress](governance/access-controls/local.md#allow-outbound-udp)
+and UDP allow rules. ICMP is blocked and can't be unblocked with policy rules.
 @z
 
 @x
@@ -466,6 +520,42 @@ for details.
 @z
 
 @x
+## MCP server streams stall
+@y
+## MCP server streams stall
+@z
+
+@x
+If a remote MCP server's HTTP/2 handling stalls long-lived streams, register
+it with `--disable-http2` to use HTTP/1.1:
+@y
+If a remote MCP server's HTTP/2 handling stalls long-lived streams, register
+it with `--disable-http2` to use HTTP/1.1:
+@z
+
+@x
+```console
+$ sbx mcp add acme --url https://mcp.acme.com/mcp --disable-http2
+```
+@y
+```console
+$ sbx mcp add acme --url https://mcp.acme.com/mcp --disable-http2
+```
+@z
+
+@x
+Replace the example URL with your MCP endpoint. The setting applies to later
+connections to this server. The flag requires `--url` and can't be used with
+`--command` or `--local`. For registration options, see
+[Register an MCP server](mcp-gateway.md#register-an-mcp-server).
+@y
+Replace the example URL with your MCP endpoint. The setting applies to later
+connections to this server. The flag requires `--url` and can't be used with
+`--command` or `--local`. For registration options, see
+[Register an MCP server](mcp-gateway.md#register-an-mcp-server).
+@z
+
+@x
 ## API calls fail with a certificate error
 @y
 ## API calls fail with a certificate error
@@ -488,14 +578,16 @@ request before the credential proxy can inject credentials.
 @z
 
 @x
-For repeatable setup, create a [sandbox kit](customize/kits.md) that installs
-the CA when the sandbox is created. See
-[Install an internal CA certificate](customize/kit-examples.md#install-an-internal-ca-certificate)
+For repeatable setup with a built-in agent, create a
+[v2 mixin kit](customize/kits-v2.md) that installs the CA when the
+sandbox is created. See
+[Install an internal CA certificate](customize/kits-v2.md#install-an-internal-ca-certificate)
 for an example kit.
 @y
-For repeatable setup, create a [sandbox kit](customize/kits.md) that installs
-the CA when the sandbox is created. See
-[Install an internal CA certificate](customize/kit-examples.md#install-an-internal-ca-certificate)
+For repeatable setup with a built-in agent, create a
+[v2 mixin kit](customize/kits-v2.md) that installs the CA when the
+sandbox is created. See
+[Install an internal CA certificate](customize/kits-v2.md#install-an-internal-ca-certificate)
 for an example kit.
 @z
 
@@ -593,6 +685,100 @@ the egress path in the **PROXY** column:
   organization's certificate directly. These paths are where installing the
   internal CA applies. The only difference between them is whether the client
   knows it's talking to a proxy.
+@z
+
+@x
+### Certificate errors during Docker builds
+@y
+### Certificate errors during Docker builds
+@z
+
+@x
+Containers started by the sandbox's Docker Engine have their own trust stores.
+They don't inherit the sandbox's installed certificates. If an HTTPS download
+in a Dockerfile fails with `self signed certificate in certificate chain`,
+install the proxy CA in the build image before the download.
+@y
+Containers started by the sandbox's Docker Engine have their own trust stores.
+They don't inherit the sandbox's installed certificates. If an HTTPS download
+in a Dockerfile fails with `self signed certificate in certificate chain`,
+install the proxy CA in the build image before the download.
+@z
+
+@x
+From a shell inside the sandbox, write its proxy CA into your build context:
+@y
+From a shell inside the sandbox, write its proxy CA into your build context:
+@z
+
+@x
+```console
+$ printf '%s' "$PROXY_CA_CERT_B64" | base64 -d > sbx-proxy-ca.crt
+```
+@y
+```console
+$ printf '%s' "$PROXY_CA_CERT_B64" | base64 -d > sbx-proxy-ca.crt
+```
+@z
+
+@x
+For a Debian-based image with `ca-certificates` installed, copy the certificate
+and update the trust store before commands that make HTTPS requests:
+@y
+For a Debian-based image with `ca-certificates` installed, copy the certificate
+and update the trust store before commands that make HTTPS requests:
+@z
+
+@x
+```dockerfile
+FROM python:3.13-slim
+COPY sbx-proxy-ca.crt /usr/local/share/ca-certificates/sbx-proxy-ca.crt
+RUN update-ca-certificates
+```
+@y
+```dockerfile
+FROM python:3.13-slim
+COPY sbx-proxy-ca.crt /usr/local/share/ca-certificates/sbx-proxy-ca.crt
+RUN update-ca-certificates
+```
+@z
+
+@x
+Build inside the sandbox, passing its proxy settings to the build:
+@y
+Build inside the sandbox, passing its proxy settings to the build:
+@z
+
+@x
+```console
+$ docker build --build-arg HTTP_PROXY --build-arg HTTPS_PROXY --build-arg NO_PROXY -t my-app .
+```
+@y
+```console
+$ docker build --build-arg HTTP_PROXY --build-arg HTTPS_PROXY --build-arg NO_PROXY -t my-app .
+```
+@z
+
+@x
+If your organization also inspects TLS, install its root CA in the build image
+as a separate `.crt` file before `update-ca-certificates`. Keep the system CA
+bundle intact so the image trusts both proxies and public certificate
+authorities. The earlier [certificate troubleshooting](#api-calls-fail-with-a-certificate-error)
+explains which proxy paths need each CA.
+@y
+If your organization also inspects TLS, install its root CA in the build image
+as a separate `.crt` file before `update-ca-certificates`. Keep the system CA
+bundle intact so the image trusts both proxies and public certificate
+authorities. The earlier [certificate troubleshooting](#api-calls-fail-with-a-certificate-error)
+explains which proxy paths need each CA.
+@z
+
+@x
+Keep the generated proxy certificate out of version control. Regenerate it and
+rebuild the image if the sandbox proxy CA changes.
+@y
+Keep the generated proxy certificate out of version control. Regenerate it and
+rebuild the image if the sandbox proxy CA changes.
 @z
 
 @x
@@ -779,6 +965,42 @@ the command again:
 > sbx run --clone claude \\wsl.localhost\Ubuntu\home\you\repo
 ✓ Git repository detected: \\wsl.localhost\Ubuntu\home\you\repo
 ```
+@z
+
+@x
+## SSH agent socket is missing
+@y
+## SSH agent socket is missing
+@z
+
+@x
+If `SSH_AUTH_SOCK` is set inside a sandbox but `ssh-add -L` reports
+`No such file or directory`, check whether your custom template includes
+`socat`. Docker Sandboxes uses it to create the socket that forwards requests
+to your host SSH agent. Installing OpenSSH client tools alone isn't enough.
+@y
+If `SSH_AUTH_SOCK` is set inside a sandbox but `ssh-add -L` reports
+`No such file or directory`, check whether your custom template includes
+`socat`. Docker Sandboxes uses it to create the socket that forwards requests
+to your host SSH agent. Installing OpenSSH client tools alone isn't enough.
+@z
+
+@x
+For an Ubuntu-based custom template, add `socat` to the packages installed as
+root in your Dockerfile, then rebuild the template and create a sandbox from
+it. Docker-provided sandbox templates already include `socat`.
+@y
+For an Ubuntu-based custom template, add `socat` to the packages installed as
+root in your Dockerfile, then rebuild the template and create a sandbox from
+it. Docker-provided sandbox templates already include `socat`.
+@z
+
+@x
+If the socket exists but forwarding still fails, check the
+[SSH agent settings](configuration/credentials.md#ssh-agent).
+@y
+If the socket exists but forwarding still fails, check the
+[SSH agent settings](configuration/credentials.md#ssh-agent).
 @z
 
 @x

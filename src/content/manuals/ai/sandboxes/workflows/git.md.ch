@@ -18,6 +18,20 @@ keywords: docker sandboxes, sbx, git, clone mode, direct mode, worktrees, branch
 @z
 
 @x
+These workspace modes apply to local sandboxes. In cloud sandboxes,
+[transfer files or clone a remote repository](../cloud/usage.md#transfer-files).
+To copy a sandbox filesystem between environments, see
+[Move a sandbox](../cloud/move.md). Host mounts and clone-mode volumes are not
+included in that snapshot.
+@y
+These workspace modes apply to local sandboxes. In cloud sandboxes,
+[transfer files or clone a remote repository](../cloud/usage.md#transfer-files).
+To copy a sandbox filesystem between environments, see
+[Move a sandbox](../cloud/move.md). Host mounts and clone-mode volumes are not
+included in that snapshot.
+@z
+
+@x
 Sandboxes support three approaches for working with Git repositories. The
 right choice depends on whether you want branch isolation and whether you
 plan to run tasks in parallel:
@@ -538,13 +552,13 @@ you turned off forwarding or use a fixed SSH agent socket, see
 @x
 To apply this configuration automatically to every sandbox, use the
 [`git-ssh-sign`](https://github.com/docker/sbx-kits-contrib/tree/main/git-ssh-sign)
-community kit, which handles all of the above setup. See [Kits](../customize/kits.md)
-if you want to package it alongside other sandbox customizations.
+community kit, which handles all of the above setup. For using it with the
+built-in agents, see [Kits v2](../customize/kits-v2.md).
 @y
 To apply this configuration automatically to every sandbox, use the
 [`git-ssh-sign`](https://github.com/docker/sbx-kits-contrib/tree/main/git-ssh-sign)
-community kit, which handles all of the above setup. See [Kits](../customize/kits.md)
-if you want to package it alongside other sandbox customizations.
+community kit, which handles all of the above setup. For using it with the
+built-in agents, see [Kits v2](../customize/kits-v2.md).
 @z
 
 @x

@@ -63,6 +63,7 @@ usage: sbx COMMAND
     - sbx logout - Stop running local sandboxes and sign out of Docker
     - sbx ls - List sandboxes
     - sbx mcp - Manage MCP servers
+    - sbx move - Move a sandbox between local and cloud
     - sbx policy - Manage sandbox policies
     - sbx ports - Manage sandbox port publishing
     - sbx prune - Remove all stopped sandboxes
@@ -93,6 +94,7 @@ usage: sbx COMMAND
     - sbx logout - Stop running local sandboxes and sign out of Docker
     - sbx ls - List sandboxes
     - sbx mcp - Manage MCP servers
+    - sbx move - Move a sandbox between local and cloud
     - sbx policy - Manage sandbox policies
     - sbx ports - Manage sandbox port publishing
     - sbx prune - Remove all stopped sandboxes

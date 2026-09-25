@@ -14,6 +14,7 @@ bases = \
 	hub-categories.md          \
 	install-script.md          \
 	root-errors.md             \
+	sandboxes-local-scope.md   \
 	swarm-compose-compat.md    \
 	swarm-mode.md
 

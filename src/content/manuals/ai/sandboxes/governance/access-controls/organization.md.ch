@@ -20,9 +20,19 @@ keywords: docker sandboxes, governance, organization policy, AI governance, Dock
 @z
 
 @x
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../../cloud/network-policy.md) for cloud controls.
+@y
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../../cloud/network-policy.md) for cloud controls.
+@z
+
+@x
 [Local policies](local.md) give individual developers control over what their
 sandboxes can access. Organization policy moves that control to the admin level:
-organization policies apply to sandboxes across the organization, either to
+organization policies apply to local sandboxes across the organization, either to
 every member or to specific teams. When organization governance is active, only
 organization allow rules grant access: local `sbx policy` allow rules are no
 longer evaluated and can't expand what the organization permits. Local network
@@ -31,7 +41,7 @@ loosen it.
 @y
 [Local policies](local.md) give individual developers control over what their
 sandboxes can access. Organization policy moves that control to the admin level:
-organization policies apply to sandboxes across the organization, either to
+organization policies apply to local sandboxes across the organization, either to
 every member or to specific teams. When organization governance is active, only
 organization allow rules grant access: local `sbx policy` allow rules are no
 longer evaluated and can't expand what the organization permits. Local network

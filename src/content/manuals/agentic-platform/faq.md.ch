@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Docker Agentic Platform FAQ
@@ -22,13 +22,39 @@ keywords: docker agentic platform, faq, sandboxes, agents, docker sandboxes, usa
 @z
 
 @x
-Docker Agentic Platform provides predefined sandbox types for Claude Code,
-Codex, OpenCode, Copilot, Gemini CLI, and Shell. Each type runs in an isolated,
-Docker-hosted sandbox with a live terminal.
+You can run agents such as Claude Code, Codex, and Hermes in isolated cloud
+sandboxes with live terminals. Browse [Kits](kits.md) for curated and community
+agents, or choose Shell to work without an agent. You can also enter a public
+kit reference in the launcher.
 @y
-Docker Agentic Platform provides predefined sandbox types for Claude Code,
-Codex, OpenCode, Copilot, Gemini CLI, and Shell. Each type runs in an isolated,
-Docker-hosted sandbox with a live terminal.
+You can run agents such as Claude Code, Codex, and Hermes in isolated cloud
+sandboxes with live terminals. Browse [Kits](kits.md) for curated and community
+agents, or choose Shell to work without an agent. You can also enter a public
+kit reference in the launcher.
+@z
+
+@x
+## Can I use private kits?
+@y
+## Can I use private kits?
+@z
+
+@x
+You can run private Docker Hub kits using the Docker Sandboxes CLI. Launching
+a kit from the Console requires both the kit and its base image to be public.
+The **Kits** page provides the CLI command to copy.
+@y
+You can run private Docker Hub kits using the Docker Sandboxes CLI. Launching
+a kit from the Console requires both the kit and its base image to be public.
+The **Kits** page provides the CLI command to copy.
+@z
+
+@x
+To access private GitHub repositories from inside a sandbox, use a
+[GitHub credential](secrets.md#github-credential).
+@y
+To access private GitHub repositories from inside a sandbox, use a
+[GitHub credential](secrets.md#github-credential).
 @z
 
 @x
@@ -39,14 +65,16 @@ Docker-hosted sandbox with a live terminal.
 
 @x
 Docker Agentic Platform runs sandboxes on Docker-managed cloud infrastructure
-through a web Console. Docker Sandboxes runs sandboxes on your development
-machine through the `sbx` command. Docker Agentic Platform manages the compute,
-MCP connections, secrets, and network policies used by its hosted sandboxes.
+through a web Console. The `sbx` CLI runs local sandboxes on your development
+machine and cloud sandboxes with `sbx --cloud`. The Console and CLI have
+different workflows and secret names. See
+[Cloud sandboxes](/manuals/ai/sandboxes/cloud/_index.md) for the CLI experience.
 @y
 Docker Agentic Platform runs sandboxes on Docker-managed cloud infrastructure
-through a web Console. Docker Sandboxes runs sandboxes on your development
-machine through the `sbx` command. Docker Agentic Platform manages the compute,
-MCP connections, secrets, and network policies used by its hosted sandboxes.
+through a web Console. The `sbx` CLI runs local sandboxes on your development
+machine and cloud sandboxes with `sbx --cloud`. The Console and CLI have
+different workflows and secret names. See
+[Cloud sandboxes](manuals/ai/sandboxes/cloud/_index.md) for the CLI experience.
 @z
 
 @x
@@ -56,11 +84,17 @@ MCP connections, secrets, and network policies used by its hosted sandboxes.
 @z
 
 @x
-No. Local and hosted sandboxes are separate in the initial release. You cannot
-move a running sandbox or its local bind mounts into Docker Agentic Platform.
+The `sbx move` command copies a sandbox filesystem between local and cloud
+environments. It does not transfer running processes, host bind mounts, or
+managed secrets, and it leaves the source sandbox in place. See
+[Move a sandbox](/manuals/ai/sandboxes/cloud/move.md) for the CLI workflow and
+its limitations.
 @y
-No. Local and hosted sandboxes are separate in the initial release. You cannot
-move a running sandbox or its local bind mounts into Docker Agentic Platform.
+The `sbx move` command copies a sandbox filesystem between local and cloud
+environments. It does not transfer running processes, host bind mounts, or
+managed secrets, and it leaves the source sandbox in place. See
+[Move a sandbox](manuals/ai/sandboxes/cloud/move.md) for the CLI workflow and
+its limitations.
 @z
 
 @x
@@ -70,13 +104,13 @@ move a running sandbox or its local bind mounts into Docker Agentic Platform.
 @z
 
 @x
-The initial self-service experience is single-user. You manage your own
-sandboxes, MCP connections, secrets, and network policies. Shared workspaces
-and collaborative ownership are not part of the initial release.
+The initial release is for individual use. You manage your own sandboxes, MCP
+connections, secrets, and network policies. Shared workspaces and team
+ownership aren't supported.
 @y
-The initial self-service experience is single-user. You manage your own
-sandboxes, MCP connections, secrets, and network policies. Shared workspaces
-and collaborative ownership are not part of the initial release.
+The initial release is for individual use. You manage your own sandboxes, MCP
+connections, secrets, and network policies. Shared workspaces and team
+ownership aren't supported.
 @z
 
 @x
@@ -86,31 +120,49 @@ and collaborative ownership are not part of the initial release.
 @z
 
 @x
-By default, every new sandbox uses the **Open** user policy, regardless of
-sandbox type. **Open** allows access to all outbound destinations. To restrict
-egress, replace **Open** with **Balanced**, a custom policy, or no user policy.
+The **Open** user policy allows outbound access to any host. **Balanced**
+allows a curated set of hosts and services. Allow rules from all applicable
+policies are combined: selecting both **Open** and **Balanced** permits all
+outbound destinations except those blocked by explicit deny rules. Balanced's
+allow list doesn't restrict Open's access. To restrict access with an allow
+list, deselect **Open** if it is selected and can be removed.
 @y
-By default, every new sandbox uses the **Open** user policy, regardless of
-sandbox type. **Open** allows access to all outbound destinations. To restrict
-egress, replace **Open** with **Balanced**, a custom policy, or no user policy.
+The **Open** user policy allows outbound access to any host. **Balanced**
+allows a curated set of hosts and services. Allow rules from all applicable
+policies are combined: selecting both **Open** and **Balanced** permits all
+outbound destinations except those blocked by explicit deny rules. Balanced's
+allow list doesn't restrict Open's access. To restrict access with an allow
+list, deselect **Open** if it is selected and can be removed.
 @z
 
 @x
-Network policies control the destinations a sandbox can reach. The sandbox
-type's read-only kit policy applies automatically, and you can select zero or
-more user policies when you create the sandbox. If you select no user policies,
-only the kit policy applies and destinations that it does not allow are blocked.
-A deny rule takes precedence over an allow rule. Docker stores configured
-secret values outside the sandbox and applies them to matching requests through
-the sandbox proxy.
+The launcher remembers your policy selections from the previous launch in the
+same browser. Without saved selections, it selects the account's policies
+marked **Always applied**. These policies can't be deselected in the launcher.
 @y
-Network policies control the destinations a sandbox can reach. The sandbox
-type's read-only kit policy applies automatically, and you can select zero or
-more user policies when you create the sandbox. If you select no user policies,
-only the kit policy applies and destinations that it does not allow are blocked.
-A deny rule takes precedence over an allow rule. Docker stores configured
-secret values outside the sandbox and applies them to matching requests through
-the sandbox proxy.
+The launcher remembers your policy selections from the previous launch in the
+same browser. Without saved selections, it selects the account's policies
+marked **Always applied**. These policies can't be deselected in the launcher.
+@z
+
+@x
+Your kit's network rules also apply. If an allow rule and a deny rule match
+the same destination, the deny rule wins. See [Network policies](policies.md)
+for details.
+@y
+Your kit's network rules also apply. If an allow rule and a deny rule match
+the same destination, the deny rule wins. See [Network policies](policies.md)
+for details.
+@z
+
+@x
+For services that need authentication, save your credentials under
+[Secrets](secrets.md). The sandbox proxy adds them to matching requests without
+exposing their values to the agent.
+@y
+For services that need authentication, save your credentials under
+[Secrets](secrets.md). The sandbox proxy adds them to matching requests without
+exposing their values to the agent.
 @z
 
 @x
@@ -120,23 +172,21 @@ the sandbox proxy.
 @z
 
 @x
-Docker bills sandbox compute per second while the sandbox runs. The Console
-also shows the equivalent hourly rate.
+You pay for compute by the second while your sandbox runs. The Console also
+shows the equivalent hourly rate.
 @y
-Docker bills sandbox compute per second while the sandbox runs. The Console
-also shows the equivalent hourly rate.
+You pay for compute by the second while your sandbox runs. The Console also
+shows the equivalent hourly rate.
 @z
 
 @x
-Model inference is billed separately. The sandbox uses your credential for an
-external model provider, which meters and bills inference under that provider
-account. See [Docker Billing](/subscription-billing/) for account, usage, and payment
-information.
+Your model provider bills inference separately, under the account associated
+with your API key. See [Docker Billing](/subscription-billing/) for account,
+usage, and payment information.
 @y
-Model inference is billed separately. The sandbox uses your credential for an
-external model provider, which meters and bills inference under that provider
-account. See [Docker Billing](__SUBDIR__/subscription-billing/) for account, usage, and payment
-information.
+Your model provider bills inference separately, under the account associated
+with your API key. See [Docker Billing](__SUBDIR__/subscription-billing/) for account,
+usage, and payment information.
 @z
 
 @x
@@ -146,11 +196,9 @@ information.
 @z
 
 @x
-Docker retains Docker Agentic Platform service logs for 31 days and raw
-telemetry for 12 months.
+Service logs are kept for 31 days and raw telemetry for 12 months.
 @y
-Docker retains Docker Agentic Platform service logs for 31 days and raw
-telemetry for 12 months.
+Service logs are kept for 31 days and raw telemetry for 12 months.
 @z
 
 @x

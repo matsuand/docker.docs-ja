@@ -14,6 +14,12 @@ keywords: docker sandboxes, sbx, registry mirror, docker hub, templates, kits, i
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 A registry mirror routes Docker Hub pulls for sandbox templates and OCI kits
 through your organization's registry infrastructure. If the mirror meets
 Docker Engine's requirements, Docker inside the sandbox uses it too.
@@ -131,12 +137,12 @@ mirror URL paths differently from image repository prefixes.
 Docker Engine connects to the mirror over HTTPS, so the sandbox must trust the
 certificate that the mirror presents. For a mirror that uses an internal
 certificate authority, add the CA to the sandbox's system trust store. See
-[Install an internal CA certificate](../customize/kit-examples.md#install-an-internal-ca-certificate).
+[Install an internal CA certificate](../customize/kits-v2.md#install-an-internal-ca-certificate).
 @y
 Docker Engine connects to the mirror over HTTPS, so the sandbox must trust the
 certificate that the mirror presents. For a mirror that uses an internal
 certificate authority, add the CA to the sandbox's system trust store. See
-[Install an internal CA certificate](../customize/kit-examples.md#install-an-internal-ca-certificate).
+[Install an internal CA certificate](../customize/kits-v2.md#install-an-internal-ca-certificate).
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Monitoring policies
 @y
@@ -67,7 +69,7 @@ The columns are:
 - `POLICY`: the policy name.
 - `SOURCE`: where the policy came from. `local` means your local configuration
   — a preset or rules you added with `sbx policy`. `kit` means a
-  [kit](../../customize/kits.md#control-network-access). `org` means your
+  [kit](/manuals/ai/sandboxes/governance/concepts.md#precedence). `org` means your
   organization.
 - `APPLIES TO`: which sandboxes the policy applies to. `all` means the policy
   is global. `sandbox:<name>` scopes it to a single sandbox; a profile name
@@ -81,7 +83,7 @@ The columns are:
 - `POLICY`: the policy name.
 - `SOURCE`: where the policy came from. `local` means your local configuration
   — a preset or rules you added with `sbx policy`. `kit` means a
-  [kit](../../customize/kits.md#control-network-access). `org` means your
+  [kit](manuals/ai/sandboxes/governance/concepts.md#precedence). `org` means your
   organization.
 - `APPLIES TO`: which sandboxes the policy applies to. `all` means the policy
   is global. `sandbox:<name>` scopes it to a single sandbox; a profile name
@@ -117,6 +119,16 @@ to filter by outcome (`allow` or `deny`).
 @y
 Use `--source` to filter by origin (`local`, `org`, or `kit`) and `--decision`
 to filter by outcome (`allow` or `deny`).
+@z
+
+@x
+Use `--protocol tcp` or `--protocol udp` to filter network rules. The
+`--created-via` filter selects how a rule was created: `default`, `added`,
+`provisioned`, or `approval`.
+@y
+Use `--protocol tcp` or `--protocol udp` to filter network rules. The
+`--created-via` filter selects how a rule was created: `default`, `added`,
+`provisioned`, or `approval`.
 @z
 
 @x
@@ -409,7 +421,7 @@ The `PROXY` column shows how the request left the sandbox:
 | `forward`        | Routed through the forward proxy. Supports [credential injection](../../configuration/credentials.md).              |
 | `forward-bypass` | Routed through the forward proxy without credential injection.                                                 |
 | `transparent`    | Intercepted by the transparent proxy. Policy is enforced but credential injection is not available.            |
-| `network`        | Non-HTTP traffic (raw TCP, UDP, ICMP). TCP can be allowed with a policy rule. UDP and ICMP are always blocked. |
+| `network`        | Non-HTTP traffic. TCP and experimental UDP egress follow network policy. ICMP is blocked. |
 | `browser-open`   | A sandbox process requested opening a URL in the host browser. Policy is enforced before opening the URL.      |
 @y
 | Value            | Description                                                                                                    |
@@ -417,7 +429,7 @@ The `PROXY` column shows how the request left the sandbox:
 | `forward`        | Routed through the forward proxy. Supports [credential injection](../../configuration/credentials.md).              |
 | `forward-bypass` | Routed through the forward proxy without credential injection.                                                 |
 | `transparent`    | Intercepted by the transparent proxy. Policy is enforced but credential injection is not available.            |
-| `network`        | Non-HTTP traffic (raw TCP, UDP, ICMP). TCP can be allowed with a policy rule. UDP and ICMP are always blocked. |
+| `network`        | Non-HTTP traffic. TCP and experimental UDP egress follow network policy. ICMP is blocked. |
 | `browser-open`   | A sandbox process requested opening a URL in the host browser. Policy is enforced before opening the URL.      |
 @z
 

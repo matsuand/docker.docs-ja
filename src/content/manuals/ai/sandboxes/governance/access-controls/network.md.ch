@@ -18,6 +18,16 @@ keywords: docker sandboxes, network access, network rules, governance, local pol
 @z
 
 @x
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../../cloud/network-policy.md) for cloud controls.
+@y
+The governance described here applies to local sandboxes. Cloud sandboxes
+use separate network policy configuration. See
+[Cloud network policy](../../cloud/network-policy.md) for cloud controls.
+@z
+
+@x
 Network access policies control outbound connections from sandboxes. Each
 policy contains one or more rules that allow the domains, IP ranges, and ports a
 workflow needs, or block destinations that should stay unavailable. A local
@@ -68,15 +78,13 @@ policy. See [Precedence](../concepts.md#precedence).
 @z
 
 @x
-Network rules use the action `connect:tcp`. Resources are hostnames, CIDR
-ranges, ports, or hostnames with ports. The governance policy schema also
-accepts `connect:udp`, but Docker Sandboxes always blocks direct external UDP
-and ICMP. `connect:udp` rules have no effect.
+Network rules use `connect:tcp` for TCP and `connect:udp` for UDP. Resources are
+hostnames, CIDR ranges, ports, or hostnames with ports. UDP requires
+[experimental outbound UDP](local.md#allow-outbound-udp). ICMP is blocked.
 @y
-Network rules use the action `connect:tcp`. Resources are hostnames, CIDR
-ranges, ports, or hostnames with ports. The governance policy schema also
-accepts `connect:udp`, but Docker Sandboxes always blocks direct external UDP
-and ICMP. `connect:udp` rules have no effect.
+Network rules use `connect:tcp` for TCP and `connect:udp` for UDP. Resources are
+hostnames, CIDR ranges, ports, or hostnames with ports. UDP requires
+[experimental outbound UDP](local.md#allow-outbound-udp). ICMP is blocked.
 @z
 
 @x

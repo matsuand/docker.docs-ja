@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Security model
 linkTitle: Security model
@@ -15,6 +17,12 @@ keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
 @y
 description: Trust boundaries, isolation layers, and security properties of Docker Sandboxes.
 keywords: docker sandboxes, security model, isolation, trust boundaries, microVM
+@z
+
+@x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
 @z
 
 @x
@@ -115,14 +123,16 @@ What crosses the boundary back to the host:
 Outside the workspace and shared skills store, the agent cannot access your
 host filesystem. It also cannot access your host Docker daemon, your host
 network directly, or any destination not allowed by network policy. Sandboxes
-cannot communicate directly over the network. Direct external UDP and ICMP are
-blocked at the network layer.
+cannot communicate directly over the network. Outbound UDP is blocked unless
+you turn on the [experimental UDP feature](../governance/access-controls/local.md#allow-outbound-udp)
+and allow it through network policy. ICMP is blocked.
 @y
 Outside the workspace and shared skills store, the agent cannot access your
 host filesystem. It also cannot access your host Docker daemon, your host
 network directly, or any destination not allowed by network policy. Sandboxes
-cannot communicate directly over the network. Direct external UDP and ICMP are
-blocked at the network layer.
+cannot communicate directly over the network. Outbound UDP is blocked unless
+you turn on the [experimental UDP feature](../governance/access-controls/local.md#allow-outbound-udp)
+and allow it through network policy. ICMP is blocked.
 @z
 
 @x
@@ -185,8 +195,8 @@ The sandbox security model has five layers. See
 - **Hypervisor isolation:** separate kernel per sandbox. No shared memory or
   processes with the host.
 - **Network isolation:** outbound TCP traffic is proxied through the host and
-  governed by a [deny-by-default policy](defaults/). Direct external UDP and
-  ICMP are blocked.
+  governed by a [deny-by-default policy](defaults/). Experimental UDP egress
+  also follows network policy. ICMP is blocked.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
 - **Workspace isolation:** a mountless sandbox has no host workspace mount.
@@ -198,8 +208,8 @@ The sandbox security model has five layers. See
 - **Hypervisor isolation:** separate kernel per sandbox. No shared memory or
   processes with the host.
 - **Network isolation:** outbound TCP traffic is proxied through the host and
-  governed by a [deny-by-default policy](defaults/). Direct external UDP and
-  ICMP are blocked.
+  governed by a [deny-by-default policy](defaults/). Experimental UDP egress
+  also follows network policy. ICMP is blocked.
 - **Docker Engine isolation:** each sandbox has its own Docker Engine with no
   path to the host daemon.
 - **Workspace isolation:** a mountless sandbox has no host workspace mount.
@@ -285,12 +295,12 @@ see the full list of active rules, and remove entries you don't need. See
 Kits run install commands with root privileges inside the sandbox. To limit
 supply-chain risk, `sbx` restricts kit installs to an allowlist of sources
 that defaults to Docker Hub only. See
-[Restrict kit sources](../customize/kits.md#restrict-kit-sources).
+[Restrict kit sources](/manuals/ai/sandboxes/customize/use-kits.md#restrict-kit-sources).
 @y
 Kits run install commands with root privileges inside the sandbox. To limit
 supply-chain risk, `sbx` restricts kit installs to an allowlist of sources
 that defaults to Docker Hub only. See
-[Restrict kit sources](../customize/kits.md#restrict-kit-sources).
+[Restrict kit sources](manuals/ai/sandboxes/customize/use-kits.md#restrict-kit-sources).
 @z
 
 @x

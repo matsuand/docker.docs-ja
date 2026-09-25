@@ -40,9 +40,13 @@ discard.
 @z
 
 @x
-In this tutorial, you'll move an existing coding-agent workflow into a sandbox.
+In this tutorial, you'll move an existing coding-agent workflow into a local
+sandbox. For a cloud workflow, see
+[Get started with cloud sandboxes](/manuals/ai/sandboxes/cloud/_index.md#get-started).
 @y
-In this tutorial, you'll move an existing coding-agent workflow into a sandbox.
+In this tutorial, you'll move an existing coding-agent workflow into a local
+sandbox. For a cloud workflow, see
+[Get started with cloud sandboxes](/manuals/ai/sandboxes/cloud/_index.md#get-started).
 @z
 
 @x

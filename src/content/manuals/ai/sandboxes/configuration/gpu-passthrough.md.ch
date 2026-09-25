@@ -24,11 +24,11 @@ keywords: docker sandboxes, sbx, gpu, gpu passthrough, nvidia, vfio, iommu, driv
 @z
 
 @x
-Docker Sandboxes supports GPU passthrough, which allows running
-workloads against a physical NVIDIA GPU.
+GPU passthrough in local Docker Sandboxes runs workloads on a physical NVIDIA
+GPU.
 @y
-Docker Sandboxes supports GPU passthrough, which allows running
-workloads against a physical NVIDIA GPU.
+GPU passthrough in local Docker Sandboxes runs workloads on a physical NVIDIA
+GPU.
 @z
 
 @x

@@ -2,13 +2,11 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x {{ define "renderChildren" }}
-  {{- range $section.Params.sidebar.groups }}
     <!--  Main titles -->
     <div class="navbar-group">
       <li class="navbar-group-font-title">
         {{ . }}
 @y
-  {{- range $section.Params.sidebar.groups }}
     <!--  Main titles -->
     <div class="navbar-group">
       <li class="navbar-group-font-title">

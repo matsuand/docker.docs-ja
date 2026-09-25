@@ -2,13 +2,12 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
+SUBDIRS = author
+
 bases = \
-	_index.md         \
-	build-an-agent.md \
-	kit-examples.md   \
-	kit-reference.md  \
-	kits.md           \
-	templates.md
+	_index.md   \
+	kits-v2.md  \
+	use-kits.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

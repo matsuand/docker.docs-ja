@@ -14,13 +14,10 @@ bases = \
 	sbx_create.yaml                      \
 	sbx_create_claude.yaml               \
 	sbx_create_codex.yaml                \
-	sbx_create_copilot.yaml              \
 	sbx_create_cursor.yaml               \
 	sbx_create_devin.yaml                \
 	sbx_create_docker-agent.yaml         \
-	sbx_create_droid.yaml                \
 	sbx_create_gemini.yaml               \
-	sbx_create_kiro.yaml                 \
 	sbx_create_opencode.yaml             \
 	sbx_create_shell.yaml                \
 	sbx_daemon.yaml                      \
@@ -70,6 +67,7 @@ bases = \
 	sbx_mcp_load.yaml                    \
 	sbx_mcp_ls.yaml                      \
 	sbx_mcp_rm.yaml                      \
+	sbx_move.yaml                        \
 	sbx_policy.yaml                      \
 	sbx_policy_allow.yaml                \
 	sbx_policy_allow_network.yaml        \

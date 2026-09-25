@@ -24,6 +24,14 @@ keywords: docker sandboxes, t3 code, remote ssh, remote development, sbx
 @z
 
 @x
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@y
+These connection instructions use a local sandbox. For cloud SSH setup, see
+[Connect with SSH](../cloud/usage.md#connect-with-ssh).
+@z
+
+@x
 T3 Code's SSH integration lets the desktop app drive coding agents inside a
 sandbox. T3 Code has no dedicated Docker Sandboxes integration — it treats the
 sandbox as an ordinary SSH host, connects to it, and starts a T3 server inside
@@ -124,13 +132,13 @@ $ sbx exec <sandbox> -- sh -lc 'command -v g++ && command -v make && command -v 
 @x
 A manual install lasts only until the sandbox is recreated, and the first
 connection still builds `node-pty` from source. For a setup that persists,
-recreate the sandbox with the [kit](../customize/kits.md) or a custom
-[template](../customize/templates.md).
+recreate the sandbox with the [v2 kit](../customize/kits-v2.md) or a custom
+[template](/manuals/ai/sandboxes/customize/author/base-images.md).
 @y
 A manual install lasts only until the sandbox is recreated, and the first
 connection still builds `node-pty` from source. For a setup that persists,
-recreate the sandbox with the [kit](../customize/kits.md) or a custom
-[template](../customize/templates.md).
+recreate the sandbox with the [v2 kit](../customize/kits-v2.md) or a custom
+[template](/manuals/ai/sandboxes/customize/author/base-images.md).
 @z
 
 @x

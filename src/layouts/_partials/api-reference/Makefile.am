@@ -5,7 +5,8 @@
 bases = \
 	manual-link.html \
 	navigation.html  \
-	schema.html
+	schema.html      \
+	websocket.html
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

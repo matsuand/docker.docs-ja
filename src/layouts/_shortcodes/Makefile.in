@@ -276,6 +276,8 @@ copyfiles = \
 	inline-image.html               \
 	inline-image.markdown.md        \
 	interactive-diagram.markdown.md \
+	recipe-list.html                \
+	recipe-list.markdown.md         \
 	release-date.html               \
 	restricted.markdown.md          \
 	sectionlinks.html               \

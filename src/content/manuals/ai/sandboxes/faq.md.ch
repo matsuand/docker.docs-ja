@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: FAQ
@@ -18,41 +18,51 @@ keywords: docker sandboxes, sbx, faq, sign in, telemetry, clipboard, image paste
 @z
 
 @x
+Host integration and workspace instructions on this page describe local
+sandboxes. See [Local and cloud differences](cloud/local-vs-cloud.md) before
+adapting those workflows to the cloud.
+@y
+Host integration and workspace instructions on this page describe local
+sandboxes. See [Local and cloud differences](cloud/local-vs-cloud.md) before
+adapting those workflows to the cloud.
+@z
+
+@x
 ## Is Docker Sandboxes free? Can I use it commercially?
 @y
 ## Is Docker Sandboxes free? Can I use it commercially?
 @z
 
 @x
-Yes to both. The `sbx` CLI is free to use, including for commercial and
-professional work, with no per-seat fee. Install it, sign in with a free
-Docker account, and run sandboxes at no cost.
+The `sbx` CLI and local sandbox compute are free to use, including for
+commercial and professional work. Cloud sandbox compute uses a
+[pay-as-you-go subscription](/manuals/agentic-platform/signup.md#billing).
+Model-provider charges are separate from sandbox compute.
 @y
-Yes to both. The `sbx` CLI is free to use, including for commercial and
-professional work, with no per-seat fee. Install it, sign in with a free
-Docker account, and run sandboxes at no cost.
+The `sbx` CLI and local sandbox compute are free to use, including for
+commercial and professional work. Cloud sandbox compute uses a
+[pay-as-you-go subscription](manuals/agentic-platform/signup.md#billing).
+Model-provider charges are separate from sandbox compute.
 @z
 
 @x
-The only paid component is organization governance: centrally managed network,
+Organization governance for local sandboxes includes centrally managed network,
 filesystem, and MCP policies,
 [sign-in enforcement](governance/monitor-and-enforce/sign-in-enforcement.md),
 and [audit logs](governance/audit/). These
 [organization governance features](governance/) require a separate paid
 subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
-to get started. Everything else, including running agents in isolated
-sandboxes, is free.
+to get started.
 @y
-The only paid component is organization governance: centrally managed network,
+Organization governance for local sandboxes includes centrally managed network,
 filesystem, and MCP policies,
 [sign-in enforcement](governance/monitor-and-enforce/sign-in-enforcement.md),
 and [audit logs](governance/audit/). These
 [organization governance features](governance/) require a separate paid
 subscription —
 [contact Docker Sales](https://www.docker.com/products/ai-governance/#contact-sales)
-to get started. Everything else, including running agents in isolated
-sandboxes, is free.
+to get started.
 @z
 
 @x
@@ -105,13 +115,13 @@ Your Docker account email is only used for authentication, not marketing.
 
 @x
 Yes. Admins can centrally manage network, filesystem, and MCP policies. These
-controls apply to every sandbox in the organization. When organization
+controls apply to local sandboxes in the organization. When organization
 governance is active, only organization allow rules grant access: local allow
 rules set with `sbx policy` are no longer evaluated, while local deny rules
 still apply on top.
 @y
 Yes. Admins can centrally manage network, filesystem, and MCP policies. These
-controls apply to every sandbox in the organization. When organization
+controls apply to local sandboxes in the organization. When organization
 governance is active, only organization allow rules grant access: local allow
 rules set with `sbx policy` are no longer evaluated, while local deny rules
 still apply on top.
@@ -130,6 +140,14 @@ to get started.
 @z
 
 @x
+Cloud sandboxes use separate network policy configuration.
+See [Cloud network policy](cloud/network-policy.md) for cloud controls.
+@y
+Cloud sandboxes use separate network policy configuration.
+See [Cloud network policy](cloud/network-policy.md) for cloud controls.
+@z
+
+@x
 ## Which domains do I need to allow for Docker Sandboxes to work?
 @y
 ## Which domains do I need to allow for Docker Sandboxes to work?
@@ -138,11 +156,13 @@ to get started.
 @x
 If your organization restricts outbound network access with a firewall or
 proxy, add the following domains to your allowlist so that `sbx` can
-authenticate, pull images, and report diagnostics.
+authenticate, pull images, and report diagnostics for local sandboxes.
+Cloud operations also connect to `https://api.sandboxes-cloud.docker.com`.
 @y
 If your organization restricts outbound network access with a firewall or
 proxy, add the following domains to your allowlist so that `sbx` can
-authenticate, pull images, and report diagnostics.
+authenticate, pull images, and report diagnostics for local sandboxes.
+Cloud operations also connect to `https://api.sandboxes-cloud.docker.com`.
 @z
 
 @x
@@ -196,17 +216,19 @@ The `sbx` CLI collects basic usage data about CLI invocations:
 @z
 
 @x
-Docker Sandboxes doesn't monitor sessions, read your prompts, or access your
-code. Your code stays in the sandbox and on your host.
+CLI usage telemetry does not include your prompts or code. Cloud sandboxes
+execute on Docker-managed infrastructure, so files you transfer to them are
+stored in the cloud.
 @y
-Docker Sandboxes doesn't monitor sessions, read your prompts, or access your
-code. Your code stays in the sandbox and on your host.
+CLI usage telemetry does not include your prompts or code. Cloud sandboxes
+execute on Docker-managed infrastructure, so files you transfer to them are
+stored in the cloud.
 @z
 
 @x
-To opt out of all analytics, set the `SBX_NO_TELEMETRY` environment variable:
+To opt out of CLI usage analytics, set the `SBX_NO_TELEMETRY` environment variable:
 @y
-To opt out of all analytics, set the `SBX_NO_TELEMETRY` environment variable:
+To opt out of CLI usage analytics, set the `SBX_NO_TELEMETRY` environment variable:
 @z
 
 @x
@@ -286,45 +308,23 @@ interactively.
 @z
 
 @x
-To make approval prompts the default for every session, define a custom
-sandbox kit that overrides the agent's entrypoint to drop the
-permission-skipping flag. For example, a kit that launches Claude Code
-without `--dangerously-skip-permissions`:
+To make approval prompts the default for every session, create a v2 sandbox
+kit that extends the built-in agent and changes its launch options. See
+[Fork an existing agent](customize/kits-v2.md#fork-an-existing-agent)
+for a complete example.
 @y
-To make approval prompts the default for every session, define a custom
-sandbox kit that overrides the agent's entrypoint to drop the
-permission-skipping flag. For example, a kit that launches Claude Code
-without `--dangerously-skip-permissions`:
+To make approval prompts the default for every session, create a v2 sandbox
+kit that extends the built-in agent and changes its launch options. See
+[Fork an existing agent](customize/kits-v2.md#fork-an-existing-agent)
+for a complete example.
 @z
 
 @x
-```yaml {title="claude-safe/spec.yaml"}
-schemaVersion: "1"
-kind: sandbox
-name: claude-safe
-sandbox:
-  image: "docker/sandbox-templates:claude-code-docker"
-  entrypoint:
-    run: [claude]
-```
+For an environment built entirely with v3 kits, set the launch command in
+the workload's Dockerfile. See [Build a v3 agent kit](/manuals/ai/sandboxes/customize/author/build-an-agent.md).
 @y
-```yaml {title="claude-safe/spec.yaml"}
-schemaVersion: "1"
-kind: sandbox
-name: claude-safe
-sandbox:
-  image: "docker/sandbox-templates:claude-code-docker"
-  entrypoint:
-    run: [claude]
-```
-@z
-
-@x
-Run it with `sbx run ./claude-safe/`. See
-[Sandbox kits](customize/kits.md#sandbox-kits) for the full pattern.
-@y
-Run it with `sbx run ./claude-safe/`. See
-[Sandbox kits](customize/kits.md#sandbox-kits) for the full pattern.
+For an environment built entirely with v3 kits, set the launch command in
+the workload's Dockerfile. See [Build a v3 agent kit](manuals/ai/sandboxes/customize/author/build-an-agent.md).
 @z
 
 @x
@@ -360,12 +360,12 @@ in-progress task:
 @z
 
 @x
-Sandboxes don't import your complete user-level agent configuration. Hooks,
+Local sandboxes don't import your complete user-level agent configuration. Hooks,
 settings, and other files under directories such as `~/.claude` remain on the
 host. Project-level configuration in the working directory remains available
 inside the sandbox.
 @y
-Sandboxes don't import your complete user-level agent configuration. Hooks,
+Local sandboxes don't import your complete user-level agent configuration. Hooks,
 settings, and other files under directories such as `~/.claude` remain on the
 host. Project-level configuration in the working directory remains available
 inside the sandbox.
@@ -404,13 +404,13 @@ to host paths because a sandboxed agent can't follow them outside the sandbox.
 @z
 
 @x
-Yes, but it's off by default. Text paste already works, because the terminal
-sends it directly. Pasting an image or screenshot with `Ctrl+V` is different:
+In local sandboxes, image paste is off by default. Text paste works because the
+terminal sends it directly. Pasting an image or screenshot with `Ctrl+V` is different:
 the agent reads it from your host clipboard, and the sandbox blocks that access
 unless you opt in.
 @y
-Yes, but it's off by default. Text paste already works, because the terminal
-sends it directly. Pasting an image or screenshot with `Ctrl+V` is different:
+In local sandboxes, image paste is off by default. Text paste works because the
+terminal sends it directly. Pasting an image or screenshot with `Ctrl+V` is different:
 the agent reads it from your host clipboard, and the sandbox blocks that access
 unless you opt in.
 @z
@@ -478,15 +478,15 @@ $ sbx settings set clipboard.imagePaste false
 @z
 
 @x
-Yes. On Linux, `sbx` stores secrets in the Secret Service exposed by your
-desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
+Yes. For local sandboxes on Linux, `sbx` stores secrets in the Secret Service
+exposed by your desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
 WSL setups have no running Secret Service, so `sbx` falls back to a file under
 `$XDG_CONFIG_HOME/com.docker.sandboxes`, which defaults to
 `~/.config/com.docker.sandboxes` when `$XDG_CONFIG_HOME` is unset. No setup is
 required. When you store a secret on such a host, `sbx` prints a notice:
 @y
-Yes. On Linux, `sbx` stores secrets in the Secret Service exposed by your
-desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
+Yes. For local sandboxes on Linux, `sbx` stores secrets in the Secret Service
+exposed by your desktop keyring, such as GNOME Keyring or KDE Wallet. Headless servers and some
 WSL setups have no running Secret Service, so `sbx` falls back to a file under
 `$XDG_CONFIG_HOME/com.docker.sandboxes`, which defaults to
 `~/.config/com.docker.sandboxes` when `$XDG_CONFIG_HOME` is unset. No setup is

@@ -294,7 +294,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 SUBDIRS = compose docker-agent gordon mcp-catalog-and-toolkit model-runner \
-	sandboxes
+	sandboxes skills sandboxes-api
 
 all: all-recursive
 

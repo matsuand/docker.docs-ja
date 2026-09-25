@@ -75,13 +75,13 @@
       "product": "Docker Sandboxes",
       "title": "Sign and enforce trusted sandbox kits",
       "description": "Sign kits with cosign-compatible Sigstore signatures, verify keyless or key-based signatures, and reject kits outside a trusted-signer policy.",
-      "url": "/ai/sandboxes/customize/kits/#sign-and-verify-kits",
+      "url": "/ai/sandboxes/customize/kits-v2/#sign-and-verify-kits",
       "published": "2026-08-20",
 @y
       "product": "Docker Sandbox",
       "title": "信頼できるサンドボックスキットに署名して活用する",
       "description": "Sign kits with cosign-compatible Sigstore signatures, verify keyless or key-based signatures, and reject kits outside a trusted-signer policy.",
-      "url": "/ai/sandboxes/customize/kits/#sign-and-verify-kits",
+      "url": "/ai/sandboxes/customize/kits-v2/#sign-and-verify-kits",
       "published": "2026-08-20",
 @z
 

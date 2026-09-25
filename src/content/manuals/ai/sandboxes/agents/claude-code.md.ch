@@ -20,6 +20,16 @@ keywords: docker sandboxes, claude code, anthropic, ai agent, sbx, local models,
 @z
 
 @x
+The following instructions apply to local sandboxes. For cloud authentication
+and usage, see [Authenticate cloud agents](../cloud/credentials.md) and
+[Use cloud sandboxes](../cloud/usage.md).
+@y
+The following instructions apply to local sandboxes. For cloud authentication
+and usage, see [Authenticate cloud agents](../cloud/credentials.md) and
+[Use cloud sandboxes](../cloud/usage.md).
+@z
+
+@x
 Official documentation: [Claude Code](https://code.claude.com/docs)
 @y
 Official documentation: [Claude Code](https://code.claude.com/docs)
@@ -323,11 +333,11 @@ See [Git workflows](../workflows/git.md) for clone-mode details.
 
 @x
 The sandbox uses `docker/sandbox-templates:claude-code`. See
-[Templates](../customize/templates.md) to build your own image on top of
+[Base images](/manuals/ai/sandboxes/customize/author/base-images.md) to build your own image on top of
 this base.
 @y
 The sandbox uses `docker/sandbox-templates:claude-code`. See
-[Templates](../customize/templates.md) to build your own image on top of
+[Base images](manuals/ai/sandboxes/customize/author/base-images.md) to build your own image on top of
 this base.
 @z
 

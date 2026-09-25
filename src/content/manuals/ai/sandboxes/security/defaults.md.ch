@@ -18,6 +18,12 @@ keywords: docker sandboxes, security defaults, network policy, credentials, shar
 @z
 
 @x
+{{% include "sandboxes-local-scope.md" %}}
+@y
+{{% include "sandboxes-local-scope.md" %}}
+@z
+
+@x
 A sandbox created with `sbx run claude` and no additional flags has the
 following security posture.
 @y
@@ -33,14 +39,16 @@ following security posture.
 
 @x
 All outbound TCP traffic, including HTTP, HTTPS, and SSH, is blocked unless an
-explicit rule allows the destination. Direct external UDP and ICMP traffic is
-blocked at the network layer. DNS queries use the sandbox's internal resolver,
-which enforces network policy.
+explicit rule allows the destination. Outbound UDP is disabled by default. To
+use it, turn on the [experimental UDP feature](../governance/access-controls/local.md#allow-outbound-udp)
+and add UDP allow rules. ICMP is blocked. DNS queries use the sandbox's internal
+resolver, which enforces network policy.
 @y
 All outbound TCP traffic, including HTTP, HTTPS, and SSH, is blocked unless an
-explicit rule allows the destination. Direct external UDP and ICMP traffic is
-blocked at the network layer. DNS queries use the sandbox's internal resolver,
-which enforces network policy.
+explicit rule allows the destination. Outbound UDP is disabled by default. To
+use it, turn on the [experimental UDP feature](../governance/access-controls/local.md#allow-outbound-udp)
+and add UDP allow rules. ICMP is blocked. DNS queries use the sandbox's internal
+resolver, which enforces network policy.
 @z
 
 @x
@@ -202,13 +210,13 @@ policy configuration:
   skills store
 - Host Docker daemon
 - Direct network communication between sandboxes
-- Direct external UDP and ICMP connections
+- Direct external ICMP connections
 @y
 - Host filesystem access outside explicitly mounted workspaces and the shared
   skills store
 - Host Docker daemon
 - Direct network communication between sandboxes
-- Direct external UDP and ICMP connections
+- Direct external ICMP connections
 @z
 
 @x
