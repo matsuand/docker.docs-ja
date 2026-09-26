@@ -112,7 +112,7 @@ In this advanced setup:
 @z
 
 @x
-For more examples and information on using `model`, see [Use AI models in Compose](/manuals/ai/compose/models-and-compose.md)
+For more examples and information on using `model`, see [Use AI models in Compose](/manuals/compose/how-tos/models-and-compose.md)
 @y
-`model` の利用例や詳しい情報については [Compose における AI モデルの利用](manuals/ai/compose/models-and-compose.md) を参照してください。
+`model` の利用例や詳しい情報については [Compose における AI モデルの利用](manuals/compose/how-tos/models-and-compose.md) を参照してください。
 @z

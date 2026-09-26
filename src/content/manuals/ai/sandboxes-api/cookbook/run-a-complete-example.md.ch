@@ -38,15 +38,27 @@ Expand the complete example and copy the whole program into a file. Save it as `
 @z
 
 @x
-The program prints a verification URL and code when its first API request needs authentication. Open the URL, enter the code, and approve sign-in. Your terminal then shows the sandbox's name and `Hello from Docker Sandboxes`. The program checks the command's exit status and cleans up its sandbox before closing the client.
+The program prints a verification URL and code. Open the URL, enter the code, and approve sign-in. Your terminal then shows the sandbox's name and `Hello from Docker Sandboxes`. The program checks the command's exit status and attempts to delete its sandbox before closing the client.
 @y
-The program prints a verification URL and code when its first API request needs authentication. Open the URL, enter the code, and approve sign-in. Your terminal then shows the sandbox's name and `Hello from Docker Sandboxes`. The program checks the command's exit status and cleans up its sandbox before closing the client.
+The program prints a verification URL and code. Open the URL, enter the code, and approve sign-in. Your terminal then shows the sandbox's name and `Hello from Docker Sandboxes`. The program checks the command's exit status and attempts to delete its sandbox before closing the client.
 @z
 
 @x
-If authentication fails, check the steps in [Authenticate to Docker](connect-to-cloud-with-a-bearer-token.md). If creation is refused, check account access and [resource limits](work-within-the-limits.md). A timeout does not prove that an accepted sandbox was deleted; keep any sandbox name reported with a cleanup error so you can inspect it.
+The program waits for sign-in to finish or the verification code to expire. After sign-in, creating the sandbox and running the command share a five-minute time limit. Once the program receives the new sandbox's details, it allows another 30 seconds to delete that sandbox, even if a later step fails.
 @y
-If authentication fails, check the steps in [Authenticate to Docker](connect-to-cloud-with-a-bearer-token.md). If creation is refused, check account access and [resource limits](work-within-the-limits.md). A timeout does not prove that an accepted sandbox was deleted; keep any sandbox name reported with a cleanup error so you can inspect it.
+The program waits for sign-in to finish or the verification code to expire. After sign-in, creating the sandbox and running the command share a five-minute time limit. Once the program receives the new sandbox's details, it allows another 30 seconds to delete that sandbox, even if a later step fails.
+@z
+
+@x
+If sign-in fails, follow the steps in [Authenticate to Docker](connect-to-cloud-with-a-bearer-token.md). If sandbox creation fails, check account access and [resource limits](work-within-the-limits.md).
+@y
+If sign-in fails, follow the steps in [Authenticate to Docker](connect-to-cloud-with-a-bearer-token.md). If sandbox creation fails, check account access and [resource limits](work-within-the-limits.md).
+@z
+
+@x
+A creation timeout can occur after Docker creates the sandbox but before the program receives its details. In that case, the program cannot delete it. [List your sandboxes](page-through-and-filter-lists.md) to check for a sandbox created by this run and [delete it](delete-a-cloud-sandbox.md) if needed. If deletion fails or times out, use the sandbox name printed in your terminal to check whether it still exists.
+@y
+A creation timeout can occur after Docker creates the sandbox but before the program receives its details. In that case, the program cannot delete it. [List your sandboxes](page-through-and-filter-lists.md) to check for a sandbox created by this run and [delete it](delete-a-cloud-sandbox.md) if needed. If deletion fails or times out, use the sandbox name printed in your terminal to check whether it still exists.
 @z
 
 @x
@@ -113,7 +125,11 @@ export async function main() {
   const client = new Sandboxes({ auth });
   let sandbox: Sandbox | undefined;
   try {
-    const operation = { timeoutMs: 300_000 };
+    await auth.getAccessToken();
+    const operation = {
+      signal: AbortSignal.timeout(300_000),
+      timeoutMs: 300_000,
+    };
     sandbox = await client.kits.launch(
       'shell',
       {
@@ -154,7 +170,11 @@ export async function main() {
   const client = new Sandboxes({ auth });
   let sandbox: Sandbox | undefined;
   try {
-    const operation = { timeoutMs: 300_000 };
+    await auth.getAccessToken();
+    const operation = {
+      signal: AbortSignal.timeout(300_000),
+      timeoutMs: 300_000,
+    };
     sandbox = await client.kits.launch(
       'shell',
       {

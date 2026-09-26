@@ -715,13 +715,13 @@ MCP servers:
 @z
 
 @x
-- [MCP Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md)
-- [MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
-- [MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [MCP Profiles](/manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md)
+- [MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md)
+- [MCP Catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Gateway](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
-- [MCP Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md)
-- [MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
-- [MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [MCP Profiles](manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md)
+- [MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md)
+- [MCP Catalog](manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Gateway](manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

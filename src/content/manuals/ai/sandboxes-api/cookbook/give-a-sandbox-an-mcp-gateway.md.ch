@@ -38,9 +38,9 @@ Supply the server IDs in the kit's MCP options when creating the sandbox. This m
 @z
 
 @x
-Use this creation-time path for Cloud Sandboxes. Adding a gateway after creation can be rejected for a governed sandbox; recreating it with MCP configured avoids that limitation.
+To add a gateway to an existing sandbox, recreate the sandbox with MCP configured. There is no separate gateway start or stop operation.
 @y
-Use this creation-time path for Cloud Sandboxes. Adding a gateway after creation can be rejected for a governed sandbox; recreating it with MCP configured avoids that limitation.
+To add a gateway to an existing sandbox, recreate the sandbox with MCP configured. There is no separate gateway start or stop operation.
 @z
 
 @x
@@ -150,107 +150,15 @@ export async function launchMcpKit(
 @z
 
 @x
-## Alternatively, start a gateway after creation {#2-alternatively-start-a-gateway-after-creation}
+## Read the gateway address {#2-read-the-gateway-address}
 @y
-## Alternatively, start a gateway after creation {#2-alternatively-start-a-gateway-after-creation}
+## Read the gateway address {#2-read-the-gateway-address}
 @z
 
 @x
-For an existing sandbox that supports gateway creation, use its MCP collection and wait until the gateway is ready. The sandbox must already have the required Docker credential. If startup is refused, do not assume that retrying will add missing credentials or change its policy configuration.
+Read the gateway by its `sandboxes/{sandbox}/mcp-gateway` name. The example waits through provisioning with the SDK's bounded waiter and returns the URL only when ready. A failed gateway or an expired wait returns an error. Supply a timeout appropriate for your application.
 @y
-For an existing sandbox that supports gateway creation, use its MCP collection and wait until the gateway is ready. The sandbox must already have the required Docker credential. If startup is refused, do not assume that retrying will add missing credentials or change its policy configuration.
-@z
-
-@x
-Inspect the returned server list and skipped-server reasons. A ready gateway does not guarantee that every requested server was accepted.
-@y
-Inspect the returned server list and skipped-server reasons. A ready gateway does not guarantee that every requested server was accepted.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="TypeScript" >}}
-@y
-{{< tabs >}}
-{{< tab name="TypeScript" >}}
-@z
-
-@x
-```typescript
-const gateway = await sandbox.mcp.start({ servers, static: true });
-return gateway.waitUntilReady({ timeoutMs: 120_000 });
-```
-@y
-```typescript
-const gateway = await sandbox.mcp.start({ servers, static: true });
-return gateway.waitUntilReady({ timeoutMs: 120_000 });
-```
-@z
-
-@x
-<details>
-<summary>Complete TypeScript example: mcp/start.ts</summary>
-@y
-<details>
-<summary>Complete TypeScript example: mcp/start.ts</summary>
-@z
-
-@x
-```typescript
-import type { Sandboxes } from '@docker/sandboxes';
-@y
-```typescript
-import type { Sandboxes } from '@docker/sandboxes';
-@z
-
-@x
-export async function startMcpGateway(
-  client: Sandboxes,
-  name: string,
-  servers: string[],
-) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  const gateway = await sandbox.mcp.start({ servers, static: true });
-  return gateway.waitUntilReady({ timeoutMs: 120_000 });
-}
-```
-@y
-export async function startMcpGateway(
-  client: Sandboxes,
-  name: string,
-  servers: string[],
-) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  const gateway = await sandbox.mcp.start({ servers, static: true });
-  return gateway.waitUntilReady({ timeoutMs: 120_000 });
-}
-```
-@z
-
-@x
-</details>
-@y
-</details>
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
-## Read the gateway address {#3-read-the-gateway-address}
-@y
-## Read the gateway address {#3-read-the-gateway-address}
-@z
-
-@x
-Get the gateway and use its returned URL only when it is ready. The example checks readiness before returning the URL.
-@y
-Get the gateway and use its returned URL only when it is ready. The example checks readiness before returning the URL.
+Read the gateway by its `sandboxes/{sandbox}/mcp-gateway` name. The example waits through provisioning with the SDK's bounded waiter and returns the URL only when ready. A failed gateway or an expired wait returns an error. Supply a timeout appropriate for your application.
 @z
 
 @x
@@ -269,16 +177,34 @@ Keep gateway credentials private. The gateway's address and the published URL of
 
 @x
 ```typescript
-const gateway = await sandbox.mcp.get();
-if (gateway.state !== 'ready' || !gateway.url)
+const deadline = AbortSignal.timeout(options.timeoutMs);
+const signal = options.signal
+  ? AbortSignal.any([options.signal, deadline])
+  : deadline;
+options = { ...options, signal };
+const observed = await client.getMcpGateway({ name }, options);
+const gateway = await client
+  .mcpGateway(observed)
+  .waitFor(['ready', 'failed'], options);
+if (gateway.state !== 'ready')
   throw new Error('MCP gateway is not ready');
+if (!gateway.url) throw new Error('The ready MCP gateway has no URL');
 return gateway.url;
 ```
 @y
 ```typescript
-const gateway = await sandbox.mcp.get();
-if (gateway.state !== 'ready' || !gateway.url)
+const deadline = AbortSignal.timeout(options.timeoutMs);
+const signal = options.signal
+  ? AbortSignal.any([options.signal, deadline])
+  : deadline;
+options = { ...options, signal };
+const observed = await client.getMcpGateway({ name }, options);
+const gateway = await client
+  .mcpGateway(observed)
+  .waitFor(['ready', 'failed'], options);
+if (gateway.state !== 'ready')
   throw new Error('MCP gateway is not ready');
+if (!gateway.url) throw new Error('The ready MCP gateway has no URL');
 return gateway.url;
 ```
 @z
@@ -293,27 +219,51 @@ return gateway.url;
 
 @x
 ```typescript
-import type { Sandboxes } from '@docker/sandboxes';
+import type { Sandboxes, WaitOptions } from '@docker/sandboxes';
 @y
 ```typescript
-import type { Sandboxes } from '@docker/sandboxes';
+import type { Sandboxes, WaitOptions } from '@docker/sandboxes';
 @z
 
 @x
-export async function readGatewayUrl(client: Sandboxes, name: string) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  const gateway = await sandbox.mcp.get();
-  if (gateway.state !== 'ready' || !gateway.url)
+export async function readGatewayUrl(
+  client: Sandboxes,
+  name: string,
+  options: WaitOptions = { timeoutMs: 120_000 },
+) {
+  const deadline = AbortSignal.timeout(options.timeoutMs);
+  const signal = options.signal
+    ? AbortSignal.any([options.signal, deadline])
+    : deadline;
+  options = { ...options, signal };
+  const observed = await client.getMcpGateway({ name }, options);
+  const gateway = await client
+    .mcpGateway(observed)
+    .waitFor(['ready', 'failed'], options);
+  if (gateway.state !== 'ready')
     throw new Error('MCP gateway is not ready');
+  if (!gateway.url) throw new Error('The ready MCP gateway has no URL');
   return gateway.url;
 }
 ```
 @y
-export async function readGatewayUrl(client: Sandboxes, name: string) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  const gateway = await sandbox.mcp.get();
-  if (gateway.state !== 'ready' || !gateway.url)
+export async function readGatewayUrl(
+  client: Sandboxes,
+  name: string,
+  options: WaitOptions = { timeoutMs: 120_000 },
+) {
+  const deadline = AbortSignal.timeout(options.timeoutMs);
+  const signal = options.signal
+    ? AbortSignal.any([options.signal, deadline])
+    : deadline;
+  options = { ...options, signal };
+  const observed = await client.getMcpGateway({ name }, options);
+  const gateway = await client
+    .mcpGateway(observed)
+    .waitFor(['ready', 'failed'], options);
+  if (gateway.state !== 'ready')
     throw new Error('MCP gateway is not ready');
+  if (!gateway.url) throw new Error('The ready MCP gateway has no URL');
   return gateway.url;
 }
 ```
@@ -334,9 +284,9 @@ export async function readGatewayUrl(client: Sandboxes, name: string) {
 @z
 
 @x
-## Add a catalog server {#4-add-a-catalog-server}
+## Add a catalog server {#3-add-a-catalog-server}
 @y
-## Add a catalog server {#4-add-a-catalog-server}
+## Add a catalog server {#3-add-a-catalog-server}
 @z
 
 @x
@@ -416,9 +366,9 @@ export async function addMcpGatewayServer(
 @z
 
 @x
-## Complete a server's sign-in {#5-complete-a-server-s-sign-in}
+## Complete a server's sign-in {#4-complete-a-server-s-sign-in}
 @y
-## Complete a server's sign-in {#5-complete-a-server-s-sign-in}
+## Complete a server's sign-in {#4-complete-a-server-s-sign-in}
 @z
 
 @x
@@ -431,6 +381,12 @@ Start authorization for a server that requires user sign-in. Present its authori
 Only an authorized result means the credential is ready. Keep the authorization identity so a later attempt is not mistaken for completion of an earlier one. Request reauthorization only when you intend a new sign-in.
 @y
 Only an authorized result means the credential is ready. Keep the authorization identity so a later attempt is not mistaken for completion of an earlier one. Request reauthorization only when you intend a new sign-in.
+@z
+
+@x
+Delete the sandbox when it is no longer needed. Its managed gateway is cleaned up with it; a shared gateway attached by URL remains available to its other users.
+@y
+Delete the sandbox when it is no longer needed. Its managed gateway is cleaned up with it; a shared gateway attached by URL remains available to its other users.
 @z
 
 @x
@@ -511,86 +467,6 @@ export async function getMcpAuthorization(
   name: string,
 ) {
   return client.mcp.authorizations.get(name);
-}
-```
-@z
-
-@x
-</details>
-@y
-</details>
-@z
-
-@x
-{{< /tab >}}
-{{< /tabs >}}
-@y
-{{< /tab >}}
-{{< /tabs >}}
-@z
-
-@x
-## Stop the gateway {#6-stop-the-gateway}
-@y
-## Stop the gateway {#6-stop-the-gateway}
-@z
-
-@x
-Stop the gateway when the sandbox no longer needs its tools. This does not delete the sandbox. Detaching from a shared gateway does not remove that gateway for its other users.
-@y
-Stop the gateway when the sandbox no longer needs its tools. This does not delete the sandbox. Detaching from a shared gateway does not remove that gateway for its other users.
-@z
-
-@x
-Existing agent processes may still hold old connection settings. Plan their restart or reconfiguration when changing the gateway.
-@y
-Existing agent processes may still hold old connection settings. Plan their restart or reconfiguration when changing the gateway.
-@z
-
-@x
-{{< tabs >}}
-{{< tab name="TypeScript" >}}
-@y
-{{< tabs >}}
-{{< tab name="TypeScript" >}}
-@z
-
-@x
-```typescript
-await sandbox.mcp.stop();
-```
-@y
-```typescript
-await sandbox.mcp.stop();
-```
-@z
-
-@x
-<details>
-<summary>Complete TypeScript example: mcp/stop.ts</summary>
-@y
-<details>
-<summary>Complete TypeScript example: mcp/stop.ts</summary>
-@z
-
-@x
-```typescript
-import type { Sandboxes } from '@docker/sandboxes';
-@y
-```typescript
-import type { Sandboxes } from '@docker/sandboxes';
-@z
-
-@x
-export async function stopMcpGateway(client: Sandboxes, name: string) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  await sandbox.mcp.stop();
-}
-```
-@y
-export async function stopMcpGateway(client: Sandboxes, name: string) {
-  const sandbox = await client.get(name.replace(/\/mcp-gateway$/, ''));
-  await sandbox.mcp.stop();
 }
 ```
 @z

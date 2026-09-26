@@ -340,11 +340,11 @@ Use the [`docker model run` command](__SUBDIR__/reference/cli/docker/model/run/)
 @x
 You can configure a model, such as its maximum token limit and more,
 use Docker Compose.
-See [Models and Compose - Model configuration options](../compose/models-and-compose.md#model-configuration-options).
+See [Models and Compose - Model configuration options](/manuals/compose/how-tos/models-and-compose.md#model-configuration-options).
 @y
 You can configure a model, such as its maximum token limit and more,
 use Docker Compose.
-See [Models and Compose - Model configuration options](../compose/models-and-compose.md#model-configuration-options).
+See [Models and Compose - Model configuration options](manuals/compose/how-tos/models-and-compose.md#model-configuration-options).
 @z
 
 @x
@@ -567,7 +567,7 @@ In Docker Desktop, to inspect the requests and responses for each model:
 - [Inference engines](./inference-engines.md) - llama.cpp and vLLM details
 - [IDE integrations](./ide-integrations.md) - Connect Cline, Continue, Cursor, and more
 - [Open WebUI integration](./openwebui-integration.md) - Set up a web chat interface
-- [Models and Compose](../compose/models-and-compose.md) - Use models in Compose applications
+- [Models and Compose](/manuals/compose/how-tos/models-and-compose.md) - Use models in Compose applications
 - [Docker Model Runner CLI reference](/reference/cli/docker/model) - Complete CLI documentation
 @y
 - [API reference](./api-reference.md) - OpenAI and Ollama-compatible API documentation
@@ -575,6 +575,6 @@ In Docker Desktop, to inspect the requests and responses for each model:
 - [Inference engines](./inference-engines.md) - llama.cpp and vLLM details
 - [IDE integrations](./ide-integrations.md) - Connect Cline, Continue, Cursor, and more
 - [Open WebUI integration](./openwebui-integration.md) - Set up a web chat interface
-- [Models and Compose](../compose/models-and-compose.md) - Use models in Compose applications
+- [Models and Compose](manuals/compose/how-tos/models-and-compose.md) - Use models in Compose applications
 - [Docker Model Runner CLI reference](__SUBDIR__/reference/cli/docker/model) - Complete CLI documentation
 @z

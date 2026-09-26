@@ -1,5 +1,5 @@
 ##
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
-SUBDIRS = compose docker-agent gordon mcp-catalog-and-toolkit model-runner \
-	sandboxes skills sandboxes-api
+
+SUBDIRS = docker-agent gordon model-runner sandboxes skills sandboxes-api

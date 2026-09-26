@@ -19,24 +19,24 @@ keywords: dynamic mcps, mcp discovery, mcp-find, mcp-add, code-mode, ai agents, 
 Dynamic MCP enables AI agents to discover and add MCP servers on-demand during
 a conversation, without manual configuration. Instead of pre-configuring every
 MCP server before starting your agent session, clients can search the
-[MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md) and add servers
+[MCP Catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) and add servers
 as needed.
 @y
 Dynamic MCP enables AI agents to discover and add MCP servers on-demand during
 a conversation, without manual configuration. Instead of pre-configuring every
 MCP server before starting your agent session, clients can search the
-[MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md) and add servers
+[MCP Catalog](manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) and add servers
 as needed.
 @z
 
 @x
 This capability is enabled automatically when you connect an MCP client to the
-[MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md). The gateway
+[MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md). The gateway
 provides a set of primordial tools that agents use to discover and manage
 servers during runtime.
 @y
 This capability is enabled automatically when you connect an MCP client to the
-[MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md). The gateway
+[MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md). The gateway
 provides a set of primordial tools that agents use to discover and manage
 servers during runtime.
 @z
@@ -119,14 +119,14 @@ restart or manual configuration.
 Dynamically added servers and tools are associated with your _current session
 only_. They're not persisted to your profile. When you start a new session,
 only servers you've added to your profile through the
-[MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md) or
-[Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) are available.
+[MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md) or
+[Profiles](/manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md) are available.
 @y
 Dynamically added servers and tools are associated with your _current session
 only_. They're not persisted to your profile. When you start a new session,
 only servers you've added to your profile through the
-[MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md) or
-[Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md) are available.
+[MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md) or
+[Profiles](manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md) are available.
 @z
 
 @x
@@ -142,20 +142,20 @@ To use Dynamic MCP, you need:
 @z
 
 @x
-- Docker Desktop version 4.50 or later, with [MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md) enabled
+- Docker Desktop version 4.50 or later, with [MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md) enabled
 - An LLM application that supports MCP (such as Claude Desktop, Visual Studio Code, or Claude Code)
 - Your client configured to connect to the MCP Gateway
 @y
-- Docker Desktop version 4.50 or later, with [MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md) enabled
+- Docker Desktop version 4.50 or later, with [MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md) enabled
 - An LLM application that supports MCP (such as Claude Desktop, Visual Studio Code, or Claude Code)
 - Your client configured to connect to the MCP Gateway
 @z
 
 @x
-See [Get started with Docker MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/get-started.md)
+See [Get started with Docker MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
 for setup instructions.
 @y
-See [Get started with Docker MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/get-started.md)
+See [Get started with Docker MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
 for setup instructions.
 @z
 

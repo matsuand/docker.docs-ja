@@ -4,11 +4,13 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
+url: /ai/mcp-catalog-and-toolkit/catalog/
 title: Docker MCP Catalog
 linkTitle: Catalog
 description: Browse Docker's curated collection of verified MCP servers, and create custom catalogs for your team or organization.
 keywords: docker hub, mcp, mcp servers, ai agents, catalog, custom catalog, docker
 @y
+url: /ai/mcp-catalog-and-toolkit/catalog/
 title: Docker MCP Catalog
 linkTitle: Catalog
 description: Browse Docker's curated collection of verified MCP servers, and create custom catalogs for your team or organization.
@@ -35,12 +37,12 @@ conflicts, setup complexity, and security concerns.
 
 @x
 The catalog serves as the source of available MCP servers. When you add servers
-to your [profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md), you select
+to your [profiles](/manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md), you select
 them from the catalog. Each server runs as an isolated container, making it
 portable and consistent across different environments.
 @y
 The catalog serves as the source of available MCP servers. When you add servers
-to your [profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md), you select
+to your [profiles](manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md), you select
 them from the catalog. Each server runs as an isolated container, making it
 portable and consistent across different environments.
 @z
@@ -299,11 +301,11 @@ its servers to your profiles.
 
 @x
 Creating and managing custom catalogs requires the CLI. See
-[Custom catalogs](/manuals/ai/mcp-catalog-and-toolkit/cli.md#custom-catalogs)
+[Custom catalogs](/manuals/desktop/features/mcp-catalog-and-toolkit/cli.md#custom-catalogs)
 in the CLI how-to for step-by-step instructions, including:
 @y
 Creating and managing custom catalogs requires the CLI. See
-[Custom catalogs](manuals/ai/mcp-catalog-and-toolkit/cli.md#custom-catalogs)
+[Custom catalogs](manuals/desktop/features/mcp-catalog-and-toolkit/cli.md#custom-catalogs)
 in the CLI how-to for step-by-step instructions, including:
 @z
 

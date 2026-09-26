@@ -233,13 +233,13 @@ define. Each agent:
 - Has its own context (agents don't share knowledge)
 - Can access built-in tools like todo lists, memory, and task delegation
 - Can use external tools via [MCP
-  servers](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+  servers](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
 - Uses its own model and parameters
 - Has its own context (agents don't share knowledge)
 - Can access built-in tools like todo lists, memory, and task delegation
 - Can use external tools via [MCP
-  servers](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+  servers](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z
 
 @x
@@ -348,7 +348,7 @@ it doesn't exist yet.
 - Browse example agent configurations in the [Docker Agent
   repository](https://github.com/docker/docker-agent/tree/main/examples)
 - Connect agents to external tools via the [Docker MCP
-  Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+  Gateway](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 - Read the full [configuration reference](./configuration/overview/index.md)
 @y
 - Follow the [quickstart](./getting-started/quickstart/index.md) to build your first agent
@@ -358,6 +358,6 @@ it doesn't exist yet.
 - Browse example agent configurations in the [Docker Agent
   repository](https://github.com/docker/docker-agent/tree/main/examples)
 - Connect agents to external tools via the [Docker MCP
-  Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+  Gateway](manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 - Read the full [configuration reference](./configuration/overview/index.md)
 @z

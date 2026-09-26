@@ -1446,9 +1446,9 @@ Controls whether users can access all Docker Desktop features that are in public
 @z
 
 @x
-Enables [Docker MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/_index.md) in Docker Desktop for AI model development workflows.
+Enables [Docker MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/_index.md) in Docker Desktop for AI model development workflows.
 @y
-Enables [Docker MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/_index.md) in Docker Desktop for AI model development workflows.
+Enables [Docker MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/_index.md) in Docker Desktop for AI model development workflows.
 @z
 
 @x

@@ -5,19 +5,20 @@
 SUBDIRS = environment-variables multiple-compose-files
 
 bases = \
-	_index.md            \
-	dependent-images.md  \
-	file-watch.md        \
-	gpu-support.md       \
-	init-containers.md   \
-	lifecycle.md         \
-	networking.md        \
-	oci-artifact.md      \
-	production.md        \
-	profiles.md          \
-	project-name.md      \
-	provider-services.md \
-	startup-order.md     \
+	_index.md             \
+	dependent-images.md   \
+	file-watch.md         \
+	gpu-support.md        \
+	init-containers.md    \
+	lifecycle.md          \
+	models-and-compose.md \
+	networking.md         \
+	oci-artifact.md       \
+	production.md         \
+	profiles.md           \
+	project-name.md       \
+	provider-services.md  \
+	startup-order.md      \
 	use-secrets.md
 
 include $(top_srcdir)/build-aux/common.mk

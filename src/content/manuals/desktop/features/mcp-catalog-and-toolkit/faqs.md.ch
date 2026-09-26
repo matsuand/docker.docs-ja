@@ -54,12 +54,12 @@ Currently, a majority of the servers in the catalog are built directly by Docker
 
 @x
 > [!NOTE]
-> When using the images with [Docker MCP gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
+> When using the images with [Docker MCP gateway](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
 --verify-signatures` CLI command.
 @y
 > [!NOTE]
-> When using the images with [Docker MCP gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md),
+> When using the images with [Docker MCP gateway](manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md),
 > you can verify attestations at runtime using the `docker mcp gateway run
 --verify-signatures` CLI command.
 @z
@@ -181,16 +181,16 @@ After the update completes, refresh the **Catalog** tab in Docker Desktop.
 @z
 
 @x
-The [catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md) is the source of
+The [catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) is the source of
 available MCP servers - a library of tools you can choose from.
-[Profiles](/manuals/ai/mcp-catalog-and-toolkit/profiles.md) are collections of
+[Profiles](/manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md) are collections of
 servers you've added to organize your work. Think of the catalog as a library,
 and profiles as your personal bookshelves containing the books you've selected
 for different purposes.
 @y
-The [catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md) is the source of
+The [catalog](manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) is the source of
 available MCP servers - a library of tools you can choose from.
-[Profiles](manuals/ai/mcp-catalog-and-toolkit/profiles.md) are collections of
+[Profiles](manuals/desktop/features/mcp-catalog-and-toolkit/profiles.md) are collections of
 servers you've added to organize your work. Think of the catalog as a library,
 and profiles as your personal bookshelves containing the books you've selected
 for different purposes.
@@ -281,9 +281,9 @@ different settings for different projects or environments.
 @z
 
 @x
-- [Get started with MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Open-source MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [Get started with MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
+- [Open-source MCP Gateway](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @y
-- [Get started with MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Open-source MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [Get started with MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
+- [Open-source MCP Gateway](manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 @z

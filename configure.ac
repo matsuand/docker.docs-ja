@@ -210,14 +210,11 @@ AC_CONFIG_FILES([
 	src/content/manuals/accounts/organization/setup/Makefile
 	src/content/manuals/agentic-platform/Makefile
 	src/content/manuals/ai/Makefile
-	src/content/manuals/ai/compose/Makefile
 	src/content/manuals/ai/docker-agent/Makefile
 	src/content/manuals/ai/gordon/Makefile
 	src/content/manuals/ai/gordon/concepts/Makefile
 	src/content/manuals/ai/gordon/images/Makefile
 	src/content/manuals/ai/gordon/how-to/Makefile
-	src/content/manuals/ai/mcp-catalog-and-toolkit/Makefile
-	src/content/manuals/ai/mcp-catalog-and-toolkit/images/Makefile
 	src/content/manuals/ai/model-runner/Makefile
 	src/content/manuals/ai/model-runner/images/Makefile
 	src/content/manuals/ai/sandboxes/Makefile
@@ -273,6 +270,8 @@ AC_CONFIG_FILES([
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
 	src/content/manuals/desktop/features/Makefile
+	src/content/manuals/desktop/features/mcp-catalog-and-toolkit/Makefile
+	src/content/manuals/desktop/features/mcp-catalog-and-toolkit/images/Makefile
 	src/content/manuals/desktop/features/networking/Makefile
 	src/content/manuals/desktop/features/wsl/Makefile
 	src/content/manuals/desktop/images/Makefile

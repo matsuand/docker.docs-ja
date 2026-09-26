@@ -2425,7 +2425,20 @@ paths:
       summary: GetNetworkPolicies returns effective and exact views of the same installed generation.
       description: GetNetworkPolicies returns effective and exact views of the same installed generation.
       operationId: getNetworkPoliciesInOwnerScope
-      parameters: []
+      parameters:
+        - name: acceptedSelectorVersions
+          in: query
+          description: Omitted versions accept only destination.v1; an unsupported representation fails closed.
+          schema:
+            type: array
+            items:
+              type: string
+              minLength: 1
+              description: ""
+            title: accepted_selector_versions
+            maxItems: 8
+            uniqueItems: true
+          required: false
       responses:
         "200":
           description: Success
@@ -2707,7 +2720,20 @@ paths:
       summary: GetNetworkPolicies returns effective and exact views of the same installed generation.
       description: GetNetworkPolicies returns effective and exact views of the same installed generation.
       operationId: getNetworkPoliciesInOwnerScope
-      parameters: []
+      parameters:
+        - name: acceptedSelectorVersions
+          in: query
+          description: Omitted versions accept only destination.v1; an unsupported representation fails closed.
+          schema:
+            type: array
+            items:
+              type: string
+              minLength: 1
+              description: ""
+            title: accepted_selector_versions
+            maxItems: 8
+            uniqueItems: true
+          required: false
       responses:
         "200":
           description: Success
@@ -4521,130 +4547,6 @@ paths:
         - mcpWrite
       x-sbx-conditional-permissions: []
       x-sbx-authenticated-only: false
-  /v1/sandboxes/{sandbox}/mcp-gateway/start:
-    post:
-      tags:
-        - MCP gateways
-      summary: StartMcpGateway ensures a gateway exists for the sandbox.
-      description: |-
-        StartMcpGateway ensures a gateway exists for the sandbox.
-        Action: a lifecycle transition is not a representation a caller can PUT.
-      operationId: startMcpGateway
-      parameters:
-        - name: sandbox
-          in: path
-          description: The sandbox id.
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                servers:
-                  type: array
-                  items:
-                    type: string
-                    minLength: 1
-                  description: servers are initial server names for a backend-minted gateway.
-                static:
-                  type: boolean
-                  description: static pins the requested server set and closes gateway-side discovery.
-                gatewayUrl:
-                  type:
-                    - string
-                    - "null"
-                  format: uri
-                  description: gateway_url attaches read-only to a pre-existing shareable gateway when supported.
-              title: StartMcpGatewayRequest
-              additionalProperties: false
-              description: |-
-                StartMcpGatewayRequest ensures a sandbox gateway exists.
-                servers must be empty when gateway_url is set
-        required: true
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: "#/components/schemas/McpGateway"
-                  - not:
-                      properties:
-                        state:
-                          enum:
-                            - provisioning
-                      required:
-                        - state
-        "202":
-          description: Accepted. The resource is still progressing; read it or follow its events until completion.
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: "#/components/schemas/McpGateway"
-                  - properties:
-                      state:
-                        enum:
-                          - provisioning
-                    required:
-                      - state
-        default:
-          description: The structured Error body identifies the failure with a stable code and optional typed details.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-      security:
-        - bearer: []
-      x-sbx-serving-surface: management
-      x-sbx-plane: control
-      x-sbx-required-permissions:
-        - mcpWrite
-      x-sbx-conditional-permissions: []
-      x-sbx-authenticated-only: false
-      x-sbx-resource-response:
-        $ref: "#/components/schemas/McpGateway"
-  /v1/sandboxes/{sandbox}/mcp-gateway/stop:
-    post:
-      tags:
-        - MCP gateways
-      summary: StopMcpGateway stops or detaches the gateway and succeeds when already absent.
-      description: |-
-        StopMcpGateway stops or detaches the gateway and succeeds when already absent.
-        Action: a lifecycle transition is not a representation a caller can PUT.
-      operationId: stopMcpGateway
-      parameters:
-        - name: sandbox
-          in: path
-          description: The sandbox id.
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/StopMcpGatewayResponse"
-        default:
-          description: The structured Error body identifies the failure with a stable code and optional typed details.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-      security:
-        - bearer: []
-      x-sbx-serving-surface: management
-      x-sbx-plane: control
-      x-sbx-required-permissions:
-        - mcpWrite
-      x-sbx-conditional-permissions: []
-      x-sbx-authenticated-only: false
   /v1/sandboxes/{sandbox}/network-policies:
     get:
       tags:
@@ -4659,6 +4561,19 @@ paths:
           required: true
           schema:
             type: string
+        - name: acceptedSelectorVersions
+          in: query
+          description: Omitted versions accept only destination.v1; an unsupported representation fails closed.
+          schema:
+            type: array
+            items:
+              type: string
+              minLength: 1
+              description: ""
+            title: accepted_selector_versions
+            maxItems: 8
+            uniqueItems: true
+          required: false
       responses:
         "200":
           description: Success
@@ -5228,130 +5143,6 @@ paths:
         - mcpWrite
       x-sbx-conditional-permissions: []
       x-sbx-authenticated-only: false
-  /v1/sandboxes/{sandbox}/mcp-gateway/start:
-    post:
-      tags:
-        - MCP gateways
-      summary: StartMcpGateway ensures a gateway exists for the sandbox.
-      description: |-
-        StartMcpGateway ensures a gateway exists for the sandbox.
-        Action: a lifecycle transition is not a representation a caller can PUT.
-      operationId: startMcpGateway
-      parameters:
-        - name: sandbox
-          in: path
-          description: The sandbox id.
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                servers:
-                  type: array
-                  items:
-                    type: string
-                    minLength: 1
-                  description: servers are initial server names for a backend-minted gateway.
-                static:
-                  type: boolean
-                  description: static pins the requested server set and closes gateway-side discovery.
-                gatewayUrl:
-                  type:
-                    - string
-                    - "null"
-                  format: uri
-                  description: gateway_url attaches read-only to a pre-existing shareable gateway when supported.
-              title: StartMcpGatewayRequest
-              additionalProperties: false
-              description: |-
-                StartMcpGatewayRequest ensures a sandbox gateway exists.
-                servers must be empty when gateway_url is set
-        required: true
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: "#/components/schemas/McpGateway"
-                  - not:
-                      properties:
-                        state:
-                          enum:
-                            - provisioning
-                      required:
-                        - state
-        "202":
-          description: Accepted. The resource is still progressing; read it or follow its events until completion.
-          content:
-            application/json:
-              schema:
-                allOf:
-                  - $ref: "#/components/schemas/McpGateway"
-                  - properties:
-                      state:
-                        enum:
-                          - provisioning
-                    required:
-                      - state
-        default:
-          description: The structured Error body identifies the failure with a stable code and optional typed details.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-      security:
-        - bearer: []
-      x-sbx-serving-surface: management
-      x-sbx-plane: control
-      x-sbx-required-permissions:
-        - mcpWrite
-      x-sbx-conditional-permissions: []
-      x-sbx-authenticated-only: false
-      x-sbx-resource-response:
-        $ref: "#/components/schemas/McpGateway"
-  /v1/sandboxes/{sandbox}/mcp-gateway/stop:
-    post:
-      tags:
-        - MCP gateways
-      summary: StopMcpGateway stops or detaches the gateway and succeeds when already absent.
-      description: |-
-        StopMcpGateway stops or detaches the gateway and succeeds when already absent.
-        Action: a lifecycle transition is not a representation a caller can PUT.
-      operationId: stopMcpGateway
-      parameters:
-        - name: sandbox
-          in: path
-          description: The sandbox id.
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: Success
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/StopMcpGatewayResponse"
-        default:
-          description: The structured Error body identifies the failure with a stable code and optional typed details.
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-      security:
-        - bearer: []
-      x-sbx-serving-surface: management
-      x-sbx-plane: control
-      x-sbx-required-permissions:
-        - mcpWrite
-      x-sbx-conditional-permissions: []
-      x-sbx-authenticated-only: false
   /v1/sandboxes/{sandbox}/network-policies:
     get:
       tags:
@@ -5366,6 +5157,19 @@ paths:
           required: true
           schema:
             type: string
+        - name: acceptedSelectorVersions
+          in: query
+          description: Omitted versions accept only destination.v1; an unsupported representation fails closed.
+          schema:
+            type: array
+            items:
+              type: string
+              minLength: 1
+              description: ""
+            title: accepted_selector_versions
+            maxItems: 8
+            uniqueItems: true
+          required: false
       responses:
         "200":
           description: Success
@@ -10938,6 +10742,13 @@ components:
         canCaptureMemory:
           type: boolean
           description: can_capture_memory is this sandbox's ALL snapshot support, independently set.
+        autoResume:
+          type:
+            - boolean
+            - "null"
+          description: |-
+            auto_resume is the configured authenticated auto-resume setting; absent means unknown.
+            Snapshot readback preserves the capture-time value, not current support or a resume guarantee.
       title: EffectiveCoreLifecycle
       required:
         - stopMemoryOutcome
@@ -11027,6 +10838,13 @@ components:
         canCaptureMemory:
           type: boolean
           description: can_capture_memory is this sandbox's ALL snapshot support, independently set.
+        autoResume:
+          type:
+            - boolean
+            - "null"
+          description: |-
+            auto_resume is the configured authenticated auto-resume setting; absent means unknown.
+            Snapshot readback preserves the capture-time value, not current support or a resume guarantee.
       title: EffectiveCoreLifecycle
       required:
         - stopMemoryOutcome
@@ -13388,12 +13206,14 @@ components:
           not:
             enum:
               - unspecified
-          description: kind selects a destination.v1 matching rule.
+          description: kind selects a matching rule; dnsLabelPrefix requires destination.v2.
           $ref: "#/components/schemas/ExactDestinationKind"
         value:
           type: string
           minLength: 1
-          description: value is canonical for its kind and contains no legacy selector syntax.
+          description: |-
+            For dnsLabelPrefix, crl.digicert.com matches a first label starting with crl
+            and remaining labels exactly digicert.com; every value label is canonical ASCII DNS.
         port:
           type:
             - integer
@@ -13405,7 +13225,9 @@ components:
       required:
         - kind
         - value
-      description: ExactDestination uses destination.v1 canonical selector values, never legacy glob syntax.
+      description: |-
+        ExactDestination uses canonical selector values, never legacy glob syntax.
+        dnsLabelPrefix requires a canonical DNS label prefix and suffix
     ExactDestinationKind:
       type: string
       title: ExactDestinationKind
@@ -13416,6 +13238,7 @@ components:
         - dnsSubtree
         - ip
         - cidr
+        - dnsLabelPrefix
       description: |-
         ExactDestinationKind keeps DNS and IP-literal decisions distinct.
 @y
@@ -13839,12 +13662,14 @@ components:
           not:
             enum:
               - unspecified
-          description: kind selects a destination.v1 matching rule.
+          description: kind selects a matching rule; dnsLabelPrefix requires destination.v2.
           $ref: "#/components/schemas/ExactDestinationKind"
         value:
           type: string
           minLength: 1
-          description: value is canonical for its kind and contains no legacy selector syntax.
+          description: |-
+            For dnsLabelPrefix, crl.digicert.com matches a first label starting with crl
+            and remaining labels exactly digicert.com; every value label is canonical ASCII DNS.
         port:
           type:
             - integer
@@ -13856,7 +13681,9 @@ components:
       required:
         - kind
         - value
-      description: ExactDestination uses destination.v1 canonical selector values, never legacy glob syntax.
+      description: |-
+        ExactDestination uses canonical selector values, never legacy glob syntax.
+        dnsLabelPrefix requires a canonical DNS label prefix and suffix
     ExactDestinationKind:
       type: string
       title: ExactDestinationKind
@@ -13867,6 +13694,7 @@ components:
         - dnsSubtree
         - ip
         - cidr
+        - dnsLabelPrefix
       description: |-
         ExactDestinationKind keeps DNS and IP-literal decisions distinct.
 @z
@@ -13879,6 +13707,7 @@ components:
         dnsSubtree
         ip
         cidr
+        dnsLabelPrefix
     ExactNetworkPolicy:
       type: object
       properties:
@@ -13888,8 +13717,10 @@ components:
           description: revision binds authority, configuration and resolved conditions to the installed generation.
         selectorVersion:
           type: string
+          enum:
+            - destination.v1
+            - destination.v2
           description: selector_version fixes matching semantics across implementations.
-          const: destination.v1
         nodes:
           type: array
           items:
@@ -13902,7 +13733,9 @@ components:
         - revision
         - selectorVersion
         - nodes
-      description: ExactNetworkPolicy is a complete consumer-installed generation; its last node is the root.
+      description: |-
+        ExactNetworkPolicy is a complete consumer-installed generation; its last node is the root.
+        dnsLabelPrefix requires destination.v2
     ExactPolicyConstant:
       type: string
       title: ExactPolicyConstant
@@ -13920,6 +13753,7 @@ components:
         dnsSubtree
         ip
         cidr
+        dnsLabelPrefix
     ExactNetworkPolicy:
       type: object
       properties:
@@ -13929,8 +13763,10 @@ components:
           description: revision binds authority, configuration and resolved conditions to the installed generation.
         selectorVersion:
           type: string
+          enum:
+            - destination.v1
+            - destination.v2
           description: selector_version fixes matching semantics across implementations.
-          const: destination.v1
         nodes:
           type: array
           items:
@@ -13943,7 +13779,9 @@ components:
         - revision
         - selectorVersion
         - nodes
-      description: ExactNetworkPolicy is a complete consumer-installed generation; its last node is the root.
+      description: |-
+        ExactNetworkPolicy is a complete consumer-installed generation; its last node is the root.
+        dnsLabelPrefix requires destination.v2
     ExactPolicyConstant:
       type: string
       title: ExactPolicyConstant
@@ -15681,8 +15519,7 @@ components:
       title: McpCreateSpec
       additionalProperties: false
       description: |-
-        McpCreateSpec is CreateSandboxRequest's MCP block: the StartMcpGateway
-        fields without the sandbox ref, wired before the workload starts.
+        McpCreateSpec configures the sandbox's MCP gateway before the workload starts.
         servers must be empty when gateway_url is set
     McpGateway:
       type: object
@@ -15838,8 +15675,7 @@ components:
       title: McpCreateSpec
       additionalProperties: false
       description: |-
-        McpCreateSpec is CreateSandboxRequest's MCP block: the StartMcpGateway
-        fields without the sandbox ref, wired before the workload starts.
+        McpCreateSpec configures the sandbox's MCP gateway before the workload starts.
         servers must be empty when gateway_url is set
     McpGateway:
       type: object
@@ -16892,10 +16728,6 @@ components:
       description: |-
         StartupExecution retains the accepted execution promise across fresh boots.
         It is ordinary create input.
-    StopMcpGatewayResponse:
-      type: object
-      title: StopMcpGatewayResponse
-      description: StopMcpGatewayResponse may retain the fenced desired configuration without claiming a live gateway.
     TokenSecretMaterial:
       type: object
       properties:
@@ -17095,10 +16927,6 @@ components:
       description: |-
         StartupExecution retains the accepted execution promise across fresh boots.
         It is ordinary create input.
-    StopMcpGatewayResponse:
-      type: object
-      title: StopMcpGatewayResponse
-      description: StopMcpGatewayResponse may retain the fenced desired configuration without claiming a live gateway.
     TokenSecretMaterial:
       type: object
       properties:

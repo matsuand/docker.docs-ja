@@ -608,14 +608,14 @@ The sandbox connected multiple MCP servers and orchestrated a workflow across No
 - [How to build an AI-powered code quality workflow with SonarQube and E2B](/guides/github-sonarqube-sandbox.md)
 - [Docker + E2B: Building the Future of Trusted AI](https://www.docker.com/blog/docker-e2b-building-the-future-of-trusted-ai/)
 - [Docker Sandboxes](/manuals/ai/sandboxes/_index.md)
-- [Docker MCP Toolkit and Catalog](/manuals/ai/mcp-catalog-and-toolkit/_index.md)
-- [Docker MCP Gateway](/manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [Docker MCP Toolkit and Catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/_index.md)
+- [Docker MCP Gateway](/manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 - [E2B MCP documentation](https://e2b.dev/docs/mcp)
 @y
 - [How to build an AI-powered code quality workflow with SonarQube and E2B](guides/github-sonarqube-sandbox.md)
 - [Docker + E2B: Building the Future of Trusted AI](https://www.docker.com/blog/docker-e2b-building-the-future-of-trusted-ai/)
 - [Docker Sandboxes](manuals/ai/sandboxes/_index.md)
-- [Docker MCP Toolkit and Catalog](manuals/ai/mcp-catalog-and-toolkit/_index.md)
-- [Docker MCP Gateway](manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md)
+- [Docker MCP Toolkit and Catalog](manuals/desktop/features/mcp-catalog-and-toolkit/_index.md)
+- [Docker MCP Gateway](manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md)
 - [E2B MCP documentation](https://e2b.dev/docs/mcp)
 @z

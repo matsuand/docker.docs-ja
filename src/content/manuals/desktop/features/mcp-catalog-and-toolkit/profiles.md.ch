@@ -44,14 +44,14 @@ your server configurations.
 @x
 A profile is a named collection of MCP servers with their configurations and
 settings. You select servers from the [MCP
-Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md) (the source of
+Catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) (the source of
 available servers) and add them to your profiles (your configured server
 collections for specific work). Think of the catalog as a library of tools, and
 profiles as your toolboxes organized for different jobs.
 @y
 A profile is a named collection of MCP servers with their configurations and
 settings. You select servers from the [MCP
-Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md) (the source of
+Catalog](manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md) (the source of
 available servers) and add them to your profiles (your configured server
 collections for specific work). Think of the catalog as a library of tools, and
 profiles as your toolboxes organized for different jobs.
@@ -315,11 +315,11 @@ From within a profile:
 
 @x
 If a server requires OAuth authentication, you're prompted to authorize it. See
-[OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
+[OAuth authentication](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
 for details.
 @y
 If a server requires OAuth authentication, you're prompted to authorize it. See
-[OAuth authentication](manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
+[OAuth authentication](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
 for details.
 @z
 
@@ -408,10 +408,10 @@ revoke and re-authorize between switching profiles.
 @z
 
 @x
-See [OAuth authentication](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
+See [OAuth authentication](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
 for details on authorizing servers.
 @y
-See [OAuth authentication](manuals/ai/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
+See [OAuth authentication](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md#oauth-authentication)
 for details on authorizing servers.
 @z
 
@@ -660,13 +660,13 @@ specify a different `--profile` value in the gateway command arguments.
 @z
 
 @x
-- [Get started with MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Use MCP Toolkit from the CLI](/manuals/ai/mcp-catalog-and-toolkit/cli.md)
-- [MCP Catalog](/manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [MCP Toolkit](/manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
+- [Get started with MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
+- [Use MCP Toolkit from the CLI](/manuals/desktop/features/mcp-catalog-and-toolkit/cli.md)
+- [MCP Catalog](/manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md)
 @y
-- [Get started with MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/get-started.md)
-- [Use MCP Toolkit from the CLI](manuals/ai/mcp-catalog-and-toolkit/cli.md)
-- [MCP Catalog](manuals/ai/mcp-catalog-and-toolkit/catalog.md)
-- [MCP Toolkit](manuals/ai/mcp-catalog-and-toolkit/toolkit.md)
+- [Get started with MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/get-started.md)
+- [Use MCP Toolkit from the CLI](manuals/desktop/features/mcp-catalog-and-toolkit/cli.md)
+- [MCP Catalog](manuals/desktop/features/mcp-catalog-and-toolkit/catalog.md)
+- [MCP Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/toolkit.md)
 @z

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md „É™„É≥„ÇØ„Å∏„ÅÆ (no slash) ÂØæÂøú
+% .md ÉäÉìÉNÇ÷ÇÃ (no slash) ëŒâû
 
 @x
 title: Build and run agentic AI applications with Docker
@@ -20,7 +20,7 @@ summary: |
 @x
   time: 30 minutes
 @y
-  time: 30 ÂàÜ
+  time: 30 minutes
 @z
 
 @x
@@ -121,22 +121,22 @@ shows how Docker ties them all together with the following tools:
 - [Docker Model Runner](../manuals/ai/model-runner/_index.md) lets you run LLMs
   locally with simple command and OpenAI-compatible APIs.
 - [Docker MCP Catalog and
-  Toolkit](../manuals/ai/mcp-catalog-and-toolkit/_index.md) helps you discover
+  Toolkit](../manuals/desktop/features/mcp-catalog-and-toolkit/_index.md) helps you discover
   and securely run external tools, like APIs and databases, using the Model
   Context Protocol (MCP).
-- [Docker MCP Gateway](../manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md) lets you orchestrate and manage MCP servers.
-- [Docker Compose](/manuals/ai/compose/models-and-compose.md) is the tool that ties it all
+- [Docker MCP Gateway](../manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md) lets you orchestrate and manage MCP servers.
+- [Docker Compose](/manuals/compose/how-tos/models-and-compose.md) is the tool that ties it all
   together, letting you define and run multi-container applications with a
   single file.
 @y
 - [Docker Model Runner](../manuals/ai/model-runner/_index.md) lets you run LLMs
   locally with simple command and OpenAI-compatible APIs.
 - [Docker MCP Catalog and
-  Toolkit](../manuals/ai/mcp-catalog-and-toolkit/_index.md) helps you discover
+  Toolkit](../manuals/desktop/features/mcp-catalog-and-toolkit/_index.md) helps you discover
   and securely run external tools, like APIs and databases, using the Model
   Context Protocol (MCP).
-- [Docker MCP Gateway](../manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md) lets you orchestrate and manage MCP servers.
-- [Docker Compose](/manuals/ai/compose/models-and-compose.md) is the tool that ties it all
+- [Docker MCP Gateway](../manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md) lets you orchestrate and manage MCP servers.
+- [Docker Compose](manuals/compose/how-tos/models-and-compose.md) is the tool that ties it all
   together, letting you define and run multi-container applications with a
   single file.
 @z
@@ -171,7 +171,7 @@ To follow this guide, you need to:
   - Storage: 2.31 GB
 @y
 - [Install Docker Desktop 4.43 or later](../get-started/get-docker.md)
-- [Enable Docker Model Runner](/manuals/ai/model-runner.md#enable-dmr-in-docker-desktop)
+- [Enable Docker Model Runner](manuals/ai/model-runner.md#enable-dmr-in-docker-desktop)
 - At least the following hardware specifications:
   - VRAM: 3.5 GB
   - Storage: 2.31 GB
@@ -829,22 +829,22 @@ that support agentic AI development:
 - [Docker Model Runner](../manuals/ai/model-runner/_index.md): Run and serve
   open-source models locally via OpenAI-compatible APIs.
 - [Docker MCP Catalog and
-  Toolkit](../manuals/ai/mcp-catalog-and-toolkit/_index.md): Launch and manage
+  Toolkit](../manuals/desktop/features/mcp-catalog-and-toolkit/_index.md): Launch and manage
   tool integrations that follow the Model Context Protocol (MCP) standard.
-- [Docker MCP Gateway](../manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md): Orchestrate and manage
+- [Docker MCP Gateway](../manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md): Orchestrate and manage
   MCP servers to connect agents to external tools and services.
-- [Docker Compose](/manuals/ai/compose/models-and-compose.md): Define and run
+- [Docker Compose](/manuals/compose/how-tos/models-and-compose.md): Define and run
   multi-container agentic AI applications with a single file, using the same
   workflow.
 @y
 - [Docker Model Runner](../manuals/ai/model-runner/_index.md): Run and serve
   open-source models locally via OpenAI-compatible APIs.
 - [Docker MCP Catalog and
-  Toolkit](../manuals/ai/mcp-catalog-and-toolkit/_index.md): Launch and manage
+  Toolkit](../manuals/desktop/features/mcp-catalog-and-toolkit/_index.md): Launch and manage
   tool integrations that follow the Model Context Protocol (MCP) standard.
-- [Docker MCP Gateway](../manuals/ai/mcp-catalog-and-toolkit/mcp-gateway.md): Orchestrate and manage
+- [Docker MCP Gateway](../manuals/desktop/features/mcp-catalog-and-toolkit/mcp-gateway.md): Orchestrate and manage
   MCP servers to connect agents to external tools and services.
-- [Docker Compose](/manuals/ai/compose/models-and-compose.md): Define and run
+- [Docker Compose](manuals/compose/how-tos/models-and-compose.md): Define and run
   multi-container agentic AI applications with a single file, using the same
   workflow.
 @z

@@ -98,9 +98,9 @@ drop-in tools.
 @z
 
 @x
-To learn more about MCP servers, see [MCP Catalog and Toolkit](../../ai/mcp-catalog-and-toolkit/_index.md).
+To learn more about MCP servers, see [MCP Catalog and Toolkit](/manuals/desktop/features/mcp-catalog-and-toolkit/_index.md).
 @y
-To learn more about MCP servers, see [MCP Catalog and Toolkit](../../ai/mcp-catalog-and-toolkit/_index.md).
+To learn more about MCP servers, see [MCP Catalog and Toolkit](manuals/desktop/features/mcp-catalog-and-toolkit/_index.md).
 @z
 
 @x

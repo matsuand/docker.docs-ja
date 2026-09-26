@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = networking wsl
+SUBDIRS = mcp-catalog-and-toolkit networking wsl
 
 bases = \
 	_index.md                    \

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: DMR examples
 description: Example projects and CI/CD workflows for Docker Model Runner.
@@ -458,7 +460,7 @@ jobs:
 @z
 
 @x
-- [Models and Compose](../compose/models-and-compose.md)
+- [Models and Compose](/manuals/compose/how-tos/models-and-compose.md)
 @y
-- [Models and Compose](../compose/models-and-compose.md)
+- [Models and Compose](manuals/compose/how-tos/models-and-compose.md)
 @z

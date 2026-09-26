@@ -138,9 +138,15 @@ export async function createWithAutoResume(
 @z
 
 @x
-Get the sandbox and inspect the effective automatic-resume value together with its state. This checks what the service recorded; it does not send a request to the application or prove that the application can start.
+Get the sandbox and inspect the effective lifecycle automatic-resume value together with its state. The example falls back to the timeout value for older responses and reports an error if neither value is present. An absent value is unknown, not disabled.
 @y
-Get the sandbox and inspect the effective automatic-resume value together with its state. This checks what the service recorded; it does not send a request to the application or prove that the application can start.
+Get the sandbox and inspect the effective lifecycle automatic-resume value together with its state. The example falls back to the timeout value for older responses and reports an error if neither value is present. An absent value is unknown, not disabled.
+@z
+
+@x
+This checks what the service recorded; it does not send a request to the application or prove that the application can start. Authentication is still required.
+@y
+This checks what the service recorded; it does not send a request to the application or prove that the application can start. Authentication is still required.
 @z
 
 @x
@@ -160,16 +166,28 @@ To verify the whole flow, stop the sandbox, request its published application UR
 @x
 ```typescript
 const sandbox = await client.get(name);
+const active =
+  sandbox.effectiveFeatures?.lifecycle?.autoResume ??
+  sandbox.effectiveFeatures?.timeouts?.autoResume;
+if (active == null) {
+  throw new Error(`sandbox ${name}: auto-resume setting is unknown`);
+}
 return {
-  autoResume: sandbox.effectiveFeatures?.timeouts?.autoResume ?? false,
+  autoResume: active,
   status: sandbox.status,
 };
 ```
 @y
 ```typescript
 const sandbox = await client.get(name);
+const active =
+  sandbox.effectiveFeatures?.lifecycle?.autoResume ??
+  sandbox.effectiveFeatures?.timeouts?.autoResume;
+if (active == null) {
+  throw new Error(`sandbox ${name}: auto-resume setting is unknown`);
+}
 return {
-  autoResume: sandbox.effectiveFeatures?.timeouts?.autoResume ?? false,
+  autoResume: active,
   status: sandbox.status,
 };
 ```
@@ -194,8 +212,14 @@ import type { Sandboxes } from '@docker/sandboxes';
 @x
 export async function autoResumeInForce(client: Sandboxes, name: string) {
   const sandbox = await client.get(name);
+  const active =
+    sandbox.effectiveFeatures?.lifecycle?.autoResume ??
+    sandbox.effectiveFeatures?.timeouts?.autoResume;
+  if (active == null) {
+    throw new Error(`sandbox ${name}: auto-resume setting is unknown`);
+  }
   return {
-    autoResume: sandbox.effectiveFeatures?.timeouts?.autoResume ?? false,
+    autoResume: active,
     status: sandbox.status,
   };
 }
@@ -203,8 +227,14 @@ export async function autoResumeInForce(client: Sandboxes, name: string) {
 @y
 export async function autoResumeInForce(client: Sandboxes, name: string) {
   const sandbox = await client.get(name);
+  const active =
+    sandbox.effectiveFeatures?.lifecycle?.autoResume ??
+    sandbox.effectiveFeatures?.timeouts?.autoResume;
+  if (active == null) {
+    throw new Error(`sandbox ${name}: auto-resume setting is unknown`);
+  }
   return {
-    autoResume: sandbox.effectiveFeatures?.timeouts?.autoResume ?? false,
+    autoResume: active,
     status: sandbox.status,
   };
 }
