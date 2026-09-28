@@ -11,65 +11,88 @@
         Choose an API to find connection guidance, operations, and data models.
       </p>
 @y
-      <p class="api-eyebrow">Developer reference</p>
-      <h1>Docker APIs</h1>
+      <p class="api-eyebrow">開発者リファレンス</p>
+      <h1>Docker API</h1>
       <p class="api-lead">
-        Build with Docker, from your local daemon to hosted services.
+        ローカルデーモンからホストサービスに向けて Docker 開発
       </p>
       <p>
-        Choose an API to find connection guidance, operations, and data models.
+        接続ガイド、操作、データモデルに従って API を検索
       </p>
+@z
+
+@x
+          <a class="api-card" href="{{ .url }}"
+@y
+          <a class="api-card" href="__SUBDIR__{{ .url }}"
 @z
 
 @x
                 Your daemon
 @y
-                Your daemon
+                デーモン
 @z
 @x
                 Hosted service
 @y
-                Hosted service
+                ホストサービス
 @z
 @x
             <p>API {{ .version }} · {{ len .operations }} operations</p>
             <span>Explore reference →</span></a
 @y
-            <p>API {{ .version }} · {{ len .operations }} operations</p>
-            <span>Explore reference →</span></a
+            <p>API {{ .version }} · {{ len .operations }} オペレーション</p>
+            <span>リファレンス詳細 →</span></a
+@z
+@x
+          <a class="api-card" href="{{ .url }}">
+@y
+          <a class="api-card" href="__SUBDIR__{{ .url }}">
 @z
 @x
                 Your daemon
 @y
-                Your daemon
+                デーモン
 @z
 @x
                 Hosted service
 @y
-                Hosted service
+                ホストサービス
+@z
+@x
+            <h2>{{ .title }}{{ if .experimental }}· Experimental{{ end }}</h2>
+@y
+            <h2>{{ .title }}{{ if .experimental }}· 試験的{{ end }}</h2>
 @z
 @x
             <span>Explore reference →</span>
 @y
-            <span>Explore reference →</span>
+            <span>リファレンス詳細 →</span>
 @z
 @x
         <a href="/reference/api/">APIs</a> /
+        <a href="{{ $api.url }}">{{ $api.title }}</a> /
 @y
-        <a href="/reference/api/">APIs</a> /
+        <a href="__SUBDIR__/reference/api/">API</a> /
+        <a href="__SUBDIR__{{ $api.url }}">{{ $api.title }}</a> /
 @z
 @x
           >API version
 @y
-          >API version
+          >API バージョン
+@z
+@x
+                  value="{{ .url }}"
+@y
+                  value="__SUBDIR__{{ .url }}"
 @z
 @x
         ><a href="{{ ref . $api.manual }}">Product manual</a
         ><a href="{{ $api.sourceURL }}">Download OpenAPI specification</a
         ><a href="{{ partial "utils/markdown-url.html" . }}">Markdown</a>
 @y
-        ><a href="{{ ref . $api.manual }}">Product manual</a
-        ><a href="{{ $api.sourceURL }}">Download OpenAPI specification</a
+        ><a href="{{ ref . $api.manual }}">製品マニュアル</a
+        ><a href="{{ $api.sourceURL }}">OpenAPI 仕様のダウンロード</a
         ><a href="{{ partial "utils/markdown-url.html" . }}">Markdown</a>
 @z
 @x

@@ -17,9 +17,9 @@ enableGitInfo: false
 disablePathToLower: true
 enableInlineShortcodes: true
 ignoreFiles:
-  - Makefile$
-  - Makefile\.sub$
-  - copyfiles\.sub$
+  - ".*Makefile$"
+  - ".*Makefile\\.sub$"
+  - ".*copyfiles\\.sub$"
 defaultContentLanguage: ja
 locale: 'ja-JP'
 @z
@@ -304,4 +304,18 @@ menus:
     - url: https://www.docker.com/newsletter-subscription
       name: ニュースレター
       parent: 会社情報
+@z
+
+@x
+      target: assets/css/highlight-github-dark.css
+@y
+      target: assets/css/highlight-github-dark.css
+
+    - source: layouts
+      target: layouts
+      files:
+        - "**"
+        - "!**/Makefile"
+        - "!**/Makefile.sub"
+        - "!**/copyfiles.sub"
 @z

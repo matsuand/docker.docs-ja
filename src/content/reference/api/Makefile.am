@@ -4,8 +4,8 @@
 SUBDIRS = ai-governance dvp engine extensions-sdk hub registry \
 	sandboxes
 
-copyfiles = \
+bases = \
 	_content.gotmpl
 
 include $(top_srcdir)/build-aux/common.mk
-include $(top_srcdir)/build-aux/copy.mk
+include $(top_srcdir)/build-aux/main.mk

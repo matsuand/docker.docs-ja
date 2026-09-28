@@ -4,11 +4,11 @@
 @x
   <a class="api-nav-back" href="/reference/api/">← API catalog</a>
 @y
-  <a class="api-nav-back" href="/reference/api/">← API catalog</a>
+  <a class="api-nav-back" href="__SUBDIR__/reference/api/">← API カタログ</a>
 @z
 
 @x
         >Overview</a
 @y
-        >Overview</a
+        >概要</a
 @z

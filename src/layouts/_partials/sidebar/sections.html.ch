@@ -12,3 +12,15 @@
       <li class="navbar-group-font-title">
         {{ T . }}
 @z
+
+@x
+        href="{{ .Params.sidebar.goto }}"
+@y
+        href="__SUBDIR__{{ .Params.sidebar.goto }}"
+@z
+
+@x
+        href="{{ .Permalink }}"
+@y
+        href="{{ .Permalink }}"
+@z
