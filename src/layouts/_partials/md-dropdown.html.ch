@@ -18,3 +18,9 @@
 @y
       <span>マークダウン参照</span>
 @z
+
+@x
+    const url = window.location.href.split("#")[0].replace(/\/$/, "");
+@y
+    const url = window.location.href.split("#")[0].replace(/\/$/, "/index");
+@z
