@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Local cache
 description: Manage build cache with a local directory
@@ -25,6 +27,18 @@ in a directory on your filesystem, using an
 for the underlying directory structure. Local cache is a good choice if you're
 just testing, or if you want the flexibility to self-manage a shared storage
 solution.
+@z
+
+@x
+This cache storage backend works with the default `docker` driver only when the
+[containerd image store](/manuals/desktop/features/containerd.md) is enabled. If
+the containerd image store isn't enabled, use a different driver. See
+[Build drivers](/manuals/build/builders/drivers/_index.md) for more information.
+@y
+This cache storage backend works with the default `docker` driver only when the
+[containerd image store](manuals/desktop/features/containerd.md) is enabled. If
+the containerd image store isn't enabled, use a different driver. See
+[Build drivers](manuals/build/builders/drivers/_index.md) for more information.
 @z
 
 @x

@@ -138,6 +138,18 @@ and the `daemon.json` file causes a conflict that prevents Docker from starting.
 @z
 
 @x
+> [!IMPORTANT]
+>
+> Setting `hosts` in the `daemon.json` isn't supported on Docker Desktop for
+> Windows or Docker Desktop for Mac.
+@y
+> [!IMPORTANT]
+>
+> Setting `hosts` in the `daemon.json` isn't supported on Docker Desktop for
+> Windows or Docker Desktop for Mac.
+@z
+
+@x
 1. Set the `hosts` array in the `/etc/docker/daemon.json` to connect to the Unix
    socket and an IP address, as follows:
 @y

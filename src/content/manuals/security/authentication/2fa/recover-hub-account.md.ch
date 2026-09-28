@@ -12,6 +12,12 @@ keywords: account recovery, two-factor authentication, 2FA, recovery code, docke
 @z
 
 @x
+{{< summary-bar feature_name="2FA" >}}
+@y
+{{< summary-bar feature_name="2FA" >}}
+@z
+
+@x
 This page explains how to recover your Docker account and manage recovery codes for two-factor authentication.
 @y
 This page explains how to recover your Docker account and manage recovery codes for two-factor authentication.
@@ -56,23 +62,13 @@ This generates a new code. Select the visibility icon to view the code. Save you
 @z
 
 @x
-If you lost access to both your two-factor authentication application and your recovery code:
+If you lost access to both your two-factor authentication application and your recovery code, you can't complete the normal sign-in process because you don't have the required 2FA verification code.
 @y
-If you lost access to both your two-factor authentication application and your recovery code:
+If you lost access to both your two-factor authentication application and your recovery code, you can't complete the normal sign-in process because you don't have the required 2FA verification code.
 @z
 
 @x
-1. Sign in to your [Docker account](https://app.docker.com/login) with your username and password.
-1. Select **I've lost my authentication device** and **I've lost my recovery code**.
-1. Complete the [Contact Support form](https://hub.docker.com/support/contact/?category=2fa-lockout).
+Complete the [Contact Support form](https://hub.docker.com/support/contact/?category=2fa-lockout) with the primary email address associated with your Docker ID and follow the recovery instructions provided by Docker Support.
 @y
-1. Sign in to your [Docker account](https://app.docker.com/login) with your username and password.
-1. Select **I've lost my authentication device** and **I've lost my recovery code**.
-1. Complete the [Contact Support form](https://hub.docker.com/support/contact/?category=2fa-lockout).
-@z
-
-@x
-You must enter the primary email address associated with your Docker ID in the Contact Support form for recovery instructions.
-@y
-You must enter the primary email address associated with your Docker ID in the Contact Support form for recovery instructions.
+Complete the [Contact Support form](https://hub.docker.com/support/contact/?category=2fa-lockout) with the primary email address associated with your Docker ID and follow the recovery instructions provided by Docker Support.
 @z

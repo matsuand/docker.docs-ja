@@ -3,6 +3,62 @@
 
 @x
       "product": "Docker Sandboxes",
+      "title": "Run sandboxes on Docker-managed cloud infrastructure",
+      "description": "Create and manage cloud sandboxes with the sbx CLI, including cloud-specific credentials, network policies, lifecycle controls, and transfers between local and cloud environments.",
+      "url": "/ai/sandboxes/cloud/",
+      "published": "2026-09-24",
+@y
+      "product": "Docker Sandboxes",
+      "title": "Run sandboxes on Docker-managed cloud infrastructure",
+      "description": "Create and manage cloud sandboxes with the sbx CLI, including cloud-specific credentials, network policies, lifecycle controls, and transfers between local and cloud environments.",
+      "url": "/ai/sandboxes/cloud/",
+      "published": "2026-09-24",
+@z
+
+@x
+      "product": "Docker Sandboxes",
+      "title": "Manage cloud sandboxes with the API and TypeScript SDK",
+      "description": "Create cloud sandboxes, run commands, transfer files, and manage images, snapshots, volumes, and secrets from applications and automated workflows.",
+      "url": "/ai/sandboxes-api/",
+      "published": "2026-09-24",
+@y
+      "product": "Docker Sandboxes",
+      "title": "Manage cloud sandboxes with the API and TypeScript SDK",
+      "description": "Create cloud sandboxes, run commands, transfer files, and manage images, snapshots, volumes, and secrets from applications and automated workflows.",
+      "url": "/ai/sandboxes-api/",
+      "published": "2026-09-24",
+@z
+
+@x
+      "product": "Docker Sandboxes",
+      "title": "Compose sandbox environments with kits v3",
+      "description": "Build sandbox environments from workload and mixin kits, combine them into reusable kit sets, and publish the result as a container image.",
+      "url": "/ai/sandboxes/customize/",
+      "published": "2026-09-24",
+@y
+      "product": "Docker Sandboxes",
+      "title": "Compose sandbox environments with kits v3",
+      "description": "Build sandbox environments from workload and mixin kits, combine them into reusable kit sets, and publish the result as a container image.",
+      "url": "/ai/sandboxes/customize/",
+      "published": "2026-09-24",
+@z
+
+@x
+      "product": "Docker Skills",
+      "title": "Give coding agents guidance with Docker Skills",
+      "description": "Install Docker's official open-source skills in compatible coding agents to give them guidance for Dockerfiles, Compose applications, and other Docker tasks.",
+      "url": "/ai/skills/",
+      "published": "2026-09-24",
+@y
+      "product": "Docker Skills",
+      "title": "Give coding agents guidance with Docker Skills",
+      "description": "Install Docker's official open-source skills in compatible coding agents to give them guidance for Dockerfiles, Compose applications, and other Docker tasks.",
+      "url": "/ai/skills/",
+      "published": "2026-09-24",
+@z
+
+@x
+      "product": "Docker Sandboxes",
       "title": "Share agent skills read-only by default",
       "description": "Sandboxes created with version 0.43.0 mount shared agent skills read-only by default. Choose read-only, read-write, or no access when creating a sandbox.",
       "url": "/ai/sandboxes/workflows/agent-skills/#shared-store-behavior",
@@ -55,88 +111,4 @@
       "description": "Buildx 0.37.0 includes the cloud driver, so you can connect to Docker Build Cloud from the standard Buildx CLI plugin without installing a separate client.",
       "url": "/build/builders/drivers/cloud/",
       "published": "2026-09-03",
-@z
-
-@x
-      "product": "Docker Verified Publisher",
-      "title": "Join Docker Verified Publisher through self-service plans",
-      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, consuming domains, and billing.",
-      "url": "/subscription-billing/plans/docker-verified-publisher/",
-      "published": "2026-08-20",
-@y
-      "product": "Docker 検証済みパブリッシャー",
-      "title": "セルフサービスプランを通じて Docker 検証済みパブリッシャーに参加する",
-      "description": "Apply for DVP Starter or Growth, complete checkout after approval, and manage publisher analytics, consuming domains, and billing.",
-      "url": "/subscription-billing/plans/docker-verified-publisher/",
-      "published": "2026-08-20",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Sign and enforce trusted sandbox kits",
-      "description": "Sign kits with cosign-compatible Sigstore signatures, verify keyless or key-based signatures, and reject kits outside a trusted-signer policy.",
-      "url": "/ai/sandboxes/customize/kits-v2/#sign-and-verify-kits",
-      "published": "2026-08-20",
-@y
-      "product": "Docker Sandbox",
-      "title": "信頼できるサンドボックスキットに署名して活用する",
-      "description": "Sign kits with cosign-compatible Sigstore signatures, verify keyless or key-based signatures, and reject kits outside a trusted-signer policy.",
-      "url": "/ai/sandboxes/customize/kits-v2/#sign-and-verify-kits",
-      "published": "2026-08-20",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Define reproducible sandbox environments",
-      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable sbxenv.yaml file and manage it with sbx env.",
-      "url": "/ai/sandboxes/configuration/environment-files/",
-      "published": "2026-08-19",
-@y
-      "product": "Docker Sandbox",
-      "title": "再生成可能なサンドボックス環境を定義する",
-      "description": "Capture an agent, workspaces, kits, credentials, ports, and resources in a shareable sbxenv.yaml file and manage it with sbx env.",
-      "url": "/ai/sandboxes/configuration/environment-files/",
-      "published": "2026-08-19",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Resolve sandbox secrets from external sources",
-      "description": "Keep references to 1Password, AWS Secrets Manager, or host commands in the secret store and resolve credentials on the host when the proxy needs them.",
-      "url": "/ai/sandboxes/configuration/credentials/#use-a-dynamic-secret-source",
-      "published": "2026-08-19",
-@y
-      "product": "Docker Sandboxes",
-      "title": "Resolve sandbox secrets from external sources",
-      "description": "Keep references to 1Password, AWS Secrets Manager, or host commands in the secret store and resolve credentials on the host when the proxy needs them.",
-      "url": "/ai/sandboxes/configuration/credentials/#use-a-dynamic-secret-source",
-      "published": "2026-08-19",
-@z
-
-@x
-      "product": "Docker Sandboxes",
-      "title": "Run GPU workloads in sandboxes",
-      "description": "Pass an NVIDIA GPU through to a sandbox on supported Linux hosts for GPU-accelerated agent workloads.",
-      "url": "/ai/sandboxes/configuration/gpu-passthrough/",
-      "published": "2026-08-19",
-@y
-      "product": "Docker Sandboxes",
-      "title": "Run GPU workloads in sandboxes",
-      "description": "Pass an NVIDIA GPU through to a sandbox on supported Linux hosts for GPU-accelerated agent workloads.",
-      "url": "/ai/sandboxes/configuration/gpu-passthrough/",
-      "published": "2026-08-19",
-@z
-
-@x
-      "product": "Docker Hardened Images",
-      "title": "Query DHI VEX data with the GraphQL API",
-      "description": "Build automation or dashboards that query image packages, CVEs, VEX statements, and suppressed vulnerabilities by digest.",
-      "url": "/dhi/tools/api/",
-      "published": "2026-08-17",
-@y
-      "product": "Docker Hardened Images",
-      "title": "Query DHI VEX data with the GraphQL API",
-      "description": "Build automation or dashboards that query image packages, CVEs, VEX statements, and suppressed vulnerabilities by digest.",
-      "url": "/dhi/tools/api/",
-      "published": "2026-08-17",
 @z
