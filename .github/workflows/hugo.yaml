@@ -64,6 +64,10 @@ jobs:
           sed -i -e "/baseURL:/s@docs.docker.com@matsuand.github.io/docker.docs-ja@g" \
                  -e "s@repo: https://github.com/docker/docs@repo: https://github.com/matsuand/docker.docs-ja@g" \
             hugo.yaml
+      - name: Download and Install vacuum CLI
+        run: |
+          curl -sSL https://github.com/daveshanley/vacuum/releases/download/v0.30.6/vacuum_0.30.6_linux_x86_64.tar.gz | tar -xz
+          mv vacuum /usr/local/bin/
       - name: Generate API docs
         run: |
           cd build/src
