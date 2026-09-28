@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% REF_NOT_FOUND エラーの暫定回避
+
 @x
 description: Frequently asked questions about Docker single sign-on, identity providers, user management, SSO enforcement, and domain verification
 keywords: Docker, Docker Hub, SSO FAQs, single sign-on, identity providers, IdP, SAML, Entra ID, user management, SCIM, JIT, administration, security, SSO enforcement, SSO domains, domain verification, DNS, TXT records
@@ -293,10 +295,10 @@ Docker SSO provides Just-in-Time (JIT) provisioning by default. Users are provis
 [SCIM](manuals/security/provisioning/scim/_index.md) provides full synchronization with users and groups. When using SCIM, the recommended configuration is to turn off JIT so all auto-provisioning is handled by SCIM.
 @z
 
-@x
+@x REF_NOT_FOUND エラーの暫定回避
 Additionally, you can use the [Docker Hub API](/reference/api/hub/latest.md) to complete this process.
 @y
-Additionally, you can use the [Docker Hub API](reference/api/hub/latest.md) to complete this process.
+Additionally, you can use the [Docker Hub API](__SUBDIR__/reference/api/hub/latest/) to complete this process.
 @z
 
 @x

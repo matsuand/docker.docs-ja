@@ -2,6 +2,7 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 % __SUBDIR__ 対応
+% REF_NOT_FOUND エラーの暫定回避
 
 @x
 description: Get an overview on Docker Hub to find and share container images
@@ -148,14 +149,14 @@ Key features of Docker Hub:
 * Trusted content featuring high-quality, secure images
 @z
 
-@x
+@x REF_NOT_FOUND エラーの暫定回避
 In addition to the graphical interface, you can interact with Docker Hub using
 the [Docker Hub API](../../reference/api/hub/latest.md), the experimental [Docker
 Hub CLI tool](https://github.com/docker/hub-tool#readme), or the [Docker Hub
 MCP server](/docker-hub/mcp-server/) for AI agent integrations.
 @y
 In addition to the graphical interface, you can interact with Docker Hub using
-the [Docker Hub API](../../reference/api/hub/latest.md), the experimental [Docker
+the [Docker Hub API](__SUBDIR__/reference/api/hub/latest/), the experimental [Docker
 Hub CLI tool](https://github.com/docker/hub-tool#readme), or the [Docker Hub
 MCP server](__SUBDIR__/docker-hub/mcp-server/) for AI agent integrations.
 @z

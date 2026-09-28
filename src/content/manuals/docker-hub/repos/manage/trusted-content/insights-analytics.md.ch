@@ -1,8 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md �����N�ւ� (no slash) �Ή�
-
+% .md リンクへの (no slash) 対応
+% REF_NOT_FOUND エラーの暫定回避
 @x
 title: Insights and analytics
 description: Discover how to access usage statistics of your images on Docker Hub
@@ -853,13 +853,13 @@ namespace contains extensions known in the marketplace, you will see an
 ### Exporting analytics data
 @z
 
-@x
+@x REF_NOT_FOUND エラーの暫定回避
 You can export the analytics data either from the web dashboard, or using the
 [DVP Data API](/reference/api/dvp/latest.md). All members of an organization
 have access to the analytics data.
 @y
 You can export the analytics data either from the web dashboard, or using the
-[DVP Data API](reference/api/dvp/latest.md). All members of an organization
+[DVP Data API](__SUBDIR__/reference/api/dvp/latest/). All members of an organization
 have access to the analytics data.
 @z
 
@@ -927,14 +927,14 @@ following these steps:
 #### Export data using the API
 @z
 
-@x
+@x REF_NOT_FOUND エラーの暫定回避
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
 using the API in the [DVP Data API documentation](/reference/api/dvp/latest.md).
 @y
 The HTTP API endpoints are available at:
 `https://hub.docker.com/api/publisher/analytics/v1`. Learn how to export data
-using the API in the [DVP Data API documentation](reference/api/dvp/latest.md).
+using the API in the [DVP Data API documentation](__SUBDIR__/reference/api/dvp/latest/).
 @z
 
 @x
