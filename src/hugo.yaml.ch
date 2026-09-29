@@ -314,8 +314,8 @@ menus:
     - source: layouts
       target: layouts
       files:
+        - "! **/Makefile"
+        - "! **/Makefile.sub"
+        - "! **/copyfiles.sub"
         - "**"
-        - "!**/Makefile"
-        - "!**/Makefile.sub"
-        - "!**/copyfiles.sub"
 @z
