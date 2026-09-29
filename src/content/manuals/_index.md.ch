@@ -16,15 +16,39 @@ keywords: docker, docs, manuals, products, user guides, how-to
 % ai-and-agents:
 
 @x
+  - title: Docker Agentic Platform
+    description: Run agents in cloud sandboxes with this experimental platform.
+    icon: cloud
+    link: /agentic-platform/
+@y
+  - title: Docker Agentic Platform
+    description: クラウド上のサンドボックスという実験的な環境においてエージェントを実行します。
+    icon: cloud
+    link: __SUBDIR__/agentic-platform/
+@z
+
+@x
   - title: Docker Sandboxes
     description: Run AI coding agents in isolated environments.
     icon: command-line
     link: /ai/sandboxes/
 @y
   - title: Docker Sandboxes
-    description: Run AI coding agents in isolated environments.
+    description: 分離された環境内において AI コーディングエージェントを実行します。
     icon: command-line
     link: __SUBDIR__/ai/sandboxes/
+@z
+
+@x
+  - title: Sandboxes API and SDK
+    description: Create and manage cloud sandboxes from your applications.
+    icon: code-bracket
+    link: /ai/sandboxes-api/
+@y
+  - title: Sandboxes API and SDK
+    description: アプリケーションからクラウドサンドボックスの生成と管理を行います。
+    icon: code-bracket
+    link: __SUBDIR__/ai/sandboxes-api/
 @z
 
 @x
@@ -34,7 +58,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /ai/mcp-catalog-and-toolkit/
 @y
   - title: MCP Catalog and Toolkit
-    description: Augment your AI workflow with MCP servers.
+    description: MCP サーバーを使用して AI ワークフローを強化します。
     icon: icons/toolkit.svg
     link: __SUBDIR__/ai/mcp-catalog-and-toolkit/
 @z
@@ -46,7 +70,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /ai/gordon/
 @y
   - title: Gordon
-    description: Streamline your workflow and get the most out of the Docker ecosystem with your personal AI assistant.
+    description: パーソナル AI アシスタントを使用してワークフローを合理化し、Docker エコシステムを最大限に活用します。
     icon: document-plus
     link: __SUBDIR__/ai/gordon/
 @z
@@ -58,7 +82,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /ai/model-runner/
 @y
   - title: Docker Model Runner
-    description: View and manage your local models.
+    description: ローカルモデルを表示し管理します。
     icon: icons/models.svg
     link: __SUBDIR__/ai/model-runner/
 @z
@@ -73,6 +97,18 @@ keywords: docker, docs, manuals, products, user guides, how-to
     description: タスクの実現をサポートするオープンソースのマルチエージェントソリューションです。
     icon: icons/cagent.svg
     link: __SUBDIR__/ai/docker-agent
+@z
+
+@x
+  - title: Docker Skills
+    description: Docker's official skills for AI coding agents.
+    icon: document-text
+    link: /ai/skills/
+@y
+  - title: Docker Skills
+    description: AI コーディングエージェントに向けた Docker の公式スキルです。
+    icon: document-text
+    link: __SUBDIR__/ai/skills/
 @z
 
 % application-development:
@@ -96,7 +132,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /offload/
 @y
   - title: Docker Offload
-    description: Build and run containers in the cloud.
+    description: クラウド上にコンテナーをビルドして実行します。
     icon: cloud
     link: __SUBDIR__/offload/
 @z
@@ -108,7 +144,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /build-cloud/
 @y
   - title: Docker Build Cloud
-    description: Build your images faster in the cloud.
+    description: クラウド上でイメージビルドをより高速に行います。
     icon: icons/logo-build-cloud.svg
     link: __SUBDIR__/build-cloud/
 @z
@@ -208,7 +244,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /accounts/
 @y
   - title: アカウント
-    description: Manage Docker individual and organization accounts.
+    description: Docker の個人および組織のアカウントを管理します。
     icon: user-circle
     link: __SUBDIR__/accounts/
 @z
@@ -220,7 +256,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /subscription-billing/
 @y
   - title: サブスクリプションと支払い
-    description: Manage Docker subscriptions, plans, billing, and payments.
+    description: Docker のサブスクリプション、プラン、支払いを管理します。
     icon: credit-card
     link: __SUBDIR__/subscription-billing/
 @z
@@ -232,7 +268,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /security/
 @y
   - title: セキュリティ
-    description: Security guardrails for both administrators and developers.
+    description: 管理者と開発者の双方に対するセキュリティガードレイルです。
     icon: lock-closed
     link: __SUBDIR__/security/
 @z
@@ -244,7 +280,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /faqs/
 @y
   - title: FAQ
-    description: Frequently asked questions about Docker accounts, organizations, companies, subscriptions, billing, and security.
+    description: Docker アカウント、組織、企業、サブスクリプション、支払い、セキュリティに関してのよくある質問です。
     icon: question-mark-circle
     link: __SUBDIR__/faqs/
 @z
@@ -256,7 +292,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /support/
 @y
   - title: サポート
-    description: Support options for paid subscriptions and community resources.
+    description: 有料サブスクリプションとコミュニティリソースのサポートオプションです。
     icon: chat-bubble-left
     link: __SUBDIR__/support/
 @z
@@ -268,7 +304,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /platform-release-notes/
 @y
   - title: リリースノート
-    description: Features, bug fixes, and breaking changes for Docker Home, billing, security, and subscriptions.
+    description: Docker ホーム、支払い、セキュリティ、サブスクリプションの機能、バグ修正、重大な変更を示します。
     icon: document-plus
     link: __SUBDIR__/platform-release-notes/
 @z
@@ -282,7 +318,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /enterprise/enterprise-deployment/
 @y
   - title: Deploy Docker Desktop
-    description: Deploy Docker Desktop at scale within your company
+    description: 社内に Docker Desktop を大規模導入します。
     icon: arrow-down-tray
     link: __SUBDIR__/enterprise/enterprise-deployment/
 @z
@@ -294,7 +330,7 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: /enterprise/security/hardened-desktop/
 @y
   - title: Hardened Docker Desktop
-    description: Security features that strengthen developer environments.
+    description: 開発環境のセキュリティを強化します。
     icon: shield-check
     link: __SUBDIR__/enterprise/security/hardened-desktop/
 @z
@@ -303,20 +339,19 @@ keywords: docker, docs, manuals, products, user guides, how-to
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
 @y
-This section contains user guides on how to install, set up, configure, and use
-Docker products.
+本節では Docker 製品に関するインストール、セットアップ、設定、利用についてのユーザーガイドを提供しています。
 @z
 
 @x
 ## AI and agents
 @y
-## AI and agents
+## AI とエージェント {#ai-and-agents}
 @z
 
 @x
 All the Docker AI tools in one easy-to-access location.
 @y
-All the Docker AI tools in one easy-to-access location.
+Docker AI ツールのすべてがアクセスしやすく１つにまとめられています。
 @z
 
 @x
@@ -328,13 +363,13 @@ All the Docker AI tools in one easy-to-access location.
 @x
 ## Application development
 @y
-## Application development
+## アプリケーション開発 {#application-development}
 @z
 
 @x
 End-to-end developer solutions for innovative teams.
 @y
-End-to-end developer solutions for innovative teams.
+核心的な開発チーム向けのエンドツーエンドの開発ソリューションです。
 @z
 
 @x
@@ -346,13 +381,13 @@ End-to-end developer solutions for innovative teams.
 @x
 ## Supply chain security
 @y
-## Supply chain security
+## サプライチェーンセキュリティ {#supply-chain-security}
 @z
 
 @x
 Security guardrails and image analysis for your software supply chain.
 @y
-Security guardrails and image analysis for your software supply chain.
+ソフトウェアサプライチェーンに対するセキュリティガードレイルやイメージ分析を実現します。
 @z
 
 @x
@@ -364,13 +399,13 @@ Security guardrails and image analysis for your software supply chain.
 @x
 ## Accounts and admin
 @y
-## Accounts and admin
+## アカウントと管理 {#accounts-and-admin}
 @z
 
 @x
 Manage Docker accounts, administration, subscriptions, billing, and security.
 @y
-Manage Docker accounts, administration, subscriptions, billing, and security.
+Docker アカウント、管理、サブスクリプション、支払い、セキュリティを管理します。
 @z
 
 @x
@@ -382,13 +417,13 @@ Manage Docker accounts, administration, subscriptions, billing, and security.
 @x
 ## Enterprise
 @y
-## Enterprise
+## エンタープライズ {#enterprise}
 @z
 
 @x
 Targeted at IT administrators with help on deploying Docker Desktop at scale with configuration guidance on security related features.
 @y
-Targeted at IT administrators with help on deploying Docker Desktop at scale with configuration guidance on security related features.
+IT 管理者を対象として、セキュリティ関連機能の設定ガイダンスや、Docker Desktop を大規模に展開するための支援を行います。
 @z
 
 @x
