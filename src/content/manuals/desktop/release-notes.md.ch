@@ -43,6 +43,292 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.93.0
+@y
+## 4.93.0
+@z
+
+@x
+{{< release-date date="2026-09-28" >}}
+@y
+{{< release-date date="2026-09-28" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.93.0" build_path="/240920/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.93.0" build_path="/240920/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Offload `v0.6.33`
+- [Docker Agent v1.141.0](https://github.com/docker/docker-agent/releases/tag/v1.141.0)
+- [Docker Engine v29.8.1](https://docs.docker.com/engine/release-notes/29/#2981)
+- Linux kernel `v7.0.14`
+@y
+- Docker Offload `v0.6.33`
+- [Docker Agent v1.141.0](https://github.com/docker/docker-agent/releases/tag/v1.141.0)
+- [Docker Engine v29.8.1](https://docs.docker.com/engine/release-notes/29/#2981)
+- Linux kernel `v7.0.14`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- CLI plugin updates are now managed directly from the app bundle and the **Automatically update components** setting has been removed.
+- Fixed Enhanced Container Isolation not being enforced on an engine that was left running while another one was in use.
+- Fixed Enhanced Container Isolation not being enforced when an administrator policy arrived after the engine had started.
+Fixed Enhanced Container Isolation not being enforced when the sign-in completed after the engine had started.
+- Fixed file sharing directories (and other list settings) reverting to their default after clearing them and restarting Docker Desktop. Fixes [docker/desktop-feedback#515](https://github.com/docker/desktop-feedback/issues/515).
+- Fixed a security vulnerability that allowed VM-side code to request Unix socket port forwards, which could expose arbitrary host paths to manipulation.
+- Fixed an issue where dismissing the walkthroughs lead-in on the **Containers** or **Images** screen was not reliably preserved across sessions.
+- Fixed a silent failure when Docker Desktop cannot open an external URL by showing an error notification, and fixed ephemeral error notifications incorrectly appearing as unread in the notification bell.
+- Fixed an issue where Docker Desktop continued showing Kubernetes as running after a cloud cluster stopped externally.
+- Fixed cluster reconnect failures in Kubernetes Offload mode and updated the cluster creation dialog to show only relevant kind cluster options when in Offload mode.
+- Fixed Docker Desktop failing to start with an unexpected error when the engine needed more than five minutes to recover after an unclean shutdown.
+- Updated the Linux kernel to 7.0.14, fixing MongoDB 8 containers refusing to start. Fixes [docker/desktop-feedback#682].
+@y
+- CLI plugin updates are now managed directly from the app bundle and the **Automatically update components** setting has been removed.
+- Fixed Enhanced Container Isolation not being enforced on an engine that was left running while another one was in use.
+- Fixed Enhanced Container Isolation not being enforced when an administrator policy arrived after the engine had started.
+Fixed Enhanced Container Isolation not being enforced when the sign-in completed after the engine had started.
+- Fixed file sharing directories (and other list settings) reverting to their default after clearing them and restarting Docker Desktop. Fixes [docker/desktop-feedback#515](https://github.com/docker/desktop-feedback/issues/515).
+- Fixed a security vulnerability that allowed VM-side code to request Unix socket port forwards, which could expose arbitrary host paths to manipulation.
+- Fixed an issue where dismissing the walkthroughs lead-in on the **Containers** or **Images** screen was not reliably preserved across sessions.
+- Fixed a silent failure when Docker Desktop cannot open an external URL by showing an error notification, and fixed ephemeral error notifications incorrectly appearing as unread in the notification bell.
+- Fixed an issue where Docker Desktop continued showing Kubernetes as running after a cloud cluster stopped externally.
+- Fixed cluster reconnect failures in Kubernetes Offload mode and updated the cluster creation dialog to show only relevant kind cluster options when in Offload mode.
+- Fixed Docker Desktop failing to start with an unexpected error when the engine needed more than five minutes to recover after an unclean shutdown.
+- Updated the Linux kernel to 7.0.14, fixing MongoDB 8 containers refusing to start. Fixes [docker/desktop-feedback#682].
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed the command-line installer removing the privileged `vmnetd` helper when run without `--user`.
+- Fixed a bug that could make Docker Desktop updates fail repeatedly when a leftover staging directory from a previous update couldn't be deleted.
+- Added a clear error message when macOS denies Docker Desktop the virtualization entitlement, for example due to an MDM configuration profile.
+- Fixed an issue where the Repair function showed no explanation when CLI plugins failed to be correctly set up.
+- Docker Desktop no longer overwrites a more recent CLI plugin installed under `~/.docker/cli-plugins`, matching existing Windows behavior.
+- Fixed "previous version restored" after a failed update even when the restore itself failed.
+@y
+- Fixed the command-line installer removing the privileged `vmnetd` helper when run without `--user`.
+- Fixed a bug that could make Docker Desktop updates fail repeatedly when a leftover staging directory from a previous update couldn't be deleted.
+- Added a clear error message when macOS denies Docker Desktop the virtualization entitlement, for example due to an MDM configuration profile.
+- Fixed an issue where the Repair function showed no explanation when CLI plugins failed to be correctly set up.
+- Docker Desktop no longer overwrites a more recent CLI plugin installed under `~/.docker/cli-plugins`, matching existing Windows behavior.
+- Fixed "previous version restored" after a failed update even when the restore itself failed.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Fixed an issue where MSI installs never added the installing user to the `docker-users` group, requiring manual group membership configuration.
+- Fixed an issue on Windows where update failures showed a generic error message instead of the actual installer error details.
+- Fixed a bug where a failed read of a WSL distro's `config.json` caused the distro agent to crash, disabled WSL integration, and prevented factory reset from cleaning up `~/.docker` properly.
+- Fixed an issue where the Docker CLI credential store in a WSL2 distro could be unexpectedly reset to the default on restart.
+- Fixed an unhelpful error message when WSL timed out registering the Docker Desktop Linux distribution.
+- Fixed spurious "WSL integration with distro unexpectedly stopped" dialogs when the Docker Desktop engine was being stopped or restarted.
+- Fixed a false "Virtualization support not detected" error when starting the WSL2 backend on Windows systems with Virtual Machine Platform enabled but the vfpext service absent.
+- Fixed a startup crash (exit code 151) on Windows when config files such as `settings-store.json` or `daemon.json` were saved with a UTF-8 BOM by an external editor or provisioning tool.
+- Fixed a WSL integration issue where the proxy could fatally timeout at startup when restoring persisted bind mounts, especially with non-default `wsl.conf` automount root configurations.
+@y
+- Fixed an issue where MSI installs never added the installing user to the `docker-users` group, requiring manual group membership configuration.
+- Fixed an issue on Windows where update failures showed a generic error message instead of the actual installer error details.
+- Fixed a bug where a failed read of a WSL distro's `config.json` caused the distro agent to crash, disabled WSL integration, and prevented factory reset from cleaning up `~/.docker` properly.
+- Fixed an issue where the Docker CLI credential store in a WSL2 distro could be unexpectedly reset to the default on restart.
+- Fixed an unhelpful error message when WSL timed out registering the Docker Desktop Linux distribution.
+- Fixed spurious "WSL integration with distro unexpectedly stopped" dialogs when the Docker Desktop engine was being stopped or restarted.
+- Fixed a false "Virtualization support not detected" error when starting the WSL2 backend on Windows systems with Virtual Machine Platform enabled but the vfpext service absent.
+- Fixed a startup crash (exit code 151) on Windows when config files such as `settings-store.json` or `daemon.json` were saved with a UTF-8 BOM by an external editor or provisioning tool.
+- Fixed a WSL integration issue where the proxy could fatally timeout at startup when restoring persisted bind mounts, especially with non-default `wsl.conf` automount root configurations.
+@z
+
+@x
+#### For Linux
+@y
+#### Linux 向け {#for-linux}
+@z
+
+@x
+- Docker Desktop no longer overwrites a more recent CLI plugin installed under `~/.docker/cli-plugins`, matching existing Windows behavior.
+@y
+- Docker Desktop no longer overwrites a more recent CLI plugin installed under `~/.docker/cli-plugins`, matching existing Windows behavior.
+@z
+
+@x
+## 4.92.0
+@y
+## 4.92.0
+@z
+
+@x
+{{< release-date date="2026-09-21" >}}
+@y
+{{< release-date date="2026-09-21" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.92.0" build_path="/240144/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.92.0" build_path="/240144/" >}}
+@z
+
+@x
+### Updates
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- [containerd v2.3.5](https://github.com/containerd/containerd/releases/tag/v2.3.5)
+- [Docker Agent v1.140.0](https://github.com/docker/docker-agent/releases/tag/v1.140.0)
+- [Docker Buildx v0.37.1](https://github.com/docker/buildx/releases/tag/v0.37.1)
+- Docker Offload `v0.6.27`
+@y
+- [containerd v2.3.5](https://github.com/containerd/containerd/releases/tag/v2.3.5)
+- [Docker Agent v1.140.0](https://github.com/docker/docker-agent/releases/tag/v1.140.0)
+- [Docker Buildx v0.37.1](https://github.com/docker/buildx/releases/tag/v0.37.1)
+- Docker Offload `v0.6.27`
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed published ports staying unreachable for the life of the container when the host port was momentarily busy.
+- Fixed in-app updates repeatedly failing when the update manifest contains no installer matching the current installation.
+- Fixed Kubernetes staying on "Starting Kubernetes" indefinitely when the cluster failed to initialize. The error is now reported.
+- Fixed **Send Diagnostics** hanging indefinitely, or showing an unhelpful error, when a proxy blocks the upload.
+- Fixed container start, stop, and restart failures in the Docker Desktop Dashboard reporting only a generic HTTP error instead of the reason reported by Docker Engine.
+- Fixed Docker Hub repository and tag browsing to use Docker Hub's current API, and removed the non-functional **Starred** and **Contributed** tabs from Docker Hub organization profiles.
+- Fixed an issue where users signed out before a Docker Desktop update were not prompted to sign in after the app restarted.
+- Fixed **Settings** section navigation to scroll to the selected section reliably, and added a divider between sections for easier visual parsing.
+- Improved Kubernetes cloud cluster management by hiding the `kubeadm` option in the cluster dialog and resetting the cluster mode to kind when the dialog closes.
+- Improved Ask Gordon so sessions start in the relevant project directory when launched from a volume or build history row, and added a banner that prompts you to select a project folder when chatting from an auto-generated scratch directory.
+- Fixed Ask Gordon file diffs: edits that share a near-identical text prefix, the summary bar overlapping your message when scrolling, and row backgrounds and column width in the edit tool-call view.
+- Fixed Ask Gordon chat: a blank command in the shell approval dialog, background job tool calls rendering as raw JSON, streamed command output jank, raw internal error details, and opening Ask Gordon from **Settings**, **Troubleshoot**, or **Support** corrupting drawer state for Ask Gordon, notifications, and the Learning Center.
+@y
+- Fixed published ports staying unreachable for the life of the container when the host port was momentarily busy.
+- Fixed in-app updates repeatedly failing when the update manifest contains no installer matching the current installation.
+- Fixed Kubernetes staying on "Starting Kubernetes" indefinitely when the cluster failed to initialize. The error is now reported.
+- Fixed **Send Diagnostics** hanging indefinitely, or showing an unhelpful error, when a proxy blocks the upload.
+- Fixed container start, stop, and restart failures in the Docker Desktop Dashboard reporting only a generic HTTP error instead of the reason reported by Docker Engine.
+- Fixed Docker Hub repository and tag browsing to use Docker Hub's current API, and removed the non-functional **Starred** and **Contributed** tabs from Docker Hub organization profiles.
+- Fixed an issue where users signed out before a Docker Desktop update were not prompted to sign in after the app restarted.
+- Fixed **Settings** section navigation to scroll to the selected section reliably, and added a divider between sections for easier visual parsing.
+- Improved Kubernetes cloud cluster management by hiding the `kubeadm` option in the cluster dialog and resetting the cluster mode to kind when the dialog closes.
+- Improved Ask Gordon so sessions start in the relevant project directory when launched from a volume or build history row, and added a banner that prompts you to select a project folder when chatting from an auto-generated scratch directory.
+- Fixed Ask Gordon file diffs: edits that share a near-identical text prefix, the summary bar overlapping your message when scrolling, and row backgrounds and column width in the edit tool-call view.
+- Fixed Ask Gordon chat: a blank command in the shell approval dialog, background job tool calls rendering as raw JSON, streamed command output jank, raw internal error details, and opening Ask Gordon from **Settings**, **Troubleshoot**, or **Support** corrupting drawer state for Ask Gordon, notifications, and the Learning Center.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed moving the disk image to another location being slow on macOS 26.
+- Fixed a macOS update failure where validating the staged app could fail even though the app was valid, and extended that validation to catch a staged app that fails to start.
+- Fixed excessive idle CPU usage on Retina displays caused by a badge animation in the Ask Gordon interface.
+@y
+- Fixed moving the disk image to another location being slow on macOS 26.
+- Fixed a macOS update failure where validating the staged app could fail even though the app was valid, and extended that validation to catch a staged app that fails to start.
+- Fixed excessive idle CPU usage on Retina displays caused by a badge animation in the Ask Gordon interface.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Added support for migrating admin, per-machine installations to per-user installations when running the Docker VMM backend, in addition to WSL 2.
+- Fixed an issue where Windows 10 users with the inbox `wsl.exe` saw a raw error instead of the prompt to update WSL when Docker Desktop checked the WSL version.
+- Fixed `host.docker.internal` and `gateway.docker.internal` not being injected into Windows containers after Docker Desktop lost the container event stream.
+- The MSI installer now refuses per-user installations, which are not supported, instead of installing a copy that later updates cannot upgrade.
+- Fixed a misleading error message that claimed the WSL disk image had been deleted when WSL could not open it while registering the Docker Desktop distribution.
+- Fixed Kubernetes failing to start after a WSL distro that had been integrated was unregistered.
+- Fixed single-file bind mounts on Docker VMM. The "not shared from the host" error now points at the file's containing directory, and a file entry in the **File sharing** settings no longer prevents the engine from starting.
+- Fixed Docker Desktop retrying the WSL engine indefinitely without reporting an error when WSL was unable to load its own kernel modules.
+- Fixed disk image location moves always failing when moving to a different drive. Fixes [docker/desktop-feedback#548](https://github.com/docker/desktop-feedback/issues/548) and [docker/desktop-feedback#550](https://github.com/docker/desktop-feedback/issues/550).
+- Fixed a failed incremental update not retrying with a full installer.
+- Fixed the WSL 2 cross-distro bind-mount proxy serving stale or incomplete directory contents for host paths on slow-to-mount drives, such as Storage Pool volumes.
+@y
+- Added support for migrating admin, per-machine installations to per-user installations when running the Docker VMM backend, in addition to WSL 2.
+- Fixed an issue where Windows 10 users with the inbox `wsl.exe` saw a raw error instead of the prompt to update WSL when Docker Desktop checked the WSL version.
+- Fixed `host.docker.internal` and `gateway.docker.internal` not being injected into Windows containers after Docker Desktop lost the container event stream.
+- The MSI installer now refuses per-user installations, which are not supported, instead of installing a copy that later updates cannot upgrade.
+- Fixed a misleading error message that claimed the WSL disk image had been deleted when WSL could not open it while registering the Docker Desktop distribution.
+- Fixed Kubernetes failing to start after a WSL distro that had been integrated was unregistered.
+- Fixed single-file bind mounts on Docker VMM. The "not shared from the host" error now points at the file's containing directory, and a file entry in the **File sharing** settings no longer prevents the engine from starting.
+- Fixed Docker Desktop retrying the WSL engine indefinitely without reporting an error when WSL was unable to load its own kernel modules.
+- Fixed disk image location moves always failing when moving to a different drive. Fixes [docker/desktop-feedback#548](https://github.com/docker/desktop-feedback/issues/548) and [docker/desktop-feedback#550](https://github.com/docker/desktop-feedback/issues/550).
+- Fixed a failed incremental update not retrying with a full installer.
+- Fixed the WSL 2 cross-distro bind-mount proxy serving stale or incomplete directory contents for host paths on slow-to-mount drives, such as Storage Pool volumes.
+@z
+
+@x
+### Security
+@y
+### セキュリティ {#security}
+@z
+
+@x
+- Updated containerd to `v2.3.5`, addressing [CVE-2026-53495](https://github.com/advisories/GHSA-7jxh-36q5-gcqv).
+@y
+- Updated containerd to `v2.3.5`, addressing [CVE-2026-53495](https://github.com/advisories/GHSA-7jxh-36q5-gcqv).
+@z
+
+@x
+### Known issues
+@y
+### 既知の問題 {#known-issues}
+@z
+
+@x
+- WSL integration can fail to start with `timed out waiting for ... to be automounted` when a distro's `wsl.conf` sets `[automount] root` to `/`, or after a container has bind-mounted a non-drive path under `/mnt`, such as WSLg's `/mnt/wslg`. As a workaround, downgrade to Docker Desktop 4.91.0, or remove the `root` setting from `wsl.conf` and run `wsl --shutdown`.
+@y
+- WSL integration can fail to start with `timed out waiting for ... to be automounted` when a distro's `wsl.conf` sets `[automount] root` to `/`, or after a container has bind-mounted a non-drive path under `/mnt`, such as WSLg's `/mnt/wslg`. As a workaround, downgrade to Docker Desktop 4.91.0, or remove the `root` setting from `wsl.conf` and run `wsl --shutdown`.
+@z
+
+@x
 ## 4.91.0
 @y
 ## 4.91.0
@@ -13779,9 +14065,9 @@ CVE-2021-44228](https://www.docker.com/blog/apache-log4j-2-cve-2021-44228/).
 @z
 
 @x
-- Docker Desktop on Apple silicon no longer requires Rosetta 2, with the exception of [three optional command line tools](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- Docker Desktop on Apple silicon no longer requires Rosetta 2, with the exception of three optional command line tools.
 @y
-- Docker Desktop on Apple silicon no longer requires Rosetta 2, with the exception of [three optional command line tools](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- Docker Desktop on Apple silicon no longer requires Rosetta 2, with the exception of three optional command line tools.
 @z
 
 @x

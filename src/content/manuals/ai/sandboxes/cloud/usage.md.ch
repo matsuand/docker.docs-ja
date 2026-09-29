@@ -742,6 +742,38 @@ Configure [cloud credentials](credentials.md) before adapting a local kit.
 @z
 
 @x
+Use `--kit-arg` or `--kit-args-file` with `sbx --cloud create` to pass
+arguments to kits supplied with `--kit`.
+For example, configure a v2 mixin that declares a `version` argument:
+@y
+Use `--kit-arg` or `--kit-args-file` with `sbx --cloud create` to pass
+arguments to kits supplied with `--kit`.
+For example, configure a v2 mixin that declares a `version` argument:
+@z
+
+% snip command...
+
+@x
+Replace the kit reference and argument with those from your kit's
+documentation. The `company-cli` prefix targets the kit by its repository
+name. Built-in agents such as `claude` require v2 mixins.
+@y
+Replace the kit reference and argument with those from your kit's
+documentation. The `company-cli` prefix targets the kit by its repository
+name. Built-in agents such as `claude` require v2 mixins.
+@z
+
+@x
+To load arguments from a file, pass `--kit-args-file <FILE>` with one
+`name=value` entry per line, such as `company-cli.version=1.2`. Values passed
+with `--kit-arg` override values from the file.
+@y
+To load arguments from a file, pass `--kit-args-file <FILE>` with one
+`name=value` entry per line, such as `company-cli.version=1.2`. Values passed
+with `--kit-arg` override values from the file.
+@z
+
+@x
 To declare reusable cloud configuration in a file, see
 [Use a cloud environment](../configuration/environment-files.md#use-a-cloud-environment).
 @y

@@ -64,6 +64,12 @@ Only builds from active, running builders are listed. Builds from removed or sto
 @z
 
 @x
+If Gordon is available, build history rows can offer AI-suggested questions, such as "Why did this build fail?"
+@y
+If Gordon is available, build history rows can offer AI-suggested questions, such as "Why did this build fail?"
+@z
+
+@x
 ### Builder settings
 @y
 ### Builder settings

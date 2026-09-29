@@ -28,9 +28,9 @@ Features and behavior may change. To begin, [activate your subscription](signup.
 @z
 
 @x
-- Added a **Kits** catalog with search, curated and community filters, and links
-  to Docker Hub. Selecting **Run** opens the sandbox launcher with the kit
-  selected.
+- Added a **Kits** catalog with search, kit format badges, Docker Hub details
+  when available, and links to Docker Hub. Selecting **Run** opens the sandbox
+  launcher with the kit selected.
 - Added public kit references in the launcher. Both the kit and its base image
   must be public.
 - Added Hermes and Antigravity as curated kits. Hermes uses Anthropic or
@@ -52,9 +52,9 @@ Features and behavior may change. To begin, [activate your subscription](signup.
 - Updated sandbox creation to show provisioning progress and resume tracking
   after a page reload.
 @y
-- Added a **Kits** catalog with search, curated and community filters, and links
-  to Docker Hub. Selecting **Run** opens the sandbox launcher with the kit
-  selected.
+- Added a **Kits** catalog with search, kit format badges, Docker Hub details
+  when available, and links to Docker Hub. Selecting **Run** opens the sandbox
+  launcher with the kit selected.
 - Added public kit references in the launcher. Both the kit and its base image
   must be public.
 - Added Hermes and Antigravity as curated kits. Hermes uses Anthropic or

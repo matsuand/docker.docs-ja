@@ -1,28 +1,64 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ å¯¾å¿œ / .md ãƒªãƒ³ã‚¯ã¸ã® (no slash) å¯¾å¿œ
+% __SUBDIR__ ‘Î‰ / .md ƒŠƒ“ƒN‚Ö‚Ì (no slash) ‘Î‰
 
 @x
 description: Understand what you can do with the Containers view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
 title: Explore the Containers view in Docker Desktop
+linkTitle: Containers
 @y
 description: Understand what you can do with the Containers view on Docker Dashboard
 keywords: Docker Dashboard, manage, containers, gui, dashboard, images, user manual
-title: Docker Desktop ã«ãŠã‘ã‚‹ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ç”»é¢ã®ç¢ºèª
+title: Docker Desktop ‚É‚¨‚¯‚éƒRƒ“ƒeƒi[‰æ–Ê‚ÌŠm”F
+linkTitle: ƒRƒ“ƒeƒi[
 @z
 
 @x
 The **Containers** view lists all running and stopped containers and applications. It provides a clean interface to manage the lifecycle of your containers, interact with running applications, and inspect Docker objectsâ€”including Docker Compose apps.
 @y
 The **Containers** view lists all running and stopped containers and applications. It provides a clean interface to manage the lifecycle of your containers, interact with running applications, and inspect Docker objectsâ€”including Docker Compose apps.
+@z
+
+@x
+## Toolbar and grid
+@y
+## Toolbar and grid
+@z
+
+@x
+Use the **Search** field to find a specific container or Compose project by name.
+@y
+Use the **Search** field to find a specific container or Compose project by name.
+@z
+
+@x
+The toolbar also lets you:
+@y
+The toolbar also lets you:
+@z
+
+@x
+- Toggle **Only show running containers** to hide stopped containers from the grid.
+- Customize the grid using the **Columns** button. You can show, hide, or reorder columns, including live stats like CPU %, memory usage/limit, memory %, disk read/write, network I/O, PIDs, and last-started time. Column choices persist between sessions.
+- Select multiple containers or Compose projects using the row checkboxes, then use the bulk actions toolbar to start, pause, stop, or delete everything selected at once.
+@y
+- Toggle **Only show running containers** to hide stopped containers from the grid.
+- Customize the grid using the **Columns** button. You can show, hide, or reorder columns, including live stats like CPU %, memory usage/limit, memory %, disk read/write, network I/O, PIDs, and last-started time. Column choices persist between sessions.
+- Select multiple containers or Compose projects using the row checkboxes, then use the bulk actions toolbar to start, pause, stop, or delete everything selected at once.
+@z
+
+@x
+Compose apps are grouped in the grid with an expand/collapse control. Selecting a project's checkbox selects or deselects all of its containers together.
+@y
+Compose apps are grouped in the grid with an expand/collapse control. Selecting a project's checkbox selects or deselects all of its containers together.
 @z
 
 @x
 ## Container actions
 @y
-## Container actions {#container-actions}
+## Container actions
 @z
 
 @x
@@ -36,7 +72,7 @@ From the **Containers** view you can:
 - Start, stop, pause, resume, or restart containers
 - View image packages and CVEs
 - Delete containers
-- Open the application in VS code
+- Open a terminal in the container
 - Open the port exposed by the container in a browser
 - Copy the `docker run` command for reuse or modification
 - Use [Docker Debug](#execdebug)
@@ -45,16 +81,28 @@ From the **Containers** view you can:
 - Start, stop, pause, resume, or restart containers
 - View image packages and CVEs
 - Delete containers
-- Open the application in VS code
+- Open a terminal in the container
 - Open the port exposed by the container in a browser
 - Copy the `docker run` command for reuse or modification
 - Use [Docker Debug](#execdebug)
+@z
+
+@x
+From a Compose project's row, you get a similar set of actions scoped to the whole project: start/stop, pause, restart, view details, delete, and if [VS Code](https://code.visualstudio.com/) is set as your default editor, **Open in VS Code**.
+@y
+From a Compose project's row, you get a similar set of actions scoped to the whole project: start/stop, pause, restart, view details, delete, and if [VS Code](https://code.visualstudio.com/) is set as your default editor, **Open in VS Code**.
+@z
+
+@x
+If [Gordon](/manuals/ai/gordon/_index.md) is available, each row can surface AI-suggested diagnostic questions and flag detected issues, such as "Container exited with an error" or "Container keeps restarting."
+@y
+If [Gordon](manuals/ai/gordon/_index.md) is available, each row can surface AI-suggested diagnostic questions and flag detected issues, such as "Container exited with an error" or "Container keeps restarting."
 @z
 
 @x
 ## Resource usage
 @y
-## Resource usage {#Resource-usage}
+## Resource usage
 @z
 
 @x
@@ -72,7 +120,7 @@ When you [inspect a container](#inspect-a-container), the **Stats** tab displays
 @x
 ## Inspect a container
 @y
-## ã‚³ãƒ³ãƒ†ãƒŠãƒ¼ã®è©³ç´°ç¢ºèª {#inspect-a-container}
+## ƒRƒ“ƒeƒi[‚ÌÚ×Šm”F {#inspect-a-container}
 @z
 
 @x
@@ -90,7 +138,7 @@ From here, you can use the quick action buttons to perform various actions such 
 @x
 ### Logs
 @y
-### ãƒ­ã‚° {#logs}
+### ƒƒO {#logs}
 @z
 
 @x
@@ -121,6 +169,20 @@ Select **Logs** to view output from the container in real time. While viewing lo
 - Use the **Clear terminal** icon in the top right-hand corner to clear the
   logs terminal. 
 - Select and view external links that may be in your logs. 
+@z
+
+@x
+You can refine your view by:
+@y
+You can refine your view by:
+@z
+
+@x
+- Filtering logs for specific containers, if you're running a multi-container application.
+- Using regular expressions or exact match search terms
+@y
+- Filtering logs for specific containers, if you're running a multi-container application.
+- Using regular expressions or exact match search terms
 @z
 
 @x
@@ -200,11 +262,11 @@ To use debug mode:
 @x
 - Hover over your running container and under the **Actions** column, select the **Show container actions**
 menu. From the drop-down menu, select **Use Docker Debug**.
-- Or, select the container and then select the **Debug** tab.
+- Or, select the container and then select the **Debug** tab. 
 @y
 - Hover over your running container and under the **Actions** column, select the **Show container actions**
 menu. From the drop-down menu, select **Use Docker Debug**.
-- Or, select the container and then select the **Debug** tab.
+- Or, select the container and then select the **Debug** tab. 
 @z
 
 @x
@@ -224,10 +286,10 @@ default** option.
 @z
 
 @x
-Select **Files** to explore the filesystem of running or stopped containers. You
+Select **Files** to explore the filesystem of running containers. You
 can also:
 @y
-Select **Files** to explore the filesystem of running or stopped containers. You
+Select **Files** to explore the filesystem of running containers. You
 can also:
 @z
 

@@ -38,6 +38,16 @@ experience.
 @z
 
 @x
+> [!NOTE]
+>
+> If you have any WSL integration enabled, Docker Desktop treats that as ongoing activity and won't enter Resource Saver mode, even after the idle timer would otherwise have elapsed.
+@y
+> [!NOTE]
+>
+> If you have any WSL integration enabled, Docker Desktop treats that as ongoing activity and won't enter Resource Saver mode, even after the idle timer would otherwise have elapsed.
+@z
+
+@x
 ## Configure Resource Saver 
 @y
 ## Configure Resource Saver 
@@ -52,19 +62,13 @@ timer as shown below.
 @z
 
 @x
-![Resource Saver Settings](../images/resource-saver-settings.webp)
-@y
-![Resource Saver Settings](../images/resource-saver-settings.webp)
-@z
-
-@x
 If the values available aren't sufficient for your
 needs, you can reconfigure it to any value, as long as the value is larger than 30 seconds, by
-changing `autoPauseTimeoutSeconds` in the Docker Desktop `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier): 
+changing `autoPauseTimeoutSeconds` in the Docker Desktop `settings-store.json` file: 
 @y
 If the values available aren't sufficient for your
 needs, you can reconfigure it to any value, as long as the value is larger than 30 seconds, by
-changing `autoPauseTimeoutSeconds` in the Docker Desktop `settings-store.json` file (or `settings.json` for Docker Desktop versions 4.34 and earlier): 
+changing `autoPauseTimeoutSeconds` in the Docker Desktop `settings-store.json` file: 
 @z
 
 @x
@@ -87,17 +91,13 @@ There's no need to restart Docker Desktop after reconfiguring.
 When Docker Desktop enters Resource Saver mode: 
 - A moon icon displays on the
 Docker Desktop status bar as well as on the Docker icon in
-the system tray.
-@y
-When Docker Desktop enters Resource Saver mode: 
-- A moon icon displays on the
-Docker Desktop status bar as well as on the Docker icon in
-the system tray.
-@z
-
-@x
+the system tray. 
 - Docker commands that don't run containers, for example listing container images or volumes, don't necessarily trigger an exit from Resource Saver mode as Docker Desktop can serve such commands without unnecessarily waking up the Linux VM.
 @y
+When Docker Desktop enters Resource Saver mode: 
+- A moon icon displays on the
+Docker Desktop status bar as well as on the Docker icon in
+the system tray. 
 - Docker commands that don't run containers, for example listing container images or volumes, don't necessarily trigger an exit from Resource Saver mode as Docker Desktop can serve such commands without unnecessarily waking up the Linux VM.
 @z
 
@@ -126,14 +126,14 @@ the system tray.
 @z
 
 @x
-Resource Saver has higher precedence than the older [Pause](pause.md) feature,
+Resource Saver has higher precedence than the older Pause feature,
 meaning that while Docker Desktop is in Resource Saver mode, manually pausing
 Docker Desktop is not possible (nor does it make sense since Resource Saver
 actually stops the Docker Desktop Linux VM). In general, we recommend keeping
 Resource Saver enabled as opposed to disabling it and using the manual Pause
 feature, as it results in much better CPU and memory savings.
 @y
-Resource Saver has higher precedence than the older [Pause](pause.md) feature,
+Resource Saver has higher precedence than the older Pause feature,
 meaning that while Docker Desktop is in Resource Saver mode, manually pausing
 Docker Desktop is not possible (nor does it make sense since Resource Saver
 actually stops the Docker Desktop Linux VM). In general, we recommend keeping
@@ -166,14 +166,12 @@ utilization.
 @z
 
 @x
-To reduce memory utilization on WSL, we instead recommend that
-users enable WSL's `autoMemoryReclaim` feature as described in the
+To reduce memory utilization on WSL, enable WSL's `autoMemoryReclaim` feature as described in the
 [Docker  Desktop WSL docs](/manuals/desktop/features/wsl/_index.md). Finally, since Docker Desktop does not
 stop the Linux VM on WSL, exit from Resource Saver mode is immediate (there's
 no exit delay).
 @y
-To reduce memory utilization on WSL, we instead recommend that
-users enable WSL's `autoMemoryReclaim` feature as described in the
+To reduce memory utilization on WSL, enable WSL's `autoMemoryReclaim` feature as described in the
 [Docker  Desktop WSL docs](manuals/desktop/features/wsl/_index.md). Finally, since Docker Desktop does not
 stop the Linux VM on WSL, exit from Resource Saver mode is immediate (there's
 no exit delay).

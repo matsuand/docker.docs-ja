@@ -9,7 +9,6 @@ bases = \
 	images.md         \
 	kubernetes.md     \
 	logs.md           \
-	pause.md          \
 	resource-saver.md \
 	volumes.md
 

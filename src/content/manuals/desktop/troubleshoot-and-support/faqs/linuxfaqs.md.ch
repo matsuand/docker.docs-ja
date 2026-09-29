@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 description: Frequently asked questions for Docker Desktop for Linux
 keywords: desktop, linux, faqs
@@ -99,134 +101,18 @@ Docker Desktop for Linux runs a Virtual Machine (VM) for the following reasons:
 
 @x
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
-default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM.
+default mechanism to enable file sharing between the host
+and Docker Desktop VM. Synchronized file shares, a faster,
+cache-based alternative for bind-mount-heavy workloads like PHP/JS
+projects, is also available on Linux with a Pro, Team, or Business
+subscription. For more details, see [File sharing](/manuals/desktop/settings-and-maintenance/settings.md#file-sharing)/desktop/settings-and-maintenance/settings/#file-sharing.
 @y
 Docker Desktop for Linux uses [VirtioFS](https://virtio-fs.gitlab.io/) as the
-default (and currently only) mechanism to enable file sharing between the host
-and Docker Desktop VM.
-@z
-
-@x
-{{< accordion title="Additional information for Docker Desktop version 4.34 and earlier" >}}
-@y
-{{< accordion title="Additional information for Docker Desktop version 4.34 and earlier" >}}
-@z
-
-@x
-In order not to require elevated privileges, without
-unnecessarily restricting operations on the shared files, Docker Desktop runs
-the file sharing service (`virtiofsd`) inside a user namespace (see
-`user_namespaces(7)`) with UID and GID mapping configured. As a result Docker
-Desktop relies on the host being configured to enable the current user to use
-subordinate ID delegation. For this to be true `/etc/subuid` (see `subuid(5)`)
-and `/etc/subgid` (see `subgid(5)`) must be present. Docker Desktop only
-supports subordinate ID delegation configured via files. Docker Desktop maps the
-current user ID and GID to 0 in the containers. It uses the first entry
-corresponding to the current user in `/etc/subuid` and `/etc/subgid` to set up
-mappings for IDs greater than 0 in the containers.
-@y
-In order not to require elevated privileges, without
-unnecessarily restricting operations on the shared files, Docker Desktop runs
-the file sharing service (`virtiofsd`) inside a user namespace (see
-`user_namespaces(7)`) with UID and GID mapping configured. As a result Docker
-Desktop relies on the host being configured to enable the current user to use
-subordinate ID delegation. For this to be true `/etc/subuid` (see `subuid(5)`)
-and `/etc/subgid` (see `subgid(5)`) must be present. Docker Desktop only
-supports subordinate ID delegation configured via files. Docker Desktop maps the
-current user ID and GID to 0 in the containers. It uses the first entry
-corresponding to the current user in `/etc/subuid` and `/etc/subgid` to set up
-mappings for IDs greater than 0 in the containers.
-@z
-
-@x
-| ID in container | ID on host                                                                       |
-| --------------- | -------------------------------------------------------------------------------- |
-| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                |
-| 1               | 0 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100000) |
-| 2               | 1 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100001) |
-| 3               | 2 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100002) |
-| ...             | ...                                                                              |
-@y
-| ID in container | ID on host                                                                       |
-| --------------- | -------------------------------------------------------------------------------- |
-| 0 (root)        | ID of the user running Docker Desktop (e.g. 1000)                                |
-| 1               | 0 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100000) |
-| 2               | 1 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100001) |
-| 3               | 2 + beginning of ID range specified in `/etc/subuid`/`/etc/subgid` (e.g. 100002) |
-| ...             | ...                                                                              |
-@z
-
-@x
-If `/etc/subuid` and `/etc/subgid` are missing, they need to be created.
-Both should contain entries in the form -
-`<username>:<start of id range>:<id range size>`. For example, to allow the current user
-to use IDs from 100 000 to 165 535:
-@y
-If `/etc/subuid` and `/etc/subgid` are missing, they need to be created.
-Both should contain entries in the form -
-`<username>:<start of id range>:<id range size>`. For example, to allow the current user
-to use IDs from 100 000 to 165 535:
-@z
-
-@x
-```console
-$ grep "$USER" /etc/subuid >> /dev/null 2&>1 || (echo "$USER:100000:65536" | sudo tee -a /etc/subuid)
-$ grep "$USER" /etc/subgid >> /dev/null 2&>1 || (echo "$USER:100000:65536" | sudo tee -a /etc/subgid)
-```
-@y
-```console
-$ grep "$USER" /etc/subuid >> /dev/null 2&>1 || (echo "$USER:100000:65536" | sudo tee -a /etc/subuid)
-$ grep "$USER" /etc/subgid >> /dev/null 2&>1 || (echo "$USER:100000:65536" | sudo tee -a /etc/subgid)
-```
-@z
-
-@x
-To verify the configs have been created correctly, inspect their contents:
-@y
-To verify the configs have been created correctly, inspect their contents:
-@z
-
-@x
-```console
-$ echo $USER
-exampleuser
-$ cat /etc/subuid
-exampleuser:100000:65536
-$ cat /etc/subgid
-exampleuser:100000:65536
-```
-@y
-```console
-$ echo $USER
-exampleuser
-$ cat /etc/subuid
-exampleuser:100000:65536
-$ cat /etc/subgid
-exampleuser:100000:65536
-```
-@z
-
-@x
-In this scenario if a shared file is `chown`ed inside a Docker Desktop container
-owned by a user with a UID of 1000, it shows up on the host as owned by
-a user with a UID of 100999. This has the unfortunate side effect of preventing
-easy access to such a file on the host. The problem is resolved by creating
-a group with the new GID and adding our user to it, or by setting a recursive
-ACL (see `setfacl(1)`) for folders shared with the Docker Desktop VM.
-@y
-In this scenario if a shared file is `chown`ed inside a Docker Desktop container
-owned by a user with a UID of 1000, it shows up on the host as owned by
-a user with a UID of 100999. This has the unfortunate side effect of preventing
-easy access to such a file on the host. The problem is resolved by creating
-a group with the new GID and adding our user to it, or by setting a recursive
-ACL (see `setfacl(1)`) for folders shared with the Docker Desktop VM.
-@z
-
-@x
-{{< /accordion >}}
-@y
-{{< /accordion >}}
+default mechanism to enable file sharing between the host
+and Docker Desktop VM. Synchronized file shares, a faster,
+cache-based alternative for bind-mount-heavy workloads like PHP/JS
+projects, is also available on Linux with a Pro, Team, or Business
+subscription. For more details, see [File sharing](manuals/desktop/settings-and-maintenance/settings.md#file-sharing)/desktop/settings-and-maintenance/settings/#file-sharing.
 @z
 
 @x
@@ -247,7 +133,15 @@ Without setting `DOCKER_HOST`, SDKs attempt to connect to `/var/run/docker.sock`
 Without setting `DOCKER_HOST`, SDKs attempt to connect to `/var/run/docker.sock` and fail with an error like:
 @z
 
-% snip text...
+@x
+```text
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+@y
+```text
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+```
+@z
 
 @x
 To fix this, set the `DOCKER_HOST` environment variable before running your SDK-based application:
@@ -255,7 +149,15 @@ To fix this, set the `DOCKER_HOST` environment variable before running your SDK-
 To fix this, set the `DOCKER_HOST` environment variable before running your SDK-based application:
 @z
 
-% snip command...
+@x
+```console
+export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock
+```
+@y
+```console
+export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock
+```
+@z
 
 @x
 Or dynamically retrieve it from the `desktop-linux` context:
@@ -263,7 +165,15 @@ Or dynamically retrieve it from the `desktop-linux` context:
 Or dynamically retrieve it from the `desktop-linux` context:
 @z
 
-% snip command...
+@x
+```console
+export DOCKER_HOST=$(docker context inspect desktop-linux --format '{{ .Endpoints.docker.Host }}')
+```
+@y
+```console
+export DOCKER_HOST=$(docker context inspect desktop-linux --format '{{ .Endpoints.docker.Host }}')
+```
+@z
 
 @x
 To make this permanent, add the export command to your shell profile (`~/.bashrc`, `~/.zshrc`, or similar):
@@ -271,7 +181,15 @@ To make this permanent, add the export command to your shell profile (`~/.bashrc
 To make this permanent, add the export command to your shell profile (`~/.bashrc`, `~/.zshrc`, or similar):
 @z
 
-% snip command...
+@x
+```console
+echo 'export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock' >> ~/.bashrc
+```
+@y
+```console
+echo 'export DOCKER_HOST=unix://$HOME/.docker/desktop/docker.sock' >> ~/.bashrc
+```
+@z
 
 @x
 ### Where does Docker Desktop store Linux containers?
@@ -356,9 +274,11 @@ To move the disk image file to a different location:
 @z
 
 @x
-Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
+Do not move the file directly using your file manager, as this can cause
+Docker Desktop to lose track of the file.
 @y
-Do not move the file directly in Finder as this can cause Docker Desktop to lose track of the file.
+Do not move the file directly using your file manager, as this can cause
+Docker Desktop to lose track of the file.
 @z
 
 @x
@@ -368,9 +288,9 @@ Do not move the file directly in Finder as this can cause Docker Desktop to lose
 @z
 
 @x
-Check whether you have any unnecessary containers and images. If your client and daemon API are running version 1.25 or later (use the `docker version` command on the client to check your client and daemon API versions), you can see the detailed space usage information by running:
+Check whether you have any unnecessary containers and images. You can see the detailed space usage information by running:
 @y
-Check whether you have any unnecessary containers and images. If your client and daemon API are running version 1.25 or later (use the `docker version` command on the client to check your client and daemon API versions), you can see the detailed space usage information by running:
+Check whether you have any unnecessary containers and images. You can see the detailed space usage information by running:
 @z
 
 @x
@@ -479,13 +399,13 @@ To query the actual size of the file on the host from a terminal, run:
 ```console
 $ cd ~/.docker/desktop/vms/0/data
 $ ls -klsh Docker.raw
-2333548 -rw-r--r--@ 1 username  staff    64G Dec 13 17:42 Docker.raw
+2333548 -rw-r--r--@ 1 username  username    64G Dec 13 17:42 Docker.raw
 ```
 @y
 ```console
 $ cd ~/.docker/desktop/vms/0/data
 $ ls -klsh Docker.raw
-2333548 -rw-r--r--@ 1 username  staff    64G Dec 13 17:42 Docker.raw
+2333548 -rw-r--r--@ 1 username  username    64G Dec 13 17:42 Docker.raw
 ```
 @z
 

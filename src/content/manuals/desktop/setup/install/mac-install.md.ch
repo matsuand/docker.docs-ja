@@ -85,10 +85,10 @@ This page provides download links, system requirements, and step-by-step install
 
 @x
 - At least 4 GB of RAM.
-- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
+- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. To install Rosetta 2 manually from the command line, run the following command:
 @y
 - At least 4 GB of RAM.
-- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. See [Known issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md). To install Rosetta 2 manually from the command line, run the following command:
+- For the best experience, it's recommended that you install Rosetta 2. Rosetta 2 is no longer strictly required, however there are a few optional command line tools that still require Rosetta 2 when using Darwin/AMD64. To install Rosetta 2 manually from the command line, run the following command:
 @z
 
 % snip command...
@@ -140,7 +140,7 @@ This page provides download links, system requirements, and step-by-step install
 >
 > - Keep the installer volume mounted until the installation completes.
 >
-> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/mac-damaged-dialog.md).
+> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md).
 @y
 > **Before you install or update**
 >
@@ -150,7 +150,7 @@ This page provides download links, system requirements, and step-by-step install
 >
 > - Keep the installer volume mounted until the installation completes.
 >
-> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/mac-damaged-dialog.md).
+> If you encounter a "Docker.app is damaged" dialog, see [Fix "Docker.app is damaged" on macOS](/manuals/desktop/troubleshoot-and-support/troubleshoot/topics.md).
 @z
 
 @x

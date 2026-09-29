@@ -5,7 +5,6 @@
 copyfiles = \
 	build-ui-jaeger-screenshot.png \
 	hyperv-enabled.png             \
-	resource-saver-settings.webp   \
 	virtualization-enabled.png     \
 	whale-x.svg                    \
 	wsl2-enabled.png

@@ -5,12 +5,12 @@
 
 @x
 description: Explore common troubleshooting topics for Docker Desktop
-keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop
+keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop, known issues
 title: Troubleshoot topics for Docker Desktop
 linkTitle: Common topics
 @y
 description: Explore common troubleshooting topics for Docker Desktop
-keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop
+keywords: Linux, Mac, Windows, troubleshooting, topics, Docker Desktop, known issues
 title: Troubleshoot topics for Docker Desktop
 linkTitle: Common topics
 @z
@@ -28,7 +28,7 @@ linkTitle: Common topics
 @x
 ## Topics for all platforms
 @y
-## 全プラットフォームに関するトピック {#topics-for-all-platforms}
+## Topics for all platforms
 @z
 
 @x
@@ -154,17 +154,25 @@ Disable hardware acceleration:
 @z
 
 @x
-2. Add the following entry:
+1. Add the following entry:
 @y
-2. Add the following entry:
+1. Add the following entry:
 @z
 
-% snip code...
+@x
+   ```JSON
+   "disableHardwareAcceleration": "always"
+   ```
+@y
+   ```JSON
+   "disableHardwareAcceleration": "always"
+   ```
+@z
 
 @x
-3. Save the file and restart Docker Desktop.
+1. Save the file and restart Docker Desktop.
 @y
-3. Save the file and restart Docker Desktop.
+1. Save the file and restart Docker Desktop.
 @z
 
 @x
@@ -199,10 +207,10 @@ Enable file sharing in Docker Desktop for Mac and Linux:
 
 @x
 1. Navigate to **Settings**, select **Resources** and then **File sharing**.
-2. Add the drive or folder that contains the Dockerfile and volume mount paths.
+1. Add the drive or folder that contains the Dockerfile and volume mount paths.
 @y
 1. Navigate to **Settings**, select **Resources** and then **File sharing**.
-2. Add the drive or folder that contains the Dockerfile and volume mount paths.
+1. Add the drive or folder that contains the Dockerfile and volume mount paths.
 @z
 
 @x
@@ -213,10 +221,10 @@ Enable file sharing in Docker Desktop for Windows:
 
 @x
 1. From **Settings**, select **Shared Folders**. 
-2. Share the folder that contains the Dockerfile and volume mount paths.
+1. Share the folder that contains the Dockerfile and volume mount paths.
 @y
 1. From **Settings**, select **Shared Folders**. 
-2. Share the folder that contains the Dockerfile and volume mount paths.
+1. Share the folder that contains the Dockerfile and volume mount paths.
 @z
 
 @x
@@ -304,94 +312,6 @@ Docker app.
 @z
 
 @x
-## Topics for Linux and Mac
-@y
-## Linux と Mac に関するトピック {#topics-for-linux-and-mac}
-@z
-
-@x
-### Docker Desktop fails to start on Mac or Linux platforms
-@y
-### Docker Desktop fails to start on Mac or Linux platforms
-@z
-
-@x
-#### Error message 
-@y
-#### Error message 
-@z
-
-@x
-Docker fails to start due to Unix domain socket path length limitations:
-@y
-Docker fails to start due to Unix domain socket path length limitations:
-@z
-
-@x
-```console
-[vpnkit-bridge][F] listen unix <HOME>/Library/Containers/com.docker.docker/Data/http-proxy-control.sock: bind: invalid argument
-```
-@y
-```console
-[vpnkit-bridge][F] listen unix <HOME>/Library/Containers/com.docker.docker/Data/http-proxy-control.sock: bind: invalid argument
-```
-@z
-
-@x
-```console
-[com.docker.backend][E] listen(vsock:4099) failed: listen unix <HOME>/Library/Containers/com.docker.docker/Data/vms/0/00000002.00001003: bind: invalid argument
-```
-@y
-```console
-[com.docker.backend][E] listen(vsock:4099) failed: listen unix <HOME>/Library/Containers/com.docker.docker/Data/vms/0/00000002.00001003: bind: invalid argument
-```
-@z
-
-@x
-#### Cause
-@y
-#### Cause
-@z
-
-@x
-On Mac and Linux, Docker Desktop creates Unix domain sockets used for inter-process communication. These sockets are created under the user's home directory.
-@y
-On Mac and Linux, Docker Desktop creates Unix domain sockets used for inter-process communication. These sockets are created under the user's home directory.
-@z
-
-@x
-Unix domain sockets have a maximum path length:
- - 104 characters on Mac
- - 108 characters on Linux
-@y
-Unix domain sockets have a maximum path length:
- - 104 characters on Mac
- - 108 characters on Linux
-@z
-
-@x
-If your home directory path is too long, Docker Desktop fails to create necessary sockets.
-@y
-If your home directory path is too long, Docker Desktop fails to create necessary sockets.
-@z
-
-@x
-#### Solution
-@y
-#### Solution
-@z
-
-@x
-Ensure your username is short enough to keep paths within the allowed limit:
- - Mac: Username should be ≤ 33 characters
- - Linux: Username should be ≤ 55 characters
-@y
-Ensure your username is short enough to keep paths within the allowed limit:
- - Mac: Username should be ≤ 33 characters
- - Linux: Username should be ≤ 55 characters
-@z
-
-@x
 ## Topics for Mac
 @y
 ## Topics for Mac
@@ -410,9 +330,9 @@ Ensure your username is short enough to keep paths within the allowed limit:
 @z
 
 @x
-On macOS, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
+On Mac, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
 @y
-On macOS, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
+On Mac, users without administrator privileges cannot perform in-app upgrades from the Docker Desktop Dashboard.
 @z
 
 @x
@@ -575,6 +495,126 @@ in the Apple documentation, and Docker Desktop [Mac system requirements](/manual
 See also, [Hypervisor Framework
 Reference](https://developer.apple.com/library/mac/documentation/DriversKernelHardware/Reference/Hypervisor/)
 in the Apple documentation, and Docker Desktop [Mac system requirements](manuals/desktop/setup/install/mac-install.md#system-requirements).
+@z
+
+@x
+### Docker.app is damaged and can't be opened
+@y
+### Docker.app is damaged and can't be opened
+@z
+
+@x
+#### Cause
+@y
+#### Cause
+@z
+
+@x
+This issue occurs due to a non-atomic copy during a drag/drop installation. When you drag and drop `Docker.app` from a DMG file while another application, like VS Code, is invoking the Docker CLI through symlinks, the copy operation may be interrupted, leaving the app in a partially copied state that Gatekeeper marks as "damaged".
+@y
+This issue occurs due to a non-atomic copy during a drag/drop installation. When you drag and drop `Docker.app` from a DMG file while another application, like VS Code, is invoking the Docker CLI through symlinks, the copy operation may be interrupted, leaving the app in a partially copied state that Gatekeeper marks as "damaged".
+@z
+
+@x
+#### Solution
+@y
+#### Solution
+@z
+
+@x
+1. Quit third-party software
+@y
+1. Quit third-party software
+@z
+
+@x
+   Close any applications that might call Docker in the background:
+@y
+   Close any applications that might call Docker in the background:
+@z
+
+@x
+   - Visual Studio Code and other IDEs
+   - Terminal applications
+   - Agent apps or development tools
+   - Any scripts or processes that use the Docker CLI
+@y
+   - Visual Studio Code and other IDEs
+   - Terminal applications
+   - Agent apps or development tools
+   - Any scripts or processes that use the Docker CLI
+@z
+
+@x
+1. Remove any partial installation: 
+@y
+1. Remove any partial installation: 
+@z
+
+@x
+   1. Move `/Applications/Docker.app` to Trash and empty Trash.
+   2. If you used a DMG installer, eject and re-mount the Docker DMG.
+@y
+   1. Move `/Applications/Docker.app` to Trash and empty Trash.
+   2. If you used a DMG installer, eject and re-mount the Docker DMG.
+@z
+
+@x
+1. Reinstall Docker Desktop
+@y
+1. Reinstall Docker Desktop
+@z
+
+@x
+   Follow the instructions in the [Mac installation guide](/manuals/desktop/setup/install/mac-install.md) to reinstall Docker Desktop.
+@y
+   Follow the instructions in the [Mac installation guide](manuals/desktop/setup/install/mac-install.md) to reinstall Docker Desktop.
+@z
+
+@x
+If you continue to see the "damaged" dialog after following the recovery steps:
+@y
+If you continue to see the "damaged" dialog after following the recovery steps:
+@z
+
+@x
+   1. Gather diagnostics using the terminal. Follow the instructions in [Diagnose from the terminal](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-terminal).
+@y
+   1. Gather diagnostics using the terminal. Follow the instructions in [Diagnose from the terminal](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md#diagnose-from-the-terminal).
+@z
+
+@x
+   - Note down the your diagnostics ID displayed in the terminal after running diagnostics.
+@y
+   - Note down the your diagnostics ID displayed in the terminal after running diagnostics.
+@z
+
+@x
+   1. Get help:
+      - If you have a paid Docker subscription, [contact support](/manuals/support/_index.md) and include your diagnostics ID
+      - For community users, [open an issue on GitHub](https://github.com/docker/desktop-feedback) and include your diagnostics ID
+@y
+   1. Get help:
+      - If you have a paid Docker subscription, [contact support](manuals/support/_index.md) and include your diagnostics ID
+      - For community users, [open an issue on GitHub](https://github.com/docker/desktop-feedback) and include your diagnostics ID
+@z
+
+@x
+To avoid this issue in the future:
+@y
+To avoid this issue in the future:
+@z
+
+@x
+- If your organization allows, update Docker Desktop via the in-app update flow
+- Always quit applications that use Docker before installing Docker Desktop via the DMG installer drag-and-drop approach
+- In managed environments, use PKG installations over DMG drag-and-drop
+- Keep installer volumes mounted until installation is complete
+@y
+- If your organization allows, update Docker Desktop via the in-app update flow
+- Always quit applications that use Docker before installing Docker Desktop via the DMG installer drag-and-drop approach
+- In managed environments, use PKG installations over DMG drag-and-drop
+- Keep installer volumes mounted until installation is complete
 @z
 
 @x
@@ -987,16 +1027,16 @@ Your machine must have the following features for Docker Desktop to function cor
 
 @x
 1. Virtual Machine Platform
-2. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-3. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
+1. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+1. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
    Note that many Windows devices already have virtualization enabled, so this may not apply.
-4. Hypervisor enabled at Windows startup
+1. Hypervisor enabled at Windows startup
 @y
 1. Virtual Machine Platform
-2. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-3. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
+1. [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+1. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
    Note that many Windows devices already have virtualization enabled, so this may not apply.
-4. Hypervisor enabled at Windows startup
+1. Hypervisor enabled at Windows startup
 @z
 
 @x
@@ -1056,15 +1096,15 @@ On Windows 10 Pro or Enterprise, you can also use Hyper-V with the following fea
 @x
 1. [Hyper-V](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview)
    installed and working
-2. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
+1. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
    Note that many Windows devices already have virtualization enabled, so this may not apply.
-3. Hypervisor enabled at Windows startup
+1. Hypervisor enabled at Windows startup
 @y
 1. [Hyper-V](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/hyper-v-technology-overview)
    installed and working
-2. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
+1. [Virtualization enabled in the BIOS](https://support.microsoft.com/en-gb/windows/enable-virtualization-on-windows-c5578302-6e43-4b4b-a449-8ced115f58e1)
    Note that many Windows devices already have virtualization enabled, so this may not apply.
-3. Hypervisor enabled at Windows startup
+1. Hypervisor enabled at Windows startup
 @z
 
 @x
@@ -1157,12 +1197,12 @@ Virtual Box) and video game installers turn off hypervisor on boot. To turn it b
 
 @x
 1. Open an administrative console prompt.
-2. Run `bcdedit /set hypervisorlaunchtype auto`.
-3. Restart Windows.
+1. Run `bcdedit /set hypervisorlaunchtype auto`.
+1. Restart Windows.
 @y
 1. Open an administrative console prompt.
-2. Run `bcdedit /set hypervisorlaunchtype auto`.
-3. Restart Windows.
+1. Run `bcdedit /set hypervisorlaunchtype auto`.
+1. Restart Windows.
 @z
 
 @x
@@ -1341,12 +1381,12 @@ If your admin account is different to your user account, add it:
 
 @x
 1. Run **Computer Management** as an administrator.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
-3. Right-click to add the user to the group.
-4. Sign out and sign back in for the changes to take effect
+1. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
+1. Right-click to add the user to the group.
+1. Sign out and sign back in for the changes to take effect
 @y
 1. Run **Computer Management** as an administrator.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
-3. Right-click to add the user to the group.
-4. Sign out and sign back in for the changes to take effect
+1. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
+1. Right-click to add the user to the group.
+1. Sign out and sign back in for the changes to take effect
 @z

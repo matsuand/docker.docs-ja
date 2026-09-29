@@ -154,9 +154,9 @@ To move the disk image file to a different location:
 @z
 
 @x
-Check whether you have any unnecessary containers and images. If your client and daemon API are running version 1.25 or later (use the `docker version` command on the client to check your client and daemon API versions), you can see the detailed space usage information by running:
+Check whether you have any unnecessary containers and images. You can see the detailed space usage information by running:
 @y
-Check whether you have any unnecessary containers and images. If your client and daemon API are running version 1.25 or later (use the `docker version` command on the client to check your client and daemon API versions), you can see the detailed space usage information by running:
+Check whether you have any unnecessary containers and images. You can see the detailed space usage information by running:
 @z
 
 @x
@@ -224,17 +224,9 @@ This command removes all stopped containers, unused networks, dangling images, a
 @z
 
 @x
-It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is named:
+It might take a few minutes to reclaim space on the host.
 @y
-It might take a few minutes to reclaim space on the host depending on the format of the disk image file. If the file is named:
-@z
-
-@x
-- `Docker.raw`, space on the host is reclaimed within a few seconds.
-- `Docker.qcow2`, space is freed by a background process after a few minutes.
-@y
-- `Docker.raw`, space on the host is reclaimed within a few seconds.
-- `Docker.qcow2`, space is freed by a background process after a few minutes.
+It might take a few minutes to reclaim space on the host.
 @z
 
 @x
@@ -437,12 +429,10 @@ You can put your client certificates in
 
 @x
 When the Docker Desktop application starts, it copies the `~/.docker/certs.d`
-folder on your Mac to the `/etc/docker/certs.d` directory on Moby (the Docker
-Desktop `xhyve` virtual machine).
+folder on your Mac to the `/etc/docker/certs.d` directory inside the Docker Desktop Linux VM.
 @y
 When the Docker Desktop application starts, it copies the `~/.docker/certs.d`
-folder on your Mac to the `/etc/docker/certs.d` directory on Moby (the Docker
-Desktop `xhyve` virtual machine).
+folder on your Mac to the `/etc/docker/certs.d` directory inside the Docker Desktop Linux VM.
 @z
 
 @x

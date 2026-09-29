@@ -4533,14 +4533,12 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 - There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
   traversals of large directories are currently slow. Additionally, containers
   that perform large numbers of directory operations, such as repeated scans of
-  large directory trees, may suffer from poor performance. More information is
-  available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  large directory trees, may suffer from poor performance.
 @y
 - There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and
   traversals of large directories are currently slow. Additionally, containers
   that perform large numbers of directory operations, such as repeated scans of
-  large directory trees, may suffer from poor performance. More information is
-  available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  large directory trees, may suffer from poor performance.
 @z
 
 @x
@@ -4612,15 +4610,13 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   with `osxfs`. In particular, writes of small blocks and traversals of large
   directories are currently slow. Additionally, containers that perform large
   numbers of directory operations, such as repeated scans of large directory
-  trees, may suffer from poor performance. More information is available in
-  [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  trees, may suffer from poor performance. 
 @y
 - There are a number of issues with the performance of directories bind-mounted
   with `osxfs`. In particular, writes of small blocks and traversals of large
   directories are currently slow. Additionally, containers that perform large
   numbers of directory operations, such as repeated scans of large directory
-  trees, may suffer from poor performance. More information is available in
-  [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  trees, may suffer from poor performance. 
 @z
 
 @x
@@ -4711,12 +4707,12 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 - There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
   directories are currently slow. Additionally, containers that perform large
   numbers of directory operations, such as repeated scans of large directory
-  trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  trees, may suffer from poor performance. 
 @y
 - There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large
   directories are currently slow. Additionally, containers that perform large
   numbers of directory operations, such as repeated scans of large directory
-  trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+  trees, may suffer from poor performance. 
 @z
 
 @x
@@ -4786,9 +4782,9 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @y
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see the bullet on performance of bind-mounted directories in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in Troubleshooting.
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @z
 
 @x
@@ -4850,9 +4846,9 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @y
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. More information is available in [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @z
 
 @x
@@ -4980,9 +4976,9 @@ events or unexpected unmounts.
 @z
 
 @x
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @y
-- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. For more information and workarounds, see [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) in [Logs and Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/_index.md).
+- There are a number of issues with the performance of directories bind-mounted with `osxfs`. In particular, writes of small blocks, and traversals of large directories are currently slow. Additionally, containers that perform large numbers of directory operations, such as repeated scans of large directory trees, may suffer from poor performance. 
 @z
 
 @x
@@ -5092,18 +5088,6 @@ events or unexpected unmounts.
 @z
 
 @x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@z
-
-@x
 ### Beta 18.1 Release Notes (2016-07-07 1.12.0-rc3-beta18.1)
 @y
 ### Beta 18.1 Release Notes (2016-07-07 1.12.0-rc3-beta18.1)
@@ -5172,18 +5156,6 @@ events or unexpected unmounts.
 @z
 
 @x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@z
-
-@x
 ### Beta 18 Release Notes (2016-07-06 1.12.0-rc3-beta18)
 @y
 ### Beta 18 Release Notes (2016-07-06 1.12.0-rc3-beta18)
@@ -5232,18 +5204,6 @@ events or unexpected unmounts.
 @z
 
 @x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@z
-
-@x
 ### Beta 17 Release Notes (2016-06-29 1.12.0-rc2-beta17)
 @y
 ### Beta 17 Release Notes (2016-06-29 1.12.0-rc2-beta17)
@@ -5281,18 +5241,6 @@ events or unexpected unmounts.
 - Fixed download links, documentation links
 - Fixed "failure: No error" message in diagnostic panel
 - Improved diagnostics for networking and logs for the service port openers
-@z
-
-@x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5337,18 +5285,6 @@ events or unexpected unmounts.
 - Fixed UI crashing with `NSInternalInconsistencyException` / fixed leak
 - HyperKit API: Improved error reporting
 - osxfs: fix sporadic EBADF due to fd access/release races (#3683)
-@z
-
-@x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x
@@ -5403,18 +5339,6 @@ events or unexpected unmounts.
 - Number of concurrent TCP/UDP connections increased in VPNKit
 - Hyperkit: `vsock` stability improvements
 - Fixed crash when user is admin
-@z
-
-@x
-**Known issues**
-@y
-**Known issues**
-@z
-
-@x
-- See [Known Issues](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
-@y
-- See [Known Issues](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
 @z
 
 @x

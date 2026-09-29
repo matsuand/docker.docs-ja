@@ -144,11 +144,11 @@ in `~/.docker/certs.d/<MyRegistry>:<Port>/client.cert` and
 @x
 When the Docker Desktop application starts, it copies the
 `~/.docker/certs.d` folder on your Windows system to the `/etc/docker/certs.d`
-directory on Moby (the Docker Desktop virtual machine running on Hyper-V).
+directory inside the Docker Desktop Linux VM.
 @y
 When the Docker Desktop application starts, it copies the
 `~/.docker/certs.d` folder on your Windows system to the `/etc/docker/certs.d`
-directory on Moby (the Docker Desktop virtual machine running on Hyper-V).
+directory inside the Docker Desktop Linux VM.
 @z
 
 @x

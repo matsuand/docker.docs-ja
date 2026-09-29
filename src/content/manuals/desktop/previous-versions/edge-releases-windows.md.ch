@@ -360,12 +360,12 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-- The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS` 
-in i386 images. To work around this issue, disable `seccomp` by using 
+- The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS`
+in i386 images. To work around this issue, disable `seccomp` by using
 the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
 @y
-- The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS` 
-in i386 images. To work around this issue, disable `seccomp` by using 
+- The `clock_gettime64` system call returns `EPERM` rather than `ENOSYS`
+in i386 images. To work around this issue, disable `seccomp` by using
 the `--privileged` flag. See [docker/for-win#8326](https://github.com/docker/for-win/issues/8326).
 @z
 
@@ -1754,10 +1754,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-## Docker Desktop Community 2.1.0.0 
+## Docker Desktop Community 2.1.0.0
 2019-07-30
 @y
-## Docker Desktop Community 2.1.0.0 
+## Docker Desktop Community 2.1.0.0
 2019-07-30
 @z
 
@@ -1795,10 +1795,10 @@ This release contains Kubernetes security improvements. Note that your local Kub
 
 @x
  - Introduced a new user interface for the Docker Desktop **Settings** menu.
- - The **Restart** and **Reset** options are now available on the **Troubleshoot** menu. 
+ - The **Restart** and **Reset** options are now available on the **Troubleshoot** menu.
 @y
  - Introduced a new user interface for the Docker Desktop **Settings** menu.
- - The **Restart** and **Reset** options are now available on the **Troubleshoot** menu. 
+ - The **Restart** and **Reset** options are now available on the **Troubleshoot** menu.
 @z
 
 @x
@@ -1811,7 +1811,7 @@ This release contains Kubernetes security improvements. Note that your local Kub
  - Changed the host's kubernetes context to ensure `docker run -v .kube:kube ... kubectl` works.
  - Restricted the `cluster-admin` role on local Kubernetes cluster to `kube-system` namespace.
  - Fixed Kubernetes installation with VPNkit subnet.
- - Fixed an issue where Docker Desktop restarts when a user logs out of Windows and logs back in, which results in retaining the    
+ - Fixed an issue where Docker Desktop restarts when a user logs out of Windows and logs back in, which results in retaining the
    exported ports on containers.
  - Reduced the VM startup time. `swap` is not created every time a virtual machine boots.
  - Fixed a bug which caused Docker Desktop to crash when a user cancels switching the version using Windows User Account Control (UAC)    settings.
@@ -1820,7 +1820,7 @@ This release contains Kubernetes security improvements. Note that your local Kub
  - Changed the host's kubernetes context to ensure `docker run -v .kube:kube ... kubectl` works.
  - Restricted the `cluster-admin` role on local Kubernetes cluster to `kube-system` namespace.
  - Fixed Kubernetes installation with VPNkit subnet.
- - Fixed an issue where Docker Desktop restarts when a user logs out of Windows and logs back in, which results in retaining the    
+ - Fixed an issue where Docker Desktop restarts when a user logs out of Windows and logs back in, which results in retaining the
    exported ports on containers.
  - Reduced the VM startup time. `swap` is not created every time a virtual machine boots.
  - Fixed a bug which caused Docker Desktop to crash when a user cancels switching the version using Windows User Account Control (UAC)    settings.
@@ -2141,10 +2141,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 * Bug fixes and minor changes
-  - Compose: Fixed a bug where build context URLs would fail to build on Windows. Fixes [docker/for-win#2918](https://github.com/docker/for-win/issues/2918) 
+  - Compose: Fixed a bug where build context URLs would fail to build on Windows. Fixes [docker/for-win#2918](https://github.com/docker/for-win/issues/2918)
 @y
 * Bug fixes and minor changes
-  - Compose: Fixed a bug where build context URLs would fail to build on Windows. Fixes [docker/for-win#2918](https://github.com/docker/for-win/issues/2918) 
+  - Compose: Fixed a bug where build context URLs would fail to build on Windows. Fixes [docker/for-win#2918](https://github.com/docker/for-win/issues/2918)
 @z
 
 @x
@@ -2169,7 +2169,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 
 @x
 * Bug fixes and minor changes
-  - Windows Containers: Fix group daemon option settings. Fixes [docker/for-win#2647](https://github.com/docker/for-win/issues/2647) 
+  - Windows Containers: Fix group daemon option settings. Fixes [docker/for-win#2647](https://github.com/docker/for-win/issues/2647)
   - Windows Containers: Improve host.docker.internal ip resolution
   - Do not try to update samba share mounts when using Windows containers
   - Improved dns update too verbose in logs
@@ -2177,7 +2177,7 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
   - VPNKit: Limit the size of the UDP NAT table. This ensures port forwarding and regular TCP traffic continue even when running very chatty UDP protocols.
 @y
 * Bug fixes and minor changes
-  - Windows Containers: Fix group daemon option settings. Fixes [docker/for-win#2647](https://github.com/docker/for-win/issues/2647) 
+  - Windows Containers: Fix group daemon option settings. Fixes [docker/for-win#2647](https://github.com/docker/for-win/issues/2647)
   - Windows Containers: Improve host.docker.internal ip resolution
   - Do not try to update samba share mounts when using Windows containers
   - Improved dns update too verbose in logs
@@ -2386,10 +2386,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* New 
+* New
   - Allow orchestrator selection from the UI in the "Kubernetes" pane, to allow "docker stack" commands to deploy to swarm clusters, even if Kubernetes is enabled in Docker for Windows.
 @y
-* New 
+* New
   - Allow orchestrator selection from the UI in the "Kubernetes" pane, to allow "docker stack" commands to deploy to swarm clusters, even if Kubernetes is enabled in Docker for Windows.
 @z
 
@@ -2397,12 +2397,12 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 * Bug fixes and minor changes
   - Fix restart issue when using Windows fast startup on latest 1709 Windows updates. Fixes [docker/for-win#1741](https://github.com/docker/for-win/issues/1741), [docker/for-win#1741](https://github.com/docker/for-win/issues/1741)
   - DNS name `host.docker.internal` can be used for host resolution from Windows containers.  Fixes [docker/for-win#1976](https://github.com/docker/for-win/issues/1976)
-  - Fix broken link in diagnostics window. 
+  - Fix broken link in diagnostics window.
 @y
 * Bug fixes and minor changes
   - Fix restart issue when using Windows fast startup on latest 1709 Windows updates. Fixes [docker/for-win#1741](https://github.com/docker/for-win/issues/1741), [docker/for-win#1741](https://github.com/docker/for-win/issues/1741)
   - DNS name `host.docker.internal` can be used for host resolution from Windows containers.  Fixes [docker/for-win#1976](https://github.com/docker/for-win/issues/1976)
-  - Fix broken link in diagnostics window. 
+  - Fix broken link in diagnostics window.
 @z
 
 @x
@@ -2466,10 +2466,10 @@ This release contains a Kubernetes upgrade. Note that your local Kubernetes clus
 @z
 
 @x
-* New 
+* New
   - Enable ceph & rbd modules in LinuxKit VM.
 @y
-* New 
+* New
   - Enable ceph & rbd modules in LinuxKit VM.
 @z
 
@@ -5063,10 +5063,10 @@ work. Some insider builds may not work.
 
 @x
 * Only UTF-8 passwords are supported for host filesystem sharing
-* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc` as documented in [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc`.
 @y
 * Only UTF-8 passwords are supported for host filesystem sharing
-* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc` as documented in [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc`.
 @z
 
 @x
@@ -5088,9 +5088,9 @@ Unreleased. See Beta 23 for changes.
 @z
 
 @x
-* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc` as documented in [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc`.
 @y
-* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc` as documented in [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md).
+* Docker automatically disables lingering net adapters. The only way to remove them is manually using `devmgmt.msc`.
 @z
 
 @x
@@ -5868,9 +5868,9 @@ This Beta release includes some significant changes:
 @z
 
 @x
-* Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](/manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) for more details.
+* Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. 
 @y
-* Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. See [Troubleshooting](manuals/desktop/troubleshoot-and-support/troubleshoot/known-issues.md) for more details.
+* Due to limitation in the Windows NAT implementation, co-existence with other NAT prefixes needs to be carefully managed. 
 @z
 
 @x

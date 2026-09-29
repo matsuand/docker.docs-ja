@@ -16,53 +16,15 @@ linkTitle: Images
 @z
 
 @x
-The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are logged in, you can also see the images you and your organization have shared on Docker Hub. For more information, see [Explore your images](images.md).
+The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are signed in, you can also see the images you and your organization have shared on Docker Hub.
 @y
-The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are logged in, you can also see the images you and your organization have shared on Docker Hub. For more information, see [Explore your images](images.md).
+The **Images** view displays a list of your Docker images and allows you to run an image as a container, pull the latest version of an image from Docker Hub, and inspect images. It also displays a summary of image vulnerabilities. In addition, the **Images** view contains clean-up options to remove unwanted images from the disk to reclaim space. If you are signed in, you can also see the images you and your organization have shared on Docker Hub.
 @z
 
 @x
-The **Images** view lets you manage Docker images without having to use the CLI. By default, it displays a list of all Docker images on your local disk. 
+By default, the **Images** view displays a list of all Docker images on your local disk. You can view Docker Hub images once you've signed in to Docker Hub.
 @y
-The **Images** view lets you manage Docker images without having to use the CLI. By default, it displays a list of all Docker images on your local disk. 
-@z
-
-@x
-You can also view Hub images once you have signed in to Docker Hub. This allows you to collaborate with your team and manage your images directly through Docker Desktop.
-@y
-You can also view Hub images once you have signed in to Docker Hub. This allows you to collaborate with your team and manage your images directly through Docker Desktop.
-@z
-
-@x
-The **Images** view lets you perform core operations such as running an image as a container, pulling the latest version of an image from Docker Hub, pushing the image to Docker Hub, and inspecting images.
-@y
-The **Images** view lets you perform core operations such as running an image as a container, pulling the latest version of an image from Docker Hub, pushing the image to Docker Hub, and inspecting images.
-@z
-
-@x
-It also displays metadata about the image such as the:
-- Tag
-- Image ID
-- Date created
-- Size of the image.
-@y
-It also displays metadata about the image such as the:
-- Tag
-- Image ID
-- Date created
-- Size of the image.
-@z
-
-@x
-An **In Use** tag displays next to images used by running and stopped containers. You can choose what information you want displayed by selecting the **More options** menu to the right of the search bar, and then use the toggle switches according to your preferences. 
-@y
-An **In Use** tag displays next to images used by running and stopped containers. You can choose what information you want displayed by selecting the **More options** menu to the right of the search bar, and then use the toggle switches according to your preferences. 
-@z
-
-@x
-The **Images on disk** status bar displays the number of images and the total disk space used by the images and when this information was last refreshed.
-@y
-The **Images on disk** status bar displays the number of images and the total disk space used by the images and when this information was last refreshed.
+By default, the **Images** view displays a list of all Docker images on your local disk. You can view Docker Hub images once you've signed in to Docker Hub.
 @z
 
 @x
@@ -91,6 +53,54 @@ You can sort images by:
 - In use
 - Unused
 - Dangling
+@z
+
+@x
+An unused image is an image that isn't used by any running or stopped container. An image becomes dangling when you build a new version of the image with the same tag.
+@y
+An unused image is an image that isn't used by any running or stopped container. An image becomes dangling when you build a new version of the image with the same tag.
+@z
+
+@x
+Select the **Columns** icon to choose which columns are displayed, and toggle each one on or off according to your preference. By default, the grid shows:
+@y
+Select the **Columns** icon to choose which columns are displayed, and toggle each one on or off according to your preference. By default, the grid shows:
+@z
+
+@x
+- Tag
+- Image ID
+- Date created
+- Size of the image.
+@y
+- Tag
+- Image ID
+- Date created
+- Size of the image.
+@z
+
+@x
+A status icon next to each image indicates whether it's **In use** or **Unused**. Hover over an image's name, tag, or ID to reveal a copy-to-clipboard button. An architecture warning chip (for example, `amd64`) appears next to an image's name when it's running under emulation, which can cause poor performance or failures.
+@y
+A status icon next to each image indicates whether it's **In use** or **Unused**. Hover over an image's name, tag, or ID to reveal a copy-to-clipboard button. An architecture warning chip (for example, `amd64`) appears next to an image's name when it's running under emulation, which can cause poor performance or failures.
+@z
+
+@x
+Above the grid, a header shows the total number of images, the disk space they use, and when this information was last refreshed.
+@y
+Above the grid, a header shows the total number of images, the disk space they use, and when this information was last refreshed.
+@z
+
+@x
+Select the checkbox on one or more images to select them, then use the bulk **Delete** action to remove them all at once. While images are selected, the toolbar shows how much disk space you'd reclaim by deleting them.
+@y
+Select the checkbox on one or more images to select them, then use the bulk **Delete** action to remove them all at once. While images are selected, the toolbar shows how much disk space you'd reclaim by deleting them.
+@z
+
+@x
+If Gordon is available, each image row can surface AI-suggested diagnostic questions and flag issues, such as an image being dangling, unused, or unusually large.
+@y
+If Gordon is available, each image row can surface AI-suggested diagnostic questions and flag issues, such as an image being dangling, unused, or unusually large.
 @z
 
 @x
@@ -126,13 +136,13 @@ When prompted you can either:
 @z
 
 @x
-To inspect an image, select the image row. Inspecting an image displays detailed information about the image such as the:
+To inspect an image, select the image row, or select **View packages and CVEs** from its actions menu. The image's detail page shows information such as:
 @y
-To inspect an image, select the image row. Inspecting an image displays detailed information about the image such as the:
+To inspect an image, select the image row, or select **View packages and CVEs** from its actions menu. The image's detail page shows information such as:
 @z
 
 @x
-- Image history
+- Image history (with a copy button)
 - Image ID
 - Date the image was created
 - Size of the image
@@ -141,7 +151,7 @@ To inspect an image, select the image row. Inspecting an image displays detailed
 - Vulnerabilities found
 - Packages inside the image
 @y
-- Image history
+- Image history (with a copy button)
 - Image ID
 - Date the image was created
 - Size of the image
@@ -152,11 +162,9 @@ To inspect an image, select the image row. Inspecting an image displays detailed
 @z
 
 @x
-[Docker Scout](/manuals/scout/_index.md) powers this vulnerability information.
-For more information about this view, see [Image details view](/manuals/scout/explore/image-details-view.md)
+From an image's row, you can also select **View container usage** to jump to the Containers view, filtered to containers using that image.
 @y
-[Docker Scout](manuals/scout/_index.md) powers this vulnerability information.
-For more information about this view, see [Image details view](manuals/scout/explore/image-details-view.md)
+From an image's row, you can also select **View container usage** to jump to the Containers view, filtered to containers using that image.
 @z
 
 @x
@@ -210,6 +218,12 @@ Select the image from the list, select the **More options** button and select **
 @z
 
 @x
+To remove an individual image, select the bin icon on its row. To remove several at once, select their checkboxes and use the bulk **Delete** action.
+@y
+To remove an individual image, select the bin icon on its row. To remove several at once, select their checkboxes and use the bulk **Delete** action.
+@z
+
+@x
 > [!NOTE]
 >
 > To remove an image used by a running or a stopped container, you must first remove the associated container.
@@ -217,18 +231,6 @@ Select the image from the list, select the **More options** button and select **
 > [!NOTE]
 >
 > To remove an image used by a running or a stopped container, you must first remove the associated container.
-@z
-
-@x
-An unused image is an image which is not used by any running or stopped containers. An image becomes dangling when you build a new version of the image with the same tag.
-@y
-An unused image is an image which is not used by any running or stopped containers. An image becomes dangling when you build a new version of the image with the same tag.
-@z
-
-@x
-To remove individual images, select the bin icon. 
-@y
-To remove individual images, select the bin icon. 
 @z
 
 @x
@@ -240,20 +242,20 @@ To remove individual images, select the bin icon.
 @x
 The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
-The **Local** and **Docker Hub repositories** tabs near the top toggles between viewing images in your local image store,
+The **Local** and **My Hub** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
 @y
 The **Images** view also allows you to manage and interact with images in Docker Hub repositories.
 By default, when you go to **Images** in Docker Desktop, you see a list of images that exist in your local image store.
-The **Local** and **Docker Hub repositories** tabs near the top toggles between viewing images in your local image store,
+The **Local** and **My Hub** tabs near the top toggles between viewing images in your local image store,
 and images in remote Docker Hub repositories that you have access to.
 @z
 
 @x
-Switching to the **Docker Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
+Switching to the **My Hub** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
 When signed in, it shows you a list of images in Docker Hub organizations and repositories that you have access to.
 @y
-Switching to the **Docker Hub repositories** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
+Switching to the **My Hub** tab prompts you to sign in to your Docker Hub account, if you're not already signed in.
 When signed in, it shows you a list of images in Docker Hub organizations and repositories that you have access to.
 @z
 

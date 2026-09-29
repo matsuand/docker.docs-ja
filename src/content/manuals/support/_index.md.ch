@@ -6,19 +6,29 @@
 @x
 title: Get support for Docker products
 linkTitle: Support
-description: Learn about support options for Docker products including paid subscriptions and community resources
-keywords: support, help, docker desktop, subscriptions, community, troubleshooting
+description: >-
+  Find Docker support options, including paid subscription response times,
+  severity levels, Docker Desktop support scope, and community resources.
+keywords: docker support, contact support, subscription support, premium
+  support, support response times, severity levels, community forums,
+  docker desktop support
 @y
 title: Get support for Docker products
 linkTitle: Support
-description: Learn about support options for Docker products including paid subscriptions and community resources
-keywords: support, help, docker desktop, subscriptions, community, troubleshooting
+description: >-
+  Find Docker support options, including paid subscription response times,
+  severity levels, Docker Desktop support scope, and community resources.
+keywords: docker support, contact support, subscription support, premium
+  support, support response times, severity levels, community forums,
+  docker desktop support
 @z
 
 @x
-Docker offers multiple support channels depending on your subscription level and needs.
+Docker offers multiple support channels depending on your subscription level
+and needs.
 @y
-Docker offers multiple support channels depending on your subscription level and needs.
+Docker offers multiple support channels depending on your subscription level
+and needs.
 @z
 
 @x
@@ -28,9 +38,11 @@ Docker offers multiple support channels depending on your subscription level and
 @z
 
 @x
-All Docker Pro, Team, and Business subscribers receive email support for Docker products.
+All Docker Pro, Team, and Business subscribers receive email support for
+Docker products.
 @y
-All Docker Pro, Team, and Business subscribers receive email support for Docker products.
+All Docker Pro, Team, and Business subscribers receive email support for
+Docker products.
 @z
 
 @x
@@ -40,23 +52,45 @@ All Docker Pro, Team, and Business subscribers receive email support for Docker 
 @z
 
 @x
-- Docker Pro: 3 business day response
+- Docker Pro: 5 business day response
 - Docker Team: 2 business day response, 24×5 availability
 - Docker Business: 1 business day response, 24×5 availability
 @y
-- Docker Pro: 3 business day response
+- Docker Pro: 5 business day response
 - Docker Team: 2 business day response, 24×5 availability
 - Docker Business: 1 business day response, 24×5 availability
 @z
 
 @x
+Docker Verified Publisher (DVP) organizations follow the response times for
+their Docker Pro, Team, or Business subscription. Without one of those
+subscriptions, the following response times apply:
+@y
+Docker Verified Publisher (DVP) organizations follow the response times for
+their Docker Pro, Team, or Business subscription. Without one of those
+subscriptions, the following response times apply:
+@z
+
+@x
+- DVP Starter: 3 business day response
+- DVP Growth: 2 business day response, 24×5 availability
+@y
+- DVP Starter: 3 business day response
+- DVP Growth: 2 business day response, 24×5 availability
+@z
+
+@x
 > [!TIP]
 >
-> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
+> Premium Support with faster response times and 24×7 availability is
+> available as an add-on for
+> [Docker Business and Docker Hardened Images subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
 @y
 > [!TIP]
 >
-> Premium Support with faster response times and 24×7 availability is available as an add-on for [Docker Business subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
+> Premium Support with faster response times and 24×7 availability is
+> available as an add-on for
+> [Docker Business and Docker Hardened Images subscribers](https://www.docker.com/pricing?ref=Docs&refAction=DocsSupport).
 @z
 
 @x
@@ -66,17 +100,17 @@ All Docker Pro, Team, and Business subscribers receive email support for Docker 
 @z
 
 @x
-| Level    | Description                                                                                                                                                                |
-| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Level | Description |
+| :--- | :--- |
 | Critical | Widespread or company-wide service outage affecting many customers or all users within a single organization. Business operations are halted with no workaround available. |
-| High     | Team or department-level impact preventing significant users from accessing core functionality. Severe business impact with no workaround exists.                          |
-| Medium   | Individual user or small group impact causing partial loss of functionality. Business operations continue, often with workarounds available but reduced productivity.      |
+| High | Team or department-level impact preventing significant users from accessing core functionality. Severe business impact with no workaround available. |
+| Medium | Individual user or small group impact causing partial loss of functionality. Business operations continue, often with workarounds available but reduced productivity. |
 @y
-| Level    | Description                                                                                                                                                                |
-| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Level | Description |
+| :--- | :--- |
 | Critical | Widespread or company-wide service outage affecting many customers or all users within a single organization. Business operations are halted with no workaround available. |
-| High     | Team or department-level impact preventing significant users from accessing core functionality. Severe business impact with no workaround exists.                          |
-| Medium   | Individual user or small group impact causing partial loss of functionality. Business operations continue, often with workarounds available but reduced productivity.      |
+| High | Team or department-level impact preventing significant users from accessing core functionality. Severe business impact with no workaround available. |
+| Medium | Individual user or small group impact causing partial loss of functionality. Business operations continue, often with workarounds available but reduced productivity. |
 @z
 
 @x
@@ -88,17 +122,21 @@ All Docker Pro, Team, and Business subscribers receive email support for Docker 
 @x
 > [!TIP]
 >
-> Before reaching out for support, review the troubleshooting documentation for your product.
+> Before reaching out for support, review the troubleshooting documentation
+> for your product.
 @y
 > [!TIP]
 >
-> Before reaching out for support, review the troubleshooting documentation for your product.
+> Before reaching out for support, review the troubleshooting documentation
+> for your product.
 @z
 
 @x
-If you have a paid Docker subscription, [contact the Support team](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription,
+[contact the Support team](https://hub.docker.com/support/contact/).
 @y
-If you have a paid Docker subscription, [contact the Support team](https://hub.docker.com/support/contact/).
+If you have a paid Docker subscription,
+[contact the Support team](https://hub.docker.com/support/contact/).
 @z
 
 @x
@@ -108,9 +146,11 @@ If you have a paid Docker subscription, [contact the Support team](https://hub.d
 @z
 
 @x
-All Docker users can seek support through community resources, where Docker or the community respond on a best effort basis:
+All Docker users can seek support through community resources, where Docker
+or the community respond on a best-effort basis:
 @y
-All Docker users can seek support through community resources, where Docker or the community respond on a best effort basis:
+All Docker users can seek support through community resources, where Docker
+or the community respond on a best-effort basis:
 @z
 
 @x
@@ -141,10 +181,10 @@ Docker Desktop support is available with a paid subscription.
 
 @x
 {{< tabs >}}
-{{< tab name="Covered">}}
+{{< tab name="Covered" >}}
 @y
 {{< tabs >}}
-{{< tab name="Covered">}}
+{{< tab name="Covered" >}}
 @z
 
 @x
@@ -161,7 +201,7 @@ Docker Desktop support includes:
 - Push or pull issues, including rate limiting
 - Application crashes or unexpected behavior
 - Automated builds
-- Basic product 'how to' questions
+- Basic product how-to questions
 @y
 - Account management and billing
 - Configuration and installation issues
@@ -170,31 +210,35 @@ Docker Desktop support includes:
 - Push or pull issues, including rate limiting
 - Application crashes or unexpected behavior
 - Automated builds
-- Basic product 'how to' questions
+- Basic product how-to questions
 @z
 
 @x
-**Windows-specific:**
+On Windows, support also covers:
 @y
-**Windows-specific:**
+On Windows, support also covers:
 @z
 
 @x
 - Turning on virtualization in BIOS
 - Turning on Windows features
-- Running inside [certain VM or VDI environments](/manuals/desktop/setup/vm-vdi.md) (Docker Business only)
+- Running inside
+  [certain VM or VDI environments](/manuals/desktop/setup/vm-vdi.md)
+  (Docker Business only)
 @y
 - Turning on virtualization in BIOS
 - Turning on Windows features
-- Running inside [certain VM or VDI environments](manuals/desktop/setup/vm-vdi.md) (Docker Business only)
+- Running inside
+  [certain VM or VDI environments](manuals/desktop/setup/vm-vdi.md)
+  (Docker Business only)
 @z
 
 @x
 {{< /tab >}}
-{{< tab name="Not covered">}}
+{{< tab name="Not covered" >}}
 @y
 {{< /tab >}}
-{{< tab name="Not covered">}}
+{{< tab name="Not covered" >}}
 @z
 
 @x
@@ -204,14 +248,14 @@ Docker Desktop support excludes:
 @z
 
 @x
-- Unsupported operating systems, including beta/preview versions
+- Unsupported operating systems, including beta and preview versions
 - Running containers of a different architecture using emulation
 - Docker Engine, Docker CLI, or other bundled Linux components
 - Kubernetes
 - Features labeled as experimental
-- System/Server administration activities
+- System and server administration activities
 - Desktop as a production runtime
-- Scale deployment/multi-machine installation
+- Scale deployment and multi-machine installation
 - Routine product maintenance (data backup, disk space, log rotation)
 - Third-party applications not provided by Docker
 - Altered or modified Docker software
@@ -220,14 +264,14 @@ Docker Desktop support excludes:
 - Training, customization, and integration
 - Running multiple instances on a single machine
 @y
-- Unsupported operating systems, including beta/preview versions
+- Unsupported operating systems, including beta and preview versions
 - Running containers of a different architecture using emulation
 - Docker Engine, Docker CLI, or other bundled Linux components
 - Kubernetes
 - Features labeled as experimental
-- System/Server administration activities
+- System and server administration activities
 - Desktop as a production runtime
-- Scale deployment/multi-machine installation
+- Scale deployment and multi-machine installation
 - Routine product maintenance (data backup, disk space, log rotation)
 - Third-party applications not provided by Docker
 - Altered or modified Docker software
@@ -240,11 +284,15 @@ Docker Desktop support excludes:
 @x
 > [!NOTE]
 >
-> Support for [running Docker Desktop in a VM or VDI environment](/manuals/desktop/setup/vm-vdi.md) is only available to Docker Business customers.
+> Support for
+> [running Docker Desktop in a VM or VDI environment](/manuals/desktop/setup/vm-vdi.md)
+> is only available to Docker Business customers.
 @y
 > [!NOTE]
 >
-> Support for [running Docker Desktop in a VM or VDI environment](manuals/desktop/setup/vm-vdi.md) is only available to Docker Business customers.
+> Support for
+> [running Docker Desktop in a VM or VDI environment](manuals/desktop/setup/vm-vdi.md)
+> is only available to Docker Business customers.
 @z
 
 @x
@@ -262,17 +310,19 @@ Docker Desktop support excludes:
 @z
 
 @x
-- Docker Business: Versions up to six months older than the latest version (fixes applied to latest version only)
+- Docker Business: Versions up to six months older than the latest version
+  (fixes applied to latest version only)
 - Docker Pro and Team: Latest version only
 @y
-- Docker Business: Versions up to six months older than the latest version (fixes applied to latest version only)
+- Docker Business: Versions up to six months older than the latest version
+  (fixes applied to latest version only)
 - Docker Pro and Team: Latest version only
 @z
 
 @x
-### Number of machines
+### Machines per subscription
 @y
-### Number of machines
+### Machines per subscription
 @z
 
 @x
@@ -302,9 +352,9 @@ Docker Desktop support excludes:
 @z
 
 @x
-### Community resources
+### Docker Desktop community resources
 @y
-### Community resources
+### Docker Desktop community resources
 @z
 
 @x
@@ -320,19 +370,31 @@ Docker Desktop support excludes:
 @z
 
 @x
-When uploading diagnostics, the bundle may contain personal data such as usernames and IP addresses. Diagnostics bundles are only accessible to Docker, Inc. employees directly involved in diagnosing issues.
+When uploading diagnostics, the bundle may contain personal data such as
+usernames and IP addresses. Diagnostics bundles are only accessible to
+Docker, Inc. employees directly involved in diagnosing issues.
 @y
-When uploading diagnostics, the bundle may contain personal data such as usernames and IP addresses. Diagnostics bundles are only accessible to Docker, Inc. employees directly involved in diagnosing issues.
+When uploading diagnostics, the bundle may contain personal data such as
+usernames and IP addresses. Diagnostics bundles are only accessible to
+Docker, Inc. employees directly involved in diagnosing issues.
 @z
 
 @x
-By default, Docker, Inc. deletes uploaded diagnostics bundles after 30 days. You may request removal of a diagnostics bundle by specifying the diagnostics ID or your GitHub ID. Docker, Inc. only uses the data to investigate specific user issues but may derive high-level (non-personal) metrics.
+By default, Docker, Inc. deletes uploaded diagnostics bundles after 30 days.
+You can request removal of a diagnostics bundle by specifying the diagnostics
+ID or your GitHub ID. Docker, Inc. only uses the data to investigate specific
+user issues but may derive high-level (non-personal) metrics.
 @y
-By default, Docker, Inc. deletes uploaded diagnostics bundles after 30 days. You may request removal of a diagnostics bundle by specifying the diagnostics ID or your GitHub ID. Docker, Inc. only uses the data to investigate specific user issues but may derive high-level (non-personal) metrics.
+By default, Docker, Inc. deletes uploaded diagnostics bundles after 30 days.
+You can request removal of a diagnostics bundle by specifying the diagnostics
+ID or your GitHub ID. Docker, Inc. only uses the data to investigate specific
+user issues but may derive high-level (non-personal) metrics.
 @z
 
 @x
-For more information, see [Docker Data Processing Agreement](https://www.docker.com/legal/data-processing-agreement).
+For more information, see
+[Docker Data Processing Agreement](https://www.docker.com/legal/data-processing-agreement).
 @y
-For more information, see [Docker Data Processing Agreement](https://www.docker.com/legal/data-processing-agreement).
+For more information, see
+[Docker Data Processing Agreement](https://www.docker.com/legal/data-processing-agreement).
 @z

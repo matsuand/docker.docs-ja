@@ -122,51 +122,61 @@ To use the volume with a container, see [Use volumes](manuals/engine/storage/vol
 @z
 
 @x
-To explore the details of a specific volume, select a volume from the list. This
-opens the detailed view.
+### Inspect a volume
 @y
-To explore the details of a specific volume, select a volume from the list. This
-opens the detailed view.
+### Inspect a volume
 @z
 
 @x
-The **Container in-use** tab displays the name of the container using the
-volume, the image name, the port number used by the container, and the target. A
-target is a path inside a container that gives access to the files in the
-volume.
+To explore the details of a specific volume, select a volume from the list. This opens the detailed view, with three tabs.
 @y
-The **Container in-use** tab displays the name of the container using the
-volume, the image name, the port number used by the container, and the target. A
-target is a path inside a container that gives access to the files in the
-volume.
+To explore the details of a specific volume, select a volume from the list. This opens the detailed view, with three tabs.
 @z
 
 @x
-The **Stored data** tab displays the files and folders in the volume and the
-file size. To save a file or a folder, right-click on the file or folder to
-display the options menu, select **Save as...**, and then specify a location to
-download the file.
+#### Container in-use
 @y
-The **Stored data** tab displays the files and folders in the volume and the
-file size. To save a file or a folder, right-click on the file or folder to
-display the options menu, select **Save as...**, and then specify a location to
-download the file.
+#### Container in-use
 @z
 
 @x
-To delete a file or a folder from the volume, right-click on the file or folder
-to display the options menu, select **Delete**, and then select **Delete** again
-to confirm.
+The **Container in-use** tab displays the name of the container using the volume, the image name, the port number used by the container, and the target. A target is a path inside a container that gives access to the files in the volume.
 @y
-To delete a file or a folder from the volume, right-click on the file or folder
-to display the options menu, select **Delete**, and then select **Delete** again
-to confirm.
+The **Container in-use** tab displays the name of the container using the volume, the image name, the port number used by the container, and the target. A target is a path inside a container that gives access to the files in the volume.
 @z
 
 @x
-The **Exports** tab lets you [export the volume](#export-a-volume).
+#### Stored data
 @y
-The **Exports** tab lets you [export the volume](#export-a-volume).
+#### Stored data
+@z
+
+@x
+The **Stored data** tab displays the files and folders in the volume and their file size.
+@y
+The **Stored data** tab displays the files and folders in the volume and their file size.
+@z
+
+@x
+- Right-click a file or folder to save it, select **Save as...**, and then specify a location to download it to.
+- To delete a file or folder from the volume, right-click it, select **Delete**, and then confirm.
+- To edit a text file directly, double-click it to open it in the built-in editor. Unsaved changes are indicated in the editor, and you can save them back to the volume.
+@y
+- Right-click a file or folder to save it, select **Save as...**, and then specify a location to download it to.
+- To delete a file or folder from the volume, right-click it, select **Delete**, and then confirm.
+- To edit a text file directly, double-click it to open it in the built-in editor. Unsaved changes are indicated in the editor, and you can save them back to the volume.
+@z
+
+@x
+#### Exports
+@y
+#### Exports
+@z
+
+@x
+The **Exports** tab lets you export the volume, view a log of past exports, and manage a scheduled export. See [export the volume](#export-a-volume).
+@y
+The **Exports** tab lets you export the volume, view a log of past exports, and manage a scheduled export. See [export the volume](#export-a-volume).
 @z
 
 @x

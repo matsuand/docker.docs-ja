@@ -74,11 +74,9 @@ The **Troubleshoot** menu contains the following options:
 @z
 
 @x
-- **Clean up data**. This option resets all Docker data without a
-  reset to factory defaults. Selecting this option results in the loss of existing settings.
+- **Clean up data**. A disk image reset destroys all Docker containers and images local to the machine, preserving all settings.
 @y
-- **Clean up data**. This option resets all Docker data without a
-  reset to factory defaults. Selecting this option results in the loss of existing settings.
+- **Clean up data**. A disk image reset destroys all Docker containers and images local to the machine, preserving all settings.
 @z
 
 @x
@@ -90,9 +88,9 @@ The **Troubleshoot** menu contains the following options:
 @z
 
 @x
-If you are a Mac or Linux user, you also have the option to **Uninstall** Docker Desktop from your system.
+If you are a Mac user, you also have the option to **Uninstall** Docker Desktop from your system.
 @y
-If you are a Mac or Linux user, you also have the option to **Uninstall** Docker Desktop from your system.
+If you are a Mac user, you also have the option to **Uninstall** Docker Desktop from your system.
 @z
 
 @x
@@ -535,12 +533,8 @@ to learn how to view the Docker Daemon logs.
 
 @x
 - View specific [troubleshoot topics](topics.md).
-- View information on [known issues](known-issues.md)
-- [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) - Resolve macOS installation issues
 - [Get support for Docker products](/manuals/support/_index.md)
 @y
 - View specific [troubleshoot topics](topics.md).
-- View information on [known issues](known-issues.md)
-- [Fix "Docker.app is damaged" on macOS](mac-damaged-dialog.md) - Resolve macOS installation issues
 - [Get support for Docker products](manuals/support/_index.md)
 @z

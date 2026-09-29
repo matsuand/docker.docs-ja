@@ -4,21 +4,33 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Release notes for Docker Home, the Admin Console, billing, security, and subscription features
+title: Accounts and admin release notes
 linkTitle: Release notes
-description: Learn about the new features, bug fixes, and breaking changes for Docker Home and billing and subscription features
-keywords: Docker Home, billing, subscription, security, admin, releases, what's new
+description: >-
+  Learn about new features, bug fixes, and breaking changes for Docker accounts
+  and admin features, including Docker Home, billing, security, and
+  subscriptions.
+keywords: accounts, admin, Docker Home, billing, subscription, security,
+  release notes, what's new
 @y
-title: Release notes for Docker Home, the Admin Console, billing, security, and subscription features
+title: Accounts and admin release notes
 linkTitle: Release notes
-description: Learn about the new features, bug fixes, and breaking changes for Docker Home and billing and subscription features
-keywords: Docker Home, billing, subscription, security, admin, releases, what's new
+description: >-
+  Learn about new features, bug fixes, and breaking changes for Docker accounts
+  and admin features, including Docker Home, billing, security, and
+  subscriptions.
+keywords: accounts, admin, Docker Home, billing, subscription, security,
+  release notes, what's new
 @z
 
 @x
-This page provides details on new features, enhancements, known issues, and bug fixes across Docker Home, the Admin Console, billing, security, and subscription functionalities.
+This page lists new features, enhancements, known issues, and bug fixes for
+Docker accounts and admin features, including Docker Home, billing, security,
+and subscriptions.
 @y
-This page provides details on new features, enhancements, known issues, and bug fixes across Docker Home, the Admin Console, billing, security, and subscription functionalities.
+This page lists new features, enhancements, known issues, and bug fixes for
+Docker accounts and admin features, including Docker Home, billing, security,
+and subscriptions.
 @z
 
 @x
@@ -35,18 +47,20 @@ This page provides details on new features, enhancements, known issues, and bug 
 
 @x
 - Administrators can now control whether organization members can push content
-  to their personal namespaces on Docker Hub with [namespace access
-  control](/manuals/enterprise/security/hardened-desktop/namespace-access.md).
+  to their personal namespaces on Docker Hub with
+  [namespace access control](/manuals/enterprise/security/hardened-desktop/namespace-access.md).
 - Administrators can now prevent creating public repositories within
-  organization namespaces using the [Disable public
-  repositories](/manuals/docker-hub/settings.md#disable-creation-of-public-repos) setting.
+  organization namespaces using the
+  [Disable public repositories](/manuals/docker-hub/settings.md#disable-creation-of-public-repos)
+  setting.
 @y
 - Administrators can now control whether organization members can push content
-  to their personal namespaces on Docker Hub with [namespace access
-  control](manuals/enterprise/security/hardened-desktop/namespace-access.md).
+  to their personal namespaces on Docker Hub with
+  [namespace access control](manuals/enterprise/security/hardened-desktop/namespace-access.md).
 - Administrators can now prevent creating public repositories within
-  organization namespaces using the [Disable public
-  repositories](manuals/docker-hub/settings.md#disable-creation-of-public-repos) setting.
+  organization namespaces using the
+  [Disable public repositories](manuals/docker-hub/settings.md#disable-creation-of-public-repos)
+  setting.
 @z
 
 @x
@@ -62,12 +76,12 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Administrators can now use an allow list with [Image Access
-  Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+- Administrators can now use an allow list with
+  [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
   to approve specific repositories that bypass image access controls.
 @y
-- Administrators can now use an allow list with [Image Access
-  Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
+- Administrators can now use an allow list with
+  [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
   to approve specific repositories that bypass image access controls.
 @z
 
@@ -104,15 +118,15 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- New Docker subscriptions are now available. For more information, see [Docker
-  subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsPlatformReleaseNotes) and [Announcing
-  Upgraded Docker Plans: Simpler, More Value, Better Development and
-  Productivity](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+- New Docker subscriptions are now available. For more information, see
+  [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsPlatformReleaseNotes)
+  and
+  [Announcing Upgraded Docker Plans: Simpler, More Value, Better Development and Productivity](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
 @y
-- New Docker subscriptions are now available. For more information, see [Docker
-  subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsPlatformReleaseNotes) and [Announcing
-  Upgraded Docker Plans: Simpler, More Value, Better Development and
-  Productivity](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
+- New Docker subscriptions are now available. For more information, see
+  [Docker subscriptions and features](https://www.docker.com/pricing?ref=Docs&refAction=DocsPlatformReleaseNotes)
+  and
+  [Announcing Upgraded Docker Plans: Simpler, More Value, Better Development and Productivity](https://www.docker.com/blog/november-2024-updated-plans-announcement/).
 @z
 
 @x
@@ -129,16 +143,26 @@ This page provides details on new features, enhancements, known issues, and bug 
 
 @x
 - Administrators can now:
-  - Enforce sign-in with [configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in with
+    [configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
+    (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
-  - Deploy Docker Desktop for Mac in bulk with the [PKG installer](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
-  - [Use Desktop Settings Management via the Docker Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md) (Early Access).
+  - Deploy Docker Desktop for Mac in bulk with the
+    [PKG installer](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md)
+    (Early Access).
+  - [Use Desktop Settings Management via the Docker Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+    (Early Access).
 @y
 - Administrators can now:
-  - Enforce sign-in with [configuration profiles](manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only) (Early Access).
+  - Enforce sign-in with
+    [configuration profiles](manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
+    (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
-  - Deploy Docker Desktop for Mac in bulk with the [PKG installer](manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md) (Early Access).
-  - [Use Desktop Settings Management via the Docker Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md) (Early Access).
+  - Deploy Docker Desktop for Mac in bulk with the
+    [PKG installer](manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md)
+    (Early Access).
+  - [Use Desktop Settings Management via the Docker Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+    (Early Access).
 @z
 
 @x
@@ -148,13 +172,17 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Enhance Container Isolation (ECI) has been improved to:
-  - Permit admins to [turn off Docker socket mount restrictions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
-  - Support wildcard tags when using the [`allowedDerivedImages` setting](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
+- Enhanced Container Isolation (ECI) has been improved to:
+  - Permit administrators to
+    [turn off Docker socket mount restrictions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
+  - Support wildcard tags when using the
+    [`allowedDerivedImages` setting](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
 @y
-- Enhance Container Isolation (ECI) has been improved to:
-  - Permit admins to [turn off Docker socket mount restrictions](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
-  - Support wildcard tags when using the [`allowedDerivedImages` setting](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
+- Enhanced Container Isolation (ECI) has been improved to:
+  - Permit administrators to
+    [turn off Docker socket mount restrictions](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
+  - Support wildcard tags when using the
+    [`allowedDerivedImages` setting](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
 @z
 
 @x
@@ -170,9 +198,11 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- [Personal access tokens](/security/access-tokens/personal-access-tokens/) (PATs) now support expiration dates.
+- [Personal access tokens](/manuals/security/access-tokens/personal-access-tokens.md)
+  (PATs) now support expiration dates.
 @y
-- [Personal access tokens](__SUBDIR__/security/access-tokens/personal-access-tokens/) (PATs) now support expiration dates.
+- [Personal access tokens](manuals/security/access-tokens/personal-access-tokens.md)
+  (PATs) now support expiration dates.
 @z
 
 @x
@@ -188,9 +218,15 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Beta: You can now create [organization access tokens](/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations in the Docker Admin Console.
+- Beta: You can now create
+  [organization access tokens](/manuals/security/access-tokens/organization-access-tokens.md)
+  (OATs) to enhance security for organizations and streamline access
+  management for organizations in the Docker Admin Console.
 @y
-- Beta: You can now create [organization access tokens](__SUBDIR__/security/for-admins/access-tokens/) (OATs) to enhance security for organizations and streamline access management for organizations in the Docker Admin Console.
+- Beta: You can now create
+  [organization access tokens](manuals/security/access-tokens/organization-access-tokens.md)
+  (OATs) to enhance security for organizations and streamline access
+  management for organizations in the Docker Admin Console.
 @z
 
 @x
@@ -206,11 +242,19 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Deploying Docker Desktop via the [MSI installer](/manuals/enterprise/enterprise-deployment/msi-install-and-configure.md) is now generally available.
-- Two new methods to [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md) (Windows registry key and `.plist` file) are now generally available.
+- Deploying Docker Desktop via the
+  [MSI installer](/manuals/enterprise/enterprise-deployment/msi-install-and-configure.md)
+  is now generally available.
+- Two new methods to
+  [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md)
+  (Windows registry key and `.plist` file) are now generally available.
 @y
-- Deploying Docker Desktop via the [MSI installer](manuals/enterprise/enterprise-deployment/msi-install-and-configure.md) is now generally available.
-- Two new methods to [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md) (Windows registry key and `.plist` file) are now generally available.
+- Deploying Docker Desktop via the
+  [MSI installer](manuals/enterprise/enterprise-deployment/msi-install-and-configure.md)
+  is now generally available.
+- Two new methods to
+  [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md)
+  (Windows registry key and `.plist` file) are now generally available.
 @z
 
 @x
@@ -226,9 +270,11 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- Administrators can now view [organization Insights](/manuals/accounts/organization/insights.md).
+- Administrators can now view
+  [organization Insights](/manuals/accounts/organization/insights.md).
 @y
-- Administrators can now view [organization Insights](manuals/accounts/organization/insights.md).
+- Administrators can now view
+  [organization Insights](manuals/accounts/organization/insights.md).
 @z
 
 @x
@@ -244,7 +290,9 @@ This page provides details on new features, enhancements, known issues, and bug 
 @z
 
 @x
-- You can now centrally access and manage Docker products in [Docker Home](https://app.docker.com).
+- You can now centrally access and manage Docker products in
+  [Docker Home](https://app.docker.com).
 @y
-- You can now centrally access and manage Docker products in [Docker Home](https://app.docker.com).
+- You can now centrally access and manage Docker products in
+  [Docker Home](https://app.docker.com).
 @z
