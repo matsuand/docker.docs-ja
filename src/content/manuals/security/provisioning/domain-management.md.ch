@@ -230,9 +230,9 @@ Domain audit can't identify:
 @z
 
 @x
-To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
+To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @y
-To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
+To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @z
 
 @x

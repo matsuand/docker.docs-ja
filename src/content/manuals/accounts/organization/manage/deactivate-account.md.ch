@@ -5,14 +5,14 @@
 
 @x
 title: Deactivate an organization
-linkTitle: Deactivate
+linkTitle: Deactivation
 description: Learn how to deactivate a Docker organization and required
   prerequisite steps.
 keywords: deactivate organization, delete organization, organization
   management, Docker Home, cancel subscription, unlink GitHub, remove SSO
 @y
 title: Deactivate an organization
-linkTitle: Deactivate
+linkTitle: Deactivation
 description: Learn how to deactivate a Docker organization and required
   prerequisite steps.
 keywords: deactivate organization, delete organization, organization

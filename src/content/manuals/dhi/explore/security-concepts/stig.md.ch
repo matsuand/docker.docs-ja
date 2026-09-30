@@ -156,18 +156,18 @@ images](../../tools/hub.md#images-page) and:
 @z
 
 @x
-- Use the **STIG** filter on the catalog page
+- Use the **Compliance** filter on the catalog page and select **STIG**
 - Look for **STIG** labels on individual image listings
 @y
-- Use the **STIG** filter on the catalog page
+- Use the **Compliance** filter on the catalog page and select **STIG**
 - Look for **STIG** labels on individual image listings
 @z
 
 @x
-To find a STIG image variant within a repository, go to the **Tags** tab in the
+To find a STIG image variant within a repository, go to the **Images** tab in the
 repository, and find images labeled with **STIG** in the **Compliance** column.
 @y
-To find a STIG image variant within a repository, go to the **Tags** tab in the
+To find a STIG image variant within a repository, go to the **Images** tab in the
 repository, and find images labeled with **STIG** in the **Compliance** column.
 @z
 

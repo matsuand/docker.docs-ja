@@ -218,9 +218,9 @@ You can control how Docker handles container networking and DNS resolution to be
 @z
 
 @x
-You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking), or [Docker Home](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](/manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md#networking), or [Docker Home](/manuals/desktop/enterprise/hardened-desktop/settings-management/configure-admin-console.md)
 @y
-You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#networking), or [Docker Home](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+You can set the following settings on the **Network** tab in the Docker Desktop Dashboard settings, or if you're an admin, with Settings Management via the [`admin-settings.json` file](manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md#networking), or [Docker Home](manuals/desktop/enterprise/hardened-desktop/settings-management/configure-admin-console.md)
 @z
 
 @x

@@ -53,7 +53,7 @@ Docker Extensions is switched off by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings-store.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/_index.md)
+> This can also be done with [Hardened Docker Desktop](/manuals/desktop/enterprise/hardened-desktop/_index.md)
 @y
 > [!NOTE]
 >
@@ -62,7 +62,7 @@ Docker Extensions is switched off by default. To change your settings:
 >   - `~/Library/Group Containers/group.com.docker/settings-store.json` on Mac
 >   - `C:\Users\[USERNAME]\AppData\Roaming\Docker\settings-store.json` on Windows
 >
-> This can also be done with [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/_index.md)
+> This can also be done with [Hardened Docker Desktop](manuals/desktop/enterprise/hardened-desktop/_index.md)
 @z
 
 @x

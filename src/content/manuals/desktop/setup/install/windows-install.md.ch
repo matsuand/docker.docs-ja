@@ -513,7 +513,7 @@ Docker Desktop を起動するには、以下を実行します。
 @x
 > [!TIP]
 >
-> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
+> As an IT administrator, you can use endpoint management (MDM) software to identify the number of Docker Desktop instances and their versions within your environment. This can provide accurate license reporting, help ensure your machines use the latest version of Docker Desktop, and enable you to [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -524,7 +524,7 @@ Docker Desktop を起動するには、以下を実行します。
 >
 > IT 管理者としては、エンドポイント管理 (MDM) ソフトウェアを使えば、環境内の Docker Desktop インスタンスとそのバージョンを識別できるようになります。
 > この機能によって正確なライセンス情報を得ることができ、Docker Desktop の最新バージョンを常に利用できるようになります。
-> また [強制的なサインイン](manuals/enterprise/security/enforce-sign-in/_index.md) の機能もあります。
+> また [強制的なサインイン](manuals/desktop/enterprise/enforce-sign-in/_index.md) の機能もあります。
 > - [Intune](https://learn.microsoft.com/en-us/mem/intune/apps/app-discovered-apps)
 > - [Jamf](https://docs.jamf.com/10.25.0/jamf-pro/administrator-guide/Application_Usage.html)
 > - [Kandji](https://support.kandji.io/support/solutions/articles/72000559793-view-a-device-application-list)
@@ -659,7 +659,7 @@ If Microsoft Store access is blocked due to security policies:
 
 @x
 - `--allowed-org=<org name>`: Requires the user to sign in and be part of the specified Docker Hub organization when running the application
-- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md).
+- `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
@@ -667,7 +667,7 @@ If Microsoft Store access is blocked due to security policies:
 - `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
 - `--admin-settings`: admin が利用する `admin-settings.json` ファイルを自動生成します。
   これは組織内にあるクライアントマシン上の Docker Desktop における特定設定項目を制御するものです。
-  詳しくは [設定管理](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) を参照してください。
+  詳しくは [設定管理](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) を参照してください。
   - これは `--allowed-org=<組織名>` フラグとともに用いなければなりません。
   - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Windows コンテナー統合機能を無効にします。

@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Accounts and admin release notes
@@ -48,7 +48,7 @@ and subscriptions.
 @x
 - Administrators can now control whether organization members can push content
   to their personal namespaces on Docker Hub with
-  [namespace access control](/manuals/enterprise/security/hardened-desktop/namespace-access.md).
+  [namespace access control](/manuals/desktop/enterprise/hardened-desktop/namespace-access.md).
 - Administrators can now prevent creating public repositories within
   organization namespaces using the
   [Disable public repositories](/manuals/docker-hub/settings.md#disable-creation-of-public-repos)
@@ -56,7 +56,7 @@ and subscriptions.
 @y
 - Administrators can now control whether organization members can push content
   to their personal namespaces on Docker Hub with
-  [namespace access control](manuals/enterprise/security/hardened-desktop/namespace-access.md).
+  [namespace access control](manuals/desktop/enterprise/hardened-desktop/namespace-access.md).
 - Administrators can now prevent creating public repositories within
   organization namespaces using the
   [Disable public repositories](manuals/docker-hub/settings.md#disable-creation-of-public-repos)
@@ -77,11 +77,11 @@ and subscriptions.
 
 @x
 - Administrators can now use an allow list with
-  [Image Access Management](/manuals/enterprise/security/hardened-desktop/image-access-management.md)
+  [Image Access Management](/manuals/desktop/enterprise/hardened-desktop/image-access-management.md)
   to approve specific repositories that bypass image access controls.
 @y
 - Administrators can now use an allow list with
-  [Image Access Management](manuals/enterprise/security/hardened-desktop/image-access-management.md)
+  [Image Access Management](manuals/desktop/enterprise/hardened-desktop/image-access-management.md)
   to approve specific repositories that bypass image access controls.
 @z
 
@@ -144,24 +144,24 @@ and subscriptions.
 @x
 - Administrators can now:
   - Enforce sign-in with
-    [configuration profiles](/manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
+    [configuration profiles](/manuals/desktop/enterprise/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
     (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
   - Deploy Docker Desktop for Mac in bulk with the
-    [PKG installer](/manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md)
+    [PKG installer](/manuals/desktop/enterprise/enterprise-deployment/pkg-install-and-configure.md)
     (Early Access).
-  - [Use Desktop Settings Management via the Docker Admin Console](/manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+  - [Use Desktop Settings Management via the Docker Admin Console](/manuals/desktop/enterprise/hardened-desktop/settings-management/configure-admin-console.md)
     (Early Access).
 @y
 - Administrators can now:
   - Enforce sign-in with
-    [configuration profiles](manuals/enterprise/security/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
+    [configuration profiles](manuals/desktop/enterprise/enforce-sign-in/methods.md#configuration-profiles-method-mac-only)
     (Early Access).
   - Enforce sign-in for more than one organization at a time (Early Access).
   - Deploy Docker Desktop for Mac in bulk with the
-    [PKG installer](manuals/enterprise/enterprise-deployment/pkg-install-and-configure.md)
+    [PKG installer](manuals/desktop/enterprise/enterprise-deployment/pkg-install-and-configure.md)
     (Early Access).
-  - [Use Desktop Settings Management via the Docker Admin Console](manuals/enterprise/security/hardened-desktop/settings-management/configure-admin-console.md)
+  - [Use Desktop Settings Management via the Docker Admin Console](manuals/desktop/enterprise/hardened-desktop/settings-management/configure-admin-console.md)
     (Early Access).
 @z
 
@@ -174,15 +174,15 @@ and subscriptions.
 @x
 - Enhanced Container Isolation (ECI) has been improved to:
   - Permit administrators to
-    [turn off Docker socket mount restrictions](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
+    [turn off Docker socket mount restrictions](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
   - Support wildcard tags when using the
-    [`allowedDerivedImages` setting](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
+    [`allowedDerivedImages` setting](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
 @y
 - Enhanced Container Isolation (ECI) has been improved to:
   - Permit administrators to
-    [turn off Docker socket mount restrictions](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
+    [turn off Docker socket mount restrictions](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/config.md#allowing-all-containers-to-mount-the-docker-socket).
   - Support wildcard tags when using the
-    [`allowedDerivedImages` setting](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
+    [`allowedDerivedImages` setting](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/config.md#docker-socket-mount-permissions-for-derived-images).
 @z
 
 @x
@@ -243,17 +243,17 @@ and subscriptions.
 
 @x
 - Deploying Docker Desktop via the
-  [MSI installer](/manuals/enterprise/enterprise-deployment/msi-install-and-configure.md)
+  [MSI installer](/manuals/desktop/enterprise/enterprise-deployment/msi-install-and-configure.md)
   is now generally available.
 - Two new methods to
-  [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md)
+  [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md)
   (Windows registry key and `.plist` file) are now generally available.
 @y
 - Deploying Docker Desktop via the
-  [MSI installer](manuals/enterprise/enterprise-deployment/msi-install-and-configure.md)
+  [MSI installer](manuals/desktop/enterprise/enterprise-deployment/msi-install-and-configure.md)
   is now generally available.
 - Two new methods to
-  [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md)
+  [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md)
   (Windows registry key and `.plist` file) are now generally available.
 @z
 

@@ -27,9 +27,9 @@ Docker recommends signing in with the **Sign in** option in the top-right corner
 @z
 
 @x
-In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md). 
 @y
-In large enterprises where admin access is restricted, administrators can [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md). 
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md). 
 @z
 
 @x
@@ -61,9 +61,9 @@ In large enterprises where admin access is restricted, administrators can [enfor
 @z
 
 @x
-- Enhance your organization’s security posture for containerized development with [Hardened Desktop](/manuals/enterprise/security/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](/manuals/desktop/enterprise/hardened-desktop/_index.md).
 @y
-- Enhance your organization’s security posture for containerized development with [Hardened Desktop](manuals/enterprise/security/hardened-desktop/_index.md).
+- Enhance your organization’s security posture for containerized development with [Hardened Desktop](manuals/desktop/enterprise/hardened-desktop/_index.md).
 @z
 
 @x

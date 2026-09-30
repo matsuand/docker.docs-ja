@@ -142,9 +142,9 @@ To learn how to manage seats from Docker Home, see
 @z
 
 @x
-[Docker Offload](/manuals/offload/_index.md) licenses are available for Docker Team and Docker Business plans. Once assigned to your account, organization owners can [manage license assignments](/manuals/accounts/organization/manage/manage-licenses.md) in Docker Home.
+[Docker Offload](/manuals/offload/_index.md) licenses are available for Docker Team and Docker Business plans. Once assigned to your account, organization owners can [manage licenses](/manuals/accounts/organization/manage/manage-licenses.md) in Docker Home.
 @y
-[Docker Offload](manuals/offload/_index.md) licenses are available for Docker Team and Docker Business plans. Once assigned to your account, organization owners can [manage license assignments](manuals/accounts/organization/manage/manage-licenses.md) in Docker Home.
+[Docker Offload](manuals/offload/_index.md) licenses are available for Docker Team and Docker Business plans. Once assigned to your account, organization owners can [manage licenses](manuals/accounts/organization/manage/manage-licenses.md) in Docker Home.
 @z
 
 @x

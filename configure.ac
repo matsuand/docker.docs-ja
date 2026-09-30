@@ -269,6 +269,12 @@ AC_CONFIG_FILES([
 	src/content/manuals/compose/support-and-feedback/Makefile
 	src/content/manuals/desktop/Makefile
 	src/content/manuals/desktop/enterprise/Makefile
+	src/content/manuals/desktop/enterprise/enforce-sign-in/Makefile
+	src/content/manuals/desktop/enterprise/enterprise-deployment/Makefile
+	src/content/manuals/desktop/enterprise/hardened-desktop/Makefile
+	src/content/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/Makefile
+	src/content/manuals/desktop/enterprise/hardened-desktop/settings-management/Makefile
+	src/content/manuals/desktop/enterprise/unassociated-machines/Makefile
 	src/content/manuals/desktop/features/Makefile
 	src/content/manuals/desktop/features/mcp-catalog-and-toolkit/Makefile
 	src/content/manuals/desktop/features/mcp-catalog-and-toolkit/images/Makefile
@@ -306,13 +312,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/docker-hub/repos/manage/trusted-content/Makefile
 	src/content/manuals/docker-hub/repos/manage/trusted-content/images/Makefile
 	src/content/manuals/docker-hub/usage/Makefile
-	src/content/manuals/enterprise/Makefile
-	src/content/manuals/enterprise/enterprise-deployment/Makefile
-	src/content/manuals/enterprise/security/Makefile
-	src/content/manuals/enterprise/security/enforce-sign-in/Makefile
-	src/content/manuals/enterprise/security/hardened-desktop/Makefile
-	src/content/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/Makefile
-	src/content/manuals/enterprise/security/hardened-desktop/settings-management/Makefile
 	src/content/manuals/engine/Makefile
 	src/content/manuals/engine/cli/Makefile
 	src/content/manuals/engine/containers/Makefile
@@ -382,7 +381,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/subscription-billing/manage/Makefile
 	src/content/manuals/subscription-billing/plans/Makefile
 	src/content/manuals/support/Makefile
-	src/content/manuals/unassociated-machines/Makefile
 	src/content/reference/Makefile
 	src/content/reference/api/Makefile
 	src/content/reference/api/ai-governance/Makefile

@@ -298,7 +298,6 @@ top_srcdir = @top_srcdir@
 SUBDIRS = install
 bases = \
 	_index.md     \
-	allow-list.md \
 	sign-in.md    \
 	vm-vdi.md
 

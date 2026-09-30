@@ -4,67 +4,77 @@
 % .md リンクへの (no slash) 対応
 
 @x
-title: Security
+title: Secure Docker accounts and organizations
 linkTitle: Security
-description: >
+description: >-
   Secure Docker accounts, manage access, and control membership for
   individuals and organizations in Docker Home.
-keywords: docker, docker hub, security, 2FA, access tokens, SSO, OIDC,
-  provisioning, roles, Docker Home
+keywords: docker, docker hub, security, account security, 2FA, access tokens,
+  SSO, OIDC, provisioning, roles, Docker Home
 @y
-title: Security
+title: Secure Docker accounts and organizations
 linkTitle: Security
-description: >
+description: >-
   Secure Docker accounts, manage access, and control membership for
   individuals and organizations in Docker Home.
-keywords: docker, docker hub, security, 2FA, access tokens, SSO, OIDC,
-  provisioning, roles, Docker Home
+keywords: docker, docker hub, security, account security, 2FA, access tokens,
+  SSO, OIDC, provisioning, roles, Docker Home
 @z
 
 @x
   - title: Authentication
-    description: Two-factor authentication, single sign-on, and OIDC connections.
+    description: >-
+      Two-factor authentication, single sign-on, and OIDC connections.
     icon: key
     link: /security/authentication/
 @y
   - title: Authentication
-    description: Two-factor authentication, single sign-on, and OIDC connections.
+    description: >-
+      Two-factor authentication, single sign-on, and OIDC connections.
     icon: key
     link: __SUBDIR__/security/authentication/
 @z
 
 @x
   - title: Access tokens
-    description: Personal and organization access tokens for the Docker CLI and automation.
+    description: >-
+      Personal and organization access tokens for the Docker CLI and
+      automation.
     icon: lock-closed
     link: /security/access-tokens/
 @y
   - title: Access tokens
-    description: Personal and organization access tokens for the Docker CLI and automation.
+    description: >-
+      Personal and organization access tokens for the Docker CLI and
+      automation.
     icon: lock-closed
     link: __SUBDIR__/security/access-tokens/
 @z
 
 @x
   - title: Provisioning
-    description: Add users with SCIM, JIT, auto-provisioning, and domain management.
+    description: >-
+      Add users with SCIM, JIT, auto-provisioning, and domain management.
     icon: arrow-path
     link: /security/provisioning/
 @y
   - title: Provisioning
-    description: Add users with SCIM, JIT, auto-provisioning, and domain management.
+    description: >-
+      Add users with SCIM, JIT, auto-provisioning, and domain management.
     icon: arrow-path
     link: __SUBDIR__/security/provisioning/
 @z
 
 @x
   - title: Roles and permissions
-    description: Assign core or custom roles to control access in your organization.
+    description: >-
+      Assign core or custom roles to control access in your organization.
     icon: shield-check
     link: /security/roles-and-permissions/
 @y
   - title: Roles and permissions
-    description: Assign core or custom roles to control access in your organization.
+    description: >-
+      Assign core or custom roles to control access in your organization.
     icon: shield-check
     link: __SUBDIR__/security/roles-and-permissions/
 @z
@@ -93,20 +103,20 @@ You sign in with your individual account.
 
 @x
 - [Two-factor authentication](/manuals/security/authentication/2fa/_index.md)
-(2FA) adds a time-based one-time password (TOTP) from an authenticator
-app to your password.
+  (2FA) adds a time-based one-time password (TOTP) from an authenticator
+  app to your password.
 - A [personal access token](/manuals/security/access-tokens/personal-access-tokens.md)
-(PAT) authenticates the Docker CLI and tools without your password, and
-is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
-enforced.
+  (PAT) authenticates the Docker CLI and tools without your password, and
+  is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
+  enforced.
 @y
 - [Two-factor authentication](manuals/security/authentication/2fa/_index.md)
-(2FA) adds a time-based one-time password (TOTP) from an authenticator
-app to your password.
+  (2FA) adds a time-based one-time password (TOTP) from an authenticator
+  app to your password.
 - A [personal access token](manuals/security/access-tokens/personal-access-tokens.md)
-(PAT) authenticates the Docker CLI and tools without your password, and
-is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
-enforced.
+  (PAT) authenticates the Docker CLI and tools without your password, and
+  is required for CLI sign-in when 2FA is on or single sign-on (SSO) is
+  enforced.
 @z
 
 @x
@@ -125,32 +135,32 @@ the organization, configure automation, and control what members can do.
 
 @x
 - [Single sign-on](/manuals/security/authentication/single-sign-on/_index.md)
-(SSO) federates sign-in through your identity provider, which can cover
-one organization or every organization in a company.
+  (SSO) federates sign-in through your identity provider, which can cover
+  one organization or every organization in a company.
 - [Provisioning](/manuals/security/provisioning/_index.md) adds users with
-System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
-provisioning, auto-provisioning, or domain matching.
+  System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
+  provisioning, auto-provisioning, or domain matching.
 - An [organization access token](/manuals/security/access-tokens/organization-access-tokens.md)
-(OAT) stays with the organization when membership changes.
+  (OAT) stays with the organization when membership changes.
 - [OIDC connections](/manuals/security/authentication/oidc-connections/_index.md)
-use OpenID Connect to authenticate GitHub Actions with short-lived
-tokens, as an alternative to a long-lived OAT.
+  use OpenID Connect to authenticate GitHub Actions with short-lived
+  tokens, as an alternative to a long-lived OAT.
 - [Roles and permissions](/manuals/security/roles-and-permissions/_index.md)
-control what members can do after they join.
+  control what members can do after they join.
 @y
-- [Single sign-on](manuals/security/authentication/single-sign-on/_index.md)
-(SSO) federates sign-in through your identity provider, which can cover
-one organization or every organization in a company.
-- [Provisioning](manuals/security/provisioning/_index.md) adds users with
-System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
-provisioning, auto-provisioning, or domain matching.
-- An [organization access token](manuals/security/access-tokens/organization-access-tokens.md)
-(OAT) stays with the organization when membership changes.
-- [OIDC connections](manuals/security/authentication/oidc-connections/_index.md)
-use OpenID Connect to authenticate GitHub Actions with short-lived
-tokens, as an alternative to a long-lived OAT.
-- [Roles and permissions](manuals/security/roles-and-permissions/_index.md)
-control what members can do after they join.
+- [Single sign-on](/manuals/security/authentication/single-sign-on/_index.md)
+  (SSO) federates sign-in through your identity provider, which can cover
+  one organization or every organization in a company.
+- [Provisioning](/manuals/security/provisioning/_index.md) adds users with
+  System for Cross-domain Identity Management (SCIM), Just-in-Time (JIT)
+  provisioning, auto-provisioning, or domain matching.
+- An [organization access token](/manuals/security/access-tokens/organization-access-tokens.md)
+  (OAT) stays with the organization when membership changes.
+- [OIDC connections](/manuals/security/authentication/oidc-connections/_index.md)
+  use OpenID Connect to authenticate GitHub Actions with short-lived
+  tokens, as an alternative to a long-lived OAT.
+- [Roles and permissions](/manuals/security/roles-and-permissions/_index.md)
+  control what members can do after they join.
 @z
 
 @x

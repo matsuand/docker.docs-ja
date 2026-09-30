@@ -75,12 +75,12 @@ To use Insights, you must meet the following requirements:
 
 @x
 - [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminInsights)
-- Administrators must [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md)
+- Administrators must [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md)
   for users
 - Your Account Executive must turn on Insights for your organization
 @y
 - [Docker Business subscription](https://www.docker.com/pricing?ref=Docs&refAction=DocsAdminInsights)
-- Administrators must [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md)
+- Administrators must [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md)
   for users
 - Your Account Executive must turn on Insights for your organization
 @z
@@ -152,16 +152,16 @@ The chart contains the following data:
 @x
 | Data                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Active user                  | The number of users who have actively used Docker Desktop and either signed in with a Docker account that has a license in your organization or signed in to a Docker account with an email address from a domain associated with your organization. <br><br>Users who don’t sign in to an account associated with your organization are not represented in the data. To ensure users sign in with an account associated with your organization, you can [enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md). |
+| Active user                  | The number of users who have actively used Docker Desktop and either signed in with a Docker account that has a license in your organization or signed in to a Docker account with an email address from a domain associated with your organization. <br><br>Users who don’t sign in to an account associated with your organization are not represented in the data. To ensure users sign in with an account associated with your organization, you can [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md). |
 | Total organization members   | The number of users who have used Docker Desktop, regardless of their Insights activity.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Users opted out of analytics | The number of users who are members of your organization that have opted out of sending analytics. <br><br>When users opt out of sending analytics, you won't see any of their data in Insights. To ensure that the data includes all users, you can use [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) to set `analyticsEnabled` for all your users.                                                                                                                           |
+| Users opted out of analytics | The number of users who are members of your organization that have opted out of sending analytics. <br><br>When users opt out of sending analytics, you won't see any of their data in Insights. To ensure that the data includes all users, you can use [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) to set `analyticsEnabled` for all your users.                                                                                                                           |
 | Active users (graph)         | The view over time for total active users.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 @y
 | Data                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | :--------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Active user                  | The number of users who have actively used Docker Desktop and either signed in with a Docker account that has a license in your organization or signed in to a Docker account with an email address from a domain associated with your organization. <br><br>Users who don’t sign in to an account associated with your organization are not represented in the data. To ensure users sign in with an account associated with your organization, you can [enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md). |
+| Active user                  | The number of users who have actively used Docker Desktop and either signed in with a Docker account that has a license in your organization or signed in to a Docker account with an email address from a domain associated with your organization. <br><br>Users who don’t sign in to an account associated with your organization are not represented in the data. To ensure users sign in with an account associated with your organization, you can [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md). |
 | Total organization members   | The number of users who have used Docker Desktop, regardless of their Insights activity.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Users opted out of analytics | The number of users who are members of your organization that have opted out of sending analytics. <br><br>When users opt out of sending analytics, you won't see any of their data in Insights. To ensure that the data includes all users, you can use [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) to set `analyticsEnabled` for all your users.                                                                                                                           |
+| Users opted out of analytics | The number of users who are members of your organization that have opted out of sending analytics. <br><br>When users opt out of sending analytics, you won't see any of their data in Insights. To ensure that the data includes all users, you can use [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) to set `analyticsEnabled` for all your users.                                                                                                                           |
 | Active users (graph)         | The view over time for total active users.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 @z
 
@@ -424,7 +424,7 @@ A Docker Desktop user export file contains the following data points:
   installed
 - Last Seen Date: The last date the user used the Docker Desktop application
 - Opted Out Analytics: Whether the user has opted out of the
-  [Send usage statistics](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
+  [Send usage statistics](/manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
 @y
 - Name: User's name
 - Username: User's Docker ID
@@ -440,7 +440,7 @@ A Docker Desktop user export file contains the following data points:
   installed
 - Last Seen Date: The last date the user used the Docker Desktop application
 - Opted Out Analytics: Whether the user has opted out of the
-  [Send usage statistics](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
+  [Send usage statistics](manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md#send-usage-statistics) setting in Docker Desktop
 @z
 
 @x
@@ -483,13 +483,13 @@ solutions to resolve common problems:
   If users have opted out of sending usage statistics for Docker Desktop, then
   their usage data will not be a part of Insights. To manage the setting at
   scale for all your users, you can use [Settings
-  Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md) and turn on the
+  Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) and turn on the
   `analyticsEnabled` setting.
 @y
   If users have opted out of sending usage statistics for Docker Desktop, then
   their usage data will not be a part of Insights. To manage the setting at
   scale for all your users, you can use [Settings
-  Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md) and turn on the
+  Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) and turn on the
   `analyticsEnabled` setting.
 @z
 
@@ -523,10 +523,10 @@ solutions to resolve common problems:
   Users who don’t sign in to an account associated with your organization are
   not represented in the data. To ensure users sign in with an account
   associated with your organization, you can [enforce
-  sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
+  sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @y
   Users who don’t sign in to an account associated with your organization are
   not represented in the data. To ensure users sign in with an account
   associated with your organization, you can [enforce
-  sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
+  sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @z

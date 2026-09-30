@@ -450,9 +450,9 @@ For more troubleshooting guidance, see
 @x
 - Set up [Group mapping](/manuals/security/provisioning/scim/group-mapping.md).
 - [Assign roles](/manuals/security/roles-and-permissions/core-roles.md) to members of your org.
-- [Enforce sign in](/manuals/enterprise/security/enforce-sign-in.md), if needed.
+- [Enforce sign in](/manuals/desktop/enterprise/enforce-sign-in.md), if needed.
 @y
 - Set up [Group mapping](manuals/security/provisioning/scim/group-mapping.md).
 - [Assign roles](manuals/security/roles-and-permissions/core-roles.md) to members of your org.
-- [Enforce sign in](manuals/enterprise/security/enforce-sign-in.md), if needed.
+- [Enforce sign in](manuals/desktop/enterprise/enforce-sign-in.md), if needed.
 @z

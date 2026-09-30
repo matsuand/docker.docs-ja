@@ -639,7 +639,7 @@ For access, contact ACME IT Security:
   Console
 - [Governance overview](../_index.md): how local and organization governance fit
   together
-- [Enforce sign-in for Docker Desktop](/manuals/enterprise/security/enforce-sign-in/_index.md):
+- [Enforce sign-in for Docker Desktop](/manuals/desktop/enterprise/enforce-sign-in/_index.md):
   the equivalent control for Docker Desktop
 @y
 - [Organization policies](../access-controls/organization.md): centrally manage
@@ -647,6 +647,6 @@ For access, contact ACME IT Security:
   Console
 - [Governance overview](../_index.md): how local and organization governance fit
   together
-- [Enforce sign-in for Docker Desktop](manuals/enterprise/security/enforce-sign-in/_index.md):
+- [Enforce sign-in for Docker Desktop](manuals/desktop/enterprise/enforce-sign-in/_index.md):
   the equivalent control for Docker Desktop
 @z

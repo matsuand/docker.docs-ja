@@ -210,9 +210,9 @@ Administrators can:
 @z
 
 @x
-See [Settings Management](/enterprise/security/hardened-desktop/settings-management/)
+See [Settings Management](/desktop/enterprise/hardened-desktop/settings-management/)
 for details.
 @y
-See [Settings Management](__SUBDIR__/enterprise/security/hardened-desktop/settings-management/)
+See [Settings Management](__SUBDIR__/desktop/enterprise/hardened-desktop/settings-management/)
 for details.
 @z

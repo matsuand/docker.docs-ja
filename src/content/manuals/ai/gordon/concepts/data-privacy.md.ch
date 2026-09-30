@@ -1,7 +1,7 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応
+% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
 title: Data privacy and Gordon
@@ -252,10 +252,10 @@ handling requirements before enabling Gordon.
 @z
 
 @x
-See [Settings Management](/enterprise/security/hardened-desktop/settings-management/)
+See [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @y
-See [Settings Management](__SUBDIR__/enterprise/security/hardened-desktop/settings-management/)
+See [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @z
 
@@ -297,11 +297,11 @@ Business organizations:
 
 @x
 Administrators can disable Gordon for the entire organization using Settings
-Management. See [Settings Management](/enterprise/security/hardened-desktop/settings-management/)
+Management. See [Settings Management](/desktop/enterprise/hardened-desktop/settings-management/)
 for details.
 @y
 Administrators can disable Gordon for the entire organization using Settings
-Management. See [Settings Management](__SUBDIR__/enterprise/security/hardened-desktop/settings-management/)
+Management. See [Settings Management](__SUBDIR__/desktop/enterprise/hardened-desktop/settings-management/)
 for details.
 @z
 

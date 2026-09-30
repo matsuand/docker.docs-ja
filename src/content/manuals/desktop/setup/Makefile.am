@@ -5,7 +5,6 @@ SUBDIRS = install
 
 bases = \
 	_index.md     \
-	allow-list.md \
 	sign-in.md    \
 	vm-vdi.md
 

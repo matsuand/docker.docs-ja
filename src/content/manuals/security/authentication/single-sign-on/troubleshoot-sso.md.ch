@@ -6,23 +6,35 @@
 @x
 title: Troubleshoot single sign-on
 linkTitle: Troubleshoot
-description: Troubleshoot common Docker single sign-on configuration and authentication issues
+description: >-
+  Troubleshoot common Docker single sign-on configuration and authentication
+  issues.
 @y
 title: Troubleshoot single sign-on
 linkTitle: Troubleshoot
-description: Troubleshoot common Docker single sign-on configuration and authentication issues
+description: >-
+  Troubleshoot common Docker single sign-on configuration and authentication
+  issues.
 @z
 
 @x
-keywords: sso troubleshooting, single sign-on errors, authentication issues, identity provider problems
+keywords: sso troubleshooting, single sign-on errors, authentication issues,
+  identity provider problems, JIT provisioning, SCIM errors, domain
+  verification
 @y
-keywords: sso troubleshooting, single sign-on errors, authentication issues, identity provider problems
+keywords: sso troubleshooting, single sign-on errors, authentication issues,
+  identity provider problems, JIT provisioning, SCIM errors, domain
+  verification
 @z
 
 @x
-This page describes common single sign-on (SSO) errors and their solutions. Issues can stem from your identity provider (IdP) configuration or Docker settings.
+Single sign-on (SSO) problems can stem from your identity provider (IdP)
+configuration or from your Docker settings. The following sections describe
+common errors and how to resolve them.
 @y
-This page describes common single sign-on (SSO) errors and their solutions. Issues can stem from your identity provider (IdP) configuration or Docker settings.
+Single sign-on (SSO) problems can stem from your identity provider (IdP)
+configuration or from your Docker settings. The following sections describe
+common errors and how to resolve them.
 @z
 
 @x
@@ -32,9 +44,11 @@ This page describes common single sign-on (SSO) errors and their solutions. Issu
 @z
 
 @x
-If you experience SSO issues, check both Docker and your identity provider for errors first.
+If you experience SSO issues, check both Docker and your identity provider for
+errors first.
 @y
-If you experience SSO issues, check both Docker and your identity provider for errors first.
+If you experience SSO issues, check both Docker and your identity provider for
+errors first.
 @z
 
 @x
@@ -44,16 +58,22 @@ If you experience SSO issues, check both Docker and your identity provider for e
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**.
-1. For more details on specific errors, select **View error details** next to an error message.
+1. In the SSO connections table, select the **Action** menu and then **View
+   error logs**.
+1. For more details on specific errors, select **View error details** next to an
+   error message.
 1. Note any errors you see on this page for further troubleshooting.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**.
-1. For more details on specific errors, select **View error details** next to an error message.
+1. In the SSO connections table, select the **Action** menu and then **View
+   error logs**.
+1. For more details on specific errors, select **View error details** next to an
+   error message.
 1. Note any errors you see on this page for further troubleshooting.
 @z
 
@@ -64,23 +84,33 @@ If you experience SSO issues, check both Docker and your identity provider for e
 @z
 
 @x
-1. Review your IdP’s logs or audit trails for any failed authentication or provisioning attempts.
-2. Confirm that your IdP’s SSO settings match the values provided in Docker.
-3. If applicable, confirm that you have configured user provisioning correctly and that it is enabled in your IdP.
-4. If applicable, verify that your IdP correctly maps Docker's required user attributes.
-5. Try provisioning a test user from your IdP and verify if they appear in Docker.
+1. Review your IdP’s logs or audit trails for any failed authentication or
+   provisioning attempts.
+1. Confirm that your IdP’s SSO settings match the values provided in Docker.
+1. If applicable, confirm that you have configured user provisioning correctly
+   and that it is enabled in your IdP.
+1. If applicable, verify that your IdP correctly maps Docker's required user
+   attributes.
+1. Try provisioning a test user from your IdP and verify if they appear in
+   Docker.
 @y
-1. Review your IdP’s logs or audit trails for any failed authentication or provisioning attempts.
-2. Confirm that your IdP’s SSO settings match the values provided in Docker.
-3. If applicable, confirm that you have configured user provisioning correctly and that it is enabled in your IdP.
-4. If applicable, verify that your IdP correctly maps Docker's required user attributes.
-5. Try provisioning a test user from your IdP and verify if they appear in Docker.
+1. Review your IdP’s logs or audit trails for any failed authentication or
+   provisioning attempts.
+1. Confirm that your IdP’s SSO settings match the values provided in Docker.
+1. If applicable, confirm that you have configured user provisioning correctly
+   and that it is enabled in your IdP.
+1. If applicable, verify that your IdP correctly maps Docker's required user
+   attributes.
+1. Try provisioning a test user from your IdP and verify if they appear in
+   Docker.
 @z
 
 @x
-For further troubleshooting, check your IdP's documentation or contact their support team.
+For further troubleshooting, check your IdP's documentation or contact their
+support team.
 @y
-For further troubleshooting, check your IdP's documentation or contact their support team.
+For further troubleshooting, check your IdP's documentation or contact their
+support team.
 @z
 
 @x
@@ -118,11 +148,19 @@ Some of the groups assigned to the user are not formatted as '<organization name
 @z
 
 @x
-- Incorrect group name formatting in your identity provider (IdP): Docker requires groups to follow the format `<organization>:<team>`. If the groups assigned to a user do not follow this format, they will be ignored.
-- Non-matching groups between IdP and Docker organization: If a group in your IdP does not have a corresponding team in Docker, it will not be recognized, and the user will be placed in the default organization and team.
+- Incorrect group name formatting in your identity provider (IdP): Docker
+  requires groups to follow the format `<organization>:<team>`. If the groups
+  assigned to a user do not follow this format, they will be ignored.
+- Non-matching groups between IdP and Docker organization: If a group in your
+  IdP does not have a corresponding team in Docker, it will not be recognized,
+  and the user will be placed in the default organization and team.
 @y
-- Incorrect group name formatting in your identity provider (IdP): Docker requires groups to follow the format `<organization>:<team>`. If the groups assigned to a user do not follow this format, they will be ignored.
-- Non-matching groups between IdP and Docker organization: If a group in your IdP does not have a corresponding team in Docker, it will not be recognized, and the user will be placed in the default organization and team.
+- Incorrect group name formatting in your identity provider (IdP): Docker
+  requires groups to follow the format `<organization>:<team>`. If the groups
+  assigned to a user do not follow this format, they will be ignored.
+- Non-matching groups between IdP and Docker organization: If a group in your
+  IdP does not have a corresponding team in Docker, it will not be recognized,
+  and the user will be placed in the default organization and team.
 @z
 
 @x
@@ -153,12 +191,14 @@ To replicate this issue:
 
 @x
 1. Attempt to sign in to Docker using SSO.
-2. The user is assigned groups in the IdP but does not get placed in the expected Docker Team.
-3. Review Docker logs or IdP logs to find the error message.
+1. The user is assigned groups in the IdP but does not get placed in the
+   expected Docker Team.
+1. Review Docker logs or IdP logs to find the error message.
 @y
 1. Attempt to sign in to Docker using SSO.
-2. The user is assigned groups in the IdP but does not get placed in the expected Docker Team.
-3. Review Docker logs or IdP logs to find the error message.
+1. The user is assigned groups in the IdP but does not get placed in the
+   expected Docker Team.
+1. Review Docker logs or IdP logs to find the error message.
 @z
 
 @x
@@ -175,16 +215,16 @@ Update group names in your IdP:
 
 @x
 1. Go to your IdP's group management section.
-2. Check the groups assigned to the affected user.
-3. Ensure each group follows the required format: `<organization>:<team>`
-4. Update any incorrectly formatted groups to match this pattern.
-5. Save changes and retry signing in with SSO.
+1. Check the groups assigned to the affected user.
+1. Ensure each group follows the required format: `<organization>:<team>`
+1. Update any incorrectly formatted groups to match this pattern.
+1. Save changes and retry signing in with SSO.
 @y
 1. Go to your IdP's group management section.
-2. Check the groups assigned to the affected user.
-3. Ensure each group follows the required format: `<organization>:<team>`
-4. Update any incorrectly formatted groups to match this pattern.
-5. Save changes and retry signing in with SSO.
+1. Check the groups assigned to the affected user.
+1. Ensure each group follows the required format: `<organization>:<team>`
+1. Update any incorrectly formatted groups to match this pattern.
+1. Save changes and retry signing in with SSO.
 @z
 
 @x
@@ -222,13 +262,19 @@ User '$username' is not assigned to this SSO organization. Contact your administ
 @z
 
 @x
-- User is not assigned to the organization: If Just-in-Time (JIT) provisioning is disabled, the user may not be assigned to your organization.
-- User is not invited to the organization: If JIT is disabled and you do not want to enable it, the user must be manually invited.
-- SCIM provisioning is misconfigured: If you use SCIM for user provisioning, it may not be correctly syncing users from your IdP.
+- User is not assigned to the organization: If Just-in-Time (JIT) provisioning
+  is disabled, the user may not be assigned to your organization.
+- User is not invited to the organization: If JIT is disabled and you don't want
+  to turn it on, the user must be manually invited.
+- SCIM provisioning is misconfigured: If you use SCIM for user provisioning, it
+  may not be correctly syncing users from your IdP.
 @y
-- User is not assigned to the organization: If Just-in-Time (JIT) provisioning is disabled, the user may not be assigned to your organization.
-- User is not invited to the organization: If JIT is disabled and you do not want to enable it, the user must be manually invited.
-- SCIM provisioning is misconfigured: If you use SCIM for user provisioning, it may not be correctly syncing users from your IdP.
+- User is not assigned to the organization: If Just-in-Time (JIT) provisioning
+  is disabled, the user may not be assigned to your organization.
+- User is not invited to the organization: If JIT is disabled and you don't want
+  to turn it on, the user must be manually invited.
+- SCIM provisioning is misconfigured: If you use SCIM for user provisioning, it
+  may not be correctly syncing users from your IdP.
 @z
 
 @x
@@ -238,9 +284,9 @@ User '$username' is not assigned to this SSO organization. Contact your administ
 @z
 
 @x
-**Enable JIT provisioning**
+#### Enable JIT provisioning
 @y
-**Enable JIT provisioning**
+#### Enable JIT provisioning
 @z
 
 @x
@@ -252,61 +298,85 @@ to re-enable it:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **Enable JIT provisioning**.
+1. In the SSO connections table, select the **Action** menu and then **Enable
+   JIT provisioning**.
 1. Select **Enable** to confirm.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **Enable JIT provisioning**.
+1. In the SSO connections table, select the **Action** menu and then **Enable
+   JIT provisioning**.
 1. Select **Enable** to confirm.
 @z
 
 @x
-**Manually invite users**
+#### Manually invite users
 @y
-**Manually invite users**
+#### Manually invite users
 @z
 
 @x
-When JIT is disabled, users are not automatically added to your organization when they authenticate through SSO.
-To manually invite users, see [Invite members](/manuals/accounts/organization/manage/members.md#invite-members).
+When JIT is disabled, users are not automatically added to your organization
+when they authenticate through SSO. To manually invite users, see
+[Invite members](/manuals/accounts/organization/manage/members.md#invite-members).
 @y
-When JIT is disabled, users are not automatically added to your organization when they authenticate through SSO.
-To manually invite users, see [Invite members](manuals/accounts/organization/manage/members.md#invite-members).
+When JIT is disabled, users are not automatically added to your organization
+when they authenticate through SSO. To manually invite users, see
+[Invite members](manuals/accounts/organization/manage/members.md#invite-members).
 @z
 
 @x
-**Configure SCIM provisioning**
+#### Configure SCIM provisioning
 @y
-**Configure SCIM provisioning**
+#### Configure SCIM provisioning
 @z
 
 @x
-If you have SCIM enabled, troubleshoot your SCIM connection using the following steps:
+If you have SCIM enabled, troubleshoot your SCIM connection using the following
+steps:
 @y
-If you have SCIM enabled, troubleshoot your SCIM connection using the following steps:
+If you have SCIM enabled, troubleshoot your SCIM connection using the following
+steps:
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**. For more details on specific errors, select **View error details** next to an error message. Note any errors you see on this page.
-1. Navigate back to **Identity & auth**, then **SSO and SCIM**, and verify your SCIM configuration:
-   - Ensure that the SCIM Base URL and API Token in your IdP match those provided in Docker.
+1. In the SSO connections table, select the **Action** menu and then **View
+   error logs**. For more details on specific errors, select **View error
+   details** next to an error message. Note any errors you see on this page.
+1. Navigate back to **Identity & auth**, then **SSO and SCIM**, and verify your
+   SCIM configuration:
+   - Ensure that the SCIM Base URL and API Token in your IdP match those
+     provided in Docker.
    - Verify that SCIM is enabled in both Docker and your IdP.
-1. Ensure that the attributes being synced from your IdP match Docker's [supported attributes](/manuals/security/provisioning/scim/provision-scim.md#supported-attributes) for SCIM.
-1. Test user provisioning by trying to provision a test user through your IdP and verify if they appear in Docker.
+1. Ensure that the attributes being synced from your IdP match Docker's
+   [supported attributes](/manuals/security/provisioning/scim/provision-scim.md#supported-attributes)
+   for SCIM.
+1. Test user provisioning by trying to provision a test user through your IdP
+   and verify if they appear in Docker.
 @y
-1. Sign in to [Docker Home](https://app.docker.com/) and select your organization from the top-left account drop-down.
+1. Sign in to [Docker Home](https://app.docker.com/) and select your
+   organization from the top-left account drop-down.
 1. Select **Identity & auth**, then **SSO and SCIM**.
-1. In the SSO connections table, select the **Action** menu and then **View error logs**. For more details on specific errors, select **View error details** next to an error message. Note any errors you see on this page.
-1. Navigate back to **Identity & auth**, then **SSO and SCIM**, and verify your SCIM configuration:
-   - Ensure that the SCIM Base URL and API Token in your IdP match those provided in Docker.
+1. In the SSO connections table, select the **Action** menu and then **View
+   error logs**. For more details on specific errors, select **View error
+   details** next to an error message. Note any errors you see on this page.
+1. Navigate back to **Identity & auth**, then **SSO and SCIM**, and verify your
+   SCIM configuration:
+   - Ensure that the SCIM Base URL and API Token in your IdP match those
+     provided in Docker.
    - Verify that SCIM is enabled in both Docker and your IdP.
-1. Ensure that the attributes being synced from your IdP match Docker's [supported attributes](manuals/security/provisioning/scim/provision-scim.md#supported-attributes) for SCIM.
-1. Test user provisioning by trying to provision a test user through your IdP and verify if they appear in Docker.
+1. Ensure that the attributes being synced from your IdP match Docker's
+   [supported attributes](manuals/security/provisioning/scim/provision-scim.md#supported-attributes)
+   for SCIM.
+1. Test user provisioning by trying to provision a test user through your IdP
+   and verify if they appear in Docker.
 @z
 
 @x
@@ -344,9 +414,13 @@ IdP-Initiated sign in is not enabled for connection '$ssoConnection'.
 @z
 
 @x
-Docker does not support an IdP-initiated SAML flow. This error occurs when a user attempts to authenticate from your IdP, such as using the Docker SSO app tile on the sign in page.
+Docker doesn't support an IdP-initiated SAML flow. This error occurs when a user
+attempts to authenticate from your IdP, such as using the Docker SSO app tile on
+the sign-in page.
 @y
-Docker does not support an IdP-initiated SAML flow. This error occurs when a user attempts to authenticate from your IdP, such as using the Docker SSO app tile on the sign in page.
+Docker doesn't support an IdP-initiated SAML flow. This error occurs when a user
+attempts to authenticate from your IdP, such as using the Docker SSO app tile on
+the sign-in page.
 @z
 
 @x
@@ -356,27 +430,35 @@ Docker does not support an IdP-initiated SAML flow. This error occurs when a use
 @z
 
 @x
-**Authenticate from Docker apps**
+#### Authenticate from Docker apps
 @y
-**Authenticate from Docker apps**
+#### Authenticate from Docker apps
 @z
 
 @x
-The user must initiate authentication from Docker applications (Hub, Desktop, etc). The user needs to enter their email address in a Docker app and they will get redirected to the configured SSO IdP for their domain.
+The user must initiate authentication from a Docker application such as Docker
+Hub or Docker Desktop. The user needs to enter their email address in a Docker
+app and they will get redirected to the configured SSO IdP for their domain.
 @y
-The user must initiate authentication from Docker applications (Hub, Desktop, etc). The user needs to enter their email address in a Docker app and they will get redirected to the configured SSO IdP for their domain.
+The user must initiate authentication from a Docker application such as Docker
+Hub or Docker Desktop. The user needs to enter their email address in a Docker
+app and they will get redirected to the configured SSO IdP for their domain.
 @z
 
 @x
-**Hide the Docker SSO app**
+#### Hide the Docker SSO app
 @y
-**Hide the Docker SSO app**
+#### Hide the Docker SSO app
 @z
 
 @x
-You can hide the Docker SSO app from users in your IdP. This prevents users from attempting to start authentication from the IdP dashboard. You must hide and configure this in your IdP.
+You can hide the Docker SSO app from users in your IdP. This prevents users from
+attempting to start authentication from the IdP dashboard. You must hide and
+configure this in your IdP.
 @y
-You can hide the Docker SSO app from users in your IdP. This prevents users from attempting to start authentication from the IdP dashboard. You must hide and configure this in your IdP.
+You can hide the Docker SSO app from users in your IdP. This prevents users from
+attempting to start authentication from the IdP dashboard. You must hide and
+configure this in your IdP.
 @z
 
 @x
@@ -414,9 +496,11 @@ Not enough seats in organization '$orgName'. Add more seats or contact your admi
 @z
 
 @x
-This error occurs when the organization has no available seats for the user when provisioning via Just-in-Time (JIT) provisioning or SCIM.
+This error occurs when the organization has no available seats for the user when
+provisioning via Just-in-Time (JIT) provisioning or SCIM.
 @y
-This error occurs when the organization has no available seats for the user when provisioning via Just-in-Time (JIT) provisioning or SCIM.
+This error occurs when the organization has no available seats for the user when
+provisioning via Just-in-Time (JIT) provisioning or SCIM.
 @z
 
 @x
@@ -426,27 +510,33 @@ This error occurs when the organization has no available seats for the user when
 @z
 
 @x
-**Add more seats to the organization**
+#### Add more seats to the organization
 @y
-**Add more seats to the organization**
+#### Add more seats to the organization
 @z
 
 @x
-Purchase additional Docker Business subscription seats. For details, see [Manage subscription seats](/manuals/accounts/organization/manage/manage-seats.md).
+Purchase additional Docker Business subscription seats. For details, see
+[Manage subscription seats](/manuals/accounts/organization/manage/manage-seats.md).
 @y
-Purchase additional Docker Business subscription seats. For details, see [Manage subscription seats](manuals/accounts/organization/manage/manage-seats.md).
+Purchase additional Docker Business subscription seats. For details, see
+[Manage subscription seats](manuals/accounts/organization/manage/manage-seats.md).
 @z
 
 @x
-**Remove users or pending invitations**
+#### Remove users or pending invitations
 @y
-**Remove users or pending invitations**
+#### Remove users or pending invitations
 @z
 
 @x
-Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](/manuals/accounts/organization/manage/members.md).
+Review your organization members and pending invitations. Remove inactive users
+or pending invitations to free up seats. For more details, see
+[Manage organization members](/manuals/accounts/organization/manage/members.md).
 @y
-Review your organization members and pending invitations. Remove inactive users or pending invitations to free up seats. For more details, see [Manage organization members](manuals/accounts/organization/manage/members.md).
+Review your organization members and pending invitations. Remove inactive users
+or pending invitations to free up seats. For more details, see
+[Manage organization members](manuals/accounts/organization/manage/members.md).
 @z
 
 @x
@@ -484,13 +574,13 @@ Domain '$emailDomain' is not verified for your SSO connection. Contact your comp
 @z
 
 @x
-This error occurs if the IdP authenticated a user through SSO and the User Principal Name (UPN)
-returned to Docker doesn’t match any of the verified domains associated to the
-SSO connection configured in Docker.
+This error occurs if the IdP authenticated a user through SSO and the User
+Principal Name (UPN) returned to Docker doesn’t match any of the verified
+domains associated to the SSO connection configured in Docker.
 @y
-This error occurs if the IdP authenticated a user through SSO and the User Principal Name (UPN)
-returned to Docker doesn’t match any of the verified domains associated to the
-SSO connection configured in Docker.
+This error occurs if the IdP authenticated a user through SSO and the User
+Principal Name (UPN) returned to Docker doesn’t match any of the verified
+domains associated to the SSO connection configured in Docker.
 @z
 
 @x
@@ -500,27 +590,33 @@ SSO connection configured in Docker.
 @z
 
 @x
-**Verify UPN attribute mapping**
+#### Verify UPN attribute mapping
 @y
-**Verify UPN attribute mapping**
+#### Verify UPN attribute mapping
 @z
 
 @x
-Ensure that the IdP SSO connection is returning the correct UPN value in the assertion attributes.
+Ensure that the IdP SSO connection is returning the correct UPN value in the
+assertion attributes.
 @y
-Ensure that the IdP SSO connection is returning the correct UPN value in the assertion attributes.
+Ensure that the IdP SSO connection is returning the correct UPN value in the
+assertion attributes.
 @z
 
 @x
-**Add and verify all domains**
+#### Add and verify all domains
 @y
-**Add and verify all domains**
+#### Add and verify all domains
 @z
 
 @x
-Add and verify all domains and subdomains used as UPN by your IdP and associate them with your Docker SSO connection. For details, see [Configure single sign-on](/manuals/security/authentication/single-sign-on/connect.md).
+Add and verify all domains and subdomains used as UPN by your IdP and associate
+them with your Docker SSO connection. For details, see
+[Configure single sign-on](/manuals/security/authentication/single-sign-on/connect.md).
 @y
-Add and verify all domains and subdomains used as UPN by your IdP and associate them with your Docker SSO connection. For details, see [Configure single sign-on](manuals/security/authentication/single-sign-on/connect.md).
+Add and verify all domains and subdomains used as UPN by your IdP and associate
+them with your Docker SSO connection. For details, see
+[Configure single sign-on](manuals/security/authentication/single-sign-on/connect.md).
 @z
 
 @x
@@ -565,10 +661,12 @@ The following causes may create this issue:
 
 @x
 - The user pressed the back or refresh button during authentication.
-- The authentication flow lost track of the initial request, preventing completion.
+- The authentication flow lost track of the initial request, preventing
+  completion.
 @y
 - The user pressed the back or refresh button during authentication.
-- The authentication flow lost track of the initial request, preventing completion.
+- The authentication flow lost track of the initial request, preventing
+  completion.
 @z
 
 @x
@@ -578,9 +676,9 @@ The following causes may create this issue:
 @z
 
 @x
-**Do not disrupt the authentication flow**
+#### Avoid disrupting the authentication flow
 @y
-**Do not disrupt the authentication flow**
+#### Avoid disrupting the authentication flow
 @z
 
 @x
@@ -590,15 +688,17 @@ Do not press the back or refresh button during sign-in.
 @z
 
 @x
-**Restart authentication**
+#### Restart authentication
 @y
-**Restart authentication**
+#### Restart authentication
 @z
 
 @x
-Close the browser tab and restart the authentication flow from the Docker application (Desktop, Hub, etc).
+Close the browser tab and restart the authentication flow from the Docker
+application, such as Docker Desktop or Docker Hub.
 @y
-Close the browser tab and restart the authentication flow from the Docker application (Desktop, Hub, etc).
+Close the browser tab and restart the authentication flow from the Docker
+application, such as Docker Desktop or Docker Hub.
 @z
 
 @x
@@ -642,10 +742,12 @@ The following causes may create this issue:
 @z
 
 @x
-- The IdP sends a Name ID (UPN) that does not comply with the email format required by Docker.
+- The IdP sends a Name ID (UPN) that does not comply with the email format
+  required by Docker.
 - Docker SSO requires the Name ID to be the primary email address of the user.
 @y
-- The IdP sends a Name ID (UPN) that does not comply with the email format required by Docker.
+- The IdP sends a Name ID (UPN) that does not comply with the email format
+  required by Docker.
 - Docker SSO requires the Name ID to be the primary email address of the user.
 @z
 
@@ -662,9 +764,11 @@ In your IdP, ensure the Name ID attribute format is correct:
 @z
 
 @x
-1. Verify that the Name ID attribute format in your IdP is set to `EmailAddress`.
-2. Adjust your IdP settings to return the correct Name ID format.
+1. Verify that the Name ID attribute format in your IdP is set to
+   `EmailAddress`.
+1. Adjust your IdP settings to return the correct Name ID format.
 @y
-1. Verify that the Name ID attribute format in your IdP is set to `EmailAddress`.
-2. Adjust your IdP settings to return the correct Name ID format.
+1. Verify that the Name ID attribute format in your IdP is set to
+   `EmailAddress`.
+1. Adjust your IdP settings to return the correct Name ID format.
 @z

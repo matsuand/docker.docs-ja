@@ -50,9 +50,9 @@ AI Governance lets organization owners enforce [organization policies](manuals/a
 @z
 
 @x
-You can [assign AI Governance licenses](/manuals/accounts/organization/manage/manage-licenses.md) to any organization member, even if they don't occupy a Docker Team or Docker Business seat. For best practice, review available licenses as you add new members since members without an AI Governance license can still use Docker AI products.
+You can [assign AI Governance licenses](/manuals/accounts/organization/manage/manage-licenses.md) to a team or to an individual organization member, even if they don't occupy a Docker Team or Docker Business seat. For best practice, review available licenses as you add new members since members without an AI Governance license can still use Docker AI products.
 @y
-You can [assign AI Governance licenses](manuals/accounts/organization/manage/manage-licenses.md) to any organization member, even if they don't occupy a Docker Team or Docker Business seat. For best practice, review available licenses as you add new members since members without an AI Governance license can still use Docker AI products.
+You can [assign AI Governance licenses](manuals/accounts/organization/manage/manage-licenses.md) to a team or to an individual organization member, even if they don't occupy a Docker Team or Docker Business seat. For best practice, review available licenses as you add new members since members without an AI Governance license can still use Docker AI products.
 @z
 
 @x

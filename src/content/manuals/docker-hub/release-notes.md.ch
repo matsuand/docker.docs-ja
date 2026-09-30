@@ -111,7 +111,7 @@ known issues for each Docker Hub release.
   Most users are unaffected. You may need to take action if your environment
   uses an egress firewall with a domain allowlist, a TLS inspection proxy, or a
   managed CA trust store. See the [Docker Desktop
-  allowlist](/manuals/desktop/setup/allow-list.md) for updated domain
+  allowlist](/manuals/desktop/enterprise/allow-list.md) for updated domain
   requirements. If you see TLS errors, ensure your trust store includes the
   [Amazon Trust Services Root CAs](https://www.amazontrust.com/repository/). If
   you're a paid subscriber, you can [contact Docker
@@ -121,7 +121,7 @@ known issues for each Docker Hub release.
   Most users are unaffected. You may need to take action if your environment
   uses an egress firewall with a domain allowlist, a TLS inspection proxy, or a
   managed CA trust store. See the [Docker Desktop
-  allowlist](manuals/desktop/setup/allow-list.md) for updated domain
+  allowlist](manuals/desktop/enterprise/allow-list.md) for updated domain
   requirements. If you see TLS errors, ensure your trust store includes the
   [Amazon Trust Services Root CAs](https://www.amazontrust.com/repository/). If
   you're a paid subscriber, you can [contact Docker
@@ -380,9 +380,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- In Docker Hub, you can now download a [registry.json](/manuals/enterprise/security/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](/manuals/desktop/enterprise/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @y
-- In Docker Hub, you can now download a [registry.json](manuals/enterprise/security/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
+- In Docker Hub, you can now download a [registry.json](manuals/desktop/enterprise/enforce-sign-in/_index.md) file or copy the commands to create a registry.json file to enforce sign-in for your organization.
 @z
 
 @x
@@ -470,9 +470,9 @@ known issues for each Docker Hub release.
 @z
 
 @x
-- [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @y
-- [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
+- [Registry Access Management](manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) is now available for all Docker Business subscriptions. When enabled, your users can access specific registries in Docker Hub.
 @z
 
 @x

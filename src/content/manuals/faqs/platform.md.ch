@@ -168,9 +168,9 @@ Security vetting for extensions isn't implemented. Extensions aren't covered as 
 @z
 
 @x
-No direct setting exists to disable private repositories. However, [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via Docker Home.
+No direct setting exists to disable private repositories. However, [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via Docker Home.
 @y
-No direct setting exists to disable private repositories. However, [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via Docker Home.
+No direct setting exists to disable private repositories. However, [Registry Access Management](manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) lets administrators control which registries developers can access through Docker Desktop via Docker Home.
 @z
 
 @x
@@ -292,9 +292,9 @@ Docker Desktop doesn't have a built-in mechanism for this, but you can use proce
 @z
 
 @x
-For enterprise environments, consider [Air-gapped containers](/manuals/enterprise/security/hardened-desktop/air-gapped-containers.md) which provide network access controls for containers.
+For enterprise environments, consider [Air-gapped containers](/manuals/desktop/enterprise/hardened-desktop/air-gapped-containers.md) which provide network access controls for containers.
 @y
-For enterprise environments, consider [Air-gapped containers](manuals/enterprise/security/hardened-desktop/air-gapped-containers.md) which provide network access controls for containers.
+For enterprise environments, consider [Air-gapped containers](manuals/desktop/enterprise/hardened-desktop/air-gapped-containers.md) which provide network access controls for containers.
 @z
 
 @x

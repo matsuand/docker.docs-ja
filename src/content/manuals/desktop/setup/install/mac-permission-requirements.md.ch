@@ -283,12 +283,12 @@ retain their original permissions.
 
 @x
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @y
 In addition, Docker Desktop supports [Enhanced Container Isolation
-mode](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
+mode](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) (ECI),
 available to Business customers only, which further secures containers without
 impacting developer workflows.
 @z

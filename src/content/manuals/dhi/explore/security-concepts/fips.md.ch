@@ -172,10 +172,10 @@ To find DHI repositories with FIPS image variants, [search the catalog](../../ho
 @z
 
 @x
-- Use the **FIPS** filter on the catalog page
+- Use the **Compliance** filter on the catalog page and select **FIPS**
 - Look for **FIPS** compliant on individual image listings
 @y
-- Use the **FIPS** filter on the catalog page
+- Use the **Compliance** filter on the catalog page and select **FIPS**
 - Look for **FIPS** compliant on individual image listings
 @z
 

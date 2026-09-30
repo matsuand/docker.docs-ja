@@ -309,32 +309,6 @@ keywords: docker, docs, manuals, products, user guides, how-to
     link: __SUBDIR__/platform-release-notes/
 @z
 
-% enterprise:
-
-@x
-  - title: Deploy Docker Desktop
-    description: Deploy Docker Desktop at scale within your company
-    icon: arrow-down-tray
-    link: /enterprise/enterprise-deployment/
-@y
-  - title: Deploy Docker Desktop
-    description: 社内に Docker Desktop を大規模導入します。
-    icon: arrow-down-tray
-    link: __SUBDIR__/enterprise/enterprise-deployment/
-@z
-
-@x
-  - title: Hardened Docker Desktop
-    description: Security features that strengthen developer environments.
-    icon: shield-check
-    link: /enterprise/security/hardened-desktop/
-@y
-  - title: Hardened Docker Desktop
-    description: 開発環境のセキュリティを強化します。
-    icon: shield-check
-    link: __SUBDIR__/enterprise/security/hardened-desktop/
-@z
-
 @x
 This section contains user guides on how to install, set up, configure, and use
 Docker products.
@@ -412,22 +386,4 @@ Docker アカウント、管理、サブスクリプション、支払い、セ�
 {{< grid items=platform >}}
 @y
 {{< grid items=platform >}}
-@z
-
-@x
-## Enterprise
-@y
-## エンタープライズ {#enterprise}
-@z
-
-@x
-Targeted at IT administrators with help on deploying Docker Desktop at scale with configuration guidance on security related features.
-@y
-IT 管理者を対象として、セキュリティ関連機能の設定ガイダンスや、Docker Desktop を大規模に展開するための支援を行います。
-@z
-
-@x
-{{< grid items=enterprise >}}
-@y
-{{< grid items=enterprise >}}
 @z

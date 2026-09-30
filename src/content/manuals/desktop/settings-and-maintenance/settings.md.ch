@@ -50,9 +50,9 @@ You can also locate the `settings-store.json` file at:
 @z
 
 @x
-For information on enforcing settings at an organization level, see [Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
+For information on enforcing settings at an organization level, see [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md).
 @y
-For information on enforcing settings at an organization level, see [Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md).
+For information on enforcing settings at an organization level, see [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md).
 @z
 
 @x
@@ -86,7 +86,7 @@ Configure startup behavior, UI appearance, terminal preferences, and feature def
 | **Choose file sharing implementation for your containers** (Available with the Apple Virtualization framework VMM) | Choose whether you want to share files using **VirtioFS**, or **gRPC FUSE** | **VirtioFS** | Mac | Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206). It is the only file sharing implementation supported by Docker VMM. |
 |**Use Rosetta for x86_64/amd64 emulation on Apple Silicon** (Available with the Apple Virtualization framework VMM) | Accelerate x86/AMD64 binary emulation on Apple Silicon. | Disabled | Mac | |
 | **Send usage statistics** | Send diagnostics, crash reports, and usage data to Docker to improve and troubleshoot the application. Docker may periodically prompt you for more information. | Enabled | All | |
-| **Use Enhanced Container Isolation** | Prevent containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md). | Disabled | All | Must be signed in and have a Docker Business subscription. |
+| **Use Enhanced Container Isolation** | Prevent containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md). | Disabled | All | Must be signed in and have a Docker Business subscription. |
 | **Show CLI hints**                                   | Display helpful CLI suggestions in terminal.               | Enabled                  | All        | Improves discoverability              |
 | **Enable Docker Scout image analysis**                | Show a **Start analysis** button when inspecting an image, which analyzes the image with Docker Scout.         | Enabled                   | All   | |
 | **Enable background SBOM indexing** | Automatically analyze images that you build or pull. | Disabled | All | |
@@ -110,7 +110,7 @@ Configure startup behavior, UI appearance, terminal preferences, and feature def
 | **Choose file sharing implementation for your containers** (Available with the Apple Virtualization framework VMM) | Choose whether you want to share files using **VirtioFS**, or **gRPC FUSE** | **VirtioFS** | Mac | Use VirtioFS for speedy file sharing. VirtioFS has reduced the time taken to complete filesystem operations by [up to 98%](https://github.com/docker/roadmap/issues/7#issuecomment-1044452206). It is the only file sharing implementation supported by Docker VMM. |
 |**Use Rosetta for x86_64/amd64 emulation on Apple Silicon** (Available with the Apple Virtualization framework VMM) | Accelerate x86/AMD64 binary emulation on Apple Silicon. | Disabled | Mac | |
 | **Send usage statistics** | Send diagnostics, crash reports, and usage data to Docker to improve and troubleshoot the application. Docker may periodically prompt you for more information. | Enabled | All | |
-| **Use Enhanced Container Isolation** | Prevent containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/_index.md). | Disabled | All | Must be signed in and have a Docker Business subscription. |
+| **Use Enhanced Container Isolation** | Prevent containers from breaching the Linux VM. For more information, see [Enhanced Container Isolation](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md). | Disabled | All | Must be signed in and have a Docker Business subscription. |
 | **Show CLI hints**                                   | Display helpful CLI suggestions in terminal.               | Enabled                  | All        | Improves discoverability              |
 | **Enable Docker Scout image analysis**                | Show a **Start analysis** button when inspecting an image, which analyzes the image with Docker Scout.         | Enabled                   | All   | |
 | **Enable background SBOM indexing** | Automatically analyze images that you build or pull. | Disabled | All | |
@@ -271,10 +271,10 @@ Docker Desktop supports HTTP/HTTPS and SOCKS5 proxies. SOCKS5 requires a Busines
 
 @x
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](/manuals/enterprise/security/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @y
 To prevent developers from accidentally changing the proxy settings, see
-[Settings Management](manuals/enterprise/security/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
+[Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md#what-features-can-i-configure-with-settings-management).
 @z
 
 @x
@@ -322,11 +322,11 @@ DNS convention), configure a static PAC URL or proxy address instead.
 @x
 > [!NOTE]
 >
-> If you use a PAC file hosted on a web server, add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` extension. Without this, the PAC file may not parse correctly. See [Hardened Docker Desktop](/manuals/enterprise/security/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files).
+> If you use a PAC file hosted on a web server, add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` extension. Without this, the PAC file may not parse correctly. See [Hardened Docker Desktop](/manuals/desktop/enterprise/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files).
 @y
 > [!NOTE]
 >
-> If you use a PAC file hosted on a web server, add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` extension. Without this, the PAC file may not parse correctly. See [Hardened Docker Desktop](manuals/enterprise/security/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files).
+> If you use a PAC file hosted on a web server, add the MIME type `application/x-ns-proxy-autoconfig` for the `.pac` extension. Without this, the PAC file may not parse correctly. See [Hardened Docker Desktop](manuals/desktop/enterprise/hardened-desktop/air-gapped-containers.md#proxy-auto-configuration-files).
 @z
 
 @x
@@ -377,18 +377,18 @@ Used for `docker image pull` (always enforced - all `docker pull` and Compose pu
 When you run Windows containers, enable **Use proxy for Windows Docker daemon**
 to let the Windows Docker daemon connect to Docker Desktop's internal proxy.
 This allows Windows containers to use the configured Docker Desktop proxy, and
-it is required if you want [Registry Access Management](/manuals/enterprise/security/hardened-desktop/registry-access-management.md)
+it is required if you want [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md)
 restrictions to apply to Windows image operations. Administrators can manage
 the same behavior with
-[**Override Windows "dockerd" port**](/manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#override-windows-dockerd-port).
+[**Override Windows "dockerd" port**](/manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md#override-windows-dockerd-port).
 @y
 When you run Windows containers, enable **Use proxy for Windows Docker daemon**
 to let the Windows Docker daemon connect to Docker Desktop's internal proxy.
 This allows Windows containers to use the configured Docker Desktop proxy, and
-it is required if you want [Registry Access Management](manuals/enterprise/security/hardened-desktop/registry-access-management.md)
+it is required if you want [Registry Access Management](manuals/desktop/enterprise/hardened-desktop/registry-access-management.md)
 restrictions to apply to Windows image operations. Administrators can manage
 the same behavior with
-[**Override Windows "dockerd" port**](manuals/enterprise/security/hardened-desktop/settings-management/settings-reference.md#override-windows-dockerd-port).
+[**Override Windows "dockerd" port**](manuals/desktop/enterprise/hardened-desktop/settings-management/settings-reference.md#override-windows-dockerd-port).
 @z
 
 @x

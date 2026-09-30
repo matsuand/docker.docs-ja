@@ -4,25 +4,45 @@
 @x
 title: Enable two-factor authentication for your Docker account
 linkTitle: Two-factor authentication
-description: Enable or disable two-factor authentication on your Docker account for enhanced security and account protection
-keywords: two-factor authentication, 2FA, docker hub security, account security, TOTP, authenticator app, disable 2FA
+description: >-
+  Enable or disable two-factor authentication on your Docker account for
+  enhanced security and account protection.
+keywords: two-factor authentication, 2FA, docker hub security,
+  account security, TOTP, authenticator app, disable 2FA, recovery code
 @y
 title: Enable two-factor authentication for your Docker account
 linkTitle: Two-factor authentication
-description: Enable or disable two-factor authentication on your Docker account for enhanced security and account protection
-keywords: two-factor authentication, 2FA, docker hub security, account security, TOTP, authenticator app, disable 2FA
+description: >-
+  Enable or disable two-factor authentication on your Docker account for
+  enhanced security and account protection.
+keywords: two-factor authentication, 2FA, docker hub security,
+  account security, TOTP, authenticator app, disable 2FA, recovery code
 @z
 
 @x
-Two-factor authentication (2FA) adds an essential security layer to your Docker account by requiring a unique security code in addition to your password when signing in. This prevents unauthorized access even if your password is compromised.
+{{< summary-bar feature_name="2FA" >}}
 @y
-Two-factor authentication (2FA) adds an essential security layer to your Docker account by requiring a unique security code in addition to your password when signing in. This prevents unauthorized access even if your password is compromised.
+{{< summary-bar feature_name="2FA" >}}
 @z
 
 @x
-When you turn on two-factor authentication, Docker provides a unique recovery code specific to your account. Store this code securely as it lets you recover your account if you lose access to your authenticator app.
+Two-factor authentication (2FA) adds a security layer to your Docker account by
+requiring a unique security code in addition to your password when signing in.
+This prevents unauthorized access even if your password is compromised.
 @y
-When you turn on two-factor authentication, Docker provides a unique recovery code specific to your account. Store this code securely as it lets you recover your account if you lose access to your authenticator app.
+Two-factor authentication (2FA) adds a security layer to your Docker account by
+requiring a unique security code in addition to your password when signing in.
+This prevents unauthorized access even if your password is compromised.
+@z
+
+@x
+When you turn on two-factor authentication, Docker provides a unique recovery
+code specific to your account. Store this code securely as it lets you recover
+your account if you lose access to your authenticator app.
+@y
+When you turn on two-factor authentication, Docker provides a unique recovery
+code specific to your account. Store this code securely as it lets you recover
+your account if you lose access to your authenticator app.
 @z
 
 @x
@@ -32,21 +52,29 @@ When you turn on two-factor authentication, Docker provides a unique recovery co
 @z
 
 @x
-Two-factor authentication significantly improves your account security:
+Two-factor authentication improves your account security:
 @y
-Two-factor authentication significantly improves your account security:
+Two-factor authentication improves your account security:
 @z
 
 @x
-- Protection against password breaches: Even if your password is stolen or leaked, attackers can't access your account without your second factor.
-- Secure CLI access: Required for Docker CLI authentication when 2FA is turned on, ensuring automated tools use personal access tokens instead of passwords.
-- Compliance requirements: Many organizations require 2FA for accessing development and production resources.
-- Peace of mind: Know that your Docker repositories, images, and account settings are protected by industry-standard security practices.
+- Protection against password breaches: Even if your password is stolen or
+  leaked, attackers can't access your account without your second factor.
+- Secure CLI access: Required for Docker CLI authentication when 2FA is turned
+  on, ensuring automated tools use personal access tokens instead of passwords.
+- Compliance requirements: Many organizations require 2FA for accessing
+  development and production resources.
+- Peace of mind: Know that your Docker repositories, images, and account
+  settings are protected by industry-standard security practices.
 @y
-- Protection against password breaches: Even if your password is stolen or leaked, attackers can't access your account without your second factor.
-- Secure CLI access: Required for Docker CLI authentication when 2FA is turned on, ensuring automated tools use personal access tokens instead of passwords.
-- Compliance requirements: Many organizations require 2FA for accessing development and production resources.
-- Peace of mind: Know that your Docker repositories, images, and account settings are protected by industry-standard security practices.
+- Protection against password breaches: Even if your password is stolen or
+  leaked, attackers can't access your account without your second factor.
+- Secure CLI access: Required for Docker CLI authentication when 2FA is turned
+  on, ensuring automated tools use personal access tokens instead of passwords.
+- Compliance requirements: Many organizations require 2FA for accessing
+  development and production resources.
+- Peace of mind: Know that your Docker repositories, images, and account
+  settings are protected by industry-standard security practices.
 @z
 
 @x
@@ -62,10 +90,12 @@ Before turning on two-factor authentication, you need:
 @z
 
 @x
-- A smartphone or device with a Time-based One-time password (TOTP) authenticator app installed
+- A smartphone or device with a time-based one-time password (TOTP)
+  authenticator app installed
 - Access to your Docker account password
 @y
-- A smartphone or device with a Time-based One-time password (TOTP) authenticator app installed
+- A smartphone or device with a time-based one-time password (TOTP)
+  authenticator app installed
 - Access to your Docker account password
 @z
 
@@ -83,28 +113,38 @@ To turn on 2FA for your Docker account:
 
 @x
 1. Sign in to your [Docker account](https://app.docker.com/login).
-1. Select your avatar and then from the drop-down menu, select **Account settings**.
+1. Select your avatar and then from the drop-down menu, select **Account
+   settings**.
 1. Select **2FA**.
 1. Enter your account password, then select **Confirm**.
-1. Save your recovery code and store it somewhere safe. You can use your recovery code to recover your account in the event you lose access to your authenticator app.
+1. Save your recovery code and store it somewhere safe. You can use your
+   recovery code to recover your account in the event you lose access to your
+   authenticator app.
 1. Use a TOTP mobile app to scan the QR code or enter the text code.
-1. Once you've linked your authenticator app, enter the six-digit code in the text-field.
+1. Once you've linked your authenticator app, enter the six-digit code in the
+   text field.
 1. Select **Enable 2FA**.
 @y
 1. Sign in to your [Docker account](https://app.docker.com/login).
-1. Select your avatar and then from the drop-down menu, select **Account settings**.
+1. Select your avatar and then from the drop-down menu, select **Account
+   settings**.
 1. Select **2FA**.
 1. Enter your account password, then select **Confirm**.
-1. Save your recovery code and store it somewhere safe. You can use your recovery code to recover your account in the event you lose access to your authenticator app.
+1. Save your recovery code and store it somewhere safe. You can use your
+   recovery code to recover your account in the event you lose access to your
+   authenticator app.
 1. Use a TOTP mobile app to scan the QR code or enter the text code.
-1. Once you've linked your authenticator app, enter the six-digit code in the text-field.
+1. Once you've linked your authenticator app, enter the six-digit code in the
+   text field.
 1. Select **Enable 2FA**.
 @z
 
 @x
-Two-factor authentication is now active on your account. You'll need to enter a security code from your authenticator app each time you sign in.
+Two-factor authentication is now active on your account. You'll need to enter a
+security code from your authenticator app each time you sign in.
 @y
-Two-factor authentication is now active on your account. You'll need to enter a security code from your authenticator app each time you sign in.
+Two-factor authentication is now active on your account. You'll need to enter a
+security code from your authenticator app each time you sign in.
 @z
 
 @x
@@ -116,23 +156,27 @@ Two-factor authentication is now active on your account. You'll need to enter a 
 @x
 > [!WARNING]
 >
-> Disabling two-factor authentication results in decreased security for your Docker account.
+> Disabling two-factor authentication results in decreased security for your
+> Docker account.
 @y
 > [!WARNING]
 >
-> Disabling two-factor authentication results in decreased security for your Docker account.
+> Disabling two-factor authentication results in decreased security for your
+> Docker account.
 @z
 
 @x
 1. Sign in to your [Docker account](https://app.docker.com/login).
-2. Select your avatar and then from the drop-down menu, select **Account settings**.
-3. Select **2FA**.
-4. Enter your password, then select **Confirm**.
-5. Select **Disable 2FA**.
+1. Select your avatar and then from the drop-down menu, select **Account
+   settings**.
+1. Select **2FA**.
+1. Enter your password, then select **Confirm**.
+1. Select **Disable 2FA**.
 @y
 1. Sign in to your [Docker account](https://app.docker.com/login).
-2. Select your avatar and then from the drop-down menu, select **Account settings**.
-3. Select **2FA**.
-4. Enter your password, then select **Confirm**.
-5. Select **Disable 2FA**.
+1. Select your avatar and then from the drop-down menu, select **Account
+   settings**.
+1. Select **2FA**.
+1. Enter your password, then select **Confirm**.
+1. Select **Disable 2FA**.
 @z

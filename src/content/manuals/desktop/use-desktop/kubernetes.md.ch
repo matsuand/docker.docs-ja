@@ -120,11 +120,11 @@ provisioners.
 
 @x
 `kubeadm` is the older provisioner. It supports a single-node cluster, you can't select the kubernetes
-version, it's slower to provision than `kind`, and it's not supported by [Enhanced Container Isolation](/manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/index.md) (ECI),
+version, it's slower to provision than `kind`, and it's not supported by [Enhanced Container Isolation](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/index.md) (ECI),
 meaning that if ECI is enabled the cluster works but it's not protected by ECI.
 @y
 `kubeadm` is the older provisioner. It supports a single-node cluster, you can't select the kubernetes
-version, it's slower to provision than `kind`, and it's not supported by [Enhanced Container Isolation](manuals/enterprise/security/hardened-desktop/enhanced-container-isolation/index.md) (ECI),
+version, it's slower to provision than `kind`, and it's not supported by [Enhanced Container Isolation](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/index.md) (ECI),
 meaning that if ECI is enabled the cluster works but it's not protected by ECI.
 @z
 
@@ -315,11 +315,11 @@ factors, including the version of Kubernetes being used. The tags vary for each 
 @x
 To accommodate scenarios where access to Docker Hub is not allowed, admins can
 configure Docker Desktop to pull the above listed images from a different registry (e.g., a mirror)
-using the [KubernetesImagesRepository](/manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
+using the [KubernetesImagesRepository](/manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
 @y
 To accommodate scenarios where access to Docker Hub is not allowed, admins can
 configure Docker Desktop to pull the above listed images from a different registry (e.g., a mirror)
-using the [KubernetesImagesRepository](manuals/enterprise/security/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
+using the [KubernetesImagesRepository](manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md#kubernetes) setting as follows.
 @z
 
 @x

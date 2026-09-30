@@ -44,6 +44,30 @@ keywords: manage organization, members, teams, licenses, seats, product access, 
 @z
 
 @x
+  - title: Products
+    description: Manage access and view usage for Docker products across your organization.
+    icon: squares-2x2
+    link: /accounts/organization/manage/manage-products/
+@y
+  - title: Products
+    description: Manage access and view usage for Docker products across your organization.
+    icon: squares-2x2
+    link: __SUBDIR__/accounts/organization/manage/manage-products/
+@z
+
+@x
+  - title: Licenses
+    description: View your license inventory and assign licenses to teams or individual members.
+    icon: key
+    link: /accounts/organization/manage/manage-licenses/
+@y
+  - title: Licenses
+    description: View your license inventory and assign licenses to teams or individual members.
+    icon: key
+    link: __SUBDIR__/accounts/organization/manage/manage-licenses/
+@z
+
+@x
   - title: Seats
     description: Add or remove seats for Docker Team and Business subscriptions.
     icon: user-circle
@@ -56,48 +80,24 @@ keywords: manage organization, members, teams, licenses, seats, product access, 
 @z
 
 @x
-  - title: Licenses
-    description: Assign and revoke product licenses for organization members.
-    icon: key
-    link: /accounts/organization/manage/manage-licenses/
-@y
-  - title: Licenses
-    description: Assign and revoke product licenses for organization members.
-    icon: key
-    link: __SUBDIR__/accounts/organization/manage/manage-licenses/
-@z
-
-@x
-  - title: Product access and usage
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: /accounts/organization/manage/manage-products/
-@y
-  - title: Product access and usage
-    description: Manage access and view usage for Docker products across your organization.
-    icon: squares-2x2
-    link: __SUBDIR__/accounts/organization/manage/manage-products/
-@z
-
-@x
-  - title: Change information
+  - title: Information
     description: Update your organization's general information and settings.
     icon: pencil-square
     link: /accounts/organization/manage/general-settings/
 @y
-  - title: Change information
+  - title: Information
     description: Update your organization's general information and settings.
     icon: pencil-square
     link: __SUBDIR__/accounts/organization/manage/general-settings/
 @z
 
 @x
-  - title: Deactivate
+  - title: Deactivation
     description: Deactivate an organization after completing the required steps.
     icon: minus-circle
     link: /accounts/organization/manage/deactivate-account/
 @y
-  - title: Deactivate
+  - title: Deactivation
     description: Deactivate an organization after completing the required steps.
     icon: minus-circle
     link: __SUBDIR__/accounts/organization/manage/deactivate-account/
@@ -170,23 +170,23 @@ plans. The following table summarizes the difference.
 @z
 
 @x
-| Entitlement | What it grants                                          | Applies to                                       | Managed from |
-| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ------------ |
-| Seat        | Membership in your Docker Team or Business subscription | Docker Core subscription                         | Billing      |
-| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Members      |
+| Entitlement | What it grants                                          | Applies to                                       | Managed from                 |
+| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ---------------------------- |
+| Seat        | Membership in your Docker Team or Business subscription | Docker Core subscription                         | Billing                      |
+| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Licenses, Teams, and Members |
 @y
-| Entitlement | What it grants                                          | Applies to                                       | Managed from |
-| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ------------ |
-| Seat        | Membership in your Docker Team or Business subscription | Docker Core subscription                         | Billing      |
-| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Members      |
+| Entitlement | What it grants                                          | Applies to                                       | Managed from                 |
+| ----------- | ------------------------------------------------------- | ------------------------------------------------ | ---------------------------- |
+| Seat        | Membership in your Docker Team or Business subscription | Docker Core subscription                         | Billing                      |
+| License     | Access to a specific product or add-on                  | AI Governance, Docker Offload, and other add-ons | Licenses, Teams, and Members |
 @z
 
 @x
 For details, see [Seats](/manuals/accounts/organization/manage/manage-seats.md)
-and [License assignment](/manuals/accounts/organization/manage/manage-licenses.md).
+and [Manage licenses](/manuals/accounts/organization/manage/manage-licenses.md).
 @y
 For details, see [Seats](manuals/accounts/organization/manage/manage-seats.md)
-and [License assignment](manuals/accounts/organization/manage/manage-licenses.md).
+and [Manage licenses](manuals/accounts/organization/manage/manage-licenses.md).
 @z
 
 @x

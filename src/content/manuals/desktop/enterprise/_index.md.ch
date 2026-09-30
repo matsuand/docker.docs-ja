@@ -1,32 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
-title: Docker Desktop Enterprise
-description: Docker Desktop Enterprise
-keywords: Docker Desktop Enterprise
+title: Enterprise
 @y
-title: Docker Desktop Enterprise
-description: Docker Desktop Enterprise
-keywords: Docker Desktop Enterprise
-@z
-
-@x
-Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Use [Docker Desktop](/manuals/enterprise/enterprise-deployment/_index.md) instead.
-@y
-Docker Desktop Enterprise (DDE) has been deprecated and is no longer in active development. Use [Docker Desktop](manuals/enterprise/enterprise-deployment/_index.md) instead.
-@z
-
-@x
-If you are an existing DDE customer, use the [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of the new [subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopEnterprise).
-@y
-If you are an existing DDE customer, use the [Support form](https://hub.docker.com/support/desktop/) to request a transition to one of the new [subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopEnterprise).
-@z
-
-@x
-If you are looking to deploy Docker Desktop at scale, contact us on [pricingquestions@docker.com](mailto:pricingquestions@docker.com).
-@y
-If you are looking to deploy Docker Desktop at scale, contact us on [pricingquestions@docker.com](mailto:pricingquestions@docker.com).
+title: Enterprise
 @z

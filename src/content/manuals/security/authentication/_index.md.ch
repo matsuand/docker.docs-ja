@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% __SUBDIR__ 対応
+
 @x
 title: Authentication
 linkTitle: Authentication
@@ -97,11 +99,11 @@ Docker Team or Business subscription.
 
 @x
 To require Docker Desktop users to sign in as organization members, see
-[Enforce sign-in](/manuals/enterprise/security/enforce-sign-in/_index.md).
+[Enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 Enforce sign-in is configured in Enterprise, not in this section.
 @y
 To require Docker Desktop users to sign in as organization members, see
-[Enforce sign-in](manuals/enterprise/security/enforce-sign-in/_index.md).
+[Enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
 Enforce sign-in is configured in Enterprise, not in this section.
 @z
 

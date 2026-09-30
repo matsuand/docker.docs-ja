@@ -1,0 +1,578 @@
+%This is the change file for the original Docker's Documentation file.
+%This is part of Japanese translation version for Docker's Documantation.
+
+% .md リンクへの (no slash) 対応
+
+@x
+title: Air-gapped containers
+description: Restrict outbound container traffic using proxy rules, PAC files, and network isolation with Docker Desktop air-gapped containers
+keywords: air gapped containers, network security, proxy configuration, container isolation, docker desktop, PAC file, network isolation
+@y
+title: Air-gapped containers
+description: Restrict outbound container traffic using proxy rules, PAC files, and network isolation with Docker Desktop air-gapped containers
+keywords: air gapped containers, network security, proxy configuration, container isolation, docker desktop, PAC file, network isolation
+@z
+
+@x
+{{< summary-bar feature_name="Air-gapped containers" >}}
+@y
+{{< summary-bar feature_name="Air-gapped containers" >}}
+@z
+
+@x
+Air-gapped containers let you restrict container network access by controlling where containers can send and receive data. This feature applies custom proxy rules to container network traffic, helping secure environments where containers shouldn't have unrestricted internet access.
+@y
+Air-gapped containers let you restrict container network access by controlling where containers can send and receive data. This feature applies custom proxy rules to container network traffic, helping secure environments where containers shouldn't have unrestricted internet access.
+@z
+
+@x
+Docker Desktop can configure container network traffic to accept connections, reject connections, or tunnel through HTTP or SOCKS proxies. You control which TCP ports the policy applies to and whether to use a single proxy or per-destination policies via Proxy Auto-Configuration (PAC) files.
+@y
+Docker Desktop can configure container network traffic to accept connections, reject connections, or tunnel through HTTP or SOCKS proxies. You control which TCP ports the policy applies to and whether to use a single proxy or per-destination policies via Proxy Auto-Configuration (PAC) files.
+@z
+
+@x
+## Who should use air-gapped containers?
+@y
+## Who should use air-gapped containers?
+@z
+
+@x
+Use air-gapped containers if:
+@y
+Use air-gapped containers if:
+@z
+
+@x
+- Your organization requires containers to communicate only with approved internal services
+- You need to meet compliance standards that mandate network isolation (such as SOC 2, ISO 27001, or PCI DSS)
+- You want to prevent containers from leaking data or reaching unapproved external endpoints during builds or at runtime
+@y
+- Your organization requires containers to communicate only with approved internal services
+- You need to meet compliance standards that mandate network isolation (such as SOC 2, ISO 27001, or PCI DSS)
+- You want to prevent containers from leaking data or reaching unapproved external endpoints during builds or at runtime
+@z
+
+@x
+## How air-gapped containers work
+@y
+## How air-gapped containers work
+@z
+
+@x
+`containersProxy` governs two distinct traffic paths:
+@y
+`containersProxy` governs two distinct traffic paths:
+@z
+
+@x
+- Image pulls (always enforced): Docker Desktop hardwires `http.docker.internal:3128` as the daemon's proxy in `daemon.json` at VM startup, so all `docker pull` and Compose pull operations always go through `containersProxy`, including any PAC file rules.
+- Running container outbound traffic (opt-in): Docker Desktop intercepts container TCP connections and applies proxy rules only for ports listed in `transparentPorts`. Without it, running container traffic bypasses `containersProxy` entirely.
+@y
+- Image pulls (always enforced): Docker Desktop hardwires `http.docker.internal:3128` as the daemon's proxy in `daemon.json` at VM startup, so all `docker pull` and Compose pull operations always go through `containersProxy`, including any PAC file rules.
+- Running container outbound traffic (opt-in): Docker Desktop intercepts container TCP connections and applies proxy rules only for ports listed in `transparentPorts`. Without it, running container traffic bypasses `containersProxy` entirely.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> If you configure a PAC file under `containersProxy`, the PAC file must return an appropriate proxy server to connect to the registries where your images are hosted.
+@y
+> [!IMPORTANT]
+>
+> If you configure a PAC file under `containersProxy`, the PAC file must return an appropriate proxy server to connect to the registries where your images are hosted.
+@z
+
+@x
+Other considerations:
+@y
+Other considerations:
+@z
+
+@x
+- If PAC file download fails, containers block requests to target URLs
+- Hostname is available for ports 80 and 443, but only IP addresses for other ports
+@y
+- If PAC file download fails, containers block requests to target URLs
+- Hostname is available for ports 80 and 443, but only IP addresses for other ports
+@z
+
+@x
+## Prerequisites
+@y
+## Prerequisites
+@z
+
+@x
+Before configuring air-gapped containers, you must have:
+@y
+Before configuring air-gapped containers, you must have:
+@z
+
+@x
+- [Enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md) enabled to ensure users authenticate with your organization
+- A Docker Business subscription
+- Configured [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) with the `admin-settings.json` file to manage organization policies
+@y
+- [Enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md) enabled to ensure users authenticate with your organization
+- A Docker Business subscription
+- Configured [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) with the `admin-settings.json` file to manage organization policies
+@z
+
+@x
+## Configure air-gapped containers
+@y
+## Configure air-gapped containers
+@z
+
+@x
+Add the container proxy to your [`admin-settings.json` file](/manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md). For example:
+@y
+Add the container proxy to your [`admin-settings.json` file](manuals/desktop/enterprise/hardened-desktop/settings-management/configure-json-file.md). For example:
+@z
+
+@x
+```json
+{
+  "configurationFileVersion": 2,
+  "containersProxy": {
+    "locked": true,
+    "mode": "manual",
+    "http": "",
+    "https": "",
+    "exclude": [],
+    "pac": "http://192.168.1.16:62039/proxy.pac",
+    "transparentPorts": "*"
+  }
+}
+```
+@y
+```json
+{
+  "configurationFileVersion": 2,
+  "containersProxy": {
+    "locked": true,
+    "mode": "manual",
+    "http": "",
+    "https": "",
+    "exclude": [],
+    "pac": "http://192.168.1.16:62039/proxy.pac",
+    "transparentPorts": "*"
+  }
+}
+```
+@z
+
+@x
+### Configuration parameters
+@y
+### Configuration parameters
+@z
+
+@x
+The `containersProxy` setting controls network policies applied to `docker image pull` and, when `transparentPorts` is configured, running container outbound traffic:
+@y
+The `containersProxy` setting controls network policies applied to `docker image pull` and, when `transparentPorts` is configured, running container outbound traffic:
+@z
+
+@x
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| `locked` | Prevents developers from overriding settings | `true` (locked), `false` (default) |
+| `mode` | Proxy configuration method | `system` (use system proxy), `manual` (custom) |
+| `http` | HTTP proxy server | URL (e.g., `"http://proxy.company.com:8080"`) |
+| `https` | HTTPS proxy server | URL (e.g., `"https://proxy.company.com:8080"`) |
+| `exclude` | Bypass proxy for these addresses | Array of hostnames/IPs |
+| `pac` | Proxy Auto-Configuration file URL | URL to PAC file |
+| `transparentPorts` | Ports subject to proxy rules | Comma-separated ports or wildcard (`"*"`) |
+@y
+| Parameter | Description | Value |
+|-----------|-------------|-------|
+| `locked` | Prevents developers from overriding settings | `true` (locked), `false` (default) |
+| `mode` | Proxy configuration method | `system` (use system proxy), `manual` (custom) |
+| `http` | HTTP proxy server | URL (e.g., `"http://proxy.company.com:8080"`) |
+| `https` | HTTPS proxy server | URL (e.g., `"https://proxy.company.com:8080"`) |
+| `exclude` | Bypass proxy for these addresses | Array of hostnames/IPs |
+| `pac` | Proxy Auto-Configuration file URL | URL to PAC file |
+| `transparentPorts` | Ports subject to proxy rules | Comma-separated ports or wildcard (`"*"`) |
+@z
+
+@x
+### Configuration examples
+@y
+### Configuration examples
+@z
+
+@x
+Block all external access:
+@y
+Block all external access:
+@z
+
+@x
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "",
+  "https": "",
+  "exclude": [],
+  "transparentPorts": "*"
+}
+```
+@y
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "",
+  "https": "",
+  "exclude": [],
+  "transparentPorts": "*"
+}
+```
+@z
+
+@x
+Allow specific internal services:
+@y
+Allow specific internal services:
+@z
+
+@x
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "",
+  "https": "",
+  "exclude": ["internal.company.com", "10.0.0.0/8"],
+  "transparentPorts": "80,443"
+}
+```
+@y
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "",
+  "https": "",
+  "exclude": ["internal.company.com", "10.0.0.0/8"],
+  "transparentPorts": "80,443"
+}
+```
+@z
+
+@x
+Route through corporate proxy:
+@y
+Route through corporate proxy:
+@z
+
+@x
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "http://corporate-proxy.company.com:8080",
+  "https": "http://corporate-proxy.company.com:8080",
+  "exclude": ["localhost", "*.company.local"],
+  "transparentPorts": "*"
+}
+```
+@y
+```json
+"containersProxy": {
+  "locked": true,
+  "mode": "manual",
+  "http": "http://corporate-proxy.company.com:8080",
+  "https": "http://corporate-proxy.company.com:8080",
+  "exclude": ["localhost", "*.company.local"],
+  "transparentPorts": "*"
+}
+```
+@z
+
+@x
+## Proxy Auto-Configuration (PAC) files
+@y
+## Proxy Auto-Configuration (PAC) files
+@z
+
+@x
+PAC files provide fine-grained control over container network access by defining rules for different destinations.
+@y
+PAC files provide fine-grained control over container network access by defining rules for different destinations.
+@z
+
+@x
+### Basic PAC file structure
+@y
+### Basic PAC file structure
+@z
+
+@x
+```javascript
+function FindProxyForURL(url, host) {
+	if (localHostOrDomainIs(host, 'internal.corp')) {
+		return "PROXY 10.0.0.1:3128";
+	}
+	if (isInNet(host, "192.168.0.0", "255.255.255.0")) {
+	    return "DIRECT";
+	}
+    return "PROXY reject.docker.internal:1234";
+}
+```
+@y
+```javascript
+function FindProxyForURL(url, host) {
+	if (localHostOrDomainIs(host, 'internal.corp')) {
+		return "PROXY 10.0.0.1:3128";
+	}
+	if (isInNet(host, "192.168.0.0", "255.255.255.0")) {
+	    return "DIRECT";
+	}
+    return "PROXY reject.docker.internal:1234";
+}
+```
+@z
+
+@x
+### General considerations
+@y
+### General considerations
+@z
+
+@x
+ - `FindProxyForURL` function URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
+ - If you have an internal container trying to access `https://docs.docker.com//desktop/enterprise/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the URL value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
+@y
+ - `FindProxyForURL` function URL parameter format is `http://host_or_ip:port` or `https://host_or_ip:port`
+ - If you have an internal container trying to access `https://docs.docker.com//desktop/enterprise/hardened-desktop/air-gapped-containers` the Docker proxy service will submit docs.docker.com for the host value and https://docs.docker.com:443 for the URL value to `FindProxyForURL`, if you are using `shExpMatch` function in your PAC file as follows:
+@z
+
+@x
+   <!-- vale off -->
+   ```console
+   if(shExpMatch(url, "https://docs.docker.com:443//desktop/enterprise/hardened-desktop/*")) return "DIRECT";
+   ```
+@y
+   <!-- vale off -->
+   ```console
+   if(shExpMatch(url, "https://docs.docker.com:443//desktop/enterprise/hardened-desktop/*")) return "DIRECT";
+   ```
+@z
+
+@x
+   `shExpMatch` function will fail, instead use:
+@y
+   `shExpMatch` function will fail, instead use:
+@z
+
+@x
+   ```console
+   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
+   ```
+   <!-- vale on -->
+@y
+   ```console
+   if (host == docs.docker.com && url.indexOf(":443") > 0) return "DIRECT";
+   ```
+   <!-- vale on -->
+@z
+
+@x
+### PAC file return values
+@y
+### PAC file return values
+@z
+
+@x
+| Return value | Action |
+|--------------|--------|
+| `PROXY host:port` | Route through HTTP proxy at specified host and port |
+| `SOCKS5 host:port` | Route through SOCKS5 proxy at specified host and port |
+| `DIRECT` | Allow direct connection without proxy |
+| `PROXY reject.docker.internal:any_port` | Block the request completely |
+@y
+| Return value | Action |
+|--------------|--------|
+| `PROXY host:port` | Route through HTTP proxy at specified host and port |
+| `SOCKS5 host:port` | Route through SOCKS5 proxy at specified host and port |
+| `DIRECT` | Allow direct connection without proxy |
+| `PROXY reject.docker.internal:any_port` | Block the request completely |
+@z
+
+@x
+### Advanced PAC file example
+@y
+### Advanced PAC file example
+@z
+
+@x
+```javascript
+function FindProxyForURL(url, host) {
+  // Allow access to Docker Hub for approved base images
+  if (dnsDomainIs(host, ".docker.io") || host === "docker.io") {
+    return "PROXY corporate-proxy.company.com:8080";
+  }
+@y
+```javascript
+function FindProxyForURL(url, host) {
+  // Allow access to Docker Hub for approved base images
+  if (dnsDomainIs(host, ".docker.io") || host === "docker.io") {
+    return "PROXY corporate-proxy.company.com:8080";
+  }
+@z
+
+@x
+  // Allow internal package repositories
+  if (localHostOrDomainIs(host, 'nexus.company.com') ||
+      localHostOrDomainIs(host, 'artifactory.company.com')) {
+    return "DIRECT";
+  }
+@y
+  // Allow internal package repositories
+  if (localHostOrDomainIs(host, 'nexus.company.com') ||
+      localHostOrDomainIs(host, 'artifactory.company.com')) {
+    return "DIRECT";
+  }
+@z
+
+@x
+  // Allow development tools on specific ports
+  if (url.indexOf(":3000") > 0 || url.indexOf(":8080") > 0) {
+    if (isInNet(host, "10.0.0.0", "255.0.0.0")) {
+      return "DIRECT";
+    }
+  }
+@y
+  // Allow development tools on specific ports
+  if (url.indexOf(":3000") > 0 || url.indexOf(":8080") > 0) {
+    if (isInNet(host, "10.0.0.0", "255.0.0.0")) {
+      return "DIRECT";
+    }
+  }
+@z
+
+@x
+  // Block access to developer's localhost
+  if (host === "host.docker.internal" || host === "localhost") {
+    return "PROXY reject.docker.internal:1234";
+  }
+@y
+  // Block access to developer's localhost
+  if (host === "host.docker.internal" || host === "localhost") {
+    return "PROXY reject.docker.internal:1234";
+  }
+@z
+
+@x
+  // Block all other external access
+  return "PROXY reject.docker.internal:1234";
+}
+```
+@y
+  // Block all other external access
+  return "PROXY reject.docker.internal:1234";
+}
+```
+@z
+
+@x
+## Verify air-gapped container configuration
+@y
+## Verify air-gapped container configuration
+@z
+
+@x
+After applying the configuration, test that container network restrictions work:
+@y
+After applying the configuration, test that container network restrictions work:
+@z
+
+@x
+Test blocked access:
+@y
+Test blocked access:
+@z
+
+@x
+```console
+$ docker run --rm alpine wget -O- https://www.google.com
+# Should fail or timeout based on your proxy rules
+```
+@y
+```console
+$ docker run --rm alpine wget -O- https://www.google.com
+# Should fail or timeout based on your proxy rules
+```
+@z
+
+@x
+Test allowed access:
+@y
+Test allowed access:
+@z
+
+@x
+```console
+$ docker run --rm alpine wget -O- https://internal.company.com
+# Should succeed if internal.company.com is in your exclude list or PAC rules
+```
+@y
+```console
+$ docker run --rm alpine wget -O- https://internal.company.com
+# Should succeed if internal.company.com is in your exclude list or PAC rules
+```
+@z
+
+@x
+Test proxy routing:
+@y
+Test proxy routing:
+@z
+
+@x
+```console
+$ docker run --rm alpine wget -O- https://docker.io
+# Should succeed if routed through approved proxy
+```
+@y
+```console
+$ docker run --rm alpine wget -O- https://docker.io
+# Should succeed if routed through approved proxy
+```
+@z
+
+@x
+## Security considerations
+@y
+## Security considerations
+@z
+
+@x
+- Network policy enforcement: Air-gapped containers work at the Docker Desktop level. Advanced users might bypass restrictions through various means, so consider additional network-level controls for high-security environments.
+- Development workflow impact: Overly restrictive policies can break legitimate development workflows. Test thoroughly and provide clear exceptions for necessary services.
+- PAC file management: Host PAC files on reliable internal infrastructure. Failed PAC downloads result in blocked container network access.
+- Performance considerations: Complex PAC files with many rules may impact container network performance. Keep rules simple and efficient.
+@y
+- Network policy enforcement: Air-gapped containers work at the Docker Desktop level. Advanced users might bypass restrictions through various means, so consider additional network-level controls for high-security environments.
+- Development workflow impact: Overly restrictive policies can break legitimate development workflows. Test thoroughly and provide clear exceptions for necessary services.
+- PAC file management: Host PAC files on reliable internal infrastructure. Failed PAC downloads result in blocked container network access.
+- Performance considerations: Complex PAC files with many rules may impact container network performance. Keep rules simple and efficient.
+@z
+
+@x
+## Next steps
+@y
+## Next steps
+@z
+
+@x
+- [Explore Enhanced Container Isolation](/manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) to further restrict what containers can do at runtime
+- [Understand how Docker Desktop handles host and container networking](/manuals/desktop/features/networking/_index.md)
+@y
+- [Explore Enhanced Container Isolation](manuals/desktop/enterprise/hardened-desktop/enhanced-container-isolation/_index.md) to further restrict what containers can do at runtime
+- [Understand how Docker Desktop handles host and container networking](manuals/desktop/features/networking/_index.md)
+@z

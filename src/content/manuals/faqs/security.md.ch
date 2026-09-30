@@ -448,9 +448,9 @@ These are separate features you can use independently or together:
 @z
 
 @x
-For more details, see [Enforce sign-in for Desktop](/manuals/enterprise/security/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
+For more details, see [Enforce sign-in for Desktop](/manuals/desktop/enterprise/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @y
-For more details, see [Enforce sign-in for Desktop](manuals/enterprise/security/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
+For more details, see [Enforce sign-in for Desktop](manuals/desktop/enterprise/enforce-sign-in/_index.md#enforcing-sign-in-versus-enforcing-single-sign-on-sso).
 @z
 
 @x

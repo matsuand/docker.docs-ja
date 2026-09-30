@@ -105,10 +105,10 @@ can use either interface.
 
 @x
    To search for an image with a compliance variant (FIPS or STIG), select
-   **Filter by** and select the relevant compliance option.
+   **Compliance** and select the relevant compliance option.
 @y
    To search for an image with a compliance variant (FIPS or STIG), select
-   **Filter by** and select the relevant compliance option.
+   **Compliance** and select the relevant compliance option.
 @z
 
 @x

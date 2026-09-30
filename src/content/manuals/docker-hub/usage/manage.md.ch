@@ -101,13 +101,13 @@ both individuals and organizations:
 
 @x
    - Routinely [view Docker Hub usage](https://hub.docker.com/usage) to monitor usage.
-   - [Enforce sign-in](/security/for-admins/enforce-sign-in/) to ensure that you
+   - [Enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md) to ensure that you
      can monitor the usage of your users and users receive higher usage limits.
    - Look for duplicate user accounts in Docker and remove accounts from your organization
    as needed.
 @y
    - Routinely [view Docker Hub usage](https://hub.docker.com/usage) to monitor usage.
-   - [Enforce sign-in](__SUBDIR__/security/for-admins/enforce-sign-in/) to ensure that you
+   - [Enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md) to ensure that you
      can monitor the usage of your users and users receive higher usage limits.
    - Look for duplicate user accounts in Docker and remove accounts from your organization
    as needed.

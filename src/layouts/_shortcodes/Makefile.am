@@ -9,7 +9,6 @@ bases = \
 	files.markdown.md        \
 	interactive-diagram.html \
 	labspace-launch.html     \
-	restricted.html          \
 	sandbox-auth.html        \
 	sandbox-auth.markdown.md \
 	setting-metadata.html    \
@@ -41,7 +40,6 @@ copyfiles = \
 	recipe-list.html                \
 	recipe-list.markdown.md         \
 	release-date.html               \
-	restricted.markdown.md          \
 	sectionlinks.html               \
 	setting-metadata.markdown.md    \
 	summary-bar.markdown.md         \

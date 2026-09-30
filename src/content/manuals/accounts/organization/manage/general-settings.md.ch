@@ -5,10 +5,10 @@
 
 @x
 title: Change general organization information
-linkTitle: Change information
+linkTitle: Information
 @y
 title: Change general organization information
-linkTitle: Change information
+linkTitle: Information
 @z
 
 @x
