@@ -14,6 +14,20 @@ keywords: desktop, docker, windows, microsoft dev box
 @z
 
 @x
+> [!IMPORTANT]
+>
+> Microsoft has announced the retirement of Microsoft Dev Box. The service entered its closing-down period on 14 September 2026 and retires fully at 17:00 UTC on 18 September 2028. Microsoft recommends transitioning to Windows 365 or another solution. See the [Microsoft Dev Box retirement guide](https://learn.microsoft.com/en-us/azure/dev-box/dev-box-retirement-guide).
+>
+> To deploy Docker Desktop on Windows 365 Cloud PCs or other managed Windows machines, use the [MSI installer](msi-install-and-configure.md) with [Intune](use-intune.md).
+@y
+> [!IMPORTANT]
+>
+> Microsoft has announced the retirement of Microsoft Dev Box. The service entered its closing-down period on 14 September 2026 and retires fully at 17:00 UTC on 18 September 2028. Microsoft recommends transitioning to Windows 365 or another solution. See the [Microsoft Dev Box retirement guide](https://learn.microsoft.com/en-us/azure/dev-box/dev-box-retirement-guide).
+>
+> To deploy Docker Desktop on Windows 365 Cloud PCs or other managed Windows machines, use the [MSI installer](msi-install-and-configure.md) with [Intune](use-intune.md).
+@z
+
+@x
 Docker Desktop is available as a pre-configured image in the Microsoft Azure Marketplace for use with Microsoft Dev Box, allowing developers to quickly set up consistent development environments in the cloud.
 @y
 Docker Desktop is available as a pre-configured image in the Microsoft Azure Marketplace for use with Microsoft Dev Box, allowing developers to quickly set up consistent development environments in the cloud.
@@ -81,14 +95,14 @@ Microsoft Dev Box provides cloud-based, pre-configured developer workstations th
 
 @x
 1. Navigate to the [Docker Desktop for Microsoft Dev Box](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dockerinc1694120899427.devbox_azuremachine?tab=Overview) listing in Azure Marketplace.
-2. Select **Get It Now** to add the virtual machine image to your subscription.
-3. Follow the Azure workflow to complete the setup.
-4. Use the image to create VMs, assign to Dev Centers, or create Dev Box Pools according to your organization's setup.
+1. Select **Get It Now** to add the virtual machine image to your subscription.
+1. Follow the Azure workflow to complete the setup.
+1. Use the image to create VMs, assign to Dev Centers, or create Dev Box Pools according to your organization's setup.
 @y
 1. Navigate to the [Docker Desktop for Microsoft Dev Box](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dockerinc1694120899427.devbox_azuremachine?tab=Overview) listing in Azure Marketplace.
-2. Select **Get It Now** to add the virtual machine image to your subscription.
-3. Follow the Azure workflow to complete the setup.
-4. Use the image to create VMs, assign to Dev Centers, or create Dev Box Pools according to your organization's setup.
+1. Select **Get It Now** to add the virtual machine image to your subscription.
+1. Follow the Azure workflow to complete the setup.
+1. Use the image to create VMs, assign to Dev Centers, or create Dev Box Pools according to your organization's setup.
 @z
 
 @x
@@ -105,12 +119,12 @@ Once your Dev Box is provisioned with the Docker Desktop image:
 
 @x
 1. Start your Dev Box instance.
-2. Launch Docker Desktop.
-3. Sign in with your Docker ID.
+1. Launch Docker Desktop.
+1. Sign in with your Docker ID.
 @y
 1. Start your Dev Box instance.
-2. Launch Docker Desktop.
-3. Sign in with your Docker ID.
+1. Launch Docker Desktop.
+1. Sign in with your Docker ID.
 @z
 
 @x

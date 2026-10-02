@@ -22,11 +22,19 @@ keywords: gpu, gpu support, nvidia, wsl2, docker desktop, windows
 @x
 > [!NOTE]
 >
-> GPU support in Docker Desktop is only available on Windows with the WSL2 backend.
+> This page covers GPU passthrough to Linux containers using `--gpus`, which is
+> only available on Windows with the WSL 2 backend. Other forms of GPU
+> acceleration in Docker Desktop, such as GPU-accelerated inference in
+> [Docker Model Runner](/manuals/ai/model-runner/_index.md), are available on
+> other platforms.
 @y
 > [!NOTE]
 >
-> Docker Desktop における GPU サポートは、WSL2 バックエンドを使った Windows 上においてのみ利用可能です。
+> This page covers GPU passthrough to Linux containers using `--gpus`, which is
+> only available on Windows with the WSL 2 backend. Other forms of GPU
+> acceleration in Docker Desktop, such as GPU-accelerated inference in
+> [Docker Model Runner](manuals/ai/model-runner/_index.md), are available on
+> other platforms.
 @z
 
 @x

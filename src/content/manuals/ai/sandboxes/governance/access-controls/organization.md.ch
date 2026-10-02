@@ -119,10 +119,14 @@ To create a policy:
 1. Set the **Scope** to **Organization** or **Teams**. If you select **Teams**,
    choose the teams the policy applies to. See
    [Scope policies to teams](#scope-policies-to-teams).
-1. Define the policy rules. For network and filesystem policies, select
-   **Add rule** for each rule. For MCP policies, enter Cedar statements in the
-   policy editor. For syntax and examples, use the relevant access-control page
-   in [Choose a policy type](#choose-a-policy-type).
+1. Define the policy rules.
+   - Network and filesystem policies: select **Add rule** for each rule. For a
+     network policy, see [Add a network rule](#add-a-network-rule).
+   - MCP policies: enter Cedar statements in the policy editor. See
+     [MCP access policies](mcp.md).
+1. For a network policy, set **Require approval before access** if developers
+   should confirm each destination before a sandbox can reach it. See
+   [Require approval for a network policy](#require-approval-for-a-network-policy).
 @y
 1. Sign in to [Docker Home](https://app.docker.com) and select your
    organization.
@@ -133,10 +137,14 @@ To create a policy:
 1. Set the **Scope** to **Organization** or **Teams**. If you select **Teams**,
    choose the teams the policy applies to. See
    [Scope policies to teams](#scope-policies-to-teams).
-1. Define the policy rules. For network and filesystem policies, select
-   **Add rule** for each rule. For MCP policies, enter Cedar statements in the
-   policy editor. For syntax and examples, use the relevant access-control page
-   in [Choose a policy type](#choose-a-policy-type).
+1. Define the policy rules.
+   - Network and filesystem policies: select **Add rule** for each rule. For a
+     network policy, see [Add a network rule](#add-a-network-rule).
+   - MCP policies: enter Cedar statements in the policy editor. See
+     [MCP access policies](mcp.md).
+1. For a network policy, set **Require approval before access** if developers
+   should confirm each destination before a sandbox can reach it. See
+   [Require approval for a network policy](#require-approval-for-a-network-policy).
 @z
 
 @x
@@ -145,6 +153,126 @@ update. Use the action menu (⋮) to edit or delete a policy.
 @y
 Existing policies are listed with their name, scope, rule count, and last
 update. Use the action menu (⋮) to edit or delete a policy.
+@z
+
+@x
+### Add a network rule
+@y
+### Add a network rule
+@z
+
+@x
+Each rule has an optional **Rule name**, a **Type** that decides what the rule
+matches, and a **Decision** of **Allow** or **Deny**.
+@y
+Each rule has an optional **Rule name**, a **Type** that decides what the rule
+matches, and a **Decision** of **Allow** or **Deny**.
+@z
+
+@x
+- **HTTP** matches only HTTP requests with the methods and paths you specify.
+  - In **Destination**, enter the host or IP address the rule covers. It
+    matches any port unless you add one. Enter the destination with no scheme
+    and no path, so `api.github.com` rather than
+    `https://api.github.com/repos`. A local HTTP rule accepts only a host.
+  - Under **HTTP methods**, select the methods the rule applies to. Use
+    **Select all** to select every method, or **Read-only** to select `GET`,
+    `HEAD`, and `OPTIONS`. A rule saved with no methods selected matches every
+    method the composer lists. The composer doesn't list `CONNECT` or
+    `TRACE`, which differs from the CLI, where `--method ANY` matches every
+    HTTP method.
+  - Under **Path patterns**, add one or more paths the rule covers, such as
+    `/repos/*` and `/v1/**`. Leave it empty to match any path.
+- **All traffic** matches every request to the destinations you list, on any
+  port, method, and path.
+  - Under **Protocols**, select **TCP**, **UDP**, or **Both**.
+  - Under **Destinations**, add the hosts, IP addresses, or CIDR ranges the
+    rule covers. A destination matches any port unless you add one, such as
+    `example.com:8080`.
+@y
+- **HTTP** matches only HTTP requests with the methods and paths you specify.
+  - In **Destination**, enter the host or IP address the rule covers. It
+    matches any port unless you add one. Enter the destination with no scheme
+    and no path, so `api.github.com` rather than
+    `https://api.github.com/repos`. A local HTTP rule accepts only a host.
+  - Under **HTTP methods**, select the methods the rule applies to. Use
+    **Select all** to select every method, or **Read-only** to select `GET`,
+    `HEAD`, and `OPTIONS`. A rule saved with no methods selected matches every
+    method the composer lists. The composer doesn't list `CONNECT` or
+    `TRACE`, which differs from the CLI, where `--method ANY` matches every
+    HTTP method.
+  - Under **Path patterns**, add one or more paths the rule covers, such as
+    `/repos/*` and `/v1/**`. Leave it empty to match any path.
+- **All traffic** matches every request to the destinations you list, on any
+  port, method, and path.
+  - Under **Protocols**, select **TCP**, **UDP**, or **Both**.
+  - Under **Destinations**, add the hosts, IP addresses, or CIDR ranges the
+    rule covers. A destination matches any port unless you add one, such as
+    `example.com:8080`.
+@z
+
+@x
+An HTTP rule's paths all belong to its one destination, so to cover paths on a
+second host, add a second rule. For the pattern syntax and how HTTP rules
+combine with **All traffic** rules, see
+[HTTP rules](../concepts.md#http-method-and-path).
+@y
+An HTTP rule's paths all belong to its one destination, so to cover paths on a
+second host, add a second rule. For the pattern syntax and how HTTP rules
+combine with **All traffic** rules, see
+[HTTP rules](../concepts.md#http-method-and-path).
+@z
+
+@x
+### Require approval for a network policy
+@y
+### Require approval for a network policy
+@z
+
+@x
+Turning on **Require approval before access** means the destinations a network
+policy allows aren't reachable until the developer confirms each one. For how
+approval behaves and what satisfies it, see
+[Approval-required access](network.md#approval-required-access).
+@y
+Turning on **Require approval before access** means the destinations a network
+policy allows aren't reachable until the developer confirms each one. For how
+approval behaves and what satisfies it, see
+[Approval-required access](network.md#approval-required-access).
+@z
+
+@x
+To set it on an existing policy:
+@y
+To set it on an existing policy:
+@z
+
+@x
+1. Sign in to [Docker Home](https://app.docker.com) and select your
+   organization.
+1. In the left-hand navigation, expand **AI Platform** and select
+   **Network access**.
+1. In the policy list, open the policy's action menu (⋮) and select **Edit**.
+1. Turn on **Require approval before access**.
+1. Select **Save**.
+@y
+1. Sign in to [Docker Home](https://app.docker.com) and select your
+   organization.
+1. In the left-hand navigation, expand **AI Platform** and select
+   **Network access**.
+1. In the policy list, open the policy's action menu (⋮) and select **Edit**.
+1. Turn on **Require approval before access**.
+1. Select **Save**.
+@z
+
+@x
+The policy's detail page reports approval as **Required** or **Not required**.
+Editing a policy replaces it in full, so turning the setting off removes the
+requirement from every rule in that policy.
+@y
+The policy's detail page reports approval as **Required** or **Not required**.
+Editing a policy replaces it in full, so turning the setting off removes the
+requirement from every rule in that policy.
 @z
 
 @x
@@ -185,12 +313,14 @@ To set the message:
 
 @x
 Docker shows the message only for denials caused by organization governance
-policy. If you leave it blank, Docker shows the policy denial without additional
-contact text.
+policy and for requests an
+[approval-required policy](network.md#approval-required-access) blocks. If you
+leave it blank, Docker shows the policy denial without additional contact text.
 @y
 Docker shows the message only for denials caused by organization governance
-policy. If you leave it blank, Docker shows the policy denial without additional
-contact text.
+policy and for requests an
+[approval-required policy](network.md#approval-required-access) blocks. If you
+leave it blank, Docker shows the policy denial without additional contact text.
 @z
 
 @x
@@ -209,14 +339,14 @@ pages for syntax, examples, and enforcement details:
 
 @x
 - [Network access policies](network.md): control outbound network access from
-  sandboxes.
+  sandboxes, by host or by HTTP method and path.
 - [Filesystem access policies](filesystem.md): control which host paths
   sandboxes can mount as workspaces.
 - [MCP access policies](mcp.md): control MCP server registration, tool calls,
   resources, prompts, and approval gates with Cedar policy.
 @y
 - [Network access policies](network.md): control outbound network access from
-  sandboxes.
+  sandboxes, by host or by HTTP method and path.
 - [Filesystem access policies](filesystem.md): control which host paths
   sandboxes can mount as workspaces.
 - [MCP access policies](mcp.md): control MCP server registration, tool calls,
@@ -359,12 +489,18 @@ organization policies on the next `sbx` command.
 
 @x
 > [!WARNING]
-> `sbx policy reset` deletes all locally configured policy rules. The command
-> prompts for confirmation before proceeding.
+> `sbx policy reset` deletes all locally configured policy rules, including any
+> destinations the developer has approved under an
+> [approval-required policy](network.md#approval-required-access). Those
+> destinations are requested again the next time a sandbox reaches them. The
+> command prompts for confirmation before proceeding.
 @y
 > [!WARNING]
-> `sbx policy reset` deletes all locally configured policy rules. The command
-> prompts for confirmation before proceeding.
+> `sbx policy reset` deletes all locally configured policy rules, including any
+> destinations the developer has approved under an
+> [approval-required policy](network.md#approval-required-access). Those
+> destinations are requested again the next time a sandbox reaches them. The
+> command prompts for confirmation before proceeding.
 @z
 
 @x
@@ -384,11 +520,25 @@ developer machine:
 @x
 - Network policy is evaluated on every outbound request. Once a policy
   change has synced to the developer's machine (up to 5 minutes), it applies
-  immediately to subsequent requests.
+  immediately to subsequent requests. HTTP rules are evaluated per request in
+  the same way.
 @y
 - Network policy is evaluated on every outbound request. Once a policy
   change has synced to the developer's machine (up to 5 minutes), it applies
-  immediately to subsequent requests.
+  immediately to subsequent requests. HTTP rules are evaluated per request in
+  the same way.
+@z
+
+@x
+- An approval requirement applies from the point the policy change syncs.
+  Destinations a developer already approved stay reachable, because the
+  approval is recorded on the developer's machine. To withdraw one, add a deny
+  rule. A deny takes precedence over a recorded approval.
+@y
+- An approval requirement applies from the point the policy change syncs.
+  Destinations a developer already approved stay reachable, because the
+  approval is recorded on the developer's machine. To withdraw one, add a deny
+  rule. A deny takes precedence over a recorded approval.
 @z
 
 @x

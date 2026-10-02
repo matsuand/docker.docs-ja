@@ -340,9 +340,9 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-2. Double-click `Docker Desktop Installer.exe` to run the installer. The installer will ask which installation mode you prefer. Choosing per-user installs to `%LOCALAPPDATA%\Programs\DockerDesktop` and requires no administrator privileges. Choosing all users will prompt for elevation.
+1. Double-click `Docker Desktop Installer.exe` to run the installer. The installer will ask which installation mode you prefer. Choosing per-user installs to `%LOCALAPPDATA%\Programs\DockerDesktop` and requires no administrator privileges. Choosing all users will prompt for elevation.
 @y
-2. `Docker Desktop Installer.exe` をダブルクリックしてインストーラーを起動します。
+1. `Docker Desktop Installer.exe` をダブルクリックしてインストーラーを起動します。
    インストールにおいては、どのインストールモードを選ぶかが問われます。
    個別ユーザー向けのインストールを選ぶと `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールされるので、管理者権限を必要としません。
    全ユーザー向けを選んだ場合は、管理者権限となるための画面が表示されます。
@@ -359,9 +359,9 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-3. When prompted, select your backend on the Configuration page: **Use WSL 2 instead of Hyper-V** for WSL 2, or leave it unselected for Hyper-V. You can switch to Docker VMM after installation from **Settings** > **General**.
+1. When prompted, select your backend on the Configuration page: **Use WSL 2 instead of Hyper-V** for WSL 2, or leave it unselected for Hyper-V. You can switch to Docker VMM after installation from **Settings** > **General**.
 @y
-3. プロンプト画面が表示されたら、Configuration ページから目的とするバックエンドを選んでください。WSL 2 を選ぶ場合は **Use WSL 2 instead of Hyper-V** (Hyper-V の代わりに WSL 2 を利用) を選んでください。Hyper-V を選ぶ場合は、何も選択せずそのままにしておいてください。インストール後であっても Docker VMM を切り替えたい場合は、**Settings** > **General** から行うことができます。
+1. プロンプト画面が表示されたら、Configuration ページから目的とするバックエンドを選んでください。WSL 2 を選ぶ場合は **Use WSL 2 instead of Hyper-V** (Hyper-V の代わりに WSL 2 を利用) を選んでください。Hyper-V を選ぶ場合は、何も選択せずそのままにしておいてください。インストール後であっても Docker VMM を切り替えたい場合は、**Settings** > **General** から行うことができます。
 @z
 
 @x
@@ -371,21 +371,21 @@ Docker Desktop を VMware ESXi あるいは Azure VM において動作させる
 @z
 
 @x
-4. Follow the instructions on the installation wizard to authorize the installer and proceed with the installation.
+1. Follow the instructions on the installation wizard to authorize the installer and proceed with the installation.
 @y
-4. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
+1. インストールウィザードの手順に従ってインストーラーを承認して、インストールを完了させます。
 @z
 
 @x
-5. When the installation is successful, select **Close** to complete the installation process.
+1. When the installation is successful, select **Close** to complete the installation process.
 @y
-5. インストールが正常に行われたら **Close** をクリックして作業を終了します。
+1. インストールが正常に行われたら **Close** をクリックして作業を終了します。
 @z
 
 @x
-6. [Start Docker Desktop](#start-docker-desktop).
+1. [Start Docker Desktop](#start-docker-desktop).
 @y
-6. [Docker Desktop の起動](#start-docker-desktop) を行います。
+1. [Docker Desktop の起動](#start-docker-desktop) を行います。
 @z
 
 @x
@@ -637,14 +637,15 @@ If Microsoft Store access is blocked due to security policies:
 - `--quiet`: Suppresses information output when running the installer 
 - `--accept-license`: Accepts the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement) now, rather than requiring it to be accepted when the application is first run
 - `--installation-dir=<path>`: Changes the default installation location (`C:\Program Files\Docker\Docker`)
-- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop, `hyper-v`, `windows` or `wsl-2` (default)
+- `--backend=<backend name>`: Selects the default backend to use for Docker Desktop: `wsl-2` (default), `hyper-v`, `windows`, or `docker-vmm`.
 - `--always-run-service`: After installation completes, starts `com.docker.service` and sets the service startup type to Automatic. This circumvents the need for administrator privileges, which are otherwise necessary to start `com.docker.service`. `com.docker.service` is required by Windows containers and Hyper-V backend.
 @y
 - `--user`: Docker Desktop を個別ユーザーモードで `%LOCALAPPDATA%\Programs\DockerDesktop` にインストールします。この場合は管理者権限を必要としません。たいていはこのモードが推奨されます。詳しくは [インストールモード](#installation-modes) を参照してください。
 - `--quiet`: インストーラーの起動時に情報出力を省略します。
 - `--accept-license`: [Docker サブスクリプションサービス契約](https://www.docker.com/legal/docker-subscription-service-agreement) をここで受け入れます。これを行わない場合は、アプリケーションの初回起動時に行うことになります。
 - `--installation-dir=<パス>`: デフォルトのインストール先 (`C:\Program Files\Docker\Docker`) を変更します。
-- `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。`hyper-v`、`windows`、`wsl-2` (デフォルト) のいずれか。
+- `--backend=<バックエンド名>`: Docker Desktop が利用するデフォルトのバックエンドを指定します。
+  `wsl-2` (デフォルト)、`hyper-v`、`windows`、`docker-vmm` のいずれか。
 - `--always-run-service`: インストール完了後に `com.docker.service` を起動し、このサービスの起動タイプを Automatic (自動) に設定します。
   これによって管理者権限がなくても稼働できるようになります。
   これがなかった場合 `com.docker.service` の起動には管理者権限が必要です。
@@ -662,7 +663,7 @@ If Microsoft Store access is blocked due to security policies:
 - `--admin-settings`: Automatically creates an `admin-settings.json` file which is used by admins to control certain Docker Desktop settings on client machines within their organization. For more information, see [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
   - It must be used together with the `--allowed-org=<org name>` flag. 
   - For example:`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
-- `--no-windows-containers`: Disables the Windows containers integration. This can improve security. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
+- `--no-windows-containers`: Disables the Windows containers integration. This can improve security.  Can't be combined with `--backend=windows`. For more information, see [Windows containers](/manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers).
 @y
 - `--allowed-org=<組織名>`: アプリケーションの実行にあたっては、ユーザーがサインインしていることを要求し、指定された Docker Hub 組織のメンバーであることを要求します。
 - `--admin-settings`: admin が利用する `admin-settings.json` ファイルを自動生成します。
@@ -672,6 +673,7 @@ If Microsoft Store access is blocked due to security policies:
   - たとえば以下のとおりです。`--allowed-org=<org name> --admin-settings="{'configurationFileVersion': 2, 'enhancedContainerIsolation': {'value': true, 'locked': false}}"`
 - `--no-windows-containers`: Windows コンテナー統合機能を無効にします。
   これによってセキュリティを向上させます。
+  これは `--backend=windows` と同時に指定することはできません。
   詳しくは [Windows コンテナー](manuals/desktop/setup/install/windows-permission-requirements.md#windows-containers) を参照してください。
 @z
 

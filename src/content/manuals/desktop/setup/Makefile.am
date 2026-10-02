@@ -4,8 +4,7 @@
 SUBDIRS = install
 
 bases = \
-	_index.md     \
-	sign-in.md    \
+	_index.md \
 	vm-vdi.md
 
 include $(top_srcdir)/build-aux/common.mk

@@ -16,6 +16,12 @@ keywords: Docker, WebAssembly, wasm, containerd, engine
 @z
 
 @x
+      text: Beta
+@y
+      text: ベータ
+@z
+
+@x
 {{< summary-bar feature_name="Wasm workloads" >}}
 @y
 {{< summary-bar feature_name="Wasm workloads" >}}
@@ -76,15 +82,13 @@ then pre-existing images and containers will be inaccessible.
 @x
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
-3. Go to **Features in development** and check the **Enable Wasm** option.
+3. Go to **Beta features** and check the **Enable Wasm** option.
 4. Select **Apply** to save the settings.
-5. In the confirmation dialog, select **Install** to install the Wasm runtimes.
 @y
 1. Navigate to **Settings** in Docker Desktop.
 2. In the **General** tab, check **Use containerd for pulling and storing images**.
-3. Go to **Features in development** and check the **Enable Wasm** option.
+3. Go to **Beta features** and check the **Enable Wasm** option.
 4. Select **Apply** to save the settings.
-5. In the confirmation dialog, select **Install** to install the Wasm runtimes.
 @z
 
 @x
@@ -484,10 +488,10 @@ docker: Error response from daemon: Unknown runtime specified io.containerd.wasm
 @z
 
 @x
-[Turn on the containerd feature](./containerd.md#enable-the-containerd-image-store)
+[Turn on the containerd feature](./containerd.md#switch-image-stores)
 in Docker Desktop settings and try again.
 @y
-[Turn on the containerd feature](./containerd.md#enable-the-containerd-image-store)
+[Turn on the containerd feature](./containerd.md#switch-image-stores)
 in Docker Desktop settings and try again.
 @z
 

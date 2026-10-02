@@ -207,8 +207,8 @@ basis:
 
 @x
 - [Manage a Docker account](/manuals/accounts/individual/manage-account.md)
-- [Enable two-factor authentication](/manuals/security/authentication/2fa/_index.md)
+- [Enable two-factor authentication](/manuals/security/authentication/2fa/manage.md)
 @y
 - [Manage a Docker account](manuals/accounts/individual/manage-account.md)
-- [Enable two-factor authentication](manuals/security/authentication/2fa/_index.md)
+- [Enable two-factor authentication](manuals/security/authentication/2fa/manage.md)
 @z

@@ -44,6 +44,50 @@ The Dashboard also gives you quick access to AI tooling, extensions, settings, a
 @z
 
 @x
+## Sign in
+@y
+## Sign in
+@z
+
+@x
+Docker recommends signing in with the **Sign in** option in the top-right corner of the Dashboard. Signing in lets you:
+@y
+Docker recommends signing in with the **Sign in** option in the top-right corner of the Dashboard. Signing in lets you:
+@z
+
+@x
+- Access your Docker Hub repositories directly from Docker Desktop.
+- Increase your pull rate limit compared to anonymous users. See [Usage and limits](/manuals/docker-hub/usage/_index.md).
+- Enhance your organization's security posture for containerized development with [Hardened Desktop](/manuals/desktop/enterprise/hardened-desktop/_index.md).
+@y
+- Access your Docker Hub repositories directly from Docker Desktop.
+- Increase your pull rate limit compared to anonymous users. See [Usage and limits](/manuals/docker-hub/usage/_index.md).
+- Enhance your organization's security posture for containerized development with [Hardened Desktop](/manuals/desktop/enterprise/hardened-desktop/_index.md).
+@z
+
+@x
+Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity.
+@y
+Docker Desktop automatically signs you out after 90 days, or after 30 days of inactivity.
+@z
+
+@x
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
+@y
+In large enterprises where admin access is restricted, administrators can [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
+@z
+
+@x
+> [!TIP]
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopSignIn) to see what else Docker can offer you.
+@y
+> [!TIP]
+>
+> Explore [Docker's core subscriptions](https://www.docker.com/pricing?ref=Docs&refAction=DocsDesktopSignIn) to see what else Docker can offer you.
+@z
+
+@x
 ## Use AI features
 @y
 ## Use AI features

@@ -1,8 +1,6 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% .md リンクへの (no slash) 対応
-
 @x
 title: Monitoring policies
 @y
@@ -122,13 +120,37 @@ to filter by outcome (`allow` or `deny`).
 @z
 
 @x
-Use `--protocol tcp` or `--protocol udp` to filter network rules. The
-`--created-via` filter selects how a rule was created: `default`, `added`,
-`provisioned`, or `approval`.
+Use `--protocol tcp` or `--protocol udp` to filter network rules.
 @y
-Use `--protocol tcp` or `--protocol udp` to filter network rules. The
-`--created-via` filter selects how a rule was created: `default`, `added`,
-`provisioned`, or `approval`.
+Use `--protocol tcp` or `--protocol udp` to filter network rules.
+@z
+
+@x
+Use `--created-via` to filter by how a rule was created. Pass `default` for
+preset rules, `added` for rules you added yourself, `provisioned` for rules a
+kit or application added, or `approval` for rules recorded when you approved a
+destination. A wide listing shows the same information per rule:
+@y
+Use `--created-via` to filter by how a rule was created. Pass `default` for
+preset rules, `added` for rules you added yourself, `provisioned` for rules a
+kit or application added, or `approval` for rules recorded when you approved a
+destination. A wide listing shows the same information per rule:
+@z
+
+@x
+```console
+$ sbx policy ls --wide --created-via approval
+```
+@y
+```console
+$ sbx policy ls --wide --created-via approval
+```
+@z
+
+@x
+See [Approval-required access](../access-controls/network.md#approval-required-access).
+@y
+See [Approval-required access](../access-controls/network.md#approval-required-access).
 @z
 
 @x
@@ -183,6 +205,24 @@ the daemon has pulled the latest rules. If the sync state shows an error or a
 stale timestamp, the daemon may not have the most recent org policy. Run
 `sbx policy reset` to force a fresh pull. `Hidden` reports how many inactive
 rules are suppressed and how to reveal them.
+@z
+
+@x
+If Docker can't determine which organization governs your account, policy
+output shows `Governance: Unresolved`, and the dashboard shows the same
+unresolved state. For example, this happens when your account belongs to
+multiple organizations with governance enabled. Policy enforcement fails closed
+until the conflict is resolved, so local allow rules can't grant access. Contact
+an administrator for the affected organizations to resolve the conflicting
+governance configuration.
+@y
+If Docker can't determine which organization governs your account, policy
+output shows `Governance: Unresolved`, and the dashboard shows the same
+unresolved state. For example, this happens when your account belongs to
+multiple organizations with governance enabled. Policy enforcement fails closed
+until the conflict is resolved, so local allow rules can't grant access. Contact
+an administrator for the affected organizations to resolve the conflicting
+governance configuration.
 @z
 
 @x
@@ -321,7 +361,23 @@ Rules that match an HTTP method and path are listed as type `http`. Pass
 `--wide` to see the `METHOD` and `PATH` columns alongside network rules:
 @z
 
-% snip command...
+@x
+```console
+$ sbx policy ls --wide
+TYPE      METHOD   PATH
+network   -        -
+http      GET      /repos/org/project/**
+http      POST     /admin/**
+```
+@y
+```console
+$ sbx policy ls --wide
+TYPE      METHOD   PATH
+network   -        -
+http      GET      /repos/org/project/**
+http      POST     /admin/**
+```
+@z
 
 @x
 Rules that match a whole destination show `-` in both columns. To list only
@@ -343,7 +399,29 @@ whole destination, and `L7` counts those that also match an HTTP method and
 path:
 @z
 
-% snip command...
+@x
+```console
+$ sbx policy ls
+POLICY         SOURCE   APPLIES TO   SUMMARY
+local-policy   local    all          network: 2 allow (L4), 1 deny (L7)
+```
+@y
+```console
+$ sbx policy ls
+POLICY         SOURCE   APPLIES TO   SUMMARY
+local-policy   local    all          network: 2 allow (L4), 1 deny (L7)
+```
+@z
+
+@x
+When the same decision has entries at both layers, each layer gets its own
+count, L4 first. Two host allows and one HTTP allow read
+`network: 2 allow (L4), 1 allow (L7)`.
+@y
+When the same decision has entries at both layers, each layer gets its own
+count, L4 first. Two host allows and one HTTP allow read
+`network: 2 allow (L4), 1 allow (L7)`.
+@z
 
 @x
 The labels appear when the current listing includes at least one HTTP rule.

@@ -62,12 +62,12 @@ keywords: accounts, docker ID, username, email, Google, GitHub, sign-in,
 @x
   - title: Set up two-factor authentication
     description: Add an extra layer of authentication to your Docker account.
-    link: /security/2fa/
+    link: /security/authentication/2fa/manage/
     icon: device-phone-mobile
 @y
   - title: Set up two-factor authentication
     description: Add an extra layer of authentication to your Docker account.
-    link: __SUBDIR__/security/2fa/
+    link: __SUBDIR__/security/authentication/2fa/manage/
     icon: device-phone-mobile
 @z
 

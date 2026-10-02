@@ -199,10 +199,10 @@ To update your two-factor authentication (2FA) settings:
 
 @x
 For more information, see
-[Enable two-factor authentication](/manuals/security/authentication/2fa/_index.md).
+[Enable two-factor authentication](/manuals/security/authentication/2fa/manage.md).
 @y
 For more information, see
-[Enable two-factor authentication](manuals/security/authentication/2fa/_index.md).
+[Enable two-factor authentication](manuals/security/authentication/2fa/manage.md).
 @z
 
 @x
@@ -330,9 +330,9 @@ For information on deactivating your account, see
 @x
 - [Docker individual accounts overview](/manuals/accounts/individual/_index.md)
 - [Create a Docker account](/manuals/accounts/individual/create-account.md)
-- [Enable two-factor authentication](/manuals/security/authentication/2fa/_index.md)
+- [Enable two-factor authentication](/manuals/security/authentication/2fa/manage.md)
 @y
 - [Docker individual accounts overview](manuals/accounts/individual/_index.md)
 - [Create a Docker account](manuals/accounts/individual/create-account.md)
-- [Enable two-factor authentication](manuals/security/authentication/2fa/_index.md)
+- [Enable two-factor authentication](manuals/security/authentication/2fa/manage.md)
 @z

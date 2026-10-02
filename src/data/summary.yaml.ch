@@ -1032,6 +1032,16 @@ Synchronized file sharing:
 @z
 
 @x
+Unassociated machines:
+  for: Administrators
+  subscription: [Team, Business]
+@y
+Unassociated machines:
+  for: Administrators
+  subscription: [Team, Business]
+@z
+
+@x
 USB/IP support:
   for: Docker Desktop for Mac, Linux, and Windows with the Hyper-V backend
 @y

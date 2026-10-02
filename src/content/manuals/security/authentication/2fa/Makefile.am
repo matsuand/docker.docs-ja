@@ -3,6 +3,7 @@
 ##
 bases = \
 	_index.md              \
+	manage.md              \
 	recover-hub-account.md
 
 include $(top_srcdir)/build-aux/common.mk

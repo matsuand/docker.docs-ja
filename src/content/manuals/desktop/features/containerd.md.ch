@@ -126,11 +126,9 @@ requirements.
 @z
 
 @x
-The containerd image store is enabled by default in Docker Desktop version 4.34
-and later. To switch between image stores:
+The containerd image store is enabled by default. To switch between image stores:
 @y
-The containerd image store is enabled by default in Docker Desktop version 4.34
-and later. To switch between image stores:
+The containerd image store is enabled by default. To switch between image stores:
 @z
 
 @x

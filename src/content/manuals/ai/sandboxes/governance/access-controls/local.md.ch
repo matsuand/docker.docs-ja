@@ -152,13 +152,29 @@ Initialize the global network policy for your sandboxes:
 @x
 Presets initialize the global policy. Built-in agent kits and other kits can
 add per-sandbox allow rules, including under **Locked Down** (`deny-all`). The
-preset isn't an explicit deny rule that overrides those allowances. To inspect
-the rules a kit adds to a sandbox, run:
+preset isn't an explicit deny rule that overrides those allowances.
 @y
 Presets initialize the global policy. Built-in agent kits and other kits can
 add per-sandbox allow rules, including under **Locked Down** (`deny-all`). The
-preset isn't an explicit deny rule that overrides those allowances. To inspect
-the rules a kit adds to a sandbox, run:
+preset isn't an explicit deny rule that overrides those allowances.
+@z
+
+@x
+Under **Balanced** and **Locked Down**, a sandbox request that no rule matches
+is blocked and asks for your approval instead of being denied outright, so you
+can open access to each destination as a sandbox needs it. See
+[Approval-required access](network.md#approval-required-access).
+@y
+Under **Balanced** and **Locked Down**, a sandbox request that no rule matches
+is blocked and asks for your approval instead of being denied outright, so you
+can open access to each destination as a sandbox needs it. See
+[Approval-required access](network.md#approval-required-access).
+@z
+
+@x
+To inspect the rules a kit adds to a sandbox, run:
+@y
+To inspect the rules a kit adds to a sandbox, run:
 @z
 
 @x
@@ -471,12 +487,26 @@ Method names are case-insensitive. The accepted values are `GET`, `HEAD`,
 A path must start with `/` and be canonical. It can't contain a query string, a
 fragment, percent-encoding, control characters, surrounding whitespace,
 repeated or trailing slashes, or dot segments such as `.` and `..`. Each rule
-takes one path.
+takes one path. Repeating `--path` keeps only the last value, and a comma is
+read as part of the path, so add a separate rule for each path:
 @y
 A path must start with `/` and be canonical. It can't contain a query string, a
 fragment, percent-encoding, control characters, surrounding whitespace,
 repeated or trailing slashes, or dot segments such as `.` and `..`. Each rule
-takes one path.
+takes one path. Repeating `--path` keeps only the last value, and a comma is
+read as part of the path, so add a separate rule for each path:
+@z
+
+@x
+```console
+$ sbx policy allow network api.github.com --method GET --path '/repos/**'
+$ sbx policy allow network api.github.com --method GET --path '/users/**'
+```
+@y
+```console
+$ sbx policy allow network api.github.com --method GET --path '/repos/**'
+$ sbx policy allow network api.github.com --method GET --path '/users/**'
+```
 @z
 
 @x
@@ -721,6 +751,18 @@ The target can be a hostname, a `host:port` pair, an IP address, or a URL.
 Bare hostnames and IP addresses are evaluated against port 443. This is useful
 for verifying custom rules or checking what the Locked Down preset blocks
 before you start an agent.
+@z
+
+@x
+A check never creates an approval request. A destination that a sandbox would
+ask you to approve shows as `Denied:`, with a `Reason:` line of
+`no matching allow rule (default deny)`, or `approval required by policy` under
+organization governance.
+@y
+A check never creates an approval request. A destination that a sandbox would
+ask you to approve shows as `Denied:`, with a `Reason:` line of
+`no matching allow rule (default deny)`, or `approval required by policy` under
+organization governance.
 @z
 
 @x
@@ -873,4 +915,32 @@ denied by an HTTP rule. Run `sbx policy ls --type http` to see which HTTP rules
 apply. `sbx policy check network` reports the decision for the host only, so it
 shows a host as allowed even when the specific request is denied. See
 [HTTP method and path rules](#http-method-and-path-rules).
+@z
+
+@x
+### A request is blocked with "Approval required"
+@y
+### A request is blocked with "Approval required"
+@z
+
+@x
+The destination needs your confirmation. Either no allow or deny rule matches
+it and your machine isn't under organization governance, or an organization
+policy allows it but requires approval first.
+@y
+The destination needs your confirmation. Either no allow or deny rule matches
+it and your machine isn't under organization governance, or an organization
+policy allows it but requires approval first.
+@z
+
+@x
+Run `sbx policy approval ls` to see the pending request and respond to it with
+`sbx policy approval respond`. Approving applies to later requests, not the one
+that was blocked, so run the operation again afterward. See
+[Respond to an approval request](network.md#respond-to-an-approval-request).
+@y
+Run `sbx policy approval ls` to see the pending request and respond to it with
+`sbx policy approval respond`. Approving applies to later requests, not the one
+that was blocked, so run the operation again afterward. See
+[Respond to an approval request](network.md#respond-to-an-approval-request).
 @z

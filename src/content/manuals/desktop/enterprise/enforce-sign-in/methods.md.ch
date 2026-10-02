@@ -1,20 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% snip 対応
+% .md リンクへの (no slash) 対応
 
 @x
 title: Configure sign-in enforcement
 linkTitle: Configure
 description: Configure sign-in enforcement for Docker Desktop using registry keys, configuration profiles, plist files, or registry.json files
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, linux
-tags: [admin]
 @y
 title: Configure sign-in enforcement
 linkTitle: Configure
 description: Configure sign-in enforcement for Docker Desktop using registry keys, configuration profiles, plist files, or registry.json files
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, linux
-tags: [admin]
 @z
 
 @x
@@ -110,6 +108,24 @@ To configure the registry key method manually:
 @z
 
 @x
+You can also create this key at install time with the MSI installer's
+`ALLOWEDORG` property, which accepts multiple organizations separated by
+semicolons:
+@y
+You can also create this key at install time with the MSI installer's
+`ALLOWEDORG` property, which accepts multiple organizations separated by
+semicolons:
+@z
+
+% snip command...
+
+@x
+For more information, see [MSI installer](/manuals/desktop/enterprise/enterprise-deployment/msi-install-and-configure.md#configuration-options).
+@y
+For more information, see [MSI installer](manuals/desktop/enterprise/enterprise-deployment/msi-install-and-configure.md#configuration-options).
+@z
+
+@x
 {{< /tab >}}
 {{< tab name="Group Policy deployment" >}}
 @y
@@ -200,20 +216,78 @@ The payload is a dictionary of key-values. Docker Desktop supports the following
 @z
 
 @x
-Overriding at least one of the proxy settings via Configuration profiles will automatically lock the settings as they're managed by Mac.
+> [!IMPORTANT]
+>
+> `allowedOrgs` must be a `<string>`, not an `<array>`. Docker Desktop only reads
+> string values from a configuration profile, so an array is silently ignored and
+> no enforcement happens. This differs from the
+> [`.plist` method](#mac-plist-file-method), which does use an array.
 @y
-Overriding at least one of the proxy settings via Configuration profiles will automatically lock the settings as they're managed by Mac.
+> [!IMPORTANT]
+>
+> `allowedOrgs` must be a `<string>`, not an `<array>`. Docker Desktop only reads
+> string values from a configuration profile, so an array is silently ignored and
+> no enforcement happens. This differs from the
+> [`.plist` method](#mac-plist-file-method), which does use an array.
+@z
+
+@x
+Setting at least one of the proxy keys puts Docker Desktop's proxy into manual
+mode and locks the proxy settings, so developers can't change them.
+@y
+Setting at least one of the proxy keys puts Docker Desktop's proxy into manual
+mode and locks the proxy settings, so developers can't change them.
 @z
 
 @x
 1. Create a file named `docker.mobileconfig` and include the following content:
-@y
-1. Create a file named `docker.mobileconfig` and include the following content:
-@z
-
-% snip code...
-
-@x
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+   <dict>
+      <key>PayloadContent</key>
+      <array>
+         <dict>
+            <key>PayloadType</key>
+            <string>com.docker.config</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.docker.config</string>
+            <key>PayloadUUID</key>
+            <string>eed295b0-a650-40b0-9dda-90efb12be3c7</string>
+            <key>PayloadDisplayName</key>
+            <string>Docker Desktop Configuration</string>
+            <key>PayloadDescription</key>
+            <string>Configuration profile to manage Docker Desktop settings.</string>
+            <key>PayloadOrganization</key>
+            <string>Your company name</string>
+            <key>allowedOrgs</key>
+            <string>first_org;second_org</string>
+            <key>overrideProxyHTTP</key>
+            <string>http://company.proxy:port</string>
+            <key>overrideProxyHTTPS</key>
+            <string>https://company.proxy:port</string>
+         </dict>
+      </array>
+      <key>PayloadType</key>
+      <string>Configuration</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.yourcompany.docker.config</string>
+      <key>PayloadUUID</key>
+      <string>0deedb64-7dc9-46e5-b6bf-69d64a9561ce</string>
+      <key>PayloadDisplayName</key>
+      <string>Docker Desktop Config Profile</string>
+      <key>PayloadDescription</key>
+      <string>Config profile to enforce Docker Desktop settings for allowed organizations.</string>
+      <key>PayloadOrganization</key>
+      <string>Your company name</string>
+   </dict>
+   </plist>
+   ```
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your company name` with your organization name making sure it is all lowercase
@@ -223,6 +297,54 @@ Overriding at least one of the proxy settings via Configuration profiles will au
 1. Deploy the profile using your MDM solution.
 1. Verify the profile appears in **System Settings** > **General** > **Device Management** under **Device (Managed)**. Ensure the profile is listed with the correct name and settings.
 @y
+1. Create a file named `docker.mobileconfig` and include the following content:
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+   <dict>
+      <key>PayloadContent</key>
+      <array>
+         <dict>
+            <key>PayloadType</key>
+            <string>com.docker.config</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.docker.config</string>
+            <key>PayloadUUID</key>
+            <string>eed295b0-a650-40b0-9dda-90efb12be3c7</string>
+            <key>PayloadDisplayName</key>
+            <string>Docker Desktop Configuration</string>
+            <key>PayloadDescription</key>
+            <string>Configuration profile to manage Docker Desktop settings.</string>
+            <key>PayloadOrganization</key>
+            <string>Your company name</string>
+            <key>allowedOrgs</key>
+            <string>first_org;second_org</string>
+            <key>overrideProxyHTTP</key>
+            <string>http://company.proxy:port</string>
+            <key>overrideProxyHTTPS</key>
+            <string>https://company.proxy:port</string>
+         </dict>
+      </array>
+      <key>PayloadType</key>
+      <string>Configuration</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.yourcompany.docker.config</string>
+      <key>PayloadUUID</key>
+      <string>0deedb64-7dc9-46e5-b6bf-69d64a9561ce</string>
+      <key>PayloadDisplayName</key>
+      <string>Docker Desktop Config Profile</string>
+      <key>PayloadDescription</key>
+      <string>Config profile to enforce Docker Desktop settings for allowed organizations.</string>
+      <key>PayloadOrganization</key>
+      <string>Your company name</string>
+   </dict>
+   </plist>
+   ```
 1. Replace placeholders:
    - Change `com.yourcompany.docker.config` to your company identifier
    - Replace `Your company name` with your organization name making sure it is all lowercase
@@ -239,7 +361,29 @@ Some MDM solutions let you specify the payload as a plain dictionary of key-valu
 Some MDM solutions let you specify the payload as a plain dictionary of key-value settings without the full `.mobileconfig` wrapper:
 @z
 
-% snip code...
+@x
+```xml
+<dict>
+   <key>allowedOrgs</key>
+   <string>first_org;second_org</string>
+   <key>overrideProxyHTTP</key>
+   <string>http://company.proxy:port</string>
+   <key>overrideProxyHTTPS</key>
+   <string>https://company.proxy:port</string>
+</dict>
+```
+@y
+```xml
+<dict>
+   <key>allowedOrgs</key>
+   <string>first_org;second_org</string>
+   <key>overrideProxyHTTP</key>
+   <string>http://company.proxy:port</string>
+   <key>overrideProxyHTTPS</key>
+   <string>https://company.proxy:port</string>
+</dict>
+```
+@z
 
 @x
 ## Mac: plist file method
@@ -258,21 +402,41 @@ Some MDM solutions let you specify the payload as a plain dictionary of key-valu
 @x
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
 1. Add this content, replacing `myorg1` and `myorg2` with your organization names and making sure they have lowercase letters only:
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+     <dict>
+	     <key>allowedOrgs</key>
+	     <array>
+             <string>myorg1</string>
+             <string>myorg2</string>
+         </array>
+     </dict>
+   </plist>
+   ```
+1. Set file permissions to prevent editing by non-administrator users.
+1. Restart Docker Desktop.
+1. Verify the **Sign in using your work email address** prompt appears in Docker Desktop.
 @y
 1. Create the file `/Library/Application Support/com.docker.docker/desktop.plist`.
 1. Add this content, replacing `myorg1` and `myorg2` with your organization names and making sure they have lowercase letters only:
-@z
-
-% snip code...
-
-@x
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+   <plist version="1.0">
+     <dict>
+	     <key>allowedOrgs</key>
+	     <array>
+             <string>myorg1</string>
+             <string>myorg2</string>
+         </array>
+     </dict>
+   </plist>
+   ```
 1. Set file permissions to prevent editing by non-administrator users.
 1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
-@y
-1. Set file permissions to prevent editing by non-administrator users.
-1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+1. Verify the **Sign in using your work email address** prompt appears in Docker Desktop.
 @z
 
 @x
@@ -358,21 +522,21 @@ The registry.json method works across all platforms and offers flexible deployme
 @z
 
 @x
-Create the `registry.json` file (UTF-8 without BOM) at the appropriate location:
+Create the `registry.json` file (UTF-8) at the appropriate location:
 @y
-Create the `registry.json` file (UTF-8 without BOM) at the appropriate location:
+Create the `registry.json` file (UTF-8) at the appropriate location:
 @z
 
 @x
 | Platform | Location |
 | --- | --- |
-| Windows | `/ProgramData/DockerDesktop/registry.json` |
+| Windows | `%ProgramData%\DockerDesktop\registry.json` |
 | Mac | `/Library/Application Support/com.docker.docker/registry.json` |
 | Linux | `/usr/share/docker-desktop/registry/registry.json` |
 @y
 | Platform | Location |
 | --- | --- |
-| Windows | `/ProgramData/DockerDesktop/registry.json` |
+| Windows | `%ProgramData%\DockerDesktop\registry.json` |
 | Mac | `/Library/Application Support/com.docker.docker/registry.json` |
 | Linux | `/usr/share/docker-desktop/registry/registry.json` |
 @z
@@ -395,34 +559,34 @@ Create the `registry.json` file (UTF-8 without BOM) at the appropriate location:
 1. Ensure users are members of your Docker organization.
 1. Create the `registry.json` file at the appropriate location for your platform.
 1. Add this content, replacing organization names with your own and making sure they have lowercase letters only:
+      ```json
+      {
+         "allowedOrgs": ["myorg1", "myorg2"]
+      }
+      ```
+1. Set file permissions to prevent user editing.
+1. Restart Docker Desktop.
+1. Verify the **Sign in using your work email address** prompt appears in Docker Desktop.
 @y
 1. Ensure users are members of your Docker organization.
 1. Create the `registry.json` file at the appropriate location for your platform.
 1. Add this content, replacing organization names with your own and making sure they have lowercase letters only:
-@z
-
-% snip code...
-
-@x
+      ```json
+      {
+         "allowedOrgs": ["myorg1", "myorg2"]
+      }
+      ```
 1. Set file permissions to prevent user editing.
 1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
-@y
-1. Set file permissions to prevent user editing.
-1. Restart Docker Desktop.
-1. Verify the `Sign in required!` prompt appears in Docker Desktop.
+1. Verify the **Sign in using your work email address** prompt appears in Docker Desktop.
 @z
 
 @x
-> [!TIP]
->
-> If users have issues starting Docker Desktop after enforcing sign-in,
-> they may need to update to the latest version.
+If users have issues starting Docker Desktop after enforcing sign-in,
+they may need to update to the latest version.
 @y
-> [!TIP]
->
-> If users have issues starting Docker Desktop after enforcing sign-in,
-> they may need to update to the latest version.
+If users have issues starting Docker Desktop after enforcing sign-in,
+they may need to update to the latest version.
 @z
 
 @x
@@ -506,6 +670,16 @@ Create the registry.json file during Docker Desktop installation:
 @z
 
 @x
+`--allowed-org` is a flag on the EXE installer. If you deploy with the MSI
+installer, use the `ALLOWEDORG` property instead, which creates the
+[registry key](#windows-registry-key-method).
+@y
+`--allowed-org` is a flag on the EXE installer. If you deploy with the MSI
+installer, use the `ALLOWEDORG` property instead, which creates the
+[registry key](#windows-registry-key-method).
+@z
+
+@x
 ```shell
 # PowerShell
 Start-Process '.\Docker Desktop Installer.exe' -Wait 'install --allowed-org=myorg'
@@ -519,10 +693,32 @@ Start-Process '.\Docker Desktop Installer.exe' -Wait 'install --allowed-org=myor
 # Command Prompt
 "Docker Desktop Installer.exe" install --allowed-org=myorg1
 ```
+The `--allowed-org` flag accepts only one organization. To enforce sign-in for multiple organizations on Mac, configure the `registry.json` file after installation.
 @y
 # Command Prompt
 "Docker Desktop Installer.exe" install --allowed-org=myorg1
 ```
+The `--allowed-org` flag accepts only one organization. To enforce sign-in for multiple organizations on Mac, configure the `registry.json` file after installation.
+@z
+
+@x
+> [!IMPORTANT]
+>
+> With Docker Desktop version 4.83 and later, `--allowed-org` can't be combined
+> with `--user`, and it can't be used for a Microsoft Store installation. Both
+> are per-user installations and the installer rejects the combination. This
+> matters because the Windows installer selects a per-user installation by
+> default from version 4.83. For per-user installations, configure the
+> `registry.json` file after installation.
+@y
+> [!IMPORTANT]
+>
+> With Docker Desktop version 4.83 and later, `--allowed-org` can't be combined
+> with `--user`, and it can't be used for a Microsoft Store installation. Both
+> are per-user installations and the installer rejects the combination. This
+> matters because the Windows installer selects a per-user installation by
+> default from version 4.83. For per-user installations, configure the
+> `registry.json` file after installation.
 @z
 
 @x
@@ -546,6 +742,12 @@ sudo hdiutil detach /Volumes/Docker
 @z
 
 @x
+The `--allowed-org` flag accepts only one organization. To enforce sign-in for multiple organizations on Mac, configure the `registry.json` file after installation.
+@y
+The `--allowed-org` flag accepts only one organization. To enforce sign-in for multiple organizations on Mac, configure the `registry.json` file after installation.
+@z
+
+@x
 {{< /tab >}}
 {{< /tabs >}}
 @y
@@ -560,21 +762,79 @@ sudo hdiutil detach /Volumes/Docker
 @z
 
 @x
-When multiple configuration methods exist on the same system, Docker Desktop uses this precedence order:
+When more than one configuration method exists on the same machine, Docker
+Desktop evaluates them in order and stops at the first one that's configured.
+The order depends on the platform.
 @y
-When multiple configuration methods exist on the same system, Docker Desktop uses this precedence order:
+When more than one configuration method exists on the same machine, Docker
+Desktop evaluates them in order and stops at the first one that's configured.
+The order depends on the platform.
 @z
 
 @x
-1. Registry key (Windows only)
-1. Configuration profiles (Mac only)
-1. plist file (Mac only)
-1. registry.json file
+| Platform | Precedence order |
+|:---------|:-----------------|
+| Windows | 1. Registry key<br>2. `registry.json`<br>3. `admin-settings.json` |
+| Mac | 1. Configuration profile<br>2. `desktop.plist`<br>3. `registry.json`<br>4. `admin-settings.json` |
+| Linux | 1. `registry.json`<br>2. `admin-settings.json` |
 @y
-1. Registry key (Windows only)
-1. Configuration profiles (Mac only)
-1. plist file (Mac only)
-1. registry.json file
+| Platform | Precedence order |
+|:---------|:-----------------|
+| Windows | 1. Registry key<br>2. `registry.json`<br>3. `admin-settings.json` |
+| Mac | 1. Configuration profile<br>2. `desktop.plist`<br>3. `registry.json`<br>4. `admin-settings.json` |
+| Linux | 1. `registry.json`<br>2. `admin-settings.json` |
+@z
+
+@x
+Lower-precedence methods are not consulted once a higher one applies. For
+example, on a Mac with both a configuration profile and a `registry.json` file,
+only the organizations in the configuration profile are enforced.
+@y
+Lower-precedence methods are not consulted once a higher one applies. For
+example, on a Mac with both a configuration profile and a `registry.json` file,
+only the organizations in the configuration profile are enforced.
+@z
+
+@x
+## Settings Management and sign-in enforcement
+@y
+## Settings Management and sign-in enforcement
+@z
+
+@x
+Deploying an `admin-settings.json` file enforces sign-in on its own, even if the
+file contains no organization list. Users who aren't on a Docker Business
+subscription see the sign-in prompt, and the Docker Engine is held until they
+sign in.
+@y
+Deploying an `admin-settings.json` file enforces sign-in on its own, even if the
+file contains no organization list. Users who aren't on a Docker Business
+subscription see the sign-in prompt, and the Docker Engine is held until they
+sign in.
+@z
+
+@x
+This differs from the four methods above in two ways:
+@y
+This differs from the four methods above in two ways:
+@z
+
+@x
+- It doesn't restrict sign-in to particular organizations, so any Docker account
+  satisfies it. Combine it with one of the methods above if you need organization
+  membership enforced.
+- It's the lowest-precedence method, so any of the methods above overrides it.
+@y
+- It doesn't restrict sign-in to particular organizations, so any Docker account
+  satisfies it. Combine it with one of the methods above if you need organization
+  membership enforced.
+- It's the lowest-precedence method, so any of the methods above overrides it.
+@z
+
+@x
+If you use [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md), account for this when planning your rollout: developers who are signed out will be prompted to sign in as soon as the file reaches their machine and Docker Desktop restarts.
+@y
+If you use [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md), account for this when planning your rollout: developers who are signed out will be prompted to sign in as soon as the file reaches their machine and Docker Desktop restarts.
 @z
 
 @x
@@ -591,14 +851,36 @@ If sign-in enforcement doesn't work:
 
 @x
 - Verify file locations and permissions
-- Check that organization names use lowercase letters
-- Restart Docker Desktop or reboot the system
+- Check that organization names use lowercase letters and match your Docker Hub
+  organization name exactly. Matching is case-sensitive, so a mismatch signs out
+  every user
+- Check for stray whitespace in the value. In the Windows registry key, put each
+  organization on its own line rather than separating them with spaces or commas
+- Check whether a higher-precedence method is in effect. See
+  [Method precedence](#method-precedence)
+- Restart Docker Desktop or reboot the system. Docker Desktop doesn't pick up new
+  configuration while running
 - Confirm users are members of the specified organizations
 - Update Docker Desktop to the latest version
 @y
 - Verify file locations and permissions
-- Check that organization names use lowercase letters
-- Restart Docker Desktop or reboot the system
+- Check that organization names use lowercase letters and match your Docker Hub
+  organization name exactly. Matching is case-sensitive, so a mismatch signs out
+  every user
+- Check for stray whitespace in the value. In the Windows registry key, put each
+  organization on its own line rather than separating them with spaces or commas
+- Check whether a higher-precedence method is in effect. See
+  [Method precedence](#method-precedence)
+- Restart Docker Desktop or reboot the system. Docker Desktop doesn't pick up new
+  configuration while running
 - Confirm users are members of the specified organizations
 - Update Docker Desktop to the latest version
+@z
+
+@x
+If enforcement works but developers report that the Docker CLI stopped working,
+that's expected. See [Impact on the Docker CLI](_index.md#impact-on-the-docker-cli).
+@y
+If enforcement works but developers report that the Docker CLI stopped working,
+that's expected. See [Impact on the Docker CLI](_index.md#impact-on-the-docker-cli).
 @z

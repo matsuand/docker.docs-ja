@@ -107,10 +107,10 @@ usage: sbx create [flags] AGENT|SANDBOX_KIT [PATH...]
 
 @x cpus
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs, at most 16 on Linux arm64)
 @y
       usage: |
-        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs)
+        Number of CPUs to allocate to the sandbox (0 = auto: all host CPUs, at most 16 on Linux arm64)
 @z
 
 @x deny-network

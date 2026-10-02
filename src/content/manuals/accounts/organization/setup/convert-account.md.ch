@@ -120,10 +120,6 @@ an organization:
   added to the organization.
 - The user account that you add as the first owner will have full
   administrative access to configure and manage the organization.
-- To transfer a user's personal access tokens (PATs) to your converted
-  organization, you must designate the user as an organization owner. This will
-  ensure any PATs associated with the user's account are transferred to the
-  organization owner.
 @y
 - This process removes the email address for the account. Notifications are
   instead sent to organization owners. You'll be able to reuse the
@@ -137,10 +133,6 @@ an organization:
   added to the organization.
 - The user account that you add as the first owner will have full
   administrative access to configure and manage the organization.
-- To transfer a user's personal access tokens (PATs) to your converted
-  organization, you must designate the user as an organization owner. This will
-  ensure any PATs associated with the user's account are transferred to the
-  organization owner.
 @z
 
 @x
@@ -187,4 +179,20 @@ an organization:
    case-sensitive.
 1. Select **Confirm**. The new owner receives a notification email. Use that
    owner account to sign in and manage the new organization.
+@z
+
+@x
+> [!TIP]
+>
+> After you convert an account, existing personal access tokens from that
+> account no longer work. Sign in as the new owner and create an
+> [organization access token (OAT)](/manuals/security/access-tokens/organization-access-tokens.md)
+> for the converted organization.
+@y
+> [!TIP]
+>
+> After you convert an account, existing personal access tokens from that
+> account no longer work. Sign in as the new owner and create an
+> [organization access token (OAT)](/manuals/security/access-tokens/organization-access-tokens.md)
+> for the converted organization.
 @z

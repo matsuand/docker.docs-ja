@@ -20,49 +20,17 @@ keywords: unassociated machines, insights, manage users, enforce sign-in
 @z
 
 @x
-Docker administrators can identify, view, and manage Docker Desktop machines
-that are likely associated with their organization but aren't currently linked
+Organization owners can identify, view, and manage Docker Desktop machines
+that are likely associated with their organization, based on usage, but aren't currently linked
 to user accounts. This self-service capability helps you understand Docker
 Desktop usage across your organization and streamline user onboarding without
 IT involvement.
 @y
-Docker administrators can identify, view, and manage Docker Desktop machines
-that are likely associated with their organization but aren't currently linked
+Organization owners can identify, view, and manage Docker Desktop machines
+that are likely associated with their organization, based on usage, but aren't currently linked
 to user accounts. This self-service capability helps you understand Docker
 Desktop usage across your organization and streamline user onboarding without
 IT involvement.
-@z
-
-@x
-## Prerequisites
-@y
-## Prerequisites
-@z
-
-@x
-- Docker Business or Team subscription
-- Organization owner access to your Docker organization
-@y
-- Docker Business or Team subscription
-- Organization owner access to your Docker organization
-@z
-
-@x
-## About unassociated machines
-@y
-## About unassociated machines
-@z
-
-@x
-Unassociated machines are Docker Desktop instances that Docker has identified
-as likely belonging to your organization based on usage patterns, but the users
-are not signed in to Docker Desktop with an account that is part of your
-organization.
-@y
-Unassociated machines are Docker Desktop instances that Docker has identified
-as likely belonging to your organization based on usage patterns, but the users
-are not signed in to Docker Desktop with an account that is part of your
-organization.
 @z
 
 @x
@@ -160,7 +128,7 @@ You can:
 @z
 
 @x
-> [!NOTE]
+> [!IMPORTANT]
 >
 > Sign-in enforcement for unassociated machines is different from
 > the [organization-level sign-in enforcement](/manuals/desktop/enterprise/enforce-sign-in/_index.md)
@@ -170,7 +138,7 @@ You can:
 > stringent security controls that limit sign-ins to users who are already part
 > of your organization, see [Enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @y
-> [!NOTE]
+> [!IMPORTANT]
 >
 > Sign-in enforcement for unassociated machines is different from
 > the [organization-level sign-in enforcement](manuals/desktop/enterprise/enforce-sign-in/_index.md)
@@ -210,21 +178,9 @@ You can enable sign-in enforcement using two methods:
 @z
 
 @x
-> [!IMPORTANT]
->
-> Sign-in enforcement only takes effect after Docker Desktop is restarted.
-> Users can continue using Docker Desktop until their next restart.
+### Enable for all unassociated machines
 @y
-> [!IMPORTANT]
->
-> Sign-in enforcement only takes effect after Docker Desktop is restarted.
-> Users can continue using Docker Desktop until their next restart.
-@z
-
-@x
-### Enable sign-in enforcement for all unassociated machines
-@y
-### Enable sign-in enforcement for all unassociated machines
+### Enable for all unassociated machines
 @z
 
 @x
@@ -246,37 +202,39 @@ To enable sign-in enforcement for all unassociated machines:
 @z
 
 @x
-The **Sign-in required** status will update for all unassociated machines to
+The **Sign-in required** status updates all unassociated machines to
 **Yes**.
 @y
-The **Sign-in required** status will update for all unassociated machines to
+The **Sign-in required** status updates all unassociated machines to
 **Yes**.
+@z
+
+@x
+Sign-in enforcement only takes effect after Docker Desktop is restarted.
+Users can continue using Docker Desktop until their next restart.
+@y
+Sign-in enforcement only takes effect after Docker Desktop is restarted.
+Users can continue using Docker Desktop until their next restart.
 @z
 
 @x
 > [!NOTE]
 >
 > When you enable sign-in enforcement for all unassociated machines, any new
-> machines detected in the future will automatically have sign-in enforcement
-> enabled. Sign-in enforcement requires Docker Desktop version 4.41 or later.
-> Users with older versions will not be prompted to sign in and can continue
-> using Docker Desktop normally until they update. Their status shows
-> as **Pending** until they update to version 4.41 or later.
+> machines detected in the future automatically have sign-in enforcement
+> enabled.
 @y
 > [!NOTE]
 >
 > When you enable sign-in enforcement for all unassociated machines, any new
-> machines detected in the future will automatically have sign-in enforcement
-> enabled. Sign-in enforcement requires Docker Desktop version 4.41 or later.
-> Users with older versions will not be prompted to sign in and can continue
-> using Docker Desktop normally until they update. Their status shows
-> as **Pending** until they update to version 4.41 or later.
+> machines detected in the future automatically have sign-in enforcement
+> enabled.
 @z
 
 @x
-### Enable sign-in enforcement for individual unassociated machines
+### Enable for individual unassociated machines
 @y
-### Enable sign-in enforcement for individual unassociated machines
+### Enable for individual unassociated machines
 @z
 
 @x
@@ -300,33 +258,17 @@ To enable sign-in enforcement for individual unassociated machines:
 @z
 
 @x
-The **Sign-in required** status will update for the individual machine to
+The **Sign-in required** status updates for the individual machine to
 **Yes**.
 @y
-The **Sign-in required** status will update for the individual machine to
+The **Sign-in required** status updates for the individual machine to
 **Yes**.
 @z
 
 @x
-> [!NOTE]
->
-> Sign-in enforcement requires Docker Desktop version 4.41 or later. Users
-> with older versions will not be prompted to sign in and can continue using
-> Docker Desktop normally until they update. Their status shows as **Pending**
-> until they update to version 4.41 or later.
+### What happens sign-in is enforced
 @y
-> [!NOTE]
->
-> Sign-in enforcement requires Docker Desktop version 4.41 or later. Users
-> with older versions will not be prompted to sign in and can continue using
-> Docker Desktop normally until they update. Their status shows as **Pending**
-> until they update to version 4.41 or later.
-@z
-
-@x
-### What happens when users sign in
-@y
-### What happens when users sign in
+### What happens sign-in is enforced
 @z
 
 @x
@@ -336,19 +278,15 @@ After you enable sign-in enforcement:
 @z
 
 @x
-1. Users must restart Docker Desktop. Enforcement only takes effect after
-   restart.
-1. When users open Docker Desktop, they see a sign-in prompt. They must sign
+- When users open Docker Desktop, they see a sign-in prompt. They must sign
    in to continue using Docker Desktop.
-1. User email addresses appear in the **Unassociated** list.
-1. You can add users to your organization.
+- User email addresses appear in the **Unassociated** list.
+- You can add users to your organization.
 @y
-1. Users must restart Docker Desktop. Enforcement only takes effect after
-   restart.
-1. When users open Docker Desktop, they see a sign-in prompt. They must sign
+- When users open Docker Desktop, they see a sign-in prompt. They must sign
    in to continue using Docker Desktop.
-1. User email addresses appear in the **Unassociated** list.
-1. You can add users to your organization.
+- User email addresses appear in the **Unassociated** list.
+- You can add users to your organization.
 @z
 
 @x
@@ -407,12 +345,12 @@ organization in two ways:
 > [!NOTE]
 >
 > If you add users and do not have enough seats in your organization, a
-> pop-up will appear prompting you to **Get more seats**.
+> pop-up appears prompting you to **Get more seats**.
 @y
 > [!NOTE]
 >
 > If you add users and do not have enough seats in your organization, a
-> pop-up will appear prompting you to **Get more seats**.
+> pop-up appears prompting you to **Get more seats**.
 @z
 
 @x
@@ -482,10 +420,10 @@ organization in two ways:
 @z
 
 @x
-The **Sign-in required** status will update for all unassociated machines to
+The **Sign-in required** status updates for all unassociated machines to
 **No**.
 @y
-The **Sign-in required** status will update for all unassociated machines to
+The **Sign-in required** status updates for all unassociated machines to
 **No**.
 @z
 
@@ -510,9 +448,9 @@ The **Sign-in required** status will update for all unassociated machines to
 @z
 
 @x
-The **Sign-in required** status will update for the individual machine to
+The **Sign-in required** status updates for the individual machine to
 **No**.
 @y
-The **Sign-in required** status will update for the individual machine to
+The **Sign-in required** status updates for the individual machine to
 **No**.
 @z

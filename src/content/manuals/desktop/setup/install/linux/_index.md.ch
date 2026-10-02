@@ -281,7 +281,7 @@ To install Docker Desktop successfully, your Linux host must meet the following 
   - For many Linux distributions, the GNOME environment does not support tray icons. To add support for tray icons, you need to install a GNOME extension. For example, [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/).
 - At least 4 GB of RAM.
 - Enable configuring ID mapping in user namespaces, see [File sharing](/manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-enable-file-sharing). Note that for Docker Desktop version 4.35 and later, this is not required anymore.
-- Recommended: [Initialize `pass`](/manuals/desktop/setup/sign-in.md#credentials-management-for-linux-users) for credentials management.
+- [Initialize `pass`](#signing-in-with-docker-desktop-for-linux) for credentials management.
 @y
 - 64-bit kernel and CPU support for virtualization.
 - KVM virtualization support. Follow the [KVM virtualization support instructions](#kvm-virtualization-support) to check if the KVM kernel modules are enabled and how to provide access to the KVM device.
@@ -291,7 +291,7 @@ To install Docker Desktop successfully, your Linux host must meet the following 
   - For many Linux distributions, the GNOME environment does not support tray icons. To add support for tray icons, you need to install a GNOME extension. For example, [AppIndicator](https://extensions.gnome.org/extension/615/appindicator-support/).
 - At least 4 GB of RAM.
 - Enable configuring ID mapping in user namespaces, see [File sharing](manuals/desktop/troubleshoot-and-support/faqs/linuxfaqs.md#how-do-i-enable-file-sharing). Note that for Docker Desktop version 4.35 and later, this is not required anymore.
-- Recommended: [Initialize `pass`](manuals/desktop/setup/sign-in.md#credentials-management-for-linux-users) for credentials management.
+- [Initialize `pass`](#signing-in-with-docker-desktop-for-linux) for credentials management.
 @z
 
 @x
@@ -395,6 +395,70 @@ Sign out and sign back in so that your group membership is re-evaluated.
 @y
 Sign out and sign back in so that your group membership is re-evaluated.
 @z
+
+@x
+## Signing in with Docker Desktop for Linux
+@y
+## Signing in with Docker Desktop for Linux
+@z
+
+@x
+Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
+Before signing in to Docker Desktop with your [Docker ID](/accounts/individual/create-account/), you must initialize `pass`.
+Docker Desktop displays a warning if `pass` is not configured.
+@y
+Docker Desktop for Linux relies on [`pass`](https://www.passwordstore.org/) to store credentials in GPG-encrypted files.
+Before signing in to Docker Desktop with your [Docker ID](/accounts/individual/create-account/), you must initialize `pass`.
+Docker Desktop displays a warning if `pass` is not configured.
+@z
+
+@x
+1. Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
+@y
+1. Generate a GPG key. You can initialize pass by using a gpg key. To generate a gpg key, run:
+@z
+
+% snip command...
+
+@x
+2. Enter your name and email once prompted.
+@y
+2. Enter your name and email once prompted.
+@z
+
+@x
+   Once confirmed, GPG creates a key pair. Look for the `pub` line that contains your GPG ID, for example:
+@y
+   Once confirmed, GPG creates a key pair. Look for the `pub` line that contains your GPG ID, for example:
+@z
+
+% snip text...
+
+@x
+3. Copy the GPG ID and use it to initialize `pass`. For example
+@y
+3. Copy the GPG ID and use it to initialize `pass`. For example
+@z
+
+% snip command...
+
+@x
+   You should see output similar to:
+@y
+   You should see output similar to:
+@z
+
+% snip output...
+
+@x
+Once you initialize `pass`, you can sign in and pull your private images.
+When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the GPG key generation.
+@y
+Once you initialize `pass`, you can sign in and pull your private images.
+When Docker CLI or Docker Desktop use credentials, a user prompt may pop up for the password you set during the GPG key generation.
+@z
+
+% snip command...
 
 @x
 ## Using Docker SDKs with Docker Desktop

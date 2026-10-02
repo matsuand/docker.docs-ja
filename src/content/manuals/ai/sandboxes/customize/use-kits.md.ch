@@ -338,9 +338,19 @@ feature, Docker Sandboxes can reject the combination.
 @x
 To publish your combination as one reference, see
 [Compose a kit set](/manuals/ai/sandboxes/customize/author/kit-sets.md).
+To keep the kits separate in a shared sandbox configuration, list them in a
+[sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md).
+Give each published kit its own image repository name. Different tags of the
+same repository have the same kit name, and Docker Sandboxes rejects duplicate
+names in a composition.
 @y
 To publish your combination as one reference, see
 [Compose a kit set](manuals/ai/sandboxes/customize/author/kit-sets.md).
+To keep the kits separate in a shared sandbox configuration, list them in a
+[sandbox environment file](/manuals/ai/sandboxes/configuration/environment-files.md).
+Give each published kit its own image repository name. Different tags of the
+same repository have the same kit name, and Docker Sandboxes rejects duplicate
+names in a composition.
 @z
 
 @x

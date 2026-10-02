@@ -7,13 +7,15 @@
 title: Enforce sign-in for Docker Desktop
 linkTitle: Enforce sign-in
 description: Require users to sign in to Docker Desktop to access organization benefits and security features
-toc_max: 2
-keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, organization
 @y
 title: Enforce sign-in for Docker Desktop
 linkTitle: Enforce sign-in
 description: Require users to sign in to Docker Desktop to access organization benefits and security features
-toc_max: 2
+@z
+
+@x
+keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, organization
+@y
 keywords: authentication, registry.json, configure, enforce sign-in, docker desktop, security, .plist, registry key, mac, windows, organization
 @z
 
@@ -38,15 +40,21 @@ You can enforce sign-in using several methods, depending on your setup:
 @z
 
 @x
-- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only)
-- [Configuration profiles method (Mac only)](methods.md#configuration-profiles-method-mac-only)
-- [`.plist` method (Mac only)](methods.md#plist-method-mac-only)
-- [`registry.json` method (All)](methods.md#registryjson-method-all)
+- [Registry key method (Windows only)](methods.md#windows-registry-key-method)
+- [Configuration profiles method (Mac only)](methods.md#mac-configuration-profiles-method-recommended)
+- [`.plist` method (Mac only)](methods.md#mac-plist-file-method)
+- [`registry.json` method (all platforms)](methods.md#all-platforms-registryjson-method)
 @y
-- [Registry key method (Windows only)](methods.md#registry-key-method-windows-only)
-- [Configuration profiles method (Mac only)](methods.md#configuration-profiles-method-mac-only)
-- [`.plist` method (Mac only)](methods.md#plist-method-mac-only)
-- [`registry.json` method (All)](methods.md#registryjson-method-all)
+- [Registry key method (Windows only)](methods.md#windows-registry-key-method)
+- [Configuration profiles method (Mac only)](methods.md#mac-configuration-profiles-method-recommended)
+- [`.plist` method (Mac only)](methods.md#mac-plist-file-method)
+- [`registry.json` method (all platforms)](methods.md#all-platforms-registryjson-method)
+@z
+
+@x
+Deploying a `admin-settings.json` file with [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) also enforces sign-in. See [Settings Management and sign-in enforcement](methods.md#settings-management-and-sign-in-enforcement).
+@y
+Deploying a `admin-settings.json` file with [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) also enforces sign-in. See [Settings Management and sign-in enforcement](methods.md#settings-management-and-sign-in-enforcement).
 @z
 
 @x
@@ -70,35 +78,115 @@ When Docker Desktop detects a registry key, configuration profile, `.plist` file
 @z
 
 @x
-- A **Sign in required!** prompt appears, requiring users to sign
-  in as organization members to use Docker Desktop.
+- A **Sign in using your work email address** prompt appears, requiring users to
+  sign in as organization members to use Docker Desktop. The prompt states which
+  organizations are required and which method enforces it.
 - If users sign in with accounts that aren't organization members, they're
-  automatically signed out and can't use Docker Desktop. They can select **Sign in**
-  to try again with a different account.
+  automatically signed out and can't use Docker Desktop. The prompt changes to
+  **You have been signed out** and explains why. They can sign in again with a
+  different account.
 - When users sign in with organization member accounts, they can use Docker
   Desktop normally.
-- When users sign out, the **Sign in required!** prompt reappears and they can
+- When users sign out, the sign-in prompt reappears and they can
   no longer use Docker Desktop unless they sign back in.
 @y
-- A **Sign in required!** prompt appears, requiring users to sign
-  in as organization members to use Docker Desktop.
+- A **Sign in using your work email address** prompt appears, requiring users to
+  sign in as organization members to use Docker Desktop. The prompt states which
+  organizations are required and which method enforces it.
 - If users sign in with accounts that aren't organization members, they're
-  automatically signed out and can't use Docker Desktop. They can select **Sign in**
-  to try again with a different account.
+  automatically signed out and can't use Docker Desktop. The prompt changes to
+  **You have been signed out** and explains why. They can sign in again with a
+  different account.
 - When users sign in with organization member accounts, they can use Docker
   Desktop normally.
-- When users sign out, the **Sign in required!** prompt reappears and they can
+- When users sign out, the sign-in prompt reappears and they can
   no longer use Docker Desktop unless they sign back in.
 @z
 
 @x
-> [!NOTE]
->
-> Enforcing sign-in for Docker Desktop doesn't affect Docker CLI access. CLI access is only restricted for organizations that enforce single sign-on (SSO).
+### Impact on the Docker CLI
 @y
-> [!NOTE]
+### Impact on the Docker CLI
+@z
+
+@x
+Sign-in enforcement also blocks the Docker CLI. While the sign-in prompt is
+showing, Docker Desktop's API proxy rejects almost every request with an
+explanation at the terminal, for example:
+@y
+Sign-in enforcement also blocks the Docker CLI. While the sign-in prompt is
+showing, Docker Desktop's API proxy rejects almost every request with an
+explanation at the terminal, for example:
+@z
+
+@x
+```text
+Sign in to continue using Docker Desktop. Membership in the [myorg] organization
+is required. Sign in enforced by your administrators (via registry.json).
+```
+@y
+```text
+Sign in to continue using Docker Desktop. Membership in the [myorg] organization
+is required. Sign in enforced by your administrators (via registry.json).
+```
+@z
+
+@x
+- `docker run`, `docker pull`, `docker build`, `docker ps`, and other commands
+  that reach the engine fail until the user signs in.
+- `docker version`, `docker info`, and `docker login` continue to work, so users
+  can sign in from the CLI.
+@y
+- `docker run`, `docker pull`, `docker build`, `docker ps`, and other commands
+  that reach the engine fail until the user signs in.
+- `docker version`, `docker info`, and `docker login` continue to work, so users
+  can sign in from the CLI.
+@z
+
+@x
+> [!IMPORTANT]
 >
-> Enforcing sign-in for Docker Desktop doesn't affect Docker CLI access. CLI access is only restricted for organizations that enforce single sign-on (SSO).
+> Make sure you plan for blocking the Docker CLI before you roll out enforcement. Any scripted or CI use of the
+> Docker CLI on an enforced machine stops working until that machine's user signs
+> in as an organization member.
+@y
+> [!IMPORTANT]
+>
+> Make sure you plan for blocking the Docker CLI before you roll out enforcement. Any scripted or CI use of the
+> Docker CLI on an enforced machine stops working until that machine's user signs
+> in as an organization member.
+@z
+
+@x
+Sign-in enforcement is separate from [SSO enforcement](#enforcing-sign-in-versus-enforcing-single-sign-on-sso), which governs how users authenticate as opposed to whether they must authenticate.
+@y
+Sign-in enforcement is separate from [SSO enforcement](#enforcing-sign-in-versus-enforcing-single-sign-on-sso), which governs how users authenticate as opposed to whether they must authenticate.
+@z
+
+@x
+### Impact on already-signed-in users
+@y
+### Impact on already-signed-in users
+@z
+
+@x
+When enforcement is first deployed, users who are already running Docker Desktop are not immediately affected. Docker Desktop re-evaluates enforcement when it starts, and when a user signs in or out. It doesn't poll for new configuration while running, so a newly deployed registry key, configuration profile, `.plist`, or `registry.json` file takes effect on the next restart.
+@y
+When enforcement is first deployed, users who are already running Docker Desktop are not immediately affected. Docker Desktop re-evaluates enforcement when it starts, and when a user signs in or out. It doesn't poll for new configuration while running, so a newly deployed registry key, configuration profile, `.plist`, or `registry.json` file takes effect on the next restart.
+@z
+
+@x
+On the next Docker Desktop restart:
+@y
+On the next Docker Desktop restart:
+@z
+
+@x
+- Users signed in with an organization member account are automatically re-authenticated and continue working uninterrupted.
+- Users signed in with a non-member account are immediately signed out on startup and see the **Sign in required!** prompt. 
+@y
+- Users signed in with an organization member account are automatically re-authenticated and continue working uninterrupted.
+- Users signed in with a non-member account are immediately signed out on startup and see the **Sign in required!** prompt. 
 @z
 
 @x

@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: MSI installer
 description: Understand how to use the MSI installer. Also explore additional configuration options.
@@ -31,19 +33,19 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 
 @x
 1. In [Docker Home](http://app.docker.com), choose your organization.
-2. Select **Docker Desktop**, then **Deploy**.
-3. From the **Windows OS** tab, select the **Download MSI installer** button.
-4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
-5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`(all-user installations) or `%LOCALAPPDATA%\Programs\DockerDesktop` (per-user installations)
-6. Configure the Docker Desktop installation. You can:
+1. Select **Docker Desktop**, then **Deploy**.
+1. From the **Windows OS** tab, select the **Download MSI installer** button.
+1. Once downloaded, double-click `DockerDesktop.msi` to run the installer.
+1. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`. The MSI installer only supports all-users installations (version 4.92 and later). If you need a per-user installation, use the EXE installer.
+1. Configure the Docker Desktop installation. You can:
    - Create a desktop shortcut
 @y
 1. In [Docker Home](http://app.docker.com), choose your organization.
-2. Select **Docker Desktop**, then **Deploy**.
-3. From the **Windows OS** tab, select the **Download MSI installer** button.
-4. Once downloaded, double-click `Docker Desktop Installer.msi` to run the installer.
-5. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`(all-user installations) or `%LOCALAPPDATA%\Programs\DockerDesktop` (per-user installations)
-6. Configure the Docker Desktop installation. You can:
+1. Select **Docker Desktop**, then **Deploy**.
+1. From the **Windows OS** tab, select the **Download MSI installer** button.
+1. Once downloaded, double-click `DockerDesktop.msi` to run the installer.
+1. After accepting the license agreement, choose the install location. By default, Docker Desktop is installed at `C:\Program Files\Docker\Docker`. The MSI installer only supports all-users installations (version 4.92 and later). If you need a per-user installation, use the EXE installer.
+1. Configure the Docker Desktop installation. You can:
    - Create a desktop shortcut
 @z
 
@@ -54,23 +56,19 @@ The MSI package supports various MDM (Mobile Device Management) solutions, makin
 @z
 
 @x
-   - Disable Windows Container usage
+   - Allow Windows Containers to be used with this installation. With Docker Desktop version 4.40 and later, this is cleared by default in the installation wizard, so Windows containers are disabled unless you select it.
 @y
-   - Disable Windows Container usage
+   - Allow Windows Containers to be used with this installation. With Docker Desktop version 4.40 and later, this is cleared by default in the installation wizard, so Windows containers are disabled unless you select it.
 @z
 
 @x
-   - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
+   - Select the Docker Desktop backend: WSL or Hyper-V.
+1. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+1. When the installation is successful, select **Finish** to complete the installation process.
 @y
-   - Select the Docker Desktop backend: WSL or Hyper-V. If only one is supported by your system, you won't be able to choose.
-@z
-
-@x
-7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
-8. When the installation is successful, select **Finish** to complete the installation process.
-@y
-7. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
-8. When the installation is successful, select **Finish** to complete the installation process.
+   - Select the Docker Desktop backend: WSL or Hyper-V.
+1. Follow the instructions on the installation wizard to authorize the installer and proceed with the install.
+1. When the installation is successful, select **Finish** to complete the installation process.
 @z
 
 @x
@@ -81,21 +79,20 @@ If your administrator account is different from your user account, you must add 
 
 @x
 1. Run **Computer Management** as an **administrator**.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
-3. Right-click to add the user to the group.
-4. Sign out and sign back in for the changes to take effect.
+1. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
+1. Right-click to add the user to the group.
+1. Sign out and sign back in for the changes to take effect.
 @y
 1. Run **Computer Management** as an **administrator**.
-2. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
-3. Right-click to add the user to the group.
-4. Sign out and sign back in for the changes to take effect.
+1. Navigate to **Local Users and Groups** > **Groups** > **docker-users**.
+1. Right-click to add the user to the group.
+1. Sign out and sign back in for the changes to take effect.
 @z
 
 @x
 > [!NOTE]
 >
-> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates.
-> Starting with Docker Desktop version 4.60 and later, in-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates. In-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from Docker Home. Navigate to the **Deploy** page.
 >
@@ -103,8 +100,7 @@ If your administrator account is different from your user account, you must add 
 @y
 > [!NOTE]
 >
-> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates.
-> Starting with Docker Desktop version 4.60 and later, in-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
+> When installing Docker Desktop with the MSI, in-app updates are automatically disabled by default. This ensures organizations can maintain version consistency and prevent unapproved updates. In-app updates from an MSI installation can be enabled by changing the `disableUpdate` setting to `false` through [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md).
 >
 > Docker Desktop notifies you when an update is available. To update Docker Desktop, download the latest installer from Docker Home. Navigate to the **Deploy** page.
 >
@@ -254,9 +250,9 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart ADMINSETTINGS=
 @z
 
 @x
-#### Install interactively and allow users to switch to Windows containers without admin rights
+#### Install non-interactively and allow users to switch to Windows containers without admin rights
 @y
-#### Install interactively and allow users to switch to Windows containers without admin rights
+#### Install non-interactively and allow users to switch to Windows containers without admin rights
 @z
 
 @x
@@ -514,11 +510,11 @@ In addition to the following custom properties, the Docker Desktop MSI installer
 | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
 | `ENABLEDESKTOPSHORTCUT`            | Creates a desktop shortcut.                                                                                                                                                                                                                                                                   | 1                       |
 | `INSTALLFOLDER`                    | Specifies a custom location where Docker Desktop will be installed.                                                                                                                                                                                                                           | C:\Program Files\Docker |
-| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None                    |
+| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. If you pass `ADMINSETTINGS` on its own, the installation still succeeds but no `admin-settings.json` file is written and no error is reported. | None                    |
 | `ALLOWEDORG`                       | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`.                                                                           | None                    |
 | `ALWAYSRUNSERVICE`                 | Lets users switch to Windows containers without needing admin rights                                                                                                                                                                                                                          | 0                       |
 | `DISABLEWINDOWSCONTAINERS`         | Disables the Windows containers integration                                                                                                                                                                                                                                                   | 0                       |
-| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows`                                                                                                                                                                                       | `wsl`                   |
+| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be `wsl`, `hyperv`, `windows`, or `docker-vmm`. The installation wizard only offers `wsl` and `hyperv`. The others are command line only. `docker-vmm` is available with Docker Desktop version 4.90 and later.                                                                                                                                                                                       | `wsl`                   |
 | `PROXYENABLEKERBEROSNTLM`          | When set to 1, enables support for Kerberos and NTLM proxy authentication.                                                                                                                                                                                                                    | 0                       |
 | `PROXYHTTPMODE`                    | Sets the HTTP Proxy mode. This can be either `system` or `manual`                                                                                                                                                                                                                             | `system`                |
 | `OVERRIDEPROXYHTTP`                | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.                                                                                                                                                                                                                  | None                    |
@@ -530,17 +526,17 @@ In addition to the following custom properties, the Docker Desktop MSI installer
 | `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers.                                                                                                                                                                                                                                        | None                    |
 | `WSLDEFAULTDATAROOT`               | Specifies the default location for the WSL distribution disk.                                                                                                                                                                                                                                 | None                    |
 | `DISABLEANALYTICS`                 | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics).                                                                                                                                                                          | 0                       |
-| `REMOVEEXISTINGINSTALL`            | When set to 1, any existing EXE installations are removed. Existing settings and content are preserved. Available with Docker Desktop version 4.61 and later.   | 1 |
+| `REMOVEEXISTINGINSTALL`            | When set to 1, an existing all-users EXE installation is uninstalled before the MSI installs, and settings and content are preserved. Has no effect on per-user EXE installations, which must be removed by the users who own them.   | 1 |
 @y
 | Property                           | Description                                                                                                                                                                                                                                                                                   | Default                 |
 | :--------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------- |
 | `ENABLEDESKTOPSHORTCUT`            | Creates a desktop shortcut.                                                                                                                                                                                                                                                                   | 1                       |
 | `INSTALLFOLDER`                    | Specifies a custom location where Docker Desktop will be installed.                                                                                                                                                                                                                           | C:\Program Files\Docker |
-| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. | None                    |
+| `ADMINSETTINGS`                    | Automatically creates an `admin-settings.json` file which is used to [control certain Docker Desktop settings](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md) on client machines within organizations. It must be used together with the `ALLOWEDORG` property. If you pass `ADMINSETTINGS` on its own, the installation still succeeds but no `admin-settings.json` file is written and no error is reported. | None                    |
 | `ALLOWEDORG`                       | Requires the user to sign in and be part of the specified Docker Hub organization when running the application. This creates a registry key called `allowedOrgs` in `HKLM\Software\Policies\Docker\Docker Desktop`.                                                                           | None                    |
 | `ALWAYSRUNSERVICE`                 | Lets users switch to Windows containers without needing admin rights                                                                                                                                                                                                                          | 0                       |
 | `DISABLEWINDOWSCONTAINERS`         | Disables the Windows containers integration                                                                                                                                                                                                                                                   | 0                       |
-| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be either `wsl` , `hyperv`, or `windows`                                                                                                                                                                                       | `wsl`                   |
+| `ENGINE`                           | Sets the Docker Engine that's used to run containers. This can be `wsl`, `hyperv`, `windows`, or `docker-vmm`. The installation wizard only offers `wsl` and `hyperv`. The others are command line only. `docker-vmm` is available with Docker Desktop version 4.90 and later.                                                                                                                                                                                       | `wsl`                   |
 | `PROXYENABLEKERBEROSNTLM`          | When set to 1, enables support for Kerberos and NTLM proxy authentication.                                                                                                                                                                                                                    | 0                       |
 | `PROXYHTTPMODE`                    | Sets the HTTP Proxy mode. This can be either `system` or `manual`                                                                                                                                                                                                                             | `system`                |
 | `OVERRIDEPROXYHTTP`                | Sets the URL of the HTTP proxy that must be used for outgoing HTTP requests.                                                                                                                                                                                                                  | None                    |
@@ -552,7 +548,7 @@ In addition to the following custom properties, the Docker Desktop MSI installer
 | `WINDOWSCONTAINERSDEFAULTDATAROOT` | Specifies the default location for Windows containers.                                                                                                                                                                                                                                        | None                    |
 | `WSLDEFAULTDATAROOT`               | Specifies the default location for the WSL distribution disk.                                                                                                                                                                                                                                 | None                    |
 | `DISABLEANALYTICS`                 | When set to 1, analytics collection will be disabled for the MSI. For more information, see [Analytics](#analytics).                                                                                                                                                                          | 0                       |
-| `REMOVEEXISTINGINSTALL`            | When set to 1, any existing EXE installations are removed. Existing settings and content are preserved. Available with Docker Desktop version 4.61 and later.   | 1 |
+| `REMOVEEXISTINGINSTALL`            | When set to 1, an existing all-users EXE installation is uninstalled before the MSI installs, and settings and content are preserved. Has no effect on per-user EXE installations, which must be removed by the users who own them.   | 1 |
 @z
 
 @x
@@ -615,11 +611,11 @@ When you install Docker Desktop from the command line, use the `DISABLEANALYTICS
 
 @x
 ```powershell
-msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
 ```
 @y
 ```powershell
-msiexec /i "win\msi\bin\en-US\DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
+msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" DISABLEANALYTICS=1
 ```
 @z
 
