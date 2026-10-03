@@ -742,7 +742,9 @@ paths:
       summary: Create rule
       description: |
         Adds a rule to the policy's rule set. All rules in a policy must share
-        the same domain (network or filesystem); mixing domains is rejected.
+        the same domain (`network`, which includes HTTP, or `filesystem`);
+        mixing domains is rejected. A single rule cannot mix L4 network and L7
+        HTTP actions.
 @y
   /orgs/{org_name}/governance/policies/{policy_id}/rules:
     parameters:
@@ -754,7 +756,9 @@ paths:
       summary: Create rule
       description: |
         Adds a rule to the policy's rule set. All rules in a policy must share
-        the same domain (network or filesystem); mixing domains is rejected.
+        the same domain (`network`, which includes HTTP, or `filesystem`);
+        mixing domains is rejected. A single rule cannot mix L4 network and L7
+        HTTP actions.
 @z
 
 @x
@@ -779,12 +783,22 @@ paths:
         **Filesystem** actions: `read`, `write`. Resources are paths (for example,
         `/data`). Use `*` to match within a single path segment and `**` to match
         recursively across segments (for example, `/data/**`).
+@z
+
+@x
+        **HTTP** actions identify request methods, such as `request:get` and
+        `request:post`. Use `http_resources` to identify the host, optional port,
+        and absolute path glob. HTTP rules must not supply `resources`.
+@y
+        **HTTP** actions identify request methods, such as `request:get` and
+        `request:post`. Use `http_resources` to identify the host, optional port,
+        and absolute path glob. HTTP rules must not supply `resources`.
 @z
 
 @x
         Changes may take up to five minutes to reach developer machines.
       requestBody:
-        description: Rule definition including actions, resources, and decision.
+        description: Rule definition including actions, matching resources, and decision.
         required: true
         content:
           application/json:
@@ -804,6 +818,16 @@ paths:
                   name: allow data directory
                   actions: [read, write]
                   resources: [/data]
+                  decision: allow
+              http:
+                summary: HTTP rule
+                value:
+                  name: read GitHub repositories
+                  actions: [request:get, request:head]
+                  http_resources:
+                    - host: api.github.com
+                      port: 443
+                      path: /repos/docker/**
                   decision: allow
       responses:
         "201":
@@ -828,6 +852,17 @@ paths:
                     name: allow data directory
                     actions: [read, write]
                     resources: [/data]
+                    decision: allow
+                http:
+                  summary: HTTP rule
+                  value:
+                    id: rule_08gxuos1lo3rfum2c0pmgcz09lpc
+                    name: read GitHub repositories
+                    actions: [request:get, request:head]
+                    http_resources:
+                      - host: api.github.com
+                        port: 443
+                        path: /repos/docker/**
                     decision: allow
         "400":
           $ref: "#/components/responses/InvalidArgument"
@@ -844,7 +879,7 @@ paths:
 @y
         Changes may take up to five minutes to reach developer machines.
       requestBody:
-        description: Rule definition including actions, resources, and decision.
+        description: Rule definition including actions, matching resources, and decision.
         required: true
         content:
           application/json:
@@ -864,6 +899,16 @@ paths:
                   name: allow data directory
                   actions: [read, write]
                   resources: [/data]
+                  decision: allow
+              http:
+                summary: HTTP rule
+                value:
+                  name: read GitHub repositories
+                  actions: [request:get, request:head]
+                  http_resources:
+                    - host: api.github.com
+                      port: 443
+                      path: /repos/docker/**
                   decision: allow
       responses:
         "201":
@@ -888,6 +933,17 @@ paths:
                     name: allow data directory
                     actions: [read, write]
                     resources: [/data]
+                    decision: allow
+                http:
+                  summary: HTTP rule
+                  value:
+                    id: rule_08gxuos1lo3rfum2c0pmgcz09lpc
+                    name: read GitHub repositories
+                    actions: [request:get, request:head]
+                    http_resources:
+                      - host: api.github.com
+                        port: 443
+                        path: /repos/docker/**
                     decision: allow
         "400":
           $ref: "#/components/responses/InvalidArgument"
@@ -935,8 +991,10 @@ paths:
 
 @x
         Changing `actions` across domains (for example, from network actions to
-        filesystem actions) is rejected. Changes may take up to five minutes to
-        reach developer machines.
+        filesystem actions) is rejected while other rules remain in the policy.
+        When changing a rule between L4 network and L7 HTTP, supply the matching
+        `resources` or `http_resources` in the same request. Changes may take up
+        to five minutes to reach developer machines.
       requestBody:
         description: Fields to update. Absent fields are left unchanged.
         required: true
@@ -984,8 +1042,10 @@ paths:
           $ref: "#/components/responses/InternalError"
 @y
         Changing `actions` across domains (for example, from network actions to
-        filesystem actions) is rejected. Changes may take up to five minutes to
-        reach developer machines.
+        filesystem actions) is rejected while other rules remain in the policy.
+        When changing a rule between L4 network and L7 HTTP, supply the matching
+        `resources` or `http_resources` in the same request. Changes may take up
+        to five minutes to reach developer machines.
       requestBody:
         description: Fields to update. Absent fields are left unchanged.
         required: true
@@ -1272,8 +1332,8 @@ components:
         type:
           type: string
           description: >
-            Identifies the policy type. `allowlist_v0` for network/filesystem
-            allowlist policies; `cedar_v1` for Cedar language policies.
+            Identifies the policy type. `allowlist_v0` for network, HTTP, and
+            filesystem allowlist policies; `cedar_v1` for Cedar language policies.
           enum: [allowlist_v0, cedar_v1]
           examples:
             - allowlist_v0
@@ -1312,8 +1372,8 @@ components:
         type:
           type: string
           description: >
-            Identifies the policy type. `allowlist_v0` for network/filesystem
-            allowlist policies; `cedar_v1` for Cedar language policies.
+            Identifies the policy type. `allowlist_v0` for network, HTTP, and
+            filesystem allowlist policies; `cedar_v1` for Cedar language policies.
           enum: [allowlist_v0, cedar_v1]
           examples:
             - allowlist_v0
@@ -1425,7 +1485,7 @@ components:
     AllowlistV0:
       type: object
       description: |
-        Network or filesystem allowlist containing a list of rules. Present on
+        Network, HTTP, or filesystem allowlist containing a list of rules. Present on
         Policy when `PolicySummary.type` is `allowlist_v0`; omitted when the
         policy has no rules yet. All rules in an allowlist share the same domain.
         All rules are evaluated on every request: `deny` always wins over `allow`.
@@ -1450,7 +1510,7 @@ components:
     AllowlistV0:
       type: object
       description: |
-        Network or filesystem allowlist containing a list of rules. Present on
+        Network, HTTP, or filesystem allowlist containing a list of rules. Present on
         Policy when `PolicySummary.type` is `allowlist_v0`; omitted when the
         policy has no rules yet. All rules in an allowlist share the same domain.
         All rules are evaluated on every request: `deny` always wins over `allow`.
@@ -1533,7 +1593,12 @@ components:
     Rule:
       type: object
       description: A single allow or deny rule within an allowlist policy.
-      required: [id, name, actions, resources, decision]
+      required: [id, name, actions, decision]
+      oneOf:
+        - type: object
+          required: [resources]
+        - type: object
+          required: [http_resources]
       properties:
         id:
           type: string
@@ -1548,13 +1613,20 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @y
     Rule:
       type: object
       description: A single allow or deny rule within an allowlist policy.
-      required: [id, name, actions, resources, decision]
+      required: [id, name, actions, decision]
+      oneOf:
+        - type: object
+          required: [resources]
+        - type: object
+          required: [http_resources]
       properties:
         id:
           type: string
@@ -1569,6 +1641,8 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @z
@@ -1617,7 +1691,12 @@ components:
     CreateRuleRequest:
       type: object
       description: Fields required to create a new rule within a policy's rule set.
-      required: [name, actions, resources, decision]
+      required: [name, actions, decision]
+      oneOf:
+        - type: object
+          required: [resources]
+        - type: object
+          required: [http_resources]
       properties:
         name:
           type: string
@@ -1628,13 +1707,20 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @y
     CreateRuleRequest:
       type: object
       description: Fields required to create a new rule within a policy's rule set.
-      required: [name, actions, resources, decision]
+      required: [name, actions, decision]
+      oneOf:
+        - type: object
+          required: [resources]
+        - type: object
+          required: [http_resources]
       properties:
         name:
           type: string
@@ -1645,6 +1731,8 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @z
@@ -1653,6 +1741,9 @@ components:
     UpdateRuleRequest:
       type: object
       description: Partial update. Only fields present in the body are updated; absent fields are left unchanged.
+      not:
+        type: object
+        required: [resources, http_resources]
       properties:
         name:
           type: string
@@ -1663,12 +1754,17 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @y
     UpdateRuleRequest:
       type: object
       description: Partial update. Only fields present in the body are updated; absent fields are left unchanged.
+      not:
+        type: object
+        required: [resources, http_resources]
       properties:
         name:
           type: string
@@ -1679,6 +1775,8 @@ components:
           $ref: "#/components/schemas/RuleActions"
         resources:
           $ref: "#/components/schemas/RuleResources"
+        http_resources:
+          $ref: "#/components/schemas/HTTPResources"
         decision:
           $ref: "#/components/schemas/RuleDecision"
 @z
@@ -1838,13 +1936,29 @@ components:
       type: array
       items:
         type: string
-        enum: [connect:tcp, connect:udp, read, write]
+        enum:
+          - connect:tcp
+          - connect:udp
+          - read
+          - write
+          - request:get
+          - request:post
+          - request:put
+          - request:delete
+          - request:patch
+          - request:head
+          - request:options
+          - request:connect
+          - request:trace
       minItems: 1
       description: >
         Network actions: `connect:tcp`, `connect:udp`.
         Filesystem actions: `read`, `write`.
-        All actions in a rule must belong to the same domain; mixing network
-        and filesystem actions in one rule is rejected.
+        HTTP actions: `request:get`, `request:post`, `request:put`,
+        `request:delete`, `request:patch`, `request:head`, `request:options`,
+        `request:connect`, `request:trace`.
+        All actions in a rule must belong to the same layer; mixing HTTP,
+        network, or filesystem actions in one rule is rejected.
       examples:
         - ["connect:tcp", "connect:udp"]
 @y
@@ -1852,13 +1966,29 @@ components:
       type: array
       items:
         type: string
-        enum: [connect:tcp, connect:udp, read, write]
+        enum:
+          - connect:tcp
+          - connect:udp
+          - read
+          - write
+          - request:get
+          - request:post
+          - request:put
+          - request:delete
+          - request:patch
+          - request:head
+          - request:options
+          - request:connect
+          - request:trace
       minItems: 1
       description: >
         Network actions: `connect:tcp`, `connect:udp`.
         Filesystem actions: `read`, `write`.
-        All actions in a rule must belong to the same domain; mixing network
-        and filesystem actions in one rule is rejected.
+        HTTP actions: `request:get`, `request:post`, `request:put`,
+        `request:delete`, `request:patch`, `request:head`, `request:options`,
+        `request:connect`, `request:trace`.
+        All actions in a rule must belong to the same layer; mixing HTTP,
+        network, or filesystem actions in one rule is rejected.
       examples:
         - ["connect:tcp", "connect:udp"]
 @z
@@ -1876,6 +2006,7 @@ components:
         (for example, `10.0.0.0/8` or `2001:db8::/32`). Filesystem domain:
         paths (for example, `/data`); `*` matches within one path segment,
         `**` matches recursively (for example, `/data/**`).
+        Required for network and filesystem rules and forbidden for HTTP rules.
       examples:
         - ["research.mitre.org", "cve.mitre.org"]
 @y
@@ -1891,8 +2022,89 @@ components:
         (for example, `10.0.0.0/8` or `2001:db8::/32`). Filesystem domain:
         paths (for example, `/data`); `*` matches within one path segment,
         `**` matches recursively (for example, `/data/**`).
+        Required for network and filesystem rules and forbidden for HTTP rules.
       examples:
         - ["research.mitre.org", "cve.mitre.org"]
+@z
+
+@x
+    HTTPResources:
+      type: array
+      minItems: 1
+      items:
+        $ref: "#/components/schemas/HTTPResource"
+      description: >
+        HTTP request targets. Required for HTTP rules and forbidden for network
+        and filesystem rules. A request matches when any target matches.
+@y
+    HTTPResources:
+      type: array
+      minItems: 1
+      items:
+        $ref: "#/components/schemas/HTTPResource"
+      description: >
+        HTTP request targets. Required for HTTP rules and forbidden for network
+        and filesystem rules. A request matches when any target matches.
+@z
+
+@x
+    HTTPResource:
+      type: object
+      required: [host, path]
+      properties:
+        host:
+          type: string
+          minLength: 1
+          description: >
+            Domain name or domain glob without a URL scheme or port. Use the
+            separate `port` field to restrict the target to one port.
+          examples:
+            - api.github.com
+            - "*.example.com"
+        port:
+          type: integer
+          minimum: 1
+          maximum: 65535
+          description: Optional destination port. Omit it to match every port.
+          examples:
+            - 443
+        path:
+          type: string
+          pattern: ^/
+          description: >
+            Absolute HTTP path glob. `*` matches one segment and `**` matches
+            any depth, including the bare path.
+          examples:
+            - /repos/docker/**
+@y
+    HTTPResource:
+      type: object
+      required: [host, path]
+      properties:
+        host:
+          type: string
+          minLength: 1
+          description: >
+            Domain name or domain glob without a URL scheme or port. Use the
+            separate `port` field to restrict the target to one port.
+          examples:
+            - api.github.com
+            - "*.example.com"
+        port:
+          type: integer
+          minimum: 1
+          maximum: 65535
+          description: Optional destination port. Omit it to match every port.
+          examples:
+            - 443
+        path:
+          type: string
+          pattern: ^/
+          description: >
+            Absolute HTTP path glob. `*` matches one segment and `**` matches
+            any depth, including the bare path.
+          examples:
+            - /repos/docker/**
 @z
 
 @x

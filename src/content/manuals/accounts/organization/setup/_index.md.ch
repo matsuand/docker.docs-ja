@@ -4,55 +4,73 @@
 % __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
 
 @x
-title: Set up your organization
+title: Set up a Docker organization
 linkTitle: Setup
 @y
-title: Set up your organization
+title: Set up a Docker organization
 linkTitle: Setup
 @z
 
 @x
-description: Learn how to set up your Docker organization, including creating an organization, onboarding, and converting an account.
-keywords: set up organization, create organization, onboard, convert account, docker home
+description: >
+  Create, convert, or onboard a Docker organization under one namespace and
+  subscription.
+keywords:
+  - Docker organization setup
+  - create organization
+  - onboard organization
+  - convert Docker account
+  - organization namespace
+  - Docker Home
 @y
-description: Learn how to set up your Docker organization, including creating an organization, onboarding, and converting an account.
-keywords: set up organization, create organization, onboard, convert account, docker home
+description: >
+  Create, convert, or onboard a Docker organization under one namespace and
+  subscription.
+keywords:
+  - Docker organization setup
+  - create organization
+  - onboard organization
+  - convert Docker account
+  - organization namespace
+  - Docker Home
 @z
+
+%grid:
 
 @x
   - title: Create your organization
-    description: Create an organization to group teams and members and assign access.
+    description: Choose a new namespace and subscription.
     icon: building-storefront
     link: /accounts/organization/setup/orgs/
 @y
   - title: Create your organization
-    description: Create an organization to group teams and members and assign access.
+    description: Choose a new namespace and subscription.
     icon: building-storefront
     link: __SUBDIR__/accounts/organization/setup/orgs/
 @z
 
 @x
+  - title: Convert your account
+    description: Keep an existing Docker ID as the organization namespace.
+    icon: arrows-right-left
+    link: /accounts/organization/setup/convert-account/
+@y
+  - title: Convert your account
+    description: Keep an existing Docker ID as the organization namespace.
+    icon: arrows-right-left
+    link: __SUBDIR__/accounts/organization/setup/convert-account/
+@z
+
+@x
   - title: Onboard your organization
-    description: Onboard and secure your Docker Team or Business organization.
+    description: Invite members and configure sign-in.
     icon: magnifying-glass-plus
     link: /accounts/organization/setup/onboard/
 @y
   - title: Onboard your organization
-    description: Onboard and secure your Docker Team or Business organization.
+    description: Invite members and configure sign-in.
     icon: magnifying-glass-plus
     link: __SUBDIR__/accounts/organization/setup/onboard/
-@z
-
-@x
-  - title: Convert account
-    description: Convert an existing Docker user account into an organization.
-    icon: arrows-right-left
-    link: /accounts/organization/setup/convert-account/
-@y
-  - title: Convert account
-    description: Convert an existing Docker user account into an organization.
-    icon: arrows-right-left
-    link: __SUBDIR__/accounts/organization/setup/convert-account/
 @z
 
 @x
@@ -80,59 +98,91 @@ keywords: set up organization, create organization, onboard, convert account, do
 @z
 
 @x
-Before you manage members and access, set up your Docker organization. You can
-create an organization, onboard and secure it, or convert an existing user
-account into an organization.
+An organization groups members and teams under one namespace and one
+subscription. Anyone with a [Docker ID](/manuals/accounts/_index.md) can
+create an organization or convert an individual account into one.
 @y
-Before you manage members and access, set up your Docker organization. You can
-create an organization, onboard and secure it, or convert an existing user
-account into an organization.
+An organization groups members and teams under one namespace and one
+subscription. Anyone with a [Docker ID](manuals/accounts/_index.md) can
+create an organization or convert an individual account into one.
 @z
 
 @x
-## Setting up your organization
+You start by creating a new organization or converting an individual
+account. After creating or converting, you can onboard your organization.
 @y
-## Setting up your organization
+You start by creating a new organization or converting an individual
+account. After creating or converting, you can onboard your organization.
 @z
 
 @x
-You set up your organization from [Docker Home](https://app.docker.com) and
-must be assigned the
-[organization owner role](/manuals/security/roles-and-permissions/_index.md).
-Setting up an organization happens in broad phases:
+## Names versus namespaces
 @y
-You set up your organization from [Docker Home](https://app.docker.com) and
-must be assigned the
-[organization owner role](manuals/security/roles-and-permissions/_index.md).
-Setting up an organization happens in broad phases:
+## Names versus namespaces
 @z
 
 @x
-1. You can create a new organization, or convert an existing user account
-   into one. Choose the option that fits how you already use Docker. You
-   don't need both.
-1. After creating your organization, you must onboard it by inviting members,
-   securing authentication, and enforcing sign-in. These steps build on each
-   other, so follow them in order.
+When you create an organization, you set two values:
 @y
-1. You can create a new organization, or convert an existing user account
-   into one. Choose the option that fits how you already use Docker. You
-   don't need both.
-1. After creating your organization, you must onboard it by inviting members,
-   securing authentication, and enforcing sign-in. These steps build on each
-   other, so follow them in order.
+When you create an organization, you set two values:
+@z
+
+@x
+- Organization namespace is the permanent, unique identifier for your
+  organization. It becomes the first part of every image name you push, as
+  in `namespace/image:tag`. You can't change it after you create the
+  organization.
+  - Docker IDs and organization namespaces must be unique.
+  - If a Docker ID is `acme`, no organization can use `acme` as its
+    namespace.
+- Organization name is the display name shown on your organization's
+  Docker profile. You can change it at any time. See
+  [Change organization information](/manuals/accounts/organization/manage/general-settings.md).
+@y
+- Organization namespace is the permanent, unique identifier for your
+  organization. It becomes the first part of every image name you push, as
+  in `namespace/image:tag`. You can't change it after you create the
+  organization.
+  - Docker IDs and organization namespaces must be unique.
+  - If a Docker ID is `acme`, no organization can use `acme` as its
+    namespace.
+- Organization name is the display name shown on your organization's
+  Docker profile. You can change it at any time. See
+  [Change organization information](manuals/accounts/organization/manage/general-settings.md).
+@z
+
+@x
+## Choose how to set up
+@y
+## Choose how to set up
+@z
+
+@x
+The difference between creating and converting is what happens to your
+existing repositories.
+@y
+The difference between creating and converting is what happens to your
+existing repositories.
+@z
+
+@x
+- Create an organization: Choose a new namespace. Your existing
+  repositories stay under your personal Docker ID.
+- Convert your account: Your Docker ID becomes the organization’s
+  namespace. Your repositories and image names stay the same, so anyone
+  pulling your images can keep using their existing image references.
+@y
+- Create an organization: Choose a new namespace. Your existing
+  repositories stay under your personal Docker ID.
+- Convert your account: Your Docker ID becomes the organization’s
+  namespace. Your repositories and image names stay the same, so anyone
+  pulling your images can keep using their existing image references.
 @z
 
 @x
 ## Next steps
 @y
 ## Next steps
-@z
-
-@x
-Explore the following sections to set up your organization.
-@y
-Explore the following sections to set up your organization.
 @z
 
 @x

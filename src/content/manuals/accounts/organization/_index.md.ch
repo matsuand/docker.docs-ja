@@ -82,55 +82,27 @@ keywords: admin, administration, company, organization, Docker Home, user
 @z
 
 @x
-Organization and company owners can manage members, control access, and enforce
-security across their Docker environments. You perform these tasks in Docker
-Home, which provides centralized observability, access management, and security
-controls.
+A Docker organization is a collection of teams and repositories that you
+manage in [Docker Home](https://app.docker.com/). Organization and company
+owners manage members, assign access, and enforce security.
 @y
-Organization and company owners can manage members, control access, and enforce
-security across their Docker environments. You perform these tasks in Docker
-Home, which provides centralized observability, access management, and security
-controls.
-@z
-
-@x
-A Docker organization is a collection of teams and repositories under
-centralized management. Organization administrators group members and
-assign repository access at scale.
-@y
-A Docker organization is a collection of teams and repositories under
-centralized management. Organization administrators group members and
-assign repository access at scale.
-@z
-
-@x
-As an organization or company owner, you can:
-@y
-As an organization or company owner, you can:
-@z
-
-@x
-- Create and manage companies and organizations
-- Assign roles and permissions to members
-- Group members into teams to manage access by project or role
-- Set company-wide policies, including SCIM provisioning and security
-  enforcement
-@y
-- Create and manage companies and organizations
-- Assign roles and permissions to members
-- Group members into teams to manage access by project or role
-- Set company-wide policies, including SCIM provisioning and security
-  enforcement
+A Docker organization is a collection of teams and repositories that you
+manage in [Docker Home](https://app.docker.com/). Organization and company
+owners manage members, assign access, and enforce security.
 @z
 
 @x
 For how individual, organization, and company accounts compare, see
 [Accounts](/manuals/accounts/_index.md). For individual accounts, see
 [Docker individual accounts](/manuals/accounts/individual/_index.md).
+To create, convert, or onboard an organization, see
+[Set up a Docker organization](/manuals/accounts/organization/setup/_index.md).
 @y
 For how individual, organization, and company accounts compare, see
 [Accounts](manuals/accounts/_index.md). For individual accounts, see
 [Docker individual accounts](manuals/accounts/individual/_index.md).
+To create, convert, or onboard an organization, see
+[Set up a Docker organization](/manuals/accounts/organization/setup/_index.md).
 @z
 
 @x

@@ -126,9 +126,9 @@ msiexec /i "DockerDesktop.msi" /L*V ".\msi.log" /quiet /norestart REMOVEEXISTING
 @z
 
 @x
-This runs the existing uninstaller with `--keep-data`, so settings and container data are preserved. `REMOVEEXISTINGINSTALL` defaults to `0` and is available with Docker Desktop version 4.30 and later.
+This runs the existing uninstaller with `--keep-data`, so settings and container data are preserved.
 @y
-This runs the existing uninstaller with `--keep-data`, so settings and container data are preserved. `REMOVEEXISTINGINSTALL` defaults to `0` and is available with Docker Desktop version 4.30 and later.
+This runs the existing uninstaller with `--keep-data`, so settings and container data are preserved.
 @z
 
 @x

@@ -14,15 +14,47 @@ linkTitle: Accounts
 @x
 description: FAQs about Docker IDs, account creation, organizations, companies, seats, and members
 keywords:
-  docker ID, docker account FAQ, change docker ID, username taken, trademark,
-  organization name, organization namespace, create account, Google, GitHub,
-  deactivate docker ID, organizations, members, seats, company, company owners
+  - docker ID
+  - docker account FAQ
+  - change docker ID
+  - username taken
+  - trademark
+  - organization name
+  - organization namespace
+  - create account
+  - Google
+  - GitHub
+  - deactivate docker ID
+  - organizations
+  - members
+  - seats
+  - company
+  - company owners
+  - convert Docker account
+  - sign in after convert
+  - organization owner
 @y
 description: FAQs about Docker IDs, account creation, organizations, companies, seats, and members
 keywords:
-  docker ID, docker account FAQ, change docker ID, username taken, trademark,
-  organization name, organization namespace, create account, Google, GitHub,
-  deactivate docker ID, organizations, members, seats, company, company owners
+  - docker ID
+  - docker account FAQ
+  - change docker ID
+  - username taken
+  - trademark
+  - organization name
+  - organization namespace
+  - create account
+  - Google
+  - GitHub
+  - deactivate docker ID
+  - organizations
+  - members
+  - seats
+  - company
+  - company owners
+  - convert Docker account
+  - sign in after convert
+  - organization owner
 @z
 
 @x
@@ -128,21 +160,35 @@ Docker ID for you.
 @z
 
 @x
-The organization name, sometimes referred to as the organization namespace or
-the organization ID, is the unique identifier of a Docker organization. The
-organization name can't be the same as an existing Docker ID.
+The organization namespace and the organization name are different.
 @y
-The organization name, sometimes referred to as the organization namespace or
-the organization ID, is the unique identifier of a Docker organization. The
-organization name can't be the same as an existing Docker ID.
+The organization namespace and the organization name are different.
 @z
 
 @x
-For more information, see
-[Organization accounts](/manuals/accounts/organization/_index.md).
+The namespace is the permanent identifier for the organization. Image names
+use it as the first part, as in `namespace/image:tag`. You can't change it,
+and it can't match an existing Docker ID.
 @y
-For more information, see
-[Organization accounts](manuals/accounts/organization/_index.md).
+The namespace is the permanent identifier for the organization. Image names
+use it as the first part, as in `namespace/image:tag`. You can't change it,
+and it can't match an existing Docker ID.
+@z
+
+@x
+The organization name is the public name of the organization. You can change
+it.
+@y
+The organization name is the public name of the organization. You can change
+it.
+@z
+
+@x
+For the fields you set when you create an organization, see
+[Create a Docker organization](/manuals/accounts/organization/setup/orgs.md).
+@y
+For the fields you set when you create an organization, see
+[Create a Docker organization](manuals/accounts/organization/setup/orgs.md).
 @z
 
 @x
@@ -164,9 +210,11 @@ to find out who is using Docker Desktop.
 @z
 
 @x
-For more information, see [Identify your Docker users and their Docker accounts](/manuals/accounts/organization/setup/onboard.md#step-one-identify-your-docker-users).
+For more information, see
+[Identify your Docker users and their Docker accounts](/manuals/accounts/organization/setup/onboard.md#step-one-identify-your-docker-users).
 @y
-For more information, see [Identify your Docker users and their Docker accounts](manuals/accounts/organization/setup/onboard.md#step-one-identify-your-docker-users).
+For more information, see
+[Identify your Docker users and their Docker accounts](manuals/accounts/organization/setup/onboard.md#step-one-identify-your-docker-users).
 @z
 
 @x
@@ -205,11 +253,19 @@ Some benefits of enforcing sign-in are:
 
 @x
 - Ensures users receive the benefits of your subscription.
-- Ensures security features like [Image Access Management](/manuals/desktop/enterprise/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) are applied.
+- Ensures security features like
+  [Image Access Management](/manuals/desktop/enterprise/hardened-desktop/image-access-management.md)
+  and
+  [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md)
+  are applied.
 - Ensures you gain insights into users' activity.
 @y
 - Ensures users receive the benefits of your subscription.
-- Ensures security features like [Image Access Management](manuals/desktop/enterprise/hardened-desktop/image-access-management.md) and [Registry Access Management](/manuals/desktop/enterprise/hardened-desktop/registry-access-management.md) are applied.
+- Ensures security features like
+  [Image Access Management](manuals/desktop/enterprise/hardened-desktop/image-access-management.md)
+  and
+  [Registry Access Management](manuals/desktop/enterprise/hardened-desktop/registry-access-management.md)
+  are applied.
 - Ensures you gain insights into users' activity.
 @z
 
@@ -235,6 +291,42 @@ For prerequisites and instructions, see
 @y
 For prerequisites and instructions, see
 [Convert an account into an organization](manuals/accounts/organization/setup/convert-account.md).
+@z
+
+@x
+### Can I convert an individual account that uses single sign-on?
+@y
+### Can I convert an individual account that uses single sign-on?
+@z
+
+@x
+No. **Convert** shows "Your account uses single sign-on. Contact your
+administrator to manage these settings."
+@y
+No. **Convert** shows "Your account uses single sign-on. Contact your
+administrator to manage these settings."
+@z
+
+@x
+### Why can't I sign in after converting my account to an organization?
+@y
+### Why can't I sign in after converting my account to an organization?
+@z
+
+@x
+Converting signs you out and removes your email address from every Docker
+account, so you can no longer sign in with it. Sign in with the Docker ID you
+named as the owner and select the organization in Docker Home. If you named
+someone else as the owner, sign up again and ask that owner to invite you. See
+[Convert a Docker account to an organization](/manuals/accounts/organization/setup/convert-account.md#conversion)
+for the full explanation.
+@y
+Converting signs you out and removes your email address from every Docker
+account, so you can no longer sign in with it. Sign in with the Docker ID you
+named as the owner and select the organization in Docker Home. If you named
+someone else as the owner, sign up again and ask that owner to invite you. See
+[Convert a Docker account to an organization](manuals/accounts/organization/setup/convert-account.md#conversion)
+for the full explanation.
 @z
 
 @x
