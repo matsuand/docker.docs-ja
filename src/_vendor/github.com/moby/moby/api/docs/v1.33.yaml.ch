@@ -1692,7 +1692,7 @@ definitions:
           SecurityOpt:
             type: "array"
             description: "A list of string values to customize labels for MLS
-            systems, such as SELinux."
+              systems, such as SELinux."
             items:
               type: "string"
           StorageOpt:
@@ -1758,7 +1758,7 @@ definitions:
           SecurityOpt:
             type: "array"
             description: "A list of string values to customize labels for MLS
-            systems, such as SELinux."
+              systems, such as SELinux."
             items:
               type: "string"
           StorageOpt:
@@ -6608,7 +6608,7 @@ definitions:
     properties:
       Mode:
         description: "The mode of resolution to use for internal load balancing
-      between tasks."
+          between tasks."
         type: "string"
         enum:
           - "vip"
@@ -6626,7 +6626,7 @@ definitions:
     properties:
       Mode:
         description: "The mode of resolution to use for internal load balancing
-      between tasks."
+          between tasks."
         type: "string"
         enum:
           - "vip"
@@ -8724,7 +8724,6 @@ definitions:
         description: |
           List of ID's and addresses of other managers in the swarm.
         type: "array"
-        default: null
         x-nullable: true
         items:
           $ref: "#/definitions/PeerNode"
@@ -8778,7 +8777,6 @@ definitions:
         description: |
           List of ID's and addresses of other managers in the swarm.
         type: "array"
-        default: null
         x-nullable: true
         items:
           $ref: "#/definitions/PeerNode"
@@ -8943,7 +8941,7 @@ paths:
             - `volume`=(`<volume name>` or `<mount point destination>`)
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/ContainerSummary"
@@ -9074,11 +9072,11 @@ paths:
                       GlobalIPv6PrefixLen: 0
                       MacAddress: "02:42:ac:11:00:05"
                 Mounts: []
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -9252,7 +9250,7 @@ paths:
             - `volume`=(`<volume name>` or `<mount point destination>`)
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/ContainerSummary"
@@ -9383,11 +9381,11 @@ paths:
                       GlobalIPv6PrefixLen: 0
                       MacAddress: "02:42:ac:11:00:05"
                 Mounts: []
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -9548,7 +9546,7 @@ paths:
 @x
           required: true
       responses:
-        201:
+        "201":
           description: "Container created successfully"
           schema:
             type: "object"
@@ -9568,22 +9566,22 @@ paths:
             application/json:
               Id: "e90e34656806"
               Warnings: []
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: c2ada9df5af8"
-        409:
+        "409":
           description: "conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -9596,7 +9594,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -9630,7 +9628,7 @@ paths:
 @y
           required: true
       responses:
-        201:
+        "201":
           description: "Container created successfully"
           schema:
             type: "object"
@@ -9650,22 +9648,22 @@ paths:
             application/json:
               Id: "e90e34656806"
               Warnings: []
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: c2ada9df5af8"
-        409:
+        "409":
           description: "conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -9678,7 +9676,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -9944,14 +9942,14 @@ paths:
                   Mode: "ro,Z"
                   RW: false
                   Propagation: ""
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -9973,7 +9971,7 @@ paths:
       description: "On Unix systems, this is done by running the `ps` command. This endpoint is not supported on Windows."
       operationId: "ContainerTop"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -10020,14 +10018,14 @@ paths:
                   - "pts/0"
                   - "00:00:00"
                   - "sleep 10"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10263,14 +10261,14 @@ paths:
                   Mode: "ro,Z"
                   RW: false
                   Propagation: ""
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10292,7 +10290,7 @@ paths:
       description: "On Unix systems, this is done by running the `ps` command. This endpoint is not supported on Windows."
       operationId: "ContainerTop"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -10339,14 +10337,14 @@ paths:
                   - "pts/0"
                   - "00:00:00"
                   - "sleep 10"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10373,23 +10371,23 @@ paths:
         Note: This endpoint works only for containers with the `json-file` or `journald` logging driver.
       operationId: "ContainerLogs"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10407,23 +10405,23 @@ paths:
         Note: This endpoint works only for containers with the `json-file` or `journald` logging driver.
       operationId: "ContainerLogs"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10520,7 +10518,7 @@ paths:
       operationId: "ContainerChanges"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The list of changes"
           schema:
             type: "array"
@@ -10547,14 +10545,14 @@ paths:
                 Kind: 1
               - Path: "/test"
                 Kind: 1
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10573,16 +10571,16 @@ paths:
       produces:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10606,7 +10604,7 @@ paths:
       operationId: "ContainerChanges"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The list of changes"
           schema:
             type: "array"
@@ -10633,14 +10631,14 @@ paths:
                 Kind: 1
               - Path: "/test"
                 Kind: 1
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10659,16 +10657,16 @@ paths:
       produces:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10704,7 +10702,7 @@ paths:
       operationId: "ContainerStats"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -10800,14 +10798,14 @@ paths:
                   periods: 0
                   throttled_periods: 0
                   throttled_time: 0
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10831,18 +10829,18 @@ paths:
       consumes:
         - "application/octet-stream"
       produces:
-        - "text/plain"
+        - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "cannot resize container"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10868,24 +10866,24 @@ paths:
       summary: "Start a container"
       operationId: "ContainerStart"
       responses:
-        204:
+        "204":
           description: "no error"
-        304:
+        "304":
           description: "container already started"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        400:
+        "400":
           description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10899,26 +10897,28 @@ paths:
           in: "query"
           description: "Override the key sequence for detaching a container. Format is a single character `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`, `@`, `^`, `[`, `,` or `_`."
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/stop:
     post:
       summary: "Stop a container"
       operationId: "ContainerStop"
       responses:
-        204:
+        "204":
           description: "no error"
-        304:
+        "304":
           description: "container already stopped"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10932,22 +10932,24 @@ paths:
           in: "query"
           description: "Number of seconds to wait before killing the container"
           type: "integer"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/restart:
     post:
       summary: "Restart a container"
       operationId: "ContainerRestart"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10961,6 +10963,8 @@ paths:
           in: "query"
           description: "Number of seconds to wait before killing the container"
           type: "integer"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/kill:
     post:
@@ -10968,16 +10972,16 @@ paths:
       description: "Send a POSIX signal to a container, defaulting to killing to the container."
       operationId: "ContainerKill"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -10992,6 +10996,8 @@ paths:
           description: "Signal to send to the container as an integer or string (e.g. `SIGINT`)"
           type: "string"
           default: "SIGKILL"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/update:
     post:
@@ -11001,7 +11007,7 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The container has been updated."
           schema:
             type: "object"
@@ -11010,14 +11016,14 @@ paths:
                 type: "array"
                 items:
                   type: "string"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11058,20 +11064,20 @@ paths:
       summary: "Rename a container"
       operationId: "ContainerRename"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "name already in use"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11086,6 +11092,8 @@ paths:
           required: true
           description: "New name for the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/pause:
     post:
@@ -11099,7 +11107,7 @@ paths:
       operationId: "ContainerStats"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -11195,14 +11203,14 @@ paths:
                   periods: 0
                   throttled_periods: 0
                   throttled_time: 0
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11226,18 +11234,18 @@ paths:
       consumes:
         - "application/octet-stream"
       produces:
-        - "text/plain"
+        - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "cannot resize container"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11263,24 +11271,24 @@ paths:
       summary: "Start a container"
       operationId: "ContainerStart"
       responses:
-        204:
+        "204":
           description: "no error"
-        304:
+        "304":
           description: "container already started"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        400:
+        "400":
           description: "bad parameter, including an invalid checkpoint ID"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11294,26 +11302,28 @@ paths:
           in: "query"
           description: "Override the key sequence for detaching a container. Format is a single character `[a-Z]` or `ctrl-<value>` where `<value>` is one of: `a-z`, `@`, `^`, `[`, `,` or `_`."
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/stop:
     post:
       summary: "Stop a container"
       operationId: "ContainerStop"
       responses:
-        204:
+        "204":
           description: "no error"
-        304:
+        "304":
           description: "container already stopped"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11327,22 +11337,24 @@ paths:
           in: "query"
           description: "Number of seconds to wait before killing the container"
           type: "integer"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/restart:
     post:
       summary: "Restart a container"
       operationId: "ContainerRestart"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11356,6 +11368,8 @@ paths:
           in: "query"
           description: "Number of seconds to wait before killing the container"
           type: "integer"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/kill:
     post:
@@ -11363,16 +11377,16 @@ paths:
       description: "Send a POSIX signal to a container, defaulting to killing to the container."
       operationId: "ContainerKill"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11387,6 +11401,8 @@ paths:
           description: "Signal to send to the container as an integer or string (e.g. `SIGINT`)"
           type: "string"
           default: "SIGKILL"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/update:
     post:
@@ -11396,7 +11412,7 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The container has been updated."
           schema:
             type: "object"
@@ -11405,14 +11421,14 @@ paths:
                 type: "array"
                 items:
                   type: "string"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11453,20 +11469,20 @@ paths:
       summary: "Rename a container"
       operationId: "ContainerRename"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "name already in use"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11481,6 +11497,8 @@ paths:
           required: true
           description: "New name for the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/pause:
     post:
@@ -11493,16 +11511,16 @@ paths:
         Traditionally, when suspending a process the `SIGSTOP` signal is used, which is observable by the process being suspended. With the cgroups freezer the process is unaware, and unable to capture, that it is being suspended, and subsequently resumed.
       operationId: "ContainerPause"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11512,6 +11530,8 @@ paths:
           required: true
           description: "ID or name of the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/unpause:
     post:
@@ -11519,16 +11539,16 @@ paths:
       description: "Resume a container which has been paused."
       operationId: "ContainerUnpause"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11538,6 +11558,8 @@ paths:
           required: true
           description: "ID or name of the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/attach:
     post:
@@ -11548,16 +11570,16 @@ paths:
         Traditionally, when suspending a process the `SIGSTOP` signal is used, which is observable by the process being suspended. With the cgroups freezer the process is unaware, and unable to capture, that it is being suspended, and subsequently resumed.
       operationId: "ContainerPause"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11567,6 +11589,8 @@ paths:
           required: true
           description: "ID or name of the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/unpause:
     post:
@@ -11574,16 +11598,16 @@ paths:
       description: "Resume a container which has been paused."
       operationId: "ContainerUnpause"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11593,6 +11617,8 @@ paths:
           required: true
           description: "ID or name of the container"
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/attach:
     post:
@@ -11808,22 +11834,22 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        101:
+        "101":
           description: "no error, hints proxy about hijacking"
-        200:
+        "200":
           description: "no error, no upgrade header found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11846,22 +11872,22 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        101:
+        "101":
           description: "no error, hints proxy about hijacking"
-        200:
+        "200":
           description: "no error, no upgrade header found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11917,22 +11943,22 @@ paths:
       summary: "Attach to a container via a websocket"
       operationId: "ContainerAttachWebsocket"
       responses:
-        101:
+        "101":
           description: "no error, hints proxy about hijacking"
-        200:
+        "200":
           description: "no error, no upgrade header found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -11964,7 +11990,7 @@ paths:
       operationId: "ContainerWait"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The container has exit."
           schema:
             type: "object"
@@ -11974,18 +12000,18 @@ paths:
                 description: "Exit code of the container"
                 type: "integer"
                 x-nullable: false
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12029,22 +12055,22 @@ paths:
       summary: "Attach to a container via a websocket"
       operationId: "ContainerAttachWebsocket"
       responses:
-        101:
+        "101":
           description: "no error, hints proxy about hijacking"
-        200:
+        "200":
           description: "no error, no upgrade header found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12076,7 +12102,7 @@ paths:
       operationId: "ContainerWait"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The container has exit."
           schema:
             type: "object"
@@ -12086,18 +12112,18 @@ paths:
                 description: "Exit code of the container"
                 type: "integer"
                 x-nullable: false
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12127,27 +12153,27 @@ paths:
       summary: "Remove a container"
       operationId: "ContainerDelete"
       responses:
-        204:
+        "204":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "You cannot remove a running container: c2ada9df5af8. Stop the container before attempting removal or force remove"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12172,6 +12198,8 @@ paths:
           description: "Remove the specified link associated with the container."
           type: "boolean"
           default: false
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/archive:
     head:
@@ -12179,24 +12207,24 @@ paths:
       description: "A response header `X-Docker-Container-Path-Stat` is return containing a base64 - encoded JSON object with some filesystem header information about the path."
       operationId: "ContainerArchiveInfo"
       responses:
-        200:
+        "200":
           description: "no error"
           headers:
             X-Docker-Container-Path-Stat:
               type: "string"
               description: "TODO"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Container or path does not exist"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12216,22 +12244,23 @@ paths:
       summary: "Get an archive of a filesystem resource in a container"
       description: "Get a tar archive of a resource in the filesystem of container id."
       operationId: "ContainerArchive"
-      produces: ["application/x-tar"]
+      produces:
+        - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Container or path does not exist"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12256,27 +12285,27 @@ paths:
       operationId: "PutContainerArchive"
       consumes: ["application/x-tar", "application/octet-stream"]
       responses:
-        200:
+        "200":
           description: "The content was extracted successfully"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "not a directory"
-        403:
+        "403":
           description: "Permission denied, the volume or container rootfs is marked as read-only."
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such container or path does not exist inside the container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12327,27 +12356,27 @@ paths:
       summary: "Remove a container"
       operationId: "ContainerDelete"
       responses:
-        204:
+        "204":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "You cannot remove a running container: c2ada9df5af8. Stop the container before attempting removal or force remove"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12372,6 +12401,8 @@ paths:
           description: "Remove the specified link associated with the container."
           type: "boolean"
           default: false
+      produces:
+        - "application/json"
       tags: ["Container"]
   /containers/{id}/archive:
     head:
@@ -12379,24 +12410,24 @@ paths:
       description: "A response header `X-Docker-Container-Path-Stat` is return containing a base64 - encoded JSON object with some filesystem header information about the path."
       operationId: "ContainerArchiveInfo"
       responses:
-        200:
+        "200":
           description: "no error"
           headers:
             X-Docker-Container-Path-Stat:
               type: "string"
               description: "TODO"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Container or path does not exist"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12416,22 +12447,23 @@ paths:
       summary: "Get an archive of a filesystem resource in a container"
       description: "Get a tar archive of a resource in the filesystem of container id."
       operationId: "ContainerArchive"
-      produces: ["application/x-tar"]
+      produces:
+        - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Container or path does not exist"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12456,27 +12488,27 @@ paths:
       operationId: "PutContainerArchive"
       consumes: ["application/x-tar", "application/octet-stream"]
       responses:
-        200:
+        "200":
           description: "The content was extracted successfully"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "not a directory"
-        403:
+        "403":
           description: "Permission denied, the volume or container rootfs is marked as read-only."
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such container or path does not exist inside the container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12521,7 +12553,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune containers with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -12535,7 +12567,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12548,7 +12580,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "Summary image data for the images matching the query"
           schema:
             type: "array"
@@ -12583,7 +12615,7 @@ paths:
                 SharedSize: 0
                 Labels: {}
                 Containers: 5
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12603,7 +12635,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune containers with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -12617,7 +12649,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12630,7 +12662,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "Summary image data for the images matching the query"
           schema:
             type: "array"
@@ -12665,7 +12697,7 @@ paths:
                 SharedSize: 0
                 Labels: {}
                 Containers: 5
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -12839,9 +12871,9 @@ paths:
         - name: "networkmode"
           in: "query"
           description: "Sets the networking mode for the run commands during
-        build. Supported standard values are: `bridge`, `host`, `none`, and
-        `container:<name|id>`. Any other value is taken as a custom network's
-        name to which this container should connect to."
+            build. Supported standard values are: `bridge`, `host`, `none`, and
+            `container:<name|id>`. Any other value is taken as a custom network's
+            name to which this container should connect to."
           type: "string"
         - name: "Content-type"
           in: "header"
@@ -12961,9 +12993,9 @@ paths:
         - name: "networkmode"
           in: "query"
           description: "Sets the networking mode for the run commands during
-        build. Supported standard values are: `bridge`, `host`, `none`, and
-        `container:<name|id>`. Any other value is taken as a custom network's
-        name to which this container should connect to."
+            build. Supported standard values are: `bridge`, `host`, `none`, and
+            `container:<name|id>`. Any other value is taken as a custom network's
+            name to which this container should connect to."
           type: "string"
         - name: "Content-type"
           in: "header"
@@ -13015,13 +13047,13 @@ paths:
             Only the registry domain name (and port if not the default 443) are required. However, for legacy reasons, the Docker Hub registry must be specified with both a `https://` prefix and a `/v1/` suffix even though Docker will prefer to use the v2 registry API.
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13033,7 +13065,7 @@ paths:
         - "application/json"
       operationId: "BuildPrune"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -13042,7 +13074,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13058,13 +13090,13 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "repository does not exist or no read access"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13109,7 +13141,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Image"
@@ -13190,14 +13222,14 @@ paths:
                 Layers:
                   - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
                   - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: someimage (tag: latest)"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13215,7 +13247,7 @@ paths:
       operationId: "ImageHistory"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "List of image layers"
           schema:
             type: "array"
@@ -13245,11 +13277,11 @@ paths:
                   - "scratch:latest"
                 Size: 0
                 Comment: "Imported from -"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13269,13 +13301,13 @@ paths:
             Only the registry domain name (and port if not the default 443) are required. However, for legacy reasons, the Docker Hub registry must be specified with both a `https://` prefix and a `/v1/` suffix even though Docker will prefer to use the v2 registry API.
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13287,7 +13319,7 @@ paths:
         - "application/json"
       operationId: "BuildPrune"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -13296,7 +13328,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13312,13 +13344,13 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "repository does not exist or no read access"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13363,7 +13395,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Image"
@@ -13444,14 +13476,14 @@ paths:
                 Layers:
                   - "sha256:1834950e52ce4d5a88a1bbd131c537f4d0e56d10ff0dd69e66be3b7dfa9df7e6"
                   - "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: someimage (tag: latest)"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13469,7 +13501,7 @@ paths:
       operationId: "ImageHistory"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "List of image layers"
           schema:
             type: "array"
@@ -13499,11 +13531,11 @@ paths:
                   - "scratch:latest"
                 Size: 0
                 Comment: "Imported from -"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13533,13 +13565,13 @@ paths:
       consumes:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13555,13 +13587,13 @@ paths:
       consumes:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13635,21 +13667,21 @@ paths:
         or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
-        201:
+        "201":
           description: "No error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13680,21 +13712,21 @@ paths:
         or tag already exists, it will be overwritten.
       operationId: "ImageTag"
       responses:
-        201:
+        "201":
           description: "No error"
-        400:
+        "400":
           description: "Bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13727,7 +13759,7 @@ paths:
       operationId: "ImageDelete"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The image was deleted successfully"
           schema:
             type: "array"
@@ -13738,15 +13770,15 @@ paths:
               - Untagged: "3e2f21a89f"
               - Deleted: "3e2f21a89f"
               - Deleted: "53b4f83ac9"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13775,7 +13807,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
@@ -13809,7 +13841,7 @@ paths:
                 is_automated: false
                 name: "vgauthier/sshd"
                 star_count: 0
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13833,7 +13865,7 @@ paths:
       operationId: "ImageDelete"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "The image was deleted successfully"
           schema:
             type: "array"
@@ -13844,15 +13876,15 @@ paths:
               - Untagged: "3e2f21a89f"
               - Deleted: "3e2f21a89f"
               - Deleted: "53b4f83ac9"
-        404:
+        "404":
           description: "No such image"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Conflict"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13881,7 +13913,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
@@ -13915,7 +13947,7 @@ paths:
                 is_automated: false
                 name: "vgauthier/sshd"
                 star_count: 0
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -13979,7 +14011,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune images with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -13993,7 +14025,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14006,7 +14038,7 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "An identity token was generated successfully."
           schema:
             type: "object"
@@ -14024,9 +14056,9 @@ paths:
             application/json:
               Status: "Login Succeeded"
               IdentityToken: "9cbaf023786cd7..."
-        204:
+        "204":
           description: "No error"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14044,11 +14076,11 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/SystemInfo"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14060,7 +14092,7 @@ paths:
       operationId: "SystemVersion"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14097,7 +14129,7 @@ paths:
               MinAPIVersion: "1.12"
               BuildTime: "2016-06-14T07:09:13.444803460+00:00"
               Experimental: true
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14107,9 +14139,10 @@ paths:
       summary: "Ping"
       description: "This is a dummy endpoint you can use to test if the server is accessible."
       operationId: "SystemPing"
-      produces: ["text/plain"]
+      produces:
+        - "text/plain"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
@@ -14121,7 +14154,7 @@ paths:
             Docker-Experimental:
               type: "boolean"
               description: "If the server is running with experimental mode enabled"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14135,18 +14168,18 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             $ref: "#/definitions/IdResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14199,7 +14232,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune images with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -14213,7 +14246,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14226,7 +14259,7 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "An identity token was generated successfully."
           schema:
             type: "object"
@@ -14244,9 +14277,9 @@ paths:
             application/json:
               Status: "Login Succeeded"
               IdentityToken: "9cbaf023786cd7..."
-        204:
+        "204":
           description: "No error"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14264,11 +14297,11 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/SystemInfo"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14280,7 +14313,7 @@ paths:
       operationId: "SystemVersion"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14317,7 +14350,7 @@ paths:
               MinAPIVersion: "1.12"
               BuildTime: "2016-06-14T07:09:13.444803460+00:00"
               Experimental: true
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14327,9 +14360,10 @@ paths:
       summary: "Ping"
       description: "This is a dummy endpoint you can use to test if the server is accessible."
       operationId: "SystemPing"
-      produces: ["text/plain"]
+      produces:
+        - "text/plain"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
@@ -14341,7 +14375,7 @@ paths:
             Docker-Experimental:
               type: "boolean"
               description: "If the server is running with experimental mode enabled"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14355,18 +14389,18 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             $ref: "#/definitions/IdResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14478,7 +14512,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14518,11 +14552,11 @@ paths:
                   image: "alpine"
                   name: "my-container"
               time: 1461943101
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14544,7 +14578,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14584,11 +14618,11 @@ paths:
                   image: "alpine"
                   name: "my-container"
               time: 1461943101
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14629,7 +14663,7 @@ paths:
       summary: "Get data usage information"
       operationId: "SystemDataUsage"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14708,7 +14742,7 @@ paths:
                   UsageData:
                     Size: 10920104
                     RefCount: 2
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14740,7 +14774,7 @@ paths:
       summary: "Get data usage information"
       operationId: "SystemDataUsage"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -14819,7 +14853,7 @@ paths:
                   UsageData:
                     Size: 10920104
                     RefCount: 2
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14883,12 +14917,12 @@ paths:
       produces:
         - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
             format: "binary"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14916,12 +14950,12 @@ paths:
       produces:
         - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
             format: "binary"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -14951,20 +14985,21 @@ paths:
       produces:
         - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
             format: "binary"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: "names"
           in: "query"
-          description: "Image names to filter by"
+          description: "Image names to filter by. Repeat the parameter for multiple images."
           type: "array"
+          collectionFormat: "multi"
           items:
             type: "string"
       tags: ["Image"]
@@ -14979,20 +15014,21 @@ paths:
       produces:
         - "application/x-tar"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "string"
             format: "binary"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
       parameters:
         - name: "names"
           in: "query"
-          description: "Image names to filter by"
+          description: "Image names to filter by. Repeat the parameter for multiple images."
           type: "array"
+          collectionFormat: "multi"
           items:
             type: "string"
       tags: ["Image"]
@@ -15011,9 +15047,9 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15040,22 +15076,22 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             $ref: "#/definitions/IdResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "container is paused"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15126,13 +15162,13 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Container is stopped or paused"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15163,17 +15199,17 @@ paths:
       description: "Resize the TTY session used by an exec instance. This endpoint only works if `tty` was specified as part of creating and starting the exec instance."
       operationId: "ExecResize"
       responses:
-        200:
+        "200":
           description: "No error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15202,7 +15238,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -15246,11 +15282,11 @@ paths:
                 user: "1000"
               Running: false
               Pid: 42000
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15269,9 +15305,9 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15298,22 +15334,22 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             $ref: "#/definitions/IdResponse"
-        404:
+        "404":
           description: "no such container"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such container: c2ada9df5af8"
-        409:
+        "409":
           description: "container is paused"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15384,13 +15420,13 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Container is stopped or paused"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15421,17 +15457,17 @@ paths:
       description: "Resize the TTY session used by an exec instance. This endpoint only works if `tty` was specified as part of creating and starting the exec instance."
       operationId: "ExecResize"
       responses:
-        200:
+        "200":
           description: "No error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15460,7 +15496,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -15504,11 +15540,11 @@ paths:
                 user: "1000"
               Running: false
               Pid: 42000
-        404:
+        "404":
           description: "No such exec instance"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15528,7 +15564,7 @@ paths:
       operationId: "VolumeList"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "Summary volume data that matches the query"
           schema:
             type: "object"
@@ -15553,7 +15589,7 @@ paths:
       operationId: "VolumeList"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "Summary volume data that matches the query"
           schema:
             type: "object"
@@ -15590,7 +15626,7 @@ paths:
                     o: "size=100m,uid=1000"
                     type: "tmpfs"
               Warnings: []
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15617,7 +15653,7 @@ paths:
                     o: "size=100m,uid=1000"
                     type: "tmpfs"
               Warnings: []
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15663,11 +15699,11 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        201:
+        "201":
           description: "The volume was created successfully"
           schema:
             $ref: "#/definitions/Volume"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15713,11 +15749,11 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        201:
+        "201":
           description: "The volume was created successfully"
           schema:
             $ref: "#/definitions/Volume"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15764,15 +15800,15 @@ paths:
       operationId: "VolumeInspect"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Volume"
-        404:
+        "404":
           description: "No such volume"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15790,15 +15826,15 @@ paths:
       operationId: "VolumeInspect"
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Volume"
-        404:
+        "404":
           description: "No such volume"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15817,17 +15853,17 @@ paths:
       description: "Instruct the driver to remove the volume."
       operationId: "VolumeDelete"
       responses:
-        204:
+        "204":
           description: "The volume was removed"
-        404:
+        "404":
           description: "No such volume or volume driver"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Volume is in use and cannot be removed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15842,6 +15878,8 @@ paths:
           description: "Force the removal of the volume"
           type: "boolean"
           default: false
+      produces:
+        - "application/json"
       tags: ["Volume"]
   /volumes/prune:
     post:
@@ -15860,17 +15898,17 @@ paths:
       description: "Instruct the driver to remove the volume."
       operationId: "VolumeDelete"
       responses:
-        204:
+        "204":
           description: "The volume was removed"
-        404:
+        "404":
           description: "No such volume or volume driver"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "Volume is in use and cannot be removed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15885,6 +15923,8 @@ paths:
           description: "Force the removal of the volume"
           type: "boolean"
           default: false
+      produces:
+        - "application/json"
       tags: ["Volume"]
   /volumes/prune:
     post:
@@ -15904,7 +15944,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -15918,7 +15958,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15933,7 +15973,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune volumes with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -15947,7 +15987,7 @@ paths:
                 description: "Disk space reclaimed in bytes"
                 type: "integer"
                 format: "int64"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -15966,7 +16006,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
@@ -16023,7 +16063,7 @@ paths:
                   Config: []
                 Containers: {}
                 Options: {}
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16039,7 +16079,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
@@ -16096,7 +16136,7 @@ paths:
                   Config: []
                 Containers: {}
                 Options: {}
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16135,15 +16175,15 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Network"
-        404:
+        "404":
           description: "Network not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16171,15 +16211,15 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             $ref: "#/definitions/Network"
-        404:
+        "404":
           description: "Network not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16206,17 +16246,17 @@ paths:
       summary: "Remove a network"
       operationId: "NetworkDelete"
       responses:
-        204:
+        "204":
           description: "No error"
-        403:
+        "403":
           description: "operation not supported for pre-defined networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such network"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16226,23 +16266,25 @@ paths:
           description: "Network ID or name"
           required: true
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Network"]
 @y
     delete:
       summary: "Remove a network"
       operationId: "NetworkDelete"
       responses:
-        204:
+        "204":
           description: "No error"
-        403:
+        "403":
           description: "operation not supported for pre-defined networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such network"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16252,6 +16294,8 @@ paths:
           description: "Network ID or name"
           required: true
           type: "string"
+      produces:
+        - "application/json"
       tags: ["Network"]
 @z
 
@@ -16265,7 +16309,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "No error"
           schema:
             type: "object"
@@ -16278,19 +16322,19 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        403:
+        "403":
           description: "operation not supported for pre-defined networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "plugin not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16377,7 +16421,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "No error"
           schema:
             type: "object"
@@ -16390,19 +16434,19 @@ paths:
             example:
               Id: "22be93d5babb089c5aab8dbc369042fad48ff791584ca2da2100db837a1c7c30"
               Warning: ""
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        403:
+        "403":
           description: "operation not supported for pre-defined networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "plugin not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16489,17 +16533,17 @@ paths:
       consumes:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        403:
+        "403":
           description: "Operation not supported for swarm scoped networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Network or container not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16535,17 +16579,17 @@ paths:
       consumes:
         - "application/octet-stream"
       responses:
-        200:
+        "200":
           description: "No error"
-        403:
+        "403":
           description: "Operation not supported for swarm scoped networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Network or container not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16583,17 +16627,17 @@ paths:
       consumes:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
-        403:
+        "403":
           description: "Operation not supported for swarm scoped networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Network or container not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16635,17 +16679,17 @@ paths:
       consumes:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "No error"
-        403:
+        "403":
           description: "Operation not supported for swarm scoped networks"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "Network or container not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16687,7 +16731,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune networks with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -16697,7 +16741,7 @@ paths:
                 type: "array"
                 items:
                   type: "string"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16709,13 +16753,13 @@ paths:
       description: "Returns information about installed plugins."
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Plugin"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16731,7 +16775,7 @@ paths:
             - `label` (`label=<key>`, `label=<key>=<value>`, `label!=<key>`, or `label!=<key>=<value>`) Prune networks with (or without, in case `label!=...` is used) the specified labels.
           type: "string"
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "object"
@@ -16741,7 +16785,7 @@ paths:
                 type: "array"
                 items:
                   type: "string"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16753,13 +16797,13 @@ paths:
       description: "Returns information about installed plugins."
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "No error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Plugin"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16787,7 +16831,7 @@ paths:
       summary: "Get plugin privileges"
       operationId: "GetPluginPrivileges"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -16816,7 +16860,7 @@ paths:
                 Description: ""
                 Value:
                   - "/dev/cpu_dma_latency"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16834,7 +16878,7 @@ paths:
       summary: "Get plugin privileges"
       operationId: "GetPluginPrivileges"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -16863,7 +16907,7 @@ paths:
                 Description: ""
                 Value:
                   - "/dev/cpu_dma_latency"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16887,9 +16931,9 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16908,9 +16952,9 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -16982,15 +17026,15 @@ paths:
       summary: "Inspect a plugin"
       operationId: "PluginInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Plugin"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17006,15 +17050,15 @@ paths:
       summary: "Remove a plugin"
       operationId: "PluginDelete"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Plugin"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17035,13 +17079,13 @@ paths:
       summary: "Enable a plugin"
       operationId: "PluginEnable"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17062,13 +17106,13 @@ paths:
       summary: "Disable a plugin"
       operationId: "PluginDisable"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17090,13 +17134,13 @@ paths:
       summary: "Upgrade a plugin"
       operationId: "PluginUpgrade"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17153,15 +17197,15 @@ paths:
       summary: "Inspect a plugin"
       operationId: "PluginInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Plugin"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17177,15 +17221,15 @@ paths:
       summary: "Remove a plugin"
       operationId: "PluginDelete"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Plugin"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17206,13 +17250,13 @@ paths:
       summary: "Enable a plugin"
       operationId: "PluginEnable"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17233,13 +17277,13 @@ paths:
       summary: "Disable a plugin"
       operationId: "PluginDisable"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin is not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17261,13 +17305,13 @@ paths:
       summary: "Upgrade a plugin"
       operationId: "PluginUpgrade"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17320,6 +17364,8 @@ paths:
                 Description: ""
                 Value:
                   - "/dev/cpu_dma_latency"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /plugins/create:
     post:
@@ -17328,9 +17374,9 @@ paths:
       consumes:
         - "application/x-tar"
       responses:
-        204:
+        "204":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17346,6 +17392,8 @@ paths:
           schema:
             type: "string"
             format: "binary"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /plugins/{name}/push:
     post:
@@ -17360,13 +17408,13 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17391,33 +17439,35 @@ paths:
               type: "string"
             example: ["DEBUG=1"]
       responses:
-        204:
+        "204":
           description: "No error"
-        404:
+        "404":
           description: "Plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /nodes:
     get:
       summary: "List nodes"
       operationId: "NodeList"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Node"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17463,6 +17513,8 @@ paths:
                 Description: ""
                 Value:
                   - "/dev/cpu_dma_latency"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /plugins/create:
     post:
@@ -17471,9 +17523,9 @@ paths:
       consumes:
         - "application/x-tar"
       responses:
-        204:
+        "204":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17489,6 +17541,8 @@ paths:
           schema:
             type: "string"
             format: "binary"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /plugins/{name}/push:
     post:
@@ -17503,13 +17557,13 @@ paths:
           required: true
           type: "string"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17534,33 +17588,35 @@ paths:
               type: "string"
             example: ["DEBUG=1"]
       responses:
-        204:
+        "204":
           description: "No error"
-        404:
+        "404":
           description: "Plugin not installed"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
+      produces:
+        - "application/json"
       tags: ["Plugin"]
   /nodes:
     get:
       summary: "List nodes"
       operationId: "NodeList"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Node"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17585,19 +17641,19 @@ paths:
       summary: "Inspect a node"
       operationId: "NodeInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Node"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17612,17 +17668,17 @@ paths:
       summary: "Delete a node"
       operationId: "NodeDelete"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17643,21 +17699,21 @@ paths:
       summary: "Update a node"
       operationId: "NodeUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17683,19 +17739,19 @@ paths:
       summary: "Inspect swarm"
       operationId: "SwarmInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Swarm"
-        404:
+        "404":
           description: "no such swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17708,21 +17764,21 @@ paths:
         - "application/json"
         - "text/plain"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             description: "The node ID"
             type: "string"
             example: "7v2t30z9blmxuhnyo6s4cpenp"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is already part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17758,19 +17814,19 @@ paths:
       summary: "Inspect a node"
       operationId: "NodeInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Node"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17785,17 +17841,17 @@ paths:
       summary: "Delete a node"
       operationId: "NodeDelete"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17816,21 +17872,21 @@ paths:
       summary: "Update a node"
       operationId: "NodeUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such node"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17856,19 +17912,19 @@ paths:
       summary: "Inspect swarm"
       operationId: "SwarmInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Swarm"
-        404:
+        "404":
           description: "no such swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17881,21 +17937,21 @@ paths:
         - "application/json"
         - "text/plain"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             description: "The node ID"
             type: "string"
             example: "7v2t30z9blmxuhnyo6s4cpenp"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is already part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -17946,17 +18002,17 @@ paths:
       summary: "Join an existing swarm"
       operationId: "SwarmJoin"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is already part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18016,17 +18072,17 @@ paths:
       summary: "Join an existing swarm"
       operationId: "SwarmJoin"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is already part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18096,13 +18152,13 @@ paths:
       summary: "Leave a swarm"
       operationId: "SwarmLeave"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18118,17 +18174,17 @@ paths:
       summary: "Update a swarm"
       operationId: "SwarmUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18167,7 +18223,7 @@ paths:
       consumes:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -18177,11 +18233,11 @@ paths:
                 type: "string"
             example:
               UnlockKey: "SWMKEY-1-7c37Cc8654o6p38HnroywCi19pllOnGtbdZEgtKxZu8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18207,13 +18263,13 @@ paths:
             example:
               UnlockKey: "SWMKEY-1-7c37Cc8654o6p38HnroywCi19pllOnGtbdZEgtKxZu8"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18223,17 +18279,17 @@ paths:
       summary: "List services"
       operationId: "ServiceList"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Service"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18268,13 +18324,13 @@ paths:
       summary: "Leave a swarm"
       operationId: "SwarmLeave"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18290,17 +18346,17 @@ paths:
       summary: "Update a swarm"
       operationId: "SwarmUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18339,7 +18395,7 @@ paths:
       consumes:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "object"
@@ -18349,11 +18405,11 @@ paths:
                 type: "string"
             example:
               UnlockKey: "SWMKEY-1-7c37Cc8654o6p38HnroywCi19pllOnGtbdZEgtKxZu8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18379,13 +18435,13 @@ paths:
             example:
               UnlockKey: "SWMKEY-1-7c37Cc8654o6p38HnroywCi19pllOnGtbdZEgtKxZu8"
       responses:
-        200:
+        "200":
           description: "no error"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18395,17 +18451,17 @@ paths:
       summary: "List services"
       operationId: "ServiceList"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
             items:
               $ref: "#/definitions/Service"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18432,7 +18488,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -18446,23 +18502,23 @@ paths:
             example:
               ID: "ak7w3gjqoa3kuz8xcpnyy0pvl"
               Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        403:
+        "403":
           description: "network is not eligible for services"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "name conflicts with an existing service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18551,19 +18607,19 @@ paths:
       summary: "Inspect a service"
       operationId: "ServiceInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Service"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18583,17 +18639,17 @@ paths:
       summary: "Delete a service"
       operationId: "ServiceDelete"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18611,23 +18667,23 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/ServiceUpdateResponse"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18691,7 +18747,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -18705,23 +18761,23 @@ paths:
             example:
               ID: "ak7w3gjqoa3kuz8xcpnyy0pvl"
               Warning: "unable to pin image doesnotexist:latest to digest: image library/doesnotexist:latest not found"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        403:
+        "403":
           description: "network is not eligible for services"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        409:
+        "409":
           description: "name conflicts with an existing service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18810,19 +18866,19 @@ paths:
       summary: "Inspect a service"
       operationId: "ServiceInspect"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Service"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18842,17 +18898,17 @@ paths:
       summary: "Delete a service"
       operationId: "ServiceDelete"
       responses:
-        200:
+        "200":
           description: "no error"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18870,23 +18926,23 @@ paths:
       consumes: ["application/json"]
       produces: ["application/json"]
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/ServiceUpdateResponse"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -18947,15 +19003,15 @@ paths:
           in: "query"
           type: "string"
           description: "If the X-Registry-Auth header is not specified, this
-  parameter indicates where to find registry authorization credentials. The
-  valid values are `spec` and `previous-spec`."
+            parameter indicates where to find registry authorization credentials. The
+            valid values are `spec` and `previous-spec`."
           default: "spec"
         - name: "rollback"
           in: "query"
           type: "string"
           description: "Set to this parameter to `previous` to cause a
-  server-side rollback to the previous service spec. The supplied spec will be
-  ignored in this case."
+            server-side rollback to the previous service spec. The supplied spec will be
+            ignored in this case."
         - name: "X-Registry-Auth"
           in: "header"
           description: "A base64-encoded auth configuration for pulling from private registries. [See the authentication section for details.](#section/Authentication)"
@@ -18970,15 +19026,15 @@ paths:
           in: "query"
           type: "string"
           description: "If the X-Registry-Auth header is not specified, this
-  parameter indicates where to find registry authorization credentials. The
-  valid values are `spec` and `previous-spec`."
+            parameter indicates where to find registry authorization credentials. The
+            valid values are `spec` and `previous-spec`."
           default: "spec"
         - name: "rollback"
           in: "query"
           type: "string"
           description: "Set to this parameter to `previous` to cause a
-  server-side rollback to the previous service spec. The supplied spec will be
-  ignored in this case."
+            server-side rollback to the previous service spec. The supplied spec will be
+            ignored in this case."
         - name: "X-Registry-Auth"
           in: "header"
           description: "A base64-encoded auth configuration for pulling from private registries. [See the authentication section for details.](#section/Authentication)"
@@ -19008,27 +19064,27 @@ paths:
         - "application/vnd.docker.raw-stream"
         - "application/json"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such service: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19054,27 +19110,27 @@ paths:
         - "application/vnd.docker.raw-stream"
         - "application/json"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such service"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such service: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19132,7 +19188,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -19249,11 +19305,11 @@ paths:
                             Gateway: "10.255.0.1"
                     Addresses:
                       - "10.255.0.5/16"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19300,7 +19356,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -19417,11 +19473,11 @@ paths:
                             Gateway: "10.255.0.1"
                     Addresses:
                       - "10.255.0.5/16"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19448,19 +19504,19 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Task"
-        404:
+        "404":
           description: "no such task"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19491,19 +19547,19 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Task"
-        404:
+        "404":
           description: "no such task"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19528,27 +19584,27 @@ paths:
         - "application/vnd.docker.raw-stream"
         - "application/json"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such task"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such task: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19574,27 +19630,27 @@ paths:
         - "application/vnd.docker.raw-stream"
         - "application/json"
       responses:
-        101:
+        "101":
           description: "logs returned as a stream"
           schema:
             type: "string"
             format: "binary"
-        200:
+        "200":
           description: "logs returned as a string in response body"
           schema:
             type: "string"
-        404:
+        "404":
           description: "no such task"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such task: c2ada9df5af8"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19651,7 +19707,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -19681,11 +19737,11 @@ paths:
                   Name: "app-dev.crt"
                   Labels:
                     foo: "bar"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19731,7 +19787,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -19761,11 +19817,11 @@ paths:
                   Name: "app-dev.crt"
                   Labels:
                     foo: "bar"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19792,7 +19848,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -19802,15 +19858,15 @@ paths:
                 type: "string"
             example:
               ID: "ktnbjxoalbkvbvedmg1urrz8h"
-        409:
+        "409":
           description: "name conflicts with an existing object"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19839,7 +19895,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Secret"
@@ -19874,7 +19930,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -19884,15 +19940,15 @@ paths:
                 type: "string"
             example:
               ID: "ktnbjxoalbkvbvedmg1urrz8h"
-        409:
+        "409":
           description: "name conflicts with an existing object"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19921,7 +19977,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Secret"
@@ -19944,15 +20000,15 @@ paths:
 @z
 
 @x
-        404:
+        "404":
           description: "secret not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19969,17 +20025,17 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "secret not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -19995,21 +20051,21 @@ paths:
       summary: "Update a Secret"
       operationId: "SecretUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such secret"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20038,7 +20094,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -20052,11 +20108,11 @@ paths:
                 UpdatedAt: "2016-11-05T01:20:17.327670065Z"
                 Spec:
                   Name: "server.conf"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20067,15 +20123,15 @@ paths:
           description: |
             A JSON encoded value of the filters (a `map[string][]string`) to process on the configs list. Available filters:
 @y
-        404:
+        "404":
           description: "secret not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20092,17 +20148,17 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "secret not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20118,21 +20174,21 @@ paths:
       summary: "Update a Secret"
       operationId: "SecretUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such secret"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20161,7 +20217,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             type: "array"
@@ -20175,11 +20231,11 @@ paths:
                 UpdatedAt: "2016-11-05T01:20:17.327670065Z"
                 Spec:
                   Name: "server.conf"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20205,7 +20261,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -20215,15 +20271,15 @@ paths:
                 type: "string"
             example:
               ID: "ktnbjxoalbkvbvedmg1urrz8h"
-        409:
+        "409":
           description: "name conflicts with an existing object"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20247,7 +20303,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Config"
@@ -20260,15 +20316,15 @@ paths:
               UpdatedAt: "2016-11-05T01:20:17.327670065Z"
               Spec:
                 Name: "app-dev.crt"
-        404:
+        "404":
           description: "config not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20285,17 +20341,17 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "config not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20311,21 +20367,21 @@ paths:
       summary: "Update a Config"
       operationId: "ConfigUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such config"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20355,7 +20411,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "descriptor and platform information"
           schema:
             type: "object"
@@ -20416,14 +20472,14 @@ paths:
                   Variant: ""
                   Features:
                     - ""
-        401:
+        "401":
           description: "Failed authentication or no image found"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: someimage (tag: latest)"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20453,7 +20509,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        201:
+        "201":
           description: "no error"
           schema:
             type: "object"
@@ -20463,15 +20519,15 @@ paths:
                 type: "string"
             example:
               ID: "ktnbjxoalbkvbvedmg1urrz8h"
-        409:
+        "409":
           description: "name conflicts with an existing object"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20495,7 +20551,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "no error"
           schema:
             $ref: "#/definitions/Config"
@@ -20508,15 +20564,15 @@ paths:
               UpdatedAt: "2016-11-05T01:20:17.327670065Z"
               Spec:
                 Name: "app-dev.crt"
-        404:
+        "404":
           description: "config not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20533,17 +20589,17 @@ paths:
       produces:
         - "application/json"
       responses:
-        204:
+        "204":
           description: "no error"
-        404:
+        "404":
           description: "config not found"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20559,21 +20615,21 @@ paths:
       summary: "Update a Config"
       operationId: "ConfigUpdate"
       responses:
-        200:
+        "200":
           description: "no error"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        404:
+        "404":
           description: "no such config"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        503:
+        "503":
           description: "node is not part of a swarm"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20603,7 +20659,7 @@ paths:
       produces:
         - "application/json"
       responses:
-        200:
+        "200":
           description: "descriptor and platform information"
           schema:
             type: "object"
@@ -20664,14 +20720,14 @@ paths:
                   Variant: ""
                   Features:
                     - ""
-        401:
+        "401":
           description: "Failed authentication or no image found"
           schema:
             $ref: "#/definitions/ErrorResponse"
           examples:
             application/json:
               message: "No such image: someimage (tag: latest)"
-        500:
+        "500":
           description: "Server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20745,13 +20801,13 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        101:
+        "101":
           description: "no error, hijacking successful"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"
@@ -20766,13 +20822,13 @@ paths:
       produces:
         - "application/vnd.docker.raw-stream"
       responses:
-        101:
+        "101":
           description: "no error, hijacking successful"
-        400:
+        "400":
           description: "bad parameter"
           schema:
             $ref: "#/definitions/ErrorResponse"
-        500:
+        "500":
           description: "server error"
           schema:
             $ref: "#/definitions/ErrorResponse"

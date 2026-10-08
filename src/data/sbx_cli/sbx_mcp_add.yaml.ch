@@ -264,6 +264,16 @@ description: |-
 @z
 
 @x
+      When using recorded defaults or resource scopes, sbx also requests offline_access
+      if the authorization server advertises it, allowing refresh tokens. To request
+      an exact set without this addition, use 'sbx mcp auth <server> --scope ...'.
+@y
+      When using recorded defaults or resource scopes, sbx also requests offline_access
+      if the authorization server advertises it, allowing refresh tokens. To request
+      an exact set without this addition, use 'sbx mcp auth <server> --scope ...'.
+@z
+
+@x
       Scopes you name are checked against the union of two documents a server can
       publish: the authorization server's RFC 8414 scopes_supported and the
       resource's own RFC 9728 protected-resource metadata (some servers, e.g.

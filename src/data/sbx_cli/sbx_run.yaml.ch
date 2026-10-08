@@ -277,6 +277,12 @@ usage: sbx run [flags] [AGENT|SANDBOX_KIT] [PATH...] [-- AGENT_ARGS...]
       usage: Image pull policy (always|missing|never)
 @z
 
+@x rm
+      usage: Remove the sandbox after the agent session exits
+@y
+      usage: Remove the sandbox after the agent session exits
+@z
+
 @x skills
       usage: |
         Shared skills store mode for the agent's skills directory (e.g. ~/.claude/skills): off, readonly (store linked in read-only, directory stays writable), or readwrite (store mounted over it, writes are shared). Default: readonly, or the configured skills.defaultMode setting. Can only be used when creating a new sandbox.

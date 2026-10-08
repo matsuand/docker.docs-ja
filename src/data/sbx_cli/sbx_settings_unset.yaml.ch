@@ -14,9 +14,11 @@ description: |-
 @z
 
 @x
-    The setting then evaluates from its environment variable or default value.
+    Administrator policy remains in effect. Otherwise, the setting evaluates from
+    its environment variable, remote default, or built-in default.
 @y
-    The setting then evaluates from its environment variable or default value.
+    Administrator policy remains in effect. Otherwise, the setting evaluates from
+    its environment variable, remote default, or built-in default.
 @z
 
 @x

@@ -684,6 +684,24 @@ proxy, because those proxies can't carry UDP. ICMP remains blocked.
 @z
 
 @x
+UDP to local-network destinations is blocked before any policy is evaluated,
+so no allow rule can permit it, including one that allows all hosts. This
+covers multicast, link-local, and unspecified addresses, `255.255.255.255`,
+and the broadcast addresses of the host's networks. As a result, discovery
+protocols that use multicast, such as mDNS and SSDP, don't work from a
+sandbox. UDP to `host.docker.internal` isn't affected. The network log records
+these connections under the rule `<udp local network boundary>`.
+@y
+UDP to local-network destinations is blocked before any policy is evaluated,
+so no allow rule can permit it, including one that allows all hosts. This
+covers multicast, link-local, and unspecified addresses, `255.255.255.255`,
+and the broadcast addresses of the host's networks. As a result, discovery
+protocols that use multicast, such as mDNS and SSDP, don't work from a
+sandbox. UDP to `host.docker.internal` isn't affected. The network log records
+these connections under the rule `<udp local network boundary>`.
+@z
+
+@x
 Inspect UDP rules or check a destination:
 @y
 Inspect UDP rules or check a destination:

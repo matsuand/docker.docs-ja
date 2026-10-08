@@ -275,14 +275,16 @@ Docker supports the following provisioning methods:
 - SCIM provisioning: Sync users and groups from your identity provider to Docker
 - Group mapping: Sync user groups from your identity provider with teams in your
   Docker organization
-- Manual provisioning: Turn off automatic provisioning and manually invite users
+- Manual invitations: Invite users directly. You can turn off JIT only after you
+  enable SCIM.
 @y
 - JIT provisioning (default): Users are automatically added to your organization
   when they sign in via SSO
 - SCIM provisioning: Sync users and groups from your identity provider to Docker
 - Group mapping: Sync user groups from your identity provider with teams in your
   Docker organization
-- Manual provisioning: Turn off automatic provisioning and manually invite users
+- Manual invitations: Invite users directly. You can turn off JIT only after you
+  enable SCIM.
 @z
 
 @x

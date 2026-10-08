@@ -43,6 +43,144 @@ For more frequently asked questions, see the [FAQs](/manuals/desktop/troubleshoo
 @z
 
 @x
+## 4.94.0
+@y
+## 4.94.0
+@z
+
+@x
+{{< release-date date="2026-10-05" >}}
+@y
+{{< release-date date="2026-10-05" >}}
+@z
+
+@x
+{{< desktop-install-v2 all=true win_arm_release="Early Access" version="4.94.0" build_path="/241994/" >}}
+@y
+{{< desktop-install-v2 all=true win_arm_release="早期アクセス" version="4.94.0" build_path="/241994/" >}}
+@z
+
+@x
+### Update
+@y
+### 機能更新 {#updates}
+@z
+
+@x
+- Docker Offload `v0.6.53`
+- [containerd v2.3.6](https://github.com/containerd/containerd/releases/tag/v2.3.6)
+- [Docker Agent v1.144.0](https://github.com/docker/docker-agent/releases/tag/v1.144.0)
+- [NVIDIA Container Toolkit v1.20.1](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.20.1)
+- [Docker Scout CLI v1.25.0](https://github.com/docker/scout-cli/releases/tag/v1.25.0)
+- [Docker Engine v29.8.2](https://docs.docker.com/engine/release-notes/29/#2982)
+- [Docker Buildx v0.37.2](https://github.com/docker/buildx/releases/tag/v0.37.2)
+@y
+- Docker Offload `v0.6.53`
+- [containerd v2.3.6](https://github.com/containerd/containerd/releases/tag/v2.3.6)
+- [Docker Agent v1.144.0](https://github.com/docker/docker-agent/releases/tag/v1.144.0)
+- [NVIDIA Container Toolkit v1.20.1](https://github.com/NVIDIA/nvidia-container-toolkit/releases/tag/v1.20.1)
+- [Docker Scout CLI v1.25.0](https://github.com/docker/scout-cli/releases/tag/v1.25.0)
+- [Docker Engine v29.8.2](https://docs.docker.com/engine/release-notes/29/#2982)
+- [Docker Buildx v0.37.2](https://github.com/docker/buildx/releases/tag/v0.37.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### バグフィックスと拡張 {#bug-fixes-and-enhancements}
+@z
+
+@x
+#### For all platforms
+@y
+#### 全プラットフォーム向け {#for-all-platforms}
+@z
+
+@x
+- Fixed an issue where Resource Saver could pause the VM before the Docker API was ready, causing transient errors during engine startup or restart.
+- Fixed `kubectl logs` not working with `kubeadm`.
+- Fixed the Docker Desktop service being left stopped after an update when it was running but not configured to auto-start.
+- Fixed stored API keys being written in clear to Docker Desktop logs and included in diagnostics bundles.
+- Fixed the account name and tier briefly showing as empty and personal after a restart when Docker Hub was slow to respond.
+- Changed the default logging driver for new Linux containers to `local` to enable automatic log rotation and reduce disk usage.
+- Fixed an issue in the **Images** view where the reclaimable disk space value could get stuck at **0 Bytes** while selecting images for deletion.
+- Improved VM disk creation speed and reduced host disk space usage by skipping unnecessary inode table zeroing on sparse and pre-zeroed storage.
+- Fixed Docker Desktop writing a multi-gigabyte error file and consuming excessive memory when the backend failed to start.
+- Docker Desktop now names the settings file that needs correcting instead of reporting an unexpected error when it contains invalid JSON.
+- Stopped Docker Desktop logs from recording unobfuscated values for IPC payloads that are JSON arrays or plain strings.
+- Fixed a deadlock that caused Docker Desktop to hang indefinitely when quitting while an engine recovery or error dialog was displayed.
+- Fixed the kindest/node tag showing blank in `docker desktop kubernetes images`.
+- docker-pass:
+   - Removing a secret that does not exist is now consistent with other `docker remove` commands.
+   - Running the examples from the help text no longer prefixes the secret with a line break.
+- Fixed long Ask Gordon conversations where the end of responses was hidden behind the user's message, and where scrolling up jumped around or got stuck.
+@y
+- Fixed an issue where Resource Saver could pause the VM before the Docker API was ready, causing transient errors during engine startup or restart.
+- Fixed `kubectl logs` not working with `kubeadm`.
+- Fixed the Docker Desktop service being left stopped after an update when it was running but not configured to auto-start.
+- Fixed stored API keys being written in clear to Docker Desktop logs and included in diagnostics bundles.
+- Fixed the account name and tier briefly showing as empty and personal after a restart when Docker Hub was slow to respond.
+- Changed the default logging driver for new Linux containers to `local` to enable automatic log rotation and reduce disk usage.
+- Fixed an issue in the **Images** view where the reclaimable disk space value could get stuck at **0 Bytes** while selecting images for deletion.
+- Improved VM disk creation speed and reduced host disk space usage by skipping unnecessary inode table zeroing on sparse and pre-zeroed storage.
+- Fixed Docker Desktop writing a multi-gigabyte error file and consuming excessive memory when the backend failed to start.
+- Docker Desktop now names the settings file that needs correcting instead of reporting an unexpected error when it contains invalid JSON.
+- Stopped Docker Desktop logs from recording unobfuscated values for IPC payloads that are JSON arrays or plain strings.
+- Fixed a deadlock that caused Docker Desktop to hang indefinitely when quitting while an engine recovery or error dialog was displayed.
+- Fixed the kindest/node tag showing blank in `docker desktop kubernetes images`.
+- docker-pass:
+   - Removing a secret that does not exist is now consistent with other `docker remove` commands.
+   - Running the examples from the help text no longer prefixes the secret with a line break.
+- Fixed long Ask Gordon conversations where the end of responses was hidden behind the user's message, and where scrolling up jumped around or got stuck.
+@z
+
+@x
+#### For Mac
+@y
+#### Mac 向け {#for-mac}
+@z
+
+@x
+- Fixed the update tooltip suggesting to move Docker Desktop to `/Applications` when that is the folder the current user cannot modify. Fixes [docker/desktop-feedback#598](https://github.com/docker/desktop-feedback/issues/598).
+- Fixed repeated privileged-access prompts when Docker Desktop starts automatically after a reboot. Fixes [docker/desktop-feedback#651](https://github.com/docker/desktop-feedback/issues/651).
+- Fixed the "CLI tools installation" setting on macOS reverting to System when Docker Desktop could not update the login shell profile.
+- Fixed zsh completions not being set up when `~/.zshrc` doesn't exist.
+@y
+- Fixed the update tooltip suggesting to move Docker Desktop to `/Applications` when that is the folder the current user cannot modify. Fixes [docker/desktop-feedback#598](https://github.com/docker/desktop-feedback/issues/598).
+- Fixed repeated privileged-access prompts when Docker Desktop starts automatically after a reboot. Fixes [docker/desktop-feedback#651](https://github.com/docker/desktop-feedback/issues/651).
+- Fixed the "CLI tools installation" setting on macOS reverting to System when Docker Desktop could not update the login shell profile.
+- Fixed zsh completions not being set up when `~/.zshrc` doesn't exist.
+@z
+
+@x
+#### For Windows
+@y
+#### Windows 向け {#for-windows}
+@z
+
+@x
+- Improved WSL startup errors to explain when virtualization is disabled in firmware, nested virtualization is unavailable, or the Windows hypervisor is disabled at startup, with guidance for resolving each condition.
+- Fixed the Docker Desktop service losing its automatic start mode after an update run by WinGet or another external installer when the service had been installed with `--always-run-service`.
+- Fixed a bug introduced in 4.92.0 where WSL integration could fail to start with "timed out waiting for ... to be automounted". Fixes [docker/desktop-feedback#695](https://github.com/docker/desktop-feedback/issues/695).
+@y
+- Improved WSL startup errors to explain when virtualization is disabled in firmware, nested virtualization is unavailable, or the Windows hypervisor is disabled at startup, with guidance for resolving each condition.
+- Fixed the Docker Desktop service losing its automatic start mode after an update run by WinGet or another external installer when the service had been installed with `--always-run-service`.
+- Fixed a bug introduced in 4.92.0 where WSL integration could fail to start with "timed out waiting for ... to be automounted". Fixes [docker/desktop-feedback#695](https://github.com/docker/desktop-feedback/issues/695).
+@z
+
+@x
+#### For Linux
+@y
+#### Linux 向け {#for-linux}
+@z
+
+@x
+- Fixed a bug on Linux where quitting Docker Desktop could close unrelated applications, including all open terminal windows. Fixes [docker/desktop-linux#109](https://github.com/docker/desktop-linux/issues/109).
+@y
+- Fixed a bug on Linux where quitting Docker Desktop could close unrelated applications, including all open terminal windows. Fixes [docker/desktop-linux#109](https://github.com/docker/desktop-linux/issues/109).
+@z
+
+@x
 ## 4.93.0
 @y
 ## 4.93.0

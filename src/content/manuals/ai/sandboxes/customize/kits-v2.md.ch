@@ -1190,9 +1190,13 @@ assets from `files/home/`.
 @z
 
 @x
-Runs at every sandbox start. String array, not interpreted by a shell.
+Runs at every sandbox start. String array, not interpreted by a shell. A
+`$WORKSPACE_DIR` reference in the array is passed unchanged. To expand it, run
+the command through a shell, for example `["sh", "-c", "..."]`.
 @y
-Runs at every sandbox start. String array, not interpreted by a shell.
+Runs at every sandbox start. String array, not interpreted by a shell. A
+`$WORKSPACE_DIR` reference in the array is passed unchanged. To expand it, run
+the command through a shell, for example `["sh", "-c", "..."]`.
 @z
 
 @x
@@ -1265,14 +1269,14 @@ Files written at sandbox start, with runtime substitution.
 | Field           | Default  | Description                                               |
 | --------------- | -------- | --------------------------------------------------------- |
 | `path`          | —        | Absolute container path.                                  |
-| `content`       | —        | File content. `${WORKDIR}` expands to the workspace path. |
+| `content`       | —        | File content. Write `${WORKDIR}` for the workspace path. |
 | `mode`          | `"0644"` | File permissions in octal.                                |
 | `onlyIfMissing` | `false`  | Skip if the file already exists.                          |
 @y
 | Field           | Default  | Description                                               |
 | --------------- | -------- | --------------------------------------------------------- |
 | `path`          | —        | Absolute container path.                                  |
-| `content`       | —        | File content. `${WORKDIR}` expands to the workspace path. |
+| `content`       | —        | File content. Write `${WORKDIR}` for the workspace path. |
 | `mode`          | `"0644"` | File permissions in octal.                                |
 | `onlyIfMissing` | `false`  | Skip if the file already exists.                          |
 @z
@@ -1287,6 +1291,42 @@ The runtime writes these files as the agent user with UID 1000. The target
 path must be writable by that user. To write to a root-owned path such as
 `/etc`, use an `install` command, which runs as root by default. Set ownership
 in the install command if the agent needs to modify the file later.
+@z
+
+@x
+Write `${WORKDIR}` in `content` and `$WORKSPACE_DIR` in commands. Three names
+look alike and mean different things:
+@y
+Write `${WORKDIR}` in `content` and `$WORKSPACE_DIR` in commands. Three names
+look alike and mean different things:
+@z
+
+@x
+| Name            | What it is                                                    | Where it applies                                 |
+| --------------- | ------------------------------------------------------------- | ------------------------------------------------ |
+| `${WORKDIR}`    | Placeholder for the workspace path                            | `setup.files[].content` only                     |
+| `WORKSPACE_DIR` | Environment variable set by the runtime to the workspace path | Shell commands, and the agent                    |
+| `WORKDIR`       | The template image's Dockerfile working directory             | Where commands start, see [install](#install)    |
+@y
+| Name            | What it is                                                    | Where it applies                                 |
+| --------------- | ------------------------------------------------------------- | ------------------------------------------------ |
+| `${WORKDIR}`    | Placeholder for the workspace path                            | `setup.files[].content` only                     |
+| `WORKSPACE_DIR` | Environment variable set by the runtime to the workspace path | Shell commands, and the agent                    |
+| `WORKDIR`       | The template image's Dockerfile working directory             | Where commands start, see [install](#install)    |
+@z
+
+@x
+The runtime replaces `${WORKDIR}` when it creates the sandbox, only inside
+`content`, never in `path` or in commands. `WORKSPACE_DIR` is an environment
+variable, so a `$WORKSPACE_DIR` reference expands only when a shell runs the
+command. `install` strings run through `sh -c`. `startup` arrays run without a
+shell. A Dockerfile `WORKDIR` doesn't define an environment variable.
+@y
+The runtime replaces `${WORKDIR}` when it creates the sandbox, only inside
+`content`, never in `path` or in commands. `WORKSPACE_DIR` is an environment
+variable, so a `$WORKSPACE_DIR` reference expands only when a shell runs the
+command. `install` strings run through `sh -c`. `startup` arrays run without a
+shell. A Dockerfile `WORKDIR` doesn't define an environment variable.
 @z
 
 @x
@@ -1912,6 +1952,7 @@ content from sandbox initialization, and declare runtime capabilities:
 | Automatic `files/home/` and `files/workspace/` injection | Dockerfile `COPY`, with lifecycle hooks for destinations provided by runtime mounts |
 | `permissions.network` and `credentials` | Network-policy and credential capabilities |
 | `agentInstructions` | Agent-context capability |
+| `${WORKDIR}` in `setup.files[].content` | `${{ kit.env.WORKSPACE_DIR }}` in lifecycle [`files` content](/manuals/ai/sandboxes/customize/author/_index.md#generated-files) |
 @y
 | V2 surface | V3 equivalent |
 | --- | --- |
@@ -1925,6 +1966,7 @@ content from sandbox initialization, and declare runtime capabilities:
 | Automatic `files/home/` and `files/workspace/` injection | Dockerfile `COPY`, with lifecycle hooks for destinations provided by runtime mounts |
 | `permissions.network` and `credentials` | Network-policy and credential capabilities |
 | `agentInstructions` | Agent-context capability |
+| `${WORKDIR}` in `setup.files[].content` | `${{ kit.env.WORKSPACE_DIR }}` in lifecycle [`files` content](manuals/ai/sandboxes/customize/author/_index.md#generated-files) |
 @z
 
 @x

@@ -223,14 +223,14 @@ forwarding from `ANY` zone to the `docker` zone.
 
 @x
 [Uncomplicated Firewall](https://launchpad.net/ufw)
-(ufw) is a frontend that ships with Debian and Ubuntu,
-and it lets you manage firewall rules. Docker and ufw use firewall rules in
-ways that make them incompatible with each other.
+(ufw) is a frontend that ships with Ubuntu, and it lets you manage firewall
+rules. Docker and ufw use firewall rules in ways that make them incompatible
+with each other.
 @y
 [Uncomplicated Firewall](https://launchpad.net/ufw)
-(ufw) is a frontend that ships with Debian and Ubuntu,
-and it lets you manage firewall rules. Docker and ufw use firewall rules in
-ways that make them incompatible with each other.
+(ufw) is a frontend that ships with Ubuntu, and it lets you manage firewall
+rules. Docker and ufw use firewall rules in ways that make them incompatible
+with each other.
 @z
 
 @x

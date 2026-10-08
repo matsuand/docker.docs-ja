@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Troubleshoot provisioning
 linkTitle: Troubleshoot
@@ -14,15 +16,19 @@ keywords: SCIM troubleshooting, user provisioning, JIT provisioning, group mappi
 @z
 
 @x
-This page helps troubleshoot common user provisioning issues including user roles, attributes, and unexpected account behavior with SCIM and Just-in-Time (JIT) provisioning.
+This page helps troubleshoot common user provisioning issues including user
+roles, attributes, and unexpected account behavior with SCIM and Just-in-Time
+(JIT) provisioning.
 @y
-This page helps troubleshoot common user provisioning issues including user roles, attributes, and unexpected account behavior with SCIM and Just-in-Time (JIT) provisioning.
+This page helps troubleshoot common user provisioning issues including user
+roles, attributes, and unexpected account behavior with SCIM and Just-in-Time
+(JIT) provisioning.
 @z
 
 @x
-## SCIM attribute values are overwritten or ignored
+## Full name or team membership changes after sign-in
 @y
-## SCIM attribute values are overwritten or ignored
+## Full name or team membership changes after sign-in
 @z
 
 @x
@@ -32,11 +38,13 @@ This page helps troubleshoot common user provisioning issues including user role
 @z
 
 @x
-Typically, this scenario does not produce an error message in Docker or your
-IdP. This issue usually surfaces as incorrect role or team assignment.
+This scenario doesn't usually produce an error message in Docker or your IdP.
+A user's full name changes after they sign in, or a team membership
+disappears after a SCIM sync and comes back the next time they sign in.
 @y
-Typically, this scenario does not produce an error message in Docker or your
-IdP. This issue usually surfaces as incorrect role or team assignment.
+This scenario doesn't usually produce an error message in Docker or your IdP.
+A user's full name changes after they sign in, or a team membership
+disappears after a SCIM sync and comes back the next time they sign in.
 @z
 
 @x
@@ -46,17 +54,37 @@ IdP. This issue usually surfaces as incorrect role or team assignment.
 @z
 
 @x
-- JIT provisioning is enabled, and Docker is using values from your IdP's
-  SSO sign in flow to provision the user, which overrides
-  SCIM-provided attributes.
-- SCIM was enabled after the user was already provisioned via JIT, so SCIM
-  updates don't take effect.
+JIT and SCIM are both enabled:
 @y
-- JIT provisioning is enabled, and Docker is using values from your IdP's
-  SSO sign in flow to provision the user, which overrides
-  SCIM-provided attributes.
-- SCIM was enabled after the user was already provisioned via JIT, so SCIM
-  updates don't take effect.
+JIT and SCIM are both enabled:
+@z
+
+@x
+- Each SSO sign-in writes the full name from the SSO assertion to the Docker
+  account, replacing a name that SCIM set. The next SCIM sync can set it
+  back.
+- At sign-in, JIT adds the user to the teams the SSO assertion lists. SCIM
+  group sync makes each mapped group's membership match the IdP group
+  exactly. If the IdP group doesn't include the user, the next sync removes
+  the team JIT added, and the next sign-in adds it back.
+@y
+- Each SSO sign-in writes the full name from the SSO assertion to the Docker
+  account, replacing a name that SCIM set. The next SCIM sync can set it
+  back.
+- At sign-in, JIT adds the user to the teams the SSO assertion lists. SCIM
+  group sync makes each mapped group's membership match the IdP group
+  exactly. If the IdP group doesn't include the user, the next sync removes
+  the team JIT added, and the next sign-in adds it back.
+@z
+
+@x
+Roles aren't affected. JIT sets the organization role only when it first adds
+the user. A later SCIM update can change that role, and the next sign-in
+leaves the SCIM role in place.
+@y
+Roles aren't affected. JIT sets the organization role only when it first adds
+the user. A later SCIM update can change that role, and the next sign-in
+leaves the SCIM role in place.
 @z
 
 @x
@@ -66,11 +94,9 @@ IdP. This issue usually surfaces as incorrect role or team assignment.
 @z
 
 @x
-- Docker organizations using SCIM with SSO
-- Users provisioned via JIT prior to SCIM setup
+Docker organizations that use SCIM while JIT is still enabled.
 @y
-- Docker organizations using SCIM with SSO
-- Users provisioned via JIT prior to SCIM setup
+Docker organizations that use SCIM while JIT is still enabled.
 @z
 
 @x
@@ -80,17 +106,17 @@ IdP. This issue usually surfaces as incorrect role or team assignment.
 @z
 
 @x
-1. Enable JIT and SSO for your Docker organization.
-1. Sign in to Docker as a user via SSO.
-1. Enable SCIM and set role/team attributes for that user.
-1. SCIM attempts to update the user's attributes, but the role or team
-   assignment does not reflect changes.
+1. Enable SSO for your Docker organization. JIT is turned on by default.
+1. Sign in through SSO with a user whose assertion includes a team.
+1. Enable SCIM and synchronize groups that don't include that team.
+1. The team membership from sign-in is removed. Signing in again adds it
+   back.
 @y
-1. Enable JIT and SSO for your Docker organization.
-1. Sign in to Docker as a user via SSO.
-1. Enable SCIM and set role/team attributes for that user.
-1. SCIM attempts to update the user's attributes, but the role or team
-   assignment does not reflect changes.
+1. Enable SSO for your Docker organization. JIT is turned on by default.
+1. Sign in through SSO with a user whose assertion includes a team.
+1. Enable SCIM and synchronize groups that don't include that team.
+1. The team membership from sign-in is removed. Signing in again adds it
+   back.
 @z
 
 @x
@@ -100,83 +126,83 @@ IdP. This issue usually surfaces as incorrect role or team assignment.
 @z
 
 @x
-#### Disable JIT provisioning (recommended)
+#### Turn off JIT provisioning (recommended)
 @y
-#### Disable JIT provisioning (recommended)
+#### Turn off JIT provisioning (recommended)
 @z
 
 @x
-1. Sign in to [Docker Home](https://app.docker.com/).
-1. Select **Identity & auth**, then **SSO and SCIM**.
-1. Find the relevant SSO connection.
-1. Select the **actions menu** and choose **Edit**.
-1. Disable **Just-in-Time provisioning**.
-1. Save your changes.
+You can turn off JIT only while SCIM is enabled. Follow
+[Disable JIT provisioning](/manuals/security/provisioning/just-in-time.md#disable-jit-provisioning).
 @y
-1. Sign in to [Docker Home](https://app.docker.com/).
-1. Select **Identity & auth**, then **SSO and SCIM**.
-1. Find the relevant SSO connection.
-1. Select the **actions menu** and choose **Edit**.
-1. Disable **Just-in-Time provisioning**.
-1. Save your changes.
+You can turn off JIT only while SCIM is enabled. Follow
+[Disable JIT provisioning](manuals/security/provisioning/just-in-time.md#disable-jit-provisioning).
 @z
 
 @x
-With JIT disabled, Docker uses SCIM as the source of truth for user creation
-and role assignment.
+With JIT turned off, SCIM is the source for user creation, profile updates,
+and group membership.
 @y
-With JIT disabled, Docker uses SCIM as the source of truth for user creation
-and role assignment.
+With JIT turned off, SCIM is the source for user creation, profile updates,
+and group membership.
 @z
 
 @x
-**Keep JIT enabled and match attributes**
+#### Keep JIT enabled
 @y
-**Keep JIT enabled and match attributes**
+#### Keep JIT enabled
 @z
 
 @x
-If you prefer to keep JIT enabled:
+If you keep JIT enabled:
 @y
-If you prefer to keep JIT enabled:
+If you keep JIT enabled:
 @z
 
 @x
-- Make sure your IdP's SSO attribute mappings match the values being sent
-  by SCIM.
-- Avoid configuring SCIM to override attributes already set via JIT.
+- Match each user's email address exactly between the SSO assertion and SCIM.
+- Send the same team memberships in the SSO assertion that SCIM group mapping
+  synchronizes.
+- Expect each sign-in to update the full name from the SSO assertion.
 @y
-- Make sure your IdP's SSO attribute mappings match the values being sent
-  by SCIM.
-- Avoid configuring SCIM to override attributes already set via JIT.
+- Match each user's email address exactly between the SSO assertion and SCIM.
+- Send the same team memberships in the SSO assertion that SCIM group mapping
+  synchronizes.
+- Expect each sign-in to update the full name from the SSO assertion.
 @z
 
 @x
-This option requires strict coordination between SSO and SCIM attributes
-in your IdP configuration.
+While JIT is on, you still assign users to the Docker application and
+maintain group mappings in your IdP. Review
+[how SCIM works with JIT](/manuals/security/provisioning/scim/_index.md#choose-how-scim-works-with-jit)
+before you keep both enabled.
 @y
-This option requires strict coordination between SSO and SCIM attributes
-in your IdP configuration.
+While JIT is on, you still assign users to the Docker application and
+maintain group mappings in your IdP. Review
+[how SCIM works with JIT](manuals/security/provisioning/scim/_index.md#choose-how-scim-works-with-jit)
+before you keep both enabled.
 @z
 
 @x
-## SCIM updates don't apply to existing users
+## User is deactivated after a SCIM sync
 @y
-## SCIM updates don't apply to existing users
+## User is deactivated after a SCIM sync
 @z
 
 @x
-### Causes
+### Cause
 @y
-### Causes
+### Cause
 @z
 
 @x
-User accounts were originally created manually or via JIT, and SCIM is not
-linked to manage them.
+The user isn't assigned to the Docker application in the IdP. On the next
+synchronization, Docker deactivates the Docker account. Removing the user
+from a mapped group removes that user from the team only.
 @y
-User accounts were originally created manually or via JIT, and SCIM is not
-linked to manage them.
+The user isn't assigned to the Docker application in the IdP. On the next
+synchronization, Docker deactivates the Docker account. Removing the user
+from a mapped group removes that user from the team only.
 @z
 
 @x
@@ -186,31 +212,89 @@ linked to manage them.
 @z
 
 @x
-SCIM only manages users that it provisions. To allow SCIM to manage an
-existing user:
+1. Assign the user to the Docker application in your IdP.
+1. Match the user's email address exactly between the SSO assertion and SCIM.
+1. Trigger a SCIM synchronization in your IdP.
+1. Confirm that the account is active and that the user belongs to the
+   expected teams.
 @y
-SCIM only manages users that it provisions. To allow SCIM to manage an
-existing user:
+1. Assign the user to the Docker application in your IdP.
+1. Match the user's email address exactly between the SSO assertion and SCIM.
+1. Trigger a SCIM synchronization in your IdP.
+1. Confirm that the account is active and that the user belongs to the
+   expected teams.
 @z
 
 @x
-1. Remove the user manually from [Docker Home](https://app.docker.com) under **Members**.
-1. Trigger provisioning from your IdP.
-1. SCIM will re-create the user with correct attributes.
+To use one provisioning source, turn off JIT after SCIM is working. You can
+turn off JIT only while SCIM is enabled. Review
+[how SCIM works with JIT](/manuals/security/provisioning/scim/_index.md#choose-how-scim-works-with-jit)
+before you change the configuration.
 @y
-1. Remove the user manually from [Docker Home](https://app.docker.com) under **Members**.
-1. Trigger provisioning from your IdP.
-1. SCIM will re-create the user with correct attributes.
+To use one provisioning source, turn off JIT after SCIM is working. You can
+turn off JIT only while SCIM is enabled. Review
+[how SCIM works with JIT](manuals/security/provisioning/scim/_index.md#choose-how-scim-works-with-jit)
+before you change the configuration.
+@z
+
+@x
+## SCIM updates don't apply to existing users
+@y
+## SCIM updates don't apply to existing users
+@z
+
+@x
+### Cause
+@y
+### Cause
+@z
+
+@x
+SCIM can update any organization member whose email domain is verified on the
+SSO connection, including users created through JIT or added manually. The
+Docker account stays unchanged when that domain isn't verified on the
+connection, or when the email address in the IdP differs from the account.
+@y
+SCIM can update any organization member whose email domain is verified on the
+SSO connection, including users created through JIT or added manually. The
+Docker account stays unchanged when that domain isn't verified on the
+connection, or when the email address in the IdP differs from the account.
+@z
+
+@x
+### Solution
+@y
+### Solution
+@z
+
+@x
+1. Confirm that the user's email domain is verified on the SSO connection.
+1. Match the email address in the IdP to the Docker account.
+1. Assign the user to the Docker application and trigger provisioning.
+1. In [Docker Home](https://app.docker.com), open **Members** and confirm the
+   user.
+@y
+1. Confirm that the user's email domain is verified on the SSO connection.
+1. Match the email address in the IdP to the Docker account.
+1. Assign the user to the Docker application and trigger provisioning.
+1. In [Docker Home](https://app.docker.com), open **Members** and confirm the
+   user.
+@z
+
+@x
+If the account is still unlinked, remove that user and provision them again.
+@y
+If the account is still unlinked, remove that user and provision them again.
 @z
 
 @x
 > [!WARNING]
 >
-> Deleting a user removes their resource ownership (e.g., repositories).
-> Transfer ownership before removing the user.
+> Removing a user removes their resource ownership, such as repositories.
+> Transfer ownership before you remove the user.
 @y
 > [!WARNING]
 >
-> Deleting a user removes their resource ownership (e.g., repositories).
-> Transfer ownership before removing the user.
+> Removing a user removes their resource ownership, such as repositories.
+> Transfer ownership before you remove the user.
 @z

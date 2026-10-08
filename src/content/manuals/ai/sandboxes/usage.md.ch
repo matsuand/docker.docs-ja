@@ -176,6 +176,50 @@ Run `sbx prune` without flags to confirm and remove all stopped sandboxes.
 @z
 
 @x
+### Remove a sandbox when the agent exits
+@y
+### Remove a sandbox when the agent exits
+@z
+
+@x
+Pass `--rm` to `sbx run` for a throwaway session. The sandbox is removed when
+the agent exits, without a confirmation prompt:
+@y
+Pass `--rm` to `sbx run` for a throwaway session. The sandbox is removed when
+the agent exits, without a confirmation prompt:
+@z
+
+@x
+```console
+$ sbx run --rm claude
+```
+@y
+```console
+$ sbx run --rm claude
+```
+@z
+
+@x
+The sandbox is removed however the agent exits, and `sbx run` exits with the
+agent's exit status. If `sbx run` created the sandbox and the agent fails
+to start, the sandbox is also removed. If you reattach to an existing sandbox
+with `--rm`, that sandbox is removed only after its agent session finishes.
+@y
+The sandbox is removed however the agent exits, and `sbx run` exits with the
+agent's exit status. If `sbx run` created the sandbox and the agent fails
+to start, the sandbox is also removed. If you reattach to an existing sandbox
+with `--rm`, that sandbox is removed only after its agent session finishes.
+@z
+
+@x
+`--rm` needs an attached agent session to know when to remove the sandbox, so
+you can't combine it with `--detached` or `--detach-keys`.
+@y
+`--rm` needs an attached agent session to know when to remove the sandbox, so
+you can't combine it with `--detached` or `--detach-keys`.
+@z
+
+@x
 ## Choose a workspace
 @y
 ## Choose a workspace
@@ -341,12 +385,12 @@ $ sbx run claude --name spike ~/my-project
 
 @x
 [`sbx run`](/reference/cli/sbx/run/) creates the sandbox and attaches you to the
-agent. To create a sandbox with the current directory mounted in the background
-without attaching:
+agent. To create a sandbox with the current directory mounted, without
+attaching to it:
 @y
 [`sbx run`](__SUBDIR__/reference/cli/sbx/run/) creates the sandbox and attaches you to the
-agent. To create a sandbox with the current directory mounted in the background
-without attaching:
+agent. To create a sandbox with the current directory mounted, without
+attaching to it:
 @z
 
 @x
@@ -387,6 +431,54 @@ sessions keep it running. Its files and configuration persist. Running
 After `sbx create` finishes, the local sandbox stops automatically when no
 sessions keep it running. Its files and configuration persist. Running
 `sbx run --name <sandbox-name>` starts it again and attaches you to the agent.
+@z
+
+@x
+### Keep a sandbox running in the background
+@y
+### Keep a sandbox running in the background
+@z
+
+@x
+To keep a sandbox running after every session ends, for example to serve an
+application on a [published port](#publish-ports), start it with
+`sbx run --detached` (`-d`). The command starts the sandbox, prints its ID,
+and returns without opening an agent session:
+@y
+To keep a sandbox running after every session ends, for example to serve an
+application on a [published port](#publish-ports), start it with
+`sbx run --detached` (`-d`). The command starts the sandbox, prints its ID,
+and returns without opening an agent session:
+@z
+
+@x
+```console
+$ sbx run -d --name my-project claude .
+```
+@y
+```console
+$ sbx run -d --name my-project claude .
+```
+@z
+
+@x
+A detached sandbox keeps running until you stop it with `sbx stop` or remove
+it with `sbx rm`. You can attach to it with `sbx run --name` or run commands
+with `sbx exec`, and it keeps running after those sessions end.
+@y
+A detached sandbox keeps running until you stop it with `sbx stop` or remove
+it with `sbx rm`. You can attach to it with `sbx run --name` or run commands
+with `sbx exec`, and it keeps running after those sessions end.
+@z
+
+@x
+Running `sbx run -d --name <sandbox-name>` against an existing sandbox, such
+as one created with `sbx create`, switches it to detached mode permanently. To
+return to the default behavior, remove the sandbox and create it again.
+@y
+Running `sbx run -d --name <sandbox-name>` against an existing sandbox, such
+as one created with `sbx create`, switches it to detached mode permanently. To
+return to the default behavior, remove the sandbox and create it again.
 @z
 
 @x

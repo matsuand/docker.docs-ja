@@ -9,10 +9,10 @@
 
 @x
 <!---MARKER_GEN_START-->
-Prints the public port for a port binding
+List port mappings or print the public port for a specific mapping for the service
 @y
 <!---MARKER_GEN_START-->
-Prints the public port for a port binding
+List port mappings or print the public port for a specific mapping for the service
 @z
 
 @x
@@ -48,7 +48,7 @@ Prints the public port for a port binding
 @z
 
 @x
-Prints the public port for a port binding
+List port mappings or print the public port for a specific mapping for the service
 @y
-Prints the public port for a port binding
+List port mappings or print the public port for a specific mapping for the service
 @z

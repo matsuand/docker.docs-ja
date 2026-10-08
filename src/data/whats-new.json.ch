@@ -2,6 +2,20 @@
 %This is part of Japanese translation version for Docker's Documantation.
 
 @x
+      "product": "Docker Home",
+      "title": "Assign licenses to teams",
+      "description": "Assign a product license to a team so every current and future member receives it. The Licenses page in Docker Home shows available licenses and whether they are assigned to teams or individuals.",
+      "url": "/accounts/organization/manage/manage-licenses/#teams",
+      "published": "2026-09-29",
+@y
+      "product": "Docker Home",
+      "title": "Assign licenses to teams",
+      "description": "Assign a product license to a team so every current and future member receives it. The Licenses page in Docker Home shows available licenses and whether they are assigned to teams or individuals.",
+      "url": "/accounts/organization/manage/manage-licenses/#teams",
+      "published": "2026-09-29",
+@z
+
+@x
       "product": "Docker Sandboxes",
       "title": "Run sandboxes on Docker-managed cloud infrastructure",
       "description": "Create and manage cloud sandboxes with the sbx CLI, including cloud-specific credentials, network policies, lifecycle controls, and transfers between local and cloud environments.",

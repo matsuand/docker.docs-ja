@@ -518,6 +518,20 @@ $ sbx --cloud ttl +30m cloud-project
 @z
 
 @x
+A stopped sandbox has no running time-to-live, so `sbx --cloud ttl` reports
+that it is stopped instead of showing an expiration time. Its time-to-live
+starts again when the sandbox resumes. In `--json` output, `stopped` and
+`ttl_paused` are `true`, and the expiry fields still hold the previous
+deadline. While the sandbox is resuming, only `ttl_paused` is `true`.
+@y
+A stopped sandbox has no running time-to-live, so `sbx --cloud ttl` reports
+that it is stopped instead of showing an expiration time. Its time-to-live
+starts again when the sandbox resumes. In `--json` output, `stopped` and
+`ttl_paused` are `true`, and the expiry fields still hold the previous
+deadline. While the sandbox is resuming, only `ttl_paused` is `true`.
+@z
+
+@x
 ## Stop or remove a sandbox
 @y
 ## Stop or remove a sandbox
@@ -576,11 +590,13 @@ named run to resume without attaching.
 @z
 
 @x
-Resuming keeps the sandbox ID and state. Check its expiration with
-`sbx --cloud ttl cloud-project` after resuming.
+Resuming keeps the sandbox ID and state, and starts a new time-to-live
+period. Check its expiration with `sbx --cloud ttl cloud-project` after
+resuming.
 @y
-Resuming keeps the sandbox ID and state. Check its expiration with
-`sbx --cloud ttl cloud-project` after resuming.
+Resuming keeps the sandbox ID and state, and starts a new time-to-live
+period. Check its expiration with `sbx --cloud ttl cloud-project` after
+resuming.
 @z
 
 @x
@@ -621,6 +637,42 @@ Use `--force` to skip the prompt in scripts.
 @y
 Removal asks for confirmation, deletes the cloud sandbox, and can't be undone.
 Use `--force` to skip the prompt in scripts.
+@z
+
+@x
+### Remove a sandbox when the agent exits
+@y
+### Remove a sandbox when the agent exits
+@z
+
+@x
+Pass `--rm` to an interactive `run` to remove the sandbox when the agent
+session ends:
+@y
+Pass `--rm` to an interactive `run` to remove the sandbox when the agent
+session ends:
+@z
+
+@x
+```console
+$ sbx --cloud run --rm claude
+```
+@y
+```console
+$ sbx --cloud run --rm claude
+```
+@z
+
+@x
+The detach gesture is turned off for that session, and you can't combine
+`--rm` with `--detached`. If the session ends without completing, for example
+because the connection drops, the sandbox is kept and the CLI prints the
+command to remove it.
+@y
+The detach gesture is turned off for that session, and you can't combine
+`--rm` with `--detached`. If the session ends without completing, for example
+because the connection drops, the sandbox is kept and the CLI prints the
+command to remove it.
 @z
 
 @x

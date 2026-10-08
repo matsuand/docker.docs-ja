@@ -36,9 +36,13 @@ with a short-lived token.
 @x
 > [!NOTE]
 > OIDC connections support only GitHub as a trusted third party.
+> GitHub Enterprise Cloud (GHEC) and GitHub Enterprise Server (GHES)
+> are not supported.
 @y
 > [!NOTE]
 > OIDC connections support only GitHub as a trusted third party.
+> GitHub Enterprise Cloud (GHEC) and GitHub Enterprise Server (GHES)
+> are not supported.
 @z
 
 @x

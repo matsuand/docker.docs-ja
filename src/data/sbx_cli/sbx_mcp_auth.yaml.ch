@@ -72,6 +72,16 @@ description: |-
 @z
 
 @x
+    When using recorded defaults or resource scopes, sbx also requests offline_access
+    if the authorization server advertises it, allowing refresh tokens. An explicit
+    --scope on this command requests exactly that set, without adding offline_access.
+@y
+    When using recorded defaults or resource scopes, sbx also requests offline_access
+    if the authorization server advertises it, allowing refresh tokens. An explicit
+    --scope on this command requests exactly that set, without adding offline_access.
+@z
+
+@x
     Scopes you choose are checked against both the authorization server's RFC 8414
     scopes_supported and the resource's RFC 9728 metadata. A scope present in neither
     prints a warning but is still requested. If neither document publishes scopes,

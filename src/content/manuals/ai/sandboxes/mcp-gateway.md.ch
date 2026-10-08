@@ -830,6 +830,24 @@ aren't included in the fallback.
 @z
 
 @x
+When `sbx` uses recorded defaults or resource-required scopes, it also
+requests `offline_access` if the authorization server advertises it. The
+server can then issue a refresh token, so you don't have to authorize again
+when the access token expires. Scopes passed to `sbx mcp auth --scope` are
+requested exactly as given, without `offline_access`. Existing credentials
+issued without a refresh token aren't upgraded; run `sbx mcp auth` again to
+request a new grant.
+@y
+When `sbx` uses recorded defaults or resource-required scopes, it also
+requests `offline_access` if the authorization server advertises it. The
+server can then issue a refresh token, so you don't have to authorize again
+when the access token expires. Scopes passed to `sbx mcp auth --scope` are
+requested exactly as given, without `offline_access`. Existing credentials
+issued without a refresh token aren't upgraded; run `sbx mcp auth` again to
+request a new grant.
+@z
+
+@x
 Pass `--no-scope` to suppress the recorded defaults, resource-required scopes,
 and advertised scope fallback for one authorization, without changing the
 stored defaults:

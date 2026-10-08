@@ -440,6 +440,36 @@ for the fields.
 @z
 
 @x
+### Generated files
+@y
+### Generated files
+@z
+
+@x
+In lifecycle `files` content, write `${{ kit.env.NAME }}` to insert a
+container environment variable. For example, write
+`${{ kit.env.WORKSPACE_DIR }}` for the workspace path. Plain `$VAR` and
+`${VAR}` are written unchanged, without substituting their values. In hook
+commands, use shell syntax such as `$WORKSPACE_DIR` instead.
+@y
+In lifecycle `files` content, write `${{ kit.env.NAME }}` to insert a
+container environment variable. For example, write
+`${{ kit.env.WORKSPACE_DIR }}` for the workspace path. Plain `$VAR` and
+`${VAR}` are written unchanged, without substituting their values. In hook
+commands, use shell syntax such as `$WORKSPACE_DIR` instead.
+@z
+
+@x
+Docker Sandboxes substitutes `${{ kit.env.NAME }}` once, when it creates the
+sandbox. `kit.env` reads the final container environment, independently of a
+hook's `env` list.
+@y
+Docker Sandboxes substitutes `${{ kit.env.NAME }}` once, when it creates the
+sandbox. `kit.env` reads the final container environment, independently of a
+hook's `env` list.
+@z
+
+@x
 ## Set workload compute requirements
 @y
 ## Set workload compute requirements

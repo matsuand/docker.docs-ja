@@ -12,26 +12,6 @@ keywords: "container, daemon, runtime"
 @z
 
 @x
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@y
-<!-- This file is maintained within the docker/cli GitHub
-     repository at https://github.com/docker/cli/. Make all
-     pull requests against that repo. If you see this file in
-     another repository, consider it read-only there, as it will
-     periodically be overwritten by the definitive file. Pull
-     requests which include edits to this file in other repositories
-     will be rejected.
--->
-@z
-
-@x
 # daemon
 @y
 # daemon
@@ -55,6 +35,7 @@ A self-sufficient runtime for containers.
 Options:
       --add-runtime runtime                   Register an additional OCI compatible runtime (default [])
       --allow-direct-routing                  Allow remote access to published ports on container IP addresses
+      --apparmor-profile string               Path to AppArmor profile template
       --authorization-plugin list             Authorization plugins to load
       --bip string                            IPv4 address for the default bridge
       --bip6 string                           IPv6 address for the default bridge
@@ -81,6 +62,7 @@ Options:
       --default-network-opt mapmap            Default network options (default map[])
       --default-runtime string                Default OCI runtime for containers (default "runc")
       --default-shm-size bytes                Default shm size for containers (default 64MiB)
+      --default-stop-timeout int              Set the default container stop timeout in seconds (0 to terminate immediately) (default 10)
       --default-ulimit ulimit                 Default ulimits for containers (default [])
       --dns list                              DNS server to use
       --dns-opt list                          DNS options to use
@@ -150,6 +132,7 @@ Options:
 Options:
       --add-runtime runtime                   Register an additional OCI compatible runtime (default [])
       --allow-direct-routing                  Allow remote access to published ports on container IP addresses
+      --apparmor-profile string               Path to AppArmor profile template
       --authorization-plugin list             Authorization plugins to load
       --bip string                            IPv4 address for the default bridge
       --bip6 string                           IPv6 address for the default bridge
@@ -176,6 +159,7 @@ Options:
       --default-network-opt mapmap            Default network options (default map[])
       --default-runtime string                Default OCI runtime for containers (default "runc")
       --default-shm-size bytes                Default shm size for containers (default 64MiB)
+      --default-stop-timeout int              Set the default container stop timeout in seconds (0 to terminate immediately) (default 10)
       --default-ulimit ulimit                 Default ulimits for containers (default [])
       --dns list                              DNS server to use
       --dns-opt list                          DNS options to use
@@ -1846,6 +1830,36 @@ To use the proxy when building images and running containers, see
 @z
 
 @x
+### Default container stop timeout
+@y
+### Default container stop timeout
+@z
+
+@x
+The `--default-stop-timeout` flag sets the number of seconds to wait for a
+container to stop when the container doesn't have a `--stop-timeout` configured.
+The default is `10` seconds on Linux and `30` seconds on Windows. A value of `0`
+doesn't wait before forcefully terminating the container. Negative values are
+invalid.
+@y
+The `--default-stop-timeout` flag sets the number of seconds to wait for a
+container to stop when the container doesn't have a `--stop-timeout` configured.
+The default is `10` seconds on Linux and `30` seconds on Windows. A value of `0`
+doesn't wait before forcefully terminating the container. Negative values are
+invalid.
+@z
+
+@x
+You can also configure the timeout with the `default-stop-timeout` option in the
+[daemon configuration file](#daemon-configuration-file). You can reload this
+option without restarting the daemon.
+@y
+You can also configure the timeout with the `default-stop-timeout` option in the
+[daemon configuration file](#daemon-configuration-file). You can reload this
+option without restarting the daemon.
+@z
+
+@x
 ### Default `ulimit` settings
 @y
 ### Default `ulimit` settings
@@ -1931,6 +1945,52 @@ For information about how to create an authorization plugin, refer to the
 @y
 For information about how to create an authorization plugin, refer to the
 [authorization plugin](https://docs.docker.com/engine/extend/plugins_authorization/) section.
+@z
+
+@x
+### Configure the default AppArmor profile
+@y
+### Configure the default AppArmor profile
+@z
+
+@x
+The `--apparmor-profile` option sets the path to an AppArmor profile definition
+for Docker's default `docker-default` container profile. This option is only
+supported on Linux hosts. The file can be a static profile or a Go template.
+@y
+The `--apparmor-profile` option sets the path to an AppArmor profile definition
+for Docker's default `docker-default` container profile. This option is only
+supported on Linux hosts. The file can be a static profile or a Go template.
+@z
+
+@x
+The equivalent `daemon.json` configuration is:
+@y
+The equivalent `daemon.json` configuration is:
+@z
+
+@x
+```json
+{
+  "apparmor-profile": "/etc/docker/apparmor/docker-default"
+}
+```
+@y
+```json
+{
+  "apparmor-profile": "/etc/docker/apparmor/docker-default"
+}
+```
+@z
+
+@x
+Restart the daemon to apply changes. For template values, safe file placement,
+security considerations, and verification, see
+[Customize the default AppArmor profile](https://docs.docker.com/engine/security/apparmor/#customize-the-default-profile).
+@y
+Restart the daemon to apply changes. For template values, safe file placement,
+security considerations, and verification, see
+[Customize the default AppArmor profile](https://docs.docker.com/engine/security/apparmor/#customize-the-default-profile).
 @z
 
 @x
@@ -2611,6 +2671,7 @@ The following is a full example of the allowed configuration options on Linux:
 ```json
 {
   "allow-direct-routing": false,
+  "apparmor-profile": "",
   "authorization-plugins": [],
   "bip": "",
   "bip6": "",
@@ -2649,6 +2710,7 @@ The following is a full example of the allowed configuration options on Linux:
   "default-network-opts": {},
   "default-runtime": "runc",
   "default-shm-size": "64M",
+  "default-stop-timeout": 10,
   "default-ulimits": {
     "nofile": {
       "Hard": 64000,
@@ -2745,6 +2807,7 @@ The following is a full example of the allowed configuration options on Linux:
 ```json
 {
   "allow-direct-routing": false,
+  "apparmor-profile": "",
   "authorization-plugins": [],
   "bip": "",
   "bip6": "",
@@ -2783,6 +2846,7 @@ The following is a full example of the allowed configuration options on Linux:
   "default-network-opts": {},
   "default-runtime": "runc",
   "default-shm-size": "64M",
+  "default-stop-timeout": 10,
   "default-ulimits": {
     "nofile": {
       "Hard": 64000,
@@ -2931,6 +2995,7 @@ The following is a full example of the allowed configuration options on Windows:
   "debug": true,
   "default-network-opts": {},
   "default-runtime": "",
+  "default-stop-timeout": 30,
   "default-ulimits": {},
   "dns": [],
   "dns-opts": [],
@@ -2976,6 +3041,7 @@ The following is a full example of the allowed configuration options on Windows:
   "debug": true,
   "default-network-opts": {},
   "default-runtime": "",
+  "default-stop-timeout": 30,
   "default-ulimits": {},
   "dns": [],
   "dns-opts": [],
@@ -3143,6 +3209,7 @@ The list of currently supported options that can be reconfigured is this:
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
 | `default-runtime`                  | Configures the runtime to be used if not is specified at container creation.                                |
+| `default-stop-timeout`             | Configures the timeout for stopping containers that have no container-specific timeout.                     |
 | `runtimes`                         | Configures the list of available OCI runtimes that can be used to run containers.                           |
 | `authorization-plugin`             | Specifies the authorization plugins to use.                                                                 |
 | `insecure-registries`              | Specifies a list of registries that the daemon should consider insecure.                                    |
@@ -3159,6 +3226,7 @@ The list of currently supported options that can be reconfigured is this:
 | `max-concurrent-uploads`           | Configures the max concurrent uploads for each push.                                                        |
 | `max-download-attempts`            | Configures the max download attempts for each pull.                                                         |
 | `default-runtime`                  | Configures the runtime to be used if not is specified at container creation.                                |
+| `default-stop-timeout`             | Configures the timeout for stopping containers that have no container-specific timeout.                     |
 | `runtimes`                         | Configures the list of available OCI runtimes that can be used to run containers.                           |
 | `authorization-plugin`             | Specifies the authorization plugins to use.                                                                 |
 | `insecure-registries`              | Specifies a list of registries that the daemon should consider insecure.                                    |

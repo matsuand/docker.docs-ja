@@ -32,6 +32,28 @@ and subscriptions.
 @z
 
 @x
+## 2026-09-30
+@y
+## 2026-09-30
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Accounts that already have cloud sandboxes skip
+  [Docker Agentic Platform](/manuals/subscription-billing/plans/docker-agentic-platform.md)
+  checkout.
+@y
+- Accounts that already have cloud sandboxes skip
+  [Docker Agentic Platform](manuals/subscription-billing/plans/docker-agentic-platform.md)
+  checkout.
+@z
+
+@x
 ## 2026-09-29
 @y
 ## 2026-09-29
@@ -64,6 +86,34 @@ and subscriptions.
 @z
 
 @x
+## 2026-09-28
+@y
+## 2026-09-28
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- [Creating a team](/manuals/accounts/organization/manage/manage-a-team.md#create-a-team)
+  in Docker Home opens that team's page.
+- The
+  [member list CSV](/manuals/accounts/organization/manage/members.md#export-a-member-list-csv)
+  includes a **Licenses** column when the organization has at least one active
+  license pool. The column lists each member's assigned licenses.
+@y
+- [Creating a team](manuals/accounts/organization/manage/manage-a-team.md#create-a-team)
+  in Docker Home opens that team's page.
+- The
+  [member list CSV](manuals/accounts/organization/manage/members.md#export-a-member-list-csv)
+  includes a **Licenses** column when the organization has at least one active
+  license pool. The column lists each member's assigned licenses.
+@z
+
+@x
 ## 2026-09-24
 @y
 ## 2026-09-24
@@ -85,6 +135,22 @@ and subscriptions.
   [Docker Agentic Platform](manuals/subscription-billing/plans/docker-agentic-platform.md)
   pay-as-you-go plan with a personal account to run agents in cloud
   sandboxes. Compute is metered by the second while a sandbox runs.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- The [support request form](https://app.docker.com/support/contact) **Legal**
+  topic includes **PII/Sensitive information**, **Service abuse**, and
+  **Trademark takedowns**.
+@y
+- The [support request form](https://app.docker.com/support/contact) **Legal**
+  topic includes **PII/Sensitive information**, **Service abuse**, and
+  **Trademark takedowns**.
 @z
 
 @x

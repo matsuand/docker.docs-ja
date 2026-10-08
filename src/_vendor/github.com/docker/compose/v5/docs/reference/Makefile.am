@@ -7,7 +7,6 @@ bases = \
 	compose_alpha.md                                  \
 	compose_alpha_dry-run.md                          \
 	compose_alpha_generate.md                         \
-	compose_alpha_publish.md                          \
 	compose_alpha_scale.md                            \
 	compose_alpha_viz.md                              \
 	compose_alpha_watch.md                            \
@@ -54,7 +53,6 @@ bases = \
 	docker_compose_alpha.yaml                         \
 	docker_compose_alpha_dry-run.yaml                 \
 	docker_compose_alpha_generate.yaml                \
-	docker_compose_alpha_publish.yaml                 \
 	docker_compose_alpha_scale.yaml                   \
 	docker_compose_alpha_viz.yaml                     \
 	docker_compose_alpha_watch.yaml                   \

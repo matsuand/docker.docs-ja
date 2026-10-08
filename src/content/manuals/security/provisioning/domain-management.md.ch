@@ -20,15 +20,25 @@ keywords: domain management, domain verification, auto-provisioning, user manage
 @z
 
 @x
-Domain management lets you add and verify domains for your organization, then enable auto-provisioning to automatically add users when they sign in with email addresses that match your verified domains. This approach simplifies user management, ensures consistent security settings, and reduces the risk of unmanaged users accessing Docker without visibility or control.
+Domain management lets you add and verify domains for your organization, then
+enable auto-provisioning to automatically add users when they sign in with
+email addresses that match your verified domains. This approach simplifies
+user management, ensures consistent security settings, and reduces the risk of
+unmanaged users accessing Docker without visibility or control.
 @y
-Domain management lets you add and verify domains for your organization, then enable auto-provisioning to automatically add users when they sign in with email addresses that match your verified domains. This approach simplifies user management, ensures consistent security settings, and reduces the risk of unmanaged users accessing Docker without visibility or control.
+Domain management lets you add and verify domains for your organization, then
+enable auto-provisioning to automatically add users when they sign in with
+email addresses that match your verified domains. This approach simplifies
+user management, ensures consistent security settings, and reduces the risk of
+unmanaged users accessing Docker without visibility or control.
 @z
 
 @x
-This page provides steps to add and delete domains, configure auto-provisioning, and audit uncaptured users.
+This page provides steps to add and delete domains, configure
+auto-provisioning, and audit uncaptured users.
 @y
-This page provides steps to add and delete domains, configure auto-provisioning, and audit uncaptured users.
+This page provides steps to add and delete domains, configure
+auto-provisioning, and audit uncaptured users.
 @z
 
 @x
@@ -38,9 +48,11 @@ This page provides steps to add and delete domains, configure auto-provisioning,
 @z
 
 @x
-Adding a domain requires verification to confirm ownership. The verification process uses DNS records to prove you control the domain.
+Adding a domain requires verification to confirm ownership. The verification
+process uses DNS records to prove you control the domain.
 @y
-Adding a domain requires verification to confirm ownership. The verification process uses DNS records to prove you control the domain.
+Adding a domain requires verification to confirm ownership. The verification
+process uses DNS records to prove you control the domain.
 @z
 
 @x
@@ -74,19 +86,35 @@ Adding a domain requires verification to confirm ownership. The verification pro
 @z
 
 @x
-Verification confirms that you own the domain by adding a TXT record to your Domain Name System (DNS) host. It can take up to 72 hours for the DNS change to propagate. Docker automatically checks for the record and confirms ownership once the change is recognized.
+Verification confirms that you own the domain by adding a TXT record to your
+Domain Name System (DNS) host. It can take up to 72 hours for the DNS change to
+propagate. Docker automatically checks for the record and confirms ownership
+once the change is recognized.
 @y
-Verification confirms that you own the domain by adding a TXT record to your Domain Name System (DNS) host. It can take up to 72 hours for the DNS change to propagate. Docker automatically checks for the record and confirms ownership once the change is recognized.
+Verification confirms that you own the domain by adding a TXT record to your
+Domain Name System (DNS) host. It can take up to 72 hours for the DNS change to
+propagate. Docker automatically checks for the record and confirms ownership
+once the change is recognized.
 @z
 
 @x
 > [!TIP]
 >
-> The record name field determines where the TXT record is added in your domain (root or subdomain). For root domains like `example.com`, use `@` or leave the record name empty, depending on your provider. Don't enter values like docker, `docker-verification`, `www`, or your domain name, as these may direct to the wrong place. Check your DNS provider's documentation to verify record name requirements.
+> The record name field determines where the TXT record is added in your
+> domain (root or subdomain). For root domains like `example.com`, use `@` or
+> leave the record name empty, depending on your provider. Don't enter values
+> like docker, `docker-verification`, `www`, or your domain name, as these may
+> direct to the wrong place. Check your DNS provider's documentation to verify
+> record name requirements.
 @y
 > [!TIP]
 >
-> The record name field determines where the TXT record is added in your domain (root or subdomain). For root domains like `example.com`, use `@` or leave the record name empty, depending on your provider. Don't enter values like docker, `docker-verification`, `www`, or your domain name, as these may direct to the wrong place. Check your DNS provider's documentation to verify record name requirements.
+> The record name field determines where the TXT record is added in your
+> domain (root or subdomain). For root domains like `example.com`, use `@` or
+> leave the record name empty, depending on your provider. Don't enter values
+> like docker, `docker-verification`, `www`, or your domain name, as these may
+> direct to the wrong place. Check your DNS provider's documentation to verify
+> record name requirements.
 @z
 
 @x
@@ -106,13 +134,15 @@ your provider isn't listed, use the steps for "Other providers":
 @z
 
 @x
-1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
+1. Add your TXT record to AWS by following
+   [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
-1. Add your TXT record to AWS by following [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
+1. Add your TXT record to AWS by following
+   [Creating records by using the Amazon Route 53 console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
@@ -128,13 +158,15 @@ your provider isn't listed, use the steps for "Other providers":
 @z
 
 @x
-1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
+1. Add your TXT record to Google Cloud DNS by following
+   [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
-1. Add your TXT record to Google Cloud DNS by following [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
+1. Add your TXT record to Google Cloud DNS by following
+   [Verifying your domain with a TXT record](https://cloud.google.com/identity/docs/verify-domain-txt).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
@@ -150,13 +182,15 @@ your provider isn't listed, use the steps for "Other providers":
 @z
 
 @x
-1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
+1. Add your TXT record to GoDaddy by following
+   [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
    your domain name.
 @y
-1. Add your TXT record to GoDaddy by following [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
+1. Add your TXT record to GoDaddy by following
+   [Add a TXT record](https://www.godaddy.com/help/add-a-txt-record-19232).
 1. Wait up to 72 hours for TXT record verification.
 1. Return to the **Domain management** page of the
    **Identity & auth**, then **Domain management**, and select **Verify** next to
@@ -202,9 +236,13 @@ your provider isn't listed, use the steps for "Other providers":
 @z
 
 @x
-Domain audit identifies uncaptured users. Uncaptured users are Docker users who have authenticated using an email address associated with your verified domains but aren't members of your Docker organization.
+Domain audit identifies uncaptured users. Uncaptured users are Docker users who
+have authenticated using an email address associated with your verified
+domains but aren't members of your Docker organization.
 @y
-Domain audit identifies uncaptured users. Uncaptured users are Docker users who have authenticated using an email address associated with your verified domains but aren't members of your Docker organization.
+Domain audit identifies uncaptured users. Uncaptured users are Docker users who
+have authenticated using an email address associated with your verified
+domains but aren't members of your Docker organization.
 @z
 
 @x
@@ -230,9 +268,11 @@ Domain audit can't identify:
 @z
 
 @x
-To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
+To prevent unidentifiable users from accessing Docker Desktop,
+[enforce sign-in](/manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @y
-To prevent unidentifiable users from accessing Docker Desktop, [enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
+To prevent unidentifiable users from accessing Docker Desktop,
+[enforce sign-in](manuals/desktop/enterprise/enforce-sign-in/_index.md).
 @z
 
 @x
@@ -294,17 +334,23 @@ CSV file. For more information on bulk inviting users, see
 @z
 
 @x
-[Auto-provisioning](/manuals/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
+[Auto-provisioning](/manuals/security/provisioning/auto-provisioning.md) adds
+existing Docker users to an organization when their email addresses match a
+verified domain. For domains that belong to an SSO connection, Just-in-Time
+(JIT) provisioning takes precedence over auto-provisioning.
 @y
-[Auto-provisioning](manuals/security/provisioning/auto-provisioning.md) uses verified domains to associate organization members with email address that match the verified domains. To override auto-provisioning, you can configure one of the two alternative methods:
+[Auto-provisioning](manuals/security/provisioning/auto-provisioning.md) adds
+existing Docker users to an organization when their email addresses match a
+verified domain. For domains that belong to an SSO connection, Just-in-Time
+(JIT) provisioning takes precedence over auto-provisioning.
 @z
 
 @x
-- [Just-in-Time (JIT)](/manuals/security/provisioning/just-in-time.md) provisioning
-- [System for Cross-domain Identity Management (SCIM)](/manuals/security/provisioning/scim/_index.md)
+To compare JIT, SCIM, and auto-provisioning, see the
+[user provisioning overview](/manuals/security/provisioning/_index.md).
 @y
-- [Just-in-Time (JIT)](manuals/security/provisioning/just-in-time.md) provisioning
-- [System for Cross-domain Identity Management (SCIM)](manuals/security/provisioning/scim/_index.md)
+To compare JIT, SCIM, and auto-provisioning, see the
+[user provisioning overview](manuals/security/provisioning/_index.md).
 @z
 
 @x
@@ -314,19 +360,23 @@ CSV file. For more information on bulk inviting users, see
 @z
 
 @x
-Deleting a domain removes its TXT record value and disables any associated auto-provisioning.
+Deleting a domain removes its TXT record value and disables any associated
+auto-provisioning.
 @y
-Deleting a domain removes its TXT record value and disables any associated auto-provisioning.
+Deleting a domain removes its TXT record value and disables any associated
+auto-provisioning.
 @z
 
 @x
 > [!WARNING]
 >
-> Deleting a domain will disable auto-provisioning for that domain and remove verification. This action cannot be undone.
+> Deleting a domain will disable auto-provisioning for that domain and remove
+> verification. This action cannot be undone.
 @y
 > [!WARNING]
 >
-> Deleting a domain will disable auto-provisioning for that domain and remove verification. This action cannot be undone.
+> Deleting a domain will disable auto-provisioning for that domain and remove
+> verification. This action cannot be undone.
 @z
 
 @x

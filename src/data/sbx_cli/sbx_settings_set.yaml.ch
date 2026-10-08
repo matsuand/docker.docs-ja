@@ -14,6 +14,12 @@ description: |-
 @z
 
 @x
+    Administrator constraints apply to saved overrides. A conflicting value is rejected.
+@y
+    Administrator constraints apply to saved overrides. A conflicting value is rejected.
+@z
+
+@x
     The value is parsed according to the setting's type:
       bool   "true" or "false"
       int    integer value

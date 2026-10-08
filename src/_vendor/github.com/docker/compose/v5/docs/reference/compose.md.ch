@@ -87,14 +87,14 @@ Define and run multi-container applications with Docker
 @z
 
 @x
-| [`port`](compose_port.md)       | Print the public port for a port binding                                                |
+| [`port`](compose_port.md)       | List port mappings or print the public port for a specific mapping for the service      |
 | [`ps`](compose_ps.md)           | List containers                                                                         |
 | [`publish`](compose_publish.md) | Publish compose application                                                             |
 | [`pull`](compose_pull.md)       | Pull service images                                                                     |
 | [`push`](compose_push.md)       | Push service images                                                                     |
 | [`restart`](compose_restart.md) | Restart service containers                                                              |
 @y
-| [`port`](compose_port.md)       | Print the public port for a port binding                                                |
+| [`port`](compose_port.md)       | List port mappings or print the public port for a specific mapping for the service      |
 | [`ps`](compose_ps.md)           | List containers                                                                         |
 | [`publish`](compose_publish.md) | Publish compose application                                                             |
 | [`pull`](compose_pull.md)       | Pull service images                                                                     |

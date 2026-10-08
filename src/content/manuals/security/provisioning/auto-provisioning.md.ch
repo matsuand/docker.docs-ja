@@ -1,6 +1,8 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
+% .md リンクへの (no slash) 対応
+
 @x
 title: Auto-provisioning
 linkTitle: Auto-provision
@@ -14,19 +16,27 @@ keywords: user provisioning, just-in-time provisioning, JIT, autoprovision, Dock
 @z
 
 @x
-Auto-provisioning automatically adds users to your organization when they sign in with email addresses that match your verified domains. You must verify a domain before enabling auto-provisioning.
+Auto-provisioning automatically adds users to your organization when they
+sign in with email addresses that match your verified domains. You must verify
+a domain before enabling auto-provisioning.
 @y
-Auto-provisioning automatically adds users to your organization when they sign in with email addresses that match your verified domains. You must verify a domain before enabling auto-provisioning.
+Auto-provisioning automatically adds users to your organization when they
+sign in with email addresses that match your verified domains. You must verify
+a domain before enabling auto-provisioning.
 @z
 
 @x
 > [!IMPORTANT]
 >
-> For domains that are part of an SSO connection, Just-in-Time (JIT) provisioning takes precedence over auto-provisioning when adding users to an organization.
+> For domains that are part of an SSO connection, Just-in-Time (JIT)
+> provisioning takes precedence over auto-provisioning when adding users to an
+> organization.
 @y
 > [!IMPORTANT]
 >
-> For domains that are part of an SSO connection, Just-in-Time (JIT) provisioning takes precedence over auto-provisioning when adding users to an organization.
+> For domains that are part of an SSO connection, Just-in-Time (JIT)
+> provisioning takes precedence over auto-provisioning when adding users to an
+> organization.
 @z
 
 @x
@@ -42,17 +52,27 @@ When auto-provisioning is enabled for a verified domain:
 @z
 
 @x
-- Users who sign in to Docker with matching email addresses are automatically added to your organization.
-- Auto-provisioning only adds existing Docker users to your organization, it doesn't create new accounts.
+- Users who sign in to Docker with matching email addresses are automatically
+  added to your organization.
+- Auto-provisioning only adds existing Docker users to your organization, it
+  doesn't create new accounts.
 - Users experience no changes to their sign-in process.
-- Company and organization owners receive email notifications when new users are added.
-- You may need to [manage seats](/manuals/accounts/organization/manage/manage-seats.md) to accommodate new users.
+- Company and organization owners receive email notifications when new users
+  are added.
+- You may need to
+  [manage seats](/manuals/accounts/organization/manage/manage-seats.md) to
+  accommodate new users.
 @y
-- Users who sign in to Docker with matching email addresses are automatically added to your organization.
-- Auto-provisioning only adds existing Docker users to your organization, it doesn't create new accounts.
+- Users who sign in to Docker with matching email addresses are automatically
+  added to your organization.
+- Auto-provisioning only adds existing Docker users to your organization, it
+  doesn't create new accounts.
 - Users experience no changes to their sign-in process.
-- Company and organization owners receive email notifications when new users are added.
-- You may need to [manage seats](manuals/accounts/organization/manage/manage-seats.md) to accommodate new users.
+- Company and organization owners receive email notifications when new users
+  are added.
+- You may need to
+  [manage seats](manuals/accounts/organization/manage/manage-seats.md) to
+  accommodate new users.
 @z
 
 @x
@@ -102,9 +122,9 @@ The **Auto-provisioning** column will update to **Enabled** for the domain.
 @z
 
 @x
-To disable auto-provisioning for a user:
+To disable auto-provisioning for a domain:
 @y
-To disable auto-provisioning for a user:
+To disable auto-provisioning for a domain:
 @z
 
 @x
@@ -138,9 +158,13 @@ To choose a different method to provision users, you can set up:
 @z
 
 @x
-- [SCIM provisioning](/manuals/security/provisioning/scim/_index.md) for advanced user management.
-- [Group mapping](/manuals/security/provisioning/scim/group-mapping.md) to assign users to teams automatically.
+- [SCIM provisioning](/manuals/security/provisioning/scim/_index.md) for
+  advanced user management.
+- [Group mapping](/manuals/security/provisioning/scim/group-mapping.md) to
+  assign users to teams automatically.
 @y
-- [SCIM provisioning](manuals/security/provisioning/scim/_index.md) for advanced user management.
-- [Group mapping](manuals/security/provisioning/scim/group-mapping.md) to assign users to teams automatically.
+- [SCIM provisioning](manuals/security/provisioning/scim/_index.md) for
+  advanced user management.
+- [Group mapping](manuals/security/provisioning/scim/group-mapping.md) to
+  assign users to teams automatically.
 @z

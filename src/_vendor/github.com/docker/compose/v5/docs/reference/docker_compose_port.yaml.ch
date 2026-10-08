@@ -3,92 +3,38 @@
 
 @x
 command: docker compose port
-short: Print the public port for a port binding
-long: Prints the public port for a port binding
-usage: docker compose port [OPTIONS] SERVICE PRIVATE_PORT
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: index
-      value_type: int
-      default_value: "0"
-      description: Index of the container if service has multiple replicas
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: protocol
-      value_type: string
-      default_value: tcp
-      description: tcp or udp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
-      description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+short: |
+    List port mappings or print the public port for a specific mapping for the service
+long: |
+    List port mappings or print the public port for a specific mapping for the service
+usage: docker compose port [OPTIONS] SERVICE [PRIVATE_PORT]
 @y
 command: docker compose port
-short: Print the public port for a port binding
-long: Prints the public port for a port binding
-usage: docker compose port [OPTIONS] SERVICE PRIVATE_PORT
-pname: docker compose
-plink: docker_compose.yaml
-options:
-    - option: index
-      value_type: int
-      default_value: "0"
+short: |
+    List port mappings or print the public port for a specific mapping for the service
+long: |
+    List port mappings or print the public port for a specific mapping for the service
+usage: docker compose port [OPTIONS] SERVICE [PRIVATE_PORT]
+@z
+
+% options:
+
+@x index
       description: Index of the container if service has multiple replicas
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-    - option: protocol
-      value_type: string
-      default_value: tcp
+@y
+      description: Index of the container if service has multiple replicas
+@z
+
+@x protocol
       description: tcp or udp
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-inherited_options:
-    - option: dry-run
-      value_type: bool
-      default_value: "false"
+@y
+      description: tcp or udp
+@z
+
+% inherited_options:
+
+@x dry-run
       description: Execute command in dry run mode
-      deprecated: false
-      hidden: false
-      experimental: false
-      experimentalcli: false
-      kubernetes: false
-      swarm: false
-deprecated: false
-hidden: false
-experimental: false
-experimentalcli: false
-kubernetes: false
-swarm: false
+@y
+      description: Execute command in dry run mode
 @z
