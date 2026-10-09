@@ -426,13 +426,43 @@ field for every step.
 @z
 
 @x
-BuildKit sets the `builderPlatform` of the build machine. Note that this is not
-necessarily the platform of the build result that can be determined from the
-`in-toto` subject field.
+BuildKit sets the `builderPlatform` of the build machine. This is not
+necessarily the platform of the build result, which is recorded separately in
+`targetPlatform`.
 @y
-BuildKit sets the `builderPlatform` of the build machine. Note that this is not
-necessarily the platform of the build result that can be determined from the
-`in-toto` subject field.
+BuildKit sets the `builderPlatform` of the build machine. This is not
+necessarily the platform of the build result, which is recorded separately in
+`targetPlatform`.
+@z
+
+@x
+### `buildDefinition.internalParameters.targetPlatform`
+@y
+### `buildDefinition.internalParameters.targetPlatform`
+@z
+
+@x
+* Ref: https://slsa.dev/spec/v1.1/provenance#internalParameters
+* Included with `mode=min` and `mode=max`.
+@y
+* Ref: https://slsa.dev/spec/v1.1/provenance#internalParameters
+* Included with `mode=min` and `mode=max`.
+@z
+
+@x
+The `targetPlatform` is the platform associated with this build result, for
+example `linux/arm64`. It is set even when the request does not specify a
+platform. For a multi-platform build, each result's provenance contains its
+own target platform. For binary artifacts, this value describes the declared
+result platform; BuildKit does not inspect the output binary to determine its
+architecture.
+@y
+The `targetPlatform` is the platform associated with this build result, for
+example `linux/arm64`. It is set even when the request does not specify a
+platform. For a multi-platform build, each result's provenance contains its
+own target platform. For binary artifacts, this value describes the declared
+result platform; BuildKit does not inspect the output binary to determine its
+architecture.
 @z
 
 @x

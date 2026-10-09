@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = images manage setup
+SUBDIRS = manage setup
 
 bases = \
 	_index.md        \

@@ -106,23 +106,21 @@ multiple organizations.
 | --- | --- | --- |
 | Individual | A Docker ID with personal settings, Hub repositories, and sign-in methods | A person |
 | Organization | A shared workspace for members, teams, and repositories | Teams on Docker Team or Business |
-| Company | Multiple organizations under centralized administration | Docker Business subscribers |
+| Company | Shared sign-in and administration for organizations that keep their own members, repositories, and billing | Docker Business subscribers |
 @y
 | Account type | What it is | Who it's for |
 | --- | --- | --- |
 | Individual | A Docker ID with personal settings, Hub repositories, and sign-in methods | A person |
 | Organization | A shared workspace for members, teams, and repositories | Teams on Docker Team or Business |
-| Company | Multiple organizations under centralized administration | Docker Business subscribers |
+| Company | Shared sign-in and administration for organizations that keep their own members, repositories, and billing | Docker Business subscribers |
 @z
 
 @x
 You always sign in with your individual account, then work in the
-organizations you own or belong to. Those organizations sit under a
-company when you administer more than one.
+organizations you own or belong to.
 @y
 You always sign in with your individual account, then work in the
-organizations you own or belong to. Those organizations sit under a
-company when you administer more than one.
+organizations you own or belong to.
 @z
 
 @x

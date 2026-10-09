@@ -67,7 +67,7 @@ The following table describes the available CSV parameters that you can pass to
 @x
 | Name           | Option                  | Type        | Default                                        | Description                                                          |
 |----------------|-------------------------|-------------|------------------------------------------------|----------------------------------------------------------------------|
-| `url`          | `cache-to`,`cache-from` | String      | `$ACTIONS_CACHE_URL` or `$ACTIONS_RESULTS_URL` | Cache server URL, see [authentication][1]. Ignored when `version=2`. |
+| `url`          | `cache-to`,`cache-from` | String      | `$ACTIONS_CACHE_URL` or `$ACTIONS_RESULTS_URL` | Cache server URL, see [authentication][1] and [version][4].           |
 | `url_v2`       | `cache-to`,`cache-from` | String      | `$ACTIONS_RESULTS_URL`                         | Cache v2 server URL, see [authentication][1].                        |
 | `token`        | `cache-to`,`cache-from` | String      | `$ACTIONS_RUNTIME_TOKEN`                       | Access token, see [authentication][1].                               |
 | `scope`        | `cache-to`,`cache-from` | String      | `buildkit`                                     | Which scope cache object belongs to, see [scope][2]                  |
@@ -76,11 +76,11 @@ The following table describes the available CSV parameters that you can pass to
 | `timeout`      | `cache-to`,`cache-from` | String      | `10m`                                          | Max duration for importing or exporting cache before it's timed out. |
 | `repository`   | `cache-to`              | String      |                                                | GitHub repository used for cache storage.                            |
 | `ghtoken`      | `cache-to`              | String      |                                                | GitHub token required for accessing the GitHub API.                  |
-| `version`      | `cache-to`,`cache-from` | String      | `1` unless `$ACTIONS_CACHE_SERVICE_V2` is set, then `2` | Selects GitHub Actions cache version, see [version][4]      |
+| `version`      | `cache-to`,`cache-from` | String      | Inferred from the cache server URL             | Selects GitHub Actions cache version, see [version][4]               |
 @y
 | Name           | Option                  | Type        | Default                                        | Description                                                          |
 |----------------|-------------------------|-------------|------------------------------------------------|----------------------------------------------------------------------|
-| `url`          | `cache-to`,`cache-from` | String      | `$ACTIONS_CACHE_URL` or `$ACTIONS_RESULTS_URL` | Cache server URL, see [authentication][1]. Ignored when `version=2`. |
+| `url`          | `cache-to`,`cache-from` | String      | `$ACTIONS_CACHE_URL` or `$ACTIONS_RESULTS_URL` | Cache server URL, see [authentication][1] and [version][4].           |
 | `url_v2`       | `cache-to`,`cache-from` | String      | `$ACTIONS_RESULTS_URL`                         | Cache v2 server URL, see [authentication][1].                        |
 | `token`        | `cache-to`,`cache-from` | String      | `$ACTIONS_RUNTIME_TOKEN`                       | Access token, see [authentication][1].                               |
 | `scope`        | `cache-to`,`cache-from` | String      | `buildkit`                                     | Which scope cache object belongs to, see [scope][2]                  |
@@ -89,7 +89,7 @@ The following table describes the available CSV parameters that you can pass to
 | `timeout`      | `cache-to`,`cache-from` | String      | `10m`                                          | Max duration for importing or exporting cache before it's timed out. |
 | `repository`   | `cache-to`              | String      |                                                | GitHub repository used for cache storage.                            |
 | `ghtoken`      | `cache-to`              | String      |                                                | GitHub token required for accessing the GitHub API.                  |
-| `version`      | `cache-to`,`cache-from` | String      | `1` unless `$ACTIONS_CACHE_SERVICE_V2` is set, then `2` | Selects GitHub Actions cache version, see [version][4]      |
+| `version`      | `cache-to`,`cache-from` | String      | Inferred from the cache server URL             | Selects GitHub Actions cache version, see [version][4]               |
 @z
 
 @x
@@ -172,6 +172,56 @@ Cache writes also depend on the workflow's cache access. Some events receive
 read-only access in the default-branch context. See
 [Cache write restrictions](../../ci/github-actions/cache.md#cache-write-restrictions)
 for affected triggers and how to configure cache imports and exports.
+@z
+
+@x
+## Version
+@y
+## Version
+@z
+
+@x
+If you set `version` explicitly, BuildKit uses that version. Otherwise it
+selects the version from the cache server URL:
+@y
+If you set `version` explicitly, BuildKit uses that version. Otherwise it
+selects the version from the cache server URL:
+@z
+
+@x
+- Setting `url_v2` selects v2.
+- Otherwise a `url` that points at the v2 cache service
+  (`results-receiver.actions.githubusercontent.com`) selects v2, and any other
+  `url` selects v1.
+@y
+- Setting `url_v2` selects v2.
+- Otherwise a `url` that points at the v2 cache service
+  (`results-receiver.actions.githubusercontent.com`) selects v2, and any other
+  `url` selects v1.
+@z
+
+@x
+Inside a workflow, Buildx fills unspecified URL parameters from the
+environment. It sets `url_v2` from `$ACTIONS_RESULTS_URL` when you pass
+`version=2`, or when you omit `version` and `$ACTIONS_CACHE_SERVICE_V2`
+holds a true value such as `1` or `true`. It sets `url` from
+`$ACTIONS_CACHE_URL`, falling back to `$ACTIONS_RESULTS_URL` when
+`$ACTIONS_CACHE_URL` isn't set.
+@y
+Inside a workflow, Buildx fills unspecified URL parameters from the
+environment. It sets `url_v2` from `$ACTIONS_RESULTS_URL` when you pass
+`version=2`, or when you omit `version` and `$ACTIONS_CACHE_SERVICE_V2`
+holds a true value such as `1` or `true`. It sets `url` from
+`$ACTIONS_CACHE_URL`, falling back to `$ACTIONS_RESULTS_URL` when
+`$ACTIONS_CACHE_URL` isn't set.
+@z
+
+@x
+Only one URL applies to a build. With v2, BuildKit uses `url_v2`, falling back
+to `url` when `url_v2` isn't set. With v1, it uses `url`.
+@y
+Only one URL applies to a build. With v2, BuildKit uses `url_v2`, falling back
+to `url` when `url_v2` isn't set. With v1, it uses `url`.
 @z
 
 @x

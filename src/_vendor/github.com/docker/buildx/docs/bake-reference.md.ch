@@ -282,13 +282,13 @@ The following table shows the complete list of attributes that you can assign to
 @x
 | [`dockerfile`](#targetdockerfile)               | String  | Dockerfile location                                                  |
 | [`entitlements`](#targetentitlements)           | List    | Permissions that the build process requires to run                   |
-| [`extra-hosts`](#targetextra-hosts)             | List    | Customs host-to-IP mapping                                           |
+| [`extra-hosts`](#targetextra-hosts)             | List    | Custom host-to-IP mapping                                           |
 | [`inherits`](#targetinherits)                   | List    | Inherit attributes from other targets                                |
 | [`labels`](#targetlabels)                       | Map     | Metadata for images                                                  |
 @y
 | [`dockerfile`](#targetdockerfile)               | String  | Dockerfile location                                                  |
 | [`entitlements`](#targetentitlements)           | List    | Permissions that the build process requires to run                   |
-| [`extra-hosts`](#targetextra-hosts)             | List    | Customs host-to-IP mapping                                           |
+| [`extra-hosts`](#targetextra-hosts)             | List    | Custom host-to-IP mapping                                           |
 | [`inherits`](#targetinherits)                   | List    | Inherit attributes from other targets                                |
 | [`labels`](#targetlabels)                       | Map     | Metadata for images                                                  |
 @z
@@ -643,6 +643,66 @@ Resolves to `"Dockerfile"` by default.
 @z
 
 % snip command...
+
+@x
+### `target.entitlements`
+@y
+### `target.entitlements`
+@z
+
+@x
+Entitlements are permissions that the build process requires to run.
+@y
+Entitlements are permissions that the build process requires to run.
+@z
+
+@x
+Currently supported entitlements are:
+@y
+Currently supported entitlements are:
+@z
+
+@x
+- `network.host`: Allows the build to use commands that access the host network. In Dockerfile, use [`RUN --network=host`](https://docs.docker.com/reference/dockerfile/#run---networkhost) to run a command with host network enabled.
+@y
+- `network.host`: Allows the build to use commands that access the host network. In Dockerfile, use [`RUN --network=host`](https://docs.docker.com/reference/dockerfile/#run---networkhost) to run a command with host network enabled.
+@z
+
+@x
+- `security.insecure`: Allows the build to run commands in privileged containers that are not limited by the default security sandbox. Such container may potentially access and modify system resources. In Dockerfile, use [`RUN --security=insecure`](https://docs.docker.com/reference/dockerfile/#run---security) to run a command in a privileged container.
+@y
+- `security.insecure`: Allows the build to run commands in privileged containers that are not limited by the default security sandbox. Such container may potentially access and modify system resources. In Dockerfile, use [`RUN --security=insecure`](https://docs.docker.com/reference/dockerfile/#run---security) to run a command in a privileged container.
+@z
+
+@x within code
+  # this target requires privileged containers to run nested containers
+@y
+  # this target requires privileged containers to run nested containers
+@z
+
+@x
+Entitlements are enabled with a two-step process. First, a target must declare the entitlements it requires. Secondly, when invoking the `bake` command, the user must grant the entitlements by passing the `--allow` flag or confirming the entitlements when prompted in an interactive terminal. This is to ensure that the user is aware of the possibly insecure permissions they are granting to the build process.
+@y
+Entitlements are enabled with a two-step process. First, a target must declare the entitlements it requires. Secondly, when invoking the `bake` command, the user must grant the entitlements by passing the `--allow` flag or confirming the entitlements when prompted in an interactive terminal. This is to ensure that the user is aware of the possibly insecure permissions they are granting to the build process.
+@z
+
+@x
+### `target.extra-hosts`
+@y
+### `target.extra-hosts`
+@z
+
+@x
+Use the `extra-hosts` attribute to define custom host-to-IP mapping for the
+target. This has the same effect as passing a [`--add-host`][add-host] flag to
+the build command.
+@y
+Use the `extra-hosts` attribute to define custom host-to-IP mapping for the
+target. This has the same effect as passing a [`--add-host`][add-host] flag to
+the build command.
+@z
+
+% snip code...
 
 @x
 ### `target.inherits`

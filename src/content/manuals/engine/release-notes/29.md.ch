@@ -36,6 +36,1364 @@ For more information about:
 @z
 
 @x
+## 29.9.0
+@y
+## 29.9.0
+@z
+
+@x
+{{< release-date date="2026-10-08" >}}
+@y
+{{< release-date date="2026-10-08" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.9.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.9.0)
+- [moby/moby, 29.9.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.9.0)
+@y
+- [docker/cli, 29.9.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.9.0)
+- [moby/moby, 29.9.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.9.0)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+The Go runtime update fixes the following security vulnerabilities in Docker Engine:
+@y
+The Go runtime update fixes the following security vulnerabilities in Docker Engine:
+@z
+
+@x
+- **CVE-2026-97032**: An HTTP/2 client could crash the daemon by changing the HPACK header table size while sending requests. [golang/go#81867](https://go.dev/issue/81867)
+- **CVE-2026-78659**: An HTTP/2 client could exhaust daemon memory by declaring a large number of fields in a `Trailer` header, bypassing the header size limits. [golang/go#81857](https://go.dev/issue/81857)
+- **CVE-2026-78663**: An HTTP/2 client could bypass the connection-level flow control limit by resetting streams, making the daemon buffer more request data than the limit allows. [golang/go#81743](https://go.dev/issue/81743)
+- **CVE-2026-78669**: An HTTP/2 client could cause excessive daemon CPU use by opening many streams and repeatedly changing the initial window size. [golang/go#81742](https://go.dev/issue/81742)
+- **CVE-2026-56857**: On Windows, the daemon could create a directory outside its data root if someone with write access to the data root had placed a junction there. [golang/go#81739](https://go.dev/issue/81739)
+@y
+- **CVE-2026-97032**: An HTTP/2 client could crash the daemon by changing the HPACK header table size while sending requests. [golang/go#81867](https://go.dev/issue/81867)
+- **CVE-2026-78659**: An HTTP/2 client could exhaust daemon memory by declaring a large number of fields in a `Trailer` header, bypassing the header size limits. [golang/go#81857](https://go.dev/issue/81857)
+- **CVE-2026-78663**: An HTTP/2 client could bypass the connection-level flow control limit by resetting streams, making the daemon buffer more request data than the limit allows. [golang/go#81743](https://go.dev/issue/81743)
+- **CVE-2026-78669**: An HTTP/2 client could cause excessive daemon CPU use by opening many streams and repeatedly changing the initial window size. [golang/go#81742](https://go.dev/issue/81742)
+- **CVE-2026-56857**: On Windows, the daemon could create a directory outside its data root if someone with write access to the data root had placed a junction there. [golang/go#81739](https://go.dev/issue/81739)
+@z
+
+@x
+The `golang.org/x/net` update to v0.60.0 applies the same HTTP/2 fixes to the deprecated `/grpc` endpoint and to the gRPC server that BuildKit runs for frontend containers, such as images referenced by a `# syntax=` directive.
+@y
+The `golang.org/x/net` update to v0.60.0 applies the same HTTP/2 fixes to the deprecated `/grpc` endpoint and to the gRPC server that BuildKit runs for frontend containers, such as images referenced by a `# syntax=` directive.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Add the `lazy-pull` daemon feature to control whether `docker pull` skips downloading layer content that the snapshotter already provides. Lazy pulls are enabled by default for known remote snapshotters (`nydus`, `overlaybd`, `soci`, `stargz`). [moby/moby#53877](https://github.com/moby/moby/pull/53877)
+- containerd image store: Fix pulls skipping required layer blobs when unpacked layers already exist, leaving images runnable but incomplete for export or push. [moby/moby#53615](https://github.com/moby/moby/pull/53615)
+- Fix `docker container create --name` reporting a misleading validation error mentioning invalid characters instead of invalid name length. [moby/moby#53484](https://github.com/moby/moby/pull/53484)
+- Fix a connection leak to the RootlessKit API socket on every `GET /version` request in rootless mode. [moby/moby#53836](https://github.com/moby/moby/pull/53836)
+- Improve Windows service registration and unregistration cleanup, including making service unregistration (`--unregister-service`) idempotent. [moby/moby#53845](https://github.com/moby/moby/pull/53845)
+@y
+- containerd image store: Add the `lazy-pull` daemon feature to control whether `docker pull` skips downloading layer content that the snapshotter already provides. Lazy pulls are enabled by default for known remote snapshotters (`nydus`, `overlaybd`, `soci`, `stargz`). [moby/moby#53877](https://github.com/moby/moby/pull/53877)
+- containerd image store: Fix pulls skipping required layer blobs when unpacked layers already exist, leaving images runnable but incomplete for export or push. [moby/moby#53615](https://github.com/moby/moby/pull/53615)
+- Fix `docker container create --name` reporting a misleading validation error mentioning invalid characters instead of invalid name length. [moby/moby#53484](https://github.com/moby/moby/pull/53484)
+- Fix a connection leak to the RootlessKit API socket on every `GET /version` request in rootless mode. [moby/moby#53836](https://github.com/moby/moby/pull/53836)
+- Improve Windows service registration and unregistration cleanup, including making service unregistration (`--unregister-service`) idempotent. [moby/moby#53845](https://github.com/moby/moby/pull/53845)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.34.0](https://github.com/moby/buildkit/releases/tag/v0.34.0). [moby/moby#53882](https://github.com/moby/moby/pull/53882)
+- Update Go runtime to [1.26.9](https://go.dev/doc/devel/release#go1.26.9). [docker/cli#7363](https://github.com/docker/cli/pull/7363)
+- Update containerd (static binaries) to [v2.4.1](https://github.com/containerd/containerd/releases/tag/v2.4.1). [moby/moby#53773](https://github.com/moby/moby/pull/53773)
+@y
+- Update BuildKit to [v0.34.0](https://github.com/moby/buildkit/releases/tag/v0.34.0). [moby/moby#53882](https://github.com/moby/moby/pull/53882)
+- Update Go runtime to [1.26.9](https://go.dev/doc/devel/release#go1.26.9). [docker/cli#7363](https://github.com/docker/cli/pull/7363)
+- Update containerd (static binaries) to [v2.4.1](https://github.com/containerd/containerd/releases/tag/v2.4.1). [moby/moby#53773](https://github.com/moby/moby/pull/53773)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Allow IPv6 Neighbour Discovery between containers on a bridge network with inter-container communication disabled, matching the existing IPv4 behaviour. [moby/moby#53723](https://github.com/moby/moby/pull/53723)
+- Fix `docker ps` and `GET /containers/json` omitting published ports for networks using routed gateway mode. [moby/moby#53693](https://github.com/moby/moby/pull/53693)
+- Fix a bug where a restarted daemon could be dropped from a peer's service discovery and load balancing until it rejoined the gossip cluster. [moby/moby#53688](https://github.com/moby/moby/pull/53688)
+- Fix a published port being unreachable from another container on the same network when inter-container communication is disabled, including Swarm services published through the routing mesh. [moby/moby#53723](https://github.com/moby/moby/pull/53723)
+- Fix an issue where errors programming the kernel to encrypt the overlay network data-plane could in some circumstances lead to encrypted-overlay-network traffic to some nodes being transmitted in cleartext. As the receiving peer would drop cleartext packets for encrypted overlay networks as spoofed, the loss of confidentiality is limited to unidirectional flows (e.g. UDP DNS queries) and handshake attempts that never proceed (e.g. TCP SYN). [moby/moby#53420](https://github.com/moby/moby/pull/53420)
+- Fix connecting live-restored containers with an implicit `host-gateway` mapping to additional networks. [moby/moby#53093](https://github.com/moby/moby/pull/53093)
+- Fix overlay peers becoming unreachable after a node rejoins the cluster or a service is redeployed, when the VXLAN device had already learned a dynamic FDB entry for the peer. [moby/moby#53663](https://github.com/moby/moby/pull/53663)
+- Fix Swarm tasks on overlay networks being rejected when the daemon can't write to `/var/lib/docker`. [moby/moby#53848](https://github.com/moby/moby/pull/53848)
+- Published Swarm-service ports are accessible at the host's IPv6 addresses when the userland proxy is enabled. A change introduced in v29.8.0 incidentally enabled this functionality; it is a tested and supported feature as of v29.9.0. [moby/moby#53727](https://github.com/moby/moby/pull/53727)
+- Release a node's IPsec security associations and policies when the last container leaves an encrypted overlay network, instead of leaking them until the daemon restarts. [moby/moby#53420](https://github.com/moby/moby/pull/53420)
+- Restore the logic to remove the empty `DOCKER-INGRESS` iptables chain, and the `FORWARD` rule that jumps to it, left behind by Docker Engine 28.0.0 and earlier. [moby/moby#53825](https://github.com/moby/moby/pull/53825)
+@y
+- Allow IPv6 Neighbour Discovery between containers on a bridge network with inter-container communication disabled, matching the existing IPv4 behaviour. [moby/moby#53723](https://github.com/moby/moby/pull/53723)
+- Fix `docker ps` and `GET /containers/json` omitting published ports for networks using routed gateway mode. [moby/moby#53693](https://github.com/moby/moby/pull/53693)
+- Fix a bug where a restarted daemon could be dropped from a peer's service discovery and load balancing until it rejoined the gossip cluster. [moby/moby#53688](https://github.com/moby/moby/pull/53688)
+- Fix a published port being unreachable from another container on the same network when inter-container communication is disabled, including Swarm services published through the routing mesh. [moby/moby#53723](https://github.com/moby/moby/pull/53723)
+- Fix an issue where errors programming the kernel to encrypt the overlay network data-plane could in some circumstances lead to encrypted-overlay-network traffic to some nodes being transmitted in cleartext. As the receiving peer would drop cleartext packets for encrypted overlay networks as spoofed, the loss of confidentiality is limited to unidirectional flows (e.g. UDP DNS queries) and handshake attempts that never proceed (e.g. TCP SYN). [moby/moby#53420](https://github.com/moby/moby/pull/53420)
+- Fix connecting live-restored containers with an implicit `host-gateway` mapping to additional networks. [moby/moby#53093](https://github.com/moby/moby/pull/53093)
+- Fix overlay peers becoming unreachable after a node rejoins the cluster or a service is redeployed, when the VXLAN device had already learned a dynamic FDB entry for the peer. [moby/moby#53663](https://github.com/moby/moby/pull/53663)
+- Fix Swarm tasks on overlay networks being rejected when the daemon can't write to `/var/lib/docker`. [moby/moby#53848](https://github.com/moby/moby/pull/53848)
+- Published Swarm-service ports are accessible at the host's IPv6 addresses when the userland proxy is enabled. A change introduced in v29.8.0 incidentally enabled this functionality; it is a tested and supported feature as of v29.9.0. [moby/moby#53727](https://github.com/moby/moby/pull/53727)
+- Release a node's IPsec security associations and policies when the last container leaves an encrypted overlay network, instead of leaking them until the daemon restarts. [moby/moby#53420](https://github.com/moby/moby/pull/53420)
+- Restore the logic to remove the empty `DOCKER-INGRESS` iptables chain, and the `FORWARD` rule that jumps to it, left behind by Docker Engine 28.0.0 and earlier. [moby/moby#53825](https://github.com/moby/moby/pull/53825)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Update RootlessKit (3.2.0). [moby/moby#53607](https://github.com/moby/moby/pull/53607)
+@y
+- Update RootlessKit (3.2.0). [moby/moby#53607](https://github.com/moby/moby/pull/53607)
+@z
+
+@x
+## 29.8.2
+@y
+## 29.8.2
+@z
+
+@x
+{{< release-date date="2026-09-30" >}}
+@y
+{{< release-date date="2026-09-30" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.8.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.2)
+- [moby/moby, 29.8.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.2)
+@y
+- [docker/cli, 29.8.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.2)
+- [moby/moby, 29.8.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release fixes the following security vulnerabilities in Docker Engine:
+@y
+This release fixes the following security vulnerabilities in Docker Engine:
+@z
+
+@x
+- **CVE-2026-53493**: Pulling a crafted OCI image index with deeply nested or widely fanned-out descriptors could cause unbounded CPU and memory use. [GHSA-pg57-6jwg-q645](https://github.com/containerd/containerd/security/advisories/GHSA-pg57-6jwg-q645)
+- **CVE-2026-92543**: A malicious DNS response could make registry connections skip TLS certificate verification or fall back to HTTP, exposing registry credentials or allowing image substitution. [GHSA-7cfq-22r6-qp73](https://github.com/moby/moby/security/advisories/GHSA-7cfq-22r6-qp73)
+- **CVE-2026-92542**: Unprivileged users on a Swarm node could inject forged Ethernet frames into encrypted overlay networks on peer nodes. [GHSA-6m9p-4h64-m6vh](https://github.com/moby/moby/security/advisories/GHSA-6m9p-4h64-m6vh)
+@y
+- **CVE-2026-53493**: Pulling a crafted OCI image index with deeply nested or widely fanned-out descriptors could cause unbounded CPU and memory use. [GHSA-pg57-6jwg-q645](https://github.com/containerd/containerd/security/advisories/GHSA-pg57-6jwg-q645)
+- **CVE-2026-92543**: A malicious DNS response could make registry connections skip TLS certificate verification or fall back to HTTP, exposing registry credentials or allowing image substitution. [GHSA-7cfq-22r6-qp73](https://github.com/moby/moby/security/advisories/GHSA-7cfq-22r6-qp73)
+- **CVE-2026-92542**: Unprivileged users on a Swarm node could inject forged Ethernet frames into encrypted overlay networks on peer nodes. [GHSA-6m9p-4h64-m6vh](https://github.com/moby/moby/security/advisories/GHSA-6m9p-4h64-m6vh)
+@z
+
+@x
+The BuildKit update fixes the following security vulnerabilities:
+@y
+The BuildKit update fixes the following security vulnerabilities:
+@z
+
+@x
+- **CVE-2026-93315**: A build step could redirect proxy CA cleanup outside the build root filesystem, block it with a special file, or let the build succeed when cleanup failed. [GHSA-2f5p-x9ph-g97x](https://github.com/moby/buildkit/security/advisories/GHSA-2f5p-x9ph-g97x)
+- **CVE-2026-93316**: A build that requested CDI devices could cause a daemon panic when CDI support was disabled, for example with `"features": {"cdi": false}` in `daemon.json`. [GHSA-r456-g3gm-cvxf](https://github.com/moby/buildkit/security/advisories/GHSA-r456-g3gm-cvxf)
+- **CVE-2026-93317**: With the containerd image store, a client using the low-level LLB API could poison the build cache with container blob contents that did not match their claimed digest. [GHSA-p3rc-w3hc-pqvv](https://github.com/moby/buildkit/security/advisories/GHSA-p3rc-w3hc-pqvv)
+- **CVE-2026-93318**: A malicious image could poison the build cache with layer DiffIDs that did not match the actual layer contents. [GHSA-f2v9-hprr-32q3](https://github.com/moby/buildkit/security/advisories/GHSA-f2v9-hprr-32q3)
+- **CVE-2026-93319**: A malicious external frontend could crash the daemon through gateway container lifecycle races or malformed requests and definitions. [GHSA-4hgw-qrhw-fhg8](https://github.com/moby/buildkit/security/advisories/GHSA-4hgw-qrhw-fhg8)
+- **CVE-2026-93320**: Daemon-side snapshot reads and LLB `mkfile` operations did not safely handle special files. [GHSA-9728-qjrv-2xh2](https://github.com/moby/buildkit/security/advisories/GHSA-9728-qjrv-2xh2)
+- **CVE-2026-93321**: A malformed LLB file operation with invalid symlink owner inputs could crash the daemon. [GHSA-fjj4-h6vf-m9hj](https://github.com/moby/buildkit/security/advisories/GHSA-fjj4-h6vf-m9hj)
+- **CVE-2026-93322**: A malformed LLB merge operation with mismatched input counts could crash the daemon. [GHSA-cv6p-7w7g-xjwq](https://github.com/moby/buildkit/security/advisories/GHSA-cv6p-7w7g-xjwq)
+- **CVE-2026-93323**: An oversized Dockerfile, `.dockerignore`, gateway file, or nested LLB definition could exhaust daemon memory. [GHSA-mgqf-486f-49vp](https://github.com/moby/buildkit/security/advisories/GHSA-mgqf-486f-49vp)
+- **CVE-2026-93326**: A crafted Git build source could bypass source policy rules that match on the repository URL, through a Git bundle locator or a full remote URL that did not match the source identifier. [GHSA-66hf-6vf5-87hc](https://github.com/moby/buildkit/security/advisories/GHSA-66hf-6vf5-87hc)
+@y
+- **CVE-2026-93315**: A build step could redirect proxy CA cleanup outside the build root filesystem, block it with a special file, or let the build succeed when cleanup failed. [GHSA-2f5p-x9ph-g97x](https://github.com/moby/buildkit/security/advisories/GHSA-2f5p-x9ph-g97x)
+- **CVE-2026-93316**: A build that requested CDI devices could cause a daemon panic when CDI support was disabled, for example with `"features": {"cdi": false}` in `daemon.json`. [GHSA-r456-g3gm-cvxf](https://github.com/moby/buildkit/security/advisories/GHSA-r456-g3gm-cvxf)
+- **CVE-2026-93317**: With the containerd image store, a client using the low-level LLB API could poison the build cache with container blob contents that did not match their claimed digest. [GHSA-p3rc-w3hc-pqvv](https://github.com/moby/buildkit/security/advisories/GHSA-p3rc-w3hc-pqvv)
+- **CVE-2026-93318**: A malicious image could poison the build cache with layer DiffIDs that did not match the actual layer contents. [GHSA-f2v9-hprr-32q3](https://github.com/moby/buildkit/security/advisories/GHSA-f2v9-hprr-32q3)
+- **CVE-2026-93319**: A malicious external frontend could crash the daemon through gateway container lifecycle races or malformed requests and definitions. [GHSA-4hgw-qrhw-fhg8](https://github.com/moby/buildkit/security/advisories/GHSA-4hgw-qrhw-fhg8)
+- **CVE-2026-93320**: Daemon-side snapshot reads and LLB `mkfile` operations did not safely handle special files. [GHSA-9728-qjrv-2xh2](https://github.com/moby/buildkit/security/advisories/GHSA-9728-qjrv-2xh2)
+- **CVE-2026-93321**: A malformed LLB file operation with invalid symlink owner inputs could crash the daemon. [GHSA-fjj4-h6vf-m9hj](https://github.com/moby/buildkit/security/advisories/GHSA-fjj4-h6vf-m9hj)
+- **CVE-2026-93322**: A malformed LLB merge operation with mismatched input counts could crash the daemon. [GHSA-cv6p-7w7g-xjwq](https://github.com/moby/buildkit/security/advisories/GHSA-cv6p-7w7g-xjwq)
+- **CVE-2026-93323**: An oversized Dockerfile, `.dockerignore`, gateway file, or nested LLB definition could exhaust daemon memory. [GHSA-mgqf-486f-49vp](https://github.com/moby/buildkit/security/advisories/GHSA-mgqf-486f-49vp)
+- **CVE-2026-93326**: A crafted Git build source could bypass source policy rules that match on the repository URL, through a Git bundle locator or a full remote URL that did not match the source identifier. [GHSA-66hf-6vf5-87hc](https://github.com/moby/buildkit/security/advisories/GHSA-66hf-6vf5-87hc)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `docker cp` failing on a container with a bind-mounted socket nested inside another bind mount. [moby/moby#53724](https://github.com/moby/moby/pull/53724)
+- Fix `docker info` failing with an “invalid Prefix” error after reloading a daemon with custom default address pools. [moby/moby#53812](https://github.com/moby/moby/pull/53812)
+@y
+- Fix `docker cp` failing on a container with a bind-mounted socket nested inside another bind mount. [moby/moby#53724](https://github.com/moby/moby/pull/53724)
+- Fix `docker info` failing with an “invalid Prefix” error after reloading a daemon with custom default address pools. [moby/moby#53812](https://github.com/moby/moby/pull/53812)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.33.1](https://github.com/moby/buildkit/releases/tag/v0.33.1). [moby/moby#53823](https://github.com/moby/moby/pull/53823)
+- Update containerd (static binaries) to [v2.3.6](https://github.com/containerd/containerd/releases/tag/v2.3.6). [moby/moby#53778](https://github.com/moby/moby/pull/53778)
+- Update runc (in static binaries) to [v1.5.2](https://github.com/opencontainers/runc/releases/tag/v1.5.2). [moby/moby#53811](https://github.com/moby/moby/pull/53811)
+@y
+- Update BuildKit to [v0.33.1](https://github.com/moby/buildkit/releases/tag/v0.33.1). [moby/moby#53823](https://github.com/moby/moby/pull/53823)
+- Update containerd (static binaries) to [v2.3.6](https://github.com/containerd/containerd/releases/tag/v2.3.6). [moby/moby#53778](https://github.com/moby/moby/pull/53778)
+- Update runc (in static binaries) to [v1.5.2](https://github.com/opencontainers/runc/releases/tag/v1.5.2). [moby/moby#53811](https://github.com/moby/moby/pull/53811)
+@z
+
+@x
+## 29.8.1
+@y
+## 29.8.1
+@z
+
+@x
+{{< release-date date="2026-09-15" >}}
+@y
+{{< release-date date="2026-09-15" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.8.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.1)
+- [moby/moby, 29.8.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.1)
+@y
+- [docker/cli, 29.8.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.1)
+- [moby/moby, 29.8.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- containerd image store: Fix `docker load` leaving dangling images after loading an image that already exists. [moby/moby#53595](https://github.com/moby/moby/pull/53595)
+- Fix managed containerd logging a CRI pod-sandbox plugin dependency warning during startup. [moby/moby#53585](https://github.com/moby/moby/pull/53585)
+- Fix user-namespace detection on OpenVZ, where namespace inode numbers are virtualized. [moby/moby#53605](https://github.com/moby/moby/pull/53605)
+- Windows: Preserve hard links when committing a container, so a file with multiple names is stored once in the resulting image layer instead of once per name. [moby/moby#53624](https://github.com/moby/moby/pull/53624)
+@y
+- containerd image store: Fix `docker load` leaving dangling images after loading an image that already exists. [moby/moby#53595](https://github.com/moby/moby/pull/53595)
+- Fix managed containerd logging a CRI pod-sandbox plugin dependency warning during startup. [moby/moby#53585](https://github.com/moby/moby/pull/53585)
+- Fix user-namespace detection on OpenVZ, where namespace inode numbers are virtualized. [moby/moby#53605](https://github.com/moby/moby/pull/53605)
+- Windows: Preserve hard links when committing a container, so a file with multiple names is stored once in the resulting image layer instead of once per name. [moby/moby#53624](https://github.com/moby/moby/pull/53624)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries) to [v2.3.5](https://github.com/containerd/containerd/releases/tag/v2.3.5). [moby/moby#53589](https://github.com/moby/moby/pull/53589)
+@y
+- Update containerd (static binaries) to [v2.3.5](https://github.com/containerd/containerd/releases/tag/v2.3.5). [moby/moby#53589](https://github.com/moby/moby/pull/53589)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix `GET /networks` returning a 500 status if an invalid 'type' filter was provided. [moby/moby#53678](https://github.com/moby/moby/pull/53678)
+@y
+- Fix `GET /networks` returning a 500 status if an invalid 'type' filter was provided. [moby/moby#53678](https://github.com/moby/moby/pull/53678)
+@z
+
+@x
+## 29.8.0
+@y
+## 29.8.0
+@z
+
+@x
+{{< release-date date="2026-09-03" >}}
+@y
+{{< release-date date="2026-09-03" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.8.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.0)
+- [moby/moby, 29.8.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.0)
+@y
+- [docker/cli, 29.8.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.8.0)
+- [moby/moby, 29.8.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.8.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add `HostConfig.Umask` option and a corresponding `--umask <octal>` flag to `docker create`/`docker run` to set the umask for a container's main process, execs, and healthchecks. [moby/moby#53463](https://github.com/moby/moby/pull/53463), [docker/cli#7108](https://github.com/docker/cli/pull/7108)
+- Add support for attaching service names, environments, and custom CloudWatch entity attributes to logs from the `awslogs` logging driver. [moby/moby#52632](https://github.com/moby/moby/pull/52632)
+@y
+- Add `HostConfig.Umask` option and a corresponding `--umask <octal>` flag to `docker create`/`docker run` to set the umask for a container's main process, execs, and healthchecks. [moby/moby#53463](https://github.com/moby/moby/pull/53463), [docker/cli#7108](https://github.com/docker/cli/pull/7108)
+- Add support for attaching service names, environments, and custom CloudWatch entity attributes to logs from the `awslogs` logging driver. [moby/moby#52632](https://github.com/moby/moby/pull/52632)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+- Add daemon support for configuring the default container AppArmor profile template. [moby/moby#52771](https://github.com/moby/moby/pull/52771)
+  - See https://docker.docker.com/engine/security/apparmor/#customize-the-default-profile
+- Prevent containers from using the 32-bit `socketcall(2)` path to create `AF_VSOCK` sockets and communicate with host virtual machines by adding AppArmor and SELinux policy rules. [moby/moby#53551](https://github.com/moby/moby/pull/53551)
+@y
+- Add daemon support for configuring the default container AppArmor profile template. [moby/moby#52771](https://github.com/moby/moby/pull/52771)
+  - See https://docker.docker.com/engine/security/apparmor/#customize-the-default-profile
+- Prevent containers from using the 32-bit `socketcall(2)` path to create `AF_VSOCK` sockets and communicate with host virtual machines by adding AppArmor and SELinux policy rules. [moby/moby#53551](https://github.com/moby/moby/pull/53551)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix `docker network inspect` failing to find a healthy Swarm network when another Swarm network could not be allocated. [moby/moby#53325](https://github.com/moby/moby/pull/53325)
+- Fix a node gossiping a superseded value for a Swarm service discovery entry after concurrent updates to the same key. [moby/moby#53479](https://github.com/moby/moby/pull/53479)
+- Fix Swarm service names failing to resolve on a node indefinitely after it misses a network membership announcement. [moby/moby#53437](https://github.com/moby/moby/pull/53437)
+- Fix Swarm service names failing to resolve on healthy nodes after a transient node failure. [moby/moby#53142](https://github.com/moby/moby/pull/53142)
+- Prevent dockerd from hanging when the nft command produces enough stderr output to fill its pipe. [moby/moby#53517](https://github.com/moby/moby/pull/53517)
+- Reduce gossip traffic generated by a node that repeatedly disconnects and rejoins the cluster. [moby/moby#53479](https://github.com/moby/moby/pull/53479)
+- Remote network-driver plugins can now set the container-side interface name via the `DstName` field in their `Join` response. [moby/moby#52866](https://github.com/moby/moby/pull/52866)
+- Reserve network names "container" and "container:" to prevent creation of unusable networks. [moby/moby#51973](https://github.com/moby/moby/pull/51973)
+- Spread the daemon's periodic Swarm overlay network gossip and synchronization work over time, avoiding recurring bursts of CPU and network usage. [moby/moby#53475](https://github.com/moby/moby/pull/53475)
+- Swarm service-mesh published ports now use the same infrastructure as published ports for local containers. [moby/moby#53118](https://github.com/moby/moby/pull/53118)
+@y
+- Fix `docker network inspect` failing to find a healthy Swarm network when another Swarm network could not be allocated. [moby/moby#53325](https://github.com/moby/moby/pull/53325)
+- Fix a node gossiping a superseded value for a Swarm service discovery entry after concurrent updates to the same key. [moby/moby#53479](https://github.com/moby/moby/pull/53479)
+- Fix Swarm service names failing to resolve on a node indefinitely after it misses a network membership announcement. [moby/moby#53437](https://github.com/moby/moby/pull/53437)
+- Fix Swarm service names failing to resolve on healthy nodes after a transient node failure. [moby/moby#53142](https://github.com/moby/moby/pull/53142)
+- Prevent dockerd from hanging when the nft command produces enough stderr output to fill its pipe. [moby/moby#53517](https://github.com/moby/moby/pull/53517)
+- Reduce gossip traffic generated by a node that repeatedly disconnects and rejoins the cluster. [moby/moby#53479](https://github.com/moby/moby/pull/53479)
+- Remote network-driver plugins can now set the container-side interface name via the `DstName` field in their `Join` response. [moby/moby#52866](https://github.com/moby/moby/pull/52866)
+- Reserve network names "container" and "container:" to prevent creation of unusable networks. [moby/moby#51973](https://github.com/moby/moby/pull/51973)
+- Spread the daemon's periodic Swarm overlay network gossip and synchronization work over time, avoiding recurring bursts of CPU and network usage. [moby/moby#53475](https://github.com/moby/moby/pull/53475)
+- Swarm service-mesh published ports now use the same infrastructure as published ports for local containers. [moby/moby#53118](https://github.com/moby/moby/pull/53118)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Fix `--disable-host-loopback` not being enforced for the `pasta` network driver in rootless mode. [moby/moby#53358](https://github.com/moby/moby/pull/53358)
+- Update RootlessKit to v3.1.0, adding support for the `pesto` port driver in rootless mode. Set `DOCKERD_ROOTLESS_ROOTLESSKIT_PORT_DRIVER=pesto` to use it; it requires the `pasta` network driver and supports IPv4 only. [moby/moby#53358](https://github.com/moby/moby/pull/53358)
+@y
+- Fix `--disable-host-loopback` not being enforced for the `pasta` network driver in rootless mode. [moby/moby#53358](https://github.com/moby/moby/pull/53358)
+- Update RootlessKit to v3.1.0, adding support for the `pesto` port driver in rootless mode. Set `DOCKERD_ROOTLESS_ROOTLESSKIT_PORT_DRIVER=pesto` to use it; it requires the `pasta` network driver and supports IPv4 only. [moby/moby#53358](https://github.com/moby/moby/pull/53358)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- Update minimum supported Go version to 1.26. [docker/cli#7258](https://github.com/docker/cli/pull/7258)
+### Bug fixes and enhancements
+@y
+- Update minimum supported Go version to 1.26. [docker/cli#7258](https://github.com/docker/cli/pull/7258)
+### Bug fixes and enhancements
+@z
+
+@x
+- Add `annotation` filter to container listings (`docker ps`, `GET /containers/json`) allowing to filter containers by their annotations. [moby/moby#53538](https://github.com/moby/moby/pull/53538)
+- containerd image store: Fix `docker image inspect` reporting a smaller image size than `docker image ls`. [moby/moby#53426](https://github.com/moby/moby/pull/53426)
+- containerd image store: Fix slower image pulls caused by repeated registry authentication within a single pull. [moby/moby#53497](https://github.com/moby/moby/pull/53497)
+- Do not log expected image signature identity misses as errors for containerd image store images. [moby/moby#53495](https://github.com/moby/moby/pull/53495)
+- dockerd now uses the embedded containerd if no system containerd service is configured and containerd is not installed. [moby/moby#53388](https://github.com/moby/moby/pull/53388)
+- Fix `GET /images/{name}/json` not including unpacked snapshot usage in `Size` when using the containerd image store. [moby/moby#53426](https://github.com/moby/moby/pull/53426)
+- Fix classic-builder cache for Dockerfile stages that select a non-host platform with `FROM --platform`. [moby/moby#53503](https://github.com/moby/moby/pull/53503)
+- Fix CLI panic when `DOCKER_HOST` or `-H` specifies an invalid host. [docker/cli#7280](https://github.com/docker/cli/pull/7280)
+- Fix health checks being delayed for too long when the start interval is longer than the start period. [moby/moby#52317](https://github.com/moby/moby/pull/52317)
+- Fix inconsistent mount ordering in `docker inspect` output (`GET /containers/{id}/json`) and container listings (`docker ps`, `GET /containers/json`). [moby/moby#53534](https://github.com/moby/moby/pull/53534)
+- Fix NRI container metadata so `Container.Args` includes the resolved executable as `argv[0]`, matching the process launched in the container instead of only the Docker `Cmd`. [moby/moby#53423](https://github.com/moby/moby/pull/53423)
+- Fix Swarm service creation failing when an automatically generated name is already in use. [moby/moby#53468](https://github.com/moby/moby/pull/53468)
+- Fix the container root directory `/` being world-writable when using the `btrfs` storage driver. [moby/moby#53500](https://github.com/moby/moby/pull/53500)
+- Fixed `docker ps` sorting published ports lexicographically instead of numerically. [docker/cli#7144](https://github.com/docker/cli/pull/7144)
+- Preserve service mount order during forced updates to avoid an unnecessary rollout on the next stack deploy. [docker/cli#7227](https://github.com/docker/cli/pull/7227)
+- Prevent containerd's v2 CRI plugins from loading when CRI is disabled. [moby/moby#53564](https://github.com/moby/moby/pull/53564)
+- Print plugin hook output (e.g. the "What's next:" hint) after the command's error message instead of before it. [docker/cli#6976](https://github.com/docker/cli/pull/6976)
+- Reject checkpoint IDs containing path separators to prevent access outside the container checkpoint directory. [moby/moby#53377](https://github.com/moby/moby/pull/53377)
+@y
+- Add `annotation` filter to container listings (`docker ps`, `GET /containers/json`) allowing to filter containers by their annotations. [moby/moby#53538](https://github.com/moby/moby/pull/53538)
+- containerd image store: Fix `docker image inspect` reporting a smaller image size than `docker image ls`. [moby/moby#53426](https://github.com/moby/moby/pull/53426)
+- containerd image store: Fix slower image pulls caused by repeated registry authentication within a single pull. [moby/moby#53497](https://github.com/moby/moby/pull/53497)
+- Do not log expected image signature identity misses as errors for containerd image store images. [moby/moby#53495](https://github.com/moby/moby/pull/53495)
+- dockerd now uses the embedded containerd if no system containerd service is configured and containerd is not installed. [moby/moby#53388](https://github.com/moby/moby/pull/53388)
+- Fix `GET /images/{name}/json` not including unpacked snapshot usage in `Size` when using the containerd image store. [moby/moby#53426](https://github.com/moby/moby/pull/53426)
+- Fix classic-builder cache for Dockerfile stages that select a non-host platform with `FROM --platform`. [moby/moby#53503](https://github.com/moby/moby/pull/53503)
+- Fix CLI panic when `DOCKER_HOST` or `-H` specifies an invalid host. [docker/cli#7280](https://github.com/docker/cli/pull/7280)
+- Fix health checks being delayed for too long when the start interval is longer than the start period. [moby/moby#52317](https://github.com/moby/moby/pull/52317)
+- Fix inconsistent mount ordering in `docker inspect` output (`GET /containers/{id}/json`) and container listings (`docker ps`, `GET /containers/json`). [moby/moby#53534](https://github.com/moby/moby/pull/53534)
+- Fix NRI container metadata so `Container.Args` includes the resolved executable as `argv[0]`, matching the process launched in the container instead of only the Docker `Cmd`. [moby/moby#53423](https://github.com/moby/moby/pull/53423)
+- Fix Swarm service creation failing when an automatically generated name is already in use. [moby/moby#53468](https://github.com/moby/moby/pull/53468)
+- Fix the container root directory `/` being world-writable when using the `btrfs` storage driver. [moby/moby#53500](https://github.com/moby/moby/pull/53500)
+- Fixed `docker ps` sorting published ports lexicographically instead of numerically. [docker/cli#7144](https://github.com/docker/cli/pull/7144)
+- Preserve service mount order during forced updates to avoid an unnecessary rollout on the next stack deploy. [docker/cli#7227](https://github.com/docker/cli/pull/7227)
+- Prevent containerd's v2 CRI plugins from loading when CRI is disabled. [moby/moby#53564](https://github.com/moby/moby/pull/53564)
+- Print plugin hook output (e.g. the "What's next:" hint) after the command's error message instead of before it. [docker/cli#6976](https://github.com/docker/cli/pull/6976)
+- Reject checkpoint IDs containing path separators to prevent access outside the container checkpoint directory. [moby/moby#53377](https://github.com/moby/moby/pull/53377)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.33.0](https://github.com/moby/buildkit/releases/tag/v0.33.0). [moby/moby#53554](https://github.com/moby/moby/pull/53554)
+- Update containerd (static binaries) to [v2.3.4](https://github.com/containerd/containerd/releases/tag/v2.3.4). [moby/moby#53409](https://github.com/moby/moby/pull/53409)
+- Update Go runtime to [1.26.8](https://go.dev/doc/devel/release#go1.26.8). [moby/moby#53550](https://github.com/moby/moby/pull/53550), [docker/cli#7274](https://github.com/docker/cli/pull/7274)
+- Update runc (in static binaries) to [v1.5.1](https://github.com/opencontainers/runc/releases/tag/v1.5.1). [moby/moby#52306](https://github.com/moby/moby/pull/52306)
+@y
+- Update BuildKit to [v0.33.0](https://github.com/moby/buildkit/releases/tag/v0.33.0). [moby/moby#53554](https://github.com/moby/moby/pull/53554)
+- Update containerd (static binaries) to [v2.3.4](https://github.com/containerd/containerd/releases/tag/v2.3.4). [moby/moby#53409](https://github.com/moby/moby/pull/53409)
+- Update Go runtime to [1.26.8](https://go.dev/doc/devel/release#go1.26.8). [moby/moby#53550](https://github.com/moby/moby/pull/53550), [docker/cli#7274](https://github.com/docker/cli/pull/7274)
+- Update runc (in static binaries) to [v1.5.1](https://github.com/opencontainers/runc/releases/tag/v1.5.1). [moby/moby#52306](https://github.com/moby/moby/pull/52306)
+@z
+
+@x
+## 29.7.2
+@y
+## 29.7.2
+@z
+
+@x
+{{< release-date date="2026-08-05" >}}
+@y
+{{< release-date date="2026-08-05" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.7.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.2)
+- [moby/moby, 29.7.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.2)
+@y
+- [docker/cli, 29.7.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.2)
+- [moby/moby, 29.7.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix `docker service create` and `docker service update` panicking when the same environment variable is passed more than once. [docker/cli#7145](https://github.com/docker/cli/pull/7145)
+- Fix a regression introduced in Docker Engine 29.7.0 that caused image pulls to reject images containing absolute hardlink targets, as produced by some image builders. [moby/moby#53305](https://github.com/moby/moby/pull/53305)
+- Fix a regression introduced in Docker Engine 29.7.0 that could cause image pulls and `docker cp` to fail on older Linux kernels when applying file permissions, including for device nodes. [moby/moby#53305](https://github.com/moby/moby/pull/53305)
+@y
+- Fix `docker service create` and `docker service update` panicking when the same environment variable is passed more than once. [docker/cli#7145](https://github.com/docker/cli/pull/7145)
+- Fix a regression introduced in Docker Engine 29.7.0 that caused image pulls to reject images containing absolute hardlink targets, as produced by some image builders. [moby/moby#53305](https://github.com/moby/moby/pull/53305)
+- Fix a regression introduced in Docker Engine 29.7.0 that could cause image pulls and `docker cp` to fail on older Linux kernels when applying file permissions, including for device nodes. [moby/moby#53305](https://github.com/moby/moby/pull/53305)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.32.2](https://github.com/moby/buildkit/releases/tag/v0.32.2). [moby/moby#53300](https://github.com/moby/moby/pull/53300)
+@y
+- Update BuildKit to [v0.32.2](https://github.com/moby/buildkit/releases/tag/v0.32.2). [moby/moby#53300](https://github.com/moby/moby/pull/53300)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Improve compatibility with more nftables releases by terminating base-chain policies with a semicolon. [moby/moby#53303](https://github.com/moby/moby/pull/53303)
+@y
+- Improve compatibility with more nftables releases by terminating base-chain policies with a semicolon. [moby/moby#53303](https://github.com/moby/moby/pull/53303)
+@z
+
+@x
+## 29.7.1
+@y
+## 29.7.1
+@z
+
+@x
+{{< release-date date="2026-07-31" >}}
+@y
+{{< release-date date="2026-07-31" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.7.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.1)
+- [moby/moby, 29.7.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.1)
+@y
+- [docker/cli, 29.7.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.1)
+- [moby/moby, 29.7.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.1)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression that prevented pulling images whose layers contain directories without explicit parent directory entries. [moby/moby#53260](https://github.com/moby/moby/pull/53260)
+- Fix a regression where the `CopyToContainer` rejects container paths that traverse absolute symlinks, such as `/var/run` -> `/run`. [moby/moby#53261](https://github.com/moby/moby/pull/53261)
+@y
+- Fix a regression that prevented pulling images whose layers contain directories without explicit parent directory entries. [moby/moby#53260](https://github.com/moby/moby/pull/53260)
+- Fix a regression where the `CopyToContainer` rejects container paths that traverse absolute symlinks, such as `/var/run` -> `/run`. [moby/moby#53261](https://github.com/moby/moby/pull/53261)
+@z
+
+@x
+## 29.7.0
+@y
+## 29.7.0
+@z
+
+@x
+{{< release-date date="2026-07-30" >}}
+@y
+{{< release-date date="2026-07-30" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.7.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.0)
+- [moby/moby, 29.7.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.0)
+@y
+- [docker/cli, 29.7.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.7.0)
+- [moby/moby, 29.7.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.7.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Add an experimental `embedded-containerd` feature that runs containerd inside the daemon process instead of as a separate managed process. [moby/moby#52898](https://github.com/moby/moby/pull/52898)
+- Mount type `image` is no longer experimental. [moby/moby#52998](https://github.com/moby/moby/pull/52998)
+- Add the `default-stop-timeout` daemon option to configure the stop timeout assigned to containers without an explicit timeout. [moby/moby#53146](https://github.com/moby/moby/pull/53146)
+@y
+- Add an experimental `embedded-containerd` feature that runs containerd inside the daemon process instead of as a separate managed process. [moby/moby#52898](https://github.com/moby/moby/pull/52898)
+- Mount type `image` is no longer experimental. [moby/moby#52998](https://github.com/moby/moby/pull/52998)
+- Add the `default-stop-timeout` daemon option to configure the stop timeout assigned to containers without an explicit timeout. [moby/moby#53146](https://github.com/moby/moby/pull/53146)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes a fix for a security vulnerability affecting Docker Engine and related components.
+@y
+This release includes a fix for a security vulnerability affecting Docker Engine and related components.
+@z
+
+@x
+- Update github.com/moby/go-archive to v0.3.0 to fix [CVE-2026-17106](https://www.cve.org/CVERecord?id=CVE-2026-17106) / [GHSA-hfg8-hc9c-6c3h](https://github.com/moby/go-archive/security/advisories/GHSA-hfg8-hc9c-6c3h). [moby/moby#53247](https://github.com/moby/moby/pull/53247), [docker/cli#7139](https://github.com/docker/cli/pull/7139)
+@y
+- Update github.com/moby/go-archive to v0.3.0 to fix [CVE-2026-17106](https://www.cve.org/CVERecord?id=CVE-2026-17106) / [GHSA-hfg8-hc9c-6c3h](https://github.com/moby/go-archive/security/advisories/GHSA-hfg8-hc9c-6c3h). [moby/moby#53247](https://github.com/moby/moby/pull/53247), [docker/cli#7139](https://github.com/docker/cli/pull/7139)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix a daemon panic when cleanup of a container's network interface fails while the container is being disconnected from a network. [moby/moby#53237](https://github.com/moby/moby/pull/53237)
+- Fix a daemon panic when removing swarm ingress ports after failing to bind an ingress proxy listener. [moby/moby#53022](https://github.com/moby/moby/pull/53022)
+@y
+- Fix a daemon panic when cleanup of a container's network interface fails while the container is being disconnected from a network. [moby/moby#53237](https://github.com/moby/moby/pull/53237)
+- Fix a daemon panic when removing swarm ingress ports after failing to bind an ingress proxy listener. [moby/moby#53022](https://github.com/moby/moby/pull/53022)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Keep the cgroup mount for containers with `--net=host`. [moby/moby#52318](https://github.com/moby/moby/pull/52318)
+@y
+- Keep the cgroup mount for containers with `--net=host`. [moby/moby#52318](https://github.com/moby/moby/pull/52318)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Add shell completion for `--filter` names and known values to `docker service ls`, `docker service ps`, and `docker node ps`. [docker/cli#7124](https://github.com/docker/cli/pull/7124)
+- containerd image store: Fix daemon-wide concurrent download and upload limits for pulls and pushes not being honored. [moby/moby#53081](https://github.com/moby/moby/pull/53081)
+  - To preserve the previous unlimited startup behavior, configure "max-concurrent-downloads" and "max-concurrent-uploads" to 0
+- Fix `docker cp -a` using the wrong file owner when copying files into containers with user namespace remapping enabled. [moby/moby#53084](https://github.com/moby/moby/pull/53084)
+- Fix `docker cp` from a Windows container silently returning a file instead of an error when the source path ends with a separator but is not a directory. [moby/moby#53123](https://github.com/moby/moby/pull/53123)
+- Fix `docker stats` reporting all zeros for running Windows containers when using the containerd runtime. [moby/moby#53101](https://github.com/moby/moby/pull/53101)
+- Fix `docker stats` reporting empty network stats for running Windows containers when using the containerd runtime. [moby/moby#53219](https://github.com/moby/moby/pull/53219)
+- Fix a typo in the `docker create --pull` flag description. [docker/cli#7103](https://github.com/docker/cli/pull/7103)
+- Fix Swarm service updates failing due to "file exists" errors when a VIP IP alias already exists on the LB endpoint interface. [moby/moby#51657](https://github.com/moby/moby/pull/51657)
+- Fix Swarm tasks being rejected when their image could not be pulled from the registry but was already present on the node. [moby/moby#53212](https://github.com/moby/moby/pull/53212)
+- Improve the error returned when a container hostname exceeds Linux's 64-byte limit. [moby/moby#53121](https://github.com/moby/moby/pull/53121)
+- Prevent live-restored volumes from retaining active mount references when containers exit during daemon startup. [moby/moby#53115](https://github.com/moby/moby/pull/53115)
+- Suppress the “No such container” error when `docker rm --force` succeeds for a nonexistent container. [docker/cli#7110](https://github.com/docker/cli/pull/7110)
+@y
+- Add shell completion for `--filter` names and known values to `docker service ls`, `docker service ps`, and `docker node ps`. [docker/cli#7124](https://github.com/docker/cli/pull/7124)
+- containerd image store: Fix daemon-wide concurrent download and upload limits for pulls and pushes not being honored. [moby/moby#53081](https://github.com/moby/moby/pull/53081)
+  - To preserve the previous unlimited startup behavior, configure "max-concurrent-downloads" and "max-concurrent-uploads" to 0
+- Fix `docker cp -a` using the wrong file owner when copying files into containers with user namespace remapping enabled. [moby/moby#53084](https://github.com/moby/moby/pull/53084)
+- Fix `docker cp` from a Windows container silently returning a file instead of an error when the source path ends with a separator but is not a directory. [moby/moby#53123](https://github.com/moby/moby/pull/53123)
+- Fix `docker stats` reporting all zeros for running Windows containers when using the containerd runtime. [moby/moby#53101](https://github.com/moby/moby/pull/53101)
+- Fix `docker stats` reporting empty network stats for running Windows containers when using the containerd runtime. [moby/moby#53219](https://github.com/moby/moby/pull/53219)
+- Fix a typo in the `docker create --pull` flag description. [docker/cli#7103](https://github.com/docker/cli/pull/7103)
+- Fix Swarm service updates failing due to "file exists" errors when a VIP IP alias already exists on the LB endpoint interface. [moby/moby#51657](https://github.com/moby/moby/pull/51657)
+- Fix Swarm tasks being rejected when their image could not be pulled from the registry but was already present on the node. [moby/moby#53212](https://github.com/moby/moby/pull/53212)
+- Improve the error returned when a container hostname exceeds Linux's 64-byte limit. [moby/moby#53121](https://github.com/moby/moby/pull/53121)
+- Prevent live-restored volumes from retaining active mount references when containers exit during daemon startup. [moby/moby#53115](https://github.com/moby/moby/pull/53115)
+- Suppress the “No such container” error when `docker rm --force` succeeds for a nonexistent container. [docker/cli#7110](https://github.com/docker/cli/pull/7110)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update Go runtime to [1.26.5](https://go.dev/doc/devel/release#go1.26.5). [docker/cli#7087](https://github.com/docker/cli/pull/7087)
+- Update BuildKit to [v0.32.0](https://github.com/moby/buildkit/releases/tag/v0.32.0). [moby/moby#53234](https://github.com/moby/moby/pull/53234)
+- Update containerd (static binaries) to [v2.3.3](https://github.com/containerd/containerd/releases/tag/v2.3.3). [moby/moby#53050](https://github.com/moby/moby/pull/53050)
+- Update runc (in static binaries) to [v1.4.3](https://github.com/opencontainers/runc/releases/tag/v1.4.3). [moby/moby#50960](https://github.com/moby/moby/pull/50960)
+@y
+- Update Go runtime to [1.26.5](https://go.dev/doc/devel/release#go1.26.5). [docker/cli#7087](https://github.com/docker/cli/pull/7087)
+- Update BuildKit to [v0.32.0](https://github.com/moby/buildkit/releases/tag/v0.32.0). [moby/moby#53234](https://github.com/moby/moby/pull/53234)
+- Update containerd (static binaries) to [v2.3.3](https://github.com/containerd/containerd/releases/tag/v2.3.3). [moby/moby#53050](https://github.com/moby/moby/pull/53050)
+- Update runc (in static binaries) to [v1.4.3](https://github.com/opencontainers/runc/releases/tag/v1.4.3). [moby/moby#50960](https://github.com/moby/moby/pull/50960)
+@z
+
+@x
+## 29.6.2
+@y
+## 29.6.2
+@z
+
+@x
+{{< release-date date="2026-07-16" >}}
+@y
+{{< release-date date="2026-07-16" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.6.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.2)
+- [moby/moby, 29.6.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.2)
+@y
+- [docker/cli, 29.6.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.2)
+- [moby/moby, 29.6.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.2)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@y
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@z
+
+@x
+- **CVE-2026-15793**: Git source checkout from a bundle file could lead to command injection. [GHSA-hw3h-2gp9-cxpv](https://github.com/moby/buildkit/security/advisories/GHSA-hw3h-2gp9-cxpv)
+- **CVE-2026-15792**: Incorrect parameters sent from a frontend could cause a panic. [GHSA-qx3x-mv6r-52p6](https://github.com/moby/buildkit/security/advisories/GHSA-qx3x-mv6r-52p6)
+- **CVE-2026-15791**: An LLB file operation could be tricked into removing the contents of the `/tmp` directory. [GHSA-32pv-7hq5-qhwq](https://github.com/moby/buildkit/security/advisories/GHSA-32pv-7hq5-qhwq)
+- **CVE-2026-15789**: A malicious client could bypass destination directory validation when uploading local sources. [GHSA-g2h8-426c-7976](https://github.com/moby/buildkit/security/advisories/GHSA-g2h8-426c-7976)
+- **CVE-2026-15788**: A WCOW cache mount source selector could resolve NTFS junctions outside of the cache root. [GHSA-388v-wmr2-g2v2](https://github.com/moby/buildkit/security/advisories/GHSA-388v-wmr2-g2v2)
+@y
+- **CVE-2026-15793**: Git source checkout from a bundle file could lead to command injection. [GHSA-hw3h-2gp9-cxpv](https://github.com/moby/buildkit/security/advisories/GHSA-hw3h-2gp9-cxpv)
+- **CVE-2026-15792**: Incorrect parameters sent from a frontend could cause a panic. [GHSA-qx3x-mv6r-52p6](https://github.com/moby/buildkit/security/advisories/GHSA-qx3x-mv6r-52p6)
+- **CVE-2026-15791**: An LLB file operation could be tricked into removing the contents of the `/tmp` directory. [GHSA-32pv-7hq5-qhwq](https://github.com/moby/buildkit/security/advisories/GHSA-32pv-7hq5-qhwq)
+- **CVE-2026-15789**: A malicious client could bypass destination directory validation when uploading local sources. [GHSA-g2h8-426c-7976](https://github.com/moby/buildkit/security/advisories/GHSA-g2h8-426c-7976)
+- **CVE-2026-15788**: A WCOW cache mount source selector could resolve NTFS junctions outside of the cache root. [GHSA-388v-wmr2-g2v2](https://github.com/moby/buildkit/security/advisories/GHSA-388v-wmr2-g2v2)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries) to [v2.2.6](https://github.com/containerd/containerd/releases/tag/v2.2.6). [moby/moby#53051](https://github.com/moby/moby/pull/53051)
+- Update Go runtime to [1.26.5](https://go.dev/doc/devel/release#go1.26.5). [moby/moby#53027](https://github.com/moby/moby/pull/53027)
+@y
+- Update containerd (static binaries) to [v2.2.6](https://github.com/containerd/containerd/releases/tag/v2.2.6). [moby/moby#53051](https://github.com/moby/moby/pull/53051)
+- Update Go runtime to [1.26.5](https://go.dev/doc/devel/release#go1.26.5). [moby/moby#53027](https://github.com/moby/moby/pull/53027)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Update RootlessKit to [v3.0.2](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.2). [moby/moby#53054](https://github.com/moby/moby/pull/53054)
+@y
+- Update RootlessKit to [v3.0.2](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.2). [moby/moby#53054](https://github.com/moby/moby/pull/53054)
+@z
+
+@x
+## 29.6.1
+@y
+## 29.6.1
+@z
+
+@x
+{{< release-date date="2026-06-26" >}}
+@y
+{{< release-date date="2026-06-26" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.6.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.1)
+- [moby/moby, 29.6.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.1)
+@y
+- [docker/cli, 29.6.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.1)
+- [moby/moby, 29.6.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.1)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@y
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@z
+
+@x
+- A malicious image could supply a malicious `/etc/passwd` or `/etc/group`-style file causing excessive memory consumption, potentially resulting in process termination due to Out Of Memory (OOM) conditions. [GHSA-mjcv-p78q-w5fw](https://github.com/moby/sys/security/advisories/GHSA-mjcv-p78q-w5fw), [GHSA-jpcc-p29g-p8mq](https://github.com/containerd/containerd/security/advisories/GHSA-jpcc-p29g-p8mq), [GHSA-72x6-4j93-7w86](https://github.com/moby/buildkit/security/advisories/GHSA-72x6-4j93-7w86)
+- A custom frontend could send a crafted build request that disabled Seccomp and AppArmor protections for the build container, even if the user did not explicitly allow the security.insecure entitlement. Other security measures, like Linux capabilities were still applied to these containers. [GHSA-7236-3392-c5c6](https://github.com/moby/buildkit/security/advisories/GHSA-7236-3392-c5c6)
+@y
+- A malicious image could supply a malicious `/etc/passwd` or `/etc/group`-style file causing excessive memory consumption, potentially resulting in process termination due to Out Of Memory (OOM) conditions. [GHSA-mjcv-p78q-w5fw](https://github.com/moby/sys/security/advisories/GHSA-mjcv-p78q-w5fw), [GHSA-jpcc-p29g-p8mq](https://github.com/containerd/containerd/security/advisories/GHSA-jpcc-p29g-p8mq), [GHSA-72x6-4j93-7w86](https://github.com/moby/buildkit/security/advisories/GHSA-72x6-4j93-7w86)
+- A custom frontend could send a crafted build request that disabled Seccomp and AppArmor protections for the build container, even if the user did not explicitly allow the security.insecure entitlement. Other security measures, like Linux capabilities were still applied to these containers. [GHSA-7236-3392-c5c6](https://github.com/moby/buildkit/security/advisories/GHSA-7236-3392-c5c6)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Update containerd (static binaries) to [v2.2.5](https://github.com/containerd/containerd/releases/tag/v2.2.5). [moby/moby#52950](https://github.com/moby/moby/pull/52950)
+@y
+- Update containerd (static binaries) to [v2.2.5](https://github.com/containerd/containerd/releases/tag/v2.2.5). [moby/moby#52950](https://github.com/moby/moby/pull/52950)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.31.1](https://github.com/moby/buildkit/releases/tag/v0.31.1). [moby/moby#52954](https://github.com/moby/moby/pull/52954)
+@y
+- Update BuildKit to [v0.31.1](https://github.com/moby/buildkit/releases/tag/v0.31.1). [moby/moby#52954](https://github.com/moby/moby/pull/52954)
+@z
+
+@x
+## 29.6.0
+@y
+## 29.6.0
+@z
+
+@x
+{{< release-date date="2026-06-18" >}}
+@y
+{{< release-date date="2026-06-18" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.6.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.0)
+- [moby/moby, 29.6.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.0)
+@y
+- [docker/cli, 29.6.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.6.0)
+- [moby/moby, 29.6.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.6.0)
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- `POST /containers/{id}/update` now supports per-device blkio resource settingss. [moby/moby#52651](https://github.com/moby/moby/pull/52651)
+- Add `GET /images/{name}/attestations` endpoint to retrieve in-toto attestation statements (such as SLSA provenance and SPDX SBOM) attached to an image. Supports optional platform selection, predicate type filtering, and a statement query parameter for verbatim statement bodies.
+@y
+- `POST /containers/{id}/update` now supports per-device blkio resource settingss. [moby/moby#52651](https://github.com/moby/moby/pull/52651)
+- Add `GET /images/{name}/attestations` endpoint to retrieve in-toto attestation statements (such as SLSA provenance and SPDX SBOM) attached to an image. Supports optional platform selection, predicate type filtering, and a statement query parameter for verbatim statement bodies.
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- `docker image push` now respects `NO_COLOR`. [docker/cli#6957](https://github.com/docker/cli/pull/6957)
+- containerd image store: Fix `docker system prune` to include unpacked image data when reporting reclaimed space. [moby/moby#52905](https://github.com/moby/moby/pull/52905)
+- Fix `docker system df` image size reporting to count only snapshots directly used by images. [moby/moby#52901](https://github.com/moby/moby/pull/52901)
+- Fix a bug where registry authentication failures during worker image pulls were reported as a misleading “No such image” error. [moby/moby#52698](https://github.com/moby/moby/pull/52698)
+- Fix default BuildKit GC policy to prune reproducible cache types as intended. [moby/moby#52814](https://github.com/moby/moby/pull/52814)
+- Fix explicit file modes being filtered by the daemon umask, including `COPY --chmod` permissions. [moby/moby#52892](https://github.com/moby/moby/pull/52892)
+- Fix image selection with the containerd image store on amd64 hosts when images provide amd64 variant-specific manifests. [moby/moby#52773](https://github.com/moby/moby/pull/52773)
+- The `--password` flag on `docker login` now accepts `-` to pass the password through STDIN as alternative to `--password-stdin`. [docker/cli#7029](https://github.com/docker/cli/pull/7029)
+@y
+- `docker image push` now respects `NO_COLOR`. [docker/cli#6957](https://github.com/docker/cli/pull/6957)
+- containerd image store: Fix `docker system prune` to include unpacked image data when reporting reclaimed space. [moby/moby#52905](https://github.com/moby/moby/pull/52905)
+- Fix `docker system df` image size reporting to count only snapshots directly used by images. [moby/moby#52901](https://github.com/moby/moby/pull/52901)
+- Fix a bug where registry authentication failures during worker image pulls were reported as a misleading “No such image” error. [moby/moby#52698](https://github.com/moby/moby/pull/52698)
+- Fix default BuildKit GC policy to prune reproducible cache types as intended. [moby/moby#52814](https://github.com/moby/moby/pull/52814)
+- Fix explicit file modes being filtered by the daemon umask, including `COPY --chmod` permissions. [moby/moby#52892](https://github.com/moby/moby/pull/52892)
+- Fix image selection with the containerd image store on amd64 hosts when images provide amd64 variant-specific manifests. [moby/moby#52773](https://github.com/moby/moby/pull/52773)
+- The `--password` flag on `docker login` now accepts `-` to pass the password through STDIN as alternative to `--password-stdin`. [docker/cli#7029](https://github.com/docker/cli/pull/7029)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update runc (in static binaries) to [v1.3.6](https://github.com/opencontainers/runc/releases/tag/v1.3.6). [moby/moby#52883](https://github.com/moby/moby/pull/52883)
+- Update BuildKit to [v0.31.0](https://github.com/moby/buildkit/releases/tag/v0.31.0). [moby/moby#52904](https://github.com/moby/moby/pull/52904)
+@y
+- Update runc (in static binaries) to [v1.3.6](https://github.com/opencontainers/runc/releases/tag/v1.3.6). [moby/moby#52883](https://github.com/moby/moby/pull/52883)
+- Update BuildKit to [v0.31.0](https://github.com/moby/buildkit/releases/tag/v0.31.0). [moby/moby#52904](https://github.com/moby/moby/pull/52904)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Allow the nftables firewall mode to be used with a daemon that is linked against libnftables when the `nft` command is not installed on the system. [moby/moby#52820](https://github.com/moby/moby/pull/52820)
+- Don't publish container ports on host ports listed in `net.ipv4.ip_local_reserved_ports` when dynamically allocating ports. [moby/moby#52818](https://github.com/moby/moby/pull/52818)
+- Fix a race condition in overlay network bulk sync that caused ~30s DNS resolution delays on newly joined swarm nodes. [moby/moby#52862](https://github.com/moby/moby/pull/52862)
+- Mitigate a crash in libnftables when using nftables as the firewall backend by changing the default build option to execute the `nft` command instead. Users building dockerd from source can opt into linking against libnftables by building with the `libnftables` build tag. [moby/moby#52886](https://github.com/moby/moby/pull/52886)
+@y
+- Allow the nftables firewall mode to be used with a daemon that is linked against libnftables when the `nft` command is not installed on the system. [moby/moby#52820](https://github.com/moby/moby/pull/52820)
+- Don't publish container ports on host ports listed in `net.ipv4.ip_local_reserved_ports` when dynamically allocating ports. [moby/moby#52818](https://github.com/moby/moby/pull/52818)
+- Fix a race condition in overlay network bulk sync that caused ~30s DNS resolution delays on newly joined swarm nodes. [moby/moby#52862](https://github.com/moby/moby/pull/52862)
+- Mitigate a crash in libnftables when using nftables as the firewall backend by changing the default build option to execute the `nft` command instead. Users building dockerd from source can opt into linking against libnftables by building with the `libnftables` build tag. [moby/moby#52886](https://github.com/moby/moby/pull/52886)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Silence the spurious warning "IPv4 forwarding is disabled". [moby/moby#52742](https://github.com/moby/moby/pull/52742)
+@y
+- Silence the spurious warning "IPv4 forwarding is disabled". [moby/moby#52742](https://github.com/moby/moby/pull/52742)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- The Engine now returns a deprecation warning when a container connected to the default bridge is created with links specified. [moby/moby#47427](https://github.com/moby/moby/pull/47427)
+@y
+- The Engine now returns a deprecation warning when a container connected to the default bridge is created with links specified. [moby/moby#47427](https://github.com/moby/moby/pull/47427)
+@z
+
+@x
+## 29.5.3
+@y
+## 29.5.3
+@z
+
+@x
+{{< release-date date="2026-06-03" >}}
+@y
+{{< release-date date="2026-06-03" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.5.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.3)
+- [moby/moby, 29.5.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.3)
+@y
+- [docker/cli, 29.5.3 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.3)
+- [moby/moby, 29.5.3 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.3)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Reduce `docker system df` errors when images are pruned at the same time with the containerd image store. [moby/moby#52672](https://github.com/moby/moby/pull/52672)
+@y
+- Reduce `docker system df` errors when images are pruned at the same time with the containerd image store. [moby/moby#52672](https://github.com/moby/moby/pull/52672)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update containerd (static binaries only) to [v2.2.4](https://github.com/containerd/containerd/releases/tag/v2.2.4). [moby/moby#52683](https://github.com/moby/moby/pull/52683)
+- Update Go runtime to [1.26.4](https://go.dev/doc/devel/release#go1.26.4). [moby/moby#52753](https://github.com/moby/moby/pull/52753), [docker/cli#7025](https://github.com/docker/cli/pull/7025)
+@y
+- Update containerd (static binaries only) to [v2.2.4](https://github.com/containerd/containerd/releases/tag/v2.2.4). [moby/moby#52683](https://github.com/moby/moby/pull/52683)
+- Update Go runtime to [1.26.4](https://go.dev/doc/devel/release#go1.26.4). [moby/moby#52753](https://github.com/moby/moby/pull/52753), [docker/cli#7025](https://github.com/docker/cli/pull/7025)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Fix AWS IMDS access with `gvisor-tap-vsock` and UDP port forwarding for non-loopback clients. [moby/moby#52710](https://github.com/moby/moby/pull/52710)
+- Fix installation of plugins that require host networking. [moby/moby#52735](https://github.com/moby/moby/pull/52735)
+- Update RootlessKit to [v3.0.1](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.1). [moby/moby#52710](https://github.com/moby/moby/pull/52710)
+@y
+- Fix AWS IMDS access with `gvisor-tap-vsock` and UDP port forwarding for non-loopback clients. [moby/moby#52710](https://github.com/moby/moby/pull/52710)
+- Fix installation of plugins that require host networking. [moby/moby#52735](https://github.com/moby/moby/pull/52735)
+- Update RootlessKit to [v3.0.1](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.1). [moby/moby#52710](https://github.com/moby/moby/pull/52710)
+@z
+
+@x
+## 29.5.2
+@y
+## 29.5.2
+@z
+
+@x
+{{< release-date date="2026-05-20" >}}
+@y
+{{< release-date date="2026-05-20" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.5.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.2)
+- [moby/moby, 29.5.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.2)
+@y
+- [docker/cli, 29.5.2 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.2)
+- [moby/moby, 29.5.2 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.2)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- Fix a regression introduced in 29.5.1 where `docker cp` failed with "mkdirat: file exists" when a container had a bind mount whose target traversed an in-container symlink (e.g. `/var/run -> /run`). [moby/moby#52655](https://github.com/moby/moby/pull/52655)
+@y
+- Fix a regression introduced in 29.5.1 where `docker cp` failed with "mkdirat: file exists" when a container had a bind mount whose target traversed an in-container symlink (e.g. `/var/run -> /run`). [moby/moby#52655](https://github.com/moby/moby/pull/52655)
+@z
+
+@x
+## 29.5.1
+@y
+## 29.5.1
+@z
+
+@x
+{{< release-date date="2026-05-18" >}}
+@y
+{{< release-date date="2026-05-18" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.1)
+- [moby/moby, 29.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.1)
+@y
+- [docker/cli, 29.5.1 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.1)
+- [moby/moby, 29.5.1 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.1)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@y
+This release includes fixes for multiple security vulnerabilities affecting Docker Engine.
+@z
+
+@x
+- **CVE-2026-41567** Fix a vulnerability in `docker cp` where archive decompression binaries (e.g. `xz`, `unpigz`) were resolved via `PATH` inside the container filesystem while running as host root, allowing a malicious container to execute arbitrary binaries with host root privileges.  
+  [GHSA-x86f-5xw2-fm2r](https://github.com/moby/moby/security/advisories/GHSA-x86f-5xw2-fm2r)
+@y
+- **CVE-2026-41567** Fix a vulnerability in `docker cp` where archive decompression binaries (e.g. `xz`, `unpigz`) were resolved via `PATH` inside the container filesystem while running as host root, allowing a malicious container to execute arbitrary binaries with host root privileges.  
+  [GHSA-x86f-5xw2-fm2r](https://github.com/moby/moby/security/advisories/GHSA-x86f-5xw2-fm2r)
+@z
+
+@x
+- **CVE-2026-41568** Fix a TOCTOU vulnerability in `docker cp` that allowed a container process to create files or directories at arbitrary locations on the host filesystem.  
+  [GHSA-vp62-88p7-qqf5](https://github.com/moby/moby/security/advisories/GHSA-vp62-88p7-qqf5)
+@y
+- **CVE-2026-41568** Fix a TOCTOU vulnerability in `docker cp` that allowed a container process to create files or directories at arbitrary locations on the host filesystem.  
+  [GHSA-vp62-88p7-qqf5](https://github.com/moby/moby/security/advisories/GHSA-vp62-88p7-qqf5)
+@z
+
+@x
+- **CVE-2026-42306** Fix a TOCTOU vulnerability in `docker cp` that allowed a container process to redirect a bind mount to an arbitrary location on the host filesystem.  
+  [GHSA-rg2x-37c3-w2rh](https://github.com/moby/moby/security/advisories/GHSA-rg2x-37c3-w2rh)
+@y
+- **CVE-2026-42306** Fix a TOCTOU vulnerability in `docker cp` that allowed a container process to redirect a bind mount to an arbitrary location on the host filesystem.  
+  [GHSA-rg2x-37c3-w2rh](https://github.com/moby/moby/security/advisories/GHSA-rg2x-37c3-w2rh)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix UDP conntrack entries not being deleted when not bound to a specific IP address. [moby/moby#52640](https://github.com/moby/moby/pull/52640)
+@y
+- Fix UDP conntrack entries not being deleted when not bound to a specific IP address. [moby/moby#52640](https://github.com/moby/moby/pull/52640)
+@z
+
+@x
+## 29.5.0
+@y
+## 29.5.0
+@z
+
+@x
+{{< release-date date="2026-05-14" >}}
+@y
+{{< release-date date="2026-05-14" >}}
+@z
+
+@x
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@y
+For a full list of pull requests and changes in this release, refer to the relevant GitHub milestones:
+@z
+
+@x
+- [docker/cli, 29.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.0)
+- [moby/moby, 29.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.0)
+@y
+- [docker/cli, 29.5.0 milestone](https://github.com/docker/cli/issues?q=is%3Aclosed+milestone%3A29.5.0)
+- [moby/moby, 29.5.0 milestone](https://github.com/moby/moby/issues?q=is%3Aclosed+milestone%3A29.5.0)
+@z
+
+@x
+> [!NOTE]
+> Rootless: `gvisor-tap-vsock` is now the new default rootless network driver and should be preferred over `slirp4netns` which is no longer installed via Docker packaging.
+@y
+> [!NOTE]
+> Rootless: `gvisor-tap-vsock` is now the new default rootless network driver and should be preferred over `slirp4netns` which is no longer installed via Docker packaging.
+@z
+
+@x
+### New
+@y
+### New
+@z
+
+@x
+- Rootless: Add new default  `gvisor-tap-vsock` network driver. [moby/moby#52319](https://github.com/moby/moby/pull/52319)
+- Enable private time namespace for containers by default on supported kernels. [moby/moby#52326](https://github.com/moby/moby/pull/52326)
+- The `local` logging driver now has support for custom attributes, adding support for the `label`, `label-regex`, `env`, `env-regex`, and `tag` log options. [moby/moby#52348](https://github.com/moby/moby/pull/52348)
+- Windows: The daemon now supports listening on a Unix socket (`-H unix://...`), with optional group-based access control via `--group`. [moby/moby#52365](https://github.com/moby/moby/pull/52365)
+@y
+- Rootless: Add new default  `gvisor-tap-vsock` network driver. [moby/moby#52319](https://github.com/moby/moby/pull/52319)
+- Enable private time namespace for containers by default on supported kernels. [moby/moby#52326](https://github.com/moby/moby/pull/52326)
+- The `local` logging driver now has support for custom attributes, adding support for the `label`, `label-regex`, `env`, `env-regex`, and `tag` log options. [moby/moby#52348](https://github.com/moby/moby/pull/52348)
+- Windows: The daemon now supports listening on a Unix socket (`-H unix://...`), with optional group-based access control via `--group`. [moby/moby#52365](https://github.com/moby/moby/pull/52365)
+@z
+
+@x
+### Security
+@y
+### Security
+@z
+
+@x
+- CVE-2026-32288: Fix a denial of service where pulling a maliciously crafted image could cause the daemon to allocate unbounded memory when processing sparse tar archives. [GHSA-x4jj-h2v8-hqqv](https://github.com/advisories/GHSA-x4jj-h2v8-hqqv). [moby/moby#52478](https://github.com/moby/moby/pull/52478)
+@y
+- CVE-2026-32288: Fix a denial of service where pulling a maliciously crafted image could cause the daemon to allocate unbounded memory when processing sparse tar archives. [GHSA-x4jj-h2v8-hqqv](https://github.com/advisories/GHSA-x4jj-h2v8-hqqv). [moby/moby#52478](https://github.com/moby/moby/pull/52478)
+@z
+
+@x
+### Bug fixes and enhancements
+@y
+### Bug fixes and enhancements
+@z
+
+@x
+- `docker ps --format` now supports a `.HealthStatus` placeholder to print container health state (`starting`, `healthy`, `unhealthy`) as a dedicated field. [docker/cli#6913](https://github.com/docker/cli/pull/6913)
+- Add "time-namespaces" feature flag to disable time-namespaces. [moby/moby#52577](https://github.com/moby/moby/pull/52577)
+- containerd integration: Fix auth token requests ignoring per-host TLS settings (custom CAs, insecure-registries). [moby/moby#52600](https://github.com/moby/moby/pull/52600)
+- Daemon reload events now signify that the daemon reload has fully completed. [moby/moby#52589](https://github.com/moby/moby/pull/52589)
+- Expose diagnostic data about userland proxy in `docker info`. [moby/moby#52321](https://github.com/moby/moby/pull/52321)
+- Fix `docker image ls --filter reference=...` (`GET /images/json`) to also match fully qualified canonical image names (e.g. `docker.io/library/alpine`), not only the familiar short form. [moby/moby#52333](https://github.com/moby/moby/pull/52333)
+- Fix a bug where leaving an autolock-enabled swarm could leave orphaned state, causing subsequent swarm init to fail with "Swarm is encrypted and needs to be unlocked". [moby/moby#52479](https://github.com/moby/moby/pull/52479)
+- Fix an issue where logging errors appeared as empty strings in the daemon log instead of the message that failed to write. [moby/moby#52442](https://github.com/moby/moby/pull/52442)
+- Fix incorrect SHARED SIZE and UNIQUE SIZE reporting in `docker system df -v` by including shared content blobs in size calculation. [moby/moby#52482](https://github.com/moby/moby/pull/52482)
+- Fix support for CDI specifications that request additional group IDs. [moby/moby#52579](https://github.com/moby/moby/pull/52579)
+- Fix volume subpath file mounts over an existing file in the image failing container creation with "not a directory". [moby/moby#52584](https://github.com/moby/moby/pull/52584)
+- Sort labels in `volume`, `network`, `config`, and `secret` formatters for deterministic output. [docker/cli#6954](https://github.com/docker/cli/pull/6954)
+- Swarm: Prevent corruption of Raft snapshots when swarm state is large. [moby/moby#52441](https://github.com/moby/moby/pull/52441)
+@y
+- `docker ps --format` now supports a `.HealthStatus` placeholder to print container health state (`starting`, `healthy`, `unhealthy`) as a dedicated field. [docker/cli#6913](https://github.com/docker/cli/pull/6913)
+- Add "time-namespaces" feature flag to disable time-namespaces. [moby/moby#52577](https://github.com/moby/moby/pull/52577)
+- containerd integration: Fix auth token requests ignoring per-host TLS settings (custom CAs, insecure-registries). [moby/moby#52600](https://github.com/moby/moby/pull/52600)
+- Daemon reload events now signify that the daemon reload has fully completed. [moby/moby#52589](https://github.com/moby/moby/pull/52589)
+- Expose diagnostic data about userland proxy in `docker info`. [moby/moby#52321](https://github.com/moby/moby/pull/52321)
+- Fix `docker image ls --filter reference=...` (`GET /images/json`) to also match fully qualified canonical image names (e.g. `docker.io/library/alpine`), not only the familiar short form. [moby/moby#52333](https://github.com/moby/moby/pull/52333)
+- Fix a bug where leaving an autolock-enabled swarm could leave orphaned state, causing subsequent swarm init to fail with "Swarm is encrypted and needs to be unlocked". [moby/moby#52479](https://github.com/moby/moby/pull/52479)
+- Fix an issue where logging errors appeared as empty strings in the daemon log instead of the message that failed to write. [moby/moby#52442](https://github.com/moby/moby/pull/52442)
+- Fix incorrect SHARED SIZE and UNIQUE SIZE reporting in `docker system df -v` by including shared content blobs in size calculation. [moby/moby#52482](https://github.com/moby/moby/pull/52482)
+- Fix support for CDI specifications that request additional group IDs. [moby/moby#52579](https://github.com/moby/moby/pull/52579)
+- Fix volume subpath file mounts over an existing file in the image failing container creation with "not a directory". [moby/moby#52584](https://github.com/moby/moby/pull/52584)
+- Sort labels in `volume`, `network`, `config`, and `secret` formatters for deterministic output. [docker/cli#6954](https://github.com/docker/cli/pull/6954)
+- Swarm: Prevent corruption of Raft snapshots when swarm state is large. [moby/moby#52441](https://github.com/moby/moby/pull/52441)
+@z
+
+@x
+### Packaging updates
+@y
+### Packaging updates
+@z
+
+@x
+- Update BuildKit to [v0.30.0](https://github.com/moby/buildkit/releases/tag/v0.30.0). [moby/moby#52618](https://github.com/moby/moby/pull/52618)
+- Update Go runtime to [1.26.3](https://go.dev/doc/devel/release#go1.26.3). [moby/moby#52572](https://github.com/moby/moby/pull/52572), [docker/cli#6967](https://github.com/docker/cli/pull/6967)
+@y
+- Update BuildKit to [v0.30.0](https://github.com/moby/buildkit/releases/tag/v0.30.0). [moby/moby#52618](https://github.com/moby/moby/pull/52618)
+- Update Go runtime to [1.26.3](https://go.dev/doc/devel/release#go1.26.3). [moby/moby#52572](https://github.com/moby/moby/pull/52572), [docker/cli#6967](https://github.com/docker/cli/pull/6967)
+@z
+
+@x
+### Networking
+@y
+### Networking
+@z
+
+@x
+- Fix conntrack entries being incorrectly deleted for UDP containers sharing the same port on different IPs when one container is restarted. [moby/moby#52423](https://github.com/moby/moby/pull/52423)
+- Fix stale VIP DNS records for swarm service network aliases not being removed during rolling updates. [moby/moby#52236](https://github.com/moby/moby/pull/52236)
+- Fix the userland proxy silently dropping UDP datagrams when a previous write to an unavailable backend left a stale ECONNREFUSED error on the socket. [moby/moby#52483](https://github.com/moby/moby/pull/52483)
+- Rootless: Properly support `--net=host` and localhost registries. [moby/moby#47103](https://github.com/moby/moby/pull/47103)
+@y
+- Fix conntrack entries being incorrectly deleted for UDP containers sharing the same port on different IPs when one container is restarted. [moby/moby#52423](https://github.com/moby/moby/pull/52423)
+- Fix stale VIP DNS records for swarm service network aliases not being removed during rolling updates. [moby/moby#52236](https://github.com/moby/moby/pull/52236)
+- Fix the userland proxy silently dropping UDP datagrams when a previous write to an unavailable backend left a stale ECONNREFUSED error on the socket. [moby/moby#52483](https://github.com/moby/moby/pull/52483)
+- Rootless: Properly support `--net=host` and localhost registries. [moby/moby#47103](https://github.com/moby/moby/pull/47103)
+@z
+
+@x
+### Rootless
+@y
+### Rootless
+@z
+
+@x
+- Update RootlessKit to [v3.0.0](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.0). [moby/moby#52319](https://github.com/moby/moby/pull/52319)
+@y
+- Update RootlessKit to [v3.0.0](https://github.com/rootless-containers/rootlesskit/releases/tag/v3.0.0). [moby/moby#52319](https://github.com/moby/moby/pull/52319)
+@z
+
+@x
+### Go SDK
+@y
+### Go SDK
+@z
+
+@x
+- cli/config/configfile: `GetAuthConfig`, `GetCredentialsStore`: normalize hostname when resolving auth. [docker/cli#6846](https://github.com/docker/cli/pull/6846)
+@y
+- cli/config/configfile: `GetAuthConfig`, `GetCredentialsStore`: normalize hostname when resolving auth. [docker/cli#6846](https://github.com/docker/cli/pull/6846)
+@z
+
+@x
+### Deprecations
+@y
+### Deprecations
+@z
+
+@x
+- cli/command/image/build: remove deprecated `DefaultDockerfileName` const. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `DetectArchiveReader` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `IsArchive` utility. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `ResolveAndValidateContextPath` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `WriteTempDockerfile` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+@y
+- cli/command/image/build: remove deprecated `DefaultDockerfileName` const. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `DetectArchiveReader` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `IsArchive` utility. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `ResolveAndValidateContextPath` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+- cli/command/image/build: remove deprecated `WriteTempDockerfile` util. [docker/cli#6737](https://github.com/docker/cli/pull/6737)
+@z
+
+@x
 ## 29.4.3
 @y
 ## 29.4.3
@@ -187,7 +1545,17 @@ Download the `seccomp/v0.2.1` profile:
 Download the `seccomp/v0.2.1` profile:
 @z
 
-% snip command...
+@x
+```console
+$ curl -fsSL https://raw.githubusercontent.com/moby/profiles/refs/tags/seccomp/v0.2.1/seccomp/default.json \
+  -o /etc/docker/seccomp-profile-v0.2.1.json
+```
+@y
+```console
+$ curl -fsSL https://raw.githubusercontent.com/moby/profiles/refs/tags/seccomp/v0.2.1/seccomp/default.json \
+  -o /etc/docker/seccomp-profile-v0.2.1.json
+```
+@z
 
 @x
 Use one of these options. You don't need both.
@@ -201,7 +1569,15 @@ Use one of these options. You don't need both.
 1. To use the profile for a specific container when you control the `docker run` command, use `--security-opt`:
 @z
 
-% snip command...
+@x
+  ```console
+  $ docker run --security-opt seccomp=<path> ...
+  ```
+@y
+  ```console
+  $ docker run --security-opt seccomp=<path> ...
+  ```
+@z
 
 @x
 2. To use the profile as the default for containers created by the daemon, add `seccomp-profile` to your `daemon.json`:
@@ -209,7 +1585,19 @@ Use one of these options. You don't need both.
 2. To use the profile as the default for containers created by the daemon, add `seccomp-profile` to your `daemon.json`:
 @z
 
-% snip code...
+@x
+  ```json
+  {
+    "seccomp-profile": "/etc/docker/seccomp-profile-v0.2.1.json"
+  }
+  ```
+@y
+  ```json
+  {
+    "seccomp-profile": "/etc/docker/seccomp-profile-v0.2.1.json"
+  }
+  ```
+@z
 
 @x
 ## 29.4.1
@@ -278,7 +1666,6 @@ For a full list of pull requests and changes in this release, refer to the relev
 @y
 - if a container has an IPv4-only or an IPv6-only endpoint with higher "gateway priority" than a dual stack endpoint, the single stack endpoint will now be used as the default gateway for its address family. [moby/moby#52328](https://github.com/moby/moby/pull/52328)
 @z
-
 
 @x
 ## 29.4.0
@@ -1534,6 +2921,72 @@ For a full list of pull requests and changes in this release, refer to the relev
 - The Windows overlay network driver now supports option `--dns`. [moby/moby#51229](https://github.com/moby/moby/pull/51229)
 - Update BuildKit to [v0.25.2](https://github.com/moby/buildkit/releases/tag/v0.25.2). [moby/moby#51397](https://github.com/moby/moby/pull/51397)
 - Update containerd to [v2.1.5](https://github.com/containerd/containerd/releases/tag/v2.1.5). [moby/moby#51409](https://github.com/moby/moby/pull/51409)
+@z
+
+@x
+  containerd v2.1.5 now uses systemd's default `LimitNOFILE` for containers,
+  changing the open file descriptor limit (`ulimit -n`) from `1048576` to
+  `1024`. This extends a change introduced in Docker Engine v25.0 for build
+  containers to all containers.
+@y
+  containerd v2.1.5 now uses systemd's default `LimitNOFILE` for containers,
+  changing the open file descriptor limit (`ulimit -n`) from `1048576` to
+  `1024`. This extends a change introduced in Docker Engine v25.0 for build
+  containers to all containers.
+@z
+
+@x
+  This prevents programs that adjust behavior based on ulimits from consuming
+  excessive memory when the limit is set to `infinity`. Containers now behave
+  the same way as programs running on the host.
+@y
+  This prevents programs that adjust behavior based on ulimits from consuming
+  excessive memory when the limit is set to `infinity`. Containers now behave
+  the same way as programs running on the host.
+@z
+
+@x
+  If your workload needs a higher limit, use `--ulimit` with `docker run`, or
+  set defaults in `/etc/docker/daemon.json`:
+@y
+  If your workload needs a higher limit, use `--ulimit` with `docker run`, or
+  set defaults in `/etc/docker/daemon.json`:
+@z
+
+@x
+  ```json
+  {
+    "default-ulimits": {
+      "nofile": {
+        "Name": "nofile",
+        "Soft": 1048576,
+        "Hard": 1048576
+      }
+    }
+  }
+  ```
+@y
+  ```json
+  {
+    "default-ulimits": {
+      "nofile": {
+        "Name": "nofile",
+        "Soft": 1048576,
+        "Hard": 1048576
+      }
+    }
+  }
+  ```
+@z
+
+@x
+  For more information, see [moby#51485](https://github.com/moby/moby/issues/51485).
+- Update Go runtime to [1.25.4](https://go.dev/doc/devel/release#go1.25.4). [moby/moby#51418](https://github.com/moby/moby/pull/51418), [docker/cli#6632](https://github.com/docker/cli/pull/6632)
+- Users can request a specific prefix size for networks allocated from the default pools by using the unspecified address, for example `--subnet 0.0.0.0/24 --subnet ::/96`. [moby/moby#50114](https://github.com/moby/moby/pull/50114)
+@y
+  For more information, see [moby#51485](https://github.com/moby/moby/issues/51485).
+- Update Go runtime to [1.25.4](https://go.dev/doc/devel/release#go1.25.4). [moby/moby#51418](https://github.com/moby/moby/pull/51418), [docker/cli#6632](https://github.com/docker/cli/pull/6632)
+- Users can request a specific prefix size for networks allocated from the default pools by using the unspecified address, for example `--subnet 0.0.0.0/24 --subnet ::/96`. [moby/moby#50114](https://github.com/moby/moby/pull/50114)
 @z
 
 @x

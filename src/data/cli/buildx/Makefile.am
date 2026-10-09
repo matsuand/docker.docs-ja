@@ -34,6 +34,10 @@ bases = \
 	docker_buildx_policy_eval.yaml                \
 	docker_buildx_policy_test.yaml                \
 	docker_buildx_prune.yaml                      \
+	docker_buildx_replay.yaml                     \
+	docker_buildx_replay_build.yaml               \
+	docker_buildx_replay_snapshot.yaml            \
+	docker_buildx_replay_verify.yaml              \
 	docker_buildx_rm.yaml                         \
 	docker_buildx_stop.yaml                       \
 	docker_buildx_uninstall.yaml                  \

@@ -386,6 +386,14 @@ examples: |-
 @z
 
 @x
+    Rootless mode (`--driver-opt rootless=true`) requires Kubernetes v1.30 or later
+    with support for `securityContext.appArmorProfile`, which is stable in v1.31.
+@y
+    Rootless mode (`--driver-opt rootless=true`) requires Kubernetes v1.30 or later
+    with support for `securityContext.appArmorProfile`, which is stable in v1.31.
+@z
+
+@x
     Unlike `docker` driver, built images will not automatically appear in
     `docker images` and [`build --load`](/reference/cli/docker/buildx/build/#load) needs to be used
     to achieve that.

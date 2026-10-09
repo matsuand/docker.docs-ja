@@ -205,7 +205,6 @@ AC_CONFIG_FILES([
 	src/content/manuals/accounts/company/Makefile
 	src/content/manuals/accounts/individual/Makefile
 	src/content/manuals/accounts/organization/Makefile
-	src/content/manuals/accounts/organization/images/Makefile
 	src/content/manuals/accounts/organization/manage/Makefile
 	src/content/manuals/accounts/organization/setup/Makefile
 	src/content/manuals/agentic-platform/Makefile
