@@ -2,7 +2,7 @@
 ## This is part of Japanese translation version for Docker's Documantation.
 ##
 
-SUBDIRS = guides learning-paths
+SUBDIRS = guides
 
 copyfiles = \
 	ask-ai-logo.svg                 \

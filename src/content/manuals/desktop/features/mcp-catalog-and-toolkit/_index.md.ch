@@ -106,18 +106,6 @@ keywords: Docker, ai, mcp servers, ai agents, extension, docker desktop, llm, do
 @z
 
 @x
-  - title: E2B sandboxes
-    description: Cloud sandboxes for AI agents with built-in MCP Catalog access
-    icon: cloud
-    link: /ai/mcp-catalog-and-toolkit/e2b-sandboxes/
-@y
-  - title: E2B sandboxes
-    description: Cloud sandboxes for AI agents with built-in MCP Catalog access
-    icon: cloud
-    link: __SUBDIR__/ai/mcp-catalog-and-toolkit/e2b-sandboxes/
-@z
-
-@x
 {{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}
 @y
 {{< summary-bar feature_name="Docker MCP Catalog and Toolkit" >}}

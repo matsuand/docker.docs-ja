@@ -5,7 +5,8 @@
 bases = \
 	_index.md                     \
 	organization-access-tokens.md \
-	personal-access-tokens.md
+	personal-access-tokens.md     \
+	reference.md
 
 include $(top_srcdir)/build-aux/common.mk
 include $(top_srcdir)/build-aux/main.mk

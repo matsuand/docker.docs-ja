@@ -1,16 +1,18 @@
 %This is the change file for the original Docker's Documentation file.
 %This is part of Japanese translation version for Docker's Documantation.
 
-% __SUBDIR__ 対応 / .md リンクへの (no slash) 対応
+% __SUBDIR__ �Ή�
 
 @x
 title: Data privacy and Gordon
 linkTitle: Data privacy
 description: How Gordon handles your data and what information is collected
+keywords: Gordon, data privacy, data retention, security
 @y
 title: Data privacy and Gordon
 linkTitle: Data privacy
 description: How Gordon handles your data and what information is collected
+keywords: Gordon, data privacy, data retention, security
 @z
 
 @x
@@ -223,16 +225,6 @@ data immediately.
 Your data is protected through encryption in transit. For paid subscriptions,
 no persistent storage occurs—Gordon processes your requests and discards the
 data immediately.
-@z
-
-@x
-For questions about privacy terms and conditions, review [Gordon's
-Supplemental
-Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
-@y
-For questions about privacy terms and conditions, review [Gordon's
-Supplemental
-Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/).
 @z
 
 @x
@@ -255,7 +247,7 @@ handling requirements before enabling Gordon.
 See [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @y
-See [Settings Management](manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
+See [Settings Management](/manuals/desktop/enterprise/hardened-desktop/settings-management/_index.md)
 for configuration details.
 @z
 
@@ -319,10 +311,10 @@ For questions about Docker's privacy practices:
 
 @x
 - Review the [Docker Privacy Policy](https://www.docker.com/legal/privacy/)
-- Read [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/)
+- Read the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/)
 - Contact Docker Support for specific concerns
 @y
 - Review the [Docker Privacy Policy](https://www.docker.com/legal/privacy/)
-- Read [Gordon's Supplemental Terms](https://www.docker.com/legal/docker-ai-supplemental-terms/)
+- Read the [Docker Subscription Service Agreement](https://www.docker.com/legal/docker-subscription-service-agreement/)
 - Contact Docker Support for specific concerns
 @z

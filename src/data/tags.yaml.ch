@@ -39,12 +39,12 @@ databases:
 
 @x
 deployment:
-  title: Deployment
-  description: Deploy containerized apps to Kubernetes and other platforms.
+  title: Services & infrastructure
+  description: Run containerized services and set up development infrastructure.
 @y
 deployment:
-  title: デプロイ
-  description: Deploy containerized apps to Kubernetes and other platforms.
+  title: Services & infrastructure
+  description: Run containerized services and set up development infrastructure.
 @z
 
 @x
@@ -65,6 +65,16 @@ languages:
 languages:
   title: 言語とフレームワーク
   description: Containerize and develop apps in your language of choice.
+@z
+
+@x
+observability:
+  title: Observability
+  description: Monitor application metrics and traces with containerized tools.
+@y
+observability:
+  title: Observability
+  description: Monitor application metrics and traces with containerized tools.
 @z
 
 @x

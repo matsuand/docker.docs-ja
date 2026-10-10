@@ -308,7 +308,6 @@ bases = \
 	claude-code-model-runner.md                  \
 	claude-code-sandbox-model-runner.md          \
 	compose-bake.md                              \
-	container-supported-development.md           \
 	cpp.md                                       \
 	databases.md                                 \
 	deno.md                                      \
@@ -317,16 +316,9 @@ bases = \
 	dhi-openshift.md                             \
 	dhi-vex-walkthrough.md                       \
 	django.md                                    \
-	docker-build-cloud.md                        \
-	docker-compose.md                            \
-	docker-scout.md                              \
 	dotnet.md                                    \
 	genai-claude-code-mcp.md                     \
-	genai-leveraging-rag.md                      \
-	genai-pdf-bot.md                             \
-	genai-video-bot.md                           \
 	gha.md                                       \
-	github-sonarqube-sandbox.md                  \
 	go-prometheus-monitoring.md                  \
 	golang.md                                    \
 	grafana-mcp-server-gemini.md                 \
@@ -345,11 +337,9 @@ bases = \
 	lab-dhi-node.md                              \
 	lab-docker-agent.md                          \
 	lab-mcp-gateway.md                           \
-	language-translation.md                      \
 	laravel.md                                   \
 	localstack.md                                \
 	mistral-vibe-sandbox.md                      \
-	named-entity-recognition.md                  \
 	nextjs.md                                    \
 	nodejs.md                                    \
 	opencode-model-runner.md                     \
@@ -360,35 +350,20 @@ bases = \
 	pre-seeding.md                               \
 	python.md                                    \
 	r.md                                         \
-	rag-ollama.md                                \
 	reactjs.md                                   \
 	ros2.md                                      \
 	ruby.md                                      \
 	rust.md                                      \
-	sentiment-analysis.md                        \
-	tensorflowjs.md                              \
-	testcontainers-cloud.md                      \
 	testcontainers-dotnet-aspnet-core.md         \
 	testcontainers-dotnet-getting-started.md     \
 	testcontainers-go-getting-started.md         \
-	testcontainers-java-aws-localstack.md        \
 	testcontainers-java-getting-started.md       \
-	testcontainers-java-jooq-flyway.md           \
-	testcontainers-java-keycloak-spring-boot.md  \
 	testcontainers-java-lifecycle.md             \
-	testcontainers-java-micronaut-kafka.md       \
-	testcontainers-java-micronaut-wiremock.md    \
-	testcontainers-java-mockserver.md            \
-	testcontainers-java-quarkus.md               \
 	testcontainers-java-replace-h2.md            \
 	testcontainers-java-service-configuration.md \
-	testcontainers-java-spring-boot-kafka.md     \
 	testcontainers-java-spring-boot-rest-api.md  \
-	testcontainers-java-wiremock.md              \
 	testcontainers-nodejs-getting-started.md     \
 	testcontainers-python-getting-started.md     \
-	text-classification.md                       \
-	text-summarization.md                        \
 	traefik.md                                   \
 	vuejs.md                                     \
 	wiremock.md                                  \

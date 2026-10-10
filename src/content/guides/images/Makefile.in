@@ -249,15 +249,6 @@ copyfiles = \
 	genai-claude-code-mcp-dockerhub-secrets.avif         \
 	genai-claude-code-mcp-localhost.avif                 \
 	genai-claude-code-mcp-mcp-servers.avif               \
-	genai-leveraging-rag-1.png                           \
-	genai-leveraging-rag-2.png                           \
-	genai-leveraging-rag-3.png                           \
-	genai-leveraging-rag-4.png                           \
-	genai-video-bot-architecture.webp                    \
-	genai-video-bot-bot.webp                             \
-	genai-video-bot-embeddings.webp                      \
-	genai-video-bot-yt-whisper-2.webp                    \
-	genai-video-bot-yt-whisper.webp                      \
 	grafana-dash.png                                     \
 	grafana-panel.png                                    \
 	java-compose-logs.webp                               \

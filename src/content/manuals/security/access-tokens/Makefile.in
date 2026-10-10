@@ -240,7 +240,8 @@ top_srcdir = @top_srcdir@
 bases = \
 	_index.md                     \
 	organization-access-tokens.md \
-	personal-access-tokens.md
+	personal-access-tokens.md     \
+	reference.md
 
 thisdir = ${shell echo $(subdir) | sed -e "s|^src/||" -e "s|^src|\.|"}
 abs_thisdir = @abs_srcdir@
